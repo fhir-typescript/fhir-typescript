@@ -53,6 +53,10 @@ export interface MedicinalProductPharmaceuticalRouteOfAdministrationTargetSpecie
      * Extra information about the withdrawal period.
      */
     supportingInformation?: fhir.FhirString | string | undefined;
+    /**
+     * Extended properties for primitive element: MedicinalProductPharmaceutical.routeOfAdministration.targetSpecies.withdrawalPeriod.supportingInformation
+     */
+    _supportingInformation?: fhir.FhirElementArgs;
 }
 /**
  * A species specific time during which consumption of animal product is not appropriate.

@@ -28,6 +28,10 @@ export interface MediaArgs extends fhir.DomainResourceArgs {
      */
     status: fhir.FhirCode<EventStatusCodeType> | string | undefined;
     /**
+     * Extended properties for primitive element: Media.status
+     */
+    _status?: fhir.FhirElementArgs;
+    /**
      * A code that classifies whether the media is an image, video or audio recording or some other media category.
      */
     type?: fhir.CodeableConceptArgs | undefined;
@@ -64,6 +68,10 @@ export interface MediaArgs extends fhir.DomainResourceArgs {
      */
     issued?: fhir.FhirInstant | string | undefined;
     /**
+     * Extended properties for primitive element: Media.issued
+     */
+    _issued?: fhir.FhirElementArgs;
+    /**
      * The person who administered the collection of the image.
      */
     operator?: fhir.ReferenceArgs | undefined;
@@ -81,6 +89,10 @@ export interface MediaArgs extends fhir.DomainResourceArgs {
      */
     deviceName?: fhir.FhirString | string | undefined;
     /**
+     * Extended properties for primitive element: Media.deviceName
+     */
+    _deviceName?: fhir.FhirElementArgs;
+    /**
      * An extension should be used if further typing of the device is needed.  Secondary devices used to support collecting a media can be represented using either extension or through the Observation.related element.
      */
     device?: fhir.ReferenceArgs | undefined;
@@ -89,17 +101,33 @@ export interface MediaArgs extends fhir.DomainResourceArgs {
      */
     height?: fhir.FhirPositiveInt | number | undefined;
     /**
+     * Extended properties for primitive element: Media.height
+     */
+    _height?: fhir.FhirElementArgs;
+    /**
      * Width of the image in pixels (photo/video).
      */
     width?: fhir.FhirPositiveInt | number | undefined;
+    /**
+     * Extended properties for primitive element: Media.width
+     */
+    _width?: fhir.FhirElementArgs;
     /**
      * if the number of frames is not supplied, the value may be unknown. Applications should not assume that there is only one frame unless it is explicitly stated.
      */
     frames?: fhir.FhirPositiveInt | number | undefined;
     /**
+     * Extended properties for primitive element: Media.frames
+     */
+    _frames?: fhir.FhirElementArgs;
+    /**
      * The duration might differ from occurrencePeriod if recording was paused.
      */
     duration?: fhir.FhirDecimal | number | undefined;
+    /**
+     * Extended properties for primitive element: Media.duration
+     */
+    _duration?: fhir.FhirElementArgs;
     /**
      * Recommended content types: image/jpeg, image/png, image/tiff, video/mpeg, audio/mp4, application/dicom. Application/dicom can contain the transfer syntax as a parameter.  For media that covers a period of time (video/sound), the content.creationTime is the end time. Creation time is used for tracking, organizing versions and searching.
      */

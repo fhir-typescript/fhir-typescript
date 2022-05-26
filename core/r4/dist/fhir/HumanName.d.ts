@@ -9,25 +9,49 @@ export interface HumanNameArgs extends fhir.FhirElementArgs {
      */
     use?: fhir.FhirCode<NameUseCodeType> | string | undefined;
     /**
+     * Extended properties for primitive element: HumanName.use
+     */
+    _use?: fhir.FhirElementArgs;
+    /**
      * Can provide both a text representation and parts. Applications updating a name SHALL ensure that when both text and parts are present,  no content is included in the text that isn't found in a part.
      */
     text?: fhir.FhirString | string | undefined;
+    /**
+     * Extended properties for primitive element: HumanName.text
+     */
+    _text?: fhir.FhirElementArgs;
     /**
      * Family Name may be decomposed into specific parts using extensions (de, nl, es related cultures).
      */
     family?: fhir.FhirString | string | undefined;
     /**
+     * Extended properties for primitive element: HumanName.family
+     */
+    _family?: fhir.FhirElementArgs;
+    /**
      * If only initials are recorded, they may be used in place of the full name parts. Initials may be separated into multiple given names but often aren't due to paractical limitations.  This element is not called "first name" since given names do not always come first.
      */
     given?: fhir.FhirString[] | string[] | undefined;
+    /**
+     * Extended properties for primitive element: HumanName.given
+     */
+    _given?: (fhir.FhirElementArgs | null)[];
     /**
      * Part of the name that is acquired as a title due to academic, legal, employment or nobility status, etc. and that appears at the start of the name.
      */
     prefix?: fhir.FhirString[] | string[] | undefined;
     /**
+     * Extended properties for primitive element: HumanName.prefix
+     */
+    _prefix?: (fhir.FhirElementArgs | null)[];
+    /**
      * Part of the name that is acquired as a title due to academic, legal, employment or nobility status, etc. and that appears at the end of the name.
      */
     suffix?: fhir.FhirString[] | string[] | undefined;
+    /**
+     * Extended properties for primitive element: HumanName.suffix
+     */
+    _suffix?: (fhir.FhirElementArgs | null)[];
     /**
      * Indicates the period of time when this name was valid for the named person.
      */

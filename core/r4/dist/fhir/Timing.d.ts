@@ -27,57 +27,113 @@ export interface TimingRepeatArgs extends fhir.FhirElementArgs {
      */
     count?: fhir.FhirPositiveInt | number | undefined;
     /**
+     * Extended properties for primitive element: Timing.repeat.count
+     */
+    _count?: fhir.FhirElementArgs;
+    /**
      * If present, indicates that the count is a range - so to perform the action between [count] and [countMax] times.
      */
     countMax?: fhir.FhirPositiveInt | number | undefined;
+    /**
+     * Extended properties for primitive element: Timing.repeat.countMax
+     */
+    _countMax?: fhir.FhirElementArgs;
     /**
      * For some events the duration is part of the definition of the event (e.g. IV infusions, where the duration is implicit in the specified quantity and rate). For others, it's part of the timing specification (e.g. exercise).
      */
     duration?: fhir.FhirDecimal | number | undefined;
     /**
+     * Extended properties for primitive element: Timing.repeat.duration
+     */
+    _duration?: fhir.FhirElementArgs;
+    /**
      * For some events the duration is part of the definition of the event (e.g. IV infusions, where the duration is implicit in the specified quantity and rate). For others, it's part of the timing specification (e.g. exercise).
      */
     durationMax?: fhir.FhirDecimal | number | undefined;
+    /**
+     * Extended properties for primitive element: Timing.repeat.durationMax
+     */
+    _durationMax?: fhir.FhirElementArgs;
     /**
      * The units of time for the duration, in UCUM units.
      */
     durationUnit?: fhir.FhirCode<UnitsOfTimeCodeType> | string | undefined;
     /**
+     * Extended properties for primitive element: Timing.repeat.durationUnit
+     */
+    _durationUnit?: fhir.FhirElementArgs;
+    /**
      * The number of times to repeat the action within the specified period. If frequencyMax is present, this element indicates the lower bound of the allowed range of the frequency.
      */
     frequency?: fhir.FhirPositiveInt | number | undefined;
+    /**
+     * Extended properties for primitive element: Timing.repeat.frequency
+     */
+    _frequency?: fhir.FhirElementArgs;
     /**
      * If present, indicates that the frequency is a range - so to repeat between [frequency] and [frequencyMax] times within the period or period range.
      */
     frequencyMax?: fhir.FhirPositiveInt | number | undefined;
     /**
+     * Extended properties for primitive element: Timing.repeat.frequencyMax
+     */
+    _frequencyMax?: fhir.FhirElementArgs;
+    /**
      * Indicates the duration of time over which repetitions are to occur; e.g. to express "3 times per day", 3 would be the frequency and "1 day" would be the period. If periodMax is present, this element indicates the lower bound of the allowed range of the period length.
      */
     period?: fhir.FhirDecimal | number | undefined;
+    /**
+     * Extended properties for primitive element: Timing.repeat.period
+     */
+    _period?: fhir.FhirElementArgs;
     /**
      * If present, indicates that the period is a range from [period] to [periodMax], allowing expressing concepts such as "do this once every 3-5 days.
      */
     periodMax?: fhir.FhirDecimal | number | undefined;
     /**
+     * Extended properties for primitive element: Timing.repeat.periodMax
+     */
+    _periodMax?: fhir.FhirElementArgs;
+    /**
      * The units of time for the period in UCUM units.
      */
     periodUnit?: fhir.FhirCode<UnitsOfTimeCodeType> | string | undefined;
+    /**
+     * Extended properties for primitive element: Timing.repeat.periodUnit
+     */
+    _periodUnit?: fhir.FhirElementArgs;
     /**
      * If no days are specified, the action is assumed to happen every day as otherwise specified. The elements frequency and period cannot be used as well as dayOfWeek.
      */
     dayOfWeek?: fhir.FhirCode<DaysOfWeekCodeType>[] | string[] | undefined;
     /**
+     * Extended properties for primitive element: Timing.repeat.dayOfWeek
+     */
+    _dayOfWeek?: (fhir.FhirElementArgs | null)[];
+    /**
      * When time of day is specified, it is inferred that the action happens every day (as filtered by dayofWeek) on the specified times. The elements when, frequency and period cannot be used as well as timeOfDay.
      */
     timeOfDay?: fhir.FhirTime[] | string[] | undefined;
+    /**
+     * Extended properties for primitive element: Timing.repeat.timeOfDay
+     */
+    _timeOfDay?: (fhir.FhirElementArgs | null)[];
     /**
      * When more than one event is listed, the event is tied to the union of the specified events.
      */
     when?: fhir.FhirCode[] | string[] | undefined;
     /**
+     * Extended properties for primitive element: Timing.repeat.when
+     */
+    _when?: (fhir.FhirElementArgs | null)[];
+    /**
      * The number of minutes from the event. If the event code does not indicate whether the minutes is before or after the event, then the offset is assumed to be after the event.
      */
     offset?: fhir.FhirUnsignedInt | number | undefined;
+    /**
+     * Extended properties for primitive element: Timing.repeat.offset
+     */
+    _offset?: fhir.FhirElementArgs;
 }
 /**
  * A set of rules that describe when the event is scheduled.
@@ -214,9 +270,7 @@ export declare class TimingRepeat extends fhir.FhirElement {
         readonly EarlyMorning: "MORN.early";
         readonly LateMorning: "MORN.late";
         readonly Night: "NIGHT";
-        readonly Noon: "NOON"; /**
-         * The number of times to repeat the action within the specified period. If frequencyMax is present, this element indicates the lower bound of the allowed range of the frequency.
-         */
+        readonly Noon: "NOON";
         readonly PC: "PC";
         readonly PCD: "PCD";
         readonly PCM: "PCM";
@@ -237,6 +291,10 @@ export interface TimingArgs extends fhir.BackboneElementArgs {
      * Identifies specific times when the event occurs.
      */
     event?: fhir.FhirDateTime[] | string[] | undefined;
+    /**
+     * Extended properties for primitive element: Timing.event
+     */
+    _event?: (fhir.FhirElementArgs | null)[];
     /**
      * A set of rules that describe when the event is scheduled.
      */

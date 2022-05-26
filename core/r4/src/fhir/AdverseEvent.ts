@@ -50,6 +50,10 @@ export interface AdverseEventSuspectEntityCausalityArgs extends fhir.BackboneEle
    */
   productRelatedness?: fhir.FhirString|string|undefined;
   /**
+   * Extended properties for primitive element: AdverseEvent.suspectEntity.causality.productRelatedness
+   */
+  _productRelatedness?:fhir.FhirElementArgs;
+  /**
    * AdverseEvent.suspectEntity.causalityAuthor.
    */
   author?: fhir.ReferenceArgs|undefined;
@@ -90,6 +94,10 @@ export class AdverseEventSuspectEntityCausality extends fhir.BackboneElement {
     super(source, options);
     if (source['assessment']) { this.assessment = new fhir.CodeableConcept(source.assessment); }
     if (source['productRelatedness']) { this.productRelatedness = new fhir.FhirString({value: source.productRelatedness}); }
+    if (source['_productRelatedness']) {
+      if (this.productRelatedness) { this.productRelatedness.addExtendedProperties(source._productRelatedness!); }
+      else { this.productRelatedness = new fhir.FhirString(source._productRelatedness as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['author']) { this.author = new fhir.Reference(source.author); }
     if (source['method']) { this.method = new fhir.CodeableConcept(source.method); }
   }
@@ -175,6 +183,10 @@ export interface AdverseEventArgs extends fhir.DomainResourceArgs {
    */
   actuality: fhir.FhirCode<AdverseEventActualityCodeType>|string|undefined;
   /**
+   * Extended properties for primitive element: AdverseEvent.actuality
+   */
+  _actuality?:fhir.FhirElementArgs;
+  /**
    * The overall type of event, intended for search and filtering purposes.
    */
   category?: fhir.CodeableConceptArgs[]|undefined;
@@ -195,13 +207,25 @@ export interface AdverseEventArgs extends fhir.DomainResourceArgs {
    */
   date?: fhir.FhirDateTime|string|undefined;
   /**
+   * Extended properties for primitive element: AdverseEvent.date
+   */
+  _date?:fhir.FhirElementArgs;
+  /**
    * Estimated or actual date the AdverseEvent began, in the opinion of the reporter.
    */
   detected?: fhir.FhirDateTime|string|undefined;
   /**
+   * Extended properties for primitive element: AdverseEvent.detected
+   */
+  _detected?:fhir.FhirElementArgs;
+  /**
    * The recordedDate represents the date when this particular AdverseEvent record was created in the system, not the date of the most recent update.  The date of the last record modification can be retrieved from the resource metadata.
    */
   recordedDate?: fhir.FhirDateTime|string|undefined;
+  /**
+   * Extended properties for primitive element: AdverseEvent.recordedDate
+   */
+  _recordedDate?:fhir.FhirElementArgs;
   /**
    * Includes information about the reaction that occurred as a result of exposure to a substance (for example, a drug or a chemical).
    */
@@ -349,6 +373,10 @@ export class AdverseEvent extends fhir.DomainResource {
     if (source['identifier']) { this.identifier = new fhir.Identifier(source.identifier); }
     if (source['actuality']) { this.actuality = new fhir.FhirCode<AdverseEventActualityCodeType>({value: source.actuality}); }
     else { this.actuality = null; }
+    if (source['_actuality']) {
+      if (this.actuality) { this.actuality.addExtendedProperties(source._actuality!); }
+      else { this.actuality = new fhir.FhirCode<AdverseEventActualityCodeType>(source._actuality as Partial<fhir.FhirCode>); }
+    }
     if (source['category']) { this.category = source.category.map((x) => new fhir.CodeableConcept(x)); }
     else { this.category = []; }
     if (source['event']) { this.event = new fhir.CodeableConcept(source.event); }
@@ -356,8 +384,20 @@ export class AdverseEvent extends fhir.DomainResource {
     else { this.subject = null; }
     if (source['encounter']) { this.encounter = new fhir.Reference(source.encounter); }
     if (source['date']) { this.date = new fhir.FhirDateTime({value: source.date}); }
+    if (source['_date']) {
+      if (this.date) { this.date.addExtendedProperties(source._date!); }
+      else { this.date = new fhir.FhirDateTime(source._date as Partial<fhir.FhirDateTimeArgs>); }
+    }
     if (source['detected']) { this.detected = new fhir.FhirDateTime({value: source.detected}); }
+    if (source['_detected']) {
+      if (this.detected) { this.detected.addExtendedProperties(source._detected!); }
+      else { this.detected = new fhir.FhirDateTime(source._detected as Partial<fhir.FhirDateTimeArgs>); }
+    }
     if (source['recordedDate']) { this.recordedDate = new fhir.FhirDateTime({value: source.recordedDate}); }
+    if (source['_recordedDate']) {
+      if (this.recordedDate) { this.recordedDate.addExtendedProperties(source._recordedDate!); }
+      else { this.recordedDate = new fhir.FhirDateTime(source._recordedDate as Partial<fhir.FhirDateTimeArgs>); }
+    }
     if (source['resultingCondition']) { this.resultingCondition = source.resultingCondition.map((x) => new fhir.Reference(x)); }
     else { this.resultingCondition = []; }
     if (source['location']) { this.location = new fhir.Reference(source.location); }

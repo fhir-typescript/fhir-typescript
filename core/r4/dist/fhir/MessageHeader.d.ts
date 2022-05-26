@@ -1,5 +1,5 @@
 import * as fhir from '../fhir.js';
-import { ResponseCodeCodeType } from '../fhirValueSets/ResponseCodeCodes.js';
+import { ResponseCodeType } from '../fhirValueSets/ResponseCodes.js';
 /**
  * Valid arguments for the MessageHeaderDestination type.
  */
@@ -9,6 +9,10 @@ export interface MessageHeaderDestinationArgs extends fhir.BackboneElementArgs {
      */
     name?: fhir.FhirString | string | undefined;
     /**
+     * Extended properties for primitive element: MessageHeader.destination.name
+     */
+    _name?: fhir.FhirElementArgs;
+    /**
      * Identifies the target end system in situations where the initial message transmission is to an intermediary system.
      */
     target?: fhir.ReferenceArgs | undefined;
@@ -16,6 +20,10 @@ export interface MessageHeaderDestinationArgs extends fhir.BackboneElementArgs {
      * The id may be a non-resolvable URI for systems that do not use standard network-based addresses.
      */
     endpoint: fhir.FhirUrl | string | undefined;
+    /**
+     * Extended properties for primitive element: MessageHeader.destination.endpoint
+     */
+    _endpoint?: fhir.FhirElementArgs;
     /**
      * Allows data conveyed by a message to be addressed to a particular person or department when routing to a specific application isn't sufficient.
      */
@@ -63,13 +71,25 @@ export interface MessageHeaderSourceArgs extends fhir.BackboneElementArgs {
      */
     name?: fhir.FhirString | string | undefined;
     /**
+     * Extended properties for primitive element: MessageHeader.source.name
+     */
+    _name?: fhir.FhirElementArgs;
+    /**
      * May include configuration or other information useful in debugging.
      */
     software?: fhir.FhirString | string | undefined;
     /**
+     * Extended properties for primitive element: MessageHeader.source.software
+     */
+    _software?: fhir.FhirElementArgs;
+    /**
      * Can convey versions of multiple systems in situations where a message passes through multiple hands.
      */
     version?: fhir.FhirString | string | undefined;
+    /**
+     * Extended properties for primitive element: MessageHeader.source.version
+     */
+    _version?: fhir.FhirElementArgs;
     /**
      * An e-mail, phone, website or other contact point to use to resolve issues with message communications.
      */
@@ -78,6 +98,10 @@ export interface MessageHeaderSourceArgs extends fhir.BackboneElementArgs {
      * The id may be a non-resolvable URI for systems that do not use standard network-based addresses.
      */
     endpoint: fhir.FhirUrl | string | undefined;
+    /**
+     * Extended properties for primitive element: MessageHeader.source.endpoint
+     */
+    _endpoint?: fhir.FhirElementArgs;
 }
 /**
  * The source application from which this message originated.
@@ -125,9 +149,17 @@ export interface MessageHeaderResponseArgs extends fhir.BackboneElementArgs {
      */
     identifier: fhir.FhirId | string | undefined;
     /**
+     * Extended properties for primitive element: MessageHeader.response.identifier
+     */
+    _identifier?: fhir.FhirElementArgs;
+    /**
      * This is a generic response to the request message. Specific data for the response will be found in MessageHeader.focus.
      */
-    code: fhir.FhirCode<ResponseCodeCodeType> | string | undefined;
+    code: fhir.FhirCode<ResponseCodeType> | string | undefined;
+    /**
+     * Extended properties for primitive element: MessageHeader.response.code
+     */
+    _code?: fhir.FhirElementArgs;
     /**
      * This SHALL be contained in the bundle. If any of the issues are errors, the response code SHALL be an error.
      */
@@ -148,7 +180,7 @@ export declare class MessageHeaderResponse extends fhir.BackboneElement {
     /**
      * This is a generic response to the request message. Specific data for the response will be found in MessageHeader.focus.
      */
-    code: fhir.FhirCode<ResponseCodeCodeType> | null;
+    code: fhir.FhirCode<ResponseCodeType> | null;
     /**
      * This SHALL be contained in the bundle. If any of the issues are errors, the response code SHALL be an error.
      */
@@ -230,6 +262,10 @@ export interface MessageHeaderArgs extends fhir.DomainResourceArgs {
      * Permanent link to the MessageDefinition for this message.
      */
     definition?: fhir.FhirCanonical | string | undefined;
+    /**
+     * Extended properties for primitive element: MessageHeader.definition
+     */
+    _definition?: fhir.FhirElementArgs;
 }
 /**
  * The header for a message exchange that is either requesting or responding to an action.  The reference(s) that are the subject of the action as well as other information related to the action are typically transmitted in a bundle in which the MessageHeader resource instance is the first resource in the bundle.

@@ -38,13 +38,25 @@ export interface LocationPositionArgs extends fhir.BackboneElementArgs {
    */
   longitude: fhir.FhirDecimal|number|undefined;
   /**
+   * Extended properties for primitive element: Location.position.longitude
+   */
+  _longitude?:fhir.FhirElementArgs;
+  /**
    * Latitude. The value domain and the interpretation are the same as for the text of the latitude element in KML (see notes below).
    */
   latitude: fhir.FhirDecimal|number|undefined;
   /**
+   * Extended properties for primitive element: Location.position.latitude
+   */
+  _latitude?:fhir.FhirElementArgs;
+  /**
    * Altitude. The value domain and the interpretation are the same as for the text of the altitude element in KML (see notes below).
    */
   altitude?: fhir.FhirDecimal|number|undefined;
+  /**
+   * Extended properties for primitive element: Location.position.altitude
+   */
+  _altitude?:fhir.FhirElementArgs;
 }
 
 /**
@@ -74,9 +86,21 @@ export class LocationPosition extends fhir.BackboneElement {
     super(source, options);
     if (source['longitude']) { this.longitude = new fhir.FhirDecimal({value: source.longitude}); }
     else { this.longitude = null; }
+    if (source['_longitude']) {
+      if (this.longitude) { this.longitude.addExtendedProperties(source._longitude!); }
+      else { this.longitude = new fhir.FhirDecimal(source._longitude as Partial<fhir.FhirDecimalArgs>); }
+    }
     if (source['latitude']) { this.latitude = new fhir.FhirDecimal({value: source.latitude}); }
     else { this.latitude = null; }
+    if (source['_latitude']) {
+      if (this.latitude) { this.latitude.addExtendedProperties(source._latitude!); }
+      else { this.latitude = new fhir.FhirDecimal(source._latitude as Partial<fhir.FhirDecimalArgs>); }
+    }
     if (source['altitude']) { this.altitude = new fhir.FhirDecimal({value: source.altitude}); }
+    if (source['_altitude']) {
+      if (this.altitude) { this.altitude.addExtendedProperties(source._altitude!); }
+      else { this.altitude = new fhir.FhirDecimal(source._altitude as Partial<fhir.FhirDecimalArgs>); }
+    }
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -104,17 +128,33 @@ export interface LocationHoursOfOperationArgs extends fhir.BackboneElementArgs {
    */
   daysOfWeek?: fhir.FhirCode<DaysOfWeekCodeType>[]|string[]|undefined;
   /**
+   * Extended properties for primitive element: Location.hoursOfOperation.daysOfWeek
+   */
+  _daysOfWeek?:(fhir.FhirElementArgs|null)[];
+  /**
    * The Location is open all day.
    */
   allDay?: fhir.FhirBoolean|boolean|undefined;
+  /**
+   * Extended properties for primitive element: Location.hoursOfOperation.allDay
+   */
+  _allDay?:fhir.FhirElementArgs;
   /**
    * Time that the Location opens.
    */
   openingTime?: fhir.FhirTime|string|undefined;
   /**
+   * Extended properties for primitive element: Location.hoursOfOperation.openingTime
+   */
+  _openingTime?:fhir.FhirElementArgs;
+  /**
    * Time that the Location closes.
    */
   closingTime?: fhir.FhirTime|string|undefined;
+  /**
+   * Extended properties for primitive element: Location.hoursOfOperation.closingTime
+   */
+  _closingTime?:fhir.FhirElementArgs;
 }
 
 /**
@@ -149,9 +189,27 @@ export class LocationHoursOfOperation extends fhir.BackboneElement {
     super(source, options);
     if (source['daysOfWeek']) { this.daysOfWeek = source.daysOfWeek.map((x) => new fhir.FhirCode<DaysOfWeekCodeType>({value: x})); }
     else { this.daysOfWeek = []; }
+    if (source['_daysOfWeek']) {
+      source._daysOfWeek.forEach((x,i) => {
+        if (this.daysOfWeek.length >= i) { if (x) { this.daysOfWeek[i].addExtendedProperties(x); } }
+        else { if (x) { this.daysOfWeek.push(new fhir.FhirCode<DaysOfWeekCodeType>(x as Partial<fhir.FhirCode>)); } }
+      });
+    }
     if (source['allDay']) { this.allDay = new fhir.FhirBoolean({value: source.allDay}); }
+    if (source['_allDay']) {
+      if (this.allDay) { this.allDay.addExtendedProperties(source._allDay!); }
+      else { this.allDay = new fhir.FhirBoolean(source._allDay as Partial<fhir.FhirBooleanArgs>); }
+    }
     if (source['openingTime']) { this.openingTime = new fhir.FhirTime({value: source.openingTime}); }
+    if (source['_openingTime']) {
+      if (this.openingTime) { this.openingTime.addExtendedProperties(source._openingTime!); }
+      else { this.openingTime = new fhir.FhirTime(source._openingTime as Partial<fhir.FhirTimeArgs>); }
+    }
     if (source['closingTime']) { this.closingTime = new fhir.FhirTime({value: source.closingTime}); }
+    if (source['_closingTime']) {
+      if (this.closingTime) { this.closingTime.addExtendedProperties(source._closingTime!); }
+      else { this.closingTime = new fhir.FhirTime(source._closingTime as Partial<fhir.FhirTimeArgs>); }
+    }
   }
   /**
    * Required-bound Value Set for daysOfWeek (Location.hoursOfOperation.daysOfWeek)
@@ -195,6 +253,10 @@ export interface LocationArgs extends fhir.DomainResourceArgs {
    */
   status?: fhir.FhirCode<LocationStatusCodeType>|string|undefined;
   /**
+   * Extended properties for primitive element: Location.status
+   */
+  _status?:fhir.FhirElementArgs;
+  /**
    * The operational status covers operation values most relevant to beds (but can also apply to rooms/units/chairs/etc. such as an isolation unit/dialysis chair). This typically covers concepts such as contamination, housekeeping, and other activities like maintenance.
    */
   operationalStatus?: fhir.CodingArgs|undefined;
@@ -203,17 +265,33 @@ export interface LocationArgs extends fhir.DomainResourceArgs {
    */
   name?: fhir.FhirString|string|undefined;
   /**
+   * Extended properties for primitive element: Location.name
+   */
+  _name?:fhir.FhirElementArgs;
+  /**
    * There are no dates associated with the alias/historic names, as this is not intended to track when names were used, but to assist in searching so that older names can still result in identifying the location.
    */
   alias?: fhir.FhirString[]|string[]|undefined;
+  /**
+   * Extended properties for primitive element: Location.alias
+   */
+  _alias?:(fhir.FhirElementArgs|null)[];
   /**
    * Description of the Location, which helps in finding or referencing the place.
    */
   description?: fhir.FhirString|string|undefined;
   /**
+   * Extended properties for primitive element: Location.description
+   */
+  _description?:fhir.FhirElementArgs;
+  /**
    * This is labeled as a modifier because whether or not the location is a class of locations changes how it can be used and understood.
    */
   mode?: fhir.FhirCode<LocationModeCodeType>|string|undefined;
+  /**
+   * Extended properties for primitive element: Location.mode
+   */
+  _mode?:fhir.FhirElementArgs;
   /**
    * Indicates the type of function performed at the location.
    */
@@ -251,6 +329,10 @@ export interface LocationArgs extends fhir.DomainResourceArgs {
    * A description of when the locations opening ours are different to normal, e.g. public holiday availability. Succinctly describing all possible exceptions to normal site availability as detailed in the opening hours Times.
    */
   availabilityExceptions?: fhir.FhirString|string|undefined;
+  /**
+   * Extended properties for primitive element: Location.availabilityExceptions
+   */
+  _availabilityExceptions?:fhir.FhirElementArgs;
   /**
    * Technical endpoints providing access to services operated for the location.
    */
@@ -347,12 +429,34 @@ export class Location extends fhir.DomainResource {
     if (source['identifier']) { this.identifier = source.identifier.map((x) => new fhir.Identifier(x)); }
     else { this.identifier = []; }
     if (source['status']) { this.status = new fhir.FhirCode<LocationStatusCodeType>({value: source.status}); }
+    if (source['_status']) {
+      if (this.status) { this.status.addExtendedProperties(source._status!); }
+      else { this.status = new fhir.FhirCode<LocationStatusCodeType>(source._status as Partial<fhir.FhirCode>); }
+    }
     if (source['operationalStatus']) { this.operationalStatus = new fhir.Coding(source.operationalStatus); }
     if (source['name']) { this.name = new fhir.FhirString({value: source.name}); }
+    if (source['_name']) {
+      if (this.name) { this.name.addExtendedProperties(source._name!); }
+      else { this.name = new fhir.FhirString(source._name as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['alias']) { this.alias = source.alias.map((x) => new fhir.FhirString({value: x})); }
     else { this.alias = []; }
+    if (source['_alias']) {
+      source._alias.forEach((x,i) => {
+        if (this.alias.length >= i) { if (x) { this.alias[i].addExtendedProperties(x); } }
+        else { if (x) { this.alias.push(new fhir.FhirString(x as Partial<fhir.FhirStringArgs>)); } }
+      });
+    }
     if (source['description']) { this.description = new fhir.FhirString({value: source.description}); }
+    if (source['_description']) {
+      if (this.description) { this.description.addExtendedProperties(source._description!); }
+      else { this.description = new fhir.FhirString(source._description as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['mode']) { this.mode = new fhir.FhirCode<LocationModeCodeType>({value: source.mode}); }
+    if (source['_mode']) {
+      if (this.mode) { this.mode.addExtendedProperties(source._mode!); }
+      else { this.mode = new fhir.FhirCode<LocationModeCodeType>(source._mode as Partial<fhir.FhirCode>); }
+    }
     if (source['type']) { this.type = source.type.map((x) => new fhir.CodeableConcept(x)); }
     else { this.type = []; }
     if (source['telecom']) { this.telecom = source.telecom.map((x) => new fhir.ContactPoint(x)); }
@@ -365,6 +469,10 @@ export class Location extends fhir.DomainResource {
     if (source['hoursOfOperation']) { this.hoursOfOperation = source.hoursOfOperation.map((x) => new fhir.LocationHoursOfOperation(x)); }
     else { this.hoursOfOperation = []; }
     if (source['availabilityExceptions']) { this.availabilityExceptions = new fhir.FhirString({value: source.availabilityExceptions}); }
+    if (source['_availabilityExceptions']) {
+      if (this.availabilityExceptions) { this.availabilityExceptions.addExtendedProperties(source._availabilityExceptions!); }
+      else { this.availabilityExceptions = new fhir.FhirString(source._availabilityExceptions as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['endpoint']) { this.endpoint = source.endpoint.map((x) => new fhir.Reference(x)); }
     else { this.endpoint = []; }
   }

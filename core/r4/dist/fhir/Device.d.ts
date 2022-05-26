@@ -12,6 +12,10 @@ export interface DeviceUdiCarrierArgs extends fhir.BackboneElementArgs {
      */
     deviceIdentifier?: fhir.FhirString | string | undefined;
     /**
+     * Extended properties for primitive element: Device.udiCarrier.deviceIdentifier
+     */
+    _deviceIdentifier?: fhir.FhirElementArgs;
+    /**
      * Organization that is charged with issuing UDIs for devices.  For example, the US FDA issuers include :
      * 1) GS1:
      * http://hl7.org/fhir/NamingSystem/gs1-di,
@@ -24,21 +28,41 @@ export interface DeviceUdiCarrierArgs extends fhir.BackboneElementArgs {
      */
     issuer?: fhir.FhirUri | string | undefined;
     /**
+     * Extended properties for primitive element: Device.udiCarrier.issuer
+     */
+    _issuer?: fhir.FhirElementArgs;
+    /**
      * The identity of the authoritative source for UDI generation within a  jurisdiction.  All UDIs are globally unique within a single namespace with the appropriate repository uri as the system.  For example,  UDIs of devices managed in the U.S. by the FDA, the value is  http://hl7.org/fhir/NamingSystem/fda-udi.
      */
     jurisdiction?: fhir.FhirUri | string | undefined;
+    /**
+     * Extended properties for primitive element: Device.udiCarrier.jurisdiction
+     */
+    _jurisdiction?: fhir.FhirElementArgs;
     /**
      * The AIDC form of UDIs should be scanned or otherwise used for the identification of the device whenever possible to minimize errors in records resulting from manual transcriptions. If separate barcodes for DI and PI are present, concatenate the string with DI first and in order of human readable expression on label.
      */
     carrierAIDC?: fhir.FhirBase64Binary | string | undefined;
     /**
+     * Extended properties for primitive element: Device.udiCarrier.carrierAIDC
+     */
+    _carrierAIDC?: fhir.FhirElementArgs;
+    /**
      * If separate barcodes for DI and PI are present, concatenate the string with DI first and in order of human readable expression on label.
      */
     carrierHRF?: fhir.FhirString | string | undefined;
     /**
+     * Extended properties for primitive element: Device.udiCarrier.carrierHRF
+     */
+    _carrierHRF?: fhir.FhirElementArgs;
+    /**
      * A coded entry to indicate how the data was entered.
      */
     entryType?: fhir.FhirCode<UdiEntryTypeCodeType> | string | undefined;
+    /**
+     * Extended properties for primitive element: Device.udiCarrier.entryType
+     */
+    _entryType?: fhir.FhirElementArgs;
 }
 /**
  * UDI may identify an unique instance of a device, or it may only identify the type of the device.  See [UDI mappings](device-mappings.html#udi) for a complete mapping of UDI parts to Device.
@@ -109,10 +133,18 @@ export interface DeviceDeviceNameArgs extends fhir.BackboneElementArgs {
      */
     name: fhir.FhirString | string | undefined;
     /**
+     * Extended properties for primitive element: Device.deviceName.name
+     */
+    _name?: fhir.FhirElementArgs;
+    /**
      * The type of deviceName.
      * UDILabelName | UserFriendlyName | PatientReportedName | ManufactureDeviceName | ModelName.
      */
     type: fhir.FhirCode<DeviceNametypeCodeType> | string | undefined;
+    /**
+     * Extended properties for primitive element: Device.deviceName.type
+     */
+    _type?: fhir.FhirElementArgs;
 }
 /**
  * This represents the manufacturer's name of the device as provided by the device, from a UDI label, or by a person describing the Device.  This typically would be used when a person provides the name(s) or when the device represents one of the names available from DeviceDefinition.
@@ -163,6 +195,10 @@ export interface DeviceSpecializationArgs extends fhir.BackboneElementArgs {
      * The version of the standard that is used to operate and communicate.
      */
     version?: fhir.FhirString | string | undefined;
+    /**
+     * Extended properties for primitive element: Device.specialization.version
+     */
+    _version?: fhir.FhirElementArgs;
 }
 /**
  * The capabilities supported on a  device, the standards to which the device conforms for a particular purpose, and used for the communication.
@@ -205,6 +241,10 @@ export interface DeviceVersionArgs extends fhir.BackboneElementArgs {
      * The version text.
      */
     value: fhir.FhirString | string | undefined;
+    /**
+     * Extended properties for primitive element: Device.version.value
+     */
+    _value?: fhir.FhirElementArgs;
 }
 /**
  * The actual design of the device or software version running on the device.
@@ -306,6 +346,10 @@ export interface DeviceArgs extends fhir.DomainResourceArgs {
      */
     status?: fhir.FhirCode<DeviceStatusCodeType> | string | undefined;
     /**
+     * Extended properties for primitive element: Device.status
+     */
+    _status?: fhir.FhirElementArgs;
+    /**
      * Reason for the dtatus of the Device availability.
      */
     statusReason?: fhir.CodeableConceptArgs[] | undefined;
@@ -314,25 +358,49 @@ export interface DeviceArgs extends fhir.DomainResourceArgs {
      */
     distinctIdentifier?: fhir.FhirString | string | undefined;
     /**
+     * Extended properties for primitive element: Device.distinctIdentifier
+     */
+    _distinctIdentifier?: fhir.FhirElementArgs;
+    /**
      * A name of the manufacturer.
      */
     manufacturer?: fhir.FhirString | string | undefined;
+    /**
+     * Extended properties for primitive element: Device.manufacturer
+     */
+    _manufacturer?: fhir.FhirElementArgs;
     /**
      * The date and time when the device was manufactured.
      */
     manufactureDate?: fhir.FhirDateTime | string | undefined;
     /**
+     * Extended properties for primitive element: Device.manufactureDate
+     */
+    _manufactureDate?: fhir.FhirElementArgs;
+    /**
      * The date and time beyond which this device is no longer valid or should not be used (if applicable).
      */
     expirationDate?: fhir.FhirDateTime | string | undefined;
+    /**
+     * Extended properties for primitive element: Device.expirationDate
+     */
+    _expirationDate?: fhir.FhirElementArgs;
     /**
      * Lot number assigned by the manufacturer.
      */
     lotNumber?: fhir.FhirString | string | undefined;
     /**
+     * Extended properties for primitive element: Device.lotNumber
+     */
+    _lotNumber?: fhir.FhirElementArgs;
+    /**
      * Alphanumeric Maximum 20.
      */
     serialNumber?: fhir.FhirString | string | undefined;
+    /**
+     * Extended properties for primitive element: Device.serialNumber
+     */
+    _serialNumber?: fhir.FhirElementArgs;
     /**
      * This represents the manufacturer's name of the device as provided by the device, from a UDI label, or by a person describing the Device.  This typically would be used when a person provides the name(s) or when the device represents one of the names available from DeviceDefinition.
      */
@@ -342,9 +410,17 @@ export interface DeviceArgs extends fhir.DomainResourceArgs {
      */
     modelNumber?: fhir.FhirString | string | undefined;
     /**
+     * Extended properties for primitive element: Device.modelNumber
+     */
+    _modelNumber?: fhir.FhirElementArgs;
+    /**
      * Alphanumeric Maximum 20.
      */
     partNumber?: fhir.FhirString | string | undefined;
+    /**
+     * Extended properties for primitive element: Device.partNumber
+     */
+    _partNumber?: fhir.FhirElementArgs;
     /**
      * The kind or type of device.
      */
@@ -381,6 +457,10 @@ export interface DeviceArgs extends fhir.DomainResourceArgs {
      * If the device is running a FHIR server, the network address should  be the Base URL from which a conformance statement may be retrieved.
      */
     url?: fhir.FhirUri | string | undefined;
+    /**
+     * Extended properties for primitive element: Device.url
+     */
+    _url?: fhir.FhirElementArgs;
     /**
      * Descriptive information, usage information or implantation information that is not captured in an existing element.
      */

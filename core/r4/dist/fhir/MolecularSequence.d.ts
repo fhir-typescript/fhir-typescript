@@ -17,9 +17,17 @@ export interface MolecularSequenceReferenceSeqArgs extends fhir.BackboneElementA
      */
     genomeBuild?: fhir.FhirString | string | undefined;
     /**
+     * Extended properties for primitive element: MolecularSequence.referenceSeq.genomeBuild
+     */
+    _genomeBuild?: fhir.FhirElementArgs;
+    /**
      * A relative reference to a DNA strand based on gene orientation. The strand that contains the open reading frame of the gene is the "sense" strand, and the opposite complementary strand is the "antisense" strand.
      */
     orientation?: fhir.FhirCode<OrientationTypeCodeType> | string | undefined;
+    /**
+     * Extended properties for primitive element: MolecularSequence.referenceSeq.orientation
+     */
+    _orientation?: fhir.FhirElementArgs;
     /**
      * Reference identifier of reference sequence submitted to NCBI. It must match the type in the MolecularSequence.type field. For example, the prefix, “NG_” identifies reference sequence for genes, “NM_” for messenger RNA transcripts, and “NP_” for amino acid sequences.
      */
@@ -33,17 +41,33 @@ export interface MolecularSequenceReferenceSeqArgs extends fhir.BackboneElementA
      */
     referenceSeqString?: fhir.FhirString | string | undefined;
     /**
+     * Extended properties for primitive element: MolecularSequence.referenceSeq.referenceSeqString
+     */
+    _referenceSeqString?: fhir.FhirElementArgs;
+    /**
      * An absolute reference to a strand. The Watson strand is the strand whose 5'-end is on the short arm of the chromosome, and the Crick strand as the one whose 5'-end is on the long arm.
      */
     strand?: fhir.FhirCode<StrandTypeCodeType> | string | undefined;
+    /**
+     * Extended properties for primitive element: MolecularSequence.referenceSeq.strand
+     */
+    _strand?: fhir.FhirElementArgs;
     /**
      * Start position of the window on the reference sequence. If the coordinate system is either 0-based or 1-based, then start position is inclusive.
      */
     windowStart?: fhir.FhirInteger | number | undefined;
     /**
+     * Extended properties for primitive element: MolecularSequence.referenceSeq.windowStart
+     */
+    _windowStart?: fhir.FhirElementArgs;
+    /**
      * End position of the window on the reference sequence. If the coordinate system is 0-based then end is exclusive and does not include the last position. If the coordinate system is 1-base, then end is inclusive and includes the last position.
      */
     windowEnd?: fhir.FhirInteger | number | undefined;
+    /**
+     * Extended properties for primitive element: MolecularSequence.referenceSeq.windowEnd
+     */
+    _windowEnd?: fhir.FhirElementArgs;
 }
 /**
  * A sequence that is used as a reference to describe variants that are present in a sequence analyzed.
@@ -121,21 +145,41 @@ export interface MolecularSequenceVariantArgs extends fhir.BackboneElementArgs {
      */
     start?: fhir.FhirInteger | number | undefined;
     /**
+     * Extended properties for primitive element: MolecularSequence.variant.start
+     */
+    _start?: fhir.FhirElementArgs;
+    /**
      * End position of the variant on the reference sequence. If the coordinate system is 0-based then end is exclusive and does not include the last position. If the coordinate system is 1-base, then end is inclusive and includes the last position.
      */
     end?: fhir.FhirInteger | number | undefined;
+    /**
+     * Extended properties for primitive element: MolecularSequence.variant.end
+     */
+    _end?: fhir.FhirElementArgs;
     /**
      * An allele is one of a set of coexisting sequence variants of a gene ([SO:0001023](http://www.sequenceontology.org/browser/current_svn/term/SO:0001023)).  Nucleotide(s)/amino acids from start position of sequence to stop position of sequence on the positive (+) strand of the observed  sequence. When the sequence  type is DNA, it should be the sequence on the positive (+) strand. This will lay in the range between variant.start and variant.end.
      */
     observedAllele?: fhir.FhirString | string | undefined;
     /**
+     * Extended properties for primitive element: MolecularSequence.variant.observedAllele
+     */
+    _observedAllele?: fhir.FhirElementArgs;
+    /**
      * An allele is one of a set of coexisting sequence variants of a gene ([SO:0001023](http://www.sequenceontology.org/browser/current_svn/term/SO:0001023)). Nucleotide(s)/amino acids from start position of sequence to stop position of sequence on the positive (+) strand of the reference sequence. When the sequence  type is DNA, it should be the sequence on the positive (+) strand. This will lay in the range between variant.start and variant.end.
      */
     referenceAllele?: fhir.FhirString | string | undefined;
     /**
+     * Extended properties for primitive element: MolecularSequence.variant.referenceAllele
+     */
+    _referenceAllele?: fhir.FhirElementArgs;
+    /**
      * Extended CIGAR string for aligning the sequence with reference bases. See detailed documentation [here](http://support.illumina.com/help/SequencingAnalysisWorkflow/Content/Vault/Informatics/Sequencing_Analysis/CASAVA/swSEQ_mCA_ExtendedCIGARFormat.htm).
      */
     cigar?: fhir.FhirString | string | undefined;
+    /**
+     * Extended properties for primitive element: MolecularSequence.variant.cigar
+     */
+    _cigar?: fhir.FhirElementArgs;
     /**
      * A pointer to an Observation containing variant information.
      */
@@ -191,29 +235,57 @@ export interface MolecularSequenceQualityRocArgs extends fhir.BackboneElementArg
      */
     score?: fhir.FhirInteger[] | number[] | undefined;
     /**
+     * Extended properties for primitive element: MolecularSequence.quality.roc.score
+     */
+    _score?: (fhir.FhirElementArgs | null)[];
+    /**
      * The number of true positives if the GQ score threshold was set to "score" field value.
      */
     numTP?: fhir.FhirInteger[] | number[] | undefined;
+    /**
+     * Extended properties for primitive element: MolecularSequence.quality.roc.numTP
+     */
+    _numTP?: (fhir.FhirElementArgs | null)[];
     /**
      * The number of false positives if the GQ score threshold was set to "score" field value.
      */
     numFP?: fhir.FhirInteger[] | number[] | undefined;
     /**
+     * Extended properties for primitive element: MolecularSequence.quality.roc.numFP
+     */
+    _numFP?: (fhir.FhirElementArgs | null)[];
+    /**
      * The number of false negatives if the GQ score threshold was set to "score" field value.
      */
     numFN?: fhir.FhirInteger[] | number[] | undefined;
+    /**
+     * Extended properties for primitive element: MolecularSequence.quality.roc.numFN
+     */
+    _numFN?: (fhir.FhirElementArgs | null)[];
     /**
      * Calculated precision if the GQ score threshold was set to "score" field value.
      */
     precision?: fhir.FhirDecimal[] | number[] | undefined;
     /**
+     * Extended properties for primitive element: MolecularSequence.quality.roc.precision
+     */
+    _precision?: (fhir.FhirElementArgs | null)[];
+    /**
      * Calculated sensitivity if the GQ score threshold was set to "score" field value.
      */
     sensitivity?: fhir.FhirDecimal[] | number[] | undefined;
     /**
+     * Extended properties for primitive element: MolecularSequence.quality.roc.sensitivity
+     */
+    _sensitivity?: (fhir.FhirElementArgs | null)[];
+    /**
      * Calculated fScore if the GQ score threshold was set to "score" field value.
      */
     fMeasure?: fhir.FhirDecimal[] | number[] | undefined;
+    /**
+     * Extended properties for primitive element: MolecularSequence.quality.roc.fMeasure
+     */
+    _fMeasure?: (fhir.FhirElementArgs | null)[];
 }
 /**
  * Receiver Operator Characteristic (ROC) Curve  to give sensitivity/specificity tradeoff.
@@ -269,6 +341,10 @@ export interface MolecularSequenceQualityArgs extends fhir.BackboneElementArgs {
      */
     type: fhir.FhirCode<QualityTypeCodeType> | string | undefined;
     /**
+     * Extended properties for primitive element: MolecularSequence.quality.type
+     */
+    _type?: fhir.FhirElementArgs;
+    /**
      * Gold standard sequence used for comparing against.
      */
     standardSequence?: fhir.CodeableConceptArgs | undefined;
@@ -277,9 +353,17 @@ export interface MolecularSequenceQualityArgs extends fhir.BackboneElementArgs {
      */
     start?: fhir.FhirInteger | number | undefined;
     /**
+     * Extended properties for primitive element: MolecularSequence.quality.start
+     */
+    _start?: fhir.FhirElementArgs;
+    /**
      * End position of the sequence. If the coordinate system is 0-based then end is exclusive and does not include the last position. If the coordinate system is 1-base, then end is inclusive and includes the last position.
      */
     end?: fhir.FhirInteger | number | undefined;
+    /**
+     * Extended properties for primitive element: MolecularSequence.quality.end
+     */
+    _end?: fhir.FhirElementArgs;
     /**
      * The score of an experimentally derived feature such as a p-value ([SO:0001685](http://www.sequenceontology.org/browser/current_svn/term/SO:0001685)).
      */
@@ -293,33 +377,65 @@ export interface MolecularSequenceQualityArgs extends fhir.BackboneElementArgs {
      */
     truthTP?: fhir.FhirDecimal | number | undefined;
     /**
+     * Extended properties for primitive element: MolecularSequence.quality.truthTP
+     */
+    _truthTP?: fhir.FhirElementArgs;
+    /**
      * True positives, from the perspective of the query data, i.e. the number of sites in the Query Call Set for which there are paths through the Truth Call Set that are consistent with all of the alleles at this site, and for which there is an accurate genotype call for the event.
      */
     queryTP?: fhir.FhirDecimal | number | undefined;
+    /**
+     * Extended properties for primitive element: MolecularSequence.quality.queryTP
+     */
+    _queryTP?: fhir.FhirElementArgs;
     /**
      * False negatives, i.e. the number of sites in the Truth Call Set for which there is no path through the Query Call Set that is consistent with all of the alleles at this site, or sites for which there is an inaccurate genotype call for the event. Sites with correct variant but incorrect genotype are counted here.
      */
     truthFN?: fhir.FhirDecimal | number | undefined;
     /**
+     * Extended properties for primitive element: MolecularSequence.quality.truthFN
+     */
+    _truthFN?: fhir.FhirElementArgs;
+    /**
      * False positives, i.e. the number of sites in the Query Call Set for which there is no path through the Truth Call Set that is consistent with this site. Sites with correct variant but incorrect genotype are counted here.
      */
     queryFP?: fhir.FhirDecimal | number | undefined;
+    /**
+     * Extended properties for primitive element: MolecularSequence.quality.queryFP
+     */
+    _queryFP?: fhir.FhirElementArgs;
     /**
      * The number of false positives where the non-REF alleles in the Truth and Query Call Sets match (i.e. cases where the truth is 1/1 and the query is 0/1 or similar).
      */
     gtFP?: fhir.FhirDecimal | number | undefined;
     /**
+     * Extended properties for primitive element: MolecularSequence.quality.gtFP
+     */
+    _gtFP?: fhir.FhirElementArgs;
+    /**
      * QUERY.TP / (QUERY.TP + QUERY.FP).
      */
     precision?: fhir.FhirDecimal | number | undefined;
+    /**
+     * Extended properties for primitive element: MolecularSequence.quality.precision
+     */
+    _precision?: fhir.FhirElementArgs;
     /**
      * TRUTH.TP / (TRUTH.TP + TRUTH.FN).
      */
     recall?: fhir.FhirDecimal | number | undefined;
     /**
+     * Extended properties for primitive element: MolecularSequence.quality.recall
+     */
+    _recall?: fhir.FhirElementArgs;
+    /**
      * Harmonic mean of Recall and Precision, computed as: 2 * precision * recall / (precision + recall).
      */
     fScore?: fhir.FhirDecimal | number | undefined;
+    /**
+     * Extended properties for primitive element: MolecularSequence.quality.fScore
+     */
+    _fScore?: fhir.FhirElementArgs;
     /**
      * Receiver Operator Characteristic (ROC) Curve  to give sensitivity/specificity tradeoff.
      */
@@ -419,25 +535,49 @@ export interface MolecularSequenceRepositoryArgs extends fhir.BackboneElementArg
      */
     type: fhir.FhirCode<RepositoryTypeCodeType> | string | undefined;
     /**
+     * Extended properties for primitive element: MolecularSequence.repository.type
+     */
+    _type?: fhir.FhirElementArgs;
+    /**
      * URI of an external repository which contains further details about the genetics data.
      */
     url?: fhir.FhirUri | string | undefined;
+    /**
+     * Extended properties for primitive element: MolecularSequence.repository.url
+     */
+    _url?: fhir.FhirElementArgs;
     /**
      * URI of an external repository which contains further details about the genetics data.
      */
     name?: fhir.FhirString | string | undefined;
     /**
+     * Extended properties for primitive element: MolecularSequence.repository.name
+     */
+    _name?: fhir.FhirElementArgs;
+    /**
      * Id of the variant in this external repository. The server will understand how to use this id to call for more info about datasets in external repository.
      */
     datasetId?: fhir.FhirString | string | undefined;
+    /**
+     * Extended properties for primitive element: MolecularSequence.repository.datasetId
+     */
+    _datasetId?: fhir.FhirElementArgs;
     /**
      * Id of the variantset in this external repository. The server will understand how to use this id to call for more info about variantsets in external repository.
      */
     variantsetId?: fhir.FhirString | string | undefined;
     /**
+     * Extended properties for primitive element: MolecularSequence.repository.variantsetId
+     */
+    _variantsetId?: fhir.FhirElementArgs;
+    /**
      * Id of the read in this external repository.
      */
     readsetId?: fhir.FhirString | string | undefined;
+    /**
+     * Extended properties for primitive element: MolecularSequence.repository.readsetId
+     */
+    _readsetId?: fhir.FhirElementArgs;
 }
 /**
  * Configurations of the external repository. The repository shall store target's observedSeq or records related with target's observedSeq.
@@ -499,9 +639,17 @@ export interface MolecularSequenceStructureVariantOuterArgs extends fhir.Backbon
      */
     start?: fhir.FhirInteger | number | undefined;
     /**
+     * Extended properties for primitive element: MolecularSequence.structureVariant.outer.start
+     */
+    _start?: fhir.FhirElementArgs;
+    /**
      * Structural variant outer end. If the coordinate system is 0-based then end is exclusive and does not include the last position. If the coordinate system is 1-base, then end is inclusive and includes the last position.
      */
     end?: fhir.FhirInteger | number | undefined;
+    /**
+     * Extended properties for primitive element: MolecularSequence.structureVariant.outer.end
+     */
+    _end?: fhir.FhirElementArgs;
 }
 /**
  * Structural variant outer.
@@ -537,9 +685,17 @@ export interface MolecularSequenceStructureVariantInnerArgs extends fhir.Backbon
      */
     start?: fhir.FhirInteger | number | undefined;
     /**
+     * Extended properties for primitive element: MolecularSequence.structureVariant.inner.start
+     */
+    _start?: fhir.FhirElementArgs;
+    /**
      * Structural variant inner end. If the coordinate system is 0-based then end is exclusive and does not include the last position. If the coordinate system is 1-base, then end is inclusive and includes the last position.
      */
     end?: fhir.FhirInteger | number | undefined;
+    /**
+     * Extended properties for primitive element: MolecularSequence.structureVariant.inner.end
+     */
+    _end?: fhir.FhirElementArgs;
 }
 /**
  * Structural variant inner.
@@ -579,9 +735,17 @@ export interface MolecularSequenceStructureVariantArgs extends fhir.BackboneElem
      */
     exact?: fhir.FhirBoolean | boolean | undefined;
     /**
+     * Extended properties for primitive element: MolecularSequence.structureVariant.exact
+     */
+    _exact?: fhir.FhirElementArgs;
+    /**
      * Length of the variant chromosome.
      */
     length?: fhir.FhirInteger | number | undefined;
+    /**
+     * Extended properties for primitive element: MolecularSequence.structureVariant.length
+     */
+    _length?: fhir.FhirElementArgs;
     /**
      * Structural variant outer.
      */
@@ -645,9 +809,17 @@ export interface MolecularSequenceArgs extends fhir.DomainResourceArgs {
      */
     type?: fhir.FhirCode<SequenceTypeCodeType> | string | undefined;
     /**
+     * Extended properties for primitive element: MolecularSequence.type
+     */
+    _type?: fhir.FhirElementArgs;
+    /**
      * Whether the sequence is numbered starting at 0 (0-based numbering or coordinates, inclusive start, exclusive end) or starting at 1 (1-based numbering, inclusive start and inclusive end).
      */
     coordinateSystem: fhir.FhirInteger | number | undefined;
+    /**
+     * Extended properties for primitive element: MolecularSequence.coordinateSystem
+     */
+    _coordinateSystem?: fhir.FhirElementArgs;
     /**
      * The patient whose sequencing results are described by this resource.
      */
@@ -681,6 +853,10 @@ export interface MolecularSequenceArgs extends fhir.DomainResourceArgs {
      */
     observedSeq?: fhir.FhirString | string | undefined;
     /**
+     * Extended properties for primitive element: MolecularSequence.observedSeq
+     */
+    _observedSeq?: fhir.FhirElementArgs;
+    /**
      * An experimental feature attribute that defines the quality of the feature in a quantitative way, such as a phred quality score ([SO:0001686](http://www.sequenceontology.org/browser/current_svn/term/SO:0001686)).
      */
     quality?: fhir.MolecularSequenceQualityArgs[] | undefined;
@@ -688,6 +864,10 @@ export interface MolecularSequenceArgs extends fhir.DomainResourceArgs {
      * Coverage (read depth or depth) is the average number of reads representing a given nucleotide in the reconstructed sequence.
      */
     readCoverage?: fhir.FhirInteger | number | undefined;
+    /**
+     * Extended properties for primitive element: MolecularSequence.readCoverage
+     */
+    _readCoverage?: fhir.FhirElementArgs;
     /**
      * Configurations of the external repository. The repository shall store target's observedSeq or records related with target's observedSeq.
      */

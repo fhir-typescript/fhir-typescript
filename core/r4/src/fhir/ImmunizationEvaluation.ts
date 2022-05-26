@@ -38,6 +38,10 @@ export interface ImmunizationEvaluationArgs extends fhir.DomainResourceArgs {
    */
   status: fhir.FhirCode<ImmunizationEvaluationStatusCodeType>|string|undefined;
   /**
+   * Extended properties for primitive element: ImmunizationEvaluation.status
+   */
+  _status?:fhir.FhirElementArgs;
+  /**
    * The individual for whom the evaluation is being done.
    */
   patient: fhir.ReferenceArgs|null;
@@ -45,6 +49,10 @@ export interface ImmunizationEvaluationArgs extends fhir.DomainResourceArgs {
    * The date the evaluation of the vaccine administration event was performed.
    */
   date?: fhir.FhirDateTime|string|undefined;
+  /**
+   * Extended properties for primitive element: ImmunizationEvaluation.date
+   */
+  _date?:fhir.FhirElementArgs;
   /**
    * Indicates the authority who published the protocol (e.g. ACIP).
    */
@@ -70,9 +78,17 @@ export interface ImmunizationEvaluationArgs extends fhir.DomainResourceArgs {
    */
   description?: fhir.FhirString|string|undefined;
   /**
+   * Extended properties for primitive element: ImmunizationEvaluation.description
+   */
+  _description?:fhir.FhirElementArgs;
+  /**
    * One possible path to achieve presumed immunity against a disease - within the context of an authority.
    */
   series?: fhir.FhirString|string|undefined;
+  /**
+   * Extended properties for primitive element: ImmunizationEvaluation.series
+   */
+  _series?:fhir.FhirElementArgs;
   /**
    * The use of an integer is preferred if known. A string should only be used in cases where an integer is not available (such as when documenting a recurring booster dose).
    */
@@ -181,9 +197,17 @@ export class ImmunizationEvaluation extends fhir.DomainResource {
     else { this.identifier = []; }
     if (source['status']) { this.status = new fhir.FhirCode<ImmunizationEvaluationStatusCodeType>({value: source.status}); }
     else { this.status = null; }
+    if (source['_status']) {
+      if (this.status) { this.status.addExtendedProperties(source._status!); }
+      else { this.status = new fhir.FhirCode<ImmunizationEvaluationStatusCodeType>(source._status as Partial<fhir.FhirCode>); }
+    }
     if (source['patient']) { this.patient = new fhir.Reference(source.patient); }
     else { this.patient = null; }
     if (source['date']) { this.date = new fhir.FhirDateTime({value: source.date}); }
+    if (source['_date']) {
+      if (this.date) { this.date.addExtendedProperties(source._date!); }
+      else { this.date = new fhir.FhirDateTime(source._date as Partial<fhir.FhirDateTimeArgs>); }
+    }
     if (source['authority']) { this.authority = new fhir.Reference(source.authority); }
     if (source['targetDisease']) { this.targetDisease = new fhir.CodeableConcept(source.targetDisease); }
     else { this.targetDisease = null; }
@@ -194,7 +218,15 @@ export class ImmunizationEvaluation extends fhir.DomainResource {
     if (source['doseStatusReason']) { this.doseStatusReason = source.doseStatusReason.map((x) => new fhir.CodeableConcept(x)); }
     else { this.doseStatusReason = []; }
     if (source['description']) { this.description = new fhir.FhirString({value: source.description}); }
+    if (source['_description']) {
+      if (this.description) { this.description.addExtendedProperties(source._description!); }
+      else { this.description = new fhir.FhirString(source._description as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['series']) { this.series = new fhir.FhirString({value: source.series}); }
+    if (source['_series']) {
+      if (this.series) { this.series.addExtendedProperties(source._series!); }
+      else { this.series = new fhir.FhirString(source._series as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['doseNumber']) { this.doseNumber = source.doseNumber; }
     else if (source['doseNumberPositiveInt']) { this.doseNumber = new fhir.FhirPositiveInt({value: source.doseNumberPositiveInt}); }
     else if (source['doseNumberString']) { this.doseNumber = new fhir.FhirString({value: source.doseNumberString}); }

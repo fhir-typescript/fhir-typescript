@@ -26,17 +26,33 @@ export interface ExampleScenarioActorArgs extends fhir.BackboneElementArgs {
    */
   actorId: fhir.FhirString|string|undefined;
   /**
+   * Extended properties for primitive element: ExampleScenario.actor.actorId
+   */
+  _actorId?:fhir.FhirElementArgs;
+  /**
    * The type of actor - person or system.
    */
   type: fhir.FhirCode<ExamplescenarioActorTypeCodeType>|string|undefined;
+  /**
+   * Extended properties for primitive element: ExampleScenario.actor.type
+   */
+  _type?:fhir.FhirElementArgs;
   /**
    * Cardinality: is name and description 1..1?
    */
   name?: fhir.FhirString|string|undefined;
   /**
+   * Extended properties for primitive element: ExampleScenario.actor.name
+   */
+  _name?:fhir.FhirElementArgs;
+  /**
    * Cardinality: is name and description 1..1?
    */
   description?: fhir.FhirMarkdown|string|undefined;
+  /**
+   * Extended properties for primitive element: ExampleScenario.actor.description
+   */
+  _description?:fhir.FhirElementArgs;
 }
 
 /**
@@ -70,10 +86,26 @@ export class ExampleScenarioActor extends fhir.BackboneElement {
     super(source, options);
     if (source['actorId']) { this.actorId = new fhir.FhirString({value: source.actorId}); }
     else { this.actorId = null; }
+    if (source['_actorId']) {
+      if (this.actorId) { this.actorId.addExtendedProperties(source._actorId!); }
+      else { this.actorId = new fhir.FhirString(source._actorId as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['type']) { this.type = new fhir.FhirCode<ExamplescenarioActorTypeCodeType>({value: source.type}); }
     else { this.type = null; }
+    if (source['_type']) {
+      if (this.type) { this.type.addExtendedProperties(source._type!); }
+      else { this.type = new fhir.FhirCode<ExamplescenarioActorTypeCodeType>(source._type as Partial<fhir.FhirCode>); }
+    }
     if (source['name']) { this.name = new fhir.FhirString({value: source.name}); }
+    if (source['_name']) {
+      if (this.name) { this.name.addExtendedProperties(source._name!); }
+      else { this.name = new fhir.FhirString(source._name as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['description']) { this.description = new fhir.FhirMarkdown({value: source.description}); }
+    if (source['_description']) {
+      if (this.description) { this.description.addExtendedProperties(source._description!); }
+      else { this.description = new fhir.FhirMarkdown(source._description as Partial<fhir.FhirMarkdownArgs>); }
+    }
   }
   /**
    * Required-bound Value Set for type (ExampleScenario.actor.type)
@@ -111,9 +143,17 @@ export interface ExampleScenarioInstanceVersionArgs extends fhir.BackboneElement
    */
   versionId: fhir.FhirString|string|undefined;
   /**
+   * Extended properties for primitive element: ExampleScenario.instance.version.versionId
+   */
+  _versionId?:fhir.FhirElementArgs;
+  /**
    * The description of the resource version.
    */
   description: fhir.FhirMarkdown|string|undefined;
+  /**
+   * Extended properties for primitive element: ExampleScenario.instance.version.description
+   */
+  _description?:fhir.FhirElementArgs;
 }
 
 /**
@@ -139,8 +179,16 @@ export class ExampleScenarioInstanceVersion extends fhir.BackboneElement {
     super(source, options);
     if (source['versionId']) { this.versionId = new fhir.FhirString({value: source.versionId}); }
     else { this.versionId = null; }
+    if (source['_versionId']) {
+      if (this.versionId) { this.versionId.addExtendedProperties(source._versionId!); }
+      else { this.versionId = new fhir.FhirString(source._versionId as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['description']) { this.description = new fhir.FhirMarkdown({value: source.description}); }
     else { this.description = null; }
+    if (source['_description']) {
+      if (this.description) { this.description.addExtendedProperties(source._description!); }
+      else { this.description = new fhir.FhirMarkdown(source._description as Partial<fhir.FhirMarkdownArgs>); }
+    }
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -167,9 +215,17 @@ export interface ExampleScenarioInstanceContainedInstanceArgs extends fhir.Backb
    */
   resourceId: fhir.FhirString|string|undefined;
   /**
+   * Extended properties for primitive element: ExampleScenario.instance.containedInstance.resourceId
+   */
+  _resourceId?:fhir.FhirElementArgs;
+  /**
    * A specific version of a resource contained in the instance.
    */
   versionId?: fhir.FhirString|string|undefined;
+  /**
+   * Extended properties for primitive element: ExampleScenario.instance.containedInstance.versionId
+   */
+  _versionId?:fhir.FhirElementArgs;
 }
 
 /**
@@ -195,7 +251,15 @@ export class ExampleScenarioInstanceContainedInstance extends fhir.BackboneEleme
     super(source, options);
     if (source['resourceId']) { this.resourceId = new fhir.FhirString({value: source.resourceId}); }
     else { this.resourceId = null; }
+    if (source['_resourceId']) {
+      if (this.resourceId) { this.resourceId.addExtendedProperties(source._resourceId!); }
+      else { this.resourceId = new fhir.FhirString(source._resourceId as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['versionId']) { this.versionId = new fhir.FhirString({value: source.versionId}); }
+    if (source['_versionId']) {
+      if (this.versionId) { this.versionId.addExtendedProperties(source._versionId!); }
+      else { this.versionId = new fhir.FhirString(source._versionId as Partial<fhir.FhirStringArgs>); }
+    }
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -219,17 +283,33 @@ export interface ExampleScenarioInstanceArgs extends fhir.BackboneElementArgs {
    */
   resourceId: fhir.FhirString|string|undefined;
   /**
+   * Extended properties for primitive element: ExampleScenario.instance.resourceId
+   */
+  _resourceId?:fhir.FhirElementArgs;
+  /**
    * The type of the resource.
    */
   resourceType: fhir.FhirCode|string|undefined;
+  /**
+   * Extended properties for primitive element: ExampleScenario.instance.resourceType
+   */
+  _resourceType?:fhir.FhirElementArgs;
   /**
    * A short name for the resource instance.
    */
   name?: fhir.FhirString|string|undefined;
   /**
+   * Extended properties for primitive element: ExampleScenario.instance.name
+   */
+  _name?:fhir.FhirElementArgs;
+  /**
    * Human-friendly description of the resource instance.
    */
   description?: fhir.FhirMarkdown|string|undefined;
+  /**
+   * Extended properties for primitive element: ExampleScenario.instance.description
+   */
+  _description?:fhir.FhirElementArgs;
   /**
    * A specific version of the resource.
    */
@@ -279,10 +359,26 @@ export class ExampleScenarioInstance extends fhir.BackboneElement {
     super(source, options);
     if (source['resourceId']) { this.resourceId = new fhir.FhirString({value: source.resourceId}); }
     else { this.resourceId = null; }
+    if (source['_resourceId']) {
+      if (this.resourceId) { this.resourceId.addExtendedProperties(source._resourceId!); }
+      else { this.resourceId = new fhir.FhirString(source._resourceId as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['resourceType']) { this.resourceType = new fhir.FhirCode({value: source.resourceType}); }
     else { this.resourceType = null; }
+    if (source['_resourceType']) {
+      if (this.resourceType) { this.resourceType.addExtendedProperties(source._resourceType!); }
+      else { this.resourceType = new fhir.FhirCode(source._resourceType as Partial<fhir.FhirCodeArgs>); }
+    }
     if (source['name']) { this.name = new fhir.FhirString({value: source.name}); }
+    if (source['_name']) {
+      if (this.name) { this.name.addExtendedProperties(source._name!); }
+      else { this.name = new fhir.FhirString(source._name as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['description']) { this.description = new fhir.FhirMarkdown({value: source.description}); }
+    if (source['_description']) {
+      if (this.description) { this.description.addExtendedProperties(source._description!); }
+      else { this.description = new fhir.FhirMarkdown(source._description as Partial<fhir.FhirMarkdownArgs>); }
+    }
     if (source['version']) { this.version = source.version.map((x) => new fhir.ExampleScenarioInstanceVersion(x)); }
     else { this.version = []; }
     if (source['containedInstance']) { this.containedInstance = source.containedInstance.map((x) => new fhir.ExampleScenarioInstanceContainedInstance(x)); }
@@ -326,33 +422,65 @@ export interface ExampleScenarioProcessStepOperationArgs extends fhir.BackboneEl
    */
   number: fhir.FhirString|string|undefined;
   /**
+   * Extended properties for primitive element: ExampleScenario.process.step.operation.number
+   */
+  _number?:fhir.FhirElementArgs;
+  /**
    * The type of operation - CRUD.
    */
   type?: fhir.FhirString|string|undefined;
+  /**
+   * Extended properties for primitive element: ExampleScenario.process.step.operation.type
+   */
+  _type?:fhir.FhirElementArgs;
   /**
    * The human-friendly name of the interaction.
    */
   name?: fhir.FhirString|string|undefined;
   /**
+   * Extended properties for primitive element: ExampleScenario.process.step.operation.name
+   */
+  _name?:fhir.FhirElementArgs;
+  /**
    * Who starts the transaction.
    */
   initiator?: fhir.FhirString|string|undefined;
+  /**
+   * Extended properties for primitive element: ExampleScenario.process.step.operation.initiator
+   */
+  _initiator?:fhir.FhirElementArgs;
   /**
    * Who receives the transaction.
    */
   receiver?: fhir.FhirString|string|undefined;
   /**
+   * Extended properties for primitive element: ExampleScenario.process.step.operation.receiver
+   */
+  _receiver?:fhir.FhirElementArgs;
+  /**
    * A comment to be inserted in the diagram.
    */
   description?: fhir.FhirMarkdown|string|undefined;
+  /**
+   * Extended properties for primitive element: ExampleScenario.process.step.operation.description
+   */
+  _description?:fhir.FhirElementArgs;
   /**
    * Whether the initiator is deactivated right after the transaction.
    */
   initiatorActive?: fhir.FhirBoolean|boolean|undefined;
   /**
+   * Extended properties for primitive element: ExampleScenario.process.step.operation.initiatorActive
+   */
+  _initiatorActive?:fhir.FhirElementArgs;
+  /**
    * Whether the receiver is deactivated right after the transaction.
    */
   receiverActive?: fhir.FhirBoolean|boolean|undefined;
+  /**
+   * Extended properties for primitive element: ExampleScenario.process.step.operation.receiverActive
+   */
+  _receiverActive?:fhir.FhirElementArgs;
   /**
    * Each resource instance used by the initiator.
    */
@@ -418,13 +546,45 @@ export class ExampleScenarioProcessStepOperation extends fhir.BackboneElement {
     super(source, options);
     if (source['number']) { this.number = new fhir.FhirString({value: source.number}); }
     else { this.number = null; }
+    if (source['_number']) {
+      if (this.number) { this.number.addExtendedProperties(source._number!); }
+      else { this.number = new fhir.FhirString(source._number as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['type']) { this.type = new fhir.FhirString({value: source.type}); }
+    if (source['_type']) {
+      if (this.type) { this.type.addExtendedProperties(source._type!); }
+      else { this.type = new fhir.FhirString(source._type as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['name']) { this.name = new fhir.FhirString({value: source.name}); }
+    if (source['_name']) {
+      if (this.name) { this.name.addExtendedProperties(source._name!); }
+      else { this.name = new fhir.FhirString(source._name as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['initiator']) { this.initiator = new fhir.FhirString({value: source.initiator}); }
+    if (source['_initiator']) {
+      if (this.initiator) { this.initiator.addExtendedProperties(source._initiator!); }
+      else { this.initiator = new fhir.FhirString(source._initiator as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['receiver']) { this.receiver = new fhir.FhirString({value: source.receiver}); }
+    if (source['_receiver']) {
+      if (this.receiver) { this.receiver.addExtendedProperties(source._receiver!); }
+      else { this.receiver = new fhir.FhirString(source._receiver as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['description']) { this.description = new fhir.FhirMarkdown({value: source.description}); }
+    if (source['_description']) {
+      if (this.description) { this.description.addExtendedProperties(source._description!); }
+      else { this.description = new fhir.FhirMarkdown(source._description as Partial<fhir.FhirMarkdownArgs>); }
+    }
     if (source['initiatorActive']) { this.initiatorActive = new fhir.FhirBoolean({value: source.initiatorActive}); }
+    if (source['_initiatorActive']) {
+      if (this.initiatorActive) { this.initiatorActive.addExtendedProperties(source._initiatorActive!); }
+      else { this.initiatorActive = new fhir.FhirBoolean(source._initiatorActive as Partial<fhir.FhirBooleanArgs>); }
+    }
     if (source['receiverActive']) { this.receiverActive = new fhir.FhirBoolean({value: source.receiverActive}); }
+    if (source['_receiverActive']) {
+      if (this.receiverActive) { this.receiverActive.addExtendedProperties(source._receiverActive!); }
+      else { this.receiverActive = new fhir.FhirBoolean(source._receiverActive as Partial<fhir.FhirBooleanArgs>); }
+    }
     if (source['request']) { this.request = new fhir.ExampleScenarioInstanceContainedInstance(source.request); }
     if (source['response']) { this.response = new fhir.ExampleScenarioInstanceContainedInstance(source.response); }
   }
@@ -458,9 +618,17 @@ export interface ExampleScenarioProcessStepAlternativeArgs extends fhir.Backbone
    */
   title: fhir.FhirString|string|undefined;
   /**
+   * Extended properties for primitive element: ExampleScenario.process.step.alternative.title
+   */
+  _title?:fhir.FhirElementArgs;
+  /**
    * A human-readable description of the alternative explaining when the alternative should occur rather than the base step.
    */
   description?: fhir.FhirMarkdown|string|undefined;
+  /**
+   * Extended properties for primitive element: ExampleScenario.process.step.alternative.description
+   */
+  _description?:fhir.FhirElementArgs;
   /**
    * What happens in each alternative option.
    */
@@ -494,7 +662,15 @@ export class ExampleScenarioProcessStepAlternative extends fhir.BackboneElement 
     super(source, options);
     if (source['title']) { this.title = new fhir.FhirString({value: source.title}); }
     else { this.title = null; }
+    if (source['_title']) {
+      if (this.title) { this.title.addExtendedProperties(source._title!); }
+      else { this.title = new fhir.FhirString(source._title as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['description']) { this.description = new fhir.FhirMarkdown({value: source.description}); }
+    if (source['_description']) {
+      if (this.description) { this.description.addExtendedProperties(source._description!); }
+      else { this.description = new fhir.FhirMarkdown(source._description as Partial<fhir.FhirMarkdownArgs>); }
+    }
     if (source['step']) { this.step = source.step.map((x) => new fhir.ExampleScenarioProcessStep(x)); }
     else { this.step = []; }
   }
@@ -524,6 +700,10 @@ export interface ExampleScenarioProcessStepArgs extends fhir.BackboneElementArgs
    * If there is a pause in the flow.
    */
   pause?: fhir.FhirBoolean|boolean|undefined;
+  /**
+   * Extended properties for primitive element: ExampleScenario.process.step.pause
+   */
+  _pause?:fhir.FhirElementArgs;
   /**
    * Each interaction or action.
    */
@@ -566,6 +746,10 @@ export class ExampleScenarioProcessStep extends fhir.BackboneElement {
     if (source['process']) { this.process = source.process.map((x) => new fhir.ExampleScenarioProcess(x)); }
     else { this.process = []; }
     if (source['pause']) { this.pause = new fhir.FhirBoolean({value: source.pause}); }
+    if (source['_pause']) {
+      if (this.pause) { this.pause.addExtendedProperties(source._pause!); }
+      else { this.pause = new fhir.FhirBoolean(source._pause as Partial<fhir.FhirBooleanArgs>); }
+    }
     if (source['operation']) { this.operation = new fhir.ExampleScenarioProcessStepOperation(source.operation); }
     if (source['alternative']) { this.alternative = source.alternative.map((x) => new fhir.ExampleScenarioProcessStepAlternative(x)); }
     else { this.alternative = []; }
@@ -591,17 +775,33 @@ export interface ExampleScenarioProcessArgs extends fhir.BackboneElementArgs {
    */
   title: fhir.FhirString|string|undefined;
   /**
+   * Extended properties for primitive element: ExampleScenario.process.title
+   */
+  _title?:fhir.FhirElementArgs;
+  /**
    * A longer description of the group of operations.
    */
   description?: fhir.FhirMarkdown|string|undefined;
+  /**
+   * Extended properties for primitive element: ExampleScenario.process.description
+   */
+  _description?:fhir.FhirElementArgs;
   /**
    * Description of initial status before the process starts.
    */
   preConditions?: fhir.FhirMarkdown|string|undefined;
   /**
+   * Extended properties for primitive element: ExampleScenario.process.preConditions
+   */
+  _preConditions?:fhir.FhirElementArgs;
+  /**
    * Description of final status after the process ends.
    */
   postConditions?: fhir.FhirMarkdown|string|undefined;
+  /**
+   * Extended properties for primitive element: ExampleScenario.process.postConditions
+   */
+  _postConditions?:fhir.FhirElementArgs;
   /**
    * Each step of the process.
    */
@@ -643,9 +843,25 @@ export class ExampleScenarioProcess extends fhir.BackboneElement {
     super(source, options);
     if (source['title']) { this.title = new fhir.FhirString({value: source.title}); }
     else { this.title = null; }
+    if (source['_title']) {
+      if (this.title) { this.title.addExtendedProperties(source._title!); }
+      else { this.title = new fhir.FhirString(source._title as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['description']) { this.description = new fhir.FhirMarkdown({value: source.description}); }
+    if (source['_description']) {
+      if (this.description) { this.description.addExtendedProperties(source._description!); }
+      else { this.description = new fhir.FhirMarkdown(source._description as Partial<fhir.FhirMarkdownArgs>); }
+    }
     if (source['preConditions']) { this.preConditions = new fhir.FhirMarkdown({value: source.preConditions}); }
+    if (source['_preConditions']) {
+      if (this.preConditions) { this.preConditions.addExtendedProperties(source._preConditions!); }
+      else { this.preConditions = new fhir.FhirMarkdown(source._preConditions as Partial<fhir.FhirMarkdownArgs>); }
+    }
     if (source['postConditions']) { this.postConditions = new fhir.FhirMarkdown({value: source.postConditions}); }
+    if (source['_postConditions']) {
+      if (this.postConditions) { this.postConditions.addExtendedProperties(source._postConditions!); }
+      else { this.postConditions = new fhir.FhirMarkdown(source._postConditions as Partial<fhir.FhirMarkdownArgs>); }
+    }
     if (source['step']) { this.step = source.step.map((x) => new fhir.ExampleScenarioProcessStep(x)); }
     else { this.step = []; }
   }
@@ -680,6 +896,10 @@ export interface ExampleScenarioArgs extends fhir.DomainResourceArgs {
    */
   url?: fhir.FhirUri|string|undefined;
   /**
+   * Extended properties for primitive element: ExampleScenario.url
+   */
+  _url?:fhir.FhirElementArgs;
+  /**
    * Typically, this is used for identifiers that can go in an HL7 V3 II (instance identifier) data type, and can then identify this example scenario outside of FHIR, where it is not possible to use the logical URI.
    */
   identifier?: fhir.IdentifierArgs[]|undefined;
@@ -688,25 +908,49 @@ export interface ExampleScenarioArgs extends fhir.DomainResourceArgs {
    */
   version?: fhir.FhirString|string|undefined;
   /**
+   * Extended properties for primitive element: ExampleScenario.version
+   */
+  _version?:fhir.FhirElementArgs;
+  /**
    * The name is not expected to be globally unique. The name should be a simple alphanumeric type name to ensure that it is machine-processing friendly.
    */
   name?: fhir.FhirString|string|undefined;
+  /**
+   * Extended properties for primitive element: ExampleScenario.name
+   */
+  _name?:fhir.FhirElementArgs;
   /**
    * Allows filtering of example scenarios that are appropriate for use versus not.
    */
   status: fhir.FhirCode<PublicationStatusCodeType>|string|undefined;
   /**
+   * Extended properties for primitive element: ExampleScenario.status
+   */
+  _status?:fhir.FhirElementArgs;
+  /**
    * Allows filtering of example scenarios that are appropriate for use versus not.
    */
   experimental?: fhir.FhirBoolean|boolean|undefined;
+  /**
+   * Extended properties for primitive element: ExampleScenario.experimental
+   */
+  _experimental?:fhir.FhirElementArgs;
   /**
    * Note that this is not the same as the resource last-modified-date, since the resource may be a secondary representation of the example scenario. Additional specific dates may be added as extensions or be found by consulting Provenances associated with past versions of the resource.
    */
   date?: fhir.FhirDateTime|string|undefined;
   /**
+   * Extended properties for primitive element: ExampleScenario.date
+   */
+  _date?:fhir.FhirElementArgs;
+  /**
    * Usually an organization but may be an individual. The publisher (or steward) of the example scenario is the organization or individual primarily responsible for the maintenance and upkeep of the example scenario. This is not necessarily the same individual or organization that developed and initially authored the content. The publisher is the primary point of contact for questions or issues with the example scenario. This item SHOULD be populated unless the information is available from context.
    */
   publisher?: fhir.FhirString|string|undefined;
+  /**
+   * Extended properties for primitive element: ExampleScenario.publisher
+   */
+  _publisher?:fhir.FhirElementArgs;
   /**
    * May be a web site, an email address, a telephone number, etc.
    */
@@ -724,9 +968,17 @@ export interface ExampleScenarioArgs extends fhir.DomainResourceArgs {
    */
   copyright?: fhir.FhirMarkdown|string|undefined;
   /**
+   * Extended properties for primitive element: ExampleScenario.copyright
+   */
+  _copyright?:fhir.FhirElementArgs;
+  /**
    * This element does not describe the usage of the example scenario. Instead, it provides traceability of ''why'' the resource is either needed or ''why'' it is defined as it is.  This may be used to point to source materials or specifications that drove the structure of this example scenario.
    */
   purpose?: fhir.FhirMarkdown|string|undefined;
+  /**
+   * Extended properties for primitive element: ExampleScenario.purpose
+   */
+  _purpose?:fhir.FhirElementArgs;
   /**
    * Actor participating in the resource.
    */
@@ -743,6 +995,10 @@ export interface ExampleScenarioArgs extends fhir.DomainResourceArgs {
    * Another nested workflow.
    */
   workflow?: fhir.FhirCanonical[]|string[]|undefined;
+  /**
+   * Extended properties for primitive element: ExampleScenario.workflow
+   */
+  _workflow?:(fhir.FhirElementArgs|null)[];
 }
 
 /**
@@ -834,15 +1090,43 @@ export class ExampleScenario extends fhir.DomainResource {
     super(source, options);
     this.resourceType = 'ExampleScenario';
     if (source['url']) { this.url = new fhir.FhirUri({value: source.url}); }
+    if (source['_url']) {
+      if (this.url) { this.url.addExtendedProperties(source._url!); }
+      else { this.url = new fhir.FhirUri(source._url as Partial<fhir.FhirUriArgs>); }
+    }
     if (source['identifier']) { this.identifier = source.identifier.map((x) => new fhir.Identifier(x)); }
     else { this.identifier = []; }
     if (source['version']) { this.version = new fhir.FhirString({value: source.version}); }
+    if (source['_version']) {
+      if (this.version) { this.version.addExtendedProperties(source._version!); }
+      else { this.version = new fhir.FhirString(source._version as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['name']) { this.name = new fhir.FhirString({value: source.name}); }
+    if (source['_name']) {
+      if (this.name) { this.name.addExtendedProperties(source._name!); }
+      else { this.name = new fhir.FhirString(source._name as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['status']) { this.status = new fhir.FhirCode<PublicationStatusCodeType>({value: source.status}); }
     else { this.status = null; }
+    if (source['_status']) {
+      if (this.status) { this.status.addExtendedProperties(source._status!); }
+      else { this.status = new fhir.FhirCode<PublicationStatusCodeType>(source._status as Partial<fhir.FhirCode>); }
+    }
     if (source['experimental']) { this.experimental = new fhir.FhirBoolean({value: source.experimental}); }
+    if (source['_experimental']) {
+      if (this.experimental) { this.experimental.addExtendedProperties(source._experimental!); }
+      else { this.experimental = new fhir.FhirBoolean(source._experimental as Partial<fhir.FhirBooleanArgs>); }
+    }
     if (source['date']) { this.date = new fhir.FhirDateTime({value: source.date}); }
+    if (source['_date']) {
+      if (this.date) { this.date.addExtendedProperties(source._date!); }
+      else { this.date = new fhir.FhirDateTime(source._date as Partial<fhir.FhirDateTimeArgs>); }
+    }
     if (source['publisher']) { this.publisher = new fhir.FhirString({value: source.publisher}); }
+    if (source['_publisher']) {
+      if (this.publisher) { this.publisher.addExtendedProperties(source._publisher!); }
+      else { this.publisher = new fhir.FhirString(source._publisher as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['contact']) { this.contact = source.contact.map((x) => new fhir.ContactDetail(x)); }
     else { this.contact = []; }
     if (source['useContext']) { this.useContext = source.useContext.map((x) => new fhir.UsageContext(x)); }
@@ -850,7 +1134,15 @@ export class ExampleScenario extends fhir.DomainResource {
     if (source['jurisdiction']) { this.jurisdiction = source.jurisdiction.map((x) => new fhir.CodeableConcept(x)); }
     else { this.jurisdiction = []; }
     if (source['copyright']) { this.copyright = new fhir.FhirMarkdown({value: source.copyright}); }
+    if (source['_copyright']) {
+      if (this.copyright) { this.copyright.addExtendedProperties(source._copyright!); }
+      else { this.copyright = new fhir.FhirMarkdown(source._copyright as Partial<fhir.FhirMarkdownArgs>); }
+    }
     if (source['purpose']) { this.purpose = new fhir.FhirMarkdown({value: source.purpose}); }
+    if (source['_purpose']) {
+      if (this.purpose) { this.purpose.addExtendedProperties(source._purpose!); }
+      else { this.purpose = new fhir.FhirMarkdown(source._purpose as Partial<fhir.FhirMarkdownArgs>); }
+    }
     if (source['actor']) { this.actor = source.actor.map((x) => new fhir.ExampleScenarioActor(x)); }
     else { this.actor = []; }
     if (source['instance']) { this.instance = source.instance.map((x) => new fhir.ExampleScenarioInstance(x)); }
@@ -859,6 +1151,12 @@ export class ExampleScenario extends fhir.DomainResource {
     else { this.process = []; }
     if (source['workflow']) { this.workflow = source.workflow.map((x) => new fhir.FhirCanonical({value: x})); }
     else { this.workflow = []; }
+    if (source['_workflow']) {
+      source._workflow.forEach((x,i) => {
+        if (this.workflow.length >= i) { if (x) { this.workflow[i].addExtendedProperties(x); } }
+        else { if (x) { this.workflow.push(new fhir.FhirCanonical(x as Partial<fhir.FhirCanonicalArgs>)); } }
+      });
+    }
   }
   /**
    * Required-bound Value Set for status (ExampleScenario.status)

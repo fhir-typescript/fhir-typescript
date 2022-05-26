@@ -109,6 +109,10 @@ export interface SupplyRequestArgs extends fhir.DomainResourceArgs {
    */
   status?: fhir.FhirCode<SupplyrequestStatusCodeType>|string|undefined;
   /**
+   * Extended properties for primitive element: SupplyRequest.status
+   */
+  _status?:fhir.FhirElementArgs;
+  /**
    * Category of supply, e.g.  central, non-stock, etc. This is used to support work flows associated with the supply process.
    */
   category?: fhir.CodeableConceptArgs|undefined;
@@ -116,6 +120,10 @@ export interface SupplyRequestArgs extends fhir.DomainResourceArgs {
    * Indicates how quickly this SupplyRequest should be addressed with respect to other requests.
    */
   priority?: fhir.FhirCode<RequestPriorityCodeType>|string|undefined;
+  /**
+   * Extended properties for primitive element: SupplyRequest.priority
+   */
+  _priority?:fhir.FhirElementArgs;
   /**
    * Note that there's a difference between a prescription - an instruction to take a medication, along with a (sometimes) implicit supply, and an explicit request to supply, with no explicit instructions.
    */
@@ -156,6 +164,10 @@ export interface SupplyRequestArgs extends fhir.DomainResourceArgs {
    * When the request was made.
    */
   authoredOn?: fhir.FhirDateTime|string|undefined;
+  /**
+   * Extended properties for primitive element: SupplyRequest.authoredOn
+   */
+  _authoredOn?:fhir.FhirElementArgs;
   /**
    * The device, practitioner, etc. who initiated the request.
    */
@@ -271,8 +283,16 @@ export class SupplyRequest extends fhir.DomainResource {
     if (source['identifier']) { this.identifier = source.identifier.map((x) => new fhir.Identifier(x)); }
     else { this.identifier = []; }
     if (source['status']) { this.status = new fhir.FhirCode<SupplyrequestStatusCodeType>({value: source.status}); }
+    if (source['_status']) {
+      if (this.status) { this.status.addExtendedProperties(source._status!); }
+      else { this.status = new fhir.FhirCode<SupplyrequestStatusCodeType>(source._status as Partial<fhir.FhirCode>); }
+    }
     if (source['category']) { this.category = new fhir.CodeableConcept(source.category); }
     if (source['priority']) { this.priority = new fhir.FhirCode<RequestPriorityCodeType>({value: source.priority}); }
+    if (source['_priority']) {
+      if (this.priority) { this.priority.addExtendedProperties(source._priority!); }
+      else { this.priority = new fhir.FhirCode<RequestPriorityCodeType>(source._priority as Partial<fhir.FhirCode>); }
+    }
     if (source['item']) { this.item = source.item; }
     else if (source['itemCodeableConcept']) { this.item = new fhir.CodeableConcept(source.itemCodeableConcept); }
     else if (source['itemReference']) { this.item = new fhir.Reference(source.itemReference); }
@@ -286,6 +306,10 @@ export class SupplyRequest extends fhir.DomainResource {
     else if (source['occurrencePeriod']) { this.occurrence = new fhir.Period(source.occurrencePeriod); }
     else if (source['occurrenceTiming']) { this.occurrence = new fhir.Timing(source.occurrenceTiming); }
     if (source['authoredOn']) { this.authoredOn = new fhir.FhirDateTime({value: source.authoredOn}); }
+    if (source['_authoredOn']) {
+      if (this.authoredOn) { this.authoredOn.addExtendedProperties(source._authoredOn!); }
+      else { this.authoredOn = new fhir.FhirDateTime(source._authoredOn as Partial<fhir.FhirDateTimeArgs>); }
+    }
     if (source['requester']) { this.requester = new fhir.Reference(source.requester); }
     if (source['supplier']) { this.supplier = source.supplier.map((x) => new fhir.Reference(x)); }
     else { this.supplier = []; }

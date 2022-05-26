@@ -35,7 +35,7 @@ import { AllergyIntoleranceCategoryCodes, AllergyIntoleranceCategoryCodeType, } 
 import { AllergyIntoleranceCriticalityCodes, AllergyIntoleranceCriticalityCodeType, } from './fhirValueSets/AllergyIntoleranceCriticalityCodes.js'
 import { AllergyIntoleranceTypeCodes, AllergyIntoleranceTypeCodeType, } from './fhirValueSets/AllergyIntoleranceTypeCodes.js'
 import { AllergyintoleranceClinicalCodes, AllergyintoleranceClinicalCodeType, } from './fhirValueSets/AllergyintoleranceClinicalCodes.js'
-import { AllergyintoleranceCodeCodes, AllergyintoleranceCodeCodeType, } from './fhirValueSets/AllergyintoleranceCodeCodes.js'
+import { AllergyintoleranceCodes, AllergyintoleranceCodeType, } from './fhirValueSets/AllergyintoleranceCodes.js'
 import { AllergyintoleranceVerificationCodes, AllergyintoleranceVerificationCodeType, } from './fhirValueSets/AllergyintoleranceVerificationCodes.js'
 import { AppointmentCancellationReasonCodes, AppointmentCancellationReasonCodeType, } from './fhirValueSets/AppointmentCancellationReasonCodes.js'
 import { AppointmentstatusCodes, AppointmentstatusCodeType, } from './fhirValueSets/AppointmentstatusCodes.js'
@@ -58,7 +58,7 @@ import { BenefitUnitCodes, BenefitUnitCodeType, } from './fhirValueSets/BenefitU
 import { BindingStrengthCodes, BindingStrengthCodeType, } from './fhirValueSets/BindingStrengthCodes.js'
 import { BodySiteCodes, BodySiteCodeType, } from './fhirValueSets/BodySiteCodes.js'
 import { BodysiteLateralityCodes, BodysiteLateralityCodeType, } from './fhirValueSets/BodysiteLateralityCodes.js'
-import { BodystructureCodeCodes, BodystructureCodeCodeType, } from './fhirValueSets/BodystructureCodeCodes.js'
+import { BodystructureCodes, BodystructureCodeType, } from './fhirValueSets/BodystructureCodes.js'
 import { BodystructureRelativeLocationCodes, BodystructureRelativeLocationCodeType, } from './fhirValueSets/BodystructureRelativeLocationCodes.js'
 import { BundleTypeCodes, BundleTypeCodeType, } from './fhirValueSets/BundleTypeCodes.js'
 import { C80DocTypeCodes, C80DocTypeCodeType, } from './fhirValueSets/C80DocTypeCodes.js'
@@ -101,7 +101,7 @@ import { ConceptPropertyTypeCodes, ConceptPropertyTypeCodeType, } from './fhirVa
 import { ConceptmapUnmappedModeCodes, ConceptmapUnmappedModeCodeType, } from './fhirValueSets/ConceptmapUnmappedModeCodes.js'
 import { ConditionCategoryCodes, ConditionCategoryCodeType, } from './fhirValueSets/ConditionCategoryCodes.js'
 import { ConditionClinicalCodes, ConditionClinicalCodeType, } from './fhirValueSets/ConditionClinicalCodes.js'
-import { ConditionCodeCodes, ConditionCodeCodeType, } from './fhirValueSets/ConditionCodeCodes.js'
+import { ConditionCodes, ConditionCodeType, } from './fhirValueSets/ConditionCodes.js'
 import { ConditionOutcomeCodes, ConditionOutcomeCodeType, } from './fhirValueSets/ConditionOutcomeCodes.js'
 import { ConditionSeverityCodes, ConditionSeverityCodeType, } from './fhirValueSets/ConditionSeverityCodes.js'
 import { ConditionStageTypeCodes, ConditionStageTypeCodeType, } from './fhirValueSets/ConditionStageTypeCodes.js'
@@ -112,7 +112,7 @@ import { ConditionalReadStatusCodes, ConditionalReadStatusCodeType, } from './fh
 import { ConsentActionCodes, ConsentActionCodeType, } from './fhirValueSets/ConsentActionCodes.js'
 import { ConsentCategoryCodes, ConsentCategoryCodeType, } from './fhirValueSets/ConsentCategoryCodes.js'
 import { ConsentContentClassCodes, ConsentContentClassCodeType, } from './fhirValueSets/ConsentContentClassCodes.js'
-import { ConsentContentCodeCodes, ConsentContentCodeCodeType, } from './fhirValueSets/ConsentContentCodeCodes.js'
+import { ConsentContentCodes, ConsentContentCodeType, } from './fhirValueSets/ConsentContentCodes.js'
 import { ConsentDataMeaningCodes, ConsentDataMeaningCodeType, } from './fhirValueSets/ConsentDataMeaningCodes.js'
 import { ConsentPolicyCodes, ConsentPolicyCodeType, } from './fhirValueSets/ConsentPolicyCodes.js'
 import { ConsentProvisionTypeCodes, ConsentProvisionTypeCodeType, } from './fhirValueSets/ConsentProvisionTypeCodes.js'
@@ -221,7 +221,7 @@ import { ExDiagnosisrelatedgroupCodes, ExDiagnosisrelatedgroupCodeType, } from '
 import { ExDiagnosistypeCodes, ExDiagnosistypeCodeType, } from './fhirValueSets/ExDiagnosistypeCodes.js'
 import { ExPaymenttypeCodes, ExPaymenttypeCodeType, } from './fhirValueSets/ExPaymenttypeCodes.js'
 import { ExProcedureTypeCodes, ExProcedureTypeCodeType, } from './fhirValueSets/ExProcedureTypeCodes.js'
-import { ExProgramCodeCodes, ExProgramCodeCodeType, } from './fhirValueSets/ExProgramCodeCodes.js'
+import { ExProgramCodes, ExProgramCodeType, } from './fhirValueSets/ExProgramCodes.js'
 import { ExRevenueCenterCodes, ExRevenueCenterCodeType, } from './fhirValueSets/ExRevenueCenterCodes.js'
 import { ExamplescenarioActorTypeCodes, ExamplescenarioActorTypeCodeType, } from './fhirValueSets/ExamplescenarioActorTypeCodes.js'
 import { ExplanationofbenefitStatusCodes, ExplanationofbenefitStatusCodeType, } from './fhirValueSets/ExplanationofbenefitStatusCodes.js'
@@ -231,7 +231,7 @@ import { ExtensionContextTypeCodes, ExtensionContextTypeCodeType, } from './fhir
 import { FHIRVersionCodes, FHIRVersionCodeType, } from './fhirValueSets/FHIRVersionCodes.js'
 import { FilterOperatorCodes, FilterOperatorCodeType, } from './fhirValueSets/FilterOperatorCodes.js'
 import { FlagCategoryCodes, FlagCategoryCodeType, } from './fhirValueSets/FlagCategoryCodes.js'
-import { FlagCodeCodes, FlagCodeCodeType, } from './fhirValueSets/FlagCodeCodes.js'
+import { FlagCodes, FlagCodeType, } from './fhirValueSets/FlagCodes.js'
 import { FlagStatusCodes, FlagStatusCodeType, } from './fhirValueSets/FlagStatusCodes.js'
 import { FmStatusCodes, FmStatusCodeType, } from './fhirValueSets/FmStatusCodes.js'
 import { FoodTypeCodes, FoodTypeCodeType, } from './fhirValueSets/FoodTypeCodes.js'
@@ -249,7 +249,7 @@ import { GroupMeasureCodes, GroupMeasureCodeType, } from './fhirValueSets/GroupM
 import { GroupTypeCodes, GroupTypeCodeType, } from './fhirValueSets/GroupTypeCodes.js'
 import { GuidanceResponseStatusCodes, GuidanceResponseStatusCodeType, } from './fhirValueSets/GuidanceResponseStatusCodes.js'
 import { GuidePageGenerationCodes, GuidePageGenerationCodeType, } from './fhirValueSets/GuidePageGenerationCodes.js'
-import { GuideParameterCodeCodes, GuideParameterCodeCodeType, } from './fhirValueSets/GuideParameterCodeCodes.js'
+import { GuideParameterCodes, GuideParameterCodeType, } from './fhirValueSets/GuideParameterCodes.js'
 import { HandlingConditionCodes, HandlingConditionCodeType, } from './fhirValueSets/HandlingConditionCodes.js'
 import { HistoryAbsentReasonCodes, HistoryAbsentReasonCodeType, } from './fhirValueSets/HistoryAbsentReasonCodes.js'
 import { HistoryStatusCodes, HistoryStatusCodeType, } from './fhirValueSets/HistoryStatusCodes.js'
@@ -357,7 +357,7 @@ import { NamingsystemTypeCodes, NamingsystemTypeCodeType, } from './fhirValueSet
 import { NarrativeStatusCodes, NarrativeStatusCodeType, } from './fhirValueSets/NarrativeStatusCodes.js'
 import { NetworkTypeCodes, NetworkTypeCodeType, } from './fhirValueSets/NetworkTypeCodes.js'
 import { NoteTypeCodes, NoteTypeCodeType, } from './fhirValueSets/NoteTypeCodes.js'
-import { NutrientCodeCodes, NutrientCodeCodeType, } from './fhirValueSets/NutrientCodeCodes.js'
+import { NutrientCodes, NutrientCodeType, } from './fhirValueSets/NutrientCodes.js'
 import { ObjectRoleCodes, ObjectRoleCodeType, } from './fhirValueSets/ObjectRoleCodes.js'
 import { ObservationCategoryCodes, ObservationCategoryCodeType, } from './fhirValueSets/ObservationCategoryCodes.js'
 import { ObservationCodes, ObservationCodeType, } from './fhirValueSets/ObservationCodes.js'
@@ -387,7 +387,7 @@ import { PractitionerRoleCodes, PractitionerRoleCodeType, } from './fhirValueSet
 import { PrecisionEstimateTypeCodes, PrecisionEstimateTypeCodeType, } from './fhirValueSets/PrecisionEstimateTypeCodes.js'
 import { PreparePatientPriorSpecimenCollectionCodes, PreparePatientPriorSpecimenCollectionCodeType, } from './fhirValueSets/PreparePatientPriorSpecimenCollectionCodes.js'
 import { ProcedureCategoryCodes, ProcedureCategoryCodeType, } from './fhirValueSets/ProcedureCategoryCodes.js'
-import { ProcedureCodeCodes, ProcedureCodeCodeType, } from './fhirValueSets/ProcedureCodeCodes.js'
+import { ProcedureCodes, ProcedureCodeType, } from './fhirValueSets/ProcedureCodes.js'
 import { ProcedureFollowupCodes, ProcedureFollowupCodeType, } from './fhirValueSets/ProcedureFollowupCodes.js'
 import { ProcedureNotPerformedReasonCodes, ProcedureNotPerformedReasonCodeType, } from './fhirValueSets/ProcedureNotPerformedReasonCodes.js'
 import { ProcedureOutcomeCodes, ProcedureOutcomeCodeType, } from './fhirValueSets/ProcedureOutcomeCodes.js'
@@ -444,7 +444,7 @@ import { ResearchSubjectStatusCodes, ResearchSubjectStatusCodeType, } from './fh
 import { ResourceAggregationModeCodes, ResourceAggregationModeCodeType, } from './fhirValueSets/ResourceAggregationModeCodes.js'
 import { ResourceSlicingRulesCodes, ResourceSlicingRulesCodeType, } from './fhirValueSets/ResourceSlicingRulesCodes.js'
 import { ResourceTypesCodes, ResourceTypesCodeType, } from './fhirValueSets/ResourceTypesCodes.js'
-import { ResponseCodeCodes, ResponseCodeCodeType, } from './fhirValueSets/ResponseCodeCodes.js'
+import { ResponseCodes, ResponseCodeType, } from './fhirValueSets/ResponseCodes.js'
 import { RestfulCapabilityModeCodes, RestfulCapabilityModeCodeType, } from './fhirValueSets/RestfulCapabilityModeCodes.js'
 import { RestfulSecurityServiceCodes, RestfulSecurityServiceCodeType, } from './fhirValueSets/RestfulSecurityServiceCodes.js'
 import { RiskEstimateTypeCodes, RiskEstimateTypeCodeType, } from './fhirValueSets/RiskEstimateTypeCodes.js'
@@ -452,7 +452,7 @@ import { RiskProbabilityCodes, RiskProbabilityCodeType, } from './fhirValueSets/
 import { RouteCodes, RouteCodeType, } from './fhirValueSets/RouteCodes.js'
 import { SearchComparatorCodes, SearchComparatorCodeType, } from './fhirValueSets/SearchComparatorCodes.js'
 import { SearchEntryModeCodes, SearchEntryModeCodeType, } from './fhirValueSets/SearchEntryModeCodes.js'
-import { SearchModifierCodeCodes, SearchModifierCodeCodeType, } from './fhirValueSets/SearchModifierCodeCodes.js'
+import { SearchModifierCodes, SearchModifierCodeType, } from './fhirValueSets/SearchModifierCodes.js'
 import { SearchParamTypeCodes, SearchParamTypeCodeType, } from './fhirValueSets/SearchParamTypeCodes.js'
 import { SearchXpathUsageCodes, SearchXpathUsageCodeType, } from './fhirValueSets/SearchXpathUsageCodes.js'
 import { SecurityLabelsCodes, SecurityLabelsCodeType, } from './fhirValueSets/SecurityLabelsCodes.js'
@@ -486,7 +486,7 @@ import { SubscriberRelationshipCodes, SubscriberRelationshipCodeType, } from './
 import { SubscriptionChannelTypeCodes, SubscriptionChannelTypeCodeType, } from './fhirValueSets/SubscriptionChannelTypeCodes.js'
 import { SubscriptionStatusCodes, SubscriptionStatusCodeType, } from './fhirValueSets/SubscriptionStatusCodes.js'
 import { SubstanceCategoryCodes, SubstanceCategoryCodeType, } from './fhirValueSets/SubstanceCategoryCodes.js'
-import { SubstanceCodeCodes, SubstanceCodeCodeType, } from './fhirValueSets/SubstanceCodeCodes.js'
+import { SubstanceCodes, SubstanceCodeType, } from './fhirValueSets/SubstanceCodes.js'
 import { SubstanceStatusCodes, SubstanceStatusCodeType, } from './fhirValueSets/SubstanceStatusCodes.js'
 import { SupplyItemCodes, SupplyItemCodeType, } from './fhirValueSets/SupplyItemCodes.js'
 import { SupplydeliveryStatusCodes, SupplydeliveryStatusCodeType, } from './fhirValueSets/SupplydeliveryStatusCodes.js'
@@ -497,7 +497,7 @@ import { SupplyrequestStatusCodes, SupplyrequestStatusCodeType, } from './fhirVa
 import { SurfaceCodes, SurfaceCodeType, } from './fhirValueSets/SurfaceCodes.js'
 import { SynthesisTypeCodes, SynthesisTypeCodeType, } from './fhirValueSets/SynthesisTypeCodes.js'
 import { SystemRestfulInteractionCodes, SystemRestfulInteractionCodeType, } from './fhirValueSets/SystemRestfulInteractionCodes.js'
-import { TaskCodeCodes, TaskCodeCodeType, } from './fhirValueSets/TaskCodeCodes.js'
+import { TaskCodes, TaskCodeType, } from './fhirValueSets/TaskCodes.js'
 import { TaskIntentCodes, TaskIntentCodeType, } from './fhirValueSets/TaskIntentCodes.js'
 import { TaskStatusCodes, TaskStatusCodeType, } from './fhirValueSets/TaskStatusCodes.js'
 import { TestscriptOperationCodes, TestscriptOperationCodeType, } from './fhirValueSets/TestscriptOperationCodes.js'
@@ -520,21 +520,21 @@ import { V20487Codes, V20487CodeType, } from './fhirValueSets/V20487Codes.js'
 import { V20493Codes, V20493CodeType, } from './fhirValueSets/V20493Codes.js'
 import { V20916Codes, V20916CodeType, } from './fhirValueSets/V20916Codes.js'
 import { V2270360Codes, V2270360CodeType, } from './fhirValueSets/V2270360Codes.js'
-import { V3ActCodeCodes, V3ActCodeCodeType, } from './fhirValueSets/V3ActCodeCodes.js'
+import { V3ActCodes, V3ActCodeType, } from './fhirValueSets/V3ActCodes.js'
 import { V3ActConsentDirectiveCodes, V3ActConsentDirectiveCodeType, } from './fhirValueSets/V3ActConsentDirectiveCodes.js'
-import { V3ActEncounterCodeCodes, V3ActEncounterCodeCodeType, } from './fhirValueSets/V3ActEncounterCodeCodes.js'
-import { V3ActIncidentCodeCodes, V3ActIncidentCodeCodeType, } from './fhirValueSets/V3ActIncidentCodeCodes.js'
+import { V3ActEncounterCodes, V3ActEncounterCodeType, } from './fhirValueSets/V3ActEncounterCodes.js'
+import { V3ActIncidentCodes, V3ActIncidentCodeType, } from './fhirValueSets/V3ActIncidentCodes.js'
 import { V3ActPharmacySupplyTypeCodes, V3ActPharmacySupplyTypeCodeType, } from './fhirValueSets/V3ActPharmacySupplyTypeCodes.js'
 import { V3ActPriorityCodes, V3ActPriorityCodeType, } from './fhirValueSets/V3ActPriorityCodes.js'
 import { V3ActReasonCodes, V3ActReasonCodeType, } from './fhirValueSets/V3ActReasonCodes.js'
-import { V3ActSubstanceAdminSubstitutionCodeCodes, V3ActSubstanceAdminSubstitutionCodeCodeType, } from './fhirValueSets/V3ActSubstanceAdminSubstitutionCodeCodes.js'
+import { V3ActSubstanceAdminSubstitutionCodes, V3ActSubstanceAdminSubstitutionCodeType, } from './fhirValueSets/V3ActSubstanceAdminSubstitutionCodes.js'
 import { V3ConfidentialityClassificationCodes, V3ConfidentialityClassificationCodeType, } from './fhirValueSets/V3ConfidentialityClassificationCodes.js'
 import { V3FamilyMemberCodes, V3FamilyMemberCodeType, } from './fhirValueSets/V3FamilyMemberCodes.js'
 import { V3ParticipationModeCodes, V3ParticipationModeCodeType, } from './fhirValueSets/V3ParticipationModeCodes.js'
 import { V3PurposeOfUseCodes, V3PurposeOfUseCodeType, } from './fhirValueSets/V3PurposeOfUseCodes.js'
 import { V3ServiceDeliveryLocationRoleTypeCodes, V3ServiceDeliveryLocationRoleTypeCodeType, } from './fhirValueSets/V3ServiceDeliveryLocationRoleTypeCodes.js'
 import { V3SubstanceAdminSubstitutionReasonCodes, V3SubstanceAdminSubstitutionReasonCodeType, } from './fhirValueSets/V3SubstanceAdminSubstitutionReasonCodes.js'
-import { VaccineCodeCodes, VaccineCodeCodeType, } from './fhirValueSets/VaccineCodeCodes.js'
+import { VaccineCodes, VaccineCodeType, } from './fhirValueSets/VaccineCodes.js'
 import { VariableTypeCodes, VariableTypeCodeType, } from './fhirValueSets/VariableTypeCodes.js'
 import { VerificationresultCanPushUpdatesCodes, VerificationresultCanPushUpdatesCodeType, } from './fhirValueSets/VerificationresultCanPushUpdatesCodes.js'
 import { VerificationresultCommunicationMethodCodes, VerificationresultCommunicationMethodCodeType, } from './fhirValueSets/VerificationresultCommunicationMethodCodes.js'
@@ -585,7 +585,7 @@ export {
   AllergyIntoleranceCriticalityCodes, type AllergyIntoleranceCriticalityCodeType,
   AllergyIntoleranceTypeCodes, type AllergyIntoleranceTypeCodeType,
   AllergyintoleranceClinicalCodes, type AllergyintoleranceClinicalCodeType,
-  AllergyintoleranceCodeCodes, type AllergyintoleranceCodeCodeType,
+  AllergyintoleranceCodes, type AllergyintoleranceCodeType,
   AllergyintoleranceVerificationCodes, type AllergyintoleranceVerificationCodeType,
   AppointmentCancellationReasonCodes, type AppointmentCancellationReasonCodeType,
   AppointmentstatusCodes, type AppointmentstatusCodeType,
@@ -608,7 +608,7 @@ export {
   BindingStrengthCodes, type BindingStrengthCodeType,
   BodySiteCodes, type BodySiteCodeType,
   BodysiteLateralityCodes, type BodysiteLateralityCodeType,
-  BodystructureCodeCodes, type BodystructureCodeCodeType,
+  BodystructureCodes, type BodystructureCodeType,
   BodystructureRelativeLocationCodes, type BodystructureRelativeLocationCodeType,
   BundleTypeCodes, type BundleTypeCodeType,
   C80DocTypeCodes, type C80DocTypeCodeType,
@@ -651,7 +651,7 @@ export {
   ConceptmapUnmappedModeCodes, type ConceptmapUnmappedModeCodeType,
   ConditionCategoryCodes, type ConditionCategoryCodeType,
   ConditionClinicalCodes, type ConditionClinicalCodeType,
-  ConditionCodeCodes, type ConditionCodeCodeType,
+  ConditionCodes, type ConditionCodeType,
   ConditionOutcomeCodes, type ConditionOutcomeCodeType,
   ConditionSeverityCodes, type ConditionSeverityCodeType,
   ConditionStageTypeCodes, type ConditionStageTypeCodeType,
@@ -662,7 +662,7 @@ export {
   ConsentActionCodes, type ConsentActionCodeType,
   ConsentCategoryCodes, type ConsentCategoryCodeType,
   ConsentContentClassCodes, type ConsentContentClassCodeType,
-  ConsentContentCodeCodes, type ConsentContentCodeCodeType,
+  ConsentContentCodes, type ConsentContentCodeType,
   ConsentDataMeaningCodes, type ConsentDataMeaningCodeType,
   ConsentPolicyCodes, type ConsentPolicyCodeType,
   ConsentProvisionTypeCodes, type ConsentProvisionTypeCodeType,
@@ -771,7 +771,7 @@ export {
   ExDiagnosistypeCodes, type ExDiagnosistypeCodeType,
   ExPaymenttypeCodes, type ExPaymenttypeCodeType,
   ExProcedureTypeCodes, type ExProcedureTypeCodeType,
-  ExProgramCodeCodes, type ExProgramCodeCodeType,
+  ExProgramCodes, type ExProgramCodeType,
   ExRevenueCenterCodes, type ExRevenueCenterCodeType,
   ExamplescenarioActorTypeCodes, type ExamplescenarioActorTypeCodeType,
   ExplanationofbenefitStatusCodes, type ExplanationofbenefitStatusCodeType,
@@ -781,7 +781,7 @@ export {
   FHIRVersionCodes, type FHIRVersionCodeType,
   FilterOperatorCodes, type FilterOperatorCodeType,
   FlagCategoryCodes, type FlagCategoryCodeType,
-  FlagCodeCodes, type FlagCodeCodeType,
+  FlagCodes, type FlagCodeType,
   FlagStatusCodes, type FlagStatusCodeType,
   FmStatusCodes, type FmStatusCodeType,
   FoodTypeCodes, type FoodTypeCodeType,
@@ -799,7 +799,7 @@ export {
   GroupTypeCodes, type GroupTypeCodeType,
   GuidanceResponseStatusCodes, type GuidanceResponseStatusCodeType,
   GuidePageGenerationCodes, type GuidePageGenerationCodeType,
-  GuideParameterCodeCodes, type GuideParameterCodeCodeType,
+  GuideParameterCodes, type GuideParameterCodeType,
   HandlingConditionCodes, type HandlingConditionCodeType,
   HistoryAbsentReasonCodes, type HistoryAbsentReasonCodeType,
   HistoryStatusCodes, type HistoryStatusCodeType,
@@ -907,7 +907,7 @@ export {
   NarrativeStatusCodes, type NarrativeStatusCodeType,
   NetworkTypeCodes, type NetworkTypeCodeType,
   NoteTypeCodes, type NoteTypeCodeType,
-  NutrientCodeCodes, type NutrientCodeCodeType,
+  NutrientCodes, type NutrientCodeType,
   ObjectRoleCodes, type ObjectRoleCodeType,
   ObservationCategoryCodes, type ObservationCategoryCodeType,
   ObservationCodes, type ObservationCodeType,
@@ -937,7 +937,7 @@ export {
   PrecisionEstimateTypeCodes, type PrecisionEstimateTypeCodeType,
   PreparePatientPriorSpecimenCollectionCodes, type PreparePatientPriorSpecimenCollectionCodeType,
   ProcedureCategoryCodes, type ProcedureCategoryCodeType,
-  ProcedureCodeCodes, type ProcedureCodeCodeType,
+  ProcedureCodes, type ProcedureCodeType,
   ProcedureFollowupCodes, type ProcedureFollowupCodeType,
   ProcedureNotPerformedReasonCodes, type ProcedureNotPerformedReasonCodeType,
   ProcedureOutcomeCodes, type ProcedureOutcomeCodeType,
@@ -994,7 +994,7 @@ export {
   ResourceAggregationModeCodes, type ResourceAggregationModeCodeType,
   ResourceSlicingRulesCodes, type ResourceSlicingRulesCodeType,
   ResourceTypesCodes, type ResourceTypesCodeType,
-  ResponseCodeCodes, type ResponseCodeCodeType,
+  ResponseCodes, type ResponseCodeType,
   RestfulCapabilityModeCodes, type RestfulCapabilityModeCodeType,
   RestfulSecurityServiceCodes, type RestfulSecurityServiceCodeType,
   RiskEstimateTypeCodes, type RiskEstimateTypeCodeType,
@@ -1002,7 +1002,7 @@ export {
   RouteCodes, type RouteCodeType,
   SearchComparatorCodes, type SearchComparatorCodeType,
   SearchEntryModeCodes, type SearchEntryModeCodeType,
-  SearchModifierCodeCodes, type SearchModifierCodeCodeType,
+  SearchModifierCodes, type SearchModifierCodeType,
   SearchParamTypeCodes, type SearchParamTypeCodeType,
   SearchXpathUsageCodes, type SearchXpathUsageCodeType,
   SecurityLabelsCodes, type SecurityLabelsCodeType,
@@ -1036,7 +1036,7 @@ export {
   SubscriptionChannelTypeCodes, type SubscriptionChannelTypeCodeType,
   SubscriptionStatusCodes, type SubscriptionStatusCodeType,
   SubstanceCategoryCodes, type SubstanceCategoryCodeType,
-  SubstanceCodeCodes, type SubstanceCodeCodeType,
+  SubstanceCodes, type SubstanceCodeType,
   SubstanceStatusCodes, type SubstanceStatusCodeType,
   SupplyItemCodes, type SupplyItemCodeType,
   SupplydeliveryStatusCodes, type SupplydeliveryStatusCodeType,
@@ -1047,7 +1047,7 @@ export {
   SurfaceCodes, type SurfaceCodeType,
   SynthesisTypeCodes, type SynthesisTypeCodeType,
   SystemRestfulInteractionCodes, type SystemRestfulInteractionCodeType,
-  TaskCodeCodes, type TaskCodeCodeType,
+  TaskCodes, type TaskCodeType,
   TaskIntentCodes, type TaskIntentCodeType,
   TaskStatusCodes, type TaskStatusCodeType,
   TestscriptOperationCodes, type TestscriptOperationCodeType,
@@ -1070,21 +1070,21 @@ export {
   V20493Codes, type V20493CodeType,
   V20916Codes, type V20916CodeType,
   V2270360Codes, type V2270360CodeType,
-  V3ActCodeCodes, type V3ActCodeCodeType,
+  V3ActCodes, type V3ActCodeType,
   V3ActConsentDirectiveCodes, type V3ActConsentDirectiveCodeType,
-  V3ActEncounterCodeCodes, type V3ActEncounterCodeCodeType,
-  V3ActIncidentCodeCodes, type V3ActIncidentCodeCodeType,
+  V3ActEncounterCodes, type V3ActEncounterCodeType,
+  V3ActIncidentCodes, type V3ActIncidentCodeType,
   V3ActPharmacySupplyTypeCodes, type V3ActPharmacySupplyTypeCodeType,
   V3ActPriorityCodes, type V3ActPriorityCodeType,
   V3ActReasonCodes, type V3ActReasonCodeType,
-  V3ActSubstanceAdminSubstitutionCodeCodes, type V3ActSubstanceAdminSubstitutionCodeCodeType,
+  V3ActSubstanceAdminSubstitutionCodes, type V3ActSubstanceAdminSubstitutionCodeType,
   V3ConfidentialityClassificationCodes, type V3ConfidentialityClassificationCodeType,
   V3FamilyMemberCodes, type V3FamilyMemberCodeType,
   V3ParticipationModeCodes, type V3ParticipationModeCodeType,
   V3PurposeOfUseCodes, type V3PurposeOfUseCodeType,
   V3ServiceDeliveryLocationRoleTypeCodes, type V3ServiceDeliveryLocationRoleTypeCodeType,
   V3SubstanceAdminSubstitutionReasonCodes, type V3SubstanceAdminSubstitutionReasonCodeType,
-  VaccineCodeCodes, type VaccineCodeCodeType,
+  VaccineCodes, type VaccineCodeType,
   VariableTypeCodes, type VariableTypeCodeType,
   VerificationresultCanPushUpdatesCodes, type VerificationresultCanPushUpdatesCodeType,
   VerificationresultCommunicationMethodCodes, type VerificationresultCommunicationMethodCodeType,

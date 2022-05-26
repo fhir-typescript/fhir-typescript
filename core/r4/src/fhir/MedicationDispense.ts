@@ -10,9 +10,9 @@ import { MedicationdispensePerformerFunctionCodings, MedicationdispensePerformer
 // @ts-ignore
 import { MedicationdispensePerformerFunctionCodes,  MedicationdispensePerformerFunctionCodeType } from '../fhirValueSets/MedicationdispensePerformerFunctionCodes.js';
 // @ts-ignore
-import { V3ActSubstanceAdminSubstitutionCodeCodings, V3ActSubstanceAdminSubstitutionCodeCodingType,} from '../fhirValueSets/V3ActSubstanceAdminSubstitutionCodeCodings.js';
+import { V3ActSubstanceAdminSubstitutionCodings, V3ActSubstanceAdminSubstitutionCodingType,} from '../fhirValueSets/V3ActSubstanceAdminSubstitutionCodings.js';
 // @ts-ignore
-import { V3ActSubstanceAdminSubstitutionCodeCodes,  V3ActSubstanceAdminSubstitutionCodeCodeType } from '../fhirValueSets/V3ActSubstanceAdminSubstitutionCodeCodes.js';
+import { V3ActSubstanceAdminSubstitutionCodes,  V3ActSubstanceAdminSubstitutionCodeType } from '../fhirValueSets/V3ActSubstanceAdminSubstitutionCodes.js';
 // @ts-ignore
 import { V3SubstanceAdminSubstitutionReasonCodings, V3SubstanceAdminSubstitutionReasonCodingType,} from '../fhirValueSets/V3SubstanceAdminSubstitutionReasonCodings.js';
 // @ts-ignore
@@ -90,6 +90,10 @@ export interface MedicationDispenseSubstitutionArgs extends fhir.BackboneElement
    */
   wasSubstituted: fhir.FhirBoolean|boolean|undefined;
   /**
+   * Extended properties for primitive element: MedicationDispense.substitution.wasSubstituted
+   */
+  _wasSubstituted?:fhir.FhirElementArgs;
+  /**
    * A code signifying whether a different drug was dispensed from what was prescribed.
    */
   type?: fhir.CodeableConceptArgs|undefined;
@@ -134,6 +138,10 @@ export class MedicationDispenseSubstitution extends fhir.BackboneElement {
     super(source, options);
     if (source['wasSubstituted']) { this.wasSubstituted = new fhir.FhirBoolean({value: source.wasSubstituted}); }
     else { this.wasSubstituted = null; }
+    if (source['_wasSubstituted']) {
+      if (this.wasSubstituted) { this.wasSubstituted.addExtendedProperties(source._wasSubstituted!); }
+      else { this.wasSubstituted = new fhir.FhirBoolean(source._wasSubstituted as Partial<fhir.FhirBooleanArgs>); }
+    }
     if (source['type']) { this.type = new fhir.CodeableConcept(source.type); }
     if (source['reason']) { this.reason = source.reason.map((x) => new fhir.CodeableConcept(x)); }
     else { this.reason = []; }
@@ -175,6 +183,10 @@ export interface MedicationDispenseArgs extends fhir.DomainResourceArgs {
    * This element is labeled as a modifier because the status contains codes that mark the resource as not currently valid.
    */
   status: fhir.FhirCode<MedicationdispenseStatusCodeType>|string|undefined;
+  /**
+   * Extended properties for primitive element: MedicationDispense.status
+   */
+  _status?:fhir.FhirElementArgs;
   /**
    * Indicates the reason why a dispense was not performed.
    */
@@ -244,9 +256,17 @@ export interface MedicationDispenseArgs extends fhir.DomainResourceArgs {
    */
   whenPrepared?: fhir.FhirDateTime|string|undefined;
   /**
+   * Extended properties for primitive element: MedicationDispense.whenPrepared
+   */
+  _whenPrepared?:fhir.FhirElementArgs;
+  /**
    * The time the dispensed product was provided to the patient or their representative.
    */
   whenHandedOver?: fhir.FhirDateTime|string|undefined;
+  /**
+   * Extended properties for primitive element: MedicationDispense.whenHandedOver
+   */
+  _whenHandedOver?:fhir.FhirElementArgs;
   /**
    * Identification of the facility/location where the medication was shipped to, as part of the dispense event.
    */
@@ -407,6 +427,10 @@ export class MedicationDispense extends fhir.DomainResource {
     else { this.partOf = []; }
     if (source['status']) { this.status = new fhir.FhirCode<MedicationdispenseStatusCodeType>({value: source.status}); }
     else { this.status = null; }
+    if (source['_status']) {
+      if (this.status) { this.status.addExtendedProperties(source._status!); }
+      else { this.status = new fhir.FhirCode<MedicationdispenseStatusCodeType>(source._status as Partial<fhir.FhirCode>); }
+    }
     if (source['statusReason']) { this.statusReason = source.statusReason; }
     else if (source['statusReasonCodeableConcept']) { this.statusReason = new fhir.CodeableConcept(source.statusReasonCodeableConcept); }
     else if (source['statusReasonReference']) { this.statusReason = new fhir.Reference(source.statusReasonReference); }
@@ -428,7 +452,15 @@ export class MedicationDispense extends fhir.DomainResource {
     if (source['quantity']) { this.quantity = new fhir.Quantity(source.quantity); }
     if (source['daysSupply']) { this.daysSupply = new fhir.Quantity(source.daysSupply); }
     if (source['whenPrepared']) { this.whenPrepared = new fhir.FhirDateTime({value: source.whenPrepared}); }
+    if (source['_whenPrepared']) {
+      if (this.whenPrepared) { this.whenPrepared.addExtendedProperties(source._whenPrepared!); }
+      else { this.whenPrepared = new fhir.FhirDateTime(source._whenPrepared as Partial<fhir.FhirDateTimeArgs>); }
+    }
     if (source['whenHandedOver']) { this.whenHandedOver = new fhir.FhirDateTime({value: source.whenHandedOver}); }
+    if (source['_whenHandedOver']) {
+      if (this.whenHandedOver) { this.whenHandedOver.addExtendedProperties(source._whenHandedOver!); }
+      else { this.whenHandedOver = new fhir.FhirDateTime(source._whenHandedOver as Partial<fhir.FhirDateTimeArgs>); }
+    }
     if (source['destination']) { this.destination = new fhir.Reference(source.destination); }
     if (source['receiver']) { this.receiver = source.receiver.map((x) => new fhir.Reference(x)); }
     else { this.receiver = []; }

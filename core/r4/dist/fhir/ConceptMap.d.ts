@@ -11,17 +11,33 @@ export interface ConceptMapGroupElementTargetDependsOnArgs extends fhir.Backbone
      */
     property: fhir.FhirUri | string | undefined;
     /**
+     * Extended properties for primitive element: ConceptMap.group.element.target.dependsOn.property
+     */
+    _property?: fhir.FhirElementArgs;
+    /**
      * An absolute URI that identifies the code system of the dependency code (if the source/dependency is a value set that crosses code systems).
      */
     system?: fhir.FhirCanonical | string | undefined;
+    /**
+     * Extended properties for primitive element: ConceptMap.group.element.target.dependsOn.system
+     */
+    _system?: fhir.FhirElementArgs;
     /**
      * Identity (code or path) or the element/item/ValueSet/text that the map depends on / refers to.
      */
     value: fhir.FhirString | string | undefined;
     /**
+     * Extended properties for primitive element: ConceptMap.group.element.target.dependsOn.value
+     */
+    _value?: fhir.FhirElementArgs;
+    /**
      * The display is ignored when processing the map.
      */
     display?: fhir.FhirString | string | undefined;
+    /**
+     * Extended properties for primitive element: ConceptMap.group.element.target.dependsOn.display
+     */
+    _display?: fhir.FhirElementArgs;
 }
 /**
  * A set of additional dependencies for this mapping to hold. This mapping is only applicable if the specified element can be resolved, and it has the specified value.
@@ -65,17 +81,33 @@ export interface ConceptMapGroupElementTargetArgs extends fhir.BackboneElementAr
      */
     code?: fhir.FhirCode | string | undefined;
     /**
+     * Extended properties for primitive element: ConceptMap.group.element.target.code
+     */
+    _code?: fhir.FhirElementArgs;
+    /**
      * The display is ignored when processing the map.
      */
     display?: fhir.FhirString | string | undefined;
+    /**
+     * Extended properties for primitive element: ConceptMap.group.element.target.display
+     */
+    _display?: fhir.FhirElementArgs;
     /**
      * This element is labeled as a modifier because it may indicate that a target does not apply.
      */
     equivalence: fhir.FhirCode<ConceptMapEquivalenceCodeType> | string | undefined;
     /**
+     * Extended properties for primitive element: ConceptMap.group.element.target.equivalence
+     */
+    _equivalence?: fhir.FhirElementArgs;
+    /**
      * A description of status/issues in mapping that conveys additional information not represented in  the structured data.
      */
     comment?: fhir.FhirString | string | undefined;
+    /**
+     * Extended properties for primitive element: ConceptMap.group.element.target.comment
+     */
+    _comment?: fhir.FhirElementArgs;
     /**
      * A set of additional dependencies for this mapping to hold. This mapping is only applicable if the specified element can be resolved, and it has the specified value.
      */
@@ -131,9 +163,7 @@ export declare class ConceptMapGroupElementTarget extends fhir.BackboneElement {
         readonly Inexact: "inexact";
         readonly Narrower: "narrower";
         readonly RelatedTo: "relatedto";
-        readonly Specializes: "specializes"; /**
-         * A set of additional dependencies for this mapping to hold. This mapping is only applicable if the specified element can be resolved, and it has the specified value.
-         */
+        readonly Specializes: "specializes";
         readonly Subsumes: "subsumes";
         readonly Unmatched: "unmatched";
         readonly Wider: "wider";
@@ -152,9 +182,17 @@ export interface ConceptMapGroupElementArgs extends fhir.BackboneElementArgs {
      */
     code?: fhir.FhirCode | string | undefined;
     /**
+     * Extended properties for primitive element: ConceptMap.group.element.code
+     */
+    _code?: fhir.FhirElementArgs;
+    /**
      * The display is ignored when processing the map.
      */
     display?: fhir.FhirString | string | undefined;
+    /**
+     * Extended properties for primitive element: ConceptMap.group.element.display
+     */
+    _display?: fhir.FhirElementArgs;
     /**
      * Ideally there would only be one map, with equal or equivalent mapping. But multiple maps are allowed for several narrower options, or to assert that other concepts are unmatched.
      */
@@ -198,17 +236,33 @@ export interface ConceptMapGroupUnmappedArgs extends fhir.BackboneElementArgs {
      */
     mode: fhir.FhirCode<ConceptmapUnmappedModeCodeType> | string | undefined;
     /**
+     * Extended properties for primitive element: ConceptMap.group.unmapped.mode
+     */
+    _mode?: fhir.FhirElementArgs;
+    /**
      * The fixed code to use when the mode = 'fixed'  - all unmapped codes are mapped to a single fixed code.
      */
     code?: fhir.FhirCode | string | undefined;
+    /**
+     * Extended properties for primitive element: ConceptMap.group.unmapped.code
+     */
+    _code?: fhir.FhirElementArgs;
     /**
      * The display is ignored when processing the map.
      */
     display?: fhir.FhirString | string | undefined;
     /**
+     * Extended properties for primitive element: ConceptMap.group.unmapped.display
+     */
+    _display?: fhir.FhirElementArgs;
+    /**
      * The canonical reference to an additional ConceptMap resource instance to use for mapping if this ConceptMap resource contains no matching mapping for the source concept.
      */
     url?: fhir.FhirCanonical | string | undefined;
+    /**
+     * Extended properties for primitive element: ConceptMap.group.unmapped.url
+     */
+    _url?: fhir.FhirElementArgs;
 }
 /**
  * This only applies if the source code has a system value that matches the system defined for the group.
@@ -260,17 +314,33 @@ export interface ConceptMapGroupArgs extends fhir.BackboneElementArgs {
      */
     source?: fhir.FhirUri | string | undefined;
     /**
+     * Extended properties for primitive element: ConceptMap.group.source
+     */
+    _source?: fhir.FhirElementArgs;
+    /**
      * The specification of a particular code system version may be required for code systems which lack concept permanence.
      */
     sourceVersion?: fhir.FhirString | string | undefined;
+    /**
+     * Extended properties for primitive element: ConceptMap.group.sourceVersion
+     */
+    _sourceVersion?: fhir.FhirElementArgs;
     /**
      * This is not needed if the target value set is specified and it contains concepts from only a single system. The group target may also be omitted if all of the target element equivalence values are 'unmatched'.
      */
     target?: fhir.FhirUri | string | undefined;
     /**
+     * Extended properties for primitive element: ConceptMap.group.target
+     */
+    _target?: fhir.FhirElementArgs;
+    /**
      * The specification of a particular code system version may be required for code systems which lack concept permanence.
      */
     targetVersion?: fhir.FhirString | string | undefined;
+    /**
+     * Extended properties for primitive element: ConceptMap.group.targetVersion
+     */
+    _targetVersion?: fhir.FhirElementArgs;
     /**
      * Generally, the ideal is that there would only be one mapping for each concept in the source value set, but a given concept may be mapped multiple times with different comments or dependencies.
      */
@@ -336,6 +406,10 @@ export interface ConceptMapArgs extends fhir.DomainResourceArgs {
      */
     url?: fhir.FhirUri | string | undefined;
     /**
+     * Extended properties for primitive element: ConceptMap.url
+     */
+    _url?: fhir.FhirElementArgs;
+    /**
      * Typically, this is used for identifiers that can go in an HL7 V3 II (instance identifier) data type, and can then identify this concept map outside of FHIR, where it is not possible to use the logical URI.
      */
     identifier?: fhir.IdentifierArgs | undefined;
@@ -344,29 +418,57 @@ export interface ConceptMapArgs extends fhir.DomainResourceArgs {
      */
     version?: fhir.FhirString | string | undefined;
     /**
+     * Extended properties for primitive element: ConceptMap.version
+     */
+    _version?: fhir.FhirElementArgs;
+    /**
      * The name is not expected to be globally unique. The name should be a simple alphanumeric type name to ensure that it is machine-processing friendly.
      */
     name?: fhir.FhirString | string | undefined;
+    /**
+     * Extended properties for primitive element: ConceptMap.name
+     */
+    _name?: fhir.FhirElementArgs;
     /**
      * This name does not need to be machine-processing friendly and may contain punctuation, white-space, etc.
      */
     title?: fhir.FhirString | string | undefined;
     /**
+     * Extended properties for primitive element: ConceptMap.title
+     */
+    _title?: fhir.FhirElementArgs;
+    /**
      * Allows filtering of concept maps that are appropriate for use versus not.
      */
     status: fhir.FhirCode<PublicationStatusCodeType> | string | undefined;
+    /**
+     * Extended properties for primitive element: ConceptMap.status
+     */
+    _status?: fhir.FhirElementArgs;
     /**
      * Allows filtering of concept maps that are appropriate for use versus not.
      */
     experimental?: fhir.FhirBoolean | boolean | undefined;
     /**
+     * Extended properties for primitive element: ConceptMap.experimental
+     */
+    _experimental?: fhir.FhirElementArgs;
+    /**
      * Note that this is not the same as the resource last-modified-date, since the resource may be a secondary representation of the concept map. Additional specific dates may be added as extensions or be found by consulting Provenances associated with past versions of the resource.
      */
     date?: fhir.FhirDateTime | string | undefined;
     /**
+     * Extended properties for primitive element: ConceptMap.date
+     */
+    _date?: fhir.FhirElementArgs;
+    /**
      * Usually an organization but may be an individual. The publisher (or steward) of the concept map is the organization or individual primarily responsible for the maintenance and upkeep of the concept map. This is not necessarily the same individual or organization that developed and initially authored the content. The publisher is the primary point of contact for questions or issues with the concept map. This item SHOULD be populated unless the information is available from context.
      */
     publisher?: fhir.FhirString | string | undefined;
+    /**
+     * Extended properties for primitive element: ConceptMap.publisher
+     */
+    _publisher?: fhir.FhirElementArgs;
     /**
      * May be a web site, an email address, a telephone number, etc.
      */
@@ -375,6 +477,10 @@ export interface ConceptMapArgs extends fhir.DomainResourceArgs {
      * The description is not intended to describe the semantics of the concept map. The description should capture its intended use, which is needed for ensuring integrity for its use in models across future changes.
      */
     description?: fhir.FhirMarkdown | string | undefined;
+    /**
+     * Extended properties for primitive element: ConceptMap.description
+     */
+    _description?: fhir.FhirElementArgs;
     /**
      * When multiple useContexts are specified, there is no expectation that all or any of the contexts apply.
      */
@@ -388,9 +494,17 @@ export interface ConceptMapArgs extends fhir.DomainResourceArgs {
      */
     purpose?: fhir.FhirMarkdown | string | undefined;
     /**
+     * Extended properties for primitive element: ConceptMap.purpose
+     */
+    _purpose?: fhir.FhirElementArgs;
+    /**
      * Frequently the copyright differs between the concept map and codes that are included. The copyright statement should clearly differentiate between these when required.
      */
     copyright?: fhir.FhirMarkdown | string | undefined;
+    /**
+     * Extended properties for primitive element: ConceptMap.copyright
+     */
+    _copyright?: fhir.FhirElementArgs;
     /**
      * Should be a version specific reference. URIs SHOULD be absolute. If there is no source or target value set, there is no specified context for the map (not recommended).  The source value set may select codes from either an explicit (standard or local) or implicit code system.
      */

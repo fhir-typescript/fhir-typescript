@@ -25,6 +25,10 @@ export interface PersonLinkArgs extends fhir.BackboneElementArgs {
    * Level of assurance that this link is associated with the target resource.
    */
   assurance?: fhir.FhirCode<IdentityAssuranceLevelCodeType>|string|undefined;
+  /**
+   * Extended properties for primitive element: Person.link.assurance
+   */
+  _assurance?:fhir.FhirElementArgs;
 }
 
 /**
@@ -51,6 +55,10 @@ export class PersonLink extends fhir.BackboneElement {
     if (source['target']) { this.target = new fhir.Reference(source.target); }
     else { this.target = null; }
     if (source['assurance']) { this.assurance = new fhir.FhirCode<IdentityAssuranceLevelCodeType>({value: source.assurance}); }
+    if (source['_assurance']) {
+      if (this.assurance) { this.assurance.addExtendedProperties(source._assurance!); }
+      else { this.assurance = new fhir.FhirCode<IdentityAssuranceLevelCodeType>(source._assurance as Partial<fhir.FhirCode>); }
+    }
   }
   /**
    * Required-bound Value Set for assurance (Person.link.assurance)
@@ -99,9 +107,17 @@ export interface PersonArgs extends fhir.DomainResourceArgs {
    */
   gender?: fhir.FhirCode<AdministrativeGenderCodeType>|string|undefined;
   /**
+   * Extended properties for primitive element: Person.gender
+   */
+  _gender?:fhir.FhirElementArgs;
+  /**
    * At least an estimated year should be provided as a guess if the real DOB is unknown.
    */
   birthDate?: fhir.FhirDate|string|undefined;
+  /**
+   * Extended properties for primitive element: Person.birthDate
+   */
+  _birthDate?:fhir.FhirElementArgs;
   /**
    * Person may have multiple addresses with different uses or applicable periods.
    */
@@ -118,6 +134,10 @@ export interface PersonArgs extends fhir.DomainResourceArgs {
    * Whether this person's record is in active use.
    */
   active?: fhir.FhirBoolean|boolean|undefined;
+  /**
+   * Extended properties for primitive element: Person.active
+   */
+  _active?:fhir.FhirElementArgs;
   /**
    * Link to a resource that concerns the same actual person.
    */
@@ -189,12 +209,24 @@ export class Person extends fhir.DomainResource {
     if (source['telecom']) { this.telecom = source.telecom.map((x) => new fhir.ContactPoint(x)); }
     else { this.telecom = []; }
     if (source['gender']) { this.gender = new fhir.FhirCode<AdministrativeGenderCodeType>({value: source.gender}); }
+    if (source['_gender']) {
+      if (this.gender) { this.gender.addExtendedProperties(source._gender!); }
+      else { this.gender = new fhir.FhirCode<AdministrativeGenderCodeType>(source._gender as Partial<fhir.FhirCode>); }
+    }
     if (source['birthDate']) { this.birthDate = new fhir.FhirDate({value: source.birthDate}); }
+    if (source['_birthDate']) {
+      if (this.birthDate) { this.birthDate.addExtendedProperties(source._birthDate!); }
+      else { this.birthDate = new fhir.FhirDate(source._birthDate as Partial<fhir.FhirDateArgs>); }
+    }
     if (source['address']) { this.address = source.address.map((x) => new fhir.Address(x)); }
     else { this.address = []; }
     if (source['photo']) { this.photo = new fhir.Attachment(source.photo); }
     if (source['managingOrganization']) { this.managingOrganization = new fhir.Reference(source.managingOrganization); }
     if (source['active']) { this.active = new fhir.FhirBoolean({value: source.active}); }
+    if (source['_active']) {
+      if (this.active) { this.active.addExtendedProperties(source._active!); }
+      else { this.active = new fhir.FhirBoolean(source._active as Partial<fhir.FhirBooleanArgs>); }
+    }
     if (source['link']) { this.link = source.link.map((x) => new fhir.PersonLink(x)); }
     else { this.link = []; }
   }

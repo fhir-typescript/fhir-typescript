@@ -78,13 +78,25 @@ export interface CapabilityStatementSoftwareArgs extends fhir.BackboneElementArg
    */
   name: fhir.FhirString|string|undefined;
   /**
+   * Extended properties for primitive element: CapabilityStatement.software.name
+   */
+  _name?:fhir.FhirElementArgs;
+  /**
    * If possible, a version should be specified, as statements are likely to be different for different versions of software.
    */
   version?: fhir.FhirString|string|undefined;
   /**
+   * Extended properties for primitive element: CapabilityStatement.software.version
+   */
+  _version?:fhir.FhirElementArgs;
+  /**
    * Date this version of the software was released.
    */
   releaseDate?: fhir.FhirDateTime|string|undefined;
+  /**
+   * Extended properties for primitive element: CapabilityStatement.software.releaseDate
+   */
+  _releaseDate?:fhir.FhirElementArgs;
 }
 
 /**
@@ -114,8 +126,20 @@ export class CapabilityStatementSoftware extends fhir.BackboneElement {
     super(source, options);
     if (source['name']) { this.name = new fhir.FhirString({value: source.name}); }
     else { this.name = null; }
+    if (source['_name']) {
+      if (this.name) { this.name.addExtendedProperties(source._name!); }
+      else { this.name = new fhir.FhirString(source._name as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['version']) { this.version = new fhir.FhirString({value: source.version}); }
+    if (source['_version']) {
+      if (this.version) { this.version.addExtendedProperties(source._version!); }
+      else { this.version = new fhir.FhirString(source._version as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['releaseDate']) { this.releaseDate = new fhir.FhirDateTime({value: source.releaseDate}); }
+    if (source['_releaseDate']) {
+      if (this.releaseDate) { this.releaseDate.addExtendedProperties(source._releaseDate!); }
+      else { this.releaseDate = new fhir.FhirDateTime(source._releaseDate as Partial<fhir.FhirDateTimeArgs>); }
+    }
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -140,9 +164,17 @@ export interface CapabilityStatementImplementationArgs extends fhir.BackboneElem
    */
   description: fhir.FhirString|string|undefined;
   /**
+   * Extended properties for primitive element: CapabilityStatement.implementation.description
+   */
+  _description?:fhir.FhirElementArgs;
+  /**
    * An absolute base URL for the implementation.  This forms the base for REST interfaces as well as the mailbox and document interfaces.
    */
   url?: fhir.FhirUrl|string|undefined;
+  /**
+   * Extended properties for primitive element: CapabilityStatement.implementation.url
+   */
+  _url?:fhir.FhirElementArgs;
   /**
    * The organization responsible for the management of the instance and oversight of the data on the server at the specified URL.
    */
@@ -176,7 +208,15 @@ export class CapabilityStatementImplementation extends fhir.BackboneElement {
     super(source, options);
     if (source['description']) { this.description = new fhir.FhirString({value: source.description}); }
     else { this.description = null; }
+    if (source['_description']) {
+      if (this.description) { this.description.addExtendedProperties(source._description!); }
+      else { this.description = new fhir.FhirString(source._description as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['url']) { this.url = new fhir.FhirUrl({value: source.url}); }
+    if (source['_url']) {
+      if (this.url) { this.url.addExtendedProperties(source._url!); }
+      else { this.url = new fhir.FhirUrl(source._url as Partial<fhir.FhirUrlArgs>); }
+    }
     if (source['custodian']) { this.custodian = new fhir.Reference(source.custodian); }
   }
   /**
@@ -202,6 +242,10 @@ export interface CapabilityStatementRestSecurityArgs extends fhir.BackboneElemen
    */
   cors?: fhir.FhirBoolean|boolean|undefined;
   /**
+   * Extended properties for primitive element: CapabilityStatement.rest.security.cors
+   */
+  _cors?:fhir.FhirElementArgs;
+  /**
    * Types of security services that are supported/required by the system.
    */
   service?: fhir.CodeableConceptArgs[]|undefined;
@@ -209,6 +253,10 @@ export interface CapabilityStatementRestSecurityArgs extends fhir.BackboneElemen
    * General description of how security works.
    */
   description?: fhir.FhirMarkdown|string|undefined;
+  /**
+   * Extended properties for primitive element: CapabilityStatement.rest.security.description
+   */
+  _description?:fhir.FhirElementArgs;
 }
 
 /**
@@ -237,9 +285,17 @@ export class CapabilityStatementRestSecurity extends fhir.BackboneElement {
   constructor(source:Partial<CapabilityStatementRestSecurityArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
     if (source['cors']) { this.cors = new fhir.FhirBoolean({value: source.cors}); }
+    if (source['_cors']) {
+      if (this.cors) { this.cors.addExtendedProperties(source._cors!); }
+      else { this.cors = new fhir.FhirBoolean(source._cors as Partial<fhir.FhirBooleanArgs>); }
+    }
     if (source['service']) { this.service = source.service.map((x) => new fhir.CodeableConcept(x)); }
     else { this.service = []; }
     if (source['description']) { this.description = new fhir.FhirMarkdown({value: source.description}); }
+    if (source['_description']) {
+      if (this.description) { this.description.addExtendedProperties(source._description!); }
+      else { this.description = new fhir.FhirMarkdown(source._description as Partial<fhir.FhirMarkdownArgs>); }
+    }
   }
   /**
    * Extensible-bound Value Set for service (CapabilityStatement.rest.security.service)
@@ -267,9 +323,17 @@ export interface CapabilityStatementRestResourceInteractionArgs extends fhir.Bac
    */
   code: fhir.FhirCode<TypeRestfulInteractionCodeType>|string|undefined;
   /**
+   * Extended properties for primitive element: CapabilityStatement.rest.resource.interaction.code
+   */
+  _code?:fhir.FhirElementArgs;
+  /**
    * Guidance specific to the implementation of this operation, such as 'delete is a logical delete' or 'updates are only allowed with version id' or 'creates permitted from pre-authorized certificates only'.
    */
   documentation?: fhir.FhirMarkdown|string|undefined;
+  /**
+   * Extended properties for primitive element: CapabilityStatement.rest.resource.interaction.documentation
+   */
+  _documentation?:fhir.FhirElementArgs;
 }
 
 /**
@@ -295,7 +359,15 @@ export class CapabilityStatementRestResourceInteraction extends fhir.BackboneEle
     super(source, options);
     if (source['code']) { this.code = new fhir.FhirCode<TypeRestfulInteractionCodeType>({value: source.code}); }
     else { this.code = null; }
+    if (source['_code']) {
+      if (this.code) { this.code.addExtendedProperties(source._code!); }
+      else { this.code = new fhir.FhirCode<TypeRestfulInteractionCodeType>(source._code as Partial<fhir.FhirCode>); }
+    }
     if (source['documentation']) { this.documentation = new fhir.FhirMarkdown({value: source.documentation}); }
+    if (source['_documentation']) {
+      if (this.documentation) { this.documentation.addExtendedProperties(source._documentation!); }
+      else { this.documentation = new fhir.FhirMarkdown(source._documentation as Partial<fhir.FhirMarkdownArgs>); }
+    }
   }
   /**
    * Required-bound Value Set for code (CapabilityStatement.rest.resource.interaction.code)
@@ -328,17 +400,33 @@ export interface CapabilityStatementRestResourceSearchParamArgs extends fhir.Bac
    */
   name: fhir.FhirString|string|undefined;
   /**
+   * Extended properties for primitive element: CapabilityStatement.rest.resource.searchParam.name
+   */
+  _name?:fhir.FhirElementArgs;
+  /**
    * This SHOULD be present, and matches refers to a SearchParameter by its canonical URL. If systems wish to document their support for modifiers, comparators, target resource types, and chained parameters, they should do using a search parameter resource. This element SHALL be populated if the search parameter refers to a SearchParameter defined by the FHIR core specification or externally defined IGs.
    */
   definition?: fhir.FhirCanonical|string|undefined;
+  /**
+   * Extended properties for primitive element: CapabilityStatement.rest.resource.searchParam.definition
+   */
+  _definition?:fhir.FhirElementArgs;
   /**
    * While this can be looked up from the definition, it is included here as a convenience for systems that autogenerate a query interface based on the server capability statement.  It SHALL be the same as the type in the search parameter definition.
    */
   type: fhir.FhirCode<SearchParamTypeCodeType>|string|undefined;
   /**
+   * Extended properties for primitive element: CapabilityStatement.rest.resource.searchParam.type
+   */
+  _type?:fhir.FhirElementArgs;
+  /**
    * This allows documentation of any distinct behaviors about how the search parameter is used.  For example, text matching algorithms.
    */
   documentation?: fhir.FhirMarkdown|string|undefined;
+  /**
+   * Extended properties for primitive element: CapabilityStatement.rest.resource.searchParam.documentation
+   */
+  _documentation?:fhir.FhirElementArgs;
 }
 
 /**
@@ -372,10 +460,26 @@ export class CapabilityStatementRestResourceSearchParam extends fhir.BackboneEle
     super(source, options);
     if (source['name']) { this.name = new fhir.FhirString({value: source.name}); }
     else { this.name = null; }
+    if (source['_name']) {
+      if (this.name) { this.name.addExtendedProperties(source._name!); }
+      else { this.name = new fhir.FhirString(source._name as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['definition']) { this.definition = new fhir.FhirCanonical({value: source.definition}); }
+    if (source['_definition']) {
+      if (this.definition) { this.definition.addExtendedProperties(source._definition!); }
+      else { this.definition = new fhir.FhirCanonical(source._definition as Partial<fhir.FhirCanonicalArgs>); }
+    }
     if (source['type']) { this.type = new fhir.FhirCode<SearchParamTypeCodeType>({value: source.type}); }
     else { this.type = null; }
+    if (source['_type']) {
+      if (this.type) { this.type.addExtendedProperties(source._type!); }
+      else { this.type = new fhir.FhirCode<SearchParamTypeCodeType>(source._type as Partial<fhir.FhirCode>); }
+    }
     if (source['documentation']) { this.documentation = new fhir.FhirMarkdown({value: source.documentation}); }
+    if (source['_documentation']) {
+      if (this.documentation) { this.documentation.addExtendedProperties(source._documentation!); }
+      else { this.documentation = new fhir.FhirMarkdown(source._documentation as Partial<fhir.FhirMarkdownArgs>); }
+    }
   }
   /**
    * Required-bound Value Set for type (CapabilityStatement.rest.resource.searchParam.type)
@@ -413,13 +517,25 @@ export interface CapabilityStatementRestResourceOperationArgs extends fhir.Backb
    */
   name: fhir.FhirString|string|undefined;
   /**
+   * Extended properties for primitive element: CapabilityStatement.rest.resource.operation.name
+   */
+  _name?:fhir.FhirElementArgs;
+  /**
    * This can be used to build an HTML form to invoke the operation, for instance.
    */
   definition: fhir.FhirCanonical|string|undefined;
   /**
+   * Extended properties for primitive element: CapabilityStatement.rest.resource.operation.definition
+   */
+  _definition?:fhir.FhirElementArgs;
+  /**
    * Documentation that describes anything special about the operation behavior, possibly detailing different behavior for system, type and instance-level invocation of the operation.
    */
   documentation?: fhir.FhirMarkdown|string|undefined;
+  /**
+   * Extended properties for primitive element: CapabilityStatement.rest.resource.operation.documentation
+   */
+  _documentation?:fhir.FhirElementArgs;
 }
 
 /**
@@ -450,9 +566,21 @@ export class CapabilityStatementRestResourceOperation extends fhir.BackboneEleme
     super(source, options);
     if (source['name']) { this.name = new fhir.FhirString({value: source.name}); }
     else { this.name = null; }
+    if (source['_name']) {
+      if (this.name) { this.name.addExtendedProperties(source._name!); }
+      else { this.name = new fhir.FhirString(source._name as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['definition']) { this.definition = new fhir.FhirCanonical({value: source.definition}); }
     else { this.definition = null; }
+    if (source['_definition']) {
+      if (this.definition) { this.definition.addExtendedProperties(source._definition!); }
+      else { this.definition = new fhir.FhirCanonical(source._definition as Partial<fhir.FhirCanonicalArgs>); }
+    }
     if (source['documentation']) { this.documentation = new fhir.FhirMarkdown({value: source.documentation}); }
+    if (source['_documentation']) {
+      if (this.documentation) { this.documentation.addExtendedProperties(source._documentation!); }
+      else { this.documentation = new fhir.FhirMarkdown(source._documentation as Partial<fhir.FhirMarkdownArgs>); }
+    }
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -480,17 +608,33 @@ export interface CapabilityStatementRestResourceArgs extends fhir.BackboneElemen
    */
   type: fhir.FhirCode|string|undefined;
   /**
+   * Extended properties for primitive element: CapabilityStatement.rest.resource.type
+   */
+  _type?:fhir.FhirElementArgs;
+  /**
    * The profile applies to all  resources of this type - i.e. it is the superset of what is supported by the system.
    */
   profile?: fhir.FhirCanonical|string|undefined;
+  /**
+   * Extended properties for primitive element: CapabilityStatement.rest.resource.profile
+   */
+  _profile?:fhir.FhirElementArgs;
   /**
    * Supported profiles are different than the profile that applies to a particular resource in .rest.resource.profile. The resource profile is a general statement of what features of the resource are supported overall by the system - the sum total of the facilities it supports. A supported profile is a deeper statement about the functionality of the data and services provided by the server (or used by the client). A typical case is a laboratory system that produces a set of different reports - this is the list of types of data that it publishes. A key aspect of declaring profiles here is the question of how the client converts knowledge that the server publishes this data into working with the data; the client can inspect individual resources to determine whether they conform to a particular profile, but how does it find the ones that do? It does so by searching using the _profile parameter, so any resources listed here must be valid values for the _profile resource (using the identifier in the target profile).
    */
   supportedProfile?: fhir.FhirCanonical[]|string[]|undefined;
   /**
+   * Extended properties for primitive element: CapabilityStatement.rest.resource.supportedProfile
+   */
+  _supportedProfile?:(fhir.FhirElementArgs|null)[];
+  /**
    * Additional information about the resource type used by the system.
    */
   documentation?: fhir.FhirMarkdown|string|undefined;
+  /**
+   * Extended properties for primitive element: CapabilityStatement.rest.resource.documentation
+   */
+  _documentation?:fhir.FhirElementArgs;
   /**
    * In general, a Resource will only appear in a CapabilityStatement if the server actually has some capabilities - e.g. there is at least one interaction supported. However interactions can be omitted to support summarization (_summary = true).
    */
@@ -500,41 +644,81 @@ export interface CapabilityStatementRestResourceArgs extends fhir.BackboneElemen
    */
   versioning?: fhir.FhirCode<VersioningPolicyCodeType>|string|undefined;
   /**
+   * Extended properties for primitive element: CapabilityStatement.rest.resource.versioning
+   */
+  _versioning?:fhir.FhirElementArgs;
+  /**
    * It is useful to support the vRead operation for current operations, even if past versions aren't available.
    */
   readHistory?: fhir.FhirBoolean|boolean|undefined;
+  /**
+   * Extended properties for primitive element: CapabilityStatement.rest.resource.readHistory
+   */
+  _readHistory?:fhir.FhirElementArgs;
   /**
    * Allowing the clients to create new identities on the server means that the system administrator needs to have confidence that the clients do not create clashing identities between them. Obviously, if there is only one client, this won't happen. While creating identities on the client means that the clients need to be managed, it's much more convenient for many scenarios if such management can be put in place.
    */
   updateCreate?: fhir.FhirBoolean|boolean|undefined;
   /**
+   * Extended properties for primitive element: CapabilityStatement.rest.resource.updateCreate
+   */
+  _updateCreate?:fhir.FhirElementArgs;
+  /**
    * Conditional Create is mainly appropriate for interface engine scripts converting from other formats, such as v2.
    */
   conditionalCreate?: fhir.FhirBoolean|boolean|undefined;
+  /**
+   * Extended properties for primitive element: CapabilityStatement.rest.resource.conditionalCreate
+   */
+  _conditionalCreate?:fhir.FhirElementArgs;
   /**
    * Conditional Read is mainly appropriate for interface engine scripts converting from other formats, such as v2.
    */
   conditionalRead?: fhir.FhirCode<ConditionalReadStatusCodeType>|string|undefined;
   /**
+   * Extended properties for primitive element: CapabilityStatement.rest.resource.conditionalRead
+   */
+  _conditionalRead?:fhir.FhirElementArgs;
+  /**
    * Conditional Update is mainly appropriate for interface engine scripts converting from other formats, such as v2.
    */
   conditionalUpdate?: fhir.FhirBoolean|boolean|undefined;
+  /**
+   * Extended properties for primitive element: CapabilityStatement.rest.resource.conditionalUpdate
+   */
+  _conditionalUpdate?:fhir.FhirElementArgs;
   /**
    * Conditional Delete is mainly appropriate for interface engine scripts converting from other formats, such as v2.
    */
   conditionalDelete?: fhir.FhirCode<ConditionalDeleteStatusCodeType>|string|undefined;
   /**
+   * Extended properties for primitive element: CapabilityStatement.rest.resource.conditionalDelete
+   */
+  _conditionalDelete?:fhir.FhirElementArgs;
+  /**
    * A set of flags that defines how references are supported.
    */
   referencePolicy?: fhir.FhirCode<ReferenceHandlingPolicyCodeType>[]|string[]|undefined;
+  /**
+   * Extended properties for primitive element: CapabilityStatement.rest.resource.referencePolicy
+   */
+  _referencePolicy?:(fhir.FhirElementArgs|null)[];
   /**
    * If this list is empty, the server does not support includes.
    */
   searchInclude?: fhir.FhirString[]|string[]|undefined;
   /**
+   * Extended properties for primitive element: CapabilityStatement.rest.resource.searchInclude
+   */
+  _searchInclude?:(fhir.FhirElementArgs|null)[];
+  /**
    * If this list is empty, the server does not support reverse includes.
    */
   searchRevInclude?: fhir.FhirString[]|string[]|undefined;
+  /**
+   * Extended properties for primitive element: CapabilityStatement.rest.resource.searchRevInclude
+   */
+  _searchRevInclude?:(fhir.FhirElementArgs|null)[];
   /**
    * The search parameters should include the control search parameters such as _sort, _count, etc. that also apply to this resource (though many will be listed at [CapabilityStatement.rest.searchParam](capabilitystatement-definitions.html#CapabilityStatement.rest.searchParam)). The behavior of some search parameters may be further described by other code or extension elements, or narrative within the capability statement or linked [SearchParameter](searchparameter.html#) definitions.
    */
@@ -630,25 +814,89 @@ export class CapabilityStatementRestResource extends fhir.BackboneElement {
     super(source, options);
     if (source['type']) { this.type = new fhir.FhirCode({value: source.type}); }
     else { this.type = null; }
+    if (source['_type']) {
+      if (this.type) { this.type.addExtendedProperties(source._type!); }
+      else { this.type = new fhir.FhirCode(source._type as Partial<fhir.FhirCodeArgs>); }
+    }
     if (source['profile']) { this.profile = new fhir.FhirCanonical({value: source.profile}); }
+    if (source['_profile']) {
+      if (this.profile) { this.profile.addExtendedProperties(source._profile!); }
+      else { this.profile = new fhir.FhirCanonical(source._profile as Partial<fhir.FhirCanonicalArgs>); }
+    }
     if (source['supportedProfile']) { this.supportedProfile = source.supportedProfile.map((x) => new fhir.FhirCanonical({value: x})); }
     else { this.supportedProfile = []; }
+    if (source['_supportedProfile']) {
+      source._supportedProfile.forEach((x,i) => {
+        if (this.supportedProfile.length >= i) { if (x) { this.supportedProfile[i].addExtendedProperties(x); } }
+        else { if (x) { this.supportedProfile.push(new fhir.FhirCanonical(x as Partial<fhir.FhirCanonicalArgs>)); } }
+      });
+    }
     if (source['documentation']) { this.documentation = new fhir.FhirMarkdown({value: source.documentation}); }
+    if (source['_documentation']) {
+      if (this.documentation) { this.documentation.addExtendedProperties(source._documentation!); }
+      else { this.documentation = new fhir.FhirMarkdown(source._documentation as Partial<fhir.FhirMarkdownArgs>); }
+    }
     if (source['interaction']) { this.interaction = source.interaction.map((x) => new fhir.CapabilityStatementRestResourceInteraction(x)); }
     else { this.interaction = []; }
     if (source['versioning']) { this.versioning = new fhir.FhirCode<VersioningPolicyCodeType>({value: source.versioning}); }
+    if (source['_versioning']) {
+      if (this.versioning) { this.versioning.addExtendedProperties(source._versioning!); }
+      else { this.versioning = new fhir.FhirCode<VersioningPolicyCodeType>(source._versioning as Partial<fhir.FhirCode>); }
+    }
     if (source['readHistory']) { this.readHistory = new fhir.FhirBoolean({value: source.readHistory}); }
+    if (source['_readHistory']) {
+      if (this.readHistory) { this.readHistory.addExtendedProperties(source._readHistory!); }
+      else { this.readHistory = new fhir.FhirBoolean(source._readHistory as Partial<fhir.FhirBooleanArgs>); }
+    }
     if (source['updateCreate']) { this.updateCreate = new fhir.FhirBoolean({value: source.updateCreate}); }
+    if (source['_updateCreate']) {
+      if (this.updateCreate) { this.updateCreate.addExtendedProperties(source._updateCreate!); }
+      else { this.updateCreate = new fhir.FhirBoolean(source._updateCreate as Partial<fhir.FhirBooleanArgs>); }
+    }
     if (source['conditionalCreate']) { this.conditionalCreate = new fhir.FhirBoolean({value: source.conditionalCreate}); }
+    if (source['_conditionalCreate']) {
+      if (this.conditionalCreate) { this.conditionalCreate.addExtendedProperties(source._conditionalCreate!); }
+      else { this.conditionalCreate = new fhir.FhirBoolean(source._conditionalCreate as Partial<fhir.FhirBooleanArgs>); }
+    }
     if (source['conditionalRead']) { this.conditionalRead = new fhir.FhirCode<ConditionalReadStatusCodeType>({value: source.conditionalRead}); }
+    if (source['_conditionalRead']) {
+      if (this.conditionalRead) { this.conditionalRead.addExtendedProperties(source._conditionalRead!); }
+      else { this.conditionalRead = new fhir.FhirCode<ConditionalReadStatusCodeType>(source._conditionalRead as Partial<fhir.FhirCode>); }
+    }
     if (source['conditionalUpdate']) { this.conditionalUpdate = new fhir.FhirBoolean({value: source.conditionalUpdate}); }
+    if (source['_conditionalUpdate']) {
+      if (this.conditionalUpdate) { this.conditionalUpdate.addExtendedProperties(source._conditionalUpdate!); }
+      else { this.conditionalUpdate = new fhir.FhirBoolean(source._conditionalUpdate as Partial<fhir.FhirBooleanArgs>); }
+    }
     if (source['conditionalDelete']) { this.conditionalDelete = new fhir.FhirCode<ConditionalDeleteStatusCodeType>({value: source.conditionalDelete}); }
+    if (source['_conditionalDelete']) {
+      if (this.conditionalDelete) { this.conditionalDelete.addExtendedProperties(source._conditionalDelete!); }
+      else { this.conditionalDelete = new fhir.FhirCode<ConditionalDeleteStatusCodeType>(source._conditionalDelete as Partial<fhir.FhirCode>); }
+    }
     if (source['referencePolicy']) { this.referencePolicy = source.referencePolicy.map((x) => new fhir.FhirCode<ReferenceHandlingPolicyCodeType>({value: x})); }
     else { this.referencePolicy = []; }
+    if (source['_referencePolicy']) {
+      source._referencePolicy.forEach((x,i) => {
+        if (this.referencePolicy.length >= i) { if (x) { this.referencePolicy[i].addExtendedProperties(x); } }
+        else { if (x) { this.referencePolicy.push(new fhir.FhirCode<ReferenceHandlingPolicyCodeType>(x as Partial<fhir.FhirCode>)); } }
+      });
+    }
     if (source['searchInclude']) { this.searchInclude = source.searchInclude.map((x) => new fhir.FhirString({value: x})); }
     else { this.searchInclude = []; }
+    if (source['_searchInclude']) {
+      source._searchInclude.forEach((x,i) => {
+        if (this.searchInclude.length >= i) { if (x) { this.searchInclude[i].addExtendedProperties(x); } }
+        else { if (x) { this.searchInclude.push(new fhir.FhirString(x as Partial<fhir.FhirStringArgs>)); } }
+      });
+    }
     if (source['searchRevInclude']) { this.searchRevInclude = source.searchRevInclude.map((x) => new fhir.FhirString({value: x})); }
     else { this.searchRevInclude = []; }
+    if (source['_searchRevInclude']) {
+      source._searchRevInclude.forEach((x,i) => {
+        if (this.searchRevInclude.length >= i) { if (x) { this.searchRevInclude[i].addExtendedProperties(x); } }
+        else { if (x) { this.searchRevInclude.push(new fhir.FhirString(x as Partial<fhir.FhirStringArgs>)); } }
+      });
+    }
     if (source['searchParam']) { this.searchParam = source.searchParam.map((x) => new fhir.CapabilityStatementRestResourceSearchParam(x)); }
     else { this.searchParam = []; }
     if (source['operation']) { this.operation = source.operation.map((x) => new fhir.CapabilityStatementRestResourceOperation(x)); }
@@ -740,9 +988,17 @@ export interface CapabilityStatementRestInteractionArgs extends fhir.BackboneEle
    */
   code: fhir.FhirCode<SystemRestfulInteractionCodeType>|string|undefined;
   /**
+   * Extended properties for primitive element: CapabilityStatement.rest.interaction.code
+   */
+  _code?:fhir.FhirElementArgs;
+  /**
    * Guidance specific to the implementation of this operation, such as limitations on the kind of transactions allowed, or information about system wide search is implemented.
    */
   documentation?: fhir.FhirMarkdown|string|undefined;
+  /**
+   * Extended properties for primitive element: CapabilityStatement.rest.interaction.documentation
+   */
+  _documentation?:fhir.FhirElementArgs;
 }
 
 /**
@@ -768,7 +1024,15 @@ export class CapabilityStatementRestInteraction extends fhir.BackboneElement {
     super(source, options);
     if (source['code']) { this.code = new fhir.FhirCode<SystemRestfulInteractionCodeType>({value: source.code}); }
     else { this.code = null; }
+    if (source['_code']) {
+      if (this.code) { this.code.addExtendedProperties(source._code!); }
+      else { this.code = new fhir.FhirCode<SystemRestfulInteractionCodeType>(source._code as Partial<fhir.FhirCode>); }
+    }
     if (source['documentation']) { this.documentation = new fhir.FhirMarkdown({value: source.documentation}); }
+    if (source['_documentation']) {
+      if (this.documentation) { this.documentation.addExtendedProperties(source._documentation!); }
+      else { this.documentation = new fhir.FhirMarkdown(source._documentation as Partial<fhir.FhirMarkdownArgs>); }
+    }
   }
   /**
    * Required-bound Value Set for code (CapabilityStatement.rest.interaction.code)
@@ -801,9 +1065,17 @@ export interface CapabilityStatementRestArgs extends fhir.BackboneElementArgs {
    */
   mode: fhir.FhirCode<RestfulCapabilityModeCodeType>|string|undefined;
   /**
+   * Extended properties for primitive element: CapabilityStatement.rest.mode
+   */
+  _mode?:fhir.FhirElementArgs;
+  /**
    * Information about the system's restful capabilities that apply across all applications, such as security.
    */
   documentation?: fhir.FhirMarkdown|string|undefined;
+  /**
+   * Extended properties for primitive element: CapabilityStatement.rest.documentation
+   */
+  _documentation?:fhir.FhirElementArgs;
   /**
    * Information about security implementation from an interface perspective - what a client needs to know.
    */
@@ -828,6 +1100,10 @@ export interface CapabilityStatementRestArgs extends fhir.BackboneElementArgs {
    * At present, the only defined compartments are at [CompartmentDefinition](compartmentdefinition.html).
    */
   compartment?: fhir.FhirCanonical[]|string[]|undefined;
+  /**
+   * Extended properties for primitive element: CapabilityStatement.rest.compartment
+   */
+  _compartment?:(fhir.FhirElementArgs|null)[];
 }
 
 /**
@@ -877,7 +1153,15 @@ export class CapabilityStatementRest extends fhir.BackboneElement {
     super(source, options);
     if (source['mode']) { this.mode = new fhir.FhirCode<RestfulCapabilityModeCodeType>({value: source.mode}); }
     else { this.mode = null; }
+    if (source['_mode']) {
+      if (this.mode) { this.mode.addExtendedProperties(source._mode!); }
+      else { this.mode = new fhir.FhirCode<RestfulCapabilityModeCodeType>(source._mode as Partial<fhir.FhirCode>); }
+    }
     if (source['documentation']) { this.documentation = new fhir.FhirMarkdown({value: source.documentation}); }
+    if (source['_documentation']) {
+      if (this.documentation) { this.documentation.addExtendedProperties(source._documentation!); }
+      else { this.documentation = new fhir.FhirMarkdown(source._documentation as Partial<fhir.FhirMarkdownArgs>); }
+    }
     if (source['security']) { this.security = new fhir.CapabilityStatementRestSecurity(source.security); }
     if (source['resource']) { this.resource = source.resource.map((x) => new fhir.CapabilityStatementRestResource(x)); }
     else { this.resource = []; }
@@ -889,6 +1173,12 @@ export class CapabilityStatementRest extends fhir.BackboneElement {
     else { this.operation = []; }
     if (source['compartment']) { this.compartment = source.compartment.map((x) => new fhir.FhirCanonical({value: x})); }
     else { this.compartment = []; }
+    if (source['_compartment']) {
+      source._compartment.forEach((x,i) => {
+        if (this.compartment.length >= i) { if (x) { this.compartment[i].addExtendedProperties(x); } }
+        else { if (x) { this.compartment.push(new fhir.FhirCanonical(x as Partial<fhir.FhirCanonicalArgs>)); } }
+      });
+    }
   }
   /**
    * Required-bound Value Set for mode (CapabilityStatement.rest.mode)
@@ -930,6 +1220,10 @@ export interface CapabilityStatementMessagingEndpointArgs extends fhir.BackboneE
    * The network address of the endpoint. For solutions that do not use network addresses for routing, it can be just an identifier.
    */
   address: fhir.FhirUrl|string|undefined;
+  /**
+   * Extended properties for primitive element: CapabilityStatement.messaging.endpoint.address
+   */
+  _address?:fhir.FhirElementArgs;
 }
 
 /**
@@ -957,6 +1251,10 @@ export class CapabilityStatementMessagingEndpoint extends fhir.BackboneElement {
     else { this.protocol = null; }
     if (source['address']) { this.address = new fhir.FhirUrl({value: source.address}); }
     else { this.address = null; }
+    if (source['_address']) {
+      if (this.address) { this.address.addExtendedProperties(source._address!); }
+      else { this.address = new fhir.FhirUrl(source._address as Partial<fhir.FhirUrlArgs>); }
+    }
   }
   /**
    * Extensible-bound Value Set for protocol (CapabilityStatement.messaging.endpoint.protocol)
@@ -989,9 +1287,17 @@ export interface CapabilityStatementMessagingSupportedMessageArgs extends fhir.B
    */
   mode: fhir.FhirCode<EventCapabilityModeCodeType>|string|undefined;
   /**
+   * Extended properties for primitive element: CapabilityStatement.messaging.supportedMessage.mode
+   */
+  _mode?:fhir.FhirElementArgs;
+  /**
    * Points to a message definition that identifies the messaging event, message structure, allowed responses, etc.
    */
   definition: fhir.FhirCanonical|string|undefined;
+  /**
+   * Extended properties for primitive element: CapabilityStatement.messaging.supportedMessage.definition
+   */
+  _definition?:fhir.FhirElementArgs;
 }
 
 /**
@@ -1017,8 +1323,16 @@ export class CapabilityStatementMessagingSupportedMessage extends fhir.BackboneE
     super(source, options);
     if (source['mode']) { this.mode = new fhir.FhirCode<EventCapabilityModeCodeType>({value: source.mode}); }
     else { this.mode = null; }
+    if (source['_mode']) {
+      if (this.mode) { this.mode.addExtendedProperties(source._mode!); }
+      else { this.mode = new fhir.FhirCode<EventCapabilityModeCodeType>(source._mode as Partial<fhir.FhirCode>); }
+    }
     if (source['definition']) { this.definition = new fhir.FhirCanonical({value: source.definition}); }
     else { this.definition = null; }
+    if (source['_definition']) {
+      if (this.definition) { this.definition.addExtendedProperties(source._definition!); }
+      else { this.definition = new fhir.FhirCanonical(source._definition as Partial<fhir.FhirCanonicalArgs>); }
+    }
   }
   /**
    * Required-bound Value Set for mode (CapabilityStatement.messaging.supportedMessage.mode)
@@ -1058,9 +1372,17 @@ export interface CapabilityStatementMessagingArgs extends fhir.BackboneElementAr
    */
   reliableCache?: fhir.FhirUnsignedInt|number|undefined;
   /**
+   * Extended properties for primitive element: CapabilityStatement.messaging.reliableCache
+   */
+  _reliableCache?:fhir.FhirElementArgs;
+  /**
    * Documentation about the system's messaging capabilities for this endpoint not otherwise documented by the capability statement.  For example, the process for becoming an authorized messaging exchange partner.
    */
   documentation?: fhir.FhirMarkdown|string|undefined;
+  /**
+   * Extended properties for primitive element: CapabilityStatement.messaging.documentation
+   */
+  _documentation?:fhir.FhirElementArgs;
   /**
    * This is a proposed alternative to the messaging.event structure.
    */
@@ -1099,7 +1421,15 @@ export class CapabilityStatementMessaging extends fhir.BackboneElement {
     if (source['endpoint']) { this.endpoint = source.endpoint.map((x) => new fhir.CapabilityStatementMessagingEndpoint(x)); }
     else { this.endpoint = []; }
     if (source['reliableCache']) { this.reliableCache = new fhir.FhirUnsignedInt({value: source.reliableCache}); }
+    if (source['_reliableCache']) {
+      if (this.reliableCache) { this.reliableCache.addExtendedProperties(source._reliableCache!); }
+      else { this.reliableCache = new fhir.FhirUnsignedInt(source._reliableCache as Partial<fhir.FhirUnsignedIntArgs>); }
+    }
     if (source['documentation']) { this.documentation = new fhir.FhirMarkdown({value: source.documentation}); }
+    if (source['_documentation']) {
+      if (this.documentation) { this.documentation.addExtendedProperties(source._documentation!); }
+      else { this.documentation = new fhir.FhirMarkdown(source._documentation as Partial<fhir.FhirMarkdownArgs>); }
+    }
     if (source['supportedMessage']) { this.supportedMessage = source.supportedMessage.map((x) => new fhir.CapabilityStatementMessagingSupportedMessage(x)); }
     else { this.supportedMessage = []; }
   }
@@ -1124,13 +1454,25 @@ export interface CapabilityStatementDocumentArgs extends fhir.BackboneElementArg
    */
   mode: fhir.FhirCode<DocumentModeCodeType>|string|undefined;
   /**
+   * Extended properties for primitive element: CapabilityStatement.document.mode
+   */
+  _mode?:fhir.FhirElementArgs;
+  /**
    * A description of how the application supports or uses the specified document profile.  For example, when documents are created, what action is taken with consumed documents, etc.
    */
   documentation?: fhir.FhirMarkdown|string|undefined;
   /**
+   * Extended properties for primitive element: CapabilityStatement.document.documentation
+   */
+  _documentation?:fhir.FhirElementArgs;
+  /**
    * The profile is actually on the Bundle.
    */
   profile: fhir.FhirCanonical|string|undefined;
+  /**
+   * Extended properties for primitive element: CapabilityStatement.document.profile
+   */
+  _profile?:fhir.FhirElementArgs;
 }
 
 /**
@@ -1160,9 +1502,21 @@ export class CapabilityStatementDocument extends fhir.BackboneElement {
     super(source, options);
     if (source['mode']) { this.mode = new fhir.FhirCode<DocumentModeCodeType>({value: source.mode}); }
     else { this.mode = null; }
+    if (source['_mode']) {
+      if (this.mode) { this.mode.addExtendedProperties(source._mode!); }
+      else { this.mode = new fhir.FhirCode<DocumentModeCodeType>(source._mode as Partial<fhir.FhirCode>); }
+    }
     if (source['documentation']) { this.documentation = new fhir.FhirMarkdown({value: source.documentation}); }
+    if (source['_documentation']) {
+      if (this.documentation) { this.documentation.addExtendedProperties(source._documentation!); }
+      else { this.documentation = new fhir.FhirMarkdown(source._documentation as Partial<fhir.FhirMarkdownArgs>); }
+    }
     if (source['profile']) { this.profile = new fhir.FhirCanonical({value: source.profile}); }
     else { this.profile = null; }
+    if (source['_profile']) {
+      if (this.profile) { this.profile.addExtendedProperties(source._profile!); }
+      else { this.profile = new fhir.FhirCanonical(source._profile as Partial<fhir.FhirCanonicalArgs>); }
+    }
   }
   /**
    * Required-bound Value Set for mode (CapabilityStatement.document.mode)
@@ -1205,33 +1559,65 @@ export interface CapabilityStatementArgs extends fhir.DomainResourceArgs {
    */
   url?: fhir.FhirUri|string|undefined;
   /**
+   * Extended properties for primitive element: CapabilityStatement.url
+   */
+  _url?:fhir.FhirElementArgs;
+  /**
    * There may be different capability statement instances that have the same identifier but different versions.  The version can be appended to the url in a reference to allow a reference to a particular business version of the capability statement with the format [url]|[version].
    */
   version?: fhir.FhirString|string|undefined;
+  /**
+   * Extended properties for primitive element: CapabilityStatement.version
+   */
+  _version?:fhir.FhirElementArgs;
   /**
    * The name is not expected to be globally unique. The name should be a simple alphanumeric type name to ensure that it is machine-processing friendly.
    */
   name?: fhir.FhirString|string|undefined;
   /**
+   * Extended properties for primitive element: CapabilityStatement.name
+   */
+  _name?:fhir.FhirElementArgs;
+  /**
    * This name does not need to be machine-processing friendly and may contain punctuation, white-space, etc.
    */
   title?: fhir.FhirString|string|undefined;
+  /**
+   * Extended properties for primitive element: CapabilityStatement.title
+   */
+  _title?:fhir.FhirElementArgs;
   /**
    * Allows filtering of capability statements that are appropriate for use versus not.This is not intended for use with actual capability statements, but where capability statements are used to describe possible or desired systems.
    */
   status: fhir.FhirCode<PublicationStatusCodeType>|string|undefined;
   /**
+   * Extended properties for primitive element: CapabilityStatement.status
+   */
+  _status?:fhir.FhirElementArgs;
+  /**
    * Allows filtering of capability statements that are appropriate for use versus not.
    */
   experimental?: fhir.FhirBoolean|boolean|undefined;
+  /**
+   * Extended properties for primitive element: CapabilityStatement.experimental
+   */
+  _experimental?:fhir.FhirElementArgs;
   /**
    * Note that this is not the same as the resource last-modified-date, since the resource may be a secondary representation of the capability statement. Additional specific dates may be added as extensions or be found by consulting Provenances associated with past versions of the resource.
    */
   date: fhir.FhirDateTime|string|undefined;
   /**
+   * Extended properties for primitive element: CapabilityStatement.date
+   */
+  _date?:fhir.FhirElementArgs;
+  /**
    * Usually an organization but may be an individual. The publisher (or steward) of the capability statement is the organization or individual primarily responsible for the maintenance and upkeep of the capability statement. This is not necessarily the same individual or organization that developed and initially authored the content. The publisher is the primary point of contact for questions or issues with the capability statement. This item SHOULD be populated unless the information is available from context.
    */
   publisher?: fhir.FhirString|string|undefined;
+  /**
+   * Extended properties for primitive element: CapabilityStatement.publisher
+   */
+  _publisher?:fhir.FhirElementArgs;
   /**
    * May be a web site, an email address, a telephone number, etc.
    */
@@ -1240,6 +1626,10 @@ export interface CapabilityStatementArgs extends fhir.DomainResourceArgs {
    * This description can be used to capture details such as why the capability statement was built, comments about misuse, instructions for clinical use and interpretation, literature references, examples from the paper world, etc. It is not a rendering of the capability statement as conveyed in the 'text' field of the resource itself. This item SHOULD be populated unless the information is available from context (e.g. the language of the capability statement is presumed to be the predominant language in the place the capability statement was created).This does not need to be populated if the description is adequately implied by the software or implementation details.
    */
   description?: fhir.FhirMarkdown|string|undefined;
+  /**
+   * Extended properties for primitive element: CapabilityStatement.description
+   */
+  _description?:fhir.FhirElementArgs;
   /**
    * When multiple useContexts are specified, there is no expectation that all or any of the contexts apply.
    */
@@ -1253,23 +1643,43 @@ export interface CapabilityStatementArgs extends fhir.DomainResourceArgs {
    */
   purpose?: fhir.FhirMarkdown|string|undefined;
   /**
+   * Extended properties for primitive element: CapabilityStatement.purpose
+   */
+  _purpose?:fhir.FhirElementArgs;
+  /**
    * A copyright statement relating to the capability statement and/or its contents. Copyright statements are generally legal restrictions on the use and publishing of the capability statement.
    */
   copyright?: fhir.FhirMarkdown|string|undefined;
   /**
+   * Extended properties for primitive element: CapabilityStatement.copyright
+   */
+  _copyright?:fhir.FhirElementArgs;
+  /**
    * The way that this statement is intended to be used, to describe an actual running instance of software, a particular product (kind, not instance of software) or a class of implementation (e.g. a desired purchase).
    */
   kind: fhir.FhirCode<CapabilityStatementKindCodeType>|string|undefined;
+  /**
+   * Extended properties for primitive element: CapabilityStatement.kind
+   */
+  _kind?:fhir.FhirElementArgs;
   /**
    * HL7 defines the following Services: [Terminology Service](terminology-service.html).    
    * Many [Implementation Guides](http://fhir.org/guides/registry) define additional services.
    */
   instantiates?: fhir.FhirCanonical[]|string[]|undefined;
   /**
+   * Extended properties for primitive element: CapabilityStatement.instantiates
+   */
+  _instantiates?:(fhir.FhirElementArgs|null)[];
+  /**
    * the contents of any directly or indirectly imported CapabilityStatements SHALL NOT overlap, i.e. they cannot refer to the same rest/resource, operations/name, searchparam/name, interaction/code, messaging/endpoint, document/mode pair.
    * A capability statement that imports another CapabilityStatement automatically instantiates it too (though this is often not a very useful statement for the kinds of CapabilityStatements that are suitable for importing).
    */
   imports?: fhir.FhirCanonical[]|string[]|undefined;
+  /**
+   * Extended properties for primitive element: CapabilityStatement.imports
+   */
+  _imports?:(fhir.FhirElementArgs|null)[];
   /**
    * Software that is covered by this capability statement.  It is used when the capability statement describes the capabilities of a particular software version, independent of an installation.
    */
@@ -1283,17 +1693,33 @@ export interface CapabilityStatementArgs extends fhir.DomainResourceArgs {
    */
   fhirVersion: fhir.FhirCode|string|undefined;
   /**
+   * Extended properties for primitive element: CapabilityStatement.fhirVersion
+   */
+  _fhirVersion?:fhir.FhirElementArgs;
+  /**
    * "xml", "json" and "ttl" are allowed, which describe the simple encodings described in the specification (and imply appropriate bundle support). Otherwise, mime types are legal here.
    */
   format: fhir.FhirCode[]|string[]|undefined;
+  /**
+   * Extended properties for primitive element: CapabilityStatement.format
+   */
+  _format?:(fhir.FhirElementArgs|null)[];
   /**
    * At present, the patch mime types application/json-patch+json and application/xml-patch+xml are legal. Generally, if a server supports PATCH, it would be expected to support the patch formats and match the formats it supports, but this is not always possible or necessary.
    */
   patchFormat?: fhir.FhirCode[]|string[]|undefined;
   /**
+   * Extended properties for primitive element: CapabilityStatement.patchFormat
+   */
+  _patchFormat?:(fhir.FhirElementArgs|null)[];
+  /**
    * A list of implementation guides that the server does (or should) support in their entirety.
    */
   implementationGuide?: fhir.FhirCanonical[]|string[]|undefined;
+  /**
+   * Extended properties for primitive element: CapabilityStatement.implementationGuide
+   */
+  _implementationGuide?:(fhir.FhirElementArgs|null)[];
   /**
    * Multiple repetitions allow definition of both client and/or server behaviors or possibly behaviors under different configuration settings (for software or requirements statements).
    */
@@ -1435,40 +1861,122 @@ export class CapabilityStatement extends fhir.DomainResource {
     super(source, options);
     this.resourceType = 'CapabilityStatement';
     if (source['url']) { this.url = new fhir.FhirUri({value: source.url}); }
+    if (source['_url']) {
+      if (this.url) { this.url.addExtendedProperties(source._url!); }
+      else { this.url = new fhir.FhirUri(source._url as Partial<fhir.FhirUriArgs>); }
+    }
     if (source['version']) { this.version = new fhir.FhirString({value: source.version}); }
+    if (source['_version']) {
+      if (this.version) { this.version.addExtendedProperties(source._version!); }
+      else { this.version = new fhir.FhirString(source._version as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['name']) { this.name = new fhir.FhirString({value: source.name}); }
+    if (source['_name']) {
+      if (this.name) { this.name.addExtendedProperties(source._name!); }
+      else { this.name = new fhir.FhirString(source._name as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['title']) { this.title = new fhir.FhirString({value: source.title}); }
+    if (source['_title']) {
+      if (this.title) { this.title.addExtendedProperties(source._title!); }
+      else { this.title = new fhir.FhirString(source._title as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['status']) { this.status = new fhir.FhirCode<PublicationStatusCodeType>({value: source.status}); }
     else { this.status = null; }
+    if (source['_status']) {
+      if (this.status) { this.status.addExtendedProperties(source._status!); }
+      else { this.status = new fhir.FhirCode<PublicationStatusCodeType>(source._status as Partial<fhir.FhirCode>); }
+    }
     if (source['experimental']) { this.experimental = new fhir.FhirBoolean({value: source.experimental}); }
+    if (source['_experimental']) {
+      if (this.experimental) { this.experimental.addExtendedProperties(source._experimental!); }
+      else { this.experimental = new fhir.FhirBoolean(source._experimental as Partial<fhir.FhirBooleanArgs>); }
+    }
     if (source['date']) { this.date = new fhir.FhirDateTime({value: source.date}); }
     else { this.date = null; }
+    if (source['_date']) {
+      if (this.date) { this.date.addExtendedProperties(source._date!); }
+      else { this.date = new fhir.FhirDateTime(source._date as Partial<fhir.FhirDateTimeArgs>); }
+    }
     if (source['publisher']) { this.publisher = new fhir.FhirString({value: source.publisher}); }
+    if (source['_publisher']) {
+      if (this.publisher) { this.publisher.addExtendedProperties(source._publisher!); }
+      else { this.publisher = new fhir.FhirString(source._publisher as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['contact']) { this.contact = source.contact.map((x) => new fhir.ContactDetail(x)); }
     else { this.contact = []; }
     if (source['description']) { this.description = new fhir.FhirMarkdown({value: source.description}); }
+    if (source['_description']) {
+      if (this.description) { this.description.addExtendedProperties(source._description!); }
+      else { this.description = new fhir.FhirMarkdown(source._description as Partial<fhir.FhirMarkdownArgs>); }
+    }
     if (source['useContext']) { this.useContext = source.useContext.map((x) => new fhir.UsageContext(x)); }
     else { this.useContext = []; }
     if (source['jurisdiction']) { this.jurisdiction = source.jurisdiction.map((x) => new fhir.CodeableConcept(x)); }
     else { this.jurisdiction = []; }
     if (source['purpose']) { this.purpose = new fhir.FhirMarkdown({value: source.purpose}); }
+    if (source['_purpose']) {
+      if (this.purpose) { this.purpose.addExtendedProperties(source._purpose!); }
+      else { this.purpose = new fhir.FhirMarkdown(source._purpose as Partial<fhir.FhirMarkdownArgs>); }
+    }
     if (source['copyright']) { this.copyright = new fhir.FhirMarkdown({value: source.copyright}); }
+    if (source['_copyright']) {
+      if (this.copyright) { this.copyright.addExtendedProperties(source._copyright!); }
+      else { this.copyright = new fhir.FhirMarkdown(source._copyright as Partial<fhir.FhirMarkdownArgs>); }
+    }
     if (source['kind']) { this.kind = new fhir.FhirCode<CapabilityStatementKindCodeType>({value: source.kind}); }
     else { this.kind = null; }
+    if (source['_kind']) {
+      if (this.kind) { this.kind.addExtendedProperties(source._kind!); }
+      else { this.kind = new fhir.FhirCode<CapabilityStatementKindCodeType>(source._kind as Partial<fhir.FhirCode>); }
+    }
     if (source['instantiates']) { this.instantiates = source.instantiates.map((x) => new fhir.FhirCanonical({value: x})); }
     else { this.instantiates = []; }
+    if (source['_instantiates']) {
+      source._instantiates.forEach((x,i) => {
+        if (this.instantiates.length >= i) { if (x) { this.instantiates[i].addExtendedProperties(x); } }
+        else { if (x) { this.instantiates.push(new fhir.FhirCanonical(x as Partial<fhir.FhirCanonicalArgs>)); } }
+      });
+    }
     if (source['imports']) { this.imports = source.imports.map((x) => new fhir.FhirCanonical({value: x})); }
     else { this.imports = []; }
+    if (source['_imports']) {
+      source._imports.forEach((x,i) => {
+        if (this.imports.length >= i) { if (x) { this.imports[i].addExtendedProperties(x); } }
+        else { if (x) { this.imports.push(new fhir.FhirCanonical(x as Partial<fhir.FhirCanonicalArgs>)); } }
+      });
+    }
     if (source['software']) { this.software = new fhir.CapabilityStatementSoftware(source.software); }
     if (source['implementation']) { this.implementation = new fhir.CapabilityStatementImplementation(source.implementation); }
     if (source['fhirVersion']) { this.fhirVersion = new fhir.FhirCode({value: source.fhirVersion}); }
     else { this.fhirVersion = null; }
+    if (source['_fhirVersion']) {
+      if (this.fhirVersion) { this.fhirVersion.addExtendedProperties(source._fhirVersion!); }
+      else { this.fhirVersion = new fhir.FhirCode(source._fhirVersion as Partial<fhir.FhirCodeArgs>); }
+    }
     if (source['format']) { this.format = source.format.map((x) => new fhir.FhirCode({value: x})); }
     else { this.format = []; }
+    if (source['_format']) {
+      source._format.forEach((x,i) => {
+        if (this.format.length >= i) { if (x) { this.format[i].addExtendedProperties(x); } }
+        else { if (x) { this.format.push(new fhir.FhirCode(x as Partial<fhir.FhirCodeArgs>)); } }
+      });
+    }
     if (source['patchFormat']) { this.patchFormat = source.patchFormat.map((x) => new fhir.FhirCode({value: x})); }
     else { this.patchFormat = []; }
+    if (source['_patchFormat']) {
+      source._patchFormat.forEach((x,i) => {
+        if (this.patchFormat.length >= i) { if (x) { this.patchFormat[i].addExtendedProperties(x); } }
+        else { if (x) { this.patchFormat.push(new fhir.FhirCode(x as Partial<fhir.FhirCodeArgs>)); } }
+      });
+    }
     if (source['implementationGuide']) { this.implementationGuide = source.implementationGuide.map((x) => new fhir.FhirCanonical({value: x})); }
     else { this.implementationGuide = []; }
+    if (source['_implementationGuide']) {
+      source._implementationGuide.forEach((x,i) => {
+        if (this.implementationGuide.length >= i) { if (x) { this.implementationGuide[i].addExtendedProperties(x); } }
+        else { if (x) { this.implementationGuide.push(new fhir.FhirCanonical(x as Partial<fhir.FhirCanonicalArgs>)); } }
+      });
+    }
     if (source['rest']) { this.rest = source.rest.map((x) => new fhir.CapabilityStatementRest(x)); }
     else { this.rest = []; }
     if (source['messaging']) { this.messaging = source.messaging.map((x) => new fhir.CapabilityStatementMessaging(x)); }

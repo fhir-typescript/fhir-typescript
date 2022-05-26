@@ -42,9 +42,17 @@ export interface ListEntryArgs extends fhir.BackboneElementArgs {
    */
   deleted?: fhir.FhirBoolean|boolean|undefined;
   /**
+   * Extended properties for primitive element: List.entry.deleted
+   */
+  _deleted?:fhir.FhirElementArgs;
+  /**
    * When this item was added to the list.
    */
   date?: fhir.FhirDateTime|string|undefined;
+  /**
+   * Extended properties for primitive element: List.entry.date
+   */
+  _date?:fhir.FhirElementArgs;
   /**
    * A reference to the actual resource from which data was derived.
    */
@@ -82,7 +90,15 @@ export class ListEntry extends fhir.BackboneElement {
     super(source, options);
     if (source['flag']) { this.flag = new fhir.CodeableConcept(source.flag); }
     if (source['deleted']) { this.deleted = new fhir.FhirBoolean({value: source.deleted}); }
+    if (source['_deleted']) {
+      if (this.deleted) { this.deleted.addExtendedProperties(source._deleted!); }
+      else { this.deleted = new fhir.FhirBoolean(source._deleted as Partial<fhir.FhirBooleanArgs>); }
+    }
     if (source['date']) { this.date = new fhir.FhirDateTime({value: source.date}); }
+    if (source['_date']) {
+      if (this.date) { this.date.addExtendedProperties(source._date!); }
+      else { this.date = new fhir.FhirDateTime(source._date as Partial<fhir.FhirDateTimeArgs>); }
+    }
     if (source['item']) { this.item = new fhir.Reference(source.item); }
     else { this.item = null; }
   }
@@ -118,13 +134,25 @@ export interface ListArgs extends fhir.DomainResourceArgs {
    */
   status: fhir.FhirCode<ListStatusCodeType>|string|undefined;
   /**
+   * Extended properties for primitive element: List.status
+   */
+  _status?:fhir.FhirElementArgs;
+  /**
    * This element is labeled as a modifier because a change list must not be misunderstood as a complete list.
    */
   mode: fhir.FhirCode<ListModeCodeType>|string|undefined;
   /**
+   * Extended properties for primitive element: List.mode
+   */
+  _mode?:fhir.FhirElementArgs;
+  /**
    * A label for the list assigned by the author.
    */
   title?: fhir.FhirString|string|undefined;
+  /**
+   * Extended properties for primitive element: List.title
+   */
+  _title?:fhir.FhirElementArgs;
   /**
    * If there is no code, the purpose of the list is implied where it is used, such as in a document section using Document.section.code.
    */
@@ -141,6 +169,10 @@ export interface ListArgs extends fhir.DomainResourceArgs {
    * The actual important date is the date of currency of the resources that were summarized, but it is usually assumed that these are current when the preparation occurs.
    */
   date?: fhir.FhirDateTime|string|undefined;
+  /**
+   * Extended properties for primitive element: List.date
+   */
+  _date?:fhir.FhirElementArgs;
   /**
    * The primary source is the entity that made the decisions what items are in the list. This may be software or user.
    */
@@ -237,13 +269,29 @@ export class List extends fhir.DomainResource {
     else { this.identifier = []; }
     if (source['status']) { this.status = new fhir.FhirCode<ListStatusCodeType>({value: source.status}); }
     else { this.status = null; }
+    if (source['_status']) {
+      if (this.status) { this.status.addExtendedProperties(source._status!); }
+      else { this.status = new fhir.FhirCode<ListStatusCodeType>(source._status as Partial<fhir.FhirCode>); }
+    }
     if (source['mode']) { this.mode = new fhir.FhirCode<ListModeCodeType>({value: source.mode}); }
     else { this.mode = null; }
+    if (source['_mode']) {
+      if (this.mode) { this.mode.addExtendedProperties(source._mode!); }
+      else { this.mode = new fhir.FhirCode<ListModeCodeType>(source._mode as Partial<fhir.FhirCode>); }
+    }
     if (source['title']) { this.title = new fhir.FhirString({value: source.title}); }
+    if (source['_title']) {
+      if (this.title) { this.title.addExtendedProperties(source._title!); }
+      else { this.title = new fhir.FhirString(source._title as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['code']) { this.code = new fhir.CodeableConcept(source.code); }
     if (source['subject']) { this.subject = new fhir.Reference(source.subject); }
     if (source['encounter']) { this.encounter = new fhir.Reference(source.encounter); }
     if (source['date']) { this.date = new fhir.FhirDateTime({value: source.date}); }
+    if (source['_date']) {
+      if (this.date) { this.date.addExtendedProperties(source._date!); }
+      else { this.date = new fhir.FhirDateTime(source._date as Partial<fhir.FhirDateTimeArgs>); }
+    }
     if (source['source']) { this.source = new fhir.Reference(source.source); }
     if (source['orderedBy']) { this.orderedBy = new fhir.CodeableConcept(source.orderedBy); }
     if (source['note']) { this.note = source.note.map((x) => new fhir.Annotation(x)); }

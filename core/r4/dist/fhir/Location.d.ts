@@ -13,13 +13,25 @@ export interface LocationPositionArgs extends fhir.BackboneElementArgs {
      */
     longitude: fhir.FhirDecimal | number | undefined;
     /**
+     * Extended properties for primitive element: Location.position.longitude
+     */
+    _longitude?: fhir.FhirElementArgs;
+    /**
      * Latitude. The value domain and the interpretation are the same as for the text of the latitude element in KML (see notes below).
      */
     latitude: fhir.FhirDecimal | number | undefined;
     /**
+     * Extended properties for primitive element: Location.position.latitude
+     */
+    _latitude?: fhir.FhirElementArgs;
+    /**
      * Altitude. The value domain and the interpretation are the same as for the text of the altitude element in KML (see notes below).
      */
     altitude?: fhir.FhirDecimal | number | undefined;
+    /**
+     * Extended properties for primitive element: Location.position.altitude
+     */
+    _altitude?: fhir.FhirElementArgs;
 }
 /**
  * The absolute geographic location of the Location, expressed using the WGS84 datum (This is the same co-ordinate system used in KML).
@@ -59,17 +71,33 @@ export interface LocationHoursOfOperationArgs extends fhir.BackboneElementArgs {
      */
     daysOfWeek?: fhir.FhirCode<DaysOfWeekCodeType>[] | string[] | undefined;
     /**
+     * Extended properties for primitive element: Location.hoursOfOperation.daysOfWeek
+     */
+    _daysOfWeek?: (fhir.FhirElementArgs | null)[];
+    /**
      * The Location is open all day.
      */
     allDay?: fhir.FhirBoolean | boolean | undefined;
+    /**
+     * Extended properties for primitive element: Location.hoursOfOperation.allDay
+     */
+    _allDay?: fhir.FhirElementArgs;
     /**
      * Time that the Location opens.
      */
     openingTime?: fhir.FhirTime | string | undefined;
     /**
+     * Extended properties for primitive element: Location.hoursOfOperation.openingTime
+     */
+    _openingTime?: fhir.FhirElementArgs;
+    /**
      * Time that the Location closes.
      */
     closingTime?: fhir.FhirTime | string | undefined;
+    /**
+     * Extended properties for primitive element: Location.hoursOfOperation.closingTime
+     */
+    _closingTime?: fhir.FhirElementArgs;
 }
 /**
  * This type of information is commonly found published in directories and on websites informing customers when the facility is available.
@@ -134,6 +162,10 @@ export interface LocationArgs extends fhir.DomainResourceArgs {
      */
     status?: fhir.FhirCode<LocationStatusCodeType> | string | undefined;
     /**
+     * Extended properties for primitive element: Location.status
+     */
+    _status?: fhir.FhirElementArgs;
+    /**
      * The operational status covers operation values most relevant to beds (but can also apply to rooms/units/chairs/etc. such as an isolation unit/dialysis chair). This typically covers concepts such as contamination, housekeeping, and other activities like maintenance.
      */
     operationalStatus?: fhir.CodingArgs | undefined;
@@ -142,17 +174,33 @@ export interface LocationArgs extends fhir.DomainResourceArgs {
      */
     name?: fhir.FhirString | string | undefined;
     /**
+     * Extended properties for primitive element: Location.name
+     */
+    _name?: fhir.FhirElementArgs;
+    /**
      * There are no dates associated with the alias/historic names, as this is not intended to track when names were used, but to assist in searching so that older names can still result in identifying the location.
      */
     alias?: fhir.FhirString[] | string[] | undefined;
+    /**
+     * Extended properties for primitive element: Location.alias
+     */
+    _alias?: (fhir.FhirElementArgs | null)[];
     /**
      * Description of the Location, which helps in finding or referencing the place.
      */
     description?: fhir.FhirString | string | undefined;
     /**
+     * Extended properties for primitive element: Location.description
+     */
+    _description?: fhir.FhirElementArgs;
+    /**
      * This is labeled as a modifier because whether or not the location is a class of locations changes how it can be used and understood.
      */
     mode?: fhir.FhirCode<LocationModeCodeType> | string | undefined;
+    /**
+     * Extended properties for primitive element: Location.mode
+     */
+    _mode?: fhir.FhirElementArgs;
     /**
      * Indicates the type of function performed at the location.
      */
@@ -190,6 +238,10 @@ export interface LocationArgs extends fhir.DomainResourceArgs {
      * A description of when the locations opening ours are different to normal, e.g. public holiday availability. Succinctly describing all possible exceptions to normal site availability as detailed in the opening hours Times.
      */
     availabilityExceptions?: fhir.FhirString | string | undefined;
+    /**
+     * Extended properties for primitive element: Location.availabilityExceptions
+     */
+    _availabilityExceptions?: fhir.FhirElementArgs;
     /**
      * Technical endpoints providing access to services operated for the location.
      */

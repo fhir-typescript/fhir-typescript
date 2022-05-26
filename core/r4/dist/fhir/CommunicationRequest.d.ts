@@ -76,6 +76,10 @@ export interface CommunicationRequestArgs extends fhir.DomainResourceArgs {
      */
     status: fhir.FhirCode<RequestStatusCodeType> | string | undefined;
     /**
+     * Extended properties for primitive element: CommunicationRequest.status
+     */
+    _status?: fhir.FhirElementArgs;
+    /**
      * This is generally only used for "exception" statuses such as "suspended" or "cancelled".  The reason why the CommunicationRequest was created at all is captured in reasonCode, not here.  [distinct reason codes for different statuses can be enforced using invariants if they are universal bindings].
      */
     statusReason?: fhir.CodeableConceptArgs | undefined;
@@ -88,9 +92,17 @@ export interface CommunicationRequestArgs extends fhir.DomainResourceArgs {
      */
     priority?: fhir.FhirCode<RequestPriorityCodeType> | string | undefined;
     /**
+     * Extended properties for primitive element: CommunicationRequest.priority
+     */
+    _priority?: fhir.FhirElementArgs;
+    /**
      * The attributes provided with the request qualify what is not to be done.
      */
     doNotPerform?: fhir.FhirBoolean | boolean | undefined;
+    /**
+     * Extended properties for primitive element: CommunicationRequest.doNotPerform
+     */
+    _doNotPerform?: fhir.FhirElementArgs;
     /**
      * A channel that was used for this communication (e.g. email, fax).
      */
@@ -127,6 +139,10 @@ export interface CommunicationRequestArgs extends fhir.DomainResourceArgs {
      * For draft requests, indicates the date of initial creation.  For requests with other statuses, indicates the date of activation.
      */
     authoredOn?: fhir.FhirDateTime | string | undefined;
+    /**
+     * Extended properties for primitive element: CommunicationRequest.authoredOn
+     */
+    _authoredOn?: fhir.FhirElementArgs;
     /**
      * The device, individual, or organization who initiated the request and has responsibility for its activation.
      */

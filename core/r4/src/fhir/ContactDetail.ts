@@ -14,6 +14,10 @@ export interface ContactDetailArgs extends fhir.FhirElementArgs {
    */
   name?: fhir.FhirString|string|undefined;
   /**
+   * Extended properties for primitive element: ContactDetail.name
+   */
+  _name?:fhir.FhirElementArgs;
+  /**
    * The contact details for the individual (if a name was provided) or the organization.
    */
   telecom?: fhir.ContactPointArgs[]|undefined;
@@ -41,6 +45,10 @@ export class ContactDetail extends fhir.FhirElement {
   constructor(source:Partial<ContactDetailArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
     if (source['name']) { this.name = new fhir.FhirString({value: source.name}); }
+    if (source['_name']) {
+      if (this.name) { this.name.addExtendedProperties(source._name!); }
+      else { this.name = new fhir.FhirString(source._name as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['telecom']) { this.telecom = source.telecom.map((x) => new fhir.ContactPoint(x)); }
     else { this.telecom = []; }
   }

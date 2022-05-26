@@ -12,13 +12,25 @@ export interface CarePlanActivityDetailArgs extends fhir.BackboneElementArgs {
      */
     kind?: fhir.FhirCode<CarePlanActivityKindCodeType> | string | undefined;
     /**
+     * Extended properties for primitive element: CarePlan.activity.detail.kind
+     */
+    _kind?: fhir.FhirElementArgs;
+    /**
      * The URL pointing to a FHIR-defined protocol, guideline, questionnaire or other definition that is adhered to in whole or in part by this CarePlan activity.
      */
     instantiatesCanonical?: fhir.FhirCanonical[] | string[] | undefined;
     /**
+     * Extended properties for primitive element: CarePlan.activity.detail.instantiatesCanonical
+     */
+    _instantiatesCanonical?: (fhir.FhirElementArgs | null)[];
+    /**
      * This might be an HTML page, PDF, etc. or could just be a non-resolvable URI identifier.
      */
     instantiatesUri?: fhir.FhirUri[] | string[] | undefined;
+    /**
+     * Extended properties for primitive element: CarePlan.activity.detail.instantiatesUri
+     */
+    _instantiatesUri?: (fhir.FhirElementArgs | null)[];
     /**
      * Tends to be less relevant for activities involving particular products.  Codes should not convey negation - use "prohibited" instead.
      */
@@ -41,6 +53,10 @@ export interface CarePlanActivityDetailArgs extends fhir.BackboneElementArgs {
      */
     status: fhir.FhirCode<CarePlanActivityStatusCodeType> | string | undefined;
     /**
+     * Extended properties for primitive element: CarePlan.activity.detail.status
+     */
+    _status?: fhir.FhirElementArgs;
+    /**
      * Will generally not be present if status is "complete".  Be sure to prompt to update this (or at least remove the existing value) if the status is changed.
      */
     statusReason?: fhir.CodeableConceptArgs | undefined;
@@ -48,6 +64,10 @@ export interface CarePlanActivityDetailArgs extends fhir.BackboneElementArgs {
      * This element is labeled as a modifier because it marks an activity as an activity that is not to be performed.
      */
     doNotPerform?: fhir.FhirBoolean | boolean | undefined;
+    /**
+     * Extended properties for primitive element: CarePlan.activity.detail.doNotPerform
+     */
+    _doNotPerform?: fhir.FhirElementArgs;
     /**
      * The period, timing or frequency upon which the described activity is to occur.
      */
@@ -96,6 +116,10 @@ export interface CarePlanActivityDetailArgs extends fhir.BackboneElementArgs {
      * This provides a textual description of constraints on the intended activity occurrence, including relation to other activities.  It may also include objectives, pre-conditions and end-conditions.  Finally, it may convey specifics about the activity such as body site, method, route, etc.
      */
     description?: fhir.FhirString | string | undefined;
+    /**
+     * Extended properties for primitive element: CarePlan.activity.detail.description
+     */
+    _description?: fhir.FhirElementArgs;
 }
 /**
  * A simple summary of a planned activity suitable for a general care plan system (e.g. form driven) that doesn't know about specific resources such as procedure etc.
@@ -299,9 +323,17 @@ export interface CarePlanArgs extends fhir.DomainResourceArgs {
      */
     instantiatesCanonical?: fhir.FhirCanonical[] | string[] | undefined;
     /**
+     * Extended properties for primitive element: CarePlan.instantiatesCanonical
+     */
+    _instantiatesCanonical?: (fhir.FhirElementArgs | null)[];
+    /**
      * This might be an HTML page, PDF, etc. or could just be a non-resolvable URI identifier.
      */
     instantiatesUri?: fhir.FhirUri[] | string[] | undefined;
+    /**
+     * Extended properties for primitive element: CarePlan.instantiatesUri
+     */
+    _instantiatesUri?: (fhir.FhirElementArgs | null)[];
     /**
      * A care plan that is fulfilled in whole or in part by this care plan.
      */
@@ -320,9 +352,17 @@ export interface CarePlanArgs extends fhir.DomainResourceArgs {
      */
     status: fhir.FhirCode<RequestStatusCodeType> | string | undefined;
     /**
+     * Extended properties for primitive element: CarePlan.status
+     */
+    _status?: fhir.FhirElementArgs;
+    /**
      * This element is labeled as a modifier because the intent alters when and how the resource is actually applicable.
      */
     intent: fhir.FhirCode<CarePlanIntentCodeType> | string | undefined;
+    /**
+     * Extended properties for primitive element: CarePlan.intent
+     */
+    _intent?: fhir.FhirElementArgs;
     /**
      * There may be multiple axes of categorization and one plan may serve multiple purposes.  In some cases, this may be redundant with references to CarePlan.concern.
      */
@@ -332,9 +372,17 @@ export interface CarePlanArgs extends fhir.DomainResourceArgs {
      */
     title?: fhir.FhirString | string | undefined;
     /**
+     * Extended properties for primitive element: CarePlan.title
+     */
+    _title?: fhir.FhirElementArgs;
+    /**
      * A description of the scope and nature of the plan.
      */
     description?: fhir.FhirString | string | undefined;
+    /**
+     * Extended properties for primitive element: CarePlan.description
+     */
+    _description?: fhir.FhirElementArgs;
     /**
      * Identifies the patient or group whose intended care is described by the plan.
      */
@@ -351,6 +399,10 @@ export interface CarePlanArgs extends fhir.DomainResourceArgs {
      * Represents when this particular CarePlan record was created in the system, which is often a system-generated date.
      */
     created?: fhir.FhirDateTime | string | undefined;
+    /**
+     * Extended properties for primitive element: CarePlan.created
+     */
+    _created?: fhir.FhirElementArgs;
     /**
      * The author may also be a contributor.  For example, an organization can be an author, but not listed as a contributor.
      */

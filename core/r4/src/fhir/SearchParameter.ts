@@ -26,9 +26,9 @@ import { SearchComparatorCodings, SearchComparatorCodingType,} from '../fhirValu
 // @ts-ignore
 import { SearchComparatorCodes,  SearchComparatorCodeType } from '../fhirValueSets/SearchComparatorCodes.js';
 // @ts-ignore
-import { SearchModifierCodeCodings, SearchModifierCodeCodingType,} from '../fhirValueSets/SearchModifierCodeCodings.js';
+import { SearchModifierCodings, SearchModifierCodingType,} from '../fhirValueSets/SearchModifierCodings.js';
 // @ts-ignore
-import { SearchModifierCodeCodes,  SearchModifierCodeCodeType } from '../fhirValueSets/SearchModifierCodeCodes.js';
+import { SearchModifierCodes,  SearchModifierCodeType } from '../fhirValueSets/SearchModifierCodes.js';
 /**
  * Valid arguments for the SearchParameterComponent type.
  */
@@ -38,9 +38,17 @@ export interface SearchParameterComponentArgs extends fhir.BackboneElementArgs {
    */
   definition: fhir.FhirCanonical|string|undefined;
   /**
+   * Extended properties for primitive element: SearchParameter.component.definition
+   */
+  _definition?:fhir.FhirElementArgs;
+  /**
    * This expression overrides the expression in the definition and extracts the index values from the outcome of the composite expression.
    */
   expression: fhir.FhirString|string|undefined;
+  /**
+   * Extended properties for primitive element: SearchParameter.component.expression
+   */
+  _expression?:fhir.FhirElementArgs;
 }
 
 /**
@@ -66,8 +74,16 @@ export class SearchParameterComponent extends fhir.BackboneElement {
     super(source, options);
     if (source['definition']) { this.definition = new fhir.FhirCanonical({value: source.definition}); }
     else { this.definition = null; }
+    if (source['_definition']) {
+      if (this.definition) { this.definition.addExtendedProperties(source._definition!); }
+      else { this.definition = new fhir.FhirCanonical(source._definition as Partial<fhir.FhirCanonicalArgs>); }
+    }
     if (source['expression']) { this.expression = new fhir.FhirString({value: source.expression}); }
     else { this.expression = null; }
+    if (source['_expression']) {
+      if (this.expression) { this.expression.addExtendedProperties(source._expression!); }
+      else { this.expression = new fhir.FhirString(source._expression as Partial<fhir.FhirStringArgs>); }
+    }
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -100,33 +116,65 @@ export interface SearchParameterArgs extends fhir.DomainResourceArgs {
    */
   url: fhir.FhirUri|string|undefined;
   /**
+   * Extended properties for primitive element: SearchParameter.url
+   */
+  _url?:fhir.FhirElementArgs;
+  /**
    * There may be different search parameter instances that have the same identifier but different versions.  The version can be appended to the url in a reference to allow a reference to a particular business version of the search parameter with the format [url]|[version].
    */
   version?: fhir.FhirString|string|undefined;
+  /**
+   * Extended properties for primitive element: SearchParameter.version
+   */
+  _version?:fhir.FhirElementArgs;
   /**
    * The name is not expected to be globally unique. The name should be a simple alphanumeric type name to ensure that it is machine-processing friendly.
    */
   name: fhir.FhirString|string|undefined;
   /**
+   * Extended properties for primitive element: SearchParameter.name
+   */
+  _name?:fhir.FhirElementArgs;
+  /**
    * The intent of this is that a server can designate that it provides support for a search parameter defined in the specification itself (e.g.  [`value-quantity`](http://hl7.org/fhir/SearchParameter/Observation-value-quantity), but detail how it is supported by the server.
    */
   derivedFrom?: fhir.FhirCanonical|string|undefined;
+  /**
+   * Extended properties for primitive element: SearchParameter.derivedFrom
+   */
+  _derivedFrom?:fhir.FhirElementArgs;
   /**
    * Allows filtering of search parameters that are appropriate for use versus not.
    */
   status: fhir.FhirCode<PublicationStatusCodeType>|string|undefined;
   /**
+   * Extended properties for primitive element: SearchParameter.status
+   */
+  _status?:fhir.FhirElementArgs;
+  /**
    * Allows filtering of search parameters that are appropriate for use versus not.
    */
   experimental?: fhir.FhirBoolean|boolean|undefined;
+  /**
+   * Extended properties for primitive element: SearchParameter.experimental
+   */
+  _experimental?:fhir.FhirElementArgs;
   /**
    * Note that this is not the same as the resource last-modified-date, since the resource may be a secondary representation of the search parameter. Additional specific dates may be added as extensions or be found by consulting Provenances associated with past versions of the resource.
    */
   date?: fhir.FhirDateTime|string|undefined;
   /**
+   * Extended properties for primitive element: SearchParameter.date
+   */
+  _date?:fhir.FhirElementArgs;
+  /**
    * Usually an organization but may be an individual. The publisher (or steward) of the search parameter is the organization or individual primarily responsible for the maintenance and upkeep of the search parameter. This is not necessarily the same individual or organization that developed and initially authored the content. The publisher is the primary point of contact for questions or issues with the search parameter. This item SHOULD be populated unless the information is available from context.
    */
   publisher?: fhir.FhirString|string|undefined;
+  /**
+   * Extended properties for primitive element: SearchParameter.publisher
+   */
+  _publisher?:fhir.FhirElementArgs;
   /**
    * May be a web site, an email address, a telephone number, etc.
    */
@@ -135,6 +183,10 @@ export interface SearchParameterArgs extends fhir.DomainResourceArgs {
    * This description can be used to capture details such as why the search parameter was built, comments about misuse, instructions for clinical use and interpretation, literature references, examples from the paper world, etc. It is not a rendering of the search parameter as conveyed in the 'text' field of the resource itself. This item SHOULD be populated unless the information is available from context (e.g. the language of the search parameter is presumed to be the predominant language in the place the search parameter was created).
    */
   description: fhir.FhirMarkdown|string|undefined;
+  /**
+   * Extended properties for primitive element: SearchParameter.description
+   */
+  _description?:fhir.FhirElementArgs;
   /**
    * When multiple useContexts are specified, there is no expectation that all or any of the contexts apply.
    */
@@ -148,53 +200,105 @@ export interface SearchParameterArgs extends fhir.DomainResourceArgs {
    */
   purpose?: fhir.FhirMarkdown|string|undefined;
   /**
+   * Extended properties for primitive element: SearchParameter.purpose
+   */
+  _purpose?:fhir.FhirElementArgs;
+  /**
    * For maximum compatibility, use only lowercase ASCII characters.
    */
   code: fhir.FhirCode|string|undefined;
+  /**
+   * Extended properties for primitive element: SearchParameter.code
+   */
+  _code?:fhir.FhirElementArgs;
   /**
    * A search parameter must always apply to at least one resource type. When search parameters apply to more than one resource type, they can be used against any of the listed resource types, or in a cross-type search (see [Cross Resource Search](http.html#xres-search)).
    */
   base: fhir.FhirCode[]|string[]|undefined;
   /**
+   * Extended properties for primitive element: SearchParameter.base
+   */
+  _base?:(fhir.FhirElementArgs|null)[];
+  /**
    * The type of value that a search parameter may contain, and how the content is interpreted.
    */
   type: fhir.FhirCode<SearchParamTypeCodeType>|string|undefined;
+  /**
+   * Extended properties for primitive element: SearchParameter.type
+   */
+  _type?:fhir.FhirElementArgs;
   /**
    * Note that the elements returned by the expression are sometimes complex elements where logic is required to determine quite how to handle them; e.g. CodeableConcepts may contain text and/or multiple codings, where the codings themselves contain a code and a system. For composite search parameters, the outcome of the expression must a collection of base elements from which the composites are derived.
    */
   expression?: fhir.FhirString|string|undefined;
   /**
+   * Extended properties for primitive element: SearchParameter.expression
+   */
+  _expression?:fhir.FhirElementArgs;
+  /**
    * Note that the elements returned by the XPath are sometimes complex elements where logic is required to determine quite how to handle them; e.g. CodeableConcepts may contain text and/or multiple codings, where the codings themselves contain a code and a system.
    */
   xpath?: fhir.FhirString|string|undefined;
+  /**
+   * Extended properties for primitive element: SearchParameter.xpath
+   */
+  _xpath?:fhir.FhirElementArgs;
   /**
    * How the search parameter relates to the set of elements returned by evaluating the xpath query.
    */
   xpathUsage?: fhir.FhirCode<SearchXpathUsageCodeType>|string|undefined;
   /**
+   * Extended properties for primitive element: SearchParameter.xpathUsage
+   */
+  _xpathUsage?:fhir.FhirElementArgs;
+  /**
    * Types of resource (if a resource is referenced).
    */
   target?: fhir.FhirCode[]|string[]|undefined;
+  /**
+   * Extended properties for primitive element: SearchParameter.target
+   */
+  _target?:(fhir.FhirElementArgs|null)[];
   /**
    * Whether multiple values are allowed for each time the parameter exists. Values are separated by commas, and the parameter matches if any of the values match.
    */
   multipleOr?: fhir.FhirBoolean|boolean|undefined;
   /**
+   * Extended properties for primitive element: SearchParameter.multipleOr
+   */
+  _multipleOr?:fhir.FhirElementArgs;
+  /**
    * Whether multiple parameters are allowed - e.g. more than one parameter with the same name. The search matches if all the parameters match.
    */
   multipleAnd?: fhir.FhirBoolean|boolean|undefined;
+  /**
+   * Extended properties for primitive element: SearchParameter.multipleAnd
+   */
+  _multipleAnd?:fhir.FhirElementArgs;
   /**
    * If no comparators are listed, clients should not expect servers to support any comparators.
    */
   comparator?: fhir.FhirCode<SearchComparatorCodeType>[]|string[]|undefined;
   /**
+   * Extended properties for primitive element: SearchParameter.comparator
+   */
+  _comparator?:(fhir.FhirElementArgs|null)[];
+  /**
    * A modifier supported for the search parameter.
    */
-  modifier?: fhir.FhirCode<SearchModifierCodeCodeType>[]|string[]|undefined;
+  modifier?: fhir.FhirCode<SearchModifierCodeType>[]|string[]|undefined;
+  /**
+   * Extended properties for primitive element: SearchParameter.modifier
+   */
+  _modifier?:(fhir.FhirElementArgs|null)[];
   /**
    * Systems are not required to list all the chain names they support, but if they don't list them, clients might not know to use them.
    */
   chain?: fhir.FhirString[]|string[]|undefined;
+  /**
+   * Extended properties for primitive element: SearchParameter.chain
+   */
+  _chain?:(fhir.FhirElementArgs|null)[];
   /**
    * Used to define the parts of a composite search parameter.
    */
@@ -310,7 +414,7 @@ export class SearchParameter extends fhir.DomainResource {
   /**
    * A modifier supported for the search parameter.
    */
-  public modifier: fhir.FhirCode<SearchModifierCodeCodeType>[];
+  public modifier: fhir.FhirCode<SearchModifierCodeType>[];
   /**
    * Systems are not required to list all the chain names they support, but if they don't list them, clients might not know to use them.
    */
@@ -327,43 +431,141 @@ export class SearchParameter extends fhir.DomainResource {
     this.resourceType = 'SearchParameter';
     if (source['url']) { this.url = new fhir.FhirUri({value: source.url}); }
     else { this.url = null; }
+    if (source['_url']) {
+      if (this.url) { this.url.addExtendedProperties(source._url!); }
+      else { this.url = new fhir.FhirUri(source._url as Partial<fhir.FhirUriArgs>); }
+    }
     if (source['version']) { this.version = new fhir.FhirString({value: source.version}); }
+    if (source['_version']) {
+      if (this.version) { this.version.addExtendedProperties(source._version!); }
+      else { this.version = new fhir.FhirString(source._version as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['name']) { this.name = new fhir.FhirString({value: source.name}); }
     else { this.name = null; }
+    if (source['_name']) {
+      if (this.name) { this.name.addExtendedProperties(source._name!); }
+      else { this.name = new fhir.FhirString(source._name as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['derivedFrom']) { this.derivedFrom = new fhir.FhirCanonical({value: source.derivedFrom}); }
+    if (source['_derivedFrom']) {
+      if (this.derivedFrom) { this.derivedFrom.addExtendedProperties(source._derivedFrom!); }
+      else { this.derivedFrom = new fhir.FhirCanonical(source._derivedFrom as Partial<fhir.FhirCanonicalArgs>); }
+    }
     if (source['status']) { this.status = new fhir.FhirCode<PublicationStatusCodeType>({value: source.status}); }
     else { this.status = null; }
+    if (source['_status']) {
+      if (this.status) { this.status.addExtendedProperties(source._status!); }
+      else { this.status = new fhir.FhirCode<PublicationStatusCodeType>(source._status as Partial<fhir.FhirCode>); }
+    }
     if (source['experimental']) { this.experimental = new fhir.FhirBoolean({value: source.experimental}); }
+    if (source['_experimental']) {
+      if (this.experimental) { this.experimental.addExtendedProperties(source._experimental!); }
+      else { this.experimental = new fhir.FhirBoolean(source._experimental as Partial<fhir.FhirBooleanArgs>); }
+    }
     if (source['date']) { this.date = new fhir.FhirDateTime({value: source.date}); }
+    if (source['_date']) {
+      if (this.date) { this.date.addExtendedProperties(source._date!); }
+      else { this.date = new fhir.FhirDateTime(source._date as Partial<fhir.FhirDateTimeArgs>); }
+    }
     if (source['publisher']) { this.publisher = new fhir.FhirString({value: source.publisher}); }
+    if (source['_publisher']) {
+      if (this.publisher) { this.publisher.addExtendedProperties(source._publisher!); }
+      else { this.publisher = new fhir.FhirString(source._publisher as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['contact']) { this.contact = source.contact.map((x) => new fhir.ContactDetail(x)); }
     else { this.contact = []; }
     if (source['description']) { this.description = new fhir.FhirMarkdown({value: source.description}); }
     else { this.description = null; }
+    if (source['_description']) {
+      if (this.description) { this.description.addExtendedProperties(source._description!); }
+      else { this.description = new fhir.FhirMarkdown(source._description as Partial<fhir.FhirMarkdownArgs>); }
+    }
     if (source['useContext']) { this.useContext = source.useContext.map((x) => new fhir.UsageContext(x)); }
     else { this.useContext = []; }
     if (source['jurisdiction']) { this.jurisdiction = source.jurisdiction.map((x) => new fhir.CodeableConcept(x)); }
     else { this.jurisdiction = []; }
     if (source['purpose']) { this.purpose = new fhir.FhirMarkdown({value: source.purpose}); }
+    if (source['_purpose']) {
+      if (this.purpose) { this.purpose.addExtendedProperties(source._purpose!); }
+      else { this.purpose = new fhir.FhirMarkdown(source._purpose as Partial<fhir.FhirMarkdownArgs>); }
+    }
     if (source['code']) { this.code = new fhir.FhirCode({value: source.code}); }
     else { this.code = null; }
+    if (source['_code']) {
+      if (this.code) { this.code.addExtendedProperties(source._code!); }
+      else { this.code = new fhir.FhirCode(source._code as Partial<fhir.FhirCodeArgs>); }
+    }
     if (source['base']) { this.base = source.base.map((x) => new fhir.FhirCode({value: x})); }
     else { this.base = []; }
+    if (source['_base']) {
+      source._base.forEach((x,i) => {
+        if (this.base.length >= i) { if (x) { this.base[i].addExtendedProperties(x); } }
+        else { if (x) { this.base.push(new fhir.FhirCode(x as Partial<fhir.FhirCodeArgs>)); } }
+      });
+    }
     if (source['type']) { this.type = new fhir.FhirCode<SearchParamTypeCodeType>({value: source.type}); }
     else { this.type = null; }
+    if (source['_type']) {
+      if (this.type) { this.type.addExtendedProperties(source._type!); }
+      else { this.type = new fhir.FhirCode<SearchParamTypeCodeType>(source._type as Partial<fhir.FhirCode>); }
+    }
     if (source['expression']) { this.expression = new fhir.FhirString({value: source.expression}); }
+    if (source['_expression']) {
+      if (this.expression) { this.expression.addExtendedProperties(source._expression!); }
+      else { this.expression = new fhir.FhirString(source._expression as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['xpath']) { this.xpath = new fhir.FhirString({value: source.xpath}); }
+    if (source['_xpath']) {
+      if (this.xpath) { this.xpath.addExtendedProperties(source._xpath!); }
+      else { this.xpath = new fhir.FhirString(source._xpath as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['xpathUsage']) { this.xpathUsage = new fhir.FhirCode<SearchXpathUsageCodeType>({value: source.xpathUsage}); }
+    if (source['_xpathUsage']) {
+      if (this.xpathUsage) { this.xpathUsage.addExtendedProperties(source._xpathUsage!); }
+      else { this.xpathUsage = new fhir.FhirCode<SearchXpathUsageCodeType>(source._xpathUsage as Partial<fhir.FhirCode>); }
+    }
     if (source['target']) { this.target = source.target.map((x) => new fhir.FhirCode({value: x})); }
     else { this.target = []; }
+    if (source['_target']) {
+      source._target.forEach((x,i) => {
+        if (this.target.length >= i) { if (x) { this.target[i].addExtendedProperties(x); } }
+        else { if (x) { this.target.push(new fhir.FhirCode(x as Partial<fhir.FhirCodeArgs>)); } }
+      });
+    }
     if (source['multipleOr']) { this.multipleOr = new fhir.FhirBoolean({value: source.multipleOr}); }
+    if (source['_multipleOr']) {
+      if (this.multipleOr) { this.multipleOr.addExtendedProperties(source._multipleOr!); }
+      else { this.multipleOr = new fhir.FhirBoolean(source._multipleOr as Partial<fhir.FhirBooleanArgs>); }
+    }
     if (source['multipleAnd']) { this.multipleAnd = new fhir.FhirBoolean({value: source.multipleAnd}); }
+    if (source['_multipleAnd']) {
+      if (this.multipleAnd) { this.multipleAnd.addExtendedProperties(source._multipleAnd!); }
+      else { this.multipleAnd = new fhir.FhirBoolean(source._multipleAnd as Partial<fhir.FhirBooleanArgs>); }
+    }
     if (source['comparator']) { this.comparator = source.comparator.map((x) => new fhir.FhirCode<SearchComparatorCodeType>({value: x})); }
     else { this.comparator = []; }
-    if (source['modifier']) { this.modifier = source.modifier.map((x) => new fhir.FhirCode<SearchModifierCodeCodeType>({value: x})); }
+    if (source['_comparator']) {
+      source._comparator.forEach((x,i) => {
+        if (this.comparator.length >= i) { if (x) { this.comparator[i].addExtendedProperties(x); } }
+        else { if (x) { this.comparator.push(new fhir.FhirCode<SearchComparatorCodeType>(x as Partial<fhir.FhirCode>)); } }
+      });
+    }
+    if (source['modifier']) { this.modifier = source.modifier.map((x) => new fhir.FhirCode<SearchModifierCodeType>({value: x})); }
     else { this.modifier = []; }
+    if (source['_modifier']) {
+      source._modifier.forEach((x,i) => {
+        if (this.modifier.length >= i) { if (x) { this.modifier[i].addExtendedProperties(x); } }
+        else { if (x) { this.modifier.push(new fhir.FhirCode<SearchModifierCodeType>(x as Partial<fhir.FhirCode>)); } }
+      });
+    }
     if (source['chain']) { this.chain = source.chain.map((x) => new fhir.FhirString({value: x})); }
     else { this.chain = []; }
+    if (source['_chain']) {
+      source._chain.forEach((x,i) => {
+        if (this.chain.length >= i) { if (x) { this.chain[i].addExtendedProperties(x); } }
+        else { if (x) { this.chain.push(new fhir.FhirString(x as Partial<fhir.FhirStringArgs>)); } }
+      });
+    }
     if (source['component']) { this.component = source.component.map((x) => new fhir.SearchParameterComponent(x)); }
     else { this.component = []; }
   }
@@ -407,7 +609,7 @@ export class SearchParameter extends fhir.DomainResource {
    * Required-bound Value Set for modifier (SearchParameter.modifier)
    */
   public static get modifierRequiredCodes() {
-    return SearchModifierCodeCodes;
+    return SearchModifierCodes;
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -497,8 +699,8 @@ export class SearchParameter extends fhir.DomainResource {
     if (this["comparator"]) { this.comparator.forEach((x) => { issues.push(...x.doModelValidation()); }) }
     if (this['modifier']) {
       this.modifier.forEach((v) => {
-        if (!Object.values(SearchModifierCodeCodes).includes(v as any)) {
-          issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property modifier?:fhir.FhirCode<SearchModifierCodeCodeType>[] fhir: SearchParameter.modifier:code Required binding to: SearchModifierCode' });
+        if (!Object.values(SearchModifierCodes).includes(v as any)) {
+          issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property modifier?:fhir.FhirCode<SearchModifierCodeType>[] fhir: SearchParameter.modifier:code Required binding to: SearchModifier' });
         }
       });
     }

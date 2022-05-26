@@ -77,6 +77,10 @@ export interface MedicinalProductInteractionArgs extends fhir.DomainResourceArgs
    */
   description?: fhir.FhirString|string|undefined;
   /**
+   * Extended properties for primitive element: MedicinalProductInteraction.description
+   */
+  _description?:fhir.FhirElementArgs;
+  /**
    * The specific medication, food or laboratory test that interacts.
    */
   interactant?: fhir.MedicinalProductInteractionInteractantArgs[]|undefined;
@@ -147,6 +151,10 @@ export class MedicinalProductInteraction extends fhir.DomainResource {
     if (source['subject']) { this.subject = source.subject.map((x) => new fhir.Reference(x)); }
     else { this.subject = []; }
     if (source['description']) { this.description = new fhir.FhirString({value: source.description}); }
+    if (source['_description']) {
+      if (this.description) { this.description.addExtendedProperties(source._description!); }
+      else { this.description = new fhir.FhirString(source._description as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['interactant']) { this.interactant = source.interactant.map((x) => new fhir.MedicinalProductInteractionInteractant(x)); }
     else { this.interactant = []; }
     if (source['type']) { this.type = new fhir.CodeableConcept(source.type); }

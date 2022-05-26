@@ -18,21 +18,41 @@ export interface RelatedArtifactArgs extends fhir.FhirElementArgs {
    */
   type: fhir.FhirCode<RelatedArtifactTypeCodeType>|string|undefined;
   /**
+   * Extended properties for primitive element: RelatedArtifact.type
+   */
+  _type?:fhir.FhirElementArgs;
+  /**
    * A short label that can be used to reference the citation from elsewhere in the containing artifact, such as a footnote index.
    */
   label?: fhir.FhirString|string|undefined;
+  /**
+   * Extended properties for primitive element: RelatedArtifact.label
+   */
+  _label?:fhir.FhirElementArgs;
   /**
    * A brief description of the document or knowledge resource being referenced, suitable for display to a consumer.
    */
   display?: fhir.FhirString|string|undefined;
   /**
+   * Extended properties for primitive element: RelatedArtifact.display
+   */
+  _display?:fhir.FhirElementArgs;
+  /**
    * Additional structured information about citations should be captured as extensions.
    */
   citation?: fhir.FhirMarkdown|string|undefined;
   /**
+   * Extended properties for primitive element: RelatedArtifact.citation
+   */
+  _citation?:fhir.FhirElementArgs;
+  /**
    * If a document or resource element is present, this element SHALL NOT be provided (use the url or reference in the Attachment or resource reference).
    */
   url?: fhir.FhirUrl|string|undefined;
+  /**
+   * Extended properties for primitive element: RelatedArtifact.url
+   */
+  _url?:fhir.FhirElementArgs;
   /**
    * The document being referenced, represented as an attachment. This is exclusive with the resource element.
    */
@@ -41,6 +61,10 @@ export interface RelatedArtifactArgs extends fhir.FhirElementArgs {
    * If the type is predecessor, this is a reference to the succeeding knowledge resource. If the type is successor, this is a reference to the prior knowledge resource.
    */
   resource?: fhir.FhirCanonical|string|undefined;
+  /**
+   * Extended properties for primitive element: RelatedArtifact.resource
+   */
+  _resource?:fhir.FhirElementArgs;
 }
 
 /**
@@ -86,12 +110,36 @@ export class RelatedArtifact extends fhir.FhirElement {
     super(source, options);
     if (source['type']) { this.type = new fhir.FhirCode<RelatedArtifactTypeCodeType>({value: source.type}); }
     else { this.type = null; }
+    if (source['_type']) {
+      if (this.type) { this.type.addExtendedProperties(source._type!); }
+      else { this.type = new fhir.FhirCode<RelatedArtifactTypeCodeType>(source._type as Partial<fhir.FhirCode>); }
+    }
     if (source['label']) { this.label = new fhir.FhirString({value: source.label}); }
+    if (source['_label']) {
+      if (this.label) { this.label.addExtendedProperties(source._label!); }
+      else { this.label = new fhir.FhirString(source._label as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['display']) { this.display = new fhir.FhirString({value: source.display}); }
+    if (source['_display']) {
+      if (this.display) { this.display.addExtendedProperties(source._display!); }
+      else { this.display = new fhir.FhirString(source._display as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['citation']) { this.citation = new fhir.FhirMarkdown({value: source.citation}); }
+    if (source['_citation']) {
+      if (this.citation) { this.citation.addExtendedProperties(source._citation!); }
+      else { this.citation = new fhir.FhirMarkdown(source._citation as Partial<fhir.FhirMarkdownArgs>); }
+    }
     if (source['url']) { this.url = new fhir.FhirUrl({value: source.url}); }
+    if (source['_url']) {
+      if (this.url) { this.url.addExtendedProperties(source._url!); }
+      else { this.url = new fhir.FhirUrl(source._url as Partial<fhir.FhirUrlArgs>); }
+    }
     if (source['document']) { this.document = new fhir.Attachment(source.document); }
     if (source['resource']) { this.resource = new fhir.FhirCanonical({value: source.resource}); }
+    if (source['_resource']) {
+      if (this.resource) { this.resource.addExtendedProperties(source._resource!); }
+      else { this.resource = new fhir.FhirCanonical(source._resource as Partial<fhir.FhirCanonicalArgs>); }
+    }
   }
   /**
    * Required-bound Value Set for type (RelatedArtifact.type)

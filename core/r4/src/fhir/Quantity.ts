@@ -18,21 +18,41 @@ export interface QuantityArgs extends fhir.FhirElementArgs {
    */
   value?: fhir.FhirDecimal|number|undefined;
   /**
+   * Extended properties for primitive element: Quantity.value
+   */
+  _value?:fhir.FhirElementArgs;
+  /**
    * How the value should be understood and represented - whether the actual value is greater or less than the stated value due to measurement issues; e.g. if the comparator is "&lt;" , then the real value is &lt; stated value.
    */
   comparator?: fhir.FhirCode<QuantityComparatorCodeType>|string|undefined;
+  /**
+   * Extended properties for primitive element: Quantity.comparator
+   */
+  _comparator?:fhir.FhirElementArgs;
   /**
    * A human-readable form of the unit.
    */
   unit?: fhir.FhirString|string|undefined;
   /**
+   * Extended properties for primitive element: Quantity.unit
+   */
+  _unit?:fhir.FhirElementArgs;
+  /**
    * The identification of the system that provides the coded form of the unit.
    */
   system?: fhir.FhirUri|string|undefined;
   /**
+   * Extended properties for primitive element: Quantity.system
+   */
+  _system?:fhir.FhirElementArgs;
+  /**
    * The preferred system is UCUM, but SNOMED CT can also be used (for customary units) or ISO 4217 for currency.  The context of use may additionally require a code from a particular system.
    */
   code?: fhir.FhirCode|string|undefined;
+  /**
+   * Extended properties for primitive element: Quantity.code
+   */
+  _code?:fhir.FhirElementArgs;
 }
 
 /**
@@ -69,10 +89,30 @@ export class Quantity extends fhir.FhirElement {
   constructor(source:Partial<QuantityArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
     if (source['value']) { this.value = new fhir.FhirDecimal({value: source.value}); }
+    if (source['_value']) {
+      if (this.value) { this.value.addExtendedProperties(source._value!); }
+      else { this.value = new fhir.FhirDecimal(source._value as Partial<fhir.FhirDecimalArgs>); }
+    }
     if (source['comparator']) { this.comparator = new fhir.FhirCode<QuantityComparatorCodeType>({value: source.comparator}); }
+    if (source['_comparator']) {
+      if (this.comparator) { this.comparator.addExtendedProperties(source._comparator!); }
+      else { this.comparator = new fhir.FhirCode<QuantityComparatorCodeType>(source._comparator as Partial<fhir.FhirCode>); }
+    }
     if (source['unit']) { this.unit = new fhir.FhirString({value: source.unit}); }
+    if (source['_unit']) {
+      if (this.unit) { this.unit.addExtendedProperties(source._unit!); }
+      else { this.unit = new fhir.FhirString(source._unit as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['system']) { this.system = new fhir.FhirUri({value: source.system}); }
+    if (source['_system']) {
+      if (this.system) { this.system.addExtendedProperties(source._system!); }
+      else { this.system = new fhir.FhirUri(source._system as Partial<fhir.FhirUriArgs>); }
+    }
     if (source['code']) { this.code = new fhir.FhirCode({value: source.code}); }
+    if (source['_code']) {
+      if (this.code) { this.code.addExtendedProperties(source._code!); }
+      else { this.code = new fhir.FhirCode(source._code as Partial<fhir.FhirCodeArgs>); }
+    }
   }
   /**
    * Required-bound Value Set for comparator (Quantity.comparator)

@@ -49,6 +49,10 @@ export interface MedicationAdministrationDosageArgs extends fhir.BackboneElement
      */
     text?: fhir.FhirString | string | undefined;
     /**
+     * Extended properties for primitive element: MedicationAdministration.dosage.text
+     */
+    _text?: fhir.FhirElementArgs;
+    /**
      * If the use case requires attributes from the BodySite resource (e.g. to identify and track separately) then use the standard extension [bodySite](extension-bodysite.html).  May be a summary code, or a reference to a very precise definition of the location, or both.
      */
     site?: fhir.CodeableConceptArgs | undefined;
@@ -140,6 +144,10 @@ export interface MedicationAdministrationArgs extends fhir.DomainResourceArgs {
      */
     instantiates?: fhir.FhirUri[] | string[] | undefined;
     /**
+     * Extended properties for primitive element: MedicationAdministration.instantiates
+     */
+    _instantiates?: (fhir.FhirElementArgs | null)[];
+    /**
      * A larger event of which this particular event is a component or step.
      */
     partOf?: fhir.ReferenceArgs[] | undefined;
@@ -147,6 +155,10 @@ export interface MedicationAdministrationArgs extends fhir.DomainResourceArgs {
      * This element is labeled as a modifier because the status contains codes that mark the resource as not currently valid.
      */
     status: fhir.FhirCode<MedicationAdminStatusCodeType> | string | undefined;
+    /**
+     * Extended properties for primitive element: MedicationAdministration.status
+     */
+    _status?: fhir.FhirElementArgs;
     /**
      * A code indicating why the administration was not performed.
      */

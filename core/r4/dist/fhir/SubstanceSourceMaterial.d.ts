@@ -8,6 +8,10 @@ export interface SubstanceSourceMaterialFractionDescriptionArgs extends fhir.Bac
      */
     fraction?: fhir.FhirString | string | undefined;
     /**
+     * Extended properties for primitive element: SubstanceSourceMaterial.fractionDescription.fraction
+     */
+    _fraction?: fhir.FhirElementArgs;
+    /**
      * The specific type of the material constituting the component. For Herbal preparations the particulars of the extracts (liquid/dry) is described in Specified Substance Group 1.
      */
     materialType?: fhir.CodeableConceptArgs | undefined;
@@ -49,6 +53,10 @@ export interface SubstanceSourceMaterialOrganismAuthorArgs extends fhir.Backbone
      * The author of an organism species shall be specified. The author year of an organism shall also be specified when applicable; refers to the year in which the first author(s) published the infraspecific plant/animal name (of any rank).
      */
     authorDescription?: fhir.FhirString | string | undefined;
+    /**
+     * Extended properties for primitive element: SubstanceSourceMaterial.organism.author.authorDescription
+     */
+    _authorDescription?: fhir.FhirElementArgs;
 }
 /**
  * 4.9.13.6.1 Author type (Conditional).
@@ -84,17 +92,33 @@ export interface SubstanceSourceMaterialOrganismHybridArgs extends fhir.Backbone
      */
     maternalOrganismId?: fhir.FhirString | string | undefined;
     /**
+     * Extended properties for primitive element: SubstanceSourceMaterial.organism.hybrid.maternalOrganismId
+     */
+    _maternalOrganismId?: fhir.FhirElementArgs;
+    /**
      * The name of the maternal species constituting the hybrid organism shall be specified. For plants, the parents aren’t always known, and it is unlikely that it will be known which is maternal and which is paternal.
      */
     maternalOrganismName?: fhir.FhirString | string | undefined;
+    /**
+     * Extended properties for primitive element: SubstanceSourceMaterial.organism.hybrid.maternalOrganismName
+     */
+    _maternalOrganismName?: fhir.FhirElementArgs;
     /**
      * The identifier of the paternal species constituting the hybrid organism shall be specified based on a controlled vocabulary.
      */
     paternalOrganismId?: fhir.FhirString | string | undefined;
     /**
+     * Extended properties for primitive element: SubstanceSourceMaterial.organism.hybrid.paternalOrganismId
+     */
+    _paternalOrganismId?: fhir.FhirElementArgs;
+    /**
      * The name of the paternal species constituting the hybrid organism shall be specified.
      */
     paternalOrganismName?: fhir.FhirString | string | undefined;
+    /**
+     * Extended properties for primitive element: SubstanceSourceMaterial.organism.hybrid.paternalOrganismName
+     */
+    _paternalOrganismName?: fhir.FhirElementArgs;
     /**
      * The hybrid type of an organism shall be specified.
      */
@@ -215,6 +239,10 @@ export interface SubstanceSourceMaterialOrganismArgs extends fhir.BackboneElemen
      * The intraspecific description of an organism shall be specified based on a controlled vocabulary. For Influenza Vaccine, the intraspecific description shall contain the syntax of the antigen in line with the WHO convention.
      */
     intraspecificDescription?: fhir.FhirString | string | undefined;
+    /**
+     * Extended properties for primitive element: SubstanceSourceMaterial.organism.intraspecificDescription
+     */
+    _intraspecificDescription?: fhir.FhirElementArgs;
     /**
      * 4.9.13.6.1 Author type (Conditional).
      */
@@ -344,6 +372,10 @@ export interface SubstanceSourceMaterialArgs extends fhir.DomainResourceArgs {
      */
     organismName?: fhir.FhirString | string | undefined;
     /**
+     * Extended properties for primitive element: SubstanceSourceMaterial.organismName
+     */
+    _organismName?: fhir.FhirElementArgs;
+    /**
      * The parent of the herbal drug Ginkgo biloba, Leaf is the substance ID of the substance (fresh) of Ginkgo biloba L. or Ginkgo biloba L. (Whole plant).
      */
     parentSubstanceId?: fhir.IdentifierArgs[] | undefined;
@@ -352,6 +384,10 @@ export interface SubstanceSourceMaterialArgs extends fhir.DomainResourceArgs {
      */
     parentSubstanceName?: fhir.FhirString[] | string[] | undefined;
     /**
+     * Extended properties for primitive element: SubstanceSourceMaterial.parentSubstanceName
+     */
+    _parentSubstanceName?: (fhir.FhirElementArgs | null)[];
+    /**
      * The country where the plant material is harvested or the countries where the plasma is sourced from as laid down in accordance with the Plasma Master File. For “Plasma-derived substances” the attribute country of origin provides information about the countries used for the manufacturing of the Cryopoor plama or Crioprecipitate.
      */
     countryOfOrigin?: fhir.CodeableConceptArgs[] | undefined;
@@ -359,6 +395,10 @@ export interface SubstanceSourceMaterialArgs extends fhir.DomainResourceArgs {
      * The place/region where the plant is harvested or the places/regions where the animal source material has its habitat.
      */
     geographicalLocation?: fhir.FhirString[] | string[] | undefined;
+    /**
+     * Extended properties for primitive element: SubstanceSourceMaterial.geographicalLocation
+     */
+    _geographicalLocation?: (fhir.FhirElementArgs | null)[];
     /**
      * Stage of life for animals, plants, insects and microorganisms. This information shall be provided only when the substance is significantly different in these stages (e.g. foetal bovine serum).
      */

@@ -48,6 +48,10 @@ export interface MedicationDispenseSubstitutionArgs extends fhir.BackboneElement
      */
     wasSubstituted: fhir.FhirBoolean | boolean | undefined;
     /**
+     * Extended properties for primitive element: MedicationDispense.substitution.wasSubstituted
+     */
+    _wasSubstituted?: fhir.FhirElementArgs;
+    /**
      * A code signifying whether a different drug was dispensed from what was prescribed.
      */
     type?: fhir.CodeableConceptArgs | undefined;
@@ -113,6 +117,10 @@ export interface MedicationDispenseArgs extends fhir.DomainResourceArgs {
      * This element is labeled as a modifier because the status contains codes that mark the resource as not currently valid.
      */
     status: fhir.FhirCode<MedicationdispenseStatusCodeType> | string | undefined;
+    /**
+     * Extended properties for primitive element: MedicationDispense.status
+     */
+    _status?: fhir.FhirElementArgs;
     /**
      * Indicates the reason why a dispense was not performed.
      */
@@ -182,9 +190,17 @@ export interface MedicationDispenseArgs extends fhir.DomainResourceArgs {
      */
     whenPrepared?: fhir.FhirDateTime | string | undefined;
     /**
+     * Extended properties for primitive element: MedicationDispense.whenPrepared
+     */
+    _whenPrepared?: fhir.FhirElementArgs;
+    /**
      * The time the dispensed product was provided to the patient or their representative.
      */
     whenHandedOver?: fhir.FhirDateTime | string | undefined;
+    /**
+     * Extended properties for primitive element: MedicationDispense.whenHandedOver
+     */
+    _whenHandedOver?: fhir.FhirElementArgs;
     /**
      * Identification of the facility/location where the medication was shipped to, as part of the dispense event.
      */

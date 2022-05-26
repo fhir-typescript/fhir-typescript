@@ -26,13 +26,25 @@ export interface CompartmentDefinitionResourceArgs extends fhir.BackboneElementA
    */
   code: fhir.FhirCode|string|undefined;
   /**
+   * Extended properties for primitive element: CompartmentDefinition.resource.code
+   */
+  _code?:fhir.FhirElementArgs;
+  /**
    * If no search parameters are listed, then the resource is not linked to the compartment.
    */
   param?: fhir.FhirString[]|string[]|undefined;
   /**
+   * Extended properties for primitive element: CompartmentDefinition.resource.param
+   */
+  _param?:(fhir.FhirElementArgs|null)[];
+  /**
    * Additional documentation about the resource and compartment.
    */
   documentation?: fhir.FhirString|string|undefined;
+  /**
+   * Extended properties for primitive element: CompartmentDefinition.resource.documentation
+   */
+  _documentation?:fhir.FhirElementArgs;
 }
 
 /**
@@ -62,9 +74,23 @@ export class CompartmentDefinitionResource extends fhir.BackboneElement {
     super(source, options);
     if (source['code']) { this.code = new fhir.FhirCode({value: source.code}); }
     else { this.code = null; }
+    if (source['_code']) {
+      if (this.code) { this.code.addExtendedProperties(source._code!); }
+      else { this.code = new fhir.FhirCode(source._code as Partial<fhir.FhirCodeArgs>); }
+    }
     if (source['param']) { this.param = source.param.map((x) => new fhir.FhirString({value: x})); }
     else { this.param = []; }
+    if (source['_param']) {
+      source._param.forEach((x,i) => {
+        if (this.param.length >= i) { if (x) { this.param[i].addExtendedProperties(x); } }
+        else { if (x) { this.param.push(new fhir.FhirString(x as Partial<fhir.FhirStringArgs>)); } }
+      });
+    }
     if (source['documentation']) { this.documentation = new fhir.FhirString({value: source.documentation}); }
+    if (source['_documentation']) {
+      if (this.documentation) { this.documentation.addExtendedProperties(source._documentation!); }
+      else { this.documentation = new fhir.FhirString(source._documentation as Partial<fhir.FhirStringArgs>); }
+    }
   }
   /**
    * Required-bound Value Set for code (CompartmentDefinition.resource.code)
@@ -104,29 +130,57 @@ export interface CompartmentDefinitionArgs extends fhir.DomainResourceArgs {
    */
   url: fhir.FhirUri|string|undefined;
   /**
+   * Extended properties for primitive element: CompartmentDefinition.url
+   */
+  _url?:fhir.FhirElementArgs;
+  /**
    * There may be different compartment definition instances that have the same identifier but different versions.  The version can be appended to the url in a reference to allow a reference to a particular business version of the compartment definition with the format [url]|[version].
    */
   version?: fhir.FhirString|string|undefined;
+  /**
+   * Extended properties for primitive element: CompartmentDefinition.version
+   */
+  _version?:fhir.FhirElementArgs;
   /**
    * The name is not expected to be globally unique. The name should be a simple alphanumeric type name to ensure that it is machine-processing friendly.This is often the same as the code for the parameter, but does not need to be.
    */
   name: fhir.FhirString|string|undefined;
   /**
+   * Extended properties for primitive element: CompartmentDefinition.name
+   */
+  _name?:fhir.FhirElementArgs;
+  /**
    * Allows filtering of compartment definitions that are appropriate for use versus not.
    */
   status: fhir.FhirCode<PublicationStatusCodeType>|string|undefined;
+  /**
+   * Extended properties for primitive element: CompartmentDefinition.status
+   */
+  _status?:fhir.FhirElementArgs;
   /**
    * Allows filtering of compartment definitions that are appropriate for use versus not.
    */
   experimental?: fhir.FhirBoolean|boolean|undefined;
   /**
+   * Extended properties for primitive element: CompartmentDefinition.experimental
+   */
+  _experimental?:fhir.FhirElementArgs;
+  /**
    * Note that this is not the same as the resource last-modified-date, since the resource may be a secondary representation of the compartment definition. Additional specific dates may be added as extensions or be found by consulting Provenances associated with past versions of the resource.
    */
   date?: fhir.FhirDateTime|string|undefined;
   /**
+   * Extended properties for primitive element: CompartmentDefinition.date
+   */
+  _date?:fhir.FhirElementArgs;
+  /**
    * Usually an organization but may be an individual. The publisher (or steward) of the compartment definition is the organization or individual primarily responsible for the maintenance and upkeep of the compartment definition. This is not necessarily the same individual or organization that developed and initially authored the content. The publisher is the primary point of contact for questions or issues with the compartment definition. This item SHOULD be populated unless the information is available from context.
    */
   publisher?: fhir.FhirString|string|undefined;
+  /**
+   * Extended properties for primitive element: CompartmentDefinition.publisher
+   */
+  _publisher?:fhir.FhirElementArgs;
   /**
    * May be a web site, an email address, a telephone number, etc.
    */
@@ -136,6 +190,10 @@ export interface CompartmentDefinitionArgs extends fhir.DomainResourceArgs {
    */
   description?: fhir.FhirMarkdown|string|undefined;
   /**
+   * Extended properties for primitive element: CompartmentDefinition.description
+   */
+  _description?:fhir.FhirElementArgs;
+  /**
    * When multiple useContexts are specified, there is no expectation that all or any of the contexts apply.
    */
   useContext?: fhir.UsageContextArgs[]|undefined;
@@ -144,13 +202,25 @@ export interface CompartmentDefinitionArgs extends fhir.DomainResourceArgs {
    */
   purpose?: fhir.FhirMarkdown|string|undefined;
   /**
+   * Extended properties for primitive element: CompartmentDefinition.purpose
+   */
+  _purpose?:fhir.FhirElementArgs;
+  /**
    * Only the specification can define the compartments that can exist. Servers can choose to support them.
    */
   code: fhir.FhirCode<CompartmentTypeCodeType>|string|undefined;
   /**
+   * Extended properties for primitive element: CompartmentDefinition.code
+   */
+  _code?:fhir.FhirElementArgs;
+  /**
    * Servers may define and use compartments to manage logical access without implementing the compartment related syntax.
    */
   search: fhir.FhirBoolean|boolean|undefined;
+  /**
+   * Extended properties for primitive element: CompartmentDefinition.search
+   */
+  _search?:fhir.FhirElementArgs;
   /**
    * Information about how a resource is related to the compartment.
    */
@@ -235,24 +305,68 @@ export class CompartmentDefinition extends fhir.DomainResource {
     this.resourceType = 'CompartmentDefinition';
     if (source['url']) { this.url = new fhir.FhirUri({value: source.url}); }
     else { this.url = null; }
+    if (source['_url']) {
+      if (this.url) { this.url.addExtendedProperties(source._url!); }
+      else { this.url = new fhir.FhirUri(source._url as Partial<fhir.FhirUriArgs>); }
+    }
     if (source['version']) { this.version = new fhir.FhirString({value: source.version}); }
+    if (source['_version']) {
+      if (this.version) { this.version.addExtendedProperties(source._version!); }
+      else { this.version = new fhir.FhirString(source._version as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['name']) { this.name = new fhir.FhirString({value: source.name}); }
     else { this.name = null; }
+    if (source['_name']) {
+      if (this.name) { this.name.addExtendedProperties(source._name!); }
+      else { this.name = new fhir.FhirString(source._name as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['status']) { this.status = new fhir.FhirCode<PublicationStatusCodeType>({value: source.status}); }
     else { this.status = null; }
+    if (source['_status']) {
+      if (this.status) { this.status.addExtendedProperties(source._status!); }
+      else { this.status = new fhir.FhirCode<PublicationStatusCodeType>(source._status as Partial<fhir.FhirCode>); }
+    }
     if (source['experimental']) { this.experimental = new fhir.FhirBoolean({value: source.experimental}); }
+    if (source['_experimental']) {
+      if (this.experimental) { this.experimental.addExtendedProperties(source._experimental!); }
+      else { this.experimental = new fhir.FhirBoolean(source._experimental as Partial<fhir.FhirBooleanArgs>); }
+    }
     if (source['date']) { this.date = new fhir.FhirDateTime({value: source.date}); }
+    if (source['_date']) {
+      if (this.date) { this.date.addExtendedProperties(source._date!); }
+      else { this.date = new fhir.FhirDateTime(source._date as Partial<fhir.FhirDateTimeArgs>); }
+    }
     if (source['publisher']) { this.publisher = new fhir.FhirString({value: source.publisher}); }
+    if (source['_publisher']) {
+      if (this.publisher) { this.publisher.addExtendedProperties(source._publisher!); }
+      else { this.publisher = new fhir.FhirString(source._publisher as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['contact']) { this.contact = source.contact.map((x) => new fhir.ContactDetail(x)); }
     else { this.contact = []; }
     if (source['description']) { this.description = new fhir.FhirMarkdown({value: source.description}); }
+    if (source['_description']) {
+      if (this.description) { this.description.addExtendedProperties(source._description!); }
+      else { this.description = new fhir.FhirMarkdown(source._description as Partial<fhir.FhirMarkdownArgs>); }
+    }
     if (source['useContext']) { this.useContext = source.useContext.map((x) => new fhir.UsageContext(x)); }
     else { this.useContext = []; }
     if (source['purpose']) { this.purpose = new fhir.FhirMarkdown({value: source.purpose}); }
+    if (source['_purpose']) {
+      if (this.purpose) { this.purpose.addExtendedProperties(source._purpose!); }
+      else { this.purpose = new fhir.FhirMarkdown(source._purpose as Partial<fhir.FhirMarkdownArgs>); }
+    }
     if (source['code']) { this.code = new fhir.FhirCode<CompartmentTypeCodeType>({value: source.code}); }
     else { this.code = null; }
+    if (source['_code']) {
+      if (this.code) { this.code.addExtendedProperties(source._code!); }
+      else { this.code = new fhir.FhirCode<CompartmentTypeCodeType>(source._code as Partial<fhir.FhirCode>); }
+    }
     if (source['search']) { this.search = new fhir.FhirBoolean({value: source.search}); }
     else { this.search = null; }
+    if (source['_search']) {
+      if (this.search) { this.search.addExtendedProperties(source._search!); }
+      else { this.search = new fhir.FhirBoolean(source._search as Partial<fhir.FhirBooleanArgs>); }
+    }
     if (source['resource']) { this.resource = source.resource.map((x) => new fhir.CompartmentDefinitionResource(x)); }
     else { this.resource = []; }
   }

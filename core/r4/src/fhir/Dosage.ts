@@ -124,9 +124,17 @@ export interface DosageArgs extends fhir.BackboneElementArgs {
    */
   sequence?: fhir.FhirInteger|number|undefined;
   /**
+   * Extended properties for primitive element: Dosage.sequence
+   */
+  _sequence?:fhir.FhirElementArgs;
+  /**
    * Free text dosage instructions e.g. SIG.
    */
   text?: fhir.FhirString|string|undefined;
+  /**
+   * Extended properties for primitive element: Dosage.text
+   */
+  _text?:fhir.FhirElementArgs;
   /**
    * Information about administration or preparation of the medication (e.g. "infuse as rapidly as possibly via intraperitoneal port" or "immediately following drug x") should be populated in dosage.text.
    */
@@ -135,6 +143,10 @@ export interface DosageArgs extends fhir.BackboneElementArgs {
    * Instructions in terms that are understood by the patient or consumer.
    */
   patientInstruction?: fhir.FhirString|string|undefined;
+  /**
+   * Extended properties for primitive element: Dosage.patientInstruction
+   */
+  _patientInstruction?:fhir.FhirElementArgs;
   /**
    * This attribute might not always be populated while the Dosage.text is expected to be populated.  If both are populated, then the Dosage.text should reflect the content of the Dosage.timing.
    */
@@ -251,10 +263,22 @@ export class Dosage extends fhir.BackboneElement {
   constructor(source:Partial<DosageArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
     if (source['sequence']) { this.sequence = new fhir.FhirInteger({value: source.sequence}); }
+    if (source['_sequence']) {
+      if (this.sequence) { this.sequence.addExtendedProperties(source._sequence!); }
+      else { this.sequence = new fhir.FhirInteger(source._sequence as Partial<fhir.FhirIntegerArgs>); }
+    }
     if (source['text']) { this.text = new fhir.FhirString({value: source.text}); }
+    if (source['_text']) {
+      if (this.text) { this.text.addExtendedProperties(source._text!); }
+      else { this.text = new fhir.FhirString(source._text as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['additionalInstruction']) { this.additionalInstruction = source.additionalInstruction.map((x) => new fhir.CodeableConcept(x)); }
     else { this.additionalInstruction = []; }
     if (source['patientInstruction']) { this.patientInstruction = new fhir.FhirString({value: source.patientInstruction}); }
+    if (source['_patientInstruction']) {
+      if (this.patientInstruction) { this.patientInstruction.addExtendedProperties(source._patientInstruction!); }
+      else { this.patientInstruction = new fhir.FhirString(source._patientInstruction as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['timing']) { this.timing = new fhir.Timing(source.timing); }
     if (source['asNeeded']) { this.asNeeded = source.asNeeded; }
     else if (source['asNeededBoolean']) { this.asNeeded = new fhir.FhirBoolean({value: source.asNeededBoolean}); }

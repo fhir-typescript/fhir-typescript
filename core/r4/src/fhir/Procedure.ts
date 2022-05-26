@@ -26,9 +26,9 @@ import { ProcedureCategoryCodings, ProcedureCategoryCodingType,} from '../fhirVa
 // @ts-ignore
 import { ProcedureCategoryCodes,  ProcedureCategoryCodeType } from '../fhirValueSets/ProcedureCategoryCodes.js';
 // @ts-ignore
-import { ProcedureCodeCodings, ProcedureCodeCodingType,} from '../fhirValueSets/ProcedureCodeCodings.js';
+import { ProcedureCodings, ProcedureCodingType,} from '../fhirValueSets/ProcedureCodings.js';
 // @ts-ignore
-import { ProcedureCodeCodes,  ProcedureCodeCodeType } from '../fhirValueSets/ProcedureCodeCodes.js';
+import { ProcedureCodes,  ProcedureCodeType } from '../fhirValueSets/ProcedureCodes.js';
 // @ts-ignore
 import { ProcedureReasonCodings, ProcedureReasonCodingType,} from '../fhirValueSets/ProcedureReasonCodings.js';
 // @ts-ignore
@@ -42,9 +42,9 @@ import { ProcedureOutcomeCodings, ProcedureOutcomeCodingType,} from '../fhirValu
 // @ts-ignore
 import { ProcedureOutcomeCodes,  ProcedureOutcomeCodeType } from '../fhirValueSets/ProcedureOutcomeCodes.js';
 // @ts-ignore
-import { ConditionCodeCodings, ConditionCodeCodingType,} from '../fhirValueSets/ConditionCodeCodings.js';
+import { ConditionCodings, ConditionCodingType,} from '../fhirValueSets/ConditionCodings.js';
 // @ts-ignore
-import { ConditionCodeCodes,  ConditionCodeCodeType } from '../fhirValueSets/ConditionCodeCodes.js';
+import { ConditionCodes,  ConditionCodeType } from '../fhirValueSets/ConditionCodes.js';
 // @ts-ignore
 import { ProcedureFollowupCodings, ProcedureFollowupCodingType,} from '../fhirValueSets/ProcedureFollowupCodings.js';
 // @ts-ignore
@@ -190,9 +190,17 @@ export interface ProcedureArgs extends fhir.DomainResourceArgs {
    */
   instantiatesCanonical?: fhir.FhirCanonical[]|string[]|undefined;
   /**
+   * Extended properties for primitive element: Procedure.instantiatesCanonical
+   */
+  _instantiatesCanonical?:(fhir.FhirElementArgs|null)[];
+  /**
    * This might be an HTML page, PDF, etc. or could just be a non-resolvable URI identifier.
    */
   instantiatesUri?: fhir.FhirUri[]|string[]|undefined;
+  /**
+   * Extended properties for primitive element: Procedure.instantiatesUri
+   */
+  _instantiatesUri?:(fhir.FhirElementArgs|null)[];
   /**
    * A reference to a resource that contains details of the request for this procedure.
    */
@@ -206,6 +214,10 @@ export interface ProcedureArgs extends fhir.DomainResourceArgs {
    * This element is labeled as a modifier because the status contains codes that mark the resource as not currently valid.
    */
   status: fhir.FhirCode<EventStatusCodeType>|string|undefined;
+  /**
+   * Extended properties for primitive element: Procedure.status
+   */
+  _status?:fhir.FhirElementArgs;
   /**
    * This is generally only used for "exception" statuses such as "not-done", "suspended" or "aborted". The reason for performing the event at all is captured in reasonCode, not here.
    */
@@ -457,14 +469,30 @@ export class Procedure extends fhir.DomainResource {
     else { this.identifier = []; }
     if (source['instantiatesCanonical']) { this.instantiatesCanonical = source.instantiatesCanonical.map((x) => new fhir.FhirCanonical({value: x})); }
     else { this.instantiatesCanonical = []; }
+    if (source['_instantiatesCanonical']) {
+      source._instantiatesCanonical.forEach((x,i) => {
+        if (this.instantiatesCanonical.length >= i) { if (x) { this.instantiatesCanonical[i].addExtendedProperties(x); } }
+        else { if (x) { this.instantiatesCanonical.push(new fhir.FhirCanonical(x as Partial<fhir.FhirCanonicalArgs>)); } }
+      });
+    }
     if (source['instantiatesUri']) { this.instantiatesUri = source.instantiatesUri.map((x) => new fhir.FhirUri({value: x})); }
     else { this.instantiatesUri = []; }
+    if (source['_instantiatesUri']) {
+      source._instantiatesUri.forEach((x,i) => {
+        if (this.instantiatesUri.length >= i) { if (x) { this.instantiatesUri[i].addExtendedProperties(x); } }
+        else { if (x) { this.instantiatesUri.push(new fhir.FhirUri(x as Partial<fhir.FhirUriArgs>)); } }
+      });
+    }
     if (source['basedOn']) { this.basedOn = source.basedOn.map((x) => new fhir.Reference(x)); }
     else { this.basedOn = []; }
     if (source['partOf']) { this.partOf = source.partOf.map((x) => new fhir.Reference(x)); }
     else { this.partOf = []; }
     if (source['status']) { this.status = new fhir.FhirCode<EventStatusCodeType>({value: source.status}); }
     else { this.status = null; }
+    if (source['_status']) {
+      if (this.status) { this.status.addExtendedProperties(source._status!); }
+      else { this.status = new fhir.FhirCode<EventStatusCodeType>(source._status as Partial<fhir.FhirCode>); }
+    }
     if (source['statusReason']) { this.statusReason = new fhir.CodeableConcept(source.statusReason); }
     if (source['category']) { this.category = new fhir.CodeableConcept(source.category); }
     if (source['code']) { this.code = new fhir.CodeableConcept(source.code); }

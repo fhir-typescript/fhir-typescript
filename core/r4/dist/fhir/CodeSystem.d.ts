@@ -15,17 +15,33 @@ export interface CodeSystemFilterArgs extends fhir.BackboneElementArgs {
      */
     code: fhir.FhirCode | string | undefined;
     /**
+     * Extended properties for primitive element: CodeSystem.filter.code
+     */
+    _code?: fhir.FhirElementArgs;
+    /**
      * A description of how or why the filter is used.
      */
     description?: fhir.FhirString | string | undefined;
+    /**
+     * Extended properties for primitive element: CodeSystem.filter.description
+     */
+    _description?: fhir.FhirElementArgs;
     /**
      * A list of operators that can be used with the filter.
      */
     operator: fhir.FhirCode<FilterOperatorCodeType>[] | string[] | undefined;
     /**
+     * Extended properties for primitive element: CodeSystem.filter.operator
+     */
+    _operator?: (fhir.FhirElementArgs | null)[];
+    /**
      * A description of what the value for the filter should be.
      */
     value: fhir.FhirString | string | undefined;
+    /**
+     * Extended properties for primitive element: CodeSystem.filter.value
+     */
+    _value?: fhir.FhirElementArgs;
 }
 /**
  * Note that filters defined in code systems usually require custom code on the part of any terminology engine that will make them available for use in value set filters. For this reason, they are generally only seen in high value published terminologies.
@@ -83,17 +99,33 @@ export interface CodeSystemPropertyArgs extends fhir.BackboneElementArgs {
      */
     code: fhir.FhirCode | string | undefined;
     /**
+     * Extended properties for primitive element: CodeSystem.property.code
+     */
+    _code?: fhir.FhirElementArgs;
+    /**
      * Reference to the formal meaning of the property. One possible source of meaning is the [Concept Properties](codesystem-concept-properties.html) code system.
      */
     uri?: fhir.FhirUri | string | undefined;
+    /**
+     * Extended properties for primitive element: CodeSystem.property.uri
+     */
+    _uri?: fhir.FhirElementArgs;
     /**
      * A description of the property- why it is defined, and how its value might be used.
      */
     description?: fhir.FhirString | string | undefined;
     /**
+     * Extended properties for primitive element: CodeSystem.property.description
+     */
+    _description?: fhir.FhirElementArgs;
+    /**
      * The type of the property value. Properties of type "code" contain a code defined by the code system (e.g. a reference to another defined concept).
      */
     type: fhir.FhirCode<ConceptPropertyTypeCodeType> | string | undefined;
+    /**
+     * Extended properties for primitive element: CodeSystem.property.type
+     */
+    _type?: fhir.FhirElementArgs;
 }
 /**
  * A property defines an additional slot through which additional information can be provided about a concept.
@@ -149,6 +181,10 @@ export interface CodeSystemConceptDesignationArgs extends fhir.BackboneElementAr
      */
     language?: fhir.FhirCode | string | undefined;
     /**
+     * Extended properties for primitive element: CodeSystem.concept.designation.language
+     */
+    _language?: fhir.FhirElementArgs;
+    /**
      * If no use is provided, the designation can be assumed to be suitable for general display to a human user.
      */
     use?: fhir.CodingArgs | undefined;
@@ -156,6 +192,10 @@ export interface CodeSystemConceptDesignationArgs extends fhir.BackboneElementAr
      * The text value for this designation.
      */
     value: fhir.FhirString | string | undefined;
+    /**
+     * Extended properties for primitive element: CodeSystem.concept.designation.value
+     */
+    _value?: fhir.FhirElementArgs;
 }
 /**
  * Concepts have both a ```display``` and an array of ```designation```. The display is equivalent to a special designation with an implied ```designation.use``` of "primary code" and a language equal to the [Resource Language](resource.html#language).
@@ -202,6 +242,10 @@ export interface CodeSystemConceptPropertyArgs extends fhir.BackboneElementArgs 
      * A code that is a reference to CodeSystem.property.code.
      */
     code: fhir.FhirCode | string | undefined;
+    /**
+     * Extended properties for primitive element: CodeSystem.concept.property.code
+     */
+    _code?: fhir.FhirElementArgs;
     /**
      * The value of this property.
      */
@@ -273,13 +317,25 @@ export interface CodeSystemConceptArgs extends fhir.BackboneElementArgs {
      */
     code: fhir.FhirCode | string | undefined;
     /**
+     * Extended properties for primitive element: CodeSystem.concept.code
+     */
+    _code?: fhir.FhirElementArgs;
+    /**
      * A human readable string that is the recommended default way to present this concept to a user.
      */
     display?: fhir.FhirString | string | undefined;
     /**
+     * Extended properties for primitive element: CodeSystem.concept.display
+     */
+    _display?: fhir.FhirElementArgs;
+    /**
      * The formal definition of the concept. The code system resource does not make formal definitions required, because of the prevalence of legacy systems. However, they are highly recommended, as without them there is no formal meaning associated with the concept.
      */
     definition?: fhir.FhirString | string | undefined;
+    /**
+     * Extended properties for primitive element: CodeSystem.concept.definition
+     */
+    _definition?: fhir.FhirElementArgs;
     /**
      * Concepts have both a ```display``` and an array of ```designation```. The display is equivalent to a special designation with an implied ```designation.use``` of "primary code" and a language equal to the [Resource Language](resource.html#language).
      */
@@ -349,6 +405,10 @@ export interface CodeSystemArgs extends fhir.DomainResourceArgs {
      */
     url?: fhir.FhirUri | string | undefined;
     /**
+     * Extended properties for primitive element: CodeSystem.url
+     */
+    _url?: fhir.FhirElementArgs;
+    /**
      * Typically, this is used for identifiers that can go in an HL7 V3 II (instance identifier) data type, and can then identify this code system outside of FHIR, where it is not possible to use the logical URI.  Note that HL7 defines at least three identifiers for many of its code systems - the FHIR canonical URL, the OID and the V2 Table 0396 mnemonic code.
      */
     identifier?: fhir.IdentifierArgs[] | undefined;
@@ -357,29 +417,57 @@ export interface CodeSystemArgs extends fhir.DomainResourceArgs {
      */
     version?: fhir.FhirString | string | undefined;
     /**
+     * Extended properties for primitive element: CodeSystem.version
+     */
+    _version?: fhir.FhirElementArgs;
+    /**
      * The name is not expected to be globally unique. The name should be a simple alphanumeric type name to ensure that it is machine-processing friendly.
      */
     name?: fhir.FhirString | string | undefined;
+    /**
+     * Extended properties for primitive element: CodeSystem.name
+     */
+    _name?: fhir.FhirElementArgs;
     /**
      * This name does not need to be machine-processing friendly and may contain punctuation, white-space, etc.
      */
     title?: fhir.FhirString | string | undefined;
     /**
+     * Extended properties for primitive element: CodeSystem.title
+     */
+    _title?: fhir.FhirElementArgs;
+    /**
      * Allows filtering of code systems that are appropriate for use versus not.
      */
     status: fhir.FhirCode<PublicationStatusCodeType> | string | undefined;
+    /**
+     * Extended properties for primitive element: CodeSystem.status
+     */
+    _status?: fhir.FhirElementArgs;
     /**
      * Allows filtering of code systems that are appropriate for use versus not.
      */
     experimental?: fhir.FhirBoolean | boolean | undefined;
     /**
+     * Extended properties for primitive element: CodeSystem.experimental
+     */
+    _experimental?: fhir.FhirElementArgs;
+    /**
      * Note that this is not the same as the resource last-modified-date, since the resource may be a secondary representation of the code system. Additional specific dates may be added as extensions or be found by consulting Provenances associated with past versions of the resource.
      */
     date?: fhir.FhirDateTime | string | undefined;
     /**
+     * Extended properties for primitive element: CodeSystem.date
+     */
+    _date?: fhir.FhirElementArgs;
+    /**
      * Usually an organization but may be an individual. The publisher (or steward) of the code system is the organization or individual primarily responsible for the maintenance and upkeep of the code system. This is not necessarily the same individual or organization that developed and initially authored the content. The publisher is the primary point of contact for questions or issues with the code system. This item SHOULD be populated unless the information is available from context.
      */
     publisher?: fhir.FhirString | string | undefined;
+    /**
+     * Extended properties for primitive element: CodeSystem.publisher
+     */
+    _publisher?: fhir.FhirElementArgs;
     /**
      * May be a web site, an email address, a telephone number, etc.
      */
@@ -388,6 +476,10 @@ export interface CodeSystemArgs extends fhir.DomainResourceArgs {
      * This description can be used to capture details such as why the code system was built, comments about misuse, instructions for clinical use and interpretation, literature references, examples from the paper world, etc. It is not a rendering of the code system as conveyed in the 'text' field of the resource itself. This item SHOULD be populated unless the information is available from context (e.g. the language of the code system is presumed to be the predominant language in the place the code system was created).
      */
     description?: fhir.FhirMarkdown | string | undefined;
+    /**
+     * Extended properties for primitive element: CodeSystem.description
+     */
+    _description?: fhir.FhirElementArgs;
     /**
      * When multiple useContexts are specified, there is no expectation that all or any of the contexts apply.
      */
@@ -401,42 +493,82 @@ export interface CodeSystemArgs extends fhir.DomainResourceArgs {
      */
     purpose?: fhir.FhirMarkdown | string | undefined;
     /**
+     * Extended properties for primitive element: CodeSystem.purpose
+     */
+    _purpose?: fhir.FhirElementArgs;
+    /**
      * ... Sometimes, the copyright differs between the code system and the codes that are included. The copyright statement should clearly differentiate between these when required.
      */
     copyright?: fhir.FhirMarkdown | string | undefined;
+    /**
+     * Extended properties for primitive element: CodeSystem.copyright
+     */
+    _copyright?: fhir.FhirElementArgs;
     /**
      * If this value is missing, then it is not specified whether a code system is case sensitive or not. When the rule is not known, Postel's law should be followed: produce codes with the correct case, and accept codes in any case. This element is primarily provided to support validation software.
      */
     caseSensitive?: fhir.FhirBoolean | boolean | undefined;
     /**
+     * Extended properties for primitive element: CodeSystem.caseSensitive
+     */
+    _caseSensitive?: fhir.FhirElementArgs;
+    /**
      * The definition of the value set SHALL include all codes from this code system and only codes from this code system, and it SHALL be immutable.
      */
     valueSet?: fhir.FhirCanonical | string | undefined;
+    /**
+     * Extended properties for primitive element: CodeSystem.valueSet
+     */
+    _valueSet?: fhir.FhirElementArgs;
     /**
      * Note that other representations might have a different hierarchy or none at all, and represent the information using properties.
      */
     hierarchyMeaning?: fhir.FhirCode<CodesystemHierarchyMeaningCodeType> | string | undefined;
     /**
+     * Extended properties for primitive element: CodeSystem.hierarchyMeaning
+     */
+    _hierarchyMeaning?: fhir.FhirElementArgs;
+    /**
      * Note that the code system resource does not define what the compositional grammar is, only whether or not there is one.
      */
     compositional?: fhir.FhirBoolean | boolean | undefined;
+    /**
+     * Extended properties for primitive element: CodeSystem.compositional
+     */
+    _compositional?: fhir.FhirElementArgs;
     /**
      * Best practice is that code systems do not redefine concepts, or that if concepts are redefined, a new code system definition is created. But this is not always possible, so some code systems may be defined as 'versionNeeded'.
      * Most code systems occasionally refine the displays defined for concepts between versions. Contexts in which the concept display values are validated may require that the version be specified for some code systems irrespective of the value of this property.
      */
     versionNeeded?: fhir.FhirBoolean | boolean | undefined;
     /**
+     * Extended properties for primitive element: CodeSystem.versionNeeded
+     */
+    _versionNeeded?: fhir.FhirElementArgs;
+    /**
      * The extent of the content of the code system (the concepts and codes it defines) are represented in this resource instance.
      */
     content: fhir.FhirCode<CodesystemContentModeCodeType> | string | undefined;
+    /**
+     * Extended properties for primitive element: CodeSystem.content
+     */
+    _content?: fhir.FhirElementArgs;
     /**
      * The most common use of a code system supplement is to add additional language support.
      */
     supplements?: fhir.FhirCanonical | string | undefined;
     /**
+     * Extended properties for primitive element: CodeSystem.supplements
+     */
+    _supplements?: fhir.FhirElementArgs;
+    /**
      * The count of concepts defined in this resource cannot be more than this value but may be less for several reasons - see the content element.
      */
     count?: fhir.FhirUnsignedInt | number | undefined;
+    /**
+     * Extended properties for primitive element: CodeSystem.count
+     */
+    _count?: fhir.FhirElementArgs;
     /**
      * Note that filters defined in code systems usually require custom code on the part of any terminology engine that will make them available for use in value set filters. For this reason, they are generally only seen in high value published terminologies.
      */

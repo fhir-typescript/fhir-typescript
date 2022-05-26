@@ -1,6 +1,6 @@
 import * as fhir from '../fhir.js';
 import { GuidePageGenerationCodeType } from '../fhirValueSets/GuidePageGenerationCodes.js';
-import { GuideParameterCodeCodeType } from '../fhirValueSets/GuideParameterCodeCodes.js';
+import { GuideParameterCodeType } from '../fhirValueSets/GuideParameterCodes.js';
 import { PublicationStatusCodeType } from '../fhirValueSets/PublicationStatusCodes.js';
 /**
  * Valid arguments for the ImplementationGuideDependsOn type.
@@ -11,13 +11,25 @@ export interface ImplementationGuideDependsOnArgs extends fhir.BackboneElementAr
      */
     uri: fhir.FhirCanonical | string | undefined;
     /**
+     * Extended properties for primitive element: ImplementationGuide.dependsOn.uri
+     */
+    _uri?: fhir.FhirElementArgs;
+    /**
      * The NPM package name for the Implementation Guide that this IG depends on.
      */
     packageId?: fhir.FhirId | string | undefined;
     /**
+     * Extended properties for primitive element: ImplementationGuide.dependsOn.packageId
+     */
+    _packageId?: fhir.FhirElementArgs;
+    /**
      * This follows the syntax of the NPM packaging version field - see [[reference]].
      */
     version?: fhir.FhirString | string | undefined;
+    /**
+     * Extended properties for primitive element: ImplementationGuide.dependsOn.version
+     */
+    _version?: fhir.FhirElementArgs;
 }
 /**
  * Another implementation guide that this implementation depends on. Typically, an implementation guide uses value sets, profiles etc.defined in other implementation guides.
@@ -57,9 +69,17 @@ export interface ImplementationGuideGlobalArgs extends fhir.BackboneElementArgs 
      */
     type: fhir.FhirCode | string | undefined;
     /**
+     * Extended properties for primitive element: ImplementationGuide.global.type
+     */
+    _type?: fhir.FhirElementArgs;
+    /**
      * A reference to the profile that all instances must conform to.
      */
     profile: fhir.FhirCanonical | string | undefined;
+    /**
+     * Extended properties for primitive element: ImplementationGuide.global.profile
+     */
+    _profile?: fhir.FhirElementArgs;
 }
 /**
  * See [Default Profiles](implementationguide.html#default) for a discussion of which resources are 'covered' by an implementation guide.
@@ -115,9 +135,7 @@ export declare class ImplementationGuideGlobal extends fhir.BackboneElement {
         readonly Condition: "Condition";
         readonly Consent: "Consent";
         readonly Contract: "Contract";
-        readonly Coverage: "Coverage"; /**
-         * Mapping of this datatype to a FHIR equivalent
-         */
+        readonly Coverage: "Coverage";
         readonly CoverageEligibilityRequest: "CoverageEligibilityRequest";
         readonly CoverageEligibilityResponse: "CoverageEligibilityResponse";
         readonly DetectedIssue: "DetectedIssue";
@@ -150,9 +168,6 @@ export declare class ImplementationGuideGlobal extends fhir.BackboneElement {
         readonly HealthcareService: "HealthcareService";
         readonly ImagingStudy: "ImagingStudy";
         readonly Immunization: "Immunization";
-        /**
-         * Function to perform basic model validation (e.g., check if required elements are present).
-         */
         readonly ImmunizationEvaluation: "ImmunizationEvaluation";
         readonly ImmunizationRecommendation: "ImmunizationRecommendation";
         readonly ImplementationGuide: "ImplementationGuide";
@@ -168,9 +183,6 @@ export declare class ImplementationGuideGlobal extends fhir.BackboneElement {
         readonly Medication: "Medication";
         readonly MedicationAdministration: "MedicationAdministration";
         readonly MedicationDispense: "MedicationDispense";
-        /**
-         * A code that indicates how the page is generated.
-         */
         readonly MedicationKnowledge: "MedicationKnowledge";
         readonly MedicationRequest: "MedicationRequest";
         readonly MedicationStatement: "MedicationStatement";
@@ -213,6 +225,9 @@ export declare class ImplementationGuideGlobal extends fhir.BackboneElement {
         readonly ResearchElementDefinition: "ResearchElementDefinition";
         readonly ResearchStudy: "ResearchStudy";
         readonly ResearchSubject: "ResearchSubject";
+        /**
+         * Valid arguments for the ImplementationGuideDefinitionTemplate type.
+         */
         readonly Resource: "Resource";
         readonly RiskAssessment: "RiskAssessment";
         readonly RiskEvidenceSynthesis: "RiskEvidenceSynthesis";
@@ -256,9 +271,17 @@ export interface ImplementationGuideDefinitionGroupingArgs extends fhir.Backbone
      */
     name: fhir.FhirString | string | undefined;
     /**
+     * Extended properties for primitive element: ImplementationGuide.definition.grouping.name
+     */
+    _name?: fhir.FhirElementArgs;
+    /**
      * Human readable text describing the package.
      */
     description?: fhir.FhirString | string | undefined;
+    /**
+     * Extended properties for primitive element: ImplementationGuide.definition.grouping.description
+     */
+    _description?: fhir.FhirElementArgs;
 }
 /**
  * Groupings are arbitrary sub-divisions of content. Typically, they are used to help build Table of Contents automatically.
@@ -298,13 +321,25 @@ export interface ImplementationGuideDefinitionResourceArgs extends fhir.Backbone
      */
     fhirVersion?: fhir.FhirCode[] | string[] | undefined;
     /**
+     * Extended properties for primitive element: ImplementationGuide.definition.resource.fhirVersion
+     */
+    _fhirVersion?: (fhir.FhirElementArgs | null)[];
+    /**
      * A human assigned name for the resource. All resources SHOULD have a name, but the name may be extracted from the resource (e.g. ValueSet.name).
      */
     name?: fhir.FhirString | string | undefined;
     /**
+     * Extended properties for primitive element: ImplementationGuide.definition.resource.name
+     */
+    _name?: fhir.FhirElementArgs;
+    /**
      * This is mostly used with examples to explain why it is present (though they can have extensive comments in the examples).
      */
     description?: fhir.FhirString | string | undefined;
+    /**
+     * Extended properties for primitive element: ImplementationGuide.definition.resource.description
+     */
+    _description?: fhir.FhirElementArgs;
     /**
      * Examples:
      * * StructureDefinition -&gt; Any
@@ -333,6 +368,10 @@ export interface ImplementationGuideDefinitionResourceArgs extends fhir.Backbone
      * This must correspond to a package.id element within this implementation guide.
      */
     groupingId?: fhir.FhirId | string | undefined;
+    /**
+     * Extended properties for primitive element: ImplementationGuide.definition.resource.groupingId
+     */
+    _groupingId?: fhir.FhirElementArgs;
 }
 /**
  * A resource that is part of the implementation guide. Conformance resources (value set, structure definition, capability statements etc.) are obvious candidates for inclusion, but any kind of resource can be included as an example resource.
@@ -402,7 +441,9 @@ export declare class ImplementationGuideDefinitionResource extends fhir.Backbone
         readonly VAL301: "3.0.1";
         readonly VAL330: "3.3.0";
         readonly VAL350: "3.5.0";
-        readonly VAL400: "4.0.0";
+        readonly VAL400: "4.0.0"; /**
+         * Extended properties for primitive element: ImplementationGuide.dependsOn.uri
+         */
         readonly VAL401: "4.0.1";
     };
     /**
@@ -431,9 +472,17 @@ export interface ImplementationGuideDefinitionPageArgs extends fhir.BackboneElem
      */
     title: fhir.FhirString | string | undefined;
     /**
+     * Extended properties for primitive element: ImplementationGuide.definition.page.title
+     */
+    _title?: fhir.FhirElementArgs;
+    /**
      * A code that indicates how the page is generated.
      */
     generation: fhir.FhirCode<GuidePageGenerationCodeType> | string | undefined;
+    /**
+     * Extended properties for primitive element: ImplementationGuide.definition.page.generation
+     */
+    _generation?: fhir.FhirElementArgs;
     /**
      * The implementation guide breadcrumbs are generated from this structure.
      */
@@ -492,11 +541,19 @@ export interface ImplementationGuideDefinitionParameterArgs extends fhir.Backbon
     /**
      * apply | path-resource | path-pages | path-tx-cache | expansion-parameter | rule-broken-links | generate-xml | generate-json | generate-turtle | html-template.
      */
-    code: fhir.FhirCode<GuideParameterCodeCodeType> | string | undefined;
+    code: fhir.FhirCode<GuideParameterCodeType> | string | undefined;
+    /**
+     * Extended properties for primitive element: ImplementationGuide.definition.parameter.code
+     */
+    _code?: fhir.FhirElementArgs;
     /**
      * Value for named type.
      */
     value: fhir.FhirString | string | undefined;
+    /**
+     * Extended properties for primitive element: ImplementationGuide.definition.parameter.value
+     */
+    _value?: fhir.FhirElementArgs;
 }
 /**
  * Defines how IG is built by tools.
@@ -509,7 +566,7 @@ export declare class ImplementationGuideDefinitionParameter extends fhir.Backbon
     /**
      * apply | path-resource | path-pages | path-tx-cache | expansion-parameter | rule-broken-links | generate-xml | generate-json | generate-turtle | html-template.
      */
-    code: fhir.FhirCode<GuideParameterCodeCodeType> | null;
+    code: fhir.FhirCode<GuideParameterCodeType> | null;
     /**
      * Value for named type.
      */
@@ -547,13 +604,25 @@ export interface ImplementationGuideDefinitionTemplateArgs extends fhir.Backbone
      */
     code: fhir.FhirCode | string | undefined;
     /**
+     * Extended properties for primitive element: ImplementationGuide.definition.template.code
+     */
+    _code?: fhir.FhirElementArgs;
+    /**
      * The source location for the template.
      */
     source: fhir.FhirString | string | undefined;
     /**
+     * Extended properties for primitive element: ImplementationGuide.definition.template.source
+     */
+    _source?: fhir.FhirElementArgs;
+    /**
      * The scope in which the template applies.
      */
     scope?: fhir.FhirString | string | undefined;
+    /**
+     * Extended properties for primitive element: ImplementationGuide.definition.template.scope
+     */
+    _scope?: fhir.FhirElementArgs;
 }
 /**
  * A template for building resources.
@@ -670,6 +739,10 @@ export interface ImplementationGuideManifestResourceArgs extends fhir.BackboneEl
      * Appending 'rendering' + "/" + this should resolve to the resource page.
      */
     relativePath?: fhir.FhirUrl | string | undefined;
+    /**
+     * Extended properties for primitive element: ImplementationGuide.manifest.resource.relativePath
+     */
+    _relativePath?: fhir.FhirElementArgs;
 }
 /**
  * A resource that is part of the implementation guide. Conformance resources (value set, structure definition, capability statements etc.) are obvious candidates for inclusion, but any kind of resource can be included as an example resource.
@@ -713,13 +786,25 @@ export interface ImplementationGuideManifestPageArgs extends fhir.BackboneElemen
      */
     name: fhir.FhirString | string | undefined;
     /**
+     * Extended properties for primitive element: ImplementationGuide.manifest.page.name
+     */
+    _name?: fhir.FhirElementArgs;
+    /**
      * Label for the page intended for human display.
      */
     title?: fhir.FhirString | string | undefined;
     /**
+     * Extended properties for primitive element: ImplementationGuide.manifest.page.title
+     */
+    _title?: fhir.FhirElementArgs;
+    /**
      * Appending 'rendering' + "/" + page.name + "#" + page.anchor should resolve to the anchor.
      */
     anchor?: fhir.FhirString[] | string[] | undefined;
+    /**
+     * Extended properties for primitive element: ImplementationGuide.manifest.page.anchor
+     */
+    _anchor?: (fhir.FhirElementArgs | null)[];
 }
 /**
  * Information about a page within the IG.
@@ -759,6 +844,10 @@ export interface ImplementationGuideManifestArgs extends fhir.BackboneElementArg
      */
     rendering?: fhir.FhirUrl | string | undefined;
     /**
+     * Extended properties for primitive element: ImplementationGuide.manifest.rendering
+     */
+    _rendering?: fhir.FhirElementArgs;
+    /**
      * A resource that is part of the implementation guide. Conformance resources (value set, structure definition, capability statements etc.) are obvious candidates for inclusion, but any kind of resource can be included as an example resource.
      */
     resource: fhir.ImplementationGuideManifestResourceArgs[] | null;
@@ -771,9 +860,17 @@ export interface ImplementationGuideManifestArgs extends fhir.BackboneElementArg
      */
     image?: fhir.FhirString[] | string[] | undefined;
     /**
+     * Extended properties for primitive element: ImplementationGuide.manifest.image
+     */
+    _image?: (fhir.FhirElementArgs | null)[];
+    /**
      * Indicates the relative path of an additional non-page, non-image file that is part of the IG - e.g. zip, jar and similar files that could be the target of a hyperlink in a derived IG.
      */
     other?: fhir.FhirString[] | string[] | undefined;
+    /**
+     * Extended properties for primitive element: ImplementationGuide.manifest.other
+     */
+    _other?: (fhir.FhirElementArgs | null)[];
 }
 /**
  * Information about an assembled implementation guide, created by the publication tooling.
@@ -827,33 +924,65 @@ export interface ImplementationGuideArgs extends fhir.DomainResourceArgs {
      */
     url: fhir.FhirUri | string | undefined;
     /**
+     * Extended properties for primitive element: ImplementationGuide.url
+     */
+    _url?: fhir.FhirElementArgs;
+    /**
      * There may be different implementation guide instances that have the same identifier but different versions.  The version can be appended to the url in a reference to allow a reference to a particular business version of the implementation guide with the format [url]|[version].
      */
     version?: fhir.FhirString | string | undefined;
+    /**
+     * Extended properties for primitive element: ImplementationGuide.version
+     */
+    _version?: fhir.FhirElementArgs;
     /**
      * The name is not expected to be globally unique. The name should be a simple alphanumeric type name to ensure that it is machine-processing friendly.
      */
     name: fhir.FhirString | string | undefined;
     /**
+     * Extended properties for primitive element: ImplementationGuide.name
+     */
+    _name?: fhir.FhirElementArgs;
+    /**
      * This name does not need to be machine-processing friendly and may contain punctuation, white-space, etc.
      */
     title?: fhir.FhirString | string | undefined;
+    /**
+     * Extended properties for primitive element: ImplementationGuide.title
+     */
+    _title?: fhir.FhirElementArgs;
     /**
      * Allows filtering of implementation guides that are appropriate for use versus not.
      */
     status: fhir.FhirCode<PublicationStatusCodeType> | string | undefined;
     /**
+     * Extended properties for primitive element: ImplementationGuide.status
+     */
+    _status?: fhir.FhirElementArgs;
+    /**
      * Allows filtering of implementation guides that are appropriate for use versus not.
      */
     experimental?: fhir.FhirBoolean | boolean | undefined;
+    /**
+     * Extended properties for primitive element: ImplementationGuide.experimental
+     */
+    _experimental?: fhir.FhirElementArgs;
     /**
      * Note that this is not the same as the resource last-modified-date, since the resource may be a secondary representation of the implementation guide. Additional specific dates may be added as extensions or be found by consulting Provenances associated with past versions of the resource.
      */
     date?: fhir.FhirDateTime | string | undefined;
     /**
+     * Extended properties for primitive element: ImplementationGuide.date
+     */
+    _date?: fhir.FhirElementArgs;
+    /**
      * Usually an organization but may be an individual. The publisher (or steward) of the implementation guide is the organization or individual primarily responsible for the maintenance and upkeep of the implementation guide. This is not necessarily the same individual or organization that developed and initially authored the content. The publisher is the primary point of contact for questions or issues with the implementation guide. This item SHOULD be populated unless the information is available from context.
      */
     publisher?: fhir.FhirString | string | undefined;
+    /**
+     * Extended properties for primitive element: ImplementationGuide.publisher
+     */
+    _publisher?: fhir.FhirElementArgs;
     /**
      * May be a web site, an email address, a telephone number, etc.
      */
@@ -862,6 +991,10 @@ export interface ImplementationGuideArgs extends fhir.DomainResourceArgs {
      * This description can be used to capture details such as why the implementation guide was built, comments about misuse, instructions for clinical use and interpretation, literature references, examples from the paper world, etc. It is not a rendering of the implementation guide as conveyed in the 'text' field of the resource itself. This item SHOULD be populated unless the information is available from context (e.g. the language of the implementation guide is presumed to be the predominant language in the place the implementation guide was created).
      */
     description?: fhir.FhirMarkdown | string | undefined;
+    /**
+     * Extended properties for primitive element: ImplementationGuide.description
+     */
+    _description?: fhir.FhirElementArgs;
     /**
      * When multiple useContexts are specified, there is no expectation that all or any of the contexts apply.
      */
@@ -875,17 +1008,33 @@ export interface ImplementationGuideArgs extends fhir.DomainResourceArgs {
      */
     copyright?: fhir.FhirMarkdown | string | undefined;
     /**
+     * Extended properties for primitive element: ImplementationGuide.copyright
+     */
+    _copyright?: fhir.FhirElementArgs;
+    /**
      * Many (if not all) IG publishing tools will require that this element be present. For implementation guides published through HL7 or the FHIR foundation, the FHIR product director assigns package IDs.
      */
     packageId: fhir.FhirId | string | undefined;
+    /**
+     * Extended properties for primitive element: ImplementationGuide.packageId
+     */
+    _packageId?: fhir.FhirElementArgs;
     /**
      * The license that applies to this Implementation Guide, using an SPDX license code, or 'not-open-source'.
      */
     license?: fhir.FhirCode | string | undefined;
     /**
+     * Extended properties for primitive element: ImplementationGuide.license
+     */
+    _license?: fhir.FhirElementArgs;
+    /**
      * Most implementation guides target a single version - e.g. they describe how to use a particular version, and the profiles and examples etc are valid for that version. But some implementation guides describe how to use multiple different versions of FHIR to solve the same problem, or in concert with each other. Typically, the requirement to support multiple versions arises as implementation matures and different implementation communities are stuck at different versions by regulation or market dynamics.
      */
     fhirVersion: fhir.FhirCode[] | string[] | undefined;
+    /**
+     * Extended properties for primitive element: ImplementationGuide.fhirVersion
+     */
+    _fhirVersion?: (fhir.FhirElementArgs | null)[];
     /**
      * Another implementation guide that this implementation depends on. Typically, an implementation guide uses value sets, profiles etc.defined in other implementation guides.
      */
@@ -1028,7 +1177,9 @@ export declare class ImplementationGuide extends fhir.DomainResource {
         readonly AfmparseLicense: "Afmparse";
         readonly AfferoGeneralPublicLicenseV10Only: "AGPL-1.0-only";
         readonly AfferoGeneralPublicLicenseV10OrLater: "AGPL-1.0-or-later";
-        readonly GNUAfferoGeneralPublicLicenseV30Only: "AGPL-3.0-only";
+        readonly GNUAfferoGeneralPublicLicenseV30Only: "AGPL-3.0-only"; /**
+         * Extended properties for primitive element: ImplementationGuide.dependsOn.uri
+         */
         readonly GNUAfferoGeneralPublicLicenseV30OrLater: "AGPL-3.0-or-later";
         readonly AladdinFreePublicLicense: "Aladdin";
         readonly AMDQuoteSPlpaMapCLicense: "AMDPLPA";
@@ -1056,20 +1207,16 @@ export declare class ImplementationGuide extends fhir.DomainResource {
         readonly BorceuxLicense: "Borceux";
         readonly BSD1ClauseLicense: "BSD-1-Clause";
         readonly BSD2ClauseQuotationSimplifiedQuotationLicense: "BSD-2-Clause";
-        readonly BSD2ClauseFreeBSDLicense: "BSD-2-Clause-FreeBSD";
+        readonly BSD2ClauseFreeBSDLicense: "BSD-2-Clause-FreeBSD"; /**
+         * Function to perform basic model validation (e.g., check if required elements are present).
+         */
         readonly BSD2ClauseNetBSDLicense: "BSD-2-Clause-NetBSD";
         readonly BSD2ClausePlusPatentLicense: "BSD-2-Clause-Patent";
         readonly BSD3ClauseQuotationNewQuotationOrQuotationRevisedQuotationLicense: "BSD-3-Clause";
         readonly BSDWithAttribution: "BSD-3-Clause-Attribution";
         readonly BSD3ClauseClearLicense: "BSD-3-Clause-Clear";
-        /**
-         * The type must match that of the profile that is referred to but is made explicit here as a denormalization so that a system processing the implementation guide resource knows which resources the profile applies to even if the profile itself is not available.
-         */
         readonly LawrenceBerkeleyNationalLabsBSDVariantLicense: "BSD-3-Clause-LBNL";
         readonly BSD3ClauseNoNuclearLicense: "BSD-3-Clause-No-Nuclear-License";
-        /**
-         * A reference to the profile that all instances must conform to.
-         */
         readonly BSD3ClauseNoNuclearLicense2014: "BSD-3-Clause-No-Nuclear-License-2014";
         readonly BSD3ClauseNoNuclearWarranty: "BSD-3-Clause-No-Nuclear-Warranty";
         readonly BSD4ClauseQuotationOriginalQuotationOrQuotationOldQuotationLicense: "BSD-4-Clause";
@@ -1096,6 +1243,9 @@ export declare class ImplementationGuide extends fhir.DomainResource {
         readonly CreativeCommonsAttributionNonCommercialNoDerivatives25Generic: "CC-BY-NC-ND-2.5";
         readonly CreativeCommonsAttributionNonCommercialNoDerivatives30Unported: "CC-BY-NC-ND-3.0";
         readonly CreativeCommonsAttributionNonCommercialNoDerivatives40International: "CC-BY-NC-ND-4.0";
+        /**
+         * The human-readable title to display for the package of resources when rendering the implementation guide.
+         */
         readonly CreativeCommonsAttributionNonCommercialShareAlike10Generic: "CC-BY-NC-SA-1.0";
         readonly CreativeCommonsAttributionNonCommercialShareAlike20Generic: "CC-BY-NC-SA-2.0";
         readonly CreativeCommonsAttributionNonCommercialShareAlike25Generic: "CC-BY-NC-SA-2.5";
@@ -1108,7 +1258,9 @@ export declare class ImplementationGuide extends fhir.DomainResource {
         readonly CreativeCommonsAttributionNoDerivatives40International: "CC-BY-ND-4.0";
         readonly CreativeCommonsAttributionShareAlike10Generic: "CC-BY-SA-1.0";
         readonly CreativeCommonsAttributionShareAlike20Generic: "CC-BY-SA-2.0";
-        readonly CreativeCommonsAttributionShareAlike25Generic: "CC-BY-SA-2.5";
+        readonly CreativeCommonsAttributionShareAlike25Generic: "CC-BY-SA-2.5"; /**
+         * Function to perform basic model validation (e.g., check if required elements are present).
+         */
         readonly CreativeCommonsAttributionShareAlike30Unported: "CC-BY-SA-3.0";
         readonly CreativeCommonsAttributionShareAlike40International: "CC-BY-SA-4.0";
         readonly CreativeCommonsZeroV10Universal: "CC0-1.0";
@@ -1147,6 +1299,9 @@ export declare class ImplementationGuide extends fhir.DomainResource {
         readonly EiffelForumLicenseV20: "EFL-2.0";
         readonly EGenixComPublicLicense110: "eGenix";
         readonly EntessaPublicLicenseV10: "Entessa";
+        /**
+         * Usually this is a relative URL that locates the resource within the implementation guide. If you authoring an implementation guide, and will publish it using the FHIR publication tooling, use a URI that may point to a resource, or to one of various alternative representations (e.g. spreadsheet). The tooling will convert this when it publishes it.
+         */
         readonly EclipsePublicLicense10: "EPL-1.0";
         readonly EclipsePublicLicense20: "EPL-2.0";
         readonly ErlangPublicLicenseV11: "ErlPL-1.1";
@@ -1179,9 +1334,6 @@ export declare class ImplementationGuide extends fhir.DomainResource {
         readonly GNUGeneralPublicLicenseV20OrLater: "GPL-2.0-or-later";
         readonly GNUGeneralPublicLicenseV30Only: "GPL-3.0-only";
         readonly GNUGeneralPublicLicenseV30OrLater: "GPL-3.0-or-later";
-        /**
-         * Internal flag to properly serialize choice-type element ImplementationGuide.definition.page.name[x]
-         */
         readonly GSOAPPublicLicenseV13b: "gSOAP-1.3b";
         readonly HaskellLanguageReportLicense: "HaskellReport";
         readonly HistoricalPermissionNoticeAndDisclaimer: "HPND";
@@ -1201,9 +1353,7 @@ export declare class ImplementationGuide extends fhir.DomainResource {
         readonly JasPerLicense: "JasPer-2.0";
         readonly JSONLicense: "JSON";
         readonly LicenceArtLibre12: "LAL-1.2";
-        readonly LicenceArtLibre13: "LAL-1.3"; /**
-         * Function to perform basic model validation (e.g., check if required elements are present).
-         */
+        readonly LicenceArtLibre13: "LAL-1.3";
         readonly Latex2eLicense: "Latex2e";
         readonly LeptonicaLicense: "Leptonica";
         readonly GNULibraryGeneralPublicLicenseV2Only: "LGPL-2.0-only";
@@ -1225,7 +1375,9 @@ export declare class ImplementationGuide extends fhir.DomainResource {
         readonly LaTeXProjectPublicLicenseV11: "LPPL-1.1";
         readonly LaTeXProjectPublicLicenseV12: "LPPL-1.2";
         readonly LaTeXProjectPublicLicenseV13a: "LPPL-1.3a";
-        readonly LaTeXProjectPublicLicenseV13c: "LPPL-1.3c";
+        readonly LaTeXProjectPublicLicenseV13c: "LPPL-1.3c"; /**
+         * A short title used to represent this page in navigational structures such as table of contents, bread crumbs, etc.
+         */
         readonly MakeIndexLicense: "MakeIndex";
         readonly MirOSLicense: "MirOS";
         readonly MITLicense: "MIT";
@@ -1247,7 +1399,9 @@ export declare class ImplementationGuide extends fhir.DomainResource {
         readonly MulticsLicense: "Multics";
         readonly MupLicense: "Mup";
         readonly NASAOpenSourceAgreement13: "NASA-1.3";
-        readonly NaumenPublicLicense: "Naumen";
+        readonly NaumenPublicLicense: "Naumen"; /**
+         * Required-bound Value Set for generation (ImplementationGuide.definition.page.generation)
+         */
         readonly NetBooleanPublicLicenseV1: "NBPL-1.0";
         readonly UniversityOfIllinoisNCSAOpenSourceLicense: "NCSA";
         readonly NetSNMPLicense: "Net-SNMP";
@@ -1309,7 +1463,9 @@ export declare class ImplementationGuide extends fhir.DomainResource {
         readonly RdiscLicense: "Rdisc";
         readonly RedHatECosPublicLicenseV11: "RHeCos-1.1";
         readonly ReciprocalPublicLicense11: "RPL-1.1";
-        readonly ReciprocalPublicLicense15: "RPL-1.5";
+        readonly ReciprocalPublicLicense15: "RPL-1.5"; /**
+         * The source location for the template.
+         */
         readonly RealNetworksPublicSourceLicenseV10: "RPSL-1.0";
         readonly RSAMessageDigestLicense: "RSA-MD";
         readonly RicohSourceCodePublicLicense: "RSCPL";
@@ -1329,9 +1485,7 @@ export declare class ImplementationGuide extends fhir.DomainResource {
         readonly SecureMessagingProtocolPublicLicense: "SMPPL";
         readonly SNIAPublicLicense11: "SNIA";
         readonly SpencerLicense86: "Spencer-86";
-        readonly SpencerLicense94: "Spencer-94"; /**
-         * Usually this is a relative URL that locates the resource within the implementation guide. If you authoring an implementation guide, and will publish it using the FHIR publication tooling, use a URI that may point to a resource, or to one of various alternative representations (e.g. spreadsheet). The tooling will convert this when it publishes it.
-         */
+        readonly SpencerLicense94: "Spencer-94";
         readonly SpencerLicense99: "Spencer-99";
         readonly SunPublicLicenseV10: "SPL-1.0";
         readonly SugarCRMPublicLicenseV113: "SugarCRM-1.1.3";
@@ -1398,7 +1552,9 @@ export declare class ImplementationGuide extends fhir.DomainResource {
         readonly VAL301: "3.0.1";
         readonly VAL330: "3.3.0";
         readonly VAL350: "3.5.0";
-        readonly VAL400: "4.0.0";
+        readonly VAL400: "4.0.0"; /**
+         * Extended properties for primitive element: ImplementationGuide.dependsOn.uri
+         */
         readonly VAL401: "4.0.1";
     };
     /**

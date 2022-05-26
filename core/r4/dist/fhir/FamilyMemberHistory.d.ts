@@ -18,6 +18,10 @@ export interface FamilyMemberHistoryConditionArgs extends fhir.BackboneElementAr
      */
     contributedToDeath?: fhir.FhirBoolean | boolean | undefined;
     /**
+     * Extended properties for primitive element: FamilyMemberHistory.condition.contributedToDeath
+     */
+    _contributedToDeath?: fhir.FhirElementArgs;
+    /**
      * Either the age of onset, range of approximate age or descriptive string can be recorded.  For conditions with multiple occurrences, this describes the first known occurrence.
      */
     onset?: fhir.Age | fhir.Range | fhir.Period | fhir.FhirString | undefined;
@@ -100,13 +104,25 @@ export interface FamilyMemberHistoryArgs extends fhir.DomainResourceArgs {
      */
     instantiatesCanonical?: fhir.FhirCanonical[] | string[] | undefined;
     /**
+     * Extended properties for primitive element: FamilyMemberHistory.instantiatesCanonical
+     */
+    _instantiatesCanonical?: (fhir.FhirElementArgs | null)[];
+    /**
      * This might be an HTML page, PDF, etc. or could just be a non-resolvable URI identifier.
      */
     instantiatesUri?: fhir.FhirUri[] | string[] | undefined;
     /**
+     * Extended properties for primitive element: FamilyMemberHistory.instantiatesUri
+     */
+    _instantiatesUri?: (fhir.FhirElementArgs | null)[];
+    /**
      * This element is labeled as a modifier because the status contains codes that mark the resource as not currently valid.
      */
     status: fhir.FhirCode<HistoryStatusCodeType> | string | undefined;
+    /**
+     * Extended properties for primitive element: FamilyMemberHistory.status
+     */
+    _status?: fhir.FhirElementArgs;
     /**
      * Describes why the family member's history is not available.
      */
@@ -120,9 +136,17 @@ export interface FamilyMemberHistoryArgs extends fhir.DomainResourceArgs {
      */
     date?: fhir.FhirDateTime | string | undefined;
     /**
+     * Extended properties for primitive element: FamilyMemberHistory.date
+     */
+    _date?: fhir.FhirElementArgs;
+    /**
      * This will either be a name or a description; e.g. "Aunt Susan", "my cousin with the red hair".
      */
     name?: fhir.FhirString | string | undefined;
+    /**
+     * Extended properties for primitive element: FamilyMemberHistory.name
+     */
+    _name?: fhir.FhirElementArgs;
     /**
      * The type of relationship this person has to the patient (father, mother, brother etc.).
      */
@@ -167,6 +191,10 @@ export interface FamilyMemberHistoryArgs extends fhir.DomainResourceArgs {
      * This element is labeled as a modifier because the fact that age is estimated can/should change the results of any algorithm that calculates based on the specified age.
      */
     estimatedAge?: fhir.FhirBoolean | boolean | undefined;
+    /**
+     * Extended properties for primitive element: FamilyMemberHistory.estimatedAge
+     */
+    _estimatedAge?: fhir.FhirElementArgs;
     /**
      * Deceased flag or the actual or approximate age of the relative at the time of death for the family member history record.
      */

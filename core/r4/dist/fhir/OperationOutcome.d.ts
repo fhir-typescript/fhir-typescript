@@ -9,9 +9,17 @@ export interface OperationOutcomeIssueArgs extends fhir.BackboneElementArgs {
      */
     severity: fhir.FhirCode<IssueSeverityCodeType> | string | undefined;
     /**
+     * Extended properties for primitive element: OperationOutcome.issue.severity
+     */
+    _severity?: fhir.FhirElementArgs;
+    /**
      * Describes the type of the issue. The system that creates an OperationOutcome SHALL choose the most applicable code from the IssueType value set, and may additional provide its own code for the error in the details element.
      */
     code: fhir.FhirCode | string | undefined;
+    /**
+     * Extended properties for primitive element: OperationOutcome.issue.code
+     */
+    _code?: fhir.FhirElementArgs;
     /**
      * A human readable description of the error issue SHOULD be placed in details.text.
      */
@@ -21,13 +29,25 @@ export interface OperationOutcomeIssueArgs extends fhir.BackboneElementArgs {
      */
     diagnostics?: fhir.FhirString | string | undefined;
     /**
+     * Extended properties for primitive element: OperationOutcome.issue.diagnostics
+     */
+    _diagnostics?: fhir.FhirElementArgs;
+    /**
      * The root of the XPath is the resource or bundle that generated OperationOutcome.  Each XPath SHALL resolve to a single node.  This element is deprecated, and is being replaced by expression.
      */
     location?: fhir.FhirString[] | string[] | undefined;
     /**
+     * Extended properties for primitive element: OperationOutcome.issue.location
+     */
+    _location?: (fhir.FhirElementArgs | null)[];
+    /**
      * The root of the FHIRPath is the resource or bundle that generated OperationOutcome.  Each FHIRPath SHALL resolve to a single node.
      */
     expression?: fhir.FhirString[] | string[] | undefined;
+    /**
+     * Extended properties for primitive element: OperationOutcome.issue.expression
+     */
+    _expression?: (fhir.FhirElementArgs | null)[];
 }
 /**
  * An error, warning, or information message that results from a system action.
@@ -85,6 +105,9 @@ export declare class OperationOutcomeIssue extends fhir.BackboneElement {
         readonly Duplicate: "duplicate";
         readonly Exception: "exception";
         readonly SessionExpired: "expired";
+        /**
+         * Describes the type of the issue. The system that creates an OperationOutcome SHALL choose the most applicable code from the IssueType value set, and may additional provide its own code for the error in the details element.
+         */
         readonly UnacceptableExtension: "extension";
         readonly Forbidden: "forbidden";
         readonly IncompleteResults: "incomplete";
@@ -92,9 +115,7 @@ export declare class OperationOutcomeIssue extends fhir.BackboneElement {
         readonly InvalidContent: "invalid";
         readonly ValidationRuleFailed: "invariant";
         readonly LockError: "lock-error";
-        readonly LoginRequired: "login"; /**
-         * This is labeled as "Is Modifier" because applications should not confuse hints and warnings with errors.
-         */
+        readonly LoginRequired: "login";
         readonly MultipleMatches: "multiple-matches";
         readonly NoStoreAvailable: "no-store";
         readonly NotFound: "not-found";

@@ -243,6 +243,10 @@ export interface MedicinalProductPackagedArgs extends fhir.DomainResourceArgs {
    */
   description?: fhir.FhirString|string|undefined;
   /**
+   * Extended properties for primitive element: MedicinalProductPackaged.description
+   */
+  _description?:fhir.FhirElementArgs;
+  /**
    * The legal status of supply of the medicinal product as classified by the regulator.
    */
   legalStatusOfSupply?: fhir.CodeableConceptArgs|undefined;
@@ -327,6 +331,10 @@ export class MedicinalProductPackaged extends fhir.DomainResource {
     if (source['subject']) { this.subject = source.subject.map((x) => new fhir.Reference(x)); }
     else { this.subject = []; }
     if (source['description']) { this.description = new fhir.FhirString({value: source.description}); }
+    if (source['_description']) {
+      if (this.description) { this.description.addExtendedProperties(source._description!); }
+      else { this.description = new fhir.FhirString(source._description as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['legalStatusOfSupply']) { this.legalStatusOfSupply = new fhir.CodeableConcept(source.legalStatusOfSupply); }
     if (source['marketingStatus']) { this.marketingStatus = source.marketingStatus.map((x) => new fhir.MarketingStatus(x)); }
     else { this.marketingStatus = []; }

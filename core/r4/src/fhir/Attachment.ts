@@ -18,33 +18,65 @@ export interface AttachmentArgs extends fhir.FhirElementArgs {
    */
   contentType?: fhir.FhirCode|string|undefined;
   /**
+   * Extended properties for primitive element: Attachment.contentType
+   */
+  _contentType?:fhir.FhirElementArgs;
+  /**
    * The human language of the content. The value can be any valid value according to BCP 47.
    */
   language?: fhir.FhirCode|string|undefined;
+  /**
+   * Extended properties for primitive element: Attachment.language
+   */
+  _language?:fhir.FhirElementArgs;
   /**
    * The base64-encoded data SHALL be expressed in the same character set as the base resource XML or JSON.
    */
   data?: fhir.FhirBase64Binary|string|undefined;
   /**
+   * Extended properties for primitive element: Attachment.data
+   */
+  _data?:fhir.FhirElementArgs;
+  /**
    * If both data and url are provided, the url SHALL point to the same content as the data contains. Urls may be relative references or may reference transient locations such as a wrapping envelope using cid: though this has ramifications for using signatures. Relative URLs are interpreted relative to the service url, like a resource reference, rather than relative to the resource itself. If a URL is provided, it SHALL resolve to actual data.
    */
   url?: fhir.FhirUrl|string|undefined;
+  /**
+   * Extended properties for primitive element: Attachment.url
+   */
+  _url?:fhir.FhirElementArgs;
   /**
    * The number of bytes is redundant if the data is provided as a base64binary, but is useful if the data is provided as a url reference.
    */
   size?: fhir.FhirUnsignedInt|number|undefined;
   /**
+   * Extended properties for primitive element: Attachment.size
+   */
+  _size?:fhir.FhirElementArgs;
+  /**
    * The hash is calculated on the data prior to base64 encoding, if the data is based64 encoded. The hash is not intended to support digital signatures. Where protection against malicious threats a digital signature should be considered, see [Provenance.signature](provenance-definitions.html#Provenance.signature) for mechanism to protect a resource with a digital signature.
    */
   hash?: fhir.FhirBase64Binary|string|undefined;
+  /**
+   * Extended properties for primitive element: Attachment.hash
+   */
+  _hash?:fhir.FhirElementArgs;
   /**
    * A label or set of text to display in place of the data.
    */
   title?: fhir.FhirString|string|undefined;
   /**
+   * Extended properties for primitive element: Attachment.title
+   */
+  _title?:fhir.FhirElementArgs;
+  /**
    * The date that the attachment was first created.
    */
   creation?: fhir.FhirDateTime|string|undefined;
+  /**
+   * Extended properties for primitive element: Attachment.creation
+   */
+  _creation?:fhir.FhirElementArgs;
 }
 
 /**
@@ -93,13 +125,45 @@ export class Attachment extends fhir.FhirElement {
   constructor(source:Partial<AttachmentArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
     if (source['contentType']) { this.contentType = new fhir.FhirCode({value: source.contentType}); }
+    if (source['_contentType']) {
+      if (this.contentType) { this.contentType.addExtendedProperties(source._contentType!); }
+      else { this.contentType = new fhir.FhirCode(source._contentType as Partial<fhir.FhirCodeArgs>); }
+    }
     if (source['language']) { this.language = new fhir.FhirCode({value: source.language}); }
+    if (source['_language']) {
+      if (this.language) { this.language.addExtendedProperties(source._language!); }
+      else { this.language = new fhir.FhirCode(source._language as Partial<fhir.FhirCodeArgs>); }
+    }
     if (source['data']) { this.data = new fhir.FhirBase64Binary({value: source.data}); }
+    if (source['_data']) {
+      if (this.data) { this.data.addExtendedProperties(source._data!); }
+      else { this.data = new fhir.FhirBase64Binary(source._data as Partial<fhir.FhirBase64BinaryArgs>); }
+    }
     if (source['url']) { this.url = new fhir.FhirUrl({value: source.url}); }
+    if (source['_url']) {
+      if (this.url) { this.url.addExtendedProperties(source._url!); }
+      else { this.url = new fhir.FhirUrl(source._url as Partial<fhir.FhirUrlArgs>); }
+    }
     if (source['size']) { this.size = new fhir.FhirUnsignedInt({value: source.size}); }
+    if (source['_size']) {
+      if (this.size) { this.size.addExtendedProperties(source._size!); }
+      else { this.size = new fhir.FhirUnsignedInt(source._size as Partial<fhir.FhirUnsignedIntArgs>); }
+    }
     if (source['hash']) { this.hash = new fhir.FhirBase64Binary({value: source.hash}); }
+    if (source['_hash']) {
+      if (this.hash) { this.hash.addExtendedProperties(source._hash!); }
+      else { this.hash = new fhir.FhirBase64Binary(source._hash as Partial<fhir.FhirBase64BinaryArgs>); }
+    }
     if (source['title']) { this.title = new fhir.FhirString({value: source.title}); }
+    if (source['_title']) {
+      if (this.title) { this.title.addExtendedProperties(source._title!); }
+      else { this.title = new fhir.FhirString(source._title as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['creation']) { this.creation = new fhir.FhirDateTime({value: source.creation}); }
+    if (source['_creation']) {
+      if (this.creation) { this.creation.addExtendedProperties(source._creation!); }
+      else { this.creation = new fhir.FhirDateTime(source._creation as Partial<fhir.FhirDateTimeArgs>); }
+    }
   }
   /**
    * Preferred-bound Value Set for language (Attachment.language)

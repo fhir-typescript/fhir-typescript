@@ -46,6 +46,10 @@ export interface GuidanceResponseArgs extends fhir.DomainResourceArgs {
    */
   status: fhir.FhirCode<GuidanceResponseStatusCodeType>|string|undefined;
   /**
+   * Extended properties for primitive element: GuidanceResponse.status
+   */
+  _status?:fhir.FhirElementArgs;
+  /**
    * The patient for which the request was processed.
    */
   subject?: fhir.ReferenceArgs|undefined;
@@ -57,6 +61,10 @@ export interface GuidanceResponseArgs extends fhir.DomainResourceArgs {
    * Indicates when the guidance response was processed.
    */
   occurrenceDateTime?: fhir.FhirDateTime|string|undefined;
+  /**
+   * Extended properties for primitive element: GuidanceResponse.occurrenceDateTime
+   */
+  _occurrenceDateTime?:fhir.FhirElementArgs;
   /**
    * Provides a reference to the device that performed the guidance.
    */
@@ -183,9 +191,17 @@ export class GuidanceResponse extends fhir.DomainResource {
     else { this.module = null; }
     if (source['status']) { this.status = new fhir.FhirCode<GuidanceResponseStatusCodeType>({value: source.status}); }
     else { this.status = null; }
+    if (source['_status']) {
+      if (this.status) { this.status.addExtendedProperties(source._status!); }
+      else { this.status = new fhir.FhirCode<GuidanceResponseStatusCodeType>(source._status as Partial<fhir.FhirCode>); }
+    }
     if (source['subject']) { this.subject = new fhir.Reference(source.subject); }
     if (source['encounter']) { this.encounter = new fhir.Reference(source.encounter); }
     if (source['occurrenceDateTime']) { this.occurrenceDateTime = new fhir.FhirDateTime({value: source.occurrenceDateTime}); }
+    if (source['_occurrenceDateTime']) {
+      if (this.occurrenceDateTime) { this.occurrenceDateTime.addExtendedProperties(source._occurrenceDateTime!); }
+      else { this.occurrenceDateTime = new fhir.FhirDateTime(source._occurrenceDateTime as Partial<fhir.FhirDateTimeArgs>); }
+    }
     if (source['performer']) { this.performer = new fhir.Reference(source.performer); }
     if (source['reasonCode']) { this.reasonCode = source.reasonCode.map((x) => new fhir.CodeableConcept(x)); }
     else { this.reasonCode = []; }

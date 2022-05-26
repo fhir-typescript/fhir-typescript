@@ -34,9 +34,17 @@ export interface AppointmentResponseArgs extends fhir.DomainResourceArgs {
    */
   start?: fhir.FhirInstant|string|undefined;
   /**
+   * Extended properties for primitive element: AppointmentResponse.start
+   */
+  _start?:fhir.FhirElementArgs;
+  /**
    * This may be either the same as the appointment request to confirm the details of the appointment, or alternately a new time to request a re-negotiation of the end time.
    */
   end?: fhir.FhirInstant|string|undefined;
+  /**
+   * Extended properties for primitive element: AppointmentResponse.end
+   */
+  _end?:fhir.FhirElementArgs;
   /**
    * The role of the participant can be used to declare what the actor will be doing in the scope of the referenced appointment.
    * If the actor is not specified, then it is expected that the actor will be filled in at a later stage of planning.
@@ -52,9 +60,17 @@ export interface AppointmentResponseArgs extends fhir.DomainResourceArgs {
    */
   participantStatus: fhir.FhirCode<ParticipationstatusCodeType>|string|undefined;
   /**
+   * Extended properties for primitive element: AppointmentResponse.participantStatus
+   */
+  _participantStatus?:fhir.FhirElementArgs;
+  /**
    * This comment is particularly important when the responder is declining, tentatively accepting or requesting another time to indicate the reasons why.
    */
   comment?: fhir.FhirString|string|undefined;
+  /**
+   * Extended properties for primitive element: AppointmentResponse.comment
+   */
+  _comment?:fhir.FhirElementArgs;
 }
 
 /**
@@ -114,13 +130,29 @@ export class AppointmentResponse extends fhir.DomainResource {
     if (source['appointment']) { this.appointment = new fhir.Reference(source.appointment); }
     else { this.appointment = null; }
     if (source['start']) { this.start = new fhir.FhirInstant({value: source.start}); }
+    if (source['_start']) {
+      if (this.start) { this.start.addExtendedProperties(source._start!); }
+      else { this.start = new fhir.FhirInstant(source._start as Partial<fhir.FhirInstantArgs>); }
+    }
     if (source['end']) { this.end = new fhir.FhirInstant({value: source.end}); }
+    if (source['_end']) {
+      if (this.end) { this.end.addExtendedProperties(source._end!); }
+      else { this.end = new fhir.FhirInstant(source._end as Partial<fhir.FhirInstantArgs>); }
+    }
     if (source['participantType']) { this.participantType = source.participantType.map((x) => new fhir.CodeableConcept(x)); }
     else { this.participantType = []; }
     if (source['actor']) { this.actor = new fhir.Reference(source.actor); }
     if (source['participantStatus']) { this.participantStatus = new fhir.FhirCode<ParticipationstatusCodeType>({value: source.participantStatus}); }
     else { this.participantStatus = null; }
+    if (source['_participantStatus']) {
+      if (this.participantStatus) { this.participantStatus.addExtendedProperties(source._participantStatus!); }
+      else { this.participantStatus = new fhir.FhirCode<ParticipationstatusCodeType>(source._participantStatus as Partial<fhir.FhirCode>); }
+    }
     if (source['comment']) { this.comment = new fhir.FhirString({value: source.comment}); }
+    if (source['_comment']) {
+      if (this.comment) { this.comment.addExtendedProperties(source._comment!); }
+      else { this.comment = new fhir.FhirString(source._comment as Partial<fhir.FhirStringArgs>); }
+    }
   }
   /**
    * Extensible-bound Value Set for participantType (AppointmentResponse.participantType)

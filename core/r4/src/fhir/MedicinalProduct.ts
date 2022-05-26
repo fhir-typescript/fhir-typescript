@@ -14,6 +14,10 @@ export interface MedicinalProductNameNamePartArgs extends fhir.BackboneElementAr
    */
   part: fhir.FhirString|string|undefined;
   /**
+   * Extended properties for primitive element: MedicinalProduct.name.namePart.part
+   */
+  _part?:fhir.FhirElementArgs;
+  /**
    * Idenifying type for this part of the name (e.g. strength part).
    */
   type: fhir.CodingArgs|null;
@@ -42,6 +46,10 @@ export class MedicinalProductNameNamePart extends fhir.BackboneElement {
     super(source, options);
     if (source['part']) { this.part = new fhir.FhirString({value: source.part}); }
     else { this.part = null; }
+    if (source['_part']) {
+      if (this.part) { this.part.addExtendedProperties(source._part!); }
+      else { this.part = new fhir.FhirString(source._part as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['type']) { this.type = new fhir.Coding(source.type); }
     else { this.type = null; }
   }
@@ -136,6 +144,10 @@ export interface MedicinalProductNameArgs extends fhir.BackboneElementArgs {
    */
   productName: fhir.FhirString|string|undefined;
   /**
+   * Extended properties for primitive element: MedicinalProduct.name.productName
+   */
+  _productName?:fhir.FhirElementArgs;
+  /**
    * Coding words or phrases of the name.
    */
   namePart?: fhir.MedicinalProductNameNamePartArgs[]|undefined;
@@ -172,6 +184,10 @@ export class MedicinalProductName extends fhir.BackboneElement {
     super(source, options);
     if (source['productName']) { this.productName = new fhir.FhirString({value: source.productName}); }
     else { this.productName = null; }
+    if (source['_productName']) {
+      if (this.productName) { this.productName.addExtendedProperties(source._productName!); }
+      else { this.productName = new fhir.FhirString(source._productName as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['namePart']) { this.namePart = source.namePart.map((x) => new fhir.MedicinalProductNameNamePart(x)); }
     else { this.namePart = []; }
     if (source['countryLanguage']) { this.countryLanguage = source.countryLanguage.map((x) => new fhir.MedicinalProductNameCountryLanguage(x)); }
@@ -207,6 +223,10 @@ export interface MedicinalProductManufacturingBusinessOperationArgs extends fhir
    * Regulatory authorization date.
    */
   effectiveDate?: fhir.FhirDateTime|string|undefined;
+  /**
+   * Extended properties for primitive element: MedicinalProduct.manufacturingBusinessOperation.effectiveDate
+   */
+  _effectiveDate?:fhir.FhirElementArgs;
   /**
    * To indicate if this proces is commercially confidential.
    */
@@ -261,6 +281,10 @@ export class MedicinalProductManufacturingBusinessOperation extends fhir.Backbon
     if (source['operationType']) { this.operationType = new fhir.CodeableConcept(source.operationType); }
     if (source['authorisationReferenceNumber']) { this.authorisationReferenceNumber = new fhir.Identifier(source.authorisationReferenceNumber); }
     if (source['effectiveDate']) { this.effectiveDate = new fhir.FhirDateTime({value: source.effectiveDate}); }
+    if (source['_effectiveDate']) {
+      if (this.effectiveDate) { this.effectiveDate.addExtendedProperties(source._effectiveDate!); }
+      else { this.effectiveDate = new fhir.FhirDateTime(source._effectiveDate as Partial<fhir.FhirDateTimeArgs>); }
+    }
     if (source['confidentialityIndicator']) { this.confidentialityIndicator = new fhir.CodeableConcept(source.confidentialityIndicator); }
     if (source['manufacturer']) { this.manufacturer = source.manufacturer.map((x) => new fhir.Reference(x)); }
     else { this.manufacturer = []; }
@@ -316,6 +340,10 @@ export interface MedicinalProductSpecialDesignationArgs extends fhir.BackboneEle
    * Date when the designation was granted.
    */
   date?: fhir.FhirDateTime|string|undefined;
+  /**
+   * Extended properties for primitive element: MedicinalProduct.specialDesignation.date
+   */
+  _date?:fhir.FhirElementArgs;
   /**
    * Animal species for which this applies.
    */
@@ -376,6 +404,10 @@ export class MedicinalProductSpecialDesignation extends fhir.BackboneElement {
     else if (source['indicationReference']) { this.indication = new fhir.Reference(source.indicationReference); }
     if (source['status']) { this.status = new fhir.CodeableConcept(source.status); }
     if (source['date']) { this.date = new fhir.FhirDateTime({value: source.date}); }
+    if (source['_date']) {
+      if (this.date) { this.date.addExtendedProperties(source._date!); }
+      else { this.date = new fhir.FhirDateTime(source._date as Partial<fhir.FhirDateTimeArgs>); }
+    }
     if (source['species']) { this.species = new fhir.CodeableConcept(source.species); }
   }
   /**
@@ -428,6 +460,10 @@ export interface MedicinalProductArgs extends fhir.DomainResourceArgs {
    * Whether the Medicinal Product is subject to special measures for regulatory reasons.
    */
   specialMeasures?: fhir.FhirString[]|string[]|undefined;
+  /**
+   * Extended properties for primitive element: MedicinalProduct.specialMeasures
+   */
+  _specialMeasures?:(fhir.FhirElementArgs|null)[];
   /**
    * If authorised for use in children.
    */
@@ -589,6 +625,12 @@ export class MedicinalProduct extends fhir.DomainResource {
     if (source['additionalMonitoringIndicator']) { this.additionalMonitoringIndicator = new fhir.CodeableConcept(source.additionalMonitoringIndicator); }
     if (source['specialMeasures']) { this.specialMeasures = source.specialMeasures.map((x) => new fhir.FhirString({value: x})); }
     else { this.specialMeasures = []; }
+    if (source['_specialMeasures']) {
+      source._specialMeasures.forEach((x,i) => {
+        if (this.specialMeasures.length >= i) { if (x) { this.specialMeasures[i].addExtendedProperties(x); } }
+        else { if (x) { this.specialMeasures.push(new fhir.FhirString(x as Partial<fhir.FhirStringArgs>)); } }
+      });
+    }
     if (source['paediatricUseIndicator']) { this.paediatricUseIndicator = new fhir.CodeableConcept(source.paediatricUseIndicator); }
     if (source['productClassification']) { this.productClassification = source.productClassification.map((x) => new fhir.CodeableConcept(x)); }
     else { this.productClassification = []; }

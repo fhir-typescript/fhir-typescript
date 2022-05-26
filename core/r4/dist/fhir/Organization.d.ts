@@ -76,6 +76,10 @@ export interface OrganizationArgs extends fhir.DomainResourceArgs {
      */
     active?: fhir.FhirBoolean | boolean | undefined;
     /**
+     * Extended properties for primitive element: Organization.active
+     */
+    _active?: fhir.FhirElementArgs;
+    /**
      * Organizations can be corporations, wards, sections, clinical teams, government departments, etc. Note that code is generally a classifier of the type of organization; in many applications, codes are used to identity a particular organization (say, ward) as opposed to another of the same type - these are identifiers, not codes
      * When considering if multiple types are appropriate, you should evaluate if child organizations would be a more appropriate use of the concept, as different types likely are in different sub-areas of the organization. This is most likely to be used where type values have orthogonal values, such as a religious, academic and medical center.
      * We expect that some jurisdictions will profile this optionality to be a single cardinality.
@@ -86,9 +90,17 @@ export interface OrganizationArgs extends fhir.DomainResourceArgs {
      */
     name?: fhir.FhirString | string | undefined;
     /**
+     * Extended properties for primitive element: Organization.name
+     */
+    _name?: fhir.FhirElementArgs;
+    /**
      * There are no dates associated with the alias/historic names, as this is not intended to track when names were used, but to assist in searching so that older names can still result in identifying the organization.
      */
     alias?: fhir.FhirString[] | string[] | undefined;
+    /**
+     * Extended properties for primitive element: Organization.alias
+     */
+    _alias?: (fhir.FhirElementArgs | null)[];
     /**
      * The use code 'home' is not to be used. Note that these contacts are not the contact details of people who are employed by or represent the organization, but official contacts for the organization itself.
      */

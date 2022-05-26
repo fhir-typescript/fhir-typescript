@@ -62,21 +62,41 @@ export interface SlotArgs extends fhir.DomainResourceArgs {
    */
   status: fhir.FhirCode<SlotstatusCodeType>|string|undefined;
   /**
+   * Extended properties for primitive element: Slot.status
+   */
+  _status?:fhir.FhirElementArgs;
+  /**
    * Date/Time that the slot is to begin.
    */
   start: fhir.FhirInstant|string|undefined;
+  /**
+   * Extended properties for primitive element: Slot.start
+   */
+  _start?:fhir.FhirElementArgs;
   /**
    * Date/Time that the slot is to conclude.
    */
   end: fhir.FhirInstant|string|undefined;
   /**
+   * Extended properties for primitive element: Slot.end
+   */
+  _end?:fhir.FhirElementArgs;
+  /**
    * This slot has already been overbooked, appointments are unlikely to be accepted for this time.
    */
   overbooked?: fhir.FhirBoolean|boolean|undefined;
   /**
+   * Extended properties for primitive element: Slot.overbooked
+   */
+  _overbooked?:fhir.FhirElementArgs;
+  /**
    * Comments on the slot to describe any extended information. Such as custom constraints on the slot.
    */
   comment?: fhir.FhirString|string|undefined;
+  /**
+   * Extended properties for primitive element: Slot.comment
+   */
+  _comment?:fhir.FhirElementArgs;
 }
 
 /**
@@ -154,12 +174,32 @@ export class Slot extends fhir.DomainResource {
     else { this.schedule = null; }
     if (source['status']) { this.status = new fhir.FhirCode<SlotstatusCodeType>({value: source.status}); }
     else { this.status = null; }
+    if (source['_status']) {
+      if (this.status) { this.status.addExtendedProperties(source._status!); }
+      else { this.status = new fhir.FhirCode<SlotstatusCodeType>(source._status as Partial<fhir.FhirCode>); }
+    }
     if (source['start']) { this.start = new fhir.FhirInstant({value: source.start}); }
     else { this.start = null; }
+    if (source['_start']) {
+      if (this.start) { this.start.addExtendedProperties(source._start!); }
+      else { this.start = new fhir.FhirInstant(source._start as Partial<fhir.FhirInstantArgs>); }
+    }
     if (source['end']) { this.end = new fhir.FhirInstant({value: source.end}); }
     else { this.end = null; }
+    if (source['_end']) {
+      if (this.end) { this.end.addExtendedProperties(source._end!); }
+      else { this.end = new fhir.FhirInstant(source._end as Partial<fhir.FhirInstantArgs>); }
+    }
     if (source['overbooked']) { this.overbooked = new fhir.FhirBoolean({value: source.overbooked}); }
+    if (source['_overbooked']) {
+      if (this.overbooked) { this.overbooked.addExtendedProperties(source._overbooked!); }
+      else { this.overbooked = new fhir.FhirBoolean(source._overbooked as Partial<fhir.FhirBooleanArgs>); }
+    }
     if (source['comment']) { this.comment = new fhir.FhirString({value: source.comment}); }
+    if (source['_comment']) {
+      if (this.comment) { this.comment.addExtendedProperties(source._comment!); }
+      else { this.comment = new fhir.FhirString(source._comment as Partial<fhir.FhirStringArgs>); }
+    }
   }
   /**
    * Preferred-bound Value Set for specialty (Slot.specialty)

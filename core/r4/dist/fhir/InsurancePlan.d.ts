@@ -110,6 +110,10 @@ export interface InsurancePlanCoverageBenefitArgs extends fhir.BackboneElementAr
      */
     requirement?: fhir.FhirString | string | undefined;
     /**
+     * Extended properties for primitive element: InsurancePlan.coverage.benefit.requirement
+     */
+    _requirement?: fhir.FhirElementArgs;
+    /**
      * The specific limits on the benefit.
      */
     limit?: fhir.InsurancePlanCoverageBenefitLimitArgs[] | undefined;
@@ -202,6 +206,10 @@ export interface InsurancePlanPlanGeneralCostArgs extends fhir.BackboneElementAr
      */
     groupSize?: fhir.FhirPositiveInt | number | undefined;
     /**
+     * Extended properties for primitive element: InsurancePlan.plan.generalCost.groupSize
+     */
+    _groupSize?: fhir.FhirElementArgs;
+    /**
      * Value of the cost.
      */
     cost?: fhir.MoneyArgs | undefined;
@@ -209,6 +217,10 @@ export interface InsurancePlanPlanGeneralCostArgs extends fhir.BackboneElementAr
      * Additional information about the general costs associated with this plan.
      */
     comment?: fhir.FhirString | string | undefined;
+    /**
+     * Extended properties for primitive element: InsurancePlan.plan.generalCost.comment
+     */
+    _comment?: fhir.FhirElementArgs;
 }
 /**
  * Overall costs associated with the plan.
@@ -468,6 +480,10 @@ export interface InsurancePlanArgs extends fhir.DomainResourceArgs {
      */
     status?: fhir.FhirCode<PublicationStatusCodeType> | string | undefined;
     /**
+     * Extended properties for primitive element: InsurancePlan.status
+     */
+    _status?: fhir.FhirElementArgs;
+    /**
      * The kind of health insurance product.
      */
     type?: fhir.CodeableConceptArgs[] | undefined;
@@ -476,9 +492,17 @@ export interface InsurancePlanArgs extends fhir.DomainResourceArgs {
      */
     name?: fhir.FhirString | string | undefined;
     /**
+     * Extended properties for primitive element: InsurancePlan.name
+     */
+    _name?: fhir.FhirElementArgs;
+    /**
      * There are no dates associated with the alias/historic names, as this is not intended to track when names were used, but to assist in searching so that older names can still result in identifying the product/plan.
      */
     alias?: fhir.FhirString[] | string[] | undefined;
+    /**
+     * Extended properties for primitive element: InsurancePlan.alias
+     */
+    _alias?: (fhir.FhirElementArgs | null)[];
     /**
      * The period of time that the health insurance product is available.
      */

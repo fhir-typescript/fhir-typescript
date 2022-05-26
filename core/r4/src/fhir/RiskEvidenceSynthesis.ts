@@ -54,13 +54,25 @@ export interface RiskEvidenceSynthesisSampleSizeArgs extends fhir.BackboneElemen
    */
   description?: fhir.FhirString|string|undefined;
   /**
+   * Extended properties for primitive element: RiskEvidenceSynthesis.sampleSize.description
+   */
+  _description?:fhir.FhirElementArgs;
+  /**
    * Number of studies included in this evidence synthesis.
    */
   numberOfStudies?: fhir.FhirInteger|number|undefined;
   /**
+   * Extended properties for primitive element: RiskEvidenceSynthesis.sampleSize.numberOfStudies
+   */
+  _numberOfStudies?:fhir.FhirElementArgs;
+  /**
    * Number of participants included in this evidence synthesis.
    */
   numberOfParticipants?: fhir.FhirInteger|number|undefined;
+  /**
+   * Extended properties for primitive element: RiskEvidenceSynthesis.sampleSize.numberOfParticipants
+   */
+  _numberOfParticipants?:fhir.FhirElementArgs;
 }
 
 /**
@@ -89,8 +101,20 @@ export class RiskEvidenceSynthesisSampleSize extends fhir.BackboneElement {
   constructor(source:Partial<RiskEvidenceSynthesisSampleSizeArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
     if (source['description']) { this.description = new fhir.FhirString({value: source.description}); }
+    if (source['_description']) {
+      if (this.description) { this.description.addExtendedProperties(source._description!); }
+      else { this.description = new fhir.FhirString(source._description as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['numberOfStudies']) { this.numberOfStudies = new fhir.FhirInteger({value: source.numberOfStudies}); }
+    if (source['_numberOfStudies']) {
+      if (this.numberOfStudies) { this.numberOfStudies.addExtendedProperties(source._numberOfStudies!); }
+      else { this.numberOfStudies = new fhir.FhirInteger(source._numberOfStudies as Partial<fhir.FhirIntegerArgs>); }
+    }
     if (source['numberOfParticipants']) { this.numberOfParticipants = new fhir.FhirInteger({value: source.numberOfParticipants}); }
+    if (source['_numberOfParticipants']) {
+      if (this.numberOfParticipants) { this.numberOfParticipants.addExtendedProperties(source._numberOfParticipants!); }
+      else { this.numberOfParticipants = new fhir.FhirInteger(source._numberOfParticipants as Partial<fhir.FhirIntegerArgs>); }
+    }
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -116,13 +140,25 @@ export interface RiskEvidenceSynthesisRiskEstimatePrecisionEstimateArgs extends 
    */
   level?: fhir.FhirDecimal|number|undefined;
   /**
+   * Extended properties for primitive element: RiskEvidenceSynthesis.riskEstimate.precisionEstimate.level
+   */
+  _level?:fhir.FhirElementArgs;
+  /**
    * Lower bound of confidence interval.
    */
   from?: fhir.FhirDecimal|number|undefined;
   /**
+   * Extended properties for primitive element: RiskEvidenceSynthesis.riskEstimate.precisionEstimate.from
+   */
+  _from?:fhir.FhirElementArgs;
+  /**
    * Upper bound of confidence interval.
    */
   to?: fhir.FhirDecimal|number|undefined;
+  /**
+   * Extended properties for primitive element: RiskEvidenceSynthesis.riskEstimate.precisionEstimate.to
+   */
+  _to?:fhir.FhirElementArgs;
 }
 
 /**
@@ -156,8 +192,20 @@ export class RiskEvidenceSynthesisRiskEstimatePrecisionEstimate extends fhir.Bac
     super(source, options);
     if (source['type']) { this.type = new fhir.CodeableConcept(source.type); }
     if (source['level']) { this.level = new fhir.FhirDecimal({value: source.level}); }
+    if (source['_level']) {
+      if (this.level) { this.level.addExtendedProperties(source._level!); }
+      else { this.level = new fhir.FhirDecimal(source._level as Partial<fhir.FhirDecimalArgs>); }
+    }
     if (source['from']) { this.from = new fhir.FhirDecimal({value: source.from}); }
+    if (source['_from']) {
+      if (this.from) { this.from.addExtendedProperties(source._from!); }
+      else { this.from = new fhir.FhirDecimal(source._from as Partial<fhir.FhirDecimalArgs>); }
+    }
     if (source['to']) { this.to = new fhir.FhirDecimal({value: source.to}); }
+    if (source['_to']) {
+      if (this.to) { this.to.addExtendedProperties(source._to!); }
+      else { this.to = new fhir.FhirDecimal(source._to as Partial<fhir.FhirDecimalArgs>); }
+    }
   }
   /**
    * Extensible-bound Value Set for type (RiskEvidenceSynthesis.riskEstimate.precisionEstimate.type)
@@ -186,6 +234,10 @@ export interface RiskEvidenceSynthesisRiskEstimateArgs extends fhir.BackboneElem
    */
   description?: fhir.FhirString|string|undefined;
   /**
+   * Extended properties for primitive element: RiskEvidenceSynthesis.riskEstimate.description
+   */
+  _description?:fhir.FhirElementArgs;
+  /**
    * Examples include proportion and mean.
    */
   type?: fhir.CodeableConceptArgs|undefined;
@@ -193,6 +245,10 @@ export interface RiskEvidenceSynthesisRiskEstimateArgs extends fhir.BackboneElem
    * The point estimate of the risk estimate.
    */
   value?: fhir.FhirDecimal|number|undefined;
+  /**
+   * Extended properties for primitive element: RiskEvidenceSynthesis.riskEstimate.value
+   */
+  _value?:fhir.FhirElementArgs;
   /**
    * Specifies the UCUM unit for the outcome.
    */
@@ -202,9 +258,17 @@ export interface RiskEvidenceSynthesisRiskEstimateArgs extends fhir.BackboneElem
    */
   denominatorCount?: fhir.FhirInteger|number|undefined;
   /**
+   * Extended properties for primitive element: RiskEvidenceSynthesis.riskEstimate.denominatorCount
+   */
+  _denominatorCount?:fhir.FhirElementArgs;
+  /**
    * The number of group members with the outcome of interest.
    */
   numeratorCount?: fhir.FhirInteger|number|undefined;
+  /**
+   * Extended properties for primitive element: RiskEvidenceSynthesis.riskEstimate.numeratorCount
+   */
+  _numeratorCount?:fhir.FhirElementArgs;
   /**
    * A description of the precision of the estimate for the effect.
    */
@@ -253,11 +317,27 @@ export class RiskEvidenceSynthesisRiskEstimate extends fhir.BackboneElement {
   constructor(source:Partial<RiskEvidenceSynthesisRiskEstimateArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
     if (source['description']) { this.description = new fhir.FhirString({value: source.description}); }
+    if (source['_description']) {
+      if (this.description) { this.description.addExtendedProperties(source._description!); }
+      else { this.description = new fhir.FhirString(source._description as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['type']) { this.type = new fhir.CodeableConcept(source.type); }
     if (source['value']) { this.value = new fhir.FhirDecimal({value: source.value}); }
+    if (source['_value']) {
+      if (this.value) { this.value.addExtendedProperties(source._value!); }
+      else { this.value = new fhir.FhirDecimal(source._value as Partial<fhir.FhirDecimalArgs>); }
+    }
     if (source['unitOfMeasure']) { this.unitOfMeasure = new fhir.CodeableConcept(source.unitOfMeasure); }
     if (source['denominatorCount']) { this.denominatorCount = new fhir.FhirInteger({value: source.denominatorCount}); }
+    if (source['_denominatorCount']) {
+      if (this.denominatorCount) { this.denominatorCount.addExtendedProperties(source._denominatorCount!); }
+      else { this.denominatorCount = new fhir.FhirInteger(source._denominatorCount as Partial<fhir.FhirIntegerArgs>); }
+    }
     if (source['numeratorCount']) { this.numeratorCount = new fhir.FhirInteger({value: source.numeratorCount}); }
+    if (source['_numeratorCount']) {
+      if (this.numeratorCount) { this.numeratorCount.addExtendedProperties(source._numeratorCount!); }
+      else { this.numeratorCount = new fhir.FhirInteger(source._numeratorCount as Partial<fhir.FhirIntegerArgs>); }
+    }
     if (source['precisionEstimate']) { this.precisionEstimate = source.precisionEstimate.map((x) => new fhir.RiskEvidenceSynthesisRiskEstimatePrecisionEstimate(x)); }
     else { this.precisionEstimate = []; }
   }
@@ -445,6 +525,10 @@ export interface RiskEvidenceSynthesisArgs extends fhir.DomainResourceArgs {
    */
   url?: fhir.FhirUri|string|undefined;
   /**
+   * Extended properties for primitive element: RiskEvidenceSynthesis.url
+   */
+  _url?:fhir.FhirElementArgs;
+  /**
    * Typically, this is used for identifiers that can go in an HL7 V3 II (instance identifier) data type, and can then identify this risk evidence synthesis outside of FHIR, where it is not possible to use the logical URI.
    */
   identifier?: fhir.IdentifierArgs[]|undefined;
@@ -453,25 +537,49 @@ export interface RiskEvidenceSynthesisArgs extends fhir.DomainResourceArgs {
    */
   version?: fhir.FhirString|string|undefined;
   /**
+   * Extended properties for primitive element: RiskEvidenceSynthesis.version
+   */
+  _version?:fhir.FhirElementArgs;
+  /**
    * The name is not expected to be globally unique. The name should be a simple alphanumeric type name to ensure that it is machine-processing friendly.
    */
   name?: fhir.FhirString|string|undefined;
+  /**
+   * Extended properties for primitive element: RiskEvidenceSynthesis.name
+   */
+  _name?:fhir.FhirElementArgs;
   /**
    * This name does not need to be machine-processing friendly and may contain punctuation, white-space, etc.
    */
   title?: fhir.FhirString|string|undefined;
   /**
+   * Extended properties for primitive element: RiskEvidenceSynthesis.title
+   */
+  _title?:fhir.FhirElementArgs;
+  /**
    * Allows filtering of risk evidence synthesiss that are appropriate for use versus not.
    */
   status: fhir.FhirCode<PublicationStatusCodeType>|string|undefined;
+  /**
+   * Extended properties for primitive element: RiskEvidenceSynthesis.status
+   */
+  _status?:fhir.FhirElementArgs;
   /**
    * Note that this is not the same as the resource last-modified-date, since the resource may be a secondary representation of the risk evidence synthesis. Additional specific dates may be added as extensions or be found by consulting Provenances associated with past versions of the resource.
    */
   date?: fhir.FhirDateTime|string|undefined;
   /**
+   * Extended properties for primitive element: RiskEvidenceSynthesis.date
+   */
+  _date?:fhir.FhirElementArgs;
+  /**
    * Usually an organization but may be an individual. The publisher (or steward) of the risk evidence synthesis is the organization or individual primarily responsible for the maintenance and upkeep of the risk evidence synthesis. This is not necessarily the same individual or organization that developed and initially authored the content. The publisher is the primary point of contact for questions or issues with the risk evidence synthesis. This item SHOULD be populated unless the information is available from context.
    */
   publisher?: fhir.FhirString|string|undefined;
+  /**
+   * Extended properties for primitive element: RiskEvidenceSynthesis.publisher
+   */
+  _publisher?:fhir.FhirElementArgs;
   /**
    * May be a web site, an email address, a telephone number, etc.
    */
@@ -480,6 +588,10 @@ export interface RiskEvidenceSynthesisArgs extends fhir.DomainResourceArgs {
    * This description can be used to capture details such as why the risk evidence synthesis was built, comments about misuse, instructions for clinical use and interpretation, literature references, examples from the paper world, etc. It is not a rendering of the risk evidence synthesis as conveyed in the 'text' field of the resource itself. This item SHOULD be populated unless the information is available from context (e.g. the language of the risk evidence synthesis is presumed to be the predominant language in the place the risk evidence synthesis was created).
    */
   description?: fhir.FhirMarkdown|string|undefined;
+  /**
+   * Extended properties for primitive element: RiskEvidenceSynthesis.description
+   */
+  _description?:fhir.FhirElementArgs;
   /**
    * A human-readable string to clarify or explain concepts about the resource.
    */
@@ -497,13 +609,25 @@ export interface RiskEvidenceSynthesisArgs extends fhir.DomainResourceArgs {
    */
   copyright?: fhir.FhirMarkdown|string|undefined;
   /**
+   * Extended properties for primitive element: RiskEvidenceSynthesis.copyright
+   */
+  _copyright?:fhir.FhirElementArgs;
+  /**
    * The 'date' element may be more recent than the approval date because of minor changes or editorial corrections.
    */
   approvalDate?: fhir.FhirDate|string|undefined;
   /**
+   * Extended properties for primitive element: RiskEvidenceSynthesis.approvalDate
+   */
+  _approvalDate?:fhir.FhirElementArgs;
+  /**
    * If specified, this date follows the original approval date.
    */
   lastReviewDate?: fhir.FhirDate|string|undefined;
+  /**
+   * Extended properties for primitive element: RiskEvidenceSynthesis.lastReviewDate
+   */
+  _lastReviewDate?:fhir.FhirElementArgs;
   /**
    * The effective period for a risk evidence synthesis  determines when the content is applicable for usage and is independent of publication and review dates. For example, a measure intended to be used for the year 2016 might be published in 2015.
    */
@@ -711,18 +835,50 @@ export class RiskEvidenceSynthesis extends fhir.DomainResource {
     super(source, options);
     this.resourceType = 'RiskEvidenceSynthesis';
     if (source['url']) { this.url = new fhir.FhirUri({value: source.url}); }
+    if (source['_url']) {
+      if (this.url) { this.url.addExtendedProperties(source._url!); }
+      else { this.url = new fhir.FhirUri(source._url as Partial<fhir.FhirUriArgs>); }
+    }
     if (source['identifier']) { this.identifier = source.identifier.map((x) => new fhir.Identifier(x)); }
     else { this.identifier = []; }
     if (source['version']) { this.version = new fhir.FhirString({value: source.version}); }
+    if (source['_version']) {
+      if (this.version) { this.version.addExtendedProperties(source._version!); }
+      else { this.version = new fhir.FhirString(source._version as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['name']) { this.name = new fhir.FhirString({value: source.name}); }
+    if (source['_name']) {
+      if (this.name) { this.name.addExtendedProperties(source._name!); }
+      else { this.name = new fhir.FhirString(source._name as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['title']) { this.title = new fhir.FhirString({value: source.title}); }
+    if (source['_title']) {
+      if (this.title) { this.title.addExtendedProperties(source._title!); }
+      else { this.title = new fhir.FhirString(source._title as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['status']) { this.status = new fhir.FhirCode<PublicationStatusCodeType>({value: source.status}); }
     else { this.status = null; }
+    if (source['_status']) {
+      if (this.status) { this.status.addExtendedProperties(source._status!); }
+      else { this.status = new fhir.FhirCode<PublicationStatusCodeType>(source._status as Partial<fhir.FhirCode>); }
+    }
     if (source['date']) { this.date = new fhir.FhirDateTime({value: source.date}); }
+    if (source['_date']) {
+      if (this.date) { this.date.addExtendedProperties(source._date!); }
+      else { this.date = new fhir.FhirDateTime(source._date as Partial<fhir.FhirDateTimeArgs>); }
+    }
     if (source['publisher']) { this.publisher = new fhir.FhirString({value: source.publisher}); }
+    if (source['_publisher']) {
+      if (this.publisher) { this.publisher.addExtendedProperties(source._publisher!); }
+      else { this.publisher = new fhir.FhirString(source._publisher as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['contact']) { this.contact = source.contact.map((x) => new fhir.ContactDetail(x)); }
     else { this.contact = []; }
     if (source['description']) { this.description = new fhir.FhirMarkdown({value: source.description}); }
+    if (source['_description']) {
+      if (this.description) { this.description.addExtendedProperties(source._description!); }
+      else { this.description = new fhir.FhirMarkdown(source._description as Partial<fhir.FhirMarkdownArgs>); }
+    }
     if (source['note']) { this.note = source.note.map((x) => new fhir.Annotation(x)); }
     else { this.note = []; }
     if (source['useContext']) { this.useContext = source.useContext.map((x) => new fhir.UsageContext(x)); }
@@ -730,8 +886,20 @@ export class RiskEvidenceSynthesis extends fhir.DomainResource {
     if (source['jurisdiction']) { this.jurisdiction = source.jurisdiction.map((x) => new fhir.CodeableConcept(x)); }
     else { this.jurisdiction = []; }
     if (source['copyright']) { this.copyright = new fhir.FhirMarkdown({value: source.copyright}); }
+    if (source['_copyright']) {
+      if (this.copyright) { this.copyright.addExtendedProperties(source._copyright!); }
+      else { this.copyright = new fhir.FhirMarkdown(source._copyright as Partial<fhir.FhirMarkdownArgs>); }
+    }
     if (source['approvalDate']) { this.approvalDate = new fhir.FhirDate({value: source.approvalDate}); }
+    if (source['_approvalDate']) {
+      if (this.approvalDate) { this.approvalDate.addExtendedProperties(source._approvalDate!); }
+      else { this.approvalDate = new fhir.FhirDate(source._approvalDate as Partial<fhir.FhirDateArgs>); }
+    }
     if (source['lastReviewDate']) { this.lastReviewDate = new fhir.FhirDate({value: source.lastReviewDate}); }
+    if (source['_lastReviewDate']) {
+      if (this.lastReviewDate) { this.lastReviewDate.addExtendedProperties(source._lastReviewDate!); }
+      else { this.lastReviewDate = new fhir.FhirDate(source._lastReviewDate as Partial<fhir.FhirDateArgs>); }
+    }
     if (source['effectivePeriod']) { this.effectivePeriod = new fhir.Period(source.effectivePeriod); }
     if (source['topic']) { this.topic = source.topic.map((x) => new fhir.CodeableConcept(x)); }
     else { this.topic = []; }

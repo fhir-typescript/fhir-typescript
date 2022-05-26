@@ -11,9 +11,17 @@ export interface BundleLinkArgs extends fhir.BackboneElementArgs {
      */
     relation: fhir.FhirString | string | undefined;
     /**
+     * Extended properties for primitive element: Bundle.link.relation
+     */
+    _relation?: fhir.FhirElementArgs;
+    /**
      * The reference details for the link.
      */
     url: fhir.FhirUri | string | undefined;
+    /**
+     * Extended properties for primitive element: Bundle.link.url
+     */
+    _url?: fhir.FhirElementArgs;
 }
 /**
  * Both Bundle.link and Bundle.entry.link are defined to support providing additional context when Bundles are used (e.g. [HATEOAS](http://en.wikipedia.org/wiki/HATEOAS)).
@@ -51,10 +59,18 @@ export interface BundleEntrySearchArgs extends fhir.BackboneElementArgs {
      */
     mode?: fhir.FhirCode<SearchEntryModeCodeType> | string | undefined;
     /**
+     * Extended properties for primitive element: Bundle.entry.search.mode
+     */
+    _mode?: fhir.FhirElementArgs;
+    /**
      * Servers are not required to return a ranking score. 1 is most relevant, and 0 is least relevant. Often, search results are sorted by score, but the client may specify a different sort order.
      * See [Patient Match](patient-operation-match.html) for the EMPI search which relates to this element.
      */
     score?: fhir.FhirDecimal | number | undefined;
+    /**
+     * Extended properties for primitive element: Bundle.entry.search.score
+     */
+    _score?: fhir.FhirElementArgs;
 }
 /**
  * Information about the search process that lead to the creation of this entry.
@@ -99,25 +115,49 @@ export interface BundleEntryRequestArgs extends fhir.BackboneElementArgs {
      */
     method: fhir.FhirCode<HttpVerbCodeType> | string | undefined;
     /**
+     * Extended properties for primitive element: Bundle.entry.request.method
+     */
+    _method?: fhir.FhirElementArgs;
+    /**
      * E.g. for a Patient Create, the method would be "POST" and the URL would be "Patient". For a Patient Update, the method would be PUT and the URL would be "Patient/[id]".
      */
     url: fhir.FhirUri | string | undefined;
+    /**
+     * Extended properties for primitive element: Bundle.entry.request.url
+     */
+    _url?: fhir.FhirElementArgs;
     /**
      * If the ETag values match, return a 304 Not Modified status. See the API documentation for ["Conditional Read"](http.html#cread).
      */
     ifNoneMatch?: fhir.FhirString | string | undefined;
     /**
+     * Extended properties for primitive element: Bundle.entry.request.ifNoneMatch
+     */
+    _ifNoneMatch?: fhir.FhirElementArgs;
+    /**
      * Only perform the operation if the last updated date matches. See the API documentation for ["Conditional Read"](http.html#cread).
      */
     ifModifiedSince?: fhir.FhirInstant | string | undefined;
+    /**
+     * Extended properties for primitive element: Bundle.entry.request.ifModifiedSince
+     */
+    _ifModifiedSince?: fhir.FhirElementArgs;
     /**
      * Only perform the operation if the Etag value matches. For more information, see the API section ["Managing Resource Contention"](http.html#concurrency).
      */
     ifMatch?: fhir.FhirString | string | undefined;
     /**
+     * Extended properties for primitive element: Bundle.entry.request.ifMatch
+     */
+    _ifMatch?: fhir.FhirElementArgs;
+    /**
      * Instruct the server not to perform the create if a specified resource already exists. For further information, see the API documentation for ["Conditional Create"](http.html#ccreate). This is just the query portion of the URL - what follows the "?" (not including the "?").
      */
     ifNoneExist?: fhir.FhirString | string | undefined;
+    /**
+     * Extended properties for primitive element: Bundle.entry.request.ifNoneExist
+     */
+    _ifNoneExist?: fhir.FhirElementArgs;
 }
 /**
  * Additional information about how this entry should be processed as part of a transaction or batch.  For history, it shows how the entry was processed to create the version contained in the entry.
@@ -180,17 +220,33 @@ export interface BundleEntryResponseArgs extends fhir.BackboneElementArgs {
      */
     status: fhir.FhirString | string | undefined;
     /**
+     * Extended properties for primitive element: Bundle.entry.response.status
+     */
+    _status?: fhir.FhirElementArgs;
+    /**
      * The location header created by processing this operation, populated if the operation returns a location.
      */
     location?: fhir.FhirUri | string | undefined;
+    /**
+     * Extended properties for primitive element: Bundle.entry.response.location
+     */
+    _location?: fhir.FhirElementArgs;
     /**
      * Etags match the Resource.meta.versionId. The ETag has to match the version id in the header if a resource is included.
      */
     etag?: fhir.FhirString | string | undefined;
     /**
+     * Extended properties for primitive element: Bundle.entry.response.etag
+     */
+    _etag?: fhir.FhirElementArgs;
+    /**
      * This has to match the same time in the meta header (meta.lastUpdated) if a resource is included.
      */
     lastModified?: fhir.FhirInstant | string | undefined;
+    /**
+     * Extended properties for primitive element: Bundle.entry.response.lastModified
+     */
+    _lastModified?: fhir.FhirElementArgs;
     /**
      * For a POST/PUT operation, this is the equivalent outcome that would be returned for prefer = operationoutcome - except that the resource is always returned whether or not the outcome is returned.
      * This outcome is not used for error responses in batch/transaction, only for hints and warnings. In a batch operation, the error will be in Bundle.entry.response, and for transaction, there will be a single OperationOutcome instead of a bundle in the case of an error.
@@ -248,6 +304,10 @@ export interface BundleEntryArgs extends fhir.BackboneElementArgs {
      * Note that the fullUrl is not the same as the canonical URL - it's an absolute url for an endpoint serving the resource (these will happen to have the same value on the canonical server for the resource with the canonical URL).
      */
     fullUrl?: fhir.FhirUri | string | undefined;
+    /**
+     * Extended properties for primitive element: Bundle.entry.fullUrl
+     */
+    _fullUrl?: fhir.FhirElementArgs;
     /**
      * The Resource for the entry. The purpose/meaning of the resource is determined by the Bundle.type.
      */
@@ -328,6 +388,10 @@ export interface BundleArgs extends fhir.ResourceArgs {
      */
     type: fhir.FhirCode<BundleTypeCodeType> | string | undefined;
     /**
+     * Extended properties for primitive element: Bundle.type
+     */
+    _type?: fhir.FhirElementArgs;
+    /**
      * For many bundles, the timestamp is equal to .meta.lastUpdated, because they are not stored (e.g. search results). When a bundle is placed in a persistent store, .meta.lastUpdated will be usually be changed by the server. When the bundle is a message, a middleware agent altering the message (even if not stored) SHOULD update .meta.lastUpdated. .timestamp is used to track the original time of the Bundle, and SHOULD be populated.
      * Usage:
      * * document : the date the document was created. Note: the composition may predate the document, or be associated with multiple documents. The date of the composition - the authoring time - may be earlier than the document assembly time
@@ -339,9 +403,17 @@ export interface BundleArgs extends fhir.ResourceArgs {
      */
     timestamp?: fhir.FhirInstant | string | undefined;
     /**
+     * Extended properties for primitive element: Bundle.timestamp
+     */
+    _timestamp?: fhir.FhirElementArgs;
+    /**
      * Only used if the bundle is a search result set. The total does not include resources such as OperationOutcome and included resources, only the total number of matching resources.
      */
     total?: fhir.FhirUnsignedInt | number | undefined;
+    /**
+     * Extended properties for primitive element: Bundle.total
+     */
+    _total?: fhir.FhirElementArgs;
     /**
      * Both Bundle.link and Bundle.entry.link are defined to support providing additional context when Bundles are used (e.g. [HATEOAS](http://en.wikipedia.org/wiki/HATEOAS)).
      * Bundle.entry.link corresponds to links found in the HTTP header if the resource in the entry was [read](http.html#read) directly.

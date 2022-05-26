@@ -8,6 +8,10 @@ export interface MedicinalProductNameNamePartArgs extends fhir.BackboneElementAr
      */
     part: fhir.FhirString | string | undefined;
     /**
+     * Extended properties for primitive element: MedicinalProduct.name.namePart.part
+     */
+    _part?: fhir.FhirElementArgs;
+    /**
      * Idenifying type for this part of the name (e.g. strength part).
      */
     type: fhir.CodingArgs | null;
@@ -92,6 +96,10 @@ export interface MedicinalProductNameArgs extends fhir.BackboneElementArgs {
      */
     productName: fhir.FhirString | string | undefined;
     /**
+     * Extended properties for primitive element: MedicinalProduct.name.productName
+     */
+    _productName?: fhir.FhirElementArgs;
+    /**
      * Coding words or phrases of the name.
      */
     namePart?: fhir.MedicinalProductNameNamePartArgs[] | undefined;
@@ -145,6 +153,10 @@ export interface MedicinalProductManufacturingBusinessOperationArgs extends fhir
      * Regulatory authorization date.
      */
     effectiveDate?: fhir.FhirDateTime | string | undefined;
+    /**
+     * Extended properties for primitive element: MedicinalProduct.manufacturingBusinessOperation.effectiveDate
+     */
+    _effectiveDate?: fhir.FhirElementArgs;
     /**
      * To indicate if this proces is commercially confidential.
      */
@@ -236,6 +248,10 @@ export interface MedicinalProductSpecialDesignationArgs extends fhir.BackboneEle
      */
     date?: fhir.FhirDateTime | string | undefined;
     /**
+     * Extended properties for primitive element: MedicinalProduct.specialDesignation.date
+     */
+    _date?: fhir.FhirElementArgs;
+    /**
      * Animal species for which this applies.
      */
     species?: fhir.CodeableConceptArgs | undefined;
@@ -325,6 +341,10 @@ export interface MedicinalProductArgs extends fhir.DomainResourceArgs {
      * Whether the Medicinal Product is subject to special measures for regulatory reasons.
      */
     specialMeasures?: fhir.FhirString[] | string[] | undefined;
+    /**
+     * Extended properties for primitive element: MedicinalProduct.specialMeasures
+     */
+    _specialMeasures?: (fhir.FhirElementArgs | null)[];
     /**
      * If authorised for use in children.
      */

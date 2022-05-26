@@ -158,6 +158,10 @@ export interface MedicationKnowledgeIngredientArgs extends fhir.BackboneElementA
    */
   isActive?: fhir.FhirBoolean|boolean|undefined;
   /**
+   * Extended properties for primitive element: MedicationKnowledge.ingredient.isActive
+   */
+  _isActive?:fhir.FhirElementArgs;
+  /**
    * Specifies how many (or how much) of the items there are in this Medication.  For example, 250 mg per tablet.  This is expressed as a ratio where the numerator is 250mg and the denominator is 1 tablet.
    */
   strength?: fhir.RatioArgs|undefined;
@@ -197,6 +201,10 @@ export class MedicationKnowledgeIngredient extends fhir.BackboneElement {
     else if (source['itemReference']) { this.item = new fhir.Reference(source.itemReference); }
     else { this.item = null; }
     if (source['isActive']) { this.isActive = new fhir.FhirBoolean({value: source.isActive}); }
+    if (source['_isActive']) {
+      if (this.isActive) { this.isActive.addExtendedProperties(source._isActive!); }
+      else { this.isActive = new fhir.FhirBoolean(source._isActive as Partial<fhir.FhirBooleanArgs>); }
+    }
     if (source['strength']) { this.strength = new fhir.Ratio(source.strength); }
   }
   /**
@@ -224,6 +232,10 @@ export interface MedicationKnowledgeCostArgs extends fhir.BackboneElementArgs {
    * The source or owner that assigns the price to the medication.
    */
   source?: fhir.FhirString|string|undefined;
+  /**
+   * Extended properties for primitive element: MedicationKnowledge.cost.source
+   */
+  _source?:fhir.FhirElementArgs;
   /**
    * The price of the medication.
    */
@@ -258,6 +270,10 @@ export class MedicationKnowledgeCost extends fhir.BackboneElement {
     if (source['type']) { this.type = new fhir.CodeableConcept(source.type); }
     else { this.type = null; }
     if (source['source']) { this.source = new fhir.FhirString({value: source.source}); }
+    if (source['_source']) {
+      if (this.source) { this.source.addExtendedProperties(source._source!); }
+      else { this.source = new fhir.FhirString(source._source as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['cost']) { this.cost = new fhir.Money(source.cost); }
     else { this.cost = null; }
   }
@@ -290,6 +306,10 @@ export interface MedicationKnowledgeMonitoringProgramArgs extends fhir.BackboneE
    * Name of the reviewing program.
    */
   name?: fhir.FhirString|string|undefined;
+  /**
+   * Extended properties for primitive element: MedicationKnowledge.monitoringProgram.name
+   */
+  _name?:fhir.FhirElementArgs;
 }
 
 /**
@@ -315,6 +335,10 @@ export class MedicationKnowledgeMonitoringProgram extends fhir.BackboneElement {
     super(source, options);
     if (source['type']) { this.type = new fhir.CodeableConcept(source.type); }
     if (source['name']) { this.name = new fhir.FhirString({value: source.name}); }
+    if (source['_name']) {
+      if (this.name) { this.name.addExtendedProperties(source._name!); }
+      else { this.name = new fhir.FhirString(source._name as Partial<fhir.FhirStringArgs>); }
+    }
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -406,6 +430,10 @@ export interface MedicationKnowledgeAdministrationGuidelinesPatientCharacteristi
    * The specific characteristic (e.g. height, weight, gender, etc.).
    */
   value?: fhir.FhirString[]|string[]|undefined;
+  /**
+   * Extended properties for primitive element: MedicationKnowledge.administrationGuidelines.patientCharacteristics.value
+   */
+  _value?:(fhir.FhirElementArgs|null)[];
 }
 
 /**
@@ -439,6 +467,12 @@ export class MedicationKnowledgeAdministrationGuidelinesPatientCharacteristics e
     else { this.characteristic = null; }
     if (source['value']) { this.value = source.value.map((x) => new fhir.FhirString({value: x})); }
     else { this.value = []; }
+    if (source['_value']) {
+      source._value.forEach((x,i) => {
+        if (this.value.length >= i) { if (x) { this.value[i].addExtendedProperties(x); } }
+        else { if (x) { this.value.push(new fhir.FhirString(x as Partial<fhir.FhirStringArgs>)); } }
+      });
+    }
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -709,6 +743,10 @@ export interface MedicationKnowledgeRegulatorySubstitutionArgs extends fhir.Back
    * Specifies if regulation allows for changes in the medication when dispensing.
    */
   allowed: fhir.FhirBoolean|boolean|undefined;
+  /**
+   * Extended properties for primitive element: MedicationKnowledge.regulatory.substitution.allowed
+   */
+  _allowed?:fhir.FhirElementArgs;
 }
 
 /**
@@ -736,6 +774,10 @@ export class MedicationKnowledgeRegulatorySubstitution extends fhir.BackboneElem
     else { this.type = null; }
     if (source['allowed']) { this.allowed = new fhir.FhirBoolean({value: source.allowed}); }
     else { this.allowed = null; }
+    if (source['_allowed']) {
+      if (this.allowed) { this.allowed.addExtendedProperties(source._allowed!); }
+      else { this.allowed = new fhir.FhirBoolean(source._allowed as Partial<fhir.FhirBooleanArgs>); }
+    }
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -998,6 +1040,10 @@ export interface MedicationKnowledgeArgs extends fhir.DomainResourceArgs {
    */
   status?: fhir.FhirCode<MedicationknowledgeStatusCodeType>|string|undefined;
   /**
+   * Extended properties for primitive element: MedicationKnowledge.status
+   */
+  _status?:fhir.FhirElementArgs;
+  /**
    * Describes the details of the manufacturer of the medication product.  This is not intended to represent the distributor of a medication product.
    */
   manufacturer?: fhir.ReferenceArgs|undefined;
@@ -1013,6 +1059,10 @@ export interface MedicationKnowledgeArgs extends fhir.DomainResourceArgs {
    * Additional names for a medication, for example, the name(s) given to a medication in different countries.  For example, acetaminophen and paracetamol or salbutamol and albuterol.
    */
   synonym?: fhir.FhirString[]|string[]|undefined;
+  /**
+   * Extended properties for primitive element: MedicationKnowledge.synonym
+   */
+  _synonym?:(fhir.FhirElementArgs|null)[];
   /**
    * Associated or related knowledge about a medication.
    */
@@ -1037,6 +1087,10 @@ export interface MedicationKnowledgeArgs extends fhir.DomainResourceArgs {
    * The instructions for preparing the medication.
    */
   preparationInstruction?: fhir.FhirMarkdown|string|undefined;
+  /**
+   * Extended properties for primitive element: MedicationKnowledge.preparationInstruction
+   */
+  _preparationInstruction?:fhir.FhirElementArgs;
   /**
    * The intended or approved route of administration.
    */
@@ -1187,11 +1241,21 @@ export class MedicationKnowledge extends fhir.DomainResource {
     this.resourceType = 'MedicationKnowledge';
     if (source['code']) { this.code = new fhir.CodeableConcept(source.code); }
     if (source['status']) { this.status = new fhir.FhirCode<MedicationknowledgeStatusCodeType>({value: source.status}); }
+    if (source['_status']) {
+      if (this.status) { this.status.addExtendedProperties(source._status!); }
+      else { this.status = new fhir.FhirCode<MedicationknowledgeStatusCodeType>(source._status as Partial<fhir.FhirCode>); }
+    }
     if (source['manufacturer']) { this.manufacturer = new fhir.Reference(source.manufacturer); }
     if (source['doseForm']) { this.doseForm = new fhir.CodeableConcept(source.doseForm); }
     if (source['amount']) { this.amount = new fhir.Quantity(source.amount); }
     if (source['synonym']) { this.synonym = source.synonym.map((x) => new fhir.FhirString({value: x})); }
     else { this.synonym = []; }
+    if (source['_synonym']) {
+      source._synonym.forEach((x,i) => {
+        if (this.synonym.length >= i) { if (x) { this.synonym[i].addExtendedProperties(x); } }
+        else { if (x) { this.synonym.push(new fhir.FhirString(x as Partial<fhir.FhirStringArgs>)); } }
+      });
+    }
     if (source['relatedMedicationKnowledge']) { this.relatedMedicationKnowledge = source.relatedMedicationKnowledge.map((x) => new fhir.MedicationKnowledgeRelatedMedicationKnowledge(x)); }
     else { this.relatedMedicationKnowledge = []; }
     if (source['associatedMedication']) { this.associatedMedication = source.associatedMedication.map((x) => new fhir.Reference(x)); }
@@ -1203,6 +1267,10 @@ export class MedicationKnowledge extends fhir.DomainResource {
     if (source['ingredient']) { this.ingredient = source.ingredient.map((x) => new fhir.MedicationKnowledgeIngredient(x)); }
     else { this.ingredient = []; }
     if (source['preparationInstruction']) { this.preparationInstruction = new fhir.FhirMarkdown({value: source.preparationInstruction}); }
+    if (source['_preparationInstruction']) {
+      if (this.preparationInstruction) { this.preparationInstruction.addExtendedProperties(source._preparationInstruction!); }
+      else { this.preparationInstruction = new fhir.FhirMarkdown(source._preparationInstruction as Partial<fhir.FhirMarkdownArgs>); }
+    }
     if (source['intendedRoute']) { this.intendedRoute = source.intendedRoute.map((x) => new fhir.CodeableConcept(x)); }
     else { this.intendedRoute = []; }
     if (source['cost']) { this.cost = source.cost.map((x) => new fhir.MedicationKnowledgeCost(x)); }

@@ -46,6 +46,10 @@ export interface GroupCharacteristicArgs extends fhir.BackboneElementArgs {
    */
   exclude: fhir.FhirBoolean|boolean|undefined;
   /**
+   * Extended properties for primitive element: Group.characteristic.exclude
+   */
+  _exclude?:fhir.FhirElementArgs;
+  /**
    * The period over which the characteristic is tested; e.g. the patient had an operation during the month of June.
    */
   period?: fhir.PeriodArgs|undefined;
@@ -95,6 +99,10 @@ export class GroupCharacteristic extends fhir.BackboneElement {
     else { this.value = null; }
     if (source['exclude']) { this.exclude = new fhir.FhirBoolean({value: source.exclude}); }
     else { this.exclude = null; }
+    if (source['_exclude']) {
+      if (this.exclude) { this.exclude.addExtendedProperties(source._exclude!); }
+      else { this.exclude = new fhir.FhirBoolean(source._exclude as Partial<fhir.FhirBooleanArgs>); }
+    }
     if (source['period']) { this.period = new fhir.Period(source.period); }
   }
   /**
@@ -133,6 +141,10 @@ export interface GroupMemberArgs extends fhir.BackboneElementArgs {
    * A flag to indicate that the member is no longer in the group, but previously may have been a member.
    */
   inactive?: fhir.FhirBoolean|boolean|undefined;
+  /**
+   * Extended properties for primitive element: Group.member.inactive
+   */
+  _inactive?:fhir.FhirElementArgs;
 }
 
 /**
@@ -164,6 +176,10 @@ export class GroupMember extends fhir.BackboneElement {
     else { this.entity = null; }
     if (source['period']) { this.period = new fhir.Period(source.period); }
     if (source['inactive']) { this.inactive = new fhir.FhirBoolean({value: source.inactive}); }
+    if (source['_inactive']) {
+      if (this.inactive) { this.inactive.addExtendedProperties(source._inactive!); }
+      else { this.inactive = new fhir.FhirBoolean(source._inactive as Partial<fhir.FhirBooleanArgs>); }
+    }
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -196,13 +212,25 @@ export interface GroupArgs extends fhir.DomainResourceArgs {
    */
   active?: fhir.FhirBoolean|boolean|undefined;
   /**
+   * Extended properties for primitive element: Group.active
+   */
+  _active?:fhir.FhirElementArgs;
+  /**
    * Group members SHALL be of the appropriate resource type (Patient for person or animal; or Practitioner, Device, Medication or Substance for the other types.).
    */
   type: fhir.FhirCode<GroupTypeCodeType>|string|undefined;
   /**
+   * Extended properties for primitive element: Group.type
+   */
+  _type?:fhir.FhirElementArgs;
+  /**
    * If true, indicates that the resource refers to a specific group of real individuals.  If false, the group defines a set of intended individuals.
    */
   actual: fhir.FhirBoolean|boolean|undefined;
+  /**
+   * Extended properties for primitive element: Group.actual
+   */
+  _actual?:fhir.FhirElementArgs;
   /**
    * This would generally be omitted for Person resources.
    */
@@ -212,9 +240,17 @@ export interface GroupArgs extends fhir.DomainResourceArgs {
    */
   name?: fhir.FhirString|string|undefined;
   /**
+   * Extended properties for primitive element: Group.name
+   */
+  _name?:fhir.FhirElementArgs;
+  /**
    * Note that the quantity may be less than the number of members if some of the members are not active.
    */
   quantity?: fhir.FhirUnsignedInt|number|undefined;
+  /**
+   * Extended properties for primitive element: Group.quantity
+   */
+  _quantity?:fhir.FhirElementArgs;
   /**
    * This does not strictly align with ownership of a herd or flock, but may suffice to represent that relationship in simple cases. More complex cases will require an extension.
    */
@@ -290,13 +326,33 @@ export class Group extends fhir.DomainResource {
     if (source['identifier']) { this.identifier = source.identifier.map((x) => new fhir.Identifier(x)); }
     else { this.identifier = []; }
     if (source['active']) { this.active = new fhir.FhirBoolean({value: source.active}); }
+    if (source['_active']) {
+      if (this.active) { this.active.addExtendedProperties(source._active!); }
+      else { this.active = new fhir.FhirBoolean(source._active as Partial<fhir.FhirBooleanArgs>); }
+    }
     if (source['type']) { this.type = new fhir.FhirCode<GroupTypeCodeType>({value: source.type}); }
     else { this.type = null; }
+    if (source['_type']) {
+      if (this.type) { this.type.addExtendedProperties(source._type!); }
+      else { this.type = new fhir.FhirCode<GroupTypeCodeType>(source._type as Partial<fhir.FhirCode>); }
+    }
     if (source['actual']) { this.actual = new fhir.FhirBoolean({value: source.actual}); }
     else { this.actual = null; }
+    if (source['_actual']) {
+      if (this.actual) { this.actual.addExtendedProperties(source._actual!); }
+      else { this.actual = new fhir.FhirBoolean(source._actual as Partial<fhir.FhirBooleanArgs>); }
+    }
     if (source['code']) { this.code = new fhir.CodeableConcept(source.code); }
     if (source['name']) { this.name = new fhir.FhirString({value: source.name}); }
+    if (source['_name']) {
+      if (this.name) { this.name.addExtendedProperties(source._name!); }
+      else { this.name = new fhir.FhirString(source._name as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['quantity']) { this.quantity = new fhir.FhirUnsignedInt({value: source.quantity}); }
+    if (source['_quantity']) {
+      if (this.quantity) { this.quantity.addExtendedProperties(source._quantity!); }
+      else { this.quantity = new fhir.FhirUnsignedInt(source._quantity as Partial<fhir.FhirUnsignedIntArgs>); }
+    }
     if (source['managingEntity']) { this.managingEntity = new fhir.Reference(source.managingEntity); }
     if (source['characteristic']) { this.characteristic = source.characteristic.map((x) => new fhir.GroupCharacteristic(x)); }
     else { this.characteristic = []; }

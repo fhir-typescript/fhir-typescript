@@ -25,6 +25,10 @@ export interface BasicArgs extends fhir.DomainResourceArgs {
      */
     created?: fhir.FhirDate | string | undefined;
     /**
+     * Extended properties for primitive element: Basic.created
+     */
+    _created?: fhir.FhirElementArgs;
+    /**
      * Indicates who was responsible for creating the resource instance.
      */
     author?: fhir.ReferenceArgs | undefined;

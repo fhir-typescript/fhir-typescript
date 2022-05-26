@@ -14,6 +14,10 @@ export interface DocumentReferenceRelatesToArgs extends fhir.BackboneElementArgs
      */
     code: fhir.FhirCode<DocumentRelationshipTypeCodeType> | string | undefined;
     /**
+     * Extended properties for primitive element: DocumentReference.relatesTo.code
+     */
+    _code?: fhir.FhirElementArgs;
+    /**
      * The target document of this relationship.
      */
     target: fhir.ReferenceArgs | null;
@@ -194,9 +198,17 @@ export interface DocumentReferenceArgs extends fhir.DomainResourceArgs {
      */
     status: fhir.FhirCode<DocumentReferenceStatusCodeType> | string | undefined;
     /**
+     * Extended properties for primitive element: DocumentReference.status
+     */
+    _status?: fhir.FhirElementArgs;
+    /**
      * The document that is pointed to might be in various lifecycle states.
      */
     docStatus?: fhir.FhirCode<CompositionStatusCodeType> | string | undefined;
+    /**
+     * Extended properties for primitive element: DocumentReference.docStatus
+     */
+    _docStatus?: fhir.FhirElementArgs;
     /**
      * Key metadata element describing the document that describes he exact type of document. Helps humans to assess whether the document is of interest when viewing a list of documents.
      */
@@ -213,6 +225,10 @@ export interface DocumentReferenceArgs extends fhir.DomainResourceArgs {
      * Referencing/indexing time is used for tracking, organizing versions and searching.
      */
     date?: fhir.FhirInstant | string | undefined;
+    /**
+     * Extended properties for primitive element: DocumentReference.date
+     */
+    _date?: fhir.FhirElementArgs;
     /**
      * Not necessarily who did the actual data entry (i.e. typist) or who was the source (informant).
      */
@@ -233,6 +249,10 @@ export interface DocumentReferenceArgs extends fhir.DomainResourceArgs {
      * What the document is about,  a terse summary of the document.
      */
     description?: fhir.FhirString | string | undefined;
+    /**
+     * Extended properties for primitive element: DocumentReference.description
+     */
+    _description?: fhir.FhirElementArgs;
     /**
      * The confidentiality codes can carry multiple vocabulary items. HL7 has developed an understanding of security and privacy tags that might be desirable in a Document Sharing environment, called HL7 Healthcare Privacy and Security Classification System (HCS). The following specification is recommended but not mandated, as the vocabulary bindings are an administrative domain responsibility. The use of this method is up to the policy domain such as the XDS Affinity Domain or other Trust Domain where all parties including sender and recipients are trusted to appropriately tag and enforce.
      * In the HL7 Healthcare Privacy and Security Classification (HCS) there are code systems specific to Confidentiality, Sensitivity, Integrity, and Handling Caveats. Some values would come from a local vocabulary as they are related to workflow roles and special projects.

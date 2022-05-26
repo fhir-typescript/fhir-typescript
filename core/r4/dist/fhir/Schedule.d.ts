@@ -17,6 +17,10 @@ export interface ScheduleArgs extends fhir.DomainResourceArgs {
      */
     active?: fhir.FhirBoolean | boolean | undefined;
     /**
+     * Extended properties for primitive element: Schedule.active
+     */
+    _active?: fhir.FhirElementArgs;
+    /**
      * A broad categorization of the service that is to be performed during this appointment.
      */
     serviceCategory?: fhir.CodeableConceptArgs[] | undefined;
@@ -40,6 +44,10 @@ export interface ScheduleArgs extends fhir.DomainResourceArgs {
      * Comments on the availability to describe any extended information. Such as custom constraints on the slots that may be associated.
      */
     comment?: fhir.FhirString | string | undefined;
+    /**
+     * Extended properties for primitive element: Schedule.comment
+     */
+    _comment?: fhir.FhirElementArgs;
 }
 /**
  * A container for slots of time that may be available for booking appointments.

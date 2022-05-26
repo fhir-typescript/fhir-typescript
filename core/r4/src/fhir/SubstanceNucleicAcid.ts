@@ -14,6 +14,10 @@ export interface SubstanceNucleicAcidSubunitLinkageArgs extends fhir.BackboneEle
    */
   connectivity?: fhir.FhirString|string|undefined;
   /**
+   * Extended properties for primitive element: SubstanceNucleicAcid.subunit.linkage.connectivity
+   */
+  _connectivity?:fhir.FhirElementArgs;
+  /**
    * Each linkage will be registered as a fragment and have an ID.
    */
   identifier?: fhir.IdentifierArgs|undefined;
@@ -22,9 +26,17 @@ export interface SubstanceNucleicAcidSubunitLinkageArgs extends fhir.BackboneEle
    */
   name?: fhir.FhirString|string|undefined;
   /**
+   * Extended properties for primitive element: SubstanceNucleicAcid.subunit.linkage.name
+   */
+  _name?:fhir.FhirElementArgs;
+  /**
    * Residues shall be captured as described in 5.3.6.8.3.
    */
   residueSite?: fhir.FhirString|string|undefined;
+  /**
+   * Extended properties for primitive element: SubstanceNucleicAcid.subunit.linkage.residueSite
+   */
+  _residueSite?:fhir.FhirElementArgs;
 }
 
 /**
@@ -57,9 +69,21 @@ export class SubstanceNucleicAcidSubunitLinkage extends fhir.BackboneElement {
   constructor(source:Partial<SubstanceNucleicAcidSubunitLinkageArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
     if (source['connectivity']) { this.connectivity = new fhir.FhirString({value: source.connectivity}); }
+    if (source['_connectivity']) {
+      if (this.connectivity) { this.connectivity.addExtendedProperties(source._connectivity!); }
+      else { this.connectivity = new fhir.FhirString(source._connectivity as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['identifier']) { this.identifier = new fhir.Identifier(source.identifier); }
     if (source['name']) { this.name = new fhir.FhirString({value: source.name}); }
+    if (source['_name']) {
+      if (this.name) { this.name.addExtendedProperties(source._name!); }
+      else { this.name = new fhir.FhirString(source._name as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['residueSite']) { this.residueSite = new fhir.FhirString({value: source.residueSite}); }
+    if (source['_residueSite']) {
+      if (this.residueSite) { this.residueSite.addExtendedProperties(source._residueSite!); }
+      else { this.residueSite = new fhir.FhirString(source._residueSite as Partial<fhir.FhirStringArgs>); }
+    }
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -86,9 +110,17 @@ export interface SubstanceNucleicAcidSubunitSugarArgs extends fhir.BackboneEleme
    */
   name?: fhir.FhirString|string|undefined;
   /**
+   * Extended properties for primitive element: SubstanceNucleicAcid.subunit.sugar.name
+   */
+  _name?:fhir.FhirElementArgs;
+  /**
    * The residues that contain a given sugar will be captured. The order of given residues will be captured in the 5‘-3‘direction consistent with the base sequences listed above.
    */
   residueSite?: fhir.FhirString|string|undefined;
+  /**
+   * Extended properties for primitive element: SubstanceNucleicAcid.subunit.sugar.residueSite
+   */
+  _residueSite?:fhir.FhirElementArgs;
 }
 
 /**
@@ -118,7 +150,15 @@ export class SubstanceNucleicAcidSubunitSugar extends fhir.BackboneElement {
     super(source, options);
     if (source['identifier']) { this.identifier = new fhir.Identifier(source.identifier); }
     if (source['name']) { this.name = new fhir.FhirString({value: source.name}); }
+    if (source['_name']) {
+      if (this.name) { this.name.addExtendedProperties(source._name!); }
+      else { this.name = new fhir.FhirString(source._name as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['residueSite']) { this.residueSite = new fhir.FhirString({value: source.residueSite}); }
+    if (source['_residueSite']) {
+      if (this.residueSite) { this.residueSite.addExtendedProperties(source._residueSite!); }
+      else { this.residueSite = new fhir.FhirString(source._residueSite as Partial<fhir.FhirStringArgs>); }
+    }
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -140,13 +180,25 @@ export interface SubstanceNucleicAcidSubunitArgs extends fhir.BackboneElementArg
    */
   subunit?: fhir.FhirInteger|number|undefined;
   /**
+   * Extended properties for primitive element: SubstanceNucleicAcid.subunit.subunit
+   */
+  _subunit?:fhir.FhirElementArgs;
+  /**
    * Actual nucleotide sequence notation from 5' to 3' end using standard single letter codes. In addition to the base sequence, sugar and type of phosphate or non-phosphate linkage should also be captured.
    */
   sequence?: fhir.FhirString|string|undefined;
   /**
+   * Extended properties for primitive element: SubstanceNucleicAcid.subunit.sequence
+   */
+  _sequence?:fhir.FhirElementArgs;
+  /**
    * The length of the sequence shall be captured.
    */
   length?: fhir.FhirInteger|number|undefined;
+  /**
+   * Extended properties for primitive element: SubstanceNucleicAcid.subunit.length
+   */
+  _length?:fhir.FhirElementArgs;
   /**
    * (TBC).
    */
@@ -215,8 +267,20 @@ export class SubstanceNucleicAcidSubunit extends fhir.BackboneElement {
   constructor(source:Partial<SubstanceNucleicAcidSubunitArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
     if (source['subunit']) { this.subunit = new fhir.FhirInteger({value: source.subunit}); }
+    if (source['_subunit']) {
+      if (this.subunit) { this.subunit.addExtendedProperties(source._subunit!); }
+      else { this.subunit = new fhir.FhirInteger(source._subunit as Partial<fhir.FhirIntegerArgs>); }
+    }
     if (source['sequence']) { this.sequence = new fhir.FhirString({value: source.sequence}); }
+    if (source['_sequence']) {
+      if (this.sequence) { this.sequence.addExtendedProperties(source._sequence!); }
+      else { this.sequence = new fhir.FhirString(source._sequence as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['length']) { this.length = new fhir.FhirInteger({value: source.length}); }
+    if (source['_length']) {
+      if (this.length) { this.length.addExtendedProperties(source._length!); }
+      else { this.length = new fhir.FhirInteger(source._length as Partial<fhir.FhirIntegerArgs>); }
+    }
     if (source['sequenceAttachment']) { this.sequenceAttachment = new fhir.Attachment(source.sequenceAttachment); }
     if (source['fivePrime']) { this.fivePrime = new fhir.CodeableConcept(source.fivePrime); }
     if (source['threePrime']) { this.threePrime = new fhir.CodeableConcept(source.threePrime); }
@@ -258,9 +322,17 @@ export interface SubstanceNucleicAcidArgs extends fhir.DomainResourceArgs {
    */
   numberOfSubunits?: fhir.FhirInteger|number|undefined;
   /**
+   * Extended properties for primitive element: SubstanceNucleicAcid.numberOfSubunits
+   */
+  _numberOfSubunits?:fhir.FhirElementArgs;
+  /**
    * The area of hybridisation shall be described if applicable for double stranded RNA or DNA. The number associated with the subunit followed by the number associated to the residue shall be specified in increasing order. The underscore “” shall be used as separator as follows: “Subunitnumber Residue”.
    */
   areaOfHybridisation?: fhir.FhirString|string|undefined;
+  /**
+   * Extended properties for primitive element: SubstanceNucleicAcid.areaOfHybridisation
+   */
+  _areaOfHybridisation?:fhir.FhirElementArgs;
   /**
    * (TBC).
    */
@@ -311,7 +383,15 @@ export class SubstanceNucleicAcid extends fhir.DomainResource {
     this.resourceType = 'SubstanceNucleicAcid';
     if (source['sequenceType']) { this.sequenceType = new fhir.CodeableConcept(source.sequenceType); }
     if (source['numberOfSubunits']) { this.numberOfSubunits = new fhir.FhirInteger({value: source.numberOfSubunits}); }
+    if (source['_numberOfSubunits']) {
+      if (this.numberOfSubunits) { this.numberOfSubunits.addExtendedProperties(source._numberOfSubunits!); }
+      else { this.numberOfSubunits = new fhir.FhirInteger(source._numberOfSubunits as Partial<fhir.FhirIntegerArgs>); }
+    }
     if (source['areaOfHybridisation']) { this.areaOfHybridisation = new fhir.FhirString({value: source.areaOfHybridisation}); }
+    if (source['_areaOfHybridisation']) {
+      if (this.areaOfHybridisation) { this.areaOfHybridisation.addExtendedProperties(source._areaOfHybridisation!); }
+      else { this.areaOfHybridisation = new fhir.FhirString(source._areaOfHybridisation as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['oligoNucleotideType']) { this.oligoNucleotideType = new fhir.CodeableConcept(source.oligoNucleotideType); }
     if (source['subunit']) { this.subunit = source.subunit.map((x) => new fhir.SubstanceNucleicAcidSubunit(x)); }
     else { this.subunit = []; }

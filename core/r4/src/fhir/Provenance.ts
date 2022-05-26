@@ -113,6 +113,10 @@ export interface ProvenanceEntityArgs extends fhir.BackboneElementArgs {
    */
   role: fhir.FhirCode<ProvenanceEntityRoleCodeType>|string|undefined;
   /**
+   * Extended properties for primitive element: Provenance.entity.role
+   */
+  _role?:fhir.FhirElementArgs;
+  /**
    * whatIdentity should be used for entities that are not a Resource type.
    */
   what: fhir.ReferenceArgs|null;
@@ -149,6 +153,10 @@ export class ProvenanceEntity extends fhir.BackboneElement {
     super(source, options);
     if (source['role']) { this.role = new fhir.FhirCode<ProvenanceEntityRoleCodeType>({value: source.role}); }
     else { this.role = null; }
+    if (source['_role']) {
+      if (this.role) { this.role.addExtendedProperties(source._role!); }
+      else { this.role = new fhir.FhirCode<ProvenanceEntityRoleCodeType>(source._role as Partial<fhir.FhirCode>); }
+    }
     if (source['what']) { this.what = new fhir.Reference(source.what); }
     else { this.what = null; }
     if (source['agent']) { this.agent = source.agent.map((x) => new fhir.ProvenanceAgent(x)); }
@@ -209,9 +217,17 @@ export interface ProvenanceArgs extends fhir.DomainResourceArgs {
    */
   recorded: fhir.FhirInstant|string|undefined;
   /**
+   * Extended properties for primitive element: Provenance.recorded
+   */
+  _recorded?:fhir.FhirElementArgs;
+  /**
    * For example: Where an OAuth token authorizes, the unique identifier from the OAuth token is placed into the policy element Where a policy engine (e.g. XACML) holds policy logic, the unique policy identifier is placed into the policy element.
    */
   policy?: fhir.FhirUri[]|string[]|undefined;
+  /**
+   * Extended properties for primitive element: Provenance.policy
+   */
+  _policy?:(fhir.FhirElementArgs|null)[];
   /**
    * Where the activity occurred, if relevant.
    */
@@ -307,8 +323,18 @@ export class Provenance extends fhir.DomainResource {
     else if (source['occurredDateTime']) { this.occurred = new fhir.FhirDateTime({value: source.occurredDateTime}); }
     if (source['recorded']) { this.recorded = new fhir.FhirInstant({value: source.recorded}); }
     else { this.recorded = null; }
+    if (source['_recorded']) {
+      if (this.recorded) { this.recorded.addExtendedProperties(source._recorded!); }
+      else { this.recorded = new fhir.FhirInstant(source._recorded as Partial<fhir.FhirInstantArgs>); }
+    }
     if (source['policy']) { this.policy = source.policy.map((x) => new fhir.FhirUri({value: x})); }
     else { this.policy = []; }
+    if (source['_policy']) {
+      source._policy.forEach((x,i) => {
+        if (this.policy.length >= i) { if (x) { this.policy[i].addExtendedProperties(x); } }
+        else { if (x) { this.policy.push(new fhir.FhirUri(x as Partial<fhir.FhirUriArgs>)); } }
+      });
+    }
     if (source['location']) { this.location = new fhir.Reference(source.location); }
     if (source['reason']) { this.reason = source.reason.map((x) => new fhir.CodeableConcept(x)); }
     else { this.reason = []; }

@@ -6,9 +6,9 @@
 import * as fhir from '../fhir.js';
 
 // @ts-ignore
-import { ConditionCodeCodings, ConditionCodeCodingType,} from '../fhirValueSets/ConditionCodeCodings.js';
+import { ConditionCodings, ConditionCodingType,} from '../fhirValueSets/ConditionCodings.js';
 // @ts-ignore
-import { ConditionCodeCodes,  ConditionCodeCodeType } from '../fhirValueSets/ConditionCodeCodes.js';
+import { ConditionCodes,  ConditionCodeType } from '../fhirValueSets/ConditionCodes.js';
 // @ts-ignore
 import { ConditionOutcomeCodings, ConditionOutcomeCodingType,} from '../fhirValueSets/ConditionOutcomeCodings.js';
 // @ts-ignore
@@ -49,6 +49,10 @@ export interface FamilyMemberHistoryConditionArgs extends fhir.BackboneElementAr
    * This condition contributed to the cause of death of the related person. If contributedToDeath is not populated, then it is unknown.
    */
   contributedToDeath?: fhir.FhirBoolean|boolean|undefined;
+  /**
+   * Extended properties for primitive element: FamilyMemberHistory.condition.contributedToDeath
+   */
+  _contributedToDeath?:fhir.FhirElementArgs;
   /**
    * Either the age of onset, range of approximate age or descriptive string can be recorded.  For conditions with multiple occurrences, this describes the first known occurrence.
    */
@@ -116,6 +120,10 @@ export class FamilyMemberHistoryCondition extends fhir.BackboneElement {
     else { this.code = null; }
     if (source['outcome']) { this.outcome = new fhir.CodeableConcept(source.outcome); }
     if (source['contributedToDeath']) { this.contributedToDeath = new fhir.FhirBoolean({value: source.contributedToDeath}); }
+    if (source['_contributedToDeath']) {
+      if (this.contributedToDeath) { this.contributedToDeath.addExtendedProperties(source._contributedToDeath!); }
+      else { this.contributedToDeath = new fhir.FhirBoolean(source._contributedToDeath as Partial<fhir.FhirBooleanArgs>); }
+    }
     if (source['onset']) { this.onset = source.onset; }
     else if (source['onsetAge']) { this.onset = new fhir.Age(source.onsetAge); }
     else if (source['onsetRange']) { this.onset = new fhir.Range(source.onsetRange); }
@@ -156,13 +164,25 @@ export interface FamilyMemberHistoryArgs extends fhir.DomainResourceArgs {
    */
   instantiatesCanonical?: fhir.FhirCanonical[]|string[]|undefined;
   /**
+   * Extended properties for primitive element: FamilyMemberHistory.instantiatesCanonical
+   */
+  _instantiatesCanonical?:(fhir.FhirElementArgs|null)[];
+  /**
    * This might be an HTML page, PDF, etc. or could just be a non-resolvable URI identifier.
    */
   instantiatesUri?: fhir.FhirUri[]|string[]|undefined;
   /**
+   * Extended properties for primitive element: FamilyMemberHistory.instantiatesUri
+   */
+  _instantiatesUri?:(fhir.FhirElementArgs|null)[];
+  /**
    * This element is labeled as a modifier because the status contains codes that mark the resource as not currently valid.
    */
   status: fhir.FhirCode<HistoryStatusCodeType>|string|undefined;
+  /**
+   * Extended properties for primitive element: FamilyMemberHistory.status
+   */
+  _status?:fhir.FhirElementArgs;
   /**
    * Describes why the family member's history is not available.
    */
@@ -176,9 +196,17 @@ export interface FamilyMemberHistoryArgs extends fhir.DomainResourceArgs {
    */
   date?: fhir.FhirDateTime|string|undefined;
   /**
+   * Extended properties for primitive element: FamilyMemberHistory.date
+   */
+  _date?:fhir.FhirElementArgs;
+  /**
    * This will either be a name or a description; e.g. "Aunt Susan", "my cousin with the red hair".
    */
   name?: fhir.FhirString|string|undefined;
+  /**
+   * Extended properties for primitive element: FamilyMemberHistory.name
+   */
+  _name?:fhir.FhirElementArgs;
   /**
    * The type of relationship this person has to the patient (father, mother, brother etc.).
    */
@@ -223,6 +251,10 @@ export interface FamilyMemberHistoryArgs extends fhir.DomainResourceArgs {
    * This element is labeled as a modifier because the fact that age is estimated can/should change the results of any algorithm that calculates based on the specified age.
    */
   estimatedAge?: fhir.FhirBoolean|boolean|undefined;
+  /**
+   * Extended properties for primitive element: FamilyMemberHistory.estimatedAge
+   */
+  _estimatedAge?:fhir.FhirElementArgs;
   /**
    * Deceased flag or the actual or approximate age of the relative at the time of death for the family member history record.
    */
@@ -371,15 +403,39 @@ export class FamilyMemberHistory extends fhir.DomainResource {
     else { this.identifier = []; }
     if (source['instantiatesCanonical']) { this.instantiatesCanonical = source.instantiatesCanonical.map((x) => new fhir.FhirCanonical({value: x})); }
     else { this.instantiatesCanonical = []; }
+    if (source['_instantiatesCanonical']) {
+      source._instantiatesCanonical.forEach((x,i) => {
+        if (this.instantiatesCanonical.length >= i) { if (x) { this.instantiatesCanonical[i].addExtendedProperties(x); } }
+        else { if (x) { this.instantiatesCanonical.push(new fhir.FhirCanonical(x as Partial<fhir.FhirCanonicalArgs>)); } }
+      });
+    }
     if (source['instantiatesUri']) { this.instantiatesUri = source.instantiatesUri.map((x) => new fhir.FhirUri({value: x})); }
     else { this.instantiatesUri = []; }
+    if (source['_instantiatesUri']) {
+      source._instantiatesUri.forEach((x,i) => {
+        if (this.instantiatesUri.length >= i) { if (x) { this.instantiatesUri[i].addExtendedProperties(x); } }
+        else { if (x) { this.instantiatesUri.push(new fhir.FhirUri(x as Partial<fhir.FhirUriArgs>)); } }
+      });
+    }
     if (source['status']) { this.status = new fhir.FhirCode<HistoryStatusCodeType>({value: source.status}); }
     else { this.status = null; }
+    if (source['_status']) {
+      if (this.status) { this.status.addExtendedProperties(source._status!); }
+      else { this.status = new fhir.FhirCode<HistoryStatusCodeType>(source._status as Partial<fhir.FhirCode>); }
+    }
     if (source['dataAbsentReason']) { this.dataAbsentReason = new fhir.CodeableConcept(source.dataAbsentReason); }
     if (source['patient']) { this.patient = new fhir.Reference(source.patient); }
     else { this.patient = null; }
     if (source['date']) { this.date = new fhir.FhirDateTime({value: source.date}); }
+    if (source['_date']) {
+      if (this.date) { this.date.addExtendedProperties(source._date!); }
+      else { this.date = new fhir.FhirDateTime(source._date as Partial<fhir.FhirDateTimeArgs>); }
+    }
     if (source['name']) { this.name = new fhir.FhirString({value: source.name}); }
+    if (source['_name']) {
+      if (this.name) { this.name.addExtendedProperties(source._name!); }
+      else { this.name = new fhir.FhirString(source._name as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['relationship']) { this.relationship = new fhir.CodeableConcept(source.relationship); }
     else { this.relationship = null; }
     if (source['sex']) { this.sex = new fhir.CodeableConcept(source.sex); }
@@ -392,6 +448,10 @@ export class FamilyMemberHistory extends fhir.DomainResource {
     else if (source['ageRange']) { this.age = new fhir.Range(source.ageRange); }
     else if (source['ageString']) { this.age = new fhir.FhirString({value: source.ageString}); }
     if (source['estimatedAge']) { this.estimatedAge = new fhir.FhirBoolean({value: source.estimatedAge}); }
+    if (source['_estimatedAge']) {
+      if (this.estimatedAge) { this.estimatedAge.addExtendedProperties(source._estimatedAge!); }
+      else { this.estimatedAge = new fhir.FhirBoolean(source._estimatedAge as Partial<fhir.FhirBooleanArgs>); }
+    }
     if (source['deceased']) { this.deceased = source.deceased; }
     else if (source['deceasedBoolean']) { this.deceased = new fhir.FhirBoolean({value: source.deceasedBoolean}); }
     else if (source['deceasedAge']) { this.deceased = new fhir.Age(source.deceasedAge); }

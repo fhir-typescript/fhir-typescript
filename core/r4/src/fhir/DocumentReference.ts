@@ -14,9 +14,9 @@ import { FormatCodings, FormatCodingType,} from '../fhirValueSets/FormatCodings.
 // @ts-ignore
 import { FormatCodes,  FormatCodeType } from '../fhirValueSets/FormatCodes.js';
 // @ts-ignore
-import { V3ActCodeCodings, V3ActCodeCodingType,} from '../fhirValueSets/V3ActCodeCodings.js';
+import { V3ActCodings, V3ActCodingType,} from '../fhirValueSets/V3ActCodings.js';
 // @ts-ignore
-import { V3ActCodeCodes,  V3ActCodeCodeType } from '../fhirValueSets/V3ActCodeCodes.js';
+import { V3ActCodes,  V3ActCodeType } from '../fhirValueSets/V3ActCodes.js';
 // @ts-ignore
 import { C80FacilityCodings, C80FacilityCodingType,} from '../fhirValueSets/C80FacilityCodings.js';
 // @ts-ignore
@@ -54,6 +54,10 @@ export interface DocumentReferenceRelatesToArgs extends fhir.BackboneElementArgs
    */
   code: fhir.FhirCode<DocumentRelationshipTypeCodeType>|string|undefined;
   /**
+   * Extended properties for primitive element: DocumentReference.relatesTo.code
+   */
+  _code?:fhir.FhirElementArgs;
+  /**
    * The target document of this relationship.
    */
   target: fhir.ReferenceArgs|null;
@@ -82,6 +86,10 @@ export class DocumentReferenceRelatesTo extends fhir.BackboneElement {
     super(source, options);
     if (source['code']) { this.code = new fhir.FhirCode<DocumentRelationshipTypeCodeType>({value: source.code}); }
     else { this.code = null; }
+    if (source['_code']) {
+      if (this.code) { this.code.addExtendedProperties(source._code!); }
+      else { this.code = new fhir.FhirCode<DocumentRelationshipTypeCodeType>(source._code as Partial<fhir.FhirCode>); }
+    }
     if (source['target']) { this.target = new fhir.Reference(source.target); }
     else { this.target = null; }
   }
@@ -291,9 +299,17 @@ export interface DocumentReferenceArgs extends fhir.DomainResourceArgs {
    */
   status: fhir.FhirCode<DocumentReferenceStatusCodeType>|string|undefined;
   /**
+   * Extended properties for primitive element: DocumentReference.status
+   */
+  _status?:fhir.FhirElementArgs;
+  /**
    * The document that is pointed to might be in various lifecycle states.
    */
   docStatus?: fhir.FhirCode<CompositionStatusCodeType>|string|undefined;
+  /**
+   * Extended properties for primitive element: DocumentReference.docStatus
+   */
+  _docStatus?:fhir.FhirElementArgs;
   /**
    * Key metadata element describing the document that describes he exact type of document. Helps humans to assess whether the document is of interest when viewing a list of documents.
    */
@@ -310,6 +326,10 @@ export interface DocumentReferenceArgs extends fhir.DomainResourceArgs {
    * Referencing/indexing time is used for tracking, organizing versions and searching.
    */
   date?: fhir.FhirInstant|string|undefined;
+  /**
+   * Extended properties for primitive element: DocumentReference.date
+   */
+  _date?:fhir.FhirElementArgs;
   /**
    * Not necessarily who did the actual data entry (i.e. typist) or who was the source (informant).
    */
@@ -330,6 +350,10 @@ export interface DocumentReferenceArgs extends fhir.DomainResourceArgs {
    * What the document is about,  a terse summary of the document.
    */
   description?: fhir.FhirString|string|undefined;
+  /**
+   * Extended properties for primitive element: DocumentReference.description
+   */
+  _description?:fhir.FhirElementArgs;
   /**
    * The confidentiality codes can carry multiple vocabulary items. HL7 has developed an understanding of security and privacy tags that might be desirable in a Document Sharing environment, called HL7 Healthcare Privacy and Security Classification System (HCS). The following specification is recommended but not mandated, as the vocabulary bindings are an administrative domain responsibility. The use of this method is up to the policy domain such as the XDS Affinity Domain or other Trust Domain where all parties including sender and recipients are trusted to appropriately tag and enforce.   
    * In the HL7 Healthcare Privacy and Security Classification (HCS) there are code systems specific to Confidentiality, Sensitivity, Integrity, and Handling Caveats. Some values would come from a local vocabulary as they are related to workflow roles and special projects.
@@ -434,12 +458,24 @@ export class DocumentReference extends fhir.DomainResource {
     else { this.identifier = []; }
     if (source['status']) { this.status = new fhir.FhirCode<DocumentReferenceStatusCodeType>({value: source.status}); }
     else { this.status = null; }
+    if (source['_status']) {
+      if (this.status) { this.status.addExtendedProperties(source._status!); }
+      else { this.status = new fhir.FhirCode<DocumentReferenceStatusCodeType>(source._status as Partial<fhir.FhirCode>); }
+    }
     if (source['docStatus']) { this.docStatus = new fhir.FhirCode<CompositionStatusCodeType>({value: source.docStatus}); }
+    if (source['_docStatus']) {
+      if (this.docStatus) { this.docStatus.addExtendedProperties(source._docStatus!); }
+      else { this.docStatus = new fhir.FhirCode<CompositionStatusCodeType>(source._docStatus as Partial<fhir.FhirCode>); }
+    }
     if (source['type']) { this.type = new fhir.CodeableConcept(source.type); }
     if (source['category']) { this.category = source.category.map((x) => new fhir.CodeableConcept(x)); }
     else { this.category = []; }
     if (source['subject']) { this.subject = new fhir.Reference(source.subject); }
     if (source['date']) { this.date = new fhir.FhirInstant({value: source.date}); }
+    if (source['_date']) {
+      if (this.date) { this.date.addExtendedProperties(source._date!); }
+      else { this.date = new fhir.FhirInstant(source._date as Partial<fhir.FhirInstantArgs>); }
+    }
     if (source['author']) { this.author = source.author.map((x) => new fhir.Reference(x)); }
     else { this.author = []; }
     if (source['authenticator']) { this.authenticator = new fhir.Reference(source.authenticator); }
@@ -447,6 +483,10 @@ export class DocumentReference extends fhir.DomainResource {
     if (source['relatesTo']) { this.relatesTo = source.relatesTo.map((x) => new fhir.DocumentReferenceRelatesTo(x)); }
     else { this.relatesTo = []; }
     if (source['description']) { this.description = new fhir.FhirString({value: source.description}); }
+    if (source['_description']) {
+      if (this.description) { this.description.addExtendedProperties(source._description!); }
+      else { this.description = new fhir.FhirString(source._description as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['securityLabel']) { this.securityLabel = source.securityLabel.map((x) => new fhir.CodeableConcept(x)); }
     else { this.securityLabel = []; }
     if (source['content']) { this.content = source.content.map((x) => new fhir.DocumentReferenceContent(x)); }

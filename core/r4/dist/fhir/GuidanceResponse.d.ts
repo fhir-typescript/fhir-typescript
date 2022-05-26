@@ -37,6 +37,10 @@ export interface GuidanceResponseArgs extends fhir.DomainResourceArgs {
      */
     status: fhir.FhirCode<GuidanceResponseStatusCodeType> | string | undefined;
     /**
+     * Extended properties for primitive element: GuidanceResponse.status
+     */
+    _status?: fhir.FhirElementArgs;
+    /**
      * The patient for which the request was processed.
      */
     subject?: fhir.ReferenceArgs | undefined;
@@ -48,6 +52,10 @@ export interface GuidanceResponseArgs extends fhir.DomainResourceArgs {
      * Indicates when the guidance response was processed.
      */
     occurrenceDateTime?: fhir.FhirDateTime | string | undefined;
+    /**
+     * Extended properties for primitive element: GuidanceResponse.occurrenceDateTime
+     */
+    _occurrenceDateTime?: fhir.FhirElementArgs;
     /**
      * Provides a reference to the device that performed the guidance.
      */

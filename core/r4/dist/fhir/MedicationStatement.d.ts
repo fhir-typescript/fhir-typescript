@@ -27,6 +27,10 @@ export interface MedicationStatementArgs extends fhir.DomainResourceArgs {
      */
     status: fhir.FhirCode<MedicationStatementStatusCodeType> | string | undefined;
     /**
+     * Extended properties for primitive element: MedicationStatement.status
+     */
+    _status?: fhir.FhirElementArgs;
+    /**
      * This is generally only used for "exception" statuses such as "not-taken", "on-hold", "cancelled" or "entered-in-error". The reason for performing the event at all is captured in reasonCode, not here.
      */
     statusReason?: fhir.CodeableConceptArgs[] | undefined;
@@ -70,6 +74,10 @@ export interface MedicationStatementArgs extends fhir.DomainResourceArgs {
      * The date when the medication statement was asserted by the information source.
      */
     dateAsserted?: fhir.FhirDateTime | string | undefined;
+    /**
+     * Extended properties for primitive element: MedicationStatement.dateAsserted
+     */
+    _dateAsserted?: fhir.FhirElementArgs;
     /**
      * The person or organization that provided the information about the taking of this medication. Note: Use derivedFrom when a MedicationStatement is derived from other resources, e.g. Claim or MedicationRequest.
      */
@@ -200,7 +208,9 @@ export declare class MedicationStatement extends fhir.DomainResource {
         readonly NotTaken: "not-taken";
         readonly OnHold: "on-hold";
         readonly Stopped: "stopped";
-        readonly Unknown: "unknown";
+        readonly Unknown: "unknown"; /**
+         * Resource Type Name
+         */
     };
     /**
      * Preferred-bound Value Set for category (MedicationStatement.category)

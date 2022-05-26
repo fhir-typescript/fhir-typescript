@@ -1,5 +1,5 @@
 import * as fhir from '../fhir.js';
-import { V3ActIncidentCodeCodingType } from '../fhirValueSets/V3ActIncidentCodeCodings.js';
+import { V3ActIncidentCodingType } from '../fhirValueSets/V3ActIncidentCodings.js';
 import { NoteTypeCodeType } from '../fhirValueSets/NoteTypeCodes.js';
 import { LanguagesCodingType } from '../fhirValueSets/LanguagesCodings.js';
 import { ExplanationofbenefitStatusCodeType } from '../fhirValueSets/ExplanationofbenefitStatusCodes.js';
@@ -99,6 +99,10 @@ export interface ExplanationOfBenefitCareTeamArgs extends fhir.BackboneElementAr
      */
     sequence: fhir.FhirPositiveInt | number | undefined;
     /**
+     * Extended properties for primitive element: ExplanationOfBenefit.careTeam.sequence
+     */
+    _sequence?: fhir.FhirElementArgs;
+    /**
      * Member of the team who provided the product or service.
      */
     provider: fhir.ReferenceArgs | null;
@@ -106,6 +110,10 @@ export interface ExplanationOfBenefitCareTeamArgs extends fhir.BackboneElementAr
      * Responsible might not be required when there is only a single provider listed.
      */
     responsible?: fhir.FhirBoolean | boolean | undefined;
+    /**
+     * Extended properties for primitive element: ExplanationOfBenefit.careTeam.responsible
+     */
+    _responsible?: fhir.FhirElementArgs;
     /**
      * Role might not be required when there is only a single provider listed.
      */
@@ -160,6 +168,10 @@ export interface ExplanationOfBenefitSupportingInfoArgs extends fhir.BackboneEle
      * A number to uniquely identify supporting information entries.
      */
     sequence: fhir.FhirPositiveInt | number | undefined;
+    /**
+     * Extended properties for primitive element: ExplanationOfBenefit.supportingInfo.sequence
+     */
+    _sequence?: fhir.FhirElementArgs;
     /**
      * This may contain a category for the local bill type codes.
      */
@@ -267,6 +279,10 @@ export interface ExplanationOfBenefitDiagnosisArgs extends fhir.BackboneElementA
      */
     sequence: fhir.FhirPositiveInt | number | undefined;
     /**
+     * Extended properties for primitive element: ExplanationOfBenefit.diagnosis.sequence
+     */
+    _sequence?: fhir.FhirElementArgs;
+    /**
      * The nature of illness or problem in a coded form or as a reference to an external defined Condition.
      */
     diagnosis?: fhir.CodeableConcept | fhir.Reference | undefined;
@@ -341,6 +357,10 @@ export interface ExplanationOfBenefitProcedureArgs extends fhir.BackboneElementA
      */
     sequence: fhir.FhirPositiveInt | number | undefined;
     /**
+     * Extended properties for primitive element: ExplanationOfBenefit.procedure.sequence
+     */
+    _sequence?: fhir.FhirElementArgs;
+    /**
      * When the condition was observed or the relative ranking.
      */
     type?: fhir.CodeableConceptArgs[] | undefined;
@@ -348,6 +368,10 @@ export interface ExplanationOfBenefitProcedureArgs extends fhir.BackboneElementA
      * Date and optionally time the procedure was performed.
      */
     date?: fhir.FhirDateTime | string | undefined;
+    /**
+     * Extended properties for primitive element: ExplanationOfBenefit.procedure.date
+     */
+    _date?: fhir.FhirElementArgs;
     /**
      * The code or reference to a Procedure resource which identifies the clinical intervention performed.
      */
@@ -415,6 +439,10 @@ export interface ExplanationOfBenefitInsuranceArgs extends fhir.BackboneElementA
      */
     focal: fhir.FhirBoolean | boolean | undefined;
     /**
+     * Extended properties for primitive element: ExplanationOfBenefit.insurance.focal
+     */
+    _focal?: fhir.FhirElementArgs;
+    /**
      * Reference to the insurance card level information contained in the Coverage resource. The coverage issuing insurer will use these details to locate the patient's actual coverage within the insurer's information system.
      */
     coverage: fhir.ReferenceArgs | null;
@@ -422,6 +450,10 @@ export interface ExplanationOfBenefitInsuranceArgs extends fhir.BackboneElementA
      * This value is an alphanumeric string that may be provided over the phone, via text, via paper, or within a ClaimResponse resource and is not a FHIR Identifier.
      */
     preAuthRef?: fhir.FhirString[] | string[] | undefined;
+    /**
+     * Extended properties for primitive element: ExplanationOfBenefit.insurance.preAuthRef
+     */
+    _preAuthRef?: (fhir.FhirElementArgs | null)[];
 }
 /**
  * All insurance coverages for the patient which may be applicable for reimbursement, of the products and services listed in the claim, are typically provided in the claim to allow insurers to confirm the ordering of the insurance coverages relative to local 'coordination of benefit' rules. One coverage (and only one) with 'focal=true' is to be used in the adjudication of this claim. Coverages appearing before the focal Coverage in the list, and where 'Coverage.subrogation=false', should provide a reference to the ClaimResponse containing the adjudication results of the prior claim.
@@ -460,6 +492,10 @@ export interface ExplanationOfBenefitAccidentArgs extends fhir.BackboneElementAr
      * The date of the accident has to precede the dates of the products and services but within a reasonable timeframe.
      */
     date?: fhir.FhirDate | string | undefined;
+    /**
+     * Extended properties for primitive element: ExplanationOfBenefit.accident.date
+     */
+    _date?: fhir.FhirElementArgs;
     /**
      * The type or context of the accident event for the purposes of selection of potential insurance coverages and determination of coordination between insurers.
      */
@@ -508,7 +544,7 @@ export declare class ExplanationOfBenefitAccident extends fhir.BackboneElement {
     /**
      * Extensible-bound Value Set for type (ExplanationOfBenefit.accident.type)
      */
-    static get typeExtensibleCodings(): V3ActIncidentCodeCodingType;
+    static get typeExtensibleCodings(): V3ActIncidentCodingType;
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
@@ -534,6 +570,10 @@ export interface ExplanationOfBenefitItemAdjudicationArgs extends fhir.BackboneE
      * For example: eligible percentage or co-payment percentage.
      */
     value?: fhir.FhirDecimal | number | undefined;
+    /**
+     * Extended properties for primitive element: ExplanationOfBenefit.item.adjudication.value
+     */
+    _value?: fhir.FhirElementArgs;
 }
 /**
  * If this item is a group then the values here are a summary of the adjudication of the detail items. If this item is a simple product or service then this is the result of the adjudication of this item.
@@ -577,6 +617,10 @@ export interface ExplanationOfBenefitItemDetailSubDetailArgs extends fhir.Backbo
      */
     sequence: fhir.FhirPositiveInt | number | undefined;
     /**
+     * Extended properties for primitive element: ExplanationOfBenefit.item.detail.subDetail.sequence
+     */
+    _sequence?: fhir.FhirElementArgs;
+    /**
      * The type of revenue or cost center providing the product and/or service.
      */
     revenue?: fhir.CodeableConceptArgs | undefined;
@@ -609,6 +653,10 @@ export interface ExplanationOfBenefitItemDetailSubDetailArgs extends fhir.Backbo
      */
     factor?: fhir.FhirDecimal | number | undefined;
     /**
+     * Extended properties for primitive element: ExplanationOfBenefit.item.detail.subDetail.factor
+     */
+    _factor?: fhir.FhirElementArgs;
+    /**
      * For example, the formula: quantity * unitPrice * factor  = net. Quantity and factor are assumed to be 1 if not supplied.
      */
     net?: fhir.MoneyArgs | undefined;
@@ -620,6 +668,10 @@ export interface ExplanationOfBenefitItemDetailSubDetailArgs extends fhir.Backbo
      * The numbers associated with notes below which apply to the adjudication of this item.
      */
     noteNumber?: fhir.FhirPositiveInt[] | number[] | undefined;
+    /**
+     * Extended properties for primitive element: ExplanationOfBenefit.item.detail.subDetail.noteNumber
+     */
+    _noteNumber?: (fhir.FhirElementArgs | null)[];
     /**
      * The adjudication results.
      */
@@ -703,6 +755,10 @@ export interface ExplanationOfBenefitItemDetailArgs extends fhir.BackboneElement
      */
     sequence: fhir.FhirPositiveInt | number | undefined;
     /**
+     * Extended properties for primitive element: ExplanationOfBenefit.item.detail.sequence
+     */
+    _sequence?: fhir.FhirElementArgs;
+    /**
      * The type of revenue or cost center providing the product and/or service.
      */
     revenue?: fhir.CodeableConceptArgs | undefined;
@@ -735,6 +791,10 @@ export interface ExplanationOfBenefitItemDetailArgs extends fhir.BackboneElement
      */
     factor?: fhir.FhirDecimal | number | undefined;
     /**
+     * Extended properties for primitive element: ExplanationOfBenefit.item.detail.factor
+     */
+    _factor?: fhir.FhirElementArgs;
+    /**
      * For example, the formula: quantity * unitPrice * factor  = net. Quantity and factor are assumed to be 1 if not supplied.
      */
     net?: fhir.MoneyArgs | undefined;
@@ -746,6 +806,10 @@ export interface ExplanationOfBenefitItemDetailArgs extends fhir.BackboneElement
      * The numbers associated with notes below which apply to the adjudication of this item.
      */
     noteNumber?: fhir.FhirPositiveInt[] | number[] | undefined;
+    /**
+     * Extended properties for primitive element: ExplanationOfBenefit.item.detail.noteNumber
+     */
+    _noteNumber?: (fhir.FhirElementArgs | null)[];
     /**
      * The adjudication results.
      */
@@ -837,21 +901,41 @@ export interface ExplanationOfBenefitItemArgs extends fhir.BackboneElementArgs {
      */
     sequence: fhir.FhirPositiveInt | number | undefined;
     /**
+     * Extended properties for primitive element: ExplanationOfBenefit.item.sequence
+     */
+    _sequence?: fhir.FhirElementArgs;
+    /**
      * Care team members related to this service or product.
      */
     careTeamSequence?: fhir.FhirPositiveInt[] | number[] | undefined;
+    /**
+     * Extended properties for primitive element: ExplanationOfBenefit.item.careTeamSequence
+     */
+    _careTeamSequence?: (fhir.FhirElementArgs | null)[];
     /**
      * Diagnoses applicable for this service or product.
      */
     diagnosisSequence?: fhir.FhirPositiveInt[] | number[] | undefined;
     /**
+     * Extended properties for primitive element: ExplanationOfBenefit.item.diagnosisSequence
+     */
+    _diagnosisSequence?: (fhir.FhirElementArgs | null)[];
+    /**
      * Procedures applicable for this service or product.
      */
     procedureSequence?: fhir.FhirPositiveInt[] | number[] | undefined;
     /**
+     * Extended properties for primitive element: ExplanationOfBenefit.item.procedureSequence
+     */
+    _procedureSequence?: (fhir.FhirElementArgs | null)[];
+    /**
      * Exceptions, special conditions and supporting information applicable for this service or product.
      */
     informationSequence?: fhir.FhirPositiveInt[] | number[] | undefined;
+    /**
+     * Extended properties for primitive element: ExplanationOfBenefit.item.informationSequence
+     */
+    _informationSequence?: (fhir.FhirElementArgs | null)[];
     /**
      * The type of revenue or cost center providing the product and/or service.
      */
@@ -913,6 +997,10 @@ export interface ExplanationOfBenefitItemArgs extends fhir.BackboneElementArgs {
      */
     factor?: fhir.FhirDecimal | number | undefined;
     /**
+     * Extended properties for primitive element: ExplanationOfBenefit.item.factor
+     */
+    _factor?: fhir.FhirElementArgs;
+    /**
      * For example, the formula: quantity * unitPrice * factor  = net. Quantity and factor are assumed to be 1 if not supplied.
      */
     net?: fhir.MoneyArgs | undefined;
@@ -936,6 +1024,10 @@ export interface ExplanationOfBenefitItemArgs extends fhir.BackboneElementArgs {
      * The numbers associated with notes below which apply to the adjudication of this item.
      */
     noteNumber?: fhir.FhirPositiveInt[] | number[] | undefined;
+    /**
+     * Extended properties for primitive element: ExplanationOfBenefit.item.noteNumber
+     */
+    _noteNumber?: (fhir.FhirElementArgs | null)[];
     /**
      * If this item is a group then the values here are a summary of the adjudication of the detail items. If this item is a simple product or service then this is the result of the adjudication of this item.
      */
@@ -1087,6 +1179,10 @@ export interface ExplanationOfBenefitAddItemDetailSubDetailArgs extends fhir.Bac
      */
     factor?: fhir.FhirDecimal | number | undefined;
     /**
+     * Extended properties for primitive element: ExplanationOfBenefit.addItem.detail.subDetail.factor
+     */
+    _factor?: fhir.FhirElementArgs;
+    /**
      * For example, the formula: quantity * unitPrice * factor  = net. Quantity and factor are assumed to be 1 if not supplied.
      */
     net?: fhir.MoneyArgs | undefined;
@@ -1094,6 +1190,10 @@ export interface ExplanationOfBenefitAddItemDetailSubDetailArgs extends fhir.Bac
      * The numbers associated with notes below which apply to the adjudication of this item.
      */
     noteNumber?: fhir.FhirPositiveInt[] | number[] | undefined;
+    /**
+     * Extended properties for primitive element: ExplanationOfBenefit.addItem.detail.subDetail.noteNumber
+     */
+    _noteNumber?: (fhir.FhirElementArgs | null)[];
     /**
      * The adjudication results.
      */
@@ -1173,6 +1273,10 @@ export interface ExplanationOfBenefitAddItemDetailArgs extends fhir.BackboneElem
      */
     factor?: fhir.FhirDecimal | number | undefined;
     /**
+     * Extended properties for primitive element: ExplanationOfBenefit.addItem.detail.factor
+     */
+    _factor?: fhir.FhirElementArgs;
+    /**
      * For example, the formula: quantity * unitPrice * factor  = net. Quantity and factor are assumed to be 1 if not supplied.
      */
     net?: fhir.MoneyArgs | undefined;
@@ -1180,6 +1284,10 @@ export interface ExplanationOfBenefitAddItemDetailArgs extends fhir.BackboneElem
      * The numbers associated with notes below which apply to the adjudication of this item.
      */
     noteNumber?: fhir.FhirPositiveInt[] | number[] | undefined;
+    /**
+     * Extended properties for primitive element: ExplanationOfBenefit.addItem.detail.noteNumber
+     */
+    _noteNumber?: (fhir.FhirElementArgs | null)[];
     /**
      * The adjudication results.
      */
@@ -1251,13 +1359,25 @@ export interface ExplanationOfBenefitAddItemArgs extends fhir.BackboneElementArg
      */
     itemSequence?: fhir.FhirPositiveInt[] | number[] | undefined;
     /**
+     * Extended properties for primitive element: ExplanationOfBenefit.addItem.itemSequence
+     */
+    _itemSequence?: (fhir.FhirElementArgs | null)[];
+    /**
      * The sequence number of the details within the claim item which this line is intended to replace.
      */
     detailSequence?: fhir.FhirPositiveInt[] | number[] | undefined;
     /**
+     * Extended properties for primitive element: ExplanationOfBenefit.addItem.detailSequence
+     */
+    _detailSequence?: (fhir.FhirElementArgs | null)[];
+    /**
      * The sequence number of the sub-details woithin the details within the claim item which this line is intended to replace.
      */
     subDetailSequence?: fhir.FhirPositiveInt[] | number[] | undefined;
+    /**
+     * Extended properties for primitive element: ExplanationOfBenefit.addItem.subDetailSequence
+     */
+    _subDetailSequence?: (fhir.FhirElementArgs | null)[];
     /**
      * The providers who are authorized for the services rendered to the patient.
      */
@@ -1315,6 +1435,10 @@ export interface ExplanationOfBenefitAddItemArgs extends fhir.BackboneElementArg
      */
     factor?: fhir.FhirDecimal | number | undefined;
     /**
+     * Extended properties for primitive element: ExplanationOfBenefit.addItem.factor
+     */
+    _factor?: fhir.FhirElementArgs;
+    /**
      * For example, the formula: quantity * unitPrice * factor  = net. Quantity and factor are assumed to be 1 if not supplied.
      */
     net?: fhir.MoneyArgs | undefined;
@@ -1330,6 +1454,10 @@ export interface ExplanationOfBenefitAddItemArgs extends fhir.BackboneElementArg
      * The numbers associated with notes below which apply to the adjudication of this item.
      */
     noteNumber?: fhir.FhirPositiveInt[] | number[] | undefined;
+    /**
+     * Extended properties for primitive element: ExplanationOfBenefit.addItem.noteNumber
+     */
+    _noteNumber?: (fhir.FhirElementArgs | null)[];
     /**
      * The adjudication results.
      */
@@ -1495,6 +1623,10 @@ export interface ExplanationOfBenefitPaymentArgs extends fhir.BackboneElementArg
      */
     date?: fhir.FhirDate | string | undefined;
     /**
+     * Extended properties for primitive element: ExplanationOfBenefit.payment.date
+     */
+    _date?: fhir.FhirElementArgs;
+    /**
      * Benefits payable less any payment adjustment.
      */
     amount?: fhir.MoneyArgs | undefined;
@@ -1553,13 +1685,25 @@ export interface ExplanationOfBenefitProcessNoteArgs extends fhir.BackboneElemen
      */
     number?: fhir.FhirPositiveInt | number | undefined;
     /**
+     * Extended properties for primitive element: ExplanationOfBenefit.processNote.number
+     */
+    _number?: fhir.FhirElementArgs;
+    /**
      * The business purpose of the note text.
      */
     type?: fhir.FhirCode<NoteTypeCodeType> | string | undefined;
     /**
+     * Extended properties for primitive element: ExplanationOfBenefit.processNote.type
+     */
+    _type?: fhir.FhirElementArgs;
+    /**
      * The explanation or description associated with the processing.
      */
     text?: fhir.FhirString | string | undefined;
+    /**
+     * Extended properties for primitive element: ExplanationOfBenefit.processNote.text
+     */
+    _text?: fhir.FhirElementArgs;
     /**
      * Only required if the language is different from the resource language.
      */
@@ -1697,13 +1841,25 @@ export interface ExplanationOfBenefitBenefitBalanceArgs extends fhir.BackboneEle
      */
     excluded?: fhir.FhirBoolean | boolean | undefined;
     /**
+     * Extended properties for primitive element: ExplanationOfBenefit.benefitBalance.excluded
+     */
+    _excluded?: fhir.FhirElementArgs;
+    /**
      * For example: MED01, or DENT2.
      */
     name?: fhir.FhirString | string | undefined;
     /**
+     * Extended properties for primitive element: ExplanationOfBenefit.benefitBalance.name
+     */
+    _name?: fhir.FhirElementArgs;
+    /**
      * For example, 'DENT2 covers 100% of basic, 50% of major but excludes Ortho, Implants and Cosmetic services'.
      */
     description?: fhir.FhirString | string | undefined;
+    /**
+     * Extended properties for primitive element: ExplanationOfBenefit.benefitBalance.description
+     */
+    _description?: fhir.FhirElementArgs;
     /**
      * Is a flag to indicate whether the benefits refer to in-network providers or out-of-network providers.
      */
@@ -1787,6 +1943,10 @@ export interface ExplanationOfBenefitArgs extends fhir.DomainResourceArgs {
      */
     status: fhir.FhirCode<ExplanationofbenefitStatusCodeType> | string | undefined;
     /**
+     * Extended properties for primitive element: ExplanationOfBenefit.status
+     */
+    _status?: fhir.FhirElementArgs;
+    /**
      * The majority of jurisdictions use: oral, pharmacy, vision, professional and institutional, or variants on those terms, as the general styles of claims. The valueset is extensible to accommodate other jurisdictional requirements.
      */
     type: fhir.CodeableConceptArgs | null;
@@ -1799,6 +1959,10 @@ export interface ExplanationOfBenefitArgs extends fhir.DomainResourceArgs {
      */
     use: fhir.FhirCode<ClaimUseCodeType> | string | undefined;
     /**
+     * Extended properties for primitive element: ExplanationOfBenefit.use
+     */
+    _use?: fhir.FhirElementArgs;
+    /**
      * The party to whom the professional services and/or products have been supplied or are being considered and for whom actual for forecast reimbursement is sought.
      */
     patient: fhir.ReferenceArgs | null;
@@ -1810,6 +1974,10 @@ export interface ExplanationOfBenefitArgs extends fhir.DomainResourceArgs {
      * This field is independent of the date of creation of the resource as it may reflect the creation date of a source document prior to digitization. Typically for claims all services must be completed as of this date.
      */
     created: fhir.FhirDateTime | string | undefined;
+    /**
+     * Extended properties for primitive element: ExplanationOfBenefit.created
+     */
+    _created?: fhir.FhirElementArgs;
     /**
      * Individual who created the claim, predetermination or preauthorization.
      */
@@ -1871,13 +2039,25 @@ export interface ExplanationOfBenefitArgs extends fhir.DomainResourceArgs {
      */
     outcome: fhir.FhirCode<RemittanceOutcomeCodeType> | string | undefined;
     /**
+     * Extended properties for primitive element: ExplanationOfBenefit.outcome
+     */
+    _outcome?: fhir.FhirElementArgs;
+    /**
      * A human readable description of the status of the adjudication.
      */
     disposition?: fhir.FhirString | string | undefined;
     /**
+     * Extended properties for primitive element: ExplanationOfBenefit.disposition
+     */
+    _disposition?: fhir.FhirElementArgs;
+    /**
      * This value is only present on preauthorization adjudications.
      */
     preAuthRef?: fhir.FhirString[] | string[] | undefined;
+    /**
+     * Extended properties for primitive element: ExplanationOfBenefit.preAuthRef
+     */
+    _preAuthRef?: (fhir.FhirElementArgs | null)[];
     /**
      * This value is only present on preauthorization adjudications.
      */
@@ -1902,6 +2082,10 @@ export interface ExplanationOfBenefitArgs extends fhir.DomainResourceArgs {
      * This indicates the relative order of a series of EOBs related to different coverages for the same suite of services.
      */
     precedence?: fhir.FhirPositiveInt | number | undefined;
+    /**
+     * Extended properties for primitive element: ExplanationOfBenefit.precedence
+     */
+    _precedence?: fhir.FhirElementArgs;
     /**
      * All insurance coverages for the patient which may be applicable for reimbursement, of the products and services listed in the claim, are typically provided in the claim to allow insurers to confirm the ordering of the insurance coverages relative to local 'coordination of benefit' rules. One coverage (and only one) with 'focal=true' is to be used in the adjudication of this claim. Coverages appearing before the focal Coverage in the list, and where 'Coverage.subrogation=false', should provide a reference to the ClaimResponse containing the adjudication results of the prior claim.
      */

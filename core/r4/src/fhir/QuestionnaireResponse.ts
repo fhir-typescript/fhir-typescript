@@ -130,14 +130,26 @@ export interface QuestionnaireResponseItemArgs extends fhir.BackboneElementArgs 
    */
   linkId: fhir.FhirString|string|undefined;
   /**
+   * Extended properties for primitive element: QuestionnaireResponse.item.linkId
+   */
+  _linkId?:fhir.FhirElementArgs;
+  /**
    * The ElementDefinition must be in a [StructureDefinition](structuredefinition.html#), and must have a fragment identifier that identifies the specific data element by its id (Element.id). E.g. http://hl7.org/fhir/StructureDefinition/Observation#Observation.value[x].
    * There is no need for this element if the item pointed to by the linkId has a definition listed.
    */
   definition?: fhir.FhirUri|string|undefined;
   /**
+   * Extended properties for primitive element: QuestionnaireResponse.item.definition
+   */
+  _definition?:fhir.FhirElementArgs;
+  /**
    * Text that is displayed above the contents of the group or as the text of the question being answered.
    */
   text?: fhir.FhirString|string|undefined;
+  /**
+   * Extended properties for primitive element: QuestionnaireResponse.item.text
+   */
+  _text?:fhir.FhirElementArgs;
   /**
    * The value is nested because we cannot have a repeating structure that has variable type.
    */
@@ -184,8 +196,20 @@ export class QuestionnaireResponseItem extends fhir.BackboneElement {
     super(source, options);
     if (source['linkId']) { this.linkId = new fhir.FhirString({value: source.linkId}); }
     else { this.linkId = null; }
+    if (source['_linkId']) {
+      if (this.linkId) { this.linkId.addExtendedProperties(source._linkId!); }
+      else { this.linkId = new fhir.FhirString(source._linkId as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['definition']) { this.definition = new fhir.FhirUri({value: source.definition}); }
+    if (source['_definition']) {
+      if (this.definition) { this.definition.addExtendedProperties(source._definition!); }
+      else { this.definition = new fhir.FhirUri(source._definition as Partial<fhir.FhirUriArgs>); }
+    }
     if (source['text']) { this.text = new fhir.FhirString({value: source.text}); }
+    if (source['_text']) {
+      if (this.text) { this.text.addExtendedProperties(source._text!); }
+      else { this.text = new fhir.FhirString(source._text as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['answer']) { this.answer = source.answer.map((x) => new fhir.QuestionnaireResponseItemAnswer(x)); }
     else { this.answer = []; }
     if (source['item']) { this.item = source.item.map((x) => new fhir.QuestionnaireResponseItem(x)); }
@@ -232,9 +256,17 @@ export interface QuestionnaireResponseArgs extends fhir.DomainResourceArgs {
    */
   questionnaire?: fhir.FhirCanonical|string|undefined;
   /**
+   * Extended properties for primitive element: QuestionnaireResponse.questionnaire
+   */
+  _questionnaire?:fhir.FhirElementArgs;
+  /**
    * This element is labeled as a modifier because the status contains codes that mark the resource as not currently valid.
    */
   status: fhir.FhirCode<QuestionnaireAnswersStatusCodeType>|string|undefined;
+  /**
+   * Extended properties for primitive element: QuestionnaireResponse.status
+   */
+  _status?:fhir.FhirElementArgs;
   /**
    * If the Questionnaire declared a subjectType, the resource pointed to by this element must be an instance of one of the listed types.
    */
@@ -248,6 +280,10 @@ export interface QuestionnaireResponseArgs extends fhir.DomainResourceArgs {
    * This element is optional to allow for systems that might not know the value, however it SHOULD be populated if possible.
    */
   authored?: fhir.FhirDateTime|string|undefined;
+  /**
+   * Extended properties for primitive element: QuestionnaireResponse.authored
+   */
+  _authored?:fhir.FhirElementArgs;
   /**
    * Mapping a subject's answers to multiple choice options and determining what to put in the textual answer is a matter of interpretation.  Authoring by device would indicate that some portion of the questionnaire had been auto-populated.
    */
@@ -331,11 +367,23 @@ export class QuestionnaireResponse extends fhir.DomainResource {
     if (source['partOf']) { this.partOf = source.partOf.map((x) => new fhir.Reference(x)); }
     else { this.partOf = []; }
     if (source['questionnaire']) { this.questionnaire = new fhir.FhirCanonical({value: source.questionnaire}); }
+    if (source['_questionnaire']) {
+      if (this.questionnaire) { this.questionnaire.addExtendedProperties(source._questionnaire!); }
+      else { this.questionnaire = new fhir.FhirCanonical(source._questionnaire as Partial<fhir.FhirCanonicalArgs>); }
+    }
     if (source['status']) { this.status = new fhir.FhirCode<QuestionnaireAnswersStatusCodeType>({value: source.status}); }
     else { this.status = null; }
+    if (source['_status']) {
+      if (this.status) { this.status.addExtendedProperties(source._status!); }
+      else { this.status = new fhir.FhirCode<QuestionnaireAnswersStatusCodeType>(source._status as Partial<fhir.FhirCode>); }
+    }
     if (source['subject']) { this.subject = new fhir.Reference(source.subject); }
     if (source['encounter']) { this.encounter = new fhir.Reference(source.encounter); }
     if (source['authored']) { this.authored = new fhir.FhirDateTime({value: source.authored}); }
+    if (source['_authored']) {
+      if (this.authored) { this.authored.addExtendedProperties(source._authored!); }
+      else { this.authored = new fhir.FhirDateTime(source._authored as Partial<fhir.FhirDateTimeArgs>); }
+    }
     if (source['author']) { this.author = new fhir.Reference(source.author); }
     if (source['source']) { this.source = new fhir.Reference(source.source); }
     if (source['item']) { this.item = source.item.map((x) => new fhir.QuestionnaireResponseItem(x)); }

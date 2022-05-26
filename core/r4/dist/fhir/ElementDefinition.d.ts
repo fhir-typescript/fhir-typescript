@@ -16,9 +16,17 @@ export interface ElementDefinitionSlicingDiscriminatorArgs extends fhir.FhirElem
      */
     type: fhir.FhirCode<DiscriminatorTypeCodeType> | string | undefined;
     /**
+     * Extended properties for primitive element: ElementDefinition.slicing.discriminator.type
+     */
+    _type?: fhir.FhirElementArgs;
+    /**
      * The only FHIRPath functions that are allowed are as(type), resolve(), and extension(url).
      */
     path: fhir.FhirString | string | undefined;
+    /**
+     * Extended properties for primitive element: ElementDefinition.slicing.discriminator.path
+     */
+    _path?: fhir.FhirElementArgs;
 }
 /**
  * If there is no discriminator, the content is hard to process, so this should be avoided.
@@ -68,13 +76,25 @@ export interface ElementDefinitionSlicingArgs extends fhir.FhirElementArgs {
      */
     description?: fhir.FhirString | string | undefined;
     /**
+     * Extended properties for primitive element: ElementDefinition.slicing.description
+     */
+    _description?: fhir.FhirElementArgs;
+    /**
      * Order should only be required when it is a pressing concern for presentation. Profile authors should consider making the order a feature of the rules about the narrative, not the rules about the data - requiring ordered data makes the profile much less re-usable.
      */
     ordered?: fhir.FhirBoolean | boolean | undefined;
     /**
+     * Extended properties for primitive element: ElementDefinition.slicing.ordered
+     */
+    _ordered?: fhir.FhirElementArgs;
+    /**
      * Allowing additional elements makes for a much for flexible template - it's open for use in wider contexts, but also means that the content of the resource is not closed, and applications have to decide how to handle content not described by the profile.
      */
     rules: fhir.FhirCode<ResourceSlicingRulesCodeType> | string | undefined;
+    /**
+     * Extended properties for primitive element: ElementDefinition.slicing.rules
+     */
+    _rules?: fhir.FhirElementArgs;
 }
 /**
  * The first element in the sequence, the one that carries the slicing, is the definition that applies to all the slices. This is based on the unconstrained element, but can apply any constraints as appropriate. This may include the common constraints on the children of the element.
@@ -126,13 +146,25 @@ export interface ElementDefinitionBaseArgs extends fhir.FhirElementArgs {
      */
     path: fhir.FhirString | string | undefined;
     /**
+     * Extended properties for primitive element: ElementDefinition.base.path
+     */
+    _path?: fhir.FhirElementArgs;
+    /**
      * This is provided for consistency with max, and may affect code generation of mandatory elements of the base resource are generated differently (some reference implementations have done this).
      */
     min: fhir.FhirUnsignedInt | number | undefined;
     /**
+     * Extended properties for primitive element: ElementDefinition.base.min
+     */
+    _min?: fhir.FhirElementArgs;
+    /**
      * This is provided to code generation, since the serialization representation in JSON differs depending on whether the base element has max &gt; 1. Also, some forms of code generation may differ.
      */
     max: fhir.FhirString | string | undefined;
+    /**
+     * Extended properties for primitive element: ElementDefinition.base.max
+     */
+    _max?: fhir.FhirElementArgs;
 }
 /**
  * The base information does not carry any information that could not be determined from the path and related profiles, but making this determination requires both that the related profiles are available, and that the algorithm to determine them be available. For tooling simplicity, the base information must always be populated in element definitions in snap shots, even if it is the same.
@@ -172,21 +204,41 @@ export interface ElementDefinitionTypeArgs extends fhir.FhirElementArgs {
      */
     code: fhir.FhirUri | string | undefined;
     /**
+     * Extended properties for primitive element: ElementDefinition.type.code
+     */
+    _code?: fhir.FhirElementArgs;
+    /**
      * It is possible to profile  backbone element (e.g. part of a resource), using the [profile-element](extension-elementdefinition-profile-element.html) extension.
      */
     profile?: fhir.FhirCanonical[] | string[] | undefined;
+    /**
+     * Extended properties for primitive element: ElementDefinition.type.profile
+     */
+    _profile?: (fhir.FhirElementArgs | null)[];
     /**
      * Used when the type is "Reference" or "canonical", and identifies a profile structure or implementation Guide that applies to the target of the reference this element refers to. If any profiles are specified, then the content must conform to at least one of them. The URL can be a local reference - to a contained StructureDefinition, or a reference to another StructureDefinition or Implementation Guide by a canonical URL. When an implementation guide is specified, the target resource SHALL conform to at least one profile defined in the implementation guide.
      */
     targetProfile?: fhir.FhirCanonical[] | string[] | undefined;
     /**
+     * Extended properties for primitive element: ElementDefinition.type.targetProfile
+     */
+    _targetProfile?: (fhir.FhirElementArgs | null)[];
+    /**
      * See [Aggregation Rules](elementdefinition.html#aggregation) for further clarification.
      */
     aggregation?: fhir.FhirCode<ResourceAggregationModeCodeType>[] | string[] | undefined;
     /**
+     * Extended properties for primitive element: ElementDefinition.type.aggregation
+     */
+    _aggregation?: (fhir.FhirElementArgs | null)[];
+    /**
      * The base specification never makes a rule as to which form is allowed, but implementation guides may do this. See [Aggregation Rules](elementdefinition.html#aggregation) for further clarification.
      */
     versioning?: fhir.FhirCode<ReferenceVersionRulesCodeType> | string | undefined;
+    /**
+     * Extended properties for primitive element: ElementDefinition.type.versioning
+     */
+    _versioning?: fhir.FhirElementArgs;
 }
 /**
  * The Type of the element can be left blank in a differential constraint, in which case the type is inherited from the resource. Abstract types are not permitted to appear as a type when multiple types are listed.  (I.e. Abstract types cannot be part of a choice).
@@ -253,6 +305,10 @@ export interface ElementDefinitionExampleArgs extends fhir.FhirElementArgs {
      * Describes the purpose of this example amoung the set of examples.
      */
     label: fhir.FhirString | string | undefined;
+    /**
+     * Extended properties for primitive element: ElementDefinition.example.label
+     */
+    _label?: fhir.FhirElementArgs;
     /**
      * The actual value for the element, which must be one of the types allowed for this element.
      */
@@ -496,29 +552,57 @@ export interface ElementDefinitionConstraintArgs extends fhir.FhirElementArgs {
      */
     key: fhir.FhirId | string | undefined;
     /**
+     * Extended properties for primitive element: ElementDefinition.constraint.key
+     */
+    _key?: fhir.FhirElementArgs;
+    /**
      * To be used if the reason for the constraint might not be intuitive to all implementers.
      */
     requirements?: fhir.FhirString | string | undefined;
+    /**
+     * Extended properties for primitive element: ElementDefinition.constraint.requirements
+     */
+    _requirements?: fhir.FhirElementArgs;
     /**
      * This allows constraints to be asserted as "shall" (error) and "should" (warning).
      */
     severity: fhir.FhirCode<ConstraintSeverityCodeType> | string | undefined;
     /**
+     * Extended properties for primitive element: ElementDefinition.constraint.severity
+     */
+    _severity?: fhir.FhirElementArgs;
+    /**
      * Should be expressed in business terms as much as possible.
      */
     human: fhir.FhirString | string | undefined;
+    /**
+     * Extended properties for primitive element: ElementDefinition.constraint.human
+     */
+    _human?: fhir.FhirElementArgs;
     /**
      * In the absense of an expression, the expression is likely not enforceable by validators, and might be missed by many systems.
      */
     expression?: fhir.FhirString | string | undefined;
     /**
+     * Extended properties for primitive element: ElementDefinition.constraint.expression
+     */
+    _expression?: fhir.FhirElementArgs;
+    /**
      * Elements SHALL use "f" as the namespace prefix for the FHIR namespace, and "x" for the xhtml namespace, and SHALL NOT use any other prefixes.     Note: XPath is generally considered not useful because it does not apply to JSON and other formats and because of XSLT implementation issues, and may be removed in the future.
      */
     xpath?: fhir.FhirString | string | undefined;
     /**
+     * Extended properties for primitive element: ElementDefinition.constraint.xpath
+     */
+    _xpath?: fhir.FhirElementArgs;
+    /**
      * This is used when, e.g. rendering, where it is not useful to present inherited constraints when rendering the snapshot.
      */
     source?: fhir.FhirCanonical | string | undefined;
+    /**
+     * Extended properties for primitive element: ElementDefinition.constraint.source
+     */
+    _source?: fhir.FhirElementArgs;
 }
 /**
  * Constraints should be declared on the "context" element - the lowest element in the hierarchy that is common to all nodes referenced by the constraint.
@@ -581,13 +665,25 @@ export interface ElementDefinitionBindingArgs extends fhir.FhirElementArgs {
      */
     strength: fhir.FhirCode<BindingStrengthCodeType> | string | undefined;
     /**
+     * Extended properties for primitive element: ElementDefinition.binding.strength
+     */
+    _strength?: fhir.FhirElementArgs;
+    /**
      * Describes the intended use of this particular set of codes.
      */
     description?: fhir.FhirString | string | undefined;
     /**
+     * Extended properties for primitive element: ElementDefinition.binding.description
+     */
+    _description?: fhir.FhirElementArgs;
+    /**
      * The reference may be version-specific or not (e.g. have a |[version] at the end of the canonical URL).
      */
     valueSet?: fhir.FhirCanonical | string | undefined;
+    /**
+     * Extended properties for primitive element: ElementDefinition.binding.valueSet
+     */
+    _valueSet?: fhir.FhirElementArgs;
 }
 /**
  * For a CodeableConcept, when no codes are allowed - only text, use a binding of strength "required" with a description explaining that no coded values are allowed and what sort of information to put in the "text" element.
@@ -636,17 +732,33 @@ export interface ElementDefinitionMappingArgs extends fhir.FhirElementArgs {
      */
     identity: fhir.FhirId | string | undefined;
     /**
+     * Extended properties for primitive element: ElementDefinition.mapping.identity
+     */
+    _identity?: fhir.FhirElementArgs;
+    /**
      * If omitted, then there can be no expectation of computational interpretation of the mapping.
      */
     language?: fhir.FhirCode | string | undefined;
+    /**
+     * Extended properties for primitive element: ElementDefinition.mapping.language
+     */
+    _language?: fhir.FhirElementArgs;
     /**
      * For most mappings, the syntax is undefined.  Syntax will be provided for mappings to the RIM.  Multiple mappings may be possible and may include constraints on other resource elements that identify when a particular mapping applies.
      */
     map: fhir.FhirString | string | undefined;
     /**
+     * Extended properties for primitive element: ElementDefinition.mapping.map
+     */
+    _map?: fhir.FhirElementArgs;
+    /**
      * Comments that provide information about the mapping or its use.
      */
     comment?: fhir.FhirString | string | undefined;
+    /**
+     * Extended properties for primitive element: ElementDefinition.mapping.comment
+     */
+    _comment?: fhir.FhirElementArgs;
 }
 /**
  * Mappings are not necessarily specific enough for safe translation.
@@ -690,21 +802,41 @@ export interface ElementDefinitionArgs extends fhir.BackboneElementArgs {
      */
     path: fhir.FhirString | string | undefined;
     /**
+     * Extended properties for primitive element: ElementDefinition.path
+     */
+    _path?: fhir.FhirElementArgs;
+    /**
      * In resources, this is rarely used except for special cases where the representation deviates from the normal, and can only be done in the base standard (and profiles must reproduce what the base standard does). This element is used quite commonly in Logical models when the logical models represent a specific serialization format (e.g. CDA, v2 etc.).
      */
     representation?: fhir.FhirCode<PropertyRepresentationCodeType>[] | string[] | undefined;
+    /**
+     * Extended properties for primitive element: ElementDefinition.representation
+     */
+    _representation?: (fhir.FhirElementArgs | null)[];
     /**
      * The name SHALL be unique within the structure within the context of the constrained resource element.  (Though to avoid confusion, uniqueness across all elements is recommended.).
      */
     sliceName?: fhir.FhirString | string | undefined;
     /**
+     * Extended properties for primitive element: ElementDefinition.sliceName
+     */
+    _sliceName?: fhir.FhirElementArgs;
+    /**
      * If set to true, an ancestor profile SHALL have a slicing definition with this name.  If set to false, no ancestor profile is permitted to have a slicing definition with this name.
      */
     sliceIsConstraining?: fhir.FhirBoolean | boolean | undefined;
     /**
+     * Extended properties for primitive element: ElementDefinition.sliceIsConstraining
+     */
+    _sliceIsConstraining?: fhir.FhirElementArgs;
+    /**
      * See also the extension (http://hl7.org/fhir/StructureDefinition/elementdefinition-question)[extension-elementdefinition-question.html].
      */
     label?: fhir.FhirString | string | undefined;
+    /**
+     * Extended properties for primitive element: ElementDefinition.label
+     */
+    _label?: fhir.FhirElementArgs;
     /**
      * The concept SHALL be properly aligned with the data element definition and other constraints, as defined in the code system, including relationships, of any code listed here.  Where multiple codes exist in a terminology that could correspond to the data element, the most granular code(s) should be selected, so long as they are not more restrictive than the data element itself. The mappings may be used to provide more or less granular or structured equivalences in the code system.
      */
@@ -718,29 +850,57 @@ export interface ElementDefinitionArgs extends fhir.BackboneElementArgs {
      */
     short?: fhir.FhirString | string | undefined;
     /**
+     * Extended properties for primitive element: ElementDefinition.short
+     */
+    _short?: fhir.FhirElementArgs;
+    /**
      * It is easy for a different definition to change the meaning of an element and this can have nasty downstream consequences. Please be careful when providing definitions in a profile.
      */
     definition?: fhir.FhirMarkdown | string | undefined;
+    /**
+     * Extended properties for primitive element: ElementDefinition.definition
+     */
+    _definition?: fhir.FhirElementArgs;
     /**
      * If it is possible to capture usage rules using constraints, that mechanism should be used in preference to this element.
      */
     comment?: fhir.FhirMarkdown | string | undefined;
     /**
+     * Extended properties for primitive element: ElementDefinition.comment
+     */
+    _comment?: fhir.FhirElementArgs;
+    /**
      * This element does not describe the usage of the element (that's done in comments), rather it's for traceability of *why* the element is either needed or why the constraints exist as they do.  This may be used to point to source materials or specifications that drove the structure of this data element.
      */
     requirements?: fhir.FhirMarkdown | string | undefined;
+    /**
+     * Extended properties for primitive element: ElementDefinition.requirements
+     */
+    _requirements?: fhir.FhirElementArgs;
     /**
      * Identifies additional names by which this element might also be known.
      */
     alias?: fhir.FhirString[] | string[] | undefined;
     /**
+     * Extended properties for primitive element: ElementDefinition.alias
+     */
+    _alias?: (fhir.FhirElementArgs | null)[];
+    /**
      * The minimum number of times this element SHALL appear in the instance.
      */
     min?: fhir.FhirUnsignedInt | number | undefined;
     /**
+     * Extended properties for primitive element: ElementDefinition.min
+     */
+    _min?: fhir.FhirElementArgs;
+    /**
      * The maximum number of times this element is permitted to appear in the instance.
      */
     max?: fhir.FhirString | string | undefined;
+    /**
+     * Extended properties for primitive element: ElementDefinition.max
+     */
+    _max?: fhir.FhirElementArgs;
     /**
      * The base information does not carry any information that could not be determined from the path and related profiles, but making this determination requires both that the related profiles are available, and that the algorithm to determine them be available. For tooling simplicity, the base information must always be populated in element definitions in snap shots, even if it is the same.
      */
@@ -749,6 +909,10 @@ export interface ElementDefinitionArgs extends fhir.BackboneElementArgs {
      * ContentReferences can only be defined in specializations, not constrained types, and they cannot be changed and always reference the non-constrained definition.
      */
     contentReference?: fhir.FhirUri | string | undefined;
+    /**
+     * Extended properties for primitive element: ElementDefinition.contentReference
+     */
+    _contentReference?: fhir.FhirElementArgs;
     /**
      * The Type of the element can be left blank in a differential constraint, in which case the type is inherited from the resource. Abstract types are not permitted to appear as a type when multiple types are listed.  (I.e. Abstract types cannot be part of a choice).
      */
@@ -1013,9 +1177,17 @@ export interface ElementDefinitionArgs extends fhir.BackboneElementArgs {
      */
     meaningWhenMissing?: fhir.FhirMarkdown | string | undefined;
     /**
+     * Extended properties for primitive element: ElementDefinition.meaningWhenMissing
+     */
+    _meaningWhenMissing?: fhir.FhirElementArgs;
+    /**
      * This element can only be asserted on repeating elements and can only be introduced when defining resources or data types.  It can be further refined profiled elements but if absent in the base type, a profile cannot assert meaning.
      */
     orderMeaning?: fhir.FhirString | string | undefined;
+    /**
+     * Extended properties for primitive element: ElementDefinition.orderMeaning
+     */
+    _orderMeaning?: fhir.FhirElementArgs;
     /**
      * This is not recommended for Coding and CodeableConcept since these often have highly contextual properties such as version or display.
      */
@@ -1513,9 +1685,17 @@ export interface ElementDefinitionArgs extends fhir.BackboneElementArgs {
      */
     maxLength?: fhir.FhirInteger | number | undefined;
     /**
+     * Extended properties for primitive element: ElementDefinition.maxLength
+     */
+    _maxLength?: fhir.FhirElementArgs;
+    /**
      * A reference to an invariant that may make additional statements about the cardinality or value in the instance.
      */
     condition?: fhir.FhirId[] | string[] | undefined;
+    /**
+     * Extended properties for primitive element: ElementDefinition.condition
+     */
+    _condition?: (fhir.FhirElementArgs | null)[];
     /**
      * Constraints should be declared on the "context" element - the lowest element in the hierarchy that is common to all nodes referenced by the constraint.
      */
@@ -1525,17 +1705,33 @@ export interface ElementDefinitionArgs extends fhir.BackboneElementArgs {
      */
     mustSupport?: fhir.FhirBoolean | boolean | undefined;
     /**
+     * Extended properties for primitive element: ElementDefinition.mustSupport
+     */
+    _mustSupport?: fhir.FhirElementArgs;
+    /**
      * Only the definition of an element can set IsModifier true - either the specification itself or where an extension is originally defined. Once set, it cannot be changed in derived profiles. An element/extension that has isModifier=true SHOULD also have a minimum cardinality of 1, so that there is no lack of clarity about what to do if it is missing. If it can be missing, the definition SHALL make the meaning of a missing element clear.
      */
     isModifier?: fhir.FhirBoolean | boolean | undefined;
+    /**
+     * Extended properties for primitive element: ElementDefinition.isModifier
+     */
+    _isModifier?: fhir.FhirElementArgs;
     /**
      * Explains how that element affects the interpretation of the resource or element that contains it.
      */
     isModifierReason?: fhir.FhirString | string | undefined;
     /**
+     * Extended properties for primitive element: ElementDefinition.isModifierReason
+     */
+    _isModifierReason?: fhir.FhirElementArgs;
+    /**
      * Some resources include a set of simple metadata, and some very large data. This element is used to reduce the quantity of data returned in searches. Note that servers may pre-cache summarized resources for optimal performance, so servers might not support per-profile use of the isSummary flag. When a request is made with _summary=true, serailisers only include elements marked as 'isSummary = true'. Other than Attachment.data, all data type properties are included in the summary form. In resource and data type definitions, if an element is at the root or has a parent that is 'mustSupport' and the minimum cardinality is 1 or the element is a modifier, it must be marked as isSummary=true.
      */
     isSummary?: fhir.FhirBoolean | boolean | undefined;
+    /**
+     * Extended properties for primitive element: ElementDefinition.isSummary
+     */
+    _isSummary?: fhir.FhirElementArgs;
     /**
      * For a CodeableConcept, when no codes are allowed - only text, use a binding of strength "required" with a description explaining that no coded values are allowed and what sort of information to put in the "text" element.
      */

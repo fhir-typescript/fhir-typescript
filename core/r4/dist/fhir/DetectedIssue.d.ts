@@ -54,6 +54,10 @@ export interface DetectedIssueMitigationArgs extends fhir.BackboneElementArgs {
      */
     date?: fhir.FhirDateTime | string | undefined;
     /**
+     * Extended properties for primitive element: DetectedIssue.mitigation.date
+     */
+    _date?: fhir.FhirElementArgs;
+    /**
      * Identifies the practitioner who determined the mitigation and takes responsibility for the mitigation step occurring.
      */
     author?: fhir.ReferenceArgs | undefined;
@@ -108,6 +112,10 @@ export interface DetectedIssueArgs extends fhir.DomainResourceArgs {
      */
     status: fhir.FhirCode<ObservationStatusCodeType> | string | undefined;
     /**
+     * Extended properties for primitive element: DetectedIssue.status
+     */
+    _status?: fhir.FhirElementArgs;
+    /**
      * Identifies the general type of issue identified.
      */
     code?: fhir.CodeableConceptArgs | undefined;
@@ -115,6 +123,10 @@ export interface DetectedIssueArgs extends fhir.DomainResourceArgs {
      * Indicates the degree of importance associated with the identified issue based on the potential impact on the patient.
      */
     severity?: fhir.FhirCode<DetectedissueSeverityCodeType> | string | undefined;
+    /**
+     * Extended properties for primitive element: DetectedIssue.severity
+     */
+    _severity?: fhir.FhirElementArgs;
     /**
      * Indicates the patient whose record the detected issue is associated with.
      */
@@ -148,9 +160,17 @@ export interface DetectedIssueArgs extends fhir.DomainResourceArgs {
      */
     detail?: fhir.FhirString | string | undefined;
     /**
+     * Extended properties for primitive element: DetectedIssue.detail
+     */
+    _detail?: fhir.FhirElementArgs;
+    /**
      * The literature, knowledge-base or similar reference that describes the propensity for the detected issue identified.
      */
     reference?: fhir.FhirUri | string | undefined;
+    /**
+     * Extended properties for primitive element: DetectedIssue.reference
+     */
+    _reference?: fhir.FhirElementArgs;
     /**
      * Indicates an action that has been taken or is committed to reduce or eliminate the likelihood of the risk identified by the detected issue from manifesting.  Can also reflect an observation of known mitigating factors that may reduce/eliminate the need for any action.
      */

@@ -166,6 +166,10 @@ export interface SpecimenProcessingArgs extends fhir.BackboneElementArgs {
    */
   description?: fhir.FhirString|string|undefined;
   /**
+   * Extended properties for primitive element: Specimen.processing.description
+   */
+  _description?:fhir.FhirElementArgs;
+  /**
    * A coded value specifying the procedure used to process the specimen.
    */
   procedure?: fhir.CodeableConceptArgs|undefined;
@@ -221,6 +225,10 @@ export class SpecimenProcessing extends fhir.BackboneElement {
   constructor(source:Partial<SpecimenProcessingArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
     if (source['description']) { this.description = new fhir.FhirString({value: source.description}); }
+    if (source['_description']) {
+      if (this.description) { this.description.addExtendedProperties(source._description!); }
+      else { this.description = new fhir.FhirString(source._description as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['procedure']) { this.procedure = new fhir.CodeableConcept(source.procedure); }
     if (source['additive']) { this.additive = source.additive.map((x) => new fhir.Reference(x)); }
     else { this.additive = []; }
@@ -251,6 +259,10 @@ export interface SpecimenContainerArgs extends fhir.BackboneElementArgs {
    * Textual description of the container.
    */
   description?: fhir.FhirString|string|undefined;
+  /**
+   * Extended properties for primitive element: Specimen.container.description
+   */
+  _description?:fhir.FhirElementArgs;
   /**
    * The type of container associated with the specimen (e.g. slide, aliquot, etc.).
    */
@@ -321,6 +333,10 @@ export class SpecimenContainer extends fhir.BackboneElement {
     if (source['identifier']) { this.identifier = source.identifier.map((x) => new fhir.Identifier(x)); }
     else { this.identifier = []; }
     if (source['description']) { this.description = new fhir.FhirString({value: source.description}); }
+    if (source['_description']) {
+      if (this.description) { this.description.addExtendedProperties(source._description!); }
+      else { this.description = new fhir.FhirString(source._description as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['type']) { this.type = new fhir.CodeableConcept(source.type); }
     if (source['capacity']) { this.capacity = new fhir.Quantity(source.capacity); }
     if (source['specimenQuantity']) { this.specimenQuantity = new fhir.Quantity(source.specimenQuantity); }
@@ -362,6 +378,10 @@ export interface SpecimenArgs extends fhir.DomainResourceArgs {
    */
   status?: fhir.FhirCode<SpecimenStatusCodeType>|string|undefined;
   /**
+   * Extended properties for primitive element: Specimen.status
+   */
+  _status?:fhir.FhirElementArgs;
+  /**
    * The type can change the way that a specimen is handled and drives what kind of analyses can properly be performed on the specimen. It is frequently used in diagnostic work flow decision making systems.
    */
   type?: fhir.CodeableConceptArgs|undefined;
@@ -373,6 +393,10 @@ export interface SpecimenArgs extends fhir.DomainResourceArgs {
    * Time when specimen was received for processing or testing.
    */
   receivedTime?: fhir.FhirDateTime|string|undefined;
+  /**
+   * Extended properties for primitive element: Specimen.receivedTime
+   */
+  _receivedTime?:fhir.FhirElementArgs;
   /**
    * The parent specimen could be the source from which the current specimen is derived by some processing step (e.g. an aliquot or isolate or extracted nucleic acids from clinical samples) or one of many specimens that were combined to create a pooled sample.
    */
@@ -477,9 +501,17 @@ export class Specimen extends fhir.DomainResource {
     else { this.identifier = []; }
     if (source['accessionIdentifier']) { this.accessionIdentifier = new fhir.Identifier(source.accessionIdentifier); }
     if (source['status']) { this.status = new fhir.FhirCode<SpecimenStatusCodeType>({value: source.status}); }
+    if (source['_status']) {
+      if (this.status) { this.status.addExtendedProperties(source._status!); }
+      else { this.status = new fhir.FhirCode<SpecimenStatusCodeType>(source._status as Partial<fhir.FhirCode>); }
+    }
     if (source['type']) { this.type = new fhir.CodeableConcept(source.type); }
     if (source['subject']) { this.subject = new fhir.Reference(source.subject); }
     if (source['receivedTime']) { this.receivedTime = new fhir.FhirDateTime({value: source.receivedTime}); }
+    if (source['_receivedTime']) {
+      if (this.receivedTime) { this.receivedTime.addExtendedProperties(source._receivedTime!); }
+      else { this.receivedTime = new fhir.FhirDateTime(source._receivedTime as Partial<fhir.FhirDateTimeArgs>); }
+    }
     if (source['parent']) { this.parent = source.parent.map((x) => new fhir.Reference(x)); }
     else { this.parent = []; }
     if (source['request']) { this.request = source.request.map((x) => new fhir.Reference(x)); }

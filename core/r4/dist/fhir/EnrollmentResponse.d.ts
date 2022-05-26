@@ -18,6 +18,10 @@ export interface EnrollmentResponseArgs extends fhir.DomainResourceArgs {
      */
     status?: fhir.FhirCode<FmStatusCodeType> | string | undefined;
     /**
+     * Extended properties for primitive element: EnrollmentResponse.status
+     */
+    _status?: fhir.FhirElementArgs;
+    /**
      * Original request resource reference.
      */
     request?: fhir.ReferenceArgs | undefined;
@@ -26,13 +30,25 @@ export interface EnrollmentResponseArgs extends fhir.DomainResourceArgs {
      */
     outcome?: fhir.FhirCode<RemittanceOutcomeCodeType> | string | undefined;
     /**
+     * Extended properties for primitive element: EnrollmentResponse.outcome
+     */
+    _outcome?: fhir.FhirElementArgs;
+    /**
      * A description of the status of the adjudication.
      */
     disposition?: fhir.FhirString | string | undefined;
     /**
+     * Extended properties for primitive element: EnrollmentResponse.disposition
+     */
+    _disposition?: fhir.FhirElementArgs;
+    /**
      * The date when the enclosed suite of services were performed or completed.
      */
     created?: fhir.FhirDateTime | string | undefined;
+    /**
+     * Extended properties for primitive element: EnrollmentResponse.created
+     */
+    _created?: fhir.FhirElementArgs;
     /**
      * The Insurer who produced this adjudicated response.
      */

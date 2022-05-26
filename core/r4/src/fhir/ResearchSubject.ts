@@ -26,6 +26,10 @@ export interface ResearchSubjectArgs extends fhir.DomainResourceArgs {
    */
   status: fhir.FhirCode<ResearchSubjectStatusCodeType>|string|undefined;
   /**
+   * Extended properties for primitive element: ResearchSubject.status
+   */
+  _status?:fhir.FhirElementArgs;
+  /**
    * The dates the subject began and ended their participation in the study.
    */
   period?: fhir.PeriodArgs|undefined;
@@ -42,9 +46,17 @@ export interface ResearchSubjectArgs extends fhir.DomainResourceArgs {
    */
   assignedArm?: fhir.FhirString|string|undefined;
   /**
+   * Extended properties for primitive element: ResearchSubject.assignedArm
+   */
+  _assignedArm?:fhir.FhirElementArgs;
+  /**
    * The name of the arm in the study the subject actually followed as part of this study.
    */
   actualArm?: fhir.FhirString|string|undefined;
+  /**
+   * Extended properties for primitive element: ResearchSubject.actualArm
+   */
+  _actualArm?:fhir.FhirElementArgs;
   /**
    * A record of the patient's informed agreement to participate in the study.
    */
@@ -105,13 +117,25 @@ export class ResearchSubject extends fhir.DomainResource {
     else { this.identifier = []; }
     if (source['status']) { this.status = new fhir.FhirCode<ResearchSubjectStatusCodeType>({value: source.status}); }
     else { this.status = null; }
+    if (source['_status']) {
+      if (this.status) { this.status.addExtendedProperties(source._status!); }
+      else { this.status = new fhir.FhirCode<ResearchSubjectStatusCodeType>(source._status as Partial<fhir.FhirCode>); }
+    }
     if (source['period']) { this.period = new fhir.Period(source.period); }
     if (source['study']) { this.study = new fhir.Reference(source.study); }
     else { this.study = null; }
     if (source['individual']) { this.individual = new fhir.Reference(source.individual); }
     else { this.individual = null; }
     if (source['assignedArm']) { this.assignedArm = new fhir.FhirString({value: source.assignedArm}); }
+    if (source['_assignedArm']) {
+      if (this.assignedArm) { this.assignedArm.addExtendedProperties(source._assignedArm!); }
+      else { this.assignedArm = new fhir.FhirString(source._assignedArm as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['actualArm']) { this.actualArm = new fhir.FhirString({value: source.actualArm}); }
+    if (source['_actualArm']) {
+      if (this.actualArm) { this.actualArm.addExtendedProperties(source._actualArm!); }
+      else { this.actualArm = new fhir.FhirString(source._actualArm as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['consent']) { this.consent = new fhir.Reference(source.consent); }
   }
   /**

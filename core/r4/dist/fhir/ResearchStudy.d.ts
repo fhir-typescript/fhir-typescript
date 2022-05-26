@@ -11,6 +11,10 @@ export interface ResearchStudyArmArgs extends fhir.BackboneElementArgs {
      */
     name: fhir.FhirString | string | undefined;
     /**
+     * Extended properties for primitive element: ResearchStudy.arm.name
+     */
+    _name?: fhir.FhirElementArgs;
+    /**
      * Categorization of study arm, e.g. experimental, active comparator, placebo comparater.
      */
     type?: fhir.CodeableConceptArgs | undefined;
@@ -18,6 +22,10 @@ export interface ResearchStudyArmArgs extends fhir.BackboneElementArgs {
      * A succinct description of the path through the study that would be followed by a subject adhering to this arm.
      */
     description?: fhir.FhirString | string | undefined;
+    /**
+     * Extended properties for primitive element: ResearchStudy.arm.description
+     */
+    _description?: fhir.FhirElementArgs;
 }
 /**
  * Describes an expected sequence of events for one of the participants of a study.  E.g. Exposure to drug A, wash-out, exposure to drug B, wash-out, follow-up.
@@ -56,6 +64,10 @@ export interface ResearchStudyObjectiveArgs extends fhir.BackboneElementArgs {
      * Unique, human-readable label for this objective of the study.
      */
     name?: fhir.FhirString | string | undefined;
+    /**
+     * Extended properties for primitive element: ResearchStudy.objective.name
+     */
+    _name?: fhir.FhirElementArgs;
     /**
      * The kind of study objective.
      */
@@ -107,6 +119,10 @@ export interface ResearchStudyArgs extends fhir.DomainResourceArgs {
      */
     title?: fhir.FhirString | string | undefined;
     /**
+     * Extended properties for primitive element: ResearchStudy.title
+     */
+    _title?: fhir.FhirElementArgs;
+    /**
      * The set of steps expected to be performed as part of the execution of the study.
      */
     protocol?: fhir.ReferenceArgs[] | undefined;
@@ -118,6 +134,10 @@ export interface ResearchStudyArgs extends fhir.DomainResourceArgs {
      * The current state of the study.
      */
     status: fhir.FhirCode<ResearchStudyStatusCodeType> | string | undefined;
+    /**
+     * Extended properties for primitive element: ResearchStudy.status
+     */
+    _status?: fhir.FhirElementArgs;
     /**
      * The type of study based upon the intent of the study's activities. A classification of the intent of the study.
      */
@@ -158,6 +178,10 @@ export interface ResearchStudyArgs extends fhir.DomainResourceArgs {
      * A full description of how the study is being conducted.
      */
     description?: fhir.FhirMarkdown | string | undefined;
+    /**
+     * Extended properties for primitive element: ResearchStudy.description
+     */
+    _description?: fhir.FhirElementArgs;
     /**
      * The Group referenced should not generally enumerate specific subjects.  Subjects will be linked to the study using the ResearchSubject resource.
      */

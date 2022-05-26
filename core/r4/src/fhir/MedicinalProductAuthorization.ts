@@ -204,9 +204,17 @@ export interface MedicinalProductAuthorizationArgs extends fhir.DomainResourceAr
    */
   statusDate?: fhir.FhirDateTime|string|undefined;
   /**
+   * Extended properties for primitive element: MedicinalProductAuthorization.statusDate
+   */
+  _statusDate?:fhir.FhirElementArgs;
+  /**
    * The date when a suspended the marketing or the marketing authorization of the product is anticipated to be restored.
    */
   restoreDate?: fhir.FhirDateTime|string|undefined;
+  /**
+   * Extended properties for primitive element: MedicinalProductAuthorization.restoreDate
+   */
+  _restoreDate?:fhir.FhirElementArgs;
   /**
    * The beginning of the time period in which the marketing authorization is in the specific status shall be specified A complete date consisting of day, month and year shall be specified using the ISO 8601 date format.
    */
@@ -220,9 +228,17 @@ export interface MedicinalProductAuthorizationArgs extends fhir.DomainResourceAr
    */
   dateOfFirstAuthorization?: fhir.FhirDateTime|string|undefined;
   /**
+   * Extended properties for primitive element: MedicinalProductAuthorization.dateOfFirstAuthorization
+   */
+  _dateOfFirstAuthorization?:fhir.FhirElementArgs;
+  /**
    * Date of first marketing authorization for a company's new medicinal product in any country in the World.
    */
   internationalBirthDate?: fhir.FhirDateTime|string|undefined;
+  /**
+   * Extended properties for primitive element: MedicinalProductAuthorization.internationalBirthDate
+   */
+  _internationalBirthDate?:fhir.FhirElementArgs;
   /**
    * The legal framework against which this authorization is granted.
    */
@@ -336,11 +352,27 @@ export class MedicinalProductAuthorization extends fhir.DomainResource {
     else { this.jurisdiction = []; }
     if (source['status']) { this.status = new fhir.CodeableConcept(source.status); }
     if (source['statusDate']) { this.statusDate = new fhir.FhirDateTime({value: source.statusDate}); }
+    if (source['_statusDate']) {
+      if (this.statusDate) { this.statusDate.addExtendedProperties(source._statusDate!); }
+      else { this.statusDate = new fhir.FhirDateTime(source._statusDate as Partial<fhir.FhirDateTimeArgs>); }
+    }
     if (source['restoreDate']) { this.restoreDate = new fhir.FhirDateTime({value: source.restoreDate}); }
+    if (source['_restoreDate']) {
+      if (this.restoreDate) { this.restoreDate.addExtendedProperties(source._restoreDate!); }
+      else { this.restoreDate = new fhir.FhirDateTime(source._restoreDate as Partial<fhir.FhirDateTimeArgs>); }
+    }
     if (source['validityPeriod']) { this.validityPeriod = new fhir.Period(source.validityPeriod); }
     if (source['dataExclusivityPeriod']) { this.dataExclusivityPeriod = new fhir.Period(source.dataExclusivityPeriod); }
     if (source['dateOfFirstAuthorization']) { this.dateOfFirstAuthorization = new fhir.FhirDateTime({value: source.dateOfFirstAuthorization}); }
+    if (source['_dateOfFirstAuthorization']) {
+      if (this.dateOfFirstAuthorization) { this.dateOfFirstAuthorization.addExtendedProperties(source._dateOfFirstAuthorization!); }
+      else { this.dateOfFirstAuthorization = new fhir.FhirDateTime(source._dateOfFirstAuthorization as Partial<fhir.FhirDateTimeArgs>); }
+    }
     if (source['internationalBirthDate']) { this.internationalBirthDate = new fhir.FhirDateTime({value: source.internationalBirthDate}); }
+    if (source['_internationalBirthDate']) {
+      if (this.internationalBirthDate) { this.internationalBirthDate.addExtendedProperties(source._internationalBirthDate!); }
+      else { this.internationalBirthDate = new fhir.FhirDateTime(source._internationalBirthDate as Partial<fhir.FhirDateTimeArgs>); }
+    }
     if (source['legalBasis']) { this.legalBasis = new fhir.CodeableConcept(source.legalBasis); }
     if (source['jurisdictionalAuthorization']) { this.jurisdictionalAuthorization = source.jurisdictionalAuthorization.map((x) => new fhir.MedicinalProductAuthorizationJurisdictionalAuthorization(x)); }
     else { this.jurisdictionalAuthorization = []; }

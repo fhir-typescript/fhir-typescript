@@ -26,9 +26,17 @@ export interface TerminologyCapabilitiesSoftwareArgs extends fhir.BackboneElemen
    */
   name: fhir.FhirString|string|undefined;
   /**
+   * Extended properties for primitive element: TerminologyCapabilities.software.name
+   */
+  _name?:fhir.FhirElementArgs;
+  /**
    * If possible, a version should be specified, as statements are likely to be different for different versions of software.
    */
   version?: fhir.FhirString|string|undefined;
+  /**
+   * Extended properties for primitive element: TerminologyCapabilities.software.version
+   */
+  _version?:fhir.FhirElementArgs;
 }
 
 /**
@@ -54,7 +62,15 @@ export class TerminologyCapabilitiesSoftware extends fhir.BackboneElement {
     super(source, options);
     if (source['name']) { this.name = new fhir.FhirString({value: source.name}); }
     else { this.name = null; }
+    if (source['_name']) {
+      if (this.name) { this.name.addExtendedProperties(source._name!); }
+      else { this.name = new fhir.FhirString(source._name as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['version']) { this.version = new fhir.FhirString({value: source.version}); }
+    if (source['_version']) {
+      if (this.version) { this.version.addExtendedProperties(source._version!); }
+      else { this.version = new fhir.FhirString(source._version as Partial<fhir.FhirStringArgs>); }
+    }
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -78,9 +94,17 @@ export interface TerminologyCapabilitiesImplementationArgs extends fhir.Backbone
    */
   description: fhir.FhirString|string|undefined;
   /**
+   * Extended properties for primitive element: TerminologyCapabilities.implementation.description
+   */
+  _description?:fhir.FhirElementArgs;
+  /**
    * An absolute base URL for the implementation.
    */
   url?: fhir.FhirUrl|string|undefined;
+  /**
+   * Extended properties for primitive element: TerminologyCapabilities.implementation.url
+   */
+  _url?:fhir.FhirElementArgs;
 }
 
 /**
@@ -106,7 +130,15 @@ export class TerminologyCapabilitiesImplementation extends fhir.BackboneElement 
     super(source, options);
     if (source['description']) { this.description = new fhir.FhirString({value: source.description}); }
     else { this.description = null; }
+    if (source['_description']) {
+      if (this.description) { this.description.addExtendedProperties(source._description!); }
+      else { this.description = new fhir.FhirString(source._description as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['url']) { this.url = new fhir.FhirUrl({value: source.url}); }
+    if (source['_url']) {
+      if (this.url) { this.url.addExtendedProperties(source._url!); }
+      else { this.url = new fhir.FhirUrl(source._url as Partial<fhir.FhirUrlArgs>); }
+    }
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -130,9 +162,17 @@ export interface TerminologyCapabilitiesCodeSystemVersionFilterArgs extends fhir
    */
   code: fhir.FhirCode|string|undefined;
   /**
+   * Extended properties for primitive element: TerminologyCapabilities.codeSystem.version.filter.code
+   */
+  _code?:fhir.FhirElementArgs;
+  /**
    * Operations supported for the property.
    */
   op: fhir.FhirCode[]|string[]|undefined;
+  /**
+   * Extended properties for primitive element: TerminologyCapabilities.codeSystem.version.filter.op
+   */
+  _op?:(fhir.FhirElementArgs|null)[];
 }
 
 /**
@@ -158,8 +198,18 @@ export class TerminologyCapabilitiesCodeSystemVersionFilter extends fhir.Backbon
     super(source, options);
     if (source['code']) { this.code = new fhir.FhirCode({value: source.code}); }
     else { this.code = null; }
+    if (source['_code']) {
+      if (this.code) { this.code.addExtendedProperties(source._code!); }
+      else { this.code = new fhir.FhirCode(source._code as Partial<fhir.FhirCodeArgs>); }
+    }
     if (source['op']) { this.op = source.op.map((x) => new fhir.FhirCode({value: x})); }
     else { this.op = []; }
+    if (source['_op']) {
+      source._op.forEach((x,i) => {
+        if (this.op.length >= i) { if (x) { this.op[i].addExtendedProperties(x); } }
+        else { if (x) { this.op.push(new fhir.FhirCode(x as Partial<fhir.FhirCodeArgs>)); } }
+      });
+    }
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -190,17 +240,33 @@ export interface TerminologyCapabilitiesCodeSystemVersionArgs extends fhir.Backb
    */
   code?: fhir.FhirString|string|undefined;
   /**
+   * Extended properties for primitive element: TerminologyCapabilities.codeSystem.version.code
+   */
+  _code?:fhir.FhirElementArgs;
+  /**
    * If this is the default version for this code system.
    */
   isDefault?: fhir.FhirBoolean|boolean|undefined;
+  /**
+   * Extended properties for primitive element: TerminologyCapabilities.codeSystem.version.isDefault
+   */
+  _isDefault?:fhir.FhirElementArgs;
   /**
    * If the compositional grammar defined by the code system is supported.
    */
   compositional?: fhir.FhirBoolean|boolean|undefined;
   /**
+   * Extended properties for primitive element: TerminologyCapabilities.codeSystem.version.compositional
+   */
+  _compositional?:fhir.FhirElementArgs;
+  /**
    * Language Displays supported.
    */
   language?: fhir.FhirCode[]|string[]|undefined;
+  /**
+   * Extended properties for primitive element: TerminologyCapabilities.codeSystem.version.language
+   */
+  _language?:(fhir.FhirElementArgs|null)[];
   /**
    * Filter Properties supported.
    */
@@ -209,6 +275,10 @@ export interface TerminologyCapabilitiesCodeSystemVersionArgs extends fhir.Backb
    * Properties supported for $lookup.
    */
   property?: fhir.FhirCode[]|string[]|undefined;
+  /**
+   * Extended properties for primitive element: TerminologyCapabilities.codeSystem.version.property
+   */
+  _property?:(fhir.FhirElementArgs|null)[];
 }
 
 /**
@@ -249,14 +319,38 @@ export class TerminologyCapabilitiesCodeSystemVersion extends fhir.BackboneEleme
   constructor(source:Partial<TerminologyCapabilitiesCodeSystemVersionArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
     if (source['code']) { this.code = new fhir.FhirString({value: source.code}); }
+    if (source['_code']) {
+      if (this.code) { this.code.addExtendedProperties(source._code!); }
+      else { this.code = new fhir.FhirString(source._code as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['isDefault']) { this.isDefault = new fhir.FhirBoolean({value: source.isDefault}); }
+    if (source['_isDefault']) {
+      if (this.isDefault) { this.isDefault.addExtendedProperties(source._isDefault!); }
+      else { this.isDefault = new fhir.FhirBoolean(source._isDefault as Partial<fhir.FhirBooleanArgs>); }
+    }
     if (source['compositional']) { this.compositional = new fhir.FhirBoolean({value: source.compositional}); }
+    if (source['_compositional']) {
+      if (this.compositional) { this.compositional.addExtendedProperties(source._compositional!); }
+      else { this.compositional = new fhir.FhirBoolean(source._compositional as Partial<fhir.FhirBooleanArgs>); }
+    }
     if (source['language']) { this.language = source.language.map((x) => new fhir.FhirCode({value: x})); }
     else { this.language = []; }
+    if (source['_language']) {
+      source._language.forEach((x,i) => {
+        if (this.language.length >= i) { if (x) { this.language[i].addExtendedProperties(x); } }
+        else { if (x) { this.language.push(new fhir.FhirCode(x as Partial<fhir.FhirCodeArgs>)); } }
+      });
+    }
     if (source['filter']) { this.filter = source.filter.map((x) => new fhir.TerminologyCapabilitiesCodeSystemVersionFilter(x)); }
     else { this.filter = []; }
     if (source['property']) { this.property = source.property.map((x) => new fhir.FhirCode({value: x})); }
     else { this.property = []; }
+    if (source['_property']) {
+      source._property.forEach((x,i) => {
+        if (this.property.length >= i) { if (x) { this.property[i].addExtendedProperties(x); } }
+        else { if (x) { this.property.push(new fhir.FhirCode(x as Partial<fhir.FhirCodeArgs>)); } }
+      });
+    }
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -281,6 +375,10 @@ export interface TerminologyCapabilitiesCodeSystemArgs extends fhir.BackboneElem
    */
   uri?: fhir.FhirCanonical|string|undefined;
   /**
+   * Extended properties for primitive element: TerminologyCapabilities.codeSystem.uri
+   */
+  _uri?:fhir.FhirElementArgs;
+  /**
    * Language translations might not be available for all codes.
    */
   version?: fhir.TerminologyCapabilitiesCodeSystemVersionArgs[]|undefined;
@@ -288,6 +386,10 @@ export interface TerminologyCapabilitiesCodeSystemArgs extends fhir.BackboneElem
    * True if subsumption is supported for this version of the code system.
    */
   subsumption?: fhir.FhirBoolean|boolean|undefined;
+  /**
+   * Extended properties for primitive element: TerminologyCapabilities.codeSystem.subsumption
+   */
+  _subsumption?:fhir.FhirElementArgs;
 }
 
 /**
@@ -316,9 +418,17 @@ export class TerminologyCapabilitiesCodeSystem extends fhir.BackboneElement {
   constructor(source:Partial<TerminologyCapabilitiesCodeSystemArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
     if (source['uri']) { this.uri = new fhir.FhirCanonical({value: source.uri}); }
+    if (source['_uri']) {
+      if (this.uri) { this.uri.addExtendedProperties(source._uri!); }
+      else { this.uri = new fhir.FhirCanonical(source._uri as Partial<fhir.FhirCanonicalArgs>); }
+    }
     if (source['version']) { this.version = source.version.map((x) => new fhir.TerminologyCapabilitiesCodeSystemVersion(x)); }
     else { this.version = []; }
     if (source['subsumption']) { this.subsumption = new fhir.FhirBoolean({value: source.subsumption}); }
+    if (source['_subsumption']) {
+      if (this.subsumption) { this.subsumption.addExtendedProperties(source._subsumption!); }
+      else { this.subsumption = new fhir.FhirBoolean(source._subsumption as Partial<fhir.FhirBooleanArgs>); }
+    }
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -340,9 +450,17 @@ export interface TerminologyCapabilitiesExpansionParameterArgs extends fhir.Back
    */
   name: fhir.FhirCode|string|undefined;
   /**
+   * Extended properties for primitive element: TerminologyCapabilities.expansion.parameter.name
+   */
+  _name?:fhir.FhirElementArgs;
+  /**
    * Description of support for parameter.
    */
   documentation?: fhir.FhirString|string|undefined;
+  /**
+   * Extended properties for primitive element: TerminologyCapabilities.expansion.parameter.documentation
+   */
+  _documentation?:fhir.FhirElementArgs;
 }
 
 /**
@@ -368,7 +486,15 @@ export class TerminologyCapabilitiesExpansionParameter extends fhir.BackboneElem
     super(source, options);
     if (source['name']) { this.name = new fhir.FhirCode({value: source.name}); }
     else { this.name = null; }
+    if (source['_name']) {
+      if (this.name) { this.name.addExtendedProperties(source._name!); }
+      else { this.name = new fhir.FhirCode(source._name as Partial<fhir.FhirCodeArgs>); }
+    }
     if (source['documentation']) { this.documentation = new fhir.FhirString({value: source.documentation}); }
+    if (source['_documentation']) {
+      if (this.documentation) { this.documentation.addExtendedProperties(source._documentation!); }
+      else { this.documentation = new fhir.FhirString(source._documentation as Partial<fhir.FhirStringArgs>); }
+    }
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -392,13 +518,25 @@ export interface TerminologyCapabilitiesExpansionArgs extends fhir.BackboneEleme
    */
   hierarchical?: fhir.FhirBoolean|boolean|undefined;
   /**
+   * Extended properties for primitive element: TerminologyCapabilities.expansion.hierarchical
+   */
+  _hierarchical?:fhir.FhirElementArgs;
+  /**
    * Whether the server supports paging on expansion.
    */
   paging?: fhir.FhirBoolean|boolean|undefined;
   /**
+   * Extended properties for primitive element: TerminologyCapabilities.expansion.paging
+   */
+  _paging?:fhir.FhirElementArgs;
+  /**
    * Allow request for incomplete expansions?
    */
   incomplete?: fhir.FhirBoolean|boolean|undefined;
+  /**
+   * Extended properties for primitive element: TerminologyCapabilities.expansion.incomplete
+   */
+  _incomplete?:fhir.FhirElementArgs;
   /**
    * Supported expansion parameter.
    */
@@ -407,6 +545,10 @@ export interface TerminologyCapabilitiesExpansionArgs extends fhir.BackboneEleme
    * This documentation should cover things like case sensitivity,  use of punctuation if not ignored, what wild cards are supported (if any), whether text is starts with or contains, and whether word order matters.
    */
   textFilter?: fhir.FhirMarkdown|string|undefined;
+  /**
+   * Extended properties for primitive element: TerminologyCapabilities.expansion.textFilter
+   */
+  _textFilter?:fhir.FhirElementArgs;
 }
 
 /**
@@ -443,11 +585,27 @@ export class TerminologyCapabilitiesExpansion extends fhir.BackboneElement {
   constructor(source:Partial<TerminologyCapabilitiesExpansionArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
     if (source['hierarchical']) { this.hierarchical = new fhir.FhirBoolean({value: source.hierarchical}); }
+    if (source['_hierarchical']) {
+      if (this.hierarchical) { this.hierarchical.addExtendedProperties(source._hierarchical!); }
+      else { this.hierarchical = new fhir.FhirBoolean(source._hierarchical as Partial<fhir.FhirBooleanArgs>); }
+    }
     if (source['paging']) { this.paging = new fhir.FhirBoolean({value: source.paging}); }
+    if (source['_paging']) {
+      if (this.paging) { this.paging.addExtendedProperties(source._paging!); }
+      else { this.paging = new fhir.FhirBoolean(source._paging as Partial<fhir.FhirBooleanArgs>); }
+    }
     if (source['incomplete']) { this.incomplete = new fhir.FhirBoolean({value: source.incomplete}); }
+    if (source['_incomplete']) {
+      if (this.incomplete) { this.incomplete.addExtendedProperties(source._incomplete!); }
+      else { this.incomplete = new fhir.FhirBoolean(source._incomplete as Partial<fhir.FhirBooleanArgs>); }
+    }
     if (source['parameter']) { this.parameter = source.parameter.map((x) => new fhir.TerminologyCapabilitiesExpansionParameter(x)); }
     else { this.parameter = []; }
     if (source['textFilter']) { this.textFilter = new fhir.FhirMarkdown({value: source.textFilter}); }
+    if (source['_textFilter']) {
+      if (this.textFilter) { this.textFilter.addExtendedProperties(source._textFilter!); }
+      else { this.textFilter = new fhir.FhirMarkdown(source._textFilter as Partial<fhir.FhirMarkdownArgs>); }
+    }
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -470,6 +628,10 @@ export interface TerminologyCapabilitiesValidateCodeArgs extends fhir.BackboneEl
    * Whether translations are validated.
    */
   translations: fhir.FhirBoolean|boolean|undefined;
+  /**
+   * Extended properties for primitive element: TerminologyCapabilities.validateCode.translations
+   */
+  _translations?:fhir.FhirElementArgs;
 }
 
 /**
@@ -491,6 +653,10 @@ export class TerminologyCapabilitiesValidateCode extends fhir.BackboneElement {
     super(source, options);
     if (source['translations']) { this.translations = new fhir.FhirBoolean({value: source.translations}); }
     else { this.translations = null; }
+    if (source['_translations']) {
+      if (this.translations) { this.translations.addExtendedProperties(source._translations!); }
+      else { this.translations = new fhir.FhirBoolean(source._translations as Partial<fhir.FhirBooleanArgs>); }
+    }
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -512,6 +678,10 @@ export interface TerminologyCapabilitiesTranslationArgs extends fhir.BackboneEle
    * Whether the client must identify the map.
    */
   needsMap: fhir.FhirBoolean|boolean|undefined;
+  /**
+   * Extended properties for primitive element: TerminologyCapabilities.translation.needsMap
+   */
+  _needsMap?:fhir.FhirElementArgs;
 }
 
 /**
@@ -533,6 +703,10 @@ export class TerminologyCapabilitiesTranslation extends fhir.BackboneElement {
     super(source, options);
     if (source['needsMap']) { this.needsMap = new fhir.FhirBoolean({value: source.needsMap}); }
     else { this.needsMap = null; }
+    if (source['_needsMap']) {
+      if (this.needsMap) { this.needsMap.addExtendedProperties(source._needsMap!); }
+      else { this.needsMap = new fhir.FhirBoolean(source._needsMap as Partial<fhir.FhirBooleanArgs>); }
+    }
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -554,6 +728,10 @@ export interface TerminologyCapabilitiesClosureArgs extends fhir.BackboneElement
    * If cross-system closure is supported.
    */
   translation?: fhir.FhirBoolean|boolean|undefined;
+  /**
+   * Extended properties for primitive element: TerminologyCapabilities.closure.translation
+   */
+  _translation?:fhir.FhirElementArgs;
 }
 
 /**
@@ -574,6 +752,10 @@ export class TerminologyCapabilitiesClosure extends fhir.BackboneElement {
   constructor(source:Partial<TerminologyCapabilitiesClosureArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
     if (source['translation']) { this.translation = new fhir.FhirBoolean({value: source.translation}); }
+    if (source['_translation']) {
+      if (this.translation) { this.translation.addExtendedProperties(source._translation!); }
+      else { this.translation = new fhir.FhirBoolean(source._translation as Partial<fhir.FhirBooleanArgs>); }
+    }
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -599,33 +781,65 @@ export interface TerminologyCapabilitiesArgs extends fhir.DomainResourceArgs {
    */
   url?: fhir.FhirUri|string|undefined;
   /**
+   * Extended properties for primitive element: TerminologyCapabilities.url
+   */
+  _url?:fhir.FhirElementArgs;
+  /**
    * There may be different terminology capabilities instances that have the same identifier but different versions.  The version can be appended to the url in a reference to allow a reference to a particular business version of the terminology capabilities with the format [url]|[version].
    */
   version?: fhir.FhirString|string|undefined;
+  /**
+   * Extended properties for primitive element: TerminologyCapabilities.version
+   */
+  _version?:fhir.FhirElementArgs;
   /**
    * The name is not expected to be globally unique. The name should be a simple alphanumeric type name to ensure that it is machine-processing friendly.
    */
   name?: fhir.FhirString|string|undefined;
   /**
+   * Extended properties for primitive element: TerminologyCapabilities.name
+   */
+  _name?:fhir.FhirElementArgs;
+  /**
    * This name does not need to be machine-processing friendly and may contain punctuation, white-space, etc.
    */
   title?: fhir.FhirString|string|undefined;
+  /**
+   * Extended properties for primitive element: TerminologyCapabilities.title
+   */
+  _title?:fhir.FhirElementArgs;
   /**
    * Allows filtering of terminology capabilitiess that are appropriate for use versus not.This is not intended for use with actual capability statements, but where capability statements are used to describe possible or desired systems.
    */
   status: fhir.FhirCode<PublicationStatusCodeType>|string|undefined;
   /**
+   * Extended properties for primitive element: TerminologyCapabilities.status
+   */
+  _status?:fhir.FhirElementArgs;
+  /**
    * Allows filtering of terminology capabilitiess that are appropriate for use versus not.
    */
   experimental?: fhir.FhirBoolean|boolean|undefined;
+  /**
+   * Extended properties for primitive element: TerminologyCapabilities.experimental
+   */
+  _experimental?:fhir.FhirElementArgs;
   /**
    * Note that this is not the same as the resource last-modified-date, since the resource may be a secondary representation of the terminology capabilities. Additional specific dates may be added as extensions or be found by consulting Provenances associated with past versions of the resource.
    */
   date: fhir.FhirDateTime|string|undefined;
   /**
+   * Extended properties for primitive element: TerminologyCapabilities.date
+   */
+  _date?:fhir.FhirElementArgs;
+  /**
    * Usually an organization but may be an individual. The publisher (or steward) of the terminology capabilities is the organization or individual primarily responsible for the maintenance and upkeep of the terminology capabilities. This is not necessarily the same individual or organization that developed and initially authored the content. The publisher is the primary point of contact for questions or issues with the terminology capabilities. This item SHOULD be populated unless the information is available from context.
    */
   publisher?: fhir.FhirString|string|undefined;
+  /**
+   * Extended properties for primitive element: TerminologyCapabilities.publisher
+   */
+  _publisher?:fhir.FhirElementArgs;
   /**
    * May be a web site, an email address, a telephone number, etc.
    */
@@ -634,6 +848,10 @@ export interface TerminologyCapabilitiesArgs extends fhir.DomainResourceArgs {
    * This description can be used to capture details such as why the terminology capabilities was built, comments about misuse, instructions for clinical use and interpretation, literature references, examples from the paper world, etc. It is not a rendering of the terminology capabilities as conveyed in the 'text' field of the resource itself. This item SHOULD be populated unless the information is available from context (e.g. the language of the terminology capabilities is presumed to be the predominant language in the place the terminology capabilities was created).This does not need to be populated if the description is adequately implied by the software or implementation details.
    */
   description?: fhir.FhirMarkdown|string|undefined;
+  /**
+   * Extended properties for primitive element: TerminologyCapabilities.description
+   */
+  _description?:fhir.FhirElementArgs;
   /**
    * When multiple useContexts are specified, there is no expectation that all or any of the contexts apply.
    */
@@ -647,13 +865,25 @@ export interface TerminologyCapabilitiesArgs extends fhir.DomainResourceArgs {
    */
   purpose?: fhir.FhirMarkdown|string|undefined;
   /**
+   * Extended properties for primitive element: TerminologyCapabilities.purpose
+   */
+  _purpose?:fhir.FhirElementArgs;
+  /**
    * A copyright statement relating to the terminology capabilities and/or its contents. Copyright statements are generally legal restrictions on the use and publishing of the terminology capabilities.
    */
   copyright?: fhir.FhirMarkdown|string|undefined;
   /**
+   * Extended properties for primitive element: TerminologyCapabilities.copyright
+   */
+  _copyright?:fhir.FhirElementArgs;
+  /**
    * The way that this statement is intended to be used, to describe an actual running instance of software, a particular product (kind, not instance of software) or a class of implementation (e.g. a desired purchase).
    */
   kind: fhir.FhirCode<CapabilityStatementKindCodeType>|string|undefined;
+  /**
+   * Extended properties for primitive element: TerminologyCapabilities.kind
+   */
+  _kind?:fhir.FhirElementArgs;
   /**
    * Software that is covered by this terminology capability statement.  It is used when the statement describes the capabilities of a particular software version, independent of an installation.
    */
@@ -667,6 +897,10 @@ export interface TerminologyCapabilitiesArgs extends fhir.DomainResourceArgs {
    */
   lockedDate?: fhir.FhirBoolean|boolean|undefined;
   /**
+   * Extended properties for primitive element: TerminologyCapabilities.lockedDate
+   */
+  _lockedDate?:fhir.FhirElementArgs;
+  /**
    * The code system - identified by its system URL - may also be declared explicitly as a Code System Resource at /CodeSystem, but it might not be.
    */
   codeSystem?: fhir.TerminologyCapabilitiesCodeSystemArgs[]|undefined;
@@ -678,6 +912,10 @@ export interface TerminologyCapabilitiesArgs extends fhir.DomainResourceArgs {
    * See notes on the [ValueSet](valueset.html#) resource.
    */
   codeSearch?: fhir.FhirCode<CodeSearchSupportCodeType>|string|undefined;
+  /**
+   * Extended properties for primitive element: TerminologyCapabilities.codeSearch
+   */
+  _codeSearch?:fhir.FhirElementArgs;
   /**
    * Information about the [ValueSet/$validate-code](valueset-operation-validate-code.html) operation.
    */
@@ -809,33 +1047,89 @@ export class TerminologyCapabilities extends fhir.DomainResource {
     super(source, options);
     this.resourceType = 'TerminologyCapabilities';
     if (source['url']) { this.url = new fhir.FhirUri({value: source.url}); }
+    if (source['_url']) {
+      if (this.url) { this.url.addExtendedProperties(source._url!); }
+      else { this.url = new fhir.FhirUri(source._url as Partial<fhir.FhirUriArgs>); }
+    }
     if (source['version']) { this.version = new fhir.FhirString({value: source.version}); }
+    if (source['_version']) {
+      if (this.version) { this.version.addExtendedProperties(source._version!); }
+      else { this.version = new fhir.FhirString(source._version as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['name']) { this.name = new fhir.FhirString({value: source.name}); }
+    if (source['_name']) {
+      if (this.name) { this.name.addExtendedProperties(source._name!); }
+      else { this.name = new fhir.FhirString(source._name as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['title']) { this.title = new fhir.FhirString({value: source.title}); }
+    if (source['_title']) {
+      if (this.title) { this.title.addExtendedProperties(source._title!); }
+      else { this.title = new fhir.FhirString(source._title as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['status']) { this.status = new fhir.FhirCode<PublicationStatusCodeType>({value: source.status}); }
     else { this.status = null; }
+    if (source['_status']) {
+      if (this.status) { this.status.addExtendedProperties(source._status!); }
+      else { this.status = new fhir.FhirCode<PublicationStatusCodeType>(source._status as Partial<fhir.FhirCode>); }
+    }
     if (source['experimental']) { this.experimental = new fhir.FhirBoolean({value: source.experimental}); }
+    if (source['_experimental']) {
+      if (this.experimental) { this.experimental.addExtendedProperties(source._experimental!); }
+      else { this.experimental = new fhir.FhirBoolean(source._experimental as Partial<fhir.FhirBooleanArgs>); }
+    }
     if (source['date']) { this.date = new fhir.FhirDateTime({value: source.date}); }
     else { this.date = null; }
+    if (source['_date']) {
+      if (this.date) { this.date.addExtendedProperties(source._date!); }
+      else { this.date = new fhir.FhirDateTime(source._date as Partial<fhir.FhirDateTimeArgs>); }
+    }
     if (source['publisher']) { this.publisher = new fhir.FhirString({value: source.publisher}); }
+    if (source['_publisher']) {
+      if (this.publisher) { this.publisher.addExtendedProperties(source._publisher!); }
+      else { this.publisher = new fhir.FhirString(source._publisher as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['contact']) { this.contact = source.contact.map((x) => new fhir.ContactDetail(x)); }
     else { this.contact = []; }
     if (source['description']) { this.description = new fhir.FhirMarkdown({value: source.description}); }
+    if (source['_description']) {
+      if (this.description) { this.description.addExtendedProperties(source._description!); }
+      else { this.description = new fhir.FhirMarkdown(source._description as Partial<fhir.FhirMarkdownArgs>); }
+    }
     if (source['useContext']) { this.useContext = source.useContext.map((x) => new fhir.UsageContext(x)); }
     else { this.useContext = []; }
     if (source['jurisdiction']) { this.jurisdiction = source.jurisdiction.map((x) => new fhir.CodeableConcept(x)); }
     else { this.jurisdiction = []; }
     if (source['purpose']) { this.purpose = new fhir.FhirMarkdown({value: source.purpose}); }
+    if (source['_purpose']) {
+      if (this.purpose) { this.purpose.addExtendedProperties(source._purpose!); }
+      else { this.purpose = new fhir.FhirMarkdown(source._purpose as Partial<fhir.FhirMarkdownArgs>); }
+    }
     if (source['copyright']) { this.copyright = new fhir.FhirMarkdown({value: source.copyright}); }
+    if (source['_copyright']) {
+      if (this.copyright) { this.copyright.addExtendedProperties(source._copyright!); }
+      else { this.copyright = new fhir.FhirMarkdown(source._copyright as Partial<fhir.FhirMarkdownArgs>); }
+    }
     if (source['kind']) { this.kind = new fhir.FhirCode<CapabilityStatementKindCodeType>({value: source.kind}); }
     else { this.kind = null; }
+    if (source['_kind']) {
+      if (this.kind) { this.kind.addExtendedProperties(source._kind!); }
+      else { this.kind = new fhir.FhirCode<CapabilityStatementKindCodeType>(source._kind as Partial<fhir.FhirCode>); }
+    }
     if (source['software']) { this.software = new fhir.TerminologyCapabilitiesSoftware(source.software); }
     if (source['implementation']) { this.implementation = new fhir.TerminologyCapabilitiesImplementation(source.implementation); }
     if (source['lockedDate']) { this.lockedDate = new fhir.FhirBoolean({value: source.lockedDate}); }
+    if (source['_lockedDate']) {
+      if (this.lockedDate) { this.lockedDate.addExtendedProperties(source._lockedDate!); }
+      else { this.lockedDate = new fhir.FhirBoolean(source._lockedDate as Partial<fhir.FhirBooleanArgs>); }
+    }
     if (source['codeSystem']) { this.codeSystem = source.codeSystem.map((x) => new fhir.TerminologyCapabilitiesCodeSystem(x)); }
     else { this.codeSystem = []; }
     if (source['expansion']) { this.expansion = new fhir.TerminologyCapabilitiesExpansion(source.expansion); }
     if (source['codeSearch']) { this.codeSearch = new fhir.FhirCode<CodeSearchSupportCodeType>({value: source.codeSearch}); }
+    if (source['_codeSearch']) {
+      if (this.codeSearch) { this.codeSearch.addExtendedProperties(source._codeSearch!); }
+      else { this.codeSearch = new fhir.FhirCode<CodeSearchSupportCodeType>(source._codeSearch as Partial<fhir.FhirCode>); }
+    }
     if (source['validateCode']) { this.validateCode = new fhir.TerminologyCapabilitiesValidateCode(source.validateCode); }
     if (source['translation']) { this.translation = new fhir.TerminologyCapabilitiesTranslation(source.translation); }
     if (source['closure']) { this.closure = new fhir.TerminologyCapabilitiesClosure(source.closure); }

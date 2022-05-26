@@ -16,9 +16,17 @@ export interface ListEntryArgs extends fhir.BackboneElementArgs {
      */
     deleted?: fhir.FhirBoolean | boolean | undefined;
     /**
+     * Extended properties for primitive element: List.entry.deleted
+     */
+    _deleted?: fhir.FhirElementArgs;
+    /**
      * When this item was added to the list.
      */
     date?: fhir.FhirDateTime | string | undefined;
+    /**
+     * Extended properties for primitive element: List.entry.date
+     */
+    _date?: fhir.FhirElementArgs;
     /**
      * A reference to the actual resource from which data was derived.
      */
@@ -74,13 +82,25 @@ export interface ListArgs extends fhir.DomainResourceArgs {
      */
     status: fhir.FhirCode<ListStatusCodeType> | string | undefined;
     /**
+     * Extended properties for primitive element: List.status
+     */
+    _status?: fhir.FhirElementArgs;
+    /**
      * This element is labeled as a modifier because a change list must not be misunderstood as a complete list.
      */
     mode: fhir.FhirCode<ListModeCodeType> | string | undefined;
     /**
+     * Extended properties for primitive element: List.mode
+     */
+    _mode?: fhir.FhirElementArgs;
+    /**
      * A label for the list assigned by the author.
      */
     title?: fhir.FhirString | string | undefined;
+    /**
+     * Extended properties for primitive element: List.title
+     */
+    _title?: fhir.FhirElementArgs;
     /**
      * If there is no code, the purpose of the list is implied where it is used, such as in a document section using Document.section.code.
      */
@@ -97,6 +117,10 @@ export interface ListArgs extends fhir.DomainResourceArgs {
      * The actual important date is the date of currency of the resources that were summarized, but it is usually assumed that these are current when the preparation occurs.
      */
     date?: fhir.FhirDateTime | string | undefined;
+    /**
+     * Extended properties for primitive element: List.date
+     */
+    _date?: fhir.FhirElementArgs;
     /**
      * The primary source is the entity that made the decisions what items are in the list. This may be software or user.
      */

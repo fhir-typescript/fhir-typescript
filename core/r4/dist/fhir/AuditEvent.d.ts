@@ -17,9 +17,17 @@ export interface AuditEventAgentNetworkArgs extends fhir.BackboneElementArgs {
      */
     address?: fhir.FhirString | string | undefined;
     /**
+     * Extended properties for primitive element: AuditEvent.agent.network.address
+     */
+    _address?: fhir.FhirElementArgs;
+    /**
      * An identifier for the type of network access point that originated the audit event.
      */
     type?: fhir.FhirCode | string | undefined;
+    /**
+     * Extended properties for primitive element: AuditEvent.agent.network.type
+     */
+    _type?: fhir.FhirElementArgs;
 }
 /**
  * Logical network location for application activity, if the activity has a network location.
@@ -77,13 +85,25 @@ export interface AuditEventAgentArgs extends fhir.BackboneElementArgs {
      */
     altId?: fhir.FhirString | string | undefined;
     /**
+     * Extended properties for primitive element: AuditEvent.agent.altId
+     */
+    _altId?: fhir.FhirElementArgs;
+    /**
      * Human-meaningful name for the agent.
      */
     name?: fhir.FhirString | string | undefined;
     /**
+     * Extended properties for primitive element: AuditEvent.agent.name
+     */
+    _name?: fhir.FhirElementArgs;
+    /**
      * There can only be one initiator. If the initiator is not clear, then do not choose any one agent as the initiator.
      */
     requestor: fhir.FhirBoolean | boolean | undefined;
+    /**
+     * Extended properties for primitive element: AuditEvent.agent.requestor
+     */
+    _requestor?: fhir.FhirElementArgs;
     /**
      * Where the event occurred.
      */
@@ -92,6 +112,10 @@ export interface AuditEventAgentArgs extends fhir.BackboneElementArgs {
      * For example: Where an OAuth token authorizes, the unique identifier from the OAuth token is placed into the policy element Where a policy engine (e.g. XACML) holds policy logic, the unique policy identifier is placed into the policy element.
      */
     policy?: fhir.FhirUri[] | string[] | undefined;
+    /**
+     * Extended properties for primitive element: AuditEvent.agent.policy
+     */
+    _policy?: (fhir.FhirElementArgs | null)[];
     /**
      * Type of media involved. Used when the event is about exporting/importing onto media.
      */
@@ -188,6 +212,10 @@ export interface AuditEventSourceArgs extends fhir.BackboneElementArgs {
      */
     site?: fhir.FhirString | string | undefined;
     /**
+     * Extended properties for primitive element: AuditEvent.source.site
+     */
+    _site?: fhir.FhirElementArgs;
+    /**
      * Identifier of the source where the event was detected.
      */
     observer: fhir.ReferenceArgs | null;
@@ -237,6 +265,10 @@ export interface AuditEventEntityDetailArgs extends fhir.BackboneElementArgs {
      * The type of extra detail provided in the value.
      */
     type: fhir.FhirString | string | undefined;
+    /**
+     * Extended properties for primitive element: AuditEvent.entity.detail.type
+     */
+    _type?: fhir.FhirElementArgs;
     /**
      * The value can be string when known to be a string, else base64 encoding should be used to protect binary or undefined content.  The meaning and secondary-encoding of the content of base64 encoded blob is specific to the AuditEvent.type, AuditEvent.subtype, AuditEvent.entity.type, and AuditEvent.entity.role.  The base64 is a general-use and safe container for event specific data blobs regardless of the encoding used by the transaction being recorded.  An AuditEvent consuming application must understand the event it is consuming and the formats used by the event. For example if auditing an Oracle network database access, the Oracle formats must be understood as they will be simply encoded in the base64binary blob.
      */
@@ -308,13 +340,25 @@ export interface AuditEventEntityArgs extends fhir.BackboneElementArgs {
      */
     name?: fhir.FhirString | string | undefined;
     /**
+     * Extended properties for primitive element: AuditEvent.entity.name
+     */
+    _name?: fhir.FhirElementArgs;
+    /**
      * Text that describes the entity in more detail.
      */
     description?: fhir.FhirString | string | undefined;
     /**
+     * Extended properties for primitive element: AuditEvent.entity.description
+     */
+    _description?: fhir.FhirElementArgs;
+    /**
      * The meaning and secondary-encoding of the content of base64 encoded blob is specific to the AuditEvent.type, AuditEvent.subtype, AuditEvent.entity.type, and AuditEvent.entity.role.  The base64 is a general-use and safe container for event specific data blobs regardless of the encoding used by the transaction being recorded.  An AuditEvent consuming application must understand the event it is consuming and the formats used by the event. For example, if auditing an Oracle network database access, the Oracle formats must be understood as they will be simply encoded in the base64binary blob.
      */
     query?: fhir.FhirBase64Binary | string | undefined;
+    /**
+     * Extended properties for primitive element: AuditEvent.entity.query
+     */
+    _query?: fhir.FhirElementArgs;
     /**
      * Tagged value pairs for conveying additional information about the entity.
      */
@@ -406,6 +450,10 @@ export interface AuditEventArgs extends fhir.DomainResourceArgs {
      */
     action?: fhir.FhirCode | string | undefined;
     /**
+     * Extended properties for primitive element: AuditEvent.action
+     */
+    _action?: fhir.FhirElementArgs;
+    /**
      * The period can be a little arbitrary; where possible, the time should correspond to human assessment of the activity time.
      */
     period?: fhir.PeriodArgs | undefined;
@@ -414,13 +462,25 @@ export interface AuditEventArgs extends fhir.DomainResourceArgs {
      */
     recorded: fhir.FhirInstant | string | undefined;
     /**
+     * Extended properties for primitive element: AuditEvent.recorded
+     */
+    _recorded?: fhir.FhirElementArgs;
+    /**
      * In some cases a "success" may be partial, for example, an incomplete or interrupted transfer of a radiological study. For the purpose of establishing accountability, these distinctions are not relevant.
      */
     outcome?: fhir.FhirCode | string | undefined;
     /**
+     * Extended properties for primitive element: AuditEvent.outcome
+     */
+    _outcome?: fhir.FhirElementArgs;
+    /**
      * A free text description of the outcome of the event.
      */
     outcomeDesc?: fhir.FhirString | string | undefined;
+    /**
+     * Extended properties for primitive element: AuditEvent.outcomeDesc
+     */
+    _outcomeDesc?: fhir.FhirElementArgs;
     /**
      * Use AuditEvent.agent.purposeOfUse when you know that it is specific to the agent, otherwise use AuditEvent.purposeOfEvent. For example, during a machine-to-machine transfer it might not be obvious to the audit system who caused the event, but it does know why.
      */

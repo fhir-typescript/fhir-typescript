@@ -106,9 +106,17 @@ export interface ProcedureArgs extends fhir.DomainResourceArgs {
      */
     instantiatesCanonical?: fhir.FhirCanonical[] | string[] | undefined;
     /**
+     * Extended properties for primitive element: Procedure.instantiatesCanonical
+     */
+    _instantiatesCanonical?: (fhir.FhirElementArgs | null)[];
+    /**
      * This might be an HTML page, PDF, etc. or could just be a non-resolvable URI identifier.
      */
     instantiatesUri?: fhir.FhirUri[] | string[] | undefined;
+    /**
+     * Extended properties for primitive element: Procedure.instantiatesUri
+     */
+    _instantiatesUri?: (fhir.FhirElementArgs | null)[];
     /**
      * A reference to a resource that contains details of the request for this procedure.
      */
@@ -122,6 +130,10 @@ export interface ProcedureArgs extends fhir.DomainResourceArgs {
      * This element is labeled as a modifier because the status contains codes that mark the resource as not currently valid.
      */
     status: fhir.FhirCode<EventStatusCodeType> | string | undefined;
+    /**
+     * Extended properties for primitive element: Procedure.status
+     */
+    _status?: fhir.FhirElementArgs;
     /**
      * This is generally only used for "exception" statuses such as "not-done", "suspended" or "aborted". The reason for performing the event at all is captured in reasonCode, not here.
      */

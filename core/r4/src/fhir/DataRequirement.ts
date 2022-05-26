@@ -22,13 +22,25 @@ export interface DataRequirementCodeFilterArgs extends fhir.FhirElementArgs {
    */
   path?: fhir.FhirString|string|undefined;
   /**
+   * Extended properties for primitive element: DataRequirement.codeFilter.path
+   */
+  _path?:fhir.FhirElementArgs;
+  /**
    * A token parameter that refers to a search parameter defined on the specified type of the DataRequirement, and which searches on elements of type code, Coding, or CodeableConcept.
    */
   searchParam?: fhir.FhirString|string|undefined;
   /**
+   * Extended properties for primitive element: DataRequirement.codeFilter.searchParam
+   */
+  _searchParam?:fhir.FhirElementArgs;
+  /**
    * The valueset for the code filter. The valueSet and code elements are additive. If valueSet is specified, the filter will return only those data items for which the value of the code-valued element specified in the path is a member of the specified valueset.
    */
   valueSet?: fhir.FhirCanonical|string|undefined;
+  /**
+   * Extended properties for primitive element: DataRequirement.codeFilter.valueSet
+   */
+  _valueSet?:fhir.FhirElementArgs;
   /**
    * The codes for the code filter. If values are given, the filter will return only those data items for which the code-valued attribute specified by the path has a value that is one of the specified codes. If codes are specified in addition to a value set, the filter returns items matching a code in the value set or one of the specified codes.
    */
@@ -65,8 +77,20 @@ export class DataRequirementCodeFilter extends fhir.FhirElement {
   constructor(source:Partial<DataRequirementCodeFilterArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
     if (source['path']) { this.path = new fhir.FhirString({value: source.path}); }
+    if (source['_path']) {
+      if (this.path) { this.path.addExtendedProperties(source._path!); }
+      else { this.path = new fhir.FhirString(source._path as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['searchParam']) { this.searchParam = new fhir.FhirString({value: source.searchParam}); }
+    if (source['_searchParam']) {
+      if (this.searchParam) { this.searchParam.addExtendedProperties(source._searchParam!); }
+      else { this.searchParam = new fhir.FhirString(source._searchParam as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['valueSet']) { this.valueSet = new fhir.FhirCanonical({value: source.valueSet}); }
+    if (source['_valueSet']) {
+      if (this.valueSet) { this.valueSet.addExtendedProperties(source._valueSet!); }
+      else { this.valueSet = new fhir.FhirCanonical(source._valueSet as Partial<fhir.FhirCanonicalArgs>); }
+    }
     if (source['code']) { this.code = source.code.map((x) => new fhir.Coding(x)); }
     else { this.code = []; }
   }
@@ -91,9 +115,17 @@ export interface DataRequirementDateFilterArgs extends fhir.FhirElementArgs {
    */
   path?: fhir.FhirString|string|undefined;
   /**
+   * Extended properties for primitive element: DataRequirement.dateFilter.path
+   */
+  _path?:fhir.FhirElementArgs;
+  /**
    * A date parameter that refers to a search parameter defined on the specified type of the DataRequirement, and which searches on elements of type date, dateTime, Period, Schedule, or Timing.
    */
   searchParam?: fhir.FhirString|string|undefined;
+  /**
+   * Extended properties for primitive element: DataRequirement.dateFilter.searchParam
+   */
+  _searchParam?:fhir.FhirElementArgs;
   /**
    * The value of the filter. If period is specified, the filter will return only those data items that fall within the bounds determined by the Period, inclusive of the period boundaries. If dateTime is specified, the filter will return only those data items that are equal to the specified dateTime. If a Duration is specified, the filter will return only those data items that fall within Duration before now.
    */
@@ -142,7 +174,15 @@ export class DataRequirementDateFilter extends fhir.FhirElement {
   constructor(source:Partial<DataRequirementDateFilterArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
     if (source['path']) { this.path = new fhir.FhirString({value: source.path}); }
+    if (source['_path']) {
+      if (this.path) { this.path.addExtendedProperties(source._path!); }
+      else { this.path = new fhir.FhirString(source._path as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['searchParam']) { this.searchParam = new fhir.FhirString({value: source.searchParam}); }
+    if (source['_searchParam']) {
+      if (this.searchParam) { this.searchParam.addExtendedProperties(source._searchParam!); }
+      else { this.searchParam = new fhir.FhirString(source._searchParam as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['value']) { this.value = source.value; }
     else if (source['valueDateTime']) { this.value = new fhir.FhirDateTime({value: source.valueDateTime}); }
     else if (source['valuePeriod']) { this.value = new fhir.Period(source.valuePeriod); }
@@ -167,9 +207,17 @@ export interface DataRequirementSortArgs extends fhir.FhirElementArgs {
    */
   path: fhir.FhirString|string|undefined;
   /**
+   * Extended properties for primitive element: DataRequirement.sort.path
+   */
+  _path?:fhir.FhirElementArgs;
+  /**
    * The direction of the sort, ascending or descending.
    */
   direction: fhir.FhirCode<SortDirectionCodeType>|string|undefined;
+  /**
+   * Extended properties for primitive element: DataRequirement.sort.direction
+   */
+  _direction?:fhir.FhirElementArgs;
 }
 
 /**
@@ -195,8 +243,16 @@ export class DataRequirementSort extends fhir.FhirElement {
     super(source, options);
     if (source['path']) { this.path = new fhir.FhirString({value: source.path}); }
     else { this.path = null; }
+    if (source['_path']) {
+      if (this.path) { this.path.addExtendedProperties(source._path!); }
+      else { this.path = new fhir.FhirString(source._path as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['direction']) { this.direction = new fhir.FhirCode<SortDirectionCodeType>({value: source.direction}); }
     else { this.direction = null; }
+    if (source['_direction']) {
+      if (this.direction) { this.direction.addExtendedProperties(source._direction!); }
+      else { this.direction = new fhir.FhirCode<SortDirectionCodeType>(source._direction as Partial<fhir.FhirCode>); }
+    }
   }
   /**
    * Required-bound Value Set for direction (DataRequirement.sort.direction)
@@ -232,9 +288,17 @@ export interface DataRequirementArgs extends fhir.FhirElementArgs {
    */
   type: fhir.FhirCode|string|undefined;
   /**
+   * Extended properties for primitive element: DataRequirement.type
+   */
+  _type?:fhir.FhirElementArgs;
+  /**
    * The profile of the required data, specified as the uri of the profile definition.
    */
   profile?: fhir.FhirCanonical[]|string[]|undefined;
+  /**
+   * Extended properties for primitive element: DataRequirement.profile
+   */
+  _profile?:(fhir.FhirElementArgs|null)[];
   /**
    * The subject of a data requirement is critical, as the data being specified is determined with respect to a particular subject. This corresponds roughly to the notion of a Compartment in that it limits what data is available based on its relationship to the subject. In CQL, this corresponds to the context declaration.
    */
@@ -253,6 +317,10 @@ export interface DataRequirementArgs extends fhir.FhirElementArgs {
    */
   mustSupport?: fhir.FhirString[]|string[]|undefined;
   /**
+   * Extended properties for primitive element: DataRequirement.mustSupport
+   */
+  _mustSupport?:(fhir.FhirElementArgs|null)[];
+  /**
    * Code filters specify additional constraints on the data, specifying the value set of interest for a particular element of the data. Each code filter defines an additional constraint on the data, i.e. code filters are AND'ed, not OR'ed.
    */
   codeFilter?: fhir.DataRequirementCodeFilterArgs[]|undefined;
@@ -264,6 +332,10 @@ export interface DataRequirementArgs extends fhir.FhirElementArgs {
    * This element can be used in combination with the sort element to specify quota requirements such as "the most recent 5" or "the highest 5".
    */
   limit?: fhir.FhirPositiveInt|number|undefined;
+  /**
+   * Extended properties for primitive element: DataRequirement.limit
+   */
+  _limit?:fhir.FhirElementArgs;
   /**
    * This element can be used in combination with the sort element to specify quota requirements such as "the most recent 5" or "the highest 5". When multiple sorts are specified, they are applied in the order they appear in the resource.
    */
@@ -322,18 +394,38 @@ export class DataRequirement extends fhir.FhirElement {
     super(source, options);
     if (source['type']) { this.type = new fhir.FhirCode({value: source.type}); }
     else { this.type = null; }
+    if (source['_type']) {
+      if (this.type) { this.type.addExtendedProperties(source._type!); }
+      else { this.type = new fhir.FhirCode(source._type as Partial<fhir.FhirCodeArgs>); }
+    }
     if (source['profile']) { this.profile = source.profile.map((x) => new fhir.FhirCanonical({value: x})); }
     else { this.profile = []; }
+    if (source['_profile']) {
+      source._profile.forEach((x,i) => {
+        if (this.profile.length >= i) { if (x) { this.profile[i].addExtendedProperties(x); } }
+        else { if (x) { this.profile.push(new fhir.FhirCanonical(x as Partial<fhir.FhirCanonicalArgs>)); } }
+      });
+    }
     if (source['subject']) { this.subject = source.subject; }
     else if (source['subjectCodeableConcept']) { this.subject = new fhir.CodeableConcept(source.subjectCodeableConcept); }
     else if (source['subjectReference']) { this.subject = new fhir.Reference(source.subjectReference); }
     if (source['mustSupport']) { this.mustSupport = source.mustSupport.map((x) => new fhir.FhirString({value: x})); }
     else { this.mustSupport = []; }
+    if (source['_mustSupport']) {
+      source._mustSupport.forEach((x,i) => {
+        if (this.mustSupport.length >= i) { if (x) { this.mustSupport[i].addExtendedProperties(x); } }
+        else { if (x) { this.mustSupport.push(new fhir.FhirString(x as Partial<fhir.FhirStringArgs>)); } }
+      });
+    }
     if (source['codeFilter']) { this.codeFilter = source.codeFilter.map((x) => new fhir.DataRequirementCodeFilter(x)); }
     else { this.codeFilter = []; }
     if (source['dateFilter']) { this.dateFilter = source.dateFilter.map((x) => new fhir.DataRequirementDateFilter(x)); }
     else { this.dateFilter = []; }
     if (source['limit']) { this.limit = new fhir.FhirPositiveInt({value: source.limit}); }
+    if (source['_limit']) {
+      if (this.limit) { this.limit.addExtendedProperties(source._limit!); }
+      else { this.limit = new fhir.FhirPositiveInt(source._limit as Partial<fhir.FhirPositiveIntArgs>); }
+    }
     if (source['sort']) { this.sort = source.sort.map((x) => new fhir.DataRequirementSort(x)); }
     else { this.sort = []; }
   }

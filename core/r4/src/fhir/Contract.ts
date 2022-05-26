@@ -150,13 +150,25 @@ export interface ContractContentDefinitionArgs extends fhir.BackboneElementArgs 
    */
   publicationDate?: fhir.FhirDateTime|string|undefined;
   /**
+   * Extended properties for primitive element: Contract.contentDefinition.publicationDate
+   */
+  _publicationDate?:fhir.FhirElementArgs;
+  /**
    * amended | appended | cancelled | disputed | entered-in-error | executable | executed | negotiable | offered | policy | rejected | renewed | revoked | resolved | terminated.
    */
   publicationStatus: fhir.FhirCode<ContractPublicationstatusCodeType>|string|undefined;
   /**
+   * Extended properties for primitive element: Contract.contentDefinition.publicationStatus
+   */
+  _publicationStatus?:fhir.FhirElementArgs;
+  /**
    * A copyright statement relating to Contract precursor content. Copyright statements are generally legal restrictions on the use and publishing of the Contract precursor content.
    */
   copyright?: fhir.FhirMarkdown|string|undefined;
+  /**
+   * Extended properties for primitive element: Contract.contentDefinition.copyright
+   */
+  _copyright?:fhir.FhirElementArgs;
 }
 
 /**
@@ -201,9 +213,21 @@ export class ContractContentDefinition extends fhir.BackboneElement {
     if (source['subType']) { this.subType = new fhir.CodeableConcept(source.subType); }
     if (source['publisher']) { this.publisher = new fhir.Reference(source.publisher); }
     if (source['publicationDate']) { this.publicationDate = new fhir.FhirDateTime({value: source.publicationDate}); }
+    if (source['_publicationDate']) {
+      if (this.publicationDate) { this.publicationDate.addExtendedProperties(source._publicationDate!); }
+      else { this.publicationDate = new fhir.FhirDateTime(source._publicationDate as Partial<fhir.FhirDateTimeArgs>); }
+    }
     if (source['publicationStatus']) { this.publicationStatus = new fhir.FhirCode<ContractPublicationstatusCodeType>({value: source.publicationStatus}); }
     else { this.publicationStatus = null; }
+    if (source['_publicationStatus']) {
+      if (this.publicationStatus) { this.publicationStatus.addExtendedProperties(source._publicationStatus!); }
+      else { this.publicationStatus = new fhir.FhirCode<ContractPublicationstatusCodeType>(source._publicationStatus as Partial<fhir.FhirCode>); }
+    }
     if (source['copyright']) { this.copyright = new fhir.FhirMarkdown({value: source.copyright}); }
+    if (source['_copyright']) {
+      if (this.copyright) { this.copyright.addExtendedProperties(source._copyright!); }
+      else { this.copyright = new fhir.FhirMarkdown(source._copyright as Partial<fhir.FhirMarkdownArgs>); }
+    }
   }
   /**
    * Required-bound Value Set for publicationStatus (Contract.contentDefinition.publicationStatus)
@@ -242,6 +266,10 @@ export interface ContractTermSecurityLabelArgs extends fhir.BackboneElementArgs 
    * Number used to link this term or term element to the applicable Security Label.
    */
   number?: fhir.FhirUnsignedInt[]|number[]|undefined;
+  /**
+   * Extended properties for primitive element: Contract.term.securityLabel.number
+   */
+  _number?:(fhir.FhirElementArgs|null)[];
   /**
    * Security label privacy tag that species the level of confidentiality protection required for this term and/or term elements.
    */
@@ -287,6 +315,12 @@ export class ContractTermSecurityLabel extends fhir.BackboneElement {
     super(source, options);
     if (source['number']) { this.number = source.number.map((x) => new fhir.FhirUnsignedInt({value: x})); }
     else { this.number = []; }
+    if (source['_number']) {
+      source._number.forEach((x,i) => {
+        if (this.number.length >= i) { if (x) { this.number[i].addExtendedProperties(x); } }
+        else { if (x) { this.number.push(new fhir.FhirUnsignedInt(x as Partial<fhir.FhirUnsignedIntArgs>)); } }
+      });
+    }
     if (source['classification']) { this.classification = new fhir.Coding(source.classification); }
     else { this.classification = null; }
     if (source['category']) { this.category = source.category.map((x) => new fhir.Coding(x)); }
@@ -514,13 +548,25 @@ export interface ContractTermOfferArgs extends fhir.BackboneElementArgs {
    */
   text?: fhir.FhirString|string|undefined;
   /**
+   * Extended properties for primitive element: Contract.term.offer.text
+   */
+  _text?:fhir.FhirElementArgs;
+  /**
    * The id of the clause or question text of the offer in the referenced questionnaire/response.
    */
   linkId?: fhir.FhirString[]|string[]|undefined;
   /**
+   * Extended properties for primitive element: Contract.term.offer.linkId
+   */
+  _linkId?:(fhir.FhirElementArgs|null)[];
+  /**
    * Security labels that protects the offer.
    */
   securityLabelNumber?: fhir.FhirUnsignedInt[]|number[]|undefined;
+  /**
+   * Extended properties for primitive element: Contract.term.offer.securityLabelNumber
+   */
+  _securityLabelNumber?:(fhir.FhirElementArgs|null)[];
 }
 
 /**
@@ -591,10 +637,26 @@ export class ContractTermOffer extends fhir.BackboneElement {
     if (source['answer']) { this.answer = source.answer.map((x) => new fhir.ContractTermOfferAnswer(x)); }
     else { this.answer = []; }
     if (source['text']) { this.text = new fhir.FhirString({value: source.text}); }
+    if (source['_text']) {
+      if (this.text) { this.text.addExtendedProperties(source._text!); }
+      else { this.text = new fhir.FhirString(source._text as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['linkId']) { this.linkId = source.linkId.map((x) => new fhir.FhirString({value: x})); }
     else { this.linkId = []; }
+    if (source['_linkId']) {
+      source._linkId.forEach((x,i) => {
+        if (this.linkId.length >= i) { if (x) { this.linkId[i].addExtendedProperties(x); } }
+        else { if (x) { this.linkId.push(new fhir.FhirString(x as Partial<fhir.FhirStringArgs>)); } }
+      });
+    }
     if (source['securityLabelNumber']) { this.securityLabelNumber = source.securityLabelNumber.map((x) => new fhir.FhirUnsignedInt({value: x})); }
     else { this.securityLabelNumber = []; }
+    if (source['_securityLabelNumber']) {
+      source._securityLabelNumber.forEach((x,i) => {
+        if (this.securityLabelNumber.length >= i) { if (x) { this.securityLabelNumber[i].addExtendedProperties(x); } }
+        else { if (x) { this.securityLabelNumber.push(new fhir.FhirUnsignedInt(x as Partial<fhir.FhirUnsignedIntArgs>)); } }
+      });
+    }
   }
   /**
    * Extensible-bound Value Set for decision (Contract.term.offer.decision)
@@ -636,6 +698,10 @@ export interface ContractTermAssetContextArgs extends fhir.BackboneElementArgs {
    * Context description.
    */
   text?: fhir.FhirString|string|undefined;
+  /**
+   * Extended properties for primitive element: Contract.term.asset.context.text
+   */
+  _text?:fhir.FhirElementArgs;
 }
 
 /**
@@ -667,6 +733,10 @@ export class ContractTermAssetContext extends fhir.BackboneElement {
     if (source['code']) { this.code = source.code.map((x) => new fhir.CodeableConcept(x)); }
     else { this.code = []; }
     if (source['text']) { this.text = new fhir.FhirString({value: source.text}); }
+    if (source['_text']) {
+      if (this.text) { this.text.addExtendedProperties(source._text!); }
+      else { this.text = new fhir.FhirString(source._text as Partial<fhir.FhirStringArgs>); }
+    }
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -704,6 +774,10 @@ export interface ContractTermAssetValuedItemArgs extends fhir.BackboneElementArg
    */
   effectiveTime?: fhir.FhirDateTime|string|undefined;
   /**
+   * Extended properties for primitive element: Contract.term.asset.valuedItem.effectiveTime
+   */
+  _effectiveTime?:fhir.FhirElementArgs;
+  /**
    * Specifies the units by which the Contract Valued Item is measured or counted, and quantifies the countable or measurable Contract Valued Item instances.
    */
   quantity?: fhir.QuantityArgs|undefined;
@@ -716,9 +790,17 @@ export interface ContractTermAssetValuedItemArgs extends fhir.BackboneElementArg
    */
   factor?: fhir.FhirDecimal|number|undefined;
   /**
+   * Extended properties for primitive element: Contract.term.asset.valuedItem.factor
+   */
+  _factor?:fhir.FhirElementArgs;
+  /**
    * An amount that expresses the weighting (based on difficulty, cost and/or resource intensiveness) associated with the Contract Valued Item delivered. The concept of Points allows for assignment of point values for a Contract Valued Item, such that a monetary amount can be assigned to each point.
    */
   points?: fhir.FhirDecimal|number|undefined;
+  /**
+   * Extended properties for primitive element: Contract.term.asset.valuedItem.points
+   */
+  _points?:fhir.FhirElementArgs;
   /**
    * Expresses the product of the Contract Valued Item unitQuantity and the unitPriceAmt. For example, the formula: unit Quantity * unit Price (Cost per Point) * factor Number  * points = net Amount. Quantity, factor and points are assumed to be 1 if not supplied.
    */
@@ -728,9 +810,17 @@ export interface ContractTermAssetValuedItemArgs extends fhir.BackboneElementArg
    */
   payment?: fhir.FhirString|string|undefined;
   /**
+   * Extended properties for primitive element: Contract.term.asset.valuedItem.payment
+   */
+  _payment?:fhir.FhirElementArgs;
+  /**
    * When payment is due.
    */
   paymentDate?: fhir.FhirDateTime|string|undefined;
+  /**
+   * Extended properties for primitive element: Contract.term.asset.valuedItem.paymentDate
+   */
+  _paymentDate?:fhir.FhirElementArgs;
   /**
    * Who will make payment.
    */
@@ -744,9 +834,17 @@ export interface ContractTermAssetValuedItemArgs extends fhir.BackboneElementArg
    */
   linkId?: fhir.FhirString[]|string[]|undefined;
   /**
+   * Extended properties for primitive element: Contract.term.asset.valuedItem.linkId
+   */
+  _linkId?:(fhir.FhirElementArgs|null)[];
+  /**
    * A set of security labels that define which terms are controlled by this condition.
    */
   securityLabelNumber?: fhir.FhirUnsignedInt[]|number[]|undefined;
+  /**
+   * Extended properties for primitive element: Contract.term.asset.valuedItem.securityLabelNumber
+   */
+  _securityLabelNumber?:(fhir.FhirElementArgs|null)[];
 }
 
 /**
@@ -827,19 +925,51 @@ export class ContractTermAssetValuedItem extends fhir.BackboneElement {
     else if (source['entityReference']) { this.entity = new fhir.Reference(source.entityReference); }
     if (source['identifier']) { this.identifier = new fhir.Identifier(source.identifier); }
     if (source['effectiveTime']) { this.effectiveTime = new fhir.FhirDateTime({value: source.effectiveTime}); }
+    if (source['_effectiveTime']) {
+      if (this.effectiveTime) { this.effectiveTime.addExtendedProperties(source._effectiveTime!); }
+      else { this.effectiveTime = new fhir.FhirDateTime(source._effectiveTime as Partial<fhir.FhirDateTimeArgs>); }
+    }
     if (source['quantity']) { this.quantity = new fhir.Quantity(source.quantity); }
     if (source['unitPrice']) { this.unitPrice = new fhir.Money(source.unitPrice); }
     if (source['factor']) { this.factor = new fhir.FhirDecimal({value: source.factor}); }
+    if (source['_factor']) {
+      if (this.factor) { this.factor.addExtendedProperties(source._factor!); }
+      else { this.factor = new fhir.FhirDecimal(source._factor as Partial<fhir.FhirDecimalArgs>); }
+    }
     if (source['points']) { this.points = new fhir.FhirDecimal({value: source.points}); }
+    if (source['_points']) {
+      if (this.points) { this.points.addExtendedProperties(source._points!); }
+      else { this.points = new fhir.FhirDecimal(source._points as Partial<fhir.FhirDecimalArgs>); }
+    }
     if (source['net']) { this.net = new fhir.Money(source.net); }
     if (source['payment']) { this.payment = new fhir.FhirString({value: source.payment}); }
+    if (source['_payment']) {
+      if (this.payment) { this.payment.addExtendedProperties(source._payment!); }
+      else { this.payment = new fhir.FhirString(source._payment as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['paymentDate']) { this.paymentDate = new fhir.FhirDateTime({value: source.paymentDate}); }
+    if (source['_paymentDate']) {
+      if (this.paymentDate) { this.paymentDate.addExtendedProperties(source._paymentDate!); }
+      else { this.paymentDate = new fhir.FhirDateTime(source._paymentDate as Partial<fhir.FhirDateTimeArgs>); }
+    }
     if (source['responsible']) { this.responsible = new fhir.Reference(source.responsible); }
     if (source['recipient']) { this.recipient = new fhir.Reference(source.recipient); }
     if (source['linkId']) { this.linkId = source.linkId.map((x) => new fhir.FhirString({value: x})); }
     else { this.linkId = []; }
+    if (source['_linkId']) {
+      source._linkId.forEach((x,i) => {
+        if (this.linkId.length >= i) { if (x) { this.linkId[i].addExtendedProperties(x); } }
+        else { if (x) { this.linkId.push(new fhir.FhirString(x as Partial<fhir.FhirStringArgs>)); } }
+      });
+    }
     if (source['securityLabelNumber']) { this.securityLabelNumber = source.securityLabelNumber.map((x) => new fhir.FhirUnsignedInt({value: x})); }
     else { this.securityLabelNumber = []; }
+    if (source['_securityLabelNumber']) {
+      source._securityLabelNumber.forEach((x,i) => {
+        if (this.securityLabelNumber.length >= i) { if (x) { this.securityLabelNumber[i].addExtendedProperties(x); } }
+        else { if (x) { this.securityLabelNumber.push(new fhir.FhirUnsignedInt(x as Partial<fhir.FhirUnsignedIntArgs>)); } }
+      });
+    }
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -895,6 +1025,10 @@ export interface ContractTermAssetArgs extends fhir.BackboneElementArgs {
    */
   condition?: fhir.FhirString|string|undefined;
   /**
+   * Extended properties for primitive element: Contract.term.asset.condition
+   */
+  _condition?:fhir.FhirElementArgs;
+  /**
    * Type of Asset availability for use or ownership.
    */
   periodType?: fhir.CodeableConceptArgs[]|undefined;
@@ -911,9 +1045,17 @@ export interface ContractTermAssetArgs extends fhir.BackboneElementArgs {
    */
   text?: fhir.FhirString|string|undefined;
   /**
+   * Extended properties for primitive element: Contract.term.asset.text
+   */
+  _text?:fhir.FhirElementArgs;
+  /**
    * Id [identifier??] of the clause or question text about the asset in the referenced form or QuestionnaireResponse.
    */
   linkId?: fhir.FhirString[]|string[]|undefined;
+  /**
+   * Extended properties for primitive element: Contract.term.asset.linkId
+   */
+  _linkId?:(fhir.FhirElementArgs|null)[];
   /**
    * Response to assets.
    */
@@ -922,6 +1064,10 @@ export interface ContractTermAssetArgs extends fhir.BackboneElementArgs {
    * Security labels that protects the asset.
    */
   securityLabelNumber?: fhir.FhirUnsignedInt[]|number[]|undefined;
+  /**
+   * Extended properties for primitive element: Contract.term.asset.securityLabelNumber
+   */
+  _securityLabelNumber?:(fhir.FhirElementArgs|null)[];
   /**
    * Contract Valued Item List.
    */
@@ -1012,6 +1158,10 @@ export class ContractTermAsset extends fhir.BackboneElement {
     if (source['context']) { this.context = source.context.map((x) => new fhir.ContractTermAssetContext(x)); }
     else { this.context = []; }
     if (source['condition']) { this.condition = new fhir.FhirString({value: source.condition}); }
+    if (source['_condition']) {
+      if (this.condition) { this.condition.addExtendedProperties(source._condition!); }
+      else { this.condition = new fhir.FhirString(source._condition as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['periodType']) { this.periodType = source.periodType.map((x) => new fhir.CodeableConcept(x)); }
     else { this.periodType = []; }
     if (source['period']) { this.period = source.period.map((x) => new fhir.Period(x)); }
@@ -1019,12 +1169,28 @@ export class ContractTermAsset extends fhir.BackboneElement {
     if (source['usePeriod']) { this.usePeriod = source.usePeriod.map((x) => new fhir.Period(x)); }
     else { this.usePeriod = []; }
     if (source['text']) { this.text = new fhir.FhirString({value: source.text}); }
+    if (source['_text']) {
+      if (this.text) { this.text.addExtendedProperties(source._text!); }
+      else { this.text = new fhir.FhirString(source._text as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['linkId']) { this.linkId = source.linkId.map((x) => new fhir.FhirString({value: x})); }
     else { this.linkId = []; }
+    if (source['_linkId']) {
+      source._linkId.forEach((x,i) => {
+        if (this.linkId.length >= i) { if (x) { this.linkId[i].addExtendedProperties(x); } }
+        else { if (x) { this.linkId.push(new fhir.FhirString(x as Partial<fhir.FhirStringArgs>)); } }
+      });
+    }
     if (source['answer']) { this.answer = source.answer.map((x) => new fhir.ContractTermOfferAnswer(x)); }
     else { this.answer = []; }
     if (source['securityLabelNumber']) { this.securityLabelNumber = source.securityLabelNumber.map((x) => new fhir.FhirUnsignedInt({value: x})); }
     else { this.securityLabelNumber = []; }
+    if (source['_securityLabelNumber']) {
+      source._securityLabelNumber.forEach((x,i) => {
+        if (this.securityLabelNumber.length >= i) { if (x) { this.securityLabelNumber[i].addExtendedProperties(x); } }
+        else { if (x) { this.securityLabelNumber.push(new fhir.FhirUnsignedInt(x as Partial<fhir.FhirUnsignedIntArgs>)); } }
+      });
+    }
     if (source['valuedItem']) { this.valuedItem = source.valuedItem.map((x) => new fhir.ContractTermAssetValuedItem(x)); }
     else { this.valuedItem = []; }
   }
@@ -1122,6 +1288,10 @@ export interface ContractTermActionArgs extends fhir.BackboneElementArgs {
    */
   doNotPerform?: fhir.FhirBoolean|boolean|undefined;
   /**
+   * Extended properties for primitive element: Contract.term.action.doNotPerform
+   */
+  _doNotPerform?:fhir.FhirElementArgs;
+  /**
    * Activity or service obligation to be done or not done, performed or not performed, effectuated or not by this Contract term.
    */
   type: fhir.CodeableConceptArgs|null;
@@ -1138,6 +1308,10 @@ export interface ContractTermActionArgs extends fhir.BackboneElementArgs {
    */
   linkId?: fhir.FhirString[]|string[]|undefined;
   /**
+   * Extended properties for primitive element: Contract.term.action.linkId
+   */
+  _linkId?:(fhir.FhirElementArgs|null)[];
+  /**
    * Current state of the term action.
    */
   status: fhir.CodeableConceptArgs|null;
@@ -1149,6 +1323,10 @@ export interface ContractTermActionArgs extends fhir.BackboneElementArgs {
    * Id [identifier??] of the clause or question text related to the requester of this action in the referenced form or QuestionnaireResponse.
    */
   contextLinkId?: fhir.FhirString[]|string[]|undefined;
+  /**
+   * Extended properties for primitive element: Contract.term.action.contextLinkId
+   */
+  _contextLinkId?:(fhir.FhirElementArgs|null)[];
   /**
    * When action happens.
    */
@@ -1174,6 +1352,10 @@ export interface ContractTermActionArgs extends fhir.BackboneElementArgs {
    */
   requesterLinkId?: fhir.FhirString[]|string[]|undefined;
   /**
+   * Extended properties for primitive element: Contract.term.action.requesterLinkId
+   */
+  _requesterLinkId?:(fhir.FhirElementArgs|null)[];
+  /**
    * The type of individual that is desired or required to perform or not perform the action.
    */
   performerType?: fhir.CodeableConceptArgs[]|undefined;
@@ -1190,6 +1372,10 @@ export interface ContractTermActionArgs extends fhir.BackboneElementArgs {
    */
   performerLinkId?: fhir.FhirString[]|string[]|undefined;
   /**
+   * Extended properties for primitive element: Contract.term.action.performerLinkId
+   */
+  _performerLinkId?:(fhir.FhirElementArgs|null)[];
+  /**
    * Rationale for the action to be performed or not performed. Describes why the action is permitted or prohibited.
    */
   reasonCode?: fhir.CodeableConceptArgs[]|undefined;
@@ -1202,9 +1388,17 @@ export interface ContractTermActionArgs extends fhir.BackboneElementArgs {
    */
   reason?: fhir.FhirString[]|string[]|undefined;
   /**
+   * Extended properties for primitive element: Contract.term.action.reason
+   */
+  _reason?:(fhir.FhirElementArgs|null)[];
+  /**
    * Id [identifier??] of the clause or question text related to the reason type or reference of this  action in the referenced form or QuestionnaireResponse.
    */
   reasonLinkId?: fhir.FhirString[]|string[]|undefined;
+  /**
+   * Extended properties for primitive element: Contract.term.action.reasonLinkId
+   */
+  _reasonLinkId?:(fhir.FhirElementArgs|null)[];
   /**
    * Comments made about the term action made by the requester, performer, subject or other participants.
    */
@@ -1213,6 +1407,10 @@ export interface ContractTermActionArgs extends fhir.BackboneElementArgs {
    * Security labels that protects the action.
    */
   securityLabelNumber?: fhir.FhirUnsignedInt[]|number[]|undefined;
+  /**
+   * Extended properties for primitive element: Contract.term.action.securityLabelNumber
+   */
+  _securityLabelNumber?:(fhir.FhirElementArgs|null)[];
 }
 
 /**
@@ -1318,6 +1516,10 @@ export class ContractTermAction extends fhir.BackboneElement {
   constructor(source:Partial<ContractTermActionArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
     if (source['doNotPerform']) { this.doNotPerform = new fhir.FhirBoolean({value: source.doNotPerform}); }
+    if (source['_doNotPerform']) {
+      if (this.doNotPerform) { this.doNotPerform.addExtendedProperties(source._doNotPerform!); }
+      else { this.doNotPerform = new fhir.FhirBoolean(source._doNotPerform as Partial<fhir.FhirBooleanArgs>); }
+    }
     if (source['type']) { this.type = new fhir.CodeableConcept(source.type); }
     else { this.type = null; }
     if (source['subject']) { this.subject = source.subject.map((x) => new fhir.ContractTermActionSubject(x)); }
@@ -1326,11 +1528,23 @@ export class ContractTermAction extends fhir.BackboneElement {
     else { this.intent = null; }
     if (source['linkId']) { this.linkId = source.linkId.map((x) => new fhir.FhirString({value: x})); }
     else { this.linkId = []; }
+    if (source['_linkId']) {
+      source._linkId.forEach((x,i) => {
+        if (this.linkId.length >= i) { if (x) { this.linkId[i].addExtendedProperties(x); } }
+        else { if (x) { this.linkId.push(new fhir.FhirString(x as Partial<fhir.FhirStringArgs>)); } }
+      });
+    }
     if (source['status']) { this.status = new fhir.CodeableConcept(source.status); }
     else { this.status = null; }
     if (source['context']) { this.context = new fhir.Reference(source.context); }
     if (source['contextLinkId']) { this.contextLinkId = source.contextLinkId.map((x) => new fhir.FhirString({value: x})); }
     else { this.contextLinkId = []; }
+    if (source['_contextLinkId']) {
+      source._contextLinkId.forEach((x,i) => {
+        if (this.contextLinkId.length >= i) { if (x) { this.contextLinkId[i].addExtendedProperties(x); } }
+        else { if (x) { this.contextLinkId.push(new fhir.FhirString(x as Partial<fhir.FhirStringArgs>)); } }
+      });
+    }
     if (source['occurrence']) { this.occurrence = source.occurrence; }
     else if (source['occurrenceDateTime']) { this.occurrence = new fhir.FhirDateTime({value: source.occurrenceDateTime}); }
     else if (source['occurrencePeriod']) { this.occurrence = new fhir.Period(source.occurrencePeriod); }
@@ -1339,24 +1553,54 @@ export class ContractTermAction extends fhir.BackboneElement {
     else { this.requester = []; }
     if (source['requesterLinkId']) { this.requesterLinkId = source.requesterLinkId.map((x) => new fhir.FhirString({value: x})); }
     else { this.requesterLinkId = []; }
+    if (source['_requesterLinkId']) {
+      source._requesterLinkId.forEach((x,i) => {
+        if (this.requesterLinkId.length >= i) { if (x) { this.requesterLinkId[i].addExtendedProperties(x); } }
+        else { if (x) { this.requesterLinkId.push(new fhir.FhirString(x as Partial<fhir.FhirStringArgs>)); } }
+      });
+    }
     if (source['performerType']) { this.performerType = source.performerType.map((x) => new fhir.CodeableConcept(x)); }
     else { this.performerType = []; }
     if (source['performerRole']) { this.performerRole = new fhir.CodeableConcept(source.performerRole); }
     if (source['performer']) { this.performer = new fhir.Reference(source.performer); }
     if (source['performerLinkId']) { this.performerLinkId = source.performerLinkId.map((x) => new fhir.FhirString({value: x})); }
     else { this.performerLinkId = []; }
+    if (source['_performerLinkId']) {
+      source._performerLinkId.forEach((x,i) => {
+        if (this.performerLinkId.length >= i) { if (x) { this.performerLinkId[i].addExtendedProperties(x); } }
+        else { if (x) { this.performerLinkId.push(new fhir.FhirString(x as Partial<fhir.FhirStringArgs>)); } }
+      });
+    }
     if (source['reasonCode']) { this.reasonCode = source.reasonCode.map((x) => new fhir.CodeableConcept(x)); }
     else { this.reasonCode = []; }
     if (source['reasonReference']) { this.reasonReference = source.reasonReference.map((x) => new fhir.Reference(x)); }
     else { this.reasonReference = []; }
     if (source['reason']) { this.reason = source.reason.map((x) => new fhir.FhirString({value: x})); }
     else { this.reason = []; }
+    if (source['_reason']) {
+      source._reason.forEach((x,i) => {
+        if (this.reason.length >= i) { if (x) { this.reason[i].addExtendedProperties(x); } }
+        else { if (x) { this.reason.push(new fhir.FhirString(x as Partial<fhir.FhirStringArgs>)); } }
+      });
+    }
     if (source['reasonLinkId']) { this.reasonLinkId = source.reasonLinkId.map((x) => new fhir.FhirString({value: x})); }
     else { this.reasonLinkId = []; }
+    if (source['_reasonLinkId']) {
+      source._reasonLinkId.forEach((x,i) => {
+        if (this.reasonLinkId.length >= i) { if (x) { this.reasonLinkId[i].addExtendedProperties(x); } }
+        else { if (x) { this.reasonLinkId.push(new fhir.FhirString(x as Partial<fhir.FhirStringArgs>)); } }
+      });
+    }
     if (source['note']) { this.note = source.note.map((x) => new fhir.Annotation(x)); }
     else { this.note = []; }
     if (source['securityLabelNumber']) { this.securityLabelNumber = source.securityLabelNumber.map((x) => new fhir.FhirUnsignedInt({value: x})); }
     else { this.securityLabelNumber = []; }
+    if (source['_securityLabelNumber']) {
+      source._securityLabelNumber.forEach((x,i) => {
+        if (this.securityLabelNumber.length >= i) { if (x) { this.securityLabelNumber[i].addExtendedProperties(x); } }
+        else { if (x) { this.securityLabelNumber.push(new fhir.FhirUnsignedInt(x as Partial<fhir.FhirUnsignedIntArgs>)); } }
+      });
+    }
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -1408,6 +1652,10 @@ export interface ContractTermArgs extends fhir.BackboneElementArgs {
    */
   issued?: fhir.FhirDateTime|string|undefined;
   /**
+   * Extended properties for primitive element: Contract.term.issued
+   */
+  _issued?:fhir.FhirElementArgs;
+  /**
    * Relevant time or time-period when this Contract Provision is applicable.
    */
   applies?: fhir.PeriodArgs|undefined;
@@ -1435,6 +1683,10 @@ export interface ContractTermArgs extends fhir.BackboneElementArgs {
    * Statement of a provision in a policy or a contract.
    */
   text?: fhir.FhirString|string|undefined;
+  /**
+   * Extended properties for primitive element: Contract.term.text
+   */
+  _text?:fhir.FhirElementArgs;
   /**
    * Security labels that protect the handling of information about the term and its elements, which may be specifically identified..
    */
@@ -1526,6 +1778,10 @@ export class ContractTerm extends fhir.BackboneElement {
     super(source, options);
     if (source['identifier']) { this.identifier = new fhir.Identifier(source.identifier); }
     if (source['issued']) { this.issued = new fhir.FhirDateTime({value: source.issued}); }
+    if (source['_issued']) {
+      if (this.issued) { this.issued.addExtendedProperties(source._issued!); }
+      else { this.issued = new fhir.FhirDateTime(source._issued as Partial<fhir.FhirDateTimeArgs>); }
+    }
     if (source['applies']) { this.applies = new fhir.Period(source.applies); }
     if (source['topic']) { this.topic = source.topic; }
     else if (source['topicCodeableConcept']) { this.topic = new fhir.CodeableConcept(source.topicCodeableConcept); }
@@ -1533,6 +1789,10 @@ export class ContractTerm extends fhir.BackboneElement {
     if (source['type']) { this.type = new fhir.CodeableConcept(source.type); }
     if (source['subType']) { this.subType = new fhir.CodeableConcept(source.subType); }
     if (source['text']) { this.text = new fhir.FhirString({value: source.text}); }
+    if (source['_text']) {
+      if (this.text) { this.text.addExtendedProperties(source._text!); }
+      else { this.text = new fhir.FhirString(source._text as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['securityLabel']) { this.securityLabel = source.securityLabel.map((x) => new fhir.ContractTermSecurityLabel(x)); }
     else { this.securityLabel = []; }
     if (source['offer']) { this.offer = new fhir.ContractTermOffer(source.offer); }
@@ -1829,14 +2089,26 @@ export interface ContractArgs extends fhir.DomainResourceArgs {
    */
   url?: fhir.FhirUri|string|undefined;
   /**
+   * Extended properties for primitive element: Contract.url
+   */
+  _url?:fhir.FhirElementArgs;
+  /**
    * Note -  This is a business versionId, not a resource version id (see discussion http://build.fhir.org/resource.html#versions) 
    * Comments - There may be different contract instances that have the same identifier but different versions. The version can be appended to the url in a reference to allow a reference to a particular business version of the plan definition with the format [url]|[version].
    */
   version?: fhir.FhirString|string|undefined;
   /**
+   * Extended properties for primitive element: Contract.version
+   */
+  _version?:fhir.FhirElementArgs;
+  /**
    * This element is labeled as a modifier because the status contains codes that mark the contract as not currently valid or active.
    */
   status?: fhir.FhirCode<ContractStatusCodeType>|string|undefined;
+  /**
+   * Extended properties for primitive element: Contract.status
+   */
+  _status?:fhir.FhirElementArgs;
   /**
    * Legal states of the formation of a legal instrument, which is a formally executed written document that can be formally attributed to its author, records and formally expresses a legally enforceable act, process, or contractual duty, obligation, or right, and therefore evidences that act, process, or agreement.
    */
@@ -1850,6 +2122,10 @@ export interface ContractArgs extends fhir.DomainResourceArgs {
    */
   instantiatesUri?: fhir.FhirUri|string|undefined;
   /**
+   * Extended properties for primitive element: Contract.instantiatesUri
+   */
+  _instantiatesUri?:fhir.FhirElementArgs;
+  /**
    * The minimal content derived from the basal information source at a specific stage in its lifecycle.
    */
   contentDerivative?: fhir.CodeableConceptArgs|undefined;
@@ -1857,6 +2133,10 @@ export interface ContractArgs extends fhir.DomainResourceArgs {
    * When this  Contract was issued.
    */
   issued?: fhir.FhirDateTime|string|undefined;
+  /**
+   * Extended properties for primitive element: Contract.issued
+   */
+  _issued?:fhir.FhirElementArgs;
   /**
    * Relevant time or time-period when this Contract is applicable.
    */
@@ -1887,17 +2167,33 @@ export interface ContractArgs extends fhir.DomainResourceArgs {
    */
   name?: fhir.FhirString|string|undefined;
   /**
+   * Extended properties for primitive element: Contract.name
+   */
+  _name?:fhir.FhirElementArgs;
+  /**
    * A short, descriptive, user-friendly title for this Contract definition, derivative, or instance in any legal state.t giving additional information about its content.
    */
   title?: fhir.FhirString|string|undefined;
+  /**
+   * Extended properties for primitive element: Contract.title
+   */
+  _title?:fhir.FhirElementArgs;
   /**
    * An explanatory or alternate user-friendly title for this Contract definition, derivative, or instance in any legal state.t giving additional information about its content.
    */
   subtitle?: fhir.FhirString|string|undefined;
   /**
+   * Extended properties for primitive element: Contract.subtitle
+   */
+  _subtitle?:fhir.FhirElementArgs;
+  /**
    * Alternative representation of the title for this Contract definition, derivative, or instance in any legal state., e.g., a domain specific contract number related to legislation.
    */
   alias?: fhir.FhirString[]|string[]|undefined;
+  /**
+   * Extended properties for primitive element: Contract.alias
+   */
+  _alias?:(fhir.FhirElementArgs|null)[];
   /**
    * The individual or organization that authored the Contract definition, derivative, or instance in any legal state.
    */
@@ -2137,13 +2433,33 @@ export class Contract extends fhir.DomainResource {
     if (source['identifier']) { this.identifier = source.identifier.map((x) => new fhir.Identifier(x)); }
     else { this.identifier = []; }
     if (source['url']) { this.url = new fhir.FhirUri({value: source.url}); }
+    if (source['_url']) {
+      if (this.url) { this.url.addExtendedProperties(source._url!); }
+      else { this.url = new fhir.FhirUri(source._url as Partial<fhir.FhirUriArgs>); }
+    }
     if (source['version']) { this.version = new fhir.FhirString({value: source.version}); }
+    if (source['_version']) {
+      if (this.version) { this.version.addExtendedProperties(source._version!); }
+      else { this.version = new fhir.FhirString(source._version as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['status']) { this.status = new fhir.FhirCode<ContractStatusCodeType>({value: source.status}); }
+    if (source['_status']) {
+      if (this.status) { this.status.addExtendedProperties(source._status!); }
+      else { this.status = new fhir.FhirCode<ContractStatusCodeType>(source._status as Partial<fhir.FhirCode>); }
+    }
     if (source['legalState']) { this.legalState = new fhir.CodeableConcept(source.legalState); }
     if (source['instantiatesCanonical']) { this.instantiatesCanonical = new fhir.Reference(source.instantiatesCanonical); }
     if (source['instantiatesUri']) { this.instantiatesUri = new fhir.FhirUri({value: source.instantiatesUri}); }
+    if (source['_instantiatesUri']) {
+      if (this.instantiatesUri) { this.instantiatesUri.addExtendedProperties(source._instantiatesUri!); }
+      else { this.instantiatesUri = new fhir.FhirUri(source._instantiatesUri as Partial<fhir.FhirUriArgs>); }
+    }
     if (source['contentDerivative']) { this.contentDerivative = new fhir.CodeableConcept(source.contentDerivative); }
     if (source['issued']) { this.issued = new fhir.FhirDateTime({value: source.issued}); }
+    if (source['_issued']) {
+      if (this.issued) { this.issued.addExtendedProperties(source._issued!); }
+      else { this.issued = new fhir.FhirDateTime(source._issued as Partial<fhir.FhirDateTimeArgs>); }
+    }
     if (source['applies']) { this.applies = new fhir.Period(source.applies); }
     if (source['expirationType']) { this.expirationType = new fhir.CodeableConcept(source.expirationType); }
     if (source['subject']) { this.subject = source.subject.map((x) => new fhir.Reference(x)); }
@@ -2155,10 +2471,28 @@ export class Contract extends fhir.DomainResource {
     if (source['site']) { this.site = source.site.map((x) => new fhir.Reference(x)); }
     else { this.site = []; }
     if (source['name']) { this.name = new fhir.FhirString({value: source.name}); }
+    if (source['_name']) {
+      if (this.name) { this.name.addExtendedProperties(source._name!); }
+      else { this.name = new fhir.FhirString(source._name as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['title']) { this.title = new fhir.FhirString({value: source.title}); }
+    if (source['_title']) {
+      if (this.title) { this.title.addExtendedProperties(source._title!); }
+      else { this.title = new fhir.FhirString(source._title as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['subtitle']) { this.subtitle = new fhir.FhirString({value: source.subtitle}); }
+    if (source['_subtitle']) {
+      if (this.subtitle) { this.subtitle.addExtendedProperties(source._subtitle!); }
+      else { this.subtitle = new fhir.FhirString(source._subtitle as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['alias']) { this.alias = source.alias.map((x) => new fhir.FhirString({value: x})); }
     else { this.alias = []; }
+    if (source['_alias']) {
+      source._alias.forEach((x,i) => {
+        if (this.alias.length >= i) { if (x) { this.alias[i].addExtendedProperties(x); } }
+        else { if (x) { this.alias.push(new fhir.FhirString(x as Partial<fhir.FhirStringArgs>)); } }
+      });
+    }
     if (source['author']) { this.author = new fhir.Reference(source.author); }
     if (source['scope']) { this.scope = new fhir.CodeableConcept(source.scope); }
     if (source['topic']) { this.topic = source.topic; }

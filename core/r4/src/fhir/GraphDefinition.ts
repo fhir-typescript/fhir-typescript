@@ -34,21 +34,41 @@ export interface GraphDefinitionLinkTargetCompartmentArgs extends fhir.BackboneE
    */
   use: fhir.FhirCode<GraphCompartmentUseCodeType>|string|undefined;
   /**
+   * Extended properties for primitive element: GraphDefinition.link.target.compartment.use
+   */
+  _use?:fhir.FhirElementArgs;
+  /**
    * Identifies the compartment.
    */
   code: fhir.FhirCode<CompartmentTypeCodeType>|string|undefined;
+  /**
+   * Extended properties for primitive element: GraphDefinition.link.target.compartment.code
+   */
+  _code?:fhir.FhirElementArgs;
   /**
    * identical | matching | different | no-rule | custom.
    */
   rule: fhir.FhirCode<GraphCompartmentRuleCodeType>|string|undefined;
   /**
+   * Extended properties for primitive element: GraphDefinition.link.target.compartment.rule
+   */
+  _rule?:fhir.FhirElementArgs;
+  /**
    * Custom rule, as a FHIRPath expression.
    */
   expression?: fhir.FhirString|string|undefined;
   /**
+   * Extended properties for primitive element: GraphDefinition.link.target.compartment.expression
+   */
+  _expression?:fhir.FhirElementArgs;
+  /**
    * Documentation for FHIRPath expression.
    */
   description?: fhir.FhirString|string|undefined;
+  /**
+   * Extended properties for primitive element: GraphDefinition.link.target.compartment.description
+   */
+  _description?:fhir.FhirElementArgs;
 }
 
 /**
@@ -86,12 +106,32 @@ export class GraphDefinitionLinkTargetCompartment extends fhir.BackboneElement {
     super(source, options);
     if (source['use']) { this.use = new fhir.FhirCode<GraphCompartmentUseCodeType>({value: source.use}); }
     else { this.use = null; }
+    if (source['_use']) {
+      if (this.use) { this.use.addExtendedProperties(source._use!); }
+      else { this.use = new fhir.FhirCode<GraphCompartmentUseCodeType>(source._use as Partial<fhir.FhirCode>); }
+    }
     if (source['code']) { this.code = new fhir.FhirCode<CompartmentTypeCodeType>({value: source.code}); }
     else { this.code = null; }
+    if (source['_code']) {
+      if (this.code) { this.code.addExtendedProperties(source._code!); }
+      else { this.code = new fhir.FhirCode<CompartmentTypeCodeType>(source._code as Partial<fhir.FhirCode>); }
+    }
     if (source['rule']) { this.rule = new fhir.FhirCode<GraphCompartmentRuleCodeType>({value: source.rule}); }
     else { this.rule = null; }
+    if (source['_rule']) {
+      if (this.rule) { this.rule.addExtendedProperties(source._rule!); }
+      else { this.rule = new fhir.FhirCode<GraphCompartmentRuleCodeType>(source._rule as Partial<fhir.FhirCode>); }
+    }
     if (source['expression']) { this.expression = new fhir.FhirString({value: source.expression}); }
+    if (source['_expression']) {
+      if (this.expression) { this.expression.addExtendedProperties(source._expression!); }
+      else { this.expression = new fhir.FhirString(source._expression as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['description']) { this.description = new fhir.FhirString({value: source.description}); }
+    if (source['_description']) {
+      if (this.description) { this.description.addExtendedProperties(source._description!); }
+      else { this.description = new fhir.FhirString(source._description as Partial<fhir.FhirStringArgs>); }
+    }
   }
   /**
    * Required-bound Value Set for use (GraphDefinition.link.target.compartment.use)
@@ -151,13 +191,25 @@ export interface GraphDefinitionLinkTargetArgs extends fhir.BackboneElementArgs 
    */
   type: fhir.FhirCode|string|undefined;
   /**
+   * Extended properties for primitive element: GraphDefinition.link.target.type
+   */
+  _type?:fhir.FhirElementArgs;
+  /**
    * At least one of the parameters must have the value {ref} which identifies the focus resource.
    */
   params?: fhir.FhirString|string|undefined;
   /**
+   * Extended properties for primitive element: GraphDefinition.link.target.params
+   */
+  _params?:fhir.FhirElementArgs;
+  /**
    * Profile for the target resource.
    */
   profile?: fhir.FhirCanonical|string|undefined;
+  /**
+   * Extended properties for primitive element: GraphDefinition.link.target.profile
+   */
+  _profile?:fhir.FhirElementArgs;
   /**
    * Compartment Consistency Rules.
    */
@@ -203,8 +255,20 @@ export class GraphDefinitionLinkTarget extends fhir.BackboneElement {
     super(source, options);
     if (source['type']) { this.type = new fhir.FhirCode({value: source.type}); }
     else { this.type = null; }
+    if (source['_type']) {
+      if (this.type) { this.type.addExtendedProperties(source._type!); }
+      else { this.type = new fhir.FhirCode(source._type as Partial<fhir.FhirCodeArgs>); }
+    }
     if (source['params']) { this.params = new fhir.FhirString({value: source.params}); }
+    if (source['_params']) {
+      if (this.params) { this.params.addExtendedProperties(source._params!); }
+      else { this.params = new fhir.FhirString(source._params as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['profile']) { this.profile = new fhir.FhirCanonical({value: source.profile}); }
+    if (source['_profile']) {
+      if (this.profile) { this.profile.addExtendedProperties(source._profile!); }
+      else { this.profile = new fhir.FhirCanonical(source._profile as Partial<fhir.FhirCanonicalArgs>); }
+    }
     if (source['compartment']) { this.compartment = source.compartment.map((x) => new fhir.GraphDefinitionLinkTargetCompartment(x)); }
     else { this.compartment = []; }
     if (source['link']) { this.link = source.link.map((x) => new fhir.GraphDefinitionLink(x)); }
@@ -244,21 +308,41 @@ export interface GraphDefinitionLinkArgs extends fhir.BackboneElementArgs {
    */
   path?: fhir.FhirString|string|undefined;
   /**
+   * Extended properties for primitive element: GraphDefinition.link.path
+   */
+  _path?:fhir.FhirElementArgs;
+  /**
    * Which slice (if profiled).
    */
   sliceName?: fhir.FhirString|string|undefined;
+  /**
+   * Extended properties for primitive element: GraphDefinition.link.sliceName
+   */
+  _sliceName?:fhir.FhirElementArgs;
   /**
    * Minimum occurrences for this link.
    */
   min?: fhir.FhirInteger|number|undefined;
   /**
+   * Extended properties for primitive element: GraphDefinition.link.min
+   */
+  _min?:fhir.FhirElementArgs;
+  /**
    * Maximum occurrences for this link.
    */
   max?: fhir.FhirString|string|undefined;
   /**
+   * Extended properties for primitive element: GraphDefinition.link.max
+   */
+  _max?:fhir.FhirElementArgs;
+  /**
    * Information about why this link is of interest in this graph definition.
    */
   description?: fhir.FhirString|string|undefined;
+  /**
+   * Extended properties for primitive element: GraphDefinition.link.description
+   */
+  _description?:fhir.FhirElementArgs;
   /**
    * Potential target for the link.
    */
@@ -303,10 +387,30 @@ export class GraphDefinitionLink extends fhir.BackboneElement {
   constructor(source:Partial<GraphDefinitionLinkArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
     if (source['path']) { this.path = new fhir.FhirString({value: source.path}); }
+    if (source['_path']) {
+      if (this.path) { this.path.addExtendedProperties(source._path!); }
+      else { this.path = new fhir.FhirString(source._path as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['sliceName']) { this.sliceName = new fhir.FhirString({value: source.sliceName}); }
+    if (source['_sliceName']) {
+      if (this.sliceName) { this.sliceName.addExtendedProperties(source._sliceName!); }
+      else { this.sliceName = new fhir.FhirString(source._sliceName as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['min']) { this.min = new fhir.FhirInteger({value: source.min}); }
+    if (source['_min']) {
+      if (this.min) { this.min.addExtendedProperties(source._min!); }
+      else { this.min = new fhir.FhirInteger(source._min as Partial<fhir.FhirIntegerArgs>); }
+    }
     if (source['max']) { this.max = new fhir.FhirString({value: source.max}); }
+    if (source['_max']) {
+      if (this.max) { this.max.addExtendedProperties(source._max!); }
+      else { this.max = new fhir.FhirString(source._max as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['description']) { this.description = new fhir.FhirString({value: source.description}); }
+    if (source['_description']) {
+      if (this.description) { this.description.addExtendedProperties(source._description!); }
+      else { this.description = new fhir.FhirString(source._description as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['target']) { this.target = source.target.map((x) => new fhir.GraphDefinitionLinkTarget(x)); }
     else { this.target = []; }
   }
@@ -339,29 +443,57 @@ export interface GraphDefinitionArgs extends fhir.DomainResourceArgs {
    */
   url?: fhir.FhirUri|string|undefined;
   /**
+   * Extended properties for primitive element: GraphDefinition.url
+   */
+  _url?:fhir.FhirElementArgs;
+  /**
    * There may be different graph definition instances that have the same identifier but different versions.  The version can be appended to the url in a reference to allow a reference to a particular business version of the graph definition with the format [url]|[version].
    */
   version?: fhir.FhirString|string|undefined;
+  /**
+   * Extended properties for primitive element: GraphDefinition.version
+   */
+  _version?:fhir.FhirElementArgs;
   /**
    * The name is not expected to be globally unique. The name should be a simple alphanumeric type name to ensure that it is machine-processing friendly.
    */
   name: fhir.FhirString|string|undefined;
   /**
+   * Extended properties for primitive element: GraphDefinition.name
+   */
+  _name?:fhir.FhirElementArgs;
+  /**
    * Allows filtering of graph definitions that are appropriate for use versus not.
    */
   status: fhir.FhirCode<PublicationStatusCodeType>|string|undefined;
+  /**
+   * Extended properties for primitive element: GraphDefinition.status
+   */
+  _status?:fhir.FhirElementArgs;
   /**
    * Allows filtering of graph definitions that are appropriate for use versus not.
    */
   experimental?: fhir.FhirBoolean|boolean|undefined;
   /**
+   * Extended properties for primitive element: GraphDefinition.experimental
+   */
+  _experimental?:fhir.FhirElementArgs;
+  /**
    * Note that this is not the same as the resource last-modified-date, since the resource may be a secondary representation of the graph definition. Additional specific dates may be added as extensions or be found by consulting Provenances associated with past versions of the resource.
    */
   date?: fhir.FhirDateTime|string|undefined;
   /**
+   * Extended properties for primitive element: GraphDefinition.date
+   */
+  _date?:fhir.FhirElementArgs;
+  /**
    * Usually an organization but may be an individual. The publisher (or steward) of the graph definition is the organization or individual primarily responsible for the maintenance and upkeep of the graph definition. This is not necessarily the same individual or organization that developed and initially authored the content. The publisher is the primary point of contact for questions or issues with the graph definition. This item SHOULD be populated unless the information is available from context.
    */
   publisher?: fhir.FhirString|string|undefined;
+  /**
+   * Extended properties for primitive element: GraphDefinition.publisher
+   */
+  _publisher?:fhir.FhirElementArgs;
   /**
    * May be a web site, an email address, a telephone number, etc.
    */
@@ -370,6 +502,10 @@ export interface GraphDefinitionArgs extends fhir.DomainResourceArgs {
    * This description can be used to capture details such as why the graph definition was built, comments about misuse, instructions for clinical use and interpretation, literature references, examples from the paper world, etc. It is not a rendering of the graph definition as conveyed in the 'text' field of the resource itself. This item SHOULD be populated unless the information is available from context (e.g. the language of the graph definition is presumed to be the predominant language in the place the graph definition was created).
    */
   description?: fhir.FhirMarkdown|string|undefined;
+  /**
+   * Extended properties for primitive element: GraphDefinition.description
+   */
+  _description?:fhir.FhirElementArgs;
   /**
    * When multiple useContexts are specified, there is no expectation that all or any of the contexts apply.
    */
@@ -383,13 +519,25 @@ export interface GraphDefinitionArgs extends fhir.DomainResourceArgs {
    */
   purpose?: fhir.FhirMarkdown|string|undefined;
   /**
+   * Extended properties for primitive element: GraphDefinition.purpose
+   */
+  _purpose?:fhir.FhirElementArgs;
+  /**
    * The type of FHIR resource at which instances of this graph start.
    */
   start: fhir.FhirCode|string|undefined;
   /**
+   * Extended properties for primitive element: GraphDefinition.start
+   */
+  _start?:fhir.FhirElementArgs;
+  /**
    * The code does not include the '$' prefix that is always included in the URL when the operation is invoked.
    */
   profile?: fhir.FhirCanonical|string|undefined;
+  /**
+   * Extended properties for primitive element: GraphDefinition.profile
+   */
+  _profile?:fhir.FhirElementArgs;
   /**
    * Links this graph makes rules about.
    */
@@ -477,25 +625,69 @@ export class GraphDefinition extends fhir.DomainResource {
     super(source, options);
     this.resourceType = 'GraphDefinition';
     if (source['url']) { this.url = new fhir.FhirUri({value: source.url}); }
+    if (source['_url']) {
+      if (this.url) { this.url.addExtendedProperties(source._url!); }
+      else { this.url = new fhir.FhirUri(source._url as Partial<fhir.FhirUriArgs>); }
+    }
     if (source['version']) { this.version = new fhir.FhirString({value: source.version}); }
+    if (source['_version']) {
+      if (this.version) { this.version.addExtendedProperties(source._version!); }
+      else { this.version = new fhir.FhirString(source._version as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['name']) { this.name = new fhir.FhirString({value: source.name}); }
     else { this.name = null; }
+    if (source['_name']) {
+      if (this.name) { this.name.addExtendedProperties(source._name!); }
+      else { this.name = new fhir.FhirString(source._name as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['status']) { this.status = new fhir.FhirCode<PublicationStatusCodeType>({value: source.status}); }
     else { this.status = null; }
+    if (source['_status']) {
+      if (this.status) { this.status.addExtendedProperties(source._status!); }
+      else { this.status = new fhir.FhirCode<PublicationStatusCodeType>(source._status as Partial<fhir.FhirCode>); }
+    }
     if (source['experimental']) { this.experimental = new fhir.FhirBoolean({value: source.experimental}); }
+    if (source['_experimental']) {
+      if (this.experimental) { this.experimental.addExtendedProperties(source._experimental!); }
+      else { this.experimental = new fhir.FhirBoolean(source._experimental as Partial<fhir.FhirBooleanArgs>); }
+    }
     if (source['date']) { this.date = new fhir.FhirDateTime({value: source.date}); }
+    if (source['_date']) {
+      if (this.date) { this.date.addExtendedProperties(source._date!); }
+      else { this.date = new fhir.FhirDateTime(source._date as Partial<fhir.FhirDateTimeArgs>); }
+    }
     if (source['publisher']) { this.publisher = new fhir.FhirString({value: source.publisher}); }
+    if (source['_publisher']) {
+      if (this.publisher) { this.publisher.addExtendedProperties(source._publisher!); }
+      else { this.publisher = new fhir.FhirString(source._publisher as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['contact']) { this.contact = source.contact.map((x) => new fhir.ContactDetail(x)); }
     else { this.contact = []; }
     if (source['description']) { this.description = new fhir.FhirMarkdown({value: source.description}); }
+    if (source['_description']) {
+      if (this.description) { this.description.addExtendedProperties(source._description!); }
+      else { this.description = new fhir.FhirMarkdown(source._description as Partial<fhir.FhirMarkdownArgs>); }
+    }
     if (source['useContext']) { this.useContext = source.useContext.map((x) => new fhir.UsageContext(x)); }
     else { this.useContext = []; }
     if (source['jurisdiction']) { this.jurisdiction = source.jurisdiction.map((x) => new fhir.CodeableConcept(x)); }
     else { this.jurisdiction = []; }
     if (source['purpose']) { this.purpose = new fhir.FhirMarkdown({value: source.purpose}); }
+    if (source['_purpose']) {
+      if (this.purpose) { this.purpose.addExtendedProperties(source._purpose!); }
+      else { this.purpose = new fhir.FhirMarkdown(source._purpose as Partial<fhir.FhirMarkdownArgs>); }
+    }
     if (source['start']) { this.start = new fhir.FhirCode({value: source.start}); }
     else { this.start = null; }
+    if (source['_start']) {
+      if (this.start) { this.start.addExtendedProperties(source._start!); }
+      else { this.start = new fhir.FhirCode(source._start as Partial<fhir.FhirCodeArgs>); }
+    }
     if (source['profile']) { this.profile = new fhir.FhirCanonical({value: source.profile}); }
+    if (source['_profile']) {
+      if (this.profile) { this.profile.addExtendedProperties(source._profile!); }
+      else { this.profile = new fhir.FhirCanonical(source._profile as Partial<fhir.FhirCanonicalArgs>); }
+    }
     if (source['link']) { this.link = source.link.map((x) => new fhir.GraphDefinitionLink(x)); }
     else { this.link = []; }
   }

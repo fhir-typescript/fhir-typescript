@@ -16,6 +16,10 @@ export interface SubstanceSpecificationMoietyArgs extends fhir.BackboneElementAr
      */
     name?: fhir.FhirString | string | undefined;
     /**
+     * Extended properties for primitive element: SubstanceSpecification.moiety.name
+     */
+    _name?: fhir.FhirElementArgs;
+    /**
      * Stereochemistry type.
      */
     stereochemistry?: fhir.CodeableConceptArgs | undefined;
@@ -27,6 +31,10 @@ export interface SubstanceSpecificationMoietyArgs extends fhir.BackboneElementAr
      * Molecular formula.
      */
     molecularFormula?: fhir.FhirString | string | undefined;
+    /**
+     * Extended properties for primitive element: SubstanceSpecification.moiety.molecularFormula
+     */
+    _molecularFormula?: fhir.FhirElementArgs;
     /**
      * Quantitative value for this moiety.
      */
@@ -105,6 +113,10 @@ export interface SubstanceSpecificationPropertyArgs extends fhir.BackboneElement
      * Parameters that were used in the measurement of a property (e.g. for viscosity: measured at 20C with a pH of 7.1).
      */
     parameters?: fhir.FhirString | string | undefined;
+    /**
+     * Extended properties for primitive element: SubstanceSpecification.property.parameters
+     */
+    _parameters?: fhir.FhirElementArgs;
     /**
      * A substance upon which a defining property depends (e.g. for solubility: in water, in alcohol).
      */
@@ -296,6 +308,10 @@ export interface SubstanceSpecificationStructureRepresentationArgs extends fhir.
      */
     representation?: fhir.FhirString | string | undefined;
     /**
+     * Extended properties for primitive element: SubstanceSpecification.structure.representation.representation
+     */
+    _representation?: fhir.FhirElementArgs;
+    /**
      * An attached file with the structural representation.
      */
     attachment?: fhir.AttachmentArgs | undefined;
@@ -346,9 +362,17 @@ export interface SubstanceSpecificationStructureArgs extends fhir.BackboneElemen
      */
     molecularFormula?: fhir.FhirString | string | undefined;
     /**
+     * Extended properties for primitive element: SubstanceSpecification.structure.molecularFormula
+     */
+    _molecularFormula?: fhir.FhirElementArgs;
+    /**
      * Specified per moiety according to the Hill system, i.e. first C, then H, then alphabetical, each moiety separated by a dot.
      */
     molecularFormulaByMoiety?: fhir.FhirString | string | undefined;
+    /**
+     * Extended properties for primitive element: SubstanceSpecification.structure.molecularFormulaByMoiety
+     */
+    _molecularFormulaByMoiety?: fhir.FhirElementArgs;
     /**
      * Applicable for single substances that contain a radionuclide or a non-natural isotopic ratio.
      */
@@ -432,9 +456,17 @@ export interface SubstanceSpecificationCodeArgs extends fhir.BackboneElementArgs
      */
     statusDate?: fhir.FhirDateTime | string | undefined;
     /**
+     * Extended properties for primitive element: SubstanceSpecification.code.statusDate
+     */
+    _statusDate?: fhir.FhirElementArgs;
+    /**
      * Any comment can be provided in this field, if necessary.
      */
     comment?: fhir.FhirString | string | undefined;
+    /**
+     * Extended properties for primitive element: SubstanceSpecification.code.comment
+     */
+    _comment?: fhir.FhirElementArgs;
     /**
      * Supporting literature.
      */
@@ -493,6 +525,10 @@ export interface SubstanceSpecificationNameOfficialArgs extends fhir.BackboneEle
      * Date of official name change.
      */
     date?: fhir.FhirDateTime | string | undefined;
+    /**
+     * Extended properties for primitive element: SubstanceSpecification.name.official.date
+     */
+    _date?: fhir.FhirElementArgs;
 }
 /**
  * Details of the official nature of this name.
@@ -532,6 +568,10 @@ export interface SubstanceSpecificationNameArgs extends fhir.BackboneElementArgs
      */
     name: fhir.FhirString | string | undefined;
     /**
+     * Extended properties for primitive element: SubstanceSpecification.name.name
+     */
+    _name?: fhir.FhirElementArgs;
+    /**
      * Name type.
      */
     type?: fhir.CodeableConceptArgs | undefined;
@@ -543,6 +583,10 @@ export interface SubstanceSpecificationNameArgs extends fhir.BackboneElementArgs
      * If this is the preferred name for this substance.
      */
     preferred?: fhir.FhirBoolean | boolean | undefined;
+    /**
+     * Extended properties for primitive element: SubstanceSpecification.name.preferred
+     */
+    _preferred?: fhir.FhirElementArgs;
     /**
      * Language of the name.
      */
@@ -658,6 +702,10 @@ export interface SubstanceSpecificationRelationshipArgs extends fhir.BackboneEle
      */
     isDefining?: fhir.FhirBoolean | boolean | undefined;
     /**
+     * Extended properties for primitive element: SubstanceSpecification.relationship.isDefining
+     */
+    _isDefining?: fhir.FhirElementArgs;
+    /**
      * A numeric factor for the relationship, for instance to express that the salt of a substance has some percentage of the active substance in relation to some other.
      */
     amount?: fhir.Quantity | fhir.Range | fhir.Ratio | fhir.FhirString | undefined;
@@ -772,6 +820,10 @@ export interface SubstanceSpecificationArgs extends fhir.DomainResourceArgs {
      */
     description?: fhir.FhirString | string | undefined;
     /**
+     * Extended properties for primitive element: SubstanceSpecification.description
+     */
+    _description?: fhir.FhirElementArgs;
+    /**
      * Supporting literature.
      */
     source?: fhir.ReferenceArgs[] | undefined;
@@ -779,6 +831,10 @@ export interface SubstanceSpecificationArgs extends fhir.DomainResourceArgs {
      * Textual comment about this record of a substance.
      */
     comment?: fhir.FhirString | string | undefined;
+    /**
+     * Extended properties for primitive element: SubstanceSpecification.comment
+     */
+    _comment?: fhir.FhirElementArgs;
     /**
      * Moiety, for structural modifications.
      */

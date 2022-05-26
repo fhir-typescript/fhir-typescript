@@ -183,6 +183,10 @@ export interface ConditionArgs extends fhir.DomainResourceArgs {
      */
     recordedDate?: fhir.FhirDateTime | string | undefined;
     /**
+     * Extended properties for primitive element: Condition.recordedDate
+     */
+    _recordedDate?: fhir.FhirElementArgs;
+    /**
      * Individual who recorded the record and takes responsibility for its content.
      */
     recorder?: fhir.ReferenceArgs | undefined;

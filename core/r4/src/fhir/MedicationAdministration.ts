@@ -99,6 +99,10 @@ export interface MedicationAdministrationDosageArgs extends fhir.BackboneElement
    */
   text?: fhir.FhirString|string|undefined;
   /**
+   * Extended properties for primitive element: MedicationAdministration.dosage.text
+   */
+  _text?:fhir.FhirElementArgs;
+  /**
    * If the use case requires attributes from the BodySite resource (e.g. to identify and track separately) then use the standard extension [bodySite](extension-bodysite.html).  May be a summary code, or a reference to a very precise definition of the location, or both.
    */
   site?: fhir.CodeableConceptArgs|undefined;
@@ -171,6 +175,10 @@ export class MedicationAdministrationDosage extends fhir.BackboneElement {
   constructor(source:Partial<MedicationAdministrationDosageArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
     if (source['text']) { this.text = new fhir.FhirString({value: source.text}); }
+    if (source['_text']) {
+      if (this.text) { this.text.addExtendedProperties(source._text!); }
+      else { this.text = new fhir.FhirString(source._text as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['site']) { this.site = new fhir.CodeableConcept(source.site); }
     if (source['route']) { this.route = new fhir.CodeableConcept(source.route); }
     if (source['method']) { this.method = new fhir.CodeableConcept(source.method); }
@@ -209,6 +217,10 @@ export interface MedicationAdministrationArgs extends fhir.DomainResourceArgs {
    */
   instantiates?: fhir.FhirUri[]|string[]|undefined;
   /**
+   * Extended properties for primitive element: MedicationAdministration.instantiates
+   */
+  _instantiates?:(fhir.FhirElementArgs|null)[];
+  /**
    * A larger event of which this particular event is a component or step.
    */
   partOf?: fhir.ReferenceArgs[]|undefined;
@@ -216,6 +228,10 @@ export interface MedicationAdministrationArgs extends fhir.DomainResourceArgs {
    * This element is labeled as a modifier because the status contains codes that mark the resource as not currently valid.
    */
   status: fhir.FhirCode<MedicationAdminStatusCodeType>|string|undefined;
+  /**
+   * Extended properties for primitive element: MedicationAdministration.status
+   */
+  _status?:fhir.FhirElementArgs;
   /**
    * A code indicating why the administration was not performed.
    */
@@ -400,10 +416,20 @@ export class MedicationAdministration extends fhir.DomainResource {
     else { this.identifier = []; }
     if (source['instantiates']) { this.instantiates = source.instantiates.map((x) => new fhir.FhirUri({value: x})); }
     else { this.instantiates = []; }
+    if (source['_instantiates']) {
+      source._instantiates.forEach((x,i) => {
+        if (this.instantiates.length >= i) { if (x) { this.instantiates[i].addExtendedProperties(x); } }
+        else { if (x) { this.instantiates.push(new fhir.FhirUri(x as Partial<fhir.FhirUriArgs>)); } }
+      });
+    }
     if (source['partOf']) { this.partOf = source.partOf.map((x) => new fhir.Reference(x)); }
     else { this.partOf = []; }
     if (source['status']) { this.status = new fhir.FhirCode<MedicationAdminStatusCodeType>({value: source.status}); }
     else { this.status = null; }
+    if (source['_status']) {
+      if (this.status) { this.status.addExtendedProperties(source._status!); }
+      else { this.status = new fhir.FhirCode<MedicationAdminStatusCodeType>(source._status as Partial<fhir.FhirCode>); }
+    }
     if (source['statusReason']) { this.statusReason = source.statusReason.map((x) => new fhir.CodeableConcept(x)); }
     else { this.statusReason = []; }
     if (source['category']) { this.category = new fhir.CodeableConcept(source.category); }

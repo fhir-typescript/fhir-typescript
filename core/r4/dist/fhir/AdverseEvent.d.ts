@@ -14,6 +14,10 @@ export interface AdverseEventSuspectEntityCausalityArgs extends fhir.BackboneEle
      */
     productRelatedness?: fhir.FhirString | string | undefined;
     /**
+     * Extended properties for primitive element: AdverseEvent.suspectEntity.causality.productRelatedness
+     */
+    _productRelatedness?: fhir.FhirElementArgs;
+    /**
      * AdverseEvent.suspectEntity.causalityAuthor.
      */
     author?: fhir.ReferenceArgs | undefined;
@@ -110,6 +114,10 @@ export interface AdverseEventArgs extends fhir.DomainResourceArgs {
      */
     actuality: fhir.FhirCode<AdverseEventActualityCodeType> | string | undefined;
     /**
+     * Extended properties for primitive element: AdverseEvent.actuality
+     */
+    _actuality?: fhir.FhirElementArgs;
+    /**
      * The overall type of event, intended for search and filtering purposes.
      */
     category?: fhir.CodeableConceptArgs[] | undefined;
@@ -130,13 +138,25 @@ export interface AdverseEventArgs extends fhir.DomainResourceArgs {
      */
     date?: fhir.FhirDateTime | string | undefined;
     /**
+     * Extended properties for primitive element: AdverseEvent.date
+     */
+    _date?: fhir.FhirElementArgs;
+    /**
      * Estimated or actual date the AdverseEvent began, in the opinion of the reporter.
      */
     detected?: fhir.FhirDateTime | string | undefined;
     /**
+     * Extended properties for primitive element: AdverseEvent.detected
+     */
+    _detected?: fhir.FhirElementArgs;
+    /**
      * The recordedDate represents the date when this particular AdverseEvent record was created in the system, not the date of the most recent update.  The date of the last record modification can be retrieved from the resource metadata.
      */
     recordedDate?: fhir.FhirDateTime | string | undefined;
+    /**
+     * Extended properties for primitive element: AdverseEvent.recordedDate
+     */
+    _recordedDate?: fhir.FhirElementArgs;
     /**
      * Includes information about the reaction that occurred as a result of exposure to a substance (for example, a drug or a chemical).
      */

@@ -180,13 +180,25 @@ export interface CoverageEligibilityResponseInsuranceItemArgs extends fhir.Backb
    */
   excluded?: fhir.FhirBoolean|boolean|undefined;
   /**
+   * Extended properties for primitive element: CoverageEligibilityResponse.insurance.item.excluded
+   */
+  _excluded?:fhir.FhirElementArgs;
+  /**
    * For example: MED01, or DENT2.
    */
   name?: fhir.FhirString|string|undefined;
   /**
+   * Extended properties for primitive element: CoverageEligibilityResponse.insurance.item.name
+   */
+  _name?:fhir.FhirElementArgs;
+  /**
    * For example 'DENT2 covers 100% of basic, 50% of major but excludes Ortho, Implants and Cosmetic services'.
    */
   description?: fhir.FhirString|string|undefined;
+  /**
+   * Extended properties for primitive element: CoverageEligibilityResponse.insurance.item.description
+   */
+  _description?:fhir.FhirElementArgs;
   /**
    * Is a flag to indicate whether the benefits refer to in-network providers or out-of-network providers.
    */
@@ -208,6 +220,10 @@ export interface CoverageEligibilityResponseInsuranceItemArgs extends fhir.Backb
    */
   authorizationRequired?: fhir.FhirBoolean|boolean|undefined;
   /**
+   * Extended properties for primitive element: CoverageEligibilityResponse.insurance.item.authorizationRequired
+   */
+  _authorizationRequired?:fhir.FhirElementArgs;
+  /**
    * Codes or comments regarding information or actions associated with the preauthorization.
    */
   authorizationSupporting?: fhir.CodeableConceptArgs[]|undefined;
@@ -215,6 +231,10 @@ export interface CoverageEligibilityResponseInsuranceItemArgs extends fhir.Backb
    * A web location for obtaining requirements or descriptive information regarding the preauthorization.
    */
   authorizationUrl?: fhir.FhirUri|string|undefined;
+  /**
+   * Extended properties for primitive element: CoverageEligibilityResponse.insurance.item.authorizationUrl
+   */
+  _authorizationUrl?:fhir.FhirElementArgs;
 }
 
 /**
@@ -292,17 +312,37 @@ export class CoverageEligibilityResponseInsuranceItem extends fhir.BackboneEleme
     else { this.modifier = []; }
     if (source['provider']) { this.provider = new fhir.Reference(source.provider); }
     if (source['excluded']) { this.excluded = new fhir.FhirBoolean({value: source.excluded}); }
+    if (source['_excluded']) {
+      if (this.excluded) { this.excluded.addExtendedProperties(source._excluded!); }
+      else { this.excluded = new fhir.FhirBoolean(source._excluded as Partial<fhir.FhirBooleanArgs>); }
+    }
     if (source['name']) { this.name = new fhir.FhirString({value: source.name}); }
+    if (source['_name']) {
+      if (this.name) { this.name.addExtendedProperties(source._name!); }
+      else { this.name = new fhir.FhirString(source._name as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['description']) { this.description = new fhir.FhirString({value: source.description}); }
+    if (source['_description']) {
+      if (this.description) { this.description.addExtendedProperties(source._description!); }
+      else { this.description = new fhir.FhirString(source._description as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['network']) { this.network = new fhir.CodeableConcept(source.network); }
     if (source['unit']) { this.unit = new fhir.CodeableConcept(source.unit); }
     if (source['term']) { this.term = new fhir.CodeableConcept(source.term); }
     if (source['benefit']) { this.benefit = source.benefit.map((x) => new fhir.CoverageEligibilityResponseInsuranceItemBenefit(x)); }
     else { this.benefit = []; }
     if (source['authorizationRequired']) { this.authorizationRequired = new fhir.FhirBoolean({value: source.authorizationRequired}); }
+    if (source['_authorizationRequired']) {
+      if (this.authorizationRequired) { this.authorizationRequired.addExtendedProperties(source._authorizationRequired!); }
+      else { this.authorizationRequired = new fhir.FhirBoolean(source._authorizationRequired as Partial<fhir.FhirBooleanArgs>); }
+    }
     if (source['authorizationSupporting']) { this.authorizationSupporting = source.authorizationSupporting.map((x) => new fhir.CodeableConcept(x)); }
     else { this.authorizationSupporting = []; }
     if (source['authorizationUrl']) { this.authorizationUrl = new fhir.FhirUri({value: source.authorizationUrl}); }
+    if (source['_authorizationUrl']) {
+      if (this.authorizationUrl) { this.authorizationUrl.addExtendedProperties(source._authorizationUrl!); }
+      else { this.authorizationUrl = new fhir.FhirUri(source._authorizationUrl as Partial<fhir.FhirUriArgs>); }
+    }
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -338,6 +378,10 @@ export interface CoverageEligibilityResponseInsuranceArgs extends fhir.BackboneE
    * Flag indicating if the coverage provided is inforce currently if no service date(s) specified or for the whole duration of the service dates.
    */
   inforce?: fhir.FhirBoolean|boolean|undefined;
+  /**
+   * Extended properties for primitive element: CoverageEligibilityResponse.insurance.inforce
+   */
+  _inforce?:fhir.FhirElementArgs;
   /**
    * The term of the benefits documented in this response.
    */
@@ -380,6 +424,10 @@ export class CoverageEligibilityResponseInsurance extends fhir.BackboneElement {
     if (source['coverage']) { this.coverage = new fhir.Reference(source.coverage); }
     else { this.coverage = null; }
     if (source['inforce']) { this.inforce = new fhir.FhirBoolean({value: source.inforce}); }
+    if (source['_inforce']) {
+      if (this.inforce) { this.inforce.addExtendedProperties(source._inforce!); }
+      else { this.inforce = new fhir.FhirBoolean(source._inforce as Partial<fhir.FhirBooleanArgs>); }
+    }
     if (source['benefitPeriod']) { this.benefitPeriod = new fhir.Period(source.benefitPeriod); }
     if (source['item']) { this.item = source.item.map((x) => new fhir.CoverageEligibilityResponseInsuranceItem(x)); }
     else { this.item = []; }
@@ -458,9 +506,17 @@ export interface CoverageEligibilityResponseArgs extends fhir.DomainResourceArgs
    */
   status: fhir.FhirCode<FmStatusCodeType>|string|undefined;
   /**
+   * Extended properties for primitive element: CoverageEligibilityResponse.status
+   */
+  _status?:fhir.FhirElementArgs;
+  /**
    * Code to specify whether requesting: prior authorization requirements for some service categories or billing codes; benefits for coverages specified or discovered; discovery and return of coverages for the patient; and/or validation that the specified coverage is in-force at the date/period specified or 'now' if not specified.
    */
   purpose: fhir.FhirCode<EligibilityresponsePurposeCodeType>[]|string[]|undefined;
+  /**
+   * Extended properties for primitive element: CoverageEligibilityResponse.purpose
+   */
+  _purpose?:(fhir.FhirElementArgs|null)[];
   /**
    * The party who is the beneficiary of the supplied coverage and for whom eligibility is sought.
    */
@@ -482,6 +538,10 @@ export interface CoverageEligibilityResponseArgs extends fhir.DomainResourceArgs
    */
   created: fhir.FhirDateTime|string|undefined;
   /**
+   * Extended properties for primitive element: CoverageEligibilityResponse.created
+   */
+  _created?:fhir.FhirElementArgs;
+  /**
    * Typically this field would be 1..1 where this party is responsible for the claim but not necessarily professionally responsible for the provision of the individual products and services listed below.
    */
   requestor?: fhir.ReferenceArgs|undefined;
@@ -494,9 +554,17 @@ export interface CoverageEligibilityResponseArgs extends fhir.DomainResourceArgs
    */
   outcome: fhir.FhirCode<RemittanceOutcomeCodeType>|string|undefined;
   /**
+   * Extended properties for primitive element: CoverageEligibilityResponse.outcome
+   */
+  _outcome?:fhir.FhirElementArgs;
+  /**
    * A human readable description of the status of the adjudication.
    */
   disposition?: fhir.FhirString|string|undefined;
+  /**
+   * Extended properties for primitive element: CoverageEligibilityResponse.disposition
+   */
+  _disposition?:fhir.FhirElementArgs;
   /**
    * The Insurer who issued the coverage in question and is the author of the response.
    */
@@ -509,6 +577,10 @@ export interface CoverageEligibilityResponseArgs extends fhir.DomainResourceArgs
    * A reference from the Insurer to which these services pertain to be used on further communication and as proof that the request occurred.
    */
   preAuthRef?: fhir.FhirString|string|undefined;
+  /**
+   * Extended properties for primitive element: CoverageEligibilityResponse.preAuthRef
+   */
+  _preAuthRef?:fhir.FhirElementArgs;
   /**
    * May be needed to identify specific jurisdictional forms.
    */
@@ -605,8 +677,18 @@ export class CoverageEligibilityResponse extends fhir.DomainResource {
     else { this.identifier = []; }
     if (source['status']) { this.status = new fhir.FhirCode<FmStatusCodeType>({value: source.status}); }
     else { this.status = null; }
+    if (source['_status']) {
+      if (this.status) { this.status.addExtendedProperties(source._status!); }
+      else { this.status = new fhir.FhirCode<FmStatusCodeType>(source._status as Partial<fhir.FhirCode>); }
+    }
     if (source['purpose']) { this.purpose = source.purpose.map((x) => new fhir.FhirCode<EligibilityresponsePurposeCodeType>({value: x})); }
     else { this.purpose = []; }
+    if (source['_purpose']) {
+      source._purpose.forEach((x,i) => {
+        if (this.purpose.length >= i) { if (x) { this.purpose[i].addExtendedProperties(x); } }
+        else { if (x) { this.purpose.push(new fhir.FhirCode<EligibilityresponsePurposeCodeType>(x as Partial<fhir.FhirCode>)); } }
+      });
+    }
     if (source['patient']) { this.patient = new fhir.Reference(source.patient); }
     else { this.patient = null; }
     if (source['serviced']) { this.serviced = source.serviced; }
@@ -614,17 +696,33 @@ export class CoverageEligibilityResponse extends fhir.DomainResource {
     else if (source['servicedPeriod']) { this.serviced = new fhir.Period(source.servicedPeriod); }
     if (source['created']) { this.created = new fhir.FhirDateTime({value: source.created}); }
     else { this.created = null; }
+    if (source['_created']) {
+      if (this.created) { this.created.addExtendedProperties(source._created!); }
+      else { this.created = new fhir.FhirDateTime(source._created as Partial<fhir.FhirDateTimeArgs>); }
+    }
     if (source['requestor']) { this.requestor = new fhir.Reference(source.requestor); }
     if (source['request']) { this.request = new fhir.Reference(source.request); }
     else { this.request = null; }
     if (source['outcome']) { this.outcome = new fhir.FhirCode<RemittanceOutcomeCodeType>({value: source.outcome}); }
     else { this.outcome = null; }
+    if (source['_outcome']) {
+      if (this.outcome) { this.outcome.addExtendedProperties(source._outcome!); }
+      else { this.outcome = new fhir.FhirCode<RemittanceOutcomeCodeType>(source._outcome as Partial<fhir.FhirCode>); }
+    }
     if (source['disposition']) { this.disposition = new fhir.FhirString({value: source.disposition}); }
+    if (source['_disposition']) {
+      if (this.disposition) { this.disposition.addExtendedProperties(source._disposition!); }
+      else { this.disposition = new fhir.FhirString(source._disposition as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['insurer']) { this.insurer = new fhir.Reference(source.insurer); }
     else { this.insurer = null; }
     if (source['insurance']) { this.insurance = source.insurance.map((x) => new fhir.CoverageEligibilityResponseInsurance(x)); }
     else { this.insurance = []; }
     if (source['preAuthRef']) { this.preAuthRef = new fhir.FhirString({value: source.preAuthRef}); }
+    if (source['_preAuthRef']) {
+      if (this.preAuthRef) { this.preAuthRef.addExtendedProperties(source._preAuthRef!); }
+      else { this.preAuthRef = new fhir.FhirString(source._preAuthRef as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['form']) { this.form = new fhir.CodeableConcept(source.form); }
     if (source['error']) { this.error = source.error.map((x) => new fhir.CoverageEligibilityResponseError(x)); }
     else { this.error = []; }

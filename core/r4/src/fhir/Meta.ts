@@ -22,18 +22,34 @@ export interface MetaArgs extends fhir.FhirElementArgs {
    */
   versionId?: fhir.FhirId|string|undefined;
   /**
+   * Extended properties for primitive element: Meta.versionId
+   */
+  _versionId?:fhir.FhirElementArgs;
+  /**
    * This value is always populated except when the resource is first being created. The server / resource manager sets this value; what a client provides is irrelevant. This is equivalent to the HTTP Last-Modified and SHOULD have the same value on a [read](http.html#read) interaction.
    */
   lastUpdated?: fhir.FhirInstant|string|undefined;
+  /**
+   * Extended properties for primitive element: Meta.lastUpdated
+   */
+  _lastUpdated?:fhir.FhirElementArgs;
   /**
    * In the provenance resource, this corresponds to Provenance.entity.what[x]. The exact use of the source (and the implied Provenance.entity.role) is left to implementer discretion. Only one nominated source is allowed; for additional provenance details, a full Provenance resource should be used. 
    * This element can be used to indicate where the current master source of a resource that has a canonical URL if the resource is no longer hosted at the canonical URL.
    */
   source?: fhir.FhirUri|string|undefined;
   /**
+   * Extended properties for primitive element: Meta.source
+   */
+  _source?:fhir.FhirElementArgs;
+  /**
    * It is up to the server and/or other infrastructure of policy to determine whether/how these claims are verified and/or updated over time.  The list of profile URLs is a set.
    */
   profile?: fhir.FhirCanonical[]|string[]|undefined;
+  /**
+   * Extended properties for primitive element: Meta.profile
+   */
+  _profile?:(fhir.FhirElementArgs|null)[];
   /**
    * The security labels can be updated without changing the stated version of the resource. The list of security labels is a set. Uniqueness is based the system/code, and version and display are ignored.
    */
@@ -83,10 +99,28 @@ export class Meta extends fhir.FhirElement {
   constructor(source:Partial<MetaArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
     if (source['versionId']) { this.versionId = new fhir.FhirId({value: source.versionId}); }
+    if (source['_versionId']) {
+      if (this.versionId) { this.versionId.addExtendedProperties(source._versionId!); }
+      else { this.versionId = new fhir.FhirId(source._versionId as Partial<fhir.FhirIdArgs>); }
+    }
     if (source['lastUpdated']) { this.lastUpdated = new fhir.FhirInstant({value: source.lastUpdated}); }
+    if (source['_lastUpdated']) {
+      if (this.lastUpdated) { this.lastUpdated.addExtendedProperties(source._lastUpdated!); }
+      else { this.lastUpdated = new fhir.FhirInstant(source._lastUpdated as Partial<fhir.FhirInstantArgs>); }
+    }
     if (source['source']) { this.source = new fhir.FhirUri({value: source.source}); }
+    if (source['_source']) {
+      if (this.source) { this.source.addExtendedProperties(source._source!); }
+      else { this.source = new fhir.FhirUri(source._source as Partial<fhir.FhirUriArgs>); }
+    }
     if (source['profile']) { this.profile = source.profile.map((x) => new fhir.FhirCanonical({value: x})); }
     else { this.profile = []; }
+    if (source['_profile']) {
+      source._profile.forEach((x,i) => {
+        if (this.profile.length >= i) { if (x) { this.profile[i].addExtendedProperties(x); } }
+        else { if (x) { this.profile.push(new fhir.FhirCanonical(x as Partial<fhir.FhirCanonicalArgs>)); } }
+      });
+    }
     if (source['security']) { this.security = source.security.map((x) => new fhir.Coding(x)); }
     else { this.security = []; }
     if (source['tag']) { this.tag = source.tag.map((x) => new fhir.Coding(x)); }

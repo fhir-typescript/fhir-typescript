@@ -8,9 +8,17 @@ export interface MoneyArgs extends fhir.FhirElementArgs {
      */
     value?: fhir.FhirDecimal | number | undefined;
     /**
+     * Extended properties for primitive element: Money.value
+     */
+    _value?: fhir.FhirElementArgs;
+    /**
      * ISO 4217 Currency Code.
      */
     currency?: fhir.FhirCode | string | undefined;
+    /**
+     * Extended properties for primitive element: Money.currency
+     */
+    _currency?: fhir.FhirElementArgs;
 }
 /**
  * An amount of economic utility in some recognized currency.
@@ -44,9 +52,6 @@ export declare class Money extends fhir.FhirElement {
         readonly AngolanKwanza: "AOA";
         readonly ArgentinePeso: "ARS";
         readonly AustralianDollar: "AUD";
-        /**
-         * An amount of economic utility in some recognized currency.
-         */
         readonly ArubanFlorin: "AWG";
         readonly AzerbaijaniManat: "AZN";
         readonly BosniaAndHerzegovinaConvertibleMark: "BAM";

@@ -64,9 +64,17 @@ export interface CommunicationArgs extends fhir.DomainResourceArgs {
      */
     instantiatesCanonical?: fhir.FhirCanonical[] | string[] | undefined;
     /**
+     * Extended properties for primitive element: Communication.instantiatesCanonical
+     */
+    _instantiatesCanonical?: (fhir.FhirElementArgs | null)[];
+    /**
      * This might be an HTML page, PDF, etc. or could just be a non-resolvable URI identifier.
      */
     instantiatesUri?: fhir.FhirUri[] | string[] | undefined;
+    /**
+     * Extended properties for primitive element: Communication.instantiatesUri
+     */
+    _instantiatesUri?: (fhir.FhirElementArgs | null)[];
     /**
      * This must point to some sort of a 'Request' resource, such as CarePlan, CommunicationRequest, ServiceRequest, MedicationRequest, etc.
      */
@@ -84,6 +92,10 @@ export interface CommunicationArgs extends fhir.DomainResourceArgs {
      */
     status: fhir.FhirCode<EventStatusCodeType> | string | undefined;
     /**
+     * Extended properties for primitive element: Communication.status
+     */
+    _status?: fhir.FhirElementArgs;
+    /**
      * This is generally only used for "exception" statuses such as "not-done", "suspended" or "aborted". The reason for performing the event at all is captured in reasonCode, not here.
      */
     statusReason?: fhir.CodeableConceptArgs | undefined;
@@ -95,6 +107,10 @@ export interface CommunicationArgs extends fhir.DomainResourceArgs {
      * Used to prioritize workflow (such as which communication to read first) when the communication is planned or in progress.
      */
     priority?: fhir.FhirCode<RequestPriorityCodeType> | string | undefined;
+    /**
+     * Extended properties for primitive element: Communication.priority
+     */
+    _priority?: fhir.FhirElementArgs;
     /**
      * A channel that was used for this communication (e.g. email, fax).
      */
@@ -120,9 +136,17 @@ export interface CommunicationArgs extends fhir.DomainResourceArgs {
      */
     sent?: fhir.FhirDateTime | string | undefined;
     /**
+     * Extended properties for primitive element: Communication.sent
+     */
+    _sent?: fhir.FhirElementArgs;
+    /**
      * The time when this communication arrived at the destination.
      */
     received?: fhir.FhirDateTime | string | undefined;
+    /**
+     * Extended properties for primitive element: Communication.received
+     */
+    _received?: fhir.FhirElementArgs;
     /**
      * The entity (e.g. person, organization, clinical information system, care team or device) which was the target of the communication. If receipts need to be tracked by an individual, a separate resource instance will need to be created for each recipient.  Multiple recipient communications are intended where either receipts are not tracked (e.g. a mass mail-out) or a receipt is captured in aggregate (all emails confirmed received by a particular time).
      */

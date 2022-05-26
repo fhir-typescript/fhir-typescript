@@ -10,6 +10,10 @@ export interface EpisodeOfCareStatusHistoryArgs extends fhir.BackboneElementArgs
      */
     status: fhir.FhirCode<EpisodeOfCareStatusCodeType> | string | undefined;
     /**
+     * Extended properties for primitive element: EpisodeOfCare.statusHistory.status
+     */
+    _status?: fhir.FhirElementArgs;
+    /**
      * The period during this EpisodeOfCare that the specific status applied.
      */
     period: fhir.PeriodArgs | null;
@@ -43,12 +47,8 @@ export declare class EpisodeOfCareStatusHistory extends fhir.BackboneElement {
         readonly EnteredInError: "entered-in-error";
         readonly Finished: "finished";
         readonly OnHold: "onhold";
-        readonly Planned: "planned"; /**
-         * Mapping of this datatype to a FHIR equivalent
-         */
-        readonly Waitlist: "waitlist"; /**
-         * planned | waitlist | active | onhold | finished | cancelled.
-         */
+        readonly Planned: "planned";
+        readonly Waitlist: "waitlist";
     };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
@@ -71,6 +71,10 @@ export interface EpisodeOfCareDiagnosisArgs extends fhir.BackboneElementArgs {
      * Ranking of the diagnosis (for each role type).
      */
     rank?: fhir.FhirPositiveInt | number | undefined;
+    /**
+     * Extended properties for primitive element: EpisodeOfCare.diagnosis.rank
+     */
+    _rank?: fhir.FhirElementArgs;
 }
 /**
  * The list of diagnosis relevant to this episode of care.
@@ -121,6 +125,10 @@ export interface EpisodeOfCareArgs extends fhir.DomainResourceArgs {
      * This element is labeled as a modifier because the status contains codes that mark the episode as not currently valid.
      */
     status: fhir.FhirCode<EpisodeOfCareStatusCodeType> | string | undefined;
+    /**
+     * Extended properties for primitive element: EpisodeOfCare.status
+     */
+    _status?: fhir.FhirElementArgs;
     /**
      * The history of statuses that the EpisodeOfCare has been through (without requiring processing the history of the resource).
      */
@@ -235,12 +243,8 @@ export declare class EpisodeOfCare extends fhir.DomainResource {
         readonly EnteredInError: "entered-in-error";
         readonly Finished: "finished";
         readonly OnHold: "onhold";
-        readonly Planned: "planned"; /**
-         * Mapping of this datatype to a FHIR equivalent
-         */
-        readonly Waitlist: "waitlist"; /**
-         * planned | waitlist | active | onhold | finished | cancelled.
-         */
+        readonly Planned: "planned";
+        readonly Waitlist: "waitlist";
     };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).

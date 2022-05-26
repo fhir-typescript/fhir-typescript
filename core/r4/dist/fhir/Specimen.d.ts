@@ -112,6 +112,10 @@ export interface SpecimenProcessingArgs extends fhir.BackboneElementArgs {
      */
     description?: fhir.FhirString | string | undefined;
     /**
+     * Extended properties for primitive element: Specimen.processing.description
+     */
+    _description?: fhir.FhirElementArgs;
+    /**
      * A coded value specifying the procedure used to process the specimen.
      */
     procedure?: fhir.CodeableConceptArgs | undefined;
@@ -181,6 +185,10 @@ export interface SpecimenContainerArgs extends fhir.BackboneElementArgs {
      * Textual description of the container.
      */
     description?: fhir.FhirString | string | undefined;
+    /**
+     * Extended properties for primitive element: Specimen.container.description
+     */
+    _description?: fhir.FhirElementArgs;
     /**
      * The type of container associated with the specimen (e.g. slide, aliquot, etc.).
      */
@@ -272,6 +280,10 @@ export interface SpecimenArgs extends fhir.DomainResourceArgs {
      */
     status?: fhir.FhirCode<SpecimenStatusCodeType> | string | undefined;
     /**
+     * Extended properties for primitive element: Specimen.status
+     */
+    _status?: fhir.FhirElementArgs;
+    /**
      * The type can change the way that a specimen is handled and drives what kind of analyses can properly be performed on the specimen. It is frequently used in diagnostic work flow decision making systems.
      */
     type?: fhir.CodeableConceptArgs | undefined;
@@ -283,6 +295,10 @@ export interface SpecimenArgs extends fhir.DomainResourceArgs {
      * Time when specimen was received for processing or testing.
      */
     receivedTime?: fhir.FhirDateTime | string | undefined;
+    /**
+     * Extended properties for primitive element: Specimen.receivedTime
+     */
+    _receivedTime?: fhir.FhirElementArgs;
     /**
      * The parent specimen could be the source from which the current specimen is derived by some processing step (e.g. an aliquot or isolate or extracted nucleic acids from clinical samples) or one of many specimens that were combined to create a pooled sample.
      */

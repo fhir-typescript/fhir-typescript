@@ -12,6 +12,10 @@ export interface ActivityDefinitionParticipantArgs extends fhir.BackboneElementA
      */
     type: fhir.FhirCode<ActionParticipantTypeCodeType> | string | undefined;
     /**
+     * Extended properties for primitive element: ActivityDefinition.participant.type
+     */
+    _type?: fhir.FhirElementArgs;
+    /**
      * The role the participant should play in performing the described action.
      */
     role?: fhir.CodeableConceptArgs | undefined;
@@ -59,6 +63,10 @@ export interface ActivityDefinitionDynamicValueArgs extends fhir.BackboneElement
      */
     path: fhir.FhirString | string | undefined;
     /**
+     * Extended properties for primitive element: ActivityDefinition.dynamicValue.path
+     */
+    _path?: fhir.FhirElementArgs;
+    /**
      * The expression may be inlined, or may be a reference to a named expression within a logic library referenced by the library element.
      */
     expression: fhir.ExpressionArgs | null;
@@ -103,6 +111,10 @@ export interface ActivityDefinitionArgs extends fhir.DomainResourceArgs {
      */
     url?: fhir.FhirUri | string | undefined;
     /**
+     * Extended properties for primitive element: ActivityDefinition.url
+     */
+    _url?: fhir.FhirElementArgs;
+    /**
      * Typically, this is used for identifiers that can go in an HL7 V3 II (instance identifier) data type, and can then identify this activity definition outside of FHIR, where it is not possible to use the logical URI.
      */
     identifier?: fhir.IdentifierArgs[] | undefined;
@@ -111,25 +123,49 @@ export interface ActivityDefinitionArgs extends fhir.DomainResourceArgs {
      */
     version?: fhir.FhirString | string | undefined;
     /**
+     * Extended properties for primitive element: ActivityDefinition.version
+     */
+    _version?: fhir.FhirElementArgs;
+    /**
      * The name is not expected to be globally unique. The name should be a simple alphanumeric type name to ensure that it is machine-processing friendly.
      */
     name?: fhir.FhirString | string | undefined;
+    /**
+     * Extended properties for primitive element: ActivityDefinition.name
+     */
+    _name?: fhir.FhirElementArgs;
     /**
      * This name does not need to be machine-processing friendly and may contain punctuation, white-space, etc.
      */
     title?: fhir.FhirString | string | undefined;
     /**
+     * Extended properties for primitive element: ActivityDefinition.title
+     */
+    _title?: fhir.FhirElementArgs;
+    /**
      * An explanatory or alternate title for the activity definition giving additional information about its content.
      */
     subtitle?: fhir.FhirString | string | undefined;
+    /**
+     * Extended properties for primitive element: ActivityDefinition.subtitle
+     */
+    _subtitle?: fhir.FhirElementArgs;
     /**
      * Allows filtering of activity definitions that are appropriate for use versus not.
      */
     status: fhir.FhirCode<PublicationStatusCodeType> | string | undefined;
     /**
+     * Extended properties for primitive element: ActivityDefinition.status
+     */
+    _status?: fhir.FhirElementArgs;
+    /**
      * Allows filtering of activity definitions that are appropriate for use versus not.
      */
     experimental?: fhir.FhirBoolean | boolean | undefined;
+    /**
+     * Extended properties for primitive element: ActivityDefinition.experimental
+     */
+    _experimental?: fhir.FhirElementArgs;
     /**
      * A code or group definition that describes the intended subject of the activity being defined.
      */
@@ -147,9 +183,17 @@ export interface ActivityDefinitionArgs extends fhir.DomainResourceArgs {
      */
     date?: fhir.FhirDateTime | string | undefined;
     /**
+     * Extended properties for primitive element: ActivityDefinition.date
+     */
+    _date?: fhir.FhirElementArgs;
+    /**
      * Usually an organization but may be an individual. The publisher (or steward) of the activity definition is the organization or individual primarily responsible for the maintenance and upkeep of the activity definition. This is not necessarily the same individual or organization that developed and initially authored the content. The publisher is the primary point of contact for questions or issues with the activity definition. This item SHOULD be populated unless the information is available from context.
      */
     publisher?: fhir.FhirString | string | undefined;
+    /**
+     * Extended properties for primitive element: ActivityDefinition.publisher
+     */
+    _publisher?: fhir.FhirElementArgs;
     /**
      * May be a web site, an email address, a telephone number, etc.
      */
@@ -158,6 +202,10 @@ export interface ActivityDefinitionArgs extends fhir.DomainResourceArgs {
      * This description can be used to capture details such as why the activity definition was built, comments about misuse, instructions for clinical use and interpretation, literature references, examples from the paper world, etc. It is not a rendering of the activity definition as conveyed in the 'text' field of the resource itself. This item SHOULD be populated unless the information is available from context (e.g. the language of the activity definition is presumed to be the predominant language in the place the activity definition was created).
      */
     description?: fhir.FhirMarkdown | string | undefined;
+    /**
+     * Extended properties for primitive element: ActivityDefinition.description
+     */
+    _description?: fhir.FhirElementArgs;
     /**
      * When multiple useContexts are specified, there is no expectation that all or any of the contexts apply.
      */
@@ -171,21 +219,41 @@ export interface ActivityDefinitionArgs extends fhir.DomainResourceArgs {
      */
     purpose?: fhir.FhirMarkdown | string | undefined;
     /**
+     * Extended properties for primitive element: ActivityDefinition.purpose
+     */
+    _purpose?: fhir.FhirElementArgs;
+    /**
      * A detailed description of how the activity definition is used from a clinical perspective.
      */
     usage?: fhir.FhirString | string | undefined;
+    /**
+     * Extended properties for primitive element: ActivityDefinition.usage
+     */
+    _usage?: fhir.FhirElementArgs;
     /**
      * A copyright statement relating to the activity definition and/or its contents. Copyright statements are generally legal restrictions on the use and publishing of the activity definition.
      */
     copyright?: fhir.FhirMarkdown | string | undefined;
     /**
+     * Extended properties for primitive element: ActivityDefinition.copyright
+     */
+    _copyright?: fhir.FhirElementArgs;
+    /**
      * The 'date' element may be more recent than the approval date because of minor changes or editorial corrections.
      */
     approvalDate?: fhir.FhirDate | string | undefined;
     /**
+     * Extended properties for primitive element: ActivityDefinition.approvalDate
+     */
+    _approvalDate?: fhir.FhirElementArgs;
+    /**
      * If specified, this date follows the original approval date.
      */
     lastReviewDate?: fhir.FhirDate | string | undefined;
+    /**
+     * Extended properties for primitive element: ActivityDefinition.lastReviewDate
+     */
+    _lastReviewDate?: fhir.FhirElementArgs;
     /**
      * The effective period for a activity definition  determines when the content is applicable for usage and is independent of publication and review dates. For example, a measure intended to be used for the year 2016 might be published in 2015.
      */
@@ -219,13 +287,25 @@ export interface ActivityDefinitionArgs extends fhir.DomainResourceArgs {
      */
     library?: fhir.FhirCanonical[] | string[] | undefined;
     /**
+     * Extended properties for primitive element: ActivityDefinition.library
+     */
+    _library?: (fhir.FhirElementArgs | null)[];
+    /**
      * May determine what types of extensions are permitted.
      */
     kind?: fhir.FhirCode | string | undefined;
     /**
+     * Extended properties for primitive element: ActivityDefinition.kind
+     */
+    _kind?: fhir.FhirElementArgs;
+    /**
      * A profile to which the target of the activity definition is expected to conform.
      */
     profile?: fhir.FhirCanonical | string | undefined;
+    /**
+     * Extended properties for primitive element: ActivityDefinition.profile
+     */
+    _profile?: fhir.FhirElementArgs;
     /**
      * Tends to be less relevant for activities involving particular products.
      */
@@ -235,13 +315,25 @@ export interface ActivityDefinitionArgs extends fhir.DomainResourceArgs {
      */
     intent?: fhir.FhirCode<RequestIntentCodeType> | string | undefined;
     /**
+     * Extended properties for primitive element: ActivityDefinition.intent
+     */
+    _intent?: fhir.FhirElementArgs;
+    /**
      * Indicates how quickly the activity  should be addressed with respect to other requests.
      */
     priority?: fhir.FhirCode<RequestPriorityCodeType> | string | undefined;
     /**
+     * Extended properties for primitive element: ActivityDefinition.priority
+     */
+    _priority?: fhir.FhirElementArgs;
+    /**
      * This element is not intended to be used to communicate a decision support response to cancel an order in progress. That should be done with the "remove" type of a PlanDefinition or RequestGroup.
      */
     doNotPerform?: fhir.FhirBoolean | boolean | undefined;
+    /**
+     * Extended properties for primitive element: ActivityDefinition.doNotPerform
+     */
+    _doNotPerform?: fhir.FhirElementArgs;
     /**
      * The period, timing or frequency upon which the described activity is to occur.
      */
@@ -318,6 +410,10 @@ export interface ActivityDefinitionArgs extends fhir.DomainResourceArgs {
      * Note that if both a transform and dynamic values are specified, the dynamic values will be applied to the result of the transform.
      */
     transform?: fhir.FhirCanonical | string | undefined;
+    /**
+     * Extended properties for primitive element: ActivityDefinition.transform
+     */
+    _transform?: fhir.FhirElementArgs;
     /**
      * Dynamic values are applied in the order in which they are defined in the ActivityDefinition. Note that if both a transform and dynamic values are specified, the dynamic values will be applied to the result of the transform.
      */

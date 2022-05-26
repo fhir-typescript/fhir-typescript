@@ -10,17 +10,33 @@ export interface ExampleScenarioActorArgs extends fhir.BackboneElementArgs {
      */
     actorId: fhir.FhirString | string | undefined;
     /**
+     * Extended properties for primitive element: ExampleScenario.actor.actorId
+     */
+    _actorId?: fhir.FhirElementArgs;
+    /**
      * The type of actor - person or system.
      */
     type: fhir.FhirCode<ExamplescenarioActorTypeCodeType> | string | undefined;
+    /**
+     * Extended properties for primitive element: ExampleScenario.actor.type
+     */
+    _type?: fhir.FhirElementArgs;
     /**
      * Cardinality: is name and description 1..1?
      */
     name?: fhir.FhirString | string | undefined;
     /**
+     * Extended properties for primitive element: ExampleScenario.actor.name
+     */
+    _name?: fhir.FhirElementArgs;
+    /**
      * Cardinality: is name and description 1..1?
      */
     description?: fhir.FhirMarkdown | string | undefined;
+    /**
+     * Extended properties for primitive element: ExampleScenario.actor.description
+     */
+    _description?: fhir.FhirElementArgs;
 }
 /**
  * Actor participating in the resource.
@@ -71,9 +87,17 @@ export interface ExampleScenarioInstanceVersionArgs extends fhir.BackboneElement
      */
     versionId: fhir.FhirString | string | undefined;
     /**
+     * Extended properties for primitive element: ExampleScenario.instance.version.versionId
+     */
+    _versionId?: fhir.FhirElementArgs;
+    /**
      * The description of the resource version.
      */
     description: fhir.FhirMarkdown | string | undefined;
+    /**
+     * Extended properties for primitive element: ExampleScenario.instance.version.description
+     */
+    _description?: fhir.FhirElementArgs;
 }
 /**
  * A specific version of the resource.
@@ -109,9 +133,17 @@ export interface ExampleScenarioInstanceContainedInstanceArgs extends fhir.Backb
      */
     resourceId: fhir.FhirString | string | undefined;
     /**
+     * Extended properties for primitive element: ExampleScenario.instance.containedInstance.resourceId
+     */
+    _resourceId?: fhir.FhirElementArgs;
+    /**
      * A specific version of a resource contained in the instance.
      */
     versionId?: fhir.FhirString | string | undefined;
+    /**
+     * Extended properties for primitive element: ExampleScenario.instance.containedInstance.versionId
+     */
+    _versionId?: fhir.FhirElementArgs;
 }
 /**
  * Resources contained in the instance (e.g. the observations contained in a bundle).
@@ -147,17 +179,33 @@ export interface ExampleScenarioInstanceArgs extends fhir.BackboneElementArgs {
      */
     resourceId: fhir.FhirString | string | undefined;
     /**
+     * Extended properties for primitive element: ExampleScenario.instance.resourceId
+     */
+    _resourceId?: fhir.FhirElementArgs;
+    /**
      * The type of the resource.
      */
     resourceType: fhir.FhirCode | string | undefined;
+    /**
+     * Extended properties for primitive element: ExampleScenario.instance.resourceType
+     */
+    _resourceType?: fhir.FhirElementArgs;
     /**
      * A short name for the resource instance.
      */
     name?: fhir.FhirString | string | undefined;
     /**
+     * Extended properties for primitive element: ExampleScenario.instance.name
+     */
+    _name?: fhir.FhirElementArgs;
+    /**
      * Human-friendly description of the resource instance.
      */
     description?: fhir.FhirMarkdown | string | undefined;
+    /**
+     * Extended properties for primitive element: ExampleScenario.instance.description
+     */
+    _description?: fhir.FhirElementArgs;
     /**
      * A specific version of the resource.
      */
@@ -213,10 +261,11 @@ export declare class ExampleScenarioInstance extends fhir.BackboneElement {
         readonly AllergyIntolerance: "AllergyIntolerance";
         readonly Appointment: "Appointment";
         readonly AppointmentResponse: "AppointmentResponse";
-        readonly AuditEvent: "AuditEvent";
-        readonly Basic: "Basic"; /**
-         * Cardinality: is name and description 1..1?
+        /**
+         * Extended properties for primitive element: ExampleScenario.actor.name
          */
+        readonly AuditEvent: "AuditEvent";
+        readonly Basic: "Basic";
         readonly Binary: "Binary";
         readonly BiologicallyDerivedProduct: "BiologicallyDerivedProduct";
         readonly BodyStructure: "BodyStructure";
@@ -307,9 +356,6 @@ export declare class ExampleScenarioInstance extends fhir.BackboneElement {
         readonly NutritionOrder: "NutritionOrder";
         readonly Observation: "Observation";
         readonly ObservationDefinition: "ObservationDefinition";
-        /**
-         * A longer description of the group of operations.
-         */
         readonly OperationDefinition: "OperationDefinition";
         readonly OperationOutcome: "OperationOutcome";
         readonly Organization: "Organization";
@@ -331,7 +377,9 @@ export declare class ExampleScenarioInstance extends fhir.BackboneElement {
         readonly ResearchDefinition: "ResearchDefinition";
         readonly ResearchElementDefinition: "ResearchElementDefinition";
         readonly ResearchStudy: "ResearchStudy";
-        readonly ResearchSubject: "ResearchSubject";
+        readonly ResearchSubject: "ResearchSubject"; /**
+         * Each step of the process.
+         */
         readonly Resource: "Resource";
         readonly RiskAssessment: "RiskAssessment";
         readonly RiskEvidenceSynthesis: "RiskEvidenceSynthesis";
@@ -358,9 +406,7 @@ export declare class ExampleScenarioInstance extends fhir.BackboneElement {
         readonly TestReport: "TestReport";
         readonly TestScript: "TestScript";
         readonly ValueSet: "ValueSet";
-        readonly VerificationResult: "VerificationResult"; /**
-         * Each major process - a group of operations.
-         */
+        readonly VerificationResult: "VerificationResult";
         readonly VisionPrescription: "VisionPrescription";
     };
     /**
@@ -377,33 +423,65 @@ export interface ExampleScenarioProcessStepOperationArgs extends fhir.BackboneEl
      */
     number: fhir.FhirString | string | undefined;
     /**
+     * Extended properties for primitive element: ExampleScenario.process.step.operation.number
+     */
+    _number?: fhir.FhirElementArgs;
+    /**
      * The type of operation - CRUD.
      */
     type?: fhir.FhirString | string | undefined;
+    /**
+     * Extended properties for primitive element: ExampleScenario.process.step.operation.type
+     */
+    _type?: fhir.FhirElementArgs;
     /**
      * The human-friendly name of the interaction.
      */
     name?: fhir.FhirString | string | undefined;
     /**
+     * Extended properties for primitive element: ExampleScenario.process.step.operation.name
+     */
+    _name?: fhir.FhirElementArgs;
+    /**
      * Who starts the transaction.
      */
     initiator?: fhir.FhirString | string | undefined;
+    /**
+     * Extended properties for primitive element: ExampleScenario.process.step.operation.initiator
+     */
+    _initiator?: fhir.FhirElementArgs;
     /**
      * Who receives the transaction.
      */
     receiver?: fhir.FhirString | string | undefined;
     /**
+     * Extended properties for primitive element: ExampleScenario.process.step.operation.receiver
+     */
+    _receiver?: fhir.FhirElementArgs;
+    /**
      * A comment to be inserted in the diagram.
      */
     description?: fhir.FhirMarkdown | string | undefined;
+    /**
+     * Extended properties for primitive element: ExampleScenario.process.step.operation.description
+     */
+    _description?: fhir.FhirElementArgs;
     /**
      * Whether the initiator is deactivated right after the transaction.
      */
     initiatorActive?: fhir.FhirBoolean | boolean | undefined;
     /**
+     * Extended properties for primitive element: ExampleScenario.process.step.operation.initiatorActive
+     */
+    _initiatorActive?: fhir.FhirElementArgs;
+    /**
      * Whether the receiver is deactivated right after the transaction.
      */
     receiverActive?: fhir.FhirBoolean | boolean | undefined;
+    /**
+     * Extended properties for primitive element: ExampleScenario.process.step.operation.receiverActive
+     */
+    _receiverActive?: fhir.FhirElementArgs;
     /**
      * Each resource instance used by the initiator.
      */
@@ -479,9 +557,17 @@ export interface ExampleScenarioProcessStepAlternativeArgs extends fhir.Backbone
      */
     title: fhir.FhirString | string | undefined;
     /**
+     * Extended properties for primitive element: ExampleScenario.process.step.alternative.title
+     */
+    _title?: fhir.FhirElementArgs;
+    /**
      * A human-readable description of the alternative explaining when the alternative should occur rather than the base step.
      */
     description?: fhir.FhirMarkdown | string | undefined;
+    /**
+     * Extended properties for primitive element: ExampleScenario.process.step.alternative.description
+     */
+    _description?: fhir.FhirElementArgs;
     /**
      * What happens in each alternative option.
      */
@@ -528,6 +614,10 @@ export interface ExampleScenarioProcessStepArgs extends fhir.BackboneElementArgs
      * If there is a pause in the flow.
      */
     pause?: fhir.FhirBoolean | boolean | undefined;
+    /**
+     * Extended properties for primitive element: ExampleScenario.process.step.pause
+     */
+    _pause?: fhir.FhirElementArgs;
     /**
      * Each interaction or action.
      */
@@ -579,17 +669,33 @@ export interface ExampleScenarioProcessArgs extends fhir.BackboneElementArgs {
      */
     title: fhir.FhirString | string | undefined;
     /**
+     * Extended properties for primitive element: ExampleScenario.process.title
+     */
+    _title?: fhir.FhirElementArgs;
+    /**
      * A longer description of the group of operations.
      */
     description?: fhir.FhirMarkdown | string | undefined;
+    /**
+     * Extended properties for primitive element: ExampleScenario.process.description
+     */
+    _description?: fhir.FhirElementArgs;
     /**
      * Description of initial status before the process starts.
      */
     preConditions?: fhir.FhirMarkdown | string | undefined;
     /**
+     * Extended properties for primitive element: ExampleScenario.process.preConditions
+     */
+    _preConditions?: fhir.FhirElementArgs;
+    /**
      * Description of final status after the process ends.
      */
     postConditions?: fhir.FhirMarkdown | string | undefined;
+    /**
+     * Extended properties for primitive element: ExampleScenario.process.postConditions
+     */
+    _postConditions?: fhir.FhirElementArgs;
     /**
      * Each step of the process.
      */
@@ -647,6 +753,10 @@ export interface ExampleScenarioArgs extends fhir.DomainResourceArgs {
      */
     url?: fhir.FhirUri | string | undefined;
     /**
+     * Extended properties for primitive element: ExampleScenario.url
+     */
+    _url?: fhir.FhirElementArgs;
+    /**
      * Typically, this is used for identifiers that can go in an HL7 V3 II (instance identifier) data type, and can then identify this example scenario outside of FHIR, where it is not possible to use the logical URI.
      */
     identifier?: fhir.IdentifierArgs[] | undefined;
@@ -655,25 +765,49 @@ export interface ExampleScenarioArgs extends fhir.DomainResourceArgs {
      */
     version?: fhir.FhirString | string | undefined;
     /**
+     * Extended properties for primitive element: ExampleScenario.version
+     */
+    _version?: fhir.FhirElementArgs;
+    /**
      * The name is not expected to be globally unique. The name should be a simple alphanumeric type name to ensure that it is machine-processing friendly.
      */
     name?: fhir.FhirString | string | undefined;
+    /**
+     * Extended properties for primitive element: ExampleScenario.name
+     */
+    _name?: fhir.FhirElementArgs;
     /**
      * Allows filtering of example scenarios that are appropriate for use versus not.
      */
     status: fhir.FhirCode<PublicationStatusCodeType> | string | undefined;
     /**
+     * Extended properties for primitive element: ExampleScenario.status
+     */
+    _status?: fhir.FhirElementArgs;
+    /**
      * Allows filtering of example scenarios that are appropriate for use versus not.
      */
     experimental?: fhir.FhirBoolean | boolean | undefined;
+    /**
+     * Extended properties for primitive element: ExampleScenario.experimental
+     */
+    _experimental?: fhir.FhirElementArgs;
     /**
      * Note that this is not the same as the resource last-modified-date, since the resource may be a secondary representation of the example scenario. Additional specific dates may be added as extensions or be found by consulting Provenances associated with past versions of the resource.
      */
     date?: fhir.FhirDateTime | string | undefined;
     /**
+     * Extended properties for primitive element: ExampleScenario.date
+     */
+    _date?: fhir.FhirElementArgs;
+    /**
      * Usually an organization but may be an individual. The publisher (or steward) of the example scenario is the organization or individual primarily responsible for the maintenance and upkeep of the example scenario. This is not necessarily the same individual or organization that developed and initially authored the content. The publisher is the primary point of contact for questions or issues with the example scenario. This item SHOULD be populated unless the information is available from context.
      */
     publisher?: fhir.FhirString | string | undefined;
+    /**
+     * Extended properties for primitive element: ExampleScenario.publisher
+     */
+    _publisher?: fhir.FhirElementArgs;
     /**
      * May be a web site, an email address, a telephone number, etc.
      */
@@ -691,9 +825,17 @@ export interface ExampleScenarioArgs extends fhir.DomainResourceArgs {
      */
     copyright?: fhir.FhirMarkdown | string | undefined;
     /**
+     * Extended properties for primitive element: ExampleScenario.copyright
+     */
+    _copyright?: fhir.FhirElementArgs;
+    /**
      * This element does not describe the usage of the example scenario. Instead, it provides traceability of ''why'' the resource is either needed or ''why'' it is defined as it is.  This may be used to point to source materials or specifications that drove the structure of this example scenario.
      */
     purpose?: fhir.FhirMarkdown | string | undefined;
+    /**
+     * Extended properties for primitive element: ExampleScenario.purpose
+     */
+    _purpose?: fhir.FhirElementArgs;
     /**
      * Actor participating in the resource.
      */
@@ -710,6 +852,10 @@ export interface ExampleScenarioArgs extends fhir.DomainResourceArgs {
      * Another nested workflow.
      */
     workflow?: fhir.FhirCanonical[] | string[] | undefined;
+    /**
+     * Extended properties for primitive element: ExampleScenario.workflow
+     */
+    _workflow?: (fhir.FhirElementArgs | null)[];
 }
 /**
  * Example of workflow instance.

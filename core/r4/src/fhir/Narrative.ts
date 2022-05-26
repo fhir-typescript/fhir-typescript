@@ -18,9 +18,17 @@ export interface NarrativeArgs extends fhir.FhirElementArgs {
    */
   status: fhir.FhirCode<NarrativeStatusCodeType>|string|undefined;
   /**
+   * Extended properties for primitive element: Narrative.status
+   */
+  _status?:fhir.FhirElementArgs;
+  /**
    * The contents of the html element are an XHTML fragment containing only the basic html formatting elements described in chapters 7-11 and 15 of the HTML 4.0 standard, &lt;a&gt; elements (either name or href), images and internally contained stylesheets. The XHTML content SHALL NOT contain a head, a body, external stylesheet references, scripts, forms, base/link/xlink, frames, iframes and objects.
    */
   div: fhir.FhirXhtml|string|undefined;
+  /**
+   * Extended properties for primitive element: Narrative.div
+   */
+  _div?:fhir.FhirElementArgs;
 }
 
 /**
@@ -46,8 +54,16 @@ export class Narrative extends fhir.FhirElement {
     super(source, options);
     if (source['status']) { this.status = new fhir.FhirCode<NarrativeStatusCodeType>({value: source.status}); }
     else { this.status = null; }
+    if (source['_status']) {
+      if (this.status) { this.status.addExtendedProperties(source._status!); }
+      else { this.status = new fhir.FhirCode<NarrativeStatusCodeType>(source._status as Partial<fhir.FhirCode>); }
+    }
     if (source['div']) { this.div = new fhir.FhirXhtml({value: source.div}); }
     else { this.div = null; }
+    if (source['_div']) {
+      if (this.div) { this.div.addExtendedProperties(source._div!); }
+      else { this.div = new fhir.FhirXhtml(source._div as Partial<fhir.FhirXhtmlArgs>); }
+    }
   }
   /**
    * Required-bound Value Set for status (Narrative.status)

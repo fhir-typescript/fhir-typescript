@@ -14,9 +14,9 @@ import { DocumentRelationshipTypeCodings, DocumentRelationshipTypeCodingType,} f
 // @ts-ignore
 import { DocumentRelationshipTypeCodes,  DocumentRelationshipTypeCodeType } from '../fhirValueSets/DocumentRelationshipTypeCodes.js';
 // @ts-ignore
-import { V3ActCodeCodings, V3ActCodeCodingType,} from '../fhirValueSets/V3ActCodeCodings.js';
+import { V3ActCodings, V3ActCodingType,} from '../fhirValueSets/V3ActCodings.js';
 // @ts-ignore
-import { V3ActCodeCodes,  V3ActCodeCodeType } from '../fhirValueSets/V3ActCodeCodes.js';
+import { V3ActCodes,  V3ActCodeType } from '../fhirValueSets/V3ActCodes.js';
 // @ts-ignore
 import { DocSectionCodings, DocSectionCodingType,} from '../fhirValueSets/DocSectionCodings.js';
 // @ts-ignore
@@ -58,9 +58,17 @@ export interface CompositionAttesterArgs extends fhir.BackboneElementArgs {
    */
   mode: fhir.FhirCode<CompositionAttestationModeCodeType>|string|undefined;
   /**
+   * Extended properties for primitive element: Composition.attester.mode
+   */
+  _mode?:fhir.FhirElementArgs;
+  /**
    * When the composition was attested by the party.
    */
   time?: fhir.FhirDateTime|string|undefined;
+  /**
+   * Extended properties for primitive element: Composition.attester.time
+   */
+  _time?:fhir.FhirElementArgs;
   /**
    * Who attested the composition in the specified way.
    */
@@ -94,7 +102,15 @@ export class CompositionAttester extends fhir.BackboneElement {
     super(source, options);
     if (source['mode']) { this.mode = new fhir.FhirCode<CompositionAttestationModeCodeType>({value: source.mode}); }
     else { this.mode = null; }
+    if (source['_mode']) {
+      if (this.mode) { this.mode.addExtendedProperties(source._mode!); }
+      else { this.mode = new fhir.FhirCode<CompositionAttestationModeCodeType>(source._mode as Partial<fhir.FhirCode>); }
+    }
     if (source['time']) { this.time = new fhir.FhirDateTime({value: source.time}); }
+    if (source['_time']) {
+      if (this.time) { this.time.addExtendedProperties(source._time!); }
+      else { this.time = new fhir.FhirDateTime(source._time as Partial<fhir.FhirDateTimeArgs>); }
+    }
     if (source['party']) { this.party = new fhir.Reference(source.party); }
   }
   /**
@@ -128,6 +144,10 @@ export interface CompositionRelatesToArgs extends fhir.BackboneElementArgs {
    * If this document appends another document, then the document cannot be fully understood without also accessing the referenced document.
    */
   code: fhir.FhirCode<DocumentRelationshipTypeCodeType>|string|undefined;
+  /**
+   * Extended properties for primitive element: Composition.relatesTo.code
+   */
+  _code?:fhir.FhirElementArgs;
   /**
    * The target composition/document of this relationship.
    */
@@ -169,6 +189,10 @@ export class CompositionRelatesTo extends fhir.BackboneElement {
     super(source, options);
     if (source['code']) { this.code = new fhir.FhirCode<DocumentRelationshipTypeCodeType>({value: source.code}); }
     else { this.code = null; }
+    if (source['_code']) {
+      if (this.code) { this.code.addExtendedProperties(source._code!); }
+      else { this.code = new fhir.FhirCode<DocumentRelationshipTypeCodeType>(source._code as Partial<fhir.FhirCode>); }
+    }
     if (source['target']) { this.target = source.target; }
     else if (source['targetIdentifier']) { this.target = new fhir.Identifier(source.targetIdentifier); }
     else if (source['targetReference']) { this.target = new fhir.Reference(source.targetReference); }
@@ -267,6 +291,10 @@ export interface CompositionSectionArgs extends fhir.BackboneElementArgs {
    */
   title?: fhir.FhirString|string|undefined;
   /**
+   * Extended properties for primitive element: Composition.section.title
+   */
+  _title?:fhir.FhirElementArgs;
+  /**
    * The code identifies the section for an automated processor of the document. This is particularly relevant when using profiles to control the structure of the document.   
    * If the section has content (instead of sub-sections), the section.code does not change the meaning or interpretation of the resource that is the content of the section in the comments for the section.code.
    */
@@ -287,6 +315,10 @@ export interface CompositionSectionArgs extends fhir.BackboneElementArgs {
    * This element is labeled as a modifier because a change list must not be misunderstood as a complete list.
    */
   mode?: fhir.FhirCode<ListModeCodeType>|string|undefined;
+  /**
+   * Extended properties for primitive element: Composition.section.mode
+   */
+  _mode?:fhir.FhirElementArgs;
   /**
    * Applications SHOULD render ordered lists in the order provided, but MAY allow users to re-order based on their own preferences as well. If there is no order specified, the order is unknown, though there may still be some order.
    */
@@ -360,12 +392,20 @@ export class CompositionSection extends fhir.BackboneElement {
   constructor(source:Partial<CompositionSectionArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
     if (source['title']) { this.title = new fhir.FhirString({value: source.title}); }
+    if (source['_title']) {
+      if (this.title) { this.title.addExtendedProperties(source._title!); }
+      else { this.title = new fhir.FhirString(source._title as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['code']) { this.code = new fhir.CodeableConcept(source.code); }
     if (source['author']) { this.author = source.author.map((x) => new fhir.Reference(x)); }
     else { this.author = []; }
     if (source['focus']) { this.focus = new fhir.Reference(source.focus); }
     if (source['text']) { this.text = new fhir.Narrative(source.text); }
     if (source['mode']) { this.mode = new fhir.FhirCode<ListModeCodeType>({value: source.mode}); }
+    if (source['_mode']) {
+      if (this.mode) { this.mode.addExtendedProperties(source._mode!); }
+      else { this.mode = new fhir.FhirCode<ListModeCodeType>(source._mode as Partial<fhir.FhirCode>); }
+    }
     if (source['orderedBy']) { this.orderedBy = new fhir.CodeableConcept(source.orderedBy); }
     if (source['entry']) { this.entry = source.entry.map((x) => new fhir.Reference(x)); }
     else { this.entry = []; }
@@ -430,6 +470,10 @@ export interface CompositionArgs extends fhir.DomainResourceArgs {
    */
   status: fhir.FhirCode<CompositionStatusCodeType>|string|undefined;
   /**
+   * Extended properties for primitive element: Composition.status
+   */
+  _status?:fhir.FhirElementArgs;
+  /**
    * For Composition type, LOINC is ubiquitous and strongly endorsed by HL7. Most implementation guides will require a specific LOINC code, or use LOINC as an extensible binding.
    */
   type: fhir.CodeableConceptArgs|null;
@@ -450,6 +494,10 @@ export interface CompositionArgs extends fhir.DomainResourceArgs {
    */
   date: fhir.FhirDateTime|string|undefined;
   /**
+   * Extended properties for primitive element: Composition.date
+   */
+  _date?:fhir.FhirElementArgs;
+  /**
    * Identifies who is responsible for the information in the composition, not necessarily who typed it in.
    */
   author: fhir.ReferenceArgs[]|null;
@@ -458,9 +506,17 @@ export interface CompositionArgs extends fhir.DomainResourceArgs {
    */
   title: fhir.FhirString|string|undefined;
   /**
+   * Extended properties for primitive element: Composition.title
+   */
+  _title?:fhir.FhirElementArgs;
+  /**
    * The exact use of this element, and enforcement and issues related to highly sensitive documents are out of scope for the base specification, and delegated to implementation profiles (see security section).  This element is labeled as a modifier because highly confidential documents must not be treated as if they are not.
    */
   confidentiality?: fhir.FhirCode|string|undefined;
+  /**
+   * Extended properties for primitive element: Composition.confidentiality
+   */
+  _confidentiality?:fhir.FhirElementArgs;
   /**
    * Only list each attester once.
    */
@@ -565,6 +621,10 @@ export class Composition extends fhir.DomainResource {
     if (source['identifier']) { this.identifier = new fhir.Identifier(source.identifier); }
     if (source['status']) { this.status = new fhir.FhirCode<CompositionStatusCodeType>({value: source.status}); }
     else { this.status = null; }
+    if (source['_status']) {
+      if (this.status) { this.status.addExtendedProperties(source._status!); }
+      else { this.status = new fhir.FhirCode<CompositionStatusCodeType>(source._status as Partial<fhir.FhirCode>); }
+    }
     if (source['type']) { this.type = new fhir.CodeableConcept(source.type); }
     else { this.type = null; }
     if (source['category']) { this.category = source.category.map((x) => new fhir.CodeableConcept(x)); }
@@ -573,11 +633,23 @@ export class Composition extends fhir.DomainResource {
     if (source['encounter']) { this.encounter = new fhir.Reference(source.encounter); }
     if (source['date']) { this.date = new fhir.FhirDateTime({value: source.date}); }
     else { this.date = null; }
+    if (source['_date']) {
+      if (this.date) { this.date.addExtendedProperties(source._date!); }
+      else { this.date = new fhir.FhirDateTime(source._date as Partial<fhir.FhirDateTimeArgs>); }
+    }
     if (source['author']) { this.author = source.author.map((x) => new fhir.Reference(x)); }
     else { this.author = []; }
     if (source['title']) { this.title = new fhir.FhirString({value: source.title}); }
     else { this.title = null; }
+    if (source['_title']) {
+      if (this.title) { this.title.addExtendedProperties(source._title!); }
+      else { this.title = new fhir.FhirString(source._title as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['confidentiality']) { this.confidentiality = new fhir.FhirCode({value: source.confidentiality}); }
+    if (source['_confidentiality']) {
+      if (this.confidentiality) { this.confidentiality.addExtendedProperties(source._confidentiality!); }
+      else { this.confidentiality = new fhir.FhirCode(source._confidentiality as Partial<fhir.FhirCodeArgs>); }
+    }
     if (source['attester']) { this.attester = source.attester.map((x) => new fhir.CompositionAttester(x)); }
     else { this.attester = []; }
     if (source['custodian']) { this.custodian = new fhir.Reference(source.custodian); }

@@ -63,6 +63,10 @@ export interface SpecimenDefinitionTypeTestedContainerArgs extends fhir.Backbone
      */
     description?: fhir.FhirString | string | undefined;
     /**
+     * Extended properties for primitive element: SpecimenDefinition.typeTested.container.description
+     */
+    _description?: fhir.FhirElementArgs;
+    /**
      * The capacity (volume or other measure) of this kind of container.
      */
     capacity?: fhir.QuantityArgs | undefined;
@@ -86,6 +90,10 @@ export interface SpecimenDefinitionTypeTestedContainerArgs extends fhir.Backbone
      * Special processing that should be applied to the container for this kind of specimen.
      */
     preparation?: fhir.FhirString | string | undefined;
+    /**
+     * Extended properties for primitive element: SpecimenDefinition.typeTested.container.preparation
+     */
+    _preparation?: fhir.FhirElementArgs;
 }
 /**
  * The specimen's container.
@@ -160,6 +168,10 @@ export interface SpecimenDefinitionTypeTestedHandlingArgs extends fhir.BackboneE
      * Additional textual instructions for the preservation or transport of the specimen. For instance, 'Protect from light exposure'.
      */
     instruction?: fhir.FhirString | string | undefined;
+    /**
+     * Extended properties for primitive element: SpecimenDefinition.typeTested.handling.instruction
+     */
+    _instruction?: fhir.FhirElementArgs;
 }
 /**
  * Set of instructions for preservation/transport of the specimen at a defined temperature interval, prior the testing process.
@@ -203,6 +215,10 @@ export interface SpecimenDefinitionTypeTestedArgs extends fhir.BackboneElementAr
      */
     isDerived?: fhir.FhirBoolean | boolean | undefined;
     /**
+     * Extended properties for primitive element: SpecimenDefinition.typeTested.isDerived
+     */
+    _isDerived?: fhir.FhirElementArgs;
+    /**
      * The kind of specimen conditioned for testing expected by lab.
      */
     type?: fhir.CodeableConceptArgs | undefined;
@@ -211,6 +227,10 @@ export interface SpecimenDefinitionTypeTestedArgs extends fhir.BackboneElementAr
      */
     preference: fhir.FhirCode<SpecimenContainedPreferenceCodeType> | string | undefined;
     /**
+     * Extended properties for primitive element: SpecimenDefinition.typeTested.preference
+     */
+    _preference?: fhir.FhirElementArgs;
+    /**
      * The specimen's container.
      */
     container?: fhir.SpecimenDefinitionTypeTestedContainerArgs | undefined;
@@ -218,6 +238,10 @@ export interface SpecimenDefinitionTypeTestedArgs extends fhir.BackboneElementAr
      * Requirements for delivery and special handling of this kind of conditioned specimen.
      */
     requirement?: fhir.FhirString | string | undefined;
+    /**
+     * Extended properties for primitive element: SpecimenDefinition.typeTested.requirement
+     */
+    _requirement?: fhir.FhirElementArgs;
     /**
      * The usual time that a specimen of this kind is retained after the ordered tests are completed, for the purpose of additional testing.
      */
@@ -311,6 +335,10 @@ export interface SpecimenDefinitionArgs extends fhir.DomainResourceArgs {
      * Time aspect of specimen collection (duration or offset).
      */
     timeAspect?: fhir.FhirString | string | undefined;
+    /**
+     * Extended properties for primitive element: SpecimenDefinition.timeAspect
+     */
+    _timeAspect?: fhir.FhirElementArgs;
     /**
      * The action to be performed for collecting the specimen.
      */

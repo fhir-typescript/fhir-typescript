@@ -34,9 +34,9 @@ import { PerformerRoleCodings, PerformerRoleCodingType,} from '../fhirValueSets/
 // @ts-ignore
 import { PerformerRoleCodes,  PerformerRoleCodeType } from '../fhirValueSets/PerformerRoleCodes.js';
 // @ts-ignore
-import { ConditionCodeCodings, ConditionCodeCodingType,} from '../fhirValueSets/ConditionCodeCodings.js';
+import { ConditionCodings, ConditionCodingType,} from '../fhirValueSets/ConditionCodings.js';
 // @ts-ignore
-import { ConditionCodeCodes,  ConditionCodeCodeType } from '../fhirValueSets/ConditionCodeCodes.js';
+import { ConditionCodes,  ConditionCodeType } from '../fhirValueSets/ConditionCodes.js';
 // @ts-ignore
 import { MedicationrequestCourseOfTherapyCodings, MedicationrequestCourseOfTherapyCodingType,} from '../fhirValueSets/MedicationrequestCourseOfTherapyCodings.js';
 // @ts-ignore
@@ -110,6 +110,10 @@ export interface MedicationRequestDispenseRequestArgs extends fhir.BackboneEleme
    */
   numberOfRepeatsAllowed?: fhir.FhirUnsignedInt|number|undefined;
   /**
+   * Extended properties for primitive element: MedicationRequest.dispenseRequest.numberOfRepeatsAllowed
+   */
+  _numberOfRepeatsAllowed?:fhir.FhirElementArgs;
+  /**
    * The amount that is to be dispensed for one fill.
    */
   quantity?: fhir.QuantityArgs|undefined;
@@ -168,6 +172,10 @@ export class MedicationRequestDispenseRequest extends fhir.BackboneElement {
     if (source['dispenseInterval']) { this.dispenseInterval = new fhir.Duration(source.dispenseInterval); }
     if (source['validityPeriod']) { this.validityPeriod = new fhir.Period(source.validityPeriod); }
     if (source['numberOfRepeatsAllowed']) { this.numberOfRepeatsAllowed = new fhir.FhirUnsignedInt({value: source.numberOfRepeatsAllowed}); }
+    if (source['_numberOfRepeatsAllowed']) {
+      if (this.numberOfRepeatsAllowed) { this.numberOfRepeatsAllowed.addExtendedProperties(source._numberOfRepeatsAllowed!); }
+      else { this.numberOfRepeatsAllowed = new fhir.FhirUnsignedInt(source._numberOfRepeatsAllowed as Partial<fhir.FhirUnsignedIntArgs>); }
+    }
     if (source['quantity']) { this.quantity = new fhir.Quantity(source.quantity); }
     if (source['expectedSupplyDuration']) { this.expectedSupplyDuration = new fhir.Duration(source.expectedSupplyDuration); }
     if (source['performer']) { this.performer = new fhir.Reference(source.performer); }
@@ -269,6 +277,10 @@ export interface MedicationRequestArgs extends fhir.DomainResourceArgs {
    */
   status: fhir.FhirCode<MedicationrequestStatusCodeType>|string|undefined;
   /**
+   * Extended properties for primitive element: MedicationRequest.status
+   */
+  _status?:fhir.FhirElementArgs;
+  /**
    * This is generally only used for "exception" statuses such as "suspended" or "cancelled". The reason why the MedicationRequest was created at all is captured in reasonCode, not here.
    */
   statusReason?: fhir.CodeableConceptArgs|undefined;
@@ -279,6 +291,10 @@ export interface MedicationRequestArgs extends fhir.DomainResourceArgs {
    */
   intent: fhir.FhirCode<MedicationrequestIntentCodeType>|string|undefined;
   /**
+   * Extended properties for primitive element: MedicationRequest.intent
+   */
+  _intent?:fhir.FhirElementArgs;
+  /**
    * The category can be used to include where the medication is expected to be consumed or other types of requests.
    */
   category?: fhir.CodeableConceptArgs[]|undefined;
@@ -287,9 +303,17 @@ export interface MedicationRequestArgs extends fhir.DomainResourceArgs {
    */
   priority?: fhir.FhirCode<RequestPriorityCodeType>|string|undefined;
   /**
+   * Extended properties for primitive element: MedicationRequest.priority
+   */
+  _priority?:fhir.FhirElementArgs;
+  /**
    * If do not perform is not specified, the request is a positive request e.g. "do perform".
    */
   doNotPerform?: fhir.FhirBoolean|boolean|undefined;
+  /**
+   * Extended properties for primitive element: MedicationRequest.doNotPerform
+   */
+  _doNotPerform?:fhir.FhirElementArgs;
   /**
    * Indicates if this record was captured as a secondary 'reported' record rather than as an original primary source-of-truth record.  It may also indicate the source of the report.
    */
@@ -331,6 +355,10 @@ export interface MedicationRequestArgs extends fhir.DomainResourceArgs {
    */
   authoredOn?: fhir.FhirDateTime|string|undefined;
   /**
+   * Extended properties for primitive element: MedicationRequest.authoredOn
+   */
+  _authoredOn?:fhir.FhirElementArgs;
+  /**
    * The individual, organization, or device that initiated the request and has responsibility for its activation.
    */
   requester?: fhir.ReferenceArgs|undefined;
@@ -359,9 +387,17 @@ export interface MedicationRequestArgs extends fhir.DomainResourceArgs {
    */
   instantiatesCanonical?: fhir.FhirCanonical[]|string[]|undefined;
   /**
+   * Extended properties for primitive element: MedicationRequest.instantiatesCanonical
+   */
+  _instantiatesCanonical?:(fhir.FhirElementArgs|null)[];
+  /**
    * The URL pointing to an externally maintained protocol, guideline, orderset or other definition that is adhered to in whole or in part by this MedicationRequest.
    */
   instantiatesUri?: fhir.FhirUri[]|string[]|undefined;
+  /**
+   * Extended properties for primitive element: MedicationRequest.instantiatesUri
+   */
+  _instantiatesUri?:(fhir.FhirElementArgs|null)[];
   /**
    * A plan or request that is fulfilled in whole or in part by this medication request.
    */
@@ -568,13 +604,29 @@ export class MedicationRequest extends fhir.DomainResource {
     else { this.identifier = []; }
     if (source['status']) { this.status = new fhir.FhirCode<MedicationrequestStatusCodeType>({value: source.status}); }
     else { this.status = null; }
+    if (source['_status']) {
+      if (this.status) { this.status.addExtendedProperties(source._status!); }
+      else { this.status = new fhir.FhirCode<MedicationrequestStatusCodeType>(source._status as Partial<fhir.FhirCode>); }
+    }
     if (source['statusReason']) { this.statusReason = new fhir.CodeableConcept(source.statusReason); }
     if (source['intent']) { this.intent = new fhir.FhirCode<MedicationrequestIntentCodeType>({value: source.intent}); }
     else { this.intent = null; }
+    if (source['_intent']) {
+      if (this.intent) { this.intent.addExtendedProperties(source._intent!); }
+      else { this.intent = new fhir.FhirCode<MedicationrequestIntentCodeType>(source._intent as Partial<fhir.FhirCode>); }
+    }
     if (source['category']) { this.category = source.category.map((x) => new fhir.CodeableConcept(x)); }
     else { this.category = []; }
     if (source['priority']) { this.priority = new fhir.FhirCode<RequestPriorityCodeType>({value: source.priority}); }
+    if (source['_priority']) {
+      if (this.priority) { this.priority.addExtendedProperties(source._priority!); }
+      else { this.priority = new fhir.FhirCode<RequestPriorityCodeType>(source._priority as Partial<fhir.FhirCode>); }
+    }
     if (source['doNotPerform']) { this.doNotPerform = new fhir.FhirBoolean({value: source.doNotPerform}); }
+    if (source['_doNotPerform']) {
+      if (this.doNotPerform) { this.doNotPerform.addExtendedProperties(source._doNotPerform!); }
+      else { this.doNotPerform = new fhir.FhirBoolean(source._doNotPerform as Partial<fhir.FhirBooleanArgs>); }
+    }
     if (source['reported']) { this.reported = source.reported; }
     else if (source['reportedBoolean']) { this.reported = new fhir.FhirBoolean({value: source.reportedBoolean}); }
     else if (source['reportedReference']) { this.reported = new fhir.Reference(source.reportedReference); }
@@ -588,6 +640,10 @@ export class MedicationRequest extends fhir.DomainResource {
     if (source['supportingInformation']) { this.supportingInformation = source.supportingInformation.map((x) => new fhir.Reference(x)); }
     else { this.supportingInformation = []; }
     if (source['authoredOn']) { this.authoredOn = new fhir.FhirDateTime({value: source.authoredOn}); }
+    if (source['_authoredOn']) {
+      if (this.authoredOn) { this.authoredOn.addExtendedProperties(source._authoredOn!); }
+      else { this.authoredOn = new fhir.FhirDateTime(source._authoredOn as Partial<fhir.FhirDateTimeArgs>); }
+    }
     if (source['requester']) { this.requester = new fhir.Reference(source.requester); }
     if (source['performer']) { this.performer = new fhir.Reference(source.performer); }
     if (source['performerType']) { this.performerType = new fhir.CodeableConcept(source.performerType); }
@@ -598,8 +654,20 @@ export class MedicationRequest extends fhir.DomainResource {
     else { this.reasonReference = []; }
     if (source['instantiatesCanonical']) { this.instantiatesCanonical = source.instantiatesCanonical.map((x) => new fhir.FhirCanonical({value: x})); }
     else { this.instantiatesCanonical = []; }
+    if (source['_instantiatesCanonical']) {
+      source._instantiatesCanonical.forEach((x,i) => {
+        if (this.instantiatesCanonical.length >= i) { if (x) { this.instantiatesCanonical[i].addExtendedProperties(x); } }
+        else { if (x) { this.instantiatesCanonical.push(new fhir.FhirCanonical(x as Partial<fhir.FhirCanonicalArgs>)); } }
+      });
+    }
     if (source['instantiatesUri']) { this.instantiatesUri = source.instantiatesUri.map((x) => new fhir.FhirUri({value: x})); }
     else { this.instantiatesUri = []; }
+    if (source['_instantiatesUri']) {
+      source._instantiatesUri.forEach((x,i) => {
+        if (this.instantiatesUri.length >= i) { if (x) { this.instantiatesUri[i].addExtendedProperties(x); } }
+        else { if (x) { this.instantiatesUri.push(new fhir.FhirUri(x as Partial<fhir.FhirUriArgs>)); } }
+      });
+    }
     if (source['basedOn']) { this.basedOn = source.basedOn.map((x) => new fhir.Reference(x)); }
     else { this.basedOn = []; }
     if (source['groupIdentifier']) { this.groupIdentifier = new fhir.Identifier(source.groupIdentifier); }

@@ -22,6 +22,10 @@ export interface SignatureArgs extends fhir.FhirElementArgs {
    */
   when: fhir.FhirInstant|string|undefined;
   /**
+   * Extended properties for primitive element: Signature.when
+   */
+  _when?:fhir.FhirElementArgs;
+  /**
    * This should agree with the information in the signature.
    */
   who: fhir.ReferenceArgs|null;
@@ -34,13 +38,25 @@ export interface SignatureArgs extends fhir.FhirElementArgs {
    */
   targetFormat?: fhir.FhirCode|string|undefined;
   /**
+   * Extended properties for primitive element: Signature.targetFormat
+   */
+  _targetFormat?:fhir.FhirElementArgs;
+  /**
    * A mime type that indicates the technical format of the signature. Important mime types are application/signature+xml for X ML DigSig, application/jose for JWS, and image/* for a graphical image of a signature, etc.
    */
   sigFormat?: fhir.FhirCode|string|undefined;
   /**
+   * Extended properties for primitive element: Signature.sigFormat
+   */
+  _sigFormat?:fhir.FhirElementArgs;
+  /**
    * Where the signature type is an XML DigSig, the signed content is a FHIR Resource(s), the signature is of the XML form of the Resource(s) using  XML-Signature (XMLDIG) "Detached Signature" form.
    */
   data?: fhir.FhirBase64Binary|string|undefined;
+  /**
+   * Extended properties for primitive element: Signature.data
+   */
+  _data?:fhir.FhirElementArgs;
 }
 
 /**
@@ -88,12 +104,28 @@ export class Signature extends fhir.FhirElement {
     else { this.type = []; }
     if (source['when']) { this.when = new fhir.FhirInstant({value: source.when}); }
     else { this.when = null; }
+    if (source['_when']) {
+      if (this.when) { this.when.addExtendedProperties(source._when!); }
+      else { this.when = new fhir.FhirInstant(source._when as Partial<fhir.FhirInstantArgs>); }
+    }
     if (source['who']) { this.who = new fhir.Reference(source.who); }
     else { this.who = null; }
     if (source['onBehalfOf']) { this.onBehalfOf = new fhir.Reference(source.onBehalfOf); }
     if (source['targetFormat']) { this.targetFormat = new fhir.FhirCode({value: source.targetFormat}); }
+    if (source['_targetFormat']) {
+      if (this.targetFormat) { this.targetFormat.addExtendedProperties(source._targetFormat!); }
+      else { this.targetFormat = new fhir.FhirCode(source._targetFormat as Partial<fhir.FhirCodeArgs>); }
+    }
     if (source['sigFormat']) { this.sigFormat = new fhir.FhirCode({value: source.sigFormat}); }
+    if (source['_sigFormat']) {
+      if (this.sigFormat) { this.sigFormat.addExtendedProperties(source._sigFormat!); }
+      else { this.sigFormat = new fhir.FhirCode(source._sigFormat as Partial<fhir.FhirCodeArgs>); }
+    }
     if (source['data']) { this.data = new fhir.FhirBase64Binary({value: source.data}); }
+    if (source['_data']) {
+      if (this.data) { this.data.addExtendedProperties(source._data!); }
+      else { this.data = new fhir.FhirBase64Binary(source._data as Partial<fhir.FhirBase64BinaryArgs>); }
+    }
   }
   /**
    * Preferred-bound Value Set for type (Signature.type)

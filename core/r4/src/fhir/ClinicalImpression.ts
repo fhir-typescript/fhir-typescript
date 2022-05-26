@@ -10,9 +10,9 @@ import { InvestigationSetsCodings, InvestigationSetsCodingType,} from '../fhirVa
 // @ts-ignore
 import { InvestigationSetsCodes,  InvestigationSetsCodeType } from '../fhirValueSets/InvestigationSetsCodes.js';
 // @ts-ignore
-import { ConditionCodeCodings, ConditionCodeCodingType,} from '../fhirValueSets/ConditionCodeCodings.js';
+import { ConditionCodings, ConditionCodingType,} from '../fhirValueSets/ConditionCodings.js';
 // @ts-ignore
-import { ConditionCodeCodes,  ConditionCodeCodeType } from '../fhirValueSets/ConditionCodeCodes.js';
+import { ConditionCodes,  ConditionCodeType } from '../fhirValueSets/ConditionCodes.js';
 // @ts-ignore
 import { ClinicalimpressionStatusCodings, ClinicalimpressionStatusCodingType,} from '../fhirValueSets/ClinicalimpressionStatusCodings.js';
 // @ts-ignore
@@ -90,6 +90,10 @@ export interface ClinicalImpressionFindingArgs extends fhir.BackboneElementArgs 
    * Which investigations support finding or diagnosis.
    */
   basis?: fhir.FhirString|string|undefined;
+  /**
+   * Extended properties for primitive element: ClinicalImpression.finding.basis
+   */
+  _basis?:fhir.FhirElementArgs;
 }
 
 /**
@@ -120,6 +124,10 @@ export class ClinicalImpressionFinding extends fhir.BackboneElement {
     if (source['itemCodeableConcept']) { this.itemCodeableConcept = new fhir.CodeableConcept(source.itemCodeableConcept); }
     if (source['itemReference']) { this.itemReference = new fhir.Reference(source.itemReference); }
     if (source['basis']) { this.basis = new fhir.FhirString({value: source.basis}); }
+    if (source['_basis']) {
+      if (this.basis) { this.basis.addExtendedProperties(source._basis!); }
+      else { this.basis = new fhir.FhirString(source._basis as Partial<fhir.FhirStringArgs>); }
+    }
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -149,6 +157,10 @@ export interface ClinicalImpressionArgs extends fhir.DomainResourceArgs {
    */
   status: fhir.FhirCode<ClinicalimpressionStatusCodeType>|string|undefined;
   /**
+   * Extended properties for primitive element: ClinicalImpression.status
+   */
+  _status?:fhir.FhirElementArgs;
+  /**
    * This is generally only used for "exception" statuses such as "not-done", "suspended" or "cancelled".
    * [distinct reason codes for different statuses can be enforced using invariants if they are universal bindings].
    */
@@ -161,6 +173,10 @@ export interface ClinicalImpressionArgs extends fhir.DomainResourceArgs {
    * A summary of the context and/or cause of the assessment - why / where it was performed, and what patient events/status prompted it.
    */
   description?: fhir.FhirString|string|undefined;
+  /**
+   * Extended properties for primitive element: ClinicalImpression.description
+   */
+  _description?:fhir.FhirElementArgs;
   /**
    * The patient or group of individuals assessed as part of this record.
    */
@@ -186,6 +202,10 @@ export interface ClinicalImpressionArgs extends fhir.DomainResourceArgs {
    */
   date?: fhir.FhirDateTime|string|undefined;
   /**
+   * Extended properties for primitive element: ClinicalImpression.date
+   */
+  _date?:fhir.FhirElementArgs;
+  /**
    * The clinician performing the assessment.
    */
   assessor?: fhir.ReferenceArgs|undefined;
@@ -206,9 +226,17 @@ export interface ClinicalImpressionArgs extends fhir.DomainResourceArgs {
    */
   protocol?: fhir.FhirUri[]|string[]|undefined;
   /**
+   * Extended properties for primitive element: ClinicalImpression.protocol
+   */
+  _protocol?:(fhir.FhirElementArgs|null)[];
+  /**
    * A text summary of the investigations and the diagnosis.
    */
   summary?: fhir.FhirString|string|undefined;
+  /**
+   * Extended properties for primitive element: ClinicalImpression.summary
+   */
+  _summary?:fhir.FhirElementArgs;
   /**
    * Specific findings or diagnoses that were considered likely or relevant to ongoing treatment.
    */
@@ -338,9 +366,17 @@ export class ClinicalImpression extends fhir.DomainResource {
     else { this.identifier = []; }
     if (source['status']) { this.status = new fhir.FhirCode<ClinicalimpressionStatusCodeType>({value: source.status}); }
     else { this.status = null; }
+    if (source['_status']) {
+      if (this.status) { this.status.addExtendedProperties(source._status!); }
+      else { this.status = new fhir.FhirCode<ClinicalimpressionStatusCodeType>(source._status as Partial<fhir.FhirCode>); }
+    }
     if (source['statusReason']) { this.statusReason = new fhir.CodeableConcept(source.statusReason); }
     if (source['code']) { this.code = new fhir.CodeableConcept(source.code); }
     if (source['description']) { this.description = new fhir.FhirString({value: source.description}); }
+    if (source['_description']) {
+      if (this.description) { this.description.addExtendedProperties(source._description!); }
+      else { this.description = new fhir.FhirString(source._description as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['subject']) { this.subject = new fhir.Reference(source.subject); }
     else { this.subject = null; }
     if (source['encounter']) { this.encounter = new fhir.Reference(source.encounter); }
@@ -348,6 +384,10 @@ export class ClinicalImpression extends fhir.DomainResource {
     else if (source['effectiveDateTime']) { this.effective = new fhir.FhirDateTime({value: source.effectiveDateTime}); }
     else if (source['effectivePeriod']) { this.effective = new fhir.Period(source.effectivePeriod); }
     if (source['date']) { this.date = new fhir.FhirDateTime({value: source.date}); }
+    if (source['_date']) {
+      if (this.date) { this.date.addExtendedProperties(source._date!); }
+      else { this.date = new fhir.FhirDateTime(source._date as Partial<fhir.FhirDateTimeArgs>); }
+    }
     if (source['assessor']) { this.assessor = new fhir.Reference(source.assessor); }
     if (source['previous']) { this.previous = new fhir.Reference(source.previous); }
     if (source['problem']) { this.problem = source.problem.map((x) => new fhir.Reference(x)); }
@@ -356,7 +396,17 @@ export class ClinicalImpression extends fhir.DomainResource {
     else { this.investigation = []; }
     if (source['protocol']) { this.protocol = source.protocol.map((x) => new fhir.FhirUri({value: x})); }
     else { this.protocol = []; }
+    if (source['_protocol']) {
+      source._protocol.forEach((x,i) => {
+        if (this.protocol.length >= i) { if (x) { this.protocol[i].addExtendedProperties(x); } }
+        else { if (x) { this.protocol.push(new fhir.FhirUri(x as Partial<fhir.FhirUriArgs>)); } }
+      });
+    }
     if (source['summary']) { this.summary = new fhir.FhirString({value: source.summary}); }
+    if (source['_summary']) {
+      if (this.summary) { this.summary.addExtendedProperties(source._summary!); }
+      else { this.summary = new fhir.FhirString(source._summary as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['finding']) { this.finding = source.finding.map((x) => new fhir.ClinicalImpressionFinding(x)); }
     else { this.finding = []; }
     if (source['prognosisCodeableConcept']) { this.prognosisCodeableConcept = source.prognosisCodeableConcept.map((x) => new fhir.CodeableConcept(x)); }

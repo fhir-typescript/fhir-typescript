@@ -69,6 +69,10 @@ export interface BiologicallyDerivedProductProcessingArgs extends fhir.BackboneE
      */
     description?: fhir.FhirString | string | undefined;
     /**
+     * Extended properties for primitive element: BiologicallyDerivedProduct.processing.description
+     */
+    _description?: fhir.FhirElementArgs;
+    /**
      * Procesing code.
      */
     procedure?: fhir.CodeableConceptArgs | undefined;
@@ -135,6 +139,10 @@ export interface BiologicallyDerivedProductManipulationArgs extends fhir.Backbon
      */
     description?: fhir.FhirString | string | undefined;
     /**
+     * Extended properties for primitive element: BiologicallyDerivedProduct.manipulation.description
+     */
+    _description?: fhir.FhirElementArgs;
+    /**
      * Time of manipulation.
      */
     time?: fhir.FhirDateTime | fhir.Period | undefined;
@@ -185,13 +193,25 @@ export interface BiologicallyDerivedProductStorageArgs extends fhir.BackboneElem
      */
     description?: fhir.FhirString | string | undefined;
     /**
+     * Extended properties for primitive element: BiologicallyDerivedProduct.storage.description
+     */
+    _description?: fhir.FhirElementArgs;
+    /**
      * Storage temperature.
      */
     temperature?: fhir.FhirDecimal | number | undefined;
     /**
+     * Extended properties for primitive element: BiologicallyDerivedProduct.storage.temperature
+     */
+    _temperature?: fhir.FhirElementArgs;
+    /**
      * Temperature scale used.
      */
     scale?: fhir.FhirCode<ProductStorageScaleCodeType> | string | undefined;
+    /**
+     * Extended properties for primitive element: BiologicallyDerivedProduct.storage.scale
+     */
+    _scale?: fhir.FhirElementArgs;
     /**
      * Storage timeperiod.
      */
@@ -255,6 +275,10 @@ export interface BiologicallyDerivedProductArgs extends fhir.DomainResourceArgs 
      */
     productCategory?: fhir.FhirCode<ProductCategoryCodeType> | string | undefined;
     /**
+     * Extended properties for primitive element: BiologicallyDerivedProduct.productCategory
+     */
+    _productCategory?: fhir.FhirElementArgs;
+    /**
      * A code that identifies the kind of this biologically derived product (SNOMED Ctcode).
      */
     productCode?: fhir.CodeableConceptArgs | undefined;
@@ -263,6 +287,10 @@ export interface BiologicallyDerivedProductArgs extends fhir.DomainResourceArgs 
      */
     status?: fhir.FhirCode<ProductStatusCodeType> | string | undefined;
     /**
+     * Extended properties for primitive element: BiologicallyDerivedProduct.status
+     */
+    _status?: fhir.FhirElementArgs;
+    /**
      * Procedure request to obtain this biologically derived product.
      */
     request?: fhir.ReferenceArgs[] | undefined;
@@ -270,6 +298,10 @@ export interface BiologicallyDerivedProductArgs extends fhir.DomainResourceArgs 
      * Number of discrete units within this product.
      */
     quantity?: fhir.FhirInteger | number | undefined;
+    /**
+     * Extended properties for primitive element: BiologicallyDerivedProduct.quantity
+     */
+    _quantity?: fhir.FhirElementArgs;
     /**
      * For products that have multiple collections. For example Peripheral Blood Stem Cells may be collected over several days from a single donor and the donation split into in multiple containers which must be linked to the parent donation.
      */

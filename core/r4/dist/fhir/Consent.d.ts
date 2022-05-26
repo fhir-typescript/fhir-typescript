@@ -18,9 +18,17 @@ export interface ConsentPolicyArgs extends fhir.BackboneElementArgs {
      */
     authority?: fhir.FhirUri | string | undefined;
     /**
+     * Extended properties for primitive element: Consent.policy.authority
+     */
+    _authority?: fhir.FhirElementArgs;
+    /**
      * This element is for discoverability / documentation and does not modify or qualify the policy rules.
      */
     uri?: fhir.FhirUri | string | undefined;
+    /**
+     * Extended properties for primitive element: Consent.policy.uri
+     */
+    _uri?: fhir.FhirElementArgs;
 }
 /**
  * The references to the policies that are included in this consent scope. Policies may be organizational, but are often defined jurisdictionally, or in law.
@@ -56,6 +64,10 @@ export interface ConsentVerificationArgs extends fhir.BackboneElementArgs {
      */
     verified: fhir.FhirBoolean | boolean | undefined;
     /**
+     * Extended properties for primitive element: Consent.verification.verified
+     */
+    _verified?: fhir.FhirElementArgs;
+    /**
      * Who verified the instruction (Patient, Relative or other Authorized Person).
      */
     verifiedWith?: fhir.ReferenceArgs | undefined;
@@ -63,6 +75,10 @@ export interface ConsentVerificationArgs extends fhir.BackboneElementArgs {
      * Date verification was collected.
      */
     verificationDate?: fhir.FhirDateTime | string | undefined;
+    /**
+     * Extended properties for primitive element: Consent.verification.verificationDate
+     */
+    _verificationDate?: fhir.FhirElementArgs;
 }
 /**
  * Whether a treatment instruction (e.g. artificial respiration yes or no) was verified with the patient, his/her family or another authorized person.
@@ -144,6 +160,10 @@ export interface ConsentProvisionDataArgs extends fhir.BackboneElementArgs {
      */
     meaning: fhir.FhirCode<ConsentDataMeaningCodeType> | string | undefined;
     /**
+     * Extended properties for primitive element: Consent.provision.data.meaning
+     */
+    _meaning?: fhir.FhirElementArgs;
+    /**
      * A reference to a specific resource that defines which resources are covered by this consent.
      */
     reference: fhir.ReferenceArgs | null;
@@ -190,6 +210,10 @@ export interface ConsentProvisionArgs extends fhir.BackboneElementArgs {
      * Action  to take - permit or deny - when the rule conditions are met.  Not permitted in root rule, required in all nested rules.
      */
     type?: fhir.FhirCode<ConsentProvisionTypeCodeType> | string | undefined;
+    /**
+     * Extended properties for primitive element: Consent.provision.type
+     */
+    _type?: fhir.FhirElementArgs;
     /**
      * The timeframe in this rule is valid.
      */
@@ -328,6 +352,10 @@ export interface ConsentArgs extends fhir.DomainResourceArgs {
      */
     status: fhir.FhirCode<ConsentStateCodeType> | string | undefined;
     /**
+     * Extended properties for primitive element: Consent.status
+     */
+    _status?: fhir.FhirElementArgs;
+    /**
      * A selector of the type of consent being presented: ADR, Privacy, Treatment, Research.  This list is now extensible.
      */
     scope: fhir.CodeableConceptArgs | null;
@@ -343,6 +371,10 @@ export interface ConsentArgs extends fhir.DomainResourceArgs {
      * This is not the time of the original consent, but the time that this statement was made or derived.
      */
     dateTime?: fhir.FhirDateTime | string | undefined;
+    /**
+     * Extended properties for primitive element: Consent.dateTime
+     */
+    _dateTime?: fhir.FhirElementArgs;
     /**
      * Commonly, the patient the consent pertains to is the consentor, but particularly for young and old people, it may be some other person - e.g. a legal guardian.
      */

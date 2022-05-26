@@ -46,57 +46,113 @@ export interface TimingRepeatArgs extends fhir.FhirElementArgs {
    */
   count?: fhir.FhirPositiveInt|number|undefined;
   /**
+   * Extended properties for primitive element: Timing.repeat.count
+   */
+  _count?:fhir.FhirElementArgs;
+  /**
    * If present, indicates that the count is a range - so to perform the action between [count] and [countMax] times.
    */
   countMax?: fhir.FhirPositiveInt|number|undefined;
+  /**
+   * Extended properties for primitive element: Timing.repeat.countMax
+   */
+  _countMax?:fhir.FhirElementArgs;
   /**
    * For some events the duration is part of the definition of the event (e.g. IV infusions, where the duration is implicit in the specified quantity and rate). For others, it's part of the timing specification (e.g. exercise).
    */
   duration?: fhir.FhirDecimal|number|undefined;
   /**
+   * Extended properties for primitive element: Timing.repeat.duration
+   */
+  _duration?:fhir.FhirElementArgs;
+  /**
    * For some events the duration is part of the definition of the event (e.g. IV infusions, where the duration is implicit in the specified quantity and rate). For others, it's part of the timing specification (e.g. exercise).
    */
   durationMax?: fhir.FhirDecimal|number|undefined;
+  /**
+   * Extended properties for primitive element: Timing.repeat.durationMax
+   */
+  _durationMax?:fhir.FhirElementArgs;
   /**
    * The units of time for the duration, in UCUM units.
    */
   durationUnit?: fhir.FhirCode<UnitsOfTimeCodeType>|string|undefined;
   /**
+   * Extended properties for primitive element: Timing.repeat.durationUnit
+   */
+  _durationUnit?:fhir.FhirElementArgs;
+  /**
    * The number of times to repeat the action within the specified period. If frequencyMax is present, this element indicates the lower bound of the allowed range of the frequency.
    */
   frequency?: fhir.FhirPositiveInt|number|undefined;
+  /**
+   * Extended properties for primitive element: Timing.repeat.frequency
+   */
+  _frequency?:fhir.FhirElementArgs;
   /**
    * If present, indicates that the frequency is a range - so to repeat between [frequency] and [frequencyMax] times within the period or period range.
    */
   frequencyMax?: fhir.FhirPositiveInt|number|undefined;
   /**
+   * Extended properties for primitive element: Timing.repeat.frequencyMax
+   */
+  _frequencyMax?:fhir.FhirElementArgs;
+  /**
    * Indicates the duration of time over which repetitions are to occur; e.g. to express "3 times per day", 3 would be the frequency and "1 day" would be the period. If periodMax is present, this element indicates the lower bound of the allowed range of the period length.
    */
   period?: fhir.FhirDecimal|number|undefined;
+  /**
+   * Extended properties for primitive element: Timing.repeat.period
+   */
+  _period?:fhir.FhirElementArgs;
   /**
    * If present, indicates that the period is a range from [period] to [periodMax], allowing expressing concepts such as "do this once every 3-5 days.
    */
   periodMax?: fhir.FhirDecimal|number|undefined;
   /**
+   * Extended properties for primitive element: Timing.repeat.periodMax
+   */
+  _periodMax?:fhir.FhirElementArgs;
+  /**
    * The units of time for the period in UCUM units.
    */
   periodUnit?: fhir.FhirCode<UnitsOfTimeCodeType>|string|undefined;
+  /**
+   * Extended properties for primitive element: Timing.repeat.periodUnit
+   */
+  _periodUnit?:fhir.FhirElementArgs;
   /**
    * If no days are specified, the action is assumed to happen every day as otherwise specified. The elements frequency and period cannot be used as well as dayOfWeek.
    */
   dayOfWeek?: fhir.FhirCode<DaysOfWeekCodeType>[]|string[]|undefined;
   /**
+   * Extended properties for primitive element: Timing.repeat.dayOfWeek
+   */
+  _dayOfWeek?:(fhir.FhirElementArgs|null)[];
+  /**
    * When time of day is specified, it is inferred that the action happens every day (as filtered by dayofWeek) on the specified times. The elements when, frequency and period cannot be used as well as timeOfDay.
    */
   timeOfDay?: fhir.FhirTime[]|string[]|undefined;
+  /**
+   * Extended properties for primitive element: Timing.repeat.timeOfDay
+   */
+  _timeOfDay?:(fhir.FhirElementArgs|null)[];
   /**
    * When more than one event is listed, the event is tied to the union of the specified events.
    */
   when?: fhir.FhirCode[]|string[]|undefined;
   /**
+   * Extended properties for primitive element: Timing.repeat.when
+   */
+  _when?:(fhir.FhirElementArgs|null)[];
+  /**
    * The number of minutes from the event. If the event code does not indicate whether the minutes is before or after the event, then the offset is assumed to be after the event.
    */
   offset?: fhir.FhirUnsignedInt|number|undefined;
+  /**
+   * Extended properties for primitive element: Timing.repeat.offset
+   */
+  _offset?:fhir.FhirElementArgs;
 }
 
 /**
@@ -181,22 +237,84 @@ export class TimingRepeat extends fhir.FhirElement {
     else if (source['boundsRange']) { this.bounds = new fhir.Range(source.boundsRange); }
     else if (source['boundsPeriod']) { this.bounds = new fhir.Period(source.boundsPeriod); }
     if (source['count']) { this.count = new fhir.FhirPositiveInt({value: source.count}); }
+    if (source['_count']) {
+      if (this.count) { this.count.addExtendedProperties(source._count!); }
+      else { this.count = new fhir.FhirPositiveInt(source._count as Partial<fhir.FhirPositiveIntArgs>); }
+    }
     if (source['countMax']) { this.countMax = new fhir.FhirPositiveInt({value: source.countMax}); }
+    if (source['_countMax']) {
+      if (this.countMax) { this.countMax.addExtendedProperties(source._countMax!); }
+      else { this.countMax = new fhir.FhirPositiveInt(source._countMax as Partial<fhir.FhirPositiveIntArgs>); }
+    }
     if (source['duration']) { this.duration = new fhir.FhirDecimal({value: source.duration}); }
+    if (source['_duration']) {
+      if (this.duration) { this.duration.addExtendedProperties(source._duration!); }
+      else { this.duration = new fhir.FhirDecimal(source._duration as Partial<fhir.FhirDecimalArgs>); }
+    }
     if (source['durationMax']) { this.durationMax = new fhir.FhirDecimal({value: source.durationMax}); }
+    if (source['_durationMax']) {
+      if (this.durationMax) { this.durationMax.addExtendedProperties(source._durationMax!); }
+      else { this.durationMax = new fhir.FhirDecimal(source._durationMax as Partial<fhir.FhirDecimalArgs>); }
+    }
     if (source['durationUnit']) { this.durationUnit = new fhir.FhirCode<UnitsOfTimeCodeType>({value: source.durationUnit}); }
+    if (source['_durationUnit']) {
+      if (this.durationUnit) { this.durationUnit.addExtendedProperties(source._durationUnit!); }
+      else { this.durationUnit = new fhir.FhirCode<UnitsOfTimeCodeType>(source._durationUnit as Partial<fhir.FhirCode>); }
+    }
     if (source['frequency']) { this.frequency = new fhir.FhirPositiveInt({value: source.frequency}); }
+    if (source['_frequency']) {
+      if (this.frequency) { this.frequency.addExtendedProperties(source._frequency!); }
+      else { this.frequency = new fhir.FhirPositiveInt(source._frequency as Partial<fhir.FhirPositiveIntArgs>); }
+    }
     if (source['frequencyMax']) { this.frequencyMax = new fhir.FhirPositiveInt({value: source.frequencyMax}); }
+    if (source['_frequencyMax']) {
+      if (this.frequencyMax) { this.frequencyMax.addExtendedProperties(source._frequencyMax!); }
+      else { this.frequencyMax = new fhir.FhirPositiveInt(source._frequencyMax as Partial<fhir.FhirPositiveIntArgs>); }
+    }
     if (source['period']) { this.period = new fhir.FhirDecimal({value: source.period}); }
+    if (source['_period']) {
+      if (this.period) { this.period.addExtendedProperties(source._period!); }
+      else { this.period = new fhir.FhirDecimal(source._period as Partial<fhir.FhirDecimalArgs>); }
+    }
     if (source['periodMax']) { this.periodMax = new fhir.FhirDecimal({value: source.periodMax}); }
+    if (source['_periodMax']) {
+      if (this.periodMax) { this.periodMax.addExtendedProperties(source._periodMax!); }
+      else { this.periodMax = new fhir.FhirDecimal(source._periodMax as Partial<fhir.FhirDecimalArgs>); }
+    }
     if (source['periodUnit']) { this.periodUnit = new fhir.FhirCode<UnitsOfTimeCodeType>({value: source.periodUnit}); }
+    if (source['_periodUnit']) {
+      if (this.periodUnit) { this.periodUnit.addExtendedProperties(source._periodUnit!); }
+      else { this.periodUnit = new fhir.FhirCode<UnitsOfTimeCodeType>(source._periodUnit as Partial<fhir.FhirCode>); }
+    }
     if (source['dayOfWeek']) { this.dayOfWeek = source.dayOfWeek.map((x) => new fhir.FhirCode<DaysOfWeekCodeType>({value: x})); }
     else { this.dayOfWeek = []; }
+    if (source['_dayOfWeek']) {
+      source._dayOfWeek.forEach((x,i) => {
+        if (this.dayOfWeek.length >= i) { if (x) { this.dayOfWeek[i].addExtendedProperties(x); } }
+        else { if (x) { this.dayOfWeek.push(new fhir.FhirCode<DaysOfWeekCodeType>(x as Partial<fhir.FhirCode>)); } }
+      });
+    }
     if (source['timeOfDay']) { this.timeOfDay = source.timeOfDay.map((x) => new fhir.FhirTime({value: x})); }
     else { this.timeOfDay = []; }
+    if (source['_timeOfDay']) {
+      source._timeOfDay.forEach((x,i) => {
+        if (this.timeOfDay.length >= i) { if (x) { this.timeOfDay[i].addExtendedProperties(x); } }
+        else { if (x) { this.timeOfDay.push(new fhir.FhirTime(x as Partial<fhir.FhirTimeArgs>)); } }
+      });
+    }
     if (source['when']) { this.when = source.when.map((x) => new fhir.FhirCode({value: x})); }
     else { this.when = []; }
+    if (source['_when']) {
+      source._when.forEach((x,i) => {
+        if (this.when.length >= i) { if (x) { this.when[i].addExtendedProperties(x); } }
+        else { if (x) { this.when.push(new fhir.FhirCode(x as Partial<fhir.FhirCodeArgs>)); } }
+      });
+    }
     if (source['offset']) { this.offset = new fhir.FhirUnsignedInt({value: source.offset}); }
+    if (source['_offset']) {
+      if (this.offset) { this.offset.addExtendedProperties(source._offset!); }
+      else { this.offset = new fhir.FhirUnsignedInt(source._offset as Partial<fhir.FhirUnsignedIntArgs>); }
+    }
   }
   /**
    * Required-bound Value Set for durationUnit (Timing.repeat.durationUnit)
@@ -273,6 +391,10 @@ export interface TimingArgs extends fhir.BackboneElementArgs {
    */
   event?: fhir.FhirDateTime[]|string[]|undefined;
   /**
+   * Extended properties for primitive element: Timing.event
+   */
+  _event?:(fhir.FhirElementArgs|null)[];
+  /**
    * A set of rules that describe when the event is scheduled.
    */
   repeat?: fhir.TimingRepeatArgs|undefined;
@@ -309,6 +431,12 @@ export class Timing extends fhir.BackboneElement {
     super(source, options);
     if (source['event']) { this.event = source.event.map((x) => new fhir.FhirDateTime({value: x})); }
     else { this.event = []; }
+    if (source['_event']) {
+      source._event.forEach((x,i) => {
+        if (this.event.length >= i) { if (x) { this.event[i].addExtendedProperties(x); } }
+        else { if (x) { this.event.push(new fhir.FhirDateTime(x as Partial<fhir.FhirDateTimeArgs>)); } }
+      });
+    }
     if (source['repeat']) { this.repeat = new fhir.TimingRepeat(source.repeat); }
     if (source['code']) { this.code = new fhir.CodeableConcept(source.code); }
   }

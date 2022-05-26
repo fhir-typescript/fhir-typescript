@@ -77,9 +77,17 @@ export interface DeviceRequestArgs extends fhir.DomainResourceArgs {
      */
     instantiatesCanonical?: fhir.FhirCanonical[] | string[] | undefined;
     /**
+     * Extended properties for primitive element: DeviceRequest.instantiatesCanonical
+     */
+    _instantiatesCanonical?: (fhir.FhirElementArgs | null)[];
+    /**
      * This might be an HTML page, PDF, etc. or could just be a non-resolvable URI identifier.
      */
     instantiatesUri?: fhir.FhirUri[] | string[] | undefined;
+    /**
+     * Extended properties for primitive element: DeviceRequest.instantiatesUri
+     */
+    _instantiatesUri?: (fhir.FhirElementArgs | null)[];
     /**
      * Plan/proposal/order fulfilled by this request.
      */
@@ -97,13 +105,25 @@ export interface DeviceRequestArgs extends fhir.DomainResourceArgs {
      */
     status?: fhir.FhirCode<RequestStatusCodeType> | string | undefined;
     /**
+     * Extended properties for primitive element: DeviceRequest.status
+     */
+    _status?: fhir.FhirElementArgs;
+    /**
      * Whether the request is a proposal, plan, an original order or a reflex order.
      */
     intent: fhir.FhirCode<RequestIntentCodeType> | string | undefined;
     /**
+     * Extended properties for primitive element: DeviceRequest.intent
+     */
+    _intent?: fhir.FhirElementArgs;
+    /**
      * Indicates how quickly the {{title}} should be addressed with respect to other requests.
      */
     priority?: fhir.FhirCode<RequestPriorityCodeType> | string | undefined;
+    /**
+     * Extended properties for primitive element: DeviceRequest.priority
+     */
+    _priority?: fhir.FhirElementArgs;
     /**
      * The details of the device to be used.
      */
@@ -148,6 +168,10 @@ export interface DeviceRequestArgs extends fhir.DomainResourceArgs {
      * When the request transitioned to being actionable.
      */
     authoredOn?: fhir.FhirDateTime | string | undefined;
+    /**
+     * Extended properties for primitive element: DeviceRequest.authoredOn
+     */
+    _authoredOn?: fhir.FhirElementArgs;
     /**
      * The individual who initiated the request and has responsibility for its activation.
      */
@@ -331,7 +355,9 @@ export declare class DeviceRequest extends fhir.DomainResource {
         readonly Option: "option";
         readonly Order: "order";
         readonly OriginalOrder: "original-order";
-        readonly Plan: "plan";
+        readonly Plan: "plan"; /**
+         * Range means device should have a value that falls somewhere within the specified range.
+         */
         readonly Proposal: "proposal";
         readonly ReflexOrder: "reflex-order";
     };

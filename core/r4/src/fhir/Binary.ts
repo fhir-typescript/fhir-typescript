@@ -18,6 +18,10 @@ export interface BinaryArgs extends fhir.ResourceArgs {
    */
   contentType: fhir.FhirCode|string|undefined;
   /**
+   * Extended properties for primitive element: Binary.contentType
+   */
+  _contentType?:fhir.FhirElementArgs;
+  /**
    * Very often, a server will also know of a resource that references the binary, and can automatically apply the appropriate access rules based on that reference. However, there are some circumstances where this is not appropriate, e.g. the binary is uploaded directly to the server without any linking resource, the binary is referred to from multiple different resources, and/or the binary is content such as an application logo that has less protection than any of the resources that reference it.
    */
   securityContext?: fhir.ReferenceArgs|undefined;
@@ -25,6 +29,10 @@ export interface BinaryArgs extends fhir.ResourceArgs {
    * If the content type is itself base64 encoding, then this will be base64 encoded twice - what is created by un-base64ing the content must be the specified content type.
    */
   data?: fhir.FhirBase64Binary|string|undefined;
+  /**
+   * Extended properties for primitive element: Binary.data
+   */
+  _data?:fhir.FhirElementArgs;
 }
 
 /**
@@ -59,8 +67,16 @@ export class Binary extends fhir.Resource {
     this.resourceType = 'Binary';
     if (source['contentType']) { this.contentType = new fhir.FhirCode({value: source.contentType}); }
     else { this.contentType = null; }
+    if (source['_contentType']) {
+      if (this.contentType) { this.contentType.addExtendedProperties(source._contentType!); }
+      else { this.contentType = new fhir.FhirCode(source._contentType as Partial<fhir.FhirCodeArgs>); }
+    }
     if (source['securityContext']) { this.securityContext = new fhir.Reference(source.securityContext); }
     if (source['data']) { this.data = new fhir.FhirBase64Binary({value: source.data}); }
+    if (source['_data']) {
+      if (this.data) { this.data.addExtendedProperties(source._data!); }
+      else { this.data = new fhir.FhirBase64Binary(source._data as Partial<fhir.FhirBase64BinaryArgs>); }
+    }
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).

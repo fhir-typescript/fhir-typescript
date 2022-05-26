@@ -32,6 +32,10 @@ export interface ObservationReferenceRangeArgs extends fhir.BackboneElementArgs 
      * Text based reference range in an observation which may be used when a quantitative range is not appropriate for an observation.  An example would be a reference value of "Negative" or a list or table of "normals".
      */
     text?: fhir.FhirString | string | undefined;
+    /**
+     * Extended properties for primitive element: Observation.referenceRange.text
+     */
+    _text?: fhir.FhirElementArgs;
 }
 /**
  * Most observations only have one generic reference range. Systems MAY choose to restrict to only supplying the relevant reference range based on knowledge about the patient (e.g., specific to the patient's age, gender, weight and other factors), but this might not be possible or appropriate. Whenever more than one reference range is supplied, the differences between them SHOULD be provided in the reference range and/or age properties.
@@ -223,6 +227,10 @@ export interface ObservationArgs extends fhir.DomainResourceArgs {
      */
     status: fhir.FhirCode<ObservationStatusCodeType> | string | undefined;
     /**
+     * Extended properties for primitive element: Observation.status
+     */
+    _status?: fhir.FhirElementArgs;
+    /**
      * In addition to the required category valueset, this element allows various categorization schemes based on the owner’s definition of the category and effectively multiple categories can be used at once.  The level of granularity is defined by the category concepts in the value set.
      */
     category?: fhir.CodeableConceptArgs[] | undefined;
@@ -266,6 +274,10 @@ export interface ObservationArgs extends fhir.DomainResourceArgs {
      * For Observations that don’t require review and verification, it may be the same as the [`lastUpdated` ](resource-definitions.html#Meta.lastUpdated) time of the resource itself.  For Observations that do require review and verification for certain updates, it might not be the same as the `lastUpdated` time of the resource itself due to a non-clinically significant update that doesn’t require the new version to be reviewed and verified again.
      */
     issued?: fhir.FhirInstant | string | undefined;
+    /**
+     * Extended properties for primitive element: Observation.issued
+     */
+    _issued?: fhir.FhirElementArgs;
     /**
      * Who was responsible for asserting the observed value as "true".
      */

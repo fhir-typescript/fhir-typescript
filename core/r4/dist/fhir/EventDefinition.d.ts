@@ -15,6 +15,10 @@ export interface EventDefinitionArgs extends fhir.DomainResourceArgs {
      */
     url?: fhir.FhirUri | string | undefined;
     /**
+     * Extended properties for primitive element: EventDefinition.url
+     */
+    _url?: fhir.FhirElementArgs;
+    /**
      * Typically, this is used for identifiers that can go in an HL7 V3 II (instance identifier) data type, and can then identify this event definition outside of FHIR, where it is not possible to use the logical URI.
      */
     identifier?: fhir.IdentifierArgs[] | undefined;
@@ -23,25 +27,49 @@ export interface EventDefinitionArgs extends fhir.DomainResourceArgs {
      */
     version?: fhir.FhirString | string | undefined;
     /**
+     * Extended properties for primitive element: EventDefinition.version
+     */
+    _version?: fhir.FhirElementArgs;
+    /**
      * The name is not expected to be globally unique. The name should be a simple alphanumeric type name to ensure that it is machine-processing friendly.
      */
     name?: fhir.FhirString | string | undefined;
+    /**
+     * Extended properties for primitive element: EventDefinition.name
+     */
+    _name?: fhir.FhirElementArgs;
     /**
      * This name does not need to be machine-processing friendly and may contain punctuation, white-space, etc.
      */
     title?: fhir.FhirString | string | undefined;
     /**
+     * Extended properties for primitive element: EventDefinition.title
+     */
+    _title?: fhir.FhirElementArgs;
+    /**
      * An explanatory or alternate title for the event definition giving additional information about its content.
      */
     subtitle?: fhir.FhirString | string | undefined;
+    /**
+     * Extended properties for primitive element: EventDefinition.subtitle
+     */
+    _subtitle?: fhir.FhirElementArgs;
     /**
      * Allows filtering of event definitions that are appropriate for use versus not.
      */
     status: fhir.FhirCode<PublicationStatusCodeType> | string | undefined;
     /**
+     * Extended properties for primitive element: EventDefinition.status
+     */
+    _status?: fhir.FhirElementArgs;
+    /**
      * Allows filtering of event definitions that are appropriate for use versus not.
      */
     experimental?: fhir.FhirBoolean | boolean | undefined;
+    /**
+     * Extended properties for primitive element: EventDefinition.experimental
+     */
+    _experimental?: fhir.FhirElementArgs;
     /**
      * A code or group definition that describes the intended subject of the event definition.
      */
@@ -59,9 +87,17 @@ export interface EventDefinitionArgs extends fhir.DomainResourceArgs {
      */
     date?: fhir.FhirDateTime | string | undefined;
     /**
+     * Extended properties for primitive element: EventDefinition.date
+     */
+    _date?: fhir.FhirElementArgs;
+    /**
      * Usually an organization but may be an individual. The publisher (or steward) of the event definition is the organization or individual primarily responsible for the maintenance and upkeep of the event definition. This is not necessarily the same individual or organization that developed and initially authored the content. The publisher is the primary point of contact for questions or issues with the event definition. This item SHOULD be populated unless the information is available from context.
      */
     publisher?: fhir.FhirString | string | undefined;
+    /**
+     * Extended properties for primitive element: EventDefinition.publisher
+     */
+    _publisher?: fhir.FhirElementArgs;
     /**
      * May be a web site, an email address, a telephone number, etc.
      */
@@ -70,6 +106,10 @@ export interface EventDefinitionArgs extends fhir.DomainResourceArgs {
      * This description can be used to capture details such as why the event definition was built, comments about misuse, instructions for clinical use and interpretation, literature references, examples from the paper world, etc. It is not a rendering of the event definition as conveyed in the 'text' field of the resource itself. This item SHOULD be populated unless the information is available from context (e.g. the language of the event definition is presumed to be the predominant language in the place the event definition was created).
      */
     description?: fhir.FhirMarkdown | string | undefined;
+    /**
+     * Extended properties for primitive element: EventDefinition.description
+     */
+    _description?: fhir.FhirElementArgs;
     /**
      * When multiple useContexts are specified, there is no expectation that all or any of the contexts apply.
      */
@@ -83,21 +123,41 @@ export interface EventDefinitionArgs extends fhir.DomainResourceArgs {
      */
     purpose?: fhir.FhirMarkdown | string | undefined;
     /**
+     * Extended properties for primitive element: EventDefinition.purpose
+     */
+    _purpose?: fhir.FhirElementArgs;
+    /**
      * A detailed description of how the event definition is used from a clinical perspective.
      */
     usage?: fhir.FhirString | string | undefined;
+    /**
+     * Extended properties for primitive element: EventDefinition.usage
+     */
+    _usage?: fhir.FhirElementArgs;
     /**
      * A copyright statement relating to the event definition and/or its contents. Copyright statements are generally legal restrictions on the use and publishing of the event definition.
      */
     copyright?: fhir.FhirMarkdown | string | undefined;
     /**
+     * Extended properties for primitive element: EventDefinition.copyright
+     */
+    _copyright?: fhir.FhirElementArgs;
+    /**
      * The 'date' element may be more recent than the approval date because of minor changes or editorial corrections.
      */
     approvalDate?: fhir.FhirDate | string | undefined;
     /**
+     * Extended properties for primitive element: EventDefinition.approvalDate
+     */
+    _approvalDate?: fhir.FhirElementArgs;
+    /**
      * If specified, this date follows the original approval date.
      */
     lastReviewDate?: fhir.FhirDate | string | undefined;
+    /**
+     * Extended properties for primitive element: EventDefinition.lastReviewDate
+     */
+    _lastReviewDate?: fhir.FhirElementArgs;
     /**
      * The effective period for a event definition  determines when the content is applicable for usage and is independent of publication and review dates. For example, a measure intended to be used for the year 2016 might be published in 2015.
      */

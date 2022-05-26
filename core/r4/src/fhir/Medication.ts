@@ -38,6 +38,10 @@ export interface MedicationIngredientArgs extends fhir.BackboneElementArgs {
    */
   isActive?: fhir.FhirBoolean|boolean|undefined;
   /**
+   * Extended properties for primitive element: Medication.ingredient.isActive
+   */
+  _isActive?:fhir.FhirElementArgs;
+  /**
    * Specifies how many (or how much) of the items there are in this Medication.  For example, 250 mg per tablet.  This is expressed as a ratio where the numerator is 250mg and the denominator is 1 tablet.
    */
   strength?: fhir.RatioArgs|undefined;
@@ -77,6 +81,10 @@ export class MedicationIngredient extends fhir.BackboneElement {
     else if (source['itemReference']) { this.item = new fhir.Reference(source.itemReference); }
     else { this.item = null; }
     if (source['isActive']) { this.isActive = new fhir.FhirBoolean({value: source.isActive}); }
+    if (source['_isActive']) {
+      if (this.isActive) { this.isActive.addExtendedProperties(source._isActive!); }
+      else { this.isActive = new fhir.FhirBoolean(source._isActive as Partial<fhir.FhirBooleanArgs>); }
+    }
     if (source['strength']) { this.strength = new fhir.Ratio(source.strength); }
   }
   /**
@@ -101,9 +109,17 @@ export interface MedicationBatchArgs extends fhir.BackboneElementArgs {
    */
   lotNumber?: fhir.FhirString|string|undefined;
   /**
+   * Extended properties for primitive element: Medication.batch.lotNumber
+   */
+  _lotNumber?:fhir.FhirElementArgs;
+  /**
    * When this specific batch of product will expire.
    */
   expirationDate?: fhir.FhirDateTime|string|undefined;
+  /**
+   * Extended properties for primitive element: Medication.batch.expirationDate
+   */
+  _expirationDate?:fhir.FhirElementArgs;
 }
 
 /**
@@ -128,7 +144,15 @@ export class MedicationBatch extends fhir.BackboneElement {
   constructor(source:Partial<MedicationBatchArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
     if (source['lotNumber']) { this.lotNumber = new fhir.FhirString({value: source.lotNumber}); }
+    if (source['_lotNumber']) {
+      if (this.lotNumber) { this.lotNumber.addExtendedProperties(source._lotNumber!); }
+      else { this.lotNumber = new fhir.FhirString(source._lotNumber as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['expirationDate']) { this.expirationDate = new fhir.FhirDateTime({value: source.expirationDate}); }
+    if (source['_expirationDate']) {
+      if (this.expirationDate) { this.expirationDate.addExtendedProperties(source._expirationDate!); }
+      else { this.expirationDate = new fhir.FhirDateTime(source._expirationDate as Partial<fhir.FhirDateTimeArgs>); }
+    }
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -160,6 +184,10 @@ export interface MedicationArgs extends fhir.DomainResourceArgs {
    * This status is intended to identify if the medication in a local system is in active use within a drug database or inventory.  For example, a pharmacy system may create a new drug file record for a compounded product "ABC Hospital Special Cream" with an active status.  At some point in the future, it may be determined that the drug record was created with an error and the status is changed to "entered in error".   This status is not intended to specify if a medication is part of a particular formulary.  It is possible that the drug record may be referenced by multiple formularies or catalogues and each of those entries would have a separate status.
    */
   status?: fhir.FhirCode<MedicationStatusCodeType>|string|undefined;
+  /**
+   * Extended properties for primitive element: Medication.status
+   */
+  _status?:fhir.FhirElementArgs;
   /**
    * Describes the details of the manufacturer of the medication product.  This is not intended to represent the distributor of a medication product.
    */
@@ -236,6 +264,10 @@ export class Medication extends fhir.DomainResource {
     else { this.identifier = []; }
     if (source['code']) { this.code = new fhir.CodeableConcept(source.code); }
     if (source['status']) { this.status = new fhir.FhirCode<MedicationStatusCodeType>({value: source.status}); }
+    if (source['_status']) {
+      if (this.status) { this.status.addExtendedProperties(source._status!); }
+      else { this.status = new fhir.FhirCode<MedicationStatusCodeType>(source._status as Partial<fhir.FhirCode>); }
+    }
     if (source['manufacturer']) { this.manufacturer = new fhir.Reference(source.manufacturer); }
     if (source['form']) { this.form = new fhir.CodeableConcept(source.form); }
     if (source['amount']) { this.amount = new fhir.Ratio(source.amount); }

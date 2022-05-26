@@ -17,6 +17,10 @@ export interface ResearchSubjectArgs extends fhir.DomainResourceArgs {
      */
     status: fhir.FhirCode<ResearchSubjectStatusCodeType> | string | undefined;
     /**
+     * Extended properties for primitive element: ResearchSubject.status
+     */
+    _status?: fhir.FhirElementArgs;
+    /**
      * The dates the subject began and ended their participation in the study.
      */
     period?: fhir.PeriodArgs | undefined;
@@ -33,9 +37,17 @@ export interface ResearchSubjectArgs extends fhir.DomainResourceArgs {
      */
     assignedArm?: fhir.FhirString | string | undefined;
     /**
+     * Extended properties for primitive element: ResearchSubject.assignedArm
+     */
+    _assignedArm?: fhir.FhirElementArgs;
+    /**
      * The name of the arm in the study the subject actually followed as part of this study.
      */
     actualArm?: fhir.FhirString | string | undefined;
+    /**
+     * Extended properties for primitive element: ResearchSubject.actualArm
+     */
+    _actualArm?: fhir.FhirElementArgs;
     /**
      * A record of the patient's informed agreement to participate in the study.
      */

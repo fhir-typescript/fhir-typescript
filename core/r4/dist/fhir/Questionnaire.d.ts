@@ -12,9 +12,17 @@ export interface QuestionnaireItemEnableWhenArgs extends fhir.BackboneElementArg
      */
     question: fhir.FhirString | string | undefined;
     /**
+     * Extended properties for primitive element: Questionnaire.item.enableWhen.question
+     */
+    _question?: fhir.FhirElementArgs;
+    /**
      * Specifies the criteria by which the question is enabled.
      */
     operator: fhir.FhirCode<QuestionnaireEnableOperatorCodeType> | string | undefined;
+    /**
+     * Extended properties for primitive element: Questionnaire.item.enableWhen.operator
+     */
+    _operator?: fhir.FhirElementArgs;
     /**
      * A value that the referenced question is tested using the specified operator in order for the item to be enabled.
      */
@@ -141,6 +149,10 @@ export interface QuestionnaireItemAnswerOptionArgs extends fhir.BackboneElementA
      * Use this instead of initial[v] if answerValueSet is present.
      */
     initialSelected?: fhir.FhirBoolean | boolean | undefined;
+    /**
+     * Extended properties for primitive element: Questionnaire.item.answerOption.initialSelected
+     */
+    _initialSelected?: fhir.FhirElementArgs;
 }
 /**
  * This element can be used when the value set machinery of answerValueSet is deemed too cumbersome or when there's a need to capture possible answers that are not codes.
@@ -262,9 +274,17 @@ export interface QuestionnaireItemArgs extends fhir.BackboneElementArgs {
      */
     linkId: fhir.FhirString | string | undefined;
     /**
+     * Extended properties for primitive element: Questionnaire.item.linkId
+     */
+    _linkId?: fhir.FhirElementArgs;
+    /**
      * The uri refers to an ElementDefinition in a [StructureDefinition](structuredefinition.html#) and always starts with the [canonical URL](references.html#canonical) for the target resource. When referring to a StructureDefinition, a fragment identifier is used to specify the element definition by its id [Element.id](element-definitions.html#Element.id). E.g. http://hl7.org/fhir/StructureDefinition/Observation#Observation.value[x]. In the absence of a fragment identifier, the first/root element definition in the target is the matching element definition.
      */
     definition?: fhir.FhirUri | string | undefined;
+    /**
+     * Extended properties for primitive element: Questionnaire.item.definition
+     */
+    _definition?: fhir.FhirElementArgs;
     /**
      * The value may come from the ElementDefinition referred to by .definition.
      */
@@ -274,13 +294,25 @@ export interface QuestionnaireItemArgs extends fhir.BackboneElementArgs {
      */
     prefix?: fhir.FhirString | string | undefined;
     /**
+     * Extended properties for primitive element: Questionnaire.item.prefix
+     */
+    _prefix?: fhir.FhirElementArgs;
+    /**
      * When using this element to represent the name of a section, use group type item and also make sure to limit the text element to a short string suitable for display as a section heading.  Group item instructions should be included as a display type item within the group.
      */
     text?: fhir.FhirString | string | undefined;
     /**
+     * Extended properties for primitive element: Questionnaire.item.text
+     */
+    _text?: fhir.FhirElementArgs;
+    /**
      * Additional constraints on the type of answer can be conveyed by extensions. The value may come from the ElementDefinition referred to by .definition.
      */
     type: fhir.FhirCode<ItemTypeCodeType> | string | undefined;
+    /**
+     * Extended properties for primitive element: Questionnaire.item.type
+     */
+    _type?: fhir.FhirElementArgs;
     /**
      * If multiple repetitions of this extension are present, the item should be enabled when the condition for *any* of the repetitions is true.  I.e. treat "enableWhen"s as being joined by an "or" clause.  This element is a modifier because if enableWhen is present for an item, "required" is ignored unless one of the enableWhen conditions is met. When an item is disabled, all of its descendants are disabled, regardless of what their own enableWhen logic might evaluate to.
      */
@@ -290,9 +322,17 @@ export interface QuestionnaireItemArgs extends fhir.BackboneElementArgs {
      */
     enableBehavior?: fhir.FhirCode<QuestionnaireEnableBehaviorCodeType> | string | undefined;
     /**
+     * Extended properties for primitive element: Questionnaire.item.enableBehavior
+     */
+    _enableBehavior?: fhir.FhirElementArgs;
+    /**
      * Questionnaire.item.required only has meaning for elements that are conditionally enabled with enableWhen if the condition evaluates to true.  If an item that contains other items is marked as required, that does not automatically make the contained elements required (though required groups must contain at least one child element). The value may come from the ElementDefinition referred to by .definition.
      */
     required?: fhir.FhirBoolean | boolean | undefined;
+    /**
+     * Extended properties for primitive element: Questionnaire.item.required
+     */
+    _required?: fhir.FhirElementArgs;
     /**
      * If a question is marked as repeats=true, then multiple answers can be provided for the question in the corresponding QuestionnaireResponse.  When rendering the questionnaire, it is up to the rendering software whether to render the question text for each answer repetition (i.e. "repeat the question") or to simply allow entry/selection of multiple answers for the question (repeat the answers).  Which is most appropriate visually may depend on the type of answer as well as whether there are nested items.
      * The resulting QuestionnaireResponse will be populated the same way regardless of rendering - one 'question' item with multiple answer values.
@@ -300,17 +340,33 @@ export interface QuestionnaireItemArgs extends fhir.BackboneElementArgs {
      */
     repeats?: fhir.FhirBoolean | boolean | undefined;
     /**
+     * Extended properties for primitive element: Questionnaire.item.repeats
+     */
+    _repeats?: fhir.FhirElementArgs;
+    /**
      * The value of readOnly elements can be established by asserting  extensions for defaultValues, linkages that support pre-population and/or extensions that support calculation based on other answers.
      */
     readOnly?: fhir.FhirBoolean | boolean | undefined;
+    /**
+     * Extended properties for primitive element: Questionnaire.item.readOnly
+     */
+    _readOnly?: fhir.FhirElementArgs;
     /**
      * For base64binary, reflects the number of characters representing the encoded data, not the number of bytes of the binary data. The value may come from the ElementDefinition referred to by .definition.
      */
     maxLength?: fhir.FhirInteger | number | undefined;
     /**
+     * Extended properties for primitive element: Questionnaire.item.maxLength
+     */
+    _maxLength?: fhir.FhirElementArgs;
+    /**
      * LOINC defines many useful value sets for questionnaire responses. See [LOINC Answer Lists](loinc.html#alist). The value may come from the ElementDefinition referred to by .definition.
      */
     answerValueSet?: fhir.FhirCanonical | string | undefined;
+    /**
+     * Extended properties for primitive element: Questionnaire.item.answerValueSet
+     */
+    _answerValueSet?: fhir.FhirElementArgs;
     /**
      * This element can be used when the value set machinery of answerValueSet is deemed too cumbersome or when there's a need to capture possible answers that are not codes.
      */
@@ -449,6 +505,10 @@ export interface QuestionnaireArgs extends fhir.DomainResourceArgs {
      */
     url?: fhir.FhirUri | string | undefined;
     /**
+     * Extended properties for primitive element: Questionnaire.url
+     */
+    _url?: fhir.FhirElementArgs;
+    /**
      * Typically, this is used for identifiers that can go in an HL7 V3 II (instance identifier) data type, and can then identify this questionnaire outside of FHIR, where it is not possible to use the logical URI.
      */
     identifier?: fhir.IdentifierArgs[] | undefined;
@@ -457,37 +517,73 @@ export interface QuestionnaireArgs extends fhir.DomainResourceArgs {
      */
     version?: fhir.FhirString | string | undefined;
     /**
+     * Extended properties for primitive element: Questionnaire.version
+     */
+    _version?: fhir.FhirElementArgs;
+    /**
      * The name is not expected to be globally unique. The name should be a simple alphanumeric type name to ensure that it is machine-processing friendly.
      */
     name?: fhir.FhirString | string | undefined;
+    /**
+     * Extended properties for primitive element: Questionnaire.name
+     */
+    _name?: fhir.FhirElementArgs;
     /**
      * This name does not need to be machine-processing friendly and may contain punctuation, white-space, etc.
      */
     title?: fhir.FhirString | string | undefined;
     /**
+     * Extended properties for primitive element: Questionnaire.title
+     */
+    _title?: fhir.FhirElementArgs;
+    /**
      * The URL of a Questionnaire that this Questionnaire is based on.
      */
     derivedFrom?: fhir.FhirCanonical[] | string[] | undefined;
+    /**
+     * Extended properties for primitive element: Questionnaire.derivedFrom
+     */
+    _derivedFrom?: (fhir.FhirElementArgs | null)[];
     /**
      * Allows filtering of questionnaires that are appropriate for use versus not.
      */
     status: fhir.FhirCode<PublicationStatusCodeType> | string | undefined;
     /**
+     * Extended properties for primitive element: Questionnaire.status
+     */
+    _status?: fhir.FhirElementArgs;
+    /**
      * Allows filtering of questionnaires that are appropriate for use versus not.
      */
     experimental?: fhir.FhirBoolean | boolean | undefined;
+    /**
+     * Extended properties for primitive element: Questionnaire.experimental
+     */
+    _experimental?: fhir.FhirElementArgs;
     /**
      * If none are specified, then the subject is unlimited.
      */
     subjectType?: fhir.FhirCode[] | string[] | undefined;
     /**
+     * Extended properties for primitive element: Questionnaire.subjectType
+     */
+    _subjectType?: (fhir.FhirElementArgs | null)[];
+    /**
      * Note that this is not the same as the resource last-modified-date, since the resource may be a secondary representation of the questionnaire. Additional specific dates may be added as extensions or be found by consulting Provenances associated with past versions of the resource.
      */
     date?: fhir.FhirDateTime | string | undefined;
     /**
+     * Extended properties for primitive element: Questionnaire.date
+     */
+    _date?: fhir.FhirElementArgs;
+    /**
      * Usually an organization but may be an individual. The publisher (or steward) of the questionnaire is the organization or individual primarily responsible for the maintenance and upkeep of the questionnaire. This is not necessarily the same individual or organization that developed and initially authored the content. The publisher is the primary point of contact for questions or issues with the questionnaire. This item SHOULD be populated unless the information is available from context.
      */
     publisher?: fhir.FhirString | string | undefined;
+    /**
+     * Extended properties for primitive element: Questionnaire.publisher
+     */
+    _publisher?: fhir.FhirElementArgs;
     /**
      * May be a web site, an email address, a telephone number, etc.
      */
@@ -496,6 +592,10 @@ export interface QuestionnaireArgs extends fhir.DomainResourceArgs {
      * This description can be used to capture details such as why the questionnaire was built, comments about misuse, instructions for clinical use and interpretation, literature references, examples from the paper world, etc. It is not a rendering of the questionnaire as conveyed in the 'text' field of the resource itself. This item SHOULD be populated unless the information is available from context (e.g. the language of the questionnaire is presumed to be the predominant language in the place the questionnaire was created).
      */
     description?: fhir.FhirMarkdown | string | undefined;
+    /**
+     * Extended properties for primitive element: Questionnaire.description
+     */
+    _description?: fhir.FhirElementArgs;
     /**
      * When multiple useContexts are specified, there is no expectation that all or any of the contexts apply.
      */
@@ -509,17 +609,33 @@ export interface QuestionnaireArgs extends fhir.DomainResourceArgs {
      */
     purpose?: fhir.FhirMarkdown | string | undefined;
     /**
+     * Extended properties for primitive element: Questionnaire.purpose
+     */
+    _purpose?: fhir.FhirElementArgs;
+    /**
      * A copyright statement relating to the questionnaire and/or its contents. Copyright statements are generally legal restrictions on the use and publishing of the questionnaire.
      */
     copyright?: fhir.FhirMarkdown | string | undefined;
+    /**
+     * Extended properties for primitive element: Questionnaire.copyright
+     */
+    _copyright?: fhir.FhirElementArgs;
     /**
      * The 'date' element may be more recent than the approval date because of minor changes or editorial corrections.
      */
     approvalDate?: fhir.FhirDate | string | undefined;
     /**
+     * Extended properties for primitive element: Questionnaire.approvalDate
+     */
+    _approvalDate?: fhir.FhirElementArgs;
+    /**
      * If specified, this date follows the original approval date.
      */
     lastReviewDate?: fhir.FhirDate | string | undefined;
+    /**
+     * Extended properties for primitive element: Questionnaire.lastReviewDate
+     */
+    _lastReviewDate?: fhir.FhirElementArgs;
     /**
      * The effective period for a questionnaire  determines when the content is applicable for usage and is independent of publication and review dates. For example, a measure intended to be used for the year 2016 might be published in 2015.
      */
@@ -744,15 +860,16 @@ export declare class Questionnaire extends fhir.DomainResource {
         readonly MessageDefinition: "MessageDefinition";
         readonly MessageHeader: "MessageHeader";
         readonly MolecularSequence: "MolecularSequence";
-        readonly NamingSystem: "NamingSystem"; /**
-         * This ''can'' be a meaningful identifier (e.g. a LOINC code) but is not intended to have any meaning.  GUIDs or sequential numbers are appropriate here.
-         */
+        readonly NamingSystem: "NamingSystem";
         readonly NutritionOrder: "NutritionOrder";
         readonly Observation: "Observation";
         readonly ObservationDefinition: "ObservationDefinition";
         readonly OperationDefinition: "OperationDefinition";
         readonly OperationOutcome: "OperationOutcome";
         readonly Organization: "Organization";
+        /**
+         * This element can be used when the value set machinery of answerValueSet is deemed too cumbersome or when there's a need to capture possible answers that are not codes.
+         */
         readonly OrganizationAffiliation: "OrganizationAffiliation";
         readonly Parameters: "Parameters";
         readonly Patient: "Patient";
@@ -766,15 +883,15 @@ export declare class Questionnaire extends fhir.DomainResource {
         readonly Provenance: "Provenance";
         readonly Questionnaire: "Questionnaire";
         readonly QuestionnaireResponse: "QuestionnaireResponse";
-        readonly RelatedPerson: "RelatedPerson"; /**
-         * The user is allowed to change the value and override the default (unless marked as read-only). If the user doesn't change the value, then this initial value will be persisted when the QuestionnaireResponse is initially created.  Note that initial values can influence results.  The data type of initial[x] must agree with the item.type, and only repeating items can have more then one initial value.
-         */
+        readonly RelatedPerson: "RelatedPerson";
         readonly RequestGroup: "RequestGroup";
         readonly ResearchDefinition: "ResearchDefinition";
         readonly ResearchElementDefinition: "ResearchElementDefinition";
         readonly ResearchStudy: "ResearchStudy";
         readonly ResearchSubject: "ResearchSubject";
-        readonly Resource: "Resource";
+        readonly Resource: "Resource"; /**
+         * The value of readOnly elements can be established by asserting  extensions for defaultValues, linkages that support pre-population and/or extensions that support calculation based on other answers.
+         */
         readonly RiskAssessment: "RiskAssessment";
         readonly RiskEvidenceSynthesis: "RiskEvidenceSynthesis";
         readonly Schedule: "Schedule";

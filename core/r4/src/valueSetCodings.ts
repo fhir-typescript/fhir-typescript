@@ -35,7 +35,7 @@ import { AllergyIntoleranceCategoryCodings, AllergyIntoleranceCategoryCodingType
 import { AllergyIntoleranceCriticalityCodings, AllergyIntoleranceCriticalityCodingType, } from './fhirValueSets/AllergyIntoleranceCriticalityCodings.js'
 import { AllergyIntoleranceTypeCodings, AllergyIntoleranceTypeCodingType, } from './fhirValueSets/AllergyIntoleranceTypeCodings.js'
 import { AllergyintoleranceClinicalCodings, AllergyintoleranceClinicalCodingType, } from './fhirValueSets/AllergyintoleranceClinicalCodings.js'
-import { AllergyintoleranceCodeCodings, AllergyintoleranceCodeCodingType, } from './fhirValueSets/AllergyintoleranceCodeCodings.js'
+import { AllergyintoleranceCodings, AllergyintoleranceCodingType, } from './fhirValueSets/AllergyintoleranceCodings.js'
 import { AllergyintoleranceVerificationCodings, AllergyintoleranceVerificationCodingType, } from './fhirValueSets/AllergyintoleranceVerificationCodings.js'
 import { AppointmentCancellationReasonCodings, AppointmentCancellationReasonCodingType, } from './fhirValueSets/AppointmentCancellationReasonCodings.js'
 import { AppointmentstatusCodings, AppointmentstatusCodingType, } from './fhirValueSets/AppointmentstatusCodings.js'
@@ -58,7 +58,7 @@ import { BenefitUnitCodings, BenefitUnitCodingType, } from './fhirValueSets/Bene
 import { BindingStrengthCodings, BindingStrengthCodingType, } from './fhirValueSets/BindingStrengthCodings.js'
 import { BodySiteCodings, BodySiteCodingType, } from './fhirValueSets/BodySiteCodings.js'
 import { BodysiteLateralityCodings, BodysiteLateralityCodingType, } from './fhirValueSets/BodysiteLateralityCodings.js'
-import { BodystructureCodeCodings, BodystructureCodeCodingType, } from './fhirValueSets/BodystructureCodeCodings.js'
+import { BodystructureCodings, BodystructureCodingType, } from './fhirValueSets/BodystructureCodings.js'
 import { BodystructureRelativeLocationCodings, BodystructureRelativeLocationCodingType, } from './fhirValueSets/BodystructureRelativeLocationCodings.js'
 import { BundleTypeCodings, BundleTypeCodingType, } from './fhirValueSets/BundleTypeCodings.js'
 import { C80DocTypeCodings, C80DocTypeCodingType, } from './fhirValueSets/C80DocTypeCodings.js'
@@ -101,7 +101,7 @@ import { ConceptPropertyTypeCodings, ConceptPropertyTypeCodingType, } from './fh
 import { ConceptmapUnmappedModeCodings, ConceptmapUnmappedModeCodingType, } from './fhirValueSets/ConceptmapUnmappedModeCodings.js'
 import { ConditionCategoryCodings, ConditionCategoryCodingType, } from './fhirValueSets/ConditionCategoryCodings.js'
 import { ConditionClinicalCodings, ConditionClinicalCodingType, } from './fhirValueSets/ConditionClinicalCodings.js'
-import { ConditionCodeCodings, ConditionCodeCodingType, } from './fhirValueSets/ConditionCodeCodings.js'
+import { ConditionCodings, ConditionCodingType, } from './fhirValueSets/ConditionCodings.js'
 import { ConditionOutcomeCodings, ConditionOutcomeCodingType, } from './fhirValueSets/ConditionOutcomeCodings.js'
 import { ConditionSeverityCodings, ConditionSeverityCodingType, } from './fhirValueSets/ConditionSeverityCodings.js'
 import { ConditionStageTypeCodings, ConditionStageTypeCodingType, } from './fhirValueSets/ConditionStageTypeCodings.js'
@@ -112,7 +112,7 @@ import { ConditionalReadStatusCodings, ConditionalReadStatusCodingType, } from '
 import { ConsentActionCodings, ConsentActionCodingType, } from './fhirValueSets/ConsentActionCodings.js'
 import { ConsentCategoryCodings, ConsentCategoryCodingType, } from './fhirValueSets/ConsentCategoryCodings.js'
 import { ConsentContentClassCodings, ConsentContentClassCodingType, } from './fhirValueSets/ConsentContentClassCodings.js'
-import { ConsentContentCodeCodings, ConsentContentCodeCodingType, } from './fhirValueSets/ConsentContentCodeCodings.js'
+import { ConsentContentCodings, ConsentContentCodingType, } from './fhirValueSets/ConsentContentCodings.js'
 import { ConsentDataMeaningCodings, ConsentDataMeaningCodingType, } from './fhirValueSets/ConsentDataMeaningCodings.js'
 import { ConsentPolicyCodings, ConsentPolicyCodingType, } from './fhirValueSets/ConsentPolicyCodings.js'
 import { ConsentProvisionTypeCodings, ConsentProvisionTypeCodingType, } from './fhirValueSets/ConsentProvisionTypeCodings.js'
@@ -221,7 +221,7 @@ import { ExDiagnosisrelatedgroupCodings, ExDiagnosisrelatedgroupCodingType, } fr
 import { ExDiagnosistypeCodings, ExDiagnosistypeCodingType, } from './fhirValueSets/ExDiagnosistypeCodings.js'
 import { ExPaymenttypeCodings, ExPaymenttypeCodingType, } from './fhirValueSets/ExPaymenttypeCodings.js'
 import { ExProcedureTypeCodings, ExProcedureTypeCodingType, } from './fhirValueSets/ExProcedureTypeCodings.js'
-import { ExProgramCodeCodings, ExProgramCodeCodingType, } from './fhirValueSets/ExProgramCodeCodings.js'
+import { ExProgramCodings, ExProgramCodingType, } from './fhirValueSets/ExProgramCodings.js'
 import { ExRevenueCenterCodings, ExRevenueCenterCodingType, } from './fhirValueSets/ExRevenueCenterCodings.js'
 import { ExamplescenarioActorTypeCodings, ExamplescenarioActorTypeCodingType, } from './fhirValueSets/ExamplescenarioActorTypeCodings.js'
 import { ExplanationofbenefitStatusCodings, ExplanationofbenefitStatusCodingType, } from './fhirValueSets/ExplanationofbenefitStatusCodings.js'
@@ -231,7 +231,7 @@ import { ExtensionContextTypeCodings, ExtensionContextTypeCodingType, } from './
 import { FHIRVersionCodings, FHIRVersionCodingType, } from './fhirValueSets/FHIRVersionCodings.js'
 import { FilterOperatorCodings, FilterOperatorCodingType, } from './fhirValueSets/FilterOperatorCodings.js'
 import { FlagCategoryCodings, FlagCategoryCodingType, } from './fhirValueSets/FlagCategoryCodings.js'
-import { FlagCodeCodings, FlagCodeCodingType, } from './fhirValueSets/FlagCodeCodings.js'
+import { FlagCodings, FlagCodingType, } from './fhirValueSets/FlagCodings.js'
 import { FlagStatusCodings, FlagStatusCodingType, } from './fhirValueSets/FlagStatusCodings.js'
 import { FmStatusCodings, FmStatusCodingType, } from './fhirValueSets/FmStatusCodings.js'
 import { FoodTypeCodings, FoodTypeCodingType, } from './fhirValueSets/FoodTypeCodings.js'
@@ -249,7 +249,7 @@ import { GroupMeasureCodings, GroupMeasureCodingType, } from './fhirValueSets/Gr
 import { GroupTypeCodings, GroupTypeCodingType, } from './fhirValueSets/GroupTypeCodings.js'
 import { GuidanceResponseStatusCodings, GuidanceResponseStatusCodingType, } from './fhirValueSets/GuidanceResponseStatusCodings.js'
 import { GuidePageGenerationCodings, GuidePageGenerationCodingType, } from './fhirValueSets/GuidePageGenerationCodings.js'
-import { GuideParameterCodeCodings, GuideParameterCodeCodingType, } from './fhirValueSets/GuideParameterCodeCodings.js'
+import { GuideParameterCodings, GuideParameterCodingType, } from './fhirValueSets/GuideParameterCodings.js'
 import { HandlingConditionCodings, HandlingConditionCodingType, } from './fhirValueSets/HandlingConditionCodings.js'
 import { HistoryAbsentReasonCodings, HistoryAbsentReasonCodingType, } from './fhirValueSets/HistoryAbsentReasonCodings.js'
 import { HistoryStatusCodings, HistoryStatusCodingType, } from './fhirValueSets/HistoryStatusCodings.js'
@@ -357,7 +357,7 @@ import { NamingsystemTypeCodings, NamingsystemTypeCodingType, } from './fhirValu
 import { NarrativeStatusCodings, NarrativeStatusCodingType, } from './fhirValueSets/NarrativeStatusCodings.js'
 import { NetworkTypeCodings, NetworkTypeCodingType, } from './fhirValueSets/NetworkTypeCodings.js'
 import { NoteTypeCodings, NoteTypeCodingType, } from './fhirValueSets/NoteTypeCodings.js'
-import { NutrientCodeCodings, NutrientCodeCodingType, } from './fhirValueSets/NutrientCodeCodings.js'
+import { NutrientCodings, NutrientCodingType, } from './fhirValueSets/NutrientCodings.js'
 import { ObjectRoleCodings, ObjectRoleCodingType, } from './fhirValueSets/ObjectRoleCodings.js'
 import { ObservationCategoryCodings, ObservationCategoryCodingType, } from './fhirValueSets/ObservationCategoryCodings.js'
 import { ObservationCodings, ObservationCodingType, } from './fhirValueSets/ObservationCodings.js'
@@ -387,7 +387,7 @@ import { PractitionerRoleCodings, PractitionerRoleCodingType, } from './fhirValu
 import { PrecisionEstimateTypeCodings, PrecisionEstimateTypeCodingType, } from './fhirValueSets/PrecisionEstimateTypeCodings.js'
 import { PreparePatientPriorSpecimenCollectionCodings, PreparePatientPriorSpecimenCollectionCodingType, } from './fhirValueSets/PreparePatientPriorSpecimenCollectionCodings.js'
 import { ProcedureCategoryCodings, ProcedureCategoryCodingType, } from './fhirValueSets/ProcedureCategoryCodings.js'
-import { ProcedureCodeCodings, ProcedureCodeCodingType, } from './fhirValueSets/ProcedureCodeCodings.js'
+import { ProcedureCodings, ProcedureCodingType, } from './fhirValueSets/ProcedureCodings.js'
 import { ProcedureFollowupCodings, ProcedureFollowupCodingType, } from './fhirValueSets/ProcedureFollowupCodings.js'
 import { ProcedureNotPerformedReasonCodings, ProcedureNotPerformedReasonCodingType, } from './fhirValueSets/ProcedureNotPerformedReasonCodings.js'
 import { ProcedureOutcomeCodings, ProcedureOutcomeCodingType, } from './fhirValueSets/ProcedureOutcomeCodings.js'
@@ -444,7 +444,7 @@ import { ResearchSubjectStatusCodings, ResearchSubjectStatusCodingType, } from '
 import { ResourceAggregationModeCodings, ResourceAggregationModeCodingType, } from './fhirValueSets/ResourceAggregationModeCodings.js'
 import { ResourceSlicingRulesCodings, ResourceSlicingRulesCodingType, } from './fhirValueSets/ResourceSlicingRulesCodings.js'
 import { ResourceTypesCodings, ResourceTypesCodingType, } from './fhirValueSets/ResourceTypesCodings.js'
-import { ResponseCodeCodings, ResponseCodeCodingType, } from './fhirValueSets/ResponseCodeCodings.js'
+import { ResponseCodings, ResponseCodingType, } from './fhirValueSets/ResponseCodings.js'
 import { RestfulCapabilityModeCodings, RestfulCapabilityModeCodingType, } from './fhirValueSets/RestfulCapabilityModeCodings.js'
 import { RestfulSecurityServiceCodings, RestfulSecurityServiceCodingType, } from './fhirValueSets/RestfulSecurityServiceCodings.js'
 import { RiskEstimateTypeCodings, RiskEstimateTypeCodingType, } from './fhirValueSets/RiskEstimateTypeCodings.js'
@@ -452,7 +452,7 @@ import { RiskProbabilityCodings, RiskProbabilityCodingType, } from './fhirValueS
 import { RouteCodings, RouteCodingType, } from './fhirValueSets/RouteCodings.js'
 import { SearchComparatorCodings, SearchComparatorCodingType, } from './fhirValueSets/SearchComparatorCodings.js'
 import { SearchEntryModeCodings, SearchEntryModeCodingType, } from './fhirValueSets/SearchEntryModeCodings.js'
-import { SearchModifierCodeCodings, SearchModifierCodeCodingType, } from './fhirValueSets/SearchModifierCodeCodings.js'
+import { SearchModifierCodings, SearchModifierCodingType, } from './fhirValueSets/SearchModifierCodings.js'
 import { SearchParamTypeCodings, SearchParamTypeCodingType, } from './fhirValueSets/SearchParamTypeCodings.js'
 import { SearchXpathUsageCodings, SearchXpathUsageCodingType, } from './fhirValueSets/SearchXpathUsageCodings.js'
 import { SecurityLabelsCodings, SecurityLabelsCodingType, } from './fhirValueSets/SecurityLabelsCodings.js'
@@ -486,7 +486,7 @@ import { SubscriberRelationshipCodings, SubscriberRelationshipCodingType, } from
 import { SubscriptionChannelTypeCodings, SubscriptionChannelTypeCodingType, } from './fhirValueSets/SubscriptionChannelTypeCodings.js'
 import { SubscriptionStatusCodings, SubscriptionStatusCodingType, } from './fhirValueSets/SubscriptionStatusCodings.js'
 import { SubstanceCategoryCodings, SubstanceCategoryCodingType, } from './fhirValueSets/SubstanceCategoryCodings.js'
-import { SubstanceCodeCodings, SubstanceCodeCodingType, } from './fhirValueSets/SubstanceCodeCodings.js'
+import { SubstanceCodings, SubstanceCodingType, } from './fhirValueSets/SubstanceCodings.js'
 import { SubstanceStatusCodings, SubstanceStatusCodingType, } from './fhirValueSets/SubstanceStatusCodings.js'
 import { SupplyItemCodings, SupplyItemCodingType, } from './fhirValueSets/SupplyItemCodings.js'
 import { SupplydeliveryStatusCodings, SupplydeliveryStatusCodingType, } from './fhirValueSets/SupplydeliveryStatusCodings.js'
@@ -497,7 +497,7 @@ import { SupplyrequestStatusCodings, SupplyrequestStatusCodingType, } from './fh
 import { SurfaceCodings, SurfaceCodingType, } from './fhirValueSets/SurfaceCodings.js'
 import { SynthesisTypeCodings, SynthesisTypeCodingType, } from './fhirValueSets/SynthesisTypeCodings.js'
 import { SystemRestfulInteractionCodings, SystemRestfulInteractionCodingType, } from './fhirValueSets/SystemRestfulInteractionCodings.js'
-import { TaskCodeCodings, TaskCodeCodingType, } from './fhirValueSets/TaskCodeCodings.js'
+import { TaskCodings, TaskCodingType, } from './fhirValueSets/TaskCodings.js'
 import { TaskIntentCodings, TaskIntentCodingType, } from './fhirValueSets/TaskIntentCodings.js'
 import { TaskStatusCodings, TaskStatusCodingType, } from './fhirValueSets/TaskStatusCodings.js'
 import { TestscriptOperationCodings, TestscriptOperationCodingType, } from './fhirValueSets/TestscriptOperationCodings.js'
@@ -520,21 +520,21 @@ import { V20487Codings, V20487CodingType, } from './fhirValueSets/V20487Codings.
 import { V20493Codings, V20493CodingType, } from './fhirValueSets/V20493Codings.js'
 import { V20916Codings, V20916CodingType, } from './fhirValueSets/V20916Codings.js'
 import { V2270360Codings, V2270360CodingType, } from './fhirValueSets/V2270360Codings.js'
-import { V3ActCodeCodings, V3ActCodeCodingType, } from './fhirValueSets/V3ActCodeCodings.js'
+import { V3ActCodings, V3ActCodingType, } from './fhirValueSets/V3ActCodings.js'
 import { V3ActConsentDirectiveCodings, V3ActConsentDirectiveCodingType, } from './fhirValueSets/V3ActConsentDirectiveCodings.js'
-import { V3ActEncounterCodeCodings, V3ActEncounterCodeCodingType, } from './fhirValueSets/V3ActEncounterCodeCodings.js'
-import { V3ActIncidentCodeCodings, V3ActIncidentCodeCodingType, } from './fhirValueSets/V3ActIncidentCodeCodings.js'
+import { V3ActEncounterCodings, V3ActEncounterCodingType, } from './fhirValueSets/V3ActEncounterCodings.js'
+import { V3ActIncidentCodings, V3ActIncidentCodingType, } from './fhirValueSets/V3ActIncidentCodings.js'
 import { V3ActPharmacySupplyTypeCodings, V3ActPharmacySupplyTypeCodingType, } from './fhirValueSets/V3ActPharmacySupplyTypeCodings.js'
 import { V3ActPriorityCodings, V3ActPriorityCodingType, } from './fhirValueSets/V3ActPriorityCodings.js'
 import { V3ActReasonCodings, V3ActReasonCodingType, } from './fhirValueSets/V3ActReasonCodings.js'
-import { V3ActSubstanceAdminSubstitutionCodeCodings, V3ActSubstanceAdminSubstitutionCodeCodingType, } from './fhirValueSets/V3ActSubstanceAdminSubstitutionCodeCodings.js'
+import { V3ActSubstanceAdminSubstitutionCodings, V3ActSubstanceAdminSubstitutionCodingType, } from './fhirValueSets/V3ActSubstanceAdminSubstitutionCodings.js'
 import { V3ConfidentialityClassificationCodings, V3ConfidentialityClassificationCodingType, } from './fhirValueSets/V3ConfidentialityClassificationCodings.js'
 import { V3FamilyMemberCodings, V3FamilyMemberCodingType, } from './fhirValueSets/V3FamilyMemberCodings.js'
 import { V3ParticipationModeCodings, V3ParticipationModeCodingType, } from './fhirValueSets/V3ParticipationModeCodings.js'
 import { V3PurposeOfUseCodings, V3PurposeOfUseCodingType, } from './fhirValueSets/V3PurposeOfUseCodings.js'
 import { V3ServiceDeliveryLocationRoleTypeCodings, V3ServiceDeliveryLocationRoleTypeCodingType, } from './fhirValueSets/V3ServiceDeliveryLocationRoleTypeCodings.js'
 import { V3SubstanceAdminSubstitutionReasonCodings, V3SubstanceAdminSubstitutionReasonCodingType, } from './fhirValueSets/V3SubstanceAdminSubstitutionReasonCodings.js'
-import { VaccineCodeCodings, VaccineCodeCodingType, } from './fhirValueSets/VaccineCodeCodings.js'
+import { VaccineCodings, VaccineCodingType, } from './fhirValueSets/VaccineCodings.js'
 import { VariableTypeCodings, VariableTypeCodingType, } from './fhirValueSets/VariableTypeCodings.js'
 import { VerificationresultCanPushUpdatesCodings, VerificationresultCanPushUpdatesCodingType, } from './fhirValueSets/VerificationresultCanPushUpdatesCodings.js'
 import { VerificationresultCommunicationMethodCodings, VerificationresultCommunicationMethodCodingType, } from './fhirValueSets/VerificationresultCommunicationMethodCodings.js'
@@ -585,7 +585,7 @@ export {
   AllergyIntoleranceCriticalityCodings, type AllergyIntoleranceCriticalityCodingType,
   AllergyIntoleranceTypeCodings, type AllergyIntoleranceTypeCodingType,
   AllergyintoleranceClinicalCodings, type AllergyintoleranceClinicalCodingType,
-  AllergyintoleranceCodeCodings, type AllergyintoleranceCodeCodingType,
+  AllergyintoleranceCodings, type AllergyintoleranceCodingType,
   AllergyintoleranceVerificationCodings, type AllergyintoleranceVerificationCodingType,
   AppointmentCancellationReasonCodings, type AppointmentCancellationReasonCodingType,
   AppointmentstatusCodings, type AppointmentstatusCodingType,
@@ -608,7 +608,7 @@ export {
   BindingStrengthCodings, type BindingStrengthCodingType,
   BodySiteCodings, type BodySiteCodingType,
   BodysiteLateralityCodings, type BodysiteLateralityCodingType,
-  BodystructureCodeCodings, type BodystructureCodeCodingType,
+  BodystructureCodings, type BodystructureCodingType,
   BodystructureRelativeLocationCodings, type BodystructureRelativeLocationCodingType,
   BundleTypeCodings, type BundleTypeCodingType,
   C80DocTypeCodings, type C80DocTypeCodingType,
@@ -651,7 +651,7 @@ export {
   ConceptmapUnmappedModeCodings, type ConceptmapUnmappedModeCodingType,
   ConditionCategoryCodings, type ConditionCategoryCodingType,
   ConditionClinicalCodings, type ConditionClinicalCodingType,
-  ConditionCodeCodings, type ConditionCodeCodingType,
+  ConditionCodings, type ConditionCodingType,
   ConditionOutcomeCodings, type ConditionOutcomeCodingType,
   ConditionSeverityCodings, type ConditionSeverityCodingType,
   ConditionStageTypeCodings, type ConditionStageTypeCodingType,
@@ -662,7 +662,7 @@ export {
   ConsentActionCodings, type ConsentActionCodingType,
   ConsentCategoryCodings, type ConsentCategoryCodingType,
   ConsentContentClassCodings, type ConsentContentClassCodingType,
-  ConsentContentCodeCodings, type ConsentContentCodeCodingType,
+  ConsentContentCodings, type ConsentContentCodingType,
   ConsentDataMeaningCodings, type ConsentDataMeaningCodingType,
   ConsentPolicyCodings, type ConsentPolicyCodingType,
   ConsentProvisionTypeCodings, type ConsentProvisionTypeCodingType,
@@ -771,7 +771,7 @@ export {
   ExDiagnosistypeCodings, type ExDiagnosistypeCodingType,
   ExPaymenttypeCodings, type ExPaymenttypeCodingType,
   ExProcedureTypeCodings, type ExProcedureTypeCodingType,
-  ExProgramCodeCodings, type ExProgramCodeCodingType,
+  ExProgramCodings, type ExProgramCodingType,
   ExRevenueCenterCodings, type ExRevenueCenterCodingType,
   ExamplescenarioActorTypeCodings, type ExamplescenarioActorTypeCodingType,
   ExplanationofbenefitStatusCodings, type ExplanationofbenefitStatusCodingType,
@@ -781,7 +781,7 @@ export {
   FHIRVersionCodings, type FHIRVersionCodingType,
   FilterOperatorCodings, type FilterOperatorCodingType,
   FlagCategoryCodings, type FlagCategoryCodingType,
-  FlagCodeCodings, type FlagCodeCodingType,
+  FlagCodings, type FlagCodingType,
   FlagStatusCodings, type FlagStatusCodingType,
   FmStatusCodings, type FmStatusCodingType,
   FoodTypeCodings, type FoodTypeCodingType,
@@ -799,7 +799,7 @@ export {
   GroupTypeCodings, type GroupTypeCodingType,
   GuidanceResponseStatusCodings, type GuidanceResponseStatusCodingType,
   GuidePageGenerationCodings, type GuidePageGenerationCodingType,
-  GuideParameterCodeCodings, type GuideParameterCodeCodingType,
+  GuideParameterCodings, type GuideParameterCodingType,
   HandlingConditionCodings, type HandlingConditionCodingType,
   HistoryAbsentReasonCodings, type HistoryAbsentReasonCodingType,
   HistoryStatusCodings, type HistoryStatusCodingType,
@@ -907,7 +907,7 @@ export {
   NarrativeStatusCodings, type NarrativeStatusCodingType,
   NetworkTypeCodings, type NetworkTypeCodingType,
   NoteTypeCodings, type NoteTypeCodingType,
-  NutrientCodeCodings, type NutrientCodeCodingType,
+  NutrientCodings, type NutrientCodingType,
   ObjectRoleCodings, type ObjectRoleCodingType,
   ObservationCategoryCodings, type ObservationCategoryCodingType,
   ObservationCodings, type ObservationCodingType,
@@ -937,7 +937,7 @@ export {
   PrecisionEstimateTypeCodings, type PrecisionEstimateTypeCodingType,
   PreparePatientPriorSpecimenCollectionCodings, type PreparePatientPriorSpecimenCollectionCodingType,
   ProcedureCategoryCodings, type ProcedureCategoryCodingType,
-  ProcedureCodeCodings, type ProcedureCodeCodingType,
+  ProcedureCodings, type ProcedureCodingType,
   ProcedureFollowupCodings, type ProcedureFollowupCodingType,
   ProcedureNotPerformedReasonCodings, type ProcedureNotPerformedReasonCodingType,
   ProcedureOutcomeCodings, type ProcedureOutcomeCodingType,
@@ -994,7 +994,7 @@ export {
   ResourceAggregationModeCodings, type ResourceAggregationModeCodingType,
   ResourceSlicingRulesCodings, type ResourceSlicingRulesCodingType,
   ResourceTypesCodings, type ResourceTypesCodingType,
-  ResponseCodeCodings, type ResponseCodeCodingType,
+  ResponseCodings, type ResponseCodingType,
   RestfulCapabilityModeCodings, type RestfulCapabilityModeCodingType,
   RestfulSecurityServiceCodings, type RestfulSecurityServiceCodingType,
   RiskEstimateTypeCodings, type RiskEstimateTypeCodingType,
@@ -1002,7 +1002,7 @@ export {
   RouteCodings, type RouteCodingType,
   SearchComparatorCodings, type SearchComparatorCodingType,
   SearchEntryModeCodings, type SearchEntryModeCodingType,
-  SearchModifierCodeCodings, type SearchModifierCodeCodingType,
+  SearchModifierCodings, type SearchModifierCodingType,
   SearchParamTypeCodings, type SearchParamTypeCodingType,
   SearchXpathUsageCodings, type SearchXpathUsageCodingType,
   SecurityLabelsCodings, type SecurityLabelsCodingType,
@@ -1036,7 +1036,7 @@ export {
   SubscriptionChannelTypeCodings, type SubscriptionChannelTypeCodingType,
   SubscriptionStatusCodings, type SubscriptionStatusCodingType,
   SubstanceCategoryCodings, type SubstanceCategoryCodingType,
-  SubstanceCodeCodings, type SubstanceCodeCodingType,
+  SubstanceCodings, type SubstanceCodingType,
   SubstanceStatusCodings, type SubstanceStatusCodingType,
   SupplyItemCodings, type SupplyItemCodingType,
   SupplydeliveryStatusCodings, type SupplydeliveryStatusCodingType,
@@ -1047,7 +1047,7 @@ export {
   SurfaceCodings, type SurfaceCodingType,
   SynthesisTypeCodings, type SynthesisTypeCodingType,
   SystemRestfulInteractionCodings, type SystemRestfulInteractionCodingType,
-  TaskCodeCodings, type TaskCodeCodingType,
+  TaskCodings, type TaskCodingType,
   TaskIntentCodings, type TaskIntentCodingType,
   TaskStatusCodings, type TaskStatusCodingType,
   TestscriptOperationCodings, type TestscriptOperationCodingType,
@@ -1070,21 +1070,21 @@ export {
   V20493Codings, type V20493CodingType,
   V20916Codings, type V20916CodingType,
   V2270360Codings, type V2270360CodingType,
-  V3ActCodeCodings, type V3ActCodeCodingType,
+  V3ActCodings, type V3ActCodingType,
   V3ActConsentDirectiveCodings, type V3ActConsentDirectiveCodingType,
-  V3ActEncounterCodeCodings, type V3ActEncounterCodeCodingType,
-  V3ActIncidentCodeCodings, type V3ActIncidentCodeCodingType,
+  V3ActEncounterCodings, type V3ActEncounterCodingType,
+  V3ActIncidentCodings, type V3ActIncidentCodingType,
   V3ActPharmacySupplyTypeCodings, type V3ActPharmacySupplyTypeCodingType,
   V3ActPriorityCodings, type V3ActPriorityCodingType,
   V3ActReasonCodings, type V3ActReasonCodingType,
-  V3ActSubstanceAdminSubstitutionCodeCodings, type V3ActSubstanceAdminSubstitutionCodeCodingType,
+  V3ActSubstanceAdminSubstitutionCodings, type V3ActSubstanceAdminSubstitutionCodingType,
   V3ConfidentialityClassificationCodings, type V3ConfidentialityClassificationCodingType,
   V3FamilyMemberCodings, type V3FamilyMemberCodingType,
   V3ParticipationModeCodings, type V3ParticipationModeCodingType,
   V3PurposeOfUseCodings, type V3PurposeOfUseCodingType,
   V3ServiceDeliveryLocationRoleTypeCodings, type V3ServiceDeliveryLocationRoleTypeCodingType,
   V3SubstanceAdminSubstitutionReasonCodings, type V3SubstanceAdminSubstitutionReasonCodingType,
-  VaccineCodeCodings, type VaccineCodeCodingType,
+  VaccineCodings, type VaccineCodingType,
   VariableTypeCodings, type VariableTypeCodingType,
   VerificationresultCanPushUpdatesCodings, type VerificationresultCanPushUpdatesCodingType,
   VerificationresultCommunicationMethodCodings, type VerificationresultCommunicationMethodCodingType,

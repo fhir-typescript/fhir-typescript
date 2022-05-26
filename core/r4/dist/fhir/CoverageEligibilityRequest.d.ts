@@ -10,6 +10,10 @@ export interface CoverageEligibilityRequestSupportingInfoArgs extends fhir.Backb
      */
     sequence: fhir.FhirPositiveInt | number | undefined;
     /**
+     * Extended properties for primitive element: CoverageEligibilityRequest.supportingInfo.sequence
+     */
+    _sequence?: fhir.FhirElementArgs;
+    /**
      * Could be used to provide references to other resources, document. For example could contain a PDF in an Attachment of the Police Report for an Accident.
      */
     information: fhir.ReferenceArgs | null;
@@ -17,6 +21,10 @@ export interface CoverageEligibilityRequestSupportingInfoArgs extends fhir.Backb
      * The supporting materials are applicable for all detail items, product/servce categories and specific billing codes.
      */
     appliesToAll?: fhir.FhirBoolean | boolean | undefined;
+    /**
+     * Extended properties for primitive element: CoverageEligibilityRequest.supportingInfo.appliesToAll
+     */
+    _appliesToAll?: fhir.FhirElementArgs;
 }
 /**
  * Often there are multiple jurisdiction specific valuesets which are required.
@@ -56,6 +64,10 @@ export interface CoverageEligibilityRequestInsuranceArgs extends fhir.BackboneEl
      */
     focal?: fhir.FhirBoolean | boolean | undefined;
     /**
+     * Extended properties for primitive element: CoverageEligibilityRequest.insurance.focal
+     */
+    _focal?: fhir.FhirElementArgs;
+    /**
      * Reference to the insurance card level information contained in the Coverage resource. The coverage issuing insurer will use these details to locate the patient's actual coverage within the insurer's information system.
      */
     coverage: fhir.ReferenceArgs | null;
@@ -63,6 +75,10 @@ export interface CoverageEligibilityRequestInsuranceArgs extends fhir.BackboneEl
      * A business agreement number established between the provider and the insurer for special business processing purposes.
      */
     businessArrangement?: fhir.FhirString | string | undefined;
+    /**
+     * Extended properties for primitive element: CoverageEligibilityRequest.insurance.businessArrangement
+     */
+    _businessArrangement?: fhir.FhirElementArgs;
 }
 /**
  * All insurance coverages for the patient which may be applicable for reimbursement, of the products and services listed in the claim, are typically provided in the claim to allow insurers to confirm the ordering of the insurance coverages relative to local 'coordination of benefit' rules. One coverage (and only one) with 'focal=true' is to be used in the adjudication of this claim. Coverages appearing before the focal Coverage in the list, and where 'subrogation=false', should provide a reference to the ClaimResponse containing the adjudication results of the prior claim.
@@ -143,6 +159,10 @@ export interface CoverageEligibilityRequestItemArgs extends fhir.BackboneElement
      * Exceptions, special conditions and supporting information applicable for this service or product line.
      */
     supportingInfoSequence?: fhir.FhirPositiveInt[] | number[] | undefined;
+    /**
+     * Extended properties for primitive element: CoverageEligibilityRequest.item.supportingInfoSequence
+     */
+    _supportingInfoSequence?: (fhir.FhirElementArgs | null)[];
     /**
      * Examples include Medical Care, Periodontics, Renal Dialysis, Vision Coverage.
      */
@@ -254,6 +274,10 @@ export interface CoverageEligibilityRequestArgs extends fhir.DomainResourceArgs 
      */
     status: fhir.FhirCode<FmStatusCodeType> | string | undefined;
     /**
+     * Extended properties for primitive element: CoverageEligibilityRequest.status
+     */
+    _status?: fhir.FhirElementArgs;
+    /**
      * When the requestor expects the processor to complete processing.
      */
     priority?: fhir.CodeableConceptArgs | undefined;
@@ -261,6 +285,10 @@ export interface CoverageEligibilityRequestArgs extends fhir.DomainResourceArgs 
      * Code to specify whether requesting: prior authorization requirements for some service categories or billing codes; benefits for coverages specified or discovered; discovery and return of coverages for the patient; and/or validation that the specified coverage is in-force at the date/period specified or 'now' if not specified.
      */
     purpose: fhir.FhirCode<EligibilityrequestPurposeCodeType>[] | string[] | undefined;
+    /**
+     * Extended properties for primitive element: CoverageEligibilityRequest.purpose
+     */
+    _purpose?: (fhir.FhirElementArgs | null)[];
     /**
      * 1..1.
      */
@@ -281,6 +309,10 @@ export interface CoverageEligibilityRequestArgs extends fhir.DomainResourceArgs 
      * The date when this resource was created.
      */
     created: fhir.FhirDateTime | string | undefined;
+    /**
+     * Extended properties for primitive element: CoverageEligibilityRequest.created
+     */
+    _created?: fhir.FhirElementArgs;
     /**
      * Person who created the request.
      */

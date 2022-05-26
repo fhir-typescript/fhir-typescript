@@ -10,6 +10,10 @@ export interface CatalogEntryRelatedEntryArgs extends fhir.BackboneElementArgs {
      */
     relationtype: fhir.FhirCode<RelationTypeCodeType> | string | undefined;
     /**
+     * Extended properties for primitive element: CatalogEntry.relatedEntry.relationtype
+     */
+    _relationtype?: fhir.FhirElementArgs;
+    /**
      * The reference to the related item.
      */
     item: fhir.ReferenceArgs | null;
@@ -67,6 +71,10 @@ export interface CatalogEntryArgs extends fhir.DomainResourceArgs {
      */
     orderable: fhir.FhirBoolean | boolean | undefined;
     /**
+     * Extended properties for primitive element: CatalogEntry.orderable
+     */
+    _orderable?: fhir.FhirElementArgs;
+    /**
      * The item in a catalog or definition.
      */
     referencedItem: fhir.ReferenceArgs | null;
@@ -83,6 +91,10 @@ export interface CatalogEntryArgs extends fhir.DomainResourceArgs {
      */
     status?: fhir.FhirCode<PublicationStatusCodeType> | string | undefined;
     /**
+     * Extended properties for primitive element: CatalogEntry.status
+     */
+    _status?: fhir.FhirElementArgs;
+    /**
      * The time period in which this catalog entry is expected to be active.
      */
     validityPeriod?: fhir.PeriodArgs | undefined;
@@ -91,9 +103,17 @@ export interface CatalogEntryArgs extends fhir.DomainResourceArgs {
      */
     validTo?: fhir.FhirDateTime | string | undefined;
     /**
+     * Extended properties for primitive element: CatalogEntry.validTo
+     */
+    _validTo?: fhir.FhirElementArgs;
+    /**
      * Perhaps not needed - if we use fhir resource metadata.
      */
     lastUpdated?: fhir.FhirDateTime | string | undefined;
+    /**
+     * Extended properties for primitive element: CatalogEntry.lastUpdated
+     */
+    _lastUpdated?: fhir.FhirElementArgs;
     /**
      * Used for examplefor Out of Formulary, or any specifics.
      */

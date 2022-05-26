@@ -29,6 +29,10 @@ export interface MarketingStatusArgs extends fhir.BackboneElementArgs {
    * The date when the Medicinal Product is placed on the market by the Marketing Authorisation Holder (or where applicable, the manufacturer/distributor) in a country and/or jurisdiction shall be provided A complete date consisting of day, month and year shall be specified using the ISO 8601 date format NOTE “Placed on the market” refers to the release of the Medicinal Product into the distribution chain.
    */
   restoreDate?: fhir.FhirDateTime|string|undefined;
+  /**
+   * Extended properties for primitive element: MarketingStatus.restoreDate
+   */
+  _restoreDate?:fhir.FhirElementArgs;
 }
 
 /**
@@ -72,6 +76,10 @@ export class MarketingStatus extends fhir.BackboneElement {
     if (source['dateRange']) { this.dateRange = new fhir.Period(source.dateRange); }
     else { this.dateRange = null; }
     if (source['restoreDate']) { this.restoreDate = new fhir.FhirDateTime({value: source.restoreDate}); }
+    if (source['_restoreDate']) {
+      if (this.restoreDate) { this.restoreDate.addExtendedProperties(source._restoreDate!); }
+      else { this.restoreDate = new fhir.FhirDateTime(source._restoreDate as Partial<fhir.FhirDateTimeArgs>); }
+    }
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).

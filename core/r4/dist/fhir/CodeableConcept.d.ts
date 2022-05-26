@@ -11,6 +11,10 @@ export interface CodeableConceptArgs extends fhir.FhirElementArgs {
      * Very often the text is the same as a displayName of one of the codings.
      */
     text?: fhir.FhirString | string | undefined;
+    /**
+     * Extended properties for primitive element: CodeableConcept.text
+     */
+    _text?: fhir.FhirElementArgs;
 }
 /**
  * A concept that may be defined by a formal reference to a terminology or ontology or may be provided by text.

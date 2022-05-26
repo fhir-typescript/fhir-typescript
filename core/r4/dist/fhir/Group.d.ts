@@ -37,6 +37,10 @@ export interface GroupCharacteristicArgs extends fhir.BackboneElementArgs {
      */
     exclude: fhir.FhirBoolean | boolean | undefined;
     /**
+     * Extended properties for primitive element: Group.characteristic.exclude
+     */
+    _exclude?: fhir.FhirElementArgs;
+    /**
      * The period over which the characteristic is tested; e.g. the patient had an operation during the month of June.
      */
     period?: fhir.PeriodArgs | undefined;
@@ -94,6 +98,10 @@ export interface GroupMemberArgs extends fhir.BackboneElementArgs {
      * A flag to indicate that the member is no longer in the group, but previously may have been a member.
      */
     inactive?: fhir.FhirBoolean | boolean | undefined;
+    /**
+     * Extended properties for primitive element: Group.member.inactive
+     */
+    _inactive?: fhir.FhirElementArgs;
 }
 /**
  * Identifies the resource instances that are members of the group.
@@ -141,13 +149,25 @@ export interface GroupArgs extends fhir.DomainResourceArgs {
      */
     active?: fhir.FhirBoolean | boolean | undefined;
     /**
+     * Extended properties for primitive element: Group.active
+     */
+    _active?: fhir.FhirElementArgs;
+    /**
      * Group members SHALL be of the appropriate resource type (Patient for person or animal; or Practitioner, Device, Medication or Substance for the other types.).
      */
     type: fhir.FhirCode<GroupTypeCodeType> | string | undefined;
     /**
+     * Extended properties for primitive element: Group.type
+     */
+    _type?: fhir.FhirElementArgs;
+    /**
      * If true, indicates that the resource refers to a specific group of real individuals.  If false, the group defines a set of intended individuals.
      */
     actual: fhir.FhirBoolean | boolean | undefined;
+    /**
+     * Extended properties for primitive element: Group.actual
+     */
+    _actual?: fhir.FhirElementArgs;
     /**
      * This would generally be omitted for Person resources.
      */
@@ -157,9 +177,17 @@ export interface GroupArgs extends fhir.DomainResourceArgs {
      */
     name?: fhir.FhirString | string | undefined;
     /**
+     * Extended properties for primitive element: Group.name
+     */
+    _name?: fhir.FhirElementArgs;
+    /**
      * Note that the quantity may be less than the number of members if some of the members are not active.
      */
     quantity?: fhir.FhirUnsignedInt | number | undefined;
+    /**
+     * Extended properties for primitive element: Group.quantity
+     */
+    _quantity?: fhir.FhirElementArgs;
     /**
      * This does not strictly align with ownership of a herd or flock, but may suffice to represent that relationship in simple cases. More complex cases will require an extension.
      */

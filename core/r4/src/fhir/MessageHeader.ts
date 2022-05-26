@@ -6,9 +6,9 @@
 import * as fhir from '../fhir.js';
 
 // @ts-ignore
-import { ResponseCodeCodings, ResponseCodeCodingType,} from '../fhirValueSets/ResponseCodeCodings.js';
+import { ResponseCodings, ResponseCodingType,} from '../fhirValueSets/ResponseCodings.js';
 // @ts-ignore
-import { ResponseCodeCodes,  ResponseCodeCodeType } from '../fhirValueSets/ResponseCodeCodes.js';
+import { ResponseCodes,  ResponseCodeType } from '../fhirValueSets/ResponseCodes.js';
 // @ts-ignore
 import { MessageReasonEncounterCodings, MessageReasonEncounterCodingType,} from '../fhirValueSets/MessageReasonEncounterCodings.js';
 // @ts-ignore
@@ -22,6 +22,10 @@ export interface MessageHeaderDestinationArgs extends fhir.BackboneElementArgs {
    */
   name?: fhir.FhirString|string|undefined;
   /**
+   * Extended properties for primitive element: MessageHeader.destination.name
+   */
+  _name?:fhir.FhirElementArgs;
+  /**
    * Identifies the target end system in situations where the initial message transmission is to an intermediary system.
    */
   target?: fhir.ReferenceArgs|undefined;
@@ -29,6 +33,10 @@ export interface MessageHeaderDestinationArgs extends fhir.BackboneElementArgs {
    * The id may be a non-resolvable URI for systems that do not use standard network-based addresses.
    */
   endpoint: fhir.FhirUrl|string|undefined;
+  /**
+   * Extended properties for primitive element: MessageHeader.destination.endpoint
+   */
+  _endpoint?:fhir.FhirElementArgs;
   /**
    * Allows data conveyed by a message to be addressed to a particular person or department when routing to a specific application isn't sufficient.
    */
@@ -65,9 +73,17 @@ export class MessageHeaderDestination extends fhir.BackboneElement {
   constructor(source:Partial<MessageHeaderDestinationArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
     if (source['name']) { this.name = new fhir.FhirString({value: source.name}); }
+    if (source['_name']) {
+      if (this.name) { this.name.addExtendedProperties(source._name!); }
+      else { this.name = new fhir.FhirString(source._name as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['target']) { this.target = new fhir.Reference(source.target); }
     if (source['endpoint']) { this.endpoint = new fhir.FhirUrl({value: source.endpoint}); }
     else { this.endpoint = null; }
+    if (source['_endpoint']) {
+      if (this.endpoint) { this.endpoint.addExtendedProperties(source._endpoint!); }
+      else { this.endpoint = new fhir.FhirUrl(source._endpoint as Partial<fhir.FhirUrlArgs>); }
+    }
     if (source['receiver']) { this.receiver = new fhir.Reference(source.receiver); }
   }
   /**
@@ -94,13 +110,25 @@ export interface MessageHeaderSourceArgs extends fhir.BackboneElementArgs {
    */
   name?: fhir.FhirString|string|undefined;
   /**
+   * Extended properties for primitive element: MessageHeader.source.name
+   */
+  _name?:fhir.FhirElementArgs;
+  /**
    * May include configuration or other information useful in debugging.
    */
   software?: fhir.FhirString|string|undefined;
   /**
+   * Extended properties for primitive element: MessageHeader.source.software
+   */
+  _software?:fhir.FhirElementArgs;
+  /**
    * Can convey versions of multiple systems in situations where a message passes through multiple hands.
    */
   version?: fhir.FhirString|string|undefined;
+  /**
+   * Extended properties for primitive element: MessageHeader.source.version
+   */
+  _version?:fhir.FhirElementArgs;
   /**
    * An e-mail, phone, website or other contact point to use to resolve issues with message communications.
    */
@@ -109,6 +137,10 @@ export interface MessageHeaderSourceArgs extends fhir.BackboneElementArgs {
    * The id may be a non-resolvable URI for systems that do not use standard network-based addresses.
    */
   endpoint: fhir.FhirUrl|string|undefined;
+  /**
+   * Extended properties for primitive element: MessageHeader.source.endpoint
+   */
+  _endpoint?:fhir.FhirElementArgs;
 }
 
 /**
@@ -145,11 +177,27 @@ export class MessageHeaderSource extends fhir.BackboneElement {
   constructor(source:Partial<MessageHeaderSourceArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
     if (source['name']) { this.name = new fhir.FhirString({value: source.name}); }
+    if (source['_name']) {
+      if (this.name) { this.name.addExtendedProperties(source._name!); }
+      else { this.name = new fhir.FhirString(source._name as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['software']) { this.software = new fhir.FhirString({value: source.software}); }
+    if (source['_software']) {
+      if (this.software) { this.software.addExtendedProperties(source._software!); }
+      else { this.software = new fhir.FhirString(source._software as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['version']) { this.version = new fhir.FhirString({value: source.version}); }
+    if (source['_version']) {
+      if (this.version) { this.version.addExtendedProperties(source._version!); }
+      else { this.version = new fhir.FhirString(source._version as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['contact']) { this.contact = new fhir.ContactPoint(source.contact); }
     if (source['endpoint']) { this.endpoint = new fhir.FhirUrl({value: source.endpoint}); }
     else { this.endpoint = null; }
+    if (source['_endpoint']) {
+      if (this.endpoint) { this.endpoint.addExtendedProperties(source._endpoint!); }
+      else { this.endpoint = new fhir.FhirUrl(source._endpoint as Partial<fhir.FhirUrlArgs>); }
+    }
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -176,9 +224,17 @@ export interface MessageHeaderResponseArgs extends fhir.BackboneElementArgs {
    */
   identifier: fhir.FhirId|string|undefined;
   /**
+   * Extended properties for primitive element: MessageHeader.response.identifier
+   */
+  _identifier?:fhir.FhirElementArgs;
+  /**
    * This is a generic response to the request message. Specific data for the response will be found in MessageHeader.focus.
    */
-  code: fhir.FhirCode<ResponseCodeCodeType>|string|undefined;
+  code: fhir.FhirCode<ResponseCodeType>|string|undefined;
+  /**
+   * Extended properties for primitive element: MessageHeader.response.code
+   */
+  _code?:fhir.FhirElementArgs;
   /**
    * This SHALL be contained in the bundle. If any of the issues are errors, the response code SHALL be an error.
    */
@@ -200,7 +256,7 @@ export class MessageHeaderResponse extends fhir.BackboneElement {
   /**
    * This is a generic response to the request message. Specific data for the response will be found in MessageHeader.focus.
    */
-  public code: fhir.FhirCode<ResponseCodeCodeType>|null;
+  public code: fhir.FhirCode<ResponseCodeType>|null;
   /**
    * This SHALL be contained in the bundle. If any of the issues are errors, the response code SHALL be an error.
    */
@@ -212,15 +268,23 @@ export class MessageHeaderResponse extends fhir.BackboneElement {
     super(source, options);
     if (source['identifier']) { this.identifier = new fhir.FhirId({value: source.identifier}); }
     else { this.identifier = null; }
-    if (source['code']) { this.code = new fhir.FhirCode<ResponseCodeCodeType>({value: source.code}); }
+    if (source['_identifier']) {
+      if (this.identifier) { this.identifier.addExtendedProperties(source._identifier!); }
+      else { this.identifier = new fhir.FhirId(source._identifier as Partial<fhir.FhirIdArgs>); }
+    }
+    if (source['code']) { this.code = new fhir.FhirCode<ResponseCodeType>({value: source.code}); }
     else { this.code = null; }
+    if (source['_code']) {
+      if (this.code) { this.code.addExtendedProperties(source._code!); }
+      else { this.code = new fhir.FhirCode<ResponseCodeType>(source._code as Partial<fhir.FhirCode>); }
+    }
     if (source['details']) { this.details = new fhir.Reference(source.details); }
   }
   /**
    * Required-bound Value Set for code (MessageHeader.response.code)
    */
   public static get codeRequiredCodes() {
-    return ResponseCodeCodes;
+    return ResponseCodes;
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -232,10 +296,10 @@ export class MessageHeaderResponse extends fhir.BackboneElement {
     }
     if (this["identifier"]) { issues.push(...this.identifier.doModelValidation()); }
     if (!this['code']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property code:fhir.FhirCode<ResponseCodeCodeType> fhir: MessageHeader.response.code:code' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property code:fhir.FhirCode<ResponseCodeType> fhir: MessageHeader.response.code:code' });
     }
-    if (this['code'] && (!Object.values(ResponseCodeCodes).includes(this.code as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property code:fhir.FhirCode<ResponseCodeCodeType> fhir: MessageHeader.response.code:code Required binding to: ResponseCode' });
+    if (this['code'] && (!Object.values(ResponseCodes).includes(this.code as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property code:fhir.FhirCode<ResponseCodeType> fhir: MessageHeader.response.code:code Required binding to: Response' });
     }
     if (this["code"]) { issues.push(...this.code.doModelValidation()); }
     if (this["details"]) { issues.push(...this.details.doModelValidation()); }
@@ -302,6 +366,10 @@ export interface MessageHeaderArgs extends fhir.DomainResourceArgs {
    * Permanent link to the MessageDefinition for this message.
    */
   definition?: fhir.FhirCanonical|string|undefined;
+  /**
+   * Extended properties for primitive element: MessageHeader.definition
+   */
+  _definition?:fhir.FhirElementArgs;
 }
 
 /**
@@ -387,6 +455,10 @@ export class MessageHeader extends fhir.DomainResource {
     if (source['focus']) { this.focus = source.focus.map((x) => new fhir.Reference(x)); }
     else { this.focus = []; }
     if (source['definition']) { this.definition = new fhir.FhirCanonical({value: source.definition}); }
+    if (source['_definition']) {
+      if (this.definition) { this.definition.addExtendedProperties(source._definition!); }
+      else { this.definition = new fhir.FhirCanonical(source._definition as Partial<fhir.FhirCanonicalArgs>); }
+    }
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).

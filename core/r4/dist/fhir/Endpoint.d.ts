@@ -18,6 +18,10 @@ export interface EndpointArgs extends fhir.DomainResourceArgs {
      */
     status: fhir.FhirCode<EndpointStatusCodeType> | string | undefined;
     /**
+     * Extended properties for primitive element: Endpoint.status
+     */
+    _status?: fhir.FhirElementArgs;
+    /**
      * For additional connectivity details for the protocol, extensions will be used at this point, as in the XDS example.
      */
     connectionType: fhir.CodingArgs | null;
@@ -25,6 +29,10 @@ export interface EndpointArgs extends fhir.DomainResourceArgs {
      * A friendly name that this endpoint can be referred to with.
      */
     name?: fhir.FhirString | string | undefined;
+    /**
+     * Extended properties for primitive element: Endpoint.name
+     */
+    _name?: fhir.FhirElementArgs;
     /**
      * This property is not typically used when searching for Endpoint resources for usage. The typical usage is via the reference from an applicable Organization/Location/Practitioner resource, which is where the context is provided. Multiple Locations may reference a single endpoint, and don't have to be within the same organization resource, but most likely within the same organizational hierarchy.
      */
@@ -46,6 +54,10 @@ export interface EndpointArgs extends fhir.DomainResourceArgs {
      */
     payloadMimeType?: fhir.FhirCode[] | string[] | undefined;
     /**
+     * Extended properties for primitive element: Endpoint.payloadMimeType
+     */
+    _payloadMimeType?: (fhir.FhirElementArgs | null)[];
+    /**
      * For rest-hook, and websocket, the end-point must be an http: or https: URL; for email, a mailto: url, for sms, a tel: url, and for message the endpoint can be in any form of url the server understands (usually, http: or mllp:). The URI is allowed to be relative; in which case, it is relative to the server end-point (since there may be more than one, clients should avoid using relative URIs)
      * This address will be to the service base, without any parameters, or sub-services or resources tacked on.
      * E.g. for a WADO-RS endpoint, the url should be "https://pacs.hospital.org/wado-rs"
@@ -53,9 +65,17 @@ export interface EndpointArgs extends fhir.DomainResourceArgs {
      */
     address: fhir.FhirUrl | string | undefined;
     /**
+     * Extended properties for primitive element: Endpoint.address
+     */
+    _address?: fhir.FhirElementArgs;
+    /**
      * Exactly what these mean depends on the channel type. The can convey additional information to the recipient and/or meet security requirements.
      */
     header?: fhir.FhirString[] | string[] | undefined;
+    /**
+     * Extended properties for primitive element: Endpoint.header
+     */
+    _header?: (fhir.FhirElementArgs | null)[];
 }
 /**
  * The technical details of an endpoint that can be used for electronic services, such as for web services providing XDS.b or a REST endpoint for another FHIR server. This may include any security context information.

@@ -105,6 +105,10 @@ export interface CareTeamArgs extends fhir.DomainResourceArgs {
    */
   status?: fhir.FhirCode<CareTeamStatusCodeType>|string|undefined;
   /**
+   * Extended properties for primitive element: CareTeam.status
+   */
+  _status?:fhir.FhirElementArgs;
+  /**
    * There may be multiple axis of categorization and one team may serve multiple purposes.
    */
   category?: fhir.CodeableConceptArgs[]|undefined;
@@ -112,6 +116,10 @@ export interface CareTeamArgs extends fhir.DomainResourceArgs {
    * The meaning/purpose of the team is conveyed in CareTeam.category.  This element may also convey semantics of the team (e.g. "Red trauma team"), but its primary purpose is to distinguish between identical teams in a human-friendly way.  ("Team 18735" isn't as friendly.).
    */
   name?: fhir.FhirString|string|undefined;
+  /**
+   * Extended properties for primitive element: CareTeam.name
+   */
+  _name?:fhir.FhirElementArgs;
   /**
    * Identifies the patient or group whose intended care is handled by the team.
    */
@@ -223,9 +231,17 @@ export class CareTeam extends fhir.DomainResource {
     if (source['identifier']) { this.identifier = source.identifier.map((x) => new fhir.Identifier(x)); }
     else { this.identifier = []; }
     if (source['status']) { this.status = new fhir.FhirCode<CareTeamStatusCodeType>({value: source.status}); }
+    if (source['_status']) {
+      if (this.status) { this.status.addExtendedProperties(source._status!); }
+      else { this.status = new fhir.FhirCode<CareTeamStatusCodeType>(source._status as Partial<fhir.FhirCode>); }
+    }
     if (source['category']) { this.category = source.category.map((x) => new fhir.CodeableConcept(x)); }
     else { this.category = []; }
     if (source['name']) { this.name = new fhir.FhirString({value: source.name}); }
+    if (source['_name']) {
+      if (this.name) { this.name.addExtendedProperties(source._name!); }
+      else { this.name = new fhir.FhirString(source._name as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['subject']) { this.subject = new fhir.Reference(source.subject); }
     if (source['encounter']) { this.encounter = new fhir.Reference(source.encounter); }
     if (source['period']) { this.period = new fhir.Period(source.period); }

@@ -22,9 +22,9 @@ import { ResearchStudyPhaseCodings, ResearchStudyPhaseCodingType,} from '../fhir
 // @ts-ignore
 import { ResearchStudyPhaseCodes,  ResearchStudyPhaseCodeType } from '../fhirValueSets/ResearchStudyPhaseCodes.js';
 // @ts-ignore
-import { ConditionCodeCodings, ConditionCodeCodingType,} from '../fhirValueSets/ConditionCodeCodings.js';
+import { ConditionCodings, ConditionCodingType,} from '../fhirValueSets/ConditionCodings.js';
 // @ts-ignore
-import { ConditionCodeCodes,  ConditionCodeCodeType } from '../fhirValueSets/ConditionCodeCodes.js';
+import { ConditionCodes,  ConditionCodeType } from '../fhirValueSets/ConditionCodes.js';
 // @ts-ignore
 import { ResearchStudyReasonStoppedCodings, ResearchStudyReasonStoppedCodingType,} from '../fhirValueSets/ResearchStudyReasonStoppedCodings.js';
 // @ts-ignore
@@ -38,6 +38,10 @@ export interface ResearchStudyArmArgs extends fhir.BackboneElementArgs {
    */
   name: fhir.FhirString|string|undefined;
   /**
+   * Extended properties for primitive element: ResearchStudy.arm.name
+   */
+  _name?:fhir.FhirElementArgs;
+  /**
    * Categorization of study arm, e.g. experimental, active comparator, placebo comparater.
    */
   type?: fhir.CodeableConceptArgs|undefined;
@@ -45,6 +49,10 @@ export interface ResearchStudyArmArgs extends fhir.BackboneElementArgs {
    * A succinct description of the path through the study that would be followed by a subject adhering to this arm.
    */
   description?: fhir.FhirString|string|undefined;
+  /**
+   * Extended properties for primitive element: ResearchStudy.arm.description
+   */
+  _description?:fhir.FhirElementArgs;
 }
 
 /**
@@ -74,8 +82,16 @@ export class ResearchStudyArm extends fhir.BackboneElement {
     super(source, options);
     if (source['name']) { this.name = new fhir.FhirString({value: source.name}); }
     else { this.name = null; }
+    if (source['_name']) {
+      if (this.name) { this.name.addExtendedProperties(source._name!); }
+      else { this.name = new fhir.FhirString(source._name as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['type']) { this.type = new fhir.CodeableConcept(source.type); }
     if (source['description']) { this.description = new fhir.FhirString({value: source.description}); }
+    if (source['_description']) {
+      if (this.description) { this.description.addExtendedProperties(source._description!); }
+      else { this.description = new fhir.FhirString(source._description as Partial<fhir.FhirStringArgs>); }
+    }
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -99,6 +115,10 @@ export interface ResearchStudyObjectiveArgs extends fhir.BackboneElementArgs {
    * Unique, human-readable label for this objective of the study.
    */
   name?: fhir.FhirString|string|undefined;
+  /**
+   * Extended properties for primitive element: ResearchStudy.objective.name
+   */
+  _name?:fhir.FhirElementArgs;
   /**
    * The kind of study objective.
    */
@@ -127,6 +147,10 @@ export class ResearchStudyObjective extends fhir.BackboneElement {
   constructor(source:Partial<ResearchStudyObjectiveArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
     if (source['name']) { this.name = new fhir.FhirString({value: source.name}); }
+    if (source['_name']) {
+      if (this.name) { this.name.addExtendedProperties(source._name!); }
+      else { this.name = new fhir.FhirString(source._name as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['type']) { this.type = new fhir.CodeableConcept(source.type); }
   }
   /**
@@ -162,6 +186,10 @@ export interface ResearchStudyArgs extends fhir.DomainResourceArgs {
    */
   title?: fhir.FhirString|string|undefined;
   /**
+   * Extended properties for primitive element: ResearchStudy.title
+   */
+  _title?:fhir.FhirElementArgs;
+  /**
    * The set of steps expected to be performed as part of the execution of the study.
    */
   protocol?: fhir.ReferenceArgs[]|undefined;
@@ -173,6 +201,10 @@ export interface ResearchStudyArgs extends fhir.DomainResourceArgs {
    * The current state of the study.
    */
   status: fhir.FhirCode<ResearchStudyStatusCodeType>|string|undefined;
+  /**
+   * Extended properties for primitive element: ResearchStudy.status
+   */
+  _status?:fhir.FhirElementArgs;
   /**
    * The type of study based upon the intent of the study's activities. A classification of the intent of the study.
    */
@@ -213,6 +245,10 @@ export interface ResearchStudyArgs extends fhir.DomainResourceArgs {
    * A full description of how the study is being conducted.
    */
   description?: fhir.FhirMarkdown|string|undefined;
+  /**
+   * Extended properties for primitive element: ResearchStudy.description
+   */
+  _description?:fhir.FhirElementArgs;
   /**
    * The Group referenced should not generally enumerate specific subjects.  Subjects will be linked to the study using the ResearchSubject resource.
    */
@@ -368,12 +404,20 @@ export class ResearchStudy extends fhir.DomainResource {
     if (source['identifier']) { this.identifier = source.identifier.map((x) => new fhir.Identifier(x)); }
     else { this.identifier = []; }
     if (source['title']) { this.title = new fhir.FhirString({value: source.title}); }
+    if (source['_title']) {
+      if (this.title) { this.title.addExtendedProperties(source._title!); }
+      else { this.title = new fhir.FhirString(source._title as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['protocol']) { this.protocol = source.protocol.map((x) => new fhir.Reference(x)); }
     else { this.protocol = []; }
     if (source['partOf']) { this.partOf = source.partOf.map((x) => new fhir.Reference(x)); }
     else { this.partOf = []; }
     if (source['status']) { this.status = new fhir.FhirCode<ResearchStudyStatusCodeType>({value: source.status}); }
     else { this.status = null; }
+    if (source['_status']) {
+      if (this.status) { this.status.addExtendedProperties(source._status!); }
+      else { this.status = new fhir.FhirCode<ResearchStudyStatusCodeType>(source._status as Partial<fhir.FhirCode>); }
+    }
     if (source['primaryPurposeType']) { this.primaryPurposeType = new fhir.CodeableConcept(source.primaryPurposeType); }
     if (source['phase']) { this.phase = new fhir.CodeableConcept(source.phase); }
     if (source['category']) { this.category = source.category.map((x) => new fhir.CodeableConcept(x)); }
@@ -391,6 +435,10 @@ export class ResearchStudy extends fhir.DomainResource {
     if (source['location']) { this.location = source.location.map((x) => new fhir.CodeableConcept(x)); }
     else { this.location = []; }
     if (source['description']) { this.description = new fhir.FhirMarkdown({value: source.description}); }
+    if (source['_description']) {
+      if (this.description) { this.description.addExtendedProperties(source._description!); }
+      else { this.description = new fhir.FhirMarkdown(source._description as Partial<fhir.FhirMarkdownArgs>); }
+    }
     if (source['enrollment']) { this.enrollment = source.enrollment.map((x) => new fhir.Reference(x)); }
     else { this.enrollment = []; }
     if (source['period']) { this.period = new fhir.Period(source.period); }

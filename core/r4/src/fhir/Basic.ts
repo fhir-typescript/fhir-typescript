@@ -35,6 +35,10 @@ export interface BasicArgs extends fhir.DomainResourceArgs {
    */
   created?: fhir.FhirDate|string|undefined;
   /**
+   * Extended properties for primitive element: Basic.created
+   */
+  _created?:fhir.FhirElementArgs;
+  /**
    * Indicates who was responsible for creating the resource instance.
    */
   author?: fhir.ReferenceArgs|undefined;
@@ -85,6 +89,10 @@ export class Basic extends fhir.DomainResource {
     else { this.code = null; }
     if (source['subject']) { this.subject = new fhir.Reference(source.subject); }
     if (source['created']) { this.created = new fhir.FhirDate({value: source.created}); }
+    if (source['_created']) {
+      if (this.created) { this.created.addExtendedProperties(source._created!); }
+      else { this.created = new fhir.FhirDate(source._created as Partial<fhir.FhirDateArgs>); }
+    }
     if (source['author']) { this.author = new fhir.Reference(source.author); }
   }
   /**

@@ -34,6 +34,10 @@ export interface ScheduleArgs extends fhir.DomainResourceArgs {
    */
   active?: fhir.FhirBoolean|boolean|undefined;
   /**
+   * Extended properties for primitive element: Schedule.active
+   */
+  _active?:fhir.FhirElementArgs;
+  /**
    * A broad categorization of the service that is to be performed during this appointment.
    */
   serviceCategory?: fhir.CodeableConceptArgs[]|undefined;
@@ -57,6 +61,10 @@ export interface ScheduleArgs extends fhir.DomainResourceArgs {
    * Comments on the availability to describe any extended information. Such as custom constraints on the slots that may be associated.
    */
   comment?: fhir.FhirString|string|undefined;
+  /**
+   * Extended properties for primitive element: Schedule.comment
+   */
+  _comment?:fhir.FhirElementArgs;
 }
 
 /**
@@ -112,6 +120,10 @@ export class Schedule extends fhir.DomainResource {
     if (source['identifier']) { this.identifier = source.identifier.map((x) => new fhir.Identifier(x)); }
     else { this.identifier = []; }
     if (source['active']) { this.active = new fhir.FhirBoolean({value: source.active}); }
+    if (source['_active']) {
+      if (this.active) { this.active.addExtendedProperties(source._active!); }
+      else { this.active = new fhir.FhirBoolean(source._active as Partial<fhir.FhirBooleanArgs>); }
+    }
     if (source['serviceCategory']) { this.serviceCategory = source.serviceCategory.map((x) => new fhir.CodeableConcept(x)); }
     else { this.serviceCategory = []; }
     if (source['serviceType']) { this.serviceType = source.serviceType.map((x) => new fhir.CodeableConcept(x)); }
@@ -122,6 +134,10 @@ export class Schedule extends fhir.DomainResource {
     else { this.actor = []; }
     if (source['planningHorizon']) { this.planningHorizon = new fhir.Period(source.planningHorizon); }
     if (source['comment']) { this.comment = new fhir.FhirString({value: source.comment}); }
+    if (source['_comment']) {
+      if (this.comment) { this.comment.addExtendedProperties(source._comment!); }
+      else { this.comment = new fhir.FhirString(source._comment as Partial<fhir.FhirStringArgs>); }
+    }
   }
   /**
    * Preferred-bound Value Set for specialty (Schedule.specialty)

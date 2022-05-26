@@ -73,6 +73,10 @@ export interface CareTeamArgs extends fhir.DomainResourceArgs {
      */
     status?: fhir.FhirCode<CareTeamStatusCodeType> | string | undefined;
     /**
+     * Extended properties for primitive element: CareTeam.status
+     */
+    _status?: fhir.FhirElementArgs;
+    /**
      * There may be multiple axis of categorization and one team may serve multiple purposes.
      */
     category?: fhir.CodeableConceptArgs[] | undefined;
@@ -80,6 +84,10 @@ export interface CareTeamArgs extends fhir.DomainResourceArgs {
      * The meaning/purpose of the team is conveyed in CareTeam.category.  This element may also convey semantics of the team (e.g. "Red trauma team"), but its primary purpose is to distinguish between identical teams in a human-friendly way.  ("Team 18735" isn't as friendly.).
      */
     name?: fhir.FhirString | string | undefined;
+    /**
+     * Extended properties for primitive element: CareTeam.name
+     */
+    _name?: fhir.FhirElementArgs;
     /**
      * Identifies the patient or group whose intended care is handled by the team.
      */

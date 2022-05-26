@@ -16,6 +16,10 @@ export interface BodyStructureArgs extends fhir.DomainResourceArgs {
      */
     active?: fhir.FhirBoolean | boolean | undefined;
     /**
+     * Extended properties for primitive element: BodyStructure.active
+     */
+    _active?: fhir.FhirElementArgs;
+    /**
      * The minimum cardinality of 0 supports the use case of specifying a location without defining a morphology.
      */
     morphology?: fhir.CodeableConceptArgs | undefined;
@@ -31,6 +35,10 @@ export interface BodyStructureArgs extends fhir.DomainResourceArgs {
      * This description could include any visual markings used to orientate the viewer e.g. external reference points, special sutures, ink markings.
      */
     description?: fhir.FhirString | string | undefined;
+    /**
+     * Extended properties for primitive element: BodyStructure.description
+     */
+    _description?: fhir.FhirElementArgs;
     /**
      * Image or images used to identify a location.
      */

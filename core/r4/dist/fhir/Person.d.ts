@@ -13,6 +13,10 @@ export interface PersonLinkArgs extends fhir.BackboneElementArgs {
      * Level of assurance that this link is associated with the target resource.
      */
     assurance?: fhir.FhirCode<IdentityAssuranceLevelCodeType> | string | undefined;
+    /**
+     * Extended properties for primitive element: Person.link.assurance
+     */
+    _assurance?: fhir.FhirElementArgs;
 }
 /**
  * Link to a resource that concerns the same actual person.
@@ -73,9 +77,17 @@ export interface PersonArgs extends fhir.DomainResourceArgs {
      */
     gender?: fhir.FhirCode<AdministrativeGenderCodeType> | string | undefined;
     /**
+     * Extended properties for primitive element: Person.gender
+     */
+    _gender?: fhir.FhirElementArgs;
+    /**
      * At least an estimated year should be provided as a guess if the real DOB is unknown.
      */
     birthDate?: fhir.FhirDate | string | undefined;
+    /**
+     * Extended properties for primitive element: Person.birthDate
+     */
+    _birthDate?: fhir.FhirElementArgs;
     /**
      * Person may have multiple addresses with different uses or applicable periods.
      */
@@ -92,6 +104,10 @@ export interface PersonArgs extends fhir.DomainResourceArgs {
      * Whether this person's record is in active use.
      */
     active?: fhir.FhirBoolean | boolean | undefined;
+    /**
+     * Extended properties for primitive element: Person.active
+     */
+    _active?: fhir.FhirElementArgs;
     /**
      * Link to a resource that concerns the same actual person.
      */

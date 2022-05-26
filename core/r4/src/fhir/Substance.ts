@@ -14,9 +14,9 @@ import { SubstanceCategoryCodings, SubstanceCategoryCodingType,} from '../fhirVa
 // @ts-ignore
 import { SubstanceCategoryCodes,  SubstanceCategoryCodeType } from '../fhirValueSets/SubstanceCategoryCodes.js';
 // @ts-ignore
-import { SubstanceCodeCodings, SubstanceCodeCodingType,} from '../fhirValueSets/SubstanceCodeCodings.js';
+import { SubstanceCodings, SubstanceCodingType,} from '../fhirValueSets/SubstanceCodings.js';
 // @ts-ignore
-import { SubstanceCodeCodes,  SubstanceCodeCodeType } from '../fhirValueSets/SubstanceCodeCodes.js';
+import { SubstanceCodes,  SubstanceCodeType } from '../fhirValueSets/SubstanceCodes.js';
 /**
  * Valid arguments for the SubstanceInstance type.
  */
@@ -29,6 +29,10 @@ export interface SubstanceInstanceArgs extends fhir.BackboneElementArgs {
    * When the substance is no longer valid to use. For some substances, a single arbitrary date is used for expiry.
    */
   expiry?: fhir.FhirDateTime|string|undefined;
+  /**
+   * Extended properties for primitive element: Substance.instance.expiry
+   */
+  _expiry?:fhir.FhirElementArgs;
   /**
    * The amount of the substance.
    */
@@ -62,6 +66,10 @@ export class SubstanceInstance extends fhir.BackboneElement {
     super(source, options);
     if (source['identifier']) { this.identifier = new fhir.Identifier(source.identifier); }
     if (source['expiry']) { this.expiry = new fhir.FhirDateTime({value: source.expiry}); }
+    if (source['_expiry']) {
+      if (this.expiry) { this.expiry.addExtendedProperties(source._expiry!); }
+      else { this.expiry = new fhir.FhirDateTime(source._expiry as Partial<fhir.FhirDateTimeArgs>); }
+    }
     if (source['quantity']) { this.quantity = new fhir.Quantity(source.quantity); }
   }
   /**
@@ -157,6 +165,10 @@ export interface SubstanceArgs extends fhir.DomainResourceArgs {
    */
   status?: fhir.FhirCode<SubstanceStatusCodeType>|string|undefined;
   /**
+   * Extended properties for primitive element: Substance.status
+   */
+  _status?:fhir.FhirElementArgs;
+  /**
    * The level of granularity is defined by the category concepts in the value set.   More fine-grained filtering can be performed using the metadata and/or terminology hierarchy in Substance.code.
    */
   category?: fhir.CodeableConceptArgs[]|undefined;
@@ -168,6 +180,10 @@ export interface SubstanceArgs extends fhir.DomainResourceArgs {
    * A description of the substance - its appearance, handling requirements, and other usage notes.
    */
   description?: fhir.FhirString|string|undefined;
+  /**
+   * Extended properties for primitive element: Substance.description
+   */
+  _description?:fhir.FhirElementArgs;
   /**
    * Substance may be used to describe a kind of substance, or a specific package/container of the substance: an instance.
    */
@@ -227,11 +243,19 @@ export class Substance extends fhir.DomainResource {
     if (source['identifier']) { this.identifier = source.identifier.map((x) => new fhir.Identifier(x)); }
     else { this.identifier = []; }
     if (source['status']) { this.status = new fhir.FhirCode<SubstanceStatusCodeType>({value: source.status}); }
+    if (source['_status']) {
+      if (this.status) { this.status.addExtendedProperties(source._status!); }
+      else { this.status = new fhir.FhirCode<SubstanceStatusCodeType>(source._status as Partial<fhir.FhirCode>); }
+    }
     if (source['category']) { this.category = source.category.map((x) => new fhir.CodeableConcept(x)); }
     else { this.category = []; }
     if (source['code']) { this.code = new fhir.CodeableConcept(source.code); }
     else { this.code = null; }
     if (source['description']) { this.description = new fhir.FhirString({value: source.description}); }
+    if (source['_description']) {
+      if (this.description) { this.description.addExtendedProperties(source._description!); }
+      else { this.description = new fhir.FhirString(source._description as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['instance']) { this.instance = source.instance.map((x) => new fhir.SubstanceInstance(x)); }
     else { this.instance = []; }
     if (source['ingredient']) { this.ingredient = source.ingredient.map((x) => new fhir.SubstanceIngredient(x)); }

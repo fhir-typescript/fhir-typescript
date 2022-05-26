@@ -18,25 +18,49 @@ export interface HumanNameArgs extends fhir.FhirElementArgs {
    */
   use?: fhir.FhirCode<NameUseCodeType>|string|undefined;
   /**
+   * Extended properties for primitive element: HumanName.use
+   */
+  _use?:fhir.FhirElementArgs;
+  /**
    * Can provide both a text representation and parts. Applications updating a name SHALL ensure that when both text and parts are present,  no content is included in the text that isn't found in a part.
    */
   text?: fhir.FhirString|string|undefined;
+  /**
+   * Extended properties for primitive element: HumanName.text
+   */
+  _text?:fhir.FhirElementArgs;
   /**
    * Family Name may be decomposed into specific parts using extensions (de, nl, es related cultures).
    */
   family?: fhir.FhirString|string|undefined;
   /**
+   * Extended properties for primitive element: HumanName.family
+   */
+  _family?:fhir.FhirElementArgs;
+  /**
    * If only initials are recorded, they may be used in place of the full name parts. Initials may be separated into multiple given names but often aren't due to paractical limitations.  This element is not called "first name" since given names do not always come first.
    */
   given?: fhir.FhirString[]|string[]|undefined;
+  /**
+   * Extended properties for primitive element: HumanName.given
+   */
+  _given?:(fhir.FhirElementArgs|null)[];
   /**
    * Part of the name that is acquired as a title due to academic, legal, employment or nobility status, etc. and that appears at the start of the name.
    */
   prefix?: fhir.FhirString[]|string[]|undefined;
   /**
+   * Extended properties for primitive element: HumanName.prefix
+   */
+  _prefix?:(fhir.FhirElementArgs|null)[];
+  /**
    * Part of the name that is acquired as a title due to academic, legal, employment or nobility status, etc. and that appears at the end of the name.
    */
   suffix?: fhir.FhirString[]|string[]|undefined;
+  /**
+   * Extended properties for primitive element: HumanName.suffix
+   */
+  _suffix?:(fhir.FhirElementArgs|null)[];
   /**
    * Indicates the period of time when this name was valid for the named person.
    */
@@ -85,14 +109,44 @@ export class HumanName extends fhir.FhirElement {
   constructor(source:Partial<HumanNameArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
     if (source['use']) { this.use = new fhir.FhirCode<NameUseCodeType>({value: source.use}); }
+    if (source['_use']) {
+      if (this.use) { this.use.addExtendedProperties(source._use!); }
+      else { this.use = new fhir.FhirCode<NameUseCodeType>(source._use as Partial<fhir.FhirCode>); }
+    }
     if (source['text']) { this.text = new fhir.FhirString({value: source.text}); }
+    if (source['_text']) {
+      if (this.text) { this.text.addExtendedProperties(source._text!); }
+      else { this.text = new fhir.FhirString(source._text as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['family']) { this.family = new fhir.FhirString({value: source.family}); }
+    if (source['_family']) {
+      if (this.family) { this.family.addExtendedProperties(source._family!); }
+      else { this.family = new fhir.FhirString(source._family as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['given']) { this.given = source.given.map((x) => new fhir.FhirString({value: x})); }
     else { this.given = []; }
+    if (source['_given']) {
+      source._given.forEach((x,i) => {
+        if (this.given.length >= i) { if (x) { this.given[i].addExtendedProperties(x); } }
+        else { if (x) { this.given.push(new fhir.FhirString(x as Partial<fhir.FhirStringArgs>)); } }
+      });
+    }
     if (source['prefix']) { this.prefix = source.prefix.map((x) => new fhir.FhirString({value: x})); }
     else { this.prefix = []; }
+    if (source['_prefix']) {
+      source._prefix.forEach((x,i) => {
+        if (this.prefix.length >= i) { if (x) { this.prefix[i].addExtendedProperties(x); } }
+        else { if (x) { this.prefix.push(new fhir.FhirString(x as Partial<fhir.FhirStringArgs>)); } }
+      });
+    }
     if (source['suffix']) { this.suffix = source.suffix.map((x) => new fhir.FhirString({value: x})); }
     else { this.suffix = []; }
+    if (source['_suffix']) {
+      source._suffix.forEach((x,i) => {
+        if (this.suffix.length >= i) { if (x) { this.suffix[i].addExtendedProperties(x); } }
+        else { if (x) { this.suffix.push(new fhir.FhirString(x as Partial<fhir.FhirStringArgs>)); } }
+      });
+    }
     if (source['period']) { this.period = new fhir.Period(source.period); }
   }
   /**

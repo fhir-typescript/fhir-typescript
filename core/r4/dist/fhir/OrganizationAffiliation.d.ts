@@ -17,6 +17,10 @@ export interface OrganizationAffiliationArgs extends fhir.DomainResourceArgs {
      */
     active?: fhir.FhirBoolean | boolean | undefined;
     /**
+     * Extended properties for primitive element: OrganizationAffiliation.active
+     */
+    _active?: fhir.FhirElementArgs;
+    /**
      * The period during which the participatingOrganization is affiliated with the primary organization.
      */
     period?: fhir.PeriodArgs | undefined;

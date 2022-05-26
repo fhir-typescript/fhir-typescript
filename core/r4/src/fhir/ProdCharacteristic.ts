@@ -38,13 +38,25 @@ export interface ProdCharacteristicArgs extends fhir.BackboneElementArgs {
    */
   shape?: fhir.FhirString|string|undefined;
   /**
+   * Extended properties for primitive element: ProdCharacteristic.shape
+   */
+  _shape?:fhir.FhirElementArgs;
+  /**
    * Where applicable, the color can be specified An appropriate controlled vocabulary shall be used The term and the term identifier shall be used.
    */
   color?: fhir.FhirString[]|string[]|undefined;
   /**
+   * Extended properties for primitive element: ProdCharacteristic.color
+   */
+  _color?:(fhir.FhirElementArgs|null)[];
+  /**
    * Where applicable, the imprint can be specified as text.
    */
   imprint?: fhir.FhirString[]|string[]|undefined;
+  /**
+   * Extended properties for primitive element: ProdCharacteristic.imprint
+   */
+  _imprint?:(fhir.FhirElementArgs|null)[];
   /**
    * Where applicable, the image can be provided The format of the image attachment shall be specified by regional implementations.
    */
@@ -119,10 +131,26 @@ export class ProdCharacteristic extends fhir.BackboneElement {
     if (source['nominalVolume']) { this.nominalVolume = new fhir.Quantity(source.nominalVolume); }
     if (source['externalDiameter']) { this.externalDiameter = new fhir.Quantity(source.externalDiameter); }
     if (source['shape']) { this.shape = new fhir.FhirString({value: source.shape}); }
+    if (source['_shape']) {
+      if (this.shape) { this.shape.addExtendedProperties(source._shape!); }
+      else { this.shape = new fhir.FhirString(source._shape as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['color']) { this.color = source.color.map((x) => new fhir.FhirString({value: x})); }
     else { this.color = []; }
+    if (source['_color']) {
+      source._color.forEach((x,i) => {
+        if (this.color.length >= i) { if (x) { this.color[i].addExtendedProperties(x); } }
+        else { if (x) { this.color.push(new fhir.FhirString(x as Partial<fhir.FhirStringArgs>)); } }
+      });
+    }
     if (source['imprint']) { this.imprint = source.imprint.map((x) => new fhir.FhirString({value: x})); }
     else { this.imprint = []; }
+    if (source['_imprint']) {
+      source._imprint.forEach((x,i) => {
+        if (this.imprint.length >= i) { if (x) { this.imprint[i].addExtendedProperties(x); } }
+        else { if (x) { this.imprint.push(new fhir.FhirString(x as Partial<fhir.FhirStringArgs>)); } }
+      });
+    }
     if (source['image']) { this.image = source.image.map((x) => new fhir.Attachment(x)); }
     else { this.image = []; }
     if (source['scoring']) { this.scoring = new fhir.CodeableConcept(source.scoring); }

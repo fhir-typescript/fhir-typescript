@@ -17,6 +17,10 @@ export interface FlagArgs extends fhir.DomainResourceArgs {
      */
     status: fhir.FhirCode<FlagStatusCodeType> | string | undefined;
     /**
+     * Extended properties for primitive element: Flag.status
+     */
+    _status?: fhir.FhirElementArgs;
+    /**
      * The value set will often need to be adjusted based on local business rules and usage context.
      */
     category?: fhir.CodeableConceptArgs[] | undefined;

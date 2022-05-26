@@ -114,6 +114,10 @@ export interface CommunicationRequestArgs extends fhir.DomainResourceArgs {
    */
   status: fhir.FhirCode<RequestStatusCodeType>|string|undefined;
   /**
+   * Extended properties for primitive element: CommunicationRequest.status
+   */
+  _status?:fhir.FhirElementArgs;
+  /**
    * This is generally only used for "exception" statuses such as "suspended" or "cancelled".  The reason why the CommunicationRequest was created at all is captured in reasonCode, not here.  [distinct reason codes for different statuses can be enforced using invariants if they are universal bindings].
    */
   statusReason?: fhir.CodeableConceptArgs|undefined;
@@ -126,9 +130,17 @@ export interface CommunicationRequestArgs extends fhir.DomainResourceArgs {
    */
   priority?: fhir.FhirCode<RequestPriorityCodeType>|string|undefined;
   /**
+   * Extended properties for primitive element: CommunicationRequest.priority
+   */
+  _priority?:fhir.FhirElementArgs;
+  /**
    * The attributes provided with the request qualify what is not to be done.
    */
   doNotPerform?: fhir.FhirBoolean|boolean|undefined;
+  /**
+   * Extended properties for primitive element: CommunicationRequest.doNotPerform
+   */
+  _doNotPerform?:fhir.FhirElementArgs;
   /**
    * A channel that was used for this communication (e.g. email, fax).
    */
@@ -165,6 +177,10 @@ export interface CommunicationRequestArgs extends fhir.DomainResourceArgs {
    * For draft requests, indicates the date of initial creation.  For requests with other statuses, indicates the date of activation.
    */
   authoredOn?: fhir.FhirDateTime|string|undefined;
+  /**
+   * Extended properties for primitive element: CommunicationRequest.authoredOn
+   */
+  _authoredOn?:fhir.FhirElementArgs;
   /**
    * The device, individual, or organization who initiated the request and has responsibility for its activation.
    */
@@ -310,11 +326,23 @@ export class CommunicationRequest extends fhir.DomainResource {
     if (source['groupIdentifier']) { this.groupIdentifier = new fhir.Identifier(source.groupIdentifier); }
     if (source['status']) { this.status = new fhir.FhirCode<RequestStatusCodeType>({value: source.status}); }
     else { this.status = null; }
+    if (source['_status']) {
+      if (this.status) { this.status.addExtendedProperties(source._status!); }
+      else { this.status = new fhir.FhirCode<RequestStatusCodeType>(source._status as Partial<fhir.FhirCode>); }
+    }
     if (source['statusReason']) { this.statusReason = new fhir.CodeableConcept(source.statusReason); }
     if (source['category']) { this.category = source.category.map((x) => new fhir.CodeableConcept(x)); }
     else { this.category = []; }
     if (source['priority']) { this.priority = new fhir.FhirCode<RequestPriorityCodeType>({value: source.priority}); }
+    if (source['_priority']) {
+      if (this.priority) { this.priority.addExtendedProperties(source._priority!); }
+      else { this.priority = new fhir.FhirCode<RequestPriorityCodeType>(source._priority as Partial<fhir.FhirCode>); }
+    }
     if (source['doNotPerform']) { this.doNotPerform = new fhir.FhirBoolean({value: source.doNotPerform}); }
+    if (source['_doNotPerform']) {
+      if (this.doNotPerform) { this.doNotPerform.addExtendedProperties(source._doNotPerform!); }
+      else { this.doNotPerform = new fhir.FhirBoolean(source._doNotPerform as Partial<fhir.FhirBooleanArgs>); }
+    }
     if (source['medium']) { this.medium = source.medium.map((x) => new fhir.CodeableConcept(x)); }
     else { this.medium = []; }
     if (source['subject']) { this.subject = new fhir.Reference(source.subject); }
@@ -327,6 +355,10 @@ export class CommunicationRequest extends fhir.DomainResource {
     else if (source['occurrenceDateTime']) { this.occurrence = new fhir.FhirDateTime({value: source.occurrenceDateTime}); }
     else if (source['occurrencePeriod']) { this.occurrence = new fhir.Period(source.occurrencePeriod); }
     if (source['authoredOn']) { this.authoredOn = new fhir.FhirDateTime({value: source.authoredOn}); }
+    if (source['_authoredOn']) {
+      if (this.authoredOn) { this.authoredOn.addExtendedProperties(source._authoredOn!); }
+      else { this.authoredOn = new fhir.FhirDateTime(source._authoredOn as Partial<fhir.FhirDateTimeArgs>); }
+    }
     if (source['requester']) { this.requester = new fhir.Reference(source.requester); }
     if (source['recipient']) { this.recipient = source.recipient.map((x) => new fhir.Reference(x)); }
     else { this.recipient = []; }

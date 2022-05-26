@@ -8,9 +8,17 @@ export interface PeriodArgs extends fhir.FhirElementArgs {
      */
     start?: fhir.FhirDateTime | string | undefined;
     /**
+     * Extended properties for primitive element: Period.start
+     */
+    _start?: fhir.FhirElementArgs;
+    /**
      * The high value includes any matching date/time. i.e. 2012-02-03T10:00:00 is in a period that has an end value of 2012-02-03.
      */
     end?: fhir.FhirDateTime | string | undefined;
+    /**
+     * Extended properties for primitive element: Period.end
+     */
+    _end?: fhir.FhirElementArgs;
 }
 /**
  * A time period defined by a start and end date and optionally time.

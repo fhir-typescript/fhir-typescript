@@ -14,6 +14,10 @@ export interface SubstanceInstanceArgs extends fhir.BackboneElementArgs {
      */
     expiry?: fhir.FhirDateTime | string | undefined;
     /**
+     * Extended properties for primitive element: Substance.instance.expiry
+     */
+    _expiry?: fhir.FhirElementArgs;
+    /**
      * The amount of the substance.
      */
     quantity?: fhir.QuantityArgs | undefined;
@@ -114,6 +118,10 @@ export interface SubstanceArgs extends fhir.DomainResourceArgs {
      */
     status?: fhir.FhirCode<SubstanceStatusCodeType> | string | undefined;
     /**
+     * Extended properties for primitive element: Substance.status
+     */
+    _status?: fhir.FhirElementArgs;
+    /**
      * The level of granularity is defined by the category concepts in the value set.   More fine-grained filtering can be performed using the metadata and/or terminology hierarchy in Substance.code.
      */
     category?: fhir.CodeableConceptArgs[] | undefined;
@@ -125,6 +133,10 @@ export interface SubstanceArgs extends fhir.DomainResourceArgs {
      * A description of the substance - its appearance, handling requirements, and other usage notes.
      */
     description?: fhir.FhirString | string | undefined;
+    /**
+     * Extended properties for primitive element: Substance.description
+     */
+    _description?: fhir.FhirElementArgs;
     /**
      * Substance may be used to describe a kind of substance, or a specific package/container of the substance: an instance.
      */

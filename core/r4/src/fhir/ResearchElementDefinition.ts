@@ -62,6 +62,10 @@ export interface ResearchElementDefinitionCharacteristicArgs extends fhir.Backbo
    */
   exclude?: fhir.FhirBoolean|boolean|undefined;
   /**
+   * Extended properties for primitive element: ResearchElementDefinition.characteristic.exclude
+   */
+  _exclude?:fhir.FhirElementArgs;
+  /**
    * Specifies the UCUM unit for the outcome.
    */
   unitOfMeasure?: fhir.CodeableConceptArgs|undefined;
@@ -69,6 +73,10 @@ export interface ResearchElementDefinitionCharacteristicArgs extends fhir.Backbo
    * A narrative description of the time period the study covers.
    */
   studyEffectiveDescription?: fhir.FhirString|string|undefined;
+  /**
+   * Extended properties for primitive element: ResearchElementDefinition.characteristic.studyEffectiveDescription
+   */
+  _studyEffectiveDescription?:fhir.FhirElementArgs;
   /**
    * Indicates what effective period the study covers.
    */
@@ -98,9 +106,17 @@ export interface ResearchElementDefinitionCharacteristicArgs extends fhir.Backbo
    */
   studyEffectiveGroupMeasure?: fhir.FhirCode<GroupMeasureCodeType>|string|undefined;
   /**
+   * Extended properties for primitive element: ResearchElementDefinition.characteristic.studyEffectiveGroupMeasure
+   */
+  _studyEffectiveGroupMeasure?:fhir.FhirElementArgs;
+  /**
    * A narrative description of the time period the study covers.
    */
   participantEffectiveDescription?: fhir.FhirString|string|undefined;
+  /**
+   * Extended properties for primitive element: ResearchElementDefinition.characteristic.participantEffectiveDescription
+   */
+  _participantEffectiveDescription?:fhir.FhirElementArgs;
   /**
    * Indicates what effective period the study covers.
    */
@@ -129,6 +145,10 @@ export interface ResearchElementDefinitionCharacteristicArgs extends fhir.Backbo
    * Indicates how elements are aggregated within the study effective period.
    */
   participantEffectiveGroupMeasure?: fhir.FhirCode<GroupMeasureCodeType>|string|undefined;
+  /**
+   * Extended properties for primitive element: ResearchElementDefinition.characteristic.participantEffectiveGroupMeasure
+   */
+  _participantEffectiveGroupMeasure?:fhir.FhirElementArgs;
 }
 
 /**
@@ -213,8 +233,16 @@ export class ResearchElementDefinitionCharacteristic extends fhir.BackboneElemen
     if (source['usageContext']) { this.usageContext = source.usageContext.map((x) => new fhir.UsageContext(x)); }
     else { this.usageContext = []; }
     if (source['exclude']) { this.exclude = new fhir.FhirBoolean({value: source.exclude}); }
+    if (source['_exclude']) {
+      if (this.exclude) { this.exclude.addExtendedProperties(source._exclude!); }
+      else { this.exclude = new fhir.FhirBoolean(source._exclude as Partial<fhir.FhirBooleanArgs>); }
+    }
     if (source['unitOfMeasure']) { this.unitOfMeasure = new fhir.CodeableConcept(source.unitOfMeasure); }
     if (source['studyEffectiveDescription']) { this.studyEffectiveDescription = new fhir.FhirString({value: source.studyEffectiveDescription}); }
+    if (source['_studyEffectiveDescription']) {
+      if (this.studyEffectiveDescription) { this.studyEffectiveDescription.addExtendedProperties(source._studyEffectiveDescription!); }
+      else { this.studyEffectiveDescription = new fhir.FhirString(source._studyEffectiveDescription as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['studyEffective']) { this.studyEffective = source.studyEffective; }
     else if (source['studyEffectiveDateTime']) { this.studyEffective = new fhir.FhirDateTime({value: source.studyEffectiveDateTime}); }
     else if (source['studyEffectivePeriod']) { this.studyEffective = new fhir.Period(source.studyEffectivePeriod); }
@@ -222,7 +250,15 @@ export class ResearchElementDefinitionCharacteristic extends fhir.BackboneElemen
     else if (source['studyEffectiveTiming']) { this.studyEffective = new fhir.Timing(source.studyEffectiveTiming); }
     if (source['studyEffectiveTimeFromStart']) { this.studyEffectiveTimeFromStart = new fhir.Duration(source.studyEffectiveTimeFromStart); }
     if (source['studyEffectiveGroupMeasure']) { this.studyEffectiveGroupMeasure = new fhir.FhirCode<GroupMeasureCodeType>({value: source.studyEffectiveGroupMeasure}); }
+    if (source['_studyEffectiveGroupMeasure']) {
+      if (this.studyEffectiveGroupMeasure) { this.studyEffectiveGroupMeasure.addExtendedProperties(source._studyEffectiveGroupMeasure!); }
+      else { this.studyEffectiveGroupMeasure = new fhir.FhirCode<GroupMeasureCodeType>(source._studyEffectiveGroupMeasure as Partial<fhir.FhirCode>); }
+    }
     if (source['participantEffectiveDescription']) { this.participantEffectiveDescription = new fhir.FhirString({value: source.participantEffectiveDescription}); }
+    if (source['_participantEffectiveDescription']) {
+      if (this.participantEffectiveDescription) { this.participantEffectiveDescription.addExtendedProperties(source._participantEffectiveDescription!); }
+      else { this.participantEffectiveDescription = new fhir.FhirString(source._participantEffectiveDescription as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['participantEffective']) { this.participantEffective = source.participantEffective; }
     else if (source['participantEffectiveDateTime']) { this.participantEffective = new fhir.FhirDateTime({value: source.participantEffectiveDateTime}); }
     else if (source['participantEffectivePeriod']) { this.participantEffective = new fhir.Period(source.participantEffectivePeriod); }
@@ -230,6 +266,10 @@ export class ResearchElementDefinitionCharacteristic extends fhir.BackboneElemen
     else if (source['participantEffectiveTiming']) { this.participantEffective = new fhir.Timing(source.participantEffectiveTiming); }
     if (source['participantEffectiveTimeFromStart']) { this.participantEffectiveTimeFromStart = new fhir.Duration(source.participantEffectiveTimeFromStart); }
     if (source['participantEffectiveGroupMeasure']) { this.participantEffectiveGroupMeasure = new fhir.FhirCode<GroupMeasureCodeType>({value: source.participantEffectiveGroupMeasure}); }
+    if (source['_participantEffectiveGroupMeasure']) {
+      if (this.participantEffectiveGroupMeasure) { this.participantEffectiveGroupMeasure.addExtendedProperties(source._participantEffectiveGroupMeasure!); }
+      else { this.participantEffectiveGroupMeasure = new fhir.FhirCode<GroupMeasureCodeType>(source._participantEffectiveGroupMeasure as Partial<fhir.FhirCode>); }
+    }
   }
   /**
    * Required-bound Value Set for unitOfMeasure (ResearchElementDefinition.characteristic.unitOfMeasure)
@@ -293,6 +333,10 @@ export interface ResearchElementDefinitionArgs extends fhir.DomainResourceArgs {
    */
   url?: fhir.FhirUri|string|undefined;
   /**
+   * Extended properties for primitive element: ResearchElementDefinition.url
+   */
+  _url?:fhir.FhirElementArgs;
+  /**
    * Typically, this is used for identifiers that can go in an HL7 V3 II (instance identifier) data type, and can then identify this research element definition outside of FHIR, where it is not possible to use the logical URI.
    */
   identifier?: fhir.IdentifierArgs[]|undefined;
@@ -301,29 +345,57 @@ export interface ResearchElementDefinitionArgs extends fhir.DomainResourceArgs {
    */
   version?: fhir.FhirString|string|undefined;
   /**
+   * Extended properties for primitive element: ResearchElementDefinition.version
+   */
+  _version?:fhir.FhirElementArgs;
+  /**
    * The name is not expected to be globally unique. The name should be a simple alphanumeric type name to ensure that it is machine-processing friendly.
    */
   name?: fhir.FhirString|string|undefined;
+  /**
+   * Extended properties for primitive element: ResearchElementDefinition.name
+   */
+  _name?:fhir.FhirElementArgs;
   /**
    * This name does not need to be machine-processing friendly and may contain punctuation, white-space, etc.
    */
   title?: fhir.FhirString|string|undefined;
   /**
+   * Extended properties for primitive element: ResearchElementDefinition.title
+   */
+  _title?:fhir.FhirElementArgs;
+  /**
    * The short title provides an alternate title for use in informal descriptive contexts where the full, formal title is not necessary.
    */
   shortTitle?: fhir.FhirString|string|undefined;
+  /**
+   * Extended properties for primitive element: ResearchElementDefinition.shortTitle
+   */
+  _shortTitle?:fhir.FhirElementArgs;
   /**
    * An explanatory or alternate title for the ResearchElementDefinition giving additional information about its content.
    */
   subtitle?: fhir.FhirString|string|undefined;
   /**
+   * Extended properties for primitive element: ResearchElementDefinition.subtitle
+   */
+  _subtitle?:fhir.FhirElementArgs;
+  /**
    * Allows filtering of research element definitions that are appropriate for use versus not.
    */
   status: fhir.FhirCode<PublicationStatusCodeType>|string|undefined;
   /**
+   * Extended properties for primitive element: ResearchElementDefinition.status
+   */
+  _status?:fhir.FhirElementArgs;
+  /**
    * Allows filtering of research element definitions that are appropriate for use versus not.
    */
   experimental?: fhir.FhirBoolean|boolean|undefined;
+  /**
+   * Extended properties for primitive element: ResearchElementDefinition.experimental
+   */
+  _experimental?:fhir.FhirElementArgs;
   /**
    * The subject of the ResearchElementDefinition is critical in interpreting the criteria definitions, as the logic in the ResearchElementDefinitions is evaluated with respect to a particular subject. This corresponds roughly to the notion of a Compartment in that it limits what content is available based on its relationship to the subject. In CQL, this corresponds to the context declaration.
    */
@@ -341,9 +413,17 @@ export interface ResearchElementDefinitionArgs extends fhir.DomainResourceArgs {
    */
   date?: fhir.FhirDateTime|string|undefined;
   /**
+   * Extended properties for primitive element: ResearchElementDefinition.date
+   */
+  _date?:fhir.FhirElementArgs;
+  /**
    * Usually an organization but may be an individual. The publisher (or steward) of the research element definition is the organization or individual primarily responsible for the maintenance and upkeep of the research element definition. This is not necessarily the same individual or organization that developed and initially authored the content. The publisher is the primary point of contact for questions or issues with the research element definition. This item SHOULD be populated unless the information is available from context.
    */
   publisher?: fhir.FhirString|string|undefined;
+  /**
+   * Extended properties for primitive element: ResearchElementDefinition.publisher
+   */
+  _publisher?:fhir.FhirElementArgs;
   /**
    * May be a web site, an email address, a telephone number, etc.
    */
@@ -353,9 +433,17 @@ export interface ResearchElementDefinitionArgs extends fhir.DomainResourceArgs {
    */
   description?: fhir.FhirMarkdown|string|undefined;
   /**
+   * Extended properties for primitive element: ResearchElementDefinition.description
+   */
+  _description?:fhir.FhirElementArgs;
+  /**
    * A human-readable string to clarify or explain concepts about the resource.
    */
   comment?: fhir.FhirString[]|string[]|undefined;
+  /**
+   * Extended properties for primitive element: ResearchElementDefinition.comment
+   */
+  _comment?:(fhir.FhirElementArgs|null)[];
   /**
    * When multiple useContexts are specified, there is no expectation that all or any of the contexts apply.
    */
@@ -369,21 +457,41 @@ export interface ResearchElementDefinitionArgs extends fhir.DomainResourceArgs {
    */
   purpose?: fhir.FhirMarkdown|string|undefined;
   /**
+   * Extended properties for primitive element: ResearchElementDefinition.purpose
+   */
+  _purpose?:fhir.FhirElementArgs;
+  /**
    * A detailed description, from a clinical perspective, of how the ResearchElementDefinition is used.
    */
   usage?: fhir.FhirString|string|undefined;
+  /**
+   * Extended properties for primitive element: ResearchElementDefinition.usage
+   */
+  _usage?:fhir.FhirElementArgs;
   /**
    * A copyright statement relating to the research element definition and/or its contents. Copyright statements are generally legal restrictions on the use and publishing of the research element definition.
    */
   copyright?: fhir.FhirMarkdown|string|undefined;
   /**
+   * Extended properties for primitive element: ResearchElementDefinition.copyright
+   */
+  _copyright?:fhir.FhirElementArgs;
+  /**
    * The 'date' element may be more recent than the approval date because of minor changes or editorial corrections.
    */
   approvalDate?: fhir.FhirDate|string|undefined;
   /**
+   * Extended properties for primitive element: ResearchElementDefinition.approvalDate
+   */
+  _approvalDate?:fhir.FhirElementArgs;
+  /**
    * If specified, this date follows the original approval date.
    */
   lastReviewDate?: fhir.FhirDate|string|undefined;
+  /**
+   * Extended properties for primitive element: ResearchElementDefinition.lastReviewDate
+   */
+  _lastReviewDate?:fhir.FhirElementArgs;
   /**
    * The effective period for a research element definition  determines when the content is applicable for usage and is independent of publication and review dates. For example, a measure intended to be used for the year 2016 might be published in 2015.
    */
@@ -417,13 +525,25 @@ export interface ResearchElementDefinitionArgs extends fhir.DomainResourceArgs {
    */
   library?: fhir.FhirCanonical[]|string[]|undefined;
   /**
+   * Extended properties for primitive element: ResearchElementDefinition.library
+   */
+  _library?:(fhir.FhirElementArgs|null)[];
+  /**
    * The type of research element, a population, an exposure, or an outcome.
    */
   type: fhir.FhirCode<ResearchElementTypeCodeType>|string|undefined;
   /**
+   * Extended properties for primitive element: ResearchElementDefinition.type
+   */
+  _type?:fhir.FhirElementArgs;
+  /**
    * The type of the outcome (e.g. Dichotomous, Continuous, or Descriptive).
    */
   variableType?: fhir.FhirCode<VariableTypeCodeType>|string|undefined;
+  /**
+   * Extended properties for primitive element: ResearchElementDefinition.variableType
+   */
+  _variableType?:fhir.FhirElementArgs;
   /**
    * Characteristics can be defined flexibly to accommodate different use cases for membership criteria, ranging from simple codes, all the way to using an expression language to express the criteria.
    */
@@ -587,35 +707,105 @@ export class ResearchElementDefinition extends fhir.DomainResource {
     super(source, options);
     this.resourceType = 'ResearchElementDefinition';
     if (source['url']) { this.url = new fhir.FhirUri({value: source.url}); }
+    if (source['_url']) {
+      if (this.url) { this.url.addExtendedProperties(source._url!); }
+      else { this.url = new fhir.FhirUri(source._url as Partial<fhir.FhirUriArgs>); }
+    }
     if (source['identifier']) { this.identifier = source.identifier.map((x) => new fhir.Identifier(x)); }
     else { this.identifier = []; }
     if (source['version']) { this.version = new fhir.FhirString({value: source.version}); }
+    if (source['_version']) {
+      if (this.version) { this.version.addExtendedProperties(source._version!); }
+      else { this.version = new fhir.FhirString(source._version as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['name']) { this.name = new fhir.FhirString({value: source.name}); }
+    if (source['_name']) {
+      if (this.name) { this.name.addExtendedProperties(source._name!); }
+      else { this.name = new fhir.FhirString(source._name as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['title']) { this.title = new fhir.FhirString({value: source.title}); }
+    if (source['_title']) {
+      if (this.title) { this.title.addExtendedProperties(source._title!); }
+      else { this.title = new fhir.FhirString(source._title as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['shortTitle']) { this.shortTitle = new fhir.FhirString({value: source.shortTitle}); }
+    if (source['_shortTitle']) {
+      if (this.shortTitle) { this.shortTitle.addExtendedProperties(source._shortTitle!); }
+      else { this.shortTitle = new fhir.FhirString(source._shortTitle as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['subtitle']) { this.subtitle = new fhir.FhirString({value: source.subtitle}); }
+    if (source['_subtitle']) {
+      if (this.subtitle) { this.subtitle.addExtendedProperties(source._subtitle!); }
+      else { this.subtitle = new fhir.FhirString(source._subtitle as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['status']) { this.status = new fhir.FhirCode<PublicationStatusCodeType>({value: source.status}); }
     else { this.status = null; }
+    if (source['_status']) {
+      if (this.status) { this.status.addExtendedProperties(source._status!); }
+      else { this.status = new fhir.FhirCode<PublicationStatusCodeType>(source._status as Partial<fhir.FhirCode>); }
+    }
     if (source['experimental']) { this.experimental = new fhir.FhirBoolean({value: source.experimental}); }
+    if (source['_experimental']) {
+      if (this.experimental) { this.experimental.addExtendedProperties(source._experimental!); }
+      else { this.experimental = new fhir.FhirBoolean(source._experimental as Partial<fhir.FhirBooleanArgs>); }
+    }
     if (source['subject']) { this.subject = source.subject; }
     else if (source['subjectCodeableConcept']) { this.subject = new fhir.CodeableConcept(source.subjectCodeableConcept); }
     else if (source['subjectReference']) { this.subject = new fhir.Reference(source.subjectReference); }
     if (source['date']) { this.date = new fhir.FhirDateTime({value: source.date}); }
+    if (source['_date']) {
+      if (this.date) { this.date.addExtendedProperties(source._date!); }
+      else { this.date = new fhir.FhirDateTime(source._date as Partial<fhir.FhirDateTimeArgs>); }
+    }
     if (source['publisher']) { this.publisher = new fhir.FhirString({value: source.publisher}); }
+    if (source['_publisher']) {
+      if (this.publisher) { this.publisher.addExtendedProperties(source._publisher!); }
+      else { this.publisher = new fhir.FhirString(source._publisher as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['contact']) { this.contact = source.contact.map((x) => new fhir.ContactDetail(x)); }
     else { this.contact = []; }
     if (source['description']) { this.description = new fhir.FhirMarkdown({value: source.description}); }
+    if (source['_description']) {
+      if (this.description) { this.description.addExtendedProperties(source._description!); }
+      else { this.description = new fhir.FhirMarkdown(source._description as Partial<fhir.FhirMarkdownArgs>); }
+    }
     if (source['comment']) { this.comment = source.comment.map((x) => new fhir.FhirString({value: x})); }
     else { this.comment = []; }
+    if (source['_comment']) {
+      source._comment.forEach((x,i) => {
+        if (this.comment.length >= i) { if (x) { this.comment[i].addExtendedProperties(x); } }
+        else { if (x) { this.comment.push(new fhir.FhirString(x as Partial<fhir.FhirStringArgs>)); } }
+      });
+    }
     if (source['useContext']) { this.useContext = source.useContext.map((x) => new fhir.UsageContext(x)); }
     else { this.useContext = []; }
     if (source['jurisdiction']) { this.jurisdiction = source.jurisdiction.map((x) => new fhir.CodeableConcept(x)); }
     else { this.jurisdiction = []; }
     if (source['purpose']) { this.purpose = new fhir.FhirMarkdown({value: source.purpose}); }
+    if (source['_purpose']) {
+      if (this.purpose) { this.purpose.addExtendedProperties(source._purpose!); }
+      else { this.purpose = new fhir.FhirMarkdown(source._purpose as Partial<fhir.FhirMarkdownArgs>); }
+    }
     if (source['usage']) { this.usage = new fhir.FhirString({value: source.usage}); }
+    if (source['_usage']) {
+      if (this.usage) { this.usage.addExtendedProperties(source._usage!); }
+      else { this.usage = new fhir.FhirString(source._usage as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['copyright']) { this.copyright = new fhir.FhirMarkdown({value: source.copyright}); }
+    if (source['_copyright']) {
+      if (this.copyright) { this.copyright.addExtendedProperties(source._copyright!); }
+      else { this.copyright = new fhir.FhirMarkdown(source._copyright as Partial<fhir.FhirMarkdownArgs>); }
+    }
     if (source['approvalDate']) { this.approvalDate = new fhir.FhirDate({value: source.approvalDate}); }
+    if (source['_approvalDate']) {
+      if (this.approvalDate) { this.approvalDate.addExtendedProperties(source._approvalDate!); }
+      else { this.approvalDate = new fhir.FhirDate(source._approvalDate as Partial<fhir.FhirDateArgs>); }
+    }
     if (source['lastReviewDate']) { this.lastReviewDate = new fhir.FhirDate({value: source.lastReviewDate}); }
+    if (source['_lastReviewDate']) {
+      if (this.lastReviewDate) { this.lastReviewDate.addExtendedProperties(source._lastReviewDate!); }
+      else { this.lastReviewDate = new fhir.FhirDate(source._lastReviewDate as Partial<fhir.FhirDateArgs>); }
+    }
     if (source['effectivePeriod']) { this.effectivePeriod = new fhir.Period(source.effectivePeriod); }
     if (source['topic']) { this.topic = source.topic.map((x) => new fhir.CodeableConcept(x)); }
     else { this.topic = []; }
@@ -631,9 +821,23 @@ export class ResearchElementDefinition extends fhir.DomainResource {
     else { this.relatedArtifact = []; }
     if (source['library']) { this.library = source.library.map((x) => new fhir.FhirCanonical({value: x})); }
     else { this.library = []; }
+    if (source['_library']) {
+      source._library.forEach((x,i) => {
+        if (this.library.length >= i) { if (x) { this.library[i].addExtendedProperties(x); } }
+        else { if (x) { this.library.push(new fhir.FhirCanonical(x as Partial<fhir.FhirCanonicalArgs>)); } }
+      });
+    }
     if (source['type']) { this.type = new fhir.FhirCode<ResearchElementTypeCodeType>({value: source.type}); }
     else { this.type = null; }
+    if (source['_type']) {
+      if (this.type) { this.type.addExtendedProperties(source._type!); }
+      else { this.type = new fhir.FhirCode<ResearchElementTypeCodeType>(source._type as Partial<fhir.FhirCode>); }
+    }
     if (source['variableType']) { this.variableType = new fhir.FhirCode<VariableTypeCodeType>({value: source.variableType}); }
+    if (source['_variableType']) {
+      if (this.variableType) { this.variableType.addExtendedProperties(source._variableType!); }
+      else { this.variableType = new fhir.FhirCode<VariableTypeCodeType>(source._variableType as Partial<fhir.FhirCode>); }
+    }
     if (source['characteristic']) { this.characteristic = source.characteristic.map((x) => new fhir.ResearchElementDefinitionCharacteristic(x)); }
     else { this.characteristic = []; }
   }

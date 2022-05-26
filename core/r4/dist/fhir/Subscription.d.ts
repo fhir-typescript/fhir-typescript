@@ -10,17 +10,33 @@ export interface SubscriptionChannelArgs extends fhir.BackboneElementArgs {
      */
     type: fhir.FhirCode<SubscriptionChannelTypeCodeType> | string | undefined;
     /**
+     * Extended properties for primitive element: Subscription.channel.type
+     */
+    _type?: fhir.FhirElementArgs;
+    /**
      * For rest-hook, and websocket, the end-point must be an http: or https: URL; for email, a mailto: url, for sms, a tel: url, and for message the endpoint can be in any form of url the server understands (usually, http: or mllp:). The URI is allowed to be relative; in which case, it is relative to the server end-point (since there may be more than one, clients should avoid using relative URIs).
      */
     endpoint?: fhir.FhirUrl | string | undefined;
+    /**
+     * Extended properties for primitive element: Subscription.channel.endpoint
+     */
+    _endpoint?: fhir.FhirElementArgs;
     /**
      * Sending the payload has obvious security implications. The server is responsible for ensuring that the content is appropriately secured.
      */
     payload?: fhir.FhirCode | string | undefined;
     /**
+     * Extended properties for primitive element: Subscription.channel.payload
+     */
+    _payload?: fhir.FhirElementArgs;
+    /**
      * Exactly what these mean depend on the channel type. They can convey additional information to the recipient and/or meet security requirements; for example, support of multiple headers in the outgoing notifications for rest-hook type subscriptions.
      */
     header?: fhir.FhirString[] | string[] | undefined;
+    /**
+     * Extended properties for primitive element: Subscription.channel.header
+     */
+    _header?: (fhir.FhirElementArgs | null)[];
 }
 /**
  * Details where to send notifications when resources are received that meet the criteria.
@@ -79,6 +95,10 @@ export interface SubscriptionArgs extends fhir.DomainResourceArgs {
      */
     status: fhir.FhirCode<SubscriptionStatusCodeType> | string | undefined;
     /**
+     * Extended properties for primitive element: Subscription.status
+     */
+    _status?: fhir.FhirElementArgs;
+    /**
      * Contact details for a human to contact about the subscription. The primary use of this for system administrator troubleshooting.
      */
     contact?: fhir.ContactPointArgs[] | undefined;
@@ -87,17 +107,33 @@ export interface SubscriptionArgs extends fhir.DomainResourceArgs {
      */
     end?: fhir.FhirInstant | string | undefined;
     /**
+     * Extended properties for primitive element: Subscription.end
+     */
+    _end?: fhir.FhirElementArgs;
+    /**
      * A description of why this subscription is defined.
      */
     reason: fhir.FhirString | string | undefined;
+    /**
+     * Extended properties for primitive element: Subscription.reason
+     */
+    _reason?: fhir.FhirElementArgs;
     /**
      * The rules are search criteria (without the [base] part). Like Bundle.entry.request.url, it has no leading "/".
      */
     criteria: fhir.FhirString | string | undefined;
     /**
+     * Extended properties for primitive element: Subscription.criteria
+     */
+    _criteria?: fhir.FhirElementArgs;
+    /**
      * A record of the last error that occurred when the server processed a notification.
      */
     error?: fhir.FhirString | string | undefined;
+    /**
+     * Extended properties for primitive element: Subscription.error
+     */
+    _error?: fhir.FhirElementArgs;
     /**
      * Details where to send notifications when resources are received that meet the criteria.
      */

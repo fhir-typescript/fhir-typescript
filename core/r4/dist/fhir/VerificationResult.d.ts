@@ -31,6 +31,10 @@ export interface VerificationResultPrimarySourceArgs extends fhir.BackboneElemen
      */
     validationDate?: fhir.FhirDateTime | string | undefined;
     /**
+     * Extended properties for primitive element: VerificationResult.primarySource.validationDate
+     */
+    _validationDate?: fhir.FhirElementArgs;
+    /**
      * Ability of the primary source to push updates/alerts (yes; no; undetermined).
      */
     canPushUpdates?: fhir.CodeableConceptArgs | undefined;
@@ -117,13 +121,25 @@ export interface VerificationResultAttestationArgs extends fhir.BackboneElementA
      */
     date?: fhir.FhirDate | string | undefined;
     /**
+     * Extended properties for primitive element: VerificationResult.attestation.date
+     */
+    _date?: fhir.FhirElementArgs;
+    /**
      * A digital identity certificate associated with the attestation source.
      */
     sourceIdentityCertificate?: fhir.FhirString | string | undefined;
     /**
+     * Extended properties for primitive element: VerificationResult.attestation.sourceIdentityCertificate
+     */
+    _sourceIdentityCertificate?: fhir.FhirElementArgs;
+    /**
      * A digital identity certificate associated with the proxy entity submitting attested information on behalf of the attestation source.
      */
     proxyIdentityCertificate?: fhir.FhirString | string | undefined;
+    /**
+     * Extended properties for primitive element: VerificationResult.attestation.proxyIdentityCertificate
+     */
+    _proxyIdentityCertificate?: fhir.FhirElementArgs;
     /**
      * Signed assertion by the proxy entity indicating that they have the right to submit attested information on behalf of the attestation source.
      */
@@ -195,6 +211,10 @@ export interface VerificationResultValidatorArgs extends fhir.BackboneElementArg
      */
     identityCertificate?: fhir.FhirString | string | undefined;
     /**
+     * Extended properties for primitive element: VerificationResult.validator.identityCertificate
+     */
+    _identityCertificate?: fhir.FhirElementArgs;
+    /**
      * Signed assertion by the validator that they have validated the information.
      */
     attestationSignature?: fhir.SignatureArgs | undefined;
@@ -245,6 +265,10 @@ export interface VerificationResultArgs extends fhir.DomainResourceArgs {
      */
     targetLocation?: fhir.FhirString[] | string[] | undefined;
     /**
+     * Extended properties for primitive element: VerificationResult.targetLocation
+     */
+    _targetLocation?: (fhir.FhirElementArgs | null)[];
+    /**
      * The frequency with which the target must be validated (none; initial; periodic).
      */
     need?: fhir.CodeableConceptArgs | undefined;
@@ -253,9 +277,17 @@ export interface VerificationResultArgs extends fhir.DomainResourceArgs {
      */
     status: fhir.FhirCode<VerificationresultStatusCodeType> | string | undefined;
     /**
+     * Extended properties for primitive element: VerificationResult.status
+     */
+    _status?: fhir.FhirElementArgs;
+    /**
      * When the validation status was updated.
      */
     statusDate?: fhir.FhirDateTime | string | undefined;
+    /**
+     * Extended properties for primitive element: VerificationResult.statusDate
+     */
+    _statusDate?: fhir.FhirElementArgs;
     /**
      * What the target is validated against (nothing; primary source; multiple sources).
      */
@@ -273,9 +305,17 @@ export interface VerificationResultArgs extends fhir.DomainResourceArgs {
      */
     lastPerformed?: fhir.FhirDateTime | string | undefined;
     /**
+     * Extended properties for primitive element: VerificationResult.lastPerformed
+     */
+    _lastPerformed?: fhir.FhirElementArgs;
+    /**
      * The date when target is next validated, if appropriate.
      */
     nextScheduled?: fhir.FhirDate | string | undefined;
+    /**
+     * Extended properties for primitive element: VerificationResult.nextScheduled
+     */
+    _nextScheduled?: fhir.FhirElementArgs;
     /**
      * The result if validation fails (fatal; warning; record only; none).
      */

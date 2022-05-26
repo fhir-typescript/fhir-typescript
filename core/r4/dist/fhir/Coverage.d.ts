@@ -17,9 +17,17 @@ export interface CoverageClassArgs extends fhir.BackboneElementArgs {
      */
     value: fhir.FhirString | string | undefined;
     /**
+     * Extended properties for primitive element: Coverage.class.value
+     */
+    _value?: fhir.FhirElementArgs;
+    /**
      * A short description for the class.
      */
     name?: fhir.FhirString | string | undefined;
+    /**
+     * Extended properties for primitive element: Coverage.class.name
+     */
+    _name?: fhir.FhirElementArgs;
 }
 /**
  * For example may be used to identify a class of coverage or employer group, Policy, Plan.
@@ -171,6 +179,10 @@ export interface CoverageArgs extends fhir.DomainResourceArgs {
      */
     status: fhir.FhirCode<FmStatusCodeType> | string | undefined;
     /**
+     * Extended properties for primitive element: Coverage.status
+     */
+    _status?: fhir.FhirElementArgs;
+    /**
      * The type of coverage: social program, medical plan, accident coverage (workers compensation, auto), group health or payment by an individual or organization.
      */
     type?: fhir.CodeableConceptArgs | undefined;
@@ -187,6 +199,10 @@ export interface CoverageArgs extends fhir.DomainResourceArgs {
      */
     subscriberId?: fhir.FhirString | string | undefined;
     /**
+     * Extended properties for primitive element: Coverage.subscriberId
+     */
+    _subscriberId?: fhir.FhirElementArgs;
+    /**
      * The party who benefits from the insurance coverage; the patient when products and/or services are provided.
      */
     beneficiary: fhir.ReferenceArgs | null;
@@ -194,6 +210,10 @@ export interface CoverageArgs extends fhir.DomainResourceArgs {
      * Periodically the member number is constructed from the subscriberId and the dependant number.
      */
     dependent?: fhir.FhirString | string | undefined;
+    /**
+     * Extended properties for primitive element: Coverage.dependent
+     */
+    _dependent?: fhir.FhirElementArgs;
     /**
      * Typically, an individual uses policies which are theirs (relationship='self') before policies owned by others.
      */
@@ -216,9 +236,17 @@ export interface CoverageArgs extends fhir.DomainResourceArgs {
      */
     order?: fhir.FhirPositiveInt | number | undefined;
     /**
+     * Extended properties for primitive element: Coverage.order
+     */
+    _order?: fhir.FhirElementArgs;
+    /**
      * The insurer-specific identifier for the insurer-defined network of providers to which the beneficiary may seek treatment which will be covered at the 'in-network' rate, otherwise 'out of network' terms and conditions apply.
      */
     network?: fhir.FhirString | string | undefined;
+    /**
+     * Extended properties for primitive element: Coverage.network
+     */
+    _network?: fhir.FhirElementArgs;
     /**
      * For example by knowing the patient visit co-pay, the provider can collect the amount prior to undertaking treatment.
      */
@@ -227,6 +255,10 @@ export interface CoverageArgs extends fhir.DomainResourceArgs {
      * Typically, automotive and worker's compensation policies would be flagged with 'subrogation=true' to enable healthcare payors to collect against accident claims.
      */
     subrogation?: fhir.FhirBoolean | boolean | undefined;
+    /**
+     * Extended properties for primitive element: Coverage.subrogation
+     */
+    _subrogation?: fhir.FhirElementArgs;
     /**
      * The policy(s) which constitute this insurance coverage.
      */

@@ -13,6 +13,10 @@ export interface ResourceArgs extends fhir.FhirBaseArgs {
      */
     id?: fhir.FhirId | string | undefined;
     /**
+     * Extended properties for primitive element: Resource.id
+     */
+    _id?: fhir.FhirElementArgs;
+    /**
      * The metadata about the resource. This is content that is maintained by the infrastructure. Changes to the content might not always be associated with version changes to the resource.
      */
     meta?: fhir.MetaArgs | undefined;
@@ -21,9 +25,17 @@ export interface ResourceArgs extends fhir.FhirBaseArgs {
      */
     implicitRules?: fhir.FhirUri | string | undefined;
     /**
+     * Extended properties for primitive element: Resource.implicitRules
+     */
+    _implicitRules?: fhir.FhirElementArgs;
+    /**
      * Language is provided to support indexing and accessibility (typically, services such as text to speech use the language tag). The html language tag in the narrative applies  to the narrative. The language tag on the resource may be used to specify the language of other presentations generated from the data in the resource. Not all the content has to be in the base language. The Resource.language should not be assumed to apply to the narrative automatically. If a language is specified, it should it also be specified on the div element in the html (see rules in HTML5 for information about the relationship between xml:lang and the html lang attribute).
      */
     language?: fhir.FhirCode | string | undefined;
+    /**
+     * Extended properties for primitive element: Resource.language
+     */
+    _language?: fhir.FhirElementArgs;
 }
 /**
  * This is the base resource type for everything.

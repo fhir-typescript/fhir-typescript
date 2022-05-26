@@ -22,13 +22,25 @@ export interface DeviceDefinitionUdiDeviceIdentifierArgs extends fhir.BackboneEl
    */
   deviceIdentifier: fhir.FhirString|string|undefined;
   /**
+   * Extended properties for primitive element: DeviceDefinition.udiDeviceIdentifier.deviceIdentifier
+   */
+  _deviceIdentifier?:fhir.FhirElementArgs;
+  /**
    * The organization that assigns the identifier algorithm.
    */
   issuer: fhir.FhirUri|string|undefined;
   /**
+   * Extended properties for primitive element: DeviceDefinition.udiDeviceIdentifier.issuer
+   */
+  _issuer?:fhir.FhirElementArgs;
+  /**
    * The jurisdiction to which the deviceIdentifier applies.
    */
   jurisdiction: fhir.FhirUri|string|undefined;
+  /**
+   * Extended properties for primitive element: DeviceDefinition.udiDeviceIdentifier.jurisdiction
+   */
+  _jurisdiction?:fhir.FhirElementArgs;
 }
 
 /**
@@ -58,10 +70,22 @@ export class DeviceDefinitionUdiDeviceIdentifier extends fhir.BackboneElement {
     super(source, options);
     if (source['deviceIdentifier']) { this.deviceIdentifier = new fhir.FhirString({value: source.deviceIdentifier}); }
     else { this.deviceIdentifier = null; }
+    if (source['_deviceIdentifier']) {
+      if (this.deviceIdentifier) { this.deviceIdentifier.addExtendedProperties(source._deviceIdentifier!); }
+      else { this.deviceIdentifier = new fhir.FhirString(source._deviceIdentifier as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['issuer']) { this.issuer = new fhir.FhirUri({value: source.issuer}); }
     else { this.issuer = null; }
+    if (source['_issuer']) {
+      if (this.issuer) { this.issuer.addExtendedProperties(source._issuer!); }
+      else { this.issuer = new fhir.FhirUri(source._issuer as Partial<fhir.FhirUriArgs>); }
+    }
     if (source['jurisdiction']) { this.jurisdiction = new fhir.FhirUri({value: source.jurisdiction}); }
     else { this.jurisdiction = null; }
+    if (source['_jurisdiction']) {
+      if (this.jurisdiction) { this.jurisdiction.addExtendedProperties(source._jurisdiction!); }
+      else { this.jurisdiction = new fhir.FhirUri(source._jurisdiction as Partial<fhir.FhirUriArgs>); }
+    }
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -92,10 +116,18 @@ export interface DeviceDefinitionDeviceNameArgs extends fhir.BackboneElementArgs
    */
   name: fhir.FhirString|string|undefined;
   /**
+   * Extended properties for primitive element: DeviceDefinition.deviceName.name
+   */
+  _name?:fhir.FhirElementArgs;
+  /**
    * The type of deviceName.
    * UDILabelName | UserFriendlyName | PatientReportedName | ManufactureDeviceName | ModelName.
    */
   type: fhir.FhirCode<DeviceNametypeCodeType>|string|undefined;
+  /**
+   * Extended properties for primitive element: DeviceDefinition.deviceName.type
+   */
+  _type?:fhir.FhirElementArgs;
 }
 
 /**
@@ -122,8 +154,16 @@ export class DeviceDefinitionDeviceName extends fhir.BackboneElement {
     super(source, options);
     if (source['name']) { this.name = new fhir.FhirString({value: source.name}); }
     else { this.name = null; }
+    if (source['_name']) {
+      if (this.name) { this.name.addExtendedProperties(source._name!); }
+      else { this.name = new fhir.FhirString(source._name as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['type']) { this.type = new fhir.FhirCode<DeviceNametypeCodeType>({value: source.type}); }
     else { this.type = null; }
+    if (source['_type']) {
+      if (this.type) { this.type.addExtendedProperties(source._type!); }
+      else { this.type = new fhir.FhirCode<DeviceNametypeCodeType>(source._type as Partial<fhir.FhirCode>); }
+    }
   }
   /**
    * Required-bound Value Set for type (DeviceDefinition.deviceName.type)
@@ -159,9 +199,17 @@ export interface DeviceDefinitionSpecializationArgs extends fhir.BackboneElement
    */
   systemType: fhir.FhirString|string|undefined;
   /**
+   * Extended properties for primitive element: DeviceDefinition.specialization.systemType
+   */
+  _systemType?:fhir.FhirElementArgs;
+  /**
    * The version of the standard that is used to operate and communicate.
    */
   version?: fhir.FhirString|string|undefined;
+  /**
+   * Extended properties for primitive element: DeviceDefinition.specialization.version
+   */
+  _version?:fhir.FhirElementArgs;
 }
 
 /**
@@ -187,7 +235,15 @@ export class DeviceDefinitionSpecialization extends fhir.BackboneElement {
     super(source, options);
     if (source['systemType']) { this.systemType = new fhir.FhirString({value: source.systemType}); }
     else { this.systemType = null; }
+    if (source['_systemType']) {
+      if (this.systemType) { this.systemType.addExtendedProperties(source._systemType!); }
+      else { this.systemType = new fhir.FhirString(source._systemType as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['version']) { this.version = new fhir.FhirString({value: source.version}); }
+    if (source['_version']) {
+      if (this.version) { this.version.addExtendedProperties(source._version!); }
+      else { this.version = new fhir.FhirString(source._version as Partial<fhir.FhirStringArgs>); }
+    }
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -332,9 +388,17 @@ export interface DeviceDefinitionMaterialArgs extends fhir.BackboneElementArgs {
    */
   alternate?: fhir.FhirBoolean|boolean|undefined;
   /**
+   * Extended properties for primitive element: DeviceDefinition.material.alternate
+   */
+  _alternate?:fhir.FhirElementArgs;
+  /**
    * Whether the substance is a known or suspected allergen.
    */
   allergenicIndicator?: fhir.FhirBoolean|boolean|undefined;
+  /**
+   * Extended properties for primitive element: DeviceDefinition.material.allergenicIndicator
+   */
+  _allergenicIndicator?:fhir.FhirElementArgs;
 }
 
 /**
@@ -365,7 +429,15 @@ export class DeviceDefinitionMaterial extends fhir.BackboneElement {
     if (source['substance']) { this.substance = new fhir.CodeableConcept(source.substance); }
     else { this.substance = null; }
     if (source['alternate']) { this.alternate = new fhir.FhirBoolean({value: source.alternate}); }
+    if (source['_alternate']) {
+      if (this.alternate) { this.alternate.addExtendedProperties(source._alternate!); }
+      else { this.alternate = new fhir.FhirBoolean(source._alternate as Partial<fhir.FhirBooleanArgs>); }
+    }
     if (source['allergenicIndicator']) { this.allergenicIndicator = new fhir.FhirBoolean({value: source.allergenicIndicator}); }
+    if (source['_allergenicIndicator']) {
+      if (this.allergenicIndicator) { this.allergenicIndicator.addExtendedProperties(source._allergenicIndicator!); }
+      else { this.allergenicIndicator = new fhir.FhirBoolean(source._allergenicIndicator as Partial<fhir.FhirBooleanArgs>); }
+    }
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -418,6 +490,10 @@ export interface DeviceDefinitionArgs extends fhir.DomainResourceArgs {
    */
   modelNumber?: fhir.FhirString|string|undefined;
   /**
+   * Extended properties for primitive element: DeviceDefinition.modelNumber
+   */
+  _modelNumber?:fhir.FhirElementArgs;
+  /**
    * What kind of device or device system this is.
    */
   type?: fhir.CodeableConceptArgs|undefined;
@@ -429,6 +505,10 @@ export interface DeviceDefinitionArgs extends fhir.DomainResourceArgs {
    * The available versions of the device, e.g., software versions.
    */
   version?: fhir.FhirString[]|string[]|undefined;
+  /**
+   * Extended properties for primitive element: DeviceDefinition.version
+   */
+  _version?:(fhir.FhirElementArgs|null)[];
   /**
    * Safety characteristics of the device.
    */
@@ -466,9 +546,17 @@ export interface DeviceDefinitionArgs extends fhir.DomainResourceArgs {
    */
   url?: fhir.FhirUri|string|undefined;
   /**
+   * Extended properties for primitive element: DeviceDefinition.url
+   */
+  _url?:fhir.FhirElementArgs;
+  /**
    * Access to on-line information about the device.
    */
   onlineInformation?: fhir.FhirUri|string|undefined;
+  /**
+   * Extended properties for primitive element: DeviceDefinition.onlineInformation
+   */
+  _onlineInformation?:fhir.FhirElementArgs;
   /**
    * Descriptive information, usage information or implantation information that is not captured in an existing element.
    */
@@ -607,11 +695,21 @@ export class DeviceDefinition extends fhir.DomainResource {
     if (source['deviceName']) { this.deviceName = source.deviceName.map((x) => new fhir.DeviceDefinitionDeviceName(x)); }
     else { this.deviceName = []; }
     if (source['modelNumber']) { this.modelNumber = new fhir.FhirString({value: source.modelNumber}); }
+    if (source['_modelNumber']) {
+      if (this.modelNumber) { this.modelNumber.addExtendedProperties(source._modelNumber!); }
+      else { this.modelNumber = new fhir.FhirString(source._modelNumber as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['type']) { this.type = new fhir.CodeableConcept(source.type); }
     if (source['specialization']) { this.specialization = source.specialization.map((x) => new fhir.DeviceDefinitionSpecialization(x)); }
     else { this.specialization = []; }
     if (source['version']) { this.version = source.version.map((x) => new fhir.FhirString({value: x})); }
     else { this.version = []; }
+    if (source['_version']) {
+      source._version.forEach((x,i) => {
+        if (this.version.length >= i) { if (x) { this.version[i].addExtendedProperties(x); } }
+        else { if (x) { this.version.push(new fhir.FhirString(x as Partial<fhir.FhirStringArgs>)); } }
+      });
+    }
     if (source['safety']) { this.safety = source.safety.map((x) => new fhir.CodeableConcept(x)); }
     else { this.safety = []; }
     if (source['shelfLifeStorage']) { this.shelfLifeStorage = source.shelfLifeStorage.map((x) => new fhir.ProductShelfLife(x)); }
@@ -627,7 +725,15 @@ export class DeviceDefinition extends fhir.DomainResource {
     if (source['contact']) { this.contact = source.contact.map((x) => new fhir.ContactPoint(x)); }
     else { this.contact = []; }
     if (source['url']) { this.url = new fhir.FhirUri({value: source.url}); }
+    if (source['_url']) {
+      if (this.url) { this.url.addExtendedProperties(source._url!); }
+      else { this.url = new fhir.FhirUri(source._url as Partial<fhir.FhirUriArgs>); }
+    }
     if (source['onlineInformation']) { this.onlineInformation = new fhir.FhirUri({value: source.onlineInformation}); }
+    if (source['_onlineInformation']) {
+      if (this.onlineInformation) { this.onlineInformation.addExtendedProperties(source._onlineInformation!); }
+      else { this.onlineInformation = new fhir.FhirUri(source._onlineInformation as Partial<fhir.FhirUriArgs>); }
+    }
     if (source['note']) { this.note = source.note.map((x) => new fhir.Annotation(x)); }
     else { this.note = []; }
     if (source['quantity']) { this.quantity = new fhir.Quantity(source.quantity); }

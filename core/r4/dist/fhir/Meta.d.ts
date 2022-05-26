@@ -9,18 +9,34 @@ export interface MetaArgs extends fhir.FhirElementArgs {
      */
     versionId?: fhir.FhirId | string | undefined;
     /**
+     * Extended properties for primitive element: Meta.versionId
+     */
+    _versionId?: fhir.FhirElementArgs;
+    /**
      * This value is always populated except when the resource is first being created. The server / resource manager sets this value; what a client provides is irrelevant. This is equivalent to the HTTP Last-Modified and SHOULD have the same value on a [read](http.html#read) interaction.
      */
     lastUpdated?: fhir.FhirInstant | string | undefined;
+    /**
+     * Extended properties for primitive element: Meta.lastUpdated
+     */
+    _lastUpdated?: fhir.FhirElementArgs;
     /**
      * In the provenance resource, this corresponds to Provenance.entity.what[x]. The exact use of the source (and the implied Provenance.entity.role) is left to implementer discretion. Only one nominated source is allowed; for additional provenance details, a full Provenance resource should be used.
      * This element can be used to indicate where the current master source of a resource that has a canonical URL if the resource is no longer hosted at the canonical URL.
      */
     source?: fhir.FhirUri | string | undefined;
     /**
+     * Extended properties for primitive element: Meta.source
+     */
+    _source?: fhir.FhirElementArgs;
+    /**
      * It is up to the server and/or other infrastructure of policy to determine whether/how these claims are verified and/or updated over time.  The list of profile URLs is a set.
      */
     profile?: fhir.FhirCanonical[] | string[] | undefined;
+    /**
+     * Extended properties for primitive element: Meta.profile
+     */
+    _profile?: (fhir.FhirElementArgs | null)[];
     /**
      * The security labels can be updated without changing the stated version of the resource. The list of security labels is a set. Uniqueness is based the system/code, and version and display are ignored.
      */

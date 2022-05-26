@@ -66,9 +66,17 @@ export interface AuditEventAgentNetworkArgs extends fhir.BackboneElementArgs {
    */
   address?: fhir.FhirString|string|undefined;
   /**
+   * Extended properties for primitive element: AuditEvent.agent.network.address
+   */
+  _address?:fhir.FhirElementArgs;
+  /**
    * An identifier for the type of network access point that originated the audit event.
    */
   type?: fhir.FhirCode|string|undefined;
+  /**
+   * Extended properties for primitive element: AuditEvent.agent.network.type
+   */
+  _type?:fhir.FhirElementArgs;
 }
 
 /**
@@ -93,7 +101,15 @@ export class AuditEventAgentNetwork extends fhir.BackboneElement {
   constructor(source:Partial<AuditEventAgentNetworkArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
     if (source['address']) { this.address = new fhir.FhirString({value: source.address}); }
+    if (source['_address']) {
+      if (this.address) { this.address.addExtendedProperties(source._address!); }
+      else { this.address = new fhir.FhirString(source._address as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['type']) { this.type = new fhir.FhirCode({value: source.type}); }
+    if (source['_type']) {
+      if (this.type) { this.type.addExtendedProperties(source._type!); }
+      else { this.type = new fhir.FhirCode(source._type as Partial<fhir.FhirCodeArgs>); }
+    }
   }
   /**
    * Required-bound Value Set for type (AuditEvent.agent.network.type)
@@ -135,13 +151,25 @@ export interface AuditEventAgentArgs extends fhir.BackboneElementArgs {
    */
   altId?: fhir.FhirString|string|undefined;
   /**
+   * Extended properties for primitive element: AuditEvent.agent.altId
+   */
+  _altId?:fhir.FhirElementArgs;
+  /**
    * Human-meaningful name for the agent.
    */
   name?: fhir.FhirString|string|undefined;
   /**
+   * Extended properties for primitive element: AuditEvent.agent.name
+   */
+  _name?:fhir.FhirElementArgs;
+  /**
    * There can only be one initiator. If the initiator is not clear, then do not choose any one agent as the initiator.
    */
   requestor: fhir.FhirBoolean|boolean|undefined;
+  /**
+   * Extended properties for primitive element: AuditEvent.agent.requestor
+   */
+  _requestor?:fhir.FhirElementArgs;
   /**
    * Where the event occurred.
    */
@@ -150,6 +178,10 @@ export interface AuditEventAgentArgs extends fhir.BackboneElementArgs {
    * For example: Where an OAuth token authorizes, the unique identifier from the OAuth token is placed into the policy element Where a policy engine (e.g. XACML) holds policy logic, the unique policy identifier is placed into the policy element.
    */
   policy?: fhir.FhirUri[]|string[]|undefined;
+  /**
+   * Extended properties for primitive element: AuditEvent.agent.policy
+   */
+  _policy?:(fhir.FhirElementArgs|null)[];
   /**
    * Type of media involved. Used when the event is about exporting/importing onto media.
    */
@@ -227,12 +259,30 @@ export class AuditEventAgent extends fhir.BackboneElement {
     else { this.role = []; }
     if (source['who']) { this.who = new fhir.Reference(source.who); }
     if (source['altId']) { this.altId = new fhir.FhirString({value: source.altId}); }
+    if (source['_altId']) {
+      if (this.altId) { this.altId.addExtendedProperties(source._altId!); }
+      else { this.altId = new fhir.FhirString(source._altId as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['name']) { this.name = new fhir.FhirString({value: source.name}); }
+    if (source['_name']) {
+      if (this.name) { this.name.addExtendedProperties(source._name!); }
+      else { this.name = new fhir.FhirString(source._name as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['requestor']) { this.requestor = new fhir.FhirBoolean({value: source.requestor}); }
     else { this.requestor = null; }
+    if (source['_requestor']) {
+      if (this.requestor) { this.requestor.addExtendedProperties(source._requestor!); }
+      else { this.requestor = new fhir.FhirBoolean(source._requestor as Partial<fhir.FhirBooleanArgs>); }
+    }
     if (source['location']) { this.location = new fhir.Reference(source.location); }
     if (source['policy']) { this.policy = source.policy.map((x) => new fhir.FhirUri({value: x})); }
     else { this.policy = []; }
+    if (source['_policy']) {
+      source._policy.forEach((x,i) => {
+        if (this.policy.length >= i) { if (x) { this.policy[i].addExtendedProperties(x); } }
+        else { if (x) { this.policy.push(new fhir.FhirUri(x as Partial<fhir.FhirUriArgs>)); } }
+      });
+    }
     if (source['media']) { this.media = new fhir.Coding(source.media); }
     if (source['network']) { this.network = new fhir.AuditEventAgentNetwork(source.network); }
     if (source['purposeOfUse']) { this.purposeOfUse = source.purposeOfUse.map((x) => new fhir.CodeableConcept(x)); }
@@ -287,6 +337,10 @@ export interface AuditEventSourceArgs extends fhir.BackboneElementArgs {
    */
   site?: fhir.FhirString|string|undefined;
   /**
+   * Extended properties for primitive element: AuditEvent.source.site
+   */
+  _site?:fhir.FhirElementArgs;
+  /**
    * Identifier of the source where the event was detected.
    */
   observer: fhir.ReferenceArgs|null;
@@ -322,6 +376,10 @@ export class AuditEventSource extends fhir.BackboneElement {
   constructor(source:Partial<AuditEventSourceArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
     if (source['site']) { this.site = new fhir.FhirString({value: source.site}); }
+    if (source['_site']) {
+      if (this.site) { this.site.addExtendedProperties(source._site!); }
+      else { this.site = new fhir.FhirString(source._site as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['observer']) { this.observer = new fhir.Reference(source.observer); }
     else { this.observer = null; }
     if (source['type']) { this.type = source.type.map((x) => new fhir.Coding(x)); }
@@ -355,6 +413,10 @@ export interface AuditEventEntityDetailArgs extends fhir.BackboneElementArgs {
    * The type of extra detail provided in the value.
    */
   type: fhir.FhirString|string|undefined;
+  /**
+   * Extended properties for primitive element: AuditEvent.entity.detail.type
+   */
+  _type?:fhir.FhirElementArgs;
   /**
    * The value can be string when known to be a string, else base64 encoding should be used to protect binary or undefined content.  The meaning and secondary-encoding of the content of base64 encoded blob is specific to the AuditEvent.type, AuditEvent.subtype, AuditEvent.entity.type, and AuditEvent.entity.role.  The base64 is a general-use and safe container for event specific data blobs regardless of the encoding used by the transaction being recorded.  An AuditEvent consuming application must understand the event it is consuming and the formats used by the event. For example if auditing an Oracle network database access, the Oracle formats must be understood as they will be simply encoded in the base64binary blob.
    */
@@ -396,6 +458,10 @@ export class AuditEventEntityDetail extends fhir.BackboneElement {
     super(source, options);
     if (source['type']) { this.type = new fhir.FhirString({value: source.type}); }
     else { this.type = null; }
+    if (source['_type']) {
+      if (this.type) { this.type.addExtendedProperties(source._type!); }
+      else { this.type = new fhir.FhirString(source._type as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['value']) { this.value = source.value; }
     else if (source['valueString']) { this.value = new fhir.FhirString({value: source.valueString}); }
     else if (source['valueBase64Binary']) { this.value = new fhir.FhirBase64Binary({value: source.valueBase64Binary}); }
@@ -445,13 +511,25 @@ export interface AuditEventEntityArgs extends fhir.BackboneElementArgs {
    */
   name?: fhir.FhirString|string|undefined;
   /**
+   * Extended properties for primitive element: AuditEvent.entity.name
+   */
+  _name?:fhir.FhirElementArgs;
+  /**
    * Text that describes the entity in more detail.
    */
   description?: fhir.FhirString|string|undefined;
   /**
+   * Extended properties for primitive element: AuditEvent.entity.description
+   */
+  _description?:fhir.FhirElementArgs;
+  /**
    * The meaning and secondary-encoding of the content of base64 encoded blob is specific to the AuditEvent.type, AuditEvent.subtype, AuditEvent.entity.type, and AuditEvent.entity.role.  The base64 is a general-use and safe container for event specific data blobs regardless of the encoding used by the transaction being recorded.  An AuditEvent consuming application must understand the event it is consuming and the formats used by the event. For example, if auditing an Oracle network database access, the Oracle formats must be understood as they will be simply encoded in the base64binary blob.
    */
   query?: fhir.FhirBase64Binary|string|undefined;
+  /**
+   * Extended properties for primitive element: AuditEvent.entity.query
+   */
+  _query?:fhir.FhirElementArgs;
   /**
    * Tagged value pairs for conveying additional information about the entity.
    */
@@ -514,8 +592,20 @@ export class AuditEventEntity extends fhir.BackboneElement {
     if (source['securityLabel']) { this.securityLabel = source.securityLabel.map((x) => new fhir.Coding(x)); }
     else { this.securityLabel = []; }
     if (source['name']) { this.name = new fhir.FhirString({value: source.name}); }
+    if (source['_name']) {
+      if (this.name) { this.name.addExtendedProperties(source._name!); }
+      else { this.name = new fhir.FhirString(source._name as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['description']) { this.description = new fhir.FhirString({value: source.description}); }
+    if (source['_description']) {
+      if (this.description) { this.description.addExtendedProperties(source._description!); }
+      else { this.description = new fhir.FhirString(source._description as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['query']) { this.query = new fhir.FhirBase64Binary({value: source.query}); }
+    if (source['_query']) {
+      if (this.query) { this.query.addExtendedProperties(source._query!); }
+      else { this.query = new fhir.FhirBase64Binary(source._query as Partial<fhir.FhirBase64BinaryArgs>); }
+    }
     if (source['detail']) { this.detail = source.detail.map((x) => new fhir.AuditEventEntityDetail(x)); }
     else { this.detail = []; }
   }
@@ -575,6 +665,10 @@ export interface AuditEventArgs extends fhir.DomainResourceArgs {
    */
   action?: fhir.FhirCode|string|undefined;
   /**
+   * Extended properties for primitive element: AuditEvent.action
+   */
+  _action?:fhir.FhirElementArgs;
+  /**
    * The period can be a little arbitrary; where possible, the time should correspond to human assessment of the activity time.
    */
   period?: fhir.PeriodArgs|undefined;
@@ -583,13 +677,25 @@ export interface AuditEventArgs extends fhir.DomainResourceArgs {
    */
   recorded: fhir.FhirInstant|string|undefined;
   /**
+   * Extended properties for primitive element: AuditEvent.recorded
+   */
+  _recorded?:fhir.FhirElementArgs;
+  /**
    * In some cases a "success" may be partial, for example, an incomplete or interrupted transfer of a radiological study. For the purpose of establishing accountability, these distinctions are not relevant.
    */
   outcome?: fhir.FhirCode|string|undefined;
   /**
+   * Extended properties for primitive element: AuditEvent.outcome
+   */
+  _outcome?:fhir.FhirElementArgs;
+  /**
    * A free text description of the outcome of the event.
    */
   outcomeDesc?: fhir.FhirString|string|undefined;
+  /**
+   * Extended properties for primitive element: AuditEvent.outcomeDesc
+   */
+  _outcomeDesc?:fhir.FhirElementArgs;
   /**
    * Use AuditEvent.agent.purposeOfUse when you know that it is specific to the agent, otherwise use AuditEvent.purposeOfEvent. For example, during a machine-to-machine transfer it might not be obvious to the audit system who caused the event, but it does know why.
    */
@@ -677,11 +783,27 @@ export class AuditEvent extends fhir.DomainResource {
     if (source['subtype']) { this.subtype = source.subtype.map((x) => new fhir.Coding(x)); }
     else { this.subtype = []; }
     if (source['action']) { this.action = new fhir.FhirCode({value: source.action}); }
+    if (source['_action']) {
+      if (this.action) { this.action.addExtendedProperties(source._action!); }
+      else { this.action = new fhir.FhirCode(source._action as Partial<fhir.FhirCodeArgs>); }
+    }
     if (source['period']) { this.period = new fhir.Period(source.period); }
     if (source['recorded']) { this.recorded = new fhir.FhirInstant({value: source.recorded}); }
     else { this.recorded = null; }
+    if (source['_recorded']) {
+      if (this.recorded) { this.recorded.addExtendedProperties(source._recorded!); }
+      else { this.recorded = new fhir.FhirInstant(source._recorded as Partial<fhir.FhirInstantArgs>); }
+    }
     if (source['outcome']) { this.outcome = new fhir.FhirCode({value: source.outcome}); }
+    if (source['_outcome']) {
+      if (this.outcome) { this.outcome.addExtendedProperties(source._outcome!); }
+      else { this.outcome = new fhir.FhirCode(source._outcome as Partial<fhir.FhirCodeArgs>); }
+    }
     if (source['outcomeDesc']) { this.outcomeDesc = new fhir.FhirString({value: source.outcomeDesc}); }
+    if (source['_outcomeDesc']) {
+      if (this.outcomeDesc) { this.outcomeDesc.addExtendedProperties(source._outcomeDesc!); }
+      else { this.outcomeDesc = new fhir.FhirString(source._outcomeDesc as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['purposeOfEvent']) { this.purposeOfEvent = source.purposeOfEvent.map((x) => new fhir.CodeableConcept(x)); }
     else { this.purposeOfEvent = []; }
     if (source['agent']) { this.agent = source.agent.map((x) => new fhir.AuditEventAgent(x)); }

@@ -22,6 +22,10 @@ export interface SubstanceSpecificationMoietyArgs extends fhir.BackboneElementAr
    */
   name?: fhir.FhirString|string|undefined;
   /**
+   * Extended properties for primitive element: SubstanceSpecification.moiety.name
+   */
+  _name?:fhir.FhirElementArgs;
+  /**
    * Stereochemistry type.
    */
   stereochemistry?: fhir.CodeableConceptArgs|undefined;
@@ -33,6 +37,10 @@ export interface SubstanceSpecificationMoietyArgs extends fhir.BackboneElementAr
    * Molecular formula.
    */
   molecularFormula?: fhir.FhirString|string|undefined;
+  /**
+   * Extended properties for primitive element: SubstanceSpecification.moiety.molecularFormula
+   */
+  _molecularFormula?:fhir.FhirElementArgs;
   /**
    * Quantitative value for this moiety.
    */
@@ -95,9 +103,17 @@ export class SubstanceSpecificationMoiety extends fhir.BackboneElement {
     if (source['role']) { this.role = new fhir.CodeableConcept(source.role); }
     if (source['identifier']) { this.identifier = new fhir.Identifier(source.identifier); }
     if (source['name']) { this.name = new fhir.FhirString({value: source.name}); }
+    if (source['_name']) {
+      if (this.name) { this.name.addExtendedProperties(source._name!); }
+      else { this.name = new fhir.FhirString(source._name as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['stereochemistry']) { this.stereochemistry = new fhir.CodeableConcept(source.stereochemistry); }
     if (source['opticalActivity']) { this.opticalActivity = new fhir.CodeableConcept(source.opticalActivity); }
     if (source['molecularFormula']) { this.molecularFormula = new fhir.FhirString({value: source.molecularFormula}); }
+    if (source['_molecularFormula']) {
+      if (this.molecularFormula) { this.molecularFormula.addExtendedProperties(source._molecularFormula!); }
+      else { this.molecularFormula = new fhir.FhirString(source._molecularFormula as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['amount']) { this.amount = source.amount; }
     else if (source['amountQuantity']) { this.amount = new fhir.Quantity(source.amountQuantity); }
     else if (source['amountString']) { this.amount = new fhir.FhirString({value: source.amountString}); }
@@ -132,6 +148,10 @@ export interface SubstanceSpecificationPropertyArgs extends fhir.BackboneElement
    * Parameters that were used in the measurement of a property (e.g. for viscosity: measured at 20C with a pH of 7.1).
    */
   parameters?: fhir.FhirString|string|undefined;
+  /**
+   * Extended properties for primitive element: SubstanceSpecification.property.parameters
+   */
+  _parameters?:fhir.FhirElementArgs;
   /**
    * A substance upon which a defining property depends (e.g. for solubility: in water, in alcohol).
    */
@@ -202,6 +222,10 @@ export class SubstanceSpecificationProperty extends fhir.BackboneElement {
     if (source['category']) { this.category = new fhir.CodeableConcept(source.category); }
     if (source['code']) { this.code = new fhir.CodeableConcept(source.code); }
     if (source['parameters']) { this.parameters = new fhir.FhirString({value: source.parameters}); }
+    if (source['_parameters']) {
+      if (this.parameters) { this.parameters.addExtendedProperties(source._parameters!); }
+      else { this.parameters = new fhir.FhirString(source._parameters as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['definingSubstance']) { this.definingSubstance = source.definingSubstance; }
     else if (source['definingSubstanceReference']) { this.definingSubstance = new fhir.Reference(source.definingSubstanceReference); }
     else if (source['definingSubstanceCodeableConcept']) { this.definingSubstance = new fhir.CodeableConcept(source.definingSubstanceCodeableConcept); }
@@ -369,6 +393,10 @@ export interface SubstanceSpecificationStructureRepresentationArgs extends fhir.
    */
   representation?: fhir.FhirString|string|undefined;
   /**
+   * Extended properties for primitive element: SubstanceSpecification.structure.representation.representation
+   */
+  _representation?:fhir.FhirElementArgs;
+  /**
    * An attached file with the structural representation.
    */
   attachment?: fhir.AttachmentArgs|undefined;
@@ -401,6 +429,10 @@ export class SubstanceSpecificationStructureRepresentation extends fhir.Backbone
     super(source, options);
     if (source['type']) { this.type = new fhir.CodeableConcept(source.type); }
     if (source['representation']) { this.representation = new fhir.FhirString({value: source.representation}); }
+    if (source['_representation']) {
+      if (this.representation) { this.representation.addExtendedProperties(source._representation!); }
+      else { this.representation = new fhir.FhirString(source._representation as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['attachment']) { this.attachment = new fhir.Attachment(source.attachment); }
   }
   /**
@@ -431,9 +463,17 @@ export interface SubstanceSpecificationStructureArgs extends fhir.BackboneElemen
    */
   molecularFormula?: fhir.FhirString|string|undefined;
   /**
+   * Extended properties for primitive element: SubstanceSpecification.structure.molecularFormula
+   */
+  _molecularFormula?:fhir.FhirElementArgs;
+  /**
    * Specified per moiety according to the Hill system, i.e. first C, then H, then alphabetical, each moiety separated by a dot.
    */
   molecularFormulaByMoiety?: fhir.FhirString|string|undefined;
+  /**
+   * Extended properties for primitive element: SubstanceSpecification.structure.molecularFormulaByMoiety
+   */
+  _molecularFormulaByMoiety?:fhir.FhirElementArgs;
   /**
    * Applicable for single substances that contain a radionuclide or a non-natural isotopic ratio.
    */
@@ -500,7 +540,15 @@ export class SubstanceSpecificationStructure extends fhir.BackboneElement {
     if (source['stereochemistry']) { this.stereochemistry = new fhir.CodeableConcept(source.stereochemistry); }
     if (source['opticalActivity']) { this.opticalActivity = new fhir.CodeableConcept(source.opticalActivity); }
     if (source['molecularFormula']) { this.molecularFormula = new fhir.FhirString({value: source.molecularFormula}); }
+    if (source['_molecularFormula']) {
+      if (this.molecularFormula) { this.molecularFormula.addExtendedProperties(source._molecularFormula!); }
+      else { this.molecularFormula = new fhir.FhirString(source._molecularFormula as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['molecularFormulaByMoiety']) { this.molecularFormulaByMoiety = new fhir.FhirString({value: source.molecularFormulaByMoiety}); }
+    if (source['_molecularFormulaByMoiety']) {
+      if (this.molecularFormulaByMoiety) { this.molecularFormulaByMoiety.addExtendedProperties(source._molecularFormulaByMoiety!); }
+      else { this.molecularFormulaByMoiety = new fhir.FhirString(source._molecularFormulaByMoiety as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['isotope']) { this.isotope = source.isotope.map((x) => new fhir.SubstanceSpecificationStructureIsotope(x)); }
     else { this.isotope = []; }
     if (source['molecularWeight']) { this.molecularWeight = new fhir.SubstanceSpecificationStructureIsotopeMolecularWeight(source.molecularWeight); }
@@ -542,9 +590,17 @@ export interface SubstanceSpecificationCodeArgs extends fhir.BackboneElementArgs
    */
   statusDate?: fhir.FhirDateTime|string|undefined;
   /**
+   * Extended properties for primitive element: SubstanceSpecification.code.statusDate
+   */
+  _statusDate?:fhir.FhirElementArgs;
+  /**
    * Any comment can be provided in this field, if necessary.
    */
   comment?: fhir.FhirString|string|undefined;
+  /**
+   * Extended properties for primitive element: SubstanceSpecification.code.comment
+   */
+  _comment?:fhir.FhirElementArgs;
   /**
    * Supporting literature.
    */
@@ -587,7 +643,15 @@ export class SubstanceSpecificationCode extends fhir.BackboneElement {
     if (source['code']) { this.code = new fhir.CodeableConcept(source.code); }
     if (source['status']) { this.status = new fhir.CodeableConcept(source.status); }
     if (source['statusDate']) { this.statusDate = new fhir.FhirDateTime({value: source.statusDate}); }
+    if (source['_statusDate']) {
+      if (this.statusDate) { this.statusDate.addExtendedProperties(source._statusDate!); }
+      else { this.statusDate = new fhir.FhirDateTime(source._statusDate as Partial<fhir.FhirDateTimeArgs>); }
+    }
     if (source['comment']) { this.comment = new fhir.FhirString({value: source.comment}); }
+    if (source['_comment']) {
+      if (this.comment) { this.comment.addExtendedProperties(source._comment!); }
+      else { this.comment = new fhir.FhirString(source._comment as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['source']) { this.source = source.source.map((x) => new fhir.Reference(x)); }
     else { this.source = []; }
   }
@@ -620,6 +684,10 @@ export interface SubstanceSpecificationNameOfficialArgs extends fhir.BackboneEle
    * Date of official name change.
    */
   date?: fhir.FhirDateTime|string|undefined;
+  /**
+   * Extended properties for primitive element: SubstanceSpecification.name.official.date
+   */
+  _date?:fhir.FhirElementArgs;
 }
 
 /**
@@ -650,6 +718,10 @@ export class SubstanceSpecificationNameOfficial extends fhir.BackboneElement {
     if (source['authority']) { this.authority = new fhir.CodeableConcept(source.authority); }
     if (source['status']) { this.status = new fhir.CodeableConcept(source.status); }
     if (source['date']) { this.date = new fhir.FhirDateTime({value: source.date}); }
+    if (source['_date']) {
+      if (this.date) { this.date.addExtendedProperties(source._date!); }
+      else { this.date = new fhir.FhirDateTime(source._date as Partial<fhir.FhirDateTimeArgs>); }
+    }
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -671,6 +743,10 @@ export interface SubstanceSpecificationNameArgs extends fhir.BackboneElementArgs
    */
   name: fhir.FhirString|string|undefined;
   /**
+   * Extended properties for primitive element: SubstanceSpecification.name.name
+   */
+  _name?:fhir.FhirElementArgs;
+  /**
    * Name type.
    */
   type?: fhir.CodeableConceptArgs|undefined;
@@ -682,6 +758,10 @@ export interface SubstanceSpecificationNameArgs extends fhir.BackboneElementArgs
    * If this is the preferred name for this substance.
    */
   preferred?: fhir.FhirBoolean|boolean|undefined;
+  /**
+   * Extended properties for primitive element: SubstanceSpecification.name.preferred
+   */
+  _preferred?:fhir.FhirElementArgs;
   /**
    * Language of the name.
    */
@@ -771,9 +851,17 @@ export class SubstanceSpecificationName extends fhir.BackboneElement {
     super(source, options);
     if (source['name']) { this.name = new fhir.FhirString({value: source.name}); }
     else { this.name = null; }
+    if (source['_name']) {
+      if (this.name) { this.name.addExtendedProperties(source._name!); }
+      else { this.name = new fhir.FhirString(source._name as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['type']) { this.type = new fhir.CodeableConcept(source.type); }
     if (source['status']) { this.status = new fhir.CodeableConcept(source.status); }
     if (source['preferred']) { this.preferred = new fhir.FhirBoolean({value: source.preferred}); }
+    if (source['_preferred']) {
+      if (this.preferred) { this.preferred.addExtendedProperties(source._preferred!); }
+      else { this.preferred = new fhir.FhirBoolean(source._preferred as Partial<fhir.FhirBooleanArgs>); }
+    }
     if (source['language']) { this.language = source.language.map((x) => new fhir.CodeableConcept(x)); }
     else { this.language = []; }
     if (source['domain']) { this.domain = source.domain.map((x) => new fhir.CodeableConcept(x)); }
@@ -835,6 +923,10 @@ export interface SubstanceSpecificationRelationshipArgs extends fhir.BackboneEle
    * For example where an enzyme strongly bonds with a particular substance, this is a defining relationship for that enzyme, out of several possible substance relationships.
    */
   isDefining?: fhir.FhirBoolean|boolean|undefined;
+  /**
+   * Extended properties for primitive element: SubstanceSpecification.relationship.isDefining
+   */
+  _isDefining?:fhir.FhirElementArgs;
   /**
    * A numeric factor for the relationship, for instance to express that the salt of a substance has some percentage of the active substance in relation to some other.
    */
@@ -923,6 +1015,10 @@ export class SubstanceSpecificationRelationship extends fhir.BackboneElement {
     else if (source['substanceCodeableConcept']) { this.substance = new fhir.CodeableConcept(source.substanceCodeableConcept); }
     if (source['relationship']) { this.relationship = new fhir.CodeableConcept(source.relationship); }
     if (source['isDefining']) { this.isDefining = new fhir.FhirBoolean({value: source.isDefining}); }
+    if (source['_isDefining']) {
+      if (this.isDefining) { this.isDefining.addExtendedProperties(source._isDefining!); }
+      else { this.isDefining = new fhir.FhirBoolean(source._isDefining as Partial<fhir.FhirBooleanArgs>); }
+    }
     if (source['amount']) { this.amount = source.amount; }
     else if (source['amountQuantity']) { this.amount = new fhir.Quantity(source.amountQuantity); }
     else if (source['amountRange']) { this.amount = new fhir.Range(source.amountRange); }
@@ -975,6 +1071,10 @@ export interface SubstanceSpecificationArgs extends fhir.DomainResourceArgs {
    */
   description?: fhir.FhirString|string|undefined;
   /**
+   * Extended properties for primitive element: SubstanceSpecification.description
+   */
+  _description?:fhir.FhirElementArgs;
+  /**
    * Supporting literature.
    */
   source?: fhir.ReferenceArgs[]|undefined;
@@ -982,6 +1082,10 @@ export interface SubstanceSpecificationArgs extends fhir.DomainResourceArgs {
    * Textual comment about this record of a substance.
    */
   comment?: fhir.FhirString|string|undefined;
+  /**
+   * Extended properties for primitive element: SubstanceSpecification.comment
+   */
+  _comment?:fhir.FhirElementArgs;
   /**
    * Moiety, for structural modifications.
    */
@@ -1131,9 +1235,17 @@ export class SubstanceSpecification extends fhir.DomainResource {
     if (source['status']) { this.status = new fhir.CodeableConcept(source.status); }
     if (source['domain']) { this.domain = new fhir.CodeableConcept(source.domain); }
     if (source['description']) { this.description = new fhir.FhirString({value: source.description}); }
+    if (source['_description']) {
+      if (this.description) { this.description.addExtendedProperties(source._description!); }
+      else { this.description = new fhir.FhirString(source._description as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['source']) { this.source = source.source.map((x) => new fhir.Reference(x)); }
     else { this.source = []; }
     if (source['comment']) { this.comment = new fhir.FhirString({value: source.comment}); }
+    if (source['_comment']) {
+      if (this.comment) { this.comment.addExtendedProperties(source._comment!); }
+      else { this.comment = new fhir.FhirString(source._comment as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['moiety']) { this.moiety = source.moiety.map((x) => new fhir.SubstanceSpecificationMoiety(x)); }
     else { this.moiety = []; }
     if (source['property']) { this.property = source.property.map((x) => new fhir.SubstanceSpecificationProperty(x)); }

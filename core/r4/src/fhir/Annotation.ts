@@ -26,9 +26,17 @@ export interface AnnotationArgs extends fhir.FhirElementArgs {
    */
   time?: fhir.FhirDateTime|string|undefined;
   /**
+   * Extended properties for primitive element: Annotation.time
+   */
+  _time?:fhir.FhirElementArgs;
+  /**
    * The text of the annotation in markdown format.
    */
   text: fhir.FhirMarkdown|string|undefined;
+  /**
+   * Extended properties for primitive element: Annotation.text
+   */
+  _text?:fhir.FhirElementArgs;
 }
 
 /**
@@ -64,8 +72,16 @@ export class Annotation extends fhir.FhirElement {
     else if (source['authorReference']) { this.author = new fhir.Reference(source.authorReference); }
     else if (source['authorString']) { this.author = new fhir.FhirString({value: source.authorString}); }
     if (source['time']) { this.time = new fhir.FhirDateTime({value: source.time}); }
+    if (source['_time']) {
+      if (this.time) { this.time.addExtendedProperties(source._time!); }
+      else { this.time = new fhir.FhirDateTime(source._time as Partial<fhir.FhirDateTimeArgs>); }
+    }
     if (source['text']) { this.text = new fhir.FhirMarkdown({value: source.text}); }
     else { this.text = null; }
+    if (source['_text']) {
+      if (this.text) { this.text.addExtendedProperties(source._text!); }
+      else { this.text = new fhir.FhirMarkdown(source._text as Partial<fhir.FhirMarkdownArgs>); }
+    }
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).

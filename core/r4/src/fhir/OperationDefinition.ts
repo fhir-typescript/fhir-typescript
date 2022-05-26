@@ -42,9 +42,17 @@ export interface OperationDefinitionParameterBindingArgs extends fhir.BackboneEl
    */
   strength: fhir.FhirCode<BindingStrengthCodeType>|string|undefined;
   /**
+   * Extended properties for primitive element: OperationDefinition.parameter.binding.strength
+   */
+  _strength?:fhir.FhirElementArgs;
+  /**
    * For value sets with a referenceResource, the display can contain the value set description.  The reference may be version-specific or not.
    */
   valueSet: fhir.FhirCanonical|string|undefined;
+  /**
+   * Extended properties for primitive element: OperationDefinition.parameter.binding.valueSet
+   */
+  _valueSet?:fhir.FhirElementArgs;
 }
 
 /**
@@ -70,8 +78,16 @@ export class OperationDefinitionParameterBinding extends fhir.BackboneElement {
     super(source, options);
     if (source['strength']) { this.strength = new fhir.FhirCode<BindingStrengthCodeType>({value: source.strength}); }
     else { this.strength = null; }
+    if (source['_strength']) {
+      if (this.strength) { this.strength.addExtendedProperties(source._strength!); }
+      else { this.strength = new fhir.FhirCode<BindingStrengthCodeType>(source._strength as Partial<fhir.FhirCode>); }
+    }
     if (source['valueSet']) { this.valueSet = new fhir.FhirCanonical({value: source.valueSet}); }
     else { this.valueSet = null; }
+    if (source['_valueSet']) {
+      if (this.valueSet) { this.valueSet.addExtendedProperties(source._valueSet!); }
+      else { this.valueSet = new fhir.FhirCanonical(source._valueSet as Partial<fhir.FhirCanonicalArgs>); }
+    }
   }
   /**
    * Required-bound Value Set for strength (OperationDefinition.parameter.binding.strength)
@@ -107,9 +123,17 @@ export interface OperationDefinitionParameterReferencedFromArgs extends fhir.Bac
    */
   source: fhir.FhirString|string|undefined;
   /**
+   * Extended properties for primitive element: OperationDefinition.parameter.referencedFrom.source
+   */
+  _source?:fhir.FhirElementArgs;
+  /**
    * The id of the element in the referencing resource that is expected to resolve to this resource.
    */
   sourceId?: fhir.FhirString|string|undefined;
+  /**
+   * Extended properties for primitive element: OperationDefinition.parameter.referencedFrom.sourceId
+   */
+  _sourceId?:fhir.FhirElementArgs;
 }
 
 /**
@@ -135,7 +159,15 @@ export class OperationDefinitionParameterReferencedFrom extends fhir.BackboneEle
     super(source, options);
     if (source['source']) { this.source = new fhir.FhirString({value: source.source}); }
     else { this.source = null; }
+    if (source['_source']) {
+      if (this.source) { this.source.addExtendedProperties(source._source!); }
+      else { this.source = new fhir.FhirString(source._source as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['sourceId']) { this.sourceId = new fhir.FhirString({value: source.sourceId}); }
+    if (source['_sourceId']) {
+      if (this.sourceId) { this.sourceId.addExtendedProperties(source._sourceId!); }
+      else { this.sourceId = new fhir.FhirString(source._sourceId as Partial<fhir.FhirStringArgs>); }
+    }
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -159,33 +191,65 @@ export interface OperationDefinitionParameterArgs extends fhir.BackboneElementAr
    */
   name: fhir.FhirCode|string|undefined;
   /**
+   * Extended properties for primitive element: OperationDefinition.parameter.name
+   */
+  _name?:fhir.FhirElementArgs;
+  /**
    * If a parameter name is used for both an input and an output parameter, the parameter should be defined twice.
    */
   use: fhir.FhirCode<OperationParameterUseCodeType>|string|undefined;
+  /**
+   * Extended properties for primitive element: OperationDefinition.parameter.use
+   */
+  _use?:fhir.FhirElementArgs;
   /**
    * The minimum number of times this parameter SHALL appear in the request or response.
    */
   min: fhir.FhirInteger|number|undefined;
   /**
+   * Extended properties for primitive element: OperationDefinition.parameter.min
+   */
+  _min?:fhir.FhirElementArgs;
+  /**
    * The maximum number of times this element is permitted to appear in the request or response.
    */
   max: fhir.FhirString|string|undefined;
+  /**
+   * Extended properties for primitive element: OperationDefinition.parameter.max
+   */
+  _max?:fhir.FhirElementArgs;
   /**
    * Describes the meaning or use of this parameter.
    */
   documentation?: fhir.FhirString|string|undefined;
   /**
+   * Extended properties for primitive element: OperationDefinition.parameter.documentation
+   */
+  _documentation?:fhir.FhirElementArgs;
+  /**
    * if there is no stated parameter, then the parameter is a multi-part parameter; type and must have at least one part defined.
    */
   type?: fhir.FhirCode|string|undefined;
+  /**
+   * Extended properties for primitive element: OperationDefinition.parameter.type
+   */
+  _type?:fhir.FhirElementArgs;
   /**
    * Often, these profiles are the base definitions from the spec (e.g. http://hl7.org/fhir/StructureDefinition/Patient).
    */
   targetProfile?: fhir.FhirCanonical[]|string[]|undefined;
   /**
+   * Extended properties for primitive element: OperationDefinition.parameter.targetProfile
+   */
+  _targetProfile?:(fhir.FhirElementArgs|null)[];
+  /**
    * How the parameter is understood as a search parameter. This is only used if the parameter type is 'string'.
    */
   searchType?: fhir.FhirCode<SearchParamTypeCodeType>|string|undefined;
+  /**
+   * Extended properties for primitive element: OperationDefinition.parameter.searchType
+   */
+  _searchType?:fhir.FhirElementArgs;
   /**
    * Binds to a value set if this parameter is coded (code, Coding, CodeableConcept).
    */
@@ -259,17 +323,51 @@ export class OperationDefinitionParameter extends fhir.BackboneElement {
     super(source, options);
     if (source['name']) { this.name = new fhir.FhirCode({value: source.name}); }
     else { this.name = null; }
+    if (source['_name']) {
+      if (this.name) { this.name.addExtendedProperties(source._name!); }
+      else { this.name = new fhir.FhirCode(source._name as Partial<fhir.FhirCodeArgs>); }
+    }
     if (source['use']) { this.use = new fhir.FhirCode<OperationParameterUseCodeType>({value: source.use}); }
     else { this.use = null; }
+    if (source['_use']) {
+      if (this.use) { this.use.addExtendedProperties(source._use!); }
+      else { this.use = new fhir.FhirCode<OperationParameterUseCodeType>(source._use as Partial<fhir.FhirCode>); }
+    }
     if (source['min']) { this.min = new fhir.FhirInteger({value: source.min}); }
     else { this.min = null; }
+    if (source['_min']) {
+      if (this.min) { this.min.addExtendedProperties(source._min!); }
+      else { this.min = new fhir.FhirInteger(source._min as Partial<fhir.FhirIntegerArgs>); }
+    }
     if (source['max']) { this.max = new fhir.FhirString({value: source.max}); }
     else { this.max = null; }
+    if (source['_max']) {
+      if (this.max) { this.max.addExtendedProperties(source._max!); }
+      else { this.max = new fhir.FhirString(source._max as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['documentation']) { this.documentation = new fhir.FhirString({value: source.documentation}); }
+    if (source['_documentation']) {
+      if (this.documentation) { this.documentation.addExtendedProperties(source._documentation!); }
+      else { this.documentation = new fhir.FhirString(source._documentation as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['type']) { this.type = new fhir.FhirCode({value: source.type}); }
+    if (source['_type']) {
+      if (this.type) { this.type.addExtendedProperties(source._type!); }
+      else { this.type = new fhir.FhirCode(source._type as Partial<fhir.FhirCodeArgs>); }
+    }
     if (source['targetProfile']) { this.targetProfile = source.targetProfile.map((x) => new fhir.FhirCanonical({value: x})); }
     else { this.targetProfile = []; }
+    if (source['_targetProfile']) {
+      source._targetProfile.forEach((x,i) => {
+        if (this.targetProfile.length >= i) { if (x) { this.targetProfile[i].addExtendedProperties(x); } }
+        else { if (x) { this.targetProfile.push(new fhir.FhirCanonical(x as Partial<fhir.FhirCanonicalArgs>)); } }
+      });
+    }
     if (source['searchType']) { this.searchType = new fhir.FhirCode<SearchParamTypeCodeType>({value: source.searchType}); }
+    if (source['_searchType']) {
+      if (this.searchType) { this.searchType.addExtendedProperties(source._searchType!); }
+      else { this.searchType = new fhir.FhirCode<SearchParamTypeCodeType>(source._searchType as Partial<fhir.FhirCode>); }
+    }
     if (source['binding']) { this.binding = new fhir.OperationDefinitionParameterBinding(source.binding); }
     if (source['referencedFrom']) { this.referencedFrom = source.referencedFrom.map((x) => new fhir.OperationDefinitionParameterReferencedFrom(x)); }
     else { this.referencedFrom = []; }
@@ -343,9 +441,17 @@ export interface OperationDefinitionOverloadArgs extends fhir.BackboneElementArg
    */
   parameterName?: fhir.FhirString[]|string[]|undefined;
   /**
+   * Extended properties for primitive element: OperationDefinition.overload.parameterName
+   */
+  _parameterName?:(fhir.FhirElementArgs|null)[];
+  /**
    * Comments to go on overload.
    */
   comment?: fhir.FhirString|string|undefined;
+  /**
+   * Extended properties for primitive element: OperationDefinition.overload.comment
+   */
+  _comment?:fhir.FhirElementArgs;
 }
 
 /**
@@ -371,7 +477,17 @@ export class OperationDefinitionOverload extends fhir.BackboneElement {
     super(source, options);
     if (source['parameterName']) { this.parameterName = source.parameterName.map((x) => new fhir.FhirString({value: x})); }
     else { this.parameterName = []; }
+    if (source['_parameterName']) {
+      source._parameterName.forEach((x,i) => {
+        if (this.parameterName.length >= i) { if (x) { this.parameterName[i].addExtendedProperties(x); } }
+        else { if (x) { this.parameterName.push(new fhir.FhirString(x as Partial<fhir.FhirStringArgs>)); } }
+      });
+    }
     if (source['comment']) { this.comment = new fhir.FhirString({value: source.comment}); }
+    if (source['_comment']) {
+      if (this.comment) { this.comment.addExtendedProperties(source._comment!); }
+      else { this.comment = new fhir.FhirString(source._comment as Partial<fhir.FhirStringArgs>); }
+    }
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -398,37 +514,73 @@ export interface OperationDefinitionArgs extends fhir.DomainResourceArgs {
    */
   url?: fhir.FhirUri|string|undefined;
   /**
+   * Extended properties for primitive element: OperationDefinition.url
+   */
+  _url?:fhir.FhirElementArgs;
+  /**
    * There may be different operation definition instances that have the same identifier but different versions.  The version can be appended to the url in a reference to allow a reference to a particular business version of the operation definition with the format [url]|[version].
    */
   version?: fhir.FhirString|string|undefined;
+  /**
+   * Extended properties for primitive element: OperationDefinition.version
+   */
+  _version?:fhir.FhirElementArgs;
   /**
    * The name is not expected to be globally unique. The name should be a simple alphanumeric type name to ensure that it is machine-processing friendly.
    */
   name: fhir.FhirString|string|undefined;
   /**
+   * Extended properties for primitive element: OperationDefinition.name
+   */
+  _name?:fhir.FhirElementArgs;
+  /**
    * This name does not need to be machine-processing friendly and may contain punctuation, white-space, etc.
    */
   title?: fhir.FhirString|string|undefined;
+  /**
+   * Extended properties for primitive element: OperationDefinition.title
+   */
+  _title?:fhir.FhirElementArgs;
   /**
    * Allows filtering of operation definitions that are appropriate for use versus not.
    */
   status: fhir.FhirCode<PublicationStatusCodeType>|string|undefined;
   /**
+   * Extended properties for primitive element: OperationDefinition.status
+   */
+  _status?:fhir.FhirElementArgs;
+  /**
    * Named queries are invoked differently, and have different capabilities.
    */
   kind: fhir.FhirCode<OperationKindCodeType>|string|undefined;
+  /**
+   * Extended properties for primitive element: OperationDefinition.kind
+   */
+  _kind?:fhir.FhirElementArgs;
   /**
    * Allows filtering of operation definitions that are appropriate for use versus not.
    */
   experimental?: fhir.FhirBoolean|boolean|undefined;
   /**
+   * Extended properties for primitive element: OperationDefinition.experimental
+   */
+  _experimental?:fhir.FhirElementArgs;
+  /**
    * Note that this is not the same as the resource last-modified-date, since the resource may be a secondary representation of the operation definition. Additional specific dates may be added as extensions or be found by consulting Provenances associated with past versions of the resource.
    */
   date?: fhir.FhirDateTime|string|undefined;
   /**
+   * Extended properties for primitive element: OperationDefinition.date
+   */
+  _date?:fhir.FhirElementArgs;
+  /**
    * Usually an organization but may be an individual. The publisher (or steward) of the operation definition is the organization or individual primarily responsible for the maintenance and upkeep of the operation definition. This is not necessarily the same individual or organization that developed and initially authored the content. The publisher is the primary point of contact for questions or issues with the operation definition. This item SHOULD be populated unless the information is available from context.
    */
   publisher?: fhir.FhirString|string|undefined;
+  /**
+   * Extended properties for primitive element: OperationDefinition.publisher
+   */
+  _publisher?:fhir.FhirElementArgs;
   /**
    * May be a web site, an email address, a telephone number, etc.
    */
@@ -437,6 +589,10 @@ export interface OperationDefinitionArgs extends fhir.DomainResourceArgs {
    * This description can be used to capture details such as why the operation definition was built, comments about misuse, instructions for clinical use and interpretation, literature references, examples from the paper world, etc. It is not a rendering of the operation definition as conveyed in the 'text' field of the resource itself. This item SHOULD be populated unless the information is available from context (e.g. the language of the operation definition is presumed to be the predominant language in the place the operation definition was created).
    */
   description?: fhir.FhirMarkdown|string|undefined;
+  /**
+   * Extended properties for primitive element: OperationDefinition.description
+   */
+  _description?:fhir.FhirElementArgs;
   /**
    * When multiple useContexts are specified, there is no expectation that all or any of the contexts apply.
    */
@@ -450,47 +606,91 @@ export interface OperationDefinitionArgs extends fhir.DomainResourceArgs {
    */
   purpose?: fhir.FhirMarkdown|string|undefined;
   /**
+   * Extended properties for primitive element: OperationDefinition.purpose
+   */
+  _purpose?:fhir.FhirElementArgs;
+  /**
    * What http methods can be used for the operation depends on the .affectsState value and whether the input parameters are primitive or complex:
    * 1. Servers SHALL support POST method for all operations.
    * 2. Servers SHALL support GET method if all the parameters for the operation are primitive or there are no parameters and the operation has affectsState = false.
    */
   affectsState?: fhir.FhirBoolean|boolean|undefined;
   /**
+   * Extended properties for primitive element: OperationDefinition.affectsState
+   */
+  _affectsState?:fhir.FhirElementArgs;
+  /**
    * The name used to invoke the operation.
    */
   code: fhir.FhirCode|string|undefined;
+  /**
+   * Extended properties for primitive element: OperationDefinition.code
+   */
+  _code?:fhir.FhirElementArgs;
   /**
    * Additional information about how to use this operation or named query.
    */
   comment?: fhir.FhirMarkdown|string|undefined;
   /**
+   * Extended properties for primitive element: OperationDefinition.comment
+   */
+  _comment?:fhir.FhirElementArgs;
+  /**
    * A constrained profile can make optional parameters required or not used and clarify documentation.
    */
   base?: fhir.FhirCanonical|string|undefined;
+  /**
+   * Extended properties for primitive element: OperationDefinition.base
+   */
+  _base?:fhir.FhirElementArgs;
   /**
    * If the type is an abstract resource ("Resource" or "DomainResource") then the operation can be invoked on any concrete specialization.
    */
   resource?: fhir.FhirCode[]|string[]|undefined;
   /**
+   * Extended properties for primitive element: OperationDefinition.resource
+   */
+  _resource?:(fhir.FhirElementArgs|null)[];
+  /**
    * Indicates whether this operation or named query can be invoked at the system level (e.g. without needing to choose a resource type for the context).
    */
   system: fhir.FhirBoolean|boolean|undefined;
+  /**
+   * Extended properties for primitive element: OperationDefinition.system
+   */
+  _system?:fhir.FhirElementArgs;
   /**
    * Indicates whether this operation or named query can be invoked at the resource type level for any given resource type level (e.g. without needing to choose a specific resource id for the context).
    */
   type: fhir.FhirBoolean|boolean|undefined;
   /**
+   * Extended properties for primitive element: OperationDefinition.type
+   */
+  _type?:fhir.FhirElementArgs;
+  /**
    * Indicates whether this operation can be invoked on a particular instance of one of the given types.
    */
   instance: fhir.FhirBoolean|boolean|undefined;
+  /**
+   * Extended properties for primitive element: OperationDefinition.instance
+   */
+  _instance?:fhir.FhirElementArgs;
   /**
    * If present the profile shall not conflict with what is specified in the parameters in the operation definition (max/min etc.), though it may provide additional constraints. The constraints expressed in the profile apply whether the operation is invoked by a POST wih parameters or not.
    */
   inputProfile?: fhir.FhirCanonical|string|undefined;
   /**
+   * Extended properties for primitive element: OperationDefinition.inputProfile
+   */
+  _inputProfile?:fhir.FhirElementArgs;
+  /**
    * If present the profile shall not conflict with what is specified in the parameters in the operation definition (max/min etc.), though it may provide additional constraints. The constraints expressed in the profile apply whether the operation is invoked by a POST wih parameters or not.
    */
   outputProfile?: fhir.FhirCanonical|string|undefined;
+  /**
+   * Extended properties for primitive element: OperationDefinition.outputProfile
+   */
+  _outputProfile?:fhir.FhirElementArgs;
   /**
    * Query Definitions only have one output parameter, named "result". This might not be described, but can be to allow a profile to be defined.
    */
@@ -628,40 +828,126 @@ export class OperationDefinition extends fhir.DomainResource {
     super(source, options);
     this.resourceType = 'OperationDefinition';
     if (source['url']) { this.url = new fhir.FhirUri({value: source.url}); }
+    if (source['_url']) {
+      if (this.url) { this.url.addExtendedProperties(source._url!); }
+      else { this.url = new fhir.FhirUri(source._url as Partial<fhir.FhirUriArgs>); }
+    }
     if (source['version']) { this.version = new fhir.FhirString({value: source.version}); }
+    if (source['_version']) {
+      if (this.version) { this.version.addExtendedProperties(source._version!); }
+      else { this.version = new fhir.FhirString(source._version as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['name']) { this.name = new fhir.FhirString({value: source.name}); }
     else { this.name = null; }
+    if (source['_name']) {
+      if (this.name) { this.name.addExtendedProperties(source._name!); }
+      else { this.name = new fhir.FhirString(source._name as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['title']) { this.title = new fhir.FhirString({value: source.title}); }
+    if (source['_title']) {
+      if (this.title) { this.title.addExtendedProperties(source._title!); }
+      else { this.title = new fhir.FhirString(source._title as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['status']) { this.status = new fhir.FhirCode<PublicationStatusCodeType>({value: source.status}); }
     else { this.status = null; }
+    if (source['_status']) {
+      if (this.status) { this.status.addExtendedProperties(source._status!); }
+      else { this.status = new fhir.FhirCode<PublicationStatusCodeType>(source._status as Partial<fhir.FhirCode>); }
+    }
     if (source['kind']) { this.kind = new fhir.FhirCode<OperationKindCodeType>({value: source.kind}); }
     else { this.kind = null; }
+    if (source['_kind']) {
+      if (this.kind) { this.kind.addExtendedProperties(source._kind!); }
+      else { this.kind = new fhir.FhirCode<OperationKindCodeType>(source._kind as Partial<fhir.FhirCode>); }
+    }
     if (source['experimental']) { this.experimental = new fhir.FhirBoolean({value: source.experimental}); }
+    if (source['_experimental']) {
+      if (this.experimental) { this.experimental.addExtendedProperties(source._experimental!); }
+      else { this.experimental = new fhir.FhirBoolean(source._experimental as Partial<fhir.FhirBooleanArgs>); }
+    }
     if (source['date']) { this.date = new fhir.FhirDateTime({value: source.date}); }
+    if (source['_date']) {
+      if (this.date) { this.date.addExtendedProperties(source._date!); }
+      else { this.date = new fhir.FhirDateTime(source._date as Partial<fhir.FhirDateTimeArgs>); }
+    }
     if (source['publisher']) { this.publisher = new fhir.FhirString({value: source.publisher}); }
+    if (source['_publisher']) {
+      if (this.publisher) { this.publisher.addExtendedProperties(source._publisher!); }
+      else { this.publisher = new fhir.FhirString(source._publisher as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['contact']) { this.contact = source.contact.map((x) => new fhir.ContactDetail(x)); }
     else { this.contact = []; }
     if (source['description']) { this.description = new fhir.FhirMarkdown({value: source.description}); }
+    if (source['_description']) {
+      if (this.description) { this.description.addExtendedProperties(source._description!); }
+      else { this.description = new fhir.FhirMarkdown(source._description as Partial<fhir.FhirMarkdownArgs>); }
+    }
     if (source['useContext']) { this.useContext = source.useContext.map((x) => new fhir.UsageContext(x)); }
     else { this.useContext = []; }
     if (source['jurisdiction']) { this.jurisdiction = source.jurisdiction.map((x) => new fhir.CodeableConcept(x)); }
     else { this.jurisdiction = []; }
     if (source['purpose']) { this.purpose = new fhir.FhirMarkdown({value: source.purpose}); }
+    if (source['_purpose']) {
+      if (this.purpose) { this.purpose.addExtendedProperties(source._purpose!); }
+      else { this.purpose = new fhir.FhirMarkdown(source._purpose as Partial<fhir.FhirMarkdownArgs>); }
+    }
     if (source['affectsState']) { this.affectsState = new fhir.FhirBoolean({value: source.affectsState}); }
+    if (source['_affectsState']) {
+      if (this.affectsState) { this.affectsState.addExtendedProperties(source._affectsState!); }
+      else { this.affectsState = new fhir.FhirBoolean(source._affectsState as Partial<fhir.FhirBooleanArgs>); }
+    }
     if (source['code']) { this.code = new fhir.FhirCode({value: source.code}); }
     else { this.code = null; }
+    if (source['_code']) {
+      if (this.code) { this.code.addExtendedProperties(source._code!); }
+      else { this.code = new fhir.FhirCode(source._code as Partial<fhir.FhirCodeArgs>); }
+    }
     if (source['comment']) { this.comment = new fhir.FhirMarkdown({value: source.comment}); }
+    if (source['_comment']) {
+      if (this.comment) { this.comment.addExtendedProperties(source._comment!); }
+      else { this.comment = new fhir.FhirMarkdown(source._comment as Partial<fhir.FhirMarkdownArgs>); }
+    }
     if (source['base']) { this.base = new fhir.FhirCanonical({value: source.base}); }
+    if (source['_base']) {
+      if (this.base) { this.base.addExtendedProperties(source._base!); }
+      else { this.base = new fhir.FhirCanonical(source._base as Partial<fhir.FhirCanonicalArgs>); }
+    }
     if (source['resource']) { this.resource = source.resource.map((x) => new fhir.FhirCode({value: x})); }
     else { this.resource = []; }
+    if (source['_resource']) {
+      source._resource.forEach((x,i) => {
+        if (this.resource.length >= i) { if (x) { this.resource[i].addExtendedProperties(x); } }
+        else { if (x) { this.resource.push(new fhir.FhirCode(x as Partial<fhir.FhirCodeArgs>)); } }
+      });
+    }
     if (source['system']) { this.system = new fhir.FhirBoolean({value: source.system}); }
     else { this.system = null; }
+    if (source['_system']) {
+      if (this.system) { this.system.addExtendedProperties(source._system!); }
+      else { this.system = new fhir.FhirBoolean(source._system as Partial<fhir.FhirBooleanArgs>); }
+    }
     if (source['type']) { this.type = new fhir.FhirBoolean({value: source.type}); }
     else { this.type = null; }
+    if (source['_type']) {
+      if (this.type) { this.type.addExtendedProperties(source._type!); }
+      else { this.type = new fhir.FhirBoolean(source._type as Partial<fhir.FhirBooleanArgs>); }
+    }
     if (source['instance']) { this.instance = new fhir.FhirBoolean({value: source.instance}); }
     else { this.instance = null; }
+    if (source['_instance']) {
+      if (this.instance) { this.instance.addExtendedProperties(source._instance!); }
+      else { this.instance = new fhir.FhirBoolean(source._instance as Partial<fhir.FhirBooleanArgs>); }
+    }
     if (source['inputProfile']) { this.inputProfile = new fhir.FhirCanonical({value: source.inputProfile}); }
+    if (source['_inputProfile']) {
+      if (this.inputProfile) { this.inputProfile.addExtendedProperties(source._inputProfile!); }
+      else { this.inputProfile = new fhir.FhirCanonical(source._inputProfile as Partial<fhir.FhirCanonicalArgs>); }
+    }
     if (source['outputProfile']) { this.outputProfile = new fhir.FhirCanonical({value: source.outputProfile}); }
+    if (source['_outputProfile']) {
+      if (this.outputProfile) { this.outputProfile.addExtendedProperties(source._outputProfile!); }
+      else { this.outputProfile = new fhir.FhirCanonical(source._outputProfile as Partial<fhir.FhirCanonicalArgs>); }
+    }
     if (source['parameter']) { this.parameter = source.parameter.map((x) => new fhir.OperationDefinitionParameter(x)); }
     else { this.parameter = []; }
     if (source['overload']) { this.overload = source.overload.map((x) => new fhir.OperationDefinitionOverload(x)); }

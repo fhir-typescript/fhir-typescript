@@ -15,6 +15,10 @@ export interface EvidenceArgs extends fhir.DomainResourceArgs {
      */
     url?: fhir.FhirUri | string | undefined;
     /**
+     * Extended properties for primitive element: Evidence.url
+     */
+    _url?: fhir.FhirElementArgs;
+    /**
      * Typically, this is used for identifiers that can go in an HL7 V3 II (instance identifier) data type, and can then identify this evidence outside of FHIR, where it is not possible to use the logical URI.
      */
     identifier?: fhir.IdentifierArgs[] | undefined;
@@ -23,33 +27,65 @@ export interface EvidenceArgs extends fhir.DomainResourceArgs {
      */
     version?: fhir.FhirString | string | undefined;
     /**
+     * Extended properties for primitive element: Evidence.version
+     */
+    _version?: fhir.FhirElementArgs;
+    /**
      * The name is not expected to be globally unique. The name should be a simple alphanumeric type name to ensure that it is machine-processing friendly.
      */
     name?: fhir.FhirString | string | undefined;
+    /**
+     * Extended properties for primitive element: Evidence.name
+     */
+    _name?: fhir.FhirElementArgs;
     /**
      * This name does not need to be machine-processing friendly and may contain punctuation, white-space, etc.
      */
     title?: fhir.FhirString | string | undefined;
     /**
+     * Extended properties for primitive element: Evidence.title
+     */
+    _title?: fhir.FhirElementArgs;
+    /**
      * The short title provides an alternate title for use in informal descriptive contexts where the full, formal title is not necessary.
      */
     shortTitle?: fhir.FhirString | string | undefined;
+    /**
+     * Extended properties for primitive element: Evidence.shortTitle
+     */
+    _shortTitle?: fhir.FhirElementArgs;
     /**
      * An explanatory or alternate title for the Evidence giving additional information about its content.
      */
     subtitle?: fhir.FhirString | string | undefined;
     /**
+     * Extended properties for primitive element: Evidence.subtitle
+     */
+    _subtitle?: fhir.FhirElementArgs;
+    /**
      * Allows filtering of evidences that are appropriate for use versus not.
      */
     status: fhir.FhirCode<PublicationStatusCodeType> | string | undefined;
+    /**
+     * Extended properties for primitive element: Evidence.status
+     */
+    _status?: fhir.FhirElementArgs;
     /**
      * Note that this is not the same as the resource last-modified-date, since the resource may be a secondary representation of the evidence. Additional specific dates may be added as extensions or be found by consulting Provenances associated with past versions of the resource.
      */
     date?: fhir.FhirDateTime | string | undefined;
     /**
+     * Extended properties for primitive element: Evidence.date
+     */
+    _date?: fhir.FhirElementArgs;
+    /**
      * Usually an organization but may be an individual. The publisher (or steward) of the evidence is the organization or individual primarily responsible for the maintenance and upkeep of the evidence. This is not necessarily the same individual or organization that developed and initially authored the content. The publisher is the primary point of contact for questions or issues with the evidence. This item SHOULD be populated unless the information is available from context.
      */
     publisher?: fhir.FhirString | string | undefined;
+    /**
+     * Extended properties for primitive element: Evidence.publisher
+     */
+    _publisher?: fhir.FhirElementArgs;
     /**
      * May be a web site, an email address, a telephone number, etc.
      */
@@ -58,6 +94,10 @@ export interface EvidenceArgs extends fhir.DomainResourceArgs {
      * This description can be used to capture details such as why the evidence was built, comments about misuse, instructions for clinical use and interpretation, literature references, examples from the paper world, etc. It is not a rendering of the evidence as conveyed in the 'text' field of the resource itself. This item SHOULD be populated unless the information is available from context (e.g. the language of the evidence is presumed to be the predominant language in the place the evidence was created).
      */
     description?: fhir.FhirMarkdown | string | undefined;
+    /**
+     * Extended properties for primitive element: Evidence.description
+     */
+    _description?: fhir.FhirElementArgs;
     /**
      * A human-readable string to clarify or explain concepts about the resource.
      */
@@ -75,13 +115,25 @@ export interface EvidenceArgs extends fhir.DomainResourceArgs {
      */
     copyright?: fhir.FhirMarkdown | string | undefined;
     /**
+     * Extended properties for primitive element: Evidence.copyright
+     */
+    _copyright?: fhir.FhirElementArgs;
+    /**
      * The 'date' element may be more recent than the approval date because of minor changes or editorial corrections.
      */
     approvalDate?: fhir.FhirDate | string | undefined;
     /**
+     * Extended properties for primitive element: Evidence.approvalDate
+     */
+    _approvalDate?: fhir.FhirElementArgs;
+    /**
      * If specified, this date follows the original approval date.
      */
     lastReviewDate?: fhir.FhirDate | string | undefined;
+    /**
+     * Extended properties for primitive element: Evidence.lastReviewDate
+     */
+    _lastReviewDate?: fhir.FhirElementArgs;
     /**
      * The effective period for a evidence  determines when the content is applicable for usage and is independent of publication and review dates. For example, a measure intended to be used for the year 2016 might be published in 2015.
      */

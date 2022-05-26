@@ -88,6 +88,10 @@ export interface DetectedIssueMitigationArgs extends fhir.BackboneElementArgs {
    */
   date?: fhir.FhirDateTime|string|undefined;
   /**
+   * Extended properties for primitive element: DetectedIssue.mitigation.date
+   */
+  _date?:fhir.FhirElementArgs;
+  /**
    * Identifies the practitioner who determined the mitigation and takes responsibility for the mitigation step occurring.
    */
   author?: fhir.ReferenceArgs|undefined;
@@ -121,6 +125,10 @@ export class DetectedIssueMitigation extends fhir.BackboneElement {
     if (source['action']) { this.action = new fhir.CodeableConcept(source.action); }
     else { this.action = null; }
     if (source['date']) { this.date = new fhir.FhirDateTime({value: source.date}); }
+    if (source['_date']) {
+      if (this.date) { this.date.addExtendedProperties(source._date!); }
+      else { this.date = new fhir.FhirDateTime(source._date as Partial<fhir.FhirDateTimeArgs>); }
+    }
     if (source['author']) { this.author = new fhir.Reference(source.author); }
   }
   /**
@@ -160,6 +168,10 @@ export interface DetectedIssueArgs extends fhir.DomainResourceArgs {
    */
   status: fhir.FhirCode<ObservationStatusCodeType>|string|undefined;
   /**
+   * Extended properties for primitive element: DetectedIssue.status
+   */
+  _status?:fhir.FhirElementArgs;
+  /**
    * Identifies the general type of issue identified.
    */
   code?: fhir.CodeableConceptArgs|undefined;
@@ -167,6 +179,10 @@ export interface DetectedIssueArgs extends fhir.DomainResourceArgs {
    * Indicates the degree of importance associated with the identified issue based on the potential impact on the patient.
    */
   severity?: fhir.FhirCode<DetectedissueSeverityCodeType>|string|undefined;
+  /**
+   * Extended properties for primitive element: DetectedIssue.severity
+   */
+  _severity?:fhir.FhirElementArgs;
   /**
    * Indicates the patient whose record the detected issue is associated with.
    */
@@ -200,9 +216,17 @@ export interface DetectedIssueArgs extends fhir.DomainResourceArgs {
    */
   detail?: fhir.FhirString|string|undefined;
   /**
+   * Extended properties for primitive element: DetectedIssue.detail
+   */
+  _detail?:fhir.FhirElementArgs;
+  /**
    * The literature, knowledge-base or similar reference that describes the propensity for the detected issue identified.
    */
   reference?: fhir.FhirUri|string|undefined;
+  /**
+   * Extended properties for primitive element: DetectedIssue.reference
+   */
+  _reference?:fhir.FhirElementArgs;
   /**
    * Indicates an action that has been taken or is committed to reduce or eliminate the likelihood of the risk identified by the detected issue from manifesting.  Can also reflect an observation of known mitigating factors that may reduce/eliminate the need for any action.
    */
@@ -283,8 +307,16 @@ export class DetectedIssue extends fhir.DomainResource {
     else { this.identifier = []; }
     if (source['status']) { this.status = new fhir.FhirCode<ObservationStatusCodeType>({value: source.status}); }
     else { this.status = null; }
+    if (source['_status']) {
+      if (this.status) { this.status.addExtendedProperties(source._status!); }
+      else { this.status = new fhir.FhirCode<ObservationStatusCodeType>(source._status as Partial<fhir.FhirCode>); }
+    }
     if (source['code']) { this.code = new fhir.CodeableConcept(source.code); }
     if (source['severity']) { this.severity = new fhir.FhirCode<DetectedissueSeverityCodeType>({value: source.severity}); }
+    if (source['_severity']) {
+      if (this.severity) { this.severity.addExtendedProperties(source._severity!); }
+      else { this.severity = new fhir.FhirCode<DetectedissueSeverityCodeType>(source._severity as Partial<fhir.FhirCode>); }
+    }
     if (source['patient']) { this.patient = new fhir.Reference(source.patient); }
     if (source['identified']) { this.identified = source.identified; }
     else if (source['identifiedDateTime']) { this.identified = new fhir.FhirDateTime({value: source.identifiedDateTime}); }
@@ -295,7 +327,15 @@ export class DetectedIssue extends fhir.DomainResource {
     if (source['evidence']) { this.evidence = source.evidence.map((x) => new fhir.DetectedIssueEvidence(x)); }
     else { this.evidence = []; }
     if (source['detail']) { this.detail = new fhir.FhirString({value: source.detail}); }
+    if (source['_detail']) {
+      if (this.detail) { this.detail.addExtendedProperties(source._detail!); }
+      else { this.detail = new fhir.FhirString(source._detail as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['reference']) { this.reference = new fhir.FhirUri({value: source.reference}); }
+    if (source['_reference']) {
+      if (this.reference) { this.reference.addExtendedProperties(source._reference!); }
+      else { this.reference = new fhir.FhirUri(source._reference as Partial<fhir.FhirUriArgs>); }
+    }
     if (source['mitigation']) { this.mitigation = source.mitigation.map((x) => new fhir.DetectedIssueMitigation(x)); }
     else { this.mitigation = []; }
   }

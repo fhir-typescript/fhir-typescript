@@ -12,6 +12,10 @@ export interface ValueSetComposeIncludeConceptDesignationArgs extends fhir.Backb
      */
     language?: fhir.FhirCode | string | undefined;
     /**
+     * Extended properties for primitive element: ValueSet.compose.include.concept.designation.language
+     */
+    _language?: fhir.FhirElementArgs;
+    /**
      * If no use is provided, the designation can be assumed to be suitable for general display to a human user.
      */
     use?: fhir.CodingArgs | undefined;
@@ -19,6 +23,10 @@ export interface ValueSetComposeIncludeConceptDesignationArgs extends fhir.Backb
      * The text value for this designation.
      */
     value: fhir.FhirString | string | undefined;
+    /**
+     * Extended properties for primitive element: ValueSet.compose.include.concept.designation.value
+     */
+    _value?: fhir.FhirElementArgs;
 }
 /**
  * Concepts have both a ```display``` and an array of ```designation```. The display is equivalent to a special designation with an implied ```designation.use``` of "primary code" and a language equal to the [Resource Language](resource.html#language).
@@ -66,9 +74,17 @@ export interface ValueSetComposeIncludeConceptArgs extends fhir.BackboneElementA
      */
     code: fhir.FhirCode | string | undefined;
     /**
+     * Extended properties for primitive element: ValueSet.compose.include.concept.code
+     */
+    _code?: fhir.FhirElementArgs;
+    /**
      * The value set resource allows for an alternative display to be specified for when this concept is used in this particular value set. See notes in the value set narrative about the correct use of this element.
      */
     display?: fhir.FhirString | string | undefined;
+    /**
+     * Extended properties for primitive element: ValueSet.compose.include.concept.display
+     */
+    _display?: fhir.FhirElementArgs;
     /**
      * Concepts have both a ```display``` and an array of ```designation```. The display is equivalent to a special designation with an implied ```designation.use``` of "primary code" and a language equal to the [Resource Language](resource.html#language).
      */
@@ -112,13 +128,25 @@ export interface ValueSetComposeIncludeFilterArgs extends fhir.BackboneElementAr
      */
     property: fhir.FhirCode | string | undefined;
     /**
+     * Extended properties for primitive element: ValueSet.compose.include.filter.property
+     */
+    _property?: fhir.FhirElementArgs;
+    /**
      * In case filter.property represents a property of the system, the operation applies to the selected property. In case filter.property represents a filter of the system, the operation SHALL match one of the CodeSystem.filter.operator values.
      */
     op: fhir.FhirCode<FilterOperatorCodeType> | string | undefined;
     /**
+     * Extended properties for primitive element: ValueSet.compose.include.filter.op
+     */
+    _op?: fhir.FhirElementArgs;
+    /**
      * Use regex matching with care - full regex matching on every SNOMED CT term is prohibitive, for example.
      */
     value: fhir.FhirString | string | undefined;
+    /**
+     * Extended properties for primitive element: ValueSet.compose.include.filter.value
+     */
+    _value?: fhir.FhirElementArgs;
 }
 /**
  * Selecting codes by specifying filters based on properties is only possible where the underlying code system defines appropriate properties. Note that in some cases, the underlying code system defines the logical concepts but not the literal codes for the concepts. In such cases, the literal definitions may be provided by a third party.
@@ -172,9 +200,17 @@ export interface ValueSetComposeIncludeArgs extends fhir.BackboneElementArgs {
      */
     system?: fhir.FhirUri | string | undefined;
     /**
+     * Extended properties for primitive element: ValueSet.compose.include.system
+     */
+    _system?: fhir.FhirElementArgs;
+    /**
      * This is used when selecting the descendants of a concept - they may change between versions. If no version is specified, then the exact contents of the value set might not be known until a context of use binds it to a particular version. The special value '*' means all versions; It is at server discretion regarding expansions and which versions must be supported.
      */
     version?: fhir.FhirString | string | undefined;
+    /**
+     * Extended properties for primitive element: ValueSet.compose.include.version
+     */
+    _version?: fhir.FhirElementArgs;
     /**
      * The list of concepts is considered ordered, though the order might not have any particular significance. Typically, the order of an expansion follows that defined in the compose element.
      */
@@ -187,6 +223,10 @@ export interface ValueSetComposeIncludeArgs extends fhir.BackboneElementArgs {
      * The value set URI is either a logical reference to a defined value set such as a [SNOMED CT reference set](snomedct.html#implicit), or a direct reference to a value set definition using ValueSet.url. The reference might not refer to an actual FHIR ValueSet resource; in this case, whatever is referred to is an implicit definition of a value set that needs to be clear about how versions are resolved.
      */
     valueSet?: fhir.FhirCanonical[] | string[] | undefined;
+    /**
+     * Extended properties for primitive element: ValueSet.compose.include.valueSet
+     */
+    _valueSet?: (fhir.FhirElementArgs | null)[];
 }
 /**
  * All the conditions in an include must be true. If a system is listed, all the codes from the system are listed. If one or more filters are listed, all of the filters must apply. If one or more value sets are listed, the codes must be in all the value sets. E.g. each include is 'include all the codes that meet all these conditions'.
@@ -234,10 +274,18 @@ export interface ValueSetComposeArgs extends fhir.BackboneElementArgs {
      */
     lockedDate?: fhir.FhirDate | string | undefined;
     /**
+     * Extended properties for primitive element: ValueSet.compose.lockedDate
+     */
+    _lockedDate?: fhir.FhirElementArgs;
+    /**
      * Note that in the FHIR terminology framework, "deprecated" does not mean inactive, but in some code systems, e.g. LOINC, "deprecated" does mean inactive. Code systems should define what codes are considered to be inactive. If this is not clearly defined (including in the FHIR code system resource), then all codes are assumed to be active.
      * The Value Set Definition specification defines an ActiveOnly element, which is the reverse of this element e.g. (ValueSet.compose.inactive=FALSE) is the same as (VSD.ActiveOnly=TRUE).
      */
     inactive?: fhir.FhirBoolean | boolean | undefined;
+    /**
+     * Extended properties for primitive element: ValueSet.compose.inactive
+     */
+    _inactive?: fhir.FhirElementArgs;
     /**
      * All the conditions in an include must be true. If a system is listed, all the codes from the system are listed. If one or more filters are listed, all of the filters must apply. If one or more value sets are listed, the codes must be in all the value sets. E.g. each include is 'include all the codes that meet all these conditions'.
      */
@@ -289,6 +337,10 @@ export interface ValueSetExpansionParameterArgs extends fhir.BackboneElementArgs
      * The names are assigned at the discretion of the server.
      */
     name: fhir.FhirString | string | undefined;
+    /**
+     * Extended properties for primitive element: ValueSet.expansion.parameter.name
+     */
+    _name?: fhir.FhirElementArgs;
     /**
      * The value of the parameter.
      */
@@ -360,25 +412,49 @@ export interface ValueSetExpansionContainsArgs extends fhir.BackboneElementArgs 
      */
     system?: fhir.FhirUri | string | undefined;
     /**
+     * Extended properties for primitive element: ValueSet.expansion.contains.system
+     */
+    _system?: fhir.FhirElementArgs;
+    /**
      * This should not be understood to exclude its use for searching (e.g. by subsumption testing). The client should know whether it is appropriate for the user to select an abstract code or not.
      */
     abstract?: fhir.FhirBoolean | boolean | undefined;
+    /**
+     * Extended properties for primitive element: ValueSet.expansion.contains.abstract
+     */
+    _abstract?: fhir.FhirElementArgs;
     /**
      * This should only have a value if the concept is inactive.
      */
     inactive?: fhir.FhirBoolean | boolean | undefined;
     /**
+     * Extended properties for primitive element: ValueSet.expansion.contains.inactive
+     */
+    _inactive?: fhir.FhirElementArgs;
+    /**
      * The exact value of the version string is specified by the system from which the code is derived.
      */
     version?: fhir.FhirString | string | undefined;
+    /**
+     * Extended properties for primitive element: ValueSet.expansion.contains.version
+     */
+    _version?: fhir.FhirElementArgs;
     /**
      * The code for this item in the expansion hierarchy. If this code is missing the entry in the hierarchy is a place holder (abstract) and does not represent a valid code in the value set.
      */
     code?: fhir.FhirCode | string | undefined;
     /**
+     * Extended properties for primitive element: ValueSet.expansion.contains.code
+     */
+    _code?: fhir.FhirElementArgs;
+    /**
      * The recommended display for this item in the expansion.
      */
     display?: fhir.FhirString | string | undefined;
+    /**
+     * Extended properties for primitive element: ValueSet.expansion.contains.display
+     */
+    _display?: fhir.FhirElementArgs;
     /**
      * The designations provided must be based on the value set and code system definitions.
      */
@@ -446,17 +522,33 @@ export interface ValueSetExpansionArgs extends fhir.BackboneElementArgs {
      */
     identifier?: fhir.FhirUri | string | undefined;
     /**
+     * Extended properties for primitive element: ValueSet.expansion.identifier
+     */
+    _identifier?: fhir.FhirElementArgs;
+    /**
      * This SHOULD be a fully populated instant, but in some circumstances, value sets are expanded by hand, and the expansion is published without that precision.
      */
     timestamp: fhir.FhirDateTime | string | undefined;
+    /**
+     * Extended properties for primitive element: ValueSet.expansion.timestamp
+     */
+    _timestamp?: fhir.FhirElementArgs;
     /**
      * Paging only applies to flat expansions.
      */
     total?: fhir.FhirInteger | number | undefined;
     /**
+     * Extended properties for primitive element: ValueSet.expansion.total
+     */
+    _total?: fhir.FhirElementArgs;
+    /**
      * Paging only applies to flat expansions. If a filter is applied, the count is the number of concepts that matched the filter, not the number of concepts in an unfiltered view of the expansion.
      */
     offset?: fhir.FhirInteger | number | undefined;
+    /**
+     * Extended properties for primitive element: ValueSet.expansion.offset
+     */
+    _offset?: fhir.FhirElementArgs;
     /**
      * The server decides which parameters to include here, but at a minimum, the list SHOULD include all of the parameters that affect the $expand operation. If the expansion will be persisted all of these parameters SHALL be included. If the codeSystem on the server has a specified version then this version SHALL be provided as a parameter in the expansion (note that not all code systems have a version).
      */
@@ -523,6 +615,10 @@ export interface ValueSetArgs extends fhir.DomainResourceArgs {
      */
     url?: fhir.FhirUri | string | undefined;
     /**
+     * Extended properties for primitive element: ValueSet.url
+     */
+    _url?: fhir.FhirElementArgs;
+    /**
      * Typically, this is used for identifiers that can go in an HL7 V3 II (instance identifier) data type, and can then identify this value set outside of FHIR, where it is not possible to use the logical URI.
      */
     identifier?: fhir.IdentifierArgs[] | undefined;
@@ -531,29 +627,57 @@ export interface ValueSetArgs extends fhir.DomainResourceArgs {
      */
     version?: fhir.FhirString | string | undefined;
     /**
+     * Extended properties for primitive element: ValueSet.version
+     */
+    _version?: fhir.FhirElementArgs;
+    /**
      * The name is not expected to be globally unique. The name should be a simple alphanumeric type name to ensure that it is machine-processing friendly.A name should be provided unless the value set is a contained resource (e.g. an anonymous value set in a profile). Most registries will require a name.
      */
     name?: fhir.FhirString | string | undefined;
+    /**
+     * Extended properties for primitive element: ValueSet.name
+     */
+    _name?: fhir.FhirElementArgs;
     /**
      * This name does not need to be machine-processing friendly and may contain punctuation, white-space, etc.
      */
     title?: fhir.FhirString | string | undefined;
     /**
+     * Extended properties for primitive element: ValueSet.title
+     */
+    _title?: fhir.FhirElementArgs;
+    /**
      * Allows filtering of value sets that are appropriate for use versus not.See also the [valueset-workflowStatus](extension-valueset-workflowstatus.html) extension for additional status information related to the editorial process.
      */
     status: fhir.FhirCode<PublicationStatusCodeType> | string | undefined;
+    /**
+     * Extended properties for primitive element: ValueSet.status
+     */
+    _status?: fhir.FhirElementArgs;
     /**
      * Allows filtering of value sets that are appropriate for use versus not.
      */
     experimental?: fhir.FhirBoolean | boolean | undefined;
     /**
+     * Extended properties for primitive element: ValueSet.experimental
+     */
+    _experimental?: fhir.FhirElementArgs;
+    /**
      * Note that this is not the same as the resource last-modified-date, since the resource may be a secondary representation of the value set. Additional specific dates may be added as extensions or be found by consulting Provenances associated with past versions of the resource.
      */
     date?: fhir.FhirDateTime | string | undefined;
     /**
+     * Extended properties for primitive element: ValueSet.date
+     */
+    _date?: fhir.FhirElementArgs;
+    /**
      * Usually an organization but may be an individual. The publisher (or steward) of the value set is the organization or individual primarily responsible for the maintenance and upkeep of the value set. This is not necessarily the same individual or organization that developed and initially authored the content. The publisher is the primary point of contact for questions or issues with the value set. This item SHOULD be populated unless the information is available from context.
      */
     publisher?: fhir.FhirString | string | undefined;
+    /**
+     * Extended properties for primitive element: ValueSet.publisher
+     */
+    _publisher?: fhir.FhirElementArgs;
     /**
      * May be a web site, an email address, a telephone number, etc.
      */
@@ -562,6 +686,10 @@ export interface ValueSetArgs extends fhir.DomainResourceArgs {
      * This description can be used to capture details such as why the value set was built, comments about misuse, instructions for clinical use and interpretation, literature references, examples from the paper world, etc. It is not a rendering of the value set as conveyed in the 'text' field of the resource itself. This item SHOULD be populated unless the information is available from context (e.g. the language of the value set is presumed to be the predominant language in the place the value set was created).The description is not intended to describe the semantics of the Value Set - there are no intrinsic semantics separate from the codes contained in its expansion. The description should capture its intended use, which is needed for ensuring integrity for its use in models across future changes. A description should be provided unless the value set is a contained resource (e.g. an anonymous value set in a profile). Most registries will require a description.
      */
     description?: fhir.FhirMarkdown | string | undefined;
+    /**
+     * Extended properties for primitive element: ValueSet.description
+     */
+    _description?: fhir.FhirElementArgs;
     /**
      * When multiple useContexts are specified, there is no expectation that all or any of the contexts apply.
      */
@@ -575,13 +703,25 @@ export interface ValueSetArgs extends fhir.DomainResourceArgs {
      */
     immutable?: fhir.FhirBoolean | boolean | undefined;
     /**
+     * Extended properties for primitive element: ValueSet.immutable
+     */
+    _immutable?: fhir.FhirElementArgs;
+    /**
      * This element does not describe the usage of the value set. Instead, it provides traceability of ''why'' the resource is either needed or ''why'' it is defined as it is.  This may be used to point to source materials or specifications that drove the structure of this value set.
      */
     purpose?: fhir.FhirMarkdown | string | undefined;
     /**
+     * Extended properties for primitive element: ValueSet.purpose
+     */
+    _purpose?: fhir.FhirElementArgs;
+    /**
      * nullFrequently, the copyright differs between the value set and the codes that are included. The copyright statement should clearly differentiate between these when required.
      */
     copyright?: fhir.FhirMarkdown | string | undefined;
+    /**
+     * Extended properties for primitive element: ValueSet.copyright
+     */
+    _copyright?: fhir.FhirElementArgs;
     /**
      * A set of criteria that define the contents of the value set by including or excluding codes selected from the specified code system(s) that the value set draws from. This is also known as the Content Logical Definition (CLD).
      */

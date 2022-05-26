@@ -58,6 +58,10 @@ export interface PaymentReconciliationDetailArgs extends fhir.BackboneElementArg
    */
   date?: fhir.FhirDate|string|undefined;
   /**
+   * Extended properties for primitive element: PaymentReconciliation.detail.date
+   */
+  _date?:fhir.FhirElementArgs;
+  /**
    * A reference to the individual who is responsible for inquiries regarding the response and its payment.
    */
   responsible?: fhir.ReferenceArgs|undefined;
@@ -132,6 +136,10 @@ export class PaymentReconciliationDetail extends fhir.BackboneElement {
     if (source['submitter']) { this.submitter = new fhir.Reference(source.submitter); }
     if (source['response']) { this.response = new fhir.Reference(source.response); }
     if (source['date']) { this.date = new fhir.FhirDate({value: source.date}); }
+    if (source['_date']) {
+      if (this.date) { this.date.addExtendedProperties(source._date!); }
+      else { this.date = new fhir.FhirDate(source._date as Partial<fhir.FhirDateArgs>); }
+    }
     if (source['responsible']) { this.responsible = new fhir.Reference(source.responsible); }
     if (source['payee']) { this.payee = new fhir.Reference(source.payee); }
     if (source['amount']) { this.amount = new fhir.Money(source.amount); }
@@ -166,9 +174,17 @@ export interface PaymentReconciliationProcessNoteArgs extends fhir.BackboneEleme
    */
   type?: fhir.FhirCode<NoteTypeCodeType>|string|undefined;
   /**
+   * Extended properties for primitive element: PaymentReconciliation.processNote.type
+   */
+  _type?:fhir.FhirElementArgs;
+  /**
    * The explanation or description associated with the processing.
    */
   text?: fhir.FhirString|string|undefined;
+  /**
+   * Extended properties for primitive element: PaymentReconciliation.processNote.text
+   */
+  _text?:fhir.FhirElementArgs;
 }
 
 /**
@@ -193,7 +209,15 @@ export class PaymentReconciliationProcessNote extends fhir.BackboneElement {
   constructor(source:Partial<PaymentReconciliationProcessNoteArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
     if (source['type']) { this.type = new fhir.FhirCode<NoteTypeCodeType>({value: source.type}); }
+    if (source['_type']) {
+      if (this.type) { this.type.addExtendedProperties(source._type!); }
+      else { this.type = new fhir.FhirCode<NoteTypeCodeType>(source._type as Partial<fhir.FhirCode>); }
+    }
     if (source['text']) { this.text = new fhir.FhirString({value: source.text}); }
+    if (source['_text']) {
+      if (this.text) { this.text.addExtendedProperties(source._text!); }
+      else { this.text = new fhir.FhirString(source._text as Partial<fhir.FhirStringArgs>); }
+    }
   }
   /**
    * Required-bound Value Set for type (PaymentReconciliation.processNote.type)
@@ -231,6 +255,10 @@ export interface PaymentReconciliationArgs extends fhir.DomainResourceArgs {
    */
   status: fhir.FhirCode<FmStatusCodeType>|string|undefined;
   /**
+   * Extended properties for primitive element: PaymentReconciliation.status
+   */
+  _status?:fhir.FhirElementArgs;
+  /**
    * The period of time for which payments have been gathered into this bulk payment for settlement.
    */
   period?: fhir.PeriodArgs|undefined;
@@ -238,6 +266,10 @@ export interface PaymentReconciliationArgs extends fhir.DomainResourceArgs {
    * The date when the resource was created.
    */
   created: fhir.FhirDateTime|string|undefined;
+  /**
+   * Extended properties for primitive element: PaymentReconciliation.created
+   */
+  _created?:fhir.FhirElementArgs;
   /**
    * This party is also responsible for the reconciliation.
    */
@@ -255,13 +287,25 @@ export interface PaymentReconciliationArgs extends fhir.DomainResourceArgs {
    */
   outcome?: fhir.FhirCode<RemittanceOutcomeCodeType>|string|undefined;
   /**
+   * Extended properties for primitive element: PaymentReconciliation.outcome
+   */
+  _outcome?:fhir.FhirElementArgs;
+  /**
    * A human readable description of the status of the request for the reconciliation.
    */
   disposition?: fhir.FhirString|string|undefined;
   /**
+   * Extended properties for primitive element: PaymentReconciliation.disposition
+   */
+  _disposition?:fhir.FhirElementArgs;
+  /**
    * The date of payment as indicated on the financial instrument.
    */
   paymentDate: fhir.FhirDate|string|undefined;
+  /**
+   * Extended properties for primitive element: PaymentReconciliation.paymentDate
+   */
+  _paymentDate?:fhir.FhirElementArgs;
   /**
    * Total payment amount as indicated on the financial instrument.
    */
@@ -366,16 +410,36 @@ export class PaymentReconciliation extends fhir.DomainResource {
     else { this.identifier = []; }
     if (source['status']) { this.status = new fhir.FhirCode<FmStatusCodeType>({value: source.status}); }
     else { this.status = null; }
+    if (source['_status']) {
+      if (this.status) { this.status.addExtendedProperties(source._status!); }
+      else { this.status = new fhir.FhirCode<FmStatusCodeType>(source._status as Partial<fhir.FhirCode>); }
+    }
     if (source['period']) { this.period = new fhir.Period(source.period); }
     if (source['created']) { this.created = new fhir.FhirDateTime({value: source.created}); }
     else { this.created = null; }
+    if (source['_created']) {
+      if (this.created) { this.created.addExtendedProperties(source._created!); }
+      else { this.created = new fhir.FhirDateTime(source._created as Partial<fhir.FhirDateTimeArgs>); }
+    }
     if (source['paymentIssuer']) { this.paymentIssuer = new fhir.Reference(source.paymentIssuer); }
     if (source['request']) { this.request = new fhir.Reference(source.request); }
     if (source['requestor']) { this.requestor = new fhir.Reference(source.requestor); }
     if (source['outcome']) { this.outcome = new fhir.FhirCode<RemittanceOutcomeCodeType>({value: source.outcome}); }
+    if (source['_outcome']) {
+      if (this.outcome) { this.outcome.addExtendedProperties(source._outcome!); }
+      else { this.outcome = new fhir.FhirCode<RemittanceOutcomeCodeType>(source._outcome as Partial<fhir.FhirCode>); }
+    }
     if (source['disposition']) { this.disposition = new fhir.FhirString({value: source.disposition}); }
+    if (source['_disposition']) {
+      if (this.disposition) { this.disposition.addExtendedProperties(source._disposition!); }
+      else { this.disposition = new fhir.FhirString(source._disposition as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['paymentDate']) { this.paymentDate = new fhir.FhirDate({value: source.paymentDate}); }
     else { this.paymentDate = null; }
+    if (source['_paymentDate']) {
+      if (this.paymentDate) { this.paymentDate.addExtendedProperties(source._paymentDate!); }
+      else { this.paymentDate = new fhir.FhirDate(source._paymentDate as Partial<fhir.FhirDateArgs>); }
+    }
     if (source['paymentAmount']) { this.paymentAmount = new fhir.Money(source.paymentAmount); }
     else { this.paymentAmount = null; }
     if (source['paymentIdentifier']) { this.paymentIdentifier = new fhir.Identifier(source.paymentIdentifier); }

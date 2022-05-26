@@ -18,9 +18,17 @@ export interface TriggerDefinitionArgs extends fhir.FhirElementArgs {
    */
   type: fhir.FhirCode<TriggerTypeCodeType>|string|undefined;
   /**
+   * Extended properties for primitive element: TriggerDefinition.type
+   */
+  _type?:fhir.FhirElementArgs;
+  /**
    * An event name can be provided for all event types, but is required for named events. If a name is provided for a type other than named events, it is considered to be a shorthand for the semantics described by the formal description of the event.
    */
   name?: fhir.FhirString|string|undefined;
+  /**
+   * Extended properties for primitive element: TriggerDefinition.name
+   */
+  _name?:fhir.FhirElementArgs;
   /**
    * The timing of the event (if this is a periodic trigger).
    */
@@ -90,7 +98,15 @@ export class TriggerDefinition extends fhir.FhirElement {
     super(source, options);
     if (source['type']) { this.type = new fhir.FhirCode<TriggerTypeCodeType>({value: source.type}); }
     else { this.type = null; }
+    if (source['_type']) {
+      if (this.type) { this.type.addExtendedProperties(source._type!); }
+      else { this.type = new fhir.FhirCode<TriggerTypeCodeType>(source._type as Partial<fhir.FhirCode>); }
+    }
     if (source['name']) { this.name = new fhir.FhirString({value: source.name}); }
+    if (source['_name']) {
+      if (this.name) { this.name.addExtendedProperties(source._name!); }
+      else { this.name = new fhir.FhirString(source._name as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['timing']) { this.timing = source.timing; }
     else if (source['timingTiming']) { this.timing = new fhir.Timing(source.timingTiming); }
     else if (source['timingReference']) { this.timing = new fhir.Reference(source.timingReference); }

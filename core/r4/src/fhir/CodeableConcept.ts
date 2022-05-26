@@ -17,6 +17,10 @@ export interface CodeableConceptArgs extends fhir.FhirElementArgs {
    * Very often the text is the same as a displayName of one of the codings.
    */
   text?: fhir.FhirString|string|undefined;
+  /**
+   * Extended properties for primitive element: CodeableConcept.text
+   */
+  _text?:fhir.FhirElementArgs;
 }
 
 /**
@@ -43,6 +47,10 @@ export class CodeableConcept extends fhir.FhirElement {
     if (source['coding']) { this.coding = source.coding.map((x) => new fhir.Coding(x)); }
     else { this.coding = []; }
     if (source['text']) { this.text = new fhir.FhirString({value: source.text}); }
+    if (source['_text']) {
+      if (this.text) { this.text.addExtendedProperties(source._text!); }
+      else { this.text = new fhir.FhirString(source._text as Partial<fhir.FhirStringArgs>); }
+    }
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).

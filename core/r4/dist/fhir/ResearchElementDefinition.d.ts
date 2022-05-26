@@ -36,6 +36,10 @@ export interface ResearchElementDefinitionCharacteristicArgs extends fhir.Backbo
      */
     exclude?: fhir.FhirBoolean | boolean | undefined;
     /**
+     * Extended properties for primitive element: ResearchElementDefinition.characteristic.exclude
+     */
+    _exclude?: fhir.FhirElementArgs;
+    /**
      * Specifies the UCUM unit for the outcome.
      */
     unitOfMeasure?: fhir.CodeableConceptArgs | undefined;
@@ -43,6 +47,10 @@ export interface ResearchElementDefinitionCharacteristicArgs extends fhir.Backbo
      * A narrative description of the time period the study covers.
      */
     studyEffectiveDescription?: fhir.FhirString | string | undefined;
+    /**
+     * Extended properties for primitive element: ResearchElementDefinition.characteristic.studyEffectiveDescription
+     */
+    _studyEffectiveDescription?: fhir.FhirElementArgs;
     /**
      * Indicates what effective period the study covers.
      */
@@ -72,9 +80,17 @@ export interface ResearchElementDefinitionCharacteristicArgs extends fhir.Backbo
      */
     studyEffectiveGroupMeasure?: fhir.FhirCode<GroupMeasureCodeType> | string | undefined;
     /**
+     * Extended properties for primitive element: ResearchElementDefinition.characteristic.studyEffectiveGroupMeasure
+     */
+    _studyEffectiveGroupMeasure?: fhir.FhirElementArgs;
+    /**
      * A narrative description of the time period the study covers.
      */
     participantEffectiveDescription?: fhir.FhirString | string | undefined;
+    /**
+     * Extended properties for primitive element: ResearchElementDefinition.characteristic.participantEffectiveDescription
+     */
+    _participantEffectiveDescription?: fhir.FhirElementArgs;
     /**
      * Indicates what effective period the study covers.
      */
@@ -103,6 +119,10 @@ export interface ResearchElementDefinitionCharacteristicArgs extends fhir.Backbo
      * Indicates how elements are aggregated within the study effective period.
      */
     participantEffectiveGroupMeasure?: fhir.FhirCode<GroupMeasureCodeType> | string | undefined;
+    /**
+     * Extended properties for primitive element: ResearchElementDefinition.characteristic.participantEffectiveGroupMeasure
+     */
+    _participantEffectiveGroupMeasure?: fhir.FhirElementArgs;
 }
 /**
  * Characteristics can be defined flexibly to accommodate different use cases for membership criteria, ranging from simple codes, all the way to using an expression language to express the criteria.
@@ -237,22 +257,24 @@ export declare class ResearchElementDefinitionCharacteristic extends fhir.Backbo
         readonly KingArmstrongUnit: "[ka'U]";
         readonly PoundUSAndBritish: "[lb_av]";
         readonly LowPowerField: "[LPF]";
-        readonly MacLaganUnit: "[mclg'U]";
+        readonly MacLaganUnit: "[mclg'U]"; /**
+         * Indicates what effective period the study covers.
+         */
         readonly StatuteMile: "[mi_i]";
         readonly Mile: "[mi_us]";
         readonly Minim: "[min_us]";
         readonly IgMAnticardiolipinUnit: "[MPL'U]";
         readonly IgMAnticardiolipinUnitPerMilliliterAsteriskAsterisk: "[MPL'U]/mL";
         readonly NauticalMile: "[nmi_i]";
+        /**
+         * Indicates what effective period the study covers.
+         */
         readonly OunceUSAndBritish: "[oz_av]";
         readonly Ounce: "[oz_tr]";
         readonly PH: "[pH]";
         readonly TheNumberPiAsteriskRadianMinute: "[pi].rad/min";
         readonly PartPerBillion: "[ppb]";
         readonly PartPerMillion: "[ppm]";
-        /**
-         * Indicates what effective period the study covers.
-         */
         readonly PartPerMillionInVolumePerVolume: "[ppm]{v/v}";
         readonly PartsPerThousand: "[ppth]";
         readonly PartPerTrillion: "[pptr]";
@@ -260,7 +282,9 @@ export declare class ResearchElementDefinitionCharacteristic extends fhir.Backbo
         readonly Pint: "[pt_br]";
         readonly Quart: "[qt_br]";
         readonly QuartQtUs: "[qt_us]";
-        readonly SquareFootInternational: "[sft_i]";
+        readonly SquareFootInternational: "[sft_i]"; /**
+         * Extended properties for primitive element: ResearchElementDefinition.characteristic.participantEffectiveDescription
+         */
         readonly SquareInchInternational: "[sin_i]";
         readonly ShortTonUSTon: "[ston_av]";
         readonly SquareYard: "[syd_i]";
@@ -268,7 +292,9 @@ export declare class ResearchElementDefinitionCharacteristic extends fhir.Backbo
         readonly TablespoonUS: "[tbs_us]";
         readonly ToddUnit: "[todd'U]";
         readonly Teaspoon: "[tsp_us]";
-        readonly Yard: "[yd_i]";
+        readonly Yard: "[yd_i]"; /**
+         * Indicates what effective period the study covers.
+         */
         readonly NumberOfCalculi: "{# of calculi}";
         readonly NumberOfDonorInformativeMarkers: "{# of donor informative markers}";
         readonly NumberOfFetuses: "{# of fetuses}";
@@ -285,15 +311,16 @@ export declare class ResearchElementDefinitionCharacteristic extends fhir.Backbo
         readonly ActivityCoefficient: "{ActivityCoefficient}";
         readonly AHFQuoteU: "{AHF'U}";
         readonly AntibodyResponseQuoteU: "{AntibodyResponse'U}";
-        readonly Applicator: "{Applicator}";
-        readonly IgAAntiphosphatidylserineUnit: "{APS'U}";
-        /**
-         * A narrative description of the time period the study covers.
+        readonly Applicator: "{Applicator}"; /**
+         * Define members of the research element using Codes (such as condition, medication, or observation), Expressions ( using an expression language such as FHIRPath or CQL) or DataRequirements (such as Diabetes diagnosis onset in the last year).
          */
+        readonly IgAAntiphosphatidylserineUnit: "{APS'U}";
         readonly AspirinResponseUnit: "{ARU}";
         readonly AspirinReactionQuoteU: "{AspirinReaction'U}";
         readonly Bead: "{Bead}";
-        readonly HeartBeatsPerMinute: "{beats}/min";
+        readonly HeartBeatsPerMinute: "{beats}/min"; /**
+         * Internal flag to properly serialize choice-type element ResearchElementDefinition.characteristic.definition[x]
+         */
         readonly BeatsMinute: "{Beats}/min";
         readonly BindingIndex: "{binding_index}";
         readonly Bottle: "{Bottle}";
@@ -302,23 +329,26 @@ export declare class ResearchElementDefinitionCharacteristic extends fhir.Backbo
         readonly ComplementActivityEnzymeUnit: "{CAE'U}";
         readonly CAGTrinucleotideRepeats: "{CAG_repeats}";
         readonly CagRepeat: "{CagRepeat}";
-        readonly Can: "{Can}";
+        readonly Can: "{Can}"; /**
+         * A narrative description of the time period the study covers.
+         */
         readonly CansWeek: "{Cans}/wk";
         readonly Capsule: "{Capsule}";
         readonly Cell: "{Cell}";
         readonly Cells: "{cells}";
-        readonly CellsPerHighPowerField: "{cells}/[HPF]";
+        readonly CellsPerHighPowerField: "{cells}/[HPF]"; /**
+         * Internal flag to properly serialize choice-type element ResearchElementDefinition.characteristic.studyEffective[x]
+         */
         readonly CellsMilliliter: "{Cells}/mL";
         readonly CellsPerMicroliter: "{cells}/uL";
-        /**
-         * Indicates duration from the participant's study entry.
-         */
         readonly CfTiter: "{CfTiter}";
         readonly Cfu: "{cfu}";
         readonly CfuMilliliter: "{cfu}/mL";
         readonly CGGRepeats: "{CGG_repeats}";
         readonly CGG: "{CGG}";
-        readonly ComplementCH100Unit: "{CH100'U}";
+        readonly ComplementCH100Unit: "{CH100'U}"; /**
+         * A narrative description of the time period the study covers.
+         */
         readonly ClockTime: "{clock time}";
         readonly ClockTimeClockTime: "{clock_time}";
         readonly ComplementActivityEnzymeQuoteU: "{ComplementActivityEnzyme'U}";
@@ -404,6 +434,9 @@ export declare class ResearchElementDefinitionCharacteristic extends fhir.Backbo
         readonly LgCopiesMilliliter: "{lgCopies}/ml";
         readonly LogBase10CopiesPerMilliliter: "{log_copies}/mL";
         readonly LogBase10CopiesPerMilliliterLogCopiesML: "{Log_copies}/mL";
+        /**
+         * Function to perform basic model validation (e.g., check if required elements are present).
+         */
         readonly LogBase10InternationalUnit: "{Log_IU}";
         readonly LogBase10InternationalUnitPerMilliliter: "{log_IU}/mL";
         readonly LogBase10InternationalUnitPerMilliliterLogIUML: "{Log_IU}/mL";
@@ -421,9 +454,7 @@ export declare class ResearchElementDefinitionCharacteristic extends fhir.Backbo
         readonly MultOfMean: "{MultOfMean}";
         readonly NonspecificOunce: "{NonspecificOunce}";
         readonly Number: "{Number}";
-        readonly OpticalDensityUnit: "{OD_unit}"; /**
-         * There may be different research element definition instances that have the same identifier but different versions.  The version can be appended to the url in a reference to allow a reference to a particular business version of the research element definition with the format [url]|[version].
-         */
+        readonly OpticalDensityUnit: "{OD_unit}";
         readonly OnceDay: "{Once}/d";
         readonly OpticalDensity: "{OpticalDensity}";
         readonly OpticalDensityIndex: "{OpticalDensityIndex}";
@@ -466,10 +497,10 @@ export declare class ResearchElementDefinitionCharacteristic extends fhir.Backbo
         readonly Vial: "{Vial}";
         readonly VolumeVvolume: "{Volume}/{Vvolume}";
         readonly WeeksDays: "{WeeksDays}";
-        readonly WhiteBloodCell: "{WhiteBloodCell}";
-        readonly Per12AsteriskHour: "/(12.h)"; /**
-         * Usually an organization but may be an individual. The publisher (or steward) of the research element definition is the organization or individual primarily responsible for the maintenance and upkeep of the research element definition. This is not necessarily the same individual or organization that developed and initially authored the content. The publisher is the primary point of contact for questions or issues with the research element definition. This item SHOULD be populated unless the information is available from context.
+        readonly WhiteBloodCell: "{WhiteBloodCell}"; /**
+         * The name is not expected to be globally unique. The name should be a simple alphanumeric type name to ensure that it is machine-processing friendly.
          */
+        readonly Per12AsteriskHour: "/(12.h)";
         readonly PerArbitraryUnit: "/[arb'U]";
         readonly PerHighPowerField: "/[HPF]";
         readonly PerInternationalUnit: "/[iU]";
@@ -518,9 +549,6 @@ export declare class ResearchElementDefinitionCharacteristic extends fhir.Backbo
         readonly Percent: "%";
         readonly Percent0to3Hours: "%{0to3Hours}";
         readonly PercentAbnormal: "%{Abnormal}";
-        /**
-         * If specified, this date follows the original approval date.
-         */
         readonly PercentActivity: "%{Activity}";
         readonly PercentBasalActivity: "%{BasalActivity}";
         readonly PercentBinding: "%{Binding}";
@@ -570,7 +598,7 @@ export declare class ResearchElementDefinitionCharacteristic extends fhir.Backbo
         readonly VAL10AsteriskMicroNewtonAsteriskSecondCentimeterAsteriskMeterPower2: "10.uN.s/(cm.m2)";
         readonly VAL10MicronewtonSecondPerCentimeterToTheFifthPowerPerSquareMeter: "10.uN.s/(cm5.m2)";
         /**
-         * There may be different research element definition instances that have the same identifier but different versions.  The version can be appended to the url in a reference to allow a reference to a particular business version of the research element definition with the format [url]|[version].
+         * Extended properties for primitive element: ResearchElementDefinition.usage
          */
         readonly VAL10AsteriskMicroNewtonAsteriskSecondCentimeter: "10.uN.s/cm";
         readonly VAL10AsteriskMicroNewtonAsteriskSecondCentimeterPower2: "10.uN.s/cm2";
@@ -585,6 +613,9 @@ export declare class ResearchElementDefinitionCharacteristic extends fhir.Backbo
         readonly ThousandPerMilliLiter: "10*3/mL";
         readonly ThousandsPerMicroLiter: "10*3/uL";
         readonly VAL10ThousandPerMicroliter: "10*4/uL";
+        /**
+         * The effective period for a research element definition  determines when the content is applicable for usage and is independent of publication and review dates. For example, a measure intended to be used for the year 2016 might be published in 2015.
+         */
         readonly OneHundredThousand: "10*5";
         readonly Million: "10*6";
         readonly MillionInternationalUnit: "10*6.[iU]";
@@ -595,11 +626,16 @@ export declare class ResearchElementDefinitionCharacteristic extends fhir.Backbo
         readonly MillionPerLiter: "10*6/L";
         readonly MillionPerMilliliter: "10*6/mL";
         readonly TheNumberTenForArbitraryPowersPower6MillimeterPower3: "10*6/mm3";
+        /**
+         * An individual or organization primarily responsible for internal coherence of the content.
+         */
         readonly MillionPerMicroliter: "10*6/uL";
         readonly TenToEighth: "10*8";
         readonly BillionPerLiter: "10*9/L";
         readonly BillionPerMilliliter: "10*9/mL";
-        readonly BillionPerMicroliter: "10*9/uL";
+        readonly BillionPerMicroliter: "10*9/uL"; /**
+         * An individual or organization responsible for officially endorsing the content for use in some setting.
+         */
         readonly VAL24Hour: "24.h";
         readonly Year: "a";
         readonly Ampere: "A";
@@ -609,7 +645,9 @@ export declare class ResearchElementDefinitionCharacteristic extends fhir.Backbo
         readonly TechnicalAtmosphere: "att";
         readonly Bar: "bar";
         readonly Becquerel: "Bq";
-        readonly Calorie: "cal";
+        readonly Calorie: "cal"; /**
+         * Extended properties for primitive element: ResearchElementDefinition.library
+         */
         readonly DegreeCelsius: "Cel";
         readonly Centigram: "cg";
         readonly Centiliter: "cL";
@@ -632,9 +670,7 @@ export declare class ResearchElementDefinitionCharacteristic extends fhir.Backbo
         readonly DegreePerSecond: "deg/s";
         readonly Decigram: "dg";
         readonly Deciliter: "dL";
-        readonly Decimeter: "dm"; /**
-         * It may be possible for the research element definition to be used in jurisdictions other than those for which it was originally designed or intended.
-         */
+        readonly Decimeter: "dm";
         readonly SquareDecimeterPerSquareSecond: "dm2/s2";
         readonly DyneSecondPerCentimeterPerSquareMeter: "dyn.s/(cm.m2)";
         readonly DyneSecondPerCentimeter: "dyn.s/cm";
@@ -666,9 +702,6 @@ export declare class ResearchElementDefinitionCharacteristic extends fhir.Backbo
         readonly GramOfHemoglobin: "g{Hb}";
         readonly GramOfTotalNitrogen: "g{total_nit}";
         readonly GramOfTotalProtein: "g{total_prot}";
-        /**
-         * An individual or organization primarily responsible for internal coherence of the content.
-         */
         readonly GramOfWetTissue: "g{wet_tissue}";
         readonly GramPer100Gram: "g/(100.g)";
         readonly GramPer12Hour: "g/(12.h)";
@@ -749,7 +782,9 @@ export declare class ResearchElementDefinitionCharacteristic extends fhir.Backbo
         readonly Kilometer: "km";
         readonly KiloPascal: "kPa";
         readonly Kilosecond: "ks";
-        readonly KiloEnzymeUnit: "kU";
+        readonly KiloEnzymeUnit: "kU"; /**
+         * An individual or organization primarily responsible for internal coherence of the content.
+         */
         readonly KiloenzymeUnitPerGram: "kU/g";
         readonly KiloUnitHour: "kU/h";
         readonly KiloenzymeUnitPerLiter: "kU/L";
@@ -897,7 +932,9 @@ export declare class ResearchElementDefinitionCharacteristic extends fhir.Backbo
         readonly MillimolePerHourPerMilligramOfHemoglobin: "mmol/h/mg{Hb}";
         readonly MillimolePerHourPerMilligramOfProtein: "mmol/h/mg{protein}";
         readonly MillimolePerKilogram: "mmol/kg";
-        readonly MillimolePerKilogramOfWater: "mmol/kg{H2O}";
+        readonly MillimolePerKilogramOfWater: "mmol/kg{H2O}"; /**
+         * Required-bound Value Set for type (ResearchElementDefinition.type)
+         */
         readonly MillimolePerKilogramPerDay: "mmol/kg/d";
         readonly MillimolePerKilogramPerHour: "mmol/kg/h";
         readonly MillimolePerKilogramPerMinute: "mmol/kg/min";
@@ -1244,6 +1281,10 @@ export interface ResearchElementDefinitionArgs extends fhir.DomainResourceArgs {
      */
     url?: fhir.FhirUri | string | undefined;
     /**
+     * Extended properties for primitive element: ResearchElementDefinition.url
+     */
+    _url?: fhir.FhirElementArgs;
+    /**
      * Typically, this is used for identifiers that can go in an HL7 V3 II (instance identifier) data type, and can then identify this research element definition outside of FHIR, where it is not possible to use the logical URI.
      */
     identifier?: fhir.IdentifierArgs[] | undefined;
@@ -1252,29 +1293,57 @@ export interface ResearchElementDefinitionArgs extends fhir.DomainResourceArgs {
      */
     version?: fhir.FhirString | string | undefined;
     /**
+     * Extended properties for primitive element: ResearchElementDefinition.version
+     */
+    _version?: fhir.FhirElementArgs;
+    /**
      * The name is not expected to be globally unique. The name should be a simple alphanumeric type name to ensure that it is machine-processing friendly.
      */
     name?: fhir.FhirString | string | undefined;
+    /**
+     * Extended properties for primitive element: ResearchElementDefinition.name
+     */
+    _name?: fhir.FhirElementArgs;
     /**
      * This name does not need to be machine-processing friendly and may contain punctuation, white-space, etc.
      */
     title?: fhir.FhirString | string | undefined;
     /**
+     * Extended properties for primitive element: ResearchElementDefinition.title
+     */
+    _title?: fhir.FhirElementArgs;
+    /**
      * The short title provides an alternate title for use in informal descriptive contexts where the full, formal title is not necessary.
      */
     shortTitle?: fhir.FhirString | string | undefined;
+    /**
+     * Extended properties for primitive element: ResearchElementDefinition.shortTitle
+     */
+    _shortTitle?: fhir.FhirElementArgs;
     /**
      * An explanatory or alternate title for the ResearchElementDefinition giving additional information about its content.
      */
     subtitle?: fhir.FhirString | string | undefined;
     /**
+     * Extended properties for primitive element: ResearchElementDefinition.subtitle
+     */
+    _subtitle?: fhir.FhirElementArgs;
+    /**
      * Allows filtering of research element definitions that are appropriate for use versus not.
      */
     status: fhir.FhirCode<PublicationStatusCodeType> | string | undefined;
     /**
+     * Extended properties for primitive element: ResearchElementDefinition.status
+     */
+    _status?: fhir.FhirElementArgs;
+    /**
      * Allows filtering of research element definitions that are appropriate for use versus not.
      */
     experimental?: fhir.FhirBoolean | boolean | undefined;
+    /**
+     * Extended properties for primitive element: ResearchElementDefinition.experimental
+     */
+    _experimental?: fhir.FhirElementArgs;
     /**
      * The subject of the ResearchElementDefinition is critical in interpreting the criteria definitions, as the logic in the ResearchElementDefinitions is evaluated with respect to a particular subject. This corresponds roughly to the notion of a Compartment in that it limits what content is available based on its relationship to the subject. In CQL, this corresponds to the context declaration.
      */
@@ -1292,9 +1361,17 @@ export interface ResearchElementDefinitionArgs extends fhir.DomainResourceArgs {
      */
     date?: fhir.FhirDateTime | string | undefined;
     /**
+     * Extended properties for primitive element: ResearchElementDefinition.date
+     */
+    _date?: fhir.FhirElementArgs;
+    /**
      * Usually an organization but may be an individual. The publisher (or steward) of the research element definition is the organization or individual primarily responsible for the maintenance and upkeep of the research element definition. This is not necessarily the same individual or organization that developed and initially authored the content. The publisher is the primary point of contact for questions or issues with the research element definition. This item SHOULD be populated unless the information is available from context.
      */
     publisher?: fhir.FhirString | string | undefined;
+    /**
+     * Extended properties for primitive element: ResearchElementDefinition.publisher
+     */
+    _publisher?: fhir.FhirElementArgs;
     /**
      * May be a web site, an email address, a telephone number, etc.
      */
@@ -1304,9 +1381,17 @@ export interface ResearchElementDefinitionArgs extends fhir.DomainResourceArgs {
      */
     description?: fhir.FhirMarkdown | string | undefined;
     /**
+     * Extended properties for primitive element: ResearchElementDefinition.description
+     */
+    _description?: fhir.FhirElementArgs;
+    /**
      * A human-readable string to clarify or explain concepts about the resource.
      */
     comment?: fhir.FhirString[] | string[] | undefined;
+    /**
+     * Extended properties for primitive element: ResearchElementDefinition.comment
+     */
+    _comment?: (fhir.FhirElementArgs | null)[];
     /**
      * When multiple useContexts are specified, there is no expectation that all or any of the contexts apply.
      */
@@ -1320,21 +1405,41 @@ export interface ResearchElementDefinitionArgs extends fhir.DomainResourceArgs {
      */
     purpose?: fhir.FhirMarkdown | string | undefined;
     /**
+     * Extended properties for primitive element: ResearchElementDefinition.purpose
+     */
+    _purpose?: fhir.FhirElementArgs;
+    /**
      * A detailed description, from a clinical perspective, of how the ResearchElementDefinition is used.
      */
     usage?: fhir.FhirString | string | undefined;
+    /**
+     * Extended properties for primitive element: ResearchElementDefinition.usage
+     */
+    _usage?: fhir.FhirElementArgs;
     /**
      * A copyright statement relating to the research element definition and/or its contents. Copyright statements are generally legal restrictions on the use and publishing of the research element definition.
      */
     copyright?: fhir.FhirMarkdown | string | undefined;
     /**
+     * Extended properties for primitive element: ResearchElementDefinition.copyright
+     */
+    _copyright?: fhir.FhirElementArgs;
+    /**
      * The 'date' element may be more recent than the approval date because of minor changes or editorial corrections.
      */
     approvalDate?: fhir.FhirDate | string | undefined;
     /**
+     * Extended properties for primitive element: ResearchElementDefinition.approvalDate
+     */
+    _approvalDate?: fhir.FhirElementArgs;
+    /**
      * If specified, this date follows the original approval date.
      */
     lastReviewDate?: fhir.FhirDate | string | undefined;
+    /**
+     * Extended properties for primitive element: ResearchElementDefinition.lastReviewDate
+     */
+    _lastReviewDate?: fhir.FhirElementArgs;
     /**
      * The effective period for a research element definition  determines when the content is applicable for usage and is independent of publication and review dates. For example, a measure intended to be used for the year 2016 might be published in 2015.
      */
@@ -1368,13 +1473,25 @@ export interface ResearchElementDefinitionArgs extends fhir.DomainResourceArgs {
      */
     library?: fhir.FhirCanonical[] | string[] | undefined;
     /**
+     * Extended properties for primitive element: ResearchElementDefinition.library
+     */
+    _library?: (fhir.FhirElementArgs | null)[];
+    /**
      * The type of research element, a population, an exposure, or an outcome.
      */
     type: fhir.FhirCode<ResearchElementTypeCodeType> | string | undefined;
     /**
+     * Extended properties for primitive element: ResearchElementDefinition.type
+     */
+    _type?: fhir.FhirElementArgs;
+    /**
      * The type of the outcome (e.g. Dichotomous, Continuous, or Descriptive).
      */
     variableType?: fhir.FhirCode<VariableTypeCodeType> | string | undefined;
+    /**
+     * Extended properties for primitive element: ResearchElementDefinition.variableType
+     */
+    _variableType?: fhir.FhirElementArgs;
     /**
      * Characteristics can be defined flexibly to accommodate different use cases for membership criteria, ranging from simple codes, all the way to using an expression language to express the criteria.
      */

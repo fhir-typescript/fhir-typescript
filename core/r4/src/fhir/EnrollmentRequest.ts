@@ -26,9 +26,17 @@ export interface EnrollmentRequestArgs extends fhir.DomainResourceArgs {
    */
   status?: fhir.FhirCode<FmStatusCodeType>|string|undefined;
   /**
+   * Extended properties for primitive element: EnrollmentRequest.status
+   */
+  _status?:fhir.FhirElementArgs;
+  /**
    * The date when this resource was created.
    */
   created?: fhir.FhirDateTime|string|undefined;
+  /**
+   * Extended properties for primitive element: EnrollmentRequest.created
+   */
+  _created?:fhir.FhirElementArgs;
   /**
    * The Insurer who is target  of the request.
    */
@@ -96,7 +104,15 @@ export class EnrollmentRequest extends fhir.DomainResource {
     if (source['identifier']) { this.identifier = source.identifier.map((x) => new fhir.Identifier(x)); }
     else { this.identifier = []; }
     if (source['status']) { this.status = new fhir.FhirCode<FmStatusCodeType>({value: source.status}); }
+    if (source['_status']) {
+      if (this.status) { this.status.addExtendedProperties(source._status!); }
+      else { this.status = new fhir.FhirCode<FmStatusCodeType>(source._status as Partial<fhir.FhirCode>); }
+    }
     if (source['created']) { this.created = new fhir.FhirDateTime({value: source.created}); }
+    if (source['_created']) {
+      if (this.created) { this.created.addExtendedProperties(source._created!); }
+      else { this.created = new fhir.FhirDateTime(source._created as Partial<fhir.FhirDateTimeArgs>); }
+    }
     if (source['insurer']) { this.insurer = new fhir.Reference(source.insurer); }
     if (source['provider']) { this.provider = new fhir.Reference(source.provider); }
     if (source['candidate']) { this.candidate = new fhir.Reference(source.candidate); }

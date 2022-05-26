@@ -1,6 +1,6 @@
 {
   "name": "@fhir-typescript/r4-core",
-  "version": "0.0.11-beta.9",
+  "version": "0.0.11-beta.14",
   "description": "Developer pre-release testing of a FHIR TypeScript SDK",
   "keywords": ["fhir", "core", "R4" ],
   "disabled-exports": {

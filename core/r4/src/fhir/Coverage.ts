@@ -42,9 +42,17 @@ export interface CoverageClassArgs extends fhir.BackboneElementArgs {
    */
   value: fhir.FhirString|string|undefined;
   /**
+   * Extended properties for primitive element: Coverage.class.value
+   */
+  _value?:fhir.FhirElementArgs;
+  /**
    * A short description for the class.
    */
   name?: fhir.FhirString|string|undefined;
+  /**
+   * Extended properties for primitive element: Coverage.class.name
+   */
+  _name?:fhir.FhirElementArgs;
 }
 
 /**
@@ -76,7 +84,15 @@ export class CoverageClass extends fhir.BackboneElement {
     else { this.type = null; }
     if (source['value']) { this.value = new fhir.FhirString({value: source.value}); }
     else { this.value = null; }
+    if (source['_value']) {
+      if (this.value) { this.value.addExtendedProperties(source._value!); }
+      else { this.value = new fhir.FhirString(source._value as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['name']) { this.name = new fhir.FhirString({value: source.name}); }
+    if (source['_name']) {
+      if (this.name) { this.name.addExtendedProperties(source._name!); }
+      else { this.name = new fhir.FhirString(source._name as Partial<fhir.FhirStringArgs>); }
+    }
   }
   /**
    * Extensible-bound Value Set for type (Coverage.class.type)
@@ -252,6 +268,10 @@ export interface CoverageArgs extends fhir.DomainResourceArgs {
    */
   status: fhir.FhirCode<FmStatusCodeType>|string|undefined;
   /**
+   * Extended properties for primitive element: Coverage.status
+   */
+  _status?:fhir.FhirElementArgs;
+  /**
    * The type of coverage: social program, medical plan, accident coverage (workers compensation, auto), group health or payment by an individual or organization.
    */
   type?: fhir.CodeableConceptArgs|undefined;
@@ -268,6 +288,10 @@ export interface CoverageArgs extends fhir.DomainResourceArgs {
    */
   subscriberId?: fhir.FhirString|string|undefined;
   /**
+   * Extended properties for primitive element: Coverage.subscriberId
+   */
+  _subscriberId?:fhir.FhirElementArgs;
+  /**
    * The party who benefits from the insurance coverage; the patient when products and/or services are provided.
    */
   beneficiary: fhir.ReferenceArgs|null;
@@ -275,6 +299,10 @@ export interface CoverageArgs extends fhir.DomainResourceArgs {
    * Periodically the member number is constructed from the subscriberId and the dependant number.
    */
   dependent?: fhir.FhirString|string|undefined;
+  /**
+   * Extended properties for primitive element: Coverage.dependent
+   */
+  _dependent?:fhir.FhirElementArgs;
   /**
    * Typically, an individual uses policies which are theirs (relationship='self') before policies owned by others.
    */
@@ -297,9 +325,17 @@ export interface CoverageArgs extends fhir.DomainResourceArgs {
    */
   order?: fhir.FhirPositiveInt|number|undefined;
   /**
+   * Extended properties for primitive element: Coverage.order
+   */
+  _order?:fhir.FhirElementArgs;
+  /**
    * The insurer-specific identifier for the insurer-defined network of providers to which the beneficiary may seek treatment which will be covered at the 'in-network' rate, otherwise 'out of network' terms and conditions apply.
    */
   network?: fhir.FhirString|string|undefined;
+  /**
+   * Extended properties for primitive element: Coverage.network
+   */
+  _network?:fhir.FhirElementArgs;
   /**
    * For example by knowing the patient visit co-pay, the provider can collect the amount prior to undertaking treatment.
    */
@@ -308,6 +344,10 @@ export interface CoverageArgs extends fhir.DomainResourceArgs {
    * Typically, automotive and worker's compensation policies would be flagged with 'subrogation=true' to enable healthcare payors to collect against accident claims.
    */
   subrogation?: fhir.FhirBoolean|boolean|undefined;
+  /**
+   * Extended properties for primitive element: Coverage.subrogation
+   */
+  _subrogation?:fhir.FhirElementArgs;
   /**
    * The policy(s) which constitute this insurance coverage.
    */
@@ -405,13 +445,25 @@ export class Coverage extends fhir.DomainResource {
     else { this.identifier = []; }
     if (source['status']) { this.status = new fhir.FhirCode<FmStatusCodeType>({value: source.status}); }
     else { this.status = null; }
+    if (source['_status']) {
+      if (this.status) { this.status.addExtendedProperties(source._status!); }
+      else { this.status = new fhir.FhirCode<FmStatusCodeType>(source._status as Partial<fhir.FhirCode>); }
+    }
     if (source['type']) { this.type = new fhir.CodeableConcept(source.type); }
     if (source['policyHolder']) { this.policyHolder = new fhir.Reference(source.policyHolder); }
     if (source['subscriber']) { this.subscriber = new fhir.Reference(source.subscriber); }
     if (source['subscriberId']) { this.subscriberId = new fhir.FhirString({value: source.subscriberId}); }
+    if (source['_subscriberId']) {
+      if (this.subscriberId) { this.subscriberId.addExtendedProperties(source._subscriberId!); }
+      else { this.subscriberId = new fhir.FhirString(source._subscriberId as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['beneficiary']) { this.beneficiary = new fhir.Reference(source.beneficiary); }
     else { this.beneficiary = null; }
     if (source['dependent']) { this.dependent = new fhir.FhirString({value: source.dependent}); }
+    if (source['_dependent']) {
+      if (this.dependent) { this.dependent.addExtendedProperties(source._dependent!); }
+      else { this.dependent = new fhir.FhirString(source._dependent as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['relationship']) { this.relationship = new fhir.CodeableConcept(source.relationship); }
     if (source['period']) { this.period = new fhir.Period(source.period); }
     if (source['payor']) { this.payor = source.payor.map((x) => new fhir.Reference(x)); }
@@ -419,10 +471,22 @@ export class Coverage extends fhir.DomainResource {
     if (source['class']) { this.class = source.class.map((x) => new fhir.CoverageClass(x)); }
     else { this.class = []; }
     if (source['order']) { this.order = new fhir.FhirPositiveInt({value: source.order}); }
+    if (source['_order']) {
+      if (this.order) { this.order.addExtendedProperties(source._order!); }
+      else { this.order = new fhir.FhirPositiveInt(source._order as Partial<fhir.FhirPositiveIntArgs>); }
+    }
     if (source['network']) { this.network = new fhir.FhirString({value: source.network}); }
+    if (source['_network']) {
+      if (this.network) { this.network.addExtendedProperties(source._network!); }
+      else { this.network = new fhir.FhirString(source._network as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['costToBeneficiary']) { this.costToBeneficiary = source.costToBeneficiary.map((x) => new fhir.CoverageCostToBeneficiary(x)); }
     else { this.costToBeneficiary = []; }
     if (source['subrogation']) { this.subrogation = new fhir.FhirBoolean({value: source.subrogation}); }
+    if (source['_subrogation']) {
+      if (this.subrogation) { this.subrogation.addExtendedProperties(source._subrogation!); }
+      else { this.subrogation = new fhir.FhirBoolean(source._subrogation as Partial<fhir.FhirBooleanArgs>); }
+    }
     if (source['contract']) { this.contract = source.contract.map((x) => new fhir.Reference(x)); }
     else { this.contract = []; }
   }

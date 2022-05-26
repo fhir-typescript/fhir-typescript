@@ -6,9 +6,9 @@
 import * as fhir from '../fhir.js';
 
 // @ts-ignore
-import { BodystructureCodeCodings, BodystructureCodeCodingType,} from '../fhirValueSets/BodystructureCodeCodings.js';
+import { BodystructureCodings, BodystructureCodingType,} from '../fhirValueSets/BodystructureCodings.js';
 // @ts-ignore
-import { BodystructureCodeCodes,  BodystructureCodeCodeType } from '../fhirValueSets/BodystructureCodeCodes.js';
+import { BodystructureCodes,  BodystructureCodeType } from '../fhirValueSets/BodystructureCodes.js';
 // @ts-ignore
 import { BodySiteCodings, BodySiteCodingType,} from '../fhirValueSets/BodySiteCodings.js';
 // @ts-ignore
@@ -34,6 +34,10 @@ export interface BodyStructureArgs extends fhir.DomainResourceArgs {
    */
   active?: fhir.FhirBoolean|boolean|undefined;
   /**
+   * Extended properties for primitive element: BodyStructure.active
+   */
+  _active?:fhir.FhirElementArgs;
+  /**
    * The minimum cardinality of 0 supports the use case of specifying a location without defining a morphology.
    */
   morphology?: fhir.CodeableConceptArgs|undefined;
@@ -49,6 +53,10 @@ export interface BodyStructureArgs extends fhir.DomainResourceArgs {
    * This description could include any visual markings used to orientate the viewer e.g. external reference points, special sutures, ink markings.
    */
   description?: fhir.FhirString|string|undefined;
+  /**
+   * Extended properties for primitive element: BodyStructure.description
+   */
+  _description?:fhir.FhirElementArgs;
   /**
    * Image or images used to identify a location.
    */
@@ -112,11 +120,19 @@ export class BodyStructure extends fhir.DomainResource {
     if (source['identifier']) { this.identifier = source.identifier.map((x) => new fhir.Identifier(x)); }
     else { this.identifier = []; }
     if (source['active']) { this.active = new fhir.FhirBoolean({value: source.active}); }
+    if (source['_active']) {
+      if (this.active) { this.active.addExtendedProperties(source._active!); }
+      else { this.active = new fhir.FhirBoolean(source._active as Partial<fhir.FhirBooleanArgs>); }
+    }
     if (source['morphology']) { this.morphology = new fhir.CodeableConcept(source.morphology); }
     if (source['location']) { this.location = new fhir.CodeableConcept(source.location); }
     if (source['locationQualifier']) { this.locationQualifier = source.locationQualifier.map((x) => new fhir.CodeableConcept(x)); }
     else { this.locationQualifier = []; }
     if (source['description']) { this.description = new fhir.FhirString({value: source.description}); }
+    if (source['_description']) {
+      if (this.description) { this.description.addExtendedProperties(source._description!); }
+      else { this.description = new fhir.FhirString(source._description as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['image']) { this.image = source.image.map((x) => new fhir.Attachment(x)); }
     else { this.image = []; }
     if (source['patient']) { this.patient = new fhir.Reference(source.patient); }

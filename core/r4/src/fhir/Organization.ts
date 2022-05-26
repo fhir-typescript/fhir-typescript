@@ -106,6 +106,10 @@ export interface OrganizationArgs extends fhir.DomainResourceArgs {
    */
   active?: fhir.FhirBoolean|boolean|undefined;
   /**
+   * Extended properties for primitive element: Organization.active
+   */
+  _active?:fhir.FhirElementArgs;
+  /**
    * Organizations can be corporations, wards, sections, clinical teams, government departments, etc. Note that code is generally a classifier of the type of organization; in many applications, codes are used to identity a particular organization (say, ward) as opposed to another of the same type - these are identifiers, not codes
    * When considering if multiple types are appropriate, you should evaluate if child organizations would be a more appropriate use of the concept, as different types likely are in different sub-areas of the organization. This is most likely to be used where type values have orthogonal values, such as a religious, academic and medical center.
    * We expect that some jurisdictions will profile this optionality to be a single cardinality.
@@ -116,9 +120,17 @@ export interface OrganizationArgs extends fhir.DomainResourceArgs {
    */
   name?: fhir.FhirString|string|undefined;
   /**
+   * Extended properties for primitive element: Organization.name
+   */
+  _name?:fhir.FhirElementArgs;
+  /**
    * There are no dates associated with the alias/historic names, as this is not intended to track when names were used, but to assist in searching so that older names can still result in identifying the organization.
    */
   alias?: fhir.FhirString[]|string[]|undefined;
+  /**
+   * Extended properties for primitive element: Organization.alias
+   */
+  _alias?:(fhir.FhirElementArgs|null)[];
   /**
    * The use code 'home' is not to be used. Note that these contacts are not the contact details of people who are employed by or represent the organization, but official contacts for the organization itself.
    */
@@ -205,11 +217,25 @@ export class Organization extends fhir.DomainResource {
     if (source['identifier']) { this.identifier = source.identifier.map((x) => new fhir.Identifier(x)); }
     else { this.identifier = []; }
     if (source['active']) { this.active = new fhir.FhirBoolean({value: source.active}); }
+    if (source['_active']) {
+      if (this.active) { this.active.addExtendedProperties(source._active!); }
+      else { this.active = new fhir.FhirBoolean(source._active as Partial<fhir.FhirBooleanArgs>); }
+    }
     if (source['type']) { this.type = source.type.map((x) => new fhir.CodeableConcept(x)); }
     else { this.type = []; }
     if (source['name']) { this.name = new fhir.FhirString({value: source.name}); }
+    if (source['_name']) {
+      if (this.name) { this.name.addExtendedProperties(source._name!); }
+      else { this.name = new fhir.FhirString(source._name as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['alias']) { this.alias = source.alias.map((x) => new fhir.FhirString({value: x})); }
     else { this.alias = []; }
+    if (source['_alias']) {
+      source._alias.forEach((x,i) => {
+        if (this.alias.length >= i) { if (x) { this.alias[i].addExtendedProperties(x); } }
+        else { if (x) { this.alias.push(new fhir.FhirString(x as Partial<fhir.FhirStringArgs>)); } }
+      });
+    }
     if (source['telecom']) { this.telecom = source.telecom.map((x) => new fhir.ContactPoint(x)); }
     else { this.telecom = []; }
     if (source['address']) { this.address = source.address.map((x) => new fhir.Address(x)); }

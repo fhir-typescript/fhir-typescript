@@ -18,9 +18,9 @@ import { RequestPriorityCodings, RequestPriorityCodingType,} from '../fhirValueS
 // @ts-ignore
 import { RequestPriorityCodes,  RequestPriorityCodeType } from '../fhirValueSets/RequestPriorityCodes.js';
 // @ts-ignore
-import { TaskCodeCodings, TaskCodeCodingType,} from '../fhirValueSets/TaskCodeCodings.js';
+import { TaskCodings, TaskCodingType,} from '../fhirValueSets/TaskCodings.js';
 // @ts-ignore
-import { TaskCodeCodes,  TaskCodeCodeType } from '../fhirValueSets/TaskCodeCodes.js';
+import { TaskCodes,  TaskCodeType } from '../fhirValueSets/TaskCodes.js';
 // @ts-ignore
 import { PerformerRoleCodings, PerformerRoleCodingType,} from '../fhirValueSets/PerformerRoleCodings.js';
 // @ts-ignore
@@ -33,6 +33,10 @@ export interface TaskRestrictionArgs extends fhir.BackboneElementArgs {
    * Indicates the number of times the requested action should occur.
    */
   repetitions?: fhir.FhirPositiveInt|number|undefined;
+  /**
+   * Extended properties for primitive element: Task.restriction.repetitions
+   */
+  _repetitions?:fhir.FhirElementArgs;
   /**
    * Note that period.high is the due date representing the time by which the task should be completed.
    */
@@ -69,6 +73,10 @@ export class TaskRestriction extends fhir.BackboneElement {
   constructor(source:Partial<TaskRestrictionArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
     if (source['repetitions']) { this.repetitions = new fhir.FhirPositiveInt({value: source.repetitions}); }
+    if (source['_repetitions']) {
+      if (this.repetitions) { this.repetitions.addExtendedProperties(source._repetitions!); }
+      else { this.repetitions = new fhir.FhirPositiveInt(source._repetitions as Partial<fhir.FhirPositiveIntArgs>); }
+    }
     if (source['period']) { this.period = new fhir.Period(source.period); }
     if (source['recipient']) { this.recipient = source.recipient.map((x) => new fhir.Reference(x)); }
     else { this.recipient = []; }
@@ -719,9 +727,17 @@ export interface TaskArgs extends fhir.DomainResourceArgs {
    */
   instantiatesCanonical?: fhir.FhirCanonical|string|undefined;
   /**
+   * Extended properties for primitive element: Task.instantiatesCanonical
+   */
+  _instantiatesCanonical?:fhir.FhirElementArgs;
+  /**
    * The URL pointing to an *externally* maintained  protocol, guideline, orderset or other definition that is adhered to in whole or in part by this Task.
    */
   instantiatesUri?: fhir.FhirUri|string|undefined;
+  /**
+   * Extended properties for primitive element: Task.instantiatesUri
+   */
+  _instantiatesUri?:fhir.FhirElementArgs;
   /**
    * BasedOn refers to a higher-level authorization that triggered the creation of the task.  It references a "request" resource such as a ServiceRequest, MedicationRequest, ServiceRequest, CarePlan, etc. which is distinct from the "request" resource the task is seeking to fulfill.  This latter resource is referenced by FocusOn.  For example, based on a ServiceRequest (= BasedOn), a task is created to fulfill a procedureRequest ( = FocusOn ) to collect a specimen from a patient.
    */
@@ -739,6 +755,10 @@ export interface TaskArgs extends fhir.DomainResourceArgs {
    */
   status: fhir.FhirCode<TaskStatusCodeType>|string|undefined;
   /**
+   * Extended properties for primitive element: Task.status
+   */
+  _status?:fhir.FhirElementArgs;
+  /**
    * This applies to the current status.  Look at the history of the task to see reasons for past statuses.
    */
   statusReason?: fhir.CodeableConceptArgs|undefined;
@@ -752,9 +772,17 @@ export interface TaskArgs extends fhir.DomainResourceArgs {
    */
   intent: fhir.FhirCode<TaskIntentCodeType>|string|undefined;
   /**
+   * Extended properties for primitive element: Task.intent
+   */
+  _intent?:fhir.FhirElementArgs;
+  /**
    * Indicates how quickly the Task should be addressed with respect to other requests.
    */
   priority?: fhir.FhirCode<RequestPriorityCodeType>|string|undefined;
+  /**
+   * Extended properties for primitive element: Task.priority
+   */
+  _priority?:fhir.FhirElementArgs;
   /**
    * The title (eg "My Tasks", "Outstanding Tasks for Patient X") should go into the code.
    */
@@ -763,6 +791,10 @@ export interface TaskArgs extends fhir.DomainResourceArgs {
    * A free-text description of what is to be performed.
    */
   description?: fhir.FhirString|string|undefined;
+  /**
+   * Extended properties for primitive element: Task.description
+   */
+  _description?:fhir.FhirElementArgs;
   /**
    * If multiple resources need to be manipulated, use sub-tasks.  (This ensures that status can be tracked independently for each referenced resource.).
    */
@@ -784,9 +816,17 @@ export interface TaskArgs extends fhir.DomainResourceArgs {
    */
   authoredOn?: fhir.FhirDateTime|string|undefined;
   /**
+   * Extended properties for primitive element: Task.authoredOn
+   */
+  _authoredOn?:fhir.FhirElementArgs;
+  /**
    * The date and time of last modification to this task.
    */
   lastModified?: fhir.FhirDateTime|string|undefined;
+  /**
+   * Extended properties for primitive element: Task.lastModified
+   */
+  _lastModified?:fhir.FhirElementArgs;
   /**
    * The creator of the task.
    */
@@ -983,7 +1023,15 @@ export class Task extends fhir.DomainResource {
     if (source['identifier']) { this.identifier = source.identifier.map((x) => new fhir.Identifier(x)); }
     else { this.identifier = []; }
     if (source['instantiatesCanonical']) { this.instantiatesCanonical = new fhir.FhirCanonical({value: source.instantiatesCanonical}); }
+    if (source['_instantiatesCanonical']) {
+      if (this.instantiatesCanonical) { this.instantiatesCanonical.addExtendedProperties(source._instantiatesCanonical!); }
+      else { this.instantiatesCanonical = new fhir.FhirCanonical(source._instantiatesCanonical as Partial<fhir.FhirCanonicalArgs>); }
+    }
     if (source['instantiatesUri']) { this.instantiatesUri = new fhir.FhirUri({value: source.instantiatesUri}); }
+    if (source['_instantiatesUri']) {
+      if (this.instantiatesUri) { this.instantiatesUri.addExtendedProperties(source._instantiatesUri!); }
+      else { this.instantiatesUri = new fhir.FhirUri(source._instantiatesUri as Partial<fhir.FhirUriArgs>); }
+    }
     if (source['basedOn']) { this.basedOn = source.basedOn.map((x) => new fhir.Reference(x)); }
     else { this.basedOn = []; }
     if (source['groupIdentifier']) { this.groupIdentifier = new fhir.Identifier(source.groupIdentifier); }
@@ -991,19 +1039,43 @@ export class Task extends fhir.DomainResource {
     else { this.partOf = []; }
     if (source['status']) { this.status = new fhir.FhirCode<TaskStatusCodeType>({value: source.status}); }
     else { this.status = null; }
+    if (source['_status']) {
+      if (this.status) { this.status.addExtendedProperties(source._status!); }
+      else { this.status = new fhir.FhirCode<TaskStatusCodeType>(source._status as Partial<fhir.FhirCode>); }
+    }
     if (source['statusReason']) { this.statusReason = new fhir.CodeableConcept(source.statusReason); }
     if (source['businessStatus']) { this.businessStatus = new fhir.CodeableConcept(source.businessStatus); }
     if (source['intent']) { this.intent = new fhir.FhirCode<TaskIntentCodeType>({value: source.intent}); }
     else { this.intent = null; }
+    if (source['_intent']) {
+      if (this.intent) { this.intent.addExtendedProperties(source._intent!); }
+      else { this.intent = new fhir.FhirCode<TaskIntentCodeType>(source._intent as Partial<fhir.FhirCode>); }
+    }
     if (source['priority']) { this.priority = new fhir.FhirCode<RequestPriorityCodeType>({value: source.priority}); }
+    if (source['_priority']) {
+      if (this.priority) { this.priority.addExtendedProperties(source._priority!); }
+      else { this.priority = new fhir.FhirCode<RequestPriorityCodeType>(source._priority as Partial<fhir.FhirCode>); }
+    }
     if (source['code']) { this.code = new fhir.CodeableConcept(source.code); }
     if (source['description']) { this.description = new fhir.FhirString({value: source.description}); }
+    if (source['_description']) {
+      if (this.description) { this.description.addExtendedProperties(source._description!); }
+      else { this.description = new fhir.FhirString(source._description as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['focus']) { this.focus = new fhir.Reference(source.focus); }
     if (source['for']) { this.for = new fhir.Reference(source.for); }
     if (source['encounter']) { this.encounter = new fhir.Reference(source.encounter); }
     if (source['executionPeriod']) { this.executionPeriod = new fhir.Period(source.executionPeriod); }
     if (source['authoredOn']) { this.authoredOn = new fhir.FhirDateTime({value: source.authoredOn}); }
+    if (source['_authoredOn']) {
+      if (this.authoredOn) { this.authoredOn.addExtendedProperties(source._authoredOn!); }
+      else { this.authoredOn = new fhir.FhirDateTime(source._authoredOn as Partial<fhir.FhirDateTimeArgs>); }
+    }
     if (source['lastModified']) { this.lastModified = new fhir.FhirDateTime({value: source.lastModified}); }
+    if (source['_lastModified']) {
+      if (this.lastModified) { this.lastModified.addExtendedProperties(source._lastModified!); }
+      else { this.lastModified = new fhir.FhirDateTime(source._lastModified as Partial<fhir.FhirDateTimeArgs>); }
+    }
     if (source['requester']) { this.requester = new fhir.Reference(source.requester); }
     if (source['performerType']) { this.performerType = source.performerType.map((x) => new fhir.CodeableConcept(x)); }
     else { this.performerType = []; }

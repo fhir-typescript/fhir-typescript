@@ -22,9 +22,9 @@ import { ParticipantRoleCodings, ParticipantRoleCodingType,} from '../fhirValueS
 // @ts-ignore
 import { ParticipantRoleCodes,  ParticipantRoleCodeType } from '../fhirValueSets/ParticipantRoleCodes.js';
 // @ts-ignore
-import { ConditionCodeCodings, ConditionCodeCodingType,} from '../fhirValueSets/ConditionCodeCodings.js';
+import { ConditionCodings, ConditionCodingType,} from '../fhirValueSets/ConditionCodings.js';
 // @ts-ignore
-import { ConditionCodeCodes,  ConditionCodeCodeType } from '../fhirValueSets/ConditionCodeCodes.js';
+import { ConditionCodes,  ConditionCodeType } from '../fhirValueSets/ConditionCodes.js';
 /**
  * Valid arguments for the DeviceRequestParameter type.
  */
@@ -113,9 +113,17 @@ export interface DeviceRequestArgs extends fhir.DomainResourceArgs {
    */
   instantiatesCanonical?: fhir.FhirCanonical[]|string[]|undefined;
   /**
+   * Extended properties for primitive element: DeviceRequest.instantiatesCanonical
+   */
+  _instantiatesCanonical?:(fhir.FhirElementArgs|null)[];
+  /**
    * This might be an HTML page, PDF, etc. or could just be a non-resolvable URI identifier.
    */
   instantiatesUri?: fhir.FhirUri[]|string[]|undefined;
+  /**
+   * Extended properties for primitive element: DeviceRequest.instantiatesUri
+   */
+  _instantiatesUri?:(fhir.FhirElementArgs|null)[];
   /**
    * Plan/proposal/order fulfilled by this request.
    */
@@ -133,13 +141,25 @@ export interface DeviceRequestArgs extends fhir.DomainResourceArgs {
    */
   status?: fhir.FhirCode<RequestStatusCodeType>|string|undefined;
   /**
+   * Extended properties for primitive element: DeviceRequest.status
+   */
+  _status?:fhir.FhirElementArgs;
+  /**
    * Whether the request is a proposal, plan, an original order or a reflex order.
    */
   intent: fhir.FhirCode<RequestIntentCodeType>|string|undefined;
   /**
+   * Extended properties for primitive element: DeviceRequest.intent
+   */
+  _intent?:fhir.FhirElementArgs;
+  /**
    * Indicates how quickly the {{title}} should be addressed with respect to other requests.
    */
   priority?: fhir.FhirCode<RequestPriorityCodeType>|string|undefined;
+  /**
+   * Extended properties for primitive element: DeviceRequest.priority
+   */
+  _priority?:fhir.FhirElementArgs;
   /**
    * The details of the device to be used.
    */
@@ -184,6 +204,10 @@ export interface DeviceRequestArgs extends fhir.DomainResourceArgs {
    * When the request transitioned to being actionable.
    */
   authoredOn?: fhir.FhirDateTime|string|undefined;
+  /**
+   * Extended properties for primitive element: DeviceRequest.authoredOn
+   */
+  _authoredOn?:fhir.FhirElementArgs;
   /**
    * The individual who initiated the request and has responsibility for its activation.
    */
@@ -352,17 +376,41 @@ export class DeviceRequest extends fhir.DomainResource {
     else { this.identifier = []; }
     if (source['instantiatesCanonical']) { this.instantiatesCanonical = source.instantiatesCanonical.map((x) => new fhir.FhirCanonical({value: x})); }
     else { this.instantiatesCanonical = []; }
+    if (source['_instantiatesCanonical']) {
+      source._instantiatesCanonical.forEach((x,i) => {
+        if (this.instantiatesCanonical.length >= i) { if (x) { this.instantiatesCanonical[i].addExtendedProperties(x); } }
+        else { if (x) { this.instantiatesCanonical.push(new fhir.FhirCanonical(x as Partial<fhir.FhirCanonicalArgs>)); } }
+      });
+    }
     if (source['instantiatesUri']) { this.instantiatesUri = source.instantiatesUri.map((x) => new fhir.FhirUri({value: x})); }
     else { this.instantiatesUri = []; }
+    if (source['_instantiatesUri']) {
+      source._instantiatesUri.forEach((x,i) => {
+        if (this.instantiatesUri.length >= i) { if (x) { this.instantiatesUri[i].addExtendedProperties(x); } }
+        else { if (x) { this.instantiatesUri.push(new fhir.FhirUri(x as Partial<fhir.FhirUriArgs>)); } }
+      });
+    }
     if (source['basedOn']) { this.basedOn = source.basedOn.map((x) => new fhir.Reference(x)); }
     else { this.basedOn = []; }
     if (source['priorRequest']) { this.priorRequest = source.priorRequest.map((x) => new fhir.Reference(x)); }
     else { this.priorRequest = []; }
     if (source['groupIdentifier']) { this.groupIdentifier = new fhir.Identifier(source.groupIdentifier); }
     if (source['status']) { this.status = new fhir.FhirCode<RequestStatusCodeType>({value: source.status}); }
+    if (source['_status']) {
+      if (this.status) { this.status.addExtendedProperties(source._status!); }
+      else { this.status = new fhir.FhirCode<RequestStatusCodeType>(source._status as Partial<fhir.FhirCode>); }
+    }
     if (source['intent']) { this.intent = new fhir.FhirCode<RequestIntentCodeType>({value: source.intent}); }
     else { this.intent = null; }
+    if (source['_intent']) {
+      if (this.intent) { this.intent.addExtendedProperties(source._intent!); }
+      else { this.intent = new fhir.FhirCode<RequestIntentCodeType>(source._intent as Partial<fhir.FhirCode>); }
+    }
     if (source['priority']) { this.priority = new fhir.FhirCode<RequestPriorityCodeType>({value: source.priority}); }
+    if (source['_priority']) {
+      if (this.priority) { this.priority.addExtendedProperties(source._priority!); }
+      else { this.priority = new fhir.FhirCode<RequestPriorityCodeType>(source._priority as Partial<fhir.FhirCode>); }
+    }
     if (source['code']) { this.code = source.code; }
     else if (source['codeReference']) { this.code = new fhir.Reference(source.codeReference); }
     else if (source['codeCodeableConcept']) { this.code = new fhir.CodeableConcept(source.codeCodeableConcept); }
@@ -377,6 +425,10 @@ export class DeviceRequest extends fhir.DomainResource {
     else if (source['occurrencePeriod']) { this.occurrence = new fhir.Period(source.occurrencePeriod); }
     else if (source['occurrenceTiming']) { this.occurrence = new fhir.Timing(source.occurrenceTiming); }
     if (source['authoredOn']) { this.authoredOn = new fhir.FhirDateTime({value: source.authoredOn}); }
+    if (source['_authoredOn']) {
+      if (this.authoredOn) { this.authoredOn.addExtendedProperties(source._authoredOn!); }
+      else { this.authoredOn = new fhir.FhirDateTime(source._authoredOn as Partial<fhir.FhirDateTimeArgs>); }
+    }
     if (source['requester']) { this.requester = new fhir.Reference(source.requester); }
     if (source['performerType']) { this.performerType = new fhir.CodeableConcept(source.performerType); }
     if (source['performer']) { this.performer = new fhir.Reference(source.performer); }

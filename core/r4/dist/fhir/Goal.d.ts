@@ -109,6 +109,10 @@ export interface GoalArgs extends fhir.DomainResourceArgs {
      */
     lifecycleStatus: fhir.FhirCode<GoalStatusCodeType> | string | undefined;
     /**
+     * Extended properties for primitive element: Goal.lifecycleStatus
+     */
+    _lifecycleStatus?: fhir.FhirElementArgs;
+    /**
      * Describes the progression, or lack thereof, towards the goal against the target.
      */
     achievementStatus?: fhir.CodeableConceptArgs | undefined;
@@ -150,9 +154,17 @@ export interface GoalArgs extends fhir.DomainResourceArgs {
      */
     statusDate?: fhir.FhirDate | string | undefined;
     /**
+     * Extended properties for primitive element: Goal.statusDate
+     */
+    _statusDate?: fhir.FhirElementArgs;
+    /**
      * This will typically be captured for statuses such as rejected, on-hold or cancelled, but could be present for others.
      */
     statusReason?: fhir.FhirString | string | undefined;
+    /**
+     * Extended properties for primitive element: Goal.statusReason
+     */
+    _statusReason?: fhir.FhirElementArgs;
     /**
      * This is the individual responsible for establishing the goal, not necessarily who recorded it.  (For that, use the Provenance resource.).
      */

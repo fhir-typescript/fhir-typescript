@@ -17,6 +17,10 @@ export interface ImmunizationEvaluationArgs extends fhir.DomainResourceArgs {
      */
     status: fhir.FhirCode<ImmunizationEvaluationStatusCodeType> | string | undefined;
     /**
+     * Extended properties for primitive element: ImmunizationEvaluation.status
+     */
+    _status?: fhir.FhirElementArgs;
+    /**
      * The individual for whom the evaluation is being done.
      */
     patient: fhir.ReferenceArgs | null;
@@ -24,6 +28,10 @@ export interface ImmunizationEvaluationArgs extends fhir.DomainResourceArgs {
      * The date the evaluation of the vaccine administration event was performed.
      */
     date?: fhir.FhirDateTime | string | undefined;
+    /**
+     * Extended properties for primitive element: ImmunizationEvaluation.date
+     */
+    _date?: fhir.FhirElementArgs;
     /**
      * Indicates the authority who published the protocol (e.g. ACIP).
      */
@@ -49,9 +57,17 @@ export interface ImmunizationEvaluationArgs extends fhir.DomainResourceArgs {
      */
     description?: fhir.FhirString | string | undefined;
     /**
+     * Extended properties for primitive element: ImmunizationEvaluation.description
+     */
+    _description?: fhir.FhirElementArgs;
+    /**
      * One possible path to achieve presumed immunity against a disease - within the context of an authority.
      */
     series?: fhir.FhirString | string | undefined;
+    /**
+     * Extended properties for primitive element: ImmunizationEvaluation.series
+     */
+    _series?: fhir.FhirElementArgs;
     /**
      * The use of an integer is preferred if known. A string should only be used in cases where an integer is not available (such as when documenting a recurring booster dose).
      */

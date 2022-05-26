@@ -110,9 +110,17 @@ export interface CommunicationArgs extends fhir.DomainResourceArgs {
    */
   instantiatesCanonical?: fhir.FhirCanonical[]|string[]|undefined;
   /**
+   * Extended properties for primitive element: Communication.instantiatesCanonical
+   */
+  _instantiatesCanonical?:(fhir.FhirElementArgs|null)[];
+  /**
    * This might be an HTML page, PDF, etc. or could just be a non-resolvable URI identifier.
    */
   instantiatesUri?: fhir.FhirUri[]|string[]|undefined;
+  /**
+   * Extended properties for primitive element: Communication.instantiatesUri
+   */
+  _instantiatesUri?:(fhir.FhirElementArgs|null)[];
   /**
    * This must point to some sort of a 'Request' resource, such as CarePlan, CommunicationRequest, ServiceRequest, MedicationRequest, etc.
    */
@@ -130,6 +138,10 @@ export interface CommunicationArgs extends fhir.DomainResourceArgs {
    */
   status: fhir.FhirCode<EventStatusCodeType>|string|undefined;
   /**
+   * Extended properties for primitive element: Communication.status
+   */
+  _status?:fhir.FhirElementArgs;
+  /**
    * This is generally only used for "exception" statuses such as "not-done", "suspended" or "aborted". The reason for performing the event at all is captured in reasonCode, not here.
    */
   statusReason?: fhir.CodeableConceptArgs|undefined;
@@ -141,6 +153,10 @@ export interface CommunicationArgs extends fhir.DomainResourceArgs {
    * Used to prioritize workflow (such as which communication to read first) when the communication is planned or in progress.
    */
   priority?: fhir.FhirCode<RequestPriorityCodeType>|string|undefined;
+  /**
+   * Extended properties for primitive element: Communication.priority
+   */
+  _priority?:fhir.FhirElementArgs;
   /**
    * A channel that was used for this communication (e.g. email, fax).
    */
@@ -166,9 +182,17 @@ export interface CommunicationArgs extends fhir.DomainResourceArgs {
    */
   sent?: fhir.FhirDateTime|string|undefined;
   /**
+   * Extended properties for primitive element: Communication.sent
+   */
+  _sent?:fhir.FhirElementArgs;
+  /**
    * The time when this communication arrived at the destination.
    */
   received?: fhir.FhirDateTime|string|undefined;
+  /**
+   * Extended properties for primitive element: Communication.received
+   */
+  _received?:fhir.FhirElementArgs;
   /**
    * The entity (e.g. person, organization, clinical information system, care team or device) which was the target of the communication. If receipts need to be tracked by an individual, a separate resource instance will need to be created for each recipient.  Multiple recipient communications are intended where either receipts are not tracked (e.g. a mass mail-out) or a receipt is captured in aggregate (all emails confirmed received by a particular time).
    */
@@ -309,8 +333,20 @@ export class Communication extends fhir.DomainResource {
     else { this.identifier = []; }
     if (source['instantiatesCanonical']) { this.instantiatesCanonical = source.instantiatesCanonical.map((x) => new fhir.FhirCanonical({value: x})); }
     else { this.instantiatesCanonical = []; }
+    if (source['_instantiatesCanonical']) {
+      source._instantiatesCanonical.forEach((x,i) => {
+        if (this.instantiatesCanonical.length >= i) { if (x) { this.instantiatesCanonical[i].addExtendedProperties(x); } }
+        else { if (x) { this.instantiatesCanonical.push(new fhir.FhirCanonical(x as Partial<fhir.FhirCanonicalArgs>)); } }
+      });
+    }
     if (source['instantiatesUri']) { this.instantiatesUri = source.instantiatesUri.map((x) => new fhir.FhirUri({value: x})); }
     else { this.instantiatesUri = []; }
+    if (source['_instantiatesUri']) {
+      source._instantiatesUri.forEach((x,i) => {
+        if (this.instantiatesUri.length >= i) { if (x) { this.instantiatesUri[i].addExtendedProperties(x); } }
+        else { if (x) { this.instantiatesUri.push(new fhir.FhirUri(x as Partial<fhir.FhirUriArgs>)); } }
+      });
+    }
     if (source['basedOn']) { this.basedOn = source.basedOn.map((x) => new fhir.Reference(x)); }
     else { this.basedOn = []; }
     if (source['partOf']) { this.partOf = source.partOf.map((x) => new fhir.Reference(x)); }
@@ -319,10 +355,18 @@ export class Communication extends fhir.DomainResource {
     else { this.inResponseTo = []; }
     if (source['status']) { this.status = new fhir.FhirCode<EventStatusCodeType>({value: source.status}); }
     else { this.status = null; }
+    if (source['_status']) {
+      if (this.status) { this.status.addExtendedProperties(source._status!); }
+      else { this.status = new fhir.FhirCode<EventStatusCodeType>(source._status as Partial<fhir.FhirCode>); }
+    }
     if (source['statusReason']) { this.statusReason = new fhir.CodeableConcept(source.statusReason); }
     if (source['category']) { this.category = source.category.map((x) => new fhir.CodeableConcept(x)); }
     else { this.category = []; }
     if (source['priority']) { this.priority = new fhir.FhirCode<RequestPriorityCodeType>({value: source.priority}); }
+    if (source['_priority']) {
+      if (this.priority) { this.priority.addExtendedProperties(source._priority!); }
+      else { this.priority = new fhir.FhirCode<RequestPriorityCodeType>(source._priority as Partial<fhir.FhirCode>); }
+    }
     if (source['medium']) { this.medium = source.medium.map((x) => new fhir.CodeableConcept(x)); }
     else { this.medium = []; }
     if (source['subject']) { this.subject = new fhir.Reference(source.subject); }
@@ -331,7 +375,15 @@ export class Communication extends fhir.DomainResource {
     else { this.about = []; }
     if (source['encounter']) { this.encounter = new fhir.Reference(source.encounter); }
     if (source['sent']) { this.sent = new fhir.FhirDateTime({value: source.sent}); }
+    if (source['_sent']) {
+      if (this.sent) { this.sent.addExtendedProperties(source._sent!); }
+      else { this.sent = new fhir.FhirDateTime(source._sent as Partial<fhir.FhirDateTimeArgs>); }
+    }
     if (source['received']) { this.received = new fhir.FhirDateTime({value: source.received}); }
+    if (source['_received']) {
+      if (this.received) { this.received.addExtendedProperties(source._received!); }
+      else { this.received = new fhir.FhirDateTime(source._received as Partial<fhir.FhirDateTimeArgs>); }
+    }
     if (source['recipient']) { this.recipient = source.recipient.map((x) => new fhir.Reference(x)); }
     else { this.recipient = []; }
     if (source['sender']) { this.sender = new fhir.Reference(source.sender); }

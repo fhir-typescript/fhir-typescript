@@ -16,6 +16,10 @@ export interface SubstancePolymerMonomerSetStartingMaterialArgs extends fhir.Bac
      */
     isDefining?: fhir.FhirBoolean | boolean | undefined;
     /**
+     * Extended properties for primitive element: SubstancePolymer.monomerSet.startingMaterial.isDefining
+     */
+    _isDefining?: fhir.FhirElementArgs;
+    /**
      * Todo.
      */
     amount?: fhir.SubstanceAmountArgs | undefined;
@@ -142,6 +146,10 @@ export interface SubstancePolymerRepeatRepeatUnitStructuralRepresentationArgs ex
      */
     representation?: fhir.FhirString | string | undefined;
     /**
+     * Extended properties for primitive element: SubstancePolymer.repeat.repeatUnit.structuralRepresentation.representation
+     */
+    _representation?: fhir.FhirElementArgs;
+    /**
      * Todo.
      */
     attachment?: fhir.AttachmentArgs | undefined;
@@ -187,6 +195,10 @@ export interface SubstancePolymerRepeatRepeatUnitArgs extends fhir.BackboneEleme
      * Todo.
      */
     repeatUnit?: fhir.FhirString | string | undefined;
+    /**
+     * Extended properties for primitive element: SubstancePolymer.repeat.repeatUnit.repeatUnit
+     */
+    _repeatUnit?: fhir.FhirElementArgs;
     /**
      * Todo.
      */
@@ -246,9 +258,17 @@ export interface SubstancePolymerRepeatArgs extends fhir.BackboneElementArgs {
      */
     numberOfUnits?: fhir.FhirInteger | number | undefined;
     /**
+     * Extended properties for primitive element: SubstancePolymer.repeat.numberOfUnits
+     */
+    _numberOfUnits?: fhir.FhirElementArgs;
+    /**
      * Todo.
      */
     averageMolecularFormula?: fhir.FhirString | string | undefined;
+    /**
+     * Extended properties for primitive element: SubstancePolymer.repeat.averageMolecularFormula
+     */
+    _averageMolecularFormula?: fhir.FhirElementArgs;
     /**
      * Todo.
      */
@@ -315,6 +335,10 @@ export interface SubstancePolymerArgs extends fhir.DomainResourceArgs {
      * Todo.
      */
     modification?: fhir.FhirString[] | string[] | undefined;
+    /**
+     * Extended properties for primitive element: SubstancePolymer.modification
+     */
+    _modification?: (fhir.FhirElementArgs | null)[];
     /**
      * Todo.
      */

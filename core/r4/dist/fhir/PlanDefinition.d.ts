@@ -165,6 +165,10 @@ export interface PlanDefinitionActionConditionArgs extends fhir.BackboneElementA
      */
     kind: fhir.FhirCode<ActionConditionKindCodeType> | string | undefined;
     /**
+     * Extended properties for primitive element: PlanDefinition.action.condition.kind
+     */
+    _kind?: fhir.FhirElementArgs;
+    /**
      * The expression may be inlined or may be a reference to a named expression within a logic library referenced by the library element.
      */
     expression?: fhir.ExpressionArgs | undefined;
@@ -211,9 +215,17 @@ export interface PlanDefinitionActionRelatedActionArgs extends fhir.BackboneElem
      */
     actionId: fhir.FhirId | string | undefined;
     /**
+     * Extended properties for primitive element: PlanDefinition.action.relatedAction.actionId
+     */
+    _actionId?: fhir.FhirElementArgs;
+    /**
      * The relationship of this action to the related action.
      */
     relationship: fhir.FhirCode<ActionRelationshipTypeCodeType> | string | undefined;
+    /**
+     * Extended properties for primitive element: PlanDefinition.action.relatedAction.relationship
+     */
+    _relationship?: fhir.FhirElementArgs;
     /**
      * A duration or range of durations to apply to the relationship. For example, 30-60 minutes before.
      */
@@ -283,6 +295,10 @@ export interface PlanDefinitionActionParticipantArgs extends fhir.BackboneElemen
      */
     type: fhir.FhirCode<ActionParticipantTypeCodeType> | string | undefined;
     /**
+     * Extended properties for primitive element: PlanDefinition.action.participant.type
+     */
+    _type?: fhir.FhirElementArgs;
+    /**
      * The role the participant should play in performing the described action.
      */
     role?: fhir.CodeableConceptArgs | undefined;
@@ -330,6 +346,10 @@ export interface PlanDefinitionActionDynamicValueArgs extends fhir.BackboneEleme
      */
     path?: fhir.FhirString | string | undefined;
     /**
+     * Extended properties for primitive element: PlanDefinition.action.dynamicValue.path
+     */
+    _path?: fhir.FhirElementArgs;
+    /**
      * The expression may be inlined or may be a reference to a named expression within a logic library referenced by the library element.
      */
     expression?: fhir.ExpressionArgs | undefined;
@@ -368,21 +388,41 @@ export interface PlanDefinitionActionArgs extends fhir.BackboneElementArgs {
      */
     prefix?: fhir.FhirString | string | undefined;
     /**
+     * Extended properties for primitive element: PlanDefinition.action.prefix
+     */
+    _prefix?: fhir.FhirElementArgs;
+    /**
      * The title of the action displayed to a user.
      */
     title?: fhir.FhirString | string | undefined;
+    /**
+     * Extended properties for primitive element: PlanDefinition.action.title
+     */
+    _title?: fhir.FhirElementArgs;
     /**
      * A brief description of the action used to provide a summary to display to the user.
      */
     description?: fhir.FhirString | string | undefined;
     /**
+     * Extended properties for primitive element: PlanDefinition.action.description
+     */
+    _description?: fhir.FhirElementArgs;
+    /**
      * A text equivalent of the action to be performed. This provides a human-interpretable description of the action when the definition is consumed by a system that might not be capable of interpreting it dynamically.
      */
     textEquivalent?: fhir.FhirString | string | undefined;
     /**
+     * Extended properties for primitive element: PlanDefinition.action.textEquivalent
+     */
+    _textEquivalent?: fhir.FhirElementArgs;
+    /**
      * Indicates how quickly the action should be addressed with respect to other actions.
      */
     priority?: fhir.FhirCode<RequestPriorityCodeType> | string | undefined;
+    /**
+     * Extended properties for primitive element: PlanDefinition.action.priority
+     */
+    _priority?: fhir.FhirElementArgs;
     /**
      * A code that provides meaning for the action or action group. For example, a section may have a LOINC code for the section of a documentation template.
      */
@@ -399,6 +439,10 @@ export interface PlanDefinitionActionArgs extends fhir.BackboneElementArgs {
      * Identifies goals that this action supports. The reference must be to a goal element defined within this plan definition.
      */
     goalId?: fhir.FhirId[] | string[] | undefined;
+    /**
+     * Extended properties for primitive element: PlanDefinition.action.goalId
+     */
+    _goalId?: (fhir.FhirElementArgs | null)[];
     /**
      * The subject of an action overrides the subject at a parent action or on the root of the PlanDefinition if specified.
      * In addition, because the subject needs to be resolved during realization, use of subjects in actions (or in the ActivityDefinition referenced by the action) resolves based on the set of subjects supplied in context and by type (i.e. the patient subject would resolve to a resource of type Patient).
@@ -475,21 +519,41 @@ export interface PlanDefinitionActionArgs extends fhir.BackboneElementArgs {
      */
     groupingBehavior?: fhir.FhirCode<ActionGroupingBehaviorCodeType> | string | undefined;
     /**
+     * Extended properties for primitive element: PlanDefinition.action.groupingBehavior
+     */
+    _groupingBehavior?: fhir.FhirElementArgs;
+    /**
      * Defines the selection behavior for the action and its children.
      */
     selectionBehavior?: fhir.FhirCode<ActionSelectionBehaviorCodeType> | string | undefined;
+    /**
+     * Extended properties for primitive element: PlanDefinition.action.selectionBehavior
+     */
+    _selectionBehavior?: fhir.FhirElementArgs;
     /**
      * Defines the required behavior for the action.
      */
     requiredBehavior?: fhir.FhirCode<ActionRequiredBehaviorCodeType> | string | undefined;
     /**
+     * Extended properties for primitive element: PlanDefinition.action.requiredBehavior
+     */
+    _requiredBehavior?: fhir.FhirElementArgs;
+    /**
      * Defines whether the action should usually be preselected.
      */
     precheckBehavior?: fhir.FhirCode<ActionPrecheckBehaviorCodeType> | string | undefined;
     /**
+     * Extended properties for primitive element: PlanDefinition.action.precheckBehavior
+     */
+    _precheckBehavior?: fhir.FhirElementArgs;
+    /**
      * Defines whether the action can be selected multiple times.
      */
     cardinalityBehavior?: fhir.FhirCode<ActionCardinalityBehaviorCodeType> | string | undefined;
+    /**
+     * Extended properties for primitive element: PlanDefinition.action.cardinalityBehavior
+     */
+    _cardinalityBehavior?: fhir.FhirElementArgs;
     /**
      * Note that the definition is optional, and if no definition is specified, a dynamicValue with a root ($this) path can be used to define the entire resource dynamically.
      */
@@ -506,6 +570,10 @@ export interface PlanDefinitionActionArgs extends fhir.BackboneElementArgs {
      * Note that when a referenced ActivityDefinition also defines a transform, the transform specified here generally takes precedence. In addition, if both a transform and dynamic values are specific, the dynamic values are applied to the result of the transform.
      */
     transform?: fhir.FhirCanonical | string | undefined;
+    /**
+     * Extended properties for primitive element: PlanDefinition.action.transform
+     */
+    _transform?: fhir.FhirElementArgs;
     /**
      * Dynamic values are applied in the order in which they are defined in the PlanDefinition resource. Note that when dynamic values are also specified by a referenced ActivityDefinition, the dynamicValues from the ActivityDefinition are applied first, followed by the dynamicValues specified here. In addition, if both a transform and dynamic values are specific, the dynamic values are applied to the result of the transform.
      */
@@ -722,6 +790,10 @@ export interface PlanDefinitionArgs extends fhir.DomainResourceArgs {
      */
     url?: fhir.FhirUri | string | undefined;
     /**
+     * Extended properties for primitive element: PlanDefinition.url
+     */
+    _url?: fhir.FhirElementArgs;
+    /**
      * Typically, this is used for identifiers that can go in an HL7 V3 II (instance identifier) data type, and can then identify this plan definition outside of FHIR, where it is not possible to use the logical URI.
      */
     identifier?: fhir.IdentifierArgs[] | undefined;
@@ -730,17 +802,33 @@ export interface PlanDefinitionArgs extends fhir.DomainResourceArgs {
      */
     version?: fhir.FhirString | string | undefined;
     /**
+     * Extended properties for primitive element: PlanDefinition.version
+     */
+    _version?: fhir.FhirElementArgs;
+    /**
      * The name is not expected to be globally unique. The name should be a simple alphanumeric type name to ensure that it is machine-processing friendly.
      */
     name?: fhir.FhirString | string | undefined;
+    /**
+     * Extended properties for primitive element: PlanDefinition.name
+     */
+    _name?: fhir.FhirElementArgs;
     /**
      * This name does not need to be machine-processing friendly and may contain punctuation, white-space, etc.
      */
     title?: fhir.FhirString | string | undefined;
     /**
+     * Extended properties for primitive element: PlanDefinition.title
+     */
+    _title?: fhir.FhirElementArgs;
+    /**
      * An explanatory or alternate title for the plan definition giving additional information about its content.
      */
     subtitle?: fhir.FhirString | string | undefined;
+    /**
+     * Extended properties for primitive element: PlanDefinition.subtitle
+     */
+    _subtitle?: fhir.FhirElementArgs;
     /**
      * A high-level category for the plan definition that distinguishes the kinds of systems that would be interested in the plan definition.
      */
@@ -750,9 +838,17 @@ export interface PlanDefinitionArgs extends fhir.DomainResourceArgs {
      */
     status: fhir.FhirCode<PublicationStatusCodeType> | string | undefined;
     /**
+     * Extended properties for primitive element: PlanDefinition.status
+     */
+    _status?: fhir.FhirElementArgs;
+    /**
      * Allows filtering of plan definitions that are appropriate for use versus not.
      */
     experimental?: fhir.FhirBoolean | boolean | undefined;
+    /**
+     * Extended properties for primitive element: PlanDefinition.experimental
+     */
+    _experimental?: fhir.FhirElementArgs;
     /**
      * A code or group definition that describes the intended subject of the plan definition.
      */
@@ -770,9 +866,17 @@ export interface PlanDefinitionArgs extends fhir.DomainResourceArgs {
      */
     date?: fhir.FhirDateTime | string | undefined;
     /**
+     * Extended properties for primitive element: PlanDefinition.date
+     */
+    _date?: fhir.FhirElementArgs;
+    /**
      * Usually an organization but may be an individual. The publisher (or steward) of the plan definition is the organization or individual primarily responsible for the maintenance and upkeep of the plan definition. This is not necessarily the same individual or organization that developed and initially authored the content. The publisher is the primary point of contact for questions or issues with the plan definition. This item SHOULD be populated unless the information is available from context.
      */
     publisher?: fhir.FhirString | string | undefined;
+    /**
+     * Extended properties for primitive element: PlanDefinition.publisher
+     */
+    _publisher?: fhir.FhirElementArgs;
     /**
      * May be a web site, an email address, a telephone number, etc.
      */
@@ -781,6 +885,10 @@ export interface PlanDefinitionArgs extends fhir.DomainResourceArgs {
      * This description can be used to capture details such as why the plan definition was built, comments about misuse, instructions for clinical use and interpretation, literature references, examples from the paper world, etc. It is not a rendering of the plan definition as conveyed in the 'text' field of the resource itself. This item SHOULD be populated unless the information is available from context (e.g. the language of the plan definition is presumed to be the predominant language in the place the plan definition was created).
      */
     description?: fhir.FhirMarkdown | string | undefined;
+    /**
+     * Extended properties for primitive element: PlanDefinition.description
+     */
+    _description?: fhir.FhirElementArgs;
     /**
      * When multiple useContexts are specified, there is no expectation that all or any of the contexts apply.
      */
@@ -794,21 +902,41 @@ export interface PlanDefinitionArgs extends fhir.DomainResourceArgs {
      */
     purpose?: fhir.FhirMarkdown | string | undefined;
     /**
+     * Extended properties for primitive element: PlanDefinition.purpose
+     */
+    _purpose?: fhir.FhirElementArgs;
+    /**
      * A detailed description of how the plan definition is used from a clinical perspective.
      */
     usage?: fhir.FhirString | string | undefined;
+    /**
+     * Extended properties for primitive element: PlanDefinition.usage
+     */
+    _usage?: fhir.FhirElementArgs;
     /**
      * A copyright statement relating to the plan definition and/or its contents. Copyright statements are generally legal restrictions on the use and publishing of the plan definition.
      */
     copyright?: fhir.FhirMarkdown | string | undefined;
     /**
+     * Extended properties for primitive element: PlanDefinition.copyright
+     */
+    _copyright?: fhir.FhirElementArgs;
+    /**
      * The 'date' element may be more recent than the approval date because of minor changes or editorial corrections.
      */
     approvalDate?: fhir.FhirDate | string | undefined;
     /**
+     * Extended properties for primitive element: PlanDefinition.approvalDate
+     */
+    _approvalDate?: fhir.FhirElementArgs;
+    /**
      * If specified, this date follows the original approval date.
      */
     lastReviewDate?: fhir.FhirDate | string | undefined;
+    /**
+     * Extended properties for primitive element: PlanDefinition.lastReviewDate
+     */
+    _lastReviewDate?: fhir.FhirElementArgs;
     /**
      * The effective period for a plan definition  determines when the content is applicable for usage and is independent of publication and review dates. For example, a measure intended to be used for the year 2016 might be published in 2015.
      */
@@ -841,6 +969,10 @@ export interface PlanDefinitionArgs extends fhir.DomainResourceArgs {
      * A reference to a Library resource containing any formal logic used by the plan definition.
      */
     library?: fhir.FhirCanonical[] | string[] | undefined;
+    /**
+     * Extended properties for primitive element: PlanDefinition.library
+     */
+    _library?: (fhir.FhirElementArgs | null)[];
     /**
      * Goals that describe what the activities within the plan are intended to achieve. For example, weight loss, restoring an activity of daily living, obtaining herd immunity via immunization, meeting a process improvement objective, etc.
      */

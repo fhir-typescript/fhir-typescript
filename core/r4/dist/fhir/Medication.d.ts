@@ -21,6 +21,10 @@ export interface MedicationIngredientArgs extends fhir.BackboneElementArgs {
      */
     isActive?: fhir.FhirBoolean | boolean | undefined;
     /**
+     * Extended properties for primitive element: Medication.ingredient.isActive
+     */
+    _isActive?: fhir.FhirElementArgs;
+    /**
      * Specifies how many (or how much) of the items there are in this Medication.  For example, 250 mg per tablet.  This is expressed as a ratio where the numerator is 250mg and the denominator is 1 tablet.
      */
     strength?: fhir.RatioArgs | undefined;
@@ -67,9 +71,17 @@ export interface MedicationBatchArgs extends fhir.BackboneElementArgs {
      */
     lotNumber?: fhir.FhirString | string | undefined;
     /**
+     * Extended properties for primitive element: Medication.batch.lotNumber
+     */
+    _lotNumber?: fhir.FhirElementArgs;
+    /**
      * When this specific batch of product will expire.
      */
     expirationDate?: fhir.FhirDateTime | string | undefined;
+    /**
+     * Extended properties for primitive element: Medication.batch.expirationDate
+     */
+    _expirationDate?: fhir.FhirElementArgs;
 }
 /**
  * Information that only applies to packages (not products).
@@ -116,6 +128,10 @@ export interface MedicationArgs extends fhir.DomainResourceArgs {
      * This status is intended to identify if the medication in a local system is in active use within a drug database or inventory.  For example, a pharmacy system may create a new drug file record for a compounded product "ABC Hospital Special Cream" with an active status.  At some point in the future, it may be determined that the drug record was created with an error and the status is changed to "entered in error".   This status is not intended to specify if a medication is part of a particular formulary.  It is possible that the drug record may be referenced by multiple formularies or catalogues and each of those entries would have a separate status.
      */
     status?: fhir.FhirCode<MedicationStatusCodeType> | string | undefined;
+    /**
+     * Extended properties for primitive element: Medication.status
+     */
+    _status?: fhir.FhirElementArgs;
     /**
      * Describes the details of the manufacturer of the medication product.  This is not intended to represent the distributor of a medication product.
      */

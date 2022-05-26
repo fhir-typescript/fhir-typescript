@@ -87,9 +87,17 @@ export interface DosageArgs extends fhir.BackboneElementArgs {
      */
     sequence?: fhir.FhirInteger | number | undefined;
     /**
+     * Extended properties for primitive element: Dosage.sequence
+     */
+    _sequence?: fhir.FhirElementArgs;
+    /**
      * Free text dosage instructions e.g. SIG.
      */
     text?: fhir.FhirString | string | undefined;
+    /**
+     * Extended properties for primitive element: Dosage.text
+     */
+    _text?: fhir.FhirElementArgs;
     /**
      * Information about administration or preparation of the medication (e.g. "infuse as rapidly as possibly via intraperitoneal port" or "immediately following drug x") should be populated in dosage.text.
      */
@@ -98,6 +106,10 @@ export interface DosageArgs extends fhir.BackboneElementArgs {
      * Instructions in terms that are understood by the patient or consumer.
      */
     patientInstruction?: fhir.FhirString | string | undefined;
+    /**
+     * Extended properties for primitive element: Dosage.patientInstruction
+     */
+    _patientInstruction?: fhir.FhirElementArgs;
     /**
      * This attribute might not always be populated while the Dosage.text is expected to be populated.  If both are populated, then the Dosage.text should reflect the content of the Dosage.timing.
      */

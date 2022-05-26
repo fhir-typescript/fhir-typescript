@@ -30,6 +30,10 @@ export interface EndpointArgs extends fhir.DomainResourceArgs {
    */
   status: fhir.FhirCode<EndpointStatusCodeType>|string|undefined;
   /**
+   * Extended properties for primitive element: Endpoint.status
+   */
+  _status?:fhir.FhirElementArgs;
+  /**
    * For additional connectivity details for the protocol, extensions will be used at this point, as in the XDS example.
    */
   connectionType: fhir.CodingArgs|null;
@@ -37,6 +41,10 @@ export interface EndpointArgs extends fhir.DomainResourceArgs {
    * A friendly name that this endpoint can be referred to with.
    */
   name?: fhir.FhirString|string|undefined;
+  /**
+   * Extended properties for primitive element: Endpoint.name
+   */
+  _name?:fhir.FhirElementArgs;
   /**
    * This property is not typically used when searching for Endpoint resources for usage. The typical usage is via the reference from an applicable Organization/Location/Practitioner resource, which is where the context is provided. Multiple Locations may reference a single endpoint, and don't have to be within the same organization resource, but most likely within the same organizational hierarchy.
    */
@@ -58,6 +66,10 @@ export interface EndpointArgs extends fhir.DomainResourceArgs {
    */
   payloadMimeType?: fhir.FhirCode[]|string[]|undefined;
   /**
+   * Extended properties for primitive element: Endpoint.payloadMimeType
+   */
+  _payloadMimeType?:(fhir.FhirElementArgs|null)[];
+  /**
    * For rest-hook, and websocket, the end-point must be an http: or https: URL; for email, a mailto: url, for sms, a tel: url, and for message the endpoint can be in any form of url the server understands (usually, http: or mllp:). The URI is allowed to be relative; in which case, it is relative to the server end-point (since there may be more than one, clients should avoid using relative URIs)
    * This address will be to the service base, without any parameters, or sub-services or resources tacked on.
    * E.g. for a WADO-RS endpoint, the url should be "https://pacs.hospital.org/wado-rs"
@@ -65,9 +77,17 @@ export interface EndpointArgs extends fhir.DomainResourceArgs {
    */
   address: fhir.FhirUrl|string|undefined;
   /**
+   * Extended properties for primitive element: Endpoint.address
+   */
+  _address?:fhir.FhirElementArgs;
+  /**
    * Exactly what these mean depends on the channel type. The can convey additional information to the recipient and/or meet security requirements.
    */
   header?: fhir.FhirString[]|string[]|undefined;
+  /**
+   * Extended properties for primitive element: Endpoint.header
+   */
+  _header?:(fhir.FhirElementArgs|null)[];
 }
 
 /**
@@ -139,9 +159,17 @@ export class Endpoint extends fhir.DomainResource {
     else { this.identifier = []; }
     if (source['status']) { this.status = new fhir.FhirCode<EndpointStatusCodeType>({value: source.status}); }
     else { this.status = null; }
+    if (source['_status']) {
+      if (this.status) { this.status.addExtendedProperties(source._status!); }
+      else { this.status = new fhir.FhirCode<EndpointStatusCodeType>(source._status as Partial<fhir.FhirCode>); }
+    }
     if (source['connectionType']) { this.connectionType = new fhir.Coding(source.connectionType); }
     else { this.connectionType = null; }
     if (source['name']) { this.name = new fhir.FhirString({value: source.name}); }
+    if (source['_name']) {
+      if (this.name) { this.name.addExtendedProperties(source._name!); }
+      else { this.name = new fhir.FhirString(source._name as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['managingOrganization']) { this.managingOrganization = new fhir.Reference(source.managingOrganization); }
     if (source['contact']) { this.contact = source.contact.map((x) => new fhir.ContactPoint(x)); }
     else { this.contact = []; }
@@ -150,10 +178,26 @@ export class Endpoint extends fhir.DomainResource {
     else { this.payloadType = []; }
     if (source['payloadMimeType']) { this.payloadMimeType = source.payloadMimeType.map((x) => new fhir.FhirCode({value: x})); }
     else { this.payloadMimeType = []; }
+    if (source['_payloadMimeType']) {
+      source._payloadMimeType.forEach((x,i) => {
+        if (this.payloadMimeType.length >= i) { if (x) { this.payloadMimeType[i].addExtendedProperties(x); } }
+        else { if (x) { this.payloadMimeType.push(new fhir.FhirCode(x as Partial<fhir.FhirCodeArgs>)); } }
+      });
+    }
     if (source['address']) { this.address = new fhir.FhirUrl({value: source.address}); }
     else { this.address = null; }
+    if (source['_address']) {
+      if (this.address) { this.address.addExtendedProperties(source._address!); }
+      else { this.address = new fhir.FhirUrl(source._address as Partial<fhir.FhirUrlArgs>); }
+    }
     if (source['header']) { this.header = source.header.map((x) => new fhir.FhirString({value: x})); }
     else { this.header = []; }
+    if (source['_header']) {
+      source._header.forEach((x,i) => {
+        if (this.header.length >= i) { if (x) { this.header[i].addExtendedProperties(x); } }
+        else { if (x) { this.header.push(new fhir.FhirString(x as Partial<fhir.FhirStringArgs>)); } }
+      });
+    }
   }
   /**
    * Required-bound Value Set for status (Endpoint.status)

@@ -46,17 +46,33 @@ export interface StructureMapStructureArgs extends fhir.BackboneElementArgs {
    */
   url: fhir.FhirCanonical|string|undefined;
   /**
+   * Extended properties for primitive element: StructureMap.structure.url
+   */
+  _url?:fhir.FhirElementArgs;
+  /**
    * How the referenced structure is used in this mapping.
    */
   mode: fhir.FhirCode<MapModelModeCodeType>|string|undefined;
+  /**
+   * Extended properties for primitive element: StructureMap.structure.mode
+   */
+  _mode?:fhir.FhirElementArgs;
   /**
    * This is needed if both types have the same name (e.g. version conversion).
    */
   alias?: fhir.FhirString|string|undefined;
   /**
+   * Extended properties for primitive element: StructureMap.structure.alias
+   */
+  _alias?:fhir.FhirElementArgs;
+  /**
    * Documentation that describes how the structure is used in the mapping.
    */
   documentation?: fhir.FhirString|string|undefined;
+  /**
+   * Extended properties for primitive element: StructureMap.structure.documentation
+   */
+  _documentation?:fhir.FhirElementArgs;
 }
 
 /**
@@ -90,10 +106,26 @@ export class StructureMapStructure extends fhir.BackboneElement {
     super(source, options);
     if (source['url']) { this.url = new fhir.FhirCanonical({value: source.url}); }
     else { this.url = null; }
+    if (source['_url']) {
+      if (this.url) { this.url.addExtendedProperties(source._url!); }
+      else { this.url = new fhir.FhirCanonical(source._url as Partial<fhir.FhirCanonicalArgs>); }
+    }
     if (source['mode']) { this.mode = new fhir.FhirCode<MapModelModeCodeType>({value: source.mode}); }
     else { this.mode = null; }
+    if (source['_mode']) {
+      if (this.mode) { this.mode.addExtendedProperties(source._mode!); }
+      else { this.mode = new fhir.FhirCode<MapModelModeCodeType>(source._mode as Partial<fhir.FhirCode>); }
+    }
     if (source['alias']) { this.alias = new fhir.FhirString({value: source.alias}); }
+    if (source['_alias']) {
+      if (this.alias) { this.alias.addExtendedProperties(source._alias!); }
+      else { this.alias = new fhir.FhirString(source._alias as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['documentation']) { this.documentation = new fhir.FhirString({value: source.documentation}); }
+    if (source['_documentation']) {
+      if (this.documentation) { this.documentation.addExtendedProperties(source._documentation!); }
+      else { this.documentation = new fhir.FhirString(source._documentation as Partial<fhir.FhirStringArgs>); }
+    }
   }
   /**
    * Required-bound Value Set for mode (StructureMap.structure.mode)
@@ -131,17 +163,33 @@ export interface StructureMapGroupInputArgs extends fhir.BackboneElementArgs {
    */
   name: fhir.FhirId|string|undefined;
   /**
+   * Extended properties for primitive element: StructureMap.group.input.name
+   */
+  _name?:fhir.FhirElementArgs;
+  /**
    * Type for this instance of data.
    */
   type?: fhir.FhirString|string|undefined;
+  /**
+   * Extended properties for primitive element: StructureMap.group.input.type
+   */
+  _type?:fhir.FhirElementArgs;
   /**
    * Mode for this instance of data.
    */
   mode: fhir.FhirCode<MapInputModeCodeType>|string|undefined;
   /**
+   * Extended properties for primitive element: StructureMap.group.input.mode
+   */
+  _mode?:fhir.FhirElementArgs;
+  /**
    * Documentation for this instance of data.
    */
   documentation?: fhir.FhirString|string|undefined;
+  /**
+   * Extended properties for primitive element: StructureMap.group.input.documentation
+   */
+  _documentation?:fhir.FhirElementArgs;
 }
 
 /**
@@ -175,10 +223,26 @@ export class StructureMapGroupInput extends fhir.BackboneElement {
     super(source, options);
     if (source['name']) { this.name = new fhir.FhirId({value: source.name}); }
     else { this.name = null; }
+    if (source['_name']) {
+      if (this.name) { this.name.addExtendedProperties(source._name!); }
+      else { this.name = new fhir.FhirId(source._name as Partial<fhir.FhirIdArgs>); }
+    }
     if (source['type']) { this.type = new fhir.FhirString({value: source.type}); }
+    if (source['_type']) {
+      if (this.type) { this.type.addExtendedProperties(source._type!); }
+      else { this.type = new fhir.FhirString(source._type as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['mode']) { this.mode = new fhir.FhirCode<MapInputModeCodeType>({value: source.mode}); }
     else { this.mode = null; }
+    if (source['_mode']) {
+      if (this.mode) { this.mode.addExtendedProperties(source._mode!); }
+      else { this.mode = new fhir.FhirCode<MapInputModeCodeType>(source._mode as Partial<fhir.FhirCode>); }
+    }
     if (source['documentation']) { this.documentation = new fhir.FhirString({value: source.documentation}); }
+    if (source['_documentation']) {
+      if (this.documentation) { this.documentation.addExtendedProperties(source._documentation!); }
+      else { this.documentation = new fhir.FhirString(source._documentation as Partial<fhir.FhirStringArgs>); }
+    }
   }
   /**
    * Required-bound Value Set for mode (StructureMap.group.input.mode)
@@ -216,17 +280,33 @@ export interface StructureMapGroupRuleSourceArgs extends fhir.BackboneElementArg
    */
   context: fhir.FhirId|string|undefined;
   /**
+   * Extended properties for primitive element: StructureMap.group.rule.source.context
+   */
+  _context?:fhir.FhirElementArgs;
+  /**
    * Specified minimum cardinality for the element. This is optional; if present, it acts an implicit check on the input content.
    */
   min?: fhir.FhirInteger|number|undefined;
+  /**
+   * Extended properties for primitive element: StructureMap.group.rule.source.min
+   */
+  _min?:fhir.FhirElementArgs;
   /**
    * Specified maximum cardinality for the element - a number or a "*". This is optional; if present, it acts an implicit check on the input content (* just serves as documentation; it's the default value).
    */
   max?: fhir.FhirString|string|undefined;
   /**
+   * Extended properties for primitive element: StructureMap.group.rule.source.max
+   */
+  _max?:fhir.FhirElementArgs;
+  /**
    * Specified type for the element. This works as a condition on the mapping - use for polymorphic elements.
    */
   type?: fhir.FhirString|string|undefined;
+  /**
+   * Extended properties for primitive element: StructureMap.group.rule.source.type
+   */
+  _type?:fhir.FhirElementArgs;
   /**
    * If there's a default value on an item that can repeat, it will only be used once.
    */
@@ -436,25 +516,49 @@ export interface StructureMapGroupRuleSourceArgs extends fhir.BackboneElementArg
    */
   element?: fhir.FhirString|string|undefined;
   /**
+   * Extended properties for primitive element: StructureMap.group.rule.source.element
+   */
+  _element?:fhir.FhirElementArgs;
+  /**
    * How to handle the list mode for this element.
    */
   listMode?: fhir.FhirCode<MapSourceListModeCodeType>|string|undefined;
+  /**
+   * Extended properties for primitive element: StructureMap.group.rule.source.listMode
+   */
+  _listMode?:fhir.FhirElementArgs;
   /**
    * Named context for field, if a field is specified.
    */
   variable?: fhir.FhirId|string|undefined;
   /**
+   * Extended properties for primitive element: StructureMap.group.rule.source.variable
+   */
+  _variable?:fhir.FhirElementArgs;
+  /**
    * FHIRPath expression  - must be true or the rule does not apply.
    */
   condition?: fhir.FhirString|string|undefined;
+  /**
+   * Extended properties for primitive element: StructureMap.group.rule.source.condition
+   */
+  _condition?:fhir.FhirElementArgs;
   /**
    * FHIRPath expression  - must be true or the mapping engine throws an error instead of completing.
    */
   check?: fhir.FhirString|string|undefined;
   /**
+   * Extended properties for primitive element: StructureMap.group.rule.source.check
+   */
+  _check?:fhir.FhirElementArgs;
+  /**
    * This is typically used for recording that something Is not transformed to the target for some reason.
    */
   logMessage?: fhir.FhirString|string|undefined;
+  /**
+   * Extended properties for primitive element: StructureMap.group.rule.source.logMessage
+   */
+  _logMessage?:fhir.FhirElementArgs;
 }
 
 /**
@@ -520,9 +624,25 @@ export class StructureMapGroupRuleSource extends fhir.BackboneElement {
     super(source, options);
     if (source['context']) { this.context = new fhir.FhirId({value: source.context}); }
     else { this.context = null; }
+    if (source['_context']) {
+      if (this.context) { this.context.addExtendedProperties(source._context!); }
+      else { this.context = new fhir.FhirId(source._context as Partial<fhir.FhirIdArgs>); }
+    }
     if (source['min']) { this.min = new fhir.FhirInteger({value: source.min}); }
+    if (source['_min']) {
+      if (this.min) { this.min.addExtendedProperties(source._min!); }
+      else { this.min = new fhir.FhirInteger(source._min as Partial<fhir.FhirIntegerArgs>); }
+    }
     if (source['max']) { this.max = new fhir.FhirString({value: source.max}); }
+    if (source['_max']) {
+      if (this.max) { this.max.addExtendedProperties(source._max!); }
+      else { this.max = new fhir.FhirString(source._max as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['type']) { this.type = new fhir.FhirString({value: source.type}); }
+    if (source['_type']) {
+      if (this.type) { this.type.addExtendedProperties(source._type!); }
+      else { this.type = new fhir.FhirString(source._type as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['defaultValue']) { this.defaultValue = source.defaultValue; }
     else if (source['defaultValueBase64Binary']) { this.defaultValue = new fhir.FhirBase64Binary({value: source.defaultValueBase64Binary}); }
     else if (source['defaultValueBoolean']) { this.defaultValue = new fhir.FhirBoolean({value: source.defaultValueBoolean}); }
@@ -575,11 +695,35 @@ export class StructureMapGroupRuleSource extends fhir.BackboneElement {
     else if (source['defaultValueDosage']) { this.defaultValue = new fhir.Dosage(source.defaultValueDosage); }
     else if (source['defaultValueMeta']) { this.defaultValue = new fhir.Meta(source.defaultValueMeta); }
     if (source['element']) { this.element = new fhir.FhirString({value: source.element}); }
+    if (source['_element']) {
+      if (this.element) { this.element.addExtendedProperties(source._element!); }
+      else { this.element = new fhir.FhirString(source._element as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['listMode']) { this.listMode = new fhir.FhirCode<MapSourceListModeCodeType>({value: source.listMode}); }
+    if (source['_listMode']) {
+      if (this.listMode) { this.listMode.addExtendedProperties(source._listMode!); }
+      else { this.listMode = new fhir.FhirCode<MapSourceListModeCodeType>(source._listMode as Partial<fhir.FhirCode>); }
+    }
     if (source['variable']) { this.variable = new fhir.FhirId({value: source.variable}); }
+    if (source['_variable']) {
+      if (this.variable) { this.variable.addExtendedProperties(source._variable!); }
+      else { this.variable = new fhir.FhirId(source._variable as Partial<fhir.FhirIdArgs>); }
+    }
     if (source['condition']) { this.condition = new fhir.FhirString({value: source.condition}); }
+    if (source['_condition']) {
+      if (this.condition) { this.condition.addExtendedProperties(source._condition!); }
+      else { this.condition = new fhir.FhirString(source._condition as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['check']) { this.check = new fhir.FhirString({value: source.check}); }
+    if (source['_check']) {
+      if (this.check) { this.check.addExtendedProperties(source._check!); }
+      else { this.check = new fhir.FhirString(source._check as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['logMessage']) { this.logMessage = new fhir.FhirString({value: source.logMessage}); }
+    if (source['_logMessage']) {
+      if (this.logMessage) { this.logMessage.addExtendedProperties(source._logMessage!); }
+      else { this.logMessage = new fhir.FhirString(source._logMessage as Partial<fhir.FhirStringArgs>); }
+    }
   }
   /**
    * Required-bound Value Set for listMode (StructureMap.group.rule.source.listMode)
@@ -690,29 +834,57 @@ export interface StructureMapGroupRuleTargetArgs extends fhir.BackboneElementArg
    */
   context?: fhir.FhirId|string|undefined;
   /**
+   * Extended properties for primitive element: StructureMap.group.rule.target.context
+   */
+  _context?:fhir.FhirElementArgs;
+  /**
    * How to interpret the context.
    */
   contextType?: fhir.FhirCode<MapContextTypeCodeType>|string|undefined;
+  /**
+   * Extended properties for primitive element: StructureMap.group.rule.target.contextType
+   */
+  _contextType?:fhir.FhirElementArgs;
   /**
    * Field to create in the context.
    */
   element?: fhir.FhirString|string|undefined;
   /**
+   * Extended properties for primitive element: StructureMap.group.rule.target.element
+   */
+  _element?:fhir.FhirElementArgs;
+  /**
    * Named context for field, if desired, and a field is specified.
    */
   variable?: fhir.FhirId|string|undefined;
+  /**
+   * Extended properties for primitive element: StructureMap.group.rule.target.variable
+   */
+  _variable?:fhir.FhirElementArgs;
   /**
    * If field is a list, how to manage the list.
    */
   listMode?: fhir.FhirCode<MapTargetListModeCodeType>[]|string[]|undefined;
   /**
+   * Extended properties for primitive element: StructureMap.group.rule.target.listMode
+   */
+  _listMode?:(fhir.FhirElementArgs|null)[];
+  /**
    * Internal rule reference for shared list items.
    */
   listRuleId?: fhir.FhirId|string|undefined;
   /**
+   * Extended properties for primitive element: StructureMap.group.rule.target.listRuleId
+   */
+  _listRuleId?:fhir.FhirElementArgs;
+  /**
    * How the data is copied / created.
    */
   transform?: fhir.FhirCode<MapTransformCodeType>|string|undefined;
+  /**
+   * Extended properties for primitive element: StructureMap.group.rule.target.transform
+   */
+  _transform?:fhir.FhirElementArgs;
   /**
    * Parameters to the transform.
    */
@@ -765,13 +937,43 @@ export class StructureMapGroupRuleTarget extends fhir.BackboneElement {
   constructor(source:Partial<StructureMapGroupRuleTargetArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
     if (source['context']) { this.context = new fhir.FhirId({value: source.context}); }
+    if (source['_context']) {
+      if (this.context) { this.context.addExtendedProperties(source._context!); }
+      else { this.context = new fhir.FhirId(source._context as Partial<fhir.FhirIdArgs>); }
+    }
     if (source['contextType']) { this.contextType = new fhir.FhirCode<MapContextTypeCodeType>({value: source.contextType}); }
+    if (source['_contextType']) {
+      if (this.contextType) { this.contextType.addExtendedProperties(source._contextType!); }
+      else { this.contextType = new fhir.FhirCode<MapContextTypeCodeType>(source._contextType as Partial<fhir.FhirCode>); }
+    }
     if (source['element']) { this.element = new fhir.FhirString({value: source.element}); }
+    if (source['_element']) {
+      if (this.element) { this.element.addExtendedProperties(source._element!); }
+      else { this.element = new fhir.FhirString(source._element as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['variable']) { this.variable = new fhir.FhirId({value: source.variable}); }
+    if (source['_variable']) {
+      if (this.variable) { this.variable.addExtendedProperties(source._variable!); }
+      else { this.variable = new fhir.FhirId(source._variable as Partial<fhir.FhirIdArgs>); }
+    }
     if (source['listMode']) { this.listMode = source.listMode.map((x) => new fhir.FhirCode<MapTargetListModeCodeType>({value: x})); }
     else { this.listMode = []; }
+    if (source['_listMode']) {
+      source._listMode.forEach((x,i) => {
+        if (this.listMode.length >= i) { if (x) { this.listMode[i].addExtendedProperties(x); } }
+        else { if (x) { this.listMode.push(new fhir.FhirCode<MapTargetListModeCodeType>(x as Partial<fhir.FhirCode>)); } }
+      });
+    }
     if (source['listRuleId']) { this.listRuleId = new fhir.FhirId({value: source.listRuleId}); }
+    if (source['_listRuleId']) {
+      if (this.listRuleId) { this.listRuleId.addExtendedProperties(source._listRuleId!); }
+      else { this.listRuleId = new fhir.FhirId(source._listRuleId as Partial<fhir.FhirIdArgs>); }
+    }
     if (source['transform']) { this.transform = new fhir.FhirCode<MapTransformCodeType>({value: source.transform}); }
+    if (source['_transform']) {
+      if (this.transform) { this.transform.addExtendedProperties(source._transform!); }
+      else { this.transform = new fhir.FhirCode<MapTransformCodeType>(source._transform as Partial<fhir.FhirCode>); }
+    }
     if (source['parameter']) { this.parameter = source.parameter.map((x) => new fhir.StructureMapGroupRuleTargetParameter(x)); }
     else { this.parameter = []; }
   }
@@ -831,9 +1033,17 @@ export interface StructureMapGroupRuleDependentArgs extends fhir.BackboneElement
    */
   name: fhir.FhirId|string|undefined;
   /**
+   * Extended properties for primitive element: StructureMap.group.rule.dependent.name
+   */
+  _name?:fhir.FhirElementArgs;
+  /**
    * Variable to pass to the rule or group.
    */
   variable: fhir.FhirString[]|string[]|undefined;
+  /**
+   * Extended properties for primitive element: StructureMap.group.rule.dependent.variable
+   */
+  _variable?:(fhir.FhirElementArgs|null)[];
 }
 
 /**
@@ -859,8 +1069,18 @@ export class StructureMapGroupRuleDependent extends fhir.BackboneElement {
     super(source, options);
     if (source['name']) { this.name = new fhir.FhirId({value: source.name}); }
     else { this.name = null; }
+    if (source['_name']) {
+      if (this.name) { this.name.addExtendedProperties(source._name!); }
+      else { this.name = new fhir.FhirId(source._name as Partial<fhir.FhirIdArgs>); }
+    }
     if (source['variable']) { this.variable = source.variable.map((x) => new fhir.FhirString({value: x})); }
     else { this.variable = []; }
+    if (source['_variable']) {
+      source._variable.forEach((x,i) => {
+        if (this.variable.length >= i) { if (x) { this.variable[i].addExtendedProperties(x); } }
+        else { if (x) { this.variable.push(new fhir.FhirString(x as Partial<fhir.FhirStringArgs>)); } }
+      });
+    }
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -891,6 +1111,10 @@ export interface StructureMapGroupRuleArgs extends fhir.BackboneElementArgs {
    */
   name: fhir.FhirId|string|undefined;
   /**
+   * Extended properties for primitive element: StructureMap.group.rule.name
+   */
+  _name?:fhir.FhirElementArgs;
+  /**
    * Source inputs to the mapping.
    */
   source: fhir.StructureMapGroupRuleSourceArgs[]|null;
@@ -910,6 +1134,10 @@ export interface StructureMapGroupRuleArgs extends fhir.BackboneElementArgs {
    * Documentation for this instance of data.
    */
   documentation?: fhir.FhirString|string|undefined;
+  /**
+   * Extended properties for primitive element: StructureMap.group.rule.documentation
+   */
+  _documentation?:fhir.FhirElementArgs;
 }
 
 /**
@@ -951,6 +1179,10 @@ export class StructureMapGroupRule extends fhir.BackboneElement {
     super(source, options);
     if (source['name']) { this.name = new fhir.FhirId({value: source.name}); }
     else { this.name = null; }
+    if (source['_name']) {
+      if (this.name) { this.name.addExtendedProperties(source._name!); }
+      else { this.name = new fhir.FhirId(source._name as Partial<fhir.FhirIdArgs>); }
+    }
     if (source['source']) { this.source = source.source.map((x) => new fhir.StructureMapGroupRuleSource(x)); }
     else { this.source = []; }
     if (source['target']) { this.target = source.target.map((x) => new fhir.StructureMapGroupRuleTarget(x)); }
@@ -960,6 +1192,10 @@ export class StructureMapGroupRule extends fhir.BackboneElement {
     if (source['dependent']) { this.dependent = source.dependent.map((x) => new fhir.StructureMapGroupRuleDependent(x)); }
     else { this.dependent = []; }
     if (source['documentation']) { this.documentation = new fhir.FhirString({value: source.documentation}); }
+    if (source['_documentation']) {
+      if (this.documentation) { this.documentation.addExtendedProperties(source._documentation!); }
+      else { this.documentation = new fhir.FhirString(source._documentation as Partial<fhir.FhirStringArgs>); }
+    }
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -994,17 +1230,33 @@ export interface StructureMapGroupArgs extends fhir.BackboneElementArgs {
    */
   name: fhir.FhirId|string|undefined;
   /**
+   * Extended properties for primitive element: StructureMap.group.name
+   */
+  _name?:fhir.FhirElementArgs;
+  /**
    * Another group that this group adds rules to.
    */
   extends?: fhir.FhirId|string|undefined;
+  /**
+   * Extended properties for primitive element: StructureMap.group.extends
+   */
+  _extends?:fhir.FhirElementArgs;
   /**
    * Not applicable if the underlying model is untyped. There can only be one default mapping for any particular type combination.
    */
   typeMode: fhir.FhirCode<MapGroupTypeModeCodeType>|string|undefined;
   /**
+   * Extended properties for primitive element: StructureMap.group.typeMode
+   */
+  _typeMode?:fhir.FhirElementArgs;
+  /**
    * Additional supporting documentation that explains the purpose of the group and the types of mappings within it.
    */
   documentation?: fhir.FhirString|string|undefined;
+  /**
+   * Extended properties for primitive element: StructureMap.group.documentation
+   */
+  _documentation?:fhir.FhirElementArgs;
   /**
    * If no inputs are named, then the entry mappings are type based.
    */
@@ -1054,10 +1306,26 @@ export class StructureMapGroup extends fhir.BackboneElement {
     super(source, options);
     if (source['name']) { this.name = new fhir.FhirId({value: source.name}); }
     else { this.name = null; }
+    if (source['_name']) {
+      if (this.name) { this.name.addExtendedProperties(source._name!); }
+      else { this.name = new fhir.FhirId(source._name as Partial<fhir.FhirIdArgs>); }
+    }
     if (source['extends']) { this.extends = new fhir.FhirId({value: source.extends}); }
+    if (source['_extends']) {
+      if (this.extends) { this.extends.addExtendedProperties(source._extends!); }
+      else { this.extends = new fhir.FhirId(source._extends as Partial<fhir.FhirIdArgs>); }
+    }
     if (source['typeMode']) { this.typeMode = new fhir.FhirCode<MapGroupTypeModeCodeType>({value: source.typeMode}); }
     else { this.typeMode = null; }
+    if (source['_typeMode']) {
+      if (this.typeMode) { this.typeMode.addExtendedProperties(source._typeMode!); }
+      else { this.typeMode = new fhir.FhirCode<MapGroupTypeModeCodeType>(source._typeMode as Partial<fhir.FhirCode>); }
+    }
     if (source['documentation']) { this.documentation = new fhir.FhirString({value: source.documentation}); }
+    if (source['_documentation']) {
+      if (this.documentation) { this.documentation.addExtendedProperties(source._documentation!); }
+      else { this.documentation = new fhir.FhirString(source._documentation as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['input']) { this.input = source.input.map((x) => new fhir.StructureMapGroupInput(x)); }
     else { this.input = []; }
     if (source['rule']) { this.rule = source.rule.map((x) => new fhir.StructureMapGroupRule(x)); }
@@ -1121,6 +1389,10 @@ export interface StructureMapArgs extends fhir.DomainResourceArgs {
    */
   url: fhir.FhirUri|string|undefined;
   /**
+   * Extended properties for primitive element: StructureMap.url
+   */
+  _url?:fhir.FhirElementArgs;
+  /**
    * Typically, this is used for identifiers that can go in an HL7 V3 II (instance identifier) data type, and can then identify this structure map outside of FHIR, where it is not possible to use the logical URI.
    */
   identifier?: fhir.IdentifierArgs[]|undefined;
@@ -1129,29 +1401,57 @@ export interface StructureMapArgs extends fhir.DomainResourceArgs {
    */
   version?: fhir.FhirString|string|undefined;
   /**
+   * Extended properties for primitive element: StructureMap.version
+   */
+  _version?:fhir.FhirElementArgs;
+  /**
    * The name is not expected to be globally unique. The name should be a simple alphanumeric type name to ensure that it is machine-processing friendly.
    */
   name: fhir.FhirString|string|undefined;
+  /**
+   * Extended properties for primitive element: StructureMap.name
+   */
+  _name?:fhir.FhirElementArgs;
   /**
    * This name does not need to be machine-processing friendly and may contain punctuation, white-space, etc.
    */
   title?: fhir.FhirString|string|undefined;
   /**
+   * Extended properties for primitive element: StructureMap.title
+   */
+  _title?:fhir.FhirElementArgs;
+  /**
    * Allows filtering of structure maps that are appropriate for use versus not.
    */
   status: fhir.FhirCode<PublicationStatusCodeType>|string|undefined;
+  /**
+   * Extended properties for primitive element: StructureMap.status
+   */
+  _status?:fhir.FhirElementArgs;
   /**
    * Allows filtering of structure maps that are appropriate for use versus not.
    */
   experimental?: fhir.FhirBoolean|boolean|undefined;
   /**
+   * Extended properties for primitive element: StructureMap.experimental
+   */
+  _experimental?:fhir.FhirElementArgs;
+  /**
    * Note that this is not the same as the resource last-modified-date, since the resource may be a secondary representation of the structure map. Additional specific dates may be added as extensions or be found by consulting Provenances associated with past versions of the resource.
    */
   date?: fhir.FhirDateTime|string|undefined;
   /**
+   * Extended properties for primitive element: StructureMap.date
+   */
+  _date?:fhir.FhirElementArgs;
+  /**
    * Usually an organization but may be an individual. The publisher (or steward) of the structure map is the organization or individual primarily responsible for the maintenance and upkeep of the structure map. This is not necessarily the same individual or organization that developed and initially authored the content. The publisher is the primary point of contact for questions or issues with the structure map. This item SHOULD be populated unless the information is available from context.
    */
   publisher?: fhir.FhirString|string|undefined;
+  /**
+   * Extended properties for primitive element: StructureMap.publisher
+   */
+  _publisher?:fhir.FhirElementArgs;
   /**
    * May be a web site, an email address, a telephone number, etc.
    */
@@ -1160,6 +1460,10 @@ export interface StructureMapArgs extends fhir.DomainResourceArgs {
    * This description can be used to capture details such as why the structure map was built, comments about misuse, instructions for clinical use and interpretation, literature references, examples from the paper world, etc. It is not a rendering of the structure map as conveyed in the 'text' field of the resource itself. This item SHOULD be populated unless the information is available from context (e.g. the language of the structure map is presumed to be the predominant language in the place the structure map was created).
    */
   description?: fhir.FhirMarkdown|string|undefined;
+  /**
+   * Extended properties for primitive element: StructureMap.description
+   */
+  _description?:fhir.FhirElementArgs;
   /**
    * When multiple useContexts are specified, there is no expectation that all or any of the contexts apply.
    */
@@ -1173,9 +1477,17 @@ export interface StructureMapArgs extends fhir.DomainResourceArgs {
    */
   purpose?: fhir.FhirMarkdown|string|undefined;
   /**
+   * Extended properties for primitive element: StructureMap.purpose
+   */
+  _purpose?:fhir.FhirElementArgs;
+  /**
    * A copyright statement relating to the structure map and/or its contents. Copyright statements are generally legal restrictions on the use and publishing of the structure map.
    */
   copyright?: fhir.FhirMarkdown|string|undefined;
+  /**
+   * Extended properties for primitive element: StructureMap.copyright
+   */
+  _copyright?:fhir.FhirElementArgs;
   /**
    * It is not necessary for a structure map to identify any dependent structures, though not listing them may restrict its usefulness.
    */
@@ -1184,6 +1496,10 @@ export interface StructureMapArgs extends fhir.DomainResourceArgs {
    * Other maps used by this map (canonical URLs).
    */
   import?: fhir.FhirCanonical[]|string[]|undefined;
+  /**
+   * Extended properties for primitive element: StructureMap.import
+   */
+  _import?:(fhir.FhirElementArgs|null)[];
   /**
    * Organizes the mapping into manageable chunks for human review/ease of maintenance.
    */
@@ -1284,30 +1600,80 @@ export class StructureMap extends fhir.DomainResource {
     this.resourceType = 'StructureMap';
     if (source['url']) { this.url = new fhir.FhirUri({value: source.url}); }
     else { this.url = null; }
+    if (source['_url']) {
+      if (this.url) { this.url.addExtendedProperties(source._url!); }
+      else { this.url = new fhir.FhirUri(source._url as Partial<fhir.FhirUriArgs>); }
+    }
     if (source['identifier']) { this.identifier = source.identifier.map((x) => new fhir.Identifier(x)); }
     else { this.identifier = []; }
     if (source['version']) { this.version = new fhir.FhirString({value: source.version}); }
+    if (source['_version']) {
+      if (this.version) { this.version.addExtendedProperties(source._version!); }
+      else { this.version = new fhir.FhirString(source._version as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['name']) { this.name = new fhir.FhirString({value: source.name}); }
     else { this.name = null; }
+    if (source['_name']) {
+      if (this.name) { this.name.addExtendedProperties(source._name!); }
+      else { this.name = new fhir.FhirString(source._name as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['title']) { this.title = new fhir.FhirString({value: source.title}); }
+    if (source['_title']) {
+      if (this.title) { this.title.addExtendedProperties(source._title!); }
+      else { this.title = new fhir.FhirString(source._title as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['status']) { this.status = new fhir.FhirCode<PublicationStatusCodeType>({value: source.status}); }
     else { this.status = null; }
+    if (source['_status']) {
+      if (this.status) { this.status.addExtendedProperties(source._status!); }
+      else { this.status = new fhir.FhirCode<PublicationStatusCodeType>(source._status as Partial<fhir.FhirCode>); }
+    }
     if (source['experimental']) { this.experimental = new fhir.FhirBoolean({value: source.experimental}); }
+    if (source['_experimental']) {
+      if (this.experimental) { this.experimental.addExtendedProperties(source._experimental!); }
+      else { this.experimental = new fhir.FhirBoolean(source._experimental as Partial<fhir.FhirBooleanArgs>); }
+    }
     if (source['date']) { this.date = new fhir.FhirDateTime({value: source.date}); }
+    if (source['_date']) {
+      if (this.date) { this.date.addExtendedProperties(source._date!); }
+      else { this.date = new fhir.FhirDateTime(source._date as Partial<fhir.FhirDateTimeArgs>); }
+    }
     if (source['publisher']) { this.publisher = new fhir.FhirString({value: source.publisher}); }
+    if (source['_publisher']) {
+      if (this.publisher) { this.publisher.addExtendedProperties(source._publisher!); }
+      else { this.publisher = new fhir.FhirString(source._publisher as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['contact']) { this.contact = source.contact.map((x) => new fhir.ContactDetail(x)); }
     else { this.contact = []; }
     if (source['description']) { this.description = new fhir.FhirMarkdown({value: source.description}); }
+    if (source['_description']) {
+      if (this.description) { this.description.addExtendedProperties(source._description!); }
+      else { this.description = new fhir.FhirMarkdown(source._description as Partial<fhir.FhirMarkdownArgs>); }
+    }
     if (source['useContext']) { this.useContext = source.useContext.map((x) => new fhir.UsageContext(x)); }
     else { this.useContext = []; }
     if (source['jurisdiction']) { this.jurisdiction = source.jurisdiction.map((x) => new fhir.CodeableConcept(x)); }
     else { this.jurisdiction = []; }
     if (source['purpose']) { this.purpose = new fhir.FhirMarkdown({value: source.purpose}); }
+    if (source['_purpose']) {
+      if (this.purpose) { this.purpose.addExtendedProperties(source._purpose!); }
+      else { this.purpose = new fhir.FhirMarkdown(source._purpose as Partial<fhir.FhirMarkdownArgs>); }
+    }
     if (source['copyright']) { this.copyright = new fhir.FhirMarkdown({value: source.copyright}); }
+    if (source['_copyright']) {
+      if (this.copyright) { this.copyright.addExtendedProperties(source._copyright!); }
+      else { this.copyright = new fhir.FhirMarkdown(source._copyright as Partial<fhir.FhirMarkdownArgs>); }
+    }
     if (source['structure']) { this.structure = source.structure.map((x) => new fhir.StructureMapStructure(x)); }
     else { this.structure = []; }
     if (source['import']) { this.import = source.import.map((x) => new fhir.FhirCanonical({value: x})); }
     else { this.import = []; }
+    if (source['_import']) {
+      source._import.forEach((x,i) => {
+        if (this.import.length >= i) { if (x) { this.import[i].addExtendedProperties(x); } }
+        else { if (x) { this.import.push(new fhir.FhirCanonical(x as Partial<fhir.FhirCanonicalArgs>)); } }
+      });
+    }
     if (source['group']) { this.group = source.group.map((x) => new fhir.StructureMapGroup(x)); }
     else { this.group = []; }
   }

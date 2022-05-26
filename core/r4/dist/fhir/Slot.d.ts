@@ -39,21 +39,41 @@ export interface SlotArgs extends fhir.DomainResourceArgs {
      */
     status: fhir.FhirCode<SlotstatusCodeType> | string | undefined;
     /**
+     * Extended properties for primitive element: Slot.status
+     */
+    _status?: fhir.FhirElementArgs;
+    /**
      * Date/Time that the slot is to begin.
      */
     start: fhir.FhirInstant | string | undefined;
+    /**
+     * Extended properties for primitive element: Slot.start
+     */
+    _start?: fhir.FhirElementArgs;
     /**
      * Date/Time that the slot is to conclude.
      */
     end: fhir.FhirInstant | string | undefined;
     /**
+     * Extended properties for primitive element: Slot.end
+     */
+    _end?: fhir.FhirElementArgs;
+    /**
      * This slot has already been overbooked, appointments are unlikely to be accepted for this time.
      */
     overbooked?: fhir.FhirBoolean | boolean | undefined;
     /**
+     * Extended properties for primitive element: Slot.overbooked
+     */
+    _overbooked?: fhir.FhirElementArgs;
+    /**
      * Comments on the slot to describe any extended information. Such as custom constraints on the slot.
      */
     comment?: fhir.FhirString | string | undefined;
+    /**
+     * Extended properties for primitive element: Slot.comment
+     */
+    _comment?: fhir.FhirElementArgs;
 }
 /**
  * A slot of time on a schedule that may be available for booking appointments.

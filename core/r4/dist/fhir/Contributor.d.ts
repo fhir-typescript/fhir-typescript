@@ -9,9 +9,17 @@ export interface ContributorArgs extends fhir.FhirElementArgs {
      */
     type: fhir.FhirCode<ContributorTypeCodeType> | string | undefined;
     /**
+     * Extended properties for primitive element: Contributor.type
+     */
+    _type?: fhir.FhirElementArgs;
+    /**
      * The name of the individual or organization responsible for the contribution.
      */
     name: fhir.FhirString | string | undefined;
+    /**
+     * Extended properties for primitive element: Contributor.name
+     */
+    _name?: fhir.FhirElementArgs;
     /**
      * Contact details to assist a user in finding and communicating with the contributor.
      */

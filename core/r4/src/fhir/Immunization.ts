@@ -22,9 +22,9 @@ import { ImmunizationStatusReasonCodings, ImmunizationStatusReasonCodingType,} f
 // @ts-ignore
 import { ImmunizationStatusReasonCodes,  ImmunizationStatusReasonCodeType } from '../fhirValueSets/ImmunizationStatusReasonCodes.js';
 // @ts-ignore
-import { VaccineCodeCodings, VaccineCodeCodingType,} from '../fhirValueSets/VaccineCodeCodings.js';
+import { VaccineCodings, VaccineCodingType,} from '../fhirValueSets/VaccineCodings.js';
 // @ts-ignore
-import { VaccineCodeCodes,  VaccineCodeCodeType } from '../fhirValueSets/VaccineCodeCodes.js';
+import { VaccineCodes,  VaccineCodeType } from '../fhirValueSets/VaccineCodes.js';
 // @ts-ignore
 import { ImmunizationOriginCodings, ImmunizationOriginCodingType,} from '../fhirValueSets/ImmunizationOriginCodings.js';
 // @ts-ignore
@@ -120,17 +120,33 @@ export interface ImmunizationEducationArgs extends fhir.BackboneElementArgs {
    */
   documentType?: fhir.FhirString|string|undefined;
   /**
+   * Extended properties for primitive element: Immunization.education.documentType
+   */
+  _documentType?:fhir.FhirElementArgs;
+  /**
    * Reference pointer to the educational material given to the patient if the information was on line.
    */
   reference?: fhir.FhirUri|string|undefined;
+  /**
+   * Extended properties for primitive element: Immunization.education.reference
+   */
+  _reference?:fhir.FhirElementArgs;
   /**
    * Date the educational material was published.
    */
   publicationDate?: fhir.FhirDateTime|string|undefined;
   /**
+   * Extended properties for primitive element: Immunization.education.publicationDate
+   */
+  _publicationDate?:fhir.FhirElementArgs;
+  /**
    * Date the educational material was given to the patient.
    */
   presentationDate?: fhir.FhirDateTime|string|undefined;
+  /**
+   * Extended properties for primitive element: Immunization.education.presentationDate
+   */
+  _presentationDate?:fhir.FhirElementArgs;
 }
 
 /**
@@ -163,9 +179,25 @@ export class ImmunizationEducation extends fhir.BackboneElement {
   constructor(source:Partial<ImmunizationEducationArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
     if (source['documentType']) { this.documentType = new fhir.FhirString({value: source.documentType}); }
+    if (source['_documentType']) {
+      if (this.documentType) { this.documentType.addExtendedProperties(source._documentType!); }
+      else { this.documentType = new fhir.FhirString(source._documentType as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['reference']) { this.reference = new fhir.FhirUri({value: source.reference}); }
+    if (source['_reference']) {
+      if (this.reference) { this.reference.addExtendedProperties(source._reference!); }
+      else { this.reference = new fhir.FhirUri(source._reference as Partial<fhir.FhirUriArgs>); }
+    }
     if (source['publicationDate']) { this.publicationDate = new fhir.FhirDateTime({value: source.publicationDate}); }
+    if (source['_publicationDate']) {
+      if (this.publicationDate) { this.publicationDate.addExtendedProperties(source._publicationDate!); }
+      else { this.publicationDate = new fhir.FhirDateTime(source._publicationDate as Partial<fhir.FhirDateTimeArgs>); }
+    }
     if (source['presentationDate']) { this.presentationDate = new fhir.FhirDateTime({value: source.presentationDate}); }
+    if (source['_presentationDate']) {
+      if (this.presentationDate) { this.presentationDate.addExtendedProperties(source._presentationDate!); }
+      else { this.presentationDate = new fhir.FhirDateTime(source._presentationDate as Partial<fhir.FhirDateTimeArgs>); }
+    }
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -188,6 +220,10 @@ export interface ImmunizationReactionArgs extends fhir.BackboneElementArgs {
    */
   date?: fhir.FhirDateTime|string|undefined;
   /**
+   * Extended properties for primitive element: Immunization.reaction.date
+   */
+  _date?:fhir.FhirElementArgs;
+  /**
    * Details of the reaction.
    */
   detail?: fhir.ReferenceArgs|undefined;
@@ -195,6 +231,10 @@ export interface ImmunizationReactionArgs extends fhir.BackboneElementArgs {
    * Self-reported indicator.
    */
   reported?: fhir.FhirBoolean|boolean|undefined;
+  /**
+   * Extended properties for primitive element: Immunization.reaction.reported
+   */
+  _reported?:fhir.FhirElementArgs;
 }
 
 /**
@@ -223,8 +263,16 @@ export class ImmunizationReaction extends fhir.BackboneElement {
   constructor(source:Partial<ImmunizationReactionArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
     if (source['date']) { this.date = new fhir.FhirDateTime({value: source.date}); }
+    if (source['_date']) {
+      if (this.date) { this.date.addExtendedProperties(source._date!); }
+      else { this.date = new fhir.FhirDateTime(source._date as Partial<fhir.FhirDateTimeArgs>); }
+    }
     if (source['detail']) { this.detail = new fhir.Reference(source.detail); }
     if (source['reported']) { this.reported = new fhir.FhirBoolean({value: source.reported}); }
+    if (source['_reported']) {
+      if (this.reported) { this.reported.addExtendedProperties(source._reported!); }
+      else { this.reported = new fhir.FhirBoolean(source._reported as Partial<fhir.FhirBooleanArgs>); }
+    }
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -245,6 +293,10 @@ export interface ImmunizationProtocolAppliedArgs extends fhir.BackboneElementArg
    * One possible path to achieve presumed immunity against a disease - within the context of an authority.
    */
   series?: fhir.FhirString|string|undefined;
+  /**
+   * Extended properties for primitive element: Immunization.protocolApplied.series
+   */
+  _series?:fhir.FhirElementArgs;
   /**
    * Indicates the authority who published the protocol (e.g. ACIP) that is being followed.
    */
@@ -321,6 +373,10 @@ export class ImmunizationProtocolApplied extends fhir.BackboneElement {
   constructor(source:Partial<ImmunizationProtocolAppliedArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
     if (source['series']) { this.series = new fhir.FhirString({value: source.series}); }
+    if (source['_series']) {
+      if (this.series) { this.series.addExtendedProperties(source._series!); }
+      else { this.series = new fhir.FhirString(source._series as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['authority']) { this.authority = new fhir.Reference(source.authority); }
     if (source['targetDisease']) { this.targetDisease = source.targetDisease.map((x) => new fhir.CodeableConcept(x)); }
     else { this.targetDisease = []; }
@@ -363,6 +419,10 @@ export interface ImmunizationArgs extends fhir.DomainResourceArgs {
    */
   status: fhir.FhirCode<ImmunizationStatusCodeType>|string|undefined;
   /**
+   * Extended properties for primitive element: Immunization.status
+   */
+  _status?:fhir.FhirElementArgs;
+  /**
    * This is generally only used for the status of "not-done". The reason for performing the immunization event is captured in reasonCode, not here.
    */
   statusReason?: fhir.CodeableConceptArgs|undefined;
@@ -395,9 +455,17 @@ export interface ImmunizationArgs extends fhir.DomainResourceArgs {
    */
   recorded?: fhir.FhirDateTime|string|undefined;
   /**
+   * Extended properties for primitive element: Immunization.recorded
+   */
+  _recorded?:fhir.FhirElementArgs;
+  /**
    * Reflects the “reliability” of the content.
    */
   primarySource?: fhir.FhirBoolean|boolean|undefined;
+  /**
+   * Extended properties for primitive element: Immunization.primarySource
+   */
+  _primarySource?:fhir.FhirElementArgs;
   /**
    * Should not be populated if primarySource = True, not required even if primarySource = False.
    */
@@ -415,9 +483,17 @@ export interface ImmunizationArgs extends fhir.DomainResourceArgs {
    */
   lotNumber?: fhir.FhirString|string|undefined;
   /**
+   * Extended properties for primitive element: Immunization.lotNumber
+   */
+  _lotNumber?:fhir.FhirElementArgs;
+  /**
    * Date vaccine batch expires.
    */
   expirationDate?: fhir.FhirDate|string|undefined;
+  /**
+   * Extended properties for primitive element: Immunization.expirationDate
+   */
+  _expirationDate?:fhir.FhirElementArgs;
   /**
    * Body site where vaccine was administered.
    */
@@ -450,6 +526,10 @@ export interface ImmunizationArgs extends fhir.DomainResourceArgs {
    * Typically, the recognition of the dose being sub-potent is retrospective, after the administration (ex. notification of a manufacturer recall after administration). However, in the case of a partial administration (the patient moves unexpectedly and only some of the dose is actually administered), subpotency may be recognized immediately, but it is still important to record the event.
    */
   isSubpotent?: fhir.FhirBoolean|boolean|undefined;
+  /**
+   * Extended properties for primitive element: Immunization.isSubpotent
+   */
+  _isSubpotent?:fhir.FhirElementArgs;
   /**
    * Reason why a dose is considered to be subpotent.
    */
@@ -614,6 +694,10 @@ export class Immunization extends fhir.DomainResource {
     else { this.identifier = []; }
     if (source['status']) { this.status = new fhir.FhirCode<ImmunizationStatusCodeType>({value: source.status}); }
     else { this.status = null; }
+    if (source['_status']) {
+      if (this.status) { this.status.addExtendedProperties(source._status!); }
+      else { this.status = new fhir.FhirCode<ImmunizationStatusCodeType>(source._status as Partial<fhir.FhirCode>); }
+    }
     if (source['statusReason']) { this.statusReason = new fhir.CodeableConcept(source.statusReason); }
     if (source['vaccineCode']) { this.vaccineCode = new fhir.CodeableConcept(source.vaccineCode); }
     else { this.vaccineCode = null; }
@@ -625,12 +709,28 @@ export class Immunization extends fhir.DomainResource {
     else if (source['occurrenceString']) { this.occurrence = new fhir.FhirString({value: source.occurrenceString}); }
     else { this.occurrence = null; }
     if (source['recorded']) { this.recorded = new fhir.FhirDateTime({value: source.recorded}); }
+    if (source['_recorded']) {
+      if (this.recorded) { this.recorded.addExtendedProperties(source._recorded!); }
+      else { this.recorded = new fhir.FhirDateTime(source._recorded as Partial<fhir.FhirDateTimeArgs>); }
+    }
     if (source['primarySource']) { this.primarySource = new fhir.FhirBoolean({value: source.primarySource}); }
+    if (source['_primarySource']) {
+      if (this.primarySource) { this.primarySource.addExtendedProperties(source._primarySource!); }
+      else { this.primarySource = new fhir.FhirBoolean(source._primarySource as Partial<fhir.FhirBooleanArgs>); }
+    }
     if (source['reportOrigin']) { this.reportOrigin = new fhir.CodeableConcept(source.reportOrigin); }
     if (source['location']) { this.location = new fhir.Reference(source.location); }
     if (source['manufacturer']) { this.manufacturer = new fhir.Reference(source.manufacturer); }
     if (source['lotNumber']) { this.lotNumber = new fhir.FhirString({value: source.lotNumber}); }
+    if (source['_lotNumber']) {
+      if (this.lotNumber) { this.lotNumber.addExtendedProperties(source._lotNumber!); }
+      else { this.lotNumber = new fhir.FhirString(source._lotNumber as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['expirationDate']) { this.expirationDate = new fhir.FhirDate({value: source.expirationDate}); }
+    if (source['_expirationDate']) {
+      if (this.expirationDate) { this.expirationDate.addExtendedProperties(source._expirationDate!); }
+      else { this.expirationDate = new fhir.FhirDate(source._expirationDate as Partial<fhir.FhirDateArgs>); }
+    }
     if (source['site']) { this.site = new fhir.CodeableConcept(source.site); }
     if (source['route']) { this.route = new fhir.CodeableConcept(source.route); }
     if (source['doseQuantity']) { this.doseQuantity = new fhir.Quantity(source.doseQuantity); }
@@ -643,6 +743,10 @@ export class Immunization extends fhir.DomainResource {
     if (source['reasonReference']) { this.reasonReference = source.reasonReference.map((x) => new fhir.Reference(x)); }
     else { this.reasonReference = []; }
     if (source['isSubpotent']) { this.isSubpotent = new fhir.FhirBoolean({value: source.isSubpotent}); }
+    if (source['_isSubpotent']) {
+      if (this.isSubpotent) { this.isSubpotent.addExtendedProperties(source._isSubpotent!); }
+      else { this.isSubpotent = new fhir.FhirBoolean(source._isSubpotent as Partial<fhir.FhirBooleanArgs>); }
+    }
     if (source['subpotentReason']) { this.subpotentReason = source.subpotentReason.map((x) => new fhir.CodeableConcept(x)); }
     else { this.subpotentReason = []; }
     if (source['education']) { this.education = source.education.map((x) => new fhir.ImmunizationEducation(x)); }

@@ -29,6 +29,10 @@ export interface RelatedPersonCommunicationArgs extends fhir.BackboneElementArgs
    * This language is specifically identified for communicating healthcare information.
    */
   preferred?: fhir.FhirBoolean|boolean|undefined;
+  /**
+   * Extended properties for primitive element: RelatedPerson.communication.preferred
+   */
+  _preferred?:fhir.FhirElementArgs;
 }
 
 /**
@@ -55,6 +59,10 @@ export class RelatedPersonCommunication extends fhir.BackboneElement {
     if (source['language']) { this.language = new fhir.CodeableConcept(source.language); }
     else { this.language = null; }
     if (source['preferred']) { this.preferred = new fhir.FhirBoolean({value: source.preferred}); }
+    if (source['_preferred']) {
+      if (this.preferred) { this.preferred.addExtendedProperties(source._preferred!); }
+      else { this.preferred = new fhir.FhirBoolean(source._preferred as Partial<fhir.FhirBooleanArgs>); }
+    }
   }
   /**
    * Preferred-bound Value Set for language (RelatedPerson.communication.language)
@@ -92,6 +100,10 @@ export interface RelatedPersonArgs extends fhir.DomainResourceArgs {
    */
   active?: fhir.FhirBoolean|boolean|undefined;
   /**
+   * Extended properties for primitive element: RelatedPerson.active
+   */
+  _active?:fhir.FhirElementArgs;
+  /**
    * The patient this person is related to.
    */
   patient: fhir.ReferenceArgs|null;
@@ -112,9 +124,17 @@ export interface RelatedPersonArgs extends fhir.DomainResourceArgs {
    */
   gender?: fhir.FhirCode<AdministrativeGenderCodeType>|string|undefined;
   /**
+   * Extended properties for primitive element: RelatedPerson.gender
+   */
+  _gender?:fhir.FhirElementArgs;
+  /**
    * The date on which the related person was born.
    */
   birthDate?: fhir.FhirDate|string|undefined;
+  /**
+   * Extended properties for primitive element: RelatedPerson.birthDate
+   */
+  _birthDate?:fhir.FhirElementArgs;
   /**
    * Address where the related person can be contacted or visited.
    */
@@ -202,6 +222,10 @@ export class RelatedPerson extends fhir.DomainResource {
     if (source['identifier']) { this.identifier = source.identifier.map((x) => new fhir.Identifier(x)); }
     else { this.identifier = []; }
     if (source['active']) { this.active = new fhir.FhirBoolean({value: source.active}); }
+    if (source['_active']) {
+      if (this.active) { this.active.addExtendedProperties(source._active!); }
+      else { this.active = new fhir.FhirBoolean(source._active as Partial<fhir.FhirBooleanArgs>); }
+    }
     if (source['patient']) { this.patient = new fhir.Reference(source.patient); }
     else { this.patient = null; }
     if (source['relationship']) { this.relationship = source.relationship.map((x) => new fhir.CodeableConcept(x)); }
@@ -211,7 +235,15 @@ export class RelatedPerson extends fhir.DomainResource {
     if (source['telecom']) { this.telecom = source.telecom.map((x) => new fhir.ContactPoint(x)); }
     else { this.telecom = []; }
     if (source['gender']) { this.gender = new fhir.FhirCode<AdministrativeGenderCodeType>({value: source.gender}); }
+    if (source['_gender']) {
+      if (this.gender) { this.gender.addExtendedProperties(source._gender!); }
+      else { this.gender = new fhir.FhirCode<AdministrativeGenderCodeType>(source._gender as Partial<fhir.FhirCode>); }
+    }
     if (source['birthDate']) { this.birthDate = new fhir.FhirDate({value: source.birthDate}); }
+    if (source['_birthDate']) {
+      if (this.birthDate) { this.birthDate.addExtendedProperties(source._birthDate!); }
+      else { this.birthDate = new fhir.FhirDate(source._birthDate as Partial<fhir.FhirDateArgs>); }
+    }
     if (source['address']) { this.address = source.address.map((x) => new fhir.Address(x)); }
     else { this.address = []; }
     if (source['photo']) { this.photo = source.photo.map((x) => new fhir.Attachment(x)); }

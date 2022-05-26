@@ -50,9 +50,9 @@ import { ExProcedureTypeCodings, ExProcedureTypeCodingType,} from '../fhirValueS
 // @ts-ignore
 import { ExProcedureTypeCodes,  ExProcedureTypeCodeType } from '../fhirValueSets/ExProcedureTypeCodes.js';
 // @ts-ignore
-import { V3ActIncidentCodeCodings, V3ActIncidentCodeCodingType,} from '../fhirValueSets/V3ActIncidentCodeCodings.js';
+import { V3ActIncidentCodings, V3ActIncidentCodingType,} from '../fhirValueSets/V3ActIncidentCodings.js';
 // @ts-ignore
-import { V3ActIncidentCodeCodes,  V3ActIncidentCodeCodeType } from '../fhirValueSets/V3ActIncidentCodeCodes.js';
+import { V3ActIncidentCodes,  V3ActIncidentCodeType } from '../fhirValueSets/V3ActIncidentCodes.js';
 // @ts-ignore
 import { AdjudicationCodings, AdjudicationCodingType,} from '../fhirValueSets/AdjudicationCodings.js';
 // @ts-ignore
@@ -78,9 +78,9 @@ import { ClaimModifiersCodings, ClaimModifiersCodingType,} from '../fhirValueSet
 // @ts-ignore
 import { ClaimModifiersCodes,  ClaimModifiersCodeType } from '../fhirValueSets/ClaimModifiersCodes.js';
 // @ts-ignore
-import { ExProgramCodeCodings, ExProgramCodeCodingType,} from '../fhirValueSets/ExProgramCodeCodings.js';
+import { ExProgramCodings, ExProgramCodingType,} from '../fhirValueSets/ExProgramCodings.js';
 // @ts-ignore
-import { ExProgramCodeCodes,  ExProgramCodeCodeType } from '../fhirValueSets/ExProgramCodeCodes.js';
+import { ExProgramCodes,  ExProgramCodeType } from '../fhirValueSets/ExProgramCodes.js';
 // @ts-ignore
 import { ToothCodings, ToothCodingType,} from '../fhirValueSets/ToothCodings.js';
 // @ts-ignore
@@ -264,6 +264,10 @@ export interface ExplanationOfBenefitCareTeamArgs extends fhir.BackboneElementAr
    */
   sequence: fhir.FhirPositiveInt|number|undefined;
   /**
+   * Extended properties for primitive element: ExplanationOfBenefit.careTeam.sequence
+   */
+  _sequence?:fhir.FhirElementArgs;
+  /**
    * Member of the team who provided the product or service.
    */
   provider: fhir.ReferenceArgs|null;
@@ -271,6 +275,10 @@ export interface ExplanationOfBenefitCareTeamArgs extends fhir.BackboneElementAr
    * Responsible might not be required when there is only a single provider listed.
    */
   responsible?: fhir.FhirBoolean|boolean|undefined;
+  /**
+   * Extended properties for primitive element: ExplanationOfBenefit.careTeam.responsible
+   */
+  _responsible?:fhir.FhirElementArgs;
   /**
    * Role might not be required when there is only a single provider listed.
    */
@@ -316,9 +324,17 @@ export class ExplanationOfBenefitCareTeam extends fhir.BackboneElement {
     super(source, options);
     if (source['sequence']) { this.sequence = new fhir.FhirPositiveInt({value: source.sequence}); }
     else { this.sequence = null; }
+    if (source['_sequence']) {
+      if (this.sequence) { this.sequence.addExtendedProperties(source._sequence!); }
+      else { this.sequence = new fhir.FhirPositiveInt(source._sequence as Partial<fhir.FhirPositiveIntArgs>); }
+    }
     if (source['provider']) { this.provider = new fhir.Reference(source.provider); }
     else { this.provider = null; }
     if (source['responsible']) { this.responsible = new fhir.FhirBoolean({value: source.responsible}); }
+    if (source['_responsible']) {
+      if (this.responsible) { this.responsible.addExtendedProperties(source._responsible!); }
+      else { this.responsible = new fhir.FhirBoolean(source._responsible as Partial<fhir.FhirBooleanArgs>); }
+    }
     if (source['role']) { this.role = new fhir.CodeableConcept(source.role); }
     if (source['qualification']) { this.qualification = new fhir.CodeableConcept(source.qualification); }
   }
@@ -349,6 +365,10 @@ export interface ExplanationOfBenefitSupportingInfoArgs extends fhir.BackboneEle
    * A number to uniquely identify supporting information entries.
    */
   sequence: fhir.FhirPositiveInt|number|undefined;
+  /**
+   * Extended properties for primitive element: ExplanationOfBenefit.supportingInfo.sequence
+   */
+  _sequence?:fhir.FhirElementArgs;
   /**
    * This may contain a category for the local bill type codes.
    */
@@ -446,6 +466,10 @@ export class ExplanationOfBenefitSupportingInfo extends fhir.BackboneElement {
     super(source, options);
     if (source['sequence']) { this.sequence = new fhir.FhirPositiveInt({value: source.sequence}); }
     else { this.sequence = null; }
+    if (source['_sequence']) {
+      if (this.sequence) { this.sequence.addExtendedProperties(source._sequence!); }
+      else { this.sequence = new fhir.FhirPositiveInt(source._sequence as Partial<fhir.FhirPositiveIntArgs>); }
+    }
     if (source['category']) { this.category = new fhir.CodeableConcept(source.category); }
     else { this.category = null; }
     if (source['code']) { this.code = new fhir.CodeableConcept(source.code); }
@@ -486,6 +510,10 @@ export interface ExplanationOfBenefitDiagnosisArgs extends fhir.BackboneElementA
    * Diagnosis are presented in list order to their expected importance: primary, secondary, etc.
    */
   sequence: fhir.FhirPositiveInt|number|undefined;
+  /**
+   * Extended properties for primitive element: ExplanationOfBenefit.diagnosis.sequence
+   */
+  _sequence?:fhir.FhirElementArgs;
   /**
    * The nature of illness or problem in a coded form or as a reference to an external defined Condition.
    */
@@ -551,6 +579,10 @@ export class ExplanationOfBenefitDiagnosis extends fhir.BackboneElement {
     super(source, options);
     if (source['sequence']) { this.sequence = new fhir.FhirPositiveInt({value: source.sequence}); }
     else { this.sequence = null; }
+    if (source['_sequence']) {
+      if (this.sequence) { this.sequence.addExtendedProperties(source._sequence!); }
+      else { this.sequence = new fhir.FhirPositiveInt(source._sequence as Partial<fhir.FhirPositiveIntArgs>); }
+    }
     if (source['diagnosis']) { this.diagnosis = source.diagnosis; }
     else if (source['diagnosisCodeableConcept']) { this.diagnosis = new fhir.CodeableConcept(source.diagnosisCodeableConcept); }
     else if (source['diagnosisReference']) { this.diagnosis = new fhir.Reference(source.diagnosisReference); }
@@ -587,6 +619,10 @@ export interface ExplanationOfBenefitProcedureArgs extends fhir.BackboneElementA
    */
   sequence: fhir.FhirPositiveInt|number|undefined;
   /**
+   * Extended properties for primitive element: ExplanationOfBenefit.procedure.sequence
+   */
+  _sequence?:fhir.FhirElementArgs;
+  /**
    * When the condition was observed or the relative ranking.
    */
   type?: fhir.CodeableConceptArgs[]|undefined;
@@ -594,6 +630,10 @@ export interface ExplanationOfBenefitProcedureArgs extends fhir.BackboneElementA
    * Date and optionally time the procedure was performed.
    */
   date?: fhir.FhirDateTime|string|undefined;
+  /**
+   * Extended properties for primitive element: ExplanationOfBenefit.procedure.date
+   */
+  _date?:fhir.FhirElementArgs;
   /**
    * The code or reference to a Procedure resource which identifies the clinical intervention performed.
    */
@@ -651,9 +691,17 @@ export class ExplanationOfBenefitProcedure extends fhir.BackboneElement {
     super(source, options);
     if (source['sequence']) { this.sequence = new fhir.FhirPositiveInt({value: source.sequence}); }
     else { this.sequence = null; }
+    if (source['_sequence']) {
+      if (this.sequence) { this.sequence.addExtendedProperties(source._sequence!); }
+      else { this.sequence = new fhir.FhirPositiveInt(source._sequence as Partial<fhir.FhirPositiveIntArgs>); }
+    }
     if (source['type']) { this.type = source.type.map((x) => new fhir.CodeableConcept(x)); }
     else { this.type = []; }
     if (source['date']) { this.date = new fhir.FhirDateTime({value: source.date}); }
+    if (source['_date']) {
+      if (this.date) { this.date.addExtendedProperties(source._date!); }
+      else { this.date = new fhir.FhirDateTime(source._date as Partial<fhir.FhirDateTimeArgs>); }
+    }
     if (source['procedure']) { this.procedure = source.procedure; }
     else if (source['procedureCodeableConcept']) { this.procedure = new fhir.CodeableConcept(source.procedureCodeableConcept); }
     else if (source['procedureReference']) { this.procedure = new fhir.Reference(source.procedureReference); }
@@ -688,6 +736,10 @@ export interface ExplanationOfBenefitInsuranceArgs extends fhir.BackboneElementA
    */
   focal: fhir.FhirBoolean|boolean|undefined;
   /**
+   * Extended properties for primitive element: ExplanationOfBenefit.insurance.focal
+   */
+  _focal?:fhir.FhirElementArgs;
+  /**
    * Reference to the insurance card level information contained in the Coverage resource. The coverage issuing insurer will use these details to locate the patient's actual coverage within the insurer's information system.
    */
   coverage: fhir.ReferenceArgs|null;
@@ -695,6 +747,10 @@ export interface ExplanationOfBenefitInsuranceArgs extends fhir.BackboneElementA
    * This value is an alphanumeric string that may be provided over the phone, via text, via paper, or within a ClaimResponse resource and is not a FHIR Identifier.
    */
   preAuthRef?: fhir.FhirString[]|string[]|undefined;
+  /**
+   * Extended properties for primitive element: ExplanationOfBenefit.insurance.preAuthRef
+   */
+  _preAuthRef?:(fhir.FhirElementArgs|null)[];
 }
 
 /**
@@ -724,10 +780,20 @@ export class ExplanationOfBenefitInsurance extends fhir.BackboneElement {
     super(source, options);
     if (source['focal']) { this.focal = new fhir.FhirBoolean({value: source.focal}); }
     else { this.focal = null; }
+    if (source['_focal']) {
+      if (this.focal) { this.focal.addExtendedProperties(source._focal!); }
+      else { this.focal = new fhir.FhirBoolean(source._focal as Partial<fhir.FhirBooleanArgs>); }
+    }
     if (source['coverage']) { this.coverage = new fhir.Reference(source.coverage); }
     else { this.coverage = null; }
     if (source['preAuthRef']) { this.preAuthRef = source.preAuthRef.map((x) => new fhir.FhirString({value: x})); }
     else { this.preAuthRef = []; }
+    if (source['_preAuthRef']) {
+      source._preAuthRef.forEach((x,i) => {
+        if (this.preAuthRef.length >= i) { if (x) { this.preAuthRef[i].addExtendedProperties(x); } }
+        else { if (x) { this.preAuthRef.push(new fhir.FhirString(x as Partial<fhir.FhirStringArgs>)); } }
+      });
+    }
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -754,6 +820,10 @@ export interface ExplanationOfBenefitAccidentArgs extends fhir.BackboneElementAr
    * The date of the accident has to precede the dates of the products and services but within a reasonable timeframe.
    */
   date?: fhir.FhirDate|string|undefined;
+  /**
+   * Extended properties for primitive element: ExplanationOfBenefit.accident.date
+   */
+  _date?:fhir.FhirElementArgs;
   /**
    * The type or context of the accident event for the purposes of selection of potential insurance coverages and determination of coordination between insurers.
    */
@@ -802,6 +872,10 @@ export class ExplanationOfBenefitAccident extends fhir.BackboneElement {
   constructor(source:Partial<ExplanationOfBenefitAccidentArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
     if (source['date']) { this.date = new fhir.FhirDate({value: source.date}); }
+    if (source['_date']) {
+      if (this.date) { this.date.addExtendedProperties(source._date!); }
+      else { this.date = new fhir.FhirDate(source._date as Partial<fhir.FhirDateArgs>); }
+    }
     if (source['type']) { this.type = new fhir.CodeableConcept(source.type); }
     if (source['location']) { this.location = source.location; }
     else if (source['locationAddress']) { this.location = new fhir.Address(source.locationAddress); }
@@ -810,8 +884,8 @@ export class ExplanationOfBenefitAccident extends fhir.BackboneElement {
   /**
    * Extensible-bound Value Set for type (ExplanationOfBenefit.accident.type)
    */
-  public static get typeExtensibleCodings():V3ActIncidentCodeCodingType {
-    return V3ActIncidentCodeCodings;
+  public static get typeExtensibleCodings():V3ActIncidentCodingType {
+    return V3ActIncidentCodings;
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -843,6 +917,10 @@ export interface ExplanationOfBenefitItemAdjudicationArgs extends fhir.BackboneE
    * For example: eligible percentage or co-payment percentage.
    */
   value?: fhir.FhirDecimal|number|undefined;
+  /**
+   * Extended properties for primitive element: ExplanationOfBenefit.item.adjudication.value
+   */
+  _value?:fhir.FhirElementArgs;
 }
 
 /**
@@ -879,6 +957,10 @@ export class ExplanationOfBenefitItemAdjudication extends fhir.BackboneElement {
     if (source['reason']) { this.reason = new fhir.CodeableConcept(source.reason); }
     if (source['amount']) { this.amount = new fhir.Money(source.amount); }
     if (source['value']) { this.value = new fhir.FhirDecimal({value: source.value}); }
+    if (source['_value']) {
+      if (this.value) { this.value.addExtendedProperties(source._value!); }
+      else { this.value = new fhir.FhirDecimal(source._value as Partial<fhir.FhirDecimalArgs>); }
+    }
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -903,6 +985,10 @@ export interface ExplanationOfBenefitItemDetailSubDetailArgs extends fhir.Backbo
    * A claim detail line. Either a simple (a product or service) or a 'group' of sub-details which are simple items.
    */
   sequence: fhir.FhirPositiveInt|number|undefined;
+  /**
+   * Extended properties for primitive element: ExplanationOfBenefit.item.detail.subDetail.sequence
+   */
+  _sequence?:fhir.FhirElementArgs;
   /**
    * The type of revenue or cost center providing the product and/or service.
    */
@@ -936,6 +1022,10 @@ export interface ExplanationOfBenefitItemDetailSubDetailArgs extends fhir.Backbo
    */
   factor?: fhir.FhirDecimal|number|undefined;
   /**
+   * Extended properties for primitive element: ExplanationOfBenefit.item.detail.subDetail.factor
+   */
+  _factor?:fhir.FhirElementArgs;
+  /**
    * For example, the formula: quantity * unitPrice * factor  = net. Quantity and factor are assumed to be 1 if not supplied.
    */
   net?: fhir.MoneyArgs|undefined;
@@ -947,6 +1037,10 @@ export interface ExplanationOfBenefitItemDetailSubDetailArgs extends fhir.Backbo
    * The numbers associated with notes below which apply to the adjudication of this item.
    */
   noteNumber?: fhir.FhirPositiveInt[]|number[]|undefined;
+  /**
+   * Extended properties for primitive element: ExplanationOfBenefit.item.detail.subDetail.noteNumber
+   */
+  _noteNumber?:(fhir.FhirElementArgs|null)[];
   /**
    * The adjudication results.
    */
@@ -1020,6 +1114,10 @@ export class ExplanationOfBenefitItemDetailSubDetail extends fhir.BackboneElemen
     super(source, options);
     if (source['sequence']) { this.sequence = new fhir.FhirPositiveInt({value: source.sequence}); }
     else { this.sequence = null; }
+    if (source['_sequence']) {
+      if (this.sequence) { this.sequence.addExtendedProperties(source._sequence!); }
+      else { this.sequence = new fhir.FhirPositiveInt(source._sequence as Partial<fhir.FhirPositiveIntArgs>); }
+    }
     if (source['revenue']) { this.revenue = new fhir.CodeableConcept(source.revenue); }
     if (source['category']) { this.category = new fhir.CodeableConcept(source.category); }
     if (source['productOrService']) { this.productOrService = new fhir.CodeableConcept(source.productOrService); }
@@ -1031,11 +1129,21 @@ export class ExplanationOfBenefitItemDetailSubDetail extends fhir.BackboneElemen
     if (source['quantity']) { this.quantity = new fhir.Quantity(source.quantity); }
     if (source['unitPrice']) { this.unitPrice = new fhir.Money(source.unitPrice); }
     if (source['factor']) { this.factor = new fhir.FhirDecimal({value: source.factor}); }
+    if (source['_factor']) {
+      if (this.factor) { this.factor.addExtendedProperties(source._factor!); }
+      else { this.factor = new fhir.FhirDecimal(source._factor as Partial<fhir.FhirDecimalArgs>); }
+    }
     if (source['net']) { this.net = new fhir.Money(source.net); }
     if (source['udi']) { this.udi = source.udi.map((x) => new fhir.Reference(x)); }
     else { this.udi = []; }
     if (source['noteNumber']) { this.noteNumber = source.noteNumber.map((x) => new fhir.FhirPositiveInt({value: x})); }
     else { this.noteNumber = []; }
+    if (source['_noteNumber']) {
+      source._noteNumber.forEach((x,i) => {
+        if (this.noteNumber.length >= i) { if (x) { this.noteNumber[i].addExtendedProperties(x); } }
+        else { if (x) { this.noteNumber.push(new fhir.FhirPositiveInt(x as Partial<fhir.FhirPositiveIntArgs>)); } }
+      });
+    }
     if (source['adjudication']) { this.adjudication = source.adjudication.map((x) => new fhir.ExplanationOfBenefitItemAdjudication(x)); }
     else { this.adjudication = []; }
   }
@@ -1075,6 +1183,10 @@ export interface ExplanationOfBenefitItemDetailArgs extends fhir.BackboneElement
    */
   sequence: fhir.FhirPositiveInt|number|undefined;
   /**
+   * Extended properties for primitive element: ExplanationOfBenefit.item.detail.sequence
+   */
+  _sequence?:fhir.FhirElementArgs;
+  /**
    * The type of revenue or cost center providing the product and/or service.
    */
   revenue?: fhir.CodeableConceptArgs|undefined;
@@ -1107,6 +1219,10 @@ export interface ExplanationOfBenefitItemDetailArgs extends fhir.BackboneElement
    */
   factor?: fhir.FhirDecimal|number|undefined;
   /**
+   * Extended properties for primitive element: ExplanationOfBenefit.item.detail.factor
+   */
+  _factor?:fhir.FhirElementArgs;
+  /**
    * For example, the formula: quantity * unitPrice * factor  = net. Quantity and factor are assumed to be 1 if not supplied.
    */
   net?: fhir.MoneyArgs|undefined;
@@ -1118,6 +1234,10 @@ export interface ExplanationOfBenefitItemDetailArgs extends fhir.BackboneElement
    * The numbers associated with notes below which apply to the adjudication of this item.
    */
   noteNumber?: fhir.FhirPositiveInt[]|number[]|undefined;
+  /**
+   * Extended properties for primitive element: ExplanationOfBenefit.item.detail.noteNumber
+   */
+  _noteNumber?:(fhir.FhirElementArgs|null)[];
   /**
    * The adjudication results.
    */
@@ -1199,6 +1319,10 @@ export class ExplanationOfBenefitItemDetail extends fhir.BackboneElement {
     super(source, options);
     if (source['sequence']) { this.sequence = new fhir.FhirPositiveInt({value: source.sequence}); }
     else { this.sequence = null; }
+    if (source['_sequence']) {
+      if (this.sequence) { this.sequence.addExtendedProperties(source._sequence!); }
+      else { this.sequence = new fhir.FhirPositiveInt(source._sequence as Partial<fhir.FhirPositiveIntArgs>); }
+    }
     if (source['revenue']) { this.revenue = new fhir.CodeableConcept(source.revenue); }
     if (source['category']) { this.category = new fhir.CodeableConcept(source.category); }
     if (source['productOrService']) { this.productOrService = new fhir.CodeableConcept(source.productOrService); }
@@ -1210,11 +1334,21 @@ export class ExplanationOfBenefitItemDetail extends fhir.BackboneElement {
     if (source['quantity']) { this.quantity = new fhir.Quantity(source.quantity); }
     if (source['unitPrice']) { this.unitPrice = new fhir.Money(source.unitPrice); }
     if (source['factor']) { this.factor = new fhir.FhirDecimal({value: source.factor}); }
+    if (source['_factor']) {
+      if (this.factor) { this.factor.addExtendedProperties(source._factor!); }
+      else { this.factor = new fhir.FhirDecimal(source._factor as Partial<fhir.FhirDecimalArgs>); }
+    }
     if (source['net']) { this.net = new fhir.Money(source.net); }
     if (source['udi']) { this.udi = source.udi.map((x) => new fhir.Reference(x)); }
     else { this.udi = []; }
     if (source['noteNumber']) { this.noteNumber = source.noteNumber.map((x) => new fhir.FhirPositiveInt({value: x})); }
     else { this.noteNumber = []; }
+    if (source['_noteNumber']) {
+      source._noteNumber.forEach((x,i) => {
+        if (this.noteNumber.length >= i) { if (x) { this.noteNumber[i].addExtendedProperties(x); } }
+        else { if (x) { this.noteNumber.push(new fhir.FhirPositiveInt(x as Partial<fhir.FhirPositiveIntArgs>)); } }
+      });
+    }
     if (source['adjudication']) { this.adjudication = source.adjudication.map((x) => new fhir.ExplanationOfBenefitItemAdjudication(x)); }
     else { this.adjudication = []; }
     if (source['subDetail']) { this.subDetail = source.subDetail.map((x) => new fhir.ExplanationOfBenefitItemDetailSubDetail(x)); }
@@ -1257,21 +1391,41 @@ export interface ExplanationOfBenefitItemArgs extends fhir.BackboneElementArgs {
    */
   sequence: fhir.FhirPositiveInt|number|undefined;
   /**
+   * Extended properties for primitive element: ExplanationOfBenefit.item.sequence
+   */
+  _sequence?:fhir.FhirElementArgs;
+  /**
    * Care team members related to this service or product.
    */
   careTeamSequence?: fhir.FhirPositiveInt[]|number[]|undefined;
+  /**
+   * Extended properties for primitive element: ExplanationOfBenefit.item.careTeamSequence
+   */
+  _careTeamSequence?:(fhir.FhirElementArgs|null)[];
   /**
    * Diagnoses applicable for this service or product.
    */
   diagnosisSequence?: fhir.FhirPositiveInt[]|number[]|undefined;
   /**
+   * Extended properties for primitive element: ExplanationOfBenefit.item.diagnosisSequence
+   */
+  _diagnosisSequence?:(fhir.FhirElementArgs|null)[];
+  /**
    * Procedures applicable for this service or product.
    */
   procedureSequence?: fhir.FhirPositiveInt[]|number[]|undefined;
   /**
+   * Extended properties for primitive element: ExplanationOfBenefit.item.procedureSequence
+   */
+  _procedureSequence?:(fhir.FhirElementArgs|null)[];
+  /**
    * Exceptions, special conditions and supporting information applicable for this service or product.
    */
   informationSequence?: fhir.FhirPositiveInt[]|number[]|undefined;
+  /**
+   * Extended properties for primitive element: ExplanationOfBenefit.item.informationSequence
+   */
+  _informationSequence?:(fhir.FhirElementArgs|null)[];
   /**
    * The type of revenue or cost center providing the product and/or service.
    */
@@ -1333,6 +1487,10 @@ export interface ExplanationOfBenefitItemArgs extends fhir.BackboneElementArgs {
    */
   factor?: fhir.FhirDecimal|number|undefined;
   /**
+   * Extended properties for primitive element: ExplanationOfBenefit.item.factor
+   */
+  _factor?:fhir.FhirElementArgs;
+  /**
    * For example, the formula: quantity * unitPrice * factor  = net. Quantity and factor are assumed to be 1 if not supplied.
    */
   net?: fhir.MoneyArgs|undefined;
@@ -1356,6 +1514,10 @@ export interface ExplanationOfBenefitItemArgs extends fhir.BackboneElementArgs {
    * The numbers associated with notes below which apply to the adjudication of this item.
    */
   noteNumber?: fhir.FhirPositiveInt[]|number[]|undefined;
+  /**
+   * Extended properties for primitive element: ExplanationOfBenefit.item.noteNumber
+   */
+  _noteNumber?:(fhir.FhirElementArgs|null)[];
   /**
    * If this item is a group then the values here are a summary of the adjudication of the detail items. If this item is a simple product or service then this is the result of the adjudication of this item.
    */
@@ -1481,14 +1643,42 @@ export class ExplanationOfBenefitItem extends fhir.BackboneElement {
     super(source, options);
     if (source['sequence']) { this.sequence = new fhir.FhirPositiveInt({value: source.sequence}); }
     else { this.sequence = null; }
+    if (source['_sequence']) {
+      if (this.sequence) { this.sequence.addExtendedProperties(source._sequence!); }
+      else { this.sequence = new fhir.FhirPositiveInt(source._sequence as Partial<fhir.FhirPositiveIntArgs>); }
+    }
     if (source['careTeamSequence']) { this.careTeamSequence = source.careTeamSequence.map((x) => new fhir.FhirPositiveInt({value: x})); }
     else { this.careTeamSequence = []; }
+    if (source['_careTeamSequence']) {
+      source._careTeamSequence.forEach((x,i) => {
+        if (this.careTeamSequence.length >= i) { if (x) { this.careTeamSequence[i].addExtendedProperties(x); } }
+        else { if (x) { this.careTeamSequence.push(new fhir.FhirPositiveInt(x as Partial<fhir.FhirPositiveIntArgs>)); } }
+      });
+    }
     if (source['diagnosisSequence']) { this.diagnosisSequence = source.diagnosisSequence.map((x) => new fhir.FhirPositiveInt({value: x})); }
     else { this.diagnosisSequence = []; }
+    if (source['_diagnosisSequence']) {
+      source._diagnosisSequence.forEach((x,i) => {
+        if (this.diagnosisSequence.length >= i) { if (x) { this.diagnosisSequence[i].addExtendedProperties(x); } }
+        else { if (x) { this.diagnosisSequence.push(new fhir.FhirPositiveInt(x as Partial<fhir.FhirPositiveIntArgs>)); } }
+      });
+    }
     if (source['procedureSequence']) { this.procedureSequence = source.procedureSequence.map((x) => new fhir.FhirPositiveInt({value: x})); }
     else { this.procedureSequence = []; }
+    if (source['_procedureSequence']) {
+      source._procedureSequence.forEach((x,i) => {
+        if (this.procedureSequence.length >= i) { if (x) { this.procedureSequence[i].addExtendedProperties(x); } }
+        else { if (x) { this.procedureSequence.push(new fhir.FhirPositiveInt(x as Partial<fhir.FhirPositiveIntArgs>)); } }
+      });
+    }
     if (source['informationSequence']) { this.informationSequence = source.informationSequence.map((x) => new fhir.FhirPositiveInt({value: x})); }
     else { this.informationSequence = []; }
+    if (source['_informationSequence']) {
+      source._informationSequence.forEach((x,i) => {
+        if (this.informationSequence.length >= i) { if (x) { this.informationSequence[i].addExtendedProperties(x); } }
+        else { if (x) { this.informationSequence.push(new fhir.FhirPositiveInt(x as Partial<fhir.FhirPositiveIntArgs>)); } }
+      });
+    }
     if (source['revenue']) { this.revenue = new fhir.CodeableConcept(source.revenue); }
     if (source['category']) { this.category = new fhir.CodeableConcept(source.category); }
     if (source['productOrService']) { this.productOrService = new fhir.CodeableConcept(source.productOrService); }
@@ -1507,6 +1697,10 @@ export class ExplanationOfBenefitItem extends fhir.BackboneElement {
     if (source['quantity']) { this.quantity = new fhir.Quantity(source.quantity); }
     if (source['unitPrice']) { this.unitPrice = new fhir.Money(source.unitPrice); }
     if (source['factor']) { this.factor = new fhir.FhirDecimal({value: source.factor}); }
+    if (source['_factor']) {
+      if (this.factor) { this.factor.addExtendedProperties(source._factor!); }
+      else { this.factor = new fhir.FhirDecimal(source._factor as Partial<fhir.FhirDecimalArgs>); }
+    }
     if (source['net']) { this.net = new fhir.Money(source.net); }
     if (source['udi']) { this.udi = source.udi.map((x) => new fhir.Reference(x)); }
     else { this.udi = []; }
@@ -1517,6 +1711,12 @@ export class ExplanationOfBenefitItem extends fhir.BackboneElement {
     else { this.encounter = []; }
     if (source['noteNumber']) { this.noteNumber = source.noteNumber.map((x) => new fhir.FhirPositiveInt({value: x})); }
     else { this.noteNumber = []; }
+    if (source['_noteNumber']) {
+      source._noteNumber.forEach((x,i) => {
+        if (this.noteNumber.length >= i) { if (x) { this.noteNumber[i].addExtendedProperties(x); } }
+        else { if (x) { this.noteNumber.push(new fhir.FhirPositiveInt(x as Partial<fhir.FhirPositiveIntArgs>)); } }
+      });
+    }
     if (source['adjudication']) { this.adjudication = source.adjudication.map((x) => new fhir.ExplanationOfBenefitItemAdjudication(x)); }
     else { this.adjudication = []; }
     if (source['detail']) { this.detail = source.detail.map((x) => new fhir.ExplanationOfBenefitItemDetail(x)); }
@@ -1582,6 +1782,10 @@ export interface ExplanationOfBenefitAddItemDetailSubDetailArgs extends fhir.Bac
    */
   factor?: fhir.FhirDecimal|number|undefined;
   /**
+   * Extended properties for primitive element: ExplanationOfBenefit.addItem.detail.subDetail.factor
+   */
+  _factor?:fhir.FhirElementArgs;
+  /**
    * For example, the formula: quantity * unitPrice * factor  = net. Quantity and factor are assumed to be 1 if not supplied.
    */
   net?: fhir.MoneyArgs|undefined;
@@ -1589,6 +1793,10 @@ export interface ExplanationOfBenefitAddItemDetailSubDetailArgs extends fhir.Bac
    * The numbers associated with notes below which apply to the adjudication of this item.
    */
   noteNumber?: fhir.FhirPositiveInt[]|number[]|undefined;
+  /**
+   * Extended properties for primitive element: ExplanationOfBenefit.addItem.detail.subDetail.noteNumber
+   */
+  _noteNumber?:(fhir.FhirElementArgs|null)[];
   /**
    * The adjudication results.
    */
@@ -1647,9 +1855,19 @@ export class ExplanationOfBenefitAddItemDetailSubDetail extends fhir.BackboneEle
     if (source['quantity']) { this.quantity = new fhir.Quantity(source.quantity); }
     if (source['unitPrice']) { this.unitPrice = new fhir.Money(source.unitPrice); }
     if (source['factor']) { this.factor = new fhir.FhirDecimal({value: source.factor}); }
+    if (source['_factor']) {
+      if (this.factor) { this.factor.addExtendedProperties(source._factor!); }
+      else { this.factor = new fhir.FhirDecimal(source._factor as Partial<fhir.FhirDecimalArgs>); }
+    }
     if (source['net']) { this.net = new fhir.Money(source.net); }
     if (source['noteNumber']) { this.noteNumber = source.noteNumber.map((x) => new fhir.FhirPositiveInt({value: x})); }
     else { this.noteNumber = []; }
+    if (source['_noteNumber']) {
+      source._noteNumber.forEach((x,i) => {
+        if (this.noteNumber.length >= i) { if (x) { this.noteNumber[i].addExtendedProperties(x); } }
+        else { if (x) { this.noteNumber.push(new fhir.FhirPositiveInt(x as Partial<fhir.FhirPositiveIntArgs>)); } }
+      });
+    }
     if (source['adjudication']) { this.adjudication = source.adjudication.map((x) => new fhir.ExplanationOfBenefitItemAdjudication(x)); }
     else { this.adjudication = []; }
   }
@@ -1697,6 +1915,10 @@ export interface ExplanationOfBenefitAddItemDetailArgs extends fhir.BackboneElem
    */
   factor?: fhir.FhirDecimal|number|undefined;
   /**
+   * Extended properties for primitive element: ExplanationOfBenefit.addItem.detail.factor
+   */
+  _factor?:fhir.FhirElementArgs;
+  /**
    * For example, the formula: quantity * unitPrice * factor  = net. Quantity and factor are assumed to be 1 if not supplied.
    */
   net?: fhir.MoneyArgs|undefined;
@@ -1704,6 +1926,10 @@ export interface ExplanationOfBenefitAddItemDetailArgs extends fhir.BackboneElem
    * The numbers associated with notes below which apply to the adjudication of this item.
    */
   noteNumber?: fhir.FhirPositiveInt[]|number[]|undefined;
+  /**
+   * Extended properties for primitive element: ExplanationOfBenefit.addItem.detail.noteNumber
+   */
+  _noteNumber?:(fhir.FhirElementArgs|null)[];
   /**
    * The adjudication results.
    */
@@ -1770,9 +1996,19 @@ export class ExplanationOfBenefitAddItemDetail extends fhir.BackboneElement {
     if (source['quantity']) { this.quantity = new fhir.Quantity(source.quantity); }
     if (source['unitPrice']) { this.unitPrice = new fhir.Money(source.unitPrice); }
     if (source['factor']) { this.factor = new fhir.FhirDecimal({value: source.factor}); }
+    if (source['_factor']) {
+      if (this.factor) { this.factor.addExtendedProperties(source._factor!); }
+      else { this.factor = new fhir.FhirDecimal(source._factor as Partial<fhir.FhirDecimalArgs>); }
+    }
     if (source['net']) { this.net = new fhir.Money(source.net); }
     if (source['noteNumber']) { this.noteNumber = source.noteNumber.map((x) => new fhir.FhirPositiveInt({value: x})); }
     else { this.noteNumber = []; }
+    if (source['_noteNumber']) {
+      source._noteNumber.forEach((x,i) => {
+        if (this.noteNumber.length >= i) { if (x) { this.noteNumber[i].addExtendedProperties(x); } }
+        else { if (x) { this.noteNumber.push(new fhir.FhirPositiveInt(x as Partial<fhir.FhirPositiveIntArgs>)); } }
+      });
+    }
     if (source['adjudication']) { this.adjudication = source.adjudication.map((x) => new fhir.ExplanationOfBenefitItemAdjudication(x)); }
     else { this.adjudication = []; }
     if (source['subDetail']) { this.subDetail = source.subDetail.map((x) => new fhir.ExplanationOfBenefitAddItemDetailSubDetail(x)); }
@@ -1807,13 +2043,25 @@ export interface ExplanationOfBenefitAddItemArgs extends fhir.BackboneElementArg
    */
   itemSequence?: fhir.FhirPositiveInt[]|number[]|undefined;
   /**
+   * Extended properties for primitive element: ExplanationOfBenefit.addItem.itemSequence
+   */
+  _itemSequence?:(fhir.FhirElementArgs|null)[];
+  /**
    * The sequence number of the details within the claim item which this line is intended to replace.
    */
   detailSequence?: fhir.FhirPositiveInt[]|number[]|undefined;
   /**
+   * Extended properties for primitive element: ExplanationOfBenefit.addItem.detailSequence
+   */
+  _detailSequence?:(fhir.FhirElementArgs|null)[];
+  /**
    * The sequence number of the sub-details woithin the details within the claim item which this line is intended to replace.
    */
   subDetailSequence?: fhir.FhirPositiveInt[]|number[]|undefined;
+  /**
+   * Extended properties for primitive element: ExplanationOfBenefit.addItem.subDetailSequence
+   */
+  _subDetailSequence?:(fhir.FhirElementArgs|null)[];
   /**
    * The providers who are authorized for the services rendered to the patient.
    */
@@ -1871,6 +2119,10 @@ export interface ExplanationOfBenefitAddItemArgs extends fhir.BackboneElementArg
    */
   factor?: fhir.FhirDecimal|number|undefined;
   /**
+   * Extended properties for primitive element: ExplanationOfBenefit.addItem.factor
+   */
+  _factor?:fhir.FhirElementArgs;
+  /**
    * For example, the formula: quantity * unitPrice * factor  = net. Quantity and factor are assumed to be 1 if not supplied.
    */
   net?: fhir.MoneyArgs|undefined;
@@ -1886,6 +2138,10 @@ export interface ExplanationOfBenefitAddItemArgs extends fhir.BackboneElementArg
    * The numbers associated with notes below which apply to the adjudication of this item.
    */
   noteNumber?: fhir.FhirPositiveInt[]|number[]|undefined;
+  /**
+   * Extended properties for primitive element: ExplanationOfBenefit.addItem.noteNumber
+   */
+  _noteNumber?:(fhir.FhirElementArgs|null)[];
   /**
    * The adjudication results.
    */
@@ -1991,10 +2247,28 @@ export class ExplanationOfBenefitAddItem extends fhir.BackboneElement {
     super(source, options);
     if (source['itemSequence']) { this.itemSequence = source.itemSequence.map((x) => new fhir.FhirPositiveInt({value: x})); }
     else { this.itemSequence = []; }
+    if (source['_itemSequence']) {
+      source._itemSequence.forEach((x,i) => {
+        if (this.itemSequence.length >= i) { if (x) { this.itemSequence[i].addExtendedProperties(x); } }
+        else { if (x) { this.itemSequence.push(new fhir.FhirPositiveInt(x as Partial<fhir.FhirPositiveIntArgs>)); } }
+      });
+    }
     if (source['detailSequence']) { this.detailSequence = source.detailSequence.map((x) => new fhir.FhirPositiveInt({value: x})); }
     else { this.detailSequence = []; }
+    if (source['_detailSequence']) {
+      source._detailSequence.forEach((x,i) => {
+        if (this.detailSequence.length >= i) { if (x) { this.detailSequence[i].addExtendedProperties(x); } }
+        else { if (x) { this.detailSequence.push(new fhir.FhirPositiveInt(x as Partial<fhir.FhirPositiveIntArgs>)); } }
+      });
+    }
     if (source['subDetailSequence']) { this.subDetailSequence = source.subDetailSequence.map((x) => new fhir.FhirPositiveInt({value: x})); }
     else { this.subDetailSequence = []; }
+    if (source['_subDetailSequence']) {
+      source._subDetailSequence.forEach((x,i) => {
+        if (this.subDetailSequence.length >= i) { if (x) { this.subDetailSequence[i].addExtendedProperties(x); } }
+        else { if (x) { this.subDetailSequence.push(new fhir.FhirPositiveInt(x as Partial<fhir.FhirPositiveIntArgs>)); } }
+      });
+    }
     if (source['provider']) { this.provider = source.provider.map((x) => new fhir.Reference(x)); }
     else { this.provider = []; }
     if (source['productOrService']) { this.productOrService = new fhir.CodeableConcept(source.productOrService); }
@@ -2013,12 +2287,22 @@ export class ExplanationOfBenefitAddItem extends fhir.BackboneElement {
     if (source['quantity']) { this.quantity = new fhir.Quantity(source.quantity); }
     if (source['unitPrice']) { this.unitPrice = new fhir.Money(source.unitPrice); }
     if (source['factor']) { this.factor = new fhir.FhirDecimal({value: source.factor}); }
+    if (source['_factor']) {
+      if (this.factor) { this.factor.addExtendedProperties(source._factor!); }
+      else { this.factor = new fhir.FhirDecimal(source._factor as Partial<fhir.FhirDecimalArgs>); }
+    }
     if (source['net']) { this.net = new fhir.Money(source.net); }
     if (source['bodySite']) { this.bodySite = new fhir.CodeableConcept(source.bodySite); }
     if (source['subSite']) { this.subSite = source.subSite.map((x) => new fhir.CodeableConcept(x)); }
     else { this.subSite = []; }
     if (source['noteNumber']) { this.noteNumber = source.noteNumber.map((x) => new fhir.FhirPositiveInt({value: x})); }
     else { this.noteNumber = []; }
+    if (source['_noteNumber']) {
+      source._noteNumber.forEach((x,i) => {
+        if (this.noteNumber.length >= i) { if (x) { this.noteNumber[i].addExtendedProperties(x); } }
+        else { if (x) { this.noteNumber.push(new fhir.FhirPositiveInt(x as Partial<fhir.FhirPositiveIntArgs>)); } }
+      });
+    }
     if (source['adjudication']) { this.adjudication = source.adjudication.map((x) => new fhir.ExplanationOfBenefitItemAdjudication(x)); }
     else { this.adjudication = []; }
     if (source['detail']) { this.detail = source.detail.map((x) => new fhir.ExplanationOfBenefitAddItemDetail(x)); }
@@ -2128,6 +2412,10 @@ export interface ExplanationOfBenefitPaymentArgs extends fhir.BackboneElementArg
    */
   date?: fhir.FhirDate|string|undefined;
   /**
+   * Extended properties for primitive element: ExplanationOfBenefit.payment.date
+   */
+  _date?:fhir.FhirElementArgs;
+  /**
    * Benefits payable less any payment adjustment.
    */
   amount?: fhir.MoneyArgs|undefined;
@@ -2178,6 +2466,10 @@ export class ExplanationOfBenefitPayment extends fhir.BackboneElement {
     if (source['adjustment']) { this.adjustment = new fhir.Money(source.adjustment); }
     if (source['adjustmentReason']) { this.adjustmentReason = new fhir.CodeableConcept(source.adjustmentReason); }
     if (source['date']) { this.date = new fhir.FhirDate({value: source.date}); }
+    if (source['_date']) {
+      if (this.date) { this.date.addExtendedProperties(source._date!); }
+      else { this.date = new fhir.FhirDate(source._date as Partial<fhir.FhirDateArgs>); }
+    }
     if (source['amount']) { this.amount = new fhir.Money(source.amount); }
     if (source['identifier']) { this.identifier = new fhir.Identifier(source.identifier); }
   }
@@ -2204,13 +2496,25 @@ export interface ExplanationOfBenefitProcessNoteArgs extends fhir.BackboneElemen
    */
   number?: fhir.FhirPositiveInt|number|undefined;
   /**
+   * Extended properties for primitive element: ExplanationOfBenefit.processNote.number
+   */
+  _number?:fhir.FhirElementArgs;
+  /**
    * The business purpose of the note text.
    */
   type?: fhir.FhirCode<NoteTypeCodeType>|string|undefined;
   /**
+   * Extended properties for primitive element: ExplanationOfBenefit.processNote.type
+   */
+  _type?:fhir.FhirElementArgs;
+  /**
    * The explanation or description associated with the processing.
    */
   text?: fhir.FhirString|string|undefined;
+  /**
+   * Extended properties for primitive element: ExplanationOfBenefit.processNote.text
+   */
+  _text?:fhir.FhirElementArgs;
   /**
    * Only required if the language is different from the resource language.
    */
@@ -2247,8 +2551,20 @@ export class ExplanationOfBenefitProcessNote extends fhir.BackboneElement {
   constructor(source:Partial<ExplanationOfBenefitProcessNoteArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
     if (source['number']) { this.number = new fhir.FhirPositiveInt({value: source.number}); }
+    if (source['_number']) {
+      if (this.number) { this.number.addExtendedProperties(source._number!); }
+      else { this.number = new fhir.FhirPositiveInt(source._number as Partial<fhir.FhirPositiveIntArgs>); }
+    }
     if (source['type']) { this.type = new fhir.FhirCode<NoteTypeCodeType>({value: source.type}); }
+    if (source['_type']) {
+      if (this.type) { this.type.addExtendedProperties(source._type!); }
+      else { this.type = new fhir.FhirCode<NoteTypeCodeType>(source._type as Partial<fhir.FhirCode>); }
+    }
     if (source['text']) { this.text = new fhir.FhirString({value: source.text}); }
+    if (source['_text']) {
+      if (this.text) { this.text.addExtendedProperties(source._text!); }
+      else { this.text = new fhir.FhirString(source._text as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['language']) { this.language = new fhir.CodeableConcept(source.language); }
   }
   /**
@@ -2384,13 +2700,25 @@ export interface ExplanationOfBenefitBenefitBalanceArgs extends fhir.BackboneEle
    */
   excluded?: fhir.FhirBoolean|boolean|undefined;
   /**
+   * Extended properties for primitive element: ExplanationOfBenefit.benefitBalance.excluded
+   */
+  _excluded?:fhir.FhirElementArgs;
+  /**
    * For example: MED01, or DENT2.
    */
   name?: fhir.FhirString|string|undefined;
   /**
+   * Extended properties for primitive element: ExplanationOfBenefit.benefitBalance.name
+   */
+  _name?:fhir.FhirElementArgs;
+  /**
    * For example, 'DENT2 covers 100% of basic, 50% of major but excludes Ortho, Implants and Cosmetic services'.
    */
   description?: fhir.FhirString|string|undefined;
+  /**
+   * Extended properties for primitive element: ExplanationOfBenefit.benefitBalance.description
+   */
+  _description?:fhir.FhirElementArgs;
   /**
    * Is a flag to indicate whether the benefits refer to in-network providers or out-of-network providers.
    */
@@ -2457,8 +2785,20 @@ export class ExplanationOfBenefitBenefitBalance extends fhir.BackboneElement {
     if (source['category']) { this.category = new fhir.CodeableConcept(source.category); }
     else { this.category = null; }
     if (source['excluded']) { this.excluded = new fhir.FhirBoolean({value: source.excluded}); }
+    if (source['_excluded']) {
+      if (this.excluded) { this.excluded.addExtendedProperties(source._excluded!); }
+      else { this.excluded = new fhir.FhirBoolean(source._excluded as Partial<fhir.FhirBooleanArgs>); }
+    }
     if (source['name']) { this.name = new fhir.FhirString({value: source.name}); }
+    if (source['_name']) {
+      if (this.name) { this.name.addExtendedProperties(source._name!); }
+      else { this.name = new fhir.FhirString(source._name as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['description']) { this.description = new fhir.FhirString({value: source.description}); }
+    if (source['_description']) {
+      if (this.description) { this.description.addExtendedProperties(source._description!); }
+      else { this.description = new fhir.FhirString(source._description as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['network']) { this.network = new fhir.CodeableConcept(source.network); }
     if (source['unit']) { this.unit = new fhir.CodeableConcept(source.unit); }
     if (source['term']) { this.term = new fhir.CodeableConcept(source.term); }
@@ -2501,6 +2841,10 @@ export interface ExplanationOfBenefitArgs extends fhir.DomainResourceArgs {
    */
   status: fhir.FhirCode<ExplanationofbenefitStatusCodeType>|string|undefined;
   /**
+   * Extended properties for primitive element: ExplanationOfBenefit.status
+   */
+  _status?:fhir.FhirElementArgs;
+  /**
    * The majority of jurisdictions use: oral, pharmacy, vision, professional and institutional, or variants on those terms, as the general styles of claims. The valueset is extensible to accommodate other jurisdictional requirements.
    */
   type: fhir.CodeableConceptArgs|null;
@@ -2513,6 +2857,10 @@ export interface ExplanationOfBenefitArgs extends fhir.DomainResourceArgs {
    */
   use: fhir.FhirCode<ClaimUseCodeType>|string|undefined;
   /**
+   * Extended properties for primitive element: ExplanationOfBenefit.use
+   */
+  _use?:fhir.FhirElementArgs;
+  /**
    * The party to whom the professional services and/or products have been supplied or are being considered and for whom actual for forecast reimbursement is sought.
    */
   patient: fhir.ReferenceArgs|null;
@@ -2524,6 +2872,10 @@ export interface ExplanationOfBenefitArgs extends fhir.DomainResourceArgs {
    * This field is independent of the date of creation of the resource as it may reflect the creation date of a source document prior to digitization. Typically for claims all services must be completed as of this date.
    */
   created: fhir.FhirDateTime|string|undefined;
+  /**
+   * Extended properties for primitive element: ExplanationOfBenefit.created
+   */
+  _created?:fhir.FhirElementArgs;
   /**
    * Individual who created the claim, predetermination or preauthorization.
    */
@@ -2585,13 +2937,25 @@ export interface ExplanationOfBenefitArgs extends fhir.DomainResourceArgs {
    */
   outcome: fhir.FhirCode<RemittanceOutcomeCodeType>|string|undefined;
   /**
+   * Extended properties for primitive element: ExplanationOfBenefit.outcome
+   */
+  _outcome?:fhir.FhirElementArgs;
+  /**
    * A human readable description of the status of the adjudication.
    */
   disposition?: fhir.FhirString|string|undefined;
   /**
+   * Extended properties for primitive element: ExplanationOfBenefit.disposition
+   */
+  _disposition?:fhir.FhirElementArgs;
+  /**
    * This value is only present on preauthorization adjudications.
    */
   preAuthRef?: fhir.FhirString[]|string[]|undefined;
+  /**
+   * Extended properties for primitive element: ExplanationOfBenefit.preAuthRef
+   */
+  _preAuthRef?:(fhir.FhirElementArgs|null)[];
   /**
    * This value is only present on preauthorization adjudications.
    */
@@ -2616,6 +2980,10 @@ export interface ExplanationOfBenefitArgs extends fhir.DomainResourceArgs {
    * This indicates the relative order of a series of EOBs related to different coverages for the same suite of services.
    */
   precedence?: fhir.FhirPositiveInt|number|undefined;
+  /**
+   * Extended properties for primitive element: ExplanationOfBenefit.precedence
+   */
+  _precedence?:fhir.FhirElementArgs;
   /**
    * All insurance coverages for the patient which may be applicable for reimbursement, of the products and services listed in the claim, are typically provided in the claim to allow insurers to confirm the ordering of the insurance coverages relative to local 'coordination of benefit' rules. One coverage (and only one) with 'focal=true' is to be used in the adjudication of this claim. Coverages appearing before the focal Coverage in the list, and where 'Coverage.subrogation=false', should provide a reference to the ClaimResponse containing the adjudication results of the prior claim.
    */
@@ -2860,16 +3228,28 @@ export class ExplanationOfBenefit extends fhir.DomainResource {
     else { this.identifier = []; }
     if (source['status']) { this.status = new fhir.FhirCode<ExplanationofbenefitStatusCodeType>({value: source.status}); }
     else { this.status = null; }
+    if (source['_status']) {
+      if (this.status) { this.status.addExtendedProperties(source._status!); }
+      else { this.status = new fhir.FhirCode<ExplanationofbenefitStatusCodeType>(source._status as Partial<fhir.FhirCode>); }
+    }
     if (source['type']) { this.type = new fhir.CodeableConcept(source.type); }
     else { this.type = null; }
     if (source['subType']) { this.subType = new fhir.CodeableConcept(source.subType); }
     if (source['use']) { this.use = new fhir.FhirCode<ClaimUseCodeType>({value: source.use}); }
     else { this.use = null; }
+    if (source['_use']) {
+      if (this.use) { this.use.addExtendedProperties(source._use!); }
+      else { this.use = new fhir.FhirCode<ClaimUseCodeType>(source._use as Partial<fhir.FhirCode>); }
+    }
     if (source['patient']) { this.patient = new fhir.Reference(source.patient); }
     else { this.patient = null; }
     if (source['billablePeriod']) { this.billablePeriod = new fhir.Period(source.billablePeriod); }
     if (source['created']) { this.created = new fhir.FhirDateTime({value: source.created}); }
     else { this.created = null; }
+    if (source['_created']) {
+      if (this.created) { this.created.addExtendedProperties(source._created!); }
+      else { this.created = new fhir.FhirDateTime(source._created as Partial<fhir.FhirDateTimeArgs>); }
+    }
     if (source['enterer']) { this.enterer = new fhir.Reference(source.enterer); }
     if (source['insurer']) { this.insurer = new fhir.Reference(source.insurer); }
     else { this.insurer = null; }
@@ -2889,9 +3269,23 @@ export class ExplanationOfBenefit extends fhir.DomainResource {
     if (source['claimResponse']) { this.claimResponse = new fhir.Reference(source.claimResponse); }
     if (source['outcome']) { this.outcome = new fhir.FhirCode<RemittanceOutcomeCodeType>({value: source.outcome}); }
     else { this.outcome = null; }
+    if (source['_outcome']) {
+      if (this.outcome) { this.outcome.addExtendedProperties(source._outcome!); }
+      else { this.outcome = new fhir.FhirCode<RemittanceOutcomeCodeType>(source._outcome as Partial<fhir.FhirCode>); }
+    }
     if (source['disposition']) { this.disposition = new fhir.FhirString({value: source.disposition}); }
+    if (source['_disposition']) {
+      if (this.disposition) { this.disposition.addExtendedProperties(source._disposition!); }
+      else { this.disposition = new fhir.FhirString(source._disposition as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['preAuthRef']) { this.preAuthRef = source.preAuthRef.map((x) => new fhir.FhirString({value: x})); }
     else { this.preAuthRef = []; }
+    if (source['_preAuthRef']) {
+      source._preAuthRef.forEach((x,i) => {
+        if (this.preAuthRef.length >= i) { if (x) { this.preAuthRef[i].addExtendedProperties(x); } }
+        else { if (x) { this.preAuthRef.push(new fhir.FhirString(x as Partial<fhir.FhirStringArgs>)); } }
+      });
+    }
     if (source['preAuthRefPeriod']) { this.preAuthRefPeriod = source.preAuthRefPeriod.map((x) => new fhir.Period(x)); }
     else { this.preAuthRefPeriod = []; }
     if (source['careTeam']) { this.careTeam = source.careTeam.map((x) => new fhir.ExplanationOfBenefitCareTeam(x)); }
@@ -2903,6 +3297,10 @@ export class ExplanationOfBenefit extends fhir.DomainResource {
     if (source['procedure']) { this.procedure = source.procedure.map((x) => new fhir.ExplanationOfBenefitProcedure(x)); }
     else { this.procedure = []; }
     if (source['precedence']) { this.precedence = new fhir.FhirPositiveInt({value: source.precedence}); }
+    if (source['_precedence']) {
+      if (this.precedence) { this.precedence.addExtendedProperties(source._precedence!); }
+      else { this.precedence = new fhir.FhirPositiveInt(source._precedence as Partial<fhir.FhirPositiveIntArgs>); }
+    }
     if (source['insurance']) { this.insurance = source.insurance.map((x) => new fhir.ExplanationOfBenefitInsurance(x)); }
     else { this.insurance = []; }
     if (source['accident']) { this.accident = new fhir.ExplanationOfBenefitAccident(source.accident); }

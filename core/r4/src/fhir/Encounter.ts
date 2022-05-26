@@ -10,9 +10,9 @@ import { EncounterStatusCodings, EncounterStatusCodingType,} from '../fhirValueS
 // @ts-ignore
 import { EncounterStatusCodes,  EncounterStatusCodeType } from '../fhirValueSets/EncounterStatusCodes.js';
 // @ts-ignore
-import { V3ActEncounterCodeCodings, V3ActEncounterCodeCodingType,} from '../fhirValueSets/V3ActEncounterCodeCodings.js';
+import { V3ActEncounterCodings, V3ActEncounterCodingType,} from '../fhirValueSets/V3ActEncounterCodings.js';
 // @ts-ignore
-import { V3ActEncounterCodeCodes,  V3ActEncounterCodeCodeType } from '../fhirValueSets/V3ActEncounterCodeCodes.js';
+import { V3ActEncounterCodes,  V3ActEncounterCodeType } from '../fhirValueSets/V3ActEncounterCodes.js';
 // @ts-ignore
 import { EncounterParticipantTypeCodings, EncounterParticipantTypeCodingType,} from '../fhirValueSets/EncounterParticipantTypeCodings.js';
 // @ts-ignore
@@ -78,6 +78,10 @@ export interface EncounterStatusHistoryArgs extends fhir.BackboneElementArgs {
    */
   status: fhir.FhirCode<EncounterStatusCodeType>|string|undefined;
   /**
+   * Extended properties for primitive element: Encounter.statusHistory.status
+   */
+  _status?:fhir.FhirElementArgs;
+  /**
    * The time that the episode was in the specified status.
    */
   period: fhir.PeriodArgs|null;
@@ -106,6 +110,10 @@ export class EncounterStatusHistory extends fhir.BackboneElement {
     super(source, options);
     if (source['status']) { this.status = new fhir.FhirCode<EncounterStatusCodeType>({value: source.status}); }
     else { this.status = null; }
+    if (source['_status']) {
+      if (this.status) { this.status.addExtendedProperties(source._status!); }
+      else { this.status = new fhir.FhirCode<EncounterStatusCodeType>(source._status as Partial<fhir.FhirCode>); }
+    }
     if (source['period']) { this.period = new fhir.Period(source.period); }
     else { this.period = null; }
   }
@@ -177,8 +185,8 @@ export class EncounterClassHistory extends fhir.BackboneElement {
   /**
    * Extensible-bound Value Set for class (Encounter.classHistory.class)
    */
-  public static get classExtensibleCodings():V3ActEncounterCodeCodingType {
-    return V3ActEncounterCodeCodings;
+  public static get classExtensibleCodings():V3ActEncounterCodingType {
+    return V3ActEncounterCodings;
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -277,6 +285,10 @@ export interface EncounterDiagnosisArgs extends fhir.BackboneElementArgs {
    * Ranking of the diagnosis (for each role type).
    */
   rank?: fhir.FhirPositiveInt|number|undefined;
+  /**
+   * Extended properties for primitive element: Encounter.diagnosis.rank
+   */
+  _rank?:fhir.FhirElementArgs;
 }
 
 /**
@@ -308,6 +320,10 @@ export class EncounterDiagnosis extends fhir.BackboneElement {
     else { this.condition = null; }
     if (source['use']) { this.use = new fhir.CodeableConcept(source.use); }
     if (source['rank']) { this.rank = new fhir.FhirPositiveInt({value: source.rank}); }
+    if (source['_rank']) {
+      if (this.rank) { this.rank.addExtendedProperties(source._rank!); }
+      else { this.rank = new fhir.FhirPositiveInt(source._rank as Partial<fhir.FhirPositiveIntArgs>); }
+    }
   }
   /**
    * Preferred-bound Value Set for use (Encounter.diagnosis.use)
@@ -482,6 +498,10 @@ export interface EncounterLocationArgs extends fhir.BackboneElementArgs {
    */
   status?: fhir.FhirCode<EncounterLocationStatusCodeType>|string|undefined;
   /**
+   * Extended properties for primitive element: Encounter.location.status
+   */
+  _status?:fhir.FhirElementArgs;
+  /**
    * This information is de-normalized from the Location resource to support the easier understanding of the encounter resource and processing in messaging or query.
    * There may be many levels in the hierachy, and this may only pic specific levels that are required for a specific usage scenario.
    */
@@ -525,6 +545,10 @@ export class EncounterLocation extends fhir.BackboneElement {
     if (source['location']) { this.location = new fhir.Reference(source.location); }
     else { this.location = null; }
     if (source['status']) { this.status = new fhir.FhirCode<EncounterLocationStatusCodeType>({value: source.status}); }
+    if (source['_status']) {
+      if (this.status) { this.status.addExtendedProperties(source._status!); }
+      else { this.status = new fhir.FhirCode<EncounterLocationStatusCodeType>(source._status as Partial<fhir.FhirCode>); }
+    }
     if (source['physicalType']) { this.physicalType = new fhir.CodeableConcept(source.physicalType); }
     if (source['period']) { this.period = new fhir.Period(source.period); }
   }
@@ -568,6 +592,10 @@ export interface EncounterArgs extends fhir.DomainResourceArgs {
    * Note that internal business rules will determine the appropriate transitions that may occur between statuses (and also classes).
    */
   status: fhir.FhirCode<EncounterStatusCodeType>|string|undefined;
+  /**
+   * Extended properties for primitive element: Encounter.status
+   */
+  _status?:fhir.FhirElementArgs;
   /**
    * The current status is always found in the current version of the resource, not the status history.
    */
@@ -772,6 +800,10 @@ export class Encounter extends fhir.DomainResource {
     else { this.identifier = []; }
     if (source['status']) { this.status = new fhir.FhirCode<EncounterStatusCodeType>({value: source.status}); }
     else { this.status = null; }
+    if (source['_status']) {
+      if (this.status) { this.status.addExtendedProperties(source._status!); }
+      else { this.status = new fhir.FhirCode<EncounterStatusCodeType>(source._status as Partial<fhir.FhirCode>); }
+    }
     if (source['statusHistory']) { this.statusHistory = source.statusHistory.map((x) => new fhir.EncounterStatusHistory(x)); }
     else { this.statusHistory = []; }
     if (source['class']) { this.class = new fhir.Coding(source.class); }
@@ -816,8 +848,8 @@ export class Encounter extends fhir.DomainResource {
   /**
    * Extensible-bound Value Set for class (Encounter.class)
    */
-  public static get classExtensibleCodings():V3ActEncounterCodeCodingType {
-    return V3ActEncounterCodeCodings;
+  public static get classExtensibleCodings():V3ActEncounterCodingType {
+    return V3ActEncounterCodings;
   }
   /**
    * Preferred-bound Value Set for reasonCode (Encounter.reasonCode)

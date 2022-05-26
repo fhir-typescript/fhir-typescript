@@ -12,13 +12,25 @@ export interface TestReportParticipantArgs extends fhir.BackboneElementArgs {
      */
     type: fhir.FhirCode<ReportParticipantTypeCodeType> | string | undefined;
     /**
+     * Extended properties for primitive element: TestReport.participant.type
+     */
+    _type?: fhir.FhirElementArgs;
+    /**
      * The uri of the participant. An absolute URL is preferred.
      */
     uri: fhir.FhirUri | string | undefined;
     /**
+     * Extended properties for primitive element: TestReport.participant.uri
+     */
+    _uri?: fhir.FhirElementArgs;
+    /**
      * The display name of the participant.
      */
     display?: fhir.FhirString | string | undefined;
+    /**
+     * Extended properties for primitive element: TestReport.participant.display
+     */
+    _display?: fhir.FhirElementArgs;
 }
 /**
  * A participant in the test execution, either the execution engine, a client, or a server.
@@ -66,13 +78,25 @@ export interface TestReportSetupActionOperationArgs extends fhir.BackboneElement
      */
     result: fhir.FhirCode<ReportActionResultCodeType> | string | undefined;
     /**
+     * Extended properties for primitive element: TestReport.setup.action.operation.result
+     */
+    _result?: fhir.FhirElementArgs;
+    /**
      * An explanatory message associated with the result.
      */
     message?: fhir.FhirMarkdown | string | undefined;
     /**
+     * Extended properties for primitive element: TestReport.setup.action.operation.message
+     */
+    _message?: fhir.FhirElementArgs;
+    /**
      * A link to further details on the result.
      */
     detail?: fhir.FhirUri | string | undefined;
+    /**
+     * Extended properties for primitive element: TestReport.setup.action.operation.detail
+     */
+    _detail?: fhir.FhirElementArgs;
 }
 /**
  * The operation performed.
@@ -122,13 +146,25 @@ export interface TestReportSetupActionAssertArgs extends fhir.BackboneElementArg
      */
     result: fhir.FhirCode<ReportActionResultCodeType> | string | undefined;
     /**
+     * Extended properties for primitive element: TestReport.setup.action.assert.result
+     */
+    _result?: fhir.FhirElementArgs;
+    /**
      * An explanatory message associated with the result.
      */
     message?: fhir.FhirMarkdown | string | undefined;
     /**
+     * Extended properties for primitive element: TestReport.setup.action.assert.message
+     */
+    _message?: fhir.FhirElementArgs;
+    /**
      * A link to further details on the result.
      */
     detail?: fhir.FhirString | string | undefined;
+    /**
+     * Extended properties for primitive element: TestReport.setup.action.assert.detail
+     */
+    _detail?: fhir.FhirElementArgs;
 }
 /**
  * The results of the assertion performed on the previous operations.
@@ -284,9 +320,17 @@ export interface TestReportTestArgs extends fhir.BackboneElementArgs {
      */
     name?: fhir.FhirString | string | undefined;
     /**
+     * Extended properties for primitive element: TestReport.test.name
+     */
+    _name?: fhir.FhirElementArgs;
+    /**
      * A short description of the test used by test engines for tracking and reporting purposes.
      */
     description?: fhir.FhirString | string | undefined;
+    /**
+     * Extended properties for primitive element: TestReport.test.description
+     */
+    _description?: fhir.FhirElementArgs;
     /**
      * An action should contain either an operation or an assertion but not both.  It can contain any number of variables.
      */
@@ -398,10 +442,18 @@ export interface TestReportArgs extends fhir.DomainResourceArgs {
      */
     name?: fhir.FhirString | string | undefined;
     /**
+     * Extended properties for primitive element: TestReport.name
+     */
+    _name?: fhir.FhirElementArgs;
+    /**
      * The status represents where the execution is currently within the test script execution life cycle.
      * This element is labeled as a modifier because the status contains codes that mark the resource as not currently valid.
      */
     status: fhir.FhirCode<ReportStatusCodeType> | string | undefined;
+    /**
+     * Extended properties for primitive element: TestReport.status
+     */
+    _status?: fhir.FhirElementArgs;
     /**
      * Ideally this is an absolute URL that is used to identify the version-specific TestScript that was executed, matching the `TestScript.url`.
      */
@@ -411,17 +463,33 @@ export interface TestReportArgs extends fhir.DomainResourceArgs {
      */
     result: fhir.FhirCode<ReportResultCodeType> | string | undefined;
     /**
+     * Extended properties for primitive element: TestReport.result
+     */
+    _result?: fhir.FhirElementArgs;
+    /**
      * The final score (percentage of tests passed) resulting from the execution of the TestScript.
      */
     score?: fhir.FhirDecimal | number | undefined;
+    /**
+     * Extended properties for primitive element: TestReport.score
+     */
+    _score?: fhir.FhirElementArgs;
     /**
      * Usually an organization, but may be an individual. This item SHOULD be populated unless the information is available from context.
      */
     tester?: fhir.FhirString | string | undefined;
     /**
+     * Extended properties for primitive element: TestReport.tester
+     */
+    _tester?: fhir.FhirElementArgs;
+    /**
      * Additional specific dates may be added as extensions.
      */
     issued?: fhir.FhirDateTime | string | undefined;
+    /**
+     * Extended properties for primitive element: TestReport.issued
+     */
+    _issued?: fhir.FhirElementArgs;
     /**
      * A participant in the test execution, either the execution engine, a client, or a server.
      */

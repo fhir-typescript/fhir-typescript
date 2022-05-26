@@ -15,6 +15,10 @@ export interface MeasureReportGroupPopulationArgs extends fhir.BackboneElementAr
      */
     count?: fhir.FhirInteger | number | undefined;
     /**
+     * Extended properties for primitive element: MeasureReport.group.population.count
+     */
+    _count?: fhir.FhirElementArgs;
+    /**
      * This element refers to a List of subject level MeasureReport resources, one for each subject in this population.
      */
     subjectResults?: fhir.ReferenceArgs | undefined;
@@ -102,6 +106,10 @@ export interface MeasureReportGroupStratifierStratumPopulationArgs extends fhir.
      * The number of members of the population in this stratum.
      */
     count?: fhir.FhirInteger | number | undefined;
+    /**
+     * Extended properties for primitive element: MeasureReport.group.stratifier.stratum.population.count
+     */
+    _count?: fhir.FhirElementArgs;
     /**
      * This element refers to a List of subject level MeasureReport resources, one for each subject in this population in this stratum.
      */
@@ -303,13 +311,25 @@ export interface MeasureReportArgs extends fhir.DomainResourceArgs {
      */
     status: fhir.FhirCode<MeasureReportStatusCodeType> | string | undefined;
     /**
+     * Extended properties for primitive element: MeasureReport.status
+     */
+    _status?: fhir.FhirElementArgs;
+    /**
      * Data-collection reports are used only to communicate data-of-interest for a measure. They do not necessarily include all the data for a particular subject or population, but they may.
      */
     type: fhir.FhirCode<MeasureReportTypeCodeType> | string | undefined;
     /**
+     * Extended properties for primitive element: MeasureReport.type
+     */
+    _type?: fhir.FhirElementArgs;
+    /**
      * A reference to the Measure that was calculated to produce this report.
      */
     measure: fhir.FhirCanonical | string | undefined;
+    /**
+     * Extended properties for primitive element: MeasureReport.measure
+     */
+    _measure?: fhir.FhirElementArgs;
     /**
      * Optional subject identifying the individual or individuals the report is for.
      */
@@ -318,6 +338,10 @@ export interface MeasureReportArgs extends fhir.DomainResourceArgs {
      * The date this measure report was generated.
      */
     date?: fhir.FhirDateTime | string | undefined;
+    /**
+     * Extended properties for primitive element: MeasureReport.date
+     */
+    _date?: fhir.FhirElementArgs;
     /**
      * The individual, location, or organization that is reporting the data.
      */

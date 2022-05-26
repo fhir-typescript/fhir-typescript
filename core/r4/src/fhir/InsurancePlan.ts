@@ -157,6 +157,10 @@ export interface InsurancePlanCoverageBenefitArgs extends fhir.BackboneElementAr
    */
   requirement?: fhir.FhirString|string|undefined;
   /**
+   * Extended properties for primitive element: InsurancePlan.coverage.benefit.requirement
+   */
+  _requirement?:fhir.FhirElementArgs;
+  /**
    * The specific limits on the benefit.
    */
   limit?: fhir.InsurancePlanCoverageBenefitLimitArgs[]|undefined;
@@ -190,6 +194,10 @@ export class InsurancePlanCoverageBenefit extends fhir.BackboneElement {
     if (source['type']) { this.type = new fhir.CodeableConcept(source.type); }
     else { this.type = null; }
     if (source['requirement']) { this.requirement = new fhir.FhirString({value: source.requirement}); }
+    if (source['_requirement']) {
+      if (this.requirement) { this.requirement.addExtendedProperties(source._requirement!); }
+      else { this.requirement = new fhir.FhirString(source._requirement as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['limit']) { this.limit = source.limit.map((x) => new fhir.InsurancePlanCoverageBenefitLimit(x)); }
     else { this.limit = []; }
   }
@@ -291,6 +299,10 @@ export interface InsurancePlanPlanGeneralCostArgs extends fhir.BackboneElementAr
    */
   groupSize?: fhir.FhirPositiveInt|number|undefined;
   /**
+   * Extended properties for primitive element: InsurancePlan.plan.generalCost.groupSize
+   */
+  _groupSize?:fhir.FhirElementArgs;
+  /**
    * Value of the cost.
    */
   cost?: fhir.MoneyArgs|undefined;
@@ -298,6 +310,10 @@ export interface InsurancePlanPlanGeneralCostArgs extends fhir.BackboneElementAr
    * Additional information about the general costs associated with this plan.
    */
   comment?: fhir.FhirString|string|undefined;
+  /**
+   * Extended properties for primitive element: InsurancePlan.plan.generalCost.comment
+   */
+  _comment?:fhir.FhirElementArgs;
 }
 
 /**
@@ -331,8 +347,16 @@ export class InsurancePlanPlanGeneralCost extends fhir.BackboneElement {
     super(source, options);
     if (source['type']) { this.type = new fhir.CodeableConcept(source.type); }
     if (source['groupSize']) { this.groupSize = new fhir.FhirPositiveInt({value: source.groupSize}); }
+    if (source['_groupSize']) {
+      if (this.groupSize) { this.groupSize.addExtendedProperties(source._groupSize!); }
+      else { this.groupSize = new fhir.FhirPositiveInt(source._groupSize as Partial<fhir.FhirPositiveIntArgs>); }
+    }
     if (source['cost']) { this.cost = new fhir.Money(source.cost); }
     if (source['comment']) { this.comment = new fhir.FhirString({value: source.comment}); }
+    if (source['_comment']) {
+      if (this.comment) { this.comment.addExtendedProperties(source._comment!); }
+      else { this.comment = new fhir.FhirString(source._comment as Partial<fhir.FhirStringArgs>); }
+    }
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -644,6 +668,10 @@ export interface InsurancePlanArgs extends fhir.DomainResourceArgs {
    */
   status?: fhir.FhirCode<PublicationStatusCodeType>|string|undefined;
   /**
+   * Extended properties for primitive element: InsurancePlan.status
+   */
+  _status?:fhir.FhirElementArgs;
+  /**
    * The kind of health insurance product.
    */
   type?: fhir.CodeableConceptArgs[]|undefined;
@@ -652,9 +680,17 @@ export interface InsurancePlanArgs extends fhir.DomainResourceArgs {
    */
   name?: fhir.FhirString|string|undefined;
   /**
+   * Extended properties for primitive element: InsurancePlan.name
+   */
+  _name?:fhir.FhirElementArgs;
+  /**
    * There are no dates associated with the alias/historic names, as this is not intended to track when names were used, but to assist in searching so that older names can still result in identifying the product/plan.
    */
   alias?: fhir.FhirString[]|string[]|undefined;
+  /**
+   * Extended properties for primitive element: InsurancePlan.alias
+   */
+  _alias?:(fhir.FhirElementArgs|null)[];
   /**
    * The period of time that the health insurance product is available.
    */
@@ -770,11 +806,25 @@ export class InsurancePlan extends fhir.DomainResource {
     if (source['identifier']) { this.identifier = source.identifier.map((x) => new fhir.Identifier(x)); }
     else { this.identifier = []; }
     if (source['status']) { this.status = new fhir.FhirCode<PublicationStatusCodeType>({value: source.status}); }
+    if (source['_status']) {
+      if (this.status) { this.status.addExtendedProperties(source._status!); }
+      else { this.status = new fhir.FhirCode<PublicationStatusCodeType>(source._status as Partial<fhir.FhirCode>); }
+    }
     if (source['type']) { this.type = source.type.map((x) => new fhir.CodeableConcept(x)); }
     else { this.type = []; }
     if (source['name']) { this.name = new fhir.FhirString({value: source.name}); }
+    if (source['_name']) {
+      if (this.name) { this.name.addExtendedProperties(source._name!); }
+      else { this.name = new fhir.FhirString(source._name as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['alias']) { this.alias = source.alias.map((x) => new fhir.FhirString({value: x})); }
     else { this.alias = []; }
+    if (source['_alias']) {
+      source._alias.forEach((x,i) => {
+        if (this.alias.length >= i) { if (x) { this.alias[i].addExtendedProperties(x); } }
+        else { if (x) { this.alias.push(new fhir.FhirString(x as Partial<fhir.FhirStringArgs>)); } }
+      });
+    }
     if (source['period']) { this.period = new fhir.Period(source.period); }
     if (source['ownedBy']) { this.ownedBy = new fhir.Reference(source.ownedBy); }
     if (source['administeredBy']) { this.administeredBy = new fhir.Reference(source.administeredBy); }

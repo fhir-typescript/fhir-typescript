@@ -11,6 +11,10 @@ export interface ImmunizationRecommendationRecommendationDateCriterionArgs exten
      * The date whose meaning is specified by dateCriterion.code.
      */
     value: fhir.FhirDateTime | string | undefined;
+    /**
+     * Extended properties for primitive element: ImmunizationRecommendation.recommendation.dateCriterion.value
+     */
+    _value?: fhir.FhirElementArgs;
 }
 /**
  * Vaccine date recommendations.  For example, earliest date to administer, latest date to administer, etc.
@@ -70,9 +74,17 @@ export interface ImmunizationRecommendationRecommendationArgs extends fhir.Backb
      */
     description?: fhir.FhirString | string | undefined;
     /**
+     * Extended properties for primitive element: ImmunizationRecommendation.recommendation.description
+     */
+    _description?: fhir.FhirElementArgs;
+    /**
      * One possible path to achieve presumed immunity against a disease - within the context of an authority.
      */
     series?: fhir.FhirString | string | undefined;
+    /**
+     * Extended properties for primitive element: ImmunizationRecommendation.recommendation.series
+     */
+    _series?: fhir.FhirElementArgs;
     /**
      * The use of an integer is prefered if known. A string should only be used in cases where an interger is not available (such as when documenting a recurring booster dose).
      */
@@ -199,6 +211,10 @@ export interface ImmunizationRecommendationArgs extends fhir.DomainResourceArgs 
      * The date the immunization recommendation(s) were created.
      */
     date: fhir.FhirDateTime | string | undefined;
+    /**
+     * Extended properties for primitive element: ImmunizationRecommendation.date
+     */
+    _date?: fhir.FhirElementArgs;
     /**
      * Indicates the authority who published the protocol (e.g. ACIP).
      */

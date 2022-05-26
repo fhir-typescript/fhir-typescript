@@ -1,5 +1,5 @@
 import * as fhir from '../fhir.js';
-import { V3ActIncidentCodeCodingType } from '../fhirValueSets/V3ActIncidentCodeCodings.js';
+import { V3ActIncidentCodingType } from '../fhirValueSets/V3ActIncidentCodings.js';
 import { FmStatusCodeType } from '../fhirValueSets/FmStatusCodes.js';
 import { ClaimTypeCodingType } from '../fhirValueSets/ClaimTypeCodings.js';
 import { ClaimUseCodeType } from '../fhirValueSets/ClaimUseCodes.js';
@@ -96,6 +96,10 @@ export interface ClaimCareTeamArgs extends fhir.BackboneElementArgs {
      */
     sequence: fhir.FhirPositiveInt | number | undefined;
     /**
+     * Extended properties for primitive element: Claim.careTeam.sequence
+     */
+    _sequence?: fhir.FhirElementArgs;
+    /**
      * Member of the team who provided the product or service.
      */
     provider: fhir.ReferenceArgs | null;
@@ -103,6 +107,10 @@ export interface ClaimCareTeamArgs extends fhir.BackboneElementArgs {
      * Responsible might not be required when there is only a single provider listed.
      */
     responsible?: fhir.FhirBoolean | boolean | undefined;
+    /**
+     * Extended properties for primitive element: Claim.careTeam.responsible
+     */
+    _responsible?: fhir.FhirElementArgs;
     /**
      * Role might not be required when there is only a single provider listed.
      */
@@ -157,6 +165,10 @@ export interface ClaimSupportingInfoArgs extends fhir.BackboneElementArgs {
      * A number to uniquely identify supporting information entries.
      */
     sequence: fhir.FhirPositiveInt | number | undefined;
+    /**
+     * Extended properties for primitive element: Claim.supportingInfo.sequence
+     */
+    _sequence?: fhir.FhirElementArgs;
     /**
      * This may contain a category for the local bill type codes.
      */
@@ -264,6 +276,10 @@ export interface ClaimDiagnosisArgs extends fhir.BackboneElementArgs {
      */
     sequence: fhir.FhirPositiveInt | number | undefined;
     /**
+     * Extended properties for primitive element: Claim.diagnosis.sequence
+     */
+    _sequence?: fhir.FhirElementArgs;
+    /**
      * The nature of illness or problem in a coded form or as a reference to an external defined Condition.
      */
     diagnosis?: fhir.CodeableConcept | fhir.Reference | undefined;
@@ -338,6 +354,10 @@ export interface ClaimProcedureArgs extends fhir.BackboneElementArgs {
      */
     sequence: fhir.FhirPositiveInt | number | undefined;
     /**
+     * Extended properties for primitive element: Claim.procedure.sequence
+     */
+    _sequence?: fhir.FhirElementArgs;
+    /**
      * For example: primary, secondary.
      */
     type?: fhir.CodeableConceptArgs[] | undefined;
@@ -345,6 +365,10 @@ export interface ClaimProcedureArgs extends fhir.BackboneElementArgs {
      * Date and optionally time the procedure was performed.
      */
     date?: fhir.FhirDateTime | string | undefined;
+    /**
+     * Extended properties for primitive element: Claim.procedure.date
+     */
+    _date?: fhir.FhirElementArgs;
     /**
      * The code or reference to a Procedure resource which identifies the clinical intervention performed.
      */
@@ -412,9 +436,17 @@ export interface ClaimInsuranceArgs extends fhir.BackboneElementArgs {
      */
     sequence: fhir.FhirPositiveInt | number | undefined;
     /**
+     * Extended properties for primitive element: Claim.insurance.sequence
+     */
+    _sequence?: fhir.FhirElementArgs;
+    /**
      * A patient may (will) have multiple insurance policies which provide reimbursement for healthcare services and products. For example a person may also be covered by their spouse's policy and both appear in the list (and may be from the same insurer). This flag will be set to true for only one of the listed policies and that policy will be used for adjudicating this claim. Other claims would be created to request adjudication against the other listed policies.
      */
     focal: fhir.FhirBoolean | boolean | undefined;
+    /**
+     * Extended properties for primitive element: Claim.insurance.focal
+     */
+    _focal?: fhir.FhirElementArgs;
     /**
      * Only required in jurisdictions where insurers, rather than the provider, are required to send claims to  insurers that appear after them in the list. This element is not required when 'subrogation=true'.
      */
@@ -428,9 +460,17 @@ export interface ClaimInsuranceArgs extends fhir.BackboneElementArgs {
      */
     businessArrangement?: fhir.FhirString | string | undefined;
     /**
+     * Extended properties for primitive element: Claim.insurance.businessArrangement
+     */
+    _businessArrangement?: fhir.FhirElementArgs;
+    /**
      * This value is an alphanumeric string that may be provided over the phone, via text, via paper, or within a ClaimResponse resource and is not a FHIR Identifier.
      */
     preAuthRef?: fhir.FhirString[] | string[] | undefined;
+    /**
+     * Extended properties for primitive element: Claim.insurance.preAuthRef
+     */
+    _preAuthRef?: (fhir.FhirElementArgs | null)[];
     /**
      * Must not be specified when 'focal=true' for this insurance.
      */
@@ -490,6 +530,10 @@ export interface ClaimAccidentArgs extends fhir.BackboneElementArgs {
      */
     date: fhir.FhirDate | string | undefined;
     /**
+     * Extended properties for primitive element: Claim.accident.date
+     */
+    _date?: fhir.FhirElementArgs;
+    /**
      * The type or context of the accident event for the purposes of selection of potential insurance coverages and determination of coordination between insurers.
      */
     type?: fhir.CodeableConceptArgs | undefined;
@@ -537,7 +581,7 @@ export declare class ClaimAccident extends fhir.BackboneElement {
     /**
      * Extensible-bound Value Set for type (Claim.accident.type)
      */
-    static get typeExtensibleCodings(): V3ActIncidentCodeCodingType;
+    static get typeExtensibleCodings(): V3ActIncidentCodingType;
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
@@ -551,6 +595,10 @@ export interface ClaimItemDetailSubDetailArgs extends fhir.BackboneElementArgs {
      * A number to uniquely identify item entries.
      */
     sequence: fhir.FhirPositiveInt | number | undefined;
+    /**
+     * Extended properties for primitive element: Claim.item.detail.subDetail.sequence
+     */
+    _sequence?: fhir.FhirElementArgs;
     /**
      * The type of revenue or cost center providing the product and/or service.
      */
@@ -583,6 +631,10 @@ export interface ClaimItemDetailSubDetailArgs extends fhir.BackboneElementArgs {
      * To show a 10% senior's discount, the value entered is: 0.90 (1.00 - 0.10).
      */
     factor?: fhir.FhirDecimal | number | undefined;
+    /**
+     * Extended properties for primitive element: Claim.item.detail.subDetail.factor
+     */
+    _factor?: fhir.FhirElementArgs;
     /**
      * For example, the formula: quantity * unitPrice * factor  = net. Quantity and factor are assumed to be 1 if not supplied.
      */
@@ -662,6 +714,10 @@ export interface ClaimItemDetailArgs extends fhir.BackboneElementArgs {
      */
     sequence: fhir.FhirPositiveInt | number | undefined;
     /**
+     * Extended properties for primitive element: Claim.item.detail.sequence
+     */
+    _sequence?: fhir.FhirElementArgs;
+    /**
      * The type of revenue or cost center providing the product and/or service.
      */
     revenue?: fhir.CodeableConceptArgs | undefined;
@@ -693,6 +749,10 @@ export interface ClaimItemDetailArgs extends fhir.BackboneElementArgs {
      * To show a 10% senior's discount, the value entered is: 0.90 (1.00 - 0.10).
      */
     factor?: fhir.FhirDecimal | number | undefined;
+    /**
+     * Extended properties for primitive element: Claim.item.detail.factor
+     */
+    _factor?: fhir.FhirElementArgs;
     /**
      * For example, the formula: quantity * unitPrice * factor  = net. Quantity and factor are assumed to be 1 if not supplied.
      */
@@ -780,21 +840,41 @@ export interface ClaimItemArgs extends fhir.BackboneElementArgs {
      */
     sequence: fhir.FhirPositiveInt | number | undefined;
     /**
+     * Extended properties for primitive element: Claim.item.sequence
+     */
+    _sequence?: fhir.FhirElementArgs;
+    /**
      * CareTeam members related to this service or product.
      */
     careTeamSequence?: fhir.FhirPositiveInt[] | number[] | undefined;
+    /**
+     * Extended properties for primitive element: Claim.item.careTeamSequence
+     */
+    _careTeamSequence?: (fhir.FhirElementArgs | null)[];
     /**
      * Diagnosis applicable for this service or product.
      */
     diagnosisSequence?: fhir.FhirPositiveInt[] | number[] | undefined;
     /**
+     * Extended properties for primitive element: Claim.item.diagnosisSequence
+     */
+    _diagnosisSequence?: (fhir.FhirElementArgs | null)[];
+    /**
      * Procedures applicable for this service or product.
      */
     procedureSequence?: fhir.FhirPositiveInt[] | number[] | undefined;
     /**
+     * Extended properties for primitive element: Claim.item.procedureSequence
+     */
+    _procedureSequence?: (fhir.FhirElementArgs | null)[];
+    /**
      * Exceptions, special conditions and supporting information applicable for this service or product.
      */
     informationSequence?: fhir.FhirPositiveInt[] | number[] | undefined;
+    /**
+     * Extended properties for primitive element: Claim.item.informationSequence
+     */
+    _informationSequence?: (fhir.FhirElementArgs | null)[];
     /**
      * The type of revenue or cost center providing the product and/or service.
      */
@@ -855,6 +935,10 @@ export interface ClaimItemArgs extends fhir.BackboneElementArgs {
      * To show a 10% senior's discount, the value entered is: 0.90 (1.00 - 0.10).
      */
     factor?: fhir.FhirDecimal | number | undefined;
+    /**
+     * Extended properties for primitive element: Claim.item.factor
+     */
+    _factor?: fhir.FhirElementArgs;
     /**
      * For example, the formula: quantity * unitPrice * factor  = net. Quantity and factor are assumed to be 1 if not supplied.
      */
@@ -1006,6 +1090,10 @@ export interface ClaimArgs extends fhir.DomainResourceArgs {
      */
     status: fhir.FhirCode<FmStatusCodeType> | string | undefined;
     /**
+     * Extended properties for primitive element: Claim.status
+     */
+    _status?: fhir.FhirElementArgs;
+    /**
      * The majority of jurisdictions use: oral, pharmacy, vision, professional and institutional, or variants on those terms, as the general styles of claims. The valueset is extensible to accommodate other jurisdictional requirements.
      */
     type: fhir.CodeableConceptArgs | null;
@@ -1018,6 +1106,10 @@ export interface ClaimArgs extends fhir.DomainResourceArgs {
      */
     use: fhir.FhirCode<ClaimUseCodeType> | string | undefined;
     /**
+     * Extended properties for primitive element: Claim.use
+     */
+    _use?: fhir.FhirElementArgs;
+    /**
      * The party to whom the professional services and/or products have been supplied or are being considered and for whom actual or forecast reimbursement is sought.
      */
     patient: fhir.ReferenceArgs | null;
@@ -1029,6 +1121,10 @@ export interface ClaimArgs extends fhir.DomainResourceArgs {
      * This field is independent of the date of creation of the resource as it may reflect the creation date of a source document prior to digitization. Typically for claims all services must be completed as of this date.
      */
     created: fhir.FhirDateTime | string | undefined;
+    /**
+     * Extended properties for primitive element: Claim.created
+     */
+    _created?: fhir.FhirElementArgs;
     /**
      * Individual who created the claim, predetermination or preauthorization.
      */

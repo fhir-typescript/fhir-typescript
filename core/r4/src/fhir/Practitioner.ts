@@ -107,6 +107,10 @@ export interface PractitionerArgs extends fhir.DomainResourceArgs {
    */
   active?: fhir.FhirBoolean|boolean|undefined;
   /**
+   * Extended properties for primitive element: Practitioner.active
+   */
+  _active?:fhir.FhirElementArgs;
+  /**
    * The selection of the use property should ensure that there is a single usual name specified, and others use the nickname (alias), old, or other values as appropriate.  
    * In general, select the value to be used in the ResourceReference.display based on this:
    * 1. There is more than 1 name
@@ -129,9 +133,17 @@ export interface PractitionerArgs extends fhir.DomainResourceArgs {
    */
   gender?: fhir.FhirCode<AdministrativeGenderCodeType>|string|undefined;
   /**
+   * Extended properties for primitive element: Practitioner.gender
+   */
+  _gender?:fhir.FhirElementArgs;
+  /**
    * The date of birth for the practitioner.
    */
   birthDate?: fhir.FhirDate|string|undefined;
+  /**
+   * Extended properties for primitive element: Practitioner.birthDate
+   */
+  _birthDate?:fhir.FhirElementArgs;
   /**
    * Image of the person.
    */
@@ -213,6 +225,10 @@ export class Practitioner extends fhir.DomainResource {
     if (source['identifier']) { this.identifier = source.identifier.map((x) => new fhir.Identifier(x)); }
     else { this.identifier = []; }
     if (source['active']) { this.active = new fhir.FhirBoolean({value: source.active}); }
+    if (source['_active']) {
+      if (this.active) { this.active.addExtendedProperties(source._active!); }
+      else { this.active = new fhir.FhirBoolean(source._active as Partial<fhir.FhirBooleanArgs>); }
+    }
     if (source['name']) { this.name = source.name.map((x) => new fhir.HumanName(x)); }
     else { this.name = []; }
     if (source['telecom']) { this.telecom = source.telecom.map((x) => new fhir.ContactPoint(x)); }
@@ -220,7 +236,15 @@ export class Practitioner extends fhir.DomainResource {
     if (source['address']) { this.address = source.address.map((x) => new fhir.Address(x)); }
     else { this.address = []; }
     if (source['gender']) { this.gender = new fhir.FhirCode<AdministrativeGenderCodeType>({value: source.gender}); }
+    if (source['_gender']) {
+      if (this.gender) { this.gender.addExtendedProperties(source._gender!); }
+      else { this.gender = new fhir.FhirCode<AdministrativeGenderCodeType>(source._gender as Partial<fhir.FhirCode>); }
+    }
     if (source['birthDate']) { this.birthDate = new fhir.FhirDate({value: source.birthDate}); }
+    if (source['_birthDate']) {
+      if (this.birthDate) { this.birthDate.addExtendedProperties(source._birthDate!); }
+      else { this.birthDate = new fhir.FhirDate(source._birthDate as Partial<fhir.FhirDateArgs>); }
+    }
     if (source['photo']) { this.photo = source.photo.map((x) => new fhir.Attachment(x)); }
     else { this.photo = []; }
     if (source['qualification']) { this.qualification = source.qualification.map((x) => new fhir.PractitionerQualification(x)); }

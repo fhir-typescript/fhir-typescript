@@ -16,13 +16,25 @@ export interface RiskEvidenceSynthesisSampleSizeArgs extends fhir.BackboneElemen
      */
     description?: fhir.FhirString | string | undefined;
     /**
+     * Extended properties for primitive element: RiskEvidenceSynthesis.sampleSize.description
+     */
+    _description?: fhir.FhirElementArgs;
+    /**
      * Number of studies included in this evidence synthesis.
      */
     numberOfStudies?: fhir.FhirInteger | number | undefined;
     /**
+     * Extended properties for primitive element: RiskEvidenceSynthesis.sampleSize.numberOfStudies
+     */
+    _numberOfStudies?: fhir.FhirElementArgs;
+    /**
      * Number of participants included in this evidence synthesis.
      */
     numberOfParticipants?: fhir.FhirInteger | number | undefined;
+    /**
+     * Extended properties for primitive element: RiskEvidenceSynthesis.sampleSize.numberOfParticipants
+     */
+    _numberOfParticipants?: fhir.FhirElementArgs;
 }
 /**
  * A description of the size of the sample involved in the synthesis.
@@ -66,13 +78,25 @@ export interface RiskEvidenceSynthesisRiskEstimatePrecisionEstimateArgs extends 
      */
     level?: fhir.FhirDecimal | number | undefined;
     /**
+     * Extended properties for primitive element: RiskEvidenceSynthesis.riskEstimate.precisionEstimate.level
+     */
+    _level?: fhir.FhirElementArgs;
+    /**
      * Lower bound of confidence interval.
      */
     from?: fhir.FhirDecimal | number | undefined;
     /**
+     * Extended properties for primitive element: RiskEvidenceSynthesis.riskEstimate.precisionEstimate.from
+     */
+    _from?: fhir.FhirElementArgs;
+    /**
      * Upper bound of confidence interval.
      */
     to?: fhir.FhirDecimal | number | undefined;
+    /**
+     * Extended properties for primitive element: RiskEvidenceSynthesis.riskEstimate.precisionEstimate.to
+     */
+    _to?: fhir.FhirElementArgs;
 }
 /**
  * A description of the precision of the estimate for the effect.
@@ -120,6 +144,10 @@ export interface RiskEvidenceSynthesisRiskEstimateArgs extends fhir.BackboneElem
      */
     description?: fhir.FhirString | string | undefined;
     /**
+     * Extended properties for primitive element: RiskEvidenceSynthesis.riskEstimate.description
+     */
+    _description?: fhir.FhirElementArgs;
+    /**
      * Examples include proportion and mean.
      */
     type?: fhir.CodeableConceptArgs | undefined;
@@ -127,6 +155,10 @@ export interface RiskEvidenceSynthesisRiskEstimateArgs extends fhir.BackboneElem
      * The point estimate of the risk estimate.
      */
     value?: fhir.FhirDecimal | number | undefined;
+    /**
+     * Extended properties for primitive element: RiskEvidenceSynthesis.riskEstimate.value
+     */
+    _value?: fhir.FhirElementArgs;
     /**
      * Specifies the UCUM unit for the outcome.
      */
@@ -136,9 +168,17 @@ export interface RiskEvidenceSynthesisRiskEstimateArgs extends fhir.BackboneElem
      */
     denominatorCount?: fhir.FhirInteger | number | undefined;
     /**
+     * Extended properties for primitive element: RiskEvidenceSynthesis.riskEstimate.denominatorCount
+     */
+    _denominatorCount?: fhir.FhirElementArgs;
+    /**
      * The number of group members with the outcome of interest.
      */
     numeratorCount?: fhir.FhirInteger | number | undefined;
+    /**
+     * Extended properties for primitive element: RiskEvidenceSynthesis.riskEstimate.numeratorCount
+     */
+    _numeratorCount?: fhir.FhirElementArgs;
     /**
      * A description of the precision of the estimate for the effect.
      */
@@ -304,9 +344,7 @@ export declare class RiskEvidenceSynthesisRiskEstimate extends fhir.BackboneElem
         readonly BindingIndex: "{binding_index}";
         readonly Bottle: "{Bottle}";
         readonly BowlsDay: "{Bowls}/d";
-        readonly BreathsMinute: "{Breaths}/min"; /**
-         * Human-readable summary of risk estimate.
-         */
+        readonly BreathsMinute: "{Breaths}/min";
         readonly ComplementActivityEnzymeUnit: "{CAE'U}";
         readonly CAGTrinucleotideRepeats: "{CAG_repeats}";
         readonly CagRepeat: "{CagRepeat}";
@@ -322,9 +360,7 @@ export declare class RiskEvidenceSynthesisRiskEstimate extends fhir.BackboneElem
         readonly Cfu: "{cfu}";
         readonly CfuMilliliter: "{cfu}/mL";
         readonly CGGRepeats: "{CGG_repeats}";
-        readonly CGG: "{CGG}"; /**
-         * Mapping of this datatype to a FHIR equivalent
-         */
+        readonly CGG: "{CGG}";
         readonly ComplementCH100Unit: "{CH100'U}";
         readonly ClockTime: "{clock time}";
         readonly ClockTimeClockTime: "{clock_time}";
@@ -350,7 +386,9 @@ export declare class RiskEvidenceSynthesisRiskEstimate extends fhir.BackboneElem
         readonly Dose: "{Dose}";
         readonly DrinksDay: "{Drinks}/d";
         readonly Each: "{Each}";
-        readonly EhrlichUnit: "{Ehrlich'U}";
+        readonly EhrlichUnit: "{Ehrlich'U}"; /**
+         * Specifies the UCUM unit for the outcome.
+         */
         readonly EhrlichUnitPer2Hour: "{Ehrlich'U}/(2.h)";
         readonly EhrlichUnitPer100Gram: "{Ehrlich'U}/100.g";
         readonly EhrlichUnitPerDay: "{Ehrlich'U}/d";
@@ -562,12 +600,10 @@ export declare class RiskEvidenceSynthesisRiskEstimate extends fhir.BackboneElem
         readonly PercentUptake: "%{Uptake}";
         readonly VolumePercent: "%{vol}";
         readonly PercentWeightToWeight: "%{WeightToWeight}";
-        readonly Percent100WBC: "%/100{WBC}"; /**
-         * Can be a urn:uuid: or a urn:oid: but real http: addresses are preferred.  Multiple instances may share the same URL if they have a distinct version.
-         * The determination of when to create a new version of a resource (same url, new version) vs. defining a new artifact is up to the author.  Considerations for making this decision are found in [Technical and Business Versions](resource.html#versions).
-         * In some cases, the resource can no longer be found at the stated url, but the url itself cannot change. Implementations can use the [meta.source](resource.html#meta) element to indicate where the current master source of the resource can be found.
+        readonly Percent100WBC: "%/100{WBC}";
+        readonly OnePerDay: "1/d"; /**
+         * This description can be used to capture details such as why the risk evidence synthesis was built, comments about misuse, instructions for clinical use and interpretation, literature references, examples from the paper world, etc. It is not a rendering of the risk evidence synthesis as conveyed in the 'text' field of the resource itself. This item SHOULD be populated unless the information is available from context (e.g. the language of the risk evidence synthesis is presumed to be the predominant language in the place the risk evidence synthesis was created).
          */
-        readonly OnePerDay: "1/d";
         readonly OnePerMinute: "1/min";
         readonly VAL10LiterPerMinutePerSquareMeter: "10.L/(min.m2)";
         readonly VAL10LiterPerMinute: "10.L/min";
@@ -650,9 +686,7 @@ export declare class RiskEvidenceSynthesisRiskEstimate extends fhir.BackboneElem
         readonly FemtoliterNanoliter: "fL/nL";
         readonly Femtometer: "fm";
         readonly Femtomole: "fmol";
-        readonly FemtomolePerGram: "fmol/g"; /**
-         * An individual or organization responsible for officially endorsing the content for use in some setting.
-         */
+        readonly FemtomolePerGram: "fmol/g";
         readonly FemtomolePerLiter: "fmol/L";
         readonly FemtomoleMilligram: "fmol/mg";
         readonly FemtomolePerMilligramOfCytosolProtein: "fmol/mg{cytosol_protein}";
@@ -665,7 +699,9 @@ export declare class RiskEvidenceSynthesisRiskEstimate extends fhir.BackboneElem
         readonly GramAsteriskMeterHb: "g.m/{hb}";
         readonly GramOfCreatinine: "g{creat}";
         readonly GramOfHemoglobin: "g{Hb}";
-        readonly GramOfTotalNitrogen: "g{total_nit}";
+        readonly GramOfTotalNitrogen: "g{total_nit}"; /**
+         * The name is not expected to be globally unique. The name should be a simple alphanumeric type name to ensure that it is machine-processing friendly.
+         */
         readonly GramOfTotalProtein: "g{total_prot}";
         readonly GramOfWetTissue: "g{wet_tissue}";
         readonly GramPer100Gram: "g/(100.g)";
@@ -732,9 +768,7 @@ export declare class RiskEvidenceSynthesisRiskEstimate extends fhir.BackboneElem
         readonly KilocaloriePerOunceUSAndBritish: "kcal/[oz_av]";
         readonly KilocaloriePerDay: "kcal/d";
         readonly KilocaloriePerHour: "kcal/h";
-        readonly KilocaloriePerKilogramPer24Hour: "kcal/kg/(24.h)"; /**
-         * Required-bound Value Set for status (RiskEvidenceSynthesis.status)
-         */
+        readonly KilocaloriePerKilogramPer24Hour: "kcal/kg/(24.h)";
         readonly Kilogram: "kg";
         readonly KilogramMeterPerSecond: "kg.m/s";
         readonly KilogramPerSecondPerSquareMeter: "kg/(s.m2)";
@@ -1326,6 +1360,10 @@ export interface RiskEvidenceSynthesisArgs extends fhir.DomainResourceArgs {
      */
     url?: fhir.FhirUri | string | undefined;
     /**
+     * Extended properties for primitive element: RiskEvidenceSynthesis.url
+     */
+    _url?: fhir.FhirElementArgs;
+    /**
      * Typically, this is used for identifiers that can go in an HL7 V3 II (instance identifier) data type, and can then identify this risk evidence synthesis outside of FHIR, where it is not possible to use the logical URI.
      */
     identifier?: fhir.IdentifierArgs[] | undefined;
@@ -1334,25 +1372,49 @@ export interface RiskEvidenceSynthesisArgs extends fhir.DomainResourceArgs {
      */
     version?: fhir.FhirString | string | undefined;
     /**
+     * Extended properties for primitive element: RiskEvidenceSynthesis.version
+     */
+    _version?: fhir.FhirElementArgs;
+    /**
      * The name is not expected to be globally unique. The name should be a simple alphanumeric type name to ensure that it is machine-processing friendly.
      */
     name?: fhir.FhirString | string | undefined;
+    /**
+     * Extended properties for primitive element: RiskEvidenceSynthesis.name
+     */
+    _name?: fhir.FhirElementArgs;
     /**
      * This name does not need to be machine-processing friendly and may contain punctuation, white-space, etc.
      */
     title?: fhir.FhirString | string | undefined;
     /**
+     * Extended properties for primitive element: RiskEvidenceSynthesis.title
+     */
+    _title?: fhir.FhirElementArgs;
+    /**
      * Allows filtering of risk evidence synthesiss that are appropriate for use versus not.
      */
     status: fhir.FhirCode<PublicationStatusCodeType> | string | undefined;
+    /**
+     * Extended properties for primitive element: RiskEvidenceSynthesis.status
+     */
+    _status?: fhir.FhirElementArgs;
     /**
      * Note that this is not the same as the resource last-modified-date, since the resource may be a secondary representation of the risk evidence synthesis. Additional specific dates may be added as extensions or be found by consulting Provenances associated with past versions of the resource.
      */
     date?: fhir.FhirDateTime | string | undefined;
     /**
+     * Extended properties for primitive element: RiskEvidenceSynthesis.date
+     */
+    _date?: fhir.FhirElementArgs;
+    /**
      * Usually an organization but may be an individual. The publisher (or steward) of the risk evidence synthesis is the organization or individual primarily responsible for the maintenance and upkeep of the risk evidence synthesis. This is not necessarily the same individual or organization that developed and initially authored the content. The publisher is the primary point of contact for questions or issues with the risk evidence synthesis. This item SHOULD be populated unless the information is available from context.
      */
     publisher?: fhir.FhirString | string | undefined;
+    /**
+     * Extended properties for primitive element: RiskEvidenceSynthesis.publisher
+     */
+    _publisher?: fhir.FhirElementArgs;
     /**
      * May be a web site, an email address, a telephone number, etc.
      */
@@ -1361,6 +1423,10 @@ export interface RiskEvidenceSynthesisArgs extends fhir.DomainResourceArgs {
      * This description can be used to capture details such as why the risk evidence synthesis was built, comments about misuse, instructions for clinical use and interpretation, literature references, examples from the paper world, etc. It is not a rendering of the risk evidence synthesis as conveyed in the 'text' field of the resource itself. This item SHOULD be populated unless the information is available from context (e.g. the language of the risk evidence synthesis is presumed to be the predominant language in the place the risk evidence synthesis was created).
      */
     description?: fhir.FhirMarkdown | string | undefined;
+    /**
+     * Extended properties for primitive element: RiskEvidenceSynthesis.description
+     */
+    _description?: fhir.FhirElementArgs;
     /**
      * A human-readable string to clarify or explain concepts about the resource.
      */
@@ -1378,13 +1444,25 @@ export interface RiskEvidenceSynthesisArgs extends fhir.DomainResourceArgs {
      */
     copyright?: fhir.FhirMarkdown | string | undefined;
     /**
+     * Extended properties for primitive element: RiskEvidenceSynthesis.copyright
+     */
+    _copyright?: fhir.FhirElementArgs;
+    /**
      * The 'date' element may be more recent than the approval date because of minor changes or editorial corrections.
      */
     approvalDate?: fhir.FhirDate | string | undefined;
     /**
+     * Extended properties for primitive element: RiskEvidenceSynthesis.approvalDate
+     */
+    _approvalDate?: fhir.FhirElementArgs;
+    /**
      * If specified, this date follows the original approval date.
      */
     lastReviewDate?: fhir.FhirDate | string | undefined;
+    /**
+     * Extended properties for primitive element: RiskEvidenceSynthesis.lastReviewDate
+     */
+    _lastReviewDate?: fhir.FhirElementArgs;
     /**
      * The effective period for a risk evidence synthesis  determines when the content is applicable for usage and is independent of publication and review dates. For example, a measure intended to be used for the year 2016 might be published in 2015.
      */

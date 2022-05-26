@@ -22,17 +22,33 @@ export interface SubscriptionChannelArgs extends fhir.BackboneElementArgs {
    */
   type: fhir.FhirCode<SubscriptionChannelTypeCodeType>|string|undefined;
   /**
+   * Extended properties for primitive element: Subscription.channel.type
+   */
+  _type?:fhir.FhirElementArgs;
+  /**
    * For rest-hook, and websocket, the end-point must be an http: or https: URL; for email, a mailto: url, for sms, a tel: url, and for message the endpoint can be in any form of url the server understands (usually, http: or mllp:). The URI is allowed to be relative; in which case, it is relative to the server end-point (since there may be more than one, clients should avoid using relative URIs).
    */
   endpoint?: fhir.FhirUrl|string|undefined;
+  /**
+   * Extended properties for primitive element: Subscription.channel.endpoint
+   */
+  _endpoint?:fhir.FhirElementArgs;
   /**
    * Sending the payload has obvious security implications. The server is responsible for ensuring that the content is appropriately secured.
    */
   payload?: fhir.FhirCode|string|undefined;
   /**
+   * Extended properties for primitive element: Subscription.channel.payload
+   */
+  _payload?:fhir.FhirElementArgs;
+  /**
    * Exactly what these mean depend on the channel type. They can convey additional information to the recipient and/or meet security requirements; for example, support of multiple headers in the outgoing notifications for rest-hook type subscriptions.
    */
   header?: fhir.FhirString[]|string[]|undefined;
+  /**
+   * Extended properties for primitive element: Subscription.channel.header
+   */
+  _header?:(fhir.FhirElementArgs|null)[];
 }
 
 /**
@@ -66,10 +82,28 @@ export class SubscriptionChannel extends fhir.BackboneElement {
     super(source, options);
     if (source['type']) { this.type = new fhir.FhirCode<SubscriptionChannelTypeCodeType>({value: source.type}); }
     else { this.type = null; }
+    if (source['_type']) {
+      if (this.type) { this.type.addExtendedProperties(source._type!); }
+      else { this.type = new fhir.FhirCode<SubscriptionChannelTypeCodeType>(source._type as Partial<fhir.FhirCode>); }
+    }
     if (source['endpoint']) { this.endpoint = new fhir.FhirUrl({value: source.endpoint}); }
+    if (source['_endpoint']) {
+      if (this.endpoint) { this.endpoint.addExtendedProperties(source._endpoint!); }
+      else { this.endpoint = new fhir.FhirUrl(source._endpoint as Partial<fhir.FhirUrlArgs>); }
+    }
     if (source['payload']) { this.payload = new fhir.FhirCode({value: source.payload}); }
+    if (source['_payload']) {
+      if (this.payload) { this.payload.addExtendedProperties(source._payload!); }
+      else { this.payload = new fhir.FhirCode(source._payload as Partial<fhir.FhirCodeArgs>); }
+    }
     if (source['header']) { this.header = source.header.map((x) => new fhir.FhirString({value: x})); }
     else { this.header = []; }
+    if (source['_header']) {
+      source._header.forEach((x,i) => {
+        if (this.header.length >= i) { if (x) { this.header[i].addExtendedProperties(x); } }
+        else { if (x) { this.header.push(new fhir.FhirString(x as Partial<fhir.FhirStringArgs>)); } }
+      });
+    }
   }
   /**
    * Required-bound Value Set for type (Subscription.channel.type)
@@ -109,6 +143,10 @@ export interface SubscriptionArgs extends fhir.DomainResourceArgs {
    */
   status: fhir.FhirCode<SubscriptionStatusCodeType>|string|undefined;
   /**
+   * Extended properties for primitive element: Subscription.status
+   */
+  _status?:fhir.FhirElementArgs;
+  /**
    * Contact details for a human to contact about the subscription. The primary use of this for system administrator troubleshooting.
    */
   contact?: fhir.ContactPointArgs[]|undefined;
@@ -117,17 +155,33 @@ export interface SubscriptionArgs extends fhir.DomainResourceArgs {
    */
   end?: fhir.FhirInstant|string|undefined;
   /**
+   * Extended properties for primitive element: Subscription.end
+   */
+  _end?:fhir.FhirElementArgs;
+  /**
    * A description of why this subscription is defined.
    */
   reason: fhir.FhirString|string|undefined;
+  /**
+   * Extended properties for primitive element: Subscription.reason
+   */
+  _reason?:fhir.FhirElementArgs;
   /**
    * The rules are search criteria (without the [base] part). Like Bundle.entry.request.url, it has no leading "/".
    */
   criteria: fhir.FhirString|string|undefined;
   /**
+   * Extended properties for primitive element: Subscription.criteria
+   */
+  _criteria?:fhir.FhirElementArgs;
+  /**
    * A record of the last error that occurred when the server processed a notification.
    */
   error?: fhir.FhirString|string|undefined;
+  /**
+   * Extended properties for primitive element: Subscription.error
+   */
+  _error?:fhir.FhirElementArgs;
   /**
    * Details where to send notifications when resources are received that meet the criteria.
    */
@@ -183,14 +237,34 @@ export class Subscription extends fhir.DomainResource {
     this.resourceType = 'Subscription';
     if (source['status']) { this.status = new fhir.FhirCode<SubscriptionStatusCodeType>({value: source.status}); }
     else { this.status = null; }
+    if (source['_status']) {
+      if (this.status) { this.status.addExtendedProperties(source._status!); }
+      else { this.status = new fhir.FhirCode<SubscriptionStatusCodeType>(source._status as Partial<fhir.FhirCode>); }
+    }
     if (source['contact']) { this.contact = source.contact.map((x) => new fhir.ContactPoint(x)); }
     else { this.contact = []; }
     if (source['end']) { this.end = new fhir.FhirInstant({value: source.end}); }
+    if (source['_end']) {
+      if (this.end) { this.end.addExtendedProperties(source._end!); }
+      else { this.end = new fhir.FhirInstant(source._end as Partial<fhir.FhirInstantArgs>); }
+    }
     if (source['reason']) { this.reason = new fhir.FhirString({value: source.reason}); }
     else { this.reason = null; }
+    if (source['_reason']) {
+      if (this.reason) { this.reason.addExtendedProperties(source._reason!); }
+      else { this.reason = new fhir.FhirString(source._reason as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['criteria']) { this.criteria = new fhir.FhirString({value: source.criteria}); }
     else { this.criteria = null; }
+    if (source['_criteria']) {
+      if (this.criteria) { this.criteria.addExtendedProperties(source._criteria!); }
+      else { this.criteria = new fhir.FhirString(source._criteria as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['error']) { this.error = new fhir.FhirString({value: source.error}); }
+    if (source['_error']) {
+      if (this.error) { this.error.addExtendedProperties(source._error!); }
+      else { this.error = new fhir.FhirString(source._error as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['channel']) { this.channel = new fhir.SubscriptionChannel(source.channel); }
     else { this.channel = null; }
   }

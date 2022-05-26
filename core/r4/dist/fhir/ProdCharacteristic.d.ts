@@ -32,13 +32,25 @@ export interface ProdCharacteristicArgs extends fhir.BackboneElementArgs {
      */
     shape?: fhir.FhirString | string | undefined;
     /**
+     * Extended properties for primitive element: ProdCharacteristic.shape
+     */
+    _shape?: fhir.FhirElementArgs;
+    /**
      * Where applicable, the color can be specified An appropriate controlled vocabulary shall be used The term and the term identifier shall be used.
      */
     color?: fhir.FhirString[] | string[] | undefined;
     /**
+     * Extended properties for primitive element: ProdCharacteristic.color
+     */
+    _color?: (fhir.FhirElementArgs | null)[];
+    /**
      * Where applicable, the imprint can be specified as text.
      */
     imprint?: fhir.FhirString[] | string[] | undefined;
+    /**
+     * Extended properties for primitive element: ProdCharacteristic.imprint
+     */
+    _imprint?: (fhir.FhirElementArgs | null)[];
     /**
      * Where applicable, the image can be provided The format of the image attachment shall be specified by regional implementations.
      */

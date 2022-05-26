@@ -34,9 +34,9 @@ import { ConsentContentClassCodings, ConsentContentClassCodingType,} from '../fh
 // @ts-ignore
 import { ConsentContentClassCodes,  ConsentContentClassCodeType } from '../fhirValueSets/ConsentContentClassCodes.js';
 // @ts-ignore
-import { ConsentContentCodeCodings, ConsentContentCodeCodingType,} from '../fhirValueSets/ConsentContentCodeCodings.js';
+import { ConsentContentCodings, ConsentContentCodingType,} from '../fhirValueSets/ConsentContentCodings.js';
 // @ts-ignore
-import { ConsentContentCodeCodes,  ConsentContentCodeCodeType } from '../fhirValueSets/ConsentContentCodeCodes.js';
+import { ConsentContentCodes,  ConsentContentCodeType } from '../fhirValueSets/ConsentContentCodes.js';
 // @ts-ignore
 import { ConsentStateCodings, ConsentStateCodingType,} from '../fhirValueSets/ConsentStateCodings.js';
 // @ts-ignore
@@ -62,9 +62,17 @@ export interface ConsentPolicyArgs extends fhir.BackboneElementArgs {
    */
   authority?: fhir.FhirUri|string|undefined;
   /**
+   * Extended properties for primitive element: Consent.policy.authority
+   */
+  _authority?:fhir.FhirElementArgs;
+  /**
    * This element is for discoverability / documentation and does not modify or qualify the policy rules.
    */
   uri?: fhir.FhirUri|string|undefined;
+  /**
+   * Extended properties for primitive element: Consent.policy.uri
+   */
+  _uri?:fhir.FhirElementArgs;
 }
 
 /**
@@ -89,7 +97,15 @@ export class ConsentPolicy extends fhir.BackboneElement {
   constructor(source:Partial<ConsentPolicyArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
     if (source['authority']) { this.authority = new fhir.FhirUri({value: source.authority}); }
+    if (source['_authority']) {
+      if (this.authority) { this.authority.addExtendedProperties(source._authority!); }
+      else { this.authority = new fhir.FhirUri(source._authority as Partial<fhir.FhirUriArgs>); }
+    }
     if (source['uri']) { this.uri = new fhir.FhirUri({value: source.uri}); }
+    if (source['_uri']) {
+      if (this.uri) { this.uri.addExtendedProperties(source._uri!); }
+      else { this.uri = new fhir.FhirUri(source._uri as Partial<fhir.FhirUriArgs>); }
+    }
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -110,6 +126,10 @@ export interface ConsentVerificationArgs extends fhir.BackboneElementArgs {
    */
   verified: fhir.FhirBoolean|boolean|undefined;
   /**
+   * Extended properties for primitive element: Consent.verification.verified
+   */
+  _verified?:fhir.FhirElementArgs;
+  /**
    * Who verified the instruction (Patient, Relative or other Authorized Person).
    */
   verifiedWith?: fhir.ReferenceArgs|undefined;
@@ -117,6 +137,10 @@ export interface ConsentVerificationArgs extends fhir.BackboneElementArgs {
    * Date verification was collected.
    */
   verificationDate?: fhir.FhirDateTime|string|undefined;
+  /**
+   * Extended properties for primitive element: Consent.verification.verificationDate
+   */
+  _verificationDate?:fhir.FhirElementArgs;
 }
 
 /**
@@ -146,8 +170,16 @@ export class ConsentVerification extends fhir.BackboneElement {
     super(source, options);
     if (source['verified']) { this.verified = new fhir.FhirBoolean({value: source.verified}); }
     else { this.verified = null; }
+    if (source['_verified']) {
+      if (this.verified) { this.verified.addExtendedProperties(source._verified!); }
+      else { this.verified = new fhir.FhirBoolean(source._verified as Partial<fhir.FhirBooleanArgs>); }
+    }
     if (source['verifiedWith']) { this.verifiedWith = new fhir.Reference(source.verifiedWith); }
     if (source['verificationDate']) { this.verificationDate = new fhir.FhirDateTime({value: source.verificationDate}); }
+    if (source['_verificationDate']) {
+      if (this.verificationDate) { this.verificationDate.addExtendedProperties(source._verificationDate!); }
+      else { this.verificationDate = new fhir.FhirDateTime(source._verificationDate as Partial<fhir.FhirDateTimeArgs>); }
+    }
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -234,6 +266,10 @@ export interface ConsentProvisionDataArgs extends fhir.BackboneElementArgs {
    */
   meaning: fhir.FhirCode<ConsentDataMeaningCodeType>|string|undefined;
   /**
+   * Extended properties for primitive element: Consent.provision.data.meaning
+   */
+  _meaning?:fhir.FhirElementArgs;
+  /**
    * A reference to a specific resource that defines which resources are covered by this consent.
    */
   reference: fhir.ReferenceArgs|null;
@@ -262,6 +298,10 @@ export class ConsentProvisionData extends fhir.BackboneElement {
     super(source, options);
     if (source['meaning']) { this.meaning = new fhir.FhirCode<ConsentDataMeaningCodeType>({value: source.meaning}); }
     else { this.meaning = null; }
+    if (source['_meaning']) {
+      if (this.meaning) { this.meaning.addExtendedProperties(source._meaning!); }
+      else { this.meaning = new fhir.FhirCode<ConsentDataMeaningCodeType>(source._meaning as Partial<fhir.FhirCode>); }
+    }
     if (source['reference']) { this.reference = new fhir.Reference(source.reference); }
     else { this.reference = null; }
   }
@@ -298,6 +338,10 @@ export interface ConsentProvisionArgs extends fhir.BackboneElementArgs {
    * Action  to take - permit or deny - when the rule conditions are met.  Not permitted in root rule, required in all nested rules.
    */
   type?: fhir.FhirCode<ConsentProvisionTypeCodeType>|string|undefined;
+  /**
+   * Extended properties for primitive element: Consent.provision.type
+   */
+  _type?:fhir.FhirElementArgs;
   /**
    * The timeframe in this rule is valid.
    */
@@ -398,6 +442,10 @@ export class ConsentProvision extends fhir.BackboneElement {
   constructor(source:Partial<ConsentProvisionArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
     if (source['type']) { this.type = new fhir.FhirCode<ConsentProvisionTypeCodeType>({value: source.type}); }
+    if (source['_type']) {
+      if (this.type) { this.type.addExtendedProperties(source._type!); }
+      else { this.type = new fhir.FhirCode<ConsentProvisionTypeCodeType>(source._type as Partial<fhir.FhirCode>); }
+    }
     if (source['period']) { this.period = new fhir.Period(source.period); }
     if (source['actor']) { this.actor = source.actor.map((x) => new fhir.ConsentProvisionActor(x)); }
     else { this.actor = []; }
@@ -480,6 +528,10 @@ export interface ConsentArgs extends fhir.DomainResourceArgs {
    */
   status: fhir.FhirCode<ConsentStateCodeType>|string|undefined;
   /**
+   * Extended properties for primitive element: Consent.status
+   */
+  _status?:fhir.FhirElementArgs;
+  /**
    * A selector of the type of consent being presented: ADR, Privacy, Treatment, Research.  This list is now extensible.
    */
   scope: fhir.CodeableConceptArgs|null;
@@ -495,6 +547,10 @@ export interface ConsentArgs extends fhir.DomainResourceArgs {
    * This is not the time of the original consent, but the time that this statement was made or derived.
    */
   dateTime?: fhir.FhirDateTime|string|undefined;
+  /**
+   * Extended properties for primitive element: Consent.dateTime
+   */
+  _dateTime?:fhir.FhirElementArgs;
   /**
    * Commonly, the patient the consent pertains to is the consentor, but particularly for young and old people, it may be some other person - e.g. a legal guardian.
    */
@@ -611,12 +667,20 @@ export class Consent extends fhir.DomainResource {
     else { this.identifier = []; }
     if (source['status']) { this.status = new fhir.FhirCode<ConsentStateCodeType>({value: source.status}); }
     else { this.status = null; }
+    if (source['_status']) {
+      if (this.status) { this.status.addExtendedProperties(source._status!); }
+      else { this.status = new fhir.FhirCode<ConsentStateCodeType>(source._status as Partial<fhir.FhirCode>); }
+    }
     if (source['scope']) { this.scope = new fhir.CodeableConcept(source.scope); }
     else { this.scope = null; }
     if (source['category']) { this.category = source.category.map((x) => new fhir.CodeableConcept(x)); }
     else { this.category = []; }
     if (source['patient']) { this.patient = new fhir.Reference(source.patient); }
     if (source['dateTime']) { this.dateTime = new fhir.FhirDateTime({value: source.dateTime}); }
+    if (source['_dateTime']) {
+      if (this.dateTime) { this.dateTime.addExtendedProperties(source._dateTime!); }
+      else { this.dateTime = new fhir.FhirDateTime(source._dateTime as Partial<fhir.FhirDateTimeArgs>); }
+    }
     if (source['performer']) { this.performer = source.performer.map((x) => new fhir.Reference(x)); }
     else { this.performer = []; }
     if (source['organization']) { this.organization = source.organization.map((x) => new fhir.Reference(x)); }

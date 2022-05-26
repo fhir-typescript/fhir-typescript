@@ -35,6 +35,10 @@ export interface PaymentReconciliationDetailArgs extends fhir.BackboneElementArg
      */
     date?: fhir.FhirDate | string | undefined;
     /**
+     * Extended properties for primitive element: PaymentReconciliation.detail.date
+     */
+    _date?: fhir.FhirElementArgs;
+    /**
      * A reference to the individual who is responsible for inquiries regarding the response and its payment.
      */
     responsible?: fhir.ReferenceArgs | undefined;
@@ -113,9 +117,17 @@ export interface PaymentReconciliationProcessNoteArgs extends fhir.BackboneEleme
      */
     type?: fhir.FhirCode<NoteTypeCodeType> | string | undefined;
     /**
+     * Extended properties for primitive element: PaymentReconciliation.processNote.type
+     */
+    _type?: fhir.FhirElementArgs;
+    /**
      * The explanation or description associated with the processing.
      */
     text?: fhir.FhirString | string | undefined;
+    /**
+     * Extended properties for primitive element: PaymentReconciliation.processNote.text
+     */
+    _text?: fhir.FhirElementArgs;
 }
 /**
  * A note that describes or explains the processing in a human readable form.
@@ -167,6 +179,10 @@ export interface PaymentReconciliationArgs extends fhir.DomainResourceArgs {
      */
     status: fhir.FhirCode<FmStatusCodeType> | string | undefined;
     /**
+     * Extended properties for primitive element: PaymentReconciliation.status
+     */
+    _status?: fhir.FhirElementArgs;
+    /**
      * The period of time for which payments have been gathered into this bulk payment for settlement.
      */
     period?: fhir.PeriodArgs | undefined;
@@ -174,6 +190,10 @@ export interface PaymentReconciliationArgs extends fhir.DomainResourceArgs {
      * The date when the resource was created.
      */
     created: fhir.FhirDateTime | string | undefined;
+    /**
+     * Extended properties for primitive element: PaymentReconciliation.created
+     */
+    _created?: fhir.FhirElementArgs;
     /**
      * This party is also responsible for the reconciliation.
      */
@@ -191,13 +211,25 @@ export interface PaymentReconciliationArgs extends fhir.DomainResourceArgs {
      */
     outcome?: fhir.FhirCode<RemittanceOutcomeCodeType> | string | undefined;
     /**
+     * Extended properties for primitive element: PaymentReconciliation.outcome
+     */
+    _outcome?: fhir.FhirElementArgs;
+    /**
      * A human readable description of the status of the request for the reconciliation.
      */
     disposition?: fhir.FhirString | string | undefined;
     /**
+     * Extended properties for primitive element: PaymentReconciliation.disposition
+     */
+    _disposition?: fhir.FhirElementArgs;
+    /**
      * The date of payment as indicated on the financial instrument.
      */
     paymentDate: fhir.FhirDate | string | undefined;
+    /**
+     * Extended properties for primitive element: PaymentReconciliation.paymentDate
+     */
+    _paymentDate?: fhir.FhirElementArgs;
     /**
      * Total payment amount as indicated on the financial instrument.
      */

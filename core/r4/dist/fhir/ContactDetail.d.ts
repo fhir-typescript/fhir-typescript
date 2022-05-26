@@ -8,6 +8,10 @@ export interface ContactDetailArgs extends fhir.FhirElementArgs {
      */
     name?: fhir.FhirString | string | undefined;
     /**
+     * Extended properties for primitive element: ContactDetail.name
+     */
+    _name?: fhir.FhirElementArgs;
+    /**
      * The contact details for the individual (if a name was provided) or the organization.
      */
     telecom?: fhir.ContactPointArgs[] | undefined;

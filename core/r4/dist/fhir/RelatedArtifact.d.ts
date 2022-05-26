@@ -9,21 +9,41 @@ export interface RelatedArtifactArgs extends fhir.FhirElementArgs {
      */
     type: fhir.FhirCode<RelatedArtifactTypeCodeType> | string | undefined;
     /**
+     * Extended properties for primitive element: RelatedArtifact.type
+     */
+    _type?: fhir.FhirElementArgs;
+    /**
      * A short label that can be used to reference the citation from elsewhere in the containing artifact, such as a footnote index.
      */
     label?: fhir.FhirString | string | undefined;
+    /**
+     * Extended properties for primitive element: RelatedArtifact.label
+     */
+    _label?: fhir.FhirElementArgs;
     /**
      * A brief description of the document or knowledge resource being referenced, suitable for display to a consumer.
      */
     display?: fhir.FhirString | string | undefined;
     /**
+     * Extended properties for primitive element: RelatedArtifact.display
+     */
+    _display?: fhir.FhirElementArgs;
+    /**
      * Additional structured information about citations should be captured as extensions.
      */
     citation?: fhir.FhirMarkdown | string | undefined;
     /**
+     * Extended properties for primitive element: RelatedArtifact.citation
+     */
+    _citation?: fhir.FhirElementArgs;
+    /**
      * If a document or resource element is present, this element SHALL NOT be provided (use the url or reference in the Attachment or resource reference).
      */
     url?: fhir.FhirUrl | string | undefined;
+    /**
+     * Extended properties for primitive element: RelatedArtifact.url
+     */
+    _url?: fhir.FhirElementArgs;
     /**
      * The document being referenced, represented as an attachment. This is exclusive with the resource element.
      */
@@ -32,6 +52,10 @@ export interface RelatedArtifactArgs extends fhir.FhirElementArgs {
      * If the type is predecessor, this is a reference to the succeeding knowledge resource. If the type is successor, this is a reference to the prior knowledge resource.
      */
     resource?: fhir.FhirCanonical | string | undefined;
+    /**
+     * Extended properties for primitive element: RelatedArtifact.resource
+     */
+    _resource?: fhir.FhirElementArgs;
 }
 /**
  * Related artifacts such as additional documentation, justification, or bibliographic references.
@@ -79,7 +103,7 @@ export declare class RelatedArtifact extends fhir.FhirElement {
     static get typeRequiredCodes(): {
         readonly Citation: "citation";
         readonly ComposedOf: "composed-of"; /**
-         * A short label that can be used to reference the citation from elsewhere in the containing artifact, such as a footnote index.
+         * Extended properties for primitive element: RelatedArtifact.type
          */
         readonly DependsOn: "depends-on";
         readonly DerivedFrom: "derived-from";

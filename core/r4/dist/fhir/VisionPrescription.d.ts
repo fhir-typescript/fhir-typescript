@@ -11,9 +11,17 @@ export interface VisionPrescriptionLensSpecificationPrismArgs extends fhir.Backb
      */
     amount: fhir.FhirDecimal | number | undefined;
     /**
+     * Extended properties for primitive element: VisionPrescription.lensSpecification.prism.amount
+     */
+    _amount?: fhir.FhirElementArgs;
+    /**
      * The relative base, or reference lens edge, for the prism.
      */
     base: fhir.FhirCode<VisionBaseCodeType> | string | undefined;
+    /**
+     * Extended properties for primitive element: VisionPrescription.lensSpecification.prism.base
+     */
+    _base?: fhir.FhirElementArgs;
 }
 /**
  * Allows for adjustment on two axis.
@@ -62,18 +70,34 @@ export interface VisionPrescriptionLensSpecificationArgs extends fhir.BackboneEl
      */
     eye: fhir.FhirCode<VisionEyeCodeType> | string | undefined;
     /**
+     * Extended properties for primitive element: VisionPrescription.lensSpecification.eye
+     */
+    _eye?: fhir.FhirElementArgs;
+    /**
      * The value is negative for near-sighted and positive for far sighted.
      * Often insurance will not cover a lens with power between +75 and -75.
      */
     sphere?: fhir.FhirDecimal | number | undefined;
     /**
+     * Extended properties for primitive element: VisionPrescription.lensSpecification.sphere
+     */
+    _sphere?: fhir.FhirElementArgs;
+    /**
      * Power adjustment for astigmatism measured in dioptres (0.25 units).
      */
     cylinder?: fhir.FhirDecimal | number | undefined;
     /**
+     * Extended properties for primitive element: VisionPrescription.lensSpecification.cylinder
+     */
+    _cylinder?: fhir.FhirElementArgs;
+    /**
      * The limits are +180 and -180 degrees.
      */
     axis?: fhir.FhirInteger | number | undefined;
+    /**
+     * Extended properties for primitive element: VisionPrescription.lensSpecification.axis
+     */
+    _axis?: fhir.FhirElementArgs;
     /**
      * Allows for adjustment on two axis.
      */
@@ -83,17 +107,33 @@ export interface VisionPrescriptionLensSpecificationArgs extends fhir.BackboneEl
      */
     add?: fhir.FhirDecimal | number | undefined;
     /**
+     * Extended properties for primitive element: VisionPrescription.lensSpecification.add
+     */
+    _add?: fhir.FhirElementArgs;
+    /**
      * Contact lens power measured in dioptres (0.25 units).
      */
     power?: fhir.FhirDecimal | number | undefined;
+    /**
+     * Extended properties for primitive element: VisionPrescription.lensSpecification.power
+     */
+    _power?: fhir.FhirElementArgs;
     /**
      * Back curvature measured in millimetres.
      */
     backCurve?: fhir.FhirDecimal | number | undefined;
     /**
+     * Extended properties for primitive element: VisionPrescription.lensSpecification.backCurve
+     */
+    _backCurve?: fhir.FhirElementArgs;
+    /**
      * Contact lens diameter measured in millimetres.
      */
     diameter?: fhir.FhirDecimal | number | undefined;
+    /**
+     * Extended properties for primitive element: VisionPrescription.lensSpecification.diameter
+     */
+    _diameter?: fhir.FhirElementArgs;
     /**
      * The recommended maximum wear period for the lens.
      */
@@ -103,9 +143,17 @@ export interface VisionPrescriptionLensSpecificationArgs extends fhir.BackboneEl
      */
     color?: fhir.FhirString | string | undefined;
     /**
+     * Extended properties for primitive element: VisionPrescription.lensSpecification.color
+     */
+    _color?: fhir.FhirElementArgs;
+    /**
      * Brand recommendations or restrictions.
      */
     brand?: fhir.FhirString | string | undefined;
+    /**
+     * Extended properties for primitive element: VisionPrescription.lensSpecification.brand
+     */
+    _brand?: fhir.FhirElementArgs;
     /**
      * Notes for special requirements such as coatings and lens materials.
      */
@@ -209,9 +257,17 @@ export interface VisionPrescriptionArgs extends fhir.DomainResourceArgs {
      */
     status: fhir.FhirCode<FmStatusCodeType> | string | undefined;
     /**
+     * Extended properties for primitive element: VisionPrescription.status
+     */
+    _status?: fhir.FhirElementArgs;
+    /**
      * The date this resource was created.
      */
     created: fhir.FhirDateTime | string | undefined;
+    /**
+     * Extended properties for primitive element: VisionPrescription.created
+     */
+    _created?: fhir.FhirElementArgs;
     /**
      * A resource reference to the person to whom the vision prescription applies.
      */
@@ -224,6 +280,10 @@ export interface VisionPrescriptionArgs extends fhir.DomainResourceArgs {
      * Jurisdictions determine the valid lifetime of a prescription. Typically vision prescriptions are valid for two years from the date written.
      */
     dateWritten: fhir.FhirDateTime | string | undefined;
+    /**
+     * Extended properties for primitive element: VisionPrescription.dateWritten
+     */
+    _dateWritten?: fhir.FhirElementArgs;
     /**
      * The healthcare professional responsible for authorizing the prescription.
      */

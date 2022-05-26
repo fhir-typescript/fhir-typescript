@@ -117,6 +117,10 @@ export interface SpecimenDefinitionTypeTestedContainerArgs extends fhir.Backbone
    */
   description?: fhir.FhirString|string|undefined;
   /**
+   * Extended properties for primitive element: SpecimenDefinition.typeTested.container.description
+   */
+  _description?:fhir.FhirElementArgs;
+  /**
    * The capacity (volume or other measure) of this kind of container.
    */
   capacity?: fhir.QuantityArgs|undefined;
@@ -140,6 +144,10 @@ export interface SpecimenDefinitionTypeTestedContainerArgs extends fhir.Backbone
    * Special processing that should be applied to the container for this kind of specimen.
    */
   preparation?: fhir.FhirString|string|undefined;
+  /**
+   * Extended properties for primitive element: SpecimenDefinition.typeTested.container.preparation
+   */
+  _preparation?:fhir.FhirElementArgs;
 }
 
 /**
@@ -195,6 +203,10 @@ export class SpecimenDefinitionTypeTestedContainer extends fhir.BackboneElement 
     if (source['type']) { this.type = new fhir.CodeableConcept(source.type); }
     if (source['cap']) { this.cap = new fhir.CodeableConcept(source.cap); }
     if (source['description']) { this.description = new fhir.FhirString({value: source.description}); }
+    if (source['_description']) {
+      if (this.description) { this.description.addExtendedProperties(source._description!); }
+      else { this.description = new fhir.FhirString(source._description as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['capacity']) { this.capacity = new fhir.Quantity(source.capacity); }
     if (source['minimumVolume']) { this.minimumVolume = source.minimumVolume; }
     else if (source['minimumVolumeQuantity']) { this.minimumVolume = new fhir.Quantity(source.minimumVolumeQuantity); }
@@ -202,6 +214,10 @@ export class SpecimenDefinitionTypeTestedContainer extends fhir.BackboneElement 
     if (source['additive']) { this.additive = source.additive.map((x) => new fhir.SpecimenDefinitionTypeTestedContainerAdditive(x)); }
     else { this.additive = []; }
     if (source['preparation']) { this.preparation = new fhir.FhirString({value: source.preparation}); }
+    if (source['_preparation']) {
+      if (this.preparation) { this.preparation.addExtendedProperties(source._preparation!); }
+      else { this.preparation = new fhir.FhirString(source._preparation as Partial<fhir.FhirStringArgs>); }
+    }
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -238,6 +254,10 @@ export interface SpecimenDefinitionTypeTestedHandlingArgs extends fhir.BackboneE
    * Additional textual instructions for the preservation or transport of the specimen. For instance, 'Protect from light exposure'.
    */
   instruction?: fhir.FhirString|string|undefined;
+  /**
+   * Extended properties for primitive element: SpecimenDefinition.typeTested.handling.instruction
+   */
+  _instruction?:fhir.FhirElementArgs;
 }
 
 /**
@@ -273,6 +293,10 @@ export class SpecimenDefinitionTypeTestedHandling extends fhir.BackboneElement {
     if (source['temperatureRange']) { this.temperatureRange = new fhir.Range(source.temperatureRange); }
     if (source['maxDuration']) { this.maxDuration = new fhir.Duration(source.maxDuration); }
     if (source['instruction']) { this.instruction = new fhir.FhirString({value: source.instruction}); }
+    if (source['_instruction']) {
+      if (this.instruction) { this.instruction.addExtendedProperties(source._instruction!); }
+      else { this.instruction = new fhir.FhirString(source._instruction as Partial<fhir.FhirStringArgs>); }
+    }
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -295,6 +319,10 @@ export interface SpecimenDefinitionTypeTestedArgs extends fhir.BackboneElementAr
    */
   isDerived?: fhir.FhirBoolean|boolean|undefined;
   /**
+   * Extended properties for primitive element: SpecimenDefinition.typeTested.isDerived
+   */
+  _isDerived?:fhir.FhirElementArgs;
+  /**
    * The kind of specimen conditioned for testing expected by lab.
    */
   type?: fhir.CodeableConceptArgs|undefined;
@@ -303,6 +331,10 @@ export interface SpecimenDefinitionTypeTestedArgs extends fhir.BackboneElementAr
    */
   preference: fhir.FhirCode<SpecimenContainedPreferenceCodeType>|string|undefined;
   /**
+   * Extended properties for primitive element: SpecimenDefinition.typeTested.preference
+   */
+  _preference?:fhir.FhirElementArgs;
+  /**
    * The specimen's container.
    */
   container?: fhir.SpecimenDefinitionTypeTestedContainerArgs|undefined;
@@ -310,6 +342,10 @@ export interface SpecimenDefinitionTypeTestedArgs extends fhir.BackboneElementAr
    * Requirements for delivery and special handling of this kind of conditioned specimen.
    */
   requirement?: fhir.FhirString|string|undefined;
+  /**
+   * Extended properties for primitive element: SpecimenDefinition.typeTested.requirement
+   */
+  _requirement?:fhir.FhirElementArgs;
   /**
    * The usual time that a specimen of this kind is retained after the ordered tests are completed, for the purpose of additional testing.
    */
@@ -370,11 +406,23 @@ export class SpecimenDefinitionTypeTested extends fhir.BackboneElement {
   constructor(source:Partial<SpecimenDefinitionTypeTestedArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
     if (source['isDerived']) { this.isDerived = new fhir.FhirBoolean({value: source.isDerived}); }
+    if (source['_isDerived']) {
+      if (this.isDerived) { this.isDerived.addExtendedProperties(source._isDerived!); }
+      else { this.isDerived = new fhir.FhirBoolean(source._isDerived as Partial<fhir.FhirBooleanArgs>); }
+    }
     if (source['type']) { this.type = new fhir.CodeableConcept(source.type); }
     if (source['preference']) { this.preference = new fhir.FhirCode<SpecimenContainedPreferenceCodeType>({value: source.preference}); }
     else { this.preference = null; }
+    if (source['_preference']) {
+      if (this.preference) { this.preference.addExtendedProperties(source._preference!); }
+      else { this.preference = new fhir.FhirCode<SpecimenContainedPreferenceCodeType>(source._preference as Partial<fhir.FhirCode>); }
+    }
     if (source['container']) { this.container = new fhir.SpecimenDefinitionTypeTestedContainer(source.container); }
     if (source['requirement']) { this.requirement = new fhir.FhirString({value: source.requirement}); }
+    if (source['_requirement']) {
+      if (this.requirement) { this.requirement.addExtendedProperties(source._requirement!); }
+      else { this.requirement = new fhir.FhirString(source._requirement as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['retentionTime']) { this.retentionTime = new fhir.Duration(source.retentionTime); }
     if (source['rejectionCriterion']) { this.rejectionCriterion = source.rejectionCriterion.map((x) => new fhir.CodeableConcept(x)); }
     else { this.rejectionCriterion = []; }
@@ -434,6 +482,10 @@ export interface SpecimenDefinitionArgs extends fhir.DomainResourceArgs {
    */
   timeAspect?: fhir.FhirString|string|undefined;
   /**
+   * Extended properties for primitive element: SpecimenDefinition.timeAspect
+   */
+  _timeAspect?:fhir.FhirElementArgs;
+  /**
    * The action to be performed for collecting the specimen.
    */
   collection?: fhir.CodeableConceptArgs[]|undefined;
@@ -490,6 +542,10 @@ export class SpecimenDefinition extends fhir.DomainResource {
     if (source['patientPreparation']) { this.patientPreparation = source.patientPreparation.map((x) => new fhir.CodeableConcept(x)); }
     else { this.patientPreparation = []; }
     if (source['timeAspect']) { this.timeAspect = new fhir.FhirString({value: source.timeAspect}); }
+    if (source['_timeAspect']) {
+      if (this.timeAspect) { this.timeAspect.addExtendedProperties(source._timeAspect!); }
+      else { this.timeAspect = new fhir.FhirString(source._timeAspect as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['collection']) { this.collection = source.collection.map((x) => new fhir.CodeableConcept(x)); }
     else { this.collection = []; }
     if (source['typeTested']) { this.typeTested = source.typeTested.map((x) => new fhir.SpecimenDefinitionTypeTested(x)); }

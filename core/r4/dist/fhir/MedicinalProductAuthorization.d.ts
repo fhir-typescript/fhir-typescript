@@ -160,9 +160,17 @@ export interface MedicinalProductAuthorizationArgs extends fhir.DomainResourceAr
      */
     statusDate?: fhir.FhirDateTime | string | undefined;
     /**
+     * Extended properties for primitive element: MedicinalProductAuthorization.statusDate
+     */
+    _statusDate?: fhir.FhirElementArgs;
+    /**
      * The date when a suspended the marketing or the marketing authorization of the product is anticipated to be restored.
      */
     restoreDate?: fhir.FhirDateTime | string | undefined;
+    /**
+     * Extended properties for primitive element: MedicinalProductAuthorization.restoreDate
+     */
+    _restoreDate?: fhir.FhirElementArgs;
     /**
      * The beginning of the time period in which the marketing authorization is in the specific status shall be specified A complete date consisting of day, month and year shall be specified using the ISO 8601 date format.
      */
@@ -176,9 +184,17 @@ export interface MedicinalProductAuthorizationArgs extends fhir.DomainResourceAr
      */
     dateOfFirstAuthorization?: fhir.FhirDateTime | string | undefined;
     /**
+     * Extended properties for primitive element: MedicinalProductAuthorization.dateOfFirstAuthorization
+     */
+    _dateOfFirstAuthorization?: fhir.FhirElementArgs;
+    /**
      * Date of first marketing authorization for a company's new medicinal product in any country in the World.
      */
     internationalBirthDate?: fhir.FhirDateTime | string | undefined;
+    /**
+     * Extended properties for primitive element: MedicinalProductAuthorization.internationalBirthDate
+     */
+    _internationalBirthDate?: fhir.FhirElementArgs;
     /**
      * The legal framework against which this authorization is granted.
      */

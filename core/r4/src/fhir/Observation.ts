@@ -69,6 +69,10 @@ export interface ObservationReferenceRangeArgs extends fhir.BackboneElementArgs 
    * Text based reference range in an observation which may be used when a quantitative range is not appropriate for an observation.  An example would be a reference value of "Negative" or a list or table of "normals".
    */
   text?: fhir.FhirString|string|undefined;
+  /**
+   * Extended properties for primitive element: Observation.referenceRange.text
+   */
+  _text?:fhir.FhirElementArgs;
 }
 
 /**
@@ -115,6 +119,10 @@ export class ObservationReferenceRange extends fhir.BackboneElement {
     else { this.appliesTo = []; }
     if (source['age']) { this.age = new fhir.Range(source.age); }
     if (source['text']) { this.text = new fhir.FhirString({value: source.text}); }
+    if (source['_text']) {
+      if (this.text) { this.text.addExtendedProperties(source._text!); }
+      else { this.text = new fhir.FhirString(source._text as Partial<fhir.FhirStringArgs>); }
+    }
   }
   /**
    * Preferred-bound Value Set for type (Observation.referenceRange.type)
@@ -317,6 +325,10 @@ export interface ObservationArgs extends fhir.DomainResourceArgs {
    */
   status: fhir.FhirCode<ObservationStatusCodeType>|string|undefined;
   /**
+   * Extended properties for primitive element: Observation.status
+   */
+  _status?:fhir.FhirElementArgs;
+  /**
    * In addition to the required category valueset, this element allows various categorization schemes based on the owner’s definition of the category and effectively multiple categories can be used at once.  The level of granularity is defined by the category concepts in the value set.
    */
   category?: fhir.CodeableConceptArgs[]|undefined;
@@ -360,6 +372,10 @@ export interface ObservationArgs extends fhir.DomainResourceArgs {
    * For Observations that don’t require review and verification, it may be the same as the [`lastUpdated` ](resource-definitions.html#Meta.lastUpdated) time of the resource itself.  For Observations that do require review and verification for certain updates, it might not be the same as the `lastUpdated` time of the resource itself due to a non-clinically significant update that doesn’t require the new version to be reviewed and verified again.
    */
   issued?: fhir.FhirInstant|string|undefined;
+  /**
+   * Extended properties for primitive element: Observation.issued
+   */
+  _issued?:fhir.FhirElementArgs;
   /**
    * Who was responsible for asserting the observed value as "true".
    */
@@ -592,6 +608,10 @@ export class Observation extends fhir.DomainResource {
     else { this.partOf = []; }
     if (source['status']) { this.status = new fhir.FhirCode<ObservationStatusCodeType>({value: source.status}); }
     else { this.status = null; }
+    if (source['_status']) {
+      if (this.status) { this.status.addExtendedProperties(source._status!); }
+      else { this.status = new fhir.FhirCode<ObservationStatusCodeType>(source._status as Partial<fhir.FhirCode>); }
+    }
     if (source['category']) { this.category = source.category.map((x) => new fhir.CodeableConcept(x)); }
     else { this.category = []; }
     if (source['code']) { this.code = new fhir.CodeableConcept(source.code); }
@@ -606,6 +626,10 @@ export class Observation extends fhir.DomainResource {
     else if (source['effectiveTiming']) { this.effective = new fhir.Timing(source.effectiveTiming); }
     else if (source['effectiveInstant']) { this.effective = new fhir.FhirInstant({value: source.effectiveInstant}); }
     if (source['issued']) { this.issued = new fhir.FhirInstant({value: source.issued}); }
+    if (source['_issued']) {
+      if (this.issued) { this.issued.addExtendedProperties(source._issued!); }
+      else { this.issued = new fhir.FhirInstant(source._issued as Partial<fhir.FhirInstantArgs>); }
+    }
     if (source['performer']) { this.performer = source.performer.map((x) => new fhir.Reference(x)); }
     else { this.performer = []; }
     if (source['value']) { this.value = source.value; }

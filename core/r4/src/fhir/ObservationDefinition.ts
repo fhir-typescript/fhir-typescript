@@ -58,9 +58,17 @@ export interface ObservationDefinitionQuantitativeDetailsArgs extends fhir.Backb
    */
   conversionFactor?: fhir.FhirDecimal|number|undefined;
   /**
+   * Extended properties for primitive element: ObservationDefinition.quantitativeDetails.conversionFactor
+   */
+  _conversionFactor?:fhir.FhirElementArgs;
+  /**
    * Number of digits after decimal separator when the results of such observations are of type Quantity.
    */
   decimalPrecision?: fhir.FhirInteger|number|undefined;
+  /**
+   * Extended properties for primitive element: ObservationDefinition.quantitativeDetails.decimalPrecision
+   */
+  _decimalPrecision?:fhir.FhirElementArgs;
 }
 
 /**
@@ -95,7 +103,15 @@ export class ObservationDefinitionQuantitativeDetails extends fhir.BackboneEleme
     if (source['customaryUnit']) { this.customaryUnit = new fhir.CodeableConcept(source.customaryUnit); }
     if (source['unit']) { this.unit = new fhir.CodeableConcept(source.unit); }
     if (source['conversionFactor']) { this.conversionFactor = new fhir.FhirDecimal({value: source.conversionFactor}); }
+    if (source['_conversionFactor']) {
+      if (this.conversionFactor) { this.conversionFactor.addExtendedProperties(source._conversionFactor!); }
+      else { this.conversionFactor = new fhir.FhirDecimal(source._conversionFactor as Partial<fhir.FhirDecimalArgs>); }
+    }
     if (source['decimalPrecision']) { this.decimalPrecision = new fhir.FhirInteger({value: source.decimalPrecision}); }
+    if (source['_decimalPrecision']) {
+      if (this.decimalPrecision) { this.decimalPrecision.addExtendedProperties(source._decimalPrecision!); }
+      else { this.decimalPrecision = new fhir.FhirInteger(source._decimalPrecision as Partial<fhir.FhirIntegerArgs>); }
+    }
   }
   /**
    * Extensible-bound Value Set for customaryUnit (ObservationDefinition.quantitativeDetails.customaryUnit)
@@ -130,6 +146,10 @@ export interface ObservationDefinitionQualifiedIntervalArgs extends fhir.Backbon
    */
   category?: fhir.FhirCode<ObservationRangeCategoryCodeType>|string|undefined;
   /**
+   * Extended properties for primitive element: ObservationDefinition.qualifiedInterval.category
+   */
+  _category?:fhir.FhirElementArgs;
+  /**
    * The low and high values determining the interval. There may be only one of the two.
    */
   range?: fhir.RangeArgs|undefined;
@@ -146,6 +166,10 @@ export interface ObservationDefinitionQualifiedIntervalArgs extends fhir.Backbon
    */
   gender?: fhir.FhirCode<AdministrativeGenderCodeType>|string|undefined;
   /**
+   * Extended properties for primitive element: ObservationDefinition.qualifiedInterval.gender
+   */
+  _gender?:fhir.FhirElementArgs;
+  /**
    * Some analytes vary greatly over age.
    */
   age?: fhir.RangeArgs|undefined;
@@ -157,6 +181,10 @@ export interface ObservationDefinitionQualifiedIntervalArgs extends fhir.Backbon
    * Text based condition for which the reference range is valid.
    */
   condition?: fhir.FhirString|string|undefined;
+  /**
+   * Extended properties for primitive element: ObservationDefinition.qualifiedInterval.condition
+   */
+  _condition?:fhir.FhirElementArgs;
 }
 
 /**
@@ -205,14 +233,26 @@ export class ObservationDefinitionQualifiedInterval extends fhir.BackboneElement
   constructor(source:Partial<ObservationDefinitionQualifiedIntervalArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
     if (source['category']) { this.category = new fhir.FhirCode<ObservationRangeCategoryCodeType>({value: source.category}); }
+    if (source['_category']) {
+      if (this.category) { this.category.addExtendedProperties(source._category!); }
+      else { this.category = new fhir.FhirCode<ObservationRangeCategoryCodeType>(source._category as Partial<fhir.FhirCode>); }
+    }
     if (source['range']) { this.range = new fhir.Range(source.range); }
     if (source['context']) { this.context = new fhir.CodeableConcept(source.context); }
     if (source['appliesTo']) { this.appliesTo = source.appliesTo.map((x) => new fhir.CodeableConcept(x)); }
     else { this.appliesTo = []; }
     if (source['gender']) { this.gender = new fhir.FhirCode<AdministrativeGenderCodeType>({value: source.gender}); }
+    if (source['_gender']) {
+      if (this.gender) { this.gender.addExtendedProperties(source._gender!); }
+      else { this.gender = new fhir.FhirCode<AdministrativeGenderCodeType>(source._gender as Partial<fhir.FhirCode>); }
+    }
     if (source['age']) { this.age = new fhir.Range(source.age); }
     if (source['gestationalAge']) { this.gestationalAge = new fhir.Range(source.gestationalAge); }
     if (source['condition']) { this.condition = new fhir.FhirString({value: source.condition}); }
+    if (source['_condition']) {
+      if (this.condition) { this.condition.addExtendedProperties(source._condition!); }
+      else { this.condition = new fhir.FhirString(source._condition as Partial<fhir.FhirStringArgs>); }
+    }
   }
   /**
    * Required-bound Value Set for category (ObservationDefinition.qualifiedInterval.category)
@@ -279,9 +319,17 @@ export interface ObservationDefinitionArgs extends fhir.DomainResourceArgs {
    */
   permittedDataType?: fhir.FhirCode<PermittedDataTypeCodeType>[]|string[]|undefined;
   /**
+   * Extended properties for primitive element: ObservationDefinition.permittedDataType
+   */
+  _permittedDataType?:(fhir.FhirElementArgs|null)[];
+  /**
    * An example of observation allowing multiple results is "bacteria identified by culture". Conversely, the measurement of a potassium level allows a single result.
    */
   multipleResultsAllowed?: fhir.FhirBoolean|boolean|undefined;
+  /**
+   * Extended properties for primitive element: ObservationDefinition.multipleResultsAllowed
+   */
+  _multipleResultsAllowed?:fhir.FhirElementArgs;
   /**
    * Only used if not implicit in observation code.
    */
@@ -290,6 +338,10 @@ export interface ObservationDefinitionArgs extends fhir.DomainResourceArgs {
    * The preferred name to be used when reporting the results of observations conforming to this ObservationDefinition.
    */
   preferredReportName?: fhir.FhirString|string|undefined;
+  /**
+   * Extended properties for primitive element: ObservationDefinition.preferredReportName
+   */
+  _preferredReportName?:fhir.FhirElementArgs;
   /**
    * Characteristics for quantitative results of this observation.
    */
@@ -394,9 +446,23 @@ export class ObservationDefinition extends fhir.DomainResource {
     else { this.identifier = []; }
     if (source['permittedDataType']) { this.permittedDataType = source.permittedDataType.map((x) => new fhir.FhirCode<PermittedDataTypeCodeType>({value: x})); }
     else { this.permittedDataType = []; }
+    if (source['_permittedDataType']) {
+      source._permittedDataType.forEach((x,i) => {
+        if (this.permittedDataType.length >= i) { if (x) { this.permittedDataType[i].addExtendedProperties(x); } }
+        else { if (x) { this.permittedDataType.push(new fhir.FhirCode<PermittedDataTypeCodeType>(x as Partial<fhir.FhirCode>)); } }
+      });
+    }
     if (source['multipleResultsAllowed']) { this.multipleResultsAllowed = new fhir.FhirBoolean({value: source.multipleResultsAllowed}); }
+    if (source['_multipleResultsAllowed']) {
+      if (this.multipleResultsAllowed) { this.multipleResultsAllowed.addExtendedProperties(source._multipleResultsAllowed!); }
+      else { this.multipleResultsAllowed = new fhir.FhirBoolean(source._multipleResultsAllowed as Partial<fhir.FhirBooleanArgs>); }
+    }
     if (source['method']) { this.method = new fhir.CodeableConcept(source.method); }
     if (source['preferredReportName']) { this.preferredReportName = new fhir.FhirString({value: source.preferredReportName}); }
+    if (source['_preferredReportName']) {
+      if (this.preferredReportName) { this.preferredReportName.addExtendedProperties(source._preferredReportName!); }
+      else { this.preferredReportName = new fhir.FhirString(source._preferredReportName as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['quantitativeDetails']) { this.quantitativeDetails = new fhir.ObservationDefinitionQuantitativeDetails(source.quantitativeDetails); }
     if (source['qualifiedInterval']) { this.qualifiedInterval = source.qualifiedInterval.map((x) => new fhir.ObservationDefinitionQualifiedInterval(x)); }
     else { this.qualifiedInterval = []; }

@@ -22,6 +22,10 @@ export interface CatalogEntryRelatedEntryArgs extends fhir.BackboneElementArgs {
    */
   relationtype: fhir.FhirCode<RelationTypeCodeType>|string|undefined;
   /**
+   * Extended properties for primitive element: CatalogEntry.relatedEntry.relationtype
+   */
+  _relationtype?:fhir.FhirElementArgs;
+  /**
    * The reference to the related item.
    */
   item: fhir.ReferenceArgs|null;
@@ -50,6 +54,10 @@ export class CatalogEntryRelatedEntry extends fhir.BackboneElement {
     super(source, options);
     if (source['relationtype']) { this.relationtype = new fhir.FhirCode<RelationTypeCodeType>({value: source.relationtype}); }
     else { this.relationtype = null; }
+    if (source['_relationtype']) {
+      if (this.relationtype) { this.relationtype.addExtendedProperties(source._relationtype!); }
+      else { this.relationtype = new fhir.FhirCode<RelationTypeCodeType>(source._relationtype as Partial<fhir.FhirCode>); }
+    }
     if (source['item']) { this.item = new fhir.Reference(source.item); }
     else { this.item = null; }
   }
@@ -99,6 +107,10 @@ export interface CatalogEntryArgs extends fhir.DomainResourceArgs {
    */
   orderable: fhir.FhirBoolean|boolean|undefined;
   /**
+   * Extended properties for primitive element: CatalogEntry.orderable
+   */
+  _orderable?:fhir.FhirElementArgs;
+  /**
    * The item in a catalog or definition.
    */
   referencedItem: fhir.ReferenceArgs|null;
@@ -115,6 +127,10 @@ export interface CatalogEntryArgs extends fhir.DomainResourceArgs {
    */
   status?: fhir.FhirCode<PublicationStatusCodeType>|string|undefined;
   /**
+   * Extended properties for primitive element: CatalogEntry.status
+   */
+  _status?:fhir.FhirElementArgs;
+  /**
    * The time period in which this catalog entry is expected to be active.
    */
   validityPeriod?: fhir.PeriodArgs|undefined;
@@ -123,9 +139,17 @@ export interface CatalogEntryArgs extends fhir.DomainResourceArgs {
    */
   validTo?: fhir.FhirDateTime|string|undefined;
   /**
+   * Extended properties for primitive element: CatalogEntry.validTo
+   */
+  _validTo?:fhir.FhirElementArgs;
+  /**
    * Perhaps not needed - if we use fhir resource metadata.
    */
   lastUpdated?: fhir.FhirDateTime|string|undefined;
+  /**
+   * Extended properties for primitive element: CatalogEntry.lastUpdated
+   */
+  _lastUpdated?:fhir.FhirElementArgs;
   /**
    * Used for examplefor Out of Formulary, or any specifics.
    */
@@ -215,6 +239,10 @@ export class CatalogEntry extends fhir.DomainResource {
     if (source['type']) { this.type = new fhir.CodeableConcept(source.type); }
     if (source['orderable']) { this.orderable = new fhir.FhirBoolean({value: source.orderable}); }
     else { this.orderable = null; }
+    if (source['_orderable']) {
+      if (this.orderable) { this.orderable.addExtendedProperties(source._orderable!); }
+      else { this.orderable = new fhir.FhirBoolean(source._orderable as Partial<fhir.FhirBooleanArgs>); }
+    }
     if (source['referencedItem']) { this.referencedItem = new fhir.Reference(source.referencedItem); }
     else { this.referencedItem = null; }
     if (source['additionalIdentifier']) { this.additionalIdentifier = source.additionalIdentifier.map((x) => new fhir.Identifier(x)); }
@@ -222,9 +250,21 @@ export class CatalogEntry extends fhir.DomainResource {
     if (source['classification']) { this.classification = source.classification.map((x) => new fhir.CodeableConcept(x)); }
     else { this.classification = []; }
     if (source['status']) { this.status = new fhir.FhirCode<PublicationStatusCodeType>({value: source.status}); }
+    if (source['_status']) {
+      if (this.status) { this.status.addExtendedProperties(source._status!); }
+      else { this.status = new fhir.FhirCode<PublicationStatusCodeType>(source._status as Partial<fhir.FhirCode>); }
+    }
     if (source['validityPeriod']) { this.validityPeriod = new fhir.Period(source.validityPeriod); }
     if (source['validTo']) { this.validTo = new fhir.FhirDateTime({value: source.validTo}); }
+    if (source['_validTo']) {
+      if (this.validTo) { this.validTo.addExtendedProperties(source._validTo!); }
+      else { this.validTo = new fhir.FhirDateTime(source._validTo as Partial<fhir.FhirDateTimeArgs>); }
+    }
     if (source['lastUpdated']) { this.lastUpdated = new fhir.FhirDateTime({value: source.lastUpdated}); }
+    if (source['_lastUpdated']) {
+      if (this.lastUpdated) { this.lastUpdated.addExtendedProperties(source._lastUpdated!); }
+      else { this.lastUpdated = new fhir.FhirDateTime(source._lastUpdated as Partial<fhir.FhirDateTimeArgs>); }
+    }
     if (source['additionalCharacteristic']) { this.additionalCharacteristic = source.additionalCharacteristic.map((x) => new fhir.CodeableConcept(x)); }
     else { this.additionalCharacteristic = []; }
     if (source['additionalClassification']) { this.additionalClassification = source.additionalClassification.map((x) => new fhir.CodeableConcept(x)); }

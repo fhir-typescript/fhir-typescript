@@ -42,17 +42,33 @@ export interface CodeSystemFilterArgs extends fhir.BackboneElementArgs {
    */
   code: fhir.FhirCode|string|undefined;
   /**
+   * Extended properties for primitive element: CodeSystem.filter.code
+   */
+  _code?:fhir.FhirElementArgs;
+  /**
    * A description of how or why the filter is used.
    */
   description?: fhir.FhirString|string|undefined;
+  /**
+   * Extended properties for primitive element: CodeSystem.filter.description
+   */
+  _description?:fhir.FhirElementArgs;
   /**
    * A list of operators that can be used with the filter.
    */
   operator: fhir.FhirCode<FilterOperatorCodeType>[]|string[]|undefined;
   /**
+   * Extended properties for primitive element: CodeSystem.filter.operator
+   */
+  _operator?:(fhir.FhirElementArgs|null)[];
+  /**
    * A description of what the value for the filter should be.
    */
   value: fhir.FhirString|string|undefined;
+  /**
+   * Extended properties for primitive element: CodeSystem.filter.value
+   */
+  _value?:fhir.FhirElementArgs;
 }
 
 /**
@@ -86,11 +102,29 @@ export class CodeSystemFilter extends fhir.BackboneElement {
     super(source, options);
     if (source['code']) { this.code = new fhir.FhirCode({value: source.code}); }
     else { this.code = null; }
+    if (source['_code']) {
+      if (this.code) { this.code.addExtendedProperties(source._code!); }
+      else { this.code = new fhir.FhirCode(source._code as Partial<fhir.FhirCodeArgs>); }
+    }
     if (source['description']) { this.description = new fhir.FhirString({value: source.description}); }
+    if (source['_description']) {
+      if (this.description) { this.description.addExtendedProperties(source._description!); }
+      else { this.description = new fhir.FhirString(source._description as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['operator']) { this.operator = source.operator.map((x) => new fhir.FhirCode<FilterOperatorCodeType>({value: x})); }
     else { this.operator = []; }
+    if (source['_operator']) {
+      source._operator.forEach((x,i) => {
+        if (this.operator.length >= i) { if (x) { this.operator[i].addExtendedProperties(x); } }
+        else { if (x) { this.operator.push(new fhir.FhirCode<FilterOperatorCodeType>(x as Partial<fhir.FhirCode>)); } }
+      });
+    }
     if (source['value']) { this.value = new fhir.FhirString({value: source.value}); }
     else { this.value = null; }
+    if (source['_value']) {
+      if (this.value) { this.value.addExtendedProperties(source._value!); }
+      else { this.value = new fhir.FhirString(source._value as Partial<fhir.FhirStringArgs>); }
+    }
   }
   /**
    * Required-bound Value Set for operator (CodeSystem.filter.operator)
@@ -139,17 +173,33 @@ export interface CodeSystemPropertyArgs extends fhir.BackboneElementArgs {
    */
   code: fhir.FhirCode|string|undefined;
   /**
+   * Extended properties for primitive element: CodeSystem.property.code
+   */
+  _code?:fhir.FhirElementArgs;
+  /**
    * Reference to the formal meaning of the property. One possible source of meaning is the [Concept Properties](codesystem-concept-properties.html) code system.
    */
   uri?: fhir.FhirUri|string|undefined;
+  /**
+   * Extended properties for primitive element: CodeSystem.property.uri
+   */
+  _uri?:fhir.FhirElementArgs;
   /**
    * A description of the property- why it is defined, and how its value might be used.
    */
   description?: fhir.FhirString|string|undefined;
   /**
+   * Extended properties for primitive element: CodeSystem.property.description
+   */
+  _description?:fhir.FhirElementArgs;
+  /**
    * The type of the property value. Properties of type "code" contain a code defined by the code system (e.g. a reference to another defined concept).
    */
   type: fhir.FhirCode<ConceptPropertyTypeCodeType>|string|undefined;
+  /**
+   * Extended properties for primitive element: CodeSystem.property.type
+   */
+  _type?:fhir.FhirElementArgs;
 }
 
 /**
@@ -183,10 +233,26 @@ export class CodeSystemProperty extends fhir.BackboneElement {
     super(source, options);
     if (source['code']) { this.code = new fhir.FhirCode({value: source.code}); }
     else { this.code = null; }
+    if (source['_code']) {
+      if (this.code) { this.code.addExtendedProperties(source._code!); }
+      else { this.code = new fhir.FhirCode(source._code as Partial<fhir.FhirCodeArgs>); }
+    }
     if (source['uri']) { this.uri = new fhir.FhirUri({value: source.uri}); }
+    if (source['_uri']) {
+      if (this.uri) { this.uri.addExtendedProperties(source._uri!); }
+      else { this.uri = new fhir.FhirUri(source._uri as Partial<fhir.FhirUriArgs>); }
+    }
     if (source['description']) { this.description = new fhir.FhirString({value: source.description}); }
+    if (source['_description']) {
+      if (this.description) { this.description.addExtendedProperties(source._description!); }
+      else { this.description = new fhir.FhirString(source._description as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['type']) { this.type = new fhir.FhirCode<ConceptPropertyTypeCodeType>({value: source.type}); }
     else { this.type = null; }
+    if (source['_type']) {
+      if (this.type) { this.type.addExtendedProperties(source._type!); }
+      else { this.type = new fhir.FhirCode<ConceptPropertyTypeCodeType>(source._type as Partial<fhir.FhirCode>); }
+    }
   }
   /**
    * Required-bound Value Set for type (CodeSystem.property.type)
@@ -224,6 +290,10 @@ export interface CodeSystemConceptDesignationArgs extends fhir.BackboneElementAr
    */
   language?: fhir.FhirCode|string|undefined;
   /**
+   * Extended properties for primitive element: CodeSystem.concept.designation.language
+   */
+  _language?:fhir.FhirElementArgs;
+  /**
    * If no use is provided, the designation can be assumed to be suitable for general display to a human user.
    */
   use?: fhir.CodingArgs|undefined;
@@ -231,6 +301,10 @@ export interface CodeSystemConceptDesignationArgs extends fhir.BackboneElementAr
    * The text value for this designation.
    */
   value: fhir.FhirString|string|undefined;
+  /**
+   * Extended properties for primitive element: CodeSystem.concept.designation.value
+   */
+  _value?:fhir.FhirElementArgs;
 }
 
 /**
@@ -259,9 +333,17 @@ export class CodeSystemConceptDesignation extends fhir.BackboneElement {
   constructor(source:Partial<CodeSystemConceptDesignationArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
     if (source['language']) { this.language = new fhir.FhirCode({value: source.language}); }
+    if (source['_language']) {
+      if (this.language) { this.language.addExtendedProperties(source._language!); }
+      else { this.language = new fhir.FhirCode(source._language as Partial<fhir.FhirCodeArgs>); }
+    }
     if (source['use']) { this.use = new fhir.Coding(source.use); }
     if (source['value']) { this.value = new fhir.FhirString({value: source.value}); }
     else { this.value = null; }
+    if (source['_value']) {
+      if (this.value) { this.value.addExtendedProperties(source._value!); }
+      else { this.value = new fhir.FhirString(source._value as Partial<fhir.FhirStringArgs>); }
+    }
   }
   /**
    * Preferred-bound Value Set for language (CodeSystem.concept.designation.language)
@@ -297,6 +379,10 @@ export interface CodeSystemConceptPropertyArgs extends fhir.BackboneElementArgs 
    * A code that is a reference to CodeSystem.property.code.
    */
   code: fhir.FhirCode|string|undefined;
+  /**
+   * Extended properties for primitive element: CodeSystem.concept.property.code
+   */
+  _code?:fhir.FhirElementArgs;
   /**
    * The value of this property.
    */
@@ -358,6 +444,10 @@ export class CodeSystemConceptProperty extends fhir.BackboneElement {
     super(source, options);
     if (source['code']) { this.code = new fhir.FhirCode({value: source.code}); }
     else { this.code = null; }
+    if (source['_code']) {
+      if (this.code) { this.code.addExtendedProperties(source._code!); }
+      else { this.code = new fhir.FhirCode(source._code as Partial<fhir.FhirCodeArgs>); }
+    }
     if (source['value']) { this.value = source.value; }
     else if (source['valueCode']) { this.value = new fhir.FhirCode({value: source.valueCode}); }
     else if (source['valueCoding']) { this.value = new fhir.Coding(source.valueCoding); }
@@ -392,13 +482,25 @@ export interface CodeSystemConceptArgs extends fhir.BackboneElementArgs {
    */
   code: fhir.FhirCode|string|undefined;
   /**
+   * Extended properties for primitive element: CodeSystem.concept.code
+   */
+  _code?:fhir.FhirElementArgs;
+  /**
    * A human readable string that is the recommended default way to present this concept to a user.
    */
   display?: fhir.FhirString|string|undefined;
   /**
+   * Extended properties for primitive element: CodeSystem.concept.display
+   */
+  _display?:fhir.FhirElementArgs;
+  /**
    * The formal definition of the concept. The code system resource does not make formal definitions required, because of the prevalence of legacy systems. However, they are highly recommended, as without them there is no formal meaning associated with the concept.
    */
   definition?: fhir.FhirString|string|undefined;
+  /**
+   * Extended properties for primitive element: CodeSystem.concept.definition
+   */
+  _definition?:fhir.FhirElementArgs;
   /**
    * Concepts have both a ```display``` and an array of ```designation```. The display is equivalent to a special designation with an implied ```designation.use``` of "primary code" and a language equal to the [Resource Language](resource.html#language).
    */
@@ -452,8 +554,20 @@ export class CodeSystemConcept extends fhir.BackboneElement {
     super(source, options);
     if (source['code']) { this.code = new fhir.FhirCode({value: source.code}); }
     else { this.code = null; }
+    if (source['_code']) {
+      if (this.code) { this.code.addExtendedProperties(source._code!); }
+      else { this.code = new fhir.FhirCode(source._code as Partial<fhir.FhirCodeArgs>); }
+    }
     if (source['display']) { this.display = new fhir.FhirString({value: source.display}); }
+    if (source['_display']) {
+      if (this.display) { this.display.addExtendedProperties(source._display!); }
+      else { this.display = new fhir.FhirString(source._display as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['definition']) { this.definition = new fhir.FhirString({value: source.definition}); }
+    if (source['_definition']) {
+      if (this.definition) { this.definition.addExtendedProperties(source._definition!); }
+      else { this.definition = new fhir.FhirString(source._definition as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['designation']) { this.designation = source.designation.map((x) => new fhir.CodeSystemConceptDesignation(x)); }
     else { this.designation = []; }
     if (source['property']) { this.property = source.property.map((x) => new fhir.CodeSystemConceptProperty(x)); }
@@ -493,6 +607,10 @@ export interface CodeSystemArgs extends fhir.DomainResourceArgs {
    */
   url?: fhir.FhirUri|string|undefined;
   /**
+   * Extended properties for primitive element: CodeSystem.url
+   */
+  _url?:fhir.FhirElementArgs;
+  /**
    * Typically, this is used for identifiers that can go in an HL7 V3 II (instance identifier) data type, and can then identify this code system outside of FHIR, where it is not possible to use the logical URI.  Note that HL7 defines at least three identifiers for many of its code systems - the FHIR canonical URL, the OID and the V2 Table 0396 mnemonic code.
    */
   identifier?: fhir.IdentifierArgs[]|undefined;
@@ -501,29 +619,57 @@ export interface CodeSystemArgs extends fhir.DomainResourceArgs {
    */
   version?: fhir.FhirString|string|undefined;
   /**
+   * Extended properties for primitive element: CodeSystem.version
+   */
+  _version?:fhir.FhirElementArgs;
+  /**
    * The name is not expected to be globally unique. The name should be a simple alphanumeric type name to ensure that it is machine-processing friendly.
    */
   name?: fhir.FhirString|string|undefined;
+  /**
+   * Extended properties for primitive element: CodeSystem.name
+   */
+  _name?:fhir.FhirElementArgs;
   /**
    * This name does not need to be machine-processing friendly and may contain punctuation, white-space, etc.
    */
   title?: fhir.FhirString|string|undefined;
   /**
+   * Extended properties for primitive element: CodeSystem.title
+   */
+  _title?:fhir.FhirElementArgs;
+  /**
    * Allows filtering of code systems that are appropriate for use versus not.
    */
   status: fhir.FhirCode<PublicationStatusCodeType>|string|undefined;
+  /**
+   * Extended properties for primitive element: CodeSystem.status
+   */
+  _status?:fhir.FhirElementArgs;
   /**
    * Allows filtering of code systems that are appropriate for use versus not.
    */
   experimental?: fhir.FhirBoolean|boolean|undefined;
   /**
+   * Extended properties for primitive element: CodeSystem.experimental
+   */
+  _experimental?:fhir.FhirElementArgs;
+  /**
    * Note that this is not the same as the resource last-modified-date, since the resource may be a secondary representation of the code system. Additional specific dates may be added as extensions or be found by consulting Provenances associated with past versions of the resource.
    */
   date?: fhir.FhirDateTime|string|undefined;
   /**
+   * Extended properties for primitive element: CodeSystem.date
+   */
+  _date?:fhir.FhirElementArgs;
+  /**
    * Usually an organization but may be an individual. The publisher (or steward) of the code system is the organization or individual primarily responsible for the maintenance and upkeep of the code system. This is not necessarily the same individual or organization that developed and initially authored the content. The publisher is the primary point of contact for questions or issues with the code system. This item SHOULD be populated unless the information is available from context.
    */
   publisher?: fhir.FhirString|string|undefined;
+  /**
+   * Extended properties for primitive element: CodeSystem.publisher
+   */
+  _publisher?:fhir.FhirElementArgs;
   /**
    * May be a web site, an email address, a telephone number, etc.
    */
@@ -532,6 +678,10 @@ export interface CodeSystemArgs extends fhir.DomainResourceArgs {
    * This description can be used to capture details such as why the code system was built, comments about misuse, instructions for clinical use and interpretation, literature references, examples from the paper world, etc. It is not a rendering of the code system as conveyed in the 'text' field of the resource itself. This item SHOULD be populated unless the information is available from context (e.g. the language of the code system is presumed to be the predominant language in the place the code system was created).
    */
   description?: fhir.FhirMarkdown|string|undefined;
+  /**
+   * Extended properties for primitive element: CodeSystem.description
+   */
+  _description?:fhir.FhirElementArgs;
   /**
    * When multiple useContexts are specified, there is no expectation that all or any of the contexts apply.
    */
@@ -545,42 +695,82 @@ export interface CodeSystemArgs extends fhir.DomainResourceArgs {
    */
   purpose?: fhir.FhirMarkdown|string|undefined;
   /**
+   * Extended properties for primitive element: CodeSystem.purpose
+   */
+  _purpose?:fhir.FhirElementArgs;
+  /**
    * ... Sometimes, the copyright differs between the code system and the codes that are included. The copyright statement should clearly differentiate between these when required.
    */
   copyright?: fhir.FhirMarkdown|string|undefined;
+  /**
+   * Extended properties for primitive element: CodeSystem.copyright
+   */
+  _copyright?:fhir.FhirElementArgs;
   /**
    * If this value is missing, then it is not specified whether a code system is case sensitive or not. When the rule is not known, Postel's law should be followed: produce codes with the correct case, and accept codes in any case. This element is primarily provided to support validation software.
    */
   caseSensitive?: fhir.FhirBoolean|boolean|undefined;
   /**
+   * Extended properties for primitive element: CodeSystem.caseSensitive
+   */
+  _caseSensitive?:fhir.FhirElementArgs;
+  /**
    * The definition of the value set SHALL include all codes from this code system and only codes from this code system, and it SHALL be immutable.
    */
   valueSet?: fhir.FhirCanonical|string|undefined;
+  /**
+   * Extended properties for primitive element: CodeSystem.valueSet
+   */
+  _valueSet?:fhir.FhirElementArgs;
   /**
    * Note that other representations might have a different hierarchy or none at all, and represent the information using properties.
    */
   hierarchyMeaning?: fhir.FhirCode<CodesystemHierarchyMeaningCodeType>|string|undefined;
   /**
+   * Extended properties for primitive element: CodeSystem.hierarchyMeaning
+   */
+  _hierarchyMeaning?:fhir.FhirElementArgs;
+  /**
    * Note that the code system resource does not define what the compositional grammar is, only whether or not there is one.
    */
   compositional?: fhir.FhirBoolean|boolean|undefined;
+  /**
+   * Extended properties for primitive element: CodeSystem.compositional
+   */
+  _compositional?:fhir.FhirElementArgs;
   /**
    * Best practice is that code systems do not redefine concepts, or that if concepts are redefined, a new code system definition is created. But this is not always possible, so some code systems may be defined as 'versionNeeded'.
    * Most code systems occasionally refine the displays defined for concepts between versions. Contexts in which the concept display values are validated may require that the version be specified for some code systems irrespective of the value of this property.
    */
   versionNeeded?: fhir.FhirBoolean|boolean|undefined;
   /**
+   * Extended properties for primitive element: CodeSystem.versionNeeded
+   */
+  _versionNeeded?:fhir.FhirElementArgs;
+  /**
    * The extent of the content of the code system (the concepts and codes it defines) are represented in this resource instance.
    */
   content: fhir.FhirCode<CodesystemContentModeCodeType>|string|undefined;
+  /**
+   * Extended properties for primitive element: CodeSystem.content
+   */
+  _content?:fhir.FhirElementArgs;
   /**
    * The most common use of a code system supplement is to add additional language support.
    */
   supplements?: fhir.FhirCanonical|string|undefined;
   /**
+   * Extended properties for primitive element: CodeSystem.supplements
+   */
+  _supplements?:fhir.FhirElementArgs;
+  /**
    * The count of concepts defined in this resource cannot be more than this value but may be less for several reasons - see the content element.
    */
   count?: fhir.FhirUnsignedInt|number|undefined;
+  /**
+   * Extended properties for primitive element: CodeSystem.count
+   */
+  _count?:fhir.FhirElementArgs;
   /**
    * Note that filters defined in code systems usually require custom code on the part of any terminology engine that will make them available for use in value set filters. For this reason, they are generally only seen in high value published terminologies.
    */
@@ -721,34 +911,110 @@ export class CodeSystem extends fhir.DomainResource {
     super(source, options);
     this.resourceType = 'CodeSystem';
     if (source['url']) { this.url = new fhir.FhirUri({value: source.url}); }
+    if (source['_url']) {
+      if (this.url) { this.url.addExtendedProperties(source._url!); }
+      else { this.url = new fhir.FhirUri(source._url as Partial<fhir.FhirUriArgs>); }
+    }
     if (source['identifier']) { this.identifier = source.identifier.map((x) => new fhir.Identifier(x)); }
     else { this.identifier = []; }
     if (source['version']) { this.version = new fhir.FhirString({value: source.version}); }
+    if (source['_version']) {
+      if (this.version) { this.version.addExtendedProperties(source._version!); }
+      else { this.version = new fhir.FhirString(source._version as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['name']) { this.name = new fhir.FhirString({value: source.name}); }
+    if (source['_name']) {
+      if (this.name) { this.name.addExtendedProperties(source._name!); }
+      else { this.name = new fhir.FhirString(source._name as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['title']) { this.title = new fhir.FhirString({value: source.title}); }
+    if (source['_title']) {
+      if (this.title) { this.title.addExtendedProperties(source._title!); }
+      else { this.title = new fhir.FhirString(source._title as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['status']) { this.status = new fhir.FhirCode<PublicationStatusCodeType>({value: source.status}); }
     else { this.status = null; }
+    if (source['_status']) {
+      if (this.status) { this.status.addExtendedProperties(source._status!); }
+      else { this.status = new fhir.FhirCode<PublicationStatusCodeType>(source._status as Partial<fhir.FhirCode>); }
+    }
     if (source['experimental']) { this.experimental = new fhir.FhirBoolean({value: source.experimental}); }
+    if (source['_experimental']) {
+      if (this.experimental) { this.experimental.addExtendedProperties(source._experimental!); }
+      else { this.experimental = new fhir.FhirBoolean(source._experimental as Partial<fhir.FhirBooleanArgs>); }
+    }
     if (source['date']) { this.date = new fhir.FhirDateTime({value: source.date}); }
+    if (source['_date']) {
+      if (this.date) { this.date.addExtendedProperties(source._date!); }
+      else { this.date = new fhir.FhirDateTime(source._date as Partial<fhir.FhirDateTimeArgs>); }
+    }
     if (source['publisher']) { this.publisher = new fhir.FhirString({value: source.publisher}); }
+    if (source['_publisher']) {
+      if (this.publisher) { this.publisher.addExtendedProperties(source._publisher!); }
+      else { this.publisher = new fhir.FhirString(source._publisher as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['contact']) { this.contact = source.contact.map((x) => new fhir.ContactDetail(x)); }
     else { this.contact = []; }
     if (source['description']) { this.description = new fhir.FhirMarkdown({value: source.description}); }
+    if (source['_description']) {
+      if (this.description) { this.description.addExtendedProperties(source._description!); }
+      else { this.description = new fhir.FhirMarkdown(source._description as Partial<fhir.FhirMarkdownArgs>); }
+    }
     if (source['useContext']) { this.useContext = source.useContext.map((x) => new fhir.UsageContext(x)); }
     else { this.useContext = []; }
     if (source['jurisdiction']) { this.jurisdiction = source.jurisdiction.map((x) => new fhir.CodeableConcept(x)); }
     else { this.jurisdiction = []; }
     if (source['purpose']) { this.purpose = new fhir.FhirMarkdown({value: source.purpose}); }
+    if (source['_purpose']) {
+      if (this.purpose) { this.purpose.addExtendedProperties(source._purpose!); }
+      else { this.purpose = new fhir.FhirMarkdown(source._purpose as Partial<fhir.FhirMarkdownArgs>); }
+    }
     if (source['copyright']) { this.copyright = new fhir.FhirMarkdown({value: source.copyright}); }
+    if (source['_copyright']) {
+      if (this.copyright) { this.copyright.addExtendedProperties(source._copyright!); }
+      else { this.copyright = new fhir.FhirMarkdown(source._copyright as Partial<fhir.FhirMarkdownArgs>); }
+    }
     if (source['caseSensitive']) { this.caseSensitive = new fhir.FhirBoolean({value: source.caseSensitive}); }
+    if (source['_caseSensitive']) {
+      if (this.caseSensitive) { this.caseSensitive.addExtendedProperties(source._caseSensitive!); }
+      else { this.caseSensitive = new fhir.FhirBoolean(source._caseSensitive as Partial<fhir.FhirBooleanArgs>); }
+    }
     if (source['valueSet']) { this.valueSet = new fhir.FhirCanonical({value: source.valueSet}); }
+    if (source['_valueSet']) {
+      if (this.valueSet) { this.valueSet.addExtendedProperties(source._valueSet!); }
+      else { this.valueSet = new fhir.FhirCanonical(source._valueSet as Partial<fhir.FhirCanonicalArgs>); }
+    }
     if (source['hierarchyMeaning']) { this.hierarchyMeaning = new fhir.FhirCode<CodesystemHierarchyMeaningCodeType>({value: source.hierarchyMeaning}); }
+    if (source['_hierarchyMeaning']) {
+      if (this.hierarchyMeaning) { this.hierarchyMeaning.addExtendedProperties(source._hierarchyMeaning!); }
+      else { this.hierarchyMeaning = new fhir.FhirCode<CodesystemHierarchyMeaningCodeType>(source._hierarchyMeaning as Partial<fhir.FhirCode>); }
+    }
     if (source['compositional']) { this.compositional = new fhir.FhirBoolean({value: source.compositional}); }
+    if (source['_compositional']) {
+      if (this.compositional) { this.compositional.addExtendedProperties(source._compositional!); }
+      else { this.compositional = new fhir.FhirBoolean(source._compositional as Partial<fhir.FhirBooleanArgs>); }
+    }
     if (source['versionNeeded']) { this.versionNeeded = new fhir.FhirBoolean({value: source.versionNeeded}); }
+    if (source['_versionNeeded']) {
+      if (this.versionNeeded) { this.versionNeeded.addExtendedProperties(source._versionNeeded!); }
+      else { this.versionNeeded = new fhir.FhirBoolean(source._versionNeeded as Partial<fhir.FhirBooleanArgs>); }
+    }
     if (source['content']) { this.content = new fhir.FhirCode<CodesystemContentModeCodeType>({value: source.content}); }
     else { this.content = null; }
+    if (source['_content']) {
+      if (this.content) { this.content.addExtendedProperties(source._content!); }
+      else { this.content = new fhir.FhirCode<CodesystemContentModeCodeType>(source._content as Partial<fhir.FhirCode>); }
+    }
     if (source['supplements']) { this.supplements = new fhir.FhirCanonical({value: source.supplements}); }
+    if (source['_supplements']) {
+      if (this.supplements) { this.supplements.addExtendedProperties(source._supplements!); }
+      else { this.supplements = new fhir.FhirCanonical(source._supplements as Partial<fhir.FhirCanonicalArgs>); }
+    }
     if (source['count']) { this.count = new fhir.FhirUnsignedInt({value: source.count}); }
+    if (source['_count']) {
+      if (this.count) { this.count.addExtendedProperties(source._count!); }
+      else { this.count = new fhir.FhirUnsignedInt(source._count as Partial<fhir.FhirUnsignedIntArgs>); }
+    }
     if (source['filter']) { this.filter = source.filter.map((x) => new fhir.CodeSystemFilter(x)); }
     else { this.filter = []; }
     if (source['property']) { this.property = source.property.map((x) => new fhir.CodeSystemProperty(x)); }

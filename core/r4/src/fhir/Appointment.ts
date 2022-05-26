@@ -64,9 +64,17 @@ export interface AppointmentParticipantArgs extends fhir.BackboneElementArgs {
    */
   required?: fhir.FhirCode<ParticipantrequiredCodeType>|string|undefined;
   /**
+   * Extended properties for primitive element: Appointment.participant.required
+   */
+  _required?:fhir.FhirElementArgs;
+  /**
    * Participation status of the actor.
    */
   status: fhir.FhirCode<ParticipationstatusCodeType>|string|undefined;
+  /**
+   * Extended properties for primitive element: Appointment.participant.status
+   */
+  _status?:fhir.FhirElementArgs;
   /**
    * Participation period of the actor.
    */
@@ -112,8 +120,16 @@ export class AppointmentParticipant extends fhir.BackboneElement {
     else { this.type = []; }
     if (source['actor']) { this.actor = new fhir.Reference(source.actor); }
     if (source['required']) { this.required = new fhir.FhirCode<ParticipantrequiredCodeType>({value: source.required}); }
+    if (source['_required']) {
+      if (this.required) { this.required.addExtendedProperties(source._required!); }
+      else { this.required = new fhir.FhirCode<ParticipantrequiredCodeType>(source._required as Partial<fhir.FhirCode>); }
+    }
     if (source['status']) { this.status = new fhir.FhirCode<ParticipationstatusCodeType>({value: source.status}); }
     else { this.status = null; }
+    if (source['_status']) {
+      if (this.status) { this.status.addExtendedProperties(source._status!); }
+      else { this.status = new fhir.FhirCode<ParticipationstatusCodeType>(source._status as Partial<fhir.FhirCode>); }
+    }
     if (source['period']) { this.period = new fhir.Period(source.period); }
   }
   /**
@@ -174,6 +190,10 @@ export interface AppointmentArgs extends fhir.DomainResourceArgs {
    */
   status: fhir.FhirCode<AppointmentstatusCodeType>|string|undefined;
   /**
+   * Extended properties for primitive element: Appointment.status
+   */
+  _status?:fhir.FhirElementArgs;
+  /**
    * The coded reason for the appointment being cancelled. This is often used in reporting/billing/futher processing to determine if further actions are required, or specific fees apply.
    */
   cancelationReason?: fhir.CodeableConceptArgs|undefined;
@@ -207,9 +227,17 @@ export interface AppointmentArgs extends fhir.DomainResourceArgs {
    */
   priority?: fhir.FhirUnsignedInt|number|undefined;
   /**
+   * Extended properties for primitive element: Appointment.priority
+   */
+  _priority?:fhir.FhirElementArgs;
+  /**
    * The brief description of the appointment as would be shown on a subject line in a meeting request, or appointment list. Detailed or expanded information should be put in the comment field.
    */
   description?: fhir.FhirString|string|undefined;
+  /**
+   * Extended properties for primitive element: Appointment.description
+   */
+  _description?:fhir.FhirElementArgs;
   /**
    * Additional information to support the appointment provided when making the appointment.
    */
@@ -219,13 +247,25 @@ export interface AppointmentArgs extends fhir.DomainResourceArgs {
    */
   start?: fhir.FhirInstant|string|undefined;
   /**
+   * Extended properties for primitive element: Appointment.start
+   */
+  _start?:fhir.FhirElementArgs;
+  /**
    * Date/Time that the appointment is to conclude.
    */
   end?: fhir.FhirInstant|string|undefined;
   /**
+   * Extended properties for primitive element: Appointment.end
+   */
+  _end?:fhir.FhirElementArgs;
+  /**
    * Number of minutes that the appointment is to take. This can be less than the duration between the start and end times.  For example, where the actual time of appointment is only an estimate or if a 30 minute appointment is being requested, but any time would work.  Also, if there is, for example, a planned 15 minute break in the middle of a long appointment, the duration may be 15 minutes less than the difference between the start and end.
    */
   minutesDuration?: fhir.FhirPositiveInt|number|undefined;
+  /**
+   * Extended properties for primitive element: Appointment.minutesDuration
+   */
+  _minutesDuration?:fhir.FhirElementArgs;
   /**
    * The slots from the participants' schedules that will be filled by the appointment.
    */
@@ -235,14 +275,26 @@ export interface AppointmentArgs extends fhir.DomainResourceArgs {
    */
   created?: fhir.FhirDateTime|string|undefined;
   /**
+   * Extended properties for primitive element: Appointment.created
+   */
+  _created?:fhir.FhirElementArgs;
+  /**
    * Additional text to aid in facilitating the appointment. For instance, a comment might be, "patient should proceed immediately to infusion room upon arrival"
    * Where this is a planned appointment and the start/end dates are not set then this field can be used to provide additional guidance on the details of the appointment request, including any restrictions on when to book it.
    */
   comment?: fhir.FhirString|string|undefined;
   /**
+   * Extended properties for primitive element: Appointment.comment
+   */
+  _comment?:fhir.FhirElementArgs;
+  /**
    * While Appointment.comment contains information for internal use, Appointment.patientInstructions is used to capture patient facing information about the Appointment (e.g. please bring your referral or fast from 8pm night before).
    */
   patientInstruction?: fhir.FhirString|string|undefined;
+  /**
+   * Extended properties for primitive element: Appointment.patientInstruction
+   */
+  _patientInstruction?:fhir.FhirElementArgs;
   /**
    * The service request this appointment is allocated to assess (e.g. incoming referral or procedure request).
    */
@@ -370,6 +422,10 @@ export class Appointment extends fhir.DomainResource {
     else { this.identifier = []; }
     if (source['status']) { this.status = new fhir.FhirCode<AppointmentstatusCodeType>({value: source.status}); }
     else { this.status = null; }
+    if (source['_status']) {
+      if (this.status) { this.status.addExtendedProperties(source._status!); }
+      else { this.status = new fhir.FhirCode<AppointmentstatusCodeType>(source._status as Partial<fhir.FhirCode>); }
+    }
     if (source['cancelationReason']) { this.cancelationReason = new fhir.CodeableConcept(source.cancelationReason); }
     if (source['serviceCategory']) { this.serviceCategory = source.serviceCategory.map((x) => new fhir.CodeableConcept(x)); }
     else { this.serviceCategory = []; }
@@ -383,17 +439,49 @@ export class Appointment extends fhir.DomainResource {
     if (source['reasonReference']) { this.reasonReference = source.reasonReference.map((x) => new fhir.Reference(x)); }
     else { this.reasonReference = []; }
     if (source['priority']) { this.priority = new fhir.FhirUnsignedInt({value: source.priority}); }
+    if (source['_priority']) {
+      if (this.priority) { this.priority.addExtendedProperties(source._priority!); }
+      else { this.priority = new fhir.FhirUnsignedInt(source._priority as Partial<fhir.FhirUnsignedIntArgs>); }
+    }
     if (source['description']) { this.description = new fhir.FhirString({value: source.description}); }
+    if (source['_description']) {
+      if (this.description) { this.description.addExtendedProperties(source._description!); }
+      else { this.description = new fhir.FhirString(source._description as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['supportingInformation']) { this.supportingInformation = source.supportingInformation.map((x) => new fhir.Reference(x)); }
     else { this.supportingInformation = []; }
     if (source['start']) { this.start = new fhir.FhirInstant({value: source.start}); }
+    if (source['_start']) {
+      if (this.start) { this.start.addExtendedProperties(source._start!); }
+      else { this.start = new fhir.FhirInstant(source._start as Partial<fhir.FhirInstantArgs>); }
+    }
     if (source['end']) { this.end = new fhir.FhirInstant({value: source.end}); }
+    if (source['_end']) {
+      if (this.end) { this.end.addExtendedProperties(source._end!); }
+      else { this.end = new fhir.FhirInstant(source._end as Partial<fhir.FhirInstantArgs>); }
+    }
     if (source['minutesDuration']) { this.minutesDuration = new fhir.FhirPositiveInt({value: source.minutesDuration}); }
+    if (source['_minutesDuration']) {
+      if (this.minutesDuration) { this.minutesDuration.addExtendedProperties(source._minutesDuration!); }
+      else { this.minutesDuration = new fhir.FhirPositiveInt(source._minutesDuration as Partial<fhir.FhirPositiveIntArgs>); }
+    }
     if (source['slot']) { this.slot = source.slot.map((x) => new fhir.Reference(x)); }
     else { this.slot = []; }
     if (source['created']) { this.created = new fhir.FhirDateTime({value: source.created}); }
+    if (source['_created']) {
+      if (this.created) { this.created.addExtendedProperties(source._created!); }
+      else { this.created = new fhir.FhirDateTime(source._created as Partial<fhir.FhirDateTimeArgs>); }
+    }
     if (source['comment']) { this.comment = new fhir.FhirString({value: source.comment}); }
+    if (source['_comment']) {
+      if (this.comment) { this.comment.addExtendedProperties(source._comment!); }
+      else { this.comment = new fhir.FhirString(source._comment as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['patientInstruction']) { this.patientInstruction = new fhir.FhirString({value: source.patientInstruction}); }
+    if (source['_patientInstruction']) {
+      if (this.patientInstruction) { this.patientInstruction.addExtendedProperties(source._patientInstruction!); }
+      else { this.patientInstruction = new fhir.FhirString(source._patientInstruction as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['basedOn']) { this.basedOn = source.basedOn.map((x) => new fhir.Reference(x)); }
     else { this.basedOn = []; }
     if (source['participant']) { this.participant = source.participant.map((x) => new fhir.AppointmentParticipant(x)); }

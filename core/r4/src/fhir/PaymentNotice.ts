@@ -30,6 +30,10 @@ export interface PaymentNoticeArgs extends fhir.DomainResourceArgs {
    */
   status: fhir.FhirCode<FmStatusCodeType>|string|undefined;
   /**
+   * Extended properties for primitive element: PaymentNotice.status
+   */
+  _status?:fhir.FhirElementArgs;
+  /**
    * Reference of resource for which payment is being made.
    */
   request?: fhir.ReferenceArgs|undefined;
@@ -42,6 +46,10 @@ export interface PaymentNoticeArgs extends fhir.DomainResourceArgs {
    */
   created: fhir.FhirDateTime|string|undefined;
   /**
+   * Extended properties for primitive element: PaymentNotice.created
+   */
+  _created?:fhir.FhirElementArgs;
+  /**
    * The practitioner who is responsible for the services rendered to the patient.
    */
   provider?: fhir.ReferenceArgs|undefined;
@@ -53,6 +61,10 @@ export interface PaymentNoticeArgs extends fhir.DomainResourceArgs {
    * The date when the above payment action occurred.
    */
   paymentDate?: fhir.FhirDate|string|undefined;
+  /**
+   * Extended properties for primitive element: PaymentNotice.paymentDate
+   */
+  _paymentDate?:fhir.FhirElementArgs;
   /**
    * The party who will receive or has received payment that is the subject of this notification.
    */
@@ -141,14 +153,26 @@ export class PaymentNotice extends fhir.DomainResource {
     else { this.identifier = []; }
     if (source['status']) { this.status = new fhir.FhirCode<FmStatusCodeType>({value: source.status}); }
     else { this.status = null; }
+    if (source['_status']) {
+      if (this.status) { this.status.addExtendedProperties(source._status!); }
+      else { this.status = new fhir.FhirCode<FmStatusCodeType>(source._status as Partial<fhir.FhirCode>); }
+    }
     if (source['request']) { this.request = new fhir.Reference(source.request); }
     if (source['response']) { this.response = new fhir.Reference(source.response); }
     if (source['created']) { this.created = new fhir.FhirDateTime({value: source.created}); }
     else { this.created = null; }
+    if (source['_created']) {
+      if (this.created) { this.created.addExtendedProperties(source._created!); }
+      else { this.created = new fhir.FhirDateTime(source._created as Partial<fhir.FhirDateTimeArgs>); }
+    }
     if (source['provider']) { this.provider = new fhir.Reference(source.provider); }
     if (source['payment']) { this.payment = new fhir.Reference(source.payment); }
     else { this.payment = null; }
     if (source['paymentDate']) { this.paymentDate = new fhir.FhirDate({value: source.paymentDate}); }
+    if (source['_paymentDate']) {
+      if (this.paymentDate) { this.paymentDate.addExtendedProperties(source._paymentDate!); }
+      else { this.paymentDate = new fhir.FhirDate(source._paymentDate as Partial<fhir.FhirDateArgs>); }
+    }
     if (source['payee']) { this.payee = new fhir.Reference(source.payee); }
     if (source['recipient']) { this.recipient = new fhir.Reference(source.recipient); }
     else { this.recipient = null; }

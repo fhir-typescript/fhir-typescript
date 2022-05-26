@@ -30,6 +30,10 @@ export interface DiagnosticReportMediaArgs extends fhir.BackboneElementArgs {
    */
   comment?: fhir.FhirString|string|undefined;
   /**
+   * Extended properties for primitive element: DiagnosticReport.media.comment
+   */
+  _comment?:fhir.FhirElementArgs;
+  /**
    * Reference to the image source.
    */
   link: fhir.ReferenceArgs|null;
@@ -57,6 +61,10 @@ export class DiagnosticReportMedia extends fhir.BackboneElement {
   constructor(source:Partial<DiagnosticReportMediaArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
     if (source['comment']) { this.comment = new fhir.FhirString({value: source.comment}); }
+    if (source['_comment']) {
+      if (this.comment) { this.comment.addExtendedProperties(source._comment!); }
+      else { this.comment = new fhir.FhirString(source._comment as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['link']) { this.link = new fhir.Reference(source.link); }
     else { this.link = null; }
   }
@@ -94,6 +102,10 @@ export interface DiagnosticReportArgs extends fhir.DomainResourceArgs {
    */
   status: fhir.FhirCode<DiagnosticReportStatusCodeType>|string|undefined;
   /**
+   * Extended properties for primitive element: DiagnosticReport.status
+   */
+  _status?:fhir.FhirElementArgs;
+  /**
    * Multiple categories are allowed using various categorization schemes.   The level of granularity is defined by the category concepts in the value set. More fine-grained filtering can be performed using the metadata and/or terminology hierarchy in DiagnosticReport.code.
    */
   category?: fhir.CodeableConceptArgs[]|undefined;
@@ -126,6 +138,10 @@ export interface DiagnosticReportArgs extends fhir.DomainResourceArgs {
    */
   issued?: fhir.FhirInstant|string|undefined;
   /**
+   * Extended properties for primitive element: DiagnosticReport.issued
+   */
+  _issued?:fhir.FhirElementArgs;
+  /**
    * This is not necessarily the source of the atomic data items or the entity that interpreted the results. It is the entity that takes responsibility for the clinical report.
    */
   performer?: fhir.ReferenceArgs[]|undefined;
@@ -153,6 +169,10 @@ export interface DiagnosticReportArgs extends fhir.DomainResourceArgs {
    * Concise and clinically contextualized summary conclusion (interpretation/impression) of the diagnostic report.
    */
   conclusion?: fhir.FhirString|string|undefined;
+  /**
+   * Extended properties for primitive element: DiagnosticReport.conclusion
+   */
+  _conclusion?:fhir.FhirElementArgs;
   /**
    * One or more codes that represent the summary conclusion (interpretation/impression) of the diagnostic report.
    */
@@ -263,6 +283,10 @@ export class DiagnosticReport extends fhir.DomainResource {
     else { this.basedOn = []; }
     if (source['status']) { this.status = new fhir.FhirCode<DiagnosticReportStatusCodeType>({value: source.status}); }
     else { this.status = null; }
+    if (source['_status']) {
+      if (this.status) { this.status.addExtendedProperties(source._status!); }
+      else { this.status = new fhir.FhirCode<DiagnosticReportStatusCodeType>(source._status as Partial<fhir.FhirCode>); }
+    }
     if (source['category']) { this.category = source.category.map((x) => new fhir.CodeableConcept(x)); }
     else { this.category = []; }
     if (source['code']) { this.code = new fhir.CodeableConcept(source.code); }
@@ -273,6 +297,10 @@ export class DiagnosticReport extends fhir.DomainResource {
     else if (source['effectiveDateTime']) { this.effective = new fhir.FhirDateTime({value: source.effectiveDateTime}); }
     else if (source['effectivePeriod']) { this.effective = new fhir.Period(source.effectivePeriod); }
     if (source['issued']) { this.issued = new fhir.FhirInstant({value: source.issued}); }
+    if (source['_issued']) {
+      if (this.issued) { this.issued.addExtendedProperties(source._issued!); }
+      else { this.issued = new fhir.FhirInstant(source._issued as Partial<fhir.FhirInstantArgs>); }
+    }
     if (source['performer']) { this.performer = source.performer.map((x) => new fhir.Reference(x)); }
     else { this.performer = []; }
     if (source['resultsInterpreter']) { this.resultsInterpreter = source.resultsInterpreter.map((x) => new fhir.Reference(x)); }
@@ -286,6 +314,10 @@ export class DiagnosticReport extends fhir.DomainResource {
     if (source['media']) { this.media = source.media.map((x) => new fhir.DiagnosticReportMedia(x)); }
     else { this.media = []; }
     if (source['conclusion']) { this.conclusion = new fhir.FhirString({value: source.conclusion}); }
+    if (source['_conclusion']) {
+      if (this.conclusion) { this.conclusion.addExtendedProperties(source._conclusion!); }
+      else { this.conclusion = new fhir.FhirString(source._conclusion as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['conclusionCode']) { this.conclusionCode = source.conclusionCode.map((x) => new fhir.CodeableConcept(x)); }
     else { this.conclusionCode = []; }
     if (source['presentedForm']) { this.presentedForm = source.presentedForm.map((x) => new fhir.Attachment(x)); }

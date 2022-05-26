@@ -18,9 +18,9 @@ import { MedicationStatementCategoryCodings, MedicationStatementCategoryCodingTy
 // @ts-ignore
 import { MedicationStatementCategoryCodes,  MedicationStatementCategoryCodeType } from '../fhirValueSets/MedicationStatementCategoryCodes.js';
 // @ts-ignore
-import { ConditionCodeCodings, ConditionCodeCodingType,} from '../fhirValueSets/ConditionCodeCodings.js';
+import { ConditionCodings, ConditionCodingType,} from '../fhirValueSets/ConditionCodings.js';
 // @ts-ignore
-import { ConditionCodeCodes,  ConditionCodeCodeType } from '../fhirValueSets/ConditionCodeCodes.js';
+import { ConditionCodes,  ConditionCodeType } from '../fhirValueSets/ConditionCodes.js';
 /**
  * Valid arguments for the MedicationStatement type.
  */
@@ -46,6 +46,10 @@ export interface MedicationStatementArgs extends fhir.DomainResourceArgs {
    * This element is labeled as a modifier because the status contains codes that mark the resource as not currently valid.
    */
   status: fhir.FhirCode<MedicationStatementStatusCodeType>|string|undefined;
+  /**
+   * Extended properties for primitive element: MedicationStatement.status
+   */
+  _status?:fhir.FhirElementArgs;
   /**
    * This is generally only used for "exception" statuses such as "not-taken", "on-hold", "cancelled" or "entered-in-error". The reason for performing the event at all is captured in reasonCode, not here.
    */
@@ -90,6 +94,10 @@ export interface MedicationStatementArgs extends fhir.DomainResourceArgs {
    * The date when the medication statement was asserted by the information source.
    */
   dateAsserted?: fhir.FhirDateTime|string|undefined;
+  /**
+   * Extended properties for primitive element: MedicationStatement.dateAsserted
+   */
+  _dateAsserted?:fhir.FhirElementArgs;
   /**
    * The person or organization that provided the information about the taking of this medication. Note: Use derivedFrom when a MedicationStatement is derived from other resources, e.g. Claim or MedicationRequest.
    */
@@ -220,6 +228,10 @@ export class MedicationStatement extends fhir.DomainResource {
     else { this.partOf = []; }
     if (source['status']) { this.status = new fhir.FhirCode<MedicationStatementStatusCodeType>({value: source.status}); }
     else { this.status = null; }
+    if (source['_status']) {
+      if (this.status) { this.status.addExtendedProperties(source._status!); }
+      else { this.status = new fhir.FhirCode<MedicationStatementStatusCodeType>(source._status as Partial<fhir.FhirCode>); }
+    }
     if (source['statusReason']) { this.statusReason = source.statusReason.map((x) => new fhir.CodeableConcept(x)); }
     else { this.statusReason = []; }
     if (source['category']) { this.category = new fhir.CodeableConcept(source.category); }
@@ -234,6 +246,10 @@ export class MedicationStatement extends fhir.DomainResource {
     else if (source['effectiveDateTime']) { this.effective = new fhir.FhirDateTime({value: source.effectiveDateTime}); }
     else if (source['effectivePeriod']) { this.effective = new fhir.Period(source.effectivePeriod); }
     if (source['dateAsserted']) { this.dateAsserted = new fhir.FhirDateTime({value: source.dateAsserted}); }
+    if (source['_dateAsserted']) {
+      if (this.dateAsserted) { this.dateAsserted.addExtendedProperties(source._dateAsserted!); }
+      else { this.dateAsserted = new fhir.FhirDateTime(source._dateAsserted as Partial<fhir.FhirDateTimeArgs>); }
+    }
     if (source['informationSource']) { this.informationSource = new fhir.Reference(source.informationSource); }
     if (source['derivedFrom']) { this.derivedFrom = source.derivedFrom.map((x) => new fhir.Reference(x)); }
     else { this.derivedFrom = []; }

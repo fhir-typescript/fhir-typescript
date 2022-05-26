@@ -13,9 +13,17 @@ export interface OperationDefinitionParameterBindingArgs extends fhir.BackboneEl
      */
     strength: fhir.FhirCode<BindingStrengthCodeType> | string | undefined;
     /**
+     * Extended properties for primitive element: OperationDefinition.parameter.binding.strength
+     */
+    _strength?: fhir.FhirElementArgs;
+    /**
      * For value sets with a referenceResource, the display can contain the value set description.  The reference may be version-specific or not.
      */
     valueSet: fhir.FhirCanonical | string | undefined;
+    /**
+     * Extended properties for primitive element: OperationDefinition.parameter.binding.valueSet
+     */
+    _valueSet?: fhir.FhirElementArgs;
 }
 /**
  * Binds to a value set if this parameter is coded (code, Coding, CodeableConcept).
@@ -60,9 +68,17 @@ export interface OperationDefinitionParameterReferencedFromArgs extends fhir.Bac
      */
     source: fhir.FhirString | string | undefined;
     /**
+     * Extended properties for primitive element: OperationDefinition.parameter.referencedFrom.source
+     */
+    _source?: fhir.FhirElementArgs;
+    /**
      * The id of the element in the referencing resource that is expected to resolve to this resource.
      */
     sourceId?: fhir.FhirString | string | undefined;
+    /**
+     * Extended properties for primitive element: OperationDefinition.parameter.referencedFrom.sourceId
+     */
+    _sourceId?: fhir.FhirElementArgs;
 }
 /**
  * Resolution applies if the referenced parameter exists.
@@ -98,33 +114,65 @@ export interface OperationDefinitionParameterArgs extends fhir.BackboneElementAr
      */
     name: fhir.FhirCode | string | undefined;
     /**
+     * Extended properties for primitive element: OperationDefinition.parameter.name
+     */
+    _name?: fhir.FhirElementArgs;
+    /**
      * If a parameter name is used for both an input and an output parameter, the parameter should be defined twice.
      */
     use: fhir.FhirCode<OperationParameterUseCodeType> | string | undefined;
+    /**
+     * Extended properties for primitive element: OperationDefinition.parameter.use
+     */
+    _use?: fhir.FhirElementArgs;
     /**
      * The minimum number of times this parameter SHALL appear in the request or response.
      */
     min: fhir.FhirInteger | number | undefined;
     /**
+     * Extended properties for primitive element: OperationDefinition.parameter.min
+     */
+    _min?: fhir.FhirElementArgs;
+    /**
      * The maximum number of times this element is permitted to appear in the request or response.
      */
     max: fhir.FhirString | string | undefined;
+    /**
+     * Extended properties for primitive element: OperationDefinition.parameter.max
+     */
+    _max?: fhir.FhirElementArgs;
     /**
      * Describes the meaning or use of this parameter.
      */
     documentation?: fhir.FhirString | string | undefined;
     /**
+     * Extended properties for primitive element: OperationDefinition.parameter.documentation
+     */
+    _documentation?: fhir.FhirElementArgs;
+    /**
      * if there is no stated parameter, then the parameter is a multi-part parameter; type and must have at least one part defined.
      */
     type?: fhir.FhirCode | string | undefined;
+    /**
+     * Extended properties for primitive element: OperationDefinition.parameter.type
+     */
+    _type?: fhir.FhirElementArgs;
     /**
      * Often, these profiles are the base definitions from the spec (e.g. http://hl7.org/fhir/StructureDefinition/Patient).
      */
     targetProfile?: fhir.FhirCanonical[] | string[] | undefined;
     /**
+     * Extended properties for primitive element: OperationDefinition.parameter.targetProfile
+     */
+    _targetProfile?: (fhir.FhirElementArgs | null)[];
+    /**
      * How the parameter is understood as a search parameter. This is only used if the parameter type is 'string'.
      */
     searchType?: fhir.FhirCode<SearchParamTypeCodeType> | string | undefined;
+    /**
+     * Extended properties for primitive element: OperationDefinition.parameter.searchType
+     */
+    _searchType?: fhir.FhirElementArgs;
     /**
      * Binds to a value set if this parameter is coded (code, Coding, CodeableConcept).
      */
@@ -218,7 +266,9 @@ export declare class OperationDefinitionParameter extends fhir.BackboneElement {
         readonly Attachment: "Attachment";
         readonly AuditEvent: "AuditEvent";
         readonly BackboneElement: "BackboneElement";
-        readonly Base64Binary: "base64Binary";
+        readonly Base64Binary: "base64Binary"; /**
+         * For further discussion, see [Using Terminologies](terminologies.html).
+         */
         readonly Basic: "Basic";
         readonly Binary: "Binary";
         readonly BiologicallyDerivedProduct: "BiologicallyDerivedProduct";
@@ -243,9 +293,7 @@ export declare class OperationDefinitionParameter extends fhir.BackboneElement {
         readonly CommunicationRequest: "CommunicationRequest";
         readonly CompartmentDefinition: "CompartmentDefinition";
         readonly Composition: "Composition";
-        readonly ConceptMap: "ConceptMap"; /**
-         * Resolution applies if the referenced parameter exists.
-         */
+        readonly ConceptMap: "ConceptMap";
         readonly Condition: "Condition";
         readonly Consent: "Consent";
         readonly ContactDetail: "ContactDetail";
@@ -262,14 +310,14 @@ export declare class OperationDefinitionParameter extends fhir.BackboneElement {
         readonly Decimal: "decimal";
         readonly DetectedIssue: "DetectedIssue";
         readonly Device: "Device";
-        readonly DeviceDefinition: "DeviceDefinition";
+        readonly DeviceDefinition: "DeviceDefinition"; /**
+         * The minimum number of times this parameter SHALL appear in the request or response.
+         */
         readonly DeviceMetric: "DeviceMetric";
         readonly DeviceRequest: "DeviceRequest";
         readonly DeviceUseStatement: "DeviceUseStatement";
         readonly DiagnosticReport: "DiagnosticReport";
-        readonly Distance: "Distance"; /**
-         * Function to perform basic model validation (e.g., check if required elements are present).
-         */
+        readonly Distance: "Distance";
         readonly DocumentManifest: "DocumentManifest";
         readonly DocumentReference: "DocumentReference";
         readonly DomainResource: "DomainResource";
@@ -287,9 +335,6 @@ export declare class OperationDefinitionParameter extends fhir.BackboneElement {
         readonly Evidence: "Evidence";
         readonly EvidenceVariable: "EvidenceVariable";
         readonly ExampleScenario: "ExampleScenario";
-        /**
-         * The combinations are suggestions as to which sets of parameters to use together, but the combinations are not intended to be authoritative.
-         */
         readonly ExplanationOfBenefit: "ExplanationOfBenefit";
         readonly Expression: "Expression";
         readonly Extension: "Extension";
@@ -310,9 +355,7 @@ export declare class OperationDefinitionParameter extends fhir.BackboneElement {
         readonly ImplementationGuide: "ImplementationGuide";
         readonly Instant: "instant";
         readonly InsurancePlan: "InsurancePlan";
-        readonly Integer: "integer"; /**
-         * May be a web site, an email address, a telephone number, etc.
-         */
+        readonly Integer: "integer";
         readonly Invoice: "Invoice";
         readonly Library: "Library";
         readonly Linkage: "Linkage";
@@ -336,6 +379,9 @@ export declare class OperationDefinitionParameter extends fhir.BackboneElement {
         readonly MedicinalProductIngredient: "MedicinalProductIngredient";
         readonly MedicinalProductInteraction: "MedicinalProductInteraction";
         readonly MedicinalProductManufactured: "MedicinalProductManufactured";
+        /**
+         * This description can be used to capture details such as why the operation definition was built, comments about misuse, instructions for clinical use and interpretation, literature references, examples from the paper world, etc. It is not a rendering of the operation definition as conveyed in the 'text' field of the resource itself. This item SHOULD be populated unless the information is available from context (e.g. the language of the operation definition is presumed to be the predominant language in the place the operation definition was created).
+         */
         readonly MedicinalProductPackaged: "MedicinalProductPackaged";
         readonly MedicinalProductPharmaceutical: "MedicinalProductPharmaceutical";
         readonly MedicinalProductUndesirableEffect: "MedicinalProductUndesirableEffect";
@@ -398,7 +444,9 @@ export declare class OperationDefinitionParameter extends fhir.BackboneElement {
         readonly SpecimenDefinition: "SpecimenDefinition";
         readonly VALString: "string";
         readonly StructureDefinition: "StructureDefinition";
-        readonly StructureMap: "StructureMap";
+        readonly StructureMap: "StructureMap"; /**
+         * The combinations are suggestions as to which sets of parameters to use together, but the combinations are not intended to be authoritative.
+         */
         readonly Subscription: "Subscription";
         readonly Substance: "Substance";
         readonly SubstanceAmount: "SubstanceAmount";
@@ -456,9 +504,17 @@ export interface OperationDefinitionOverloadArgs extends fhir.BackboneElementArg
      */
     parameterName?: fhir.FhirString[] | string[] | undefined;
     /**
+     * Extended properties for primitive element: OperationDefinition.overload.parameterName
+     */
+    _parameterName?: (fhir.FhirElementArgs | null)[];
+    /**
      * Comments to go on overload.
      */
     comment?: fhir.FhirString | string | undefined;
+    /**
+     * Extended properties for primitive element: OperationDefinition.overload.comment
+     */
+    _comment?: fhir.FhirElementArgs;
 }
 /**
  * The combinations are suggestions as to which sets of parameters to use together, but the combinations are not intended to be authoritative.
@@ -500,37 +556,73 @@ export interface OperationDefinitionArgs extends fhir.DomainResourceArgs {
      */
     url?: fhir.FhirUri | string | undefined;
     /**
+     * Extended properties for primitive element: OperationDefinition.url
+     */
+    _url?: fhir.FhirElementArgs;
+    /**
      * There may be different operation definition instances that have the same identifier but different versions.  The version can be appended to the url in a reference to allow a reference to a particular business version of the operation definition with the format [url]|[version].
      */
     version?: fhir.FhirString | string | undefined;
+    /**
+     * Extended properties for primitive element: OperationDefinition.version
+     */
+    _version?: fhir.FhirElementArgs;
     /**
      * The name is not expected to be globally unique. The name should be a simple alphanumeric type name to ensure that it is machine-processing friendly.
      */
     name: fhir.FhirString | string | undefined;
     /**
+     * Extended properties for primitive element: OperationDefinition.name
+     */
+    _name?: fhir.FhirElementArgs;
+    /**
      * This name does not need to be machine-processing friendly and may contain punctuation, white-space, etc.
      */
     title?: fhir.FhirString | string | undefined;
+    /**
+     * Extended properties for primitive element: OperationDefinition.title
+     */
+    _title?: fhir.FhirElementArgs;
     /**
      * Allows filtering of operation definitions that are appropriate for use versus not.
      */
     status: fhir.FhirCode<PublicationStatusCodeType> | string | undefined;
     /**
+     * Extended properties for primitive element: OperationDefinition.status
+     */
+    _status?: fhir.FhirElementArgs;
+    /**
      * Named queries are invoked differently, and have different capabilities.
      */
     kind: fhir.FhirCode<OperationKindCodeType> | string | undefined;
+    /**
+     * Extended properties for primitive element: OperationDefinition.kind
+     */
+    _kind?: fhir.FhirElementArgs;
     /**
      * Allows filtering of operation definitions that are appropriate for use versus not.
      */
     experimental?: fhir.FhirBoolean | boolean | undefined;
     /**
+     * Extended properties for primitive element: OperationDefinition.experimental
+     */
+    _experimental?: fhir.FhirElementArgs;
+    /**
      * Note that this is not the same as the resource last-modified-date, since the resource may be a secondary representation of the operation definition. Additional specific dates may be added as extensions or be found by consulting Provenances associated with past versions of the resource.
      */
     date?: fhir.FhirDateTime | string | undefined;
     /**
+     * Extended properties for primitive element: OperationDefinition.date
+     */
+    _date?: fhir.FhirElementArgs;
+    /**
      * Usually an organization but may be an individual. The publisher (or steward) of the operation definition is the organization or individual primarily responsible for the maintenance and upkeep of the operation definition. This is not necessarily the same individual or organization that developed and initially authored the content. The publisher is the primary point of contact for questions or issues with the operation definition. This item SHOULD be populated unless the information is available from context.
      */
     publisher?: fhir.FhirString | string | undefined;
+    /**
+     * Extended properties for primitive element: OperationDefinition.publisher
+     */
+    _publisher?: fhir.FhirElementArgs;
     /**
      * May be a web site, an email address, a telephone number, etc.
      */
@@ -539,6 +631,10 @@ export interface OperationDefinitionArgs extends fhir.DomainResourceArgs {
      * This description can be used to capture details such as why the operation definition was built, comments about misuse, instructions for clinical use and interpretation, literature references, examples from the paper world, etc. It is not a rendering of the operation definition as conveyed in the 'text' field of the resource itself. This item SHOULD be populated unless the information is available from context (e.g. the language of the operation definition is presumed to be the predominant language in the place the operation definition was created).
      */
     description?: fhir.FhirMarkdown | string | undefined;
+    /**
+     * Extended properties for primitive element: OperationDefinition.description
+     */
+    _description?: fhir.FhirElementArgs;
     /**
      * When multiple useContexts are specified, there is no expectation that all or any of the contexts apply.
      */
@@ -552,47 +648,91 @@ export interface OperationDefinitionArgs extends fhir.DomainResourceArgs {
      */
     purpose?: fhir.FhirMarkdown | string | undefined;
     /**
+     * Extended properties for primitive element: OperationDefinition.purpose
+     */
+    _purpose?: fhir.FhirElementArgs;
+    /**
      * What http methods can be used for the operation depends on the .affectsState value and whether the input parameters are primitive or complex:
      * 1. Servers SHALL support POST method for all operations.
      * 2. Servers SHALL support GET method if all the parameters for the operation are primitive or there are no parameters and the operation has affectsState = false.
      */
     affectsState?: fhir.FhirBoolean | boolean | undefined;
     /**
+     * Extended properties for primitive element: OperationDefinition.affectsState
+     */
+    _affectsState?: fhir.FhirElementArgs;
+    /**
      * The name used to invoke the operation.
      */
     code: fhir.FhirCode | string | undefined;
+    /**
+     * Extended properties for primitive element: OperationDefinition.code
+     */
+    _code?: fhir.FhirElementArgs;
     /**
      * Additional information about how to use this operation or named query.
      */
     comment?: fhir.FhirMarkdown | string | undefined;
     /**
+     * Extended properties for primitive element: OperationDefinition.comment
+     */
+    _comment?: fhir.FhirElementArgs;
+    /**
      * A constrained profile can make optional parameters required or not used and clarify documentation.
      */
     base?: fhir.FhirCanonical | string | undefined;
+    /**
+     * Extended properties for primitive element: OperationDefinition.base
+     */
+    _base?: fhir.FhirElementArgs;
     /**
      * If the type is an abstract resource ("Resource" or "DomainResource") then the operation can be invoked on any concrete specialization.
      */
     resource?: fhir.FhirCode[] | string[] | undefined;
     /**
+     * Extended properties for primitive element: OperationDefinition.resource
+     */
+    _resource?: (fhir.FhirElementArgs | null)[];
+    /**
      * Indicates whether this operation or named query can be invoked at the system level (e.g. without needing to choose a resource type for the context).
      */
     system: fhir.FhirBoolean | boolean | undefined;
+    /**
+     * Extended properties for primitive element: OperationDefinition.system
+     */
+    _system?: fhir.FhirElementArgs;
     /**
      * Indicates whether this operation or named query can be invoked at the resource type level for any given resource type level (e.g. without needing to choose a specific resource id for the context).
      */
     type: fhir.FhirBoolean | boolean | undefined;
     /**
+     * Extended properties for primitive element: OperationDefinition.type
+     */
+    _type?: fhir.FhirElementArgs;
+    /**
      * Indicates whether this operation can be invoked on a particular instance of one of the given types.
      */
     instance: fhir.FhirBoolean | boolean | undefined;
+    /**
+     * Extended properties for primitive element: OperationDefinition.instance
+     */
+    _instance?: fhir.FhirElementArgs;
     /**
      * If present the profile shall not conflict with what is specified in the parameters in the operation definition (max/min etc.), though it may provide additional constraints. The constraints expressed in the profile apply whether the operation is invoked by a POST wih parameters or not.
      */
     inputProfile?: fhir.FhirCanonical | string | undefined;
     /**
+     * Extended properties for primitive element: OperationDefinition.inputProfile
+     */
+    _inputProfile?: fhir.FhirElementArgs;
+    /**
      * If present the profile shall not conflict with what is specified in the parameters in the operation definition (max/min etc.), though it may provide additional constraints. The constraints expressed in the profile apply whether the operation is invoked by a POST wih parameters or not.
      */
     outputProfile?: fhir.FhirCanonical | string | undefined;
+    /**
+     * Extended properties for primitive element: OperationDefinition.outputProfile
+     */
+    _outputProfile?: fhir.FhirElementArgs;
     /**
      * Query Definitions only have one output parameter, named "result". This might not be described, but can be to allow a profile to be defined.
      */
@@ -771,7 +911,9 @@ export declare class OperationDefinition extends fhir.DomainResource {
         readonly Communication: "Communication";
         readonly CommunicationRequest: "CommunicationRequest";
         readonly CompartmentDefinition: "CompartmentDefinition";
-        readonly Composition: "Composition";
+        readonly Composition: "Composition"; /**
+         * The id of the element in the referencing resource that is expected to resolve to this resource.
+         */
         readonly ConceptMap: "ConceptMap";
         readonly Condition: "Condition";
         readonly Consent: "Consent";
@@ -783,6 +925,9 @@ export declare class OperationDefinition extends fhir.DomainResource {
         readonly Device: "Device";
         readonly DeviceDefinition: "DeviceDefinition";
         readonly DeviceMetric: "DeviceMetric";
+        /**
+         * Extended properties for primitive element: OperationDefinition.parameter.use
+         */
         readonly DeviceRequest: "DeviceRequest";
         readonly DeviceUseStatement: "DeviceUseStatement";
         readonly DiagnosticReport: "DiagnosticReport";
@@ -828,7 +973,9 @@ export declare class OperationDefinition extends fhir.DomainResource {
         readonly MedicationRequest: "MedicationRequest";
         readonly MedicationStatement: "MedicationStatement";
         readonly MedicinalProduct: "MedicinalProduct";
-        readonly MedicinalProductAuthorization: "MedicinalProductAuthorization";
+        readonly MedicinalProductAuthorization: "MedicinalProductAuthorization"; /**
+         * Extended properties for primitive element: OperationDefinition.overload.comment
+         */
         readonly MedicinalProductContraindication: "MedicinalProductContraindication";
         readonly MedicinalProductIndication: "MedicinalProductIndication";
         readonly MedicinalProductIngredient: "MedicinalProductIngredient";
@@ -850,7 +997,9 @@ export declare class OperationDefinition extends fhir.DomainResource {
         readonly OrganizationAffiliation: "OrganizationAffiliation";
         readonly Parameters: "Parameters";
         readonly Patient: "Patient";
-        readonly PaymentNotice: "PaymentNotice";
+        readonly PaymentNotice: "PaymentNotice"; /**
+         * Named queries are invoked differently, and have different capabilities.
+         */
         readonly PaymentReconciliation: "PaymentReconciliation";
         readonly Person: "Person";
         readonly PlanDefinition: "PlanDefinition";

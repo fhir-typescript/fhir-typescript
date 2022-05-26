@@ -21,9 +21,17 @@ export interface ObservationDefinitionQuantitativeDetailsArgs extends fhir.Backb
      */
     conversionFactor?: fhir.FhirDecimal | number | undefined;
     /**
+     * Extended properties for primitive element: ObservationDefinition.quantitativeDetails.conversionFactor
+     */
+    _conversionFactor?: fhir.FhirElementArgs;
+    /**
      * Number of digits after decimal separator when the results of such observations are of type Quantity.
      */
     decimalPrecision?: fhir.FhirInteger | number | undefined;
+    /**
+     * Extended properties for primitive element: ObservationDefinition.quantitativeDetails.decimalPrecision
+     */
+    _decimalPrecision?: fhir.FhirElementArgs;
 }
 /**
  * Characteristics for quantitative results of this observation.
@@ -75,6 +83,10 @@ export interface ObservationDefinitionQualifiedIntervalArgs extends fhir.Backbon
      */
     category?: fhir.FhirCode<ObservationRangeCategoryCodeType> | string | undefined;
     /**
+     * Extended properties for primitive element: ObservationDefinition.qualifiedInterval.category
+     */
+    _category?: fhir.FhirElementArgs;
+    /**
      * The low and high values determining the interval. There may be only one of the two.
      */
     range?: fhir.RangeArgs | undefined;
@@ -91,6 +103,10 @@ export interface ObservationDefinitionQualifiedIntervalArgs extends fhir.Backbon
      */
     gender?: fhir.FhirCode<AdministrativeGenderCodeType> | string | undefined;
     /**
+     * Extended properties for primitive element: ObservationDefinition.qualifiedInterval.gender
+     */
+    _gender?: fhir.FhirElementArgs;
+    /**
      * Some analytes vary greatly over age.
      */
     age?: fhir.RangeArgs | undefined;
@@ -102,6 +118,10 @@ export interface ObservationDefinitionQualifiedIntervalArgs extends fhir.Backbon
      * Text based condition for which the reference range is valid.
      */
     condition?: fhir.FhirString | string | undefined;
+    /**
+     * Extended properties for primitive element: ObservationDefinition.qualifiedInterval.condition
+     */
+    _condition?: fhir.FhirElementArgs;
 }
 /**
  * Multiple  ranges of results qualified by different contexts for ordinal or continuous observations conforming to this ObservationDefinition.
@@ -198,9 +218,17 @@ export interface ObservationDefinitionArgs extends fhir.DomainResourceArgs {
      */
     permittedDataType?: fhir.FhirCode<PermittedDataTypeCodeType>[] | string[] | undefined;
     /**
+     * Extended properties for primitive element: ObservationDefinition.permittedDataType
+     */
+    _permittedDataType?: (fhir.FhirElementArgs | null)[];
+    /**
      * An example of observation allowing multiple results is "bacteria identified by culture". Conversely, the measurement of a potassium level allows a single result.
      */
     multipleResultsAllowed?: fhir.FhirBoolean | boolean | undefined;
+    /**
+     * Extended properties for primitive element: ObservationDefinition.multipleResultsAllowed
+     */
+    _multipleResultsAllowed?: fhir.FhirElementArgs;
     /**
      * Only used if not implicit in observation code.
      */
@@ -209,6 +237,10 @@ export interface ObservationDefinitionArgs extends fhir.DomainResourceArgs {
      * The preferred name to be used when reporting the results of observations conforming to this ObservationDefinition.
      */
     preferredReportName?: fhir.FhirString | string | undefined;
+    /**
+     * Extended properties for primitive element: ObservationDefinition.preferredReportName
+     */
+    _preferredReportName?: fhir.FhirElementArgs;
     /**
      * Characteristics for quantitative results of this observation.
      */

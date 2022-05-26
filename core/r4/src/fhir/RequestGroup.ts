@@ -58,6 +58,10 @@ export interface RequestGroupActionConditionArgs extends fhir.BackboneElementArg
    */
   kind: fhir.FhirCode<ActionConditionKindCodeType>|string|undefined;
   /**
+   * Extended properties for primitive element: RequestGroup.action.condition.kind
+   */
+  _kind?:fhir.FhirElementArgs;
+  /**
    * The expression may be inlined, or may be a reference to a named expression within a logic library referenced by the library element.
    */
   expression?: fhir.ExpressionArgs|undefined;
@@ -86,6 +90,10 @@ export class RequestGroupActionCondition extends fhir.BackboneElement {
     super(source, options);
     if (source['kind']) { this.kind = new fhir.FhirCode<ActionConditionKindCodeType>({value: source.kind}); }
     else { this.kind = null; }
+    if (source['_kind']) {
+      if (this.kind) { this.kind.addExtendedProperties(source._kind!); }
+      else { this.kind = new fhir.FhirCode<ActionConditionKindCodeType>(source._kind as Partial<fhir.FhirCode>); }
+    }
     if (source['expression']) { this.expression = new fhir.Expression(source.expression); }
   }
   /**
@@ -119,9 +127,17 @@ export interface RequestGroupActionRelatedActionArgs extends fhir.BackboneElemen
    */
   actionId: fhir.FhirId|string|undefined;
   /**
+   * Extended properties for primitive element: RequestGroup.action.relatedAction.actionId
+   */
+  _actionId?:fhir.FhirElementArgs;
+  /**
    * The relationship of this action to the related action.
    */
   relationship: fhir.FhirCode<ActionRelationshipTypeCodeType>|string|undefined;
+  /**
+   * Extended properties for primitive element: RequestGroup.action.relatedAction.relationship
+   */
+  _relationship?:fhir.FhirElementArgs;
   /**
    * A duration or range of durations to apply to the relationship. For example, 30-60 minutes before.
    */
@@ -167,8 +183,16 @@ export class RequestGroupActionRelatedAction extends fhir.BackboneElement {
     super(source, options);
     if (source['actionId']) { this.actionId = new fhir.FhirId({value: source.actionId}); }
     else { this.actionId = null; }
+    if (source['_actionId']) {
+      if (this.actionId) { this.actionId.addExtendedProperties(source._actionId!); }
+      else { this.actionId = new fhir.FhirId(source._actionId as Partial<fhir.FhirIdArgs>); }
+    }
     if (source['relationship']) { this.relationship = new fhir.FhirCode<ActionRelationshipTypeCodeType>({value: source.relationship}); }
     else { this.relationship = null; }
+    if (source['_relationship']) {
+      if (this.relationship) { this.relationship.addExtendedProperties(source._relationship!); }
+      else { this.relationship = new fhir.FhirCode<ActionRelationshipTypeCodeType>(source._relationship as Partial<fhir.FhirCode>); }
+    }
     if (source['offset']) { this.offset = source.offset; }
     else if (source['offsetDuration']) { this.offset = new fhir.Duration(source.offsetDuration); }
     else if (source['offsetRange']) { this.offset = new fhir.Range(source.offsetRange); }
@@ -207,21 +231,41 @@ export interface RequestGroupActionArgs extends fhir.BackboneElementArgs {
    */
   prefix?: fhir.FhirString|string|undefined;
   /**
+   * Extended properties for primitive element: RequestGroup.action.prefix
+   */
+  _prefix?:fhir.FhirElementArgs;
+  /**
    * The title of the action displayed to a user.
    */
   title?: fhir.FhirString|string|undefined;
+  /**
+   * Extended properties for primitive element: RequestGroup.action.title
+   */
+  _title?:fhir.FhirElementArgs;
   /**
    * A short description of the action used to provide a summary to display to the user.
    */
   description?: fhir.FhirString|string|undefined;
   /**
+   * Extended properties for primitive element: RequestGroup.action.description
+   */
+  _description?:fhir.FhirElementArgs;
+  /**
    * A text equivalent of the action to be performed. This provides a human-interpretable description of the action when the definition is consumed by a system that might not be capable of interpreting it dynamically.
    */
   textEquivalent?: fhir.FhirString|string|undefined;
   /**
+   * Extended properties for primitive element: RequestGroup.action.textEquivalent
+   */
+  _textEquivalent?:fhir.FhirElementArgs;
+  /**
    * Indicates how quickly the action should be addressed with respect to other actions.
    */
   priority?: fhir.FhirCode<RequestPriorityCodeType>|string|undefined;
+  /**
+   * Extended properties for primitive element: RequestGroup.action.priority
+   */
+  _priority?:fhir.FhirElementArgs;
   /**
    * A code that provides meaning for the action or action group. For example, a section may have a LOINC code for a section of a documentation template.
    */
@@ -279,21 +323,41 @@ export interface RequestGroupActionArgs extends fhir.BackboneElementArgs {
    */
   groupingBehavior?: fhir.FhirCode<ActionGroupingBehaviorCodeType>|string|undefined;
   /**
+   * Extended properties for primitive element: RequestGroup.action.groupingBehavior
+   */
+  _groupingBehavior?:fhir.FhirElementArgs;
+  /**
    * Defines the selection behavior for the action and its children.
    */
   selectionBehavior?: fhir.FhirCode<ActionSelectionBehaviorCodeType>|string|undefined;
+  /**
+   * Extended properties for primitive element: RequestGroup.action.selectionBehavior
+   */
+  _selectionBehavior?:fhir.FhirElementArgs;
   /**
    * Defines expectations around whether an action is required.
    */
   requiredBehavior?: fhir.FhirCode<ActionRequiredBehaviorCodeType>|string|undefined;
   /**
+   * Extended properties for primitive element: RequestGroup.action.requiredBehavior
+   */
+  _requiredBehavior?:fhir.FhirElementArgs;
+  /**
    * Defines whether the action should usually be preselected.
    */
   precheckBehavior?: fhir.FhirCode<ActionPrecheckBehaviorCodeType>|string|undefined;
   /**
+   * Extended properties for primitive element: RequestGroup.action.precheckBehavior
+   */
+  _precheckBehavior?:fhir.FhirElementArgs;
+  /**
    * Defines whether the action can be selected multiple times.
    */
   cardinalityBehavior?: fhir.FhirCode<ActionCardinalityBehaviorCodeType>|string|undefined;
+  /**
+   * Extended properties for primitive element: RequestGroup.action.cardinalityBehavior
+   */
+  _cardinalityBehavior?:fhir.FhirElementArgs;
   /**
    * The target resource SHALL be a [Request](request.html) resource with a Request.intent set to "option".
    */
@@ -398,10 +462,30 @@ export class RequestGroupAction extends fhir.BackboneElement {
   constructor(source:Partial<RequestGroupActionArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
     if (source['prefix']) { this.prefix = new fhir.FhirString({value: source.prefix}); }
+    if (source['_prefix']) {
+      if (this.prefix) { this.prefix.addExtendedProperties(source._prefix!); }
+      else { this.prefix = new fhir.FhirString(source._prefix as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['title']) { this.title = new fhir.FhirString({value: source.title}); }
+    if (source['_title']) {
+      if (this.title) { this.title.addExtendedProperties(source._title!); }
+      else { this.title = new fhir.FhirString(source._title as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['description']) { this.description = new fhir.FhirString({value: source.description}); }
+    if (source['_description']) {
+      if (this.description) { this.description.addExtendedProperties(source._description!); }
+      else { this.description = new fhir.FhirString(source._description as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['textEquivalent']) { this.textEquivalent = new fhir.FhirString({value: source.textEquivalent}); }
+    if (source['_textEquivalent']) {
+      if (this.textEquivalent) { this.textEquivalent.addExtendedProperties(source._textEquivalent!); }
+      else { this.textEquivalent = new fhir.FhirString(source._textEquivalent as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['priority']) { this.priority = new fhir.FhirCode<RequestPriorityCodeType>({value: source.priority}); }
+    if (source['_priority']) {
+      if (this.priority) { this.priority.addExtendedProperties(source._priority!); }
+      else { this.priority = new fhir.FhirCode<RequestPriorityCodeType>(source._priority as Partial<fhir.FhirCode>); }
+    }
     if (source['code']) { this.code = source.code.map((x) => new fhir.CodeableConcept(x)); }
     else { this.code = []; }
     if (source['documentation']) { this.documentation = source.documentation.map((x) => new fhir.RelatedArtifact(x)); }
@@ -421,10 +505,30 @@ export class RequestGroupAction extends fhir.BackboneElement {
     else { this.participant = []; }
     if (source['type']) { this.type = new fhir.CodeableConcept(source.type); }
     if (source['groupingBehavior']) { this.groupingBehavior = new fhir.FhirCode<ActionGroupingBehaviorCodeType>({value: source.groupingBehavior}); }
+    if (source['_groupingBehavior']) {
+      if (this.groupingBehavior) { this.groupingBehavior.addExtendedProperties(source._groupingBehavior!); }
+      else { this.groupingBehavior = new fhir.FhirCode<ActionGroupingBehaviorCodeType>(source._groupingBehavior as Partial<fhir.FhirCode>); }
+    }
     if (source['selectionBehavior']) { this.selectionBehavior = new fhir.FhirCode<ActionSelectionBehaviorCodeType>({value: source.selectionBehavior}); }
+    if (source['_selectionBehavior']) {
+      if (this.selectionBehavior) { this.selectionBehavior.addExtendedProperties(source._selectionBehavior!); }
+      else { this.selectionBehavior = new fhir.FhirCode<ActionSelectionBehaviorCodeType>(source._selectionBehavior as Partial<fhir.FhirCode>); }
+    }
     if (source['requiredBehavior']) { this.requiredBehavior = new fhir.FhirCode<ActionRequiredBehaviorCodeType>({value: source.requiredBehavior}); }
+    if (source['_requiredBehavior']) {
+      if (this.requiredBehavior) { this.requiredBehavior.addExtendedProperties(source._requiredBehavior!); }
+      else { this.requiredBehavior = new fhir.FhirCode<ActionRequiredBehaviorCodeType>(source._requiredBehavior as Partial<fhir.FhirCode>); }
+    }
     if (source['precheckBehavior']) { this.precheckBehavior = new fhir.FhirCode<ActionPrecheckBehaviorCodeType>({value: source.precheckBehavior}); }
+    if (source['_precheckBehavior']) {
+      if (this.precheckBehavior) { this.precheckBehavior.addExtendedProperties(source._precheckBehavior!); }
+      else { this.precheckBehavior = new fhir.FhirCode<ActionPrecheckBehaviorCodeType>(source._precheckBehavior as Partial<fhir.FhirCode>); }
+    }
     if (source['cardinalityBehavior']) { this.cardinalityBehavior = new fhir.FhirCode<ActionCardinalityBehaviorCodeType>({value: source.cardinalityBehavior}); }
+    if (source['_cardinalityBehavior']) {
+      if (this.cardinalityBehavior) { this.cardinalityBehavior.addExtendedProperties(source._cardinalityBehavior!); }
+      else { this.cardinalityBehavior = new fhir.FhirCode<ActionCardinalityBehaviorCodeType>(source._cardinalityBehavior as Partial<fhir.FhirCode>); }
+    }
     if (source['resource']) { this.resource = new fhir.Reference(source.resource); }
     if (source['action']) { this.action = source.action.map((x) => new fhir.RequestGroupAction(x)); }
     else { this.action = []; }
@@ -532,9 +636,17 @@ export interface RequestGroupArgs extends fhir.DomainResourceArgs {
    */
   instantiatesCanonical?: fhir.FhirCanonical[]|string[]|undefined;
   /**
+   * Extended properties for primitive element: RequestGroup.instantiatesCanonical
+   */
+  _instantiatesCanonical?:(fhir.FhirElementArgs|null)[];
+  /**
    * A URL referencing an externally defined protocol, guideline, orderset or other definition that is adhered to in whole or in part by this request.
    */
   instantiatesUri?: fhir.FhirUri[]|string[]|undefined;
+  /**
+   * Extended properties for primitive element: RequestGroup.instantiatesUri
+   */
+  _instantiatesUri?:(fhir.FhirElementArgs|null)[];
   /**
    * A plan, proposal or order that is fulfilled in whole or in part by this request.
    */
@@ -552,13 +664,25 @@ export interface RequestGroupArgs extends fhir.DomainResourceArgs {
    */
   status: fhir.FhirCode<RequestStatusCodeType>|string|undefined;
   /**
+   * Extended properties for primitive element: RequestGroup.status
+   */
+  _status?:fhir.FhirElementArgs;
+  /**
    * Indicates the level of authority/intentionality associated with the request and where the request fits into the workflow chain.
    */
   intent: fhir.FhirCode<RequestIntentCodeType>|string|undefined;
   /**
+   * Extended properties for primitive element: RequestGroup.intent
+   */
+  _intent?:fhir.FhirElementArgs;
+  /**
    * Indicates how quickly the request should be addressed with respect to other requests.
    */
   priority?: fhir.FhirCode<RequestPriorityCodeType>|string|undefined;
+  /**
+   * Extended properties for primitive element: RequestGroup.priority
+   */
+  _priority?:fhir.FhirElementArgs;
   /**
    * This element can be used to provide a code that captures the meaning of the request group as a whole, as opposed to the code of the action element, which captures the meaning of the individual actions within the request group.
    */
@@ -575,6 +699,10 @@ export interface RequestGroupArgs extends fhir.DomainResourceArgs {
    * Indicates when the request group was created.
    */
   authoredOn?: fhir.FhirDateTime|string|undefined;
+  /**
+   * Extended properties for primitive element: RequestGroup.authoredOn
+   */
+  _authoredOn?:fhir.FhirElementArgs;
   /**
    * Provides a reference to the author of the request group.
    */
@@ -691,8 +819,20 @@ export class RequestGroup extends fhir.DomainResource {
     else { this.identifier = []; }
     if (source['instantiatesCanonical']) { this.instantiatesCanonical = source.instantiatesCanonical.map((x) => new fhir.FhirCanonical({value: x})); }
     else { this.instantiatesCanonical = []; }
+    if (source['_instantiatesCanonical']) {
+      source._instantiatesCanonical.forEach((x,i) => {
+        if (this.instantiatesCanonical.length >= i) { if (x) { this.instantiatesCanonical[i].addExtendedProperties(x); } }
+        else { if (x) { this.instantiatesCanonical.push(new fhir.FhirCanonical(x as Partial<fhir.FhirCanonicalArgs>)); } }
+      });
+    }
     if (source['instantiatesUri']) { this.instantiatesUri = source.instantiatesUri.map((x) => new fhir.FhirUri({value: x})); }
     else { this.instantiatesUri = []; }
+    if (source['_instantiatesUri']) {
+      source._instantiatesUri.forEach((x,i) => {
+        if (this.instantiatesUri.length >= i) { if (x) { this.instantiatesUri[i].addExtendedProperties(x); } }
+        else { if (x) { this.instantiatesUri.push(new fhir.FhirUri(x as Partial<fhir.FhirUriArgs>)); } }
+      });
+    }
     if (source['basedOn']) { this.basedOn = source.basedOn.map((x) => new fhir.Reference(x)); }
     else { this.basedOn = []; }
     if (source['replaces']) { this.replaces = source.replaces.map((x) => new fhir.Reference(x)); }
@@ -700,13 +840,29 @@ export class RequestGroup extends fhir.DomainResource {
     if (source['groupIdentifier']) { this.groupIdentifier = new fhir.Identifier(source.groupIdentifier); }
     if (source['status']) { this.status = new fhir.FhirCode<RequestStatusCodeType>({value: source.status}); }
     else { this.status = null; }
+    if (source['_status']) {
+      if (this.status) { this.status.addExtendedProperties(source._status!); }
+      else { this.status = new fhir.FhirCode<RequestStatusCodeType>(source._status as Partial<fhir.FhirCode>); }
+    }
     if (source['intent']) { this.intent = new fhir.FhirCode<RequestIntentCodeType>({value: source.intent}); }
     else { this.intent = null; }
+    if (source['_intent']) {
+      if (this.intent) { this.intent.addExtendedProperties(source._intent!); }
+      else { this.intent = new fhir.FhirCode<RequestIntentCodeType>(source._intent as Partial<fhir.FhirCode>); }
+    }
     if (source['priority']) { this.priority = new fhir.FhirCode<RequestPriorityCodeType>({value: source.priority}); }
+    if (source['_priority']) {
+      if (this.priority) { this.priority.addExtendedProperties(source._priority!); }
+      else { this.priority = new fhir.FhirCode<RequestPriorityCodeType>(source._priority as Partial<fhir.FhirCode>); }
+    }
     if (source['code']) { this.code = new fhir.CodeableConcept(source.code); }
     if (source['subject']) { this.subject = new fhir.Reference(source.subject); }
     if (source['encounter']) { this.encounter = new fhir.Reference(source.encounter); }
     if (source['authoredOn']) { this.authoredOn = new fhir.FhirDateTime({value: source.authoredOn}); }
+    if (source['_authoredOn']) {
+      if (this.authoredOn) { this.authoredOn.addExtendedProperties(source._authoredOn!); }
+      else { this.authoredOn = new fhir.FhirDateTime(source._authoredOn as Partial<fhir.FhirDateTimeArgs>); }
+    }
     if (source['author']) { this.author = new fhir.Reference(source.author); }
     if (source['reasonCode']) { this.reasonCode = source.reasonCode.map((x) => new fhir.CodeableConcept(x)); }
     else { this.reasonCode = []; }

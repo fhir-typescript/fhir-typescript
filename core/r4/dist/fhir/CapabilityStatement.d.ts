@@ -22,13 +22,25 @@ export interface CapabilityStatementSoftwareArgs extends fhir.BackboneElementArg
      */
     name: fhir.FhirString | string | undefined;
     /**
+     * Extended properties for primitive element: CapabilityStatement.software.name
+     */
+    _name?: fhir.FhirElementArgs;
+    /**
      * If possible, a version should be specified, as statements are likely to be different for different versions of software.
      */
     version?: fhir.FhirString | string | undefined;
     /**
+     * Extended properties for primitive element: CapabilityStatement.software.version
+     */
+    _version?: fhir.FhirElementArgs;
+    /**
      * Date this version of the software was released.
      */
     releaseDate?: fhir.FhirDateTime | string | undefined;
+    /**
+     * Extended properties for primitive element: CapabilityStatement.software.releaseDate
+     */
+    _releaseDate?: fhir.FhirElementArgs;
 }
 /**
  * Software that is covered by this capability statement.  It is used when the capability statement describes the capabilities of a particular software version, independent of an installation.
@@ -68,9 +80,17 @@ export interface CapabilityStatementImplementationArgs extends fhir.BackboneElem
      */
     description: fhir.FhirString | string | undefined;
     /**
+     * Extended properties for primitive element: CapabilityStatement.implementation.description
+     */
+    _description?: fhir.FhirElementArgs;
+    /**
      * An absolute base URL for the implementation.  This forms the base for REST interfaces as well as the mailbox and document interfaces.
      */
     url?: fhir.FhirUrl | string | undefined;
+    /**
+     * Extended properties for primitive element: CapabilityStatement.implementation.url
+     */
+    _url?: fhir.FhirElementArgs;
     /**
      * The organization responsible for the management of the instance and oversight of the data on the server at the specified URL.
      */
@@ -114,6 +134,10 @@ export interface CapabilityStatementRestSecurityArgs extends fhir.BackboneElemen
      */
     cors?: fhir.FhirBoolean | boolean | undefined;
     /**
+     * Extended properties for primitive element: CapabilityStatement.rest.security.cors
+     */
+    _cors?: fhir.FhirElementArgs;
+    /**
      * Types of security services that are supported/required by the system.
      */
     service?: fhir.CodeableConceptArgs[] | undefined;
@@ -121,6 +145,10 @@ export interface CapabilityStatementRestSecurityArgs extends fhir.BackboneElemen
      * General description of how security works.
      */
     description?: fhir.FhirMarkdown | string | undefined;
+    /**
+     * Extended properties for primitive element: CapabilityStatement.rest.security.description
+     */
+    _description?: fhir.FhirElementArgs;
 }
 /**
  * Information about security implementation from an interface perspective - what a client needs to know.
@@ -164,9 +192,17 @@ export interface CapabilityStatementRestResourceInteractionArgs extends fhir.Bac
      */
     code: fhir.FhirCode<TypeRestfulInteractionCodeType> | string | undefined;
     /**
+     * Extended properties for primitive element: CapabilityStatement.rest.resource.interaction.code
+     */
+    _code?: fhir.FhirElementArgs;
+    /**
      * Guidance specific to the implementation of this operation, such as 'delete is a logical delete' or 'updates are only allowed with version id' or 'creates permitted from pre-authorized certificates only'.
      */
     documentation?: fhir.FhirMarkdown | string | undefined;
+    /**
+     * Extended properties for primitive element: CapabilityStatement.rest.resource.interaction.documentation
+     */
+    _documentation?: fhir.FhirElementArgs;
 }
 /**
  * In general, a Resource will only appear in a CapabilityStatement if the server actually has some capabilities - e.g. there is at least one interaction supported. However interactions can be omitted to support summarization (_summary = true).
@@ -216,17 +252,33 @@ export interface CapabilityStatementRestResourceSearchParamArgs extends fhir.Bac
      */
     name: fhir.FhirString | string | undefined;
     /**
+     * Extended properties for primitive element: CapabilityStatement.rest.resource.searchParam.name
+     */
+    _name?: fhir.FhirElementArgs;
+    /**
      * This SHOULD be present, and matches refers to a SearchParameter by its canonical URL. If systems wish to document their support for modifiers, comparators, target resource types, and chained parameters, they should do using a search parameter resource. This element SHALL be populated if the search parameter refers to a SearchParameter defined by the FHIR core specification or externally defined IGs.
      */
     definition?: fhir.FhirCanonical | string | undefined;
+    /**
+     * Extended properties for primitive element: CapabilityStatement.rest.resource.searchParam.definition
+     */
+    _definition?: fhir.FhirElementArgs;
     /**
      * While this can be looked up from the definition, it is included here as a convenience for systems that autogenerate a query interface based on the server capability statement.  It SHALL be the same as the type in the search parameter definition.
      */
     type: fhir.FhirCode<SearchParamTypeCodeType> | string | undefined;
     /**
+     * Extended properties for primitive element: CapabilityStatement.rest.resource.searchParam.type
+     */
+    _type?: fhir.FhirElementArgs;
+    /**
      * This allows documentation of any distinct behaviors about how the search parameter is used.  For example, text matching algorithms.
      */
     documentation?: fhir.FhirMarkdown | string | undefined;
+    /**
+     * Extended properties for primitive element: CapabilityStatement.rest.resource.searchParam.documentation
+     */
+    _documentation?: fhir.FhirElementArgs;
 }
 /**
  * The search parameters should include the control search parameters such as _sort, _count, etc. that also apply to this resource (though many will be listed at [CapabilityStatement.rest.searchParam](capabilitystatement-definitions.html#CapabilityStatement.rest.searchParam)). The behavior of some search parameters may be further described by other code or extension elements, or narrative within the capability statement or linked [SearchParameter](searchparameter.html#) definitions.
@@ -284,13 +336,25 @@ export interface CapabilityStatementRestResourceOperationArgs extends fhir.Backb
      */
     name: fhir.FhirString | string | undefined;
     /**
+     * Extended properties for primitive element: CapabilityStatement.rest.resource.operation.name
+     */
+    _name?: fhir.FhirElementArgs;
+    /**
      * This can be used to build an HTML form to invoke the operation, for instance.
      */
     definition: fhir.FhirCanonical | string | undefined;
     /**
+     * Extended properties for primitive element: CapabilityStatement.rest.resource.operation.definition
+     */
+    _definition?: fhir.FhirElementArgs;
+    /**
      * Documentation that describes anything special about the operation behavior, possibly detailing different behavior for system, type and instance-level invocation of the operation.
      */
     documentation?: fhir.FhirMarkdown | string | undefined;
+    /**
+     * Extended properties for primitive element: CapabilityStatement.rest.resource.operation.documentation
+     */
+    _documentation?: fhir.FhirElementArgs;
 }
 /**
  * Operations linked from CapabilityStatement.rest.resource.operation must have OperationDefinition.type = true or OperationDefinition.instance = true.
@@ -331,17 +395,33 @@ export interface CapabilityStatementRestResourceArgs extends fhir.BackboneElemen
      */
     type: fhir.FhirCode | string | undefined;
     /**
+     * Extended properties for primitive element: CapabilityStatement.rest.resource.type
+     */
+    _type?: fhir.FhirElementArgs;
+    /**
      * The profile applies to all  resources of this type - i.e. it is the superset of what is supported by the system.
      */
     profile?: fhir.FhirCanonical | string | undefined;
+    /**
+     * Extended properties for primitive element: CapabilityStatement.rest.resource.profile
+     */
+    _profile?: fhir.FhirElementArgs;
     /**
      * Supported profiles are different than the profile that applies to a particular resource in .rest.resource.profile. The resource profile is a general statement of what features of the resource are supported overall by the system - the sum total of the facilities it supports. A supported profile is a deeper statement about the functionality of the data and services provided by the server (or used by the client). A typical case is a laboratory system that produces a set of different reports - this is the list of types of data that it publishes. A key aspect of declaring profiles here is the question of how the client converts knowledge that the server publishes this data into working with the data; the client can inspect individual resources to determine whether they conform to a particular profile, but how does it find the ones that do? It does so by searching using the _profile parameter, so any resources listed here must be valid values for the _profile resource (using the identifier in the target profile).
      */
     supportedProfile?: fhir.FhirCanonical[] | string[] | undefined;
     /**
+     * Extended properties for primitive element: CapabilityStatement.rest.resource.supportedProfile
+     */
+    _supportedProfile?: (fhir.FhirElementArgs | null)[];
+    /**
      * Additional information about the resource type used by the system.
      */
     documentation?: fhir.FhirMarkdown | string | undefined;
+    /**
+     * Extended properties for primitive element: CapabilityStatement.rest.resource.documentation
+     */
+    _documentation?: fhir.FhirElementArgs;
     /**
      * In general, a Resource will only appear in a CapabilityStatement if the server actually has some capabilities - e.g. there is at least one interaction supported. However interactions can be omitted to support summarization (_summary = true).
      */
@@ -351,41 +431,81 @@ export interface CapabilityStatementRestResourceArgs extends fhir.BackboneElemen
      */
     versioning?: fhir.FhirCode<VersioningPolicyCodeType> | string | undefined;
     /**
+     * Extended properties for primitive element: CapabilityStatement.rest.resource.versioning
+     */
+    _versioning?: fhir.FhirElementArgs;
+    /**
      * It is useful to support the vRead operation for current operations, even if past versions aren't available.
      */
     readHistory?: fhir.FhirBoolean | boolean | undefined;
+    /**
+     * Extended properties for primitive element: CapabilityStatement.rest.resource.readHistory
+     */
+    _readHistory?: fhir.FhirElementArgs;
     /**
      * Allowing the clients to create new identities on the server means that the system administrator needs to have confidence that the clients do not create clashing identities between them. Obviously, if there is only one client, this won't happen. While creating identities on the client means that the clients need to be managed, it's much more convenient for many scenarios if such management can be put in place.
      */
     updateCreate?: fhir.FhirBoolean | boolean | undefined;
     /**
+     * Extended properties for primitive element: CapabilityStatement.rest.resource.updateCreate
+     */
+    _updateCreate?: fhir.FhirElementArgs;
+    /**
      * Conditional Create is mainly appropriate for interface engine scripts converting from other formats, such as v2.
      */
     conditionalCreate?: fhir.FhirBoolean | boolean | undefined;
+    /**
+     * Extended properties for primitive element: CapabilityStatement.rest.resource.conditionalCreate
+     */
+    _conditionalCreate?: fhir.FhirElementArgs;
     /**
      * Conditional Read is mainly appropriate for interface engine scripts converting from other formats, such as v2.
      */
     conditionalRead?: fhir.FhirCode<ConditionalReadStatusCodeType> | string | undefined;
     /**
+     * Extended properties for primitive element: CapabilityStatement.rest.resource.conditionalRead
+     */
+    _conditionalRead?: fhir.FhirElementArgs;
+    /**
      * Conditional Update is mainly appropriate for interface engine scripts converting from other formats, such as v2.
      */
     conditionalUpdate?: fhir.FhirBoolean | boolean | undefined;
+    /**
+     * Extended properties for primitive element: CapabilityStatement.rest.resource.conditionalUpdate
+     */
+    _conditionalUpdate?: fhir.FhirElementArgs;
     /**
      * Conditional Delete is mainly appropriate for interface engine scripts converting from other formats, such as v2.
      */
     conditionalDelete?: fhir.FhirCode<ConditionalDeleteStatusCodeType> | string | undefined;
     /**
+     * Extended properties for primitive element: CapabilityStatement.rest.resource.conditionalDelete
+     */
+    _conditionalDelete?: fhir.FhirElementArgs;
+    /**
      * A set of flags that defines how references are supported.
      */
     referencePolicy?: fhir.FhirCode<ReferenceHandlingPolicyCodeType>[] | string[] | undefined;
+    /**
+     * Extended properties for primitive element: CapabilityStatement.rest.resource.referencePolicy
+     */
+    _referencePolicy?: (fhir.FhirElementArgs | null)[];
     /**
      * If this list is empty, the server does not support includes.
      */
     searchInclude?: fhir.FhirString[] | string[] | undefined;
     /**
+     * Extended properties for primitive element: CapabilityStatement.rest.resource.searchInclude
+     */
+    _searchInclude?: (fhir.FhirElementArgs | null)[];
+    /**
      * If this list is empty, the server does not support reverse includes.
      */
     searchRevInclude?: fhir.FhirString[] | string[] | undefined;
+    /**
+     * Extended properties for primitive element: CapabilityStatement.rest.resource.searchRevInclude
+     */
+    _searchRevInclude?: (fhir.FhirElementArgs | null)[];
     /**
      * The search parameters should include the control search parameters such as _sort, _count, etc. that also apply to this resource (though many will be listed at [CapabilityStatement.rest.searchParam](capabilitystatement-definitions.html#CapabilityStatement.rest.searchParam)). The behavior of some search parameters may be further described by other code or extension elements, or narrative within the capability statement or linked [SearchParameter](searchparameter.html#) definitions.
      */
@@ -526,16 +646,12 @@ export declare class CapabilityStatementRestResource extends fhir.BackboneElemen
         readonly DomainResource: "DomainResource";
         readonly EffectEvidenceSynthesis: "EffectEvidenceSynthesis";
         readonly Encounter: "Encounter";
-        readonly Endpoint: "Endpoint"; /**
-         * Extensible-bound Value Set for service (CapabilityStatement.rest.security.service)
-         */
+        readonly Endpoint: "Endpoint";
         readonly EnrollmentRequest: "EnrollmentRequest";
         readonly EnrollmentResponse: "EnrollmentResponse";
         readonly EpisodeOfCare: "EpisodeOfCare";
         readonly EventDefinition: "EventDefinition";
-        readonly Evidence: "Evidence"; /**
-         * Guidance specific to the implementation of this operation, such as 'delete is a logical delete' or 'updates are only allowed with version id' or 'creates permitted from pre-authorized certificates only'.
-         */
+        readonly Evidence: "Evidence";
         readonly EvidenceVariable: "EvidenceVariable";
         readonly ExampleScenario: "ExampleScenario";
         readonly ExplanationOfBenefit: "ExplanationOfBenefit";
@@ -559,6 +675,9 @@ export declare class CapabilityStatementRestResource extends fhir.BackboneElemen
         readonly Location: "Location";
         readonly Measure: "Measure";
         readonly MeasureReport: "MeasureReport";
+        /**
+         * Required-bound Value Set for code (CapabilityStatement.rest.resource.interaction.code)
+         */
         readonly Media: "Media";
         readonly Medication: "Medication";
         readonly MedicationAdministration: "MedicationAdministration";
@@ -683,9 +802,17 @@ export interface CapabilityStatementRestInteractionArgs extends fhir.BackboneEle
      */
     code: fhir.FhirCode<SystemRestfulInteractionCodeType> | string | undefined;
     /**
+     * Extended properties for primitive element: CapabilityStatement.rest.interaction.code
+     */
+    _code?: fhir.FhirElementArgs;
+    /**
      * Guidance specific to the implementation of this operation, such as limitations on the kind of transactions allowed, or information about system wide search is implemented.
      */
     documentation?: fhir.FhirMarkdown | string | undefined;
+    /**
+     * Extended properties for primitive element: CapabilityStatement.rest.interaction.documentation
+     */
+    _documentation?: fhir.FhirElementArgs;
 }
 /**
  * A specification of restful operations supported by the system.
@@ -730,9 +857,17 @@ export interface CapabilityStatementRestArgs extends fhir.BackboneElementArgs {
      */
     mode: fhir.FhirCode<RestfulCapabilityModeCodeType> | string | undefined;
     /**
+     * Extended properties for primitive element: CapabilityStatement.rest.mode
+     */
+    _mode?: fhir.FhirElementArgs;
+    /**
      * Information about the system's restful capabilities that apply across all applications, such as security.
      */
     documentation?: fhir.FhirMarkdown | string | undefined;
+    /**
+     * Extended properties for primitive element: CapabilityStatement.rest.documentation
+     */
+    _documentation?: fhir.FhirElementArgs;
     /**
      * Information about security implementation from an interface perspective - what a client needs to know.
      */
@@ -757,6 +892,10 @@ export interface CapabilityStatementRestArgs extends fhir.BackboneElementArgs {
      * At present, the only defined compartments are at [CompartmentDefinition](compartmentdefinition.html).
      */
     compartment?: fhir.FhirCanonical[] | string[] | undefined;
+    /**
+     * Extended properties for primitive element: CapabilityStatement.rest.compartment
+     */
+    _compartment?: (fhir.FhirElementArgs | null)[];
 }
 /**
  * Multiple repetitions allow definition of both client and/or server behaviors or possibly behaviors under different configuration settings (for software or requirements statements).
@@ -826,6 +965,10 @@ export interface CapabilityStatementMessagingEndpointArgs extends fhir.BackboneE
      * The network address of the endpoint. For solutions that do not use network addresses for routing, it can be just an identifier.
      */
     address: fhir.FhirUrl | string | undefined;
+    /**
+     * Extended properties for primitive element: CapabilityStatement.messaging.endpoint.address
+     */
+    _address?: fhir.FhirElementArgs;
 }
 /**
  * An endpoint (network accessible address) to which messages and/or replies are to be sent.
@@ -865,9 +1008,17 @@ export interface CapabilityStatementMessagingSupportedMessageArgs extends fhir.B
      */
     mode: fhir.FhirCode<EventCapabilityModeCodeType> | string | undefined;
     /**
+     * Extended properties for primitive element: CapabilityStatement.messaging.supportedMessage.mode
+     */
+    _mode?: fhir.FhirElementArgs;
+    /**
      * Points to a message definition that identifies the messaging event, message structure, allowed responses, etc.
      */
     definition: fhir.FhirCanonical | string | undefined;
+    /**
+     * Extended properties for primitive element: CapabilityStatement.messaging.supportedMessage.definition
+     */
+    _definition?: fhir.FhirElementArgs;
 }
 /**
  * This is a proposed alternative to the messaging.event structure.
@@ -914,9 +1065,17 @@ export interface CapabilityStatementMessagingArgs extends fhir.BackboneElementAr
      */
     reliableCache?: fhir.FhirUnsignedInt | number | undefined;
     /**
+     * Extended properties for primitive element: CapabilityStatement.messaging.reliableCache
+     */
+    _reliableCache?: fhir.FhirElementArgs;
+    /**
      * Documentation about the system's messaging capabilities for this endpoint not otherwise documented by the capability statement.  For example, the process for becoming an authorized messaging exchange partner.
      */
     documentation?: fhir.FhirMarkdown | string | undefined;
+    /**
+     * Extended properties for primitive element: CapabilityStatement.messaging.documentation
+     */
+    _documentation?: fhir.FhirElementArgs;
     /**
      * This is a proposed alternative to the messaging.event structure.
      */
@@ -964,13 +1123,25 @@ export interface CapabilityStatementDocumentArgs extends fhir.BackboneElementArg
      */
     mode: fhir.FhirCode<DocumentModeCodeType> | string | undefined;
     /**
+     * Extended properties for primitive element: CapabilityStatement.document.mode
+     */
+    _mode?: fhir.FhirElementArgs;
+    /**
      * A description of how the application supports or uses the specified document profile.  For example, when documents are created, what action is taken with consumed documents, etc.
      */
     documentation?: fhir.FhirMarkdown | string | undefined;
     /**
+     * Extended properties for primitive element: CapabilityStatement.document.documentation
+     */
+    _documentation?: fhir.FhirElementArgs;
+    /**
      * The profile is actually on the Bundle.
      */
     profile: fhir.FhirCanonical | string | undefined;
+    /**
+     * Extended properties for primitive element: CapabilityStatement.document.profile
+     */
+    _profile?: fhir.FhirElementArgs;
 }
 /**
  * A document definition.
@@ -1023,33 +1194,65 @@ export interface CapabilityStatementArgs extends fhir.DomainResourceArgs {
      */
     url?: fhir.FhirUri | string | undefined;
     /**
+     * Extended properties for primitive element: CapabilityStatement.url
+     */
+    _url?: fhir.FhirElementArgs;
+    /**
      * There may be different capability statement instances that have the same identifier but different versions.  The version can be appended to the url in a reference to allow a reference to a particular business version of the capability statement with the format [url]|[version].
      */
     version?: fhir.FhirString | string | undefined;
+    /**
+     * Extended properties for primitive element: CapabilityStatement.version
+     */
+    _version?: fhir.FhirElementArgs;
     /**
      * The name is not expected to be globally unique. The name should be a simple alphanumeric type name to ensure that it is machine-processing friendly.
      */
     name?: fhir.FhirString | string | undefined;
     /**
+     * Extended properties for primitive element: CapabilityStatement.name
+     */
+    _name?: fhir.FhirElementArgs;
+    /**
      * This name does not need to be machine-processing friendly and may contain punctuation, white-space, etc.
      */
     title?: fhir.FhirString | string | undefined;
+    /**
+     * Extended properties for primitive element: CapabilityStatement.title
+     */
+    _title?: fhir.FhirElementArgs;
     /**
      * Allows filtering of capability statements that are appropriate for use versus not.This is not intended for use with actual capability statements, but where capability statements are used to describe possible or desired systems.
      */
     status: fhir.FhirCode<PublicationStatusCodeType> | string | undefined;
     /**
+     * Extended properties for primitive element: CapabilityStatement.status
+     */
+    _status?: fhir.FhirElementArgs;
+    /**
      * Allows filtering of capability statements that are appropriate for use versus not.
      */
     experimental?: fhir.FhirBoolean | boolean | undefined;
+    /**
+     * Extended properties for primitive element: CapabilityStatement.experimental
+     */
+    _experimental?: fhir.FhirElementArgs;
     /**
      * Note that this is not the same as the resource last-modified-date, since the resource may be a secondary representation of the capability statement. Additional specific dates may be added as extensions or be found by consulting Provenances associated with past versions of the resource.
      */
     date: fhir.FhirDateTime | string | undefined;
     /**
+     * Extended properties for primitive element: CapabilityStatement.date
+     */
+    _date?: fhir.FhirElementArgs;
+    /**
      * Usually an organization but may be an individual. The publisher (or steward) of the capability statement is the organization or individual primarily responsible for the maintenance and upkeep of the capability statement. This is not necessarily the same individual or organization that developed and initially authored the content. The publisher is the primary point of contact for questions or issues with the capability statement. This item SHOULD be populated unless the information is available from context.
      */
     publisher?: fhir.FhirString | string | undefined;
+    /**
+     * Extended properties for primitive element: CapabilityStatement.publisher
+     */
+    _publisher?: fhir.FhirElementArgs;
     /**
      * May be a web site, an email address, a telephone number, etc.
      */
@@ -1058,6 +1261,10 @@ export interface CapabilityStatementArgs extends fhir.DomainResourceArgs {
      * This description can be used to capture details such as why the capability statement was built, comments about misuse, instructions for clinical use and interpretation, literature references, examples from the paper world, etc. It is not a rendering of the capability statement as conveyed in the 'text' field of the resource itself. This item SHOULD be populated unless the information is available from context (e.g. the language of the capability statement is presumed to be the predominant language in the place the capability statement was created).This does not need to be populated if the description is adequately implied by the software or implementation details.
      */
     description?: fhir.FhirMarkdown | string | undefined;
+    /**
+     * Extended properties for primitive element: CapabilityStatement.description
+     */
+    _description?: fhir.FhirElementArgs;
     /**
      * When multiple useContexts are specified, there is no expectation that all or any of the contexts apply.
      */
@@ -1071,23 +1278,43 @@ export interface CapabilityStatementArgs extends fhir.DomainResourceArgs {
      */
     purpose?: fhir.FhirMarkdown | string | undefined;
     /**
+     * Extended properties for primitive element: CapabilityStatement.purpose
+     */
+    _purpose?: fhir.FhirElementArgs;
+    /**
      * A copyright statement relating to the capability statement and/or its contents. Copyright statements are generally legal restrictions on the use and publishing of the capability statement.
      */
     copyright?: fhir.FhirMarkdown | string | undefined;
     /**
+     * Extended properties for primitive element: CapabilityStatement.copyright
+     */
+    _copyright?: fhir.FhirElementArgs;
+    /**
      * The way that this statement is intended to be used, to describe an actual running instance of software, a particular product (kind, not instance of software) or a class of implementation (e.g. a desired purchase).
      */
     kind: fhir.FhirCode<CapabilityStatementKindCodeType> | string | undefined;
+    /**
+     * Extended properties for primitive element: CapabilityStatement.kind
+     */
+    _kind?: fhir.FhirElementArgs;
     /**
      * HL7 defines the following Services: [Terminology Service](terminology-service.html).
      * Many [Implementation Guides](http://fhir.org/guides/registry) define additional services.
      */
     instantiates?: fhir.FhirCanonical[] | string[] | undefined;
     /**
+     * Extended properties for primitive element: CapabilityStatement.instantiates
+     */
+    _instantiates?: (fhir.FhirElementArgs | null)[];
+    /**
      * the contents of any directly or indirectly imported CapabilityStatements SHALL NOT overlap, i.e. they cannot refer to the same rest/resource, operations/name, searchparam/name, interaction/code, messaging/endpoint, document/mode pair.
      * A capability statement that imports another CapabilityStatement automatically instantiates it too (though this is often not a very useful statement for the kinds of CapabilityStatements that are suitable for importing).
      */
     imports?: fhir.FhirCanonical[] | string[] | undefined;
+    /**
+     * Extended properties for primitive element: CapabilityStatement.imports
+     */
+    _imports?: (fhir.FhirElementArgs | null)[];
     /**
      * Software that is covered by this capability statement.  It is used when the capability statement describes the capabilities of a particular software version, independent of an installation.
      */
@@ -1101,17 +1328,33 @@ export interface CapabilityStatementArgs extends fhir.DomainResourceArgs {
      */
     fhirVersion: fhir.FhirCode | string | undefined;
     /**
+     * Extended properties for primitive element: CapabilityStatement.fhirVersion
+     */
+    _fhirVersion?: fhir.FhirElementArgs;
+    /**
      * "xml", "json" and "ttl" are allowed, which describe the simple encodings described in the specification (and imply appropriate bundle support). Otherwise, mime types are legal here.
      */
     format: fhir.FhirCode[] | string[] | undefined;
+    /**
+     * Extended properties for primitive element: CapabilityStatement.format
+     */
+    _format?: (fhir.FhirElementArgs | null)[];
     /**
      * At present, the patch mime types application/json-patch+json and application/xml-patch+xml are legal. Generally, if a server supports PATCH, it would be expected to support the patch formats and match the formats it supports, but this is not always possible or necessary.
      */
     patchFormat?: fhir.FhirCode[] | string[] | undefined;
     /**
+     * Extended properties for primitive element: CapabilityStatement.patchFormat
+     */
+    _patchFormat?: (fhir.FhirElementArgs | null)[];
+    /**
      * A list of implementation guides that the server does (or should) support in their entirety.
      */
     implementationGuide?: fhir.FhirCanonical[] | string[] | undefined;
+    /**
+     * Extended properties for primitive element: CapabilityStatement.implementationGuide
+     */
+    _implementationGuide?: (fhir.FhirElementArgs | null)[];
     /**
      * Multiple repetitions allow definition of both client and/or server behaviors or possibly behaviors under different configuration settings (for software or requirements statements).
      */

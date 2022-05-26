@@ -22,9 +22,9 @@ import { RequestPriorityCodings, RequestPriorityCodingType,} from '../fhirValueS
 // @ts-ignore
 import { RequestPriorityCodes,  RequestPriorityCodeType } from '../fhirValueSets/RequestPriorityCodes.js';
 // @ts-ignore
-import { ProcedureCodeCodings, ProcedureCodeCodingType,} from '../fhirValueSets/ProcedureCodeCodings.js';
+import { ProcedureCodings, ProcedureCodingType,} from '../fhirValueSets/ProcedureCodings.js';
 // @ts-ignore
-import { ProcedureCodeCodes,  ProcedureCodeCodeType } from '../fhirValueSets/ProcedureCodeCodes.js';
+import { ProcedureCodes,  ProcedureCodeType } from '../fhirValueSets/ProcedureCodes.js';
 // @ts-ignore
 import { ServicerequestOrderdetailCodings, ServicerequestOrderdetailCodingType,} from '../fhirValueSets/ServicerequestOrderdetailCodings.js';
 // @ts-ignore
@@ -62,9 +62,17 @@ export interface ServiceRequestArgs extends fhir.DomainResourceArgs {
    */
   instantiatesCanonical?: fhir.FhirCanonical[]|string[]|undefined;
   /**
+   * Extended properties for primitive element: ServiceRequest.instantiatesCanonical
+   */
+  _instantiatesCanonical?:(fhir.FhirElementArgs|null)[];
+  /**
    * This might be an HTML page, PDF, etc. or could just be a non-resolvable URI identifier.
    */
   instantiatesUri?: fhir.FhirUri[]|string[]|undefined;
+  /**
+   * Extended properties for primitive element: ServiceRequest.instantiatesUri
+   */
+  _instantiatesUri?:(fhir.FhirElementArgs|null)[];
   /**
    * Plan/proposal/order fulfilled by this request.
    */
@@ -82,9 +90,17 @@ export interface ServiceRequestArgs extends fhir.DomainResourceArgs {
    */
   status: fhir.FhirCode<RequestStatusCodeType>|string|undefined;
   /**
+   * Extended properties for primitive element: ServiceRequest.status
+   */
+  _status?:fhir.FhirElementArgs;
+  /**
    * This element is labeled as a modifier because the intent alters when and how the resource is actually applicable.
    */
   intent: fhir.FhirCode<RequestIntentCodeType>|string|undefined;
+  /**
+   * Extended properties for primitive element: ServiceRequest.intent
+   */
+  _intent?:fhir.FhirElementArgs;
   /**
    * There may be multiple axis of categorization depending on the context or use case for retrieving or displaying the resource.  The level of granularity is defined by the category concepts in the value set.
    */
@@ -94,9 +110,17 @@ export interface ServiceRequestArgs extends fhir.DomainResourceArgs {
    */
   priority?: fhir.FhirCode<RequestPriorityCodeType>|string|undefined;
   /**
+   * Extended properties for primitive element: ServiceRequest.priority
+   */
+  _priority?:fhir.FhirElementArgs;
+  /**
    * In general, only the code and timeframe will be present, though occasional additional qualifiers such as body site or even performer could be included to narrow the scope of the prohibition.  If the ServiceRequest.code and ServiceRequest.doNotPerform both contain negation, that will reinforce prohibition and should not have a double negative interpretation.
    */
   doNotPerform?: fhir.FhirBoolean|boolean|undefined;
+  /**
+   * Extended properties for primitive element: ServiceRequest.doNotPerform
+   */
+  _doNotPerform?:fhir.FhirElementArgs;
   /**
    * Many laboratory and radiology procedure codes embed the specimen/organ system in the test order name, for example,  serum or serum/plasma glucose, or a chest x-ray. The specimen might not be recorded separately from the test code.
    */
@@ -162,6 +186,10 @@ export interface ServiceRequestArgs extends fhir.DomainResourceArgs {
    */
   authoredOn?: fhir.FhirDateTime|string|undefined;
   /**
+   * Extended properties for primitive element: ServiceRequest.authoredOn
+   */
+  _authoredOn?:fhir.FhirElementArgs;
+  /**
    * This not the dispatcher, but rather who is the authorizer.  This element is not intended to handle delegation which would generally be managed through the Provenance resource.
    */
   requester?: fhir.ReferenceArgs|undefined;
@@ -213,6 +241,10 @@ export interface ServiceRequestArgs extends fhir.DomainResourceArgs {
    * Instructions in terms that are understood by the patient or consumer.
    */
   patientInstruction?: fhir.FhirString|string|undefined;
+  /**
+   * Extended properties for primitive element: ServiceRequest.patientInstruction
+   */
+  _patientInstruction?:fhir.FhirElementArgs;
   /**
    * This might not include provenances for all versions of the request – only those deemed “relevant” or important.
    * This SHALL NOT include the Provenance associated with this current version of the resource.  (If that provenance is deemed to be a “relevant” change, it will need to be added as part of a later update.  Until then, it can be queried directly as the Provenance that points to this version using _revinclude
@@ -389,8 +421,20 @@ export class ServiceRequest extends fhir.DomainResource {
     else { this.identifier = []; }
     if (source['instantiatesCanonical']) { this.instantiatesCanonical = source.instantiatesCanonical.map((x) => new fhir.FhirCanonical({value: x})); }
     else { this.instantiatesCanonical = []; }
+    if (source['_instantiatesCanonical']) {
+      source._instantiatesCanonical.forEach((x,i) => {
+        if (this.instantiatesCanonical.length >= i) { if (x) { this.instantiatesCanonical[i].addExtendedProperties(x); } }
+        else { if (x) { this.instantiatesCanonical.push(new fhir.FhirCanonical(x as Partial<fhir.FhirCanonicalArgs>)); } }
+      });
+    }
     if (source['instantiatesUri']) { this.instantiatesUri = source.instantiatesUri.map((x) => new fhir.FhirUri({value: x})); }
     else { this.instantiatesUri = []; }
+    if (source['_instantiatesUri']) {
+      source._instantiatesUri.forEach((x,i) => {
+        if (this.instantiatesUri.length >= i) { if (x) { this.instantiatesUri[i].addExtendedProperties(x); } }
+        else { if (x) { this.instantiatesUri.push(new fhir.FhirUri(x as Partial<fhir.FhirUriArgs>)); } }
+      });
+    }
     if (source['basedOn']) { this.basedOn = source.basedOn.map((x) => new fhir.Reference(x)); }
     else { this.basedOn = []; }
     if (source['replaces']) { this.replaces = source.replaces.map((x) => new fhir.Reference(x)); }
@@ -398,12 +442,28 @@ export class ServiceRequest extends fhir.DomainResource {
     if (source['requisition']) { this.requisition = new fhir.Identifier(source.requisition); }
     if (source['status']) { this.status = new fhir.FhirCode<RequestStatusCodeType>({value: source.status}); }
     else { this.status = null; }
+    if (source['_status']) {
+      if (this.status) { this.status.addExtendedProperties(source._status!); }
+      else { this.status = new fhir.FhirCode<RequestStatusCodeType>(source._status as Partial<fhir.FhirCode>); }
+    }
     if (source['intent']) { this.intent = new fhir.FhirCode<RequestIntentCodeType>({value: source.intent}); }
     else { this.intent = null; }
+    if (source['_intent']) {
+      if (this.intent) { this.intent.addExtendedProperties(source._intent!); }
+      else { this.intent = new fhir.FhirCode<RequestIntentCodeType>(source._intent as Partial<fhir.FhirCode>); }
+    }
     if (source['category']) { this.category = source.category.map((x) => new fhir.CodeableConcept(x)); }
     else { this.category = []; }
     if (source['priority']) { this.priority = new fhir.FhirCode<RequestPriorityCodeType>({value: source.priority}); }
+    if (source['_priority']) {
+      if (this.priority) { this.priority.addExtendedProperties(source._priority!); }
+      else { this.priority = new fhir.FhirCode<RequestPriorityCodeType>(source._priority as Partial<fhir.FhirCode>); }
+    }
     if (source['doNotPerform']) { this.doNotPerform = new fhir.FhirBoolean({value: source.doNotPerform}); }
+    if (source['_doNotPerform']) {
+      if (this.doNotPerform) { this.doNotPerform.addExtendedProperties(source._doNotPerform!); }
+      else { this.doNotPerform = new fhir.FhirBoolean(source._doNotPerform as Partial<fhir.FhirBooleanArgs>); }
+    }
     if (source['code']) { this.code = new fhir.CodeableConcept(source.code); }
     if (source['orderDetail']) { this.orderDetail = source.orderDetail.map((x) => new fhir.CodeableConcept(x)); }
     else { this.orderDetail = []; }
@@ -422,6 +482,10 @@ export class ServiceRequest extends fhir.DomainResource {
     else if (source['asNeededBoolean']) { this.asNeeded = new fhir.FhirBoolean({value: source.asNeededBoolean}); }
     else if (source['asNeededCodeableConcept']) { this.asNeeded = new fhir.CodeableConcept(source.asNeededCodeableConcept); }
     if (source['authoredOn']) { this.authoredOn = new fhir.FhirDateTime({value: source.authoredOn}); }
+    if (source['_authoredOn']) {
+      if (this.authoredOn) { this.authoredOn.addExtendedProperties(source._authoredOn!); }
+      else { this.authoredOn = new fhir.FhirDateTime(source._authoredOn as Partial<fhir.FhirDateTimeArgs>); }
+    }
     if (source['requester']) { this.requester = new fhir.Reference(source.requester); }
     if (source['performerType']) { this.performerType = new fhir.CodeableConcept(source.performerType); }
     if (source['performer']) { this.performer = source.performer.map((x) => new fhir.Reference(x)); }
@@ -445,6 +509,10 @@ export class ServiceRequest extends fhir.DomainResource {
     if (source['note']) { this.note = source.note.map((x) => new fhir.Annotation(x)); }
     else { this.note = []; }
     if (source['patientInstruction']) { this.patientInstruction = new fhir.FhirString({value: source.patientInstruction}); }
+    if (source['_patientInstruction']) {
+      if (this.patientInstruction) { this.patientInstruction.addExtendedProperties(source._patientInstruction!); }
+      else { this.patientInstruction = new fhir.FhirString(source._patientInstruction as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['relevantHistory']) { this.relevantHistory = source.relevantHistory.map((x) => new fhir.Reference(x)); }
     else { this.relevantHistory = []; }
   }

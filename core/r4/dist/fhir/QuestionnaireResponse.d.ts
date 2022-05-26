@@ -99,14 +99,26 @@ export interface QuestionnaireResponseItemArgs extends fhir.BackboneElementArgs 
      */
     linkId: fhir.FhirString | string | undefined;
     /**
+     * Extended properties for primitive element: QuestionnaireResponse.item.linkId
+     */
+    _linkId?: fhir.FhirElementArgs;
+    /**
      * The ElementDefinition must be in a [StructureDefinition](structuredefinition.html#), and must have a fragment identifier that identifies the specific data element by its id (Element.id). E.g. http://hl7.org/fhir/StructureDefinition/Observation#Observation.value[x].
      * There is no need for this element if the item pointed to by the linkId has a definition listed.
      */
     definition?: fhir.FhirUri | string | undefined;
     /**
+     * Extended properties for primitive element: QuestionnaireResponse.item.definition
+     */
+    _definition?: fhir.FhirElementArgs;
+    /**
      * Text that is displayed above the contents of the group or as the text of the question being answered.
      */
     text?: fhir.FhirString | string | undefined;
+    /**
+     * Extended properties for primitive element: QuestionnaireResponse.item.text
+     */
+    _text?: fhir.FhirElementArgs;
     /**
      * The value is nested because we cannot have a repeating structure that has variable type.
      */
@@ -179,9 +191,17 @@ export interface QuestionnaireResponseArgs extends fhir.DomainResourceArgs {
      */
     questionnaire?: fhir.FhirCanonical | string | undefined;
     /**
+     * Extended properties for primitive element: QuestionnaireResponse.questionnaire
+     */
+    _questionnaire?: fhir.FhirElementArgs;
+    /**
      * This element is labeled as a modifier because the status contains codes that mark the resource as not currently valid.
      */
     status: fhir.FhirCode<QuestionnaireAnswersStatusCodeType> | string | undefined;
+    /**
+     * Extended properties for primitive element: QuestionnaireResponse.status
+     */
+    _status?: fhir.FhirElementArgs;
     /**
      * If the Questionnaire declared a subjectType, the resource pointed to by this element must be an instance of one of the listed types.
      */
@@ -195,6 +215,10 @@ export interface QuestionnaireResponseArgs extends fhir.DomainResourceArgs {
      * This element is optional to allow for systems that might not know the value, however it SHOULD be populated if possible.
      */
     authored?: fhir.FhirDateTime | string | undefined;
+    /**
+     * Extended properties for primitive element: QuestionnaireResponse.authored
+     */
+    _authored?: fhir.FhirElementArgs;
     /**
      * Mapping a subject's answers to multiple choice options and determining what to put in the textual answer is a matter of interpretation.  Authoring by device would indicate that some portion of the questionnaire had been auto-populated.
      */

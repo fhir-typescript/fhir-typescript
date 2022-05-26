@@ -30,6 +30,10 @@ export interface OrganizationAffiliationArgs extends fhir.DomainResourceArgs {
    */
   active?: fhir.FhirBoolean|boolean|undefined;
   /**
+   * Extended properties for primitive element: OrganizationAffiliation.active
+   */
+  _active?:fhir.FhirElementArgs;
+  /**
    * The period during which the participatingOrganization is affiliated with the primary organization.
    */
   period?: fhir.PeriodArgs|undefined;
@@ -140,6 +144,10 @@ export class OrganizationAffiliation extends fhir.DomainResource {
     if (source['identifier']) { this.identifier = source.identifier.map((x) => new fhir.Identifier(x)); }
     else { this.identifier = []; }
     if (source['active']) { this.active = new fhir.FhirBoolean({value: source.active}); }
+    if (source['_active']) {
+      if (this.active) { this.active.addExtendedProperties(source._active!); }
+      else { this.active = new fhir.FhirBoolean(source._active as Partial<fhir.FhirBooleanArgs>); }
+    }
     if (source['period']) { this.period = new fhir.Period(source.period); }
     if (source['organization']) { this.organization = new fhir.Reference(source.organization); }
     if (source['participatingOrganization']) { this.participatingOrganization = new fhir.Reference(source.participatingOrganization); }

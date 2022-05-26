@@ -6,9 +6,9 @@
 import * as fhir from '../fhir.js';
 
 // @ts-ignore
-import { ProcedureCodeCodings, ProcedureCodeCodingType,} from '../fhirValueSets/ProcedureCodeCodings.js';
+import { ProcedureCodings, ProcedureCodingType,} from '../fhirValueSets/ProcedureCodings.js';
 // @ts-ignore
-import { ProcedureCodeCodes,  ProcedureCodeCodeType } from '../fhirValueSets/ProcedureCodeCodes.js';
+import { ProcedureCodes,  ProcedureCodeType } from '../fhirValueSets/ProcedureCodes.js';
 // @ts-ignore
 import { ProductStorageScaleCodings, ProductStorageScaleCodingType,} from '../fhirValueSets/ProductStorageScaleCodings.js';
 // @ts-ignore
@@ -101,6 +101,10 @@ export interface BiologicallyDerivedProductProcessingArgs extends fhir.BackboneE
    */
   description?: fhir.FhirString|string|undefined;
   /**
+   * Extended properties for primitive element: BiologicallyDerivedProduct.processing.description
+   */
+  _description?:fhir.FhirElementArgs;
+  /**
    * Procesing code.
    */
   procedure?: fhir.CodeableConceptArgs|undefined;
@@ -156,6 +160,10 @@ export class BiologicallyDerivedProductProcessing extends fhir.BackboneElement {
   constructor(source:Partial<BiologicallyDerivedProductProcessingArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
     if (source['description']) { this.description = new fhir.FhirString({value: source.description}); }
+    if (source['_description']) {
+      if (this.description) { this.description.addExtendedProperties(source._description!); }
+      else { this.description = new fhir.FhirString(source._description as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['procedure']) { this.procedure = new fhir.CodeableConcept(source.procedure); }
     if (source['additive']) { this.additive = new fhir.Reference(source.additive); }
     if (source['time']) { this.time = source.time; }
@@ -181,6 +189,10 @@ export interface BiologicallyDerivedProductManipulationArgs extends fhir.Backbon
    * Description of manipulation.
    */
   description?: fhir.FhirString|string|undefined;
+  /**
+   * Extended properties for primitive element: BiologicallyDerivedProduct.manipulation.description
+   */
+  _description?:fhir.FhirElementArgs;
   /**
    * Time of manipulation.
    */
@@ -221,6 +233,10 @@ export class BiologicallyDerivedProductManipulation extends fhir.BackboneElement
   constructor(source:Partial<BiologicallyDerivedProductManipulationArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
     if (source['description']) { this.description = new fhir.FhirString({value: source.description}); }
+    if (source['_description']) {
+      if (this.description) { this.description.addExtendedProperties(source._description!); }
+      else { this.description = new fhir.FhirString(source._description as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['time']) { this.time = source.time; }
     else if (source['timeDateTime']) { this.time = new fhir.FhirDateTime({value: source.timeDateTime}); }
     else if (source['timePeriod']) { this.time = new fhir.Period(source.timePeriod); }
@@ -243,13 +259,25 @@ export interface BiologicallyDerivedProductStorageArgs extends fhir.BackboneElem
    */
   description?: fhir.FhirString|string|undefined;
   /**
+   * Extended properties for primitive element: BiologicallyDerivedProduct.storage.description
+   */
+  _description?:fhir.FhirElementArgs;
+  /**
    * Storage temperature.
    */
   temperature?: fhir.FhirDecimal|number|undefined;
   /**
+   * Extended properties for primitive element: BiologicallyDerivedProduct.storage.temperature
+   */
+  _temperature?:fhir.FhirElementArgs;
+  /**
    * Temperature scale used.
    */
   scale?: fhir.FhirCode<ProductStorageScaleCodeType>|string|undefined;
+  /**
+   * Extended properties for primitive element: BiologicallyDerivedProduct.storage.scale
+   */
+  _scale?:fhir.FhirElementArgs;
   /**
    * Storage timeperiod.
    */
@@ -286,8 +314,20 @@ export class BiologicallyDerivedProductStorage extends fhir.BackboneElement {
   constructor(source:Partial<BiologicallyDerivedProductStorageArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
     if (source['description']) { this.description = new fhir.FhirString({value: source.description}); }
+    if (source['_description']) {
+      if (this.description) { this.description.addExtendedProperties(source._description!); }
+      else { this.description = new fhir.FhirString(source._description as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['temperature']) { this.temperature = new fhir.FhirDecimal({value: source.temperature}); }
+    if (source['_temperature']) {
+      if (this.temperature) { this.temperature.addExtendedProperties(source._temperature!); }
+      else { this.temperature = new fhir.FhirDecimal(source._temperature as Partial<fhir.FhirDecimalArgs>); }
+    }
     if (source['scale']) { this.scale = new fhir.FhirCode<ProductStorageScaleCodeType>({value: source.scale}); }
+    if (source['_scale']) {
+      if (this.scale) { this.scale.addExtendedProperties(source._scale!); }
+      else { this.scale = new fhir.FhirCode<ProductStorageScaleCodeType>(source._scale as Partial<fhir.FhirCode>); }
+    }
     if (source['duration']) { this.duration = new fhir.Period(source.duration); }
   }
   /**
@@ -328,6 +368,10 @@ export interface BiologicallyDerivedProductArgs extends fhir.DomainResourceArgs 
    */
   productCategory?: fhir.FhirCode<ProductCategoryCodeType>|string|undefined;
   /**
+   * Extended properties for primitive element: BiologicallyDerivedProduct.productCategory
+   */
+  _productCategory?:fhir.FhirElementArgs;
+  /**
    * A code that identifies the kind of this biologically derived product (SNOMED Ctcode).
    */
   productCode?: fhir.CodeableConceptArgs|undefined;
@@ -336,6 +380,10 @@ export interface BiologicallyDerivedProductArgs extends fhir.DomainResourceArgs 
    */
   status?: fhir.FhirCode<ProductStatusCodeType>|string|undefined;
   /**
+   * Extended properties for primitive element: BiologicallyDerivedProduct.status
+   */
+  _status?:fhir.FhirElementArgs;
+  /**
    * Procedure request to obtain this biologically derived product.
    */
   request?: fhir.ReferenceArgs[]|undefined;
@@ -343,6 +391,10 @@ export interface BiologicallyDerivedProductArgs extends fhir.DomainResourceArgs 
    * Number of discrete units within this product.
    */
   quantity?: fhir.FhirInteger|number|undefined;
+  /**
+   * Extended properties for primitive element: BiologicallyDerivedProduct.quantity
+   */
+  _quantity?:fhir.FhirElementArgs;
   /**
    * For products that have multiple collections. For example Peripheral Blood Stem Cells may be collected over several days from a single donor and the donation split into in multiple containers which must be linked to the parent donation.
    */
@@ -431,11 +483,23 @@ export class BiologicallyDerivedProduct extends fhir.DomainResource {
     if (source['identifier']) { this.identifier = source.identifier.map((x) => new fhir.Identifier(x)); }
     else { this.identifier = []; }
     if (source['productCategory']) { this.productCategory = new fhir.FhirCode<ProductCategoryCodeType>({value: source.productCategory}); }
+    if (source['_productCategory']) {
+      if (this.productCategory) { this.productCategory.addExtendedProperties(source._productCategory!); }
+      else { this.productCategory = new fhir.FhirCode<ProductCategoryCodeType>(source._productCategory as Partial<fhir.FhirCode>); }
+    }
     if (source['productCode']) { this.productCode = new fhir.CodeableConcept(source.productCode); }
     if (source['status']) { this.status = new fhir.FhirCode<ProductStatusCodeType>({value: source.status}); }
+    if (source['_status']) {
+      if (this.status) { this.status.addExtendedProperties(source._status!); }
+      else { this.status = new fhir.FhirCode<ProductStatusCodeType>(source._status as Partial<fhir.FhirCode>); }
+    }
     if (source['request']) { this.request = source.request.map((x) => new fhir.Reference(x)); }
     else { this.request = []; }
     if (source['quantity']) { this.quantity = new fhir.FhirInteger({value: source.quantity}); }
+    if (source['_quantity']) {
+      if (this.quantity) { this.quantity.addExtendedProperties(source._quantity!); }
+      else { this.quantity = new fhir.FhirInteger(source._quantity as Partial<fhir.FhirIntegerArgs>); }
+    }
     if (source['parent']) { this.parent = source.parent.map((x) => new fhir.Reference(x)); }
     else { this.parent = []; }
     if (source['collection']) { this.collection = new fhir.BiologicallyDerivedProductCollection(source.collection); }

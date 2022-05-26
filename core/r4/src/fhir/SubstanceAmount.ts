@@ -82,6 +82,10 @@ export interface SubstanceAmountArgs extends fhir.BackboneElementArgs {
    */
   amountText?: fhir.FhirString|string|undefined;
   /**
+   * Extended properties for primitive element: SubstanceAmount.amountText
+   */
+  _amountText?:fhir.FhirElementArgs;
+  /**
    * Reference range of possible or expected values.
    */
   referenceRange?: fhir.SubstanceAmountReferenceRangeArgs|undefined;
@@ -126,6 +130,10 @@ export class SubstanceAmount extends fhir.BackboneElement {
     else if (source['amountString']) { this.amount = new fhir.FhirString({value: source.amountString}); }
     if (source['amountType']) { this.amountType = new fhir.CodeableConcept(source.amountType); }
     if (source['amountText']) { this.amountText = new fhir.FhirString({value: source.amountText}); }
+    if (source['_amountText']) {
+      if (this.amountText) { this.amountText.addExtendedProperties(source._amountText!); }
+      else { this.amountText = new fhir.FhirString(source._amountText as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['referenceRange']) { this.referenceRange = new fhir.SubstanceAmountReferenceRange(source.referenceRange); }
   }
   /**

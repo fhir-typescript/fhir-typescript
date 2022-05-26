@@ -76,6 +76,10 @@ export interface SupplyRequestArgs extends fhir.DomainResourceArgs {
      */
     status?: fhir.FhirCode<SupplyrequestStatusCodeType> | string | undefined;
     /**
+     * Extended properties for primitive element: SupplyRequest.status
+     */
+    _status?: fhir.FhirElementArgs;
+    /**
      * Category of supply, e.g.  central, non-stock, etc. This is used to support work flows associated with the supply process.
      */
     category?: fhir.CodeableConceptArgs | undefined;
@@ -83,6 +87,10 @@ export interface SupplyRequestArgs extends fhir.DomainResourceArgs {
      * Indicates how quickly this SupplyRequest should be addressed with respect to other requests.
      */
     priority?: fhir.FhirCode<RequestPriorityCodeType> | string | undefined;
+    /**
+     * Extended properties for primitive element: SupplyRequest.priority
+     */
+    _priority?: fhir.FhirElementArgs;
     /**
      * Note that there's a difference between a prescription - an instruction to take a medication, along with a (sometimes) implicit supply, and an explicit request to supply, with no explicit instructions.
      */
@@ -123,6 +131,10 @@ export interface SupplyRequestArgs extends fhir.DomainResourceArgs {
      * When the request was made.
      */
     authoredOn?: fhir.FhirDateTime | string | undefined;
+    /**
+     * Extended properties for primitive element: SupplyRequest.authoredOn
+     */
+    _authoredOn?: fhir.FhirElementArgs;
     /**
      * The device, practitioner, etc. who initiated the request.
      */

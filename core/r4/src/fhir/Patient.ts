@@ -50,6 +50,10 @@ export interface PatientContactArgs extends fhir.BackboneElementArgs {
    */
   gender?: fhir.FhirCode<AdministrativeGenderCodeType>|string|undefined;
   /**
+   * Extended properties for primitive element: Patient.contact.gender
+   */
+  _gender?:fhir.FhirElementArgs;
+  /**
    * Organization on behalf of which the contact is acting or for which the contact is working.
    */
   organization?: fhir.ReferenceArgs|undefined;
@@ -107,6 +111,10 @@ export class PatientContact extends fhir.BackboneElement {
     else { this.telecom = []; }
     if (source['address']) { this.address = new fhir.Address(source.address); }
     if (source['gender']) { this.gender = new fhir.FhirCode<AdministrativeGenderCodeType>({value: source.gender}); }
+    if (source['_gender']) {
+      if (this.gender) { this.gender.addExtendedProperties(source._gender!); }
+      else { this.gender = new fhir.FhirCode<AdministrativeGenderCodeType>(source._gender as Partial<fhir.FhirCode>); }
+    }
     if (source['organization']) { this.organization = new fhir.Reference(source.organization); }
     if (source['period']) { this.period = new fhir.Period(source.period); }
   }
@@ -152,6 +160,10 @@ export interface PatientCommunicationArgs extends fhir.BackboneElementArgs {
    * This language is specifically identified for communicating healthcare information.
    */
   preferred?: fhir.FhirBoolean|boolean|undefined;
+  /**
+   * Extended properties for primitive element: Patient.communication.preferred
+   */
+  _preferred?:fhir.FhirElementArgs;
 }
 
 /**
@@ -178,6 +190,10 @@ export class PatientCommunication extends fhir.BackboneElement {
     if (source['language']) { this.language = new fhir.CodeableConcept(source.language); }
     else { this.language = null; }
     if (source['preferred']) { this.preferred = new fhir.FhirBoolean({value: source.preferred}); }
+    if (source['_preferred']) {
+      if (this.preferred) { this.preferred.addExtendedProperties(source._preferred!); }
+      else { this.preferred = new fhir.FhirBoolean(source._preferred as Partial<fhir.FhirBooleanArgs>); }
+    }
   }
   /**
    * Preferred-bound Value Set for language (Patient.communication.language)
@@ -210,6 +226,10 @@ export interface PatientLinkArgs extends fhir.BackboneElementArgs {
    * The type of link between this patient resource and another patient resource.
    */
   type: fhir.FhirCode<LinkTypeCodeType>|string|undefined;
+  /**
+   * Extended properties for primitive element: Patient.link.type
+   */
+  _type?:fhir.FhirElementArgs;
 }
 
 /**
@@ -237,6 +257,10 @@ export class PatientLink extends fhir.BackboneElement {
     else { this.other = null; }
     if (source['type']) { this.type = new fhir.FhirCode<LinkTypeCodeType>({value: source.type}); }
     else { this.type = null; }
+    if (source['_type']) {
+      if (this.type) { this.type.addExtendedProperties(source._type!); }
+      else { this.type = new fhir.FhirCode<LinkTypeCodeType>(source._type as Partial<fhir.FhirCode>); }
+    }
   }
   /**
    * Required-bound Value Set for type (Patient.link.type)
@@ -280,6 +304,10 @@ export interface PatientArgs extends fhir.DomainResourceArgs {
    */
   active?: fhir.FhirBoolean|boolean|undefined;
   /**
+   * Extended properties for primitive element: Patient.active
+   */
+  _active?:fhir.FhirElementArgs;
+  /**
    * A patient may have multiple names with different uses or applicable periods. For animals, the name is a "HumanName" in the sense that is assigned and used by humans and has the same patterns.
    */
   name?: fhir.HumanNameArgs[]|undefined;
@@ -292,9 +320,17 @@ export interface PatientArgs extends fhir.DomainResourceArgs {
    */
   gender?: fhir.FhirCode<AdministrativeGenderCodeType>|string|undefined;
   /**
+   * Extended properties for primitive element: Patient.gender
+   */
+  _gender?:fhir.FhirElementArgs;
+  /**
    * At least an estimated year should be provided as a guess if the real DOB is unknown  There is a standard extension "patient-birthTime" available that should be used where Time is required (such as in maternity/infant care systems).
    */
   birthDate?: fhir.FhirDate|string|undefined;
+  /**
+   * Extended properties for primitive element: Patient.birthDate
+   */
+  _birthDate?:fhir.FhirElementArgs;
   /**
    * If there's no value in the instance, it means there is no statement on whether or not the individual is deceased. Most systems will interpret the absence of a value as a sign of the person being alive.
    */
@@ -456,12 +492,24 @@ export class Patient extends fhir.DomainResource {
     if (source['identifier']) { this.identifier = source.identifier.map((x) => new fhir.Identifier(x)); }
     else { this.identifier = []; }
     if (source['active']) { this.active = new fhir.FhirBoolean({value: source.active}); }
+    if (source['_active']) {
+      if (this.active) { this.active.addExtendedProperties(source._active!); }
+      else { this.active = new fhir.FhirBoolean(source._active as Partial<fhir.FhirBooleanArgs>); }
+    }
     if (source['name']) { this.name = source.name.map((x) => new fhir.HumanName(x)); }
     else { this.name = []; }
     if (source['telecom']) { this.telecom = source.telecom.map((x) => new fhir.ContactPoint(x)); }
     else { this.telecom = []; }
     if (source['gender']) { this.gender = new fhir.FhirCode<AdministrativeGenderCodeType>({value: source.gender}); }
+    if (source['_gender']) {
+      if (this.gender) { this.gender.addExtendedProperties(source._gender!); }
+      else { this.gender = new fhir.FhirCode<AdministrativeGenderCodeType>(source._gender as Partial<fhir.FhirCode>); }
+    }
     if (source['birthDate']) { this.birthDate = new fhir.FhirDate({value: source.birthDate}); }
+    if (source['_birthDate']) {
+      if (this.birthDate) { this.birthDate.addExtendedProperties(source._birthDate!); }
+      else { this.birthDate = new fhir.FhirDate(source._birthDate as Partial<fhir.FhirDateArgs>); }
+    }
     if (source['deceased']) { this.deceased = source.deceased; }
     else if (source['deceasedBoolean']) { this.deceased = new fhir.FhirBoolean({value: source.deceasedBoolean}); }
     else if (source['deceasedDateTime']) { this.deceased = new fhir.FhirDateTime({value: source.deceasedDateTime}); }

@@ -17,9 +17,17 @@ export interface EnrollmentRequestArgs extends fhir.DomainResourceArgs {
      */
     status?: fhir.FhirCode<FmStatusCodeType> | string | undefined;
     /**
+     * Extended properties for primitive element: EnrollmentRequest.status
+     */
+    _status?: fhir.FhirElementArgs;
+    /**
      * The date when this resource was created.
      */
     created?: fhir.FhirDateTime | string | undefined;
+    /**
+     * Extended properties for primitive element: EnrollmentRequest.created
+     */
+    _created?: fhir.FhirElementArgs;
     /**
      * The Insurer who is target  of the request.
      */

@@ -76,6 +76,10 @@ export interface SupplyDeliveryArgs extends fhir.DomainResourceArgs {
      */
     status?: fhir.FhirCode<SupplydeliveryStatusCodeType> | string | undefined;
     /**
+     * Extended properties for primitive element: SupplyDelivery.status
+     */
+    _status?: fhir.FhirElementArgs;
+    /**
      * A link to a resource representing the person whom the delivered item is for.
      */
     patient?: fhir.ReferenceArgs | undefined;

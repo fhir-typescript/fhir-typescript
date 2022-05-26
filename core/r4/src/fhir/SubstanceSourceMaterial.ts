@@ -14,6 +14,10 @@ export interface SubstanceSourceMaterialFractionDescriptionArgs extends fhir.Bac
    */
   fraction?: fhir.FhirString|string|undefined;
   /**
+   * Extended properties for primitive element: SubstanceSourceMaterial.fractionDescription.fraction
+   */
+  _fraction?:fhir.FhirElementArgs;
+  /**
    * The specific type of the material constituting the component. For Herbal preparations the particulars of the extracts (liquid/dry) is described in Specified Substance Group 1.
    */
   materialType?: fhir.CodeableConceptArgs|undefined;
@@ -41,6 +45,10 @@ export class SubstanceSourceMaterialFractionDescription extends fhir.BackboneEle
   constructor(source:Partial<SubstanceSourceMaterialFractionDescriptionArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
     if (source['fraction']) { this.fraction = new fhir.FhirString({value: source.fraction}); }
+    if (source['_fraction']) {
+      if (this.fraction) { this.fraction.addExtendedProperties(source._fraction!); }
+      else { this.fraction = new fhir.FhirString(source._fraction as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['materialType']) { this.materialType = new fhir.CodeableConcept(source.materialType); }
   }
   /**
@@ -65,6 +73,10 @@ export interface SubstanceSourceMaterialOrganismAuthorArgs extends fhir.Backbone
    * The author of an organism species shall be specified. The author year of an organism shall also be specified when applicable; refers to the year in which the first author(s) published the infraspecific plant/animal name (of any rank).
    */
   authorDescription?: fhir.FhirString|string|undefined;
+  /**
+   * Extended properties for primitive element: SubstanceSourceMaterial.organism.author.authorDescription
+   */
+  _authorDescription?:fhir.FhirElementArgs;
 }
 
 /**
@@ -90,6 +102,10 @@ export class SubstanceSourceMaterialOrganismAuthor extends fhir.BackboneElement 
     super(source, options);
     if (source['authorType']) { this.authorType = new fhir.CodeableConcept(source.authorType); }
     if (source['authorDescription']) { this.authorDescription = new fhir.FhirString({value: source.authorDescription}); }
+    if (source['_authorDescription']) {
+      if (this.authorDescription) { this.authorDescription.addExtendedProperties(source._authorDescription!); }
+      else { this.authorDescription = new fhir.FhirString(source._authorDescription as Partial<fhir.FhirStringArgs>); }
+    }
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -110,17 +126,33 @@ export interface SubstanceSourceMaterialOrganismHybridArgs extends fhir.Backbone
    */
   maternalOrganismId?: fhir.FhirString|string|undefined;
   /**
+   * Extended properties for primitive element: SubstanceSourceMaterial.organism.hybrid.maternalOrganismId
+   */
+  _maternalOrganismId?:fhir.FhirElementArgs;
+  /**
    * The name of the maternal species constituting the hybrid organism shall be specified. For plants, the parents aren’t always known, and it is unlikely that it will be known which is maternal and which is paternal.
    */
   maternalOrganismName?: fhir.FhirString|string|undefined;
+  /**
+   * Extended properties for primitive element: SubstanceSourceMaterial.organism.hybrid.maternalOrganismName
+   */
+  _maternalOrganismName?:fhir.FhirElementArgs;
   /**
    * The identifier of the paternal species constituting the hybrid organism shall be specified based on a controlled vocabulary.
    */
   paternalOrganismId?: fhir.FhirString|string|undefined;
   /**
+   * Extended properties for primitive element: SubstanceSourceMaterial.organism.hybrid.paternalOrganismId
+   */
+  _paternalOrganismId?:fhir.FhirElementArgs;
+  /**
    * The name of the paternal species constituting the hybrid organism shall be specified.
    */
   paternalOrganismName?: fhir.FhirString|string|undefined;
+  /**
+   * Extended properties for primitive element: SubstanceSourceMaterial.organism.hybrid.paternalOrganismName
+   */
+  _paternalOrganismName?:fhir.FhirElementArgs;
   /**
    * The hybrid type of an organism shall be specified.
    */
@@ -161,9 +193,25 @@ export class SubstanceSourceMaterialOrganismHybrid extends fhir.BackboneElement 
   constructor(source:Partial<SubstanceSourceMaterialOrganismHybridArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
     if (source['maternalOrganismId']) { this.maternalOrganismId = new fhir.FhirString({value: source.maternalOrganismId}); }
+    if (source['_maternalOrganismId']) {
+      if (this.maternalOrganismId) { this.maternalOrganismId.addExtendedProperties(source._maternalOrganismId!); }
+      else { this.maternalOrganismId = new fhir.FhirString(source._maternalOrganismId as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['maternalOrganismName']) { this.maternalOrganismName = new fhir.FhirString({value: source.maternalOrganismName}); }
+    if (source['_maternalOrganismName']) {
+      if (this.maternalOrganismName) { this.maternalOrganismName.addExtendedProperties(source._maternalOrganismName!); }
+      else { this.maternalOrganismName = new fhir.FhirString(source._maternalOrganismName as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['paternalOrganismId']) { this.paternalOrganismId = new fhir.FhirString({value: source.paternalOrganismId}); }
+    if (source['_paternalOrganismId']) {
+      if (this.paternalOrganismId) { this.paternalOrganismId.addExtendedProperties(source._paternalOrganismId!); }
+      else { this.paternalOrganismId = new fhir.FhirString(source._paternalOrganismId as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['paternalOrganismName']) { this.paternalOrganismName = new fhir.FhirString({value: source.paternalOrganismName}); }
+    if (source['_paternalOrganismName']) {
+      if (this.paternalOrganismName) { this.paternalOrganismName.addExtendedProperties(source._paternalOrganismName!); }
+      else { this.paternalOrganismName = new fhir.FhirString(source._paternalOrganismName as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['hybridType']) { this.hybridType = new fhir.CodeableConcept(source.hybridType); }
   }
   /**
@@ -272,6 +320,10 @@ export interface SubstanceSourceMaterialOrganismArgs extends fhir.BackboneElemen
    */
   intraspecificDescription?: fhir.FhirString|string|undefined;
   /**
+   * Extended properties for primitive element: SubstanceSourceMaterial.organism.intraspecificDescription
+   */
+  _intraspecificDescription?:fhir.FhirElementArgs;
+  /**
    * 4.9.13.6.1 Author type (Conditional).
    */
   author?: fhir.SubstanceSourceMaterialOrganismAuthorArgs[]|undefined;
@@ -335,6 +387,10 @@ export class SubstanceSourceMaterialOrganism extends fhir.BackboneElement {
     if (source['species']) { this.species = new fhir.CodeableConcept(source.species); }
     if (source['intraspecificType']) { this.intraspecificType = new fhir.CodeableConcept(source.intraspecificType); }
     if (source['intraspecificDescription']) { this.intraspecificDescription = new fhir.FhirString({value: source.intraspecificDescription}); }
+    if (source['_intraspecificDescription']) {
+      if (this.intraspecificDescription) { this.intraspecificDescription.addExtendedProperties(source._intraspecificDescription!); }
+      else { this.intraspecificDescription = new fhir.FhirString(source._intraspecificDescription as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['author']) { this.author = source.author.map((x) => new fhir.SubstanceSourceMaterialOrganismAuthor(x)); }
     else { this.author = []; }
     if (source['hybrid']) { this.hybrid = new fhir.SubstanceSourceMaterialOrganismHybrid(source.hybrid); }
@@ -433,6 +489,10 @@ export interface SubstanceSourceMaterialArgs extends fhir.DomainResourceArgs {
    */
   organismName?: fhir.FhirString|string|undefined;
   /**
+   * Extended properties for primitive element: SubstanceSourceMaterial.organismName
+   */
+  _organismName?:fhir.FhirElementArgs;
+  /**
    * The parent of the herbal drug Ginkgo biloba, Leaf is the substance ID of the substance (fresh) of Ginkgo biloba L. or Ginkgo biloba L. (Whole plant).
    */
   parentSubstanceId?: fhir.IdentifierArgs[]|undefined;
@@ -441,6 +501,10 @@ export interface SubstanceSourceMaterialArgs extends fhir.DomainResourceArgs {
    */
   parentSubstanceName?: fhir.FhirString[]|string[]|undefined;
   /**
+   * Extended properties for primitive element: SubstanceSourceMaterial.parentSubstanceName
+   */
+  _parentSubstanceName?:(fhir.FhirElementArgs|null)[];
+  /**
    * The country where the plant material is harvested or the countries where the plasma is sourced from as laid down in accordance with the Plasma Master File. For “Plasma-derived substances” the attribute country of origin provides information about the countries used for the manufacturing of the Cryopoor plama or Crioprecipitate.
    */
   countryOfOrigin?: fhir.CodeableConceptArgs[]|undefined;
@@ -448,6 +512,10 @@ export interface SubstanceSourceMaterialArgs extends fhir.DomainResourceArgs {
    * The place/region where the plant is harvested or the places/regions where the animal source material has its habitat.
    */
   geographicalLocation?: fhir.FhirString[]|string[]|undefined;
+  /**
+   * Extended properties for primitive element: SubstanceSourceMaterial.geographicalLocation
+   */
+  _geographicalLocation?:(fhir.FhirElementArgs|null)[];
   /**
    * Stage of life for animals, plants, insects and microorganisms. This information shall be provided only when the substance is significantly different in these stages (e.g. foetal bovine serum).
    */
@@ -541,14 +609,30 @@ export class SubstanceSourceMaterial extends fhir.DomainResource {
     if (source['sourceMaterialState']) { this.sourceMaterialState = new fhir.CodeableConcept(source.sourceMaterialState); }
     if (source['organismId']) { this.organismId = new fhir.Identifier(source.organismId); }
     if (source['organismName']) { this.organismName = new fhir.FhirString({value: source.organismName}); }
+    if (source['_organismName']) {
+      if (this.organismName) { this.organismName.addExtendedProperties(source._organismName!); }
+      else { this.organismName = new fhir.FhirString(source._organismName as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['parentSubstanceId']) { this.parentSubstanceId = source.parentSubstanceId.map((x) => new fhir.Identifier(x)); }
     else { this.parentSubstanceId = []; }
     if (source['parentSubstanceName']) { this.parentSubstanceName = source.parentSubstanceName.map((x) => new fhir.FhirString({value: x})); }
     else { this.parentSubstanceName = []; }
+    if (source['_parentSubstanceName']) {
+      source._parentSubstanceName.forEach((x,i) => {
+        if (this.parentSubstanceName.length >= i) { if (x) { this.parentSubstanceName[i].addExtendedProperties(x); } }
+        else { if (x) { this.parentSubstanceName.push(new fhir.FhirString(x as Partial<fhir.FhirStringArgs>)); } }
+      });
+    }
     if (source['countryOfOrigin']) { this.countryOfOrigin = source.countryOfOrigin.map((x) => new fhir.CodeableConcept(x)); }
     else { this.countryOfOrigin = []; }
     if (source['geographicalLocation']) { this.geographicalLocation = source.geographicalLocation.map((x) => new fhir.FhirString({value: x})); }
     else { this.geographicalLocation = []; }
+    if (source['_geographicalLocation']) {
+      source._geographicalLocation.forEach((x,i) => {
+        if (this.geographicalLocation.length >= i) { if (x) { this.geographicalLocation[i].addExtendedProperties(x); } }
+        else { if (x) { this.geographicalLocation.push(new fhir.FhirString(x as Partial<fhir.FhirStringArgs>)); } }
+      });
+    }
     if (source['developmentStage']) { this.developmentStage = new fhir.CodeableConcept(source.developmentStage); }
     if (source['fractionDescription']) { this.fractionDescription = source.fractionDescription.map((x) => new fhir.SubstanceSourceMaterialFractionDescription(x)); }
     else { this.fractionDescription = []; }

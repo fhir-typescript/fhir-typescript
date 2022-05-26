@@ -106,6 +106,10 @@ export interface NutritionOrderOralDietArgs extends fhir.BackboneElementArgs {
      * Free text dosage instructions can be used for cases where the instructions are too complex to code.
      */
     instruction?: fhir.FhirString | string | undefined;
+    /**
+     * Extended properties for primitive element: NutritionOrder.oralDiet.instruction
+     */
+    _instruction?: fhir.FhirElementArgs;
 }
 /**
  * Diet given orally in contrast to enteral (tube) feeding.
@@ -161,6 +165,10 @@ export interface NutritionOrderSupplementArgs extends fhir.BackboneElementArgs {
      */
     productName?: fhir.FhirString | string | undefined;
     /**
+     * Extended properties for primitive element: NutritionOrder.supplement.productName
+     */
+    _productName?: fhir.FhirElementArgs;
+    /**
      * The time period and frequency at which the supplement(s) should be given.  The supplement should be given for the combination of all schedules if more than one schedule is present.
      */
     schedule?: fhir.TimingArgs[] | undefined;
@@ -172,6 +180,10 @@ export interface NutritionOrderSupplementArgs extends fhir.BackboneElementArgs {
      * Free text dosage instructions can be used for cases where the instructions are too complex to code.
      */
     instruction?: fhir.FhirString | string | undefined;
+    /**
+     * Extended properties for primitive element: NutritionOrder.supplement.instruction
+     */
+    _instruction?: fhir.FhirElementArgs;
 }
 /**
  * Oral nutritional products given in order to add further nutritional value to the patient's diet.
@@ -281,6 +293,10 @@ export interface NutritionOrderEnteralFormulaArgs extends fhir.BackboneElementAr
      */
     baseFormulaProductName?: fhir.FhirString | string | undefined;
     /**
+     * Extended properties for primitive element: NutritionOrder.enteralFormula.baseFormulaProductName
+     */
+    _baseFormulaProductName?: fhir.FhirElementArgs;
+    /**
      * Indicates the type of modular component such as protein, carbohydrate, fat or fiber to be provided in addition to or mixed with the base formula.
      */
     additiveType?: fhir.CodeableConceptArgs | undefined;
@@ -288,6 +304,10 @@ export interface NutritionOrderEnteralFormulaArgs extends fhir.BackboneElementAr
      * The product or brand name of the type of modular component to be added to the formula.
      */
     additiveProductName?: fhir.FhirString | string | undefined;
+    /**
+     * Extended properties for primitive element: NutritionOrder.enteralFormula.additiveProductName
+     */
+    _additiveProductName?: fhir.FhirElementArgs;
     /**
      * The amount of energy (calories) that the formula should provide per specified volume, typically per mL or fluid oz.  For example, an infant may require a formula that provides 24 calories per fluid ounce or an adult may require an enteral formula that provides 1.5 calorie/mL.
      */
@@ -308,6 +328,10 @@ export interface NutritionOrderEnteralFormulaArgs extends fhir.BackboneElementAr
      * Free text dosage instructions can be used for cases where the instructions are too complex to code.
      */
     administrationInstruction?: fhir.FhirString | string | undefined;
+    /**
+     * Extended properties for primitive element: NutritionOrder.enteralFormula.administrationInstruction
+     */
+    _administrationInstruction?: fhir.FhirElementArgs;
 }
 /**
  * Feeding provided through the gastrointestinal tract via a tube, catheter, or stoma that delivers nutrition distal to the oral cavity.
@@ -383,21 +407,41 @@ export interface NutritionOrderArgs extends fhir.DomainResourceArgs {
      */
     instantiatesCanonical?: fhir.FhirCanonical[] | string[] | undefined;
     /**
+     * Extended properties for primitive element: NutritionOrder.instantiatesCanonical
+     */
+    _instantiatesCanonical?: (fhir.FhirElementArgs | null)[];
+    /**
      * This might be an HTML page, PDF, etc. or could just be a non-resolvable URI identifier.
      */
     instantiatesUri?: fhir.FhirUri[] | string[] | undefined;
+    /**
+     * Extended properties for primitive element: NutritionOrder.instantiatesUri
+     */
+    _instantiatesUri?: (fhir.FhirElementArgs | null)[];
     /**
      * The URL pointing to a protocol, guideline, orderset or other definition that is adhered to in whole or in part by this NutritionOrder.
      */
     instantiates?: fhir.FhirUri[] | string[] | undefined;
     /**
+     * Extended properties for primitive element: NutritionOrder.instantiates
+     */
+    _instantiates?: (fhir.FhirElementArgs | null)[];
+    /**
      * Typically the system placing the order sets the status to "requested". Thereafter, the order is maintained by the receiver that updates the status as the request is handled.  This element is labeled as a modifier because the status contains codes that mark the resource as not currently valid.
      */
     status: fhir.FhirCode<RequestStatusCodeType> | string | undefined;
     /**
+     * Extended properties for primitive element: NutritionOrder.status
+     */
+    _status?: fhir.FhirElementArgs;
+    /**
      * When resources map to this element, they are free to define as many codes as necessary to cover their space and will map to "proposal, plan or order".  Can have multiple codes that map to one of these.  E.g. "original order", "encoded order", "reflex order" would all map to "order".  Expectation is that the set of codes is mutually exclusive or a strict all-encompassing hierarchy.
      */
     intent: fhir.FhirCode<RequestIntentCodeType> | string | undefined;
+    /**
+     * Extended properties for primitive element: NutritionOrder.intent
+     */
+    _intent?: fhir.FhirElementArgs;
     /**
      * The person (patient) who needs the nutrition order for an oral diet, nutritional supplement and/or enteral or formula feeding.
      */
@@ -410,6 +454,10 @@ export interface NutritionOrderArgs extends fhir.DomainResourceArgs {
      * The date and time that this nutrition order was requested.
      */
     dateTime: fhir.FhirDateTime | string | undefined;
+    /**
+     * Extended properties for primitive element: NutritionOrder.dateTime
+     */
+    _dateTime?: fhir.FhirElementArgs;
     /**
      * The practitioner that holds legal responsibility for ordering the diet, nutritional supplement, or formula feedings.
      */

@@ -55,14 +55,26 @@ export interface ChargeItemArgs extends fhir.DomainResourceArgs {
      */
     definitionUri?: fhir.FhirUri[] | string[] | undefined;
     /**
+     * Extended properties for primitive element: ChargeItem.definitionUri
+     */
+    _definitionUri?: (fhir.FhirElementArgs | null)[];
+    /**
      * References the source of pricing information, rules of application for the code this ChargeItem uses.
      */
     definitionCanonical?: fhir.FhirCanonical[] | string[] | undefined;
+    /**
+     * Extended properties for primitive element: ChargeItem.definitionCanonical
+     */
+    _definitionCanonical?: (fhir.FhirElementArgs | null)[];
     /**
      * Unknown does not represent "other" - one of the defined statuses must apply.  Unknown is used when the authoring system is not sure what the current status is.
      * This element is labeled as a modifier because the status contains the code entered-in-error that marks the charge item as not currently valid.
      */
     status: fhir.FhirCode<ChargeitemStatusCodeType> | string | undefined;
+    /**
+     * Extended properties for primitive element: ChargeItem.status
+     */
+    _status?: fhir.FhirElementArgs;
     /**
      * ChargeItems can be grouped to larger ChargeItems covering the whole set.
      */
@@ -124,6 +136,10 @@ export interface ChargeItemArgs extends fhir.DomainResourceArgs {
      */
     factorOverride?: fhir.FhirDecimal | number | undefined;
     /**
+     * Extended properties for primitive element: ChargeItem.factorOverride
+     */
+    _factorOverride?: fhir.FhirElementArgs;
+    /**
      * There is no reason to carry the price in the instance of a ChargeItem unless circumstances require a manual override. The list prices or are usually defined in a back catalogue of the billing codes  (see ChargeItem.definition). Derived profiles may require a ChargeItem.overrideReason to be provided if either factor or price are manually overridden.
      */
     priceOverride?: fhir.MoneyArgs | undefined;
@@ -132,6 +148,10 @@ export interface ChargeItemArgs extends fhir.DomainResourceArgs {
      */
     overrideReason?: fhir.FhirString | string | undefined;
     /**
+     * Extended properties for primitive element: ChargeItem.overrideReason
+     */
+    _overrideReason?: fhir.FhirElementArgs;
+    /**
      * The enterer is also the person considered responsible for factor/price overrides if applicable.
      */
     enterer?: fhir.ReferenceArgs | undefined;
@@ -139,6 +159,10 @@ export interface ChargeItemArgs extends fhir.DomainResourceArgs {
      * The actual date when the service associated with the charge has been rendered is captured in occurrence[x].
      */
     enteredDate?: fhir.FhirDateTime | string | undefined;
+    /**
+     * Extended properties for primitive element: ChargeItem.enteredDate
+     */
+    _enteredDate?: fhir.FhirElementArgs;
     /**
      * If the application of the charge item requires a reason to be given, it can be captured here. Textual reasons can be captured using reasonCode.text.
      */

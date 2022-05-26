@@ -26,6 +26,10 @@ export interface ResourceArgs extends fhir.FhirBaseArgs {
    */
   id?: fhir.FhirId|string|undefined;
   /**
+   * Extended properties for primitive element: Resource.id
+   */
+  _id?:fhir.FhirElementArgs;
+  /**
    * The metadata about the resource. This is content that is maintained by the infrastructure. Changes to the content might not always be associated with version changes to the resource.
    */
   meta?: fhir.MetaArgs|undefined;
@@ -34,9 +38,17 @@ export interface ResourceArgs extends fhir.FhirBaseArgs {
    */
   implicitRules?: fhir.FhirUri|string|undefined;
   /**
+   * Extended properties for primitive element: Resource.implicitRules
+   */
+  _implicitRules?:fhir.FhirElementArgs;
+  /**
    * Language is provided to support indexing and accessibility (typically, services such as text to speech use the language tag). The html language tag in the narrative applies  to the narrative. The language tag on the resource may be used to specify the language of other presentations generated from the data in the resource. Not all the content has to be in the base language. The Resource.language should not be assumed to apply to the narrative automatically. If a language is specified, it should it also be specified on the div element in the html (see rules in HTML5 for information about the relationship between xml:lang and the html lang attribute).
    */
   language?: fhir.FhirCode|string|undefined;
+  /**
+   * Extended properties for primitive element: Resource.language
+   */
+  _language?:fhir.FhirElementArgs;
 }
 
 /**
@@ -74,9 +86,21 @@ export class Resource extends fhir.FhirBase {
     super(source, options);
     this.resourceType = 'Resource';
     if (source['id']) { this.id = new fhir.FhirId({value: source.id}); }
+    if (source['_id']) {
+      if (this.id) { this.id.addExtendedProperties(source._id!); }
+      else { this.id = new fhir.FhirId(source._id as Partial<fhir.FhirIdArgs>); }
+    }
     if (source['meta']) { this.meta = new fhir.Meta(source.meta); }
     if (source['implicitRules']) { this.implicitRules = new fhir.FhirUri({value: source.implicitRules}); }
+    if (source['_implicitRules']) {
+      if (this.implicitRules) { this.implicitRules.addExtendedProperties(source._implicitRules!); }
+      else { this.implicitRules = new fhir.FhirUri(source._implicitRules as Partial<fhir.FhirUriArgs>); }
+    }
     if (source['language']) { this.language = new fhir.FhirCode({value: source.language}); }
+    if (source['_language']) {
+      if (this.language) { this.language.addExtendedProperties(source._language!); }
+      else { this.language = new fhir.FhirCode(source._language as Partial<fhir.FhirCodeArgs>); }
+    }
   }
   /**
    * Preferred-bound Value Set for language (Resource.language)

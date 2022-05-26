@@ -20,9 +20,17 @@ export interface AnnotationArgs extends fhir.FhirElementArgs {
      */
     time?: fhir.FhirDateTime | string | undefined;
     /**
+     * Extended properties for primitive element: Annotation.time
+     */
+    _time?: fhir.FhirElementArgs;
+    /**
      * The text of the annotation in markdown format.
      */
     text: fhir.FhirMarkdown | string | undefined;
+    /**
+     * Extended properties for primitive element: Annotation.text
+     */
+    _text?: fhir.FhirElementArgs;
 }
 /**
  * A  text note which also  contains information about who made the statement and when.

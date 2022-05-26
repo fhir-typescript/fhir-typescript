@@ -74,6 +74,10 @@ export interface InvoiceLineItemPriceComponentArgs extends fhir.BackboneElementA
    */
   type: fhir.FhirCode<InvoicePriceComponentTypeCodeType>|string|undefined;
   /**
+   * Extended properties for primitive element: Invoice.lineItem.priceComponent.type
+   */
+  _type?:fhir.FhirElementArgs;
+  /**
    * A code that identifies the component. Codes may be used to differentiate between kinds of taxes, surcharges, discounts etc.
    */
   code?: fhir.CodeableConceptArgs|undefined;
@@ -81,6 +85,10 @@ export interface InvoiceLineItemPriceComponentArgs extends fhir.BackboneElementA
    * There is no reason to carry the price in the instance of a ChargeItem unless circumstances require a manual override. The list prices or are usually defined in a back catalogue of the billing codes  (see ChargeItem.definition). Derived profiles may require a ChargeItem.overrideReason to be provided if either factor or price are manually overridden.
    */
   factor?: fhir.FhirDecimal|number|undefined;
+  /**
+   * Extended properties for primitive element: Invoice.lineItem.priceComponent.factor
+   */
+  _factor?:fhir.FhirElementArgs;
   /**
    * There is no reason to carry the price in the instance of a ChargeItem unless circumstances require a manual override. The list prices or are usually defined in a back catalogue of the billing codes  (see ChargeItem.definition). Derived profiles may require a ChargeItem.overrideReason to be provided if either factor or price are manually overridden.
    */
@@ -118,8 +126,16 @@ export class InvoiceLineItemPriceComponent extends fhir.BackboneElement {
     super(source, options);
     if (source['type']) { this.type = new fhir.FhirCode<InvoicePriceComponentTypeCodeType>({value: source.type}); }
     else { this.type = null; }
+    if (source['_type']) {
+      if (this.type) { this.type.addExtendedProperties(source._type!); }
+      else { this.type = new fhir.FhirCode<InvoicePriceComponentTypeCodeType>(source._type as Partial<fhir.FhirCode>); }
+    }
     if (source['code']) { this.code = new fhir.CodeableConcept(source.code); }
     if (source['factor']) { this.factor = new fhir.FhirDecimal({value: source.factor}); }
+    if (source['_factor']) {
+      if (this.factor) { this.factor.addExtendedProperties(source._factor!); }
+      else { this.factor = new fhir.FhirDecimal(source._factor as Partial<fhir.FhirDecimalArgs>); }
+    }
     if (source['amount']) { this.amount = new fhir.Money(source.amount); }
   }
   /**
@@ -154,6 +170,10 @@ export interface InvoiceLineItemArgs extends fhir.BackboneElementArgs {
    * Sequence in which the items appear on the invoice.
    */
   sequence?: fhir.FhirPositiveInt|number|undefined;
+  /**
+   * Extended properties for primitive element: Invoice.lineItem.sequence
+   */
+  _sequence?:fhir.FhirElementArgs;
   /**
    * The ChargeItem contains information such as the billing code, date, amount etc. If no further details are required for the lineItem, inline billing codes can be added using the CodeableConcept data type instead of the Reference.
    */
@@ -202,6 +222,10 @@ export class InvoiceLineItem extends fhir.BackboneElement {
   constructor(source:Partial<InvoiceLineItemArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
     if (source['sequence']) { this.sequence = new fhir.FhirPositiveInt({value: source.sequence}); }
+    if (source['_sequence']) {
+      if (this.sequence) { this.sequence.addExtendedProperties(source._sequence!); }
+      else { this.sequence = new fhir.FhirPositiveInt(source._sequence as Partial<fhir.FhirPositiveIntArgs>); }
+    }
     if (source['chargeItem']) { this.chargeItem = source.chargeItem; }
     else if (source['chargeItemReference']) { this.chargeItem = new fhir.Reference(source.chargeItemReference); }
     else if (source['chargeItemCodeableConcept']) { this.chargeItem = new fhir.CodeableConcept(source.chargeItemCodeableConcept); }
@@ -239,9 +263,17 @@ export interface InvoiceArgs extends fhir.DomainResourceArgs {
    */
   status: fhir.FhirCode<InvoiceStatusCodeType>|string|undefined;
   /**
+   * Extended properties for primitive element: Invoice.status
+   */
+  _status?:fhir.FhirElementArgs;
+  /**
    * Derived Profiles may choose to add invariants requiring this field to be populated if either priceOverride or factorOverride have been filled.
    */
   cancelledReason?: fhir.FhirString|string|undefined;
+  /**
+   * Extended properties for primitive element: Invoice.cancelledReason
+   */
+  _cancelledReason?:fhir.FhirElementArgs;
   /**
    * Type of Invoice depending on domain, realm an usage (e.g. internal/external, dental, preliminary).
    */
@@ -258,6 +290,10 @@ export interface InvoiceArgs extends fhir.DomainResourceArgs {
    * The list of types may be constrained as appropriate for the type of charge item.
    */
   date?: fhir.FhirDateTime|string|undefined;
+  /**
+   * Extended properties for primitive element: Invoice.date
+   */
+  _date?:fhir.FhirElementArgs;
   /**
    * Indicates who or what performed or participated in the charged service.
    */
@@ -290,6 +326,10 @@ export interface InvoiceArgs extends fhir.DomainResourceArgs {
    * Derived Profiles may chose to add invariants requiring this field to be populated if either priceOverride or factorOverride have been filled.
    */
   paymentTerms?: fhir.FhirMarkdown|string|undefined;
+  /**
+   * Extended properties for primitive element: Invoice.paymentTerms
+   */
+  _paymentTerms?:fhir.FhirElementArgs;
   /**
    * Comments made about the invoice by the issuer, subject, or other participants.
    */
@@ -382,11 +422,23 @@ export class Invoice extends fhir.DomainResource {
     else { this.identifier = []; }
     if (source['status']) { this.status = new fhir.FhirCode<InvoiceStatusCodeType>({value: source.status}); }
     else { this.status = null; }
+    if (source['_status']) {
+      if (this.status) { this.status.addExtendedProperties(source._status!); }
+      else { this.status = new fhir.FhirCode<InvoiceStatusCodeType>(source._status as Partial<fhir.FhirCode>); }
+    }
     if (source['cancelledReason']) { this.cancelledReason = new fhir.FhirString({value: source.cancelledReason}); }
+    if (source['_cancelledReason']) {
+      if (this.cancelledReason) { this.cancelledReason.addExtendedProperties(source._cancelledReason!); }
+      else { this.cancelledReason = new fhir.FhirString(source._cancelledReason as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['type']) { this.type = new fhir.CodeableConcept(source.type); }
     if (source['subject']) { this.subject = new fhir.Reference(source.subject); }
     if (source['recipient']) { this.recipient = new fhir.Reference(source.recipient); }
     if (source['date']) { this.date = new fhir.FhirDateTime({value: source.date}); }
+    if (source['_date']) {
+      if (this.date) { this.date.addExtendedProperties(source._date!); }
+      else { this.date = new fhir.FhirDateTime(source._date as Partial<fhir.FhirDateTimeArgs>); }
+    }
     if (source['participant']) { this.participant = source.participant.map((x) => new fhir.InvoiceParticipant(x)); }
     else { this.participant = []; }
     if (source['issuer']) { this.issuer = new fhir.Reference(source.issuer); }
@@ -398,6 +450,10 @@ export class Invoice extends fhir.DomainResource {
     if (source['totalNet']) { this.totalNet = new fhir.Money(source.totalNet); }
     if (source['totalGross']) { this.totalGross = new fhir.Money(source.totalGross); }
     if (source['paymentTerms']) { this.paymentTerms = new fhir.FhirMarkdown({value: source.paymentTerms}); }
+    if (source['_paymentTerms']) {
+      if (this.paymentTerms) { this.paymentTerms.addExtendedProperties(source._paymentTerms!); }
+      else { this.paymentTerms = new fhir.FhirMarkdown(source._paymentTerms as Partial<fhir.FhirMarkdownArgs>); }
+    }
     if (source['note']) { this.note = source.note.map((x) => new fhir.Annotation(x)); }
     else { this.note = []; }
   }

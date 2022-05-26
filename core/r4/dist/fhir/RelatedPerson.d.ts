@@ -14,6 +14,10 @@ export interface RelatedPersonCommunicationArgs extends fhir.BackboneElementArgs
      * This language is specifically identified for communicating healthcare information.
      */
     preferred?: fhir.FhirBoolean | boolean | undefined;
+    /**
+     * Extended properties for primitive element: RelatedPerson.communication.preferred
+     */
+    _preferred?: fhir.FhirElementArgs;
 }
 /**
  * If no language is specified, this *implies* that the default local language is spoken.  If you need to convey proficiency for multiple modes, then you need multiple RelatedPerson.Communication associations.   If the RelatedPerson does not speak the default local language, then the Interpreter Required Standard can be used to explicitly declare that an interpreter is required.
@@ -61,6 +65,10 @@ export interface RelatedPersonArgs extends fhir.DomainResourceArgs {
      */
     active?: fhir.FhirBoolean | boolean | undefined;
     /**
+     * Extended properties for primitive element: RelatedPerson.active
+     */
+    _active?: fhir.FhirElementArgs;
+    /**
      * The patient this person is related to.
      */
     patient: fhir.ReferenceArgs | null;
@@ -81,9 +89,17 @@ export interface RelatedPersonArgs extends fhir.DomainResourceArgs {
      */
     gender?: fhir.FhirCode<AdministrativeGenderCodeType> | string | undefined;
     /**
+     * Extended properties for primitive element: RelatedPerson.gender
+     */
+    _gender?: fhir.FhirElementArgs;
+    /**
      * The date on which the related person was born.
      */
     birthDate?: fhir.FhirDate | string | undefined;
+    /**
+     * Extended properties for primitive element: RelatedPerson.birthDate
+     */
+    _birthDate?: fhir.FhirElementArgs;
     /**
      * Address where the related person can be contacted or visited.
      */

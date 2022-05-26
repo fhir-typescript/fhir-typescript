@@ -14,9 +14,9 @@ import { FlagCategoryCodings, FlagCategoryCodingType,} from '../fhirValueSets/Fl
 // @ts-ignore
 import { FlagCategoryCodes,  FlagCategoryCodeType } from '../fhirValueSets/FlagCategoryCodes.js';
 // @ts-ignore
-import { FlagCodeCodings, FlagCodeCodingType,} from '../fhirValueSets/FlagCodeCodings.js';
+import { FlagCodings, FlagCodingType,} from '../fhirValueSets/FlagCodings.js';
 // @ts-ignore
-import { FlagCodeCodes,  FlagCodeCodeType } from '../fhirValueSets/FlagCodeCodes.js';
+import { FlagCodes,  FlagCodeType } from '../fhirValueSets/FlagCodes.js';
 /**
  * Valid arguments for the Flag type.
  */
@@ -33,6 +33,10 @@ export interface FlagArgs extends fhir.DomainResourceArgs {
    * This element is labeled as a modifier because the status contains codes that mark the resource as not currently valid.
    */
   status: fhir.FhirCode<FlagStatusCodeType>|string|undefined;
+  /**
+   * Extended properties for primitive element: Flag.status
+   */
+  _status?:fhir.FhirElementArgs;
   /**
    * The value set will often need to be adjusted based on local business rules and usage context.
    */
@@ -113,6 +117,10 @@ export class Flag extends fhir.DomainResource {
     else { this.identifier = []; }
     if (source['status']) { this.status = new fhir.FhirCode<FlagStatusCodeType>({value: source.status}); }
     else { this.status = null; }
+    if (source['_status']) {
+      if (this.status) { this.status.addExtendedProperties(source._status!); }
+      else { this.status = new fhir.FhirCode<FlagStatusCodeType>(source._status as Partial<fhir.FhirCode>); }
+    }
     if (source['category']) { this.category = source.category.map((x) => new fhir.CodeableConcept(x)); }
     else { this.category = []; }
     if (source['code']) { this.code = new fhir.CodeableConcept(source.code); }

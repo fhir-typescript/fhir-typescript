@@ -25,6 +25,10 @@ export interface ClaimResponseItemAdjudicationArgs extends fhir.BackboneElementA
      * For example: eligible percentage or co-payment percentage.
      */
     value?: fhir.FhirDecimal | number | undefined;
+    /**
+     * Extended properties for primitive element: ClaimResponse.item.adjudication.value
+     */
+    _value?: fhir.FhirElementArgs;
 }
 /**
  * If this item is a group then the values here are a summary of the adjudication of the detail items. If this item is a simple product or service then this is the result of the adjudication of this item.
@@ -68,9 +72,17 @@ export interface ClaimResponseItemDetailSubDetailArgs extends fhir.BackboneEleme
      */
     subDetailSequence: fhir.FhirPositiveInt | number | undefined;
     /**
+     * Extended properties for primitive element: ClaimResponse.item.detail.subDetail.subDetailSequence
+     */
+    _subDetailSequence?: fhir.FhirElementArgs;
+    /**
      * The numbers associated with notes below which apply to the adjudication of this item.
      */
     noteNumber?: fhir.FhirPositiveInt[] | number[] | undefined;
+    /**
+     * Extended properties for primitive element: ClaimResponse.item.detail.subDetail.noteNumber
+     */
+    _noteNumber?: (fhir.FhirElementArgs | null)[];
     /**
      * The adjudication results.
      */
@@ -114,9 +126,17 @@ export interface ClaimResponseItemDetailArgs extends fhir.BackboneElementArgs {
      */
     detailSequence: fhir.FhirPositiveInt | number | undefined;
     /**
+     * Extended properties for primitive element: ClaimResponse.item.detail.detailSequence
+     */
+    _detailSequence?: fhir.FhirElementArgs;
+    /**
      * The numbers associated with notes below which apply to the adjudication of this item.
      */
     noteNumber?: fhir.FhirPositiveInt[] | number[] | undefined;
+    /**
+     * Extended properties for primitive element: ClaimResponse.item.detail.noteNumber
+     */
+    _noteNumber?: (fhir.FhirElementArgs | null)[];
     /**
      * The adjudication results.
      */
@@ -168,9 +188,17 @@ export interface ClaimResponseItemArgs extends fhir.BackboneElementArgs {
      */
     itemSequence: fhir.FhirPositiveInt | number | undefined;
     /**
+     * Extended properties for primitive element: ClaimResponse.item.itemSequence
+     */
+    _itemSequence?: fhir.FhirElementArgs;
+    /**
      * The numbers associated with notes below which apply to the adjudication of this item.
      */
     noteNumber?: fhir.FhirPositiveInt[] | number[] | undefined;
+    /**
+     * Extended properties for primitive element: ClaimResponse.item.noteNumber
+     */
+    _noteNumber?: (fhir.FhirElementArgs | null)[];
     /**
      * If this item is a group then the values here are a summary of the adjudication of the detail items. If this item is a simple product or service then this is the result of the adjudication of this item.
      */
@@ -238,6 +266,10 @@ export interface ClaimResponseAddItemDetailSubDetailArgs extends fhir.BackboneEl
      */
     factor?: fhir.FhirDecimal | number | undefined;
     /**
+     * Extended properties for primitive element: ClaimResponse.addItem.detail.subDetail.factor
+     */
+    _factor?: fhir.FhirElementArgs;
+    /**
      * For example, the formula: quantity * unitPrice * factor  = net. Quantity and factor are assumed to be 1 if not supplied.
      */
     net?: fhir.MoneyArgs | undefined;
@@ -245,6 +277,10 @@ export interface ClaimResponseAddItemDetailSubDetailArgs extends fhir.BackboneEl
      * The numbers associated with notes below which apply to the adjudication of this item.
      */
     noteNumber?: fhir.FhirPositiveInt[] | number[] | undefined;
+    /**
+     * Extended properties for primitive element: ClaimResponse.addItem.detail.subDetail.noteNumber
+     */
+    _noteNumber?: (fhir.FhirElementArgs | null)[];
     /**
      * The adjudication results.
      */
@@ -324,6 +360,10 @@ export interface ClaimResponseAddItemDetailArgs extends fhir.BackboneElementArgs
      */
     factor?: fhir.FhirDecimal | number | undefined;
     /**
+     * Extended properties for primitive element: ClaimResponse.addItem.detail.factor
+     */
+    _factor?: fhir.FhirElementArgs;
+    /**
      * For example, the formula: quantity * unitPrice * factor  = net. Quantity and factor are assumed to be 1 if not supplied.
      */
     net?: fhir.MoneyArgs | undefined;
@@ -331,6 +371,10 @@ export interface ClaimResponseAddItemDetailArgs extends fhir.BackboneElementArgs
      * The numbers associated with notes below which apply to the adjudication of this item.
      */
     noteNumber?: fhir.FhirPositiveInt[] | number[] | undefined;
+    /**
+     * Extended properties for primitive element: ClaimResponse.addItem.detail.noteNumber
+     */
+    _noteNumber?: (fhir.FhirElementArgs | null)[];
     /**
      * The adjudication results.
      */
@@ -402,13 +446,25 @@ export interface ClaimResponseAddItemArgs extends fhir.BackboneElementArgs {
      */
     itemSequence?: fhir.FhirPositiveInt[] | number[] | undefined;
     /**
+     * Extended properties for primitive element: ClaimResponse.addItem.itemSequence
+     */
+    _itemSequence?: (fhir.FhirElementArgs | null)[];
+    /**
      * The sequence number of the details within the claim item which this line is intended to replace.
      */
     detailSequence?: fhir.FhirPositiveInt[] | number[] | undefined;
     /**
+     * Extended properties for primitive element: ClaimResponse.addItem.detailSequence
+     */
+    _detailSequence?: (fhir.FhirElementArgs | null)[];
+    /**
      * The sequence number of the sub-details within the details within the claim item which this line is intended to replace.
      */
     subdetailSequence?: fhir.FhirPositiveInt[] | number[] | undefined;
+    /**
+     * Extended properties for primitive element: ClaimResponse.addItem.subdetailSequence
+     */
+    _subdetailSequence?: (fhir.FhirElementArgs | null)[];
     /**
      * The providers who are authorized for the services rendered to the patient.
      */
@@ -466,6 +522,10 @@ export interface ClaimResponseAddItemArgs extends fhir.BackboneElementArgs {
      */
     factor?: fhir.FhirDecimal | number | undefined;
     /**
+     * Extended properties for primitive element: ClaimResponse.addItem.factor
+     */
+    _factor?: fhir.FhirElementArgs;
+    /**
      * For example, the formula: quantity * unitPrice * factor  = net. Quantity and factor are assumed to be 1 if not supplied.
      */
     net?: fhir.MoneyArgs | undefined;
@@ -481,6 +541,10 @@ export interface ClaimResponseAddItemArgs extends fhir.BackboneElementArgs {
      * The numbers associated with notes below which apply to the adjudication of this item.
      */
     noteNumber?: fhir.FhirPositiveInt[] | number[] | undefined;
+    /**
+     * Extended properties for primitive element: ClaimResponse.addItem.noteNumber
+     */
+    _noteNumber?: (fhir.FhirElementArgs | null)[];
     /**
      * The adjudication results.
      */
@@ -646,6 +710,10 @@ export interface ClaimResponsePaymentArgs extends fhir.BackboneElementArgs {
      */
     date?: fhir.FhirDate | string | undefined;
     /**
+     * Extended properties for primitive element: ClaimResponse.payment.date
+     */
+    _date?: fhir.FhirElementArgs;
+    /**
      * Benefits payable less any payment adjustment.
      */
     amount: fhir.MoneyArgs | null;
@@ -704,13 +772,25 @@ export interface ClaimResponseProcessNoteArgs extends fhir.BackboneElementArgs {
      */
     number?: fhir.FhirPositiveInt | number | undefined;
     /**
+     * Extended properties for primitive element: ClaimResponse.processNote.number
+     */
+    _number?: fhir.FhirElementArgs;
+    /**
      * The business purpose of the note text.
      */
     type?: fhir.FhirCode<NoteTypeCodeType> | string | undefined;
     /**
+     * Extended properties for primitive element: ClaimResponse.processNote.type
+     */
+    _type?: fhir.FhirElementArgs;
+    /**
      * The explanation or description associated with the processing.
      */
     text: fhir.FhirString | string | undefined;
+    /**
+     * Extended properties for primitive element: ClaimResponse.processNote.text
+     */
+    _text?: fhir.FhirElementArgs;
     /**
      * Only required if the language is different from the resource language.
      */
@@ -770,9 +850,17 @@ export interface ClaimResponseInsuranceArgs extends fhir.BackboneElementArgs {
      */
     sequence: fhir.FhirPositiveInt | number | undefined;
     /**
+     * Extended properties for primitive element: ClaimResponse.insurance.sequence
+     */
+    _sequence?: fhir.FhirElementArgs;
+    /**
      * A patient may (will) have multiple insurance policies which provide reimbursement for healthcare services and products. For example a person may also be covered by their spouse's policy and both appear in the list (and may be from the same insurer). This flag will be set to true for only one of the listed policies and that policy will be used for adjudicating this claim. Other claims would be created to request adjudication against the other listed policies.
      */
     focal: fhir.FhirBoolean | boolean | undefined;
+    /**
+     * Extended properties for primitive element: ClaimResponse.insurance.focal
+     */
+    _focal?: fhir.FhirElementArgs;
     /**
      * Reference to the insurance card level information contained in the Coverage resource. The coverage issuing insurer will use these details to locate the patient's actual coverage within the insurer's information system.
      */
@@ -781,6 +869,10 @@ export interface ClaimResponseInsuranceArgs extends fhir.BackboneElementArgs {
      * A business agreement number established between the provider and the insurer for special business processing purposes.
      */
     businessArrangement?: fhir.FhirString | string | undefined;
+    /**
+     * Extended properties for primitive element: ClaimResponse.insurance.businessArrangement
+     */
+    _businessArrangement?: fhir.FhirElementArgs;
     /**
      * Must not be specified when 'focal=true' for this insurance.
      */
@@ -832,13 +924,25 @@ export interface ClaimResponseErrorArgs extends fhir.BackboneElementArgs {
      */
     itemSequence?: fhir.FhirPositiveInt | number | undefined;
     /**
+     * Extended properties for primitive element: ClaimResponse.error.itemSequence
+     */
+    _itemSequence?: fhir.FhirElementArgs;
+    /**
      * The sequence number of the detail within the line item submitted which contains the error. This value is omitted when the error occurs outside of the item structure.
      */
     detailSequence?: fhir.FhirPositiveInt | number | undefined;
     /**
+     * Extended properties for primitive element: ClaimResponse.error.detailSequence
+     */
+    _detailSequence?: fhir.FhirElementArgs;
+    /**
      * The sequence number of the sub-detail within the detail within the line item submitted which contains the error. This value is omitted when the error occurs outside of the item structure.
      */
     subDetailSequence?: fhir.FhirPositiveInt | number | undefined;
+    /**
+     * Extended properties for primitive element: ClaimResponse.error.subDetailSequence
+     */
+    _subDetailSequence?: fhir.FhirElementArgs;
     /**
      * An error code, from a specified code system, which details why the claim could not be adjudicated.
      */
@@ -894,6 +998,10 @@ export interface ClaimResponseArgs extends fhir.DomainResourceArgs {
      */
     status: fhir.FhirCode<FmStatusCodeType> | string | undefined;
     /**
+     * Extended properties for primitive element: ClaimResponse.status
+     */
+    _status?: fhir.FhirElementArgs;
+    /**
      * This may contain the local bill type codes, for example the US UB-04 bill type code or the CMS bill type.
      */
     type: fhir.CodeableConceptArgs | null;
@@ -906,6 +1014,10 @@ export interface ClaimResponseArgs extends fhir.DomainResourceArgs {
      */
     use: fhir.FhirCode<ClaimUseCodeType> | string | undefined;
     /**
+     * Extended properties for primitive element: ClaimResponse.use
+     */
+    _use?: fhir.FhirElementArgs;
+    /**
      * The party to whom the professional services and/or products have been supplied or are being considered and for whom actual for facast reimbursement is sought.
      */
     patient: fhir.ReferenceArgs | null;
@@ -913,6 +1025,10 @@ export interface ClaimResponseArgs extends fhir.DomainResourceArgs {
      * The date this resource was created.
      */
     created: fhir.FhirDateTime | string | undefined;
+    /**
+     * Extended properties for primitive element: ClaimResponse.created
+     */
+    _created?: fhir.FhirElementArgs;
     /**
      * The party responsible for authorization, adjudication and reimbursement.
      */
@@ -930,13 +1046,25 @@ export interface ClaimResponseArgs extends fhir.DomainResourceArgs {
      */
     outcome: fhir.FhirCode<RemittanceOutcomeCodeType> | string | undefined;
     /**
+     * Extended properties for primitive element: ClaimResponse.outcome
+     */
+    _outcome?: fhir.FhirElementArgs;
+    /**
      * A human readable description of the status of the adjudication.
      */
     disposition?: fhir.FhirString | string | undefined;
     /**
+     * Extended properties for primitive element: ClaimResponse.disposition
+     */
+    _disposition?: fhir.FhirElementArgs;
+    /**
      * This value is only present on preauthorization adjudications.
      */
     preAuthRef?: fhir.FhirString | string | undefined;
+    /**
+     * Extended properties for primitive element: ClaimResponse.preAuthRef
+     */
+    _preAuthRef?: fhir.FhirElementArgs;
     /**
      * The time frame during which this authorization is effective.
      */

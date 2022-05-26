@@ -26,17 +26,33 @@ export interface PractitionerRoleAvailableTimeArgs extends fhir.BackboneElementA
    */
   daysOfWeek?: fhir.FhirCode<DaysOfWeekCodeType>[]|string[]|undefined;
   /**
+   * Extended properties for primitive element: PractitionerRole.availableTime.daysOfWeek
+   */
+  _daysOfWeek?:(fhir.FhirElementArgs|null)[];
+  /**
    * Is this always available? (hence times are irrelevant) e.g. 24 hour service.
    */
   allDay?: fhir.FhirBoolean|boolean|undefined;
+  /**
+   * Extended properties for primitive element: PractitionerRole.availableTime.allDay
+   */
+  _allDay?:fhir.FhirElementArgs;
   /**
    * The timezone is expected to be for where this HealthcareService is provided at.
    */
   availableStartTime?: fhir.FhirTime|string|undefined;
   /**
+   * Extended properties for primitive element: PractitionerRole.availableTime.availableStartTime
+   */
+  _availableStartTime?:fhir.FhirElementArgs;
+  /**
    * The timezone is expected to be for where this HealthcareService is provided at.
    */
   availableEndTime?: fhir.FhirTime|string|undefined;
+  /**
+   * Extended properties for primitive element: PractitionerRole.availableTime.availableEndTime
+   */
+  _availableEndTime?:fhir.FhirElementArgs;
 }
 
 /**
@@ -70,9 +86,27 @@ export class PractitionerRoleAvailableTime extends fhir.BackboneElement {
     super(source, options);
     if (source['daysOfWeek']) { this.daysOfWeek = source.daysOfWeek.map((x) => new fhir.FhirCode<DaysOfWeekCodeType>({value: x})); }
     else { this.daysOfWeek = []; }
+    if (source['_daysOfWeek']) {
+      source._daysOfWeek.forEach((x,i) => {
+        if (this.daysOfWeek.length >= i) { if (x) { this.daysOfWeek[i].addExtendedProperties(x); } }
+        else { if (x) { this.daysOfWeek.push(new fhir.FhirCode<DaysOfWeekCodeType>(x as Partial<fhir.FhirCode>)); } }
+      });
+    }
     if (source['allDay']) { this.allDay = new fhir.FhirBoolean({value: source.allDay}); }
+    if (source['_allDay']) {
+      if (this.allDay) { this.allDay.addExtendedProperties(source._allDay!); }
+      else { this.allDay = new fhir.FhirBoolean(source._allDay as Partial<fhir.FhirBooleanArgs>); }
+    }
     if (source['availableStartTime']) { this.availableStartTime = new fhir.FhirTime({value: source.availableStartTime}); }
+    if (source['_availableStartTime']) {
+      if (this.availableStartTime) { this.availableStartTime.addExtendedProperties(source._availableStartTime!); }
+      else { this.availableStartTime = new fhir.FhirTime(source._availableStartTime as Partial<fhir.FhirTimeArgs>); }
+    }
     if (source['availableEndTime']) { this.availableEndTime = new fhir.FhirTime({value: source.availableEndTime}); }
+    if (source['_availableEndTime']) {
+      if (this.availableEndTime) { this.availableEndTime.addExtendedProperties(source._availableEndTime!); }
+      else { this.availableEndTime = new fhir.FhirTime(source._availableEndTime as Partial<fhir.FhirTimeArgs>); }
+    }
   }
   /**
    * Required-bound Value Set for daysOfWeek (PractitionerRole.availableTime.daysOfWeek)
@@ -108,6 +142,10 @@ export interface PractitionerRoleNotAvailableArgs extends fhir.BackboneElementAr
    */
   description: fhir.FhirString|string|undefined;
   /**
+   * Extended properties for primitive element: PractitionerRole.notAvailable.description
+   */
+  _description?:fhir.FhirElementArgs;
+  /**
    * Service is not available (seasonally or for a public holiday) from this date.
    */
   during?: fhir.PeriodArgs|undefined;
@@ -136,6 +174,10 @@ export class PractitionerRoleNotAvailable extends fhir.BackboneElement {
     super(source, options);
     if (source['description']) { this.description = new fhir.FhirString({value: source.description}); }
     else { this.description = null; }
+    if (source['_description']) {
+      if (this.description) { this.description.addExtendedProperties(source._description!); }
+      else { this.description = new fhir.FhirString(source._description as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['during']) { this.during = new fhir.Period(source.during); }
   }
   /**
@@ -167,6 +209,10 @@ export interface PractitionerRoleArgs extends fhir.DomainResourceArgs {
    * If this value is false, you may refer to the period to see when the role was in active use. If there is no period specified, no inference can be made about when it was active.
    */
   active?: fhir.FhirBoolean|boolean|undefined;
+  /**
+   * Extended properties for primitive element: PractitionerRole.active
+   */
+  _active?:fhir.FhirElementArgs;
   /**
    * The period during which the person is authorized to act as a practitioner in these role(s) for the organization.
    */
@@ -211,6 +257,10 @@ export interface PractitionerRoleArgs extends fhir.DomainResourceArgs {
    * A description of site availability exceptions, e.g. public holiday availability. Succinctly describing all possible exceptions to normal site availability as details in the available Times and not available Times.
    */
   availabilityExceptions?: fhir.FhirString|string|undefined;
+  /**
+   * Extended properties for primitive element: PractitionerRole.availabilityExceptions
+   */
+  _availabilityExceptions?:fhir.FhirElementArgs;
   /**
    * Technical endpoints providing access to services operated for the practitioner with this role.
    */
@@ -294,6 +344,10 @@ export class PractitionerRole extends fhir.DomainResource {
     if (source['identifier']) { this.identifier = source.identifier.map((x) => new fhir.Identifier(x)); }
     else { this.identifier = []; }
     if (source['active']) { this.active = new fhir.FhirBoolean({value: source.active}); }
+    if (source['_active']) {
+      if (this.active) { this.active.addExtendedProperties(source._active!); }
+      else { this.active = new fhir.FhirBoolean(source._active as Partial<fhir.FhirBooleanArgs>); }
+    }
     if (source['period']) { this.period = new fhir.Period(source.period); }
     if (source['practitioner']) { this.practitioner = new fhir.Reference(source.practitioner); }
     if (source['organization']) { this.organization = new fhir.Reference(source.organization); }
@@ -312,6 +366,10 @@ export class PractitionerRole extends fhir.DomainResource {
     if (source['notAvailable']) { this.notAvailable = source.notAvailable.map((x) => new fhir.PractitionerRoleNotAvailable(x)); }
     else { this.notAvailable = []; }
     if (source['availabilityExceptions']) { this.availabilityExceptions = new fhir.FhirString({value: source.availabilityExceptions}); }
+    if (source['_availabilityExceptions']) {
+      if (this.availabilityExceptions) { this.availabilityExceptions.addExtendedProperties(source._availabilityExceptions!); }
+      else { this.availabilityExceptions = new fhir.FhirString(source._availabilityExceptions as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['endpoint']) { this.endpoint = source.endpoint.map((x) => new fhir.Reference(x)); }
     else { this.endpoint = []; }
   }

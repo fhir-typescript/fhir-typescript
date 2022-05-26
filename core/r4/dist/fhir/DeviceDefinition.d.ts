@@ -9,13 +9,25 @@ export interface DeviceDefinitionUdiDeviceIdentifierArgs extends fhir.BackboneEl
      */
     deviceIdentifier: fhir.FhirString | string | undefined;
     /**
+     * Extended properties for primitive element: DeviceDefinition.udiDeviceIdentifier.deviceIdentifier
+     */
+    _deviceIdentifier?: fhir.FhirElementArgs;
+    /**
      * The organization that assigns the identifier algorithm.
      */
     issuer: fhir.FhirUri | string | undefined;
     /**
+     * Extended properties for primitive element: DeviceDefinition.udiDeviceIdentifier.issuer
+     */
+    _issuer?: fhir.FhirElementArgs;
+    /**
      * The jurisdiction to which the deviceIdentifier applies.
      */
     jurisdiction: fhir.FhirUri | string | undefined;
+    /**
+     * Extended properties for primitive element: DeviceDefinition.udiDeviceIdentifier.jurisdiction
+     */
+    _jurisdiction?: fhir.FhirElementArgs;
 }
 /**
  * Unique device identifier (UDI) assigned to device label or package.  Note that the Device may include multiple udiCarriers as it either may include just the udiCarrier for the jurisdiction it is sold, or for multiple jurisdictions it could have been sold.
@@ -55,10 +67,18 @@ export interface DeviceDefinitionDeviceNameArgs extends fhir.BackboneElementArgs
      */
     name: fhir.FhirString | string | undefined;
     /**
+     * Extended properties for primitive element: DeviceDefinition.deviceName.name
+     */
+    _name?: fhir.FhirElementArgs;
+    /**
      * The type of deviceName.
      * UDILabelName | UserFriendlyName | PatientReportedName | ManufactureDeviceName | ModelName.
      */
     type: fhir.FhirCode<DeviceNametypeCodeType> | string | undefined;
+    /**
+     * Extended properties for primitive element: DeviceDefinition.deviceName.type
+     */
+    _type?: fhir.FhirElementArgs;
 }
 /**
  * A name given to the device to identify it.
@@ -106,9 +126,17 @@ export interface DeviceDefinitionSpecializationArgs extends fhir.BackboneElement
      */
     systemType: fhir.FhirString | string | undefined;
     /**
+     * Extended properties for primitive element: DeviceDefinition.specialization.systemType
+     */
+    _systemType?: fhir.FhirElementArgs;
+    /**
      * The version of the standard that is used to operate and communicate.
      */
     version?: fhir.FhirString | string | undefined;
+    /**
+     * Extended properties for primitive element: DeviceDefinition.specialization.version
+     */
+    _version?: fhir.FhirElementArgs;
 }
 /**
  * The capabilities supported on a  device, the standards to which the device conforms for a particular purpose, and used for the communication.
@@ -232,9 +260,17 @@ export interface DeviceDefinitionMaterialArgs extends fhir.BackboneElementArgs {
      */
     alternate?: fhir.FhirBoolean | boolean | undefined;
     /**
+     * Extended properties for primitive element: DeviceDefinition.material.alternate
+     */
+    _alternate?: fhir.FhirElementArgs;
+    /**
      * Whether the substance is a known or suspected allergen.
      */
     allergenicIndicator?: fhir.FhirBoolean | boolean | undefined;
+    /**
+     * Extended properties for primitive element: DeviceDefinition.material.allergenicIndicator
+     */
+    _allergenicIndicator?: fhir.FhirElementArgs;
 }
 /**
  * A substance used to create the material(s) of which the device is made.
@@ -302,6 +338,10 @@ export interface DeviceDefinitionArgs extends fhir.DomainResourceArgs {
      */
     modelNumber?: fhir.FhirString | string | undefined;
     /**
+     * Extended properties for primitive element: DeviceDefinition.modelNumber
+     */
+    _modelNumber?: fhir.FhirElementArgs;
+    /**
      * What kind of device or device system this is.
      */
     type?: fhir.CodeableConceptArgs | undefined;
@@ -313,6 +353,10 @@ export interface DeviceDefinitionArgs extends fhir.DomainResourceArgs {
      * The available versions of the device, e.g., software versions.
      */
     version?: fhir.FhirString[] | string[] | undefined;
+    /**
+     * Extended properties for primitive element: DeviceDefinition.version
+     */
+    _version?: (fhir.FhirElementArgs | null)[];
     /**
      * Safety characteristics of the device.
      */
@@ -350,9 +394,17 @@ export interface DeviceDefinitionArgs extends fhir.DomainResourceArgs {
      */
     url?: fhir.FhirUri | string | undefined;
     /**
+     * Extended properties for primitive element: DeviceDefinition.url
+     */
+    _url?: fhir.FhirElementArgs;
+    /**
      * Access to on-line information about the device.
      */
     onlineInformation?: fhir.FhirUri | string | undefined;
+    /**
+     * Extended properties for primitive element: DeviceDefinition.onlineInformation
+     */
+    _onlineInformation?: fhir.FhirElementArgs;
     /**
      * Descriptive information, usage information or implantation information that is not captured in an existing element.
      */

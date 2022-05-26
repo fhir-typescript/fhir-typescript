@@ -34,9 +34,9 @@ import { ConditionSeverityCodings, ConditionSeverityCodingType,} from '../fhirVa
 // @ts-ignore
 import { ConditionSeverityCodes,  ConditionSeverityCodeType } from '../fhirValueSets/ConditionSeverityCodes.js';
 // @ts-ignore
-import { ConditionCodeCodings, ConditionCodeCodingType,} from '../fhirValueSets/ConditionCodeCodings.js';
+import { ConditionCodings, ConditionCodingType,} from '../fhirValueSets/ConditionCodings.js';
 // @ts-ignore
-import { ConditionCodeCodes,  ConditionCodeCodeType } from '../fhirValueSets/ConditionCodeCodes.js';
+import { ConditionCodes,  ConditionCodeType } from '../fhirValueSets/ConditionCodes.js';
 // @ts-ignore
 import { BodySiteCodings, BodySiteCodingType,} from '../fhirValueSets/BodySiteCodings.js';
 // @ts-ignore
@@ -248,6 +248,10 @@ export interface ConditionArgs extends fhir.DomainResourceArgs {
    */
   recordedDate?: fhir.FhirDateTime|string|undefined;
   /**
+   * Extended properties for primitive element: Condition.recordedDate
+   */
+  _recordedDate?:fhir.FhirElementArgs;
+  /**
    * Individual who recorded the record and takes responsibility for its content.
    */
   recorder?: fhir.ReferenceArgs|undefined;
@@ -390,6 +394,10 @@ export class Condition extends fhir.DomainResource {
     else if (source['abatementRange']) { this.abatement = new fhir.Range(source.abatementRange); }
     else if (source['abatementString']) { this.abatement = new fhir.FhirString({value: source.abatementString}); }
     if (source['recordedDate']) { this.recordedDate = new fhir.FhirDateTime({value: source.recordedDate}); }
+    if (source['_recordedDate']) {
+      if (this.recordedDate) { this.recordedDate.addExtendedProperties(source._recordedDate!); }
+      else { this.recordedDate = new fhir.FhirDateTime(source._recordedDate as Partial<fhir.FhirDateTimeArgs>); }
+    }
     if (source['recorder']) { this.recorder = new fhir.Reference(source.recorder); }
     if (source['asserter']) { this.asserter = new fhir.Reference(source.asserter); }
     if (source['stage']) { this.stage = source.stage.map((x) => new fhir.ConditionStage(x)); }

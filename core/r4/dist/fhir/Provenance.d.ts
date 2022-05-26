@@ -70,6 +70,10 @@ export interface ProvenanceEntityArgs extends fhir.BackboneElementArgs {
      */
     role: fhir.FhirCode<ProvenanceEntityRoleCodeType> | string | undefined;
     /**
+     * Extended properties for primitive element: Provenance.entity.role
+     */
+    _role?: fhir.FhirElementArgs;
+    /**
      * whatIdentity should be used for entities that are not a Resource type.
      */
     what: fhir.ReferenceArgs | null;
@@ -146,9 +150,17 @@ export interface ProvenanceArgs extends fhir.DomainResourceArgs {
      */
     recorded: fhir.FhirInstant | string | undefined;
     /**
+     * Extended properties for primitive element: Provenance.recorded
+     */
+    _recorded?: fhir.FhirElementArgs;
+    /**
      * For example: Where an OAuth token authorizes, the unique identifier from the OAuth token is placed into the policy element Where a policy engine (e.g. XACML) holds policy logic, the unique policy identifier is placed into the policy element.
      */
     policy?: fhir.FhirUri[] | string[] | undefined;
+    /**
+     * Extended properties for primitive element: Provenance.policy
+     */
+    _policy?: (fhir.FhirElementArgs | null)[];
     /**
      * Where the activity occurred, if relevant.
      */

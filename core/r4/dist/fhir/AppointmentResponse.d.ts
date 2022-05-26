@@ -22,9 +22,17 @@ export interface AppointmentResponseArgs extends fhir.DomainResourceArgs {
      */
     start?: fhir.FhirInstant | string | undefined;
     /**
+     * Extended properties for primitive element: AppointmentResponse.start
+     */
+    _start?: fhir.FhirElementArgs;
+    /**
      * This may be either the same as the appointment request to confirm the details of the appointment, or alternately a new time to request a re-negotiation of the end time.
      */
     end?: fhir.FhirInstant | string | undefined;
+    /**
+     * Extended properties for primitive element: AppointmentResponse.end
+     */
+    _end?: fhir.FhirElementArgs;
     /**
      * The role of the participant can be used to declare what the actor will be doing in the scope of the referenced appointment.
      * If the actor is not specified, then it is expected that the actor will be filled in at a later stage of planning.
@@ -40,9 +48,17 @@ export interface AppointmentResponseArgs extends fhir.DomainResourceArgs {
      */
     participantStatus: fhir.FhirCode<ParticipationstatusCodeType> | string | undefined;
     /**
+     * Extended properties for primitive element: AppointmentResponse.participantStatus
+     */
+    _participantStatus?: fhir.FhirElementArgs;
+    /**
      * This comment is particularly important when the responder is declining, tentatively accepting or requesting another time to indicate the reasons why.
      */
     comment?: fhir.FhirString | string | undefined;
+    /**
+     * Extended properties for primitive element: AppointmentResponse.comment
+     */
+    _comment?: fhir.FhirElementArgs;
 }
 /**
  * A reply to an appointment request for a patient and/or practitioner(s), such as a confirmation or rejection.

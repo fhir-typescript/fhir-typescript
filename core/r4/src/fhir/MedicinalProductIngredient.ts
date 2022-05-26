@@ -26,6 +26,10 @@ export interface MedicinalProductIngredientSpecifiedSubstanceStrengthReferenceSt
    */
   measurementPoint?: fhir.FhirString|string|undefined;
   /**
+   * Extended properties for primitive element: MedicinalProductIngredient.specifiedSubstance.strength.referenceStrength.measurementPoint
+   */
+  _measurementPoint?:fhir.FhirElementArgs;
+  /**
    * The country or countries for which the strength range applies.
    */
   country?: fhir.CodeableConceptArgs[]|undefined;
@@ -69,6 +73,10 @@ export class MedicinalProductIngredientSpecifiedSubstanceStrengthReferenceStreng
     else { this.strength = null; }
     if (source['strengthLowLimit']) { this.strengthLowLimit = new fhir.Ratio(source.strengthLowLimit); }
     if (source['measurementPoint']) { this.measurementPoint = new fhir.FhirString({value: source.measurementPoint}); }
+    if (source['_measurementPoint']) {
+      if (this.measurementPoint) { this.measurementPoint.addExtendedProperties(source._measurementPoint!); }
+      else { this.measurementPoint = new fhir.FhirString(source._measurementPoint as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['country']) { this.country = source.country.map((x) => new fhir.CodeableConcept(x)); }
     else { this.country = []; }
   }
@@ -112,6 +120,10 @@ export interface MedicinalProductIngredientSpecifiedSubstanceStrengthArgs extend
    * For when strength is measured at a particular point or distance.
    */
   measurementPoint?: fhir.FhirString|string|undefined;
+  /**
+   * Extended properties for primitive element: MedicinalProductIngredient.specifiedSubstance.strength.measurementPoint
+   */
+  _measurementPoint?:fhir.FhirElementArgs;
   /**
    * The country or countries for which the strength range applies.
    */
@@ -169,6 +181,10 @@ export class MedicinalProductIngredientSpecifiedSubstanceStrength extends fhir.B
     if (source['concentration']) { this.concentration = new fhir.Ratio(source.concentration); }
     if (source['concentrationLowLimit']) { this.concentrationLowLimit = new fhir.Ratio(source.concentrationLowLimit); }
     if (source['measurementPoint']) { this.measurementPoint = new fhir.FhirString({value: source.measurementPoint}); }
+    if (source['_measurementPoint']) {
+      if (this.measurementPoint) { this.measurementPoint.addExtendedProperties(source._measurementPoint!); }
+      else { this.measurementPoint = new fhir.FhirString(source._measurementPoint as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['country']) { this.country = source.country.map((x) => new fhir.CodeableConcept(x)); }
     else { this.country = []; }
     if (source['referenceStrength']) { this.referenceStrength = source.referenceStrength.map((x) => new fhir.MedicinalProductIngredientSpecifiedSubstanceStrengthReferenceStrength(x)); }
@@ -343,6 +359,10 @@ export interface MedicinalProductIngredientArgs extends fhir.DomainResourceArgs 
    */
   allergenicIndicator?: fhir.FhirBoolean|boolean|undefined;
   /**
+   * Extended properties for primitive element: MedicinalProductIngredient.allergenicIndicator
+   */
+  _allergenicIndicator?:fhir.FhirElementArgs;
+  /**
    * Manufacturer of this Ingredient.
    */
   manufacturer?: fhir.ReferenceArgs[]|undefined;
@@ -402,6 +422,10 @@ export class MedicinalProductIngredient extends fhir.DomainResource {
     if (source['role']) { this.role = new fhir.CodeableConcept(source.role); }
     else { this.role = null; }
     if (source['allergenicIndicator']) { this.allergenicIndicator = new fhir.FhirBoolean({value: source.allergenicIndicator}); }
+    if (source['_allergenicIndicator']) {
+      if (this.allergenicIndicator) { this.allergenicIndicator.addExtendedProperties(source._allergenicIndicator!); }
+      else { this.allergenicIndicator = new fhir.FhirBoolean(source._allergenicIndicator as Partial<fhir.FhirBooleanArgs>); }
+    }
     if (source['manufacturer']) { this.manufacturer = source.manufacturer.map((x) => new fhir.Reference(x)); }
     else { this.manufacturer = []; }
     if (source['specifiedSubstance']) { this.specifiedSubstance = source.specifiedSubstance.map((x) => new fhir.MedicinalProductIngredientSpecifiedSubstance(x)); }

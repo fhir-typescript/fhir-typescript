@@ -38,6 +38,10 @@ export interface CoverageEligibilityRequestSupportingInfoArgs extends fhir.Backb
    */
   sequence: fhir.FhirPositiveInt|number|undefined;
   /**
+   * Extended properties for primitive element: CoverageEligibilityRequest.supportingInfo.sequence
+   */
+  _sequence?:fhir.FhirElementArgs;
+  /**
    * Could be used to provide references to other resources, document. For example could contain a PDF in an Attachment of the Police Report for an Accident.
    */
   information: fhir.ReferenceArgs|null;
@@ -45,6 +49,10 @@ export interface CoverageEligibilityRequestSupportingInfoArgs extends fhir.Backb
    * The supporting materials are applicable for all detail items, product/servce categories and specific billing codes.
    */
   appliesToAll?: fhir.FhirBoolean|boolean|undefined;
+  /**
+   * Extended properties for primitive element: CoverageEligibilityRequest.supportingInfo.appliesToAll
+   */
+  _appliesToAll?:fhir.FhirElementArgs;
 }
 
 /**
@@ -74,9 +82,17 @@ export class CoverageEligibilityRequestSupportingInfo extends fhir.BackboneEleme
     super(source, options);
     if (source['sequence']) { this.sequence = new fhir.FhirPositiveInt({value: source.sequence}); }
     else { this.sequence = null; }
+    if (source['_sequence']) {
+      if (this.sequence) { this.sequence.addExtendedProperties(source._sequence!); }
+      else { this.sequence = new fhir.FhirPositiveInt(source._sequence as Partial<fhir.FhirPositiveIntArgs>); }
+    }
     if (source['information']) { this.information = new fhir.Reference(source.information); }
     else { this.information = null; }
     if (source['appliesToAll']) { this.appliesToAll = new fhir.FhirBoolean({value: source.appliesToAll}); }
+    if (source['_appliesToAll']) {
+      if (this.appliesToAll) { this.appliesToAll.addExtendedProperties(source._appliesToAll!); }
+      else { this.appliesToAll = new fhir.FhirBoolean(source._appliesToAll as Partial<fhir.FhirBooleanArgs>); }
+    }
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -104,6 +120,10 @@ export interface CoverageEligibilityRequestInsuranceArgs extends fhir.BackboneEl
    */
   focal?: fhir.FhirBoolean|boolean|undefined;
   /**
+   * Extended properties for primitive element: CoverageEligibilityRequest.insurance.focal
+   */
+  _focal?:fhir.FhirElementArgs;
+  /**
    * Reference to the insurance card level information contained in the Coverage resource. The coverage issuing insurer will use these details to locate the patient's actual coverage within the insurer's information system.
    */
   coverage: fhir.ReferenceArgs|null;
@@ -111,6 +131,10 @@ export interface CoverageEligibilityRequestInsuranceArgs extends fhir.BackboneEl
    * A business agreement number established between the provider and the insurer for special business processing purposes.
    */
   businessArrangement?: fhir.FhirString|string|undefined;
+  /**
+   * Extended properties for primitive element: CoverageEligibilityRequest.insurance.businessArrangement
+   */
+  _businessArrangement?:fhir.FhirElementArgs;
 }
 
 /**
@@ -139,9 +163,17 @@ export class CoverageEligibilityRequestInsurance extends fhir.BackboneElement {
   constructor(source:Partial<CoverageEligibilityRequestInsuranceArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
     if (source['focal']) { this.focal = new fhir.FhirBoolean({value: source.focal}); }
+    if (source['_focal']) {
+      if (this.focal) { this.focal.addExtendedProperties(source._focal!); }
+      else { this.focal = new fhir.FhirBoolean(source._focal as Partial<fhir.FhirBooleanArgs>); }
+    }
     if (source['coverage']) { this.coverage = new fhir.Reference(source.coverage); }
     else { this.coverage = null; }
     if (source['businessArrangement']) { this.businessArrangement = new fhir.FhirString({value: source.businessArrangement}); }
+    if (source['_businessArrangement']) {
+      if (this.businessArrangement) { this.businessArrangement.addExtendedProperties(source._businessArrangement!); }
+      else { this.businessArrangement = new fhir.FhirString(source._businessArrangement as Partial<fhir.FhirStringArgs>); }
+    }
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -216,6 +248,10 @@ export interface CoverageEligibilityRequestItemArgs extends fhir.BackboneElement
    * Exceptions, special conditions and supporting information applicable for this service or product line.
    */
   supportingInfoSequence?: fhir.FhirPositiveInt[]|number[]|undefined;
+  /**
+   * Extended properties for primitive element: CoverageEligibilityRequest.item.supportingInfoSequence
+   */
+  _supportingInfoSequence?:(fhir.FhirElementArgs|null)[];
   /**
    * Examples include Medical Care, Periodontics, Renal Dialysis, Vision Coverage.
    */
@@ -309,6 +345,12 @@ export class CoverageEligibilityRequestItem extends fhir.BackboneElement {
     super(source, options);
     if (source['supportingInfoSequence']) { this.supportingInfoSequence = source.supportingInfoSequence.map((x) => new fhir.FhirPositiveInt({value: x})); }
     else { this.supportingInfoSequence = []; }
+    if (source['_supportingInfoSequence']) {
+      source._supportingInfoSequence.forEach((x,i) => {
+        if (this.supportingInfoSequence.length >= i) { if (x) { this.supportingInfoSequence[i].addExtendedProperties(x); } }
+        else { if (x) { this.supportingInfoSequence.push(new fhir.FhirPositiveInt(x as Partial<fhir.FhirPositiveIntArgs>)); } }
+      });
+    }
     if (source['category']) { this.category = new fhir.CodeableConcept(source.category); }
     if (source['productOrService']) { this.productOrService = new fhir.CodeableConcept(source.productOrService); }
     if (source['modifier']) { this.modifier = source.modifier.map((x) => new fhir.CodeableConcept(x)); }
@@ -357,6 +399,10 @@ export interface CoverageEligibilityRequestArgs extends fhir.DomainResourceArgs 
    */
   status: fhir.FhirCode<FmStatusCodeType>|string|undefined;
   /**
+   * Extended properties for primitive element: CoverageEligibilityRequest.status
+   */
+  _status?:fhir.FhirElementArgs;
+  /**
    * When the requestor expects the processor to complete processing.
    */
   priority?: fhir.CodeableConceptArgs|undefined;
@@ -364,6 +410,10 @@ export interface CoverageEligibilityRequestArgs extends fhir.DomainResourceArgs 
    * Code to specify whether requesting: prior authorization requirements for some service categories or billing codes; benefits for coverages specified or discovered; discovery and return of coverages for the patient; and/or validation that the specified coverage is in-force at the date/period specified or 'now' if not specified.
    */
   purpose: fhir.FhirCode<EligibilityrequestPurposeCodeType>[]|string[]|undefined;
+  /**
+   * Extended properties for primitive element: CoverageEligibilityRequest.purpose
+   */
+  _purpose?:(fhir.FhirElementArgs|null)[];
   /**
    * 1..1.
    */
@@ -384,6 +434,10 @@ export interface CoverageEligibilityRequestArgs extends fhir.DomainResourceArgs 
    * The date when this resource was created.
    */
   created: fhir.FhirDateTime|string|undefined;
+  /**
+   * Extended properties for primitive element: CoverageEligibilityRequest.created
+   */
+  _created?:fhir.FhirElementArgs;
   /**
    * Person who created the request.
    */
@@ -496,9 +550,19 @@ export class CoverageEligibilityRequest extends fhir.DomainResource {
     else { this.identifier = []; }
     if (source['status']) { this.status = new fhir.FhirCode<FmStatusCodeType>({value: source.status}); }
     else { this.status = null; }
+    if (source['_status']) {
+      if (this.status) { this.status.addExtendedProperties(source._status!); }
+      else { this.status = new fhir.FhirCode<FmStatusCodeType>(source._status as Partial<fhir.FhirCode>); }
+    }
     if (source['priority']) { this.priority = new fhir.CodeableConcept(source.priority); }
     if (source['purpose']) { this.purpose = source.purpose.map((x) => new fhir.FhirCode<EligibilityrequestPurposeCodeType>({value: x})); }
     else { this.purpose = []; }
+    if (source['_purpose']) {
+      source._purpose.forEach((x,i) => {
+        if (this.purpose.length >= i) { if (x) { this.purpose[i].addExtendedProperties(x); } }
+        else { if (x) { this.purpose.push(new fhir.FhirCode<EligibilityrequestPurposeCodeType>(x as Partial<fhir.FhirCode>)); } }
+      });
+    }
     if (source['patient']) { this.patient = new fhir.Reference(source.patient); }
     else { this.patient = null; }
     if (source['serviced']) { this.serviced = source.serviced; }
@@ -506,6 +570,10 @@ export class CoverageEligibilityRequest extends fhir.DomainResource {
     else if (source['servicedPeriod']) { this.serviced = new fhir.Period(source.servicedPeriod); }
     if (source['created']) { this.created = new fhir.FhirDateTime({value: source.created}); }
     else { this.created = null; }
+    if (source['_created']) {
+      if (this.created) { this.created.addExtendedProperties(source._created!); }
+      else { this.created = new fhir.FhirDateTime(source._created as Partial<fhir.FhirDateTimeArgs>); }
+    }
     if (source['enterer']) { this.enterer = new fhir.Reference(source.enterer); }
     if (source['provider']) { this.provider = new fhir.Reference(source.provider); }
     if (source['insurer']) { this.insurer = new fhir.Reference(source.insurer); }

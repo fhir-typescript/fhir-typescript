@@ -10,17 +10,33 @@ export interface PractitionerRoleAvailableTimeArgs extends fhir.BackboneElementA
      */
     daysOfWeek?: fhir.FhirCode<DaysOfWeekCodeType>[] | string[] | undefined;
     /**
+     * Extended properties for primitive element: PractitionerRole.availableTime.daysOfWeek
+     */
+    _daysOfWeek?: (fhir.FhirElementArgs | null)[];
+    /**
      * Is this always available? (hence times are irrelevant) e.g. 24 hour service.
      */
     allDay?: fhir.FhirBoolean | boolean | undefined;
+    /**
+     * Extended properties for primitive element: PractitionerRole.availableTime.allDay
+     */
+    _allDay?: fhir.FhirElementArgs;
     /**
      * The timezone is expected to be for where this HealthcareService is provided at.
      */
     availableStartTime?: fhir.FhirTime | string | undefined;
     /**
+     * Extended properties for primitive element: PractitionerRole.availableTime.availableStartTime
+     */
+    _availableStartTime?: fhir.FhirElementArgs;
+    /**
      * The timezone is expected to be for where this HealthcareService is provided at.
      */
     availableEndTime?: fhir.FhirTime | string | undefined;
+    /**
+     * Extended properties for primitive element: PractitionerRole.availableTime.availableEndTime
+     */
+    _availableEndTime?: fhir.FhirElementArgs;
 }
 /**
  * More detailed availability information may be provided in associated Schedule/Slot resources.
@@ -76,6 +92,10 @@ export interface PractitionerRoleNotAvailableArgs extends fhir.BackboneElementAr
      */
     description: fhir.FhirString | string | undefined;
     /**
+     * Extended properties for primitive element: PractitionerRole.notAvailable.description
+     */
+    _description?: fhir.FhirElementArgs;
+    /**
      * Service is not available (seasonally or for a public holiday) from this date.
      */
     during?: fhir.PeriodArgs | undefined;
@@ -122,6 +142,10 @@ export interface PractitionerRoleArgs extends fhir.DomainResourceArgs {
      */
     active?: fhir.FhirBoolean | boolean | undefined;
     /**
+     * Extended properties for primitive element: PractitionerRole.active
+     */
+    _active?: fhir.FhirElementArgs;
+    /**
      * The period during which the person is authorized to act as a practitioner in these role(s) for the organization.
      */
     period?: fhir.PeriodArgs | undefined;
@@ -165,6 +189,10 @@ export interface PractitionerRoleArgs extends fhir.DomainResourceArgs {
      * A description of site availability exceptions, e.g. public holiday availability. Succinctly describing all possible exceptions to normal site availability as details in the available Times and not available Times.
      */
     availabilityExceptions?: fhir.FhirString | string | undefined;
+    /**
+     * Extended properties for primitive element: PractitionerRole.availabilityExceptions
+     */
+    _availabilityExceptions?: fhir.FhirElementArgs;
     /**
      * Technical endpoints providing access to services operated for the practitioner with this role.
      */

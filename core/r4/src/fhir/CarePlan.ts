@@ -10,9 +10,9 @@ import { CarePlanActivityKindCodings, CarePlanActivityKindCodingType,} from '../
 // @ts-ignore
 import { CarePlanActivityKindCodes,  CarePlanActivityKindCodeType } from '../fhirValueSets/CarePlanActivityKindCodes.js';
 // @ts-ignore
-import { ProcedureCodeCodings, ProcedureCodeCodingType,} from '../fhirValueSets/ProcedureCodeCodings.js';
+import { ProcedureCodings, ProcedureCodingType,} from '../fhirValueSets/ProcedureCodings.js';
 // @ts-ignore
-import { ProcedureCodeCodes,  ProcedureCodeCodeType } from '../fhirValueSets/ProcedureCodeCodes.js';
+import { ProcedureCodes,  ProcedureCodeType } from '../fhirValueSets/ProcedureCodes.js';
 // @ts-ignore
 import { ClinicalFindingsCodings, ClinicalFindingsCodingType,} from '../fhirValueSets/ClinicalFindingsCodings.js';
 // @ts-ignore
@@ -42,13 +42,25 @@ export interface CarePlanActivityDetailArgs extends fhir.BackboneElementArgs {
    */
   kind?: fhir.FhirCode<CarePlanActivityKindCodeType>|string|undefined;
   /**
+   * Extended properties for primitive element: CarePlan.activity.detail.kind
+   */
+  _kind?:fhir.FhirElementArgs;
+  /**
    * The URL pointing to a FHIR-defined protocol, guideline, questionnaire or other definition that is adhered to in whole or in part by this CarePlan activity.
    */
   instantiatesCanonical?: fhir.FhirCanonical[]|string[]|undefined;
   /**
+   * Extended properties for primitive element: CarePlan.activity.detail.instantiatesCanonical
+   */
+  _instantiatesCanonical?:(fhir.FhirElementArgs|null)[];
+  /**
    * This might be an HTML page, PDF, etc. or could just be a non-resolvable URI identifier.
    */
   instantiatesUri?: fhir.FhirUri[]|string[]|undefined;
+  /**
+   * Extended properties for primitive element: CarePlan.activity.detail.instantiatesUri
+   */
+  _instantiatesUri?:(fhir.FhirElementArgs|null)[];
   /**
    * Tends to be less relevant for activities involving particular products.  Codes should not convey negation - use "prohibited" instead.
    */
@@ -71,6 +83,10 @@ export interface CarePlanActivityDetailArgs extends fhir.BackboneElementArgs {
    */
   status: fhir.FhirCode<CarePlanActivityStatusCodeType>|string|undefined;
   /**
+   * Extended properties for primitive element: CarePlan.activity.detail.status
+   */
+  _status?:fhir.FhirElementArgs;
+  /**
    * Will generally not be present if status is "complete".  Be sure to prompt to update this (or at least remove the existing value) if the status is changed.
    */
   statusReason?: fhir.CodeableConceptArgs|undefined;
@@ -78,6 +94,10 @@ export interface CarePlanActivityDetailArgs extends fhir.BackboneElementArgs {
    * This element is labeled as a modifier because it marks an activity as an activity that is not to be performed.
    */
   doNotPerform?: fhir.FhirBoolean|boolean|undefined;
+  /**
+   * Extended properties for primitive element: CarePlan.activity.detail.doNotPerform
+   */
+  _doNotPerform?:fhir.FhirElementArgs;
   /**
    * The period, timing or frequency upon which the described activity is to occur.
    */
@@ -126,6 +146,10 @@ export interface CarePlanActivityDetailArgs extends fhir.BackboneElementArgs {
    * This provides a textual description of constraints on the intended activity occurrence, including relation to other activities.  It may also include objectives, pre-conditions and end-conditions.  Finally, it may convey specifics about the activity such as body site, method, route, etc.
    */
   description?: fhir.FhirString|string|undefined;
+  /**
+   * Extended properties for primitive element: CarePlan.activity.detail.description
+   */
+  _description?:fhir.FhirElementArgs;
 }
 
 /**
@@ -219,10 +243,26 @@ export class CarePlanActivityDetail extends fhir.BackboneElement {
   constructor(source:Partial<CarePlanActivityDetailArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
     if (source['kind']) { this.kind = new fhir.FhirCode<CarePlanActivityKindCodeType>({value: source.kind}); }
+    if (source['_kind']) {
+      if (this.kind) { this.kind.addExtendedProperties(source._kind!); }
+      else { this.kind = new fhir.FhirCode<CarePlanActivityKindCodeType>(source._kind as Partial<fhir.FhirCode>); }
+    }
     if (source['instantiatesCanonical']) { this.instantiatesCanonical = source.instantiatesCanonical.map((x) => new fhir.FhirCanonical({value: x})); }
     else { this.instantiatesCanonical = []; }
+    if (source['_instantiatesCanonical']) {
+      source._instantiatesCanonical.forEach((x,i) => {
+        if (this.instantiatesCanonical.length >= i) { if (x) { this.instantiatesCanonical[i].addExtendedProperties(x); } }
+        else { if (x) { this.instantiatesCanonical.push(new fhir.FhirCanonical(x as Partial<fhir.FhirCanonicalArgs>)); } }
+      });
+    }
     if (source['instantiatesUri']) { this.instantiatesUri = source.instantiatesUri.map((x) => new fhir.FhirUri({value: x})); }
     else { this.instantiatesUri = []; }
+    if (source['_instantiatesUri']) {
+      source._instantiatesUri.forEach((x,i) => {
+        if (this.instantiatesUri.length >= i) { if (x) { this.instantiatesUri[i].addExtendedProperties(x); } }
+        else { if (x) { this.instantiatesUri.push(new fhir.FhirUri(x as Partial<fhir.FhirUriArgs>)); } }
+      });
+    }
     if (source['code']) { this.code = new fhir.CodeableConcept(source.code); }
     if (source['reasonCode']) { this.reasonCode = source.reasonCode.map((x) => new fhir.CodeableConcept(x)); }
     else { this.reasonCode = []; }
@@ -232,8 +272,16 @@ export class CarePlanActivityDetail extends fhir.BackboneElement {
     else { this.goal = []; }
     if (source['status']) { this.status = new fhir.FhirCode<CarePlanActivityStatusCodeType>({value: source.status}); }
     else { this.status = null; }
+    if (source['_status']) {
+      if (this.status) { this.status.addExtendedProperties(source._status!); }
+      else { this.status = new fhir.FhirCode<CarePlanActivityStatusCodeType>(source._status as Partial<fhir.FhirCode>); }
+    }
     if (source['statusReason']) { this.statusReason = new fhir.CodeableConcept(source.statusReason); }
     if (source['doNotPerform']) { this.doNotPerform = new fhir.FhirBoolean({value: source.doNotPerform}); }
+    if (source['_doNotPerform']) {
+      if (this.doNotPerform) { this.doNotPerform.addExtendedProperties(source._doNotPerform!); }
+      else { this.doNotPerform = new fhir.FhirBoolean(source._doNotPerform as Partial<fhir.FhirBooleanArgs>); }
+    }
     if (source['scheduled']) { this.scheduled = source.scheduled; }
     else if (source['scheduledTiming']) { this.scheduled = new fhir.Timing(source.scheduledTiming); }
     else if (source['scheduledPeriod']) { this.scheduled = new fhir.Period(source.scheduledPeriod); }
@@ -247,6 +295,10 @@ export class CarePlanActivityDetail extends fhir.BackboneElement {
     if (source['dailyAmount']) { this.dailyAmount = new fhir.Quantity(source.dailyAmount); }
     if (source['quantity']) { this.quantity = new fhir.Quantity(source.quantity); }
     if (source['description']) { this.description = new fhir.FhirString({value: source.description}); }
+    if (source['_description']) {
+      if (this.description) { this.description.addExtendedProperties(source._description!); }
+      else { this.description = new fhir.FhirString(source._description as Partial<fhir.FhirStringArgs>); }
+    }
   }
   /**
    * Required-bound Value Set for kind (CarePlan.activity.detail.kind)
@@ -392,9 +444,17 @@ export interface CarePlanArgs extends fhir.DomainResourceArgs {
    */
   instantiatesCanonical?: fhir.FhirCanonical[]|string[]|undefined;
   /**
+   * Extended properties for primitive element: CarePlan.instantiatesCanonical
+   */
+  _instantiatesCanonical?:(fhir.FhirElementArgs|null)[];
+  /**
    * This might be an HTML page, PDF, etc. or could just be a non-resolvable URI identifier.
    */
   instantiatesUri?: fhir.FhirUri[]|string[]|undefined;
+  /**
+   * Extended properties for primitive element: CarePlan.instantiatesUri
+   */
+  _instantiatesUri?:(fhir.FhirElementArgs|null)[];
   /**
    * A care plan that is fulfilled in whole or in part by this care plan.
    */
@@ -413,9 +473,17 @@ export interface CarePlanArgs extends fhir.DomainResourceArgs {
    */
   status: fhir.FhirCode<RequestStatusCodeType>|string|undefined;
   /**
+   * Extended properties for primitive element: CarePlan.status
+   */
+  _status?:fhir.FhirElementArgs;
+  /**
    * This element is labeled as a modifier because the intent alters when and how the resource is actually applicable.
    */
   intent: fhir.FhirCode<CarePlanIntentCodeType>|string|undefined;
+  /**
+   * Extended properties for primitive element: CarePlan.intent
+   */
+  _intent?:fhir.FhirElementArgs;
   /**
    * There may be multiple axes of categorization and one plan may serve multiple purposes.  In some cases, this may be redundant with references to CarePlan.concern.
    */
@@ -425,9 +493,17 @@ export interface CarePlanArgs extends fhir.DomainResourceArgs {
    */
   title?: fhir.FhirString|string|undefined;
   /**
+   * Extended properties for primitive element: CarePlan.title
+   */
+  _title?:fhir.FhirElementArgs;
+  /**
    * A description of the scope and nature of the plan.
    */
   description?: fhir.FhirString|string|undefined;
+  /**
+   * Extended properties for primitive element: CarePlan.description
+   */
+  _description?:fhir.FhirElementArgs;
   /**
    * Identifies the patient or group whose intended care is described by the plan.
    */
@@ -444,6 +520,10 @@ export interface CarePlanArgs extends fhir.DomainResourceArgs {
    * Represents when this particular CarePlan record was created in the system, which is often a system-generated date.
    */
   created?: fhir.FhirDateTime|string|undefined;
+  /**
+   * Extended properties for primitive element: CarePlan.created
+   */
+  _created?:fhir.FhirElementArgs;
   /**
    * The author may also be a contributor.  For example, an organization can be an author, but not listed as a contributor.
    */
@@ -593,8 +673,20 @@ export class CarePlan extends fhir.DomainResource {
     else { this.identifier = []; }
     if (source['instantiatesCanonical']) { this.instantiatesCanonical = source.instantiatesCanonical.map((x) => new fhir.FhirCanonical({value: x})); }
     else { this.instantiatesCanonical = []; }
+    if (source['_instantiatesCanonical']) {
+      source._instantiatesCanonical.forEach((x,i) => {
+        if (this.instantiatesCanonical.length >= i) { if (x) { this.instantiatesCanonical[i].addExtendedProperties(x); } }
+        else { if (x) { this.instantiatesCanonical.push(new fhir.FhirCanonical(x as Partial<fhir.FhirCanonicalArgs>)); } }
+      });
+    }
     if (source['instantiatesUri']) { this.instantiatesUri = source.instantiatesUri.map((x) => new fhir.FhirUri({value: x})); }
     else { this.instantiatesUri = []; }
+    if (source['_instantiatesUri']) {
+      source._instantiatesUri.forEach((x,i) => {
+        if (this.instantiatesUri.length >= i) { if (x) { this.instantiatesUri[i].addExtendedProperties(x); } }
+        else { if (x) { this.instantiatesUri.push(new fhir.FhirUri(x as Partial<fhir.FhirUriArgs>)); } }
+      });
+    }
     if (source['basedOn']) { this.basedOn = source.basedOn.map((x) => new fhir.Reference(x)); }
     else { this.basedOn = []; }
     if (source['replaces']) { this.replaces = source.replaces.map((x) => new fhir.Reference(x)); }
@@ -603,17 +695,37 @@ export class CarePlan extends fhir.DomainResource {
     else { this.partOf = []; }
     if (source['status']) { this.status = new fhir.FhirCode<RequestStatusCodeType>({value: source.status}); }
     else { this.status = null; }
+    if (source['_status']) {
+      if (this.status) { this.status.addExtendedProperties(source._status!); }
+      else { this.status = new fhir.FhirCode<RequestStatusCodeType>(source._status as Partial<fhir.FhirCode>); }
+    }
     if (source['intent']) { this.intent = new fhir.FhirCode<CarePlanIntentCodeType>({value: source.intent}); }
     else { this.intent = null; }
+    if (source['_intent']) {
+      if (this.intent) { this.intent.addExtendedProperties(source._intent!); }
+      else { this.intent = new fhir.FhirCode<CarePlanIntentCodeType>(source._intent as Partial<fhir.FhirCode>); }
+    }
     if (source['category']) { this.category = source.category.map((x) => new fhir.CodeableConcept(x)); }
     else { this.category = []; }
     if (source['title']) { this.title = new fhir.FhirString({value: source.title}); }
+    if (source['_title']) {
+      if (this.title) { this.title.addExtendedProperties(source._title!); }
+      else { this.title = new fhir.FhirString(source._title as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['description']) { this.description = new fhir.FhirString({value: source.description}); }
+    if (source['_description']) {
+      if (this.description) { this.description.addExtendedProperties(source._description!); }
+      else { this.description = new fhir.FhirString(source._description as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['subject']) { this.subject = new fhir.Reference(source.subject); }
     else { this.subject = null; }
     if (source['encounter']) { this.encounter = new fhir.Reference(source.encounter); }
     if (source['period']) { this.period = new fhir.Period(source.period); }
     if (source['created']) { this.created = new fhir.FhirDateTime({value: source.created}); }
+    if (source['_created']) {
+      if (this.created) { this.created.addExtendedProperties(source._created!); }
+      else { this.created = new fhir.FhirDateTime(source._created as Partial<fhir.FhirDateTimeArgs>); }
+    }
     if (source['author']) { this.author = new fhir.Reference(source.author); }
     if (source['contributor']) { this.contributor = source.contributor.map((x) => new fhir.Reference(x)); }
     else { this.contributor = []; }

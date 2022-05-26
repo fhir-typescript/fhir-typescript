@@ -58,6 +58,10 @@ export interface MedicinalProductInteractionArgs extends fhir.DomainResourceArgs
      */
     description?: fhir.FhirString | string | undefined;
     /**
+     * Extended properties for primitive element: MedicinalProductInteraction.description
+     */
+    _description?: fhir.FhirElementArgs;
+    /**
      * The specific medication, food or laboratory test that interacts.
      */
     interactant?: fhir.MedicinalProductInteractionInteractantArgs[] | undefined;

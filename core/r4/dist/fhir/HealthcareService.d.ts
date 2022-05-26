@@ -14,6 +14,10 @@ export interface HealthcareServiceEligibilityArgs extends fhir.BackboneElementAr
      * The description of service eligibility should, in general, not exceed one or two paragraphs. It should be sufficient for a prospective consumer to determine if they are likely to be eligible or not. Where eligibility requirements and conditions are complex, it may simply be noted that an eligibility assessment is required. Where eligibility is determined by an outside source, such as an Act of Parliament, this should be noted, preferably with a reference to a commonly available copy of the source document such as a web page.
      */
     comment?: fhir.FhirMarkdown | string | undefined;
+    /**
+     * Extended properties for primitive element: HealthcareService.eligibility.comment
+     */
+    _comment?: fhir.FhirElementArgs;
 }
 /**
  * Does this service have specific eligibility requirements that need to be met in order to use the service?
@@ -49,17 +53,33 @@ export interface HealthcareServiceAvailableTimeArgs extends fhir.BackboneElement
      */
     daysOfWeek?: fhir.FhirCode<DaysOfWeekCodeType>[] | string[] | undefined;
     /**
+     * Extended properties for primitive element: HealthcareService.availableTime.daysOfWeek
+     */
+    _daysOfWeek?: (fhir.FhirElementArgs | null)[];
+    /**
      * Is this always available? (hence times are irrelevant) e.g. 24 hour service.
      */
     allDay?: fhir.FhirBoolean | boolean | undefined;
+    /**
+     * Extended properties for primitive element: HealthcareService.availableTime.allDay
+     */
+    _allDay?: fhir.FhirElementArgs;
     /**
      * The time zone is expected to be for where this HealthcareService is provided at.
      */
     availableStartTime?: fhir.FhirTime | string | undefined;
     /**
+     * Extended properties for primitive element: HealthcareService.availableTime.availableStartTime
+     */
+    _availableStartTime?: fhir.FhirElementArgs;
+    /**
      * The time zone is expected to be for where this HealthcareService is provided at.
      */
     availableEndTime?: fhir.FhirTime | string | undefined;
+    /**
+     * Extended properties for primitive element: HealthcareService.availableTime.availableEndTime
+     */
+    _availableEndTime?: fhir.FhirElementArgs;
 }
 /**
  * More detailed availability information may be provided in associated Schedule/Slot resources.
@@ -115,6 +135,10 @@ export interface HealthcareServiceNotAvailableArgs extends fhir.BackboneElementA
      */
     description: fhir.FhirString | string | undefined;
     /**
+     * Extended properties for primitive element: HealthcareService.notAvailable.description
+     */
+    _description?: fhir.FhirElementArgs;
+    /**
      * Service is not available (seasonally or for a public holiday) from this date.
      */
     during?: fhir.PeriodArgs | undefined;
@@ -161,6 +185,10 @@ export interface HealthcareServiceArgs extends fhir.DomainResourceArgs {
      */
     active?: fhir.FhirBoolean | boolean | undefined;
     /**
+     * Extended properties for primitive element: HealthcareService.active
+     */
+    _active?: fhir.FhirElementArgs;
+    /**
      * This property is recommended to be the same as the Location's managingOrganization, and if not provided should be interpreted as such. If the Location does not have a managing Organization, then this property should be populated.
      */
     providedBy?: fhir.ReferenceArgs | undefined;
@@ -185,13 +213,25 @@ export interface HealthcareServiceArgs extends fhir.DomainResourceArgs {
      */
     name?: fhir.FhirString | string | undefined;
     /**
+     * Extended properties for primitive element: HealthcareService.name
+     */
+    _name?: fhir.FhirElementArgs;
+    /**
      * Would expect that a user would not see this information on a search results, and it would only be available when viewing the complete details of the service.
      */
     comment?: fhir.FhirString | string | undefined;
     /**
+     * Extended properties for primitive element: HealthcareService.comment
+     */
+    _comment?: fhir.FhirElementArgs;
+    /**
      * Extra details about the service that can't be placed in the other fields.
      */
     extraDetails?: fhir.FhirMarkdown | string | undefined;
+    /**
+     * Extended properties for primitive element: HealthcareService.extraDetails
+     */
+    _extraDetails?: fhir.FhirElementArgs;
     /**
      * If there is a photo/symbol associated with this HealthcareService, it may be included here to facilitate quick identification of the service in a list.
      */
@@ -233,6 +273,10 @@ export interface HealthcareServiceArgs extends fhir.DomainResourceArgs {
      */
     appointmentRequired?: fhir.FhirBoolean | boolean | undefined;
     /**
+     * Extended properties for primitive element: HealthcareService.appointmentRequired
+     */
+    _appointmentRequired?: fhir.FhirElementArgs;
+    /**
      * More detailed availability information may be provided in associated Schedule/Slot resources.
      */
     availableTime?: fhir.HealthcareServiceAvailableTimeArgs[] | undefined;
@@ -244,6 +288,10 @@ export interface HealthcareServiceArgs extends fhir.DomainResourceArgs {
      * A description of site availability exceptions, e.g. public holiday availability. Succinctly describing all possible exceptions to normal site availability as details in the available Times and not available Times.
      */
     availabilityExceptions?: fhir.FhirString | string | undefined;
+    /**
+     * Extended properties for primitive element: HealthcareService.availabilityExceptions
+     */
+    _availabilityExceptions?: fhir.FhirElementArgs;
     /**
      * Technical endpoints providing access to services operated for the specific healthcare services defined at this resource.
      */

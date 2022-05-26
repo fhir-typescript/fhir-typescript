@@ -22,6 +22,10 @@ export interface SubstancePolymerMonomerSetStartingMaterialArgs extends fhir.Bac
    */
   isDefining?: fhir.FhirBoolean|boolean|undefined;
   /**
+   * Extended properties for primitive element: SubstancePolymer.monomerSet.startingMaterial.isDefining
+   */
+  _isDefining?:fhir.FhirElementArgs;
+  /**
    * Todo.
    */
   amount?: fhir.SubstanceAmountArgs|undefined;
@@ -59,6 +63,10 @@ export class SubstancePolymerMonomerSetStartingMaterial extends fhir.BackboneEle
     if (source['material']) { this.material = new fhir.CodeableConcept(source.material); }
     if (source['type']) { this.type = new fhir.CodeableConcept(source.type); }
     if (source['isDefining']) { this.isDefining = new fhir.FhirBoolean({value: source.isDefining}); }
+    if (source['_isDefining']) {
+      if (this.isDefining) { this.isDefining.addExtendedProperties(source._isDefining!); }
+      else { this.isDefining = new fhir.FhirBoolean(source._isDefining as Partial<fhir.FhirBooleanArgs>); }
+    }
     if (source['amount']) { this.amount = new fhir.SubstanceAmount(source.amount); }
   }
   /**
@@ -183,6 +191,10 @@ export interface SubstancePolymerRepeatRepeatUnitStructuralRepresentationArgs ex
    */
   representation?: fhir.FhirString|string|undefined;
   /**
+   * Extended properties for primitive element: SubstancePolymer.repeat.repeatUnit.structuralRepresentation.representation
+   */
+  _representation?:fhir.FhirElementArgs;
+  /**
    * Todo.
    */
   attachment?: fhir.AttachmentArgs|undefined;
@@ -215,6 +227,10 @@ export class SubstancePolymerRepeatRepeatUnitStructuralRepresentation extends fh
     super(source, options);
     if (source['type']) { this.type = new fhir.CodeableConcept(source.type); }
     if (source['representation']) { this.representation = new fhir.FhirString({value: source.representation}); }
+    if (source['_representation']) {
+      if (this.representation) { this.representation.addExtendedProperties(source._representation!); }
+      else { this.representation = new fhir.FhirString(source._representation as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['attachment']) { this.attachment = new fhir.Attachment(source.attachment); }
   }
   /**
@@ -240,6 +256,10 @@ export interface SubstancePolymerRepeatRepeatUnitArgs extends fhir.BackboneEleme
    * Todo.
    */
   repeatUnit?: fhir.FhirString|string|undefined;
+  /**
+   * Extended properties for primitive element: SubstancePolymer.repeat.repeatUnit.repeatUnit
+   */
+  _repeatUnit?:fhir.FhirElementArgs;
   /**
    * Todo.
    */
@@ -289,6 +309,10 @@ export class SubstancePolymerRepeatRepeatUnit extends fhir.BackboneElement {
     super(source, options);
     if (source['orientationOfPolymerisation']) { this.orientationOfPolymerisation = new fhir.CodeableConcept(source.orientationOfPolymerisation); }
     if (source['repeatUnit']) { this.repeatUnit = new fhir.FhirString({value: source.repeatUnit}); }
+    if (source['_repeatUnit']) {
+      if (this.repeatUnit) { this.repeatUnit.addExtendedProperties(source._repeatUnit!); }
+      else { this.repeatUnit = new fhir.FhirString(source._repeatUnit as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['amount']) { this.amount = new fhir.SubstanceAmount(source.amount); }
     if (source['degreeOfPolymerisation']) { this.degreeOfPolymerisation = source.degreeOfPolymerisation.map((x) => new fhir.SubstancePolymerRepeatRepeatUnitDegreeOfPolymerisation(x)); }
     else { this.degreeOfPolymerisation = []; }
@@ -317,9 +341,17 @@ export interface SubstancePolymerRepeatArgs extends fhir.BackboneElementArgs {
    */
   numberOfUnits?: fhir.FhirInteger|number|undefined;
   /**
+   * Extended properties for primitive element: SubstancePolymer.repeat.numberOfUnits
+   */
+  _numberOfUnits?:fhir.FhirElementArgs;
+  /**
    * Todo.
    */
   averageMolecularFormula?: fhir.FhirString|string|undefined;
+  /**
+   * Extended properties for primitive element: SubstancePolymer.repeat.averageMolecularFormula
+   */
+  _averageMolecularFormula?:fhir.FhirElementArgs;
   /**
    * Todo.
    */
@@ -360,7 +392,15 @@ export class SubstancePolymerRepeat extends fhir.BackboneElement {
   constructor(source:Partial<SubstancePolymerRepeatArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
     if (source['numberOfUnits']) { this.numberOfUnits = new fhir.FhirInteger({value: source.numberOfUnits}); }
+    if (source['_numberOfUnits']) {
+      if (this.numberOfUnits) { this.numberOfUnits.addExtendedProperties(source._numberOfUnits!); }
+      else { this.numberOfUnits = new fhir.FhirInteger(source._numberOfUnits as Partial<fhir.FhirIntegerArgs>); }
+    }
     if (source['averageMolecularFormula']) { this.averageMolecularFormula = new fhir.FhirString({value: source.averageMolecularFormula}); }
+    if (source['_averageMolecularFormula']) {
+      if (this.averageMolecularFormula) { this.averageMolecularFormula.addExtendedProperties(source._averageMolecularFormula!); }
+      else { this.averageMolecularFormula = new fhir.FhirString(source._averageMolecularFormula as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['repeatUnitAmountType']) { this.repeatUnitAmountType = new fhir.CodeableConcept(source.repeatUnitAmountType); }
     if (source['repeatUnit']) { this.repeatUnit = source.repeatUnit.map((x) => new fhir.SubstancePolymerRepeatRepeatUnit(x)); }
     else { this.repeatUnit = []; }
@@ -401,6 +441,10 @@ export interface SubstancePolymerArgs extends fhir.DomainResourceArgs {
    * Todo.
    */
   modification?: fhir.FhirString[]|string[]|undefined;
+  /**
+   * Extended properties for primitive element: SubstancePolymer.modification
+   */
+  _modification?:(fhir.FhirElementArgs|null)[];
   /**
    * Todo.
    */
@@ -459,6 +503,12 @@ export class SubstancePolymer extends fhir.DomainResource {
     else { this.copolymerConnectivity = []; }
     if (source['modification']) { this.modification = source.modification.map((x) => new fhir.FhirString({value: x})); }
     else { this.modification = []; }
+    if (source['_modification']) {
+      source._modification.forEach((x,i) => {
+        if (this.modification.length >= i) { if (x) { this.modification[i].addExtendedProperties(x); } }
+        else { if (x) { this.modification.push(new fhir.FhirString(x as Partial<fhir.FhirStringArgs>)); } }
+      });
+    }
     if (source['monomerSet']) { this.monomerSet = source.monomerSet.map((x) => new fhir.SubstancePolymerMonomerSet(x)); }
     else { this.monomerSet = []; }
     if (source['repeat']) { this.repeat = source.repeat.map((x) => new fhir.SubstancePolymerRepeat(x)); }

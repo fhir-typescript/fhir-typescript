@@ -260,6 +260,10 @@ export interface SubstanceReferenceInformationArgs extends fhir.DomainResourceAr
      */
     comment?: fhir.FhirString | string | undefined;
     /**
+     * Extended properties for primitive element: SubstanceReferenceInformation.comment
+     */
+    _comment?: fhir.FhirElementArgs;
+    /**
      * Todo.
      */
     gene?: fhir.SubstanceReferenceInformationGeneArgs[] | undefined;

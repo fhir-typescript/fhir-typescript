@@ -73,6 +73,10 @@ export interface MedicinalProductPharmaceuticalRouteOfAdministrationTargetSpecie
    * Extra information about the withdrawal period.
    */
   supportingInformation?: fhir.FhirString|string|undefined;
+  /**
+   * Extended properties for primitive element: MedicinalProductPharmaceutical.routeOfAdministration.targetSpecies.withdrawalPeriod.supportingInformation
+   */
+  _supportingInformation?:fhir.FhirElementArgs;
 }
 
 /**
@@ -105,6 +109,10 @@ export class MedicinalProductPharmaceuticalRouteOfAdministrationTargetSpeciesWit
     if (source['value']) { this.value = new fhir.Quantity(source.value); }
     else { this.value = null; }
     if (source['supportingInformation']) { this.supportingInformation = new fhir.FhirString({value: source.supportingInformation}); }
+    if (source['_supportingInformation']) {
+      if (this.supportingInformation) { this.supportingInformation.addExtendedProperties(source._supportingInformation!); }
+      else { this.supportingInformation = new fhir.FhirString(source._supportingInformation as Partial<fhir.FhirStringArgs>); }
+    }
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).

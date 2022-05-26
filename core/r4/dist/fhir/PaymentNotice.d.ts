@@ -17,6 +17,10 @@ export interface PaymentNoticeArgs extends fhir.DomainResourceArgs {
      */
     status: fhir.FhirCode<FmStatusCodeType> | string | undefined;
     /**
+     * Extended properties for primitive element: PaymentNotice.status
+     */
+    _status?: fhir.FhirElementArgs;
+    /**
      * Reference of resource for which payment is being made.
      */
     request?: fhir.ReferenceArgs | undefined;
@@ -29,6 +33,10 @@ export interface PaymentNoticeArgs extends fhir.DomainResourceArgs {
      */
     created: fhir.FhirDateTime | string | undefined;
     /**
+     * Extended properties for primitive element: PaymentNotice.created
+     */
+    _created?: fhir.FhirElementArgs;
+    /**
      * The practitioner who is responsible for the services rendered to the patient.
      */
     provider?: fhir.ReferenceArgs | undefined;
@@ -40,6 +48,10 @@ export interface PaymentNoticeArgs extends fhir.DomainResourceArgs {
      * The date when the above payment action occurred.
      */
     paymentDate?: fhir.FhirDate | string | undefined;
+    /**
+     * Extended properties for primitive element: PaymentNotice.paymentDate
+     */
+    _paymentDate?: fhir.FhirElementArgs;
     /**
      * The party who will receive or has received payment that is the subject of this notification.
      */

@@ -18,13 +18,25 @@ export interface EffectEvidenceSynthesisSampleSizeArgs extends fhir.BackboneElem
      */
     description?: fhir.FhirString | string | undefined;
     /**
+     * Extended properties for primitive element: EffectEvidenceSynthesis.sampleSize.description
+     */
+    _description?: fhir.FhirElementArgs;
+    /**
      * Number of studies included in this evidence synthesis.
      */
     numberOfStudies?: fhir.FhirInteger | number | undefined;
     /**
+     * Extended properties for primitive element: EffectEvidenceSynthesis.sampleSize.numberOfStudies
+     */
+    _numberOfStudies?: fhir.FhirElementArgs;
+    /**
      * Number of participants included in this evidence synthesis.
      */
     numberOfParticipants?: fhir.FhirInteger | number | undefined;
+    /**
+     * Extended properties for primitive element: EffectEvidenceSynthesis.sampleSize.numberOfParticipants
+     */
+    _numberOfParticipants?: fhir.FhirElementArgs;
 }
 /**
  * A description of the size of the sample involved in the synthesis.
@@ -64,9 +76,17 @@ export interface EffectEvidenceSynthesisResultsByExposureArgs extends fhir.Backb
      */
     description?: fhir.FhirString | string | undefined;
     /**
+     * Extended properties for primitive element: EffectEvidenceSynthesis.resultsByExposure.description
+     */
+    _description?: fhir.FhirElementArgs;
+    /**
      * Whether these results are for the exposure state or alternative exposure state.
      */
     exposureState?: fhir.FhirCode<ExposureStateCodeType> | string | undefined;
+    /**
+     * Extended properties for primitive element: EffectEvidenceSynthesis.resultsByExposure.exposureState
+     */
+    _exposureState?: fhir.FhirElementArgs;
     /**
      * Used to define variant exposure states such as low-risk state.
      */
@@ -133,13 +153,25 @@ export interface EffectEvidenceSynthesisEffectEstimatePrecisionEstimateArgs exte
      */
     level?: fhir.FhirDecimal | number | undefined;
     /**
+     * Extended properties for primitive element: EffectEvidenceSynthesis.effectEstimate.precisionEstimate.level
+     */
+    _level?: fhir.FhirElementArgs;
+    /**
      * Lower bound of confidence interval.
      */
     from?: fhir.FhirDecimal | number | undefined;
     /**
+     * Extended properties for primitive element: EffectEvidenceSynthesis.effectEstimate.precisionEstimate.from
+     */
+    _from?: fhir.FhirElementArgs;
+    /**
      * Upper bound of confidence interval.
      */
     to?: fhir.FhirDecimal | number | undefined;
+    /**
+     * Extended properties for primitive element: EffectEvidenceSynthesis.effectEstimate.precisionEstimate.to
+     */
+    _to?: fhir.FhirElementArgs;
 }
 /**
  * A description of the precision of the estimate for the effect.
@@ -187,6 +219,10 @@ export interface EffectEvidenceSynthesisEffectEstimateArgs extends fhir.Backbone
      */
     description?: fhir.FhirString | string | undefined;
     /**
+     * Extended properties for primitive element: EffectEvidenceSynthesis.effectEstimate.description
+     */
+    _description?: fhir.FhirElementArgs;
+    /**
      * Examples include relative risk and mean difference.
      */
     type?: fhir.CodeableConceptArgs | undefined;
@@ -198,6 +234,10 @@ export interface EffectEvidenceSynthesisEffectEstimateArgs extends fhir.Backbone
      * The point estimate of the effect estimate.
      */
     value?: fhir.FhirDecimal | number | undefined;
+    /**
+     * Extended properties for primitive element: EffectEvidenceSynthesis.effectEstimate.value
+     */
+    _value?: fhir.FhirElementArgs;
     /**
      * Specifies the UCUM unit for the outcome.
      */
@@ -305,7 +345,9 @@ export declare class EffectEvidenceSynthesisEffectEstimate extends fhir.Backbone
         readonly InternationalUnitPerKilogram: "[IU]/kg";
         readonly InternationalUnitPerKilogramPerDay: "[IU]/kg/d";
         readonly InternationalUnitPerLiter: "[IU]/L";
-        readonly InternationalUnitPerLiterAt37DegreesCelsius: "[IU]/L{37Cel}";
+        readonly InternationalUnitPerLiterAt37DegreesCelsius: "[IU]/L{37Cel}"; /**
+         * Extended properties for primitive element: EffectEvidenceSynthesis.sampleSize.numberOfStudies
+         */
         readonly InternationalUnitPerMilligramOfCreatinine: "[IU]/mg{creat}";
         readonly InternationalUnitPerMinute: "[IU]/min";
         readonly InternationalUnitPerMilliliter: "[IU]/mL";
@@ -314,7 +356,9 @@ export declare class EffectEvidenceSynthesisEffectEstimate extends fhir.Backbone
         readonly LowPowerField: "[LPF]";
         readonly MacLaganUnit: "[mclg'U]";
         readonly StatuteMile: "[mi_i]";
-        readonly Mile: "[mi_us]";
+        readonly Mile: "[mi_us]"; /**
+         * Mapping of this datatype to a FHIR equivalent
+         */
         readonly Minim: "[min_us]";
         readonly IgMAnticardiolipinUnit: "[MPL'U]";
         readonly IgMAnticardiolipinUnitPerMilliliterAsteriskAsterisk: "[MPL'U]/mL";
@@ -336,13 +380,9 @@ export declare class EffectEvidenceSynthesisEffectEstimate extends fhir.Backbone
         readonly SquareInchInternational: "[sin_i]";
         readonly ShortTonUSTon: "[ston_av]";
         readonly SquareYard: "[syd_i]";
-        readonly TuberculinUnit: "[tb'U]"; /**
-         * Human-readable summary of results by exposure state.
-         */
+        readonly TuberculinUnit: "[tb'U]";
         readonly TablespoonUS: "[tbs_us]";
-        readonly ToddUnit: "[todd'U]"; /**
-         * Whether these results are for the exposure state or alternative exposure state.
-         */
+        readonly ToddUnit: "[todd'U]";
         readonly Teaspoon: "[tsp_us]";
         readonly Yard: "[yd_i]";
         readonly NumberOfCalculi: "{# of calculi}";
@@ -357,7 +397,9 @@ export declare class EffectEvidenceSynthesisEffectEstimate extends fhir.Backbone
         readonly AbsorbanceQuoteU: "{Absorbance'U}";
         readonly AbsorbanceQuoteUMilliliter: "{Absorbance'U}/mL";
         readonly Absorbance: "{absorbance}";
-        readonly Activity: "{activity}";
+        readonly Activity: "{activity}"; /**
+         * Human-readable summary of results by exposure state.
+         */
         readonly ActivityCoefficient: "{ActivityCoefficient}";
         readonly AHFQuoteU: "{AHF'U}";
         readonly AntibodyResponseQuoteU: "{AntibodyResponse'U}";
@@ -365,7 +407,9 @@ export declare class EffectEvidenceSynthesisEffectEstimate extends fhir.Backbone
         readonly IgAAntiphosphatidylserineUnit: "{APS'U}";
         readonly AspirinResponseUnit: "{ARU}";
         readonly AspirinReactionQuoteU: "{AspirinReaction'U}";
-        readonly Bead: "{Bead}";
+        readonly Bead: "{Bead}"; /**
+         * Used to define variant exposure states such as low-risk state.
+         */
         readonly HeartBeatsPerMinute: "{beats}/min";
         readonly BeatsMinute: "{Beats}/min";
         readonly BindingIndex: "{binding_index}";
@@ -402,6 +446,9 @@ export declare class EffectEvidenceSynthesisEffectEstimate extends fhir.Backbone
         readonly CountCount: "{Count}";
         readonly CountsMinute: "{Counts}/min";
         readonly CountsPerMinute: "{CPM}";
+        /**
+         * Required-bound Value Set for exposureState (EffectEvidenceSynthesis.resultsByExposure.exposureState)
+         */
         readonly CountsPerMinutePerThousandCells: "{CPM}/10*3{cell}";
         readonly Dalton: "{Dalton}";
         readonly DdTiter: "{DdTiter}";
@@ -414,9 +461,7 @@ export declare class EffectEvidenceSynthesisEffectEstimate extends fhir.Backbone
         readonly DrinksDay: "{Drinks}/d";
         readonly Each: "{Each}";
         readonly EhrlichUnit: "{Ehrlich'U}";
-        readonly EhrlichUnitPer2Hour: "{Ehrlich'U}/(2.h)"; /**
-         * Upper bound of confidence interval.
-         */
+        readonly EhrlichUnitPer2Hour: "{Ehrlich'U}/(2.h)";
         readonly EhrlichUnitPer100Gram: "{Ehrlich'U}/100.g";
         readonly EhrlichUnitPerDay: "{Ehrlich'U}/d";
         readonly EhrilichUnitPerDeciliter: "{Ehrlich'U}/dL";
@@ -448,11 +493,12 @@ export declare class EffectEvidenceSynthesisEffectEstimate extends fhir.Backbone
         readonly ImmunofluorescenceAssayIndex: "{IFA_index}";
         readonly ImmunofluorescenceAssayTiter: "{IFA_titer}";
         readonly IfaIndex: "{IfaIndex}";
+        /**
+         * Use 95 for a 95% confidence interval.
+         */
         readonly IfaTiter: "{IfaTiter}";
         readonly IgAAntiphosphatidyleserineQuoteU: "{IgAAntiphosphatidyleserine'U}";
-        readonly IgAPhospholipidQuoteU: "{IgAPhospholipid'U}"; /**
-         * Mapping of this datatype to a FHIR equivalent
-         */
+        readonly IgAPhospholipidQuoteU: "{IgAPhospholipid'U}";
         readonly IgGAntiphosphatidyleserineQuoteU: "{IgGAntiphosphatidyleserine'U}";
         readonly IgGIndex: "{IgGIndex}";
         readonly IgMAntiphosphatidyleserineQuoteU: "{IgMAntiphosphatidyleserine'U}";
@@ -482,7 +528,9 @@ export declare class EffectEvidenceSynthesisEffectEstimate extends fhir.Backbone
         readonly LogBase10InternationalUnitPerMilliliter: "{log_IU}/mL";
         readonly LogBase10InternationalUnitPerMilliliterLogIUML: "{Log_IU}/mL";
         readonly LogBase10: "{Log}";
-        readonly LymeIndexValue: "{Lyme_index_value}";
+        readonly LymeIndexValue: "{Lyme_index_value}"; /**
+         * Examples include relative risk and mean difference.
+         */
         readonly LymeIndexValueLymeIndexValue: "{LymeIndexValue}";
         readonly MPortionPhospholipids: "{M-PortionPhospholipids}";
         readonly MOM: "{M.o.M.}";
@@ -490,7 +538,9 @@ export declare class EffectEvidenceSynthesisEffectEstimate extends fhir.Backbone
         readonly Markers: "{Markers}";
         readonly Minidrp: "{minidrp}";
         readonly MoleculePlatelet: "{Molecule}/{Platelet}";
-        readonly IgMAntiphosphatidylserineUnit: "{MPS'U}";
+        readonly IgMAntiphosphatidylserineUnit: "{MPS'U}"; /**
+         * A description of the precision of the estimate for the effect.
+         */
         readonly IgMAntiphosphatidylserineUnitPerMilliliter: "{MPS'U}/mL";
         readonly MultOfMean: "{MultOfMean}";
         readonly NonspecificOunce: "{NonspecificOunce}";
@@ -501,18 +551,12 @@ export declare class EffectEvidenceSynthesisEffectEstimate extends fhir.Backbone
         readonly OpticalDensityIndex: "{OpticalDensityIndex}";
         readonly OpticalDensityRatio: "{OpticalDensityRatio}";
         readonly P2Y12ReactionUnits: "{P2Y12 Reaction Units}";
-        /**
-         * Type of subcomponent of certainty rating.
-         */
         readonly Package: "{Package}";
         readonly PacksDay: "{Packs}/d";
         readonly PackYears: "{PackYears}";
         readonly Patch: "{Patch}";
         readonly Percentile: "{Percentile}";
         readonly Pill: "{Pill}";
-        /**
-         * A description of a component of the overall certainty.
-         */
         readonly PouchesWeek: "{Pouches}/wk";
         readonly RadioactiveT3UptakeRatio: "{RadioactiveT3UptakeRatio}";
         readonly Ratio: "{ratio}";
@@ -542,16 +586,16 @@ export declare class EffectEvidenceSynthesisEffectEstimate extends fhir.Backbone
         readonly Titer: "{titer}";
         readonly ToxoplasmaIndexValue: "{ToxoplasmaIndexValue}";
         readonly Vial: "{Vial}";
-        readonly VolumeVvolume: "{Volume}/{Vvolume}";
+        readonly VolumeVvolume: "{Volume}/{Vvolume}"; /**
+         * Function to perform basic model validation (e.g., check if required elements are present).
+         */
         readonly WeeksDays: "{WeeksDays}";
         readonly WhiteBloodCell: "{WhiteBloodCell}";
         readonly Per12AsteriskHour: "/(12.h)";
         readonly PerArbitraryUnit: "/[arb'U]";
         readonly PerHighPowerField: "/[HPF]";
         readonly PerInternationalUnit: "/[iU]";
-        readonly PerLowPowerField: "/[LPF]"; /**
-         * A human-readable string to clarify or explain concepts about the resource.
-         */
+        readonly PerLowPowerField: "/[LPF]";
         readonly PerEntity: "/{Entity}";
         readonly PerOif: "/{oif}";
         readonly PerSpecimen: "/{Specimen}";
@@ -576,7 +620,9 @@ export declare class EffectEvidenceSynthesisEffectEstimate extends fhir.Backbone
         readonly PerGramHgb: "/g{hgb}";
         readonly PerGramTotQuoteNit: "/g{tot'nit}";
         readonly PerGramTotQuoteProt: "/g{tot'prot}";
-        readonly PerGramWetQuoteTis: "/g{wet'tis}";
+        readonly PerGramWetQuoteTis: "/g{wet'tis}"; /**
+         * Type of subcomponent of certainty rating.
+         */
         readonly PerHour: "/h";
         readonly PerKilogram: "/kg";
         readonly PerKilogramBodyWt: "/kg{body'wt}";
@@ -665,7 +711,9 @@ export declare class EffectEvidenceSynthesisEffectEstimate extends fhir.Backbone
         readonly MillionPerSpecimen: "10*6/{Specimen}";
         readonly MillionPerKilogram: "10*6/kg";
         readonly MillionPerLiter: "10*6/L";
-        readonly MillionPerMilliliter: "10*6/mL";
+        readonly MillionPerMilliliter: "10*6/mL"; /**
+         * Extended properties for primitive element: EffectEvidenceSynthesis.version
+         */
         readonly TheNumberTenForArbitraryPowersPower6MillimeterPower3: "10*6/mm3";
         readonly MillionPerMicroliter: "10*6/uL";
         readonly TenToEighth: "10*8";
@@ -689,11 +737,11 @@ export declare class EffectEvidenceSynthesisEffectEstimate extends fhir.Backbone
         readonly CentimeterOfWater: "cm[H2O]";
         readonly CentimeterOfWaterColumnSecondAsteriskMeter: "cm[H2O]/(s.m)";
         readonly CentimeterOfWaterPerLiterPerSecond: "cm[H2O]/L/s";
+        /**
+         * Extended properties for primitive element: EffectEvidenceSynthesis.date
+         */
         readonly CentimeterOfWaterPerSecondPerMeter: "cm[H2O]/s/m";
         readonly CentimeterOfMercury: "cm[Hg]";
-        /**
-         * A description of the size of the sample involved in the synthesis.
-         */
         readonly SquareCentimeter: "cm2";
         readonly SquareCentimeterPerSecond: "cm2/s";
         readonly CubicCentimeter: "cm3";
@@ -785,12 +833,17 @@ export declare class EffectEvidenceSynthesisEffectEstimate extends fhir.Backbone
         readonly GramPerMoleOfCreatinine: "g/mol{creat}";
         readonly GigaBecquerel: "GBq";
         readonly Gray: "Gy";
+        /**
+         * The EffectEvidenceSynthesis resource describes the difference in an outcome between exposures states in a population where the effect estimate is derived from a combination of research studies.
+         */
         readonly Hour: "h";
         readonly Henry: "H";
         readonly Hectoliter: "hL";
         readonly Hertz: "Hz";
         readonly Joule: "J";
-        readonly JoulePerLiter: "J/L";
+        readonly JoulePerLiter: "J/L"; /**
+         * Mapping of this datatype to a FHIR equivalent
+         */
         readonly Kelvin: "K";
         readonly KiloInternationalUnitPerLiter: "k[IU]/L";
         readonly KiloInternationalUnitPerMilliliter: "k[IU]/mL";
@@ -819,7 +872,9 @@ export declare class EffectEvidenceSynthesisEffectEstimate extends fhir.Backbone
         readonly Kilometer: "km";
         readonly KiloPascal: "kPa";
         readonly Kilosecond: "ks";
-        readonly KiloEnzymeUnit: "kU";
+        readonly KiloEnzymeUnit: "kU"; /**
+         * This name does not need to be machine-processing friendly and may contain punctuation, white-space, etc.
+         */
         readonly KiloenzymeUnitPerGram: "kU/g";
         readonly KiloUnitHour: "kU/h";
         readonly KiloenzymeUnitPerLiter: "kU/L";
@@ -829,9 +884,6 @@ export declare class EffectEvidenceSynthesisEffectEstimate extends fhir.Backbone
         readonly LiterAsteriskSecondPower2Second: "L.s2/s";
         readonly LiterPer24Hour: "L/(24.h)";
         readonly LiterPer8Hour: "L/(8.h)";
-        /**
-         * Default constructor for EffectEvidenceSynthesis - initializes any required elements to null if a value is not provided.
-         */
         readonly LiterPerMinutePerSquareMeter: "L/(min.m2)";
         readonly LiterPerDay: "L/d";
         readonly LiterPerHour: "L/h";
@@ -855,7 +907,9 @@ export declare class EffectEvidenceSynthesisEffectEstimate extends fhir.Backbone
         readonly MilliAmpere: "mA";
         readonly Millibar: "mbar";
         readonly MillibarSecondPerLiter: "mbar.s/L";
-        readonly MegaBecquerel: "MBq";
+        readonly MegaBecquerel: "MBq"; /**
+         * A human-readable string to clarify or explain concepts about the resource.
+         */
         readonly MilliCurie: "mCi";
         readonly Milliequivalent: "meq";
         readonly MilliequivalentPer12Hour: "meq/(12.h)";
@@ -1399,6 +1453,10 @@ export interface EffectEvidenceSynthesisArgs extends fhir.DomainResourceArgs {
      */
     url?: fhir.FhirUri | string | undefined;
     /**
+     * Extended properties for primitive element: EffectEvidenceSynthesis.url
+     */
+    _url?: fhir.FhirElementArgs;
+    /**
      * Typically, this is used for identifiers that can go in an HL7 V3 II (instance identifier) data type, and can then identify this effect evidence synthesis outside of FHIR, where it is not possible to use the logical URI.
      */
     identifier?: fhir.IdentifierArgs[] | undefined;
@@ -1407,25 +1465,49 @@ export interface EffectEvidenceSynthesisArgs extends fhir.DomainResourceArgs {
      */
     version?: fhir.FhirString | string | undefined;
     /**
+     * Extended properties for primitive element: EffectEvidenceSynthesis.version
+     */
+    _version?: fhir.FhirElementArgs;
+    /**
      * The name is not expected to be globally unique. The name should be a simple alphanumeric type name to ensure that it is machine-processing friendly.
      */
     name?: fhir.FhirString | string | undefined;
+    /**
+     * Extended properties for primitive element: EffectEvidenceSynthesis.name
+     */
+    _name?: fhir.FhirElementArgs;
     /**
      * This name does not need to be machine-processing friendly and may contain punctuation, white-space, etc.
      */
     title?: fhir.FhirString | string | undefined;
     /**
+     * Extended properties for primitive element: EffectEvidenceSynthesis.title
+     */
+    _title?: fhir.FhirElementArgs;
+    /**
      * Allows filtering of effect evidence synthesiss that are appropriate for use versus not.
      */
     status: fhir.FhirCode<PublicationStatusCodeType> | string | undefined;
+    /**
+     * Extended properties for primitive element: EffectEvidenceSynthesis.status
+     */
+    _status?: fhir.FhirElementArgs;
     /**
      * Note that this is not the same as the resource last-modified-date, since the resource may be a secondary representation of the effect evidence synthesis. Additional specific dates may be added as extensions or be found by consulting Provenances associated with past versions of the resource.
      */
     date?: fhir.FhirDateTime | string | undefined;
     /**
+     * Extended properties for primitive element: EffectEvidenceSynthesis.date
+     */
+    _date?: fhir.FhirElementArgs;
+    /**
      * Usually an organization but may be an individual. The publisher (or steward) of the effect evidence synthesis is the organization or individual primarily responsible for the maintenance and upkeep of the effect evidence synthesis. This is not necessarily the same individual or organization that developed and initially authored the content. The publisher is the primary point of contact for questions or issues with the effect evidence synthesis. This item SHOULD be populated unless the information is available from context.
      */
     publisher?: fhir.FhirString | string | undefined;
+    /**
+     * Extended properties for primitive element: EffectEvidenceSynthesis.publisher
+     */
+    _publisher?: fhir.FhirElementArgs;
     /**
      * May be a web site, an email address, a telephone number, etc.
      */
@@ -1434,6 +1516,10 @@ export interface EffectEvidenceSynthesisArgs extends fhir.DomainResourceArgs {
      * This description can be used to capture details such as why the effect evidence synthesis was built, comments about misuse, instructions for clinical use and interpretation, literature references, examples from the paper world, etc. It is not a rendering of the effect evidence synthesis as conveyed in the 'text' field of the resource itself. This item SHOULD be populated unless the information is available from context (e.g. the language of the effect evidence synthesis is presumed to be the predominant language in the place the effect evidence synthesis was created).
      */
     description?: fhir.FhirMarkdown | string | undefined;
+    /**
+     * Extended properties for primitive element: EffectEvidenceSynthesis.description
+     */
+    _description?: fhir.FhirElementArgs;
     /**
      * A human-readable string to clarify or explain concepts about the resource.
      */
@@ -1451,13 +1537,25 @@ export interface EffectEvidenceSynthesisArgs extends fhir.DomainResourceArgs {
      */
     copyright?: fhir.FhirMarkdown | string | undefined;
     /**
+     * Extended properties for primitive element: EffectEvidenceSynthesis.copyright
+     */
+    _copyright?: fhir.FhirElementArgs;
+    /**
      * The 'date' element may be more recent than the approval date because of minor changes or editorial corrections.
      */
     approvalDate?: fhir.FhirDate | string | undefined;
     /**
+     * Extended properties for primitive element: EffectEvidenceSynthesis.approvalDate
+     */
+    _approvalDate?: fhir.FhirElementArgs;
+    /**
      * If specified, this date follows the original approval date.
      */
     lastReviewDate?: fhir.FhirDate | string | undefined;
+    /**
+     * Extended properties for primitive element: EffectEvidenceSynthesis.lastReviewDate
+     */
+    _lastReviewDate?: fhir.FhirElementArgs;
     /**
      * The effective period for a effect evidence synthesis  determines when the content is applicable for usage and is independent of publication and review dates. For example, a measure intended to be used for the year 2016 might be published in 2015.
      */

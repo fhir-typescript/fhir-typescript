@@ -42,17 +42,33 @@ export interface StructureDefinitionMappingArgs extends fhir.BackboneElementArgs
    */
   identity: fhir.FhirId|string|undefined;
   /**
+   * Extended properties for primitive element: StructureDefinition.mapping.identity
+   */
+  _identity?:fhir.FhirElementArgs;
+  /**
    * A formal identity for the specification being mapped to helps with identifying maps consistently.
    */
   uri?: fhir.FhirUri|string|undefined;
+  /**
+   * Extended properties for primitive element: StructureDefinition.mapping.uri
+   */
+  _uri?:fhir.FhirElementArgs;
   /**
    * A name for the specification that is being mapped to.
    */
   name?: fhir.FhirString|string|undefined;
   /**
+   * Extended properties for primitive element: StructureDefinition.mapping.name
+   */
+  _name?:fhir.FhirElementArgs;
+  /**
    * Comments about this mapping, including version notes, issues, scope limitations, and other important notes for usage.
    */
   comment?: fhir.FhirString|string|undefined;
+  /**
+   * Extended properties for primitive element: StructureDefinition.mapping.comment
+   */
+  _comment?:fhir.FhirElementArgs;
 }
 
 /**
@@ -86,9 +102,25 @@ export class StructureDefinitionMapping extends fhir.BackboneElement {
     super(source, options);
     if (source['identity']) { this.identity = new fhir.FhirId({value: source.identity}); }
     else { this.identity = null; }
+    if (source['_identity']) {
+      if (this.identity) { this.identity.addExtendedProperties(source._identity!); }
+      else { this.identity = new fhir.FhirId(source._identity as Partial<fhir.FhirIdArgs>); }
+    }
     if (source['uri']) { this.uri = new fhir.FhirUri({value: source.uri}); }
+    if (source['_uri']) {
+      if (this.uri) { this.uri.addExtendedProperties(source._uri!); }
+      else { this.uri = new fhir.FhirUri(source._uri as Partial<fhir.FhirUriArgs>); }
+    }
     if (source['name']) { this.name = new fhir.FhirString({value: source.name}); }
+    if (source['_name']) {
+      if (this.name) { this.name.addExtendedProperties(source._name!); }
+      else { this.name = new fhir.FhirString(source._name as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['comment']) { this.comment = new fhir.FhirString({value: source.comment}); }
+    if (source['_comment']) {
+      if (this.comment) { this.comment.addExtendedProperties(source._comment!); }
+      else { this.comment = new fhir.FhirString(source._comment as Partial<fhir.FhirStringArgs>); }
+    }
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -114,9 +146,17 @@ export interface StructureDefinitionContextArgs extends fhir.BackboneElementArgs
    */
   type: fhir.FhirCode<ExtensionContextTypeCodeType>|string|undefined;
   /**
+   * Extended properties for primitive element: StructureDefinition.context.type
+   */
+  _type?:fhir.FhirElementArgs;
+  /**
    * An expression that defines where an extension can be used in resources.
    */
   expression: fhir.FhirString|string|undefined;
+  /**
+   * Extended properties for primitive element: StructureDefinition.context.expression
+   */
+  _expression?:fhir.FhirElementArgs;
 }
 
 /**
@@ -142,8 +182,16 @@ export class StructureDefinitionContext extends fhir.BackboneElement {
     super(source, options);
     if (source['type']) { this.type = new fhir.FhirCode<ExtensionContextTypeCodeType>({value: source.type}); }
     else { this.type = null; }
+    if (source['_type']) {
+      if (this.type) { this.type.addExtendedProperties(source._type!); }
+      else { this.type = new fhir.FhirCode<ExtensionContextTypeCodeType>(source._type as Partial<fhir.FhirCode>); }
+    }
     if (source['expression']) { this.expression = new fhir.FhirString({value: source.expression}); }
     else { this.expression = null; }
+    if (source['_expression']) {
+      if (this.expression) { this.expression.addExtendedProperties(source._expression!); }
+      else { this.expression = new fhir.FhirString(source._expression as Partial<fhir.FhirStringArgs>); }
+    }
   }
   /**
    * Required-bound Value Set for type (StructureDefinition.context.type)
@@ -277,6 +325,10 @@ export interface StructureDefinitionArgs extends fhir.DomainResourceArgs {
    */
   url: fhir.FhirUri|string|undefined;
   /**
+   * Extended properties for primitive element: StructureDefinition.url
+   */
+  _url?:fhir.FhirElementArgs;
+  /**
    * Typically, this is used for identifiers that can go in an HL7 V3 II (instance identifier) data type, and can then identify this structure definition outside of FHIR, where it is not possible to use the logical URI.
    */
   identifier?: fhir.IdentifierArgs[]|undefined;
@@ -284,6 +336,10 @@ export interface StructureDefinitionArgs extends fhir.DomainResourceArgs {
    * There may be different structure definition instances that have the same identifier but different versions.  The version can be appended to the url in a reference to allow a reference to a particular business version of the structure definition with the format [url]|[version].
    */
   version?: fhir.FhirString|string|undefined;
+  /**
+   * Extended properties for primitive element: StructureDefinition.version
+   */
+  _version?:fhir.FhirElementArgs;
   /**
    * The name is not expected to be globally unique. The name should be a simple alphanumeric type name to ensure that it is machine-processing friendly.Some Examples: 
    * * O2SatObservation
@@ -293,25 +349,49 @@ export interface StructureDefinitionArgs extends fhir.DomainResourceArgs {
    */
   name: fhir.FhirString|string|undefined;
   /**
+   * Extended properties for primitive element: StructureDefinition.name
+   */
+  _name?:fhir.FhirElementArgs;
+  /**
    * This name does not need to be machine-processing friendly and may contain punctuation, white-space, etc.Applications don't have to use this name but can always fall back to it. The title also corresponds to the label for the root element.
    */
   title?: fhir.FhirString|string|undefined;
+  /**
+   * Extended properties for primitive element: StructureDefinition.title
+   */
+  _title?:fhir.FhirElementArgs;
   /**
    * Allows filtering of structure definitions that are appropriate for use versus not.
    */
   status: fhir.FhirCode<PublicationStatusCodeType>|string|undefined;
   /**
+   * Extended properties for primitive element: StructureDefinition.status
+   */
+  _status?:fhir.FhirElementArgs;
+  /**
    * Allows filtering of structure definitions that are appropriate for use versus not.
    */
   experimental?: fhir.FhirBoolean|boolean|undefined;
+  /**
+   * Extended properties for primitive element: StructureDefinition.experimental
+   */
+  _experimental?:fhir.FhirElementArgs;
   /**
    * Note that this is not the same as the resource last-modified-date, since the resource may be a secondary representation of the structure definition. Additional specific dates may be added as extensions or be found by consulting Provenances associated with past versions of the resource.
    */
   date?: fhir.FhirDateTime|string|undefined;
   /**
+   * Extended properties for primitive element: StructureDefinition.date
+   */
+  _date?:fhir.FhirElementArgs;
+  /**
    * Usually an organization but may be an individual. The publisher (or steward) of the structure definition is the organization or individual primarily responsible for the maintenance and upkeep of the structure definition. This is not necessarily the same individual or organization that developed and initially authored the content. The publisher is the primary point of contact for questions or issues with the structure definition. This item SHOULD be populated unless the information is available from context.
    */
   publisher?: fhir.FhirString|string|undefined;
+  /**
+   * Extended properties for primitive element: StructureDefinition.publisher
+   */
+  _publisher?:fhir.FhirElementArgs;
   /**
    * May be a web site, an email address, a telephone number, etc.
    */
@@ -320,6 +400,10 @@ export interface StructureDefinitionArgs extends fhir.DomainResourceArgs {
    * This description can be used to capture details such as why the structure definition was built, comments about misuse, instructions for clinical use and interpretation, literature references, examples from the paper world, etc. It is not a rendering of the structure definition as conveyed in the 'text' field of the resource itself. This item SHOULD be populated unless the information is available from context (e.g. the language of the structure definition is presumed to be the predominant language in the place the structure definition was created).
    */
   description?: fhir.FhirMarkdown|string|undefined;
+  /**
+   * Extended properties for primitive element: StructureDefinition.description
+   */
+  _description?:fhir.FhirElementArgs;
   /**
    * When multiple useContexts are specified, there is no expectation that all or any of the contexts apply.
    */
@@ -333,9 +417,17 @@ export interface StructureDefinitionArgs extends fhir.DomainResourceArgs {
    */
   purpose?: fhir.FhirMarkdown|string|undefined;
   /**
+   * Extended properties for primitive element: StructureDefinition.purpose
+   */
+  _purpose?:fhir.FhirElementArgs;
+  /**
    * A copyright statement relating to the structure definition and/or its contents. Copyright statements are generally legal restrictions on the use and publishing of the structure definition.
    */
   copyright?: fhir.FhirMarkdown|string|undefined;
+  /**
+   * Extended properties for primitive element: StructureDefinition.copyright
+   */
+  _copyright?:fhir.FhirElementArgs;
   /**
    * A set of key words or terms from external terminologies that may be used to assist with indexing and searching of templates nby describing the use of this structure definition, or the content it describes.
    */
@@ -345,6 +437,10 @@ export interface StructureDefinitionArgs extends fhir.DomainResourceArgs {
    */
   fhirVersion?: fhir.FhirCode|string|undefined;
   /**
+   * Extended properties for primitive element: StructureDefinition.fhirVersion
+   */
+  _fhirVersion?:fhir.FhirElementArgs;
+  /**
    * An external specification that the content is mapped to.
    */
   mapping?: fhir.StructureDefinitionMappingArgs[]|undefined;
@@ -353,9 +449,17 @@ export interface StructureDefinitionArgs extends fhir.DomainResourceArgs {
    */
   kind: fhir.FhirCode<StructureDefinitionKindCodeType>|string|undefined;
   /**
+   * Extended properties for primitive element: StructureDefinition.kind
+   */
+  _kind?:fhir.FhirElementArgs;
+  /**
    * Abstract Resources cannot be instantiated - a concrete sub-type must be used. Abstract datatypes and extensions cannot be used in an instance. For logical models, the exact implication of "abstract" will rest with the author, depending how the logical model is used. Flagging a constraint structure as abstract conveys design intent but makes no difference to how the structure definition is handled. Note that inline declared elements that are given the type "Element" in the StructureDefinition, but have children described, are anonymous concrete types that specialize Element.
    */
   abstract: fhir.FhirBoolean|boolean|undefined;
+  /**
+   * Extended properties for primitive element: StructureDefinition.abstract
+   */
+  _abstract?:fhir.FhirElementArgs;
   /**
    * Identifies the types of resource or data type elements to which the extension can be applied.
    */
@@ -365,18 +469,34 @@ export interface StructureDefinitionArgs extends fhir.DomainResourceArgs {
    */
   contextInvariant?: fhir.FhirString[]|string[]|undefined;
   /**
+   * Extended properties for primitive element: StructureDefinition.contextInvariant
+   */
+  _contextInvariant?:(fhir.FhirElementArgs|null)[];
+  /**
    * Note that in the case of constraints, the type could be determined by chasing through the baseDefinition references until a concrete structure (derivation = specialization) is reached, or by looking at the path of the first element in the snapshot - if present - but providing the type directly makes for simpler tooling and indexing. 
    * The type must match the elements defined in the differential and the snapshot. For all FHIR defined types, the path name of the element will start with the type name. For logical models, where the type is a URL, the type name SHOULD start with the tail of the type URL where required.
    */
   type: fhir.FhirUri|string|undefined;
   /**
+   * Extended properties for primitive element: StructureDefinition.type
+   */
+  _type?:fhir.FhirElementArgs;
+  /**
    * If differential constraints are specified in this structure, they are applied to the base in a "differential" fashion. If there is no base, then the differential constraints cannot be provided (snapshot only). Differential structures are useful for the editing perspective, and snapshot structures are suitable for operational use. The FHIR Project provides a number of tools/services to populate snapshots from differential constraints. Logical Models have a base of "Element" or another logical model.
    */
   baseDefinition?: fhir.FhirCanonical|string|undefined;
   /**
+   * Extended properties for primitive element: StructureDefinition.baseDefinition
+   */
+  _baseDefinition?:fhir.FhirElementArgs;
+  /**
    * If the definition is a specialization, then it adds new elements in the differential, and the snapshot includes the inherited elements.  If the definition is a constraint, then it cannot define new elements, it can only make new rules about existing content (see [Profiling Resources](profiling.html#resources)).
    */
   derivation?: fhir.FhirCode<TypeDerivationRuleCodeType>|string|undefined;
+  /**
+   * Extended properties for primitive element: StructureDefinition.derivation
+   */
+  _derivation?:fhir.FhirElementArgs;
   /**
    * A snapshot view is expressed in a standalone form that can be used and interpreted without considering the base StructureDefinition.
    */
@@ -522,43 +642,117 @@ export class StructureDefinition extends fhir.DomainResource {
     this.resourceType = 'StructureDefinition';
     if (source['url']) { this.url = new fhir.FhirUri({value: source.url}); }
     else { this.url = null; }
+    if (source['_url']) {
+      if (this.url) { this.url.addExtendedProperties(source._url!); }
+      else { this.url = new fhir.FhirUri(source._url as Partial<fhir.FhirUriArgs>); }
+    }
     if (source['identifier']) { this.identifier = source.identifier.map((x) => new fhir.Identifier(x)); }
     else { this.identifier = []; }
     if (source['version']) { this.version = new fhir.FhirString({value: source.version}); }
+    if (source['_version']) {
+      if (this.version) { this.version.addExtendedProperties(source._version!); }
+      else { this.version = new fhir.FhirString(source._version as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['name']) { this.name = new fhir.FhirString({value: source.name}); }
     else { this.name = null; }
+    if (source['_name']) {
+      if (this.name) { this.name.addExtendedProperties(source._name!); }
+      else { this.name = new fhir.FhirString(source._name as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['title']) { this.title = new fhir.FhirString({value: source.title}); }
+    if (source['_title']) {
+      if (this.title) { this.title.addExtendedProperties(source._title!); }
+      else { this.title = new fhir.FhirString(source._title as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['status']) { this.status = new fhir.FhirCode<PublicationStatusCodeType>({value: source.status}); }
     else { this.status = null; }
+    if (source['_status']) {
+      if (this.status) { this.status.addExtendedProperties(source._status!); }
+      else { this.status = new fhir.FhirCode<PublicationStatusCodeType>(source._status as Partial<fhir.FhirCode>); }
+    }
     if (source['experimental']) { this.experimental = new fhir.FhirBoolean({value: source.experimental}); }
+    if (source['_experimental']) {
+      if (this.experimental) { this.experimental.addExtendedProperties(source._experimental!); }
+      else { this.experimental = new fhir.FhirBoolean(source._experimental as Partial<fhir.FhirBooleanArgs>); }
+    }
     if (source['date']) { this.date = new fhir.FhirDateTime({value: source.date}); }
+    if (source['_date']) {
+      if (this.date) { this.date.addExtendedProperties(source._date!); }
+      else { this.date = new fhir.FhirDateTime(source._date as Partial<fhir.FhirDateTimeArgs>); }
+    }
     if (source['publisher']) { this.publisher = new fhir.FhirString({value: source.publisher}); }
+    if (source['_publisher']) {
+      if (this.publisher) { this.publisher.addExtendedProperties(source._publisher!); }
+      else { this.publisher = new fhir.FhirString(source._publisher as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['contact']) { this.contact = source.contact.map((x) => new fhir.ContactDetail(x)); }
     else { this.contact = []; }
     if (source['description']) { this.description = new fhir.FhirMarkdown({value: source.description}); }
+    if (source['_description']) {
+      if (this.description) { this.description.addExtendedProperties(source._description!); }
+      else { this.description = new fhir.FhirMarkdown(source._description as Partial<fhir.FhirMarkdownArgs>); }
+    }
     if (source['useContext']) { this.useContext = source.useContext.map((x) => new fhir.UsageContext(x)); }
     else { this.useContext = []; }
     if (source['jurisdiction']) { this.jurisdiction = source.jurisdiction.map((x) => new fhir.CodeableConcept(x)); }
     else { this.jurisdiction = []; }
     if (source['purpose']) { this.purpose = new fhir.FhirMarkdown({value: source.purpose}); }
+    if (source['_purpose']) {
+      if (this.purpose) { this.purpose.addExtendedProperties(source._purpose!); }
+      else { this.purpose = new fhir.FhirMarkdown(source._purpose as Partial<fhir.FhirMarkdownArgs>); }
+    }
     if (source['copyright']) { this.copyright = new fhir.FhirMarkdown({value: source.copyright}); }
+    if (source['_copyright']) {
+      if (this.copyright) { this.copyright.addExtendedProperties(source._copyright!); }
+      else { this.copyright = new fhir.FhirMarkdown(source._copyright as Partial<fhir.FhirMarkdownArgs>); }
+    }
     if (source['keyword']) { this.keyword = source.keyword.map((x) => new fhir.Coding(x)); }
     else { this.keyword = []; }
     if (source['fhirVersion']) { this.fhirVersion = new fhir.FhirCode({value: source.fhirVersion}); }
+    if (source['_fhirVersion']) {
+      if (this.fhirVersion) { this.fhirVersion.addExtendedProperties(source._fhirVersion!); }
+      else { this.fhirVersion = new fhir.FhirCode(source._fhirVersion as Partial<fhir.FhirCodeArgs>); }
+    }
     if (source['mapping']) { this.mapping = source.mapping.map((x) => new fhir.StructureDefinitionMapping(x)); }
     else { this.mapping = []; }
     if (source['kind']) { this.kind = new fhir.FhirCode<StructureDefinitionKindCodeType>({value: source.kind}); }
     else { this.kind = null; }
+    if (source['_kind']) {
+      if (this.kind) { this.kind.addExtendedProperties(source._kind!); }
+      else { this.kind = new fhir.FhirCode<StructureDefinitionKindCodeType>(source._kind as Partial<fhir.FhirCode>); }
+    }
     if (source['abstract']) { this.abstract = new fhir.FhirBoolean({value: source.abstract}); }
     else { this.abstract = null; }
+    if (source['_abstract']) {
+      if (this.abstract) { this.abstract.addExtendedProperties(source._abstract!); }
+      else { this.abstract = new fhir.FhirBoolean(source._abstract as Partial<fhir.FhirBooleanArgs>); }
+    }
     if (source['context']) { this.context = source.context.map((x) => new fhir.StructureDefinitionContext(x)); }
     else { this.context = []; }
     if (source['contextInvariant']) { this.contextInvariant = source.contextInvariant.map((x) => new fhir.FhirString({value: x})); }
     else { this.contextInvariant = []; }
+    if (source['_contextInvariant']) {
+      source._contextInvariant.forEach((x,i) => {
+        if (this.contextInvariant.length >= i) { if (x) { this.contextInvariant[i].addExtendedProperties(x); } }
+        else { if (x) { this.contextInvariant.push(new fhir.FhirString(x as Partial<fhir.FhirStringArgs>)); } }
+      });
+    }
     if (source['type']) { this.type = new fhir.FhirUri({value: source.type}); }
     else { this.type = null; }
+    if (source['_type']) {
+      if (this.type) { this.type.addExtendedProperties(source._type!); }
+      else { this.type = new fhir.FhirUri(source._type as Partial<fhir.FhirUriArgs>); }
+    }
     if (source['baseDefinition']) { this.baseDefinition = new fhir.FhirCanonical({value: source.baseDefinition}); }
+    if (source['_baseDefinition']) {
+      if (this.baseDefinition) { this.baseDefinition.addExtendedProperties(source._baseDefinition!); }
+      else { this.baseDefinition = new fhir.FhirCanonical(source._baseDefinition as Partial<fhir.FhirCanonicalArgs>); }
+    }
     if (source['derivation']) { this.derivation = new fhir.FhirCode<TypeDerivationRuleCodeType>({value: source.derivation}); }
+    if (source['_derivation']) {
+      if (this.derivation) { this.derivation.addExtendedProperties(source._derivation!); }
+      else { this.derivation = new fhir.FhirCode<TypeDerivationRuleCodeType>(source._derivation as Partial<fhir.FhirCode>); }
+    }
     if (source['snapshot']) { this.snapshot = new fhir.StructureDefinitionSnapshot(source.snapshot); }
     if (source['differential']) { this.differential = new fhir.StructureDefinitionDifferential(source.differential); }
   }

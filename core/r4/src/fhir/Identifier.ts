@@ -22,6 +22,10 @@ export interface IdentifierArgs extends fhir.FhirElementArgs {
    */
   use?: fhir.FhirCode<IdentifierUseCodeType>|string|undefined;
   /**
+   * Extended properties for primitive element: Identifier.use
+   */
+  _use?:fhir.FhirElementArgs;
+  /**
    * This element deals only with general categories of identifiers.  It SHOULD not be used for codes that correspond 1..1 with the Identifier.system. Some identifiers may fall into multiple categories due to common usage.   Where the system is known, a type is unnecessary because the type is always part of the system definition. However systems often need to handle identifiers where the system is not known. There is not a 1:1 relationship between type and system, since many different systems have the same type.
    */
   type?: fhir.CodeableConceptArgs|undefined;
@@ -30,9 +34,17 @@ export interface IdentifierArgs extends fhir.FhirElementArgs {
    */
   system?: fhir.FhirUri|string|undefined;
   /**
+   * Extended properties for primitive element: Identifier.system
+   */
+  _system?:fhir.FhirElementArgs;
+  /**
    * If the value is a full URI, then the system SHALL be urn:ietf:rfc:3986.  The value's primary purpose is computational mapping.  As a result, it may be normalized for comparison purposes (e.g. removing non-significant whitespace, dashes, etc.)  A value formatted for human display can be conveyed using the [Rendered Value extension](extension-rendered-value.html). Identifier.value is to be treated as case sensitive unless knowledge of the Identifier.system allows the processer to be confident that non-case-sensitive processing is safe.
    */
   value?: fhir.FhirString|string|undefined;
+  /**
+   * Extended properties for primitive element: Identifier.value
+   */
+  _value?:fhir.FhirElementArgs;
   /**
    * Time period during which identifier is/was valid for use.
    */
@@ -81,9 +93,21 @@ export class Identifier extends fhir.FhirElement {
   constructor(source:Partial<IdentifierArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
     if (source['use']) { this.use = new fhir.FhirCode<IdentifierUseCodeType>({value: source.use}); }
+    if (source['_use']) {
+      if (this.use) { this.use.addExtendedProperties(source._use!); }
+      else { this.use = new fhir.FhirCode<IdentifierUseCodeType>(source._use as Partial<fhir.FhirCode>); }
+    }
     if (source['type']) { this.type = new fhir.CodeableConcept(source.type); }
     if (source['system']) { this.system = new fhir.FhirUri({value: source.system}); }
+    if (source['_system']) {
+      if (this.system) { this.system.addExtendedProperties(source._system!); }
+      else { this.system = new fhir.FhirUri(source._system as Partial<fhir.FhirUriArgs>); }
+    }
     if (source['value']) { this.value = new fhir.FhirString({value: source.value}); }
+    if (source['_value']) {
+      if (this.value) { this.value.addExtendedProperties(source._value!); }
+      else { this.value = new fhir.FhirString(source._value as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['period']) { this.period = new fhir.Period(source.period); }
     if (source['assigner']) { this.assigner = new fhir.Reference(source.assigner); }
   }

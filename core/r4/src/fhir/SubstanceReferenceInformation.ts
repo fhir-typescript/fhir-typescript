@@ -333,6 +333,10 @@ export interface SubstanceReferenceInformationArgs extends fhir.DomainResourceAr
    */
   comment?: fhir.FhirString|string|undefined;
   /**
+   * Extended properties for primitive element: SubstanceReferenceInformation.comment
+   */
+  _comment?:fhir.FhirElementArgs;
+  /**
    * Todo.
    */
   gene?: fhir.SubstanceReferenceInformationGeneArgs[]|undefined;
@@ -389,6 +393,10 @@ export class SubstanceReferenceInformation extends fhir.DomainResource {
     super(source, options);
     this.resourceType = 'SubstanceReferenceInformation';
     if (source['comment']) { this.comment = new fhir.FhirString({value: source.comment}); }
+    if (source['_comment']) {
+      if (this.comment) { this.comment.addExtendedProperties(source._comment!); }
+      else { this.comment = new fhir.FhirString(source._comment as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['gene']) { this.gene = source.gene.map((x) => new fhir.SubstanceReferenceInformationGene(x)); }
     else { this.gene = []; }
     if (source['geneElement']) { this.geneElement = source.geneElement.map((x) => new fhir.SubstanceReferenceInformationGeneElement(x)); }

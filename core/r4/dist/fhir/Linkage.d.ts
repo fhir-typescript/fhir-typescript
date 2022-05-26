@@ -9,6 +9,10 @@ export interface LinkageItemArgs extends fhir.BackboneElementArgs {
      */
     type: fhir.FhirCode<LinkageTypeCodeType> | string | undefined;
     /**
+     * Extended properties for primitive element: Linkage.item.type
+     */
+    _type?: fhir.FhirElementArgs;
+    /**
      * The resource instance being linked as part of the group.
      */
     resource: fhir.ReferenceArgs | null;
@@ -58,6 +62,10 @@ export interface LinkageArgs extends fhir.DomainResourceArgs {
      * If false, any asserted linkages should not be considered current/relevant/applicable.
      */
     active?: fhir.FhirBoolean | boolean | undefined;
+    /**
+     * Extended properties for primitive element: Linkage.active
+     */
+    _active?: fhir.FhirElementArgs;
     /**
      * Identifies the user or organization responsible for asserting the linkages as well as the user or organization who establishes the context in which the nature of each linkage is evaluated.
      */

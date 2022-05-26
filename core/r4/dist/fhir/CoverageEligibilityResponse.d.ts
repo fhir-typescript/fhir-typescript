@@ -105,13 +105,25 @@ export interface CoverageEligibilityResponseInsuranceItemArgs extends fhir.Backb
      */
     excluded?: fhir.FhirBoolean | boolean | undefined;
     /**
+     * Extended properties for primitive element: CoverageEligibilityResponse.insurance.item.excluded
+     */
+    _excluded?: fhir.FhirElementArgs;
+    /**
      * For example: MED01, or DENT2.
      */
     name?: fhir.FhirString | string | undefined;
     /**
+     * Extended properties for primitive element: CoverageEligibilityResponse.insurance.item.name
+     */
+    _name?: fhir.FhirElementArgs;
+    /**
      * For example 'DENT2 covers 100% of basic, 50% of major but excludes Ortho, Implants and Cosmetic services'.
      */
     description?: fhir.FhirString | string | undefined;
+    /**
+     * Extended properties for primitive element: CoverageEligibilityResponse.insurance.item.description
+     */
+    _description?: fhir.FhirElementArgs;
     /**
      * Is a flag to indicate whether the benefits refer to in-network providers or out-of-network providers.
      */
@@ -133,6 +145,10 @@ export interface CoverageEligibilityResponseInsuranceItemArgs extends fhir.Backb
      */
     authorizationRequired?: fhir.FhirBoolean | boolean | undefined;
     /**
+     * Extended properties for primitive element: CoverageEligibilityResponse.insurance.item.authorizationRequired
+     */
+    _authorizationRequired?: fhir.FhirElementArgs;
+    /**
      * Codes or comments regarding information or actions associated with the preauthorization.
      */
     authorizationSupporting?: fhir.CodeableConceptArgs[] | undefined;
@@ -140,6 +156,10 @@ export interface CoverageEligibilityResponseInsuranceItemArgs extends fhir.Backb
      * A web location for obtaining requirements or descriptive information regarding the preauthorization.
      */
     authorizationUrl?: fhir.FhirUri | string | undefined;
+    /**
+     * Extended properties for primitive element: CoverageEligibilityResponse.insurance.item.authorizationUrl
+     */
+    _authorizationUrl?: fhir.FhirElementArgs;
 }
 /**
  * Benefits and optionally current balances, and authorization details by category or service.
@@ -226,6 +246,10 @@ export interface CoverageEligibilityResponseInsuranceArgs extends fhir.BackboneE
      * Flag indicating if the coverage provided is inforce currently if no service date(s) specified or for the whole duration of the service dates.
      */
     inforce?: fhir.FhirBoolean | boolean | undefined;
+    /**
+     * Extended properties for primitive element: CoverageEligibilityResponse.insurance.inforce
+     */
+    _inforce?: fhir.FhirElementArgs;
     /**
      * The term of the benefits documented in this response.
      */
@@ -315,9 +339,17 @@ export interface CoverageEligibilityResponseArgs extends fhir.DomainResourceArgs
      */
     status: fhir.FhirCode<FmStatusCodeType> | string | undefined;
     /**
+     * Extended properties for primitive element: CoverageEligibilityResponse.status
+     */
+    _status?: fhir.FhirElementArgs;
+    /**
      * Code to specify whether requesting: prior authorization requirements for some service categories or billing codes; benefits for coverages specified or discovered; discovery and return of coverages for the patient; and/or validation that the specified coverage is in-force at the date/period specified or 'now' if not specified.
      */
     purpose: fhir.FhirCode<EligibilityresponsePurposeCodeType>[] | string[] | undefined;
+    /**
+     * Extended properties for primitive element: CoverageEligibilityResponse.purpose
+     */
+    _purpose?: (fhir.FhirElementArgs | null)[];
     /**
      * The party who is the beneficiary of the supplied coverage and for whom eligibility is sought.
      */
@@ -339,6 +371,10 @@ export interface CoverageEligibilityResponseArgs extends fhir.DomainResourceArgs
      */
     created: fhir.FhirDateTime | string | undefined;
     /**
+     * Extended properties for primitive element: CoverageEligibilityResponse.created
+     */
+    _created?: fhir.FhirElementArgs;
+    /**
      * Typically this field would be 1..1 where this party is responsible for the claim but not necessarily professionally responsible for the provision of the individual products and services listed below.
      */
     requestor?: fhir.ReferenceArgs | undefined;
@@ -351,9 +387,17 @@ export interface CoverageEligibilityResponseArgs extends fhir.DomainResourceArgs
      */
     outcome: fhir.FhirCode<RemittanceOutcomeCodeType> | string | undefined;
     /**
+     * Extended properties for primitive element: CoverageEligibilityResponse.outcome
+     */
+    _outcome?: fhir.FhirElementArgs;
+    /**
      * A human readable description of the status of the adjudication.
      */
     disposition?: fhir.FhirString | string | undefined;
+    /**
+     * Extended properties for primitive element: CoverageEligibilityResponse.disposition
+     */
+    _disposition?: fhir.FhirElementArgs;
     /**
      * The Insurer who issued the coverage in question and is the author of the response.
      */
@@ -366,6 +410,10 @@ export interface CoverageEligibilityResponseArgs extends fhir.DomainResourceArgs
      * A reference from the Insurer to which these services pertain to be used on further communication and as proof that the request occurred.
      */
     preAuthRef?: fhir.FhirString | string | undefined;
+    /**
+     * Extended properties for primitive element: CoverageEligibilityResponse.preAuthRef
+     */
+    _preAuthRef?: fhir.FhirElementArgs;
     /**
      * May be needed to identify specific jurisdictional forms.
      */

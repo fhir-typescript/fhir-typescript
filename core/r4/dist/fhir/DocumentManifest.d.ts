@@ -59,6 +59,10 @@ export interface DocumentManifestArgs extends fhir.DomainResourceArgs {
      */
     status: fhir.FhirCode<DocumentReferenceStatusCodeType> | string | undefined;
     /**
+     * Extended properties for primitive element: DocumentManifest.status
+     */
+    _status?: fhir.FhirElementArgs;
+    /**
      * Specifies the kind of this set of documents (e.g. Patient Summary, Discharge Summary, Prescription, etc.). The type of a set of documents may be the same as one of the documents in it - especially if there is only one - but it may be wider.
      */
     type?: fhir.CodeableConceptArgs | undefined;
@@ -70,6 +74,10 @@ export interface DocumentManifestArgs extends fhir.DomainResourceArgs {
      * Creation time is used for tracking, organizing versions and searching. This is the creation time of the document set, not the documents on which it is based.
      */
     created?: fhir.FhirDateTime | string | undefined;
+    /**
+     * Extended properties for primitive element: DocumentManifest.created
+     */
+    _created?: fhir.FhirElementArgs;
     /**
      * Not necessarily who did the actual data entry (i.e. typist) or who was the source (informant).
      */
@@ -83,9 +91,17 @@ export interface DocumentManifestArgs extends fhir.DomainResourceArgs {
      */
     source?: fhir.FhirUri | string | undefined;
     /**
+     * Extended properties for primitive element: DocumentManifest.source
+     */
+    _source?: fhir.FhirElementArgs;
+    /**
      * What the document is about, rather than a terse summary of the document. It is commonly the case that records do not have a title and are collectively referred to by the display name of Record code (e.g. a "consultation" or "progress note").
      */
     description?: fhir.FhirString | string | undefined;
+    /**
+     * Extended properties for primitive element: DocumentManifest.description
+     */
+    _description?: fhir.FhirElementArgs;
     /**
      * When used for XDS the intended focus of the DocumentManifest is for the reference to target to be a set of DocumentReference Resources. The reference is to "Any" to support EN 13606 usage, where an extract is DocumentManifest that references  List and Composition resources.
      */

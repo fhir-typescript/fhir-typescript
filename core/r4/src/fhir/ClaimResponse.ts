@@ -22,9 +22,9 @@ import { ClaimModifiersCodings, ClaimModifiersCodingType,} from '../fhirValueSet
 // @ts-ignore
 import { ClaimModifiersCodes,  ClaimModifiersCodeType } from '../fhirValueSets/ClaimModifiersCodes.js';
 // @ts-ignore
-import { ExProgramCodeCodings, ExProgramCodeCodingType,} from '../fhirValueSets/ExProgramCodeCodings.js';
+import { ExProgramCodings, ExProgramCodingType,} from '../fhirValueSets/ExProgramCodings.js';
 // @ts-ignore
-import { ExProgramCodeCodes,  ExProgramCodeCodeType } from '../fhirValueSets/ExProgramCodeCodes.js';
+import { ExProgramCodes,  ExProgramCodeType } from '../fhirValueSets/ExProgramCodes.js';
 // @ts-ignore
 import { ToothCodings, ToothCodingType,} from '../fhirValueSets/ToothCodings.js';
 // @ts-ignore
@@ -105,6 +105,10 @@ export interface ClaimResponseItemAdjudicationArgs extends fhir.BackboneElementA
    * For example: eligible percentage or co-payment percentage.
    */
   value?: fhir.FhirDecimal|number|undefined;
+  /**
+   * Extended properties for primitive element: ClaimResponse.item.adjudication.value
+   */
+  _value?:fhir.FhirElementArgs;
 }
 
 /**
@@ -141,6 +145,10 @@ export class ClaimResponseItemAdjudication extends fhir.BackboneElement {
     if (source['reason']) { this.reason = new fhir.CodeableConcept(source.reason); }
     if (source['amount']) { this.amount = new fhir.Money(source.amount); }
     if (source['value']) { this.value = new fhir.FhirDecimal({value: source.value}); }
+    if (source['_value']) {
+      if (this.value) { this.value.addExtendedProperties(source._value!); }
+      else { this.value = new fhir.FhirDecimal(source._value as Partial<fhir.FhirDecimalArgs>); }
+    }
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -166,9 +174,17 @@ export interface ClaimResponseItemDetailSubDetailArgs extends fhir.BackboneEleme
    */
   subDetailSequence: fhir.FhirPositiveInt|number|undefined;
   /**
+   * Extended properties for primitive element: ClaimResponse.item.detail.subDetail.subDetailSequence
+   */
+  _subDetailSequence?:fhir.FhirElementArgs;
+  /**
    * The numbers associated with notes below which apply to the adjudication of this item.
    */
   noteNumber?: fhir.FhirPositiveInt[]|number[]|undefined;
+  /**
+   * Extended properties for primitive element: ClaimResponse.item.detail.subDetail.noteNumber
+   */
+  _noteNumber?:(fhir.FhirElementArgs|null)[];
   /**
    * The adjudication results.
    */
@@ -202,8 +218,18 @@ export class ClaimResponseItemDetailSubDetail extends fhir.BackboneElement {
     super(source, options);
     if (source['subDetailSequence']) { this.subDetailSequence = new fhir.FhirPositiveInt({value: source.subDetailSequence}); }
     else { this.subDetailSequence = null; }
+    if (source['_subDetailSequence']) {
+      if (this.subDetailSequence) { this.subDetailSequence.addExtendedProperties(source._subDetailSequence!); }
+      else { this.subDetailSequence = new fhir.FhirPositiveInt(source._subDetailSequence as Partial<fhir.FhirPositiveIntArgs>); }
+    }
     if (source['noteNumber']) { this.noteNumber = source.noteNumber.map((x) => new fhir.FhirPositiveInt({value: x})); }
     else { this.noteNumber = []; }
+    if (source['_noteNumber']) {
+      source._noteNumber.forEach((x,i) => {
+        if (this.noteNumber.length >= i) { if (x) { this.noteNumber[i].addExtendedProperties(x); } }
+        else { if (x) { this.noteNumber.push(new fhir.FhirPositiveInt(x as Partial<fhir.FhirPositiveIntArgs>)); } }
+      });
+    }
     if (source['adjudication']) { this.adjudication = source.adjudication.map((x) => new fhir.ClaimResponseItemAdjudication(x)); }
     else { this.adjudication = []; }
   }
@@ -230,9 +256,17 @@ export interface ClaimResponseItemDetailArgs extends fhir.BackboneElementArgs {
    */
   detailSequence: fhir.FhirPositiveInt|number|undefined;
   /**
+   * Extended properties for primitive element: ClaimResponse.item.detail.detailSequence
+   */
+  _detailSequence?:fhir.FhirElementArgs;
+  /**
    * The numbers associated with notes below which apply to the adjudication of this item.
    */
   noteNumber?: fhir.FhirPositiveInt[]|number[]|undefined;
+  /**
+   * Extended properties for primitive element: ClaimResponse.item.detail.noteNumber
+   */
+  _noteNumber?:(fhir.FhirElementArgs|null)[];
   /**
    * The adjudication results.
    */
@@ -274,8 +308,18 @@ export class ClaimResponseItemDetail extends fhir.BackboneElement {
     super(source, options);
     if (source['detailSequence']) { this.detailSequence = new fhir.FhirPositiveInt({value: source.detailSequence}); }
     else { this.detailSequence = null; }
+    if (source['_detailSequence']) {
+      if (this.detailSequence) { this.detailSequence.addExtendedProperties(source._detailSequence!); }
+      else { this.detailSequence = new fhir.FhirPositiveInt(source._detailSequence as Partial<fhir.FhirPositiveIntArgs>); }
+    }
     if (source['noteNumber']) { this.noteNumber = source.noteNumber.map((x) => new fhir.FhirPositiveInt({value: x})); }
     else { this.noteNumber = []; }
+    if (source['_noteNumber']) {
+      source._noteNumber.forEach((x,i) => {
+        if (this.noteNumber.length >= i) { if (x) { this.noteNumber[i].addExtendedProperties(x); } }
+        else { if (x) { this.noteNumber.push(new fhir.FhirPositiveInt(x as Partial<fhir.FhirPositiveIntArgs>)); } }
+      });
+    }
     if (source['adjudication']) { this.adjudication = source.adjudication.map((x) => new fhir.ClaimResponseItemAdjudication(x)); }
     else { this.adjudication = []; }
     if (source['subDetail']) { this.subDetail = source.subDetail.map((x) => new fhir.ClaimResponseItemDetailSubDetail(x)); }
@@ -312,9 +356,17 @@ export interface ClaimResponseItemArgs extends fhir.BackboneElementArgs {
    */
   itemSequence: fhir.FhirPositiveInt|number|undefined;
   /**
+   * Extended properties for primitive element: ClaimResponse.item.itemSequence
+   */
+  _itemSequence?:fhir.FhirElementArgs;
+  /**
    * The numbers associated with notes below which apply to the adjudication of this item.
    */
   noteNumber?: fhir.FhirPositiveInt[]|number[]|undefined;
+  /**
+   * Extended properties for primitive element: ClaimResponse.item.noteNumber
+   */
+  _noteNumber?:(fhir.FhirElementArgs|null)[];
   /**
    * If this item is a group then the values here are a summary of the adjudication of the detail items. If this item is a simple product or service then this is the result of the adjudication of this item.
    */
@@ -356,8 +408,18 @@ export class ClaimResponseItem extends fhir.BackboneElement {
     super(source, options);
     if (source['itemSequence']) { this.itemSequence = new fhir.FhirPositiveInt({value: source.itemSequence}); }
     else { this.itemSequence = null; }
+    if (source['_itemSequence']) {
+      if (this.itemSequence) { this.itemSequence.addExtendedProperties(source._itemSequence!); }
+      else { this.itemSequence = new fhir.FhirPositiveInt(source._itemSequence as Partial<fhir.FhirPositiveIntArgs>); }
+    }
     if (source['noteNumber']) { this.noteNumber = source.noteNumber.map((x) => new fhir.FhirPositiveInt({value: x})); }
     else { this.noteNumber = []; }
+    if (source['_noteNumber']) {
+      source._noteNumber.forEach((x,i) => {
+        if (this.noteNumber.length >= i) { if (x) { this.noteNumber[i].addExtendedProperties(x); } }
+        else { if (x) { this.noteNumber.push(new fhir.FhirPositiveInt(x as Partial<fhir.FhirPositiveIntArgs>)); } }
+      });
+    }
     if (source['adjudication']) { this.adjudication = source.adjudication.map((x) => new fhir.ClaimResponseItemAdjudication(x)); }
     else { this.adjudication = []; }
     if (source['detail']) { this.detail = source.detail.map((x) => new fhir.ClaimResponseItemDetail(x)); }
@@ -410,6 +472,10 @@ export interface ClaimResponseAddItemDetailSubDetailArgs extends fhir.BackboneEl
    */
   factor?: fhir.FhirDecimal|number|undefined;
   /**
+   * Extended properties for primitive element: ClaimResponse.addItem.detail.subDetail.factor
+   */
+  _factor?:fhir.FhirElementArgs;
+  /**
    * For example, the formula: quantity * unitPrice * factor  = net. Quantity and factor are assumed to be 1 if not supplied.
    */
   net?: fhir.MoneyArgs|undefined;
@@ -417,6 +483,10 @@ export interface ClaimResponseAddItemDetailSubDetailArgs extends fhir.BackboneEl
    * The numbers associated with notes below which apply to the adjudication of this item.
    */
   noteNumber?: fhir.FhirPositiveInt[]|number[]|undefined;
+  /**
+   * Extended properties for primitive element: ClaimResponse.addItem.detail.subDetail.noteNumber
+   */
+  _noteNumber?:(fhir.FhirElementArgs|null)[];
   /**
    * The adjudication results.
    */
@@ -475,9 +545,19 @@ export class ClaimResponseAddItemDetailSubDetail extends fhir.BackboneElement {
     if (source['quantity']) { this.quantity = new fhir.Quantity(source.quantity); }
     if (source['unitPrice']) { this.unitPrice = new fhir.Money(source.unitPrice); }
     if (source['factor']) { this.factor = new fhir.FhirDecimal({value: source.factor}); }
+    if (source['_factor']) {
+      if (this.factor) { this.factor.addExtendedProperties(source._factor!); }
+      else { this.factor = new fhir.FhirDecimal(source._factor as Partial<fhir.FhirDecimalArgs>); }
+    }
     if (source['net']) { this.net = new fhir.Money(source.net); }
     if (source['noteNumber']) { this.noteNumber = source.noteNumber.map((x) => new fhir.FhirPositiveInt({value: x})); }
     else { this.noteNumber = []; }
+    if (source['_noteNumber']) {
+      source._noteNumber.forEach((x,i) => {
+        if (this.noteNumber.length >= i) { if (x) { this.noteNumber[i].addExtendedProperties(x); } }
+        else { if (x) { this.noteNumber.push(new fhir.FhirPositiveInt(x as Partial<fhir.FhirPositiveIntArgs>)); } }
+      });
+    }
     if (source['adjudication']) { this.adjudication = source.adjudication.map((x) => new fhir.ClaimResponseItemAdjudication(x)); }
     else { this.adjudication = []; }
   }
@@ -532,6 +612,10 @@ export interface ClaimResponseAddItemDetailArgs extends fhir.BackboneElementArgs
    */
   factor?: fhir.FhirDecimal|number|undefined;
   /**
+   * Extended properties for primitive element: ClaimResponse.addItem.detail.factor
+   */
+  _factor?:fhir.FhirElementArgs;
+  /**
    * For example, the formula: quantity * unitPrice * factor  = net. Quantity and factor are assumed to be 1 if not supplied.
    */
   net?: fhir.MoneyArgs|undefined;
@@ -539,6 +623,10 @@ export interface ClaimResponseAddItemDetailArgs extends fhir.BackboneElementArgs
    * The numbers associated with notes below which apply to the adjudication of this item.
    */
   noteNumber?: fhir.FhirPositiveInt[]|number[]|undefined;
+  /**
+   * Extended properties for primitive element: ClaimResponse.addItem.detail.noteNumber
+   */
+  _noteNumber?:(fhir.FhirElementArgs|null)[];
   /**
    * The adjudication results.
    */
@@ -605,9 +693,19 @@ export class ClaimResponseAddItemDetail extends fhir.BackboneElement {
     if (source['quantity']) { this.quantity = new fhir.Quantity(source.quantity); }
     if (source['unitPrice']) { this.unitPrice = new fhir.Money(source.unitPrice); }
     if (source['factor']) { this.factor = new fhir.FhirDecimal({value: source.factor}); }
+    if (source['_factor']) {
+      if (this.factor) { this.factor.addExtendedProperties(source._factor!); }
+      else { this.factor = new fhir.FhirDecimal(source._factor as Partial<fhir.FhirDecimalArgs>); }
+    }
     if (source['net']) { this.net = new fhir.Money(source.net); }
     if (source['noteNumber']) { this.noteNumber = source.noteNumber.map((x) => new fhir.FhirPositiveInt({value: x})); }
     else { this.noteNumber = []; }
+    if (source['_noteNumber']) {
+      source._noteNumber.forEach((x,i) => {
+        if (this.noteNumber.length >= i) { if (x) { this.noteNumber[i].addExtendedProperties(x); } }
+        else { if (x) { this.noteNumber.push(new fhir.FhirPositiveInt(x as Partial<fhir.FhirPositiveIntArgs>)); } }
+      });
+    }
     if (source['adjudication']) { this.adjudication = source.adjudication.map((x) => new fhir.ClaimResponseItemAdjudication(x)); }
     else { this.adjudication = []; }
     if (source['subDetail']) { this.subDetail = source.subDetail.map((x) => new fhir.ClaimResponseAddItemDetailSubDetail(x)); }
@@ -649,13 +747,25 @@ export interface ClaimResponseAddItemArgs extends fhir.BackboneElementArgs {
    */
   itemSequence?: fhir.FhirPositiveInt[]|number[]|undefined;
   /**
+   * Extended properties for primitive element: ClaimResponse.addItem.itemSequence
+   */
+  _itemSequence?:(fhir.FhirElementArgs|null)[];
+  /**
    * The sequence number of the details within the claim item which this line is intended to replace.
    */
   detailSequence?: fhir.FhirPositiveInt[]|number[]|undefined;
   /**
+   * Extended properties for primitive element: ClaimResponse.addItem.detailSequence
+   */
+  _detailSequence?:(fhir.FhirElementArgs|null)[];
+  /**
    * The sequence number of the sub-details within the details within the claim item which this line is intended to replace.
    */
   subdetailSequence?: fhir.FhirPositiveInt[]|number[]|undefined;
+  /**
+   * Extended properties for primitive element: ClaimResponse.addItem.subdetailSequence
+   */
+  _subdetailSequence?:(fhir.FhirElementArgs|null)[];
   /**
    * The providers who are authorized for the services rendered to the patient.
    */
@@ -713,6 +823,10 @@ export interface ClaimResponseAddItemArgs extends fhir.BackboneElementArgs {
    */
   factor?: fhir.FhirDecimal|number|undefined;
   /**
+   * Extended properties for primitive element: ClaimResponse.addItem.factor
+   */
+  _factor?:fhir.FhirElementArgs;
+  /**
    * For example, the formula: quantity * unitPrice * factor  = net. Quantity and factor are assumed to be 1 if not supplied.
    */
   net?: fhir.MoneyArgs|undefined;
@@ -728,6 +842,10 @@ export interface ClaimResponseAddItemArgs extends fhir.BackboneElementArgs {
    * The numbers associated with notes below which apply to the adjudication of this item.
    */
   noteNumber?: fhir.FhirPositiveInt[]|number[]|undefined;
+  /**
+   * Extended properties for primitive element: ClaimResponse.addItem.noteNumber
+   */
+  _noteNumber?:(fhir.FhirElementArgs|null)[];
   /**
    * The adjudication results.
    */
@@ -833,10 +951,28 @@ export class ClaimResponseAddItem extends fhir.BackboneElement {
     super(source, options);
     if (source['itemSequence']) { this.itemSequence = source.itemSequence.map((x) => new fhir.FhirPositiveInt({value: x})); }
     else { this.itemSequence = []; }
+    if (source['_itemSequence']) {
+      source._itemSequence.forEach((x,i) => {
+        if (this.itemSequence.length >= i) { if (x) { this.itemSequence[i].addExtendedProperties(x); } }
+        else { if (x) { this.itemSequence.push(new fhir.FhirPositiveInt(x as Partial<fhir.FhirPositiveIntArgs>)); } }
+      });
+    }
     if (source['detailSequence']) { this.detailSequence = source.detailSequence.map((x) => new fhir.FhirPositiveInt({value: x})); }
     else { this.detailSequence = []; }
+    if (source['_detailSequence']) {
+      source._detailSequence.forEach((x,i) => {
+        if (this.detailSequence.length >= i) { if (x) { this.detailSequence[i].addExtendedProperties(x); } }
+        else { if (x) { this.detailSequence.push(new fhir.FhirPositiveInt(x as Partial<fhir.FhirPositiveIntArgs>)); } }
+      });
+    }
     if (source['subdetailSequence']) { this.subdetailSequence = source.subdetailSequence.map((x) => new fhir.FhirPositiveInt({value: x})); }
     else { this.subdetailSequence = []; }
+    if (source['_subdetailSequence']) {
+      source._subdetailSequence.forEach((x,i) => {
+        if (this.subdetailSequence.length >= i) { if (x) { this.subdetailSequence[i].addExtendedProperties(x); } }
+        else { if (x) { this.subdetailSequence.push(new fhir.FhirPositiveInt(x as Partial<fhir.FhirPositiveIntArgs>)); } }
+      });
+    }
     if (source['provider']) { this.provider = source.provider.map((x) => new fhir.Reference(x)); }
     else { this.provider = []; }
     if (source['productOrService']) { this.productOrService = new fhir.CodeableConcept(source.productOrService); }
@@ -855,12 +991,22 @@ export class ClaimResponseAddItem extends fhir.BackboneElement {
     if (source['quantity']) { this.quantity = new fhir.Quantity(source.quantity); }
     if (source['unitPrice']) { this.unitPrice = new fhir.Money(source.unitPrice); }
     if (source['factor']) { this.factor = new fhir.FhirDecimal({value: source.factor}); }
+    if (source['_factor']) {
+      if (this.factor) { this.factor.addExtendedProperties(source._factor!); }
+      else { this.factor = new fhir.FhirDecimal(source._factor as Partial<fhir.FhirDecimalArgs>); }
+    }
     if (source['net']) { this.net = new fhir.Money(source.net); }
     if (source['bodySite']) { this.bodySite = new fhir.CodeableConcept(source.bodySite); }
     if (source['subSite']) { this.subSite = source.subSite.map((x) => new fhir.CodeableConcept(x)); }
     else { this.subSite = []; }
     if (source['noteNumber']) { this.noteNumber = source.noteNumber.map((x) => new fhir.FhirPositiveInt({value: x})); }
     else { this.noteNumber = []; }
+    if (source['_noteNumber']) {
+      source._noteNumber.forEach((x,i) => {
+        if (this.noteNumber.length >= i) { if (x) { this.noteNumber[i].addExtendedProperties(x); } }
+        else { if (x) { this.noteNumber.push(new fhir.FhirPositiveInt(x as Partial<fhir.FhirPositiveIntArgs>)); } }
+      });
+    }
     if (source['adjudication']) { this.adjudication = source.adjudication.map((x) => new fhir.ClaimResponseItemAdjudication(x)); }
     else { this.adjudication = []; }
     if (source['detail']) { this.detail = source.detail.map((x) => new fhir.ClaimResponseAddItemDetail(x)); }
@@ -977,6 +1123,10 @@ export interface ClaimResponsePaymentArgs extends fhir.BackboneElementArgs {
    */
   date?: fhir.FhirDate|string|undefined;
   /**
+   * Extended properties for primitive element: ClaimResponse.payment.date
+   */
+  _date?:fhir.FhirElementArgs;
+  /**
    * Benefits payable less any payment adjustment.
    */
   amount: fhir.MoneyArgs|null;
@@ -1028,6 +1178,10 @@ export class ClaimResponsePayment extends fhir.BackboneElement {
     if (source['adjustment']) { this.adjustment = new fhir.Money(source.adjustment); }
     if (source['adjustmentReason']) { this.adjustmentReason = new fhir.CodeableConcept(source.adjustmentReason); }
     if (source['date']) { this.date = new fhir.FhirDate({value: source.date}); }
+    if (source['_date']) {
+      if (this.date) { this.date.addExtendedProperties(source._date!); }
+      else { this.date = new fhir.FhirDate(source._date as Partial<fhir.FhirDateArgs>); }
+    }
     if (source['amount']) { this.amount = new fhir.Money(source.amount); }
     else { this.amount = null; }
     if (source['identifier']) { this.identifier = new fhir.Identifier(source.identifier); }
@@ -1061,13 +1215,25 @@ export interface ClaimResponseProcessNoteArgs extends fhir.BackboneElementArgs {
    */
   number?: fhir.FhirPositiveInt|number|undefined;
   /**
+   * Extended properties for primitive element: ClaimResponse.processNote.number
+   */
+  _number?:fhir.FhirElementArgs;
+  /**
    * The business purpose of the note text.
    */
   type?: fhir.FhirCode<NoteTypeCodeType>|string|undefined;
   /**
+   * Extended properties for primitive element: ClaimResponse.processNote.type
+   */
+  _type?:fhir.FhirElementArgs;
+  /**
    * The explanation or description associated with the processing.
    */
   text: fhir.FhirString|string|undefined;
+  /**
+   * Extended properties for primitive element: ClaimResponse.processNote.text
+   */
+  _text?:fhir.FhirElementArgs;
   /**
    * Only required if the language is different from the resource language.
    */
@@ -1104,9 +1270,21 @@ export class ClaimResponseProcessNote extends fhir.BackboneElement {
   constructor(source:Partial<ClaimResponseProcessNoteArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
     if (source['number']) { this.number = new fhir.FhirPositiveInt({value: source.number}); }
+    if (source['_number']) {
+      if (this.number) { this.number.addExtendedProperties(source._number!); }
+      else { this.number = new fhir.FhirPositiveInt(source._number as Partial<fhir.FhirPositiveIntArgs>); }
+    }
     if (source['type']) { this.type = new fhir.FhirCode<NoteTypeCodeType>({value: source.type}); }
+    if (source['_type']) {
+      if (this.type) { this.type.addExtendedProperties(source._type!); }
+      else { this.type = new fhir.FhirCode<NoteTypeCodeType>(source._type as Partial<fhir.FhirCode>); }
+    }
     if (source['text']) { this.text = new fhir.FhirString({value: source.text}); }
     else { this.text = null; }
+    if (source['_text']) {
+      if (this.text) { this.text.addExtendedProperties(source._text!); }
+      else { this.text = new fhir.FhirString(source._text as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['language']) { this.language = new fhir.CodeableConcept(source.language); }
   }
   /**
@@ -1148,9 +1326,17 @@ export interface ClaimResponseInsuranceArgs extends fhir.BackboneElementArgs {
    */
   sequence: fhir.FhirPositiveInt|number|undefined;
   /**
+   * Extended properties for primitive element: ClaimResponse.insurance.sequence
+   */
+  _sequence?:fhir.FhirElementArgs;
+  /**
    * A patient may (will) have multiple insurance policies which provide reimbursement for healthcare services and products. For example a person may also be covered by their spouse's policy and both appear in the list (and may be from the same insurer). This flag will be set to true for only one of the listed policies and that policy will be used for adjudicating this claim. Other claims would be created to request adjudication against the other listed policies.
    */
   focal: fhir.FhirBoolean|boolean|undefined;
+  /**
+   * Extended properties for primitive element: ClaimResponse.insurance.focal
+   */
+  _focal?:fhir.FhirElementArgs;
   /**
    * Reference to the insurance card level information contained in the Coverage resource. The coverage issuing insurer will use these details to locate the patient's actual coverage within the insurer's information system.
    */
@@ -1159,6 +1345,10 @@ export interface ClaimResponseInsuranceArgs extends fhir.BackboneElementArgs {
    * A business agreement number established between the provider and the insurer for special business processing purposes.
    */
   businessArrangement?: fhir.FhirString|string|undefined;
+  /**
+   * Extended properties for primitive element: ClaimResponse.insurance.businessArrangement
+   */
+  _businessArrangement?:fhir.FhirElementArgs;
   /**
    * Must not be specified when 'focal=true' for this insurance.
    */
@@ -1200,11 +1390,23 @@ export class ClaimResponseInsurance extends fhir.BackboneElement {
     super(source, options);
     if (source['sequence']) { this.sequence = new fhir.FhirPositiveInt({value: source.sequence}); }
     else { this.sequence = null; }
+    if (source['_sequence']) {
+      if (this.sequence) { this.sequence.addExtendedProperties(source._sequence!); }
+      else { this.sequence = new fhir.FhirPositiveInt(source._sequence as Partial<fhir.FhirPositiveIntArgs>); }
+    }
     if (source['focal']) { this.focal = new fhir.FhirBoolean({value: source.focal}); }
     else { this.focal = null; }
+    if (source['_focal']) {
+      if (this.focal) { this.focal.addExtendedProperties(source._focal!); }
+      else { this.focal = new fhir.FhirBoolean(source._focal as Partial<fhir.FhirBooleanArgs>); }
+    }
     if (source['coverage']) { this.coverage = new fhir.Reference(source.coverage); }
     else { this.coverage = null; }
     if (source['businessArrangement']) { this.businessArrangement = new fhir.FhirString({value: source.businessArrangement}); }
+    if (source['_businessArrangement']) {
+      if (this.businessArrangement) { this.businessArrangement.addExtendedProperties(source._businessArrangement!); }
+      else { this.businessArrangement = new fhir.FhirString(source._businessArrangement as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['claimResponse']) { this.claimResponse = new fhir.Reference(source.claimResponse); }
   }
   /**
@@ -1238,13 +1440,25 @@ export interface ClaimResponseErrorArgs extends fhir.BackboneElementArgs {
    */
   itemSequence?: fhir.FhirPositiveInt|number|undefined;
   /**
+   * Extended properties for primitive element: ClaimResponse.error.itemSequence
+   */
+  _itemSequence?:fhir.FhirElementArgs;
+  /**
    * The sequence number of the detail within the line item submitted which contains the error. This value is omitted when the error occurs outside of the item structure.
    */
   detailSequence?: fhir.FhirPositiveInt|number|undefined;
   /**
+   * Extended properties for primitive element: ClaimResponse.error.detailSequence
+   */
+  _detailSequence?:fhir.FhirElementArgs;
+  /**
    * The sequence number of the sub-detail within the detail within the line item submitted which contains the error. This value is omitted when the error occurs outside of the item structure.
    */
   subDetailSequence?: fhir.FhirPositiveInt|number|undefined;
+  /**
+   * Extended properties for primitive element: ClaimResponse.error.subDetailSequence
+   */
+  _subDetailSequence?:fhir.FhirElementArgs;
   /**
    * An error code, from a specified code system, which details why the claim could not be adjudicated.
    */
@@ -1281,8 +1495,20 @@ export class ClaimResponseError extends fhir.BackboneElement {
   constructor(source:Partial<ClaimResponseErrorArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
     if (source['itemSequence']) { this.itemSequence = new fhir.FhirPositiveInt({value: source.itemSequence}); }
+    if (source['_itemSequence']) {
+      if (this.itemSequence) { this.itemSequence.addExtendedProperties(source._itemSequence!); }
+      else { this.itemSequence = new fhir.FhirPositiveInt(source._itemSequence as Partial<fhir.FhirPositiveIntArgs>); }
+    }
     if (source['detailSequence']) { this.detailSequence = new fhir.FhirPositiveInt({value: source.detailSequence}); }
+    if (source['_detailSequence']) {
+      if (this.detailSequence) { this.detailSequence.addExtendedProperties(source._detailSequence!); }
+      else { this.detailSequence = new fhir.FhirPositiveInt(source._detailSequence as Partial<fhir.FhirPositiveIntArgs>); }
+    }
     if (source['subDetailSequence']) { this.subDetailSequence = new fhir.FhirPositiveInt({value: source.subDetailSequence}); }
+    if (source['_subDetailSequence']) {
+      if (this.subDetailSequence) { this.subDetailSequence.addExtendedProperties(source._subDetailSequence!); }
+      else { this.subDetailSequence = new fhir.FhirPositiveInt(source._subDetailSequence as Partial<fhir.FhirPositiveIntArgs>); }
+    }
     if (source['code']) { this.code = new fhir.CodeableConcept(source.code); }
     else { this.code = null; }
   }
@@ -1318,6 +1544,10 @@ export interface ClaimResponseArgs extends fhir.DomainResourceArgs {
    */
   status: fhir.FhirCode<FmStatusCodeType>|string|undefined;
   /**
+   * Extended properties for primitive element: ClaimResponse.status
+   */
+  _status?:fhir.FhirElementArgs;
+  /**
    * This may contain the local bill type codes, for example the US UB-04 bill type code or the CMS bill type.
    */
   type: fhir.CodeableConceptArgs|null;
@@ -1330,6 +1560,10 @@ export interface ClaimResponseArgs extends fhir.DomainResourceArgs {
    */
   use: fhir.FhirCode<ClaimUseCodeType>|string|undefined;
   /**
+   * Extended properties for primitive element: ClaimResponse.use
+   */
+  _use?:fhir.FhirElementArgs;
+  /**
    * The party to whom the professional services and/or products have been supplied or are being considered and for whom actual for facast reimbursement is sought.
    */
   patient: fhir.ReferenceArgs|null;
@@ -1337,6 +1571,10 @@ export interface ClaimResponseArgs extends fhir.DomainResourceArgs {
    * The date this resource was created.
    */
   created: fhir.FhirDateTime|string|undefined;
+  /**
+   * Extended properties for primitive element: ClaimResponse.created
+   */
+  _created?:fhir.FhirElementArgs;
   /**
    * The party responsible for authorization, adjudication and reimbursement.
    */
@@ -1354,13 +1592,25 @@ export interface ClaimResponseArgs extends fhir.DomainResourceArgs {
    */
   outcome: fhir.FhirCode<RemittanceOutcomeCodeType>|string|undefined;
   /**
+   * Extended properties for primitive element: ClaimResponse.outcome
+   */
+  _outcome?:fhir.FhirElementArgs;
+  /**
    * A human readable description of the status of the adjudication.
    */
   disposition?: fhir.FhirString|string|undefined;
   /**
+   * Extended properties for primitive element: ClaimResponse.disposition
+   */
+  _disposition?:fhir.FhirElementArgs;
+  /**
    * This value is only present on preauthorization adjudications.
    */
   preAuthRef?: fhir.FhirString|string|undefined;
+  /**
+   * Extended properties for primitive element: ClaimResponse.preAuthRef
+   */
+  _preAuthRef?:fhir.FhirElementArgs;
   /**
    * The time frame during which this authorization is effective.
    */
@@ -1549,23 +1799,47 @@ export class ClaimResponse extends fhir.DomainResource {
     else { this.identifier = []; }
     if (source['status']) { this.status = new fhir.FhirCode<FmStatusCodeType>({value: source.status}); }
     else { this.status = null; }
+    if (source['_status']) {
+      if (this.status) { this.status.addExtendedProperties(source._status!); }
+      else { this.status = new fhir.FhirCode<FmStatusCodeType>(source._status as Partial<fhir.FhirCode>); }
+    }
     if (source['type']) { this.type = new fhir.CodeableConcept(source.type); }
     else { this.type = null; }
     if (source['subType']) { this.subType = new fhir.CodeableConcept(source.subType); }
     if (source['use']) { this.use = new fhir.FhirCode<ClaimUseCodeType>({value: source.use}); }
     else { this.use = null; }
+    if (source['_use']) {
+      if (this.use) { this.use.addExtendedProperties(source._use!); }
+      else { this.use = new fhir.FhirCode<ClaimUseCodeType>(source._use as Partial<fhir.FhirCode>); }
+    }
     if (source['patient']) { this.patient = new fhir.Reference(source.patient); }
     else { this.patient = null; }
     if (source['created']) { this.created = new fhir.FhirDateTime({value: source.created}); }
     else { this.created = null; }
+    if (source['_created']) {
+      if (this.created) { this.created.addExtendedProperties(source._created!); }
+      else { this.created = new fhir.FhirDateTime(source._created as Partial<fhir.FhirDateTimeArgs>); }
+    }
     if (source['insurer']) { this.insurer = new fhir.Reference(source.insurer); }
     else { this.insurer = null; }
     if (source['requestor']) { this.requestor = new fhir.Reference(source.requestor); }
     if (source['request']) { this.request = new fhir.Reference(source.request); }
     if (source['outcome']) { this.outcome = new fhir.FhirCode<RemittanceOutcomeCodeType>({value: source.outcome}); }
     else { this.outcome = null; }
+    if (source['_outcome']) {
+      if (this.outcome) { this.outcome.addExtendedProperties(source._outcome!); }
+      else { this.outcome = new fhir.FhirCode<RemittanceOutcomeCodeType>(source._outcome as Partial<fhir.FhirCode>); }
+    }
     if (source['disposition']) { this.disposition = new fhir.FhirString({value: source.disposition}); }
+    if (source['_disposition']) {
+      if (this.disposition) { this.disposition.addExtendedProperties(source._disposition!); }
+      else { this.disposition = new fhir.FhirString(source._disposition as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['preAuthRef']) { this.preAuthRef = new fhir.FhirString({value: source.preAuthRef}); }
+    if (source['_preAuthRef']) {
+      if (this.preAuthRef) { this.preAuthRef.addExtendedProperties(source._preAuthRef!); }
+      else { this.preAuthRef = new fhir.FhirString(source._preAuthRef as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['preAuthPeriod']) { this.preAuthPeriod = new fhir.Period(source.preAuthPeriod); }
     if (source['payeeType']) { this.payeeType = new fhir.CodeableConcept(source.payeeType); }
     if (source['item']) { this.item = source.item.map((x) => new fhir.ClaimResponseItem(x)); }

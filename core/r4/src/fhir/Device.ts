@@ -34,6 +34,10 @@ export interface DeviceUdiCarrierArgs extends fhir.BackboneElementArgs {
    */
   deviceIdentifier?: fhir.FhirString|string|undefined;
   /**
+   * Extended properties for primitive element: Device.udiCarrier.deviceIdentifier
+   */
+  _deviceIdentifier?:fhir.FhirElementArgs;
+  /**
    * Organization that is charged with issuing UDIs for devices.  For example, the US FDA issuers include :
    * 1) GS1: 
    * http://hl7.org/fhir/NamingSystem/gs1-di, 
@@ -46,21 +50,41 @@ export interface DeviceUdiCarrierArgs extends fhir.BackboneElementArgs {
    */
   issuer?: fhir.FhirUri|string|undefined;
   /**
+   * Extended properties for primitive element: Device.udiCarrier.issuer
+   */
+  _issuer?:fhir.FhirElementArgs;
+  /**
    * The identity of the authoritative source for UDI generation within a  jurisdiction.  All UDIs are globally unique within a single namespace with the appropriate repository uri as the system.  For example,  UDIs of devices managed in the U.S. by the FDA, the value is  http://hl7.org/fhir/NamingSystem/fda-udi.
    */
   jurisdiction?: fhir.FhirUri|string|undefined;
+  /**
+   * Extended properties for primitive element: Device.udiCarrier.jurisdiction
+   */
+  _jurisdiction?:fhir.FhirElementArgs;
   /**
    * The AIDC form of UDIs should be scanned or otherwise used for the identification of the device whenever possible to minimize errors in records resulting from manual transcriptions. If separate barcodes for DI and PI are present, concatenate the string with DI first and in order of human readable expression on label.
    */
   carrierAIDC?: fhir.FhirBase64Binary|string|undefined;
   /**
+   * Extended properties for primitive element: Device.udiCarrier.carrierAIDC
+   */
+  _carrierAIDC?:fhir.FhirElementArgs;
+  /**
    * If separate barcodes for DI and PI are present, concatenate the string with DI first and in order of human readable expression on label.
    */
   carrierHRF?: fhir.FhirString|string|undefined;
   /**
+   * Extended properties for primitive element: Device.udiCarrier.carrierHRF
+   */
+  _carrierHRF?:fhir.FhirElementArgs;
+  /**
    * A coded entry to indicate how the data was entered.
    */
   entryType?: fhir.FhirCode<UdiEntryTypeCodeType>|string|undefined;
+  /**
+   * Extended properties for primitive element: Device.udiCarrier.entryType
+   */
+  _entryType?:fhir.FhirElementArgs;
 }
 
 /**
@@ -109,11 +133,35 @@ export class DeviceUdiCarrier extends fhir.BackboneElement {
   constructor(source:Partial<DeviceUdiCarrierArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
     if (source['deviceIdentifier']) { this.deviceIdentifier = new fhir.FhirString({value: source.deviceIdentifier}); }
+    if (source['_deviceIdentifier']) {
+      if (this.deviceIdentifier) { this.deviceIdentifier.addExtendedProperties(source._deviceIdentifier!); }
+      else { this.deviceIdentifier = new fhir.FhirString(source._deviceIdentifier as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['issuer']) { this.issuer = new fhir.FhirUri({value: source.issuer}); }
+    if (source['_issuer']) {
+      if (this.issuer) { this.issuer.addExtendedProperties(source._issuer!); }
+      else { this.issuer = new fhir.FhirUri(source._issuer as Partial<fhir.FhirUriArgs>); }
+    }
     if (source['jurisdiction']) { this.jurisdiction = new fhir.FhirUri({value: source.jurisdiction}); }
+    if (source['_jurisdiction']) {
+      if (this.jurisdiction) { this.jurisdiction.addExtendedProperties(source._jurisdiction!); }
+      else { this.jurisdiction = new fhir.FhirUri(source._jurisdiction as Partial<fhir.FhirUriArgs>); }
+    }
     if (source['carrierAIDC']) { this.carrierAIDC = new fhir.FhirBase64Binary({value: source.carrierAIDC}); }
+    if (source['_carrierAIDC']) {
+      if (this.carrierAIDC) { this.carrierAIDC.addExtendedProperties(source._carrierAIDC!); }
+      else { this.carrierAIDC = new fhir.FhirBase64Binary(source._carrierAIDC as Partial<fhir.FhirBase64BinaryArgs>); }
+    }
     if (source['carrierHRF']) { this.carrierHRF = new fhir.FhirString({value: source.carrierHRF}); }
+    if (source['_carrierHRF']) {
+      if (this.carrierHRF) { this.carrierHRF.addExtendedProperties(source._carrierHRF!); }
+      else { this.carrierHRF = new fhir.FhirString(source._carrierHRF as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['entryType']) { this.entryType = new fhir.FhirCode<UdiEntryTypeCodeType>({value: source.entryType}); }
+    if (source['_entryType']) {
+      if (this.entryType) { this.entryType.addExtendedProperties(source._entryType!); }
+      else { this.entryType = new fhir.FhirCode<UdiEntryTypeCodeType>(source._entryType as Partial<fhir.FhirCode>); }
+    }
   }
   /**
    * Required-bound Value Set for entryType (Device.udiCarrier.entryType)
@@ -147,10 +195,18 @@ export interface DeviceDeviceNameArgs extends fhir.BackboneElementArgs {
    */
   name: fhir.FhirString|string|undefined;
   /**
+   * Extended properties for primitive element: Device.deviceName.name
+   */
+  _name?:fhir.FhirElementArgs;
+  /**
    * The type of deviceName.
    * UDILabelName | UserFriendlyName | PatientReportedName | ManufactureDeviceName | ModelName.
    */
   type: fhir.FhirCode<DeviceNametypeCodeType>|string|undefined;
+  /**
+   * Extended properties for primitive element: Device.deviceName.type
+   */
+  _type?:fhir.FhirElementArgs;
 }
 
 /**
@@ -177,8 +233,16 @@ export class DeviceDeviceName extends fhir.BackboneElement {
     super(source, options);
     if (source['name']) { this.name = new fhir.FhirString({value: source.name}); }
     else { this.name = null; }
+    if (source['_name']) {
+      if (this.name) { this.name.addExtendedProperties(source._name!); }
+      else { this.name = new fhir.FhirString(source._name as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['type']) { this.type = new fhir.FhirCode<DeviceNametypeCodeType>({value: source.type}); }
     else { this.type = null; }
+    if (source['_type']) {
+      if (this.type) { this.type.addExtendedProperties(source._type!); }
+      else { this.type = new fhir.FhirCode<DeviceNametypeCodeType>(source._type as Partial<fhir.FhirCode>); }
+    }
   }
   /**
    * Required-bound Value Set for type (Device.deviceName.type)
@@ -217,6 +281,10 @@ export interface DeviceSpecializationArgs extends fhir.BackboneElementArgs {
    * The version of the standard that is used to operate and communicate.
    */
   version?: fhir.FhirString|string|undefined;
+  /**
+   * Extended properties for primitive element: Device.specialization.version
+   */
+  _version?:fhir.FhirElementArgs;
 }
 
 /**
@@ -243,6 +311,10 @@ export class DeviceSpecialization extends fhir.BackboneElement {
     if (source['systemType']) { this.systemType = new fhir.CodeableConcept(source.systemType); }
     else { this.systemType = null; }
     if (source['version']) { this.version = new fhir.FhirString({value: source.version}); }
+    if (source['_version']) {
+      if (this.version) { this.version.addExtendedProperties(source._version!); }
+      else { this.version = new fhir.FhirString(source._version as Partial<fhir.FhirStringArgs>); }
+    }
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -273,6 +345,10 @@ export interface DeviceVersionArgs extends fhir.BackboneElementArgs {
    * The version text.
    */
   value: fhir.FhirString|string|undefined;
+  /**
+   * Extended properties for primitive element: Device.version.value
+   */
+  _value?:fhir.FhirElementArgs;
 }
 
 /**
@@ -304,6 +380,10 @@ export class DeviceVersion extends fhir.BackboneElement {
     if (source['component']) { this.component = new fhir.Identifier(source.component); }
     if (source['value']) { this.value = new fhir.FhirString({value: source.value}); }
     else { this.value = null; }
+    if (source['_value']) {
+      if (this.value) { this.value.addExtendedProperties(source._value!); }
+      else { this.value = new fhir.FhirString(source._value as Partial<fhir.FhirStringArgs>); }
+    }
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -408,6 +488,10 @@ export interface DeviceArgs extends fhir.DomainResourceArgs {
    */
   status?: fhir.FhirCode<DeviceStatusCodeType>|string|undefined;
   /**
+   * Extended properties for primitive element: Device.status
+   */
+  _status?:fhir.FhirElementArgs;
+  /**
    * Reason for the dtatus of the Device availability.
    */
   statusReason?: fhir.CodeableConceptArgs[]|undefined;
@@ -416,25 +500,49 @@ export interface DeviceArgs extends fhir.DomainResourceArgs {
    */
   distinctIdentifier?: fhir.FhirString|string|undefined;
   /**
+   * Extended properties for primitive element: Device.distinctIdentifier
+   */
+  _distinctIdentifier?:fhir.FhirElementArgs;
+  /**
    * A name of the manufacturer.
    */
   manufacturer?: fhir.FhirString|string|undefined;
+  /**
+   * Extended properties for primitive element: Device.manufacturer
+   */
+  _manufacturer?:fhir.FhirElementArgs;
   /**
    * The date and time when the device was manufactured.
    */
   manufactureDate?: fhir.FhirDateTime|string|undefined;
   /**
+   * Extended properties for primitive element: Device.manufactureDate
+   */
+  _manufactureDate?:fhir.FhirElementArgs;
+  /**
    * The date and time beyond which this device is no longer valid or should not be used (if applicable).
    */
   expirationDate?: fhir.FhirDateTime|string|undefined;
+  /**
+   * Extended properties for primitive element: Device.expirationDate
+   */
+  _expirationDate?:fhir.FhirElementArgs;
   /**
    * Lot number assigned by the manufacturer.
    */
   lotNumber?: fhir.FhirString|string|undefined;
   /**
+   * Extended properties for primitive element: Device.lotNumber
+   */
+  _lotNumber?:fhir.FhirElementArgs;
+  /**
    * Alphanumeric Maximum 20.
    */
   serialNumber?: fhir.FhirString|string|undefined;
+  /**
+   * Extended properties for primitive element: Device.serialNumber
+   */
+  _serialNumber?:fhir.FhirElementArgs;
   /**
    * This represents the manufacturer's name of the device as provided by the device, from a UDI label, or by a person describing the Device.  This typically would be used when a person provides the name(s) or when the device represents one of the names available from DeviceDefinition.
    */
@@ -444,9 +552,17 @@ export interface DeviceArgs extends fhir.DomainResourceArgs {
    */
   modelNumber?: fhir.FhirString|string|undefined;
   /**
+   * Extended properties for primitive element: Device.modelNumber
+   */
+  _modelNumber?:fhir.FhirElementArgs;
+  /**
    * Alphanumeric Maximum 20.
    */
   partNumber?: fhir.FhirString|string|undefined;
+  /**
+   * Extended properties for primitive element: Device.partNumber
+   */
+  _partNumber?:fhir.FhirElementArgs;
   /**
    * The kind or type of device.
    */
@@ -483,6 +599,10 @@ export interface DeviceArgs extends fhir.DomainResourceArgs {
    * If the device is running a FHIR server, the network address should  be the Base URL from which a conformance statement may be retrieved.
    */
   url?: fhir.FhirUri|string|undefined;
+  /**
+   * Extended properties for primitive element: Device.url
+   */
+  _url?:fhir.FhirElementArgs;
   /**
    * Descriptive information, usage information or implantation information that is not captured in an existing element.
    */
@@ -625,18 +745,54 @@ export class Device extends fhir.DomainResource {
     if (source['udiCarrier']) { this.udiCarrier = source.udiCarrier.map((x) => new fhir.DeviceUdiCarrier(x)); }
     else { this.udiCarrier = []; }
     if (source['status']) { this.status = new fhir.FhirCode<DeviceStatusCodeType>({value: source.status}); }
+    if (source['_status']) {
+      if (this.status) { this.status.addExtendedProperties(source._status!); }
+      else { this.status = new fhir.FhirCode<DeviceStatusCodeType>(source._status as Partial<fhir.FhirCode>); }
+    }
     if (source['statusReason']) { this.statusReason = source.statusReason.map((x) => new fhir.CodeableConcept(x)); }
     else { this.statusReason = []; }
     if (source['distinctIdentifier']) { this.distinctIdentifier = new fhir.FhirString({value: source.distinctIdentifier}); }
+    if (source['_distinctIdentifier']) {
+      if (this.distinctIdentifier) { this.distinctIdentifier.addExtendedProperties(source._distinctIdentifier!); }
+      else { this.distinctIdentifier = new fhir.FhirString(source._distinctIdentifier as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['manufacturer']) { this.manufacturer = new fhir.FhirString({value: source.manufacturer}); }
+    if (source['_manufacturer']) {
+      if (this.manufacturer) { this.manufacturer.addExtendedProperties(source._manufacturer!); }
+      else { this.manufacturer = new fhir.FhirString(source._manufacturer as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['manufactureDate']) { this.manufactureDate = new fhir.FhirDateTime({value: source.manufactureDate}); }
+    if (source['_manufactureDate']) {
+      if (this.manufactureDate) { this.manufactureDate.addExtendedProperties(source._manufactureDate!); }
+      else { this.manufactureDate = new fhir.FhirDateTime(source._manufactureDate as Partial<fhir.FhirDateTimeArgs>); }
+    }
     if (source['expirationDate']) { this.expirationDate = new fhir.FhirDateTime({value: source.expirationDate}); }
+    if (source['_expirationDate']) {
+      if (this.expirationDate) { this.expirationDate.addExtendedProperties(source._expirationDate!); }
+      else { this.expirationDate = new fhir.FhirDateTime(source._expirationDate as Partial<fhir.FhirDateTimeArgs>); }
+    }
     if (source['lotNumber']) { this.lotNumber = new fhir.FhirString({value: source.lotNumber}); }
+    if (source['_lotNumber']) {
+      if (this.lotNumber) { this.lotNumber.addExtendedProperties(source._lotNumber!); }
+      else { this.lotNumber = new fhir.FhirString(source._lotNumber as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['serialNumber']) { this.serialNumber = new fhir.FhirString({value: source.serialNumber}); }
+    if (source['_serialNumber']) {
+      if (this.serialNumber) { this.serialNumber.addExtendedProperties(source._serialNumber!); }
+      else { this.serialNumber = new fhir.FhirString(source._serialNumber as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['deviceName']) { this.deviceName = source.deviceName.map((x) => new fhir.DeviceDeviceName(x)); }
     else { this.deviceName = []; }
     if (source['modelNumber']) { this.modelNumber = new fhir.FhirString({value: source.modelNumber}); }
+    if (source['_modelNumber']) {
+      if (this.modelNumber) { this.modelNumber.addExtendedProperties(source._modelNumber!); }
+      else { this.modelNumber = new fhir.FhirString(source._modelNumber as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['partNumber']) { this.partNumber = new fhir.FhirString({value: source.partNumber}); }
+    if (source['_partNumber']) {
+      if (this.partNumber) { this.partNumber.addExtendedProperties(source._partNumber!); }
+      else { this.partNumber = new fhir.FhirString(source._partNumber as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['type']) { this.type = new fhir.CodeableConcept(source.type); }
     if (source['specialization']) { this.specialization = source.specialization.map((x) => new fhir.DeviceSpecialization(x)); }
     else { this.specialization = []; }
@@ -650,6 +806,10 @@ export class Device extends fhir.DomainResource {
     else { this.contact = []; }
     if (source['location']) { this.location = new fhir.Reference(source.location); }
     if (source['url']) { this.url = new fhir.FhirUri({value: source.url}); }
+    if (source['_url']) {
+      if (this.url) { this.url.addExtendedProperties(source._url!); }
+      else { this.url = new fhir.FhirUri(source._url as Partial<fhir.FhirUriArgs>); }
+    }
     if (source['note']) { this.note = source.note.map((x) => new fhir.Annotation(x)); }
     else { this.note = []; }
     if (source['safety']) { this.safety = source.safety.map((x) => new fhir.CodeableConcept(x)); }

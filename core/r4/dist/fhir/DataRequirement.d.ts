@@ -9,13 +9,25 @@ export interface DataRequirementCodeFilterArgs extends fhir.FhirElementArgs {
      */
     path?: fhir.FhirString | string | undefined;
     /**
+     * Extended properties for primitive element: DataRequirement.codeFilter.path
+     */
+    _path?: fhir.FhirElementArgs;
+    /**
      * A token parameter that refers to a search parameter defined on the specified type of the DataRequirement, and which searches on elements of type code, Coding, or CodeableConcept.
      */
     searchParam?: fhir.FhirString | string | undefined;
     /**
+     * Extended properties for primitive element: DataRequirement.codeFilter.searchParam
+     */
+    _searchParam?: fhir.FhirElementArgs;
+    /**
      * The valueset for the code filter. The valueSet and code elements are additive. If valueSet is specified, the filter will return only those data items for which the value of the code-valued element specified in the path is a member of the specified valueset.
      */
     valueSet?: fhir.FhirCanonical | string | undefined;
+    /**
+     * Extended properties for primitive element: DataRequirement.codeFilter.valueSet
+     */
+    _valueSet?: fhir.FhirElementArgs;
     /**
      * The codes for the code filter. If values are given, the filter will return only those data items for which the code-valued attribute specified by the path has a value that is one of the specified codes. If codes are specified in addition to a value set, the filter returns items matching a code in the value set or one of the specified codes.
      */
@@ -63,9 +75,17 @@ export interface DataRequirementDateFilterArgs extends fhir.FhirElementArgs {
      */
     path?: fhir.FhirString | string | undefined;
     /**
+     * Extended properties for primitive element: DataRequirement.dateFilter.path
+     */
+    _path?: fhir.FhirElementArgs;
+    /**
      * A date parameter that refers to a search parameter defined on the specified type of the DataRequirement, and which searches on elements of type date, dateTime, Period, Schedule, or Timing.
      */
     searchParam?: fhir.FhirString | string | undefined;
+    /**
+     * Extended properties for primitive element: DataRequirement.dateFilter.searchParam
+     */
+    _searchParam?: fhir.FhirElementArgs;
     /**
      * The value of the filter. If period is specified, the filter will return only those data items that fall within the bounds determined by the Period, inclusive of the period boundaries. If dateTime is specified, the filter will return only those data items that are equal to the specified dateTime. If a Duration is specified, the filter will return only those data items that fall within Duration before now.
      */
@@ -125,9 +145,17 @@ export interface DataRequirementSortArgs extends fhir.FhirElementArgs {
      */
     path: fhir.FhirString | string | undefined;
     /**
+     * Extended properties for primitive element: DataRequirement.sort.path
+     */
+    _path?: fhir.FhirElementArgs;
+    /**
      * The direction of the sort, ascending or descending.
      */
     direction: fhir.FhirCode<SortDirectionCodeType> | string | undefined;
+    /**
+     * Extended properties for primitive element: DataRequirement.sort.direction
+     */
+    _direction?: fhir.FhirElementArgs;
 }
 /**
  * This element can be used in combination with the sort element to specify quota requirements such as "the most recent 5" or "the highest 5". When multiple sorts are specified, they are applied in the order they appear in the resource.
@@ -170,9 +198,17 @@ export interface DataRequirementArgs extends fhir.FhirElementArgs {
      */
     type: fhir.FhirCode | string | undefined;
     /**
+     * Extended properties for primitive element: DataRequirement.type
+     */
+    _type?: fhir.FhirElementArgs;
+    /**
      * The profile of the required data, specified as the uri of the profile definition.
      */
     profile?: fhir.FhirCanonical[] | string[] | undefined;
+    /**
+     * Extended properties for primitive element: DataRequirement.profile
+     */
+    _profile?: (fhir.FhirElementArgs | null)[];
     /**
      * The subject of a data requirement is critical, as the data being specified is determined with respect to a particular subject. This corresponds roughly to the notion of a Compartment in that it limits what data is available based on its relationship to the subject. In CQL, this corresponds to the context declaration.
      */
@@ -191,6 +227,10 @@ export interface DataRequirementArgs extends fhir.FhirElementArgs {
      */
     mustSupport?: fhir.FhirString[] | string[] | undefined;
     /**
+     * Extended properties for primitive element: DataRequirement.mustSupport
+     */
+    _mustSupport?: (fhir.FhirElementArgs | null)[];
+    /**
      * Code filters specify additional constraints on the data, specifying the value set of interest for a particular element of the data. Each code filter defines an additional constraint on the data, i.e. code filters are AND'ed, not OR'ed.
      */
     codeFilter?: fhir.DataRequirementCodeFilterArgs[] | undefined;
@@ -202,6 +242,10 @@ export interface DataRequirementArgs extends fhir.FhirElementArgs {
      * This element can be used in combination with the sort element to specify quota requirements such as "the most recent 5" or "the highest 5".
      */
     limit?: fhir.FhirPositiveInt | number | undefined;
+    /**
+     * Extended properties for primitive element: DataRequirement.limit
+     */
+    _limit?: fhir.FhirElementArgs;
     /**
      * This element can be used in combination with the sort element to specify quota requirements such as "the most recent 5" or "the highest 5". When multiple sorts are specified, they are applied in the order they appear in the resource.
      */
@@ -272,7 +316,9 @@ export declare class DataRequirement extends fhir.FhirElement {
         readonly AppointmentResponse: "AppointmentResponse";
         readonly Attachment: "Attachment";
         readonly AuditEvent: "AuditEvent";
-        readonly BackboneElement: "BackboneElement";
+        readonly BackboneElement: "BackboneElement"; /**
+         * A token parameter that refers to a search parameter defined on the specified type of the DataRequirement, and which searches on elements of type code, Coding, or CodeableConcept.
+         */
         readonly Base64Binary: "base64Binary";
         readonly Basic: "Basic";
         readonly Binary: "Binary";

@@ -26,9 +26,17 @@ export interface OperationOutcomeIssueArgs extends fhir.BackboneElementArgs {
    */
   severity: fhir.FhirCode<IssueSeverityCodeType>|string|undefined;
   /**
+   * Extended properties for primitive element: OperationOutcome.issue.severity
+   */
+  _severity?:fhir.FhirElementArgs;
+  /**
    * Describes the type of the issue. The system that creates an OperationOutcome SHALL choose the most applicable code from the IssueType value set, and may additional provide its own code for the error in the details element.
    */
   code: fhir.FhirCode|string|undefined;
+  /**
+   * Extended properties for primitive element: OperationOutcome.issue.code
+   */
+  _code?:fhir.FhirElementArgs;
   /**
    * A human readable description of the error issue SHOULD be placed in details.text.
    */
@@ -38,13 +46,25 @@ export interface OperationOutcomeIssueArgs extends fhir.BackboneElementArgs {
    */
   diagnostics?: fhir.FhirString|string|undefined;
   /**
+   * Extended properties for primitive element: OperationOutcome.issue.diagnostics
+   */
+  _diagnostics?:fhir.FhirElementArgs;
+  /**
    * The root of the XPath is the resource or bundle that generated OperationOutcome.  Each XPath SHALL resolve to a single node.  This element is deprecated, and is being replaced by expression.
    */
   location?: fhir.FhirString[]|string[]|undefined;
   /**
+   * Extended properties for primitive element: OperationOutcome.issue.location
+   */
+  _location?:(fhir.FhirElementArgs|null)[];
+  /**
    * The root of the FHIRPath is the resource or bundle that generated OperationOutcome.  Each FHIRPath SHALL resolve to a single node.
    */
   expression?: fhir.FhirString[]|string[]|undefined;
+  /**
+   * Extended properties for primitive element: OperationOutcome.issue.expression
+   */
+  _expression?:(fhir.FhirElementArgs|null)[];
 }
 
 /**
@@ -86,14 +106,38 @@ export class OperationOutcomeIssue extends fhir.BackboneElement {
     super(source, options);
     if (source['severity']) { this.severity = new fhir.FhirCode<IssueSeverityCodeType>({value: source.severity}); }
     else { this.severity = null; }
+    if (source['_severity']) {
+      if (this.severity) { this.severity.addExtendedProperties(source._severity!); }
+      else { this.severity = new fhir.FhirCode<IssueSeverityCodeType>(source._severity as Partial<fhir.FhirCode>); }
+    }
     if (source['code']) { this.code = new fhir.FhirCode({value: source.code}); }
     else { this.code = null; }
+    if (source['_code']) {
+      if (this.code) { this.code.addExtendedProperties(source._code!); }
+      else { this.code = new fhir.FhirCode(source._code as Partial<fhir.FhirCodeArgs>); }
+    }
     if (source['details']) { this.details = new fhir.CodeableConcept(source.details); }
     if (source['diagnostics']) { this.diagnostics = new fhir.FhirString({value: source.diagnostics}); }
+    if (source['_diagnostics']) {
+      if (this.diagnostics) { this.diagnostics.addExtendedProperties(source._diagnostics!); }
+      else { this.diagnostics = new fhir.FhirString(source._diagnostics as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['location']) { this.location = source.location.map((x) => new fhir.FhirString({value: x})); }
     else { this.location = []; }
+    if (source['_location']) {
+      source._location.forEach((x,i) => {
+        if (this.location.length >= i) { if (x) { this.location[i].addExtendedProperties(x); } }
+        else { if (x) { this.location.push(new fhir.FhirString(x as Partial<fhir.FhirStringArgs>)); } }
+      });
+    }
     if (source['expression']) { this.expression = source.expression.map((x) => new fhir.FhirString({value: x})); }
     else { this.expression = []; }
+    if (source['_expression']) {
+      source._expression.forEach((x,i) => {
+        if (this.expression.length >= i) { if (x) { this.expression[i].addExtendedProperties(x); } }
+        else { if (x) { this.expression.push(new fhir.FhirString(x as Partial<fhir.FhirStringArgs>)); } }
+      });
+    }
   }
   /**
    * Required-bound Value Set for severity (OperationOutcome.issue.severity)

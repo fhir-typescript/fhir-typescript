@@ -6,9 +6,9 @@
 import * as fhir from '../fhir.js';
 
 // @ts-ignore
-import { SubstanceCodeCodings, SubstanceCodeCodingType,} from '../fhirValueSets/SubstanceCodeCodings.js';
+import { SubstanceCodings, SubstanceCodingType,} from '../fhirValueSets/SubstanceCodings.js';
 // @ts-ignore
-import { SubstanceCodeCodes,  SubstanceCodeCodeType } from '../fhirValueSets/SubstanceCodeCodes.js';
+import { SubstanceCodes,  SubstanceCodeType } from '../fhirValueSets/SubstanceCodes.js';
 // @ts-ignore
 import { ClinicalFindingsCodings, ClinicalFindingsCodingType,} from '../fhirValueSets/ClinicalFindingsCodings.js';
 // @ts-ignore
@@ -42,9 +42,9 @@ import { AllergyIntoleranceCriticalityCodings, AllergyIntoleranceCriticalityCodi
 // @ts-ignore
 import { AllergyIntoleranceCriticalityCodes,  AllergyIntoleranceCriticalityCodeType } from '../fhirValueSets/AllergyIntoleranceCriticalityCodes.js';
 // @ts-ignore
-import { AllergyintoleranceCodeCodings, AllergyintoleranceCodeCodingType,} from '../fhirValueSets/AllergyintoleranceCodeCodings.js';
+import { AllergyintoleranceCodings, AllergyintoleranceCodingType,} from '../fhirValueSets/AllergyintoleranceCodings.js';
 // @ts-ignore
-import { AllergyintoleranceCodeCodes,  AllergyintoleranceCodeCodeType } from '../fhirValueSets/AllergyintoleranceCodeCodes.js';
+import { AllergyintoleranceCodes,  AllergyintoleranceCodeType } from '../fhirValueSets/AllergyintoleranceCodes.js';
 /**
  * Valid arguments for the AllergyIntoleranceReaction type.
  */
@@ -62,13 +62,25 @@ export interface AllergyIntoleranceReactionArgs extends fhir.BackboneElementArgs
    */
   description?: fhir.FhirString|string|undefined;
   /**
+   * Extended properties for primitive element: AllergyIntolerance.reaction.description
+   */
+  _description?:fhir.FhirElementArgs;
+  /**
    * Record of the date and/or time of the onset of the Reaction.
    */
   onset?: fhir.FhirDateTime|string|undefined;
   /**
+   * Extended properties for primitive element: AllergyIntolerance.reaction.onset
+   */
+  _onset?:fhir.FhirElementArgs;
+  /**
    * It is acknowledged that this assessment is very subjective. There may be some specific practice domains where objective scales have been applied. Objective scales can be included in this model as extensions.
    */
   severity?: fhir.FhirCode<ReactionEventSeverityCodeType>|string|undefined;
+  /**
+   * Extended properties for primitive element: AllergyIntolerance.reaction.severity
+   */
+  _severity?:fhir.FhirElementArgs;
   /**
    * Coding of the route of exposure with a terminology should be used wherever possible.
    */
@@ -124,8 +136,20 @@ export class AllergyIntoleranceReaction extends fhir.BackboneElement {
     if (source['manifestation']) { this.manifestation = source.manifestation.map((x) => new fhir.CodeableConcept(x)); }
     else { this.manifestation = []; }
     if (source['description']) { this.description = new fhir.FhirString({value: source.description}); }
+    if (source['_description']) {
+      if (this.description) { this.description.addExtendedProperties(source._description!); }
+      else { this.description = new fhir.FhirString(source._description as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['onset']) { this.onset = new fhir.FhirDateTime({value: source.onset}); }
+    if (source['_onset']) {
+      if (this.onset) { this.onset.addExtendedProperties(source._onset!); }
+      else { this.onset = new fhir.FhirDateTime(source._onset as Partial<fhir.FhirDateTimeArgs>); }
+    }
     if (source['severity']) { this.severity = new fhir.FhirCode<ReactionEventSeverityCodeType>({value: source.severity}); }
+    if (source['_severity']) {
+      if (this.severity) { this.severity.addExtendedProperties(source._severity!); }
+      else { this.severity = new fhir.FhirCode<ReactionEventSeverityCodeType>(source._severity as Partial<fhir.FhirCode>); }
+    }
     if (source['exposureRoute']) { this.exposureRoute = new fhir.CodeableConcept(source.exposureRoute); }
     if (source['note']) { this.note = source.note.map((x) => new fhir.Annotation(x)); }
     else { this.note = []; }
@@ -187,13 +211,25 @@ export interface AllergyIntoleranceArgs extends fhir.DomainResourceArgs {
    */
   type?: fhir.FhirCode<AllergyIntoleranceTypeCodeType>|string|undefined;
   /**
+   * Extended properties for primitive element: AllergyIntolerance.type
+   */
+  _type?:fhir.FhirElementArgs;
+  /**
    * This data element has been included because it is currently being captured in some clinical systems. This data can be derived from the substance where coding systems are used, and is effectively redundant in that situation.  When searching on category, consider the implications of AllergyIntolerance resources without a category.  For example, when searching on category = medication, medication allergies that don't have a category valued will not be returned.  Refer to [search](search.html) for more information on how to search category with a :missing modifier to get allergies that don't have a category.  Additionally, category should be used with caution because category can be subjective based on the sender.
    */
   category?: fhir.FhirCode<AllergyIntoleranceCategoryCodeType>[]|string[]|undefined;
   /**
+   * Extended properties for primitive element: AllergyIntolerance.category
+   */
+  _category?:(fhir.FhirElementArgs|null)[];
+  /**
    * The default criticality value for any propensity to an adverse reaction should be 'Low Risk', indicating at the very least a relative contraindication to deliberate or voluntary exposure to the substance. 'High Risk' is flagged if the clinician has identified a propensity for a more serious or potentially life-threatening reaction, such as anaphylaxis, and implies an absolute contraindication to deliberate or voluntary exposure to the substance. If this element is missing, the criticality is unknown (though it may be known elsewhere).  Systems that capture a severity at the condition level are actually representing the concept of criticality whereas the severity documented at the reaction level is representing the true reaction severity.  Existing systems that are capturing both condition criticality and reaction severity may use the term "severity" to represent both.  Criticality is the worst it could be in the future (i.e. situation-agnostic) whereas severity is situation-dependent.
    */
   criticality?: fhir.FhirCode<AllergyIntoleranceCriticalityCodeType>|string|undefined;
+  /**
+   * Extended properties for primitive element: AllergyIntolerance.criticality
+   */
+  _criticality?:fhir.FhirElementArgs;
   /**
    * It is strongly recommended that this element be populated using a terminology, where possible. For example, some terminologies used include RxNorm, SNOMED CT, DM+D, NDFRT, ICD-9, IDC-10, UNII, and ATC. Plain text should only be used if there is no appropriate terminology available. Additional details can be specified in the text.
    * When a substance or product code is specified for the 'code' element, the "default" semantic context is that this is a positive statement of an allergy or intolerance (depending on the value of the 'type' element, if present) condition to the specified substance/product.  In the corresponding SNOMED CT allergy model, the specified substance/product is the target (destination) of the "Causative agent" relationship.
@@ -237,6 +273,10 @@ export interface AllergyIntoleranceArgs extends fhir.DomainResourceArgs {
    */
   recordedDate?: fhir.FhirDateTime|string|undefined;
   /**
+   * Extended properties for primitive element: AllergyIntolerance.recordedDate
+   */
+  _recordedDate?:fhir.FhirElementArgs;
+  /**
    * Individual who recorded the record and takes responsibility for its content.
    */
   recorder?: fhir.ReferenceArgs|undefined;
@@ -248,6 +288,10 @@ export interface AllergyIntoleranceArgs extends fhir.DomainResourceArgs {
    * This date may be replicated by one of the Onset of Reaction dates. Where a textual representation of the date of last occurrence is required e.g. 'In Childhood, '10 years ago' the Comment element should be used.
    */
   lastOccurrence?: fhir.FhirDateTime|string|undefined;
+  /**
+   * Extended properties for primitive element: AllergyIntolerance.lastOccurrence
+   */
+  _lastOccurrence?:fhir.FhirElementArgs;
   /**
    * For example: including reason for flagging a seriousness of 'High Risk'; and instructions related to future exposure or administration of the substance, such as administration within an Intensive Care Unit or under corticosteroid cover. The notes should be related to an allergy or intolerance as a condition in general and not related to any particular episode of it. For episode notes and descriptions, use AllergyIntolerance.event.description and  AllergyIntolerance.event.notes.
    */
@@ -352,9 +396,23 @@ export class AllergyIntolerance extends fhir.DomainResource {
     if (source['clinicalStatus']) { this.clinicalStatus = new fhir.CodeableConcept(source.clinicalStatus); }
     if (source['verificationStatus']) { this.verificationStatus = new fhir.CodeableConcept(source.verificationStatus); }
     if (source['type']) { this.type = new fhir.FhirCode<AllergyIntoleranceTypeCodeType>({value: source.type}); }
+    if (source['_type']) {
+      if (this.type) { this.type.addExtendedProperties(source._type!); }
+      else { this.type = new fhir.FhirCode<AllergyIntoleranceTypeCodeType>(source._type as Partial<fhir.FhirCode>); }
+    }
     if (source['category']) { this.category = source.category.map((x) => new fhir.FhirCode<AllergyIntoleranceCategoryCodeType>({value: x})); }
     else { this.category = []; }
+    if (source['_category']) {
+      source._category.forEach((x,i) => {
+        if (this.category.length >= i) { if (x) { this.category[i].addExtendedProperties(x); } }
+        else { if (x) { this.category.push(new fhir.FhirCode<AllergyIntoleranceCategoryCodeType>(x as Partial<fhir.FhirCode>)); } }
+      });
+    }
     if (source['criticality']) { this.criticality = new fhir.FhirCode<AllergyIntoleranceCriticalityCodeType>({value: source.criticality}); }
+    if (source['_criticality']) {
+      if (this.criticality) { this.criticality.addExtendedProperties(source._criticality!); }
+      else { this.criticality = new fhir.FhirCode<AllergyIntoleranceCriticalityCodeType>(source._criticality as Partial<fhir.FhirCode>); }
+    }
     if (source['code']) { this.code = new fhir.CodeableConcept(source.code); }
     if (source['patient']) { this.patient = new fhir.Reference(source.patient); }
     else { this.patient = null; }
@@ -366,9 +424,17 @@ export class AllergyIntolerance extends fhir.DomainResource {
     else if (source['onsetRange']) { this.onset = new fhir.Range(source.onsetRange); }
     else if (source['onsetString']) { this.onset = new fhir.FhirString({value: source.onsetString}); }
     if (source['recordedDate']) { this.recordedDate = new fhir.FhirDateTime({value: source.recordedDate}); }
+    if (source['_recordedDate']) {
+      if (this.recordedDate) { this.recordedDate.addExtendedProperties(source._recordedDate!); }
+      else { this.recordedDate = new fhir.FhirDateTime(source._recordedDate as Partial<fhir.FhirDateTimeArgs>); }
+    }
     if (source['recorder']) { this.recorder = new fhir.Reference(source.recorder); }
     if (source['asserter']) { this.asserter = new fhir.Reference(source.asserter); }
     if (source['lastOccurrence']) { this.lastOccurrence = new fhir.FhirDateTime({value: source.lastOccurrence}); }
+    if (source['_lastOccurrence']) {
+      if (this.lastOccurrence) { this.lastOccurrence.addExtendedProperties(source._lastOccurrence!); }
+      else { this.lastOccurrence = new fhir.FhirDateTime(source._lastOccurrence as Partial<fhir.FhirDateTimeArgs>); }
+    }
     if (source['note']) { this.note = source.note.map((x) => new fhir.Annotation(x)); }
     else { this.note = []; }
     if (source['reaction']) { this.reaction = source.reaction.map((x) => new fhir.AllergyIntoleranceReaction(x)); }

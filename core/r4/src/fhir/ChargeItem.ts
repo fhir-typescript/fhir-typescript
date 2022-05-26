@@ -90,14 +90,26 @@ export interface ChargeItemArgs extends fhir.DomainResourceArgs {
    */
   definitionUri?: fhir.FhirUri[]|string[]|undefined;
   /**
+   * Extended properties for primitive element: ChargeItem.definitionUri
+   */
+  _definitionUri?:(fhir.FhirElementArgs|null)[];
+  /**
    * References the source of pricing information, rules of application for the code this ChargeItem uses.
    */
   definitionCanonical?: fhir.FhirCanonical[]|string[]|undefined;
+  /**
+   * Extended properties for primitive element: ChargeItem.definitionCanonical
+   */
+  _definitionCanonical?:(fhir.FhirElementArgs|null)[];
   /**
    * Unknown does not represent "other" - one of the defined statuses must apply.  Unknown is used when the authoring system is not sure what the current status is.
    * This element is labeled as a modifier because the status contains the code entered-in-error that marks the charge item as not currently valid.
    */
   status: fhir.FhirCode<ChargeitemStatusCodeType>|string|undefined;
+  /**
+   * Extended properties for primitive element: ChargeItem.status
+   */
+  _status?:fhir.FhirElementArgs;
   /**
    * ChargeItems can be grouped to larger ChargeItems covering the whole set.
    */
@@ -159,6 +171,10 @@ export interface ChargeItemArgs extends fhir.DomainResourceArgs {
    */
   factorOverride?: fhir.FhirDecimal|number|undefined;
   /**
+   * Extended properties for primitive element: ChargeItem.factorOverride
+   */
+  _factorOverride?:fhir.FhirElementArgs;
+  /**
    * There is no reason to carry the price in the instance of a ChargeItem unless circumstances require a manual override. The list prices or are usually defined in a back catalogue of the billing codes  (see ChargeItem.definition). Derived profiles may require a ChargeItem.overrideReason to be provided if either factor or price are manually overridden.
    */
   priceOverride?: fhir.MoneyArgs|undefined;
@@ -167,6 +183,10 @@ export interface ChargeItemArgs extends fhir.DomainResourceArgs {
    */
   overrideReason?: fhir.FhirString|string|undefined;
   /**
+   * Extended properties for primitive element: ChargeItem.overrideReason
+   */
+  _overrideReason?:fhir.FhirElementArgs;
+  /**
    * The enterer is also the person considered responsible for factor/price overrides if applicable.
    */
   enterer?: fhir.ReferenceArgs|undefined;
@@ -174,6 +194,10 @@ export interface ChargeItemArgs extends fhir.DomainResourceArgs {
    * The actual date when the service associated with the charge has been rendered is captured in occurrence[x].
    */
   enteredDate?: fhir.FhirDateTime|string|undefined;
+  /**
+   * Extended properties for primitive element: ChargeItem.enteredDate
+   */
+  _enteredDate?:fhir.FhirElementArgs;
   /**
    * If the application of the charge item requires a reason to be given, it can be captured here. Textual reasons can be captured using reasonCode.text.
    */
@@ -343,10 +367,26 @@ export class ChargeItem extends fhir.DomainResource {
     else { this.identifier = []; }
     if (source['definitionUri']) { this.definitionUri = source.definitionUri.map((x) => new fhir.FhirUri({value: x})); }
     else { this.definitionUri = []; }
+    if (source['_definitionUri']) {
+      source._definitionUri.forEach((x,i) => {
+        if (this.definitionUri.length >= i) { if (x) { this.definitionUri[i].addExtendedProperties(x); } }
+        else { if (x) { this.definitionUri.push(new fhir.FhirUri(x as Partial<fhir.FhirUriArgs>)); } }
+      });
+    }
     if (source['definitionCanonical']) { this.definitionCanonical = source.definitionCanonical.map((x) => new fhir.FhirCanonical({value: x})); }
     else { this.definitionCanonical = []; }
+    if (source['_definitionCanonical']) {
+      source._definitionCanonical.forEach((x,i) => {
+        if (this.definitionCanonical.length >= i) { if (x) { this.definitionCanonical[i].addExtendedProperties(x); } }
+        else { if (x) { this.definitionCanonical.push(new fhir.FhirCanonical(x as Partial<fhir.FhirCanonicalArgs>)); } }
+      });
+    }
     if (source['status']) { this.status = new fhir.FhirCode<ChargeitemStatusCodeType>({value: source.status}); }
     else { this.status = null; }
+    if (source['_status']) {
+      if (this.status) { this.status.addExtendedProperties(source._status!); }
+      else { this.status = new fhir.FhirCode<ChargeitemStatusCodeType>(source._status as Partial<fhir.FhirCode>); }
+    }
     if (source['partOf']) { this.partOf = source.partOf.map((x) => new fhir.Reference(x)); }
     else { this.partOf = []; }
     if (source['code']) { this.code = new fhir.CodeableConcept(source.code); }
@@ -367,10 +407,22 @@ export class ChargeItem extends fhir.DomainResource {
     if (source['bodysite']) { this.bodysite = source.bodysite.map((x) => new fhir.CodeableConcept(x)); }
     else { this.bodysite = []; }
     if (source['factorOverride']) { this.factorOverride = new fhir.FhirDecimal({value: source.factorOverride}); }
+    if (source['_factorOverride']) {
+      if (this.factorOverride) { this.factorOverride.addExtendedProperties(source._factorOverride!); }
+      else { this.factorOverride = new fhir.FhirDecimal(source._factorOverride as Partial<fhir.FhirDecimalArgs>); }
+    }
     if (source['priceOverride']) { this.priceOverride = new fhir.Money(source.priceOverride); }
     if (source['overrideReason']) { this.overrideReason = new fhir.FhirString({value: source.overrideReason}); }
+    if (source['_overrideReason']) {
+      if (this.overrideReason) { this.overrideReason.addExtendedProperties(source._overrideReason!); }
+      else { this.overrideReason = new fhir.FhirString(source._overrideReason as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['enterer']) { this.enterer = new fhir.Reference(source.enterer); }
     if (source['enteredDate']) { this.enteredDate = new fhir.FhirDateTime({value: source.enteredDate}); }
+    if (source['_enteredDate']) {
+      if (this.enteredDate) { this.enteredDate.addExtendedProperties(source._enteredDate!); }
+      else { this.enteredDate = new fhir.FhirDateTime(source._enteredDate as Partial<fhir.FhirDateTimeArgs>); }
+    }
     if (source['reason']) { this.reason = source.reason.map((x) => new fhir.CodeableConcept(x)); }
     else { this.reason = []; }
     if (source['service']) { this.service = source.service.map((x) => new fhir.Reference(x)); }

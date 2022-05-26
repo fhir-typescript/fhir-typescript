@@ -96,6 +96,10 @@ export interface ImagingStudySeriesInstanceArgs extends fhir.BackboneElementArgs
    */
   uid: fhir.FhirId|string|undefined;
   /**
+   * Extended properties for primitive element: ImagingStudy.series.instance.uid
+   */
+  _uid?:fhir.FhirElementArgs;
+  /**
    * DICOM instance  type.
    */
   sopClass: fhir.CodingArgs|null;
@@ -104,9 +108,17 @@ export interface ImagingStudySeriesInstanceArgs extends fhir.BackboneElementArgs
    */
   number?: fhir.FhirUnsignedInt|number|undefined;
   /**
+   * Extended properties for primitive element: ImagingStudy.series.instance.number
+   */
+  _number?:fhir.FhirElementArgs;
+  /**
    * Particularly for post-acquisition analytic objects, such as SR, presentation states, value mapping, etc.
    */
   title?: fhir.FhirString|string|undefined;
+  /**
+   * Extended properties for primitive element: ImagingStudy.series.instance.title
+   */
+  _title?:fhir.FhirElementArgs;
 }
 
 /**
@@ -140,10 +152,22 @@ export class ImagingStudySeriesInstance extends fhir.BackboneElement {
     super(source, options);
     if (source['uid']) { this.uid = new fhir.FhirId({value: source.uid}); }
     else { this.uid = null; }
+    if (source['_uid']) {
+      if (this.uid) { this.uid.addExtendedProperties(source._uid!); }
+      else { this.uid = new fhir.FhirId(source._uid as Partial<fhir.FhirIdArgs>); }
+    }
     if (source['sopClass']) { this.sopClass = new fhir.Coding(source.sopClass); }
     else { this.sopClass = null; }
     if (source['number']) { this.number = new fhir.FhirUnsignedInt({value: source.number}); }
+    if (source['_number']) {
+      if (this.number) { this.number.addExtendedProperties(source._number!); }
+      else { this.number = new fhir.FhirUnsignedInt(source._number as Partial<fhir.FhirUnsignedIntArgs>); }
+    }
     if (source['title']) { this.title = new fhir.FhirString({value: source.title}); }
+    if (source['_title']) {
+      if (this.title) { this.title.addExtendedProperties(source._title!); }
+      else { this.title = new fhir.FhirString(source._title as Partial<fhir.FhirStringArgs>); }
+    }
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -172,9 +196,17 @@ export interface ImagingStudySeriesArgs extends fhir.BackboneElementArgs {
    */
   uid: fhir.FhirId|string|undefined;
   /**
+   * Extended properties for primitive element: ImagingStudy.series.uid
+   */
+  _uid?:fhir.FhirElementArgs;
+  /**
    * The numeric identifier of this series in the study.
    */
   number?: fhir.FhirUnsignedInt|number|undefined;
+  /**
+   * Extended properties for primitive element: ImagingStudy.series.number
+   */
+  _number?:fhir.FhirElementArgs;
   /**
    * The modality of this series sequence.
    */
@@ -184,9 +216,17 @@ export interface ImagingStudySeriesArgs extends fhir.BackboneElementArgs {
    */
   description?: fhir.FhirString|string|undefined;
   /**
+   * Extended properties for primitive element: ImagingStudy.series.description
+   */
+  _description?:fhir.FhirElementArgs;
+  /**
    * Number of SOP Instances in the Study. The value given may be larger than the number of instance elements this resource contains due to resource availability, security, or other factors. This element should be present if any instance elements are present.
    */
   numberOfInstances?: fhir.FhirUnsignedInt|number|undefined;
+  /**
+   * Extended properties for primitive element: ImagingStudy.series.numberOfInstances
+   */
+  _numberOfInstances?:fhir.FhirElementArgs;
   /**
    * Typical endpoint types include DICOM WADO-RS, which is used to retrieve DICOM instances in native or rendered (e.g., JPG, PNG) formats using a RESTful API; DICOM WADO-URI, which can similarly retrieve native or rendered instances, except using an HTTP query-based approach; and DICOM QIDO-RS, which allows RESTful query for DICOM information without retrieving the actual instances.
    */
@@ -207,6 +247,10 @@ export interface ImagingStudySeriesArgs extends fhir.BackboneElementArgs {
    * The date and time the series was started.
    */
   started?: fhir.FhirDateTime|string|undefined;
+  /**
+   * Extended properties for primitive element: ImagingStudy.series.started
+   */
+  _started?:fhir.FhirElementArgs;
   /**
    * If the person who performed the series is not known, their Organization may be recorded. A patient, or related person, may be the performer, e.g. for patient-captured images.
    */
@@ -280,11 +324,27 @@ export class ImagingStudySeries extends fhir.BackboneElement {
     super(source, options);
     if (source['uid']) { this.uid = new fhir.FhirId({value: source.uid}); }
     else { this.uid = null; }
+    if (source['_uid']) {
+      if (this.uid) { this.uid.addExtendedProperties(source._uid!); }
+      else { this.uid = new fhir.FhirId(source._uid as Partial<fhir.FhirIdArgs>); }
+    }
     if (source['number']) { this.number = new fhir.FhirUnsignedInt({value: source.number}); }
+    if (source['_number']) {
+      if (this.number) { this.number.addExtendedProperties(source._number!); }
+      else { this.number = new fhir.FhirUnsignedInt(source._number as Partial<fhir.FhirUnsignedIntArgs>); }
+    }
     if (source['modality']) { this.modality = new fhir.Coding(source.modality); }
     else { this.modality = null; }
     if (source['description']) { this.description = new fhir.FhirString({value: source.description}); }
+    if (source['_description']) {
+      if (this.description) { this.description.addExtendedProperties(source._description!); }
+      else { this.description = new fhir.FhirString(source._description as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['numberOfInstances']) { this.numberOfInstances = new fhir.FhirUnsignedInt({value: source.numberOfInstances}); }
+    if (source['_numberOfInstances']) {
+      if (this.numberOfInstances) { this.numberOfInstances.addExtendedProperties(source._numberOfInstances!); }
+      else { this.numberOfInstances = new fhir.FhirUnsignedInt(source._numberOfInstances as Partial<fhir.FhirUnsignedIntArgs>); }
+    }
     if (source['endpoint']) { this.endpoint = source.endpoint.map((x) => new fhir.Reference(x)); }
     else { this.endpoint = []; }
     if (source['bodySite']) { this.bodySite = new fhir.Coding(source.bodySite); }
@@ -292,6 +352,10 @@ export class ImagingStudySeries extends fhir.BackboneElement {
     if (source['specimen']) { this.specimen = source.specimen.map((x) => new fhir.Reference(x)); }
     else { this.specimen = []; }
     if (source['started']) { this.started = new fhir.FhirDateTime({value: source.started}); }
+    if (source['_started']) {
+      if (this.started) { this.started.addExtendedProperties(source._started!); }
+      else { this.started = new fhir.FhirDateTime(source._started as Partial<fhir.FhirDateTimeArgs>); }
+    }
     if (source['performer']) { this.performer = source.performer.map((x) => new fhir.ImagingStudySeriesPerformer(x)); }
     else { this.performer = []; }
     if (source['instance']) { this.instance = source.instance.map((x) => new fhir.ImagingStudySeriesInstance(x)); }
@@ -346,6 +410,10 @@ export interface ImagingStudyArgs extends fhir.DomainResourceArgs {
    */
   status: fhir.FhirCode<ImagingstudyStatusCodeType>|string|undefined;
   /**
+   * Extended properties for primitive element: ImagingStudy.status
+   */
+  _status?:fhir.FhirElementArgs;
+  /**
    * A list of all the series.modality values that are actual acquisition modalities, i.e. those in the DICOM Context Group 29 (value set OID 1.2.840.10008.6.1.19).
    */
   modality?: fhir.CodingArgs[]|undefined;
@@ -361,6 +429,10 @@ export interface ImagingStudyArgs extends fhir.DomainResourceArgs {
    * Date and time the study started.
    */
   started?: fhir.FhirDateTime|string|undefined;
+  /**
+   * Extended properties for primitive element: ImagingStudy.started
+   */
+  _started?:fhir.FhirElementArgs;
   /**
    * A list of the diagnostic requests that resulted in this imaging study being performed.
    */
@@ -382,9 +454,17 @@ export interface ImagingStudyArgs extends fhir.DomainResourceArgs {
    */
   numberOfSeries?: fhir.FhirUnsignedInt|number|undefined;
   /**
+   * Extended properties for primitive element: ImagingStudy.numberOfSeries
+   */
+  _numberOfSeries?:fhir.FhirElementArgs;
+  /**
    * Number of SOP Instances in Study. This value given may be larger than the number of instance elements this resource contains due to resource availability, security, or other factors. This element should be present if any instance elements are present.
    */
   numberOfInstances?: fhir.FhirUnsignedInt|number|undefined;
+  /**
+   * Extended properties for primitive element: ImagingStudy.numberOfInstances
+   */
+  _numberOfInstances?:fhir.FhirElementArgs;
   /**
    * The procedure which this ImagingStudy was part of.
    */
@@ -413,6 +493,10 @@ export interface ImagingStudyArgs extends fhir.DomainResourceArgs {
    * The Imaging Manager description of the study. Institution-generated description or classification of the Study (component) performed.
    */
   description?: fhir.FhirString|string|undefined;
+  /**
+   * Extended properties for primitive element: ImagingStudy.description
+   */
+  _description?:fhir.FhirElementArgs;
   /**
    * Each study has one or more series of images or other content.
    */
@@ -521,12 +605,20 @@ export class ImagingStudy extends fhir.DomainResource {
     else { this.identifier = []; }
     if (source['status']) { this.status = new fhir.FhirCode<ImagingstudyStatusCodeType>({value: source.status}); }
     else { this.status = null; }
+    if (source['_status']) {
+      if (this.status) { this.status.addExtendedProperties(source._status!); }
+      else { this.status = new fhir.FhirCode<ImagingstudyStatusCodeType>(source._status as Partial<fhir.FhirCode>); }
+    }
     if (source['modality']) { this.modality = source.modality.map((x) => new fhir.Coding(x)); }
     else { this.modality = []; }
     if (source['subject']) { this.subject = new fhir.Reference(source.subject); }
     else { this.subject = null; }
     if (source['encounter']) { this.encounter = new fhir.Reference(source.encounter); }
     if (source['started']) { this.started = new fhir.FhirDateTime({value: source.started}); }
+    if (source['_started']) {
+      if (this.started) { this.started.addExtendedProperties(source._started!); }
+      else { this.started = new fhir.FhirDateTime(source._started as Partial<fhir.FhirDateTimeArgs>); }
+    }
     if (source['basedOn']) { this.basedOn = source.basedOn.map((x) => new fhir.Reference(x)); }
     else { this.basedOn = []; }
     if (source['referrer']) { this.referrer = new fhir.Reference(source.referrer); }
@@ -535,7 +627,15 @@ export class ImagingStudy extends fhir.DomainResource {
     if (source['endpoint']) { this.endpoint = source.endpoint.map((x) => new fhir.Reference(x)); }
     else { this.endpoint = []; }
     if (source['numberOfSeries']) { this.numberOfSeries = new fhir.FhirUnsignedInt({value: source.numberOfSeries}); }
+    if (source['_numberOfSeries']) {
+      if (this.numberOfSeries) { this.numberOfSeries.addExtendedProperties(source._numberOfSeries!); }
+      else { this.numberOfSeries = new fhir.FhirUnsignedInt(source._numberOfSeries as Partial<fhir.FhirUnsignedIntArgs>); }
+    }
     if (source['numberOfInstances']) { this.numberOfInstances = new fhir.FhirUnsignedInt({value: source.numberOfInstances}); }
+    if (source['_numberOfInstances']) {
+      if (this.numberOfInstances) { this.numberOfInstances.addExtendedProperties(source._numberOfInstances!); }
+      else { this.numberOfInstances = new fhir.FhirUnsignedInt(source._numberOfInstances as Partial<fhir.FhirUnsignedIntArgs>); }
+    }
     if (source['procedureReference']) { this.procedureReference = new fhir.Reference(source.procedureReference); }
     if (source['procedureCode']) { this.procedureCode = source.procedureCode.map((x) => new fhir.CodeableConcept(x)); }
     else { this.procedureCode = []; }
@@ -547,6 +647,10 @@ export class ImagingStudy extends fhir.DomainResource {
     if (source['note']) { this.note = source.note.map((x) => new fhir.Annotation(x)); }
     else { this.note = []; }
     if (source['description']) { this.description = new fhir.FhirString({value: source.description}); }
+    if (source['_description']) {
+      if (this.description) { this.description.addExtendedProperties(source._description!); }
+      else { this.description = new fhir.FhirString(source._description as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['series']) { this.series = source.series.map((x) => new fhir.ImagingStudySeries(x)); }
     else { this.series = []; }
   }

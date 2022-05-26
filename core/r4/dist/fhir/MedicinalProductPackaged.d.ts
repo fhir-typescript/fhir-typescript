@@ -176,6 +176,10 @@ export interface MedicinalProductPackagedArgs extends fhir.DomainResourceArgs {
      */
     description?: fhir.FhirString | string | undefined;
     /**
+     * Extended properties for primitive element: MedicinalProductPackaged.description
+     */
+    _description?: fhir.FhirElementArgs;
+    /**
      * The legal status of supply of the medicinal product as classified by the regulator.
      */
     legalStatusOfSupply?: fhir.CodeableConceptArgs | undefined;

@@ -6,9 +6,9 @@
 import * as fhir from '../fhir.js';
 
 // @ts-ignore
-import { NutrientCodeCodings, NutrientCodeCodingType,} from '../fhirValueSets/NutrientCodeCodings.js';
+import { NutrientCodings, NutrientCodingType,} from '../fhirValueSets/NutrientCodings.js';
 // @ts-ignore
-import { NutrientCodeCodes,  NutrientCodeCodeType } from '../fhirValueSets/NutrientCodeCodes.js';
+import { NutrientCodes,  NutrientCodeType } from '../fhirValueSets/NutrientCodes.js';
 // @ts-ignore
 import { ModifiedFoodtypeCodings, ModifiedFoodtypeCodingType,} from '../fhirValueSets/ModifiedFoodtypeCodings.js';
 // @ts-ignore
@@ -165,6 +165,10 @@ export interface NutritionOrderOralDietArgs extends fhir.BackboneElementArgs {
    * Free text dosage instructions can be used for cases where the instructions are too complex to code.
    */
   instruction?: fhir.FhirString|string|undefined;
+  /**
+   * Extended properties for primitive element: NutritionOrder.oralDiet.instruction
+   */
+  _instruction?:fhir.FhirElementArgs;
 }
 
 /**
@@ -215,6 +219,10 @@ export class NutritionOrderOralDiet extends fhir.BackboneElement {
     if (source['fluidConsistencyType']) { this.fluidConsistencyType = source.fluidConsistencyType.map((x) => new fhir.CodeableConcept(x)); }
     else { this.fluidConsistencyType = []; }
     if (source['instruction']) { this.instruction = new fhir.FhirString({value: source.instruction}); }
+    if (source['_instruction']) {
+      if (this.instruction) { this.instruction.addExtendedProperties(source._instruction!); }
+      else { this.instruction = new fhir.FhirString(source._instruction as Partial<fhir.FhirStringArgs>); }
+    }
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -243,6 +251,10 @@ export interface NutritionOrderSupplementArgs extends fhir.BackboneElementArgs {
    */
   productName?: fhir.FhirString|string|undefined;
   /**
+   * Extended properties for primitive element: NutritionOrder.supplement.productName
+   */
+  _productName?:fhir.FhirElementArgs;
+  /**
    * The time period and frequency at which the supplement(s) should be given.  The supplement should be given for the combination of all schedules if more than one schedule is present.
    */
   schedule?: fhir.TimingArgs[]|undefined;
@@ -254,6 +266,10 @@ export interface NutritionOrderSupplementArgs extends fhir.BackboneElementArgs {
    * Free text dosage instructions can be used for cases where the instructions are too complex to code.
    */
   instruction?: fhir.FhirString|string|undefined;
+  /**
+   * Extended properties for primitive element: NutritionOrder.supplement.instruction
+   */
+  _instruction?:fhir.FhirElementArgs;
 }
 
 /**
@@ -291,10 +307,18 @@ export class NutritionOrderSupplement extends fhir.BackboneElement {
     super(source, options);
     if (source['type']) { this.type = new fhir.CodeableConcept(source.type); }
     if (source['productName']) { this.productName = new fhir.FhirString({value: source.productName}); }
+    if (source['_productName']) {
+      if (this.productName) { this.productName.addExtendedProperties(source._productName!); }
+      else { this.productName = new fhir.FhirString(source._productName as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['schedule']) { this.schedule = source.schedule.map((x) => new fhir.Timing(x)); }
     else { this.schedule = []; }
     if (source['quantity']) { this.quantity = new fhir.Quantity(source.quantity); }
     if (source['instruction']) { this.instruction = new fhir.FhirString({value: source.instruction}); }
+    if (source['_instruction']) {
+      if (this.instruction) { this.instruction.addExtendedProperties(source._instruction!); }
+      else { this.instruction = new fhir.FhirString(source._instruction as Partial<fhir.FhirStringArgs>); }
+    }
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -393,6 +417,10 @@ export interface NutritionOrderEnteralFormulaArgs extends fhir.BackboneElementAr
    */
   baseFormulaProductName?: fhir.FhirString|string|undefined;
   /**
+   * Extended properties for primitive element: NutritionOrder.enteralFormula.baseFormulaProductName
+   */
+  _baseFormulaProductName?:fhir.FhirElementArgs;
+  /**
    * Indicates the type of modular component such as protein, carbohydrate, fat or fiber to be provided in addition to or mixed with the base formula.
    */
   additiveType?: fhir.CodeableConceptArgs|undefined;
@@ -400,6 +428,10 @@ export interface NutritionOrderEnteralFormulaArgs extends fhir.BackboneElementAr
    * The product or brand name of the type of modular component to be added to the formula.
    */
   additiveProductName?: fhir.FhirString|string|undefined;
+  /**
+   * Extended properties for primitive element: NutritionOrder.enteralFormula.additiveProductName
+   */
+  _additiveProductName?:fhir.FhirElementArgs;
   /**
    * The amount of energy (calories) that the formula should provide per specified volume, typically per mL or fluid oz.  For example, an infant may require a formula that provides 24 calories per fluid ounce or an adult may require an enteral formula that provides 1.5 calorie/mL.
    */
@@ -420,6 +452,10 @@ export interface NutritionOrderEnteralFormulaArgs extends fhir.BackboneElementAr
    * Free text dosage instructions can be used for cases where the instructions are too complex to code.
    */
   administrationInstruction?: fhir.FhirString|string|undefined;
+  /**
+   * Extended properties for primitive element: NutritionOrder.enteralFormula.administrationInstruction
+   */
+  _administrationInstruction?:fhir.FhirElementArgs;
 }
 
 /**
@@ -473,14 +509,26 @@ export class NutritionOrderEnteralFormula extends fhir.BackboneElement {
     super(source, options);
     if (source['baseFormulaType']) { this.baseFormulaType = new fhir.CodeableConcept(source.baseFormulaType); }
     if (source['baseFormulaProductName']) { this.baseFormulaProductName = new fhir.FhirString({value: source.baseFormulaProductName}); }
+    if (source['_baseFormulaProductName']) {
+      if (this.baseFormulaProductName) { this.baseFormulaProductName.addExtendedProperties(source._baseFormulaProductName!); }
+      else { this.baseFormulaProductName = new fhir.FhirString(source._baseFormulaProductName as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['additiveType']) { this.additiveType = new fhir.CodeableConcept(source.additiveType); }
     if (source['additiveProductName']) { this.additiveProductName = new fhir.FhirString({value: source.additiveProductName}); }
+    if (source['_additiveProductName']) {
+      if (this.additiveProductName) { this.additiveProductName.addExtendedProperties(source._additiveProductName!); }
+      else { this.additiveProductName = new fhir.FhirString(source._additiveProductName as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['caloricDensity']) { this.caloricDensity = new fhir.Quantity(source.caloricDensity); }
     if (source['routeofAdministration']) { this.routeofAdministration = new fhir.CodeableConcept(source.routeofAdministration); }
     if (source['administration']) { this.administration = source.administration.map((x) => new fhir.NutritionOrderEnteralFormulaAdministration(x)); }
     else { this.administration = []; }
     if (source['maxVolumeToDeliver']) { this.maxVolumeToDeliver = new fhir.Quantity(source.maxVolumeToDeliver); }
     if (source['administrationInstruction']) { this.administrationInstruction = new fhir.FhirString({value: source.administrationInstruction}); }
+    if (source['_administrationInstruction']) {
+      if (this.administrationInstruction) { this.administrationInstruction.addExtendedProperties(source._administrationInstruction!); }
+      else { this.administrationInstruction = new fhir.FhirString(source._administrationInstruction as Partial<fhir.FhirStringArgs>); }
+    }
   }
   /**
    * Extensible-bound Value Set for routeofAdministration (NutritionOrder.enteralFormula.routeofAdministration)
@@ -522,21 +570,41 @@ export interface NutritionOrderArgs extends fhir.DomainResourceArgs {
    */
   instantiatesCanonical?: fhir.FhirCanonical[]|string[]|undefined;
   /**
+   * Extended properties for primitive element: NutritionOrder.instantiatesCanonical
+   */
+  _instantiatesCanonical?:(fhir.FhirElementArgs|null)[];
+  /**
    * This might be an HTML page, PDF, etc. or could just be a non-resolvable URI identifier.
    */
   instantiatesUri?: fhir.FhirUri[]|string[]|undefined;
+  /**
+   * Extended properties for primitive element: NutritionOrder.instantiatesUri
+   */
+  _instantiatesUri?:(fhir.FhirElementArgs|null)[];
   /**
    * The URL pointing to a protocol, guideline, orderset or other definition that is adhered to in whole or in part by this NutritionOrder.
    */
   instantiates?: fhir.FhirUri[]|string[]|undefined;
   /**
+   * Extended properties for primitive element: NutritionOrder.instantiates
+   */
+  _instantiates?:(fhir.FhirElementArgs|null)[];
+  /**
    * Typically the system placing the order sets the status to "requested". Thereafter, the order is maintained by the receiver that updates the status as the request is handled.  This element is labeled as a modifier because the status contains codes that mark the resource as not currently valid.
    */
   status: fhir.FhirCode<RequestStatusCodeType>|string|undefined;
   /**
+   * Extended properties for primitive element: NutritionOrder.status
+   */
+  _status?:fhir.FhirElementArgs;
+  /**
    * When resources map to this element, they are free to define as many codes as necessary to cover their space and will map to "proposal, plan or order".  Can have multiple codes that map to one of these.  E.g. "original order", "encoded order", "reflex order" would all map to "order".  Expectation is that the set of codes is mutually exclusive or a strict all-encompassing hierarchy.
    */
   intent: fhir.FhirCode<RequestIntentCodeType>|string|undefined;
+  /**
+   * Extended properties for primitive element: NutritionOrder.intent
+   */
+  _intent?:fhir.FhirElementArgs;
   /**
    * The person (patient) who needs the nutrition order for an oral diet, nutritional supplement and/or enteral or formula feeding.
    */
@@ -549,6 +617,10 @@ export interface NutritionOrderArgs extends fhir.DomainResourceArgs {
    * The date and time that this nutrition order was requested.
    */
   dateTime: fhir.FhirDateTime|string|undefined;
+  /**
+   * Extended properties for primitive element: NutritionOrder.dateTime
+   */
+  _dateTime?:fhir.FhirElementArgs;
   /**
    * The practitioner that holds legal responsibility for ordering the diet, nutritional supplement, or formula feedings.
    */
@@ -673,19 +745,49 @@ export class NutritionOrder extends fhir.DomainResource {
     else { this.identifier = []; }
     if (source['instantiatesCanonical']) { this.instantiatesCanonical = source.instantiatesCanonical.map((x) => new fhir.FhirCanonical({value: x})); }
     else { this.instantiatesCanonical = []; }
+    if (source['_instantiatesCanonical']) {
+      source._instantiatesCanonical.forEach((x,i) => {
+        if (this.instantiatesCanonical.length >= i) { if (x) { this.instantiatesCanonical[i].addExtendedProperties(x); } }
+        else { if (x) { this.instantiatesCanonical.push(new fhir.FhirCanonical(x as Partial<fhir.FhirCanonicalArgs>)); } }
+      });
+    }
     if (source['instantiatesUri']) { this.instantiatesUri = source.instantiatesUri.map((x) => new fhir.FhirUri({value: x})); }
     else { this.instantiatesUri = []; }
+    if (source['_instantiatesUri']) {
+      source._instantiatesUri.forEach((x,i) => {
+        if (this.instantiatesUri.length >= i) { if (x) { this.instantiatesUri[i].addExtendedProperties(x); } }
+        else { if (x) { this.instantiatesUri.push(new fhir.FhirUri(x as Partial<fhir.FhirUriArgs>)); } }
+      });
+    }
     if (source['instantiates']) { this.instantiates = source.instantiates.map((x) => new fhir.FhirUri({value: x})); }
     else { this.instantiates = []; }
+    if (source['_instantiates']) {
+      source._instantiates.forEach((x,i) => {
+        if (this.instantiates.length >= i) { if (x) { this.instantiates[i].addExtendedProperties(x); } }
+        else { if (x) { this.instantiates.push(new fhir.FhirUri(x as Partial<fhir.FhirUriArgs>)); } }
+      });
+    }
     if (source['status']) { this.status = new fhir.FhirCode<RequestStatusCodeType>({value: source.status}); }
     else { this.status = null; }
+    if (source['_status']) {
+      if (this.status) { this.status.addExtendedProperties(source._status!); }
+      else { this.status = new fhir.FhirCode<RequestStatusCodeType>(source._status as Partial<fhir.FhirCode>); }
+    }
     if (source['intent']) { this.intent = new fhir.FhirCode<RequestIntentCodeType>({value: source.intent}); }
     else { this.intent = null; }
+    if (source['_intent']) {
+      if (this.intent) { this.intent.addExtendedProperties(source._intent!); }
+      else { this.intent = new fhir.FhirCode<RequestIntentCodeType>(source._intent as Partial<fhir.FhirCode>); }
+    }
     if (source['patient']) { this.patient = new fhir.Reference(source.patient); }
     else { this.patient = null; }
     if (source['encounter']) { this.encounter = new fhir.Reference(source.encounter); }
     if (source['dateTime']) { this.dateTime = new fhir.FhirDateTime({value: source.dateTime}); }
     else { this.dateTime = null; }
+    if (source['_dateTime']) {
+      if (this.dateTime) { this.dateTime.addExtendedProperties(source._dateTime!); }
+      else { this.dateTime = new fhir.FhirDateTime(source._dateTime as Partial<fhir.FhirDateTimeArgs>); }
+    }
     if (source['orderer']) { this.orderer = new fhir.Reference(source.orderer); }
     if (source['allergyIntolerance']) { this.allergyIntolerance = source.allergyIntolerance.map((x) => new fhir.Reference(x)); }
     else { this.allergyIntolerance = []; }

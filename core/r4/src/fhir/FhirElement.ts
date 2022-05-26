@@ -14,6 +14,10 @@ export interface FhirElementArgs extends fhir.FhirBaseArgs {
    */
   id?: fhir.FhirString|string|undefined;
   /**
+   * Extended properties for primitive element: Element.id
+   */
+  _id?:fhir.FhirElementArgs;
+  /**
    * There can be no stigma associated with the use of extensions by any application, project, or standard - regardless of the institution or jurisdiction that uses or defines the extensions.  The use of extensions is what allows the FHIR specification to retain a core level of simplicity for everyone.
    */
   extension?: fhir.ExtensionArgs[]|undefined;
@@ -41,6 +45,10 @@ export class FhirElement extends fhir.FhirBase {
   constructor(source:Partial<FhirElementArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
     if (source['id']) { this.id = new fhir.FhirString({value: source.id}); }
+    if (source['_id']) {
+      if (this.id) { this.id.addExtendedProperties(source._id!); }
+      else { this.id = new fhir.FhirString(source._id as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['extension']) { this.extension = source.extension.map((x) => new fhir.Extension(x)); }
     else { this.extension = []; }
   }

@@ -54,6 +54,10 @@ export interface ClinicalImpressionFindingArgs extends fhir.BackboneElementArgs 
      * Which investigations support finding or diagnosis.
      */
     basis?: fhir.FhirString | string | undefined;
+    /**
+     * Extended properties for primitive element: ClinicalImpression.finding.basis
+     */
+    _basis?: fhir.FhirElementArgs;
 }
 /**
  * Specific findings or diagnoses that were considered likely or relevant to ongoing treatment.
@@ -101,6 +105,10 @@ export interface ClinicalImpressionArgs extends fhir.DomainResourceArgs {
      */
     status: fhir.FhirCode<ClinicalimpressionStatusCodeType> | string | undefined;
     /**
+     * Extended properties for primitive element: ClinicalImpression.status
+     */
+    _status?: fhir.FhirElementArgs;
+    /**
      * This is generally only used for "exception" statuses such as "not-done", "suspended" or "cancelled".
      * [distinct reason codes for different statuses can be enforced using invariants if they are universal bindings].
      */
@@ -113,6 +121,10 @@ export interface ClinicalImpressionArgs extends fhir.DomainResourceArgs {
      * A summary of the context and/or cause of the assessment - why / where it was performed, and what patient events/status prompted it.
      */
     description?: fhir.FhirString | string | undefined;
+    /**
+     * Extended properties for primitive element: ClinicalImpression.description
+     */
+    _description?: fhir.FhirElementArgs;
     /**
      * The patient or group of individuals assessed as part of this record.
      */
@@ -138,6 +150,10 @@ export interface ClinicalImpressionArgs extends fhir.DomainResourceArgs {
      */
     date?: fhir.FhirDateTime | string | undefined;
     /**
+     * Extended properties for primitive element: ClinicalImpression.date
+     */
+    _date?: fhir.FhirElementArgs;
+    /**
      * The clinician performing the assessment.
      */
     assessor?: fhir.ReferenceArgs | undefined;
@@ -158,9 +174,17 @@ export interface ClinicalImpressionArgs extends fhir.DomainResourceArgs {
      */
     protocol?: fhir.FhirUri[] | string[] | undefined;
     /**
+     * Extended properties for primitive element: ClinicalImpression.protocol
+     */
+    _protocol?: (fhir.FhirElementArgs | null)[];
+    /**
      * A text summary of the investigations and the diagnosis.
      */
     summary?: fhir.FhirString | string | undefined;
+    /**
+     * Extended properties for primitive element: ClinicalImpression.summary
+     */
+    _summary?: fhir.FhirElementArgs;
     /**
      * Specific findings or diagnoses that were considered likely or relevant to ongoing treatment.
      */

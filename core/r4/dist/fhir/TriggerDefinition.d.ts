@@ -9,9 +9,17 @@ export interface TriggerDefinitionArgs extends fhir.FhirElementArgs {
      */
     type: fhir.FhirCode<TriggerTypeCodeType> | string | undefined;
     /**
+     * Extended properties for primitive element: TriggerDefinition.type
+     */
+    _type?: fhir.FhirElementArgs;
+    /**
      * An event name can be provided for all event types, but is required for named events. If a name is provided for a type other than named events, it is considered to be a shorthand for the semantics described by the formal description of the event.
      */
     name?: fhir.FhirString | string | undefined;
+    /**
+     * Extended properties for primitive element: TriggerDefinition.name
+     */
+    _name?: fhir.FhirElementArgs;
     /**
      * The timing of the event (if this is a periodic trigger).
      */
@@ -84,7 +92,7 @@ export declare class TriggerDefinition extends fhir.FhirElement {
         readonly DataAccessEnded: "data-access-ended";
         readonly DataAccessed: "data-accessed";
         readonly DataAdded: "data-added"; /**
-         * An event name can be provided for all event types, but is required for named events. If a name is provided for a type other than named events, it is considered to be a shorthand for the semantics described by the formal description of the event.
+         * Extended properties for primitive element: TriggerDefinition.type
          */
         readonly DataChanged: "data-changed";
         readonly DataUpdated: "data-modified";

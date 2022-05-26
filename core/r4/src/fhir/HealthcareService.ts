@@ -49,6 +49,10 @@ export interface HealthcareServiceEligibilityArgs extends fhir.BackboneElementAr
    * The description of service eligibility should, in general, not exceed one or two paragraphs. It should be sufficient for a prospective consumer to determine if they are likely to be eligible or not. Where eligibility requirements and conditions are complex, it may simply be noted that an eligibility assessment is required. Where eligibility is determined by an outside source, such as an Act of Parliament, this should be noted, preferably with a reference to a commonly available copy of the source document such as a web page.
    */
   comment?: fhir.FhirMarkdown|string|undefined;
+  /**
+   * Extended properties for primitive element: HealthcareService.eligibility.comment
+   */
+  _comment?:fhir.FhirElementArgs;
 }
 
 /**
@@ -74,6 +78,10 @@ export class HealthcareServiceEligibility extends fhir.BackboneElement {
     super(source, options);
     if (source['code']) { this.code = new fhir.CodeableConcept(source.code); }
     if (source['comment']) { this.comment = new fhir.FhirMarkdown({value: source.comment}); }
+    if (source['_comment']) {
+      if (this.comment) { this.comment.addExtendedProperties(source._comment!); }
+      else { this.comment = new fhir.FhirMarkdown(source._comment as Partial<fhir.FhirMarkdownArgs>); }
+    }
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -94,17 +102,33 @@ export interface HealthcareServiceAvailableTimeArgs extends fhir.BackboneElement
    */
   daysOfWeek?: fhir.FhirCode<DaysOfWeekCodeType>[]|string[]|undefined;
   /**
+   * Extended properties for primitive element: HealthcareService.availableTime.daysOfWeek
+   */
+  _daysOfWeek?:(fhir.FhirElementArgs|null)[];
+  /**
    * Is this always available? (hence times are irrelevant) e.g. 24 hour service.
    */
   allDay?: fhir.FhirBoolean|boolean|undefined;
+  /**
+   * Extended properties for primitive element: HealthcareService.availableTime.allDay
+   */
+  _allDay?:fhir.FhirElementArgs;
   /**
    * The time zone is expected to be for where this HealthcareService is provided at.
    */
   availableStartTime?: fhir.FhirTime|string|undefined;
   /**
+   * Extended properties for primitive element: HealthcareService.availableTime.availableStartTime
+   */
+  _availableStartTime?:fhir.FhirElementArgs;
+  /**
    * The time zone is expected to be for where this HealthcareService is provided at.
    */
   availableEndTime?: fhir.FhirTime|string|undefined;
+  /**
+   * Extended properties for primitive element: HealthcareService.availableTime.availableEndTime
+   */
+  _availableEndTime?:fhir.FhirElementArgs;
 }
 
 /**
@@ -138,9 +162,27 @@ export class HealthcareServiceAvailableTime extends fhir.BackboneElement {
     super(source, options);
     if (source['daysOfWeek']) { this.daysOfWeek = source.daysOfWeek.map((x) => new fhir.FhirCode<DaysOfWeekCodeType>({value: x})); }
     else { this.daysOfWeek = []; }
+    if (source['_daysOfWeek']) {
+      source._daysOfWeek.forEach((x,i) => {
+        if (this.daysOfWeek.length >= i) { if (x) { this.daysOfWeek[i].addExtendedProperties(x); } }
+        else { if (x) { this.daysOfWeek.push(new fhir.FhirCode<DaysOfWeekCodeType>(x as Partial<fhir.FhirCode>)); } }
+      });
+    }
     if (source['allDay']) { this.allDay = new fhir.FhirBoolean({value: source.allDay}); }
+    if (source['_allDay']) {
+      if (this.allDay) { this.allDay.addExtendedProperties(source._allDay!); }
+      else { this.allDay = new fhir.FhirBoolean(source._allDay as Partial<fhir.FhirBooleanArgs>); }
+    }
     if (source['availableStartTime']) { this.availableStartTime = new fhir.FhirTime({value: source.availableStartTime}); }
+    if (source['_availableStartTime']) {
+      if (this.availableStartTime) { this.availableStartTime.addExtendedProperties(source._availableStartTime!); }
+      else { this.availableStartTime = new fhir.FhirTime(source._availableStartTime as Partial<fhir.FhirTimeArgs>); }
+    }
     if (source['availableEndTime']) { this.availableEndTime = new fhir.FhirTime({value: source.availableEndTime}); }
+    if (source['_availableEndTime']) {
+      if (this.availableEndTime) { this.availableEndTime.addExtendedProperties(source._availableEndTime!); }
+      else { this.availableEndTime = new fhir.FhirTime(source._availableEndTime as Partial<fhir.FhirTimeArgs>); }
+    }
   }
   /**
    * Required-bound Value Set for daysOfWeek (HealthcareService.availableTime.daysOfWeek)
@@ -176,6 +218,10 @@ export interface HealthcareServiceNotAvailableArgs extends fhir.BackboneElementA
    */
   description: fhir.FhirString|string|undefined;
   /**
+   * Extended properties for primitive element: HealthcareService.notAvailable.description
+   */
+  _description?:fhir.FhirElementArgs;
+  /**
    * Service is not available (seasonally or for a public holiday) from this date.
    */
   during?: fhir.PeriodArgs|undefined;
@@ -204,6 +250,10 @@ export class HealthcareServiceNotAvailable extends fhir.BackboneElement {
     super(source, options);
     if (source['description']) { this.description = new fhir.FhirString({value: source.description}); }
     else { this.description = null; }
+    if (source['_description']) {
+      if (this.description) { this.description.addExtendedProperties(source._description!); }
+      else { this.description = new fhir.FhirString(source._description as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['during']) { this.during = new fhir.Period(source.during); }
   }
   /**
@@ -236,6 +286,10 @@ export interface HealthcareServiceArgs extends fhir.DomainResourceArgs {
    */
   active?: fhir.FhirBoolean|boolean|undefined;
   /**
+   * Extended properties for primitive element: HealthcareService.active
+   */
+  _active?:fhir.FhirElementArgs;
+  /**
    * This property is recommended to be the same as the Location's managingOrganization, and if not provided should be interpreted as such. If the Location does not have a managing Organization, then this property should be populated.
    */
   providedBy?: fhir.ReferenceArgs|undefined;
@@ -260,13 +314,25 @@ export interface HealthcareServiceArgs extends fhir.DomainResourceArgs {
    */
   name?: fhir.FhirString|string|undefined;
   /**
+   * Extended properties for primitive element: HealthcareService.name
+   */
+  _name?:fhir.FhirElementArgs;
+  /**
    * Would expect that a user would not see this information on a search results, and it would only be available when viewing the complete details of the service.
    */
   comment?: fhir.FhirString|string|undefined;
   /**
+   * Extended properties for primitive element: HealthcareService.comment
+   */
+  _comment?:fhir.FhirElementArgs;
+  /**
    * Extra details about the service that can't be placed in the other fields.
    */
   extraDetails?: fhir.FhirMarkdown|string|undefined;
+  /**
+   * Extended properties for primitive element: HealthcareService.extraDetails
+   */
+  _extraDetails?:fhir.FhirElementArgs;
   /**
    * If there is a photo/symbol associated with this HealthcareService, it may be included here to facilitate quick identification of the service in a list.
    */
@@ -308,6 +374,10 @@ export interface HealthcareServiceArgs extends fhir.DomainResourceArgs {
    */
   appointmentRequired?: fhir.FhirBoolean|boolean|undefined;
   /**
+   * Extended properties for primitive element: HealthcareService.appointmentRequired
+   */
+  _appointmentRequired?:fhir.FhirElementArgs;
+  /**
    * More detailed availability information may be provided in associated Schedule/Slot resources.
    */
   availableTime?: fhir.HealthcareServiceAvailableTimeArgs[]|undefined;
@@ -319,6 +389,10 @@ export interface HealthcareServiceArgs extends fhir.DomainResourceArgs {
    * A description of site availability exceptions, e.g. public holiday availability. Succinctly describing all possible exceptions to normal site availability as details in the available Times and not available Times.
    */
   availabilityExceptions?: fhir.FhirString|string|undefined;
+  /**
+   * Extended properties for primitive element: HealthcareService.availabilityExceptions
+   */
+  _availabilityExceptions?:fhir.FhirElementArgs;
   /**
    * Technical endpoints providing access to services operated for the specific healthcare services defined at this resource.
    */
@@ -442,6 +516,10 @@ export class HealthcareService extends fhir.DomainResource {
     if (source['identifier']) { this.identifier = source.identifier.map((x) => new fhir.Identifier(x)); }
     else { this.identifier = []; }
     if (source['active']) { this.active = new fhir.FhirBoolean({value: source.active}); }
+    if (source['_active']) {
+      if (this.active) { this.active.addExtendedProperties(source._active!); }
+      else { this.active = new fhir.FhirBoolean(source._active as Partial<fhir.FhirBooleanArgs>); }
+    }
     if (source['providedBy']) { this.providedBy = new fhir.Reference(source.providedBy); }
     if (source['category']) { this.category = source.category.map((x) => new fhir.CodeableConcept(x)); }
     else { this.category = []; }
@@ -452,8 +530,20 @@ export class HealthcareService extends fhir.DomainResource {
     if (source['location']) { this.location = source.location.map((x) => new fhir.Reference(x)); }
     else { this.location = []; }
     if (source['name']) { this.name = new fhir.FhirString({value: source.name}); }
+    if (source['_name']) {
+      if (this.name) { this.name.addExtendedProperties(source._name!); }
+      else { this.name = new fhir.FhirString(source._name as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['comment']) { this.comment = new fhir.FhirString({value: source.comment}); }
+    if (source['_comment']) {
+      if (this.comment) { this.comment.addExtendedProperties(source._comment!); }
+      else { this.comment = new fhir.FhirString(source._comment as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['extraDetails']) { this.extraDetails = new fhir.FhirMarkdown({value: source.extraDetails}); }
+    if (source['_extraDetails']) {
+      if (this.extraDetails) { this.extraDetails.addExtendedProperties(source._extraDetails!); }
+      else { this.extraDetails = new fhir.FhirMarkdown(source._extraDetails as Partial<fhir.FhirMarkdownArgs>); }
+    }
     if (source['photo']) { this.photo = new fhir.Attachment(source.photo); }
     if (source['telecom']) { this.telecom = source.telecom.map((x) => new fhir.ContactPoint(x)); }
     else { this.telecom = []; }
@@ -472,11 +562,19 @@ export class HealthcareService extends fhir.DomainResource {
     if (source['referralMethod']) { this.referralMethod = source.referralMethod.map((x) => new fhir.CodeableConcept(x)); }
     else { this.referralMethod = []; }
     if (source['appointmentRequired']) { this.appointmentRequired = new fhir.FhirBoolean({value: source.appointmentRequired}); }
+    if (source['_appointmentRequired']) {
+      if (this.appointmentRequired) { this.appointmentRequired.addExtendedProperties(source._appointmentRequired!); }
+      else { this.appointmentRequired = new fhir.FhirBoolean(source._appointmentRequired as Partial<fhir.FhirBooleanArgs>); }
+    }
     if (source['availableTime']) { this.availableTime = source.availableTime.map((x) => new fhir.HealthcareServiceAvailableTime(x)); }
     else { this.availableTime = []; }
     if (source['notAvailable']) { this.notAvailable = source.notAvailable.map((x) => new fhir.HealthcareServiceNotAvailable(x)); }
     else { this.notAvailable = []; }
     if (source['availabilityExceptions']) { this.availabilityExceptions = new fhir.FhirString({value: source.availabilityExceptions}); }
+    if (source['_availabilityExceptions']) {
+      if (this.availabilityExceptions) { this.availabilityExceptions.addExtendedProperties(source._availabilityExceptions!); }
+      else { this.availabilityExceptions = new fhir.FhirString(source._availabilityExceptions as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['endpoint']) { this.endpoint = source.endpoint.map((x) => new fhir.Reference(x)); }
     else { this.endpoint = []; }
   }

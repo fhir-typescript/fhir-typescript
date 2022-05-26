@@ -18,21 +18,41 @@ export interface ExpressionArgs extends fhir.FhirElementArgs {
    */
   description?: fhir.FhirString|string|undefined;
   /**
+   * Extended properties for primitive element: Expression.description
+   */
+  _description?:fhir.FhirElementArgs;
+  /**
    * A short name assigned to the expression to allow for multiple reuse of the expression in the context where it is defined.
    */
   name?: fhir.FhirId|string|undefined;
+  /**
+   * Extended properties for primitive element: Expression.name
+   */
+  _name?:fhir.FhirElementArgs;
   /**
    * The media type of the language for the expression.
    */
   language: fhir.FhirCode|string|undefined;
   /**
+   * Extended properties for primitive element: Expression.language
+   */
+  _language?:fhir.FhirElementArgs;
+  /**
    * An expression in the specified language that returns a value.
    */
   expression?: fhir.FhirString|string|undefined;
   /**
+   * Extended properties for primitive element: Expression.expression
+   */
+  _expression?:fhir.FhirElementArgs;
+  /**
    * If both a reference and an expression is found, the reference SHALL point to the same expression.
    */
   reference?: fhir.FhirUri|string|undefined;
+  /**
+   * Extended properties for primitive element: Expression.reference
+   */
+  _reference?:fhir.FhirElementArgs;
 }
 
 /**
@@ -69,11 +89,31 @@ export class Expression extends fhir.FhirElement {
   constructor(source:Partial<ExpressionArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
     if (source['description']) { this.description = new fhir.FhirString({value: source.description}); }
+    if (source['_description']) {
+      if (this.description) { this.description.addExtendedProperties(source._description!); }
+      else { this.description = new fhir.FhirString(source._description as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['name']) { this.name = new fhir.FhirId({value: source.name}); }
+    if (source['_name']) {
+      if (this.name) { this.name.addExtendedProperties(source._name!); }
+      else { this.name = new fhir.FhirId(source._name as Partial<fhir.FhirIdArgs>); }
+    }
     if (source['language']) { this.language = new fhir.FhirCode({value: source.language}); }
     else { this.language = null; }
+    if (source['_language']) {
+      if (this.language) { this.language.addExtendedProperties(source._language!); }
+      else { this.language = new fhir.FhirCode(source._language as Partial<fhir.FhirCodeArgs>); }
+    }
     if (source['expression']) { this.expression = new fhir.FhirString({value: source.expression}); }
+    if (source['_expression']) {
+      if (this.expression) { this.expression.addExtendedProperties(source._expression!); }
+      else { this.expression = new fhir.FhirString(source._expression as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['reference']) { this.reference = new fhir.FhirUri({value: source.reference}); }
+    if (source['_reference']) {
+      if (this.reference) { this.reference.addExtendedProperties(source._reference!); }
+      else { this.reference = new fhir.FhirUri(source._reference as Partial<fhir.FhirUriArgs>); }
+    }
   }
   /**
    * Extensible-bound Value Set for language (Expression.language)

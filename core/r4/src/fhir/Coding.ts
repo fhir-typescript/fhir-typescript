@@ -14,21 +14,41 @@ export interface CodingArgs extends fhir.FhirElementArgs {
    */
   system?: fhir.FhirUri|string|undefined;
   /**
+   * Extended properties for primitive element: Coding.system
+   */
+  _system?:fhir.FhirElementArgs;
+  /**
    * Where the terminology does not clearly define what string should be used to identify code system versions, the recommendation is to use the date (expressed in FHIR date format) on which that version was officially published as the version date.
    */
   version?: fhir.FhirString|string|undefined;
+  /**
+   * Extended properties for primitive element: Coding.version
+   */
+  _version?:fhir.FhirElementArgs;
   /**
    * A symbol in syntax defined by the system. The symbol may be a predefined code or an expression in a syntax defined by the coding system (e.g. post-coordination).
    */
   code?: fhir.FhirCode|string|undefined;
   /**
+   * Extended properties for primitive element: Coding.code
+   */
+  _code?:fhir.FhirElementArgs;
+  /**
    * A representation of the meaning of the code in the system, following the rules of the system.
    */
   display?: fhir.FhirString|string|undefined;
   /**
+   * Extended properties for primitive element: Coding.display
+   */
+  _display?:fhir.FhirElementArgs;
+  /**
    * Amongst a set of alternatives, a directly chosen code is the most appropriate starting point for new translations. There is some ambiguity about what exactly 'directly chosen' implies, and trading partner agreement may be needed to clarify the use of this element and its consequences more completely.
    */
   userSelected?: fhir.FhirBoolean|boolean|undefined;
+  /**
+   * Extended properties for primitive element: Coding.userSelected
+   */
+  _userSelected?:fhir.FhirElementArgs;
 }
 
 /**
@@ -65,10 +85,30 @@ export class Coding extends fhir.FhirElement {
   constructor(source:Partial<CodingArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
     if (source['system']) { this.system = new fhir.FhirUri({value: source.system}); }
+    if (source['_system']) {
+      if (this.system) { this.system.addExtendedProperties(source._system!); }
+      else { this.system = new fhir.FhirUri(source._system as Partial<fhir.FhirUriArgs>); }
+    }
     if (source['version']) { this.version = new fhir.FhirString({value: source.version}); }
+    if (source['_version']) {
+      if (this.version) { this.version.addExtendedProperties(source._version!); }
+      else { this.version = new fhir.FhirString(source._version as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['code']) { this.code = new fhir.FhirCode({value: source.code}); }
+    if (source['_code']) {
+      if (this.code) { this.code.addExtendedProperties(source._code!); }
+      else { this.code = new fhir.FhirCode(source._code as Partial<fhir.FhirCodeArgs>); }
+    }
     if (source['display']) { this.display = new fhir.FhirString({value: source.display}); }
+    if (source['_display']) {
+      if (this.display) { this.display.addExtendedProperties(source._display!); }
+      else { this.display = new fhir.FhirString(source._display as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['userSelected']) { this.userSelected = new fhir.FhirBoolean({value: source.userSelected}); }
+    if (source['_userSelected']) {
+      if (this.userSelected) { this.userSelected.addExtendedProperties(source._userSelected!); }
+      else { this.userSelected = new fhir.FhirBoolean(source._userSelected as Partial<fhir.FhirBooleanArgs>); }
+    }
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).

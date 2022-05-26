@@ -1,6 +1,6 @@
 import * as fhir from '../fhir.js';
 import { EncounterStatusCodeType } from '../fhirValueSets/EncounterStatusCodes.js';
-import { V3ActEncounterCodeCodingType } from '../fhirValueSets/V3ActEncounterCodeCodings.js';
+import { V3ActEncounterCodingType } from '../fhirValueSets/V3ActEncounterCodings.js';
 import { EncounterParticipantTypeCodingType } from '../fhirValueSets/EncounterParticipantTypeCodings.js';
 import { DiagnosisRoleCodingType } from '../fhirValueSets/DiagnosisRoleCodings.js';
 import { EncounterAdmitSourceCodingType } from '../fhirValueSets/EncounterAdmitSourceCodings.js';
@@ -16,6 +16,10 @@ export interface EncounterStatusHistoryArgs extends fhir.BackboneElementArgs {
      * planned | arrived | triaged | in-progress | onleave | finished | cancelled +.
      */
     status: fhir.FhirCode<EncounterStatusCodeType> | string | undefined;
+    /**
+     * Extended properties for primitive element: Encounter.statusHistory.status
+     */
+    _status?: fhir.FhirElementArgs;
     /**
      * The time that the episode was in the specified status.
      */
@@ -96,7 +100,7 @@ export declare class EncounterClassHistory extends fhir.BackboneElement {
     /**
      * Extensible-bound Value Set for class (Encounter.classHistory.class)
      */
-    static get classExtensibleCodings(): V3ActEncounterCodeCodingType;
+    static get classExtensibleCodings(): V3ActEncounterCodingType;
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
@@ -168,6 +172,10 @@ export interface EncounterDiagnosisArgs extends fhir.BackboneElementArgs {
      * Ranking of the diagnosis (for each role type).
      */
     rank?: fhir.FhirPositiveInt | number | undefined;
+    /**
+     * Extended properties for primitive element: Encounter.diagnosis.rank
+     */
+    _rank?: fhir.FhirElementArgs;
 }
 /**
  * The list of diagnosis relevant to this encounter.
@@ -322,6 +330,10 @@ export interface EncounterLocationArgs extends fhir.BackboneElementArgs {
      */
     status?: fhir.FhirCode<EncounterLocationStatusCodeType> | string | undefined;
     /**
+     * Extended properties for primitive element: Encounter.location.status
+     */
+    _status?: fhir.FhirElementArgs;
+    /**
      * This information is de-normalized from the Location resource to support the easier understanding of the encounter resource and processing in messaging or query.
      * There may be many levels in the hierachy, and this may only pic specific levels that are required for a specific usage scenario.
      */
@@ -390,6 +402,10 @@ export interface EncounterArgs extends fhir.DomainResourceArgs {
      * Note that internal business rules will determine the appropriate transitions that may occur between statuses (and also classes).
      */
     status: fhir.FhirCode<EncounterStatusCodeType> | string | undefined;
+    /**
+     * Extended properties for primitive element: Encounter.status
+     */
+    _status?: fhir.FhirElementArgs;
     /**
      * The current status is always found in the current version of the resource, not the status history.
      */
@@ -604,7 +620,7 @@ export declare class Encounter extends fhir.DomainResource {
     /**
      * Extensible-bound Value Set for class (Encounter.class)
      */
-    static get classExtensibleCodings(): V3ActEncounterCodeCodingType;
+    static get classExtensibleCodings(): V3ActEncounterCodingType;
     /**
      * Preferred-bound Value Set for reasonCode (Encounter.reasonCode)
      */

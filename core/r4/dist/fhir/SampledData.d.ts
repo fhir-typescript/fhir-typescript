@@ -12,25 +12,49 @@ export interface SampledDataArgs extends fhir.FhirElementArgs {
      */
     period: fhir.FhirDecimal | number | undefined;
     /**
+     * Extended properties for primitive element: SampledData.period
+     */
+    _period?: fhir.FhirElementArgs;
+    /**
      * A correction factor that is applied to the sampled data points before they are added to the origin.
      */
     factor?: fhir.FhirDecimal | number | undefined;
+    /**
+     * Extended properties for primitive element: SampledData.factor
+     */
+    _factor?: fhir.FhirElementArgs;
     /**
      * The lower limit of detection of the measured points. This is needed if any of the data points have the value "L" (lower than detection limit).
      */
     lowerLimit?: fhir.FhirDecimal | number | undefined;
     /**
+     * Extended properties for primitive element: SampledData.lowerLimit
+     */
+    _lowerLimit?: fhir.FhirElementArgs;
+    /**
      * The upper limit of detection of the measured points. This is needed if any of the data points have the value "U" (higher than detection limit).
      */
     upperLimit?: fhir.FhirDecimal | number | undefined;
+    /**
+     * Extended properties for primitive element: SampledData.upperLimit
+     */
+    _upperLimit?: fhir.FhirElementArgs;
     /**
      * If there is more than one dimension, the code for the type of data will define the meaning of the dimensions (typically ECG data).
      */
     dimensions: fhir.FhirPositiveInt | number | undefined;
     /**
+     * Extended properties for primitive element: SampledData.dimensions
+     */
+    _dimensions?: fhir.FhirElementArgs;
+    /**
      * Data may be missing if it is omitted for summarization purposes. In general, data is required for any actual use of a SampledData.
      */
     data?: fhir.FhirString | string | undefined;
+    /**
+     * Extended properties for primitive element: SampledData.data
+     */
+    _data?: fhir.FhirElementArgs;
 }
 /**
  * A series of measurements taken by a device, with upper and lower limits. There may be more than one dimension in the data.

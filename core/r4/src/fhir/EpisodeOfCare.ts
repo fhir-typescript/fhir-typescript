@@ -26,6 +26,10 @@ export interface EpisodeOfCareStatusHistoryArgs extends fhir.BackboneElementArgs
    */
   status: fhir.FhirCode<EpisodeOfCareStatusCodeType>|string|undefined;
   /**
+   * Extended properties for primitive element: EpisodeOfCare.statusHistory.status
+   */
+  _status?:fhir.FhirElementArgs;
+  /**
    * The period during this EpisodeOfCare that the specific status applied.
    */
   period: fhir.PeriodArgs|null;
@@ -54,6 +58,10 @@ export class EpisodeOfCareStatusHistory extends fhir.BackboneElement {
     super(source, options);
     if (source['status']) { this.status = new fhir.FhirCode<EpisodeOfCareStatusCodeType>({value: source.status}); }
     else { this.status = null; }
+    if (source['_status']) {
+      if (this.status) { this.status.addExtendedProperties(source._status!); }
+      else { this.status = new fhir.FhirCode<EpisodeOfCareStatusCodeType>(source._status as Partial<fhir.FhirCode>); }
+    }
     if (source['period']) { this.period = new fhir.Period(source.period); }
     else { this.period = null; }
   }
@@ -98,6 +106,10 @@ export interface EpisodeOfCareDiagnosisArgs extends fhir.BackboneElementArgs {
    * Ranking of the diagnosis (for each role type).
    */
   rank?: fhir.FhirPositiveInt|number|undefined;
+  /**
+   * Extended properties for primitive element: EpisodeOfCare.diagnosis.rank
+   */
+  _rank?:fhir.FhirElementArgs;
 }
 
 /**
@@ -129,6 +141,10 @@ export class EpisodeOfCareDiagnosis extends fhir.BackboneElement {
     else { this.condition = null; }
     if (source['role']) { this.role = new fhir.CodeableConcept(source.role); }
     if (source['rank']) { this.rank = new fhir.FhirPositiveInt({value: source.rank}); }
+    if (source['_rank']) {
+      if (this.rank) { this.rank.addExtendedProperties(source._rank!); }
+      else { this.rank = new fhir.FhirPositiveInt(source._rank as Partial<fhir.FhirPositiveIntArgs>); }
+    }
   }
   /**
    * Preferred-bound Value Set for role (EpisodeOfCare.diagnosis.role)
@@ -166,6 +182,10 @@ export interface EpisodeOfCareArgs extends fhir.DomainResourceArgs {
    * This element is labeled as a modifier because the status contains codes that mark the episode as not currently valid.
    */
   status: fhir.FhirCode<EpisodeOfCareStatusCodeType>|string|undefined;
+  /**
+   * Extended properties for primitive element: EpisodeOfCare.status
+   */
+  _status?:fhir.FhirElementArgs;
   /**
    * The history of statuses that the EpisodeOfCare has been through (without requiring processing the history of the resource).
    */
@@ -278,6 +298,10 @@ export class EpisodeOfCare extends fhir.DomainResource {
     else { this.identifier = []; }
     if (source['status']) { this.status = new fhir.FhirCode<EpisodeOfCareStatusCodeType>({value: source.status}); }
     else { this.status = null; }
+    if (source['_status']) {
+      if (this.status) { this.status.addExtendedProperties(source._status!); }
+      else { this.status = new fhir.FhirCode<EpisodeOfCareStatusCodeType>(source._status as Partial<fhir.FhirCode>); }
+    }
     if (source['statusHistory']) { this.statusHistory = source.statusHistory.map((x) => new fhir.EpisodeOfCareStatusHistory(x)); }
     else { this.statusHistory = []; }
     if (source['type']) { this.type = source.type.map((x) => new fhir.CodeableConcept(x)); }

@@ -10,17 +10,33 @@ export interface ContactPointArgs extends fhir.FhirElementArgs {
      */
     system?: fhir.FhirCode<ContactPointSystemCodeType> | string | undefined;
     /**
+     * Extended properties for primitive element: ContactPoint.system
+     */
+    _system?: fhir.FhirElementArgs;
+    /**
      * Additional text data such as phone extension numbers, or notes about use of the contact are sometimes included in the value.
      */
     value?: fhir.FhirString | string | undefined;
+    /**
+     * Extended properties for primitive element: ContactPoint.value
+     */
+    _value?: fhir.FhirElementArgs;
     /**
      * Applications can assume that a contact is current unless it explicitly says that it is temporary or old.
      */
     use?: fhir.FhirCode<ContactPointUseCodeType> | string | undefined;
     /**
+     * Extended properties for primitive element: ContactPoint.use
+     */
+    _use?: fhir.FhirElementArgs;
+    /**
      * Note that rank does not necessarily follow the order in which the contacts are represented in the instance.
      */
     rank?: fhir.FhirPositiveInt | number | undefined;
+    /**
+     * Extended properties for primitive element: ContactPoint.rank
+     */
+    _rank?: fhir.FhirElementArgs;
     /**
      * Time period when the contact point was/is in use.
      */

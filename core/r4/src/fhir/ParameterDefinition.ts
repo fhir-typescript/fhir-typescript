@@ -22,29 +22,57 @@ export interface ParameterDefinitionArgs extends fhir.FhirElementArgs {
    */
   name?: fhir.FhirCode|string|undefined;
   /**
+   * Extended properties for primitive element: ParameterDefinition.name
+   */
+  _name?:fhir.FhirElementArgs;
+  /**
    * Whether the parameter is input or output for the module.
    */
   use: fhir.FhirCode<OperationParameterUseCodeType>|string|undefined;
+  /**
+   * Extended properties for primitive element: ParameterDefinition.use
+   */
+  _use?:fhir.FhirElementArgs;
   /**
    * The minimum number of times this parameter SHALL appear in the request or response.
    */
   min?: fhir.FhirInteger|number|undefined;
   /**
+   * Extended properties for primitive element: ParameterDefinition.min
+   */
+  _min?:fhir.FhirElementArgs;
+  /**
    * The maximum number of times this element is permitted to appear in the request or response.
    */
   max?: fhir.FhirString|string|undefined;
+  /**
+   * Extended properties for primitive element: ParameterDefinition.max
+   */
+  _max?:fhir.FhirElementArgs;
   /**
    * A brief discussion of what the parameter is for and how it is used by the module.
    */
   documentation?: fhir.FhirString|string|undefined;
   /**
+   * Extended properties for primitive element: ParameterDefinition.documentation
+   */
+  _documentation?:fhir.FhirElementArgs;
+  /**
    * The type of the parameter.
    */
   type: fhir.FhirCode|string|undefined;
   /**
+   * Extended properties for primitive element: ParameterDefinition.type
+   */
+  _type?:fhir.FhirElementArgs;
+  /**
    * If specified, this indicates a profile that the input data must conform to, or that the output data will conform to.
    */
   profile?: fhir.FhirCanonical|string|undefined;
+  /**
+   * Extended properties for primitive element: ParameterDefinition.profile
+   */
+  _profile?:fhir.FhirElementArgs;
 }
 
 /**
@@ -89,14 +117,42 @@ export class ParameterDefinition extends fhir.FhirElement {
   constructor(source:Partial<ParameterDefinitionArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
     if (source['name']) { this.name = new fhir.FhirCode({value: source.name}); }
+    if (source['_name']) {
+      if (this.name) { this.name.addExtendedProperties(source._name!); }
+      else { this.name = new fhir.FhirCode(source._name as Partial<fhir.FhirCodeArgs>); }
+    }
     if (source['use']) { this.use = new fhir.FhirCode<OperationParameterUseCodeType>({value: source.use}); }
     else { this.use = null; }
+    if (source['_use']) {
+      if (this.use) { this.use.addExtendedProperties(source._use!); }
+      else { this.use = new fhir.FhirCode<OperationParameterUseCodeType>(source._use as Partial<fhir.FhirCode>); }
+    }
     if (source['min']) { this.min = new fhir.FhirInteger({value: source.min}); }
+    if (source['_min']) {
+      if (this.min) { this.min.addExtendedProperties(source._min!); }
+      else { this.min = new fhir.FhirInteger(source._min as Partial<fhir.FhirIntegerArgs>); }
+    }
     if (source['max']) { this.max = new fhir.FhirString({value: source.max}); }
+    if (source['_max']) {
+      if (this.max) { this.max.addExtendedProperties(source._max!); }
+      else { this.max = new fhir.FhirString(source._max as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['documentation']) { this.documentation = new fhir.FhirString({value: source.documentation}); }
+    if (source['_documentation']) {
+      if (this.documentation) { this.documentation.addExtendedProperties(source._documentation!); }
+      else { this.documentation = new fhir.FhirString(source._documentation as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['type']) { this.type = new fhir.FhirCode({value: source.type}); }
     else { this.type = null; }
+    if (source['_type']) {
+      if (this.type) { this.type.addExtendedProperties(source._type!); }
+      else { this.type = new fhir.FhirCode(source._type as Partial<fhir.FhirCodeArgs>); }
+    }
     if (source['profile']) { this.profile = new fhir.FhirCanonical({value: source.profile}); }
+    if (source['_profile']) {
+      if (this.profile) { this.profile.addExtendedProperties(source._profile!); }
+      else { this.profile = new fhir.FhirCanonical(source._profile as Partial<fhir.FhirCanonicalArgs>); }
+    }
   }
   /**
    * Required-bound Value Set for use (ParameterDefinition.use)

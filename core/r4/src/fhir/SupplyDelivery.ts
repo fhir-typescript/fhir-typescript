@@ -100,6 +100,10 @@ export interface SupplyDeliveryArgs extends fhir.DomainResourceArgs {
    */
   status?: fhir.FhirCode<SupplydeliveryStatusCodeType>|string|undefined;
   /**
+   * Extended properties for primitive element: SupplyDelivery.status
+   */
+  _status?:fhir.FhirElementArgs;
+  /**
    * A link to a resource representing the person whom the delivered item is for.
    */
   patient?: fhir.ReferenceArgs|undefined;
@@ -215,6 +219,10 @@ export class SupplyDelivery extends fhir.DomainResource {
     if (source['partOf']) { this.partOf = source.partOf.map((x) => new fhir.Reference(x)); }
     else { this.partOf = []; }
     if (source['status']) { this.status = new fhir.FhirCode<SupplydeliveryStatusCodeType>({value: source.status}); }
+    if (source['_status']) {
+      if (this.status) { this.status.addExtendedProperties(source._status!); }
+      else { this.status = new fhir.FhirCode<SupplydeliveryStatusCodeType>(source._status as Partial<fhir.FhirCode>); }
+    }
     if (source['patient']) { this.patient = new fhir.Reference(source.patient); }
     if (source['type']) { this.type = new fhir.CodeableConcept(source.type); }
     if (source['suppliedItem']) { this.suppliedItem = new fhir.SupplyDeliverySuppliedItem(source.suppliedItem); }

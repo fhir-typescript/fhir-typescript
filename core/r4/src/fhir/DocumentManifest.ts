@@ -10,9 +10,9 @@ import { DocumentReferenceStatusCodings, DocumentReferenceStatusCodingType,} fro
 // @ts-ignore
 import { DocumentReferenceStatusCodes,  DocumentReferenceStatusCodeType } from '../fhirValueSets/DocumentReferenceStatusCodes.js';
 // @ts-ignore
-import { V3ActCodeCodings, V3ActCodeCodingType,} from '../fhirValueSets/V3ActCodeCodings.js';
+import { V3ActCodings, V3ActCodingType,} from '../fhirValueSets/V3ActCodings.js';
 // @ts-ignore
-import { V3ActCodeCodes,  V3ActCodeCodeType } from '../fhirValueSets/V3ActCodeCodes.js';
+import { V3ActCodes,  V3ActCodeType } from '../fhirValueSets/V3ActCodes.js';
 /**
  * Valid arguments for the DocumentManifestRelated type.
  */
@@ -82,6 +82,10 @@ export interface DocumentManifestArgs extends fhir.DomainResourceArgs {
    */
   status: fhir.FhirCode<DocumentReferenceStatusCodeType>|string|undefined;
   /**
+   * Extended properties for primitive element: DocumentManifest.status
+   */
+  _status?:fhir.FhirElementArgs;
+  /**
    * Specifies the kind of this set of documents (e.g. Patient Summary, Discharge Summary, Prescription, etc.). The type of a set of documents may be the same as one of the documents in it - especially if there is only one - but it may be wider.
    */
   type?: fhir.CodeableConceptArgs|undefined;
@@ -93,6 +97,10 @@ export interface DocumentManifestArgs extends fhir.DomainResourceArgs {
    * Creation time is used for tracking, organizing versions and searching. This is the creation time of the document set, not the documents on which it is based.
    */
   created?: fhir.FhirDateTime|string|undefined;
+  /**
+   * Extended properties for primitive element: DocumentManifest.created
+   */
+  _created?:fhir.FhirElementArgs;
   /**
    * Not necessarily who did the actual data entry (i.e. typist) or who was the source (informant).
    */
@@ -106,9 +114,17 @@ export interface DocumentManifestArgs extends fhir.DomainResourceArgs {
    */
   source?: fhir.FhirUri|string|undefined;
   /**
+   * Extended properties for primitive element: DocumentManifest.source
+   */
+  _source?:fhir.FhirElementArgs;
+  /**
    * What the document is about, rather than a terse summary of the document. It is commonly the case that records do not have a title and are collectively referred to by the display name of Record code (e.g. a "consultation" or "progress note").
    */
   description?: fhir.FhirString|string|undefined;
+  /**
+   * Extended properties for primitive element: DocumentManifest.description
+   */
+  _description?:fhir.FhirElementArgs;
   /**
    * When used for XDS the intended focus of the DocumentManifest is for the reference to target to be a set of DocumentReference Resources. The reference is to "Any" to support EN 13606 usage, where an extract is DocumentManifest that references  List and Composition resources.
    */
@@ -190,15 +206,31 @@ export class DocumentManifest extends fhir.DomainResource {
     else { this.identifier = []; }
     if (source['status']) { this.status = new fhir.FhirCode<DocumentReferenceStatusCodeType>({value: source.status}); }
     else { this.status = null; }
+    if (source['_status']) {
+      if (this.status) { this.status.addExtendedProperties(source._status!); }
+      else { this.status = new fhir.FhirCode<DocumentReferenceStatusCodeType>(source._status as Partial<fhir.FhirCode>); }
+    }
     if (source['type']) { this.type = new fhir.CodeableConcept(source.type); }
     if (source['subject']) { this.subject = new fhir.Reference(source.subject); }
     if (source['created']) { this.created = new fhir.FhirDateTime({value: source.created}); }
+    if (source['_created']) {
+      if (this.created) { this.created.addExtendedProperties(source._created!); }
+      else { this.created = new fhir.FhirDateTime(source._created as Partial<fhir.FhirDateTimeArgs>); }
+    }
     if (source['author']) { this.author = source.author.map((x) => new fhir.Reference(x)); }
     else { this.author = []; }
     if (source['recipient']) { this.recipient = source.recipient.map((x) => new fhir.Reference(x)); }
     else { this.recipient = []; }
     if (source['source']) { this.source = new fhir.FhirUri({value: source.source}); }
+    if (source['_source']) {
+      if (this.source) { this.source.addExtendedProperties(source._source!); }
+      else { this.source = new fhir.FhirUri(source._source as Partial<fhir.FhirUriArgs>); }
+    }
     if (source['description']) { this.description = new fhir.FhirString({value: source.description}); }
+    if (source['_description']) {
+      if (this.description) { this.description.addExtendedProperties(source._description!); }
+      else { this.description = new fhir.FhirString(source._description as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['content']) { this.content = source.content.map((x) => new fhir.Reference(x)); }
     else { this.content = []; }
     if (source['related']) { this.related = source.related.map((x) => new fhir.DocumentManifestRelated(x)); }

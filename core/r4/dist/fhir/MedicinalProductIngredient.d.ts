@@ -20,6 +20,10 @@ export interface MedicinalProductIngredientSpecifiedSubstanceStrengthReferenceSt
      */
     measurementPoint?: fhir.FhirString | string | undefined;
     /**
+     * Extended properties for primitive element: MedicinalProductIngredient.specifiedSubstance.strength.referenceStrength.measurementPoint
+     */
+    _measurementPoint?: fhir.FhirElementArgs;
+    /**
      * The country or countries for which the strength range applies.
      */
     country?: fhir.CodeableConceptArgs[] | undefined;
@@ -85,6 +89,10 @@ export interface MedicinalProductIngredientSpecifiedSubstanceStrengthArgs extend
      * For when strength is measured at a particular point or distance.
      */
     measurementPoint?: fhir.FhirString | string | undefined;
+    /**
+     * Extended properties for primitive element: MedicinalProductIngredient.specifiedSubstance.strength.measurementPoint
+     */
+    _measurementPoint?: fhir.FhirElementArgs;
     /**
      * The country or countries for which the strength range applies.
      */
@@ -251,6 +259,10 @@ export interface MedicinalProductIngredientArgs extends fhir.DomainResourceArgs 
      * If the ingredient is a known or suspected allergen.
      */
     allergenicIndicator?: fhir.FhirBoolean | boolean | undefined;
+    /**
+     * Extended properties for primitive element: MedicinalProductIngredient.allergenicIndicator
+     */
+    _allergenicIndicator?: fhir.FhirElementArgs;
     /**
      * Manufacturer of this Ingredient.
      */

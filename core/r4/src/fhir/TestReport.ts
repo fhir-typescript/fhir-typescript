@@ -30,13 +30,25 @@ export interface TestReportParticipantArgs extends fhir.BackboneElementArgs {
    */
   type: fhir.FhirCode<ReportParticipantTypeCodeType>|string|undefined;
   /**
+   * Extended properties for primitive element: TestReport.participant.type
+   */
+  _type?:fhir.FhirElementArgs;
+  /**
    * The uri of the participant. An absolute URL is preferred.
    */
   uri: fhir.FhirUri|string|undefined;
   /**
+   * Extended properties for primitive element: TestReport.participant.uri
+   */
+  _uri?:fhir.FhirElementArgs;
+  /**
    * The display name of the participant.
    */
   display?: fhir.FhirString|string|undefined;
+  /**
+   * Extended properties for primitive element: TestReport.participant.display
+   */
+  _display?:fhir.FhirElementArgs;
 }
 
 /**
@@ -66,9 +78,21 @@ export class TestReportParticipant extends fhir.BackboneElement {
     super(source, options);
     if (source['type']) { this.type = new fhir.FhirCode<ReportParticipantTypeCodeType>({value: source.type}); }
     else { this.type = null; }
+    if (source['_type']) {
+      if (this.type) { this.type.addExtendedProperties(source._type!); }
+      else { this.type = new fhir.FhirCode<ReportParticipantTypeCodeType>(source._type as Partial<fhir.FhirCode>); }
+    }
     if (source['uri']) { this.uri = new fhir.FhirUri({value: source.uri}); }
     else { this.uri = null; }
+    if (source['_uri']) {
+      if (this.uri) { this.uri.addExtendedProperties(source._uri!); }
+      else { this.uri = new fhir.FhirUri(source._uri as Partial<fhir.FhirUriArgs>); }
+    }
     if (source['display']) { this.display = new fhir.FhirString({value: source.display}); }
+    if (source['_display']) {
+      if (this.display) { this.display.addExtendedProperties(source._display!); }
+      else { this.display = new fhir.FhirString(source._display as Partial<fhir.FhirStringArgs>); }
+    }
   }
   /**
    * Required-bound Value Set for type (TestReport.participant.type)
@@ -105,13 +129,25 @@ export interface TestReportSetupActionOperationArgs extends fhir.BackboneElement
    */
   result: fhir.FhirCode<ReportActionResultCodeType>|string|undefined;
   /**
+   * Extended properties for primitive element: TestReport.setup.action.operation.result
+   */
+  _result?:fhir.FhirElementArgs;
+  /**
    * An explanatory message associated with the result.
    */
   message?: fhir.FhirMarkdown|string|undefined;
   /**
+   * Extended properties for primitive element: TestReport.setup.action.operation.message
+   */
+  _message?:fhir.FhirElementArgs;
+  /**
    * A link to further details on the result.
    */
   detail?: fhir.FhirUri|string|undefined;
+  /**
+   * Extended properties for primitive element: TestReport.setup.action.operation.detail
+   */
+  _detail?:fhir.FhirElementArgs;
 }
 
 /**
@@ -141,8 +177,20 @@ export class TestReportSetupActionOperation extends fhir.BackboneElement {
     super(source, options);
     if (source['result']) { this.result = new fhir.FhirCode<ReportActionResultCodeType>({value: source.result}); }
     else { this.result = null; }
+    if (source['_result']) {
+      if (this.result) { this.result.addExtendedProperties(source._result!); }
+      else { this.result = new fhir.FhirCode<ReportActionResultCodeType>(source._result as Partial<fhir.FhirCode>); }
+    }
     if (source['message']) { this.message = new fhir.FhirMarkdown({value: source.message}); }
+    if (source['_message']) {
+      if (this.message) { this.message.addExtendedProperties(source._message!); }
+      else { this.message = new fhir.FhirMarkdown(source._message as Partial<fhir.FhirMarkdownArgs>); }
+    }
     if (source['detail']) { this.detail = new fhir.FhirUri({value: source.detail}); }
+    if (source['_detail']) {
+      if (this.detail) { this.detail.addExtendedProperties(source._detail!); }
+      else { this.detail = new fhir.FhirUri(source._detail as Partial<fhir.FhirUriArgs>); }
+    }
   }
   /**
    * Required-bound Value Set for result (TestReport.setup.action.operation.result)
@@ -176,13 +224,25 @@ export interface TestReportSetupActionAssertArgs extends fhir.BackboneElementArg
    */
   result: fhir.FhirCode<ReportActionResultCodeType>|string|undefined;
   /**
+   * Extended properties for primitive element: TestReport.setup.action.assert.result
+   */
+  _result?:fhir.FhirElementArgs;
+  /**
    * An explanatory message associated with the result.
    */
   message?: fhir.FhirMarkdown|string|undefined;
   /**
+   * Extended properties for primitive element: TestReport.setup.action.assert.message
+   */
+  _message?:fhir.FhirElementArgs;
+  /**
    * A link to further details on the result.
    */
   detail?: fhir.FhirString|string|undefined;
+  /**
+   * Extended properties for primitive element: TestReport.setup.action.assert.detail
+   */
+  _detail?:fhir.FhirElementArgs;
 }
 
 /**
@@ -212,8 +272,20 @@ export class TestReportSetupActionAssert extends fhir.BackboneElement {
     super(source, options);
     if (source['result']) { this.result = new fhir.FhirCode<ReportActionResultCodeType>({value: source.result}); }
     else { this.result = null; }
+    if (source['_result']) {
+      if (this.result) { this.result.addExtendedProperties(source._result!); }
+      else { this.result = new fhir.FhirCode<ReportActionResultCodeType>(source._result as Partial<fhir.FhirCode>); }
+    }
     if (source['message']) { this.message = new fhir.FhirMarkdown({value: source.message}); }
+    if (source['_message']) {
+      if (this.message) { this.message.addExtendedProperties(source._message!); }
+      else { this.message = new fhir.FhirMarkdown(source._message as Partial<fhir.FhirMarkdownArgs>); }
+    }
     if (source['detail']) { this.detail = new fhir.FhirString({value: source.detail}); }
+    if (source['_detail']) {
+      if (this.detail) { this.detail.addExtendedProperties(source._detail!); }
+      else { this.detail = new fhir.FhirString(source._detail as Partial<fhir.FhirStringArgs>); }
+    }
   }
   /**
    * Required-bound Value Set for result (TestReport.setup.action.assert.result)
@@ -389,9 +461,17 @@ export interface TestReportTestArgs extends fhir.BackboneElementArgs {
    */
   name?: fhir.FhirString|string|undefined;
   /**
+   * Extended properties for primitive element: TestReport.test.name
+   */
+  _name?:fhir.FhirElementArgs;
+  /**
    * A short description of the test used by test engines for tracking and reporting purposes.
    */
   description?: fhir.FhirString|string|undefined;
+  /**
+   * Extended properties for primitive element: TestReport.test.description
+   */
+  _description?:fhir.FhirElementArgs;
   /**
    * An action should contain either an operation or an assertion but not both.  It can contain any number of variables.
    */
@@ -424,7 +504,15 @@ export class TestReportTest extends fhir.BackboneElement {
   constructor(source:Partial<TestReportTestArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
     if (source['name']) { this.name = new fhir.FhirString({value: source.name}); }
+    if (source['_name']) {
+      if (this.name) { this.name.addExtendedProperties(source._name!); }
+      else { this.name = new fhir.FhirString(source._name as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['description']) { this.description = new fhir.FhirString({value: source.description}); }
+    if (source['_description']) {
+      if (this.description) { this.description.addExtendedProperties(source._description!); }
+      else { this.description = new fhir.FhirString(source._description as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['action']) { this.action = source.action.map((x) => new fhir.TestReportTestAction(x)); }
     else { this.action = []; }
   }
@@ -551,10 +639,18 @@ export interface TestReportArgs extends fhir.DomainResourceArgs {
    */
   name?: fhir.FhirString|string|undefined;
   /**
+   * Extended properties for primitive element: TestReport.name
+   */
+  _name?:fhir.FhirElementArgs;
+  /**
    * The status represents where the execution is currently within the test script execution life cycle.
    * This element is labeled as a modifier because the status contains codes that mark the resource as not currently valid.
    */
   status: fhir.FhirCode<ReportStatusCodeType>|string|undefined;
+  /**
+   * Extended properties for primitive element: TestReport.status
+   */
+  _status?:fhir.FhirElementArgs;
   /**
    * Ideally this is an absolute URL that is used to identify the version-specific TestScript that was executed, matching the `TestScript.url`.
    */
@@ -564,17 +660,33 @@ export interface TestReportArgs extends fhir.DomainResourceArgs {
    */
   result: fhir.FhirCode<ReportResultCodeType>|string|undefined;
   /**
+   * Extended properties for primitive element: TestReport.result
+   */
+  _result?:fhir.FhirElementArgs;
+  /**
    * The final score (percentage of tests passed) resulting from the execution of the TestScript.
    */
   score?: fhir.FhirDecimal|number|undefined;
+  /**
+   * Extended properties for primitive element: TestReport.score
+   */
+  _score?:fhir.FhirElementArgs;
   /**
    * Usually an organization, but may be an individual. This item SHOULD be populated unless the information is available from context.
    */
   tester?: fhir.FhirString|string|undefined;
   /**
+   * Extended properties for primitive element: TestReport.tester
+   */
+  _tester?:fhir.FhirElementArgs;
+  /**
    * Additional specific dates may be added as extensions.
    */
   issued?: fhir.FhirDateTime|string|undefined;
+  /**
+   * Extended properties for primitive element: TestReport.issued
+   */
+  _issued?:fhir.FhirElementArgs;
   /**
    * A participant in the test execution, either the execution engine, a client, or a server.
    */
@@ -662,15 +774,39 @@ export class TestReport extends fhir.DomainResource {
     this.resourceType = 'TestReport';
     if (source['identifier']) { this.identifier = new fhir.Identifier(source.identifier); }
     if (source['name']) { this.name = new fhir.FhirString({value: source.name}); }
+    if (source['_name']) {
+      if (this.name) { this.name.addExtendedProperties(source._name!); }
+      else { this.name = new fhir.FhirString(source._name as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['status']) { this.status = new fhir.FhirCode<ReportStatusCodeType>({value: source.status}); }
     else { this.status = null; }
+    if (source['_status']) {
+      if (this.status) { this.status.addExtendedProperties(source._status!); }
+      else { this.status = new fhir.FhirCode<ReportStatusCodeType>(source._status as Partial<fhir.FhirCode>); }
+    }
     if (source['testScript']) { this.testScript = new fhir.Reference(source.testScript); }
     else { this.testScript = null; }
     if (source['result']) { this.result = new fhir.FhirCode<ReportResultCodeType>({value: source.result}); }
     else { this.result = null; }
+    if (source['_result']) {
+      if (this.result) { this.result.addExtendedProperties(source._result!); }
+      else { this.result = new fhir.FhirCode<ReportResultCodeType>(source._result as Partial<fhir.FhirCode>); }
+    }
     if (source['score']) { this.score = new fhir.FhirDecimal({value: source.score}); }
+    if (source['_score']) {
+      if (this.score) { this.score.addExtendedProperties(source._score!); }
+      else { this.score = new fhir.FhirDecimal(source._score as Partial<fhir.FhirDecimalArgs>); }
+    }
     if (source['tester']) { this.tester = new fhir.FhirString({value: source.tester}); }
+    if (source['_tester']) {
+      if (this.tester) { this.tester.addExtendedProperties(source._tester!); }
+      else { this.tester = new fhir.FhirString(source._tester as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['issued']) { this.issued = new fhir.FhirDateTime({value: source.issued}); }
+    if (source['_issued']) {
+      if (this.issued) { this.issued.addExtendedProperties(source._issued!); }
+      else { this.issued = new fhir.FhirDateTime(source._issued as Partial<fhir.FhirDateTimeArgs>); }
+    }
     if (source['participant']) { this.participant = source.participant.map((x) => new fhir.TestReportParticipant(x)); }
     else { this.participant = []; }
     if (source['setup']) { this.setup = new fhir.TestReportSetup(source.setup); }

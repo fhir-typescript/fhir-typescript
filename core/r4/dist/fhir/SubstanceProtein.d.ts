@@ -8,13 +8,25 @@ export interface SubstanceProteinSubunitArgs extends fhir.BackboneElementArgs {
      */
     subunit?: fhir.FhirInteger | number | undefined;
     /**
+     * Extended properties for primitive element: SubstanceProtein.subunit.subunit
+     */
+    _subunit?: fhir.FhirElementArgs;
+    /**
      * The sequence information shall be provided enumerating the amino acids from N- to C-terminal end using standard single-letter amino acid codes. Uppercase shall be used for L-amino acids and lowercase for D-amino acids. Transcribed SubstanceProteins will always be described using the translated sequence; for synthetic peptide containing amino acids that are not represented with a single letter code an X should be used within the sequence. The modified amino acids will be distinguished by their position in the sequence.
      */
     sequence?: fhir.FhirString | string | undefined;
     /**
+     * Extended properties for primitive element: SubstanceProtein.subunit.sequence
+     */
+    _sequence?: fhir.FhirElementArgs;
+    /**
      * Length of linear sequences of amino acids contained in the subunit.
      */
     length?: fhir.FhirInteger | number | undefined;
+    /**
+     * Extended properties for primitive element: SubstanceProtein.subunit.length
+     */
+    _length?: fhir.FhirElementArgs;
     /**
      * The sequence information shall be provided enumerating the amino acids from N- to C-terminal end using standard single-letter amino acid codes. Uppercase shall be used for L-amino acids and lowercase for D-amino acids. Transcribed SubstanceProteins will always be described using the translated sequence; for synthetic peptide containing amino acids that are not represented with a single letter code an X should be used within the sequence. The modified amino acids will be distinguished by their position in the sequence.
      */
@@ -28,6 +40,10 @@ export interface SubstanceProteinSubunitArgs extends fhir.BackboneElementArgs {
      */
     nTerminalModification?: fhir.FhirString | string | undefined;
     /**
+     * Extended properties for primitive element: SubstanceProtein.subunit.nTerminalModification
+     */
+    _nTerminalModification?: fhir.FhirElementArgs;
+    /**
      * Unique identifier for molecular fragment modification based on the ISO 11238 Substance ID.
      */
     cTerminalModificationId?: fhir.IdentifierArgs | undefined;
@@ -35,6 +51,10 @@ export interface SubstanceProteinSubunitArgs extends fhir.BackboneElementArgs {
      * The modification at the C-terminal shall be specified.
      */
     cTerminalModification?: fhir.FhirString | string | undefined;
+    /**
+     * Extended properties for primitive element: SubstanceProtein.subunit.cTerminalModification
+     */
+    _cTerminalModification?: fhir.FhirElementArgs;
 }
 /**
  * This subclause refers to the description of each subunit constituting the SubstanceProtein. A subunit is a linear sequence of amino acids linked through peptide bonds. The Subunit information shall be provided when the finished SubstanceProtein is a complex of multiple sequences; subunits are not used to delineate domains within a single sequence. Subunits are listed in order of decreasing length; sequences of the same length will be ordered by decreasing molecular weight; subunits that have identical sequences will be repeated multiple times.
@@ -102,9 +122,17 @@ export interface SubstanceProteinArgs extends fhir.DomainResourceArgs {
      */
     numberOfSubunits?: fhir.FhirInteger | number | undefined;
     /**
+     * Extended properties for primitive element: SubstanceProtein.numberOfSubunits
+     */
+    _numberOfSubunits?: fhir.FhirElementArgs;
+    /**
      * The disulphide bond between two cysteine residues either on the same subunit or on two different subunits shall be described. The position of the disulfide bonds in the SubstanceProtein shall be listed in increasing order of subunit number and position within subunit followed by the abbreviation of the amino acids involved. The disulfide linkage positions shall actually contain the amino acid Cysteine at the respective positions.
      */
     disulfideLinkage?: fhir.FhirString[] | string[] | undefined;
+    /**
+     * Extended properties for primitive element: SubstanceProtein.disulfideLinkage
+     */
+    _disulfideLinkage?: (fhir.FhirElementArgs | null)[];
     /**
      * This subclause refers to the description of each subunit constituting the SubstanceProtein. A subunit is a linear sequence of amino acids linked through peptide bonds. The Subunit information shall be provided when the finished SubstanceProtein is a complex of multiple sequences; subunits are not used to delineate domains within a single sequence. Subunits are listed in order of decreasing length; sequences of the same length will be ordered by decreasing molecular weight; subunits that have identical sequences will be repeated multiple times.
      */

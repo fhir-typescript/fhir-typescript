@@ -66,6 +66,10 @@ export interface SubstanceAmountArgs extends fhir.BackboneElementArgs {
      */
     amountText?: fhir.FhirString | string | undefined;
     /**
+     * Extended properties for primitive element: SubstanceAmount.amountText
+     */
+    _amountText?: fhir.FhirElementArgs;
+    /**
      * Reference range of possible or expected values.
      */
     referenceRange?: fhir.SubstanceAmountReferenceRangeArgs | undefined;

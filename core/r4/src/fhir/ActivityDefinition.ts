@@ -22,9 +22,9 @@ import { RequestResourceTypesCodings, RequestResourceTypesCodingType,} from '../
 // @ts-ignore
 import { RequestResourceTypesCodes,  RequestResourceTypesCodeType } from '../fhirValueSets/RequestResourceTypesCodes.js';
 // @ts-ignore
-import { ProcedureCodeCodings, ProcedureCodeCodingType,} from '../fhirValueSets/ProcedureCodeCodings.js';
+import { ProcedureCodings, ProcedureCodingType,} from '../fhirValueSets/ProcedureCodings.js';
 // @ts-ignore
-import { ProcedureCodeCodes,  ProcedureCodeCodeType } from '../fhirValueSets/ProcedureCodeCodes.js';
+import { ProcedureCodes,  ProcedureCodeType } from '../fhirValueSets/ProcedureCodes.js';
 // @ts-ignore
 import { RequestIntentCodings, RequestIntentCodingType,} from '../fhirValueSets/RequestIntentCodings.js';
 // @ts-ignore
@@ -45,6 +45,10 @@ export interface ActivityDefinitionParticipantArgs extends fhir.BackboneElementA
    * The type of participant in the action.
    */
   type: fhir.FhirCode<ActionParticipantTypeCodeType>|string|undefined;
+  /**
+   * Extended properties for primitive element: ActivityDefinition.participant.type
+   */
+  _type?:fhir.FhirElementArgs;
   /**
    * The role the participant should play in performing the described action.
    */
@@ -74,6 +78,10 @@ export class ActivityDefinitionParticipant extends fhir.BackboneElement {
     super(source, options);
     if (source['type']) { this.type = new fhir.FhirCode<ActionParticipantTypeCodeType>({value: source.type}); }
     else { this.type = null; }
+    if (source['_type']) {
+      if (this.type) { this.type.addExtendedProperties(source._type!); }
+      else { this.type = new fhir.FhirCode<ActionParticipantTypeCodeType>(source._type as Partial<fhir.FhirCode>); }
+    }
     if (source['role']) { this.role = new fhir.CodeableConcept(source.role); }
   }
   /**
@@ -107,6 +115,10 @@ export interface ActivityDefinitionDynamicValueArgs extends fhir.BackboneElement
    */
   path: fhir.FhirString|string|undefined;
   /**
+   * Extended properties for primitive element: ActivityDefinition.dynamicValue.path
+   */
+  _path?:fhir.FhirElementArgs;
+  /**
    * The expression may be inlined, or may be a reference to a named expression within a logic library referenced by the library element.
    */
   expression: fhir.ExpressionArgs|null;
@@ -135,6 +147,10 @@ export class ActivityDefinitionDynamicValue extends fhir.BackboneElement {
     super(source, options);
     if (source['path']) { this.path = new fhir.FhirString({value: source.path}); }
     else { this.path = null; }
+    if (source['_path']) {
+      if (this.path) { this.path.addExtendedProperties(source._path!); }
+      else { this.path = new fhir.FhirString(source._path as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['expression']) { this.expression = new fhir.Expression(source.expression); }
     else { this.expression = null; }
   }
@@ -169,6 +185,10 @@ export interface ActivityDefinitionArgs extends fhir.DomainResourceArgs {
    */
   url?: fhir.FhirUri|string|undefined;
   /**
+   * Extended properties for primitive element: ActivityDefinition.url
+   */
+  _url?:fhir.FhirElementArgs;
+  /**
    * Typically, this is used for identifiers that can go in an HL7 V3 II (instance identifier) data type, and can then identify this activity definition outside of FHIR, where it is not possible to use the logical URI.
    */
   identifier?: fhir.IdentifierArgs[]|undefined;
@@ -177,25 +197,49 @@ export interface ActivityDefinitionArgs extends fhir.DomainResourceArgs {
    */
   version?: fhir.FhirString|string|undefined;
   /**
+   * Extended properties for primitive element: ActivityDefinition.version
+   */
+  _version?:fhir.FhirElementArgs;
+  /**
    * The name is not expected to be globally unique. The name should be a simple alphanumeric type name to ensure that it is machine-processing friendly.
    */
   name?: fhir.FhirString|string|undefined;
+  /**
+   * Extended properties for primitive element: ActivityDefinition.name
+   */
+  _name?:fhir.FhirElementArgs;
   /**
    * This name does not need to be machine-processing friendly and may contain punctuation, white-space, etc.
    */
   title?: fhir.FhirString|string|undefined;
   /**
+   * Extended properties for primitive element: ActivityDefinition.title
+   */
+  _title?:fhir.FhirElementArgs;
+  /**
    * An explanatory or alternate title for the activity definition giving additional information about its content.
    */
   subtitle?: fhir.FhirString|string|undefined;
+  /**
+   * Extended properties for primitive element: ActivityDefinition.subtitle
+   */
+  _subtitle?:fhir.FhirElementArgs;
   /**
    * Allows filtering of activity definitions that are appropriate for use versus not.
    */
   status: fhir.FhirCode<PublicationStatusCodeType>|string|undefined;
   /**
+   * Extended properties for primitive element: ActivityDefinition.status
+   */
+  _status?:fhir.FhirElementArgs;
+  /**
    * Allows filtering of activity definitions that are appropriate for use versus not.
    */
   experimental?: fhir.FhirBoolean|boolean|undefined;
+  /**
+   * Extended properties for primitive element: ActivityDefinition.experimental
+   */
+  _experimental?:fhir.FhirElementArgs;
   /**
    * A code or group definition that describes the intended subject of the activity being defined.
    */
@@ -213,9 +257,17 @@ export interface ActivityDefinitionArgs extends fhir.DomainResourceArgs {
    */
   date?: fhir.FhirDateTime|string|undefined;
   /**
+   * Extended properties for primitive element: ActivityDefinition.date
+   */
+  _date?:fhir.FhirElementArgs;
+  /**
    * Usually an organization but may be an individual. The publisher (or steward) of the activity definition is the organization or individual primarily responsible for the maintenance and upkeep of the activity definition. This is not necessarily the same individual or organization that developed and initially authored the content. The publisher is the primary point of contact for questions or issues with the activity definition. This item SHOULD be populated unless the information is available from context.
    */
   publisher?: fhir.FhirString|string|undefined;
+  /**
+   * Extended properties for primitive element: ActivityDefinition.publisher
+   */
+  _publisher?:fhir.FhirElementArgs;
   /**
    * May be a web site, an email address, a telephone number, etc.
    */
@@ -224,6 +276,10 @@ export interface ActivityDefinitionArgs extends fhir.DomainResourceArgs {
    * This description can be used to capture details such as why the activity definition was built, comments about misuse, instructions for clinical use and interpretation, literature references, examples from the paper world, etc. It is not a rendering of the activity definition as conveyed in the 'text' field of the resource itself. This item SHOULD be populated unless the information is available from context (e.g. the language of the activity definition is presumed to be the predominant language in the place the activity definition was created).
    */
   description?: fhir.FhirMarkdown|string|undefined;
+  /**
+   * Extended properties for primitive element: ActivityDefinition.description
+   */
+  _description?:fhir.FhirElementArgs;
   /**
    * When multiple useContexts are specified, there is no expectation that all or any of the contexts apply.
    */
@@ -237,21 +293,41 @@ export interface ActivityDefinitionArgs extends fhir.DomainResourceArgs {
    */
   purpose?: fhir.FhirMarkdown|string|undefined;
   /**
+   * Extended properties for primitive element: ActivityDefinition.purpose
+   */
+  _purpose?:fhir.FhirElementArgs;
+  /**
    * A detailed description of how the activity definition is used from a clinical perspective.
    */
   usage?: fhir.FhirString|string|undefined;
+  /**
+   * Extended properties for primitive element: ActivityDefinition.usage
+   */
+  _usage?:fhir.FhirElementArgs;
   /**
    * A copyright statement relating to the activity definition and/or its contents. Copyright statements are generally legal restrictions on the use and publishing of the activity definition.
    */
   copyright?: fhir.FhirMarkdown|string|undefined;
   /**
+   * Extended properties for primitive element: ActivityDefinition.copyright
+   */
+  _copyright?:fhir.FhirElementArgs;
+  /**
    * The 'date' element may be more recent than the approval date because of minor changes or editorial corrections.
    */
   approvalDate?: fhir.FhirDate|string|undefined;
   /**
+   * Extended properties for primitive element: ActivityDefinition.approvalDate
+   */
+  _approvalDate?:fhir.FhirElementArgs;
+  /**
    * If specified, this date follows the original approval date.
    */
   lastReviewDate?: fhir.FhirDate|string|undefined;
+  /**
+   * Extended properties for primitive element: ActivityDefinition.lastReviewDate
+   */
+  _lastReviewDate?:fhir.FhirElementArgs;
   /**
    * The effective period for a activity definition  determines when the content is applicable for usage and is independent of publication and review dates. For example, a measure intended to be used for the year 2016 might be published in 2015.
    */
@@ -285,13 +361,25 @@ export interface ActivityDefinitionArgs extends fhir.DomainResourceArgs {
    */
   library?: fhir.FhirCanonical[]|string[]|undefined;
   /**
+   * Extended properties for primitive element: ActivityDefinition.library
+   */
+  _library?:(fhir.FhirElementArgs|null)[];
+  /**
    * May determine what types of extensions are permitted.
    */
   kind?: fhir.FhirCode|string|undefined;
   /**
+   * Extended properties for primitive element: ActivityDefinition.kind
+   */
+  _kind?:fhir.FhirElementArgs;
+  /**
    * A profile to which the target of the activity definition is expected to conform.
    */
   profile?: fhir.FhirCanonical|string|undefined;
+  /**
+   * Extended properties for primitive element: ActivityDefinition.profile
+   */
+  _profile?:fhir.FhirElementArgs;
   /**
    * Tends to be less relevant for activities involving particular products.
    */
@@ -301,13 +389,25 @@ export interface ActivityDefinitionArgs extends fhir.DomainResourceArgs {
    */
   intent?: fhir.FhirCode<RequestIntentCodeType>|string|undefined;
   /**
+   * Extended properties for primitive element: ActivityDefinition.intent
+   */
+  _intent?:fhir.FhirElementArgs;
+  /**
    * Indicates how quickly the activity  should be addressed with respect to other requests.
    */
   priority?: fhir.FhirCode<RequestPriorityCodeType>|string|undefined;
   /**
+   * Extended properties for primitive element: ActivityDefinition.priority
+   */
+  _priority?:fhir.FhirElementArgs;
+  /**
    * This element is not intended to be used to communicate a decision support response to cancel an order in progress. That should be done with the "remove" type of a PlanDefinition or RequestGroup.
    */
   doNotPerform?: fhir.FhirBoolean|boolean|undefined;
+  /**
+   * Extended properties for primitive element: ActivityDefinition.doNotPerform
+   */
+  _doNotPerform?:fhir.FhirElementArgs;
   /**
    * The period, timing or frequency upon which the described activity is to occur.
    */
@@ -384,6 +484,10 @@ export interface ActivityDefinitionArgs extends fhir.DomainResourceArgs {
    * Note that if both a transform and dynamic values are specified, the dynamic values will be applied to the result of the transform.
    */
   transform?: fhir.FhirCanonical|string|undefined;
+  /**
+   * Extended properties for primitive element: ActivityDefinition.transform
+   */
+  _transform?:fhir.FhirElementArgs;
   /**
    * Dynamic values are applied in the order in which they are defined in the ActivityDefinition. Note that if both a transform and dynamic values are specified, the dynamic values will be applied to the result of the transform.
    */
@@ -607,32 +711,92 @@ export class ActivityDefinition extends fhir.DomainResource {
     super(source, options);
     this.resourceType = 'ActivityDefinition';
     if (source['url']) { this.url = new fhir.FhirUri({value: source.url}); }
+    if (source['_url']) {
+      if (this.url) { this.url.addExtendedProperties(source._url!); }
+      else { this.url = new fhir.FhirUri(source._url as Partial<fhir.FhirUriArgs>); }
+    }
     if (source['identifier']) { this.identifier = source.identifier.map((x) => new fhir.Identifier(x)); }
     else { this.identifier = []; }
     if (source['version']) { this.version = new fhir.FhirString({value: source.version}); }
+    if (source['_version']) {
+      if (this.version) { this.version.addExtendedProperties(source._version!); }
+      else { this.version = new fhir.FhirString(source._version as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['name']) { this.name = new fhir.FhirString({value: source.name}); }
+    if (source['_name']) {
+      if (this.name) { this.name.addExtendedProperties(source._name!); }
+      else { this.name = new fhir.FhirString(source._name as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['title']) { this.title = new fhir.FhirString({value: source.title}); }
+    if (source['_title']) {
+      if (this.title) { this.title.addExtendedProperties(source._title!); }
+      else { this.title = new fhir.FhirString(source._title as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['subtitle']) { this.subtitle = new fhir.FhirString({value: source.subtitle}); }
+    if (source['_subtitle']) {
+      if (this.subtitle) { this.subtitle.addExtendedProperties(source._subtitle!); }
+      else { this.subtitle = new fhir.FhirString(source._subtitle as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['status']) { this.status = new fhir.FhirCode<PublicationStatusCodeType>({value: source.status}); }
     else { this.status = null; }
+    if (source['_status']) {
+      if (this.status) { this.status.addExtendedProperties(source._status!); }
+      else { this.status = new fhir.FhirCode<PublicationStatusCodeType>(source._status as Partial<fhir.FhirCode>); }
+    }
     if (source['experimental']) { this.experimental = new fhir.FhirBoolean({value: source.experimental}); }
+    if (source['_experimental']) {
+      if (this.experimental) { this.experimental.addExtendedProperties(source._experimental!); }
+      else { this.experimental = new fhir.FhirBoolean(source._experimental as Partial<fhir.FhirBooleanArgs>); }
+    }
     if (source['subject']) { this.subject = source.subject; }
     else if (source['subjectCodeableConcept']) { this.subject = new fhir.CodeableConcept(source.subjectCodeableConcept); }
     else if (source['subjectReference']) { this.subject = new fhir.Reference(source.subjectReference); }
     if (source['date']) { this.date = new fhir.FhirDateTime({value: source.date}); }
+    if (source['_date']) {
+      if (this.date) { this.date.addExtendedProperties(source._date!); }
+      else { this.date = new fhir.FhirDateTime(source._date as Partial<fhir.FhirDateTimeArgs>); }
+    }
     if (source['publisher']) { this.publisher = new fhir.FhirString({value: source.publisher}); }
+    if (source['_publisher']) {
+      if (this.publisher) { this.publisher.addExtendedProperties(source._publisher!); }
+      else { this.publisher = new fhir.FhirString(source._publisher as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['contact']) { this.contact = source.contact.map((x) => new fhir.ContactDetail(x)); }
     else { this.contact = []; }
     if (source['description']) { this.description = new fhir.FhirMarkdown({value: source.description}); }
+    if (source['_description']) {
+      if (this.description) { this.description.addExtendedProperties(source._description!); }
+      else { this.description = new fhir.FhirMarkdown(source._description as Partial<fhir.FhirMarkdownArgs>); }
+    }
     if (source['useContext']) { this.useContext = source.useContext.map((x) => new fhir.UsageContext(x)); }
     else { this.useContext = []; }
     if (source['jurisdiction']) { this.jurisdiction = source.jurisdiction.map((x) => new fhir.CodeableConcept(x)); }
     else { this.jurisdiction = []; }
     if (source['purpose']) { this.purpose = new fhir.FhirMarkdown({value: source.purpose}); }
+    if (source['_purpose']) {
+      if (this.purpose) { this.purpose.addExtendedProperties(source._purpose!); }
+      else { this.purpose = new fhir.FhirMarkdown(source._purpose as Partial<fhir.FhirMarkdownArgs>); }
+    }
     if (source['usage']) { this.usage = new fhir.FhirString({value: source.usage}); }
+    if (source['_usage']) {
+      if (this.usage) { this.usage.addExtendedProperties(source._usage!); }
+      else { this.usage = new fhir.FhirString(source._usage as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['copyright']) { this.copyright = new fhir.FhirMarkdown({value: source.copyright}); }
+    if (source['_copyright']) {
+      if (this.copyright) { this.copyright.addExtendedProperties(source._copyright!); }
+      else { this.copyright = new fhir.FhirMarkdown(source._copyright as Partial<fhir.FhirMarkdownArgs>); }
+    }
     if (source['approvalDate']) { this.approvalDate = new fhir.FhirDate({value: source.approvalDate}); }
+    if (source['_approvalDate']) {
+      if (this.approvalDate) { this.approvalDate.addExtendedProperties(source._approvalDate!); }
+      else { this.approvalDate = new fhir.FhirDate(source._approvalDate as Partial<fhir.FhirDateArgs>); }
+    }
     if (source['lastReviewDate']) { this.lastReviewDate = new fhir.FhirDate({value: source.lastReviewDate}); }
+    if (source['_lastReviewDate']) {
+      if (this.lastReviewDate) { this.lastReviewDate.addExtendedProperties(source._lastReviewDate!); }
+      else { this.lastReviewDate = new fhir.FhirDate(source._lastReviewDate as Partial<fhir.FhirDateArgs>); }
+    }
     if (source['effectivePeriod']) { this.effectivePeriod = new fhir.Period(source.effectivePeriod); }
     if (source['topic']) { this.topic = source.topic.map((x) => new fhir.CodeableConcept(x)); }
     else { this.topic = []; }
@@ -648,12 +812,38 @@ export class ActivityDefinition extends fhir.DomainResource {
     else { this.relatedArtifact = []; }
     if (source['library']) { this.library = source.library.map((x) => new fhir.FhirCanonical({value: x})); }
     else { this.library = []; }
+    if (source['_library']) {
+      source._library.forEach((x,i) => {
+        if (this.library.length >= i) { if (x) { this.library[i].addExtendedProperties(x); } }
+        else { if (x) { this.library.push(new fhir.FhirCanonical(x as Partial<fhir.FhirCanonicalArgs>)); } }
+      });
+    }
     if (source['kind']) { this.kind = new fhir.FhirCode({value: source.kind}); }
+    if (source['_kind']) {
+      if (this.kind) { this.kind.addExtendedProperties(source._kind!); }
+      else { this.kind = new fhir.FhirCode(source._kind as Partial<fhir.FhirCodeArgs>); }
+    }
     if (source['profile']) { this.profile = new fhir.FhirCanonical({value: source.profile}); }
+    if (source['_profile']) {
+      if (this.profile) { this.profile.addExtendedProperties(source._profile!); }
+      else { this.profile = new fhir.FhirCanonical(source._profile as Partial<fhir.FhirCanonicalArgs>); }
+    }
     if (source['code']) { this.code = new fhir.CodeableConcept(source.code); }
     if (source['intent']) { this.intent = new fhir.FhirCode<RequestIntentCodeType>({value: source.intent}); }
+    if (source['_intent']) {
+      if (this.intent) { this.intent.addExtendedProperties(source._intent!); }
+      else { this.intent = new fhir.FhirCode<RequestIntentCodeType>(source._intent as Partial<fhir.FhirCode>); }
+    }
     if (source['priority']) { this.priority = new fhir.FhirCode<RequestPriorityCodeType>({value: source.priority}); }
+    if (source['_priority']) {
+      if (this.priority) { this.priority.addExtendedProperties(source._priority!); }
+      else { this.priority = new fhir.FhirCode<RequestPriorityCodeType>(source._priority as Partial<fhir.FhirCode>); }
+    }
     if (source['doNotPerform']) { this.doNotPerform = new fhir.FhirBoolean({value: source.doNotPerform}); }
+    if (source['_doNotPerform']) {
+      if (this.doNotPerform) { this.doNotPerform.addExtendedProperties(source._doNotPerform!); }
+      else { this.doNotPerform = new fhir.FhirBoolean(source._doNotPerform as Partial<fhir.FhirBooleanArgs>); }
+    }
     if (source['timing']) { this.timing = source.timing; }
     else if (source['timingTiming']) { this.timing = new fhir.Timing(source.timingTiming); }
     else if (source['timingDateTime']) { this.timing = new fhir.FhirDateTime({value: source.timingDateTime}); }
@@ -679,6 +869,10 @@ export class ActivityDefinition extends fhir.DomainResource {
     if (source['observationResultRequirement']) { this.observationResultRequirement = source.observationResultRequirement.map((x) => new fhir.Reference(x)); }
     else { this.observationResultRequirement = []; }
     if (source['transform']) { this.transform = new fhir.FhirCanonical({value: source.transform}); }
+    if (source['_transform']) {
+      if (this.transform) { this.transform.addExtendedProperties(source._transform!); }
+      else { this.transform = new fhir.FhirCanonical(source._transform as Partial<fhir.FhirCanonicalArgs>); }
+    }
     if (source['dynamicValue']) { this.dynamicValue = source.dynamicValue.map((x) => new fhir.ActivityDefinitionDynamicValue(x)); }
     else { this.dynamicValue = []; }
   }

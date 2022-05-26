@@ -10,6 +10,10 @@ export interface DiagnosticReportMediaArgs extends fhir.BackboneElementArgs {
      */
     comment?: fhir.FhirString | string | undefined;
     /**
+     * Extended properties for primitive element: DiagnosticReport.media.comment
+     */
+    _comment?: fhir.FhirElementArgs;
+    /**
      * Reference to the image source.
      */
     link: fhir.ReferenceArgs | null;
@@ -60,6 +64,10 @@ export interface DiagnosticReportArgs extends fhir.DomainResourceArgs {
      */
     status: fhir.FhirCode<DiagnosticReportStatusCodeType> | string | undefined;
     /**
+     * Extended properties for primitive element: DiagnosticReport.status
+     */
+    _status?: fhir.FhirElementArgs;
+    /**
      * Multiple categories are allowed using various categorization schemes.   The level of granularity is defined by the category concepts in the value set. More fine-grained filtering can be performed using the metadata and/or terminology hierarchy in DiagnosticReport.code.
      */
     category?: fhir.CodeableConceptArgs[] | undefined;
@@ -92,6 +100,10 @@ export interface DiagnosticReportArgs extends fhir.DomainResourceArgs {
      */
     issued?: fhir.FhirInstant | string | undefined;
     /**
+     * Extended properties for primitive element: DiagnosticReport.issued
+     */
+    _issued?: fhir.FhirElementArgs;
+    /**
      * This is not necessarily the source of the atomic data items or the entity that interpreted the results. It is the entity that takes responsibility for the clinical report.
      */
     performer?: fhir.ReferenceArgs[] | undefined;
@@ -119,6 +131,10 @@ export interface DiagnosticReportArgs extends fhir.DomainResourceArgs {
      * Concise and clinically contextualized summary conclusion (interpretation/impression) of the diagnostic report.
      */
     conclusion?: fhir.FhirString | string | undefined;
+    /**
+     * Extended properties for primitive element: DiagnosticReport.conclusion
+     */
+    _conclusion?: fhir.FhirElementArgs;
     /**
      * One or more codes that represent the summary conclusion (interpretation/impression) of the diagnostic report.
      */

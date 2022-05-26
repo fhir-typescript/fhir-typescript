@@ -30,6 +30,10 @@ export interface EnrollmentResponseArgs extends fhir.DomainResourceArgs {
    */
   status?: fhir.FhirCode<FmStatusCodeType>|string|undefined;
   /**
+   * Extended properties for primitive element: EnrollmentResponse.status
+   */
+  _status?:fhir.FhirElementArgs;
+  /**
    * Original request resource reference.
    */
   request?: fhir.ReferenceArgs|undefined;
@@ -38,13 +42,25 @@ export interface EnrollmentResponseArgs extends fhir.DomainResourceArgs {
    */
   outcome?: fhir.FhirCode<RemittanceOutcomeCodeType>|string|undefined;
   /**
+   * Extended properties for primitive element: EnrollmentResponse.outcome
+   */
+  _outcome?:fhir.FhirElementArgs;
+  /**
    * A description of the status of the adjudication.
    */
   disposition?: fhir.FhirString|string|undefined;
   /**
+   * Extended properties for primitive element: EnrollmentResponse.disposition
+   */
+  _disposition?:fhir.FhirElementArgs;
+  /**
    * The date when the enclosed suite of services were performed or completed.
    */
   created?: fhir.FhirDateTime|string|undefined;
+  /**
+   * Extended properties for primitive element: EnrollmentResponse.created
+   */
+  _created?:fhir.FhirElementArgs;
   /**
    * The Insurer who produced this adjudicated response.
    */
@@ -108,10 +124,26 @@ export class EnrollmentResponse extends fhir.DomainResource {
     if (source['identifier']) { this.identifier = source.identifier.map((x) => new fhir.Identifier(x)); }
     else { this.identifier = []; }
     if (source['status']) { this.status = new fhir.FhirCode<FmStatusCodeType>({value: source.status}); }
+    if (source['_status']) {
+      if (this.status) { this.status.addExtendedProperties(source._status!); }
+      else { this.status = new fhir.FhirCode<FmStatusCodeType>(source._status as Partial<fhir.FhirCode>); }
+    }
     if (source['request']) { this.request = new fhir.Reference(source.request); }
     if (source['outcome']) { this.outcome = new fhir.FhirCode<RemittanceOutcomeCodeType>({value: source.outcome}); }
+    if (source['_outcome']) {
+      if (this.outcome) { this.outcome.addExtendedProperties(source._outcome!); }
+      else { this.outcome = new fhir.FhirCode<RemittanceOutcomeCodeType>(source._outcome as Partial<fhir.FhirCode>); }
+    }
     if (source['disposition']) { this.disposition = new fhir.FhirString({value: source.disposition}); }
+    if (source['_disposition']) {
+      if (this.disposition) { this.disposition.addExtendedProperties(source._disposition!); }
+      else { this.disposition = new fhir.FhirString(source._disposition as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['created']) { this.created = new fhir.FhirDateTime({value: source.created}); }
+    if (source['_created']) {
+      if (this.created) { this.created.addExtendedProperties(source._created!); }
+      else { this.created = new fhir.FhirDateTime(source._created as Partial<fhir.FhirDateTimeArgs>); }
+    }
     if (source['organization']) { this.organization = new fhir.Reference(source.organization); }
     if (source['requestProvider']) { this.requestProvider = new fhir.Reference(source.requestProvider); }
   }

@@ -13,13 +13,25 @@ export interface DeviceMetricCalibrationArgs extends fhir.BackboneElementArgs {
      */
     type?: fhir.FhirCode<MetricCalibrationTypeCodeType> | string | undefined;
     /**
+     * Extended properties for primitive element: DeviceMetric.calibration.type
+     */
+    _type?: fhir.FhirElementArgs;
+    /**
      * Describes the state of the calibration.
      */
     state?: fhir.FhirCode<MetricCalibrationStateCodeType> | string | undefined;
     /**
+     * Extended properties for primitive element: DeviceMetric.calibration.state
+     */
+    _state?: fhir.FhirElementArgs;
+    /**
      * Describes the time last calibration has been performed.
      */
     time?: fhir.FhirInstant | string | undefined;
+    /**
+     * Extended properties for primitive element: DeviceMetric.calibration.time
+     */
+    _time?: fhir.FhirElementArgs;
 }
 /**
  * Describes the calibrations that have been performed or that are required to be performed.
@@ -101,13 +113,25 @@ export interface DeviceMetricArgs extends fhir.DomainResourceArgs {
      */
     operationalStatus?: fhir.FhirCode<MetricOperationalStatusCodeType> | string | undefined;
     /**
+     * Extended properties for primitive element: DeviceMetric.operationalStatus
+     */
+    _operationalStatus?: fhir.FhirElementArgs;
+    /**
      * Describes the color representation for the metric. This is often used to aid clinicians to track and identify parameter types by color. In practice, consider a Patient Monitor that has ECG/HR and Pleth for example; the parameters are displayed in different characteristic colors, such as HR-blue, BP-green, and PR and SpO2- magenta.
      */
     color?: fhir.FhirCode<MetricColorCodeType> | string | undefined;
     /**
+     * Extended properties for primitive element: DeviceMetric.color
+     */
+    _color?: fhir.FhirElementArgs;
+    /**
      * Indicates the category of the observation generation process. A DeviceMetric can be for example a setting, measurement, or calculation.
      */
     category: fhir.FhirCode<MetricCategoryCodeType> | string | undefined;
+    /**
+     * Extended properties for primitive element: DeviceMetric.category
+     */
+    _category?: fhir.FhirElementArgs;
     /**
      * Describes the measurement repetition time. This is not necessarily the same as the update period. The measurement repetition time can range from milliseconds up to hours. An example for a measurement repetition time in the range of milliseconds is the sampling rate of an ECG. An example for a measurement repetition time in the range of hours is a NIBP that is triggered automatically every hour. The update period may be different than the measurement repetition time, if the device does not update the published observed value with the same frequency as it was measured.
      */

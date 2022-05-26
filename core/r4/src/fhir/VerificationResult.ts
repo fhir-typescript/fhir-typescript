@@ -70,6 +70,10 @@ export interface VerificationResultPrimarySourceArgs extends fhir.BackboneElemen
    */
   validationDate?: fhir.FhirDateTime|string|undefined;
   /**
+   * Extended properties for primitive element: VerificationResult.primarySource.validationDate
+   */
+  _validationDate?:fhir.FhirElementArgs;
+  /**
    * Ability of the primary source to push updates/alerts (yes; no; undetermined).
    */
   canPushUpdates?: fhir.CodeableConceptArgs|undefined;
@@ -127,6 +131,10 @@ export class VerificationResultPrimarySource extends fhir.BackboneElement {
     else { this.communicationMethod = []; }
     if (source['validationStatus']) { this.validationStatus = new fhir.CodeableConcept(source.validationStatus); }
     if (source['validationDate']) { this.validationDate = new fhir.FhirDateTime({value: source.validationDate}); }
+    if (source['_validationDate']) {
+      if (this.validationDate) { this.validationDate.addExtendedProperties(source._validationDate!); }
+      else { this.validationDate = new fhir.FhirDateTime(source._validationDate as Partial<fhir.FhirDateTimeArgs>); }
+    }
     if (source['canPushUpdates']) { this.canPushUpdates = new fhir.CodeableConcept(source.canPushUpdates); }
     if (source['pushTypeAvailable']) { this.pushTypeAvailable = source.pushTypeAvailable.map((x) => new fhir.CodeableConcept(x)); }
     else { this.pushTypeAvailable = []; }
@@ -185,13 +193,25 @@ export interface VerificationResultAttestationArgs extends fhir.BackboneElementA
    */
   date?: fhir.FhirDate|string|undefined;
   /**
+   * Extended properties for primitive element: VerificationResult.attestation.date
+   */
+  _date?:fhir.FhirElementArgs;
+  /**
    * A digital identity certificate associated with the attestation source.
    */
   sourceIdentityCertificate?: fhir.FhirString|string|undefined;
   /**
+   * Extended properties for primitive element: VerificationResult.attestation.sourceIdentityCertificate
+   */
+  _sourceIdentityCertificate?:fhir.FhirElementArgs;
+  /**
    * A digital identity certificate associated with the proxy entity submitting attested information on behalf of the attestation source.
    */
   proxyIdentityCertificate?: fhir.FhirString|string|undefined;
+  /**
+   * Extended properties for primitive element: VerificationResult.attestation.proxyIdentityCertificate
+   */
+  _proxyIdentityCertificate?:fhir.FhirElementArgs;
   /**
    * Signed assertion by the proxy entity indicating that they have the right to submit attested information on behalf of the attestation source.
    */
@@ -251,8 +271,20 @@ export class VerificationResultAttestation extends fhir.BackboneElement {
     if (source['onBehalfOf']) { this.onBehalfOf = new fhir.Reference(source.onBehalfOf); }
     if (source['communicationMethod']) { this.communicationMethod = new fhir.CodeableConcept(source.communicationMethod); }
     if (source['date']) { this.date = new fhir.FhirDate({value: source.date}); }
+    if (source['_date']) {
+      if (this.date) { this.date.addExtendedProperties(source._date!); }
+      else { this.date = new fhir.FhirDate(source._date as Partial<fhir.FhirDateArgs>); }
+    }
     if (source['sourceIdentityCertificate']) { this.sourceIdentityCertificate = new fhir.FhirString({value: source.sourceIdentityCertificate}); }
+    if (source['_sourceIdentityCertificate']) {
+      if (this.sourceIdentityCertificate) { this.sourceIdentityCertificate.addExtendedProperties(source._sourceIdentityCertificate!); }
+      else { this.sourceIdentityCertificate = new fhir.FhirString(source._sourceIdentityCertificate as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['proxyIdentityCertificate']) { this.proxyIdentityCertificate = new fhir.FhirString({value: source.proxyIdentityCertificate}); }
+    if (source['_proxyIdentityCertificate']) {
+      if (this.proxyIdentityCertificate) { this.proxyIdentityCertificate.addExtendedProperties(source._proxyIdentityCertificate!); }
+      else { this.proxyIdentityCertificate = new fhir.FhirString(source._proxyIdentityCertificate as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['proxySignature']) { this.proxySignature = new fhir.Signature(source.proxySignature); }
     if (source['sourceSignature']) { this.sourceSignature = new fhir.Signature(source.sourceSignature); }
   }
@@ -284,6 +316,10 @@ export interface VerificationResultValidatorArgs extends fhir.BackboneElementArg
    * A digital identity certificate associated with the validator.
    */
   identityCertificate?: fhir.FhirString|string|undefined;
+  /**
+   * Extended properties for primitive element: VerificationResult.validator.identityCertificate
+   */
+  _identityCertificate?:fhir.FhirElementArgs;
   /**
    * Signed assertion by the validator that they have validated the information.
    */
@@ -318,6 +354,10 @@ export class VerificationResultValidator extends fhir.BackboneElement {
     if (source['organization']) { this.organization = new fhir.Reference(source.organization); }
     else { this.organization = null; }
     if (source['identityCertificate']) { this.identityCertificate = new fhir.FhirString({value: source.identityCertificate}); }
+    if (source['_identityCertificate']) {
+      if (this.identityCertificate) { this.identityCertificate.addExtendedProperties(source._identityCertificate!); }
+      else { this.identityCertificate = new fhir.FhirString(source._identityCertificate as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['attestationSignature']) { this.attestationSignature = new fhir.Signature(source.attestationSignature); }
   }
   /**
@@ -351,6 +391,10 @@ export interface VerificationResultArgs extends fhir.DomainResourceArgs {
    */
   targetLocation?: fhir.FhirString[]|string[]|undefined;
   /**
+   * Extended properties for primitive element: VerificationResult.targetLocation
+   */
+  _targetLocation?:(fhir.FhirElementArgs|null)[];
+  /**
    * The frequency with which the target must be validated (none; initial; periodic).
    */
   need?: fhir.CodeableConceptArgs|undefined;
@@ -359,9 +403,17 @@ export interface VerificationResultArgs extends fhir.DomainResourceArgs {
    */
   status: fhir.FhirCode<VerificationresultStatusCodeType>|string|undefined;
   /**
+   * Extended properties for primitive element: VerificationResult.status
+   */
+  _status?:fhir.FhirElementArgs;
+  /**
    * When the validation status was updated.
    */
   statusDate?: fhir.FhirDateTime|string|undefined;
+  /**
+   * Extended properties for primitive element: VerificationResult.statusDate
+   */
+  _statusDate?:fhir.FhirElementArgs;
   /**
    * What the target is validated against (nothing; primary source; multiple sources).
    */
@@ -379,9 +431,17 @@ export interface VerificationResultArgs extends fhir.DomainResourceArgs {
    */
   lastPerformed?: fhir.FhirDateTime|string|undefined;
   /**
+   * Extended properties for primitive element: VerificationResult.lastPerformed
+   */
+  _lastPerformed?:fhir.FhirElementArgs;
+  /**
    * The date when target is next validated, if appropriate.
    */
   nextScheduled?: fhir.FhirDate|string|undefined;
+  /**
+   * Extended properties for primitive element: VerificationResult.nextScheduled
+   */
+  _nextScheduled?:fhir.FhirElementArgs;
   /**
    * The result if validation fails (fatal; warning; record only; none).
    */
@@ -478,16 +538,38 @@ export class VerificationResult extends fhir.DomainResource {
     else { this.target = []; }
     if (source['targetLocation']) { this.targetLocation = source.targetLocation.map((x) => new fhir.FhirString({value: x})); }
     else { this.targetLocation = []; }
+    if (source['_targetLocation']) {
+      source._targetLocation.forEach((x,i) => {
+        if (this.targetLocation.length >= i) { if (x) { this.targetLocation[i].addExtendedProperties(x); } }
+        else { if (x) { this.targetLocation.push(new fhir.FhirString(x as Partial<fhir.FhirStringArgs>)); } }
+      });
+    }
     if (source['need']) { this.need = new fhir.CodeableConcept(source.need); }
     if (source['status']) { this.status = new fhir.FhirCode<VerificationresultStatusCodeType>({value: source.status}); }
     else { this.status = null; }
+    if (source['_status']) {
+      if (this.status) { this.status.addExtendedProperties(source._status!); }
+      else { this.status = new fhir.FhirCode<VerificationresultStatusCodeType>(source._status as Partial<fhir.FhirCode>); }
+    }
     if (source['statusDate']) { this.statusDate = new fhir.FhirDateTime({value: source.statusDate}); }
+    if (source['_statusDate']) {
+      if (this.statusDate) { this.statusDate.addExtendedProperties(source._statusDate!); }
+      else { this.statusDate = new fhir.FhirDateTime(source._statusDate as Partial<fhir.FhirDateTimeArgs>); }
+    }
     if (source['validationType']) { this.validationType = new fhir.CodeableConcept(source.validationType); }
     if (source['validationProcess']) { this.validationProcess = source.validationProcess.map((x) => new fhir.CodeableConcept(x)); }
     else { this.validationProcess = []; }
     if (source['frequency']) { this.frequency = new fhir.Timing(source.frequency); }
     if (source['lastPerformed']) { this.lastPerformed = new fhir.FhirDateTime({value: source.lastPerformed}); }
+    if (source['_lastPerformed']) {
+      if (this.lastPerformed) { this.lastPerformed.addExtendedProperties(source._lastPerformed!); }
+      else { this.lastPerformed = new fhir.FhirDateTime(source._lastPerformed as Partial<fhir.FhirDateTimeArgs>); }
+    }
     if (source['nextScheduled']) { this.nextScheduled = new fhir.FhirDate({value: source.nextScheduled}); }
+    if (source['_nextScheduled']) {
+      if (this.nextScheduled) { this.nextScheduled.addExtendedProperties(source._nextScheduled!); }
+      else { this.nextScheduled = new fhir.FhirDate(source._nextScheduled as Partial<fhir.FhirDateArgs>); }
+    }
     if (source['failureAction']) { this.failureAction = new fhir.CodeableConcept(source.failureAction); }
     if (source['primarySource']) { this.primarySource = source.primarySource.map((x) => new fhir.VerificationResultPrimarySource(x)); }
     else { this.primarySource = []; }

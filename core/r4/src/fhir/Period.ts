@@ -14,9 +14,17 @@ export interface PeriodArgs extends fhir.FhirElementArgs {
    */
   start?: fhir.FhirDateTime|string|undefined;
   /**
+   * Extended properties for primitive element: Period.start
+   */
+  _start?:fhir.FhirElementArgs;
+  /**
    * The high value includes any matching date/time. i.e. 2012-02-03T10:00:00 is in a period that has an end value of 2012-02-03.
    */
   end?: fhir.FhirDateTime|string|undefined;
+  /**
+   * Extended properties for primitive element: Period.end
+   */
+  _end?:fhir.FhirElementArgs;
 }
 
 /**
@@ -41,7 +49,15 @@ export class Period extends fhir.FhirElement {
   constructor(source:Partial<PeriodArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
     if (source['start']) { this.start = new fhir.FhirDateTime({value: source.start}); }
+    if (source['_start']) {
+      if (this.start) { this.start.addExtendedProperties(source._start!); }
+      else { this.start = new fhir.FhirDateTime(source._start as Partial<fhir.FhirDateTimeArgs>); }
+    }
     if (source['end']) { this.end = new fhir.FhirDateTime({value: source.end}); }
+    if (source['_end']) {
+      if (this.end) { this.end.addExtendedProperties(source._end!); }
+      else { this.end = new fhir.FhirDateTime(source._end as Partial<fhir.FhirDateTimeArgs>); }
+    }
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).

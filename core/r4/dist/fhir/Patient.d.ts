@@ -29,6 +29,10 @@ export interface PatientContactArgs extends fhir.BackboneElementArgs {
      */
     gender?: fhir.FhirCode<AdministrativeGenderCodeType> | string | undefined;
     /**
+     * Extended properties for primitive element: Patient.contact.gender
+     */
+    _gender?: fhir.FhirElementArgs;
+    /**
      * Organization on behalf of which the contact is acting or for which the contact is working.
      */
     organization?: fhir.ReferenceArgs | undefined;
@@ -107,6 +111,10 @@ export interface PatientCommunicationArgs extends fhir.BackboneElementArgs {
      * This language is specifically identified for communicating healthcare information.
      */
     preferred?: fhir.FhirBoolean | boolean | undefined;
+    /**
+     * Extended properties for primitive element: Patient.communication.preferred
+     */
+    _preferred?: fhir.FhirElementArgs;
 }
 /**
  * If no language is specified, this *implies* that the default local language is spoken.  If you need to convey proficiency for multiple modes, then you need multiple Patient.Communication associations.   For animals, language is not a relevant field, and should be absent from the instance. If the Patient does not speak the default local language, then the Interpreter Required Standard can be used to explicitly declare that an interpreter is required.
@@ -149,6 +157,10 @@ export interface PatientLinkArgs extends fhir.BackboneElementArgs {
      * The type of link between this patient resource and another patient resource.
      */
     type: fhir.FhirCode<LinkTypeCodeType> | string | undefined;
+    /**
+     * Extended properties for primitive element: Patient.link.type
+     */
+    _type?: fhir.FhirElementArgs;
 }
 /**
  * There is no assumption that linked patient records have mutual links.
@@ -201,6 +213,10 @@ export interface PatientArgs extends fhir.DomainResourceArgs {
      */
     active?: fhir.FhirBoolean | boolean | undefined;
     /**
+     * Extended properties for primitive element: Patient.active
+     */
+    _active?: fhir.FhirElementArgs;
+    /**
      * A patient may have multiple names with different uses or applicable periods. For animals, the name is a "HumanName" in the sense that is assigned and used by humans and has the same patterns.
      */
     name?: fhir.HumanNameArgs[] | undefined;
@@ -213,9 +229,17 @@ export interface PatientArgs extends fhir.DomainResourceArgs {
      */
     gender?: fhir.FhirCode<AdministrativeGenderCodeType> | string | undefined;
     /**
+     * Extended properties for primitive element: Patient.gender
+     */
+    _gender?: fhir.FhirElementArgs;
+    /**
      * At least an estimated year should be provided as a guess if the real DOB is unknown  There is a standard extension "patient-birthTime" available that should be used where Time is required (such as in maternity/infant care systems).
      */
     birthDate?: fhir.FhirDate | string | undefined;
+    /**
+     * Extended properties for primitive element: Patient.birthDate
+     */
+    _birthDate?: fhir.FhirElementArgs;
     /**
      * If there's no value in the instance, it means there is no statement on whether or not the individual is deceased. Most systems will interpret the absence of a value as a sign of the person being alive.
      */

@@ -13,6 +13,10 @@ export interface AccountCoverageArgs extends fhir.BackboneElementArgs {
      * It is common in some jurisdictions for there to be multiple coverages allocated to an account, and a sequence is required to order the settling of the account (often with insurance claiming).
      */
     priority?: fhir.FhirPositiveInt | number | undefined;
+    /**
+     * Extended properties for primitive element: Account.coverage.priority
+     */
+    _priority?: fhir.FhirElementArgs;
 }
 /**
  * Typically. this may be some form of insurance, internal charges, or self-pay.
@@ -54,6 +58,10 @@ export interface AccountGuarantorArgs extends fhir.BackboneElementArgs {
      * A guarantor may be placed on credit hold or otherwise have their role temporarily suspended.
      */
     onHold?: fhir.FhirBoolean | boolean | undefined;
+    /**
+     * Extended properties for primitive element: Account.guarantor.onHold
+     */
+    _onHold?: fhir.FhirElementArgs;
     /**
      * The timeframe during which the guarantor accepts responsibility for the account.
      */
@@ -105,6 +113,10 @@ export interface AccountArgs extends fhir.DomainResourceArgs {
      */
     status: fhir.FhirCode<AccountStatusCodeType> | string | undefined;
     /**
+     * Extended properties for primitive element: Account.status
+     */
+    _status?: fhir.FhirElementArgs;
+    /**
      * Categorizes the account for reporting and searching purposes.
      */
     type?: fhir.CodeableConceptArgs | undefined;
@@ -112,6 +124,10 @@ export interface AccountArgs extends fhir.DomainResourceArgs {
      * Name used for the account when displaying it to humans in reports, etc.
      */
     name?: fhir.FhirString | string | undefined;
+    /**
+     * Extended properties for primitive element: Account.name
+     */
+    _name?: fhir.FhirElementArgs;
     /**
      * Accounts can be applied to non-patients for tracking other non-patient related activities, such as group services (patients not tracked, and costs charged to another body), or might not be allocated.
      */
@@ -134,6 +150,10 @@ export interface AccountArgs extends fhir.DomainResourceArgs {
      * Provides additional information about what the account tracks and how it is used.
      */
     description?: fhir.FhirString | string | undefined;
+    /**
+     * Extended properties for primitive element: Account.description
+     */
+    _description?: fhir.FhirElementArgs;
     /**
      * The parties responsible for balancing the account if other payment options fall short.
      */

@@ -10,9 +10,9 @@ import { ImmunizationRecommendationDateCriterionCodings, ImmunizationRecommendat
 // @ts-ignore
 import { ImmunizationRecommendationDateCriterionCodes,  ImmunizationRecommendationDateCriterionCodeType } from '../fhirValueSets/ImmunizationRecommendationDateCriterionCodes.js';
 // @ts-ignore
-import { VaccineCodeCodings, VaccineCodeCodingType,} from '../fhirValueSets/VaccineCodeCodings.js';
+import { VaccineCodings, VaccineCodingType,} from '../fhirValueSets/VaccineCodings.js';
 // @ts-ignore
-import { VaccineCodeCodes,  VaccineCodeCodeType } from '../fhirValueSets/VaccineCodeCodes.js';
+import { VaccineCodes,  VaccineCodeType } from '../fhirValueSets/VaccineCodes.js';
 // @ts-ignore
 import { ImmunizationRecommendationTargetDiseaseCodings, ImmunizationRecommendationTargetDiseaseCodingType,} from '../fhirValueSets/ImmunizationRecommendationTargetDiseaseCodings.js';
 // @ts-ignore
@@ -37,6 +37,10 @@ export interface ImmunizationRecommendationRecommendationDateCriterionArgs exten
    * The date whose meaning is specified by dateCriterion.code.
    */
   value: fhir.FhirDateTime|string|undefined;
+  /**
+   * Extended properties for primitive element: ImmunizationRecommendation.recommendation.dateCriterion.value
+   */
+  _value?:fhir.FhirElementArgs;
 }
 
 /**
@@ -64,6 +68,10 @@ export class ImmunizationRecommendationRecommendationDateCriterion extends fhir.
     else { this.code = null; }
     if (source['value']) { this.value = new fhir.FhirDateTime({value: source.value}); }
     else { this.value = null; }
+    if (source['_value']) {
+      if (this.value) { this.value.addExtendedProperties(source._value!); }
+      else { this.value = new fhir.FhirDateTime(source._value as Partial<fhir.FhirDateTimeArgs>); }
+    }
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -114,9 +122,17 @@ export interface ImmunizationRecommendationRecommendationArgs extends fhir.Backb
    */
   description?: fhir.FhirString|string|undefined;
   /**
+   * Extended properties for primitive element: ImmunizationRecommendation.recommendation.description
+   */
+  _description?:fhir.FhirElementArgs;
+  /**
    * One possible path to achieve presumed immunity against a disease - within the context of an authority.
    */
   series?: fhir.FhirString|string|undefined;
+  /**
+   * Extended properties for primitive element: ImmunizationRecommendation.recommendation.series
+   */
+  _series?:fhir.FhirElementArgs;
   /**
    * The use of an integer is prefered if known. A string should only be used in cases where an interger is not available (such as when documenting a recurring booster dose).
    */
@@ -232,7 +248,15 @@ export class ImmunizationRecommendationRecommendation extends fhir.BackboneEleme
     if (source['dateCriterion']) { this.dateCriterion = source.dateCriterion.map((x) => new fhir.ImmunizationRecommendationRecommendationDateCriterion(x)); }
     else { this.dateCriterion = []; }
     if (source['description']) { this.description = new fhir.FhirString({value: source.description}); }
+    if (source['_description']) {
+      if (this.description) { this.description.addExtendedProperties(source._description!); }
+      else { this.description = new fhir.FhirString(source._description as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['series']) { this.series = new fhir.FhirString({value: source.series}); }
+    if (source['_series']) {
+      if (this.series) { this.series.addExtendedProperties(source._series!); }
+      else { this.series = new fhir.FhirString(source._series as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['doseNumber']) { this.doseNumber = source.doseNumber; }
     else if (source['doseNumberPositiveInt']) { this.doseNumber = new fhir.FhirPositiveInt({value: source.doseNumberPositiveInt}); }
     else if (source['doseNumberString']) { this.doseNumber = new fhir.FhirString({value: source.doseNumberString}); }
@@ -285,6 +309,10 @@ export interface ImmunizationRecommendationArgs extends fhir.DomainResourceArgs 
    * The date the immunization recommendation(s) were created.
    */
   date: fhir.FhirDateTime|string|undefined;
+  /**
+   * Extended properties for primitive element: ImmunizationRecommendation.date
+   */
+  _date?:fhir.FhirElementArgs;
   /**
    * Indicates the authority who published the protocol (e.g. ACIP).
    */
@@ -339,6 +367,10 @@ export class ImmunizationRecommendation extends fhir.DomainResource {
     else { this.patient = null; }
     if (source['date']) { this.date = new fhir.FhirDateTime({value: source.date}); }
     else { this.date = null; }
+    if (source['_date']) {
+      if (this.date) { this.date.addExtendedProperties(source._date!); }
+      else { this.date = new fhir.FhirDateTime(source._date as Partial<fhir.FhirDateTimeArgs>); }
+    }
     if (source['authority']) { this.authority = new fhir.Reference(source.authority); }
     if (source['recommendation']) { this.recommendation = source.recommendation.map((x) => new fhir.ImmunizationRecommendationRecommendation(x)); }
     else { this.recommendation = []; }

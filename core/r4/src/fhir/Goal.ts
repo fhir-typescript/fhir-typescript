@@ -155,6 +155,10 @@ export interface GoalArgs extends fhir.DomainResourceArgs {
    */
   lifecycleStatus: fhir.FhirCode<GoalStatusCodeType>|string|undefined;
   /**
+   * Extended properties for primitive element: Goal.lifecycleStatus
+   */
+  _lifecycleStatus?:fhir.FhirElementArgs;
+  /**
    * Describes the progression, or lack thereof, towards the goal against the target.
    */
   achievementStatus?: fhir.CodeableConceptArgs|undefined;
@@ -196,9 +200,17 @@ export interface GoalArgs extends fhir.DomainResourceArgs {
    */
   statusDate?: fhir.FhirDate|string|undefined;
   /**
+   * Extended properties for primitive element: Goal.statusDate
+   */
+  _statusDate?:fhir.FhirElementArgs;
+  /**
    * This will typically be captured for statuses such as rejected, on-hold or cancelled, but could be present for others.
    */
   statusReason?: fhir.FhirString|string|undefined;
+  /**
+   * Extended properties for primitive element: Goal.statusReason
+   */
+  _statusReason?:fhir.FhirElementArgs;
   /**
    * This is the individual responsible for establishing the goal, not necessarily who recorded it.  (For that, use the Provenance resource.).
    */
@@ -312,6 +324,10 @@ export class Goal extends fhir.DomainResource {
     else { this.identifier = []; }
     if (source['lifecycleStatus']) { this.lifecycleStatus = new fhir.FhirCode<GoalStatusCodeType>({value: source.lifecycleStatus}); }
     else { this.lifecycleStatus = null; }
+    if (source['_lifecycleStatus']) {
+      if (this.lifecycleStatus) { this.lifecycleStatus.addExtendedProperties(source._lifecycleStatus!); }
+      else { this.lifecycleStatus = new fhir.FhirCode<GoalStatusCodeType>(source._lifecycleStatus as Partial<fhir.FhirCode>); }
+    }
     if (source['achievementStatus']) { this.achievementStatus = new fhir.CodeableConcept(source.achievementStatus); }
     if (source['category']) { this.category = source.category.map((x) => new fhir.CodeableConcept(x)); }
     else { this.category = []; }
@@ -326,7 +342,15 @@ export class Goal extends fhir.DomainResource {
     if (source['target']) { this.target = source.target.map((x) => new fhir.GoalTarget(x)); }
     else { this.target = []; }
     if (source['statusDate']) { this.statusDate = new fhir.FhirDate({value: source.statusDate}); }
+    if (source['_statusDate']) {
+      if (this.statusDate) { this.statusDate.addExtendedProperties(source._statusDate!); }
+      else { this.statusDate = new fhir.FhirDate(source._statusDate as Partial<fhir.FhirDateArgs>); }
+    }
     if (source['statusReason']) { this.statusReason = new fhir.FhirString({value: source.statusReason}); }
+    if (source['_statusReason']) {
+      if (this.statusReason) { this.statusReason.addExtendedProperties(source._statusReason!); }
+      else { this.statusReason = new fhir.FhirString(source._statusReason as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['expressedBy']) { this.expressedBy = new fhir.Reference(source.expressedBy); }
     if (source['addresses']) { this.addresses = source.addresses.map((x) => new fhir.Reference(x)); }
     else { this.addresses = []; }

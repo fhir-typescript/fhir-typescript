@@ -12,6 +12,10 @@ export interface TaskRestrictionArgs extends fhir.BackboneElementArgs {
      */
     repetitions?: fhir.FhirPositiveInt | number | undefined;
     /**
+     * Extended properties for primitive element: Task.restriction.repetitions
+     */
+    _repetitions?: fhir.FhirElementArgs;
+    /**
      * Note that period.high is the due date representing the time by which the task should be completed.
      */
     period?: fhir.PeriodArgs | undefined;
@@ -550,9 +554,17 @@ export interface TaskArgs extends fhir.DomainResourceArgs {
      */
     instantiatesCanonical?: fhir.FhirCanonical | string | undefined;
     /**
+     * Extended properties for primitive element: Task.instantiatesCanonical
+     */
+    _instantiatesCanonical?: fhir.FhirElementArgs;
+    /**
      * The URL pointing to an *externally* maintained  protocol, guideline, orderset or other definition that is adhered to in whole or in part by this Task.
      */
     instantiatesUri?: fhir.FhirUri | string | undefined;
+    /**
+     * Extended properties for primitive element: Task.instantiatesUri
+     */
+    _instantiatesUri?: fhir.FhirElementArgs;
     /**
      * BasedOn refers to a higher-level authorization that triggered the creation of the task.  It references a "request" resource such as a ServiceRequest, MedicationRequest, ServiceRequest, CarePlan, etc. which is distinct from the "request" resource the task is seeking to fulfill.  This latter resource is referenced by FocusOn.  For example, based on a ServiceRequest (= BasedOn), a task is created to fulfill a procedureRequest ( = FocusOn ) to collect a specimen from a patient.
      */
@@ -570,6 +582,10 @@ export interface TaskArgs extends fhir.DomainResourceArgs {
      */
     status: fhir.FhirCode<TaskStatusCodeType> | string | undefined;
     /**
+     * Extended properties for primitive element: Task.status
+     */
+    _status?: fhir.FhirElementArgs;
+    /**
      * This applies to the current status.  Look at the history of the task to see reasons for past statuses.
      */
     statusReason?: fhir.CodeableConceptArgs | undefined;
@@ -583,9 +599,17 @@ export interface TaskArgs extends fhir.DomainResourceArgs {
      */
     intent: fhir.FhirCode<TaskIntentCodeType> | string | undefined;
     /**
+     * Extended properties for primitive element: Task.intent
+     */
+    _intent?: fhir.FhirElementArgs;
+    /**
      * Indicates how quickly the Task should be addressed with respect to other requests.
      */
     priority?: fhir.FhirCode<RequestPriorityCodeType> | string | undefined;
+    /**
+     * Extended properties for primitive element: Task.priority
+     */
+    _priority?: fhir.FhirElementArgs;
     /**
      * The title (eg "My Tasks", "Outstanding Tasks for Patient X") should go into the code.
      */
@@ -594,6 +618,10 @@ export interface TaskArgs extends fhir.DomainResourceArgs {
      * A free-text description of what is to be performed.
      */
     description?: fhir.FhirString | string | undefined;
+    /**
+     * Extended properties for primitive element: Task.description
+     */
+    _description?: fhir.FhirElementArgs;
     /**
      * If multiple resources need to be manipulated, use sub-tasks.  (This ensures that status can be tracked independently for each referenced resource.).
      */
@@ -615,9 +643,17 @@ export interface TaskArgs extends fhir.DomainResourceArgs {
      */
     authoredOn?: fhir.FhirDateTime | string | undefined;
     /**
+     * Extended properties for primitive element: Task.authoredOn
+     */
+    _authoredOn?: fhir.FhirElementArgs;
+    /**
      * The date and time of last modification to this task.
      */
     lastModified?: fhir.FhirDateTime | string | undefined;
+    /**
+     * Extended properties for primitive element: Task.lastModified
+     */
+    _lastModified?: fhir.FhirElementArgs;
     /**
      * The creator of the task.
      */
@@ -836,6 +872,9 @@ export declare class Task extends fhir.DomainResource {
         readonly OriginalOrder: "original-order";
         readonly Plan: "plan";
         readonly Proposal: "proposal";
+        /**
+         * Note that period.high is the due date representing the time by which the task should be completed.
+         */
         readonly ReflexOrder: "reflex-order";
         readonly Unknown: "unknown";
     };

@@ -42,9 +42,17 @@ export interface MolecularSequenceReferenceSeqArgs extends fhir.BackboneElementA
    */
   genomeBuild?: fhir.FhirString|string|undefined;
   /**
+   * Extended properties for primitive element: MolecularSequence.referenceSeq.genomeBuild
+   */
+  _genomeBuild?:fhir.FhirElementArgs;
+  /**
    * A relative reference to a DNA strand based on gene orientation. The strand that contains the open reading frame of the gene is the "sense" strand, and the opposite complementary strand is the "antisense" strand.
    */
   orientation?: fhir.FhirCode<OrientationTypeCodeType>|string|undefined;
+  /**
+   * Extended properties for primitive element: MolecularSequence.referenceSeq.orientation
+   */
+  _orientation?:fhir.FhirElementArgs;
   /**
    * Reference identifier of reference sequence submitted to NCBI. It must match the type in the MolecularSequence.type field. For example, the prefix, “NG_” identifies reference sequence for genes, “NM_” for messenger RNA transcripts, and “NP_” for amino acid sequences.
    */
@@ -58,17 +66,33 @@ export interface MolecularSequenceReferenceSeqArgs extends fhir.BackboneElementA
    */
   referenceSeqString?: fhir.FhirString|string|undefined;
   /**
+   * Extended properties for primitive element: MolecularSequence.referenceSeq.referenceSeqString
+   */
+  _referenceSeqString?:fhir.FhirElementArgs;
+  /**
    * An absolute reference to a strand. The Watson strand is the strand whose 5'-end is on the short arm of the chromosome, and the Crick strand as the one whose 5'-end is on the long arm.
    */
   strand?: fhir.FhirCode<StrandTypeCodeType>|string|undefined;
+  /**
+   * Extended properties for primitive element: MolecularSequence.referenceSeq.strand
+   */
+  _strand?:fhir.FhirElementArgs;
   /**
    * Start position of the window on the reference sequence. If the coordinate system is either 0-based or 1-based, then start position is inclusive.
    */
   windowStart?: fhir.FhirInteger|number|undefined;
   /**
+   * Extended properties for primitive element: MolecularSequence.referenceSeq.windowStart
+   */
+  _windowStart?:fhir.FhirElementArgs;
+  /**
    * End position of the window on the reference sequence. If the coordinate system is 0-based then end is exclusive and does not include the last position. If the coordinate system is 1-base, then end is inclusive and includes the last position.
    */
   windowEnd?: fhir.FhirInteger|number|undefined;
+  /**
+   * Extended properties for primitive element: MolecularSequence.referenceSeq.windowEnd
+   */
+  _windowEnd?:fhir.FhirElementArgs;
 }
 
 /**
@@ -122,13 +146,37 @@ export class MolecularSequenceReferenceSeq extends fhir.BackboneElement {
     super(source, options);
     if (source['chromosome']) { this.chromosome = new fhir.CodeableConcept(source.chromosome); }
     if (source['genomeBuild']) { this.genomeBuild = new fhir.FhirString({value: source.genomeBuild}); }
+    if (source['_genomeBuild']) {
+      if (this.genomeBuild) { this.genomeBuild.addExtendedProperties(source._genomeBuild!); }
+      else { this.genomeBuild = new fhir.FhirString(source._genomeBuild as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['orientation']) { this.orientation = new fhir.FhirCode<OrientationTypeCodeType>({value: source.orientation}); }
+    if (source['_orientation']) {
+      if (this.orientation) { this.orientation.addExtendedProperties(source._orientation!); }
+      else { this.orientation = new fhir.FhirCode<OrientationTypeCodeType>(source._orientation as Partial<fhir.FhirCode>); }
+    }
     if (source['referenceSeqId']) { this.referenceSeqId = new fhir.CodeableConcept(source.referenceSeqId); }
     if (source['referenceSeqPointer']) { this.referenceSeqPointer = new fhir.Reference(source.referenceSeqPointer); }
     if (source['referenceSeqString']) { this.referenceSeqString = new fhir.FhirString({value: source.referenceSeqString}); }
+    if (source['_referenceSeqString']) {
+      if (this.referenceSeqString) { this.referenceSeqString.addExtendedProperties(source._referenceSeqString!); }
+      else { this.referenceSeqString = new fhir.FhirString(source._referenceSeqString as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['strand']) { this.strand = new fhir.FhirCode<StrandTypeCodeType>({value: source.strand}); }
+    if (source['_strand']) {
+      if (this.strand) { this.strand.addExtendedProperties(source._strand!); }
+      else { this.strand = new fhir.FhirCode<StrandTypeCodeType>(source._strand as Partial<fhir.FhirCode>); }
+    }
     if (source['windowStart']) { this.windowStart = new fhir.FhirInteger({value: source.windowStart}); }
+    if (source['_windowStart']) {
+      if (this.windowStart) { this.windowStart.addExtendedProperties(source._windowStart!); }
+      else { this.windowStart = new fhir.FhirInteger(source._windowStart as Partial<fhir.FhirIntegerArgs>); }
+    }
     if (source['windowEnd']) { this.windowEnd = new fhir.FhirInteger({value: source.windowEnd}); }
+    if (source['_windowEnd']) {
+      if (this.windowEnd) { this.windowEnd.addExtendedProperties(source._windowEnd!); }
+      else { this.windowEnd = new fhir.FhirInteger(source._windowEnd as Partial<fhir.FhirIntegerArgs>); }
+    }
   }
   /**
    * Required-bound Value Set for orientation (MolecularSequence.referenceSeq.orientation)
@@ -174,21 +222,41 @@ export interface MolecularSequenceVariantArgs extends fhir.BackboneElementArgs {
    */
   start?: fhir.FhirInteger|number|undefined;
   /**
+   * Extended properties for primitive element: MolecularSequence.variant.start
+   */
+  _start?:fhir.FhirElementArgs;
+  /**
    * End position of the variant on the reference sequence. If the coordinate system is 0-based then end is exclusive and does not include the last position. If the coordinate system is 1-base, then end is inclusive and includes the last position.
    */
   end?: fhir.FhirInteger|number|undefined;
+  /**
+   * Extended properties for primitive element: MolecularSequence.variant.end
+   */
+  _end?:fhir.FhirElementArgs;
   /**
    * An allele is one of a set of coexisting sequence variants of a gene ([SO:0001023](http://www.sequenceontology.org/browser/current_svn/term/SO:0001023)).  Nucleotide(s)/amino acids from start position of sequence to stop position of sequence on the positive (+) strand of the observed  sequence. When the sequence  type is DNA, it should be the sequence on the positive (+) strand. This will lay in the range between variant.start and variant.end.
    */
   observedAllele?: fhir.FhirString|string|undefined;
   /**
+   * Extended properties for primitive element: MolecularSequence.variant.observedAllele
+   */
+  _observedAllele?:fhir.FhirElementArgs;
+  /**
    * An allele is one of a set of coexisting sequence variants of a gene ([SO:0001023](http://www.sequenceontology.org/browser/current_svn/term/SO:0001023)). Nucleotide(s)/amino acids from start position of sequence to stop position of sequence on the positive (+) strand of the reference sequence. When the sequence  type is DNA, it should be the sequence on the positive (+) strand. This will lay in the range between variant.start and variant.end.
    */
   referenceAllele?: fhir.FhirString|string|undefined;
   /**
+   * Extended properties for primitive element: MolecularSequence.variant.referenceAllele
+   */
+  _referenceAllele?:fhir.FhirElementArgs;
+  /**
    * Extended CIGAR string for aligning the sequence with reference bases. See detailed documentation [here](http://support.illumina.com/help/SequencingAnalysisWorkflow/Content/Vault/Informatics/Sequencing_Analysis/CASAVA/swSEQ_mCA_ExtendedCIGARFormat.htm).
    */
   cigar?: fhir.FhirString|string|undefined;
+  /**
+   * Extended properties for primitive element: MolecularSequence.variant.cigar
+   */
+  _cigar?:fhir.FhirElementArgs;
   /**
    * A pointer to an Observation containing variant information.
    */
@@ -233,10 +301,30 @@ export class MolecularSequenceVariant extends fhir.BackboneElement {
   constructor(source:Partial<MolecularSequenceVariantArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
     if (source['start']) { this.start = new fhir.FhirInteger({value: source.start}); }
+    if (source['_start']) {
+      if (this.start) { this.start.addExtendedProperties(source._start!); }
+      else { this.start = new fhir.FhirInteger(source._start as Partial<fhir.FhirIntegerArgs>); }
+    }
     if (source['end']) { this.end = new fhir.FhirInteger({value: source.end}); }
+    if (source['_end']) {
+      if (this.end) { this.end.addExtendedProperties(source._end!); }
+      else { this.end = new fhir.FhirInteger(source._end as Partial<fhir.FhirIntegerArgs>); }
+    }
     if (source['observedAllele']) { this.observedAllele = new fhir.FhirString({value: source.observedAllele}); }
+    if (source['_observedAllele']) {
+      if (this.observedAllele) { this.observedAllele.addExtendedProperties(source._observedAllele!); }
+      else { this.observedAllele = new fhir.FhirString(source._observedAllele as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['referenceAllele']) { this.referenceAllele = new fhir.FhirString({value: source.referenceAllele}); }
+    if (source['_referenceAllele']) {
+      if (this.referenceAllele) { this.referenceAllele.addExtendedProperties(source._referenceAllele!); }
+      else { this.referenceAllele = new fhir.FhirString(source._referenceAllele as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['cigar']) { this.cigar = new fhir.FhirString({value: source.cigar}); }
+    if (source['_cigar']) {
+      if (this.cigar) { this.cigar.addExtendedProperties(source._cigar!); }
+      else { this.cigar = new fhir.FhirString(source._cigar as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['variantPointer']) { this.variantPointer = new fhir.Reference(source.variantPointer); }
   }
   /**
@@ -262,29 +350,57 @@ export interface MolecularSequenceQualityRocArgs extends fhir.BackboneElementArg
    */
   score?: fhir.FhirInteger[]|number[]|undefined;
   /**
+   * Extended properties for primitive element: MolecularSequence.quality.roc.score
+   */
+  _score?:(fhir.FhirElementArgs|null)[];
+  /**
    * The number of true positives if the GQ score threshold was set to "score" field value.
    */
   numTP?: fhir.FhirInteger[]|number[]|undefined;
+  /**
+   * Extended properties for primitive element: MolecularSequence.quality.roc.numTP
+   */
+  _numTP?:(fhir.FhirElementArgs|null)[];
   /**
    * The number of false positives if the GQ score threshold was set to "score" field value.
    */
   numFP?: fhir.FhirInteger[]|number[]|undefined;
   /**
+   * Extended properties for primitive element: MolecularSequence.quality.roc.numFP
+   */
+  _numFP?:(fhir.FhirElementArgs|null)[];
+  /**
    * The number of false negatives if the GQ score threshold was set to "score" field value.
    */
   numFN?: fhir.FhirInteger[]|number[]|undefined;
+  /**
+   * Extended properties for primitive element: MolecularSequence.quality.roc.numFN
+   */
+  _numFN?:(fhir.FhirElementArgs|null)[];
   /**
    * Calculated precision if the GQ score threshold was set to "score" field value.
    */
   precision?: fhir.FhirDecimal[]|number[]|undefined;
   /**
+   * Extended properties for primitive element: MolecularSequence.quality.roc.precision
+   */
+  _precision?:(fhir.FhirElementArgs|null)[];
+  /**
    * Calculated sensitivity if the GQ score threshold was set to "score" field value.
    */
   sensitivity?: fhir.FhirDecimal[]|number[]|undefined;
   /**
+   * Extended properties for primitive element: MolecularSequence.quality.roc.sensitivity
+   */
+  _sensitivity?:(fhir.FhirElementArgs|null)[];
+  /**
    * Calculated fScore if the GQ score threshold was set to "score" field value.
    */
   fMeasure?: fhir.FhirDecimal[]|number[]|undefined;
+  /**
+   * Extended properties for primitive element: MolecularSequence.quality.roc.fMeasure
+   */
+  _fMeasure?:(fhir.FhirElementArgs|null)[];
 }
 
 /**
@@ -330,18 +446,60 @@ export class MolecularSequenceQualityRoc extends fhir.BackboneElement {
     super(source, options);
     if (source['score']) { this.score = source.score.map((x) => new fhir.FhirInteger({value: x})); }
     else { this.score = []; }
+    if (source['_score']) {
+      source._score.forEach((x,i) => {
+        if (this.score.length >= i) { if (x) { this.score[i].addExtendedProperties(x); } }
+        else { if (x) { this.score.push(new fhir.FhirInteger(x as Partial<fhir.FhirIntegerArgs>)); } }
+      });
+    }
     if (source['numTP']) { this.numTP = source.numTP.map((x) => new fhir.FhirInteger({value: x})); }
     else { this.numTP = []; }
+    if (source['_numTP']) {
+      source._numTP.forEach((x,i) => {
+        if (this.numTP.length >= i) { if (x) { this.numTP[i].addExtendedProperties(x); } }
+        else { if (x) { this.numTP.push(new fhir.FhirInteger(x as Partial<fhir.FhirIntegerArgs>)); } }
+      });
+    }
     if (source['numFP']) { this.numFP = source.numFP.map((x) => new fhir.FhirInteger({value: x})); }
     else { this.numFP = []; }
+    if (source['_numFP']) {
+      source._numFP.forEach((x,i) => {
+        if (this.numFP.length >= i) { if (x) { this.numFP[i].addExtendedProperties(x); } }
+        else { if (x) { this.numFP.push(new fhir.FhirInteger(x as Partial<fhir.FhirIntegerArgs>)); } }
+      });
+    }
     if (source['numFN']) { this.numFN = source.numFN.map((x) => new fhir.FhirInteger({value: x})); }
     else { this.numFN = []; }
+    if (source['_numFN']) {
+      source._numFN.forEach((x,i) => {
+        if (this.numFN.length >= i) { if (x) { this.numFN[i].addExtendedProperties(x); } }
+        else { if (x) { this.numFN.push(new fhir.FhirInteger(x as Partial<fhir.FhirIntegerArgs>)); } }
+      });
+    }
     if (source['precision']) { this.precision = source.precision.map((x) => new fhir.FhirDecimal({value: x})); }
     else { this.precision = []; }
+    if (source['_precision']) {
+      source._precision.forEach((x,i) => {
+        if (this.precision.length >= i) { if (x) { this.precision[i].addExtendedProperties(x); } }
+        else { if (x) { this.precision.push(new fhir.FhirDecimal(x as Partial<fhir.FhirDecimalArgs>)); } }
+      });
+    }
     if (source['sensitivity']) { this.sensitivity = source.sensitivity.map((x) => new fhir.FhirDecimal({value: x})); }
     else { this.sensitivity = []; }
+    if (source['_sensitivity']) {
+      source._sensitivity.forEach((x,i) => {
+        if (this.sensitivity.length >= i) { if (x) { this.sensitivity[i].addExtendedProperties(x); } }
+        else { if (x) { this.sensitivity.push(new fhir.FhirDecimal(x as Partial<fhir.FhirDecimalArgs>)); } }
+      });
+    }
     if (source['fMeasure']) { this.fMeasure = source.fMeasure.map((x) => new fhir.FhirDecimal({value: x})); }
     else { this.fMeasure = []; }
+    if (source['_fMeasure']) {
+      source._fMeasure.forEach((x,i) => {
+        if (this.fMeasure.length >= i) { if (x) { this.fMeasure[i].addExtendedProperties(x); } }
+        else { if (x) { this.fMeasure.push(new fhir.FhirDecimal(x as Partial<fhir.FhirDecimalArgs>)); } }
+      });
+    }
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -367,6 +525,10 @@ export interface MolecularSequenceQualityArgs extends fhir.BackboneElementArgs {
    */
   type: fhir.FhirCode<QualityTypeCodeType>|string|undefined;
   /**
+   * Extended properties for primitive element: MolecularSequence.quality.type
+   */
+  _type?:fhir.FhirElementArgs;
+  /**
    * Gold standard sequence used for comparing against.
    */
   standardSequence?: fhir.CodeableConceptArgs|undefined;
@@ -375,9 +537,17 @@ export interface MolecularSequenceQualityArgs extends fhir.BackboneElementArgs {
    */
   start?: fhir.FhirInteger|number|undefined;
   /**
+   * Extended properties for primitive element: MolecularSequence.quality.start
+   */
+  _start?:fhir.FhirElementArgs;
+  /**
    * End position of the sequence. If the coordinate system is 0-based then end is exclusive and does not include the last position. If the coordinate system is 1-base, then end is inclusive and includes the last position.
    */
   end?: fhir.FhirInteger|number|undefined;
+  /**
+   * Extended properties for primitive element: MolecularSequence.quality.end
+   */
+  _end?:fhir.FhirElementArgs;
   /**
    * The score of an experimentally derived feature such as a p-value ([SO:0001685](http://www.sequenceontology.org/browser/current_svn/term/SO:0001685)).
    */
@@ -391,33 +561,65 @@ export interface MolecularSequenceQualityArgs extends fhir.BackboneElementArgs {
    */
   truthTP?: fhir.FhirDecimal|number|undefined;
   /**
+   * Extended properties for primitive element: MolecularSequence.quality.truthTP
+   */
+  _truthTP?:fhir.FhirElementArgs;
+  /**
    * True positives, from the perspective of the query data, i.e. the number of sites in the Query Call Set for which there are paths through the Truth Call Set that are consistent with all of the alleles at this site, and for which there is an accurate genotype call for the event.
    */
   queryTP?: fhir.FhirDecimal|number|undefined;
+  /**
+   * Extended properties for primitive element: MolecularSequence.quality.queryTP
+   */
+  _queryTP?:fhir.FhirElementArgs;
   /**
    * False negatives, i.e. the number of sites in the Truth Call Set for which there is no path through the Query Call Set that is consistent with all of the alleles at this site, or sites for which there is an inaccurate genotype call for the event. Sites with correct variant but incorrect genotype are counted here.
    */
   truthFN?: fhir.FhirDecimal|number|undefined;
   /**
+   * Extended properties for primitive element: MolecularSequence.quality.truthFN
+   */
+  _truthFN?:fhir.FhirElementArgs;
+  /**
    * False positives, i.e. the number of sites in the Query Call Set for which there is no path through the Truth Call Set that is consistent with this site. Sites with correct variant but incorrect genotype are counted here.
    */
   queryFP?: fhir.FhirDecimal|number|undefined;
+  /**
+   * Extended properties for primitive element: MolecularSequence.quality.queryFP
+   */
+  _queryFP?:fhir.FhirElementArgs;
   /**
    * The number of false positives where the non-REF alleles in the Truth and Query Call Sets match (i.e. cases where the truth is 1/1 and the query is 0/1 or similar).
    */
   gtFP?: fhir.FhirDecimal|number|undefined;
   /**
+   * Extended properties for primitive element: MolecularSequence.quality.gtFP
+   */
+  _gtFP?:fhir.FhirElementArgs;
+  /**
    * QUERY.TP / (QUERY.TP + QUERY.FP).
    */
   precision?: fhir.FhirDecimal|number|undefined;
+  /**
+   * Extended properties for primitive element: MolecularSequence.quality.precision
+   */
+  _precision?:fhir.FhirElementArgs;
   /**
    * TRUTH.TP / (TRUTH.TP + TRUTH.FN).
    */
   recall?: fhir.FhirDecimal|number|undefined;
   /**
+   * Extended properties for primitive element: MolecularSequence.quality.recall
+   */
+  _recall?:fhir.FhirElementArgs;
+  /**
    * Harmonic mean of Recall and Precision, computed as: 2 * precision * recall / (precision + recall).
    */
   fScore?: fhir.FhirDecimal|number|undefined;
+  /**
+   * Extended properties for primitive element: MolecularSequence.quality.fScore
+   */
+  _fScore?:fhir.FhirElementArgs;
   /**
    * Receiver Operator Characteristic (ROC) Curve  to give sensitivity/specificity tradeoff.
    */
@@ -499,19 +701,63 @@ export class MolecularSequenceQuality extends fhir.BackboneElement {
     super(source, options);
     if (source['type']) { this.type = new fhir.FhirCode<QualityTypeCodeType>({value: source.type}); }
     else { this.type = null; }
+    if (source['_type']) {
+      if (this.type) { this.type.addExtendedProperties(source._type!); }
+      else { this.type = new fhir.FhirCode<QualityTypeCodeType>(source._type as Partial<fhir.FhirCode>); }
+    }
     if (source['standardSequence']) { this.standardSequence = new fhir.CodeableConcept(source.standardSequence); }
     if (source['start']) { this.start = new fhir.FhirInteger({value: source.start}); }
+    if (source['_start']) {
+      if (this.start) { this.start.addExtendedProperties(source._start!); }
+      else { this.start = new fhir.FhirInteger(source._start as Partial<fhir.FhirIntegerArgs>); }
+    }
     if (source['end']) { this.end = new fhir.FhirInteger({value: source.end}); }
+    if (source['_end']) {
+      if (this.end) { this.end.addExtendedProperties(source._end!); }
+      else { this.end = new fhir.FhirInteger(source._end as Partial<fhir.FhirIntegerArgs>); }
+    }
     if (source['score']) { this.score = new fhir.Quantity(source.score); }
     if (source['method']) { this.method = new fhir.CodeableConcept(source.method); }
     if (source['truthTP']) { this.truthTP = new fhir.FhirDecimal({value: source.truthTP}); }
+    if (source['_truthTP']) {
+      if (this.truthTP) { this.truthTP.addExtendedProperties(source._truthTP!); }
+      else { this.truthTP = new fhir.FhirDecimal(source._truthTP as Partial<fhir.FhirDecimalArgs>); }
+    }
     if (source['queryTP']) { this.queryTP = new fhir.FhirDecimal({value: source.queryTP}); }
+    if (source['_queryTP']) {
+      if (this.queryTP) { this.queryTP.addExtendedProperties(source._queryTP!); }
+      else { this.queryTP = new fhir.FhirDecimal(source._queryTP as Partial<fhir.FhirDecimalArgs>); }
+    }
     if (source['truthFN']) { this.truthFN = new fhir.FhirDecimal({value: source.truthFN}); }
+    if (source['_truthFN']) {
+      if (this.truthFN) { this.truthFN.addExtendedProperties(source._truthFN!); }
+      else { this.truthFN = new fhir.FhirDecimal(source._truthFN as Partial<fhir.FhirDecimalArgs>); }
+    }
     if (source['queryFP']) { this.queryFP = new fhir.FhirDecimal({value: source.queryFP}); }
+    if (source['_queryFP']) {
+      if (this.queryFP) { this.queryFP.addExtendedProperties(source._queryFP!); }
+      else { this.queryFP = new fhir.FhirDecimal(source._queryFP as Partial<fhir.FhirDecimalArgs>); }
+    }
     if (source['gtFP']) { this.gtFP = new fhir.FhirDecimal({value: source.gtFP}); }
+    if (source['_gtFP']) {
+      if (this.gtFP) { this.gtFP.addExtendedProperties(source._gtFP!); }
+      else { this.gtFP = new fhir.FhirDecimal(source._gtFP as Partial<fhir.FhirDecimalArgs>); }
+    }
     if (source['precision']) { this.precision = new fhir.FhirDecimal({value: source.precision}); }
+    if (source['_precision']) {
+      if (this.precision) { this.precision.addExtendedProperties(source._precision!); }
+      else { this.precision = new fhir.FhirDecimal(source._precision as Partial<fhir.FhirDecimalArgs>); }
+    }
     if (source['recall']) { this.recall = new fhir.FhirDecimal({value: source.recall}); }
+    if (source['_recall']) {
+      if (this.recall) { this.recall.addExtendedProperties(source._recall!); }
+      else { this.recall = new fhir.FhirDecimal(source._recall as Partial<fhir.FhirDecimalArgs>); }
+    }
     if (source['fScore']) { this.fScore = new fhir.FhirDecimal({value: source.fScore}); }
+    if (source['_fScore']) {
+      if (this.fScore) { this.fScore.addExtendedProperties(source._fScore!); }
+      else { this.fScore = new fhir.FhirDecimal(source._fScore as Partial<fhir.FhirDecimalArgs>); }
+    }
     if (source['roc']) { this.roc = new fhir.MolecularSequenceQualityRoc(source.roc); }
   }
   /**
@@ -558,25 +804,49 @@ export interface MolecularSequenceRepositoryArgs extends fhir.BackboneElementArg
    */
   type: fhir.FhirCode<RepositoryTypeCodeType>|string|undefined;
   /**
+   * Extended properties for primitive element: MolecularSequence.repository.type
+   */
+  _type?:fhir.FhirElementArgs;
+  /**
    * URI of an external repository which contains further details about the genetics data.
    */
   url?: fhir.FhirUri|string|undefined;
+  /**
+   * Extended properties for primitive element: MolecularSequence.repository.url
+   */
+  _url?:fhir.FhirElementArgs;
   /**
    * URI of an external repository which contains further details about the genetics data.
    */
   name?: fhir.FhirString|string|undefined;
   /**
+   * Extended properties for primitive element: MolecularSequence.repository.name
+   */
+  _name?:fhir.FhirElementArgs;
+  /**
    * Id of the variant in this external repository. The server will understand how to use this id to call for more info about datasets in external repository.
    */
   datasetId?: fhir.FhirString|string|undefined;
+  /**
+   * Extended properties for primitive element: MolecularSequence.repository.datasetId
+   */
+  _datasetId?:fhir.FhirElementArgs;
   /**
    * Id of the variantset in this external repository. The server will understand how to use this id to call for more info about variantsets in external repository.
    */
   variantsetId?: fhir.FhirString|string|undefined;
   /**
+   * Extended properties for primitive element: MolecularSequence.repository.variantsetId
+   */
+  _variantsetId?:fhir.FhirElementArgs;
+  /**
    * Id of the read in this external repository.
    */
   readsetId?: fhir.FhirString|string|undefined;
+  /**
+   * Extended properties for primitive element: MolecularSequence.repository.readsetId
+   */
+  _readsetId?:fhir.FhirElementArgs;
 }
 
 /**
@@ -618,11 +888,35 @@ export class MolecularSequenceRepository extends fhir.BackboneElement {
     super(source, options);
     if (source['type']) { this.type = new fhir.FhirCode<RepositoryTypeCodeType>({value: source.type}); }
     else { this.type = null; }
+    if (source['_type']) {
+      if (this.type) { this.type.addExtendedProperties(source._type!); }
+      else { this.type = new fhir.FhirCode<RepositoryTypeCodeType>(source._type as Partial<fhir.FhirCode>); }
+    }
     if (source['url']) { this.url = new fhir.FhirUri({value: source.url}); }
+    if (source['_url']) {
+      if (this.url) { this.url.addExtendedProperties(source._url!); }
+      else { this.url = new fhir.FhirUri(source._url as Partial<fhir.FhirUriArgs>); }
+    }
     if (source['name']) { this.name = new fhir.FhirString({value: source.name}); }
+    if (source['_name']) {
+      if (this.name) { this.name.addExtendedProperties(source._name!); }
+      else { this.name = new fhir.FhirString(source._name as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['datasetId']) { this.datasetId = new fhir.FhirString({value: source.datasetId}); }
+    if (source['_datasetId']) {
+      if (this.datasetId) { this.datasetId.addExtendedProperties(source._datasetId!); }
+      else { this.datasetId = new fhir.FhirString(source._datasetId as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['variantsetId']) { this.variantsetId = new fhir.FhirString({value: source.variantsetId}); }
+    if (source['_variantsetId']) {
+      if (this.variantsetId) { this.variantsetId.addExtendedProperties(source._variantsetId!); }
+      else { this.variantsetId = new fhir.FhirString(source._variantsetId as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['readsetId']) { this.readsetId = new fhir.FhirString({value: source.readsetId}); }
+    if (source['_readsetId']) {
+      if (this.readsetId) { this.readsetId.addExtendedProperties(source._readsetId!); }
+      else { this.readsetId = new fhir.FhirString(source._readsetId as Partial<fhir.FhirStringArgs>); }
+    }
   }
   /**
    * Required-bound Value Set for type (MolecularSequence.repository.type)
@@ -659,9 +953,17 @@ export interface MolecularSequenceStructureVariantOuterArgs extends fhir.Backbon
    */
   start?: fhir.FhirInteger|number|undefined;
   /**
+   * Extended properties for primitive element: MolecularSequence.structureVariant.outer.start
+   */
+  _start?:fhir.FhirElementArgs;
+  /**
    * Structural variant outer end. If the coordinate system is 0-based then end is exclusive and does not include the last position. If the coordinate system is 1-base, then end is inclusive and includes the last position.
    */
   end?: fhir.FhirInteger|number|undefined;
+  /**
+   * Extended properties for primitive element: MolecularSequence.structureVariant.outer.end
+   */
+  _end?:fhir.FhirElementArgs;
 }
 
 /**
@@ -686,7 +988,15 @@ export class MolecularSequenceStructureVariantOuter extends fhir.BackboneElement
   constructor(source:Partial<MolecularSequenceStructureVariantOuterArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
     if (source['start']) { this.start = new fhir.FhirInteger({value: source.start}); }
+    if (source['_start']) {
+      if (this.start) { this.start.addExtendedProperties(source._start!); }
+      else { this.start = new fhir.FhirInteger(source._start as Partial<fhir.FhirIntegerArgs>); }
+    }
     if (source['end']) { this.end = new fhir.FhirInteger({value: source.end}); }
+    if (source['_end']) {
+      if (this.end) { this.end.addExtendedProperties(source._end!); }
+      else { this.end = new fhir.FhirInteger(source._end as Partial<fhir.FhirIntegerArgs>); }
+    }
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -707,9 +1017,17 @@ export interface MolecularSequenceStructureVariantInnerArgs extends fhir.Backbon
    */
   start?: fhir.FhirInteger|number|undefined;
   /**
+   * Extended properties for primitive element: MolecularSequence.structureVariant.inner.start
+   */
+  _start?:fhir.FhirElementArgs;
+  /**
    * Structural variant inner end. If the coordinate system is 0-based then end is exclusive and does not include the last position. If the coordinate system is 1-base, then end is inclusive and includes the last position.
    */
   end?: fhir.FhirInteger|number|undefined;
+  /**
+   * Extended properties for primitive element: MolecularSequence.structureVariant.inner.end
+   */
+  _end?:fhir.FhirElementArgs;
 }
 
 /**
@@ -734,7 +1052,15 @@ export class MolecularSequenceStructureVariantInner extends fhir.BackboneElement
   constructor(source:Partial<MolecularSequenceStructureVariantInnerArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
     if (source['start']) { this.start = new fhir.FhirInteger({value: source.start}); }
+    if (source['_start']) {
+      if (this.start) { this.start.addExtendedProperties(source._start!); }
+      else { this.start = new fhir.FhirInteger(source._start as Partial<fhir.FhirIntegerArgs>); }
+    }
     if (source['end']) { this.end = new fhir.FhirInteger({value: source.end}); }
+    if (source['_end']) {
+      if (this.end) { this.end.addExtendedProperties(source._end!); }
+      else { this.end = new fhir.FhirInteger(source._end as Partial<fhir.FhirIntegerArgs>); }
+    }
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -759,9 +1085,17 @@ export interface MolecularSequenceStructureVariantArgs extends fhir.BackboneElem
    */
   exact?: fhir.FhirBoolean|boolean|undefined;
   /**
+   * Extended properties for primitive element: MolecularSequence.structureVariant.exact
+   */
+  _exact?:fhir.FhirElementArgs;
+  /**
    * Length of the variant chromosome.
    */
   length?: fhir.FhirInteger|number|undefined;
+  /**
+   * Extended properties for primitive element: MolecularSequence.structureVariant.length
+   */
+  _length?:fhir.FhirElementArgs;
   /**
    * Structural variant outer.
    */
@@ -807,7 +1141,15 @@ export class MolecularSequenceStructureVariant extends fhir.BackboneElement {
     super(source, options);
     if (source['variantType']) { this.variantType = new fhir.CodeableConcept(source.variantType); }
     if (source['exact']) { this.exact = new fhir.FhirBoolean({value: source.exact}); }
+    if (source['_exact']) {
+      if (this.exact) { this.exact.addExtendedProperties(source._exact!); }
+      else { this.exact = new fhir.FhirBoolean(source._exact as Partial<fhir.FhirBooleanArgs>); }
+    }
     if (source['length']) { this.length = new fhir.FhirInteger({value: source.length}); }
+    if (source['_length']) {
+      if (this.length) { this.length.addExtendedProperties(source._length!); }
+      else { this.length = new fhir.FhirInteger(source._length as Partial<fhir.FhirIntegerArgs>); }
+    }
     if (source['outer']) { this.outer = new fhir.MolecularSequenceStructureVariantOuter(source.outer); }
     if (source['inner']) { this.inner = new fhir.MolecularSequenceStructureVariantInner(source.inner); }
   }
@@ -841,9 +1183,17 @@ export interface MolecularSequenceArgs extends fhir.DomainResourceArgs {
    */
   type?: fhir.FhirCode<SequenceTypeCodeType>|string|undefined;
   /**
+   * Extended properties for primitive element: MolecularSequence.type
+   */
+  _type?:fhir.FhirElementArgs;
+  /**
    * Whether the sequence is numbered starting at 0 (0-based numbering or coordinates, inclusive start, exclusive end) or starting at 1 (1-based numbering, inclusive start and inclusive end).
    */
   coordinateSystem: fhir.FhirInteger|number|undefined;
+  /**
+   * Extended properties for primitive element: MolecularSequence.coordinateSystem
+   */
+  _coordinateSystem?:fhir.FhirElementArgs;
   /**
    * The patient whose sequencing results are described by this resource.
    */
@@ -877,6 +1227,10 @@ export interface MolecularSequenceArgs extends fhir.DomainResourceArgs {
    */
   observedSeq?: fhir.FhirString|string|undefined;
   /**
+   * Extended properties for primitive element: MolecularSequence.observedSeq
+   */
+  _observedSeq?:fhir.FhirElementArgs;
+  /**
    * An experimental feature attribute that defines the quality of the feature in a quantitative way, such as a phred quality score ([SO:0001686](http://www.sequenceontology.org/browser/current_svn/term/SO:0001686)).
    */
   quality?: fhir.MolecularSequenceQualityArgs[]|undefined;
@@ -884,6 +1238,10 @@ export interface MolecularSequenceArgs extends fhir.DomainResourceArgs {
    * Coverage (read depth or depth) is the average number of reads representing a given nucleotide in the reconstructed sequence.
    */
   readCoverage?: fhir.FhirInteger|number|undefined;
+  /**
+   * Extended properties for primitive element: MolecularSequence.readCoverage
+   */
+  _readCoverage?:fhir.FhirElementArgs;
   /**
    * Configurations of the external repository. The repository shall store target's observedSeq or records related with target's observedSeq.
    */
@@ -983,8 +1341,16 @@ export class MolecularSequence extends fhir.DomainResource {
     if (source['identifier']) { this.identifier = source.identifier.map((x) => new fhir.Identifier(x)); }
     else { this.identifier = []; }
     if (source['type']) { this.type = new fhir.FhirCode<SequenceTypeCodeType>({value: source.type}); }
+    if (source['_type']) {
+      if (this.type) { this.type.addExtendedProperties(source._type!); }
+      else { this.type = new fhir.FhirCode<SequenceTypeCodeType>(source._type as Partial<fhir.FhirCode>); }
+    }
     if (source['coordinateSystem']) { this.coordinateSystem = new fhir.FhirInteger({value: source.coordinateSystem}); }
     else { this.coordinateSystem = null; }
+    if (source['_coordinateSystem']) {
+      if (this.coordinateSystem) { this.coordinateSystem.addExtendedProperties(source._coordinateSystem!); }
+      else { this.coordinateSystem = new fhir.FhirInteger(source._coordinateSystem as Partial<fhir.FhirIntegerArgs>); }
+    }
     if (source['patient']) { this.patient = new fhir.Reference(source.patient); }
     if (source['specimen']) { this.specimen = new fhir.Reference(source.specimen); }
     if (source['device']) { this.device = new fhir.Reference(source.device); }
@@ -994,9 +1360,17 @@ export class MolecularSequence extends fhir.DomainResource {
     if (source['variant']) { this.variant = source.variant.map((x) => new fhir.MolecularSequenceVariant(x)); }
     else { this.variant = []; }
     if (source['observedSeq']) { this.observedSeq = new fhir.FhirString({value: source.observedSeq}); }
+    if (source['_observedSeq']) {
+      if (this.observedSeq) { this.observedSeq.addExtendedProperties(source._observedSeq!); }
+      else { this.observedSeq = new fhir.FhirString(source._observedSeq as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['quality']) { this.quality = source.quality.map((x) => new fhir.MolecularSequenceQuality(x)); }
     else { this.quality = []; }
     if (source['readCoverage']) { this.readCoverage = new fhir.FhirInteger({value: source.readCoverage}); }
+    if (source['_readCoverage']) {
+      if (this.readCoverage) { this.readCoverage.addExtendedProperties(source._readCoverage!); }
+      else { this.readCoverage = new fhir.FhirInteger(source._readCoverage as Partial<fhir.FhirIntegerArgs>); }
+    }
     if (source['repository']) { this.repository = source.repository.map((x) => new fhir.MolecularSequenceRepository(x)); }
     else { this.repository = []; }
     if (source['pointer']) { this.pointer = source.pointer.map((x) => new fhir.Reference(x)); }

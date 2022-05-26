@@ -45,6 +45,11 @@ export declare class FhirPrimitive extends fhir.FhirBase {
      */
     doModelValidation(): fhir.FtsIssue[];
     /**
+     * Fluent-style function to add extended primitive properties
+     * @param source
+     */
+    addExtendedProperties(source?: fhir.FhirElementArgs): fhir.FhirPrimitive;
+    /**
      * Fluent-style function to add extensions
      * @param ext
      * @returns

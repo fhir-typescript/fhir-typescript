@@ -50,6 +50,10 @@ export interface MeasureGroupPopulationArgs extends fhir.BackboneElementArgs {
    */
   description?: fhir.FhirString|string|undefined;
   /**
+   * Extended properties for primitive element: Measure.group.population.description
+   */
+  _description?:fhir.FhirElementArgs;
+  /**
    * In the case of a continuous-variable or ratio measure, this may be the name of a function that calculates the value of the individual observation for each patient or event in the population. For these types of measures, individual observations are reported as observation resources included in the evaluatedResources bundle for each patient. See the MeasureReport resource or the Quality Reporting topic for more information.
    */
   criteria: fhir.ExpressionArgs|null;
@@ -82,6 +86,10 @@ export class MeasureGroupPopulation extends fhir.BackboneElement {
     super(source, options);
     if (source['code']) { this.code = new fhir.CodeableConcept(source.code); }
     if (source['description']) { this.description = new fhir.FhirString({value: source.description}); }
+    if (source['_description']) {
+      if (this.description) { this.description.addExtendedProperties(source._description!); }
+      else { this.description = new fhir.FhirString(source._description as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['criteria']) { this.criteria = new fhir.Expression(source.criteria); }
     else { this.criteria = null; }
   }
@@ -118,6 +126,10 @@ export interface MeasureGroupStratifierComponentArgs extends fhir.BackboneElemen
    */
   description?: fhir.FhirString|string|undefined;
   /**
+   * Extended properties for primitive element: Measure.group.stratifier.component.description
+   */
+  _description?:fhir.FhirElementArgs;
+  /**
    * An expression that specifies the criteria for this component of the stratifier. This is typically the name of an expression defined within a referenced library, but it may also be a path to a stratifier element.
    */
   criteria: fhir.ExpressionArgs|null;
@@ -150,6 +162,10 @@ export class MeasureGroupStratifierComponent extends fhir.BackboneElement {
     super(source, options);
     if (source['code']) { this.code = new fhir.CodeableConcept(source.code); }
     if (source['description']) { this.description = new fhir.FhirString({value: source.description}); }
+    if (source['_description']) {
+      if (this.description) { this.description.addExtendedProperties(source._description!); }
+      else { this.description = new fhir.FhirString(source._description as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['criteria']) { this.criteria = new fhir.Expression(source.criteria); }
     else { this.criteria = null; }
   }
@@ -179,6 +195,10 @@ export interface MeasureGroupStratifierArgs extends fhir.BackboneElementArgs {
    * The human readable description of this stratifier criteria.
    */
   description?: fhir.FhirString|string|undefined;
+  /**
+   * Extended properties for primitive element: Measure.group.stratifier.description
+   */
+  _description?:fhir.FhirElementArgs;
   /**
    * An expression that specifies the criteria for the stratifier. This is typically the name of an expression defined within a referenced library, but it may also be a path to a stratifier element.
    */
@@ -220,6 +240,10 @@ export class MeasureGroupStratifier extends fhir.BackboneElement {
     super(source, options);
     if (source['code']) { this.code = new fhir.CodeableConcept(source.code); }
     if (source['description']) { this.description = new fhir.FhirString({value: source.description}); }
+    if (source['_description']) {
+      if (this.description) { this.description.addExtendedProperties(source._description!); }
+      else { this.description = new fhir.FhirString(source._description as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['criteria']) { this.criteria = new fhir.Expression(source.criteria); }
     if (source['component']) { this.component = source.component.map((x) => new fhir.MeasureGroupStratifierComponent(x)); }
     else { this.component = []; }
@@ -248,6 +272,10 @@ export interface MeasureGroupArgs extends fhir.BackboneElementArgs {
    * The human readable description of this population group.
    */
   description?: fhir.FhirString|string|undefined;
+  /**
+   * Extended properties for primitive element: Measure.group.description
+   */
+  _description?:fhir.FhirElementArgs;
   /**
    * A population criteria for the measure.
    */
@@ -289,6 +317,10 @@ export class MeasureGroup extends fhir.BackboneElement {
     super(source, options);
     if (source['code']) { this.code = new fhir.CodeableConcept(source.code); }
     if (source['description']) { this.description = new fhir.FhirString({value: source.description}); }
+    if (source['_description']) {
+      if (this.description) { this.description.addExtendedProperties(source._description!); }
+      else { this.description = new fhir.FhirString(source._description as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['population']) { this.population = source.population.map((x) => new fhir.MeasureGroupPopulation(x)); }
     else { this.population = []; }
     if (source['stratifier']) { this.stratifier = source.stratifier.map((x) => new fhir.MeasureGroupStratifier(x)); }
@@ -322,6 +354,10 @@ export interface MeasureSupplementalDataArgs extends fhir.BackboneElementArgs {
    * The human readable description of this supplemental data.
    */
   description?: fhir.FhirString|string|undefined;
+  /**
+   * Extended properties for primitive element: Measure.supplementalData.description
+   */
+  _description?:fhir.FhirElementArgs;
   /**
    * The criteria for the supplemental data. This is typically the name of a valid expression defined within a referenced library, but it may also be a path to a specific data element. The criteria defines the data to be returned for this element.
    */
@@ -361,6 +397,10 @@ export class MeasureSupplementalData extends fhir.BackboneElement {
     if (source['usage']) { this.usage = source.usage.map((x) => new fhir.CodeableConcept(x)); }
     else { this.usage = []; }
     if (source['description']) { this.description = new fhir.FhirString({value: source.description}); }
+    if (source['_description']) {
+      if (this.description) { this.description.addExtendedProperties(source._description!); }
+      else { this.description = new fhir.FhirString(source._description as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['criteria']) { this.criteria = new fhir.Expression(source.criteria); }
     else { this.criteria = null; }
   }
@@ -400,6 +440,10 @@ export interface MeasureArgs extends fhir.DomainResourceArgs {
    */
   url?: fhir.FhirUri|string|undefined;
   /**
+   * Extended properties for primitive element: Measure.url
+   */
+  _url?:fhir.FhirElementArgs;
+  /**
    * Typically, this is used for identifiers that can go in an HL7 V3 II (instance identifier) data type, and can then identify this measure outside of FHIR, where it is not possible to use the logical URI.
    */
   identifier?: fhir.IdentifierArgs[]|undefined;
@@ -408,25 +452,49 @@ export interface MeasureArgs extends fhir.DomainResourceArgs {
    */
   version?: fhir.FhirString|string|undefined;
   /**
+   * Extended properties for primitive element: Measure.version
+   */
+  _version?:fhir.FhirElementArgs;
+  /**
    * The name is not expected to be globally unique. The name should be a simple alphanumeric type name to ensure that it is machine-processing friendly.
    */
   name?: fhir.FhirString|string|undefined;
+  /**
+   * Extended properties for primitive element: Measure.name
+   */
+  _name?:fhir.FhirElementArgs;
   /**
    * This name does not need to be machine-processing friendly and may contain punctuation, white-space, etc.
    */
   title?: fhir.FhirString|string|undefined;
   /**
+   * Extended properties for primitive element: Measure.title
+   */
+  _title?:fhir.FhirElementArgs;
+  /**
    * An explanatory or alternate title for the measure giving additional information about its content.
    */
   subtitle?: fhir.FhirString|string|undefined;
+  /**
+   * Extended properties for primitive element: Measure.subtitle
+   */
+  _subtitle?:fhir.FhirElementArgs;
   /**
    * Allows filtering of measures that are appropriate for use versus not.
    */
   status: fhir.FhirCode<PublicationStatusCodeType>|string|undefined;
   /**
+   * Extended properties for primitive element: Measure.status
+   */
+  _status?:fhir.FhirElementArgs;
+  /**
    * Allows filtering of measures that are appropriate for use versus not.
    */
   experimental?: fhir.FhirBoolean|boolean|undefined;
+  /**
+   * Extended properties for primitive element: Measure.experimental
+   */
+  _experimental?:fhir.FhirElementArgs;
   /**
    * The subject of the measure is critical in interpreting the criteria definitions, as the logic in the measures is evaluated with respect to a particular subject. This corresponds roughly to the notion of a Compartment in that it limits what content is available based on its relationship to the subject. In CQL, this corresponds to the context declaration.
    */
@@ -444,9 +512,17 @@ export interface MeasureArgs extends fhir.DomainResourceArgs {
    */
   date?: fhir.FhirDateTime|string|undefined;
   /**
+   * Extended properties for primitive element: Measure.date
+   */
+  _date?:fhir.FhirElementArgs;
+  /**
    * Usually an organization but may be an individual. The publisher (or steward) of the measure is the organization or individual primarily responsible for the maintenance and upkeep of the measure. This is not necessarily the same individual or organization that developed and initially authored the content. The publisher is the primary point of contact for questions or issues with the measure. This item SHOULD be populated unless the information is available from context.
    */
   publisher?: fhir.FhirString|string|undefined;
+  /**
+   * Extended properties for primitive element: Measure.publisher
+   */
+  _publisher?:fhir.FhirElementArgs;
   /**
    * May be a web site, an email address, a telephone number, etc.
    */
@@ -455,6 +531,10 @@ export interface MeasureArgs extends fhir.DomainResourceArgs {
    * This description can be used to capture details such as why the measure was built, comments about misuse, instructions for clinical use and interpretation, literature references, examples from the paper world, etc. It is not a rendering of the measure as conveyed in the 'text' field of the resource itself. This item SHOULD be populated unless the information is available from context (e.g. the language of the measure is presumed to be the predominant language in the place the measure was created).
    */
   description?: fhir.FhirMarkdown|string|undefined;
+  /**
+   * Extended properties for primitive element: Measure.description
+   */
+  _description?:fhir.FhirElementArgs;
   /**
    * When multiple useContexts are specified, there is no expectation that all or any of the contexts apply.
    */
@@ -468,21 +548,41 @@ export interface MeasureArgs extends fhir.DomainResourceArgs {
    */
   purpose?: fhir.FhirMarkdown|string|undefined;
   /**
+   * Extended properties for primitive element: Measure.purpose
+   */
+  _purpose?:fhir.FhirElementArgs;
+  /**
    * A detailed description, from a clinical perspective, of how the measure is used.
    */
   usage?: fhir.FhirString|string|undefined;
+  /**
+   * Extended properties for primitive element: Measure.usage
+   */
+  _usage?:fhir.FhirElementArgs;
   /**
    * A copyright statement relating to the measure and/or its contents. Copyright statements are generally legal restrictions on the use and publishing of the measure.
    */
   copyright?: fhir.FhirMarkdown|string|undefined;
   /**
+   * Extended properties for primitive element: Measure.copyright
+   */
+  _copyright?:fhir.FhirElementArgs;
+  /**
    * The 'date' element may be more recent than the approval date because of minor changes or editorial corrections.
    */
   approvalDate?: fhir.FhirDate|string|undefined;
   /**
+   * Extended properties for primitive element: Measure.approvalDate
+   */
+  _approvalDate?:fhir.FhirElementArgs;
+  /**
    * If specified, this date follows the original approval date.
    */
   lastReviewDate?: fhir.FhirDate|string|undefined;
+  /**
+   * Extended properties for primitive element: Measure.lastReviewDate
+   */
+  _lastReviewDate?:fhir.FhirElementArgs;
   /**
    * The effective period for a measure  determines when the content is applicable for usage and is independent of publication and review dates. For example, a measure intended to be used for the year 2016 might be published in 2015.
    */
@@ -516,9 +616,17 @@ export interface MeasureArgs extends fhir.DomainResourceArgs {
    */
   library?: fhir.FhirCanonical[]|string[]|undefined;
   /**
+   * Extended properties for primitive element: Measure.library
+   */
+  _library?:(fhir.FhirElementArgs|null)[];
+  /**
    * Notices and disclaimers regarding the use of the measure or related to intellectual property (such as code systems) referenced by the measure.
    */
   disclaimer?: fhir.FhirMarkdown|string|undefined;
+  /**
+   * Extended properties for primitive element: Measure.disclaimer
+   */
+  _disclaimer?:fhir.FhirElementArgs;
   /**
    * Indicates how the calculation is performed for the measure, including proportion, ratio, continuous-variable, and cohort. The value set is extensible, allowing additional measure scoring types to be represented.
    */
@@ -536,17 +644,33 @@ export interface MeasureArgs extends fhir.DomainResourceArgs {
    */
   riskAdjustment?: fhir.FhirString|string|undefined;
   /**
+   * Extended properties for primitive element: Measure.riskAdjustment
+   */
+  _riskAdjustment?:fhir.FhirElementArgs;
+  /**
    * The measure rate for an organization or clinician is based upon the entities’ aggregate data and summarizes the performance of the entity over a given time period (e.g., monthly, quarterly, yearly). The aggregated data are derived from the results of a specific measure algorithm and, if appropriate, the application of specific risk adjustment models.  Can also be used to describe how to risk adjust the data based on supplemental data elements described in the eMeasure (e.g., pneumonia hospital measures antibiotic selection in the ICU versus non-ICU and then the roll-up of the two). This could be applied to aggregated cohort measure definitions (e.g., CDC's aggregate reporting for TB at the state level).
    */
   rateAggregation?: fhir.FhirString|string|undefined;
+  /**
+   * Extended properties for primitive element: Measure.rateAggregation
+   */
+  _rateAggregation?:fhir.FhirElementArgs;
   /**
    * Provides a succinct statement of the need for the measure. Usually includes statements pertaining to importance criterion: impact, gap in care, and evidence.
    */
   rationale?: fhir.FhirMarkdown|string|undefined;
   /**
+   * Extended properties for primitive element: Measure.rationale
+   */
+  _rationale?:fhir.FhirElementArgs;
+  /**
    * Provides a summary of relevant clinical guidelines or other clinical recommendations supporting the measure.
    */
   clinicalRecommendationStatement?: fhir.FhirMarkdown|string|undefined;
+  /**
+   * Extended properties for primitive element: Measure.clinicalRecommendationStatement
+   */
+  _clinicalRecommendationStatement?:fhir.FhirElementArgs;
   /**
    * Information on whether an increase or decrease in score is the preferred result (e.g., a higher score indicates better quality OR a lower score indicates better quality OR quality is within a range).
    */
@@ -556,9 +680,17 @@ export interface MeasureArgs extends fhir.DomainResourceArgs {
    */
   definition?: fhir.FhirMarkdown[]|string[]|undefined;
   /**
+   * Extended properties for primitive element: Measure.definition
+   */
+  _definition?:(fhir.FhirElementArgs|null)[];
+  /**
    * Additional guidance for the measure including how it can be used in a clinical context, and the intent of the measure.
    */
   guidance?: fhir.FhirMarkdown|string|undefined;
+  /**
+   * Extended properties for primitive element: Measure.guidance
+   */
+  _guidance?:fhir.FhirElementArgs;
   /**
    * A group of population criteria for the measure.
    */
@@ -758,32 +890,92 @@ export class Measure extends fhir.DomainResource {
     super(source, options);
     this.resourceType = 'Measure';
     if (source['url']) { this.url = new fhir.FhirUri({value: source.url}); }
+    if (source['_url']) {
+      if (this.url) { this.url.addExtendedProperties(source._url!); }
+      else { this.url = new fhir.FhirUri(source._url as Partial<fhir.FhirUriArgs>); }
+    }
     if (source['identifier']) { this.identifier = source.identifier.map((x) => new fhir.Identifier(x)); }
     else { this.identifier = []; }
     if (source['version']) { this.version = new fhir.FhirString({value: source.version}); }
+    if (source['_version']) {
+      if (this.version) { this.version.addExtendedProperties(source._version!); }
+      else { this.version = new fhir.FhirString(source._version as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['name']) { this.name = new fhir.FhirString({value: source.name}); }
+    if (source['_name']) {
+      if (this.name) { this.name.addExtendedProperties(source._name!); }
+      else { this.name = new fhir.FhirString(source._name as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['title']) { this.title = new fhir.FhirString({value: source.title}); }
+    if (source['_title']) {
+      if (this.title) { this.title.addExtendedProperties(source._title!); }
+      else { this.title = new fhir.FhirString(source._title as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['subtitle']) { this.subtitle = new fhir.FhirString({value: source.subtitle}); }
+    if (source['_subtitle']) {
+      if (this.subtitle) { this.subtitle.addExtendedProperties(source._subtitle!); }
+      else { this.subtitle = new fhir.FhirString(source._subtitle as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['status']) { this.status = new fhir.FhirCode<PublicationStatusCodeType>({value: source.status}); }
     else { this.status = null; }
+    if (source['_status']) {
+      if (this.status) { this.status.addExtendedProperties(source._status!); }
+      else { this.status = new fhir.FhirCode<PublicationStatusCodeType>(source._status as Partial<fhir.FhirCode>); }
+    }
     if (source['experimental']) { this.experimental = new fhir.FhirBoolean({value: source.experimental}); }
+    if (source['_experimental']) {
+      if (this.experimental) { this.experimental.addExtendedProperties(source._experimental!); }
+      else { this.experimental = new fhir.FhirBoolean(source._experimental as Partial<fhir.FhirBooleanArgs>); }
+    }
     if (source['subject']) { this.subject = source.subject; }
     else if (source['subjectCodeableConcept']) { this.subject = new fhir.CodeableConcept(source.subjectCodeableConcept); }
     else if (source['subjectReference']) { this.subject = new fhir.Reference(source.subjectReference); }
     if (source['date']) { this.date = new fhir.FhirDateTime({value: source.date}); }
+    if (source['_date']) {
+      if (this.date) { this.date.addExtendedProperties(source._date!); }
+      else { this.date = new fhir.FhirDateTime(source._date as Partial<fhir.FhirDateTimeArgs>); }
+    }
     if (source['publisher']) { this.publisher = new fhir.FhirString({value: source.publisher}); }
+    if (source['_publisher']) {
+      if (this.publisher) { this.publisher.addExtendedProperties(source._publisher!); }
+      else { this.publisher = new fhir.FhirString(source._publisher as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['contact']) { this.contact = source.contact.map((x) => new fhir.ContactDetail(x)); }
     else { this.contact = []; }
     if (source['description']) { this.description = new fhir.FhirMarkdown({value: source.description}); }
+    if (source['_description']) {
+      if (this.description) { this.description.addExtendedProperties(source._description!); }
+      else { this.description = new fhir.FhirMarkdown(source._description as Partial<fhir.FhirMarkdownArgs>); }
+    }
     if (source['useContext']) { this.useContext = source.useContext.map((x) => new fhir.UsageContext(x)); }
     else { this.useContext = []; }
     if (source['jurisdiction']) { this.jurisdiction = source.jurisdiction.map((x) => new fhir.CodeableConcept(x)); }
     else { this.jurisdiction = []; }
     if (source['purpose']) { this.purpose = new fhir.FhirMarkdown({value: source.purpose}); }
+    if (source['_purpose']) {
+      if (this.purpose) { this.purpose.addExtendedProperties(source._purpose!); }
+      else { this.purpose = new fhir.FhirMarkdown(source._purpose as Partial<fhir.FhirMarkdownArgs>); }
+    }
     if (source['usage']) { this.usage = new fhir.FhirString({value: source.usage}); }
+    if (source['_usage']) {
+      if (this.usage) { this.usage.addExtendedProperties(source._usage!); }
+      else { this.usage = new fhir.FhirString(source._usage as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['copyright']) { this.copyright = new fhir.FhirMarkdown({value: source.copyright}); }
+    if (source['_copyright']) {
+      if (this.copyright) { this.copyright.addExtendedProperties(source._copyright!); }
+      else { this.copyright = new fhir.FhirMarkdown(source._copyright as Partial<fhir.FhirMarkdownArgs>); }
+    }
     if (source['approvalDate']) { this.approvalDate = new fhir.FhirDate({value: source.approvalDate}); }
+    if (source['_approvalDate']) {
+      if (this.approvalDate) { this.approvalDate.addExtendedProperties(source._approvalDate!); }
+      else { this.approvalDate = new fhir.FhirDate(source._approvalDate as Partial<fhir.FhirDateArgs>); }
+    }
     if (source['lastReviewDate']) { this.lastReviewDate = new fhir.FhirDate({value: source.lastReviewDate}); }
+    if (source['_lastReviewDate']) {
+      if (this.lastReviewDate) { this.lastReviewDate.addExtendedProperties(source._lastReviewDate!); }
+      else { this.lastReviewDate = new fhir.FhirDate(source._lastReviewDate as Partial<fhir.FhirDateArgs>); }
+    }
     if (source['effectivePeriod']) { this.effectivePeriod = new fhir.Period(source.effectivePeriod); }
     if (source['topic']) { this.topic = source.topic.map((x) => new fhir.CodeableConcept(x)); }
     else { this.topic = []; }
@@ -799,19 +991,55 @@ export class Measure extends fhir.DomainResource {
     else { this.relatedArtifact = []; }
     if (source['library']) { this.library = source.library.map((x) => new fhir.FhirCanonical({value: x})); }
     else { this.library = []; }
+    if (source['_library']) {
+      source._library.forEach((x,i) => {
+        if (this.library.length >= i) { if (x) { this.library[i].addExtendedProperties(x); } }
+        else { if (x) { this.library.push(new fhir.FhirCanonical(x as Partial<fhir.FhirCanonicalArgs>)); } }
+      });
+    }
     if (source['disclaimer']) { this.disclaimer = new fhir.FhirMarkdown({value: source.disclaimer}); }
+    if (source['_disclaimer']) {
+      if (this.disclaimer) { this.disclaimer.addExtendedProperties(source._disclaimer!); }
+      else { this.disclaimer = new fhir.FhirMarkdown(source._disclaimer as Partial<fhir.FhirMarkdownArgs>); }
+    }
     if (source['scoring']) { this.scoring = new fhir.CodeableConcept(source.scoring); }
     if (source['compositeScoring']) { this.compositeScoring = new fhir.CodeableConcept(source.compositeScoring); }
     if (source['type']) { this.type = source.type.map((x) => new fhir.CodeableConcept(x)); }
     else { this.type = []; }
     if (source['riskAdjustment']) { this.riskAdjustment = new fhir.FhirString({value: source.riskAdjustment}); }
+    if (source['_riskAdjustment']) {
+      if (this.riskAdjustment) { this.riskAdjustment.addExtendedProperties(source._riskAdjustment!); }
+      else { this.riskAdjustment = new fhir.FhirString(source._riskAdjustment as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['rateAggregation']) { this.rateAggregation = new fhir.FhirString({value: source.rateAggregation}); }
+    if (source['_rateAggregation']) {
+      if (this.rateAggregation) { this.rateAggregation.addExtendedProperties(source._rateAggregation!); }
+      else { this.rateAggregation = new fhir.FhirString(source._rateAggregation as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['rationale']) { this.rationale = new fhir.FhirMarkdown({value: source.rationale}); }
+    if (source['_rationale']) {
+      if (this.rationale) { this.rationale.addExtendedProperties(source._rationale!); }
+      else { this.rationale = new fhir.FhirMarkdown(source._rationale as Partial<fhir.FhirMarkdownArgs>); }
+    }
     if (source['clinicalRecommendationStatement']) { this.clinicalRecommendationStatement = new fhir.FhirMarkdown({value: source.clinicalRecommendationStatement}); }
+    if (source['_clinicalRecommendationStatement']) {
+      if (this.clinicalRecommendationStatement) { this.clinicalRecommendationStatement.addExtendedProperties(source._clinicalRecommendationStatement!); }
+      else { this.clinicalRecommendationStatement = new fhir.FhirMarkdown(source._clinicalRecommendationStatement as Partial<fhir.FhirMarkdownArgs>); }
+    }
     if (source['improvementNotation']) { this.improvementNotation = new fhir.CodeableConcept(source.improvementNotation); }
     if (source['definition']) { this.definition = source.definition.map((x) => new fhir.FhirMarkdown({value: x})); }
     else { this.definition = []; }
+    if (source['_definition']) {
+      source._definition.forEach((x,i) => {
+        if (this.definition.length >= i) { if (x) { this.definition[i].addExtendedProperties(x); } }
+        else { if (x) { this.definition.push(new fhir.FhirMarkdown(x as Partial<fhir.FhirMarkdownArgs>)); } }
+      });
+    }
     if (source['guidance']) { this.guidance = new fhir.FhirMarkdown({value: source.guidance}); }
+    if (source['_guidance']) {
+      if (this.guidance) { this.guidance.addExtendedProperties(source._guidance!); }
+      else { this.guidance = new fhir.FhirMarkdown(source._guidance as Partial<fhir.FhirMarkdownArgs>); }
+    }
     if (source['group']) { this.group = source.group.map((x) => new fhir.MeasureGroup(x)); }
     else { this.group = []; }
     if (source['supplementalData']) { this.supplementalData = source.supplementalData.map((x) => new fhir.MeasureSupplementalData(x)); }

@@ -53,6 +53,10 @@ export interface ImagingStudySeriesInstanceArgs extends fhir.BackboneElementArgs
      */
     uid: fhir.FhirId | string | undefined;
     /**
+     * Extended properties for primitive element: ImagingStudy.series.instance.uid
+     */
+    _uid?: fhir.FhirElementArgs;
+    /**
      * DICOM instance  type.
      */
     sopClass: fhir.CodingArgs | null;
@@ -61,9 +65,17 @@ export interface ImagingStudySeriesInstanceArgs extends fhir.BackboneElementArgs
      */
     number?: fhir.FhirUnsignedInt | number | undefined;
     /**
+     * Extended properties for primitive element: ImagingStudy.series.instance.number
+     */
+    _number?: fhir.FhirElementArgs;
+    /**
      * Particularly for post-acquisition analytic objects, such as SR, presentation states, value mapping, etc.
      */
     title?: fhir.FhirString | string | undefined;
+    /**
+     * Extended properties for primitive element: ImagingStudy.series.instance.title
+     */
+    _title?: fhir.FhirElementArgs;
 }
 /**
  * A single SOP instance within the series, e.g. an image, or presentation state.
@@ -107,9 +119,17 @@ export interface ImagingStudySeriesArgs extends fhir.BackboneElementArgs {
      */
     uid: fhir.FhirId | string | undefined;
     /**
+     * Extended properties for primitive element: ImagingStudy.series.uid
+     */
+    _uid?: fhir.FhirElementArgs;
+    /**
      * The numeric identifier of this series in the study.
      */
     number?: fhir.FhirUnsignedInt | number | undefined;
+    /**
+     * Extended properties for primitive element: ImagingStudy.series.number
+     */
+    _number?: fhir.FhirElementArgs;
     /**
      * The modality of this series sequence.
      */
@@ -119,9 +139,17 @@ export interface ImagingStudySeriesArgs extends fhir.BackboneElementArgs {
      */
     description?: fhir.FhirString | string | undefined;
     /**
+     * Extended properties for primitive element: ImagingStudy.series.description
+     */
+    _description?: fhir.FhirElementArgs;
+    /**
      * Number of SOP Instances in the Study. The value given may be larger than the number of instance elements this resource contains due to resource availability, security, or other factors. This element should be present if any instance elements are present.
      */
     numberOfInstances?: fhir.FhirUnsignedInt | number | undefined;
+    /**
+     * Extended properties for primitive element: ImagingStudy.series.numberOfInstances
+     */
+    _numberOfInstances?: fhir.FhirElementArgs;
     /**
      * Typical endpoint types include DICOM WADO-RS, which is used to retrieve DICOM instances in native or rendered (e.g., JPG, PNG) formats using a RESTful API; DICOM WADO-URI, which can similarly retrieve native or rendered instances, except using an HTTP query-based approach; and DICOM QIDO-RS, which allows RESTful query for DICOM information without retrieving the actual instances.
      */
@@ -142,6 +170,10 @@ export interface ImagingStudySeriesArgs extends fhir.BackboneElementArgs {
      * The date and time the series was started.
      */
     started?: fhir.FhirDateTime | string | undefined;
+    /**
+     * Extended properties for primitive element: ImagingStudy.series.started
+     */
+    _started?: fhir.FhirElementArgs;
     /**
      * If the person who performed the series is not known, their Organization may be recorded. A patient, or related person, may be the performer, e.g. for patient-captured images.
      */
@@ -237,6 +269,10 @@ export interface ImagingStudyArgs extends fhir.DomainResourceArgs {
      */
     status: fhir.FhirCode<ImagingstudyStatusCodeType> | string | undefined;
     /**
+     * Extended properties for primitive element: ImagingStudy.status
+     */
+    _status?: fhir.FhirElementArgs;
+    /**
      * A list of all the series.modality values that are actual acquisition modalities, i.e. those in the DICOM Context Group 29 (value set OID 1.2.840.10008.6.1.19).
      */
     modality?: fhir.CodingArgs[] | undefined;
@@ -252,6 +288,10 @@ export interface ImagingStudyArgs extends fhir.DomainResourceArgs {
      * Date and time the study started.
      */
     started?: fhir.FhirDateTime | string | undefined;
+    /**
+     * Extended properties for primitive element: ImagingStudy.started
+     */
+    _started?: fhir.FhirElementArgs;
     /**
      * A list of the diagnostic requests that resulted in this imaging study being performed.
      */
@@ -273,9 +313,17 @@ export interface ImagingStudyArgs extends fhir.DomainResourceArgs {
      */
     numberOfSeries?: fhir.FhirUnsignedInt | number | undefined;
     /**
+     * Extended properties for primitive element: ImagingStudy.numberOfSeries
+     */
+    _numberOfSeries?: fhir.FhirElementArgs;
+    /**
      * Number of SOP Instances in Study. This value given may be larger than the number of instance elements this resource contains due to resource availability, security, or other factors. This element should be present if any instance elements are present.
      */
     numberOfInstances?: fhir.FhirUnsignedInt | number | undefined;
+    /**
+     * Extended properties for primitive element: ImagingStudy.numberOfInstances
+     */
+    _numberOfInstances?: fhir.FhirElementArgs;
     /**
      * The procedure which this ImagingStudy was part of.
      */
@@ -304,6 +352,10 @@ export interface ImagingStudyArgs extends fhir.DomainResourceArgs {
      * The Imaging Manager description of the study. Institution-generated description or classification of the Study (component) performed.
      */
     description?: fhir.FhirString | string | undefined;
+    /**
+     * Extended properties for primitive element: ImagingStudy.description
+     */
+    _description?: fhir.FhirElementArgs;
     /**
      * Each study has one or more series of images or other content.
      */

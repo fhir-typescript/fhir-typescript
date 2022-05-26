@@ -26,9 +26,9 @@ import { GoalStartEventCodings, GoalStartEventCodingType,} from '../fhirValueSet
 // @ts-ignore
 import { GoalStartEventCodes,  GoalStartEventCodeType } from '../fhirValueSets/GoalStartEventCodes.js';
 // @ts-ignore
-import { ConditionCodeCodings, ConditionCodeCodingType,} from '../fhirValueSets/ConditionCodeCodings.js';
+import { ConditionCodings, ConditionCodingType,} from '../fhirValueSets/ConditionCodings.js';
 // @ts-ignore
-import { ConditionCodeCodes,  ConditionCodeCodeType } from '../fhirValueSets/ConditionCodeCodes.js';
+import { ConditionCodes,  ConditionCodeType } from '../fhirValueSets/ConditionCodes.js';
 // @ts-ignore
 import { ActionConditionKindCodings, ActionConditionKindCodingType,} from '../fhirValueSets/ActionConditionKindCodings.js';
 // @ts-ignore
@@ -277,6 +277,10 @@ export interface PlanDefinitionActionConditionArgs extends fhir.BackboneElementA
    */
   kind: fhir.FhirCode<ActionConditionKindCodeType>|string|undefined;
   /**
+   * Extended properties for primitive element: PlanDefinition.action.condition.kind
+   */
+  _kind?:fhir.FhirElementArgs;
+  /**
    * The expression may be inlined or may be a reference to a named expression within a logic library referenced by the library element.
    */
   expression?: fhir.ExpressionArgs|undefined;
@@ -305,6 +309,10 @@ export class PlanDefinitionActionCondition extends fhir.BackboneElement {
     super(source, options);
     if (source['kind']) { this.kind = new fhir.FhirCode<ActionConditionKindCodeType>({value: source.kind}); }
     else { this.kind = null; }
+    if (source['_kind']) {
+      if (this.kind) { this.kind.addExtendedProperties(source._kind!); }
+      else { this.kind = new fhir.FhirCode<ActionConditionKindCodeType>(source._kind as Partial<fhir.FhirCode>); }
+    }
     if (source['expression']) { this.expression = new fhir.Expression(source.expression); }
   }
   /**
@@ -338,9 +346,17 @@ export interface PlanDefinitionActionRelatedActionArgs extends fhir.BackboneElem
    */
   actionId: fhir.FhirId|string|undefined;
   /**
+   * Extended properties for primitive element: PlanDefinition.action.relatedAction.actionId
+   */
+  _actionId?:fhir.FhirElementArgs;
+  /**
    * The relationship of this action to the related action.
    */
   relationship: fhir.FhirCode<ActionRelationshipTypeCodeType>|string|undefined;
+  /**
+   * Extended properties for primitive element: PlanDefinition.action.relatedAction.relationship
+   */
+  _relationship?:fhir.FhirElementArgs;
   /**
    * A duration or range of durations to apply to the relationship. For example, 30-60 minutes before.
    */
@@ -386,8 +402,16 @@ export class PlanDefinitionActionRelatedAction extends fhir.BackboneElement {
     super(source, options);
     if (source['actionId']) { this.actionId = new fhir.FhirId({value: source.actionId}); }
     else { this.actionId = null; }
+    if (source['_actionId']) {
+      if (this.actionId) { this.actionId.addExtendedProperties(source._actionId!); }
+      else { this.actionId = new fhir.FhirId(source._actionId as Partial<fhir.FhirIdArgs>); }
+    }
     if (source['relationship']) { this.relationship = new fhir.FhirCode<ActionRelationshipTypeCodeType>({value: source.relationship}); }
     else { this.relationship = null; }
+    if (source['_relationship']) {
+      if (this.relationship) { this.relationship.addExtendedProperties(source._relationship!); }
+      else { this.relationship = new fhir.FhirCode<ActionRelationshipTypeCodeType>(source._relationship as Partial<fhir.FhirCode>); }
+    }
     if (source['offset']) { this.offset = source.offset; }
     else if (source['offsetDuration']) { this.offset = new fhir.Duration(source.offsetDuration); }
     else if (source['offsetRange']) { this.offset = new fhir.Range(source.offsetRange); }
@@ -426,6 +450,10 @@ export interface PlanDefinitionActionParticipantArgs extends fhir.BackboneElemen
    */
   type: fhir.FhirCode<ActionParticipantTypeCodeType>|string|undefined;
   /**
+   * Extended properties for primitive element: PlanDefinition.action.participant.type
+   */
+  _type?:fhir.FhirElementArgs;
+  /**
    * The role the participant should play in performing the described action.
    */
   role?: fhir.CodeableConceptArgs|undefined;
@@ -454,6 +482,10 @@ export class PlanDefinitionActionParticipant extends fhir.BackboneElement {
     super(source, options);
     if (source['type']) { this.type = new fhir.FhirCode<ActionParticipantTypeCodeType>({value: source.type}); }
     else { this.type = null; }
+    if (source['_type']) {
+      if (this.type) { this.type.addExtendedProperties(source._type!); }
+      else { this.type = new fhir.FhirCode<ActionParticipantTypeCodeType>(source._type as Partial<fhir.FhirCode>); }
+    }
     if (source['role']) { this.role = new fhir.CodeableConcept(source.role); }
   }
   /**
@@ -487,6 +519,10 @@ export interface PlanDefinitionActionDynamicValueArgs extends fhir.BackboneEleme
    */
   path?: fhir.FhirString|string|undefined;
   /**
+   * Extended properties for primitive element: PlanDefinition.action.dynamicValue.path
+   */
+  _path?:fhir.FhirElementArgs;
+  /**
    * The expression may be inlined or may be a reference to a named expression within a logic library referenced by the library element.
    */
   expression?: fhir.ExpressionArgs|undefined;
@@ -514,6 +550,10 @@ export class PlanDefinitionActionDynamicValue extends fhir.BackboneElement {
   constructor(source:Partial<PlanDefinitionActionDynamicValueArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
     if (source['path']) { this.path = new fhir.FhirString({value: source.path}); }
+    if (source['_path']) {
+      if (this.path) { this.path.addExtendedProperties(source._path!); }
+      else { this.path = new fhir.FhirString(source._path as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['expression']) { this.expression = new fhir.Expression(source.expression); }
   }
   /**
@@ -535,21 +575,41 @@ export interface PlanDefinitionActionArgs extends fhir.BackboneElementArgs {
    */
   prefix?: fhir.FhirString|string|undefined;
   /**
+   * Extended properties for primitive element: PlanDefinition.action.prefix
+   */
+  _prefix?:fhir.FhirElementArgs;
+  /**
    * The title of the action displayed to a user.
    */
   title?: fhir.FhirString|string|undefined;
+  /**
+   * Extended properties for primitive element: PlanDefinition.action.title
+   */
+  _title?:fhir.FhirElementArgs;
   /**
    * A brief description of the action used to provide a summary to display to the user.
    */
   description?: fhir.FhirString|string|undefined;
   /**
+   * Extended properties for primitive element: PlanDefinition.action.description
+   */
+  _description?:fhir.FhirElementArgs;
+  /**
    * A text equivalent of the action to be performed. This provides a human-interpretable description of the action when the definition is consumed by a system that might not be capable of interpreting it dynamically.
    */
   textEquivalent?: fhir.FhirString|string|undefined;
   /**
+   * Extended properties for primitive element: PlanDefinition.action.textEquivalent
+   */
+  _textEquivalent?:fhir.FhirElementArgs;
+  /**
    * Indicates how quickly the action should be addressed with respect to other actions.
    */
   priority?: fhir.FhirCode<RequestPriorityCodeType>|string|undefined;
+  /**
+   * Extended properties for primitive element: PlanDefinition.action.priority
+   */
+  _priority?:fhir.FhirElementArgs;
   /**
    * A code that provides meaning for the action or action group. For example, a section may have a LOINC code for the section of a documentation template.
    */
@@ -566,6 +626,10 @@ export interface PlanDefinitionActionArgs extends fhir.BackboneElementArgs {
    * Identifies goals that this action supports. The reference must be to a goal element defined within this plan definition.
    */
   goalId?: fhir.FhirId[]|string[]|undefined;
+  /**
+   * Extended properties for primitive element: PlanDefinition.action.goalId
+   */
+  _goalId?:(fhir.FhirElementArgs|null)[];
   /**
    * The subject of an action overrides the subject at a parent action or on the root of the PlanDefinition if specified.
    * In addition, because the subject needs to be resolved during realization, use of subjects in actions (or in the ActivityDefinition referenced by the action) resolves based on the set of subjects supplied in context and by type (i.e. the patient subject would resolve to a resource of type Patient).
@@ -642,21 +706,41 @@ export interface PlanDefinitionActionArgs extends fhir.BackboneElementArgs {
    */
   groupingBehavior?: fhir.FhirCode<ActionGroupingBehaviorCodeType>|string|undefined;
   /**
+   * Extended properties for primitive element: PlanDefinition.action.groupingBehavior
+   */
+  _groupingBehavior?:fhir.FhirElementArgs;
+  /**
    * Defines the selection behavior for the action and its children.
    */
   selectionBehavior?: fhir.FhirCode<ActionSelectionBehaviorCodeType>|string|undefined;
+  /**
+   * Extended properties for primitive element: PlanDefinition.action.selectionBehavior
+   */
+  _selectionBehavior?:fhir.FhirElementArgs;
   /**
    * Defines the required behavior for the action.
    */
   requiredBehavior?: fhir.FhirCode<ActionRequiredBehaviorCodeType>|string|undefined;
   /**
+   * Extended properties for primitive element: PlanDefinition.action.requiredBehavior
+   */
+  _requiredBehavior?:fhir.FhirElementArgs;
+  /**
    * Defines whether the action should usually be preselected.
    */
   precheckBehavior?: fhir.FhirCode<ActionPrecheckBehaviorCodeType>|string|undefined;
   /**
+   * Extended properties for primitive element: PlanDefinition.action.precheckBehavior
+   */
+  _precheckBehavior?:fhir.FhirElementArgs;
+  /**
    * Defines whether the action can be selected multiple times.
    */
   cardinalityBehavior?: fhir.FhirCode<ActionCardinalityBehaviorCodeType>|string|undefined;
+  /**
+   * Extended properties for primitive element: PlanDefinition.action.cardinalityBehavior
+   */
+  _cardinalityBehavior?:fhir.FhirElementArgs;
   /**
    * Note that the definition is optional, and if no definition is specified, a dynamicValue with a root ($this) path can be used to define the entire resource dynamically.
    */
@@ -673,6 +757,10 @@ export interface PlanDefinitionActionArgs extends fhir.BackboneElementArgs {
    * Note that when a referenced ActivityDefinition also defines a transform, the transform specified here generally takes precedence. In addition, if both a transform and dynamic values are specific, the dynamic values are applied to the result of the transform.
    */
   transform?: fhir.FhirCanonical|string|undefined;
+  /**
+   * Extended properties for primitive element: PlanDefinition.action.transform
+   */
+  _transform?:fhir.FhirElementArgs;
   /**
    * Dynamic values are applied in the order in which they are defined in the PlanDefinition resource. Note that when dynamic values are also specified by a referenced ActivityDefinition, the dynamicValues from the ActivityDefinition are applied first, followed by the dynamicValues specified here. In addition, if both a transform and dynamic values are specific, the dynamic values are applied to the result of the transform.
    */
@@ -818,10 +906,30 @@ export class PlanDefinitionAction extends fhir.BackboneElement {
   constructor(source:Partial<PlanDefinitionActionArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
     if (source['prefix']) { this.prefix = new fhir.FhirString({value: source.prefix}); }
+    if (source['_prefix']) {
+      if (this.prefix) { this.prefix.addExtendedProperties(source._prefix!); }
+      else { this.prefix = new fhir.FhirString(source._prefix as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['title']) { this.title = new fhir.FhirString({value: source.title}); }
+    if (source['_title']) {
+      if (this.title) { this.title.addExtendedProperties(source._title!); }
+      else { this.title = new fhir.FhirString(source._title as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['description']) { this.description = new fhir.FhirString({value: source.description}); }
+    if (source['_description']) {
+      if (this.description) { this.description.addExtendedProperties(source._description!); }
+      else { this.description = new fhir.FhirString(source._description as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['textEquivalent']) { this.textEquivalent = new fhir.FhirString({value: source.textEquivalent}); }
+    if (source['_textEquivalent']) {
+      if (this.textEquivalent) { this.textEquivalent.addExtendedProperties(source._textEquivalent!); }
+      else { this.textEquivalent = new fhir.FhirString(source._textEquivalent as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['priority']) { this.priority = new fhir.FhirCode<RequestPriorityCodeType>({value: source.priority}); }
+    if (source['_priority']) {
+      if (this.priority) { this.priority.addExtendedProperties(source._priority!); }
+      else { this.priority = new fhir.FhirCode<RequestPriorityCodeType>(source._priority as Partial<fhir.FhirCode>); }
+    }
     if (source['code']) { this.code = source.code.map((x) => new fhir.CodeableConcept(x)); }
     else { this.code = []; }
     if (source['reason']) { this.reason = source.reason.map((x) => new fhir.CodeableConcept(x)); }
@@ -830,6 +938,12 @@ export class PlanDefinitionAction extends fhir.BackboneElement {
     else { this.documentation = []; }
     if (source['goalId']) { this.goalId = source.goalId.map((x) => new fhir.FhirId({value: x})); }
     else { this.goalId = []; }
+    if (source['_goalId']) {
+      source._goalId.forEach((x,i) => {
+        if (this.goalId.length >= i) { if (x) { this.goalId[i].addExtendedProperties(x); } }
+        else { if (x) { this.goalId.push(new fhir.FhirId(x as Partial<fhir.FhirIdArgs>)); } }
+      });
+    }
     if (source['subject']) { this.subject = source.subject; }
     else if (source['subjectCodeableConcept']) { this.subject = new fhir.CodeableConcept(source.subjectCodeableConcept); }
     else if (source['subjectReference']) { this.subject = new fhir.Reference(source.subjectReference); }
@@ -854,14 +968,38 @@ export class PlanDefinitionAction extends fhir.BackboneElement {
     else { this.participant = []; }
     if (source['type']) { this.type = new fhir.CodeableConcept(source.type); }
     if (source['groupingBehavior']) { this.groupingBehavior = new fhir.FhirCode<ActionGroupingBehaviorCodeType>({value: source.groupingBehavior}); }
+    if (source['_groupingBehavior']) {
+      if (this.groupingBehavior) { this.groupingBehavior.addExtendedProperties(source._groupingBehavior!); }
+      else { this.groupingBehavior = new fhir.FhirCode<ActionGroupingBehaviorCodeType>(source._groupingBehavior as Partial<fhir.FhirCode>); }
+    }
     if (source['selectionBehavior']) { this.selectionBehavior = new fhir.FhirCode<ActionSelectionBehaviorCodeType>({value: source.selectionBehavior}); }
+    if (source['_selectionBehavior']) {
+      if (this.selectionBehavior) { this.selectionBehavior.addExtendedProperties(source._selectionBehavior!); }
+      else { this.selectionBehavior = new fhir.FhirCode<ActionSelectionBehaviorCodeType>(source._selectionBehavior as Partial<fhir.FhirCode>); }
+    }
     if (source['requiredBehavior']) { this.requiredBehavior = new fhir.FhirCode<ActionRequiredBehaviorCodeType>({value: source.requiredBehavior}); }
+    if (source['_requiredBehavior']) {
+      if (this.requiredBehavior) { this.requiredBehavior.addExtendedProperties(source._requiredBehavior!); }
+      else { this.requiredBehavior = new fhir.FhirCode<ActionRequiredBehaviorCodeType>(source._requiredBehavior as Partial<fhir.FhirCode>); }
+    }
     if (source['precheckBehavior']) { this.precheckBehavior = new fhir.FhirCode<ActionPrecheckBehaviorCodeType>({value: source.precheckBehavior}); }
+    if (source['_precheckBehavior']) {
+      if (this.precheckBehavior) { this.precheckBehavior.addExtendedProperties(source._precheckBehavior!); }
+      else { this.precheckBehavior = new fhir.FhirCode<ActionPrecheckBehaviorCodeType>(source._precheckBehavior as Partial<fhir.FhirCode>); }
+    }
     if (source['cardinalityBehavior']) { this.cardinalityBehavior = new fhir.FhirCode<ActionCardinalityBehaviorCodeType>({value: source.cardinalityBehavior}); }
+    if (source['_cardinalityBehavior']) {
+      if (this.cardinalityBehavior) { this.cardinalityBehavior.addExtendedProperties(source._cardinalityBehavior!); }
+      else { this.cardinalityBehavior = new fhir.FhirCode<ActionCardinalityBehaviorCodeType>(source._cardinalityBehavior as Partial<fhir.FhirCode>); }
+    }
     if (source['definition']) { this.definition = source.definition; }
     else if (source['definitionCanonical']) { this.definition = new fhir.FhirCanonical({value: source.definitionCanonical}); }
     else if (source['definitionUri']) { this.definition = new fhir.FhirUri({value: source.definitionUri}); }
     if (source['transform']) { this.transform = new fhir.FhirCanonical({value: source.transform}); }
+    if (source['_transform']) {
+      if (this.transform) { this.transform.addExtendedProperties(source._transform!); }
+      else { this.transform = new fhir.FhirCanonical(source._transform as Partial<fhir.FhirCanonicalArgs>); }
+    }
     if (source['dynamicValue']) { this.dynamicValue = source.dynamicValue.map((x) => new fhir.PlanDefinitionActionDynamicValue(x)); }
     else { this.dynamicValue = []; }
     if (source['action']) { this.action = source.action.map((x) => new fhir.PlanDefinitionAction(x)); }
@@ -974,6 +1112,10 @@ export interface PlanDefinitionArgs extends fhir.DomainResourceArgs {
    */
   url?: fhir.FhirUri|string|undefined;
   /**
+   * Extended properties for primitive element: PlanDefinition.url
+   */
+  _url?:fhir.FhirElementArgs;
+  /**
    * Typically, this is used for identifiers that can go in an HL7 V3 II (instance identifier) data type, and can then identify this plan definition outside of FHIR, where it is not possible to use the logical URI.
    */
   identifier?: fhir.IdentifierArgs[]|undefined;
@@ -982,17 +1124,33 @@ export interface PlanDefinitionArgs extends fhir.DomainResourceArgs {
    */
   version?: fhir.FhirString|string|undefined;
   /**
+   * Extended properties for primitive element: PlanDefinition.version
+   */
+  _version?:fhir.FhirElementArgs;
+  /**
    * The name is not expected to be globally unique. The name should be a simple alphanumeric type name to ensure that it is machine-processing friendly.
    */
   name?: fhir.FhirString|string|undefined;
+  /**
+   * Extended properties for primitive element: PlanDefinition.name
+   */
+  _name?:fhir.FhirElementArgs;
   /**
    * This name does not need to be machine-processing friendly and may contain punctuation, white-space, etc.
    */
   title?: fhir.FhirString|string|undefined;
   /**
+   * Extended properties for primitive element: PlanDefinition.title
+   */
+  _title?:fhir.FhirElementArgs;
+  /**
    * An explanatory or alternate title for the plan definition giving additional information about its content.
    */
   subtitle?: fhir.FhirString|string|undefined;
+  /**
+   * Extended properties for primitive element: PlanDefinition.subtitle
+   */
+  _subtitle?:fhir.FhirElementArgs;
   /**
    * A high-level category for the plan definition that distinguishes the kinds of systems that would be interested in the plan definition.
    */
@@ -1002,9 +1160,17 @@ export interface PlanDefinitionArgs extends fhir.DomainResourceArgs {
    */
   status: fhir.FhirCode<PublicationStatusCodeType>|string|undefined;
   /**
+   * Extended properties for primitive element: PlanDefinition.status
+   */
+  _status?:fhir.FhirElementArgs;
+  /**
    * Allows filtering of plan definitions that are appropriate for use versus not.
    */
   experimental?: fhir.FhirBoolean|boolean|undefined;
+  /**
+   * Extended properties for primitive element: PlanDefinition.experimental
+   */
+  _experimental?:fhir.FhirElementArgs;
   /**
    * A code or group definition that describes the intended subject of the plan definition.
    */
@@ -1022,9 +1188,17 @@ export interface PlanDefinitionArgs extends fhir.DomainResourceArgs {
    */
   date?: fhir.FhirDateTime|string|undefined;
   /**
+   * Extended properties for primitive element: PlanDefinition.date
+   */
+  _date?:fhir.FhirElementArgs;
+  /**
    * Usually an organization but may be an individual. The publisher (or steward) of the plan definition is the organization or individual primarily responsible for the maintenance and upkeep of the plan definition. This is not necessarily the same individual or organization that developed and initially authored the content. The publisher is the primary point of contact for questions or issues with the plan definition. This item SHOULD be populated unless the information is available from context.
    */
   publisher?: fhir.FhirString|string|undefined;
+  /**
+   * Extended properties for primitive element: PlanDefinition.publisher
+   */
+  _publisher?:fhir.FhirElementArgs;
   /**
    * May be a web site, an email address, a telephone number, etc.
    */
@@ -1033,6 +1207,10 @@ export interface PlanDefinitionArgs extends fhir.DomainResourceArgs {
    * This description can be used to capture details such as why the plan definition was built, comments about misuse, instructions for clinical use and interpretation, literature references, examples from the paper world, etc. It is not a rendering of the plan definition as conveyed in the 'text' field of the resource itself. This item SHOULD be populated unless the information is available from context (e.g. the language of the plan definition is presumed to be the predominant language in the place the plan definition was created).
    */
   description?: fhir.FhirMarkdown|string|undefined;
+  /**
+   * Extended properties for primitive element: PlanDefinition.description
+   */
+  _description?:fhir.FhirElementArgs;
   /**
    * When multiple useContexts are specified, there is no expectation that all or any of the contexts apply.
    */
@@ -1046,21 +1224,41 @@ export interface PlanDefinitionArgs extends fhir.DomainResourceArgs {
    */
   purpose?: fhir.FhirMarkdown|string|undefined;
   /**
+   * Extended properties for primitive element: PlanDefinition.purpose
+   */
+  _purpose?:fhir.FhirElementArgs;
+  /**
    * A detailed description of how the plan definition is used from a clinical perspective.
    */
   usage?: fhir.FhirString|string|undefined;
+  /**
+   * Extended properties for primitive element: PlanDefinition.usage
+   */
+  _usage?:fhir.FhirElementArgs;
   /**
    * A copyright statement relating to the plan definition and/or its contents. Copyright statements are generally legal restrictions on the use and publishing of the plan definition.
    */
   copyright?: fhir.FhirMarkdown|string|undefined;
   /**
+   * Extended properties for primitive element: PlanDefinition.copyright
+   */
+  _copyright?:fhir.FhirElementArgs;
+  /**
    * The 'date' element may be more recent than the approval date because of minor changes or editorial corrections.
    */
   approvalDate?: fhir.FhirDate|string|undefined;
   /**
+   * Extended properties for primitive element: PlanDefinition.approvalDate
+   */
+  _approvalDate?:fhir.FhirElementArgs;
+  /**
    * If specified, this date follows the original approval date.
    */
   lastReviewDate?: fhir.FhirDate|string|undefined;
+  /**
+   * Extended properties for primitive element: PlanDefinition.lastReviewDate
+   */
+  _lastReviewDate?:fhir.FhirElementArgs;
   /**
    * The effective period for a plan definition  determines when the content is applicable for usage and is independent of publication and review dates. For example, a measure intended to be used for the year 2016 might be published in 2015.
    */
@@ -1093,6 +1291,10 @@ export interface PlanDefinitionArgs extends fhir.DomainResourceArgs {
    * A reference to a Library resource containing any formal logic used by the plan definition.
    */
   library?: fhir.FhirCanonical[]|string[]|undefined;
+  /**
+   * Extended properties for primitive element: PlanDefinition.library
+   */
+  _library?:(fhir.FhirElementArgs|null)[];
   /**
    * Goals that describe what the activities within the plan are intended to achieve. For example, weight loss, restoring an activity of daily living, obtaining herd immunity via immunization, meeting a process improvement objective, etc.
    */
@@ -1252,33 +1454,93 @@ export class PlanDefinition extends fhir.DomainResource {
     super(source, options);
     this.resourceType = 'PlanDefinition';
     if (source['url']) { this.url = new fhir.FhirUri({value: source.url}); }
+    if (source['_url']) {
+      if (this.url) { this.url.addExtendedProperties(source._url!); }
+      else { this.url = new fhir.FhirUri(source._url as Partial<fhir.FhirUriArgs>); }
+    }
     if (source['identifier']) { this.identifier = source.identifier.map((x) => new fhir.Identifier(x)); }
     else { this.identifier = []; }
     if (source['version']) { this.version = new fhir.FhirString({value: source.version}); }
+    if (source['_version']) {
+      if (this.version) { this.version.addExtendedProperties(source._version!); }
+      else { this.version = new fhir.FhirString(source._version as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['name']) { this.name = new fhir.FhirString({value: source.name}); }
+    if (source['_name']) {
+      if (this.name) { this.name.addExtendedProperties(source._name!); }
+      else { this.name = new fhir.FhirString(source._name as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['title']) { this.title = new fhir.FhirString({value: source.title}); }
+    if (source['_title']) {
+      if (this.title) { this.title.addExtendedProperties(source._title!); }
+      else { this.title = new fhir.FhirString(source._title as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['subtitle']) { this.subtitle = new fhir.FhirString({value: source.subtitle}); }
+    if (source['_subtitle']) {
+      if (this.subtitle) { this.subtitle.addExtendedProperties(source._subtitle!); }
+      else { this.subtitle = new fhir.FhirString(source._subtitle as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['type']) { this.type = new fhir.CodeableConcept(source.type); }
     if (source['status']) { this.status = new fhir.FhirCode<PublicationStatusCodeType>({value: source.status}); }
     else { this.status = null; }
+    if (source['_status']) {
+      if (this.status) { this.status.addExtendedProperties(source._status!); }
+      else { this.status = new fhir.FhirCode<PublicationStatusCodeType>(source._status as Partial<fhir.FhirCode>); }
+    }
     if (source['experimental']) { this.experimental = new fhir.FhirBoolean({value: source.experimental}); }
+    if (source['_experimental']) {
+      if (this.experimental) { this.experimental.addExtendedProperties(source._experimental!); }
+      else { this.experimental = new fhir.FhirBoolean(source._experimental as Partial<fhir.FhirBooleanArgs>); }
+    }
     if (source['subject']) { this.subject = source.subject; }
     else if (source['subjectCodeableConcept']) { this.subject = new fhir.CodeableConcept(source.subjectCodeableConcept); }
     else if (source['subjectReference']) { this.subject = new fhir.Reference(source.subjectReference); }
     if (source['date']) { this.date = new fhir.FhirDateTime({value: source.date}); }
+    if (source['_date']) {
+      if (this.date) { this.date.addExtendedProperties(source._date!); }
+      else { this.date = new fhir.FhirDateTime(source._date as Partial<fhir.FhirDateTimeArgs>); }
+    }
     if (source['publisher']) { this.publisher = new fhir.FhirString({value: source.publisher}); }
+    if (source['_publisher']) {
+      if (this.publisher) { this.publisher.addExtendedProperties(source._publisher!); }
+      else { this.publisher = new fhir.FhirString(source._publisher as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['contact']) { this.contact = source.contact.map((x) => new fhir.ContactDetail(x)); }
     else { this.contact = []; }
     if (source['description']) { this.description = new fhir.FhirMarkdown({value: source.description}); }
+    if (source['_description']) {
+      if (this.description) { this.description.addExtendedProperties(source._description!); }
+      else { this.description = new fhir.FhirMarkdown(source._description as Partial<fhir.FhirMarkdownArgs>); }
+    }
     if (source['useContext']) { this.useContext = source.useContext.map((x) => new fhir.UsageContext(x)); }
     else { this.useContext = []; }
     if (source['jurisdiction']) { this.jurisdiction = source.jurisdiction.map((x) => new fhir.CodeableConcept(x)); }
     else { this.jurisdiction = []; }
     if (source['purpose']) { this.purpose = new fhir.FhirMarkdown({value: source.purpose}); }
+    if (source['_purpose']) {
+      if (this.purpose) { this.purpose.addExtendedProperties(source._purpose!); }
+      else { this.purpose = new fhir.FhirMarkdown(source._purpose as Partial<fhir.FhirMarkdownArgs>); }
+    }
     if (source['usage']) { this.usage = new fhir.FhirString({value: source.usage}); }
+    if (source['_usage']) {
+      if (this.usage) { this.usage.addExtendedProperties(source._usage!); }
+      else { this.usage = new fhir.FhirString(source._usage as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['copyright']) { this.copyright = new fhir.FhirMarkdown({value: source.copyright}); }
+    if (source['_copyright']) {
+      if (this.copyright) { this.copyright.addExtendedProperties(source._copyright!); }
+      else { this.copyright = new fhir.FhirMarkdown(source._copyright as Partial<fhir.FhirMarkdownArgs>); }
+    }
     if (source['approvalDate']) { this.approvalDate = new fhir.FhirDate({value: source.approvalDate}); }
+    if (source['_approvalDate']) {
+      if (this.approvalDate) { this.approvalDate.addExtendedProperties(source._approvalDate!); }
+      else { this.approvalDate = new fhir.FhirDate(source._approvalDate as Partial<fhir.FhirDateArgs>); }
+    }
     if (source['lastReviewDate']) { this.lastReviewDate = new fhir.FhirDate({value: source.lastReviewDate}); }
+    if (source['_lastReviewDate']) {
+      if (this.lastReviewDate) { this.lastReviewDate.addExtendedProperties(source._lastReviewDate!); }
+      else { this.lastReviewDate = new fhir.FhirDate(source._lastReviewDate as Partial<fhir.FhirDateArgs>); }
+    }
     if (source['effectivePeriod']) { this.effectivePeriod = new fhir.Period(source.effectivePeriod); }
     if (source['topic']) { this.topic = source.topic.map((x) => new fhir.CodeableConcept(x)); }
     else { this.topic = []; }
@@ -1294,6 +1556,12 @@ export class PlanDefinition extends fhir.DomainResource {
     else { this.relatedArtifact = []; }
     if (source['library']) { this.library = source.library.map((x) => new fhir.FhirCanonical({value: x})); }
     else { this.library = []; }
+    if (source['_library']) {
+      source._library.forEach((x,i) => {
+        if (this.library.length >= i) { if (x) { this.library[i].addExtendedProperties(x); } }
+        else { if (x) { this.library.push(new fhir.FhirCanonical(x as Partial<fhir.FhirCanonicalArgs>)); } }
+      });
+    }
     if (source['goal']) { this.goal = source.goal.map((x) => new fhir.PlanDefinitionGoal(x)); }
     else { this.goal = []; }
     if (source['action']) { this.action = source.action.map((x) => new fhir.PlanDefinitionAction(x)); }

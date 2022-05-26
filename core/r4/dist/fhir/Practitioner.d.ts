@@ -72,6 +72,10 @@ export interface PractitionerArgs extends fhir.DomainResourceArgs {
      */
     active?: fhir.FhirBoolean | boolean | undefined;
     /**
+     * Extended properties for primitive element: Practitioner.active
+     */
+    _active?: fhir.FhirElementArgs;
+    /**
      * The selection of the use property should ensure that there is a single usual name specified, and others use the nickname (alias), old, or other values as appropriate.
      * In general, select the value to be used in the ResourceReference.display based on this:
      * 1. There is more than 1 name
@@ -94,9 +98,17 @@ export interface PractitionerArgs extends fhir.DomainResourceArgs {
      */
     gender?: fhir.FhirCode<AdministrativeGenderCodeType> | string | undefined;
     /**
+     * Extended properties for primitive element: Practitioner.gender
+     */
+    _gender?: fhir.FhirElementArgs;
+    /**
      * The date of birth for the practitioner.
      */
     birthDate?: fhir.FhirDate | string | undefined;
+    /**
+     * Extended properties for primitive element: Practitioner.birthDate
+     */
+    _birthDate?: fhir.FhirElementArgs;
     /**
      * Image of the person.
      */

@@ -18,9 +18,17 @@ export interface MoneyArgs extends fhir.FhirElementArgs {
    */
   value?: fhir.FhirDecimal|number|undefined;
   /**
+   * Extended properties for primitive element: Money.value
+   */
+  _value?:fhir.FhirElementArgs;
+  /**
    * ISO 4217 Currency Code.
    */
   currency?: fhir.FhirCode|string|undefined;
+  /**
+   * Extended properties for primitive element: Money.currency
+   */
+  _currency?:fhir.FhirElementArgs;
 }
 
 /**
@@ -45,7 +53,15 @@ export class Money extends fhir.FhirElement {
   constructor(source:Partial<MoneyArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
     if (source['value']) { this.value = new fhir.FhirDecimal({value: source.value}); }
+    if (source['_value']) {
+      if (this.value) { this.value.addExtendedProperties(source._value!); }
+      else { this.value = new fhir.FhirDecimal(source._value as Partial<fhir.FhirDecimalArgs>); }
+    }
     if (source['currency']) { this.currency = new fhir.FhirCode({value: source.currency}); }
+    if (source['_currency']) {
+      if (this.currency) { this.currency.addExtendedProperties(source._currency!); }
+      else { this.currency = new fhir.FhirCode(source._currency as Partial<fhir.FhirCodeArgs>); }
+    }
   }
   /**
    * Required-bound Value Set for currency (Money.currency)

@@ -52,6 +52,10 @@ export interface TestScriptOriginArgs extends fhir.BackboneElementArgs {
    */
   index: fhir.FhirInteger|number|undefined;
   /**
+   * Extended properties for primitive element: TestScript.origin.index
+   */
+  _index?:fhir.FhirElementArgs;
+  /**
    * Must be a "sender"/"client" profile.
    */
   profile: fhir.CodingArgs|null;
@@ -82,6 +86,10 @@ export class TestScriptOrigin extends fhir.BackboneElement {
     super(source, options);
     if (source['index']) { this.index = new fhir.FhirInteger({value: source.index}); }
     else { this.index = null; }
+    if (source['_index']) {
+      if (this.index) { this.index.addExtendedProperties(source._index!); }
+      else { this.index = new fhir.FhirInteger(source._index as Partial<fhir.FhirIntegerArgs>); }
+    }
     if (source['profile']) { this.profile = new fhir.Coding(source.profile); }
     else { this.profile = null; }
   }
@@ -118,6 +126,10 @@ export interface TestScriptDestinationArgs extends fhir.BackboneElementArgs {
    */
   index: fhir.FhirInteger|number|undefined;
   /**
+   * Extended properties for primitive element: TestScript.destination.index
+   */
+  _index?:fhir.FhirElementArgs;
+  /**
    * Must be a "receiver"/"server" profile.
    */
   profile: fhir.CodingArgs|null;
@@ -148,6 +160,10 @@ export class TestScriptDestination extends fhir.BackboneElement {
     super(source, options);
     if (source['index']) { this.index = new fhir.FhirInteger({value: source.index}); }
     else { this.index = null; }
+    if (source['_index']) {
+      if (this.index) { this.index.addExtendedProperties(source._index!); }
+      else { this.index = new fhir.FhirInteger(source._index as Partial<fhir.FhirIntegerArgs>); }
+    }
     if (source['profile']) { this.profile = new fhir.Coding(source.profile); }
     else { this.profile = null; }
   }
@@ -182,9 +198,17 @@ export interface TestScriptMetadataLinkArgs extends fhir.BackboneElementArgs {
    */
   url: fhir.FhirUri|string|undefined;
   /**
+   * Extended properties for primitive element: TestScript.metadata.link.url
+   */
+  _url?:fhir.FhirElementArgs;
+  /**
    * Short description of the link.
    */
   description?: fhir.FhirString|string|undefined;
+  /**
+   * Extended properties for primitive element: TestScript.metadata.link.description
+   */
+  _description?:fhir.FhirElementArgs;
 }
 
 /**
@@ -210,7 +234,15 @@ export class TestScriptMetadataLink extends fhir.BackboneElement {
     super(source, options);
     if (source['url']) { this.url = new fhir.FhirUri({value: source.url}); }
     else { this.url = null; }
+    if (source['_url']) {
+      if (this.url) { this.url.addExtendedProperties(source._url!); }
+      else { this.url = new fhir.FhirUri(source._url as Partial<fhir.FhirUriArgs>); }
+    }
     if (source['description']) { this.description = new fhir.FhirString({value: source.description}); }
+    if (source['_description']) {
+      if (this.description) { this.description.addExtendedProperties(source._description!); }
+      else { this.description = new fhir.FhirString(source._description as Partial<fhir.FhirStringArgs>); }
+    }
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -234,29 +266,57 @@ export interface TestScriptMetadataCapabilityArgs extends fhir.BackboneElementAr
    */
   required: fhir.FhirBoolean|boolean|undefined;
   /**
+   * Extended properties for primitive element: TestScript.metadata.capability.required
+   */
+  _required?:fhir.FhirElementArgs;
+  /**
    * Whether or not the test execution will validate the given capabilities of the server in order for this test script to execute.
    */
   validated: fhir.FhirBoolean|boolean|undefined;
+  /**
+   * Extended properties for primitive element: TestScript.metadata.capability.validated
+   */
+  _validated?:fhir.FhirElementArgs;
   /**
    * Description of the capabilities that this test script is requiring the server to support.
    */
   description?: fhir.FhirString|string|undefined;
   /**
+   * Extended properties for primitive element: TestScript.metadata.capability.description
+   */
+  _description?:fhir.FhirElementArgs;
+  /**
    * Which origin server these requirements apply to.
    */
   origin?: fhir.FhirInteger[]|number[]|undefined;
+  /**
+   * Extended properties for primitive element: TestScript.metadata.capability.origin
+   */
+  _origin?:(fhir.FhirElementArgs|null)[];
   /**
    * Which server these requirements apply to.
    */
   destination?: fhir.FhirInteger|number|undefined;
   /**
+   * Extended properties for primitive element: TestScript.metadata.capability.destination
+   */
+  _destination?:fhir.FhirElementArgs;
+  /**
    * Links to the FHIR specification that describes this interaction and the resources involved in more detail.
    */
   link?: fhir.FhirUri[]|string[]|undefined;
   /**
+   * Extended properties for primitive element: TestScript.metadata.capability.link
+   */
+  _link?:(fhir.FhirElementArgs|null)[];
+  /**
    * The conformance statement of the server has to contain at a minimum the contents of the reference pointed to by this element.
    */
   capabilities: fhir.FhirCanonical|string|undefined;
+  /**
+   * Extended properties for primitive element: TestScript.metadata.capability.capabilities
+   */
+  _capabilities?:fhir.FhirElementArgs;
 }
 
 /**
@@ -302,16 +362,48 @@ export class TestScriptMetadataCapability extends fhir.BackboneElement {
     super(source, options);
     if (source['required']) { this.required = new fhir.FhirBoolean({value: source.required}); }
     else { this.required = null; }
+    if (source['_required']) {
+      if (this.required) { this.required.addExtendedProperties(source._required!); }
+      else { this.required = new fhir.FhirBoolean(source._required as Partial<fhir.FhirBooleanArgs>); }
+    }
     if (source['validated']) { this.validated = new fhir.FhirBoolean({value: source.validated}); }
     else { this.validated = null; }
+    if (source['_validated']) {
+      if (this.validated) { this.validated.addExtendedProperties(source._validated!); }
+      else { this.validated = new fhir.FhirBoolean(source._validated as Partial<fhir.FhirBooleanArgs>); }
+    }
     if (source['description']) { this.description = new fhir.FhirString({value: source.description}); }
+    if (source['_description']) {
+      if (this.description) { this.description.addExtendedProperties(source._description!); }
+      else { this.description = new fhir.FhirString(source._description as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['origin']) { this.origin = source.origin.map((x) => new fhir.FhirInteger({value: x})); }
     else { this.origin = []; }
+    if (source['_origin']) {
+      source._origin.forEach((x,i) => {
+        if (this.origin.length >= i) { if (x) { this.origin[i].addExtendedProperties(x); } }
+        else { if (x) { this.origin.push(new fhir.FhirInteger(x as Partial<fhir.FhirIntegerArgs>)); } }
+      });
+    }
     if (source['destination']) { this.destination = new fhir.FhirInteger({value: source.destination}); }
+    if (source['_destination']) {
+      if (this.destination) { this.destination.addExtendedProperties(source._destination!); }
+      else { this.destination = new fhir.FhirInteger(source._destination as Partial<fhir.FhirIntegerArgs>); }
+    }
     if (source['link']) { this.link = source.link.map((x) => new fhir.FhirUri({value: x})); }
     else { this.link = []; }
+    if (source['_link']) {
+      source._link.forEach((x,i) => {
+        if (this.link.length >= i) { if (x) { this.link[i].addExtendedProperties(x); } }
+        else { if (x) { this.link.push(new fhir.FhirUri(x as Partial<fhir.FhirUriArgs>)); } }
+      });
+    }
     if (source['capabilities']) { this.capabilities = new fhir.FhirCanonical({value: source.capabilities}); }
     else { this.capabilities = null; }
+    if (source['_capabilities']) {
+      if (this.capabilities) { this.capabilities.addExtendedProperties(source._capabilities!); }
+      else { this.capabilities = new fhir.FhirCanonical(source._capabilities as Partial<fhir.FhirCanonicalArgs>); }
+    }
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -403,9 +495,17 @@ export interface TestScriptFixtureArgs extends fhir.BackboneElementArgs {
    */
   autocreate: fhir.FhirBoolean|boolean|undefined;
   /**
+   * Extended properties for primitive element: TestScript.fixture.autocreate
+   */
+  _autocreate?:fhir.FhirElementArgs;
+  /**
    * Whether or not to implicitly delete the fixture during teardown. If true, the fixture is automatically deleted on each server being tested during teardown, therefore no delete operation is required for this fixture in the TestScript.teardown section.
    */
   autodelete: fhir.FhirBoolean|boolean|undefined;
+  /**
+   * Extended properties for primitive element: TestScript.fixture.autodelete
+   */
+  _autodelete?:fhir.FhirElementArgs;
   /**
    * See http://build.fhir.org/resourcelist.html for complete list of resource types.
    */
@@ -439,8 +539,16 @@ export class TestScriptFixture extends fhir.BackboneElement {
     super(source, options);
     if (source['autocreate']) { this.autocreate = new fhir.FhirBoolean({value: source.autocreate}); }
     else { this.autocreate = null; }
+    if (source['_autocreate']) {
+      if (this.autocreate) { this.autocreate.addExtendedProperties(source._autocreate!); }
+      else { this.autocreate = new fhir.FhirBoolean(source._autocreate as Partial<fhir.FhirBooleanArgs>); }
+    }
     if (source['autodelete']) { this.autodelete = new fhir.FhirBoolean({value: source.autodelete}); }
     else { this.autodelete = null; }
+    if (source['_autodelete']) {
+      if (this.autodelete) { this.autodelete.addExtendedProperties(source._autodelete!); }
+      else { this.autodelete = new fhir.FhirBoolean(source._autodelete as Partial<fhir.FhirBooleanArgs>); }
+    }
     if (source['resource']) { this.resource = new fhir.Reference(source.resource); }
   }
   /**
@@ -469,33 +577,65 @@ export interface TestScriptVariableArgs extends fhir.BackboneElementArgs {
    */
   name: fhir.FhirString|string|undefined;
   /**
+   * Extended properties for primitive element: TestScript.variable.name
+   */
+  _name?:fhir.FhirElementArgs;
+  /**
    * The purpose of this element is to allow for a pre-defined value that can be used as a default or as an override value. Test engines can optionally use this as a placeholder for user-defined execution time values.
    */
   defaultValue?: fhir.FhirString|string|undefined;
+  /**
+   * Extended properties for primitive element: TestScript.variable.defaultValue
+   */
+  _defaultValue?:fhir.FhirElementArgs;
   /**
    * A free text natural language description of the variable and its purpose.
    */
   description?: fhir.FhirString|string|undefined;
   /**
+   * Extended properties for primitive element: TestScript.variable.description
+   */
+  _description?:fhir.FhirElementArgs;
+  /**
    * If headerField is defined, then the variable will be evaluated against the headers that sourceId is pointing to.  If expression or path is defined, then the variable will be evaluated against the fixture body that sourceId is pointing to.  It is an error to define any combination of expression, headerField and path.
    */
   expression?: fhir.FhirString|string|undefined;
+  /**
+   * Extended properties for primitive element: TestScript.variable.expression
+   */
+  _expression?:fhir.FhirElementArgs;
   /**
    * If headerField is defined, then the variable will be evaluated against the headers that sourceId is pointing to.  If path is defined, then the variable will be evaluated against the fixture body that sourceId is pointing to.  It is an error to define both headerField and path.
    */
   headerField?: fhir.FhirString|string|undefined;
   /**
+   * Extended properties for primitive element: TestScript.variable.headerField
+   */
+  _headerField?:fhir.FhirElementArgs;
+  /**
    * Displayable text string with hint help information to the user when entering a default value.
    */
   hint?: fhir.FhirString|string|undefined;
+  /**
+   * Extended properties for primitive element: TestScript.variable.hint
+   */
+  _hint?:fhir.FhirElementArgs;
   /**
    * If headerField is defined, then the variable will be evaluated against the headers that sourceId is pointing to.  If expression or path is defined, then the variable will be evaluated against the fixture body that sourceId is pointing to.  It is an error to define any combination of expression, headerField and path.
    */
   path?: fhir.FhirString|string|undefined;
   /**
+   * Extended properties for primitive element: TestScript.variable.path
+   */
+  _path?:fhir.FhirElementArgs;
+  /**
    * This can be a statically defined fixture (at the top of the TestScript) or a dynamically set fixture created by responseId of the `action.operation` element.
    */
   sourceId?: fhir.FhirId|string|undefined;
+  /**
+   * Extended properties for primitive element: TestScript.variable.sourceId
+   */
+  _sourceId?:fhir.FhirElementArgs;
 }
 
 /**
@@ -545,13 +685,45 @@ export class TestScriptVariable extends fhir.BackboneElement {
     super(source, options);
     if (source['name']) { this.name = new fhir.FhirString({value: source.name}); }
     else { this.name = null; }
+    if (source['_name']) {
+      if (this.name) { this.name.addExtendedProperties(source._name!); }
+      else { this.name = new fhir.FhirString(source._name as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['defaultValue']) { this.defaultValue = new fhir.FhirString({value: source.defaultValue}); }
+    if (source['_defaultValue']) {
+      if (this.defaultValue) { this.defaultValue.addExtendedProperties(source._defaultValue!); }
+      else { this.defaultValue = new fhir.FhirString(source._defaultValue as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['description']) { this.description = new fhir.FhirString({value: source.description}); }
+    if (source['_description']) {
+      if (this.description) { this.description.addExtendedProperties(source._description!); }
+      else { this.description = new fhir.FhirString(source._description as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['expression']) { this.expression = new fhir.FhirString({value: source.expression}); }
+    if (source['_expression']) {
+      if (this.expression) { this.expression.addExtendedProperties(source._expression!); }
+      else { this.expression = new fhir.FhirString(source._expression as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['headerField']) { this.headerField = new fhir.FhirString({value: source.headerField}); }
+    if (source['_headerField']) {
+      if (this.headerField) { this.headerField.addExtendedProperties(source._headerField!); }
+      else { this.headerField = new fhir.FhirString(source._headerField as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['hint']) { this.hint = new fhir.FhirString({value: source.hint}); }
+    if (source['_hint']) {
+      if (this.hint) { this.hint.addExtendedProperties(source._hint!); }
+      else { this.hint = new fhir.FhirString(source._hint as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['path']) { this.path = new fhir.FhirString({value: source.path}); }
+    if (source['_path']) {
+      if (this.path) { this.path.addExtendedProperties(source._path!); }
+      else { this.path = new fhir.FhirString(source._path as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['sourceId']) { this.sourceId = new fhir.FhirId({value: source.sourceId}); }
+    if (source['_sourceId']) {
+      if (this.sourceId) { this.sourceId.addExtendedProperties(source._sourceId!); }
+      else { this.sourceId = new fhir.FhirId(source._sourceId as Partial<fhir.FhirIdArgs>); }
+    }
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -581,9 +753,17 @@ export interface TestScriptSetupActionOperationRequestHeaderArgs extends fhir.Ba
    */
   field: fhir.FhirString|string|undefined;
   /**
+   * Extended properties for primitive element: TestScript.setup.action.operation.requestHeader.field
+   */
+  _field?:fhir.FhirElementArgs;
+  /**
    * If header element is specified, then value is required.  No conversions will be done by the test engine e.g. "xml" to "application/fhir+xml".  The values will be set in HTTP headers "as-is".  Test engines do have to look for placeholders (${}) and replace the variable placeholders with the variable values at runtime before sending the request.
    */
   value: fhir.FhirString|string|undefined;
+  /**
+   * Extended properties for primitive element: TestScript.setup.action.operation.requestHeader.value
+   */
+  _value?:fhir.FhirElementArgs;
 }
 
 /**
@@ -609,8 +789,16 @@ export class TestScriptSetupActionOperationRequestHeader extends fhir.BackboneEl
     super(source, options);
     if (source['field']) { this.field = new fhir.FhirString({value: source.field}); }
     else { this.field = null; }
+    if (source['_field']) {
+      if (this.field) { this.field.addExtendedProperties(source._field!); }
+      else { this.field = new fhir.FhirString(source._field as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['value']) { this.value = new fhir.FhirString({value: source.value}); }
     else { this.value = null; }
+    if (source['_value']) {
+      if (this.value) { this.value.addExtendedProperties(source._value!); }
+      else { this.value = new fhir.FhirString(source._value as Partial<fhir.FhirStringArgs>); }
+    }
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -641,41 +829,81 @@ export interface TestScriptSetupActionOperationArgs extends fhir.BackboneElement
    */
   resource?: fhir.FhirCode|string|undefined;
   /**
+   * Extended properties for primitive element: TestScript.setup.action.operation.resource
+   */
+  _resource?:fhir.FhirElementArgs;
+  /**
    * This has no impact on the verification itself.
    */
   label?: fhir.FhirString|string|undefined;
+  /**
+   * Extended properties for primitive element: TestScript.setup.action.operation.label
+   */
+  _label?:fhir.FhirElementArgs;
   /**
    * This has no impact on the verification itself.
    */
   description?: fhir.FhirString|string|undefined;
   /**
+   * Extended properties for primitive element: TestScript.setup.action.operation.description
+   */
+  _description?:fhir.FhirElementArgs;
+  /**
    * If this is specified, then test engine shall set the 'Accept' header to the corresponding value.  If you'd like to explicitly set the 'Accept' to some other value then use the 'requestHeader' element.
    */
   accept?: fhir.FhirCode|string|undefined;
+  /**
+   * Extended properties for primitive element: TestScript.setup.action.operation.accept
+   */
+  _accept?:fhir.FhirElementArgs;
   /**
    * If this is specified, then test engine shall set the 'Content-Type' header to the corresponding value.  If you'd like to explicitly set the 'Content-Type' to some other value then use the 'requestHeader' element.
    */
   contentType?: fhir.FhirCode|string|undefined;
   /**
+   * Extended properties for primitive element: TestScript.setup.action.operation.contentType
+   */
+  _contentType?:fhir.FhirElementArgs;
+  /**
    * If multiple TestScript.destination elements are defined and operation.destination is undefined, test engine will report an error as it cannot determine what destination to use for the exchange.
    */
   destination?: fhir.FhirInteger|number|undefined;
+  /**
+   * Extended properties for primitive element: TestScript.setup.action.operation.destination
+   */
+  _destination?:fhir.FhirElementArgs;
   /**
    * Whether or not to implicitly send the request url in encoded format. The default is true to match the standard RESTful client behavior. Set to false when communicating with a server that does not support encoded url paths.
    */
   encodeRequestUrl: fhir.FhirBoolean|boolean|undefined;
   /**
+   * Extended properties for primitive element: TestScript.setup.action.operation.encodeRequestUrl
+   */
+  _encodeRequestUrl?:fhir.FhirElementArgs;
+  /**
    * The primary purpose of the explicit HTTP method is support of  HTTP POST method invocation of the FHIR search. Other uses will include support of negative testing.
    */
   method?: fhir.FhirCode<HttpOperationsCodeType>|string|undefined;
+  /**
+   * Extended properties for primitive element: TestScript.setup.action.operation.method
+   */
+  _method?:fhir.FhirElementArgs;
   /**
    * If absent, test engine will send the message.  When present, test engine will not send the request message but will wait for the request message to be sent from this origin server.
    */
   origin?: fhir.FhirInteger|number|undefined;
   /**
+   * Extended properties for primitive element: TestScript.setup.action.operation.origin
+   */
+  _origin?:fhir.FhirElementArgs;
+  /**
    * If "url" element is specified, then "targetId", "params", and "resource" elements will be ignored as "url" element will have everything needed for constructing the request url.  If "params" element is specified, then "targetId" element is ignored.  For FHIR operations that require a resource (e.g. "read" and "vread" operations), the "resource" element must be specified when "params" element is specified.  If "url" and "params" elements are absent, then the request url will be constructed from "targetId" fixture if present.  For "read" operation, the resource and id values will be extracted from "targetId" fixture and used to construct the url.  For "vread" and "history" operations, the versionId value will also be used.   Test engines would append whatever is specified for "params" to the URL after the resource type without tampering with the string (beyond encoding the URL for HTTP).  The "params" element does not correspond exactly to "search parameters".  Nor is it the "path".  It corresponds to the part of the URL that comes after the [type] (when "resource" element is specified); e.g. It corresponds to "/[id]/_history/[vid] {?_format=[mime-type]}" in the following operation: GET [base]/[type]/[id]/_history/[vid] {?_format=[mime-type]}  Test engines do have to look for placeholders (${}) and replace the variable placeholders with the variable values at runtime before sending the request.
    */
   params?: fhir.FhirString|string|undefined;
+  /**
+   * Extended properties for primitive element: TestScript.setup.action.operation.params
+   */
+  _params?:fhir.FhirElementArgs;
   /**
    * This gives control to test-script writers to set headers explicitly based on test requirements.  It will allow for testing using:  - "If-Modified-Since" and "If-None-Match" headers.  See http://build.fhir.org/http.html#2.1.0.5.1 - "If-Match" header.  See http://build.fhir.org/http.html#2.1.0.11 - Conditional Create using "If-None-Exist".  See http://build.fhir.org/http.html#2.1.0.13.1 - Invalid "Content-Type" header for negative testing. - etc.
    */
@@ -685,21 +913,41 @@ export interface TestScriptSetupActionOperationArgs extends fhir.BackboneElement
    */
   requestId?: fhir.FhirId|string|undefined;
   /**
+   * Extended properties for primitive element: TestScript.setup.action.operation.requestId
+   */
+  _requestId?:fhir.FhirElementArgs;
+  /**
    * If a responseId is supplied, and the server responds, then the resulting response (both headers and body) is mapped to the fixture ID (which may be entirely new and previously undeclared) designated by "responseId".  If responseId is not specified, it is the test engine's responsibility to store the response and use it as the responseId in subsequent assertions when assertion path and/or headerField is specified and the responseId is not specified.
    */
   responseId?: fhir.FhirId|string|undefined;
+  /**
+   * Extended properties for primitive element: TestScript.setup.action.operation.responseId
+   */
+  _responseId?:fhir.FhirElementArgs;
   /**
    * The id of the fixture used as the body of a PUT or POST request.
    */
   sourceId?: fhir.FhirId|string|undefined;
   /**
+   * Extended properties for primitive element: TestScript.setup.action.operation.sourceId
+   */
+  _sourceId?:fhir.FhirElementArgs;
+  /**
    * If "url" element is specified, then "targetId", "params", and "resource" elements will be ignored as "url" element will have everything needed for constructing the request url.  If "params" element is specified, then "targetId" element is ignored.  For FHIR operations that require a resource (e.g. "read" and "vread" operations), the "resource" element must be specified when "params" element is specified.  If "url" and "params" elements are absent, then the request url will be constructed from "targetId" fixture if present.  For "read" operation, the resource and id values will be extracted from "targetId" fixture and used to construct the url.  For "vread" and "history" operations, the versionId value will also be used.
    */
   targetId?: fhir.FhirId|string|undefined;
   /**
+   * Extended properties for primitive element: TestScript.setup.action.operation.targetId
+   */
+  _targetId?:fhir.FhirElementArgs;
+  /**
    * Used to set the request URL explicitly.  If "url" element is defined, then "targetId", "resource", and "params" elements will be ignored.  Test engines would use whatever is specified in "url" without tampering with the string (beyond encoding the URL for HTTP).  Test engines do have to look for placeholders (${}) and replace the variable placeholders with the variable values at runtime before sending the request.
    */
   url?: fhir.FhirString|string|undefined;
+  /**
+   * Extended properties for primitive element: TestScript.setup.action.operation.url
+   */
+  _url?:fhir.FhirElementArgs;
 }
 
 /**
@@ -785,23 +1033,83 @@ export class TestScriptSetupActionOperation extends fhir.BackboneElement {
     super(source, options);
     if (source['type']) { this.type = new fhir.Coding(source.type); }
     if (source['resource']) { this.resource = new fhir.FhirCode({value: source.resource}); }
+    if (source['_resource']) {
+      if (this.resource) { this.resource.addExtendedProperties(source._resource!); }
+      else { this.resource = new fhir.FhirCode(source._resource as Partial<fhir.FhirCodeArgs>); }
+    }
     if (source['label']) { this.label = new fhir.FhirString({value: source.label}); }
+    if (source['_label']) {
+      if (this.label) { this.label.addExtendedProperties(source._label!); }
+      else { this.label = new fhir.FhirString(source._label as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['description']) { this.description = new fhir.FhirString({value: source.description}); }
+    if (source['_description']) {
+      if (this.description) { this.description.addExtendedProperties(source._description!); }
+      else { this.description = new fhir.FhirString(source._description as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['accept']) { this.accept = new fhir.FhirCode({value: source.accept}); }
+    if (source['_accept']) {
+      if (this.accept) { this.accept.addExtendedProperties(source._accept!); }
+      else { this.accept = new fhir.FhirCode(source._accept as Partial<fhir.FhirCodeArgs>); }
+    }
     if (source['contentType']) { this.contentType = new fhir.FhirCode({value: source.contentType}); }
+    if (source['_contentType']) {
+      if (this.contentType) { this.contentType.addExtendedProperties(source._contentType!); }
+      else { this.contentType = new fhir.FhirCode(source._contentType as Partial<fhir.FhirCodeArgs>); }
+    }
     if (source['destination']) { this.destination = new fhir.FhirInteger({value: source.destination}); }
+    if (source['_destination']) {
+      if (this.destination) { this.destination.addExtendedProperties(source._destination!); }
+      else { this.destination = new fhir.FhirInteger(source._destination as Partial<fhir.FhirIntegerArgs>); }
+    }
     if (source['encodeRequestUrl']) { this.encodeRequestUrl = new fhir.FhirBoolean({value: source.encodeRequestUrl}); }
     else { this.encodeRequestUrl = null; }
+    if (source['_encodeRequestUrl']) {
+      if (this.encodeRequestUrl) { this.encodeRequestUrl.addExtendedProperties(source._encodeRequestUrl!); }
+      else { this.encodeRequestUrl = new fhir.FhirBoolean(source._encodeRequestUrl as Partial<fhir.FhirBooleanArgs>); }
+    }
     if (source['method']) { this.method = new fhir.FhirCode<HttpOperationsCodeType>({value: source.method}); }
+    if (source['_method']) {
+      if (this.method) { this.method.addExtendedProperties(source._method!); }
+      else { this.method = new fhir.FhirCode<HttpOperationsCodeType>(source._method as Partial<fhir.FhirCode>); }
+    }
     if (source['origin']) { this.origin = new fhir.FhirInteger({value: source.origin}); }
+    if (source['_origin']) {
+      if (this.origin) { this.origin.addExtendedProperties(source._origin!); }
+      else { this.origin = new fhir.FhirInteger(source._origin as Partial<fhir.FhirIntegerArgs>); }
+    }
     if (source['params']) { this.params = new fhir.FhirString({value: source.params}); }
+    if (source['_params']) {
+      if (this.params) { this.params.addExtendedProperties(source._params!); }
+      else { this.params = new fhir.FhirString(source._params as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['requestHeader']) { this.requestHeader = source.requestHeader.map((x) => new fhir.TestScriptSetupActionOperationRequestHeader(x)); }
     else { this.requestHeader = []; }
     if (source['requestId']) { this.requestId = new fhir.FhirId({value: source.requestId}); }
+    if (source['_requestId']) {
+      if (this.requestId) { this.requestId.addExtendedProperties(source._requestId!); }
+      else { this.requestId = new fhir.FhirId(source._requestId as Partial<fhir.FhirIdArgs>); }
+    }
     if (source['responseId']) { this.responseId = new fhir.FhirId({value: source.responseId}); }
+    if (source['_responseId']) {
+      if (this.responseId) { this.responseId.addExtendedProperties(source._responseId!); }
+      else { this.responseId = new fhir.FhirId(source._responseId as Partial<fhir.FhirIdArgs>); }
+    }
     if (source['sourceId']) { this.sourceId = new fhir.FhirId({value: source.sourceId}); }
+    if (source['_sourceId']) {
+      if (this.sourceId) { this.sourceId.addExtendedProperties(source._sourceId!); }
+      else { this.sourceId = new fhir.FhirId(source._sourceId as Partial<fhir.FhirIdArgs>); }
+    }
     if (source['targetId']) { this.targetId = new fhir.FhirId({value: source.targetId}); }
+    if (source['_targetId']) {
+      if (this.targetId) { this.targetId.addExtendedProperties(source._targetId!); }
+      else { this.targetId = new fhir.FhirId(source._targetId as Partial<fhir.FhirIdArgs>); }
+    }
     if (source['url']) { this.url = new fhir.FhirString({value: source.url}); }
+    if (source['_url']) {
+      if (this.url) { this.url.addExtendedProperties(source._url!); }
+      else { this.url = new fhir.FhirString(source._url as Partial<fhir.FhirStringArgs>); }
+    }
   }
   /**
    * Extensible-bound Value Set for type (TestScript.setup.action.operation.type)
@@ -864,89 +1172,177 @@ export interface TestScriptSetupActionAssertArgs extends fhir.BackboneElementArg
    */
   label?: fhir.FhirString|string|undefined;
   /**
+   * Extended properties for primitive element: TestScript.setup.action.assert.label
+   */
+  _label?:fhir.FhirElementArgs;
+  /**
    * This has no impact on the verification itself.
    */
   description?: fhir.FhirString|string|undefined;
+  /**
+   * Extended properties for primitive element: TestScript.setup.action.assert.description
+   */
+  _description?:fhir.FhirElementArgs;
   /**
    * If the direction is specified as "response" (the default), then the processing of this assert is against the received response message. If the direction is specified as "request", then the processing of this assert is against the sent request message.
    */
   direction?: fhir.FhirCode<AssertDirectionCodeType>|string|undefined;
   /**
+   * Extended properties for primitive element: TestScript.setup.action.assert.direction
+   */
+  _direction?:fhir.FhirElementArgs;
+  /**
    * Id of the source fixture used as the contents to be evaluated by either the "source/expression" or "sourceId/path" definition.
    */
   compareToSourceId?: fhir.FhirString|string|undefined;
+  /**
+   * Extended properties for primitive element: TestScript.setup.action.assert.compareToSourceId
+   */
+  _compareToSourceId?:fhir.FhirElementArgs;
   /**
    * Thefhirpath expression to be evaluated against the expected fixture to compare to. Ignored if "assert.value" is used. The evaluation will be done before the assertion is evaluated.
    */
   compareToSourceExpression?: fhir.FhirString|string|undefined;
   /**
+   * Extended properties for primitive element: TestScript.setup.action.assert.compareToSourceExpression
+   */
+  _compareToSourceExpression?:fhir.FhirElementArgs;
+  /**
    * The XPath or JSONPath expression to be evaluated against the expected fixture to compare to. Ignored if "assert.value" is used. The evaluation will be done before the assertion is evaluated.
    */
   compareToSourcePath?: fhir.FhirString|string|undefined;
+  /**
+   * Extended properties for primitive element: TestScript.setup.action.assert.compareToSourcePath
+   */
+  _compareToSourcePath?:fhir.FhirElementArgs;
   /**
    * If this is specified, then test engine shall confirm that the content-type of the last operation's headers is set to this value.  If "assert.sourceId" element is specified, then the evaluation will be done against the headers mapped to that sourceId (and not the last operation's headers).  If you'd like to have more control over the string, then use 'assert.headerField' instead.
    */
   contentType?: fhir.FhirCode|string|undefined;
   /**
+   * Extended properties for primitive element: TestScript.setup.action.assert.contentType
+   */
+  _contentType?:fhir.FhirElementArgs;
+  /**
    * If both "expression" and a "fixtureId" are specified, then the expression will be evaluated against the request or response body mapped to the fixtureId.  If "expression" is specified and a "fixtureId" is not, then the expression will be evaluated against the response body of the last operation.  Test engines are to store the request and response body and headers of the last operation at all times for subsequent assertions.
    */
   expression?: fhir.FhirString|string|undefined;
+  /**
+   * Extended properties for primitive element: TestScript.setup.action.assert.expression
+   */
+  _expression?:fhir.FhirElementArgs;
   /**
    * If "headerField" is specified then "value" must be specified.  If "sourceId" is not specified, then "headerField" will be evaluated against the last operation's response headers.  Test engines are to keep track of the last operation's response body and response headers.
    */
   headerField?: fhir.FhirString|string|undefined;
   /**
+   * Extended properties for primitive element: TestScript.setup.action.assert.headerField
+   */
+  _headerField?:fhir.FhirElementArgs;
+  /**
    * Asserts that the response contains all the element/content in another fixture pointed to by minimumId.  This can be a statically defined fixture or one that is dynamically set via responseId.
    */
   minimumId?: fhir.FhirString|string|undefined;
+  /**
+   * Extended properties for primitive element: TestScript.setup.action.assert.minimumId
+   */
+  _minimumId?:fhir.FhirElementArgs;
   /**
    * Asserts that the Bundle contains first, last, and next links.
    */
   navigationLinks?: fhir.FhirBoolean|boolean|undefined;
   /**
+   * Extended properties for primitive element: TestScript.setup.action.assert.navigationLinks
+   */
+  _navigationLinks?:fhir.FhirElementArgs;
+  /**
    * Operators are useful especially for negative testing.  If operator is not specified, then the "equals" operator is assumed; e.g. ```&lt;code&gt;   &lt;assert&gt;  &lt;operator value="in" /&gt;  &lt;responseCode value="200,201,204" /&gt;    &lt;/assert&gt;    &lt;assert&gt;  &lt;operator value="notEquals" /&gt;  &lt;response value="okay"/&gt;   &lt;/assert&gt;    &lt;assert&gt;  &lt;operator value="greaterThan" /&gt;    &lt;responseHeader&gt;     &lt;field value="Content-Length" /&gt;     &lt;value value="0" /&gt;    &lt;/responseHeader/&gt;   &lt;/assert&gt; &lt;/code&gt; ```.
    */
   operator?: fhir.FhirCode<AssertOperatorCodeType>|string|undefined;
+  /**
+   * Extended properties for primitive element: TestScript.setup.action.assert.operator
+   */
+  _operator?:fhir.FhirElementArgs;
   /**
    * If both "path" and a "fixtureId" are specified, then the path will be evaluated against the request or response body mapped to the fixtureId.  If "path" is specified and a "fixtureId" is not, then the path will be evaluated against the response body of the last operation.  Test engines are to store the request and response body and headers of the last operation at all times for subsequent assertions.
    */
   path?: fhir.FhirString|string|undefined;
   /**
+   * Extended properties for primitive element: TestScript.setup.action.assert.path
+   */
+  _path?:fhir.FhirElementArgs;
+  /**
    * If "requestMethod" is specified then it will be used in place of "value". The "requestMethod" will evaluate against the last operation's request HTTP operation.
    */
   requestMethod?: fhir.FhirCode<HttpOperationsCodeType>|string|undefined;
+  /**
+   * Extended properties for primitive element: TestScript.setup.action.assert.requestMethod
+   */
+  _requestMethod?:fhir.FhirElementArgs;
   /**
    * If "requestURL" is specified then it will be used in place of "value". The "requestURL" will evaluate against the last operation's full request URL path string.
    */
   requestURL?: fhir.FhirString|string|undefined;
   /**
+   * Extended properties for primitive element: TestScript.setup.action.assert.requestURL
+   */
+  _requestURL?:fhir.FhirElementArgs;
+  /**
    * This will be expected resource type in response body e.g. in read, vread, search, etc.  See http://build.fhir.org/resourcelist.html for complete list of resource types; e.g. &lt;assert &gt; &lt;resourceType value="Patient" &lt;/assert&gt;.
    */
   resource?: fhir.FhirCode|string|undefined;
+  /**
+   * Extended properties for primitive element: TestScript.setup.action.assert.resource
+   */
+  _resource?:fhir.FhirElementArgs;
   /**
    * This is a shorter way of achieving similar verifications via "assert.responseCode".  If you need more control, then use "assert.responseCode"  e.g. &lt;assert&gt;  &lt;contentType value="json" /&gt;  &lt;response value="okay"/&gt; &lt;/assert&gt;.
    */
   response?: fhir.FhirCode<AssertResponseCodeTypesCodeType>|string|undefined;
   /**
+   * Extended properties for primitive element: TestScript.setup.action.assert.response
+   */
+  _response?:fhir.FhirElementArgs;
+  /**
    * To be used with "operator" attribute value. Asserts that the response code equals this value if "operator" is not specified.   If the operator is "in" or "notIn" then the responseCode would be a comma-separated list of values e.g. "200,201". Otherwise, it's expected to be a numeric value.   If "fixture" is not specified, then the "responseBodyId" value of the last operation is assumed.
    */
   responseCode?: fhir.FhirString|string|undefined;
+  /**
+   * Extended properties for primitive element: TestScript.setup.action.assert.responseCode
+   */
+  _responseCode?:fhir.FhirElementArgs;
   /**
    * This can be a statically defined fixture (at the top of the testscript) or a dynamically set fixture created by responseId of the action.operation element.
    */
   sourceId?: fhir.FhirId|string|undefined;
   /**
+   * Extended properties for primitive element: TestScript.setup.action.assert.sourceId
+   */
+  _sourceId?:fhir.FhirElementArgs;
+  /**
    * The ID of a Profile fixture. Asserts that the response is valid according to the Profile specified by validateProfileId.
    */
   validateProfileId?: fhir.FhirId|string|undefined;
+  /**
+   * Extended properties for primitive element: TestScript.setup.action.assert.validateProfileId
+   */
+  _validateProfileId?:fhir.FhirElementArgs;
   /**
    * The string-representation of a number, string, or boolean that is expected.  Test engines do have to look for placeholders (${}) and replace the variable placeholders with the variable values at runtime before comparing this value to the actual value.
    */
   value?: fhir.FhirString|string|undefined;
   /**
+   * Extended properties for primitive element: TestScript.setup.action.assert.value
+   */
+  _value?:fhir.FhirElementArgs;
+  /**
    * If this element is specified and it is true, then assertion failures can be logged by test engine but should not stop the test script execution from proceeding.  There are likely cases where the spec is not clear on what should happen. If the spec says something is optional (maybe a response header for example), but a server doesn’t do it, we could choose to issue a warning.
    */
   warningOnly: fhir.FhirBoolean|boolean|undefined;
+  /**
+   * Extended properties for primitive element: TestScript.setup.action.assert.warningOnly
+   */
+  _warningOnly?:fhir.FhirElementArgs;
 }
 
 /**
@@ -1051,28 +1447,116 @@ export class TestScriptSetupActionAssert extends fhir.BackboneElement {
   constructor(source:Partial<TestScriptSetupActionAssertArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
     if (source['label']) { this.label = new fhir.FhirString({value: source.label}); }
+    if (source['_label']) {
+      if (this.label) { this.label.addExtendedProperties(source._label!); }
+      else { this.label = new fhir.FhirString(source._label as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['description']) { this.description = new fhir.FhirString({value: source.description}); }
+    if (source['_description']) {
+      if (this.description) { this.description.addExtendedProperties(source._description!); }
+      else { this.description = new fhir.FhirString(source._description as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['direction']) { this.direction = new fhir.FhirCode<AssertDirectionCodeType>({value: source.direction}); }
+    if (source['_direction']) {
+      if (this.direction) { this.direction.addExtendedProperties(source._direction!); }
+      else { this.direction = new fhir.FhirCode<AssertDirectionCodeType>(source._direction as Partial<fhir.FhirCode>); }
+    }
     if (source['compareToSourceId']) { this.compareToSourceId = new fhir.FhirString({value: source.compareToSourceId}); }
+    if (source['_compareToSourceId']) {
+      if (this.compareToSourceId) { this.compareToSourceId.addExtendedProperties(source._compareToSourceId!); }
+      else { this.compareToSourceId = new fhir.FhirString(source._compareToSourceId as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['compareToSourceExpression']) { this.compareToSourceExpression = new fhir.FhirString({value: source.compareToSourceExpression}); }
+    if (source['_compareToSourceExpression']) {
+      if (this.compareToSourceExpression) { this.compareToSourceExpression.addExtendedProperties(source._compareToSourceExpression!); }
+      else { this.compareToSourceExpression = new fhir.FhirString(source._compareToSourceExpression as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['compareToSourcePath']) { this.compareToSourcePath = new fhir.FhirString({value: source.compareToSourcePath}); }
+    if (source['_compareToSourcePath']) {
+      if (this.compareToSourcePath) { this.compareToSourcePath.addExtendedProperties(source._compareToSourcePath!); }
+      else { this.compareToSourcePath = new fhir.FhirString(source._compareToSourcePath as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['contentType']) { this.contentType = new fhir.FhirCode({value: source.contentType}); }
+    if (source['_contentType']) {
+      if (this.contentType) { this.contentType.addExtendedProperties(source._contentType!); }
+      else { this.contentType = new fhir.FhirCode(source._contentType as Partial<fhir.FhirCodeArgs>); }
+    }
     if (source['expression']) { this.expression = new fhir.FhirString({value: source.expression}); }
+    if (source['_expression']) {
+      if (this.expression) { this.expression.addExtendedProperties(source._expression!); }
+      else { this.expression = new fhir.FhirString(source._expression as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['headerField']) { this.headerField = new fhir.FhirString({value: source.headerField}); }
+    if (source['_headerField']) {
+      if (this.headerField) { this.headerField.addExtendedProperties(source._headerField!); }
+      else { this.headerField = new fhir.FhirString(source._headerField as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['minimumId']) { this.minimumId = new fhir.FhirString({value: source.minimumId}); }
+    if (source['_minimumId']) {
+      if (this.minimumId) { this.minimumId.addExtendedProperties(source._minimumId!); }
+      else { this.minimumId = new fhir.FhirString(source._minimumId as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['navigationLinks']) { this.navigationLinks = new fhir.FhirBoolean({value: source.navigationLinks}); }
+    if (source['_navigationLinks']) {
+      if (this.navigationLinks) { this.navigationLinks.addExtendedProperties(source._navigationLinks!); }
+      else { this.navigationLinks = new fhir.FhirBoolean(source._navigationLinks as Partial<fhir.FhirBooleanArgs>); }
+    }
     if (source['operator']) { this.operator = new fhir.FhirCode<AssertOperatorCodeType>({value: source.operator}); }
+    if (source['_operator']) {
+      if (this.operator) { this.operator.addExtendedProperties(source._operator!); }
+      else { this.operator = new fhir.FhirCode<AssertOperatorCodeType>(source._operator as Partial<fhir.FhirCode>); }
+    }
     if (source['path']) { this.path = new fhir.FhirString({value: source.path}); }
+    if (source['_path']) {
+      if (this.path) { this.path.addExtendedProperties(source._path!); }
+      else { this.path = new fhir.FhirString(source._path as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['requestMethod']) { this.requestMethod = new fhir.FhirCode<HttpOperationsCodeType>({value: source.requestMethod}); }
+    if (source['_requestMethod']) {
+      if (this.requestMethod) { this.requestMethod.addExtendedProperties(source._requestMethod!); }
+      else { this.requestMethod = new fhir.FhirCode<HttpOperationsCodeType>(source._requestMethod as Partial<fhir.FhirCode>); }
+    }
     if (source['requestURL']) { this.requestURL = new fhir.FhirString({value: source.requestURL}); }
+    if (source['_requestURL']) {
+      if (this.requestURL) { this.requestURL.addExtendedProperties(source._requestURL!); }
+      else { this.requestURL = new fhir.FhirString(source._requestURL as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['resource']) { this.resource = new fhir.FhirCode({value: source.resource}); }
+    if (source['_resource']) {
+      if (this.resource) { this.resource.addExtendedProperties(source._resource!); }
+      else { this.resource = new fhir.FhirCode(source._resource as Partial<fhir.FhirCodeArgs>); }
+    }
     if (source['response']) { this.response = new fhir.FhirCode<AssertResponseCodeTypesCodeType>({value: source.response}); }
+    if (source['_response']) {
+      if (this.response) { this.response.addExtendedProperties(source._response!); }
+      else { this.response = new fhir.FhirCode<AssertResponseCodeTypesCodeType>(source._response as Partial<fhir.FhirCode>); }
+    }
     if (source['responseCode']) { this.responseCode = new fhir.FhirString({value: source.responseCode}); }
+    if (source['_responseCode']) {
+      if (this.responseCode) { this.responseCode.addExtendedProperties(source._responseCode!); }
+      else { this.responseCode = new fhir.FhirString(source._responseCode as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['sourceId']) { this.sourceId = new fhir.FhirId({value: source.sourceId}); }
+    if (source['_sourceId']) {
+      if (this.sourceId) { this.sourceId.addExtendedProperties(source._sourceId!); }
+      else { this.sourceId = new fhir.FhirId(source._sourceId as Partial<fhir.FhirIdArgs>); }
+    }
     if (source['validateProfileId']) { this.validateProfileId = new fhir.FhirId({value: source.validateProfileId}); }
+    if (source['_validateProfileId']) {
+      if (this.validateProfileId) { this.validateProfileId.addExtendedProperties(source._validateProfileId!); }
+      else { this.validateProfileId = new fhir.FhirId(source._validateProfileId as Partial<fhir.FhirIdArgs>); }
+    }
     if (source['value']) { this.value = new fhir.FhirString({value: source.value}); }
+    if (source['_value']) {
+      if (this.value) { this.value.addExtendedProperties(source._value!); }
+      else { this.value = new fhir.FhirString(source._value as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['warningOnly']) { this.warningOnly = new fhir.FhirBoolean({value: source.warningOnly}); }
     else { this.warningOnly = null; }
+    if (source['_warningOnly']) {
+      if (this.warningOnly) { this.warningOnly.addExtendedProperties(source._warningOnly!); }
+      else { this.warningOnly = new fhir.FhirBoolean(source._warningOnly as Partial<fhir.FhirBooleanArgs>); }
+    }
   }
   /**
    * Required-bound Value Set for direction (TestScript.setup.action.assert.direction)
@@ -1303,9 +1787,17 @@ export interface TestScriptTestArgs extends fhir.BackboneElementArgs {
    */
   name?: fhir.FhirString|string|undefined;
   /**
+   * Extended properties for primitive element: TestScript.test.name
+   */
+  _name?:fhir.FhirElementArgs;
+  /**
    * A short description of the test used by test engines for tracking and reporting purposes.
    */
   description?: fhir.FhirString|string|undefined;
+  /**
+   * Extended properties for primitive element: TestScript.test.description
+   */
+  _description?:fhir.FhirElementArgs;
   /**
    * An action should contain either an operation or an assertion but not both.  It can contain any number of variables.
    */
@@ -1338,7 +1830,15 @@ export class TestScriptTest extends fhir.BackboneElement {
   constructor(source:Partial<TestScriptTestArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
     if (source['name']) { this.name = new fhir.FhirString({value: source.name}); }
+    if (source['_name']) {
+      if (this.name) { this.name.addExtendedProperties(source._name!); }
+      else { this.name = new fhir.FhirString(source._name as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['description']) { this.description = new fhir.FhirString({value: source.description}); }
+    if (source['_description']) {
+      if (this.description) { this.description.addExtendedProperties(source._description!); }
+      else { this.description = new fhir.FhirString(source._description as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['action']) { this.action = source.action.map((x) => new fhir.TestScriptTestAction(x)); }
     else { this.action = []; }
   }
@@ -1463,6 +1963,10 @@ export interface TestScriptArgs extends fhir.DomainResourceArgs {
    */
   url: fhir.FhirUri|string|undefined;
   /**
+   * Extended properties for primitive element: TestScript.url
+   */
+  _url?:fhir.FhirElementArgs;
+  /**
    * Typically, this is used for identifiers that can go in an HL7 V3 II (instance identifier) data type, and can then identify this test script outside of FHIR, where it is not possible to use the logical URI.
    */
   identifier?: fhir.IdentifierArgs|undefined;
@@ -1471,29 +1975,57 @@ export interface TestScriptArgs extends fhir.DomainResourceArgs {
    */
   version?: fhir.FhirString|string|undefined;
   /**
+   * Extended properties for primitive element: TestScript.version
+   */
+  _version?:fhir.FhirElementArgs;
+  /**
    * The name is not expected to be globally unique. The name should be a simple alphanumeric type name to ensure that it is machine-processing friendly.
    */
   name: fhir.FhirString|string|undefined;
+  /**
+   * Extended properties for primitive element: TestScript.name
+   */
+  _name?:fhir.FhirElementArgs;
   /**
    * This name does not need to be machine-processing friendly and may contain punctuation, white-space, etc.
    */
   title?: fhir.FhirString|string|undefined;
   /**
+   * Extended properties for primitive element: TestScript.title
+   */
+  _title?:fhir.FhirElementArgs;
+  /**
    * Allows filtering of test scripts that are appropriate for use versus not.
    */
   status: fhir.FhirCode<PublicationStatusCodeType>|string|undefined;
+  /**
+   * Extended properties for primitive element: TestScript.status
+   */
+  _status?:fhir.FhirElementArgs;
   /**
    * Allows filtering of test scripts that are appropriate for use versus not.
    */
   experimental?: fhir.FhirBoolean|boolean|undefined;
   /**
+   * Extended properties for primitive element: TestScript.experimental
+   */
+  _experimental?:fhir.FhirElementArgs;
+  /**
    * Note that this is not the same as the resource last-modified-date, since the resource may be a secondary representation of the test script. Additional specific dates may be added as extensions or be found by consulting Provenances associated with past versions of the resource.
    */
   date?: fhir.FhirDateTime|string|undefined;
   /**
+   * Extended properties for primitive element: TestScript.date
+   */
+  _date?:fhir.FhirElementArgs;
+  /**
    * Usually an organization but may be an individual. The publisher (or steward) of the test script is the organization or individual primarily responsible for the maintenance and upkeep of the test script. This is not necessarily the same individual or organization that developed and initially authored the content. The publisher is the primary point of contact for questions or issues with the test script. This item SHOULD be populated unless the information is available from context.
    */
   publisher?: fhir.FhirString|string|undefined;
+  /**
+   * Extended properties for primitive element: TestScript.publisher
+   */
+  _publisher?:fhir.FhirElementArgs;
   /**
    * May be a web site, an email address, a telephone number, etc.
    */
@@ -1502,6 +2034,10 @@ export interface TestScriptArgs extends fhir.DomainResourceArgs {
    * This description can be used to capture details such as why the test script was built, comments about misuse, instructions for clinical use and interpretation, literature references, examples from the paper world, etc. It is not a rendering of the test script as conveyed in the 'text' field of the resource itself. This item SHOULD be populated unless the information is available from context (e.g. the language of the test script is presumed to be the predominant language in the place the test script was created).
    */
   description?: fhir.FhirMarkdown|string|undefined;
+  /**
+   * Extended properties for primitive element: TestScript.description
+   */
+  _description?:fhir.FhirElementArgs;
   /**
    * When multiple useContexts are specified, there is no expectation that all or any of the contexts apply.
    */
@@ -1515,9 +2051,17 @@ export interface TestScriptArgs extends fhir.DomainResourceArgs {
    */
   purpose?: fhir.FhirMarkdown|string|undefined;
   /**
+   * Extended properties for primitive element: TestScript.purpose
+   */
+  _purpose?:fhir.FhirElementArgs;
+  /**
    * A copyright statement relating to the test script and/or its contents. Copyright statements are generally legal restrictions on the use and publishing of the test script.
    */
   copyright?: fhir.FhirMarkdown|string|undefined;
+  /**
+   * Extended properties for primitive element: TestScript.copyright
+   */
+  _copyright?:fhir.FhirElementArgs;
   /**
    * The purpose of this element is to define the profile of an origin element used elsewhere in the script.  Test engines could then use the origin-profile mapping to offer a filtered list of test systems that can serve as the sender for the interaction.
    */
@@ -1674,25 +2218,69 @@ export class TestScript extends fhir.DomainResource {
     this.resourceType = 'TestScript';
     if (source['url']) { this.url = new fhir.FhirUri({value: source.url}); }
     else { this.url = null; }
+    if (source['_url']) {
+      if (this.url) { this.url.addExtendedProperties(source._url!); }
+      else { this.url = new fhir.FhirUri(source._url as Partial<fhir.FhirUriArgs>); }
+    }
     if (source['identifier']) { this.identifier = new fhir.Identifier(source.identifier); }
     if (source['version']) { this.version = new fhir.FhirString({value: source.version}); }
+    if (source['_version']) {
+      if (this.version) { this.version.addExtendedProperties(source._version!); }
+      else { this.version = new fhir.FhirString(source._version as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['name']) { this.name = new fhir.FhirString({value: source.name}); }
     else { this.name = null; }
+    if (source['_name']) {
+      if (this.name) { this.name.addExtendedProperties(source._name!); }
+      else { this.name = new fhir.FhirString(source._name as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['title']) { this.title = new fhir.FhirString({value: source.title}); }
+    if (source['_title']) {
+      if (this.title) { this.title.addExtendedProperties(source._title!); }
+      else { this.title = new fhir.FhirString(source._title as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['status']) { this.status = new fhir.FhirCode<PublicationStatusCodeType>({value: source.status}); }
     else { this.status = null; }
+    if (source['_status']) {
+      if (this.status) { this.status.addExtendedProperties(source._status!); }
+      else { this.status = new fhir.FhirCode<PublicationStatusCodeType>(source._status as Partial<fhir.FhirCode>); }
+    }
     if (source['experimental']) { this.experimental = new fhir.FhirBoolean({value: source.experimental}); }
+    if (source['_experimental']) {
+      if (this.experimental) { this.experimental.addExtendedProperties(source._experimental!); }
+      else { this.experimental = new fhir.FhirBoolean(source._experimental as Partial<fhir.FhirBooleanArgs>); }
+    }
     if (source['date']) { this.date = new fhir.FhirDateTime({value: source.date}); }
+    if (source['_date']) {
+      if (this.date) { this.date.addExtendedProperties(source._date!); }
+      else { this.date = new fhir.FhirDateTime(source._date as Partial<fhir.FhirDateTimeArgs>); }
+    }
     if (source['publisher']) { this.publisher = new fhir.FhirString({value: source.publisher}); }
+    if (source['_publisher']) {
+      if (this.publisher) { this.publisher.addExtendedProperties(source._publisher!); }
+      else { this.publisher = new fhir.FhirString(source._publisher as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['contact']) { this.contact = source.contact.map((x) => new fhir.ContactDetail(x)); }
     else { this.contact = []; }
     if (source['description']) { this.description = new fhir.FhirMarkdown({value: source.description}); }
+    if (source['_description']) {
+      if (this.description) { this.description.addExtendedProperties(source._description!); }
+      else { this.description = new fhir.FhirMarkdown(source._description as Partial<fhir.FhirMarkdownArgs>); }
+    }
     if (source['useContext']) { this.useContext = source.useContext.map((x) => new fhir.UsageContext(x)); }
     else { this.useContext = []; }
     if (source['jurisdiction']) { this.jurisdiction = source.jurisdiction.map((x) => new fhir.CodeableConcept(x)); }
     else { this.jurisdiction = []; }
     if (source['purpose']) { this.purpose = new fhir.FhirMarkdown({value: source.purpose}); }
+    if (source['_purpose']) {
+      if (this.purpose) { this.purpose.addExtendedProperties(source._purpose!); }
+      else { this.purpose = new fhir.FhirMarkdown(source._purpose as Partial<fhir.FhirMarkdownArgs>); }
+    }
     if (source['copyright']) { this.copyright = new fhir.FhirMarkdown({value: source.copyright}); }
+    if (source['_copyright']) {
+      if (this.copyright) { this.copyright.addExtendedProperties(source._copyright!); }
+      else { this.copyright = new fhir.FhirMarkdown(source._copyright as Partial<fhir.FhirMarkdownArgs>); }
+    }
     if (source['origin']) { this.origin = source.origin.map((x) => new fhir.TestScriptOrigin(x)); }
     else { this.origin = []; }
     if (source['destination']) { this.destination = source.destination.map((x) => new fhir.TestScriptDestination(x)); }

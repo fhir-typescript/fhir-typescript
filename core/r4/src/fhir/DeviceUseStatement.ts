@@ -35,6 +35,10 @@ export interface DeviceUseStatementArgs extends fhir.DomainResourceArgs {
    */
   status: fhir.FhirCode<DeviceStatementStatusCodeType>|string|undefined;
   /**
+   * Extended properties for primitive element: DeviceUseStatement.status
+   */
+  _status?:fhir.FhirElementArgs;
+  /**
    * The patient who used the device.
    */
   subject: fhir.ReferenceArgs|null;
@@ -62,6 +66,10 @@ export interface DeviceUseStatementArgs extends fhir.DomainResourceArgs {
    * The time at which the statement was made/recorded.
    */
   recordedOn?: fhir.FhirDateTime|string|undefined;
+  /**
+   * Extended properties for primitive element: DeviceUseStatement.recordedOn
+   */
+  _recordedOn?:fhir.FhirElementArgs;
   /**
    * Who reported the device was being used by the patient.
    */
@@ -169,6 +177,10 @@ export class DeviceUseStatement extends fhir.DomainResource {
     else { this.basedOn = []; }
     if (source['status']) { this.status = new fhir.FhirCode<DeviceStatementStatusCodeType>({value: source.status}); }
     else { this.status = null; }
+    if (source['_status']) {
+      if (this.status) { this.status.addExtendedProperties(source._status!); }
+      else { this.status = new fhir.FhirCode<DeviceStatementStatusCodeType>(source._status as Partial<fhir.FhirCode>); }
+    }
     if (source['subject']) { this.subject = new fhir.Reference(source.subject); }
     else { this.subject = null; }
     if (source['derivedFrom']) { this.derivedFrom = source.derivedFrom.map((x) => new fhir.Reference(x)); }
@@ -178,6 +190,10 @@ export class DeviceUseStatement extends fhir.DomainResource {
     else if (source['timingPeriod']) { this.timing = new fhir.Period(source.timingPeriod); }
     else if (source['timingDateTime']) { this.timing = new fhir.FhirDateTime({value: source.timingDateTime}); }
     if (source['recordedOn']) { this.recordedOn = new fhir.FhirDateTime({value: source.recordedOn}); }
+    if (source['_recordedOn']) {
+      if (this.recordedOn) { this.recordedOn.addExtendedProperties(source._recordedOn!); }
+      else { this.recordedOn = new fhir.FhirDateTime(source._recordedOn as Partial<fhir.FhirDateTimeArgs>); }
+    }
     if (source['source']) { this.source = new fhir.Reference(source.source); }
     if (source['device']) { this.device = new fhir.Reference(source.device); }
     else { this.device = null; }

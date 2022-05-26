@@ -97,6 +97,10 @@ export interface MedicationKnowledgeIngredientArgs extends fhir.BackboneElementA
      */
     isActive?: fhir.FhirBoolean | boolean | undefined;
     /**
+     * Extended properties for primitive element: MedicationKnowledge.ingredient.isActive
+     */
+    _isActive?: fhir.FhirElementArgs;
+    /**
      * Specifies how many (or how much) of the items there are in this Medication.  For example, 250 mg per tablet.  This is expressed as a ratio where the numerator is 250mg and the denominator is 1 tablet.
      */
     strength?: fhir.RatioArgs | undefined;
@@ -147,6 +151,10 @@ export interface MedicationKnowledgeCostArgs extends fhir.BackboneElementArgs {
      */
     source?: fhir.FhirString | string | undefined;
     /**
+     * Extended properties for primitive element: MedicationKnowledge.cost.source
+     */
+    _source?: fhir.FhirElementArgs;
+    /**
      * The price of the medication.
      */
     cost: fhir.MoneyArgs | null;
@@ -192,6 +200,10 @@ export interface MedicationKnowledgeMonitoringProgramArgs extends fhir.BackboneE
      * Name of the reviewing program.
      */
     name?: fhir.FhirString | string | undefined;
+    /**
+     * Extended properties for primitive element: MedicationKnowledge.monitoringProgram.name
+     */
+    _name?: fhir.FhirElementArgs;
 }
 /**
  * The program under which the medication is reviewed.
@@ -276,6 +288,10 @@ export interface MedicationKnowledgeAdministrationGuidelinesPatientCharacteristi
      * The specific characteristic (e.g. height, weight, gender, etc.).
      */
     value?: fhir.FhirString[] | string[] | undefined;
+    /**
+     * Extended properties for primitive element: MedicationKnowledge.administrationGuidelines.patientCharacteristics.value
+     */
+    _value?: (fhir.FhirElementArgs | null)[];
 }
 /**
  * Characteristics of the patient that are relevant to the administration guidelines (for example, height, weight, gender, etc.).
@@ -510,6 +526,10 @@ export interface MedicationKnowledgeRegulatorySubstitutionArgs extends fhir.Back
      * Specifies if regulation allows for changes in the medication when dispensing.
      */
     allowed: fhir.FhirBoolean | boolean | undefined;
+    /**
+     * Extended properties for primitive element: MedicationKnowledge.regulatory.substitution.allowed
+     */
+    _allowed?: fhir.FhirElementArgs;
 }
 /**
  * Specifies if changes are allowed when dispensing a medication from a regulatory perspective.
@@ -721,6 +741,10 @@ export interface MedicationKnowledgeArgs extends fhir.DomainResourceArgs {
      */
     status?: fhir.FhirCode<MedicationknowledgeStatusCodeType> | string | undefined;
     /**
+     * Extended properties for primitive element: MedicationKnowledge.status
+     */
+    _status?: fhir.FhirElementArgs;
+    /**
      * Describes the details of the manufacturer of the medication product.  This is not intended to represent the distributor of a medication product.
      */
     manufacturer?: fhir.ReferenceArgs | undefined;
@@ -736,6 +760,10 @@ export interface MedicationKnowledgeArgs extends fhir.DomainResourceArgs {
      * Additional names for a medication, for example, the name(s) given to a medication in different countries.  For example, acetaminophen and paracetamol or salbutamol and albuterol.
      */
     synonym?: fhir.FhirString[] | string[] | undefined;
+    /**
+     * Extended properties for primitive element: MedicationKnowledge.synonym
+     */
+    _synonym?: (fhir.FhirElementArgs | null)[];
     /**
      * Associated or related knowledge about a medication.
      */
@@ -760,6 +788,10 @@ export interface MedicationKnowledgeArgs extends fhir.DomainResourceArgs {
      * The instructions for preparing the medication.
      */
     preparationInstruction?: fhir.FhirMarkdown | string | undefined;
+    /**
+     * Extended properties for primitive element: MedicationKnowledge.preparationInstruction
+     */
+    _preparationInstruction?: fhir.FhirElementArgs;
     /**
      * The intended or approved route of administration.
      */

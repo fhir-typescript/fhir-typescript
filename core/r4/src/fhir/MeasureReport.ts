@@ -34,6 +34,10 @@ export interface MeasureReportGroupPopulationArgs extends fhir.BackboneElementAr
    */
   count?: fhir.FhirInteger|number|undefined;
   /**
+   * Extended properties for primitive element: MeasureReport.group.population.count
+   */
+  _count?:fhir.FhirElementArgs;
+  /**
    * This element refers to a List of subject level MeasureReport resources, one for each subject in this population.
    */
   subjectResults?: fhir.ReferenceArgs|undefined;
@@ -66,6 +70,10 @@ export class MeasureReportGroupPopulation extends fhir.BackboneElement {
     super(source, options);
     if (source['code']) { this.code = new fhir.CodeableConcept(source.code); }
     if (source['count']) { this.count = new fhir.FhirInteger({value: source.count}); }
+    if (source['_count']) {
+      if (this.count) { this.count.addExtendedProperties(source._count!); }
+      else { this.count = new fhir.FhirInteger(source._count as Partial<fhir.FhirIntegerArgs>); }
+    }
     if (source['subjectResults']) { this.subjectResults = new fhir.Reference(source.subjectResults); }
   }
   /**
@@ -154,6 +162,10 @@ export interface MeasureReportGroupStratifierStratumPopulationArgs extends fhir.
    */
   count?: fhir.FhirInteger|number|undefined;
   /**
+   * Extended properties for primitive element: MeasureReport.group.stratifier.stratum.population.count
+   */
+  _count?:fhir.FhirElementArgs;
+  /**
    * This element refers to a List of subject level MeasureReport resources, one for each subject in this population in this stratum.
    */
   subjectResults?: fhir.ReferenceArgs|undefined;
@@ -186,6 +198,10 @@ export class MeasureReportGroupStratifierStratumPopulation extends fhir.Backbone
     super(source, options);
     if (source['code']) { this.code = new fhir.CodeableConcept(source.code); }
     if (source['count']) { this.count = new fhir.FhirInteger({value: source.count}); }
+    if (source['_count']) {
+      if (this.count) { this.count.addExtendedProperties(source._count!); }
+      else { this.count = new fhir.FhirInteger(source._count as Partial<fhir.FhirIntegerArgs>); }
+    }
     if (source['subjectResults']) { this.subjectResults = new fhir.Reference(source.subjectResults); }
   }
   /**
@@ -412,13 +428,25 @@ export interface MeasureReportArgs extends fhir.DomainResourceArgs {
    */
   status: fhir.FhirCode<MeasureReportStatusCodeType>|string|undefined;
   /**
+   * Extended properties for primitive element: MeasureReport.status
+   */
+  _status?:fhir.FhirElementArgs;
+  /**
    * Data-collection reports are used only to communicate data-of-interest for a measure. They do not necessarily include all the data for a particular subject or population, but they may.
    */
   type: fhir.FhirCode<MeasureReportTypeCodeType>|string|undefined;
   /**
+   * Extended properties for primitive element: MeasureReport.type
+   */
+  _type?:fhir.FhirElementArgs;
+  /**
    * A reference to the Measure that was calculated to produce this report.
    */
   measure: fhir.FhirCanonical|string|undefined;
+  /**
+   * Extended properties for primitive element: MeasureReport.measure
+   */
+  _measure?:fhir.FhirElementArgs;
   /**
    * Optional subject identifying the individual or individuals the report is for.
    */
@@ -427,6 +455,10 @@ export interface MeasureReportArgs extends fhir.DomainResourceArgs {
    * The date this measure report was generated.
    */
   date?: fhir.FhirDateTime|string|undefined;
+  /**
+   * Extended properties for primitive element: MeasureReport.date
+   */
+  _date?:fhir.FhirElementArgs;
   /**
    * The individual, location, or organization that is reporting the data.
    */
@@ -515,12 +547,28 @@ export class MeasureReport extends fhir.DomainResource {
     else { this.identifier = []; }
     if (source['status']) { this.status = new fhir.FhirCode<MeasureReportStatusCodeType>({value: source.status}); }
     else { this.status = null; }
+    if (source['_status']) {
+      if (this.status) { this.status.addExtendedProperties(source._status!); }
+      else { this.status = new fhir.FhirCode<MeasureReportStatusCodeType>(source._status as Partial<fhir.FhirCode>); }
+    }
     if (source['type']) { this.type = new fhir.FhirCode<MeasureReportTypeCodeType>({value: source.type}); }
     else { this.type = null; }
+    if (source['_type']) {
+      if (this.type) { this.type.addExtendedProperties(source._type!); }
+      else { this.type = new fhir.FhirCode<MeasureReportTypeCodeType>(source._type as Partial<fhir.FhirCode>); }
+    }
     if (source['measure']) { this.measure = new fhir.FhirCanonical({value: source.measure}); }
     else { this.measure = null; }
+    if (source['_measure']) {
+      if (this.measure) { this.measure.addExtendedProperties(source._measure!); }
+      else { this.measure = new fhir.FhirCanonical(source._measure as Partial<fhir.FhirCanonicalArgs>); }
+    }
     if (source['subject']) { this.subject = new fhir.Reference(source.subject); }
     if (source['date']) { this.date = new fhir.FhirDateTime({value: source.date}); }
+    if (source['_date']) {
+      if (this.date) { this.date.addExtendedProperties(source._date!); }
+      else { this.date = new fhir.FhirDateTime(source._date as Partial<fhir.FhirDateTimeArgs>); }
+    }
     if (source['reporter']) { this.reporter = new fhir.Reference(source.reporter); }
     if (source['period']) { this.period = new fhir.Period(source.period); }
     else { this.period = null; }

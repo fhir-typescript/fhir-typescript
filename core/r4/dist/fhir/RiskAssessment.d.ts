@@ -29,6 +29,10 @@ export interface RiskAssessmentPredictionArgs extends fhir.BackboneElementArgs {
      */
     relativeRisk?: fhir.FhirDecimal | number | undefined;
     /**
+     * Extended properties for primitive element: RiskAssessment.prediction.relativeRisk
+     */
+    _relativeRisk?: fhir.FhirElementArgs;
+    /**
      * If not specified, the risk applies "over the subject's lifespan".
      */
     when?: fhir.Period | fhir.Range | undefined;
@@ -44,6 +48,10 @@ export interface RiskAssessmentPredictionArgs extends fhir.BackboneElementArgs {
      * Additional information explaining the basis for the prediction.
      */
     rationale?: fhir.FhirString | string | undefined;
+    /**
+     * Extended properties for primitive element: RiskAssessment.prediction.rationale
+     */
+    _rationale?: fhir.FhirElementArgs;
 }
 /**
  * Multiple repetitions can be used to identify the same type of outcome in different timeframes as well as different types of outcomes.
@@ -119,6 +127,10 @@ export interface RiskAssessmentArgs extends fhir.DomainResourceArgs {
      */
     status: fhir.FhirCode<ObservationStatusCodeType> | string | undefined;
     /**
+     * Extended properties for primitive element: RiskAssessment.status
+     */
+    _status?: fhir.FhirElementArgs;
+    /**
      * The algorithm, process or mechanism used to evaluate the risk.
      */
     method?: fhir.CodeableConceptArgs | undefined;
@@ -174,6 +186,10 @@ export interface RiskAssessmentArgs extends fhir.DomainResourceArgs {
      * A description of the steps that might be taken to reduce the identified risk(s).
      */
     mitigation?: fhir.FhirString | string | undefined;
+    /**
+     * Extended properties for primitive element: RiskAssessment.mitigation
+     */
+    _mitigation?: fhir.FhirElementArgs;
     /**
      * Additional comments about the risk assessment.
      */

@@ -42,6 +42,10 @@ export interface RiskAssessmentPredictionArgs extends fhir.BackboneElementArgs {
    */
   relativeRisk?: fhir.FhirDecimal|number|undefined;
   /**
+   * Extended properties for primitive element: RiskAssessment.prediction.relativeRisk
+   */
+  _relativeRisk?:fhir.FhirElementArgs;
+  /**
    * If not specified, the risk applies "over the subject's lifespan".
    */
   when?: fhir.Period|fhir.Range|undefined;
@@ -57,6 +61,10 @@ export interface RiskAssessmentPredictionArgs extends fhir.BackboneElementArgs {
    * Additional information explaining the basis for the prediction.
    */
   rationale?: fhir.FhirString|string|undefined;
+  /**
+   * Extended properties for primitive element: RiskAssessment.prediction.rationale
+   */
+  _rationale?:fhir.FhirElementArgs;
 }
 
 /**
@@ -110,10 +118,18 @@ export class RiskAssessmentPrediction extends fhir.BackboneElement {
     else if (source['probabilityRange']) { this.probability = new fhir.Range(source.probabilityRange); }
     if (source['qualitativeRisk']) { this.qualitativeRisk = new fhir.CodeableConcept(source.qualitativeRisk); }
     if (source['relativeRisk']) { this.relativeRisk = new fhir.FhirDecimal({value: source.relativeRisk}); }
+    if (source['_relativeRisk']) {
+      if (this.relativeRisk) { this.relativeRisk.addExtendedProperties(source._relativeRisk!); }
+      else { this.relativeRisk = new fhir.FhirDecimal(source._relativeRisk as Partial<fhir.FhirDecimalArgs>); }
+    }
     if (source['when']) { this.when = source.when; }
     else if (source['whenPeriod']) { this.when = new fhir.Period(source.whenPeriod); }
     else if (source['whenRange']) { this.when = new fhir.Range(source.whenRange); }
     if (source['rationale']) { this.rationale = new fhir.FhirString({value: source.rationale}); }
+    if (source['_rationale']) {
+      if (this.rationale) { this.rationale.addExtendedProperties(source._rationale!); }
+      else { this.rationale = new fhir.FhirString(source._rationale as Partial<fhir.FhirStringArgs>); }
+    }
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -151,6 +167,10 @@ export interface RiskAssessmentArgs extends fhir.DomainResourceArgs {
    * The status of the RiskAssessment, using the same statuses as an Observation.
    */
   status: fhir.FhirCode<ObservationStatusCodeType>|string|undefined;
+  /**
+   * Extended properties for primitive element: RiskAssessment.status
+   */
+  _status?:fhir.FhirElementArgs;
   /**
    * The algorithm, process or mechanism used to evaluate the risk.
    */
@@ -207,6 +227,10 @@ export interface RiskAssessmentArgs extends fhir.DomainResourceArgs {
    * A description of the steps that might be taken to reduce the identified risk(s).
    */
   mitigation?: fhir.FhirString|string|undefined;
+  /**
+   * Extended properties for primitive element: RiskAssessment.mitigation
+   */
+  _mitigation?:fhir.FhirElementArgs;
   /**
    * Additional comments about the risk assessment.
    */
@@ -309,6 +333,10 @@ export class RiskAssessment extends fhir.DomainResource {
     if (source['parent']) { this.parent = new fhir.Reference(source.parent); }
     if (source['status']) { this.status = new fhir.FhirCode<ObservationStatusCodeType>({value: source.status}); }
     else { this.status = null; }
+    if (source['_status']) {
+      if (this.status) { this.status.addExtendedProperties(source._status!); }
+      else { this.status = new fhir.FhirCode<ObservationStatusCodeType>(source._status as Partial<fhir.FhirCode>); }
+    }
     if (source['method']) { this.method = new fhir.CodeableConcept(source.method); }
     if (source['code']) { this.code = new fhir.CodeableConcept(source.code); }
     if (source['subject']) { this.subject = new fhir.Reference(source.subject); }
@@ -328,6 +356,10 @@ export class RiskAssessment extends fhir.DomainResource {
     if (source['prediction']) { this.prediction = source.prediction.map((x) => new fhir.RiskAssessmentPrediction(x)); }
     else { this.prediction = []; }
     if (source['mitigation']) { this.mitigation = new fhir.FhirString({value: source.mitigation}); }
+    if (source['_mitigation']) {
+      if (this.mitigation) { this.mitigation.addExtendedProperties(source._mitigation!); }
+      else { this.mitigation = new fhir.FhirString(source._mitigation as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['note']) { this.note = source.note.map((x) => new fhir.Annotation(x)); }
     else { this.note = []; }
   }

@@ -26,17 +26,33 @@ export interface ConceptMapGroupElementTargetDependsOnArgs extends fhir.Backbone
    */
   property: fhir.FhirUri|string|undefined;
   /**
+   * Extended properties for primitive element: ConceptMap.group.element.target.dependsOn.property
+   */
+  _property?:fhir.FhirElementArgs;
+  /**
    * An absolute URI that identifies the code system of the dependency code (if the source/dependency is a value set that crosses code systems).
    */
   system?: fhir.FhirCanonical|string|undefined;
+  /**
+   * Extended properties for primitive element: ConceptMap.group.element.target.dependsOn.system
+   */
+  _system?:fhir.FhirElementArgs;
   /**
    * Identity (code or path) or the element/item/ValueSet/text that the map depends on / refers to.
    */
   value: fhir.FhirString|string|undefined;
   /**
+   * Extended properties for primitive element: ConceptMap.group.element.target.dependsOn.value
+   */
+  _value?:fhir.FhirElementArgs;
+  /**
    * The display is ignored when processing the map.
    */
   display?: fhir.FhirString|string|undefined;
+  /**
+   * Extended properties for primitive element: ConceptMap.group.element.target.dependsOn.display
+   */
+  _display?:fhir.FhirElementArgs;
 }
 
 /**
@@ -70,10 +86,26 @@ export class ConceptMapGroupElementTargetDependsOn extends fhir.BackboneElement 
     super(source, options);
     if (source['property']) { this.property = new fhir.FhirUri({value: source.property}); }
     else { this.property = null; }
+    if (source['_property']) {
+      if (this.property) { this.property.addExtendedProperties(source._property!); }
+      else { this.property = new fhir.FhirUri(source._property as Partial<fhir.FhirUriArgs>); }
+    }
     if (source['system']) { this.system = new fhir.FhirCanonical({value: source.system}); }
+    if (source['_system']) {
+      if (this.system) { this.system.addExtendedProperties(source._system!); }
+      else { this.system = new fhir.FhirCanonical(source._system as Partial<fhir.FhirCanonicalArgs>); }
+    }
     if (source['value']) { this.value = new fhir.FhirString({value: source.value}); }
     else { this.value = null; }
+    if (source['_value']) {
+      if (this.value) { this.value.addExtendedProperties(source._value!); }
+      else { this.value = new fhir.FhirString(source._value as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['display']) { this.display = new fhir.FhirString({value: source.display}); }
+    if (source['_display']) {
+      if (this.display) { this.display.addExtendedProperties(source._display!); }
+      else { this.display = new fhir.FhirString(source._display as Partial<fhir.FhirStringArgs>); }
+    }
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -102,17 +134,33 @@ export interface ConceptMapGroupElementTargetArgs extends fhir.BackboneElementAr
    */
   code?: fhir.FhirCode|string|undefined;
   /**
+   * Extended properties for primitive element: ConceptMap.group.element.target.code
+   */
+  _code?:fhir.FhirElementArgs;
+  /**
    * The display is ignored when processing the map.
    */
   display?: fhir.FhirString|string|undefined;
+  /**
+   * Extended properties for primitive element: ConceptMap.group.element.target.display
+   */
+  _display?:fhir.FhirElementArgs;
   /**
    * This element is labeled as a modifier because it may indicate that a target does not apply.
    */
   equivalence: fhir.FhirCode<ConceptMapEquivalenceCodeType>|string|undefined;
   /**
+   * Extended properties for primitive element: ConceptMap.group.element.target.equivalence
+   */
+  _equivalence?:fhir.FhirElementArgs;
+  /**
    * A description of status/issues in mapping that conveys additional information not represented in  the structured data.
    */
   comment?: fhir.FhirString|string|undefined;
+  /**
+   * Extended properties for primitive element: ConceptMap.group.element.target.comment
+   */
+  _comment?:fhir.FhirElementArgs;
   /**
    * A set of additional dependencies for this mapping to hold. This mapping is only applicable if the specified element can be resolved, and it has the specified value.
    */
@@ -161,10 +209,26 @@ export class ConceptMapGroupElementTarget extends fhir.BackboneElement {
   constructor(source:Partial<ConceptMapGroupElementTargetArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
     if (source['code']) { this.code = new fhir.FhirCode({value: source.code}); }
+    if (source['_code']) {
+      if (this.code) { this.code.addExtendedProperties(source._code!); }
+      else { this.code = new fhir.FhirCode(source._code as Partial<fhir.FhirCodeArgs>); }
+    }
     if (source['display']) { this.display = new fhir.FhirString({value: source.display}); }
+    if (source['_display']) {
+      if (this.display) { this.display.addExtendedProperties(source._display!); }
+      else { this.display = new fhir.FhirString(source._display as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['equivalence']) { this.equivalence = new fhir.FhirCode<ConceptMapEquivalenceCodeType>({value: source.equivalence}); }
     else { this.equivalence = null; }
+    if (source['_equivalence']) {
+      if (this.equivalence) { this.equivalence.addExtendedProperties(source._equivalence!); }
+      else { this.equivalence = new fhir.FhirCode<ConceptMapEquivalenceCodeType>(source._equivalence as Partial<fhir.FhirCode>); }
+    }
     if (source['comment']) { this.comment = new fhir.FhirString({value: source.comment}); }
+    if (source['_comment']) {
+      if (this.comment) { this.comment.addExtendedProperties(source._comment!); }
+      else { this.comment = new fhir.FhirString(source._comment as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['dependsOn']) { this.dependsOn = source.dependsOn.map((x) => new fhir.ConceptMapGroupElementTargetDependsOn(x)); }
     else { this.dependsOn = []; }
     if (source['product']) { this.product = source.product.map((x) => new fhir.ConceptMapGroupElementTargetDependsOn(x)); }
@@ -205,9 +269,17 @@ export interface ConceptMapGroupElementArgs extends fhir.BackboneElementArgs {
    */
   code?: fhir.FhirCode|string|undefined;
   /**
+   * Extended properties for primitive element: ConceptMap.group.element.code
+   */
+  _code?:fhir.FhirElementArgs;
+  /**
    * The display is ignored when processing the map.
    */
   display?: fhir.FhirString|string|undefined;
+  /**
+   * Extended properties for primitive element: ConceptMap.group.element.display
+   */
+  _display?:fhir.FhirElementArgs;
   /**
    * Ideally there would only be one map, with equal or equivalent mapping. But multiple maps are allowed for several narrower options, or to assert that other concepts are unmatched.
    */
@@ -240,7 +312,15 @@ export class ConceptMapGroupElement extends fhir.BackboneElement {
   constructor(source:Partial<ConceptMapGroupElementArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
     if (source['code']) { this.code = new fhir.FhirCode({value: source.code}); }
+    if (source['_code']) {
+      if (this.code) { this.code.addExtendedProperties(source._code!); }
+      else { this.code = new fhir.FhirCode(source._code as Partial<fhir.FhirCodeArgs>); }
+    }
     if (source['display']) { this.display = new fhir.FhirString({value: source.display}); }
+    if (source['_display']) {
+      if (this.display) { this.display.addExtendedProperties(source._display!); }
+      else { this.display = new fhir.FhirString(source._display as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['target']) { this.target = source.target.map((x) => new fhir.ConceptMapGroupElementTarget(x)); }
     else { this.target = []; }
   }
@@ -264,17 +344,33 @@ export interface ConceptMapGroupUnmappedArgs extends fhir.BackboneElementArgs {
    */
   mode: fhir.FhirCode<ConceptmapUnmappedModeCodeType>|string|undefined;
   /**
+   * Extended properties for primitive element: ConceptMap.group.unmapped.mode
+   */
+  _mode?:fhir.FhirElementArgs;
+  /**
    * The fixed code to use when the mode = 'fixed'  - all unmapped codes are mapped to a single fixed code.
    */
   code?: fhir.FhirCode|string|undefined;
+  /**
+   * Extended properties for primitive element: ConceptMap.group.unmapped.code
+   */
+  _code?:fhir.FhirElementArgs;
   /**
    * The display is ignored when processing the map.
    */
   display?: fhir.FhirString|string|undefined;
   /**
+   * Extended properties for primitive element: ConceptMap.group.unmapped.display
+   */
+  _display?:fhir.FhirElementArgs;
+  /**
    * The canonical reference to an additional ConceptMap resource instance to use for mapping if this ConceptMap resource contains no matching mapping for the source concept.
    */
   url?: fhir.FhirCanonical|string|undefined;
+  /**
+   * Extended properties for primitive element: ConceptMap.group.unmapped.url
+   */
+  _url?:fhir.FhirElementArgs;
 }
 
 /**
@@ -308,9 +404,25 @@ export class ConceptMapGroupUnmapped extends fhir.BackboneElement {
     super(source, options);
     if (source['mode']) { this.mode = new fhir.FhirCode<ConceptmapUnmappedModeCodeType>({value: source.mode}); }
     else { this.mode = null; }
+    if (source['_mode']) {
+      if (this.mode) { this.mode.addExtendedProperties(source._mode!); }
+      else { this.mode = new fhir.FhirCode<ConceptmapUnmappedModeCodeType>(source._mode as Partial<fhir.FhirCode>); }
+    }
     if (source['code']) { this.code = new fhir.FhirCode({value: source.code}); }
+    if (source['_code']) {
+      if (this.code) { this.code.addExtendedProperties(source._code!); }
+      else { this.code = new fhir.FhirCode(source._code as Partial<fhir.FhirCodeArgs>); }
+    }
     if (source['display']) { this.display = new fhir.FhirString({value: source.display}); }
+    if (source['_display']) {
+      if (this.display) { this.display.addExtendedProperties(source._display!); }
+      else { this.display = new fhir.FhirString(source._display as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['url']) { this.url = new fhir.FhirCanonical({value: source.url}); }
+    if (source['_url']) {
+      if (this.url) { this.url.addExtendedProperties(source._url!); }
+      else { this.url = new fhir.FhirCanonical(source._url as Partial<fhir.FhirCanonicalArgs>); }
+    }
   }
   /**
    * Required-bound Value Set for mode (ConceptMap.group.unmapped.mode)
@@ -345,17 +457,33 @@ export interface ConceptMapGroupArgs extends fhir.BackboneElementArgs {
    */
   source?: fhir.FhirUri|string|undefined;
   /**
+   * Extended properties for primitive element: ConceptMap.group.source
+   */
+  _source?:fhir.FhirElementArgs;
+  /**
    * The specification of a particular code system version may be required for code systems which lack concept permanence.
    */
   sourceVersion?: fhir.FhirString|string|undefined;
+  /**
+   * Extended properties for primitive element: ConceptMap.group.sourceVersion
+   */
+  _sourceVersion?:fhir.FhirElementArgs;
   /**
    * This is not needed if the target value set is specified and it contains concepts from only a single system. The group target may also be omitted if all of the target element equivalence values are 'unmatched'.
    */
   target?: fhir.FhirUri|string|undefined;
   /**
+   * Extended properties for primitive element: ConceptMap.group.target
+   */
+  _target?:fhir.FhirElementArgs;
+  /**
    * The specification of a particular code system version may be required for code systems which lack concept permanence.
    */
   targetVersion?: fhir.FhirString|string|undefined;
+  /**
+   * Extended properties for primitive element: ConceptMap.group.targetVersion
+   */
+  _targetVersion?:fhir.FhirElementArgs;
   /**
    * Generally, the ideal is that there would only be one mapping for each concept in the source value set, but a given concept may be mapped multiple times with different comments or dependencies.
    */
@@ -404,9 +532,25 @@ export class ConceptMapGroup extends fhir.BackboneElement {
   constructor(source:Partial<ConceptMapGroupArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
     if (source['source']) { this.source = new fhir.FhirUri({value: source.source}); }
+    if (source['_source']) {
+      if (this.source) { this.source.addExtendedProperties(source._source!); }
+      else { this.source = new fhir.FhirUri(source._source as Partial<fhir.FhirUriArgs>); }
+    }
     if (source['sourceVersion']) { this.sourceVersion = new fhir.FhirString({value: source.sourceVersion}); }
+    if (source['_sourceVersion']) {
+      if (this.sourceVersion) { this.sourceVersion.addExtendedProperties(source._sourceVersion!); }
+      else { this.sourceVersion = new fhir.FhirString(source._sourceVersion as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['target']) { this.target = new fhir.FhirUri({value: source.target}); }
+    if (source['_target']) {
+      if (this.target) { this.target.addExtendedProperties(source._target!); }
+      else { this.target = new fhir.FhirUri(source._target as Partial<fhir.FhirUriArgs>); }
+    }
     if (source['targetVersion']) { this.targetVersion = new fhir.FhirString({value: source.targetVersion}); }
+    if (source['_targetVersion']) {
+      if (this.targetVersion) { this.targetVersion.addExtendedProperties(source._targetVersion!); }
+      else { this.targetVersion = new fhir.FhirString(source._targetVersion as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['element']) { this.element = source.element.map((x) => new fhir.ConceptMapGroupElement(x)); }
     else { this.element = []; }
     if (source['unmapped']) { this.unmapped = new fhir.ConceptMapGroupUnmapped(source.unmapped); }
@@ -447,6 +591,10 @@ export interface ConceptMapArgs extends fhir.DomainResourceArgs {
    */
   url?: fhir.FhirUri|string|undefined;
   /**
+   * Extended properties for primitive element: ConceptMap.url
+   */
+  _url?:fhir.FhirElementArgs;
+  /**
    * Typically, this is used for identifiers that can go in an HL7 V3 II (instance identifier) data type, and can then identify this concept map outside of FHIR, where it is not possible to use the logical URI.
    */
   identifier?: fhir.IdentifierArgs|undefined;
@@ -455,29 +603,57 @@ export interface ConceptMapArgs extends fhir.DomainResourceArgs {
    */
   version?: fhir.FhirString|string|undefined;
   /**
+   * Extended properties for primitive element: ConceptMap.version
+   */
+  _version?:fhir.FhirElementArgs;
+  /**
    * The name is not expected to be globally unique. The name should be a simple alphanumeric type name to ensure that it is machine-processing friendly.
    */
   name?: fhir.FhirString|string|undefined;
+  /**
+   * Extended properties for primitive element: ConceptMap.name
+   */
+  _name?:fhir.FhirElementArgs;
   /**
    * This name does not need to be machine-processing friendly and may contain punctuation, white-space, etc.
    */
   title?: fhir.FhirString|string|undefined;
   /**
+   * Extended properties for primitive element: ConceptMap.title
+   */
+  _title?:fhir.FhirElementArgs;
+  /**
    * Allows filtering of concept maps that are appropriate for use versus not.
    */
   status: fhir.FhirCode<PublicationStatusCodeType>|string|undefined;
+  /**
+   * Extended properties for primitive element: ConceptMap.status
+   */
+  _status?:fhir.FhirElementArgs;
   /**
    * Allows filtering of concept maps that are appropriate for use versus not.
    */
   experimental?: fhir.FhirBoolean|boolean|undefined;
   /**
+   * Extended properties for primitive element: ConceptMap.experimental
+   */
+  _experimental?:fhir.FhirElementArgs;
+  /**
    * Note that this is not the same as the resource last-modified-date, since the resource may be a secondary representation of the concept map. Additional specific dates may be added as extensions or be found by consulting Provenances associated with past versions of the resource.
    */
   date?: fhir.FhirDateTime|string|undefined;
   /**
+   * Extended properties for primitive element: ConceptMap.date
+   */
+  _date?:fhir.FhirElementArgs;
+  /**
    * Usually an organization but may be an individual. The publisher (or steward) of the concept map is the organization or individual primarily responsible for the maintenance and upkeep of the concept map. This is not necessarily the same individual or organization that developed and initially authored the content. The publisher is the primary point of contact for questions or issues with the concept map. This item SHOULD be populated unless the information is available from context.
    */
   publisher?: fhir.FhirString|string|undefined;
+  /**
+   * Extended properties for primitive element: ConceptMap.publisher
+   */
+  _publisher?:fhir.FhirElementArgs;
   /**
    * May be a web site, an email address, a telephone number, etc.
    */
@@ -486,6 +662,10 @@ export interface ConceptMapArgs extends fhir.DomainResourceArgs {
    * The description is not intended to describe the semantics of the concept map. The description should capture its intended use, which is needed for ensuring integrity for its use in models across future changes.
    */
   description?: fhir.FhirMarkdown|string|undefined;
+  /**
+   * Extended properties for primitive element: ConceptMap.description
+   */
+  _description?:fhir.FhirElementArgs;
   /**
    * When multiple useContexts are specified, there is no expectation that all or any of the contexts apply.
    */
@@ -499,9 +679,17 @@ export interface ConceptMapArgs extends fhir.DomainResourceArgs {
    */
   purpose?: fhir.FhirMarkdown|string|undefined;
   /**
+   * Extended properties for primitive element: ConceptMap.purpose
+   */
+  _purpose?:fhir.FhirElementArgs;
+  /**
    * Frequently the copyright differs between the concept map and codes that are included. The copyright statement should clearly differentiate between these when required.
    */
   copyright?: fhir.FhirMarkdown|string|undefined;
+  /**
+   * Extended properties for primitive element: ConceptMap.copyright
+   */
+  _copyright?:fhir.FhirElementArgs;
   /**
    * Should be a version specific reference. URIs SHOULD be absolute. If there is no source or target value set, there is no specified context for the map (not recommended).  The source value set may select codes from either an explicit (standard or local) or implicit code system.
    */
@@ -633,24 +821,68 @@ export class ConceptMap extends fhir.DomainResource {
     super(source, options);
     this.resourceType = 'ConceptMap';
     if (source['url']) { this.url = new fhir.FhirUri({value: source.url}); }
+    if (source['_url']) {
+      if (this.url) { this.url.addExtendedProperties(source._url!); }
+      else { this.url = new fhir.FhirUri(source._url as Partial<fhir.FhirUriArgs>); }
+    }
     if (source['identifier']) { this.identifier = new fhir.Identifier(source.identifier); }
     if (source['version']) { this.version = new fhir.FhirString({value: source.version}); }
+    if (source['_version']) {
+      if (this.version) { this.version.addExtendedProperties(source._version!); }
+      else { this.version = new fhir.FhirString(source._version as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['name']) { this.name = new fhir.FhirString({value: source.name}); }
+    if (source['_name']) {
+      if (this.name) { this.name.addExtendedProperties(source._name!); }
+      else { this.name = new fhir.FhirString(source._name as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['title']) { this.title = new fhir.FhirString({value: source.title}); }
+    if (source['_title']) {
+      if (this.title) { this.title.addExtendedProperties(source._title!); }
+      else { this.title = new fhir.FhirString(source._title as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['status']) { this.status = new fhir.FhirCode<PublicationStatusCodeType>({value: source.status}); }
     else { this.status = null; }
+    if (source['_status']) {
+      if (this.status) { this.status.addExtendedProperties(source._status!); }
+      else { this.status = new fhir.FhirCode<PublicationStatusCodeType>(source._status as Partial<fhir.FhirCode>); }
+    }
     if (source['experimental']) { this.experimental = new fhir.FhirBoolean({value: source.experimental}); }
+    if (source['_experimental']) {
+      if (this.experimental) { this.experimental.addExtendedProperties(source._experimental!); }
+      else { this.experimental = new fhir.FhirBoolean(source._experimental as Partial<fhir.FhirBooleanArgs>); }
+    }
     if (source['date']) { this.date = new fhir.FhirDateTime({value: source.date}); }
+    if (source['_date']) {
+      if (this.date) { this.date.addExtendedProperties(source._date!); }
+      else { this.date = new fhir.FhirDateTime(source._date as Partial<fhir.FhirDateTimeArgs>); }
+    }
     if (source['publisher']) { this.publisher = new fhir.FhirString({value: source.publisher}); }
+    if (source['_publisher']) {
+      if (this.publisher) { this.publisher.addExtendedProperties(source._publisher!); }
+      else { this.publisher = new fhir.FhirString(source._publisher as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['contact']) { this.contact = source.contact.map((x) => new fhir.ContactDetail(x)); }
     else { this.contact = []; }
     if (source['description']) { this.description = new fhir.FhirMarkdown({value: source.description}); }
+    if (source['_description']) {
+      if (this.description) { this.description.addExtendedProperties(source._description!); }
+      else { this.description = new fhir.FhirMarkdown(source._description as Partial<fhir.FhirMarkdownArgs>); }
+    }
     if (source['useContext']) { this.useContext = source.useContext.map((x) => new fhir.UsageContext(x)); }
     else { this.useContext = []; }
     if (source['jurisdiction']) { this.jurisdiction = source.jurisdiction.map((x) => new fhir.CodeableConcept(x)); }
     else { this.jurisdiction = []; }
     if (source['purpose']) { this.purpose = new fhir.FhirMarkdown({value: source.purpose}); }
+    if (source['_purpose']) {
+      if (this.purpose) { this.purpose.addExtendedProperties(source._purpose!); }
+      else { this.purpose = new fhir.FhirMarkdown(source._purpose as Partial<fhir.FhirMarkdownArgs>); }
+    }
     if (source['copyright']) { this.copyright = new fhir.FhirMarkdown({value: source.copyright}); }
+    if (source['_copyright']) {
+      if (this.copyright) { this.copyright.addExtendedProperties(source._copyright!); }
+      else { this.copyright = new fhir.FhirMarkdown(source._copyright as Partial<fhir.FhirMarkdownArgs>); }
+    }
     if (source['source']) { this.source = source.source; }
     else if (source['sourceUri']) { this.source = new fhir.FhirUri({value: source.sourceUri}); }
     else if (source['sourceCanonical']) { this.source = new fhir.FhirCanonical({value: source.sourceCanonical}); }

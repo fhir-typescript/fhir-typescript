@@ -19,9 +19,17 @@ export interface ServiceRequestArgs extends fhir.DomainResourceArgs {
      */
     instantiatesCanonical?: fhir.FhirCanonical[] | string[] | undefined;
     /**
+     * Extended properties for primitive element: ServiceRequest.instantiatesCanonical
+     */
+    _instantiatesCanonical?: (fhir.FhirElementArgs | null)[];
+    /**
      * This might be an HTML page, PDF, etc. or could just be a non-resolvable URI identifier.
      */
     instantiatesUri?: fhir.FhirUri[] | string[] | undefined;
+    /**
+     * Extended properties for primitive element: ServiceRequest.instantiatesUri
+     */
+    _instantiatesUri?: (fhir.FhirElementArgs | null)[];
     /**
      * Plan/proposal/order fulfilled by this request.
      */
@@ -39,9 +47,17 @@ export interface ServiceRequestArgs extends fhir.DomainResourceArgs {
      */
     status: fhir.FhirCode<RequestStatusCodeType> | string | undefined;
     /**
+     * Extended properties for primitive element: ServiceRequest.status
+     */
+    _status?: fhir.FhirElementArgs;
+    /**
      * This element is labeled as a modifier because the intent alters when and how the resource is actually applicable.
      */
     intent: fhir.FhirCode<RequestIntentCodeType> | string | undefined;
+    /**
+     * Extended properties for primitive element: ServiceRequest.intent
+     */
+    _intent?: fhir.FhirElementArgs;
     /**
      * There may be multiple axis of categorization depending on the context or use case for retrieving or displaying the resource.  The level of granularity is defined by the category concepts in the value set.
      */
@@ -51,9 +67,17 @@ export interface ServiceRequestArgs extends fhir.DomainResourceArgs {
      */
     priority?: fhir.FhirCode<RequestPriorityCodeType> | string | undefined;
     /**
+     * Extended properties for primitive element: ServiceRequest.priority
+     */
+    _priority?: fhir.FhirElementArgs;
+    /**
      * In general, only the code and timeframe will be present, though occasional additional qualifiers such as body site or even performer could be included to narrow the scope of the prohibition.  If the ServiceRequest.code and ServiceRequest.doNotPerform both contain negation, that will reinforce prohibition and should not have a double negative interpretation.
      */
     doNotPerform?: fhir.FhirBoolean | boolean | undefined;
+    /**
+     * Extended properties for primitive element: ServiceRequest.doNotPerform
+     */
+    _doNotPerform?: fhir.FhirElementArgs;
     /**
      * Many laboratory and radiology procedure codes embed the specimen/organ system in the test order name, for example,  serum or serum/plasma glucose, or a chest x-ray. The specimen might not be recorded separately from the test code.
      */
@@ -119,6 +143,10 @@ export interface ServiceRequestArgs extends fhir.DomainResourceArgs {
      */
     authoredOn?: fhir.FhirDateTime | string | undefined;
     /**
+     * Extended properties for primitive element: ServiceRequest.authoredOn
+     */
+    _authoredOn?: fhir.FhirElementArgs;
+    /**
      * This not the dispatcher, but rather who is the authorizer.  This element is not intended to handle delegation which would generally be managed through the Provenance resource.
      */
     requester?: fhir.ReferenceArgs | undefined;
@@ -170,6 +198,10 @@ export interface ServiceRequestArgs extends fhir.DomainResourceArgs {
      * Instructions in terms that are understood by the patient or consumer.
      */
     patientInstruction?: fhir.FhirString | string | undefined;
+    /**
+     * Extended properties for primitive element: ServiceRequest.patientInstruction
+     */
+    _patientInstruction?: fhir.FhirElementArgs;
     /**
      * This might not include provenances for all versions of the request – only those deemed “relevant” or important.
      * This SHALL NOT include the Provenance associated with this current version of the resource.  (If that provenance is deemed to be a “relevant” change, it will need to be added as part of a later update.  Until then, it can be queried directly as the Provenance that points to this version using _revinclude

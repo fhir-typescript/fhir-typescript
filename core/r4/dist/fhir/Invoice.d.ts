@@ -48,6 +48,10 @@ export interface InvoiceLineItemPriceComponentArgs extends fhir.BackboneElementA
      */
     type: fhir.FhirCode<InvoicePriceComponentTypeCodeType> | string | undefined;
     /**
+     * Extended properties for primitive element: Invoice.lineItem.priceComponent.type
+     */
+    _type?: fhir.FhirElementArgs;
+    /**
      * A code that identifies the component. Codes may be used to differentiate between kinds of taxes, surcharges, discounts etc.
      */
     code?: fhir.CodeableConceptArgs | undefined;
@@ -55,6 +59,10 @@ export interface InvoiceLineItemPriceComponentArgs extends fhir.BackboneElementA
      * There is no reason to carry the price in the instance of a ChargeItem unless circumstances require a manual override. The list prices or are usually defined in a back catalogue of the billing codes  (see ChargeItem.definition). Derived profiles may require a ChargeItem.overrideReason to be provided if either factor or price are manually overridden.
      */
     factor?: fhir.FhirDecimal | number | undefined;
+    /**
+     * Extended properties for primitive element: Invoice.lineItem.priceComponent.factor
+     */
+    _factor?: fhir.FhirElementArgs;
     /**
      * There is no reason to carry the price in the instance of a ChargeItem unless circumstances require a manual override. The list prices or are usually defined in a back catalogue of the billing codes  (see ChargeItem.definition). Derived profiles may require a ChargeItem.overrideReason to be provided if either factor or price are manually overridden.
      */
@@ -112,6 +120,10 @@ export interface InvoiceLineItemArgs extends fhir.BackboneElementArgs {
      * Sequence in which the items appear on the invoice.
      */
     sequence?: fhir.FhirPositiveInt | number | undefined;
+    /**
+     * Extended properties for primitive element: Invoice.lineItem.sequence
+     */
+    _sequence?: fhir.FhirElementArgs;
     /**
      * The ChargeItem contains information such as the billing code, date, amount etc. If no further details are required for the lineItem, inline billing codes can be added using the CodeableConcept data type instead of the Reference.
      */
@@ -179,9 +191,17 @@ export interface InvoiceArgs extends fhir.DomainResourceArgs {
      */
     status: fhir.FhirCode<InvoiceStatusCodeType> | string | undefined;
     /**
+     * Extended properties for primitive element: Invoice.status
+     */
+    _status?: fhir.FhirElementArgs;
+    /**
      * Derived Profiles may choose to add invariants requiring this field to be populated if either priceOverride or factorOverride have been filled.
      */
     cancelledReason?: fhir.FhirString | string | undefined;
+    /**
+     * Extended properties for primitive element: Invoice.cancelledReason
+     */
+    _cancelledReason?: fhir.FhirElementArgs;
     /**
      * Type of Invoice depending on domain, realm an usage (e.g. internal/external, dental, preliminary).
      */
@@ -198,6 +218,10 @@ export interface InvoiceArgs extends fhir.DomainResourceArgs {
      * The list of types may be constrained as appropriate for the type of charge item.
      */
     date?: fhir.FhirDateTime | string | undefined;
+    /**
+     * Extended properties for primitive element: Invoice.date
+     */
+    _date?: fhir.FhirElementArgs;
     /**
      * Indicates who or what performed or participated in the charged service.
      */
@@ -230,6 +254,10 @@ export interface InvoiceArgs extends fhir.DomainResourceArgs {
      * Derived Profiles may chose to add invariants requiring this field to be populated if either priceOverride or factorOverride have been filled.
      */
     paymentTerms?: fhir.FhirMarkdown | string | undefined;
+    /**
+     * Extended properties for primitive element: Invoice.paymentTerms
+     */
+    _paymentTerms?: fhir.FhirElementArgs;
     /**
      * Comments made about the invoice by the issuer, subject, or other participants.
      */

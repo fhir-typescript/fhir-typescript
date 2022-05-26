@@ -52,17 +52,33 @@ export interface ImmunizationEducationArgs extends fhir.BackboneElementArgs {
      */
     documentType?: fhir.FhirString | string | undefined;
     /**
+     * Extended properties for primitive element: Immunization.education.documentType
+     */
+    _documentType?: fhir.FhirElementArgs;
+    /**
      * Reference pointer to the educational material given to the patient if the information was on line.
      */
     reference?: fhir.FhirUri | string | undefined;
+    /**
+     * Extended properties for primitive element: Immunization.education.reference
+     */
+    _reference?: fhir.FhirElementArgs;
     /**
      * Date the educational material was published.
      */
     publicationDate?: fhir.FhirDateTime | string | undefined;
     /**
+     * Extended properties for primitive element: Immunization.education.publicationDate
+     */
+    _publicationDate?: fhir.FhirElementArgs;
+    /**
      * Date the educational material was given to the patient.
      */
     presentationDate?: fhir.FhirDateTime | string | undefined;
+    /**
+     * Extended properties for primitive element: Immunization.education.presentationDate
+     */
+    _presentationDate?: fhir.FhirElementArgs;
 }
 /**
  * Educational material presented to the patient (or guardian) at the time of vaccine administration.
@@ -106,6 +122,10 @@ export interface ImmunizationReactionArgs extends fhir.BackboneElementArgs {
      */
     date?: fhir.FhirDateTime | string | undefined;
     /**
+     * Extended properties for primitive element: Immunization.reaction.date
+     */
+    _date?: fhir.FhirElementArgs;
+    /**
      * Details of the reaction.
      */
     detail?: fhir.ReferenceArgs | undefined;
@@ -113,6 +133,10 @@ export interface ImmunizationReactionArgs extends fhir.BackboneElementArgs {
      * Self-reported indicator.
      */
     reported?: fhir.FhirBoolean | boolean | undefined;
+    /**
+     * Extended properties for primitive element: Immunization.reaction.reported
+     */
+    _reported?: fhir.FhirElementArgs;
 }
 /**
  * A reaction may be an indication of an allergy or intolerance and, if this is determined to be the case, it should be recorded as a new AllergyIntolerance resource instance as most systems will not query against past Immunization.reaction elements.
@@ -151,6 +175,10 @@ export interface ImmunizationProtocolAppliedArgs extends fhir.BackboneElementArg
      * One possible path to achieve presumed immunity against a disease - within the context of an authority.
      */
     series?: fhir.FhirString | string | undefined;
+    /**
+     * Extended properties for primitive element: Immunization.protocolApplied.series
+     */
+    _series?: fhir.FhirElementArgs;
     /**
      * Indicates the authority who published the protocol (e.g. ACIP) that is being followed.
      */
@@ -246,6 +274,10 @@ export interface ImmunizationArgs extends fhir.DomainResourceArgs {
      */
     status: fhir.FhirCode<ImmunizationStatusCodeType> | string | undefined;
     /**
+     * Extended properties for primitive element: Immunization.status
+     */
+    _status?: fhir.FhirElementArgs;
+    /**
      * This is generally only used for the status of "not-done". The reason for performing the immunization event is captured in reasonCode, not here.
      */
     statusReason?: fhir.CodeableConceptArgs | undefined;
@@ -278,9 +310,17 @@ export interface ImmunizationArgs extends fhir.DomainResourceArgs {
      */
     recorded?: fhir.FhirDateTime | string | undefined;
     /**
+     * Extended properties for primitive element: Immunization.recorded
+     */
+    _recorded?: fhir.FhirElementArgs;
+    /**
      * Reflects the “reliability” of the content.
      */
     primarySource?: fhir.FhirBoolean | boolean | undefined;
+    /**
+     * Extended properties for primitive element: Immunization.primarySource
+     */
+    _primarySource?: fhir.FhirElementArgs;
     /**
      * Should not be populated if primarySource = True, not required even if primarySource = False.
      */
@@ -298,9 +338,17 @@ export interface ImmunizationArgs extends fhir.DomainResourceArgs {
      */
     lotNumber?: fhir.FhirString | string | undefined;
     /**
+     * Extended properties for primitive element: Immunization.lotNumber
+     */
+    _lotNumber?: fhir.FhirElementArgs;
+    /**
      * Date vaccine batch expires.
      */
     expirationDate?: fhir.FhirDate | string | undefined;
+    /**
+     * Extended properties for primitive element: Immunization.expirationDate
+     */
+    _expirationDate?: fhir.FhirElementArgs;
     /**
      * Body site where vaccine was administered.
      */
@@ -333,6 +381,10 @@ export interface ImmunizationArgs extends fhir.DomainResourceArgs {
      * Typically, the recognition of the dose being sub-potent is retrospective, after the administration (ex. notification of a manufacturer recall after administration). However, in the case of a partial administration (the patient moves unexpectedly and only some of the dose is actually administered), subpotency may be recognized immediately, but it is still important to record the event.
      */
     isSubpotent?: fhir.FhirBoolean | boolean | undefined;
+    /**
+     * Extended properties for primitive element: Immunization.isSubpotent
+     */
+    _isSubpotent?: fhir.FhirElementArgs;
     /**
      * Reason why a dose is considered to be subpotent.
      */

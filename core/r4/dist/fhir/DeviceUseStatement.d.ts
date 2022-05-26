@@ -22,6 +22,10 @@ export interface DeviceUseStatementArgs extends fhir.DomainResourceArgs {
      */
     status: fhir.FhirCode<DeviceStatementStatusCodeType> | string | undefined;
     /**
+     * Extended properties for primitive element: DeviceUseStatement.status
+     */
+    _status?: fhir.FhirElementArgs;
+    /**
      * The patient who used the device.
      */
     subject: fhir.ReferenceArgs | null;
@@ -49,6 +53,10 @@ export interface DeviceUseStatementArgs extends fhir.DomainResourceArgs {
      * The time at which the statement was made/recorded.
      */
     recordedOn?: fhir.FhirDateTime | string | undefined;
+    /**
+     * Extended properties for primitive element: DeviceUseStatement.recordedOn
+     */
+    _recordedOn?: fhir.FhirElementArgs;
     /**
      * Who reported the device was being used by the patient.
      */

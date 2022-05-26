@@ -8,6 +8,10 @@ export interface SubstanceNucleicAcidSubunitLinkageArgs extends fhir.BackboneEle
      */
     connectivity?: fhir.FhirString | string | undefined;
     /**
+     * Extended properties for primitive element: SubstanceNucleicAcid.subunit.linkage.connectivity
+     */
+    _connectivity?: fhir.FhirElementArgs;
+    /**
      * Each linkage will be registered as a fragment and have an ID.
      */
     identifier?: fhir.IdentifierArgs | undefined;
@@ -16,9 +20,17 @@ export interface SubstanceNucleicAcidSubunitLinkageArgs extends fhir.BackboneEle
      */
     name?: fhir.FhirString | string | undefined;
     /**
+     * Extended properties for primitive element: SubstanceNucleicAcid.subunit.linkage.name
+     */
+    _name?: fhir.FhirElementArgs;
+    /**
      * Residues shall be captured as described in 5.3.6.8.3.
      */
     residueSite?: fhir.FhirString | string | undefined;
+    /**
+     * Extended properties for primitive element: SubstanceNucleicAcid.subunit.linkage.residueSite
+     */
+    _residueSite?: fhir.FhirElementArgs;
 }
 /**
  * The linkages between sugar residues will also be captured.
@@ -66,9 +78,17 @@ export interface SubstanceNucleicAcidSubunitSugarArgs extends fhir.BackboneEleme
      */
     name?: fhir.FhirString | string | undefined;
     /**
+     * Extended properties for primitive element: SubstanceNucleicAcid.subunit.sugar.name
+     */
+    _name?: fhir.FhirElementArgs;
+    /**
      * The residues that contain a given sugar will be captured. The order of given residues will be captured in the 5‘-3‘direction consistent with the base sequences listed above.
      */
     residueSite?: fhir.FhirString | string | undefined;
+    /**
+     * Extended properties for primitive element: SubstanceNucleicAcid.subunit.sugar.residueSite
+     */
+    _residueSite?: fhir.FhirElementArgs;
 }
 /**
  * 5.3.6.8.1 Sugar ID (Mandatory).
@@ -108,13 +128,25 @@ export interface SubstanceNucleicAcidSubunitArgs extends fhir.BackboneElementArg
      */
     subunit?: fhir.FhirInteger | number | undefined;
     /**
+     * Extended properties for primitive element: SubstanceNucleicAcid.subunit.subunit
+     */
+    _subunit?: fhir.FhirElementArgs;
+    /**
      * Actual nucleotide sequence notation from 5' to 3' end using standard single letter codes. In addition to the base sequence, sugar and type of phosphate or non-phosphate linkage should also be captured.
      */
     sequence?: fhir.FhirString | string | undefined;
     /**
+     * Extended properties for primitive element: SubstanceNucleicAcid.subunit.sequence
+     */
+    _sequence?: fhir.FhirElementArgs;
+    /**
      * The length of the sequence shall be captured.
      */
     length?: fhir.FhirInteger | number | undefined;
+    /**
+     * Extended properties for primitive element: SubstanceNucleicAcid.subunit.length
+     */
+    _length?: fhir.FhirElementArgs;
     /**
      * (TBC).
      */
@@ -202,9 +234,17 @@ export interface SubstanceNucleicAcidArgs extends fhir.DomainResourceArgs {
      */
     numberOfSubunits?: fhir.FhirInteger | number | undefined;
     /**
+     * Extended properties for primitive element: SubstanceNucleicAcid.numberOfSubunits
+     */
+    _numberOfSubunits?: fhir.FhirElementArgs;
+    /**
      * The area of hybridisation shall be described if applicable for double stranded RNA or DNA. The number associated with the subunit followed by the number associated to the residue shall be specified in increasing order. The underscore “” shall be used as separator as follows: “Subunitnumber Residue”.
      */
     areaOfHybridisation?: fhir.FhirString | string | undefined;
+    /**
+     * Extended properties for primitive element: SubstanceNucleicAcid.areaOfHybridisation
+     */
+    _areaOfHybridisation?: fhir.FhirElementArgs;
     /**
      * (TBC).
      */

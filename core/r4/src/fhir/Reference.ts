@@ -18,9 +18,17 @@ export interface ReferenceArgs extends fhir.FhirElementArgs {
    */
   reference?: fhir.FhirString|string|undefined;
   /**
+   * Extended properties for primitive element: Reference.reference
+   */
+  _reference?:fhir.FhirElementArgs;
+  /**
    * This element is used to indicate the type of  the target of the reference. This may be used which ever of the other elements are populated (or not). In some cases, the type of the target may be determined by inspection of the reference (e.g. a RESTful URL) or by resolving the target of the reference; if both the type and a reference is provided, the reference SHALL resolve to a resource of the same type as that specified.
    */
   type?: fhir.FhirUri|string|undefined;
+  /**
+   * Extended properties for primitive element: Reference.type
+   */
+  _type?:fhir.FhirElementArgs;
   /**
    * When an identifier is provided in place of a reference, any system processing the reference will only be able to resolve the identifier to a reference if it understands the business context in which the identifier is used. Sometimes this is global (e.g. a national identifier) but often it is not. For this reason, none of the useful mechanisms described for working with references (e.g. chaining, includes) are possible, nor should servers be expected to be able resolve the reference. Servers may accept an identifier based reference untouched, resolve it, and/or reject it - see CapabilityStatement.rest.resource.referencePolicy. 
    * When both an identifier and a literal reference are provided, the literal reference is preferred. Applications processing the resource are allowed - but not required - to check that the identifier matches the literal reference
@@ -32,6 +40,10 @@ export interface ReferenceArgs extends fhir.FhirElementArgs {
    * This is generally not the same as the Resource.text of the referenced resource.  The purpose is to identify what's being referenced, not to fully describe it.
    */
   display?: fhir.FhirString|string|undefined;
+  /**
+   * Extended properties for primitive element: Reference.display
+   */
+  _display?:fhir.FhirElementArgs;
 }
 
 /**
@@ -67,9 +79,21 @@ export class Reference extends fhir.FhirElement {
   constructor(source:Partial<ReferenceArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
     if (source['reference']) { this.reference = new fhir.FhirString({value: source.reference}); }
+    if (source['_reference']) {
+      if (this.reference) { this.reference.addExtendedProperties(source._reference!); }
+      else { this.reference = new fhir.FhirString(source._reference as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['type']) { this.type = new fhir.FhirUri({value: source.type}); }
+    if (source['_type']) {
+      if (this.type) { this.type.addExtendedProperties(source._type!); }
+      else { this.type = new fhir.FhirUri(source._type as Partial<fhir.FhirUriArgs>); }
+    }
     if (source['identifier']) { this.identifier = new fhir.Identifier(source.identifier); }
     if (source['display']) { this.display = new fhir.FhirString({value: source.display}); }
+    if (source['_display']) {
+      if (this.display) { this.display.addExtendedProperties(source._display!); }
+      else { this.display = new fhir.FhirString(source._display as Partial<fhir.FhirStringArgs>); }
+    }
   }
   /**
    * Extensible-bound Value Set for type (Reference.type)

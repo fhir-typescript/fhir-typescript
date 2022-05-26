@@ -18,6 +18,10 @@ export interface LinkageItemArgs extends fhir.BackboneElementArgs {
    */
   type: fhir.FhirCode<LinkageTypeCodeType>|string|undefined;
   /**
+   * Extended properties for primitive element: Linkage.item.type
+   */
+  _type?:fhir.FhirElementArgs;
+  /**
    * The resource instance being linked as part of the group.
    */
   resource: fhir.ReferenceArgs|null;
@@ -46,6 +50,10 @@ export class LinkageItem extends fhir.BackboneElement {
     super(source, options);
     if (source['type']) { this.type = new fhir.FhirCode<LinkageTypeCodeType>({value: source.type}); }
     else { this.type = null; }
+    if (source['_type']) {
+      if (this.type) { this.type.addExtendedProperties(source._type!); }
+      else { this.type = new fhir.FhirCode<LinkageTypeCodeType>(source._type as Partial<fhir.FhirCode>); }
+    }
     if (source['resource']) { this.resource = new fhir.Reference(source.resource); }
     else { this.resource = null; }
   }
@@ -87,6 +95,10 @@ export interface LinkageArgs extends fhir.DomainResourceArgs {
    */
   active?: fhir.FhirBoolean|boolean|undefined;
   /**
+   * Extended properties for primitive element: Linkage.active
+   */
+  _active?:fhir.FhirElementArgs;
+  /**
    * Identifies the user or organization responsible for asserting the linkages as well as the user or organization who establishes the context in which the nature of each linkage is evaluated.
    */
   author?: fhir.ReferenceArgs|undefined;
@@ -127,6 +139,10 @@ export class Linkage extends fhir.DomainResource {
     super(source, options);
     this.resourceType = 'Linkage';
     if (source['active']) { this.active = new fhir.FhirBoolean({value: source.active}); }
+    if (source['_active']) {
+      if (this.active) { this.active.addExtendedProperties(source._active!); }
+      else { this.active = new fhir.FhirBoolean(source._active as Partial<fhir.FhirBooleanArgs>); }
+    }
     if (source['author']) { this.author = new fhir.Reference(source.author); }
     if (source['item']) { this.item = source.item.map((x) => new fhir.LinkageItem(x)); }
     else { this.item = []; }

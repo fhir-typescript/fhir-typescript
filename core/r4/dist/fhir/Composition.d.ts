@@ -15,9 +15,17 @@ export interface CompositionAttesterArgs extends fhir.BackboneElementArgs {
      */
     mode: fhir.FhirCode<CompositionAttestationModeCodeType> | string | undefined;
     /**
+     * Extended properties for primitive element: Composition.attester.mode
+     */
+    _mode?: fhir.FhirElementArgs;
+    /**
      * When the composition was attested by the party.
      */
     time?: fhir.FhirDateTime | string | undefined;
+    /**
+     * Extended properties for primitive element: Composition.attester.time
+     */
+    _time?: fhir.FhirElementArgs;
     /**
      * Who attested the composition in the specified way.
      */
@@ -69,6 +77,10 @@ export interface CompositionRelatesToArgs extends fhir.BackboneElementArgs {
      * If this document appends another document, then the document cannot be fully understood without also accessing the referenced document.
      */
     code: fhir.FhirCode<DocumentRelationshipTypeCodeType> | string | undefined;
+    /**
+     * Extended properties for primitive element: Composition.relatesTo.code
+     */
+    _code?: fhir.FhirElementArgs;
     /**
      * The target composition/document of this relationship.
      */
@@ -175,6 +187,10 @@ export interface CompositionSectionArgs extends fhir.BackboneElementArgs {
      */
     title?: fhir.FhirString | string | undefined;
     /**
+     * Extended properties for primitive element: Composition.section.title
+     */
+    _title?: fhir.FhirElementArgs;
+    /**
      * The code identifies the section for an automated processor of the document. This is particularly relevant when using profiles to control the structure of the document.
      * If the section has content (instead of sub-sections), the section.code does not change the meaning or interpretation of the resource that is the content of the section in the comments for the section.code.
      */
@@ -195,6 +211,10 @@ export interface CompositionSectionArgs extends fhir.BackboneElementArgs {
      * This element is labeled as a modifier because a change list must not be misunderstood as a complete list.
      */
     mode?: fhir.FhirCode<ListModeCodeType> | string | undefined;
+    /**
+     * Extended properties for primitive element: Composition.section.mode
+     */
+    _mode?: fhir.FhirElementArgs;
     /**
      * Applications SHOULD render ordered lists in the order provided, but MAY allow users to re-order based on their own preferences as well. If there is no order specified, the order is unknown, though there may still be some order.
      */
@@ -304,6 +324,10 @@ export interface CompositionArgs extends fhir.DomainResourceArgs {
      */
     status: fhir.FhirCode<CompositionStatusCodeType> | string | undefined;
     /**
+     * Extended properties for primitive element: Composition.status
+     */
+    _status?: fhir.FhirElementArgs;
+    /**
      * For Composition type, LOINC is ubiquitous and strongly endorsed by HL7. Most implementation guides will require a specific LOINC code, or use LOINC as an extensible binding.
      */
     type: fhir.CodeableConceptArgs | null;
@@ -324,6 +348,10 @@ export interface CompositionArgs extends fhir.DomainResourceArgs {
      */
     date: fhir.FhirDateTime | string | undefined;
     /**
+     * Extended properties for primitive element: Composition.date
+     */
+    _date?: fhir.FhirElementArgs;
+    /**
      * Identifies who is responsible for the information in the composition, not necessarily who typed it in.
      */
     author: fhir.ReferenceArgs[] | null;
@@ -332,9 +360,17 @@ export interface CompositionArgs extends fhir.DomainResourceArgs {
      */
     title: fhir.FhirString | string | undefined;
     /**
+     * Extended properties for primitive element: Composition.title
+     */
+    _title?: fhir.FhirElementArgs;
+    /**
      * The exact use of this element, and enforcement and issues related to highly sensitive documents are out of scope for the base specification, and delegated to implementation profiles (see security section).  This element is labeled as a modifier because highly confidential documents must not be treated as if they are not.
      */
     confidentiality?: fhir.FhirCode | string | undefined;
+    /**
+     * Extended properties for primitive element: Composition.confidentiality
+     */
+    _confidentiality?: fhir.FhirElementArgs;
     /**
      * Only list each attester once.
      */

@@ -52,6 +52,10 @@ export interface MediaArgs extends fhir.DomainResourceArgs {
    */
   status: fhir.FhirCode<EventStatusCodeType>|string|undefined;
   /**
+   * Extended properties for primitive element: Media.status
+   */
+  _status?:fhir.FhirElementArgs;
+  /**
    * A code that classifies whether the media is an image, video or audio recording or some other media category.
    */
   type?: fhir.CodeableConceptArgs|undefined;
@@ -88,6 +92,10 @@ export interface MediaArgs extends fhir.DomainResourceArgs {
    */
   issued?: fhir.FhirInstant|string|undefined;
   /**
+   * Extended properties for primitive element: Media.issued
+   */
+  _issued?:fhir.FhirElementArgs;
+  /**
    * The person who administered the collection of the image.
    */
   operator?: fhir.ReferenceArgs|undefined;
@@ -105,6 +113,10 @@ export interface MediaArgs extends fhir.DomainResourceArgs {
    */
   deviceName?: fhir.FhirString|string|undefined;
   /**
+   * Extended properties for primitive element: Media.deviceName
+   */
+  _deviceName?:fhir.FhirElementArgs;
+  /**
    * An extension should be used if further typing of the device is needed.  Secondary devices used to support collecting a media can be represented using either extension or through the Observation.related element.
    */
   device?: fhir.ReferenceArgs|undefined;
@@ -113,17 +125,33 @@ export interface MediaArgs extends fhir.DomainResourceArgs {
    */
   height?: fhir.FhirPositiveInt|number|undefined;
   /**
+   * Extended properties for primitive element: Media.height
+   */
+  _height?:fhir.FhirElementArgs;
+  /**
    * Width of the image in pixels (photo/video).
    */
   width?: fhir.FhirPositiveInt|number|undefined;
+  /**
+   * Extended properties for primitive element: Media.width
+   */
+  _width?:fhir.FhirElementArgs;
   /**
    * if the number of frames is not supplied, the value may be unknown. Applications should not assume that there is only one frame unless it is explicitly stated.
    */
   frames?: fhir.FhirPositiveInt|number|undefined;
   /**
+   * Extended properties for primitive element: Media.frames
+   */
+  _frames?:fhir.FhirElementArgs;
+  /**
    * The duration might differ from occurrencePeriod if recording was paused.
    */
   duration?: fhir.FhirDecimal|number|undefined;
+  /**
+   * Extended properties for primitive element: Media.duration
+   */
+  _duration?:fhir.FhirElementArgs;
   /**
    * Recommended content types: image/jpeg, image/png, image/tiff, video/mpeg, audio/mp4, application/dicom. Application/dicom can contain the transfer syntax as a parameter.  For media that covers a period of time (video/sound), the content.creationTime is the end time. Creation time is used for tracking, organizing versions and searching.
    */
@@ -255,6 +283,10 @@ export class Media extends fhir.DomainResource {
     else { this.partOf = []; }
     if (source['status']) { this.status = new fhir.FhirCode<EventStatusCodeType>({value: source.status}); }
     else { this.status = null; }
+    if (source['_status']) {
+      if (this.status) { this.status.addExtendedProperties(source._status!); }
+      else { this.status = new fhir.FhirCode<EventStatusCodeType>(source._status as Partial<fhir.FhirCode>); }
+    }
     if (source['type']) { this.type = new fhir.CodeableConcept(source.type); }
     if (source['modality']) { this.modality = new fhir.CodeableConcept(source.modality); }
     if (source['view']) { this.view = new fhir.CodeableConcept(source.view); }
@@ -264,16 +296,40 @@ export class Media extends fhir.DomainResource {
     else if (source['createdDateTime']) { this.created = new fhir.FhirDateTime({value: source.createdDateTime}); }
     else if (source['createdPeriod']) { this.created = new fhir.Period(source.createdPeriod); }
     if (source['issued']) { this.issued = new fhir.FhirInstant({value: source.issued}); }
+    if (source['_issued']) {
+      if (this.issued) { this.issued.addExtendedProperties(source._issued!); }
+      else { this.issued = new fhir.FhirInstant(source._issued as Partial<fhir.FhirInstantArgs>); }
+    }
     if (source['operator']) { this.operator = new fhir.Reference(source.operator); }
     if (source['reasonCode']) { this.reasonCode = source.reasonCode.map((x) => new fhir.CodeableConcept(x)); }
     else { this.reasonCode = []; }
     if (source['bodySite']) { this.bodySite = new fhir.CodeableConcept(source.bodySite); }
     if (source['deviceName']) { this.deviceName = new fhir.FhirString({value: source.deviceName}); }
+    if (source['_deviceName']) {
+      if (this.deviceName) { this.deviceName.addExtendedProperties(source._deviceName!); }
+      else { this.deviceName = new fhir.FhirString(source._deviceName as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['device']) { this.device = new fhir.Reference(source.device); }
     if (source['height']) { this.height = new fhir.FhirPositiveInt({value: source.height}); }
+    if (source['_height']) {
+      if (this.height) { this.height.addExtendedProperties(source._height!); }
+      else { this.height = new fhir.FhirPositiveInt(source._height as Partial<fhir.FhirPositiveIntArgs>); }
+    }
     if (source['width']) { this.width = new fhir.FhirPositiveInt({value: source.width}); }
+    if (source['_width']) {
+      if (this.width) { this.width.addExtendedProperties(source._width!); }
+      else { this.width = new fhir.FhirPositiveInt(source._width as Partial<fhir.FhirPositiveIntArgs>); }
+    }
     if (source['frames']) { this.frames = new fhir.FhirPositiveInt({value: source.frames}); }
+    if (source['_frames']) {
+      if (this.frames) { this.frames.addExtendedProperties(source._frames!); }
+      else { this.frames = new fhir.FhirPositiveInt(source._frames as Partial<fhir.FhirPositiveIntArgs>); }
+    }
     if (source['duration']) { this.duration = new fhir.FhirDecimal({value: source.duration}); }
+    if (source['_duration']) {
+      if (this.duration) { this.duration.addExtendedProperties(source._duration!); }
+      else { this.duration = new fhir.FhirDecimal(source._duration as Partial<fhir.FhirDecimalArgs>); }
+    }
     if (source['content']) { this.content = new fhir.Attachment(source.content); }
     else { this.content = null; }
     if (source['note']) { this.note = source.note.map((x) => new fhir.Annotation(x)); }

@@ -11,9 +11,17 @@ export interface TerminologyCapabilitiesSoftwareArgs extends fhir.BackboneElemen
      */
     name: fhir.FhirString | string | undefined;
     /**
+     * Extended properties for primitive element: TerminologyCapabilities.software.name
+     */
+    _name?: fhir.FhirElementArgs;
+    /**
      * If possible, a version should be specified, as statements are likely to be different for different versions of software.
      */
     version?: fhir.FhirString | string | undefined;
+    /**
+     * Extended properties for primitive element: TerminologyCapabilities.software.version
+     */
+    _version?: fhir.FhirElementArgs;
 }
 /**
  * Software that is covered by this terminology capability statement.  It is used when the statement describes the capabilities of a particular software version, independent of an installation.
@@ -49,9 +57,17 @@ export interface TerminologyCapabilitiesImplementationArgs extends fhir.Backbone
      */
     description: fhir.FhirString | string | undefined;
     /**
+     * Extended properties for primitive element: TerminologyCapabilities.implementation.description
+     */
+    _description?: fhir.FhirElementArgs;
+    /**
      * An absolute base URL for the implementation.
      */
     url?: fhir.FhirUrl | string | undefined;
+    /**
+     * Extended properties for primitive element: TerminologyCapabilities.implementation.url
+     */
+    _url?: fhir.FhirElementArgs;
 }
 /**
  * Identifies a specific implementation instance that is described by the terminology capability statement - i.e. a particular installation, rather than the capabilities of a software program.
@@ -87,9 +103,17 @@ export interface TerminologyCapabilitiesCodeSystemVersionFilterArgs extends fhir
      */
     code: fhir.FhirCode | string | undefined;
     /**
+     * Extended properties for primitive element: TerminologyCapabilities.codeSystem.version.filter.code
+     */
+    _code?: fhir.FhirElementArgs;
+    /**
      * Operations supported for the property.
      */
     op: fhir.FhirCode[] | string[] | undefined;
+    /**
+     * Extended properties for primitive element: TerminologyCapabilities.codeSystem.version.filter.op
+     */
+    _op?: (fhir.FhirElementArgs | null)[];
 }
 /**
  * Filter Properties supported.
@@ -125,17 +149,33 @@ export interface TerminologyCapabilitiesCodeSystemVersionArgs extends fhir.Backb
      */
     code?: fhir.FhirString | string | undefined;
     /**
+     * Extended properties for primitive element: TerminologyCapabilities.codeSystem.version.code
+     */
+    _code?: fhir.FhirElementArgs;
+    /**
      * If this is the default version for this code system.
      */
     isDefault?: fhir.FhirBoolean | boolean | undefined;
+    /**
+     * Extended properties for primitive element: TerminologyCapabilities.codeSystem.version.isDefault
+     */
+    _isDefault?: fhir.FhirElementArgs;
     /**
      * If the compositional grammar defined by the code system is supported.
      */
     compositional?: fhir.FhirBoolean | boolean | undefined;
     /**
+     * Extended properties for primitive element: TerminologyCapabilities.codeSystem.version.compositional
+     */
+    _compositional?: fhir.FhirElementArgs;
+    /**
      * Language Displays supported.
      */
     language?: fhir.FhirCode[] | string[] | undefined;
+    /**
+     * Extended properties for primitive element: TerminologyCapabilities.codeSystem.version.language
+     */
+    _language?: (fhir.FhirElementArgs | null)[];
     /**
      * Filter Properties supported.
      */
@@ -144,6 +184,10 @@ export interface TerminologyCapabilitiesCodeSystemVersionArgs extends fhir.Backb
      * Properties supported for $lookup.
      */
     property?: fhir.FhirCode[] | string[] | undefined;
+    /**
+     * Extended properties for primitive element: TerminologyCapabilities.codeSystem.version.property
+     */
+    _property?: (fhir.FhirElementArgs | null)[];
 }
 /**
  * Language translations might not be available for all codes.
@@ -195,6 +239,10 @@ export interface TerminologyCapabilitiesCodeSystemArgs extends fhir.BackboneElem
      */
     uri?: fhir.FhirCanonical | string | undefined;
     /**
+     * Extended properties for primitive element: TerminologyCapabilities.codeSystem.uri
+     */
+    _uri?: fhir.FhirElementArgs;
+    /**
      * Language translations might not be available for all codes.
      */
     version?: fhir.TerminologyCapabilitiesCodeSystemVersionArgs[] | undefined;
@@ -202,6 +250,10 @@ export interface TerminologyCapabilitiesCodeSystemArgs extends fhir.BackboneElem
      * True if subsumption is supported for this version of the code system.
      */
     subsumption?: fhir.FhirBoolean | boolean | undefined;
+    /**
+     * Extended properties for primitive element: TerminologyCapabilities.codeSystem.subsumption
+     */
+    _subsumption?: fhir.FhirElementArgs;
 }
 /**
  * The code system - identified by its system URL - may also be declared explicitly as a Code System Resource at /CodeSystem, but it might not be.
@@ -241,9 +293,17 @@ export interface TerminologyCapabilitiesExpansionParameterArgs extends fhir.Back
      */
     name: fhir.FhirCode | string | undefined;
     /**
+     * Extended properties for primitive element: TerminologyCapabilities.expansion.parameter.name
+     */
+    _name?: fhir.FhirElementArgs;
+    /**
      * Description of support for parameter.
      */
     documentation?: fhir.FhirString | string | undefined;
+    /**
+     * Extended properties for primitive element: TerminologyCapabilities.expansion.parameter.documentation
+     */
+    _documentation?: fhir.FhirElementArgs;
 }
 /**
  * Supported expansion parameter.
@@ -279,13 +339,25 @@ export interface TerminologyCapabilitiesExpansionArgs extends fhir.BackboneEleme
      */
     hierarchical?: fhir.FhirBoolean | boolean | undefined;
     /**
+     * Extended properties for primitive element: TerminologyCapabilities.expansion.hierarchical
+     */
+    _hierarchical?: fhir.FhirElementArgs;
+    /**
      * Whether the server supports paging on expansion.
      */
     paging?: fhir.FhirBoolean | boolean | undefined;
     /**
+     * Extended properties for primitive element: TerminologyCapabilities.expansion.paging
+     */
+    _paging?: fhir.FhirElementArgs;
+    /**
      * Allow request for incomplete expansions?
      */
     incomplete?: fhir.FhirBoolean | boolean | undefined;
+    /**
+     * Extended properties for primitive element: TerminologyCapabilities.expansion.incomplete
+     */
+    _incomplete?: fhir.FhirElementArgs;
     /**
      * Supported expansion parameter.
      */
@@ -294,6 +366,10 @@ export interface TerminologyCapabilitiesExpansionArgs extends fhir.BackboneEleme
      * This documentation should cover things like case sensitivity,  use of punctuation if not ignored, what wild cards are supported (if any), whether text is starts with or contains, and whether word order matters.
      */
     textFilter?: fhir.FhirMarkdown | string | undefined;
+    /**
+     * Extended properties for primitive element: TerminologyCapabilities.expansion.textFilter
+     */
+    _textFilter?: fhir.FhirElementArgs;
 }
 /**
  * Information about the [ValueSet/$expand](valueset-operation-expand.html) operation.
@@ -340,6 +416,10 @@ export interface TerminologyCapabilitiesValidateCodeArgs extends fhir.BackboneEl
      * Whether translations are validated.
      */
     translations: fhir.FhirBoolean | boolean | undefined;
+    /**
+     * Extended properties for primitive element: TerminologyCapabilities.validateCode.translations
+     */
+    _translations?: fhir.FhirElementArgs;
 }
 /**
  * Information about the [ValueSet/$validate-code](valueset-operation-validate-code.html) operation.
@@ -370,6 +450,10 @@ export interface TerminologyCapabilitiesTranslationArgs extends fhir.BackboneEle
      * Whether the client must identify the map.
      */
     needsMap: fhir.FhirBoolean | boolean | undefined;
+    /**
+     * Extended properties for primitive element: TerminologyCapabilities.translation.needsMap
+     */
+    _needsMap?: fhir.FhirElementArgs;
 }
 /**
  * Information about the [ConceptMap/$translate](conceptmap-operation-translate.html) operation.
@@ -400,6 +484,10 @@ export interface TerminologyCapabilitiesClosureArgs extends fhir.BackboneElement
      * If cross-system closure is supported.
      */
     translation?: fhir.FhirBoolean | boolean | undefined;
+    /**
+     * Extended properties for primitive element: TerminologyCapabilities.closure.translation
+     */
+    _translation?: fhir.FhirElementArgs;
 }
 /**
  * Whether the $closure operation is supported.
@@ -437,33 +525,65 @@ export interface TerminologyCapabilitiesArgs extends fhir.DomainResourceArgs {
      */
     url?: fhir.FhirUri | string | undefined;
     /**
+     * Extended properties for primitive element: TerminologyCapabilities.url
+     */
+    _url?: fhir.FhirElementArgs;
+    /**
      * There may be different terminology capabilities instances that have the same identifier but different versions.  The version can be appended to the url in a reference to allow a reference to a particular business version of the terminology capabilities with the format [url]|[version].
      */
     version?: fhir.FhirString | string | undefined;
+    /**
+     * Extended properties for primitive element: TerminologyCapabilities.version
+     */
+    _version?: fhir.FhirElementArgs;
     /**
      * The name is not expected to be globally unique. The name should be a simple alphanumeric type name to ensure that it is machine-processing friendly.
      */
     name?: fhir.FhirString | string | undefined;
     /**
+     * Extended properties for primitive element: TerminologyCapabilities.name
+     */
+    _name?: fhir.FhirElementArgs;
+    /**
      * This name does not need to be machine-processing friendly and may contain punctuation, white-space, etc.
      */
     title?: fhir.FhirString | string | undefined;
+    /**
+     * Extended properties for primitive element: TerminologyCapabilities.title
+     */
+    _title?: fhir.FhirElementArgs;
     /**
      * Allows filtering of terminology capabilitiess that are appropriate for use versus not.This is not intended for use with actual capability statements, but where capability statements are used to describe possible or desired systems.
      */
     status: fhir.FhirCode<PublicationStatusCodeType> | string | undefined;
     /**
+     * Extended properties for primitive element: TerminologyCapabilities.status
+     */
+    _status?: fhir.FhirElementArgs;
+    /**
      * Allows filtering of terminology capabilitiess that are appropriate for use versus not.
      */
     experimental?: fhir.FhirBoolean | boolean | undefined;
+    /**
+     * Extended properties for primitive element: TerminologyCapabilities.experimental
+     */
+    _experimental?: fhir.FhirElementArgs;
     /**
      * Note that this is not the same as the resource last-modified-date, since the resource may be a secondary representation of the terminology capabilities. Additional specific dates may be added as extensions or be found by consulting Provenances associated with past versions of the resource.
      */
     date: fhir.FhirDateTime | string | undefined;
     /**
+     * Extended properties for primitive element: TerminologyCapabilities.date
+     */
+    _date?: fhir.FhirElementArgs;
+    /**
      * Usually an organization but may be an individual. The publisher (or steward) of the terminology capabilities is the organization or individual primarily responsible for the maintenance and upkeep of the terminology capabilities. This is not necessarily the same individual or organization that developed and initially authored the content. The publisher is the primary point of contact for questions or issues with the terminology capabilities. This item SHOULD be populated unless the information is available from context.
      */
     publisher?: fhir.FhirString | string | undefined;
+    /**
+     * Extended properties for primitive element: TerminologyCapabilities.publisher
+     */
+    _publisher?: fhir.FhirElementArgs;
     /**
      * May be a web site, an email address, a telephone number, etc.
      */
@@ -472,6 +592,10 @@ export interface TerminologyCapabilitiesArgs extends fhir.DomainResourceArgs {
      * This description can be used to capture details such as why the terminology capabilities was built, comments about misuse, instructions for clinical use and interpretation, literature references, examples from the paper world, etc. It is not a rendering of the terminology capabilities as conveyed in the 'text' field of the resource itself. This item SHOULD be populated unless the information is available from context (e.g. the language of the terminology capabilities is presumed to be the predominant language in the place the terminology capabilities was created).This does not need to be populated if the description is adequately implied by the software or implementation details.
      */
     description?: fhir.FhirMarkdown | string | undefined;
+    /**
+     * Extended properties for primitive element: TerminologyCapabilities.description
+     */
+    _description?: fhir.FhirElementArgs;
     /**
      * When multiple useContexts are specified, there is no expectation that all or any of the contexts apply.
      */
@@ -485,13 +609,25 @@ export interface TerminologyCapabilitiesArgs extends fhir.DomainResourceArgs {
      */
     purpose?: fhir.FhirMarkdown | string | undefined;
     /**
+     * Extended properties for primitive element: TerminologyCapabilities.purpose
+     */
+    _purpose?: fhir.FhirElementArgs;
+    /**
      * A copyright statement relating to the terminology capabilities and/or its contents. Copyright statements are generally legal restrictions on the use and publishing of the terminology capabilities.
      */
     copyright?: fhir.FhirMarkdown | string | undefined;
     /**
+     * Extended properties for primitive element: TerminologyCapabilities.copyright
+     */
+    _copyright?: fhir.FhirElementArgs;
+    /**
      * The way that this statement is intended to be used, to describe an actual running instance of software, a particular product (kind, not instance of software) or a class of implementation (e.g. a desired purchase).
      */
     kind: fhir.FhirCode<CapabilityStatementKindCodeType> | string | undefined;
+    /**
+     * Extended properties for primitive element: TerminologyCapabilities.kind
+     */
+    _kind?: fhir.FhirElementArgs;
     /**
      * Software that is covered by this terminology capability statement.  It is used when the statement describes the capabilities of a particular software version, independent of an installation.
      */
@@ -505,6 +641,10 @@ export interface TerminologyCapabilitiesArgs extends fhir.DomainResourceArgs {
      */
     lockedDate?: fhir.FhirBoolean | boolean | undefined;
     /**
+     * Extended properties for primitive element: TerminologyCapabilities.lockedDate
+     */
+    _lockedDate?: fhir.FhirElementArgs;
+    /**
      * The code system - identified by its system URL - may also be declared explicitly as a Code System Resource at /CodeSystem, but it might not be.
      */
     codeSystem?: fhir.TerminologyCapabilitiesCodeSystemArgs[] | undefined;
@@ -516,6 +656,10 @@ export interface TerminologyCapabilitiesArgs extends fhir.DomainResourceArgs {
      * See notes on the [ValueSet](valueset.html#) resource.
      */
     codeSearch?: fhir.FhirCode<CodeSearchSupportCodeType> | string | undefined;
+    /**
+     * Extended properties for primitive element: TerminologyCapabilities.codeSearch
+     */
+    _codeSearch?: fhir.FhirElementArgs;
     /**
      * Information about the [ValueSet/$validate-code](valueset-operation-validate-code.html) operation.
      */

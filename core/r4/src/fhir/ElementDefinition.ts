@@ -50,9 +50,17 @@ export interface ElementDefinitionSlicingDiscriminatorArgs extends fhir.FhirElem
    */
   type: fhir.FhirCode<DiscriminatorTypeCodeType>|string|undefined;
   /**
+   * Extended properties for primitive element: ElementDefinition.slicing.discriminator.type
+   */
+  _type?:fhir.FhirElementArgs;
+  /**
    * The only FHIRPath functions that are allowed are as(type), resolve(), and extension(url).
    */
   path: fhir.FhirString|string|undefined;
+  /**
+   * Extended properties for primitive element: ElementDefinition.slicing.discriminator.path
+   */
+  _path?:fhir.FhirElementArgs;
 }
 
 /**
@@ -78,8 +86,16 @@ export class ElementDefinitionSlicingDiscriminator extends fhir.FhirElement {
     super(source, options);
     if (source['type']) { this.type = new fhir.FhirCode<DiscriminatorTypeCodeType>({value: source.type}); }
     else { this.type = null; }
+    if (source['_type']) {
+      if (this.type) { this.type.addExtendedProperties(source._type!); }
+      else { this.type = new fhir.FhirCode<DiscriminatorTypeCodeType>(source._type as Partial<fhir.FhirCode>); }
+    }
     if (source['path']) { this.path = new fhir.FhirString({value: source.path}); }
     else { this.path = null; }
+    if (source['_path']) {
+      if (this.path) { this.path.addExtendedProperties(source._path!); }
+      else { this.path = new fhir.FhirString(source._path as Partial<fhir.FhirStringArgs>); }
+    }
   }
   /**
    * Required-bound Value Set for type (ElementDefinition.slicing.discriminator.type)
@@ -119,13 +135,25 @@ export interface ElementDefinitionSlicingArgs extends fhir.FhirElementArgs {
    */
   description?: fhir.FhirString|string|undefined;
   /**
+   * Extended properties for primitive element: ElementDefinition.slicing.description
+   */
+  _description?:fhir.FhirElementArgs;
+  /**
    * Order should only be required when it is a pressing concern for presentation. Profile authors should consider making the order a feature of the rules about the narrative, not the rules about the data - requiring ordered data makes the profile much less re-usable.
    */
   ordered?: fhir.FhirBoolean|boolean|undefined;
   /**
+   * Extended properties for primitive element: ElementDefinition.slicing.ordered
+   */
+  _ordered?:fhir.FhirElementArgs;
+  /**
    * Allowing additional elements makes for a much for flexible template - it's open for use in wider contexts, but also means that the content of the resource is not closed, and applications have to decide how to handle content not described by the profile.
    */
   rules: fhir.FhirCode<ResourceSlicingRulesCodeType>|string|undefined;
+  /**
+   * Extended properties for primitive element: ElementDefinition.slicing.rules
+   */
+  _rules?:fhir.FhirElementArgs;
 }
 
 /**
@@ -160,9 +188,21 @@ export class ElementDefinitionSlicing extends fhir.FhirElement {
     if (source['discriminator']) { this.discriminator = source.discriminator.map((x) => new fhir.ElementDefinitionSlicingDiscriminator(x)); }
     else { this.discriminator = []; }
     if (source['description']) { this.description = new fhir.FhirString({value: source.description}); }
+    if (source['_description']) {
+      if (this.description) { this.description.addExtendedProperties(source._description!); }
+      else { this.description = new fhir.FhirString(source._description as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['ordered']) { this.ordered = new fhir.FhirBoolean({value: source.ordered}); }
+    if (source['_ordered']) {
+      if (this.ordered) { this.ordered.addExtendedProperties(source._ordered!); }
+      else { this.ordered = new fhir.FhirBoolean(source._ordered as Partial<fhir.FhirBooleanArgs>); }
+    }
     if (source['rules']) { this.rules = new fhir.FhirCode<ResourceSlicingRulesCodeType>({value: source.rules}); }
     else { this.rules = null; }
+    if (source['_rules']) {
+      if (this.rules) { this.rules.addExtendedProperties(source._rules!); }
+      else { this.rules = new fhir.FhirCode<ResourceSlicingRulesCodeType>(source._rules as Partial<fhir.FhirCode>); }
+    }
   }
   /**
    * Required-bound Value Set for rules (ElementDefinition.slicing.rules)
@@ -197,13 +237,25 @@ export interface ElementDefinitionBaseArgs extends fhir.FhirElementArgs {
    */
   path: fhir.FhirString|string|undefined;
   /**
+   * Extended properties for primitive element: ElementDefinition.base.path
+   */
+  _path?:fhir.FhirElementArgs;
+  /**
    * This is provided for consistency with max, and may affect code generation of mandatory elements of the base resource are generated differently (some reference implementations have done this).
    */
   min: fhir.FhirUnsignedInt|number|undefined;
   /**
+   * Extended properties for primitive element: ElementDefinition.base.min
+   */
+  _min?:fhir.FhirElementArgs;
+  /**
    * This is provided to code generation, since the serialization representation in JSON differs depending on whether the base element has max &gt; 1. Also, some forms of code generation may differ.
    */
   max: fhir.FhirString|string|undefined;
+  /**
+   * Extended properties for primitive element: ElementDefinition.base.max
+   */
+  _max?:fhir.FhirElementArgs;
 }
 
 /**
@@ -233,10 +285,22 @@ export class ElementDefinitionBase extends fhir.FhirElement {
     super(source, options);
     if (source['path']) { this.path = new fhir.FhirString({value: source.path}); }
     else { this.path = null; }
+    if (source['_path']) {
+      if (this.path) { this.path.addExtendedProperties(source._path!); }
+      else { this.path = new fhir.FhirString(source._path as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['min']) { this.min = new fhir.FhirUnsignedInt({value: source.min}); }
     else { this.min = null; }
+    if (source['_min']) {
+      if (this.min) { this.min.addExtendedProperties(source._min!); }
+      else { this.min = new fhir.FhirUnsignedInt(source._min as Partial<fhir.FhirUnsignedIntArgs>); }
+    }
     if (source['max']) { this.max = new fhir.FhirString({value: source.max}); }
     else { this.max = null; }
+    if (source['_max']) {
+      if (this.max) { this.max.addExtendedProperties(source._max!); }
+      else { this.max = new fhir.FhirString(source._max as Partial<fhir.FhirStringArgs>); }
+    }
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -267,21 +331,41 @@ export interface ElementDefinitionTypeArgs extends fhir.FhirElementArgs {
    */
   code: fhir.FhirUri|string|undefined;
   /**
+   * Extended properties for primitive element: ElementDefinition.type.code
+   */
+  _code?:fhir.FhirElementArgs;
+  /**
    * It is possible to profile  backbone element (e.g. part of a resource), using the [profile-element](extension-elementdefinition-profile-element.html) extension.
    */
   profile?: fhir.FhirCanonical[]|string[]|undefined;
+  /**
+   * Extended properties for primitive element: ElementDefinition.type.profile
+   */
+  _profile?:(fhir.FhirElementArgs|null)[];
   /**
    * Used when the type is "Reference" or "canonical", and identifies a profile structure or implementation Guide that applies to the target of the reference this element refers to. If any profiles are specified, then the content must conform to at least one of them. The URL can be a local reference - to a contained StructureDefinition, or a reference to another StructureDefinition or Implementation Guide by a canonical URL. When an implementation guide is specified, the target resource SHALL conform to at least one profile defined in the implementation guide.
    */
   targetProfile?: fhir.FhirCanonical[]|string[]|undefined;
   /**
+   * Extended properties for primitive element: ElementDefinition.type.targetProfile
+   */
+  _targetProfile?:(fhir.FhirElementArgs|null)[];
+  /**
    * See [Aggregation Rules](elementdefinition.html#aggregation) for further clarification.
    */
   aggregation?: fhir.FhirCode<ResourceAggregationModeCodeType>[]|string[]|undefined;
   /**
+   * Extended properties for primitive element: ElementDefinition.type.aggregation
+   */
+  _aggregation?:(fhir.FhirElementArgs|null)[];
+  /**
    * The base specification never makes a rule as to which form is allowed, but implementation guides may do this. See [Aggregation Rules](elementdefinition.html#aggregation) for further clarification.
    */
   versioning?: fhir.FhirCode<ReferenceVersionRulesCodeType>|string|undefined;
+  /**
+   * Extended properties for primitive element: ElementDefinition.type.versioning
+   */
+  _versioning?:fhir.FhirElementArgs;
 }
 
 /**
@@ -319,13 +403,39 @@ export class ElementDefinitionType extends fhir.FhirElement {
     super(source, options);
     if (source['code']) { this.code = new fhir.FhirUri({value: source.code}); }
     else { this.code = null; }
+    if (source['_code']) {
+      if (this.code) { this.code.addExtendedProperties(source._code!); }
+      else { this.code = new fhir.FhirUri(source._code as Partial<fhir.FhirUriArgs>); }
+    }
     if (source['profile']) { this.profile = source.profile.map((x) => new fhir.FhirCanonical({value: x})); }
     else { this.profile = []; }
+    if (source['_profile']) {
+      source._profile.forEach((x,i) => {
+        if (this.profile.length >= i) { if (x) { this.profile[i].addExtendedProperties(x); } }
+        else { if (x) { this.profile.push(new fhir.FhirCanonical(x as Partial<fhir.FhirCanonicalArgs>)); } }
+      });
+    }
     if (source['targetProfile']) { this.targetProfile = source.targetProfile.map((x) => new fhir.FhirCanonical({value: x})); }
     else { this.targetProfile = []; }
+    if (source['_targetProfile']) {
+      source._targetProfile.forEach((x,i) => {
+        if (this.targetProfile.length >= i) { if (x) { this.targetProfile[i].addExtendedProperties(x); } }
+        else { if (x) { this.targetProfile.push(new fhir.FhirCanonical(x as Partial<fhir.FhirCanonicalArgs>)); } }
+      });
+    }
     if (source['aggregation']) { this.aggregation = source.aggregation.map((x) => new fhir.FhirCode<ResourceAggregationModeCodeType>({value: x})); }
     else { this.aggregation = []; }
+    if (source['_aggregation']) {
+      source._aggregation.forEach((x,i) => {
+        if (this.aggregation.length >= i) { if (x) { this.aggregation[i].addExtendedProperties(x); } }
+        else { if (x) { this.aggregation.push(new fhir.FhirCode<ResourceAggregationModeCodeType>(x as Partial<fhir.FhirCode>)); } }
+      });
+    }
     if (source['versioning']) { this.versioning = new fhir.FhirCode<ReferenceVersionRulesCodeType>({value: source.versioning}); }
+    if (source['_versioning']) {
+      if (this.versioning) { this.versioning.addExtendedProperties(source._versioning!); }
+      else { this.versioning = new fhir.FhirCode<ReferenceVersionRulesCodeType>(source._versioning as Partial<fhir.FhirCode>); }
+    }
   }
   /**
    * Extensible-bound Value Set for code (ElementDefinition.type.code)
@@ -379,6 +489,10 @@ export interface ElementDefinitionExampleArgs extends fhir.FhirElementArgs {
    * Describes the purpose of this example amoung the set of examples.
    */
   label: fhir.FhirString|string|undefined;
+  /**
+   * Extended properties for primitive element: ElementDefinition.example.label
+   */
+  _label?:fhir.FhirElementArgs;
   /**
    * The actual value for the element, which must be one of the types allowed for this element.
    */
@@ -612,6 +726,10 @@ export class ElementDefinitionExample extends fhir.FhirElement {
     super(source, options);
     if (source['label']) { this.label = new fhir.FhirString({value: source.label}); }
     else { this.label = null; }
+    if (source['_label']) {
+      if (this.label) { this.label.addExtendedProperties(source._label!); }
+      else { this.label = new fhir.FhirString(source._label as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['value']) { this.value = source.value; }
     else if (source['valueBase64Binary']) { this.value = new fhir.FhirBase64Binary({value: source.valueBase64Binary}); }
     else if (source['valueBoolean']) { this.value = new fhir.FhirBoolean({value: source.valueBoolean}); }
@@ -689,29 +807,57 @@ export interface ElementDefinitionConstraintArgs extends fhir.FhirElementArgs {
    */
   key: fhir.FhirId|string|undefined;
   /**
+   * Extended properties for primitive element: ElementDefinition.constraint.key
+   */
+  _key?:fhir.FhirElementArgs;
+  /**
    * To be used if the reason for the constraint might not be intuitive to all implementers.
    */
   requirements?: fhir.FhirString|string|undefined;
+  /**
+   * Extended properties for primitive element: ElementDefinition.constraint.requirements
+   */
+  _requirements?:fhir.FhirElementArgs;
   /**
    * This allows constraints to be asserted as "shall" (error) and "should" (warning).
    */
   severity: fhir.FhirCode<ConstraintSeverityCodeType>|string|undefined;
   /**
+   * Extended properties for primitive element: ElementDefinition.constraint.severity
+   */
+  _severity?:fhir.FhirElementArgs;
+  /**
    * Should be expressed in business terms as much as possible.
    */
   human: fhir.FhirString|string|undefined;
+  /**
+   * Extended properties for primitive element: ElementDefinition.constraint.human
+   */
+  _human?:fhir.FhirElementArgs;
   /**
    * In the absense of an expression, the expression is likely not enforceable by validators, and might be missed by many systems.
    */
   expression?: fhir.FhirString|string|undefined;
   /**
+   * Extended properties for primitive element: ElementDefinition.constraint.expression
+   */
+  _expression?:fhir.FhirElementArgs;
+  /**
    * Elements SHALL use "f" as the namespace prefix for the FHIR namespace, and "x" for the xhtml namespace, and SHALL NOT use any other prefixes.     Note: XPath is generally considered not useful because it does not apply to JSON and other formats and because of XSLT implementation issues, and may be removed in the future.
    */
   xpath?: fhir.FhirString|string|undefined;
   /**
+   * Extended properties for primitive element: ElementDefinition.constraint.xpath
+   */
+  _xpath?:fhir.FhirElementArgs;
+  /**
    * This is used when, e.g. rendering, where it is not useful to present inherited constraints when rendering the snapshot.
    */
   source?: fhir.FhirCanonical|string|undefined;
+  /**
+   * Extended properties for primitive element: ElementDefinition.constraint.source
+   */
+  _source?:fhir.FhirElementArgs;
 }
 
 /**
@@ -757,14 +903,42 @@ export class ElementDefinitionConstraint extends fhir.FhirElement {
     super(source, options);
     if (source['key']) { this.key = new fhir.FhirId({value: source.key}); }
     else { this.key = null; }
+    if (source['_key']) {
+      if (this.key) { this.key.addExtendedProperties(source._key!); }
+      else { this.key = new fhir.FhirId(source._key as Partial<fhir.FhirIdArgs>); }
+    }
     if (source['requirements']) { this.requirements = new fhir.FhirString({value: source.requirements}); }
+    if (source['_requirements']) {
+      if (this.requirements) { this.requirements.addExtendedProperties(source._requirements!); }
+      else { this.requirements = new fhir.FhirString(source._requirements as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['severity']) { this.severity = new fhir.FhirCode<ConstraintSeverityCodeType>({value: source.severity}); }
     else { this.severity = null; }
+    if (source['_severity']) {
+      if (this.severity) { this.severity.addExtendedProperties(source._severity!); }
+      else { this.severity = new fhir.FhirCode<ConstraintSeverityCodeType>(source._severity as Partial<fhir.FhirCode>); }
+    }
     if (source['human']) { this.human = new fhir.FhirString({value: source.human}); }
     else { this.human = null; }
+    if (source['_human']) {
+      if (this.human) { this.human.addExtendedProperties(source._human!); }
+      else { this.human = new fhir.FhirString(source._human as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['expression']) { this.expression = new fhir.FhirString({value: source.expression}); }
+    if (source['_expression']) {
+      if (this.expression) { this.expression.addExtendedProperties(source._expression!); }
+      else { this.expression = new fhir.FhirString(source._expression as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['xpath']) { this.xpath = new fhir.FhirString({value: source.xpath}); }
+    if (source['_xpath']) {
+      if (this.xpath) { this.xpath.addExtendedProperties(source._xpath!); }
+      else { this.xpath = new fhir.FhirString(source._xpath as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['source']) { this.source = new fhir.FhirCanonical({value: source.source}); }
+    if (source['_source']) {
+      if (this.source) { this.source.addExtendedProperties(source._source!); }
+      else { this.source = new fhir.FhirCanonical(source._source as Partial<fhir.FhirCanonicalArgs>); }
+    }
   }
   /**
    * Required-bound Value Set for severity (ElementDefinition.constraint.severity)
@@ -808,13 +982,25 @@ export interface ElementDefinitionBindingArgs extends fhir.FhirElementArgs {
    */
   strength: fhir.FhirCode<BindingStrengthCodeType>|string|undefined;
   /**
+   * Extended properties for primitive element: ElementDefinition.binding.strength
+   */
+  _strength?:fhir.FhirElementArgs;
+  /**
    * Describes the intended use of this particular set of codes.
    */
   description?: fhir.FhirString|string|undefined;
   /**
+   * Extended properties for primitive element: ElementDefinition.binding.description
+   */
+  _description?:fhir.FhirElementArgs;
+  /**
    * The reference may be version-specific or not (e.g. have a |[version] at the end of the canonical URL).
    */
   valueSet?: fhir.FhirCanonical|string|undefined;
+  /**
+   * Extended properties for primitive element: ElementDefinition.binding.valueSet
+   */
+  _valueSet?:fhir.FhirElementArgs;
 }
 
 /**
@@ -844,8 +1030,20 @@ export class ElementDefinitionBinding extends fhir.FhirElement {
     super(source, options);
     if (source['strength']) { this.strength = new fhir.FhirCode<BindingStrengthCodeType>({value: source.strength}); }
     else { this.strength = null; }
+    if (source['_strength']) {
+      if (this.strength) { this.strength.addExtendedProperties(source._strength!); }
+      else { this.strength = new fhir.FhirCode<BindingStrengthCodeType>(source._strength as Partial<fhir.FhirCode>); }
+    }
     if (source['description']) { this.description = new fhir.FhirString({value: source.description}); }
+    if (source['_description']) {
+      if (this.description) { this.description.addExtendedProperties(source._description!); }
+      else { this.description = new fhir.FhirString(source._description as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['valueSet']) { this.valueSet = new fhir.FhirCanonical({value: source.valueSet}); }
+    if (source['_valueSet']) {
+      if (this.valueSet) { this.valueSet.addExtendedProperties(source._valueSet!); }
+      else { this.valueSet = new fhir.FhirCanonical(source._valueSet as Partial<fhir.FhirCanonicalArgs>); }
+    }
   }
   /**
    * Required-bound Value Set for strength (ElementDefinition.binding.strength)
@@ -879,17 +1077,33 @@ export interface ElementDefinitionMappingArgs extends fhir.FhirElementArgs {
    */
   identity: fhir.FhirId|string|undefined;
   /**
+   * Extended properties for primitive element: ElementDefinition.mapping.identity
+   */
+  _identity?:fhir.FhirElementArgs;
+  /**
    * If omitted, then there can be no expectation of computational interpretation of the mapping.
    */
   language?: fhir.FhirCode|string|undefined;
+  /**
+   * Extended properties for primitive element: ElementDefinition.mapping.language
+   */
+  _language?:fhir.FhirElementArgs;
   /**
    * For most mappings, the syntax is undefined.  Syntax will be provided for mappings to the RIM.  Multiple mappings may be possible and may include constraints on other resource elements that identify when a particular mapping applies.
    */
   map: fhir.FhirString|string|undefined;
   /**
+   * Extended properties for primitive element: ElementDefinition.mapping.map
+   */
+  _map?:fhir.FhirElementArgs;
+  /**
    * Comments that provide information about the mapping or its use.
    */
   comment?: fhir.FhirString|string|undefined;
+  /**
+   * Extended properties for primitive element: ElementDefinition.mapping.comment
+   */
+  _comment?:fhir.FhirElementArgs;
 }
 
 /**
@@ -923,10 +1137,26 @@ export class ElementDefinitionMapping extends fhir.FhirElement {
     super(source, options);
     if (source['identity']) { this.identity = new fhir.FhirId({value: source.identity}); }
     else { this.identity = null; }
+    if (source['_identity']) {
+      if (this.identity) { this.identity.addExtendedProperties(source._identity!); }
+      else { this.identity = new fhir.FhirId(source._identity as Partial<fhir.FhirIdArgs>); }
+    }
     if (source['language']) { this.language = new fhir.FhirCode({value: source.language}); }
+    if (source['_language']) {
+      if (this.language) { this.language.addExtendedProperties(source._language!); }
+      else { this.language = new fhir.FhirCode(source._language as Partial<fhir.FhirCodeArgs>); }
+    }
     if (source['map']) { this.map = new fhir.FhirString({value: source.map}); }
     else { this.map = null; }
+    if (source['_map']) {
+      if (this.map) { this.map.addExtendedProperties(source._map!); }
+      else { this.map = new fhir.FhirString(source._map as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['comment']) { this.comment = new fhir.FhirString({value: source.comment}); }
+    if (source['_comment']) {
+      if (this.comment) { this.comment.addExtendedProperties(source._comment!); }
+      else { this.comment = new fhir.FhirString(source._comment as Partial<fhir.FhirStringArgs>); }
+    }
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -955,21 +1185,41 @@ export interface ElementDefinitionArgs extends fhir.BackboneElementArgs {
    */
   path: fhir.FhirString|string|undefined;
   /**
+   * Extended properties for primitive element: ElementDefinition.path
+   */
+  _path?:fhir.FhirElementArgs;
+  /**
    * In resources, this is rarely used except for special cases where the representation deviates from the normal, and can only be done in the base standard (and profiles must reproduce what the base standard does). This element is used quite commonly in Logical models when the logical models represent a specific serialization format (e.g. CDA, v2 etc.).
    */
   representation?: fhir.FhirCode<PropertyRepresentationCodeType>[]|string[]|undefined;
+  /**
+   * Extended properties for primitive element: ElementDefinition.representation
+   */
+  _representation?:(fhir.FhirElementArgs|null)[];
   /**
    * The name SHALL be unique within the structure within the context of the constrained resource element.  (Though to avoid confusion, uniqueness across all elements is recommended.).
    */
   sliceName?: fhir.FhirString|string|undefined;
   /**
+   * Extended properties for primitive element: ElementDefinition.sliceName
+   */
+  _sliceName?:fhir.FhirElementArgs;
+  /**
    * If set to true, an ancestor profile SHALL have a slicing definition with this name.  If set to false, no ancestor profile is permitted to have a slicing definition with this name.
    */
   sliceIsConstraining?: fhir.FhirBoolean|boolean|undefined;
   /**
+   * Extended properties for primitive element: ElementDefinition.sliceIsConstraining
+   */
+  _sliceIsConstraining?:fhir.FhirElementArgs;
+  /**
    * See also the extension (http://hl7.org/fhir/StructureDefinition/elementdefinition-question)[extension-elementdefinition-question.html].
    */
   label?: fhir.FhirString|string|undefined;
+  /**
+   * Extended properties for primitive element: ElementDefinition.label
+   */
+  _label?:fhir.FhirElementArgs;
   /**
    * The concept SHALL be properly aligned with the data element definition and other constraints, as defined in the code system, including relationships, of any code listed here.  Where multiple codes exist in a terminology that could correspond to the data element, the most granular code(s) should be selected, so long as they are not more restrictive than the data element itself. The mappings may be used to provide more or less granular or structured equivalences in the code system.
    */
@@ -983,29 +1233,57 @@ export interface ElementDefinitionArgs extends fhir.BackboneElementArgs {
    */
   short?: fhir.FhirString|string|undefined;
   /**
+   * Extended properties for primitive element: ElementDefinition.short
+   */
+  _short?:fhir.FhirElementArgs;
+  /**
    * It is easy for a different definition to change the meaning of an element and this can have nasty downstream consequences. Please be careful when providing definitions in a profile.
    */
   definition?: fhir.FhirMarkdown|string|undefined;
+  /**
+   * Extended properties for primitive element: ElementDefinition.definition
+   */
+  _definition?:fhir.FhirElementArgs;
   /**
    * If it is possible to capture usage rules using constraints, that mechanism should be used in preference to this element.
    */
   comment?: fhir.FhirMarkdown|string|undefined;
   /**
+   * Extended properties for primitive element: ElementDefinition.comment
+   */
+  _comment?:fhir.FhirElementArgs;
+  /**
    * This element does not describe the usage of the element (that's done in comments), rather it's for traceability of *why* the element is either needed or why the constraints exist as they do.  This may be used to point to source materials or specifications that drove the structure of this data element.
    */
   requirements?: fhir.FhirMarkdown|string|undefined;
+  /**
+   * Extended properties for primitive element: ElementDefinition.requirements
+   */
+  _requirements?:fhir.FhirElementArgs;
   /**
    * Identifies additional names by which this element might also be known.
    */
   alias?: fhir.FhirString[]|string[]|undefined;
   /**
+   * Extended properties for primitive element: ElementDefinition.alias
+   */
+  _alias?:(fhir.FhirElementArgs|null)[];
+  /**
    * The minimum number of times this element SHALL appear in the instance.
    */
   min?: fhir.FhirUnsignedInt|number|undefined;
   /**
+   * Extended properties for primitive element: ElementDefinition.min
+   */
+  _min?:fhir.FhirElementArgs;
+  /**
    * The maximum number of times this element is permitted to appear in the instance.
    */
   max?: fhir.FhirString|string|undefined;
+  /**
+   * Extended properties for primitive element: ElementDefinition.max
+   */
+  _max?:fhir.FhirElementArgs;
   /**
    * The base information does not carry any information that could not be determined from the path and related profiles, but making this determination requires both that the related profiles are available, and that the algorithm to determine them be available. For tooling simplicity, the base information must always be populated in element definitions in snap shots, even if it is the same.
    */
@@ -1014,6 +1292,10 @@ export interface ElementDefinitionArgs extends fhir.BackboneElementArgs {
    * ContentReferences can only be defined in specializations, not constrained types, and they cannot be changed and always reference the non-constrained definition.
    */
   contentReference?: fhir.FhirUri|string|undefined;
+  /**
+   * Extended properties for primitive element: ElementDefinition.contentReference
+   */
+  _contentReference?:fhir.FhirElementArgs;
   /**
    * The Type of the element can be left blank in a differential constraint, in which case the type is inherited from the resource. Abstract types are not permitted to appear as a type when multiple types are listed.  (I.e. Abstract types cannot be part of a choice).
    */
@@ -1278,9 +1560,17 @@ export interface ElementDefinitionArgs extends fhir.BackboneElementArgs {
    */
   meaningWhenMissing?: fhir.FhirMarkdown|string|undefined;
   /**
+   * Extended properties for primitive element: ElementDefinition.meaningWhenMissing
+   */
+  _meaningWhenMissing?:fhir.FhirElementArgs;
+  /**
    * This element can only be asserted on repeating elements and can only be introduced when defining resources or data types.  It can be further refined profiled elements but if absent in the base type, a profile cannot assert meaning.
    */
   orderMeaning?: fhir.FhirString|string|undefined;
+  /**
+   * Extended properties for primitive element: ElementDefinition.orderMeaning
+   */
+  _orderMeaning?:fhir.FhirElementArgs;
   /**
    * This is not recommended for Coding and CodeableConcept since these often have highly contextual properties such as version or display.
    */
@@ -1778,9 +2068,17 @@ export interface ElementDefinitionArgs extends fhir.BackboneElementArgs {
    */
   maxLength?: fhir.FhirInteger|number|undefined;
   /**
+   * Extended properties for primitive element: ElementDefinition.maxLength
+   */
+  _maxLength?:fhir.FhirElementArgs;
+  /**
    * A reference to an invariant that may make additional statements about the cardinality or value in the instance.
    */
   condition?: fhir.FhirId[]|string[]|undefined;
+  /**
+   * Extended properties for primitive element: ElementDefinition.condition
+   */
+  _condition?:(fhir.FhirElementArgs|null)[];
   /**
    * Constraints should be declared on the "context" element - the lowest element in the hierarchy that is common to all nodes referenced by the constraint.
    */
@@ -1790,17 +2088,33 @@ export interface ElementDefinitionArgs extends fhir.BackboneElementArgs {
    */
   mustSupport?: fhir.FhirBoolean|boolean|undefined;
   /**
+   * Extended properties for primitive element: ElementDefinition.mustSupport
+   */
+  _mustSupport?:fhir.FhirElementArgs;
+  /**
    * Only the definition of an element can set IsModifier true - either the specification itself or where an extension is originally defined. Once set, it cannot be changed in derived profiles. An element/extension that has isModifier=true SHOULD also have a minimum cardinality of 1, so that there is no lack of clarity about what to do if it is missing. If it can be missing, the definition SHALL make the meaning of a missing element clear.
    */
   isModifier?: fhir.FhirBoolean|boolean|undefined;
+  /**
+   * Extended properties for primitive element: ElementDefinition.isModifier
+   */
+  _isModifier?:fhir.FhirElementArgs;
   /**
    * Explains how that element affects the interpretation of the resource or element that contains it.
    */
   isModifierReason?: fhir.FhirString|string|undefined;
   /**
+   * Extended properties for primitive element: ElementDefinition.isModifierReason
+   */
+  _isModifierReason?:fhir.FhirElementArgs;
+  /**
    * Some resources include a set of simple metadata, and some very large data. This element is used to reduce the quantity of data returned in searches. Note that servers may pre-cache summarized resources for optimal performance, so servers might not support per-profile use of the isSummary flag. When a request is made with _summary=true, serailisers only include elements marked as 'isSummary = true'. Other than Attachment.data, all data type properties are included in the summary form. In resource and data type definitions, if an element is at the root or has a parent that is 'mustSupport' and the minimum cardinality is 1 or the element is a modifier, it must be marked as isSummary=true.
    */
   isSummary?: fhir.FhirBoolean|boolean|undefined;
+  /**
+   * Extended properties for primitive element: ElementDefinition.isSummary
+   */
+  _isSummary?:fhir.FhirElementArgs;
   /**
    * For a CodeableConcept, when no codes are allowed - only text, use a binding of strength "required" with a description explaining that no coded values are allowed and what sort of information to put in the "text" element.
    */
@@ -1983,24 +2297,80 @@ export class ElementDefinition extends fhir.BackboneElement {
     super(source, options);
     if (source['path']) { this.path = new fhir.FhirString({value: source.path}); }
     else { this.path = null; }
+    if (source['_path']) {
+      if (this.path) { this.path.addExtendedProperties(source._path!); }
+      else { this.path = new fhir.FhirString(source._path as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['representation']) { this.representation = source.representation.map((x) => new fhir.FhirCode<PropertyRepresentationCodeType>({value: x})); }
     else { this.representation = []; }
+    if (source['_representation']) {
+      source._representation.forEach((x,i) => {
+        if (this.representation.length >= i) { if (x) { this.representation[i].addExtendedProperties(x); } }
+        else { if (x) { this.representation.push(new fhir.FhirCode<PropertyRepresentationCodeType>(x as Partial<fhir.FhirCode>)); } }
+      });
+    }
     if (source['sliceName']) { this.sliceName = new fhir.FhirString({value: source.sliceName}); }
+    if (source['_sliceName']) {
+      if (this.sliceName) { this.sliceName.addExtendedProperties(source._sliceName!); }
+      else { this.sliceName = new fhir.FhirString(source._sliceName as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['sliceIsConstraining']) { this.sliceIsConstraining = new fhir.FhirBoolean({value: source.sliceIsConstraining}); }
+    if (source['_sliceIsConstraining']) {
+      if (this.sliceIsConstraining) { this.sliceIsConstraining.addExtendedProperties(source._sliceIsConstraining!); }
+      else { this.sliceIsConstraining = new fhir.FhirBoolean(source._sliceIsConstraining as Partial<fhir.FhirBooleanArgs>); }
+    }
     if (source['label']) { this.label = new fhir.FhirString({value: source.label}); }
+    if (source['_label']) {
+      if (this.label) { this.label.addExtendedProperties(source._label!); }
+      else { this.label = new fhir.FhirString(source._label as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['code']) { this.code = source.code.map((x) => new fhir.Coding(x)); }
     else { this.code = []; }
     if (source['slicing']) { this.slicing = new fhir.ElementDefinitionSlicing(source.slicing); }
     if (source['short']) { this.short = new fhir.FhirString({value: source.short}); }
+    if (source['_short']) {
+      if (this.short) { this.short.addExtendedProperties(source._short!); }
+      else { this.short = new fhir.FhirString(source._short as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['definition']) { this.definition = new fhir.FhirMarkdown({value: source.definition}); }
+    if (source['_definition']) {
+      if (this.definition) { this.definition.addExtendedProperties(source._definition!); }
+      else { this.definition = new fhir.FhirMarkdown(source._definition as Partial<fhir.FhirMarkdownArgs>); }
+    }
     if (source['comment']) { this.comment = new fhir.FhirMarkdown({value: source.comment}); }
+    if (source['_comment']) {
+      if (this.comment) { this.comment.addExtendedProperties(source._comment!); }
+      else { this.comment = new fhir.FhirMarkdown(source._comment as Partial<fhir.FhirMarkdownArgs>); }
+    }
     if (source['requirements']) { this.requirements = new fhir.FhirMarkdown({value: source.requirements}); }
+    if (source['_requirements']) {
+      if (this.requirements) { this.requirements.addExtendedProperties(source._requirements!); }
+      else { this.requirements = new fhir.FhirMarkdown(source._requirements as Partial<fhir.FhirMarkdownArgs>); }
+    }
     if (source['alias']) { this.alias = source.alias.map((x) => new fhir.FhirString({value: x})); }
     else { this.alias = []; }
+    if (source['_alias']) {
+      source._alias.forEach((x,i) => {
+        if (this.alias.length >= i) { if (x) { this.alias[i].addExtendedProperties(x); } }
+        else { if (x) { this.alias.push(new fhir.FhirString(x as Partial<fhir.FhirStringArgs>)); } }
+      });
+    }
     if (source['min']) { this.min = new fhir.FhirUnsignedInt({value: source.min}); }
+    if (source['_min']) {
+      if (this.min) { this.min.addExtendedProperties(source._min!); }
+      else { this.min = new fhir.FhirUnsignedInt(source._min as Partial<fhir.FhirUnsignedIntArgs>); }
+    }
     if (source['max']) { this.max = new fhir.FhirString({value: source.max}); }
+    if (source['_max']) {
+      if (this.max) { this.max.addExtendedProperties(source._max!); }
+      else { this.max = new fhir.FhirString(source._max as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['base']) { this.base = new fhir.ElementDefinitionBase(source.base); }
     if (source['contentReference']) { this.contentReference = new fhir.FhirUri({value: source.contentReference}); }
+    if (source['_contentReference']) {
+      if (this.contentReference) { this.contentReference.addExtendedProperties(source._contentReference!); }
+      else { this.contentReference = new fhir.FhirUri(source._contentReference as Partial<fhir.FhirUriArgs>); }
+    }
     if (source['type']) { this.type = source.type.map((x) => new fhir.ElementDefinitionType(x)); }
     else { this.type = []; }
     if (source['defaultValue']) { this.defaultValue = source.defaultValue; }
@@ -2055,7 +2425,15 @@ export class ElementDefinition extends fhir.BackboneElement {
     else if (source['defaultValueDosage']) { this.defaultValue = new fhir.Dosage(source.defaultValueDosage); }
     else if (source['defaultValueMeta']) { this.defaultValue = new fhir.Meta(source.defaultValueMeta); }
     if (source['meaningWhenMissing']) { this.meaningWhenMissing = new fhir.FhirMarkdown({value: source.meaningWhenMissing}); }
+    if (source['_meaningWhenMissing']) {
+      if (this.meaningWhenMissing) { this.meaningWhenMissing.addExtendedProperties(source._meaningWhenMissing!); }
+      else { this.meaningWhenMissing = new fhir.FhirMarkdown(source._meaningWhenMissing as Partial<fhir.FhirMarkdownArgs>); }
+    }
     if (source['orderMeaning']) { this.orderMeaning = new fhir.FhirString({value: source.orderMeaning}); }
+    if (source['_orderMeaning']) {
+      if (this.orderMeaning) { this.orderMeaning.addExtendedProperties(source._orderMeaning!); }
+      else { this.orderMeaning = new fhir.FhirString(source._orderMeaning as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['fixed']) { this.fixed = source.fixed; }
     else if (source['fixedBase64Binary']) { this.fixed = new fhir.FhirBase64Binary({value: source.fixedBase64Binary}); }
     else if (source['fixedBoolean']) { this.fixed = new fhir.FhirBoolean({value: source.fixedBoolean}); }
@@ -2181,14 +2559,40 @@ export class ElementDefinition extends fhir.BackboneElement {
     else if (source['maxValueUnsignedInt']) { this.maxValue = new fhir.FhirUnsignedInt({value: source.maxValueUnsignedInt}); }
     else if (source['maxValueQuantity']) { this.maxValue = new fhir.Quantity(source.maxValueQuantity); }
     if (source['maxLength']) { this.maxLength = new fhir.FhirInteger({value: source.maxLength}); }
+    if (source['_maxLength']) {
+      if (this.maxLength) { this.maxLength.addExtendedProperties(source._maxLength!); }
+      else { this.maxLength = new fhir.FhirInteger(source._maxLength as Partial<fhir.FhirIntegerArgs>); }
+    }
     if (source['condition']) { this.condition = source.condition.map((x) => new fhir.FhirId({value: x})); }
     else { this.condition = []; }
+    if (source['_condition']) {
+      source._condition.forEach((x,i) => {
+        if (this.condition.length >= i) { if (x) { this.condition[i].addExtendedProperties(x); } }
+        else { if (x) { this.condition.push(new fhir.FhirId(x as Partial<fhir.FhirIdArgs>)); } }
+      });
+    }
     if (source['constraint']) { this.constraint = source.constraint.map((x) => new fhir.ElementDefinitionConstraint(x)); }
     else { this.constraint = []; }
     if (source['mustSupport']) { this.mustSupport = new fhir.FhirBoolean({value: source.mustSupport}); }
+    if (source['_mustSupport']) {
+      if (this.mustSupport) { this.mustSupport.addExtendedProperties(source._mustSupport!); }
+      else { this.mustSupport = new fhir.FhirBoolean(source._mustSupport as Partial<fhir.FhirBooleanArgs>); }
+    }
     if (source['isModifier']) { this.isModifier = new fhir.FhirBoolean({value: source.isModifier}); }
+    if (source['_isModifier']) {
+      if (this.isModifier) { this.isModifier.addExtendedProperties(source._isModifier!); }
+      else { this.isModifier = new fhir.FhirBoolean(source._isModifier as Partial<fhir.FhirBooleanArgs>); }
+    }
     if (source['isModifierReason']) { this.isModifierReason = new fhir.FhirString({value: source.isModifierReason}); }
+    if (source['_isModifierReason']) {
+      if (this.isModifierReason) { this.isModifierReason.addExtendedProperties(source._isModifierReason!); }
+      else { this.isModifierReason = new fhir.FhirString(source._isModifierReason as Partial<fhir.FhirStringArgs>); }
+    }
     if (source['isSummary']) { this.isSummary = new fhir.FhirBoolean({value: source.isSummary}); }
+    if (source['_isSummary']) {
+      if (this.isSummary) { this.isSummary.addExtendedProperties(source._isSummary!); }
+      else { this.isSummary = new fhir.FhirBoolean(source._isSummary as Partial<fhir.FhirBooleanArgs>); }
+    }
     if (source['binding']) { this.binding = new fhir.ElementDefinitionBinding(source.binding); }
     if (source['mapping']) { this.mapping = source.mapping.map((x) => new fhir.ElementDefinitionMapping(x)); }
     else { this.mapping = []; }
