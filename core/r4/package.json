@@ -3,10 +3,6 @@
   "version": "0.0.11-beta.14",
   "description": "Developer pre-release testing of a FHIR TypeScript SDK",
   "keywords": ["fhir", "core", "R4" ],
-  "disabled-exports": {
-    "require": "./dist-cjs/index.js",
-    "import": "./wrapper-es6/index.js"
-  },
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "type": "module",
@@ -15,19 +11,14 @@
     "src"
   ],
   "scripts": {
-    "clean": "shx rm -rf dist lib dist-cjs dist-es6",
+    "clean": "shx rm -rf dist lib",
+    "clean:coverage": "rimraf ../../.nyc_output/*",
     "type-check": "tsc --noEmit",
     "type-check:watch": "npm run type-check -- --watch",
-    "build": "npm run clean && tsc -p tsconfig.tsc.json",
-    "dual-build": "npm run clean && tsc -p tsconfig.es6.json && tsc -p tsconfig.cjs.json",
-    "b-build": "npm run clean && npm run build:types && npm run build:js",
-    "b-build:types": "tsc --emitDeclarationOnly",
-    "b-build:js": "babel src --out-dir dist --extensions \".ts,.tsx\" --source-maps inline",
-    "r-build:modules": "rollup -c",
-    "r-build:modules:watch": "rollup -cw",
-    "r-build": "npm run clean && npm run build:modules",
-    "r-build:all": "npm run build",
-    "r-prepack": "npm run build"
+    "build": "npm run clean && tsc -p tsconfig.json",
+    "test": "jest",
+    "test:coverage": "jest --coverage",
+    "test:coverage:only": "npm run clean:coverage && npm run test:coverage"
   },
   "homepage": "https://github.com/fhir-typescript/fhir-typescript.git",
   "repository": {
@@ -40,17 +31,11 @@
   "license": "MIT",
   "devDependencies": {
     "shx": "~0.3.4",
-    "rollup": "~2.73.0",
-    "rollup-plugin-typescript2": "~0.31.2",
     "typescript": "~4.6.4",
     "tslib": "~2.4.0",
     "rimraf": "~3.0.2",
-    "@babel/cli": "~7.17.10",
-    "@babel/core": "~7.18.0",
-    "@babel/plugin-proposal-class-properties": "~7.17.12",
-    "@babel/plugin-proposal-object-rest-spread": "~7.18.0",
-    "@babel/preset-env": "~7.18.0",
-    "@babel/preset-typescript": "~7.17.12",
-    "@babel/plugin-proposal-decorators": "~7.17.12"
+    "@types/jest": "~27.5.1",
+    "ts-jest": "~28.0.3",
+    "jest": "~28.1.0"
   }
 }
