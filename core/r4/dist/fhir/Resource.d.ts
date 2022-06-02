@@ -76,6 +76,6 @@ export declare class Resource extends fhir.FhirBase {
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.FtsIssue[];
+    doModelValidation(expression?: string): fhir.FtsIssue[];
 }
 //# sourceMappingURL=Resource.d.ts.map

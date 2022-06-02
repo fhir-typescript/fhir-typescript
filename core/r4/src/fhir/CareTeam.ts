@@ -79,12 +79,13 @@ export class CareTeamParticipant extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
-    if (this["role"]) { this.role.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["member"]) { issues.push(...this.member.doModelValidation()); }
-    if (this["onBehalfOf"]) { issues.push(...this.onBehalfOf.doModelValidation()); }
-    if (this["period"]) { issues.push(...this.period.doModelValidation()); }
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'CareTeam.participant' }
+    if (this["role"]) { this.role.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.role[${i}]`)); }) }
+    if (this["member"]) { issues.push(...this.member.doModelValidation(expression+'.member')); }
+    if (this["onBehalfOf"]) { issues.push(...this.onBehalfOf.doModelValidation(expression+'.onBehalfOf')); }
+    if (this["period"]) { issues.push(...this.period.doModelValidation(expression+'.period')); }
     return issues;
   }
 }
@@ -267,27 +268,28 @@ export class CareTeam extends fhir.DomainResource {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'CareTeam' }
     if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType:"CareTeam" fhir: CareTeam.resourceType:"CareTeam"' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType fhir: CareTeam.resourceType:"CareTeam"', expression: [expression] });
     }
-    if (this["identifier"]) { this.identifier.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this['status'] && (!Object.values(CareTeamStatusCodes).includes(this.status as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property status?:fhir.FhirCode<CareTeamStatusCodeType> fhir: CareTeam.status:code Required binding to: CareTeamStatus' });
+    if (this["identifier"]) { this.identifier.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.identifier[${i}]`)); }) }
+    if (this['status'] && (!Object.values(CareTeamStatusCodes).includes(this.status.value as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property status fhir: CareTeam.status:code Required binding to: CareTeamStatus', expression: [expression] });
     }
-    if (this["status"]) { issues.push(...this.status.doModelValidation()); }
-    if (this["category"]) { this.category.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["name"]) { issues.push(...this.name.doModelValidation()); }
-    if (this["subject"]) { issues.push(...this.subject.doModelValidation()); }
-    if (this["encounter"]) { issues.push(...this.encounter.doModelValidation()); }
-    if (this["period"]) { issues.push(...this.period.doModelValidation()); }
-    if (this["participant"]) { this.participant.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["reasonCode"]) { this.reasonCode.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["reasonReference"]) { this.reasonReference.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["managingOrganization"]) { this.managingOrganization.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["telecom"]) { this.telecom.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["note"]) { this.note.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["status"]) { issues.push(...this.status.doModelValidation(expression+'.status')); }
+    if (this["category"]) { this.category.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.category[${i}]`)); }) }
+    if (this["name"]) { issues.push(...this.name.doModelValidation(expression+'.name')); }
+    if (this["subject"]) { issues.push(...this.subject.doModelValidation(expression+'.subject')); }
+    if (this["encounter"]) { issues.push(...this.encounter.doModelValidation(expression+'.encounter')); }
+    if (this["period"]) { issues.push(...this.period.doModelValidation(expression+'.period')); }
+    if (this["participant"]) { this.participant.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.participant[${i}]`)); }) }
+    if (this["reasonCode"]) { this.reasonCode.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.reasonCode[${i}]`)); }) }
+    if (this["reasonReference"]) { this.reasonReference.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.reasonReference[${i}]`)); }) }
+    if (this["managingOrganization"]) { this.managingOrganization.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.managingOrganization[${i}]`)); }) }
+    if (this["telecom"]) { this.telecom.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.telecom[${i}]`)); }) }
+    if (this["note"]) { this.note.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.note[${i}]`)); }) }
     return issues;
   }
 }

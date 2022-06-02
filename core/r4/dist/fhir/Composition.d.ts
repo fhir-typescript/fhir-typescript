@@ -67,7 +67,7 @@ export declare class CompositionAttester extends fhir.BackboneElement {
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.FtsIssue[];
+    doModelValidation(expression?: string): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the CompositionRelatesTo type.
@@ -130,7 +130,7 @@ export declare class CompositionRelatesTo extends fhir.BackboneElement {
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.FtsIssue[];
+    doModelValidation(expression?: string): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the CompositionEvent type.
@@ -176,7 +176,7 @@ export declare class CompositionEvent extends fhir.BackboneElement {
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.FtsIssue[];
+    doModelValidation(expression?: string): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the CompositionSection type.
@@ -304,7 +304,7 @@ export declare class CompositionSection extends fhir.BackboneElement {
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.FtsIssue[];
+    doModelValidation(expression?: string): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the Composition type.
@@ -496,6 +496,6 @@ export declare class Composition extends fhir.DomainResource {
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.FtsIssue[];
+    doModelValidation(expression?: string): fhir.FtsIssue[];
 }
 //# sourceMappingURL=Composition.d.ts.map

@@ -92,15 +92,16 @@ export class ProvenanceAgent extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
-    if (this["type"]) { issues.push(...this.type.doModelValidation()); }
-    if (this["role"]) { this.role.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'Provenance.agent' }
+    if (this["type"]) { issues.push(...this.type.doModelValidation(expression+'.type')); }
+    if (this["role"]) { this.role.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.role[${i}]`)); }) }
     if (!this['who']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property who:fhir.Reference fhir: Provenance.agent.who:Reference' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property who fhir: Provenance.agent.who:Reference', expression: [expression] });
     }
-    if (this["who"]) { issues.push(...this.who.doModelValidation()); }
-    if (this["onBehalfOf"]) { issues.push(...this.onBehalfOf.doModelValidation()); }
+    if (this["who"]) { issues.push(...this.who.doModelValidation(expression+'.who')); }
+    if (this["onBehalfOf"]) { issues.push(...this.onBehalfOf.doModelValidation(expression+'.onBehalfOf')); }
     return issues;
   }
 }
@@ -171,20 +172,21 @@ export class ProvenanceEntity extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'Provenance.entity' }
     if (!this['role']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property role:fhir.FhirCode<ProvenanceEntityRoleCodeType> fhir: Provenance.entity.role:code' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property role fhir: Provenance.entity.role:code', expression: [expression] });
     }
-    if (this['role'] && (!Object.values(ProvenanceEntityRoleCodes).includes(this.role as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property role:fhir.FhirCode<ProvenanceEntityRoleCodeType> fhir: Provenance.entity.role:code Required binding to: ProvenanceEntityRole' });
+    if (this['role'] && (!Object.values(ProvenanceEntityRoleCodes).includes(this.role.value as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property role fhir: Provenance.entity.role:code Required binding to: ProvenanceEntityRole', expression: [expression] });
     }
-    if (this["role"]) { issues.push(...this.role.doModelValidation()); }
+    if (this["role"]) { issues.push(...this.role.doModelValidation(expression+'.role')); }
     if (!this['what']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property what:fhir.Reference fhir: Provenance.entity.what:Reference' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property what fhir: Provenance.entity.what:Reference', expression: [expression] });
     }
-    if (this["what"]) { issues.push(...this.what.doModelValidation()); }
-    if (this["agent"]) { this.agent.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["what"]) { issues.push(...this.what.doModelValidation(expression+'.what')); }
+    if (this["agent"]) { this.agent.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.agent[${i}]`)); }) }
     return issues;
   }
 }
@@ -361,37 +363,38 @@ export class Provenance extends fhir.DomainResource {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'Provenance' }
     if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType:"Provenance" fhir: Provenance.resourceType:"Provenance"' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType fhir: Provenance.resourceType:"Provenance"', expression: [expression] });
     }
     if (!this['target']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property target:fhir.Reference[] fhir: Provenance.target:Reference' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property target fhir: Provenance.target:Reference', expression: [expression] });
     } else if (!Array.isArray(this.target)) {
-      issues.push({ severity: 'error', code: 'structure', diagnostics: 'Found scalar in array property target:fhir.Reference[] fhir: Provenance.target:Reference' });
+      issues.push({ severity: 'error', code: 'structure', diagnostics: 'Found scalar in array property target fhir: Provenance.target:Reference', expression: [expression] });
     } else if (this.target.length === 0) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property target:fhir.Reference[] fhir: Provenance.target:Reference' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property target fhir: Provenance.target:Reference', expression: [expression] });
     }
-    if (this["target"]) { this.target.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["target"]) { this.target.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.target[${i}]`)); }) }
     if (!this['recorded']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property recorded:fhir.FhirInstant fhir: Provenance.recorded:instant' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property recorded fhir: Provenance.recorded:instant', expression: [expression] });
     }
-    if (this["recorded"]) { issues.push(...this.recorded.doModelValidation()); }
-    if (this["policy"]) { this.policy.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["location"]) { issues.push(...this.location.doModelValidation()); }
-    if (this["reason"]) { this.reason.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["activity"]) { issues.push(...this.activity.doModelValidation()); }
+    if (this["recorded"]) { issues.push(...this.recorded.doModelValidation(expression+'.recorded')); }
+    if (this["policy"]) { this.policy.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.policy[${i}]`)); }) }
+    if (this["location"]) { issues.push(...this.location.doModelValidation(expression+'.location')); }
+    if (this["reason"]) { this.reason.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.reason[${i}]`)); }) }
+    if (this["activity"]) { issues.push(...this.activity.doModelValidation(expression+'.activity')); }
     if (!this['agent']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property agent:fhir.ProvenanceAgent[] fhir: Provenance.agent:agent' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property agent fhir: Provenance.agent:agent', expression: [expression] });
     } else if (!Array.isArray(this.agent)) {
-      issues.push({ severity: 'error', code: 'structure', diagnostics: 'Found scalar in array property agent:fhir.ProvenanceAgent[] fhir: Provenance.agent:agent' });
+      issues.push({ severity: 'error', code: 'structure', diagnostics: 'Found scalar in array property agent fhir: Provenance.agent:agent', expression: [expression] });
     } else if (this.agent.length === 0) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property agent:fhir.ProvenanceAgent[] fhir: Provenance.agent:agent' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property agent fhir: Provenance.agent:agent', expression: [expression] });
     }
-    if (this["agent"]) { this.agent.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["entity"]) { this.entity.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["signature"]) { this.signature.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["agent"]) { this.agent.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.agent[${i}]`)); }) }
+    if (this["entity"]) { this.entity.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.entity[${i}]`)); }) }
+    if (this["signature"]) { this.signature.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.signature[${i}]`)); }) }
     return issues;
   }
 }

@@ -81,7 +81,7 @@ export declare class PractitionerRoleAvailableTime extends fhir.BackboneElement 
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.FtsIssue[];
+    doModelValidation(expression?: string): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the PractitionerRoleNotAvailable type.
@@ -123,7 +123,7 @@ export declare class PractitionerRoleNotAvailable extends fhir.BackboneElement {
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.FtsIssue[];
+    doModelValidation(expression?: string): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the PractitionerRole type.
@@ -277,6 +277,6 @@ export declare class PractitionerRole extends fhir.DomainResource {
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.FtsIssue[];
+    doModelValidation(expression?: string): fhir.FtsIssue[];
 }
 //# sourceMappingURL=PractitionerRole.d.ts.map

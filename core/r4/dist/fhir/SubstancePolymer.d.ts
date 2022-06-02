@@ -55,7 +55,7 @@ export declare class SubstancePolymerMonomerSetStartingMaterial extends fhir.Bac
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.FtsIssue[];
+    doModelValidation(expression?: string): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the SubstancePolymerMonomerSet type.
@@ -93,7 +93,7 @@ export declare class SubstancePolymerMonomerSet extends fhir.BackboneElement {
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.FtsIssue[];
+    doModelValidation(expression?: string): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the SubstancePolymerRepeatRepeatUnitDegreeOfPolymerisation type.
@@ -131,7 +131,7 @@ export declare class SubstancePolymerRepeatRepeatUnitDegreeOfPolymerisation exte
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.FtsIssue[];
+    doModelValidation(expression?: string): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the SubstancePolymerRepeatRepeatUnitStructuralRepresentation type.
@@ -181,7 +181,7 @@ export declare class SubstancePolymerRepeatRepeatUnitStructuralRepresentation ex
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.FtsIssue[];
+    doModelValidation(expression?: string): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the SubstancePolymerRepeatRepeatUnit type.
@@ -247,7 +247,7 @@ export declare class SubstancePolymerRepeatRepeatUnit extends fhir.BackboneEleme
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.FtsIssue[];
+    doModelValidation(expression?: string): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the SubstancePolymerRepeat type.
@@ -309,7 +309,7 @@ export declare class SubstancePolymerRepeat extends fhir.BackboneElement {
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.FtsIssue[];
+    doModelValidation(expression?: string): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the SubstancePolymer type.
@@ -391,6 +391,6 @@ export declare class SubstancePolymer extends fhir.DomainResource {
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.FtsIssue[];
+    doModelValidation(expression?: string): fhir.FtsIssue[];
 }
 //# sourceMappingURL=SubstancePolymer.d.ts.map

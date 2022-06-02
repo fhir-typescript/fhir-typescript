@@ -99,7 +99,7 @@ export declare class AllergyIntoleranceReaction extends fhir.BackboneElement {
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.FtsIssue[];
+    doModelValidation(expression?: string): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the AllergyIntolerance type.
@@ -348,6 +348,6 @@ export declare class AllergyIntolerance extends fhir.DomainResource {
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.FtsIssue[];
+    doModelValidation(expression?: string): fhir.FtsIssue[];
 }
 //# sourceMappingURL=AllergyIntolerance.d.ts.map

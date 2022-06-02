@@ -72,13 +72,14 @@ export class Money extends fhir.FhirElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
-    if (this["value"]) { issues.push(...this.value.doModelValidation()); }
-    if (this['currency'] && (!Object.values(CurrenciesCodes).includes(this.currency as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property currency?:fhir.FhirCode fhir: Money.currency:code Required binding to: Currencies' });
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'Money' }
+    if (this["value"]) { issues.push(...this.value.doModelValidation(expression+'.value')); }
+    if (this['currency'] && (!Object.values(CurrenciesCodes).includes(this.currency.value as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property currency fhir: Money.currency:code Required binding to: Currencies', expression: [expression] });
     }
-    if (this["currency"]) { issues.push(...this.currency.doModelValidation()); }
+    if (this["currency"]) { issues.push(...this.currency.doModelValidation(expression+'.currency')); }
     return issues;
   }
 }

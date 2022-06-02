@@ -52,10 +52,11 @@ export class MedicinalProductInteractionInteractant extends fhir.BackboneElement
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'MedicinalProductInteraction.interactant' }
     if (!this['item']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property item: fhir: MedicinalProductInteraction.interactant.item[x]:' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property item fhir: MedicinalProductInteraction.interactant.item[x]:', expression: [expression] });
     }
     return issues;
   }
@@ -165,18 +166,19 @@ export class MedicinalProductInteraction extends fhir.DomainResource {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'MedicinalProductInteraction' }
     if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType:"MedicinalProductInteraction" fhir: MedicinalProductInteraction.resourceType:"MedicinalProductInteraction"' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType fhir: MedicinalProductInteraction.resourceType:"MedicinalProductInteraction"', expression: [expression] });
     }
-    if (this["subject"]) { this.subject.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["description"]) { issues.push(...this.description.doModelValidation()); }
-    if (this["interactant"]) { this.interactant.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["type"]) { issues.push(...this.type.doModelValidation()); }
-    if (this["effect"]) { issues.push(...this.effect.doModelValidation()); }
-    if (this["incidence"]) { issues.push(...this.incidence.doModelValidation()); }
-    if (this["management"]) { issues.push(...this.management.doModelValidation()); }
+    if (this["subject"]) { this.subject.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.subject[${i}]`)); }) }
+    if (this["description"]) { issues.push(...this.description.doModelValidation(expression+'.description')); }
+    if (this["interactant"]) { this.interactant.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.interactant[${i}]`)); }) }
+    if (this["type"]) { issues.push(...this.type.doModelValidation(expression+'.type')); }
+    if (this["effect"]) { issues.push(...this.effect.doModelValidation(expression+'.effect')); }
+    if (this["incidence"]) { issues.push(...this.incidence.doModelValidation(expression+'.incidence')); }
+    if (this["management"]) { issues.push(...this.management.doModelValidation(expression+'.management')); }
     return issues;
   }
 }

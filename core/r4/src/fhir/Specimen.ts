@@ -147,13 +147,14 @@ export class SpecimenCollection extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
-    if (this["collector"]) { issues.push(...this.collector.doModelValidation()); }
-    if (this["duration"]) { issues.push(...this.duration.doModelValidation()); }
-    if (this["quantity"]) { issues.push(...this.quantity.doModelValidation()); }
-    if (this["method"]) { issues.push(...this.method.doModelValidation()); }
-    if (this["bodySite"]) { issues.push(...this.bodySite.doModelValidation()); }
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'Specimen.collection' }
+    if (this["collector"]) { issues.push(...this.collector.doModelValidation(expression+'.collector')); }
+    if (this["duration"]) { issues.push(...this.duration.doModelValidation(expression+'.duration')); }
+    if (this["quantity"]) { issues.push(...this.quantity.doModelValidation(expression+'.quantity')); }
+    if (this["method"]) { issues.push(...this.method.doModelValidation(expression+'.method')); }
+    if (this["bodySite"]) { issues.push(...this.bodySite.doModelValidation(expression+'.bodySite')); }
     return issues;
   }
 }
@@ -239,11 +240,12 @@ export class SpecimenProcessing extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
-    if (this["description"]) { issues.push(...this.description.doModelValidation()); }
-    if (this["procedure"]) { issues.push(...this.procedure.doModelValidation()); }
-    if (this["additive"]) { this.additive.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'Specimen.processing' }
+    if (this["description"]) { issues.push(...this.description.doModelValidation(expression+'.description')); }
+    if (this["procedure"]) { issues.push(...this.procedure.doModelValidation(expression+'.procedure')); }
+    if (this["additive"]) { this.additive.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.additive[${i}]`)); }) }
     return issues;
   }
 }
@@ -347,13 +349,14 @@ export class SpecimenContainer extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
-    if (this["identifier"]) { this.identifier.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["description"]) { issues.push(...this.description.doModelValidation()); }
-    if (this["type"]) { issues.push(...this.type.doModelValidation()); }
-    if (this["capacity"]) { issues.push(...this.capacity.doModelValidation()); }
-    if (this["specimenQuantity"]) { issues.push(...this.specimenQuantity.doModelValidation()); }
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'Specimen.container' }
+    if (this["identifier"]) { this.identifier.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.identifier[${i}]`)); }) }
+    if (this["description"]) { issues.push(...this.description.doModelValidation(expression+'.description')); }
+    if (this["type"]) { issues.push(...this.type.doModelValidation(expression+'.type')); }
+    if (this["capacity"]) { issues.push(...this.capacity.doModelValidation(expression+'.capacity')); }
+    if (this["specimenQuantity"]) { issues.push(...this.specimenQuantity.doModelValidation(expression+'.specimenQuantity')); }
     return issues;
   }
 }
@@ -541,27 +544,28 @@ export class Specimen extends fhir.DomainResource {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'Specimen' }
     if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType:"Specimen" fhir: Specimen.resourceType:"Specimen"' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType fhir: Specimen.resourceType:"Specimen"', expression: [expression] });
     }
-    if (this["identifier"]) { this.identifier.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["accessionIdentifier"]) { issues.push(...this.accessionIdentifier.doModelValidation()); }
-    if (this['status'] && (!Object.values(SpecimenStatusCodes).includes(this.status as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property status?:fhir.FhirCode<SpecimenStatusCodeType> fhir: Specimen.status:code Required binding to: SpecimenStatus' });
+    if (this["identifier"]) { this.identifier.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.identifier[${i}]`)); }) }
+    if (this["accessionIdentifier"]) { issues.push(...this.accessionIdentifier.doModelValidation(expression+'.accessionIdentifier')); }
+    if (this['status'] && (!Object.values(SpecimenStatusCodes).includes(this.status.value as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property status fhir: Specimen.status:code Required binding to: SpecimenStatus', expression: [expression] });
     }
-    if (this["status"]) { issues.push(...this.status.doModelValidation()); }
-    if (this["type"]) { issues.push(...this.type.doModelValidation()); }
-    if (this["subject"]) { issues.push(...this.subject.doModelValidation()); }
-    if (this["receivedTime"]) { issues.push(...this.receivedTime.doModelValidation()); }
-    if (this["parent"]) { this.parent.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["request"]) { this.request.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["collection"]) { issues.push(...this.collection.doModelValidation()); }
-    if (this["processing"]) { this.processing.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["container"]) { this.container.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["condition"]) { this.condition.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["note"]) { this.note.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["status"]) { issues.push(...this.status.doModelValidation(expression+'.status')); }
+    if (this["type"]) { issues.push(...this.type.doModelValidation(expression+'.type')); }
+    if (this["subject"]) { issues.push(...this.subject.doModelValidation(expression+'.subject')); }
+    if (this["receivedTime"]) { issues.push(...this.receivedTime.doModelValidation(expression+'.receivedTime')); }
+    if (this["parent"]) { this.parent.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.parent[${i}]`)); }) }
+    if (this["request"]) { this.request.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.request[${i}]`)); }) }
+    if (this["collection"]) { issues.push(...this.collection.doModelValidation(expression+'.collection')); }
+    if (this["processing"]) { this.processing.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.processing[${i}]`)); }) }
+    if (this["container"]) { this.container.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.container[${i}]`)); }) }
+    if (this["condition"]) { this.condition.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.condition[${i}]`)); }) }
+    if (this["note"]) { this.note.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.note[${i}]`)); }) }
     return issues;
   }
 }

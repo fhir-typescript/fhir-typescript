@@ -158,18 +158,19 @@ export class HumanName extends fhir.FhirElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
-    if (this['use'] && (!Object.values(NameUseCodes).includes(this.use as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property use?:fhir.FhirCode<NameUseCodeType> fhir: HumanName.use:code Required binding to: NameUse' });
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'HumanName' }
+    if (this['use'] && (!Object.values(NameUseCodes).includes(this.use.value as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property use fhir: HumanName.use:code Required binding to: NameUse', expression: [expression] });
     }
-    if (this["use"]) { issues.push(...this.use.doModelValidation()); }
-    if (this["text"]) { issues.push(...this.text.doModelValidation()); }
-    if (this["family"]) { issues.push(...this.family.doModelValidation()); }
-    if (this["given"]) { this.given.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["prefix"]) { this.prefix.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["suffix"]) { this.suffix.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["period"]) { issues.push(...this.period.doModelValidation()); }
+    if (this["use"]) { issues.push(...this.use.doModelValidation(expression+'.use')); }
+    if (this["text"]) { issues.push(...this.text.doModelValidation(expression+'.text')); }
+    if (this["family"]) { issues.push(...this.family.doModelValidation(expression+'.family')); }
+    if (this["given"]) { this.given.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.given[${i}]`)); }) }
+    if (this["prefix"]) { this.prefix.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.prefix[${i}]`)); }) }
+    if (this["suffix"]) { this.suffix.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.suffix[${i}]`)); }) }
+    if (this["period"]) { issues.push(...this.period.doModelValidation(expression+'.period')); }
     return issues;
   }
 

@@ -214,35 +214,36 @@ export class DeviceUseStatement extends fhir.DomainResource {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'DeviceUseStatement' }
     if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType:"DeviceUseStatement" fhir: DeviceUseStatement.resourceType:"DeviceUseStatement"' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType fhir: DeviceUseStatement.resourceType:"DeviceUseStatement"', expression: [expression] });
     }
-    if (this["identifier"]) { this.identifier.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["basedOn"]) { this.basedOn.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["identifier"]) { this.identifier.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.identifier[${i}]`)); }) }
+    if (this["basedOn"]) { this.basedOn.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.basedOn[${i}]`)); }) }
     if (!this['status']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status:fhir.FhirCode<DeviceStatementStatusCodeType> fhir: DeviceUseStatement.status:code' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status fhir: DeviceUseStatement.status:code', expression: [expression] });
     }
-    if (this['status'] && (!Object.values(DeviceStatementStatusCodes).includes(this.status as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property status:fhir.FhirCode<DeviceStatementStatusCodeType> fhir: DeviceUseStatement.status:code Required binding to: DeviceStatementStatus' });
+    if (this['status'] && (!Object.values(DeviceStatementStatusCodes).includes(this.status.value as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property status fhir: DeviceUseStatement.status:code Required binding to: DeviceStatementStatus', expression: [expression] });
     }
-    if (this["status"]) { issues.push(...this.status.doModelValidation()); }
+    if (this["status"]) { issues.push(...this.status.doModelValidation(expression+'.status')); }
     if (!this['subject']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property subject:fhir.Reference fhir: DeviceUseStatement.subject:Reference' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property subject fhir: DeviceUseStatement.subject:Reference', expression: [expression] });
     }
-    if (this["subject"]) { issues.push(...this.subject.doModelValidation()); }
-    if (this["derivedFrom"]) { this.derivedFrom.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["recordedOn"]) { issues.push(...this.recordedOn.doModelValidation()); }
-    if (this["source"]) { issues.push(...this.source.doModelValidation()); }
+    if (this["subject"]) { issues.push(...this.subject.doModelValidation(expression+'.subject')); }
+    if (this["derivedFrom"]) { this.derivedFrom.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.derivedFrom[${i}]`)); }) }
+    if (this["recordedOn"]) { issues.push(...this.recordedOn.doModelValidation(expression+'.recordedOn')); }
+    if (this["source"]) { issues.push(...this.source.doModelValidation(expression+'.source')); }
     if (!this['device']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property device:fhir.Reference fhir: DeviceUseStatement.device:Reference' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property device fhir: DeviceUseStatement.device:Reference', expression: [expression] });
     }
-    if (this["device"]) { issues.push(...this.device.doModelValidation()); }
-    if (this["reasonCode"]) { this.reasonCode.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["reasonReference"]) { this.reasonReference.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["bodySite"]) { issues.push(...this.bodySite.doModelValidation()); }
-    if (this["note"]) { this.note.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["device"]) { issues.push(...this.device.doModelValidation(expression+'.device')); }
+    if (this["reasonCode"]) { this.reasonCode.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.reasonCode[${i}]`)); }) }
+    if (this["reasonReference"]) { this.reasonReference.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.reasonReference[${i}]`)); }) }
+    if (this["bodySite"]) { issues.push(...this.bodySite.doModelValidation(expression+'.bodySite')); }
+    if (this["note"]) { this.note.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.note[${i}]`)); }) }
     return issues;
   }
 }

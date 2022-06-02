@@ -69,16 +69,17 @@ export class PersonLink extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'Person.link' }
     if (!this['target']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property target:fhir.Reference fhir: Person.link.target:Reference' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property target fhir: Person.link.target:Reference', expression: [expression] });
     }
-    if (this["target"]) { issues.push(...this.target.doModelValidation()); }
-    if (this['assurance'] && (!Object.values(IdentityAssuranceLevelCodes).includes(this.assurance as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property assurance?:fhir.FhirCode<IdentityAssuranceLevelCodeType> fhir: Person.link.assurance:code Required binding to: IdentityAssuranceLevel' });
+    if (this["target"]) { issues.push(...this.target.doModelValidation(expression+'.target')); }
+    if (this['assurance'] && (!Object.values(IdentityAssuranceLevelCodes).includes(this.assurance.value as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property assurance fhir: Person.link.assurance:code Required binding to: IdentityAssuranceLevel', expression: [expression] });
     }
-    if (this["assurance"]) { issues.push(...this.assurance.doModelValidation()); }
+    if (this["assurance"]) { issues.push(...this.assurance.doModelValidation(expression+'.assurance')); }
     return issues;
   }
 }
@@ -239,24 +240,25 @@ export class Person extends fhir.DomainResource {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'Person' }
     if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType:"Person" fhir: Person.resourceType:"Person"' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType fhir: Person.resourceType:"Person"', expression: [expression] });
     }
-    if (this["identifier"]) { this.identifier.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["name"]) { this.name.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["telecom"]) { this.telecom.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this['gender'] && (!Object.values(AdministrativeGenderCodes).includes(this.gender as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property gender?:fhir.FhirCode<AdministrativeGenderCodeType> fhir: Person.gender:code Required binding to: AdministrativeGender' });
+    if (this["identifier"]) { this.identifier.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.identifier[${i}]`)); }) }
+    if (this["name"]) { this.name.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.name[${i}]`)); }) }
+    if (this["telecom"]) { this.telecom.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.telecom[${i}]`)); }) }
+    if (this['gender'] && (!Object.values(AdministrativeGenderCodes).includes(this.gender.value as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property gender fhir: Person.gender:code Required binding to: AdministrativeGender', expression: [expression] });
     }
-    if (this["gender"]) { issues.push(...this.gender.doModelValidation()); }
-    if (this["birthDate"]) { issues.push(...this.birthDate.doModelValidation()); }
-    if (this["address"]) { this.address.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["photo"]) { issues.push(...this.photo.doModelValidation()); }
-    if (this["managingOrganization"]) { issues.push(...this.managingOrganization.doModelValidation()); }
-    if (this["active"]) { issues.push(...this.active.doModelValidation()); }
-    if (this["link"]) { this.link.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["gender"]) { issues.push(...this.gender.doModelValidation(expression+'.gender')); }
+    if (this["birthDate"]) { issues.push(...this.birthDate.doModelValidation(expression+'.birthDate')); }
+    if (this["address"]) { this.address.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.address[${i}]`)); }) }
+    if (this["photo"]) { issues.push(...this.photo.doModelValidation(expression+'.photo')); }
+    if (this["managingOrganization"]) { issues.push(...this.managingOrganization.doModelValidation(expression+'.managingOrganization')); }
+    if (this["active"]) { issues.push(...this.active.doModelValidation(expression+'.active')); }
+    if (this["link"]) { this.link.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.link[${i}]`)); }) }
     return issues;
   }
 }

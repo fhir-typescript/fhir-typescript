@@ -153,15 +153,16 @@ export class ClaimResponseItemAdjudication extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'ClaimResponse.item.adjudication' }
     if (!this['category']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property category:fhir.CodeableConcept fhir: ClaimResponse.item.adjudication.category:CodeableConcept' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property category fhir: ClaimResponse.item.adjudication.category:CodeableConcept', expression: [expression] });
     }
-    if (this["category"]) { issues.push(...this.category.doModelValidation()); }
-    if (this["reason"]) { issues.push(...this.reason.doModelValidation()); }
-    if (this["amount"]) { issues.push(...this.amount.doModelValidation()); }
-    if (this["value"]) { issues.push(...this.value.doModelValidation()); }
+    if (this["category"]) { issues.push(...this.category.doModelValidation(expression+'.category')); }
+    if (this["reason"]) { issues.push(...this.reason.doModelValidation(expression+'.reason')); }
+    if (this["amount"]) { issues.push(...this.amount.doModelValidation(expression+'.amount')); }
+    if (this["value"]) { issues.push(...this.value.doModelValidation(expression+'.value')); }
     return issues;
   }
 }
@@ -236,14 +237,15 @@ export class ClaimResponseItemDetailSubDetail extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'ClaimResponse.item.detail.subDetail' }
     if (!this['subDetailSequence']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property subDetailSequence:fhir.FhirPositiveInt fhir: ClaimResponse.item.detail.subDetail.subDetailSequence:positiveInt' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property subDetailSequence fhir: ClaimResponse.item.detail.subDetail.subDetailSequence:positiveInt', expression: [expression] });
     }
-    if (this["subDetailSequence"]) { issues.push(...this.subDetailSequence.doModelValidation()); }
-    if (this["noteNumber"]) { this.noteNumber.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["adjudication"]) { this.adjudication.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["subDetailSequence"]) { issues.push(...this.subDetailSequence.doModelValidation(expression+'.subDetailSequence')); }
+    if (this["noteNumber"]) { this.noteNumber.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.noteNumber[${i}]`)); }) }
+    if (this["adjudication"]) { this.adjudication.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.adjudication[${i}]`)); }) }
     return issues;
   }
 }
@@ -328,22 +330,23 @@ export class ClaimResponseItemDetail extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'ClaimResponse.item.detail' }
     if (!this['detailSequence']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property detailSequence:fhir.FhirPositiveInt fhir: ClaimResponse.item.detail.detailSequence:positiveInt' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property detailSequence fhir: ClaimResponse.item.detail.detailSequence:positiveInt', expression: [expression] });
     }
-    if (this["detailSequence"]) { issues.push(...this.detailSequence.doModelValidation()); }
-    if (this["noteNumber"]) { this.noteNumber.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["detailSequence"]) { issues.push(...this.detailSequence.doModelValidation(expression+'.detailSequence')); }
+    if (this["noteNumber"]) { this.noteNumber.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.noteNumber[${i}]`)); }) }
     if (!this['adjudication']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property adjudication:fhir.ClaimResponseItemAdjudication[] fhir: ClaimResponse.item.detail.adjudication:ClaimResponse.item.adjudication' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property adjudication fhir: ClaimResponse.item.detail.adjudication:ClaimResponse.item.adjudication', expression: [expression] });
     } else if (!Array.isArray(this.adjudication)) {
-      issues.push({ severity: 'error', code: 'structure', diagnostics: 'Found scalar in array property adjudication:fhir.ClaimResponseItemAdjudication[] fhir: ClaimResponse.item.detail.adjudication:ClaimResponse.item.adjudication' });
+      issues.push({ severity: 'error', code: 'structure', diagnostics: 'Found scalar in array property adjudication fhir: ClaimResponse.item.detail.adjudication:ClaimResponse.item.adjudication', expression: [expression] });
     } else if (this.adjudication.length === 0) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property adjudication:fhir.ClaimResponseItemAdjudication[] fhir: ClaimResponse.item.detail.adjudication:ClaimResponse.item.adjudication' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property adjudication fhir: ClaimResponse.item.detail.adjudication:ClaimResponse.item.adjudication', expression: [expression] });
     }
-    if (this["adjudication"]) { this.adjudication.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["subDetail"]) { this.subDetail.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["adjudication"]) { this.adjudication.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.adjudication[${i}]`)); }) }
+    if (this["subDetail"]) { this.subDetail.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.subDetail[${i}]`)); }) }
     return issues;
   }
 }
@@ -428,22 +431,23 @@ export class ClaimResponseItem extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'ClaimResponse.item' }
     if (!this['itemSequence']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property itemSequence:fhir.FhirPositiveInt fhir: ClaimResponse.item.itemSequence:positiveInt' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property itemSequence fhir: ClaimResponse.item.itemSequence:positiveInt', expression: [expression] });
     }
-    if (this["itemSequence"]) { issues.push(...this.itemSequence.doModelValidation()); }
-    if (this["noteNumber"]) { this.noteNumber.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["itemSequence"]) { issues.push(...this.itemSequence.doModelValidation(expression+'.itemSequence')); }
+    if (this["noteNumber"]) { this.noteNumber.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.noteNumber[${i}]`)); }) }
     if (!this['adjudication']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property adjudication:fhir.ClaimResponseItemAdjudication[] fhir: ClaimResponse.item.adjudication:adjudication' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property adjudication fhir: ClaimResponse.item.adjudication:adjudication', expression: [expression] });
     } else if (!Array.isArray(this.adjudication)) {
-      issues.push({ severity: 'error', code: 'structure', diagnostics: 'Found scalar in array property adjudication:fhir.ClaimResponseItemAdjudication[] fhir: ClaimResponse.item.adjudication:adjudication' });
+      issues.push({ severity: 'error', code: 'structure', diagnostics: 'Found scalar in array property adjudication fhir: ClaimResponse.item.adjudication:adjudication', expression: [expression] });
     } else if (this.adjudication.length === 0) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property adjudication:fhir.ClaimResponseItemAdjudication[] fhir: ClaimResponse.item.adjudication:adjudication' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property adjudication fhir: ClaimResponse.item.adjudication:adjudication', expression: [expression] });
     }
-    if (this["adjudication"]) { this.adjudication.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["detail"]) { this.detail.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["adjudication"]) { this.adjudication.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.adjudication[${i}]`)); }) }
+    if (this["detail"]) { this.detail.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.detail[${i}]`)); }) }
     return issues;
   }
 }
@@ -564,26 +568,27 @@ export class ClaimResponseAddItemDetailSubDetail extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'ClaimResponse.addItem.detail.subDetail' }
     if (!this['productOrService']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property productOrService:fhir.CodeableConcept fhir: ClaimResponse.addItem.detail.subDetail.productOrService:CodeableConcept' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property productOrService fhir: ClaimResponse.addItem.detail.subDetail.productOrService:CodeableConcept', expression: [expression] });
     }
-    if (this["productOrService"]) { issues.push(...this.productOrService.doModelValidation()); }
-    if (this["modifier"]) { this.modifier.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["quantity"]) { issues.push(...this.quantity.doModelValidation()); }
-    if (this["unitPrice"]) { issues.push(...this.unitPrice.doModelValidation()); }
-    if (this["factor"]) { issues.push(...this.factor.doModelValidation()); }
-    if (this["net"]) { issues.push(...this.net.doModelValidation()); }
-    if (this["noteNumber"]) { this.noteNumber.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["productOrService"]) { issues.push(...this.productOrService.doModelValidation(expression+'.productOrService')); }
+    if (this["modifier"]) { this.modifier.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.modifier[${i}]`)); }) }
+    if (this["quantity"]) { issues.push(...this.quantity.doModelValidation(expression+'.quantity')); }
+    if (this["unitPrice"]) { issues.push(...this.unitPrice.doModelValidation(expression+'.unitPrice')); }
+    if (this["factor"]) { issues.push(...this.factor.doModelValidation(expression+'.factor')); }
+    if (this["net"]) { issues.push(...this.net.doModelValidation(expression+'.net')); }
+    if (this["noteNumber"]) { this.noteNumber.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.noteNumber[${i}]`)); }) }
     if (!this['adjudication']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property adjudication:fhir.ClaimResponseItemAdjudication[] fhir: ClaimResponse.addItem.detail.subDetail.adjudication:ClaimResponse.item.adjudication' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property adjudication fhir: ClaimResponse.addItem.detail.subDetail.adjudication:ClaimResponse.item.adjudication', expression: [expression] });
     } else if (!Array.isArray(this.adjudication)) {
-      issues.push({ severity: 'error', code: 'structure', diagnostics: 'Found scalar in array property adjudication:fhir.ClaimResponseItemAdjudication[] fhir: ClaimResponse.addItem.detail.subDetail.adjudication:ClaimResponse.item.adjudication' });
+      issues.push({ severity: 'error', code: 'structure', diagnostics: 'Found scalar in array property adjudication fhir: ClaimResponse.addItem.detail.subDetail.adjudication:ClaimResponse.item.adjudication', expression: [expression] });
     } else if (this.adjudication.length === 0) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property adjudication:fhir.ClaimResponseItemAdjudication[] fhir: ClaimResponse.addItem.detail.subDetail.adjudication:ClaimResponse.item.adjudication' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property adjudication fhir: ClaimResponse.addItem.detail.subDetail.adjudication:ClaimResponse.item.adjudication', expression: [expression] });
     }
-    if (this["adjudication"]) { this.adjudication.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["adjudication"]) { this.adjudication.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.adjudication[${i}]`)); }) }
     return issues;
   }
 }
@@ -714,27 +719,28 @@ export class ClaimResponseAddItemDetail extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'ClaimResponse.addItem.detail' }
     if (!this['productOrService']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property productOrService:fhir.CodeableConcept fhir: ClaimResponse.addItem.detail.productOrService:CodeableConcept' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property productOrService fhir: ClaimResponse.addItem.detail.productOrService:CodeableConcept', expression: [expression] });
     }
-    if (this["productOrService"]) { issues.push(...this.productOrService.doModelValidation()); }
-    if (this["modifier"]) { this.modifier.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["quantity"]) { issues.push(...this.quantity.doModelValidation()); }
-    if (this["unitPrice"]) { issues.push(...this.unitPrice.doModelValidation()); }
-    if (this["factor"]) { issues.push(...this.factor.doModelValidation()); }
-    if (this["net"]) { issues.push(...this.net.doModelValidation()); }
-    if (this["noteNumber"]) { this.noteNumber.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["productOrService"]) { issues.push(...this.productOrService.doModelValidation(expression+'.productOrService')); }
+    if (this["modifier"]) { this.modifier.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.modifier[${i}]`)); }) }
+    if (this["quantity"]) { issues.push(...this.quantity.doModelValidation(expression+'.quantity')); }
+    if (this["unitPrice"]) { issues.push(...this.unitPrice.doModelValidation(expression+'.unitPrice')); }
+    if (this["factor"]) { issues.push(...this.factor.doModelValidation(expression+'.factor')); }
+    if (this["net"]) { issues.push(...this.net.doModelValidation(expression+'.net')); }
+    if (this["noteNumber"]) { this.noteNumber.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.noteNumber[${i}]`)); }) }
     if (!this['adjudication']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property adjudication:fhir.ClaimResponseItemAdjudication[] fhir: ClaimResponse.addItem.detail.adjudication:ClaimResponse.item.adjudication' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property adjudication fhir: ClaimResponse.addItem.detail.adjudication:ClaimResponse.item.adjudication', expression: [expression] });
     } else if (!Array.isArray(this.adjudication)) {
-      issues.push({ severity: 'error', code: 'structure', diagnostics: 'Found scalar in array property adjudication:fhir.ClaimResponseItemAdjudication[] fhir: ClaimResponse.addItem.detail.adjudication:ClaimResponse.item.adjudication' });
+      issues.push({ severity: 'error', code: 'structure', diagnostics: 'Found scalar in array property adjudication fhir: ClaimResponse.addItem.detail.adjudication:ClaimResponse.item.adjudication', expression: [expression] });
     } else if (this.adjudication.length === 0) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property adjudication:fhir.ClaimResponseItemAdjudication[] fhir: ClaimResponse.addItem.detail.adjudication:ClaimResponse.item.adjudication' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property adjudication fhir: ClaimResponse.addItem.detail.adjudication:ClaimResponse.item.adjudication', expression: [expression] });
     }
-    if (this["adjudication"]) { this.adjudication.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["subDetail"]) { this.subDetail.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["adjudication"]) { this.adjudication.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.adjudication[${i}]`)); }) }
+    if (this["subDetail"]) { this.subDetail.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.subDetail[${i}]`)); }) }
     return issues;
   }
 }
@@ -1015,34 +1021,35 @@ export class ClaimResponseAddItem extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
-    if (this["itemSequence"]) { this.itemSequence.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["detailSequence"]) { this.detailSequence.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["subdetailSequence"]) { this.subdetailSequence.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["provider"]) { this.provider.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'ClaimResponse.addItem' }
+    if (this["itemSequence"]) { this.itemSequence.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.itemSequence[${i}]`)); }) }
+    if (this["detailSequence"]) { this.detailSequence.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.detailSequence[${i}]`)); }) }
+    if (this["subdetailSequence"]) { this.subdetailSequence.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.subdetailSequence[${i}]`)); }) }
+    if (this["provider"]) { this.provider.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.provider[${i}]`)); }) }
     if (!this['productOrService']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property productOrService:fhir.CodeableConcept fhir: ClaimResponse.addItem.productOrService:CodeableConcept' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property productOrService fhir: ClaimResponse.addItem.productOrService:CodeableConcept', expression: [expression] });
     }
-    if (this["productOrService"]) { issues.push(...this.productOrService.doModelValidation()); }
-    if (this["modifier"]) { this.modifier.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["programCode"]) { this.programCode.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["quantity"]) { issues.push(...this.quantity.doModelValidation()); }
-    if (this["unitPrice"]) { issues.push(...this.unitPrice.doModelValidation()); }
-    if (this["factor"]) { issues.push(...this.factor.doModelValidation()); }
-    if (this["net"]) { issues.push(...this.net.doModelValidation()); }
-    if (this["bodySite"]) { issues.push(...this.bodySite.doModelValidation()); }
-    if (this["subSite"]) { this.subSite.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["noteNumber"]) { this.noteNumber.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["productOrService"]) { issues.push(...this.productOrService.doModelValidation(expression+'.productOrService')); }
+    if (this["modifier"]) { this.modifier.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.modifier[${i}]`)); }) }
+    if (this["programCode"]) { this.programCode.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.programCode[${i}]`)); }) }
+    if (this["quantity"]) { issues.push(...this.quantity.doModelValidation(expression+'.quantity')); }
+    if (this["unitPrice"]) { issues.push(...this.unitPrice.doModelValidation(expression+'.unitPrice')); }
+    if (this["factor"]) { issues.push(...this.factor.doModelValidation(expression+'.factor')); }
+    if (this["net"]) { issues.push(...this.net.doModelValidation(expression+'.net')); }
+    if (this["bodySite"]) { issues.push(...this.bodySite.doModelValidation(expression+'.bodySite')); }
+    if (this["subSite"]) { this.subSite.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.subSite[${i}]`)); }) }
+    if (this["noteNumber"]) { this.noteNumber.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.noteNumber[${i}]`)); }) }
     if (!this['adjudication']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property adjudication:fhir.ClaimResponseItemAdjudication[] fhir: ClaimResponse.addItem.adjudication:ClaimResponse.item.adjudication' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property adjudication fhir: ClaimResponse.addItem.adjudication:ClaimResponse.item.adjudication', expression: [expression] });
     } else if (!Array.isArray(this.adjudication)) {
-      issues.push({ severity: 'error', code: 'structure', diagnostics: 'Found scalar in array property adjudication:fhir.ClaimResponseItemAdjudication[] fhir: ClaimResponse.addItem.adjudication:ClaimResponse.item.adjudication' });
+      issues.push({ severity: 'error', code: 'structure', diagnostics: 'Found scalar in array property adjudication fhir: ClaimResponse.addItem.adjudication:ClaimResponse.item.adjudication', expression: [expression] });
     } else if (this.adjudication.length === 0) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property adjudication:fhir.ClaimResponseItemAdjudication[] fhir: ClaimResponse.addItem.adjudication:ClaimResponse.item.adjudication' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property adjudication fhir: ClaimResponse.addItem.adjudication:ClaimResponse.item.adjudication', expression: [expression] });
     }
-    if (this["adjudication"]) { this.adjudication.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["detail"]) { this.detail.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["adjudication"]) { this.adjudication.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.adjudication[${i}]`)); }) }
+    if (this["detail"]) { this.detail.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.detail[${i}]`)); }) }
     return issues;
   }
 }
@@ -1089,16 +1096,17 @@ export class ClaimResponseTotal extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'ClaimResponse.total' }
     if (!this['category']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property category:fhir.CodeableConcept fhir: ClaimResponse.total.category:CodeableConcept' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property category fhir: ClaimResponse.total.category:CodeableConcept', expression: [expression] });
     }
-    if (this["category"]) { issues.push(...this.category.doModelValidation()); }
+    if (this["category"]) { issues.push(...this.category.doModelValidation(expression+'.category')); }
     if (!this['amount']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property amount:fhir.Money fhir: ClaimResponse.total.amount:Money' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property amount fhir: ClaimResponse.total.amount:Money', expression: [expression] });
     }
-    if (this["amount"]) { issues.push(...this.amount.doModelValidation()); }
+    if (this["amount"]) { issues.push(...this.amount.doModelValidation(expression+'.amount')); }
     return issues;
   }
 }
@@ -1189,20 +1197,21 @@ export class ClaimResponsePayment extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'ClaimResponse.payment' }
     if (!this['type']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property type:fhir.CodeableConcept fhir: ClaimResponse.payment.type:CodeableConcept' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property type fhir: ClaimResponse.payment.type:CodeableConcept', expression: [expression] });
     }
-    if (this["type"]) { issues.push(...this.type.doModelValidation()); }
-    if (this["adjustment"]) { issues.push(...this.adjustment.doModelValidation()); }
-    if (this["adjustmentReason"]) { issues.push(...this.adjustmentReason.doModelValidation()); }
-    if (this["date"]) { issues.push(...this.date.doModelValidation()); }
+    if (this["type"]) { issues.push(...this.type.doModelValidation(expression+'.type')); }
+    if (this["adjustment"]) { issues.push(...this.adjustment.doModelValidation(expression+'.adjustment')); }
+    if (this["adjustmentReason"]) { issues.push(...this.adjustmentReason.doModelValidation(expression+'.adjustmentReason')); }
+    if (this["date"]) { issues.push(...this.date.doModelValidation(expression+'.date')); }
     if (!this['amount']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property amount:fhir.Money fhir: ClaimResponse.payment.amount:Money' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property amount fhir: ClaimResponse.payment.amount:Money', expression: [expression] });
     }
-    if (this["amount"]) { issues.push(...this.amount.doModelValidation()); }
-    if (this["identifier"]) { issues.push(...this.identifier.doModelValidation()); }
+    if (this["amount"]) { issues.push(...this.amount.doModelValidation(expression+'.amount')); }
+    if (this["identifier"]) { issues.push(...this.identifier.doModelValidation(expression+'.identifier')); }
     return issues;
   }
 }
@@ -1302,18 +1311,19 @@ export class ClaimResponseProcessNote extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
-    if (this["number"]) { issues.push(...this.number.doModelValidation()); }
-    if (this['type'] && (!Object.values(NoteTypeCodes).includes(this.type as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property type?:fhir.FhirCode<NoteTypeCodeType> fhir: ClaimResponse.processNote.type:code Required binding to: NoteType' });
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'ClaimResponse.processNote' }
+    if (this["number"]) { issues.push(...this.number.doModelValidation(expression+'.number')); }
+    if (this['type'] && (!Object.values(NoteTypeCodes).includes(this.type.value as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property type fhir: ClaimResponse.processNote.type:code Required binding to: NoteType', expression: [expression] });
     }
-    if (this["type"]) { issues.push(...this.type.doModelValidation()); }
+    if (this["type"]) { issues.push(...this.type.doModelValidation(expression+'.type')); }
     if (!this['text']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property text:fhir.FhirString fhir: ClaimResponse.processNote.text:string' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property text fhir: ClaimResponse.processNote.text:string', expression: [expression] });
     }
-    if (this["text"]) { issues.push(...this.text.doModelValidation()); }
-    if (this["language"]) { issues.push(...this.language.doModelValidation()); }
+    if (this["text"]) { issues.push(...this.text.doModelValidation(expression+'.text')); }
+    if (this["language"]) { issues.push(...this.language.doModelValidation(expression+'.language')); }
     return issues;
   }
 }
@@ -1412,22 +1422,23 @@ export class ClaimResponseInsurance extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'ClaimResponse.insurance' }
     if (!this['sequence']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property sequence:fhir.FhirPositiveInt fhir: ClaimResponse.insurance.sequence:positiveInt' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property sequence fhir: ClaimResponse.insurance.sequence:positiveInt', expression: [expression] });
     }
-    if (this["sequence"]) { issues.push(...this.sequence.doModelValidation()); }
+    if (this["sequence"]) { issues.push(...this.sequence.doModelValidation(expression+'.sequence')); }
     if (!this['focal']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property focal:fhir.FhirBoolean fhir: ClaimResponse.insurance.focal:boolean' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property focal fhir: ClaimResponse.insurance.focal:boolean', expression: [expression] });
     }
-    if (this["focal"]) { issues.push(...this.focal.doModelValidation()); }
+    if (this["focal"]) { issues.push(...this.focal.doModelValidation(expression+'.focal')); }
     if (!this['coverage']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property coverage:fhir.Reference fhir: ClaimResponse.insurance.coverage:Reference' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property coverage fhir: ClaimResponse.insurance.coverage:Reference', expression: [expression] });
     }
-    if (this["coverage"]) { issues.push(...this.coverage.doModelValidation()); }
-    if (this["businessArrangement"]) { issues.push(...this.businessArrangement.doModelValidation()); }
-    if (this["claimResponse"]) { issues.push(...this.claimResponse.doModelValidation()); }
+    if (this["coverage"]) { issues.push(...this.coverage.doModelValidation(expression+'.coverage')); }
+    if (this["businessArrangement"]) { issues.push(...this.businessArrangement.doModelValidation(expression+'.businessArrangement')); }
+    if (this["claimResponse"]) { issues.push(...this.claimResponse.doModelValidation(expression+'.claimResponse')); }
     return issues;
   }
 }
@@ -1515,15 +1526,16 @@ export class ClaimResponseError extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
-    if (this["itemSequence"]) { issues.push(...this.itemSequence.doModelValidation()); }
-    if (this["detailSequence"]) { issues.push(...this.detailSequence.doModelValidation()); }
-    if (this["subDetailSequence"]) { issues.push(...this.subDetailSequence.doModelValidation()); }
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'ClaimResponse.error' }
+    if (this["itemSequence"]) { issues.push(...this.itemSequence.doModelValidation(expression+'.itemSequence')); }
+    if (this["detailSequence"]) { issues.push(...this.detailSequence.doModelValidation(expression+'.detailSequence')); }
+    if (this["subDetailSequence"]) { issues.push(...this.subDetailSequence.doModelValidation(expression+'.subDetailSequence')); }
     if (!this['code']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property code:fhir.CodeableConcept fhir: ClaimResponse.error.code:CodeableConcept' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property code fhir: ClaimResponse.error.code:CodeableConcept', expression: [expression] });
     }
-    if (this["code"]) { issues.push(...this.code.doModelValidation()); }
+    if (this["code"]) { issues.push(...this.code.doModelValidation(expression+'.code')); }
     return issues;
   }
 }
@@ -1890,68 +1902,69 @@ export class ClaimResponse extends fhir.DomainResource {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'ClaimResponse' }
     if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType:"ClaimResponse" fhir: ClaimResponse.resourceType:"ClaimResponse"' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType fhir: ClaimResponse.resourceType:"ClaimResponse"', expression: [expression] });
     }
-    if (this["identifier"]) { this.identifier.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["identifier"]) { this.identifier.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.identifier[${i}]`)); }) }
     if (!this['status']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status:fhir.FhirCode<FmStatusCodeType> fhir: ClaimResponse.status:code' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status fhir: ClaimResponse.status:code', expression: [expression] });
     }
-    if (this['status'] && (!Object.values(FmStatusCodes).includes(this.status as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property status:fhir.FhirCode<FmStatusCodeType> fhir: ClaimResponse.status:code Required binding to: FmStatus' });
+    if (this['status'] && (!Object.values(FmStatusCodes).includes(this.status.value as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property status fhir: ClaimResponse.status:code Required binding to: FmStatus', expression: [expression] });
     }
-    if (this["status"]) { issues.push(...this.status.doModelValidation()); }
+    if (this["status"]) { issues.push(...this.status.doModelValidation(expression+'.status')); }
     if (!this['type']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property type:fhir.CodeableConcept fhir: ClaimResponse.type:CodeableConcept' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property type fhir: ClaimResponse.type:CodeableConcept', expression: [expression] });
     }
-    if (this["type"]) { issues.push(...this.type.doModelValidation()); }
-    if (this["subType"]) { issues.push(...this.subType.doModelValidation()); }
+    if (this["type"]) { issues.push(...this.type.doModelValidation(expression+'.type')); }
+    if (this["subType"]) { issues.push(...this.subType.doModelValidation(expression+'.subType')); }
     if (!this['use']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property use:fhir.FhirCode<ClaimUseCodeType> fhir: ClaimResponse.use:code' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property use fhir: ClaimResponse.use:code', expression: [expression] });
     }
-    if (this['use'] && (!Object.values(ClaimUseCodes).includes(this.use as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property use:fhir.FhirCode<ClaimUseCodeType> fhir: ClaimResponse.use:code Required binding to: ClaimUse' });
+    if (this['use'] && (!Object.values(ClaimUseCodes).includes(this.use.value as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property use fhir: ClaimResponse.use:code Required binding to: ClaimUse', expression: [expression] });
     }
-    if (this["use"]) { issues.push(...this.use.doModelValidation()); }
+    if (this["use"]) { issues.push(...this.use.doModelValidation(expression+'.use')); }
     if (!this['patient']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property patient:fhir.Reference fhir: ClaimResponse.patient:Reference' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property patient fhir: ClaimResponse.patient:Reference', expression: [expression] });
     }
-    if (this["patient"]) { issues.push(...this.patient.doModelValidation()); }
+    if (this["patient"]) { issues.push(...this.patient.doModelValidation(expression+'.patient')); }
     if (!this['created']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property created:fhir.FhirDateTime fhir: ClaimResponse.created:dateTime' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property created fhir: ClaimResponse.created:dateTime', expression: [expression] });
     }
-    if (this["created"]) { issues.push(...this.created.doModelValidation()); }
+    if (this["created"]) { issues.push(...this.created.doModelValidation(expression+'.created')); }
     if (!this['insurer']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property insurer:fhir.Reference fhir: ClaimResponse.insurer:Reference' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property insurer fhir: ClaimResponse.insurer:Reference', expression: [expression] });
     }
-    if (this["insurer"]) { issues.push(...this.insurer.doModelValidation()); }
-    if (this["requestor"]) { issues.push(...this.requestor.doModelValidation()); }
-    if (this["request"]) { issues.push(...this.request.doModelValidation()); }
+    if (this["insurer"]) { issues.push(...this.insurer.doModelValidation(expression+'.insurer')); }
+    if (this["requestor"]) { issues.push(...this.requestor.doModelValidation(expression+'.requestor')); }
+    if (this["request"]) { issues.push(...this.request.doModelValidation(expression+'.request')); }
     if (!this['outcome']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property outcome:fhir.FhirCode<RemittanceOutcomeCodeType> fhir: ClaimResponse.outcome:code' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property outcome fhir: ClaimResponse.outcome:code', expression: [expression] });
     }
-    if (this['outcome'] && (!Object.values(RemittanceOutcomeCodes).includes(this.outcome as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property outcome:fhir.FhirCode<RemittanceOutcomeCodeType> fhir: ClaimResponse.outcome:code Required binding to: RemittanceOutcome' });
+    if (this['outcome'] && (!Object.values(RemittanceOutcomeCodes).includes(this.outcome.value as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property outcome fhir: ClaimResponse.outcome:code Required binding to: RemittanceOutcome', expression: [expression] });
     }
-    if (this["outcome"]) { issues.push(...this.outcome.doModelValidation()); }
-    if (this["disposition"]) { issues.push(...this.disposition.doModelValidation()); }
-    if (this["preAuthRef"]) { issues.push(...this.preAuthRef.doModelValidation()); }
-    if (this["preAuthPeriod"]) { issues.push(...this.preAuthPeriod.doModelValidation()); }
-    if (this["payeeType"]) { issues.push(...this.payeeType.doModelValidation()); }
-    if (this["item"]) { this.item.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["addItem"]) { this.addItem.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["adjudication"]) { this.adjudication.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["total"]) { this.total.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["payment"]) { issues.push(...this.payment.doModelValidation()); }
-    if (this["fundsReserve"]) { issues.push(...this.fundsReserve.doModelValidation()); }
-    if (this["formCode"]) { issues.push(...this.formCode.doModelValidation()); }
-    if (this["form"]) { issues.push(...this.form.doModelValidation()); }
-    if (this["processNote"]) { this.processNote.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["communicationRequest"]) { this.communicationRequest.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["insurance"]) { this.insurance.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["error"]) { this.error.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["outcome"]) { issues.push(...this.outcome.doModelValidation(expression+'.outcome')); }
+    if (this["disposition"]) { issues.push(...this.disposition.doModelValidation(expression+'.disposition')); }
+    if (this["preAuthRef"]) { issues.push(...this.preAuthRef.doModelValidation(expression+'.preAuthRef')); }
+    if (this["preAuthPeriod"]) { issues.push(...this.preAuthPeriod.doModelValidation(expression+'.preAuthPeriod')); }
+    if (this["payeeType"]) { issues.push(...this.payeeType.doModelValidation(expression+'.payeeType')); }
+    if (this["item"]) { this.item.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.item[${i}]`)); }) }
+    if (this["addItem"]) { this.addItem.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.addItem[${i}]`)); }) }
+    if (this["adjudication"]) { this.adjudication.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.adjudication[${i}]`)); }) }
+    if (this["total"]) { this.total.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.total[${i}]`)); }) }
+    if (this["payment"]) { issues.push(...this.payment.doModelValidation(expression+'.payment')); }
+    if (this["fundsReserve"]) { issues.push(...this.fundsReserve.doModelValidation(expression+'.fundsReserve')); }
+    if (this["formCode"]) { issues.push(...this.formCode.doModelValidation(expression+'.formCode')); }
+    if (this["form"]) { issues.push(...this.form.doModelValidation(expression+'.form')); }
+    if (this["processNote"]) { this.processNote.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.processNote[${i}]`)); }) }
+    if (this["communicationRequest"]) { this.communicationRequest.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.communicationRequest[${i}]`)); }) }
+    if (this["insurance"]) { this.insurance.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.insurance[${i}]`)); }) }
+    if (this["error"]) { this.error.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.error[${i}]`)); }) }
     return issues;
   }
 }

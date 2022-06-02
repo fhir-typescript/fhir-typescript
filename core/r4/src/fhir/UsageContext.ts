@@ -82,14 +82,15 @@ export class UsageContext extends fhir.FhirElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'UsageContext' }
     if (!this['code']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property code:fhir.Coding fhir: UsageContext.code:Coding' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property code fhir: UsageContext.code:Coding', expression: [expression] });
     }
-    if (this["code"]) { issues.push(...this.code.doModelValidation()); }
+    if (this["code"]) { issues.push(...this.code.doModelValidation(expression+'.code')); }
     if (!this['value']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property value: fhir: UsageContext.value[x]:' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property value fhir: UsageContext.value[x]:', expression: [expression] });
     }
     return issues;
   }

@@ -82,10 +82,11 @@ export class NutritionOrderOralDietNutrient extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
-    if (this["modifier"]) { issues.push(...this.modifier.doModelValidation()); }
-    if (this["amount"]) { issues.push(...this.amount.doModelValidation()); }
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'NutritionOrder.oralDiet.nutrient' }
+    if (this["modifier"]) { issues.push(...this.modifier.doModelValidation(expression+'.modifier')); }
+    if (this["amount"]) { issues.push(...this.amount.doModelValidation(expression+'.amount')); }
     return issues;
   }
 }
@@ -130,10 +131,11 @@ export class NutritionOrderOralDietTexture extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
-    if (this["modifier"]) { issues.push(...this.modifier.doModelValidation()); }
-    if (this["foodType"]) { issues.push(...this.foodType.doModelValidation()); }
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'NutritionOrder.oralDiet.texture' }
+    if (this["modifier"]) { issues.push(...this.modifier.doModelValidation(expression+'.modifier')); }
+    if (this["foodType"]) { issues.push(...this.foodType.doModelValidation(expression+'.foodType')); }
     return issues;
   }
 }
@@ -227,14 +229,15 @@ export class NutritionOrderOralDiet extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
-    if (this["type"]) { this.type.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["schedule"]) { this.schedule.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["nutrient"]) { this.nutrient.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["texture"]) { this.texture.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["fluidConsistencyType"]) { this.fluidConsistencyType.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["instruction"]) { issues.push(...this.instruction.doModelValidation()); }
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'NutritionOrder.oralDiet' }
+    if (this["type"]) { this.type.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.type[${i}]`)); }) }
+    if (this["schedule"]) { this.schedule.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.schedule[${i}]`)); }) }
+    if (this["nutrient"]) { this.nutrient.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.nutrient[${i}]`)); }) }
+    if (this["texture"]) { this.texture.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.texture[${i}]`)); }) }
+    if (this["fluidConsistencyType"]) { this.fluidConsistencyType.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.fluidConsistencyType[${i}]`)); }) }
+    if (this["instruction"]) { issues.push(...this.instruction.doModelValidation(expression+'.instruction')); }
     return issues;
   }
 }
@@ -323,13 +326,14 @@ export class NutritionOrderSupplement extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
-    if (this["type"]) { issues.push(...this.type.doModelValidation()); }
-    if (this["productName"]) { issues.push(...this.productName.doModelValidation()); }
-    if (this["schedule"]) { this.schedule.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["quantity"]) { issues.push(...this.quantity.doModelValidation()); }
-    if (this["instruction"]) { issues.push(...this.instruction.doModelValidation()); }
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'NutritionOrder.supplement' }
+    if (this["type"]) { issues.push(...this.type.doModelValidation(expression+'.type')); }
+    if (this["productName"]) { issues.push(...this.productName.doModelValidation(expression+'.productName')); }
+    if (this["schedule"]) { this.schedule.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.schedule[${i}]`)); }) }
+    if (this["quantity"]) { issues.push(...this.quantity.doModelValidation(expression+'.quantity')); }
+    if (this["instruction"]) { issues.push(...this.instruction.doModelValidation(expression+'.instruction')); }
     return issues;
   }
 }
@@ -397,10 +401,11 @@ export class NutritionOrderEnteralFormulaAdministration extends fhir.BackboneEle
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
-    if (this["schedule"]) { issues.push(...this.schedule.doModelValidation()); }
-    if (this["quantity"]) { issues.push(...this.quantity.doModelValidation()); }
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'NutritionOrder.enteralFormula.administration' }
+    if (this["schedule"]) { issues.push(...this.schedule.doModelValidation(expression+'.schedule')); }
+    if (this["quantity"]) { issues.push(...this.quantity.doModelValidation(expression+'.quantity')); }
     return issues;
   }
 }
@@ -539,17 +544,18 @@ export class NutritionOrderEnteralFormula extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
-    if (this["baseFormulaType"]) { issues.push(...this.baseFormulaType.doModelValidation()); }
-    if (this["baseFormulaProductName"]) { issues.push(...this.baseFormulaProductName.doModelValidation()); }
-    if (this["additiveType"]) { issues.push(...this.additiveType.doModelValidation()); }
-    if (this["additiveProductName"]) { issues.push(...this.additiveProductName.doModelValidation()); }
-    if (this["caloricDensity"]) { issues.push(...this.caloricDensity.doModelValidation()); }
-    if (this["routeofAdministration"]) { issues.push(...this.routeofAdministration.doModelValidation()); }
-    if (this["administration"]) { this.administration.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["maxVolumeToDeliver"]) { issues.push(...this.maxVolumeToDeliver.doModelValidation()); }
-    if (this["administrationInstruction"]) { issues.push(...this.administrationInstruction.doModelValidation()); }
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'NutritionOrder.enteralFormula' }
+    if (this["baseFormulaType"]) { issues.push(...this.baseFormulaType.doModelValidation(expression+'.baseFormulaType')); }
+    if (this["baseFormulaProductName"]) { issues.push(...this.baseFormulaProductName.doModelValidation(expression+'.baseFormulaProductName')); }
+    if (this["additiveType"]) { issues.push(...this.additiveType.doModelValidation(expression+'.additiveType')); }
+    if (this["additiveProductName"]) { issues.push(...this.additiveProductName.doModelValidation(expression+'.additiveProductName')); }
+    if (this["caloricDensity"]) { issues.push(...this.caloricDensity.doModelValidation(expression+'.caloricDensity')); }
+    if (this["routeofAdministration"]) { issues.push(...this.routeofAdministration.doModelValidation(expression+'.routeofAdministration')); }
+    if (this["administration"]) { this.administration.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.administration[${i}]`)); }) }
+    if (this["maxVolumeToDeliver"]) { issues.push(...this.maxVolumeToDeliver.doModelValidation(expression+'.maxVolumeToDeliver')); }
+    if (this["administrationInstruction"]) { issues.push(...this.administrationInstruction.doModelValidation(expression+'.administrationInstruction')); }
     return issues;
   }
 }
@@ -817,46 +823,47 @@ export class NutritionOrder extends fhir.DomainResource {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'NutritionOrder' }
     if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType:"NutritionOrder" fhir: NutritionOrder.resourceType:"NutritionOrder"' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType fhir: NutritionOrder.resourceType:"NutritionOrder"', expression: [expression] });
     }
-    if (this["identifier"]) { this.identifier.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["instantiatesCanonical"]) { this.instantiatesCanonical.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["instantiatesUri"]) { this.instantiatesUri.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["instantiates"]) { this.instantiates.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["identifier"]) { this.identifier.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.identifier[${i}]`)); }) }
+    if (this["instantiatesCanonical"]) { this.instantiatesCanonical.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.instantiatesCanonical[${i}]`)); }) }
+    if (this["instantiatesUri"]) { this.instantiatesUri.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.instantiatesUri[${i}]`)); }) }
+    if (this["instantiates"]) { this.instantiates.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.instantiates[${i}]`)); }) }
     if (!this['status']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status:fhir.FhirCode<RequestStatusCodeType> fhir: NutritionOrder.status:code' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status fhir: NutritionOrder.status:code', expression: [expression] });
     }
-    if (this['status'] && (!Object.values(RequestStatusCodes).includes(this.status as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property status:fhir.FhirCode<RequestStatusCodeType> fhir: NutritionOrder.status:code Required binding to: RequestStatus' });
+    if (this['status'] && (!Object.values(RequestStatusCodes).includes(this.status.value as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property status fhir: NutritionOrder.status:code Required binding to: RequestStatus', expression: [expression] });
     }
-    if (this["status"]) { issues.push(...this.status.doModelValidation()); }
+    if (this["status"]) { issues.push(...this.status.doModelValidation(expression+'.status')); }
     if (!this['intent']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property intent:fhir.FhirCode<RequestIntentCodeType> fhir: NutritionOrder.intent:code' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property intent fhir: NutritionOrder.intent:code', expression: [expression] });
     }
-    if (this['intent'] && (!Object.values(RequestIntentCodes).includes(this.intent as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property intent:fhir.FhirCode<RequestIntentCodeType> fhir: NutritionOrder.intent:code Required binding to: RequestIntent' });
+    if (this['intent'] && (!Object.values(RequestIntentCodes).includes(this.intent.value as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property intent fhir: NutritionOrder.intent:code Required binding to: RequestIntent', expression: [expression] });
     }
-    if (this["intent"]) { issues.push(...this.intent.doModelValidation()); }
+    if (this["intent"]) { issues.push(...this.intent.doModelValidation(expression+'.intent')); }
     if (!this['patient']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property patient:fhir.Reference fhir: NutritionOrder.patient:Reference' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property patient fhir: NutritionOrder.patient:Reference', expression: [expression] });
     }
-    if (this["patient"]) { issues.push(...this.patient.doModelValidation()); }
-    if (this["encounter"]) { issues.push(...this.encounter.doModelValidation()); }
+    if (this["patient"]) { issues.push(...this.patient.doModelValidation(expression+'.patient')); }
+    if (this["encounter"]) { issues.push(...this.encounter.doModelValidation(expression+'.encounter')); }
     if (!this['dateTime']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property dateTime:fhir.FhirDateTime fhir: NutritionOrder.dateTime:dateTime' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property dateTime fhir: NutritionOrder.dateTime:dateTime', expression: [expression] });
     }
-    if (this["dateTime"]) { issues.push(...this.dateTime.doModelValidation()); }
-    if (this["orderer"]) { issues.push(...this.orderer.doModelValidation()); }
-    if (this["allergyIntolerance"]) { this.allergyIntolerance.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["foodPreferenceModifier"]) { this.foodPreferenceModifier.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["excludeFoodModifier"]) { this.excludeFoodModifier.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["oralDiet"]) { issues.push(...this.oralDiet.doModelValidation()); }
-    if (this["supplement"]) { this.supplement.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["enteralFormula"]) { issues.push(...this.enteralFormula.doModelValidation()); }
-    if (this["note"]) { this.note.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["dateTime"]) { issues.push(...this.dateTime.doModelValidation(expression+'.dateTime')); }
+    if (this["orderer"]) { issues.push(...this.orderer.doModelValidation(expression+'.orderer')); }
+    if (this["allergyIntolerance"]) { this.allergyIntolerance.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.allergyIntolerance[${i}]`)); }) }
+    if (this["foodPreferenceModifier"]) { this.foodPreferenceModifier.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.foodPreferenceModifier[${i}]`)); }) }
+    if (this["excludeFoodModifier"]) { this.excludeFoodModifier.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.excludeFoodModifier[${i}]`)); }) }
+    if (this["oralDiet"]) { issues.push(...this.oralDiet.doModelValidation(expression+'.oralDiet')); }
+    if (this["supplement"]) { this.supplement.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.supplement[${i}]`)); }) }
+    if (this["enteralFormula"]) { issues.push(...this.enteralFormula.doModelValidation(expression+'.enteralFormula')); }
+    if (this["note"]) { this.note.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.note[${i}]`)); }) }
     return issues;
   }
 }

@@ -116,21 +116,22 @@ export class ExampleScenarioActor extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'ExampleScenario.actor' }
     if (!this['actorId']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property actorId:fhir.FhirString fhir: ExampleScenario.actor.actorId:string' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property actorId fhir: ExampleScenario.actor.actorId:string', expression: [expression] });
     }
-    if (this["actorId"]) { issues.push(...this.actorId.doModelValidation()); }
+    if (this["actorId"]) { issues.push(...this.actorId.doModelValidation(expression+'.actorId')); }
     if (!this['type']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property type:fhir.FhirCode<ExamplescenarioActorTypeCodeType> fhir: ExampleScenario.actor.type:code' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property type fhir: ExampleScenario.actor.type:code', expression: [expression] });
     }
-    if (this['type'] && (!Object.values(ExamplescenarioActorTypeCodes).includes(this.type as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property type:fhir.FhirCode<ExamplescenarioActorTypeCodeType> fhir: ExampleScenario.actor.type:code Required binding to: ExamplescenarioActorType' });
+    if (this['type'] && (!Object.values(ExamplescenarioActorTypeCodes).includes(this.type.value as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property type fhir: ExampleScenario.actor.type:code Required binding to: ExamplescenarioActorType', expression: [expression] });
     }
-    if (this["type"]) { issues.push(...this.type.doModelValidation()); }
-    if (this["name"]) { issues.push(...this.name.doModelValidation()); }
-    if (this["description"]) { issues.push(...this.description.doModelValidation()); }
+    if (this["type"]) { issues.push(...this.type.doModelValidation(expression+'.type')); }
+    if (this["name"]) { issues.push(...this.name.doModelValidation(expression+'.name')); }
+    if (this["description"]) { issues.push(...this.description.doModelValidation(expression+'.description')); }
     return issues;
   }
 }
@@ -193,16 +194,17 @@ export class ExampleScenarioInstanceVersion extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'ExampleScenario.instance.version' }
     if (!this['versionId']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property versionId:fhir.FhirString fhir: ExampleScenario.instance.version.versionId:string' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property versionId fhir: ExampleScenario.instance.version.versionId:string', expression: [expression] });
     }
-    if (this["versionId"]) { issues.push(...this.versionId.doModelValidation()); }
+    if (this["versionId"]) { issues.push(...this.versionId.doModelValidation(expression+'.versionId')); }
     if (!this['description']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property description:fhir.FhirMarkdown fhir: ExampleScenario.instance.version.description:markdown' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property description fhir: ExampleScenario.instance.version.description:markdown', expression: [expression] });
     }
-    if (this["description"]) { issues.push(...this.description.doModelValidation()); }
+    if (this["description"]) { issues.push(...this.description.doModelValidation(expression+'.description')); }
     return issues;
   }
 }
@@ -264,13 +266,14 @@ export class ExampleScenarioInstanceContainedInstance extends fhir.BackboneEleme
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'ExampleScenario.instance.containedInstance' }
     if (!this['resourceId']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceId:fhir.FhirString fhir: ExampleScenario.instance.containedInstance.resourceId:string' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceId fhir: ExampleScenario.instance.containedInstance.resourceId:string', expression: [expression] });
     }
-    if (this["resourceId"]) { issues.push(...this.resourceId.doModelValidation()); }
-    if (this["versionId"]) { issues.push(...this.versionId.doModelValidation()); }
+    if (this["resourceId"]) { issues.push(...this.resourceId.doModelValidation(expression+'.resourceId')); }
+    if (this["versionId"]) { issues.push(...this.versionId.doModelValidation(expression+'.versionId')); }
     return issues;
   }
 }
@@ -393,23 +396,24 @@ export class ExampleScenarioInstance extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'ExampleScenario.instance' }
     if (!this['resourceId']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceId:fhir.FhirString fhir: ExampleScenario.instance.resourceId:string' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceId fhir: ExampleScenario.instance.resourceId:string', expression: [expression] });
     }
-    if (this["resourceId"]) { issues.push(...this.resourceId.doModelValidation()); }
+    if (this["resourceId"]) { issues.push(...this.resourceId.doModelValidation(expression+'.resourceId')); }
     if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType:fhir.FhirCode fhir: ExampleScenario.instance.resourceType:code' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType fhir: ExampleScenario.instance.resourceType:code', expression: [expression] });
     }
-    if (this['resourceType'] && (!Object.values(ResourceTypesCodes).includes(this.resourceType as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property resourceType:fhir.FhirCode fhir: ExampleScenario.instance.resourceType:code Required binding to: ResourceTypes' });
+    if (this['resourceType'] && (!Object.values(ResourceTypesCodes).includes(this.resourceType.value as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property resourceType fhir: ExampleScenario.instance.resourceType:code Required binding to: ResourceTypes', expression: [expression] });
     }
-    if (this["resourceType"]) { issues.push(...this.resourceType.doModelValidation()); }
-    if (this["name"]) { issues.push(...this.name.doModelValidation()); }
-    if (this["description"]) { issues.push(...this.description.doModelValidation()); }
-    if (this["version"]) { this.version.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["containedInstance"]) { this.containedInstance.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["resourceType"]) { issues.push(...this.resourceType.doModelValidation(expression+'.resourceType')); }
+    if (this["name"]) { issues.push(...this.name.doModelValidation(expression+'.name')); }
+    if (this["description"]) { issues.push(...this.description.doModelValidation(expression+'.description')); }
+    if (this["version"]) { this.version.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.version[${i}]`)); }) }
+    if (this["containedInstance"]) { this.containedInstance.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.containedInstance[${i}]`)); }) }
     return issues;
   }
 }
@@ -591,21 +595,22 @@ export class ExampleScenarioProcessStepOperation extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'ExampleScenario.process.step.operation' }
     if (!this['number']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property number:fhir.FhirString fhir: ExampleScenario.process.step.operation.number:string' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property number fhir: ExampleScenario.process.step.operation.number:string', expression: [expression] });
     }
-    if (this["number"]) { issues.push(...this.number.doModelValidation()); }
-    if (this["type"]) { issues.push(...this.type.doModelValidation()); }
-    if (this["name"]) { issues.push(...this.name.doModelValidation()); }
-    if (this["initiator"]) { issues.push(...this.initiator.doModelValidation()); }
-    if (this["receiver"]) { issues.push(...this.receiver.doModelValidation()); }
-    if (this["description"]) { issues.push(...this.description.doModelValidation()); }
-    if (this["initiatorActive"]) { issues.push(...this.initiatorActive.doModelValidation()); }
-    if (this["receiverActive"]) { issues.push(...this.receiverActive.doModelValidation()); }
-    if (this["request"]) { issues.push(...this.request.doModelValidation()); }
-    if (this["response"]) { issues.push(...this.response.doModelValidation()); }
+    if (this["number"]) { issues.push(...this.number.doModelValidation(expression+'.number')); }
+    if (this["type"]) { issues.push(...this.type.doModelValidation(expression+'.type')); }
+    if (this["name"]) { issues.push(...this.name.doModelValidation(expression+'.name')); }
+    if (this["initiator"]) { issues.push(...this.initiator.doModelValidation(expression+'.initiator')); }
+    if (this["receiver"]) { issues.push(...this.receiver.doModelValidation(expression+'.receiver')); }
+    if (this["description"]) { issues.push(...this.description.doModelValidation(expression+'.description')); }
+    if (this["initiatorActive"]) { issues.push(...this.initiatorActive.doModelValidation(expression+'.initiatorActive')); }
+    if (this["receiverActive"]) { issues.push(...this.receiverActive.doModelValidation(expression+'.receiverActive')); }
+    if (this["request"]) { issues.push(...this.request.doModelValidation(expression+'.request')); }
+    if (this["response"]) { issues.push(...this.response.doModelValidation(expression+'.response')); }
     return issues;
   }
 }
@@ -677,14 +682,15 @@ export class ExampleScenarioProcessStepAlternative extends fhir.BackboneElement 
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'ExampleScenario.process.step.alternative' }
     if (!this['title']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property title:fhir.FhirString fhir: ExampleScenario.process.step.alternative.title:string' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property title fhir: ExampleScenario.process.step.alternative.title:string', expression: [expression] });
     }
-    if (this["title"]) { issues.push(...this.title.doModelValidation()); }
-    if (this["description"]) { issues.push(...this.description.doModelValidation()); }
-    if (this["step"]) { this.step.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["title"]) { issues.push(...this.title.doModelValidation(expression+'.title')); }
+    if (this["description"]) { issues.push(...this.description.doModelValidation(expression+'.description')); }
+    if (this["step"]) { this.step.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.step[${i}]`)); }) }
     return issues;
   }
 }
@@ -757,12 +763,13 @@ export class ExampleScenarioProcessStep extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
-    if (this["process"]) { this.process.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["pause"]) { issues.push(...this.pause.doModelValidation()); }
-    if (this["operation"]) { issues.push(...this.operation.doModelValidation()); }
-    if (this["alternative"]) { this.alternative.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'ExampleScenario.process.step' }
+    if (this["process"]) { this.process.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.process[${i}]`)); }) }
+    if (this["pause"]) { issues.push(...this.pause.doModelValidation(expression+'.pause')); }
+    if (this["operation"]) { issues.push(...this.operation.doModelValidation(expression+'.operation')); }
+    if (this["alternative"]) { this.alternative.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.alternative[${i}]`)); }) }
     return issues;
   }
 }
@@ -868,16 +875,17 @@ export class ExampleScenarioProcess extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'ExampleScenario.process' }
     if (!this['title']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property title:fhir.FhirString fhir: ExampleScenario.process.title:string' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property title fhir: ExampleScenario.process.title:string', expression: [expression] });
     }
-    if (this["title"]) { issues.push(...this.title.doModelValidation()); }
-    if (this["description"]) { issues.push(...this.description.doModelValidation()); }
-    if (this["preConditions"]) { issues.push(...this.preConditions.doModelValidation()); }
-    if (this["postConditions"]) { issues.push(...this.postConditions.doModelValidation()); }
-    if (this["step"]) { this.step.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["title"]) { issues.push(...this.title.doModelValidation(expression+'.title')); }
+    if (this["description"]) { issues.push(...this.description.doModelValidation(expression+'.description')); }
+    if (this["preConditions"]) { issues.push(...this.preConditions.doModelValidation(expression+'.preConditions')); }
+    if (this["postConditions"]) { issues.push(...this.postConditions.doModelValidation(expression+'.postConditions')); }
+    if (this["step"]) { this.step.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.step[${i}]`)); }) }
     return issues;
   }
 }
@@ -1167,34 +1175,35 @@ export class ExampleScenario extends fhir.DomainResource {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'ExampleScenario' }
     if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType:"ExampleScenario" fhir: ExampleScenario.resourceType:"ExampleScenario"' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType fhir: ExampleScenario.resourceType:"ExampleScenario"', expression: [expression] });
     }
-    if (this["url"]) { issues.push(...this.url.doModelValidation()); }
-    if (this["identifier"]) { this.identifier.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["version"]) { issues.push(...this.version.doModelValidation()); }
-    if (this["name"]) { issues.push(...this.name.doModelValidation()); }
+    if (this["url"]) { issues.push(...this.url.doModelValidation(expression+'.url')); }
+    if (this["identifier"]) { this.identifier.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.identifier[${i}]`)); }) }
+    if (this["version"]) { issues.push(...this.version.doModelValidation(expression+'.version')); }
+    if (this["name"]) { issues.push(...this.name.doModelValidation(expression+'.name')); }
     if (!this['status']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status:fhir.FhirCode<PublicationStatusCodeType> fhir: ExampleScenario.status:code' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status fhir: ExampleScenario.status:code', expression: [expression] });
     }
-    if (this['status'] && (!Object.values(PublicationStatusCodes).includes(this.status as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property status:fhir.FhirCode<PublicationStatusCodeType> fhir: ExampleScenario.status:code Required binding to: PublicationStatus' });
+    if (this['status'] && (!Object.values(PublicationStatusCodes).includes(this.status.value as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property status fhir: ExampleScenario.status:code Required binding to: PublicationStatus', expression: [expression] });
     }
-    if (this["status"]) { issues.push(...this.status.doModelValidation()); }
-    if (this["experimental"]) { issues.push(...this.experimental.doModelValidation()); }
-    if (this["date"]) { issues.push(...this.date.doModelValidation()); }
-    if (this["publisher"]) { issues.push(...this.publisher.doModelValidation()); }
-    if (this["contact"]) { this.contact.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["useContext"]) { this.useContext.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["jurisdiction"]) { this.jurisdiction.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["copyright"]) { issues.push(...this.copyright.doModelValidation()); }
-    if (this["purpose"]) { issues.push(...this.purpose.doModelValidation()); }
-    if (this["actor"]) { this.actor.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["instance"]) { this.instance.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["process"]) { this.process.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["workflow"]) { this.workflow.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["status"]) { issues.push(...this.status.doModelValidation(expression+'.status')); }
+    if (this["experimental"]) { issues.push(...this.experimental.doModelValidation(expression+'.experimental')); }
+    if (this["date"]) { issues.push(...this.date.doModelValidation(expression+'.date')); }
+    if (this["publisher"]) { issues.push(...this.publisher.doModelValidation(expression+'.publisher')); }
+    if (this["contact"]) { this.contact.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.contact[${i}]`)); }) }
+    if (this["useContext"]) { this.useContext.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.useContext[${i}]`)); }) }
+    if (this["jurisdiction"]) { this.jurisdiction.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.jurisdiction[${i}]`)); }) }
+    if (this["copyright"]) { issues.push(...this.copyright.doModelValidation(expression+'.copyright')); }
+    if (this["purpose"]) { issues.push(...this.purpose.doModelValidation(expression+'.purpose')); }
+    if (this["actor"]) { this.actor.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.actor[${i}]`)); }) }
+    if (this["instance"]) { this.instance.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.instance[${i}]`)); }) }
+    if (this["process"]) { this.process.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.process[${i}]`)); }) }
+    if (this["workflow"]) { this.workflow.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.workflow[${i}]`)); }) }
     return issues;
   }
 }

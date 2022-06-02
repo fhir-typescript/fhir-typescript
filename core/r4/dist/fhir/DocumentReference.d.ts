@@ -54,7 +54,7 @@ export declare class DocumentReferenceRelatesTo extends fhir.BackboneElement {
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.FtsIssue[];
+    doModelValidation(expression?: string): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the DocumentReferenceContent type.
@@ -96,7 +96,7 @@ export declare class DocumentReferenceContent extends fhir.BackboneElement {
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.FtsIssue[];
+    doModelValidation(expression?: string): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the DocumentReferenceContext type.
@@ -174,7 +174,7 @@ export declare class DocumentReferenceContext extends fhir.BackboneElement {
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.FtsIssue[];
+    doModelValidation(expression?: string): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the DocumentReference type.
@@ -377,6 +377,6 @@ export declare class DocumentReference extends fhir.DomainResource {
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.FtsIssue[];
+    doModelValidation(expression?: string): fhir.FtsIssue[];
 }
 //# sourceMappingURL=DocumentReference.d.ts.map

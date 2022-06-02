@@ -111,17 +111,18 @@ export class DeviceMetricCalibration extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
-    if (this['type'] && (!Object.values(MetricCalibrationTypeCodes).includes(this.type as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property type?:fhir.FhirCode<MetricCalibrationTypeCodeType> fhir: DeviceMetric.calibration.type:code Required binding to: MetricCalibrationType' });
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'DeviceMetric.calibration' }
+    if (this['type'] && (!Object.values(MetricCalibrationTypeCodes).includes(this.type.value as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property type fhir: DeviceMetric.calibration.type:code Required binding to: MetricCalibrationType', expression: [expression] });
     }
-    if (this["type"]) { issues.push(...this.type.doModelValidation()); }
-    if (this['state'] && (!Object.values(MetricCalibrationStateCodes).includes(this.state as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property state?:fhir.FhirCode<MetricCalibrationStateCodeType> fhir: DeviceMetric.calibration.state:code Required binding to: MetricCalibrationState' });
+    if (this["type"]) { issues.push(...this.type.doModelValidation(expression+'.type')); }
+    if (this['state'] && (!Object.values(MetricCalibrationStateCodes).includes(this.state.value as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property state fhir: DeviceMetric.calibration.state:code Required binding to: MetricCalibrationState', expression: [expression] });
     }
-    if (this["state"]) { issues.push(...this.state.doModelValidation()); }
-    if (this["time"]) { issues.push(...this.time.doModelValidation()); }
+    if (this["state"]) { issues.push(...this.state.doModelValidation(expression+'.state')); }
+    if (this["time"]) { issues.push(...this.time.doModelValidation(expression+'.time')); }
     return issues;
   }
 }
@@ -293,36 +294,37 @@ export class DeviceMetric extends fhir.DomainResource {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'DeviceMetric' }
     if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType:"DeviceMetric" fhir: DeviceMetric.resourceType:"DeviceMetric"' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType fhir: DeviceMetric.resourceType:"DeviceMetric"', expression: [expression] });
     }
-    if (this["identifier"]) { this.identifier.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["identifier"]) { this.identifier.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.identifier[${i}]`)); }) }
     if (!this['type']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property type:fhir.CodeableConcept fhir: DeviceMetric.type:CodeableConcept' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property type fhir: DeviceMetric.type:CodeableConcept', expression: [expression] });
     }
-    if (this["type"]) { issues.push(...this.type.doModelValidation()); }
-    if (this["unit"]) { issues.push(...this.unit.doModelValidation()); }
-    if (this["source"]) { issues.push(...this.source.doModelValidation()); }
-    if (this["parent"]) { issues.push(...this.parent.doModelValidation()); }
-    if (this['operationalStatus'] && (!Object.values(MetricOperationalStatusCodes).includes(this.operationalStatus as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property operationalStatus?:fhir.FhirCode<MetricOperationalStatusCodeType> fhir: DeviceMetric.operationalStatus:code Required binding to: MetricOperationalStatus' });
+    if (this["type"]) { issues.push(...this.type.doModelValidation(expression+'.type')); }
+    if (this["unit"]) { issues.push(...this.unit.doModelValidation(expression+'.unit')); }
+    if (this["source"]) { issues.push(...this.source.doModelValidation(expression+'.source')); }
+    if (this["parent"]) { issues.push(...this.parent.doModelValidation(expression+'.parent')); }
+    if (this['operationalStatus'] && (!Object.values(MetricOperationalStatusCodes).includes(this.operationalStatus.value as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property operationalStatus fhir: DeviceMetric.operationalStatus:code Required binding to: MetricOperationalStatus', expression: [expression] });
     }
-    if (this["operationalStatus"]) { issues.push(...this.operationalStatus.doModelValidation()); }
-    if (this['color'] && (!Object.values(MetricColorCodes).includes(this.color as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property color?:fhir.FhirCode<MetricColorCodeType> fhir: DeviceMetric.color:code Required binding to: MetricColor' });
+    if (this["operationalStatus"]) { issues.push(...this.operationalStatus.doModelValidation(expression+'.operationalStatus')); }
+    if (this['color'] && (!Object.values(MetricColorCodes).includes(this.color.value as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property color fhir: DeviceMetric.color:code Required binding to: MetricColor', expression: [expression] });
     }
-    if (this["color"]) { issues.push(...this.color.doModelValidation()); }
+    if (this["color"]) { issues.push(...this.color.doModelValidation(expression+'.color')); }
     if (!this['category']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property category:fhir.FhirCode<MetricCategoryCodeType> fhir: DeviceMetric.category:code' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property category fhir: DeviceMetric.category:code', expression: [expression] });
     }
-    if (this['category'] && (!Object.values(MetricCategoryCodes).includes(this.category as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property category:fhir.FhirCode<MetricCategoryCodeType> fhir: DeviceMetric.category:code Required binding to: MetricCategory' });
+    if (this['category'] && (!Object.values(MetricCategoryCodes).includes(this.category.value as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property category fhir: DeviceMetric.category:code Required binding to: MetricCategory', expression: [expression] });
     }
-    if (this["category"]) { issues.push(...this.category.doModelValidation()); }
-    if (this["measurementPeriod"]) { issues.push(...this.measurementPeriod.doModelValidation()); }
-    if (this["calibration"]) { this.calibration.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["category"]) { issues.push(...this.category.doModelValidation(expression+'.category')); }
+    if (this["measurementPeriod"]) { issues.push(...this.measurementPeriod.doModelValidation(expression+'.measurementPeriod')); }
+    if (this["calibration"]) { this.calibration.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.calibration[${i}]`)); }) }
     return issues;
   }
 }

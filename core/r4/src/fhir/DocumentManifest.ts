@@ -54,10 +54,11 @@ export class DocumentManifestRelated extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
-    if (this["identifier"]) { issues.push(...this.identifier.doModelValidation()); }
-    if (this["ref"]) { issues.push(...this.ref.doModelValidation()); }
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'DocumentManifest.related' }
+    if (this["identifier"]) { issues.push(...this.identifier.doModelValidation(expression+'.identifier')); }
+    if (this["ref"]) { issues.push(...this.ref.doModelValidation(expression+'.ref')); }
     return issues;
   }
 }
@@ -245,36 +246,37 @@ export class DocumentManifest extends fhir.DomainResource {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'DocumentManifest' }
     if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType:"DocumentManifest" fhir: DocumentManifest.resourceType:"DocumentManifest"' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType fhir: DocumentManifest.resourceType:"DocumentManifest"', expression: [expression] });
     }
-    if (this["masterIdentifier"]) { issues.push(...this.masterIdentifier.doModelValidation()); }
-    if (this["identifier"]) { this.identifier.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["masterIdentifier"]) { issues.push(...this.masterIdentifier.doModelValidation(expression+'.masterIdentifier')); }
+    if (this["identifier"]) { this.identifier.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.identifier[${i}]`)); }) }
     if (!this['status']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status:fhir.FhirCode<DocumentReferenceStatusCodeType> fhir: DocumentManifest.status:code' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status fhir: DocumentManifest.status:code', expression: [expression] });
     }
-    if (this['status'] && (!Object.values(DocumentReferenceStatusCodes).includes(this.status as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property status:fhir.FhirCode<DocumentReferenceStatusCodeType> fhir: DocumentManifest.status:code Required binding to: DocumentReferenceStatus' });
+    if (this['status'] && (!Object.values(DocumentReferenceStatusCodes).includes(this.status.value as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property status fhir: DocumentManifest.status:code Required binding to: DocumentReferenceStatus', expression: [expression] });
     }
-    if (this["status"]) { issues.push(...this.status.doModelValidation()); }
-    if (this["type"]) { issues.push(...this.type.doModelValidation()); }
-    if (this["subject"]) { issues.push(...this.subject.doModelValidation()); }
-    if (this["created"]) { issues.push(...this.created.doModelValidation()); }
-    if (this["author"]) { this.author.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["recipient"]) { this.recipient.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["source"]) { issues.push(...this.source.doModelValidation()); }
-    if (this["description"]) { issues.push(...this.description.doModelValidation()); }
+    if (this["status"]) { issues.push(...this.status.doModelValidation(expression+'.status')); }
+    if (this["type"]) { issues.push(...this.type.doModelValidation(expression+'.type')); }
+    if (this["subject"]) { issues.push(...this.subject.doModelValidation(expression+'.subject')); }
+    if (this["created"]) { issues.push(...this.created.doModelValidation(expression+'.created')); }
+    if (this["author"]) { this.author.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.author[${i}]`)); }) }
+    if (this["recipient"]) { this.recipient.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.recipient[${i}]`)); }) }
+    if (this["source"]) { issues.push(...this.source.doModelValidation(expression+'.source')); }
+    if (this["description"]) { issues.push(...this.description.doModelValidation(expression+'.description')); }
     if (!this['content']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property content:fhir.Reference[] fhir: DocumentManifest.content:Reference' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property content fhir: DocumentManifest.content:Reference', expression: [expression] });
     } else if (!Array.isArray(this.content)) {
-      issues.push({ severity: 'error', code: 'structure', diagnostics: 'Found scalar in array property content:fhir.Reference[] fhir: DocumentManifest.content:Reference' });
+      issues.push({ severity: 'error', code: 'structure', diagnostics: 'Found scalar in array property content fhir: DocumentManifest.content:Reference', expression: [expression] });
     } else if (this.content.length === 0) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property content:fhir.Reference[] fhir: DocumentManifest.content:Reference' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property content fhir: DocumentManifest.content:Reference', expression: [expression] });
     }
-    if (this["content"]) { this.content.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["related"]) { this.related.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["content"]) { this.content.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.content[${i}]`)); }) }
+    if (this["related"]) { this.related.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.related[${i}]`)); }) }
     return issues;
   }
 }

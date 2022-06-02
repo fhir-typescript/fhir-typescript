@@ -72,12 +72,13 @@ export class SubstancePolymerMonomerSetStartingMaterial extends fhir.BackboneEle
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
-    if (this["material"]) { issues.push(...this.material.doModelValidation()); }
-    if (this["type"]) { issues.push(...this.type.doModelValidation()); }
-    if (this["isDefining"]) { issues.push(...this.isDefining.doModelValidation()); }
-    if (this["amount"]) { issues.push(...this.amount.doModelValidation()); }
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'SubstancePolymer.monomerSet.startingMaterial' }
+    if (this["material"]) { issues.push(...this.material.doModelValidation(expression+'.material')); }
+    if (this["type"]) { issues.push(...this.type.doModelValidation(expression+'.type')); }
+    if (this["isDefining"]) { issues.push(...this.isDefining.doModelValidation(expression+'.isDefining')); }
+    if (this["amount"]) { issues.push(...this.amount.doModelValidation(expression+'.amount')); }
     return issues;
   }
 }
@@ -123,10 +124,11 @@ export class SubstancePolymerMonomerSet extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
-    if (this["ratioType"]) { issues.push(...this.ratioType.doModelValidation()); }
-    if (this["startingMaterial"]) { this.startingMaterial.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'SubstancePolymer.monomerSet' }
+    if (this["ratioType"]) { issues.push(...this.ratioType.doModelValidation(expression+'.ratioType')); }
+    if (this["startingMaterial"]) { this.startingMaterial.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.startingMaterial[${i}]`)); }) }
     return issues;
   }
 }
@@ -171,10 +173,11 @@ export class SubstancePolymerRepeatRepeatUnitDegreeOfPolymerisation extends fhir
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
-    if (this["degree"]) { issues.push(...this.degree.doModelValidation()); }
-    if (this["amount"]) { issues.push(...this.amount.doModelValidation()); }
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'SubstancePolymer.repeat.repeatUnit.degreeOfPolymerisation' }
+    if (this["degree"]) { issues.push(...this.degree.doModelValidation(expression+'.degree')); }
+    if (this["amount"]) { issues.push(...this.amount.doModelValidation(expression+'.amount')); }
     return issues;
   }
 }
@@ -236,11 +239,12 @@ export class SubstancePolymerRepeatRepeatUnitStructuralRepresentation extends fh
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
-    if (this["type"]) { issues.push(...this.type.doModelValidation()); }
-    if (this["representation"]) { issues.push(...this.representation.doModelValidation()); }
-    if (this["attachment"]) { issues.push(...this.attachment.doModelValidation()); }
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'SubstancePolymer.repeat.repeatUnit.structuralRepresentation' }
+    if (this["type"]) { issues.push(...this.type.doModelValidation(expression+'.type')); }
+    if (this["representation"]) { issues.push(...this.representation.doModelValidation(expression+'.representation')); }
+    if (this["attachment"]) { issues.push(...this.attachment.doModelValidation(expression+'.attachment')); }
     return issues;
   }
 }
@@ -322,13 +326,14 @@ export class SubstancePolymerRepeatRepeatUnit extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
-    if (this["orientationOfPolymerisation"]) { issues.push(...this.orientationOfPolymerisation.doModelValidation()); }
-    if (this["repeatUnit"]) { issues.push(...this.repeatUnit.doModelValidation()); }
-    if (this["amount"]) { issues.push(...this.amount.doModelValidation()); }
-    if (this["degreeOfPolymerisation"]) { this.degreeOfPolymerisation.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["structuralRepresentation"]) { this.structuralRepresentation.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'SubstancePolymer.repeat.repeatUnit' }
+    if (this["orientationOfPolymerisation"]) { issues.push(...this.orientationOfPolymerisation.doModelValidation(expression+'.orientationOfPolymerisation')); }
+    if (this["repeatUnit"]) { issues.push(...this.repeatUnit.doModelValidation(expression+'.repeatUnit')); }
+    if (this["amount"]) { issues.push(...this.amount.doModelValidation(expression+'.amount')); }
+    if (this["degreeOfPolymerisation"]) { this.degreeOfPolymerisation.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.degreeOfPolymerisation[${i}]`)); }) }
+    if (this["structuralRepresentation"]) { this.structuralRepresentation.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.structuralRepresentation[${i}]`)); }) }
     return issues;
   }
 }
@@ -408,12 +413,13 @@ export class SubstancePolymerRepeat extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
-    if (this["numberOfUnits"]) { issues.push(...this.numberOfUnits.doModelValidation()); }
-    if (this["averageMolecularFormula"]) { issues.push(...this.averageMolecularFormula.doModelValidation()); }
-    if (this["repeatUnitAmountType"]) { issues.push(...this.repeatUnitAmountType.doModelValidation()); }
-    if (this["repeatUnit"]) { this.repeatUnit.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'SubstancePolymer.repeat' }
+    if (this["numberOfUnits"]) { issues.push(...this.numberOfUnits.doModelValidation(expression+'.numberOfUnits')); }
+    if (this["averageMolecularFormula"]) { issues.push(...this.averageMolecularFormula.doModelValidation(expression+'.averageMolecularFormula')); }
+    if (this["repeatUnitAmountType"]) { issues.push(...this.repeatUnitAmountType.doModelValidation(expression+'.repeatUnitAmountType')); }
+    if (this["repeatUnit"]) { this.repeatUnit.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.repeatUnit[${i}]`)); }) }
     return issues;
   }
 }
@@ -517,17 +523,18 @@ export class SubstancePolymer extends fhir.DomainResource {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'SubstancePolymer' }
     if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType:"SubstancePolymer" fhir: SubstancePolymer.resourceType:"SubstancePolymer"' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType fhir: SubstancePolymer.resourceType:"SubstancePolymer"', expression: [expression] });
     }
-    if (this["class"]) { issues.push(...this.class.doModelValidation()); }
-    if (this["geometry"]) { issues.push(...this.geometry.doModelValidation()); }
-    if (this["copolymerConnectivity"]) { this.copolymerConnectivity.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["modification"]) { this.modification.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["monomerSet"]) { this.monomerSet.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["repeat"]) { this.repeat.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["class"]) { issues.push(...this.class.doModelValidation(expression+'.class')); }
+    if (this["geometry"]) { issues.push(...this.geometry.doModelValidation(expression+'.geometry')); }
+    if (this["copolymerConnectivity"]) { this.copolymerConnectivity.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.copolymerConnectivity[${i}]`)); }) }
+    if (this["modification"]) { this.modification.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.modification[${i}]`)); }) }
+    if (this["monomerSet"]) { this.monomerSet.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.monomerSet[${i}]`)); }) }
+    if (this["repeat"]) { this.repeat.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.repeat[${i}]`)); }) }
     return issues;
   }
 }

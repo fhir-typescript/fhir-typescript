@@ -55,10 +55,11 @@ export class CodeableConcept extends fhir.FhirElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
-    if (this["coding"]) { this.coding.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["text"]) { issues.push(...this.text.doModelValidation()); }
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'CodeableConcept' }
+    if (this["coding"]) { this.coding.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.coding[${i}]`)); }) }
+    if (this["text"]) { issues.push(...this.text.doModelValidation(expression+'.text')); }
     return issues;
   }
   /**

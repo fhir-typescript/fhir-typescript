@@ -81,17 +81,18 @@ export class Binary extends fhir.Resource {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'Binary' }
     if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType:"Binary" fhir: Binary.resourceType:"Binary"' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType fhir: Binary.resourceType:"Binary"', expression: [expression] });
     }
     if (!this['contentType']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property contentType:fhir.FhirCode fhir: Binary.contentType:code' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property contentType fhir: Binary.contentType:code', expression: [expression] });
     }
-    if (this["contentType"]) { issues.push(...this.contentType.doModelValidation()); }
-    if (this["securityContext"]) { issues.push(...this.securityContext.doModelValidation()); }
-    if (this["data"]) { issues.push(...this.data.doModelValidation()); }
+    if (this["contentType"]) { issues.push(...this.contentType.doModelValidation(expression+'.contentType')); }
+    if (this["securityContext"]) { issues.push(...this.securityContext.doModelValidation(expression+'.securityContext')); }
+    if (this["data"]) { issues.push(...this.data.doModelValidation(expression+'.data')); }
     return issues;
   }
 }

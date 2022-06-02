@@ -111,7 +111,7 @@ export declare class QuestionnaireItemEnableWhen extends fhir.BackboneElement {
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.FtsIssue[];
+    doModelValidation(expression?: string): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the QuestionnaireItemAnswerOption type.
@@ -181,7 +181,7 @@ export declare class QuestionnaireItemAnswerOption extends fhir.BackboneElement 
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.FtsIssue[];
+    doModelValidation(expression?: string): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the QuestionnaireItemInitial type.
@@ -263,7 +263,7 @@ export declare class QuestionnaireItemInitial extends fhir.BackboneElement {
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.FtsIssue[];
+    doModelValidation(expression?: string): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the QuestionnaireItem type.
@@ -490,7 +490,7 @@ export declare class QuestionnaireItem extends fhir.BackboneElement {
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.FtsIssue[];
+    doModelValidation(expression?: string): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the Questionnaire type.
@@ -867,9 +867,6 @@ export declare class Questionnaire extends fhir.DomainResource {
         readonly OperationDefinition: "OperationDefinition";
         readonly OperationOutcome: "OperationOutcome";
         readonly Organization: "Organization";
-        /**
-         * This element can be used when the value set machinery of answerValueSet is deemed too cumbersome or when there's a need to capture possible answers that are not codes.
-         */
         readonly OrganizationAffiliation: "OrganizationAffiliation";
         readonly Parameters: "Parameters";
         readonly Patient: "Patient";
@@ -889,9 +886,7 @@ export declare class Questionnaire extends fhir.DomainResource {
         readonly ResearchElementDefinition: "ResearchElementDefinition";
         readonly ResearchStudy: "ResearchStudy";
         readonly ResearchSubject: "ResearchSubject";
-        readonly Resource: "Resource"; /**
-         * The value of readOnly elements can be established by asserting  extensions for defaultValues, linkages that support pre-population and/or extensions that support calculation based on other answers.
-         */
+        readonly Resource: "Resource";
         readonly RiskAssessment: "RiskAssessment";
         readonly RiskEvidenceSynthesis: "RiskEvidenceSynthesis";
         readonly Schedule: "Schedule";
@@ -923,6 +918,6 @@ export declare class Questionnaire extends fhir.DomainResource {
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.FtsIssue[];
+    doModelValidation(expression?: string): fhir.FtsIssue[];
 }
 //# sourceMappingURL=Questionnaire.d.ts.map

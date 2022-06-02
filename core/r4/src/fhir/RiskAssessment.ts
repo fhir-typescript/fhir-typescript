@@ -134,12 +134,13 @@ export class RiskAssessmentPrediction extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
-    if (this["outcome"]) { issues.push(...this.outcome.doModelValidation()); }
-    if (this["qualitativeRisk"]) { issues.push(...this.qualitativeRisk.doModelValidation()); }
-    if (this["relativeRisk"]) { issues.push(...this.relativeRisk.doModelValidation()); }
-    if (this["rationale"]) { issues.push(...this.rationale.doModelValidation()); }
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'RiskAssessment.prediction' }
+    if (this["outcome"]) { issues.push(...this.outcome.doModelValidation(expression+'.outcome')); }
+    if (this["qualitativeRisk"]) { issues.push(...this.qualitativeRisk.doModelValidation(expression+'.qualitativeRisk')); }
+    if (this["relativeRisk"]) { issues.push(...this.relativeRisk.doModelValidation(expression+'.relativeRisk')); }
+    if (this["rationale"]) { issues.push(...this.rationale.doModelValidation(expression+'.rationale')); }
     return issues;
   }
 }
@@ -372,36 +373,37 @@ export class RiskAssessment extends fhir.DomainResource {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'RiskAssessment' }
     if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType:"RiskAssessment" fhir: RiskAssessment.resourceType:"RiskAssessment"' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType fhir: RiskAssessment.resourceType:"RiskAssessment"', expression: [expression] });
     }
-    if (this["identifier"]) { this.identifier.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["basedOn"]) { issues.push(...this.basedOn.doModelValidation()); }
-    if (this["parent"]) { issues.push(...this.parent.doModelValidation()); }
+    if (this["identifier"]) { this.identifier.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.identifier[${i}]`)); }) }
+    if (this["basedOn"]) { issues.push(...this.basedOn.doModelValidation(expression+'.basedOn')); }
+    if (this["parent"]) { issues.push(...this.parent.doModelValidation(expression+'.parent')); }
     if (!this['status']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status:fhir.FhirCode<ObservationStatusCodeType> fhir: RiskAssessment.status:code' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status fhir: RiskAssessment.status:code', expression: [expression] });
     }
-    if (this['status'] && (!Object.values(ObservationStatusCodes).includes(this.status as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property status:fhir.FhirCode<ObservationStatusCodeType> fhir: RiskAssessment.status:code Required binding to: ObservationStatus' });
+    if (this['status'] && (!Object.values(ObservationStatusCodes).includes(this.status.value as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property status fhir: RiskAssessment.status:code Required binding to: ObservationStatus', expression: [expression] });
     }
-    if (this["status"]) { issues.push(...this.status.doModelValidation()); }
-    if (this["method"]) { issues.push(...this.method.doModelValidation()); }
-    if (this["code"]) { issues.push(...this.code.doModelValidation()); }
+    if (this["status"]) { issues.push(...this.status.doModelValidation(expression+'.status')); }
+    if (this["method"]) { issues.push(...this.method.doModelValidation(expression+'.method')); }
+    if (this["code"]) { issues.push(...this.code.doModelValidation(expression+'.code')); }
     if (!this['subject']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property subject:fhir.Reference fhir: RiskAssessment.subject:Reference' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property subject fhir: RiskAssessment.subject:Reference', expression: [expression] });
     }
-    if (this["subject"]) { issues.push(...this.subject.doModelValidation()); }
-    if (this["encounter"]) { issues.push(...this.encounter.doModelValidation()); }
-    if (this["condition"]) { issues.push(...this.condition.doModelValidation()); }
-    if (this["performer"]) { issues.push(...this.performer.doModelValidation()); }
-    if (this["reasonCode"]) { this.reasonCode.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["reasonReference"]) { this.reasonReference.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["basis"]) { this.basis.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["prediction"]) { this.prediction.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["mitigation"]) { issues.push(...this.mitigation.doModelValidation()); }
-    if (this["note"]) { this.note.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["subject"]) { issues.push(...this.subject.doModelValidation(expression+'.subject')); }
+    if (this["encounter"]) { issues.push(...this.encounter.doModelValidation(expression+'.encounter')); }
+    if (this["condition"]) { issues.push(...this.condition.doModelValidation(expression+'.condition')); }
+    if (this["performer"]) { issues.push(...this.performer.doModelValidation(expression+'.performer')); }
+    if (this["reasonCode"]) { this.reasonCode.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.reasonCode[${i}]`)); }) }
+    if (this["reasonReference"]) { this.reasonReference.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.reasonReference[${i}]`)); }) }
+    if (this["basis"]) { this.basis.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.basis[${i}]`)); }) }
+    if (this["prediction"]) { this.prediction.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.prediction[${i}]`)); }) }
+    if (this["mitigation"]) { issues.push(...this.mitigation.doModelValidation(expression+'.mitigation')); }
+    if (this["note"]) { this.note.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.note[${i}]`)); }) }
     return issues;
   }
 }

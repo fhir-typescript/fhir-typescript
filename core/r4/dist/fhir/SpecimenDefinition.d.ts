@@ -40,7 +40,7 @@ export declare class SpecimenDefinitionTypeTestedContainerAdditive extends fhir.
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.FtsIssue[];
+    doModelValidation(expression?: string): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the SpecimenDefinitionTypeTestedContainer type.
@@ -146,7 +146,7 @@ export declare class SpecimenDefinitionTypeTestedContainer extends fhir.Backbone
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.FtsIssue[];
+    doModelValidation(expression?: string): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the SpecimenDefinitionTypeTestedHandling type.
@@ -204,7 +204,7 @@ export declare class SpecimenDefinitionTypeTestedHandling extends fhir.BackboneE
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.FtsIssue[];
+    doModelValidation(expression?: string): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the SpecimenDefinitionTypeTested type.
@@ -309,7 +309,7 @@ export declare class SpecimenDefinitionTypeTested extends fhir.BackboneElement {
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.FtsIssue[];
+    doModelValidation(expression?: string): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the SpecimenDefinition type.
@@ -391,6 +391,6 @@ export declare class SpecimenDefinition extends fhir.DomainResource {
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.FtsIssue[];
+    doModelValidation(expression?: string): fhir.FtsIssue[];
 }
 //# sourceMappingURL=SpecimenDefinition.d.ts.map

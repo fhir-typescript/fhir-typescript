@@ -125,19 +125,20 @@ export class ContactPoint extends fhir.FhirElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
-    if (this['system'] && (!Object.values(ContactPointSystemCodes).includes(this.system as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property system?:fhir.FhirCode<ContactPointSystemCodeType> fhir: ContactPoint.system:code Required binding to: ContactPointSystem' });
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'ContactPoint' }
+    if (this['system'] && (!Object.values(ContactPointSystemCodes).includes(this.system.value as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property system fhir: ContactPoint.system:code Required binding to: ContactPointSystem', expression: [expression] });
     }
-    if (this["system"]) { issues.push(...this.system.doModelValidation()); }
-    if (this["value"]) { issues.push(...this.value.doModelValidation()); }
-    if (this['use'] && (!Object.values(ContactPointUseCodes).includes(this.use as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property use?:fhir.FhirCode<ContactPointUseCodeType> fhir: ContactPoint.use:code Required binding to: ContactPointUse' });
+    if (this["system"]) { issues.push(...this.system.doModelValidation(expression+'.system')); }
+    if (this["value"]) { issues.push(...this.value.doModelValidation(expression+'.value')); }
+    if (this['use'] && (!Object.values(ContactPointUseCodes).includes(this.use.value as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property use fhir: ContactPoint.use:code Required binding to: ContactPointUse', expression: [expression] });
     }
-    if (this["use"]) { issues.push(...this.use.doModelValidation()); }
-    if (this["rank"]) { issues.push(...this.rank.doModelValidation()); }
-    if (this["period"]) { issues.push(...this.period.doModelValidation()); }
+    if (this["use"]) { issues.push(...this.use.doModelValidation(expression+'.use')); }
+    if (this["rank"]) { issues.push(...this.rank.doModelValidation(expression+'.rank')); }
+    if (this["period"]) { issues.push(...this.period.doModelValidation(expression+'.period')); }
     return issues;
   }
 }

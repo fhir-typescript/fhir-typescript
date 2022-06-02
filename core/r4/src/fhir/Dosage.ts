@@ -109,9 +109,10 @@ export class DosageDoseAndRate extends fhir.FhirElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
-    if (this["type"]) { issues.push(...this.type.doModelValidation()); }
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'Dosage.doseAndRate' }
+    if (this["type"]) { issues.push(...this.type.doModelValidation(expression+'.type')); }
     return issues;
   }
 }
@@ -295,20 +296,21 @@ export class Dosage extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
-    if (this["sequence"]) { issues.push(...this.sequence.doModelValidation()); }
-    if (this["text"]) { issues.push(...this.text.doModelValidation()); }
-    if (this["additionalInstruction"]) { this.additionalInstruction.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["patientInstruction"]) { issues.push(...this.patientInstruction.doModelValidation()); }
-    if (this["timing"]) { issues.push(...this.timing.doModelValidation()); }
-    if (this["site"]) { issues.push(...this.site.doModelValidation()); }
-    if (this["route"]) { issues.push(...this.route.doModelValidation()); }
-    if (this["method"]) { issues.push(...this.method.doModelValidation()); }
-    if (this["doseAndRate"]) { this.doseAndRate.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["maxDosePerPeriod"]) { issues.push(...this.maxDosePerPeriod.doModelValidation()); }
-    if (this["maxDosePerAdministration"]) { issues.push(...this.maxDosePerAdministration.doModelValidation()); }
-    if (this["maxDosePerLifetime"]) { issues.push(...this.maxDosePerLifetime.doModelValidation()); }
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'Dosage' }
+    if (this["sequence"]) { issues.push(...this.sequence.doModelValidation(expression+'.sequence')); }
+    if (this["text"]) { issues.push(...this.text.doModelValidation(expression+'.text')); }
+    if (this["additionalInstruction"]) { this.additionalInstruction.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.additionalInstruction[${i}]`)); }) }
+    if (this["patientInstruction"]) { issues.push(...this.patientInstruction.doModelValidation(expression+'.patientInstruction')); }
+    if (this["timing"]) { issues.push(...this.timing.doModelValidation(expression+'.timing')); }
+    if (this["site"]) { issues.push(...this.site.doModelValidation(expression+'.site')); }
+    if (this["route"]) { issues.push(...this.route.doModelValidation(expression+'.route')); }
+    if (this["method"]) { issues.push(...this.method.doModelValidation(expression+'.method')); }
+    if (this["doseAndRate"]) { this.doseAndRate.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.doseAndRate[${i}]`)); }) }
+    if (this["maxDosePerPeriod"]) { issues.push(...this.maxDosePerPeriod.doModelValidation(expression+'.maxDosePerPeriod')); }
+    if (this["maxDosePerAdministration"]) { issues.push(...this.maxDosePerAdministration.doModelValidation(expression+'.maxDosePerAdministration')); }
+    if (this["maxDosePerLifetime"]) { issues.push(...this.maxDosePerLifetime.doModelValidation(expression+'.maxDosePerLifetime')); }
     return issues;
   }
 }

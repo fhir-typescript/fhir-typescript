@@ -63,7 +63,7 @@ export declare class RiskEvidenceSynthesisSampleSize extends fhir.BackboneElemen
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.FtsIssue[];
+    doModelValidation(expression?: string): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the RiskEvidenceSynthesisRiskEstimatePrecisionEstimate type.
@@ -133,7 +133,7 @@ export declare class RiskEvidenceSynthesisRiskEstimatePrecisionEstimate extends 
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.FtsIssue[];
+    doModelValidation(expression?: string): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the RiskEvidenceSynthesisRiskEstimate type.
@@ -332,7 +332,9 @@ export declare class RiskEvidenceSynthesisRiskEstimate extends fhir.BackboneElem
         readonly Absorbance: "{absorbance}";
         readonly Activity: "{activity}";
         readonly ActivityCoefficient: "{ActivityCoefficient}";
-        readonly AHFQuoteU: "{AHF'U}";
+        readonly AHFQuoteU: "{AHF'U}"; /**
+         * Extended properties for primitive element: RiskEvidenceSynthesis.riskEstimate.precisionEstimate.from
+         */
         readonly AntibodyResponseQuoteU: "{AntibodyResponse'U}";
         readonly Applicator: "{Applicator}";
         readonly IgAAntiphosphatidylserineUnit: "{APS'U}";
@@ -386,9 +388,7 @@ export declare class RiskEvidenceSynthesisRiskEstimate extends fhir.BackboneElem
         readonly Dose: "{Dose}";
         readonly DrinksDay: "{Drinks}/d";
         readonly Each: "{Each}";
-        readonly EhrlichUnit: "{Ehrlich'U}"; /**
-         * Specifies the UCUM unit for the outcome.
-         */
+        readonly EhrlichUnit: "{Ehrlich'U}";
         readonly EhrlichUnitPer2Hour: "{Ehrlich'U}/(2.h)";
         readonly EhrlichUnitPer100Gram: "{Ehrlich'U}/100.g";
         readonly EhrlichUnitPerDay: "{Ehrlich'U}/d";
@@ -416,7 +416,9 @@ export declare class RiskEvidenceSynthesisRiskEstimate extends fhir.BackboneElem
         readonly GliadinIndexValue: "{GliadinIndexValue}";
         readonly GlobulesDropsPerHighPowerField: "{Globules}/[HPF]";
         readonly IgGAntiphosphatidylserineUnit: "{GPS'U}";
-        readonly InfluenzaHemagglutinationTiter: "{HA_titer}";
+        readonly InfluenzaHemagglutinationTiter: "{HA_titer}"; /**
+         * The number of group members with the outcome of interest.
+         */
         readonly HaTiter: "{HaTiter}";
         readonly ImmunofluorescenceAssayIndex: "{IFA_index}";
         readonly ImmunofluorescenceAssayTiter: "{IFA_titer}";
@@ -445,7 +447,9 @@ export declare class RiskEvidenceSynthesisRiskEstimate extends fhir.BackboneElem
         readonly JuvenileDiabetesFoundQuoteU: "{JuvenileDiabetesFound'U}";
         readonly KaolinClottingTime: "{KCT'U}";
         readonly KronusUnitPerLiter: "{KRONU'U}/L";
-        readonly KronusUnitPerMilliliter: "{KRONU'U}/mL";
+        readonly KronusUnitPerMilliliter: "{KRONU'U}/mL"; /**
+         * Extensible-bound Value Set for type (RiskEvidenceSynthesis.riskEstimate.type)
+         */
         readonly LgCopiesMilliliter: "{lgCopies}/ml";
         readonly LogBase10CopiesPerMilliliter: "{log_copies}/mL";
         readonly LogBase10CopiesPerMilliliterLogCopiesML: "{Log_copies}/mL";
@@ -471,6 +475,9 @@ export declare class RiskEvidenceSynthesisRiskEstimate extends fhir.BackboneElem
         readonly OpticalDensity: "{OpticalDensity}";
         readonly OpticalDensityIndex: "{OpticalDensityIndex}";
         readonly OpticalDensityRatio: "{OpticalDensityRatio}";
+        /**
+         * A human-readable string to clarify or explain concepts about the resource.
+         */
         readonly P2Y12ReactionUnits: "{P2Y12 Reaction Units}";
         readonly Package: "{Package}";
         readonly PacksDay: "{Packs}/d";
@@ -482,7 +489,9 @@ export declare class RiskEvidenceSynthesisRiskEstimate extends fhir.BackboneElem
         readonly RadioactiveT3UptakeRatio: "{RadioactiveT3UptakeRatio}";
         readonly Ratio: "{ratio}";
         readonly RedBloodCellPerMicroliter: "{RBC}/uL";
-        readonly RecTiter: "{RecTiter}";
+        readonly RecTiter: "{RecTiter}"; /**
+         * Default constructor for RiskEvidenceSynthesisCertaintyCertaintySubcomponent - initializes any required elements to null if a value is not provided.
+         */
         readonly RelativeQuoteU: "{Relative'U}";
         readonly RelativeViscosity: "{RelativeViscosity}";
         readonly RPIQuoteU: "{RPI'U}";
@@ -515,6 +524,9 @@ export declare class RiskEvidenceSynthesisRiskEstimate extends fhir.BackboneElem
         readonly PerHighPowerField: "/[HPF]";
         readonly PerInternationalUnit: "/[iU]";
         readonly PerLowPowerField: "/[LPF]";
+        /**
+         * A description of a component of the overall certainty.
+         */
         readonly PerEntity: "/{Entity}";
         readonly PerOif: "/{oif}";
         readonly PerSpecimen: "/{Specimen}";
@@ -544,7 +556,9 @@ export declare class RiskEvidenceSynthesisRiskEstimate extends fhir.BackboneElem
         readonly PerKilogram: "/kg";
         readonly PerKilogramBodyWt: "/kg{body'wt}";
         readonly PerLiter: "/L";
-        readonly PerSquareMeter: "/m2";
+        readonly PerSquareMeter: "/m2"; /**
+         * Function to perform basic model validation (e.g., check if required elements are present).
+         */
         readonly PerMilligram: "/mg";
         readonly PerMinute: "/min";
         readonly PerMilliliter: "/mL";
@@ -601,9 +615,7 @@ export declare class RiskEvidenceSynthesisRiskEstimate extends fhir.BackboneElem
         readonly VolumePercent: "%{vol}";
         readonly PercentWeightToWeight: "%{WeightToWeight}";
         readonly Percent100WBC: "%/100{WBC}";
-        readonly OnePerDay: "1/d"; /**
-         * This description can be used to capture details such as why the risk evidence synthesis was built, comments about misuse, instructions for clinical use and interpretation, literature references, examples from the paper world, etc. It is not a rendering of the risk evidence synthesis as conveyed in the 'text' field of the resource itself. This item SHOULD be populated unless the information is available from context (e.g. the language of the risk evidence synthesis is presumed to be the predominant language in the place the risk evidence synthesis was created).
-         */
+        readonly OnePerDay: "1/d";
         readonly OnePerMinute: "1/min";
         readonly VAL10LiterPerMinutePerSquareMeter: "10.L/(min.m2)";
         readonly VAL10LiterPerMinute: "10.L/min";
@@ -699,9 +711,7 @@ export declare class RiskEvidenceSynthesisRiskEstimate extends fhir.BackboneElem
         readonly GramAsteriskMeterHb: "g.m/{hb}";
         readonly GramOfCreatinine: "g{creat}";
         readonly GramOfHemoglobin: "g{Hb}";
-        readonly GramOfTotalNitrogen: "g{total_nit}"; /**
-         * The name is not expected to be globally unique. The name should be a simple alphanumeric type name to ensure that it is machine-processing friendly.
-         */
+        readonly GramOfTotalNitrogen: "g{total_nit}";
         readonly GramOfTotalProtein: "g{total_prot}";
         readonly GramOfWetTissue: "g{wet_tissue}";
         readonly GramPer100Gram: "g/(100.g)";
@@ -716,6 +726,9 @@ export declare class RiskEvidenceSynthesisRiskEstimate extends fhir.BackboneElem
         readonly Gram8AsteriskHour: "g/(8.h)";
         readonly GramPer8HourShift: "g/(8.h){shift}";
         readonly Gram8AsteriskKilogramAsteriskHour: "g/(8.kg.h)";
+        /**
+         * This name does not need to be machine-processing friendly and may contain punctuation, white-space, etc.
+         */
         readonly GramKilogramAsteriskHour: "g/(kg.h)";
         readonly GramKilogramAsteriskMinute: "g/(kg.min)";
         readonly GramPerSpecimen: "g/{specimen}";
@@ -750,7 +763,9 @@ export declare class RiskEvidenceSynthesisRiskEstimate extends fhir.BackboneElem
         readonly GigaBecquerel: "GBq";
         readonly Gray: "Gy";
         readonly Hour: "h";
-        readonly Henry: "H";
+        readonly Henry: "H"; /**
+         * It may be possible for the risk evidence synthesis to be used in jurisdictions other than those for which it was originally designed or intended.
+         */
         readonly Hectoliter: "hL";
         readonly Hertz: "Hz";
         readonly Joule: "J";
@@ -788,10 +803,16 @@ export declare class RiskEvidenceSynthesisRiskEstimate extends fhir.BackboneElem
         readonly KiloUnitHour: "kU/h";
         readonly KiloenzymeUnitPerLiter: "kU/L";
         readonly KiloEnzymeUnitPerLiterClass: "kU/L{class}";
+        /**
+         * Type of study eg randomized trial.
+         */
         readonly KiloEnzymeUnitPerMilliliter: "kU/mL";
         readonly Liter: "L";
         readonly LiterAsteriskSecondPower2Second: "L.s2/s";
         readonly LiterPer24Hour: "L/(24.h)";
+        /**
+         * A reference to a EvidenceVariable resource that defines the exposure for the research.
+         */
         readonly LiterPer8Hour: "L/(8.h)";
         readonly LiterPerMinutePerSquareMeter: "L/(min.m2)";
         readonly LiterPerDay: "L/d";
@@ -1239,7 +1260,7 @@ export declare class RiskEvidenceSynthesisRiskEstimate extends fhir.BackboneElem
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.FtsIssue[];
+    doModelValidation(expression?: string): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the RiskEvidenceSynthesisCertaintyCertaintySubcomponent type.
@@ -1293,7 +1314,7 @@ export declare class RiskEvidenceSynthesisCertaintyCertaintySubcomponent extends
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.FtsIssue[];
+    doModelValidation(expression?: string): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the RiskEvidenceSynthesisCertainty type.
@@ -1343,7 +1364,7 @@ export declare class RiskEvidenceSynthesisCertainty extends fhir.BackboneElement
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.FtsIssue[];
+    doModelValidation(expression?: string): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the RiskEvidenceSynthesis type.
@@ -1686,6 +1707,6 @@ export declare class RiskEvidenceSynthesis extends fhir.DomainResource {
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.FtsIssue[];
+    doModelValidation(expression?: string): fhir.FtsIssue[];
 }
 //# sourceMappingURL=RiskEvidenceSynthesis.d.ts.map

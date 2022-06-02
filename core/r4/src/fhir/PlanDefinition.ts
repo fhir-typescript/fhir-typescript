@@ -150,10 +150,11 @@ export class PlanDefinitionGoalTarget extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
-    if (this["measure"]) { issues.push(...this.measure.doModelValidation()); }
-    if (this["due"]) { issues.push(...this.due.doModelValidation()); }
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'PlanDefinition.goal.target' }
+    if (this["measure"]) { issues.push(...this.measure.doModelValidation(expression+'.measure')); }
+    if (this["due"]) { issues.push(...this.due.doModelValidation(expression+'.due')); }
     return issues;
   }
 }
@@ -253,18 +254,19 @@ export class PlanDefinitionGoal extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
-    if (this["category"]) { issues.push(...this.category.doModelValidation()); }
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'PlanDefinition.goal' }
+    if (this["category"]) { issues.push(...this.category.doModelValidation(expression+'.category')); }
     if (!this['description']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property description:fhir.CodeableConcept fhir: PlanDefinition.goal.description:CodeableConcept' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property description fhir: PlanDefinition.goal.description:CodeableConcept', expression: [expression] });
     }
-    if (this["description"]) { issues.push(...this.description.doModelValidation()); }
-    if (this["priority"]) { issues.push(...this.priority.doModelValidation()); }
-    if (this["start"]) { issues.push(...this.start.doModelValidation()); }
-    if (this["addresses"]) { this.addresses.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["documentation"]) { this.documentation.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["target"]) { this.target.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["description"]) { issues.push(...this.description.doModelValidation(expression+'.description')); }
+    if (this["priority"]) { issues.push(...this.priority.doModelValidation(expression+'.priority')); }
+    if (this["start"]) { issues.push(...this.start.doModelValidation(expression+'.start')); }
+    if (this["addresses"]) { this.addresses.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.addresses[${i}]`)); }) }
+    if (this["documentation"]) { this.documentation.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.documentation[${i}]`)); }) }
+    if (this["target"]) { this.target.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.target[${i}]`)); }) }
     return issues;
   }
 }
@@ -324,16 +326,17 @@ export class PlanDefinitionActionCondition extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'PlanDefinition.action.condition' }
     if (!this['kind']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property kind:fhir.FhirCode<ActionConditionKindCodeType> fhir: PlanDefinition.action.condition.kind:code' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property kind fhir: PlanDefinition.action.condition.kind:code', expression: [expression] });
     }
-    if (this['kind'] && (!Object.values(ActionConditionKindCodes).includes(this.kind as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property kind:fhir.FhirCode<ActionConditionKindCodeType> fhir: PlanDefinition.action.condition.kind:code Required binding to: ActionConditionKind' });
+    if (this['kind'] && (!Object.values(ActionConditionKindCodes).includes(this.kind.value as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property kind fhir: PlanDefinition.action.condition.kind:code Required binding to: ActionConditionKind', expression: [expression] });
     }
-    if (this["kind"]) { issues.push(...this.kind.doModelValidation()); }
-    if (this["expression"]) { issues.push(...this.expression.doModelValidation()); }
+    if (this["kind"]) { issues.push(...this.kind.doModelValidation(expression+'.kind')); }
+    if (this["expression"]) { issues.push(...this.expression.doModelValidation(expression+'.expression')); }
     return issues;
   }
 }
@@ -425,19 +428,20 @@ export class PlanDefinitionActionRelatedAction extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'PlanDefinition.action.relatedAction' }
     if (!this['actionId']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property actionId:fhir.FhirId fhir: PlanDefinition.action.relatedAction.actionId:id' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property actionId fhir: PlanDefinition.action.relatedAction.actionId:id', expression: [expression] });
     }
-    if (this["actionId"]) { issues.push(...this.actionId.doModelValidation()); }
+    if (this["actionId"]) { issues.push(...this.actionId.doModelValidation(expression+'.actionId')); }
     if (!this['relationship']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property relationship:fhir.FhirCode<ActionRelationshipTypeCodeType> fhir: PlanDefinition.action.relatedAction.relationship:code' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property relationship fhir: PlanDefinition.action.relatedAction.relationship:code', expression: [expression] });
     }
-    if (this['relationship'] && (!Object.values(ActionRelationshipTypeCodes).includes(this.relationship as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property relationship:fhir.FhirCode<ActionRelationshipTypeCodeType> fhir: PlanDefinition.action.relatedAction.relationship:code Required binding to: ActionRelationshipType' });
+    if (this['relationship'] && (!Object.values(ActionRelationshipTypeCodes).includes(this.relationship.value as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property relationship fhir: PlanDefinition.action.relatedAction.relationship:code Required binding to: ActionRelationshipType', expression: [expression] });
     }
-    if (this["relationship"]) { issues.push(...this.relationship.doModelValidation()); }
+    if (this["relationship"]) { issues.push(...this.relationship.doModelValidation(expression+'.relationship')); }
     return issues;
   }
 }
@@ -497,16 +501,17 @@ export class PlanDefinitionActionParticipant extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'PlanDefinition.action.participant' }
     if (!this['type']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property type:fhir.FhirCode<ActionParticipantTypeCodeType> fhir: PlanDefinition.action.participant.type:code' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property type fhir: PlanDefinition.action.participant.type:code', expression: [expression] });
     }
-    if (this['type'] && (!Object.values(ActionParticipantTypeCodes).includes(this.type as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property type:fhir.FhirCode<ActionParticipantTypeCodeType> fhir: PlanDefinition.action.participant.type:code Required binding to: ActionParticipantType' });
+    if (this['type'] && (!Object.values(ActionParticipantTypeCodes).includes(this.type.value as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property type fhir: PlanDefinition.action.participant.type:code Required binding to: ActionParticipantType', expression: [expression] });
     }
-    if (this["type"]) { issues.push(...this.type.doModelValidation()); }
-    if (this["role"]) { issues.push(...this.role.doModelValidation()); }
+    if (this["type"]) { issues.push(...this.type.doModelValidation(expression+'.type')); }
+    if (this["role"]) { issues.push(...this.role.doModelValidation(expression+'.role')); }
     return issues;
   }
 }
@@ -559,10 +564,11 @@ export class PlanDefinitionActionDynamicValue extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
-    if (this["path"]) { issues.push(...this.path.doModelValidation()); }
-    if (this["expression"]) { issues.push(...this.expression.doModelValidation()); }
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'PlanDefinition.action.dynamicValue' }
+    if (this["path"]) { issues.push(...this.path.doModelValidation(expression+'.path')); }
+    if (this["expression"]) { issues.push(...this.expression.doModelValidation(expression+'.expression')); }
     return issues;
   }
 }
@@ -1050,50 +1056,51 @@ export class PlanDefinitionAction extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
-    if (this["prefix"]) { issues.push(...this.prefix.doModelValidation()); }
-    if (this["title"]) { issues.push(...this.title.doModelValidation()); }
-    if (this["description"]) { issues.push(...this.description.doModelValidation()); }
-    if (this["textEquivalent"]) { issues.push(...this.textEquivalent.doModelValidation()); }
-    if (this['priority'] && (!Object.values(RequestPriorityCodes).includes(this.priority as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property priority?:fhir.FhirCode<RequestPriorityCodeType> fhir: PlanDefinition.action.priority:code Required binding to: RequestPriority' });
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'PlanDefinition.action' }
+    if (this["prefix"]) { issues.push(...this.prefix.doModelValidation(expression+'.prefix')); }
+    if (this["title"]) { issues.push(...this.title.doModelValidation(expression+'.title')); }
+    if (this["description"]) { issues.push(...this.description.doModelValidation(expression+'.description')); }
+    if (this["textEquivalent"]) { issues.push(...this.textEquivalent.doModelValidation(expression+'.textEquivalent')); }
+    if (this['priority'] && (!Object.values(RequestPriorityCodes).includes(this.priority.value as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property priority fhir: PlanDefinition.action.priority:code Required binding to: RequestPriority', expression: [expression] });
     }
-    if (this["priority"]) { issues.push(...this.priority.doModelValidation()); }
-    if (this["code"]) { this.code.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["reason"]) { this.reason.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["documentation"]) { this.documentation.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["goalId"]) { this.goalId.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["trigger"]) { this.trigger.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["condition"]) { this.condition.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["input"]) { this.input.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["output"]) { this.output.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["relatedAction"]) { this.relatedAction.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["participant"]) { this.participant.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["type"]) { issues.push(...this.type.doModelValidation()); }
-    if (this['groupingBehavior'] && (!Object.values(ActionGroupingBehaviorCodes).includes(this.groupingBehavior as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property groupingBehavior?:fhir.FhirCode<ActionGroupingBehaviorCodeType> fhir: PlanDefinition.action.groupingBehavior:code Required binding to: ActionGroupingBehavior' });
+    if (this["priority"]) { issues.push(...this.priority.doModelValidation(expression+'.priority')); }
+    if (this["code"]) { this.code.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.code[${i}]`)); }) }
+    if (this["reason"]) { this.reason.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.reason[${i}]`)); }) }
+    if (this["documentation"]) { this.documentation.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.documentation[${i}]`)); }) }
+    if (this["goalId"]) { this.goalId.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.goalId[${i}]`)); }) }
+    if (this["trigger"]) { this.trigger.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.trigger[${i}]`)); }) }
+    if (this["condition"]) { this.condition.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.condition[${i}]`)); }) }
+    if (this["input"]) { this.input.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.input[${i}]`)); }) }
+    if (this["output"]) { this.output.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.output[${i}]`)); }) }
+    if (this["relatedAction"]) { this.relatedAction.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.relatedAction[${i}]`)); }) }
+    if (this["participant"]) { this.participant.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.participant[${i}]`)); }) }
+    if (this["type"]) { issues.push(...this.type.doModelValidation(expression+'.type')); }
+    if (this['groupingBehavior'] && (!Object.values(ActionGroupingBehaviorCodes).includes(this.groupingBehavior.value as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property groupingBehavior fhir: PlanDefinition.action.groupingBehavior:code Required binding to: ActionGroupingBehavior', expression: [expression] });
     }
-    if (this["groupingBehavior"]) { issues.push(...this.groupingBehavior.doModelValidation()); }
-    if (this['selectionBehavior'] && (!Object.values(ActionSelectionBehaviorCodes).includes(this.selectionBehavior as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property selectionBehavior?:fhir.FhirCode<ActionSelectionBehaviorCodeType> fhir: PlanDefinition.action.selectionBehavior:code Required binding to: ActionSelectionBehavior' });
+    if (this["groupingBehavior"]) { issues.push(...this.groupingBehavior.doModelValidation(expression+'.groupingBehavior')); }
+    if (this['selectionBehavior'] && (!Object.values(ActionSelectionBehaviorCodes).includes(this.selectionBehavior.value as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property selectionBehavior fhir: PlanDefinition.action.selectionBehavior:code Required binding to: ActionSelectionBehavior', expression: [expression] });
     }
-    if (this["selectionBehavior"]) { issues.push(...this.selectionBehavior.doModelValidation()); }
-    if (this['requiredBehavior'] && (!Object.values(ActionRequiredBehaviorCodes).includes(this.requiredBehavior as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property requiredBehavior?:fhir.FhirCode<ActionRequiredBehaviorCodeType> fhir: PlanDefinition.action.requiredBehavior:code Required binding to: ActionRequiredBehavior' });
+    if (this["selectionBehavior"]) { issues.push(...this.selectionBehavior.doModelValidation(expression+'.selectionBehavior')); }
+    if (this['requiredBehavior'] && (!Object.values(ActionRequiredBehaviorCodes).includes(this.requiredBehavior.value as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property requiredBehavior fhir: PlanDefinition.action.requiredBehavior:code Required binding to: ActionRequiredBehavior', expression: [expression] });
     }
-    if (this["requiredBehavior"]) { issues.push(...this.requiredBehavior.doModelValidation()); }
-    if (this['precheckBehavior'] && (!Object.values(ActionPrecheckBehaviorCodes).includes(this.precheckBehavior as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property precheckBehavior?:fhir.FhirCode<ActionPrecheckBehaviorCodeType> fhir: PlanDefinition.action.precheckBehavior:code Required binding to: ActionPrecheckBehavior' });
+    if (this["requiredBehavior"]) { issues.push(...this.requiredBehavior.doModelValidation(expression+'.requiredBehavior')); }
+    if (this['precheckBehavior'] && (!Object.values(ActionPrecheckBehaviorCodes).includes(this.precheckBehavior.value as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property precheckBehavior fhir: PlanDefinition.action.precheckBehavior:code Required binding to: ActionPrecheckBehavior', expression: [expression] });
     }
-    if (this["precheckBehavior"]) { issues.push(...this.precheckBehavior.doModelValidation()); }
-    if (this['cardinalityBehavior'] && (!Object.values(ActionCardinalityBehaviorCodes).includes(this.cardinalityBehavior as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property cardinalityBehavior?:fhir.FhirCode<ActionCardinalityBehaviorCodeType> fhir: PlanDefinition.action.cardinalityBehavior:code Required binding to: ActionCardinalityBehavior' });
+    if (this["precheckBehavior"]) { issues.push(...this.precheckBehavior.doModelValidation(expression+'.precheckBehavior')); }
+    if (this['cardinalityBehavior'] && (!Object.values(ActionCardinalityBehaviorCodes).includes(this.cardinalityBehavior.value as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property cardinalityBehavior fhir: PlanDefinition.action.cardinalityBehavior:code Required binding to: ActionCardinalityBehavior', expression: [expression] });
     }
-    if (this["cardinalityBehavior"]) { issues.push(...this.cardinalityBehavior.doModelValidation()); }
-    if (this["transform"]) { issues.push(...this.transform.doModelValidation()); }
-    if (this["dynamicValue"]) { this.dynamicValue.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["action"]) { this.action.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["cardinalityBehavior"]) { issues.push(...this.cardinalityBehavior.doModelValidation(expression+'.cardinalityBehavior')); }
+    if (this["transform"]) { issues.push(...this.transform.doModelValidation(expression+'.transform')); }
+    if (this["dynamicValue"]) { this.dynamicValue.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.dynamicValue[${i}]`)); }) }
+    if (this["action"]) { this.action.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.action[${i}]`)); }) }
     return issues;
   }
 }
@@ -1582,47 +1589,48 @@ export class PlanDefinition extends fhir.DomainResource {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'PlanDefinition' }
     if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType:"PlanDefinition" fhir: PlanDefinition.resourceType:"PlanDefinition"' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType fhir: PlanDefinition.resourceType:"PlanDefinition"', expression: [expression] });
     }
-    if (this["url"]) { issues.push(...this.url.doModelValidation()); }
-    if (this["identifier"]) { this.identifier.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["version"]) { issues.push(...this.version.doModelValidation()); }
-    if (this["name"]) { issues.push(...this.name.doModelValidation()); }
-    if (this["title"]) { issues.push(...this.title.doModelValidation()); }
-    if (this["subtitle"]) { issues.push(...this.subtitle.doModelValidation()); }
-    if (this["type"]) { issues.push(...this.type.doModelValidation()); }
+    if (this["url"]) { issues.push(...this.url.doModelValidation(expression+'.url')); }
+    if (this["identifier"]) { this.identifier.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.identifier[${i}]`)); }) }
+    if (this["version"]) { issues.push(...this.version.doModelValidation(expression+'.version')); }
+    if (this["name"]) { issues.push(...this.name.doModelValidation(expression+'.name')); }
+    if (this["title"]) { issues.push(...this.title.doModelValidation(expression+'.title')); }
+    if (this["subtitle"]) { issues.push(...this.subtitle.doModelValidation(expression+'.subtitle')); }
+    if (this["type"]) { issues.push(...this.type.doModelValidation(expression+'.type')); }
     if (!this['status']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status:fhir.FhirCode<PublicationStatusCodeType> fhir: PlanDefinition.status:code' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status fhir: PlanDefinition.status:code', expression: [expression] });
     }
-    if (this['status'] && (!Object.values(PublicationStatusCodes).includes(this.status as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property status:fhir.FhirCode<PublicationStatusCodeType> fhir: PlanDefinition.status:code Required binding to: PublicationStatus' });
+    if (this['status'] && (!Object.values(PublicationStatusCodes).includes(this.status.value as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property status fhir: PlanDefinition.status:code Required binding to: PublicationStatus', expression: [expression] });
     }
-    if (this["status"]) { issues.push(...this.status.doModelValidation()); }
-    if (this["experimental"]) { issues.push(...this.experimental.doModelValidation()); }
-    if (this["date"]) { issues.push(...this.date.doModelValidation()); }
-    if (this["publisher"]) { issues.push(...this.publisher.doModelValidation()); }
-    if (this["contact"]) { this.contact.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["description"]) { issues.push(...this.description.doModelValidation()); }
-    if (this["useContext"]) { this.useContext.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["jurisdiction"]) { this.jurisdiction.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["purpose"]) { issues.push(...this.purpose.doModelValidation()); }
-    if (this["usage"]) { issues.push(...this.usage.doModelValidation()); }
-    if (this["copyright"]) { issues.push(...this.copyright.doModelValidation()); }
-    if (this["approvalDate"]) { issues.push(...this.approvalDate.doModelValidation()); }
-    if (this["lastReviewDate"]) { issues.push(...this.lastReviewDate.doModelValidation()); }
-    if (this["effectivePeriod"]) { issues.push(...this.effectivePeriod.doModelValidation()); }
-    if (this["topic"]) { this.topic.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["author"]) { this.author.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["editor"]) { this.editor.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["reviewer"]) { this.reviewer.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["endorser"]) { this.endorser.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["relatedArtifact"]) { this.relatedArtifact.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["library"]) { this.library.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["goal"]) { this.goal.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["action"]) { this.action.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["status"]) { issues.push(...this.status.doModelValidation(expression+'.status')); }
+    if (this["experimental"]) { issues.push(...this.experimental.doModelValidation(expression+'.experimental')); }
+    if (this["date"]) { issues.push(...this.date.doModelValidation(expression+'.date')); }
+    if (this["publisher"]) { issues.push(...this.publisher.doModelValidation(expression+'.publisher')); }
+    if (this["contact"]) { this.contact.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.contact[${i}]`)); }) }
+    if (this["description"]) { issues.push(...this.description.doModelValidation(expression+'.description')); }
+    if (this["useContext"]) { this.useContext.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.useContext[${i}]`)); }) }
+    if (this["jurisdiction"]) { this.jurisdiction.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.jurisdiction[${i}]`)); }) }
+    if (this["purpose"]) { issues.push(...this.purpose.doModelValidation(expression+'.purpose')); }
+    if (this["usage"]) { issues.push(...this.usage.doModelValidation(expression+'.usage')); }
+    if (this["copyright"]) { issues.push(...this.copyright.doModelValidation(expression+'.copyright')); }
+    if (this["approvalDate"]) { issues.push(...this.approvalDate.doModelValidation(expression+'.approvalDate')); }
+    if (this["lastReviewDate"]) { issues.push(...this.lastReviewDate.doModelValidation(expression+'.lastReviewDate')); }
+    if (this["effectivePeriod"]) { issues.push(...this.effectivePeriod.doModelValidation(expression+'.effectivePeriod')); }
+    if (this["topic"]) { this.topic.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.topic[${i}]`)); }) }
+    if (this["author"]) { this.author.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.author[${i}]`)); }) }
+    if (this["editor"]) { this.editor.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.editor[${i}]`)); }) }
+    if (this["reviewer"]) { this.reviewer.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.reviewer[${i}]`)); }) }
+    if (this["endorser"]) { this.endorser.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.endorser[${i}]`)); }) }
+    if (this["relatedArtifact"]) { this.relatedArtifact.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.relatedArtifact[${i}]`)); }) }
+    if (this["library"]) { this.library.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.library[${i}]`)); }) }
+    if (this["goal"]) { this.goal.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.goal[${i}]`)); }) }
+    if (this["action"]) { this.action.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.action[${i}]`)); }) }
     return issues;
   }
 }

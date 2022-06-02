@@ -97,17 +97,18 @@ export class CoverageEligibilityRequestSupportingInfo extends fhir.BackboneEleme
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'CoverageEligibilityRequest.supportingInfo' }
     if (!this['sequence']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property sequence:fhir.FhirPositiveInt fhir: CoverageEligibilityRequest.supportingInfo.sequence:positiveInt' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property sequence fhir: CoverageEligibilityRequest.supportingInfo.sequence:positiveInt', expression: [expression] });
     }
-    if (this["sequence"]) { issues.push(...this.sequence.doModelValidation()); }
+    if (this["sequence"]) { issues.push(...this.sequence.doModelValidation(expression+'.sequence')); }
     if (!this['information']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property information:fhir.Reference fhir: CoverageEligibilityRequest.supportingInfo.information:Reference' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property information fhir: CoverageEligibilityRequest.supportingInfo.information:Reference', expression: [expression] });
     }
-    if (this["information"]) { issues.push(...this.information.doModelValidation()); }
-    if (this["appliesToAll"]) { issues.push(...this.appliesToAll.doModelValidation()); }
+    if (this["information"]) { issues.push(...this.information.doModelValidation(expression+'.information')); }
+    if (this["appliesToAll"]) { issues.push(...this.appliesToAll.doModelValidation(expression+'.appliesToAll')); }
     return issues;
   }
 }
@@ -178,14 +179,15 @@ export class CoverageEligibilityRequestInsurance extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
-    if (this["focal"]) { issues.push(...this.focal.doModelValidation()); }
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'CoverageEligibilityRequest.insurance' }
+    if (this["focal"]) { issues.push(...this.focal.doModelValidation(expression+'.focal')); }
     if (!this['coverage']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property coverage:fhir.Reference fhir: CoverageEligibilityRequest.insurance.coverage:Reference' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property coverage fhir: CoverageEligibilityRequest.insurance.coverage:Reference', expression: [expression] });
     }
-    if (this["coverage"]) { issues.push(...this.coverage.doModelValidation()); }
-    if (this["businessArrangement"]) { issues.push(...this.businessArrangement.doModelValidation()); }
+    if (this["coverage"]) { issues.push(...this.coverage.doModelValidation(expression+'.coverage')); }
+    if (this["businessArrangement"]) { issues.push(...this.businessArrangement.doModelValidation(expression+'.businessArrangement')); }
     return issues;
   }
 }
@@ -235,8 +237,9 @@ export class CoverageEligibilityRequestItemDiagnosis extends fhir.BackboneElemen
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'CoverageEligibilityRequest.item.diagnosis' }
     return issues;
   }
 }
@@ -367,18 +370,19 @@ export class CoverageEligibilityRequestItem extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
-    if (this["supportingInfoSequence"]) { this.supportingInfoSequence.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["category"]) { issues.push(...this.category.doModelValidation()); }
-    if (this["productOrService"]) { issues.push(...this.productOrService.doModelValidation()); }
-    if (this["modifier"]) { this.modifier.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["provider"]) { issues.push(...this.provider.doModelValidation()); }
-    if (this["quantity"]) { issues.push(...this.quantity.doModelValidation()); }
-    if (this["unitPrice"]) { issues.push(...this.unitPrice.doModelValidation()); }
-    if (this["facility"]) { issues.push(...this.facility.doModelValidation()); }
-    if (this["diagnosis"]) { this.diagnosis.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["detail"]) { this.detail.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'CoverageEligibilityRequest.item' }
+    if (this["supportingInfoSequence"]) { this.supportingInfoSequence.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.supportingInfoSequence[${i}]`)); }) }
+    if (this["category"]) { issues.push(...this.category.doModelValidation(expression+'.category')); }
+    if (this["productOrService"]) { issues.push(...this.productOrService.doModelValidation(expression+'.productOrService')); }
+    if (this["modifier"]) { this.modifier.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.modifier[${i}]`)); }) }
+    if (this["provider"]) { issues.push(...this.provider.doModelValidation(expression+'.provider')); }
+    if (this["quantity"]) { issues.push(...this.quantity.doModelValidation(expression+'.quantity')); }
+    if (this["unitPrice"]) { issues.push(...this.unitPrice.doModelValidation(expression+'.unitPrice')); }
+    if (this["facility"]) { issues.push(...this.facility.doModelValidation(expression+'.facility')); }
+    if (this["diagnosis"]) { this.diagnosis.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.diagnosis[${i}]`)); }) }
+    if (this["detail"]) { this.detail.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.detail[${i}]`)); }) }
     return issues;
   }
 }
@@ -601,53 +605,54 @@ export class CoverageEligibilityRequest extends fhir.DomainResource {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'CoverageEligibilityRequest' }
     if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType:"CoverageEligibilityRequest" fhir: CoverageEligibilityRequest.resourceType:"CoverageEligibilityRequest"' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType fhir: CoverageEligibilityRequest.resourceType:"CoverageEligibilityRequest"', expression: [expression] });
     }
-    if (this["identifier"]) { this.identifier.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["identifier"]) { this.identifier.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.identifier[${i}]`)); }) }
     if (!this['status']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status:fhir.FhirCode<FmStatusCodeType> fhir: CoverageEligibilityRequest.status:code' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status fhir: CoverageEligibilityRequest.status:code', expression: [expression] });
     }
-    if (this['status'] && (!Object.values(FmStatusCodes).includes(this.status as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property status:fhir.FhirCode<FmStatusCodeType> fhir: CoverageEligibilityRequest.status:code Required binding to: FmStatus' });
+    if (this['status'] && (!Object.values(FmStatusCodes).includes(this.status.value as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property status fhir: CoverageEligibilityRequest.status:code Required binding to: FmStatus', expression: [expression] });
     }
-    if (this["status"]) { issues.push(...this.status.doModelValidation()); }
-    if (this["priority"]) { issues.push(...this.priority.doModelValidation()); }
+    if (this["status"]) { issues.push(...this.status.doModelValidation(expression+'.status')); }
+    if (this["priority"]) { issues.push(...this.priority.doModelValidation(expression+'.priority')); }
     if (!this['purpose']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property purpose:fhir.FhirCode<EligibilityrequestPurposeCodeType>[] fhir: CoverageEligibilityRequest.purpose:code' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property purpose fhir: CoverageEligibilityRequest.purpose:code', expression: [expression] });
     } else if (!Array.isArray(this.purpose)) {
-      issues.push({ severity: 'error', code: 'structure', diagnostics: 'Found scalar in array property purpose:fhir.FhirCode<EligibilityrequestPurposeCodeType>[] fhir: CoverageEligibilityRequest.purpose:code' });
+      issues.push({ severity: 'error', code: 'structure', diagnostics: 'Found scalar in array property purpose fhir: CoverageEligibilityRequest.purpose:code', expression: [expression] });
     } else if (this.purpose.length === 0) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property purpose:fhir.FhirCode<EligibilityrequestPurposeCodeType>[] fhir: CoverageEligibilityRequest.purpose:code' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property purpose fhir: CoverageEligibilityRequest.purpose:code', expression: [expression] });
     }
     if (this['purpose']) {
       this.purpose.forEach((v) => {
-        if (!Object.values(EligibilityrequestPurposeCodes).includes(v as any)) {
-          issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property purpose:fhir.FhirCode<EligibilityrequestPurposeCodeType>[] fhir: CoverageEligibilityRequest.purpose:code Required binding to: EligibilityrequestPurpose' });
+        if (!Object.values(EligibilityrequestPurposeCodes).includes(v.value as any)) {
+          issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property purpose fhir: CoverageEligibilityRequest.purpose:code Required binding to: EligibilityrequestPurpose', expression: [expression] });
         }
       });
     }
-    if (this["purpose"]) { this.purpose.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["purpose"]) { this.purpose.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.purpose[${i}]`)); }) }
     if (!this['patient']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property patient:fhir.Reference fhir: CoverageEligibilityRequest.patient:Reference' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property patient fhir: CoverageEligibilityRequest.patient:Reference', expression: [expression] });
     }
-    if (this["patient"]) { issues.push(...this.patient.doModelValidation()); }
+    if (this["patient"]) { issues.push(...this.patient.doModelValidation(expression+'.patient')); }
     if (!this['created']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property created:fhir.FhirDateTime fhir: CoverageEligibilityRequest.created:dateTime' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property created fhir: CoverageEligibilityRequest.created:dateTime', expression: [expression] });
     }
-    if (this["created"]) { issues.push(...this.created.doModelValidation()); }
-    if (this["enterer"]) { issues.push(...this.enterer.doModelValidation()); }
-    if (this["provider"]) { issues.push(...this.provider.doModelValidation()); }
+    if (this["created"]) { issues.push(...this.created.doModelValidation(expression+'.created')); }
+    if (this["enterer"]) { issues.push(...this.enterer.doModelValidation(expression+'.enterer')); }
+    if (this["provider"]) { issues.push(...this.provider.doModelValidation(expression+'.provider')); }
     if (!this['insurer']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property insurer:fhir.Reference fhir: CoverageEligibilityRequest.insurer:Reference' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property insurer fhir: CoverageEligibilityRequest.insurer:Reference', expression: [expression] });
     }
-    if (this["insurer"]) { issues.push(...this.insurer.doModelValidation()); }
-    if (this["facility"]) { issues.push(...this.facility.doModelValidation()); }
-    if (this["supportingInfo"]) { this.supportingInfo.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["insurance"]) { this.insurance.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["item"]) { this.item.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["insurer"]) { issues.push(...this.insurer.doModelValidation(expression+'.insurer')); }
+    if (this["facility"]) { issues.push(...this.facility.doModelValidation(expression+'.facility')); }
+    if (this["supportingInfo"]) { this.supportingInfo.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.supportingInfo[${i}]`)); }) }
+    if (this["insurance"]) { this.insurance.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.insurance[${i}]`)); }) }
+    if (this["item"]) { this.item.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.item[${i}]`)); }) }
     return issues;
   }
 }

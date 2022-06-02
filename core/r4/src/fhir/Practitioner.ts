@@ -78,15 +78,16 @@ export class PractitionerQualification extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
-    if (this["identifier"]) { this.identifier.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'Practitioner.qualification' }
+    if (this["identifier"]) { this.identifier.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.identifier[${i}]`)); }) }
     if (!this['code']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property code:fhir.CodeableConcept fhir: Practitioner.qualification.code:CodeableConcept' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property code fhir: Practitioner.qualification.code:CodeableConcept', expression: [expression] });
     }
-    if (this["code"]) { issues.push(...this.code.doModelValidation()); }
-    if (this["period"]) { issues.push(...this.period.doModelValidation()); }
-    if (this["issuer"]) { issues.push(...this.issuer.doModelValidation()); }
+    if (this["code"]) { issues.push(...this.code.doModelValidation(expression+'.code')); }
+    if (this["period"]) { issues.push(...this.period.doModelValidation(expression+'.period')); }
+    if (this["issuer"]) { issues.push(...this.issuer.doModelValidation(expression+'.issuer')); }
     return issues;
   }
 }
@@ -267,24 +268,25 @@ export class Practitioner extends fhir.DomainResource {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'Practitioner' }
     if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType:"Practitioner" fhir: Practitioner.resourceType:"Practitioner"' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType fhir: Practitioner.resourceType:"Practitioner"', expression: [expression] });
     }
-    if (this["identifier"]) { this.identifier.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["active"]) { issues.push(...this.active.doModelValidation()); }
-    if (this["name"]) { this.name.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["telecom"]) { this.telecom.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["address"]) { this.address.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this['gender'] && (!Object.values(AdministrativeGenderCodes).includes(this.gender as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property gender?:fhir.FhirCode<AdministrativeGenderCodeType> fhir: Practitioner.gender:code Required binding to: AdministrativeGender' });
+    if (this["identifier"]) { this.identifier.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.identifier[${i}]`)); }) }
+    if (this["active"]) { issues.push(...this.active.doModelValidation(expression+'.active')); }
+    if (this["name"]) { this.name.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.name[${i}]`)); }) }
+    if (this["telecom"]) { this.telecom.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.telecom[${i}]`)); }) }
+    if (this["address"]) { this.address.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.address[${i}]`)); }) }
+    if (this['gender'] && (!Object.values(AdministrativeGenderCodes).includes(this.gender.value as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property gender fhir: Practitioner.gender:code Required binding to: AdministrativeGender', expression: [expression] });
     }
-    if (this["gender"]) { issues.push(...this.gender.doModelValidation()); }
-    if (this["birthDate"]) { issues.push(...this.birthDate.doModelValidation()); }
-    if (this["photo"]) { this.photo.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["qualification"]) { this.qualification.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["communication"]) { this.communication.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["gender"]) { issues.push(...this.gender.doModelValidation(expression+'.gender')); }
+    if (this["birthDate"]) { issues.push(...this.birthDate.doModelValidation(expression+'.birthDate')); }
+    if (this["photo"]) { this.photo.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.photo[${i}]`)); }) }
+    if (this["qualification"]) { this.qualification.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.qualification[${i}]`)); }) }
+    if (this["communication"]) { this.communication.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.communication[${i}]`)); }) }
     return issues;
   }
 }

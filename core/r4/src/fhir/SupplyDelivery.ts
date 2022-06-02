@@ -68,9 +68,10 @@ export class SupplyDeliverySuppliedItem extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
-    if (this["quantity"]) { issues.push(...this.quantity.doModelValidation()); }
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'SupplyDelivery.suppliedItem' }
+    if (this["quantity"]) { issues.push(...this.quantity.doModelValidation(expression+'.quantity')); }
     return issues;
   }
 }
@@ -250,27 +251,25 @@ export class SupplyDelivery extends fhir.DomainResource {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'SupplyDelivery' }
     if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType:"SupplyDelivery" fhir: SupplyDelivery.resourceType:"SupplyDelivery"' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType fhir: SupplyDelivery.resourceType:"SupplyDelivery"', expression: [expression] });
     }
-    if (this["identifier"]) { this.identifier.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["basedOn"]) { this.basedOn.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["partOf"]) { this.partOf.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this['status'] && (!Object.values(SupplydeliveryStatusCodes).includes(this.status as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property status?:fhir.FhirCode<SupplydeliveryStatusCodeType> fhir: SupplyDelivery.status:code Required binding to: SupplydeliveryStatus' });
+    if (this["identifier"]) { this.identifier.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.identifier[${i}]`)); }) }
+    if (this["basedOn"]) { this.basedOn.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.basedOn[${i}]`)); }) }
+    if (this["partOf"]) { this.partOf.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.partOf[${i}]`)); }) }
+    if (this['status'] && (!Object.values(SupplydeliveryStatusCodes).includes(this.status.value as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property status fhir: SupplyDelivery.status:code Required binding to: SupplydeliveryStatus', expression: [expression] });
     }
-    if (this["status"]) { issues.push(...this.status.doModelValidation()); }
-    if (this["patient"]) { issues.push(...this.patient.doModelValidation()); }
-    if (this['type'] && (!Object.values(SupplydeliveryTypeCodes).includes(this.type as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property type?:fhir.CodeableConcept fhir: SupplyDelivery.type:CodeableConcept Required binding to: SupplydeliveryType' });
-    }
-    if (this["type"]) { issues.push(...this.type.doModelValidation()); }
-    if (this["suppliedItem"]) { issues.push(...this.suppliedItem.doModelValidation()); }
-    if (this["supplier"]) { issues.push(...this.supplier.doModelValidation()); }
-    if (this["destination"]) { issues.push(...this.destination.doModelValidation()); }
-    if (this["receiver"]) { this.receiver.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["status"]) { issues.push(...this.status.doModelValidation(expression+'.status')); }
+    if (this["patient"]) { issues.push(...this.patient.doModelValidation(expression+'.patient')); }
+    if (this["type"]) { issues.push(...this.type.doModelValidation(expression+'.type')); }
+    if (this["suppliedItem"]) { issues.push(...this.suppliedItem.doModelValidation(expression+'.suppliedItem')); }
+    if (this["supplier"]) { issues.push(...this.supplier.doModelValidation(expression+'.supplier')); }
+    if (this["destination"]) { issues.push(...this.destination.doModelValidation(expression+'.destination')); }
+    if (this["receiver"]) { this.receiver.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.receiver[${i}]`)); }) }
     return issues;
   }
 }

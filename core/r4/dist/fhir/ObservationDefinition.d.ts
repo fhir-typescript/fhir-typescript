@@ -72,7 +72,7 @@ export declare class ObservationDefinitionQuantitativeDetails extends fhir.Backb
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.FtsIssue[];
+    doModelValidation(expression?: string): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the ObservationDefinitionQualifiedInterval type.
@@ -191,7 +191,7 @@ export declare class ObservationDefinitionQualifiedInterval extends fhir.Backbon
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.FtsIssue[];
+    doModelValidation(expression?: string): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the ObservationDefinition type.
@@ -353,6 +353,6 @@ export declare class ObservationDefinition extends fhir.DomainResource {
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.FtsIssue[];
+    doModelValidation(expression?: string): fhir.FtsIssue[];
 }
 //# sourceMappingURL=ObservationDefinition.d.ts.map

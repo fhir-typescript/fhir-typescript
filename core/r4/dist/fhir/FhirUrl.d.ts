@@ -36,7 +36,7 @@ export declare class FhirUrl extends fhir.FhirPrimitive {
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.FtsIssue[];
+    doModelValidation(expression?: string): fhir.FtsIssue[];
     /**
      * Returns a string representation of a string.
      */

@@ -65,7 +65,7 @@ export declare class EffectEvidenceSynthesisSampleSize extends fhir.BackboneElem
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.FtsIssue[];
+    doModelValidation(expression?: string): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the EffectEvidenceSynthesisResultsByExposure type.
@@ -138,7 +138,7 @@ export declare class EffectEvidenceSynthesisResultsByExposure extends fhir.Backb
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.FtsIssue[];
+    doModelValidation(expression?: string): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the EffectEvidenceSynthesisEffectEstimatePrecisionEstimate type.
@@ -208,7 +208,7 @@ export declare class EffectEvidenceSynthesisEffectEstimatePrecisionEstimate exte
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.FtsIssue[];
+    doModelValidation(expression?: string): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the EffectEvidenceSynthesisEffectEstimate type.
@@ -397,9 +397,7 @@ export declare class EffectEvidenceSynthesisEffectEstimate extends fhir.Backbone
         readonly AbsorbanceQuoteU: "{Absorbance'U}";
         readonly AbsorbanceQuoteUMilliliter: "{Absorbance'U}/mL";
         readonly Absorbance: "{absorbance}";
-        readonly Activity: "{activity}"; /**
-         * Human-readable summary of results by exposure state.
-         */
+        readonly Activity: "{activity}";
         readonly ActivityCoefficient: "{ActivityCoefficient}";
         readonly AHFQuoteU: "{AHF'U}";
         readonly AntibodyResponseQuoteU: "{AntibodyResponse'U}";
@@ -407,9 +405,7 @@ export declare class EffectEvidenceSynthesisEffectEstimate extends fhir.Backbone
         readonly IgAAntiphosphatidylserineUnit: "{APS'U}";
         readonly AspirinResponseUnit: "{ARU}";
         readonly AspirinReactionQuoteU: "{AspirinReaction'U}";
-        readonly Bead: "{Bead}"; /**
-         * Used to define variant exposure states such as low-risk state.
-         */
+        readonly Bead: "{Bead}";
         readonly HeartBeatsPerMinute: "{beats}/min";
         readonly BeatsMinute: "{Beats}/min";
         readonly BindingIndex: "{binding_index}";
@@ -446,9 +442,6 @@ export declare class EffectEvidenceSynthesisEffectEstimate extends fhir.Backbone
         readonly CountCount: "{Count}";
         readonly CountsMinute: "{Counts}/min";
         readonly CountsPerMinute: "{CPM}";
-        /**
-         * Required-bound Value Set for exposureState (EffectEvidenceSynthesis.resultsByExposure.exposureState)
-         */
         readonly CountsPerMinutePerThousandCells: "{CPM}/10*3{cell}";
         readonly Dalton: "{Dalton}";
         readonly DdTiter: "{DdTiter}";
@@ -485,7 +478,9 @@ export declare class EffectEvidenceSynthesisEffectEstimate extends fhir.Backbone
         readonly GPortionPhospholipids: "{G-PortionPhospholipids}";
         readonly GAATrinucleotideRepeats: "{GAA_repeats}";
         readonly GenomesPerMilliliter: "{genomes}/mL";
-        readonly GliadinIndexValue: "{GliadinIndexValue}";
+        readonly GliadinIndexValue: "{GliadinIndexValue}"; /**
+         * Lower bound of confidence interval.
+         */
         readonly GlobulesDropsPerHighPowerField: "{Globules}/[HPF]";
         readonly IgGAntiphosphatidylserineUnit: "{GPS'U}";
         readonly InfluenzaHemagglutinationTiter: "{HA_titer}";
@@ -493,9 +488,6 @@ export declare class EffectEvidenceSynthesisEffectEstimate extends fhir.Backbone
         readonly ImmunofluorescenceAssayIndex: "{IFA_index}";
         readonly ImmunofluorescenceAssayTiter: "{IFA_titer}";
         readonly IfaIndex: "{IfaIndex}";
-        /**
-         * Use 95 for a 95% confidence interval.
-         */
         readonly IfaTiter: "{IfaTiter}";
         readonly IgAAntiphosphatidyleserineQuoteU: "{IgAAntiphosphatidyleserine'U}";
         readonly IgAPhospholipidQuoteU: "{IgAPhospholipid'U}";
@@ -528,9 +520,7 @@ export declare class EffectEvidenceSynthesisEffectEstimate extends fhir.Backbone
         readonly LogBase10InternationalUnitPerMilliliter: "{log_IU}/mL";
         readonly LogBase10InternationalUnitPerMilliliterLogIUML: "{Log_IU}/mL";
         readonly LogBase10: "{Log}";
-        readonly LymeIndexValue: "{Lyme_index_value}"; /**
-         * Examples include relative risk and mean difference.
-         */
+        readonly LymeIndexValue: "{Lyme_index_value}";
         readonly LymeIndexValueLymeIndexValue: "{LymeIndexValue}";
         readonly MPortionPhospholipids: "{M-PortionPhospholipids}";
         readonly MOM: "{M.o.M.}";
@@ -538,9 +528,7 @@ export declare class EffectEvidenceSynthesisEffectEstimate extends fhir.Backbone
         readonly Markers: "{Markers}";
         readonly Minidrp: "{minidrp}";
         readonly MoleculePlatelet: "{Molecule}/{Platelet}";
-        readonly IgMAntiphosphatidylserineUnit: "{MPS'U}"; /**
-         * A description of the precision of the estimate for the effect.
-         */
+        readonly IgMAntiphosphatidylserineUnit: "{MPS'U}";
         readonly IgMAntiphosphatidylserineUnitPerMilliliter: "{MPS'U}/mL";
         readonly MultOfMean: "{MultOfMean}";
         readonly NonspecificOunce: "{NonspecificOunce}";
@@ -557,7 +545,9 @@ export declare class EffectEvidenceSynthesisEffectEstimate extends fhir.Backbone
         readonly Patch: "{Patch}";
         readonly Percentile: "{Percentile}";
         readonly Pill: "{Pill}";
-        readonly PouchesWeek: "{Pouches}/wk";
+        readonly PouchesWeek: "{Pouches}/wk"; /**
+         * Examples include relative risk and mean difference.
+         */
         readonly RadioactiveT3UptakeRatio: "{RadioactiveT3UptakeRatio}";
         readonly Ratio: "{ratio}";
         readonly RedBloodCellPerMicroliter: "{RBC}/uL";
@@ -586,9 +576,7 @@ export declare class EffectEvidenceSynthesisEffectEstimate extends fhir.Backbone
         readonly Titer: "{titer}";
         readonly ToxoplasmaIndexValue: "{ToxoplasmaIndexValue}";
         readonly Vial: "{Vial}";
-        readonly VolumeVvolume: "{Volume}/{Vvolume}"; /**
-         * Function to perform basic model validation (e.g., check if required elements are present).
-         */
+        readonly VolumeVvolume: "{Volume}/{Vvolume}";
         readonly WeeksDays: "{WeeksDays}";
         readonly WhiteBloodCell: "{WhiteBloodCell}";
         readonly Per12AsteriskHour: "/(12.h)";
@@ -618,11 +606,11 @@ export declare class EffectEvidenceSynthesisEffectEstimate extends fhir.Backbone
         readonly PerGram: "/g";
         readonly PerGramCreat: "/g{creat}";
         readonly PerGramHgb: "/g{hgb}";
-        readonly PerGramTotQuoteNit: "/g{tot'nit}";
-        readonly PerGramTotQuoteProt: "/g{tot'prot}";
-        readonly PerGramWetQuoteTis: "/g{wet'tis}"; /**
+        readonly PerGramTotQuoteNit: "/g{tot'nit}"; /**
          * Type of subcomponent of certainty rating.
          */
+        readonly PerGramTotQuoteProt: "/g{tot'prot}";
+        readonly PerGramWetQuoteTis: "/g{wet'tis}";
         readonly PerHour: "/h";
         readonly PerKilogram: "/kg";
         readonly PerKilogramBodyWt: "/kg{body'wt}";
@@ -632,7 +620,9 @@ export declare class EffectEvidenceSynthesisEffectEstimate extends fhir.Backbone
         readonly PerMinute: "/min";
         readonly PerMilliliter: "/mL";
         readonly PerCubicMillimeter: "/mm3";
-        readonly PerMillimole: "/mmol";
+        readonly PerMillimole: "/mmol"; /**
+         * Type of subcomponent of certainty rating.
+         */
         readonly PerMonth: "/mo";
         readonly PerSecond: "/s";
         readonly PerEnzymeUnit: "/U";
@@ -679,6 +669,9 @@ export declare class EffectEvidenceSynthesisEffectEstimate extends fhir.Backbone
         readonly PercentTotQuoteCholesterol: "%{Tot'Cholesterol}";
         readonly PercentTotQuoteHgb: "%{Tot'Hgb}";
         readonly PercentTotal: "%{Total}";
+        /**
+         * A description of a component of the overall certainty.
+         */
         readonly PercentTotalProtein: "%{TotalProtein}";
         readonly PercentUptake: "%{Uptake}";
         readonly VolumePercent: "%{vol}";
@@ -711,9 +704,7 @@ export declare class EffectEvidenceSynthesisEffectEstimate extends fhir.Backbone
         readonly MillionPerSpecimen: "10*6/{Specimen}";
         readonly MillionPerKilogram: "10*6/kg";
         readonly MillionPerLiter: "10*6/L";
-        readonly MillionPerMilliliter: "10*6/mL"; /**
-         * Extended properties for primitive element: EffectEvidenceSynthesis.version
-         */
+        readonly MillionPerMilliliter: "10*6/mL";
         readonly TheNumberTenForArbitraryPowersPower6MillimeterPower3: "10*6/mm3";
         readonly MillionPerMicroliter: "10*6/uL";
         readonly TenToEighth: "10*8";
@@ -723,7 +714,9 @@ export declare class EffectEvidenceSynthesisEffectEstimate extends fhir.Backbone
         readonly VAL24Hour: "24.h";
         readonly Year: "a";
         readonly Ampere: "A";
-        readonly AmpereMeter: "A/m";
+        readonly AmpereMeter: "A/m"; /**
+         * There may be different effect evidence synthesis instances that have the same identifier but different versions.  The version can be appended to the url in a reference to allow a reference to a particular business version of the effect evidence synthesis with the format [url]|[version].
+         */
         readonly AttogramPerCell: "ag/{cell}";
         readonly StandardAtmosphere: "atm";
         readonly TechnicalAtmosphere: "att";
@@ -732,14 +725,13 @@ export declare class EffectEvidenceSynthesisEffectEstimate extends fhir.Backbone
         readonly Calorie: "cal";
         readonly DegreeCelsius: "Cel";
         readonly Centigram: "cg";
-        readonly Centiliter: "cL";
+        readonly Centiliter: "cL"; /**
+         * The name is not expected to be globally unique. The name should be a simple alphanumeric type name to ensure that it is machine-processing friendly.
+         */
         readonly Centimeter: "cm";
         readonly CentimeterOfWater: "cm[H2O]";
         readonly CentimeterOfWaterColumnSecondAsteriskMeter: "cm[H2O]/(s.m)";
         readonly CentimeterOfWaterPerLiterPerSecond: "cm[H2O]/L/s";
-        /**
-         * Extended properties for primitive element: EffectEvidenceSynthesis.date
-         */
         readonly CentimeterOfWaterPerSecondPerMeter: "cm[H2O]/s/m";
         readonly CentimeterOfMercury: "cm[Hg]";
         readonly SquareCentimeter: "cm2";
@@ -817,7 +809,9 @@ export declare class EffectEvidenceSynthesisEffectEstimate extends fhir.Backbone
         readonly GramPerHour: "g/h";
         readonly GramPerHourPerSquareMeter: "g/h/m2";
         readonly GramPerKilogram: "g/kg";
-        readonly GramPerKilogramPer8Hour: "g/kg/(8.h)";
+        readonly GramPerKilogramPer8Hour: "g/kg/(8.h)"; /**
+         * An individual or organization primarily responsible for review of some aspect of the content.
+         */
         readonly GramPerKilogramPer8HourShift: "g/kg/(8.h){shift}";
         readonly GramPerKilogramPerDay: "g/kg/d";
         readonly GramPerKilogramPerHour: "g/kg/h";
@@ -833,17 +827,12 @@ export declare class EffectEvidenceSynthesisEffectEstimate extends fhir.Backbone
         readonly GramPerMoleOfCreatinine: "g/mol{creat}";
         readonly GigaBecquerel: "GBq";
         readonly Gray: "Gy";
-        /**
-         * The EffectEvidenceSynthesis resource describes the difference in an outcome between exposures states in a population where the effect estimate is derived from a combination of research studies.
-         */
         readonly Hour: "h";
         readonly Henry: "H";
         readonly Hectoliter: "hL";
         readonly Hertz: "Hz";
         readonly Joule: "J";
-        readonly JoulePerLiter: "J/L"; /**
-         * Mapping of this datatype to a FHIR equivalent
-         */
+        readonly JoulePerLiter: "J/L";
         readonly Kelvin: "K";
         readonly KiloInternationalUnitPerLiter: "k[IU]/L";
         readonly KiloInternationalUnitPerMilliliter: "k[IU]/mL";
@@ -858,7 +847,9 @@ export declare class EffectEvidenceSynthesisEffectEstimate extends fhir.Backbone
         readonly KilocaloriePerDay: "kcal/d";
         readonly KilocaloriePerHour: "kcal/h";
         readonly KilocaloriePerKilogramPer24Hour: "kcal/kg/(24.h)";
-        readonly Kilogram: "kg";
+        readonly Kilogram: "kg"; /**
+         * Mapping of this datatype to a FHIR equivalent
+         */
         readonly KilogramMeterPerSecond: "kg.m/s";
         readonly KilogramPerSecondPerSquareMeter: "kg/(s.m2)";
         readonly KilogramPerHour: "kg/h";
@@ -872,9 +863,7 @@ export declare class EffectEvidenceSynthesisEffectEstimate extends fhir.Backbone
         readonly Kilometer: "km";
         readonly KiloPascal: "kPa";
         readonly Kilosecond: "ks";
-        readonly KiloEnzymeUnit: "kU"; /**
-         * This name does not need to be machine-processing friendly and may contain punctuation, white-space, etc.
-         */
+        readonly KiloEnzymeUnit: "kU";
         readonly KiloenzymeUnitPerGram: "kU/g";
         readonly KiloUnitHour: "kU/h";
         readonly KiloenzymeUnitPerLiter: "kU/L";
@@ -907,9 +896,7 @@ export declare class EffectEvidenceSynthesisEffectEstimate extends fhir.Backbone
         readonly MilliAmpere: "mA";
         readonly Millibar: "mbar";
         readonly MillibarSecondPerLiter: "mbar.s/L";
-        readonly MegaBecquerel: "MBq"; /**
-         * A human-readable string to clarify or explain concepts about the resource.
-         */
+        readonly MegaBecquerel: "MBq";
         readonly MilliCurie: "mCi";
         readonly Milliequivalent: "meq";
         readonly MilliequivalentPer12Hour: "meq/(12.h)";
@@ -932,7 +919,9 @@ export declare class EffectEvidenceSynthesisEffectEstimate extends fhir.Backbone
         readonly MilliequivalentPerMinute: "meq/min";
         readonly MilliequivalentPerMilliliter: "meq/mL";
         readonly Milligram: "mg";
-        readonly MilligramPhenylketonesDeciliter: "mg{Phenylketones}/dL";
+        readonly MilligramPhenylketonesDeciliter: "mg{Phenylketones}/dL"; /**
+         * The 'date' element may be more recent than the approval date because of minor changes or editorial corrections.
+         */
         readonly MilligramPer10Hour: "mg/(10.h)";
         readonly MilligramPer12Hour: "mg/(12.h)";
         readonly MilligramPer18Hour: "mg/(18.h)";
@@ -954,7 +943,9 @@ export declare class EffectEvidenceSynthesisEffectEstimate extends fhir.Backbone
         readonly MilligramPerGramOfCreatinine: "mg/g{creat}";
         readonly MilligramPerHour: "mg/h";
         readonly MilligramPerKilogram: "mg/kg";
-        readonly MilligramKilogram24AsteriskHour: "mg/kg/(24.h)";
+        readonly MilligramKilogram24AsteriskHour: "mg/kg/(24.h)"; /**
+         * Type of synthesis eg meta-analysis.
+         */
         readonly MilligramPerKilogramPerDay: "mg/kg/d";
         readonly MilligramPerKilogramPerMinute: "mg/kg/min";
         readonly MilligramPerLiter: "mg/L";
@@ -969,6 +960,9 @@ export declare class EffectEvidenceSynthesisEffectEstimate extends fhir.Backbone
         readonly MilligramPerMillimoleOfCreatinine: "mg/mmol{creat}";
         readonly MilligramPerWeek: "mg/wk";
         readonly Minute: "min";
+        /**
+         * A description of the results for each exposure considered in the effect estimate.
+         */
         readonly Milliliter: "mL";
         readonly MilliliterHQuoteBAsteriskMeterPower2: "mL/({h'b}.m2)";
         readonly MilliliterPer10Hour: "mL/(10.h)";
@@ -1069,7 +1063,9 @@ export declare class EffectEvidenceSynthesisEffectEstimate extends fhir.Backbone
         readonly MillienzymeUnitPerMillimoleOfCreatinine: "mU/mmol{creatinine}";
         readonly MillienzymeUnitPerMillimoleOfRedBloodCells: "mU/mmol{RBCs}";
         readonly MilliVolt: "mV";
-        readonly Newton: "N";
+        readonly Newton: "N"; /**
+         * Required-bound Value Set for status (EffectEvidenceSynthesis.status)
+         */
         readonly NewtonCentimeter: "N.cm";
         readonly NewtonSecond: "N.s";
         readonly NanoCurie: "nCi";
@@ -1332,7 +1328,7 @@ export declare class EffectEvidenceSynthesisEffectEstimate extends fhir.Backbone
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.FtsIssue[];
+    doModelValidation(expression?: string): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the EffectEvidenceSynthesisCertaintyCertaintySubcomponent type.
@@ -1386,7 +1382,7 @@ export declare class EffectEvidenceSynthesisCertaintyCertaintySubcomponent exten
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.FtsIssue[];
+    doModelValidation(expression?: string): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the EffectEvidenceSynthesisCertainty type.
@@ -1436,7 +1432,7 @@ export declare class EffectEvidenceSynthesisCertainty extends fhir.BackboneEleme
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.FtsIssue[];
+    doModelValidation(expression?: string): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the EffectEvidenceSynthesis type.
@@ -1795,6 +1791,6 @@ export declare class EffectEvidenceSynthesis extends fhir.DomainResource {
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.FtsIssue[];
+    doModelValidation(expression?: string): fhir.FtsIssue[];
 }
 //# sourceMappingURL=EffectEvidenceSynthesis.d.ts.map

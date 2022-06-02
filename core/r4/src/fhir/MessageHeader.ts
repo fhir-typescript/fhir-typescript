@@ -89,15 +89,16 @@ export class MessageHeaderDestination extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
-    if (this["name"]) { issues.push(...this.name.doModelValidation()); }
-    if (this["target"]) { issues.push(...this.target.doModelValidation()); }
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'MessageHeader.destination' }
+    if (this["name"]) { issues.push(...this.name.doModelValidation(expression+'.name')); }
+    if (this["target"]) { issues.push(...this.target.doModelValidation(expression+'.target')); }
     if (!this['endpoint']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property endpoint:fhir.FhirUrl fhir: MessageHeader.destination.endpoint:url' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property endpoint fhir: MessageHeader.destination.endpoint:url', expression: [expression] });
     }
-    if (this["endpoint"]) { issues.push(...this.endpoint.doModelValidation()); }
-    if (this["receiver"]) { issues.push(...this.receiver.doModelValidation()); }
+    if (this["endpoint"]) { issues.push(...this.endpoint.doModelValidation(expression+'.endpoint')); }
+    if (this["receiver"]) { issues.push(...this.receiver.doModelValidation(expression+'.receiver')); }
     return issues;
   }
 }
@@ -202,16 +203,17 @@ export class MessageHeaderSource extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
-    if (this["name"]) { issues.push(...this.name.doModelValidation()); }
-    if (this["software"]) { issues.push(...this.software.doModelValidation()); }
-    if (this["version"]) { issues.push(...this.version.doModelValidation()); }
-    if (this["contact"]) { issues.push(...this.contact.doModelValidation()); }
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'MessageHeader.source' }
+    if (this["name"]) { issues.push(...this.name.doModelValidation(expression+'.name')); }
+    if (this["software"]) { issues.push(...this.software.doModelValidation(expression+'.software')); }
+    if (this["version"]) { issues.push(...this.version.doModelValidation(expression+'.version')); }
+    if (this["contact"]) { issues.push(...this.contact.doModelValidation(expression+'.contact')); }
     if (!this['endpoint']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property endpoint:fhir.FhirUrl fhir: MessageHeader.source.endpoint:url' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property endpoint fhir: MessageHeader.source.endpoint:url', expression: [expression] });
     }
-    if (this["endpoint"]) { issues.push(...this.endpoint.doModelValidation()); }
+    if (this["endpoint"]) { issues.push(...this.endpoint.doModelValidation(expression+'.endpoint')); }
     return issues;
   }
 }
@@ -289,20 +291,21 @@ export class MessageHeaderResponse extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'MessageHeader.response' }
     if (!this['identifier']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property identifier:fhir.FhirId fhir: MessageHeader.response.identifier:id' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property identifier fhir: MessageHeader.response.identifier:id', expression: [expression] });
     }
-    if (this["identifier"]) { issues.push(...this.identifier.doModelValidation()); }
+    if (this["identifier"]) { issues.push(...this.identifier.doModelValidation(expression+'.identifier')); }
     if (!this['code']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property code:fhir.FhirCode<ResponseCodeType> fhir: MessageHeader.response.code:code' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property code fhir: MessageHeader.response.code:code', expression: [expression] });
     }
-    if (this['code'] && (!Object.values(ResponseCodes).includes(this.code as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property code:fhir.FhirCode<ResponseCodeType> fhir: MessageHeader.response.code:code Required binding to: Response' });
+    if (this['code'] && (!Object.values(ResponseCodes).includes(this.code.value as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property code fhir: MessageHeader.response.code:code Required binding to: Response', expression: [expression] });
     }
-    if (this["code"]) { issues.push(...this.code.doModelValidation()); }
-    if (this["details"]) { issues.push(...this.details.doModelValidation()); }
+    if (this["code"]) { issues.push(...this.code.doModelValidation(expression+'.code')); }
+    if (this["details"]) { issues.push(...this.details.doModelValidation(expression+'.details')); }
     return issues;
   }
 }
@@ -463,27 +466,28 @@ export class MessageHeader extends fhir.DomainResource {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'MessageHeader' }
     if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType:"MessageHeader" fhir: MessageHeader.resourceType:"MessageHeader"' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType fhir: MessageHeader.resourceType:"MessageHeader"', expression: [expression] });
     }
     if (!this['event']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property event: fhir: MessageHeader.event[x]:' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property event fhir: MessageHeader.event[x]:', expression: [expression] });
     }
-    if (this["destination"]) { this.destination.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["sender"]) { issues.push(...this.sender.doModelValidation()); }
-    if (this["enterer"]) { issues.push(...this.enterer.doModelValidation()); }
-    if (this["author"]) { issues.push(...this.author.doModelValidation()); }
+    if (this["destination"]) { this.destination.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.destination[${i}]`)); }) }
+    if (this["sender"]) { issues.push(...this.sender.doModelValidation(expression+'.sender')); }
+    if (this["enterer"]) { issues.push(...this.enterer.doModelValidation(expression+'.enterer')); }
+    if (this["author"]) { issues.push(...this.author.doModelValidation(expression+'.author')); }
     if (!this['source']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property source:fhir.MessageHeaderSource fhir: MessageHeader.source:source' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property source fhir: MessageHeader.source:source', expression: [expression] });
     }
-    if (this["source"]) { issues.push(...this.source.doModelValidation()); }
-    if (this["responsible"]) { issues.push(...this.responsible.doModelValidation()); }
-    if (this["reason"]) { issues.push(...this.reason.doModelValidation()); }
-    if (this["response"]) { issues.push(...this.response.doModelValidation()); }
-    if (this["focus"]) { this.focus.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["definition"]) { issues.push(...this.definition.doModelValidation()); }
+    if (this["source"]) { issues.push(...this.source.doModelValidation(expression+'.source')); }
+    if (this["responsible"]) { issues.push(...this.responsible.doModelValidation(expression+'.responsible')); }
+    if (this["reason"]) { issues.push(...this.reason.doModelValidation(expression+'.reason')); }
+    if (this["response"]) { issues.push(...this.response.doModelValidation(expression+'.response')); }
+    if (this["focus"]) { this.focus.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.focus[${i}]`)); }) }
+    if (this["definition"]) { issues.push(...this.definition.doModelValidation(expression+'.definition')); }
     return issues;
   }
 }

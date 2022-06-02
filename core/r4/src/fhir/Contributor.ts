@@ -84,20 +84,21 @@ export class Contributor extends fhir.FhirElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'Contributor' }
     if (!this['type']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property type:fhir.FhirCode<ContributorTypeCodeType> fhir: Contributor.type:code' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property type fhir: Contributor.type:code', expression: [expression] });
     }
-    if (this['type'] && (!Object.values(ContributorTypeCodes).includes(this.type as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property type:fhir.FhirCode<ContributorTypeCodeType> fhir: Contributor.type:code Required binding to: ContributorType' });
+    if (this['type'] && (!Object.values(ContributorTypeCodes).includes(this.type.value as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property type fhir: Contributor.type:code Required binding to: ContributorType', expression: [expression] });
     }
-    if (this["type"]) { issues.push(...this.type.doModelValidation()); }
+    if (this["type"]) { issues.push(...this.type.doModelValidation(expression+'.type')); }
     if (!this['name']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property name:fhir.FhirString fhir: Contributor.name:string' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property name fhir: Contributor.name:string', expression: [expression] });
     }
-    if (this["name"]) { issues.push(...this.name.doModelValidation()); }
-    if (this["contact"]) { this.contact.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["name"]) { issues.push(...this.name.doModelValidation(expression+'.name')); }
+    if (this["contact"]) { this.contact.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.contact[${i}]`)); }) }
     return issues;
   }
 }

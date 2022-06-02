@@ -132,9 +132,10 @@ export class GoalTarget extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
-    if (this["measure"]) { issues.push(...this.measure.doModelValidation()); }
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'Goal.target' }
+    if (this["measure"]) { issues.push(...this.measure.doModelValidation(expression+'.measure')); }
     return issues;
   }
 }
@@ -382,38 +383,39 @@ export class Goal extends fhir.DomainResource {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'Goal' }
     if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType:"Goal" fhir: Goal.resourceType:"Goal"' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType fhir: Goal.resourceType:"Goal"', expression: [expression] });
     }
-    if (this["identifier"]) { this.identifier.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["identifier"]) { this.identifier.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.identifier[${i}]`)); }) }
     if (!this['lifecycleStatus']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property lifecycleStatus:fhir.FhirCode<GoalStatusCodeType> fhir: Goal.lifecycleStatus:code' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property lifecycleStatus fhir: Goal.lifecycleStatus:code', expression: [expression] });
     }
-    if (this['lifecycleStatus'] && (!Object.values(GoalStatusCodes).includes(this.lifecycleStatus as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property lifecycleStatus:fhir.FhirCode<GoalStatusCodeType> fhir: Goal.lifecycleStatus:code Required binding to: GoalStatus' });
+    if (this['lifecycleStatus'] && (!Object.values(GoalStatusCodes).includes(this.lifecycleStatus.value as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property lifecycleStatus fhir: Goal.lifecycleStatus:code Required binding to: GoalStatus', expression: [expression] });
     }
-    if (this["lifecycleStatus"]) { issues.push(...this.lifecycleStatus.doModelValidation()); }
-    if (this["achievementStatus"]) { issues.push(...this.achievementStatus.doModelValidation()); }
-    if (this["category"]) { this.category.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["priority"]) { issues.push(...this.priority.doModelValidation()); }
+    if (this["lifecycleStatus"]) { issues.push(...this.lifecycleStatus.doModelValidation(expression+'.lifecycleStatus')); }
+    if (this["achievementStatus"]) { issues.push(...this.achievementStatus.doModelValidation(expression+'.achievementStatus')); }
+    if (this["category"]) { this.category.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.category[${i}]`)); }) }
+    if (this["priority"]) { issues.push(...this.priority.doModelValidation(expression+'.priority')); }
     if (!this['description']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property description:fhir.CodeableConcept fhir: Goal.description:CodeableConcept' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property description fhir: Goal.description:CodeableConcept', expression: [expression] });
     }
-    if (this["description"]) { issues.push(...this.description.doModelValidation()); }
+    if (this["description"]) { issues.push(...this.description.doModelValidation(expression+'.description')); }
     if (!this['subject']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property subject:fhir.Reference fhir: Goal.subject:Reference' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property subject fhir: Goal.subject:Reference', expression: [expression] });
     }
-    if (this["subject"]) { issues.push(...this.subject.doModelValidation()); }
-    if (this["target"]) { this.target.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["statusDate"]) { issues.push(...this.statusDate.doModelValidation()); }
-    if (this["statusReason"]) { issues.push(...this.statusReason.doModelValidation()); }
-    if (this["expressedBy"]) { issues.push(...this.expressedBy.doModelValidation()); }
-    if (this["addresses"]) { this.addresses.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["note"]) { this.note.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["outcomeCode"]) { this.outcomeCode.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["outcomeReference"]) { this.outcomeReference.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["subject"]) { issues.push(...this.subject.doModelValidation(expression+'.subject')); }
+    if (this["target"]) { this.target.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.target[${i}]`)); }) }
+    if (this["statusDate"]) { issues.push(...this.statusDate.doModelValidation(expression+'.statusDate')); }
+    if (this["statusReason"]) { issues.push(...this.statusReason.doModelValidation(expression+'.statusReason')); }
+    if (this["expressedBy"]) { issues.push(...this.expressedBy.doModelValidation(expression+'.expressedBy')); }
+    if (this["addresses"]) { this.addresses.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.addresses[${i}]`)); }) }
+    if (this["note"]) { this.note.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.note[${i}]`)); }) }
+    if (this["outcomeCode"]) { this.outcomeCode.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.outcomeCode[${i}]`)); }) }
+    if (this["outcomeReference"]) { this.outcomeReference.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.outcomeReference[${i}]`)); }) }
     return issues;
   }
 }

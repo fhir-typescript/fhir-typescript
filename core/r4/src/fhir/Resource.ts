@@ -111,15 +111,16 @@ export class Resource extends fhir.FhirBase {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'Resource' }
     if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType:string fhir: Resource.resourceType:string' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType fhir: Resource.resourceType:string', expression: [expression] });
     }
-    if (this["id"]) { issues.push(...this.id.doModelValidation()); }
-    if (this["meta"]) { issues.push(...this.meta.doModelValidation()); }
-    if (this["implicitRules"]) { issues.push(...this.implicitRules.doModelValidation()); }
-    if (this["language"]) { issues.push(...this.language.doModelValidation()); }
+    if (this["id"]) { issues.push(...this.id.doModelValidation(expression+'.id')); }
+    if (this["meta"]) { issues.push(...this.meta.doModelValidation(expression+'.meta')); }
+    if (this["implicitRules"]) { issues.push(...this.implicitRules.doModelValidation(expression+'.implicitRules')); }
+    if (this["language"]) { issues.push(...this.language.doModelValidation(expression+'.language')); }
     return issues;
   }
 }

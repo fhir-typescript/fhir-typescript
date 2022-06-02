@@ -158,21 +158,22 @@ export class QuestionnaireItemEnableWhen extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'Questionnaire.item.enableWhen' }
     if (!this['question']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property question:fhir.FhirString fhir: Questionnaire.item.enableWhen.question:string' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property question fhir: Questionnaire.item.enableWhen.question:string', expression: [expression] });
     }
-    if (this["question"]) { issues.push(...this.question.doModelValidation()); }
+    if (this["question"]) { issues.push(...this.question.doModelValidation(expression+'.question')); }
     if (!this['operator']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property operator:fhir.FhirCode<QuestionnaireEnableOperatorCodeType> fhir: Questionnaire.item.enableWhen.operator:code' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property operator fhir: Questionnaire.item.enableWhen.operator:code', expression: [expression] });
     }
-    if (this['operator'] && (!Object.values(QuestionnaireEnableOperatorCodes).includes(this.operator as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property operator:fhir.FhirCode<QuestionnaireEnableOperatorCodeType> fhir: Questionnaire.item.enableWhen.operator:code Required binding to: QuestionnaireEnableOperator' });
+    if (this['operator'] && (!Object.values(QuestionnaireEnableOperatorCodes).includes(this.operator.value as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property operator fhir: Questionnaire.item.enableWhen.operator:code Required binding to: QuestionnaireEnableOperator', expression: [expression] });
     }
-    if (this["operator"]) { issues.push(...this.operator.doModelValidation()); }
+    if (this["operator"]) { issues.push(...this.operator.doModelValidation(expression+'.operator')); }
     if (!this['answer']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property answer: fhir: Questionnaire.item.enableWhen.answer[x]:' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property answer fhir: Questionnaire.item.enableWhen.answer[x]:', expression: [expression] });
     }
     return issues;
   }
@@ -261,12 +262,13 @@ export class QuestionnaireItemAnswerOption extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'Questionnaire.item.answerOption' }
     if (!this['value']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property value: fhir: Questionnaire.item.answerOption.value[x]:' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property value fhir: Questionnaire.item.answerOption.value[x]:', expression: [expression] });
     }
-    if (this["initialSelected"]) { issues.push(...this.initialSelected.doModelValidation()); }
+    if (this["initialSelected"]) { issues.push(...this.initialSelected.doModelValidation(expression+'.initialSelected')); }
     return issues;
   }
 }
@@ -367,10 +369,11 @@ export class QuestionnaireItemInitial extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'Questionnaire.item.initial' }
     if (!this['value']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property value: fhir: Questionnaire.item.initial.value[x]:' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property value fhir: Questionnaire.item.initial.value[x]:', expression: [expression] });
     }
     return issues;
   }
@@ -653,36 +656,37 @@ export class QuestionnaireItem extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'Questionnaire.item' }
     if (!this['linkId']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property linkId:fhir.FhirString fhir: Questionnaire.item.linkId:string' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property linkId fhir: Questionnaire.item.linkId:string', expression: [expression] });
     }
-    if (this["linkId"]) { issues.push(...this.linkId.doModelValidation()); }
-    if (this["definition"]) { issues.push(...this.definition.doModelValidation()); }
-    if (this["code"]) { this.code.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["prefix"]) { issues.push(...this.prefix.doModelValidation()); }
-    if (this["text"]) { issues.push(...this.text.doModelValidation()); }
+    if (this["linkId"]) { issues.push(...this.linkId.doModelValidation(expression+'.linkId')); }
+    if (this["definition"]) { issues.push(...this.definition.doModelValidation(expression+'.definition')); }
+    if (this["code"]) { this.code.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.code[${i}]`)); }) }
+    if (this["prefix"]) { issues.push(...this.prefix.doModelValidation(expression+'.prefix')); }
+    if (this["text"]) { issues.push(...this.text.doModelValidation(expression+'.text')); }
     if (!this['type']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property type:fhir.FhirCode<ItemTypeCodeType> fhir: Questionnaire.item.type:code' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property type fhir: Questionnaire.item.type:code', expression: [expression] });
     }
-    if (this['type'] && (!Object.values(ItemTypeCodes).includes(this.type as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property type:fhir.FhirCode<ItemTypeCodeType> fhir: Questionnaire.item.type:code Required binding to: ItemType' });
+    if (this['type'] && (!Object.values(ItemTypeCodes).includes(this.type.value as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property type fhir: Questionnaire.item.type:code Required binding to: ItemType', expression: [expression] });
     }
-    if (this["type"]) { issues.push(...this.type.doModelValidation()); }
-    if (this["enableWhen"]) { this.enableWhen.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this['enableBehavior'] && (!Object.values(QuestionnaireEnableBehaviorCodes).includes(this.enableBehavior as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property enableBehavior?:fhir.FhirCode<QuestionnaireEnableBehaviorCodeType> fhir: Questionnaire.item.enableBehavior:code Required binding to: QuestionnaireEnableBehavior' });
+    if (this["type"]) { issues.push(...this.type.doModelValidation(expression+'.type')); }
+    if (this["enableWhen"]) { this.enableWhen.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.enableWhen[${i}]`)); }) }
+    if (this['enableBehavior'] && (!Object.values(QuestionnaireEnableBehaviorCodes).includes(this.enableBehavior.value as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property enableBehavior fhir: Questionnaire.item.enableBehavior:code Required binding to: QuestionnaireEnableBehavior', expression: [expression] });
     }
-    if (this["enableBehavior"]) { issues.push(...this.enableBehavior.doModelValidation()); }
-    if (this["required"]) { issues.push(...this.required.doModelValidation()); }
-    if (this["repeats"]) { issues.push(...this.repeats.doModelValidation()); }
-    if (this["readOnly"]) { issues.push(...this.readOnly.doModelValidation()); }
-    if (this["maxLength"]) { issues.push(...this.maxLength.doModelValidation()); }
-    if (this["answerValueSet"]) { issues.push(...this.answerValueSet.doModelValidation()); }
-    if (this["answerOption"]) { this.answerOption.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["initial"]) { this.initial.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["item"]) { this.item.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["enableBehavior"]) { issues.push(...this.enableBehavior.doModelValidation(expression+'.enableBehavior')); }
+    if (this["required"]) { issues.push(...this.required.doModelValidation(expression+'.required')); }
+    if (this["repeats"]) { issues.push(...this.repeats.doModelValidation(expression+'.repeats')); }
+    if (this["readOnly"]) { issues.push(...this.readOnly.doModelValidation(expression+'.readOnly')); }
+    if (this["maxLength"]) { issues.push(...this.maxLength.doModelValidation(expression+'.maxLength')); }
+    if (this["answerValueSet"]) { issues.push(...this.answerValueSet.doModelValidation(expression+'.answerValueSet')); }
+    if (this["answerOption"]) { this.answerOption.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.answerOption[${i}]`)); }) }
+    if (this["initial"]) { this.initial.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.initial[${i}]`)); }) }
+    if (this["item"]) { this.item.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.item[${i}]`)); }) }
     return issues;
   }
 }
@@ -1061,46 +1065,47 @@ export class Questionnaire extends fhir.DomainResource {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'Questionnaire' }
     if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType:"Questionnaire" fhir: Questionnaire.resourceType:"Questionnaire"' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType fhir: Questionnaire.resourceType:"Questionnaire"', expression: [expression] });
     }
-    if (this["url"]) { issues.push(...this.url.doModelValidation()); }
-    if (this["identifier"]) { this.identifier.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["version"]) { issues.push(...this.version.doModelValidation()); }
-    if (this["name"]) { issues.push(...this.name.doModelValidation()); }
-    if (this["title"]) { issues.push(...this.title.doModelValidation()); }
-    if (this["derivedFrom"]) { this.derivedFrom.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["url"]) { issues.push(...this.url.doModelValidation(expression+'.url')); }
+    if (this["identifier"]) { this.identifier.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.identifier[${i}]`)); }) }
+    if (this["version"]) { issues.push(...this.version.doModelValidation(expression+'.version')); }
+    if (this["name"]) { issues.push(...this.name.doModelValidation(expression+'.name')); }
+    if (this["title"]) { issues.push(...this.title.doModelValidation(expression+'.title')); }
+    if (this["derivedFrom"]) { this.derivedFrom.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.derivedFrom[${i}]`)); }) }
     if (!this['status']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status:fhir.FhirCode<PublicationStatusCodeType> fhir: Questionnaire.status:code' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status fhir: Questionnaire.status:code', expression: [expression] });
     }
-    if (this['status'] && (!Object.values(PublicationStatusCodes).includes(this.status as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property status:fhir.FhirCode<PublicationStatusCodeType> fhir: Questionnaire.status:code Required binding to: PublicationStatus' });
+    if (this['status'] && (!Object.values(PublicationStatusCodes).includes(this.status.value as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property status fhir: Questionnaire.status:code Required binding to: PublicationStatus', expression: [expression] });
     }
-    if (this["status"]) { issues.push(...this.status.doModelValidation()); }
-    if (this["experimental"]) { issues.push(...this.experimental.doModelValidation()); }
+    if (this["status"]) { issues.push(...this.status.doModelValidation(expression+'.status')); }
+    if (this["experimental"]) { issues.push(...this.experimental.doModelValidation(expression+'.experimental')); }
     if (this['subjectType']) {
       this.subjectType.forEach((v) => {
-        if (!Object.values(ResourceTypesCodes).includes(v as any)) {
-          issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property subjectType?:fhir.FhirCode[] fhir: Questionnaire.subjectType:code Required binding to: ResourceTypes' });
+        if (!Object.values(ResourceTypesCodes).includes(v.value as any)) {
+          issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property subjectType fhir: Questionnaire.subjectType:code Required binding to: ResourceTypes', expression: [expression] });
         }
       });
     }
-    if (this["subjectType"]) { this.subjectType.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["date"]) { issues.push(...this.date.doModelValidation()); }
-    if (this["publisher"]) { issues.push(...this.publisher.doModelValidation()); }
-    if (this["contact"]) { this.contact.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["description"]) { issues.push(...this.description.doModelValidation()); }
-    if (this["useContext"]) { this.useContext.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["jurisdiction"]) { this.jurisdiction.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["purpose"]) { issues.push(...this.purpose.doModelValidation()); }
-    if (this["copyright"]) { issues.push(...this.copyright.doModelValidation()); }
-    if (this["approvalDate"]) { issues.push(...this.approvalDate.doModelValidation()); }
-    if (this["lastReviewDate"]) { issues.push(...this.lastReviewDate.doModelValidation()); }
-    if (this["effectivePeriod"]) { issues.push(...this.effectivePeriod.doModelValidation()); }
-    if (this["code"]) { this.code.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["item"]) { this.item.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["subjectType"]) { this.subjectType.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.subjectType[${i}]`)); }) }
+    if (this["date"]) { issues.push(...this.date.doModelValidation(expression+'.date')); }
+    if (this["publisher"]) { issues.push(...this.publisher.doModelValidation(expression+'.publisher')); }
+    if (this["contact"]) { this.contact.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.contact[${i}]`)); }) }
+    if (this["description"]) { issues.push(...this.description.doModelValidation(expression+'.description')); }
+    if (this["useContext"]) { this.useContext.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.useContext[${i}]`)); }) }
+    if (this["jurisdiction"]) { this.jurisdiction.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.jurisdiction[${i}]`)); }) }
+    if (this["purpose"]) { issues.push(...this.purpose.doModelValidation(expression+'.purpose')); }
+    if (this["copyright"]) { issues.push(...this.copyright.doModelValidation(expression+'.copyright')); }
+    if (this["approvalDate"]) { issues.push(...this.approvalDate.doModelValidation(expression+'.approvalDate')); }
+    if (this["lastReviewDate"]) { issues.push(...this.lastReviewDate.doModelValidation(expression+'.lastReviewDate')); }
+    if (this["effectivePeriod"]) { issues.push(...this.effectivePeriod.doModelValidation(expression+'.effectivePeriod')); }
+    if (this["code"]) { this.code.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.code[${i}]`)); }) }
+    if (this["item"]) { this.item.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.item[${i}]`)); }) }
     return issues;
   }
 }

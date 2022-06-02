@@ -175,23 +175,24 @@ export class OrganizationAffiliation extends fhir.DomainResource {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'OrganizationAffiliation' }
     if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType:"OrganizationAffiliation" fhir: OrganizationAffiliation.resourceType:"OrganizationAffiliation"' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType fhir: OrganizationAffiliation.resourceType:"OrganizationAffiliation"', expression: [expression] });
     }
-    if (this["identifier"]) { this.identifier.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["active"]) { issues.push(...this.active.doModelValidation()); }
-    if (this["period"]) { issues.push(...this.period.doModelValidation()); }
-    if (this["organization"]) { issues.push(...this.organization.doModelValidation()); }
-    if (this["participatingOrganization"]) { issues.push(...this.participatingOrganization.doModelValidation()); }
-    if (this["network"]) { this.network.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["code"]) { this.code.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["specialty"]) { this.specialty.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["location"]) { this.location.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["healthcareService"]) { this.healthcareService.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["telecom"]) { this.telecom.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["endpoint"]) { this.endpoint.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["identifier"]) { this.identifier.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.identifier[${i}]`)); }) }
+    if (this["active"]) { issues.push(...this.active.doModelValidation(expression+'.active')); }
+    if (this["period"]) { issues.push(...this.period.doModelValidation(expression+'.period')); }
+    if (this["organization"]) { issues.push(...this.organization.doModelValidation(expression+'.organization')); }
+    if (this["participatingOrganization"]) { issues.push(...this.participatingOrganization.doModelValidation(expression+'.participatingOrganization')); }
+    if (this["network"]) { this.network.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.network[${i}]`)); }) }
+    if (this["code"]) { this.code.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.code[${i}]`)); }) }
+    if (this["specialty"]) { this.specialty.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.specialty[${i}]`)); }) }
+    if (this["location"]) { this.location.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.location[${i}]`)); }) }
+    if (this["healthcareService"]) { this.healthcareService.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.healthcareService[${i}]`)); }) }
+    if (this["telecom"]) { this.telecom.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.telecom[${i}]`)); }) }
+    if (this["endpoint"]) { this.endpoint.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.endpoint[${i}]`)); }) }
     return issues;
   }
 }

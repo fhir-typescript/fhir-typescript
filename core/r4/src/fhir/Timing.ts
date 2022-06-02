@@ -343,42 +343,43 @@ export class TimingRepeat extends fhir.FhirElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
-    if (this["count"]) { issues.push(...this.count.doModelValidation()); }
-    if (this["countMax"]) { issues.push(...this.countMax.doModelValidation()); }
-    if (this["duration"]) { issues.push(...this.duration.doModelValidation()); }
-    if (this["durationMax"]) { issues.push(...this.durationMax.doModelValidation()); }
-    if (this['durationUnit'] && (!Object.values(UnitsOfTimeCodes).includes(this.durationUnit as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property durationUnit?:fhir.FhirCode<UnitsOfTimeCodeType> fhir: Timing.repeat.durationUnit:code Required binding to: UnitsOfTime' });
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'Timing.repeat' }
+    if (this["count"]) { issues.push(...this.count.doModelValidation(expression+'.count')); }
+    if (this["countMax"]) { issues.push(...this.countMax.doModelValidation(expression+'.countMax')); }
+    if (this["duration"]) { issues.push(...this.duration.doModelValidation(expression+'.duration')); }
+    if (this["durationMax"]) { issues.push(...this.durationMax.doModelValidation(expression+'.durationMax')); }
+    if (this['durationUnit'] && (!Object.values(UnitsOfTimeCodes).includes(this.durationUnit.value as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property durationUnit fhir: Timing.repeat.durationUnit:code Required binding to: UnitsOfTime', expression: [expression] });
     }
-    if (this["durationUnit"]) { issues.push(...this.durationUnit.doModelValidation()); }
-    if (this["frequency"]) { issues.push(...this.frequency.doModelValidation()); }
-    if (this["frequencyMax"]) { issues.push(...this.frequencyMax.doModelValidation()); }
-    if (this["period"]) { issues.push(...this.period.doModelValidation()); }
-    if (this["periodMax"]) { issues.push(...this.periodMax.doModelValidation()); }
-    if (this['periodUnit'] && (!Object.values(UnitsOfTimeCodes).includes(this.periodUnit as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property periodUnit?:fhir.FhirCode<UnitsOfTimeCodeType> fhir: Timing.repeat.periodUnit:code Required binding to: UnitsOfTime' });
+    if (this["durationUnit"]) { issues.push(...this.durationUnit.doModelValidation(expression+'.durationUnit')); }
+    if (this["frequency"]) { issues.push(...this.frequency.doModelValidation(expression+'.frequency')); }
+    if (this["frequencyMax"]) { issues.push(...this.frequencyMax.doModelValidation(expression+'.frequencyMax')); }
+    if (this["period"]) { issues.push(...this.period.doModelValidation(expression+'.period')); }
+    if (this["periodMax"]) { issues.push(...this.periodMax.doModelValidation(expression+'.periodMax')); }
+    if (this['periodUnit'] && (!Object.values(UnitsOfTimeCodes).includes(this.periodUnit.value as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property periodUnit fhir: Timing.repeat.periodUnit:code Required binding to: UnitsOfTime', expression: [expression] });
     }
-    if (this["periodUnit"]) { issues.push(...this.periodUnit.doModelValidation()); }
+    if (this["periodUnit"]) { issues.push(...this.periodUnit.doModelValidation(expression+'.periodUnit')); }
     if (this['dayOfWeek']) {
       this.dayOfWeek.forEach((v) => {
-        if (!Object.values(DaysOfWeekCodes).includes(v as any)) {
-          issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property dayOfWeek?:fhir.FhirCode<DaysOfWeekCodeType>[] fhir: Timing.repeat.dayOfWeek:code Required binding to: DaysOfWeek' });
+        if (!Object.values(DaysOfWeekCodes).includes(v.value as any)) {
+          issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property dayOfWeek fhir: Timing.repeat.dayOfWeek:code Required binding to: DaysOfWeek', expression: [expression] });
         }
       });
     }
-    if (this["dayOfWeek"]) { this.dayOfWeek.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["timeOfDay"]) { this.timeOfDay.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["dayOfWeek"]) { this.dayOfWeek.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.dayOfWeek[${i}]`)); }) }
+    if (this["timeOfDay"]) { this.timeOfDay.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.timeOfDay[${i}]`)); }) }
     if (this['when']) {
       this.when.forEach((v) => {
-        if (!Object.values(EventTimingCodes).includes(v as any)) {
-          issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property when?:fhir.FhirCode[] fhir: Timing.repeat.when:code Required binding to: EventTiming' });
+        if (!Object.values(EventTimingCodes).includes(v.value as any)) {
+          issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property when fhir: Timing.repeat.when:code Required binding to: EventTiming', expression: [expression] });
         }
       });
     }
-    if (this["when"]) { this.when.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["offset"]) { issues.push(...this.offset.doModelValidation()); }
+    if (this["when"]) { this.when.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.when[${i}]`)); }) }
+    if (this["offset"]) { issues.push(...this.offset.doModelValidation(expression+'.offset')); }
     return issues;
   }
 }
@@ -449,11 +450,12 @@ export class Timing extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
-    if (this["event"]) { this.event.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["repeat"]) { issues.push(...this.repeat.doModelValidation()); }
-    if (this["code"]) { issues.push(...this.code.doModelValidation()); }
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'Timing' }
+    if (this["event"]) { this.event.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.event[${i}]`)); }) }
+    if (this["repeat"]) { issues.push(...this.repeat.doModelValidation(expression+'.repeat')); }
+    if (this["code"]) { issues.push(...this.code.doModelValidation(expression+'.code')); }
     return issues;
   }
 }

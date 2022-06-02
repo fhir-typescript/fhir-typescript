@@ -88,16 +88,17 @@ export class SearchParameterComponent extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'SearchParameter.component' }
     if (!this['definition']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property definition:fhir.FhirCanonical fhir: SearchParameter.component.definition:canonical' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property definition fhir: SearchParameter.component.definition:canonical', expression: [expression] });
     }
-    if (this["definition"]) { issues.push(...this.definition.doModelValidation()); }
+    if (this["definition"]) { issues.push(...this.definition.doModelValidation(expression+'.definition')); }
     if (!this['expression']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property expression:fhir.FhirString fhir: SearchParameter.component.expression:string' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property expression fhir: SearchParameter.component.expression:string', expression: [expression] });
     }
-    if (this["expression"]) { issues.push(...this.expression.doModelValidation()); }
+    if (this["expression"]) { issues.push(...this.expression.doModelValidation(expression+'.expression')); }
     return issues;
   }
 }
@@ -614,99 +615,100 @@ export class SearchParameter extends fhir.DomainResource {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'SearchParameter' }
     if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType:"SearchParameter" fhir: SearchParameter.resourceType:"SearchParameter"' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType fhir: SearchParameter.resourceType:"SearchParameter"', expression: [expression] });
     }
     if (!this['url']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property url:fhir.FhirUri fhir: SearchParameter.url:uri' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property url fhir: SearchParameter.url:uri', expression: [expression] });
     }
-    if (this["url"]) { issues.push(...this.url.doModelValidation()); }
-    if (this["version"]) { issues.push(...this.version.doModelValidation()); }
+    if (this["url"]) { issues.push(...this.url.doModelValidation(expression+'.url')); }
+    if (this["version"]) { issues.push(...this.version.doModelValidation(expression+'.version')); }
     if (!this['name']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property name:fhir.FhirString fhir: SearchParameter.name:string' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property name fhir: SearchParameter.name:string', expression: [expression] });
     }
-    if (this["name"]) { issues.push(...this.name.doModelValidation()); }
-    if (this["derivedFrom"]) { issues.push(...this.derivedFrom.doModelValidation()); }
+    if (this["name"]) { issues.push(...this.name.doModelValidation(expression+'.name')); }
+    if (this["derivedFrom"]) { issues.push(...this.derivedFrom.doModelValidation(expression+'.derivedFrom')); }
     if (!this['status']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status:fhir.FhirCode<PublicationStatusCodeType> fhir: SearchParameter.status:code' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status fhir: SearchParameter.status:code', expression: [expression] });
     }
-    if (this['status'] && (!Object.values(PublicationStatusCodes).includes(this.status as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property status:fhir.FhirCode<PublicationStatusCodeType> fhir: SearchParameter.status:code Required binding to: PublicationStatus' });
+    if (this['status'] && (!Object.values(PublicationStatusCodes).includes(this.status.value as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property status fhir: SearchParameter.status:code Required binding to: PublicationStatus', expression: [expression] });
     }
-    if (this["status"]) { issues.push(...this.status.doModelValidation()); }
-    if (this["experimental"]) { issues.push(...this.experimental.doModelValidation()); }
-    if (this["date"]) { issues.push(...this.date.doModelValidation()); }
-    if (this["publisher"]) { issues.push(...this.publisher.doModelValidation()); }
-    if (this["contact"]) { this.contact.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["status"]) { issues.push(...this.status.doModelValidation(expression+'.status')); }
+    if (this["experimental"]) { issues.push(...this.experimental.doModelValidation(expression+'.experimental')); }
+    if (this["date"]) { issues.push(...this.date.doModelValidation(expression+'.date')); }
+    if (this["publisher"]) { issues.push(...this.publisher.doModelValidation(expression+'.publisher')); }
+    if (this["contact"]) { this.contact.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.contact[${i}]`)); }) }
     if (!this['description']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property description:fhir.FhirMarkdown fhir: SearchParameter.description:markdown' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property description fhir: SearchParameter.description:markdown', expression: [expression] });
     }
-    if (this["description"]) { issues.push(...this.description.doModelValidation()); }
-    if (this["useContext"]) { this.useContext.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["jurisdiction"]) { this.jurisdiction.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["purpose"]) { issues.push(...this.purpose.doModelValidation()); }
+    if (this["description"]) { issues.push(...this.description.doModelValidation(expression+'.description')); }
+    if (this["useContext"]) { this.useContext.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.useContext[${i}]`)); }) }
+    if (this["jurisdiction"]) { this.jurisdiction.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.jurisdiction[${i}]`)); }) }
+    if (this["purpose"]) { issues.push(...this.purpose.doModelValidation(expression+'.purpose')); }
     if (!this['code']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property code:fhir.FhirCode fhir: SearchParameter.code:code' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property code fhir: SearchParameter.code:code', expression: [expression] });
     }
-    if (this["code"]) { issues.push(...this.code.doModelValidation()); }
+    if (this["code"]) { issues.push(...this.code.doModelValidation(expression+'.code')); }
     if (!this['base']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property base:fhir.FhirCode[] fhir: SearchParameter.base:code' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property base fhir: SearchParameter.base:code', expression: [expression] });
     } else if (!Array.isArray(this.base)) {
-      issues.push({ severity: 'error', code: 'structure', diagnostics: 'Found scalar in array property base:fhir.FhirCode[] fhir: SearchParameter.base:code' });
+      issues.push({ severity: 'error', code: 'structure', diagnostics: 'Found scalar in array property base fhir: SearchParameter.base:code', expression: [expression] });
     } else if (this.base.length === 0) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property base:fhir.FhirCode[] fhir: SearchParameter.base:code' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property base fhir: SearchParameter.base:code', expression: [expression] });
     }
     if (this['base']) {
       this.base.forEach((v) => {
-        if (!Object.values(ResourceTypesCodes).includes(v as any)) {
-          issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property base:fhir.FhirCode[] fhir: SearchParameter.base:code Required binding to: ResourceTypes' });
+        if (!Object.values(ResourceTypesCodes).includes(v.value as any)) {
+          issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property base fhir: SearchParameter.base:code Required binding to: ResourceTypes', expression: [expression] });
         }
       });
     }
-    if (this["base"]) { this.base.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["base"]) { this.base.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.base[${i}]`)); }) }
     if (!this['type']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property type:fhir.FhirCode<SearchParamTypeCodeType> fhir: SearchParameter.type:code' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property type fhir: SearchParameter.type:code', expression: [expression] });
     }
-    if (this['type'] && (!Object.values(SearchParamTypeCodes).includes(this.type as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property type:fhir.FhirCode<SearchParamTypeCodeType> fhir: SearchParameter.type:code Required binding to: SearchParamType' });
+    if (this['type'] && (!Object.values(SearchParamTypeCodes).includes(this.type.value as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property type fhir: SearchParameter.type:code Required binding to: SearchParamType', expression: [expression] });
     }
-    if (this["type"]) { issues.push(...this.type.doModelValidation()); }
-    if (this["expression"]) { issues.push(...this.expression.doModelValidation()); }
-    if (this["xpath"]) { issues.push(...this.xpath.doModelValidation()); }
-    if (this['xpathUsage'] && (!Object.values(SearchXpathUsageCodes).includes(this.xpathUsage as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property xpathUsage?:fhir.FhirCode<SearchXpathUsageCodeType> fhir: SearchParameter.xpathUsage:code Required binding to: SearchXpathUsage' });
+    if (this["type"]) { issues.push(...this.type.doModelValidation(expression+'.type')); }
+    if (this["expression"]) { issues.push(...this.expression.doModelValidation(expression+'.expression')); }
+    if (this["xpath"]) { issues.push(...this.xpath.doModelValidation(expression+'.xpath')); }
+    if (this['xpathUsage'] && (!Object.values(SearchXpathUsageCodes).includes(this.xpathUsage.value as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property xpathUsage fhir: SearchParameter.xpathUsage:code Required binding to: SearchXpathUsage', expression: [expression] });
     }
-    if (this["xpathUsage"]) { issues.push(...this.xpathUsage.doModelValidation()); }
+    if (this["xpathUsage"]) { issues.push(...this.xpathUsage.doModelValidation(expression+'.xpathUsage')); }
     if (this['target']) {
       this.target.forEach((v) => {
-        if (!Object.values(ResourceTypesCodes).includes(v as any)) {
-          issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property target?:fhir.FhirCode[] fhir: SearchParameter.target:code Required binding to: ResourceTypes' });
+        if (!Object.values(ResourceTypesCodes).includes(v.value as any)) {
+          issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property target fhir: SearchParameter.target:code Required binding to: ResourceTypes', expression: [expression] });
         }
       });
     }
-    if (this["target"]) { this.target.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["multipleOr"]) { issues.push(...this.multipleOr.doModelValidation()); }
-    if (this["multipleAnd"]) { issues.push(...this.multipleAnd.doModelValidation()); }
+    if (this["target"]) { this.target.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.target[${i}]`)); }) }
+    if (this["multipleOr"]) { issues.push(...this.multipleOr.doModelValidation(expression+'.multipleOr')); }
+    if (this["multipleAnd"]) { issues.push(...this.multipleAnd.doModelValidation(expression+'.multipleAnd')); }
     if (this['comparator']) {
       this.comparator.forEach((v) => {
-        if (!Object.values(SearchComparatorCodes).includes(v as any)) {
-          issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property comparator?:fhir.FhirCode<SearchComparatorCodeType>[] fhir: SearchParameter.comparator:code Required binding to: SearchComparator' });
+        if (!Object.values(SearchComparatorCodes).includes(v.value as any)) {
+          issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property comparator fhir: SearchParameter.comparator:code Required binding to: SearchComparator', expression: [expression] });
         }
       });
     }
-    if (this["comparator"]) { this.comparator.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["comparator"]) { this.comparator.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.comparator[${i}]`)); }) }
     if (this['modifier']) {
       this.modifier.forEach((v) => {
-        if (!Object.values(SearchModifierCodes).includes(v as any)) {
-          issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property modifier?:fhir.FhirCode<SearchModifierCodeType>[] fhir: SearchParameter.modifier:code Required binding to: SearchModifier' });
+        if (!Object.values(SearchModifierCodes).includes(v.value as any)) {
+          issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property modifier fhir: SearchParameter.modifier:code Required binding to: SearchModifier', expression: [expression] });
         }
       });
     }
-    if (this["modifier"]) { this.modifier.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["chain"]) { this.chain.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["component"]) { this.component.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["modifier"]) { this.modifier.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.modifier[${i}]`)); }) }
+    if (this["chain"]) { this.chain.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.chain[${i}]`)); }) }
+    if (this["component"]) { this.component.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.component[${i}]`)); }) }
     return issues;
   }
 }

@@ -55,13 +55,14 @@ export class InvoiceParticipant extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
-    if (this["role"]) { issues.push(...this.role.doModelValidation()); }
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'Invoice.participant' }
+    if (this["role"]) { issues.push(...this.role.doModelValidation(expression+'.role')); }
     if (!this['actor']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property actor:fhir.Reference fhir: Invoice.participant.actor:Reference' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property actor fhir: Invoice.participant.actor:Reference', expression: [expression] });
     }
-    if (this["actor"]) { issues.push(...this.actor.doModelValidation()); }
+    if (this["actor"]) { issues.push(...this.actor.doModelValidation(expression+'.actor')); }
     return issues;
   }
 }
@@ -147,18 +148,19 @@ export class InvoiceLineItemPriceComponent extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'Invoice.lineItem.priceComponent' }
     if (!this['type']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property type:fhir.FhirCode<InvoicePriceComponentTypeCodeType> fhir: Invoice.lineItem.priceComponent.type:code' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property type fhir: Invoice.lineItem.priceComponent.type:code', expression: [expression] });
     }
-    if (this['type'] && (!Object.values(InvoicePriceComponentTypeCodes).includes(this.type as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property type:fhir.FhirCode<InvoicePriceComponentTypeCodeType> fhir: Invoice.lineItem.priceComponent.type:code Required binding to: InvoicePriceComponentType' });
+    if (this['type'] && (!Object.values(InvoicePriceComponentTypeCodes).includes(this.type.value as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property type fhir: Invoice.lineItem.priceComponent.type:code Required binding to: InvoicePriceComponentType', expression: [expression] });
     }
-    if (this["type"]) { issues.push(...this.type.doModelValidation()); }
-    if (this["code"]) { issues.push(...this.code.doModelValidation()); }
-    if (this["factor"]) { issues.push(...this.factor.doModelValidation()); }
-    if (this["amount"]) { issues.push(...this.amount.doModelValidation()); }
+    if (this["type"]) { issues.push(...this.type.doModelValidation(expression+'.type')); }
+    if (this["code"]) { issues.push(...this.code.doModelValidation(expression+'.code')); }
+    if (this["factor"]) { issues.push(...this.factor.doModelValidation(expression+'.factor')); }
+    if (this["amount"]) { issues.push(...this.amount.doModelValidation(expression+'.amount')); }
     return issues;
   }
 }
@@ -236,13 +238,14 @@ export class InvoiceLineItem extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
-    if (this["sequence"]) { issues.push(...this.sequence.doModelValidation()); }
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'Invoice.lineItem' }
+    if (this["sequence"]) { issues.push(...this.sequence.doModelValidation(expression+'.sequence')); }
     if (!this['chargeItem']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property chargeItem: fhir: Invoice.lineItem.chargeItem[x]:' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property chargeItem fhir: Invoice.lineItem.chargeItem[x]:', expression: [expression] });
     }
-    if (this["priceComponent"]) { this.priceComponent.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["priceComponent"]) { this.priceComponent.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.priceComponent[${i}]`)); }) }
     return issues;
   }
 }
@@ -466,33 +469,34 @@ export class Invoice extends fhir.DomainResource {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'Invoice' }
     if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType:"Invoice" fhir: Invoice.resourceType:"Invoice"' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType fhir: Invoice.resourceType:"Invoice"', expression: [expression] });
     }
-    if (this["identifier"]) { this.identifier.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["identifier"]) { this.identifier.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.identifier[${i}]`)); }) }
     if (!this['status']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status:fhir.FhirCode<InvoiceStatusCodeType> fhir: Invoice.status:code' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status fhir: Invoice.status:code', expression: [expression] });
     }
-    if (this['status'] && (!Object.values(InvoiceStatusCodes).includes(this.status as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property status:fhir.FhirCode<InvoiceStatusCodeType> fhir: Invoice.status:code Required binding to: InvoiceStatus' });
+    if (this['status'] && (!Object.values(InvoiceStatusCodes).includes(this.status.value as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property status fhir: Invoice.status:code Required binding to: InvoiceStatus', expression: [expression] });
     }
-    if (this["status"]) { issues.push(...this.status.doModelValidation()); }
-    if (this["cancelledReason"]) { issues.push(...this.cancelledReason.doModelValidation()); }
-    if (this["type"]) { issues.push(...this.type.doModelValidation()); }
-    if (this["subject"]) { issues.push(...this.subject.doModelValidation()); }
-    if (this["recipient"]) { issues.push(...this.recipient.doModelValidation()); }
-    if (this["date"]) { issues.push(...this.date.doModelValidation()); }
-    if (this["participant"]) { this.participant.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["issuer"]) { issues.push(...this.issuer.doModelValidation()); }
-    if (this["account"]) { issues.push(...this.account.doModelValidation()); }
-    if (this["lineItem"]) { this.lineItem.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["totalPriceComponent"]) { this.totalPriceComponent.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["totalNet"]) { issues.push(...this.totalNet.doModelValidation()); }
-    if (this["totalGross"]) { issues.push(...this.totalGross.doModelValidation()); }
-    if (this["paymentTerms"]) { issues.push(...this.paymentTerms.doModelValidation()); }
-    if (this["note"]) { this.note.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["status"]) { issues.push(...this.status.doModelValidation(expression+'.status')); }
+    if (this["cancelledReason"]) { issues.push(...this.cancelledReason.doModelValidation(expression+'.cancelledReason')); }
+    if (this["type"]) { issues.push(...this.type.doModelValidation(expression+'.type')); }
+    if (this["subject"]) { issues.push(...this.subject.doModelValidation(expression+'.subject')); }
+    if (this["recipient"]) { issues.push(...this.recipient.doModelValidation(expression+'.recipient')); }
+    if (this["date"]) { issues.push(...this.date.doModelValidation(expression+'.date')); }
+    if (this["participant"]) { this.participant.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.participant[${i}]`)); }) }
+    if (this["issuer"]) { issues.push(...this.issuer.doModelValidation(expression+'.issuer')); }
+    if (this["account"]) { issues.push(...this.account.doModelValidation(expression+'.account')); }
+    if (this["lineItem"]) { this.lineItem.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.lineItem[${i}]`)); }) }
+    if (this["totalPriceComponent"]) { this.totalPriceComponent.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.totalPriceComponent[${i}]`)); }) }
+    if (this["totalNet"]) { issues.push(...this.totalNet.doModelValidation(expression+'.totalNet')); }
+    if (this["totalGross"]) { issues.push(...this.totalGross.doModelValidation(expression+'.totalGross')); }
+    if (this["paymentTerms"]) { issues.push(...this.paymentTerms.doModelValidation(expression+'.paymentTerms')); }
+    if (this["note"]) { this.note.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.note[${i}]`)); }) }
     return issues;
   }
 }

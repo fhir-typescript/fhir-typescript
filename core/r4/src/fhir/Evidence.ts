@@ -426,48 +426,49 @@ export class Evidence extends fhir.DomainResource {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'Evidence' }
     if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType:"Evidence" fhir: Evidence.resourceType:"Evidence"' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType fhir: Evidence.resourceType:"Evidence"', expression: [expression] });
     }
-    if (this["url"]) { issues.push(...this.url.doModelValidation()); }
-    if (this["identifier"]) { this.identifier.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["version"]) { issues.push(...this.version.doModelValidation()); }
-    if (this["name"]) { issues.push(...this.name.doModelValidation()); }
-    if (this["title"]) { issues.push(...this.title.doModelValidation()); }
-    if (this["shortTitle"]) { issues.push(...this.shortTitle.doModelValidation()); }
-    if (this["subtitle"]) { issues.push(...this.subtitle.doModelValidation()); }
+    if (this["url"]) { issues.push(...this.url.doModelValidation(expression+'.url')); }
+    if (this["identifier"]) { this.identifier.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.identifier[${i}]`)); }) }
+    if (this["version"]) { issues.push(...this.version.doModelValidation(expression+'.version')); }
+    if (this["name"]) { issues.push(...this.name.doModelValidation(expression+'.name')); }
+    if (this["title"]) { issues.push(...this.title.doModelValidation(expression+'.title')); }
+    if (this["shortTitle"]) { issues.push(...this.shortTitle.doModelValidation(expression+'.shortTitle')); }
+    if (this["subtitle"]) { issues.push(...this.subtitle.doModelValidation(expression+'.subtitle')); }
     if (!this['status']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status:fhir.FhirCode<PublicationStatusCodeType> fhir: Evidence.status:code' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status fhir: Evidence.status:code', expression: [expression] });
     }
-    if (this['status'] && (!Object.values(PublicationStatusCodes).includes(this.status as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property status:fhir.FhirCode<PublicationStatusCodeType> fhir: Evidence.status:code Required binding to: PublicationStatus' });
+    if (this['status'] && (!Object.values(PublicationStatusCodes).includes(this.status.value as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property status fhir: Evidence.status:code Required binding to: PublicationStatus', expression: [expression] });
     }
-    if (this["status"]) { issues.push(...this.status.doModelValidation()); }
-    if (this["date"]) { issues.push(...this.date.doModelValidation()); }
-    if (this["publisher"]) { issues.push(...this.publisher.doModelValidation()); }
-    if (this["contact"]) { this.contact.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["description"]) { issues.push(...this.description.doModelValidation()); }
-    if (this["note"]) { this.note.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["useContext"]) { this.useContext.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["jurisdiction"]) { this.jurisdiction.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["copyright"]) { issues.push(...this.copyright.doModelValidation()); }
-    if (this["approvalDate"]) { issues.push(...this.approvalDate.doModelValidation()); }
-    if (this["lastReviewDate"]) { issues.push(...this.lastReviewDate.doModelValidation()); }
-    if (this["effectivePeriod"]) { issues.push(...this.effectivePeriod.doModelValidation()); }
-    if (this["topic"]) { this.topic.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["author"]) { this.author.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["editor"]) { this.editor.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["reviewer"]) { this.reviewer.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["endorser"]) { this.endorser.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["relatedArtifact"]) { this.relatedArtifact.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["status"]) { issues.push(...this.status.doModelValidation(expression+'.status')); }
+    if (this["date"]) { issues.push(...this.date.doModelValidation(expression+'.date')); }
+    if (this["publisher"]) { issues.push(...this.publisher.doModelValidation(expression+'.publisher')); }
+    if (this["contact"]) { this.contact.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.contact[${i}]`)); }) }
+    if (this["description"]) { issues.push(...this.description.doModelValidation(expression+'.description')); }
+    if (this["note"]) { this.note.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.note[${i}]`)); }) }
+    if (this["useContext"]) { this.useContext.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.useContext[${i}]`)); }) }
+    if (this["jurisdiction"]) { this.jurisdiction.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.jurisdiction[${i}]`)); }) }
+    if (this["copyright"]) { issues.push(...this.copyright.doModelValidation(expression+'.copyright')); }
+    if (this["approvalDate"]) { issues.push(...this.approvalDate.doModelValidation(expression+'.approvalDate')); }
+    if (this["lastReviewDate"]) { issues.push(...this.lastReviewDate.doModelValidation(expression+'.lastReviewDate')); }
+    if (this["effectivePeriod"]) { issues.push(...this.effectivePeriod.doModelValidation(expression+'.effectivePeriod')); }
+    if (this["topic"]) { this.topic.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.topic[${i}]`)); }) }
+    if (this["author"]) { this.author.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.author[${i}]`)); }) }
+    if (this["editor"]) { this.editor.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.editor[${i}]`)); }) }
+    if (this["reviewer"]) { this.reviewer.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.reviewer[${i}]`)); }) }
+    if (this["endorser"]) { this.endorser.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.endorser[${i}]`)); }) }
+    if (this["relatedArtifact"]) { this.relatedArtifact.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.relatedArtifact[${i}]`)); }) }
     if (!this['exposureBackground']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property exposureBackground:fhir.Reference fhir: Evidence.exposureBackground:Reference' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property exposureBackground fhir: Evidence.exposureBackground:Reference', expression: [expression] });
     }
-    if (this["exposureBackground"]) { issues.push(...this.exposureBackground.doModelValidation()); }
-    if (this["exposureVariant"]) { this.exposureVariant.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["outcome"]) { this.outcome.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["exposureBackground"]) { issues.push(...this.exposureBackground.doModelValidation(expression+'.exposureBackground')); }
+    if (this["exposureVariant"]) { this.exposureVariant.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.exposureVariant[${i}]`)); }) }
+    if (this["outcome"]) { this.outcome.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.outcome[${i}]`)); }) }
     return issues;
   }
 }

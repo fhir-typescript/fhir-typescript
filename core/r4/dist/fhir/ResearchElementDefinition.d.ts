@@ -497,9 +497,7 @@ export declare class ResearchElementDefinitionCharacteristic extends fhir.Backbo
         readonly Vial: "{Vial}";
         readonly VolumeVvolume: "{Volume}/{Vvolume}";
         readonly WeeksDays: "{WeeksDays}";
-        readonly WhiteBloodCell: "{WhiteBloodCell}"; /**
-         * The name is not expected to be globally unique. The name should be a simple alphanumeric type name to ensure that it is machine-processing friendly.
-         */
+        readonly WhiteBloodCell: "{WhiteBloodCell}";
         readonly Per12AsteriskHour: "/(12.h)";
         readonly PerArbitraryUnit: "/[arb'U]";
         readonly PerHighPowerField: "/[HPF]";
@@ -517,6 +515,9 @@ export declare class ResearchElementDefinitionCharacteristic extends fhir.Backbo
         readonly Per100: "/100";
         readonly Per100Cells: "/100{cells}";
         readonly Per100Neutrophils: "/100{neutrophils}";
+        /**
+         * An explanatory or alternate title for the ResearchElementDefinition giving additional information about its content.
+         */
         readonly Per100Spermatozoa: "/100{spermatozoa}";
         readonly Per100WBC: "/100{WBC}";
         readonly Per100WBCPer100WBCs: "/100{WBCs}";
@@ -539,7 +540,9 @@ export declare class ResearchElementDefinitionCharacteristic extends fhir.Backbo
         readonly PerMinute: "/min";
         readonly PerMilliliter: "/mL";
         readonly PerCubicMillimeter: "/mm3";
-        readonly PerMillimole: "/mmol";
+        readonly PerMillimole: "/mmol"; /**
+         * The subject of the ResearchElementDefinition is critical in interpreting the criteria definitions, as the logic in the ResearchElementDefinitions is evaluated with respect to a particular subject. This corresponds roughly to the notion of a Compartment in that it limits what content is available based on its relationship to the subject. In CQL, this corresponds to the context declaration.
+         */
         readonly PerMonth: "/mo";
         readonly PerSecond: "/s";
         readonly PerEnzymeUnit: "/U";
@@ -570,6 +573,9 @@ export declare class ResearchElementDefinitionCharacteristic extends fhir.Backbo
         readonly PercentLive: "%{Live}";
         readonly PercentNegativeControl: "%{Negative Control}";
         readonly PercentNormal: "%{Normal}";
+        /**
+         * May be a web site, an email address, a telephone number, etc.
+         */
         readonly PercentNormalControl: "%{NormalControl}";
         readonly PercentNormalPooledPlasma: "%{NormalPooledPlasma}";
         readonly PercentOfAvailable: "%{ofAvailable}";
@@ -597,9 +603,6 @@ export declare class ResearchElementDefinitionCharacteristic extends fhir.Backbo
         readonly VAL10LiterPerMinute: "10.L/min";
         readonly VAL10AsteriskMicroNewtonAsteriskSecondCentimeterAsteriskMeterPower2: "10.uN.s/(cm.m2)";
         readonly VAL10MicronewtonSecondPerCentimeterToTheFifthPowerPerSquareMeter: "10.uN.s/(cm5.m2)";
-        /**
-         * Extended properties for primitive element: ResearchElementDefinition.usage
-         */
         readonly VAL10AsteriskMicroNewtonAsteriskSecondCentimeter: "10.uN.s/cm";
         readonly VAL10AsteriskMicroNewtonAsteriskSecondCentimeterPower2: "10.uN.s/cm2";
         readonly TheNumberTenForArbitraryPowersPower3PolarizationQuoteU: "10*-3{Polarization'U}";
@@ -613,9 +616,6 @@ export declare class ResearchElementDefinitionCharacteristic extends fhir.Backbo
         readonly ThousandPerMilliLiter: "10*3/mL";
         readonly ThousandsPerMicroLiter: "10*3/uL";
         readonly VAL10ThousandPerMicroliter: "10*4/uL";
-        /**
-         * The effective period for a research element definition  determines when the content is applicable for usage and is independent of publication and review dates. For example, a measure intended to be used for the year 2016 might be published in 2015.
-         */
         readonly OneHundredThousand: "10*5";
         readonly Million: "10*6";
         readonly MillionInternationalUnit: "10*6.[iU]";
@@ -626,16 +626,11 @@ export declare class ResearchElementDefinitionCharacteristic extends fhir.Backbo
         readonly MillionPerLiter: "10*6/L";
         readonly MillionPerMilliliter: "10*6/mL";
         readonly TheNumberTenForArbitraryPowersPower6MillimeterPower3: "10*6/mm3";
-        /**
-         * An individual or organization primarily responsible for internal coherence of the content.
-         */
         readonly MillionPerMicroliter: "10*6/uL";
         readonly TenToEighth: "10*8";
         readonly BillionPerLiter: "10*9/L";
         readonly BillionPerMilliliter: "10*9/mL";
-        readonly BillionPerMicroliter: "10*9/uL"; /**
-         * An individual or organization responsible for officially endorsing the content for use in some setting.
-         */
+        readonly BillionPerMicroliter: "10*9/uL";
         readonly VAL24Hour: "24.h";
         readonly Year: "a";
         readonly Ampere: "A";
@@ -645,9 +640,7 @@ export declare class ResearchElementDefinitionCharacteristic extends fhir.Backbo
         readonly TechnicalAtmosphere: "att";
         readonly Bar: "bar";
         readonly Becquerel: "Bq";
-        readonly Calorie: "cal"; /**
-         * Extended properties for primitive element: ResearchElementDefinition.library
-         */
+        readonly Calorie: "cal";
         readonly DegreeCelsius: "Cel";
         readonly Centigram: "cg";
         readonly Centiliter: "cL";
@@ -700,6 +693,9 @@ export declare class ResearchElementDefinitionCharacteristic extends fhir.Backbo
         readonly GramAsteriskMeterHb: "g.m/{hb}";
         readonly GramOfCreatinine: "g{creat}";
         readonly GramOfHemoglobin: "g{Hb}";
+        /**
+         * The short title provides an alternate title for use in informal descriptive contexts where the full, formal title is not necessary.
+         */
         readonly GramOfTotalNitrogen: "g{total_nit}";
         readonly GramOfTotalProtein: "g{total_prot}";
         readonly GramOfWetTissue: "g{wet_tissue}";
@@ -770,6 +766,9 @@ export declare class ResearchElementDefinitionCharacteristic extends fhir.Backbo
         readonly KilocaloriePerKilogramPer24Hour: "kcal/kg/(24.h)";
         readonly Kilogram: "kg";
         readonly KilogramMeterPerSecond: "kg.m/s";
+        /**
+         * If specified, this date follows the original approval date.
+         */
         readonly KilogramPerSecondPerSquareMeter: "kg/(s.m2)";
         readonly KilogramPerHour: "kg/h";
         readonly KilogramPerLiter: "kg/L";
@@ -782,9 +781,7 @@ export declare class ResearchElementDefinitionCharacteristic extends fhir.Backbo
         readonly Kilometer: "km";
         readonly KiloPascal: "kPa";
         readonly Kilosecond: "ks";
-        readonly KiloEnzymeUnit: "kU"; /**
-         * An individual or organization primarily responsible for internal coherence of the content.
-         */
+        readonly KiloEnzymeUnit: "kU";
         readonly KiloenzymeUnitPerGram: "kU/g";
         readonly KiloUnitHour: "kU/h";
         readonly KiloenzymeUnitPerLiter: "kU/L";
@@ -932,9 +929,7 @@ export declare class ResearchElementDefinitionCharacteristic extends fhir.Backbo
         readonly MillimolePerHourPerMilligramOfHemoglobin: "mmol/h/mg{Hb}";
         readonly MillimolePerHourPerMilligramOfProtein: "mmol/h/mg{protein}";
         readonly MillimolePerKilogram: "mmol/kg";
-        readonly MillimolePerKilogramOfWater: "mmol/kg{H2O}"; /**
-         * Required-bound Value Set for type (ResearchElementDefinition.type)
-         */
+        readonly MillimolePerKilogramOfWater: "mmol/kg{H2O}";
         readonly MillimolePerKilogramPerDay: "mmol/kg/d";
         readonly MillimolePerKilogramPerHour: "mmol/kg/h";
         readonly MillimolePerKilogramPerMinute: "mmol/kg/min";
@@ -1264,7 +1259,7 @@ export declare class ResearchElementDefinitionCharacteristic extends fhir.Backbo
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.FtsIssue[];
+    doModelValidation(expression?: string): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the ResearchElementDefinition type.
@@ -1679,6 +1674,6 @@ export declare class ResearchElementDefinition extends fhir.DomainResource {
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.FtsIssue[];
+    doModelValidation(expression?: string): fhir.FtsIssue[];
 }
 //# sourceMappingURL=ResearchElementDefinition.d.ts.map

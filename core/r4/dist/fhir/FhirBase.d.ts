@@ -87,7 +87,7 @@ export declare class FhirBase {
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): FtsIssue[];
+    doModelValidation(_expression?: string): FtsIssue[];
     /**
      * Function to strip invalid element values for serialization.
      */

@@ -64,7 +64,7 @@ export declare class DataRequirementCodeFilter extends fhir.FhirElement {
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.FtsIssue[];
+    doModelValidation(expression?: string): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the DataRequirementDateFilter type.
@@ -134,7 +134,7 @@ export declare class DataRequirementDateFilter extends fhir.FhirElement {
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.FtsIssue[];
+    doModelValidation(expression?: string): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the DataRequirementSort type.
@@ -187,7 +187,7 @@ export declare class DataRequirementSort extends fhir.FhirElement {
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.FtsIssue[];
+    doModelValidation(expression?: string): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the DataRequirement type.
@@ -371,6 +371,9 @@ export declare class DataRequirement extends fhir.FhirElement {
         readonly DocumentReference: "DocumentReference";
         readonly DomainResource: "DomainResource";
         readonly Dosage: "Dosage";
+        /**
+         * Function to perform basic model validation (e.g., check if required elements are present).
+         */
         readonly Duration: "Duration";
         readonly EffectEvidenceSynthesis: "EffectEvidenceSynthesis";
         readonly VALElement: "Element";
@@ -379,7 +382,9 @@ export declare class DataRequirement extends fhir.FhirElement {
         readonly Endpoint: "Endpoint";
         readonly EnrollmentRequest: "EnrollmentRequest";
         readonly EnrollmentResponse: "EnrollmentResponse";
-        readonly EpisodeOfCare: "EpisodeOfCare";
+        readonly EpisodeOfCare: "EpisodeOfCare"; /**
+         * The profile of the required data, specified as the uri of the profile definition.
+         */
         readonly EventDefinition: "EventDefinition";
         readonly Evidence: "Evidence";
         readonly EvidenceVariable: "EvidenceVariable";
@@ -523,6 +528,6 @@ export declare class DataRequirement extends fhir.FhirElement {
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.FtsIssue[];
+    doModelValidation(expression?: string): fhir.FtsIssue[];
 }
 //# sourceMappingURL=DataRequirement.d.ts.map

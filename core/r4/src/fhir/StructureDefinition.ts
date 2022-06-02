@@ -125,15 +125,16 @@ export class StructureDefinitionMapping extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'StructureDefinition.mapping' }
     if (!this['identity']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property identity:fhir.FhirId fhir: StructureDefinition.mapping.identity:id' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property identity fhir: StructureDefinition.mapping.identity:id', expression: [expression] });
     }
-    if (this["identity"]) { issues.push(...this.identity.doModelValidation()); }
-    if (this["uri"]) { issues.push(...this.uri.doModelValidation()); }
-    if (this["name"]) { issues.push(...this.name.doModelValidation()); }
-    if (this["comment"]) { issues.push(...this.comment.doModelValidation()); }
+    if (this["identity"]) { issues.push(...this.identity.doModelValidation(expression+'.identity')); }
+    if (this["uri"]) { issues.push(...this.uri.doModelValidation(expression+'.uri')); }
+    if (this["name"]) { issues.push(...this.name.doModelValidation(expression+'.name')); }
+    if (this["comment"]) { issues.push(...this.comment.doModelValidation(expression+'.comment')); }
     return issues;
   }
 }
@@ -202,19 +203,20 @@ export class StructureDefinitionContext extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'StructureDefinition.context' }
     if (!this['type']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property type:fhir.FhirCode<ExtensionContextTypeCodeType> fhir: StructureDefinition.context.type:code' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property type fhir: StructureDefinition.context.type:code', expression: [expression] });
     }
-    if (this['type'] && (!Object.values(ExtensionContextTypeCodes).includes(this.type as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property type:fhir.FhirCode<ExtensionContextTypeCodeType> fhir: StructureDefinition.context.type:code Required binding to: ExtensionContextType' });
+    if (this['type'] && (!Object.values(ExtensionContextTypeCodes).includes(this.type.value as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property type fhir: StructureDefinition.context.type:code Required binding to: ExtensionContextType', expression: [expression] });
     }
-    if (this["type"]) { issues.push(...this.type.doModelValidation()); }
+    if (this["type"]) { issues.push(...this.type.doModelValidation(expression+'.type')); }
     if (!this['expression']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property expression:fhir.FhirString fhir: StructureDefinition.context.expression:string' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property expression fhir: StructureDefinition.context.expression:string', expression: [expression] });
     }
-    if (this["expression"]) { issues.push(...this.expression.doModelValidation()); }
+    if (this["expression"]) { issues.push(...this.expression.doModelValidation(expression+'.expression')); }
     return issues;
   }
 }
@@ -251,16 +253,17 @@ export class StructureDefinitionSnapshot extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'StructureDefinition.snapshot' }
     if (!this['element']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property element:fhir.ElementDefinition[] fhir: StructureDefinition.snapshot.element:ElementDefinition' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property element fhir: StructureDefinition.snapshot.element:ElementDefinition', expression: [expression] });
     } else if (!Array.isArray(this.element)) {
-      issues.push({ severity: 'error', code: 'structure', diagnostics: 'Found scalar in array property element:fhir.ElementDefinition[] fhir: StructureDefinition.snapshot.element:ElementDefinition' });
+      issues.push({ severity: 'error', code: 'structure', diagnostics: 'Found scalar in array property element fhir: StructureDefinition.snapshot.element:ElementDefinition', expression: [expression] });
     } else if (this.element.length === 0) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property element:fhir.ElementDefinition[] fhir: StructureDefinition.snapshot.element:ElementDefinition' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property element fhir: StructureDefinition.snapshot.element:ElementDefinition', expression: [expression] });
     }
-    if (this["element"]) { this.element.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["element"]) { this.element.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.element[${i}]`)); }) }
     return issues;
   }
 }
@@ -297,16 +300,17 @@ export class StructureDefinitionDifferential extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'StructureDefinition.differential' }
     if (!this['element']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property element:fhir.ElementDefinition[] fhir: StructureDefinition.differential.element:ElementDefinition' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property element fhir: StructureDefinition.differential.element:ElementDefinition', expression: [expression] });
     } else if (!Array.isArray(this.element)) {
-      issues.push({ severity: 'error', code: 'structure', diagnostics: 'Found scalar in array property element:fhir.ElementDefinition[] fhir: StructureDefinition.differential.element:ElementDefinition' });
+      issues.push({ severity: 'error', code: 'structure', diagnostics: 'Found scalar in array property element fhir: StructureDefinition.differential.element:ElementDefinition', expression: [expression] });
     } else if (this.element.length === 0) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property element:fhir.ElementDefinition[] fhir: StructureDefinition.differential.element:ElementDefinition' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property element fhir: StructureDefinition.differential.element:ElementDefinition', expression: [expression] });
     }
-    if (this["element"]) { this.element.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["element"]) { this.element.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.element[${i}]`)); }) }
     return issues;
   }
 }
@@ -795,68 +799,69 @@ export class StructureDefinition extends fhir.DomainResource {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'StructureDefinition' }
     if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType:"StructureDefinition" fhir: StructureDefinition.resourceType:"StructureDefinition"' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType fhir: StructureDefinition.resourceType:"StructureDefinition"', expression: [expression] });
     }
     if (!this['url']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property url:fhir.FhirUri fhir: StructureDefinition.url:uri' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property url fhir: StructureDefinition.url:uri', expression: [expression] });
     }
-    if (this["url"]) { issues.push(...this.url.doModelValidation()); }
-    if (this["identifier"]) { this.identifier.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["version"]) { issues.push(...this.version.doModelValidation()); }
+    if (this["url"]) { issues.push(...this.url.doModelValidation(expression+'.url')); }
+    if (this["identifier"]) { this.identifier.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.identifier[${i}]`)); }) }
+    if (this["version"]) { issues.push(...this.version.doModelValidation(expression+'.version')); }
     if (!this['name']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property name:fhir.FhirString fhir: StructureDefinition.name:string' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property name fhir: StructureDefinition.name:string', expression: [expression] });
     }
-    if (this["name"]) { issues.push(...this.name.doModelValidation()); }
-    if (this["title"]) { issues.push(...this.title.doModelValidation()); }
+    if (this["name"]) { issues.push(...this.name.doModelValidation(expression+'.name')); }
+    if (this["title"]) { issues.push(...this.title.doModelValidation(expression+'.title')); }
     if (!this['status']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status:fhir.FhirCode<PublicationStatusCodeType> fhir: StructureDefinition.status:code' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status fhir: StructureDefinition.status:code', expression: [expression] });
     }
-    if (this['status'] && (!Object.values(PublicationStatusCodes).includes(this.status as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property status:fhir.FhirCode<PublicationStatusCodeType> fhir: StructureDefinition.status:code Required binding to: PublicationStatus' });
+    if (this['status'] && (!Object.values(PublicationStatusCodes).includes(this.status.value as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property status fhir: StructureDefinition.status:code Required binding to: PublicationStatus', expression: [expression] });
     }
-    if (this["status"]) { issues.push(...this.status.doModelValidation()); }
-    if (this["experimental"]) { issues.push(...this.experimental.doModelValidation()); }
-    if (this["date"]) { issues.push(...this.date.doModelValidation()); }
-    if (this["publisher"]) { issues.push(...this.publisher.doModelValidation()); }
-    if (this["contact"]) { this.contact.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["description"]) { issues.push(...this.description.doModelValidation()); }
-    if (this["useContext"]) { this.useContext.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["jurisdiction"]) { this.jurisdiction.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["purpose"]) { issues.push(...this.purpose.doModelValidation()); }
-    if (this["copyright"]) { issues.push(...this.copyright.doModelValidation()); }
-    if (this["keyword"]) { this.keyword.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this['fhirVersion'] && (!Object.values(FHIRVersionCodes).includes(this.fhirVersion as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property fhirVersion?:fhir.FhirCode fhir: StructureDefinition.fhirVersion:code Required binding to: FHIRVersion' });
+    if (this["status"]) { issues.push(...this.status.doModelValidation(expression+'.status')); }
+    if (this["experimental"]) { issues.push(...this.experimental.doModelValidation(expression+'.experimental')); }
+    if (this["date"]) { issues.push(...this.date.doModelValidation(expression+'.date')); }
+    if (this["publisher"]) { issues.push(...this.publisher.doModelValidation(expression+'.publisher')); }
+    if (this["contact"]) { this.contact.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.contact[${i}]`)); }) }
+    if (this["description"]) { issues.push(...this.description.doModelValidation(expression+'.description')); }
+    if (this["useContext"]) { this.useContext.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.useContext[${i}]`)); }) }
+    if (this["jurisdiction"]) { this.jurisdiction.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.jurisdiction[${i}]`)); }) }
+    if (this["purpose"]) { issues.push(...this.purpose.doModelValidation(expression+'.purpose')); }
+    if (this["copyright"]) { issues.push(...this.copyright.doModelValidation(expression+'.copyright')); }
+    if (this["keyword"]) { this.keyword.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.keyword[${i}]`)); }) }
+    if (this['fhirVersion'] && (!Object.values(FHIRVersionCodes).includes(this.fhirVersion.value as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property fhirVersion fhir: StructureDefinition.fhirVersion:code Required binding to: FHIRVersion', expression: [expression] });
     }
-    if (this["fhirVersion"]) { issues.push(...this.fhirVersion.doModelValidation()); }
-    if (this["mapping"]) { this.mapping.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["fhirVersion"]) { issues.push(...this.fhirVersion.doModelValidation(expression+'.fhirVersion')); }
+    if (this["mapping"]) { this.mapping.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.mapping[${i}]`)); }) }
     if (!this['kind']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property kind:fhir.FhirCode<StructureDefinitionKindCodeType> fhir: StructureDefinition.kind:code' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property kind fhir: StructureDefinition.kind:code', expression: [expression] });
     }
-    if (this['kind'] && (!Object.values(StructureDefinitionKindCodes).includes(this.kind as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property kind:fhir.FhirCode<StructureDefinitionKindCodeType> fhir: StructureDefinition.kind:code Required binding to: StructureDefinitionKind' });
+    if (this['kind'] && (!Object.values(StructureDefinitionKindCodes).includes(this.kind.value as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property kind fhir: StructureDefinition.kind:code Required binding to: StructureDefinitionKind', expression: [expression] });
     }
-    if (this["kind"]) { issues.push(...this.kind.doModelValidation()); }
+    if (this["kind"]) { issues.push(...this.kind.doModelValidation(expression+'.kind')); }
     if (!this['abstract']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property abstract:fhir.FhirBoolean fhir: StructureDefinition.abstract:boolean' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property abstract fhir: StructureDefinition.abstract:boolean', expression: [expression] });
     }
-    if (this["abstract"]) { issues.push(...this.abstract.doModelValidation()); }
-    if (this["context"]) { this.context.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["contextInvariant"]) { this.contextInvariant.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["abstract"]) { issues.push(...this.abstract.doModelValidation(expression+'.abstract')); }
+    if (this["context"]) { this.context.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.context[${i}]`)); }) }
+    if (this["contextInvariant"]) { this.contextInvariant.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.contextInvariant[${i}]`)); }) }
     if (!this['type']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property type:fhir.FhirUri fhir: StructureDefinition.type:uri' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property type fhir: StructureDefinition.type:uri', expression: [expression] });
     }
-    if (this["type"]) { issues.push(...this.type.doModelValidation()); }
-    if (this["baseDefinition"]) { issues.push(...this.baseDefinition.doModelValidation()); }
-    if (this['derivation'] && (!Object.values(TypeDerivationRuleCodes).includes(this.derivation as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property derivation?:fhir.FhirCode<TypeDerivationRuleCodeType> fhir: StructureDefinition.derivation:code Required binding to: TypeDerivationRule' });
+    if (this["type"]) { issues.push(...this.type.doModelValidation(expression+'.type')); }
+    if (this["baseDefinition"]) { issues.push(...this.baseDefinition.doModelValidation(expression+'.baseDefinition')); }
+    if (this['derivation'] && (!Object.values(TypeDerivationRuleCodes).includes(this.derivation.value as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property derivation fhir: StructureDefinition.derivation:code Required binding to: TypeDerivationRule', expression: [expression] });
     }
-    if (this["derivation"]) { issues.push(...this.derivation.doModelValidation()); }
-    if (this["snapshot"]) { issues.push(...this.snapshot.doModelValidation()); }
-    if (this["differential"]) { issues.push(...this.differential.doModelValidation()); }
+    if (this["derivation"]) { issues.push(...this.derivation.doModelValidation(expression+'.derivation')); }
+    if (this["snapshot"]) { issues.push(...this.snapshot.doModelValidation(expression+'.snapshot')); }
+    if (this["differential"]) { issues.push(...this.differential.doModelValidation(expression+'.differential')); }
     return issues;
   }
 }

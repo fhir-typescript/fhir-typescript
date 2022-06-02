@@ -158,19 +158,20 @@ export class ProdCharacteristic extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
-    if (this["height"]) { issues.push(...this.height.doModelValidation()); }
-    if (this["width"]) { issues.push(...this.width.doModelValidation()); }
-    if (this["depth"]) { issues.push(...this.depth.doModelValidation()); }
-    if (this["weight"]) { issues.push(...this.weight.doModelValidation()); }
-    if (this["nominalVolume"]) { issues.push(...this.nominalVolume.doModelValidation()); }
-    if (this["externalDiameter"]) { issues.push(...this.externalDiameter.doModelValidation()); }
-    if (this["shape"]) { issues.push(...this.shape.doModelValidation()); }
-    if (this["color"]) { this.color.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["imprint"]) { this.imprint.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["image"]) { this.image.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["scoring"]) { issues.push(...this.scoring.doModelValidation()); }
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'ProdCharacteristic' }
+    if (this["height"]) { issues.push(...this.height.doModelValidation(expression+'.height')); }
+    if (this["width"]) { issues.push(...this.width.doModelValidation(expression+'.width')); }
+    if (this["depth"]) { issues.push(...this.depth.doModelValidation(expression+'.depth')); }
+    if (this["weight"]) { issues.push(...this.weight.doModelValidation(expression+'.weight')); }
+    if (this["nominalVolume"]) { issues.push(...this.nominalVolume.doModelValidation(expression+'.nominalVolume')); }
+    if (this["externalDiameter"]) { issues.push(...this.externalDiameter.doModelValidation(expression+'.externalDiameter')); }
+    if (this["shape"]) { issues.push(...this.shape.doModelValidation(expression+'.shape')); }
+    if (this["color"]) { this.color.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.color[${i}]`)); }) }
+    if (this["imprint"]) { this.imprint.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.imprint[${i}]`)); }) }
+    if (this["image"]) { this.image.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.image[${i}]`)); }) }
+    if (this["scoring"]) { issues.push(...this.scoring.doModelValidation(expression+'.scoring')); }
     return issues;
   }
 }

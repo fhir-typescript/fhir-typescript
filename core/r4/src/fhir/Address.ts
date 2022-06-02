@@ -213,24 +213,25 @@ export class Address extends fhir.FhirElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
-    if (this['use'] && (!Object.values(AddressUseCodes).includes(this.use as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property use?:fhir.FhirCode<AddressUseCodeType> fhir: Address.use:code Required binding to: AddressUse' });
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'Address' }
+    if (this['use'] && (!Object.values(AddressUseCodes).includes(this.use.value as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property use fhir: Address.use:code Required binding to: AddressUse', expression: [expression] });
     }
-    if (this["use"]) { issues.push(...this.use.doModelValidation()); }
-    if (this['type'] && (!Object.values(AddressTypeCodes).includes(this.type as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property type?:fhir.FhirCode<AddressTypeCodeType> fhir: Address.type:code Required binding to: AddressType' });
+    if (this["use"]) { issues.push(...this.use.doModelValidation(expression+'.use')); }
+    if (this['type'] && (!Object.values(AddressTypeCodes).includes(this.type.value as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property type fhir: Address.type:code Required binding to: AddressType', expression: [expression] });
     }
-    if (this["type"]) { issues.push(...this.type.doModelValidation()); }
-    if (this["text"]) { issues.push(...this.text.doModelValidation()); }
-    if (this["line"]) { this.line.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["city"]) { issues.push(...this.city.doModelValidation()); }
-    if (this["district"]) { issues.push(...this.district.doModelValidation()); }
-    if (this["state"]) { issues.push(...this.state.doModelValidation()); }
-    if (this["postalCode"]) { issues.push(...this.postalCode.doModelValidation()); }
-    if (this["country"]) { issues.push(...this.country.doModelValidation()); }
-    if (this["period"]) { issues.push(...this.period.doModelValidation()); }
+    if (this["type"]) { issues.push(...this.type.doModelValidation(expression+'.type')); }
+    if (this["text"]) { issues.push(...this.text.doModelValidation(expression+'.text')); }
+    if (this["line"]) { this.line.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.line[${i}]`)); }) }
+    if (this["city"]) { issues.push(...this.city.doModelValidation(expression+'.city')); }
+    if (this["district"]) { issues.push(...this.district.doModelValidation(expression+'.district')); }
+    if (this["state"]) { issues.push(...this.state.doModelValidation(expression+'.state')); }
+    if (this["postalCode"]) { issues.push(...this.postalCode.doModelValidation(expression+'.postalCode')); }
+    if (this["country"]) { issues.push(...this.country.doModelValidation(expression+'.country')); }
+    if (this["period"]) { issues.push(...this.period.doModelValidation(expression+'.period')); }
     return issues;
   }
 }

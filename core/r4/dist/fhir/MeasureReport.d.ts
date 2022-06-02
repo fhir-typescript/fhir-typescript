@@ -54,7 +54,7 @@ export declare class MeasureReportGroupPopulation extends fhir.BackboneElement {
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.FtsIssue[];
+    doModelValidation(expression?: string): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the MeasureReportGroupStratifierStratumComponent type.
@@ -92,7 +92,7 @@ export declare class MeasureReportGroupStratifierStratumComponent extends fhir.B
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.FtsIssue[];
+    doModelValidation(expression?: string): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the MeasureReportGroupStratifierStratumPopulation type.
@@ -146,7 +146,7 @@ export declare class MeasureReportGroupStratifierStratumPopulation extends fhir.
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.FtsIssue[];
+    doModelValidation(expression?: string): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the MeasureReportGroupStratifierStratum type.
@@ -200,7 +200,7 @@ export declare class MeasureReportGroupStratifierStratum extends fhir.BackboneEl
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.FtsIssue[];
+    doModelValidation(expression?: string): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the MeasureReportGroupStratifier type.
@@ -238,7 +238,7 @@ export declare class MeasureReportGroupStratifier extends fhir.BackboneElement {
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.FtsIssue[];
+    doModelValidation(expression?: string): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the MeasureReportGroup type.
@@ -292,7 +292,7 @@ export declare class MeasureReportGroup extends fhir.BackboneElement {
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.FtsIssue[];
+    doModelValidation(expression?: string): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the MeasureReport type.
@@ -450,6 +450,6 @@ export declare class MeasureReport extends fhir.DomainResource {
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.FtsIssue[];
+    doModelValidation(expression?: string): fhir.FtsIssue[];
 }
 //# sourceMappingURL=MeasureReport.d.ts.map

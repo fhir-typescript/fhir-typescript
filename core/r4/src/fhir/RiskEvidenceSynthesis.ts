@@ -119,11 +119,12 @@ export class RiskEvidenceSynthesisSampleSize extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
-    if (this["description"]) { issues.push(...this.description.doModelValidation()); }
-    if (this["numberOfStudies"]) { issues.push(...this.numberOfStudies.doModelValidation()); }
-    if (this["numberOfParticipants"]) { issues.push(...this.numberOfParticipants.doModelValidation()); }
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'RiskEvidenceSynthesis.sampleSize' }
+    if (this["description"]) { issues.push(...this.description.doModelValidation(expression+'.description')); }
+    if (this["numberOfStudies"]) { issues.push(...this.numberOfStudies.doModelValidation(expression+'.numberOfStudies')); }
+    if (this["numberOfParticipants"]) { issues.push(...this.numberOfParticipants.doModelValidation(expression+'.numberOfParticipants')); }
     return issues;
   }
 }
@@ -216,12 +217,13 @@ export class RiskEvidenceSynthesisRiskEstimatePrecisionEstimate extends fhir.Bac
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
-    if (this["type"]) { issues.push(...this.type.doModelValidation()); }
-    if (this["level"]) { issues.push(...this.level.doModelValidation()); }
-    if (this["from"]) { issues.push(...this.from.doModelValidation()); }
-    if (this["to"]) { issues.push(...this.to.doModelValidation()); }
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'RiskEvidenceSynthesis.riskEstimate.precisionEstimate' }
+    if (this["type"]) { issues.push(...this.type.doModelValidation(expression+'.type')); }
+    if (this["level"]) { issues.push(...this.level.doModelValidation(expression+'.level')); }
+    if (this["from"]) { issues.push(...this.from.doModelValidation(expression+'.from')); }
+    if (this["to"]) { issues.push(...this.to.doModelValidation(expression+'.to')); }
     return issues;
   }
 }
@@ -356,18 +358,16 @@ export class RiskEvidenceSynthesisRiskEstimate extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
-    if (this["description"]) { issues.push(...this.description.doModelValidation()); }
-    if (this["type"]) { issues.push(...this.type.doModelValidation()); }
-    if (this["value"]) { issues.push(...this.value.doModelValidation()); }
-    if (this['unitOfMeasure'] && (!Object.values(UcumUnitsCodes).includes(this.unitOfMeasure as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property unitOfMeasure?:fhir.CodeableConcept fhir: RiskEvidenceSynthesis.riskEstimate.unitOfMeasure:CodeableConcept Required binding to: UcumUnits' });
-    }
-    if (this["unitOfMeasure"]) { issues.push(...this.unitOfMeasure.doModelValidation()); }
-    if (this["denominatorCount"]) { issues.push(...this.denominatorCount.doModelValidation()); }
-    if (this["numeratorCount"]) { issues.push(...this.numeratorCount.doModelValidation()); }
-    if (this["precisionEstimate"]) { this.precisionEstimate.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'RiskEvidenceSynthesis.riskEstimate' }
+    if (this["description"]) { issues.push(...this.description.doModelValidation(expression+'.description')); }
+    if (this["type"]) { issues.push(...this.type.doModelValidation(expression+'.type')); }
+    if (this["value"]) { issues.push(...this.value.doModelValidation(expression+'.value')); }
+    if (this["unitOfMeasure"]) { issues.push(...this.unitOfMeasure.doModelValidation(expression+'.unitOfMeasure')); }
+    if (this["denominatorCount"]) { issues.push(...this.denominatorCount.doModelValidation(expression+'.denominatorCount')); }
+    if (this["numeratorCount"]) { issues.push(...this.numeratorCount.doModelValidation(expression+'.numeratorCount')); }
+    if (this["precisionEstimate"]) { this.precisionEstimate.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.precisionEstimate[${i}]`)); }) }
     return issues;
   }
 }
@@ -435,11 +435,12 @@ export class RiskEvidenceSynthesisCertaintyCertaintySubcomponent extends fhir.Ba
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
-    if (this["type"]) { issues.push(...this.type.doModelValidation()); }
-    if (this["rating"]) { this.rating.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["note"]) { this.note.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'RiskEvidenceSynthesis.certainty.certaintySubcomponent' }
+    if (this["type"]) { issues.push(...this.type.doModelValidation(expression+'.type')); }
+    if (this["rating"]) { this.rating.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.rating[${i}]`)); }) }
+    if (this["note"]) { this.note.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.note[${i}]`)); }) }
     return issues;
   }
 }
@@ -502,11 +503,12 @@ export class RiskEvidenceSynthesisCertainty extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
-    if (this["rating"]) { this.rating.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["note"]) { this.note.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["certaintySubcomponent"]) { this.certaintySubcomponent.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'RiskEvidenceSynthesis.certainty' }
+    if (this["rating"]) { this.rating.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.rating[${i}]`)); }) }
+    if (this["note"]) { this.note.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.note[${i}]`)); }) }
+    if (this["certaintySubcomponent"]) { this.certaintySubcomponent.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.certaintySubcomponent[${i}]`)); }) }
     return issues;
   }
 }
@@ -946,54 +948,55 @@ export class RiskEvidenceSynthesis extends fhir.DomainResource {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'RiskEvidenceSynthesis' }
     if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType:"RiskEvidenceSynthesis" fhir: RiskEvidenceSynthesis.resourceType:"RiskEvidenceSynthesis"' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType fhir: RiskEvidenceSynthesis.resourceType:"RiskEvidenceSynthesis"', expression: [expression] });
     }
-    if (this["url"]) { issues.push(...this.url.doModelValidation()); }
-    if (this["identifier"]) { this.identifier.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["version"]) { issues.push(...this.version.doModelValidation()); }
-    if (this["name"]) { issues.push(...this.name.doModelValidation()); }
-    if (this["title"]) { issues.push(...this.title.doModelValidation()); }
+    if (this["url"]) { issues.push(...this.url.doModelValidation(expression+'.url')); }
+    if (this["identifier"]) { this.identifier.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.identifier[${i}]`)); }) }
+    if (this["version"]) { issues.push(...this.version.doModelValidation(expression+'.version')); }
+    if (this["name"]) { issues.push(...this.name.doModelValidation(expression+'.name')); }
+    if (this["title"]) { issues.push(...this.title.doModelValidation(expression+'.title')); }
     if (!this['status']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status:fhir.FhirCode<PublicationStatusCodeType> fhir: RiskEvidenceSynthesis.status:code' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status fhir: RiskEvidenceSynthesis.status:code', expression: [expression] });
     }
-    if (this['status'] && (!Object.values(PublicationStatusCodes).includes(this.status as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property status:fhir.FhirCode<PublicationStatusCodeType> fhir: RiskEvidenceSynthesis.status:code Required binding to: PublicationStatus' });
+    if (this['status'] && (!Object.values(PublicationStatusCodes).includes(this.status.value as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property status fhir: RiskEvidenceSynthesis.status:code Required binding to: PublicationStatus', expression: [expression] });
     }
-    if (this["status"]) { issues.push(...this.status.doModelValidation()); }
-    if (this["date"]) { issues.push(...this.date.doModelValidation()); }
-    if (this["publisher"]) { issues.push(...this.publisher.doModelValidation()); }
-    if (this["contact"]) { this.contact.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["description"]) { issues.push(...this.description.doModelValidation()); }
-    if (this["note"]) { this.note.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["useContext"]) { this.useContext.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["jurisdiction"]) { this.jurisdiction.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["copyright"]) { issues.push(...this.copyright.doModelValidation()); }
-    if (this["approvalDate"]) { issues.push(...this.approvalDate.doModelValidation()); }
-    if (this["lastReviewDate"]) { issues.push(...this.lastReviewDate.doModelValidation()); }
-    if (this["effectivePeriod"]) { issues.push(...this.effectivePeriod.doModelValidation()); }
-    if (this["topic"]) { this.topic.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["author"]) { this.author.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["editor"]) { this.editor.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["reviewer"]) { this.reviewer.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["endorser"]) { this.endorser.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["relatedArtifact"]) { this.relatedArtifact.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["synthesisType"]) { issues.push(...this.synthesisType.doModelValidation()); }
-    if (this["studyType"]) { issues.push(...this.studyType.doModelValidation()); }
+    if (this["status"]) { issues.push(...this.status.doModelValidation(expression+'.status')); }
+    if (this["date"]) { issues.push(...this.date.doModelValidation(expression+'.date')); }
+    if (this["publisher"]) { issues.push(...this.publisher.doModelValidation(expression+'.publisher')); }
+    if (this["contact"]) { this.contact.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.contact[${i}]`)); }) }
+    if (this["description"]) { issues.push(...this.description.doModelValidation(expression+'.description')); }
+    if (this["note"]) { this.note.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.note[${i}]`)); }) }
+    if (this["useContext"]) { this.useContext.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.useContext[${i}]`)); }) }
+    if (this["jurisdiction"]) { this.jurisdiction.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.jurisdiction[${i}]`)); }) }
+    if (this["copyright"]) { issues.push(...this.copyright.doModelValidation(expression+'.copyright')); }
+    if (this["approvalDate"]) { issues.push(...this.approvalDate.doModelValidation(expression+'.approvalDate')); }
+    if (this["lastReviewDate"]) { issues.push(...this.lastReviewDate.doModelValidation(expression+'.lastReviewDate')); }
+    if (this["effectivePeriod"]) { issues.push(...this.effectivePeriod.doModelValidation(expression+'.effectivePeriod')); }
+    if (this["topic"]) { this.topic.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.topic[${i}]`)); }) }
+    if (this["author"]) { this.author.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.author[${i}]`)); }) }
+    if (this["editor"]) { this.editor.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.editor[${i}]`)); }) }
+    if (this["reviewer"]) { this.reviewer.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.reviewer[${i}]`)); }) }
+    if (this["endorser"]) { this.endorser.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.endorser[${i}]`)); }) }
+    if (this["relatedArtifact"]) { this.relatedArtifact.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.relatedArtifact[${i}]`)); }) }
+    if (this["synthesisType"]) { issues.push(...this.synthesisType.doModelValidation(expression+'.synthesisType')); }
+    if (this["studyType"]) { issues.push(...this.studyType.doModelValidation(expression+'.studyType')); }
     if (!this['population']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property population:fhir.Reference fhir: RiskEvidenceSynthesis.population:Reference' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property population fhir: RiskEvidenceSynthesis.population:Reference', expression: [expression] });
     }
-    if (this["population"]) { issues.push(...this.population.doModelValidation()); }
-    if (this["exposure"]) { issues.push(...this.exposure.doModelValidation()); }
+    if (this["population"]) { issues.push(...this.population.doModelValidation(expression+'.population')); }
+    if (this["exposure"]) { issues.push(...this.exposure.doModelValidation(expression+'.exposure')); }
     if (!this['outcome']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property outcome:fhir.Reference fhir: RiskEvidenceSynthesis.outcome:Reference' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property outcome fhir: RiskEvidenceSynthesis.outcome:Reference', expression: [expression] });
     }
-    if (this["outcome"]) { issues.push(...this.outcome.doModelValidation()); }
-    if (this["sampleSize"]) { issues.push(...this.sampleSize.doModelValidation()); }
-    if (this["riskEstimate"]) { issues.push(...this.riskEstimate.doModelValidation()); }
-    if (this["certainty"]) { this.certainty.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["outcome"]) { issues.push(...this.outcome.doModelValidation(expression+'.outcome')); }
+    if (this["sampleSize"]) { issues.push(...this.sampleSize.doModelValidation(expression+'.sampleSize')); }
+    if (this["riskEstimate"]) { issues.push(...this.riskEstimate.doModelValidation(expression+'.riskEstimate')); }
+    if (this["certainty"]) { this.certainty.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.certainty[${i}]`)); }) }
     return issues;
   }
 }

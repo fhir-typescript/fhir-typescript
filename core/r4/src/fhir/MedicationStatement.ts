@@ -277,38 +277,39 @@ export class MedicationStatement extends fhir.DomainResource {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'MedicationStatement' }
     if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType:"MedicationStatement" fhir: MedicationStatement.resourceType:"MedicationStatement"' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType fhir: MedicationStatement.resourceType:"MedicationStatement"', expression: [expression] });
     }
-    if (this["identifier"]) { this.identifier.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["basedOn"]) { this.basedOn.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["partOf"]) { this.partOf.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["identifier"]) { this.identifier.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.identifier[${i}]`)); }) }
+    if (this["basedOn"]) { this.basedOn.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.basedOn[${i}]`)); }) }
+    if (this["partOf"]) { this.partOf.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.partOf[${i}]`)); }) }
     if (!this['status']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status:fhir.FhirCode<MedicationStatementStatusCodeType> fhir: MedicationStatement.status:code' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status fhir: MedicationStatement.status:code', expression: [expression] });
     }
-    if (this['status'] && (!Object.values(MedicationStatementStatusCodes).includes(this.status as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property status:fhir.FhirCode<MedicationStatementStatusCodeType> fhir: MedicationStatement.status:code Required binding to: MedicationStatementStatus' });
+    if (this['status'] && (!Object.values(MedicationStatementStatusCodes).includes(this.status.value as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property status fhir: MedicationStatement.status:code Required binding to: MedicationStatementStatus', expression: [expression] });
     }
-    if (this["status"]) { issues.push(...this.status.doModelValidation()); }
-    if (this["statusReason"]) { this.statusReason.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["category"]) { issues.push(...this.category.doModelValidation()); }
+    if (this["status"]) { issues.push(...this.status.doModelValidation(expression+'.status')); }
+    if (this["statusReason"]) { this.statusReason.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.statusReason[${i}]`)); }) }
+    if (this["category"]) { issues.push(...this.category.doModelValidation(expression+'.category')); }
     if (!this['medication']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property medication: fhir: MedicationStatement.medication[x]:' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property medication fhir: MedicationStatement.medication[x]:', expression: [expression] });
     }
     if (!this['subject']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property subject:fhir.Reference fhir: MedicationStatement.subject:Reference' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property subject fhir: MedicationStatement.subject:Reference', expression: [expression] });
     }
-    if (this["subject"]) { issues.push(...this.subject.doModelValidation()); }
-    if (this["context"]) { issues.push(...this.context.doModelValidation()); }
-    if (this["dateAsserted"]) { issues.push(...this.dateAsserted.doModelValidation()); }
-    if (this["informationSource"]) { issues.push(...this.informationSource.doModelValidation()); }
-    if (this["derivedFrom"]) { this.derivedFrom.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["reasonCode"]) { this.reasonCode.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["reasonReference"]) { this.reasonReference.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["note"]) { this.note.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["dosage"]) { this.dosage.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["subject"]) { issues.push(...this.subject.doModelValidation(expression+'.subject')); }
+    if (this["context"]) { issues.push(...this.context.doModelValidation(expression+'.context')); }
+    if (this["dateAsserted"]) { issues.push(...this.dateAsserted.doModelValidation(expression+'.dateAsserted')); }
+    if (this["informationSource"]) { issues.push(...this.informationSource.doModelValidation(expression+'.informationSource')); }
+    if (this["derivedFrom"]) { this.derivedFrom.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.derivedFrom[${i}]`)); }) }
+    if (this["reasonCode"]) { this.reasonCode.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.reasonCode[${i}]`)); }) }
+    if (this["reasonReference"]) { this.reasonReference.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.reasonReference[${i}]`)); }) }
+    if (this["note"]) { this.note.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.note[${i}]`)); }) }
+    if (this["dosage"]) { this.dosage.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.dosage[${i}]`)); }) }
     return issues;
   }
 }

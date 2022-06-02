@@ -86,19 +86,20 @@ export class VisionPrescriptionLensSpecificationPrism extends fhir.BackboneEleme
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'VisionPrescription.lensSpecification.prism' }
     if (!this['amount']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property amount:fhir.FhirDecimal fhir: VisionPrescription.lensSpecification.prism.amount:decimal' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property amount fhir: VisionPrescription.lensSpecification.prism.amount:decimal', expression: [expression] });
     }
-    if (this["amount"]) { issues.push(...this.amount.doModelValidation()); }
+    if (this["amount"]) { issues.push(...this.amount.doModelValidation(expression+'.amount')); }
     if (!this['base']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property base:fhir.FhirCode<VisionBaseCodeType> fhir: VisionPrescription.lensSpecification.prism.base:code' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property base fhir: VisionPrescription.lensSpecification.prism.base:code', expression: [expression] });
     }
-    if (this['base'] && (!Object.values(VisionBaseCodes).includes(this.base as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property base:fhir.FhirCode<VisionBaseCodeType> fhir: VisionPrescription.lensSpecification.prism.base:code Required binding to: VisionBase' });
+    if (this['base'] && (!Object.values(VisionBaseCodes).includes(this.base.value as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property base fhir: VisionPrescription.lensSpecification.prism.base:code Required binding to: VisionBase', expression: [expression] });
     }
-    if (this["base"]) { issues.push(...this.base.doModelValidation()); }
+    if (this["base"]) { issues.push(...this.base.doModelValidation(expression+'.base')); }
     return issues;
   }
 }
@@ -343,31 +344,32 @@ export class VisionPrescriptionLensSpecification extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'VisionPrescription.lensSpecification' }
     if (!this['product']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property product:fhir.CodeableConcept fhir: VisionPrescription.lensSpecification.product:CodeableConcept' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property product fhir: VisionPrescription.lensSpecification.product:CodeableConcept', expression: [expression] });
     }
-    if (this["product"]) { issues.push(...this.product.doModelValidation()); }
+    if (this["product"]) { issues.push(...this.product.doModelValidation(expression+'.product')); }
     if (!this['eye']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property eye:fhir.FhirCode<VisionEyeCodeType> fhir: VisionPrescription.lensSpecification.eye:code' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property eye fhir: VisionPrescription.lensSpecification.eye:code', expression: [expression] });
     }
-    if (this['eye'] && (!Object.values(VisionEyeCodes).includes(this.eye as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property eye:fhir.FhirCode<VisionEyeCodeType> fhir: VisionPrescription.lensSpecification.eye:code Required binding to: VisionEye' });
+    if (this['eye'] && (!Object.values(VisionEyeCodes).includes(this.eye.value as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property eye fhir: VisionPrescription.lensSpecification.eye:code Required binding to: VisionEye', expression: [expression] });
     }
-    if (this["eye"]) { issues.push(...this.eye.doModelValidation()); }
-    if (this["sphere"]) { issues.push(...this.sphere.doModelValidation()); }
-    if (this["cylinder"]) { issues.push(...this.cylinder.doModelValidation()); }
-    if (this["axis"]) { issues.push(...this.axis.doModelValidation()); }
-    if (this["prism"]) { this.prism.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["add"]) { issues.push(...this.add.doModelValidation()); }
-    if (this["power"]) { issues.push(...this.power.doModelValidation()); }
-    if (this["backCurve"]) { issues.push(...this.backCurve.doModelValidation()); }
-    if (this["diameter"]) { issues.push(...this.diameter.doModelValidation()); }
-    if (this["duration"]) { issues.push(...this.duration.doModelValidation()); }
-    if (this["color"]) { issues.push(...this.color.doModelValidation()); }
-    if (this["brand"]) { issues.push(...this.brand.doModelValidation()); }
-    if (this["note"]) { this.note.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["eye"]) { issues.push(...this.eye.doModelValidation(expression+'.eye')); }
+    if (this["sphere"]) { issues.push(...this.sphere.doModelValidation(expression+'.sphere')); }
+    if (this["cylinder"]) { issues.push(...this.cylinder.doModelValidation(expression+'.cylinder')); }
+    if (this["axis"]) { issues.push(...this.axis.doModelValidation(expression+'.axis')); }
+    if (this["prism"]) { this.prism.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.prism[${i}]`)); }) }
+    if (this["add"]) { issues.push(...this.add.doModelValidation(expression+'.add')); }
+    if (this["power"]) { issues.push(...this.power.doModelValidation(expression+'.power')); }
+    if (this["backCurve"]) { issues.push(...this.backCurve.doModelValidation(expression+'.backCurve')); }
+    if (this["diameter"]) { issues.push(...this.diameter.doModelValidation(expression+'.diameter')); }
+    if (this["duration"]) { issues.push(...this.duration.doModelValidation(expression+'.duration')); }
+    if (this["color"]) { issues.push(...this.color.doModelValidation(expression+'.color')); }
+    if (this["brand"]) { issues.push(...this.brand.doModelValidation(expression+'.brand')); }
+    if (this["note"]) { this.note.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.note[${i}]`)); }) }
     return issues;
   }
 }
@@ -512,44 +514,45 @@ export class VisionPrescription extends fhir.DomainResource {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'VisionPrescription' }
     if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType:"VisionPrescription" fhir: VisionPrescription.resourceType:"VisionPrescription"' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType fhir: VisionPrescription.resourceType:"VisionPrescription"', expression: [expression] });
     }
-    if (this["identifier"]) { this.identifier.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["identifier"]) { this.identifier.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.identifier[${i}]`)); }) }
     if (!this['status']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status:fhir.FhirCode<FmStatusCodeType> fhir: VisionPrescription.status:code' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status fhir: VisionPrescription.status:code', expression: [expression] });
     }
-    if (this['status'] && (!Object.values(FmStatusCodes).includes(this.status as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property status:fhir.FhirCode<FmStatusCodeType> fhir: VisionPrescription.status:code Required binding to: FmStatus' });
+    if (this['status'] && (!Object.values(FmStatusCodes).includes(this.status.value as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property status fhir: VisionPrescription.status:code Required binding to: FmStatus', expression: [expression] });
     }
-    if (this["status"]) { issues.push(...this.status.doModelValidation()); }
+    if (this["status"]) { issues.push(...this.status.doModelValidation(expression+'.status')); }
     if (!this['created']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property created:fhir.FhirDateTime fhir: VisionPrescription.created:dateTime' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property created fhir: VisionPrescription.created:dateTime', expression: [expression] });
     }
-    if (this["created"]) { issues.push(...this.created.doModelValidation()); }
+    if (this["created"]) { issues.push(...this.created.doModelValidation(expression+'.created')); }
     if (!this['patient']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property patient:fhir.Reference fhir: VisionPrescription.patient:Reference' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property patient fhir: VisionPrescription.patient:Reference', expression: [expression] });
     }
-    if (this["patient"]) { issues.push(...this.patient.doModelValidation()); }
-    if (this["encounter"]) { issues.push(...this.encounter.doModelValidation()); }
+    if (this["patient"]) { issues.push(...this.patient.doModelValidation(expression+'.patient')); }
+    if (this["encounter"]) { issues.push(...this.encounter.doModelValidation(expression+'.encounter')); }
     if (!this['dateWritten']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property dateWritten:fhir.FhirDateTime fhir: VisionPrescription.dateWritten:dateTime' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property dateWritten fhir: VisionPrescription.dateWritten:dateTime', expression: [expression] });
     }
-    if (this["dateWritten"]) { issues.push(...this.dateWritten.doModelValidation()); }
+    if (this["dateWritten"]) { issues.push(...this.dateWritten.doModelValidation(expression+'.dateWritten')); }
     if (!this['prescriber']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property prescriber:fhir.Reference fhir: VisionPrescription.prescriber:Reference' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property prescriber fhir: VisionPrescription.prescriber:Reference', expression: [expression] });
     }
-    if (this["prescriber"]) { issues.push(...this.prescriber.doModelValidation()); }
+    if (this["prescriber"]) { issues.push(...this.prescriber.doModelValidation(expression+'.prescriber')); }
     if (!this['lensSpecification']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property lensSpecification:fhir.VisionPrescriptionLensSpecification[] fhir: VisionPrescription.lensSpecification:lensSpecification' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property lensSpecification fhir: VisionPrescription.lensSpecification:lensSpecification', expression: [expression] });
     } else if (!Array.isArray(this.lensSpecification)) {
-      issues.push({ severity: 'error', code: 'structure', diagnostics: 'Found scalar in array property lensSpecification:fhir.VisionPrescriptionLensSpecification[] fhir: VisionPrescription.lensSpecification:lensSpecification' });
+      issues.push({ severity: 'error', code: 'structure', diagnostics: 'Found scalar in array property lensSpecification fhir: VisionPrescription.lensSpecification:lensSpecification', expression: [expression] });
     } else if (this.lensSpecification.length === 0) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property lensSpecification:fhir.VisionPrescriptionLensSpecification[] fhir: VisionPrescription.lensSpecification:lensSpecification' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property lensSpecification fhir: VisionPrescription.lensSpecification:lensSpecification', expression: [expression] });
     }
-    if (this["lensSpecification"]) { this.lensSpecification.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["lensSpecification"]) { this.lensSpecification.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.lensSpecification[${i}]`)); }) }
     return issues;
   }
 }

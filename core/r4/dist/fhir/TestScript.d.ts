@@ -55,7 +55,7 @@ export declare class TestScriptOrigin extends fhir.BackboneElement {
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.FtsIssue[];
+    doModelValidation(expression?: string): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the TestScriptDestination type.
@@ -105,7 +105,7 @@ export declare class TestScriptDestination extends fhir.BackboneElement {
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.FtsIssue[];
+    doModelValidation(expression?: string): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the TestScriptMetadataLink type.
@@ -151,7 +151,7 @@ export declare class TestScriptMetadataLink extends fhir.BackboneElement {
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.FtsIssue[];
+    doModelValidation(expression?: string): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the TestScriptMetadataCapability type.
@@ -257,7 +257,7 @@ export declare class TestScriptMetadataCapability extends fhir.BackboneElement {
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.FtsIssue[];
+    doModelValidation(expression?: string): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the TestScriptMetadata type.
@@ -295,7 +295,7 @@ export declare class TestScriptMetadata extends fhir.BackboneElement {
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.FtsIssue[];
+    doModelValidation(expression?: string): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the TestScriptFixture type.
@@ -349,7 +349,7 @@ export declare class TestScriptFixture extends fhir.BackboneElement {
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.FtsIssue[];
+    doModelValidation(expression?: string): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the TestScriptVariable type.
@@ -467,7 +467,7 @@ export declare class TestScriptVariable extends fhir.BackboneElement {
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.FtsIssue[];
+    doModelValidation(expression?: string): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the TestScriptSetupActionOperationRequestHeader type.
@@ -513,7 +513,7 @@ export declare class TestScriptSetupActionOperationRequestHeader extends fhir.Ba
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.FtsIssue[];
+    doModelValidation(expression?: string): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the TestScriptSetupActionOperation type.
@@ -767,9 +767,6 @@ export declare class TestScriptSetupActionOperation extends fhir.BackboneElement
         readonly ClinicalImpression: "ClinicalImpression";
         readonly Code: "code";
         readonly CodeableConcept: "CodeableConcept";
-        /**
-         * The purpose of this element is to define the profile of a destination element used elsewhere in the script.  Test engines could then use the destination-profile mapping to offer a filtered list of test systems that can serve as the receiver for the interaction.
-         */
         readonly CodeSystem: "CodeSystem";
         readonly Coding: "Coding";
         readonly Communication: "Communication";
@@ -874,20 +871,18 @@ export declare class TestScriptSetupActionOperation extends fhir.BackboneElement
         readonly NutritionOrder: "NutritionOrder";
         readonly Observation: "Observation";
         readonly ObservationDefinition: "ObservationDefinition";
-        readonly Oid: "oid"; /**
-         * Extended properties for primitive element: TestScript.variable.description
-         */
+        readonly Oid: "oid";
         readonly OperationDefinition: "OperationDefinition";
         readonly OperationOutcome: "OperationOutcome";
         readonly Organization: "Organization";
         readonly OrganizationAffiliation: "OrganizationAffiliation";
+        /**
+         * A free text natural language description of the variable and its purpose.
+         */
         readonly ParameterDefinition: "ParameterDefinition";
         readonly Parameters: "Parameters";
         readonly Patient: "Patient";
         readonly PaymentNotice: "PaymentNotice";
-        /**
-         * This can be a statically defined fixture (at the top of the TestScript) or a dynamically set fixture created by responseId of the `action.operation` element.
-         */
         readonly PaymentReconciliation: "PaymentReconciliation";
         readonly Period: "Period";
         readonly Person: "Person";
@@ -922,7 +917,9 @@ export declare class TestScriptSetupActionOperation extends fhir.BackboneElement
         readonly ServiceRequest: "ServiceRequest";
         readonly Signature: "Signature";
         readonly SimpleQuantity: "SimpleQuantity";
-        readonly Slot: "Slot";
+        readonly Slot: "Slot"; /**
+         * Function to perform basic model validation (e.g., check if required elements are present).
+         */
         readonly Specimen: "Specimen";
         readonly SpecimenDefinition: "SpecimenDefinition";
         readonly VALString: "string";
@@ -948,9 +945,7 @@ export declare class TestScriptSetupActionOperation extends fhir.BackboneElement
         readonly TriggerDefinition: "TriggerDefinition";
         readonly UnsignedInt: "unsignedInt";
         readonly Uri: "uri";
-        readonly Url: "url"; /**
-         * If this is specified, then test engine shall set the 'Content-Type' header to the corresponding value.  If you'd like to explicitly set the 'Content-Type' to some other value then use the 'requestHeader' element.
-         */
+        readonly Url: "url";
         readonly UsageContext: "UsageContext";
         readonly Uuid: "uuid";
         readonly ValueSet: "ValueSet";
@@ -973,7 +968,7 @@ export declare class TestScriptSetupActionOperation extends fhir.BackboneElement
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.FtsIssue[];
+    doModelValidation(expression?: string): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the TestScriptSetupActionAssert type.
@@ -1326,9 +1321,6 @@ export declare class TestScriptSetupActionAssert extends fhir.BackboneElement {
         readonly ClinicalImpression: "ClinicalImpression";
         readonly Code: "code";
         readonly CodeableConcept: "CodeableConcept";
-        /**
-         * The purpose of this element is to define the profile of a destination element used elsewhere in the script.  Test engines could then use the destination-profile mapping to offer a filtered list of test systems that can serve as the receiver for the interaction.
-         */
         readonly CodeSystem: "CodeSystem";
         readonly Coding: "Coding";
         readonly Communication: "Communication";
@@ -1433,20 +1425,18 @@ export declare class TestScriptSetupActionAssert extends fhir.BackboneElement {
         readonly NutritionOrder: "NutritionOrder";
         readonly Observation: "Observation";
         readonly ObservationDefinition: "ObservationDefinition";
-        readonly Oid: "oid"; /**
-         * Extended properties for primitive element: TestScript.variable.description
-         */
+        readonly Oid: "oid";
         readonly OperationDefinition: "OperationDefinition";
         readonly OperationOutcome: "OperationOutcome";
         readonly Organization: "Organization";
         readonly OrganizationAffiliation: "OrganizationAffiliation";
+        /**
+         * A free text natural language description of the variable and its purpose.
+         */
         readonly ParameterDefinition: "ParameterDefinition";
         readonly Parameters: "Parameters";
         readonly Patient: "Patient";
         readonly PaymentNotice: "PaymentNotice";
-        /**
-         * This can be a statically defined fixture (at the top of the TestScript) or a dynamically set fixture created by responseId of the `action.operation` element.
-         */
         readonly PaymentReconciliation: "PaymentReconciliation";
         readonly Period: "Period";
         readonly Person: "Person";
@@ -1481,7 +1471,9 @@ export declare class TestScriptSetupActionAssert extends fhir.BackboneElement {
         readonly ServiceRequest: "ServiceRequest";
         readonly Signature: "Signature";
         readonly SimpleQuantity: "SimpleQuantity";
-        readonly Slot: "Slot";
+        readonly Slot: "Slot"; /**
+         * Function to perform basic model validation (e.g., check if required elements are present).
+         */
         readonly Specimen: "Specimen";
         readonly SpecimenDefinition: "SpecimenDefinition";
         readonly VALString: "string";
@@ -1507,9 +1499,7 @@ export declare class TestScriptSetupActionAssert extends fhir.BackboneElement {
         readonly TriggerDefinition: "TriggerDefinition";
         readonly UnsignedInt: "unsignedInt";
         readonly Uri: "uri";
-        readonly Url: "url"; /**
-         * If this is specified, then test engine shall set the 'Content-Type' header to the corresponding value.  If you'd like to explicitly set the 'Content-Type' to some other value then use the 'requestHeader' element.
-         */
+        readonly Url: "url";
         readonly UsageContext: "UsageContext";
         readonly Uuid: "uuid";
         readonly ValueSet: "ValueSet";
@@ -1537,7 +1527,7 @@ export declare class TestScriptSetupActionAssert extends fhir.BackboneElement {
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.FtsIssue[];
+    doModelValidation(expression?: string): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the TestScriptSetupAction type.
@@ -1575,7 +1565,7 @@ export declare class TestScriptSetupAction extends fhir.BackboneElement {
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.FtsIssue[];
+    doModelValidation(expression?: string): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the TestScriptSetup type.
@@ -1605,7 +1595,7 @@ export declare class TestScriptSetup extends fhir.BackboneElement {
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.FtsIssue[];
+    doModelValidation(expression?: string): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the TestScriptTestAction type.
@@ -1643,7 +1633,7 @@ export declare class TestScriptTestAction extends fhir.BackboneElement {
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.FtsIssue[];
+    doModelValidation(expression?: string): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the TestScriptTest type.
@@ -1697,7 +1687,7 @@ export declare class TestScriptTest extends fhir.BackboneElement {
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.FtsIssue[];
+    doModelValidation(expression?: string): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the TestScriptTeardownAction type.
@@ -1727,7 +1717,7 @@ export declare class TestScriptTeardownAction extends fhir.BackboneElement {
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.FtsIssue[];
+    doModelValidation(expression?: string): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the TestScriptTeardown type.
@@ -1757,7 +1747,7 @@ export declare class TestScriptTeardown extends fhir.BackboneElement {
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.FtsIssue[];
+    doModelValidation(expression?: string): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the TestScript type.
@@ -2036,6 +2026,6 @@ export declare class TestScript extends fhir.DomainResource {
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.FtsIssue[];
+    doModelValidation(expression?: string): fhir.FtsIssue[];
 }
 //# sourceMappingURL=TestScript.d.ts.map

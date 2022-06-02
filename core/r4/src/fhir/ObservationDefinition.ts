@@ -128,12 +128,13 @@ export class ObservationDefinitionQuantitativeDetails extends fhir.BackboneEleme
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
-    if (this["customaryUnit"]) { issues.push(...this.customaryUnit.doModelValidation()); }
-    if (this["unit"]) { issues.push(...this.unit.doModelValidation()); }
-    if (this["conversionFactor"]) { issues.push(...this.conversionFactor.doModelValidation()); }
-    if (this["decimalPrecision"]) { issues.push(...this.decimalPrecision.doModelValidation()); }
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'ObservationDefinition.quantitativeDetails' }
+    if (this["customaryUnit"]) { issues.push(...this.customaryUnit.doModelValidation(expression+'.customaryUnit')); }
+    if (this["unit"]) { issues.push(...this.unit.doModelValidation(expression+'.unit')); }
+    if (this["conversionFactor"]) { issues.push(...this.conversionFactor.doModelValidation(expression+'.conversionFactor')); }
+    if (this["decimalPrecision"]) { issues.push(...this.decimalPrecision.doModelValidation(expression+'.decimalPrecision')); }
     return issues;
   }
 }
@@ -275,22 +276,23 @@ export class ObservationDefinitionQualifiedInterval extends fhir.BackboneElement
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
-    if (this['category'] && (!Object.values(ObservationRangeCategoryCodes).includes(this.category as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property category?:fhir.FhirCode<ObservationRangeCategoryCodeType> fhir: ObservationDefinition.qualifiedInterval.category:code Required binding to: ObservationRangeCategory' });
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'ObservationDefinition.qualifiedInterval' }
+    if (this['category'] && (!Object.values(ObservationRangeCategoryCodes).includes(this.category.value as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property category fhir: ObservationDefinition.qualifiedInterval.category:code Required binding to: ObservationRangeCategory', expression: [expression] });
     }
-    if (this["category"]) { issues.push(...this.category.doModelValidation()); }
-    if (this["range"]) { issues.push(...this.range.doModelValidation()); }
-    if (this["context"]) { issues.push(...this.context.doModelValidation()); }
-    if (this["appliesTo"]) { this.appliesTo.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this['gender'] && (!Object.values(AdministrativeGenderCodes).includes(this.gender as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property gender?:fhir.FhirCode<AdministrativeGenderCodeType> fhir: ObservationDefinition.qualifiedInterval.gender:code Required binding to: AdministrativeGender' });
+    if (this["category"]) { issues.push(...this.category.doModelValidation(expression+'.category')); }
+    if (this["range"]) { issues.push(...this.range.doModelValidation(expression+'.range')); }
+    if (this["context"]) { issues.push(...this.context.doModelValidation(expression+'.context')); }
+    if (this["appliesTo"]) { this.appliesTo.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.appliesTo[${i}]`)); }) }
+    if (this['gender'] && (!Object.values(AdministrativeGenderCodes).includes(this.gender.value as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property gender fhir: ObservationDefinition.qualifiedInterval.gender:code Required binding to: AdministrativeGender', expression: [expression] });
     }
-    if (this["gender"]) { issues.push(...this.gender.doModelValidation()); }
-    if (this["age"]) { issues.push(...this.age.doModelValidation()); }
-    if (this["gestationalAge"]) { issues.push(...this.gestationalAge.doModelValidation()); }
-    if (this["condition"]) { issues.push(...this.condition.doModelValidation()); }
+    if (this["gender"]) { issues.push(...this.gender.doModelValidation(expression+'.gender')); }
+    if (this["age"]) { issues.push(...this.age.doModelValidation(expression+'.age')); }
+    if (this["gestationalAge"]) { issues.push(...this.gestationalAge.doModelValidation(expression+'.gestationalAge')); }
+    if (this["condition"]) { issues.push(...this.condition.doModelValidation(expression+'.condition')); }
     return issues;
   }
 }
@@ -480,34 +482,35 @@ export class ObservationDefinition extends fhir.DomainResource {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'ObservationDefinition' }
     if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType:"ObservationDefinition" fhir: ObservationDefinition.resourceType:"ObservationDefinition"' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType fhir: ObservationDefinition.resourceType:"ObservationDefinition"', expression: [expression] });
     }
-    if (this["category"]) { this.category.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["category"]) { this.category.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.category[${i}]`)); }) }
     if (!this['code']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property code:fhir.CodeableConcept fhir: ObservationDefinition.code:CodeableConcept' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property code fhir: ObservationDefinition.code:CodeableConcept', expression: [expression] });
     }
-    if (this["code"]) { issues.push(...this.code.doModelValidation()); }
-    if (this["identifier"]) { this.identifier.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["code"]) { issues.push(...this.code.doModelValidation(expression+'.code')); }
+    if (this["identifier"]) { this.identifier.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.identifier[${i}]`)); }) }
     if (this['permittedDataType']) {
       this.permittedDataType.forEach((v) => {
-        if (!Object.values(PermittedDataTypeCodes).includes(v as any)) {
-          issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property permittedDataType?:fhir.FhirCode<PermittedDataTypeCodeType>[] fhir: ObservationDefinition.permittedDataType:code Required binding to: PermittedDataType' });
+        if (!Object.values(PermittedDataTypeCodes).includes(v.value as any)) {
+          issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property permittedDataType fhir: ObservationDefinition.permittedDataType:code Required binding to: PermittedDataType', expression: [expression] });
         }
       });
     }
-    if (this["permittedDataType"]) { this.permittedDataType.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["multipleResultsAllowed"]) { issues.push(...this.multipleResultsAllowed.doModelValidation()); }
-    if (this["method"]) { issues.push(...this.method.doModelValidation()); }
-    if (this["preferredReportName"]) { issues.push(...this.preferredReportName.doModelValidation()); }
-    if (this["quantitativeDetails"]) { issues.push(...this.quantitativeDetails.doModelValidation()); }
-    if (this["qualifiedInterval"]) { this.qualifiedInterval.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["validCodedValueSet"]) { issues.push(...this.validCodedValueSet.doModelValidation()); }
-    if (this["normalCodedValueSet"]) { issues.push(...this.normalCodedValueSet.doModelValidation()); }
-    if (this["abnormalCodedValueSet"]) { issues.push(...this.abnormalCodedValueSet.doModelValidation()); }
-    if (this["criticalCodedValueSet"]) { issues.push(...this.criticalCodedValueSet.doModelValidation()); }
+    if (this["permittedDataType"]) { this.permittedDataType.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.permittedDataType[${i}]`)); }) }
+    if (this["multipleResultsAllowed"]) { issues.push(...this.multipleResultsAllowed.doModelValidation(expression+'.multipleResultsAllowed')); }
+    if (this["method"]) { issues.push(...this.method.doModelValidation(expression+'.method')); }
+    if (this["preferredReportName"]) { issues.push(...this.preferredReportName.doModelValidation(expression+'.preferredReportName')); }
+    if (this["quantitativeDetails"]) { issues.push(...this.quantitativeDetails.doModelValidation(expression+'.quantitativeDetails')); }
+    if (this["qualifiedInterval"]) { this.qualifiedInterval.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.qualifiedInterval[${i}]`)); }) }
+    if (this["validCodedValueSet"]) { issues.push(...this.validCodedValueSet.doModelValidation(expression+'.validCodedValueSet')); }
+    if (this["normalCodedValueSet"]) { issues.push(...this.normalCodedValueSet.doModelValidation(expression+'.normalCodedValueSet')); }
+    if (this["abnormalCodedValueSet"]) { issues.push(...this.abnormalCodedValueSet.doModelValidation(expression+'.abnormalCodedValueSet')); }
+    if (this["criticalCodedValueSet"]) { issues.push(...this.criticalCodedValueSet.doModelValidation(expression+'.criticalCodedValueSet')); }
     return issues;
   }
 }

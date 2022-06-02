@@ -238,23 +238,24 @@ export class ContractContentDefinition extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'Contract.contentDefinition' }
     if (!this['type']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property type:fhir.CodeableConcept fhir: Contract.contentDefinition.type:CodeableConcept' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property type fhir: Contract.contentDefinition.type:CodeableConcept', expression: [expression] });
     }
-    if (this["type"]) { issues.push(...this.type.doModelValidation()); }
-    if (this["subType"]) { issues.push(...this.subType.doModelValidation()); }
-    if (this["publisher"]) { issues.push(...this.publisher.doModelValidation()); }
-    if (this["publicationDate"]) { issues.push(...this.publicationDate.doModelValidation()); }
+    if (this["type"]) { issues.push(...this.type.doModelValidation(expression+'.type')); }
+    if (this["subType"]) { issues.push(...this.subType.doModelValidation(expression+'.subType')); }
+    if (this["publisher"]) { issues.push(...this.publisher.doModelValidation(expression+'.publisher')); }
+    if (this["publicationDate"]) { issues.push(...this.publicationDate.doModelValidation(expression+'.publicationDate')); }
     if (!this['publicationStatus']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property publicationStatus:fhir.FhirCode<ContractPublicationstatusCodeType> fhir: Contract.contentDefinition.publicationStatus:code' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property publicationStatus fhir: Contract.contentDefinition.publicationStatus:code', expression: [expression] });
     }
-    if (this['publicationStatus'] && (!Object.values(ContractPublicationstatusCodes).includes(this.publicationStatus as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property publicationStatus:fhir.FhirCode<ContractPublicationstatusCodeType> fhir: Contract.contentDefinition.publicationStatus:code Required binding to: ContractPublicationstatus' });
+    if (this['publicationStatus'] && (!Object.values(ContractPublicationstatusCodes).includes(this.publicationStatus.value as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property publicationStatus fhir: Contract.contentDefinition.publicationStatus:code Required binding to: ContractPublicationstatus', expression: [expression] });
     }
-    if (this["publicationStatus"]) { issues.push(...this.publicationStatus.doModelValidation()); }
-    if (this["copyright"]) { issues.push(...this.copyright.doModelValidation()); }
+    if (this["publicationStatus"]) { issues.push(...this.publicationStatus.doModelValidation(expression+'.publicationStatus')); }
+    if (this["copyright"]) { issues.push(...this.copyright.doModelValidation(expression+'.copyright')); }
     return issues;
   }
 }
@@ -331,15 +332,16 @@ export class ContractTermSecurityLabel extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
-    if (this["number"]) { this.number.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'Contract.term.securityLabel' }
+    if (this["number"]) { this.number.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.number[${i}]`)); }) }
     if (!this['classification']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property classification:fhir.Coding fhir: Contract.term.securityLabel.classification:Coding' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property classification fhir: Contract.term.securityLabel.classification:Coding', expression: [expression] });
     }
-    if (this["classification"]) { issues.push(...this.classification.doModelValidation()); }
-    if (this["category"]) { this.category.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["control"]) { this.control.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["classification"]) { issues.push(...this.classification.doModelValidation(expression+'.classification')); }
+    if (this["category"]) { this.category.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.category[${i}]`)); }) }
+    if (this["control"]) { this.control.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.control[${i}]`)); }) }
     return issues;
   }
 }
@@ -386,20 +388,21 @@ export class ContractTermOfferParty extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'Contract.term.offer.party' }
     if (!this['reference']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property reference:fhir.Reference[] fhir: Contract.term.offer.party.reference:Reference' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property reference fhir: Contract.term.offer.party.reference:Reference', expression: [expression] });
     } else if (!Array.isArray(this.reference)) {
-      issues.push({ severity: 'error', code: 'structure', diagnostics: 'Found scalar in array property reference:fhir.Reference[] fhir: Contract.term.offer.party.reference:Reference' });
+      issues.push({ severity: 'error', code: 'structure', diagnostics: 'Found scalar in array property reference fhir: Contract.term.offer.party.reference:Reference', expression: [expression] });
     } else if (this.reference.length === 0) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property reference:fhir.Reference[] fhir: Contract.term.offer.party.reference:Reference' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property reference fhir: Contract.term.offer.party.reference:Reference', expression: [expression] });
     }
-    if (this["reference"]) { this.reference.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["reference"]) { this.reference.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.reference[${i}]`)); }) }
     if (!this['role']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property role:fhir.CodeableConcept fhir: Contract.term.offer.party.role:CodeableConcept' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property role fhir: Contract.term.offer.party.role:CodeableConcept', expression: [expression] });
     }
-    if (this["role"]) { issues.push(...this.role.doModelValidation()); }
+    if (this["role"]) { issues.push(...this.role.doModelValidation(expression+'.role')); }
     return issues;
   }
 }
@@ -500,10 +503,11 @@ export class ContractTermOfferAnswer extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'Contract.term.offer.answer' }
     if (!this['value']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property value: fhir: Contract.term.offer.answer.value[x]:' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property value fhir: Contract.term.offer.answer.value[x]:', expression: [expression] });
     }
     return issues;
   }
@@ -667,18 +671,19 @@ export class ContractTermOffer extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
-    if (this["identifier"]) { this.identifier.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["party"]) { this.party.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["topic"]) { issues.push(...this.topic.doModelValidation()); }
-    if (this["type"]) { issues.push(...this.type.doModelValidation()); }
-    if (this["decision"]) { issues.push(...this.decision.doModelValidation()); }
-    if (this["decisionMode"]) { this.decisionMode.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["answer"]) { this.answer.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["text"]) { issues.push(...this.text.doModelValidation()); }
-    if (this["linkId"]) { this.linkId.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["securityLabelNumber"]) { this.securityLabelNumber.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'Contract.term.offer' }
+    if (this["identifier"]) { this.identifier.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.identifier[${i}]`)); }) }
+    if (this["party"]) { this.party.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.party[${i}]`)); }) }
+    if (this["topic"]) { issues.push(...this.topic.doModelValidation(expression+'.topic')); }
+    if (this["type"]) { issues.push(...this.type.doModelValidation(expression+'.type')); }
+    if (this["decision"]) { issues.push(...this.decision.doModelValidation(expression+'.decision')); }
+    if (this["decisionMode"]) { this.decisionMode.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.decisionMode[${i}]`)); }) }
+    if (this["answer"]) { this.answer.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.answer[${i}]`)); }) }
+    if (this["text"]) { issues.push(...this.text.doModelValidation(expression+'.text')); }
+    if (this["linkId"]) { this.linkId.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.linkId[${i}]`)); }) }
+    if (this["securityLabelNumber"]) { this.securityLabelNumber.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.securityLabelNumber[${i}]`)); }) }
     return issues;
   }
 }
@@ -741,11 +746,12 @@ export class ContractTermAssetContext extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
-    if (this["reference"]) { issues.push(...this.reference.doModelValidation()); }
-    if (this["code"]) { this.code.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["text"]) { issues.push(...this.text.doModelValidation()); }
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'Contract.term.asset.context' }
+    if (this["reference"]) { issues.push(...this.reference.doModelValidation(expression+'.reference')); }
+    if (this["code"]) { this.code.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.code[${i}]`)); }) }
+    if (this["text"]) { issues.push(...this.text.doModelValidation(expression+'.text')); }
     return issues;
   }
 }
@@ -974,21 +980,22 @@ export class ContractTermAssetValuedItem extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
-    if (this["identifier"]) { issues.push(...this.identifier.doModelValidation()); }
-    if (this["effectiveTime"]) { issues.push(...this.effectiveTime.doModelValidation()); }
-    if (this["quantity"]) { issues.push(...this.quantity.doModelValidation()); }
-    if (this["unitPrice"]) { issues.push(...this.unitPrice.doModelValidation()); }
-    if (this["factor"]) { issues.push(...this.factor.doModelValidation()); }
-    if (this["points"]) { issues.push(...this.points.doModelValidation()); }
-    if (this["net"]) { issues.push(...this.net.doModelValidation()); }
-    if (this["payment"]) { issues.push(...this.payment.doModelValidation()); }
-    if (this["paymentDate"]) { issues.push(...this.paymentDate.doModelValidation()); }
-    if (this["responsible"]) { issues.push(...this.responsible.doModelValidation()); }
-    if (this["recipient"]) { issues.push(...this.recipient.doModelValidation()); }
-    if (this["linkId"]) { this.linkId.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["securityLabelNumber"]) { this.securityLabelNumber.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'Contract.term.asset.valuedItem' }
+    if (this["identifier"]) { issues.push(...this.identifier.doModelValidation(expression+'.identifier')); }
+    if (this["effectiveTime"]) { issues.push(...this.effectiveTime.doModelValidation(expression+'.effectiveTime')); }
+    if (this["quantity"]) { issues.push(...this.quantity.doModelValidation(expression+'.quantity')); }
+    if (this["unitPrice"]) { issues.push(...this.unitPrice.doModelValidation(expression+'.unitPrice')); }
+    if (this["factor"]) { issues.push(...this.factor.doModelValidation(expression+'.factor')); }
+    if (this["points"]) { issues.push(...this.points.doModelValidation(expression+'.points')); }
+    if (this["net"]) { issues.push(...this.net.doModelValidation(expression+'.net')); }
+    if (this["payment"]) { issues.push(...this.payment.doModelValidation(expression+'.payment')); }
+    if (this["paymentDate"]) { issues.push(...this.paymentDate.doModelValidation(expression+'.paymentDate')); }
+    if (this["responsible"]) { issues.push(...this.responsible.doModelValidation(expression+'.responsible')); }
+    if (this["recipient"]) { issues.push(...this.recipient.doModelValidation(expression+'.recipient')); }
+    if (this["linkId"]) { this.linkId.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.linkId[${i}]`)); }) }
+    if (this["securityLabelNumber"]) { this.securityLabelNumber.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.securityLabelNumber[${i}]`)); }) }
     return issues;
   }
 }
@@ -1203,23 +1210,24 @@ export class ContractTermAsset extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
-    if (this["scope"]) { issues.push(...this.scope.doModelValidation()); }
-    if (this["type"]) { this.type.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["typeReference"]) { this.typeReference.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["subtype"]) { this.subtype.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["relationship"]) { issues.push(...this.relationship.doModelValidation()); }
-    if (this["context"]) { this.context.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["condition"]) { issues.push(...this.condition.doModelValidation()); }
-    if (this["periodType"]) { this.periodType.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["period"]) { this.period.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["usePeriod"]) { this.usePeriod.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["text"]) { issues.push(...this.text.doModelValidation()); }
-    if (this["linkId"]) { this.linkId.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["answer"]) { this.answer.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["securityLabelNumber"]) { this.securityLabelNumber.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["valuedItem"]) { this.valuedItem.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'Contract.term.asset' }
+    if (this["scope"]) { issues.push(...this.scope.doModelValidation(expression+'.scope')); }
+    if (this["type"]) { this.type.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.type[${i}]`)); }) }
+    if (this["typeReference"]) { this.typeReference.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.typeReference[${i}]`)); }) }
+    if (this["subtype"]) { this.subtype.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.subtype[${i}]`)); }) }
+    if (this["relationship"]) { issues.push(...this.relationship.doModelValidation(expression+'.relationship')); }
+    if (this["context"]) { this.context.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.context[${i}]`)); }) }
+    if (this["condition"]) { issues.push(...this.condition.doModelValidation(expression+'.condition')); }
+    if (this["periodType"]) { this.periodType.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.periodType[${i}]`)); }) }
+    if (this["period"]) { this.period.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.period[${i}]`)); }) }
+    if (this["usePeriod"]) { this.usePeriod.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.usePeriod[${i}]`)); }) }
+    if (this["text"]) { issues.push(...this.text.doModelValidation(expression+'.text')); }
+    if (this["linkId"]) { this.linkId.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.linkId[${i}]`)); }) }
+    if (this["answer"]) { this.answer.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.answer[${i}]`)); }) }
+    if (this["securityLabelNumber"]) { this.securityLabelNumber.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.securityLabelNumber[${i}]`)); }) }
+    if (this["valuedItem"]) { this.valuedItem.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.valuedItem[${i}]`)); }) }
     return issues;
   }
 }
@@ -1265,17 +1273,18 @@ export class ContractTermActionSubject extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'Contract.term.action.subject' }
     if (!this['reference']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property reference:fhir.Reference[] fhir: Contract.term.action.subject.reference:Reference' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property reference fhir: Contract.term.action.subject.reference:Reference', expression: [expression] });
     } else if (!Array.isArray(this.reference)) {
-      issues.push({ severity: 'error', code: 'structure', diagnostics: 'Found scalar in array property reference:fhir.Reference[] fhir: Contract.term.action.subject.reference:Reference' });
+      issues.push({ severity: 'error', code: 'structure', diagnostics: 'Found scalar in array property reference fhir: Contract.term.action.subject.reference:Reference', expression: [expression] });
     } else if (this.reference.length === 0) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property reference:fhir.Reference[] fhir: Contract.term.action.subject.reference:Reference' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property reference fhir: Contract.term.action.subject.reference:Reference', expression: [expression] });
     }
-    if (this["reference"]) { this.reference.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["role"]) { issues.push(...this.role.doModelValidation()); }
+    if (this["reference"]) { this.reference.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.reference[${i}]`)); }) }
+    if (this["role"]) { issues.push(...this.role.doModelValidation(expression+'.role')); }
     return issues;
   }
 }
@@ -1605,37 +1614,38 @@ export class ContractTermAction extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
-    if (this["doNotPerform"]) { issues.push(...this.doNotPerform.doModelValidation()); }
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'Contract.term.action' }
+    if (this["doNotPerform"]) { issues.push(...this.doNotPerform.doModelValidation(expression+'.doNotPerform')); }
     if (!this['type']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property type:fhir.CodeableConcept fhir: Contract.term.action.type:CodeableConcept' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property type fhir: Contract.term.action.type:CodeableConcept', expression: [expression] });
     }
-    if (this["type"]) { issues.push(...this.type.doModelValidation()); }
-    if (this["subject"]) { this.subject.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["type"]) { issues.push(...this.type.doModelValidation(expression+'.type')); }
+    if (this["subject"]) { this.subject.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.subject[${i}]`)); }) }
     if (!this['intent']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property intent:fhir.CodeableConcept fhir: Contract.term.action.intent:CodeableConcept' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property intent fhir: Contract.term.action.intent:CodeableConcept', expression: [expression] });
     }
-    if (this["intent"]) { issues.push(...this.intent.doModelValidation()); }
-    if (this["linkId"]) { this.linkId.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["intent"]) { issues.push(...this.intent.doModelValidation(expression+'.intent')); }
+    if (this["linkId"]) { this.linkId.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.linkId[${i}]`)); }) }
     if (!this['status']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status:fhir.CodeableConcept fhir: Contract.term.action.status:CodeableConcept' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status fhir: Contract.term.action.status:CodeableConcept', expression: [expression] });
     }
-    if (this["status"]) { issues.push(...this.status.doModelValidation()); }
-    if (this["context"]) { issues.push(...this.context.doModelValidation()); }
-    if (this["contextLinkId"]) { this.contextLinkId.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["requester"]) { this.requester.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["requesterLinkId"]) { this.requesterLinkId.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["performerType"]) { this.performerType.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["performerRole"]) { issues.push(...this.performerRole.doModelValidation()); }
-    if (this["performer"]) { issues.push(...this.performer.doModelValidation()); }
-    if (this["performerLinkId"]) { this.performerLinkId.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["reasonCode"]) { this.reasonCode.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["reasonReference"]) { this.reasonReference.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["reason"]) { this.reason.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["reasonLinkId"]) { this.reasonLinkId.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["note"]) { this.note.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["securityLabelNumber"]) { this.securityLabelNumber.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["status"]) { issues.push(...this.status.doModelValidation(expression+'.status')); }
+    if (this["context"]) { issues.push(...this.context.doModelValidation(expression+'.context')); }
+    if (this["contextLinkId"]) { this.contextLinkId.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.contextLinkId[${i}]`)); }) }
+    if (this["requester"]) { this.requester.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.requester[${i}]`)); }) }
+    if (this["requesterLinkId"]) { this.requesterLinkId.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.requesterLinkId[${i}]`)); }) }
+    if (this["performerType"]) { this.performerType.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.performerType[${i}]`)); }) }
+    if (this["performerRole"]) { issues.push(...this.performerRole.doModelValidation(expression+'.performerRole')); }
+    if (this["performer"]) { issues.push(...this.performer.doModelValidation(expression+'.performer')); }
+    if (this["performerLinkId"]) { this.performerLinkId.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.performerLinkId[${i}]`)); }) }
+    if (this["reasonCode"]) { this.reasonCode.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.reasonCode[${i}]`)); }) }
+    if (this["reasonReference"]) { this.reasonReference.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.reasonReference[${i}]`)); }) }
+    if (this["reason"]) { this.reason.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.reason[${i}]`)); }) }
+    if (this["reasonLinkId"]) { this.reasonLinkId.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.reasonLinkId[${i}]`)); }) }
+    if (this["note"]) { this.note.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.note[${i}]`)); }) }
+    if (this["securityLabelNumber"]) { this.securityLabelNumber.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.securityLabelNumber[${i}]`)); }) }
     return issues;
   }
 }
@@ -1807,22 +1817,23 @@ export class ContractTerm extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
-    if (this["identifier"]) { issues.push(...this.identifier.doModelValidation()); }
-    if (this["issued"]) { issues.push(...this.issued.doModelValidation()); }
-    if (this["applies"]) { issues.push(...this.applies.doModelValidation()); }
-    if (this["type"]) { issues.push(...this.type.doModelValidation()); }
-    if (this["subType"]) { issues.push(...this.subType.doModelValidation()); }
-    if (this["text"]) { issues.push(...this.text.doModelValidation()); }
-    if (this["securityLabel"]) { this.securityLabel.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'Contract.term' }
+    if (this["identifier"]) { issues.push(...this.identifier.doModelValidation(expression+'.identifier')); }
+    if (this["issued"]) { issues.push(...this.issued.doModelValidation(expression+'.issued')); }
+    if (this["applies"]) { issues.push(...this.applies.doModelValidation(expression+'.applies')); }
+    if (this["type"]) { issues.push(...this.type.doModelValidation(expression+'.type')); }
+    if (this["subType"]) { issues.push(...this.subType.doModelValidation(expression+'.subType')); }
+    if (this["text"]) { issues.push(...this.text.doModelValidation(expression+'.text')); }
+    if (this["securityLabel"]) { this.securityLabel.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.securityLabel[${i}]`)); }) }
     if (!this['offer']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property offer:fhir.ContractTermOffer fhir: Contract.term.offer:offer' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property offer fhir: Contract.term.offer:offer', expression: [expression] });
     }
-    if (this["offer"]) { issues.push(...this.offer.doModelValidation()); }
-    if (this["asset"]) { this.asset.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["action"]) { this.action.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["group"]) { this.group.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["offer"]) { issues.push(...this.offer.doModelValidation(expression+'.offer')); }
+    if (this["asset"]) { this.asset.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.asset[${i}]`)); }) }
+    if (this["action"]) { this.action.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.action[${i}]`)); }) }
+    if (this["group"]) { this.group.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.group[${i}]`)); }) }
     return issues;
   }
 }
@@ -1886,24 +1897,25 @@ export class ContractSigner extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'Contract.signer' }
     if (!this['type']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property type:fhir.Coding fhir: Contract.signer.type:Coding' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property type fhir: Contract.signer.type:Coding', expression: [expression] });
     }
-    if (this["type"]) { issues.push(...this.type.doModelValidation()); }
+    if (this["type"]) { issues.push(...this.type.doModelValidation(expression+'.type')); }
     if (!this['party']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property party:fhir.Reference fhir: Contract.signer.party:Reference' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property party fhir: Contract.signer.party:Reference', expression: [expression] });
     }
-    if (this["party"]) { issues.push(...this.party.doModelValidation()); }
+    if (this["party"]) { issues.push(...this.party.doModelValidation(expression+'.party')); }
     if (!this['signature']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property signature:fhir.Signature[] fhir: Contract.signer.signature:Signature' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property signature fhir: Contract.signer.signature:Signature', expression: [expression] });
     } else if (!Array.isArray(this.signature)) {
-      issues.push({ severity: 'error', code: 'structure', diagnostics: 'Found scalar in array property signature:fhir.Signature[] fhir: Contract.signer.signature:Signature' });
+      issues.push({ severity: 'error', code: 'structure', diagnostics: 'Found scalar in array property signature fhir: Contract.signer.signature:Signature', expression: [expression] });
     } else if (this.signature.length === 0) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property signature:fhir.Signature[] fhir: Contract.signer.signature:Signature' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property signature fhir: Contract.signer.signature:Signature', expression: [expression] });
     }
-    if (this["signature"]) { this.signature.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["signature"]) { this.signature.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.signature[${i}]`)); }) }
     return issues;
   }
 }
@@ -1954,10 +1966,11 @@ export class ContractFriendly extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'Contract.friendly' }
     if (!this['content']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property content: fhir: Contract.friendly.content[x]:' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property content fhir: Contract.friendly.content[x]:', expression: [expression] });
     }
     return issues;
   }
@@ -2009,10 +2022,11 @@ export class ContractLegal extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'Contract.legal' }
     if (!this['content']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property content: fhir: Contract.legal.content[x]:' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property content fhir: Contract.legal.content[x]:', expression: [expression] });
     }
     return issues;
   }
@@ -2064,10 +2078,11 @@ export class ContractRule extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'Contract.rule' }
     if (!this['content']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property content: fhir: Contract.rule.content[x]:' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property content fhir: Contract.rule.content[x]:', expression: [expression] });
     }
     return issues;
   }
@@ -2535,45 +2550,46 @@ export class Contract extends fhir.DomainResource {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'Contract' }
     if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType:"Contract" fhir: Contract.resourceType:"Contract"' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType fhir: Contract.resourceType:"Contract"', expression: [expression] });
     }
-    if (this["identifier"]) { this.identifier.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["url"]) { issues.push(...this.url.doModelValidation()); }
-    if (this["version"]) { issues.push(...this.version.doModelValidation()); }
-    if (this['status'] && (!Object.values(ContractStatusCodes).includes(this.status as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property status?:fhir.FhirCode<ContractStatusCodeType> fhir: Contract.status:code Required binding to: ContractStatus' });
+    if (this["identifier"]) { this.identifier.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.identifier[${i}]`)); }) }
+    if (this["url"]) { issues.push(...this.url.doModelValidation(expression+'.url')); }
+    if (this["version"]) { issues.push(...this.version.doModelValidation(expression+'.version')); }
+    if (this['status'] && (!Object.values(ContractStatusCodes).includes(this.status.value as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property status fhir: Contract.status:code Required binding to: ContractStatus', expression: [expression] });
     }
-    if (this["status"]) { issues.push(...this.status.doModelValidation()); }
-    if (this["legalState"]) { issues.push(...this.legalState.doModelValidation()); }
-    if (this["instantiatesCanonical"]) { issues.push(...this.instantiatesCanonical.doModelValidation()); }
-    if (this["instantiatesUri"]) { issues.push(...this.instantiatesUri.doModelValidation()); }
-    if (this["contentDerivative"]) { issues.push(...this.contentDerivative.doModelValidation()); }
-    if (this["issued"]) { issues.push(...this.issued.doModelValidation()); }
-    if (this["applies"]) { issues.push(...this.applies.doModelValidation()); }
-    if (this["expirationType"]) { issues.push(...this.expirationType.doModelValidation()); }
-    if (this["subject"]) { this.subject.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["authority"]) { this.authority.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["domain"]) { this.domain.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["site"]) { this.site.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["name"]) { issues.push(...this.name.doModelValidation()); }
-    if (this["title"]) { issues.push(...this.title.doModelValidation()); }
-    if (this["subtitle"]) { issues.push(...this.subtitle.doModelValidation()); }
-    if (this["alias"]) { this.alias.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["author"]) { issues.push(...this.author.doModelValidation()); }
-    if (this["scope"]) { issues.push(...this.scope.doModelValidation()); }
-    if (this["type"]) { issues.push(...this.type.doModelValidation()); }
-    if (this["subType"]) { this.subType.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["contentDefinition"]) { issues.push(...this.contentDefinition.doModelValidation()); }
-    if (this["term"]) { this.term.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["supportingInfo"]) { this.supportingInfo.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["relevantHistory"]) { this.relevantHistory.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["signer"]) { this.signer.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["friendly"]) { this.friendly.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["legal"]) { this.legal.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["rule"]) { this.rule.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["status"]) { issues.push(...this.status.doModelValidation(expression+'.status')); }
+    if (this["legalState"]) { issues.push(...this.legalState.doModelValidation(expression+'.legalState')); }
+    if (this["instantiatesCanonical"]) { issues.push(...this.instantiatesCanonical.doModelValidation(expression+'.instantiatesCanonical')); }
+    if (this["instantiatesUri"]) { issues.push(...this.instantiatesUri.doModelValidation(expression+'.instantiatesUri')); }
+    if (this["contentDerivative"]) { issues.push(...this.contentDerivative.doModelValidation(expression+'.contentDerivative')); }
+    if (this["issued"]) { issues.push(...this.issued.doModelValidation(expression+'.issued')); }
+    if (this["applies"]) { issues.push(...this.applies.doModelValidation(expression+'.applies')); }
+    if (this["expirationType"]) { issues.push(...this.expirationType.doModelValidation(expression+'.expirationType')); }
+    if (this["subject"]) { this.subject.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.subject[${i}]`)); }) }
+    if (this["authority"]) { this.authority.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.authority[${i}]`)); }) }
+    if (this["domain"]) { this.domain.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.domain[${i}]`)); }) }
+    if (this["site"]) { this.site.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.site[${i}]`)); }) }
+    if (this["name"]) { issues.push(...this.name.doModelValidation(expression+'.name')); }
+    if (this["title"]) { issues.push(...this.title.doModelValidation(expression+'.title')); }
+    if (this["subtitle"]) { issues.push(...this.subtitle.doModelValidation(expression+'.subtitle')); }
+    if (this["alias"]) { this.alias.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.alias[${i}]`)); }) }
+    if (this["author"]) { issues.push(...this.author.doModelValidation(expression+'.author')); }
+    if (this["scope"]) { issues.push(...this.scope.doModelValidation(expression+'.scope')); }
+    if (this["type"]) { issues.push(...this.type.doModelValidation(expression+'.type')); }
+    if (this["subType"]) { this.subType.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.subType[${i}]`)); }) }
+    if (this["contentDefinition"]) { issues.push(...this.contentDefinition.doModelValidation(expression+'.contentDefinition')); }
+    if (this["term"]) { this.term.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.term[${i}]`)); }) }
+    if (this["supportingInfo"]) { this.supportingInfo.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.supportingInfo[${i}]`)); }) }
+    if (this["relevantHistory"]) { this.relevantHistory.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.relevantHistory[${i}]`)); }) }
+    if (this["signer"]) { this.signer.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.signer[${i}]`)); }) }
+    if (this["friendly"]) { this.friendly.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.friendly[${i}]`)); }) }
+    if (this["legal"]) { this.legal.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.legal[${i}]`)); }) }
+    if (this["rule"]) { this.rule.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.rule[${i}]`)); }) }
     return issues;
   }
 }

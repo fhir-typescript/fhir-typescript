@@ -75,13 +75,14 @@ export class MedicinalProductAuthorizationJurisdictionalAuthorization extends fh
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
-    if (this["identifier"]) { this.identifier.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["country"]) { issues.push(...this.country.doModelValidation()); }
-    if (this["jurisdiction"]) { this.jurisdiction.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["legalStatusOfSupply"]) { issues.push(...this.legalStatusOfSupply.doModelValidation()); }
-    if (this["validityPeriod"]) { issues.push(...this.validityPeriod.doModelValidation()); }
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'MedicinalProductAuthorization.jurisdictionalAuthorization' }
+    if (this["identifier"]) { this.identifier.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.identifier[${i}]`)); }) }
+    if (this["country"]) { issues.push(...this.country.doModelValidation(expression+'.country')); }
+    if (this["jurisdiction"]) { this.jurisdiction.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.jurisdiction[${i}]`)); }) }
+    if (this["legalStatusOfSupply"]) { issues.push(...this.legalStatusOfSupply.doModelValidation(expression+'.legalStatusOfSupply')); }
+    if (this["validityPeriod"]) { issues.push(...this.validityPeriod.doModelValidation(expression+'.validityPeriod')); }
     return issues;
   }
 }
@@ -160,14 +161,15 @@ export class MedicinalProductAuthorizationProcedure extends fhir.BackboneElement
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
-    if (this["identifier"]) { issues.push(...this.identifier.doModelValidation()); }
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'MedicinalProductAuthorization.procedure' }
+    if (this["identifier"]) { issues.push(...this.identifier.doModelValidation(expression+'.identifier')); }
     if (!this['type']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property type:fhir.CodeableConcept fhir: MedicinalProductAuthorization.procedure.type:CodeableConcept' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property type fhir: MedicinalProductAuthorization.procedure.type:CodeableConcept', expression: [expression] });
     }
-    if (this["type"]) { issues.push(...this.type.doModelValidation()); }
-    if (this["application"]) { this.application.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["type"]) { issues.push(...this.type.doModelValidation(expression+'.type')); }
+    if (this["application"]) { this.application.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.application[${i}]`)); }) }
     return issues;
   }
 }
@@ -383,27 +385,28 @@ export class MedicinalProductAuthorization extends fhir.DomainResource {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'MedicinalProductAuthorization' }
     if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType:"MedicinalProductAuthorization" fhir: MedicinalProductAuthorization.resourceType:"MedicinalProductAuthorization"' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType fhir: MedicinalProductAuthorization.resourceType:"MedicinalProductAuthorization"', expression: [expression] });
     }
-    if (this["identifier"]) { this.identifier.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["subject"]) { issues.push(...this.subject.doModelValidation()); }
-    if (this["country"]) { this.country.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["jurisdiction"]) { this.jurisdiction.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["status"]) { issues.push(...this.status.doModelValidation()); }
-    if (this["statusDate"]) { issues.push(...this.statusDate.doModelValidation()); }
-    if (this["restoreDate"]) { issues.push(...this.restoreDate.doModelValidation()); }
-    if (this["validityPeriod"]) { issues.push(...this.validityPeriod.doModelValidation()); }
-    if (this["dataExclusivityPeriod"]) { issues.push(...this.dataExclusivityPeriod.doModelValidation()); }
-    if (this["dateOfFirstAuthorization"]) { issues.push(...this.dateOfFirstAuthorization.doModelValidation()); }
-    if (this["internationalBirthDate"]) { issues.push(...this.internationalBirthDate.doModelValidation()); }
-    if (this["legalBasis"]) { issues.push(...this.legalBasis.doModelValidation()); }
-    if (this["jurisdictionalAuthorization"]) { this.jurisdictionalAuthorization.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["holder"]) { issues.push(...this.holder.doModelValidation()); }
-    if (this["regulator"]) { issues.push(...this.regulator.doModelValidation()); }
-    if (this["procedure"]) { issues.push(...this.procedure.doModelValidation()); }
+    if (this["identifier"]) { this.identifier.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.identifier[${i}]`)); }) }
+    if (this["subject"]) { issues.push(...this.subject.doModelValidation(expression+'.subject')); }
+    if (this["country"]) { this.country.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.country[${i}]`)); }) }
+    if (this["jurisdiction"]) { this.jurisdiction.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.jurisdiction[${i}]`)); }) }
+    if (this["status"]) { issues.push(...this.status.doModelValidation(expression+'.status')); }
+    if (this["statusDate"]) { issues.push(...this.statusDate.doModelValidation(expression+'.statusDate')); }
+    if (this["restoreDate"]) { issues.push(...this.restoreDate.doModelValidation(expression+'.restoreDate')); }
+    if (this["validityPeriod"]) { issues.push(...this.validityPeriod.doModelValidation(expression+'.validityPeriod')); }
+    if (this["dataExclusivityPeriod"]) { issues.push(...this.dataExclusivityPeriod.doModelValidation(expression+'.dataExclusivityPeriod')); }
+    if (this["dateOfFirstAuthorization"]) { issues.push(...this.dateOfFirstAuthorization.doModelValidation(expression+'.dateOfFirstAuthorization')); }
+    if (this["internationalBirthDate"]) { issues.push(...this.internationalBirthDate.doModelValidation(expression+'.internationalBirthDate')); }
+    if (this["legalBasis"]) { issues.push(...this.legalBasis.doModelValidation(expression+'.legalBasis')); }
+    if (this["jurisdictionalAuthorization"]) { this.jurisdictionalAuthorization.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.jurisdictionalAuthorization[${i}]`)); }) }
+    if (this["holder"]) { issues.push(...this.holder.doModelValidation(expression+'.holder')); }
+    if (this["regulator"]) { issues.push(...this.regulator.doModelValidation(expression+'.regulator')); }
+    if (this["procedure"]) { issues.push(...this.procedure.doModelValidation(expression+'.procedure')); }
     return issues;
   }
 }

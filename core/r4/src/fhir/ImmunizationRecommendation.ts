@@ -76,16 +76,17 @@ export class ImmunizationRecommendationRecommendationDateCriterion extends fhir.
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'ImmunizationRecommendation.recommendation.dateCriterion' }
     if (!this['code']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property code:fhir.CodeableConcept fhir: ImmunizationRecommendation.recommendation.dateCriterion.code:CodeableConcept' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property code fhir: ImmunizationRecommendation.recommendation.dateCriterion.code:CodeableConcept', expression: [expression] });
     }
-    if (this["code"]) { issues.push(...this.code.doModelValidation()); }
+    if (this["code"]) { issues.push(...this.code.doModelValidation(expression+'.code')); }
     if (!this['value']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property value:fhir.FhirDateTime fhir: ImmunizationRecommendation.recommendation.dateCriterion.value:dateTime' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property value fhir: ImmunizationRecommendation.recommendation.dateCriterion.value:dateTime', expression: [expression] });
     }
-    if (this["value"]) { issues.push(...this.value.doModelValidation()); }
+    if (this["value"]) { issues.push(...this.value.doModelValidation(expression+'.value')); }
     return issues;
   }
 }
@@ -271,21 +272,22 @@ export class ImmunizationRecommendationRecommendation extends fhir.BackboneEleme
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
-    if (this["vaccineCode"]) { this.vaccineCode.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["targetDisease"]) { issues.push(...this.targetDisease.doModelValidation()); }
-    if (this["contraindicatedVaccineCode"]) { this.contraindicatedVaccineCode.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'ImmunizationRecommendation.recommendation' }
+    if (this["vaccineCode"]) { this.vaccineCode.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.vaccineCode[${i}]`)); }) }
+    if (this["targetDisease"]) { issues.push(...this.targetDisease.doModelValidation(expression+'.targetDisease')); }
+    if (this["contraindicatedVaccineCode"]) { this.contraindicatedVaccineCode.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.contraindicatedVaccineCode[${i}]`)); }) }
     if (!this['forecastStatus']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property forecastStatus:fhir.CodeableConcept fhir: ImmunizationRecommendation.recommendation.forecastStatus:CodeableConcept' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property forecastStatus fhir: ImmunizationRecommendation.recommendation.forecastStatus:CodeableConcept', expression: [expression] });
     }
-    if (this["forecastStatus"]) { issues.push(...this.forecastStatus.doModelValidation()); }
-    if (this["forecastReason"]) { this.forecastReason.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["dateCriterion"]) { this.dateCriterion.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["description"]) { issues.push(...this.description.doModelValidation()); }
-    if (this["series"]) { issues.push(...this.series.doModelValidation()); }
-    if (this["supportingImmunization"]) { this.supportingImmunization.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["supportingPatientInformation"]) { this.supportingPatientInformation.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["forecastStatus"]) { issues.push(...this.forecastStatus.doModelValidation(expression+'.forecastStatus')); }
+    if (this["forecastReason"]) { this.forecastReason.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.forecastReason[${i}]`)); }) }
+    if (this["dateCriterion"]) { this.dateCriterion.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.dateCriterion[${i}]`)); }) }
+    if (this["description"]) { issues.push(...this.description.doModelValidation(expression+'.description')); }
+    if (this["series"]) { issues.push(...this.series.doModelValidation(expression+'.series')); }
+    if (this["supportingImmunization"]) { this.supportingImmunization.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.supportingImmunization[${i}]`)); }) }
+    if (this["supportingPatientInformation"]) { this.supportingPatientInformation.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.supportingPatientInformation[${i}]`)); }) }
     return issues;
   }
 }
@@ -378,29 +380,30 @@ export class ImmunizationRecommendation extends fhir.DomainResource {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'ImmunizationRecommendation' }
     if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType:"ImmunizationRecommendation" fhir: ImmunizationRecommendation.resourceType:"ImmunizationRecommendation"' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType fhir: ImmunizationRecommendation.resourceType:"ImmunizationRecommendation"', expression: [expression] });
     }
-    if (this["identifier"]) { this.identifier.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["identifier"]) { this.identifier.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.identifier[${i}]`)); }) }
     if (!this['patient']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property patient:fhir.Reference fhir: ImmunizationRecommendation.patient:Reference' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property patient fhir: ImmunizationRecommendation.patient:Reference', expression: [expression] });
     }
-    if (this["patient"]) { issues.push(...this.patient.doModelValidation()); }
+    if (this["patient"]) { issues.push(...this.patient.doModelValidation(expression+'.patient')); }
     if (!this['date']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property date:fhir.FhirDateTime fhir: ImmunizationRecommendation.date:dateTime' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property date fhir: ImmunizationRecommendation.date:dateTime', expression: [expression] });
     }
-    if (this["date"]) { issues.push(...this.date.doModelValidation()); }
-    if (this["authority"]) { issues.push(...this.authority.doModelValidation()); }
+    if (this["date"]) { issues.push(...this.date.doModelValidation(expression+'.date')); }
+    if (this["authority"]) { issues.push(...this.authority.doModelValidation(expression+'.authority')); }
     if (!this['recommendation']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property recommendation:fhir.ImmunizationRecommendationRecommendation[] fhir: ImmunizationRecommendation.recommendation:recommendation' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property recommendation fhir: ImmunizationRecommendation.recommendation:recommendation', expression: [expression] });
     } else if (!Array.isArray(this.recommendation)) {
-      issues.push({ severity: 'error', code: 'structure', diagnostics: 'Found scalar in array property recommendation:fhir.ImmunizationRecommendationRecommendation[] fhir: ImmunizationRecommendation.recommendation:recommendation' });
+      issues.push({ severity: 'error', code: 'structure', diagnostics: 'Found scalar in array property recommendation fhir: ImmunizationRecommendation.recommendation:recommendation', expression: [expression] });
     } else if (this.recommendation.length === 0) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property recommendation:fhir.ImmunizationRecommendationRecommendation[] fhir: ImmunizationRecommendation.recommendation:recommendation' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property recommendation fhir: ImmunizationRecommendation.recommendation:recommendation', expression: [expression] });
     }
-    if (this["recommendation"]) { this.recommendation.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["recommendation"]) { this.recommendation.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.recommendation[${i}]`)); }) }
     return issues;
   }
 }

@@ -133,18 +133,19 @@ export class PatientContact extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
-    if (this["relationship"]) { this.relationship.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["name"]) { issues.push(...this.name.doModelValidation()); }
-    if (this["telecom"]) { this.telecom.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["address"]) { issues.push(...this.address.doModelValidation()); }
-    if (this['gender'] && (!Object.values(AdministrativeGenderCodes).includes(this.gender as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property gender?:fhir.FhirCode<AdministrativeGenderCodeType> fhir: Patient.contact.gender:code Required binding to: AdministrativeGender' });
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'Patient.contact' }
+    if (this["relationship"]) { this.relationship.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.relationship[${i}]`)); }) }
+    if (this["name"]) { issues.push(...this.name.doModelValidation(expression+'.name')); }
+    if (this["telecom"]) { this.telecom.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.telecom[${i}]`)); }) }
+    if (this["address"]) { issues.push(...this.address.doModelValidation(expression+'.address')); }
+    if (this['gender'] && (!Object.values(AdministrativeGenderCodes).includes(this.gender.value as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property gender fhir: Patient.contact.gender:code Required binding to: AdministrativeGender', expression: [expression] });
     }
-    if (this["gender"]) { issues.push(...this.gender.doModelValidation()); }
-    if (this["organization"]) { issues.push(...this.organization.doModelValidation()); }
-    if (this["period"]) { issues.push(...this.period.doModelValidation()); }
+    if (this["gender"]) { issues.push(...this.gender.doModelValidation(expression+'.gender')); }
+    if (this["organization"]) { issues.push(...this.organization.doModelValidation(expression+'.organization')); }
+    if (this["period"]) { issues.push(...this.period.doModelValidation(expression+'.period')); }
     return issues;
   }
 }
@@ -204,13 +205,14 @@ export class PatientCommunication extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'Patient.communication' }
     if (!this['language']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property language:fhir.CodeableConcept fhir: Patient.communication.language:CodeableConcept' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property language fhir: Patient.communication.language:CodeableConcept', expression: [expression] });
     }
-    if (this["language"]) { issues.push(...this.language.doModelValidation()); }
-    if (this["preferred"]) { issues.push(...this.preferred.doModelValidation()); }
+    if (this["language"]) { issues.push(...this.language.doModelValidation(expression+'.language')); }
+    if (this["preferred"]) { issues.push(...this.preferred.doModelValidation(expression+'.preferred')); }
     return issues;
   }
 }
@@ -271,19 +273,20 @@ export class PatientLink extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'Patient.link' }
     if (!this['other']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property other:fhir.Reference fhir: Patient.link.other:Reference' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property other fhir: Patient.link.other:Reference', expression: [expression] });
     }
-    if (this["other"]) { issues.push(...this.other.doModelValidation()); }
+    if (this["other"]) { issues.push(...this.other.doModelValidation(expression+'.other')); }
     if (!this['type']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property type:fhir.FhirCode<LinkTypeCodeType> fhir: Patient.link.type:code' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property type fhir: Patient.link.type:code', expression: [expression] });
     }
-    if (this['type'] && (!Object.values(LinkTypeCodes).includes(this.type as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property type:fhir.FhirCode<LinkTypeCodeType> fhir: Patient.link.type:code Required binding to: LinkType' });
+    if (this['type'] && (!Object.values(LinkTypeCodes).includes(this.type.value as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property type fhir: Patient.link.type:code Required binding to: LinkType', expression: [expression] });
     }
-    if (this["type"]) { issues.push(...this.type.doModelValidation()); }
+    if (this["type"]) { issues.push(...this.type.doModelValidation(expression+'.type')); }
     return issues;
   }
 }
@@ -546,28 +549,29 @@ export class Patient extends fhir.DomainResource {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'Patient' }
     if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType:"Patient" fhir: Patient.resourceType:"Patient"' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType fhir: Patient.resourceType:"Patient"', expression: [expression] });
     }
-    if (this["identifier"]) { this.identifier.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["active"]) { issues.push(...this.active.doModelValidation()); }
-    if (this["name"]) { this.name.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["telecom"]) { this.telecom.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this['gender'] && (!Object.values(AdministrativeGenderCodes).includes(this.gender as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property gender?:fhir.FhirCode<AdministrativeGenderCodeType> fhir: Patient.gender:code Required binding to: AdministrativeGender' });
+    if (this["identifier"]) { this.identifier.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.identifier[${i}]`)); }) }
+    if (this["active"]) { issues.push(...this.active.doModelValidation(expression+'.active')); }
+    if (this["name"]) { this.name.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.name[${i}]`)); }) }
+    if (this["telecom"]) { this.telecom.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.telecom[${i}]`)); }) }
+    if (this['gender'] && (!Object.values(AdministrativeGenderCodes).includes(this.gender.value as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property gender fhir: Patient.gender:code Required binding to: AdministrativeGender', expression: [expression] });
     }
-    if (this["gender"]) { issues.push(...this.gender.doModelValidation()); }
-    if (this["birthDate"]) { issues.push(...this.birthDate.doModelValidation()); }
-    if (this["address"]) { this.address.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["maritalStatus"]) { issues.push(...this.maritalStatus.doModelValidation()); }
-    if (this["photo"]) { this.photo.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["contact"]) { this.contact.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["communication"]) { this.communication.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["generalPractitioner"]) { this.generalPractitioner.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["managingOrganization"]) { issues.push(...this.managingOrganization.doModelValidation()); }
-    if (this["link"]) { this.link.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["gender"]) { issues.push(...this.gender.doModelValidation(expression+'.gender')); }
+    if (this["birthDate"]) { issues.push(...this.birthDate.doModelValidation(expression+'.birthDate')); }
+    if (this["address"]) { this.address.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.address[${i}]`)); }) }
+    if (this["maritalStatus"]) { issues.push(...this.maritalStatus.doModelValidation(expression+'.maritalStatus')); }
+    if (this["photo"]) { this.photo.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.photo[${i}]`)); }) }
+    if (this["contact"]) { this.contact.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.contact[${i}]`)); }) }
+    if (this["communication"]) { this.communication.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.communication[${i}]`)); }) }
+    if (this["generalPractitioner"]) { this.generalPractitioner.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.generalPractitioner[${i}]`)); }) }
+    if (this["managingOrganization"]) { issues.push(...this.managingOrganization.doModelValidation(expression+'.managingOrganization')); }
+    if (this["link"]) { this.link.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.link[${i}]`)); }) }
     return issues;
   }
 }

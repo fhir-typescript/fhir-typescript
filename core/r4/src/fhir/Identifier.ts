@@ -126,17 +126,18 @@ export class Identifier extends fhir.FhirElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
-    if (this['use'] && (!Object.values(IdentifierUseCodes).includes(this.use as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property use?:fhir.FhirCode<IdentifierUseCodeType> fhir: Identifier.use:code Required binding to: IdentifierUse' });
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'Identifier' }
+    if (this['use'] && (!Object.values(IdentifierUseCodes).includes(this.use.value as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property use fhir: Identifier.use:code Required binding to: IdentifierUse', expression: [expression] });
     }
-    if (this["use"]) { issues.push(...this.use.doModelValidation()); }
-    if (this["type"]) { issues.push(...this.type.doModelValidation()); }
-    if (this["system"]) { issues.push(...this.system.doModelValidation()); }
-    if (this["value"]) { issues.push(...this.value.doModelValidation()); }
-    if (this["period"]) { issues.push(...this.period.doModelValidation()); }
-    if (this["assigner"]) { issues.push(...this.assigner.doModelValidation()); }
+    if (this["use"]) { issues.push(...this.use.doModelValidation(expression+'.use')); }
+    if (this["type"]) { issues.push(...this.type.doModelValidation(expression+'.type')); }
+    if (this["system"]) { issues.push(...this.system.doModelValidation(expression+'.system')); }
+    if (this["value"]) { issues.push(...this.value.doModelValidation(expression+'.value')); }
+    if (this["period"]) { issues.push(...this.period.doModelValidation(expression+'.period')); }
+    if (this["assigner"]) { issues.push(...this.assigner.doModelValidation(expression+'.assigner')); }
     return issues;
   }
 }

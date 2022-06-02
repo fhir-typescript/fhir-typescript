@@ -350,41 +350,42 @@ export class Media extends fhir.DomainResource {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'Media' }
     if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType:"Media" fhir: Media.resourceType:"Media"' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType fhir: Media.resourceType:"Media"', expression: [expression] });
     }
-    if (this["identifier"]) { this.identifier.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["basedOn"]) { this.basedOn.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["partOf"]) { this.partOf.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["identifier"]) { this.identifier.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.identifier[${i}]`)); }) }
+    if (this["basedOn"]) { this.basedOn.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.basedOn[${i}]`)); }) }
+    if (this["partOf"]) { this.partOf.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.partOf[${i}]`)); }) }
     if (!this['status']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status:fhir.FhirCode<EventStatusCodeType> fhir: Media.status:code' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status fhir: Media.status:code', expression: [expression] });
     }
-    if (this['status'] && (!Object.values(EventStatusCodes).includes(this.status as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property status:fhir.FhirCode<EventStatusCodeType> fhir: Media.status:code Required binding to: EventStatus' });
+    if (this['status'] && (!Object.values(EventStatusCodes).includes(this.status.value as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property status fhir: Media.status:code Required binding to: EventStatus', expression: [expression] });
     }
-    if (this["status"]) { issues.push(...this.status.doModelValidation()); }
-    if (this["type"]) { issues.push(...this.type.doModelValidation()); }
-    if (this["modality"]) { issues.push(...this.modality.doModelValidation()); }
-    if (this["view"]) { issues.push(...this.view.doModelValidation()); }
-    if (this["subject"]) { issues.push(...this.subject.doModelValidation()); }
-    if (this["encounter"]) { issues.push(...this.encounter.doModelValidation()); }
-    if (this["issued"]) { issues.push(...this.issued.doModelValidation()); }
-    if (this["operator"]) { issues.push(...this.operator.doModelValidation()); }
-    if (this["reasonCode"]) { this.reasonCode.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["bodySite"]) { issues.push(...this.bodySite.doModelValidation()); }
-    if (this["deviceName"]) { issues.push(...this.deviceName.doModelValidation()); }
-    if (this["device"]) { issues.push(...this.device.doModelValidation()); }
-    if (this["height"]) { issues.push(...this.height.doModelValidation()); }
-    if (this["width"]) { issues.push(...this.width.doModelValidation()); }
-    if (this["frames"]) { issues.push(...this.frames.doModelValidation()); }
-    if (this["duration"]) { issues.push(...this.duration.doModelValidation()); }
+    if (this["status"]) { issues.push(...this.status.doModelValidation(expression+'.status')); }
+    if (this["type"]) { issues.push(...this.type.doModelValidation(expression+'.type')); }
+    if (this["modality"]) { issues.push(...this.modality.doModelValidation(expression+'.modality')); }
+    if (this["view"]) { issues.push(...this.view.doModelValidation(expression+'.view')); }
+    if (this["subject"]) { issues.push(...this.subject.doModelValidation(expression+'.subject')); }
+    if (this["encounter"]) { issues.push(...this.encounter.doModelValidation(expression+'.encounter')); }
+    if (this["issued"]) { issues.push(...this.issued.doModelValidation(expression+'.issued')); }
+    if (this["operator"]) { issues.push(...this.operator.doModelValidation(expression+'.operator')); }
+    if (this["reasonCode"]) { this.reasonCode.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.reasonCode[${i}]`)); }) }
+    if (this["bodySite"]) { issues.push(...this.bodySite.doModelValidation(expression+'.bodySite')); }
+    if (this["deviceName"]) { issues.push(...this.deviceName.doModelValidation(expression+'.deviceName')); }
+    if (this["device"]) { issues.push(...this.device.doModelValidation(expression+'.device')); }
+    if (this["height"]) { issues.push(...this.height.doModelValidation(expression+'.height')); }
+    if (this["width"]) { issues.push(...this.width.doModelValidation(expression+'.width')); }
+    if (this["frames"]) { issues.push(...this.frames.doModelValidation(expression+'.frames')); }
+    if (this["duration"]) { issues.push(...this.duration.doModelValidation(expression+'.duration')); }
     if (!this['content']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property content:fhir.Attachment fhir: Media.content:Attachment' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property content fhir: Media.content:Attachment', expression: [expression] });
     }
-    if (this["content"]) { issues.push(...this.content.doModelValidation()); }
-    if (this["note"]) { this.note.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["content"]) { issues.push(...this.content.doModelValidation(expression+'.content')); }
+    if (this["note"]) { this.note.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.note[${i}]`)); }) }
     return issues;
   }
 }

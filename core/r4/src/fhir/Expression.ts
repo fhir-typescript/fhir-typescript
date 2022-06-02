@@ -124,16 +124,17 @@ export class Expression extends fhir.FhirElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
-    if (this["description"]) { issues.push(...this.description.doModelValidation()); }
-    if (this["name"]) { issues.push(...this.name.doModelValidation()); }
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'Expression' }
+    if (this["description"]) { issues.push(...this.description.doModelValidation(expression+'.description')); }
+    if (this["name"]) { issues.push(...this.name.doModelValidation(expression+'.name')); }
     if (!this['language']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property language:fhir.FhirCode fhir: Expression.language:code' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property language fhir: Expression.language:code', expression: [expression] });
     }
-    if (this["language"]) { issues.push(...this.language.doModelValidation()); }
-    if (this["expression"]) { issues.push(...this.expression.doModelValidation()); }
-    if (this["reference"]) { issues.push(...this.reference.doModelValidation()); }
+    if (this["language"]) { issues.push(...this.language.doModelValidation(expression+'.language')); }
+    if (this["expression"]) { issues.push(...this.expression.doModelValidation(expression+'.expression')); }
+    if (this["reference"]) { issues.push(...this.reference.doModelValidation(expression+'.reference')); }
     return issues;
   }
 }

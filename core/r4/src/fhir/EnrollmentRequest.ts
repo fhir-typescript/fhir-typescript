@@ -127,21 +127,22 @@ export class EnrollmentRequest extends fhir.DomainResource {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'EnrollmentRequest' }
     if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType:"EnrollmentRequest" fhir: EnrollmentRequest.resourceType:"EnrollmentRequest"' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType fhir: EnrollmentRequest.resourceType:"EnrollmentRequest"', expression: [expression] });
     }
-    if (this["identifier"]) { this.identifier.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this['status'] && (!Object.values(FmStatusCodes).includes(this.status as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property status?:fhir.FhirCode<FmStatusCodeType> fhir: EnrollmentRequest.status:code Required binding to: FmStatus' });
+    if (this["identifier"]) { this.identifier.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.identifier[${i}]`)); }) }
+    if (this['status'] && (!Object.values(FmStatusCodes).includes(this.status.value as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property status fhir: EnrollmentRequest.status:code Required binding to: FmStatus', expression: [expression] });
     }
-    if (this["status"]) { issues.push(...this.status.doModelValidation()); }
-    if (this["created"]) { issues.push(...this.created.doModelValidation()); }
-    if (this["insurer"]) { issues.push(...this.insurer.doModelValidation()); }
-    if (this["provider"]) { issues.push(...this.provider.doModelValidation()); }
-    if (this["candidate"]) { issues.push(...this.candidate.doModelValidation()); }
-    if (this["coverage"]) { issues.push(...this.coverage.doModelValidation()); }
+    if (this["status"]) { issues.push(...this.status.doModelValidation(expression+'.status')); }
+    if (this["created"]) { issues.push(...this.created.doModelValidation(expression+'.created')); }
+    if (this["insurer"]) { issues.push(...this.insurer.doModelValidation(expression+'.insurer')); }
+    if (this["provider"]) { issues.push(...this.provider.doModelValidation(expression+'.provider')); }
+    if (this["candidate"]) { issues.push(...this.candidate.doModelValidation(expression+'.candidate')); }
+    if (this["coverage"]) { issues.push(...this.coverage.doModelValidation(expression+'.coverage')); }
     return issues;
   }
 }

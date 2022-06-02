@@ -53,7 +53,7 @@ export declare class EpisodeOfCareStatusHistory extends fhir.BackboneElement {
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.FtsIssue[];
+    doModelValidation(expression?: string): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the EpisodeOfCareDiagnosis type.
@@ -107,7 +107,7 @@ export declare class EpisodeOfCareDiagnosis extends fhir.BackboneElement {
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.FtsIssue[];
+    doModelValidation(expression?: string): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the EpisodeOfCare type.
@@ -249,6 +249,6 @@ export declare class EpisodeOfCare extends fhir.DomainResource {
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.FtsIssue[];
+    doModelValidation(expression?: string): fhir.FtsIssue[];
 }
 //# sourceMappingURL=EpisodeOfCare.d.ts.map

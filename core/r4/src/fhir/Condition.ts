@@ -92,11 +92,12 @@ export class ConditionStage extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
-    if (this["summary"]) { issues.push(...this.summary.doModelValidation()); }
-    if (this["assessment"]) { this.assessment.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["type"]) { issues.push(...this.type.doModelValidation()); }
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'Condition.stage' }
+    if (this["summary"]) { issues.push(...this.summary.doModelValidation(expression+'.summary')); }
+    if (this["assessment"]) { this.assessment.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.assessment[${i}]`)); }) }
+    if (this["type"]) { issues.push(...this.type.doModelValidation(expression+'.type')); }
     return issues;
   }
 }
@@ -143,10 +144,11 @@ export class ConditionEvidence extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
-    if (this["code"]) { this.code.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["detail"]) { this.detail.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'Condition.evidence' }
+    if (this["code"]) { this.code.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.code[${i}]`)); }) }
+    if (this["detail"]) { this.detail.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.detail[${i}]`)); }) }
     return issues;
   }
 }
@@ -434,35 +436,30 @@ export class Condition extends fhir.DomainResource {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'Condition' }
     if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType:"Condition" fhir: Condition.resourceType:"Condition"' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType fhir: Condition.resourceType:"Condition"', expression: [expression] });
     }
-    if (this["identifier"]) { this.identifier.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this['clinicalStatus'] && (!Object.values(ConditionClinicalCodes).includes(this.clinicalStatus as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property clinicalStatus?:fhir.CodeableConcept fhir: Condition.clinicalStatus:CodeableConcept Required binding to: ConditionClinical' });
-    }
-    if (this["clinicalStatus"]) { issues.push(...this.clinicalStatus.doModelValidation()); }
-    if (this['verificationStatus'] && (!Object.values(ConditionVerStatusCodes).includes(this.verificationStatus as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property verificationStatus?:fhir.CodeableConcept fhir: Condition.verificationStatus:CodeableConcept Required binding to: ConditionVerStatus' });
-    }
-    if (this["verificationStatus"]) { issues.push(...this.verificationStatus.doModelValidation()); }
-    if (this["category"]) { this.category.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["severity"]) { issues.push(...this.severity.doModelValidation()); }
-    if (this["code"]) { issues.push(...this.code.doModelValidation()); }
-    if (this["bodySite"]) { this.bodySite.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["identifier"]) { this.identifier.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.identifier[${i}]`)); }) }
+    if (this["clinicalStatus"]) { issues.push(...this.clinicalStatus.doModelValidation(expression+'.clinicalStatus')); }
+    if (this["verificationStatus"]) { issues.push(...this.verificationStatus.doModelValidation(expression+'.verificationStatus')); }
+    if (this["category"]) { this.category.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.category[${i}]`)); }) }
+    if (this["severity"]) { issues.push(...this.severity.doModelValidation(expression+'.severity')); }
+    if (this["code"]) { issues.push(...this.code.doModelValidation(expression+'.code')); }
+    if (this["bodySite"]) { this.bodySite.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.bodySite[${i}]`)); }) }
     if (!this['subject']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property subject:fhir.Reference fhir: Condition.subject:Reference' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property subject fhir: Condition.subject:Reference', expression: [expression] });
     }
-    if (this["subject"]) { issues.push(...this.subject.doModelValidation()); }
-    if (this["encounter"]) { issues.push(...this.encounter.doModelValidation()); }
-    if (this["recordedDate"]) { issues.push(...this.recordedDate.doModelValidation()); }
-    if (this["recorder"]) { issues.push(...this.recorder.doModelValidation()); }
-    if (this["asserter"]) { issues.push(...this.asserter.doModelValidation()); }
-    if (this["stage"]) { this.stage.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["evidence"]) { this.evidence.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["note"]) { this.note.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["subject"]) { issues.push(...this.subject.doModelValidation(expression+'.subject')); }
+    if (this["encounter"]) { issues.push(...this.encounter.doModelValidation(expression+'.encounter')); }
+    if (this["recordedDate"]) { issues.push(...this.recordedDate.doModelValidation(expression+'.recordedDate')); }
+    if (this["recorder"]) { issues.push(...this.recorder.doModelValidation(expression+'.recorder')); }
+    if (this["asserter"]) { issues.push(...this.asserter.doModelValidation(expression+'.asserter')); }
+    if (this["stage"]) { this.stage.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.stage[${i}]`)); }) }
+    if (this["evidence"]) { this.evidence.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.evidence[${i}]`)); }) }
+    if (this["note"]) { this.note.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.note[${i}]`)); }) }
     return issues;
   }
 }

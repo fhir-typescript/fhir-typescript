@@ -76,7 +76,7 @@ export declare class ExampleScenarioActor extends fhir.BackboneElement {
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.FtsIssue[];
+    doModelValidation(expression?: string): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the ExampleScenarioInstanceVersion type.
@@ -122,7 +122,7 @@ export declare class ExampleScenarioInstanceVersion extends fhir.BackboneElement
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.FtsIssue[];
+    doModelValidation(expression?: string): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the ExampleScenarioInstanceContainedInstance type.
@@ -168,7 +168,7 @@ export declare class ExampleScenarioInstanceContainedInstance extends fhir.Backb
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.FtsIssue[];
+    doModelValidation(expression?: string): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the ExampleScenarioInstance type.
@@ -296,6 +296,9 @@ export declare class ExampleScenarioInstance extends fhir.BackboneElement {
         readonly DeviceDefinition: "DeviceDefinition";
         readonly DeviceMetric: "DeviceMetric";
         readonly DeviceRequest: "DeviceRequest";
+        /**
+         * Resources contained in the instance (e.g. the observations contained in a bundle).
+         */
         readonly DeviceUseStatement: "DeviceUseStatement";
         readonly DiagnosticReport: "DiagnosticReport";
         readonly DocumentManifest: "DocumentManifest";
@@ -335,7 +338,9 @@ export declare class ExampleScenarioInstance extends fhir.BackboneElement {
         readonly Media: "Media";
         readonly Medication: "Medication";
         readonly MedicationAdministration: "MedicationAdministration";
-        readonly MedicationDispense: "MedicationDispense";
+        readonly MedicationDispense: "MedicationDispense"; /**
+         * The human-friendly name of the interaction.
+         */
         readonly MedicationKnowledge: "MedicationKnowledge";
         readonly MedicationRequest: "MedicationRequest";
         readonly MedicationStatement: "MedicationStatement";
@@ -377,9 +382,7 @@ export declare class ExampleScenarioInstance extends fhir.BackboneElement {
         readonly ResearchDefinition: "ResearchDefinition";
         readonly ResearchElementDefinition: "ResearchElementDefinition";
         readonly ResearchStudy: "ResearchStudy";
-        readonly ResearchSubject: "ResearchSubject"; /**
-         * Each step of the process.
-         */
+        readonly ResearchSubject: "ResearchSubject";
         readonly Resource: "Resource";
         readonly RiskAssessment: "RiskAssessment";
         readonly RiskEvidenceSynthesis: "RiskEvidenceSynthesis";
@@ -412,7 +415,7 @@ export declare class ExampleScenarioInstance extends fhir.BackboneElement {
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.FtsIssue[];
+    doModelValidation(expression?: string): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the ExampleScenarioProcessStepOperation type.
@@ -546,7 +549,7 @@ export declare class ExampleScenarioProcessStepOperation extends fhir.BackboneEl
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.FtsIssue[];
+    doModelValidation(expression?: string): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the ExampleScenarioProcessStepAlternative type.
@@ -600,7 +603,7 @@ export declare class ExampleScenarioProcessStepAlternative extends fhir.Backbone
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.FtsIssue[];
+    doModelValidation(expression?: string): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the ExampleScenarioProcessStep type.
@@ -658,7 +661,7 @@ export declare class ExampleScenarioProcessStep extends fhir.BackboneElement {
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.FtsIssue[];
+    doModelValidation(expression?: string): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the ExampleScenarioProcess type.
@@ -736,7 +739,7 @@ export declare class ExampleScenarioProcess extends fhir.BackboneElement {
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.FtsIssue[];
+    doModelValidation(expression?: string): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the ExampleScenario type.
@@ -955,6 +958,6 @@ export declare class ExampleScenario extends fhir.DomainResource {
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.FtsIssue[];
+    doModelValidation(expression?: string): fhir.FtsIssue[];
 }
 //# sourceMappingURL=ExampleScenario.d.ts.map

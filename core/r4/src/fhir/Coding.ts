@@ -113,13 +113,14 @@ export class Coding extends fhir.FhirElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
-    if (this["system"]) { issues.push(...this.system.doModelValidation()); }
-    if (this["version"]) { issues.push(...this.version.doModelValidation()); }
-    if (this["code"]) { issues.push(...this.code.doModelValidation()); }
-    if (this["display"]) { issues.push(...this.display.doModelValidation()); }
-    if (this["userSelected"]) { issues.push(...this.userSelected.doModelValidation()); }
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'Coding' }
+    if (this["system"]) { issues.push(...this.system.doModelValidation(expression+'.system')); }
+    if (this["version"]) { issues.push(...this.version.doModelValidation(expression+'.version')); }
+    if (this["code"]) { issues.push(...this.code.doModelValidation(expression+'.code')); }
+    if (this["display"]) { issues.push(...this.display.doModelValidation(expression+'.display')); }
+    if (this["userSelected"]) { issues.push(...this.userSelected.doModelValidation(expression+'.userSelected')); }
     return issues;
   }
 }

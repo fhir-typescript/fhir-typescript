@@ -62,14 +62,15 @@ export class MedicinalProductIndicationOtherTherapy extends fhir.BackboneElement
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'MedicinalProductIndication.otherTherapy' }
     if (!this['therapyRelationshipType']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property therapyRelationshipType:fhir.CodeableConcept fhir: MedicinalProductIndication.otherTherapy.therapyRelationshipType:CodeableConcept' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property therapyRelationshipType fhir: MedicinalProductIndication.otherTherapy.therapyRelationshipType:CodeableConcept', expression: [expression] });
     }
-    if (this["therapyRelationshipType"]) { issues.push(...this.therapyRelationshipType.doModelValidation()); }
+    if (this["therapyRelationshipType"]) { issues.push(...this.therapyRelationshipType.doModelValidation(expression+'.therapyRelationshipType')); }
     if (!this['medication']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property medication: fhir: MedicinalProductIndication.otherTherapy.medication[x]:' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property medication fhir: MedicinalProductIndication.otherTherapy.medication[x]:', expression: [expression] });
     }
     return issues;
   }
@@ -192,20 +193,21 @@ export class MedicinalProductIndication extends fhir.DomainResource {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'MedicinalProductIndication' }
     if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType:"MedicinalProductIndication" fhir: MedicinalProductIndication.resourceType:"MedicinalProductIndication"' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType fhir: MedicinalProductIndication.resourceType:"MedicinalProductIndication"', expression: [expression] });
     }
-    if (this["subject"]) { this.subject.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["diseaseSymptomProcedure"]) { issues.push(...this.diseaseSymptomProcedure.doModelValidation()); }
-    if (this["diseaseStatus"]) { issues.push(...this.diseaseStatus.doModelValidation()); }
-    if (this["comorbidity"]) { this.comorbidity.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["intendedEffect"]) { issues.push(...this.intendedEffect.doModelValidation()); }
-    if (this["duration"]) { issues.push(...this.duration.doModelValidation()); }
-    if (this["otherTherapy"]) { this.otherTherapy.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["undesirableEffect"]) { this.undesirableEffect.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["population"]) { this.population.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["subject"]) { this.subject.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.subject[${i}]`)); }) }
+    if (this["diseaseSymptomProcedure"]) { issues.push(...this.diseaseSymptomProcedure.doModelValidation(expression+'.diseaseSymptomProcedure')); }
+    if (this["diseaseStatus"]) { issues.push(...this.diseaseStatus.doModelValidation(expression+'.diseaseStatus')); }
+    if (this["comorbidity"]) { this.comorbidity.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.comorbidity[${i}]`)); }) }
+    if (this["intendedEffect"]) { issues.push(...this.intendedEffect.doModelValidation(expression+'.intendedEffect')); }
+    if (this["duration"]) { issues.push(...this.duration.doModelValidation(expression+'.duration')); }
+    if (this["otherTherapy"]) { this.otherTherapy.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.otherTherapy[${i}]`)); }) }
+    if (this["undesirableEffect"]) { this.undesirableEffect.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.undesirableEffect[${i}]`)); }) }
+    if (this["population"]) { this.population.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.population[${i}]`)); }) }
     return issues;
   }
 }

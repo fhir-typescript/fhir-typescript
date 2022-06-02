@@ -150,21 +150,22 @@ export class RelatedArtifact extends fhir.FhirElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'RelatedArtifact' }
     if (!this['type']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property type:fhir.FhirCode<RelatedArtifactTypeCodeType> fhir: RelatedArtifact.type:code' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property type fhir: RelatedArtifact.type:code', expression: [expression] });
     }
-    if (this['type'] && (!Object.values(RelatedArtifactTypeCodes).includes(this.type as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property type:fhir.FhirCode<RelatedArtifactTypeCodeType> fhir: RelatedArtifact.type:code Required binding to: RelatedArtifactType' });
+    if (this['type'] && (!Object.values(RelatedArtifactTypeCodes).includes(this.type.value as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property type fhir: RelatedArtifact.type:code Required binding to: RelatedArtifactType', expression: [expression] });
     }
-    if (this["type"]) { issues.push(...this.type.doModelValidation()); }
-    if (this["label"]) { issues.push(...this.label.doModelValidation()); }
-    if (this["display"]) { issues.push(...this.display.doModelValidation()); }
-    if (this["citation"]) { issues.push(...this.citation.doModelValidation()); }
-    if (this["url"]) { issues.push(...this.url.doModelValidation()); }
-    if (this["document"]) { issues.push(...this.document.doModelValidation()); }
-    if (this["resource"]) { issues.push(...this.resource.doModelValidation()); }
+    if (this["type"]) { issues.push(...this.type.doModelValidation(expression+'.type')); }
+    if (this["label"]) { issues.push(...this.label.doModelValidation(expression+'.label')); }
+    if (this["display"]) { issues.push(...this.display.doModelValidation(expression+'.display')); }
+    if (this["citation"]) { issues.push(...this.citation.doModelValidation(expression+'.citation')); }
+    if (this["url"]) { issues.push(...this.url.doModelValidation(expression+'.url')); }
+    if (this["document"]) { issues.push(...this.document.doModelValidation(expression+'.document')); }
+    if (this["resource"]) { issues.push(...this.resource.doModelValidation(expression+'.resource')); }
     return issues;
   }
 }

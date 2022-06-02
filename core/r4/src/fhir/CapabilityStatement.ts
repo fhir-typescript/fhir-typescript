@@ -144,14 +144,15 @@ export class CapabilityStatementSoftware extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'CapabilityStatement.software' }
     if (!this['name']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property name:fhir.FhirString fhir: CapabilityStatement.software.name:string' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property name fhir: CapabilityStatement.software.name:string', expression: [expression] });
     }
-    if (this["name"]) { issues.push(...this.name.doModelValidation()); }
-    if (this["version"]) { issues.push(...this.version.doModelValidation()); }
-    if (this["releaseDate"]) { issues.push(...this.releaseDate.doModelValidation()); }
+    if (this["name"]) { issues.push(...this.name.doModelValidation(expression+'.name')); }
+    if (this["version"]) { issues.push(...this.version.doModelValidation(expression+'.version')); }
+    if (this["releaseDate"]) { issues.push(...this.releaseDate.doModelValidation(expression+'.releaseDate')); }
     return issues;
   }
 }
@@ -222,14 +223,15 @@ export class CapabilityStatementImplementation extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'CapabilityStatement.implementation' }
     if (!this['description']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property description:fhir.FhirString fhir: CapabilityStatement.implementation.description:string' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property description fhir: CapabilityStatement.implementation.description:string', expression: [expression] });
     }
-    if (this["description"]) { issues.push(...this.description.doModelValidation()); }
-    if (this["url"]) { issues.push(...this.url.doModelValidation()); }
-    if (this["custodian"]) { issues.push(...this.custodian.doModelValidation()); }
+    if (this["description"]) { issues.push(...this.description.doModelValidation(expression+'.description')); }
+    if (this["url"]) { issues.push(...this.url.doModelValidation(expression+'.url')); }
+    if (this["custodian"]) { issues.push(...this.custodian.doModelValidation(expression+'.custodian')); }
     return issues;
   }
 }
@@ -306,11 +308,12 @@ export class CapabilityStatementRestSecurity extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
-    if (this["cors"]) { issues.push(...this.cors.doModelValidation()); }
-    if (this["service"]) { this.service.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["description"]) { issues.push(...this.description.doModelValidation()); }
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'CapabilityStatement.rest.security' }
+    if (this["cors"]) { issues.push(...this.cors.doModelValidation(expression+'.cors')); }
+    if (this["service"]) { this.service.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.service[${i}]`)); }) }
+    if (this["description"]) { issues.push(...this.description.doModelValidation(expression+'.description')); }
     return issues;
   }
 }
@@ -378,16 +381,17 @@ export class CapabilityStatementRestResourceInteraction extends fhir.BackboneEle
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'CapabilityStatement.rest.resource.interaction' }
     if (!this['code']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property code:fhir.FhirCode<TypeRestfulInteractionCodeType> fhir: CapabilityStatement.rest.resource.interaction.code:code' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property code fhir: CapabilityStatement.rest.resource.interaction.code:code', expression: [expression] });
     }
-    if (this['code'] && (!Object.values(TypeRestfulInteractionCodes).includes(this.code as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property code:fhir.FhirCode<TypeRestfulInteractionCodeType> fhir: CapabilityStatement.rest.resource.interaction.code:code Required binding to: TypeRestfulInteraction' });
+    if (this['code'] && (!Object.values(TypeRestfulInteractionCodes).includes(this.code.value as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property code fhir: CapabilityStatement.rest.resource.interaction.code:code Required binding to: TypeRestfulInteraction', expression: [expression] });
     }
-    if (this["code"]) { issues.push(...this.code.doModelValidation()); }
-    if (this["documentation"]) { issues.push(...this.documentation.doModelValidation()); }
+    if (this["code"]) { issues.push(...this.code.doModelValidation(expression+'.code')); }
+    if (this["documentation"]) { issues.push(...this.documentation.doModelValidation(expression+'.documentation')); }
     return issues;
   }
 }
@@ -490,21 +494,22 @@ export class CapabilityStatementRestResourceSearchParam extends fhir.BackboneEle
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'CapabilityStatement.rest.resource.searchParam' }
     if (!this['name']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property name:fhir.FhirString fhir: CapabilityStatement.rest.resource.searchParam.name:string' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property name fhir: CapabilityStatement.rest.resource.searchParam.name:string', expression: [expression] });
     }
-    if (this["name"]) { issues.push(...this.name.doModelValidation()); }
-    if (this["definition"]) { issues.push(...this.definition.doModelValidation()); }
+    if (this["name"]) { issues.push(...this.name.doModelValidation(expression+'.name')); }
+    if (this["definition"]) { issues.push(...this.definition.doModelValidation(expression+'.definition')); }
     if (!this['type']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property type:fhir.FhirCode<SearchParamTypeCodeType> fhir: CapabilityStatement.rest.resource.searchParam.type:code' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property type fhir: CapabilityStatement.rest.resource.searchParam.type:code', expression: [expression] });
     }
-    if (this['type'] && (!Object.values(SearchParamTypeCodes).includes(this.type as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property type:fhir.FhirCode<SearchParamTypeCodeType> fhir: CapabilityStatement.rest.resource.searchParam.type:code Required binding to: SearchParamType' });
+    if (this['type'] && (!Object.values(SearchParamTypeCodes).includes(this.type.value as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property type fhir: CapabilityStatement.rest.resource.searchParam.type:code Required binding to: SearchParamType', expression: [expression] });
     }
-    if (this["type"]) { issues.push(...this.type.doModelValidation()); }
-    if (this["documentation"]) { issues.push(...this.documentation.doModelValidation()); }
+    if (this["type"]) { issues.push(...this.type.doModelValidation(expression+'.type')); }
+    if (this["documentation"]) { issues.push(...this.documentation.doModelValidation(expression+'.documentation')); }
     return issues;
   }
 }
@@ -585,17 +590,18 @@ export class CapabilityStatementRestResourceOperation extends fhir.BackboneEleme
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'CapabilityStatement.rest.resource.operation' }
     if (!this['name']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property name:fhir.FhirString fhir: CapabilityStatement.rest.resource.operation.name:string' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property name fhir: CapabilityStatement.rest.resource.operation.name:string', expression: [expression] });
     }
-    if (this["name"]) { issues.push(...this.name.doModelValidation()); }
+    if (this["name"]) { issues.push(...this.name.doModelValidation(expression+'.name')); }
     if (!this['definition']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property definition:fhir.FhirCanonical fhir: CapabilityStatement.rest.resource.operation.definition:canonical' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property definition fhir: CapabilityStatement.rest.resource.operation.definition:canonical', expression: [expression] });
     }
-    if (this["definition"]) { issues.push(...this.definition.doModelValidation()); }
-    if (this["documentation"]) { issues.push(...this.documentation.doModelValidation()); }
+    if (this["definition"]) { issues.push(...this.definition.doModelValidation(expression+'.definition')); }
+    if (this["documentation"]) { issues.push(...this.documentation.doModelValidation(expression+'.documentation')); }
     return issues;
   }
 }
@@ -935,47 +941,48 @@ export class CapabilityStatementRestResource extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'CapabilityStatement.rest.resource' }
     if (!this['type']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property type:fhir.FhirCode fhir: CapabilityStatement.rest.resource.type:code' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property type fhir: CapabilityStatement.rest.resource.type:code', expression: [expression] });
     }
-    if (this['type'] && (!Object.values(ResourceTypesCodes).includes(this.type as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property type:fhir.FhirCode fhir: CapabilityStatement.rest.resource.type:code Required binding to: ResourceTypes' });
+    if (this['type'] && (!Object.values(ResourceTypesCodes).includes(this.type.value as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property type fhir: CapabilityStatement.rest.resource.type:code Required binding to: ResourceTypes', expression: [expression] });
     }
-    if (this["type"]) { issues.push(...this.type.doModelValidation()); }
-    if (this["profile"]) { issues.push(...this.profile.doModelValidation()); }
-    if (this["supportedProfile"]) { this.supportedProfile.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["documentation"]) { issues.push(...this.documentation.doModelValidation()); }
-    if (this["interaction"]) { this.interaction.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this['versioning'] && (!Object.values(VersioningPolicyCodes).includes(this.versioning as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property versioning?:fhir.FhirCode<VersioningPolicyCodeType> fhir: CapabilityStatement.rest.resource.versioning:code Required binding to: VersioningPolicy' });
+    if (this["type"]) { issues.push(...this.type.doModelValidation(expression+'.type')); }
+    if (this["profile"]) { issues.push(...this.profile.doModelValidation(expression+'.profile')); }
+    if (this["supportedProfile"]) { this.supportedProfile.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.supportedProfile[${i}]`)); }) }
+    if (this["documentation"]) { issues.push(...this.documentation.doModelValidation(expression+'.documentation')); }
+    if (this["interaction"]) { this.interaction.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.interaction[${i}]`)); }) }
+    if (this['versioning'] && (!Object.values(VersioningPolicyCodes).includes(this.versioning.value as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property versioning fhir: CapabilityStatement.rest.resource.versioning:code Required binding to: VersioningPolicy', expression: [expression] });
     }
-    if (this["versioning"]) { issues.push(...this.versioning.doModelValidation()); }
-    if (this["readHistory"]) { issues.push(...this.readHistory.doModelValidation()); }
-    if (this["updateCreate"]) { issues.push(...this.updateCreate.doModelValidation()); }
-    if (this["conditionalCreate"]) { issues.push(...this.conditionalCreate.doModelValidation()); }
-    if (this['conditionalRead'] && (!Object.values(ConditionalReadStatusCodes).includes(this.conditionalRead as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property conditionalRead?:fhir.FhirCode<ConditionalReadStatusCodeType> fhir: CapabilityStatement.rest.resource.conditionalRead:code Required binding to: ConditionalReadStatus' });
+    if (this["versioning"]) { issues.push(...this.versioning.doModelValidation(expression+'.versioning')); }
+    if (this["readHistory"]) { issues.push(...this.readHistory.doModelValidation(expression+'.readHistory')); }
+    if (this["updateCreate"]) { issues.push(...this.updateCreate.doModelValidation(expression+'.updateCreate')); }
+    if (this["conditionalCreate"]) { issues.push(...this.conditionalCreate.doModelValidation(expression+'.conditionalCreate')); }
+    if (this['conditionalRead'] && (!Object.values(ConditionalReadStatusCodes).includes(this.conditionalRead.value as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property conditionalRead fhir: CapabilityStatement.rest.resource.conditionalRead:code Required binding to: ConditionalReadStatus', expression: [expression] });
     }
-    if (this["conditionalRead"]) { issues.push(...this.conditionalRead.doModelValidation()); }
-    if (this["conditionalUpdate"]) { issues.push(...this.conditionalUpdate.doModelValidation()); }
-    if (this['conditionalDelete'] && (!Object.values(ConditionalDeleteStatusCodes).includes(this.conditionalDelete as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property conditionalDelete?:fhir.FhirCode<ConditionalDeleteStatusCodeType> fhir: CapabilityStatement.rest.resource.conditionalDelete:code Required binding to: ConditionalDeleteStatus' });
+    if (this["conditionalRead"]) { issues.push(...this.conditionalRead.doModelValidation(expression+'.conditionalRead')); }
+    if (this["conditionalUpdate"]) { issues.push(...this.conditionalUpdate.doModelValidation(expression+'.conditionalUpdate')); }
+    if (this['conditionalDelete'] && (!Object.values(ConditionalDeleteStatusCodes).includes(this.conditionalDelete.value as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property conditionalDelete fhir: CapabilityStatement.rest.resource.conditionalDelete:code Required binding to: ConditionalDeleteStatus', expression: [expression] });
     }
-    if (this["conditionalDelete"]) { issues.push(...this.conditionalDelete.doModelValidation()); }
+    if (this["conditionalDelete"]) { issues.push(...this.conditionalDelete.doModelValidation(expression+'.conditionalDelete')); }
     if (this['referencePolicy']) {
       this.referencePolicy.forEach((v) => {
-        if (!Object.values(ReferenceHandlingPolicyCodes).includes(v as any)) {
-          issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property referencePolicy?:fhir.FhirCode<ReferenceHandlingPolicyCodeType>[] fhir: CapabilityStatement.rest.resource.referencePolicy:code Required binding to: ReferenceHandlingPolicy' });
+        if (!Object.values(ReferenceHandlingPolicyCodes).includes(v.value as any)) {
+          issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property referencePolicy fhir: CapabilityStatement.rest.resource.referencePolicy:code Required binding to: ReferenceHandlingPolicy', expression: [expression] });
         }
       });
     }
-    if (this["referencePolicy"]) { this.referencePolicy.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["searchInclude"]) { this.searchInclude.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["searchRevInclude"]) { this.searchRevInclude.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["searchParam"]) { this.searchParam.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["operation"]) { this.operation.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["referencePolicy"]) { this.referencePolicy.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.referencePolicy[${i}]`)); }) }
+    if (this["searchInclude"]) { this.searchInclude.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.searchInclude[${i}]`)); }) }
+    if (this["searchRevInclude"]) { this.searchRevInclude.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.searchRevInclude[${i}]`)); }) }
+    if (this["searchParam"]) { this.searchParam.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.searchParam[${i}]`)); }) }
+    if (this["operation"]) { this.operation.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.operation[${i}]`)); }) }
     return issues;
   }
 }
@@ -1043,16 +1050,17 @@ export class CapabilityStatementRestInteraction extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'CapabilityStatement.rest.interaction' }
     if (!this['code']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property code:fhir.FhirCode<SystemRestfulInteractionCodeType> fhir: CapabilityStatement.rest.interaction.code:code' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property code fhir: CapabilityStatement.rest.interaction.code:code', expression: [expression] });
     }
-    if (this['code'] && (!Object.values(SystemRestfulInteractionCodes).includes(this.code as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property code:fhir.FhirCode<SystemRestfulInteractionCodeType> fhir: CapabilityStatement.rest.interaction.code:code Required binding to: SystemRestfulInteraction' });
+    if (this['code'] && (!Object.values(SystemRestfulInteractionCodes).includes(this.code.value as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property code fhir: CapabilityStatement.rest.interaction.code:code Required binding to: SystemRestfulInteraction', expression: [expression] });
     }
-    if (this["code"]) { issues.push(...this.code.doModelValidation()); }
-    if (this["documentation"]) { issues.push(...this.documentation.doModelValidation()); }
+    if (this["code"]) { issues.push(...this.code.doModelValidation(expression+'.code')); }
+    if (this["documentation"]) { issues.push(...this.documentation.doModelValidation(expression+'.documentation')); }
     return issues;
   }
 }
@@ -1189,22 +1197,23 @@ export class CapabilityStatementRest extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'CapabilityStatement.rest' }
     if (!this['mode']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property mode:fhir.FhirCode<RestfulCapabilityModeCodeType> fhir: CapabilityStatement.rest.mode:code' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property mode fhir: CapabilityStatement.rest.mode:code', expression: [expression] });
     }
-    if (this['mode'] && (!Object.values(RestfulCapabilityModeCodes).includes(this.mode as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property mode:fhir.FhirCode<RestfulCapabilityModeCodeType> fhir: CapabilityStatement.rest.mode:code Required binding to: RestfulCapabilityMode' });
+    if (this['mode'] && (!Object.values(RestfulCapabilityModeCodes).includes(this.mode.value as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property mode fhir: CapabilityStatement.rest.mode:code Required binding to: RestfulCapabilityMode', expression: [expression] });
     }
-    if (this["mode"]) { issues.push(...this.mode.doModelValidation()); }
-    if (this["documentation"]) { issues.push(...this.documentation.doModelValidation()); }
-    if (this["security"]) { issues.push(...this.security.doModelValidation()); }
-    if (this["resource"]) { this.resource.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["interaction"]) { this.interaction.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["searchParam"]) { this.searchParam.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["operation"]) { this.operation.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["compartment"]) { this.compartment.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["mode"]) { issues.push(...this.mode.doModelValidation(expression+'.mode')); }
+    if (this["documentation"]) { issues.push(...this.documentation.doModelValidation(expression+'.documentation')); }
+    if (this["security"]) { issues.push(...this.security.doModelValidation(expression+'.security')); }
+    if (this["resource"]) { this.resource.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.resource[${i}]`)); }) }
+    if (this["interaction"]) { this.interaction.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.interaction[${i}]`)); }) }
+    if (this["searchParam"]) { this.searchParam.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.searchParam[${i}]`)); }) }
+    if (this["operation"]) { this.operation.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.operation[${i}]`)); }) }
+    if (this["compartment"]) { this.compartment.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.compartment[${i}]`)); }) }
     return issues;
   }
 }
@@ -1265,16 +1274,17 @@ export class CapabilityStatementMessagingEndpoint extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'CapabilityStatement.messaging.endpoint' }
     if (!this['protocol']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property protocol:fhir.Coding fhir: CapabilityStatement.messaging.endpoint.protocol:Coding' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property protocol fhir: CapabilityStatement.messaging.endpoint.protocol:Coding', expression: [expression] });
     }
-    if (this["protocol"]) { issues.push(...this.protocol.doModelValidation()); }
+    if (this["protocol"]) { issues.push(...this.protocol.doModelValidation(expression+'.protocol')); }
     if (!this['address']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property address:fhir.FhirUrl fhir: CapabilityStatement.messaging.endpoint.address:url' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property address fhir: CapabilityStatement.messaging.endpoint.address:url', expression: [expression] });
     }
-    if (this["address"]) { issues.push(...this.address.doModelValidation()); }
+    if (this["address"]) { issues.push(...this.address.doModelValidation(expression+'.address')); }
     return issues;
   }
 }
@@ -1343,19 +1353,20 @@ export class CapabilityStatementMessagingSupportedMessage extends fhir.BackboneE
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'CapabilityStatement.messaging.supportedMessage' }
     if (!this['mode']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property mode:fhir.FhirCode<EventCapabilityModeCodeType> fhir: CapabilityStatement.messaging.supportedMessage.mode:code' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property mode fhir: CapabilityStatement.messaging.supportedMessage.mode:code', expression: [expression] });
     }
-    if (this['mode'] && (!Object.values(EventCapabilityModeCodes).includes(this.mode as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property mode:fhir.FhirCode<EventCapabilityModeCodeType> fhir: CapabilityStatement.messaging.supportedMessage.mode:code Required binding to: EventCapabilityMode' });
+    if (this['mode'] && (!Object.values(EventCapabilityModeCodes).includes(this.mode.value as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property mode fhir: CapabilityStatement.messaging.supportedMessage.mode:code Required binding to: EventCapabilityMode', expression: [expression] });
     }
-    if (this["mode"]) { issues.push(...this.mode.doModelValidation()); }
+    if (this["mode"]) { issues.push(...this.mode.doModelValidation(expression+'.mode')); }
     if (!this['definition']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property definition:fhir.FhirCanonical fhir: CapabilityStatement.messaging.supportedMessage.definition:canonical' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property definition fhir: CapabilityStatement.messaging.supportedMessage.definition:canonical', expression: [expression] });
     }
-    if (this["definition"]) { issues.push(...this.definition.doModelValidation()); }
+    if (this["definition"]) { issues.push(...this.definition.doModelValidation(expression+'.definition')); }
     return issues;
   }
 }
@@ -1436,12 +1447,13 @@ export class CapabilityStatementMessaging extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
-    if (this["endpoint"]) { this.endpoint.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["reliableCache"]) { issues.push(...this.reliableCache.doModelValidation()); }
-    if (this["documentation"]) { issues.push(...this.documentation.doModelValidation()); }
-    if (this["supportedMessage"]) { this.supportedMessage.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'CapabilityStatement.messaging' }
+    if (this["endpoint"]) { this.endpoint.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.endpoint[${i}]`)); }) }
+    if (this["reliableCache"]) { issues.push(...this.reliableCache.doModelValidation(expression+'.reliableCache')); }
+    if (this["documentation"]) { issues.push(...this.documentation.doModelValidation(expression+'.documentation')); }
+    if (this["supportedMessage"]) { this.supportedMessage.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.supportedMessage[${i}]`)); }) }
     return issues;
   }
 }
@@ -1527,20 +1539,21 @@ export class CapabilityStatementDocument extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'CapabilityStatement.document' }
     if (!this['mode']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property mode:fhir.FhirCode<DocumentModeCodeType> fhir: CapabilityStatement.document.mode:code' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property mode fhir: CapabilityStatement.document.mode:code', expression: [expression] });
     }
-    if (this['mode'] && (!Object.values(DocumentModeCodes).includes(this.mode as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property mode:fhir.FhirCode<DocumentModeCodeType> fhir: CapabilityStatement.document.mode:code Required binding to: DocumentMode' });
+    if (this['mode'] && (!Object.values(DocumentModeCodes).includes(this.mode.value as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property mode fhir: CapabilityStatement.document.mode:code Required binding to: DocumentMode', expression: [expression] });
     }
-    if (this["mode"]) { issues.push(...this.mode.doModelValidation()); }
-    if (this["documentation"]) { issues.push(...this.documentation.doModelValidation()); }
+    if (this["mode"]) { issues.push(...this.mode.doModelValidation(expression+'.mode')); }
+    if (this["documentation"]) { issues.push(...this.documentation.doModelValidation(expression+'.documentation')); }
     if (!this['profile']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property profile:fhir.FhirCanonical fhir: CapabilityStatement.document.profile:canonical' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property profile fhir: CapabilityStatement.document.profile:canonical', expression: [expression] });
     }
-    if (this["profile"]) { issues.push(...this.profile.doModelValidation()); }
+    if (this["profile"]) { issues.push(...this.profile.doModelValidation(expression+'.profile')); }
     return issues;
   }
 }
@@ -2005,65 +2018,66 @@ export class CapabilityStatement extends fhir.DomainResource {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'CapabilityStatement' }
     if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType:"CapabilityStatement" fhir: CapabilityStatement.resourceType:"CapabilityStatement"' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType fhir: CapabilityStatement.resourceType:"CapabilityStatement"', expression: [expression] });
     }
-    if (this["url"]) { issues.push(...this.url.doModelValidation()); }
-    if (this["version"]) { issues.push(...this.version.doModelValidation()); }
-    if (this["name"]) { issues.push(...this.name.doModelValidation()); }
-    if (this["title"]) { issues.push(...this.title.doModelValidation()); }
+    if (this["url"]) { issues.push(...this.url.doModelValidation(expression+'.url')); }
+    if (this["version"]) { issues.push(...this.version.doModelValidation(expression+'.version')); }
+    if (this["name"]) { issues.push(...this.name.doModelValidation(expression+'.name')); }
+    if (this["title"]) { issues.push(...this.title.doModelValidation(expression+'.title')); }
     if (!this['status']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status:fhir.FhirCode<PublicationStatusCodeType> fhir: CapabilityStatement.status:code' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status fhir: CapabilityStatement.status:code', expression: [expression] });
     }
-    if (this['status'] && (!Object.values(PublicationStatusCodes).includes(this.status as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property status:fhir.FhirCode<PublicationStatusCodeType> fhir: CapabilityStatement.status:code Required binding to: PublicationStatus' });
+    if (this['status'] && (!Object.values(PublicationStatusCodes).includes(this.status.value as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property status fhir: CapabilityStatement.status:code Required binding to: PublicationStatus', expression: [expression] });
     }
-    if (this["status"]) { issues.push(...this.status.doModelValidation()); }
-    if (this["experimental"]) { issues.push(...this.experimental.doModelValidation()); }
+    if (this["status"]) { issues.push(...this.status.doModelValidation(expression+'.status')); }
+    if (this["experimental"]) { issues.push(...this.experimental.doModelValidation(expression+'.experimental')); }
     if (!this['date']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property date:fhir.FhirDateTime fhir: CapabilityStatement.date:dateTime' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property date fhir: CapabilityStatement.date:dateTime', expression: [expression] });
     }
-    if (this["date"]) { issues.push(...this.date.doModelValidation()); }
-    if (this["publisher"]) { issues.push(...this.publisher.doModelValidation()); }
-    if (this["contact"]) { this.contact.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["description"]) { issues.push(...this.description.doModelValidation()); }
-    if (this["useContext"]) { this.useContext.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["jurisdiction"]) { this.jurisdiction.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["purpose"]) { issues.push(...this.purpose.doModelValidation()); }
-    if (this["copyright"]) { issues.push(...this.copyright.doModelValidation()); }
+    if (this["date"]) { issues.push(...this.date.doModelValidation(expression+'.date')); }
+    if (this["publisher"]) { issues.push(...this.publisher.doModelValidation(expression+'.publisher')); }
+    if (this["contact"]) { this.contact.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.contact[${i}]`)); }) }
+    if (this["description"]) { issues.push(...this.description.doModelValidation(expression+'.description')); }
+    if (this["useContext"]) { this.useContext.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.useContext[${i}]`)); }) }
+    if (this["jurisdiction"]) { this.jurisdiction.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.jurisdiction[${i}]`)); }) }
+    if (this["purpose"]) { issues.push(...this.purpose.doModelValidation(expression+'.purpose')); }
+    if (this["copyright"]) { issues.push(...this.copyright.doModelValidation(expression+'.copyright')); }
     if (!this['kind']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property kind:fhir.FhirCode<CapabilityStatementKindCodeType> fhir: CapabilityStatement.kind:code' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property kind fhir: CapabilityStatement.kind:code', expression: [expression] });
     }
-    if (this['kind'] && (!Object.values(CapabilityStatementKindCodes).includes(this.kind as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property kind:fhir.FhirCode<CapabilityStatementKindCodeType> fhir: CapabilityStatement.kind:code Required binding to: CapabilityStatementKind' });
+    if (this['kind'] && (!Object.values(CapabilityStatementKindCodes).includes(this.kind.value as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property kind fhir: CapabilityStatement.kind:code Required binding to: CapabilityStatementKind', expression: [expression] });
     }
-    if (this["kind"]) { issues.push(...this.kind.doModelValidation()); }
-    if (this["instantiates"]) { this.instantiates.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["imports"]) { this.imports.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["software"]) { issues.push(...this.software.doModelValidation()); }
-    if (this["implementation"]) { issues.push(...this.implementation.doModelValidation()); }
+    if (this["kind"]) { issues.push(...this.kind.doModelValidation(expression+'.kind')); }
+    if (this["instantiates"]) { this.instantiates.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.instantiates[${i}]`)); }) }
+    if (this["imports"]) { this.imports.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.imports[${i}]`)); }) }
+    if (this["software"]) { issues.push(...this.software.doModelValidation(expression+'.software')); }
+    if (this["implementation"]) { issues.push(...this.implementation.doModelValidation(expression+'.implementation')); }
     if (!this['fhirVersion']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property fhirVersion:fhir.FhirCode fhir: CapabilityStatement.fhirVersion:code' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property fhirVersion fhir: CapabilityStatement.fhirVersion:code', expression: [expression] });
     }
-    if (this['fhirVersion'] && (!Object.values(FHIRVersionCodes).includes(this.fhirVersion as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property fhirVersion:fhir.FhirCode fhir: CapabilityStatement.fhirVersion:code Required binding to: FHIRVersion' });
+    if (this['fhirVersion'] && (!Object.values(FHIRVersionCodes).includes(this.fhirVersion.value as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property fhirVersion fhir: CapabilityStatement.fhirVersion:code Required binding to: FHIRVersion', expression: [expression] });
     }
-    if (this["fhirVersion"]) { issues.push(...this.fhirVersion.doModelValidation()); }
+    if (this["fhirVersion"]) { issues.push(...this.fhirVersion.doModelValidation(expression+'.fhirVersion')); }
     if (!this['format']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property format:fhir.FhirCode[] fhir: CapabilityStatement.format:code' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property format fhir: CapabilityStatement.format:code', expression: [expression] });
     } else if (!Array.isArray(this.format)) {
-      issues.push({ severity: 'error', code: 'structure', diagnostics: 'Found scalar in array property format:fhir.FhirCode[] fhir: CapabilityStatement.format:code' });
+      issues.push({ severity: 'error', code: 'structure', diagnostics: 'Found scalar in array property format fhir: CapabilityStatement.format:code', expression: [expression] });
     } else if (this.format.length === 0) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property format:fhir.FhirCode[] fhir: CapabilityStatement.format:code' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property format fhir: CapabilityStatement.format:code', expression: [expression] });
     }
-    if (this["format"]) { this.format.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["patchFormat"]) { this.patchFormat.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["implementationGuide"]) { this.implementationGuide.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["rest"]) { this.rest.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["messaging"]) { this.messaging.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["document"]) { this.document.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["format"]) { this.format.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.format[${i}]`)); }) }
+    if (this["patchFormat"]) { this.patchFormat.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.patchFormat[${i}]`)); }) }
+    if (this["implementationGuide"]) { this.implementationGuide.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.implementationGuide[${i}]`)); }) }
+    if (this["rest"]) { this.rest.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.rest[${i}]`)); }) }
+    if (this["messaging"]) { this.messaging.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.messaging[${i}]`)); }) }
+    if (this["document"]) { this.document.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.document[${i}]`)); }) }
     return issues;
   }
 }

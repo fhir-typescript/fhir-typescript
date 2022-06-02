@@ -406,11 +406,18 @@
     {
       "packageName": "@fhir-typescript/r4-core",
       "projectFolder": "core/r4",
-      "tags": ["core", "R4"]
+      "tags": ["core", "R4"],
+      "versionPolicyName": "ftsVersionPolicy"
     },
     {
       "packageName": "node-r4-basic",
       "projectFolder": "examples/node-r4-basic",
+      "shouldPublish": false,
+      "tags": ["example", "R4" ]
+    },
+    {
+      "packageName": "react-r4-basic",
+      "projectFolder": "examples/react-r4-basic",
       "shouldPublish": false,
       "tags": ["example", "R4" ]
     }

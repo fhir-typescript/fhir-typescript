@@ -96,9 +96,7 @@ export declare class CompartmentDefinitionResource extends fhir.BackboneElement 
         readonly DeviceDefinition: "DeviceDefinition";
         readonly DeviceMetric: "DeviceMetric";
         readonly DeviceRequest: "DeviceRequest";
-        readonly DeviceUseStatement: "DeviceUseStatement"; /**
-         * Extended properties for primitive element: CompartmentDefinition.purpose
-         */
+        readonly DeviceUseStatement: "DeviceUseStatement";
         readonly DiagnosticReport: "DiagnosticReport";
         readonly DocumentManifest: "DocumentManifest";
         readonly DocumentReference: "DocumentReference";
@@ -212,7 +210,7 @@ export declare class CompartmentDefinitionResource extends fhir.BackboneElement 
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.FtsIssue[];
+    doModelValidation(expression?: string): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the CompartmentDefinition type.
@@ -421,6 +419,6 @@ export declare class CompartmentDefinition extends fhir.DomainResource {
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.FtsIssue[];
+    doModelValidation(expression?: string): fhir.FtsIssue[];
 }
 //# sourceMappingURL=CompartmentDefinition.d.ts.map

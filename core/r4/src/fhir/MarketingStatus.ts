@@ -84,22 +84,23 @@ export class MarketingStatus extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'MarketingStatus' }
     if (!this['country']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property country:fhir.CodeableConcept fhir: MarketingStatus.country:CodeableConcept' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property country fhir: MarketingStatus.country:CodeableConcept', expression: [expression] });
     }
-    if (this["country"]) { issues.push(...this.country.doModelValidation()); }
-    if (this["jurisdiction"]) { issues.push(...this.jurisdiction.doModelValidation()); }
+    if (this["country"]) { issues.push(...this.country.doModelValidation(expression+'.country')); }
+    if (this["jurisdiction"]) { issues.push(...this.jurisdiction.doModelValidation(expression+'.jurisdiction')); }
     if (!this['status']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status:fhir.CodeableConcept fhir: MarketingStatus.status:CodeableConcept' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status fhir: MarketingStatus.status:CodeableConcept', expression: [expression] });
     }
-    if (this["status"]) { issues.push(...this.status.doModelValidation()); }
+    if (this["status"]) { issues.push(...this.status.doModelValidation(expression+'.status')); }
     if (!this['dateRange']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property dateRange:fhir.Period fhir: MarketingStatus.dateRange:Period' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property dateRange fhir: MarketingStatus.dateRange:Period', expression: [expression] });
     }
-    if (this["dateRange"]) { issues.push(...this.dateRange.doModelValidation()); }
-    if (this["restoreDate"]) { issues.push(...this.restoreDate.doModelValidation()); }
+    if (this["dateRange"]) { issues.push(...this.dateRange.doModelValidation(expression+'.dateRange')); }
+    if (this["restoreDate"]) { issues.push(...this.restoreDate.doModelValidation(expression+'.restoreDate')); }
     return issues;
   }
 }

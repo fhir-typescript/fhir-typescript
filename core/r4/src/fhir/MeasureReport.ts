@@ -85,11 +85,12 @@ export class MeasureReportGroupPopulation extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
-    if (this["code"]) { issues.push(...this.code.doModelValidation()); }
-    if (this["count"]) { issues.push(...this.count.doModelValidation()); }
-    if (this["subjectResults"]) { issues.push(...this.subjectResults.doModelValidation()); }
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'MeasureReport.group.population' }
+    if (this["code"]) { issues.push(...this.code.doModelValidation(expression+'.code')); }
+    if (this["count"]) { issues.push(...this.count.doModelValidation(expression+'.count')); }
+    if (this["subjectResults"]) { issues.push(...this.subjectResults.doModelValidation(expression+'.subjectResults')); }
     return issues;
   }
 }
@@ -136,16 +137,17 @@ export class MeasureReportGroupStratifierStratumComponent extends fhir.BackboneE
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'MeasureReport.group.stratifier.stratum.component' }
     if (!this['code']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property code:fhir.CodeableConcept fhir: MeasureReport.group.stratifier.stratum.component.code:CodeableConcept' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property code fhir: MeasureReport.group.stratifier.stratum.component.code:CodeableConcept', expression: [expression] });
     }
-    if (this["code"]) { issues.push(...this.code.doModelValidation()); }
+    if (this["code"]) { issues.push(...this.code.doModelValidation(expression+'.code')); }
     if (!this['value']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property value:fhir.CodeableConcept fhir: MeasureReport.group.stratifier.stratum.component.value:CodeableConcept' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property value fhir: MeasureReport.group.stratifier.stratum.component.value:CodeableConcept', expression: [expression] });
     }
-    if (this["value"]) { issues.push(...this.value.doModelValidation()); }
+    if (this["value"]) { issues.push(...this.value.doModelValidation(expression+'.value')); }
     return issues;
   }
 }
@@ -213,11 +215,12 @@ export class MeasureReportGroupStratifierStratumPopulation extends fhir.Backbone
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
-    if (this["code"]) { issues.push(...this.code.doModelValidation()); }
-    if (this["count"]) { issues.push(...this.count.doModelValidation()); }
-    if (this["subjectResults"]) { issues.push(...this.subjectResults.doModelValidation()); }
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'MeasureReport.group.stratifier.stratum.population' }
+    if (this["code"]) { issues.push(...this.code.doModelValidation(expression+'.code')); }
+    if (this["count"]) { issues.push(...this.count.doModelValidation(expression+'.count')); }
+    if (this["subjectResults"]) { issues.push(...this.subjectResults.doModelValidation(expression+'.subjectResults')); }
     return issues;
   }
 }
@@ -282,12 +285,13 @@ export class MeasureReportGroupStratifierStratum extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
-    if (this["value"]) { issues.push(...this.value.doModelValidation()); }
-    if (this["component"]) { this.component.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["population"]) { this.population.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["measureScore"]) { issues.push(...this.measureScore.doModelValidation()); }
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'MeasureReport.group.stratifier.stratum' }
+    if (this["value"]) { issues.push(...this.value.doModelValidation(expression+'.value')); }
+    if (this["component"]) { this.component.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.component[${i}]`)); }) }
+    if (this["population"]) { this.population.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.population[${i}]`)); }) }
+    if (this["measureScore"]) { issues.push(...this.measureScore.doModelValidation(expression+'.measureScore')); }
     return issues;
   }
 }
@@ -334,10 +338,11 @@ export class MeasureReportGroupStratifier extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
-    if (this["code"]) { this.code.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["stratum"]) { this.stratum.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'MeasureReport.group.stratifier' }
+    if (this["code"]) { this.code.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.code[${i}]`)); }) }
+    if (this["stratum"]) { this.stratum.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.stratum[${i}]`)); }) }
     return issues;
   }
 }
@@ -402,12 +407,13 @@ export class MeasureReportGroup extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
-    if (this["code"]) { issues.push(...this.code.doModelValidation()); }
-    if (this["population"]) { this.population.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["measureScore"]) { issues.push(...this.measureScore.doModelValidation()); }
-    if (this["stratifier"]) { this.stratifier.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'MeasureReport.group' }
+    if (this["code"]) { issues.push(...this.code.doModelValidation(expression+'.code')); }
+    if (this["population"]) { this.population.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.population[${i}]`)); }) }
+    if (this["measureScore"]) { issues.push(...this.measureScore.doModelValidation(expression+'.measureScore')); }
+    if (this["stratifier"]) { this.stratifier.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.stratifier[${i}]`)); }) }
     return issues;
   }
 }
@@ -599,43 +605,41 @@ export class MeasureReport extends fhir.DomainResource {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'MeasureReport' }
     if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType:"MeasureReport" fhir: MeasureReport.resourceType:"MeasureReport"' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType fhir: MeasureReport.resourceType:"MeasureReport"', expression: [expression] });
     }
-    if (this["identifier"]) { this.identifier.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["identifier"]) { this.identifier.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.identifier[${i}]`)); }) }
     if (!this['status']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status:fhir.FhirCode<MeasureReportStatusCodeType> fhir: MeasureReport.status:code' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status fhir: MeasureReport.status:code', expression: [expression] });
     }
-    if (this['status'] && (!Object.values(MeasureReportStatusCodes).includes(this.status as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property status:fhir.FhirCode<MeasureReportStatusCodeType> fhir: MeasureReport.status:code Required binding to: MeasureReportStatus' });
+    if (this['status'] && (!Object.values(MeasureReportStatusCodes).includes(this.status.value as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property status fhir: MeasureReport.status:code Required binding to: MeasureReportStatus', expression: [expression] });
     }
-    if (this["status"]) { issues.push(...this.status.doModelValidation()); }
+    if (this["status"]) { issues.push(...this.status.doModelValidation(expression+'.status')); }
     if (!this['type']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property type:fhir.FhirCode<MeasureReportTypeCodeType> fhir: MeasureReport.type:code' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property type fhir: MeasureReport.type:code', expression: [expression] });
     }
-    if (this['type'] && (!Object.values(MeasureReportTypeCodes).includes(this.type as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property type:fhir.FhirCode<MeasureReportTypeCodeType> fhir: MeasureReport.type:code Required binding to: MeasureReportType' });
+    if (this['type'] && (!Object.values(MeasureReportTypeCodes).includes(this.type.value as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property type fhir: MeasureReport.type:code Required binding to: MeasureReportType', expression: [expression] });
     }
-    if (this["type"]) { issues.push(...this.type.doModelValidation()); }
+    if (this["type"]) { issues.push(...this.type.doModelValidation(expression+'.type')); }
     if (!this['measure']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property measure:fhir.FhirCanonical fhir: MeasureReport.measure:canonical' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property measure fhir: MeasureReport.measure:canonical', expression: [expression] });
     }
-    if (this["measure"]) { issues.push(...this.measure.doModelValidation()); }
-    if (this["subject"]) { issues.push(...this.subject.doModelValidation()); }
-    if (this["date"]) { issues.push(...this.date.doModelValidation()); }
-    if (this["reporter"]) { issues.push(...this.reporter.doModelValidation()); }
+    if (this["measure"]) { issues.push(...this.measure.doModelValidation(expression+'.measure')); }
+    if (this["subject"]) { issues.push(...this.subject.doModelValidation(expression+'.subject')); }
+    if (this["date"]) { issues.push(...this.date.doModelValidation(expression+'.date')); }
+    if (this["reporter"]) { issues.push(...this.reporter.doModelValidation(expression+'.reporter')); }
     if (!this['period']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property period:fhir.Period fhir: MeasureReport.period:Period' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property period fhir: MeasureReport.period:Period', expression: [expression] });
     }
-    if (this["period"]) { issues.push(...this.period.doModelValidation()); }
-    if (this['improvementNotation'] && (!Object.values(MeasureImprovementNotationCodes).includes(this.improvementNotation as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property improvementNotation?:fhir.CodeableConcept fhir: MeasureReport.improvementNotation:CodeableConcept Required binding to: MeasureImprovementNotation' });
-    }
-    if (this["improvementNotation"]) { issues.push(...this.improvementNotation.doModelValidation()); }
-    if (this["group"]) { this.group.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["evaluatedResource"]) { this.evaluatedResource.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["period"]) { issues.push(...this.period.doModelValidation(expression+'.period')); }
+    if (this["improvementNotation"]) { issues.push(...this.improvementNotation.doModelValidation(expression+'.improvementNotation')); }
+    if (this["group"]) { this.group.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.group[${i}]`)); }) }
+    if (this["evaluatedResource"]) { this.evaluatedResource.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.evaluatedResource[${i}]`)); }) }
     return issues;
   }
 }

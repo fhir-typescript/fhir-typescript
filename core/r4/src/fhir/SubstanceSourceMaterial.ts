@@ -54,10 +54,11 @@ export class SubstanceSourceMaterialFractionDescription extends fhir.BackboneEle
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
-    if (this["fraction"]) { issues.push(...this.fraction.doModelValidation()); }
-    if (this["materialType"]) { issues.push(...this.materialType.doModelValidation()); }
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'SubstanceSourceMaterial.fractionDescription' }
+    if (this["fraction"]) { issues.push(...this.fraction.doModelValidation(expression+'.fraction')); }
+    if (this["materialType"]) { issues.push(...this.materialType.doModelValidation(expression+'.materialType')); }
     return issues;
   }
 }
@@ -110,10 +111,11 @@ export class SubstanceSourceMaterialOrganismAuthor extends fhir.BackboneElement 
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
-    if (this["authorType"]) { issues.push(...this.authorType.doModelValidation()); }
-    if (this["authorDescription"]) { issues.push(...this.authorDescription.doModelValidation()); }
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'SubstanceSourceMaterial.organism.author' }
+    if (this["authorType"]) { issues.push(...this.authorType.doModelValidation(expression+'.authorType')); }
+    if (this["authorDescription"]) { issues.push(...this.authorDescription.doModelValidation(expression+'.authorDescription')); }
     return issues;
   }
 }
@@ -217,13 +219,14 @@ export class SubstanceSourceMaterialOrganismHybrid extends fhir.BackboneElement 
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
-    if (this["maternalOrganismId"]) { issues.push(...this.maternalOrganismId.doModelValidation()); }
-    if (this["maternalOrganismName"]) { issues.push(...this.maternalOrganismName.doModelValidation()); }
-    if (this["paternalOrganismId"]) { issues.push(...this.paternalOrganismId.doModelValidation()); }
-    if (this["paternalOrganismName"]) { issues.push(...this.paternalOrganismName.doModelValidation()); }
-    if (this["hybridType"]) { issues.push(...this.hybridType.doModelValidation()); }
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'SubstanceSourceMaterial.organism.hybrid' }
+    if (this["maternalOrganismId"]) { issues.push(...this.maternalOrganismId.doModelValidation(expression+'.maternalOrganismId')); }
+    if (this["maternalOrganismName"]) { issues.push(...this.maternalOrganismName.doModelValidation(expression+'.maternalOrganismName')); }
+    if (this["paternalOrganismId"]) { issues.push(...this.paternalOrganismId.doModelValidation(expression+'.paternalOrganismId')); }
+    if (this["paternalOrganismName"]) { issues.push(...this.paternalOrganismName.doModelValidation(expression+'.paternalOrganismName')); }
+    if (this["hybridType"]) { issues.push(...this.hybridType.doModelValidation(expression+'.hybridType')); }
     return issues;
   }
 }
@@ -286,12 +289,13 @@ export class SubstanceSourceMaterialOrganismOrganismGeneral extends fhir.Backbon
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
-    if (this["kingdom"]) { issues.push(...this.kingdom.doModelValidation()); }
-    if (this["phylum"]) { issues.push(...this.phylum.doModelValidation()); }
-    if (this["class"]) { issues.push(...this.class.doModelValidation()); }
-    if (this["order"]) { issues.push(...this.order.doModelValidation()); }
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'SubstanceSourceMaterial.organism.organismGeneral' }
+    if (this["kingdom"]) { issues.push(...this.kingdom.doModelValidation(expression+'.kingdom')); }
+    if (this["phylum"]) { issues.push(...this.phylum.doModelValidation(expression+'.phylum')); }
+    if (this["class"]) { issues.push(...this.class.doModelValidation(expression+'.class')); }
+    if (this["order"]) { issues.push(...this.order.doModelValidation(expression+'.order')); }
     return issues;
   }
 }
@@ -399,16 +403,17 @@ export class SubstanceSourceMaterialOrganism extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
-    if (this["family"]) { issues.push(...this.family.doModelValidation()); }
-    if (this["genus"]) { issues.push(...this.genus.doModelValidation()); }
-    if (this["species"]) { issues.push(...this.species.doModelValidation()); }
-    if (this["intraspecificType"]) { issues.push(...this.intraspecificType.doModelValidation()); }
-    if (this["intraspecificDescription"]) { issues.push(...this.intraspecificDescription.doModelValidation()); }
-    if (this["author"]) { this.author.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["hybrid"]) { issues.push(...this.hybrid.doModelValidation()); }
-    if (this["organismGeneral"]) { issues.push(...this.organismGeneral.doModelValidation()); }
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'SubstanceSourceMaterial.organism' }
+    if (this["family"]) { issues.push(...this.family.doModelValidation(expression+'.family')); }
+    if (this["genus"]) { issues.push(...this.genus.doModelValidation(expression+'.genus')); }
+    if (this["species"]) { issues.push(...this.species.doModelValidation(expression+'.species')); }
+    if (this["intraspecificType"]) { issues.push(...this.intraspecificType.doModelValidation(expression+'.intraspecificType')); }
+    if (this["intraspecificDescription"]) { issues.push(...this.intraspecificDescription.doModelValidation(expression+'.intraspecificDescription')); }
+    if (this["author"]) { this.author.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.author[${i}]`)); }) }
+    if (this["hybrid"]) { issues.push(...this.hybrid.doModelValidation(expression+'.hybrid')); }
+    if (this["organismGeneral"]) { issues.push(...this.organismGeneral.doModelValidation(expression+'.organismGeneral')); }
     return issues;
   }
 }
@@ -453,10 +458,11 @@ export class SubstanceSourceMaterialPartDescription extends fhir.BackboneElement
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
-    if (this["part"]) { issues.push(...this.part.doModelValidation()); }
-    if (this["partLocation"]) { issues.push(...this.partLocation.doModelValidation()); }
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'SubstanceSourceMaterial.partDescription' }
+    if (this["part"]) { issues.push(...this.part.doModelValidation(expression+'.part')); }
+    if (this["partLocation"]) { issues.push(...this.partLocation.doModelValidation(expression+'.partLocation')); }
     return issues;
   }
 }
@@ -643,24 +649,25 @@ export class SubstanceSourceMaterial extends fhir.DomainResource {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'SubstanceSourceMaterial' }
     if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType:"SubstanceSourceMaterial" fhir: SubstanceSourceMaterial.resourceType:"SubstanceSourceMaterial"' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType fhir: SubstanceSourceMaterial.resourceType:"SubstanceSourceMaterial"', expression: [expression] });
     }
-    if (this["sourceMaterialClass"]) { issues.push(...this.sourceMaterialClass.doModelValidation()); }
-    if (this["sourceMaterialType"]) { issues.push(...this.sourceMaterialType.doModelValidation()); }
-    if (this["sourceMaterialState"]) { issues.push(...this.sourceMaterialState.doModelValidation()); }
-    if (this["organismId"]) { issues.push(...this.organismId.doModelValidation()); }
-    if (this["organismName"]) { issues.push(...this.organismName.doModelValidation()); }
-    if (this["parentSubstanceId"]) { this.parentSubstanceId.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["parentSubstanceName"]) { this.parentSubstanceName.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["countryOfOrigin"]) { this.countryOfOrigin.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["geographicalLocation"]) { this.geographicalLocation.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["developmentStage"]) { issues.push(...this.developmentStage.doModelValidation()); }
-    if (this["fractionDescription"]) { this.fractionDescription.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["organism"]) { issues.push(...this.organism.doModelValidation()); }
-    if (this["partDescription"]) { this.partDescription.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["sourceMaterialClass"]) { issues.push(...this.sourceMaterialClass.doModelValidation(expression+'.sourceMaterialClass')); }
+    if (this["sourceMaterialType"]) { issues.push(...this.sourceMaterialType.doModelValidation(expression+'.sourceMaterialType')); }
+    if (this["sourceMaterialState"]) { issues.push(...this.sourceMaterialState.doModelValidation(expression+'.sourceMaterialState')); }
+    if (this["organismId"]) { issues.push(...this.organismId.doModelValidation(expression+'.organismId')); }
+    if (this["organismName"]) { issues.push(...this.organismName.doModelValidation(expression+'.organismName')); }
+    if (this["parentSubstanceId"]) { this.parentSubstanceId.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.parentSubstanceId[${i}]`)); }) }
+    if (this["parentSubstanceName"]) { this.parentSubstanceName.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.parentSubstanceName[${i}]`)); }) }
+    if (this["countryOfOrigin"]) { this.countryOfOrigin.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.countryOfOrigin[${i}]`)); }) }
+    if (this["geographicalLocation"]) { this.geographicalLocation.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.geographicalLocation[${i}]`)); }) }
+    if (this["developmentStage"]) { issues.push(...this.developmentStage.doModelValidation(expression+'.developmentStage')); }
+    if (this["fractionDescription"]) { this.fractionDescription.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.fractionDescription[${i}]`)); }) }
+    if (this["organism"]) { issues.push(...this.organism.doModelValidation(expression+'.organism')); }
+    if (this["partDescription"]) { this.partDescription.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.partDescription[${i}]`)); }) }
     return issues;
   }
 }

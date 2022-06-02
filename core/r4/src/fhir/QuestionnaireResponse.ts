@@ -115,9 +115,10 @@ export class QuestionnaireResponseItemAnswer extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
-    if (this["item"]) { this.item.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'QuestionnaireResponse.item.answer' }
+    if (this["item"]) { this.item.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.item[${i}]`)); }) }
     return issues;
   }
 }
@@ -218,16 +219,17 @@ export class QuestionnaireResponseItem extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'QuestionnaireResponse.item' }
     if (!this['linkId']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property linkId:fhir.FhirString fhir: QuestionnaireResponse.item.linkId:string' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property linkId fhir: QuestionnaireResponse.item.linkId:string', expression: [expression] });
     }
-    if (this["linkId"]) { issues.push(...this.linkId.doModelValidation()); }
-    if (this["definition"]) { issues.push(...this.definition.doModelValidation()); }
-    if (this["text"]) { issues.push(...this.text.doModelValidation()); }
-    if (this["answer"]) { this.answer.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["item"]) { this.item.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["linkId"]) { issues.push(...this.linkId.doModelValidation(expression+'.linkId')); }
+    if (this["definition"]) { issues.push(...this.definition.doModelValidation(expression+'.definition')); }
+    if (this["text"]) { issues.push(...this.text.doModelValidation(expression+'.text')); }
+    if (this["answer"]) { this.answer.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.answer[${i}]`)); }) }
+    if (this["item"]) { this.item.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.item[${i}]`)); }) }
     return issues;
   }
 }
@@ -398,28 +400,29 @@ export class QuestionnaireResponse extends fhir.DomainResource {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'QuestionnaireResponse' }
     if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType:"QuestionnaireResponse" fhir: QuestionnaireResponse.resourceType:"QuestionnaireResponse"' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType fhir: QuestionnaireResponse.resourceType:"QuestionnaireResponse"', expression: [expression] });
     }
-    if (this["identifier"]) { issues.push(...this.identifier.doModelValidation()); }
-    if (this["basedOn"]) { this.basedOn.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["partOf"]) { this.partOf.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["questionnaire"]) { issues.push(...this.questionnaire.doModelValidation()); }
+    if (this["identifier"]) { issues.push(...this.identifier.doModelValidation(expression+'.identifier')); }
+    if (this["basedOn"]) { this.basedOn.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.basedOn[${i}]`)); }) }
+    if (this["partOf"]) { this.partOf.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.partOf[${i}]`)); }) }
+    if (this["questionnaire"]) { issues.push(...this.questionnaire.doModelValidation(expression+'.questionnaire')); }
     if (!this['status']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status:fhir.FhirCode<QuestionnaireAnswersStatusCodeType> fhir: QuestionnaireResponse.status:code' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status fhir: QuestionnaireResponse.status:code', expression: [expression] });
     }
-    if (this['status'] && (!Object.values(QuestionnaireAnswersStatusCodes).includes(this.status as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property status:fhir.FhirCode<QuestionnaireAnswersStatusCodeType> fhir: QuestionnaireResponse.status:code Required binding to: QuestionnaireAnswersStatus' });
+    if (this['status'] && (!Object.values(QuestionnaireAnswersStatusCodes).includes(this.status.value as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property status fhir: QuestionnaireResponse.status:code Required binding to: QuestionnaireAnswersStatus', expression: [expression] });
     }
-    if (this["status"]) { issues.push(...this.status.doModelValidation()); }
-    if (this["subject"]) { issues.push(...this.subject.doModelValidation()); }
-    if (this["encounter"]) { issues.push(...this.encounter.doModelValidation()); }
-    if (this["authored"]) { issues.push(...this.authored.doModelValidation()); }
-    if (this["author"]) { issues.push(...this.author.doModelValidation()); }
-    if (this["source"]) { issues.push(...this.source.doModelValidation()); }
-    if (this["item"]) { this.item.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["status"]) { issues.push(...this.status.doModelValidation(expression+'.status')); }
+    if (this["subject"]) { issues.push(...this.subject.doModelValidation(expression+'.subject')); }
+    if (this["encounter"]) { issues.push(...this.encounter.doModelValidation(expression+'.encounter')); }
+    if (this["authored"]) { issues.push(...this.authored.doModelValidation(expression+'.authored')); }
+    if (this["author"]) { issues.push(...this.author.doModelValidation(expression+'.author')); }
+    if (this["source"]) { issues.push(...this.source.doModelValidation(expression+'.source')); }
+    if (this["item"]) { this.item.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.item[${i}]`)); }) }
     return issues;
   }
 }

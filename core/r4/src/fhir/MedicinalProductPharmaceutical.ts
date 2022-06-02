@@ -47,13 +47,14 @@ export class MedicinalProductPharmaceuticalCharacteristics extends fhir.Backbone
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'MedicinalProductPharmaceutical.characteristics' }
     if (!this['code']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property code:fhir.CodeableConcept fhir: MedicinalProductPharmaceutical.characteristics.code:CodeableConcept' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property code fhir: MedicinalProductPharmaceutical.characteristics.code:CodeableConcept', expression: [expression] });
     }
-    if (this["code"]) { issues.push(...this.code.doModelValidation()); }
-    if (this["status"]) { issues.push(...this.status.doModelValidation()); }
+    if (this["code"]) { issues.push(...this.code.doModelValidation(expression+'.code')); }
+    if (this["status"]) { issues.push(...this.status.doModelValidation(expression+'.status')); }
     return issues;
   }
 }
@@ -117,17 +118,18 @@ export class MedicinalProductPharmaceuticalRouteOfAdministrationTargetSpeciesWit
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'MedicinalProductPharmaceutical.routeOfAdministration.targetSpecies.withdrawalPeriod' }
     if (!this['tissue']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property tissue:fhir.CodeableConcept fhir: MedicinalProductPharmaceutical.routeOfAdministration.targetSpecies.withdrawalPeriod.tissue:CodeableConcept' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property tissue fhir: MedicinalProductPharmaceutical.routeOfAdministration.targetSpecies.withdrawalPeriod.tissue:CodeableConcept', expression: [expression] });
     }
-    if (this["tissue"]) { issues.push(...this.tissue.doModelValidation()); }
+    if (this["tissue"]) { issues.push(...this.tissue.doModelValidation(expression+'.tissue')); }
     if (!this['value']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property value:fhir.Quantity fhir: MedicinalProductPharmaceutical.routeOfAdministration.targetSpecies.withdrawalPeriod.value:Quantity' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property value fhir: MedicinalProductPharmaceutical.routeOfAdministration.targetSpecies.withdrawalPeriod.value:Quantity', expression: [expression] });
     }
-    if (this["value"]) { issues.push(...this.value.doModelValidation()); }
-    if (this["supportingInformation"]) { issues.push(...this.supportingInformation.doModelValidation()); }
+    if (this["value"]) { issues.push(...this.value.doModelValidation(expression+'.value')); }
+    if (this["supportingInformation"]) { issues.push(...this.supportingInformation.doModelValidation(expression+'.supportingInformation')); }
     return issues;
   }
 }
@@ -174,13 +176,14 @@ export class MedicinalProductPharmaceuticalRouteOfAdministrationTargetSpecies ex
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'MedicinalProductPharmaceutical.routeOfAdministration.targetSpecies' }
     if (!this['code']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property code:fhir.CodeableConcept fhir: MedicinalProductPharmaceutical.routeOfAdministration.targetSpecies.code:CodeableConcept' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property code fhir: MedicinalProductPharmaceutical.routeOfAdministration.targetSpecies.code:CodeableConcept', expression: [expression] });
     }
-    if (this["code"]) { issues.push(...this.code.doModelValidation()); }
-    if (this["withdrawalPeriod"]) { this.withdrawalPeriod.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["code"]) { issues.push(...this.code.doModelValidation(expression+'.code')); }
+    if (this["withdrawalPeriod"]) { this.withdrawalPeriod.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.withdrawalPeriod[${i}]`)); }) }
     return issues;
   }
 }
@@ -272,18 +275,19 @@ export class MedicinalProductPharmaceuticalRouteOfAdministration extends fhir.Ba
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'MedicinalProductPharmaceutical.routeOfAdministration' }
     if (!this['code']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property code:fhir.CodeableConcept fhir: MedicinalProductPharmaceutical.routeOfAdministration.code:CodeableConcept' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property code fhir: MedicinalProductPharmaceutical.routeOfAdministration.code:CodeableConcept', expression: [expression] });
     }
-    if (this["code"]) { issues.push(...this.code.doModelValidation()); }
-    if (this["firstDose"]) { issues.push(...this.firstDose.doModelValidation()); }
-    if (this["maxSingleDose"]) { issues.push(...this.maxSingleDose.doModelValidation()); }
-    if (this["maxDosePerDay"]) { issues.push(...this.maxDosePerDay.doModelValidation()); }
-    if (this["maxDosePerTreatmentPeriod"]) { issues.push(...this.maxDosePerTreatmentPeriod.doModelValidation()); }
-    if (this["maxTreatmentPeriod"]) { issues.push(...this.maxTreatmentPeriod.doModelValidation()); }
-    if (this["targetSpecies"]) { this.targetSpecies.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["code"]) { issues.push(...this.code.doModelValidation(expression+'.code')); }
+    if (this["firstDose"]) { issues.push(...this.firstDose.doModelValidation(expression+'.firstDose')); }
+    if (this["maxSingleDose"]) { issues.push(...this.maxSingleDose.doModelValidation(expression+'.maxSingleDose')); }
+    if (this["maxDosePerDay"]) { issues.push(...this.maxDosePerDay.doModelValidation(expression+'.maxDosePerDay')); }
+    if (this["maxDosePerTreatmentPeriod"]) { issues.push(...this.maxDosePerTreatmentPeriod.doModelValidation(expression+'.maxDosePerTreatmentPeriod')); }
+    if (this["maxTreatmentPeriod"]) { issues.push(...this.maxTreatmentPeriod.doModelValidation(expression+'.maxTreatmentPeriod')); }
+    if (this["targetSpecies"]) { this.targetSpecies.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.targetSpecies[${i}]`)); }) }
     return issues;
   }
 }
@@ -388,28 +392,29 @@ export class MedicinalProductPharmaceutical extends fhir.DomainResource {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'MedicinalProductPharmaceutical' }
     if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType:"MedicinalProductPharmaceutical" fhir: MedicinalProductPharmaceutical.resourceType:"MedicinalProductPharmaceutical"' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType fhir: MedicinalProductPharmaceutical.resourceType:"MedicinalProductPharmaceutical"', expression: [expression] });
     }
-    if (this["identifier"]) { this.identifier.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["identifier"]) { this.identifier.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.identifier[${i}]`)); }) }
     if (!this['administrableDoseForm']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property administrableDoseForm:fhir.CodeableConcept fhir: MedicinalProductPharmaceutical.administrableDoseForm:CodeableConcept' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property administrableDoseForm fhir: MedicinalProductPharmaceutical.administrableDoseForm:CodeableConcept', expression: [expression] });
     }
-    if (this["administrableDoseForm"]) { issues.push(...this.administrableDoseForm.doModelValidation()); }
-    if (this["unitOfPresentation"]) { issues.push(...this.unitOfPresentation.doModelValidation()); }
-    if (this["ingredient"]) { this.ingredient.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["device"]) { this.device.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["characteristics"]) { this.characteristics.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["administrableDoseForm"]) { issues.push(...this.administrableDoseForm.doModelValidation(expression+'.administrableDoseForm')); }
+    if (this["unitOfPresentation"]) { issues.push(...this.unitOfPresentation.doModelValidation(expression+'.unitOfPresentation')); }
+    if (this["ingredient"]) { this.ingredient.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.ingredient[${i}]`)); }) }
+    if (this["device"]) { this.device.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.device[${i}]`)); }) }
+    if (this["characteristics"]) { this.characteristics.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.characteristics[${i}]`)); }) }
     if (!this['routeOfAdministration']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property routeOfAdministration:fhir.MedicinalProductPharmaceuticalRouteOfAdministration[] fhir: MedicinalProductPharmaceutical.routeOfAdministration:routeOfAdministration' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property routeOfAdministration fhir: MedicinalProductPharmaceutical.routeOfAdministration:routeOfAdministration', expression: [expression] });
     } else if (!Array.isArray(this.routeOfAdministration)) {
-      issues.push({ severity: 'error', code: 'structure', diagnostics: 'Found scalar in array property routeOfAdministration:fhir.MedicinalProductPharmaceuticalRouteOfAdministration[] fhir: MedicinalProductPharmaceutical.routeOfAdministration:routeOfAdministration' });
+      issues.push({ severity: 'error', code: 'structure', diagnostics: 'Found scalar in array property routeOfAdministration fhir: MedicinalProductPharmaceutical.routeOfAdministration:routeOfAdministration', expression: [expression] });
     } else if (this.routeOfAdministration.length === 0) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property routeOfAdministration:fhir.MedicinalProductPharmaceuticalRouteOfAdministration[] fhir: MedicinalProductPharmaceutical.routeOfAdministration:routeOfAdministration' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property routeOfAdministration fhir: MedicinalProductPharmaceutical.routeOfAdministration:routeOfAdministration', expression: [expression] });
     }
-    if (this["routeOfAdministration"]) { this.routeOfAdministration.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["routeOfAdministration"]) { this.routeOfAdministration.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.routeOfAdministration[${i}]`)); }) }
     return issues;
   }
 }

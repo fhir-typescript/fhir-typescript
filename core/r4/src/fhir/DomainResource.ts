@@ -73,12 +73,13 @@ export class DomainResource extends fhir.Resource {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
-    if (this["text"]) { issues.push(...this.text.doModelValidation()); }
-    if (this["contained"]) { this.contained.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["extension"]) { this.extension.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["modifierExtension"]) { this.modifierExtension.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'DomainResource' }
+    if (this["text"]) { issues.push(...this.text.doModelValidation(expression+'.text')); }
+    if (this["contained"]) { this.contained.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.contained[${i}]`)); }) }
+    if (this["extension"]) { this.extension.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.extension[${i}]`)); }) }
+    if (this["modifierExtension"]) { this.modifierExtension.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.modifierExtension[${i}]`)); }) }
     return issues;
   }
   /**

@@ -174,16 +174,17 @@ export class Attachment extends fhir.FhirElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
-    if (this["contentType"]) { issues.push(...this.contentType.doModelValidation()); }
-    if (this["language"]) { issues.push(...this.language.doModelValidation()); }
-    if (this["data"]) { issues.push(...this.data.doModelValidation()); }
-    if (this["url"]) { issues.push(...this.url.doModelValidation()); }
-    if (this["size"]) { issues.push(...this.size.doModelValidation()); }
-    if (this["hash"]) { issues.push(...this.hash.doModelValidation()); }
-    if (this["title"]) { issues.push(...this.title.doModelValidation()); }
-    if (this["creation"]) { issues.push(...this.creation.doModelValidation()); }
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'Attachment' }
+    if (this["contentType"]) { issues.push(...this.contentType.doModelValidation(expression+'.contentType')); }
+    if (this["language"]) { issues.push(...this.language.doModelValidation(expression+'.language')); }
+    if (this["data"]) { issues.push(...this.data.doModelValidation(expression+'.data')); }
+    if (this["url"]) { issues.push(...this.url.doModelValidation(expression+'.url')); }
+    if (this["size"]) { issues.push(...this.size.doModelValidation(expression+'.size')); }
+    if (this["hash"]) { issues.push(...this.hash.doModelValidation(expression+'.hash')); }
+    if (this["title"]) { issues.push(...this.title.doModelValidation(expression+'.title')); }
+    if (this["creation"]) { issues.push(...this.creation.doModelValidation(expression+'.creation')); }
     return issues;
   }
 }

@@ -62,10 +62,11 @@ export class Period extends fhir.FhirElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
-    if (this["start"]) { issues.push(...this.start.doModelValidation()); }
-    if (this["end"]) { issues.push(...this.end.doModelValidation()); }
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'Period' }
+    if (this["start"]) { issues.push(...this.start.doModelValidation(expression+'.start')); }
+    if (this["end"]) { issues.push(...this.end.doModelValidation(expression+'.end')); }
     return issues;
   }
 }

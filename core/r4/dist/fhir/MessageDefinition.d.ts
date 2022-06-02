@@ -129,7 +129,9 @@ export declare class MessageDefinitionFocus extends fhir.BackboneElement {
         readonly Flag: "Flag";
         readonly Goal: "Goal";
         readonly GraphDefinition: "GraphDefinition";
-        readonly Group: "Group";
+        readonly Group: "Group"; /**
+         * Extended properties for primitive element: MessageDefinition.publisher
+         */
         readonly GuidanceResponse: "GuidanceResponse";
         readonly HealthcareService: "HealthcareService";
         readonly ImagingStudy: "ImagingStudy";
@@ -164,7 +166,7 @@ export declare class MessageDefinitionFocus extends fhir.BackboneElement {
         readonly MedicinalProductUndesirableEffect: "MedicinalProductUndesirableEffect";
         readonly MessageDefinition: "MessageDefinition";
         readonly MessageHeader: "MessageHeader"; /**
-         * This element does not describe the usage of the message definition. Instead, it provides traceability of ''why'' the resource is either needed or ''why'' it is defined as it is.  This may be used to point to source materials or specifications that drove the structure of this message definition.
+         * When multiple useContexts are specified, there is no expectation that all or any of the contexts apply.
          */
         readonly MolecularSequence: "MolecularSequence";
         readonly NamingSystem: "NamingSystem";
@@ -209,9 +211,7 @@ export declare class MessageDefinitionFocus extends fhir.BackboneElement {
         readonly SubstanceNucleicAcid: "SubstanceNucleicAcid";
         readonly SubstancePolymer: "SubstancePolymer";
         readonly SubstanceProtein: "SubstanceProtein";
-        readonly SubstanceReferenceInformation: "SubstanceReferenceInformation"; /**
-         * Required-bound Value Set for category (MessageDefinition.category)
-         */
+        readonly SubstanceReferenceInformation: "SubstanceReferenceInformation";
         readonly SubstanceSourceMaterial: "SubstanceSourceMaterial";
         readonly SubstanceSpecification: "SubstanceSpecification";
         readonly SupplyDelivery: "SupplyDelivery";
@@ -227,7 +227,7 @@ export declare class MessageDefinitionFocus extends fhir.BackboneElement {
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.FtsIssue[];
+    doModelValidation(expression?: string): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the MessageDefinitionAllowedResponse type.
@@ -273,7 +273,7 @@ export declare class MessageDefinitionAllowedResponse extends fhir.BackboneEleme
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.FtsIssue[];
+    doModelValidation(expression?: string): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the MessageDefinition type.
@@ -605,6 +605,6 @@ export declare class MessageDefinition extends fhir.DomainResource {
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.FtsIssue[];
+    doModelValidation(expression?: string): fhir.FtsIssue[];
 }
 //# sourceMappingURL=MessageDefinition.d.ts.map

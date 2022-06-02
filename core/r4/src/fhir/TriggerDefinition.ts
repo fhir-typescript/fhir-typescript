@@ -125,18 +125,19 @@ export class TriggerDefinition extends fhir.FhirElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'TriggerDefinition' }
     if (!this['type']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property type:fhir.FhirCode<TriggerTypeCodeType> fhir: TriggerDefinition.type:code' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property type fhir: TriggerDefinition.type:code', expression: [expression] });
     }
-    if (this['type'] && (!Object.values(TriggerTypeCodes).includes(this.type as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property type:fhir.FhirCode<TriggerTypeCodeType> fhir: TriggerDefinition.type:code Required binding to: TriggerType' });
+    if (this['type'] && (!Object.values(TriggerTypeCodes).includes(this.type.value as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property type fhir: TriggerDefinition.type:code Required binding to: TriggerType', expression: [expression] });
     }
-    if (this["type"]) { issues.push(...this.type.doModelValidation()); }
-    if (this["name"]) { issues.push(...this.name.doModelValidation()); }
-    if (this["data"]) { this.data.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["condition"]) { issues.push(...this.condition.doModelValidation()); }
+    if (this["type"]) { issues.push(...this.type.doModelValidation(expression+'.type')); }
+    if (this["name"]) { issues.push(...this.name.doModelValidation(expression+'.name')); }
+    if (this["data"]) { this.data.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.data[${i}]`)); }) }
+    if (this["condition"]) { issues.push(...this.condition.doModelValidation(expression+'.condition')); }
     return issues;
   }
 }

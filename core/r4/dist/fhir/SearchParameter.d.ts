@@ -48,7 +48,7 @@ export declare class SearchParameterComponent extends fhir.BackboneElement {
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.FtsIssue[];
+    doModelValidation(expression?: string): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the SearchParameter type.
@@ -453,22 +453,14 @@ export declare class SearchParameter extends fhir.DomainResource {
         readonly Immunization: "Immunization";
         readonly ImmunizationEvaluation: "ImmunizationEvaluation";
         readonly ImmunizationRecommendation: "ImmunizationRecommendation";
-        /**
-         * The intent of this is that a server can designate that it provides support for a search parameter defined in the specification itself (e.g.  [`value-quantity`](http://hl7.org/fhir/SearchParameter/Observation-value-quantity), but detail how it is supported by the server.
-         */
         readonly ImplementationGuide: "ImplementationGuide";
-        readonly InsurancePlan: "InsurancePlan"; /**
-         * Allows filtering of search parameters that are appropriate for use versus not.
-         */
+        readonly InsurancePlan: "InsurancePlan";
         readonly Invoice: "Invoice";
         readonly Library: "Library";
         readonly Linkage: "Linkage";
         readonly List: "List";
         readonly Location: "Location";
         readonly Measure: "Measure";
-        /**
-         * May be a web site, an email address, a telephone number, etc.
-         */
         readonly MeasureReport: "MeasureReport";
         readonly Media: "Media";
         readonly Medication: "Medication";
@@ -638,22 +630,14 @@ export declare class SearchParameter extends fhir.DomainResource {
         readonly Immunization: "Immunization";
         readonly ImmunizationEvaluation: "ImmunizationEvaluation";
         readonly ImmunizationRecommendation: "ImmunizationRecommendation";
-        /**
-         * The intent of this is that a server can designate that it provides support for a search parameter defined in the specification itself (e.g.  [`value-quantity`](http://hl7.org/fhir/SearchParameter/Observation-value-quantity), but detail how it is supported by the server.
-         */
         readonly ImplementationGuide: "ImplementationGuide";
-        readonly InsurancePlan: "InsurancePlan"; /**
-         * Allows filtering of search parameters that are appropriate for use versus not.
-         */
+        readonly InsurancePlan: "InsurancePlan";
         readonly Invoice: "Invoice";
         readonly Library: "Library";
         readonly Linkage: "Linkage";
         readonly List: "List";
         readonly Location: "Location";
         readonly Measure: "Measure";
-        /**
-         * May be a web site, an email address, a telephone number, etc.
-         */
         readonly MeasureReport: "MeasureReport";
         readonly Media: "Media";
         readonly Medication: "Medication";
@@ -764,6 +748,6 @@ export declare class SearchParameter extends fhir.DomainResource {
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.FtsIssue[];
+    doModelValidation(expression?: string): fhir.FtsIssue[];
 }
 //# sourceMappingURL=SearchParameter.d.ts.map

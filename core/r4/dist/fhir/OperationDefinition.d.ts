@@ -57,7 +57,7 @@ export declare class OperationDefinitionParameterBinding extends fhir.BackboneEl
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.FtsIssue[];
+    doModelValidation(expression?: string): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the OperationDefinitionParameterReferencedFrom type.
@@ -103,7 +103,7 @@ export declare class OperationDefinitionParameterReferencedFrom extends fhir.Bac
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.FtsIssue[];
+    doModelValidation(expression?: string): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the OperationDefinitionParameter type.
@@ -295,8 +295,12 @@ export declare class OperationDefinitionParameter extends fhir.BackboneElement {
         readonly Composition: "Composition";
         readonly ConceptMap: "ConceptMap";
         readonly Condition: "Condition";
-        readonly Consent: "Consent";
-        readonly ContactDetail: "ContactDetail";
+        readonly Consent: "Consent"; /**
+         * Extended properties for primitive element: OperationDefinition.parameter.name
+         */
+        readonly ContactDetail: "ContactDetail"; /**
+         * If a parameter name is used for both an input and an output parameter, the parameter should be defined twice.
+         */
         readonly ContactPoint: "ContactPoint";
         readonly Contract: "Contract";
         readonly Contributor: "Contributor";
@@ -310,9 +314,7 @@ export declare class OperationDefinitionParameter extends fhir.BackboneElement {
         readonly Decimal: "decimal";
         readonly DetectedIssue: "DetectedIssue";
         readonly Device: "Device";
-        readonly DeviceDefinition: "DeviceDefinition"; /**
-         * The minimum number of times this parameter SHALL appear in the request or response.
-         */
+        readonly DeviceDefinition: "DeviceDefinition";
         readonly DeviceMetric: "DeviceMetric";
         readonly DeviceRequest: "DeviceRequest";
         readonly DeviceUseStatement: "DeviceUseStatement";
@@ -379,9 +381,6 @@ export declare class OperationDefinitionParameter extends fhir.BackboneElement {
         readonly MedicinalProductIngredient: "MedicinalProductIngredient";
         readonly MedicinalProductInteraction: "MedicinalProductInteraction";
         readonly MedicinalProductManufactured: "MedicinalProductManufactured";
-        /**
-         * This description can be used to capture details such as why the operation definition was built, comments about misuse, instructions for clinical use and interpretation, literature references, examples from the paper world, etc. It is not a rendering of the operation definition as conveyed in the 'text' field of the resource itself. This item SHOULD be populated unless the information is available from context (e.g. the language of the operation definition is presumed to be the predominant language in the place the operation definition was created).
-         */
         readonly MedicinalProductPackaged: "MedicinalProductPackaged";
         readonly MedicinalProductPharmaceutical: "MedicinalProductPharmaceutical";
         readonly MedicinalProductUndesirableEffect: "MedicinalProductUndesirableEffect";
@@ -444,9 +443,7 @@ export declare class OperationDefinitionParameter extends fhir.BackboneElement {
         readonly SpecimenDefinition: "SpecimenDefinition";
         readonly VALString: "string";
         readonly StructureDefinition: "StructureDefinition";
-        readonly StructureMap: "StructureMap"; /**
-         * The combinations are suggestions as to which sets of parameters to use together, but the combinations are not intended to be authoritative.
-         */
+        readonly StructureMap: "StructureMap";
         readonly Subscription: "Subscription";
         readonly Substance: "Substance";
         readonly SubstanceAmount: "SubstanceAmount";
@@ -493,7 +490,7 @@ export declare class OperationDefinitionParameter extends fhir.BackboneElement {
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.FtsIssue[];
+    doModelValidation(expression?: string): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the OperationDefinitionOverload type.
@@ -539,7 +536,7 @@ export declare class OperationDefinitionOverload extends fhir.BackboneElement {
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.FtsIssue[];
+    doModelValidation(expression?: string): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the OperationDefinition type.
@@ -911,9 +908,7 @@ export declare class OperationDefinition extends fhir.DomainResource {
         readonly Communication: "Communication";
         readonly CommunicationRequest: "CommunicationRequest";
         readonly CompartmentDefinition: "CompartmentDefinition";
-        readonly Composition: "Composition"; /**
-         * The id of the element in the referencing resource that is expected to resolve to this resource.
-         */
+        readonly Composition: "Composition";
         readonly ConceptMap: "ConceptMap";
         readonly Condition: "Condition";
         readonly Consent: "Consent";
@@ -925,9 +920,6 @@ export declare class OperationDefinition extends fhir.DomainResource {
         readonly Device: "Device";
         readonly DeviceDefinition: "DeviceDefinition";
         readonly DeviceMetric: "DeviceMetric";
-        /**
-         * Extended properties for primitive element: OperationDefinition.parameter.use
-         */
         readonly DeviceRequest: "DeviceRequest";
         readonly DeviceUseStatement: "DeviceUseStatement";
         readonly DiagnosticReport: "DiagnosticReport";
@@ -945,7 +937,9 @@ export declare class OperationDefinition extends fhir.DomainResource {
         readonly EvidenceVariable: "EvidenceVariable";
         readonly ExampleScenario: "ExampleScenario";
         readonly ExplanationOfBenefit: "ExplanationOfBenefit";
-        readonly FamilyMemberHistory: "FamilyMemberHistory";
+        readonly FamilyMemberHistory: "FamilyMemberHistory"; /**
+         * Often, these profiles are the base definitions from the spec (e.g. http://hl7.org/fhir/StructureDefinition/Patient).
+         */
         readonly Flag: "Flag";
         readonly Goal: "Goal";
         readonly GraphDefinition: "GraphDefinition";
@@ -967,15 +961,16 @@ export declare class OperationDefinition extends fhir.DomainResource {
         readonly MeasureReport: "MeasureReport";
         readonly Media: "Media";
         readonly Medication: "Medication";
+        /**
+         * Required-bound Value Set for searchType (OperationDefinition.parameter.searchType)
+         */
         readonly MedicationAdministration: "MedicationAdministration";
         readonly MedicationDispense: "MedicationDispense";
         readonly MedicationKnowledge: "MedicationKnowledge";
         readonly MedicationRequest: "MedicationRequest";
         readonly MedicationStatement: "MedicationStatement";
         readonly MedicinalProduct: "MedicinalProduct";
-        readonly MedicinalProductAuthorization: "MedicinalProductAuthorization"; /**
-         * Extended properties for primitive element: OperationDefinition.overload.comment
-         */
+        readonly MedicinalProductAuthorization: "MedicinalProductAuthorization";
         readonly MedicinalProductContraindication: "MedicinalProductContraindication";
         readonly MedicinalProductIndication: "MedicinalProductIndication";
         readonly MedicinalProductIngredient: "MedicinalProductIngredient";
@@ -997,9 +992,7 @@ export declare class OperationDefinition extends fhir.DomainResource {
         readonly OrganizationAffiliation: "OrganizationAffiliation";
         readonly Parameters: "Parameters";
         readonly Patient: "Patient";
-        readonly PaymentNotice: "PaymentNotice"; /**
-         * Named queries are invoked differently, and have different capabilities.
-         */
+        readonly PaymentNotice: "PaymentNotice";
         readonly PaymentReconciliation: "PaymentReconciliation";
         readonly Person: "Person";
         readonly PlanDefinition: "PlanDefinition";
@@ -1042,11 +1035,14 @@ export declare class OperationDefinition extends fhir.DomainResource {
         readonly TestScript: "TestScript";
         readonly ValueSet: "ValueSet";
         readonly VerificationResult: "VerificationResult";
+        /**
+         * Named queries are invoked differently, and have different capabilities.
+         */
         readonly VisionPrescription: "VisionPrescription";
     };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.FtsIssue[];
+    doModelValidation(expression?: string): fhir.FtsIssue[];
 }
 //# sourceMappingURL=OperationDefinition.d.ts.map

@@ -77,13 +77,14 @@ export class ImagingStudySeriesPerformer extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
-    if (this["function"]) { issues.push(...this.function.doModelValidation()); }
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'ImagingStudy.series.performer' }
+    if (this["function"]) { issues.push(...this.function.doModelValidation(expression+'.function')); }
     if (!this['actor']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property actor:fhir.Reference fhir: ImagingStudy.series.performer.actor:Reference' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property actor fhir: ImagingStudy.series.performer.actor:Reference', expression: [expression] });
     }
-    if (this["actor"]) { issues.push(...this.actor.doModelValidation()); }
+    if (this["actor"]) { issues.push(...this.actor.doModelValidation(expression+'.actor')); }
     return issues;
   }
 }
@@ -172,18 +173,19 @@ export class ImagingStudySeriesInstance extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'ImagingStudy.series.instance' }
     if (!this['uid']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property uid:fhir.FhirId fhir: ImagingStudy.series.instance.uid:id' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property uid fhir: ImagingStudy.series.instance.uid:id', expression: [expression] });
     }
-    if (this["uid"]) { issues.push(...this.uid.doModelValidation()); }
+    if (this["uid"]) { issues.push(...this.uid.doModelValidation(expression+'.uid')); }
     if (!this['sopClass']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property sopClass:fhir.Coding fhir: ImagingStudy.series.instance.sopClass:Coding' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property sopClass fhir: ImagingStudy.series.instance.sopClass:Coding', expression: [expression] });
     }
-    if (this["sopClass"]) { issues.push(...this.sopClass.doModelValidation()); }
-    if (this["number"]) { issues.push(...this.number.doModelValidation()); }
-    if (this["title"]) { issues.push(...this.title.doModelValidation()); }
+    if (this["sopClass"]) { issues.push(...this.sopClass.doModelValidation(expression+'.sopClass')); }
+    if (this["number"]) { issues.push(...this.number.doModelValidation(expression+'.number')); }
+    if (this["title"]) { issues.push(...this.title.doModelValidation(expression+'.title')); }
     return issues;
   }
 }
@@ -370,26 +372,27 @@ export class ImagingStudySeries extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'ImagingStudy.series' }
     if (!this['uid']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property uid:fhir.FhirId fhir: ImagingStudy.series.uid:id' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property uid fhir: ImagingStudy.series.uid:id', expression: [expression] });
     }
-    if (this["uid"]) { issues.push(...this.uid.doModelValidation()); }
-    if (this["number"]) { issues.push(...this.number.doModelValidation()); }
+    if (this["uid"]) { issues.push(...this.uid.doModelValidation(expression+'.uid')); }
+    if (this["number"]) { issues.push(...this.number.doModelValidation(expression+'.number')); }
     if (!this['modality']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property modality:fhir.Coding fhir: ImagingStudy.series.modality:Coding' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property modality fhir: ImagingStudy.series.modality:Coding', expression: [expression] });
     }
-    if (this["modality"]) { issues.push(...this.modality.doModelValidation()); }
-    if (this["description"]) { issues.push(...this.description.doModelValidation()); }
-    if (this["numberOfInstances"]) { issues.push(...this.numberOfInstances.doModelValidation()); }
-    if (this["endpoint"]) { this.endpoint.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["bodySite"]) { issues.push(...this.bodySite.doModelValidation()); }
-    if (this["laterality"]) { issues.push(...this.laterality.doModelValidation()); }
-    if (this["specimen"]) { this.specimen.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["started"]) { issues.push(...this.started.doModelValidation()); }
-    if (this["performer"]) { this.performer.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["instance"]) { this.instance.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["modality"]) { issues.push(...this.modality.doModelValidation(expression+'.modality')); }
+    if (this["description"]) { issues.push(...this.description.doModelValidation(expression+'.description')); }
+    if (this["numberOfInstances"]) { issues.push(...this.numberOfInstances.doModelValidation(expression+'.numberOfInstances')); }
+    if (this["endpoint"]) { this.endpoint.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.endpoint[${i}]`)); }) }
+    if (this["bodySite"]) { issues.push(...this.bodySite.doModelValidation(expression+'.bodySite')); }
+    if (this["laterality"]) { issues.push(...this.laterality.doModelValidation(expression+'.laterality')); }
+    if (this["specimen"]) { this.specimen.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.specimen[${i}]`)); }) }
+    if (this["started"]) { issues.push(...this.started.doModelValidation(expression+'.started')); }
+    if (this["performer"]) { this.performer.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.performer[${i}]`)); }) }
+    if (this["instance"]) { this.instance.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.instance[${i}]`)); }) }
     return issues;
   }
 }
@@ -669,40 +672,41 @@ export class ImagingStudy extends fhir.DomainResource {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'ImagingStudy' }
     if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType:"ImagingStudy" fhir: ImagingStudy.resourceType:"ImagingStudy"' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType fhir: ImagingStudy.resourceType:"ImagingStudy"', expression: [expression] });
     }
-    if (this["identifier"]) { this.identifier.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["identifier"]) { this.identifier.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.identifier[${i}]`)); }) }
     if (!this['status']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status:fhir.FhirCode<ImagingstudyStatusCodeType> fhir: ImagingStudy.status:code' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status fhir: ImagingStudy.status:code', expression: [expression] });
     }
-    if (this['status'] && (!Object.values(ImagingstudyStatusCodes).includes(this.status as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property status:fhir.FhirCode<ImagingstudyStatusCodeType> fhir: ImagingStudy.status:code Required binding to: ImagingstudyStatus' });
+    if (this['status'] && (!Object.values(ImagingstudyStatusCodes).includes(this.status.value as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property status fhir: ImagingStudy.status:code Required binding to: ImagingstudyStatus', expression: [expression] });
     }
-    if (this["status"]) { issues.push(...this.status.doModelValidation()); }
-    if (this["modality"]) { this.modality.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["status"]) { issues.push(...this.status.doModelValidation(expression+'.status')); }
+    if (this["modality"]) { this.modality.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.modality[${i}]`)); }) }
     if (!this['subject']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property subject:fhir.Reference fhir: ImagingStudy.subject:Reference' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property subject fhir: ImagingStudy.subject:Reference', expression: [expression] });
     }
-    if (this["subject"]) { issues.push(...this.subject.doModelValidation()); }
-    if (this["encounter"]) { issues.push(...this.encounter.doModelValidation()); }
-    if (this["started"]) { issues.push(...this.started.doModelValidation()); }
-    if (this["basedOn"]) { this.basedOn.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["referrer"]) { issues.push(...this.referrer.doModelValidation()); }
-    if (this["interpreter"]) { this.interpreter.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["endpoint"]) { this.endpoint.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["numberOfSeries"]) { issues.push(...this.numberOfSeries.doModelValidation()); }
-    if (this["numberOfInstances"]) { issues.push(...this.numberOfInstances.doModelValidation()); }
-    if (this["procedureReference"]) { issues.push(...this.procedureReference.doModelValidation()); }
-    if (this["procedureCode"]) { this.procedureCode.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["location"]) { issues.push(...this.location.doModelValidation()); }
-    if (this["reasonCode"]) { this.reasonCode.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["reasonReference"]) { this.reasonReference.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["note"]) { this.note.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["description"]) { issues.push(...this.description.doModelValidation()); }
-    if (this["series"]) { this.series.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["subject"]) { issues.push(...this.subject.doModelValidation(expression+'.subject')); }
+    if (this["encounter"]) { issues.push(...this.encounter.doModelValidation(expression+'.encounter')); }
+    if (this["started"]) { issues.push(...this.started.doModelValidation(expression+'.started')); }
+    if (this["basedOn"]) { this.basedOn.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.basedOn[${i}]`)); }) }
+    if (this["referrer"]) { issues.push(...this.referrer.doModelValidation(expression+'.referrer')); }
+    if (this["interpreter"]) { this.interpreter.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.interpreter[${i}]`)); }) }
+    if (this["endpoint"]) { this.endpoint.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.endpoint[${i}]`)); }) }
+    if (this["numberOfSeries"]) { issues.push(...this.numberOfSeries.doModelValidation(expression+'.numberOfSeries')); }
+    if (this["numberOfInstances"]) { issues.push(...this.numberOfInstances.doModelValidation(expression+'.numberOfInstances')); }
+    if (this["procedureReference"]) { issues.push(...this.procedureReference.doModelValidation(expression+'.procedureReference')); }
+    if (this["procedureCode"]) { this.procedureCode.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.procedureCode[${i}]`)); }) }
+    if (this["location"]) { issues.push(...this.location.doModelValidation(expression+'.location')); }
+    if (this["reasonCode"]) { this.reasonCode.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.reasonCode[${i}]`)); }) }
+    if (this["reasonReference"]) { this.reasonReference.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.reasonReference[${i}]`)); }) }
+    if (this["note"]) { this.note.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.note[${i}]`)); }) }
+    if (this["description"]) { issues.push(...this.description.doModelValidation(expression+'.description')); }
+    if (this["series"]) { this.series.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.series[${i}]`)); }) }
     return issues;
   }
 }

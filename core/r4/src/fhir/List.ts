@@ -105,15 +105,16 @@ export class ListEntry extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
-    if (this["flag"]) { issues.push(...this.flag.doModelValidation()); }
-    if (this["deleted"]) { issues.push(...this.deleted.doModelValidation()); }
-    if (this["date"]) { issues.push(...this.date.doModelValidation()); }
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'List.entry' }
+    if (this["flag"]) { issues.push(...this.flag.doModelValidation(expression+'.flag')); }
+    if (this["deleted"]) { issues.push(...this.deleted.doModelValidation(expression+'.deleted')); }
+    if (this["date"]) { issues.push(...this.date.doModelValidation(expression+'.date')); }
     if (!this['item']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property item:fhir.Reference fhir: List.entry.item:Reference' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property item fhir: List.entry.item:Reference', expression: [expression] });
     }
-    if (this["item"]) { issues.push(...this.item.doModelValidation()); }
+    if (this["item"]) { issues.push(...this.item.doModelValidation(expression+'.item')); }
     return issues;
   }
 }
@@ -327,36 +328,37 @@ export class List extends fhir.DomainResource {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'List' }
     if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType:"List" fhir: List.resourceType:"List"' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType fhir: List.resourceType:"List"', expression: [expression] });
     }
-    if (this["identifier"]) { this.identifier.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["identifier"]) { this.identifier.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.identifier[${i}]`)); }) }
     if (!this['status']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status:fhir.FhirCode<ListStatusCodeType> fhir: List.status:code' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status fhir: List.status:code', expression: [expression] });
     }
-    if (this['status'] && (!Object.values(ListStatusCodes).includes(this.status as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property status:fhir.FhirCode<ListStatusCodeType> fhir: List.status:code Required binding to: ListStatus' });
+    if (this['status'] && (!Object.values(ListStatusCodes).includes(this.status.value as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property status fhir: List.status:code Required binding to: ListStatus', expression: [expression] });
     }
-    if (this["status"]) { issues.push(...this.status.doModelValidation()); }
+    if (this["status"]) { issues.push(...this.status.doModelValidation(expression+'.status')); }
     if (!this['mode']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property mode:fhir.FhirCode<ListModeCodeType> fhir: List.mode:code' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property mode fhir: List.mode:code', expression: [expression] });
     }
-    if (this['mode'] && (!Object.values(ListModeCodes).includes(this.mode as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property mode:fhir.FhirCode<ListModeCodeType> fhir: List.mode:code Required binding to: ListMode' });
+    if (this['mode'] && (!Object.values(ListModeCodes).includes(this.mode.value as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property mode fhir: List.mode:code Required binding to: ListMode', expression: [expression] });
     }
-    if (this["mode"]) { issues.push(...this.mode.doModelValidation()); }
-    if (this["title"]) { issues.push(...this.title.doModelValidation()); }
-    if (this["code"]) { issues.push(...this.code.doModelValidation()); }
-    if (this["subject"]) { issues.push(...this.subject.doModelValidation()); }
-    if (this["encounter"]) { issues.push(...this.encounter.doModelValidation()); }
-    if (this["date"]) { issues.push(...this.date.doModelValidation()); }
-    if (this["source"]) { issues.push(...this.source.doModelValidation()); }
-    if (this["orderedBy"]) { issues.push(...this.orderedBy.doModelValidation()); }
-    if (this["note"]) { this.note.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["entry"]) { this.entry.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["emptyReason"]) { issues.push(...this.emptyReason.doModelValidation()); }
+    if (this["mode"]) { issues.push(...this.mode.doModelValidation(expression+'.mode')); }
+    if (this["title"]) { issues.push(...this.title.doModelValidation(expression+'.title')); }
+    if (this["code"]) { issues.push(...this.code.doModelValidation(expression+'.code')); }
+    if (this["subject"]) { issues.push(...this.subject.doModelValidation(expression+'.subject')); }
+    if (this["encounter"]) { issues.push(...this.encounter.doModelValidation(expression+'.encounter')); }
+    if (this["date"]) { issues.push(...this.date.doModelValidation(expression+'.date')); }
+    if (this["source"]) { issues.push(...this.source.doModelValidation(expression+'.source')); }
+    if (this["orderedBy"]) { issues.push(...this.orderedBy.doModelValidation(expression+'.orderedBy')); }
+    if (this["note"]) { this.note.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.note[${i}]`)); }) }
+    if (this["entry"]) { this.entry.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.entry[${i}]`)); }) }
+    if (this["emptyReason"]) { issues.push(...this.emptyReason.doModelValidation(expression+'.emptyReason')); }
     return issues;
   }
 }

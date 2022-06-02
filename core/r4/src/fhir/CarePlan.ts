@@ -315,32 +315,33 @@ export class CarePlanActivityDetail extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
-    if (this['kind'] && (!Object.values(CarePlanActivityKindCodes).includes(this.kind as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property kind?:fhir.FhirCode<CarePlanActivityKindCodeType> fhir: CarePlan.activity.detail.kind:code Required binding to: CarePlanActivityKind' });
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'CarePlan.activity.detail' }
+    if (this['kind'] && (!Object.values(CarePlanActivityKindCodes).includes(this.kind.value as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property kind fhir: CarePlan.activity.detail.kind:code Required binding to: CarePlanActivityKind', expression: [expression] });
     }
-    if (this["kind"]) { issues.push(...this.kind.doModelValidation()); }
-    if (this["instantiatesCanonical"]) { this.instantiatesCanonical.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["instantiatesUri"]) { this.instantiatesUri.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["code"]) { issues.push(...this.code.doModelValidation()); }
-    if (this["reasonCode"]) { this.reasonCode.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["reasonReference"]) { this.reasonReference.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["goal"]) { this.goal.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["kind"]) { issues.push(...this.kind.doModelValidation(expression+'.kind')); }
+    if (this["instantiatesCanonical"]) { this.instantiatesCanonical.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.instantiatesCanonical[${i}]`)); }) }
+    if (this["instantiatesUri"]) { this.instantiatesUri.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.instantiatesUri[${i}]`)); }) }
+    if (this["code"]) { issues.push(...this.code.doModelValidation(expression+'.code')); }
+    if (this["reasonCode"]) { this.reasonCode.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.reasonCode[${i}]`)); }) }
+    if (this["reasonReference"]) { this.reasonReference.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.reasonReference[${i}]`)); }) }
+    if (this["goal"]) { this.goal.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.goal[${i}]`)); }) }
     if (!this['status']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status:fhir.FhirCode<CarePlanActivityStatusCodeType> fhir: CarePlan.activity.detail.status:code' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status fhir: CarePlan.activity.detail.status:code', expression: [expression] });
     }
-    if (this['status'] && (!Object.values(CarePlanActivityStatusCodes).includes(this.status as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property status:fhir.FhirCode<CarePlanActivityStatusCodeType> fhir: CarePlan.activity.detail.status:code Required binding to: CarePlanActivityStatus' });
+    if (this['status'] && (!Object.values(CarePlanActivityStatusCodes).includes(this.status.value as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property status fhir: CarePlan.activity.detail.status:code Required binding to: CarePlanActivityStatus', expression: [expression] });
     }
-    if (this["status"]) { issues.push(...this.status.doModelValidation()); }
-    if (this["statusReason"]) { issues.push(...this.statusReason.doModelValidation()); }
-    if (this["doNotPerform"]) { issues.push(...this.doNotPerform.doModelValidation()); }
-    if (this["location"]) { issues.push(...this.location.doModelValidation()); }
-    if (this["performer"]) { this.performer.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["dailyAmount"]) { issues.push(...this.dailyAmount.doModelValidation()); }
-    if (this["quantity"]) { issues.push(...this.quantity.doModelValidation()); }
-    if (this["description"]) { issues.push(...this.description.doModelValidation()); }
+    if (this["status"]) { issues.push(...this.status.doModelValidation(expression+'.status')); }
+    if (this["statusReason"]) { issues.push(...this.statusReason.doModelValidation(expression+'.statusReason')); }
+    if (this["doNotPerform"]) { issues.push(...this.doNotPerform.doModelValidation(expression+'.doNotPerform')); }
+    if (this["location"]) { issues.push(...this.location.doModelValidation(expression+'.location')); }
+    if (this["performer"]) { this.performer.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.performer[${i}]`)); }) }
+    if (this["dailyAmount"]) { issues.push(...this.dailyAmount.doModelValidation(expression+'.dailyAmount')); }
+    if (this["quantity"]) { issues.push(...this.quantity.doModelValidation(expression+'.quantity')); }
+    if (this["description"]) { issues.push(...this.description.doModelValidation(expression+'.description')); }
     return issues;
   }
 }
@@ -417,13 +418,14 @@ export class CarePlanActivity extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
-    if (this["outcomeCodeableConcept"]) { this.outcomeCodeableConcept.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["outcomeReference"]) { this.outcomeReference.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["progress"]) { this.progress.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["reference"]) { issues.push(...this.reference.doModelValidation()); }
-    if (this["detail"]) { issues.push(...this.detail.doModelValidation()); }
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'CarePlan.activity' }
+    if (this["outcomeCodeableConcept"]) { this.outcomeCodeableConcept.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.outcomeCodeableConcept[${i}]`)); }) }
+    if (this["outcomeReference"]) { this.outcomeReference.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.outcomeReference[${i}]`)); }) }
+    if (this["progress"]) { this.progress.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.progress[${i}]`)); }) }
+    if (this["reference"]) { issues.push(...this.reference.doModelValidation(expression+'.reference')); }
+    if (this["detail"]) { issues.push(...this.detail.doModelValidation(expression+'.detail')); }
     return issues;
   }
 }
@@ -757,49 +759,50 @@ export class CarePlan extends fhir.DomainResource {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'CarePlan' }
     if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType:"CarePlan" fhir: CarePlan.resourceType:"CarePlan"' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType fhir: CarePlan.resourceType:"CarePlan"', expression: [expression] });
     }
-    if (this["identifier"]) { this.identifier.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["instantiatesCanonical"]) { this.instantiatesCanonical.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["instantiatesUri"]) { this.instantiatesUri.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["basedOn"]) { this.basedOn.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["replaces"]) { this.replaces.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["partOf"]) { this.partOf.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["identifier"]) { this.identifier.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.identifier[${i}]`)); }) }
+    if (this["instantiatesCanonical"]) { this.instantiatesCanonical.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.instantiatesCanonical[${i}]`)); }) }
+    if (this["instantiatesUri"]) { this.instantiatesUri.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.instantiatesUri[${i}]`)); }) }
+    if (this["basedOn"]) { this.basedOn.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.basedOn[${i}]`)); }) }
+    if (this["replaces"]) { this.replaces.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.replaces[${i}]`)); }) }
+    if (this["partOf"]) { this.partOf.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.partOf[${i}]`)); }) }
     if (!this['status']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status:fhir.FhirCode<RequestStatusCodeType> fhir: CarePlan.status:code' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status fhir: CarePlan.status:code', expression: [expression] });
     }
-    if (this['status'] && (!Object.values(RequestStatusCodes).includes(this.status as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property status:fhir.FhirCode<RequestStatusCodeType> fhir: CarePlan.status:code Required binding to: RequestStatus' });
+    if (this['status'] && (!Object.values(RequestStatusCodes).includes(this.status.value as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property status fhir: CarePlan.status:code Required binding to: RequestStatus', expression: [expression] });
     }
-    if (this["status"]) { issues.push(...this.status.doModelValidation()); }
+    if (this["status"]) { issues.push(...this.status.doModelValidation(expression+'.status')); }
     if (!this['intent']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property intent:fhir.FhirCode<CarePlanIntentCodeType> fhir: CarePlan.intent:code' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property intent fhir: CarePlan.intent:code', expression: [expression] });
     }
-    if (this['intent'] && (!Object.values(CarePlanIntentCodes).includes(this.intent as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property intent:fhir.FhirCode<CarePlanIntentCodeType> fhir: CarePlan.intent:code Required binding to: CarePlanIntent' });
+    if (this['intent'] && (!Object.values(CarePlanIntentCodes).includes(this.intent.value as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property intent fhir: CarePlan.intent:code Required binding to: CarePlanIntent', expression: [expression] });
     }
-    if (this["intent"]) { issues.push(...this.intent.doModelValidation()); }
-    if (this["category"]) { this.category.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["title"]) { issues.push(...this.title.doModelValidation()); }
-    if (this["description"]) { issues.push(...this.description.doModelValidation()); }
+    if (this["intent"]) { issues.push(...this.intent.doModelValidation(expression+'.intent')); }
+    if (this["category"]) { this.category.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.category[${i}]`)); }) }
+    if (this["title"]) { issues.push(...this.title.doModelValidation(expression+'.title')); }
+    if (this["description"]) { issues.push(...this.description.doModelValidation(expression+'.description')); }
     if (!this['subject']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property subject:fhir.Reference fhir: CarePlan.subject:Reference' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property subject fhir: CarePlan.subject:Reference', expression: [expression] });
     }
-    if (this["subject"]) { issues.push(...this.subject.doModelValidation()); }
-    if (this["encounter"]) { issues.push(...this.encounter.doModelValidation()); }
-    if (this["period"]) { issues.push(...this.period.doModelValidation()); }
-    if (this["created"]) { issues.push(...this.created.doModelValidation()); }
-    if (this["author"]) { issues.push(...this.author.doModelValidation()); }
-    if (this["contributor"]) { this.contributor.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["careTeam"]) { this.careTeam.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["addresses"]) { this.addresses.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["supportingInfo"]) { this.supportingInfo.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["goal"]) { this.goal.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["activity"]) { this.activity.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["note"]) { this.note.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["subject"]) { issues.push(...this.subject.doModelValidation(expression+'.subject')); }
+    if (this["encounter"]) { issues.push(...this.encounter.doModelValidation(expression+'.encounter')); }
+    if (this["period"]) { issues.push(...this.period.doModelValidation(expression+'.period')); }
+    if (this["created"]) { issues.push(...this.created.doModelValidation(expression+'.created')); }
+    if (this["author"]) { issues.push(...this.author.doModelValidation(expression+'.author')); }
+    if (this["contributor"]) { this.contributor.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.contributor[${i}]`)); }) }
+    if (this["careTeam"]) { this.careTeam.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.careTeam[${i}]`)); }) }
+    if (this["addresses"]) { this.addresses.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.addresses[${i}]`)); }) }
+    if (this["supportingInfo"]) { this.supportingInfo.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.supportingInfo[${i}]`)); }) }
+    if (this["goal"]) { this.goal.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.goal[${i}]`)); }) }
+    if (this["activity"]) { this.activity.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.activity[${i}]`)); }) }
+    if (this["note"]) { this.note.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.note[${i}]`)); }) }
     return issues;
   }
 }

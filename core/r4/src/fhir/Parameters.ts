@@ -328,14 +328,15 @@ export class ParametersParameter extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'Parameters.parameter' }
     if (!this['name']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property name:fhir.FhirString fhir: Parameters.parameter.name:string' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property name fhir: Parameters.parameter.name:string', expression: [expression] });
     }
-    if (this["name"]) { issues.push(...this.name.doModelValidation()); }
-    if (this["resource"]) { issues.push(...this.resource.doModelValidation()); }
-    if (this["part"]) { this.part.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["name"]) { issues.push(...this.name.doModelValidation(expression+'.name')); }
+    if (this["resource"]) { issues.push(...this.resource.doModelValidation(expression+'.resource')); }
+    if (this["part"]) { this.part.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.part[${i}]`)); }) }
     return issues;
   }
 }
@@ -381,12 +382,13 @@ export class Parameters extends fhir.Resource {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'Parameters' }
     if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType:"Parameters" fhir: Parameters.resourceType:"Parameters"' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType fhir: Parameters.resourceType:"Parameters"', expression: [expression] });
     }
-    if (this["parameter"]) { this.parameter.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["parameter"]) { this.parameter.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.parameter[${i}]`)); }) }
     return issues;
   }
 }

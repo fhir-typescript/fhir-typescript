@@ -309,12 +309,13 @@ export class Extension extends fhir.FhirElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'Extension' }
     if (!this['url']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property url:fhir.FhirString fhir: Extension.url:string' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property url fhir: Extension.url:string', expression: [expression] });
     }
-    if (this["url"]) { issues.push(...this.url.doModelValidation()); }
+    if (this["url"]) { issues.push(...this.url.doModelValidation(expression+'.url')); }
     return issues;
   }
 }

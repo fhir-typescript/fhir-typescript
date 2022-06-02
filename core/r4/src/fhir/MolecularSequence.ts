@@ -193,23 +193,24 @@ export class MolecularSequenceReferenceSeq extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
-    if (this["chromosome"]) { issues.push(...this.chromosome.doModelValidation()); }
-    if (this["genomeBuild"]) { issues.push(...this.genomeBuild.doModelValidation()); }
-    if (this['orientation'] && (!Object.values(OrientationTypeCodes).includes(this.orientation as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property orientation?:fhir.FhirCode<OrientationTypeCodeType> fhir: MolecularSequence.referenceSeq.orientation:code Required binding to: OrientationType' });
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'MolecularSequence.referenceSeq' }
+    if (this["chromosome"]) { issues.push(...this.chromosome.doModelValidation(expression+'.chromosome')); }
+    if (this["genomeBuild"]) { issues.push(...this.genomeBuild.doModelValidation(expression+'.genomeBuild')); }
+    if (this['orientation'] && (!Object.values(OrientationTypeCodes).includes(this.orientation.value as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property orientation fhir: MolecularSequence.referenceSeq.orientation:code Required binding to: OrientationType', expression: [expression] });
     }
-    if (this["orientation"]) { issues.push(...this.orientation.doModelValidation()); }
-    if (this["referenceSeqId"]) { issues.push(...this.referenceSeqId.doModelValidation()); }
-    if (this["referenceSeqPointer"]) { issues.push(...this.referenceSeqPointer.doModelValidation()); }
-    if (this["referenceSeqString"]) { issues.push(...this.referenceSeqString.doModelValidation()); }
-    if (this['strand'] && (!Object.values(StrandTypeCodes).includes(this.strand as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property strand?:fhir.FhirCode<StrandTypeCodeType> fhir: MolecularSequence.referenceSeq.strand:code Required binding to: StrandType' });
+    if (this["orientation"]) { issues.push(...this.orientation.doModelValidation(expression+'.orientation')); }
+    if (this["referenceSeqId"]) { issues.push(...this.referenceSeqId.doModelValidation(expression+'.referenceSeqId')); }
+    if (this["referenceSeqPointer"]) { issues.push(...this.referenceSeqPointer.doModelValidation(expression+'.referenceSeqPointer')); }
+    if (this["referenceSeqString"]) { issues.push(...this.referenceSeqString.doModelValidation(expression+'.referenceSeqString')); }
+    if (this['strand'] && (!Object.values(StrandTypeCodes).includes(this.strand.value as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property strand fhir: MolecularSequence.referenceSeq.strand:code Required binding to: StrandType', expression: [expression] });
     }
-    if (this["strand"]) { issues.push(...this.strand.doModelValidation()); }
-    if (this["windowStart"]) { issues.push(...this.windowStart.doModelValidation()); }
-    if (this["windowEnd"]) { issues.push(...this.windowEnd.doModelValidation()); }
+    if (this["strand"]) { issues.push(...this.strand.doModelValidation(expression+'.strand')); }
+    if (this["windowStart"]) { issues.push(...this.windowStart.doModelValidation(expression+'.windowStart')); }
+    if (this["windowEnd"]) { issues.push(...this.windowEnd.doModelValidation(expression+'.windowEnd')); }
     return issues;
   }
 }
@@ -330,14 +331,15 @@ export class MolecularSequenceVariant extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
-    if (this["start"]) { issues.push(...this.start.doModelValidation()); }
-    if (this["end"]) { issues.push(...this.end.doModelValidation()); }
-    if (this["observedAllele"]) { issues.push(...this.observedAllele.doModelValidation()); }
-    if (this["referenceAllele"]) { issues.push(...this.referenceAllele.doModelValidation()); }
-    if (this["cigar"]) { issues.push(...this.cigar.doModelValidation()); }
-    if (this["variantPointer"]) { issues.push(...this.variantPointer.doModelValidation()); }
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'MolecularSequence.variant' }
+    if (this["start"]) { issues.push(...this.start.doModelValidation(expression+'.start')); }
+    if (this["end"]) { issues.push(...this.end.doModelValidation(expression+'.end')); }
+    if (this["observedAllele"]) { issues.push(...this.observedAllele.doModelValidation(expression+'.observedAllele')); }
+    if (this["referenceAllele"]) { issues.push(...this.referenceAllele.doModelValidation(expression+'.referenceAllele')); }
+    if (this["cigar"]) { issues.push(...this.cigar.doModelValidation(expression+'.cigar')); }
+    if (this["variantPointer"]) { issues.push(...this.variantPointer.doModelValidation(expression+'.variantPointer')); }
     return issues;
   }
 }
@@ -504,15 +506,16 @@ export class MolecularSequenceQualityRoc extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
-    if (this["score"]) { this.score.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["numTP"]) { this.numTP.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["numFP"]) { this.numFP.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["numFN"]) { this.numFN.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["precision"]) { this.precision.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["sensitivity"]) { this.sensitivity.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["fMeasure"]) { this.fMeasure.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'MolecularSequence.quality.roc' }
+    if (this["score"]) { this.score.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.score[${i}]`)); }) }
+    if (this["numTP"]) { this.numTP.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.numTP[${i}]`)); }) }
+    if (this["numFP"]) { this.numFP.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.numFP[${i}]`)); }) }
+    if (this["numFN"]) { this.numFN.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.numFN[${i}]`)); }) }
+    if (this["precision"]) { this.precision.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.precision[${i}]`)); }) }
+    if (this["sensitivity"]) { this.sensitivity.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.sensitivity[${i}]`)); }) }
+    if (this["fMeasure"]) { this.fMeasure.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.fMeasure[${i}]`)); }) }
     return issues;
   }
 }
@@ -769,29 +772,30 @@ export class MolecularSequenceQuality extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'MolecularSequence.quality' }
     if (!this['type']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property type:fhir.FhirCode<QualityTypeCodeType> fhir: MolecularSequence.quality.type:code' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property type fhir: MolecularSequence.quality.type:code', expression: [expression] });
     }
-    if (this['type'] && (!Object.values(QualityTypeCodes).includes(this.type as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property type:fhir.FhirCode<QualityTypeCodeType> fhir: MolecularSequence.quality.type:code Required binding to: QualityType' });
+    if (this['type'] && (!Object.values(QualityTypeCodes).includes(this.type.value as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property type fhir: MolecularSequence.quality.type:code Required binding to: QualityType', expression: [expression] });
     }
-    if (this["type"]) { issues.push(...this.type.doModelValidation()); }
-    if (this["standardSequence"]) { issues.push(...this.standardSequence.doModelValidation()); }
-    if (this["start"]) { issues.push(...this.start.doModelValidation()); }
-    if (this["end"]) { issues.push(...this.end.doModelValidation()); }
-    if (this["score"]) { issues.push(...this.score.doModelValidation()); }
-    if (this["method"]) { issues.push(...this.method.doModelValidation()); }
-    if (this["truthTP"]) { issues.push(...this.truthTP.doModelValidation()); }
-    if (this["queryTP"]) { issues.push(...this.queryTP.doModelValidation()); }
-    if (this["truthFN"]) { issues.push(...this.truthFN.doModelValidation()); }
-    if (this["queryFP"]) { issues.push(...this.queryFP.doModelValidation()); }
-    if (this["gtFP"]) { issues.push(...this.gtFP.doModelValidation()); }
-    if (this["precision"]) { issues.push(...this.precision.doModelValidation()); }
-    if (this["recall"]) { issues.push(...this.recall.doModelValidation()); }
-    if (this["fScore"]) { issues.push(...this.fScore.doModelValidation()); }
-    if (this["roc"]) { issues.push(...this.roc.doModelValidation()); }
+    if (this["type"]) { issues.push(...this.type.doModelValidation(expression+'.type')); }
+    if (this["standardSequence"]) { issues.push(...this.standardSequence.doModelValidation(expression+'.standardSequence')); }
+    if (this["start"]) { issues.push(...this.start.doModelValidation(expression+'.start')); }
+    if (this["end"]) { issues.push(...this.end.doModelValidation(expression+'.end')); }
+    if (this["score"]) { issues.push(...this.score.doModelValidation(expression+'.score')); }
+    if (this["method"]) { issues.push(...this.method.doModelValidation(expression+'.method')); }
+    if (this["truthTP"]) { issues.push(...this.truthTP.doModelValidation(expression+'.truthTP')); }
+    if (this["queryTP"]) { issues.push(...this.queryTP.doModelValidation(expression+'.queryTP')); }
+    if (this["truthFN"]) { issues.push(...this.truthFN.doModelValidation(expression+'.truthFN')); }
+    if (this["queryFP"]) { issues.push(...this.queryFP.doModelValidation(expression+'.queryFP')); }
+    if (this["gtFP"]) { issues.push(...this.gtFP.doModelValidation(expression+'.gtFP')); }
+    if (this["precision"]) { issues.push(...this.precision.doModelValidation(expression+'.precision')); }
+    if (this["recall"]) { issues.push(...this.recall.doModelValidation(expression+'.recall')); }
+    if (this["fScore"]) { issues.push(...this.fScore.doModelValidation(expression+'.fScore')); }
+    if (this["roc"]) { issues.push(...this.roc.doModelValidation(expression+'.roc')); }
     return issues;
   }
 }
@@ -927,20 +931,21 @@ export class MolecularSequenceRepository extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'MolecularSequence.repository' }
     if (!this['type']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property type:fhir.FhirCode<RepositoryTypeCodeType> fhir: MolecularSequence.repository.type:code' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property type fhir: MolecularSequence.repository.type:code', expression: [expression] });
     }
-    if (this['type'] && (!Object.values(RepositoryTypeCodes).includes(this.type as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property type:fhir.FhirCode<RepositoryTypeCodeType> fhir: MolecularSequence.repository.type:code Required binding to: RepositoryType' });
+    if (this['type'] && (!Object.values(RepositoryTypeCodes).includes(this.type.value as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property type fhir: MolecularSequence.repository.type:code Required binding to: RepositoryType', expression: [expression] });
     }
-    if (this["type"]) { issues.push(...this.type.doModelValidation()); }
-    if (this["url"]) { issues.push(...this.url.doModelValidation()); }
-    if (this["name"]) { issues.push(...this.name.doModelValidation()); }
-    if (this["datasetId"]) { issues.push(...this.datasetId.doModelValidation()); }
-    if (this["variantsetId"]) { issues.push(...this.variantsetId.doModelValidation()); }
-    if (this["readsetId"]) { issues.push(...this.readsetId.doModelValidation()); }
+    if (this["type"]) { issues.push(...this.type.doModelValidation(expression+'.type')); }
+    if (this["url"]) { issues.push(...this.url.doModelValidation(expression+'.url')); }
+    if (this["name"]) { issues.push(...this.name.doModelValidation(expression+'.name')); }
+    if (this["datasetId"]) { issues.push(...this.datasetId.doModelValidation(expression+'.datasetId')); }
+    if (this["variantsetId"]) { issues.push(...this.variantsetId.doModelValidation(expression+'.variantsetId')); }
+    if (this["readsetId"]) { issues.push(...this.readsetId.doModelValidation(expression+'.readsetId')); }
     return issues;
   }
 }
@@ -1001,10 +1006,11 @@ export class MolecularSequenceStructureVariantOuter extends fhir.BackboneElement
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
-    if (this["start"]) { issues.push(...this.start.doModelValidation()); }
-    if (this["end"]) { issues.push(...this.end.doModelValidation()); }
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'MolecularSequence.structureVariant.outer' }
+    if (this["start"]) { issues.push(...this.start.doModelValidation(expression+'.start')); }
+    if (this["end"]) { issues.push(...this.end.doModelValidation(expression+'.end')); }
     return issues;
   }
 }
@@ -1065,10 +1071,11 @@ export class MolecularSequenceStructureVariantInner extends fhir.BackboneElement
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
-    if (this["start"]) { issues.push(...this.start.doModelValidation()); }
-    if (this["end"]) { issues.push(...this.end.doModelValidation()); }
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'MolecularSequence.structureVariant.inner' }
+    if (this["start"]) { issues.push(...this.start.doModelValidation(expression+'.start')); }
+    if (this["end"]) { issues.push(...this.end.doModelValidation(expression+'.end')); }
     return issues;
   }
 }
@@ -1156,13 +1163,14 @@ export class MolecularSequenceStructureVariant extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
-    if (this["variantType"]) { issues.push(...this.variantType.doModelValidation()); }
-    if (this["exact"]) { issues.push(...this.exact.doModelValidation()); }
-    if (this["length"]) { issues.push(...this.length.doModelValidation()); }
-    if (this["outer"]) { issues.push(...this.outer.doModelValidation()); }
-    if (this["inner"]) { issues.push(...this.inner.doModelValidation()); }
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'MolecularSequence.structureVariant' }
+    if (this["variantType"]) { issues.push(...this.variantType.doModelValidation(expression+'.variantType')); }
+    if (this["exact"]) { issues.push(...this.exact.doModelValidation(expression+'.exact')); }
+    if (this["length"]) { issues.push(...this.length.doModelValidation(expression+'.length')); }
+    if (this["outer"]) { issues.push(...this.outer.doModelValidation(expression+'.outer')); }
+    if (this["inner"]) { issues.push(...this.inner.doModelValidation(expression+'.inner')); }
     return issues;
   }
 }
@@ -1387,33 +1395,34 @@ export class MolecularSequence extends fhir.DomainResource {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'MolecularSequence' }
     if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType:"MolecularSequence" fhir: MolecularSequence.resourceType:"MolecularSequence"' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType fhir: MolecularSequence.resourceType:"MolecularSequence"', expression: [expression] });
     }
-    if (this["identifier"]) { this.identifier.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this['type'] && (!Object.values(SequenceTypeCodes).includes(this.type as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property type?:fhir.FhirCode<SequenceTypeCodeType> fhir: MolecularSequence.type:code Required binding to: SequenceType' });
+    if (this["identifier"]) { this.identifier.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.identifier[${i}]`)); }) }
+    if (this['type'] && (!Object.values(SequenceTypeCodes).includes(this.type.value as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property type fhir: MolecularSequence.type:code Required binding to: SequenceType', expression: [expression] });
     }
-    if (this["type"]) { issues.push(...this.type.doModelValidation()); }
+    if (this["type"]) { issues.push(...this.type.doModelValidation(expression+'.type')); }
     if (!this['coordinateSystem']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property coordinateSystem:fhir.FhirInteger fhir: MolecularSequence.coordinateSystem:integer' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property coordinateSystem fhir: MolecularSequence.coordinateSystem:integer', expression: [expression] });
     }
-    if (this["coordinateSystem"]) { issues.push(...this.coordinateSystem.doModelValidation()); }
-    if (this["patient"]) { issues.push(...this.patient.doModelValidation()); }
-    if (this["specimen"]) { issues.push(...this.specimen.doModelValidation()); }
-    if (this["device"]) { issues.push(...this.device.doModelValidation()); }
-    if (this["performer"]) { issues.push(...this.performer.doModelValidation()); }
-    if (this["quantity"]) { issues.push(...this.quantity.doModelValidation()); }
-    if (this["referenceSeq"]) { issues.push(...this.referenceSeq.doModelValidation()); }
-    if (this["variant"]) { this.variant.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["observedSeq"]) { issues.push(...this.observedSeq.doModelValidation()); }
-    if (this["quality"]) { this.quality.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["readCoverage"]) { issues.push(...this.readCoverage.doModelValidation()); }
-    if (this["repository"]) { this.repository.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["pointer"]) { this.pointer.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["structureVariant"]) { this.structureVariant.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["coordinateSystem"]) { issues.push(...this.coordinateSystem.doModelValidation(expression+'.coordinateSystem')); }
+    if (this["patient"]) { issues.push(...this.patient.doModelValidation(expression+'.patient')); }
+    if (this["specimen"]) { issues.push(...this.specimen.doModelValidation(expression+'.specimen')); }
+    if (this["device"]) { issues.push(...this.device.doModelValidation(expression+'.device')); }
+    if (this["performer"]) { issues.push(...this.performer.doModelValidation(expression+'.performer')); }
+    if (this["quantity"]) { issues.push(...this.quantity.doModelValidation(expression+'.quantity')); }
+    if (this["referenceSeq"]) { issues.push(...this.referenceSeq.doModelValidation(expression+'.referenceSeq')); }
+    if (this["variant"]) { this.variant.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.variant[${i}]`)); }) }
+    if (this["observedSeq"]) { issues.push(...this.observedSeq.doModelValidation(expression+'.observedSeq')); }
+    if (this["quality"]) { this.quality.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.quality[${i}]`)); }) }
+    if (this["readCoverage"]) { issues.push(...this.readCoverage.doModelValidation(expression+'.readCoverage')); }
+    if (this["repository"]) { this.repository.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.repository[${i}]`)); }) }
+    if (this["pointer"]) { this.pointer.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.pointer[${i}]`)); }) }
+    if (this["structureVariant"]) { this.structureVariant.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.structureVariant[${i}]`)); }) }
     return issues;
   }
 }

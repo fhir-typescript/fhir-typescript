@@ -38,9 +38,10 @@ export class BackboneElement extends fhir.FhirElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
-    if (this["modifierExtension"]) { this.modifierExtension.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'BackboneElement' }
+    if (this["modifierExtension"]) { this.modifierExtension.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.modifierExtension[${i}]`)); }) }
     return issues;
   }
 }

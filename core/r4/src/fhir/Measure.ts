@@ -102,14 +102,15 @@ export class MeasureGroupPopulation extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
-    if (this["code"]) { issues.push(...this.code.doModelValidation()); }
-    if (this["description"]) { issues.push(...this.description.doModelValidation()); }
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'Measure.group.population' }
+    if (this["code"]) { issues.push(...this.code.doModelValidation(expression+'.code')); }
+    if (this["description"]) { issues.push(...this.description.doModelValidation(expression+'.description')); }
     if (!this['criteria']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property criteria:fhir.Expression fhir: Measure.group.population.criteria:Expression' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property criteria fhir: Measure.group.population.criteria:Expression', expression: [expression] });
     }
-    if (this["criteria"]) { issues.push(...this.criteria.doModelValidation()); }
+    if (this["criteria"]) { issues.push(...this.criteria.doModelValidation(expression+'.criteria')); }
     return issues;
   }
 }
@@ -172,14 +173,15 @@ export class MeasureGroupStratifierComponent extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
-    if (this["code"]) { issues.push(...this.code.doModelValidation()); }
-    if (this["description"]) { issues.push(...this.description.doModelValidation()); }
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'Measure.group.stratifier.component' }
+    if (this["code"]) { issues.push(...this.code.doModelValidation(expression+'.code')); }
+    if (this["description"]) { issues.push(...this.description.doModelValidation(expression+'.description')); }
     if (!this['criteria']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property criteria:fhir.Expression fhir: Measure.group.stratifier.component.criteria:Expression' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property criteria fhir: Measure.group.stratifier.component.criteria:Expression', expression: [expression] });
     }
-    if (this["criteria"]) { issues.push(...this.criteria.doModelValidation()); }
+    if (this["criteria"]) { issues.push(...this.criteria.doModelValidation(expression+'.criteria')); }
     return issues;
   }
 }
@@ -251,12 +253,13 @@ export class MeasureGroupStratifier extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
-    if (this["code"]) { issues.push(...this.code.doModelValidation()); }
-    if (this["description"]) { issues.push(...this.description.doModelValidation()); }
-    if (this["criteria"]) { issues.push(...this.criteria.doModelValidation()); }
-    if (this["component"]) { this.component.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'Measure.group.stratifier' }
+    if (this["code"]) { issues.push(...this.code.doModelValidation(expression+'.code')); }
+    if (this["description"]) { issues.push(...this.description.doModelValidation(expression+'.description')); }
+    if (this["criteria"]) { issues.push(...this.criteria.doModelValidation(expression+'.criteria')); }
+    if (this["component"]) { this.component.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.component[${i}]`)); }) }
     return issues;
   }
 }
@@ -329,12 +332,13 @@ export class MeasureGroup extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
-    if (this["code"]) { issues.push(...this.code.doModelValidation()); }
-    if (this["description"]) { issues.push(...this.description.doModelValidation()); }
-    if (this["population"]) { this.population.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["stratifier"]) { this.stratifier.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'Measure.group' }
+    if (this["code"]) { issues.push(...this.code.doModelValidation(expression+'.code')); }
+    if (this["description"]) { issues.push(...this.description.doModelValidation(expression+'.description')); }
+    if (this["population"]) { this.population.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.population[${i}]`)); }) }
+    if (this["stratifier"]) { this.stratifier.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.stratifier[${i}]`)); }) }
     return issues;
   }
 }
@@ -413,15 +417,16 @@ export class MeasureSupplementalData extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
-    if (this["code"]) { issues.push(...this.code.doModelValidation()); }
-    if (this["usage"]) { this.usage.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["description"]) { issues.push(...this.description.doModelValidation()); }
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'Measure.supplementalData' }
+    if (this["code"]) { issues.push(...this.code.doModelValidation(expression+'.code')); }
+    if (this["usage"]) { this.usage.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.usage[${i}]`)); }) }
+    if (this["description"]) { issues.push(...this.description.doModelValidation(expression+'.description')); }
     if (!this['criteria']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property criteria:fhir.Expression fhir: Measure.supplementalData.criteria:Expression' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property criteria fhir: Measure.supplementalData.criteria:Expression', expression: [expression] });
     }
-    if (this["criteria"]) { issues.push(...this.criteria.doModelValidation()); }
+    if (this["criteria"]) { issues.push(...this.criteria.doModelValidation(expression+'.criteria')); }
     return issues;
   }
 }
@@ -1078,60 +1083,58 @@ export class Measure extends fhir.DomainResource {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'Measure' }
     if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType:"Measure" fhir: Measure.resourceType:"Measure"' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType fhir: Measure.resourceType:"Measure"', expression: [expression] });
     }
-    if (this["url"]) { issues.push(...this.url.doModelValidation()); }
-    if (this["identifier"]) { this.identifier.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["version"]) { issues.push(...this.version.doModelValidation()); }
-    if (this["name"]) { issues.push(...this.name.doModelValidation()); }
-    if (this["title"]) { issues.push(...this.title.doModelValidation()); }
-    if (this["subtitle"]) { issues.push(...this.subtitle.doModelValidation()); }
+    if (this["url"]) { issues.push(...this.url.doModelValidation(expression+'.url')); }
+    if (this["identifier"]) { this.identifier.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.identifier[${i}]`)); }) }
+    if (this["version"]) { issues.push(...this.version.doModelValidation(expression+'.version')); }
+    if (this["name"]) { issues.push(...this.name.doModelValidation(expression+'.name')); }
+    if (this["title"]) { issues.push(...this.title.doModelValidation(expression+'.title')); }
+    if (this["subtitle"]) { issues.push(...this.subtitle.doModelValidation(expression+'.subtitle')); }
     if (!this['status']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status:fhir.FhirCode<PublicationStatusCodeType> fhir: Measure.status:code' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status fhir: Measure.status:code', expression: [expression] });
     }
-    if (this['status'] && (!Object.values(PublicationStatusCodes).includes(this.status as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property status:fhir.FhirCode<PublicationStatusCodeType> fhir: Measure.status:code Required binding to: PublicationStatus' });
+    if (this['status'] && (!Object.values(PublicationStatusCodes).includes(this.status.value as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property status fhir: Measure.status:code Required binding to: PublicationStatus', expression: [expression] });
     }
-    if (this["status"]) { issues.push(...this.status.doModelValidation()); }
-    if (this["experimental"]) { issues.push(...this.experimental.doModelValidation()); }
-    if (this["date"]) { issues.push(...this.date.doModelValidation()); }
-    if (this["publisher"]) { issues.push(...this.publisher.doModelValidation()); }
-    if (this["contact"]) { this.contact.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["description"]) { issues.push(...this.description.doModelValidation()); }
-    if (this["useContext"]) { this.useContext.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["jurisdiction"]) { this.jurisdiction.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["purpose"]) { issues.push(...this.purpose.doModelValidation()); }
-    if (this["usage"]) { issues.push(...this.usage.doModelValidation()); }
-    if (this["copyright"]) { issues.push(...this.copyright.doModelValidation()); }
-    if (this["approvalDate"]) { issues.push(...this.approvalDate.doModelValidation()); }
-    if (this["lastReviewDate"]) { issues.push(...this.lastReviewDate.doModelValidation()); }
-    if (this["effectivePeriod"]) { issues.push(...this.effectivePeriod.doModelValidation()); }
-    if (this["topic"]) { this.topic.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["author"]) { this.author.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["editor"]) { this.editor.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["reviewer"]) { this.reviewer.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["endorser"]) { this.endorser.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["relatedArtifact"]) { this.relatedArtifact.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["library"]) { this.library.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["disclaimer"]) { issues.push(...this.disclaimer.doModelValidation()); }
-    if (this["scoring"]) { issues.push(...this.scoring.doModelValidation()); }
-    if (this["compositeScoring"]) { issues.push(...this.compositeScoring.doModelValidation()); }
-    if (this["type"]) { this.type.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["riskAdjustment"]) { issues.push(...this.riskAdjustment.doModelValidation()); }
-    if (this["rateAggregation"]) { issues.push(...this.rateAggregation.doModelValidation()); }
-    if (this["rationale"]) { issues.push(...this.rationale.doModelValidation()); }
-    if (this["clinicalRecommendationStatement"]) { issues.push(...this.clinicalRecommendationStatement.doModelValidation()); }
-    if (this['improvementNotation'] && (!Object.values(MeasureImprovementNotationCodes).includes(this.improvementNotation as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property improvementNotation?:fhir.CodeableConcept fhir: Measure.improvementNotation:CodeableConcept Required binding to: MeasureImprovementNotation' });
-    }
-    if (this["improvementNotation"]) { issues.push(...this.improvementNotation.doModelValidation()); }
-    if (this["definition"]) { this.definition.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["guidance"]) { issues.push(...this.guidance.doModelValidation()); }
-    if (this["group"]) { this.group.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["supplementalData"]) { this.supplementalData.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["status"]) { issues.push(...this.status.doModelValidation(expression+'.status')); }
+    if (this["experimental"]) { issues.push(...this.experimental.doModelValidation(expression+'.experimental')); }
+    if (this["date"]) { issues.push(...this.date.doModelValidation(expression+'.date')); }
+    if (this["publisher"]) { issues.push(...this.publisher.doModelValidation(expression+'.publisher')); }
+    if (this["contact"]) { this.contact.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.contact[${i}]`)); }) }
+    if (this["description"]) { issues.push(...this.description.doModelValidation(expression+'.description')); }
+    if (this["useContext"]) { this.useContext.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.useContext[${i}]`)); }) }
+    if (this["jurisdiction"]) { this.jurisdiction.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.jurisdiction[${i}]`)); }) }
+    if (this["purpose"]) { issues.push(...this.purpose.doModelValidation(expression+'.purpose')); }
+    if (this["usage"]) { issues.push(...this.usage.doModelValidation(expression+'.usage')); }
+    if (this["copyright"]) { issues.push(...this.copyright.doModelValidation(expression+'.copyright')); }
+    if (this["approvalDate"]) { issues.push(...this.approvalDate.doModelValidation(expression+'.approvalDate')); }
+    if (this["lastReviewDate"]) { issues.push(...this.lastReviewDate.doModelValidation(expression+'.lastReviewDate')); }
+    if (this["effectivePeriod"]) { issues.push(...this.effectivePeriod.doModelValidation(expression+'.effectivePeriod')); }
+    if (this["topic"]) { this.topic.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.topic[${i}]`)); }) }
+    if (this["author"]) { this.author.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.author[${i}]`)); }) }
+    if (this["editor"]) { this.editor.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.editor[${i}]`)); }) }
+    if (this["reviewer"]) { this.reviewer.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.reviewer[${i}]`)); }) }
+    if (this["endorser"]) { this.endorser.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.endorser[${i}]`)); }) }
+    if (this["relatedArtifact"]) { this.relatedArtifact.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.relatedArtifact[${i}]`)); }) }
+    if (this["library"]) { this.library.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.library[${i}]`)); }) }
+    if (this["disclaimer"]) { issues.push(...this.disclaimer.doModelValidation(expression+'.disclaimer')); }
+    if (this["scoring"]) { issues.push(...this.scoring.doModelValidation(expression+'.scoring')); }
+    if (this["compositeScoring"]) { issues.push(...this.compositeScoring.doModelValidation(expression+'.compositeScoring')); }
+    if (this["type"]) { this.type.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.type[${i}]`)); }) }
+    if (this["riskAdjustment"]) { issues.push(...this.riskAdjustment.doModelValidation(expression+'.riskAdjustment')); }
+    if (this["rateAggregation"]) { issues.push(...this.rateAggregation.doModelValidation(expression+'.rateAggregation')); }
+    if (this["rationale"]) { issues.push(...this.rationale.doModelValidation(expression+'.rationale')); }
+    if (this["clinicalRecommendationStatement"]) { issues.push(...this.clinicalRecommendationStatement.doModelValidation(expression+'.clinicalRecommendationStatement')); }
+    if (this["improvementNotation"]) { issues.push(...this.improvementNotation.doModelValidation(expression+'.improvementNotation')); }
+    if (this["definition"]) { this.definition.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.definition[${i}]`)); }) }
+    if (this["guidance"]) { issues.push(...this.guidance.doModelValidation(expression+'.guidance')); }
+    if (this["group"]) { this.group.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.group[${i}]`)); }) }
+    if (this["supplementalData"]) { this.supplementalData.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.supplementalData[${i}]`)); }) }
     return issues;
   }
 }

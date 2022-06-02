@@ -85,10 +85,11 @@ export class BiologicallyDerivedProductCollection extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
-    if (this["collector"]) { issues.push(...this.collector.doModelValidation()); }
-    if (this["source"]) { issues.push(...this.source.doModelValidation()); }
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'BiologicallyDerivedProduct.collection' }
+    if (this["collector"]) { issues.push(...this.collector.doModelValidation(expression+'.collector')); }
+    if (this["source"]) { issues.push(...this.source.doModelValidation(expression+'.source')); }
     return issues;
   }
 }
@@ -173,11 +174,12 @@ export class BiologicallyDerivedProductProcessing extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
-    if (this["description"]) { issues.push(...this.description.doModelValidation()); }
-    if (this["procedure"]) { issues.push(...this.procedure.doModelValidation()); }
-    if (this["additive"]) { issues.push(...this.additive.doModelValidation()); }
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'BiologicallyDerivedProduct.processing' }
+    if (this["description"]) { issues.push(...this.description.doModelValidation(expression+'.description')); }
+    if (this["procedure"]) { issues.push(...this.procedure.doModelValidation(expression+'.procedure')); }
+    if (this["additive"]) { issues.push(...this.additive.doModelValidation(expression+'.additive')); }
     return issues;
   }
 }
@@ -244,9 +246,10 @@ export class BiologicallyDerivedProductManipulation extends fhir.BackboneElement
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
-    if (this["description"]) { issues.push(...this.description.doModelValidation()); }
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'BiologicallyDerivedProduct.manipulation' }
+    if (this["description"]) { issues.push(...this.description.doModelValidation(expression+'.description')); }
     return issues;
   }
 }
@@ -339,15 +342,16 @@ export class BiologicallyDerivedProductStorage extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
-    if (this["description"]) { issues.push(...this.description.doModelValidation()); }
-    if (this["temperature"]) { issues.push(...this.temperature.doModelValidation()); }
-    if (this['scale'] && (!Object.values(ProductStorageScaleCodes).includes(this.scale as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property scale?:fhir.FhirCode<ProductStorageScaleCodeType> fhir: BiologicallyDerivedProduct.storage.scale:code Required binding to: ProductStorageScale' });
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'BiologicallyDerivedProduct.storage' }
+    if (this["description"]) { issues.push(...this.description.doModelValidation(expression+'.description')); }
+    if (this["temperature"]) { issues.push(...this.temperature.doModelValidation(expression+'.temperature')); }
+    if (this['scale'] && (!Object.values(ProductStorageScaleCodes).includes(this.scale.value as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property scale fhir: BiologicallyDerivedProduct.storage.scale:code Required binding to: ProductStorageScale', expression: [expression] });
     }
-    if (this["scale"]) { issues.push(...this.scale.doModelValidation()); }
-    if (this["duration"]) { issues.push(...this.duration.doModelValidation()); }
+    if (this["scale"]) { issues.push(...this.scale.doModelValidation(expression+'.scale')); }
+    if (this["duration"]) { issues.push(...this.duration.doModelValidation(expression+'.duration')); }
     return issues;
   }
 }
@@ -524,28 +528,29 @@ export class BiologicallyDerivedProduct extends fhir.DomainResource {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'BiologicallyDerivedProduct' }
     if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType:"BiologicallyDerivedProduct" fhir: BiologicallyDerivedProduct.resourceType:"BiologicallyDerivedProduct"' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType fhir: BiologicallyDerivedProduct.resourceType:"BiologicallyDerivedProduct"', expression: [expression] });
     }
-    if (this["identifier"]) { this.identifier.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this['productCategory'] && (!Object.values(ProductCategoryCodes).includes(this.productCategory as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property productCategory?:fhir.FhirCode<ProductCategoryCodeType> fhir: BiologicallyDerivedProduct.productCategory:code Required binding to: ProductCategory' });
+    if (this["identifier"]) { this.identifier.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.identifier[${i}]`)); }) }
+    if (this['productCategory'] && (!Object.values(ProductCategoryCodes).includes(this.productCategory.value as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property productCategory fhir: BiologicallyDerivedProduct.productCategory:code Required binding to: ProductCategory', expression: [expression] });
     }
-    if (this["productCategory"]) { issues.push(...this.productCategory.doModelValidation()); }
-    if (this["productCode"]) { issues.push(...this.productCode.doModelValidation()); }
-    if (this['status'] && (!Object.values(ProductStatusCodes).includes(this.status as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property status?:fhir.FhirCode<ProductStatusCodeType> fhir: BiologicallyDerivedProduct.status:code Required binding to: ProductStatus' });
+    if (this["productCategory"]) { issues.push(...this.productCategory.doModelValidation(expression+'.productCategory')); }
+    if (this["productCode"]) { issues.push(...this.productCode.doModelValidation(expression+'.productCode')); }
+    if (this['status'] && (!Object.values(ProductStatusCodes).includes(this.status.value as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property status fhir: BiologicallyDerivedProduct.status:code Required binding to: ProductStatus', expression: [expression] });
     }
-    if (this["status"]) { issues.push(...this.status.doModelValidation()); }
-    if (this["request"]) { this.request.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["quantity"]) { issues.push(...this.quantity.doModelValidation()); }
-    if (this["parent"]) { this.parent.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["collection"]) { issues.push(...this.collection.doModelValidation()); }
-    if (this["processing"]) { this.processing.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["manipulation"]) { issues.push(...this.manipulation.doModelValidation()); }
-    if (this["storage"]) { this.storage.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["status"]) { issues.push(...this.status.doModelValidation(expression+'.status')); }
+    if (this["request"]) { this.request.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.request[${i}]`)); }) }
+    if (this["quantity"]) { issues.push(...this.quantity.doModelValidation(expression+'.quantity')); }
+    if (this["parent"]) { this.parent.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.parent[${i}]`)); }) }
+    if (this["collection"]) { issues.push(...this.collection.doModelValidation(expression+'.collection')); }
+    if (this["processing"]) { this.processing.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.processing[${i}]`)); }) }
+    if (this["manipulation"]) { issues.push(...this.manipulation.doModelValidation(expression+'.manipulation')); }
+    if (this["storage"]) { this.storage.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.storage[${i}]`)); }) }
     return issues;
   }
 }

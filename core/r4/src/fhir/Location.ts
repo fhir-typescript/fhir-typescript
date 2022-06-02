@@ -105,17 +105,18 @@ export class LocationPosition extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'Location.position' }
     if (!this['longitude']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property longitude:fhir.FhirDecimal fhir: Location.position.longitude:decimal' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property longitude fhir: Location.position.longitude:decimal', expression: [expression] });
     }
-    if (this["longitude"]) { issues.push(...this.longitude.doModelValidation()); }
+    if (this["longitude"]) { issues.push(...this.longitude.doModelValidation(expression+'.longitude')); }
     if (!this['latitude']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property latitude:fhir.FhirDecimal fhir: Location.position.latitude:decimal' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property latitude fhir: Location.position.latitude:decimal', expression: [expression] });
     }
-    if (this["latitude"]) { issues.push(...this.latitude.doModelValidation()); }
-    if (this["altitude"]) { issues.push(...this.altitude.doModelValidation()); }
+    if (this["latitude"]) { issues.push(...this.latitude.doModelValidation(expression+'.latitude')); }
+    if (this["altitude"]) { issues.push(...this.altitude.doModelValidation(expression+'.altitude')); }
     return issues;
   }
 }
@@ -220,19 +221,20 @@ export class LocationHoursOfOperation extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'Location.hoursOfOperation' }
     if (this['daysOfWeek']) {
       this.daysOfWeek.forEach((v) => {
-        if (!Object.values(DaysOfWeekCodes).includes(v as any)) {
-          issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property daysOfWeek?:fhir.FhirCode<DaysOfWeekCodeType>[] fhir: Location.hoursOfOperation.daysOfWeek:code Required binding to: DaysOfWeek' });
+        if (!Object.values(DaysOfWeekCodes).includes(v.value as any)) {
+          issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property daysOfWeek fhir: Location.hoursOfOperation.daysOfWeek:code Required binding to: DaysOfWeek', expression: [expression] });
         }
       });
     }
-    if (this["daysOfWeek"]) { this.daysOfWeek.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["allDay"]) { issues.push(...this.allDay.doModelValidation()); }
-    if (this["openingTime"]) { issues.push(...this.openingTime.doModelValidation()); }
-    if (this["closingTime"]) { issues.push(...this.closingTime.doModelValidation()); }
+    if (this["daysOfWeek"]) { this.daysOfWeek.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.daysOfWeek[${i}]`)); }) }
+    if (this["allDay"]) { issues.push(...this.allDay.doModelValidation(expression+'.allDay')); }
+    if (this["openingTime"]) { issues.push(...this.openingTime.doModelValidation(expression+'.openingTime')); }
+    if (this["closingTime"]) { issues.push(...this.closingTime.doModelValidation(expression+'.closingTime')); }
     return issues;
   }
 }
@@ -503,34 +505,35 @@ export class Location extends fhir.DomainResource {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'Location' }
     if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType:"Location" fhir: Location.resourceType:"Location"' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType fhir: Location.resourceType:"Location"', expression: [expression] });
     }
-    if (this["identifier"]) { this.identifier.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this['status'] && (!Object.values(LocationStatusCodes).includes(this.status as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property status?:fhir.FhirCode<LocationStatusCodeType> fhir: Location.status:code Required binding to: LocationStatus' });
+    if (this["identifier"]) { this.identifier.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.identifier[${i}]`)); }) }
+    if (this['status'] && (!Object.values(LocationStatusCodes).includes(this.status.value as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property status fhir: Location.status:code Required binding to: LocationStatus', expression: [expression] });
     }
-    if (this["status"]) { issues.push(...this.status.doModelValidation()); }
-    if (this["operationalStatus"]) { issues.push(...this.operationalStatus.doModelValidation()); }
-    if (this["name"]) { issues.push(...this.name.doModelValidation()); }
-    if (this["alias"]) { this.alias.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["description"]) { issues.push(...this.description.doModelValidation()); }
-    if (this['mode'] && (!Object.values(LocationModeCodes).includes(this.mode as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property mode?:fhir.FhirCode<LocationModeCodeType> fhir: Location.mode:code Required binding to: LocationMode' });
+    if (this["status"]) { issues.push(...this.status.doModelValidation(expression+'.status')); }
+    if (this["operationalStatus"]) { issues.push(...this.operationalStatus.doModelValidation(expression+'.operationalStatus')); }
+    if (this["name"]) { issues.push(...this.name.doModelValidation(expression+'.name')); }
+    if (this["alias"]) { this.alias.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.alias[${i}]`)); }) }
+    if (this["description"]) { issues.push(...this.description.doModelValidation(expression+'.description')); }
+    if (this['mode'] && (!Object.values(LocationModeCodes).includes(this.mode.value as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property mode fhir: Location.mode:code Required binding to: LocationMode', expression: [expression] });
     }
-    if (this["mode"]) { issues.push(...this.mode.doModelValidation()); }
-    if (this["type"]) { this.type.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["telecom"]) { this.telecom.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["address"]) { issues.push(...this.address.doModelValidation()); }
-    if (this["physicalType"]) { issues.push(...this.physicalType.doModelValidation()); }
-    if (this["position"]) { issues.push(...this.position.doModelValidation()); }
-    if (this["managingOrganization"]) { issues.push(...this.managingOrganization.doModelValidation()); }
-    if (this["partOf"]) { issues.push(...this.partOf.doModelValidation()); }
-    if (this["hoursOfOperation"]) { this.hoursOfOperation.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["availabilityExceptions"]) { issues.push(...this.availabilityExceptions.doModelValidation()); }
-    if (this["endpoint"]) { this.endpoint.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["mode"]) { issues.push(...this.mode.doModelValidation(expression+'.mode')); }
+    if (this["type"]) { this.type.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.type[${i}]`)); }) }
+    if (this["telecom"]) { this.telecom.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.telecom[${i}]`)); }) }
+    if (this["address"]) { issues.push(...this.address.doModelValidation(expression+'.address')); }
+    if (this["physicalType"]) { issues.push(...this.physicalType.doModelValidation(expression+'.physicalType')); }
+    if (this["position"]) { issues.push(...this.position.doModelValidation(expression+'.position')); }
+    if (this["managingOrganization"]) { issues.push(...this.managingOrganization.doModelValidation(expression+'.managingOrganization')); }
+    if (this["partOf"]) { issues.push(...this.partOf.doModelValidation(expression+'.partOf')); }
+    if (this["hoursOfOperation"]) { this.hoursOfOperation.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.hoursOfOperation[${i}]`)); }) }
+    if (this["availabilityExceptions"]) { issues.push(...this.availabilityExceptions.doModelValidation(expression+'.availabilityExceptions')); }
+    if (this["endpoint"]) { this.endpoint.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.endpoint[${i}]`)); }) }
     return issues;
   }
 }

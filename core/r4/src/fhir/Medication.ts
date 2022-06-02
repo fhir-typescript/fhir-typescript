@@ -90,13 +90,14 @@ export class MedicationIngredient extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'Medication.ingredient' }
     if (!this['item']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property item: fhir: Medication.ingredient.item[x]:' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property item fhir: Medication.ingredient.item[x]:', expression: [expression] });
     }
-    if (this["isActive"]) { issues.push(...this.isActive.doModelValidation()); }
-    if (this["strength"]) { issues.push(...this.strength.doModelValidation()); }
+    if (this["isActive"]) { issues.push(...this.isActive.doModelValidation(expression+'.isActive')); }
+    if (this["strength"]) { issues.push(...this.strength.doModelValidation(expression+'.strength')); }
     return issues;
   }
 }
@@ -157,10 +158,11 @@ export class MedicationBatch extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
-    if (this["lotNumber"]) { issues.push(...this.lotNumber.doModelValidation()); }
-    if (this["expirationDate"]) { issues.push(...this.expirationDate.doModelValidation()); }
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'Medication.batch' }
+    if (this["lotNumber"]) { issues.push(...this.lotNumber.doModelValidation(expression+'.lotNumber')); }
+    if (this["expirationDate"]) { issues.push(...this.expirationDate.doModelValidation(expression+'.expirationDate')); }
     return issues;
   }
 }
@@ -284,22 +286,23 @@ export class Medication extends fhir.DomainResource {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'Medication' }
     if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType:"Medication" fhir: Medication.resourceType:"Medication"' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType fhir: Medication.resourceType:"Medication"', expression: [expression] });
     }
-    if (this["identifier"]) { this.identifier.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["code"]) { issues.push(...this.code.doModelValidation()); }
-    if (this['status'] && (!Object.values(MedicationStatusCodes).includes(this.status as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property status?:fhir.FhirCode<MedicationStatusCodeType> fhir: Medication.status:code Required binding to: MedicationStatus' });
+    if (this["identifier"]) { this.identifier.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.identifier[${i}]`)); }) }
+    if (this["code"]) { issues.push(...this.code.doModelValidation(expression+'.code')); }
+    if (this['status'] && (!Object.values(MedicationStatusCodes).includes(this.status.value as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property status fhir: Medication.status:code Required binding to: MedicationStatus', expression: [expression] });
     }
-    if (this["status"]) { issues.push(...this.status.doModelValidation()); }
-    if (this["manufacturer"]) { issues.push(...this.manufacturer.doModelValidation()); }
-    if (this["form"]) { issues.push(...this.form.doModelValidation()); }
-    if (this["amount"]) { issues.push(...this.amount.doModelValidation()); }
-    if (this["ingredient"]) { this.ingredient.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["batch"]) { issues.push(...this.batch.doModelValidation()); }
+    if (this["status"]) { issues.push(...this.status.doModelValidation(expression+'.status')); }
+    if (this["manufacturer"]) { issues.push(...this.manufacturer.doModelValidation(expression+'.manufacturer')); }
+    if (this["form"]) { issues.push(...this.form.doModelValidation(expression+'.form')); }
+    if (this["amount"]) { issues.push(...this.amount.doModelValidation(expression+'.amount')); }
+    if (this["ingredient"]) { this.ingredient.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.ingredient[${i}]`)); }) }
+    if (this["batch"]) { issues.push(...this.batch.doModelValidation(expression+'.batch')); }
     return issues;
   }
 }

@@ -1,6 +1,6 @@
 {
   "name": "@fhir-typescript/r4-core",
-  "version": "0.0.11-beta.15",
+  "version": "0.0.12-beta.6",
   "description": "Developer pre-release testing of a FHIR TypeScript SDK",
   "keywords": ["fhir", "core", "R4" ],
   "main": "./dist/index.js",
@@ -16,7 +16,7 @@
     "type-check": "tsc --noEmit",
     "type-check:watch": "npm run type-check -- --watch",
     "build": "npm run clean && tsc -p tsconfig.json",
-    "test": "jest",
+    "test": "jest --runInBand",
     "test:coverage": "jest --coverage",
     "test:coverage:only": "npm run clean:coverage && npm run test:coverage"
   },
@@ -31,10 +31,10 @@
   "license": "MIT",
   "devDependencies": {
     "shx": "~0.3.4",
-    "typescript": "~4.6.4",
+    "typescript": "^4.7.2",
     "tslib": "~2.4.0",
     "rimraf": "~3.0.2",
-    "@types/jest": "~27.5.1",
+    "@types/jest": "^27.5.1",
     "ts-jest": "~28.0.3",
     "jest": "~28.1.0"
   }

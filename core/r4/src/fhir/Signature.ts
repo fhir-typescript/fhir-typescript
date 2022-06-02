@@ -136,28 +136,29 @@ export class Signature extends fhir.FhirElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'Signature' }
     if (!this['type']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property type:fhir.Coding[] fhir: Signature.type:Coding' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property type fhir: Signature.type:Coding', expression: [expression] });
     } else if (!Array.isArray(this.type)) {
-      issues.push({ severity: 'error', code: 'structure', diagnostics: 'Found scalar in array property type:fhir.Coding[] fhir: Signature.type:Coding' });
+      issues.push({ severity: 'error', code: 'structure', diagnostics: 'Found scalar in array property type fhir: Signature.type:Coding', expression: [expression] });
     } else if (this.type.length === 0) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property type:fhir.Coding[] fhir: Signature.type:Coding' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property type fhir: Signature.type:Coding', expression: [expression] });
     }
-    if (this["type"]) { this.type.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["type"]) { this.type.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.type[${i}]`)); }) }
     if (!this['when']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property when:fhir.FhirInstant fhir: Signature.when:instant' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property when fhir: Signature.when:instant', expression: [expression] });
     }
-    if (this["when"]) { issues.push(...this.when.doModelValidation()); }
+    if (this["when"]) { issues.push(...this.when.doModelValidation(expression+'.when')); }
     if (!this['who']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property who:fhir.Reference fhir: Signature.who:Reference' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property who fhir: Signature.who:Reference', expression: [expression] });
     }
-    if (this["who"]) { issues.push(...this.who.doModelValidation()); }
-    if (this["onBehalfOf"]) { issues.push(...this.onBehalfOf.doModelValidation()); }
-    if (this["targetFormat"]) { issues.push(...this.targetFormat.doModelValidation()); }
-    if (this["sigFormat"]) { issues.push(...this.sigFormat.doModelValidation()); }
-    if (this["data"]) { issues.push(...this.data.doModelValidation()); }
+    if (this["who"]) { issues.push(...this.who.doModelValidation(expression+'.who')); }
+    if (this["onBehalfOf"]) { issues.push(...this.onBehalfOf.doModelValidation(expression+'.onBehalfOf')); }
+    if (this["targetFormat"]) { issues.push(...this.targetFormat.doModelValidation(expression+'.targetFormat')); }
+    if (this["sigFormat"]) { issues.push(...this.sigFormat.doModelValidation(expression+'.sigFormat')); }
+    if (this["data"]) { issues.push(...this.data.doModelValidation(expression+'.data')); }
     return issues;
   }
 }

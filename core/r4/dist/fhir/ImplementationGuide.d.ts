@@ -58,7 +58,7 @@ export declare class ImplementationGuideDependsOn extends fhir.BackboneElement {
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.FtsIssue[];
+    doModelValidation(expression?: string): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the ImplementationGuideGlobal type.
@@ -197,7 +197,9 @@ export declare class ImplementationGuideGlobal extends fhir.BackboneElement {
         readonly MedicinalProductPharmaceutical: "MedicinalProductPharmaceutical";
         readonly MedicinalProductUndesirableEffect: "MedicinalProductUndesirableEffect";
         readonly MessageDefinition: "MessageDefinition";
-        readonly MessageHeader: "MessageHeader";
+        readonly MessageHeader: "MessageHeader"; /**
+         * Internal flag to properly serialize choice-type element ImplementationGuide.definition.page.name[x]
+         */
         readonly MolecularSequence: "MolecularSequence";
         readonly NamingSystem: "NamingSystem";
         readonly NutritionOrder: "NutritionOrder";
@@ -225,9 +227,6 @@ export declare class ImplementationGuideGlobal extends fhir.BackboneElement {
         readonly ResearchElementDefinition: "ResearchElementDefinition";
         readonly ResearchStudy: "ResearchStudy";
         readonly ResearchSubject: "ResearchSubject";
-        /**
-         * Valid arguments for the ImplementationGuideDefinitionTemplate type.
-         */
         readonly Resource: "Resource";
         readonly RiskAssessment: "RiskAssessment";
         readonly RiskEvidenceSynthesis: "RiskEvidenceSynthesis";
@@ -260,7 +259,7 @@ export declare class ImplementationGuideGlobal extends fhir.BackboneElement {
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.FtsIssue[];
+    doModelValidation(expression?: string): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the ImplementationGuideDefinitionGrouping type.
@@ -306,7 +305,7 @@ export declare class ImplementationGuideDefinitionGrouping extends fhir.Backbone
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.FtsIssue[];
+    doModelValidation(expression?: string): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the ImplementationGuideDefinitionResource type.
@@ -449,7 +448,7 @@ export declare class ImplementationGuideDefinitionResource extends fhir.Backbone
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.FtsIssue[];
+    doModelValidation(expression?: string): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the ImplementationGuideDefinitionPage type.
@@ -532,7 +531,7 @@ export declare class ImplementationGuideDefinitionPage extends fhir.BackboneElem
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.FtsIssue[];
+    doModelValidation(expression?: string): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the ImplementationGuideDefinitionParameter type.
@@ -593,7 +592,7 @@ export declare class ImplementationGuideDefinitionParameter extends fhir.Backbon
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.FtsIssue[];
+    doModelValidation(expression?: string): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the ImplementationGuideDefinitionTemplate type.
@@ -651,7 +650,7 @@ export declare class ImplementationGuideDefinitionTemplate extends fhir.Backbone
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.FtsIssue[];
+    doModelValidation(expression?: string): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the ImplementationGuideDefinition type.
@@ -713,7 +712,7 @@ export declare class ImplementationGuideDefinition extends fhir.BackboneElement 
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.FtsIssue[];
+    doModelValidation(expression?: string): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the ImplementationGuideManifestResource type.
@@ -775,7 +774,7 @@ export declare class ImplementationGuideManifestResource extends fhir.BackboneEl
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.FtsIssue[];
+    doModelValidation(expression?: string): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the ImplementationGuideManifestPage type.
@@ -833,7 +832,7 @@ export declare class ImplementationGuideManifestPage extends fhir.BackboneElemen
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.FtsIssue[];
+    doModelValidation(expression?: string): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the ImplementationGuideManifest type.
@@ -907,7 +906,7 @@ export declare class ImplementationGuideManifest extends fhir.BackboneElement {
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.FtsIssue[];
+    doModelValidation(expression?: string): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the ImplementationGuide type.
@@ -1243,9 +1242,6 @@ export declare class ImplementationGuide extends fhir.DomainResource {
         readonly CreativeCommonsAttributionNonCommercialNoDerivatives25Generic: "CC-BY-NC-ND-2.5";
         readonly CreativeCommonsAttributionNonCommercialNoDerivatives30Unported: "CC-BY-NC-ND-3.0";
         readonly CreativeCommonsAttributionNonCommercialNoDerivatives40International: "CC-BY-NC-ND-4.0";
-        /**
-         * The human-readable title to display for the package of resources when rendering the implementation guide.
-         */
         readonly CreativeCommonsAttributionNonCommercialShareAlike10Generic: "CC-BY-NC-SA-1.0";
         readonly CreativeCommonsAttributionNonCommercialShareAlike20Generic: "CC-BY-NC-SA-2.0";
         readonly CreativeCommonsAttributionNonCommercialShareAlike25Generic: "CC-BY-NC-SA-2.5";
@@ -1258,9 +1254,7 @@ export declare class ImplementationGuide extends fhir.DomainResource {
         readonly CreativeCommonsAttributionNoDerivatives40International: "CC-BY-ND-4.0";
         readonly CreativeCommonsAttributionShareAlike10Generic: "CC-BY-SA-1.0";
         readonly CreativeCommonsAttributionShareAlike20Generic: "CC-BY-SA-2.0";
-        readonly CreativeCommonsAttributionShareAlike25Generic: "CC-BY-SA-2.5"; /**
-         * Function to perform basic model validation (e.g., check if required elements are present).
-         */
+        readonly CreativeCommonsAttributionShareAlike25Generic: "CC-BY-SA-2.5";
         readonly CreativeCommonsAttributionShareAlike30Unported: "CC-BY-SA-3.0";
         readonly CreativeCommonsAttributionShareAlike40International: "CC-BY-SA-4.0";
         readonly CreativeCommonsZeroV10Universal: "CC0-1.0";
@@ -1299,9 +1293,6 @@ export declare class ImplementationGuide extends fhir.DomainResource {
         readonly EiffelForumLicenseV20: "EFL-2.0";
         readonly EGenixComPublicLicense110: "eGenix";
         readonly EntessaPublicLicenseV10: "Entessa";
-        /**
-         * Usually this is a relative URL that locates the resource within the implementation guide. If you authoring an implementation guide, and will publish it using the FHIR publication tooling, use a URI that may point to a resource, or to one of various alternative representations (e.g. spreadsheet). The tooling will convert this when it publishes it.
-         */
         readonly EclipsePublicLicense10: "EPL-1.0";
         readonly EclipsePublicLicense20: "EPL-2.0";
         readonly ErlangPublicLicenseV11: "ErlPL-1.1";
@@ -1375,9 +1366,7 @@ export declare class ImplementationGuide extends fhir.DomainResource {
         readonly LaTeXProjectPublicLicenseV11: "LPPL-1.1";
         readonly LaTeXProjectPublicLicenseV12: "LPPL-1.2";
         readonly LaTeXProjectPublicLicenseV13a: "LPPL-1.3a";
-        readonly LaTeXProjectPublicLicenseV13c: "LPPL-1.3c"; /**
-         * A short title used to represent this page in navigational structures such as table of contents, bread crumbs, etc.
-         */
+        readonly LaTeXProjectPublicLicenseV13c: "LPPL-1.3c";
         readonly MakeIndexLicense: "MakeIndex";
         readonly MirOSLicense: "MirOS";
         readonly MITLicense: "MIT";
@@ -1399,9 +1388,7 @@ export declare class ImplementationGuide extends fhir.DomainResource {
         readonly MulticsLicense: "Multics";
         readonly MupLicense: "Mup";
         readonly NASAOpenSourceAgreement13: "NASA-1.3";
-        readonly NaumenPublicLicense: "Naumen"; /**
-         * Required-bound Value Set for generation (ImplementationGuide.definition.page.generation)
-         */
+        readonly NaumenPublicLicense: "Naumen";
         readonly NetBooleanPublicLicenseV1: "NBPL-1.0";
         readonly UniversityOfIllinoisNCSAOpenSourceLicense: "NCSA";
         readonly NetSNMPLicense: "Net-SNMP";
@@ -1456,16 +1443,16 @@ export declare class ImplementationGuide extends fhir.DomainResource {
         readonly PlexusClassworldsLicense: "Plexus";
         readonly PostgreSQLLicense: "PostgreSQL";
         readonly PsfragLicense: "psfrag";
-        readonly PsutilsLicense: "psutils";
+        readonly PsutilsLicense: "psutils"; /**
+         * Function to perform basic model validation (e.g., check if required elements are present).
+         */
         readonly PythonLicense20: "Python-2.0";
         readonly QhullLicense: "Qhull";
         readonly QPublicLicense10: "QPL-1.0";
         readonly RdiscLicense: "Rdisc";
         readonly RedHatECosPublicLicenseV11: "RHeCos-1.1";
         readonly ReciprocalPublicLicense11: "RPL-1.1";
-        readonly ReciprocalPublicLicense15: "RPL-1.5"; /**
-         * The source location for the template.
-         */
+        readonly ReciprocalPublicLicense15: "RPL-1.5";
         readonly RealNetworksPublicSourceLicenseV10: "RPSL-1.0";
         readonly RSAMessageDigestLicense: "RSA-MD";
         readonly RicohSourceCodePublicLicense: "RSCPL";
@@ -1510,9 +1497,13 @@ export declare class ImplementationGuide extends fhir.DomainResource {
         readonly WsuipaLicense: "Wsuipa";
         readonly DoWhatTheFAsteriskCkYouWantToPublicLicense: "WTFPL";
         readonly X11License: "X11";
-        readonly XeroxLicense: "Xerox";
+        readonly XeroxLicense: "Xerox"; /**
+         * Valid arguments for the ImplementationGuideDefinition type.
+         */
         readonly XFree86License11: "XFree86-1.1";
-        readonly XinetdLicense: "xinetd";
+        readonly XinetdLicense: "xinetd"; /**
+         * Groupings are arbitrary sub-divisions of content. Typically, they are used to help build Table of Contents automatically.
+         */
         readonly XNetLicense: "Xnet";
         readonly XPPLicense: "xpp";
         readonly XSkatLicense: "XSkat";
@@ -1560,6 +1551,6 @@ export declare class ImplementationGuide extends fhir.DomainResource {
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.FtsIssue[];
+    doModelValidation(expression?: string): fhir.FtsIssue[];
 }
 //# sourceMappingURL=ImplementationGuide.d.ts.map

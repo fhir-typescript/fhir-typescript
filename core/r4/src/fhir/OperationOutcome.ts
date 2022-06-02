@@ -154,26 +154,27 @@ export class OperationOutcomeIssue extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'OperationOutcome.issue' }
     if (!this['severity']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property severity:fhir.FhirCode<IssueSeverityCodeType> fhir: OperationOutcome.issue.severity:code' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property severity fhir: OperationOutcome.issue.severity:code', expression: [expression] });
     }
-    if (this['severity'] && (!Object.values(IssueSeverityCodes).includes(this.severity as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property severity:fhir.FhirCode<IssueSeverityCodeType> fhir: OperationOutcome.issue.severity:code Required binding to: IssueSeverity' });
+    if (this['severity'] && (!Object.values(IssueSeverityCodes).includes(this.severity.value as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property severity fhir: OperationOutcome.issue.severity:code Required binding to: IssueSeverity', expression: [expression] });
     }
-    if (this["severity"]) { issues.push(...this.severity.doModelValidation()); }
+    if (this["severity"]) { issues.push(...this.severity.doModelValidation(expression+'.severity')); }
     if (!this['code']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property code:fhir.FhirCode fhir: OperationOutcome.issue.code:code' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property code fhir: OperationOutcome.issue.code:code', expression: [expression] });
     }
-    if (this['code'] && (!Object.values(IssueTypeCodes).includes(this.code as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property code:fhir.FhirCode fhir: OperationOutcome.issue.code:code Required binding to: IssueType' });
+    if (this['code'] && (!Object.values(IssueTypeCodes).includes(this.code.value as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property code fhir: OperationOutcome.issue.code:code Required binding to: IssueType', expression: [expression] });
     }
-    if (this["code"]) { issues.push(...this.code.doModelValidation()); }
-    if (this["details"]) { issues.push(...this.details.doModelValidation()); }
-    if (this["diagnostics"]) { issues.push(...this.diagnostics.doModelValidation()); }
-    if (this["location"]) { this.location.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["expression"]) { this.expression.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["code"]) { issues.push(...this.code.doModelValidation(expression+'.code')); }
+    if (this["details"]) { issues.push(...this.details.doModelValidation(expression+'.details')); }
+    if (this["diagnostics"]) { issues.push(...this.diagnostics.doModelValidation(expression+'.diagnostics')); }
+    if (this["location"]) { this.location.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.location[${i}]`)); }) }
+    if (this["expression"]) { this.expression.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.expression[${i}]`)); }) }
     return issues;
   }
 }
@@ -219,19 +220,20 @@ export class OperationOutcome extends fhir.DomainResource {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'OperationOutcome' }
     if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType:"OperationOutcome" fhir: OperationOutcome.resourceType:"OperationOutcome"' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType fhir: OperationOutcome.resourceType:"OperationOutcome"', expression: [expression] });
     }
     if (!this['issue']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property issue:fhir.OperationOutcomeIssue[] fhir: OperationOutcome.issue:issue' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property issue fhir: OperationOutcome.issue:issue', expression: [expression] });
     } else if (!Array.isArray(this.issue)) {
-      issues.push({ severity: 'error', code: 'structure', diagnostics: 'Found scalar in array property issue:fhir.OperationOutcomeIssue[] fhir: OperationOutcome.issue:issue' });
+      issues.push({ severity: 'error', code: 'structure', diagnostics: 'Found scalar in array property issue fhir: OperationOutcome.issue:issue', expression: [expression] });
     } else if (this.issue.length === 0) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property issue:fhir.OperationOutcomeIssue[] fhir: OperationOutcome.issue:issue' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property issue fhir: OperationOutcome.issue:issue', expression: [expression] });
     }
-    if (this["issue"]) { this.issue.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["issue"]) { this.issue.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.issue[${i}]`)); }) }
     return issues;
   }
 }

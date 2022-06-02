@@ -88,10 +88,11 @@ export class SpecimenDefinitionTypeTestedContainerAdditive extends fhir.Backbone
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'SpecimenDefinition.typeTested.container.additive' }
     if (!this['additive']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property additive: fhir: SpecimenDefinition.typeTested.container.additive.additive[x]:' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property additive fhir: SpecimenDefinition.typeTested.container.additive.additive[x]:', expression: [expression] });
     }
     return issues;
   }
@@ -222,15 +223,16 @@ export class SpecimenDefinitionTypeTestedContainer extends fhir.BackboneElement 
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
-    if (this["material"]) { issues.push(...this.material.doModelValidation()); }
-    if (this["type"]) { issues.push(...this.type.doModelValidation()); }
-    if (this["cap"]) { issues.push(...this.cap.doModelValidation()); }
-    if (this["description"]) { issues.push(...this.description.doModelValidation()); }
-    if (this["capacity"]) { issues.push(...this.capacity.doModelValidation()); }
-    if (this["additive"]) { this.additive.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["preparation"]) { issues.push(...this.preparation.doModelValidation()); }
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'SpecimenDefinition.typeTested.container' }
+    if (this["material"]) { issues.push(...this.material.doModelValidation(expression+'.material')); }
+    if (this["type"]) { issues.push(...this.type.doModelValidation(expression+'.type')); }
+    if (this["cap"]) { issues.push(...this.cap.doModelValidation(expression+'.cap')); }
+    if (this["description"]) { issues.push(...this.description.doModelValidation(expression+'.description')); }
+    if (this["capacity"]) { issues.push(...this.capacity.doModelValidation(expression+'.capacity')); }
+    if (this["additive"]) { this.additive.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.additive[${i}]`)); }) }
+    if (this["preparation"]) { issues.push(...this.preparation.doModelValidation(expression+'.preparation')); }
     return issues;
   }
 }
@@ -301,12 +303,13 @@ export class SpecimenDefinitionTypeTestedHandling extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
-    if (this["temperatureQualifier"]) { issues.push(...this.temperatureQualifier.doModelValidation()); }
-    if (this["temperatureRange"]) { issues.push(...this.temperatureRange.doModelValidation()); }
-    if (this["maxDuration"]) { issues.push(...this.maxDuration.doModelValidation()); }
-    if (this["instruction"]) { issues.push(...this.instruction.doModelValidation()); }
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'SpecimenDefinition.typeTested.handling' }
+    if (this["temperatureQualifier"]) { issues.push(...this.temperatureQualifier.doModelValidation(expression+'.temperatureQualifier')); }
+    if (this["temperatureRange"]) { issues.push(...this.temperatureRange.doModelValidation(expression+'.temperatureRange')); }
+    if (this["maxDuration"]) { issues.push(...this.maxDuration.doModelValidation(expression+'.maxDuration')); }
+    if (this["instruction"]) { issues.push(...this.instruction.doModelValidation(expression+'.instruction')); }
     return issues;
   }
 }
@@ -438,22 +441,23 @@ export class SpecimenDefinitionTypeTested extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
-    if (this["isDerived"]) { issues.push(...this.isDerived.doModelValidation()); }
-    if (this["type"]) { issues.push(...this.type.doModelValidation()); }
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'SpecimenDefinition.typeTested' }
+    if (this["isDerived"]) { issues.push(...this.isDerived.doModelValidation(expression+'.isDerived')); }
+    if (this["type"]) { issues.push(...this.type.doModelValidation(expression+'.type')); }
     if (!this['preference']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property preference:fhir.FhirCode<SpecimenContainedPreferenceCodeType> fhir: SpecimenDefinition.typeTested.preference:code' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property preference fhir: SpecimenDefinition.typeTested.preference:code', expression: [expression] });
     }
-    if (this['preference'] && (!Object.values(SpecimenContainedPreferenceCodes).includes(this.preference as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property preference:fhir.FhirCode<SpecimenContainedPreferenceCodeType> fhir: SpecimenDefinition.typeTested.preference:code Required binding to: SpecimenContainedPreference' });
+    if (this['preference'] && (!Object.values(SpecimenContainedPreferenceCodes).includes(this.preference.value as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property preference fhir: SpecimenDefinition.typeTested.preference:code Required binding to: SpecimenContainedPreference', expression: [expression] });
     }
-    if (this["preference"]) { issues.push(...this.preference.doModelValidation()); }
-    if (this["container"]) { issues.push(...this.container.doModelValidation()); }
-    if (this["requirement"]) { issues.push(...this.requirement.doModelValidation()); }
-    if (this["retentionTime"]) { issues.push(...this.retentionTime.doModelValidation()); }
-    if (this["rejectionCriterion"]) { this.rejectionCriterion.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["handling"]) { this.handling.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["preference"]) { issues.push(...this.preference.doModelValidation(expression+'.preference')); }
+    if (this["container"]) { issues.push(...this.container.doModelValidation(expression+'.container')); }
+    if (this["requirement"]) { issues.push(...this.requirement.doModelValidation(expression+'.requirement')); }
+    if (this["retentionTime"]) { issues.push(...this.retentionTime.doModelValidation(expression+'.retentionTime')); }
+    if (this["rejectionCriterion"]) { this.rejectionCriterion.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.rejectionCriterion[${i}]`)); }) }
+    if (this["handling"]) { this.handling.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.handling[${i}]`)); }) }
     return issues;
   }
 }
@@ -554,17 +558,18 @@ export class SpecimenDefinition extends fhir.DomainResource {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'SpecimenDefinition' }
     if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType:"SpecimenDefinition" fhir: SpecimenDefinition.resourceType:"SpecimenDefinition"' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType fhir: SpecimenDefinition.resourceType:"SpecimenDefinition"', expression: [expression] });
     }
-    if (this["identifier"]) { issues.push(...this.identifier.doModelValidation()); }
-    if (this["typeCollected"]) { issues.push(...this.typeCollected.doModelValidation()); }
-    if (this["patientPreparation"]) { this.patientPreparation.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["timeAspect"]) { issues.push(...this.timeAspect.doModelValidation()); }
-    if (this["collection"]) { this.collection.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["typeTested"]) { this.typeTested.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["identifier"]) { issues.push(...this.identifier.doModelValidation(expression+'.identifier')); }
+    if (this["typeCollected"]) { issues.push(...this.typeCollected.doModelValidation(expression+'.typeCollected')); }
+    if (this["patientPreparation"]) { this.patientPreparation.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.patientPreparation[${i}]`)); }) }
+    if (this["timeAspect"]) { issues.push(...this.timeAspect.doModelValidation(expression+'.timeAspect')); }
+    if (this["collection"]) { this.collection.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.collection[${i}]`)); }) }
+    if (this["typeTested"]) { this.typeTested.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.typeTested[${i}]`)); }) }
     return issues;
   }
 }

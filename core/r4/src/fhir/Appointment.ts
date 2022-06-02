@@ -153,22 +153,23 @@ export class AppointmentParticipant extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
-    if (this["type"]) { this.type.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["actor"]) { issues.push(...this.actor.doModelValidation()); }
-    if (this['required'] && (!Object.values(ParticipantrequiredCodes).includes(this.required as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property required?:fhir.FhirCode<ParticipantrequiredCodeType> fhir: Appointment.participant.required:code Required binding to: Participantrequired' });
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'Appointment.participant' }
+    if (this["type"]) { this.type.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.type[${i}]`)); }) }
+    if (this["actor"]) { issues.push(...this.actor.doModelValidation(expression+'.actor')); }
+    if (this['required'] && (!Object.values(ParticipantrequiredCodes).includes(this.required.value as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property required fhir: Appointment.participant.required:code Required binding to: Participantrequired', expression: [expression] });
     }
-    if (this["required"]) { issues.push(...this.required.doModelValidation()); }
+    if (this["required"]) { issues.push(...this.required.doModelValidation(expression+'.required')); }
     if (!this['status']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status:fhir.FhirCode<ParticipationstatusCodeType> fhir: Appointment.participant.status:code' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status fhir: Appointment.participant.status:code', expression: [expression] });
     }
-    if (this['status'] && (!Object.values(ParticipationstatusCodes).includes(this.status as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property status:fhir.FhirCode<ParticipationstatusCodeType> fhir: Appointment.participant.status:code Required binding to: Participationstatus' });
+    if (this['status'] && (!Object.values(ParticipationstatusCodes).includes(this.status.value as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property status fhir: Appointment.participant.status:code Required binding to: Participationstatus', expression: [expression] });
     }
-    if (this["status"]) { issues.push(...this.status.doModelValidation()); }
-    if (this["period"]) { issues.push(...this.period.doModelValidation()); }
+    if (this["status"]) { issues.push(...this.status.doModelValidation(expression+'.status')); }
+    if (this["period"]) { issues.push(...this.period.doModelValidation(expression+'.period')); }
     return issues;
   }
 }
@@ -516,46 +517,47 @@ export class Appointment extends fhir.DomainResource {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'Appointment' }
     if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType:"Appointment" fhir: Appointment.resourceType:"Appointment"' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType fhir: Appointment.resourceType:"Appointment"', expression: [expression] });
     }
-    if (this["identifier"]) { this.identifier.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["identifier"]) { this.identifier.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.identifier[${i}]`)); }) }
     if (!this['status']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status:fhir.FhirCode<AppointmentstatusCodeType> fhir: Appointment.status:code' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status fhir: Appointment.status:code', expression: [expression] });
     }
-    if (this['status'] && (!Object.values(AppointmentstatusCodes).includes(this.status as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property status:fhir.FhirCode<AppointmentstatusCodeType> fhir: Appointment.status:code Required binding to: Appointmentstatus' });
+    if (this['status'] && (!Object.values(AppointmentstatusCodes).includes(this.status.value as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property status fhir: Appointment.status:code Required binding to: Appointmentstatus', expression: [expression] });
     }
-    if (this["status"]) { issues.push(...this.status.doModelValidation()); }
-    if (this["cancelationReason"]) { issues.push(...this.cancelationReason.doModelValidation()); }
-    if (this["serviceCategory"]) { this.serviceCategory.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["serviceType"]) { this.serviceType.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["specialty"]) { this.specialty.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["appointmentType"]) { issues.push(...this.appointmentType.doModelValidation()); }
-    if (this["reasonCode"]) { this.reasonCode.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["reasonReference"]) { this.reasonReference.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["priority"]) { issues.push(...this.priority.doModelValidation()); }
-    if (this["description"]) { issues.push(...this.description.doModelValidation()); }
-    if (this["supportingInformation"]) { this.supportingInformation.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["start"]) { issues.push(...this.start.doModelValidation()); }
-    if (this["end"]) { issues.push(...this.end.doModelValidation()); }
-    if (this["minutesDuration"]) { issues.push(...this.minutesDuration.doModelValidation()); }
-    if (this["slot"]) { this.slot.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["created"]) { issues.push(...this.created.doModelValidation()); }
-    if (this["comment"]) { issues.push(...this.comment.doModelValidation()); }
-    if (this["patientInstruction"]) { issues.push(...this.patientInstruction.doModelValidation()); }
-    if (this["basedOn"]) { this.basedOn.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["status"]) { issues.push(...this.status.doModelValidation(expression+'.status')); }
+    if (this["cancelationReason"]) { issues.push(...this.cancelationReason.doModelValidation(expression+'.cancelationReason')); }
+    if (this["serviceCategory"]) { this.serviceCategory.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.serviceCategory[${i}]`)); }) }
+    if (this["serviceType"]) { this.serviceType.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.serviceType[${i}]`)); }) }
+    if (this["specialty"]) { this.specialty.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.specialty[${i}]`)); }) }
+    if (this["appointmentType"]) { issues.push(...this.appointmentType.doModelValidation(expression+'.appointmentType')); }
+    if (this["reasonCode"]) { this.reasonCode.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.reasonCode[${i}]`)); }) }
+    if (this["reasonReference"]) { this.reasonReference.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.reasonReference[${i}]`)); }) }
+    if (this["priority"]) { issues.push(...this.priority.doModelValidation(expression+'.priority')); }
+    if (this["description"]) { issues.push(...this.description.doModelValidation(expression+'.description')); }
+    if (this["supportingInformation"]) { this.supportingInformation.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.supportingInformation[${i}]`)); }) }
+    if (this["start"]) { issues.push(...this.start.doModelValidation(expression+'.start')); }
+    if (this["end"]) { issues.push(...this.end.doModelValidation(expression+'.end')); }
+    if (this["minutesDuration"]) { issues.push(...this.minutesDuration.doModelValidation(expression+'.minutesDuration')); }
+    if (this["slot"]) { this.slot.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.slot[${i}]`)); }) }
+    if (this["created"]) { issues.push(...this.created.doModelValidation(expression+'.created')); }
+    if (this["comment"]) { issues.push(...this.comment.doModelValidation(expression+'.comment')); }
+    if (this["patientInstruction"]) { issues.push(...this.patientInstruction.doModelValidation(expression+'.patientInstruction')); }
+    if (this["basedOn"]) { this.basedOn.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.basedOn[${i}]`)); }) }
     if (!this['participant']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property participant:fhir.AppointmentParticipant[] fhir: Appointment.participant:participant' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property participant fhir: Appointment.participant:participant', expression: [expression] });
     } else if (!Array.isArray(this.participant)) {
-      issues.push({ severity: 'error', code: 'structure', diagnostics: 'Found scalar in array property participant:fhir.AppointmentParticipant[] fhir: Appointment.participant:participant' });
+      issues.push({ severity: 'error', code: 'structure', diagnostics: 'Found scalar in array property participant fhir: Appointment.participant:participant', expression: [expression] });
     } else if (this.participant.length === 0) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property participant:fhir.AppointmentParticipant[] fhir: Appointment.participant:participant' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property participant fhir: Appointment.participant:participant', expression: [expression] });
     }
-    if (this["participant"]) { this.participant.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["requestedPeriod"]) { this.requestedPeriod.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["participant"]) { this.participant.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.participant[${i}]`)); }) }
+    if (this["requestedPeriod"]) { this.requestedPeriod.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.requestedPeriod[${i}]`)); }) }
     return issues;
   }
 }

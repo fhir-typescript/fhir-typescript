@@ -123,16 +123,17 @@ export class Quantity extends fhir.FhirElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
-    if (this["value"]) { issues.push(...this.value.doModelValidation()); }
-    if (this['comparator'] && (!Object.values(QuantityComparatorCodes).includes(this.comparator as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property comparator?:fhir.FhirCode<QuantityComparatorCodeType> fhir: Quantity.comparator:code Required binding to: QuantityComparator' });
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'Quantity' }
+    if (this["value"]) { issues.push(...this.value.doModelValidation(expression+'.value')); }
+    if (this['comparator'] && (!Object.values(QuantityComparatorCodes).includes(this.comparator.value as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property comparator fhir: Quantity.comparator:code Required binding to: QuantityComparator', expression: [expression] });
     }
-    if (this["comparator"]) { issues.push(...this.comparator.doModelValidation()); }
-    if (this["unit"]) { issues.push(...this.unit.doModelValidation()); }
-    if (this["system"]) { issues.push(...this.system.doModelValidation()); }
-    if (this["code"]) { issues.push(...this.code.doModelValidation()); }
+    if (this["comparator"]) { issues.push(...this.comparator.doModelValidation(expression+'.comparator')); }
+    if (this["unit"]) { issues.push(...this.unit.doModelValidation(expression+'.unit')); }
+    if (this["system"]) { issues.push(...this.system.doModelValidation(expression+'.system')); }
+    if (this["code"]) { issues.push(...this.code.doModelValidation(expression+'.code')); }
     return issues;
   }
 }

@@ -103,20 +103,21 @@ export class TestReportParticipant extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'TestReport.participant' }
     if (!this['type']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property type:fhir.FhirCode<ReportParticipantTypeCodeType> fhir: TestReport.participant.type:code' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property type fhir: TestReport.participant.type:code', expression: [expression] });
     }
-    if (this['type'] && (!Object.values(ReportParticipantTypeCodes).includes(this.type as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property type:fhir.FhirCode<ReportParticipantTypeCodeType> fhir: TestReport.participant.type:code Required binding to: ReportParticipantType' });
+    if (this['type'] && (!Object.values(ReportParticipantTypeCodes).includes(this.type.value as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property type fhir: TestReport.participant.type:code Required binding to: ReportParticipantType', expression: [expression] });
     }
-    if (this["type"]) { issues.push(...this.type.doModelValidation()); }
+    if (this["type"]) { issues.push(...this.type.doModelValidation(expression+'.type')); }
     if (!this['uri']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property uri:fhir.FhirUri fhir: TestReport.participant.uri:uri' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property uri fhir: TestReport.participant.uri:uri', expression: [expression] });
     }
-    if (this["uri"]) { issues.push(...this.uri.doModelValidation()); }
-    if (this["display"]) { issues.push(...this.display.doModelValidation()); }
+    if (this["uri"]) { issues.push(...this.uri.doModelValidation(expression+'.uri')); }
+    if (this["display"]) { issues.push(...this.display.doModelValidation(expression+'.display')); }
     return issues;
   }
 }
@@ -201,17 +202,18 @@ export class TestReportSetupActionOperation extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'TestReport.setup.action.operation' }
     if (!this['result']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property result:fhir.FhirCode<ReportActionResultCodeType> fhir: TestReport.setup.action.operation.result:code' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property result fhir: TestReport.setup.action.operation.result:code', expression: [expression] });
     }
-    if (this['result'] && (!Object.values(ReportActionResultCodes).includes(this.result as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property result:fhir.FhirCode<ReportActionResultCodeType> fhir: TestReport.setup.action.operation.result:code Required binding to: ReportActionResult' });
+    if (this['result'] && (!Object.values(ReportActionResultCodes).includes(this.result.value as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property result fhir: TestReport.setup.action.operation.result:code Required binding to: ReportActionResult', expression: [expression] });
     }
-    if (this["result"]) { issues.push(...this.result.doModelValidation()); }
-    if (this["message"]) { issues.push(...this.message.doModelValidation()); }
-    if (this["detail"]) { issues.push(...this.detail.doModelValidation()); }
+    if (this["result"]) { issues.push(...this.result.doModelValidation(expression+'.result')); }
+    if (this["message"]) { issues.push(...this.message.doModelValidation(expression+'.message')); }
+    if (this["detail"]) { issues.push(...this.detail.doModelValidation(expression+'.detail')); }
     return issues;
   }
 }
@@ -296,17 +298,18 @@ export class TestReportSetupActionAssert extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'TestReport.setup.action.assert' }
     if (!this['result']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property result:fhir.FhirCode<ReportActionResultCodeType> fhir: TestReport.setup.action.assert.result:code' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property result fhir: TestReport.setup.action.assert.result:code', expression: [expression] });
     }
-    if (this['result'] && (!Object.values(ReportActionResultCodes).includes(this.result as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property result:fhir.FhirCode<ReportActionResultCodeType> fhir: TestReport.setup.action.assert.result:code Required binding to: ReportActionResult' });
+    if (this['result'] && (!Object.values(ReportActionResultCodes).includes(this.result.value as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property result fhir: TestReport.setup.action.assert.result:code Required binding to: ReportActionResult', expression: [expression] });
     }
-    if (this["result"]) { issues.push(...this.result.doModelValidation()); }
-    if (this["message"]) { issues.push(...this.message.doModelValidation()); }
-    if (this["detail"]) { issues.push(...this.detail.doModelValidation()); }
+    if (this["result"]) { issues.push(...this.result.doModelValidation(expression+'.result')); }
+    if (this["message"]) { issues.push(...this.message.doModelValidation(expression+'.message')); }
+    if (this["detail"]) { issues.push(...this.detail.doModelValidation(expression+'.detail')); }
     return issues;
   }
 }
@@ -351,10 +354,11 @@ export class TestReportSetupAction extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
-    if (this["operation"]) { issues.push(...this.operation.doModelValidation()); }
-    if (this["assert"]) { issues.push(...this.assert.doModelValidation()); }
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'TestReport.setup.action' }
+    if (this["operation"]) { issues.push(...this.operation.doModelValidation(expression+'.operation')); }
+    if (this["assert"]) { issues.push(...this.assert.doModelValidation(expression+'.assert')); }
     return issues;
   }
 }
@@ -391,16 +395,17 @@ export class TestReportSetup extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'TestReport.setup' }
     if (!this['action']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property action:fhir.TestReportSetupAction[] fhir: TestReport.setup.action:action' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property action fhir: TestReport.setup.action:action', expression: [expression] });
     } else if (!Array.isArray(this.action)) {
-      issues.push({ severity: 'error', code: 'structure', diagnostics: 'Found scalar in array property action:fhir.TestReportSetupAction[] fhir: TestReport.setup.action:action' });
+      issues.push({ severity: 'error', code: 'structure', diagnostics: 'Found scalar in array property action fhir: TestReport.setup.action:action', expression: [expression] });
     } else if (this.action.length === 0) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property action:fhir.TestReportSetupAction[] fhir: TestReport.setup.action:action' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property action fhir: TestReport.setup.action:action', expression: [expression] });
     }
-    if (this["action"]) { this.action.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["action"]) { this.action.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.action[${i}]`)); }) }
     return issues;
   }
 }
@@ -445,10 +450,11 @@ export class TestReportTestAction extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
-    if (this["operation"]) { issues.push(...this.operation.doModelValidation()); }
-    if (this["assert"]) { issues.push(...this.assert.doModelValidation()); }
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'TestReport.test.action' }
+    if (this["operation"]) { issues.push(...this.operation.doModelValidation(expression+'.operation')); }
+    if (this["assert"]) { issues.push(...this.assert.doModelValidation(expression+'.assert')); }
     return issues;
   }
 }
@@ -519,18 +525,19 @@ export class TestReportTest extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
-    if (this["name"]) { issues.push(...this.name.doModelValidation()); }
-    if (this["description"]) { issues.push(...this.description.doModelValidation()); }
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'TestReport.test' }
+    if (this["name"]) { issues.push(...this.name.doModelValidation(expression+'.name')); }
+    if (this["description"]) { issues.push(...this.description.doModelValidation(expression+'.description')); }
     if (!this['action']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property action:fhir.TestReportTestAction[] fhir: TestReport.test.action:action' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property action fhir: TestReport.test.action:action', expression: [expression] });
     } else if (!Array.isArray(this.action)) {
-      issues.push({ severity: 'error', code: 'structure', diagnostics: 'Found scalar in array property action:fhir.TestReportTestAction[] fhir: TestReport.test.action:action' });
+      issues.push({ severity: 'error', code: 'structure', diagnostics: 'Found scalar in array property action fhir: TestReport.test.action:action', expression: [expression] });
     } else if (this.action.length === 0) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property action:fhir.TestReportTestAction[] fhir: TestReport.test.action:action' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property action fhir: TestReport.test.action:action', expression: [expression] });
     }
-    if (this["action"]) { this.action.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["action"]) { this.action.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.action[${i}]`)); }) }
     return issues;
   }
 }
@@ -567,12 +574,13 @@ export class TestReportTeardownAction extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'TestReport.teardown.action' }
     if (!this['operation']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property operation:fhir.TestReportSetupActionOperation fhir: TestReport.teardown.action.operation:TestReport.setup.action.operation' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property operation fhir: TestReport.teardown.action.operation:TestReport.setup.action.operation', expression: [expression] });
     }
-    if (this["operation"]) { issues.push(...this.operation.doModelValidation()); }
+    if (this["operation"]) { issues.push(...this.operation.doModelValidation(expression+'.operation')); }
     return issues;
   }
 }
@@ -609,16 +617,17 @@ export class TestReportTeardown extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'TestReport.teardown' }
     if (!this['action']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property action:fhir.TestReportTeardownAction[] fhir: TestReport.teardown.action:action' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property action fhir: TestReport.teardown.action:action', expression: [expression] });
     } else if (!Array.isArray(this.action)) {
-      issues.push({ severity: 'error', code: 'structure', diagnostics: 'Found scalar in array property action:fhir.TestReportTeardownAction[] fhir: TestReport.teardown.action:action' });
+      issues.push({ severity: 'error', code: 'structure', diagnostics: 'Found scalar in array property action fhir: TestReport.teardown.action:action', expression: [expression] });
     } else if (this.action.length === 0) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property action:fhir.TestReportTeardownAction[] fhir: TestReport.teardown.action:action' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property action fhir: TestReport.teardown.action:action', expression: [expression] });
     }
-    if (this["action"]) { this.action.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["action"]) { this.action.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.action[${i}]`)); }) }
     return issues;
   }
 }
@@ -829,38 +838,39 @@ export class TestReport extends fhir.DomainResource {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'TestReport' }
     if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType:"TestReport" fhir: TestReport.resourceType:"TestReport"' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType fhir: TestReport.resourceType:"TestReport"', expression: [expression] });
     }
-    if (this["identifier"]) { issues.push(...this.identifier.doModelValidation()); }
-    if (this["name"]) { issues.push(...this.name.doModelValidation()); }
+    if (this["identifier"]) { issues.push(...this.identifier.doModelValidation(expression+'.identifier')); }
+    if (this["name"]) { issues.push(...this.name.doModelValidation(expression+'.name')); }
     if (!this['status']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status:fhir.FhirCode<ReportStatusCodeType> fhir: TestReport.status:code' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status fhir: TestReport.status:code', expression: [expression] });
     }
-    if (this['status'] && (!Object.values(ReportStatusCodes).includes(this.status as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property status:fhir.FhirCode<ReportStatusCodeType> fhir: TestReport.status:code Required binding to: ReportStatus' });
+    if (this['status'] && (!Object.values(ReportStatusCodes).includes(this.status.value as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property status fhir: TestReport.status:code Required binding to: ReportStatus', expression: [expression] });
     }
-    if (this["status"]) { issues.push(...this.status.doModelValidation()); }
+    if (this["status"]) { issues.push(...this.status.doModelValidation(expression+'.status')); }
     if (!this['testScript']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property testScript:fhir.Reference fhir: TestReport.testScript:Reference' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property testScript fhir: TestReport.testScript:Reference', expression: [expression] });
     }
-    if (this["testScript"]) { issues.push(...this.testScript.doModelValidation()); }
+    if (this["testScript"]) { issues.push(...this.testScript.doModelValidation(expression+'.testScript')); }
     if (!this['result']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property result:fhir.FhirCode<ReportResultCodeType> fhir: TestReport.result:code' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property result fhir: TestReport.result:code', expression: [expression] });
     }
-    if (this['result'] && (!Object.values(ReportResultCodes).includes(this.result as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property result:fhir.FhirCode<ReportResultCodeType> fhir: TestReport.result:code Required binding to: ReportResult' });
+    if (this['result'] && (!Object.values(ReportResultCodes).includes(this.result.value as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property result fhir: TestReport.result:code Required binding to: ReportResult', expression: [expression] });
     }
-    if (this["result"]) { issues.push(...this.result.doModelValidation()); }
-    if (this["score"]) { issues.push(...this.score.doModelValidation()); }
-    if (this["tester"]) { issues.push(...this.tester.doModelValidation()); }
-    if (this["issued"]) { issues.push(...this.issued.doModelValidation()); }
-    if (this["participant"]) { this.participant.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["setup"]) { issues.push(...this.setup.doModelValidation()); }
-    if (this["test"]) { this.test.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["teardown"]) { issues.push(...this.teardown.doModelValidation()); }
+    if (this["result"]) { issues.push(...this.result.doModelValidation(expression+'.result')); }
+    if (this["score"]) { issues.push(...this.score.doModelValidation(expression+'.score')); }
+    if (this["tester"]) { issues.push(...this.tester.doModelValidation(expression+'.tester')); }
+    if (this["issued"]) { issues.push(...this.issued.doModelValidation(expression+'.issued')); }
+    if (this["participant"]) { this.participant.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.participant[${i}]`)); }) }
+    if (this["setup"]) { issues.push(...this.setup.doModelValidation(expression+'.setup')); }
+    if (this["test"]) { this.test.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.test[${i}]`)); }) }
+    if (this["teardown"]) { issues.push(...this.teardown.doModelValidation(expression+'.teardown')); }
     return issues;
   }
 }

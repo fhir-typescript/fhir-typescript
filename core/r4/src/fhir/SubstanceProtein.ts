@@ -140,16 +140,17 @@ export class SubstanceProteinSubunit extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
-    if (this["subunit"]) { issues.push(...this.subunit.doModelValidation()); }
-    if (this["sequence"]) { issues.push(...this.sequence.doModelValidation()); }
-    if (this["length"]) { issues.push(...this.length.doModelValidation()); }
-    if (this["sequenceAttachment"]) { issues.push(...this.sequenceAttachment.doModelValidation()); }
-    if (this["nTerminalModificationId"]) { issues.push(...this.nTerminalModificationId.doModelValidation()); }
-    if (this["nTerminalModification"]) { issues.push(...this.nTerminalModification.doModelValidation()); }
-    if (this["cTerminalModificationId"]) { issues.push(...this.cTerminalModificationId.doModelValidation()); }
-    if (this["cTerminalModification"]) { issues.push(...this.cTerminalModification.doModelValidation()); }
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'SubstanceProtein.subunit' }
+    if (this["subunit"]) { issues.push(...this.subunit.doModelValidation(expression+'.subunit')); }
+    if (this["sequence"]) { issues.push(...this.sequence.doModelValidation(expression+'.sequence')); }
+    if (this["length"]) { issues.push(...this.length.doModelValidation(expression+'.length')); }
+    if (this["sequenceAttachment"]) { issues.push(...this.sequenceAttachment.doModelValidation(expression+'.sequenceAttachment')); }
+    if (this["nTerminalModificationId"]) { issues.push(...this.nTerminalModificationId.doModelValidation(expression+'.nTerminalModificationId')); }
+    if (this["nTerminalModification"]) { issues.push(...this.nTerminalModification.doModelValidation(expression+'.nTerminalModification')); }
+    if (this["cTerminalModificationId"]) { issues.push(...this.cTerminalModificationId.doModelValidation(expression+'.cTerminalModificationId')); }
+    if (this["cTerminalModification"]) { issues.push(...this.cTerminalModification.doModelValidation(expression+'.cTerminalModification')); }
     return issues;
   }
 }
@@ -241,15 +242,16 @@ export class SubstanceProtein extends fhir.DomainResource {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'SubstanceProtein' }
     if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType:"SubstanceProtein" fhir: SubstanceProtein.resourceType:"SubstanceProtein"' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType fhir: SubstanceProtein.resourceType:"SubstanceProtein"', expression: [expression] });
     }
-    if (this["sequenceType"]) { issues.push(...this.sequenceType.doModelValidation()); }
-    if (this["numberOfSubunits"]) { issues.push(...this.numberOfSubunits.doModelValidation()); }
-    if (this["disulfideLinkage"]) { this.disulfideLinkage.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["subunit"]) { this.subunit.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["sequenceType"]) { issues.push(...this.sequenceType.doModelValidation(expression+'.sequenceType')); }
+    if (this["numberOfSubunits"]) { issues.push(...this.numberOfSubunits.doModelValidation(expression+'.numberOfSubunits')); }
+    if (this["disulfideLinkage"]) { this.disulfideLinkage.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.disulfideLinkage[${i}]`)); }) }
+    if (this["subunit"]) { this.subunit.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.subunit[${i}]`)); }) }
     return issues;
   }
 }

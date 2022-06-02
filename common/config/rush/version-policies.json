@@ -9,6 +9,12 @@
  * to a set of projects that are specified using the "versionPolicyName" field in rush.json.
  */
 [
+  {
+    "policyName": "ftsVersionPolicy",
+    "definitionName": "lockStepVersion",
+    "version": "0.0.12-beta.6",
+    "nextBump": "prerelease"
+  }
   // {
   //   /**
   //    * (Required) Indicates the kind of version policy being defined ("lockStepVersion" or "individualVersion").

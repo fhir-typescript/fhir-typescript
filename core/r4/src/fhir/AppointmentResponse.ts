@@ -169,28 +169,29 @@ export class AppointmentResponse extends fhir.DomainResource {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'AppointmentResponse' }
     if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType:"AppointmentResponse" fhir: AppointmentResponse.resourceType:"AppointmentResponse"' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType fhir: AppointmentResponse.resourceType:"AppointmentResponse"', expression: [expression] });
     }
-    if (this["identifier"]) { this.identifier.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["identifier"]) { this.identifier.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.identifier[${i}]`)); }) }
     if (!this['appointment']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property appointment:fhir.Reference fhir: AppointmentResponse.appointment:Reference' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property appointment fhir: AppointmentResponse.appointment:Reference', expression: [expression] });
     }
-    if (this["appointment"]) { issues.push(...this.appointment.doModelValidation()); }
-    if (this["start"]) { issues.push(...this.start.doModelValidation()); }
-    if (this["end"]) { issues.push(...this.end.doModelValidation()); }
-    if (this["participantType"]) { this.participantType.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["actor"]) { issues.push(...this.actor.doModelValidation()); }
+    if (this["appointment"]) { issues.push(...this.appointment.doModelValidation(expression+'.appointment')); }
+    if (this["start"]) { issues.push(...this.start.doModelValidation(expression+'.start')); }
+    if (this["end"]) { issues.push(...this.end.doModelValidation(expression+'.end')); }
+    if (this["participantType"]) { this.participantType.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.participantType[${i}]`)); }) }
+    if (this["actor"]) { issues.push(...this.actor.doModelValidation(expression+'.actor')); }
     if (!this['participantStatus']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property participantStatus:fhir.FhirCode<ParticipationstatusCodeType> fhir: AppointmentResponse.participantStatus:code' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property participantStatus fhir: AppointmentResponse.participantStatus:code', expression: [expression] });
     }
-    if (this['participantStatus'] && (!Object.values(ParticipationstatusCodes).includes(this.participantStatus as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property participantStatus:fhir.FhirCode<ParticipationstatusCodeType> fhir: AppointmentResponse.participantStatus:code Required binding to: Participationstatus' });
+    if (this['participantStatus'] && (!Object.values(ParticipationstatusCodes).includes(this.participantStatus.value as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property participantStatus fhir: AppointmentResponse.participantStatus:code Required binding to: Participationstatus', expression: [expression] });
     }
-    if (this["participantStatus"]) { issues.push(...this.participantStatus.doModelValidation()); }
-    if (this["comment"]) { issues.push(...this.comment.doModelValidation()); }
+    if (this["participantStatus"]) { issues.push(...this.participantStatus.doModelValidation(expression+'.participantStatus')); }
+    if (this["comment"]) { issues.push(...this.comment.doModelValidation(expression+'.comment')); }
     return issues;
   }
 }

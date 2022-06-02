@@ -135,14 +135,15 @@ export class Meta extends fhir.FhirElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
-    if (this["versionId"]) { issues.push(...this.versionId.doModelValidation()); }
-    if (this["lastUpdated"]) { issues.push(...this.lastUpdated.doModelValidation()); }
-    if (this["source"]) { issues.push(...this.source.doModelValidation()); }
-    if (this["profile"]) { this.profile.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["security"]) { this.security.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["tag"]) { this.tag.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'Meta' }
+    if (this["versionId"]) { issues.push(...this.versionId.doModelValidation(expression+'.versionId')); }
+    if (this["lastUpdated"]) { issues.push(...this.lastUpdated.doModelValidation(expression+'.lastUpdated')); }
+    if (this["source"]) { issues.push(...this.source.doModelValidation(expression+'.source')); }
+    if (this["profile"]) { this.profile.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.profile[${i}]`)); }) }
+    if (this["security"]) { this.security.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.security[${i}]`)); }) }
+    if (this["tag"]) { this.tag.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.tag[${i}]`)); }) }
     return issues;
   }
 }

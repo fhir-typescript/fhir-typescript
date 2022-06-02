@@ -56,16 +56,17 @@ export class MedicinalProductNameNamePart extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'MedicinalProduct.name.namePart' }
     if (!this['part']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property part:fhir.FhirString fhir: MedicinalProduct.name.namePart.part:string' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property part fhir: MedicinalProduct.name.namePart.part:string', expression: [expression] });
     }
-    if (this["part"]) { issues.push(...this.part.doModelValidation()); }
+    if (this["part"]) { issues.push(...this.part.doModelValidation(expression+'.part')); }
     if (!this['type']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property type:fhir.Coding fhir: MedicinalProduct.name.namePart.type:Coding' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property type fhir: MedicinalProduct.name.namePart.type:Coding', expression: [expression] });
     }
-    if (this["type"]) { issues.push(...this.type.doModelValidation()); }
+    if (this["type"]) { issues.push(...this.type.doModelValidation(expression+'.type')); }
     return issues;
   }
 }
@@ -121,17 +122,18 @@ export class MedicinalProductNameCountryLanguage extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'MedicinalProduct.name.countryLanguage' }
     if (!this['country']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property country:fhir.CodeableConcept fhir: MedicinalProduct.name.countryLanguage.country:CodeableConcept' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property country fhir: MedicinalProduct.name.countryLanguage.country:CodeableConcept', expression: [expression] });
     }
-    if (this["country"]) { issues.push(...this.country.doModelValidation()); }
-    if (this["jurisdiction"]) { issues.push(...this.jurisdiction.doModelValidation()); }
+    if (this["country"]) { issues.push(...this.country.doModelValidation(expression+'.country')); }
+    if (this["jurisdiction"]) { issues.push(...this.jurisdiction.doModelValidation(expression+'.jurisdiction')); }
     if (!this['language']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property language:fhir.CodeableConcept fhir: MedicinalProduct.name.countryLanguage.language:CodeableConcept' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property language fhir: MedicinalProduct.name.countryLanguage.language:CodeableConcept', expression: [expression] });
     }
-    if (this["language"]) { issues.push(...this.language.doModelValidation()); }
+    if (this["language"]) { issues.push(...this.language.doModelValidation(expression+'.language')); }
     return issues;
   }
 }
@@ -196,14 +198,15 @@ export class MedicinalProductName extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'MedicinalProduct.name' }
     if (!this['productName']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property productName:fhir.FhirString fhir: MedicinalProduct.name.productName:string' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property productName fhir: MedicinalProduct.name.productName:string', expression: [expression] });
     }
-    if (this["productName"]) { issues.push(...this.productName.doModelValidation()); }
-    if (this["namePart"]) { this.namePart.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["countryLanguage"]) { this.countryLanguage.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["productName"]) { issues.push(...this.productName.doModelValidation(expression+'.productName')); }
+    if (this["namePart"]) { this.namePart.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.namePart[${i}]`)); }) }
+    if (this["countryLanguage"]) { this.countryLanguage.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.countryLanguage[${i}]`)); }) }
     return issues;
   }
 }
@@ -293,14 +296,15 @@ export class MedicinalProductManufacturingBusinessOperation extends fhir.Backbon
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
-    if (this["operationType"]) { issues.push(...this.operationType.doModelValidation()); }
-    if (this["authorisationReferenceNumber"]) { issues.push(...this.authorisationReferenceNumber.doModelValidation()); }
-    if (this["effectiveDate"]) { issues.push(...this.effectiveDate.doModelValidation()); }
-    if (this["confidentialityIndicator"]) { issues.push(...this.confidentialityIndicator.doModelValidation()); }
-    if (this["manufacturer"]) { this.manufacturer.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["regulator"]) { issues.push(...this.regulator.doModelValidation()); }
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'MedicinalProduct.manufacturingBusinessOperation' }
+    if (this["operationType"]) { issues.push(...this.operationType.doModelValidation(expression+'.operationType')); }
+    if (this["authorisationReferenceNumber"]) { issues.push(...this.authorisationReferenceNumber.doModelValidation(expression+'.authorisationReferenceNumber')); }
+    if (this["effectiveDate"]) { issues.push(...this.effectiveDate.doModelValidation(expression+'.effectiveDate')); }
+    if (this["confidentialityIndicator"]) { issues.push(...this.confidentialityIndicator.doModelValidation(expression+'.confidentialityIndicator')); }
+    if (this["manufacturer"]) { this.manufacturer.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.manufacturer[${i}]`)); }) }
+    if (this["regulator"]) { issues.push(...this.regulator.doModelValidation(expression+'.regulator')); }
     return issues;
   }
 }
@@ -413,14 +417,15 @@ export class MedicinalProductSpecialDesignation extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
-    if (this["identifier"]) { this.identifier.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["type"]) { issues.push(...this.type.doModelValidation()); }
-    if (this["intendedUse"]) { issues.push(...this.intendedUse.doModelValidation()); }
-    if (this["status"]) { issues.push(...this.status.doModelValidation()); }
-    if (this["date"]) { issues.push(...this.date.doModelValidation()); }
-    if (this["species"]) { issues.push(...this.species.doModelValidation()); }
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'MedicinalProduct.specialDesignation' }
+    if (this["identifier"]) { this.identifier.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.identifier[${i}]`)); }) }
+    if (this["type"]) { issues.push(...this.type.doModelValidation(expression+'.type')); }
+    if (this["intendedUse"]) { issues.push(...this.intendedUse.doModelValidation(expression+'.intendedUse')); }
+    if (this["status"]) { issues.push(...this.status.doModelValidation(expression+'.status')); }
+    if (this["date"]) { issues.push(...this.date.doModelValidation(expression+'.date')); }
+    if (this["species"]) { issues.push(...this.species.doModelValidation(expression+'.species')); }
     return issues;
   }
 }
@@ -660,38 +665,39 @@ export class MedicinalProduct extends fhir.DomainResource {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'MedicinalProduct' }
     if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType:"MedicinalProduct" fhir: MedicinalProduct.resourceType:"MedicinalProduct"' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType fhir: MedicinalProduct.resourceType:"MedicinalProduct"', expression: [expression] });
     }
-    if (this["identifier"]) { this.identifier.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["type"]) { issues.push(...this.type.doModelValidation()); }
-    if (this["domain"]) { issues.push(...this.domain.doModelValidation()); }
-    if (this["combinedPharmaceuticalDoseForm"]) { issues.push(...this.combinedPharmaceuticalDoseForm.doModelValidation()); }
-    if (this["legalStatusOfSupply"]) { issues.push(...this.legalStatusOfSupply.doModelValidation()); }
-    if (this["additionalMonitoringIndicator"]) { issues.push(...this.additionalMonitoringIndicator.doModelValidation()); }
-    if (this["specialMeasures"]) { this.specialMeasures.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["paediatricUseIndicator"]) { issues.push(...this.paediatricUseIndicator.doModelValidation()); }
-    if (this["productClassification"]) { this.productClassification.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["marketingStatus"]) { this.marketingStatus.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["pharmaceuticalProduct"]) { this.pharmaceuticalProduct.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["packagedMedicinalProduct"]) { this.packagedMedicinalProduct.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["attachedDocument"]) { this.attachedDocument.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["masterFile"]) { this.masterFile.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["contact"]) { this.contact.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["clinicalTrial"]) { this.clinicalTrial.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["identifier"]) { this.identifier.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.identifier[${i}]`)); }) }
+    if (this["type"]) { issues.push(...this.type.doModelValidation(expression+'.type')); }
+    if (this["domain"]) { issues.push(...this.domain.doModelValidation(expression+'.domain')); }
+    if (this["combinedPharmaceuticalDoseForm"]) { issues.push(...this.combinedPharmaceuticalDoseForm.doModelValidation(expression+'.combinedPharmaceuticalDoseForm')); }
+    if (this["legalStatusOfSupply"]) { issues.push(...this.legalStatusOfSupply.doModelValidation(expression+'.legalStatusOfSupply')); }
+    if (this["additionalMonitoringIndicator"]) { issues.push(...this.additionalMonitoringIndicator.doModelValidation(expression+'.additionalMonitoringIndicator')); }
+    if (this["specialMeasures"]) { this.specialMeasures.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.specialMeasures[${i}]`)); }) }
+    if (this["paediatricUseIndicator"]) { issues.push(...this.paediatricUseIndicator.doModelValidation(expression+'.paediatricUseIndicator')); }
+    if (this["productClassification"]) { this.productClassification.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.productClassification[${i}]`)); }) }
+    if (this["marketingStatus"]) { this.marketingStatus.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.marketingStatus[${i}]`)); }) }
+    if (this["pharmaceuticalProduct"]) { this.pharmaceuticalProduct.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.pharmaceuticalProduct[${i}]`)); }) }
+    if (this["packagedMedicinalProduct"]) { this.packagedMedicinalProduct.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.packagedMedicinalProduct[${i}]`)); }) }
+    if (this["attachedDocument"]) { this.attachedDocument.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.attachedDocument[${i}]`)); }) }
+    if (this["masterFile"]) { this.masterFile.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.masterFile[${i}]`)); }) }
+    if (this["contact"]) { this.contact.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.contact[${i}]`)); }) }
+    if (this["clinicalTrial"]) { this.clinicalTrial.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.clinicalTrial[${i}]`)); }) }
     if (!this['name']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property name:fhir.MedicinalProductName[] fhir: MedicinalProduct.name:name' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property name fhir: MedicinalProduct.name:name', expression: [expression] });
     } else if (!Array.isArray(this.name)) {
-      issues.push({ severity: 'error', code: 'structure', diagnostics: 'Found scalar in array property name:fhir.MedicinalProductName[] fhir: MedicinalProduct.name:name' });
+      issues.push({ severity: 'error', code: 'structure', diagnostics: 'Found scalar in array property name fhir: MedicinalProduct.name:name', expression: [expression] });
     } else if (this.name.length === 0) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property name:fhir.MedicinalProductName[] fhir: MedicinalProduct.name:name' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property name fhir: MedicinalProduct.name:name', expression: [expression] });
     }
-    if (this["name"]) { this.name.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["crossReference"]) { this.crossReference.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["manufacturingBusinessOperation"]) { this.manufacturingBusinessOperation.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["specialDesignation"]) { this.specialDesignation.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["name"]) { this.name.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.name[${i}]`)); }) }
+    if (this["crossReference"]) { this.crossReference.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.crossReference[${i}]`)); }) }
+    if (this["manufacturingBusinessOperation"]) { this.manufacturingBusinessOperation.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.manufacturingBusinessOperation[${i}]`)); }) }
+    if (this["specialDesignation"]) { this.specialDesignation.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.specialDesignation[${i}]`)); }) }
     return issues;
   }
 }

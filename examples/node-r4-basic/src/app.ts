@@ -56,7 +56,8 @@ console.log('Serialied:', JSON.stringify(patient, null, 2));
 // The SDK can check *basic* conformance to the specs (see docs for details)
 let p2:fhir.Patient = new fhir.Patient();
 p2.communication.push(new fhir.PatientCommunication({preferred: false}));
-let issues:fhir.FtsIssue[] = p2.doModelValidation();
+// let issues:fhir.FtsIssue[] = p2.doModelValidation();
+let issues:fhir.FtsIssue[] = patient.doModelValidation();
 /*
   outputs:
 Found issue: {

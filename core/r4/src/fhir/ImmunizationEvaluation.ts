@@ -243,40 +243,41 @@ export class ImmunizationEvaluation extends fhir.DomainResource {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'ImmunizationEvaluation' }
     if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType:"ImmunizationEvaluation" fhir: ImmunizationEvaluation.resourceType:"ImmunizationEvaluation"' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType fhir: ImmunizationEvaluation.resourceType:"ImmunizationEvaluation"', expression: [expression] });
     }
-    if (this["identifier"]) { this.identifier.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["identifier"]) { this.identifier.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.identifier[${i}]`)); }) }
     if (!this['status']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status:fhir.FhirCode<ImmunizationEvaluationStatusCodeType> fhir: ImmunizationEvaluation.status:code' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status fhir: ImmunizationEvaluation.status:code', expression: [expression] });
     }
-    if (this['status'] && (!Object.values(ImmunizationEvaluationStatusCodes).includes(this.status as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property status:fhir.FhirCode<ImmunizationEvaluationStatusCodeType> fhir: ImmunizationEvaluation.status:code Required binding to: ImmunizationEvaluationStatus' });
+    if (this['status'] && (!Object.values(ImmunizationEvaluationStatusCodes).includes(this.status.value as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property status fhir: ImmunizationEvaluation.status:code Required binding to: ImmunizationEvaluationStatus', expression: [expression] });
     }
-    if (this["status"]) { issues.push(...this.status.doModelValidation()); }
+    if (this["status"]) { issues.push(...this.status.doModelValidation(expression+'.status')); }
     if (!this['patient']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property patient:fhir.Reference fhir: ImmunizationEvaluation.patient:Reference' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property patient fhir: ImmunizationEvaluation.patient:Reference', expression: [expression] });
     }
-    if (this["patient"]) { issues.push(...this.patient.doModelValidation()); }
-    if (this["date"]) { issues.push(...this.date.doModelValidation()); }
-    if (this["authority"]) { issues.push(...this.authority.doModelValidation()); }
+    if (this["patient"]) { issues.push(...this.patient.doModelValidation(expression+'.patient')); }
+    if (this["date"]) { issues.push(...this.date.doModelValidation(expression+'.date')); }
+    if (this["authority"]) { issues.push(...this.authority.doModelValidation(expression+'.authority')); }
     if (!this['targetDisease']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property targetDisease:fhir.CodeableConcept fhir: ImmunizationEvaluation.targetDisease:CodeableConcept' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property targetDisease fhir: ImmunizationEvaluation.targetDisease:CodeableConcept', expression: [expression] });
     }
-    if (this["targetDisease"]) { issues.push(...this.targetDisease.doModelValidation()); }
+    if (this["targetDisease"]) { issues.push(...this.targetDisease.doModelValidation(expression+'.targetDisease')); }
     if (!this['immunizationEvent']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property immunizationEvent:fhir.Reference fhir: ImmunizationEvaluation.immunizationEvent:Reference' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property immunizationEvent fhir: ImmunizationEvaluation.immunizationEvent:Reference', expression: [expression] });
     }
-    if (this["immunizationEvent"]) { issues.push(...this.immunizationEvent.doModelValidation()); }
+    if (this["immunizationEvent"]) { issues.push(...this.immunizationEvent.doModelValidation(expression+'.immunizationEvent')); }
     if (!this['doseStatus']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property doseStatus:fhir.CodeableConcept fhir: ImmunizationEvaluation.doseStatus:CodeableConcept' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property doseStatus fhir: ImmunizationEvaluation.doseStatus:CodeableConcept', expression: [expression] });
     }
-    if (this["doseStatus"]) { issues.push(...this.doseStatus.doModelValidation()); }
-    if (this["doseStatusReason"]) { this.doseStatusReason.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["description"]) { issues.push(...this.description.doModelValidation()); }
-    if (this["series"]) { issues.push(...this.series.doModelValidation()); }
+    if (this["doseStatus"]) { issues.push(...this.doseStatus.doModelValidation(expression+'.doseStatus')); }
+    if (this["doseStatusReason"]) { this.doseStatusReason.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.doseStatusReason[${i}]`)); }) }
+    if (this["description"]) { issues.push(...this.description.doModelValidation(expression+'.description')); }
+    if (this["series"]) { issues.push(...this.series.doModelValidation(expression+'.series')); }
     return issues;
   }
 }

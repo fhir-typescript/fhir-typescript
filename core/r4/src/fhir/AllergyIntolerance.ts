@@ -163,25 +163,26 @@ export class AllergyIntoleranceReaction extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
-    if (this["substance"]) { issues.push(...this.substance.doModelValidation()); }
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'AllergyIntolerance.reaction' }
+    if (this["substance"]) { issues.push(...this.substance.doModelValidation(expression+'.substance')); }
     if (!this['manifestation']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property manifestation:fhir.CodeableConcept[] fhir: AllergyIntolerance.reaction.manifestation:CodeableConcept' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property manifestation fhir: AllergyIntolerance.reaction.manifestation:CodeableConcept', expression: [expression] });
     } else if (!Array.isArray(this.manifestation)) {
-      issues.push({ severity: 'error', code: 'structure', diagnostics: 'Found scalar in array property manifestation:fhir.CodeableConcept[] fhir: AllergyIntolerance.reaction.manifestation:CodeableConcept' });
+      issues.push({ severity: 'error', code: 'structure', diagnostics: 'Found scalar in array property manifestation fhir: AllergyIntolerance.reaction.manifestation:CodeableConcept', expression: [expression] });
     } else if (this.manifestation.length === 0) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property manifestation:fhir.CodeableConcept[] fhir: AllergyIntolerance.reaction.manifestation:CodeableConcept' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property manifestation fhir: AllergyIntolerance.reaction.manifestation:CodeableConcept', expression: [expression] });
     }
-    if (this["manifestation"]) { this.manifestation.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["description"]) { issues.push(...this.description.doModelValidation()); }
-    if (this["onset"]) { issues.push(...this.onset.doModelValidation()); }
-    if (this['severity'] && (!Object.values(ReactionEventSeverityCodes).includes(this.severity as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property severity?:fhir.FhirCode<ReactionEventSeverityCodeType> fhir: AllergyIntolerance.reaction.severity:code Required binding to: ReactionEventSeverity' });
+    if (this["manifestation"]) { this.manifestation.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.manifestation[${i}]`)); }) }
+    if (this["description"]) { issues.push(...this.description.doModelValidation(expression+'.description')); }
+    if (this["onset"]) { issues.push(...this.onset.doModelValidation(expression+'.onset')); }
+    if (this['severity'] && (!Object.values(ReactionEventSeverityCodes).includes(this.severity.value as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property severity fhir: AllergyIntolerance.reaction.severity:code Required binding to: ReactionEventSeverity', expression: [expression] });
     }
-    if (this["severity"]) { issues.push(...this.severity.doModelValidation()); }
-    if (this["exposureRoute"]) { issues.push(...this.exposureRoute.doModelValidation()); }
-    if (this["note"]) { this.note.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["severity"]) { issues.push(...this.severity.doModelValidation(expression+'.severity')); }
+    if (this["exposureRoute"]) { issues.push(...this.exposureRoute.doModelValidation(expression+'.exposureRoute')); }
+    if (this["note"]) { this.note.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.note[${i}]`)); }) }
     return issues;
   }
 }
@@ -473,48 +474,43 @@ export class AllergyIntolerance extends fhir.DomainResource {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'AllergyIntolerance' }
     if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType:"AllergyIntolerance" fhir: AllergyIntolerance.resourceType:"AllergyIntolerance"' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType fhir: AllergyIntolerance.resourceType:"AllergyIntolerance"', expression: [expression] });
     }
-    if (this["identifier"]) { this.identifier.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this['clinicalStatus'] && (!Object.values(AllergyintoleranceClinicalCodes).includes(this.clinicalStatus as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property clinicalStatus?:fhir.CodeableConcept fhir: AllergyIntolerance.clinicalStatus:CodeableConcept Required binding to: AllergyintoleranceClinical' });
+    if (this["identifier"]) { this.identifier.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.identifier[${i}]`)); }) }
+    if (this["clinicalStatus"]) { issues.push(...this.clinicalStatus.doModelValidation(expression+'.clinicalStatus')); }
+    if (this["verificationStatus"]) { issues.push(...this.verificationStatus.doModelValidation(expression+'.verificationStatus')); }
+    if (this['type'] && (!Object.values(AllergyIntoleranceTypeCodes).includes(this.type.value as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property type fhir: AllergyIntolerance.type:code Required binding to: AllergyIntoleranceType', expression: [expression] });
     }
-    if (this["clinicalStatus"]) { issues.push(...this.clinicalStatus.doModelValidation()); }
-    if (this['verificationStatus'] && (!Object.values(AllergyintoleranceVerificationCodes).includes(this.verificationStatus as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property verificationStatus?:fhir.CodeableConcept fhir: AllergyIntolerance.verificationStatus:CodeableConcept Required binding to: AllergyintoleranceVerification' });
-    }
-    if (this["verificationStatus"]) { issues.push(...this.verificationStatus.doModelValidation()); }
-    if (this['type'] && (!Object.values(AllergyIntoleranceTypeCodes).includes(this.type as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property type?:fhir.FhirCode<AllergyIntoleranceTypeCodeType> fhir: AllergyIntolerance.type:code Required binding to: AllergyIntoleranceType' });
-    }
-    if (this["type"]) { issues.push(...this.type.doModelValidation()); }
+    if (this["type"]) { issues.push(...this.type.doModelValidation(expression+'.type')); }
     if (this['category']) {
       this.category.forEach((v) => {
-        if (!Object.values(AllergyIntoleranceCategoryCodes).includes(v as any)) {
-          issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property category?:fhir.FhirCode<AllergyIntoleranceCategoryCodeType>[] fhir: AllergyIntolerance.category:code Required binding to: AllergyIntoleranceCategory' });
+        if (!Object.values(AllergyIntoleranceCategoryCodes).includes(v.value as any)) {
+          issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property category fhir: AllergyIntolerance.category:code Required binding to: AllergyIntoleranceCategory', expression: [expression] });
         }
       });
     }
-    if (this["category"]) { this.category.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this['criticality'] && (!Object.values(AllergyIntoleranceCriticalityCodes).includes(this.criticality as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property criticality?:fhir.FhirCode<AllergyIntoleranceCriticalityCodeType> fhir: AllergyIntolerance.criticality:code Required binding to: AllergyIntoleranceCriticality' });
+    if (this["category"]) { this.category.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.category[${i}]`)); }) }
+    if (this['criticality'] && (!Object.values(AllergyIntoleranceCriticalityCodes).includes(this.criticality.value as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property criticality fhir: AllergyIntolerance.criticality:code Required binding to: AllergyIntoleranceCriticality', expression: [expression] });
     }
-    if (this["criticality"]) { issues.push(...this.criticality.doModelValidation()); }
-    if (this["code"]) { issues.push(...this.code.doModelValidation()); }
+    if (this["criticality"]) { issues.push(...this.criticality.doModelValidation(expression+'.criticality')); }
+    if (this["code"]) { issues.push(...this.code.doModelValidation(expression+'.code')); }
     if (!this['patient']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property patient:fhir.Reference fhir: AllergyIntolerance.patient:Reference' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property patient fhir: AllergyIntolerance.patient:Reference', expression: [expression] });
     }
-    if (this["patient"]) { issues.push(...this.patient.doModelValidation()); }
-    if (this["encounter"]) { issues.push(...this.encounter.doModelValidation()); }
-    if (this["recordedDate"]) { issues.push(...this.recordedDate.doModelValidation()); }
-    if (this["recorder"]) { issues.push(...this.recorder.doModelValidation()); }
-    if (this["asserter"]) { issues.push(...this.asserter.doModelValidation()); }
-    if (this["lastOccurrence"]) { issues.push(...this.lastOccurrence.doModelValidation()); }
-    if (this["note"]) { this.note.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["reaction"]) { this.reaction.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["patient"]) { issues.push(...this.patient.doModelValidation(expression+'.patient')); }
+    if (this["encounter"]) { issues.push(...this.encounter.doModelValidation(expression+'.encounter')); }
+    if (this["recordedDate"]) { issues.push(...this.recordedDate.doModelValidation(expression+'.recordedDate')); }
+    if (this["recorder"]) { issues.push(...this.recorder.doModelValidation(expression+'.recorder')); }
+    if (this["asserter"]) { issues.push(...this.asserter.doModelValidation(expression+'.asserter')); }
+    if (this["lastOccurrence"]) { issues.push(...this.lastOccurrence.doModelValidation(expression+'.lastOccurrence')); }
+    if (this["note"]) { this.note.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.note[${i}]`)); }) }
+    if (this["reaction"]) { this.reaction.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.reaction[${i}]`)); }) }
     return issues;
   }
 }

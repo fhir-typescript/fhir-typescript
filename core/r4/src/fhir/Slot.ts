@@ -222,37 +222,38 @@ export class Slot extends fhir.DomainResource {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'Slot' }
     if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType:"Slot" fhir: Slot.resourceType:"Slot"' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType fhir: Slot.resourceType:"Slot"', expression: [expression] });
     }
-    if (this["identifier"]) { this.identifier.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["serviceCategory"]) { this.serviceCategory.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["serviceType"]) { this.serviceType.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["specialty"]) { this.specialty.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["appointmentType"]) { issues.push(...this.appointmentType.doModelValidation()); }
+    if (this["identifier"]) { this.identifier.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.identifier[${i}]`)); }) }
+    if (this["serviceCategory"]) { this.serviceCategory.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.serviceCategory[${i}]`)); }) }
+    if (this["serviceType"]) { this.serviceType.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.serviceType[${i}]`)); }) }
+    if (this["specialty"]) { this.specialty.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.specialty[${i}]`)); }) }
+    if (this["appointmentType"]) { issues.push(...this.appointmentType.doModelValidation(expression+'.appointmentType')); }
     if (!this['schedule']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property schedule:fhir.Reference fhir: Slot.schedule:Reference' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property schedule fhir: Slot.schedule:Reference', expression: [expression] });
     }
-    if (this["schedule"]) { issues.push(...this.schedule.doModelValidation()); }
+    if (this["schedule"]) { issues.push(...this.schedule.doModelValidation(expression+'.schedule')); }
     if (!this['status']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status:fhir.FhirCode<SlotstatusCodeType> fhir: Slot.status:code' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status fhir: Slot.status:code', expression: [expression] });
     }
-    if (this['status'] && (!Object.values(SlotstatusCodes).includes(this.status as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property status:fhir.FhirCode<SlotstatusCodeType> fhir: Slot.status:code Required binding to: Slotstatus' });
+    if (this['status'] && (!Object.values(SlotstatusCodes).includes(this.status.value as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property status fhir: Slot.status:code Required binding to: Slotstatus', expression: [expression] });
     }
-    if (this["status"]) { issues.push(...this.status.doModelValidation()); }
+    if (this["status"]) { issues.push(...this.status.doModelValidation(expression+'.status')); }
     if (!this['start']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property start:fhir.FhirInstant fhir: Slot.start:instant' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property start fhir: Slot.start:instant', expression: [expression] });
     }
-    if (this["start"]) { issues.push(...this.start.doModelValidation()); }
+    if (this["start"]) { issues.push(...this.start.doModelValidation(expression+'.start')); }
     if (!this['end']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property end:fhir.FhirInstant fhir: Slot.end:instant' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property end fhir: Slot.end:instant', expression: [expression] });
     }
-    if (this["end"]) { issues.push(...this.end.doModelValidation()); }
-    if (this["overbooked"]) { issues.push(...this.overbooked.doModelValidation()); }
-    if (this["comment"]) { issues.push(...this.comment.doModelValidation()); }
+    if (this["end"]) { issues.push(...this.end.doModelValidation(expression+'.end')); }
+    if (this["overbooked"]) { issues.push(...this.overbooked.doModelValidation(expression+'.overbooked')); }
+    if (this["comment"]) { issues.push(...this.comment.doModelValidation(expression+'.comment')); }
     return issues;
   }
 }

@@ -67,18 +67,19 @@ export class ProductShelfLife extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
-    if (this["identifier"]) { issues.push(...this.identifier.doModelValidation()); }
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'ProductShelfLife' }
+    if (this["identifier"]) { issues.push(...this.identifier.doModelValidation(expression+'.identifier')); }
     if (!this['type']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property type:fhir.CodeableConcept fhir: ProductShelfLife.type:CodeableConcept' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property type fhir: ProductShelfLife.type:CodeableConcept', expression: [expression] });
     }
-    if (this["type"]) { issues.push(...this.type.doModelValidation()); }
+    if (this["type"]) { issues.push(...this.type.doModelValidation(expression+'.type')); }
     if (!this['period']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property period:fhir.Quantity fhir: ProductShelfLife.period:Quantity' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property period fhir: ProductShelfLife.period:Quantity', expression: [expression] });
     }
-    if (this["period"]) { issues.push(...this.period.doModelValidation()); }
-    if (this["specialPrecautionsForStorage"]) { this.specialPrecautionsForStorage.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["period"]) { issues.push(...this.period.doModelValidation(expression+'.period')); }
+    if (this["specialPrecautionsForStorage"]) { this.specialPrecautionsForStorage.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.specialPrecautionsForStorage[${i}]`)); }) }
     return issues;
   }
 }

@@ -109,7 +109,7 @@ export declare class GraphDefinitionLinkTargetCompartment extends fhir.BackboneE
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.FtsIssue[];
+    doModelValidation(expression?: string): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the GraphDefinitionLinkTarget type.
@@ -221,7 +221,9 @@ export declare class GraphDefinitionLinkTarget extends fhir.BackboneElement {
         readonly Device: "Device";
         readonly DeviceDefinition: "DeviceDefinition";
         readonly DeviceMetric: "DeviceMetric";
-        readonly DeviceRequest: "DeviceRequest";
+        readonly DeviceRequest: "DeviceRequest"; /**
+         * Additional links from target resource.
+         */
         readonly DeviceUseStatement: "DeviceUseStatement";
         readonly DiagnosticReport: "DiagnosticReport";
         readonly DocumentManifest: "DocumentManifest";
@@ -276,7 +278,9 @@ export declare class GraphDefinitionLinkTarget extends fhir.BackboneElement {
         readonly MedicinalProductPharmaceutical: "MedicinalProductPharmaceutical";
         readonly MedicinalProductUndesirableEffect: "MedicinalProductUndesirableEffect";
         readonly MessageDefinition: "MessageDefinition";
-        readonly MessageHeader: "MessageHeader";
+        readonly MessageHeader: "MessageHeader"; /**
+         * This element does not describe the usage of the graph definition. Instead, it provides traceability of ''why'' the resource is either needed or ''why'' it is defined as it is.  This may be used to point to source materials or specifications that drove the structure of this graph definition.
+         */
         readonly MolecularSequence: "MolecularSequence";
         readonly NamingSystem: "NamingSystem";
         readonly NutritionOrder: "NutritionOrder";
@@ -336,7 +340,7 @@ export declare class GraphDefinitionLinkTarget extends fhir.BackboneElement {
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.FtsIssue[];
+    doModelValidation(expression?: string): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the GraphDefinitionLink type.
@@ -426,7 +430,7 @@ export declare class GraphDefinitionLink extends fhir.BackboneElement {
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.FtsIssue[];
+    doModelValidation(expression?: string): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the GraphDefinition type.
@@ -671,7 +675,9 @@ export declare class GraphDefinition extends fhir.DomainResource {
         readonly Device: "Device";
         readonly DeviceDefinition: "DeviceDefinition";
         readonly DeviceMetric: "DeviceMetric";
-        readonly DeviceRequest: "DeviceRequest";
+        readonly DeviceRequest: "DeviceRequest"; /**
+         * Additional links from target resource.
+         */
         readonly DeviceUseStatement: "DeviceUseStatement";
         readonly DiagnosticReport: "DiagnosticReport";
         readonly DocumentManifest: "DocumentManifest";
@@ -726,7 +732,9 @@ export declare class GraphDefinition extends fhir.DomainResource {
         readonly MedicinalProductPharmaceutical: "MedicinalProductPharmaceutical";
         readonly MedicinalProductUndesirableEffect: "MedicinalProductUndesirableEffect";
         readonly MessageDefinition: "MessageDefinition";
-        readonly MessageHeader: "MessageHeader";
+        readonly MessageHeader: "MessageHeader"; /**
+         * This element does not describe the usage of the graph definition. Instead, it provides traceability of ''why'' the resource is either needed or ''why'' it is defined as it is.  This may be used to point to source materials or specifications that drove the structure of this graph definition.
+         */
         readonly MolecularSequence: "MolecularSequence";
         readonly NamingSystem: "NamingSystem";
         readonly NutritionOrder: "NutritionOrder";
@@ -786,6 +794,6 @@ export declare class GraphDefinition extends fhir.DomainResource {
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.FtsIssue[];
+    doModelValidation(expression?: string): fhir.FtsIssue[];
 }
 //# sourceMappingURL=GraphDefinition.d.ts.map

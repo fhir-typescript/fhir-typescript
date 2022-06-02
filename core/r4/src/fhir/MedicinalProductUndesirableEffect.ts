@@ -84,16 +84,17 @@ export class MedicinalProductUndesirableEffect extends fhir.DomainResource {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'MedicinalProductUndesirableEffect' }
     if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType:"MedicinalProductUndesirableEffect" fhir: MedicinalProductUndesirableEffect.resourceType:"MedicinalProductUndesirableEffect"' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType fhir: MedicinalProductUndesirableEffect.resourceType:"MedicinalProductUndesirableEffect"', expression: [expression] });
     }
-    if (this["subject"]) { this.subject.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["symptomConditionEffect"]) { issues.push(...this.symptomConditionEffect.doModelValidation()); }
-    if (this["classification"]) { issues.push(...this.classification.doModelValidation()); }
-    if (this["frequencyOfOccurrence"]) { issues.push(...this.frequencyOfOccurrence.doModelValidation()); }
-    if (this["population"]) { this.population.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["subject"]) { this.subject.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.subject[${i}]`)); }) }
+    if (this["symptomConditionEffect"]) { issues.push(...this.symptomConditionEffect.doModelValidation(expression+'.symptomConditionEffect')); }
+    if (this["classification"]) { issues.push(...this.classification.doModelValidation(expression+'.classification')); }
+    if (this["frequencyOfOccurrence"]) { issues.push(...this.frequencyOfOccurrence.doModelValidation(expression+'.frequencyOfOccurrence')); }
+    if (this["population"]) { this.population.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.population[${i}]`)); }) }
     return issues;
   }
 }

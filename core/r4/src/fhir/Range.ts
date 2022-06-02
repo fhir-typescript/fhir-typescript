@@ -46,10 +46,11 @@ export class Range extends fhir.FhirElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
-    if (this["low"]) { issues.push(...this.low.doModelValidation()); }
-    if (this["high"]) { issues.push(...this.high.doModelValidation()); }
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'Range' }
+    if (this["low"]) { issues.push(...this.low.doModelValidation(expression+'.low')); }
+    if (this["high"]) { issues.push(...this.high.doModelValidation(expression+'.high')); }
     return issues;
   }
 }

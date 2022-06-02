@@ -189,41 +189,42 @@ export class PaymentNotice extends fhir.DomainResource {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'PaymentNotice' }
     if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType:"PaymentNotice" fhir: PaymentNotice.resourceType:"PaymentNotice"' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType fhir: PaymentNotice.resourceType:"PaymentNotice"', expression: [expression] });
     }
-    if (this["identifier"]) { this.identifier.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["identifier"]) { this.identifier.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.identifier[${i}]`)); }) }
     if (!this['status']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status:fhir.FhirCode<FmStatusCodeType> fhir: PaymentNotice.status:code' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status fhir: PaymentNotice.status:code', expression: [expression] });
     }
-    if (this['status'] && (!Object.values(FmStatusCodes).includes(this.status as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property status:fhir.FhirCode<FmStatusCodeType> fhir: PaymentNotice.status:code Required binding to: FmStatus' });
+    if (this['status'] && (!Object.values(FmStatusCodes).includes(this.status.value as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property status fhir: PaymentNotice.status:code Required binding to: FmStatus', expression: [expression] });
     }
-    if (this["status"]) { issues.push(...this.status.doModelValidation()); }
-    if (this["request"]) { issues.push(...this.request.doModelValidation()); }
-    if (this["response"]) { issues.push(...this.response.doModelValidation()); }
+    if (this["status"]) { issues.push(...this.status.doModelValidation(expression+'.status')); }
+    if (this["request"]) { issues.push(...this.request.doModelValidation(expression+'.request')); }
+    if (this["response"]) { issues.push(...this.response.doModelValidation(expression+'.response')); }
     if (!this['created']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property created:fhir.FhirDateTime fhir: PaymentNotice.created:dateTime' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property created fhir: PaymentNotice.created:dateTime', expression: [expression] });
     }
-    if (this["created"]) { issues.push(...this.created.doModelValidation()); }
-    if (this["provider"]) { issues.push(...this.provider.doModelValidation()); }
+    if (this["created"]) { issues.push(...this.created.doModelValidation(expression+'.created')); }
+    if (this["provider"]) { issues.push(...this.provider.doModelValidation(expression+'.provider')); }
     if (!this['payment']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property payment:fhir.Reference fhir: PaymentNotice.payment:Reference' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property payment fhir: PaymentNotice.payment:Reference', expression: [expression] });
     }
-    if (this["payment"]) { issues.push(...this.payment.doModelValidation()); }
-    if (this["paymentDate"]) { issues.push(...this.paymentDate.doModelValidation()); }
-    if (this["payee"]) { issues.push(...this.payee.doModelValidation()); }
+    if (this["payment"]) { issues.push(...this.payment.doModelValidation(expression+'.payment')); }
+    if (this["paymentDate"]) { issues.push(...this.paymentDate.doModelValidation(expression+'.paymentDate')); }
+    if (this["payee"]) { issues.push(...this.payee.doModelValidation(expression+'.payee')); }
     if (!this['recipient']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property recipient:fhir.Reference fhir: PaymentNotice.recipient:Reference' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property recipient fhir: PaymentNotice.recipient:Reference', expression: [expression] });
     }
-    if (this["recipient"]) { issues.push(...this.recipient.doModelValidation()); }
+    if (this["recipient"]) { issues.push(...this.recipient.doModelValidation(expression+'.recipient')); }
     if (!this['amount']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property amount:fhir.Money fhir: PaymentNotice.amount:Money' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property amount fhir: PaymentNotice.amount:Money', expression: [expression] });
     }
-    if (this["amount"]) { issues.push(...this.amount.doModelValidation()); }
-    if (this["paymentStatus"]) { issues.push(...this.paymentStatus.doModelValidation()); }
+    if (this["amount"]) { issues.push(...this.amount.doModelValidation(expression+'.amount')); }
+    if (this["paymentStatus"]) { issues.push(...this.paymentStatus.doModelValidation(expression+'.paymentStatus')); }
     return issues;
   }
 }

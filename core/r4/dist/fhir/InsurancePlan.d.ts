@@ -57,7 +57,7 @@ export declare class InsurancePlanContact extends fhir.BackboneElement {
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.FtsIssue[];
+    doModelValidation(expression?: string): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the InsurancePlanCoverageBenefitLimit type.
@@ -95,7 +95,7 @@ export declare class InsurancePlanCoverageBenefitLimit extends fhir.BackboneElem
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.FtsIssue[];
+    doModelValidation(expression?: string): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the InsurancePlanCoverageBenefit type.
@@ -145,7 +145,7 @@ export declare class InsurancePlanCoverageBenefit extends fhir.BackboneElement {
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.FtsIssue[];
+    doModelValidation(expression?: string): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the InsurancePlanCoverage type.
@@ -191,7 +191,7 @@ export declare class InsurancePlanCoverage extends fhir.BackboneElement {
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.FtsIssue[];
+    doModelValidation(expression?: string): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the InsurancePlanPlanGeneralCost type.
@@ -253,7 +253,7 @@ export declare class InsurancePlanPlanGeneralCost extends fhir.BackboneElement {
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.FtsIssue[];
+    doModelValidation(expression?: string): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the InsurancePlanPlanSpecificCostBenefitCost type.
@@ -315,7 +315,7 @@ export declare class InsurancePlanPlanSpecificCostBenefitCost extends fhir.Backb
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.FtsIssue[];
+    doModelValidation(expression?: string): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the InsurancePlanPlanSpecificCostBenefit type.
@@ -353,7 +353,7 @@ export declare class InsurancePlanPlanSpecificCostBenefit extends fhir.BackboneE
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.FtsIssue[];
+    doModelValidation(expression?: string): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the InsurancePlanPlanSpecificCost type.
@@ -391,7 +391,7 @@ export declare class InsurancePlanPlanSpecificCost extends fhir.BackboneElement 
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.FtsIssue[];
+    doModelValidation(expression?: string): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the InsurancePlanPlan type.
@@ -461,7 +461,7 @@ export declare class InsurancePlanPlan extends fhir.BackboneElement {
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.FtsIssue[];
+    doModelValidation(expression?: string): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the InsurancePlan type.
@@ -624,6 +624,6 @@ export declare class InsurancePlan extends fhir.DomainResource {
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.FtsIssue[];
+    doModelValidation(expression?: string): fhir.FtsIssue[];
 }
 //# sourceMappingURL=InsurancePlan.d.ts.map

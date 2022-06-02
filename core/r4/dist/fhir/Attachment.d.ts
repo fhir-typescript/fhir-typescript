@@ -120,6 +120,6 @@ export declare class Attachment extends fhir.FhirElement {
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(): fhir.FtsIssue[];
+    doModelValidation(expression?: string): fhir.FtsIssue[];
 }
 //# sourceMappingURL=Attachment.d.ts.map

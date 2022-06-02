@@ -86,9 +86,10 @@ export class SupplyRequestParameter extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
-    if (this["code"]) { issues.push(...this.code.doModelValidation()); }
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'SupplyRequest.parameter' }
+    if (this["code"]) { issues.push(...this.code.doModelValidation(expression+'.code')); }
     return issues;
   }
 }
@@ -335,36 +336,37 @@ export class SupplyRequest extends fhir.DomainResource {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'SupplyRequest' }
     if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType:"SupplyRequest" fhir: SupplyRequest.resourceType:"SupplyRequest"' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType fhir: SupplyRequest.resourceType:"SupplyRequest"', expression: [expression] });
     }
-    if (this["identifier"]) { this.identifier.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this['status'] && (!Object.values(SupplyrequestStatusCodes).includes(this.status as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property status?:fhir.FhirCode<SupplyrequestStatusCodeType> fhir: SupplyRequest.status:code Required binding to: SupplyrequestStatus' });
+    if (this["identifier"]) { this.identifier.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.identifier[${i}]`)); }) }
+    if (this['status'] && (!Object.values(SupplyrequestStatusCodes).includes(this.status.value as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property status fhir: SupplyRequest.status:code Required binding to: SupplyrequestStatus', expression: [expression] });
     }
-    if (this["status"]) { issues.push(...this.status.doModelValidation()); }
-    if (this["category"]) { issues.push(...this.category.doModelValidation()); }
-    if (this['priority'] && (!Object.values(RequestPriorityCodes).includes(this.priority as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property priority?:fhir.FhirCode<RequestPriorityCodeType> fhir: SupplyRequest.priority:code Required binding to: RequestPriority' });
+    if (this["status"]) { issues.push(...this.status.doModelValidation(expression+'.status')); }
+    if (this["category"]) { issues.push(...this.category.doModelValidation(expression+'.category')); }
+    if (this['priority'] && (!Object.values(RequestPriorityCodes).includes(this.priority.value as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property priority fhir: SupplyRequest.priority:code Required binding to: RequestPriority', expression: [expression] });
     }
-    if (this["priority"]) { issues.push(...this.priority.doModelValidation()); }
+    if (this["priority"]) { issues.push(...this.priority.doModelValidation(expression+'.priority')); }
     if (!this['item']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property item: fhir: SupplyRequest.item[x]:' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property item fhir: SupplyRequest.item[x]:', expression: [expression] });
     }
     if (!this['quantity']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property quantity:fhir.Quantity fhir: SupplyRequest.quantity:Quantity' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property quantity fhir: SupplyRequest.quantity:Quantity', expression: [expression] });
     }
-    if (this["quantity"]) { issues.push(...this.quantity.doModelValidation()); }
-    if (this["parameter"]) { this.parameter.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["authoredOn"]) { issues.push(...this.authoredOn.doModelValidation()); }
-    if (this["requester"]) { issues.push(...this.requester.doModelValidation()); }
-    if (this["supplier"]) { this.supplier.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["reasonCode"]) { this.reasonCode.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["reasonReference"]) { this.reasonReference.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["deliverFrom"]) { issues.push(...this.deliverFrom.doModelValidation()); }
-    if (this["deliverTo"]) { issues.push(...this.deliverTo.doModelValidation()); }
+    if (this["quantity"]) { issues.push(...this.quantity.doModelValidation(expression+'.quantity')); }
+    if (this["parameter"]) { this.parameter.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.parameter[${i}]`)); }) }
+    if (this["authoredOn"]) { issues.push(...this.authoredOn.doModelValidation(expression+'.authoredOn')); }
+    if (this["requester"]) { issues.push(...this.requester.doModelValidation(expression+'.requester')); }
+    if (this["supplier"]) { this.supplier.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.supplier[${i}]`)); }) }
+    if (this["reasonCode"]) { this.reasonCode.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.reasonCode[${i}]`)); }) }
+    if (this["reasonReference"]) { this.reasonReference.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.reasonReference[${i}]`)); }) }
+    if (this["deliverFrom"]) { issues.push(...this.deliverFrom.doModelValidation(expression+'.deliverFrom')); }
+    if (this["deliverTo"]) { issues.push(...this.deliverTo.doModelValidation(expression+'.deliverTo')); }
     return issues;
   }
 }

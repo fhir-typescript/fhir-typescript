@@ -83,16 +83,17 @@ export class MedicinalProductIngredientSpecifiedSubstanceStrengthReferenceStreng
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
-    if (this["substance"]) { issues.push(...this.substance.doModelValidation()); }
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'MedicinalProductIngredient.specifiedSubstance.strength.referenceStrength' }
+    if (this["substance"]) { issues.push(...this.substance.doModelValidation(expression+'.substance')); }
     if (!this['strength']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property strength:fhir.Ratio fhir: MedicinalProductIngredient.specifiedSubstance.strength.referenceStrength.strength:Ratio' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property strength fhir: MedicinalProductIngredient.specifiedSubstance.strength.referenceStrength.strength:Ratio', expression: [expression] });
     }
-    if (this["strength"]) { issues.push(...this.strength.doModelValidation()); }
-    if (this["strengthLowLimit"]) { issues.push(...this.strengthLowLimit.doModelValidation()); }
-    if (this["measurementPoint"]) { issues.push(...this.measurementPoint.doModelValidation()); }
-    if (this["country"]) { this.country.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["strength"]) { issues.push(...this.strength.doModelValidation(expression+'.strength')); }
+    if (this["strengthLowLimit"]) { issues.push(...this.strengthLowLimit.doModelValidation(expression+'.strengthLowLimit')); }
+    if (this["measurementPoint"]) { issues.push(...this.measurementPoint.doModelValidation(expression+'.measurementPoint')); }
+    if (this["country"]) { this.country.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.country[${i}]`)); }) }
     return issues;
   }
 }
@@ -193,18 +194,19 @@ export class MedicinalProductIngredientSpecifiedSubstanceStrength extends fhir.B
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'MedicinalProductIngredient.specifiedSubstance.strength' }
     if (!this['presentation']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property presentation:fhir.Ratio fhir: MedicinalProductIngredient.specifiedSubstance.strength.presentation:Ratio' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property presentation fhir: MedicinalProductIngredient.specifiedSubstance.strength.presentation:Ratio', expression: [expression] });
     }
-    if (this["presentation"]) { issues.push(...this.presentation.doModelValidation()); }
-    if (this["presentationLowLimit"]) { issues.push(...this.presentationLowLimit.doModelValidation()); }
-    if (this["concentration"]) { issues.push(...this.concentration.doModelValidation()); }
-    if (this["concentrationLowLimit"]) { issues.push(...this.concentrationLowLimit.doModelValidation()); }
-    if (this["measurementPoint"]) { issues.push(...this.measurementPoint.doModelValidation()); }
-    if (this["country"]) { this.country.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["referenceStrength"]) { this.referenceStrength.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["presentation"]) { issues.push(...this.presentation.doModelValidation(expression+'.presentation')); }
+    if (this["presentationLowLimit"]) { issues.push(...this.presentationLowLimit.doModelValidation(expression+'.presentationLowLimit')); }
+    if (this["concentration"]) { issues.push(...this.concentration.doModelValidation(expression+'.concentration')); }
+    if (this["concentrationLowLimit"]) { issues.push(...this.concentrationLowLimit.doModelValidation(expression+'.concentrationLowLimit')); }
+    if (this["measurementPoint"]) { issues.push(...this.measurementPoint.doModelValidation(expression+'.measurementPoint')); }
+    if (this["country"]) { this.country.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.country[${i}]`)); }) }
+    if (this["referenceStrength"]) { this.referenceStrength.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.referenceStrength[${i}]`)); }) }
     return issues;
   }
 }
@@ -270,18 +272,19 @@ export class MedicinalProductIngredientSpecifiedSubstance extends fhir.BackboneE
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'MedicinalProductIngredient.specifiedSubstance' }
     if (!this['code']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property code:fhir.CodeableConcept fhir: MedicinalProductIngredient.specifiedSubstance.code:CodeableConcept' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property code fhir: MedicinalProductIngredient.specifiedSubstance.code:CodeableConcept', expression: [expression] });
     }
-    if (this["code"]) { issues.push(...this.code.doModelValidation()); }
+    if (this["code"]) { issues.push(...this.code.doModelValidation(expression+'.code')); }
     if (!this['group']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property group:fhir.CodeableConcept fhir: MedicinalProductIngredient.specifiedSubstance.group:CodeableConcept' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property group fhir: MedicinalProductIngredient.specifiedSubstance.group:CodeableConcept', expression: [expression] });
     }
-    if (this["group"]) { issues.push(...this.group.doModelValidation()); }
-    if (this["confidentiality"]) { issues.push(...this.confidentiality.doModelValidation()); }
-    if (this["strength"]) { this.strength.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["group"]) { issues.push(...this.group.doModelValidation(expression+'.group')); }
+    if (this["confidentiality"]) { issues.push(...this.confidentiality.doModelValidation(expression+'.confidentiality')); }
+    if (this["strength"]) { this.strength.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.strength[${i}]`)); }) }
     return issues;
   }
 }
@@ -328,13 +331,14 @@ export class MedicinalProductIngredientSubstance extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'MedicinalProductIngredient.substance' }
     if (!this['code']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property code:fhir.CodeableConcept fhir: MedicinalProductIngredient.substance.code:CodeableConcept' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property code fhir: MedicinalProductIngredient.substance.code:CodeableConcept', expression: [expression] });
     }
-    if (this["code"]) { issues.push(...this.code.doModelValidation()); }
-    if (this["strength"]) { this.strength.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["code"]) { issues.push(...this.code.doModelValidation(expression+'.code')); }
+    if (this["strength"]) { this.strength.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.strength[${i}]`)); }) }
     return issues;
   }
 }
@@ -435,20 +439,21 @@ export class MedicinalProductIngredient extends fhir.DomainResource {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'MedicinalProductIngredient' }
     if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType:"MedicinalProductIngredient" fhir: MedicinalProductIngredient.resourceType:"MedicinalProductIngredient"' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType fhir: MedicinalProductIngredient.resourceType:"MedicinalProductIngredient"', expression: [expression] });
     }
-    if (this["identifier"]) { issues.push(...this.identifier.doModelValidation()); }
+    if (this["identifier"]) { issues.push(...this.identifier.doModelValidation(expression+'.identifier')); }
     if (!this['role']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property role:fhir.CodeableConcept fhir: MedicinalProductIngredient.role:CodeableConcept' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property role fhir: MedicinalProductIngredient.role:CodeableConcept', expression: [expression] });
     }
-    if (this["role"]) { issues.push(...this.role.doModelValidation()); }
-    if (this["allergenicIndicator"]) { issues.push(...this.allergenicIndicator.doModelValidation()); }
-    if (this["manufacturer"]) { this.manufacturer.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["specifiedSubstance"]) { this.specifiedSubstance.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["substance"]) { issues.push(...this.substance.doModelValidation()); }
+    if (this["role"]) { issues.push(...this.role.doModelValidation(expression+'.role')); }
+    if (this["allergenicIndicator"]) { issues.push(...this.allergenicIndicator.doModelValidation(expression+'.allergenicIndicator')); }
+    if (this["manufacturer"]) { this.manufacturer.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.manufacturer[${i}]`)); }) }
+    if (this["specifiedSubstance"]) { this.specifiedSubstance.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.specifiedSubstance[${i}]`)); }) }
+    if (this["substance"]) { issues.push(...this.substance.doModelValidation(expression+'.substance')); }
     return issues;
   }
 }

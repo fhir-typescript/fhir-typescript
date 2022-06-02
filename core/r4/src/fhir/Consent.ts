@@ -110,10 +110,11 @@ export class ConsentPolicy extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
-    if (this["authority"]) { issues.push(...this.authority.doModelValidation()); }
-    if (this["uri"]) { issues.push(...this.uri.doModelValidation()); }
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'Consent.policy' }
+    if (this["authority"]) { issues.push(...this.authority.doModelValidation(expression+'.authority')); }
+    if (this["uri"]) { issues.push(...this.uri.doModelValidation(expression+'.uri')); }
     return issues;
   }
 }
@@ -184,14 +185,15 @@ export class ConsentVerification extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'Consent.verification' }
     if (!this['verified']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property verified:fhir.FhirBoolean fhir: Consent.verification.verified:boolean' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property verified fhir: Consent.verification.verified:boolean', expression: [expression] });
     }
-    if (this["verified"]) { issues.push(...this.verified.doModelValidation()); }
-    if (this["verifiedWith"]) { issues.push(...this.verifiedWith.doModelValidation()); }
-    if (this["verificationDate"]) { issues.push(...this.verificationDate.doModelValidation()); }
+    if (this["verified"]) { issues.push(...this.verified.doModelValidation(expression+'.verified')); }
+    if (this["verifiedWith"]) { issues.push(...this.verifiedWith.doModelValidation(expression+'.verifiedWith')); }
+    if (this["verificationDate"]) { issues.push(...this.verificationDate.doModelValidation(expression+'.verificationDate')); }
     return issues;
   }
 }
@@ -244,16 +246,17 @@ export class ConsentProvisionActor extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'Consent.provision.actor' }
     if (!this['role']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property role:fhir.CodeableConcept fhir: Consent.provision.actor.role:CodeableConcept' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property role fhir: Consent.provision.actor.role:CodeableConcept', expression: [expression] });
     }
-    if (this["role"]) { issues.push(...this.role.doModelValidation()); }
+    if (this["role"]) { issues.push(...this.role.doModelValidation(expression+'.role')); }
     if (!this['reference']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property reference:fhir.Reference fhir: Consent.provision.actor.reference:Reference' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property reference fhir: Consent.provision.actor.reference:Reference', expression: [expression] });
     }
-    if (this["reference"]) { issues.push(...this.reference.doModelValidation()); }
+    if (this["reference"]) { issues.push(...this.reference.doModelValidation(expression+'.reference')); }
     return issues;
   }
 }
@@ -314,19 +317,20 @@ export class ConsentProvisionData extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'Consent.provision.data' }
     if (!this['meaning']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property meaning:fhir.FhirCode<ConsentDataMeaningCodeType> fhir: Consent.provision.data.meaning:code' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property meaning fhir: Consent.provision.data.meaning:code', expression: [expression] });
     }
-    if (this['meaning'] && (!Object.values(ConsentDataMeaningCodes).includes(this.meaning as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property meaning:fhir.FhirCode<ConsentDataMeaningCodeType> fhir: Consent.provision.data.meaning:code Required binding to: ConsentDataMeaning' });
+    if (this['meaning'] && (!Object.values(ConsentDataMeaningCodes).includes(this.meaning.value as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property meaning fhir: Consent.provision.data.meaning:code Required binding to: ConsentDataMeaning', expression: [expression] });
     }
-    if (this["meaning"]) { issues.push(...this.meaning.doModelValidation()); }
+    if (this["meaning"]) { issues.push(...this.meaning.doModelValidation(expression+'.meaning')); }
     if (!this['reference']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property reference:fhir.Reference fhir: Consent.provision.data.reference:Reference' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property reference fhir: Consent.provision.data.reference:Reference', expression: [expression] });
     }
-    if (this["reference"]) { issues.push(...this.reference.doModelValidation()); }
+    if (this["reference"]) { issues.push(...this.reference.doModelValidation(expression+'.reference')); }
     return issues;
   }
 }
@@ -492,22 +496,23 @@ export class ConsentProvision extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
-    if (this['type'] && (!Object.values(ConsentProvisionTypeCodes).includes(this.type as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property type?:fhir.FhirCode<ConsentProvisionTypeCodeType> fhir: Consent.provision.type:code Required binding to: ConsentProvisionType' });
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'Consent.provision' }
+    if (this['type'] && (!Object.values(ConsentProvisionTypeCodes).includes(this.type.value as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property type fhir: Consent.provision.type:code Required binding to: ConsentProvisionType', expression: [expression] });
     }
-    if (this["type"]) { issues.push(...this.type.doModelValidation()); }
-    if (this["period"]) { issues.push(...this.period.doModelValidation()); }
-    if (this["actor"]) { this.actor.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["action"]) { this.action.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["securityLabel"]) { this.securityLabel.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["purpose"]) { this.purpose.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["class"]) { this.class.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["code"]) { this.code.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["dataPeriod"]) { issues.push(...this.dataPeriod.doModelValidation()); }
-    if (this["data"]) { this.data.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["provision"]) { this.provision.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["type"]) { issues.push(...this.type.doModelValidation(expression+'.type')); }
+    if (this["period"]) { issues.push(...this.period.doModelValidation(expression+'.period')); }
+    if (this["actor"]) { this.actor.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.actor[${i}]`)); }) }
+    if (this["action"]) { this.action.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.action[${i}]`)); }) }
+    if (this["securityLabel"]) { this.securityLabel.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.securityLabel[${i}]`)); }) }
+    if (this["purpose"]) { this.purpose.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.purpose[${i}]`)); }) }
+    if (this["class"]) { this.class.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.class[${i}]`)); }) }
+    if (this["code"]) { this.code.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.code[${i}]`)); }) }
+    if (this["dataPeriod"]) { issues.push(...this.dataPeriod.doModelValidation(expression+'.dataPeriod')); }
+    if (this["data"]) { this.data.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.data[${i}]`)); }) }
+    if (this["provision"]) { this.provision.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.provision[${i}]`)); }) }
     return issues;
   }
 }
@@ -722,39 +727,40 @@ export class Consent extends fhir.DomainResource {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'Consent' }
     if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType:"Consent" fhir: Consent.resourceType:"Consent"' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType fhir: Consent.resourceType:"Consent"', expression: [expression] });
     }
-    if (this["identifier"]) { this.identifier.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["identifier"]) { this.identifier.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.identifier[${i}]`)); }) }
     if (!this['status']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status:fhir.FhirCode<ConsentStateCodeType> fhir: Consent.status:code' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status fhir: Consent.status:code', expression: [expression] });
     }
-    if (this['status'] && (!Object.values(ConsentStateCodes).includes(this.status as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property status:fhir.FhirCode<ConsentStateCodeType> fhir: Consent.status:code Required binding to: ConsentState' });
+    if (this['status'] && (!Object.values(ConsentStateCodes).includes(this.status.value as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property status fhir: Consent.status:code Required binding to: ConsentState', expression: [expression] });
     }
-    if (this["status"]) { issues.push(...this.status.doModelValidation()); }
+    if (this["status"]) { issues.push(...this.status.doModelValidation(expression+'.status')); }
     if (!this['scope']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property scope:fhir.CodeableConcept fhir: Consent.scope:CodeableConcept' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property scope fhir: Consent.scope:CodeableConcept', expression: [expression] });
     }
-    if (this["scope"]) { issues.push(...this.scope.doModelValidation()); }
+    if (this["scope"]) { issues.push(...this.scope.doModelValidation(expression+'.scope')); }
     if (!this['category']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property category:fhir.CodeableConcept[] fhir: Consent.category:CodeableConcept' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property category fhir: Consent.category:CodeableConcept', expression: [expression] });
     } else if (!Array.isArray(this.category)) {
-      issues.push({ severity: 'error', code: 'structure', diagnostics: 'Found scalar in array property category:fhir.CodeableConcept[] fhir: Consent.category:CodeableConcept' });
+      issues.push({ severity: 'error', code: 'structure', diagnostics: 'Found scalar in array property category fhir: Consent.category:CodeableConcept', expression: [expression] });
     } else if (this.category.length === 0) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property category:fhir.CodeableConcept[] fhir: Consent.category:CodeableConcept' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property category fhir: Consent.category:CodeableConcept', expression: [expression] });
     }
-    if (this["category"]) { this.category.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["patient"]) { issues.push(...this.patient.doModelValidation()); }
-    if (this["dateTime"]) { issues.push(...this.dateTime.doModelValidation()); }
-    if (this["performer"]) { this.performer.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["organization"]) { this.organization.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["policy"]) { this.policy.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["policyRule"]) { issues.push(...this.policyRule.doModelValidation()); }
-    if (this["verification"]) { this.verification.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["provision"]) { issues.push(...this.provision.doModelValidation()); }
+    if (this["category"]) { this.category.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.category[${i}]`)); }) }
+    if (this["patient"]) { issues.push(...this.patient.doModelValidation(expression+'.patient')); }
+    if (this["dateTime"]) { issues.push(...this.dateTime.doModelValidation(expression+'.dateTime')); }
+    if (this["performer"]) { this.performer.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.performer[${i}]`)); }) }
+    if (this["organization"]) { this.organization.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.organization[${i}]`)); }) }
+    if (this["policy"]) { this.policy.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.policy[${i}]`)); }) }
+    if (this["policyRule"]) { issues.push(...this.policyRule.doModelValidation(expression+'.policyRule')); }
+    if (this["verification"]) { this.verification.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.verification[${i}]`)); }) }
+    if (this["provision"]) { issues.push(...this.provision.doModelValidation(expression+'.provision')); }
     return issues;
   }
 }

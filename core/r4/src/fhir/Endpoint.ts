@@ -214,41 +214,42 @@ export class Endpoint extends fhir.DomainResource {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'Endpoint' }
     if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType:"Endpoint" fhir: Endpoint.resourceType:"Endpoint"' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType fhir: Endpoint.resourceType:"Endpoint"', expression: [expression] });
     }
-    if (this["identifier"]) { this.identifier.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["identifier"]) { this.identifier.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.identifier[${i}]`)); }) }
     if (!this['status']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status:fhir.FhirCode<EndpointStatusCodeType> fhir: Endpoint.status:code' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status fhir: Endpoint.status:code', expression: [expression] });
     }
-    if (this['status'] && (!Object.values(EndpointStatusCodes).includes(this.status as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property status:fhir.FhirCode<EndpointStatusCodeType> fhir: Endpoint.status:code Required binding to: EndpointStatus' });
+    if (this['status'] && (!Object.values(EndpointStatusCodes).includes(this.status.value as any))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property status fhir: Endpoint.status:code Required binding to: EndpointStatus', expression: [expression] });
     }
-    if (this["status"]) { issues.push(...this.status.doModelValidation()); }
+    if (this["status"]) { issues.push(...this.status.doModelValidation(expression+'.status')); }
     if (!this['connectionType']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property connectionType:fhir.Coding fhir: Endpoint.connectionType:Coding' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property connectionType fhir: Endpoint.connectionType:Coding', expression: [expression] });
     }
-    if (this["connectionType"]) { issues.push(...this.connectionType.doModelValidation()); }
-    if (this["name"]) { issues.push(...this.name.doModelValidation()); }
-    if (this["managingOrganization"]) { issues.push(...this.managingOrganization.doModelValidation()); }
-    if (this["contact"]) { this.contact.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["period"]) { issues.push(...this.period.doModelValidation()); }
+    if (this["connectionType"]) { issues.push(...this.connectionType.doModelValidation(expression+'.connectionType')); }
+    if (this["name"]) { issues.push(...this.name.doModelValidation(expression+'.name')); }
+    if (this["managingOrganization"]) { issues.push(...this.managingOrganization.doModelValidation(expression+'.managingOrganization')); }
+    if (this["contact"]) { this.contact.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.contact[${i}]`)); }) }
+    if (this["period"]) { issues.push(...this.period.doModelValidation(expression+'.period')); }
     if (!this['payloadType']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property payloadType:fhir.CodeableConcept[] fhir: Endpoint.payloadType:CodeableConcept' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property payloadType fhir: Endpoint.payloadType:CodeableConcept', expression: [expression] });
     } else if (!Array.isArray(this.payloadType)) {
-      issues.push({ severity: 'error', code: 'structure', diagnostics: 'Found scalar in array property payloadType:fhir.CodeableConcept[] fhir: Endpoint.payloadType:CodeableConcept' });
+      issues.push({ severity: 'error', code: 'structure', diagnostics: 'Found scalar in array property payloadType fhir: Endpoint.payloadType:CodeableConcept', expression: [expression] });
     } else if (this.payloadType.length === 0) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property payloadType:fhir.CodeableConcept[] fhir: Endpoint.payloadType:CodeableConcept' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property payloadType fhir: Endpoint.payloadType:CodeableConcept', expression: [expression] });
     }
-    if (this["payloadType"]) { this.payloadType.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["payloadMimeType"]) { this.payloadMimeType.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["payloadType"]) { this.payloadType.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.payloadType[${i}]`)); }) }
+    if (this["payloadMimeType"]) { this.payloadMimeType.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.payloadMimeType[${i}]`)); }) }
     if (!this['address']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property address:fhir.FhirUrl fhir: Endpoint.address:url' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property address fhir: Endpoint.address:url', expression: [expression] });
     }
-    if (this["address"]) { issues.push(...this.address.doModelValidation()); }
-    if (this["header"]) { this.header.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["address"]) { issues.push(...this.address.doModelValidation(expression+'.address')); }
+    if (this["header"]) { this.header.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.header[${i}]`)); }) }
     return issues;
   }
 }

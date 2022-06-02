@@ -148,26 +148,27 @@ export class Schedule extends fhir.DomainResource {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation():fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation();
+  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+    if (expression === '') { expression = 'Schedule' }
     if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType:"Schedule" fhir: Schedule.resourceType:"Schedule"' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType fhir: Schedule.resourceType:"Schedule"', expression: [expression] });
     }
-    if (this["identifier"]) { this.identifier.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["active"]) { issues.push(...this.active.doModelValidation()); }
-    if (this["serviceCategory"]) { this.serviceCategory.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["serviceType"]) { this.serviceType.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["specialty"]) { this.specialty.forEach((x) => { issues.push(...x.doModelValidation()); }) }
+    if (this["identifier"]) { this.identifier.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.identifier[${i}]`)); }) }
+    if (this["active"]) { issues.push(...this.active.doModelValidation(expression+'.active')); }
+    if (this["serviceCategory"]) { this.serviceCategory.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.serviceCategory[${i}]`)); }) }
+    if (this["serviceType"]) { this.serviceType.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.serviceType[${i}]`)); }) }
+    if (this["specialty"]) { this.specialty.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.specialty[${i}]`)); }) }
     if (!this['actor']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property actor:fhir.Reference[] fhir: Schedule.actor:Reference' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property actor fhir: Schedule.actor:Reference', expression: [expression] });
     } else if (!Array.isArray(this.actor)) {
-      issues.push({ severity: 'error', code: 'structure', diagnostics: 'Found scalar in array property actor:fhir.Reference[] fhir: Schedule.actor:Reference' });
+      issues.push({ severity: 'error', code: 'structure', diagnostics: 'Found scalar in array property actor fhir: Schedule.actor:Reference', expression: [expression] });
     } else if (this.actor.length === 0) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property actor:fhir.Reference[] fhir: Schedule.actor:Reference' });
+      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property actor fhir: Schedule.actor:Reference', expression: [expression] });
     }
-    if (this["actor"]) { this.actor.forEach((x) => { issues.push(...x.doModelValidation()); }) }
-    if (this["planningHorizon"]) { issues.push(...this.planningHorizon.doModelValidation()); }
-    if (this["comment"]) { issues.push(...this.comment.doModelValidation()); }
+    if (this["actor"]) { this.actor.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.actor[${i}]`)); }) }
+    if (this["planningHorizon"]) { issues.push(...this.planningHorizon.doModelValidation(expression+'.planningHorizon')); }
+    if (this["comment"]) { issues.push(...this.comment.doModelValidation(expression+'.comment')); }
     return issues;
   }
 }
