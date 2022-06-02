@@ -348,7 +348,7 @@ export class BiologicallyDerivedProductStorage extends fhir.BackboneElement {
     if (this["description"]) { issues.push(...this.description.doModelValidation(expression+'.description')); }
     if (this["temperature"]) { issues.push(...this.temperature.doModelValidation(expression+'.temperature')); }
     if (this['scale'] && (!Object.values(ProductStorageScaleCodes).includes(this.scale.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property scale fhir: BiologicallyDerivedProduct.storage.scale:code Required binding to: ProductStorageScale', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'scale (BiologicallyDerivedProduct.storage.scale) of type code is missing code for Required binding to: ProductStorageScale', expression: [expression] });
     }
     if (this["scale"]) { issues.push(...this.scale.doModelValidation(expression+'.scale')); }
     if (this["duration"]) { issues.push(...this.duration.doModelValidation(expression+'.duration')); }
@@ -536,12 +536,12 @@ export class BiologicallyDerivedProduct extends fhir.DomainResource {
     }
     if (this["identifier"]) { this.identifier.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.identifier[${i}]`)); }) }
     if (this['productCategory'] && (!Object.values(ProductCategoryCodes).includes(this.productCategory.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property productCategory fhir: BiologicallyDerivedProduct.productCategory:code Required binding to: ProductCategory', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'productCategory (BiologicallyDerivedProduct.productCategory) of type code is missing code for Required binding to: ProductCategory', expression: [expression] });
     }
     if (this["productCategory"]) { issues.push(...this.productCategory.doModelValidation(expression+'.productCategory')); }
     if (this["productCode"]) { issues.push(...this.productCode.doModelValidation(expression+'.productCode')); }
     if (this['status'] && (!Object.values(ProductStatusCodes).includes(this.status.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property status fhir: BiologicallyDerivedProduct.status:code Required binding to: ProductStatus', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'status (BiologicallyDerivedProduct.status) of type code is missing code for Required binding to: ProductStatus', expression: [expression] });
     }
     if (this["status"]) { issues.push(...this.status.doModelValidation(expression+'.status')); }
     if (this["request"]) { this.request.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.request[${i}]`)); }) }

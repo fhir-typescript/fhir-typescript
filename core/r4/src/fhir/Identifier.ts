@@ -130,7 +130,7 @@ export class Identifier extends fhir.FhirElement {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'Identifier' }
     if (this['use'] && (!Object.values(IdentifierUseCodes).includes(this.use.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property use fhir: Identifier.use:code Required binding to: IdentifierUse', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'use (Identifier.use) of type code is missing code for Required binding to: IdentifierUse', expression: [expression] });
     }
     if (this["use"]) { issues.push(...this.use.doModelValidation(expression+'.use')); }
     if (this["type"]) { issues.push(...this.type.doModelValidation(expression+'.type')); }

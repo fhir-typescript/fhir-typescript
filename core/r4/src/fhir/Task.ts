@@ -1141,7 +1141,7 @@ export class Task extends fhir.DomainResource {
       issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status fhir: Task.status:code', expression: [expression] });
     }
     if (this['status'] && (!Object.values(TaskStatusCodes).includes(this.status.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property status fhir: Task.status:code Required binding to: TaskStatus', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'status (Task.status) of type code is missing code for Required binding to: TaskStatus', expression: [expression] });
     }
     if (this["status"]) { issues.push(...this.status.doModelValidation(expression+'.status')); }
     if (this["statusReason"]) { issues.push(...this.statusReason.doModelValidation(expression+'.statusReason')); }
@@ -1150,11 +1150,11 @@ export class Task extends fhir.DomainResource {
       issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property intent fhir: Task.intent:code', expression: [expression] });
     }
     if (this['intent'] && (!Object.values(TaskIntentCodes).includes(this.intent.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property intent fhir: Task.intent:code Required binding to: TaskIntent', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'intent (Task.intent) of type code is missing code for Required binding to: TaskIntent', expression: [expression] });
     }
     if (this["intent"]) { issues.push(...this.intent.doModelValidation(expression+'.intent')); }
     if (this['priority'] && (!Object.values(RequestPriorityCodes).includes(this.priority.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property priority fhir: Task.priority:code Required binding to: RequestPriority', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'priority (Task.priority) of type code is missing code for Required binding to: RequestPriority', expression: [expression] });
     }
     if (this["priority"]) { issues.push(...this.priority.doModelValidation(expression+'.priority')); }
     if (this["code"]) { issues.push(...this.code.doModelValidation(expression+'.code')); }

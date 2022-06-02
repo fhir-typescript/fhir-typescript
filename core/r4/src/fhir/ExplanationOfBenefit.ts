@@ -2604,7 +2604,7 @@ export class ExplanationOfBenefitProcessNote extends fhir.BackboneElement {
     if (expression === '') { expression = 'ExplanationOfBenefit.processNote' }
     if (this["number"]) { issues.push(...this.number.doModelValidation(expression+'.number')); }
     if (this['type'] && (!Object.values(NoteTypeCodes).includes(this.type.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property type fhir: ExplanationOfBenefit.processNote.type:code Required binding to: NoteType', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'type (ExplanationOfBenefit.processNote.type) of type code is missing code for Required binding to: NoteType', expression: [expression] });
     }
     if (this["type"]) { issues.push(...this.type.doModelValidation(expression+'.type')); }
     if (this["text"]) { issues.push(...this.text.doModelValidation(expression+'.text')); }
@@ -3379,7 +3379,7 @@ export class ExplanationOfBenefit extends fhir.DomainResource {
       issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status fhir: ExplanationOfBenefit.status:code', expression: [expression] });
     }
     if (this['status'] && (!Object.values(ExplanationofbenefitStatusCodes).includes(this.status.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property status fhir: ExplanationOfBenefit.status:code Required binding to: ExplanationofbenefitStatus', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'status (ExplanationOfBenefit.status) of type code is missing code for Required binding to: ExplanationofbenefitStatus', expression: [expression] });
     }
     if (this["status"]) { issues.push(...this.status.doModelValidation(expression+'.status')); }
     if (!this['type']) {
@@ -3391,7 +3391,7 @@ export class ExplanationOfBenefit extends fhir.DomainResource {
       issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property use fhir: ExplanationOfBenefit.use:code', expression: [expression] });
     }
     if (this['use'] && (!Object.values(ClaimUseCodes).includes(this.use.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property use fhir: ExplanationOfBenefit.use:code Required binding to: ClaimUse', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'use (ExplanationOfBenefit.use) of type code is missing code for Required binding to: ClaimUse', expression: [expression] });
     }
     if (this["use"]) { issues.push(...this.use.doModelValidation(expression+'.use')); }
     if (!this['patient']) {
@@ -3427,7 +3427,7 @@ export class ExplanationOfBenefit extends fhir.DomainResource {
       issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property outcome fhir: ExplanationOfBenefit.outcome:code', expression: [expression] });
     }
     if (this['outcome'] && (!Object.values(RemittanceOutcomeCodes).includes(this.outcome.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property outcome fhir: ExplanationOfBenefit.outcome:code Required binding to: RemittanceOutcome', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'outcome (ExplanationOfBenefit.outcome) of type code is missing code for Required binding to: RemittanceOutcome', expression: [expression] });
     }
     if (this["outcome"]) { issues.push(...this.outcome.doModelValidation(expression+'.outcome')); }
     if (this["disposition"]) { issues.push(...this.disposition.doModelValidation(expression+'.disposition')); }

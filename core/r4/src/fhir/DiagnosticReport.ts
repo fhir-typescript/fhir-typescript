@@ -351,7 +351,7 @@ export class DiagnosticReport extends fhir.DomainResource {
       issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status fhir: DiagnosticReport.status:code', expression: [expression] });
     }
     if (this['status'] && (!Object.values(DiagnosticReportStatusCodes).includes(this.status.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property status fhir: DiagnosticReport.status:code Required binding to: DiagnosticReportStatus', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'status (DiagnosticReport.status) of type code is missing code for Required binding to: DiagnosticReportStatus', expression: [expression] });
     }
     if (this["status"]) { issues.push(...this.status.doModelValidation(expression+'.status')); }
     if (this["category"]) { this.category.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.category[${i}]`)); }) }

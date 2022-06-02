@@ -460,7 +460,7 @@ export class ChargeItem extends fhir.DomainResource {
       issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status fhir: ChargeItem.status:code', expression: [expression] });
     }
     if (this['status'] && (!Object.values(ChargeitemStatusCodes).includes(this.status.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property status fhir: ChargeItem.status:code Required binding to: ChargeitemStatus', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'status (ChargeItem.status) of type code is missing code for Required binding to: ChargeitemStatus', expression: [expression] });
     }
     if (this["status"]) { issues.push(...this.status.doModelValidation(expression+'.status')); }
     if (this["partOf"]) { this.partOf.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.partOf[${i}]`)); }) }

@@ -241,7 +241,7 @@ export class Slot extends fhir.DomainResource {
       issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status fhir: Slot.status:code', expression: [expression] });
     }
     if (this['status'] && (!Object.values(SlotstatusCodes).includes(this.status.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property status fhir: Slot.status:code Required binding to: Slotstatus', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'status (Slot.status) of type code is missing code for Required binding to: Slotstatus', expression: [expression] });
     }
     if (this["status"]) { issues.push(...this.status.doModelValidation(expression+'.status')); }
     if (!this['start']) {

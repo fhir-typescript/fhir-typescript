@@ -124,12 +124,18 @@ export declare class MessageDefinitionFocus extends fhir.BackboneElement {
         readonly Evidence: "Evidence";
         readonly EvidenceVariable: "EvidenceVariable";
         readonly ExampleScenario: "ExampleScenario";
-        readonly ExplanationOfBenefit: "ExplanationOfBenefit";
+        readonly ExplanationOfBenefit: "ExplanationOfBenefit"; /**
+         * Extended properties for primitive element: MessageDefinition.experimental
+         */
         readonly FamilyMemberHistory: "FamilyMemberHistory";
         readonly Flag: "Flag";
         readonly Goal: "Goal";
+        /**
+         * Usually an organization but may be an individual. The publisher (or steward) of the message definition is the organization or individual primarily responsible for the maintenance and upkeep of the message definition. This is not necessarily the same individual or organization that developed and initially authored the content. The publisher is the primary point of contact for questions or issues with the message definition. This item SHOULD be populated unless the information is available from context.
+         */
         readonly GraphDefinition: "GraphDefinition";
-        readonly Group: "Group"; /**
+        readonly Group: "Group";
+        /**
          * Extended properties for primitive element: MessageDefinition.publisher
          */
         readonly GuidanceResponse: "GuidanceResponse";
@@ -146,7 +152,9 @@ export declare class MessageDefinitionFocus extends fhir.BackboneElement {
         readonly List: "List";
         readonly Location: "Location";
         readonly Measure: "Measure";
-        readonly MeasureReport: "MeasureReport";
+        readonly MeasureReport: "MeasureReport"; /**
+         * Extended properties for primitive element: MessageDefinition.category
+         */
         readonly Media: "Media";
         readonly Medication: "Medication";
         readonly MedicationAdministration: "MedicationAdministration";
@@ -165,9 +173,7 @@ export declare class MessageDefinitionFocus extends fhir.BackboneElement {
         readonly MedicinalProductPharmaceutical: "MedicinalProductPharmaceutical";
         readonly MedicinalProductUndesirableEffect: "MedicinalProductUndesirableEffect";
         readonly MessageDefinition: "MessageDefinition";
-        readonly MessageHeader: "MessageHeader"; /**
-         * When multiple useContexts are specified, there is no expectation that all or any of the contexts apply.
-         */
+        readonly MessageHeader: "MessageHeader";
         readonly MolecularSequence: "MolecularSequence";
         readonly NamingSystem: "NamingSystem";
         readonly NutritionOrder: "NutritionOrder";

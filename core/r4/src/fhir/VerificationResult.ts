@@ -620,7 +620,7 @@ export class VerificationResult extends fhir.DomainResource {
       issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status fhir: VerificationResult.status:code', expression: [expression] });
     }
     if (this['status'] && (!Object.values(VerificationresultStatusCodes).includes(this.status.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property status fhir: VerificationResult.status:code Required binding to: VerificationresultStatus', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'status (VerificationResult.status) of type code is missing code for Required binding to: VerificationresultStatus', expression: [expression] });
     }
     if (this["status"]) { issues.push(...this.status.doModelValidation(expression+'.status')); }
     if (this["statusDate"]) { issues.push(...this.statusDate.doModelValidation(expression+'.statusDate')); }

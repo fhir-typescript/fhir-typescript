@@ -449,6 +449,9 @@ export class InsurancePlanPlanSpecificCostBenefitCost extends fhir.BackboneEleme
       issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property type fhir: InsurancePlan.plan.specificCost.benefit.cost.type:CodeableConcept', expression: [expression] });
     }
     if (this["type"]) { issues.push(...this.type.doModelValidation(expression+'.type')); }
+    if (this['applicability'] && (!this.applicability.hasCodingFromObject(InsuranceplanApplicabilityCodings))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'applicability (InsurancePlan.plan.specificCost.benefit.cost.applicability) of type CodeableConcept is missing code for Required binding to: InsuranceplanApplicability', expression: [expression] });
+    }
     if (this["applicability"]) { issues.push(...this.applicability.doModelValidation(expression+'.applicability')); }
     if (this["qualifiers"]) { this.qualifiers.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.qualifiers[${i}]`)); }) }
     if (this["value"]) { issues.push(...this.value.doModelValidation(expression+'.value')); }
@@ -864,7 +867,7 @@ export class InsurancePlan extends fhir.DomainResource {
     }
     if (this["identifier"]) { this.identifier.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.identifier[${i}]`)); }) }
     if (this['status'] && (!Object.values(PublicationStatusCodes).includes(this.status.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property status fhir: InsurancePlan.status:code Required binding to: PublicationStatus', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'status (InsurancePlan.status) of type code is missing code for Required binding to: PublicationStatus', expression: [expression] });
     }
     if (this["status"]) { issues.push(...this.status.doModelValidation(expression+'.status')); }
     if (this["type"]) { this.type.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.type[${i}]`)); }) }

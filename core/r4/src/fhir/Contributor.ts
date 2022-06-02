@@ -91,7 +91,7 @@ export class Contributor extends fhir.FhirElement {
       issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property type fhir: Contributor.type:code', expression: [expression] });
     }
     if (this['type'] && (!Object.values(ContributorTypeCodes).includes(this.type.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property type fhir: Contributor.type:code Required binding to: ContributorType', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'type (Contributor.type) of type code is missing code for Required binding to: ContributorType', expression: [expression] });
     }
     if (this["type"]) { issues.push(...this.type.doModelValidation(expression+'.type')); }
     if (!this['name']) {

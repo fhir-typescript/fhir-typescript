@@ -704,7 +704,7 @@ export class Observation extends fhir.DomainResource {
       issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status fhir: Observation.status:code', expression: [expression] });
     }
     if (this['status'] && (!Object.values(ObservationStatusCodes).includes(this.status.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property status fhir: Observation.status:code Required binding to: ObservationStatus', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'status (Observation.status) of type code is missing code for Required binding to: ObservationStatus', expression: [expression] });
     }
     if (this["status"]) { issues.push(...this.status.doModelValidation(expression+'.status')); }
     if (this["category"]) { this.category.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.category[${i}]`)); }) }

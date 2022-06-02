@@ -491,7 +491,9 @@ export declare class Composition extends fhir.DomainResource {
         readonly Normal: "N";
         readonly Restricted: "R";
         readonly Unrestricted: "U";
-        readonly VeryRestricted: "V";
+        readonly VeryRestricted: "V"; /**
+         * The target composition/document of this relationship.
+         */
     };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).

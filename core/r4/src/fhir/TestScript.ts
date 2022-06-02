@@ -1145,7 +1145,7 @@ export class TestScriptSetupActionOperation extends fhir.BackboneElement {
     if (expression === '') { expression = 'TestScript.setup.action.operation' }
     if (this["type"]) { issues.push(...this.type.doModelValidation(expression+'.type')); }
     if (this['resource'] && (!Object.values(DefinedTypesCodes).includes(this.resource.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property resource fhir: TestScript.setup.action.operation.resource:code Required binding to: DefinedTypes', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'resource (TestScript.setup.action.operation.resource) of type code is missing code for Required binding to: DefinedTypes', expression: [expression] });
     }
     if (this["resource"]) { issues.push(...this.resource.doModelValidation(expression+'.resource')); }
     if (this["label"]) { issues.push(...this.label.doModelValidation(expression+'.label')); }
@@ -1158,7 +1158,7 @@ export class TestScriptSetupActionOperation extends fhir.BackboneElement {
     }
     if (this["encodeRequestUrl"]) { issues.push(...this.encodeRequestUrl.doModelValidation(expression+'.encodeRequestUrl')); }
     if (this['method'] && (!Object.values(HttpOperationsCodes).includes(this.method.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property method fhir: TestScript.setup.action.operation.method:code Required binding to: HttpOperations', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'method (TestScript.setup.action.operation.method) of type code is missing code for Required binding to: HttpOperations', expression: [expression] });
     }
     if (this["method"]) { issues.push(...this.method.doModelValidation(expression+'.method')); }
     if (this["origin"]) { issues.push(...this.origin.doModelValidation(expression+'.origin')); }
@@ -1606,7 +1606,7 @@ export class TestScriptSetupActionAssert extends fhir.BackboneElement {
     if (this["label"]) { issues.push(...this.label.doModelValidation(expression+'.label')); }
     if (this["description"]) { issues.push(...this.description.doModelValidation(expression+'.description')); }
     if (this['direction'] && (!Object.values(AssertDirectionCodes).includes(this.direction.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property direction fhir: TestScript.setup.action.assert.direction:code Required binding to: AssertDirection', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'direction (TestScript.setup.action.assert.direction) of type code is missing code for Required binding to: AssertDirection', expression: [expression] });
     }
     if (this["direction"]) { issues.push(...this.direction.doModelValidation(expression+'.direction')); }
     if (this["compareToSourceId"]) { issues.push(...this.compareToSourceId.doModelValidation(expression+'.compareToSourceId')); }
@@ -1618,21 +1618,21 @@ export class TestScriptSetupActionAssert extends fhir.BackboneElement {
     if (this["minimumId"]) { issues.push(...this.minimumId.doModelValidation(expression+'.minimumId')); }
     if (this["navigationLinks"]) { issues.push(...this.navigationLinks.doModelValidation(expression+'.navigationLinks')); }
     if (this['operator'] && (!Object.values(AssertOperatorCodes).includes(this.operator.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property operator fhir: TestScript.setup.action.assert.operator:code Required binding to: AssertOperator', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'operator (TestScript.setup.action.assert.operator) of type code is missing code for Required binding to: AssertOperator', expression: [expression] });
     }
     if (this["operator"]) { issues.push(...this.operator.doModelValidation(expression+'.operator')); }
     if (this["path"]) { issues.push(...this.path.doModelValidation(expression+'.path')); }
     if (this['requestMethod'] && (!Object.values(HttpOperationsCodes).includes(this.requestMethod.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property requestMethod fhir: TestScript.setup.action.assert.requestMethod:code Required binding to: HttpOperations', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'requestMethod (TestScript.setup.action.assert.requestMethod) of type code is missing code for Required binding to: HttpOperations', expression: [expression] });
     }
     if (this["requestMethod"]) { issues.push(...this.requestMethod.doModelValidation(expression+'.requestMethod')); }
     if (this["requestURL"]) { issues.push(...this.requestURL.doModelValidation(expression+'.requestURL')); }
     if (this['resource'] && (!Object.values(DefinedTypesCodes).includes(this.resource.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property resource fhir: TestScript.setup.action.assert.resource:code Required binding to: DefinedTypes', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'resource (TestScript.setup.action.assert.resource) of type code is missing code for Required binding to: DefinedTypes', expression: [expression] });
     }
     if (this["resource"]) { issues.push(...this.resource.doModelValidation(expression+'.resource')); }
     if (this['response'] && (!Object.values(AssertResponseCodeTypesCodes).includes(this.response.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property response fhir: TestScript.setup.action.assert.response:code Required binding to: AssertResponseCodeTypes', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'response (TestScript.setup.action.assert.response) of type code is missing code for Required binding to: AssertResponseCodeTypes', expression: [expression] });
     }
     if (this["response"]) { issues.push(...this.response.doModelValidation(expression+'.response')); }
     if (this["responseCode"]) { issues.push(...this.responseCode.doModelValidation(expression+'.responseCode')); }
@@ -2343,7 +2343,7 @@ export class TestScript extends fhir.DomainResource {
       issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status fhir: TestScript.status:code', expression: [expression] });
     }
     if (this['status'] && (!Object.values(PublicationStatusCodes).includes(this.status.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property status fhir: TestScript.status:code Required binding to: PublicationStatus', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'status (TestScript.status) of type code is missing code for Required binding to: PublicationStatus', expression: [expression] });
     }
     if (this["status"]) { issues.push(...this.status.doModelValidation(expression+'.status')); }
     if (this["experimental"]) { issues.push(...this.experimental.doModelValidation(expression+'.experimental')); }

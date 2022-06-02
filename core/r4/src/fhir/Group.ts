@@ -382,7 +382,7 @@ export class Group extends fhir.DomainResource {
       issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property type fhir: Group.type:code', expression: [expression] });
     }
     if (this['type'] && (!Object.values(GroupTypeCodes).includes(this.type.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property type fhir: Group.type:code Required binding to: GroupType', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'type (Group.type) of type code is missing code for Required binding to: GroupType', expression: [expression] });
     }
     if (this["type"]) { issues.push(...this.type.doModelValidation(expression+'.type')); }
     if (!this['actual']) {

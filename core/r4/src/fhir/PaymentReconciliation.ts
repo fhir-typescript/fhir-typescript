@@ -233,7 +233,7 @@ export class PaymentReconciliationProcessNote extends fhir.BackboneElement {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'PaymentReconciliation.processNote' }
     if (this['type'] && (!Object.values(NoteTypeCodes).includes(this.type.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property type fhir: PaymentReconciliation.processNote.type:code Required binding to: NoteType', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'type (PaymentReconciliation.processNote.type) of type code is missing code for Required binding to: NoteType', expression: [expression] });
     }
     if (this["type"]) { issues.push(...this.type.doModelValidation(expression+'.type')); }
     if (this["text"]) { issues.push(...this.text.doModelValidation(expression+'.text')); }
@@ -477,7 +477,7 @@ export class PaymentReconciliation extends fhir.DomainResource {
       issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status fhir: PaymentReconciliation.status:code', expression: [expression] });
     }
     if (this['status'] && (!Object.values(FmStatusCodes).includes(this.status.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property status fhir: PaymentReconciliation.status:code Required binding to: FmStatus', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'status (PaymentReconciliation.status) of type code is missing code for Required binding to: FmStatus', expression: [expression] });
     }
     if (this["status"]) { issues.push(...this.status.doModelValidation(expression+'.status')); }
     if (this["period"]) { issues.push(...this.period.doModelValidation(expression+'.period')); }
@@ -489,7 +489,7 @@ export class PaymentReconciliation extends fhir.DomainResource {
     if (this["request"]) { issues.push(...this.request.doModelValidation(expression+'.request')); }
     if (this["requestor"]) { issues.push(...this.requestor.doModelValidation(expression+'.requestor')); }
     if (this['outcome'] && (!Object.values(RemittanceOutcomeCodes).includes(this.outcome.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property outcome fhir: PaymentReconciliation.outcome:code Required binding to: RemittanceOutcome', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'outcome (PaymentReconciliation.outcome) of type code is missing code for Required binding to: RemittanceOutcome', expression: [expression] });
     }
     if (this["outcome"]) { issues.push(...this.outcome.doModelValidation(expression+'.outcome')); }
     if (this["disposition"]) { issues.push(...this.disposition.doModelValidation(expression+'.disposition')); }

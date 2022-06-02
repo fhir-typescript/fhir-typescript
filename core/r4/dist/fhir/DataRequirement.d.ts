@@ -382,7 +382,8 @@ export declare class DataRequirement extends fhir.FhirElement {
         readonly Endpoint: "Endpoint";
         readonly EnrollmentRequest: "EnrollmentRequest";
         readonly EnrollmentResponse: "EnrollmentResponse";
-        readonly EpisodeOfCare: "EpisodeOfCare"; /**
+        readonly EpisodeOfCare: "EpisodeOfCare";
+        /**
          * The profile of the required data, specified as the uri of the profile definition.
          */
         readonly EventDefinition: "EventDefinition";
@@ -399,7 +400,9 @@ export declare class DataRequirement extends fhir.FhirElement {
         readonly Group: "Group";
         readonly GuidanceResponse: "GuidanceResponse";
         readonly HealthcareService: "HealthcareService";
-        readonly HumanName: "HumanName";
+        readonly HumanName: "HumanName"; /**
+         * Extended properties for primitive element: DataRequirement.limit
+         */
         readonly Id: "id";
         readonly Identifier: "Identifier";
         readonly ImagingStudy: "ImagingStudy";

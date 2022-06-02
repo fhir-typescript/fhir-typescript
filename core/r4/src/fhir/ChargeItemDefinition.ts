@@ -191,7 +191,7 @@ export class ChargeItemDefinitionPropertyGroupPriceComponent extends fhir.Backbo
       issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property type fhir: ChargeItemDefinition.propertyGroup.priceComponent.type:code', expression: [expression] });
     }
     if (this['type'] && (!Object.values(InvoicePriceComponentTypeCodes).includes(this.type.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property type fhir: ChargeItemDefinition.propertyGroup.priceComponent.type:code Required binding to: InvoicePriceComponentType', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'type (ChargeItemDefinition.propertyGroup.priceComponent.type) of type code is missing code for Required binding to: InvoicePriceComponentType', expression: [expression] });
     }
     if (this["type"]) { issues.push(...this.type.doModelValidation(expression+'.type')); }
     if (this["code"]) { issues.push(...this.code.doModelValidation(expression+'.code')); }
@@ -650,7 +650,7 @@ export class ChargeItemDefinition extends fhir.DomainResource {
       issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status fhir: ChargeItemDefinition.status:code', expression: [expression] });
     }
     if (this['status'] && (!Object.values(PublicationStatusCodes).includes(this.status.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property status fhir: ChargeItemDefinition.status:code Required binding to: PublicationStatus', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'status (ChargeItemDefinition.status) of type code is missing code for Required binding to: PublicationStatus', expression: [expression] });
     }
     if (this["status"]) { issues.push(...this.status.doModelValidation(expression+'.status')); }
     if (this["experimental"]) { issues.push(...this.experimental.doModelValidation(expression+'.experimental')); }

@@ -161,21 +161,21 @@ export class GraphDefinitionLinkTargetCompartment extends fhir.BackboneElement {
       issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property use fhir: GraphDefinition.link.target.compartment.use:code', expression: [expression] });
     }
     if (this['use'] && (!Object.values(GraphCompartmentUseCodes).includes(this.use.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property use fhir: GraphDefinition.link.target.compartment.use:code Required binding to: GraphCompartmentUse', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'use (GraphDefinition.link.target.compartment.use) of type code is missing code for Required binding to: GraphCompartmentUse', expression: [expression] });
     }
     if (this["use"]) { issues.push(...this.use.doModelValidation(expression+'.use')); }
     if (!this['code']) {
       issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property code fhir: GraphDefinition.link.target.compartment.code:code', expression: [expression] });
     }
     if (this['code'] && (!Object.values(CompartmentTypeCodes).includes(this.code.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property code fhir: GraphDefinition.link.target.compartment.code:code Required binding to: CompartmentType', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'code (GraphDefinition.link.target.compartment.code) of type code is missing code for Required binding to: CompartmentType', expression: [expression] });
     }
     if (this["code"]) { issues.push(...this.code.doModelValidation(expression+'.code')); }
     if (!this['rule']) {
       issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property rule fhir: GraphDefinition.link.target.compartment.rule:code', expression: [expression] });
     }
     if (this['rule'] && (!Object.values(GraphCompartmentRuleCodes).includes(this.rule.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property rule fhir: GraphDefinition.link.target.compartment.rule:code Required binding to: GraphCompartmentRule', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'rule (GraphDefinition.link.target.compartment.rule) of type code is missing code for Required binding to: GraphCompartmentRule', expression: [expression] });
     }
     if (this["rule"]) { issues.push(...this.rule.doModelValidation(expression+'.rule')); }
     if (this["expression"]) { issues.push(...this.expression.doModelValidation(expression+'.expression')); }
@@ -291,7 +291,7 @@ export class GraphDefinitionLinkTarget extends fhir.BackboneElement {
       issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property type fhir: GraphDefinition.link.target.type:code', expression: [expression] });
     }
     if (this['type'] && (!Object.values(ResourceTypesCodes).includes(this.type.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property type fhir: GraphDefinition.link.target.type:code Required binding to: ResourceTypes', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'type (GraphDefinition.link.target.type) of type code is missing code for Required binding to: ResourceTypes', expression: [expression] });
     }
     if (this["type"]) { issues.push(...this.type.doModelValidation(expression+'.type')); }
     if (this["params"]) { issues.push(...this.params.doModelValidation(expression+'.params')); }
@@ -725,7 +725,7 @@ export class GraphDefinition extends fhir.DomainResource {
       issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status fhir: GraphDefinition.status:code', expression: [expression] });
     }
     if (this['status'] && (!Object.values(PublicationStatusCodes).includes(this.status.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property status fhir: GraphDefinition.status:code Required binding to: PublicationStatus', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'status (GraphDefinition.status) of type code is missing code for Required binding to: PublicationStatus', expression: [expression] });
     }
     if (this["status"]) { issues.push(...this.status.doModelValidation(expression+'.status')); }
     if (this["experimental"]) { issues.push(...this.experimental.doModelValidation(expression+'.experimental')); }
@@ -740,7 +740,7 @@ export class GraphDefinition extends fhir.DomainResource {
       issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property start fhir: GraphDefinition.start:code', expression: [expression] });
     }
     if (this['start'] && (!Object.values(ResourceTypesCodes).includes(this.start.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property start fhir: GraphDefinition.start:code Required binding to: ResourceTypes', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'start (GraphDefinition.start) of type code is missing code for Required binding to: ResourceTypes', expression: [expression] });
     }
     if (this["start"]) { issues.push(...this.start.doModelValidation(expression+'.start')); }
     if (this["profile"]) { issues.push(...this.profile.doModelValidation(expression+'.profile')); }

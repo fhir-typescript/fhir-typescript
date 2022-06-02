@@ -508,16 +508,15 @@ export declare class ResearchElementDefinitionCharacteristic extends fhir.Backbo
         readonly PerSpecimen: "/{Specimen}";
         readonly PerTot: "/{tot}";
         readonly PerTenGiga: "/10*10";
-        readonly PerTrillion: "/10*12";
+        readonly PerTrillion: "/10*12"; /**
+         * Extended properties for primitive element: ResearchElementDefinition.name
+         */
         readonly PerTrillionRedBloodCells: "/10*12{rbc}";
         readonly PerMillion: "/10*6";
         readonly PerBillion: "/10*9";
         readonly Per100: "/100";
         readonly Per100Cells: "/100{cells}";
         readonly Per100Neutrophils: "/100{neutrophils}";
-        /**
-         * An explanatory or alternate title for the ResearchElementDefinition giving additional information about its content.
-         */
         readonly Per100Spermatozoa: "/100{spermatozoa}";
         readonly Per100WBC: "/100{WBC}";
         readonly Per100WBCPer100WBCs: "/100{WBCs}";
@@ -540,9 +539,7 @@ export declare class ResearchElementDefinitionCharacteristic extends fhir.Backbo
         readonly PerMinute: "/min";
         readonly PerMilliliter: "/mL";
         readonly PerCubicMillimeter: "/mm3";
-        readonly PerMillimole: "/mmol"; /**
-         * The subject of the ResearchElementDefinition is critical in interpreting the criteria definitions, as the logic in the ResearchElementDefinitions is evaluated with respect to a particular subject. This corresponds roughly to the notion of a Compartment in that it limits what content is available based on its relationship to the subject. In CQL, this corresponds to the context declaration.
-         */
+        readonly PerMillimole: "/mmol";
         readonly PerMonth: "/mo";
         readonly PerSecond: "/s";
         readonly PerEnzymeUnit: "/U";
@@ -573,9 +570,6 @@ export declare class ResearchElementDefinitionCharacteristic extends fhir.Backbo
         readonly PercentLive: "%{Live}";
         readonly PercentNegativeControl: "%{Negative Control}";
         readonly PercentNormal: "%{Normal}";
-        /**
-         * May be a web site, an email address, a telephone number, etc.
-         */
         readonly PercentNormalControl: "%{NormalControl}";
         readonly PercentNormalPooledPlasma: "%{NormalPooledPlasma}";
         readonly PercentOfAvailable: "%{ofAvailable}";
@@ -639,7 +633,9 @@ export declare class ResearchElementDefinitionCharacteristic extends fhir.Backbo
         readonly StandardAtmosphere: "atm";
         readonly TechnicalAtmosphere: "att";
         readonly Bar: "bar";
-        readonly Becquerel: "Bq";
+        readonly Becquerel: "Bq"; /**
+         * An individual or organization responsible for officially endorsing the content for use in some setting.
+         */
         readonly Calorie: "cal";
         readonly DegreeCelsius: "Cel";
         readonly Centigram: "cg";
@@ -660,6 +656,9 @@ export declare class ResearchElementDefinitionCharacteristic extends fhir.Backbo
         readonly DekaliterPerMinutePerSquareMeter: "daL/min/m2";
         readonly Decibel: "dB";
         readonly Degree: "deg";
+        /**
+         * Characteristics can be defined flexibly to accommodate different use cases for membership criteria, ranging from simple codes, all the way to using an expression language to express the criteria.
+         */
         readonly DegreePerSecond: "deg/s";
         readonly Decigram: "dg";
         readonly Deciliter: "dL";
@@ -668,6 +667,9 @@ export declare class ResearchElementDefinitionCharacteristic extends fhir.Backbo
         readonly DyneSecondPerCentimeterPerSquareMeter: "dyn.s/(cm.m2)";
         readonly DyneSecondPerCentimeter: "dyn.s/cm";
         readonly Equivalents: "eq";
+        /**
+         * Mapping of this datatype to a FHIR equivalent
+         */
         readonly EquivalentsLiter: "eq/L";
         readonly EquivalentsMilliliter: "eq/mL";
         readonly EquivalentsMillimole: "eq/mmol";
@@ -687,15 +689,14 @@ export declare class ResearchElementDefinitionCharacteristic extends fhir.Backbo
         readonly FemtomolePerMilligramOfProtein: "fmol/mg{protein}";
         readonly FemtomoleMilliliter: "fmol/mL";
         readonly Gram: "g";
-        readonly GramAsteriskMeter: "g.m";
+        readonly GramAsteriskMeter: "g.m"; /**
+         * There may be different research element definition instances that have the same identifier but different versions.  The version can be appended to the url in a reference to allow a reference to a particular business version of the research element definition with the format [url]|[version].
+         */
         readonly GramAsteriskMeterHbAsteriskMeterPower2: "g.m/({hb}.m2)";
         readonly GramMeterPerHeartBeat: "g.m/{beat}";
         readonly GramAsteriskMeterHb: "g.m/{hb}";
         readonly GramOfCreatinine: "g{creat}";
         readonly GramOfHemoglobin: "g{Hb}";
-        /**
-         * The short title provides an alternate title for use in informal descriptive contexts where the full, formal title is not necessary.
-         */
         readonly GramOfTotalNitrogen: "g{total_nit}";
         readonly GramOfTotalProtein: "g{total_prot}";
         readonly GramOfWetTissue: "g{wet_tissue}";
@@ -707,6 +708,9 @@ export declare class ResearchElementDefinitionCharacteristic extends fhir.Backbo
         readonly GramPer48Hour: "g/(48.h)";
         readonly GramPer5Hour: "g/(5.h)";
         readonly GramPer6Hour: "g/(6.h)";
+        /**
+         * Allows filtering of research element definitions that are appropriate for use versus not.
+         */
         readonly GramPer72Hour: "g/(72.h)";
         readonly Gram8AsteriskHour: "g/(8.h)";
         readonly GramPer8HourShift: "g/(8.h){shift}";
@@ -766,9 +770,6 @@ export declare class ResearchElementDefinitionCharacteristic extends fhir.Backbo
         readonly KilocaloriePerKilogramPer24Hour: "kcal/kg/(24.h)";
         readonly Kilogram: "kg";
         readonly KilogramMeterPerSecond: "kg.m/s";
-        /**
-         * If specified, this date follows the original approval date.
-         */
         readonly KilogramPerSecondPerSquareMeter: "kg/(s.m2)";
         readonly KilogramPerHour: "kg/h";
         readonly KilogramPerLiter: "kg/L";

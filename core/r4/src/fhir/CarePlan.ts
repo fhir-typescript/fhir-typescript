@@ -319,7 +319,7 @@ export class CarePlanActivityDetail extends fhir.BackboneElement {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'CarePlan.activity.detail' }
     if (this['kind'] && (!Object.values(CarePlanActivityKindCodes).includes(this.kind.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property kind fhir: CarePlan.activity.detail.kind:code Required binding to: CarePlanActivityKind', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'kind (CarePlan.activity.detail.kind) of type code is missing code for Required binding to: CarePlanActivityKind', expression: [expression] });
     }
     if (this["kind"]) { issues.push(...this.kind.doModelValidation(expression+'.kind')); }
     if (this["instantiatesCanonical"]) { this.instantiatesCanonical.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.instantiatesCanonical[${i}]`)); }) }
@@ -332,7 +332,7 @@ export class CarePlanActivityDetail extends fhir.BackboneElement {
       issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status fhir: CarePlan.activity.detail.status:code', expression: [expression] });
     }
     if (this['status'] && (!Object.values(CarePlanActivityStatusCodes).includes(this.status.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property status fhir: CarePlan.activity.detail.status:code Required binding to: CarePlanActivityStatus', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'status (CarePlan.activity.detail.status) of type code is missing code for Required binding to: CarePlanActivityStatus', expression: [expression] });
     }
     if (this["status"]) { issues.push(...this.status.doModelValidation(expression+'.status')); }
     if (this["statusReason"]) { issues.push(...this.statusReason.doModelValidation(expression+'.statusReason')); }
@@ -775,14 +775,14 @@ export class CarePlan extends fhir.DomainResource {
       issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status fhir: CarePlan.status:code', expression: [expression] });
     }
     if (this['status'] && (!Object.values(RequestStatusCodes).includes(this.status.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property status fhir: CarePlan.status:code Required binding to: RequestStatus', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'status (CarePlan.status) of type code is missing code for Required binding to: RequestStatus', expression: [expression] });
     }
     if (this["status"]) { issues.push(...this.status.doModelValidation(expression+'.status')); }
     if (!this['intent']) {
       issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property intent fhir: CarePlan.intent:code', expression: [expression] });
     }
     if (this['intent'] && (!Object.values(CarePlanIntentCodes).includes(this.intent.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property intent fhir: CarePlan.intent:code Required binding to: CarePlanIntent', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'intent (CarePlan.intent) of type code is missing code for Required binding to: CarePlanIntent', expression: [expression] });
     }
     if (this["intent"]) { issues.push(...this.intent.doModelValidation(expression+'.intent')); }
     if (this["category"]) { this.category.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.category[${i}]`)); }) }

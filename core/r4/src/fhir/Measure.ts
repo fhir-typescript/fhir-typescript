@@ -1099,7 +1099,7 @@ export class Measure extends fhir.DomainResource {
       issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status fhir: Measure.status:code', expression: [expression] });
     }
     if (this['status'] && (!Object.values(PublicationStatusCodes).includes(this.status.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property status fhir: Measure.status:code Required binding to: PublicationStatus', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'status (Measure.status) of type code is missing code for Required binding to: PublicationStatus', expression: [expression] });
     }
     if (this["status"]) { issues.push(...this.status.doModelValidation(expression+'.status')); }
     if (this["experimental"]) { issues.push(...this.experimental.doModelValidation(expression+'.experimental')); }
@@ -1130,6 +1130,9 @@ export class Measure extends fhir.DomainResource {
     if (this["rateAggregation"]) { issues.push(...this.rateAggregation.doModelValidation(expression+'.rateAggregation')); }
     if (this["rationale"]) { issues.push(...this.rationale.doModelValidation(expression+'.rationale')); }
     if (this["clinicalRecommendationStatement"]) { issues.push(...this.clinicalRecommendationStatement.doModelValidation(expression+'.clinicalRecommendationStatement')); }
+    if (this['improvementNotation'] && (!this.improvementNotation.hasCodingFromObject(MeasureImprovementNotationCodings))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'improvementNotation (Measure.improvementNotation) of type CodeableConcept is missing code for Required binding to: MeasureImprovementNotation', expression: [expression] });
+    }
     if (this["improvementNotation"]) { issues.push(...this.improvementNotation.doModelValidation(expression+'.improvementNotation')); }
     if (this["definition"]) { this.definition.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.definition[${i}]`)); }) }
     if (this["guidance"]) { issues.push(...this.guidance.doModelValidation(expression+'.guidance')); }

@@ -210,7 +210,7 @@ export class StructureDefinitionContext extends fhir.BackboneElement {
       issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property type fhir: StructureDefinition.context.type:code', expression: [expression] });
     }
     if (this['type'] && (!Object.values(ExtensionContextTypeCodes).includes(this.type.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property type fhir: StructureDefinition.context.type:code Required binding to: ExtensionContextType', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'type (StructureDefinition.context.type) of type code is missing code for Required binding to: ExtensionContextType', expression: [expression] });
     }
     if (this["type"]) { issues.push(...this.type.doModelValidation(expression+'.type')); }
     if (!this['expression']) {
@@ -820,7 +820,7 @@ export class StructureDefinition extends fhir.DomainResource {
       issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status fhir: StructureDefinition.status:code', expression: [expression] });
     }
     if (this['status'] && (!Object.values(PublicationStatusCodes).includes(this.status.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property status fhir: StructureDefinition.status:code Required binding to: PublicationStatus', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'status (StructureDefinition.status) of type code is missing code for Required binding to: PublicationStatus', expression: [expression] });
     }
     if (this["status"]) { issues.push(...this.status.doModelValidation(expression+'.status')); }
     if (this["experimental"]) { issues.push(...this.experimental.doModelValidation(expression+'.experimental')); }
@@ -834,7 +834,7 @@ export class StructureDefinition extends fhir.DomainResource {
     if (this["copyright"]) { issues.push(...this.copyright.doModelValidation(expression+'.copyright')); }
     if (this["keyword"]) { this.keyword.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.keyword[${i}]`)); }) }
     if (this['fhirVersion'] && (!Object.values(FHIRVersionCodes).includes(this.fhirVersion.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property fhirVersion fhir: StructureDefinition.fhirVersion:code Required binding to: FHIRVersion', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'fhirVersion (StructureDefinition.fhirVersion) of type code is missing code for Required binding to: FHIRVersion', expression: [expression] });
     }
     if (this["fhirVersion"]) { issues.push(...this.fhirVersion.doModelValidation(expression+'.fhirVersion')); }
     if (this["mapping"]) { this.mapping.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.mapping[${i}]`)); }) }
@@ -842,7 +842,7 @@ export class StructureDefinition extends fhir.DomainResource {
       issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property kind fhir: StructureDefinition.kind:code', expression: [expression] });
     }
     if (this['kind'] && (!Object.values(StructureDefinitionKindCodes).includes(this.kind.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property kind fhir: StructureDefinition.kind:code Required binding to: StructureDefinitionKind', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'kind (StructureDefinition.kind) of type code is missing code for Required binding to: StructureDefinitionKind', expression: [expression] });
     }
     if (this["kind"]) { issues.push(...this.kind.doModelValidation(expression+'.kind')); }
     if (!this['abstract']) {
@@ -857,7 +857,7 @@ export class StructureDefinition extends fhir.DomainResource {
     if (this["type"]) { issues.push(...this.type.doModelValidation(expression+'.type')); }
     if (this["baseDefinition"]) { issues.push(...this.baseDefinition.doModelValidation(expression+'.baseDefinition')); }
     if (this['derivation'] && (!Object.values(TypeDerivationRuleCodes).includes(this.derivation.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property derivation fhir: StructureDefinition.derivation:code Required binding to: TypeDerivationRule', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'derivation (StructureDefinition.derivation) of type code is missing code for Required binding to: TypeDerivationRule', expression: [expression] });
     }
     if (this["derivation"]) { issues.push(...this.derivation.doModelValidation(expression+'.derivation')); }
     if (this["snapshot"]) { issues.push(...this.snapshot.doModelValidation(expression+'.snapshot')); }

@@ -169,7 +169,7 @@ export class QuestionnaireItemEnableWhen extends fhir.BackboneElement {
       issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property operator fhir: Questionnaire.item.enableWhen.operator:code', expression: [expression] });
     }
     if (this['operator'] && (!Object.values(QuestionnaireEnableOperatorCodes).includes(this.operator.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property operator fhir: Questionnaire.item.enableWhen.operator:code Required binding to: QuestionnaireEnableOperator', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'operator (Questionnaire.item.enableWhen.operator) of type code is missing code for Required binding to: QuestionnaireEnableOperator', expression: [expression] });
     }
     if (this["operator"]) { issues.push(...this.operator.doModelValidation(expression+'.operator')); }
     if (!this['answer']) {
@@ -671,12 +671,12 @@ export class QuestionnaireItem extends fhir.BackboneElement {
       issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property type fhir: Questionnaire.item.type:code', expression: [expression] });
     }
     if (this['type'] && (!Object.values(ItemTypeCodes).includes(this.type.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property type fhir: Questionnaire.item.type:code Required binding to: ItemType', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'type (Questionnaire.item.type) of type code is missing code for Required binding to: ItemType', expression: [expression] });
     }
     if (this["type"]) { issues.push(...this.type.doModelValidation(expression+'.type')); }
     if (this["enableWhen"]) { this.enableWhen.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.enableWhen[${i}]`)); }) }
     if (this['enableBehavior'] && (!Object.values(QuestionnaireEnableBehaviorCodes).includes(this.enableBehavior.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property enableBehavior fhir: Questionnaire.item.enableBehavior:code Required binding to: QuestionnaireEnableBehavior', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'enableBehavior (Questionnaire.item.enableBehavior) of type code is missing code for Required binding to: QuestionnaireEnableBehavior', expression: [expression] });
     }
     if (this["enableBehavior"]) { issues.push(...this.enableBehavior.doModelValidation(expression+'.enableBehavior')); }
     if (this["required"]) { issues.push(...this.required.doModelValidation(expression+'.required')); }
@@ -1081,14 +1081,14 @@ export class Questionnaire extends fhir.DomainResource {
       issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status fhir: Questionnaire.status:code', expression: [expression] });
     }
     if (this['status'] && (!Object.values(PublicationStatusCodes).includes(this.status.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property status fhir: Questionnaire.status:code Required binding to: PublicationStatus', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'status (Questionnaire.status) of type code is missing code for Required binding to: PublicationStatus', expression: [expression] });
     }
     if (this["status"]) { issues.push(...this.status.doModelValidation(expression+'.status')); }
     if (this["experimental"]) { issues.push(...this.experimental.doModelValidation(expression+'.experimental')); }
     if (this['subjectType']) {
       this.subjectType.forEach((v) => {
         if (!Object.values(ResourceTypesCodes).includes(v.value as any)) {
-          issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property subjectType fhir: Questionnaire.subjectType:code Required binding to: ResourceTypes', expression: [expression] });
+          issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'subjectType (Questionnaire.subjectType) of type code is missing code for Required binding to: ResourceTypes', expression: [expression] });
         }
       });
     }

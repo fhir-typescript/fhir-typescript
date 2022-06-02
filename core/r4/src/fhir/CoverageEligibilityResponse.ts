@@ -763,7 +763,7 @@ export class CoverageEligibilityResponse extends fhir.DomainResource {
       issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status fhir: CoverageEligibilityResponse.status:code', expression: [expression] });
     }
     if (this['status'] && (!Object.values(FmStatusCodes).includes(this.status.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property status fhir: CoverageEligibilityResponse.status:code Required binding to: FmStatus', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'status (CoverageEligibilityResponse.status) of type code is missing code for Required binding to: FmStatus', expression: [expression] });
     }
     if (this["status"]) { issues.push(...this.status.doModelValidation(expression+'.status')); }
     if (!this['purpose']) {
@@ -776,7 +776,7 @@ export class CoverageEligibilityResponse extends fhir.DomainResource {
     if (this['purpose']) {
       this.purpose.forEach((v) => {
         if (!Object.values(EligibilityresponsePurposeCodes).includes(v.value as any)) {
-          issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property purpose fhir: CoverageEligibilityResponse.purpose:code Required binding to: EligibilityresponsePurpose', expression: [expression] });
+          issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'purpose (CoverageEligibilityResponse.purpose) of type code is missing code for Required binding to: EligibilityresponsePurpose', expression: [expression] });
         }
       });
     }
@@ -798,7 +798,7 @@ export class CoverageEligibilityResponse extends fhir.DomainResource {
       issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property outcome fhir: CoverageEligibilityResponse.outcome:code', expression: [expression] });
     }
     if (this['outcome'] && (!Object.values(RemittanceOutcomeCodes).includes(this.outcome.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property outcome fhir: CoverageEligibilityResponse.outcome:code Required binding to: RemittanceOutcome', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'outcome (CoverageEligibilityResponse.outcome) of type code is missing code for Required binding to: RemittanceOutcome', expression: [expression] });
     }
     if (this["outcome"]) { issues.push(...this.outcome.doModelValidation(expression+'.outcome')); }
     if (this["disposition"]) { issues.push(...this.disposition.doModelValidation(expression+'.disposition')); }

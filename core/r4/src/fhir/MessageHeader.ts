@@ -302,7 +302,7 @@ export class MessageHeaderResponse extends fhir.BackboneElement {
       issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property code fhir: MessageHeader.response.code:code', expression: [expression] });
     }
     if (this['code'] && (!Object.values(ResponseCodes).includes(this.code.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property code fhir: MessageHeader.response.code:code Required binding to: Response', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'code (MessageHeader.response.code) of type code is missing code for Required binding to: Response', expression: [expression] });
     }
     if (this["code"]) { issues.push(...this.code.doModelValidation(expression+'.code')); }
     if (this["details"]) { issues.push(...this.details.doModelValidation(expression+'.details')); }

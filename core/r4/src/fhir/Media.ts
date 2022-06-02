@@ -363,7 +363,7 @@ export class Media extends fhir.DomainResource {
       issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status fhir: Media.status:code', expression: [expression] });
     }
     if (this['status'] && (!Object.values(EventStatusCodes).includes(this.status.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property status fhir: Media.status:code Required binding to: EventStatus', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'status (Media.status) of type code is missing code for Required binding to: EventStatus', expression: [expression] });
     }
     if (this["status"]) { issues.push(...this.status.doModelValidation(expression+'.status')); }
     if (this["type"]) { issues.push(...this.type.doModelValidation(expression+'.type')); }

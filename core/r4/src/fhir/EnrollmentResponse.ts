@@ -170,12 +170,12 @@ export class EnrollmentResponse extends fhir.DomainResource {
     }
     if (this["identifier"]) { this.identifier.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.identifier[${i}]`)); }) }
     if (this['status'] && (!Object.values(FmStatusCodes).includes(this.status.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property status fhir: EnrollmentResponse.status:code Required binding to: FmStatus', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'status (EnrollmentResponse.status) of type code is missing code for Required binding to: FmStatus', expression: [expression] });
     }
     if (this["status"]) { issues.push(...this.status.doModelValidation(expression+'.status')); }
     if (this["request"]) { issues.push(...this.request.doModelValidation(expression+'.request')); }
     if (this['outcome'] && (!Object.values(RemittanceOutcomeCodes).includes(this.outcome.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property outcome fhir: EnrollmentResponse.outcome:code Required binding to: RemittanceOutcome', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'outcome (EnrollmentResponse.outcome) of type code is missing code for Required binding to: RemittanceOutcome', expression: [expression] });
     }
     if (this["outcome"]) { issues.push(...this.outcome.doModelValidation(expression+'.outcome')); }
     if (this["disposition"]) { issues.push(...this.disposition.doModelValidation(expression+'.disposition')); }

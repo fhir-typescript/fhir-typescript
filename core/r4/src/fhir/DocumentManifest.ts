@@ -258,7 +258,7 @@ export class DocumentManifest extends fhir.DomainResource {
       issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status fhir: DocumentManifest.status:code', expression: [expression] });
     }
     if (this['status'] && (!Object.values(DocumentReferenceStatusCodes).includes(this.status.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property status fhir: DocumentManifest.status:code Required binding to: DocumentReferenceStatus', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'status (DocumentManifest.status) of type code is missing code for Required binding to: DocumentReferenceStatus', expression: [expression] });
     }
     if (this["status"]) { issues.push(...this.status.doModelValidation(expression+'.status')); }
     if (this["type"]) { issues.push(...this.type.doModelValidation(expression+'.type')); }

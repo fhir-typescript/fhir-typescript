@@ -77,7 +77,7 @@ export class Money extends fhir.FhirElement {
     if (expression === '') { expression = 'Money' }
     if (this["value"]) { issues.push(...this.value.doModelValidation(expression+'.value')); }
     if (this['currency'] && (!Object.values(CurrenciesCodes).includes(this.currency.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property currency fhir: Money.currency:code Required binding to: Currencies', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'currency (Money.currency) of type code is missing code for Required binding to: Currencies', expression: [expression] });
     }
     if (this["currency"]) { issues.push(...this.currency.doModelValidation(expression+'.currency')); }
     return issues;

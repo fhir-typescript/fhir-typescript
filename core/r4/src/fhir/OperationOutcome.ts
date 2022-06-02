@@ -161,14 +161,14 @@ export class OperationOutcomeIssue extends fhir.BackboneElement {
       issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property severity fhir: OperationOutcome.issue.severity:code', expression: [expression] });
     }
     if (this['severity'] && (!Object.values(IssueSeverityCodes).includes(this.severity.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property severity fhir: OperationOutcome.issue.severity:code Required binding to: IssueSeverity', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'severity (OperationOutcome.issue.severity) of type code is missing code for Required binding to: IssueSeverity', expression: [expression] });
     }
     if (this["severity"]) { issues.push(...this.severity.doModelValidation(expression+'.severity')); }
     if (!this['code']) {
       issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property code fhir: OperationOutcome.issue.code:code', expression: [expression] });
     }
     if (this['code'] && (!Object.values(IssueTypeCodes).includes(this.code.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property code fhir: OperationOutcome.issue.code:code Required binding to: IssueType', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'code (OperationOutcome.issue.code) of type code is missing code for Required binding to: IssueType', expression: [expression] });
     }
     if (this["code"]) { issues.push(...this.code.doModelValidation(expression+'.code')); }
     if (this["details"]) { issues.push(...this.details.doModelValidation(expression+'.details')); }

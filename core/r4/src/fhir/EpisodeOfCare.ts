@@ -81,7 +81,7 @@ export class EpisodeOfCareStatusHistory extends fhir.BackboneElement {
       issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status fhir: EpisodeOfCare.statusHistory.status:code', expression: [expression] });
     }
     if (this['status'] && (!Object.values(EpisodeOfCareStatusCodes).includes(this.status.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property status fhir: EpisodeOfCare.statusHistory.status:code Required binding to: EpisodeOfCareStatus', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'status (EpisodeOfCare.statusHistory.status) of type code is missing code for Required binding to: EpisodeOfCareStatus', expression: [expression] });
     }
     if (this["status"]) { issues.push(...this.status.doModelValidation(expression+'.status')); }
     if (!this['period']) {
@@ -342,7 +342,7 @@ export class EpisodeOfCare extends fhir.DomainResource {
       issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status fhir: EpisodeOfCare.status:code', expression: [expression] });
     }
     if (this['status'] && (!Object.values(EpisodeOfCareStatusCodes).includes(this.status.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property status fhir: EpisodeOfCare.status:code Required binding to: EpisodeOfCareStatus', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'status (EpisodeOfCare.status) of type code is missing code for Required binding to: EpisodeOfCareStatus', expression: [expression] });
     }
     if (this["status"]) { issues.push(...this.status.doModelValidation(expression+'.status')); }
     if (this["statusHistory"]) { this.statusHistory.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.statusHistory[${i}]`)); }) }

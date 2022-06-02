@@ -280,7 +280,7 @@ export class Practitioner extends fhir.DomainResource {
     if (this["telecom"]) { this.telecom.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.telecom[${i}]`)); }) }
     if (this["address"]) { this.address.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.address[${i}]`)); }) }
     if (this['gender'] && (!Object.values(AdministrativeGenderCodes).includes(this.gender.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property gender fhir: Practitioner.gender:code Required binding to: AdministrativeGender', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'gender (Practitioner.gender) of type code is missing code for Required binding to: AdministrativeGender', expression: [expression] });
     }
     if (this["gender"]) { issues.push(...this.gender.doModelValidation(expression+'.gender')); }
     if (this["birthDate"]) { issues.push(...this.birthDate.doModelValidation(expression+'.birthDate')); }

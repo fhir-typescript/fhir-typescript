@@ -450,7 +450,7 @@ export class SpecimenDefinitionTypeTested extends fhir.BackboneElement {
       issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property preference fhir: SpecimenDefinition.typeTested.preference:code', expression: [expression] });
     }
     if (this['preference'] && (!Object.values(SpecimenContainedPreferenceCodes).includes(this.preference.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property preference fhir: SpecimenDefinition.typeTested.preference:code Required binding to: SpecimenContainedPreference', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'preference (SpecimenDefinition.typeTested.preference) of type code is missing code for Required binding to: SpecimenContainedPreference', expression: [expression] });
     }
     if (this["preference"]) { issues.push(...this.preference.doModelValidation(expression+'.preference')); }
     if (this["container"]) { issues.push(...this.container.doModelValidation(expression+'.container')); }

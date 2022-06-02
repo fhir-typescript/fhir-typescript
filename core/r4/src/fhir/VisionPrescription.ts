@@ -97,7 +97,7 @@ export class VisionPrescriptionLensSpecificationPrism extends fhir.BackboneEleme
       issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property base fhir: VisionPrescription.lensSpecification.prism.base:code', expression: [expression] });
     }
     if (this['base'] && (!Object.values(VisionBaseCodes).includes(this.base.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property base fhir: VisionPrescription.lensSpecification.prism.base:code Required binding to: VisionBase', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'base (VisionPrescription.lensSpecification.prism.base) of type code is missing code for Required binding to: VisionBase', expression: [expression] });
     }
     if (this["base"]) { issues.push(...this.base.doModelValidation(expression+'.base')); }
     return issues;
@@ -355,7 +355,7 @@ export class VisionPrescriptionLensSpecification extends fhir.BackboneElement {
       issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property eye fhir: VisionPrescription.lensSpecification.eye:code', expression: [expression] });
     }
     if (this['eye'] && (!Object.values(VisionEyeCodes).includes(this.eye.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property eye fhir: VisionPrescription.lensSpecification.eye:code Required binding to: VisionEye', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'eye (VisionPrescription.lensSpecification.eye) of type code is missing code for Required binding to: VisionEye', expression: [expression] });
     }
     if (this["eye"]) { issues.push(...this.eye.doModelValidation(expression+'.eye')); }
     if (this["sphere"]) { issues.push(...this.sphere.doModelValidation(expression+'.sphere')); }
@@ -525,7 +525,7 @@ export class VisionPrescription extends fhir.DomainResource {
       issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status fhir: VisionPrescription.status:code', expression: [expression] });
     }
     if (this['status'] && (!Object.values(FmStatusCodes).includes(this.status.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property status fhir: VisionPrescription.status:code Required binding to: FmStatus', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'status (VisionPrescription.status) of type code is missing code for Required binding to: FmStatus', expression: [expression] });
     }
     if (this["status"]) { issues.push(...this.status.doModelValidation(expression+'.status')); }
     if (!this['created']) {

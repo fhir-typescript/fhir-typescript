@@ -100,7 +100,7 @@ export class ActivityDefinitionParticipant extends fhir.BackboneElement {
       issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property type fhir: ActivityDefinition.participant.type:code', expression: [expression] });
     }
     if (this['type'] && (!Object.values(ActionParticipantTypeCodes).includes(this.type.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property type fhir: ActivityDefinition.participant.type:code Required binding to: ActionParticipantType', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'type (ActivityDefinition.participant.type) of type code is missing code for Required binding to: ActionParticipantType', expression: [expression] });
     }
     if (this["type"]) { issues.push(...this.type.doModelValidation(expression+'.type')); }
     if (this["role"]) { issues.push(...this.role.doModelValidation(expression+'.role')); }
@@ -921,7 +921,7 @@ export class ActivityDefinition extends fhir.DomainResource {
       issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status fhir: ActivityDefinition.status:code', expression: [expression] });
     }
     if (this['status'] && (!Object.values(PublicationStatusCodes).includes(this.status.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property status fhir: ActivityDefinition.status:code Required binding to: PublicationStatus', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'status (ActivityDefinition.status) of type code is missing code for Required binding to: PublicationStatus', expression: [expression] });
     }
     if (this["status"]) { issues.push(...this.status.doModelValidation(expression+'.status')); }
     if (this["experimental"]) { issues.push(...this.experimental.doModelValidation(expression+'.experimental')); }
@@ -945,17 +945,17 @@ export class ActivityDefinition extends fhir.DomainResource {
     if (this["relatedArtifact"]) { this.relatedArtifact.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.relatedArtifact[${i}]`)); }) }
     if (this["library"]) { this.library.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.library[${i}]`)); }) }
     if (this['kind'] && (!Object.values(RequestResourceTypesCodes).includes(this.kind.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property kind fhir: ActivityDefinition.kind:code Required binding to: RequestResourceTypes', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'kind (ActivityDefinition.kind) of type code is missing code for Required binding to: RequestResourceTypes', expression: [expression] });
     }
     if (this["kind"]) { issues.push(...this.kind.doModelValidation(expression+'.kind')); }
     if (this["profile"]) { issues.push(...this.profile.doModelValidation(expression+'.profile')); }
     if (this["code"]) { issues.push(...this.code.doModelValidation(expression+'.code')); }
     if (this['intent'] && (!Object.values(RequestIntentCodes).includes(this.intent.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property intent fhir: ActivityDefinition.intent:code Required binding to: RequestIntent', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'intent (ActivityDefinition.intent) of type code is missing code for Required binding to: RequestIntent', expression: [expression] });
     }
     if (this["intent"]) { issues.push(...this.intent.doModelValidation(expression+'.intent')); }
     if (this['priority'] && (!Object.values(RequestPriorityCodes).includes(this.priority.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property priority fhir: ActivityDefinition.priority:code Required binding to: RequestPriority', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'priority (ActivityDefinition.priority) of type code is missing code for Required binding to: RequestPriority', expression: [expression] });
     }
     if (this["priority"]) { issues.push(...this.priority.doModelValidation(expression+'.priority')); }
     if (this["doNotPerform"]) { issues.push(...this.doNotPerform.doModelValidation(expression+'.doNotPerform')); }

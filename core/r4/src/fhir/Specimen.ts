@@ -553,7 +553,7 @@ export class Specimen extends fhir.DomainResource {
     if (this["identifier"]) { this.identifier.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.identifier[${i}]`)); }) }
     if (this["accessionIdentifier"]) { issues.push(...this.accessionIdentifier.doModelValidation(expression+'.accessionIdentifier')); }
     if (this['status'] && (!Object.values(SpecimenStatusCodes).includes(this.status.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property status fhir: Specimen.status:code Required binding to: SpecimenStatus', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'status (Specimen.status) of type code is missing code for Required binding to: SpecimenStatus', expression: [expression] });
     }
     if (this["status"]) { issues.push(...this.status.doModelValidation(expression+'.status')); }
     if (this["type"]) { issues.push(...this.type.doModelValidation(expression+'.type')); }

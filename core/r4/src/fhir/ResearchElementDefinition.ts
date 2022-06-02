@@ -300,17 +300,20 @@ export class ResearchElementDefinitionCharacteristic extends fhir.BackboneElemen
     }
     if (this["usageContext"]) { this.usageContext.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.usageContext[${i}]`)); }) }
     if (this["exclude"]) { issues.push(...this.exclude.doModelValidation(expression+'.exclude')); }
+    if (this['unitOfMeasure'] && (!this.unitOfMeasure.hasCodingFromObject(UcumUnitsCodings))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'unitOfMeasure (ResearchElementDefinition.characteristic.unitOfMeasure) of type CodeableConcept is missing code for Required binding to: UcumUnits', expression: [expression] });
+    }
     if (this["unitOfMeasure"]) { issues.push(...this.unitOfMeasure.doModelValidation(expression+'.unitOfMeasure')); }
     if (this["studyEffectiveDescription"]) { issues.push(...this.studyEffectiveDescription.doModelValidation(expression+'.studyEffectiveDescription')); }
     if (this["studyEffectiveTimeFromStart"]) { issues.push(...this.studyEffectiveTimeFromStart.doModelValidation(expression+'.studyEffectiveTimeFromStart')); }
     if (this['studyEffectiveGroupMeasure'] && (!Object.values(GroupMeasureCodes).includes(this.studyEffectiveGroupMeasure.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property studyEffectiveGroupMeasure fhir: ResearchElementDefinition.characteristic.studyEffectiveGroupMeasure:code Required binding to: GroupMeasure', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'studyEffectiveGroupMeasure (ResearchElementDefinition.characteristic.studyEffectiveGroupMeasure) of type code is missing code for Required binding to: GroupMeasure', expression: [expression] });
     }
     if (this["studyEffectiveGroupMeasure"]) { issues.push(...this.studyEffectiveGroupMeasure.doModelValidation(expression+'.studyEffectiveGroupMeasure')); }
     if (this["participantEffectiveDescription"]) { issues.push(...this.participantEffectiveDescription.doModelValidation(expression+'.participantEffectiveDescription')); }
     if (this["participantEffectiveTimeFromStart"]) { issues.push(...this.participantEffectiveTimeFromStart.doModelValidation(expression+'.participantEffectiveTimeFromStart')); }
     if (this['participantEffectiveGroupMeasure'] && (!Object.values(GroupMeasureCodes).includes(this.participantEffectiveGroupMeasure.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property participantEffectiveGroupMeasure fhir: ResearchElementDefinition.characteristic.participantEffectiveGroupMeasure:code Required binding to: GroupMeasure', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'participantEffectiveGroupMeasure (ResearchElementDefinition.characteristic.participantEffectiveGroupMeasure) of type code is missing code for Required binding to: GroupMeasure', expression: [expression] });
     }
     if (this["participantEffectiveGroupMeasure"]) { issues.push(...this.participantEffectiveGroupMeasure.doModelValidation(expression+'.participantEffectiveGroupMeasure')); }
     return issues;
@@ -877,7 +880,7 @@ export class ResearchElementDefinition extends fhir.DomainResource {
       issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status fhir: ResearchElementDefinition.status:code', expression: [expression] });
     }
     if (this['status'] && (!Object.values(PublicationStatusCodes).includes(this.status.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property status fhir: ResearchElementDefinition.status:code Required binding to: PublicationStatus', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'status (ResearchElementDefinition.status) of type code is missing code for Required binding to: PublicationStatus', expression: [expression] });
     }
     if (this["status"]) { issues.push(...this.status.doModelValidation(expression+'.status')); }
     if (this["experimental"]) { issues.push(...this.experimental.doModelValidation(expression+'.experimental')); }
@@ -905,11 +908,11 @@ export class ResearchElementDefinition extends fhir.DomainResource {
       issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property type fhir: ResearchElementDefinition.type:code', expression: [expression] });
     }
     if (this['type'] && (!Object.values(ResearchElementTypeCodes).includes(this.type.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property type fhir: ResearchElementDefinition.type:code Required binding to: ResearchElementType', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'type (ResearchElementDefinition.type) of type code is missing code for Required binding to: ResearchElementType', expression: [expression] });
     }
     if (this["type"]) { issues.push(...this.type.doModelValidation(expression+'.type')); }
     if (this['variableType'] && (!Object.values(VariableTypeCodes).includes(this.variableType.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property variableType fhir: ResearchElementDefinition.variableType:code Required binding to: VariableType', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'variableType (ResearchElementDefinition.variableType) of type code is missing code for Required binding to: VariableType', expression: [expression] });
     }
     if (this["variableType"]) { issues.push(...this.variableType.doModelValidation(expression+'.variableType')); }
     if (!this['characteristic']) {

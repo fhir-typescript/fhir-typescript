@@ -324,7 +324,7 @@ export class ConsentProvisionData extends fhir.BackboneElement {
       issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property meaning fhir: Consent.provision.data.meaning:code', expression: [expression] });
     }
     if (this['meaning'] && (!Object.values(ConsentDataMeaningCodes).includes(this.meaning.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property meaning fhir: Consent.provision.data.meaning:code Required binding to: ConsentDataMeaning', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'meaning (Consent.provision.data.meaning) of type code is missing code for Required binding to: ConsentDataMeaning', expression: [expression] });
     }
     if (this["meaning"]) { issues.push(...this.meaning.doModelValidation(expression+'.meaning')); }
     if (!this['reference']) {
@@ -500,7 +500,7 @@ export class ConsentProvision extends fhir.BackboneElement {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'Consent.provision' }
     if (this['type'] && (!Object.values(ConsentProvisionTypeCodes).includes(this.type.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property type fhir: Consent.provision.type:code Required binding to: ConsentProvisionType', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'type (Consent.provision.type) of type code is missing code for Required binding to: ConsentProvisionType', expression: [expression] });
     }
     if (this["type"]) { issues.push(...this.type.doModelValidation(expression+'.type')); }
     if (this["period"]) { issues.push(...this.period.doModelValidation(expression+'.period')); }
@@ -738,7 +738,7 @@ export class Consent extends fhir.DomainResource {
       issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status fhir: Consent.status:code', expression: [expression] });
     }
     if (this['status'] && (!Object.values(ConsentStateCodes).includes(this.status.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property status fhir: Consent.status:code Required binding to: ConsentState', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'status (Consent.status) of type code is missing code for Required binding to: ConsentState', expression: [expression] });
     }
     if (this["status"]) { issues.push(...this.status.doModelValidation(expression+'.status')); }
     if (!this['scope']) {

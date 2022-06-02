@@ -162,7 +162,7 @@ export class HumanName extends fhir.FhirElement {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'HumanName' }
     if (this['use'] && (!Object.values(NameUseCodes).includes(this.use.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property use fhir: HumanName.use:code Required binding to: NameUse', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'use (HumanName.use) of type code is missing code for Required binding to: NameUse', expression: [expression] });
     }
     if (this["use"]) { issues.push(...this.use.doModelValidation(expression+'.use')); }
     if (this["text"]) { issues.push(...this.text.doModelValidation(expression+'.text')); }

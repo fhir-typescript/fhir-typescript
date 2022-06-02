@@ -161,7 +161,7 @@ export class BundleEntrySearch extends fhir.BackboneElement {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'Bundle.entry.search' }
     if (this['mode'] && (!Object.values(SearchEntryModeCodes).includes(this.mode.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property mode fhir: Bundle.entry.search.mode:code Required binding to: SearchEntryMode', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'mode (Bundle.entry.search.mode) of type code is missing code for Required binding to: SearchEntryMode', expression: [expression] });
     }
     if (this["mode"]) { issues.push(...this.mode.doModelValidation(expression+'.mode')); }
     if (this["score"]) { issues.push(...this.score.doModelValidation(expression+'.score')); }
@@ -308,7 +308,7 @@ export class BundleEntryRequest extends fhir.BackboneElement {
       issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property method fhir: Bundle.entry.request.method:code', expression: [expression] });
     }
     if (this['method'] && (!Object.values(HttpVerbCodes).includes(this.method.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property method fhir: Bundle.entry.request.method:code Required binding to: HttpVerb', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'method (Bundle.entry.request.method) of type code is missing code for Required binding to: HttpVerb', expression: [expression] });
     }
     if (this["method"]) { issues.push(...this.method.doModelValidation(expression+'.method')); }
     if (!this['url']) {
@@ -703,7 +703,7 @@ export class Bundle extends fhir.Resource {
       issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property type fhir: Bundle.type:code', expression: [expression] });
     }
     if (this['type'] && (!Object.values(BundleTypeCodes).includes(this.type.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property type fhir: Bundle.type:code Required binding to: BundleType', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'type (Bundle.type) of type code is missing code for Required binding to: BundleType', expression: [expression] });
     }
     if (this["type"]) { issues.push(...this.type.doModelValidation(expression+'.type')); }
     if (this["timestamp"]) { issues.push(...this.timestamp.doModelValidation(expression+'.timestamp')); }

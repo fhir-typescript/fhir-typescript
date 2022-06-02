@@ -221,9 +221,7 @@ export declare class GraphDefinitionLinkTarget extends fhir.BackboneElement {
         readonly Device: "Device";
         readonly DeviceDefinition: "DeviceDefinition";
         readonly DeviceMetric: "DeviceMetric";
-        readonly DeviceRequest: "DeviceRequest"; /**
-         * Additional links from target resource.
-         */
+        readonly DeviceRequest: "DeviceRequest";
         readonly DeviceUseStatement: "DeviceUseStatement";
         readonly DiagnosticReport: "DiagnosticReport";
         readonly DocumentManifest: "DocumentManifest";
@@ -266,7 +264,9 @@ export declare class GraphDefinitionLinkTarget extends fhir.BackboneElement {
         readonly MedicationDispense: "MedicationDispense";
         readonly MedicationKnowledge: "MedicationKnowledge";
         readonly MedicationRequest: "MedicationRequest";
-        readonly MedicationStatement: "MedicationStatement";
+        readonly MedicationStatement: "MedicationStatement"; /**
+         * Extended properties for primitive element: GraphDefinition.experimental
+         */
         readonly MedicinalProduct: "MedicinalProduct";
         readonly MedicinalProductAuthorization: "MedicinalProductAuthorization";
         readonly MedicinalProductContraindication: "MedicinalProductContraindication";
@@ -277,10 +277,10 @@ export declare class GraphDefinitionLinkTarget extends fhir.BackboneElement {
         readonly MedicinalProductPackaged: "MedicinalProductPackaged";
         readonly MedicinalProductPharmaceutical: "MedicinalProductPharmaceutical";
         readonly MedicinalProductUndesirableEffect: "MedicinalProductUndesirableEffect";
-        readonly MessageDefinition: "MessageDefinition";
-        readonly MessageHeader: "MessageHeader"; /**
-         * This element does not describe the usage of the graph definition. Instead, it provides traceability of ''why'' the resource is either needed or ''why'' it is defined as it is.  This may be used to point to source materials or specifications that drove the structure of this graph definition.
+        readonly MessageDefinition: "MessageDefinition"; /**
+         * When multiple useContexts are specified, there is no expectation that all or any of the contexts apply.
          */
+        readonly MessageHeader: "MessageHeader";
         readonly MolecularSequence: "MolecularSequence";
         readonly NamingSystem: "NamingSystem";
         readonly NutritionOrder: "NutritionOrder";
@@ -675,9 +675,7 @@ export declare class GraphDefinition extends fhir.DomainResource {
         readonly Device: "Device";
         readonly DeviceDefinition: "DeviceDefinition";
         readonly DeviceMetric: "DeviceMetric";
-        readonly DeviceRequest: "DeviceRequest"; /**
-         * Additional links from target resource.
-         */
+        readonly DeviceRequest: "DeviceRequest";
         readonly DeviceUseStatement: "DeviceUseStatement";
         readonly DiagnosticReport: "DiagnosticReport";
         readonly DocumentManifest: "DocumentManifest";
@@ -720,7 +718,9 @@ export declare class GraphDefinition extends fhir.DomainResource {
         readonly MedicationDispense: "MedicationDispense";
         readonly MedicationKnowledge: "MedicationKnowledge";
         readonly MedicationRequest: "MedicationRequest";
-        readonly MedicationStatement: "MedicationStatement";
+        readonly MedicationStatement: "MedicationStatement"; /**
+         * Extended properties for primitive element: GraphDefinition.experimental
+         */
         readonly MedicinalProduct: "MedicinalProduct";
         readonly MedicinalProductAuthorization: "MedicinalProductAuthorization";
         readonly MedicinalProductContraindication: "MedicinalProductContraindication";
@@ -731,10 +731,10 @@ export declare class GraphDefinition extends fhir.DomainResource {
         readonly MedicinalProductPackaged: "MedicinalProductPackaged";
         readonly MedicinalProductPharmaceutical: "MedicinalProductPharmaceutical";
         readonly MedicinalProductUndesirableEffect: "MedicinalProductUndesirableEffect";
-        readonly MessageDefinition: "MessageDefinition";
-        readonly MessageHeader: "MessageHeader"; /**
-         * This element does not describe the usage of the graph definition. Instead, it provides traceability of ''why'' the resource is either needed or ''why'' it is defined as it is.  This may be used to point to source materials or specifications that drove the structure of this graph definition.
+        readonly MessageDefinition: "MessageDefinition"; /**
+         * When multiple useContexts are specified, there is no expectation that all or any of the contexts apply.
          */
+        readonly MessageHeader: "MessageHeader";
         readonly MolecularSequence: "MolecularSequence";
         readonly NamingSystem: "NamingSystem";
         readonly NutritionOrder: "NutritionOrder";

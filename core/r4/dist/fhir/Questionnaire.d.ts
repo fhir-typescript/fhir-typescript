@@ -813,6 +813,9 @@ export declare class Questionnaire extends fhir.DomainResource {
         readonly Encounter: "Encounter";
         readonly Endpoint: "Endpoint";
         readonly EnrollmentRequest: "EnrollmentRequest";
+        /**
+         * Internal flag to properly serialize choice-type element Questionnaire.item.answerOption.value[x]
+         */
         readonly EnrollmentResponse: "EnrollmentResponse";
         readonly EpisodeOfCare: "EpisodeOfCare";
         readonly EventDefinition: "EventDefinition";

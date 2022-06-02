@@ -129,7 +129,7 @@ export class CompositionAttester extends fhir.BackboneElement {
       issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property mode fhir: Composition.attester.mode:code', expression: [expression] });
     }
     if (this['mode'] && (!Object.values(CompositionAttestationModeCodes).includes(this.mode.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property mode fhir: Composition.attester.mode:code Required binding to: CompositionAttestationMode', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'mode (Composition.attester.mode) of type code is missing code for Required binding to: CompositionAttestationMode', expression: [expression] });
     }
     if (this["mode"]) { issues.push(...this.mode.doModelValidation(expression+'.mode')); }
     if (this["time"]) { issues.push(...this.time.doModelValidation(expression+'.time')); }
@@ -215,7 +215,7 @@ export class CompositionRelatesTo extends fhir.BackboneElement {
       issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property code fhir: Composition.relatesTo.code:code', expression: [expression] });
     }
     if (this['code'] && (!Object.values(DocumentRelationshipTypeCodes).includes(this.code.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property code fhir: Composition.relatesTo.code:code Required binding to: DocumentRelationshipType', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'code (Composition.relatesTo.code) of type code is missing code for Required binding to: DocumentRelationshipType', expression: [expression] });
     }
     if (this["code"]) { issues.push(...this.code.doModelValidation(expression+'.code')); }
     if (!this['target']) {
@@ -446,7 +446,7 @@ export class CompositionSection extends fhir.BackboneElement {
     if (this["focus"]) { issues.push(...this.focus.doModelValidation(expression+'.focus')); }
     if (this["text"]) { issues.push(...this.text.doModelValidation(expression+'.text')); }
     if (this['mode'] && (!Object.values(ListModeCodes).includes(this.mode.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property mode fhir: Composition.section.mode:code Required binding to: ListMode', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'mode (Composition.section.mode) of type code is missing code for Required binding to: ListMode', expression: [expression] });
     }
     if (this["mode"]) { issues.push(...this.mode.doModelValidation(expression+'.mode')); }
     if (this["orderedBy"]) { issues.push(...this.orderedBy.doModelValidation(expression+'.orderedBy')); }
@@ -696,7 +696,7 @@ export class Composition extends fhir.DomainResource {
       issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status fhir: Composition.status:code', expression: [expression] });
     }
     if (this['status'] && (!Object.values(CompositionStatusCodes).includes(this.status.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property status fhir: Composition.status:code Required binding to: CompositionStatus', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'status (Composition.status) of type code is missing code for Required binding to: CompositionStatus', expression: [expression] });
     }
     if (this["status"]) { issues.push(...this.status.doModelValidation(expression+'.status')); }
     if (!this['type']) {
@@ -723,7 +723,7 @@ export class Composition extends fhir.DomainResource {
     }
     if (this["title"]) { issues.push(...this.title.doModelValidation(expression+'.title')); }
     if (this['confidentiality'] && (!Object.values(V3ConfidentialityClassificationCodes).includes(this.confidentiality.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property confidentiality fhir: Composition.confidentiality:code Required binding to: V3ConfidentialityClassification', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'confidentiality (Composition.confidentiality) of type code is missing code for Required binding to: V3ConfidentialityClassification', expression: [expression] });
     }
     if (this["confidentiality"]) { issues.push(...this.confidentiality.doModelValidation(expression+'.confidentiality')); }
     if (this["attester"]) { this.attester.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.attester[${i}]`)); }) }

@@ -123,7 +123,7 @@ export class PractitionerRoleAvailableTime extends fhir.BackboneElement {
     if (this['daysOfWeek']) {
       this.daysOfWeek.forEach((v) => {
         if (!Object.values(DaysOfWeekCodes).includes(v.value as any)) {
-          issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property daysOfWeek fhir: PractitionerRole.availableTime.daysOfWeek:code Required binding to: DaysOfWeek', expression: [expression] });
+          issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'daysOfWeek (PractitionerRole.availableTime.daysOfWeek) of type code is missing code for Required binding to: DaysOfWeek', expression: [expression] });
         }
       });
     }

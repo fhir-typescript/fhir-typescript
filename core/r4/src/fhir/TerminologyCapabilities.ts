@@ -1179,7 +1179,7 @@ export class TerminologyCapabilities extends fhir.DomainResource {
       issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status fhir: TerminologyCapabilities.status:code', expression: [expression] });
     }
     if (this['status'] && (!Object.values(PublicationStatusCodes).includes(this.status.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property status fhir: TerminologyCapabilities.status:code Required binding to: PublicationStatus', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'status (TerminologyCapabilities.status) of type code is missing code for Required binding to: PublicationStatus', expression: [expression] });
     }
     if (this["status"]) { issues.push(...this.status.doModelValidation(expression+'.status')); }
     if (this["experimental"]) { issues.push(...this.experimental.doModelValidation(expression+'.experimental')); }
@@ -1198,7 +1198,7 @@ export class TerminologyCapabilities extends fhir.DomainResource {
       issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property kind fhir: TerminologyCapabilities.kind:code', expression: [expression] });
     }
     if (this['kind'] && (!Object.values(CapabilityStatementKindCodes).includes(this.kind.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property kind fhir: TerminologyCapabilities.kind:code Required binding to: CapabilityStatementKind', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'kind (TerminologyCapabilities.kind) of type code is missing code for Required binding to: CapabilityStatementKind', expression: [expression] });
     }
     if (this["kind"]) { issues.push(...this.kind.doModelValidation(expression+'.kind')); }
     if (this["software"]) { issues.push(...this.software.doModelValidation(expression+'.software')); }
@@ -1207,7 +1207,7 @@ export class TerminologyCapabilities extends fhir.DomainResource {
     if (this["codeSystem"]) { this.codeSystem.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.codeSystem[${i}]`)); }) }
     if (this["expansion"]) { issues.push(...this.expansion.doModelValidation(expression+'.expansion')); }
     if (this['codeSearch'] && (!Object.values(CodeSearchSupportCodes).includes(this.codeSearch.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property codeSearch fhir: TerminologyCapabilities.codeSearch:code Required binding to: CodeSearchSupport', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'codeSearch (TerminologyCapabilities.codeSearch) of type code is missing code for Required binding to: CodeSearchSupport', expression: [expression] });
     }
     if (this["codeSearch"]) { issues.push(...this.codeSearch.doModelValidation(expression+'.codeSearch')); }
     if (this["validateCode"]) { issues.push(...this.validateCode.doModelValidation(expression+'.validateCode')); }

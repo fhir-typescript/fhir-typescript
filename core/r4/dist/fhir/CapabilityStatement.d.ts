@@ -693,9 +693,6 @@ export declare class CapabilityStatementRestResource extends fhir.BackboneElemen
         readonly MedicinalProductIndication: "MedicinalProductIndication";
         readonly MedicinalProductIngredient: "MedicinalProductIngredient";
         readonly MedicinalProductInteraction: "MedicinalProductInteraction";
-        /**
-         * Parameter names cannot overlap with standard parameter names, and standard parameters cannot be redefined.
-         */
         readonly MedicinalProductManufactured: "MedicinalProductManufactured";
         readonly MedicinalProductPackaged: "MedicinalProductPackaged";
         readonly MedicinalProductPharmaceutical: "MedicinalProductPharmaceutical";
@@ -720,7 +717,8 @@ export declare class CapabilityStatementRestResource extends fhir.BackboneElemen
         readonly Practitioner: "Practitioner";
         readonly PractitionerRole: "PractitionerRole";
         readonly Procedure: "Procedure";
-        readonly Provenance: "Provenance"; /**
+        readonly Provenance: "Provenance";
+        /**
          * Operations linked from CapabilityStatement.rest.resource.operation must have OperationDefinition.type = true or OperationDefinition.instance = true.
          * If an operation that is listed in multiple CapabilityStatement.rest.resource.operation (e.g. for different resource types), then clients should understand that the operation is only supported on the specified resource types, and that may be a subset of those listed in OperationDefinition.resource.
          */
@@ -742,6 +740,9 @@ export declare class CapabilityStatementRestResource extends fhir.BackboneElemen
         readonly Specimen: "Specimen";
         readonly SpecimenDefinition: "SpecimenDefinition";
         readonly StructureDefinition: "StructureDefinition";
+        /**
+         * Valid arguments for the CapabilityStatementRestResource type.
+         */
         readonly StructureMap: "StructureMap";
         readonly Subscription: "Subscription";
         readonly Substance: "Substance";

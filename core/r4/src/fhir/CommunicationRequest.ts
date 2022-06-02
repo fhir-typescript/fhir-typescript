@@ -400,13 +400,13 @@ export class CommunicationRequest extends fhir.DomainResource {
       issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status fhir: CommunicationRequest.status:code', expression: [expression] });
     }
     if (this['status'] && (!Object.values(RequestStatusCodes).includes(this.status.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property status fhir: CommunicationRequest.status:code Required binding to: RequestStatus', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'status (CommunicationRequest.status) of type code is missing code for Required binding to: RequestStatus', expression: [expression] });
     }
     if (this["status"]) { issues.push(...this.status.doModelValidation(expression+'.status')); }
     if (this["statusReason"]) { issues.push(...this.statusReason.doModelValidation(expression+'.statusReason')); }
     if (this["category"]) { this.category.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.category[${i}]`)); }) }
     if (this['priority'] && (!Object.values(RequestPriorityCodes).includes(this.priority.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property priority fhir: CommunicationRequest.priority:code Required binding to: RequestPriority', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'priority (CommunicationRequest.priority) of type code is missing code for Required binding to: RequestPriority', expression: [expression] });
     }
     if (this["priority"]) { issues.push(...this.priority.doModelValidation(expression+'.priority')); }
     if (this["doNotPerform"]) { issues.push(...this.doNotPerform.doModelValidation(expression+'.doNotPerform')); }

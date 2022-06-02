@@ -217,11 +217,11 @@ export class Address extends fhir.FhirElement {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'Address' }
     if (this['use'] && (!Object.values(AddressUseCodes).includes(this.use.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property use fhir: Address.use:code Required binding to: AddressUse', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'use (Address.use) of type code is missing code for Required binding to: AddressUse', expression: [expression] });
     }
     if (this["use"]) { issues.push(...this.use.doModelValidation(expression+'.use')); }
     if (this['type'] && (!Object.values(AddressTypeCodes).includes(this.type.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property type fhir: Address.type:code Required binding to: AddressType', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'type (Address.type) of type code is missing code for Required binding to: AddressType', expression: [expression] });
     }
     if (this["type"]) { issues.push(...this.type.doModelValidation(expression+'.type')); }
     if (this["text"]) { issues.push(...this.text.doModelValidation(expression+'.text')); }

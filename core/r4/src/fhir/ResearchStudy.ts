@@ -485,7 +485,7 @@ export class ResearchStudy extends fhir.DomainResource {
       issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status fhir: ResearchStudy.status:code', expression: [expression] });
     }
     if (this['status'] && (!Object.values(ResearchStudyStatusCodes).includes(this.status.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property status fhir: ResearchStudy.status:code Required binding to: ResearchStudyStatus', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'status (ResearchStudy.status) of type code is missing code for Required binding to: ResearchStudyStatus', expression: [expression] });
     }
     if (this["status"]) { issues.push(...this.status.doModelValidation(expression+'.status')); }
     if (this["primaryPurposeType"]) { issues.push(...this.primaryPurposeType.doModelValidation(expression+'.primaryPurposeType')); }

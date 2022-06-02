@@ -330,7 +330,7 @@ export class Account extends fhir.DomainResource {
       issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status fhir: Account.status:code', expression: [expression] });
     }
     if (this['status'] && (!Object.values(AccountStatusCodes).includes(this.status.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property status fhir: Account.status:code Required binding to: AccountStatus', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'status (Account.status) of type code is missing code for Required binding to: AccountStatus', expression: [expression] });
     }
     if (this["status"]) { issues.push(...this.status.doModelValidation(expression+'.status')); }
     if (this["type"]) { issues.push(...this.type.doModelValidation(expression+'.type')); }

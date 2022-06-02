@@ -290,7 +290,7 @@ export class MedicationStatement extends fhir.DomainResource {
       issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status fhir: MedicationStatement.status:code', expression: [expression] });
     }
     if (this['status'] && (!Object.values(MedicationStatementStatusCodes).includes(this.status.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property status fhir: MedicationStatement.status:code Required binding to: MedicationStatementStatus', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'status (MedicationStatement.status) of type code is missing code for Required binding to: MedicationStatementStatus', expression: [expression] });
     }
     if (this["status"]) { issues.push(...this.status.doModelValidation(expression+'.status')); }
     if (this["statusReason"]) { this.statusReason.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.statusReason[${i}]`)); }) }

@@ -276,7 +276,7 @@ export class DataRequirementSort extends fhir.FhirElement {
       issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property direction fhir: DataRequirement.sort.direction:code', expression: [expression] });
     }
     if (this['direction'] && (!Object.values(SortDirectionCodes).includes(this.direction.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property direction fhir: DataRequirement.sort.direction:code Required binding to: SortDirection', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'direction (DataRequirement.sort.direction) of type code is missing code for Required binding to: SortDirection', expression: [expression] });
     }
     if (this["direction"]) { issues.push(...this.direction.doModelValidation(expression+'.direction')); }
     return issues;
@@ -448,7 +448,7 @@ export class DataRequirement extends fhir.FhirElement {
       issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property type fhir: DataRequirement.type:code', expression: [expression] });
     }
     if (this['type'] && (!Object.values(AllTypesCodes).includes(this.type.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property type fhir: DataRequirement.type:code Required binding to: AllTypes', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'type (DataRequirement.type) of type code is missing code for Required binding to: AllTypes', expression: [expression] });
     }
     if (this["type"]) { issues.push(...this.type.doModelValidation(expression+'.type')); }
     if (this["profile"]) { this.profile.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.profile[${i}]`)); }) }

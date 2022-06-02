@@ -125,7 +125,7 @@ export class AuditEventAgentNetwork extends fhir.BackboneElement {
     if (expression === '') { expression = 'AuditEvent.agent.network' }
     if (this["address"]) { issues.push(...this.address.doModelValidation(expression+'.address')); }
     if (this['type'] && (!Object.values(NetworkTypeCodes).includes(this.type.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property type fhir: AuditEvent.agent.network.type:code Required binding to: NetworkType', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'type (AuditEvent.agent.network.type) of type code is missing code for Required binding to: NetworkType', expression: [expression] });
     }
     if (this["type"]) { issues.push(...this.type.doModelValidation(expression+'.type')); }
     return issues;
@@ -863,7 +863,7 @@ export class AuditEvent extends fhir.DomainResource {
     if (this["type"]) { issues.push(...this.type.doModelValidation(expression+'.type')); }
     if (this["subtype"]) { this.subtype.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.subtype[${i}]`)); }) }
     if (this['action'] && (!Object.values(AuditEventActionCodes).includes(this.action.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property action fhir: AuditEvent.action:code Required binding to: AuditEventAction', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'action (AuditEvent.action) of type code is missing code for Required binding to: AuditEventAction', expression: [expression] });
     }
     if (this["action"]) { issues.push(...this.action.doModelValidation(expression+'.action')); }
     if (this["period"]) { issues.push(...this.period.doModelValidation(expression+'.period')); }
@@ -872,7 +872,7 @@ export class AuditEvent extends fhir.DomainResource {
     }
     if (this["recorded"]) { issues.push(...this.recorded.doModelValidation(expression+'.recorded')); }
     if (this['outcome'] && (!Object.values(AuditEventOutcomeCodes).includes(this.outcome.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property outcome fhir: AuditEvent.outcome:code Required binding to: AuditEventOutcome', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'outcome (AuditEvent.outcome) of type code is missing code for Required binding to: AuditEventOutcome', expression: [expression] });
     }
     if (this["outcome"]) { issues.push(...this.outcome.doModelValidation(expression+'.outcome')); }
     if (this["outcomeDesc"]) { issues.push(...this.outcomeDesc.doModelValidation(expression+'.outcomeDesc')); }

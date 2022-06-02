@@ -141,7 +141,7 @@ export class PatientContact extends fhir.BackboneElement {
     if (this["telecom"]) { this.telecom.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.telecom[${i}]`)); }) }
     if (this["address"]) { issues.push(...this.address.doModelValidation(expression+'.address')); }
     if (this['gender'] && (!Object.values(AdministrativeGenderCodes).includes(this.gender.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property gender fhir: Patient.contact.gender:code Required binding to: AdministrativeGender', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'gender (Patient.contact.gender) of type code is missing code for Required binding to: AdministrativeGender', expression: [expression] });
     }
     if (this["gender"]) { issues.push(...this.gender.doModelValidation(expression+'.gender')); }
     if (this["organization"]) { issues.push(...this.organization.doModelValidation(expression+'.organization')); }
@@ -284,7 +284,7 @@ export class PatientLink extends fhir.BackboneElement {
       issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property type fhir: Patient.link.type:code', expression: [expression] });
     }
     if (this['type'] && (!Object.values(LinkTypeCodes).includes(this.type.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property type fhir: Patient.link.type:code Required binding to: LinkType', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'type (Patient.link.type) of type code is missing code for Required binding to: LinkType', expression: [expression] });
     }
     if (this["type"]) { issues.push(...this.type.doModelValidation(expression+'.type')); }
     return issues;
@@ -560,7 +560,7 @@ export class Patient extends fhir.DomainResource {
     if (this["name"]) { this.name.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.name[${i}]`)); }) }
     if (this["telecom"]) { this.telecom.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.telecom[${i}]`)); }) }
     if (this['gender'] && (!Object.values(AdministrativeGenderCodes).includes(this.gender.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property gender fhir: Patient.gender:code Required binding to: AdministrativeGender', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'gender (Patient.gender) of type code is missing code for Required binding to: AdministrativeGender', expression: [expression] });
     }
     if (this["gender"]) { issues.push(...this.gender.doModelValidation(expression+'.gender')); }
     if (this["birthDate"]) { issues.push(...this.birthDate.doModelValidation(expression+'.birthDate')); }

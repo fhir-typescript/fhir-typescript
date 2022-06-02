@@ -129,12 +129,12 @@ export class ContactPoint extends fhir.FhirElement {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'ContactPoint' }
     if (this['system'] && (!Object.values(ContactPointSystemCodes).includes(this.system.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property system fhir: ContactPoint.system:code Required binding to: ContactPointSystem', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'system (ContactPoint.system) of type code is missing code for Required binding to: ContactPointSystem', expression: [expression] });
     }
     if (this["system"]) { issues.push(...this.system.doModelValidation(expression+'.system')); }
     if (this["value"]) { issues.push(...this.value.doModelValidation(expression+'.value')); }
     if (this['use'] && (!Object.values(ContactPointUseCodes).includes(this.use.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property use fhir: ContactPoint.use:code Required binding to: ContactPointUse', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'use (ContactPoint.use) of type code is missing code for Required binding to: ContactPointUse', expression: [expression] });
     }
     if (this["use"]) { issues.push(...this.use.doModelValidation(expression+'.use')); }
     if (this["rank"]) { issues.push(...this.rank.doModelValidation(expression+'.rank')); }

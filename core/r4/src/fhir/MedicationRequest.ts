@@ -721,7 +721,7 @@ export class MedicationRequest extends fhir.DomainResource {
       issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status fhir: MedicationRequest.status:code', expression: [expression] });
     }
     if (this['status'] && (!Object.values(MedicationrequestStatusCodes).includes(this.status.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property status fhir: MedicationRequest.status:code Required binding to: MedicationrequestStatus', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'status (MedicationRequest.status) of type code is missing code for Required binding to: MedicationrequestStatus', expression: [expression] });
     }
     if (this["status"]) { issues.push(...this.status.doModelValidation(expression+'.status')); }
     if (this["statusReason"]) { issues.push(...this.statusReason.doModelValidation(expression+'.statusReason')); }
@@ -729,12 +729,12 @@ export class MedicationRequest extends fhir.DomainResource {
       issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property intent fhir: MedicationRequest.intent:code', expression: [expression] });
     }
     if (this['intent'] && (!Object.values(MedicationrequestIntentCodes).includes(this.intent.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property intent fhir: MedicationRequest.intent:code Required binding to: MedicationrequestIntent', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'intent (MedicationRequest.intent) of type code is missing code for Required binding to: MedicationrequestIntent', expression: [expression] });
     }
     if (this["intent"]) { issues.push(...this.intent.doModelValidation(expression+'.intent')); }
     if (this["category"]) { this.category.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.category[${i}]`)); }) }
     if (this['priority'] && (!Object.values(RequestPriorityCodes).includes(this.priority.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property priority fhir: MedicationRequest.priority:code Required binding to: RequestPriority', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'priority (MedicationRequest.priority) of type code is missing code for Required binding to: RequestPriority', expression: [expression] });
     }
     if (this["priority"]) { issues.push(...this.priority.doModelValidation(expression+'.priority')); }
     if (this["doNotPerform"]) { issues.push(...this.doNotPerform.doModelValidation(expression+'.doNotPerform')); }

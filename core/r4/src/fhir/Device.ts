@@ -181,7 +181,7 @@ export class DeviceUdiCarrier extends fhir.BackboneElement {
     if (this["carrierAIDC"]) { issues.push(...this.carrierAIDC.doModelValidation(expression+'.carrierAIDC')); }
     if (this["carrierHRF"]) { issues.push(...this.carrierHRF.doModelValidation(expression+'.carrierHRF')); }
     if (this['entryType'] && (!Object.values(UdiEntryTypeCodes).includes(this.entryType.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property entryType fhir: Device.udiCarrier.entryType:code Required binding to: UdiEntryType', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'entryType (Device.udiCarrier.entryType) of type code is missing code for Required binding to: UdiEntryType', expression: [expression] });
     }
     if (this["entryType"]) { issues.push(...this.entryType.doModelValidation(expression+'.entryType')); }
     return issues;
@@ -265,7 +265,7 @@ export class DeviceDeviceName extends fhir.BackboneElement {
       issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property type fhir: Device.deviceName.type:code', expression: [expression] });
     }
     if (this['type'] && (!Object.values(DeviceNametypeCodes).includes(this.type.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property type fhir: Device.deviceName.type:code Required binding to: DeviceNametype', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'type (Device.deviceName.type) of type code is missing code for Required binding to: DeviceNametype', expression: [expression] });
     }
     if (this["type"]) { issues.push(...this.type.doModelValidation(expression+'.type')); }
     return issues;
@@ -846,7 +846,7 @@ export class Device extends fhir.DomainResource {
     if (this["definition"]) { issues.push(...this.definition.doModelValidation(expression+'.definition')); }
     if (this["udiCarrier"]) { this.udiCarrier.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.udiCarrier[${i}]`)); }) }
     if (this['status'] && (!Object.values(DeviceStatusCodes).includes(this.status.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property status fhir: Device.status:code Required binding to: DeviceStatus', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'status (Device.status) of type code is missing code for Required binding to: DeviceStatus', expression: [expression] });
     }
     if (this["status"]) { issues.push(...this.status.doModelValidation(expression+'.status')); }
     if (this["statusReason"]) { this.statusReason.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.statusReason[${i}]`)); }) }

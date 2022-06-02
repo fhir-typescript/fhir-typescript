@@ -344,12 +344,12 @@ export class SupplyRequest extends fhir.DomainResource {
     }
     if (this["identifier"]) { this.identifier.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.identifier[${i}]`)); }) }
     if (this['status'] && (!Object.values(SupplyrequestStatusCodes).includes(this.status.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property status fhir: SupplyRequest.status:code Required binding to: SupplyrequestStatus', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'status (SupplyRequest.status) of type code is missing code for Required binding to: SupplyrequestStatus', expression: [expression] });
     }
     if (this["status"]) { issues.push(...this.status.doModelValidation(expression+'.status')); }
     if (this["category"]) { issues.push(...this.category.doModelValidation(expression+'.category')); }
     if (this['priority'] && (!Object.values(RequestPriorityCodes).includes(this.priority.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property priority fhir: SupplyRequest.priority:code Required binding to: RequestPriority', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'priority (SupplyRequest.priority) of type code is missing code for Required binding to: RequestPriority', expression: [expression] });
     }
     if (this["priority"]) { issues.push(...this.priority.doModelValidation(expression+'.priority')); }
     if (!this['item']) {

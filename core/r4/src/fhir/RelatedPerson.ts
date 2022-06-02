@@ -284,7 +284,7 @@ export class RelatedPerson extends fhir.DomainResource {
     if (this["name"]) { this.name.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.name[${i}]`)); }) }
     if (this["telecom"]) { this.telecom.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.telecom[${i}]`)); }) }
     if (this['gender'] && (!Object.values(AdministrativeGenderCodes).includes(this.gender.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property gender fhir: RelatedPerson.gender:code Required binding to: AdministrativeGender', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'gender (RelatedPerson.gender) of type code is missing code for Required binding to: AdministrativeGender', expression: [expression] });
     }
     if (this["gender"]) { issues.push(...this.gender.doModelValidation(expression+'.gender')); }
     if (this["birthDate"]) { issues.push(...this.birthDate.doModelValidation(expression+'.birthDate')); }

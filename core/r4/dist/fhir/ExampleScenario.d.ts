@@ -296,9 +296,6 @@ export declare class ExampleScenarioInstance extends fhir.BackboneElement {
         readonly DeviceDefinition: "DeviceDefinition";
         readonly DeviceMetric: "DeviceMetric";
         readonly DeviceRequest: "DeviceRequest";
-        /**
-         * Resources contained in the instance (e.g. the observations contained in a bundle).
-         */
         readonly DeviceUseStatement: "DeviceUseStatement";
         readonly DiagnosticReport: "DiagnosticReport";
         readonly DocumentManifest: "DocumentManifest";
@@ -338,11 +335,11 @@ export declare class ExampleScenarioInstance extends fhir.BackboneElement {
         readonly Media: "Media";
         readonly Medication: "Medication";
         readonly MedicationAdministration: "MedicationAdministration";
-        readonly MedicationDispense: "MedicationDispense"; /**
-         * The human-friendly name of the interaction.
-         */
+        readonly MedicationDispense: "MedicationDispense";
         readonly MedicationKnowledge: "MedicationKnowledge";
-        readonly MedicationRequest: "MedicationRequest";
+        readonly MedicationRequest: "MedicationRequest"; /**
+         * Extended properties for primitive element: ExampleScenario.process.step.operation.receiver
+         */
         readonly MedicationStatement: "MedicationStatement";
         readonly MedicinalProduct: "MedicinalProduct";
         readonly MedicinalProductAuthorization: "MedicinalProductAuthorization";
@@ -386,7 +383,9 @@ export declare class ExampleScenarioInstance extends fhir.BackboneElement {
         readonly Resource: "Resource";
         readonly RiskAssessment: "RiskAssessment";
         readonly RiskEvidenceSynthesis: "RiskEvidenceSynthesis";
-        readonly Schedule: "Schedule";
+        readonly Schedule: "Schedule"; /**
+         * Nested process.
+         */
         readonly SearchParameter: "SearchParameter";
         readonly ServiceRequest: "ServiceRequest";
         readonly Slot: "Slot";

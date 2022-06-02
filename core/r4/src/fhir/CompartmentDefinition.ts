@@ -108,7 +108,7 @@ export class CompartmentDefinitionResource extends fhir.BackboneElement {
       issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property code fhir: CompartmentDefinition.resource.code:code', expression: [expression] });
     }
     if (this['code'] && (!Object.values(ResourceTypesCodes).includes(this.code.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property code fhir: CompartmentDefinition.resource.code:code Required binding to: ResourceTypes', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'code (CompartmentDefinition.resource.code) of type code is missing code for Required binding to: ResourceTypes', expression: [expression] });
     }
     if (this["code"]) { issues.push(...this.code.doModelValidation(expression+'.code')); }
     if (this["param"]) { this.param.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.param[${i}]`)); }) }
@@ -405,7 +405,7 @@ export class CompartmentDefinition extends fhir.DomainResource {
       issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status fhir: CompartmentDefinition.status:code', expression: [expression] });
     }
     if (this['status'] && (!Object.values(PublicationStatusCodes).includes(this.status.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property status fhir: CompartmentDefinition.status:code Required binding to: PublicationStatus', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'status (CompartmentDefinition.status) of type code is missing code for Required binding to: PublicationStatus', expression: [expression] });
     }
     if (this["status"]) { issues.push(...this.status.doModelValidation(expression+'.status')); }
     if (this["experimental"]) { issues.push(...this.experimental.doModelValidation(expression+'.experimental')); }
@@ -419,7 +419,7 @@ export class CompartmentDefinition extends fhir.DomainResource {
       issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property code fhir: CompartmentDefinition.code:code', expression: [expression] });
     }
     if (this['code'] && (!Object.values(CompartmentTypeCodes).includes(this.code.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property code fhir: CompartmentDefinition.code:code Required binding to: CompartmentType', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'code (CompartmentDefinition.code) of type code is missing code for Required binding to: CompartmentType', expression: [expression] });
     }
     if (this["code"]) { issues.push(...this.code.doModelValidation(expression+'.code')); }
     if (!this['search']) {

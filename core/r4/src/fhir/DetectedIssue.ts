@@ -373,12 +373,12 @@ export class DetectedIssue extends fhir.DomainResource {
       issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status fhir: DetectedIssue.status:code', expression: [expression] });
     }
     if (this['status'] && (!Object.values(ObservationStatusCodes).includes(this.status.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property status fhir: DetectedIssue.status:code Required binding to: ObservationStatus', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'status (DetectedIssue.status) of type code is missing code for Required binding to: ObservationStatus', expression: [expression] });
     }
     if (this["status"]) { issues.push(...this.status.doModelValidation(expression+'.status')); }
     if (this["code"]) { issues.push(...this.code.doModelValidation(expression+'.code')); }
     if (this['severity'] && (!Object.values(DetectedissueSeverityCodes).includes(this.severity.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property severity fhir: DetectedIssue.severity:code Required binding to: DetectedissueSeverity', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'severity (DetectedIssue.severity) of type code is missing code for Required binding to: DetectedissueSeverity', expression: [expression] });
     }
     if (this["severity"]) { issues.push(...this.severity.doModelValidation(expression+'.severity')); }
     if (this["patient"]) { issues.push(...this.patient.doModelValidation(expression+'.patient')); }

@@ -252,7 +252,7 @@ export class ContractContentDefinition extends fhir.BackboneElement {
       issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property publicationStatus fhir: Contract.contentDefinition.publicationStatus:code', expression: [expression] });
     }
     if (this['publicationStatus'] && (!Object.values(ContractPublicationstatusCodes).includes(this.publicationStatus.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property publicationStatus fhir: Contract.contentDefinition.publicationStatus:code Required binding to: ContractPublicationstatus', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'publicationStatus (Contract.contentDefinition.publicationStatus) of type code is missing code for Required binding to: ContractPublicationstatus', expression: [expression] });
     }
     if (this["publicationStatus"]) { issues.push(...this.publicationStatus.doModelValidation(expression+'.publicationStatus')); }
     if (this["copyright"]) { issues.push(...this.copyright.doModelValidation(expression+'.copyright')); }
@@ -2560,7 +2560,7 @@ export class Contract extends fhir.DomainResource {
     if (this["url"]) { issues.push(...this.url.doModelValidation(expression+'.url')); }
     if (this["version"]) { issues.push(...this.version.doModelValidation(expression+'.version')); }
     if (this['status'] && (!Object.values(ContractStatusCodes).includes(this.status.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property status fhir: Contract.status:code Required binding to: ContractStatus', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'status (Contract.status) of type code is missing code for Required binding to: ContractStatus', expression: [expression] });
     }
     if (this["status"]) { issues.push(...this.status.doModelValidation(expression+'.status')); }
     if (this["legalState"]) { issues.push(...this.legalState.doModelValidation(expression+'.legalState')); }

@@ -208,7 +208,7 @@ export class EvidenceVariableCharacteristic extends fhir.BackboneElement {
     if (this["exclude"]) { issues.push(...this.exclude.doModelValidation(expression+'.exclude')); }
     if (this["timeFromStart"]) { issues.push(...this.timeFromStart.doModelValidation(expression+'.timeFromStart')); }
     if (this['groupMeasure'] && (!Object.values(GroupMeasureCodes).includes(this.groupMeasure.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property groupMeasure fhir: EvidenceVariable.characteristic.groupMeasure:code Required binding to: GroupMeasure', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'groupMeasure (EvidenceVariable.characteristic.groupMeasure) of type code is missing code for Required binding to: GroupMeasure', expression: [expression] });
     }
     if (this["groupMeasure"]) { issues.push(...this.groupMeasure.doModelValidation(expression+'.groupMeasure')); }
     return issues;
@@ -647,7 +647,7 @@ export class EvidenceVariable extends fhir.DomainResource {
       issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status fhir: EvidenceVariable.status:code', expression: [expression] });
     }
     if (this['status'] && (!Object.values(PublicationStatusCodes).includes(this.status.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property status fhir: EvidenceVariable.status:code Required binding to: PublicationStatus', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'status (EvidenceVariable.status) of type code is missing code for Required binding to: PublicationStatus', expression: [expression] });
     }
     if (this["status"]) { issues.push(...this.status.doModelValidation(expression+'.status')); }
     if (this["date"]) { issues.push(...this.date.doModelValidation(expression+'.date')); }
@@ -668,7 +668,7 @@ export class EvidenceVariable extends fhir.DomainResource {
     if (this["endorser"]) { this.endorser.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.endorser[${i}]`)); }) }
     if (this["relatedArtifact"]) { this.relatedArtifact.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.relatedArtifact[${i}]`)); }) }
     if (this['type'] && (!Object.values(VariableTypeCodes).includes(this.type.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property type fhir: EvidenceVariable.type:code Required binding to: VariableType', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'type (EvidenceVariable.type) of type code is missing code for Required binding to: VariableType', expression: [expression] });
     }
     if (this["type"]) { issues.push(...this.type.doModelValidation(expression+'.type')); }
     if (!this['characteristic']) {

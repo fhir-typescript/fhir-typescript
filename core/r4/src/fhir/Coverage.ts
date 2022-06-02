@@ -525,7 +525,7 @@ export class Coverage extends fhir.DomainResource {
       issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status fhir: Coverage.status:code', expression: [expression] });
     }
     if (this['status'] && (!Object.values(FmStatusCodes).includes(this.status.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property status fhir: Coverage.status:code Required binding to: FmStatus', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'status (Coverage.status) of type code is missing code for Required binding to: FmStatus', expression: [expression] });
     }
     if (this["status"]) { issues.push(...this.status.doModelValidation(expression+'.status')); }
     if (this["type"]) { issues.push(...this.type.doModelValidation(expression+'.type')); }

@@ -351,7 +351,7 @@ export class TimingRepeat extends fhir.FhirElement {
     if (this["duration"]) { issues.push(...this.duration.doModelValidation(expression+'.duration')); }
     if (this["durationMax"]) { issues.push(...this.durationMax.doModelValidation(expression+'.durationMax')); }
     if (this['durationUnit'] && (!Object.values(UnitsOfTimeCodes).includes(this.durationUnit.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property durationUnit fhir: Timing.repeat.durationUnit:code Required binding to: UnitsOfTime', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'durationUnit (Timing.repeat.durationUnit) of type code is missing code for Required binding to: UnitsOfTime', expression: [expression] });
     }
     if (this["durationUnit"]) { issues.push(...this.durationUnit.doModelValidation(expression+'.durationUnit')); }
     if (this["frequency"]) { issues.push(...this.frequency.doModelValidation(expression+'.frequency')); }
@@ -359,13 +359,13 @@ export class TimingRepeat extends fhir.FhirElement {
     if (this["period"]) { issues.push(...this.period.doModelValidation(expression+'.period')); }
     if (this["periodMax"]) { issues.push(...this.periodMax.doModelValidation(expression+'.periodMax')); }
     if (this['periodUnit'] && (!Object.values(UnitsOfTimeCodes).includes(this.periodUnit.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property periodUnit fhir: Timing.repeat.periodUnit:code Required binding to: UnitsOfTime', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'periodUnit (Timing.repeat.periodUnit) of type code is missing code for Required binding to: UnitsOfTime', expression: [expression] });
     }
     if (this["periodUnit"]) { issues.push(...this.periodUnit.doModelValidation(expression+'.periodUnit')); }
     if (this['dayOfWeek']) {
       this.dayOfWeek.forEach((v) => {
         if (!Object.values(DaysOfWeekCodes).includes(v.value as any)) {
-          issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property dayOfWeek fhir: Timing.repeat.dayOfWeek:code Required binding to: DaysOfWeek', expression: [expression] });
+          issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'dayOfWeek (Timing.repeat.dayOfWeek) of type code is missing code for Required binding to: DaysOfWeek', expression: [expression] });
         }
       });
     }
@@ -374,7 +374,7 @@ export class TimingRepeat extends fhir.FhirElement {
     if (this['when']) {
       this.when.forEach((v) => {
         if (!Object.values(EventTimingCodes).includes(v.value as any)) {
-          issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property when fhir: Timing.repeat.when:code Required binding to: EventTiming', expression: [expression] });
+          issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'when (Timing.repeat.when) of type code is missing code for Required binding to: EventTiming', expression: [expression] });
         }
       });
     }

@@ -109,7 +109,7 @@ export class DocumentReferenceRelatesTo extends fhir.BackboneElement {
       issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property code fhir: DocumentReference.relatesTo.code:code', expression: [expression] });
     }
     if (this['code'] && (!Object.values(DocumentRelationshipTypeCodes).includes(this.code.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property code fhir: DocumentReference.relatesTo.code:code Required binding to: DocumentRelationshipType', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'code (DocumentReference.relatesTo.code) of type code is missing code for Required binding to: DocumentRelationshipType', expression: [expression] });
     }
     if (this["code"]) { issues.push(...this.code.doModelValidation(expression+'.code')); }
     if (!this['target']) {
@@ -535,11 +535,11 @@ export class DocumentReference extends fhir.DomainResource {
       issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status fhir: DocumentReference.status:code', expression: [expression] });
     }
     if (this['status'] && (!Object.values(DocumentReferenceStatusCodes).includes(this.status.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property status fhir: DocumentReference.status:code Required binding to: DocumentReferenceStatus', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'status (DocumentReference.status) of type code is missing code for Required binding to: DocumentReferenceStatus', expression: [expression] });
     }
     if (this["status"]) { issues.push(...this.status.doModelValidation(expression+'.status')); }
     if (this['docStatus'] && (!Object.values(CompositionStatusCodes).includes(this.docStatus.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property docStatus fhir: DocumentReference.docStatus:code Required binding to: CompositionStatus', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'docStatus (DocumentReference.docStatus) of type code is missing code for Required binding to: CompositionStatus', expression: [expression] });
     }
     if (this["docStatus"]) { issues.push(...this.docStatus.doModelValidation(expression+'.docStatus')); }
     if (this["type"]) { issues.push(...this.type.doModelValidation(expression+'.type')); }

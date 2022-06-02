@@ -616,14 +616,14 @@ export class MeasureReport extends fhir.DomainResource {
       issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status fhir: MeasureReport.status:code', expression: [expression] });
     }
     if (this['status'] && (!Object.values(MeasureReportStatusCodes).includes(this.status.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property status fhir: MeasureReport.status:code Required binding to: MeasureReportStatus', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'status (MeasureReport.status) of type code is missing code for Required binding to: MeasureReportStatus', expression: [expression] });
     }
     if (this["status"]) { issues.push(...this.status.doModelValidation(expression+'.status')); }
     if (!this['type']) {
       issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property type fhir: MeasureReport.type:code', expression: [expression] });
     }
     if (this['type'] && (!Object.values(MeasureReportTypeCodes).includes(this.type.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property type fhir: MeasureReport.type:code Required binding to: MeasureReportType', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'type (MeasureReport.type) of type code is missing code for Required binding to: MeasureReportType', expression: [expression] });
     }
     if (this["type"]) { issues.push(...this.type.doModelValidation(expression+'.type')); }
     if (!this['measure']) {
@@ -637,6 +637,9 @@ export class MeasureReport extends fhir.DomainResource {
       issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property period fhir: MeasureReport.period:Period', expression: [expression] });
     }
     if (this["period"]) { issues.push(...this.period.doModelValidation(expression+'.period')); }
+    if (this['improvementNotation'] && (!this.improvementNotation.hasCodingFromObject(MeasureImprovementNotationCodings))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'improvementNotation (MeasureReport.improvementNotation) of type CodeableConcept is missing code for Required binding to: MeasureImprovementNotation', expression: [expression] });
+    }
     if (this["improvementNotation"]) { issues.push(...this.improvementNotation.doModelValidation(expression+'.improvementNotation')); }
     if (this["group"]) { this.group.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.group[${i}]`)); }) }
     if (this["evaluatedResource"]) { this.evaluatedResource.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.evaluatedResource[${i}]`)); }) }

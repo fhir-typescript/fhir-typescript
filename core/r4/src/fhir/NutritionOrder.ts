@@ -837,14 +837,14 @@ export class NutritionOrder extends fhir.DomainResource {
       issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status fhir: NutritionOrder.status:code', expression: [expression] });
     }
     if (this['status'] && (!Object.values(RequestStatusCodes).includes(this.status.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property status fhir: NutritionOrder.status:code Required binding to: RequestStatus', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'status (NutritionOrder.status) of type code is missing code for Required binding to: RequestStatus', expression: [expression] });
     }
     if (this["status"]) { issues.push(...this.status.doModelValidation(expression+'.status')); }
     if (!this['intent']) {
       issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property intent fhir: NutritionOrder.intent:code', expression: [expression] });
     }
     if (this['intent'] && (!Object.values(RequestIntentCodes).includes(this.intent.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property intent fhir: NutritionOrder.intent:code Required binding to: RequestIntent', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'intent (NutritionOrder.intent) of type code is missing code for Required binding to: RequestIntent', expression: [expression] });
     }
     if (this["intent"]) { issues.push(...this.intent.doModelValidation(expression+'.intent')); }
     if (!this['patient']) {

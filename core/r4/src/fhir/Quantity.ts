@@ -128,7 +128,7 @@ export class Quantity extends fhir.FhirElement {
     if (expression === '') { expression = 'Quantity' }
     if (this["value"]) { issues.push(...this.value.doModelValidation(expression+'.value')); }
     if (this['comparator'] && (!Object.values(QuantityComparatorCodes).includes(this.comparator.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property comparator fhir: Quantity.comparator:code Required binding to: QuantityComparator', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'comparator (Quantity.comparator) of type code is missing code for Required binding to: QuantityComparator', expression: [expression] });
     }
     if (this["comparator"]) { issues.push(...this.comparator.doModelValidation(expression+'.comparator')); }
     if (this["unit"]) { issues.push(...this.unit.doModelValidation(expression+'.unit')); }

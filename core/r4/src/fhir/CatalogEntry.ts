@@ -77,7 +77,7 @@ export class CatalogEntryRelatedEntry extends fhir.BackboneElement {
       issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property relationtype fhir: CatalogEntry.relatedEntry.relationtype:code', expression: [expression] });
     }
     if (this['relationtype'] && (!Object.values(RelationTypeCodes).includes(this.relationtype.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property relationtype fhir: CatalogEntry.relatedEntry.relationtype:code Required binding to: RelationType', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'relationtype (CatalogEntry.relatedEntry.relationtype) of type code is missing code for Required binding to: RelationType', expression: [expression] });
     }
     if (this["relationtype"]) { issues.push(...this.relationtype.doModelValidation(expression+'.relationtype')); }
     if (!this['item']) {
@@ -301,7 +301,7 @@ export class CatalogEntry extends fhir.DomainResource {
     if (this["additionalIdentifier"]) { this.additionalIdentifier.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.additionalIdentifier[${i}]`)); }) }
     if (this["classification"]) { this.classification.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.classification[${i}]`)); }) }
     if (this['status'] && (!Object.values(PublicationStatusCodes).includes(this.status.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property status fhir: CatalogEntry.status:code Required binding to: PublicationStatus', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'status (CatalogEntry.status) of type code is missing code for Required binding to: PublicationStatus', expression: [expression] });
     }
     if (this["status"]) { issues.push(...this.status.doModelValidation(expression+'.status')); }
     if (this["validityPeriod"]) { issues.push(...this.validityPeriod.doModelValidation(expression+'.validityPeriod')); }

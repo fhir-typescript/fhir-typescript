@@ -81,7 +81,7 @@ export class Narrative extends fhir.FhirElement {
       issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status fhir: Narrative.status:code', expression: [expression] });
     }
     if (this['status'] && (!Object.values(NarrativeStatusCodes).includes(this.status.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property status fhir: Narrative.status:code Required binding to: NarrativeStatus', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'status (Narrative.status) of type code is missing code for Required binding to: NarrativeStatus', expression: [expression] });
     }
     if (this["status"]) { issues.push(...this.status.doModelValidation(expression+'.status')); }
     if (!this['div']) {

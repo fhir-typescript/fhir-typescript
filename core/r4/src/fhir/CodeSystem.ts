@@ -153,7 +153,7 @@ export class CodeSystemFilter extends fhir.BackboneElement {
     if (this['operator']) {
       this.operator.forEach((v) => {
         if (!Object.values(FilterOperatorCodes).includes(v.value as any)) {
-          issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property operator fhir: CodeSystem.filter.operator:code Required binding to: FilterOperator', expression: [expression] });
+          issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'operator (CodeSystem.filter.operator) of type code is missing code for Required binding to: FilterOperator', expression: [expression] });
         }
       });
     }
@@ -277,7 +277,7 @@ export class CodeSystemProperty extends fhir.BackboneElement {
       issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property type fhir: CodeSystem.property.type:code', expression: [expression] });
     }
     if (this['type'] && (!Object.values(ConceptPropertyTypeCodes).includes(this.type.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property type fhir: CodeSystem.property.type:code Required binding to: ConceptPropertyType', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'type (CodeSystem.property.type) of type code is missing code for Required binding to: ConceptPropertyType', expression: [expression] });
     }
     if (this["type"]) { issues.push(...this.type.doModelValidation(expression+'.type')); }
     return issues;
@@ -1063,7 +1063,7 @@ export class CodeSystem extends fhir.DomainResource {
       issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status fhir: CodeSystem.status:code', expression: [expression] });
     }
     if (this['status'] && (!Object.values(PublicationStatusCodes).includes(this.status.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property status fhir: CodeSystem.status:code Required binding to: PublicationStatus', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'status (CodeSystem.status) of type code is missing code for Required binding to: PublicationStatus', expression: [expression] });
     }
     if (this["status"]) { issues.push(...this.status.doModelValidation(expression+'.status')); }
     if (this["experimental"]) { issues.push(...this.experimental.doModelValidation(expression+'.experimental')); }
@@ -1078,7 +1078,7 @@ export class CodeSystem extends fhir.DomainResource {
     if (this["caseSensitive"]) { issues.push(...this.caseSensitive.doModelValidation(expression+'.caseSensitive')); }
     if (this["valueSet"]) { issues.push(...this.valueSet.doModelValidation(expression+'.valueSet')); }
     if (this['hierarchyMeaning'] && (!Object.values(CodesystemHierarchyMeaningCodes).includes(this.hierarchyMeaning.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property hierarchyMeaning fhir: CodeSystem.hierarchyMeaning:code Required binding to: CodesystemHierarchyMeaning', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'hierarchyMeaning (CodeSystem.hierarchyMeaning) of type code is missing code for Required binding to: CodesystemHierarchyMeaning', expression: [expression] });
     }
     if (this["hierarchyMeaning"]) { issues.push(...this.hierarchyMeaning.doModelValidation(expression+'.hierarchyMeaning')); }
     if (this["compositional"]) { issues.push(...this.compositional.doModelValidation(expression+'.compositional')); }
@@ -1087,7 +1087,7 @@ export class CodeSystem extends fhir.DomainResource {
       issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property content fhir: CodeSystem.content:code', expression: [expression] });
     }
     if (this['content'] && (!Object.values(CodesystemContentModeCodes).includes(this.content.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property content fhir: CodeSystem.content:code Required binding to: CodesystemContentMode', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'content (CodeSystem.content) of type code is missing code for Required binding to: CodesystemContentMode', expression: [expression] });
     }
     if (this["content"]) { issues.push(...this.content.doModelValidation(expression+'.content')); }
     if (this["supplements"]) { issues.push(...this.supplements.doModelValidation(expression+'.supplements')); }

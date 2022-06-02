@@ -480,18 +480,18 @@ export class DeviceRequest extends fhir.DomainResource {
     if (this["priorRequest"]) { this.priorRequest.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.priorRequest[${i}]`)); }) }
     if (this["groupIdentifier"]) { issues.push(...this.groupIdentifier.doModelValidation(expression+'.groupIdentifier')); }
     if (this['status'] && (!Object.values(RequestStatusCodes).includes(this.status.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property status fhir: DeviceRequest.status:code Required binding to: RequestStatus', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'status (DeviceRequest.status) of type code is missing code for Required binding to: RequestStatus', expression: [expression] });
     }
     if (this["status"]) { issues.push(...this.status.doModelValidation(expression+'.status')); }
     if (!this['intent']) {
       issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property intent fhir: DeviceRequest.intent:code', expression: [expression] });
     }
     if (this['intent'] && (!Object.values(RequestIntentCodes).includes(this.intent.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property intent fhir: DeviceRequest.intent:code Required binding to: RequestIntent', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'intent (DeviceRequest.intent) of type code is missing code for Required binding to: RequestIntent', expression: [expression] });
     }
     if (this["intent"]) { issues.push(...this.intent.doModelValidation(expression+'.intent')); }
     if (this['priority'] && (!Object.values(RequestPriorityCodes).includes(this.priority.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property priority fhir: DeviceRequest.priority:code Required binding to: RequestPriority', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'priority (DeviceRequest.priority) of type code is missing code for Required binding to: RequestPriority', expression: [expression] });
     }
     if (this["priority"]) { issues.push(...this.priority.doModelValidation(expression+'.priority')); }
     if (!this['code']) {

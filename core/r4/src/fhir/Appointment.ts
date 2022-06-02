@@ -159,14 +159,14 @@ export class AppointmentParticipant extends fhir.BackboneElement {
     if (this["type"]) { this.type.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.type[${i}]`)); }) }
     if (this["actor"]) { issues.push(...this.actor.doModelValidation(expression+'.actor')); }
     if (this['required'] && (!Object.values(ParticipantrequiredCodes).includes(this.required.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property required fhir: Appointment.participant.required:code Required binding to: Participantrequired', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'required (Appointment.participant.required) of type code is missing code for Required binding to: Participantrequired', expression: [expression] });
     }
     if (this["required"]) { issues.push(...this.required.doModelValidation(expression+'.required')); }
     if (!this['status']) {
       issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status fhir: Appointment.participant.status:code', expression: [expression] });
     }
     if (this['status'] && (!Object.values(ParticipationstatusCodes).includes(this.status.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property status fhir: Appointment.participant.status:code Required binding to: Participationstatus', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'status (Appointment.participant.status) of type code is missing code for Required binding to: Participationstatus', expression: [expression] });
     }
     if (this["status"]) { issues.push(...this.status.doModelValidation(expression+'.status')); }
     if (this["period"]) { issues.push(...this.period.doModelValidation(expression+'.period')); }
@@ -528,7 +528,7 @@ export class Appointment extends fhir.DomainResource {
       issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status fhir: Appointment.status:code', expression: [expression] });
     }
     if (this['status'] && (!Object.values(AppointmentstatusCodes).includes(this.status.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property status fhir: Appointment.status:code Required binding to: Appointmentstatus', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'status (Appointment.status) of type code is missing code for Required binding to: Appointmentstatus', expression: [expression] });
     }
     if (this["status"]) { issues.push(...this.status.doModelValidation(expression+'.status')); }
     if (this["cancelationReason"]) { issues.push(...this.cancelationReason.doModelValidation(expression+'.cancelationReason')); }

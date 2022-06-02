@@ -113,7 +113,7 @@ export class ElementDefinitionSlicingDiscriminator extends fhir.FhirElement {
       issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property type fhir: ElementDefinition.slicing.discriminator.type:code', expression: [expression] });
     }
     if (this['type'] && (!Object.values(DiscriminatorTypeCodes).includes(this.type.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property type fhir: ElementDefinition.slicing.discriminator.type:code Required binding to: DiscriminatorType', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'type (ElementDefinition.slicing.discriminator.type) of type code is missing code for Required binding to: DiscriminatorType', expression: [expression] });
     }
     if (this["type"]) { issues.push(...this.type.doModelValidation(expression+'.type')); }
     if (!this['path']) {
@@ -224,7 +224,7 @@ export class ElementDefinitionSlicing extends fhir.FhirElement {
       issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property rules fhir: ElementDefinition.slicing.rules:code', expression: [expression] });
     }
     if (this['rules'] && (!Object.values(ResourceSlicingRulesCodes).includes(this.rules.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property rules fhir: ElementDefinition.slicing.rules:code Required binding to: ResourceSlicingRules', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'rules (ElementDefinition.slicing.rules) of type code is missing code for Required binding to: ResourceSlicingRules', expression: [expression] });
     }
     if (this["rules"]) { issues.push(...this.rules.doModelValidation(expression+'.rules')); }
     return issues;
@@ -473,13 +473,13 @@ export class ElementDefinitionType extends fhir.FhirElement {
     if (this['aggregation']) {
       this.aggregation.forEach((v) => {
         if (!Object.values(ResourceAggregationModeCodes).includes(v.value as any)) {
-          issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property aggregation fhir: ElementDefinition.type.aggregation:code Required binding to: ResourceAggregationMode', expression: [expression] });
+          issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'aggregation (ElementDefinition.type.aggregation) of type code is missing code for Required binding to: ResourceAggregationMode', expression: [expression] });
         }
       });
     }
     if (this["aggregation"]) { this.aggregation.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.aggregation[${i}]`)); }) }
     if (this['versioning'] && (!Object.values(ReferenceVersionRulesCodes).includes(this.versioning.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property versioning fhir: ElementDefinition.type.versioning:code Required binding to: ReferenceVersionRules', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'versioning (ElementDefinition.type.versioning) of type code is missing code for Required binding to: ReferenceVersionRules', expression: [expression] });
     }
     if (this["versioning"]) { issues.push(...this.versioning.doModelValidation(expression+'.versioning')); }
     return issues;
@@ -966,7 +966,7 @@ export class ElementDefinitionConstraint extends fhir.FhirElement {
       issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property severity fhir: ElementDefinition.constraint.severity:code', expression: [expression] });
     }
     if (this['severity'] && (!Object.values(ConstraintSeverityCodes).includes(this.severity.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property severity fhir: ElementDefinition.constraint.severity:code Required binding to: ConstraintSeverity', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'severity (ElementDefinition.constraint.severity) of type code is missing code for Required binding to: ConstraintSeverity', expression: [expression] });
     }
     if (this["severity"]) { issues.push(...this.severity.doModelValidation(expression+'.severity')); }
     if (!this['human']) {
@@ -1067,7 +1067,7 @@ export class ElementDefinitionBinding extends fhir.FhirElement {
       issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property strength fhir: ElementDefinition.binding.strength:code', expression: [expression] });
     }
     if (this['strength'] && (!Object.values(BindingStrengthCodes).includes(this.strength.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property strength fhir: ElementDefinition.binding.strength:code Required binding to: BindingStrength', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'strength (ElementDefinition.binding.strength) of type code is missing code for Required binding to: BindingStrength', expression: [expression] });
     }
     if (this["strength"]) { issues.push(...this.strength.doModelValidation(expression+'.strength')); }
     if (this["description"]) { issues.push(...this.description.doModelValidation(expression+'.description')); }
@@ -2624,7 +2624,7 @@ export class ElementDefinition extends fhir.BackboneElement {
     if (this['representation']) {
       this.representation.forEach((v) => {
         if (!Object.values(PropertyRepresentationCodes).includes(v.value as any)) {
-          issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property representation fhir: ElementDefinition.representation:code Required binding to: PropertyRepresentation', expression: [expression] });
+          issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'representation (ElementDefinition.representation) of type code is missing code for Required binding to: PropertyRepresentation', expression: [expression] });
         }
       });
     }

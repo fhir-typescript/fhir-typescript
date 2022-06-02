@@ -491,7 +491,7 @@ export class MedicationAdministration extends fhir.DomainResource {
       issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status fhir: MedicationAdministration.status:code', expression: [expression] });
     }
     if (this['status'] && (!Object.values(MedicationAdminStatusCodes).includes(this.status.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property status fhir: MedicationAdministration.status:code Required binding to: MedicationAdminStatus', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'status (MedicationAdministration.status) of type code is missing code for Required binding to: MedicationAdminStatus', expression: [expression] });
     }
     if (this["status"]) { issues.push(...this.status.doModelValidation(expression+'.status')); }
     if (this["statusReason"]) { this.statusReason.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.statusReason[${i}]`)); }) }

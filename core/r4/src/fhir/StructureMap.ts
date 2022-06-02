@@ -147,7 +147,7 @@ export class StructureMapStructure extends fhir.BackboneElement {
       issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property mode fhir: StructureMap.structure.mode:code', expression: [expression] });
     }
     if (this['mode'] && (!Object.values(MapModelModeCodes).includes(this.mode.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property mode fhir: StructureMap.structure.mode:code Required binding to: MapModelMode', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'mode (StructureMap.structure.mode) of type code is missing code for Required binding to: MapModelMode', expression: [expression] });
     }
     if (this["mode"]) { issues.push(...this.mode.doModelValidation(expression+'.mode')); }
     if (this["alias"]) { issues.push(...this.alias.doModelValidation(expression+'.alias')); }
@@ -266,7 +266,7 @@ export class StructureMapGroupInput extends fhir.BackboneElement {
       issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property mode fhir: StructureMap.group.input.mode:code', expression: [expression] });
     }
     if (this['mode'] && (!Object.values(MapInputModeCodes).includes(this.mode.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property mode fhir: StructureMap.group.input.mode:code Required binding to: MapInputMode', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'mode (StructureMap.group.input.mode) of type code is missing code for Required binding to: MapInputMode', expression: [expression] });
     }
     if (this["mode"]) { issues.push(...this.mode.doModelValidation(expression+'.mode')); }
     if (this["documentation"]) { issues.push(...this.documentation.doModelValidation(expression+'.documentation')); }
@@ -748,7 +748,7 @@ export class StructureMapGroupRuleSource extends fhir.BackboneElement {
     if (this["type"]) { issues.push(...this.type.doModelValidation(expression+'.type')); }
     if (this["element"]) { issues.push(...this.element.doModelValidation(expression+'.element')); }
     if (this['listMode'] && (!Object.values(MapSourceListModeCodes).includes(this.listMode.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property listMode fhir: StructureMap.group.rule.source.listMode:code Required binding to: MapSourceListMode', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'listMode (StructureMap.group.rule.source.listMode) of type code is missing code for Required binding to: MapSourceListMode', expression: [expression] });
     }
     if (this["listMode"]) { issues.push(...this.listMode.doModelValidation(expression+'.listMode')); }
     if (this["variable"]) { issues.push(...this.variable.doModelValidation(expression+'.variable')); }
@@ -1007,7 +1007,7 @@ export class StructureMapGroupRuleTarget extends fhir.BackboneElement {
     if (expression === '') { expression = 'StructureMap.group.rule.target' }
     if (this["context"]) { issues.push(...this.context.doModelValidation(expression+'.context')); }
     if (this['contextType'] && (!Object.values(MapContextTypeCodes).includes(this.contextType.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property contextType fhir: StructureMap.group.rule.target.contextType:code Required binding to: MapContextType', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'contextType (StructureMap.group.rule.target.contextType) of type code is missing code for Required binding to: MapContextType', expression: [expression] });
     }
     if (this["contextType"]) { issues.push(...this.contextType.doModelValidation(expression+'.contextType')); }
     if (this["element"]) { issues.push(...this.element.doModelValidation(expression+'.element')); }
@@ -1015,14 +1015,14 @@ export class StructureMapGroupRuleTarget extends fhir.BackboneElement {
     if (this['listMode']) {
       this.listMode.forEach((v) => {
         if (!Object.values(MapTargetListModeCodes).includes(v.value as any)) {
-          issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property listMode fhir: StructureMap.group.rule.target.listMode:code Required binding to: MapTargetListMode', expression: [expression] });
+          issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'listMode (StructureMap.group.rule.target.listMode) of type code is missing code for Required binding to: MapTargetListMode', expression: [expression] });
         }
       });
     }
     if (this["listMode"]) { this.listMode.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.listMode[${i}]`)); }) }
     if (this["listRuleId"]) { issues.push(...this.listRuleId.doModelValidation(expression+'.listRuleId')); }
     if (this['transform'] && (!Object.values(MapTransformCodes).includes(this.transform.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property transform fhir: StructureMap.group.rule.target.transform:code Required binding to: MapTransform', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'transform (StructureMap.group.rule.target.transform) of type code is missing code for Required binding to: MapTransform', expression: [expression] });
     }
     if (this["transform"]) { issues.push(...this.transform.doModelValidation(expression+'.transform')); }
     if (this["parameter"]) { this.parameter.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.parameter[${i}]`)); }) }
@@ -1359,7 +1359,7 @@ export class StructureMapGroup extends fhir.BackboneElement {
       issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property typeMode fhir: StructureMap.group.typeMode:code', expression: [expression] });
     }
     if (this['typeMode'] && (!Object.values(MapGroupTypeModeCodes).includes(this.typeMode.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property typeMode fhir: StructureMap.group.typeMode:code Required binding to: MapGroupTypeMode', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'typeMode (StructureMap.group.typeMode) of type code is missing code for Required binding to: MapGroupTypeMode', expression: [expression] });
     }
     if (this["typeMode"]) { issues.push(...this.typeMode.doModelValidation(expression+'.typeMode')); }
     if (this["documentation"]) { issues.push(...this.documentation.doModelValidation(expression+'.documentation')); }
@@ -1715,7 +1715,7 @@ export class StructureMap extends fhir.DomainResource {
       issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status fhir: StructureMap.status:code', expression: [expression] });
     }
     if (this['status'] && (!Object.values(PublicationStatusCodes).includes(this.status.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property status fhir: StructureMap.status:code Required binding to: PublicationStatus', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'status (StructureMap.status) of type code is missing code for Required binding to: PublicationStatus', expression: [expression] });
     }
     if (this["status"]) { issues.push(...this.status.doModelValidation(expression+'.status')); }
     if (this["experimental"]) { issues.push(...this.experimental.doModelValidation(expression+'.experimental')); }

@@ -240,7 +240,7 @@ export class GuidanceResponse extends fhir.DomainResource {
       issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status fhir: GuidanceResponse.status:code', expression: [expression] });
     }
     if (this['status'] && (!Object.values(GuidanceResponseStatusCodes).includes(this.status.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property status fhir: GuidanceResponse.status:code Required binding to: GuidanceResponseStatus', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'status (GuidanceResponse.status) of type code is missing code for Required binding to: GuidanceResponseStatus', expression: [expression] });
     }
     if (this["status"]) { issues.push(...this.status.doModelValidation(expression+'.status')); }
     if (this["subject"]) { issues.push(...this.subject.doModelValidation(expression+'.subject')); }

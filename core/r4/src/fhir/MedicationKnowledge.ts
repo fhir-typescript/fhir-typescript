@@ -1324,7 +1324,7 @@ export class MedicationKnowledge extends fhir.DomainResource {
     }
     if (this["code"]) { issues.push(...this.code.doModelValidation(expression+'.code')); }
     if (this['status'] && (!Object.values(MedicationknowledgeStatusCodes).includes(this.status.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property status fhir: MedicationKnowledge.status:code Required binding to: MedicationknowledgeStatus', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'status (MedicationKnowledge.status) of type code is missing code for Required binding to: MedicationknowledgeStatus', expression: [expression] });
     }
     if (this["status"]) { issues.push(...this.status.doModelValidation(expression+'.status')); }
     if (this["manufacturer"]) { issues.push(...this.manufacturer.doModelValidation(expression+'.manufacturer')); }

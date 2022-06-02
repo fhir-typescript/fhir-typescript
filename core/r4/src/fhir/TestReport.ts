@@ -110,7 +110,7 @@ export class TestReportParticipant extends fhir.BackboneElement {
       issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property type fhir: TestReport.participant.type:code', expression: [expression] });
     }
     if (this['type'] && (!Object.values(ReportParticipantTypeCodes).includes(this.type.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property type fhir: TestReport.participant.type:code Required binding to: ReportParticipantType', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'type (TestReport.participant.type) of type code is missing code for Required binding to: ReportParticipantType', expression: [expression] });
     }
     if (this["type"]) { issues.push(...this.type.doModelValidation(expression+'.type')); }
     if (!this['uri']) {
@@ -209,7 +209,7 @@ export class TestReportSetupActionOperation extends fhir.BackboneElement {
       issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property result fhir: TestReport.setup.action.operation.result:code', expression: [expression] });
     }
     if (this['result'] && (!Object.values(ReportActionResultCodes).includes(this.result.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property result fhir: TestReport.setup.action.operation.result:code Required binding to: ReportActionResult', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'result (TestReport.setup.action.operation.result) of type code is missing code for Required binding to: ReportActionResult', expression: [expression] });
     }
     if (this["result"]) { issues.push(...this.result.doModelValidation(expression+'.result')); }
     if (this["message"]) { issues.push(...this.message.doModelValidation(expression+'.message')); }
@@ -305,7 +305,7 @@ export class TestReportSetupActionAssert extends fhir.BackboneElement {
       issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property result fhir: TestReport.setup.action.assert.result:code', expression: [expression] });
     }
     if (this['result'] && (!Object.values(ReportActionResultCodes).includes(this.result.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property result fhir: TestReport.setup.action.assert.result:code Required binding to: ReportActionResult', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'result (TestReport.setup.action.assert.result) of type code is missing code for Required binding to: ReportActionResult', expression: [expression] });
     }
     if (this["result"]) { issues.push(...this.result.doModelValidation(expression+'.result')); }
     if (this["message"]) { issues.push(...this.message.doModelValidation(expression+'.message')); }
@@ -850,7 +850,7 @@ export class TestReport extends fhir.DomainResource {
       issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status fhir: TestReport.status:code', expression: [expression] });
     }
     if (this['status'] && (!Object.values(ReportStatusCodes).includes(this.status.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property status fhir: TestReport.status:code Required binding to: ReportStatus', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'status (TestReport.status) of type code is missing code for Required binding to: ReportStatus', expression: [expression] });
     }
     if (this["status"]) { issues.push(...this.status.doModelValidation(expression+'.status')); }
     if (!this['testScript']) {
@@ -861,7 +861,7 @@ export class TestReport extends fhir.DomainResource {
       issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property result fhir: TestReport.result:code', expression: [expression] });
     }
     if (this['result'] && (!Object.values(ReportResultCodes).includes(this.result.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property result fhir: TestReport.result:code Required binding to: ReportResult', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'result (TestReport.result) of type code is missing code for Required binding to: ReportResult', expression: [expression] });
     }
     if (this["result"]) { issues.push(...this.result.doModelValidation(expression+'.result')); }
     if (this["score"]) { issues.push(...this.score.doModelValidation(expression+'.score')); }

@@ -394,7 +394,7 @@ export class Goal extends fhir.DomainResource {
       issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property lifecycleStatus fhir: Goal.lifecycleStatus:code', expression: [expression] });
     }
     if (this['lifecycleStatus'] && (!Object.values(GoalStatusCodes).includes(this.lifecycleStatus.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property lifecycleStatus fhir: Goal.lifecycleStatus:code Required binding to: GoalStatus', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'lifecycleStatus (Goal.lifecycleStatus) of type code is missing code for Required binding to: GoalStatus', expression: [expression] });
     }
     if (this["lifecycleStatus"]) { issues.push(...this.lifecycleStatus.doModelValidation(expression+'.lifecycleStatus')); }
     if (this["achievementStatus"]) { issues.push(...this.achievementStatus.doModelValidation(expression+'.achievementStatus')); }

@@ -333,7 +333,7 @@ export class PlanDefinitionActionCondition extends fhir.BackboneElement {
       issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property kind fhir: PlanDefinition.action.condition.kind:code', expression: [expression] });
     }
     if (this['kind'] && (!Object.values(ActionConditionKindCodes).includes(this.kind.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property kind fhir: PlanDefinition.action.condition.kind:code Required binding to: ActionConditionKind', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'kind (PlanDefinition.action.condition.kind) of type code is missing code for Required binding to: ActionConditionKind', expression: [expression] });
     }
     if (this["kind"]) { issues.push(...this.kind.doModelValidation(expression+'.kind')); }
     if (this["expression"]) { issues.push(...this.expression.doModelValidation(expression+'.expression')); }
@@ -439,7 +439,7 @@ export class PlanDefinitionActionRelatedAction extends fhir.BackboneElement {
       issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property relationship fhir: PlanDefinition.action.relatedAction.relationship:code', expression: [expression] });
     }
     if (this['relationship'] && (!Object.values(ActionRelationshipTypeCodes).includes(this.relationship.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property relationship fhir: PlanDefinition.action.relatedAction.relationship:code Required binding to: ActionRelationshipType', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'relationship (PlanDefinition.action.relatedAction.relationship) of type code is missing code for Required binding to: ActionRelationshipType', expression: [expression] });
     }
     if (this["relationship"]) { issues.push(...this.relationship.doModelValidation(expression+'.relationship')); }
     return issues;
@@ -508,7 +508,7 @@ export class PlanDefinitionActionParticipant extends fhir.BackboneElement {
       issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property type fhir: PlanDefinition.action.participant.type:code', expression: [expression] });
     }
     if (this['type'] && (!Object.values(ActionParticipantTypeCodes).includes(this.type.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property type fhir: PlanDefinition.action.participant.type:code Required binding to: ActionParticipantType', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'type (PlanDefinition.action.participant.type) of type code is missing code for Required binding to: ActionParticipantType', expression: [expression] });
     }
     if (this["type"]) { issues.push(...this.type.doModelValidation(expression+'.type')); }
     if (this["role"]) { issues.push(...this.role.doModelValidation(expression+'.role')); }
@@ -1064,7 +1064,7 @@ export class PlanDefinitionAction extends fhir.BackboneElement {
     if (this["description"]) { issues.push(...this.description.doModelValidation(expression+'.description')); }
     if (this["textEquivalent"]) { issues.push(...this.textEquivalent.doModelValidation(expression+'.textEquivalent')); }
     if (this['priority'] && (!Object.values(RequestPriorityCodes).includes(this.priority.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property priority fhir: PlanDefinition.action.priority:code Required binding to: RequestPriority', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'priority (PlanDefinition.action.priority) of type code is missing code for Required binding to: RequestPriority', expression: [expression] });
     }
     if (this["priority"]) { issues.push(...this.priority.doModelValidation(expression+'.priority')); }
     if (this["code"]) { this.code.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.code[${i}]`)); }) }
@@ -1079,23 +1079,23 @@ export class PlanDefinitionAction extends fhir.BackboneElement {
     if (this["participant"]) { this.participant.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.participant[${i}]`)); }) }
     if (this["type"]) { issues.push(...this.type.doModelValidation(expression+'.type')); }
     if (this['groupingBehavior'] && (!Object.values(ActionGroupingBehaviorCodes).includes(this.groupingBehavior.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property groupingBehavior fhir: PlanDefinition.action.groupingBehavior:code Required binding to: ActionGroupingBehavior', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'groupingBehavior (PlanDefinition.action.groupingBehavior) of type code is missing code for Required binding to: ActionGroupingBehavior', expression: [expression] });
     }
     if (this["groupingBehavior"]) { issues.push(...this.groupingBehavior.doModelValidation(expression+'.groupingBehavior')); }
     if (this['selectionBehavior'] && (!Object.values(ActionSelectionBehaviorCodes).includes(this.selectionBehavior.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property selectionBehavior fhir: PlanDefinition.action.selectionBehavior:code Required binding to: ActionSelectionBehavior', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'selectionBehavior (PlanDefinition.action.selectionBehavior) of type code is missing code for Required binding to: ActionSelectionBehavior', expression: [expression] });
     }
     if (this["selectionBehavior"]) { issues.push(...this.selectionBehavior.doModelValidation(expression+'.selectionBehavior')); }
     if (this['requiredBehavior'] && (!Object.values(ActionRequiredBehaviorCodes).includes(this.requiredBehavior.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property requiredBehavior fhir: PlanDefinition.action.requiredBehavior:code Required binding to: ActionRequiredBehavior', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'requiredBehavior (PlanDefinition.action.requiredBehavior) of type code is missing code for Required binding to: ActionRequiredBehavior', expression: [expression] });
     }
     if (this["requiredBehavior"]) { issues.push(...this.requiredBehavior.doModelValidation(expression+'.requiredBehavior')); }
     if (this['precheckBehavior'] && (!Object.values(ActionPrecheckBehaviorCodes).includes(this.precheckBehavior.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property precheckBehavior fhir: PlanDefinition.action.precheckBehavior:code Required binding to: ActionPrecheckBehavior', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'precheckBehavior (PlanDefinition.action.precheckBehavior) of type code is missing code for Required binding to: ActionPrecheckBehavior', expression: [expression] });
     }
     if (this["precheckBehavior"]) { issues.push(...this.precheckBehavior.doModelValidation(expression+'.precheckBehavior')); }
     if (this['cardinalityBehavior'] && (!Object.values(ActionCardinalityBehaviorCodes).includes(this.cardinalityBehavior.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property cardinalityBehavior fhir: PlanDefinition.action.cardinalityBehavior:code Required binding to: ActionCardinalityBehavior', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'cardinalityBehavior (PlanDefinition.action.cardinalityBehavior) of type code is missing code for Required binding to: ActionCardinalityBehavior', expression: [expression] });
     }
     if (this["cardinalityBehavior"]) { issues.push(...this.cardinalityBehavior.doModelValidation(expression+'.cardinalityBehavior')); }
     if (this["transform"]) { issues.push(...this.transform.doModelValidation(expression+'.transform')); }
@@ -1606,7 +1606,7 @@ export class PlanDefinition extends fhir.DomainResource {
       issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status fhir: PlanDefinition.status:code', expression: [expression] });
     }
     if (this['status'] && (!Object.values(PublicationStatusCodes).includes(this.status.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property status fhir: PlanDefinition.status:code Required binding to: PublicationStatus', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'status (PlanDefinition.status) of type code is missing code for Required binding to: PublicationStatus', expression: [expression] });
     }
     if (this["status"]) { issues.push(...this.status.doModelValidation(expression+'.status')); }
     if (this["experimental"]) { issues.push(...this.experimental.doModelValidation(expression+'.experimental')); }

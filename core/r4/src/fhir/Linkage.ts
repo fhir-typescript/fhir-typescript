@@ -73,7 +73,7 @@ export class LinkageItem extends fhir.BackboneElement {
       issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property type fhir: Linkage.item.type:code', expression: [expression] });
     }
     if (this['type'] && (!Object.values(LinkageTypeCodes).includes(this.type.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property type fhir: Linkage.item.type:code Required binding to: LinkageType', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'type (Linkage.item.type) of type code is missing code for Required binding to: LinkageType', expression: [expression] });
     }
     if (this["type"]) { issues.push(...this.type.doModelValidation(expression+'.type')); }
     if (!this['resource']) {

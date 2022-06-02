@@ -229,7 +229,7 @@ export class EffectEvidenceSynthesisResultsByExposure extends fhir.BackboneEleme
     if (expression === '') { expression = 'EffectEvidenceSynthesis.resultsByExposure' }
     if (this["description"]) { issues.push(...this.description.doModelValidation(expression+'.description')); }
     if (this['exposureState'] && (!Object.values(ExposureStateCodes).includes(this.exposureState.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property exposureState fhir: EffectEvidenceSynthesis.resultsByExposure.exposureState:code Required binding to: ExposureState', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'exposureState (EffectEvidenceSynthesis.resultsByExposure.exposureState) of type code is missing code for Required binding to: ExposureState', expression: [expression] });
     }
     if (this["exposureState"]) { issues.push(...this.exposureState.doModelValidation(expression+'.exposureState')); }
     if (this["variantState"]) { issues.push(...this.variantState.doModelValidation(expression+'.variantState')); }
@@ -458,6 +458,9 @@ export class EffectEvidenceSynthesisEffectEstimate extends fhir.BackboneElement 
     if (this["type"]) { issues.push(...this.type.doModelValidation(expression+'.type')); }
     if (this["variantState"]) { issues.push(...this.variantState.doModelValidation(expression+'.variantState')); }
     if (this["value"]) { issues.push(...this.value.doModelValidation(expression+'.value')); }
+    if (this['unitOfMeasure'] && (!this.unitOfMeasure.hasCodingFromObject(UcumUnitsCodings))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'unitOfMeasure (EffectEvidenceSynthesis.effectEstimate.unitOfMeasure) of type CodeableConcept is missing code for Required binding to: UcumUnits', expression: [expression] });
+    }
     if (this["unitOfMeasure"]) { issues.push(...this.unitOfMeasure.doModelValidation(expression+'.unitOfMeasure')); }
     if (this["precisionEstimate"]) { this.precisionEstimate.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.precisionEstimate[${i}]`)); }) }
     return issues;
@@ -1077,7 +1080,7 @@ export class EffectEvidenceSynthesis extends fhir.DomainResource {
       issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status fhir: EffectEvidenceSynthesis.status:code', expression: [expression] });
     }
     if (this['status'] && (!Object.values(PublicationStatusCodes).includes(this.status.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property status fhir: EffectEvidenceSynthesis.status:code Required binding to: PublicationStatus', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'status (EffectEvidenceSynthesis.status) of type code is missing code for Required binding to: PublicationStatus', expression: [expression] });
     }
     if (this["status"]) { issues.push(...this.status.doModelValidation(expression+'.status')); }
     if (this["date"]) { issues.push(...this.date.doModelValidation(expression+'.date')); }

@@ -188,7 +188,7 @@ export class ImplementationGuideGlobal extends fhir.BackboneElement {
       issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property type fhir: ImplementationGuide.global.type:code', expression: [expression] });
     }
     if (this['type'] && (!Object.values(ResourceTypesCodes).includes(this.type.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property type fhir: ImplementationGuide.global.type:code Required binding to: ResourceTypes', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'type (ImplementationGuide.global.type) of type code is missing code for Required binding to: ResourceTypes', expression: [expression] });
     }
     if (this["type"]) { issues.push(...this.type.doModelValidation(expression+'.type')); }
     if (!this['profile']) {
@@ -426,7 +426,7 @@ export class ImplementationGuideDefinitionResource extends fhir.BackboneElement 
     if (this['fhirVersion']) {
       this.fhirVersion.forEach((v) => {
         if (!Object.values(FHIRVersionCodes).includes(v.value as any)) {
-          issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property fhirVersion fhir: ImplementationGuide.definition.resource.fhirVersion:code Required binding to: FHIRVersion', expression: [expression] });
+          issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'fhirVersion (ImplementationGuide.definition.resource.fhirVersion) of type code is missing code for Required binding to: FHIRVersion', expression: [expression] });
         }
       });
     }
@@ -550,7 +550,7 @@ export class ImplementationGuideDefinitionPage extends fhir.BackboneElement {
       issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property generation fhir: ImplementationGuide.definition.page.generation:code', expression: [expression] });
     }
     if (this['generation'] && (!Object.values(GuidePageGenerationCodes).includes(this.generation.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property generation fhir: ImplementationGuide.definition.page.generation:code Required binding to: GuidePageGeneration', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'generation (ImplementationGuide.definition.page.generation) of type code is missing code for Required binding to: GuidePageGeneration', expression: [expression] });
     }
     if (this["generation"]) { issues.push(...this.generation.doModelValidation(expression+'.generation')); }
     if (this["page"]) { this.page.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.page[${i}]`)); }) }
@@ -629,7 +629,7 @@ export class ImplementationGuideDefinitionParameter extends fhir.BackboneElement
       issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property code fhir: ImplementationGuide.definition.parameter.code:code', expression: [expression] });
     }
     if (this['code'] && (!Object.values(GuideParameterCodes).includes(this.code.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property code fhir: ImplementationGuide.definition.parameter.code:code Required binding to: GuideParameter', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'code (ImplementationGuide.definition.parameter.code) of type code is missing code for Required binding to: GuideParameter', expression: [expression] });
     }
     if (this["code"]) { issues.push(...this.code.doModelValidation(expression+'.code')); }
     if (!this['value']) {
@@ -1482,7 +1482,7 @@ export class ImplementationGuide extends fhir.DomainResource {
       issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status fhir: ImplementationGuide.status:code', expression: [expression] });
     }
     if (this['status'] && (!Object.values(PublicationStatusCodes).includes(this.status.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property status fhir: ImplementationGuide.status:code Required binding to: PublicationStatus', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'status (ImplementationGuide.status) of type code is missing code for Required binding to: PublicationStatus', expression: [expression] });
     }
     if (this["status"]) { issues.push(...this.status.doModelValidation(expression+'.status')); }
     if (this["experimental"]) { issues.push(...this.experimental.doModelValidation(expression+'.experimental')); }
@@ -1498,7 +1498,7 @@ export class ImplementationGuide extends fhir.DomainResource {
     }
     if (this["packageId"]) { issues.push(...this.packageId.doModelValidation(expression+'.packageId')); }
     if (this['license'] && (!Object.values(SpdxLicenseCodes).includes(this.license.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property license fhir: ImplementationGuide.license:code Required binding to: SpdxLicense', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'license (ImplementationGuide.license) of type code is missing code for Required binding to: SpdxLicense', expression: [expression] });
     }
     if (this["license"]) { issues.push(...this.license.doModelValidation(expression+'.license')); }
     if (!this['fhirVersion']) {
@@ -1511,7 +1511,7 @@ export class ImplementationGuide extends fhir.DomainResource {
     if (this['fhirVersion']) {
       this.fhirVersion.forEach((v) => {
         if (!Object.values(FHIRVersionCodes).includes(v.value as any)) {
-          issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property fhirVersion fhir: ImplementationGuide.fhirVersion:code Required binding to: FHIRVersion', expression: [expression] });
+          issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'fhirVersion (ImplementationGuide.fhirVersion) of type code is missing code for Required binding to: FHIRVersion', expression: [expression] });
         }
       });
     }

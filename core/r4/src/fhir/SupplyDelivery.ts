@@ -261,10 +261,13 @@ export class SupplyDelivery extends fhir.DomainResource {
     if (this["basedOn"]) { this.basedOn.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.basedOn[${i}]`)); }) }
     if (this["partOf"]) { this.partOf.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.partOf[${i}]`)); }) }
     if (this['status'] && (!Object.values(SupplydeliveryStatusCodes).includes(this.status.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property status fhir: SupplyDelivery.status:code Required binding to: SupplydeliveryStatus', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'status (SupplyDelivery.status) of type code is missing code for Required binding to: SupplydeliveryStatus', expression: [expression] });
     }
     if (this["status"]) { issues.push(...this.status.doModelValidation(expression+'.status')); }
     if (this["patient"]) { issues.push(...this.patient.doModelValidation(expression+'.patient')); }
+    if (this['type'] && (!this.type.hasCodingFromObject(SupplydeliveryTypeCodings))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'type (SupplyDelivery.type) of type CodeableConcept is missing code for Required binding to: SupplydeliveryType', expression: [expression] });
+    }
     if (this["type"]) { issues.push(...this.type.doModelValidation(expression+'.type')); }
     if (this["suppliedItem"]) { issues.push(...this.suppliedItem.doModelValidation(expression+'.suppliedItem')); }
     if (this["supplier"]) { issues.push(...this.supplier.doModelValidation(expression+'.supplier')); }

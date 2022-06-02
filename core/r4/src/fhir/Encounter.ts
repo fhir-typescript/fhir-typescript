@@ -133,7 +133,7 @@ export class EncounterStatusHistory extends fhir.BackboneElement {
       issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status fhir: Encounter.statusHistory.status:code', expression: [expression] });
     }
     if (this['status'] && (!Object.values(EncounterStatusCodes).includes(this.status.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property status fhir: Encounter.statusHistory.status:code Required binding to: EncounterStatus', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'status (Encounter.statusHistory.status) of type code is missing code for Required binding to: EncounterStatus', expression: [expression] });
     }
     if (this["status"]) { issues.push(...this.status.doModelValidation(expression+'.status')); }
     if (!this['period']) {
@@ -574,7 +574,7 @@ export class EncounterLocation extends fhir.BackboneElement {
     }
     if (this["location"]) { issues.push(...this.location.doModelValidation(expression+'.location')); }
     if (this['status'] && (!Object.values(EncounterLocationStatusCodes).includes(this.status.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property status fhir: Encounter.location.status:code Required binding to: EncounterLocationStatus', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'status (Encounter.location.status) of type code is missing code for Required binding to: EncounterLocationStatus', expression: [expression] });
     }
     if (this["status"]) { issues.push(...this.status.doModelValidation(expression+'.status')); }
     if (this["physicalType"]) { issues.push(...this.physicalType.doModelValidation(expression+'.physicalType')); }
@@ -877,7 +877,7 @@ export class Encounter extends fhir.DomainResource {
       issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status fhir: Encounter.status:code', expression: [expression] });
     }
     if (this['status'] && (!Object.values(EncounterStatusCodes).includes(this.status.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property status fhir: Encounter.status:code Required binding to: EncounterStatus', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'status (Encounter.status) of type code is missing code for Required binding to: EncounterStatus', expression: [expression] });
     }
     if (this["status"]) { issues.push(...this.status.doModelValidation(expression+'.status')); }
     if (this["statusHistory"]) { this.statusHistory.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.statusHistory[${i}]`)); }) }

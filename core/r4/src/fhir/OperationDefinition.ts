@@ -105,7 +105,7 @@ export class OperationDefinitionParameterBinding extends fhir.BackboneElement {
       issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property strength fhir: OperationDefinition.parameter.binding.strength:code', expression: [expression] });
     }
     if (this['strength'] && (!Object.values(BindingStrengthCodes).includes(this.strength.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property strength fhir: OperationDefinition.parameter.binding.strength:code Required binding to: BindingStrength', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'strength (OperationDefinition.parameter.binding.strength) of type code is missing code for Required binding to: BindingStrength', expression: [expression] });
     }
     if (this["strength"]) { issues.push(...this.strength.doModelValidation(expression+'.strength')); }
     if (!this['valueSet']) {
@@ -408,7 +408,7 @@ export class OperationDefinitionParameter extends fhir.BackboneElement {
       issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property use fhir: OperationDefinition.parameter.use:code', expression: [expression] });
     }
     if (this['use'] && (!Object.values(OperationParameterUseCodes).includes(this.use.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property use fhir: OperationDefinition.parameter.use:code Required binding to: OperationParameterUse', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'use (OperationDefinition.parameter.use) of type code is missing code for Required binding to: OperationParameterUse', expression: [expression] });
     }
     if (this["use"]) { issues.push(...this.use.doModelValidation(expression+'.use')); }
     if (!this['min']) {
@@ -421,12 +421,12 @@ export class OperationDefinitionParameter extends fhir.BackboneElement {
     if (this["max"]) { issues.push(...this.max.doModelValidation(expression+'.max')); }
     if (this["documentation"]) { issues.push(...this.documentation.doModelValidation(expression+'.documentation')); }
     if (this['type'] && (!Object.values(AllTypesCodes).includes(this.type.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property type fhir: OperationDefinition.parameter.type:code Required binding to: AllTypes', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'type (OperationDefinition.parameter.type) of type code is missing code for Required binding to: AllTypes', expression: [expression] });
     }
     if (this["type"]) { issues.push(...this.type.doModelValidation(expression+'.type')); }
     if (this["targetProfile"]) { this.targetProfile.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.targetProfile[${i}]`)); }) }
     if (this['searchType'] && (!Object.values(SearchParamTypeCodes).includes(this.searchType.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property searchType fhir: OperationDefinition.parameter.searchType:code Required binding to: SearchParamType', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'searchType (OperationDefinition.parameter.searchType) of type code is missing code for Required binding to: SearchParamType', expression: [expression] });
     }
     if (this["searchType"]) { issues.push(...this.searchType.doModelValidation(expression+'.searchType')); }
     if (this["binding"]) { issues.push(...this.binding.doModelValidation(expression+'.binding')); }
@@ -995,14 +995,14 @@ export class OperationDefinition extends fhir.DomainResource {
       issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status fhir: OperationDefinition.status:code', expression: [expression] });
     }
     if (this['status'] && (!Object.values(PublicationStatusCodes).includes(this.status.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property status fhir: OperationDefinition.status:code Required binding to: PublicationStatus', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'status (OperationDefinition.status) of type code is missing code for Required binding to: PublicationStatus', expression: [expression] });
     }
     if (this["status"]) { issues.push(...this.status.doModelValidation(expression+'.status')); }
     if (!this['kind']) {
       issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property kind fhir: OperationDefinition.kind:code', expression: [expression] });
     }
     if (this['kind'] && (!Object.values(OperationKindCodes).includes(this.kind.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property kind fhir: OperationDefinition.kind:code Required binding to: OperationKind', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'kind (OperationDefinition.kind) of type code is missing code for Required binding to: OperationKind', expression: [expression] });
     }
     if (this["kind"]) { issues.push(...this.kind.doModelValidation(expression+'.kind')); }
     if (this["experimental"]) { issues.push(...this.experimental.doModelValidation(expression+'.experimental')); }
@@ -1023,7 +1023,7 @@ export class OperationDefinition extends fhir.DomainResource {
     if (this['resource']) {
       this.resource.forEach((v) => {
         if (!Object.values(ResourceTypesCodes).includes(v.value as any)) {
-          issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property resource fhir: OperationDefinition.resource:code Required binding to: ResourceTypes', expression: [expression] });
+          issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'resource (OperationDefinition.resource) of type code is missing code for Required binding to: ResourceTypes', expression: [expression] });
         }
       });
     }

@@ -77,7 +77,7 @@ export class PersonLink extends fhir.BackboneElement {
     }
     if (this["target"]) { issues.push(...this.target.doModelValidation(expression+'.target')); }
     if (this['assurance'] && (!Object.values(IdentityAssuranceLevelCodes).includes(this.assurance.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property assurance fhir: Person.link.assurance:code Required binding to: IdentityAssuranceLevel', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'assurance (Person.link.assurance) of type code is missing code for Required binding to: IdentityAssuranceLevel', expression: [expression] });
     }
     if (this["assurance"]) { issues.push(...this.assurance.doModelValidation(expression+'.assurance')); }
     return issues;
@@ -250,7 +250,7 @@ export class Person extends fhir.DomainResource {
     if (this["name"]) { this.name.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.name[${i}]`)); }) }
     if (this["telecom"]) { this.telecom.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.telecom[${i}]`)); }) }
     if (this['gender'] && (!Object.values(AdministrativeGenderCodes).includes(this.gender.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property gender fhir: Person.gender:code Required binding to: AdministrativeGender', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'gender (Person.gender) of type code is missing code for Required binding to: AdministrativeGender', expression: [expression] });
     }
     if (this["gender"]) { issues.push(...this.gender.doModelValidation(expression+'.gender')); }
     if (this["birthDate"]) { issues.push(...this.birthDate.doModelValidation(expression+'.birthDate')); }

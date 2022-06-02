@@ -475,9 +475,6 @@ export declare class RiskEvidenceSynthesisRiskEstimate extends fhir.BackboneElem
         readonly OpticalDensity: "{OpticalDensity}";
         readonly OpticalDensityIndex: "{OpticalDensityIndex}";
         readonly OpticalDensityRatio: "{OpticalDensityRatio}";
-        /**
-         * A human-readable string to clarify or explain concepts about the resource.
-         */
         readonly P2Y12ReactionUnits: "{P2Y12 Reaction Units}";
         readonly Package: "{Package}";
         readonly PacksDay: "{Packs}/d";
@@ -490,7 +487,7 @@ export declare class RiskEvidenceSynthesisRiskEstimate extends fhir.BackboneElem
         readonly Ratio: "{ratio}";
         readonly RedBloodCellPerMicroliter: "{RBC}/uL";
         readonly RecTiter: "{RecTiter}"; /**
-         * Default constructor for RiskEvidenceSynthesisCertaintyCertaintySubcomponent - initializes any required elements to null if a value is not provided.
+         * Type of subcomponent of certainty rating.
          */
         readonly RelativeQuoteU: "{Relative'U}";
         readonly RelativeViscosity: "{RelativeViscosity}";
@@ -524,9 +521,6 @@ export declare class RiskEvidenceSynthesisRiskEstimate extends fhir.BackboneElem
         readonly PerHighPowerField: "/[HPF]";
         readonly PerInternationalUnit: "/[iU]";
         readonly PerLowPowerField: "/[LPF]";
-        /**
-         * A description of a component of the overall certainty.
-         */
         readonly PerEntity: "/{Entity}";
         readonly PerOif: "/{oif}";
         readonly PerSpecimen: "/{Specimen}";
@@ -556,9 +550,7 @@ export declare class RiskEvidenceSynthesisRiskEstimate extends fhir.BackboneElem
         readonly PerKilogram: "/kg";
         readonly PerKilogramBodyWt: "/kg{body'wt}";
         readonly PerLiter: "/L";
-        readonly PerSquareMeter: "/m2"; /**
-         * Function to perform basic model validation (e.g., check if required elements are present).
-         */
+        readonly PerSquareMeter: "/m2";
         readonly PerMilligram: "/mg";
         readonly PerMinute: "/min";
         readonly PerMilliliter: "/mL";
@@ -670,6 +662,9 @@ export declare class RiskEvidenceSynthesisRiskEstimate extends fhir.BackboneElem
         readonly CentimeterOfMercury: "cm[Hg]";
         readonly SquareCentimeter: "cm2";
         readonly SquareCentimeterPerSecond: "cm2/s";
+        /**
+         * An individiual or organization primarily involved in the creation and maintenance of the content.
+         */
         readonly CubicCentimeter: "cm3";
         readonly CentiPoise: "cP";
         readonly CentiStokes: "cSt";
@@ -719,6 +714,9 @@ export declare class RiskEvidenceSynthesisRiskEstimate extends fhir.BackboneElem
         readonly GramPer24Hour: "g/(24.h)";
         readonly GramPer3Days: "g/(3.d)";
         readonly GramPer4Hour: "g/(4.h)";
+        /**
+         * Typically, this is used for identifiers that can go in an HL7 V3 II (instance identifier) data type, and can then identify this risk evidence synthesis outside of FHIR, where it is not possible to use the logical URI.
+         */
         readonly GramPer48Hour: "g/(48.h)";
         readonly GramPer5Hour: "g/(5.h)";
         readonly GramPer6Hour: "g/(6.h)";
@@ -726,9 +724,6 @@ export declare class RiskEvidenceSynthesisRiskEstimate extends fhir.BackboneElem
         readonly Gram8AsteriskHour: "g/(8.h)";
         readonly GramPer8HourShift: "g/(8.h){shift}";
         readonly Gram8AsteriskKilogramAsteriskHour: "g/(8.kg.h)";
-        /**
-         * This name does not need to be machine-processing friendly and may contain punctuation, white-space, etc.
-         */
         readonly GramKilogramAsteriskHour: "g/(kg.h)";
         readonly GramKilogramAsteriskMinute: "g/(kg.min)";
         readonly GramPerSpecimen: "g/{specimen}";
@@ -751,9 +746,13 @@ export declare class RiskEvidenceSynthesisRiskEstimate extends fhir.BackboneElem
         readonly GramPerKilogramPerDay: "g/kg/d";
         readonly GramPerKilogramPerHour: "g/kg/h";
         readonly GramPerKilogramPerMinute: "g/kg/min";
-        readonly GramPerLiter: "g/L";
+        readonly GramPerLiter: "g/L"; /**
+         * May be a web site, an email address, a telephone number, etc.
+         */
         readonly GramsPerSquareMeter: "g/m2";
-        readonly GramPerMilligram: "g/mg";
+        readonly GramPerMilligram: "g/mg"; /**
+         * This description can be used to capture details such as why the risk evidence synthesis was built, comments about misuse, instructions for clinical use and interpretation, literature references, examples from the paper world, etc. It is not a rendering of the risk evidence synthesis as conveyed in the 'text' field of the resource itself. This item SHOULD be populated unless the information is available from context (e.g. the language of the risk evidence synthesis is presumed to be the predominant language in the place the risk evidence synthesis was created).
+         */
         readonly GramPerMinute: "g/min";
         readonly GramPerMilliliter: "g/mL";
         readonly GramPerMillimole: "g/mmol";
@@ -763,10 +762,11 @@ export declare class RiskEvidenceSynthesisRiskEstimate extends fhir.BackboneElem
         readonly GigaBecquerel: "GBq";
         readonly Gray: "Gy";
         readonly Hour: "h";
-        readonly Henry: "H"; /**
-         * It may be possible for the risk evidence synthesis to be used in jurisdictions other than those for which it was originally designed or intended.
-         */
+        readonly Henry: "H";
         readonly Hectoliter: "hL";
+        /**
+         * A human-readable string to clarify or explain concepts about the resource.
+         */
         readonly Hertz: "Hz";
         readonly Joule: "J";
         readonly JoulePerLiter: "J/L";
@@ -803,16 +803,12 @@ export declare class RiskEvidenceSynthesisRiskEstimate extends fhir.BackboneElem
         readonly KiloUnitHour: "kU/h";
         readonly KiloenzymeUnitPerLiter: "kU/L";
         readonly KiloEnzymeUnitPerLiterClass: "kU/L{class}";
-        /**
-         * Type of study eg randomized trial.
+        readonly KiloEnzymeUnitPerMilliliter: "kU/mL"; /**
+         * Each related artifact is either an attachment, or a reference to another resource, but not both.
          */
-        readonly KiloEnzymeUnitPerMilliliter: "kU/mL";
         readonly Liter: "L";
         readonly LiterAsteriskSecondPower2Second: "L.s2/s";
         readonly LiterPer24Hour: "L/(24.h)";
-        /**
-         * A reference to a EvidenceVariable resource that defines the exposure for the research.
-         */
         readonly LiterPer8Hour: "L/(8.h)";
         readonly LiterPerMinutePerSquareMeter: "L/(min.m2)";
         readonly LiterPerDay: "L/d";

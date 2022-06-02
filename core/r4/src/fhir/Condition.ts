@@ -443,7 +443,13 @@ export class Condition extends fhir.DomainResource {
       issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType fhir: Condition.resourceType:"Condition"', expression: [expression] });
     }
     if (this["identifier"]) { this.identifier.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.identifier[${i}]`)); }) }
+    if (this['clinicalStatus'] && (!this.clinicalStatus.hasCodingFromObject(ConditionClinicalCodings))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'clinicalStatus (Condition.clinicalStatus) of type CodeableConcept is missing code for Required binding to: ConditionClinical', expression: [expression] });
+    }
     if (this["clinicalStatus"]) { issues.push(...this.clinicalStatus.doModelValidation(expression+'.clinicalStatus')); }
+    if (this['verificationStatus'] && (!this.verificationStatus.hasCodingFromObject(ConditionVerStatusCodings))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'verificationStatus (Condition.verificationStatus) of type CodeableConcept is missing code for Required binding to: ConditionVerStatus', expression: [expression] });
+    }
     if (this["verificationStatus"]) { issues.push(...this.verificationStatus.doModelValidation(expression+'.verificationStatus')); }
     if (this["category"]) { this.category.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.category[${i}]`)); }) }
     if (this["severity"]) { issues.push(...this.severity.doModelValidation(expression+'.severity')); }

@@ -616,7 +616,7 @@ export class CoverageEligibilityRequest extends fhir.DomainResource {
       issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status fhir: CoverageEligibilityRequest.status:code', expression: [expression] });
     }
     if (this['status'] && (!Object.values(FmStatusCodes).includes(this.status.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property status fhir: CoverageEligibilityRequest.status:code Required binding to: FmStatus', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'status (CoverageEligibilityRequest.status) of type code is missing code for Required binding to: FmStatus', expression: [expression] });
     }
     if (this["status"]) { issues.push(...this.status.doModelValidation(expression+'.status')); }
     if (this["priority"]) { issues.push(...this.priority.doModelValidation(expression+'.priority')); }
@@ -630,7 +630,7 @@ export class CoverageEligibilityRequest extends fhir.DomainResource {
     if (this['purpose']) {
       this.purpose.forEach((v) => {
         if (!Object.values(EligibilityrequestPurposeCodes).includes(v.value as any)) {
-          issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property purpose fhir: CoverageEligibilityRequest.purpose:code Required binding to: EligibilityrequestPurpose', expression: [expression] });
+          issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'purpose (CoverageEligibilityRequest.purpose) of type code is missing code for Required binding to: EligibilityrequestPurpose', expression: [expression] });
         }
       });
     }

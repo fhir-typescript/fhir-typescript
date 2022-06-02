@@ -364,6 +364,9 @@ export class RiskEvidenceSynthesisRiskEstimate extends fhir.BackboneElement {
     if (this["description"]) { issues.push(...this.description.doModelValidation(expression+'.description')); }
     if (this["type"]) { issues.push(...this.type.doModelValidation(expression+'.type')); }
     if (this["value"]) { issues.push(...this.value.doModelValidation(expression+'.value')); }
+    if (this['unitOfMeasure'] && (!this.unitOfMeasure.hasCodingFromObject(UcumUnitsCodings))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'unitOfMeasure (RiskEvidenceSynthesis.riskEstimate.unitOfMeasure) of type CodeableConcept is missing code for Required binding to: UcumUnits', expression: [expression] });
+    }
     if (this["unitOfMeasure"]) { issues.push(...this.unitOfMeasure.doModelValidation(expression+'.unitOfMeasure')); }
     if (this["denominatorCount"]) { issues.push(...this.denominatorCount.doModelValidation(expression+'.denominatorCount')); }
     if (this["numeratorCount"]) { issues.push(...this.numeratorCount.doModelValidation(expression+'.numeratorCount')); }
@@ -963,7 +966,7 @@ export class RiskEvidenceSynthesis extends fhir.DomainResource {
       issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status fhir: RiskEvidenceSynthesis.status:code', expression: [expression] });
     }
     if (this['status'] && (!Object.values(PublicationStatusCodes).includes(this.status.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property status fhir: RiskEvidenceSynthesis.status:code Required binding to: PublicationStatus', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'status (RiskEvidenceSynthesis.status) of type code is missing code for Required binding to: PublicationStatus', expression: [expression] });
     }
     if (this["status"]) { issues.push(...this.status.doModelValidation(expression+'.status')); }
     if (this["date"]) { issues.push(...this.date.doModelValidation(expression+'.date')); }

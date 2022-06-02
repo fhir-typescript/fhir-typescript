@@ -199,14 +199,14 @@ export class MolecularSequenceReferenceSeq extends fhir.BackboneElement {
     if (this["chromosome"]) { issues.push(...this.chromosome.doModelValidation(expression+'.chromosome')); }
     if (this["genomeBuild"]) { issues.push(...this.genomeBuild.doModelValidation(expression+'.genomeBuild')); }
     if (this['orientation'] && (!Object.values(OrientationTypeCodes).includes(this.orientation.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property orientation fhir: MolecularSequence.referenceSeq.orientation:code Required binding to: OrientationType', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'orientation (MolecularSequence.referenceSeq.orientation) of type code is missing code for Required binding to: OrientationType', expression: [expression] });
     }
     if (this["orientation"]) { issues.push(...this.orientation.doModelValidation(expression+'.orientation')); }
     if (this["referenceSeqId"]) { issues.push(...this.referenceSeqId.doModelValidation(expression+'.referenceSeqId')); }
     if (this["referenceSeqPointer"]) { issues.push(...this.referenceSeqPointer.doModelValidation(expression+'.referenceSeqPointer')); }
     if (this["referenceSeqString"]) { issues.push(...this.referenceSeqString.doModelValidation(expression+'.referenceSeqString')); }
     if (this['strand'] && (!Object.values(StrandTypeCodes).includes(this.strand.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property strand fhir: MolecularSequence.referenceSeq.strand:code Required binding to: StrandType', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'strand (MolecularSequence.referenceSeq.strand) of type code is missing code for Required binding to: StrandType', expression: [expression] });
     }
     if (this["strand"]) { issues.push(...this.strand.doModelValidation(expression+'.strand')); }
     if (this["windowStart"]) { issues.push(...this.windowStart.doModelValidation(expression+'.windowStart')); }
@@ -779,7 +779,7 @@ export class MolecularSequenceQuality extends fhir.BackboneElement {
       issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property type fhir: MolecularSequence.quality.type:code', expression: [expression] });
     }
     if (this['type'] && (!Object.values(QualityTypeCodes).includes(this.type.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property type fhir: MolecularSequence.quality.type:code Required binding to: QualityType', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'type (MolecularSequence.quality.type) of type code is missing code for Required binding to: QualityType', expression: [expression] });
     }
     if (this["type"]) { issues.push(...this.type.doModelValidation(expression+'.type')); }
     if (this["standardSequence"]) { issues.push(...this.standardSequence.doModelValidation(expression+'.standardSequence')); }
@@ -938,7 +938,7 @@ export class MolecularSequenceRepository extends fhir.BackboneElement {
       issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property type fhir: MolecularSequence.repository.type:code', expression: [expression] });
     }
     if (this['type'] && (!Object.values(RepositoryTypeCodes).includes(this.type.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property type fhir: MolecularSequence.repository.type:code Required binding to: RepositoryType', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'type (MolecularSequence.repository.type) of type code is missing code for Required binding to: RepositoryType', expression: [expression] });
     }
     if (this["type"]) { issues.push(...this.type.doModelValidation(expression+'.type')); }
     if (this["url"]) { issues.push(...this.url.doModelValidation(expression+'.url')); }
@@ -1403,7 +1403,7 @@ export class MolecularSequence extends fhir.DomainResource {
     }
     if (this["identifier"]) { this.identifier.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.identifier[${i}]`)); }) }
     if (this['type'] && (!Object.values(SequenceTypeCodes).includes(this.type.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property type fhir: MolecularSequence.type:code Required binding to: SequenceType', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'type (MolecularSequence.type) of type code is missing code for Required binding to: SequenceType', expression: [expression] });
     }
     if (this["type"]) { issues.push(...this.type.doModelValidation(expression+'.type')); }
     if (!this['coordinateSystem']) {

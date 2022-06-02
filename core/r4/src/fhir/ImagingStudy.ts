@@ -683,7 +683,7 @@ export class ImagingStudy extends fhir.DomainResource {
       issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status fhir: ImagingStudy.status:code', expression: [expression] });
     }
     if (this['status'] && (!Object.values(ImagingstudyStatusCodes).includes(this.status.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property status fhir: ImagingStudy.status:code Required binding to: ImagingstudyStatus', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'status (ImagingStudy.status) of type code is missing code for Required binding to: ImagingstudyStatus', expression: [expression] });
     }
     if (this["status"]) { issues.push(...this.status.doModelValidation(expression+'.status')); }
     if (this["modality"]) { this.modality.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.modality[${i}]`)); }) }

@@ -635,7 +635,7 @@ export class SearchParameter extends fhir.DomainResource {
       issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status fhir: SearchParameter.status:code', expression: [expression] });
     }
     if (this['status'] && (!Object.values(PublicationStatusCodes).includes(this.status.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property status fhir: SearchParameter.status:code Required binding to: PublicationStatus', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'status (SearchParameter.status) of type code is missing code for Required binding to: PublicationStatus', expression: [expression] });
     }
     if (this["status"]) { issues.push(...this.status.doModelValidation(expression+'.status')); }
     if (this["experimental"]) { issues.push(...this.experimental.doModelValidation(expression+'.experimental')); }
@@ -663,7 +663,7 @@ export class SearchParameter extends fhir.DomainResource {
     if (this['base']) {
       this.base.forEach((v) => {
         if (!Object.values(ResourceTypesCodes).includes(v.value as any)) {
-          issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property base fhir: SearchParameter.base:code Required binding to: ResourceTypes', expression: [expression] });
+          issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'base (SearchParameter.base) of type code is missing code for Required binding to: ResourceTypes', expression: [expression] });
         }
       });
     }
@@ -672,19 +672,19 @@ export class SearchParameter extends fhir.DomainResource {
       issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property type fhir: SearchParameter.type:code', expression: [expression] });
     }
     if (this['type'] && (!Object.values(SearchParamTypeCodes).includes(this.type.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property type fhir: SearchParameter.type:code Required binding to: SearchParamType', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'type (SearchParameter.type) of type code is missing code for Required binding to: SearchParamType', expression: [expression] });
     }
     if (this["type"]) { issues.push(...this.type.doModelValidation(expression+'.type')); }
     if (this["expression"]) { issues.push(...this.expression.doModelValidation(expression+'.expression')); }
     if (this["xpath"]) { issues.push(...this.xpath.doModelValidation(expression+'.xpath')); }
     if (this['xpathUsage'] && (!Object.values(SearchXpathUsageCodes).includes(this.xpathUsage.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property xpathUsage fhir: SearchParameter.xpathUsage:code Required binding to: SearchXpathUsage', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'xpathUsage (SearchParameter.xpathUsage) of type code is missing code for Required binding to: SearchXpathUsage', expression: [expression] });
     }
     if (this["xpathUsage"]) { issues.push(...this.xpathUsage.doModelValidation(expression+'.xpathUsage')); }
     if (this['target']) {
       this.target.forEach((v) => {
         if (!Object.values(ResourceTypesCodes).includes(v.value as any)) {
-          issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property target fhir: SearchParameter.target:code Required binding to: ResourceTypes', expression: [expression] });
+          issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'target (SearchParameter.target) of type code is missing code for Required binding to: ResourceTypes', expression: [expression] });
         }
       });
     }
@@ -694,7 +694,7 @@ export class SearchParameter extends fhir.DomainResource {
     if (this['comparator']) {
       this.comparator.forEach((v) => {
         if (!Object.values(SearchComparatorCodes).includes(v.value as any)) {
-          issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property comparator fhir: SearchParameter.comparator:code Required binding to: SearchComparator', expression: [expression] });
+          issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'comparator (SearchParameter.comparator) of type code is missing code for Required binding to: SearchComparator', expression: [expression] });
         }
       });
     }
@@ -702,7 +702,7 @@ export class SearchParameter extends fhir.DomainResource {
     if (this['modifier']) {
       this.modifier.forEach((v) => {
         if (!Object.values(SearchModifierCodes).includes(v.value as any)) {
-          issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property modifier fhir: SearchParameter.modifier:code Required binding to: SearchModifier', expression: [expression] });
+          issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'modifier (SearchParameter.modifier) of type code is missing code for Required binding to: SearchModifier', expression: [expression] });
         }
       });
     }

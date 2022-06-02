@@ -188,7 +188,7 @@ export class AppointmentResponse extends fhir.DomainResource {
       issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property participantStatus fhir: AppointmentResponse.participantStatus:code', expression: [expression] });
     }
     if (this['participantStatus'] && (!Object.values(ParticipationstatusCodes).includes(this.participantStatus.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property participantStatus fhir: AppointmentResponse.participantStatus:code Required binding to: Participationstatus', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'participantStatus (AppointmentResponse.participantStatus) of type code is missing code for Required binding to: Participationstatus', expression: [expression] });
     }
     if (this["participantStatus"]) { issues.push(...this.participantStatus.doModelValidation(expression+'.participantStatus')); }
     if (this["comment"]) { issues.push(...this.comment.doModelValidation(expression+'.comment')); }

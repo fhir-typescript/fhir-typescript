@@ -196,10 +196,10 @@ export declare class ImplementationGuideGlobal extends fhir.BackboneElement {
         readonly MedicinalProductPackaged: "MedicinalProductPackaged";
         readonly MedicinalProductPharmaceutical: "MedicinalProductPharmaceutical";
         readonly MedicinalProductUndesirableEffect: "MedicinalProductUndesirableEffect";
-        readonly MessageDefinition: "MessageDefinition";
-        readonly MessageHeader: "MessageHeader"; /**
-         * Internal flag to properly serialize choice-type element ImplementationGuide.definition.page.name[x]
+        readonly MessageDefinition: "MessageDefinition"; /**
+         * Mapping of this datatype to a FHIR equivalent
          */
+        readonly MessageHeader: "MessageHeader";
         readonly MolecularSequence: "MolecularSequence";
         readonly NamingSystem: "NamingSystem";
         readonly NutritionOrder: "NutritionOrder";
@@ -1420,7 +1420,9 @@ export declare class ImplementationGuide extends fhir.DomainResource {
         readonly OpenLDAPPublicLicenseV201: "OLDAP-2.0.1";
         readonly OpenLDAPPublicLicenseV21: "OLDAP-2.1";
         readonly OpenLDAPPublicLicenseV22: "OLDAP-2.2";
-        readonly OpenLDAPPublicLicenseV221: "OLDAP-2.2.1";
+        readonly OpenLDAPPublicLicenseV221: "OLDAP-2.2.1"; /**
+         * Extended properties for primitive element: ImplementationGuide.definition.parameter.code
+         */
         readonly OpenLDAPPublicLicense222: "OLDAP-2.2.2";
         readonly OpenLDAPPublicLicenseV23: "OLDAP-2.3";
         readonly OpenLDAPPublicLicenseV24: "OLDAP-2.4";
@@ -1443,9 +1445,7 @@ export declare class ImplementationGuide extends fhir.DomainResource {
         readonly PlexusClassworldsLicense: "Plexus";
         readonly PostgreSQLLicense: "PostgreSQL";
         readonly PsfragLicense: "psfrag";
-        readonly PsutilsLicense: "psutils"; /**
-         * Function to perform basic model validation (e.g., check if required elements are present).
-         */
+        readonly PsutilsLicense: "psutils";
         readonly PythonLicense20: "Python-2.0";
         readonly QhullLicense: "Qhull";
         readonly QPublicLicense10: "QPL-1.0";
@@ -1465,8 +1465,13 @@ export declare class ImplementationGuide extends fhir.DomainResource {
         readonly SGIFreeSoftwareLicenseBV11: "SGI-B-1.1";
         readonly SGIFreeSoftwareLicenseBV20: "SGI-B-2.0";
         readonly SimplePublicLicense20: "SimPL-2.0";
+        /**
+         * The source location for the template.
+         */
         readonly SunIndustryStandardsSourceLicenseV11: "SISSL";
-        readonly SunIndustryStandardsSourceLicenseV12: "SISSL-1.2";
+        readonly SunIndustryStandardsSourceLicenseV12: "SISSL-1.2"; /**
+         * The scope in which the template applies.
+         */
         readonly SleepycatLicense: "Sleepycat";
         readonly StandardMLOfNewJerseyLicense: "SMLNJ";
         readonly SecureMessagingProtocolPublicLicense: "SMPPL";
@@ -1497,13 +1502,9 @@ export declare class ImplementationGuide extends fhir.DomainResource {
         readonly WsuipaLicense: "Wsuipa";
         readonly DoWhatTheFAsteriskCkYouWantToPublicLicense: "WTFPL";
         readonly X11License: "X11";
-        readonly XeroxLicense: "Xerox"; /**
-         * Valid arguments for the ImplementationGuideDefinition type.
-         */
+        readonly XeroxLicense: "Xerox";
         readonly XFree86License11: "XFree86-1.1";
-        readonly XinetdLicense: "xinetd"; /**
-         * Groupings are arbitrary sub-divisions of content. Typically, they are used to help build Table of Contents automatically.
-         */
+        readonly XinetdLicense: "xinetd";
         readonly XNetLicense: "Xnet";
         readonly XPPLicense: "xpp";
         readonly XSkatLicense: "XSkat";

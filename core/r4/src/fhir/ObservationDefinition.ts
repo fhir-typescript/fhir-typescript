@@ -280,14 +280,14 @@ export class ObservationDefinitionQualifiedInterval extends fhir.BackboneElement
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'ObservationDefinition.qualifiedInterval' }
     if (this['category'] && (!Object.values(ObservationRangeCategoryCodes).includes(this.category.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property category fhir: ObservationDefinition.qualifiedInterval.category:code Required binding to: ObservationRangeCategory', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'category (ObservationDefinition.qualifiedInterval.category) of type code is missing code for Required binding to: ObservationRangeCategory', expression: [expression] });
     }
     if (this["category"]) { issues.push(...this.category.doModelValidation(expression+'.category')); }
     if (this["range"]) { issues.push(...this.range.doModelValidation(expression+'.range')); }
     if (this["context"]) { issues.push(...this.context.doModelValidation(expression+'.context')); }
     if (this["appliesTo"]) { this.appliesTo.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.appliesTo[${i}]`)); }) }
     if (this['gender'] && (!Object.values(AdministrativeGenderCodes).includes(this.gender.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property gender fhir: ObservationDefinition.qualifiedInterval.gender:code Required binding to: AdministrativeGender', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'gender (ObservationDefinition.qualifiedInterval.gender) of type code is missing code for Required binding to: AdministrativeGender', expression: [expression] });
     }
     if (this["gender"]) { issues.push(...this.gender.doModelValidation(expression+'.gender')); }
     if (this["age"]) { issues.push(...this.age.doModelValidation(expression+'.age')); }
@@ -497,7 +497,7 @@ export class ObservationDefinition extends fhir.DomainResource {
     if (this['permittedDataType']) {
       this.permittedDataType.forEach((v) => {
         if (!Object.values(PermittedDataTypeCodes).includes(v.value as any)) {
-          issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property permittedDataType fhir: ObservationDefinition.permittedDataType:code Required binding to: PermittedDataType', expression: [expression] });
+          issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'permittedDataType (ObservationDefinition.permittedDataType) of type code is missing code for Required binding to: PermittedDataType', expression: [expression] });
         }
       });
     }

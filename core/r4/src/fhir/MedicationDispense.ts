@@ -503,7 +503,7 @@ export class MedicationDispense extends fhir.DomainResource {
       issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status fhir: MedicationDispense.status:code', expression: [expression] });
     }
     if (this['status'] && (!Object.values(MedicationdispenseStatusCodes).includes(this.status.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property status fhir: MedicationDispense.status:code Required binding to: MedicationdispenseStatus', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'status (MedicationDispense.status) of type code is missing code for Required binding to: MedicationdispenseStatus', expression: [expression] });
     }
     if (this["status"]) { issues.push(...this.status.doModelValidation(expression+'.status')); }
     if (this["category"]) { issues.push(...this.category.doModelValidation(expression+'.category')); }

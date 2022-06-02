@@ -339,14 +339,14 @@ export class List extends fhir.DomainResource {
       issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status fhir: List.status:code', expression: [expression] });
     }
     if (this['status'] && (!Object.values(ListStatusCodes).includes(this.status.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property status fhir: List.status:code Required binding to: ListStatus', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'status (List.status) of type code is missing code for Required binding to: ListStatus', expression: [expression] });
     }
     if (this["status"]) { issues.push(...this.status.doModelValidation(expression+'.status')); }
     if (!this['mode']) {
       issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property mode fhir: List.mode:code', expression: [expression] });
     }
     if (this['mode'] && (!Object.values(ListModeCodes).includes(this.mode.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property mode fhir: List.mode:code Required binding to: ListMode', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'mode (List.mode) of type code is missing code for Required binding to: ListMode', expression: [expression] });
     }
     if (this["mode"]) { issues.push(...this.mode.doModelValidation(expression+'.mode')); }
     if (this["title"]) { issues.push(...this.title.doModelValidation(expression+'.title')); }

@@ -179,7 +179,7 @@ export class ProvenanceEntity extends fhir.BackboneElement {
       issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property role fhir: Provenance.entity.role:code', expression: [expression] });
     }
     if (this['role'] && (!Object.values(ProvenanceEntityRoleCodes).includes(this.role.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property role fhir: Provenance.entity.role:code Required binding to: ProvenanceEntityRole', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'role (Provenance.entity.role) of type code is missing code for Required binding to: ProvenanceEntityRole', expression: [expression] });
     }
     if (this["role"]) { issues.push(...this.role.doModelValidation(expression+'.role')); }
     if (!this['what']) {

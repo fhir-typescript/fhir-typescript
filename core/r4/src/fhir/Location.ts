@@ -227,7 +227,7 @@ export class LocationHoursOfOperation extends fhir.BackboneElement {
     if (this['daysOfWeek']) {
       this.daysOfWeek.forEach((v) => {
         if (!Object.values(DaysOfWeekCodes).includes(v.value as any)) {
-          issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property daysOfWeek fhir: Location.hoursOfOperation.daysOfWeek:code Required binding to: DaysOfWeek', expression: [expression] });
+          issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'daysOfWeek (Location.hoursOfOperation.daysOfWeek) of type code is missing code for Required binding to: DaysOfWeek', expression: [expression] });
         }
       });
     }
@@ -513,7 +513,7 @@ export class Location extends fhir.DomainResource {
     }
     if (this["identifier"]) { this.identifier.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.identifier[${i}]`)); }) }
     if (this['status'] && (!Object.values(LocationStatusCodes).includes(this.status.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property status fhir: Location.status:code Required binding to: LocationStatus', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'status (Location.status) of type code is missing code for Required binding to: LocationStatus', expression: [expression] });
     }
     if (this["status"]) { issues.push(...this.status.doModelValidation(expression+'.status')); }
     if (this["operationalStatus"]) { issues.push(...this.operationalStatus.doModelValidation(expression+'.operationalStatus')); }
@@ -521,7 +521,7 @@ export class Location extends fhir.DomainResource {
     if (this["alias"]) { this.alias.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.alias[${i}]`)); }) }
     if (this["description"]) { issues.push(...this.description.doModelValidation(expression+'.description')); }
     if (this['mode'] && (!Object.values(LocationModeCodes).includes(this.mode.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property mode fhir: Location.mode:code Required binding to: LocationMode', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'mode (Location.mode) of type code is missing code for Required binding to: LocationMode', expression: [expression] });
     }
     if (this["mode"]) { issues.push(...this.mode.doModelValidation(expression+'.mode')); }
     if (this["type"]) { this.type.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.type[${i}]`)); }) }

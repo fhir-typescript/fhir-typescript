@@ -226,7 +226,7 @@ export class DeviceUseStatement extends fhir.DomainResource {
       issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status fhir: DeviceUseStatement.status:code', expression: [expression] });
     }
     if (this['status'] && (!Object.values(DeviceStatementStatusCodes).includes(this.status.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property status fhir: DeviceUseStatement.status:code Required binding to: DeviceStatementStatus', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'status (DeviceUseStatement.status) of type code is missing code for Required binding to: DeviceStatementStatus', expression: [expression] });
     }
     if (this["status"]) { issues.push(...this.status.doModelValidation(expression+'.status')); }
     if (!this['subject']) {

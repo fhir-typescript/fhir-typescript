@@ -155,7 +155,7 @@ export class InvoiceLineItemPriceComponent extends fhir.BackboneElement {
       issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property type fhir: Invoice.lineItem.priceComponent.type:code', expression: [expression] });
     }
     if (this['type'] && (!Object.values(InvoicePriceComponentTypeCodes).includes(this.type.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property type fhir: Invoice.lineItem.priceComponent.type:code Required binding to: InvoicePriceComponentType', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'type (Invoice.lineItem.priceComponent.type) of type code is missing code for Required binding to: InvoicePriceComponentType', expression: [expression] });
     }
     if (this["type"]) { issues.push(...this.type.doModelValidation(expression+'.type')); }
     if (this["code"]) { issues.push(...this.code.doModelValidation(expression+'.code')); }
@@ -480,7 +480,7 @@ export class Invoice extends fhir.DomainResource {
       issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status fhir: Invoice.status:code', expression: [expression] });
     }
     if (this['status'] && (!Object.values(InvoiceStatusCodes).includes(this.status.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property status fhir: Invoice.status:code Required binding to: InvoiceStatus', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'status (Invoice.status) of type code is missing code for Required binding to: InvoiceStatus', expression: [expression] });
     }
     if (this["status"]) { issues.push(...this.status.doModelValidation(expression+'.status')); }
     if (this["cancelledReason"]) { issues.push(...this.cancelledReason.doModelValidation(expression+'.cancelledReason')); }

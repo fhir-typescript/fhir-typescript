@@ -440,7 +440,7 @@ export class ClinicalImpression extends fhir.DomainResource {
       issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status fhir: ClinicalImpression.status:code', expression: [expression] });
     }
     if (this['status'] && (!Object.values(ClinicalimpressionStatusCodes).includes(this.status.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property status fhir: ClinicalImpression.status:code Required binding to: ClinicalimpressionStatus', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'status (ClinicalImpression.status) of type code is missing code for Required binding to: ClinicalimpressionStatus', expression: [expression] });
     }
     if (this["status"]) { issues.push(...this.status.doModelValidation(expression+'.status')); }
     if (this["statusReason"]) { issues.push(...this.statusReason.doModelValidation(expression+'.statusReason')); }

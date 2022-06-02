@@ -456,7 +456,7 @@ export class AdverseEvent extends fhir.DomainResource {
       issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property actuality fhir: AdverseEvent.actuality:code', expression: [expression] });
     }
     if (this['actuality'] && (!Object.values(AdverseEventActualityCodes).includes(this.actuality.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property actuality fhir: AdverseEvent.actuality:code Required binding to: AdverseEventActuality', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'actuality (AdverseEvent.actuality) of type code is missing code for Required binding to: AdverseEventActuality', expression: [expression] });
     }
     if (this["actuality"]) { issues.push(...this.actuality.doModelValidation(expression+'.actuality')); }
     if (this["category"]) { this.category.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.category[${i}]`)); }) }
@@ -472,7 +472,13 @@ export class AdverseEvent extends fhir.DomainResource {
     if (this["resultingCondition"]) { this.resultingCondition.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.resultingCondition[${i}]`)); }) }
     if (this["location"]) { issues.push(...this.location.doModelValidation(expression+'.location')); }
     if (this["seriousness"]) { issues.push(...this.seriousness.doModelValidation(expression+'.seriousness')); }
+    if (this['severity'] && (!this.severity.hasCodingFromObject(AdverseEventSeverityCodings))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'severity (AdverseEvent.severity) of type CodeableConcept is missing code for Required binding to: AdverseEventSeverity', expression: [expression] });
+    }
     if (this["severity"]) { issues.push(...this.severity.doModelValidation(expression+'.severity')); }
+    if (this['outcome'] && (!this.outcome.hasCodingFromObject(AdverseEventOutcomeCodings))) {
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'outcome (AdverseEvent.outcome) of type CodeableConcept is missing code for Required binding to: AdverseEventOutcome', expression: [expression] });
+    }
     if (this["outcome"]) { issues.push(...this.outcome.doModelValidation(expression+'.outcome')); }
     if (this["recorder"]) { issues.push(...this.recorder.doModelValidation(expression+'.recorder')); }
     if (this["contributor"]) { this.contributor.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.contributor[${i}]`)); }) }

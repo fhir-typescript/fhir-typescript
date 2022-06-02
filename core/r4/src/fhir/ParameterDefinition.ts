@@ -177,7 +177,7 @@ export class ParameterDefinition extends fhir.FhirElement {
       issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property use fhir: ParameterDefinition.use:code', expression: [expression] });
     }
     if (this['use'] && (!Object.values(OperationParameterUseCodes).includes(this.use.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property use fhir: ParameterDefinition.use:code Required binding to: OperationParameterUse', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'use (ParameterDefinition.use) of type code is missing code for Required binding to: OperationParameterUse', expression: [expression] });
     }
     if (this["use"]) { issues.push(...this.use.doModelValidation(expression+'.use')); }
     if (this["min"]) { issues.push(...this.min.doModelValidation(expression+'.min')); }
@@ -187,7 +187,7 @@ export class ParameterDefinition extends fhir.FhirElement {
       issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property type fhir: ParameterDefinition.type:code', expression: [expression] });
     }
     if (this['type'] && (!Object.values(AllTypesCodes).includes(this.type.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property type fhir: ParameterDefinition.type:code Required binding to: AllTypes', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'type (ParameterDefinition.type) of type code is missing code for Required binding to: AllTypes', expression: [expression] });
     }
     if (this["type"]) { issues.push(...this.type.doModelValidation(expression+'.type')); }
     if (this["profile"]) { issues.push(...this.profile.doModelValidation(expression+'.profile')); }

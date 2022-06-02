@@ -253,7 +253,7 @@ export class ConceptMapGroupElementTarget extends fhir.BackboneElement {
       issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property equivalence fhir: ConceptMap.group.element.target.equivalence:code', expression: [expression] });
     }
     if (this['equivalence'] && (!Object.values(ConceptMapEquivalenceCodes).includes(this.equivalence.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property equivalence fhir: ConceptMap.group.element.target.equivalence:code Required binding to: ConceptMapEquivalence', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'equivalence (ConceptMap.group.element.target.equivalence) of type code is missing code for Required binding to: ConceptMapEquivalence', expression: [expression] });
     }
     if (this["equivalence"]) { issues.push(...this.equivalence.doModelValidation(expression+'.equivalence')); }
     if (this["comment"]) { issues.push(...this.comment.doModelValidation(expression+'.comment')); }
@@ -443,7 +443,7 @@ export class ConceptMapGroupUnmapped extends fhir.BackboneElement {
       issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property mode fhir: ConceptMap.group.unmapped.mode:code', expression: [expression] });
     }
     if (this['mode'] && (!Object.values(ConceptmapUnmappedModeCodes).includes(this.mode.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property mode fhir: ConceptMap.group.unmapped.mode:code Required binding to: ConceptmapUnmappedMode', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'mode (ConceptMap.group.unmapped.mode) of type code is missing code for Required binding to: ConceptmapUnmappedMode', expression: [expression] });
     }
     if (this["mode"]) { issues.push(...this.mode.doModelValidation(expression+'.mode')); }
     if (this["code"]) { issues.push(...this.code.doModelValidation(expression+'.code')); }
@@ -921,7 +921,7 @@ export class ConceptMap extends fhir.DomainResource {
       issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status fhir: ConceptMap.status:code', expression: [expression] });
     }
     if (this['status'] && (!Object.values(PublicationStatusCodes).includes(this.status.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property status fhir: ConceptMap.status:code Required binding to: PublicationStatus', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'status (ConceptMap.status) of type code is missing code for Required binding to: PublicationStatus', expression: [expression] });
     }
     if (this["status"]) { issues.push(...this.status.doModelValidation(expression+'.status')); }
     if (this["experimental"]) { issues.push(...this.experimental.doModelValidation(expression+'.experimental')); }

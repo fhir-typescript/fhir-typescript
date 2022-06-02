@@ -136,7 +136,7 @@ export class NamingSystemUniqueId extends fhir.BackboneElement {
       issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property type fhir: NamingSystem.uniqueId.type:code', expression: [expression] });
     }
     if (this['type'] && (!Object.values(NamingsystemIdentifierTypeCodes).includes(this.type.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property type fhir: NamingSystem.uniqueId.type:code Required binding to: NamingsystemIdentifierType', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'type (NamingSystem.uniqueId.type) of type code is missing code for Required binding to: NamingsystemIdentifierType', expression: [expression] });
     }
     if (this["type"]) { issues.push(...this.type.doModelValidation(expression+'.type')); }
     if (!this['value']) {
@@ -402,14 +402,14 @@ export class NamingSystem extends fhir.DomainResource {
       issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status fhir: NamingSystem.status:code', expression: [expression] });
     }
     if (this['status'] && (!Object.values(PublicationStatusCodes).includes(this.status.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property status fhir: NamingSystem.status:code Required binding to: PublicationStatus', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'status (NamingSystem.status) of type code is missing code for Required binding to: PublicationStatus', expression: [expression] });
     }
     if (this["status"]) { issues.push(...this.status.doModelValidation(expression+'.status')); }
     if (!this['kind']) {
       issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property kind fhir: NamingSystem.kind:code', expression: [expression] });
     }
     if (this['kind'] && (!Object.values(NamingsystemTypeCodes).includes(this.kind.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property kind fhir: NamingSystem.kind:code Required binding to: NamingsystemType', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'kind (NamingSystem.kind) of type code is missing code for Required binding to: NamingsystemType', expression: [expression] });
     }
     if (this["kind"]) { issues.push(...this.kind.doModelValidation(expression+'.kind')); }
     if (!this['date']) {

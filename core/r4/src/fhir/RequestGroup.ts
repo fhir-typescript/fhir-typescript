@@ -112,7 +112,7 @@ export class RequestGroupActionCondition extends fhir.BackboneElement {
       issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property kind fhir: RequestGroup.action.condition.kind:code', expression: [expression] });
     }
     if (this['kind'] && (!Object.values(ActionConditionKindCodes).includes(this.kind.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property kind fhir: RequestGroup.action.condition.kind:code Required binding to: ActionConditionKind', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'kind (RequestGroup.action.condition.kind) of type code is missing code for Required binding to: ActionConditionKind', expression: [expression] });
     }
     if (this["kind"]) { issues.push(...this.kind.doModelValidation(expression+'.kind')); }
     if (this["expression"]) { issues.push(...this.expression.doModelValidation(expression+'.expression')); }
@@ -218,7 +218,7 @@ export class RequestGroupActionRelatedAction extends fhir.BackboneElement {
       issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property relationship fhir: RequestGroup.action.relatedAction.relationship:code', expression: [expression] });
     }
     if (this['relationship'] && (!Object.values(ActionRelationshipTypeCodes).includes(this.relationship.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property relationship fhir: RequestGroup.action.relatedAction.relationship:code Required binding to: ActionRelationshipType', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'relationship (RequestGroup.action.relatedAction.relationship) of type code is missing code for Required binding to: ActionRelationshipType', expression: [expression] });
     }
     if (this["relationship"]) { issues.push(...this.relationship.doModelValidation(expression+'.relationship')); }
     return issues;
@@ -588,7 +588,7 @@ export class RequestGroupAction extends fhir.BackboneElement {
     if (this["description"]) { issues.push(...this.description.doModelValidation(expression+'.description')); }
     if (this["textEquivalent"]) { issues.push(...this.textEquivalent.doModelValidation(expression+'.textEquivalent')); }
     if (this['priority'] && (!Object.values(RequestPriorityCodes).includes(this.priority.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property priority fhir: RequestGroup.action.priority:code Required binding to: RequestPriority', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'priority (RequestGroup.action.priority) of type code is missing code for Required binding to: RequestPriority', expression: [expression] });
     }
     if (this["priority"]) { issues.push(...this.priority.doModelValidation(expression+'.priority')); }
     if (this["code"]) { this.code.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.code[${i}]`)); }) }
@@ -598,23 +598,23 @@ export class RequestGroupAction extends fhir.BackboneElement {
     if (this["participant"]) { this.participant.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.participant[${i}]`)); }) }
     if (this["type"]) { issues.push(...this.type.doModelValidation(expression+'.type')); }
     if (this['groupingBehavior'] && (!Object.values(ActionGroupingBehaviorCodes).includes(this.groupingBehavior.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property groupingBehavior fhir: RequestGroup.action.groupingBehavior:code Required binding to: ActionGroupingBehavior', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'groupingBehavior (RequestGroup.action.groupingBehavior) of type code is missing code for Required binding to: ActionGroupingBehavior', expression: [expression] });
     }
     if (this["groupingBehavior"]) { issues.push(...this.groupingBehavior.doModelValidation(expression+'.groupingBehavior')); }
     if (this['selectionBehavior'] && (!Object.values(ActionSelectionBehaviorCodes).includes(this.selectionBehavior.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property selectionBehavior fhir: RequestGroup.action.selectionBehavior:code Required binding to: ActionSelectionBehavior', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'selectionBehavior (RequestGroup.action.selectionBehavior) of type code is missing code for Required binding to: ActionSelectionBehavior', expression: [expression] });
     }
     if (this["selectionBehavior"]) { issues.push(...this.selectionBehavior.doModelValidation(expression+'.selectionBehavior')); }
     if (this['requiredBehavior'] && (!Object.values(ActionRequiredBehaviorCodes).includes(this.requiredBehavior.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property requiredBehavior fhir: RequestGroup.action.requiredBehavior:code Required binding to: ActionRequiredBehavior', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'requiredBehavior (RequestGroup.action.requiredBehavior) of type code is missing code for Required binding to: ActionRequiredBehavior', expression: [expression] });
     }
     if (this["requiredBehavior"]) { issues.push(...this.requiredBehavior.doModelValidation(expression+'.requiredBehavior')); }
     if (this['precheckBehavior'] && (!Object.values(ActionPrecheckBehaviorCodes).includes(this.precheckBehavior.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property precheckBehavior fhir: RequestGroup.action.precheckBehavior:code Required binding to: ActionPrecheckBehavior', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'precheckBehavior (RequestGroup.action.precheckBehavior) of type code is missing code for Required binding to: ActionPrecheckBehavior', expression: [expression] });
     }
     if (this["precheckBehavior"]) { issues.push(...this.precheckBehavior.doModelValidation(expression+'.precheckBehavior')); }
     if (this['cardinalityBehavior'] && (!Object.values(ActionCardinalityBehaviorCodes).includes(this.cardinalityBehavior.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property cardinalityBehavior fhir: RequestGroup.action.cardinalityBehavior:code Required binding to: ActionCardinalityBehavior', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'cardinalityBehavior (RequestGroup.action.cardinalityBehavior) of type code is missing code for Required binding to: ActionCardinalityBehavior', expression: [expression] });
     }
     if (this["cardinalityBehavior"]) { issues.push(...this.cardinalityBehavior.doModelValidation(expression+'.cardinalityBehavior')); }
     if (this["resource"]) { issues.push(...this.resource.doModelValidation(expression+'.resource')); }
@@ -913,18 +913,18 @@ export class RequestGroup extends fhir.DomainResource {
       issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status fhir: RequestGroup.status:code', expression: [expression] });
     }
     if (this['status'] && (!Object.values(RequestStatusCodes).includes(this.status.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property status fhir: RequestGroup.status:code Required binding to: RequestStatus', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'status (RequestGroup.status) of type code is missing code for Required binding to: RequestStatus', expression: [expression] });
     }
     if (this["status"]) { issues.push(...this.status.doModelValidation(expression+'.status')); }
     if (!this['intent']) {
       issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property intent fhir: RequestGroup.intent:code', expression: [expression] });
     }
     if (this['intent'] && (!Object.values(RequestIntentCodes).includes(this.intent.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property intent fhir: RequestGroup.intent:code Required binding to: RequestIntent', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'intent (RequestGroup.intent) of type code is missing code for Required binding to: RequestIntent', expression: [expression] });
     }
     if (this["intent"]) { issues.push(...this.intent.doModelValidation(expression+'.intent')); }
     if (this['priority'] && (!Object.values(RequestPriorityCodes).includes(this.priority.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property priority fhir: RequestGroup.priority:code Required binding to: RequestPriority', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'priority (RequestGroup.priority) of type code is missing code for Required binding to: RequestPriority', expression: [expression] });
     }
     if (this["priority"]) { issues.push(...this.priority.doModelValidation(expression+'.priority')); }
     if (this["code"]) { issues.push(...this.code.doModelValidation(expression+'.code')); }

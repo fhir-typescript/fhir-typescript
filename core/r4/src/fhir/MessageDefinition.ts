@@ -127,7 +127,7 @@ export class MessageDefinitionFocus extends fhir.BackboneElement {
       issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property code fhir: MessageDefinition.focus.code:code', expression: [expression] });
     }
     if (this['code'] && (!Object.values(ResourceTypesCodes).includes(this.code.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property code fhir: MessageDefinition.focus.code:code Required binding to: ResourceTypes', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'code (MessageDefinition.focus.code) of type code is missing code for Required binding to: ResourceTypes', expression: [expression] });
     }
     if (this["code"]) { issues.push(...this.code.doModelValidation(expression+'.code')); }
     if (this["profile"]) { issues.push(...this.profile.doModelValidation(expression+'.profile')); }
@@ -662,7 +662,7 @@ export class MessageDefinition extends fhir.DomainResource {
       issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status fhir: MessageDefinition.status:code', expression: [expression] });
     }
     if (this['status'] && (!Object.values(PublicationStatusCodes).includes(this.status.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property status fhir: MessageDefinition.status:code Required binding to: PublicationStatus', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'status (MessageDefinition.status) of type code is missing code for Required binding to: PublicationStatus', expression: [expression] });
     }
     if (this["status"]) { issues.push(...this.status.doModelValidation(expression+'.status')); }
     if (this["experimental"]) { issues.push(...this.experimental.doModelValidation(expression+'.experimental')); }
@@ -683,12 +683,12 @@ export class MessageDefinition extends fhir.DomainResource {
       issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property event fhir: MessageDefinition.event[x]:', expression: [expression] });
     }
     if (this['category'] && (!Object.values(MessageSignificanceCategoryCodes).includes(this.category.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property category fhir: MessageDefinition.category:code Required binding to: MessageSignificanceCategory', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'category (MessageDefinition.category) of type code is missing code for Required binding to: MessageSignificanceCategory', expression: [expression] });
     }
     if (this["category"]) { issues.push(...this.category.doModelValidation(expression+'.category')); }
     if (this["focus"]) { this.focus.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.focus[${i}]`)); }) }
     if (this['responseRequired'] && (!Object.values(MessageheaderResponseRequestCodes).includes(this.responseRequired.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property responseRequired fhir: MessageDefinition.responseRequired:code Required binding to: MessageheaderResponseRequest', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'responseRequired (MessageDefinition.responseRequired) of type code is missing code for Required binding to: MessageheaderResponseRequest', expression: [expression] });
     }
     if (this["responseRequired"]) { issues.push(...this.responseRequired.doModelValidation(expression+'.responseRequired')); }
     if (this["allowedResponse"]) { this.allowedResponse.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.allowedResponse[${i}]`)); }) }

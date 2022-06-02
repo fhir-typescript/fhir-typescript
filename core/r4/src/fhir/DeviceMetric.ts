@@ -115,11 +115,11 @@ export class DeviceMetricCalibration extends fhir.BackboneElement {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'DeviceMetric.calibration' }
     if (this['type'] && (!Object.values(MetricCalibrationTypeCodes).includes(this.type.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property type fhir: DeviceMetric.calibration.type:code Required binding to: MetricCalibrationType', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'type (DeviceMetric.calibration.type) of type code is missing code for Required binding to: MetricCalibrationType', expression: [expression] });
     }
     if (this["type"]) { issues.push(...this.type.doModelValidation(expression+'.type')); }
     if (this['state'] && (!Object.values(MetricCalibrationStateCodes).includes(this.state.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property state fhir: DeviceMetric.calibration.state:code Required binding to: MetricCalibrationState', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'state (DeviceMetric.calibration.state) of type code is missing code for Required binding to: MetricCalibrationState', expression: [expression] });
     }
     if (this["state"]) { issues.push(...this.state.doModelValidation(expression+'.state')); }
     if (this["time"]) { issues.push(...this.time.doModelValidation(expression+'.time')); }
@@ -309,18 +309,18 @@ export class DeviceMetric extends fhir.DomainResource {
     if (this["source"]) { issues.push(...this.source.doModelValidation(expression+'.source')); }
     if (this["parent"]) { issues.push(...this.parent.doModelValidation(expression+'.parent')); }
     if (this['operationalStatus'] && (!Object.values(MetricOperationalStatusCodes).includes(this.operationalStatus.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property operationalStatus fhir: DeviceMetric.operationalStatus:code Required binding to: MetricOperationalStatus', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'operationalStatus (DeviceMetric.operationalStatus) of type code is missing code for Required binding to: MetricOperationalStatus', expression: [expression] });
     }
     if (this["operationalStatus"]) { issues.push(...this.operationalStatus.doModelValidation(expression+'.operationalStatus')); }
     if (this['color'] && (!Object.values(MetricColorCodes).includes(this.color.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property color fhir: DeviceMetric.color:code Required binding to: MetricColor', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'color (DeviceMetric.color) of type code is missing code for Required binding to: MetricColor', expression: [expression] });
     }
     if (this["color"]) { issues.push(...this.color.doModelValidation(expression+'.color')); }
     if (!this['category']) {
       issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property category fhir: DeviceMetric.category:code', expression: [expression] });
     }
     if (this['category'] && (!Object.values(MetricCategoryCodes).includes(this.category.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property category fhir: DeviceMetric.category:code Required binding to: MetricCategory', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'category (DeviceMetric.category) of type code is missing code for Required binding to: MetricCategory', expression: [expression] });
     }
     if (this["category"]) { issues.push(...this.category.doModelValidation(expression+'.category')); }
     if (this["measurementPeriod"]) { issues.push(...this.measurementPeriod.doModelValidation(expression+'.measurementPeriod')); }

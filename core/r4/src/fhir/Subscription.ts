@@ -121,7 +121,7 @@ export class SubscriptionChannel extends fhir.BackboneElement {
       issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property type fhir: Subscription.channel.type:code', expression: [expression] });
     }
     if (this['type'] && (!Object.values(SubscriptionChannelTypeCodes).includes(this.type.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property type fhir: Subscription.channel.type:code Required binding to: SubscriptionChannelType', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'type (Subscription.channel.type) of type code is missing code for Required binding to: SubscriptionChannelType', expression: [expression] });
     }
     if (this["type"]) { issues.push(...this.type.doModelValidation(expression+'.type')); }
     if (this["endpoint"]) { issues.push(...this.endpoint.doModelValidation(expression+'.endpoint')); }
@@ -288,7 +288,7 @@ export class Subscription extends fhir.DomainResource {
       issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status fhir: Subscription.status:code', expression: [expression] });
     }
     if (this['status'] && (!Object.values(SubscriptionStatusCodes).includes(this.status.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property status fhir: Subscription.status:code Required binding to: SubscriptionStatus', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'status (Subscription.status) of type code is missing code for Required binding to: SubscriptionStatus', expression: [expression] });
     }
     if (this["status"]) { issues.push(...this.status.doModelValidation(expression+'.status')); }
     if (this["contact"]) { this.contact.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.contact[${i}]`)); }) }

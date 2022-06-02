@@ -1316,7 +1316,7 @@ export class ClaimResponseProcessNote extends fhir.BackboneElement {
     if (expression === '') { expression = 'ClaimResponse.processNote' }
     if (this["number"]) { issues.push(...this.number.doModelValidation(expression+'.number')); }
     if (this['type'] && (!Object.values(NoteTypeCodes).includes(this.type.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property type fhir: ClaimResponse.processNote.type:code Required binding to: NoteType', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'type (ClaimResponse.processNote.type) of type code is missing code for Required binding to: NoteType', expression: [expression] });
     }
     if (this["type"]) { issues.push(...this.type.doModelValidation(expression+'.type')); }
     if (!this['text']) {
@@ -1913,7 +1913,7 @@ export class ClaimResponse extends fhir.DomainResource {
       issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status fhir: ClaimResponse.status:code', expression: [expression] });
     }
     if (this['status'] && (!Object.values(FmStatusCodes).includes(this.status.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property status fhir: ClaimResponse.status:code Required binding to: FmStatus', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'status (ClaimResponse.status) of type code is missing code for Required binding to: FmStatus', expression: [expression] });
     }
     if (this["status"]) { issues.push(...this.status.doModelValidation(expression+'.status')); }
     if (!this['type']) {
@@ -1925,7 +1925,7 @@ export class ClaimResponse extends fhir.DomainResource {
       issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property use fhir: ClaimResponse.use:code', expression: [expression] });
     }
     if (this['use'] && (!Object.values(ClaimUseCodes).includes(this.use.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property use fhir: ClaimResponse.use:code Required binding to: ClaimUse', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'use (ClaimResponse.use) of type code is missing code for Required binding to: ClaimUse', expression: [expression] });
     }
     if (this["use"]) { issues.push(...this.use.doModelValidation(expression+'.use')); }
     if (!this['patient']) {
@@ -1946,7 +1946,7 @@ export class ClaimResponse extends fhir.DomainResource {
       issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property outcome fhir: ClaimResponse.outcome:code', expression: [expression] });
     }
     if (this['outcome'] && (!Object.values(RemittanceOutcomeCodes).includes(this.outcome.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property outcome fhir: ClaimResponse.outcome:code Required binding to: RemittanceOutcome', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'outcome (ClaimResponse.outcome) of type code is missing code for Required binding to: RemittanceOutcome', expression: [expression] });
     }
     if (this["outcome"]) { issues.push(...this.outcome.doModelValidation(expression+'.outcome')); }
     if (this["disposition"]) { issues.push(...this.disposition.doModelValidation(expression+'.disposition')); }

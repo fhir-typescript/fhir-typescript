@@ -127,7 +127,7 @@ export class ExampleScenarioActor extends fhir.BackboneElement {
       issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property type fhir: ExampleScenario.actor.type:code', expression: [expression] });
     }
     if (this['type'] && (!Object.values(ExamplescenarioActorTypeCodes).includes(this.type.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property type fhir: ExampleScenario.actor.type:code Required binding to: ExamplescenarioActorType', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'type (ExampleScenario.actor.type) of type code is missing code for Required binding to: ExamplescenarioActorType', expression: [expression] });
     }
     if (this["type"]) { issues.push(...this.type.doModelValidation(expression+'.type')); }
     if (this["name"]) { issues.push(...this.name.doModelValidation(expression+'.name')); }
@@ -407,7 +407,7 @@ export class ExampleScenarioInstance extends fhir.BackboneElement {
       issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType fhir: ExampleScenario.instance.resourceType:code', expression: [expression] });
     }
     if (this['resourceType'] && (!Object.values(ResourceTypesCodes).includes(this.resourceType.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property resourceType fhir: ExampleScenario.instance.resourceType:code Required binding to: ResourceTypes', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'resourceType (ExampleScenario.instance.resourceType) of type code is missing code for Required binding to: ResourceTypes', expression: [expression] });
     }
     if (this["resourceType"]) { issues.push(...this.resourceType.doModelValidation(expression+'.resourceType')); }
     if (this["name"]) { issues.push(...this.name.doModelValidation(expression+'.name')); }
@@ -1189,7 +1189,7 @@ export class ExampleScenario extends fhir.DomainResource {
       issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status fhir: ExampleScenario.status:code', expression: [expression] });
     }
     if (this['status'] && (!Object.values(PublicationStatusCodes).includes(this.status.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'Invalid code property status fhir: ExampleScenario.status:code Required binding to: PublicationStatus', expression: [expression] });
+      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'status (ExampleScenario.status) of type code is missing code for Required binding to: PublicationStatus', expression: [expression] });
     }
     if (this["status"]) { issues.push(...this.status.doModelValidation(expression+'.status')); }
     if (this["experimental"]) { issues.push(...this.experimental.doModelValidation(expression+'.experimental')); }
