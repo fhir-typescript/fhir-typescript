@@ -14,7 +14,7 @@ export interface SubstanceReferenceInformationGene extends fhir.BackboneElement 
     /**
      * Todo.
      */
-    source?: fhir.Reference[] | undefined;
+    source?: (fhir.Reference | null)[] | undefined;
 }
 /**
  * Todo.
@@ -31,7 +31,7 @@ export interface SubstanceReferenceInformationGeneElement extends fhir.BackboneE
     /**
      * Todo.
      */
-    source?: fhir.Reference[] | undefined;
+    source?: (fhir.Reference | null)[] | undefined;
 }
 /**
  * Todo.
@@ -48,11 +48,11 @@ export interface SubstanceReferenceInformationClassification extends fhir.Backbo
     /**
      * Todo.
      */
-    subtype?: fhir.CodeableConcept[] | undefined;
+    subtype?: (fhir.CodeableConcept | null)[] | undefined;
     /**
      * Todo.
      */
-    source?: fhir.Reference[] | undefined;
+    source?: (fhir.Reference | null)[] | undefined;
 }
 /**
  * Todo.
@@ -101,7 +101,7 @@ export interface SubstanceReferenceInformationTarget extends fhir.BackboneElemen
     /**
      * Todo.
      */
-    source?: fhir.Reference[] | undefined;
+    source?: (fhir.Reference | null)[] | undefined;
 }
 /**
  * Todo.
@@ -110,7 +110,7 @@ export interface SubstanceReferenceInformation extends fhir.DomainResource {
     /**
      * Resource Type Name
      */
-    resourceType: "SubstanceReferenceInformation";
+    resourceType: "SubstanceReferenceInformation" | null;
     /**
      * Todo.
      */
@@ -122,18 +122,18 @@ export interface SubstanceReferenceInformation extends fhir.DomainResource {
     /**
      * Todo.
      */
-    gene?: fhir.SubstanceReferenceInformationGene[] | undefined;
+    gene?: (fhir.SubstanceReferenceInformationGene | null)[] | undefined;
     /**
      * Todo.
      */
-    geneElement?: fhir.SubstanceReferenceInformationGeneElement[] | undefined;
+    geneElement?: (fhir.SubstanceReferenceInformationGeneElement | null)[] | undefined;
     /**
      * Todo.
      */
-    classification?: fhir.SubstanceReferenceInformationClassification[] | undefined;
+    classification?: (fhir.SubstanceReferenceInformationClassification | null)[] | undefined;
     /**
      * Todo.
      */
-    target?: fhir.SubstanceReferenceInformationTarget[] | undefined;
+    target?: (fhir.SubstanceReferenceInformationTarget | null)[] | undefined;
 }
 //# sourceMappingURL=SubstanceReferenceInformation.d.ts.map

@@ -35,11 +35,11 @@ export interface List extends fhir.DomainResource {
     /**
      * Resource Type Name
      */
-    resourceType: "List";
+    resourceType: "List" | null;
     /**
      * Identifier for the List assigned for business purposes outside the context of FHIR.
      */
-    identifier?: fhir.Identifier[] | undefined;
+    identifier?: (fhir.Identifier | null)[] | undefined;
     /**
      * This element is labeled as a modifier because the status contains codes that mark the resource as not currently valid.
      */
@@ -95,11 +95,11 @@ export interface List extends fhir.DomainResource {
     /**
      * Comments that apply to the overall list.
      */
-    note?: fhir.Annotation[] | undefined;
+    note?: (fhir.Annotation | null)[] | undefined;
     /**
      * If there are no entries in the list, an emptyReason SHOULD be provided.
      */
-    entry?: fhir.ListEntry[] | undefined;
+    entry?: (fhir.ListEntry | null)[] | undefined;
     /**
      * The various reasons for an empty list make a significant interpretation to its interpretation. Note that this code is for use when the entire list has been suppressed, and not for when individual items are omitted - implementers may consider using a text note or a flag on an entry in these cases.
      */

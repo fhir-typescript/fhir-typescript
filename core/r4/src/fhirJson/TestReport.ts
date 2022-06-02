@@ -117,7 +117,7 @@ export interface TestReportSetup extends fhir.BackboneElement {
   /**
    * An action should contain either an operation or an assertion but not both.  It can contain any number of variables.
    */
-  action: fhir.TestReportSetupAction[]|null;
+  action: (fhir.TestReportSetupAction|null)[]|null;
 }
 
 /**
@@ -157,7 +157,7 @@ export interface TestReportTest extends fhir.BackboneElement {
   /**
    * An action should contain either an operation or an assertion but not both.  It can contain any number of variables.
    */
-  action: fhir.TestReportTestAction[]|null;
+  action: (fhir.TestReportTestAction|null)[]|null;
 }
 
 /**
@@ -177,7 +177,7 @@ export interface TestReportTeardown extends fhir.BackboneElement {
   /**
    * An action should contain either an operation or an assertion but not both.  It can contain any number of variables.
    */
-  action: fhir.TestReportTeardownAction[]|null;
+  action: (fhir.TestReportTeardownAction|null)[]|null;
 }
 
 /**
@@ -187,7 +187,7 @@ export interface TestReport extends fhir.DomainResource {
   /**
    * Resource Type Name
    */
-  resourceType: "TestReport";
+  resourceType: "TestReport"|null;
   /**
    * Identifier for the TestScript assigned for external purposes outside the context of FHIR.
    */
@@ -248,7 +248,7 @@ export interface TestReport extends fhir.DomainResource {
   /**
    * A participant in the test execution, either the execution engine, a client, or a server.
    */
-  participant?: fhir.TestReportParticipant[]|undefined;
+  participant?: (fhir.TestReportParticipant|null)[]|undefined;
   /**
    * The results of the series of required setup operations before the tests were executed.
    */
@@ -256,7 +256,7 @@ export interface TestReport extends fhir.DomainResource {
   /**
    * A test executed from the test script.
    */
-  test?: fhir.TestReportTest[]|undefined;
+  test?: (fhir.TestReportTest|null)[]|undefined;
   /**
    * The results of the series of operations required to clean up after all the tests were executed (successfully or otherwise).
    */

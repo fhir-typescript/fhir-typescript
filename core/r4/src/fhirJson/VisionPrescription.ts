@@ -72,7 +72,7 @@ export interface VisionPrescriptionLensSpecification extends fhir.BackboneElemen
   /**
    * Allows for adjustment on two axis.
    */
-  prism?: fhir.VisionPrescriptionLensSpecificationPrism[]|undefined;
+  prism?: (fhir.VisionPrescriptionLensSpecificationPrism|null)[]|undefined;
   /**
    * Power adjustment for multifocal lenses measured in dioptres (0.25 units).
    */
@@ -128,7 +128,7 @@ export interface VisionPrescriptionLensSpecification extends fhir.BackboneElemen
   /**
    * Notes for special requirements such as coatings and lens materials.
    */
-  note?: fhir.Annotation[]|undefined;
+  note?: (fhir.Annotation|null)[]|undefined;
 }
 
 /**
@@ -138,11 +138,11 @@ export interface VisionPrescription extends fhir.DomainResource {
   /**
    * Resource Type Name
    */
-  resourceType: "VisionPrescription";
+  resourceType: "VisionPrescription"|null;
   /**
    * A unique identifier assigned to this vision prescription.
    */
-  identifier?: fhir.Identifier[]|undefined;
+  identifier?: (fhir.Identifier|null)[]|undefined;
   /**
    * This element is labeled as a modifier because the status contains codes that mark the resource as not currently valid.
    */
@@ -182,5 +182,5 @@ export interface VisionPrescription extends fhir.DomainResource {
   /**
    * Contain the details of  the individual lens specifications and serves as the authorization for the fullfillment by certified professionals.
    */
-  lensSpecification: fhir.VisionPrescriptionLensSpecification[]|null;
+  lensSpecification: (fhir.VisionPrescriptionLensSpecification|null)[]|null;
 }

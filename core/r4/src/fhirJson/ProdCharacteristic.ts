@@ -45,7 +45,7 @@ export interface ProdCharacteristic extends fhir.BackboneElement {
   /**
    * Where applicable, the color can be specified An appropriate controlled vocabulary shall be used The term and the term identifier shall be used.
    */
-  color?: string[]|undefined;
+  color?: (string|null)[]|undefined;
   /**
    * Extended properties for primitive element: ProdCharacteristic.color
    */
@@ -53,7 +53,7 @@ export interface ProdCharacteristic extends fhir.BackboneElement {
   /**
    * Where applicable, the imprint can be specified as text.
    */
-  imprint?: string[]|undefined;
+  imprint?: (string|null)[]|undefined;
   /**
    * Extended properties for primitive element: ProdCharacteristic.imprint
    */
@@ -61,7 +61,7 @@ export interface ProdCharacteristic extends fhir.BackboneElement {
   /**
    * Where applicable, the image can be provided The format of the image attachment shall be specified by regional implementations.
    */
-  image?: fhir.Attachment[]|undefined;
+  image?: (fhir.Attachment|null)[]|undefined;
   /**
    * Where applicable, the scoring can be specified An appropriate controlled vocabulary shall be used The term and the term identifier shall be used.
    */

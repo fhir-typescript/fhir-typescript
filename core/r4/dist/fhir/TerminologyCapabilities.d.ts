@@ -109,7 +109,7 @@ export interface TerminologyCapabilitiesCodeSystemVersionFilterArgs extends fhir
     /**
      * Operations supported for the property.
      */
-    op: fhir.FhirCode[] | string[] | undefined;
+    op: fhir.FhirCode[] | (string | null)[] | undefined;
     /**
      * Extended properties for primitive element: TerminologyCapabilities.codeSystem.version.filter.op
      */
@@ -171,7 +171,7 @@ export interface TerminologyCapabilitiesCodeSystemVersionArgs extends fhir.Backb
     /**
      * Language Displays supported.
      */
-    language?: fhir.FhirCode[] | string[] | undefined;
+    language?: fhir.FhirCode[] | (string | null)[] | undefined;
     /**
      * Extended properties for primitive element: TerminologyCapabilities.codeSystem.version.language
      */
@@ -183,7 +183,7 @@ export interface TerminologyCapabilitiesCodeSystemVersionArgs extends fhir.Backb
     /**
      * Properties supported for $lookup.
      */
-    property?: fhir.FhirCode[] | string[] | undefined;
+    property?: fhir.FhirCode[] | (string | null)[] | undefined;
     /**
      * Extended properties for primitive element: TerminologyCapabilities.codeSystem.version.property
      */

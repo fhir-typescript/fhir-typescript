@@ -47,11 +47,11 @@ export interface Account extends fhir.DomainResource {
     /**
      * Resource Type Name
      */
-    resourceType: "Account";
+    resourceType: "Account" | null;
     /**
      * Unique identifier used to reference the account.  Might or might not be intended for human use (e.g. credit card number).
      */
-    identifier?: fhir.Identifier[] | undefined;
+    identifier?: (fhir.Identifier | null)[] | undefined;
     /**
      * This element is labeled as a modifier because the status contains the codes inactive and entered-in-error that mark the Account as not currently valid.
      */
@@ -75,7 +75,7 @@ export interface Account extends fhir.DomainResource {
     /**
      * Accounts can be applied to non-patients for tracking other non-patient related activities, such as group services (patients not tracked, and costs charged to another body), or might not be allocated.
      */
-    subject?: fhir.Reference[] | undefined;
+    subject?: (fhir.Reference | null)[] | undefined;
     /**
      * It is possible for transactions to be posted outside the service period, as long as the service was provided within the defined service period.
      */
@@ -85,7 +85,7 @@ export interface Account extends fhir.DomainResource {
      * Local or jurisdictional business rules may determine which coverage covers which types of billable items charged to the account, and in which order.
      * Where the order is important, a local/jurisdictional extension may be defined to specify the order for the type of charge.
      */
-    coverage?: fhir.AccountCoverage[] | undefined;
+    coverage?: (fhir.AccountCoverage | null)[] | undefined;
     /**
      * Indicates the service area, hospital, department, etc. with responsibility for managing the Account.
      */
@@ -101,7 +101,7 @@ export interface Account extends fhir.DomainResource {
     /**
      * The parties responsible for balancing the account if other payment options fall short.
      */
-    guarantor?: fhir.AccountGuarantor[] | undefined;
+    guarantor?: (fhir.AccountGuarantor | null)[] | undefined;
     /**
      * Reference to a parent Account.
      */

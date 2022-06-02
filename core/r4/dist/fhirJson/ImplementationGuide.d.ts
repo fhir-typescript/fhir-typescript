@@ -81,7 +81,7 @@ export interface ImplementationGuideDefinitionResource extends fhir.BackboneElem
     /**
      * The resource SHALL be valid against all the versions it is specified to apply to. If the resource referred to is a StructureDefinition, the fhirVersion stated in the StructureDefinition cannot disagree with the version specified here; the specified versions SHALL include the version specified by the StructureDefinition, and may include additional versions using the [applicable-version](extension-structuredefinition-applicable-version.html) extension.
      */
-    fhirVersion?: ('0.0.80' | '0.0.81' | '0.0.82' | '0.01' | '0.05' | '0.06' | '0.11' | '0.4.0' | '0.5.0' | '1.0.0' | '1.0.1' | '1.0.2' | '1.1.0' | '1.4.0' | '1.6.0' | '1.8.0' | '3.0.0' | '3.0.1' | '3.3.0' | '3.5.0' | '4.0.0' | '4.0.1')[] | undefined;
+    fhirVersion?: (('0.0.80' | '0.0.81' | '0.0.82' | '0.01' | '0.05' | '0.06' | '0.11' | '0.4.0' | '0.5.0' | '1.0.0' | '1.0.1' | '1.0.2' | '1.1.0' | '1.4.0' | '1.6.0' | '1.8.0' | '3.0.0' | '3.0.1' | '3.3.0' | '3.5.0' | '4.0.0' | '4.0.1') | null)[] | undefined;
     /**
      * Extended properties for primitive element: ImplementationGuide.definition.resource.fhirVersion
      */
@@ -170,7 +170,7 @@ export interface ImplementationGuideDefinitionPage extends fhir.BackboneElement 
     /**
      * The implementation guide breadcrumbs are generated from this structure.
      */
-    page?: fhir.ImplementationGuideDefinitionPage[] | undefined;
+    page?: (fhir.ImplementationGuideDefinitionPage | null)[] | undefined;
 }
 /**
  * Defines how IG is built by tools.
@@ -229,11 +229,11 @@ export interface ImplementationGuideDefinition extends fhir.BackboneElement {
     /**
      * Groupings are arbitrary sub-divisions of content. Typically, they are used to help build Table of Contents automatically.
      */
-    grouping?: fhir.ImplementationGuideDefinitionGrouping[] | undefined;
+    grouping?: (fhir.ImplementationGuideDefinitionGrouping | null)[] | undefined;
     /**
      * A resource that is part of the implementation guide. Conformance resources (value set, structure definition, capability statements etc.) are obvious candidates for inclusion, but any kind of resource can be included as an example resource.
      */
-    resource: fhir.ImplementationGuideDefinitionResource[] | null;
+    resource: (fhir.ImplementationGuideDefinitionResource | null)[] | null;
     /**
      * Pages automatically become sections if they have sub-pages. By convention, the home page is called index.html.
      */
@@ -241,11 +241,11 @@ export interface ImplementationGuideDefinition extends fhir.BackboneElement {
     /**
      * Defines how IG is built by tools.
      */
-    parameter?: fhir.ImplementationGuideDefinitionParameter[] | undefined;
+    parameter?: (fhir.ImplementationGuideDefinitionParameter | null)[] | undefined;
     /**
      * A template for building resources.
      */
-    template?: fhir.ImplementationGuideDefinitionTemplate[] | undefined;
+    template?: (fhir.ImplementationGuideDefinitionTemplate | null)[] | undefined;
 }
 /**
  * A resource that is part of the implementation guide. Conformance resources (value set, structure definition, capability statements etc.) are obvious candidates for inclusion, but any kind of resource can be included as an example resource.
@@ -303,7 +303,7 @@ export interface ImplementationGuideManifestPage extends fhir.BackboneElement {
     /**
      * Appending 'rendering' + "/" + page.name + "#" + page.anchor should resolve to the anchor.
      */
-    anchor?: string[] | undefined;
+    anchor?: (string | null)[] | undefined;
     /**
      * Extended properties for primitive element: ImplementationGuide.manifest.page.anchor
      */
@@ -324,15 +324,15 @@ export interface ImplementationGuideManifest extends fhir.BackboneElement {
     /**
      * A resource that is part of the implementation guide. Conformance resources (value set, structure definition, capability statements etc.) are obvious candidates for inclusion, but any kind of resource can be included as an example resource.
      */
-    resource: fhir.ImplementationGuideManifestResource[] | null;
+    resource: (fhir.ImplementationGuideManifestResource | null)[] | null;
     /**
      * Information about a page within the IG.
      */
-    page?: fhir.ImplementationGuideManifestPage[] | undefined;
+    page?: (fhir.ImplementationGuideManifestPage | null)[] | undefined;
     /**
      * Indicates a relative path to an image that exists within the IG.
      */
-    image?: string[] | undefined;
+    image?: (string | null)[] | undefined;
     /**
      * Extended properties for primitive element: ImplementationGuide.manifest.image
      */
@@ -340,7 +340,7 @@ export interface ImplementationGuideManifest extends fhir.BackboneElement {
     /**
      * Indicates the relative path of an additional non-page, non-image file that is part of the IG - e.g. zip, jar and similar files that could be the target of a hyperlink in a derived IG.
      */
-    other?: string[] | undefined;
+    other?: (string | null)[] | undefined;
     /**
      * Extended properties for primitive element: ImplementationGuide.manifest.other
      */
@@ -353,7 +353,7 @@ export interface ImplementationGuide extends fhir.DomainResource {
     /**
      * Resource Type Name
      */
-    resourceType: "ImplementationGuide";
+    resourceType: "ImplementationGuide" | null;
     /**
      * Can be a urn:uuid: or a urn:oid: but real http: addresses are preferred.  Multiple instances may share the same URL if they have a distinct version.
      * The determination of when to create a new version of a resource (same url, new version) vs. defining a new artifact is up to the author.  Considerations for making this decision are found in [Technical and Business Versions](resource.html#versions).
@@ -423,7 +423,7 @@ export interface ImplementationGuide extends fhir.DomainResource {
     /**
      * May be a web site, an email address, a telephone number, etc.
      */
-    contact?: fhir.ContactDetail[] | undefined;
+    contact?: (fhir.ContactDetail | null)[] | undefined;
     /**
      * This description can be used to capture details such as why the implementation guide was built, comments about misuse, instructions for clinical use and interpretation, literature references, examples from the paper world, etc. It is not a rendering of the implementation guide as conveyed in the 'text' field of the resource itself. This item SHOULD be populated unless the information is available from context (e.g. the language of the implementation guide is presumed to be the predominant language in the place the implementation guide was created).
      */
@@ -435,11 +435,11 @@ export interface ImplementationGuide extends fhir.DomainResource {
     /**
      * When multiple useContexts are specified, there is no expectation that all or any of the contexts apply.
      */
-    useContext?: fhir.UsageContext[] | undefined;
+    useContext?: (fhir.UsageContext | null)[] | undefined;
     /**
      * It may be possible for the implementation guide to be used in jurisdictions other than those for which it was originally designed or intended.
      */
-    jurisdiction?: fhir.CodeableConcept[] | undefined;
+    jurisdiction?: (fhir.CodeableConcept | null)[] | undefined;
     /**
      * A copyright statement relating to the implementation guide and/or its contents. Copyright statements are generally legal restrictions on the use and publishing of the implementation guide.
      */
@@ -467,7 +467,7 @@ export interface ImplementationGuide extends fhir.DomainResource {
     /**
      * Most implementation guides target a single version - e.g. they describe how to use a particular version, and the profiles and examples etc are valid for that version. But some implementation guides describe how to use multiple different versions of FHIR to solve the same problem, or in concert with each other. Typically, the requirement to support multiple versions arises as implementation matures and different implementation communities are stuck at different versions by regulation or market dynamics.
      */
-    fhirVersion: ('0.0.80' | '0.0.81' | '0.0.82' | '0.01' | '0.05' | '0.06' | '0.11' | '0.4.0' | '0.5.0' | '1.0.0' | '1.0.1' | '1.0.2' | '1.1.0' | '1.4.0' | '1.6.0' | '1.8.0' | '3.0.0' | '3.0.1' | '3.3.0' | '3.5.0' | '4.0.0' | '4.0.1')[] | null;
+    fhirVersion: (('0.0.80' | '0.0.81' | '0.0.82' | '0.01' | '0.05' | '0.06' | '0.11' | '0.4.0' | '0.5.0' | '1.0.0' | '1.0.1' | '1.0.2' | '1.1.0' | '1.4.0' | '1.6.0' | '1.8.0' | '3.0.0' | '3.0.1' | '3.3.0' | '3.5.0' | '4.0.0' | '4.0.1') | null)[] | null;
     /**
      * Extended properties for primitive element: ImplementationGuide.fhirVersion
      */
@@ -475,11 +475,11 @@ export interface ImplementationGuide extends fhir.DomainResource {
     /**
      * Another implementation guide that this implementation depends on. Typically, an implementation guide uses value sets, profiles etc.defined in other implementation guides.
      */
-    dependsOn?: fhir.ImplementationGuideDependsOn[] | undefined;
+    dependsOn?: (fhir.ImplementationGuideDependsOn | null)[] | undefined;
     /**
      * See [Default Profiles](implementationguide.html#default) for a discussion of which resources are 'covered' by an implementation guide.
      */
-    global?: fhir.ImplementationGuideGlobal[] | undefined;
+    global?: (fhir.ImplementationGuideGlobal | null)[] | undefined;
     /**
      * Principally, this consists of information abuot source resource and file locations, and build parameters and templates.
      */

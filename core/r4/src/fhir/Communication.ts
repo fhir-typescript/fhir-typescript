@@ -109,7 +109,7 @@ export interface CommunicationArgs extends fhir.DomainResourceArgs {
   /**
    * The URL pointing to a FHIR-defined protocol, guideline, orderset or other definition that is adhered to in whole or in part by this Communication.
    */
-  instantiatesCanonical?: fhir.FhirCanonical[]|string[]|undefined;
+  instantiatesCanonical?: fhir.FhirCanonical[]|(string|null)[]|undefined;
   /**
    * Extended properties for primitive element: Communication.instantiatesCanonical
    */
@@ -117,7 +117,7 @@ export interface CommunicationArgs extends fhir.DomainResourceArgs {
   /**
    * This might be an HTML page, PDF, etc. or could just be a non-resolvable URI identifier.
    */
-  instantiatesUri?: fhir.FhirUri[]|string[]|undefined;
+  instantiatesUri?: fhir.FhirUri[]|(string|null)[]|undefined;
   /**
    * Extended properties for primitive element: Communication.instantiatesUri
    */

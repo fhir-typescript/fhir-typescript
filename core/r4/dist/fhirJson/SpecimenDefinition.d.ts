@@ -55,7 +55,7 @@ export interface SpecimenDefinitionTypeTestedContainer extends fhir.BackboneElem
     /**
      * Substance introduced in the kind of container to preserve, maintain or enhance the specimen. Examples: Formalin, Citrate, EDTA.
      */
-    additive?: fhir.SpecimenDefinitionTypeTestedContainerAdditive[] | undefined;
+    additive?: (fhir.SpecimenDefinitionTypeTestedContainerAdditive | null)[] | undefined;
     /**
      * Special processing that should be applied to the container for this kind of specimen.
      */
@@ -133,11 +133,11 @@ export interface SpecimenDefinitionTypeTested extends fhir.BackboneElement {
     /**
      * Criterion for rejection of the specimen in its container by the laboratory.
      */
-    rejectionCriterion?: fhir.CodeableConcept[] | undefined;
+    rejectionCriterion?: (fhir.CodeableConcept | null)[] | undefined;
     /**
      * Set of instructions for preservation/transport of the specimen at a defined temperature interval, prior the testing process.
      */
-    handling?: fhir.SpecimenDefinitionTypeTestedHandling[] | undefined;
+    handling?: (fhir.SpecimenDefinitionTypeTestedHandling | null)[] | undefined;
 }
 /**
  * A kind of specimen with associated set of requirements.
@@ -146,7 +146,7 @@ export interface SpecimenDefinition extends fhir.DomainResource {
     /**
      * Resource Type Name
      */
-    resourceType: "SpecimenDefinition";
+    resourceType: "SpecimenDefinition" | null;
     /**
      * A business identifier associated with the kind of specimen.
      */
@@ -158,7 +158,7 @@ export interface SpecimenDefinition extends fhir.DomainResource {
     /**
      * Preparation of the patient for specimen collection.
      */
-    patientPreparation?: fhir.CodeableConcept[] | undefined;
+    patientPreparation?: (fhir.CodeableConcept | null)[] | undefined;
     /**
      * Time aspect of specimen collection (duration or offset).
      */
@@ -170,10 +170,10 @@ export interface SpecimenDefinition extends fhir.DomainResource {
     /**
      * The action to be performed for collecting the specimen.
      */
-    collection?: fhir.CodeableConcept[] | undefined;
+    collection?: (fhir.CodeableConcept | null)[] | undefined;
     /**
      * Specimen conditioned in a container as expected by the testing laboratory.
      */
-    typeTested?: fhir.SpecimenDefinitionTypeTested[] | undefined;
+    typeTested?: (fhir.SpecimenDefinitionTypeTested | null)[] | undefined;
 }
 //# sourceMappingURL=SpecimenDefinition.d.ts.map

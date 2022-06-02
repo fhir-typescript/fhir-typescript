@@ -195,7 +195,7 @@ export interface SubstanceSpecificationStructure extends fhir.BackboneElement {
   /**
    * Applicable for single substances that contain a radionuclide or a non-natural isotopic ratio.
    */
-  isotope?: fhir.SubstanceSpecificationStructureIsotope[]|undefined;
+  isotope?: (fhir.SubstanceSpecificationStructureIsotope|null)[]|undefined;
   /**
    * The molecular weight or weight range (for proteins, polymers or nucleic acids).
    */
@@ -203,11 +203,11 @@ export interface SubstanceSpecificationStructure extends fhir.BackboneElement {
   /**
    * Supporting literature.
    */
-  source?: fhir.Reference[]|undefined;
+  source?: (fhir.Reference|null)[]|undefined;
   /**
    * Molecular structural representation.
    */
-  representation?: fhir.SubstanceSpecificationStructureRepresentation[]|undefined;
+  representation?: (fhir.SubstanceSpecificationStructureRepresentation|null)[]|undefined;
 }
 
 /**
@@ -241,7 +241,7 @@ export interface SubstanceSpecificationCode extends fhir.BackboneElement {
   /**
    * Supporting literature.
    */
-  source?: fhir.Reference[]|undefined;
+  source?: (fhir.Reference|null)[]|undefined;
 }
 
 /**
@@ -297,31 +297,31 @@ export interface SubstanceSpecificationName extends fhir.BackboneElement {
   /**
    * Language of the name.
    */
-  language?: fhir.CodeableConcept[]|undefined;
+  language?: (fhir.CodeableConcept|null)[]|undefined;
   /**
    * The use context of this name for example if there is a different name a drug active ingredient as opposed to a food colour additive.
    */
-  domain?: fhir.CodeableConcept[]|undefined;
+  domain?: (fhir.CodeableConcept|null)[]|undefined;
   /**
    * The jurisdiction where this name applies.
    */
-  jurisdiction?: fhir.CodeableConcept[]|undefined;
+  jurisdiction?: (fhir.CodeableConcept|null)[]|undefined;
   /**
    * A synonym of this name.
    */
-  synonym?: fhir.SubstanceSpecificationName[]|undefined;
+  synonym?: (fhir.SubstanceSpecificationName|null)[]|undefined;
   /**
    * A translation for this name.
    */
-  translation?: fhir.SubstanceSpecificationName[]|undefined;
+  translation?: (fhir.SubstanceSpecificationName|null)[]|undefined;
   /**
    * Details of the official nature of this name.
    */
-  official?: fhir.SubstanceSpecificationNameOfficial[]|undefined;
+  official?: (fhir.SubstanceSpecificationNameOfficial|null)[]|undefined;
   /**
    * Supporting literature.
    */
-  source?: fhir.Reference[]|undefined;
+  source?: (fhir.Reference|null)[]|undefined;
 }
 
 /**
@@ -379,7 +379,7 @@ export interface SubstanceSpecificationRelationship extends fhir.BackboneElement
   /**
    * Supporting literature.
    */
-  source?: fhir.Reference[]|undefined;
+  source?: (fhir.Reference|null)[]|undefined;
 }
 
 /**
@@ -389,7 +389,7 @@ export interface SubstanceSpecification extends fhir.DomainResource {
   /**
    * Resource Type Name
    */
-  resourceType: "SubstanceSpecification";
+  resourceType: "SubstanceSpecification"|null;
   /**
    * Identifier by which this substance is known.
    */
@@ -417,7 +417,7 @@ export interface SubstanceSpecification extends fhir.DomainResource {
   /**
    * Supporting literature.
    */
-  source?: fhir.Reference[]|undefined;
+  source?: (fhir.Reference|null)[]|undefined;
   /**
    * Textual comment about this record of a substance.
    */
@@ -429,11 +429,11 @@ export interface SubstanceSpecification extends fhir.DomainResource {
   /**
    * Moiety, for structural modifications.
    */
-  moiety?: fhir.SubstanceSpecificationMoiety[]|undefined;
+  moiety?: (fhir.SubstanceSpecificationMoiety|null)[]|undefined;
   /**
    * General specifications for this substance, including how it is related to other substances.
    */
-  property?: fhir.SubstanceSpecificationProperty[]|undefined;
+  property?: (fhir.SubstanceSpecificationProperty|null)[]|undefined;
   /**
    * General information detailing this substance.
    */
@@ -445,19 +445,19 @@ export interface SubstanceSpecification extends fhir.DomainResource {
   /**
    * Codes associated with the substance.
    */
-  code?: fhir.SubstanceSpecificationCode[]|undefined;
+  code?: (fhir.SubstanceSpecificationCode|null)[]|undefined;
   /**
    * Names applicable to this substance.
    */
-  name?: fhir.SubstanceSpecificationName[]|undefined;
+  name?: (fhir.SubstanceSpecificationName|null)[]|undefined;
   /**
    * The molecular weight or weight range (for proteins, polymers or nucleic acids).
    */
-  molecularWeight?: fhir.SubstanceSpecificationStructureIsotopeMolecularWeight[]|undefined;
+  molecularWeight?: (fhir.SubstanceSpecificationStructureIsotopeMolecularWeight|null)[]|undefined;
   /**
    * A link between this substance and another, with details of the relationship.
    */
-  relationship?: fhir.SubstanceSpecificationRelationship[]|undefined;
+  relationship?: (fhir.SubstanceSpecificationRelationship|null)[]|undefined;
   /**
    * Data items specific to nucleic acids.
    */

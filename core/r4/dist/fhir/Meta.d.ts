@@ -32,7 +32,7 @@ export interface MetaArgs extends fhir.FhirElementArgs {
     /**
      * It is up to the server and/or other infrastructure of policy to determine whether/how these claims are verified and/or updated over time.  The list of profile URLs is a set.
      */
-    profile?: fhir.FhirCanonical[] | string[] | undefined;
+    profile?: fhir.FhirCanonical[] | (string | null)[] | undefined;
     /**
      * Extended properties for primitive element: Meta.profile
      */

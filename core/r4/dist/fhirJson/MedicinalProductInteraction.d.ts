@@ -19,11 +19,11 @@ export interface MedicinalProductInteraction extends fhir.DomainResource {
     /**
      * Resource Type Name
      */
-    resourceType: "MedicinalProductInteraction";
+    resourceType: "MedicinalProductInteraction" | null;
     /**
      * The medication for which this is a described interaction.
      */
-    subject?: fhir.Reference[] | undefined;
+    subject?: (fhir.Reference | null)[] | undefined;
     /**
      * The interaction described.
      */
@@ -35,7 +35,7 @@ export interface MedicinalProductInteraction extends fhir.DomainResource {
     /**
      * The specific medication, food or laboratory test that interacts.
      */
-    interactant?: fhir.MedicinalProductInteractionInteractant[] | undefined;
+    interactant?: (fhir.MedicinalProductInteractionInteractant | null)[] | undefined;
     /**
      * The type of the interaction e.g. drug-drug interaction, drug-food interaction, drug-lab test interaction.
      */

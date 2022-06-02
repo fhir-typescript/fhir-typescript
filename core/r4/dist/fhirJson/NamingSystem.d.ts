@@ -47,7 +47,7 @@ export interface NamingSystem extends fhir.DomainResource {
     /**
      * Resource Type Name
      */
-    resourceType: "NamingSystem";
+    resourceType: "NamingSystem" | null;
     /**
      * The name is not expected to be globally unique. The name should be a simple alphanumeric type name to ensure that it is machine-processing friendly.The"symbolic name" for an OID would be captured as an extension.
      */
@@ -91,7 +91,7 @@ export interface NamingSystem extends fhir.DomainResource {
     /**
      * May be a web site, an email address, a telephone number, etc.
      */
-    contact?: fhir.ContactDetail[] | undefined;
+    contact?: (fhir.ContactDetail | null)[] | undefined;
     /**
      * This is the primary organization.  Responsibility for some aspects of a namespace may be delegated.
      */
@@ -115,11 +115,11 @@ export interface NamingSystem extends fhir.DomainResource {
     /**
      * When multiple useContexts are specified, there is no expectation that all or any of the contexts apply.
      */
-    useContext?: fhir.UsageContext[] | undefined;
+    useContext?: (fhir.UsageContext | null)[] | undefined;
     /**
      * It may be possible for the naming system to be used in jurisdictions other than those for which it was originally designed or intended.
      */
-    jurisdiction?: fhir.CodeableConcept[] | undefined;
+    jurisdiction?: (fhir.CodeableConcept | null)[] | undefined;
     /**
      * Provides guidance on the use of the namespace, including the handling of formatting characters, use of upper vs. lower case, etc.
      */
@@ -131,6 +131,6 @@ export interface NamingSystem extends fhir.DomainResource {
     /**
      * Multiple identifiers may exist, either due to duplicate registration, regional rules, needs of different communication technologies, etc.
      */
-    uniqueId: fhir.NamingSystemUniqueId[] | null;
+    uniqueId: (fhir.NamingSystemUniqueId | null)[] | null;
 }
 //# sourceMappingURL=NamingSystem.d.ts.map

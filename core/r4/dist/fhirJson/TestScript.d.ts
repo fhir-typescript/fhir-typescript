@@ -89,7 +89,7 @@ export interface TestScriptMetadataCapability extends fhir.BackboneElement {
     /**
      * Which origin server these requirements apply to.
      */
-    origin?: number[] | undefined;
+    origin?: (number | null)[] | undefined;
     /**
      * Extended properties for primitive element: TestScript.metadata.capability.origin
      */
@@ -105,7 +105,7 @@ export interface TestScriptMetadataCapability extends fhir.BackboneElement {
     /**
      * Links to the FHIR specification that describes this interaction and the resources involved in more detail.
      */
-    link?: string[] | undefined;
+    link?: (string | null)[] | undefined;
     /**
      * Extended properties for primitive element: TestScript.metadata.capability.link
      */
@@ -126,11 +126,11 @@ export interface TestScriptMetadata extends fhir.BackboneElement {
     /**
      * A link to the FHIR specification that this test is covering.
      */
-    link?: fhir.TestScriptMetadataLink[] | undefined;
+    link?: (fhir.TestScriptMetadataLink | null)[] | undefined;
     /**
      * When the metadata capabilities section is defined at TestScript.metadata or at TestScript.setup.metadata, and the server's conformance statement does not contain the elements defined in the minimal conformance statement, then all the tests in the TestScript are skipped.  When the metadata capabilities section is defined at TestScript.test.metadata and the server's conformance statement does not contain the elements defined in the minimal conformance statement, then only that test is skipped.  The "metadata.capabilities.required" and "metadata.capabilities.validated" elements only indicate whether the capabilities are the primary focus of the test script or not.  They do not impact the skipping logic.  Capabilities whose "metadata.capabilities.validated" flag is true are the primary focus of the test script.
      */
-    capability: fhir.TestScriptMetadataCapability[] | null;
+    capability: (fhir.TestScriptMetadataCapability | null)[] | null;
 }
 /**
  * Fixture in the test script - by reference (uri). All fixtures are required for the test script to execute.
@@ -338,7 +338,7 @@ export interface TestScriptSetupActionOperation extends fhir.BackboneElement {
     /**
      * This gives control to test-script writers to set headers explicitly based on test requirements.  It will allow for testing using:  - "If-Modified-Since" and "If-None-Match" headers.  See http://build.fhir.org/http.html#2.1.0.5.1 - "If-Match" header.  See http://build.fhir.org/http.html#2.1.0.11 - Conditional Create using "If-None-Exist".  See http://build.fhir.org/http.html#2.1.0.13.1 - Invalid "Content-Type" header for negative testing. - etc.
      */
-    requestHeader?: fhir.TestScriptSetupActionOperationRequestHeader[] | undefined;
+    requestHeader?: (fhir.TestScriptSetupActionOperationRequestHeader | null)[] | undefined;
     /**
      * If a requestId is supplied, then the resulting request (both headers and body) is mapped to the fixture ID (which may be entirely new and previously undeclared) designated by "requestId".  If requestId is not specified, it is the test engine's responsibility to store the request and use it as the requestId in subsequent assertions when assertion path and/or headerField is specified, direction is equal to request, and the requestId in not specified.
      */
@@ -581,7 +581,7 @@ export interface TestScriptSetup extends fhir.BackboneElement {
     /**
      * An action should contain either an operation or an assertion but not both.  It can contain any number of variables.
      */
-    action: fhir.TestScriptSetupAction[] | null;
+    action: (fhir.TestScriptSetupAction | null)[] | null;
 }
 /**
  * An action should contain either an operation or an assertion but not both.  It can contain any number of variables.
@@ -619,7 +619,7 @@ export interface TestScriptTest extends fhir.BackboneElement {
     /**
      * An action should contain either an operation or an assertion but not both.  It can contain any number of variables.
      */
-    action: fhir.TestScriptTestAction[] | null;
+    action: (fhir.TestScriptTestAction | null)[] | null;
 }
 /**
  * An action should contain either an operation or an assertion but not both.  It can contain any number of variables.
@@ -637,7 +637,7 @@ export interface TestScriptTeardown extends fhir.BackboneElement {
     /**
      * An action should contain either an operation or an assertion but not both.  It can contain any number of variables.
      */
-    action: fhir.TestScriptTeardownAction[] | null;
+    action: (fhir.TestScriptTeardownAction | null)[] | null;
 }
 /**
  * A structured set of tests against a FHIR server or client implementation to determine compliance against the FHIR specification.
@@ -646,7 +646,7 @@ export interface TestScript extends fhir.DomainResource {
     /**
      * Resource Type Name
      */
-    resourceType: "TestScript";
+    resourceType: "TestScript" | null;
     /**
      * Can be a urn:uuid: or a urn:oid: but real http: addresses are preferred.  Multiple instances may share the same URL if they have a distinct version.
      * The determination of when to create a new version of a resource (same url, new version) vs. defining a new artifact is up to the author.  Considerations for making this decision are found in [Technical and Business Versions](resource.html#versions).
@@ -720,7 +720,7 @@ export interface TestScript extends fhir.DomainResource {
     /**
      * May be a web site, an email address, a telephone number, etc.
      */
-    contact?: fhir.ContactDetail[] | undefined;
+    contact?: (fhir.ContactDetail | null)[] | undefined;
     /**
      * This description can be used to capture details such as why the test script was built, comments about misuse, instructions for clinical use and interpretation, literature references, examples from the paper world, etc. It is not a rendering of the test script as conveyed in the 'text' field of the resource itself. This item SHOULD be populated unless the information is available from context (e.g. the language of the test script is presumed to be the predominant language in the place the test script was created).
      */
@@ -732,11 +732,11 @@ export interface TestScript extends fhir.DomainResource {
     /**
      * When multiple useContexts are specified, there is no expectation that all or any of the contexts apply.
      */
-    useContext?: fhir.UsageContext[] | undefined;
+    useContext?: (fhir.UsageContext | null)[] | undefined;
     /**
      * It may be possible for the test script to be used in jurisdictions other than those for which it was originally designed or intended.
      */
-    jurisdiction?: fhir.CodeableConcept[] | undefined;
+    jurisdiction?: (fhir.CodeableConcept | null)[] | undefined;
     /**
      * This element does not describe the usage of the test script. Instead, it provides traceability of ''why'' the resource is either needed or ''why'' it is defined as it is.  This may be used to point to source materials or specifications that drove the structure of this test script.
      */
@@ -756,11 +756,11 @@ export interface TestScript extends fhir.DomainResource {
     /**
      * The purpose of this element is to define the profile of an origin element used elsewhere in the script.  Test engines could then use the origin-profile mapping to offer a filtered list of test systems that can serve as the sender for the interaction.
      */
-    origin?: fhir.TestScriptOrigin[] | undefined;
+    origin?: (fhir.TestScriptOrigin | null)[] | undefined;
     /**
      * The purpose of this element is to define the profile of a destination element used elsewhere in the script.  Test engines could then use the destination-profile mapping to offer a filtered list of test systems that can serve as the receiver for the interaction.
      */
-    destination?: fhir.TestScriptDestination[] | undefined;
+    destination?: (fhir.TestScriptDestination | null)[] | undefined;
     /**
      * The required capability must exist and are assumed to function correctly on the FHIR server being tested.
      */
@@ -768,15 +768,15 @@ export interface TestScript extends fhir.DomainResource {
     /**
      * Fixture in the test script - by reference (uri). All fixtures are required for the test script to execute.
      */
-    fixture?: fhir.TestScriptFixture[] | undefined;
+    fixture?: (fhir.TestScriptFixture | null)[] | undefined;
     /**
      * See http://build.fhir.org/resourcelist.html for complete list of resource types.
      */
-    profile?: fhir.Reference[] | undefined;
+    profile?: (fhir.Reference | null)[] | undefined;
     /**
      * Variables would be set based either on XPath/JSONPath expressions against fixtures (static and response), or headerField evaluations against response headers. If variable evaluates to nodelist or anything other than a primitive value, then test engine would report an error.  Variables would be used to perform clean replacements in "operation.params", "operation.requestHeader.value", and "operation.url" element values during operation calls and in "assert.value" during assertion evaluations. This limits the places that test engines would need to look for placeholders "${}".  Variables are scoped to the whole script. They are NOT evaluated at declaration. They are evaluated by test engine when used for substitutions in "operation.params", "operation.requestHeader.value", and "operation.url" element values during operation calls and in "assert.value" during assertion evaluations.  See example testscript-search.xml.
      */
-    variable?: fhir.TestScriptVariable[] | undefined;
+    variable?: (fhir.TestScriptVariable | null)[] | undefined;
     /**
      * A series of required setup operations before tests are executed.
      */
@@ -784,7 +784,7 @@ export interface TestScript extends fhir.DomainResource {
     /**
      * A test in this script.
      */
-    test?: fhir.TestScriptTest[] | undefined;
+    test?: (fhir.TestScriptTest | null)[] | undefined;
     /**
      * A series of operations required to clean up after all the tests are executed (successfully or otherwise).
      */

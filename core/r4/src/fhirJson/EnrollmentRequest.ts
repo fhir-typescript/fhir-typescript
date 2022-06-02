@@ -13,11 +13,11 @@ export interface EnrollmentRequest extends fhir.DomainResource {
   /**
    * Resource Type Name
    */
-  resourceType: "EnrollmentRequest";
+  resourceType: "EnrollmentRequest"|null;
   /**
    * The Response business identifier.
    */
-  identifier?: fhir.Identifier[]|undefined;
+  identifier?: (fhir.Identifier|null)[]|undefined;
   /**
    * This element is labeled as a modifier because the status contains codes that mark the request as not currently valid.
    */

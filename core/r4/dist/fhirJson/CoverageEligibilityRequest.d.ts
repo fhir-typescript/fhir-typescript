@@ -69,7 +69,7 @@ export interface CoverageEligibilityRequestItem extends fhir.BackboneElement {
     /**
      * Exceptions, special conditions and supporting information applicable for this service or product line.
      */
-    supportingInfoSequence?: number[] | undefined;
+    supportingInfoSequence?: (number | null)[] | undefined;
     /**
      * Extended properties for primitive element: CoverageEligibilityRequest.item.supportingInfoSequence
      */
@@ -85,7 +85,7 @@ export interface CoverageEligibilityRequestItem extends fhir.BackboneElement {
     /**
      * For example in Oral whether the treatment is cosmetic or associated with TMJ, or for Medical whether the treatment was outside the clinic or out of office hours.
      */
-    modifier?: fhir.CodeableConcept[] | undefined;
+    modifier?: (fhir.CodeableConcept | null)[] | undefined;
     /**
      * The practitioner who is responsible for the product or service to be rendered to the patient.
      */
@@ -105,11 +105,11 @@ export interface CoverageEligibilityRequestItem extends fhir.BackboneElement {
     /**
      * Patient diagnosis for which care is sought.
      */
-    diagnosis?: fhir.CoverageEligibilityRequestItemDiagnosis[] | undefined;
+    diagnosis?: (fhir.CoverageEligibilityRequestItemDiagnosis | null)[] | undefined;
     /**
      * The plan/proposal/order describing the proposed service in detail.
      */
-    detail?: fhir.Reference[] | undefined;
+    detail?: (fhir.Reference | null)[] | undefined;
 }
 /**
  * The CoverageEligibilityRequest provides patient and insurance coverage information to an insurer for them to respond, in the form of an CoverageEligibilityResponse, with information regarding whether the stated coverage is valid and in-force and optionally to provide the insurance details of the policy.
@@ -118,11 +118,11 @@ export interface CoverageEligibilityRequest extends fhir.DomainResource {
     /**
      * Resource Type Name
      */
-    resourceType: "CoverageEligibilityRequest";
+    resourceType: "CoverageEligibilityRequest" | null;
     /**
      * A unique identifier assigned to this coverage eligiblity request.
      */
-    identifier?: fhir.Identifier[] | undefined;
+    identifier?: (fhir.Identifier | null)[] | undefined;
     /**
      * This element is labeled as a modifier because the status contains codes that mark the resource as not currently valid.
      */
@@ -138,7 +138,7 @@ export interface CoverageEligibilityRequest extends fhir.DomainResource {
     /**
      * Code to specify whether requesting: prior authorization requirements for some service categories or billing codes; benefits for coverages specified or discovered; discovery and return of coverages for the patient; and/or validation that the specified coverage is in-force at the date/period specified or 'now' if not specified.
      */
-    purpose: ('auth-requirements' | 'benefits' | 'discovery' | 'validation')[] | null;
+    purpose: (('auth-requirements' | 'benefits' | 'discovery' | 'validation') | null)[] | null;
     /**
      * Extended properties for primitive element: CoverageEligibilityRequest.purpose
      */
@@ -186,14 +186,14 @@ export interface CoverageEligibilityRequest extends fhir.DomainResource {
     /**
      * Often there are multiple jurisdiction specific valuesets which are required.
      */
-    supportingInfo?: fhir.CoverageEligibilityRequestSupportingInfo[] | undefined;
+    supportingInfo?: (fhir.CoverageEligibilityRequestSupportingInfo | null)[] | undefined;
     /**
      * All insurance coverages for the patient which may be applicable for reimbursement, of the products and services listed in the claim, are typically provided in the claim to allow insurers to confirm the ordering of the insurance coverages relative to local 'coordination of benefit' rules. One coverage (and only one) with 'focal=true' is to be used in the adjudication of this claim. Coverages appearing before the focal Coverage in the list, and where 'subrogation=false', should provide a reference to the ClaimResponse containing the adjudication results of the prior claim.
      */
-    insurance?: fhir.CoverageEligibilityRequestInsurance[] | undefined;
+    insurance?: (fhir.CoverageEligibilityRequestInsurance | null)[] | undefined;
     /**
      * Service categories or billable services for which benefit details and/or an authorization prior to service delivery may be required by the payor.
      */
-    item?: fhir.CoverageEligibilityRequestItem[] | undefined;
+    item?: (fhir.CoverageEligibilityRequestItem | null)[] | undefined;
 }
 //# sourceMappingURL=CoverageEligibilityRequest.d.ts.map

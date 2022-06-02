@@ -88,7 +88,7 @@ export interface ImagingStudySeries extends fhir.BackboneElement {
     /**
      * Typical endpoint types include DICOM WADO-RS, which is used to retrieve DICOM instances in native or rendered (e.g., JPG, PNG) formats using a RESTful API; DICOM WADO-URI, which can similarly retrieve native or rendered instances, except using an HTTP query-based approach; and DICOM QIDO-RS, which allows RESTful query for DICOM information without retrieving the actual instances.
      */
-    endpoint?: fhir.Reference[] | undefined;
+    endpoint?: (fhir.Reference | null)[] | undefined;
     /**
      * The anatomic structures examined. See DICOM Part 16 Annex L (http://dicom.nema.org/medical/dicom/current/output/chtml/part16/chapter_L.html) for DICOM to SNOMED-CT mappings. The bodySite may indicate the laterality of body part imaged; if so, it shall be consistent with any content of ImagingStudy.series.laterality.
      */
@@ -100,7 +100,7 @@ export interface ImagingStudySeries extends fhir.BackboneElement {
     /**
      * The specimen imaged, e.g., for whole slide imaging of a biopsy.
      */
-    specimen?: fhir.Reference[] | undefined;
+    specimen?: (fhir.Reference | null)[] | undefined;
     /**
      * The date and time the series was started.
      */
@@ -112,11 +112,11 @@ export interface ImagingStudySeries extends fhir.BackboneElement {
     /**
      * If the person who performed the series is not known, their Organization may be recorded. A patient, or related person, may be the performer, e.g. for patient-captured images.
      */
-    performer?: fhir.ImagingStudySeriesPerformer[] | undefined;
+    performer?: (fhir.ImagingStudySeriesPerformer | null)[] | undefined;
     /**
      * A single SOP instance within the series, e.g. an image, or presentation state.
      */
-    instance?: fhir.ImagingStudySeriesInstance[] | undefined;
+    instance?: (fhir.ImagingStudySeriesInstance | null)[] | undefined;
 }
 /**
  * Representation of the content produced in a DICOM imaging study. A study comprises a set of series, each of which includes a set of Service-Object Pair Instances (SOP Instances - images or other data) acquired or produced in a common context.  A series is of only one modality (e.g. X-ray, CT, MR, ultrasound), but a study may have multiple series of different modalities.
@@ -125,11 +125,11 @@ export interface ImagingStudy extends fhir.DomainResource {
     /**
      * Resource Type Name
      */
-    resourceType: "ImagingStudy";
+    resourceType: "ImagingStudy" | null;
     /**
      * See discussion under [Imaging Study Implementation Notes](imagingstudy.html#notes) for encoding of DICOM Study Instance UID. Accession Number should use ACSN Identifier type.
      */
-    identifier?: fhir.Identifier[] | undefined;
+    identifier?: (fhir.Identifier | null)[] | undefined;
     /**
      * Unknown does not represent "other" - one of the defined statuses must apply.  Unknown is used when the authoring system is not sure what the current status is.
      */
@@ -141,7 +141,7 @@ export interface ImagingStudy extends fhir.DomainResource {
     /**
      * A list of all the series.modality values that are actual acquisition modalities, i.e. those in the DICOM Context Group 29 (value set OID 1.2.840.10008.6.1.19).
      */
-    modality?: fhir.Coding[] | undefined;
+    modality?: (fhir.Coding | null)[] | undefined;
     /**
      * QA phantoms can be recorded with a Device; multiple subjects (such as mice) can be recorded with a Group.
      */
@@ -161,7 +161,7 @@ export interface ImagingStudy extends fhir.DomainResource {
     /**
      * A list of the diagnostic requests that resulted in this imaging study being performed.
      */
-    basedOn?: fhir.Reference[] | undefined;
+    basedOn?: (fhir.Reference | null)[] | undefined;
     /**
      * The requesting/referring physician.
      */
@@ -169,11 +169,11 @@ export interface ImagingStudy extends fhir.DomainResource {
     /**
      * Who read the study and interpreted the images or other content.
      */
-    interpreter?: fhir.Reference[] | undefined;
+    interpreter?: (fhir.Reference | null)[] | undefined;
     /**
      * Typical endpoint types include DICOM WADO-RS, which is used to retrieve DICOM instances in native or rendered (e.g., JPG, PNG), formats using a RESTful API; DICOM WADO-URI, which can similarly retrieve native or rendered instances, except using an HTTP query-based approach; DICOM QIDO-RS, which allows RESTful query for DICOM information without retrieving the actual instances; or IHE Invoke Image Display (IID), which provides standard invocation of an imaging web viewer.
      */
-    endpoint?: fhir.Reference[] | undefined;
+    endpoint?: (fhir.Reference | null)[] | undefined;
     /**
      * Number of Series in the Study. This value given may be larger than the number of series elements this Resource contains due to resource availability, security, or other factors. This element should be present if any series elements are present.
      */
@@ -197,7 +197,7 @@ export interface ImagingStudy extends fhir.DomainResource {
     /**
      * The code for the performed procedure type.
      */
-    procedureCode?: fhir.CodeableConcept[] | undefined;
+    procedureCode?: (fhir.CodeableConcept | null)[] | undefined;
     /**
      * The principal physical location where the ImagingStudy was performed.
      */
@@ -205,15 +205,15 @@ export interface ImagingStudy extends fhir.DomainResource {
     /**
      * Description of clinical condition indicating why the ImagingStudy was requested.
      */
-    reasonCode?: fhir.CodeableConcept[] | undefined;
+    reasonCode?: (fhir.CodeableConcept | null)[] | undefined;
     /**
      * Indicates another resource whose existence justifies this Study.
      */
-    reasonReference?: fhir.Reference[] | undefined;
+    reasonReference?: (fhir.Reference | null)[] | undefined;
     /**
      * Per the recommended DICOM mapping, this element is derived from the Study Description attribute (0008,1030). Observations or findings about the imaging study should be recorded in another resource, e.g. Observation, and not in this element.
      */
-    note?: fhir.Annotation[] | undefined;
+    note?: (fhir.Annotation | null)[] | undefined;
     /**
      * The Imaging Manager description of the study. Institution-generated description or classification of the Study (component) performed.
      */
@@ -225,6 +225,6 @@ export interface ImagingStudy extends fhir.DomainResource {
     /**
      * Each study has one or more series of images or other content.
      */
-    series?: fhir.ImagingStudySeries[] | undefined;
+    series?: (fhir.ImagingStudySeries | null)[] | undefined;
 }
 //# sourceMappingURL=ImagingStudy.d.ts.map

@@ -64,7 +64,7 @@ export interface MeasureGroupStratifier extends fhir.BackboneElement {
     /**
      * Stratifiers are defined either as a single criteria, or as a set of component criteria.
      */
-    component?: fhir.MeasureGroupStratifierComponent[] | undefined;
+    component?: (fhir.MeasureGroupStratifierComponent | null)[] | undefined;
 }
 /**
  * A group of population criteria for the measure.
@@ -85,11 +85,11 @@ export interface MeasureGroup extends fhir.BackboneElement {
     /**
      * A population criteria for the measure.
      */
-    population?: fhir.MeasureGroupPopulation[] | undefined;
+    population?: (fhir.MeasureGroupPopulation | null)[] | undefined;
     /**
      * The stratifier criteria for the measure report, specified as either the name of a valid CQL expression defined within a referenced library or a valid FHIR Resource Path.
      */
-    stratifier?: fhir.MeasureGroupStratifier[] | undefined;
+    stratifier?: (fhir.MeasureGroupStratifier | null)[] | undefined;
 }
 /**
  * Note that supplemental data are reported as observations for each patient and included in the evaluatedResources bundle. See the MeasureReport resource or the Quality Reporting topic for more information.
@@ -102,7 +102,7 @@ export interface MeasureSupplementalData extends fhir.BackboneElement {
     /**
      * An indicator of the intended usage for the supplemental data element. Supplemental data indicates the data is additional information requested to augment the measure information. Risk adjustment factor indicates the data is additional information used to calculate risk adjustment factors when applying a risk model to the measure calculation.
      */
-    usage?: fhir.CodeableConcept[] | undefined;
+    usage?: (fhir.CodeableConcept | null)[] | undefined;
     /**
      * The human readable description of this supplemental data.
      */
@@ -123,7 +123,7 @@ export interface Measure extends fhir.DomainResource {
     /**
      * Resource Type Name
      */
-    resourceType: "Measure";
+    resourceType: "Measure" | null;
     /**
      * Can be a urn:uuid: or a urn:oid: but real http: addresses are preferred.  Multiple instances may share the same URL if they have a distinct version.
      * The determination of when to create a new version of a resource (same url, new version) vs. defining a new artifact is up to the author.  Considerations for making this decision are found in [Technical and Business Versions](resource.html#versions).
@@ -137,7 +137,7 @@ export interface Measure extends fhir.DomainResource {
     /**
      * Typically, this is used for identifiers that can go in an HL7 V3 II (instance identifier) data type, and can then identify this measure outside of FHIR, where it is not possible to use the logical URI.
      */
-    identifier?: fhir.Identifier[] | undefined;
+    identifier?: (fhir.Identifier | null)[] | undefined;
     /**
      * There may be different measure instances that have the same identifier but different versions.  The version can be appended to the url in a reference to allow a reference to a particular business version of the measure with the format [url]|[version].
      */
@@ -213,7 +213,7 @@ export interface Measure extends fhir.DomainResource {
     /**
      * May be a web site, an email address, a telephone number, etc.
      */
-    contact?: fhir.ContactDetail[] | undefined;
+    contact?: (fhir.ContactDetail | null)[] | undefined;
     /**
      * This description can be used to capture details such as why the measure was built, comments about misuse, instructions for clinical use and interpretation, literature references, examples from the paper world, etc. It is not a rendering of the measure as conveyed in the 'text' field of the resource itself. This item SHOULD be populated unless the information is available from context (e.g. the language of the measure is presumed to be the predominant language in the place the measure was created).
      */
@@ -225,11 +225,11 @@ export interface Measure extends fhir.DomainResource {
     /**
      * When multiple useContexts are specified, there is no expectation that all or any of the contexts apply.
      */
-    useContext?: fhir.UsageContext[] | undefined;
+    useContext?: (fhir.UsageContext | null)[] | undefined;
     /**
      * It may be possible for the measure to be used in jurisdictions other than those for which it was originally designed or intended.
      */
-    jurisdiction?: fhir.CodeableConcept[] | undefined;
+    jurisdiction?: (fhir.CodeableConcept | null)[] | undefined;
     /**
      * This element does not describe the usage of the measure. Instead, it provides traceability of ''why'' the resource is either needed or ''why'' it is defined as it is.  This may be used to point to source materials or specifications that drove the structure of this measure.
      */
@@ -277,31 +277,31 @@ export interface Measure extends fhir.DomainResource {
     /**
      * Descriptive topics related to the content of the measure. Topics provide a high-level categorization grouping types of measures that can be useful for filtering and searching.
      */
-    topic?: fhir.CodeableConcept[] | undefined;
+    topic?: (fhir.CodeableConcept | null)[] | undefined;
     /**
      * An individiual or organization primarily involved in the creation and maintenance of the content.
      */
-    author?: fhir.ContactDetail[] | undefined;
+    author?: (fhir.ContactDetail | null)[] | undefined;
     /**
      * An individual or organization primarily responsible for internal coherence of the content.
      */
-    editor?: fhir.ContactDetail[] | undefined;
+    editor?: (fhir.ContactDetail | null)[] | undefined;
     /**
      * An individual or organization primarily responsible for review of some aspect of the content.
      */
-    reviewer?: fhir.ContactDetail[] | undefined;
+    reviewer?: (fhir.ContactDetail | null)[] | undefined;
     /**
      * An individual or organization responsible for officially endorsing the content for use in some setting.
      */
-    endorser?: fhir.ContactDetail[] | undefined;
+    endorser?: (fhir.ContactDetail | null)[] | undefined;
     /**
      * Each related artifact is either an attachment, or a reference to another resource, but not both.
      */
-    relatedArtifact?: fhir.RelatedArtifact[] | undefined;
+    relatedArtifact?: (fhir.RelatedArtifact | null)[] | undefined;
     /**
      * A reference to a Library resource containing the formal logic used by the measure.
      */
-    library?: string[] | undefined;
+    library?: (string | null)[] | undefined;
     /**
      * Extended properties for primitive element: Measure.library
      */
@@ -325,7 +325,7 @@ export interface Measure extends fhir.DomainResource {
     /**
      * Indicates whether the measure is used to examine a process, an outcome over time, a patient-reported outcome, or a structure measure such as utilization.
      */
-    type?: fhir.CodeableConcept[] | undefined;
+    type?: (fhir.CodeableConcept | null)[] | undefined;
     /**
      * Describes the method of adjusting for clinical severity and conditions present at the start of care that can influence patient outcomes for making valid comparisons of outcome measures across providers. Indicates whether a measure is subject to the statistical process for reducing, removing, or clarifying the influences of confounding factors to allow for more useful comparisons.
      */
@@ -365,7 +365,7 @@ export interface Measure extends fhir.DomainResource {
     /**
      * Provides a description of an individual term used within the measure.
      */
-    definition?: string[] | undefined;
+    definition?: (string | null)[] | undefined;
     /**
      * Extended properties for primitive element: Measure.definition
      */
@@ -381,10 +381,10 @@ export interface Measure extends fhir.DomainResource {
     /**
      * A group of population criteria for the measure.
      */
-    group?: fhir.MeasureGroup[] | undefined;
+    group?: (fhir.MeasureGroup | null)[] | undefined;
     /**
      * Note that supplemental data are reported as observations for each patient and included in the evaluatedResources bundle. See the MeasureReport resource or the Quality Reporting topic for more information.
      */
-    supplementalData?: fhir.MeasureSupplementalData[] | undefined;
+    supplementalData?: (fhir.MeasureSupplementalData | null)[] | undefined;
 }
 //# sourceMappingURL=Measure.d.ts.map

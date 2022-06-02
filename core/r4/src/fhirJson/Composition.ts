@@ -61,7 +61,7 @@ export interface CompositionEvent extends fhir.BackboneElement {
   /**
    * An event can further specialize the act inherent in the typeCode, such as where it is simply "Procedure Report" and the procedure was a "colonoscopy". If one or more eventCodes are included, they SHALL NOT conflict with the values inherent in the classCode, practiceSettingCode or typeCode, as such a conflict would create an ambiguous situation. This short list of codes is provided to be used as key words for certain types of queries.
    */
-  code?: fhir.CodeableConcept[]|undefined;
+  code?: (fhir.CodeableConcept|null)[]|undefined;
   /**
    * The period of time covered by the documentation. There is no assertion that the documentation is a complete representation for this period, only that it documents events during this time.
    */
@@ -69,7 +69,7 @@ export interface CompositionEvent extends fhir.BackboneElement {
   /**
    * The description and/or reference of the event(s) being documented. For example, this could be used to document such a colonoscopy or an appendectomy.
    */
-  detail?: fhir.Reference[]|undefined;
+  detail?: (fhir.Reference|null)[]|undefined;
 }
 
 /**
@@ -92,7 +92,7 @@ export interface CompositionSection extends fhir.BackboneElement {
   /**
    * Identifies who is responsible for the information in this section, not necessarily who typed it in.
    */
-  author?: fhir.Reference[]|undefined;
+  author?: (fhir.Reference|null)[]|undefined;
   /**
    * Typically, sections in a doument are about the subject of the document, whether that is a  patient, or group of patients, location, or device, or whatever. For some kind of documents, some sections actually contain data about related entities. Typical examples are  a section in a newborn discharge summary concerning the mother, or family history documents, with a section about each family member, though there are many other examples.
    */
@@ -116,7 +116,7 @@ export interface CompositionSection extends fhir.BackboneElement {
   /**
    * If there are no entries in the list, an emptyReason SHOULD be provided.
    */
-  entry?: fhir.Reference[]|undefined;
+  entry?: (fhir.Reference|null)[]|undefined;
   /**
    * The various reasons for an empty section make a significant interpretation to its interpretation. Note that this code is for use when the entire section content has been suppressed, and not for when individual items are omitted - implementers may consider using a text note or a flag on an entry in these cases.
    */
@@ -124,7 +124,7 @@ export interface CompositionSection extends fhir.BackboneElement {
   /**
    * Nested sections are primarily used to help human readers navigate to particular portions of the document.
    */
-  section?: fhir.CompositionSection[]|undefined;
+  section?: (fhir.CompositionSection|null)[]|undefined;
 }
 
 /**
@@ -134,7 +134,7 @@ export interface Composition extends fhir.DomainResource {
   /**
    * Resource Type Name
    */
-  resourceType: "Composition";
+  resourceType: "Composition"|null;
   /**
    * Similar to ClinicalDocument/setId in CDA. See discussion in resource definition for how these relate.
    */
@@ -155,7 +155,7 @@ export interface Composition extends fhir.DomainResource {
   /**
    * This is a metadata field from [XDS/MHD](http://wiki.ihe.net/index.php?title=Mobile_access_to_Health_Documents_(MHD)).
    */
-  category?: fhir.CodeableConcept[]|undefined;
+  category?: (fhir.CodeableConcept|null)[]|undefined;
   /**
    * For clinical documents, this is usually the patient.
    */
@@ -175,7 +175,7 @@ export interface Composition extends fhir.DomainResource {
   /**
    * Identifies who is responsible for the information in the composition, not necessarily who typed it in.
    */
-  author: fhir.Reference[]|null;
+  author: (fhir.Reference|null)[]|null;
   /**
    * For many compositions, the title is the same as the text or a display name of Composition.type (e.g. a "consultation" or "progress note"). Note that CDA does not make title mandatory, but there are no known cases where it is useful for title to be omitted, so it is mandatory here. Feedback on this requirement is welcome during the trial use period.
    */
@@ -195,7 +195,7 @@ export interface Composition extends fhir.DomainResource {
   /**
    * Only list each attester once.
    */
-  attester?: fhir.CompositionAttester[]|undefined;
+  attester?: (fhir.CompositionAttester|null)[]|undefined;
   /**
    * This is useful when documents are derived from a composition - provides guidance for how to get the latest version of the document. This is optional because this is sometimes not known by the authoring system, and can be inferred by context. However, it is important that this information be known when working with a derived document, so providing a custodian is encouraged.
    */
@@ -203,13 +203,13 @@ export interface Composition extends fhir.DomainResource {
   /**
    * A document is a version specific composition.
    */
-  relatesTo?: fhir.CompositionRelatesTo[]|undefined;
+  relatesTo?: (fhir.CompositionRelatesTo|null)[]|undefined;
   /**
    * The event needs to be consistent with the type element, though can provide further information if desired.
    */
-  event?: fhir.CompositionEvent[]|undefined;
+  event?: (fhir.CompositionEvent|null)[]|undefined;
   /**
    * The root of the sections that make up the composition.
    */
-  section?: fhir.CompositionSection[]|undefined;
+  section?: (fhir.CompositionSection|null)[]|undefined;
 }

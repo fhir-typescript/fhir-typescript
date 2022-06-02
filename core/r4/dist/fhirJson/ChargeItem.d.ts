@@ -19,15 +19,15 @@ export interface ChargeItem extends fhir.DomainResource {
     /**
      * Resource Type Name
      */
-    resourceType: "ChargeItem";
+    resourceType: "ChargeItem" | null;
     /**
      * Identifiers assigned to this event performer or other systems.
      */
-    identifier?: fhir.Identifier[] | undefined;
+    identifier?: (fhir.Identifier | null)[] | undefined;
     /**
      * References the (external) source of pricing information, rules of application for the code this ChargeItem uses.
      */
-    definitionUri?: string[] | undefined;
+    definitionUri?: (string | null)[] | undefined;
     /**
      * Extended properties for primitive element: ChargeItem.definitionUri
      */
@@ -35,7 +35,7 @@ export interface ChargeItem extends fhir.DomainResource {
     /**
      * References the source of pricing information, rules of application for the code this ChargeItem uses.
      */
-    definitionCanonical?: string[] | undefined;
+    definitionCanonical?: (string | null)[] | undefined;
     /**
      * Extended properties for primitive element: ChargeItem.definitionCanonical
      */
@@ -52,7 +52,7 @@ export interface ChargeItem extends fhir.DomainResource {
     /**
      * ChargeItems can be grouped to larger ChargeItems covering the whole set.
      */
-    partOf?: fhir.Reference[] | undefined;
+    partOf?: (fhir.Reference | null)[] | undefined;
     /**
      * A code that identifies the charge, like a billing code.
      */
@@ -84,7 +84,7 @@ export interface ChargeItem extends fhir.DomainResource {
     /**
      * Indicates who or what performed or participated in the charged service.
      */
-    performer?: fhir.ChargeItemPerformer[] | undefined;
+    performer?: (fhir.ChargeItemPerformer | null)[] | undefined;
     /**
      * Practitioners and Devices can be associated with multiple organizations. It has to be made clear, on behalf of which Organization the services have been rendered.
      */
@@ -104,7 +104,7 @@ export interface ChargeItem extends fhir.DomainResource {
     /**
      * Only used if not implicit in code found in Condition.code. If the use case requires attributes from the BodySite resource (e.g. to identify and track separately) then use the standard extension [bodySite](extension-bodysite.html).  May be a summary code, or a reference to a very precise definition of the location, or both.
      */
-    bodysite?: fhir.CodeableConcept[] | undefined;
+    bodysite?: (fhir.CodeableConcept | null)[] | undefined;
     /**
      * There is no reason to carry the factor in the instance of a ChargeItem unless special circumstances require a manual override. The factors are usually defined by a set of rules in a back catalogue of the billing codes  (see ChargeItem.definition). Derived profiles may require a ChargeItem.overrideReason to be provided if either factor or price are manually overridden.
      */
@@ -140,11 +140,11 @@ export interface ChargeItem extends fhir.DomainResource {
     /**
      * If the application of the charge item requires a reason to be given, it can be captured here. Textual reasons can be captured using reasonCode.text.
      */
-    reason?: fhir.CodeableConcept[] | undefined;
+    reason?: (fhir.CodeableConcept | null)[] | undefined;
     /**
      * Indicated the rendered service that caused this charge.
      */
-    service?: fhir.Reference[] | undefined;
+    service?: (fhir.Reference | null)[] | undefined;
     /**
      * Identifies the device, food, drug or other product being charged either by type code or reference to an instance.
      */
@@ -156,14 +156,14 @@ export interface ChargeItem extends fhir.DomainResource {
     /**
      * Systems posting the ChargeItems might not always be able to determine, which accounts the Items need to be places into. It is up to the postprocessing Financial System to apply internal rules to decide based on the Encounter/EpisodeOfCare/Patient/Coverage context and the type of ChargeItem, which Account is appropriate.
      */
-    account?: fhir.Reference[] | undefined;
+    account?: (fhir.Reference | null)[] | undefined;
     /**
      * Comments made about the event by the performer, subject or other participants.
      */
-    note?: fhir.Annotation[] | undefined;
+    note?: (fhir.Annotation | null)[] | undefined;
     /**
      * Further information supporting this charge.
      */
-    supportingInformation?: fhir.Reference[] | undefined;
+    supportingInformation?: (fhir.Reference | null)[] | undefined;
 }
 //# sourceMappingURL=ChargeItem.d.ts.map

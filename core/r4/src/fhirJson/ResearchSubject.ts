@@ -13,11 +13,11 @@ export interface ResearchSubject extends fhir.DomainResource {
   /**
    * Resource Type Name
    */
-  resourceType: "ResearchSubject";
+  resourceType: "ResearchSubject"|null;
   /**
    * Identifiers assigned to this research subject for a study.
    */
-  identifier?: fhir.Identifier[]|undefined;
+  identifier?: (fhir.Identifier|null)[]|undefined;
   /**
    * The current state of the subject.
    */

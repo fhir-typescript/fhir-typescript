@@ -6,7 +6,7 @@ export interface MedicinalProductAuthorizationJurisdictionalAuthorization extend
     /**
      * The assigned number for the marketing authorization.
      */
-    identifier?: fhir.Identifier[] | undefined;
+    identifier?: (fhir.Identifier | null)[] | undefined;
     /**
      * Country of authorization.
      */
@@ -14,7 +14,7 @@ export interface MedicinalProductAuthorizationJurisdictionalAuthorization extend
     /**
      * Jurisdiction within a country.
      */
-    jurisdiction?: fhir.CodeableConcept[] | undefined;
+    jurisdiction?: (fhir.CodeableConcept | null)[] | undefined;
     /**
      * The legal status of supply in a jurisdiction or region.
      */
@@ -51,7 +51,7 @@ export interface MedicinalProductAuthorizationProcedure extends fhir.BackboneEle
     /**
      * Applcations submitted to obtain a marketing authorization.
      */
-    application?: fhir.MedicinalProductAuthorizationProcedure[] | undefined;
+    application?: (fhir.MedicinalProductAuthorizationProcedure | null)[] | undefined;
 }
 /**
  * The regulatory authorization of a medicinal product.
@@ -60,11 +60,11 @@ export interface MedicinalProductAuthorization extends fhir.DomainResource {
     /**
      * Resource Type Name
      */
-    resourceType: "MedicinalProductAuthorization";
+    resourceType: "MedicinalProductAuthorization" | null;
     /**
      * Business identifier for the marketing authorization, as assigned by a regulator.
      */
-    identifier?: fhir.Identifier[] | undefined;
+    identifier?: (fhir.Identifier | null)[] | undefined;
     /**
      * The medicinal product that is being authorized.
      */
@@ -72,11 +72,11 @@ export interface MedicinalProductAuthorization extends fhir.DomainResource {
     /**
      * The country in which the marketing authorization has been granted.
      */
-    country?: fhir.CodeableConcept[] | undefined;
+    country?: (fhir.CodeableConcept | null)[] | undefined;
     /**
      * Jurisdiction within a country.
      */
-    jurisdiction?: fhir.CodeableConcept[] | undefined;
+    jurisdiction?: (fhir.CodeableConcept | null)[] | undefined;
     /**
      * The status of the marketing authorization.
      */
@@ -128,7 +128,7 @@ export interface MedicinalProductAuthorization extends fhir.DomainResource {
     /**
      * Authorization in areas within a country.
      */
-    jurisdictionalAuthorization?: fhir.MedicinalProductAuthorizationJurisdictionalAuthorization[] | undefined;
+    jurisdictionalAuthorization?: (fhir.MedicinalProductAuthorizationJurisdictionalAuthorization | null)[] | undefined;
     /**
      * Marketing Authorization Holder.
      */

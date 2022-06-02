@@ -44,7 +44,7 @@ export interface MedicinalProductPharmaceuticalRouteOfAdministrationTargetSpecie
     /**
      * A species specific time during which consumption of animal product is not appropriate.
      */
-    withdrawalPeriod?: fhir.MedicinalProductPharmaceuticalRouteOfAdministrationTargetSpeciesWithdrawalPeriod[] | undefined;
+    withdrawalPeriod?: (fhir.MedicinalProductPharmaceuticalRouteOfAdministrationTargetSpeciesWithdrawalPeriod | null)[] | undefined;
 }
 /**
  * The path by which the pharmaceutical product is taken into or makes contact with the body.
@@ -77,7 +77,7 @@ export interface MedicinalProductPharmaceuticalRouteOfAdministration extends fhi
     /**
      * A species for which this route applies.
      */
-    targetSpecies?: fhir.MedicinalProductPharmaceuticalRouteOfAdministrationTargetSpecies[] | undefined;
+    targetSpecies?: (fhir.MedicinalProductPharmaceuticalRouteOfAdministrationTargetSpecies | null)[] | undefined;
 }
 /**
  * A pharmaceutical product described in terms of its composition and dose form.
@@ -86,11 +86,11 @@ export interface MedicinalProductPharmaceutical extends fhir.DomainResource {
     /**
      * Resource Type Name
      */
-    resourceType: "MedicinalProductPharmaceutical";
+    resourceType: "MedicinalProductPharmaceutical" | null;
     /**
      * An identifier for the pharmaceutical medicinal product.
      */
-    identifier?: fhir.Identifier[] | undefined;
+    identifier?: (fhir.Identifier | null)[] | undefined;
     /**
      * The administrable dose form, after necessary reconstitution.
      */
@@ -102,18 +102,18 @@ export interface MedicinalProductPharmaceutical extends fhir.DomainResource {
     /**
      * Ingredient.
      */
-    ingredient?: fhir.Reference[] | undefined;
+    ingredient?: (fhir.Reference | null)[] | undefined;
     /**
      * Accompanying device.
      */
-    device?: fhir.Reference[] | undefined;
+    device?: (fhir.Reference | null)[] | undefined;
     /**
      * Characteristics e.g. a products onset of action.
      */
-    characteristics?: fhir.MedicinalProductPharmaceuticalCharacteristics[] | undefined;
+    characteristics?: (fhir.MedicinalProductPharmaceuticalCharacteristics | null)[] | undefined;
     /**
      * The path by which the pharmaceutical product is taken into or makes contact with the body.
      */
-    routeOfAdministration: fhir.MedicinalProductPharmaceuticalRouteOfAdministration[] | null;
+    routeOfAdministration: (fhir.MedicinalProductPharmaceuticalRouteOfAdministration | null)[] | null;
 }
 //# sourceMappingURL=MedicinalProductPharmaceutical.d.ts.map

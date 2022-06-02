@@ -510,7 +510,7 @@ export interface DeviceDefinitionArgs extends fhir.DomainResourceArgs {
   /**
    * The available versions of the device, e.g., software versions.
    */
-  version?: fhir.FhirString[]|string[]|undefined;
+  version?: fhir.FhirString[]|(string|null)[]|undefined;
   /**
    * Extended properties for primitive element: DeviceDefinition.version
    */

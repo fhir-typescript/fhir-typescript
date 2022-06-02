@@ -204,7 +204,7 @@ export interface DataRequirementArgs extends fhir.FhirElementArgs {
     /**
      * The profile of the required data, specified as the uri of the profile definition.
      */
-    profile?: fhir.FhirCanonical[] | string[] | undefined;
+    profile?: fhir.FhirCanonical[] | (string | null)[] | undefined;
     /**
      * Extended properties for primitive element: DataRequirement.profile
      */
@@ -225,7 +225,7 @@ export interface DataRequirementArgs extends fhir.FhirElementArgs {
      * Indicates that specific elements of the type are referenced by the knowledge module and must be supported by the consumer in order to obtain an effective evaluation. This does not mean that a value is required for this element, only that the consuming system must understand the element and be able to provide values for it if they are available.
      * The value of mustSupport SHALL be a FHIRPath resolveable on the type of the DataRequirement. The path SHALL consist only of identifiers, constant indexers, and .resolve() (see the [Simple FHIRPath Profile](fhirpath.html#simple) for full details).
      */
-    mustSupport?: fhir.FhirString[] | string[] | undefined;
+    mustSupport?: fhir.FhirString[] | (string | null)[] | undefined;
     /**
      * Extended properties for primitive element: DataRequirement.mustSupport
      */
@@ -400,9 +400,7 @@ export declare class DataRequirement extends fhir.FhirElement {
         readonly Group: "Group";
         readonly GuidanceResponse: "GuidanceResponse";
         readonly HealthcareService: "HealthcareService";
-        readonly HumanName: "HumanName"; /**
-         * Extended properties for primitive element: DataRequirement.limit
-         */
+        readonly HumanName: "HumanName";
         readonly Id: "id";
         readonly Identifier: "Identifier";
         readonly ImagingStudy: "ImagingStudy";

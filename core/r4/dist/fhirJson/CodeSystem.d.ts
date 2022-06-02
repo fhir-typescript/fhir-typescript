@@ -22,7 +22,7 @@ export interface CodeSystemFilter extends fhir.BackboneElement {
     /**
      * A list of operators that can be used with the filter.
      */
-    operator: ('=' | 'descendent-of' | 'exists' | 'generalizes' | 'in' | 'is-a' | 'is-not-a' | 'not-in' | 'regex')[] | null;
+    operator: (('=' | 'descendent-of' | 'exists' | 'generalizes' | 'in' | 'is-a' | 'is-not-a' | 'not-in' | 'regex') | null)[] | null;
     /**
      * Extended properties for primitive element: CodeSystem.filter.operator
      */
@@ -194,15 +194,15 @@ export interface CodeSystemConcept extends fhir.BackboneElement {
     /**
      * Concepts have both a ```display``` and an array of ```designation```. The display is equivalent to a special designation with an implied ```designation.use``` of "primary code" and a language equal to the [Resource Language](resource.html#language).
      */
-    designation?: fhir.CodeSystemConceptDesignation[] | undefined;
+    designation?: (fhir.CodeSystemConceptDesignation | null)[] | undefined;
     /**
      * A property value for this concept.
      */
-    property?: fhir.CodeSystemConceptProperty[] | undefined;
+    property?: (fhir.CodeSystemConceptProperty | null)[] | undefined;
     /**
      * Defines children of a concept to produce a hierarchy of concepts. The nature of the relationships is variable (is-a/contains/categorizes) - see hierarchyMeaning.
      */
-    concept?: fhir.CodeSystemConcept[] | undefined;
+    concept?: (fhir.CodeSystemConcept | null)[] | undefined;
 }
 /**
  * The CodeSystem resource is used to declare the existence of and describe a code system or code system supplement and its key properties, and optionally define a part or all of its content.
@@ -211,7 +211,7 @@ export interface CodeSystem extends fhir.DomainResource {
     /**
      * Resource Type Name
      */
-    resourceType: "CodeSystem";
+    resourceType: "CodeSystem" | null;
     /**
      * Can be a urn:uuid: or a urn:oid: but real http: addresses are preferred.  Multiple instances may share the same URL if they have a distinct version.
      * The determination of when to create a new version of a resource (same url, new version) vs. defining a new artifact is up to the author.  Considerations for making this decision are found in [Technical and Business Versions](resource.html#versions).
@@ -225,7 +225,7 @@ export interface CodeSystem extends fhir.DomainResource {
     /**
      * Typically, this is used for identifiers that can go in an HL7 V3 II (instance identifier) data type, and can then identify this code system outside of FHIR, where it is not possible to use the logical URI.  Note that HL7 defines at least three identifiers for many of its code systems - the FHIR canonical URL, the OID and the V2 Table 0396 mnemonic code.
      */
-    identifier?: fhir.Identifier[] | undefined;
+    identifier?: (fhir.Identifier | null)[] | undefined;
     /**
      * There may be different code system instances that have the same identifier but different versions.  The version can be appended to the url in a reference to allow a reference to a particular business version of the code system with the format [url]|[version].
      */
@@ -285,7 +285,7 @@ export interface CodeSystem extends fhir.DomainResource {
     /**
      * May be a web site, an email address, a telephone number, etc.
      */
-    contact?: fhir.ContactDetail[] | undefined;
+    contact?: (fhir.ContactDetail | null)[] | undefined;
     /**
      * This description can be used to capture details such as why the code system was built, comments about misuse, instructions for clinical use and interpretation, literature references, examples from the paper world, etc. It is not a rendering of the code system as conveyed in the 'text' field of the resource itself. This item SHOULD be populated unless the information is available from context (e.g. the language of the code system is presumed to be the predominant language in the place the code system was created).
      */
@@ -297,11 +297,11 @@ export interface CodeSystem extends fhir.DomainResource {
     /**
      * When multiple useContexts are specified, there is no expectation that all or any of the contexts apply.
      */
-    useContext?: fhir.UsageContext[] | undefined;
+    useContext?: (fhir.UsageContext | null)[] | undefined;
     /**
      * It may be possible for the code system to be used in jurisdictions other than those for which it was originally designed or intended.
      */
-    jurisdiction?: fhir.CodeableConcept[] | undefined;
+    jurisdiction?: (fhir.CodeableConcept | null)[] | undefined;
     /**
      * This element does not describe the usage of the code system. Instead, it provides traceability of ''why'' the resource is either needed or ''why'' it is defined as it is.  This may be used to point to source materials or specifications that drove the structure of this code system.
      */
@@ -386,14 +386,14 @@ export interface CodeSystem extends fhir.DomainResource {
     /**
      * Note that filters defined in code systems usually require custom code on the part of any terminology engine that will make them available for use in value set filters. For this reason, they are generally only seen in high value published terminologies.
      */
-    filter?: fhir.CodeSystemFilter[] | undefined;
+    filter?: (fhir.CodeSystemFilter | null)[] | undefined;
     /**
      * A property defines an additional slot through which additional information can be provided about a concept.
      */
-    property?: fhir.CodeSystemProperty[] | undefined;
+    property?: (fhir.CodeSystemProperty | null)[] | undefined;
     /**
      * If this is empty, it means that the code system resource does not represent the content of the code system.
      */
-    concept?: fhir.CodeSystemConcept[] | undefined;
+    concept?: (fhir.CodeSystemConcept | null)[] | undefined;
 }
 //# sourceMappingURL=CodeSystem.d.ts.map

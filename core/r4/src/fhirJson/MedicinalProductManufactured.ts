@@ -13,7 +13,7 @@ export interface MedicinalProductManufactured extends fhir.DomainResource {
   /**
    * Resource Type Name
    */
-  resourceType: "MedicinalProductManufactured";
+  resourceType: "MedicinalProductManufactured"|null;
   /**
    * Dose form as manufactured and before any transformation into the pharmaceutical product.
    */
@@ -29,11 +29,11 @@ export interface MedicinalProductManufactured extends fhir.DomainResource {
   /**
    * Manufacturer of the item (Note that this should be named "manufacturer" but it currently causes technical issues).
    */
-  manufacturer?: fhir.Reference[]|undefined;
+  manufacturer?: (fhir.Reference|null)[]|undefined;
   /**
    * Ingredient.
    */
-  ingredient?: fhir.Reference[]|undefined;
+  ingredient?: (fhir.Reference|null)[]|undefined;
   /**
    * Dimensions, color etc.
    */
@@ -41,5 +41,5 @@ export interface MedicinalProductManufactured extends fhir.DomainResource {
   /**
    * Other codeable characteristics.
    */
-  otherCharacteristics?: fhir.CodeableConcept[]|undefined;
+  otherCharacteristics?: (fhir.CodeableConcept|null)[]|undefined;
 }

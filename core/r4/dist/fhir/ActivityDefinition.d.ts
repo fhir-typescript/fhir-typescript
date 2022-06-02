@@ -285,7 +285,7 @@ export interface ActivityDefinitionArgs extends fhir.DomainResourceArgs {
     /**
      * A reference to a Library resource containing any formal logic used by the activity definition.
      */
-    library?: fhir.FhirCanonical[] | string[] | undefined;
+    library?: fhir.FhirCanonical[] | (string | null)[] | undefined;
     /**
      * Extended properties for primitive element: ActivityDefinition.library
      */

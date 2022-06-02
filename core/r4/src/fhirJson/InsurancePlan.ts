@@ -21,7 +21,7 @@ export interface InsurancePlanContact extends fhir.BackboneElement {
   /**
    * A contact detail (e.g. a telephone number or an email address) by which the party may be contacted.
    */
-  telecom?: fhir.ContactPoint[]|undefined;
+  telecom?: (fhir.ContactPoint|null)[]|undefined;
   /**
    * Visiting or postal addresses for the contact.
    */
@@ -61,7 +61,7 @@ export interface InsurancePlanCoverageBenefit extends fhir.BackboneElement {
   /**
    * The specific limits on the benefit.
    */
-  limit?: fhir.InsurancePlanCoverageBenefitLimit[]|undefined;
+  limit?: (fhir.InsurancePlanCoverageBenefitLimit|null)[]|undefined;
 }
 
 /**
@@ -75,11 +75,11 @@ export interface InsurancePlanCoverage extends fhir.BackboneElement {
   /**
    * Networks are represented as a hierarchy of organization resources.
    */
-  network?: fhir.Reference[]|undefined;
+  network?: (fhir.Reference|null)[]|undefined;
   /**
    * Specific benefits under this type of coverage.
    */
-  benefit: fhir.InsurancePlanCoverageBenefit[]|null;
+  benefit: (fhir.InsurancePlanCoverageBenefit|null)[]|null;
 }
 
 /**
@@ -127,7 +127,7 @@ export interface InsurancePlanPlanSpecificCostBenefitCost extends fhir.BackboneE
   /**
    * Additional information about the cost, such as information about funding sources (e.g. HSA, HRA, FSA, RRA).
    */
-  qualifiers?: fhir.CodeableConcept[]|undefined;
+  qualifiers?: (fhir.CodeableConcept|null)[]|undefined;
   /**
    * The actual cost value. (some of the costs may be represented as percentages rather than currency, e.g. 10% coinsurance).
    */
@@ -145,7 +145,7 @@ export interface InsurancePlanPlanSpecificCostBenefit extends fhir.BackboneEleme
   /**
    * List of the costs associated with a specific benefit.
    */
-  cost?: fhir.InsurancePlanPlanSpecificCostBenefitCost[]|undefined;
+  cost?: (fhir.InsurancePlanPlanSpecificCostBenefitCost|null)[]|undefined;
 }
 
 /**
@@ -159,7 +159,7 @@ export interface InsurancePlanPlanSpecificCost extends fhir.BackboneElement {
   /**
    * List of the specific benefits under this category of benefit.
    */
-  benefit?: fhir.InsurancePlanPlanSpecificCostBenefit[]|undefined;
+  benefit?: (fhir.InsurancePlanPlanSpecificCostBenefit|null)[]|undefined;
 }
 
 /**
@@ -169,7 +169,7 @@ export interface InsurancePlanPlan extends fhir.BackboneElement {
   /**
    * Business identifiers assigned to this health insurance plan which remain constant as the resource is updated and propagates from server to server.
    */
-  identifier?: fhir.Identifier[]|undefined;
+  identifier?: (fhir.Identifier|null)[]|undefined;
   /**
    * Type of plan. For example, "Platinum" or "High Deductable".
    */
@@ -177,19 +177,19 @@ export interface InsurancePlanPlan extends fhir.BackboneElement {
   /**
    * The geographic region in which a health insurance plan's benefits apply.
    */
-  coverageArea?: fhir.Reference[]|undefined;
+  coverageArea?: (fhir.Reference|null)[]|undefined;
   /**
    * Networks are represented as a hierarchy of organization resources.
    */
-  network?: fhir.Reference[]|undefined;
+  network?: (fhir.Reference|null)[]|undefined;
   /**
    * Overall costs associated with the plan.
    */
-  generalCost?: fhir.InsurancePlanPlanGeneralCost[]|undefined;
+  generalCost?: (fhir.InsurancePlanPlanGeneralCost|null)[]|undefined;
   /**
    * Costs associated with the coverage provided by the product.
    */
-  specificCost?: fhir.InsurancePlanPlanSpecificCost[]|undefined;
+  specificCost?: (fhir.InsurancePlanPlanSpecificCost|null)[]|undefined;
 }
 
 /**
@@ -199,11 +199,11 @@ export interface InsurancePlan extends fhir.DomainResource {
   /**
    * Resource Type Name
    */
-  resourceType: "InsurancePlan";
+  resourceType: "InsurancePlan"|null;
   /**
    * Business identifiers assigned to this health insurance product which remain constant as the resource is updated and propagates from server to server.
    */
-  identifier?: fhir.Identifier[]|undefined;
+  identifier?: (fhir.Identifier|null)[]|undefined;
   /**
    * The current state of the health insurance product.
    */
@@ -215,7 +215,7 @@ export interface InsurancePlan extends fhir.DomainResource {
   /**
    * The kind of health insurance product.
    */
-  type?: fhir.CodeableConcept[]|undefined;
+  type?: (fhir.CodeableConcept|null)[]|undefined;
   /**
    * If the name of the product/plan changes, consider putting the old name in the alias column so that it can still be located through searches.
    */
@@ -227,7 +227,7 @@ export interface InsurancePlan extends fhir.DomainResource {
   /**
    * There are no dates associated with the alias/historic names, as this is not intended to track when names were used, but to assist in searching so that older names can still result in identifying the product/plan.
    */
-  alias?: string[]|undefined;
+  alias?: (string|null)[]|undefined;
   /**
    * Extended properties for primitive element: InsurancePlan.alias
    */
@@ -247,25 +247,25 @@ export interface InsurancePlan extends fhir.DomainResource {
   /**
    * The geographic region in which a health insurance product's benefits apply.
    */
-  coverageArea?: fhir.Reference[]|undefined;
+  coverageArea?: (fhir.Reference|null)[]|undefined;
   /**
    * Where multiple contacts for the same purpose are provided there is a standard extension that can be used to determine which one is the preferred contact to use.
    */
-  contact?: fhir.InsurancePlanContact[]|undefined;
+  contact?: (fhir.InsurancePlanContact|null)[]|undefined;
   /**
    * The technical endpoints providing access to services operated for the health insurance product.
    */
-  endpoint?: fhir.Reference[]|undefined;
+  endpoint?: (fhir.Reference|null)[]|undefined;
   /**
    * Networks are represented as a hierarchy of organization resources.
    */
-  network?: fhir.Reference[]|undefined;
+  network?: (fhir.Reference|null)[]|undefined;
   /**
    * Details about the coverage offered by the insurance product.
    */
-  coverage?: fhir.InsurancePlanCoverage[]|undefined;
+  coverage?: (fhir.InsurancePlanCoverage|null)[]|undefined;
   /**
    * Details about an insurance plan.
    */
-  plan?: fhir.InsurancePlanPlan[]|undefined;
+  plan?: (fhir.InsurancePlanPlan|null)[]|undefined;
 }

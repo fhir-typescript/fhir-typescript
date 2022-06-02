@@ -71,7 +71,7 @@ export interface CoverageEligibilityResponseInsuranceItem extends fhir.BackboneE
   /**
    * For example in Oral whether the treatment is cosmetic or associated with TMJ, or for Medical whether the treatment was outside the clinic or out of office hours.
    */
-  modifier?: fhir.CodeableConcept[]|undefined;
+  modifier?: (fhir.CodeableConcept|null)[]|undefined;
   /**
    * The practitioner who is eligible for the provision of the product or service.
    */
@@ -115,7 +115,7 @@ export interface CoverageEligibilityResponseInsuranceItem extends fhir.BackboneE
   /**
    * Benefits used to date.
    */
-  benefit?: fhir.CoverageEligibilityResponseInsuranceItemBenefit[]|undefined;
+  benefit?: (fhir.CoverageEligibilityResponseInsuranceItemBenefit|null)[]|undefined;
   /**
    * A boolean flag indicating whether a preauthorization is required prior to actual service delivery.
    */
@@ -127,7 +127,7 @@ export interface CoverageEligibilityResponseInsuranceItem extends fhir.BackboneE
   /**
    * Codes or comments regarding information or actions associated with the preauthorization.
    */
-  authorizationSupporting?: fhir.CodeableConcept[]|undefined;
+  authorizationSupporting?: (fhir.CodeableConcept|null)[]|undefined;
   /**
    * A web location for obtaining requirements or descriptive information regarding the preauthorization.
    */
@@ -161,7 +161,7 @@ export interface CoverageEligibilityResponseInsurance extends fhir.BackboneEleme
   /**
    * Benefits and optionally current balances, and authorization details by category or service.
    */
-  item?: fhir.CoverageEligibilityResponseInsuranceItem[]|undefined;
+  item?: (fhir.CoverageEligibilityResponseInsuranceItem|null)[]|undefined;
 }
 
 /**
@@ -181,11 +181,11 @@ export interface CoverageEligibilityResponse extends fhir.DomainResource {
   /**
    * Resource Type Name
    */
-  resourceType: "CoverageEligibilityResponse";
+  resourceType: "CoverageEligibilityResponse"|null;
   /**
    * A unique identifier assigned to this coverage eligiblity request.
    */
-  identifier?: fhir.Identifier[]|undefined;
+  identifier?: (fhir.Identifier|null)[]|undefined;
   /**
    * This element is labeled as a modifier because the status contains codes that mark the resource as not currently valid.
    */
@@ -197,7 +197,7 @@ export interface CoverageEligibilityResponse extends fhir.DomainResource {
   /**
    * Code to specify whether requesting: prior authorization requirements for some service categories or billing codes; benefits for coverages specified or discovered; discovery and return of coverages for the patient; and/or validation that the specified coverage is in-force at the date/period specified or 'now' if not specified.
    */
-  purpose: ('auth-requirements'|'benefits'|'discovery'|'validation')[]|null;
+  purpose: (('auth-requirements'|'benefits'|'discovery'|'validation')|null)[]|null;
   /**
    * Extended properties for primitive element: CoverageEligibilityResponse.purpose
    */
@@ -257,7 +257,7 @@ export interface CoverageEligibilityResponse extends fhir.DomainResource {
   /**
    * All insurance coverages for the patient which may be applicable for reimbursement, of the products and services listed in the claim, are typically provided in the claim to allow insurers to confirm the ordering of the insurance coverages relative to local 'coordination of benefit' rules. One coverage (and only one) with 'focal=true' is to be used in the adjudication of this claim. Coverages appearing before the focal Coverage in the list, and where 'subrogation=false', should provide a reference to the ClaimResponse containing the adjudication results of the prior claim.
    */
-  insurance?: fhir.CoverageEligibilityResponseInsurance[]|undefined;
+  insurance?: (fhir.CoverageEligibilityResponseInsurance|null)[]|undefined;
   /**
    * A reference from the Insurer to which these services pertain to be used on further communication and as proof that the request occurred.
    */
@@ -273,5 +273,5 @@ export interface CoverageEligibilityResponse extends fhir.DomainResource {
   /**
    * Errors encountered during the processing of the request.
    */
-  error?: fhir.CoverageEligibilityResponseError[]|undefined;
+  error?: (fhir.CoverageEligibilityResponseError|null)[]|undefined;
 }

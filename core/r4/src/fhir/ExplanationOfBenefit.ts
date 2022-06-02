@@ -752,7 +752,7 @@ export interface ExplanationOfBenefitInsuranceArgs extends fhir.BackboneElementA
   /**
    * This value is an alphanumeric string that may be provided over the phone, via text, via paper, or within a ClaimResponse resource and is not a FHIR Identifier.
    */
-  preAuthRef?: fhir.FhirString[]|string[]|undefined;
+  preAuthRef?: fhir.FhirString[]|(string|null)[]|undefined;
   /**
    * Extended properties for primitive element: ExplanationOfBenefit.insurance.preAuthRef
    */
@@ -1045,7 +1045,7 @@ export interface ExplanationOfBenefitItemDetailSubDetailArgs extends fhir.Backbo
   /**
    * The numbers associated with notes below which apply to the adjudication of this item.
    */
-  noteNumber?: fhir.FhirPositiveInt[]|number[]|undefined;
+  noteNumber?: fhir.FhirPositiveInt[]|(number|null)[]|undefined;
   /**
    * Extended properties for primitive element: ExplanationOfBenefit.item.detail.subDetail.noteNumber
    */
@@ -1243,7 +1243,7 @@ export interface ExplanationOfBenefitItemDetailArgs extends fhir.BackboneElement
   /**
    * The numbers associated with notes below which apply to the adjudication of this item.
    */
-  noteNumber?: fhir.FhirPositiveInt[]|number[]|undefined;
+  noteNumber?: fhir.FhirPositiveInt[]|(number|null)[]|undefined;
   /**
    * Extended properties for primitive element: ExplanationOfBenefit.item.detail.noteNumber
    */
@@ -1408,7 +1408,7 @@ export interface ExplanationOfBenefitItemArgs extends fhir.BackboneElementArgs {
   /**
    * Care team members related to this service or product.
    */
-  careTeamSequence?: fhir.FhirPositiveInt[]|number[]|undefined;
+  careTeamSequence?: fhir.FhirPositiveInt[]|(number|null)[]|undefined;
   /**
    * Extended properties for primitive element: ExplanationOfBenefit.item.careTeamSequence
    */
@@ -1416,7 +1416,7 @@ export interface ExplanationOfBenefitItemArgs extends fhir.BackboneElementArgs {
   /**
    * Diagnoses applicable for this service or product.
    */
-  diagnosisSequence?: fhir.FhirPositiveInt[]|number[]|undefined;
+  diagnosisSequence?: fhir.FhirPositiveInt[]|(number|null)[]|undefined;
   /**
    * Extended properties for primitive element: ExplanationOfBenefit.item.diagnosisSequence
    */
@@ -1424,7 +1424,7 @@ export interface ExplanationOfBenefitItemArgs extends fhir.BackboneElementArgs {
   /**
    * Procedures applicable for this service or product.
    */
-  procedureSequence?: fhir.FhirPositiveInt[]|number[]|undefined;
+  procedureSequence?: fhir.FhirPositiveInt[]|(number|null)[]|undefined;
   /**
    * Extended properties for primitive element: ExplanationOfBenefit.item.procedureSequence
    */
@@ -1432,7 +1432,7 @@ export interface ExplanationOfBenefitItemArgs extends fhir.BackboneElementArgs {
   /**
    * Exceptions, special conditions and supporting information applicable for this service or product.
    */
-  informationSequence?: fhir.FhirPositiveInt[]|number[]|undefined;
+  informationSequence?: fhir.FhirPositiveInt[]|(number|null)[]|undefined;
   /**
    * Extended properties for primitive element: ExplanationOfBenefit.item.informationSequence
    */
@@ -1524,7 +1524,7 @@ export interface ExplanationOfBenefitItemArgs extends fhir.BackboneElementArgs {
   /**
    * The numbers associated with notes below which apply to the adjudication of this item.
    */
-  noteNumber?: fhir.FhirPositiveInt[]|number[]|undefined;
+  noteNumber?: fhir.FhirPositiveInt[]|(number|null)[]|undefined;
   /**
    * Extended properties for primitive element: ExplanationOfBenefit.item.noteNumber
    */
@@ -1804,7 +1804,7 @@ export interface ExplanationOfBenefitAddItemDetailSubDetailArgs extends fhir.Bac
   /**
    * The numbers associated with notes below which apply to the adjudication of this item.
    */
-  noteNumber?: fhir.FhirPositiveInt[]|number[]|undefined;
+  noteNumber?: fhir.FhirPositiveInt[]|(number|null)[]|undefined;
   /**
    * Extended properties for primitive element: ExplanationOfBenefit.addItem.detail.subDetail.noteNumber
    */
@@ -1938,7 +1938,7 @@ export interface ExplanationOfBenefitAddItemDetailArgs extends fhir.BackboneElem
   /**
    * The numbers associated with notes below which apply to the adjudication of this item.
    */
-  noteNumber?: fhir.FhirPositiveInt[]|number[]|undefined;
+  noteNumber?: fhir.FhirPositiveInt[]|(number|null)[]|undefined;
   /**
    * Extended properties for primitive element: ExplanationOfBenefit.addItem.detail.noteNumber
    */
@@ -2055,7 +2055,7 @@ export interface ExplanationOfBenefitAddItemArgs extends fhir.BackboneElementArg
   /**
    * Claim items which this service line is intended to replace.
    */
-  itemSequence?: fhir.FhirPositiveInt[]|number[]|undefined;
+  itemSequence?: fhir.FhirPositiveInt[]|(number|null)[]|undefined;
   /**
    * Extended properties for primitive element: ExplanationOfBenefit.addItem.itemSequence
    */
@@ -2063,7 +2063,7 @@ export interface ExplanationOfBenefitAddItemArgs extends fhir.BackboneElementArg
   /**
    * The sequence number of the details within the claim item which this line is intended to replace.
    */
-  detailSequence?: fhir.FhirPositiveInt[]|number[]|undefined;
+  detailSequence?: fhir.FhirPositiveInt[]|(number|null)[]|undefined;
   /**
    * Extended properties for primitive element: ExplanationOfBenefit.addItem.detailSequence
    */
@@ -2071,7 +2071,7 @@ export interface ExplanationOfBenefitAddItemArgs extends fhir.BackboneElementArg
   /**
    * The sequence number of the sub-details woithin the details within the claim item which this line is intended to replace.
    */
-  subDetailSequence?: fhir.FhirPositiveInt[]|number[]|undefined;
+  subDetailSequence?: fhir.FhirPositiveInt[]|(number|null)[]|undefined;
   /**
    * Extended properties for primitive element: ExplanationOfBenefit.addItem.subDetailSequence
    */
@@ -2151,7 +2151,7 @@ export interface ExplanationOfBenefitAddItemArgs extends fhir.BackboneElementArg
   /**
    * The numbers associated with notes below which apply to the adjudication of this item.
    */
-  noteNumber?: fhir.FhirPositiveInt[]|number[]|undefined;
+  noteNumber?: fhir.FhirPositiveInt[]|(number|null)[]|undefined;
   /**
    * Extended properties for primitive element: ExplanationOfBenefit.addItem.noteNumber
    */
@@ -2971,7 +2971,7 @@ export interface ExplanationOfBenefitArgs extends fhir.DomainResourceArgs {
   /**
    * This value is only present on preauthorization adjudications.
    */
-  preAuthRef?: fhir.FhirString[]|string[]|undefined;
+  preAuthRef?: fhir.FhirString[]|(string|null)[]|undefined;
   /**
    * Extended properties for primitive element: ExplanationOfBenefit.preAuthRef
    */

@@ -44,11 +44,11 @@ export interface Substance extends fhir.DomainResource {
     /**
      * Resource Type Name
      */
-    resourceType: "Substance";
+    resourceType: "Substance" | null;
     /**
      * This identifier is associated with the kind of substance in contrast to the  Substance.instance.identifier which is associated with the package/container.
      */
-    identifier?: fhir.Identifier[] | undefined;
+    identifier?: (fhir.Identifier | null)[] | undefined;
     /**
      * A code to indicate if the substance is actively used.
      */
@@ -60,7 +60,7 @@ export interface Substance extends fhir.DomainResource {
     /**
      * The level of granularity is defined by the category concepts in the value set.   More fine-grained filtering can be performed using the metadata and/or terminology hierarchy in Substance.code.
      */
-    category?: fhir.CodeableConcept[] | undefined;
+    category?: (fhir.CodeableConcept | null)[] | undefined;
     /**
      * This could be a reference to an externally defined code.  It could also be a locally assigned code (e.g. a formulary),  optionally with translations to the standard drug codes.
      */
@@ -76,10 +76,10 @@ export interface Substance extends fhir.DomainResource {
     /**
      * Substance may be used to describe a kind of substance, or a specific package/container of the substance: an instance.
      */
-    instance?: fhir.SubstanceInstance[] | undefined;
+    instance?: (fhir.SubstanceInstance | null)[] | undefined;
     /**
      * A substance can be composed of other substances.
      */
-    ingredient?: fhir.SubstanceIngredient[] | undefined;
+    ingredient?: (fhir.SubstanceIngredient | null)[] | undefined;
 }
 //# sourceMappingURL=Substance.d.ts.map

@@ -63,7 +63,7 @@ export interface SubstanceProtein extends fhir.DomainResource {
     /**
      * Resource Type Name
      */
-    resourceType: "SubstanceProtein";
+    resourceType: "SubstanceProtein" | null;
     /**
      * The SubstanceProtein descriptive elements will only be used when a complete or partial amino acid sequence is available or derivable from a nucleic acid sequence.
      */
@@ -79,7 +79,7 @@ export interface SubstanceProtein extends fhir.DomainResource {
     /**
      * The disulphide bond between two cysteine residues either on the same subunit or on two different subunits shall be described. The position of the disulfide bonds in the SubstanceProtein shall be listed in increasing order of subunit number and position within subunit followed by the abbreviation of the amino acids involved. The disulfide linkage positions shall actually contain the amino acid Cysteine at the respective positions.
      */
-    disulfideLinkage?: string[] | undefined;
+    disulfideLinkage?: (string | null)[] | undefined;
     /**
      * Extended properties for primitive element: SubstanceProtein.disulfideLinkage
      */
@@ -87,6 +87,6 @@ export interface SubstanceProtein extends fhir.DomainResource {
     /**
      * This subclause refers to the description of each subunit constituting the SubstanceProtein. A subunit is a linear sequence of amino acids linked through peptide bonds. The Subunit information shall be provided when the finished SubstanceProtein is a complex of multiple sequences; subunits are not used to delineate domains within a single sequence. Subunits are listed in order of decreasing length; sequences of the same length will be ordered by decreasing molecular weight; subunits that have identical sequences will be repeated multiple times.
      */
-    subunit?: fhir.SubstanceProteinSubunit[] | undefined;
+    subunit?: (fhir.SubstanceProteinSubunit | null)[] | undefined;
 }
 //# sourceMappingURL=SubstanceProtein.d.ts.map

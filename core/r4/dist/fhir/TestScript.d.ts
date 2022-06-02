@@ -184,7 +184,7 @@ export interface TestScriptMetadataCapabilityArgs extends fhir.BackboneElementAr
     /**
      * Which origin server these requirements apply to.
      */
-    origin?: fhir.FhirInteger[] | number[] | undefined;
+    origin?: fhir.FhirInteger[] | (number | null)[] | undefined;
     /**
      * Extended properties for primitive element: TestScript.metadata.capability.origin
      */
@@ -200,7 +200,7 @@ export interface TestScriptMetadataCapabilityArgs extends fhir.BackboneElementAr
     /**
      * Links to the FHIR specification that describes this interaction and the resources involved in more detail.
      */
-    link?: fhir.FhirUri[] | string[] | undefined;
+    link?: fhir.FhirUri[] | (string | null)[] | undefined;
     /**
      * Extended properties for primitive element: TestScript.metadata.capability.link
      */
@@ -807,7 +807,9 @@ export declare class TestScriptSetupActionOperation extends fhir.BackboneElement
         readonly Encounter: "Encounter";
         readonly Endpoint: "Endpoint";
         readonly EnrollmentRequest: "EnrollmentRequest";
-        readonly EnrollmentResponse: "EnrollmentResponse";
+        readonly EnrollmentResponse: "EnrollmentResponse"; /**
+         * Mapping of this datatype to a FHIR equivalent
+         */
         readonly EpisodeOfCare: "EpisodeOfCare";
         readonly EventDefinition: "EventDefinition";
         readonly Evidence: "Evidence";
@@ -864,7 +866,9 @@ export declare class TestScriptSetupActionOperation extends fhir.BackboneElement
         readonly MessageHeader: "MessageHeader";
         readonly Meta: "Meta";
         readonly MolecularSequence: "MolecularSequence";
-        readonly Money: "Money";
+        readonly Money: "Money"; /**
+         * Function to perform basic model validation (e.g., check if required elements are present).
+         */
         readonly MoneyQuantity: "MoneyQuantity";
         readonly NamingSystem: "NamingSystem";
         readonly Narrative: "Narrative";
@@ -876,9 +880,6 @@ export declare class TestScriptSetupActionOperation extends fhir.BackboneElement
         readonly OperationOutcome: "OperationOutcome";
         readonly Organization: "Organization";
         readonly OrganizationAffiliation: "OrganizationAffiliation";
-        /**
-         * A free text natural language description of the variable and its purpose.
-         */
         readonly ParameterDefinition: "ParameterDefinition";
         readonly Parameters: "Parameters";
         readonly Patient: "Patient";
@@ -917,9 +918,7 @@ export declare class TestScriptSetupActionOperation extends fhir.BackboneElement
         readonly ServiceRequest: "ServiceRequest";
         readonly Signature: "Signature";
         readonly SimpleQuantity: "SimpleQuantity";
-        readonly Slot: "Slot"; /**
-         * Function to perform basic model validation (e.g., check if required elements are present).
-         */
+        readonly Slot: "Slot";
         readonly Specimen: "Specimen";
         readonly SpecimenDefinition: "SpecimenDefinition";
         readonly VALString: "string";
@@ -1361,7 +1360,9 @@ export declare class TestScriptSetupActionAssert extends fhir.BackboneElement {
         readonly Encounter: "Encounter";
         readonly Endpoint: "Endpoint";
         readonly EnrollmentRequest: "EnrollmentRequest";
-        readonly EnrollmentResponse: "EnrollmentResponse";
+        readonly EnrollmentResponse: "EnrollmentResponse"; /**
+         * Mapping of this datatype to a FHIR equivalent
+         */
         readonly EpisodeOfCare: "EpisodeOfCare";
         readonly EventDefinition: "EventDefinition";
         readonly Evidence: "Evidence";
@@ -1418,7 +1419,9 @@ export declare class TestScriptSetupActionAssert extends fhir.BackboneElement {
         readonly MessageHeader: "MessageHeader";
         readonly Meta: "Meta";
         readonly MolecularSequence: "MolecularSequence";
-        readonly Money: "Money";
+        readonly Money: "Money"; /**
+         * Function to perform basic model validation (e.g., check if required elements are present).
+         */
         readonly MoneyQuantity: "MoneyQuantity";
         readonly NamingSystem: "NamingSystem";
         readonly Narrative: "Narrative";
@@ -1430,9 +1433,6 @@ export declare class TestScriptSetupActionAssert extends fhir.BackboneElement {
         readonly OperationOutcome: "OperationOutcome";
         readonly Organization: "Organization";
         readonly OrganizationAffiliation: "OrganizationAffiliation";
-        /**
-         * A free text natural language description of the variable and its purpose.
-         */
         readonly ParameterDefinition: "ParameterDefinition";
         readonly Parameters: "Parameters";
         readonly Patient: "Patient";
@@ -1471,9 +1471,7 @@ export declare class TestScriptSetupActionAssert extends fhir.BackboneElement {
         readonly ServiceRequest: "ServiceRequest";
         readonly Signature: "Signature";
         readonly SimpleQuantity: "SimpleQuantity";
-        readonly Slot: "Slot"; /**
-         * Function to perform basic model validation (e.g., check if required elements are present).
-         */
+        readonly Slot: "Slot";
         readonly Specimen: "Specimen";
         readonly SpecimenDefinition: "SpecimenDefinition";
         readonly VALString: "string";

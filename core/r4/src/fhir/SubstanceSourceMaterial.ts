@@ -505,7 +505,7 @@ export interface SubstanceSourceMaterialArgs extends fhir.DomainResourceArgs {
   /**
    * The parent substance of the Herbal Drug, or Herbal preparation.
    */
-  parentSubstanceName?: fhir.FhirString[]|string[]|undefined;
+  parentSubstanceName?: fhir.FhirString[]|(string|null)[]|undefined;
   /**
    * Extended properties for primitive element: SubstanceSourceMaterial.parentSubstanceName
    */
@@ -517,7 +517,7 @@ export interface SubstanceSourceMaterialArgs extends fhir.DomainResourceArgs {
   /**
    * The place/region where the plant is harvested or the places/regions where the animal source material has its habitat.
    */
-  geographicalLocation?: fhir.FhirString[]|string[]|undefined;
+  geographicalLocation?: fhir.FhirString[]|(string|null)[]|undefined;
   /**
    * Extended properties for primitive element: SubstanceSourceMaterial.geographicalLocation
    */

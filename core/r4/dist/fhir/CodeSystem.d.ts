@@ -29,7 +29,7 @@ export interface CodeSystemFilterArgs extends fhir.BackboneElementArgs {
     /**
      * A list of operators that can be used with the filter.
      */
-    operator: fhir.FhirCode<FilterOperatorCodeType>[] | string[] | undefined;
+    operator: fhir.FhirCode<FilterOperatorCodeType>[] | (string | null)[] | undefined;
     /**
      * Extended properties for primitive element: CodeSystem.filter.operator
      */

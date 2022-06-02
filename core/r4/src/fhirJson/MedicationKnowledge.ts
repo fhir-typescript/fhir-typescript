@@ -17,7 +17,7 @@ export interface MedicationKnowledgeRelatedMedicationKnowledge extends fhir.Back
   /**
    * Associated documentation about the associated medication knowledge.
    */
-  reference: fhir.Reference[]|null;
+  reference: (fhir.Reference|null)[]|null;
 }
 
 /**
@@ -111,7 +111,7 @@ export interface MedicationKnowledgeAdministrationGuidelinesDosage extends fhir.
   /**
    * Dosage for the medication for the specific guidelines.
    */
-  dosage: fhir.Dosage[]|null;
+  dosage: (fhir.Dosage|null)[]|null;
 }
 
 /**
@@ -129,7 +129,7 @@ export interface MedicationKnowledgeAdministrationGuidelinesPatientCharacteristi
   /**
    * The specific characteristic (e.g. height, weight, gender, etc.).
    */
-  value?: string[]|undefined;
+  value?: (string|null)[]|undefined;
   /**
    * Extended properties for primitive element: MedicationKnowledge.administrationGuidelines.patientCharacteristics.value
    */
@@ -143,7 +143,7 @@ export interface MedicationKnowledgeAdministrationGuidelines extends fhir.Backbo
   /**
    * Dosage for the medication for the specific guidelines.
    */
-  dosage?: fhir.MedicationKnowledgeAdministrationGuidelinesDosage[]|undefined;
+  dosage?: (fhir.MedicationKnowledgeAdministrationGuidelinesDosage|null)[]|undefined;
   /**
    * Indication for use that apply to the specific administration guidelines.
    */
@@ -155,7 +155,7 @@ export interface MedicationKnowledgeAdministrationGuidelines extends fhir.Backbo
   /**
    * Characteristics of the patient that are relevant to the administration guidelines (for example, height, weight, gender, etc.).
    */
-  patientCharacteristics?: fhir.MedicationKnowledgeAdministrationGuidelinesPatientCharacteristics[]|undefined;
+  patientCharacteristics?: (fhir.MedicationKnowledgeAdministrationGuidelinesPatientCharacteristics|null)[]|undefined;
 }
 
 /**
@@ -169,7 +169,7 @@ export interface MedicationKnowledgeMedicineClassification extends fhir.Backbone
   /**
    * Specific category assigned to the medication (e.g. anti-infective, anti-hypertensive, antibiotic, etc.).
    */
-  classification?: fhir.CodeableConcept[]|undefined;
+  classification?: (fhir.CodeableConcept|null)[]|undefined;
 }
 
 /**
@@ -273,11 +273,11 @@ export interface MedicationKnowledgeRegulatory extends fhir.BackboneElement {
   /**
    * Specifies if changes are allowed when dispensing a medication from a regulatory perspective.
    */
-  substitution?: fhir.MedicationKnowledgeRegulatorySubstitution[]|undefined;
+  substitution?: (fhir.MedicationKnowledgeRegulatorySubstitution|null)[]|undefined;
   /**
    * Specifies the schedule of a medication in jurisdiction.
    */
-  schedule?: fhir.MedicationKnowledgeRegulatorySchedule[]|undefined;
+  schedule?: (fhir.MedicationKnowledgeRegulatorySchedule|null)[]|undefined;
   /**
    * The maximum number of units of the medication that can be dispensed in a period.
    */
@@ -291,11 +291,11 @@ export interface MedicationKnowledgeKinetics extends fhir.BackboneElement {
   /**
    * The drug concentration measured at certain discrete points in time.
    */
-  areaUnderCurve?: fhir.Quantity[]|undefined;
+  areaUnderCurve?: (fhir.Quantity|null)[]|undefined;
   /**
    * The median lethal dose of a drug.
    */
-  lethalDose50?: fhir.Quantity[]|undefined;
+  lethalDose50?: (fhir.Quantity|null)[]|undefined;
   /**
    * The time required for any specified property (e.g., the concentration of a substance in the body) to decrease by half.
    */
@@ -309,7 +309,7 @@ export interface MedicationKnowledge extends fhir.DomainResource {
   /**
    * Resource Type Name
    */
-  resourceType: "MedicationKnowledge";
+  resourceType: "MedicationKnowledge"|null;
   /**
    * Depending on the context of use, the code that was actually selected by the user (prescriber, dispenser, etc.) will have the coding.userSelected set to true.  As described in the coding datatype: "A coding may be marked as a "userSelected" if a user selected the particular coded value in a user interface (e.g. the user selects an item in a pick-list). If a user selected coding exists, it is the preferred choice for performing translations etc. Other codes can only be literal translations to alternative code systems, or codes at a lower level of granularity (e.g. a generic code for a vendor-specific primary one).
    */
@@ -337,7 +337,7 @@ export interface MedicationKnowledge extends fhir.DomainResource {
   /**
    * Additional names for a medication, for example, the name(s) given to a medication in different countries.  For example, acetaminophen and paracetamol or salbutamol and albuterol.
    */
-  synonym?: string[]|undefined;
+  synonym?: (string|null)[]|undefined;
   /**
    * Extended properties for primitive element: MedicationKnowledge.synonym
    */
@@ -345,23 +345,23 @@ export interface MedicationKnowledge extends fhir.DomainResource {
   /**
    * Associated or related knowledge about a medication.
    */
-  relatedMedicationKnowledge?: fhir.MedicationKnowledgeRelatedMedicationKnowledge[]|undefined;
+  relatedMedicationKnowledge?: (fhir.MedicationKnowledgeRelatedMedicationKnowledge|null)[]|undefined;
   /**
    * Associated or related medications.  For example, if the medication is a branded product (e.g. Crestor), this is the Therapeutic Moeity (e.g. Rosuvastatin) or if this is a generic medication (e.g. Rosuvastatin), this would link to a branded product (e.g. Crestor).
    */
-  associatedMedication?: fhir.Reference[]|undefined;
+  associatedMedication?: (fhir.Reference|null)[]|undefined;
   /**
    * Category of the medication or product (e.g. branded product, therapeutic moeity, generic product, innovator product, etc.).
    */
-  productType?: fhir.CodeableConcept[]|undefined;
+  productType?: (fhir.CodeableConcept|null)[]|undefined;
   /**
    * Associated documentation about the medication.
    */
-  monograph?: fhir.MedicationKnowledgeMonograph[]|undefined;
+  monograph?: (fhir.MedicationKnowledgeMonograph|null)[]|undefined;
   /**
    * Identifies a particular constituent of interest in the product.
    */
-  ingredient?: fhir.MedicationKnowledgeIngredient[]|undefined;
+  ingredient?: (fhir.MedicationKnowledgeIngredient|null)[]|undefined;
   /**
    * The instructions for preparing the medication.
    */
@@ -373,23 +373,23 @@ export interface MedicationKnowledge extends fhir.DomainResource {
   /**
    * The intended or approved route of administration.
    */
-  intendedRoute?: fhir.CodeableConcept[]|undefined;
+  intendedRoute?: (fhir.CodeableConcept|null)[]|undefined;
   /**
    * The price of the medication.
    */
-  cost?: fhir.MedicationKnowledgeCost[]|undefined;
+  cost?: (fhir.MedicationKnowledgeCost|null)[]|undefined;
   /**
    * The program under which the medication is reviewed.
    */
-  monitoringProgram?: fhir.MedicationKnowledgeMonitoringProgram[]|undefined;
+  monitoringProgram?: (fhir.MedicationKnowledgeMonitoringProgram|null)[]|undefined;
   /**
    * Guidelines for the administration of the medication.
    */
-  administrationGuidelines?: fhir.MedicationKnowledgeAdministrationGuidelines[]|undefined;
+  administrationGuidelines?: (fhir.MedicationKnowledgeAdministrationGuidelines|null)[]|undefined;
   /**
    * Categorization of the medication within a formulary or classification system.
    */
-  medicineClassification?: fhir.MedicationKnowledgeMedicineClassification[]|undefined;
+  medicineClassification?: (fhir.MedicationKnowledgeMedicineClassification|null)[]|undefined;
   /**
    * Information that only applies to packages (not products).
    */
@@ -397,17 +397,17 @@ export interface MedicationKnowledge extends fhir.DomainResource {
   /**
    * Specifies descriptive properties of the medicine, such as color, shape, imprints, etc.
    */
-  drugCharacteristic?: fhir.MedicationKnowledgeDrugCharacteristic[]|undefined;
+  drugCharacteristic?: (fhir.MedicationKnowledgeDrugCharacteristic|null)[]|undefined;
   /**
    * Potential clinical issue with or between medication(s) (for example, drug-drug interaction, drug-disease contraindication, drug-allergy interaction, etc.).
    */
-  contraindication?: fhir.Reference[]|undefined;
+  contraindication?: (fhir.Reference|null)[]|undefined;
   /**
    * Regulatory information about a medication.
    */
-  regulatory?: fhir.MedicationKnowledgeRegulatory[]|undefined;
+  regulatory?: (fhir.MedicationKnowledgeRegulatory|null)[]|undefined;
   /**
    * The time course of drug absorption, distribution, metabolism and excretion of a medication from the body.
    */
-  kinetics?: fhir.MedicationKnowledgeKinetics[]|undefined;
+  kinetics?: (fhir.MedicationKnowledgeKinetics|null)[]|undefined;
 }

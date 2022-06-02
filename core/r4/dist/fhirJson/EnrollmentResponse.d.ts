@@ -6,11 +6,11 @@ export interface EnrollmentResponse extends fhir.DomainResource {
     /**
      * Resource Type Name
      */
-    resourceType: "EnrollmentResponse";
+    resourceType: "EnrollmentResponse" | null;
     /**
      * The Response business identifier.
      */
-    identifier?: fhir.Identifier[] | undefined;
+    identifier?: (fhir.Identifier | null)[] | undefined;
     /**
      * This element is labeled as a modifier because the status contains codes that mark the response as not currently valid.
      */

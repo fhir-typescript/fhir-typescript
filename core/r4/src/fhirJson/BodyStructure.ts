@@ -13,11 +13,11 @@ export interface BodyStructure extends fhir.DomainResource {
   /**
    * Resource Type Name
    */
-  resourceType: "BodyStructure";
+  resourceType: "BodyStructure"|null;
   /**
    * Identifier for this instance of the anatomical structure.
    */
-  identifier?: fhir.Identifier[]|undefined;
+  identifier?: (fhir.Identifier|null)[]|undefined;
   /**
    * This element is labeled as a modifier because it may be used to mark that the resource was created in error.
    */
@@ -37,7 +37,7 @@ export interface BodyStructure extends fhir.DomainResource {
   /**
    * Qualifier to refine the anatomical location.  These include qualifiers for laterality, relative location, directionality, number, and plane.
    */
-  locationQualifier?: fhir.CodeableConcept[]|undefined;
+  locationQualifier?: (fhir.CodeableConcept|null)[]|undefined;
   /**
    * This description could include any visual markings used to orientate the viewer e.g. external reference points, special sutures, ink markings.
    */
@@ -49,7 +49,7 @@ export interface BodyStructure extends fhir.DomainResource {
   /**
    * Image or images used to identify a location.
    */
-  image?: fhir.Attachment[]|undefined;
+  image?: (fhir.Attachment|null)[]|undefined;
   /**
    * The person to which the body site belongs.
    */

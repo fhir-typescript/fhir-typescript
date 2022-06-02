@@ -161,7 +161,7 @@ export interface ExplanationOfBenefitDiagnosis extends fhir.BackboneElement {
   /**
    * For example: admitting, primary, secondary, discharge.
    */
-  type?: fhir.CodeableConcept[]|undefined;
+  type?: (fhir.CodeableConcept|null)[]|undefined;
   /**
    * Indication of whether the diagnosis was present on admission to a facility.
    */
@@ -187,7 +187,7 @@ export interface ExplanationOfBenefitProcedure extends fhir.BackboneElement {
   /**
    * When the condition was observed or the relative ranking.
    */
-  type?: fhir.CodeableConcept[]|undefined;
+  type?: (fhir.CodeableConcept|null)[]|undefined;
   /**
    * Date and optionally time the procedure was performed.
    */
@@ -207,7 +207,7 @@ export interface ExplanationOfBenefitProcedure extends fhir.BackboneElement {
   /**
    * Unique Device Identifiers associated with this line item.
    */
-  udi?: fhir.Reference[]|undefined;
+  udi?: (fhir.Reference|null)[]|undefined;
 }
 
 /**
@@ -229,7 +229,7 @@ export interface ExplanationOfBenefitInsurance extends fhir.BackboneElement {
   /**
    * This value is an alphanumeric string that may be provided over the phone, via text, via paper, or within a ClaimResponse resource and is not a FHIR Identifier.
    */
-  preAuthRef?: string[]|undefined;
+  preAuthRef?: (string|null)[]|undefined;
   /**
    * Extended properties for primitive element: ExplanationOfBenefit.insurance.preAuthRef
    */
@@ -315,11 +315,11 @@ export interface ExplanationOfBenefitItemDetailSubDetail extends fhir.BackboneEl
   /**
    * For example, in Oral whether the treatment is cosmetic or associated with TMJ, or for Medical whether the treatment was outside the clinic or outside of office hours.
    */
-  modifier?: fhir.CodeableConcept[]|undefined;
+  modifier?: (fhir.CodeableConcept|null)[]|undefined;
   /**
    * For example: Neonatal program, child dental program or drug users recovery program.
    */
-  programCode?: fhir.CodeableConcept[]|undefined;
+  programCode?: (fhir.CodeableConcept|null)[]|undefined;
   /**
    * The number of repetitions of a service or product.
    */
@@ -343,11 +343,11 @@ export interface ExplanationOfBenefitItemDetailSubDetail extends fhir.BackboneEl
   /**
    * Unique Device Identifiers associated with this line item.
    */
-  udi?: fhir.Reference[]|undefined;
+  udi?: (fhir.Reference|null)[]|undefined;
   /**
    * The numbers associated with notes below which apply to the adjudication of this item.
    */
-  noteNumber?: number[]|undefined;
+  noteNumber?: (number|null)[]|undefined;
   /**
    * Extended properties for primitive element: ExplanationOfBenefit.item.detail.subDetail.noteNumber
    */
@@ -355,7 +355,7 @@ export interface ExplanationOfBenefitItemDetailSubDetail extends fhir.BackboneEl
   /**
    * The adjudication results.
    */
-  adjudication?: fhir.ExplanationOfBenefitItemAdjudication[]|undefined;
+  adjudication?: (fhir.ExplanationOfBenefitItemAdjudication|null)[]|undefined;
 }
 
 /**
@@ -385,11 +385,11 @@ export interface ExplanationOfBenefitItemDetail extends fhir.BackboneElement {
   /**
    * For example, in Oral whether the treatment is cosmetic or associated with TMJ, or for Medical whether the treatment was outside the clinic or out of office hours.
    */
-  modifier?: fhir.CodeableConcept[]|undefined;
+  modifier?: (fhir.CodeableConcept|null)[]|undefined;
   /**
    * For example: Neonatal program, child dental program or drug users recovery program.
    */
-  programCode?: fhir.CodeableConcept[]|undefined;
+  programCode?: (fhir.CodeableConcept|null)[]|undefined;
   /**
    * The number of repetitions of a service or product.
    */
@@ -413,11 +413,11 @@ export interface ExplanationOfBenefitItemDetail extends fhir.BackboneElement {
   /**
    * Unique Device Identifiers associated with this line item.
    */
-  udi?: fhir.Reference[]|undefined;
+  udi?: (fhir.Reference|null)[]|undefined;
   /**
    * The numbers associated with notes below which apply to the adjudication of this item.
    */
-  noteNumber?: number[]|undefined;
+  noteNumber?: (number|null)[]|undefined;
   /**
    * Extended properties for primitive element: ExplanationOfBenefit.item.detail.noteNumber
    */
@@ -425,11 +425,11 @@ export interface ExplanationOfBenefitItemDetail extends fhir.BackboneElement {
   /**
    * The adjudication results.
    */
-  adjudication?: fhir.ExplanationOfBenefitItemAdjudication[]|undefined;
+  adjudication?: (fhir.ExplanationOfBenefitItemAdjudication|null)[]|undefined;
   /**
    * Third-tier of goods and services.
    */
-  subDetail?: fhir.ExplanationOfBenefitItemDetailSubDetail[]|undefined;
+  subDetail?: (fhir.ExplanationOfBenefitItemDetailSubDetail|null)[]|undefined;
 }
 
 /**
@@ -447,7 +447,7 @@ export interface ExplanationOfBenefitItem extends fhir.BackboneElement {
   /**
    * Care team members related to this service or product.
    */
-  careTeamSequence?: number[]|undefined;
+  careTeamSequence?: (number|null)[]|undefined;
   /**
    * Extended properties for primitive element: ExplanationOfBenefit.item.careTeamSequence
    */
@@ -455,7 +455,7 @@ export interface ExplanationOfBenefitItem extends fhir.BackboneElement {
   /**
    * Diagnoses applicable for this service or product.
    */
-  diagnosisSequence?: number[]|undefined;
+  diagnosisSequence?: (number|null)[]|undefined;
   /**
    * Extended properties for primitive element: ExplanationOfBenefit.item.diagnosisSequence
    */
@@ -463,7 +463,7 @@ export interface ExplanationOfBenefitItem extends fhir.BackboneElement {
   /**
    * Procedures applicable for this service or product.
    */
-  procedureSequence?: number[]|undefined;
+  procedureSequence?: (number|null)[]|undefined;
   /**
    * Extended properties for primitive element: ExplanationOfBenefit.item.procedureSequence
    */
@@ -471,7 +471,7 @@ export interface ExplanationOfBenefitItem extends fhir.BackboneElement {
   /**
    * Exceptions, special conditions and supporting information applicable for this service or product.
    */
-  informationSequence?: number[]|undefined;
+  informationSequence?: (number|null)[]|undefined;
   /**
    * Extended properties for primitive element: ExplanationOfBenefit.item.informationSequence
    */
@@ -491,11 +491,11 @@ export interface ExplanationOfBenefitItem extends fhir.BackboneElement {
   /**
    * For example, in Oral whether the treatment is cosmetic or associated with TMJ, or for Medical whether the treatment was outside the clinic or out of office hours.
    */
-  modifier?: fhir.CodeableConcept[]|undefined;
+  modifier?: (fhir.CodeableConcept|null)[]|undefined;
   /**
    * For example: Neonatal program, child dental program or drug users recovery program.
    */
-  programCode?: fhir.CodeableConcept[]|undefined;
+  programCode?: (fhir.CodeableConcept|null)[]|undefined;
   /**
    * The date or dates when the service or product was supplied, performed or completed.
    */
@@ -543,7 +543,7 @@ export interface ExplanationOfBenefitItem extends fhir.BackboneElement {
   /**
    * Unique Device Identifiers associated with this line item.
    */
-  udi?: fhir.Reference[]|undefined;
+  udi?: (fhir.Reference|null)[]|undefined;
   /**
    * For example: Providing a tooth code, allows an insurer to identify a provider performing a filling on a tooth that was previously removed.
    */
@@ -551,15 +551,15 @@ export interface ExplanationOfBenefitItem extends fhir.BackboneElement {
   /**
    * A region or surface of the bodySite, e.g. limb region or tooth surface(s).
    */
-  subSite?: fhir.CodeableConcept[]|undefined;
+  subSite?: (fhir.CodeableConcept|null)[]|undefined;
   /**
    * A billed item may include goods or services provided in multiple encounters.
    */
-  encounter?: fhir.Reference[]|undefined;
+  encounter?: (fhir.Reference|null)[]|undefined;
   /**
    * The numbers associated with notes below which apply to the adjudication of this item.
    */
-  noteNumber?: number[]|undefined;
+  noteNumber?: (number|null)[]|undefined;
   /**
    * Extended properties for primitive element: ExplanationOfBenefit.item.noteNumber
    */
@@ -567,11 +567,11 @@ export interface ExplanationOfBenefitItem extends fhir.BackboneElement {
   /**
    * If this item is a group then the values here are a summary of the adjudication of the detail items. If this item is a simple product or service then this is the result of the adjudication of this item.
    */
-  adjudication?: fhir.ExplanationOfBenefitItemAdjudication[]|undefined;
+  adjudication?: (fhir.ExplanationOfBenefitItemAdjudication|null)[]|undefined;
   /**
    * Second-tier of goods and services.
    */
-  detail?: fhir.ExplanationOfBenefitItemDetail[]|undefined;
+  detail?: (fhir.ExplanationOfBenefitItemDetail|null)[]|undefined;
 }
 
 /**
@@ -585,7 +585,7 @@ export interface ExplanationOfBenefitAddItemDetailSubDetail extends fhir.Backbon
   /**
    * For example, in Oral whether the treatment is cosmetic or associated with TMJ, or for Medical whether the treatment was outside the clinic or out of office hours.
    */
-  modifier?: fhir.CodeableConcept[]|undefined;
+  modifier?: (fhir.CodeableConcept|null)[]|undefined;
   /**
    * The number of repetitions of a service or product.
    */
@@ -609,7 +609,7 @@ export interface ExplanationOfBenefitAddItemDetailSubDetail extends fhir.Backbon
   /**
    * The numbers associated with notes below which apply to the adjudication of this item.
    */
-  noteNumber?: number[]|undefined;
+  noteNumber?: (number|null)[]|undefined;
   /**
    * Extended properties for primitive element: ExplanationOfBenefit.addItem.detail.subDetail.noteNumber
    */
@@ -617,7 +617,7 @@ export interface ExplanationOfBenefitAddItemDetailSubDetail extends fhir.Backbon
   /**
    * The adjudication results.
    */
-  adjudication?: fhir.ExplanationOfBenefitItemAdjudication[]|undefined;
+  adjudication?: (fhir.ExplanationOfBenefitItemAdjudication|null)[]|undefined;
 }
 
 /**
@@ -631,7 +631,7 @@ export interface ExplanationOfBenefitAddItemDetail extends fhir.BackboneElement 
   /**
    * For example, in Oral whether the treatment is cosmetic or associated with TMJ, or for Medical whether the treatment was outside the clinic or out of office hours.
    */
-  modifier?: fhir.CodeableConcept[]|undefined;
+  modifier?: (fhir.CodeableConcept|null)[]|undefined;
   /**
    * The number of repetitions of a service or product.
    */
@@ -655,7 +655,7 @@ export interface ExplanationOfBenefitAddItemDetail extends fhir.BackboneElement 
   /**
    * The numbers associated with notes below which apply to the adjudication of this item.
    */
-  noteNumber?: number[]|undefined;
+  noteNumber?: (number|null)[]|undefined;
   /**
    * Extended properties for primitive element: ExplanationOfBenefit.addItem.detail.noteNumber
    */
@@ -663,11 +663,11 @@ export interface ExplanationOfBenefitAddItemDetail extends fhir.BackboneElement 
   /**
    * The adjudication results.
    */
-  adjudication?: fhir.ExplanationOfBenefitItemAdjudication[]|undefined;
+  adjudication?: (fhir.ExplanationOfBenefitItemAdjudication|null)[]|undefined;
   /**
    * The third-tier service adjudications for payor added services.
    */
-  subDetail?: fhir.ExplanationOfBenefitAddItemDetailSubDetail[]|undefined;
+  subDetail?: (fhir.ExplanationOfBenefitAddItemDetailSubDetail|null)[]|undefined;
 }
 
 /**
@@ -677,7 +677,7 @@ export interface ExplanationOfBenefitAddItem extends fhir.BackboneElement {
   /**
    * Claim items which this service line is intended to replace.
    */
-  itemSequence?: number[]|undefined;
+  itemSequence?: (number|null)[]|undefined;
   /**
    * Extended properties for primitive element: ExplanationOfBenefit.addItem.itemSequence
    */
@@ -685,7 +685,7 @@ export interface ExplanationOfBenefitAddItem extends fhir.BackboneElement {
   /**
    * The sequence number of the details within the claim item which this line is intended to replace.
    */
-  detailSequence?: number[]|undefined;
+  detailSequence?: (number|null)[]|undefined;
   /**
    * Extended properties for primitive element: ExplanationOfBenefit.addItem.detailSequence
    */
@@ -693,7 +693,7 @@ export interface ExplanationOfBenefitAddItem extends fhir.BackboneElement {
   /**
    * The sequence number of the sub-details woithin the details within the claim item which this line is intended to replace.
    */
-  subDetailSequence?: number[]|undefined;
+  subDetailSequence?: (number|null)[]|undefined;
   /**
    * Extended properties for primitive element: ExplanationOfBenefit.addItem.subDetailSequence
    */
@@ -701,7 +701,7 @@ export interface ExplanationOfBenefitAddItem extends fhir.BackboneElement {
   /**
    * The providers who are authorized for the services rendered to the patient.
    */
-  provider?: fhir.Reference[]|undefined;
+  provider?: (fhir.Reference|null)[]|undefined;
   /**
    * If this is an actual service or product line, i.e. not a Group, then use code to indicate the Professional Service or Product supplied (e.g. CTP, HCPCS, USCLS, ICD10, NCPDP, DIN, RxNorm, ACHI, CCI). If a grouping item then use a group code to indicate the type of thing being grouped e.g. 'glasses' or 'compound'.
    */
@@ -709,11 +709,11 @@ export interface ExplanationOfBenefitAddItem extends fhir.BackboneElement {
   /**
    * For example, in Oral whether the treatment is cosmetic or associated with TMJ, or for Medical whether the treatment was outside the clinic or out of office hours.
    */
-  modifier?: fhir.CodeableConcept[]|undefined;
+  modifier?: (fhir.CodeableConcept|null)[]|undefined;
   /**
    * For example: Neonatal program, child dental program or drug users recovery program.
    */
-  programCode?: fhir.CodeableConcept[]|undefined;
+  programCode?: (fhir.CodeableConcept|null)[]|undefined;
   /**
    * The date or dates when the service or product was supplied, performed or completed.
    */
@@ -765,11 +765,11 @@ export interface ExplanationOfBenefitAddItem extends fhir.BackboneElement {
   /**
    * A region or surface of the bodySite, e.g. limb region or tooth surface(s).
    */
-  subSite?: fhir.CodeableConcept[]|undefined;
+  subSite?: (fhir.CodeableConcept|null)[]|undefined;
   /**
    * The numbers associated with notes below which apply to the adjudication of this item.
    */
-  noteNumber?: number[]|undefined;
+  noteNumber?: (number|null)[]|undefined;
   /**
    * Extended properties for primitive element: ExplanationOfBenefit.addItem.noteNumber
    */
@@ -777,11 +777,11 @@ export interface ExplanationOfBenefitAddItem extends fhir.BackboneElement {
   /**
    * The adjudication results.
    */
-  adjudication?: fhir.ExplanationOfBenefitItemAdjudication[]|undefined;
+  adjudication?: (fhir.ExplanationOfBenefitItemAdjudication|null)[]|undefined;
   /**
    * The second-tier service adjudications for payor added services.
    */
-  detail?: fhir.ExplanationOfBenefitAddItemDetail[]|undefined;
+  detail?: (fhir.ExplanationOfBenefitAddItemDetail|null)[]|undefined;
 }
 
 /**
@@ -955,7 +955,7 @@ export interface ExplanationOfBenefitBenefitBalance extends fhir.BackboneElement
   /**
    * Benefits Used to date.
    */
-  financial?: fhir.ExplanationOfBenefitBenefitBalanceFinancial[]|undefined;
+  financial?: (fhir.ExplanationOfBenefitBenefitBalanceFinancial|null)[]|undefined;
 }
 
 /**
@@ -965,11 +965,11 @@ export interface ExplanationOfBenefit extends fhir.DomainResource {
   /**
    * Resource Type Name
    */
-  resourceType: "ExplanationOfBenefit";
+  resourceType: "ExplanationOfBenefit"|null;
   /**
    * A unique identifier assigned to this explanation of benefit.
    */
-  identifier?: fhir.Identifier[]|undefined;
+  identifier?: (fhir.Identifier|null)[]|undefined;
   /**
    * This element is labeled as a modifier because the status contains codes that mark the resource as not currently valid.
    */
@@ -1037,7 +1037,7 @@ export interface ExplanationOfBenefit extends fhir.DomainResource {
   /**
    * For example,  for the original treatment and follow-up exams.
    */
-  related?: fhir.ExplanationOfBenefitRelated[]|undefined;
+  related?: (fhir.ExplanationOfBenefitRelated|null)[]|undefined;
   /**
    * Prescription to support the dispensing of pharmacy, device or vision products.
    */
@@ -1085,7 +1085,7 @@ export interface ExplanationOfBenefit extends fhir.DomainResource {
   /**
    * This value is only present on preauthorization adjudications.
    */
-  preAuthRef?: string[]|undefined;
+  preAuthRef?: (string|null)[]|undefined;
   /**
    * Extended properties for primitive element: ExplanationOfBenefit.preAuthRef
    */
@@ -1093,23 +1093,23 @@ export interface ExplanationOfBenefit extends fhir.DomainResource {
   /**
    * This value is only present on preauthorization adjudications.
    */
-  preAuthRefPeriod?: fhir.Period[]|undefined;
+  preAuthRefPeriod?: (fhir.Period|null)[]|undefined;
   /**
    * The members of the team who provided the products and services.
    */
-  careTeam?: fhir.ExplanationOfBenefitCareTeam[]|undefined;
+  careTeam?: (fhir.ExplanationOfBenefitCareTeam|null)[]|undefined;
   /**
    * Often there are multiple jurisdiction specific valuesets which are required.
    */
-  supportingInfo?: fhir.ExplanationOfBenefitSupportingInfo[]|undefined;
+  supportingInfo?: (fhir.ExplanationOfBenefitSupportingInfo|null)[]|undefined;
   /**
    * Information about diagnoses relevant to the claim items.
    */
-  diagnosis?: fhir.ExplanationOfBenefitDiagnosis[]|undefined;
+  diagnosis?: (fhir.ExplanationOfBenefitDiagnosis|null)[]|undefined;
   /**
    * Procedures performed on the patient relevant to the billing items with the claim.
    */
-  procedure?: fhir.ExplanationOfBenefitProcedure[]|undefined;
+  procedure?: (fhir.ExplanationOfBenefitProcedure|null)[]|undefined;
   /**
    * This indicates the relative order of a series of EOBs related to different coverages for the same suite of services.
    */
@@ -1121,7 +1121,7 @@ export interface ExplanationOfBenefit extends fhir.DomainResource {
   /**
    * All insurance coverages for the patient which may be applicable for reimbursement, of the products and services listed in the claim, are typically provided in the claim to allow insurers to confirm the ordering of the insurance coverages relative to local 'coordination of benefit' rules. One coverage (and only one) with 'focal=true' is to be used in the adjudication of this claim. Coverages appearing before the focal Coverage in the list, and where 'Coverage.subrogation=false', should provide a reference to the ClaimResponse containing the adjudication results of the prior claim.
    */
-  insurance: fhir.ExplanationOfBenefitInsurance[]|null;
+  insurance: (fhir.ExplanationOfBenefitInsurance|null)[]|null;
   /**
    * Details of a accident which resulted in injuries which required the products and services listed in the claim.
    */
@@ -1129,19 +1129,19 @@ export interface ExplanationOfBenefit extends fhir.DomainResource {
   /**
    * A claim line. Either a simple (a product or service) or a 'group' of details which can also be a simple items or groups of sub-details.
    */
-  item?: fhir.ExplanationOfBenefitItem[]|undefined;
+  item?: (fhir.ExplanationOfBenefitItem|null)[]|undefined;
   /**
    * The first-tier service adjudications for payor added product or service lines.
    */
-  addItem?: fhir.ExplanationOfBenefitAddItem[]|undefined;
+  addItem?: (fhir.ExplanationOfBenefitAddItem|null)[]|undefined;
   /**
    * The adjudication results which are presented at the header level rather than at the line-item or add-item levels.
    */
-  adjudication?: fhir.ExplanationOfBenefitItemAdjudication[]|undefined;
+  adjudication?: (fhir.ExplanationOfBenefitItemAdjudication|null)[]|undefined;
   /**
    * Totals for amounts submitted, co-pays, benefits payable etc.
    */
-  total?: fhir.ExplanationOfBenefitTotal[]|undefined;
+  total?: (fhir.ExplanationOfBenefitTotal|null)[]|undefined;
   /**
    * Payment details for the adjudication of the claim.
    */
@@ -1157,7 +1157,7 @@ export interface ExplanationOfBenefit extends fhir.DomainResource {
   /**
    * A note that describes or explains adjudication results in a human readable form.
    */
-  processNote?: fhir.ExplanationOfBenefitProcessNote[]|undefined;
+  processNote?: (fhir.ExplanationOfBenefitProcessNote|null)[]|undefined;
   /**
    * Not applicable when use=claim.
    */
@@ -1165,5 +1165,5 @@ export interface ExplanationOfBenefit extends fhir.DomainResource {
   /**
    * Balance by Benefit Category.
    */
-  benefitBalance?: fhir.ExplanationOfBenefitBenefitBalance[]|undefined;
+  benefitBalance?: (fhir.ExplanationOfBenefitBenefitBalance|null)[]|undefined;
 }

@@ -117,11 +117,11 @@ export interface ExampleScenarioInstance extends fhir.BackboneElement {
     /**
      * A specific version of the resource.
      */
-    version?: fhir.ExampleScenarioInstanceVersion[] | undefined;
+    version?: (fhir.ExampleScenarioInstanceVersion | null)[] | undefined;
     /**
      * Resources contained in the instance (e.g. the observations contained in a bundle).
      */
-    containedInstance?: fhir.ExampleScenarioInstanceContainedInstance[] | undefined;
+    containedInstance?: (fhir.ExampleScenarioInstanceContainedInstance | null)[] | undefined;
 }
 /**
  * Each interaction or action.
@@ -223,7 +223,7 @@ export interface ExampleScenarioProcessStepAlternative extends fhir.BackboneElem
     /**
      * What happens in each alternative option.
      */
-    step?: fhir.ExampleScenarioProcessStep[] | undefined;
+    step?: (fhir.ExampleScenarioProcessStep | null)[] | undefined;
 }
 /**
  * Each step of the process.
@@ -232,7 +232,7 @@ export interface ExampleScenarioProcessStep extends fhir.BackboneElement {
     /**
      * Nested process.
      */
-    process?: fhir.ExampleScenarioProcess[] | undefined;
+    process?: (fhir.ExampleScenarioProcess | null)[] | undefined;
     /**
      * If there is a pause in the flow.
      */
@@ -248,7 +248,7 @@ export interface ExampleScenarioProcessStep extends fhir.BackboneElement {
     /**
      * Indicates an alternative step that can be taken instead of the operations on the base step in exceptional/atypical circumstances.
      */
-    alternative?: fhir.ExampleScenarioProcessStepAlternative[] | undefined;
+    alternative?: (fhir.ExampleScenarioProcessStepAlternative | null)[] | undefined;
 }
 /**
  * Each major process - a group of operations.
@@ -289,7 +289,7 @@ export interface ExampleScenarioProcess extends fhir.BackboneElement {
     /**
      * Each step of the process.
      */
-    step?: fhir.ExampleScenarioProcessStep[] | undefined;
+    step?: (fhir.ExampleScenarioProcessStep | null)[] | undefined;
 }
 /**
  * Example of workflow instance.
@@ -298,7 +298,7 @@ export interface ExampleScenario extends fhir.DomainResource {
     /**
      * Resource Type Name
      */
-    resourceType: "ExampleScenario";
+    resourceType: "ExampleScenario" | null;
     /**
      * Can be a urn:uuid: or a urn:oid: but real http: addresses are preferred.  Multiple instances may share the same URL if they have a distinct version.
      * The determination of when to create a new version of a resource (same url, new version) vs. defining a new artifact is up to the author.  Considerations for making this decision are found in [Technical and Business Versions](resource.html#versions).
@@ -312,7 +312,7 @@ export interface ExampleScenario extends fhir.DomainResource {
     /**
      * Typically, this is used for identifiers that can go in an HL7 V3 II (instance identifier) data type, and can then identify this example scenario outside of FHIR, where it is not possible to use the logical URI.
      */
-    identifier?: fhir.Identifier[] | undefined;
+    identifier?: (fhir.Identifier | null)[] | undefined;
     /**
      * There may be different example scenario instances that have the same identifier but different versions.  The version can be appended to the url in a reference to allow a reference to a particular business version of the example scenario with the format [url]|[version].
      */
@@ -364,15 +364,15 @@ export interface ExampleScenario extends fhir.DomainResource {
     /**
      * May be a web site, an email address, a telephone number, etc.
      */
-    contact?: fhir.ContactDetail[] | undefined;
+    contact?: (fhir.ContactDetail | null)[] | undefined;
     /**
      * When multiple useContexts are specified, there is no expectation that all or any of the contexts apply.
      */
-    useContext?: fhir.UsageContext[] | undefined;
+    useContext?: (fhir.UsageContext | null)[] | undefined;
     /**
      * It may be possible for the example scenario to be used in jurisdictions other than those for which it was originally designed or intended.
      */
-    jurisdiction?: fhir.CodeableConcept[] | undefined;
+    jurisdiction?: (fhir.CodeableConcept | null)[] | undefined;
     /**
      * nullFrequently, the copyright differs between the value set and the codes that are included. The copyright statement should clearly differentiate between these when required.
      */
@@ -392,19 +392,19 @@ export interface ExampleScenario extends fhir.DomainResource {
     /**
      * Actor participating in the resource.
      */
-    actor?: fhir.ExampleScenarioActor[] | undefined;
+    actor?: (fhir.ExampleScenarioActor | null)[] | undefined;
     /**
      * Each resource and each version that is present in the workflow.
      */
-    instance?: fhir.ExampleScenarioInstance[] | undefined;
+    instance?: (fhir.ExampleScenarioInstance | null)[] | undefined;
     /**
      * Each major process - a group of operations.
      */
-    process?: fhir.ExampleScenarioProcess[] | undefined;
+    process?: (fhir.ExampleScenarioProcess | null)[] | undefined;
     /**
      * Another nested workflow.
      */
-    workflow?: string[] | undefined;
+    workflow?: (string | null)[] | undefined;
     /**
      * Extended properties for primitive element: ExampleScenario.workflow
      */

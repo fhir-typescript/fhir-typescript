@@ -10,7 +10,7 @@ export interface ClinicalImpressionInvestigation extends fhir.BackboneElement {
     /**
      * Most investigations are observations of one kind or another but some other specific types of data collection resources can also be used.
      */
-    item?: fhir.Reference[] | undefined;
+    item?: (fhir.Reference | null)[] | undefined;
 }
 /**
  * Specific findings or diagnoses that were considered likely or relevant to ongoing treatment.
@@ -40,11 +40,11 @@ export interface ClinicalImpression extends fhir.DomainResource {
     /**
      * Resource Type Name
      */
-    resourceType: "ClinicalImpression";
+    resourceType: "ClinicalImpression" | null;
     /**
      * This is a business identifier, not a resource identifier (see [discussion](resource.html#identifiers)).  It is best practice for the identifier to only appear on a single resource instance, however business practices may occasionally dictate that multiple resource instances with the same identifier can exist - possibly even with different resource types.  For example, multiple Patient and a Person resource instance might share the same social insurance number.
      */
-    identifier?: fhir.Identifier[] | undefined;
+    identifier?: (fhir.Identifier | null)[] | undefined;
     /**
      * This element is labeled as a modifier because the status contains the code entered-in-error that marks the clinical impression as not currently valid.
      */
@@ -109,15 +109,15 @@ export interface ClinicalImpression extends fhir.DomainResource {
     /**
      * e.g. The patient is a pregnant, has congestive heart failure, has an ‎Adenocarcinoma, and is allergic to penicillin.
      */
-    problem?: fhir.Reference[] | undefined;
+    problem?: (fhir.Reference | null)[] | undefined;
     /**
      * One or more sets of investigations (signs, symptoms, etc.). The actual grouping of investigations varies greatly depending on the type and context of the assessment. These investigations may include data generated during the assessment process, or data previously generated and recorded that is pertinent to the outcomes.
      */
-    investigation?: fhir.ClinicalImpressionInvestigation[] | undefined;
+    investigation?: (fhir.ClinicalImpressionInvestigation | null)[] | undefined;
     /**
      * Reference to a specific published clinical protocol that was followed during this assessment, and/or that provides evidence in support of the diagnosis.
      */
-    protocol?: string[] | undefined;
+    protocol?: (string | null)[] | undefined;
     /**
      * Extended properties for primitive element: ClinicalImpression.protocol
      */
@@ -133,22 +133,22 @@ export interface ClinicalImpression extends fhir.DomainResource {
     /**
      * Specific findings or diagnoses that were considered likely or relevant to ongoing treatment.
      */
-    finding?: fhir.ClinicalImpressionFinding[] | undefined;
+    finding?: (fhir.ClinicalImpressionFinding | null)[] | undefined;
     /**
      * Estimate of likely outcome.
      */
-    prognosisCodeableConcept?: fhir.CodeableConcept[] | undefined;
+    prognosisCodeableConcept?: (fhir.CodeableConcept | null)[] | undefined;
     /**
      * RiskAssessment expressing likely outcome.
      */
-    prognosisReference?: fhir.Reference[] | undefined;
+    prognosisReference?: (fhir.Reference | null)[] | undefined;
     /**
      * Information supporting the clinical impression.
      */
-    supportingInfo?: fhir.Reference[] | undefined;
+    supportingInfo?: (fhir.Reference | null)[] | undefined;
     /**
      * Don't use this element for content that should more properly appear as one of the specific elements of the impression.
      */
-    note?: fhir.Annotation[] | undefined;
+    note?: (fhir.Annotation | null)[] | undefined;
 }
 //# sourceMappingURL=ClinicalImpression.d.ts.map

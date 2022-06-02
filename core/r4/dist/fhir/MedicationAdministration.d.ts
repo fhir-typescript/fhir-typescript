@@ -142,7 +142,7 @@ export interface MedicationAdministrationArgs extends fhir.DomainResourceArgs {
     /**
      * A protocol, guideline, orderset, or other definition that was adhered to in whole or in part by this event.
      */
-    instantiates?: fhir.FhirUri[] | string[] | undefined;
+    instantiates?: fhir.FhirUri[] | (string | null)[] | undefined;
     /**
      * Extended properties for primitive element: MedicationAdministration.instantiates
      */

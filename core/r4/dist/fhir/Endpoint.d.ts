@@ -52,7 +52,7 @@ export interface EndpointArgs extends fhir.DomainResourceArgs {
     /**
      * Sending the payload has obvious security consequences. The server is responsible for ensuring that the content is appropriately secured.
      */
-    payloadMimeType?: fhir.FhirCode[] | string[] | undefined;
+    payloadMimeType?: fhir.FhirCode[] | (string | null)[] | undefined;
     /**
      * Extended properties for primitive element: Endpoint.payloadMimeType
      */
@@ -71,7 +71,7 @@ export interface EndpointArgs extends fhir.DomainResourceArgs {
     /**
      * Exactly what these mean depends on the channel type. The can convey additional information to the recipient and/or meet security requirements.
      */
-    header?: fhir.FhirString[] | string[] | undefined;
+    header?: fhir.FhirString[] | (string | null)[] | undefined;
     /**
      * Extended properties for primitive element: Endpoint.header
      */

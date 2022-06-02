@@ -32,7 +32,7 @@ export interface AddressArgs extends fhir.FhirElementArgs {
     /**
      * This component contains the house number, apartment number, street name, street direction,  P.O. Box number, delivery hints, and similar address information.
      */
-    line?: fhir.FhirString[] | string[] | undefined;
+    line?: fhir.FhirString[] | (string | null)[] | undefined;
     /**
      * Extended properties for primitive element: Address.line
      */

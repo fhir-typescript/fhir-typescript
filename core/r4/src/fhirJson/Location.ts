@@ -44,7 +44,7 @@ export interface LocationHoursOfOperation extends fhir.BackboneElement {
   /**
    * Indicates which days of the week are available between the start and end Times.
    */
-  daysOfWeek?: ('fri'|'mon'|'sat'|'sun'|'thu'|'tue'|'wed')[]|undefined;
+  daysOfWeek?: (('fri'|'mon'|'sat'|'sun'|'thu'|'tue'|'wed')|null)[]|undefined;
   /**
    * Extended properties for primitive element: Location.hoursOfOperation.daysOfWeek
    */
@@ -82,11 +82,11 @@ export interface Location extends fhir.DomainResource {
   /**
    * Resource Type Name
    */
-  resourceType: "Location";
+  resourceType: "Location"|null;
   /**
    * Unique code or number identifying the location to its users.
    */
-  identifier?: fhir.Identifier[]|undefined;
+  identifier?: (fhir.Identifier|null)[]|undefined;
   /**
    * The status property covers the general availability of the resource, not the current value which may be covered by the operationStatus, or by a schedule/slots if they are configured for the location.
    */
@@ -110,7 +110,7 @@ export interface Location extends fhir.DomainResource {
   /**
    * There are no dates associated with the alias/historic names, as this is not intended to track when names were used, but to assist in searching so that older names can still result in identifying the location.
    */
-  alias?: string[]|undefined;
+  alias?: (string|null)[]|undefined;
   /**
    * Extended properties for primitive element: Location.alias
    */
@@ -134,11 +134,11 @@ export interface Location extends fhir.DomainResource {
   /**
    * Indicates the type of function performed at the location.
    */
-  type?: fhir.CodeableConcept[]|undefined;
+  type?: (fhir.CodeableConcept|null)[]|undefined;
   /**
    * The contact details of communication devices available at the location. This can include phone numbers, fax numbers, mobile numbers, email addresses and web sites.
    */
-  telecom?: fhir.ContactPoint[]|undefined;
+  telecom?: (fhir.ContactPoint|null)[]|undefined;
   /**
    * Additional addresses should be recorded using another instance of the Location resource, or via the Organization.
    */
@@ -163,7 +163,7 @@ export interface Location extends fhir.DomainResource {
    * This type of information is commonly found published in directories and on websites informing customers when the facility is available.
    * Specific services within the location may have their own hours which could be shorter (or longer) than the locations hours.
    */
-  hoursOfOperation?: fhir.LocationHoursOfOperation[]|undefined;
+  hoursOfOperation?: (fhir.LocationHoursOfOperation|null)[]|undefined;
   /**
    * A description of when the locations opening ours are different to normal, e.g. public holiday availability. Succinctly describing all possible exceptions to normal site availability as detailed in the opening hours Times.
    */
@@ -175,5 +175,5 @@ export interface Location extends fhir.DomainResource {
   /**
    * Technical endpoints providing access to services operated for the location.
    */
-  endpoint?: fhir.Reference[]|undefined;
+  endpoint?: (fhir.Reference|null)[]|undefined;
 }

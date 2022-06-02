@@ -23,7 +23,7 @@ export interface ImmunizationRecommendationRecommendation extends fhir.BackboneE
     /**
      * Vaccine(s) or vaccine group that pertain to the recommendation.
      */
-    vaccineCode?: fhir.CodeableConcept[] | undefined;
+    vaccineCode?: (fhir.CodeableConcept | null)[] | undefined;
     /**
      * The targeted disease for the recommendation.
      */
@@ -31,7 +31,7 @@ export interface ImmunizationRecommendationRecommendation extends fhir.BackboneE
     /**
      * Vaccine(s) which should not be used to fulfill the recommendation.
      */
-    contraindicatedVaccineCode?: fhir.CodeableConcept[] | undefined;
+    contraindicatedVaccineCode?: (fhir.CodeableConcept | null)[] | undefined;
     /**
      * Indicates the patient status with respect to the path to immunity for the target disease.
      */
@@ -39,11 +39,11 @@ export interface ImmunizationRecommendationRecommendation extends fhir.BackboneE
     /**
      * The reason for the assigned forecast status.
      */
-    forecastReason?: fhir.CodeableConcept[] | undefined;
+    forecastReason?: (fhir.CodeableConcept | null)[] | undefined;
     /**
      * Vaccine date recommendations.  For example, earliest date to administer, latest date to administer, etc.
      */
-    dateCriterion?: fhir.ImmunizationRecommendationRecommendationDateCriterion[] | undefined;
+    dateCriterion?: (fhir.ImmunizationRecommendationRecommendationDateCriterion | null)[] | undefined;
     /**
      * Contains the description about the protocol under which the vaccine was administered.
      */
@@ -95,11 +95,11 @@ export interface ImmunizationRecommendationRecommendation extends fhir.BackboneE
     /**
      * Immunization event history and/or evaluation that supports the status and recommendation.
      */
-    supportingImmunization?: fhir.Reference[] | undefined;
+    supportingImmunization?: (fhir.Reference | null)[] | undefined;
     /**
      * Patient Information that supports the status and recommendation.  This includes patient observations, adverse reactions and allergy/intolerance information.
      */
-    supportingPatientInformation?: fhir.Reference[] | undefined;
+    supportingPatientInformation?: (fhir.Reference | null)[] | undefined;
 }
 /**
  * A patient's point-in-time set of recommendations (i.e. forecasting) according to a published schedule with optional supporting justification.
@@ -108,11 +108,11 @@ export interface ImmunizationRecommendation extends fhir.DomainResource {
     /**
      * Resource Type Name
      */
-    resourceType: "ImmunizationRecommendation";
+    resourceType: "ImmunizationRecommendation" | null;
     /**
      * A unique identifier assigned to this particular recommendation record.
      */
-    identifier?: fhir.Identifier[] | undefined;
+    identifier?: (fhir.Identifier | null)[] | undefined;
     /**
      * The patient the recommendation(s) are for.
      */
@@ -132,6 +132,6 @@ export interface ImmunizationRecommendation extends fhir.DomainResource {
     /**
      * Vaccine administration recommendations.
      */
-    recommendation: fhir.ImmunizationRecommendationRecommendation[] | null;
+    recommendation: (fhir.ImmunizationRecommendationRecommendation | null)[] | null;
 }
 //# sourceMappingURL=ImmunizationRecommendation.d.ts.map

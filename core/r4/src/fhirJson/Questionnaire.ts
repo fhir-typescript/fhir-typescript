@@ -259,7 +259,7 @@ export interface QuestionnaireItem extends fhir.BackboneElement {
   /**
    * The value may come from the ElementDefinition referred to by .definition.
    */
-  code?: fhir.Coding[]|undefined;
+  code?: (fhir.Coding|null)[]|undefined;
   /**
    * These are generally unique within a questionnaire, though this is not guaranteed. Some questionnaires may have multiple questions with the same label with logic to control which gets exposed.  Typically, these won't be used for "display" items, though such use is not prohibited.  Systems SHOULD NOT generate their own prefixes if prefixes are defined for any items within a Questionnaire.
    */
@@ -287,7 +287,7 @@ export interface QuestionnaireItem extends fhir.BackboneElement {
   /**
    * If multiple repetitions of this extension are present, the item should be enabled when the condition for *any* of the repetitions is true.  I.e. treat "enableWhen"s as being joined by an "or" clause.  This element is a modifier because if enableWhen is present for an item, "required" is ignored unless one of the enableWhen conditions is met. When an item is disabled, all of its descendants are disabled, regardless of what their own enableWhen logic might evaluate to.
    */
-  enableWhen?: fhir.QuestionnaireItemEnableWhen[]|undefined;
+  enableWhen?: (fhir.QuestionnaireItemEnableWhen|null)[]|undefined;
   /**
    * This element must be specified if more than one enableWhen value is provided.
    */
@@ -341,15 +341,15 @@ export interface QuestionnaireItem extends fhir.BackboneElement {
   /**
    * This element can be used when the value set machinery of answerValueSet is deemed too cumbersome or when there's a need to capture possible answers that are not codes.
    */
-  answerOption?: fhir.QuestionnaireItemAnswerOption[]|undefined;
+  answerOption?: (fhir.QuestionnaireItemAnswerOption|null)[]|undefined;
   /**
    * The user is allowed to change the value and override the default (unless marked as read-only). If the user doesn't change the value, then this initial value will be persisted when the QuestionnaireResponse is initially created.  Note that initial values can influence results.  The data type of initial[x] must agree with the item.type, and only repeating items can have more then one initial value.
    */
-  initial?: fhir.QuestionnaireItemInitial[]|undefined;
+  initial?: (fhir.QuestionnaireItemInitial|null)[]|undefined;
   /**
    * There is no specified limit to the depth of nesting.  However, Questionnaire authors are encouraged to consider the impact on the user and user interface of overly deep nesting.
    */
-  item?: fhir.QuestionnaireItem[]|undefined;
+  item?: (fhir.QuestionnaireItem|null)[]|undefined;
 }
 
 /**
@@ -359,7 +359,7 @@ export interface Questionnaire extends fhir.DomainResource {
   /**
    * Resource Type Name
    */
-  resourceType: "Questionnaire";
+  resourceType: "Questionnaire"|null;
   /**
    * The name of the referenced questionnaire can be conveyed using the http://hl7.org/fhir/StructureDefinition/display extension.
    */
@@ -371,7 +371,7 @@ export interface Questionnaire extends fhir.DomainResource {
   /**
    * Typically, this is used for identifiers that can go in an HL7 V3 II (instance identifier) data type, and can then identify this questionnaire outside of FHIR, where it is not possible to use the logical URI.
    */
-  identifier?: fhir.Identifier[]|undefined;
+  identifier?: (fhir.Identifier|null)[]|undefined;
   /**
    * There may be different questionnaire instances that have the same identifier but different versions.  The version can be appended to the url in a reference to allow a reference to a particular business version of the questionnaire with the format [url]|[version].
    */
@@ -399,7 +399,7 @@ export interface Questionnaire extends fhir.DomainResource {
   /**
    * The URL of a Questionnaire that this Questionnaire is based on.
    */
-  derivedFrom?: string[]|undefined;
+  derivedFrom?: (string|null)[]|undefined;
   /**
    * Extended properties for primitive element: Questionnaire.derivedFrom
    */
@@ -423,7 +423,7 @@ export interface Questionnaire extends fhir.DomainResource {
   /**
    * If none are specified, then the subject is unlimited.
    */
-  subjectType?: ('Account'|'ActivityDefinition'|'AdverseEvent'|'AllergyIntolerance'|'Appointment'|'AppointmentResponse'|'AuditEvent'|'Basic'|'Binary'|'BiologicallyDerivedProduct'|'BodyStructure'|'Bundle'|'CapabilityStatement'|'CarePlan'|'CareTeam'|'CatalogEntry'|'ChargeItem'|'ChargeItemDefinition'|'Claim'|'ClaimResponse'|'ClinicalImpression'|'CodeSystem'|'Communication'|'CommunicationRequest'|'CompartmentDefinition'|'Composition'|'ConceptMap'|'Condition'|'Consent'|'Contract'|'Coverage'|'CoverageEligibilityRequest'|'CoverageEligibilityResponse'|'DetectedIssue'|'Device'|'DeviceDefinition'|'DeviceMetric'|'DeviceRequest'|'DeviceUseStatement'|'DiagnosticReport'|'DocumentManifest'|'DocumentReference'|'DomainResource'|'EffectEvidenceSynthesis'|'Encounter'|'Endpoint'|'EnrollmentRequest'|'EnrollmentResponse'|'EpisodeOfCare'|'EventDefinition'|'Evidence'|'EvidenceVariable'|'ExampleScenario'|'ExplanationOfBenefit'|'FamilyMemberHistory'|'Flag'|'Goal'|'GraphDefinition'|'Group'|'GuidanceResponse'|'HealthcareService'|'ImagingStudy'|'Immunization'|'ImmunizationEvaluation'|'ImmunizationRecommendation'|'ImplementationGuide'|'InsurancePlan'|'Invoice'|'Library'|'Linkage'|'List'|'Location'|'Measure'|'MeasureReport'|'Media'|'Medication'|'MedicationAdministration'|'MedicationDispense'|'MedicationKnowledge'|'MedicationRequest'|'MedicationStatement'|'MedicinalProduct'|'MedicinalProductAuthorization'|'MedicinalProductContraindication'|'MedicinalProductIndication'|'MedicinalProductIngredient'|'MedicinalProductInteraction'|'MedicinalProductManufactured'|'MedicinalProductPackaged'|'MedicinalProductPharmaceutical'|'MedicinalProductUndesirableEffect'|'MessageDefinition'|'MessageHeader'|'MolecularSequence'|'NamingSystem'|'NutritionOrder'|'Observation'|'ObservationDefinition'|'OperationDefinition'|'OperationOutcome'|'Organization'|'OrganizationAffiliation'|'Parameters'|'Patient'|'PaymentNotice'|'PaymentReconciliation'|'Person'|'PlanDefinition'|'Practitioner'|'PractitionerRole'|'Procedure'|'Provenance'|'Questionnaire'|'QuestionnaireResponse'|'RelatedPerson'|'RequestGroup'|'ResearchDefinition'|'ResearchElementDefinition'|'ResearchStudy'|'ResearchSubject'|'Resource'|'RiskAssessment'|'RiskEvidenceSynthesis'|'Schedule'|'SearchParameter'|'ServiceRequest'|'Slot'|'Specimen'|'SpecimenDefinition'|'StructureDefinition'|'StructureMap'|'Subscription'|'Substance'|'SubstanceNucleicAcid'|'SubstancePolymer'|'SubstanceProtein'|'SubstanceReferenceInformation'|'SubstanceSourceMaterial'|'SubstanceSpecification'|'SupplyDelivery'|'SupplyRequest'|'Task'|'TerminologyCapabilities'|'TestReport'|'TestScript'|'ValueSet'|'VerificationResult'|'VisionPrescription')[]|undefined;
+  subjectType?: (('Account'|'ActivityDefinition'|'AdverseEvent'|'AllergyIntolerance'|'Appointment'|'AppointmentResponse'|'AuditEvent'|'Basic'|'Binary'|'BiologicallyDerivedProduct'|'BodyStructure'|'Bundle'|'CapabilityStatement'|'CarePlan'|'CareTeam'|'CatalogEntry'|'ChargeItem'|'ChargeItemDefinition'|'Claim'|'ClaimResponse'|'ClinicalImpression'|'CodeSystem'|'Communication'|'CommunicationRequest'|'CompartmentDefinition'|'Composition'|'ConceptMap'|'Condition'|'Consent'|'Contract'|'Coverage'|'CoverageEligibilityRequest'|'CoverageEligibilityResponse'|'DetectedIssue'|'Device'|'DeviceDefinition'|'DeviceMetric'|'DeviceRequest'|'DeviceUseStatement'|'DiagnosticReport'|'DocumentManifest'|'DocumentReference'|'DomainResource'|'EffectEvidenceSynthesis'|'Encounter'|'Endpoint'|'EnrollmentRequest'|'EnrollmentResponse'|'EpisodeOfCare'|'EventDefinition'|'Evidence'|'EvidenceVariable'|'ExampleScenario'|'ExplanationOfBenefit'|'FamilyMemberHistory'|'Flag'|'Goal'|'GraphDefinition'|'Group'|'GuidanceResponse'|'HealthcareService'|'ImagingStudy'|'Immunization'|'ImmunizationEvaluation'|'ImmunizationRecommendation'|'ImplementationGuide'|'InsurancePlan'|'Invoice'|'Library'|'Linkage'|'List'|'Location'|'Measure'|'MeasureReport'|'Media'|'Medication'|'MedicationAdministration'|'MedicationDispense'|'MedicationKnowledge'|'MedicationRequest'|'MedicationStatement'|'MedicinalProduct'|'MedicinalProductAuthorization'|'MedicinalProductContraindication'|'MedicinalProductIndication'|'MedicinalProductIngredient'|'MedicinalProductInteraction'|'MedicinalProductManufactured'|'MedicinalProductPackaged'|'MedicinalProductPharmaceutical'|'MedicinalProductUndesirableEffect'|'MessageDefinition'|'MessageHeader'|'MolecularSequence'|'NamingSystem'|'NutritionOrder'|'Observation'|'ObservationDefinition'|'OperationDefinition'|'OperationOutcome'|'Organization'|'OrganizationAffiliation'|'Parameters'|'Patient'|'PaymentNotice'|'PaymentReconciliation'|'Person'|'PlanDefinition'|'Practitioner'|'PractitionerRole'|'Procedure'|'Provenance'|'Questionnaire'|'QuestionnaireResponse'|'RelatedPerson'|'RequestGroup'|'ResearchDefinition'|'ResearchElementDefinition'|'ResearchStudy'|'ResearchSubject'|'Resource'|'RiskAssessment'|'RiskEvidenceSynthesis'|'Schedule'|'SearchParameter'|'ServiceRequest'|'Slot'|'Specimen'|'SpecimenDefinition'|'StructureDefinition'|'StructureMap'|'Subscription'|'Substance'|'SubstanceNucleicAcid'|'SubstancePolymer'|'SubstanceProtein'|'SubstanceReferenceInformation'|'SubstanceSourceMaterial'|'SubstanceSpecification'|'SupplyDelivery'|'SupplyRequest'|'Task'|'TerminologyCapabilities'|'TestReport'|'TestScript'|'ValueSet'|'VerificationResult'|'VisionPrescription')|null)[]|undefined;
   /**
    * Extended properties for primitive element: Questionnaire.subjectType
    */
@@ -447,7 +447,7 @@ export interface Questionnaire extends fhir.DomainResource {
   /**
    * May be a web site, an email address, a telephone number, etc.
    */
-  contact?: fhir.ContactDetail[]|undefined;
+  contact?: (fhir.ContactDetail|null)[]|undefined;
   /**
    * This description can be used to capture details such as why the questionnaire was built, comments about misuse, instructions for clinical use and interpretation, literature references, examples from the paper world, etc. It is not a rendering of the questionnaire as conveyed in the 'text' field of the resource itself. This item SHOULD be populated unless the information is available from context (e.g. the language of the questionnaire is presumed to be the predominant language in the place the questionnaire was created).
    */
@@ -459,11 +459,11 @@ export interface Questionnaire extends fhir.DomainResource {
   /**
    * When multiple useContexts are specified, there is no expectation that all or any of the contexts apply.
    */
-  useContext?: fhir.UsageContext[]|undefined;
+  useContext?: (fhir.UsageContext|null)[]|undefined;
   /**
    * It may be possible for the questionnaire to be used in jurisdictions other than those for which it was originally designed or intended.
    */
-  jurisdiction?: fhir.CodeableConcept[]|undefined;
+  jurisdiction?: (fhir.CodeableConcept|null)[]|undefined;
   /**
    * This element does not describe the usage of the questionnaire. Instead, it provides traceability of ''why'' the resource is either needed or ''why'' it is defined as it is.  This may be used to point to source materials or specifications that drove the structure of this questionnaire.
    */
@@ -503,9 +503,9 @@ export interface Questionnaire extends fhir.DomainResource {
   /**
    * An identifier for this question or group of questions in a particular terminology such as LOINC.
    */
-  code?: fhir.Coding[]|undefined;
+  code?: (fhir.Coding|null)[]|undefined;
   /**
    * The content of the questionnaire is constructed from an ordered, hierarchical collection of items.
    */
-  item?: fhir.QuestionnaireItem[]|undefined;
+  item?: (fhir.QuestionnaireItem|null)[]|undefined;
 }

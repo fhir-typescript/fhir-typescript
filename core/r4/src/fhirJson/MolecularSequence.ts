@@ -129,7 +129,7 @@ export interface MolecularSequenceQualityRoc extends fhir.BackboneElement {
   /**
    * Invidual data point representing the GQ (genotype quality) score threshold.
    */
-  score?: number[]|undefined;
+  score?: (number|null)[]|undefined;
   /**
    * Extended properties for primitive element: MolecularSequence.quality.roc.score
    */
@@ -137,7 +137,7 @@ export interface MolecularSequenceQualityRoc extends fhir.BackboneElement {
   /**
    * The number of true positives if the GQ score threshold was set to "score" field value.
    */
-  numTP?: number[]|undefined;
+  numTP?: (number|null)[]|undefined;
   /**
    * Extended properties for primitive element: MolecularSequence.quality.roc.numTP
    */
@@ -145,7 +145,7 @@ export interface MolecularSequenceQualityRoc extends fhir.BackboneElement {
   /**
    * The number of false positives if the GQ score threshold was set to "score" field value.
    */
-  numFP?: number[]|undefined;
+  numFP?: (number|null)[]|undefined;
   /**
    * Extended properties for primitive element: MolecularSequence.quality.roc.numFP
    */
@@ -153,7 +153,7 @@ export interface MolecularSequenceQualityRoc extends fhir.BackboneElement {
   /**
    * The number of false negatives if the GQ score threshold was set to "score" field value.
    */
-  numFN?: number[]|undefined;
+  numFN?: (number|null)[]|undefined;
   /**
    * Extended properties for primitive element: MolecularSequence.quality.roc.numFN
    */
@@ -161,7 +161,7 @@ export interface MolecularSequenceQualityRoc extends fhir.BackboneElement {
   /**
    * Calculated precision if the GQ score threshold was set to "score" field value.
    */
-  precision?: number[]|undefined;
+  precision?: (number|null)[]|undefined;
   /**
    * Extended properties for primitive element: MolecularSequence.quality.roc.precision
    */
@@ -169,7 +169,7 @@ export interface MolecularSequenceQualityRoc extends fhir.BackboneElement {
   /**
    * Calculated sensitivity if the GQ score threshold was set to "score" field value.
    */
-  sensitivity?: number[]|undefined;
+  sensitivity?: (number|null)[]|undefined;
   /**
    * Extended properties for primitive element: MolecularSequence.quality.roc.sensitivity
    */
@@ -177,7 +177,7 @@ export interface MolecularSequenceQualityRoc extends fhir.BackboneElement {
   /**
    * Calculated fScore if the GQ score threshold was set to "score" field value.
    */
-  fMeasure?: number[]|undefined;
+  fMeasure?: (number|null)[]|undefined;
   /**
    * Extended properties for primitive element: MolecularSequence.quality.roc.fMeasure
    */
@@ -433,11 +433,11 @@ export interface MolecularSequence extends fhir.DomainResource {
   /**
    * Resource Type Name
    */
-  resourceType: "MolecularSequence";
+  resourceType: "MolecularSequence"|null;
   /**
    * A unique identifier for this particular sequence instance. This is a FHIR-defined id.
    */
-  identifier?: fhir.Identifier[]|undefined;
+  identifier?: (fhir.Identifier|null)[]|undefined;
   /**
    * Amino Acid Sequence/ DNA Sequence / RNA Sequence.
    */
@@ -481,7 +481,7 @@ export interface MolecularSequence extends fhir.DomainResource {
   /**
    * The definition of variant here originates from Sequence ontology ([variant_of](http://www.sequenceontology.org/browser/current_svn/term/variant_of)). This element can represent amino acid or nucleic sequence change(including insertion,deletion,SNP,etc.)  It can represent some complex mutation or segment variation with the assist of CIGAR string.
    */
-  variant?: fhir.MolecularSequenceVariant[]|undefined;
+  variant?: (fhir.MolecularSequenceVariant|null)[]|undefined;
   /**
    * Sequence that was observed. It is the result marked by referenceSeq along with variant records on referenceSeq. This shall start from referenceSeq.windowStart and end by referenceSeq.windowEnd.
    */
@@ -493,7 +493,7 @@ export interface MolecularSequence extends fhir.DomainResource {
   /**
    * An experimental feature attribute that defines the quality of the feature in a quantitative way, such as a phred quality score ([SO:0001686](http://www.sequenceontology.org/browser/current_svn/term/SO:0001686)).
    */
-  quality?: fhir.MolecularSequenceQuality[]|undefined;
+  quality?: (fhir.MolecularSequenceQuality|null)[]|undefined;
   /**
    * Coverage (read depth or depth) is the average number of reads representing a given nucleotide in the reconstructed sequence.
    */
@@ -505,13 +505,13 @@ export interface MolecularSequence extends fhir.DomainResource {
   /**
    * Configurations of the external repository. The repository shall store target's observedSeq or records related with target's observedSeq.
    */
-  repository?: fhir.MolecularSequenceRepository[]|undefined;
+  repository?: (fhir.MolecularSequenceRepository|null)[]|undefined;
   /**
    * Pointer to next atomic sequence which at most contains one variant.
    */
-  pointer?: fhir.Reference[]|undefined;
+  pointer?: (fhir.Reference|null)[]|undefined;
   /**
    * Information about chromosome structure variation.
    */
-  structureVariant?: fhir.MolecularSequenceStructureVariant[]|undefined;
+  structureVariant?: (fhir.MolecularSequenceStructureVariant|null)[]|undefined;
 }

@@ -18,7 +18,7 @@ export interface TaskRestriction extends fhir.BackboneElement {
     /**
      * For requests that are targeted to more than on potential recipient/target, for whom is fulfillment sought?
      */
-    recipient?: fhir.Reference[] | undefined;
+    recipient?: (fhir.Reference | null)[] | undefined;
 }
 /**
  * Additional information that may be needed in the execution of the task.
@@ -597,11 +597,11 @@ export interface Task extends fhir.DomainResource {
     /**
      * Resource Type Name
      */
-    resourceType: "Task";
+    resourceType: "Task" | null;
     /**
      * The business identifier for this task.
      */
-    identifier?: fhir.Identifier[] | undefined;
+    identifier?: (fhir.Identifier | null)[] | undefined;
     /**
      * The URL pointing to a *FHIR*-defined protocol, guideline, orderset or other definition that is adhered to in whole or in part by this Task.
      */
@@ -621,7 +621,7 @@ export interface Task extends fhir.DomainResource {
     /**
      * BasedOn refers to a higher-level authorization that triggered the creation of the task.  It references a "request" resource such as a ServiceRequest, MedicationRequest, ServiceRequest, CarePlan, etc. which is distinct from the "request" resource the task is seeking to fulfill.  This latter resource is referenced by FocusOn.  For example, based on a ServiceRequest (= BasedOn), a task is created to fulfill a procedureRequest ( = FocusOn ) to collect a specimen from a patient.
      */
-    basedOn?: fhir.Reference[] | undefined;
+    basedOn?: (fhir.Reference | null)[] | undefined;
     /**
      * An identifier that links together multiple tasks and other requests that were created in the same context.
      */
@@ -629,7 +629,7 @@ export interface Task extends fhir.DomainResource {
     /**
      * This should usually be 0..1.
      */
-    partOf?: fhir.Reference[] | undefined;
+    partOf?: (fhir.Reference | null)[] | undefined;
     /**
      * The current status of the task.
      */
@@ -714,7 +714,7 @@ export interface Task extends fhir.DomainResource {
     /**
      * The kind of participant that should perform the task.
      */
-    performerType?: fhir.CodeableConcept[] | undefined;
+    performerType?: (fhir.CodeableConcept | null)[] | undefined;
     /**
      * Tasks may be created with an owner not yet identified.
      */
@@ -734,15 +734,15 @@ export interface Task extends fhir.DomainResource {
     /**
      * Insurance plans, coverage extensions, pre-authorizations and/or pre-determinations that may be relevant to the Task.
      */
-    insurance?: fhir.Reference[] | undefined;
+    insurance?: (fhir.Reference | null)[] | undefined;
     /**
      * Free-text information captured about the task as it progresses.
      */
-    note?: fhir.Annotation[] | undefined;
+    note?: (fhir.Annotation | null)[] | undefined;
     /**
      * This element does not point to the Provenance associated with the *current* version of the resource - as it would be created after this version existed.  The Provenance for the current version can be retrieved with a _revinclude.
      */
-    relevantHistory?: fhir.Reference[] | undefined;
+    relevantHistory?: (fhir.Reference | null)[] | undefined;
     /**
      * If the Task.focus is a request resource and the task is seeking fulfillment (i.e. is asking for the request to be actioned), this element identifies any limitations on what parts of the referenced request should be actioned.
      */
@@ -750,10 +750,10 @@ export interface Task extends fhir.DomainResource {
     /**
      * Additional information that may be needed in the execution of the task.
      */
-    input?: fhir.TaskInput[] | undefined;
+    input?: (fhir.TaskInput | null)[] | undefined;
     /**
      * Outputs produced by the Task.
      */
-    output?: fhir.TaskOutput[] | undefined;
+    output?: (fhir.TaskOutput | null)[] | undefined;
 }
 //# sourceMappingURL=Task.d.ts.map

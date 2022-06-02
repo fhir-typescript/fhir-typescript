@@ -101,19 +101,19 @@ export interface RequestGroupAction extends fhir.BackboneElement {
   /**
    * A code that provides meaning for the action or action group. For example, a section may have a LOINC code for a section of a documentation template.
    */
-  code?: fhir.CodeableConcept[]|undefined;
+  code?: (fhir.CodeableConcept|null)[]|undefined;
   /**
    * Didactic or other informational resources associated with the action that can be provided to the CDS recipient. Information resources can include inline text commentary and links to web resources.
    */
-  documentation?: fhir.RelatedArtifact[]|undefined;
+  documentation?: (fhir.RelatedArtifact|null)[]|undefined;
   /**
    * When multiple conditions of the same kind are present, the effects are combined using AND semantics, so the overall condition is true only if all of the conditions are true.
    */
-  condition?: fhir.RequestGroupActionCondition[]|undefined;
+  condition?: (fhir.RequestGroupActionCondition|null)[]|undefined;
   /**
    * A relationship to another action such as "before" or "30-60 minutes after start of".
    */
-  relatedAction?: fhir.RequestGroupActionRelatedAction[]|undefined;
+  relatedAction?: (fhir.RequestGroupActionRelatedAction|null)[]|undefined;
   /**
    * An optional value describing when the action should be performed.
    */
@@ -145,7 +145,7 @@ export interface RequestGroupAction extends fhir.BackboneElement {
   /**
    * The participant that should perform or be responsible for this action.
    */
-  participant?: fhir.Reference[]|undefined;
+  participant?: (fhir.Reference|null)[]|undefined;
   /**
    * The type of action to perform (create, update, remove).
    */
@@ -197,7 +197,7 @@ export interface RequestGroupAction extends fhir.BackboneElement {
   /**
    * Sub actions.
    */
-  action?: fhir.RequestGroupAction[]|undefined;
+  action?: (fhir.RequestGroupAction|null)[]|undefined;
 }
 
 /**
@@ -207,15 +207,15 @@ export interface RequestGroup extends fhir.DomainResource {
   /**
    * Resource Type Name
    */
-  resourceType: "RequestGroup";
+  resourceType: "RequestGroup"|null;
   /**
    * Allows a service to provide a unique, business identifier for the request.
    */
-  identifier?: fhir.Identifier[]|undefined;
+  identifier?: (fhir.Identifier|null)[]|undefined;
   /**
    * A canonical URL referencing a FHIR-defined protocol, guideline, orderset or other definition that is adhered to in whole or in part by this request.
    */
-  instantiatesCanonical?: string[]|undefined;
+  instantiatesCanonical?: (string|null)[]|undefined;
   /**
    * Extended properties for primitive element: RequestGroup.instantiatesCanonical
    */
@@ -223,7 +223,7 @@ export interface RequestGroup extends fhir.DomainResource {
   /**
    * A URL referencing an externally defined protocol, guideline, orderset or other definition that is adhered to in whole or in part by this request.
    */
-  instantiatesUri?: string[]|undefined;
+  instantiatesUri?: (string|null)[]|undefined;
   /**
    * Extended properties for primitive element: RequestGroup.instantiatesUri
    */
@@ -231,11 +231,11 @@ export interface RequestGroup extends fhir.DomainResource {
   /**
    * A plan, proposal or order that is fulfilled in whole or in part by this request.
    */
-  basedOn?: fhir.Reference[]|undefined;
+  basedOn?: (fhir.Reference|null)[]|undefined;
   /**
    * The replacement could be because the initial request was immediately rejected (due to an issue) or because the previous request was completed, but the need for the action described by the request remains ongoing.
    */
-  replaces?: fhir.Reference[]|undefined;
+  replaces?: (fhir.Reference|null)[]|undefined;
   /**
    * Requests are linked either by a "basedOn" relationship (i.e. one request is fulfilling another) or by having a common requisition.  Requests that are part of the same requisition are generally treated independently from the perspective of changing their state or maintaining them after initial creation.
    */
@@ -291,17 +291,17 @@ export interface RequestGroup extends fhir.DomainResource {
   /**
    * Describes the reason for the request group in coded or textual form.
    */
-  reasonCode?: fhir.CodeableConcept[]|undefined;
+  reasonCode?: (fhir.CodeableConcept|null)[]|undefined;
   /**
    * Indicates another resource whose existence justifies this request group.
    */
-  reasonReference?: fhir.Reference[]|undefined;
+  reasonReference?: (fhir.Reference|null)[]|undefined;
   /**
    * Provides a mechanism to communicate additional information about the response.
    */
-  note?: fhir.Annotation[]|undefined;
+  note?: (fhir.Annotation|null)[]|undefined;
   /**
    * The actions, if any, produced by the evaluation of the artifact.
    */
-  action?: fhir.RequestGroupAction[]|undefined;
+  action?: (fhir.RequestGroupAction|null)[]|undefined;
 }

@@ -25,7 +25,7 @@ export interface ObservationReferenceRange extends fhir.BackboneElement {
   /**
    * This SHOULD be populated if there is more than one range.  If this element is not present then the normal population is assumed.
    */
-  appliesTo?: fhir.CodeableConcept[]|undefined;
+  appliesTo?: (fhir.CodeableConcept|null)[]|undefined;
   /**
    * The age at which this reference range is applicable. This is a neonatal age (e.g. number of weeks at term) if the meaning says so.
    */
@@ -120,11 +120,11 @@ export interface ObservationComponent extends fhir.BackboneElement {
   /**
    * Historically used for laboratory results (known as 'abnormal flag' ),  its use extends to other use cases where coded interpretations  are relevant.  Often reported as one or more simple compact codes this element is often placed adjacent to the result value in reports and flow sheets to signal the meaning/normalcy status of the result.
    */
-  interpretation?: fhir.CodeableConcept[]|undefined;
+  interpretation?: (fhir.CodeableConcept|null)[]|undefined;
   /**
    * Most observations only have one generic reference range. Systems MAY choose to restrict to only supplying the relevant reference range based on knowledge about the patient (e.g., specific to the patient's age, gender, weight and other factors), but this might not be possible or appropriate. Whenever more than one reference range is supplied, the differences between them SHOULD be provided in the reference range and/or age properties.
    */
-  referenceRange?: fhir.ObservationReferenceRange[]|undefined;
+  referenceRange?: (fhir.ObservationReferenceRange|null)[]|undefined;
 }
 
 /**
@@ -134,19 +134,19 @@ export interface Observation extends fhir.DomainResource {
   /**
    * Resource Type Name
    */
-  resourceType: "Observation";
+  resourceType: "Observation"|null;
   /**
    * A unique identifier assigned to this observation.
    */
-  identifier?: fhir.Identifier[]|undefined;
+  identifier?: (fhir.Identifier|null)[]|undefined;
   /**
    * A plan, proposal or order that is fulfilled in whole or in part by this event.  For example, a MedicationRequest may require a patient to have laboratory test performed before  it is dispensed.
    */
-  basedOn?: fhir.Reference[]|undefined;
+  basedOn?: (fhir.Reference|null)[]|undefined;
   /**
    * To link an Observation to an Encounter use `encounter`.  See the  [Notes](observation.html#obsgrouping) below for guidance on referencing another Observation.
    */
-  partOf?: fhir.Reference[]|undefined;
+  partOf?: (fhir.Reference|null)[]|undefined;
   /**
    * This element is labeled as a modifier because the status contains codes that mark the resource as not currently valid.
    */
@@ -158,7 +158,7 @@ export interface Observation extends fhir.DomainResource {
   /**
    * In addition to the required category valueset, this element allows various categorization schemes based on the owner’s definition of the category and effectively multiple categories can be used at once.  The level of granularity is defined by the category concepts in the value set.
    */
-  category?: fhir.CodeableConcept[]|undefined;
+  category?: (fhir.CodeableConcept|null)[]|undefined;
   /**
    * *All* code-value and, if present, component.code-component.value pairs need to be taken into account to correctly understand the meaning of the observation.
    */
@@ -170,7 +170,7 @@ export interface Observation extends fhir.DomainResource {
   /**
    * Typically, an observation is made about the subject - a patient, or group of patients, location, or device - and the distinction between the subject and what is directly measured for an observation is specified in the observation code itself ( e.g., "Blood Glucose") and does not need to be represented separately using this element.  Use `specimen` if a reference to a specimen is required.  If a code is required instead of a resource use either  `bodysite` for bodysites or the standard extension [focusCode](extension-observation-focuscode.html).
    */
-  focus?: fhir.Reference[]|undefined;
+  focus?: (fhir.Reference|null)[]|undefined;
   /**
    * This will typically be the encounter the event occurred within, but some events may be initiated prior to or after the official completion of an encounter but still be tied to the context of the encounter (e.g. pre-admission laboratory tests).
    */
@@ -210,7 +210,7 @@ export interface Observation extends fhir.DomainResource {
   /**
    * Who was responsible for asserting the observed value as "true".
    */
-  performer?: fhir.Reference[]|undefined;
+  performer?: (fhir.Reference|null)[]|undefined;
   /**
    * An observation may have; 1)  a single value here, 2)  both a value and a set of related or component values,  or 3)  only a set of related or component values. If a value is present, the datatype for this element should be determined by Observation.code.  A CodeableConcept with just a text would be used instead of a string if the field was usually coded, or if the type associated with the Observation.code defines a coded value.  For additional guidance, see the [Notes section](observation.html#notes) below.
    */
@@ -283,11 +283,11 @@ export interface Observation extends fhir.DomainResource {
   /**
    * Historically used for laboratory results (known as 'abnormal flag' ),  its use extends to other use cases where coded interpretations  are relevant.  Often reported as one or more simple compact codes this element is often placed adjacent to the result value in reports and flow sheets to signal the meaning/normalcy status of the result.
    */
-  interpretation?: fhir.CodeableConcept[]|undefined;
+  interpretation?: (fhir.CodeableConcept|null)[]|undefined;
   /**
    * May include general statements about the observation, or statements about significant, unexpected or unreliable results values, or information about its source when relevant to its interpretation.
    */
-  note?: fhir.Annotation[]|undefined;
+  note?: (fhir.Annotation|null)[]|undefined;
   /**
    * Only used if not implicit in code found in Observation.code.  In many systems, this may be represented as a related observation instead of an inline component.   
    * If the use case requires BodySite to be handled as a separate resource (e.g. to identify and track separately) then use the standard extension[ bodySite](extension-bodysite.html).
@@ -308,17 +308,17 @@ export interface Observation extends fhir.DomainResource {
   /**
    * Most observations only have one generic reference range. Systems MAY choose to restrict to only supplying the relevant reference range based on knowledge about the patient (e.g., specific to the patient's age, gender, weight and other factors), but this might not be possible or appropriate. Whenever more than one reference range is supplied, the differences between them SHOULD be provided in the reference range and/or age properties.
    */
-  referenceRange?: fhir.ObservationReferenceRange[]|undefined;
+  referenceRange?: (fhir.ObservationReferenceRange|null)[]|undefined;
   /**
    * When using this element, an observation will typically have either a value or a set of related resources, although both may be present in some cases.  For a discussion on the ways Observations can assembled in groups together, see [Notes](observation.html#obsgrouping) below.  Note that a system may calculate results from [QuestionnaireResponse](questionnaireresponse.html)  into a final score and represent the score as an Observation.
    */
-  hasMember?: fhir.Reference[]|undefined;
+  hasMember?: (fhir.Reference|null)[]|undefined;
   /**
    * All the reference choices that are listed in this element can represent clinical observations and other measurements that may be the source for a derived value.  The most common reference will be another Observation.  For a discussion on the ways Observations can assembled in groups together, see [Notes](observation.html#obsgrouping) below.
    */
-  derivedFrom?: fhir.Reference[]|undefined;
+  derivedFrom?: (fhir.Reference|null)[]|undefined;
   /**
    * For a discussion on the ways Observations can be assembled in groups together see [Notes](observation.html#notes) below.
    */
-  component?: fhir.ObservationComponent[]|undefined;
+  component?: (fhir.ObservationComponent|null)[]|undefined;
 }

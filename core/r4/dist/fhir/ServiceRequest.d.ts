@@ -17,7 +17,7 @@ export interface ServiceRequestArgs extends fhir.DomainResourceArgs {
     /**
      * Note: This is a business identifier, not a resource identifier (see [discussion](resource.html#identifiers)).  It is best practice for the identifier to only appear on a single resource instance, however business practices may occasionally dictate that multiple resource instances with the same identifier can exist - possibly even with different resource types.  For example, multiple Patient and a Person resource instance might share the same social insurance number.
      */
-    instantiatesCanonical?: fhir.FhirCanonical[] | string[] | undefined;
+    instantiatesCanonical?: fhir.FhirCanonical[] | (string | null)[] | undefined;
     /**
      * Extended properties for primitive element: ServiceRequest.instantiatesCanonical
      */
@@ -25,7 +25,7 @@ export interface ServiceRequestArgs extends fhir.DomainResourceArgs {
     /**
      * This might be an HTML page, PDF, etc. or could just be a non-resolvable URI identifier.
      */
-    instantiatesUri?: fhir.FhirUri[] | string[] | undefined;
+    instantiatesUri?: fhir.FhirUri[] | (string | null)[] | undefined;
     /**
      * Extended properties for primitive element: ServiceRequest.instantiatesUri
      */

@@ -8,7 +8,7 @@ export interface AppointmentParticipant extends fhir.BackboneElement {
      * If the actor is not specified, then it is expected that the actor will be filled in at a later stage of planning.
      * This value SHALL be the same when creating an AppointmentResponse so that they can be matched, and subsequently update the Appointment.
      */
-    type?: fhir.CodeableConcept[] | undefined;
+    type?: (fhir.CodeableConcept | null)[] | undefined;
     /**
      * A Person, Location/HealthcareService or Device that is participating in the appointment.
      */
@@ -41,11 +41,11 @@ export interface Appointment extends fhir.DomainResource {
     /**
      * Resource Type Name
      */
-    resourceType: "Appointment";
+    resourceType: "Appointment" | null;
     /**
      * This records identifiers associated with this appointment concern that are defined by business processes and/or used to refer to it when a direct URL reference to the resource itself is not appropriate (e.g. in CDA documents, or in written / printed documentation).
      */
-    identifier?: fhir.Identifier[] | undefined;
+    identifier?: (fhir.Identifier | null)[] | undefined;
     /**
      * If the Appointment's status is "cancelled" then all participants are expected to have their calendars released for the appointment period, and as such any Slots that were marked as BUSY can be re-set to FREE.
      * This element is labeled as a modifier because the status contains the code entered-in-error that mark the Appointment as not currently valid.
@@ -62,15 +62,15 @@ export interface Appointment extends fhir.DomainResource {
     /**
      * A broad categorization of the service that is to be performed during this appointment.
      */
-    serviceCategory?: fhir.CodeableConcept[] | undefined;
+    serviceCategory?: (fhir.CodeableConcept | null)[] | undefined;
     /**
      * For a provider to provider appointment the code "FOLLOWUP" may be appropriate, as this is expected to be discussing some patient that was seen in the past.
      */
-    serviceType?: fhir.CodeableConcept[] | undefined;
+    serviceType?: (fhir.CodeableConcept | null)[] | undefined;
     /**
      * The specialty of a practitioner that would be required to perform the service requested in this appointment.
      */
-    specialty?: fhir.CodeableConcept[] | undefined;
+    specialty?: (fhir.CodeableConcept | null)[] | undefined;
     /**
      * The style of appointment or patient that has been booked in the slot (not service type).
      */
@@ -78,11 +78,11 @@ export interface Appointment extends fhir.DomainResource {
     /**
      * The coded reason that this appointment is being scheduled. This is more clinical than administrative.
      */
-    reasonCode?: fhir.CodeableConcept[] | undefined;
+    reasonCode?: (fhir.CodeableConcept | null)[] | undefined;
     /**
      * Reason the appointment has been scheduled to take place, as specified using information from another resource. When the patient arrives and the encounter begins it may be used as the admission diagnosis. The indication will typically be a Condition (with other resources referenced in the evidence.detail), or a Procedure.
      */
-    reasonReference?: fhir.Reference[] | undefined;
+    reasonReference?: (fhir.Reference | null)[] | undefined;
     /**
      * Seeking implementer feedback on this property and how interoperable it is.
      * Using an extension to record a CodeableConcept for named values may be tested at a future connectathon.
@@ -103,7 +103,7 @@ export interface Appointment extends fhir.DomainResource {
     /**
      * Additional information to support the appointment provided when making the appointment.
      */
-    supportingInformation?: fhir.Reference[] | undefined;
+    supportingInformation?: (fhir.Reference | null)[] | undefined;
     /**
      * Date/Time that the appointment is to take place.
      */
@@ -131,7 +131,7 @@ export interface Appointment extends fhir.DomainResource {
     /**
      * The slots from the participants' schedules that will be filled by the appointment.
      */
-    slot?: fhir.Reference[] | undefined;
+    slot?: (fhir.Reference | null)[] | undefined;
     /**
      * This property is required for many use cases where the age of an appointment is considered in processing workflows for scheduling and billing of appointments.
      */
@@ -160,14 +160,14 @@ export interface Appointment extends fhir.DomainResource {
     /**
      * The service request this appointment is allocated to assess (e.g. incoming referral or procedure request).
      */
-    basedOn?: fhir.Reference[] | undefined;
+    basedOn?: (fhir.Reference | null)[] | undefined;
     /**
      * List of participants involved in the appointment.
      */
-    participant: fhir.AppointmentParticipant[] | null;
+    participant: (fhir.AppointmentParticipant | null)[] | null;
     /**
      * This does not introduce a capacity for recurring appointments.
      */
-    requestedPeriod?: fhir.Period[] | undefined;
+    requestedPeriod?: (fhir.Period | null)[] | undefined;
 }
 //# sourceMappingURL=Appointment.d.ts.map

@@ -13,7 +13,7 @@ export interface Binary extends fhir.Resource {
   /**
    * Resource Type Name
    */
-  resourceType: "Binary";
+  resourceType: "Binary"|null;
   /**
    * MimeType of the binary content represented as a standard MimeType (BCP 13).
    */

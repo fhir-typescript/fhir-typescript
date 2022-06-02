@@ -13,7 +13,7 @@ export interface PractitionerQualification extends fhir.BackboneElement {
   /**
    * An identifier that applies to this person's qualification in this role.
    */
-  identifier?: fhir.Identifier[]|undefined;
+  identifier?: (fhir.Identifier|null)[]|undefined;
   /**
    * Coded representation of the qualification.
    */
@@ -35,11 +35,11 @@ export interface Practitioner extends fhir.DomainResource {
   /**
    * Resource Type Name
    */
-  resourceType: "Practitioner";
+  resourceType: "Practitioner"|null;
   /**
    * An identifier that applies to this person in this role.
    */
-  identifier?: fhir.Identifier[]|undefined;
+  identifier?: (fhir.Identifier|null)[]|undefined;
   /**
    * If the practitioner is not in use by one organization, then it should mark the period on the PractitonerRole with an end date (even if they are active) as they may be active in another role.
    */
@@ -57,15 +57,15 @@ export interface Practitioner extends fhir.DomainResource {
    * 4. Use = official
    * 5. Other order as decided by internal business rules.
    */
-  name?: fhir.HumanName[]|undefined;
+  name?: (fhir.HumanName|null)[]|undefined;
   /**
    * Person may have multiple ways to be contacted with different uses or applicable periods.  May need to have options for contacting the person urgently and to help with identification.  These typically will have home numbers, or mobile numbers that are not role specific.
    */
-  telecom?: fhir.ContactPoint[]|undefined;
+  telecom?: (fhir.ContactPoint|null)[]|undefined;
   /**
    * The PractitionerRole does not have an address value on it, as it is expected that the location property be used for this purpose (which has an address).
    */
-  address?: fhir.Address[]|undefined;
+  address?: (fhir.Address|null)[]|undefined;
   /**
    * Administrative Gender - the gender that the person is considered to have for administration and record keeping purposes.
    */
@@ -85,13 +85,13 @@ export interface Practitioner extends fhir.DomainResource {
   /**
    * Image of the person.
    */
-  photo?: fhir.Attachment[]|undefined;
+  photo?: (fhir.Attachment|null)[]|undefined;
   /**
    * The official certifications, training, and licenses that authorize or otherwise pertain to the provision of care by the practitioner.  For example, a medical license issued by a medical board authorizing the practitioner to practice medicine within a certian locality.
    */
-  qualification?: fhir.PractitionerQualification[]|undefined;
+  qualification?: (fhir.PractitionerQualification|null)[]|undefined;
   /**
    * The structure aa-BB with this exact casing is one the most widely used notations for locale. However not all systems code this but instead have it as free text. Hence CodeableConcept instead of code as the data type.
    */
-  communication?: fhir.CodeableConcept[]|undefined;
+  communication?: (fhir.CodeableConcept|null)[]|undefined;
 }

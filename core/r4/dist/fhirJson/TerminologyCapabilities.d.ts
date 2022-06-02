@@ -56,7 +56,7 @@ export interface TerminologyCapabilitiesCodeSystemVersionFilter extends fhir.Bac
     /**
      * Operations supported for the property.
      */
-    op: string[] | null;
+    op: (string | null)[] | null;
     /**
      * Extended properties for primitive element: TerminologyCapabilities.codeSystem.version.filter.op
      */
@@ -93,7 +93,7 @@ export interface TerminologyCapabilitiesCodeSystemVersion extends fhir.BackboneE
     /**
      * Language Displays supported.
      */
-    language?: string[] | undefined;
+    language?: (string | null)[] | undefined;
     /**
      * Extended properties for primitive element: TerminologyCapabilities.codeSystem.version.language
      */
@@ -101,11 +101,11 @@ export interface TerminologyCapabilitiesCodeSystemVersion extends fhir.BackboneE
     /**
      * Filter Properties supported.
      */
-    filter?: fhir.TerminologyCapabilitiesCodeSystemVersionFilter[] | undefined;
+    filter?: (fhir.TerminologyCapabilitiesCodeSystemVersionFilter | null)[] | undefined;
     /**
      * Properties supported for $lookup.
      */
-    property?: string[] | undefined;
+    property?: (string | null)[] | undefined;
     /**
      * Extended properties for primitive element: TerminologyCapabilities.codeSystem.version.property
      */
@@ -126,7 +126,7 @@ export interface TerminologyCapabilitiesCodeSystem extends fhir.BackboneElement 
     /**
      * Language translations might not be available for all codes.
      */
-    version?: fhir.TerminologyCapabilitiesCodeSystemVersion[] | undefined;
+    version?: (fhir.TerminologyCapabilitiesCodeSystemVersion | null)[] | undefined;
     /**
      * True if subsumption is supported for this version of the code system.
      */
@@ -188,7 +188,7 @@ export interface TerminologyCapabilitiesExpansion extends fhir.BackboneElement {
     /**
      * Supported expansion parameter.
      */
-    parameter?: fhir.TerminologyCapabilitiesExpansionParameter[] | undefined;
+    parameter?: (fhir.TerminologyCapabilitiesExpansionParameter | null)[] | undefined;
     /**
      * This documentation should cover things like case sensitivity,  use of punctuation if not ignored, what wild cards are supported (if any), whether text is starts with or contains, and whether word order matters.
      */
@@ -244,7 +244,7 @@ export interface TerminologyCapabilities extends fhir.DomainResource {
     /**
      * Resource Type Name
      */
-    resourceType: "TerminologyCapabilities";
+    resourceType: "TerminologyCapabilities" | null;
     /**
      * Can be a urn:uuid: or a urn:oid: but real http: addresses are preferred.  Multiple instances may share the same URL if they have a distinct version.
      * The determination of when to create a new version of a resource (same url, new version) vs. defining a new artifact is up to the author.  Considerations for making this decision are found in [Technical and Business Versions](resource.html#versions).
@@ -314,7 +314,7 @@ export interface TerminologyCapabilities extends fhir.DomainResource {
     /**
      * May be a web site, an email address, a telephone number, etc.
      */
-    contact?: fhir.ContactDetail[] | undefined;
+    contact?: (fhir.ContactDetail | null)[] | undefined;
     /**
      * This description can be used to capture details such as why the terminology capabilities was built, comments about misuse, instructions for clinical use and interpretation, literature references, examples from the paper world, etc. It is not a rendering of the terminology capabilities as conveyed in the 'text' field of the resource itself. This item SHOULD be populated unless the information is available from context (e.g. the language of the terminology capabilities is presumed to be the predominant language in the place the terminology capabilities was created).This does not need to be populated if the description is adequately implied by the software or implementation details.
      */
@@ -326,11 +326,11 @@ export interface TerminologyCapabilities extends fhir.DomainResource {
     /**
      * When multiple useContexts are specified, there is no expectation that all or any of the contexts apply.
      */
-    useContext?: fhir.UsageContext[] | undefined;
+    useContext?: (fhir.UsageContext | null)[] | undefined;
     /**
      * It may be possible for the terminology capabilities to be used in jurisdictions other than those for which it was originally designed or intended.
      */
-    jurisdiction?: fhir.CodeableConcept[] | undefined;
+    jurisdiction?: (fhir.CodeableConcept | null)[] | undefined;
     /**
      * This element does not describe the usage of the terminology capabilities. Instead, it provides traceability of ''why'' the resource is either needed or ''why'' it is defined as it is.  This may be used to point to source materials or specifications that drove the structure of this terminology capabilities.
      */
@@ -374,7 +374,7 @@ export interface TerminologyCapabilities extends fhir.DomainResource {
     /**
      * The code system - identified by its system URL - may also be declared explicitly as a Code System Resource at /CodeSystem, but it might not be.
      */
-    codeSystem?: fhir.TerminologyCapabilitiesCodeSystem[] | undefined;
+    codeSystem?: (fhir.TerminologyCapabilitiesCodeSystem | null)[] | undefined;
     /**
      * Information about the [ValueSet/$expand](valueset-operation-expand.html) operation.
      */

@@ -868,7 +868,7 @@ export interface StructureMapGroupRuleTargetArgs extends fhir.BackboneElementArg
   /**
    * If field is a list, how to manage the list.
    */
-  listMode?: fhir.FhirCode<MapTargetListModeCodeType>[]|string[]|undefined;
+  listMode?: fhir.FhirCode<MapTargetListModeCodeType>[]|(string|null)[]|undefined;
   /**
    * Extended properties for primitive element: StructureMap.group.rule.target.listMode
    */
@@ -1044,7 +1044,7 @@ export interface StructureMapGroupRuleDependentArgs extends fhir.BackboneElement
   /**
    * Variable to pass to the rule or group.
    */
-  variable: fhir.FhirString[]|string[]|undefined;
+  variable: fhir.FhirString[]|(string|null)[]|undefined;
   /**
    * Extended properties for primitive element: StructureMap.group.rule.dependent.variable
    */
@@ -1503,7 +1503,7 @@ export interface StructureMapArgs extends fhir.DomainResourceArgs {
   /**
    * Other maps used by this map (canonical URLs).
    */
-  import?: fhir.FhirCanonical[]|string[]|undefined;
+  import?: fhir.FhirCanonical[]|(string|null)[]|undefined;
   /**
    * Extended properties for primitive element: StructureMap.import
    */

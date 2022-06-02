@@ -38,7 +38,7 @@ export interface ProdCharacteristicArgs extends fhir.BackboneElementArgs {
     /**
      * Where applicable, the color can be specified An appropriate controlled vocabulary shall be used The term and the term identifier shall be used.
      */
-    color?: fhir.FhirString[] | string[] | undefined;
+    color?: fhir.FhirString[] | (string | null)[] | undefined;
     /**
      * Extended properties for primitive element: ProdCharacteristic.color
      */
@@ -46,7 +46,7 @@ export interface ProdCharacteristicArgs extends fhir.BackboneElementArgs {
     /**
      * Where applicable, the imprint can be specified as text.
      */
-    imprint?: fhir.FhirString[] | string[] | undefined;
+    imprint?: fhir.FhirString[] | (string | null)[] | undefined;
     /**
      * Extended properties for primitive element: ProdCharacteristic.imprint
      */

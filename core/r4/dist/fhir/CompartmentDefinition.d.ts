@@ -16,7 +16,7 @@ export interface CompartmentDefinitionResourceArgs extends fhir.BackboneElementA
     /**
      * If no search parameters are listed, then the resource is not linked to the compartment.
      */
-    param?: fhir.FhirString[] | string[] | undefined;
+    param?: fhir.FhirString[] | (string | null)[] | undefined;
     /**
      * Extended properties for primitive element: CompartmentDefinition.resource.param
      */
@@ -114,7 +114,9 @@ export declare class CompartmentDefinitionResource extends fhir.BackboneElement 
         readonly ExplanationOfBenefit: "ExplanationOfBenefit";
         readonly FamilyMemberHistory: "FamilyMemberHistory";
         readonly Flag: "Flag";
-        readonly Goal: "Goal";
+        readonly Goal: "Goal"; /**
+         * This description can be used to capture details such as why the compartment definition was built, comments about misuse, instructions for clinical use and interpretation, literature references, examples from the paper world, etc. It is not a rendering of the compartment definition as conveyed in the 'text' field of the resource itself. This item SHOULD be populated unless the information is available from context (e.g. the language of the compartment definition is presumed to be the predominant language in the place the compartment definition was created).
+         */
         readonly GraphDefinition: "GraphDefinition";
         readonly Group: "Group";
         readonly GuidanceResponse: "GuidanceResponse";

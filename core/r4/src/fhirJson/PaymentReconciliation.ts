@@ -85,11 +85,11 @@ export interface PaymentReconciliation extends fhir.DomainResource {
   /**
    * Resource Type Name
    */
-  resourceType: "PaymentReconciliation";
+  resourceType: "PaymentReconciliation"|null;
   /**
    * A unique identifier assigned to this payment reconciliation.
    */
-  identifier?: fhir.Identifier[]|undefined;
+  identifier?: (fhir.Identifier|null)[]|undefined;
   /**
    * This element is labeled as a modifier because the status contains codes that mark the resource as not currently valid.
    */
@@ -157,7 +157,7 @@ export interface PaymentReconciliation extends fhir.DomainResource {
   /**
    * Distribution of the payment amount for a previously acknowledged payable.
    */
-  detail?: fhir.PaymentReconciliationDetail[]|undefined;
+  detail?: (fhir.PaymentReconciliationDetail|null)[]|undefined;
   /**
    * May be needed to identify specific jurisdictional forms.
    */
@@ -165,5 +165,5 @@ export interface PaymentReconciliation extends fhir.DomainResource {
   /**
    * A note that describes or explains the processing in a human readable form.
    */
-  processNote?: fhir.PaymentReconciliationProcessNote[]|undefined;
+  processNote?: (fhir.PaymentReconciliationProcessNote|null)[]|undefined;
 }

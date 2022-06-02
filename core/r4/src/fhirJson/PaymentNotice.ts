@@ -13,11 +13,11 @@ export interface PaymentNotice extends fhir.DomainResource {
   /**
    * Resource Type Name
    */
-  resourceType: "PaymentNotice";
+  resourceType: "PaymentNotice"|null;
   /**
    * A unique identifier assigned to this payment notice.
    */
-  identifier?: fhir.Identifier[]|undefined;
+  identifier?: (fhir.Identifier|null)[]|undefined;
   /**
    * This element is labeled as a modifier because the status contains codes that mark the resource as not currently valid.
    */

@@ -57,15 +57,15 @@ export interface MedicationAdministration extends fhir.DomainResource {
     /**
      * Resource Type Name
      */
-    resourceType: "MedicationAdministration";
+    resourceType: "MedicationAdministration" | null;
     /**
      * This is a business identifier, not a resource identifier.
      */
-    identifier?: fhir.Identifier[] | undefined;
+    identifier?: (fhir.Identifier | null)[] | undefined;
     /**
      * A protocol, guideline, orderset, or other definition that was adhered to in whole or in part by this event.
      */
-    instantiates?: string[] | undefined;
+    instantiates?: (string | null)[] | undefined;
     /**
      * Extended properties for primitive element: MedicationAdministration.instantiates
      */
@@ -73,7 +73,7 @@ export interface MedicationAdministration extends fhir.DomainResource {
     /**
      * A larger event of which this particular event is a component or step.
      */
-    partOf?: fhir.Reference[] | undefined;
+    partOf?: (fhir.Reference | null)[] | undefined;
     /**
      * This element is labeled as a modifier because the status contains codes that mark the resource as not currently valid.
      */
@@ -85,7 +85,7 @@ export interface MedicationAdministration extends fhir.DomainResource {
     /**
      * A code indicating why the administration was not performed.
      */
-    statusReason?: fhir.CodeableConcept[] | undefined;
+    statusReason?: (fhir.CodeableConcept | null)[] | undefined;
     /**
      * Indicates where the medication is expected to be consumed or administered.
      */
@@ -109,7 +109,7 @@ export interface MedicationAdministration extends fhir.DomainResource {
     /**
      * Additional information (for example, patient height and weight) that supports the administration of the medication.
      */
-    supportingInformation?: fhir.Reference[] | undefined;
+    supportingInformation?: (fhir.Reference | null)[] | undefined;
     /**
      * A specific date/time or interval of time during which the administration took place (or did not take place, when the 'notGiven' attribute is true). For many administrations, such as swallowing a tablet the use of dateTime is more appropriate.
      */
@@ -125,15 +125,15 @@ export interface MedicationAdministration extends fhir.DomainResource {
     /**
      * Indicates who or what performed the medication administration and how they were involved.
      */
-    performer?: fhir.MedicationAdministrationPerformer[] | undefined;
+    performer?: (fhir.MedicationAdministrationPerformer | null)[] | undefined;
     /**
      * A code indicating why the medication was given.
      */
-    reasonCode?: fhir.CodeableConcept[] | undefined;
+    reasonCode?: (fhir.CodeableConcept | null)[] | undefined;
     /**
      * This is a reference to a condition that is the reason for the medication request.  If only a code exists, use reasonCode.
      */
-    reasonReference?: fhir.Reference[] | undefined;
+    reasonReference?: (fhir.Reference | null)[] | undefined;
     /**
      * This is a reference to the MedicationRequest  where the intent is either order or instance-order.  It should not reference MedicationRequests where the intent is any other value.
      */
@@ -141,11 +141,11 @@ export interface MedicationAdministration extends fhir.DomainResource {
     /**
      * The device used in administering the medication to the patient.  For example, a particular infusion pump.
      */
-    device?: fhir.Reference[] | undefined;
+    device?: (fhir.Reference | null)[] | undefined;
     /**
      * Extra information about the medication administration that is not conveyed by the other attributes.
      */
-    note?: fhir.Annotation[] | undefined;
+    note?: (fhir.Annotation | null)[] | undefined;
     /**
      * Describes the medication dosage information details e.g. dose, rate, site, route, etc.
      */
@@ -153,6 +153,6 @@ export interface MedicationAdministration extends fhir.DomainResource {
     /**
      * This might not include provenances for all versions of the request – only those deemed “relevant” or important. This SHALL NOT include the Provenance associated with this current version of the resource. (If that provenance is deemed to be a “relevant” change, it will need to be added as part of a later update. Until then, it can be queried directly as the Provenance that points to this version using _revinclude All Provenances should have some historical version of this Request as their subject.
      */
-    eventHistory?: fhir.Reference[] | undefined;
+    eventHistory?: (fhir.Reference | null)[] | undefined;
 }
 //# sourceMappingURL=MedicationAdministration.d.ts.map

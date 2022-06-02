@@ -57,11 +57,11 @@ export interface ResearchStudy extends fhir.DomainResource {
   /**
    * Resource Type Name
    */
-  resourceType: "ResearchStudy";
+  resourceType: "ResearchStudy"|null;
   /**
    * Identifiers assigned to this research study by the sponsor or other systems.
    */
-  identifier?: fhir.Identifier[]|undefined;
+  identifier?: (fhir.Identifier|null)[]|undefined;
   /**
    * A short, descriptive user-friendly label for the study.
    */
@@ -73,11 +73,11 @@ export interface ResearchStudy extends fhir.DomainResource {
   /**
    * The set of steps expected to be performed as part of the execution of the study.
    */
-  protocol?: fhir.Reference[]|undefined;
+  protocol?: (fhir.Reference|null)[]|undefined;
   /**
    * A larger research study of which this particular study is a component or step.
    */
-  partOf?: fhir.Reference[]|undefined;
+  partOf?: (fhir.Reference|null)[]|undefined;
   /**
    * The current state of the study.
    */
@@ -97,31 +97,31 @@ export interface ResearchStudy extends fhir.DomainResource {
   /**
    * Codes categorizing the type of study such as investigational vs. observational, type of blinding, type of randomization, safety vs. efficacy, etc.
    */
-  category?: fhir.CodeableConcept[]|undefined;
+  category?: (fhir.CodeableConcept|null)[]|undefined;
   /**
    * The medication(s), food(s), therapy(ies), device(s) or other concerns or interventions that the study is seeking to gain more information about.
    */
-  focus?: fhir.CodeableConcept[]|undefined;
+  focus?: (fhir.CodeableConcept|null)[]|undefined;
   /**
    * The condition that is the focus of the study.  For example, In a study to examine risk factors for Lupus, might have as an inclusion criterion "healthy volunteer", but the target condition code would be a Lupus SNOMED code.
    */
-  condition?: fhir.CodeableConcept[]|undefined;
+  condition?: (fhir.CodeableConcept|null)[]|undefined;
   /**
    * Contact details to assist a user in learning more about or engaging with the study.
    */
-  contact?: fhir.ContactDetail[]|undefined;
+  contact?: (fhir.ContactDetail|null)[]|undefined;
   /**
    * Citations, references and other related documents.
    */
-  relatedArtifact?: fhir.RelatedArtifact[]|undefined;
+  relatedArtifact?: (fhir.RelatedArtifact|null)[]|undefined;
   /**
    * Key terms to aid in searching for or filtering the study.
    */
-  keyword?: fhir.CodeableConcept[]|undefined;
+  keyword?: (fhir.CodeableConcept|null)[]|undefined;
   /**
    * Indicates a country, state or other region where the study is taking place.
    */
-  location?: fhir.CodeableConcept[]|undefined;
+  location?: (fhir.CodeableConcept|null)[]|undefined;
   /**
    * A full description of how the study is being conducted.
    */
@@ -133,7 +133,7 @@ export interface ResearchStudy extends fhir.DomainResource {
   /**
    * The Group referenced should not generally enumerate specific subjects.  Subjects will be linked to the study using the ResearchSubject resource.
    */
-  enrollment?: fhir.Reference[]|undefined;
+  enrollment?: (fhir.Reference|null)[]|undefined;
   /**
    * Identifies the start date and the expected (or actual, depending on status) end date for the study.
    */
@@ -149,7 +149,7 @@ export interface ResearchStudy extends fhir.DomainResource {
   /**
    * A facility in which study activities are conducted.
    */
-  site?: fhir.Reference[]|undefined;
+  site?: (fhir.Reference|null)[]|undefined;
   /**
    * A description and/or code explaining the premature termination of the study.
    */
@@ -157,13 +157,13 @@ export interface ResearchStudy extends fhir.DomainResource {
   /**
    * Comments made about the study by the performer, subject or other participants.
    */
-  note?: fhir.Annotation[]|undefined;
+  note?: (fhir.Annotation|null)[]|undefined;
   /**
    * Describes an expected sequence of events for one of the participants of a study.  E.g. Exposure to drug A, wash-out, exposure to drug B, wash-out, follow-up.
    */
-  arm?: fhir.ResearchStudyArm[]|undefined;
+  arm?: (fhir.ResearchStudyArm|null)[]|undefined;
   /**
    * A goal that the study is aiming to achieve in terms of a scientific question to be answered by the analysis of data collected during the study.
    */
-  objective?: fhir.ResearchStudyObjective[]|undefined;
+  objective?: (fhir.ResearchStudyObjective|null)[]|undefined;
 }

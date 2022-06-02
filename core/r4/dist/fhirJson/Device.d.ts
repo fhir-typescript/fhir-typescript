@@ -131,11 +131,11 @@ export interface DeviceProperty extends fhir.BackboneElement {
     /**
      * Property value as a quantity.
      */
-    valueQuantity?: fhir.Quantity[] | undefined;
+    valueQuantity?: (fhir.Quantity | null)[] | undefined;
     /**
      * Property value as a code, e.g., NTP4 (synced to NTP).
      */
-    valueCode?: fhir.CodeableConcept[] | undefined;
+    valueCode?: (fhir.CodeableConcept | null)[] | undefined;
 }
 /**
  * A type of a manufactured item that is used in the provision of healthcare without being substantially changed through that activity. The device may be a medical or non-medical device.
@@ -144,11 +144,11 @@ export interface Device extends fhir.DomainResource {
     /**
      * Resource Type Name
      */
-    resourceType: "Device";
+    resourceType: "Device" | null;
     /**
      * The barcode string from a barcode present on a device label or package may identify the instance, include names given to the device in local usage, or may identify the type of device. If the identifier identifies the type of device, Device.type element should be used.
      */
-    identifier?: fhir.Identifier[] | undefined;
+    identifier?: (fhir.Identifier | null)[] | undefined;
     /**
      * The reference to the definition for the device.
      */
@@ -156,7 +156,7 @@ export interface Device extends fhir.DomainResource {
     /**
      * UDI may identify an unique instance of a device, or it may only identify the type of the device.  See [UDI mappings](device-mappings.html#udi) for a complete mapping of UDI parts to Device.
      */
-    udiCarrier?: fhir.DeviceUdiCarrier[] | undefined;
+    udiCarrier?: (fhir.DeviceUdiCarrier | null)[] | undefined;
     /**
      * This element is labeled as a modifier because the status contains the codes inactive and entered-in-error that mark the device (record)as not currently valid.
      */
@@ -168,7 +168,7 @@ export interface Device extends fhir.DomainResource {
     /**
      * Reason for the dtatus of the Device availability.
      */
-    statusReason?: fhir.CodeableConcept[] | undefined;
+    statusReason?: (fhir.CodeableConcept | null)[] | undefined;
     /**
      * For example, this applies to devices in the United States regulated under *Code of Federal Regulation 21CFR§1271.290(c)*.
      */
@@ -220,7 +220,7 @@ export interface Device extends fhir.DomainResource {
     /**
      * This represents the manufacturer's name of the device as provided by the device, from a UDI label, or by a person describing the Device.  This typically would be used when a person provides the name(s) or when the device represents one of the names available from DeviceDefinition.
      */
-    deviceName?: fhir.DeviceDeviceName[] | undefined;
+    deviceName?: (fhir.DeviceDeviceName | null)[] | undefined;
     /**
      * The model number for the device.
      */
@@ -244,15 +244,15 @@ export interface Device extends fhir.DomainResource {
     /**
      * The capabilities supported on a  device, the standards to which the device conforms for a particular purpose, and used for the communication.
      */
-    specialization?: fhir.DeviceSpecialization[] | undefined;
+    specialization?: (fhir.DeviceSpecialization | null)[] | undefined;
     /**
      * The actual design of the device or software version running on the device.
      */
-    version?: fhir.DeviceVersion[] | undefined;
+    version?: (fhir.DeviceVersion | null)[] | undefined;
     /**
      * The actual configuration settings of a device as it actually operates, e.g., regulation status, time properties.
      */
-    property?: fhir.DeviceProperty[] | undefined;
+    property?: (fhir.DeviceProperty | null)[] | undefined;
     /**
      * Patient information, If the device is affixed to a person.
      */
@@ -264,7 +264,7 @@ export interface Device extends fhir.DomainResource {
     /**
      * used for troubleshooting etc.
      */
-    contact?: fhir.ContactPoint[] | undefined;
+    contact?: (fhir.ContactPoint | null)[] | undefined;
     /**
      * The place where the device can be found.
      */
@@ -280,11 +280,11 @@ export interface Device extends fhir.DomainResource {
     /**
      * Descriptive information, usage information or implantation information that is not captured in an existing element.
      */
-    note?: fhir.Annotation[] | undefined;
+    note?: (fhir.Annotation | null)[] | undefined;
     /**
      * Provides additional safety characteristics about a medical device.  For example devices containing latex.
      */
-    safety?: fhir.CodeableConcept[] | undefined;
+    safety?: (fhir.CodeableConcept | null)[] | undefined;
     /**
      * The parent device.
      */

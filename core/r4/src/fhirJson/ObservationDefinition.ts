@@ -59,7 +59,7 @@ export interface ObservationDefinitionQualifiedInterval extends fhir.BackboneEle
   /**
    * If this element is not present then the global population is assumed.
    */
-  appliesTo?: fhir.CodeableConcept[]|undefined;
+  appliesTo?: (fhir.CodeableConcept|null)[]|undefined;
   /**
    * Sex of the population the range applies to.
    */
@@ -93,11 +93,11 @@ export interface ObservationDefinition extends fhir.DomainResource {
   /**
    * Resource Type Name
    */
-  resourceType: "ObservationDefinition";
+  resourceType: "ObservationDefinition"|null;
   /**
    * This element allows various categorization schemes based on the owner’s definition of the category and effectively multiple categories can be used for one instance of ObservationDefinition. The level of granularity is defined by the category concepts in the value set.
    */
-  category?: fhir.CodeableConcept[]|undefined;
+  category?: (fhir.CodeableConcept|null)[]|undefined;
   /**
    * Describes what will be observed. Sometimes this is called the observation "name".
    */
@@ -105,11 +105,11 @@ export interface ObservationDefinition extends fhir.DomainResource {
   /**
    * A unique identifier assigned to this ObservationDefinition artifact.
    */
-  identifier?: fhir.Identifier[]|undefined;
+  identifier?: (fhir.Identifier|null)[]|undefined;
   /**
    * The data types allowed for the value element of the instance observations conforming to this ObservationDefinition.
    */
-  permittedDataType?: ('boolean'|'CodeableConcept'|'dateTime'|'integer'|'Period'|'Quantity'|'Range'|'Ratio'|'SampledData'|'string'|'time')[]|undefined;
+  permittedDataType?: (('boolean'|'CodeableConcept'|'dateTime'|'integer'|'Period'|'Quantity'|'Range'|'Ratio'|'SampledData'|'string'|'time')|null)[]|undefined;
   /**
    * Extended properties for primitive element: ObservationDefinition.permittedDataType
    */
@@ -141,7 +141,7 @@ export interface ObservationDefinition extends fhir.DomainResource {
   /**
    * Multiple  ranges of results qualified by different contexts for ordinal or continuous observations conforming to this ObservationDefinition.
    */
-  qualifiedInterval?: fhir.ObservationDefinitionQualifiedInterval[]|undefined;
+  qualifiedInterval?: (fhir.ObservationDefinitionQualifiedInterval|null)[]|undefined;
   /**
    * The set of valid coded results for the observations  conforming to this ObservationDefinition.
    */

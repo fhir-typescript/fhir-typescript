@@ -46,7 +46,7 @@ export interface TriggerDefinition extends fhir.FhirElement {
     /**
      * This element shall be present for any data type trigger.
      */
-    data?: fhir.DataRequirement[] | undefined;
+    data?: (fhir.DataRequirement | null)[] | undefined;
     /**
      * This element can be only be specified for data type triggers and provides additional semantics for the trigger. The context available within the condition is based on the type of data event. For all events, the current resource will be available as context. In addition, for modification events, the previous resource will also be available. The expression may be inlined, or may be a simple absolute URI, which is a reference to a named expression within a logic library referenced by a library element or extension within the containing resource. If the expression is a FHIR Path expression, it evaluates in the context of a resource of one of the type identified in the data requirement, and may also refer to the variable %previous for delta comparisons on events of type data-changed, data-modified, and data-deleted which will always have the same type.
      */

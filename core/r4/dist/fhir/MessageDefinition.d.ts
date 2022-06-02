@@ -124,21 +124,15 @@ export declare class MessageDefinitionFocus extends fhir.BackboneElement {
         readonly Evidence: "Evidence";
         readonly EvidenceVariable: "EvidenceVariable";
         readonly ExampleScenario: "ExampleScenario";
-        readonly ExplanationOfBenefit: "ExplanationOfBenefit"; /**
-         * Extended properties for primitive element: MessageDefinition.experimental
-         */
+        readonly ExplanationOfBenefit: "ExplanationOfBenefit";
         readonly FamilyMemberHistory: "FamilyMemberHistory";
         readonly Flag: "Flag";
         readonly Goal: "Goal";
-        /**
-         * Usually an organization but may be an individual. The publisher (or steward) of the message definition is the organization or individual primarily responsible for the maintenance and upkeep of the message definition. This is not necessarily the same individual or organization that developed and initially authored the content. The publisher is the primary point of contact for questions or issues with the message definition. This item SHOULD be populated unless the information is available from context.
-         */
         readonly GraphDefinition: "GraphDefinition";
         readonly Group: "Group";
-        /**
-         * Extended properties for primitive element: MessageDefinition.publisher
+        readonly GuidanceResponse: "GuidanceResponse"; /**
+         * This description can be used to capture details such as why the message definition was built, comments about misuse, instructions for clinical use and interpretation, literature references, examples from the paper world, etc. It is not a rendering of the message definition as conveyed in the 'text' field of the resource itself. This item SHOULD be populated unless the information is available from context (e.g. the language of the message definition is presumed to be the predominant language in the place the message definition was created).
          */
-        readonly GuidanceResponse: "GuidanceResponse";
         readonly HealthcareService: "HealthcareService";
         readonly ImagingStudy: "ImagingStudy";
         readonly Immunization: "Immunization";
@@ -152,9 +146,7 @@ export declare class MessageDefinitionFocus extends fhir.BackboneElement {
         readonly List: "List";
         readonly Location: "Location";
         readonly Measure: "Measure";
-        readonly MeasureReport: "MeasureReport"; /**
-         * Extended properties for primitive element: MessageDefinition.category
-         */
+        readonly MeasureReport: "MeasureReport";
         readonly Media: "Media";
         readonly Medication: "Medication";
         readonly MedicationAdministration: "MedicationAdministration";
@@ -180,6 +172,9 @@ export declare class MessageDefinitionFocus extends fhir.BackboneElement {
         readonly Observation: "Observation";
         readonly ObservationDefinition: "ObservationDefinition";
         readonly OperationDefinition: "OperationDefinition";
+        /**
+         * It should be possible to use MessageDefinition to describe a message to be used by certain steps in a particular protocol as part of a PlanDefinition or ActivityDefinition.
+         */
         readonly OperationOutcome: "OperationOutcome";
         readonly Organization: "Organization";
         readonly OrganizationAffiliation: "OrganizationAffiliation";
@@ -330,7 +325,7 @@ export interface MessageDefinitionArgs extends fhir.DomainResourceArgs {
     /**
      * A MessageDefinition that is superseded by this definition.
      */
-    replaces?: fhir.FhirCanonical[] | string[] | undefined;
+    replaces?: fhir.FhirCanonical[] | (string | null)[] | undefined;
     /**
      * Extended properties for primitive element: MessageDefinition.replaces
      */
@@ -414,7 +409,7 @@ export interface MessageDefinitionArgs extends fhir.DomainResourceArgs {
     /**
      * It should be possible to use MessageDefinition to describe a message to be used by certain steps in a particular protocol as part of a PlanDefinition or ActivityDefinition.
      */
-    parent?: fhir.FhirCanonical[] | string[] | undefined;
+    parent?: fhir.FhirCanonical[] | (string | null)[] | undefined;
     /**
      * Extended properties for primitive element: MessageDefinition.parent
      */
@@ -458,7 +453,7 @@ export interface MessageDefinitionArgs extends fhir.DomainResourceArgs {
     /**
      * Canonical reference to a GraphDefinition. If a URL is provided, it is the canonical reference to a [GraphDefinition](graphdefinition.html) that it controls what resources are to be added to the bundle when building the document. The GraphDefinition can also specify profiles that apply to the various resources.
      */
-    graph?: fhir.FhirCanonical[] | string[] | undefined;
+    graph?: fhir.FhirCanonical[] | (string | null)[] | undefined;
     /**
      * Extended properties for primitive element: MessageDefinition.graph
      */

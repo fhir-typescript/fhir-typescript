@@ -47,7 +47,7 @@ export interface ValueSetComposeIncludeConcept extends fhir.BackboneElement {
     /**
      * Concepts have both a ```display``` and an array of ```designation```. The display is equivalent to a special designation with an implied ```designation.use``` of "primary code" and a language equal to the [Resource Language](resource.html#language).
      */
-    designation?: fhir.ValueSetComposeIncludeConceptDesignation[] | undefined;
+    designation?: (fhir.ValueSetComposeIncludeConceptDesignation | null)[] | undefined;
 }
 /**
  * Selecting codes by specifying filters based on properties is only possible where the underlying code system defines appropriate properties. Note that in some cases, the underlying code system defines the logical concepts but not the literal codes for the concepts. In such cases, the literal definitions may be provided by a third party.
@@ -101,15 +101,15 @@ export interface ValueSetComposeInclude extends fhir.BackboneElement {
     /**
      * The list of concepts is considered ordered, though the order might not have any particular significance. Typically, the order of an expansion follows that defined in the compose element.
      */
-    concept?: fhir.ValueSetComposeIncludeConcept[] | undefined;
+    concept?: (fhir.ValueSetComposeIncludeConcept | null)[] | undefined;
     /**
      * Selecting codes by specifying filters based on properties is only possible where the underlying code system defines appropriate properties. Note that in some cases, the underlying code system defines the logical concepts but not the literal codes for the concepts. In such cases, the literal definitions may be provided by a third party.
      */
-    filter?: fhir.ValueSetComposeIncludeFilter[] | undefined;
+    filter?: (fhir.ValueSetComposeIncludeFilter | null)[] | undefined;
     /**
      * The value set URI is either a logical reference to a defined value set such as a [SNOMED CT reference set](snomedct.html#implicit), or a direct reference to a value set definition using ValueSet.url. The reference might not refer to an actual FHIR ValueSet resource; in this case, whatever is referred to is an implicit definition of a value set that needs to be clear about how versions are resolved.
      */
-    valueSet?: string[] | undefined;
+    valueSet?: (string | null)[] | undefined;
     /**
      * Extended properties for primitive element: ValueSet.compose.include.valueSet
      */
@@ -139,11 +139,11 @@ export interface ValueSetCompose extends fhir.BackboneElement {
     /**
      * All the conditions in an include must be true. If a system is listed, all the codes from the system are listed. If one or more filters are listed, all of the filters must apply. If one or more value sets are listed, the codes must be in all the value sets. E.g. each include is 'include all the codes that meet all these conditions'.
      */
-    include: fhir.ValueSetComposeInclude[] | null;
+    include: (fhir.ValueSetComposeInclude | null)[] | null;
     /**
      * Usually this is used to selectively exclude codes that were included by subsumption in the inclusions. Any display names specified for the codes are ignored.
      */
-    exclude?: fhir.ValueSetComposeInclude[] | undefined;
+    exclude?: (fhir.ValueSetComposeInclude | null)[] | undefined;
 }
 /**
  * The server decides which parameters to include here, but at a minimum, the list SHOULD include all of the parameters that affect the $expand operation. If the expansion will be persisted all of these parameters SHALL be included. If the codeSystem on the server has a specified version then this version SHALL be provided as a parameter in the expansion (note that not all code systems have a version).
@@ -269,11 +269,11 @@ export interface ValueSetExpansionContains extends fhir.BackboneElement {
     /**
      * The designations provided must be based on the value set and code system definitions.
      */
-    designation?: fhir.ValueSetComposeIncludeConceptDesignation[] | undefined;
+    designation?: (fhir.ValueSetComposeIncludeConceptDesignation | null)[] | undefined;
     /**
      * If the expansion uses this element, there is  no implication about the logical relationship between them, and the  structure cannot be used for logical inferencing. The structure  exists to provide navigational assistance for helping human users to  locate codes in the expansion.
      */
-    contains?: fhir.ValueSetExpansionContains[] | undefined;
+    contains?: (fhir.ValueSetExpansionContains | null)[] | undefined;
 }
 /**
  * Expansion is performed to produce a collection of codes that are ready to use for data entry or validation. Value set expansions are always considered to be stateless - they are a record of the set of codes in the value set at a point in time under a given set of conditions, and are not subject to ongoing maintenance.
@@ -315,11 +315,11 @@ export interface ValueSetExpansion extends fhir.BackboneElement {
     /**
      * The server decides which parameters to include here, but at a minimum, the list SHOULD include all of the parameters that affect the $expand operation. If the expansion will be persisted all of these parameters SHALL be included. If the codeSystem on the server has a specified version then this version SHALL be provided as a parameter in the expansion (note that not all code systems have a version).
      */
-    parameter?: fhir.ValueSetExpansionParameter[] | undefined;
+    parameter?: (fhir.ValueSetExpansionParameter | null)[] | undefined;
     /**
      * The codes that are contained in the value set expansion.
      */
-    contains?: fhir.ValueSetExpansionContains[] | undefined;
+    contains?: (fhir.ValueSetExpansionContains | null)[] | undefined;
 }
 /**
  * A ValueSet resource instance specifies a set of codes drawn from one or more code systems, intended for use in a particular context. Value sets link between [CodeSystem](codesystem.html) definitions and their use in [coded elements](terminologies.html).
@@ -328,7 +328,7 @@ export interface ValueSet extends fhir.DomainResource {
     /**
      * Resource Type Name
      */
-    resourceType: "ValueSet";
+    resourceType: "ValueSet" | null;
     /**
      * Can be a urn:uuid: or a urn:oid: but real http: addresses are preferred.  Multiple instances may share the same URL if they have a distinct version.
      * The determination of when to create a new version of a resource (same url, new version) vs. defining a new artifact is up to the author.  Considerations for making this decision are found in [Technical and Business Versions](resource.html#versions).
@@ -342,7 +342,7 @@ export interface ValueSet extends fhir.DomainResource {
     /**
      * Typically, this is used for identifiers that can go in an HL7 V3 II (instance identifier) data type, and can then identify this value set outside of FHIR, where it is not possible to use the logical URI.
      */
-    identifier?: fhir.Identifier[] | undefined;
+    identifier?: (fhir.Identifier | null)[] | undefined;
     /**
      * There may be different value set instances that have the same identifier but different versions.  The version can be appended to the url in a reference to allow a reference to a particular business version of the value set with the format [url]|[version].
      */
@@ -402,7 +402,7 @@ export interface ValueSet extends fhir.DomainResource {
     /**
      * May be a web site, an email address, a telephone number, etc.
      */
-    contact?: fhir.ContactDetail[] | undefined;
+    contact?: (fhir.ContactDetail | null)[] | undefined;
     /**
      * This description can be used to capture details such as why the value set was built, comments about misuse, instructions for clinical use and interpretation, literature references, examples from the paper world, etc. It is not a rendering of the value set as conveyed in the 'text' field of the resource itself. This item SHOULD be populated unless the information is available from context (e.g. the language of the value set is presumed to be the predominant language in the place the value set was created).The description is not intended to describe the semantics of the Value Set - there are no intrinsic semantics separate from the codes contained in its expansion. The description should capture its intended use, which is needed for ensuring integrity for its use in models across future changes. A description should be provided unless the value set is a contained resource (e.g. an anonymous value set in a profile). Most registries will require a description.
      */
@@ -414,11 +414,11 @@ export interface ValueSet extends fhir.DomainResource {
     /**
      * When multiple useContexts are specified, there is no expectation that all or any of the contexts apply.
      */
-    useContext?: fhir.UsageContext[] | undefined;
+    useContext?: (fhir.UsageContext | null)[] | undefined;
     /**
      * It may be possible for the value set to be used in jurisdictions other than those for which it was originally designed or intended.
      */
-    jurisdiction?: fhir.CodeableConcept[] | undefined;
+    jurisdiction?: (fhir.CodeableConcept | null)[] | undefined;
     /**
      * Normally immutability is set to 'false', which is the default assumption if it is not populated.  Note that the implication is that if this is set to 'true', there may be only one ValueSet version for this definition. Immutability tends to be set to 'true' in one of two cases: - Where the value set, by the nature of its usage, cannot change.  For example "All specializations of ACT in ActClassCode" - Where there's no safe way to express the "Purpose" such that someone else could safely make changes to the value set definition. Source workflow control must guarantee that the same URI always yields the same definition.
      */

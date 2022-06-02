@@ -17,7 +17,7 @@ export interface ConditionStage extends fhir.BackboneElement {
   /**
    * Reference to a formal record of the evidence on which the staging assessment is based.
    */
-  assessment?: fhir.Reference[]|undefined;
+  assessment?: (fhir.Reference|null)[]|undefined;
   /**
    * The kind of staging, such as pathological or clinical staging.
    */
@@ -31,11 +31,11 @@ export interface ConditionEvidence extends fhir.BackboneElement {
   /**
    * A manifestation or symptom that led to the recording of this condition.
    */
-  code?: fhir.CodeableConcept[]|undefined;
+  code?: (fhir.CodeableConcept|null)[]|undefined;
   /**
    * Links to other relevant information, including pathology reports.
    */
-  detail?: fhir.Reference[]|undefined;
+  detail?: (fhir.Reference|null)[]|undefined;
 }
 
 /**
@@ -45,11 +45,11 @@ export interface Condition extends fhir.DomainResource {
   /**
    * Resource Type Name
    */
-  resourceType: "Condition";
+  resourceType: "Condition"|null;
   /**
    * This is a business identifier, not a resource identifier (see [discussion](resource.html#identifiers)).  It is best practice for the identifier to only appear on a single resource instance, however business practices may occasionally dictate that multiple resource instances with the same identifier can exist - possibly even with different resource types.  For example, multiple Patient and a Person resource instance might share the same social insurance number.
    */
-  identifier?: fhir.Identifier[]|undefined;
+  identifier?: (fhir.Identifier|null)[]|undefined;
   /**
    * The data type is CodeableConcept because clinicalStatus has some clinical judgment involved, such that there might need to be more specificity than the required FHIR value set allows. For example, a SNOMED coding might allow for additional specificity.
    */
@@ -62,7 +62,7 @@ export interface Condition extends fhir.DomainResource {
   /**
    * The categorization is often highly contextual and may appear poorly differentiated or not very useful in other contexts.
    */
-  category?: fhir.CodeableConcept[]|undefined;
+  category?: (fhir.CodeableConcept|null)[]|undefined;
   /**
    * Coding of the severity with a terminology is preferred, where possible.
    */
@@ -74,7 +74,7 @@ export interface Condition extends fhir.DomainResource {
   /**
    * Only used if not implicit in code found in Condition.code. If the use case requires attributes from the BodySite resource (e.g. to identify and track separately) then use the standard extension [bodySite](extension-bodysite.html).  May be a summary code, or a reference to a very precise definition of the location, or both.
    */
-  bodySite?: fhir.CodeableConcept[]|undefined;
+  bodySite?: (fhir.CodeableConcept|null)[]|undefined;
   /**
    * Indicates the patient or group who the condition record is associated with.
    */
@@ -158,13 +158,13 @@ export interface Condition extends fhir.DomainResource {
   /**
    * Clinical stage or grade of a condition. May include formal severity assessments.
    */
-  stage?: fhir.ConditionStage[]|undefined;
+  stage?: (fhir.ConditionStage|null)[]|undefined;
   /**
    * The evidence may be a simple list of coded symptoms/manifestations, or references to observations or formal assessments, or both.
    */
-  evidence?: fhir.ConditionEvidence[]|undefined;
+  evidence?: (fhir.ConditionEvidence|null)[]|undefined;
   /**
    * Additional information about the Condition. This is a general notes/comments entry  for description of the Condition, its diagnosis and prognosis.
    */
-  note?: fhir.Annotation[]|undefined;
+  note?: (fhir.Annotation|null)[]|undefined;
 }

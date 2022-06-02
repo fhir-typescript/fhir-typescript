@@ -6,20 +6,20 @@ export interface Media extends fhir.DomainResource {
     /**
      * Resource Type Name
      */
-    resourceType: "Media";
+    resourceType: "Media" | null;
     /**
      * The identifier label and use can be used to determine what kind of identifier it is.
      */
-    identifier?: fhir.Identifier[] | undefined;
+    identifier?: (fhir.Identifier | null)[] | undefined;
     /**
      * A procedure that is fulfilled in whole or in part by the creation of this media.
      */
-    basedOn?: fhir.Reference[] | undefined;
+    basedOn?: (fhir.Reference | null)[] | undefined;
     /**
      * Not to be used to link an event to an Encounter - use Media.encounter for that.
      * [The allowed reference resources may be adjusted as appropriate for the event resource].
      */
-    partOf?: fhir.Reference[] | undefined;
+    partOf?: (fhir.Reference | null)[] | undefined;
     /**
      * A nominal state-transition diagram can be found in the [[event.html#statemachine | Event pattern]] documentation
      * Unknown does not represent "other" - one of the defined statuses must apply.  Unknown is used when the authoring system is not sure what the current status is.
@@ -76,7 +76,7 @@ export interface Media extends fhir.DomainResource {
     /**
      * Textual reasons can be captured using reasonCode.text.
      */
-    reasonCode?: fhir.CodeableConcept[] | undefined;
+    reasonCode?: (fhir.CodeableConcept | null)[] | undefined;
     /**
      * Only used if not implicit in code found in Observation.code.  In many systems, this may be represented as a related observation instead of an inline component.
      * If the use case requires BodySite to be handled as a separate resource (e.g. to identify and track separately) then use the standard extension[ bodySite](extension-bodysite.html).
@@ -133,6 +133,6 @@ export interface Media extends fhir.DomainResource {
     /**
      * Not to be used for observations, conclusions, etc. Instead use an [Observation](observation.html) based on the Media/ImagingStudy resource.
      */
-    note?: fhir.Annotation[] | undefined;
+    note?: (fhir.Annotation | null)[] | undefined;
 }
 //# sourceMappingURL=Media.d.ts.map

@@ -146,7 +146,7 @@ export interface BundleEntry extends fhir.BackboneElement {
     /**
      * A series of links that provide context to this entry.
      */
-    link?: fhir.BundleLink[] | undefined;
+    link?: (fhir.BundleLink | null)[] | undefined;
     /**
      * fullUrl might not be [unique in the context of a resource](bundle.html#bundle-unique). Note that since [FHIR resources do not need to be served through the FHIR API](references.html), the fullURL might be a URN or an absolute URL that does not end with the logical id of the resource (Resource.id). However, but if the fullUrl does look like a RESTful server URL (e.g. meets the [regex](references.html#regex), then the 'id' portion of the fullUrl SHALL end with the Resource.id.
      * Note that the fullUrl is not the same as the canonical URL - it's an absolute url for an endpoint serving the resource (these will happen to have the same value on the canonical server for the resource with the canonical URL).
@@ -180,7 +180,7 @@ export interface Bundle extends fhir.Resource {
     /**
      * Resource Type Name
      */
-    resourceType: "Bundle";
+    resourceType: "Bundle" | null;
     /**
      * Persistent identity generally only matters for batches of type Document, Message, and Collection. It would not normally be populated for search and history results and servers ignore Bundle.identifier when processing batches and transactions. For Documents  the .identifier SHALL be populated such that the .identifier is globally unique.
      */
@@ -221,11 +221,11 @@ export interface Bundle extends fhir.Resource {
      * Bundle.entry.link corresponds to links found in the HTTP header if the resource in the entry was [read](http.html#read) directly.
      * This specification defines some specific uses of Bundle.link for [searching](search.html#conformance) and [paging](http.html#paging), but no specific uses for Bundle.entry.link, and no defined function in a transaction - the meaning is implementation specific.
      */
-    link?: fhir.BundleLink[] | undefined;
+    link?: (fhir.BundleLink | null)[] | undefined;
     /**
      * An entry in a bundle resource - will either contain a resource or information about a resource (transactions and history only).
      */
-    entry?: fhir.BundleEntry[] | undefined;
+    entry?: (fhir.BundleEntry | null)[] | undefined;
     /**
      * The signature could be created by the "author" of the bundle or by the originating device.   Requirements around inclusion of a signature, verification of signatures and treatment of signed/non-signed bundles is implementation-environment specific.
      */

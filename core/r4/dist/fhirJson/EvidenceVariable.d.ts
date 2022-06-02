@@ -42,7 +42,7 @@ export interface EvidenceVariableCharacteristic extends fhir.BackboneElement {
     /**
      * Use UsageContext to define the members of the population, such as Age Ranges, Genders, Settings.
      */
-    usageContext?: fhir.UsageContext[] | undefined;
+    usageContext?: (fhir.UsageContext | null)[] | undefined;
     /**
      * When true, members with this characteristic are excluded from the element.
      */
@@ -91,7 +91,7 @@ export interface EvidenceVariable extends fhir.DomainResource {
     /**
      * Resource Type Name
      */
-    resourceType: "EvidenceVariable";
+    resourceType: "EvidenceVariable" | null;
     /**
      * Can be a urn:uuid: or a urn:oid: but real http: addresses are preferred.  Multiple instances may share the same URL if they have a distinct version.
      * The determination of when to create a new version of a resource (same url, new version) vs. defining a new artifact is up to the author.  Considerations for making this decision are found in [Technical and Business Versions](resource.html#versions).
@@ -105,7 +105,7 @@ export interface EvidenceVariable extends fhir.DomainResource {
     /**
      * Typically, this is used for identifiers that can go in an HL7 V3 II (instance identifier) data type, and can then identify this evidence variable outside of FHIR, where it is not possible to use the logical URI.
      */
-    identifier?: fhir.Identifier[] | undefined;
+    identifier?: (fhir.Identifier | null)[] | undefined;
     /**
      * There may be different evidence variable instances that have the same identifier but different versions.  The version can be appended to the url in a reference to allow a reference to a particular business version of the evidence variable with the format [url]|[version].
      */
@@ -173,7 +173,7 @@ export interface EvidenceVariable extends fhir.DomainResource {
     /**
      * May be a web site, an email address, a telephone number, etc.
      */
-    contact?: fhir.ContactDetail[] | undefined;
+    contact?: (fhir.ContactDetail | null)[] | undefined;
     /**
      * This description can be used to capture details such as why the evidence variable was built, comments about misuse, instructions for clinical use and interpretation, literature references, examples from the paper world, etc. It is not a rendering of the evidence variable as conveyed in the 'text' field of the resource itself. This item SHOULD be populated unless the information is available from context (e.g. the language of the evidence variable is presumed to be the predominant language in the place the evidence variable was created).
      */
@@ -185,15 +185,15 @@ export interface EvidenceVariable extends fhir.DomainResource {
     /**
      * A human-readable string to clarify or explain concepts about the resource.
      */
-    note?: fhir.Annotation[] | undefined;
+    note?: (fhir.Annotation | null)[] | undefined;
     /**
      * When multiple useContexts are specified, there is no expectation that all or any of the contexts apply.
      */
-    useContext?: fhir.UsageContext[] | undefined;
+    useContext?: (fhir.UsageContext | null)[] | undefined;
     /**
      * It may be possible for the evidence variable to be used in jurisdictions other than those for which it was originally designed or intended.
      */
-    jurisdiction?: fhir.CodeableConcept[] | undefined;
+    jurisdiction?: (fhir.CodeableConcept | null)[] | undefined;
     /**
      * A copyright statement relating to the evidence variable and/or its contents. Copyright statements are generally legal restrictions on the use and publishing of the evidence variable.
      */
@@ -225,27 +225,27 @@ export interface EvidenceVariable extends fhir.DomainResource {
     /**
      * Descriptive topics related to the content of the EvidenceVariable. Topics provide a high-level categorization grouping types of EvidenceVariables that can be useful for filtering and searching.
      */
-    topic?: fhir.CodeableConcept[] | undefined;
+    topic?: (fhir.CodeableConcept | null)[] | undefined;
     /**
      * An individiual or organization primarily involved in the creation and maintenance of the content.
      */
-    author?: fhir.ContactDetail[] | undefined;
+    author?: (fhir.ContactDetail | null)[] | undefined;
     /**
      * An individual or organization primarily responsible for internal coherence of the content.
      */
-    editor?: fhir.ContactDetail[] | undefined;
+    editor?: (fhir.ContactDetail | null)[] | undefined;
     /**
      * An individual or organization primarily responsible for review of some aspect of the content.
      */
-    reviewer?: fhir.ContactDetail[] | undefined;
+    reviewer?: (fhir.ContactDetail | null)[] | undefined;
     /**
      * An individual or organization responsible for officially endorsing the content for use in some setting.
      */
-    endorser?: fhir.ContactDetail[] | undefined;
+    endorser?: (fhir.ContactDetail | null)[] | undefined;
     /**
      * Each related artifact is either an attachment, or a reference to another resource, but not both.
      */
-    relatedArtifact?: fhir.RelatedArtifact[] | undefined;
+    relatedArtifact?: (fhir.RelatedArtifact | null)[] | undefined;
     /**
      * The type of evidence element, a population, an exposure, or an outcome.
      */
@@ -257,6 +257,6 @@ export interface EvidenceVariable extends fhir.DomainResource {
     /**
      * Characteristics can be defined flexibly to accommodate different use cases for membership criteria, ranging from simple codes, all the way to using an expression language to express the criteria.
      */
-    characteristic: fhir.EvidenceVariableCharacteristic[] | null;
+    characteristic: (fhir.EvidenceVariableCharacteristic | null)[] | null;
 }
 //# sourceMappingURL=EvidenceVariable.d.ts.map

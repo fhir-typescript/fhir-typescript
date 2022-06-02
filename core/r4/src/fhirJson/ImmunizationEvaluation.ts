@@ -13,11 +13,11 @@ export interface ImmunizationEvaluation extends fhir.DomainResource {
   /**
    * Resource Type Name
    */
-  resourceType: "ImmunizationEvaluation";
+  resourceType: "ImmunizationEvaluation"|null;
   /**
    * A unique identifier assigned to this immunization evaluation record.
    */
-  identifier?: fhir.Identifier[]|undefined;
+  identifier?: (fhir.Identifier|null)[]|undefined;
   /**
    * Indicates the current status of the evaluation of the vaccination administration event.
    */
@@ -57,7 +57,7 @@ export interface ImmunizationEvaluation extends fhir.DomainResource {
   /**
    * Provides an explanation as to why the vaccine administration event is valid or not relative to the published recommendations.
    */
-  doseStatusReason?: fhir.CodeableConcept[]|undefined;
+  doseStatusReason?: (fhir.CodeableConcept|null)[]|undefined;
   /**
    * Additional information about the evaluation.
    */

@@ -732,7 +732,7 @@ export interface ClaimInsuranceArgs extends fhir.BackboneElementArgs {
   /**
    * This value is an alphanumeric string that may be provided over the phone, via text, via paper, or within a ClaimResponse resource and is not a FHIR Identifier.
    */
-  preAuthRef?: fhir.FhirString[]|string[]|undefined;
+  preAuthRef?: fhir.FhirString[]|(string|null)[]|undefined;
   /**
    * Extended properties for primitive element: Claim.insurance.preAuthRef
    */
@@ -1287,7 +1287,7 @@ export interface ClaimItemArgs extends fhir.BackboneElementArgs {
   /**
    * CareTeam members related to this service or product.
    */
-  careTeamSequence?: fhir.FhirPositiveInt[]|number[]|undefined;
+  careTeamSequence?: fhir.FhirPositiveInt[]|(number|null)[]|undefined;
   /**
    * Extended properties for primitive element: Claim.item.careTeamSequence
    */
@@ -1295,7 +1295,7 @@ export interface ClaimItemArgs extends fhir.BackboneElementArgs {
   /**
    * Diagnosis applicable for this service or product.
    */
-  diagnosisSequence?: fhir.FhirPositiveInt[]|number[]|undefined;
+  diagnosisSequence?: fhir.FhirPositiveInt[]|(number|null)[]|undefined;
   /**
    * Extended properties for primitive element: Claim.item.diagnosisSequence
    */
@@ -1303,7 +1303,7 @@ export interface ClaimItemArgs extends fhir.BackboneElementArgs {
   /**
    * Procedures applicable for this service or product.
    */
-  procedureSequence?: fhir.FhirPositiveInt[]|number[]|undefined;
+  procedureSequence?: fhir.FhirPositiveInt[]|(number|null)[]|undefined;
   /**
    * Extended properties for primitive element: Claim.item.procedureSequence
    */
@@ -1311,7 +1311,7 @@ export interface ClaimItemArgs extends fhir.BackboneElementArgs {
   /**
    * Exceptions, special conditions and supporting information applicable for this service or product.
    */
-  informationSequence?: fhir.FhirPositiveInt[]|number[]|undefined;
+  informationSequence?: fhir.FhirPositiveInt[]|(number|null)[]|undefined;
   /**
    * Extended properties for primitive element: Claim.item.informationSequence
    */

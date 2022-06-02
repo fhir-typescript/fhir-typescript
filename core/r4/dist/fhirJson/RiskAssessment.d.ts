@@ -55,11 +55,11 @@ export interface RiskAssessment extends fhir.DomainResource {
     /**
      * Resource Type Name
      */
-    resourceType: "RiskAssessment";
+    resourceType: "RiskAssessment" | null;
     /**
      * Business identifier assigned to the risk assessment.
      */
-    identifier?: fhir.Identifier[] | undefined;
+    identifier?: (fhir.Identifier | null)[] | undefined;
     /**
      * A reference to the request that is fulfilled by this risk assessment.
      */
@@ -115,19 +115,19 @@ export interface RiskAssessment extends fhir.DomainResource {
     /**
      * The reason the risk assessment was performed.
      */
-    reasonCode?: fhir.CodeableConcept[] | undefined;
+    reasonCode?: (fhir.CodeableConcept | null)[] | undefined;
     /**
      * Resources supporting the reason the risk assessment was performed.
      */
-    reasonReference?: fhir.Reference[] | undefined;
+    reasonReference?: (fhir.Reference | null)[] | undefined;
     /**
      * Indicates the source data considered as part of the assessment (for example, FamilyHistory, Observations, Procedures, Conditions, etc.).
      */
-    basis?: fhir.Reference[] | undefined;
+    basis?: (fhir.Reference | null)[] | undefined;
     /**
      * Multiple repetitions can be used to identify the same type of outcome in different timeframes as well as different types of outcomes.
      */
-    prediction?: fhir.RiskAssessmentPrediction[] | undefined;
+    prediction?: (fhir.RiskAssessmentPrediction | null)[] | undefined;
     /**
      * A description of the steps that might be taken to reduce the identified risk(s).
      */
@@ -139,6 +139,6 @@ export interface RiskAssessment extends fhir.DomainResource {
     /**
      * Additional comments about the risk assessment.
      */
-    note?: fhir.Annotation[] | undefined;
+    note?: (fhir.Annotation | null)[] | undefined;
 }
 //# sourceMappingURL=RiskAssessment.d.ts.map

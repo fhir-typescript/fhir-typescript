@@ -75,11 +75,11 @@ export interface GraphDefinitionLinkTarget extends fhir.BackboneElement {
     /**
      * Compartment Consistency Rules.
      */
-    compartment?: fhir.GraphDefinitionLinkTargetCompartment[] | undefined;
+    compartment?: (fhir.GraphDefinitionLinkTargetCompartment | null)[] | undefined;
     /**
      * Additional links from target resource.
      */
-    link?: fhir.GraphDefinitionLink[] | undefined;
+    link?: (fhir.GraphDefinitionLink | null)[] | undefined;
 }
 /**
  * Links this graph makes rules about.
@@ -128,7 +128,7 @@ export interface GraphDefinitionLink extends fhir.BackboneElement {
     /**
      * Potential target for the link.
      */
-    target?: fhir.GraphDefinitionLinkTarget[] | undefined;
+    target?: (fhir.GraphDefinitionLinkTarget | null)[] | undefined;
 }
 /**
  * A formal computable definition of a graph of resources - that is, a coherent set of resources that form a graph by following references. The Graph Definition resource defines a set and makes rules about the set.
@@ -137,7 +137,7 @@ export interface GraphDefinition extends fhir.DomainResource {
     /**
      * Resource Type Name
      */
-    resourceType: "GraphDefinition";
+    resourceType: "GraphDefinition" | null;
     /**
      * Can be a urn:uuid: or a urn:oid: but real http: addresses are preferred.  Multiple instances may share the same URL if they have a distinct version.
      * The determination of when to create a new version of a resource (same url, new version) vs. defining a new artifact is up to the author.  Considerations for making this decision are found in [Technical and Business Versions](resource.html#versions).
@@ -199,7 +199,7 @@ export interface GraphDefinition extends fhir.DomainResource {
     /**
      * May be a web site, an email address, a telephone number, etc.
      */
-    contact?: fhir.ContactDetail[] | undefined;
+    contact?: (fhir.ContactDetail | null)[] | undefined;
     /**
      * This description can be used to capture details such as why the graph definition was built, comments about misuse, instructions for clinical use and interpretation, literature references, examples from the paper world, etc. It is not a rendering of the graph definition as conveyed in the 'text' field of the resource itself. This item SHOULD be populated unless the information is available from context (e.g. the language of the graph definition is presumed to be the predominant language in the place the graph definition was created).
      */
@@ -211,11 +211,11 @@ export interface GraphDefinition extends fhir.DomainResource {
     /**
      * When multiple useContexts are specified, there is no expectation that all or any of the contexts apply.
      */
-    useContext?: fhir.UsageContext[] | undefined;
+    useContext?: (fhir.UsageContext | null)[] | undefined;
     /**
      * It may be possible for the graph definition to be used in jurisdictions other than those for which it was originally designed or intended.
      */
-    jurisdiction?: fhir.CodeableConcept[] | undefined;
+    jurisdiction?: (fhir.CodeableConcept | null)[] | undefined;
     /**
      * This element does not describe the usage of the graph definition. Instead, it provides traceability of ''why'' the resource is either needed or ''why'' it is defined as it is.  This may be used to point to source materials or specifications that drove the structure of this graph definition.
      */
@@ -243,6 +243,6 @@ export interface GraphDefinition extends fhir.DomainResource {
     /**
      * Links this graph makes rules about.
      */
-    link?: fhir.GraphDefinitionLink[] | undefined;
+    link?: (fhir.GraphDefinitionLink | null)[] | undefined;
 }
 //# sourceMappingURL=GraphDefinition.d.ts.map

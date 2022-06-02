@@ -23,7 +23,7 @@ export interface HealthcareServiceAvailableTime extends fhir.BackboneElement {
     /**
      * Indicates which days of the week are available between the start and end Times.
      */
-    daysOfWeek?: ('fri' | 'mon' | 'sat' | 'sun' | 'thu' | 'tue' | 'wed')[] | undefined;
+    daysOfWeek?: (('fri' | 'mon' | 'sat' | 'sun' | 'thu' | 'tue' | 'wed') | null)[] | undefined;
     /**
      * Extended properties for primitive element: HealthcareService.availableTime.daysOfWeek
      */
@@ -77,11 +77,11 @@ export interface HealthcareService extends fhir.DomainResource {
     /**
      * Resource Type Name
      */
-    resourceType: "HealthcareService";
+    resourceType: "HealthcareService" | null;
     /**
      * External identifiers for this item.
      */
-    identifier?: fhir.Identifier[] | undefined;
+    identifier?: (fhir.Identifier | null)[] | undefined;
     /**
      * This element is labeled as a modifier because it may be used to mark that the resource was created in error.
      */
@@ -97,19 +97,19 @@ export interface HealthcareService extends fhir.DomainResource {
     /**
      * Selecting a Service Category then determines the list of relevant service types that can be selected in the primary service type.
      */
-    category?: fhir.CodeableConcept[] | undefined;
+    category?: (fhir.CodeableConcept | null)[] | undefined;
     /**
      * The specific type of service that may be delivered or performed.
      */
-    type?: fhir.CodeableConcept[] | undefined;
+    type?: (fhir.CodeableConcept | null)[] | undefined;
     /**
      * Collection of specialties handled by the service site. This is more of a medical term.
      */
-    specialty?: fhir.CodeableConcept[] | undefined;
+    specialty?: (fhir.CodeableConcept | null)[] | undefined;
     /**
      * The location(s) where this healthcare service may be provided.
      */
-    location?: fhir.Reference[] | undefined;
+    location?: (fhir.Reference | null)[] | undefined;
     /**
      * Further description of the service as it would be presented to a consumer while searching.
      */
@@ -141,35 +141,35 @@ export interface HealthcareService extends fhir.DomainResource {
     /**
      * If this is empty, then refer to the location's contacts.
      */
-    telecom?: fhir.ContactPoint[] | undefined;
+    telecom?: (fhir.ContactPoint | null)[] | undefined;
     /**
      * The locations referenced by the coverage area can include both specific locations, including areas, and also conceptual domains too (mode = kind), such as a physical area (tri-state area) and some other attribute (covered by Example Care Organization). These types of Locations are often not managed by any specific organization. This could also include generic locations such as "in-home".
      */
-    coverageArea?: fhir.Reference[] | undefined;
+    coverageArea?: (fhir.Reference | null)[] | undefined;
     /**
      * The provision means being commissioned by, contractually obliged or financially sourced. Types of costings that may apply to this healthcare service, such if the service may be available for free, some discounts available, or fees apply.
      */
-    serviceProvisionCode?: fhir.CodeableConcept[] | undefined;
+    serviceProvisionCode?: (fhir.CodeableConcept | null)[] | undefined;
     /**
      * Does this service have specific eligibility requirements that need to be met in order to use the service?
      */
-    eligibility?: fhir.HealthcareServiceEligibility[] | undefined;
+    eligibility?: (fhir.HealthcareServiceEligibility | null)[] | undefined;
     /**
      * Programs are often defined externally to an Organization, commonly by governments; e.g. Home and Community Care Programs, Homeless Program, ….
      */
-    program?: fhir.CodeableConcept[] | undefined;
+    program?: (fhir.CodeableConcept | null)[] | undefined;
     /**
      * These could be such things as is wheelchair accessible.
      */
-    characteristic?: fhir.CodeableConcept[] | undefined;
+    characteristic?: (fhir.CodeableConcept | null)[] | undefined;
     /**
      * When using this property it indicates that the service is available with this language, it is not derived from the practitioners, and not all are required to use this language, just that this language is available while scheduling.
      */
-    communication?: fhir.CodeableConcept[] | undefined;
+    communication?: (fhir.CodeableConcept | null)[] | undefined;
     /**
      * Ways that the service accepts referrals, if this is not provided then it is implied that no referral is required.
      */
-    referralMethod?: fhir.CodeableConcept[] | undefined;
+    referralMethod?: (fhir.CodeableConcept | null)[] | undefined;
     /**
      * Indicates whether or not a prospective consumer will require an appointment for a particular service at a site to be provided by the Organization. Indicates if an appointment is required for access to this service.
      */
@@ -181,11 +181,11 @@ export interface HealthcareService extends fhir.DomainResource {
     /**
      * More detailed availability information may be provided in associated Schedule/Slot resources.
      */
-    availableTime?: fhir.HealthcareServiceAvailableTime[] | undefined;
+    availableTime?: (fhir.HealthcareServiceAvailableTime | null)[] | undefined;
     /**
      * The HealthcareService is not available during this period of time due to the provided reason.
      */
-    notAvailable?: fhir.HealthcareServiceNotAvailable[] | undefined;
+    notAvailable?: (fhir.HealthcareServiceNotAvailable | null)[] | undefined;
     /**
      * A description of site availability exceptions, e.g. public holiday availability. Succinctly describing all possible exceptions to normal site availability as details in the available Times and not available Times.
      */
@@ -197,6 +197,6 @@ export interface HealthcareService extends fhir.DomainResource {
     /**
      * Technical endpoints providing access to services operated for the specific healthcare services defined at this resource.
      */
-    endpoint?: fhir.Reference[] | undefined;
+    endpoint?: (fhir.Reference | null)[] | undefined;
 }
 //# sourceMappingURL=HealthcareService.d.ts.map

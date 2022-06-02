@@ -89,7 +89,7 @@ export interface ChargeItemArgs extends fhir.DomainResourceArgs {
   /**
    * References the (external) source of pricing information, rules of application for the code this ChargeItem uses.
    */
-  definitionUri?: fhir.FhirUri[]|string[]|undefined;
+  definitionUri?: fhir.FhirUri[]|(string|null)[]|undefined;
   /**
    * Extended properties for primitive element: ChargeItem.definitionUri
    */
@@ -97,7 +97,7 @@ export interface ChargeItemArgs extends fhir.DomainResourceArgs {
   /**
    * References the source of pricing information, rules of application for the code this ChargeItem uses.
    */
-  definitionCanonical?: fhir.FhirCanonical[]|string[]|undefined;
+  definitionCanonical?: fhir.FhirCanonical[]|(string|null)[]|undefined;
   /**
    * Extended properties for primitive element: ChargeItem.definitionCanonical
    */

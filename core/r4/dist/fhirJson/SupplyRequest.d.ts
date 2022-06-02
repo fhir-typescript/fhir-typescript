@@ -35,11 +35,11 @@ export interface SupplyRequest extends fhir.DomainResource {
     /**
      * Resource Type Name
      */
-    resourceType: "SupplyRequest";
+    resourceType: "SupplyRequest" | null;
     /**
      * The identifier.type element is used to distinguish between the identifiers assigned by the requester/placer and the performer/filler.
      */
-    identifier?: fhir.Identifier[] | undefined;
+    identifier?: (fhir.Identifier | null)[] | undefined;
     /**
      * Status of the supply request.
      */
@@ -75,7 +75,7 @@ export interface SupplyRequest extends fhir.DomainResource {
     /**
      * Specific parameters for the ordered item.  For example, the size of the indicated item.
      */
-    parameter?: fhir.SupplyRequestParameter[] | undefined;
+    parameter?: (fhir.SupplyRequestParameter | null)[] | undefined;
     /**
      * When the request should be fulfilled.
      */
@@ -107,15 +107,15 @@ export interface SupplyRequest extends fhir.DomainResource {
     /**
      * Who is intended to fulfill the request.
      */
-    supplier?: fhir.Reference[] | undefined;
+    supplier?: (fhir.Reference | null)[] | undefined;
     /**
      * The reason why the supply item was requested.
      */
-    reasonCode?: fhir.CodeableConcept[] | undefined;
+    reasonCode?: (fhir.CodeableConcept | null)[] | undefined;
     /**
      * The reason why the supply item was requested.
      */
-    reasonReference?: fhir.Reference[] | undefined;
+    reasonReference?: (fhir.Reference | null)[] | undefined;
     /**
      * Where the supply is expected to come from.
      */

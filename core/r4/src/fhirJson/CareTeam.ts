@@ -13,7 +13,7 @@ export interface CareTeamParticipant extends fhir.BackboneElement {
   /**
    * Roles may sometimes be inferred by type of Practitioner.  These are relationships that hold only within the context of the care team.  General relationships should be handled as properties of the Patient resource directly.
    */
-  role?: fhir.CodeableConcept[]|undefined;
+  role?: (fhir.CodeableConcept|null)[]|undefined;
   /**
    * Patient only needs to be listed if they have a role other than "subject of care".
    * Member is optional because some participants may be known only by their role, particularly in draft plans.
@@ -36,11 +36,11 @@ export interface CareTeam extends fhir.DomainResource {
   /**
    * Resource Type Name
    */
-  resourceType: "CareTeam";
+  resourceType: "CareTeam"|null;
   /**
    * This is a business identifier, not a resource identifier (see [discussion](resource.html#identifiers)).  It is best practice for the identifier to only appear on a single resource instance, however business practices may occasionally dictate that multiple resource instances with the same identifier can exist - possibly even with different resource types.  For example, multiple Patient and a Person resource instance might share the same social insurance number.
    */
-  identifier?: fhir.Identifier[]|undefined;
+  identifier?: (fhir.Identifier|null)[]|undefined;
   /**
    * This element is labeled as a modifier because the status contains the code entered-in-error that marks the care team as not currently valid.
    */
@@ -52,7 +52,7 @@ export interface CareTeam extends fhir.DomainResource {
   /**
    * There may be multiple axis of categorization and one team may serve multiple purposes.
    */
-  category?: fhir.CodeableConcept[]|undefined;
+  category?: (fhir.CodeableConcept|null)[]|undefined;
   /**
    * The meaning/purpose of the team is conveyed in CareTeam.category.  This element may also convey semantics of the team (e.g. "Red trauma team"), but its primary purpose is to distinguish between identical teams in a human-friendly way.  ("Team 18735" isn't as friendly.).
    */
@@ -76,25 +76,25 @@ export interface CareTeam extends fhir.DomainResource {
   /**
    * Identifies all people and organizations who are expected to be involved in the care team.
    */
-  participant?: fhir.CareTeamParticipant[]|undefined;
+  participant?: (fhir.CareTeamParticipant|null)[]|undefined;
   /**
    * Describes why the care team exists.
    */
-  reasonCode?: fhir.CodeableConcept[]|undefined;
+  reasonCode?: (fhir.CodeableConcept|null)[]|undefined;
   /**
    * Condition(s) that this care team addresses.
    */
-  reasonReference?: fhir.Reference[]|undefined;
+  reasonReference?: (fhir.Reference|null)[]|undefined;
   /**
    * The organization responsible for the care team.
    */
-  managingOrganization?: fhir.Reference[]|undefined;
+  managingOrganization?: (fhir.Reference|null)[]|undefined;
   /**
    * The ContactPoint.use code of home is not appropriate to use. These contacts are not the contact details of individual care team members.
    */
-  telecom?: fhir.ContactPoint[]|undefined;
+  telecom?: (fhir.ContactPoint|null)[]|undefined;
   /**
    * Comments made about the CareTeam.
    */
-  note?: fhir.Annotation[]|undefined;
+  note?: (fhir.Annotation|null)[]|undefined;
 }

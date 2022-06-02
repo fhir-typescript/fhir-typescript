@@ -177,7 +177,7 @@ export interface SubstanceProteinArgs extends fhir.DomainResourceArgs {
   /**
    * The disulphide bond between two cysteine residues either on the same subunit or on two different subunits shall be described. The position of the disulfide bonds in the SubstanceProtein shall be listed in increasing order of subunit number and position within subunit followed by the abbreviation of the amino acids involved. The disulfide linkage positions shall actually contain the amino acid Cysteine at the respective positions.
    */
-  disulfideLinkage?: fhir.FhirString[]|string[]|undefined;
+  disulfideLinkage?: fhir.FhirString[]|(string|null)[]|undefined;
   /**
    * Extended properties for primitive element: SubstanceProtein.disulfideLinkage
    */

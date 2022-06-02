@@ -82,7 +82,7 @@ export interface DeviceDefinitionCapability extends fhir.BackboneElement {
     /**
      * Description of capability.
      */
-    description?: fhir.CodeableConcept[] | undefined;
+    description?: (fhir.CodeableConcept | null)[] | undefined;
 }
 /**
  * The actual configuration settings of a device as it actually operates, e.g., regulation status, time properties.
@@ -95,11 +95,11 @@ export interface DeviceDefinitionProperty extends fhir.BackboneElement {
     /**
      * Property value as a quantity.
      */
-    valueQuantity?: fhir.Quantity[] | undefined;
+    valueQuantity?: (fhir.Quantity | null)[] | undefined;
     /**
      * Property value as a code, e.g., NTP4 (synced to NTP).
      */
-    valueCode?: fhir.CodeableConcept[] | undefined;
+    valueCode?: (fhir.CodeableConcept | null)[] | undefined;
 }
 /**
  * A substance used to create the material(s) of which the device is made.
@@ -133,15 +133,15 @@ export interface DeviceDefinition extends fhir.DomainResource {
     /**
      * Resource Type Name
      */
-    resourceType: "DeviceDefinition";
+    resourceType: "DeviceDefinition" | null;
     /**
      * Unique instance identifiers assigned to a device by the software, manufacturers, other organizations or owners. For example: handle ID.
      */
-    identifier?: fhir.Identifier[] | undefined;
+    identifier?: (fhir.Identifier | null)[] | undefined;
     /**
      * Unique device identifier (UDI) assigned to device label or package.  Note that the Device may include multiple udiCarriers as it either may include just the udiCarrier for the jurisdiction it is sold, or for multiple jurisdictions it could have been sold.
      */
-    udiDeviceIdentifier?: fhir.DeviceDefinitionUdiDeviceIdentifier[] | undefined;
+    udiDeviceIdentifier?: (fhir.DeviceDefinitionUdiDeviceIdentifier | null)[] | undefined;
     /**
      * A name of the manufacturer.
      */
@@ -157,7 +157,7 @@ export interface DeviceDefinition extends fhir.DomainResource {
     /**
      * A name given to the device to identify it.
      */
-    deviceName?: fhir.DeviceDefinitionDeviceName[] | undefined;
+    deviceName?: (fhir.DeviceDefinitionDeviceName | null)[] | undefined;
     /**
      * The model number for the device.
      */
@@ -173,11 +173,11 @@ export interface DeviceDefinition extends fhir.DomainResource {
     /**
      * The capabilities supported on a  device, the standards to which the device conforms for a particular purpose, and used for the communication.
      */
-    specialization?: fhir.DeviceDefinitionSpecialization[] | undefined;
+    specialization?: (fhir.DeviceDefinitionSpecialization | null)[] | undefined;
     /**
      * The available versions of the device, e.g., software versions.
      */
-    version?: string[] | undefined;
+    version?: (string | null)[] | undefined;
     /**
      * Extended properties for primitive element: DeviceDefinition.version
      */
@@ -185,11 +185,11 @@ export interface DeviceDefinition extends fhir.DomainResource {
     /**
      * Safety characteristics of the device.
      */
-    safety?: fhir.CodeableConcept[] | undefined;
+    safety?: (fhir.CodeableConcept | null)[] | undefined;
     /**
      * Shelf Life and storage information.
      */
-    shelfLifeStorage?: fhir.ProductShelfLife[] | undefined;
+    shelfLifeStorage?: (fhir.ProductShelfLife | null)[] | undefined;
     /**
      * Dimensions, color etc.
      */
@@ -197,15 +197,15 @@ export interface DeviceDefinition extends fhir.DomainResource {
     /**
      * Language code for the human-readable text strings produced by the device (all supported).
      */
-    languageCode?: fhir.CodeableConcept[] | undefined;
+    languageCode?: (fhir.CodeableConcept | null)[] | undefined;
     /**
      * Device capabilities.
      */
-    capability?: fhir.DeviceDefinitionCapability[] | undefined;
+    capability?: (fhir.DeviceDefinitionCapability | null)[] | undefined;
     /**
      * The actual configuration settings of a device as it actually operates, e.g., regulation status, time properties.
      */
-    property?: fhir.DeviceDefinitionProperty[] | undefined;
+    property?: (fhir.DeviceDefinitionProperty | null)[] | undefined;
     /**
      * An organization that is responsible for the provision and ongoing maintenance of the device.
      */
@@ -213,7 +213,7 @@ export interface DeviceDefinition extends fhir.DomainResource {
     /**
      * used for troubleshooting etc.
      */
-    contact?: fhir.ContactPoint[] | undefined;
+    contact?: (fhir.ContactPoint | null)[] | undefined;
     /**
      * If the device is running a FHIR server, the network address should  be the Base URL from which a conformance statement may be retrieved.
      */
@@ -233,7 +233,7 @@ export interface DeviceDefinition extends fhir.DomainResource {
     /**
      * Descriptive information, usage information or implantation information that is not captured in an existing element.
      */
-    note?: fhir.Annotation[] | undefined;
+    note?: (fhir.Annotation | null)[] | undefined;
     /**
      * The quantity of the device present in the packaging (e.g. the number of devices present in a pack, or the number of devices in the same package of the medicinal product).
      */
@@ -245,6 +245,6 @@ export interface DeviceDefinition extends fhir.DomainResource {
     /**
      * A substance used to create the material(s) of which the device is made.
      */
-    material?: fhir.DeviceDefinitionMaterial[] | undefined;
+    material?: (fhir.DeviceDefinitionMaterial | null)[] | undefined;
 }
 //# sourceMappingURL=DeviceDefinition.d.ts.map

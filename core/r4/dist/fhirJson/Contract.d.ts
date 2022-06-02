@@ -47,7 +47,7 @@ export interface ContractTermSecurityLabel extends fhir.BackboneElement {
     /**
      * Number used to link this term or term element to the applicable Security Label.
      */
-    number?: number[] | undefined;
+    number?: (number | null)[] | undefined;
     /**
      * Extended properties for primitive element: Contract.term.securityLabel.number
      */
@@ -59,11 +59,11 @@ export interface ContractTermSecurityLabel extends fhir.BackboneElement {
     /**
      * Security label privacy tag that species the applicable privacy and security policies governing this term and/or term elements.
      */
-    category?: fhir.Coding[] | undefined;
+    category?: (fhir.Coding | null)[] | undefined;
     /**
      * Security label privacy tag that species the manner in which term and/or term elements are to be protected.
      */
-    control?: fhir.Coding[] | undefined;
+    control?: (fhir.Coding | null)[] | undefined;
 }
 /**
  * Offer Recipient.
@@ -72,7 +72,7 @@ export interface ContractTermOfferParty extends fhir.BackboneElement {
     /**
      * Participant in the offer.
      */
-    reference: fhir.Reference[] | null;
+    reference: (fhir.Reference | null)[] | null;
     /**
      * How the party participates in the offer.
      */
@@ -170,11 +170,11 @@ export interface ContractTermOffer extends fhir.BackboneElement {
     /**
      * Unique identifier for this particular Contract Provision.
      */
-    identifier?: fhir.Identifier[] | undefined;
+    identifier?: (fhir.Identifier | null)[] | undefined;
     /**
      * Offer Recipient.
      */
-    party?: fhir.ContractTermOfferParty[] | undefined;
+    party?: (fhir.ContractTermOfferParty | null)[] | undefined;
     /**
      * The Contract.topic may be an application for or offer of a policy or service (e.g., uri to a consent directive form or a health insurance policy), which becomes the Contract once accepted by both the grantor and grantee.
      * The Contract Resource may function simply as the computable representation of the executed contract, which may be the attached to the Contract Resource as the “binding” or as the “friendly” electronic form.  For example, a Contract Resource may be automatically populated with the values expressed in a related QuestionnaireResponse.
@@ -193,11 +193,11 @@ export interface ContractTermOffer extends fhir.BackboneElement {
     /**
      * How the decision about a Contract was conveyed.
      */
-    decisionMode?: fhir.CodeableConcept[] | undefined;
+    decisionMode?: (fhir.CodeableConcept | null)[] | undefined;
     /**
      * Response to offer text.
      */
-    answer?: fhir.ContractTermOfferAnswer[] | undefined;
+    answer?: (fhir.ContractTermOfferAnswer | null)[] | undefined;
     /**
      * Human readable form of this Contract Offer.
      */
@@ -209,7 +209,7 @@ export interface ContractTermOffer extends fhir.BackboneElement {
     /**
      * The id of the clause or question text of the offer in the referenced questionnaire/response.
      */
-    linkId?: string[] | undefined;
+    linkId?: (string | null)[] | undefined;
     /**
      * Extended properties for primitive element: Contract.term.offer.linkId
      */
@@ -217,7 +217,7 @@ export interface ContractTermOffer extends fhir.BackboneElement {
     /**
      * Security labels that protects the offer.
      */
-    securityLabelNumber?: number[] | undefined;
+    securityLabelNumber?: (number | null)[] | undefined;
     /**
      * Extended properties for primitive element: Contract.term.offer.securityLabelNumber
      */
@@ -234,7 +234,7 @@ export interface ContractTermAssetContext extends fhir.BackboneElement {
     /**
      * Coded representation of the context generally or of the Referenced entity, such as the asset holder type or location.
      */
-    code?: fhir.CodeableConcept[] | undefined;
+    code?: (fhir.CodeableConcept | null)[] | undefined;
     /**
      * Context description.
      */
@@ -323,7 +323,7 @@ export interface ContractTermAssetValuedItem extends fhir.BackboneElement {
     /**
      * Id  of the clause or question text related to the context of this valuedItem in the referenced form or QuestionnaireResponse.
      */
-    linkId?: string[] | undefined;
+    linkId?: (string | null)[] | undefined;
     /**
      * Extended properties for primitive element: Contract.term.asset.valuedItem.linkId
      */
@@ -331,7 +331,7 @@ export interface ContractTermAssetValuedItem extends fhir.BackboneElement {
     /**
      * A set of security labels that define which terms are controlled by this condition.
      */
-    securityLabelNumber?: number[] | undefined;
+    securityLabelNumber?: (number | null)[] | undefined;
     /**
      * Extended properties for primitive element: Contract.term.asset.valuedItem.securityLabelNumber
      */
@@ -348,15 +348,15 @@ export interface ContractTermAsset extends fhir.BackboneElement {
     /**
      * Target entity type about which the term may be concerned.
      */
-    type?: fhir.CodeableConcept[] | undefined;
+    type?: (fhir.CodeableConcept | null)[] | undefined;
     /**
      * Associated entities.
      */
-    typeReference?: fhir.Reference[] | undefined;
+    typeReference?: (fhir.Reference | null)[] | undefined;
     /**
      * May be a subtype or part of an offered asset.
      */
-    subtype?: fhir.CodeableConcept[] | undefined;
+    subtype?: (fhir.CodeableConcept | null)[] | undefined;
     /**
      * Specifies the applicability of the term to an asset resource instance, and instances it refers to orinstances that refer to it, and/or are owned by the offeree.
      */
@@ -364,7 +364,7 @@ export interface ContractTermAsset extends fhir.BackboneElement {
     /**
      * Circumstance of the asset.
      */
-    context?: fhir.ContractTermAssetContext[] | undefined;
+    context?: (fhir.ContractTermAssetContext | null)[] | undefined;
     /**
      * Description of the quality and completeness of the asset that imay be a factor in its valuation.
      */
@@ -376,15 +376,15 @@ export interface ContractTermAsset extends fhir.BackboneElement {
     /**
      * Type of Asset availability for use or ownership.
      */
-    periodType?: fhir.CodeableConcept[] | undefined;
+    periodType?: (fhir.CodeableConcept | null)[] | undefined;
     /**
      * Asset relevant contractual time period.
      */
-    period?: fhir.Period[] | undefined;
+    period?: (fhir.Period | null)[] | undefined;
     /**
      * Time period of asset use.
      */
-    usePeriod?: fhir.Period[] | undefined;
+    usePeriod?: (fhir.Period | null)[] | undefined;
     /**
      * Clause or question text (Prose Object) concerning the asset in a linked form, such as a QuestionnaireResponse used in the formation of the contract.
      */
@@ -396,7 +396,7 @@ export interface ContractTermAsset extends fhir.BackboneElement {
     /**
      * Id [identifier??] of the clause or question text about the asset in the referenced form or QuestionnaireResponse.
      */
-    linkId?: string[] | undefined;
+    linkId?: (string | null)[] | undefined;
     /**
      * Extended properties for primitive element: Contract.term.asset.linkId
      */
@@ -404,11 +404,11 @@ export interface ContractTermAsset extends fhir.BackboneElement {
     /**
      * Response to assets.
      */
-    answer?: fhir.ContractTermOfferAnswer[] | undefined;
+    answer?: (fhir.ContractTermOfferAnswer | null)[] | undefined;
     /**
      * Security labels that protects the asset.
      */
-    securityLabelNumber?: number[] | undefined;
+    securityLabelNumber?: (number | null)[] | undefined;
     /**
      * Extended properties for primitive element: Contract.term.asset.securityLabelNumber
      */
@@ -416,7 +416,7 @@ export interface ContractTermAsset extends fhir.BackboneElement {
     /**
      * Contract Valued Item List.
      */
-    valuedItem?: fhir.ContractTermAssetValuedItem[] | undefined;
+    valuedItem?: (fhir.ContractTermAssetValuedItem | null)[] | undefined;
 }
 /**
  * Entity of the action.
@@ -425,7 +425,7 @@ export interface ContractTermActionSubject extends fhir.BackboneElement {
     /**
      * The entity the action is performed or not performed on or for.
      */
-    reference: fhir.Reference[] | null;
+    reference: (fhir.Reference | null)[] | null;
     /**
      * Role type of agent assigned roles in this Contract.
      */
@@ -451,7 +451,7 @@ export interface ContractTermAction extends fhir.BackboneElement {
     /**
      * Entity of the action.
      */
-    subject?: fhir.ContractTermActionSubject[] | undefined;
+    subject?: (fhir.ContractTermActionSubject | null)[] | undefined;
     /**
      * Reason or purpose for the action stipulated by this Contract Provision.
      */
@@ -459,7 +459,7 @@ export interface ContractTermAction extends fhir.BackboneElement {
     /**
      * Id [identifier??] of the clause or question text related to this action in the referenced form or QuestionnaireResponse.
      */
-    linkId?: string[] | undefined;
+    linkId?: (string | null)[] | undefined;
     /**
      * Extended properties for primitive element: Contract.term.action.linkId
      */
@@ -475,7 +475,7 @@ export interface ContractTermAction extends fhir.BackboneElement {
     /**
      * Id [identifier??] of the clause or question text related to the requester of this action in the referenced form or QuestionnaireResponse.
      */
-    contextLinkId?: string[] | undefined;
+    contextLinkId?: (string | null)[] | undefined;
     /**
      * Extended properties for primitive element: Contract.term.action.contextLinkId
      */
@@ -499,11 +499,11 @@ export interface ContractTermAction extends fhir.BackboneElement {
     /**
      * Who or what initiated the action and has responsibility for its activation.
      */
-    requester?: fhir.Reference[] | undefined;
+    requester?: (fhir.Reference | null)[] | undefined;
     /**
      * Id [identifier??] of the clause or question text related to the requester of this action in the referenced form or QuestionnaireResponse.
      */
-    requesterLinkId?: string[] | undefined;
+    requesterLinkId?: (string | null)[] | undefined;
     /**
      * Extended properties for primitive element: Contract.term.action.requesterLinkId
      */
@@ -511,7 +511,7 @@ export interface ContractTermAction extends fhir.BackboneElement {
     /**
      * The type of individual that is desired or required to perform or not perform the action.
      */
-    performerType?: fhir.CodeableConcept[] | undefined;
+    performerType?: (fhir.CodeableConcept | null)[] | undefined;
     /**
      * The type of role or competency of an individual desired or required to perform or not perform the action.
      */
@@ -523,7 +523,7 @@ export interface ContractTermAction extends fhir.BackboneElement {
     /**
      * Id [identifier??] of the clause or question text related to the reason type or reference of this  action in the referenced form or QuestionnaireResponse.
      */
-    performerLinkId?: string[] | undefined;
+    performerLinkId?: (string | null)[] | undefined;
     /**
      * Extended properties for primitive element: Contract.term.action.performerLinkId
      */
@@ -531,15 +531,15 @@ export interface ContractTermAction extends fhir.BackboneElement {
     /**
      * Rationale for the action to be performed or not performed. Describes why the action is permitted or prohibited.
      */
-    reasonCode?: fhir.CodeableConcept[] | undefined;
+    reasonCode?: (fhir.CodeableConcept | null)[] | undefined;
     /**
      * Indicates another resource whose existence justifies permitting or not permitting this action.
      */
-    reasonReference?: fhir.Reference[] | undefined;
+    reasonReference?: (fhir.Reference | null)[] | undefined;
     /**
      * Describes why the action is to be performed or not performed in textual form.
      */
-    reason?: string[] | undefined;
+    reason?: (string | null)[] | undefined;
     /**
      * Extended properties for primitive element: Contract.term.action.reason
      */
@@ -547,7 +547,7 @@ export interface ContractTermAction extends fhir.BackboneElement {
     /**
      * Id [identifier??] of the clause or question text related to the reason type or reference of this  action in the referenced form or QuestionnaireResponse.
      */
-    reasonLinkId?: string[] | undefined;
+    reasonLinkId?: (string | null)[] | undefined;
     /**
      * Extended properties for primitive element: Contract.term.action.reasonLinkId
      */
@@ -555,11 +555,11 @@ export interface ContractTermAction extends fhir.BackboneElement {
     /**
      * Comments made about the term action made by the requester, performer, subject or other participants.
      */
-    note?: fhir.Annotation[] | undefined;
+    note?: (fhir.Annotation | null)[] | undefined;
     /**
      * Security labels that protects the action.
      */
-    securityLabelNumber?: number[] | undefined;
+    securityLabelNumber?: (number | null)[] | undefined;
     /**
      * Extended properties for primitive element: Contract.term.action.securityLabelNumber
      */
@@ -612,7 +612,7 @@ export interface ContractTerm extends fhir.BackboneElement {
     /**
      * Security labels that protect the handling of information about the term and its elements, which may be specifically identified..
      */
-    securityLabel?: fhir.ContractTermSecurityLabel[] | undefined;
+    securityLabel?: (fhir.ContractTermSecurityLabel | null)[] | undefined;
     /**
      * The matter of concern in the context of this provision of the agrement.
      */
@@ -620,16 +620,16 @@ export interface ContractTerm extends fhir.BackboneElement {
     /**
      * Contract Term Asset List.
      */
-    asset?: fhir.ContractTermAsset[] | undefined;
+    asset?: (fhir.ContractTermAsset | null)[] | undefined;
     /**
      * Several agents may be associated (i.e. has some responsibility for an activity) with an activity and vice-versa.
      * For example, in cases of actions initiated by one user for other users, or in events that involve more than one user, hardware device, software, or system process. However, only one user may be the initiator/requestor for the event.
      */
-    action?: fhir.ContractTermAction[] | undefined;
+    action?: (fhir.ContractTermAction | null)[] | undefined;
     /**
      * Nested group of Contract Provisions.
      */
-    group?: fhir.ContractTerm[] | undefined;
+    group?: (fhir.ContractTerm | null)[] | undefined;
 }
 /**
  * Signers who are principal parties to the contract are bound by the Contract.activity related to the Contract.topic, and the Contract.term(s), which either extend or restrict the overall action on the topic by, for example, stipulating specific policies or obligations constraining actions, action reason, or agents with respect to some or all of the topic.
@@ -647,7 +647,7 @@ export interface ContractSigner extends fhir.BackboneElement {
     /**
      * Legally binding Contract DSIG signature contents in Base64.
      */
-    signature: fhir.Signature[] | null;
+    signature: (fhir.Signature | null)[] | null;
 }
 /**
  * The "patient friendly language" versionof the Contract in whole or in parts. "Patient friendly language" means the representation of the Contract and Contract Provisions in a manner that is readily accessible and understandable by a layperson in accordance with best practices for communication styles that ensure that those agreeing to or signing the Contract understand the roles, actions, obligations, responsibilities, and implication of the agreement.
@@ -695,11 +695,11 @@ export interface Contract extends fhir.DomainResource {
     /**
      * Resource Type Name
      */
-    resourceType: "Contract";
+    resourceType: "Contract" | null;
     /**
      * Unique identifier for this Contract or a derivative that references a Source Contract.
      */
-    identifier?: fhir.Identifier[] | undefined;
+    identifier?: (fhir.Identifier | null)[] | undefined;
     /**
      * Used in a domain that uses a supplied contract repository.
      */
@@ -765,19 +765,19 @@ export interface Contract extends fhir.DomainResource {
      * The Contract.subject is an entity that has some role with respect to the Contract.topic and Contract.topic.term, which is of focal interest to the parties to the contract and likely impacted in a significant way by the Contract.action/Contract.action.reason and the Contract.term.action/Contract.action.reason.
      * In many cases, the Contract.subject is a Contract.signer if the subject is an adult; has a legal interest in the contract; and incompetent to participate in the contract agreement.
      */
-    subject?: fhir.Reference[] | undefined;
+    subject?: (fhir.Reference | null)[] | undefined;
     /**
      * A formally or informally recognized grouping of people, principals, organizations, or jurisdictions formed for the purpose of achieving some form of collective action such as the promulgation, administration and enforcement of contracts and policies.
      */
-    authority?: fhir.Reference[] | undefined;
+    authority?: (fhir.Reference | null)[] | undefined;
     /**
      * Recognized governance framework or system operating with a circumscribed scope in accordance with specified principles, policies, processes or procedures for managing rights, actions, or behaviors of parties or principals relative to resources.
      */
-    domain?: fhir.Reference[] | undefined;
+    domain?: (fhir.Reference | null)[] | undefined;
     /**
      * Sites in which the contract is complied with,  exercised, or in force.
      */
-    site?: fhir.Reference[] | undefined;
+    site?: (fhir.Reference | null)[] | undefined;
     /**
      * The name is not expected to be globally unique. The name should be a simple alphanumeric type name to ensure that it is machine-processing friendly.
      */
@@ -805,7 +805,7 @@ export interface Contract extends fhir.DomainResource {
     /**
      * Alternative representation of the title for this Contract definition, derivative, or instance in any legal state., e.g., a domain specific contract number related to legislation.
      */
-    alias?: string[] | undefined;
+    alias?: (string | null)[] | undefined;
     /**
      * Extended properties for primitive element: Contract.alias
      */
@@ -833,7 +833,7 @@ export interface Contract extends fhir.DomainResource {
     /**
      * Sub-category for the Contract that distinguishes the kinds of systems that would be interested in the Contract within the context of the Contract's scope.
      */
-    subType?: fhir.CodeableConcept[] | undefined;
+    subType?: (fhir.CodeableConcept | null)[] | undefined;
     /**
      * Precusory content developed with a focus and intent of supporting the formation a Contract instance, which may be associated with and transformable into a Contract.
      */
@@ -841,32 +841,32 @@ export interface Contract extends fhir.DomainResource {
     /**
      * One or more Contract Provisions, which may be related and conveyed as a group, and may contain nested groups.
      */
-    term?: fhir.ContractTerm[] | undefined;
+    term?: (fhir.ContractTerm | null)[] | undefined;
     /**
      * Information that may be needed by/relevant to the performer in their execution of this term action.
      */
-    supportingInfo?: fhir.Reference[] | undefined;
+    supportingInfo?: (fhir.Reference | null)[] | undefined;
     /**
      * Links to Provenance records for past versions of this Contract definition, derivative, or instance, which identify key state transitions or updates that are likely to be relevant to a user looking at the current version of the Contract.  The Provence.entity indicates the target that was changed in the update. http://build.fhir.org/provenance-definitions.html#Provenance.entity.
      */
-    relevantHistory?: fhir.Reference[] | undefined;
+    relevantHistory?: (fhir.Reference | null)[] | undefined;
     /**
      * Signers who are principal parties to the contract are bound by the Contract.activity related to the Contract.topic, and the Contract.term(s), which either extend or restrict the overall action on the topic by, for example, stipulating specific policies or obligations constraining actions, action reason, or agents with respect to some or all of the topic.
      * For example, specifying how policies or obligations shall constrain actions and action reasons permitted or denied on all or a subset of the Contract.topic (e.g., all or a portion of property being transferred by the contract), agents (e.g., who can resell, assign interests, or alter the property being transferred by the contract), actions, and action reasons; or with respect to Contract.terms, stipulating, extending, or limiting the Contract.period of applicability or valuation of items under consideration.
      */
-    signer?: fhir.ContractSigner[] | undefined;
+    signer?: (fhir.ContractSigner | null)[] | undefined;
     /**
      * The "patient friendly language" versionof the Contract in whole or in parts. "Patient friendly language" means the representation of the Contract and Contract Provisions in a manner that is readily accessible and understandable by a layperson in accordance with best practices for communication styles that ensure that those agreeing to or signing the Contract understand the roles, actions, obligations, responsibilities, and implication of the agreement.
      */
-    friendly?: fhir.ContractFriendly[] | undefined;
+    friendly?: (fhir.ContractFriendly | null)[] | undefined;
     /**
      * List of Legal expressions or representations of this Contract.
      */
-    legal?: fhir.ContractLegal[] | undefined;
+    legal?: (fhir.ContractLegal | null)[] | undefined;
     /**
      * List of Computable Policy Rule Language Representations of this Contract.
      */
-    rule?: fhir.ContractRule[] | undefined;
+    rule?: (fhir.ContractRule | null)[] | undefined;
     /**
      * Legally binding Contract: This is the signed and legally recognized representation of the Contract, which is considered the "source of truth" and which would be the basis for legal action related to enforcement of this Contract.
      */

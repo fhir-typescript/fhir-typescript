@@ -31,15 +31,15 @@ export interface DiagnosticReport extends fhir.DomainResource {
   /**
    * Resource Type Name
    */
-  resourceType: "DiagnosticReport";
+  resourceType: "DiagnosticReport"|null;
   /**
    * Usually assigned by the Information System of the diagnostic service provider (filler id).
    */
-  identifier?: fhir.Identifier[]|undefined;
+  identifier?: (fhir.Identifier|null)[]|undefined;
   /**
    * Note: Usually there is one test request for each result, however in some circumstances multiple test requests may be represented using a single test result resource. Note that there are also cases where one request leads to multiple reports.
    */
-  basedOn?: fhir.Reference[]|undefined;
+  basedOn?: (fhir.Reference|null)[]|undefined;
   /**
    * The status of the diagnostic report.
    */
@@ -51,7 +51,7 @@ export interface DiagnosticReport extends fhir.DomainResource {
   /**
    * Multiple categories are allowed using various categorization schemes.   The level of granularity is defined by the category concepts in the value set. More fine-grained filtering can be performed using the metadata and/or terminology hierarchy in DiagnosticReport.code.
    */
-  category?: fhir.CodeableConcept[]|undefined;
+  category?: (fhir.CodeableConcept|null)[]|undefined;
   /**
    * A code or name that describes this diagnostic report.
    */
@@ -87,27 +87,27 @@ export interface DiagnosticReport extends fhir.DomainResource {
   /**
    * This is not necessarily the source of the atomic data items or the entity that interpreted the results. It is the entity that takes responsibility for the clinical report.
    */
-  performer?: fhir.Reference[]|undefined;
+  performer?: (fhir.Reference|null)[]|undefined;
   /**
    * Might not be the same entity that takes responsibility for the clinical report.
    */
-  resultsInterpreter?: fhir.Reference[]|undefined;
+  resultsInterpreter?: (fhir.Reference|null)[]|undefined;
   /**
    * If the specimen is sufficiently specified with a code in the test result name, then this additional data may be redundant. If there are multiple specimens, these may be represented per observation or group.
    */
-  specimen?: fhir.Reference[]|undefined;
+  specimen?: (fhir.Reference|null)[]|undefined;
   /**
    * Observations can contain observations.
    */
-  result?: fhir.Reference[]|undefined;
+  result?: (fhir.Reference|null)[]|undefined;
   /**
    * ImagingStudy and the image element are somewhat overlapping - typically, the list of image references in the image element will also be found in one of the imaging study resources. However, each caters to different types of displays for different types of purposes. Neither, either, or both may be provided.
    */
-  imagingStudy?: fhir.Reference[]|undefined;
+  imagingStudy?: (fhir.Reference|null)[]|undefined;
   /**
    * A list of key images associated with this report. The images are generally created during the diagnostic process, and may be directly of the patient, or of treated specimens (i.e. slides of interest).
    */
-  media?: fhir.DiagnosticReportMedia[]|undefined;
+  media?: (fhir.DiagnosticReportMedia|null)[]|undefined;
   /**
    * Concise and clinically contextualized summary conclusion (interpretation/impression) of the diagnostic report.
    */
@@ -119,9 +119,9 @@ export interface DiagnosticReport extends fhir.DomainResource {
   /**
    * One or more codes that represent the summary conclusion (interpretation/impression) of the diagnostic report.
    */
-  conclusionCode?: fhir.CodeableConcept[]|undefined;
+  conclusionCode?: (fhir.CodeableConcept|null)[]|undefined;
   /**
    * "application/pdf" is recommended as the most reliable and interoperable in this context.
    */
-  presentedForm?: fhir.Attachment[]|undefined;
+  presentedForm?: (fhir.Attachment|null)[]|undefined;
 }

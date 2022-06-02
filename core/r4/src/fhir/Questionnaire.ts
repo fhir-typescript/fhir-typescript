@@ -737,7 +737,7 @@ export interface QuestionnaireArgs extends fhir.DomainResourceArgs {
   /**
    * The URL of a Questionnaire that this Questionnaire is based on.
    */
-  derivedFrom?: fhir.FhirCanonical[]|string[]|undefined;
+  derivedFrom?: fhir.FhirCanonical[]|(string|null)[]|undefined;
   /**
    * Extended properties for primitive element: Questionnaire.derivedFrom
    */
@@ -761,7 +761,7 @@ export interface QuestionnaireArgs extends fhir.DomainResourceArgs {
   /**
    * If none are specified, then the subject is unlimited.
    */
-  subjectType?: fhir.FhirCode[]|string[]|undefined;
+  subjectType?: fhir.FhirCode[]|(string|null)[]|undefined;
   /**
    * Extended properties for primitive element: Questionnaire.subjectType
    */

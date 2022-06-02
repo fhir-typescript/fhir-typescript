@@ -32,7 +32,7 @@ export interface AuditEventAgent extends fhir.BackboneElement {
     /**
      * Should be roles relevant to the event. Should  not be an exhaustive list of roles.
      */
-    role?: fhir.CodeableConcept[] | undefined;
+    role?: (fhir.CodeableConcept | null)[] | undefined;
     /**
      * Where a User ID is available it will go into who.identifier.
      */
@@ -68,7 +68,7 @@ export interface AuditEventAgent extends fhir.BackboneElement {
     /**
      * For example: Where an OAuth token authorizes, the unique identifier from the OAuth token is placed into the policy element Where a policy engine (e.g. XACML) holds policy logic, the unique policy identifier is placed into the policy element.
      */
-    policy?: string[] | undefined;
+    policy?: (string | null)[] | undefined;
     /**
      * Extended properties for primitive element: AuditEvent.agent.policy
      */
@@ -84,7 +84,7 @@ export interface AuditEventAgent extends fhir.BackboneElement {
     /**
      * Use AuditEvent.agent.purposeOfUse when you know that is specific to the agent, otherwise use AuditEvent.purposeOfEvent. For example, during a machine-to-machine transfer it might not be obvious to the audit system who caused the event, but it does know why.
      */
-    purposeOfUse?: fhir.CodeableConcept[] | undefined;
+    purposeOfUse?: (fhir.CodeableConcept | null)[] | undefined;
 }
 /**
  * Since multi-tier, distributed, or composite applications make source identification ambiguous, this collection of fields may repeat for each application or process actively involved in the event. For example, multiple value-sets can identify participating web servers, application processes, and database server threads in an n-tier distributed application. Passive event participants (e.g. low-level network transports) need not be identified.
@@ -105,7 +105,7 @@ export interface AuditEventSource extends fhir.BackboneElement {
     /**
      * Code specifying the type of source where event originated.
      */
-    type?: fhir.Coding[] | undefined;
+    type?: (fhir.Coding | null)[] | undefined;
 }
 /**
  * Tagged value pairs for conveying additional information about the entity.
@@ -159,7 +159,7 @@ export interface AuditEventEntity extends fhir.BackboneElement {
     /**
      * Copied from entity meta security tags.
      */
-    securityLabel?: fhir.Coding[] | undefined;
+    securityLabel?: (fhir.Coding | null)[] | undefined;
     /**
      * This field may be used in a query/report to identify audit events for a specific person.  For example, where multiple synonymous entity identifiers (patient number, medical record number, encounter number, etc.) have been used.
      */
@@ -187,7 +187,7 @@ export interface AuditEventEntity extends fhir.BackboneElement {
     /**
      * Tagged value pairs for conveying additional information about the entity.
      */
-    detail?: fhir.AuditEventEntityDetail[] | undefined;
+    detail?: (fhir.AuditEventEntityDetail | null)[] | undefined;
 }
 /**
  * A record of an event made for purposes of maintaining a security log. Typical uses include detection of intrusion attempts and monitoring for inappropriate usage.
@@ -196,7 +196,7 @@ export interface AuditEvent extends fhir.DomainResource {
     /**
      * Resource Type Name
      */
-    resourceType: "AuditEvent";
+    resourceType: "AuditEvent" | null;
     /**
      * Identifier for a family of the event.  For example, a menu item, program, rule, policy, function code, application name or URL. It identifies the performed function.
      */
@@ -204,7 +204,7 @@ export interface AuditEvent extends fhir.DomainResource {
     /**
      * Identifier for the category of event.
      */
-    subtype?: fhir.Coding[] | undefined;
+    subtype?: (fhir.Coding | null)[] | undefined;
     /**
      * Indicator for type of action performed during the event that generated the audit.
      */
@@ -244,12 +244,12 @@ export interface AuditEvent extends fhir.DomainResource {
     /**
      * Use AuditEvent.agent.purposeOfUse when you know that it is specific to the agent, otherwise use AuditEvent.purposeOfEvent. For example, during a machine-to-machine transfer it might not be obvious to the audit system who caused the event, but it does know why.
      */
-    purposeOfEvent?: fhir.CodeableConcept[] | undefined;
+    purposeOfEvent?: (fhir.CodeableConcept | null)[] | undefined;
     /**
      * Several agents may be associated (i.e. have some responsibility for an activity) with an event or activity.
      * For example, an activity may be initiated by one user for other users or involve more than one user. However, only one user may be the initiator/requestor for the activity.
      */
-    agent: fhir.AuditEventAgent[] | null;
+    agent: (fhir.AuditEventAgent | null)[] | null;
     /**
      * Since multi-tier, distributed, or composite applications make source identification ambiguous, this collection of fields may repeat for each application or process actively involved in the event. For example, multiple value-sets can identify participating web servers, application processes, and database server threads in an n-tier distributed application. Passive event participants (e.g. low-level network transports) need not be identified.
      */
@@ -257,6 +257,6 @@ export interface AuditEvent extends fhir.DomainResource {
     /**
      * Required unless the values for event identification, agent identification, and audit source identification are sufficient to document the entire auditable event. Because events may have more than one entity, this group can be a repeating set of values.
      */
-    entity?: fhir.AuditEventEntity[] | undefined;
+    entity?: (fhir.AuditEventEntity | null)[] | undefined;
 }
 //# sourceMappingURL=AuditEvent.d.ts.map

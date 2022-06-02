@@ -53,11 +53,11 @@ export interface EpisodeOfCare extends fhir.DomainResource {
   /**
    * Resource Type Name
    */
-  resourceType: "EpisodeOfCare";
+  resourceType: "EpisodeOfCare"|null;
   /**
    * The EpisodeOfCare may be known by different identifiers for different contexts of use, such as when an external agency is tracking the Episode for funding purposes.
    */
-  identifier?: fhir.Identifier[]|undefined;
+  identifier?: (fhir.Identifier|null)[]|undefined;
   /**
    * This element is labeled as a modifier because the status contains codes that mark the episode as not currently valid.
    */
@@ -69,15 +69,15 @@ export interface EpisodeOfCare extends fhir.DomainResource {
   /**
    * The history of statuses that the EpisodeOfCare has been through (without requiring processing the history of the resource).
    */
-  statusHistory?: fhir.EpisodeOfCareStatusHistory[]|undefined;
+  statusHistory?: (fhir.EpisodeOfCareStatusHistory|null)[]|undefined;
   /**
    * The type can be very important in processing as this could be used in determining if the EpisodeOfCare is relevant to specific government reporting, or other types of classifications.
    */
-  type?: fhir.CodeableConcept[]|undefined;
+  type?: (fhir.CodeableConcept|null)[]|undefined;
   /**
    * The list of diagnosis relevant to this episode of care.
    */
-  diagnosis?: fhir.EpisodeOfCareDiagnosis[]|undefined;
+  diagnosis?: (fhir.EpisodeOfCareDiagnosis|null)[]|undefined;
   /**
    * The patient who is the focus of this episode of care.
    */
@@ -93,7 +93,7 @@ export interface EpisodeOfCare extends fhir.DomainResource {
   /**
    * Referral Request(s) that are fulfilled by this EpisodeOfCare, incoming referrals.
    */
-  referralRequest?: fhir.Reference[]|undefined;
+  referralRequest?: (fhir.Reference|null)[]|undefined;
   /**
    * The practitioner that is the care manager/care coordinator for this patient.
    */
@@ -101,9 +101,9 @@ export interface EpisodeOfCare extends fhir.DomainResource {
   /**
    * The list of practitioners that may be facilitating this episode of care for specific purposes.
    */
-  team?: fhir.Reference[]|undefined;
+  team?: (fhir.Reference|null)[]|undefined;
   /**
    * The billing system may choose to allocate billable items associated with the EpisodeOfCare to different referenced Accounts based on internal business rules.
    */
-  account?: fhir.Reference[]|undefined;
+  account?: (fhir.Reference|null)[]|undefined;
 }

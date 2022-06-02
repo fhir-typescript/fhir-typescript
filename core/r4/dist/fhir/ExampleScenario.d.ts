@@ -853,7 +853,7 @@ export interface ExampleScenarioArgs extends fhir.DomainResourceArgs {
     /**
      * Another nested workflow.
      */
-    workflow?: fhir.FhirCanonical[] | string[] | undefined;
+    workflow?: fhir.FhirCanonical[] | (string | null)[] | undefined;
     /**
      * Extended properties for primitive element: ExampleScenario.workflow
      */

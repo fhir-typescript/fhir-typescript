@@ -440,7 +440,7 @@ export interface ResearchElementDefinitionArgs extends fhir.DomainResourceArgs {
   /**
    * A human-readable string to clarify or explain concepts about the resource.
    */
-  comment?: fhir.FhirString[]|string[]|undefined;
+  comment?: fhir.FhirString[]|(string|null)[]|undefined;
   /**
    * Extended properties for primitive element: ResearchElementDefinition.comment
    */
@@ -524,7 +524,7 @@ export interface ResearchElementDefinitionArgs extends fhir.DomainResourceArgs {
   /**
    * A reference to a Library resource containing the formal logic used by the ResearchElementDefinition.
    */
-  library?: fhir.FhirCanonical[]|string[]|undefined;
+  library?: fhir.FhirCanonical[]|(string|null)[]|undefined;
   /**
    * Extended properties for primitive element: ResearchElementDefinition.library
    */

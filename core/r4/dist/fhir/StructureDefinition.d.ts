@@ -346,7 +346,7 @@ export interface StructureDefinitionArgs extends fhir.DomainResourceArgs {
     /**
      * The rules are only evaluated when the extension is present. When evaluating the invariant, the FHIRPath focus is the element that holds the extension, and %extension refers to the extension itself.
      */
-    contextInvariant?: fhir.FhirString[] | string[] | undefined;
+    contextInvariant?: fhir.FhirString[] | (string | null)[] | undefined;
     /**
      * Extended properties for primitive element: StructureDefinition.contextInvariant
      */

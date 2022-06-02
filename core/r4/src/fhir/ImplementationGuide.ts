@@ -278,7 +278,7 @@ export interface ImplementationGuideDefinitionResourceArgs extends fhir.Backbone
   /**
    * The resource SHALL be valid against all the versions it is specified to apply to. If the resource referred to is a StructureDefinition, the fhirVersion stated in the StructureDefinition cannot disagree with the version specified here; the specified versions SHALL include the version specified by the StructureDefinition, and may include additional versions using the [applicable-version](extension-structuredefinition-applicable-version.html) extension.
    */
-  fhirVersion?: fhir.FhirCode[]|string[]|undefined;
+  fhirVersion?: fhir.FhirCode[]|(string|null)[]|undefined;
   /**
    * Extended properties for primitive element: ImplementationGuide.definition.resource.fhirVersion
    */
@@ -927,7 +927,7 @@ export interface ImplementationGuideManifestPageArgs extends fhir.BackboneElemen
   /**
    * Appending 'rendering' + "/" + page.name + "#" + page.anchor should resolve to the anchor.
    */
-  anchor?: fhir.FhirString[]|string[]|undefined;
+  anchor?: fhir.FhirString[]|(string|null)[]|undefined;
   /**
    * Extended properties for primitive element: ImplementationGuide.manifest.page.anchor
    */
@@ -1017,7 +1017,7 @@ export interface ImplementationGuideManifestArgs extends fhir.BackboneElementArg
   /**
    * Indicates a relative path to an image that exists within the IG.
    */
-  image?: fhir.FhirString[]|string[]|undefined;
+  image?: fhir.FhirString[]|(string|null)[]|undefined;
   /**
    * Extended properties for primitive element: ImplementationGuide.manifest.image
    */
@@ -1025,7 +1025,7 @@ export interface ImplementationGuideManifestArgs extends fhir.BackboneElementArg
   /**
    * Indicates the relative path of an additional non-page, non-image file that is part of the IG - e.g. zip, jar and similar files that could be the target of a hyperlink in a derived IG.
    */
-  other?: fhir.FhirString[]|string[]|undefined;
+  other?: fhir.FhirString[]|(string|null)[]|undefined;
   /**
    * Extended properties for primitive element: ImplementationGuide.manifest.other
    */
@@ -1233,7 +1233,7 @@ export interface ImplementationGuideArgs extends fhir.DomainResourceArgs {
   /**
    * Most implementation guides target a single version - e.g. they describe how to use a particular version, and the profiles and examples etc are valid for that version. But some implementation guides describe how to use multiple different versions of FHIR to solve the same problem, or in concert with each other. Typically, the requirement to support multiple versions arises as implementation matures and different implementation communities are stuck at different versions by regulation or market dynamics.
    */
-  fhirVersion: fhir.FhirCode[]|string[]|undefined;
+  fhirVersion: fhir.FhirCode[]|(string|null)[]|undefined;
   /**
    * Extended properties for primitive element: ImplementationGuide.fhirVersion
    */

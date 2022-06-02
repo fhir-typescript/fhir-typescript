@@ -27,19 +27,19 @@ export interface CommunicationRequest extends fhir.DomainResource {
     /**
      * Resource Type Name
      */
-    resourceType: "CommunicationRequest";
+    resourceType: "CommunicationRequest" | null;
     /**
      * This is a business identifier, not a resource identifier (see [discussion](resource.html#identifiers)).  It is best practice for the identifier to only appear on a single resource instance, however business practices may occasionally dictate that multiple resource instances with the same identifier can exist - possibly even with different resource types.  For example, multiple Patient and a Person resource instance might share the same social insurance number.
      */
-    identifier?: fhir.Identifier[] | undefined;
+    identifier?: (fhir.Identifier | null)[] | undefined;
     /**
      * A plan or proposal that is fulfilled in whole or in part by this request.
      */
-    basedOn?: fhir.Reference[] | undefined;
+    basedOn?: (fhir.Reference | null)[] | undefined;
     /**
      * The replacement could be because the initial request was immediately rejected (due to an issue) or because the previous request was completed, but the need for the action described by the request remains ongoing.
      */
-    replaces?: fhir.Reference[] | undefined;
+    replaces?: (fhir.Reference | null)[] | undefined;
     /**
      * Requests are linked either by a "basedOn" relationship (i.e. one request is fulfilling another) or by having a common requisition.  Requests that are part of the same requisition are generally treated independently from the perspective of changing their state or maintaining them after initial creation.
      */
@@ -59,7 +59,7 @@ export interface CommunicationRequest extends fhir.DomainResource {
     /**
      * There may be multiple axes of categorization and one communication request may serve multiple purposes.
      */
-    category?: fhir.CodeableConcept[] | undefined;
+    category?: (fhir.CodeableConcept | null)[] | undefined;
     /**
      * Characterizes how quickly the proposed act must be initiated. Includes concepts such as stat, urgent, routine.
      */
@@ -79,7 +79,7 @@ export interface CommunicationRequest extends fhir.DomainResource {
     /**
      * A channel that was used for this communication (e.g. email, fax).
      */
-    medium?: fhir.CodeableConcept[] | undefined;
+    medium?: (fhir.CodeableConcept | null)[] | undefined;
     /**
      * The patient or group that is the focus of this communication request.
      */
@@ -87,7 +87,7 @@ export interface CommunicationRequest extends fhir.DomainResource {
     /**
      * Don't use CommunicationRequest.about element when a more specific element exists, such as basedOn, reasonReference, or replaces.
      */
-    about?: fhir.Reference[] | undefined;
+    about?: (fhir.Reference | null)[] | undefined;
     /**
      * This will typically be the encounter the event occurred within, but some activities may be initiated prior to or after the official completion of an encounter but still be tied to the context of the encounter.
      */
@@ -95,7 +95,7 @@ export interface CommunicationRequest extends fhir.DomainResource {
     /**
      * Text, attachment(s), or resource(s) to be communicated to the recipient.
      */
-    payload?: fhir.CommunicationRequestPayload[] | undefined;
+    payload?: (fhir.CommunicationRequestPayload | null)[] | undefined;
     /**
      * The time when this communication is to occur.
      */
@@ -123,7 +123,7 @@ export interface CommunicationRequest extends fhir.DomainResource {
     /**
      * The entity (e.g. person, organization, clinical information system, device, group, or care team) which is the intended target of the communication.
      */
-    recipient?: fhir.Reference[] | undefined;
+    recipient?: (fhir.Reference | null)[] | undefined;
     /**
      * The entity (e.g. person, organization, clinical information system, or device) which is to be the source of the communication.
      */
@@ -131,14 +131,14 @@ export interface CommunicationRequest extends fhir.DomainResource {
     /**
      * Textual reasons can be captured using reasonCode.text.
      */
-    reasonCode?: fhir.CodeableConcept[] | undefined;
+    reasonCode?: (fhir.CodeableConcept | null)[] | undefined;
     /**
      * Indicates another resource whose existence justifies this request.
      */
-    reasonReference?: fhir.Reference[] | undefined;
+    reasonReference?: (fhir.Reference | null)[] | undefined;
     /**
      * Comments made about the request by the requester, sender, recipient, subject or other participants.
      */
-    note?: fhir.Annotation[] | undefined;
+    note?: (fhir.Annotation | null)[] | undefined;
 }
 //# sourceMappingURL=CommunicationRequest.d.ts.map

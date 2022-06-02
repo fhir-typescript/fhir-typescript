@@ -22,6 +22,6 @@ export interface Contributor extends fhir.FhirElement {
     /**
      * Contact details to assist a user in finding and communicating with the contributor.
      */
-    contact?: fhir.ContactDetail[] | undefined;
+    contact?: (fhir.ContactDetail | null)[] | undefined;
 }
 //# sourceMappingURL=Contributor.d.ts.map

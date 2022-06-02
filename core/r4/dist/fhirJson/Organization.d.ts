@@ -14,7 +14,7 @@ export interface OrganizationContact extends fhir.BackboneElement {
     /**
      * A contact detail (e.g. a telephone number or an email address) by which the party may be contacted.
      */
-    telecom?: fhir.ContactPoint[] | undefined;
+    telecom?: (fhir.ContactPoint | null)[] | undefined;
     /**
      * Visiting or postal addresses for the contact.
      */
@@ -27,11 +27,11 @@ export interface Organization extends fhir.DomainResource {
     /**
      * Resource Type Name
      */
-    resourceType: "Organization";
+    resourceType: "Organization" | null;
     /**
      * Identifier for the organization that is used to identify the organization across multiple disparate systems.
      */
-    identifier?: fhir.Identifier[] | undefined;
+    identifier?: (fhir.Identifier | null)[] | undefined;
     /**
      * This active flag is not intended to be used to mark an organization as temporarily closed or under construction. Instead the Location(s) within the Organization should have the suspended status. If further details of the reason for the suspension are required, then an extension on this element should be used.
      * This element is labeled as a modifier because it may be used to mark that the resource was created in error.
@@ -46,7 +46,7 @@ export interface Organization extends fhir.DomainResource {
      * When considering if multiple types are appropriate, you should evaluate if child organizations would be a more appropriate use of the concept, as different types likely are in different sub-areas of the organization. This is most likely to be used where type values have orthogonal values, such as a religious, academic and medical center.
      * We expect that some jurisdictions will profile this optionality to be a single cardinality.
      */
-    type?: fhir.CodeableConcept[] | undefined;
+    type?: (fhir.CodeableConcept | null)[] | undefined;
     /**
      * If the name of an organization changes, consider putting the old name in the alias column so that it can still be located through searches.
      */
@@ -58,7 +58,7 @@ export interface Organization extends fhir.DomainResource {
     /**
      * There are no dates associated with the alias/historic names, as this is not intended to track when names were used, but to assist in searching so that older names can still result in identifying the organization.
      */
-    alias?: string[] | undefined;
+    alias?: (string | null)[] | undefined;
     /**
      * Extended properties for primitive element: Organization.alias
      */
@@ -66,11 +66,11 @@ export interface Organization extends fhir.DomainResource {
     /**
      * The use code 'home' is not to be used. Note that these contacts are not the contact details of people who are employed by or represent the organization, but official contacts for the organization itself.
      */
-    telecom?: fhir.ContactPoint[] | undefined;
+    telecom?: (fhir.ContactPoint | null)[] | undefined;
     /**
      * Organization may have multiple addresses with different uses or applicable periods. The use code 'home' is not to be used.
      */
-    address?: fhir.Address[] | undefined;
+    address?: (fhir.Address | null)[] | undefined;
     /**
      * The organization of which this organization forms a part.
      */
@@ -78,10 +78,10 @@ export interface Organization extends fhir.DomainResource {
     /**
      * Where multiple contacts for the same purpose are provided there is a standard extension that can be used to determine which one is the preferred contact to use.
      */
-    contact?: fhir.OrganizationContact[] | undefined;
+    contact?: (fhir.OrganizationContact | null)[] | undefined;
     /**
      * Technical endpoints providing access to services operated for the organization.
      */
-    endpoint?: fhir.Reference[] | undefined;
+    endpoint?: (fhir.Reference | null)[] | undefined;
 }
 //# sourceMappingURL=Organization.d.ts.map

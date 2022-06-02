@@ -611,6 +611,9 @@ export declare class ResearchElementDefinitionCharacteristic extends fhir.Backbo
         readonly ThousandsPerMicroLiter: "10*3/uL";
         readonly VAL10ThousandPerMicroliter: "10*4/uL";
         readonly OneHundredThousand: "10*5";
+        /**
+         * Extended properties for primitive element: ResearchElementDefinition.approvalDate
+         */
         readonly Million: "10*6";
         readonly MillionInternationalUnit: "10*6.[iU]";
         readonly MillionEquivalentsPerMilliLiter: "10*6.eq/mL";
@@ -633,9 +636,7 @@ export declare class ResearchElementDefinitionCharacteristic extends fhir.Backbo
         readonly StandardAtmosphere: "atm";
         readonly TechnicalAtmosphere: "att";
         readonly Bar: "bar";
-        readonly Becquerel: "Bq"; /**
-         * An individual or organization responsible for officially endorsing the content for use in some setting.
-         */
+        readonly Becquerel: "Bq";
         readonly Calorie: "cal";
         readonly DegreeCelsius: "Cel";
         readonly Centigram: "cg";
@@ -646,19 +647,22 @@ export declare class ResearchElementDefinitionCharacteristic extends fhir.Backbo
         readonly CentimeterOfWaterPerLiterPerSecond: "cm[H2O]/L/s";
         readonly CentimeterOfWaterPerSecondPerMeter: "cm[H2O]/s/m";
         readonly CentimeterOfMercury: "cm[Hg]";
+        /**
+         * The type of research element, a population, an exposure, or an outcome.
+         */
         readonly SquareCentimeter: "cm2";
         readonly SquareCentimeterPerSecond: "cm2/s";
         readonly CubicCentimeter: "cm3";
         readonly CentiPoise: "cP";
         readonly CentiStokes: "cSt";
+        /**
+         * The type of the outcome (e.g. Dichotomous, Continuous, or Descriptive).
+         */
         readonly Day: "d";
         readonly DekaliterPerMinute: "daL/min";
         readonly DekaliterPerMinutePerSquareMeter: "daL/min/m2";
         readonly Decibel: "dB";
         readonly Degree: "deg";
-        /**
-         * Characteristics can be defined flexibly to accommodate different use cases for membership criteria, ranging from simple codes, all the way to using an expression language to express the criteria.
-         */
         readonly DegreePerSecond: "deg/s";
         readonly Decigram: "dg";
         readonly Deciliter: "dL";
@@ -667,13 +671,15 @@ export declare class ResearchElementDefinitionCharacteristic extends fhir.Backbo
         readonly DyneSecondPerCentimeterPerSquareMeter: "dyn.s/(cm.m2)";
         readonly DyneSecondPerCentimeter: "dyn.s/cm";
         readonly Equivalents: "eq";
-        /**
-         * Mapping of this datatype to a FHIR equivalent
-         */
         readonly EquivalentsLiter: "eq/L";
         readonly EquivalentsMilliliter: "eq/mL";
         readonly EquivalentsMillimole: "eq/mmol";
         readonly EquivalentsMicromole: "eq/umol";
+        /**
+         * Can be a urn:uuid: or a urn:oid: but real http: addresses are preferred.  Multiple instances may share the same URL if they have a distinct version.
+         * The determination of when to create a new version of a resource (same url, new version) vs. defining a new artifact is up to the author.  Considerations for making this decision are found in [Technical and Business Versions](resource.html#versions).
+         * In some cases, the resource can no longer be found at the stated url, but the url itself cannot change. Implementations can use the [meta.source](resource.html#meta) element to indicate where the current master source of the resource can be found.
+         */
         readonly Erg: "erg";
         readonly Electronvolt: "eV";
         readonly Farad: "F";
@@ -685,13 +691,13 @@ export declare class ResearchElementDefinitionCharacteristic extends fhir.Backbo
         readonly FemtomolePerGram: "fmol/g";
         readonly FemtomolePerLiter: "fmol/L";
         readonly FemtomoleMilligram: "fmol/mg";
-        readonly FemtomolePerMilligramOfCytosolProtein: "fmol/mg{cytosol_protein}";
+        readonly FemtomolePerMilligramOfCytosolProtein: "fmol/mg{cytosol_protein}"; /**
+         * Typically, this is used for identifiers that can go in an HL7 V3 II (instance identifier) data type, and can then identify this research element definition outside of FHIR, where it is not possible to use the logical URI.
+         */
         readonly FemtomolePerMilligramOfProtein: "fmol/mg{protein}";
         readonly FemtomoleMilliliter: "fmol/mL";
         readonly Gram: "g";
-        readonly GramAsteriskMeter: "g.m"; /**
-         * There may be different research element definition instances that have the same identifier but different versions.  The version can be appended to the url in a reference to allow a reference to a particular business version of the research element definition with the format [url]|[version].
-         */
+        readonly GramAsteriskMeter: "g.m";
         readonly GramAsteriskMeterHbAsteriskMeterPower2: "g.m/({hb}.m2)";
         readonly GramMeterPerHeartBeat: "g.m/{beat}";
         readonly GramAsteriskMeterHb: "g.m/{hb}";
@@ -708,9 +714,6 @@ export declare class ResearchElementDefinitionCharacteristic extends fhir.Backbo
         readonly GramPer48Hour: "g/(48.h)";
         readonly GramPer5Hour: "g/(5.h)";
         readonly GramPer6Hour: "g/(6.h)";
-        /**
-         * Allows filtering of research element definitions that are appropriate for use versus not.
-         */
         readonly GramPer72Hour: "g/(72.h)";
         readonly Gram8AsteriskHour: "g/(8.h)";
         readonly GramPer8HourShift: "g/(8.h){shift}";
@@ -760,7 +763,9 @@ export declare class ResearchElementDefinitionCharacteristic extends fhir.Backbo
         readonly KelvinWatt: "K/W";
         readonly Katal: "kat";
         readonly KatalKilogram: "kat/kg";
-        readonly KatalLiter: "kat/L";
+        readonly KatalLiter: "kat/L"; /**
+         * This element does not describe the usage of the research element definition. Instead, it provides traceability of ''why'' the resource is either needed or ''why'' it is defined as it is.  This may be used to point to source materials or specifications that drove the structure of this research element definition.
+         */
         readonly KiloBecquerel: "kBq";
         readonly Kilocalorie: "kcal";
         readonly Kilocalorie8AsteriskHour: "kcal/(8.h)";
@@ -797,7 +802,9 @@ export declare class ResearchElementDefinitionCharacteristic extends fhir.Backbo
         readonly LiterPerHour: "L/h";
         readonly LiterPerKilogram: "L/kg";
         readonly LiterPerLiter: "L/L";
-        readonly LiterPerMinute: "L/min";
+        readonly LiterPerMinute: "L/min"; /**
+         * Each related artifact is either an attachment, or a reference to another resource, but not both.
+         */
         readonly LiterSecond: "L/s";
         readonly LiterPerSecondPerSquareSecond: "L/s/s2";
         readonly Lumen: "lm";
@@ -934,7 +941,9 @@ export declare class ResearchElementDefinitionCharacteristic extends fhir.Backbo
         readonly MillimolePerKilogramPerDay: "mmol/kg/d";
         readonly MillimolePerKilogramPerHour: "mmol/kg/h";
         readonly MillimolePerKilogramPerMinute: "mmol/kg/min";
-        readonly MillimolePerLiter: "mmol/L";
+        readonly MillimolePerLiter: "mmol/L"; /**
+         * Required-bound Value Set for status (ResearchElementDefinition.status)
+         */
         readonly MillimolePerLiterPerSecond: "mmol/L/s";
         readonly MillimoleMeter: "mmol/m";
         readonly MillimolePerSquareMeter: "mmol/m2";
@@ -1383,7 +1392,7 @@ export interface ResearchElementDefinitionArgs extends fhir.DomainResourceArgs {
     /**
      * A human-readable string to clarify or explain concepts about the resource.
      */
-    comment?: fhir.FhirString[] | string[] | undefined;
+    comment?: fhir.FhirString[] | (string | null)[] | undefined;
     /**
      * Extended properties for primitive element: ResearchElementDefinition.comment
      */
@@ -1467,7 +1476,7 @@ export interface ResearchElementDefinitionArgs extends fhir.DomainResourceArgs {
     /**
      * A reference to a Library resource containing the formal logic used by the ResearchElementDefinition.
      */
-    library?: fhir.FhirCanonical[] | string[] | undefined;
+    library?: fhir.FhirCanonical[] | (string | null)[] | undefined;
     /**
      * Extended properties for primitive element: ResearchElementDefinition.library
      */

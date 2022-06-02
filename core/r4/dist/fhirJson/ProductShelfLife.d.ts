@@ -18,6 +18,6 @@ export interface ProductShelfLife extends fhir.BackboneElement {
     /**
      * Special precautions for storage, if any, can be specified using an appropriate controlled vocabulary The controlled term and the controlled term identifier shall be specified.
      */
-    specialPrecautionsForStorage?: fhir.CodeableConcept[] | undefined;
+    specialPrecautionsForStorage?: (fhir.CodeableConcept | null)[] | undefined;
 }
 //# sourceMappingURL=ProductShelfLife.d.ts.map

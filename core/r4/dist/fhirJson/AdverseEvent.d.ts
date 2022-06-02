@@ -35,7 +35,7 @@ export interface AdverseEventSuspectEntity extends fhir.BackboneElement {
     /**
      * Information on the possible cause of the event.
      */
-    causality?: fhir.AdverseEventSuspectEntityCausality[] | undefined;
+    causality?: (fhir.AdverseEventSuspectEntityCausality | null)[] | undefined;
 }
 /**
  * Actual or  potential/avoided event causing unintended physical injury resulting from or contributed to by medical care, a research study or other healthcare setting factors that requires additional monitoring, treatment, or hospitalization, or that results in death.
@@ -44,7 +44,7 @@ export interface AdverseEvent extends fhir.DomainResource {
     /**
      * Resource Type Name
      */
-    resourceType: "AdverseEvent";
+    resourceType: "AdverseEvent" | null;
     /**
      * This is a business identifier, not a resource identifier (see [discussion](resource.html#identifiers)).  It is best practice for the identifier to only appear on a single resource instance, however business practices may occasionally dictate that multiple resource instances with the same identifier can exist - possibly even with different resource types.  For example, multiple Patient and a Person resource instance might share the same social insurance number.
      */
@@ -60,7 +60,7 @@ export interface AdverseEvent extends fhir.DomainResource {
     /**
      * The overall type of event, intended for search and filtering purposes.
      */
-    category?: fhir.CodeableConcept[] | undefined;
+    category?: (fhir.CodeableConcept | null)[] | undefined;
     /**
      * This element defines the specific type of event that occurred or that was prevented from occurring.
      */
@@ -100,7 +100,7 @@ export interface AdverseEvent extends fhir.DomainResource {
     /**
      * Includes information about the reaction that occurred as a result of exposure to a substance (for example, a drug or a chemical).
      */
-    resultingCondition?: fhir.Reference[] | undefined;
+    resultingCondition?: (fhir.Reference | null)[] | undefined;
     /**
      * The information about where the adverse event occurred.
      */
@@ -124,22 +124,22 @@ export interface AdverseEvent extends fhir.DomainResource {
     /**
      * Parties that may or should contribute or have contributed information to the adverse event, which can consist of one or more activities.  Such information includes information leading to the decision to perform the activity and how to perform the activity (e.g. consultant), information that the activity itself seeks to reveal (e.g. informant of clinical history), or information about what activity was performed (e.g. informant witness).
      */
-    contributor?: fhir.Reference[] | undefined;
+    contributor?: (fhir.Reference | null)[] | undefined;
     /**
      * Describes the entity that is suspected to have caused the adverse event.
      */
-    suspectEntity?: fhir.AdverseEventSuspectEntity[] | undefined;
+    suspectEntity?: (fhir.AdverseEventSuspectEntity | null)[] | undefined;
     /**
      * AdverseEvent.subjectMedicalHistory.
      */
-    subjectMedicalHistory?: fhir.Reference[] | undefined;
+    subjectMedicalHistory?: (fhir.Reference | null)[] | undefined;
     /**
      * AdverseEvent.referenceDocument.
      */
-    referenceDocument?: fhir.Reference[] | undefined;
+    referenceDocument?: (fhir.Reference | null)[] | undefined;
     /**
      * AdverseEvent.study.
      */
-    study?: fhir.Reference[] | undefined;
+    study?: (fhir.Reference | null)[] | undefined;
 }
 //# sourceMappingURL=AdverseEvent.d.ts.map

@@ -196,9 +196,7 @@ export declare class ImplementationGuideGlobal extends fhir.BackboneElement {
         readonly MedicinalProductPackaged: "MedicinalProductPackaged";
         readonly MedicinalProductPharmaceutical: "MedicinalProductPharmaceutical";
         readonly MedicinalProductUndesirableEffect: "MedicinalProductUndesirableEffect";
-        readonly MessageDefinition: "MessageDefinition"; /**
-         * Mapping of this datatype to a FHIR equivalent
-         */
+        readonly MessageDefinition: "MessageDefinition";
         readonly MessageHeader: "MessageHeader";
         readonly MolecularSequence: "MolecularSequence";
         readonly NamingSystem: "NamingSystem";
@@ -318,7 +316,7 @@ export interface ImplementationGuideDefinitionResourceArgs extends fhir.Backbone
     /**
      * The resource SHALL be valid against all the versions it is specified to apply to. If the resource referred to is a StructureDefinition, the fhirVersion stated in the StructureDefinition cannot disagree with the version specified here; the specified versions SHALL include the version specified by the StructureDefinition, and may include additional versions using the [applicable-version](extension-structuredefinition-applicable-version.html) extension.
      */
-    fhirVersion?: fhir.FhirCode[] | string[] | undefined;
+    fhirVersion?: fhir.FhirCode[] | (string | null)[] | undefined;
     /**
      * Extended properties for primitive element: ImplementationGuide.definition.resource.fhirVersion
      */
@@ -799,7 +797,7 @@ export interface ImplementationGuideManifestPageArgs extends fhir.BackboneElemen
     /**
      * Appending 'rendering' + "/" + page.name + "#" + page.anchor should resolve to the anchor.
      */
-    anchor?: fhir.FhirString[] | string[] | undefined;
+    anchor?: fhir.FhirString[] | (string | null)[] | undefined;
     /**
      * Extended properties for primitive element: ImplementationGuide.manifest.page.anchor
      */
@@ -857,7 +855,7 @@ export interface ImplementationGuideManifestArgs extends fhir.BackboneElementArg
     /**
      * Indicates a relative path to an image that exists within the IG.
      */
-    image?: fhir.FhirString[] | string[] | undefined;
+    image?: fhir.FhirString[] | (string | null)[] | undefined;
     /**
      * Extended properties for primitive element: ImplementationGuide.manifest.image
      */
@@ -865,7 +863,7 @@ export interface ImplementationGuideManifestArgs extends fhir.BackboneElementArg
     /**
      * Indicates the relative path of an additional non-page, non-image file that is part of the IG - e.g. zip, jar and similar files that could be the target of a hyperlink in a derived IG.
      */
-    other?: fhir.FhirString[] | string[] | undefined;
+    other?: fhir.FhirString[] | (string | null)[] | undefined;
     /**
      * Extended properties for primitive element: ImplementationGuide.manifest.other
      */
@@ -1029,7 +1027,7 @@ export interface ImplementationGuideArgs extends fhir.DomainResourceArgs {
     /**
      * Most implementation guides target a single version - e.g. they describe how to use a particular version, and the profiles and examples etc are valid for that version. But some implementation guides describe how to use multiple different versions of FHIR to solve the same problem, or in concert with each other. Typically, the requirement to support multiple versions arises as implementation matures and different implementation communities are stuck at different versions by regulation or market dynamics.
      */
-    fhirVersion: fhir.FhirCode[] | string[] | undefined;
+    fhirVersion: fhir.FhirCode[] | (string | null)[] | undefined;
     /**
      * Extended properties for primitive element: ImplementationGuide.fhirVersion
      */
@@ -1307,7 +1305,9 @@ export declare class ImplementationGuide extends fhir.DomainResource {
         readonly FSFAllPermissiveLicense: "FSFAP";
         readonly FSFUnlimitedLicense: "FSFUL";
         readonly FSFUnlimitedLicenseWithLicenseRetention: "FSFULLR";
-        readonly FreetypeProjectLicense: "FTL";
+        readonly FreetypeProjectLicense: "FTL"; /**
+         * A human assigned name for the resource. All resources SHOULD have a name, but the name may be extracted from the resource (e.g. ValueSet.name).
+         */
         readonly GNUFreeDocumentationLicenseV11Only: "GFDL-1.1-only";
         readonly GNUFreeDocumentationLicenseV11OrLater: "GFDL-1.1-or-later";
         readonly GNUFreeDocumentationLicenseV12Only: "GFDL-1.2-only";
@@ -1372,6 +1372,9 @@ export declare class ImplementationGuide extends fhir.DomainResource {
         readonly MITLicense: "MIT";
         readonly MITNoAttribution: "MIT-0";
         readonly EnlightenmentLicenseE16: "MIT-advertising";
+        /**
+         * The publishing tool will autogenerate source for list (source = n/a) and inject included implementations for include (source = uri of guide to include).
+         */
         readonly CMULicense: "MIT-CMU";
         readonly EnnaLicense: "MIT-enna";
         readonly FehLicense: "MIT-feh";
@@ -1420,9 +1423,7 @@ export declare class ImplementationGuide extends fhir.DomainResource {
         readonly OpenLDAPPublicLicenseV201: "OLDAP-2.0.1";
         readonly OpenLDAPPublicLicenseV21: "OLDAP-2.1";
         readonly OpenLDAPPublicLicenseV22: "OLDAP-2.2";
-        readonly OpenLDAPPublicLicenseV221: "OLDAP-2.2.1"; /**
-         * Extended properties for primitive element: ImplementationGuide.definition.parameter.code
-         */
+        readonly OpenLDAPPublicLicenseV221: "OLDAP-2.2.1";
         readonly OpenLDAPPublicLicense222: "OLDAP-2.2.2";
         readonly OpenLDAPPublicLicenseV23: "OLDAP-2.3";
         readonly OpenLDAPPublicLicenseV24: "OLDAP-2.4";
@@ -1465,21 +1466,21 @@ export declare class ImplementationGuide extends fhir.DomainResource {
         readonly SGIFreeSoftwareLicenseBV11: "SGI-B-1.1";
         readonly SGIFreeSoftwareLicenseBV20: "SGI-B-2.0";
         readonly SimplePublicLicense20: "SimPL-2.0";
-        /**
-         * The source location for the template.
-         */
         readonly SunIndustryStandardsSourceLicenseV11: "SISSL";
-        readonly SunIndustryStandardsSourceLicenseV12: "SISSL-1.2"; /**
-         * The scope in which the template applies.
-         */
+        readonly SunIndustryStandardsSourceLicenseV12: "SISSL-1.2";
         readonly SleepycatLicense: "Sleepycat";
         readonly StandardMLOfNewJerseyLicense: "SMLNJ";
         readonly SecureMessagingProtocolPublicLicense: "SMPPL";
         readonly SNIAPublicLicense11: "SNIA";
+        /**
+         * Mapping of this datatype to a FHIR equivalent
+         */
         readonly SpencerLicense86: "Spencer-86";
         readonly SpencerLicense94: "Spencer-94";
         readonly SpencerLicense99: "Spencer-99";
-        readonly SunPublicLicenseV10: "SPL-1.0";
+        readonly SunPublicLicenseV10: "SPL-1.0"; /**
+         * The scope in which the template applies.
+         */
         readonly SugarCRMPublicLicenseV113: "SugarCRM-1.1.3";
         readonly SchemeWidgetLibrarySWLSoftwareLicenseAgreement: "SWL";
         readonly TCLTKLicense: "TCL";

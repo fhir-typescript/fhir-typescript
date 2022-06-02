@@ -43,11 +43,11 @@ export interface DeviceMetric extends fhir.DomainResource {
   /**
    * Resource Type Name
    */
-  resourceType: "DeviceMetric";
+  resourceType: "DeviceMetric"|null;
   /**
    * For identifiers assigned to a device by the device or gateway software, the `system` element of the identifier should be set to the unique identifier of the device.
    */
-  identifier?: fhir.Identifier[]|undefined;
+  identifier?: (fhir.Identifier|null)[]|undefined;
   /**
    * DeviceMetric.type can be referred to either IEEE 11073-10101 or LOINC.
    */
@@ -95,5 +95,5 @@ export interface DeviceMetric extends fhir.DomainResource {
   /**
    * Describes the calibrations that have been performed or that are required to be performed.
    */
-  calibration?: fhir.DeviceMetricCalibration[]|undefined;
+  calibration?: (fhir.DeviceMetricCalibration|null)[]|undefined;
 }

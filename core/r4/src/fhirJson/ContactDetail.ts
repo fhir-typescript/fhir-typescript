@@ -21,5 +21,5 @@ export interface ContactDetail extends fhir.FhirElement {
   /**
    * The contact details for the individual (if a name was provided) or the organization.
    */
-  telecom?: fhir.ContactPoint[]|undefined;
+  telecom?: (fhir.ContactPoint|null)[]|undefined;
 }

@@ -628,7 +628,7 @@ export interface CapabilityStatementRestResourceArgs extends fhir.BackboneElemen
   /**
    * Supported profiles are different than the profile that applies to a particular resource in .rest.resource.profile. The resource profile is a general statement of what features of the resource are supported overall by the system - the sum total of the facilities it supports. A supported profile is a deeper statement about the functionality of the data and services provided by the server (or used by the client). A typical case is a laboratory system that produces a set of different reports - this is the list of types of data that it publishes. A key aspect of declaring profiles here is the question of how the client converts knowledge that the server publishes this data into working with the data; the client can inspect individual resources to determine whether they conform to a particular profile, but how does it find the ones that do? It does so by searching using the _profile parameter, so any resources listed here must be valid values for the _profile resource (using the identifier in the target profile).
    */
-  supportedProfile?: fhir.FhirCanonical[]|string[]|undefined;
+  supportedProfile?: fhir.FhirCanonical[]|(string|null)[]|undefined;
   /**
    * Extended properties for primitive element: CapabilityStatement.rest.resource.supportedProfile
    */
@@ -704,7 +704,7 @@ export interface CapabilityStatementRestResourceArgs extends fhir.BackboneElemen
   /**
    * A set of flags that defines how references are supported.
    */
-  referencePolicy?: fhir.FhirCode<ReferenceHandlingPolicyCodeType>[]|string[]|undefined;
+  referencePolicy?: fhir.FhirCode<ReferenceHandlingPolicyCodeType>[]|(string|null)[]|undefined;
   /**
    * Extended properties for primitive element: CapabilityStatement.rest.resource.referencePolicy
    */
@@ -712,7 +712,7 @@ export interface CapabilityStatementRestResourceArgs extends fhir.BackboneElemen
   /**
    * If this list is empty, the server does not support includes.
    */
-  searchInclude?: fhir.FhirString[]|string[]|undefined;
+  searchInclude?: fhir.FhirString[]|(string|null)[]|undefined;
   /**
    * Extended properties for primitive element: CapabilityStatement.rest.resource.searchInclude
    */
@@ -720,7 +720,7 @@ export interface CapabilityStatementRestResourceArgs extends fhir.BackboneElemen
   /**
    * If this list is empty, the server does not support reverse includes.
    */
-  searchRevInclude?: fhir.FhirString[]|string[]|undefined;
+  searchRevInclude?: fhir.FhirString[]|(string|null)[]|undefined;
   /**
    * Extended properties for primitive element: CapabilityStatement.rest.resource.searchRevInclude
    */
@@ -1107,7 +1107,7 @@ export interface CapabilityStatementRestArgs extends fhir.BackboneElementArgs {
   /**
    * At present, the only defined compartments are at [CompartmentDefinition](compartmentdefinition.html).
    */
-  compartment?: fhir.FhirCanonical[]|string[]|undefined;
+  compartment?: fhir.FhirCanonical[]|(string|null)[]|undefined;
   /**
    * Extended properties for primitive element: CapabilityStatement.rest.compartment
    */
@@ -1679,7 +1679,7 @@ export interface CapabilityStatementArgs extends fhir.DomainResourceArgs {
    * HL7 defines the following Services: [Terminology Service](terminology-service.html).    
    * Many [Implementation Guides](http://fhir.org/guides/registry) define additional services.
    */
-  instantiates?: fhir.FhirCanonical[]|string[]|undefined;
+  instantiates?: fhir.FhirCanonical[]|(string|null)[]|undefined;
   /**
    * Extended properties for primitive element: CapabilityStatement.instantiates
    */
@@ -1688,7 +1688,7 @@ export interface CapabilityStatementArgs extends fhir.DomainResourceArgs {
    * the contents of any directly or indirectly imported CapabilityStatements SHALL NOT overlap, i.e. they cannot refer to the same rest/resource, operations/name, searchparam/name, interaction/code, messaging/endpoint, document/mode pair.
    * A capability statement that imports another CapabilityStatement automatically instantiates it too (though this is often not a very useful statement for the kinds of CapabilityStatements that are suitable for importing).
    */
-  imports?: fhir.FhirCanonical[]|string[]|undefined;
+  imports?: fhir.FhirCanonical[]|(string|null)[]|undefined;
   /**
    * Extended properties for primitive element: CapabilityStatement.imports
    */
@@ -1712,7 +1712,7 @@ export interface CapabilityStatementArgs extends fhir.DomainResourceArgs {
   /**
    * "xml", "json" and "ttl" are allowed, which describe the simple encodings described in the specification (and imply appropriate bundle support). Otherwise, mime types are legal here.
    */
-  format: fhir.FhirCode[]|string[]|undefined;
+  format: fhir.FhirCode[]|(string|null)[]|undefined;
   /**
    * Extended properties for primitive element: CapabilityStatement.format
    */
@@ -1720,7 +1720,7 @@ export interface CapabilityStatementArgs extends fhir.DomainResourceArgs {
   /**
    * At present, the patch mime types application/json-patch+json and application/xml-patch+xml are legal. Generally, if a server supports PATCH, it would be expected to support the patch formats and match the formats it supports, but this is not always possible or necessary.
    */
-  patchFormat?: fhir.FhirCode[]|string[]|undefined;
+  patchFormat?: fhir.FhirCode[]|(string|null)[]|undefined;
   /**
    * Extended properties for primitive element: CapabilityStatement.patchFormat
    */
@@ -1728,7 +1728,7 @@ export interface CapabilityStatementArgs extends fhir.DomainResourceArgs {
   /**
    * A list of implementation guides that the server does (or should) support in their entirety.
    */
-  implementationGuide?: fhir.FhirCanonical[]|string[]|undefined;
+  implementationGuide?: fhir.FhirCanonical[]|(string|null)[]|undefined;
   /**
    * Extended properties for primitive element: CapabilityStatement.implementationGuide
    */

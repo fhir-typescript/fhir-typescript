@@ -105,7 +105,7 @@ export interface TimingRepeatArgs extends fhir.FhirElementArgs {
     /**
      * If no days are specified, the action is assumed to happen every day as otherwise specified. The elements frequency and period cannot be used as well as dayOfWeek.
      */
-    dayOfWeek?: fhir.FhirCode<DaysOfWeekCodeType>[] | string[] | undefined;
+    dayOfWeek?: fhir.FhirCode<DaysOfWeekCodeType>[] | (string | null)[] | undefined;
     /**
      * Extended properties for primitive element: Timing.repeat.dayOfWeek
      */
@@ -113,7 +113,7 @@ export interface TimingRepeatArgs extends fhir.FhirElementArgs {
     /**
      * When time of day is specified, it is inferred that the action happens every day (as filtered by dayofWeek) on the specified times. The elements when, frequency and period cannot be used as well as timeOfDay.
      */
-    timeOfDay?: fhir.FhirTime[] | string[] | undefined;
+    timeOfDay?: fhir.FhirTime[] | (string | null)[] | undefined;
     /**
      * Extended properties for primitive element: Timing.repeat.timeOfDay
      */
@@ -121,7 +121,7 @@ export interface TimingRepeatArgs extends fhir.FhirElementArgs {
     /**
      * When more than one event is listed, the event is tied to the union of the specified events.
      */
-    when?: fhir.FhirCode[] | string[] | undefined;
+    when?: fhir.FhirCode[] | (string | null)[] | undefined;
     /**
      * Extended properties for primitive element: Timing.repeat.when
      */
@@ -290,7 +290,7 @@ export interface TimingArgs extends fhir.BackboneElementArgs {
     /**
      * Identifies specific times when the event occurs.
      */
-    event?: fhir.FhirDateTime[] | string[] | undefined;
+    event?: fhir.FhirDateTime[] | (string | null)[] | undefined;
     /**
      * Extended properties for primitive element: Timing.event
      */

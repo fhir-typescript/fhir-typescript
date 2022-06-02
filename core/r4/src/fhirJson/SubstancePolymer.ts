@@ -43,7 +43,7 @@ export interface SubstancePolymerMonomerSet extends fhir.BackboneElement {
   /**
    * Todo.
    */
-  startingMaterial?: fhir.SubstancePolymerMonomerSetStartingMaterial[]|undefined;
+  startingMaterial?: (fhir.SubstancePolymerMonomerSetStartingMaterial|null)[]|undefined;
 }
 
 /**
@@ -105,11 +105,11 @@ export interface SubstancePolymerRepeatRepeatUnit extends fhir.BackboneElement {
   /**
    * Todo.
    */
-  degreeOfPolymerisation?: fhir.SubstancePolymerRepeatRepeatUnitDegreeOfPolymerisation[]|undefined;
+  degreeOfPolymerisation?: (fhir.SubstancePolymerRepeatRepeatUnitDegreeOfPolymerisation|null)[]|undefined;
   /**
    * Todo.
    */
-  structuralRepresentation?: fhir.SubstancePolymerRepeatRepeatUnitStructuralRepresentation[]|undefined;
+  structuralRepresentation?: (fhir.SubstancePolymerRepeatRepeatUnitStructuralRepresentation|null)[]|undefined;
 }
 
 /**
@@ -139,7 +139,7 @@ export interface SubstancePolymerRepeat extends fhir.BackboneElement {
   /**
    * Todo.
    */
-  repeatUnit?: fhir.SubstancePolymerRepeatRepeatUnit[]|undefined;
+  repeatUnit?: (fhir.SubstancePolymerRepeatRepeatUnit|null)[]|undefined;
 }
 
 /**
@@ -149,7 +149,7 @@ export interface SubstancePolymer extends fhir.DomainResource {
   /**
    * Resource Type Name
    */
-  resourceType: "SubstancePolymer";
+  resourceType: "SubstancePolymer"|null;
   /**
    * Todo.
    */
@@ -161,11 +161,11 @@ export interface SubstancePolymer extends fhir.DomainResource {
   /**
    * Todo.
    */
-  copolymerConnectivity?: fhir.CodeableConcept[]|undefined;
+  copolymerConnectivity?: (fhir.CodeableConcept|null)[]|undefined;
   /**
    * Todo.
    */
-  modification?: string[]|undefined;
+  modification?: (string|null)[]|undefined;
   /**
    * Extended properties for primitive element: SubstancePolymer.modification
    */
@@ -173,9 +173,9 @@ export interface SubstancePolymer extends fhir.DomainResource {
   /**
    * Todo.
    */
-  monomerSet?: fhir.SubstancePolymerMonomerSet[]|undefined;
+  monomerSet?: (fhir.SubstancePolymerMonomerSet|null)[]|undefined;
   /**
    * Todo.
    */
-  repeat?: fhir.SubstancePolymerRepeat[]|undefined;
+  repeat?: (fhir.SubstancePolymerRepeat|null)[]|undefined;
 }

@@ -61,11 +61,11 @@ export interface Medication extends fhir.DomainResource {
   /**
    * Resource Type Name
    */
-  resourceType: "Medication";
+  resourceType: "Medication"|null;
   /**
    * The serial number could be included as an identifier.
    */
-  identifier?: fhir.Identifier[]|undefined;
+  identifier?: (fhir.Identifier|null)[]|undefined;
   /**
    * Depending on the context of use, the code that was actually selected by the user (prescriber, dispenser, etc.) will have the coding.userSelected set to true.  As described in the coding datatype: "A coding may be marked as a "userSelected" if a user selected the particular coded value in a user interface (e.g. the user selects an item in a pick-list). If a user selected coding exists, it is the preferred choice for performing translations etc. Other codes can only be literal translations to alternative code systems, or codes at a lower level of granularity (e.g. a generic code for a vendor-specific primary one).
    */
@@ -93,7 +93,7 @@ export interface Medication extends fhir.DomainResource {
   /**
    * The ingredients need not be a complete list.  If an ingredient is not specified, this does not indicate whether an ingredient is present or absent.  If an ingredient is specified it does not mean that all ingredients are specified.  It is possible to specify both inactive and active ingredients.
    */
-  ingredient?: fhir.MedicationIngredient[]|undefined;
+  ingredient?: (fhir.MedicationIngredient|null)[]|undefined;
   /**
    * Information that only applies to packages (not products).
    */

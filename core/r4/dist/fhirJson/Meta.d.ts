@@ -31,7 +31,7 @@ export interface Meta extends fhir.FhirElement {
     /**
      * It is up to the server and/or other infrastructure of policy to determine whether/how these claims are verified and/or updated over time.  The list of profile URLs is a set.
      */
-    profile?: string[] | undefined;
+    profile?: (string | null)[] | undefined;
     /**
      * Extended properties for primitive element: Meta.profile
      */
@@ -39,10 +39,10 @@ export interface Meta extends fhir.FhirElement {
     /**
      * The security labels can be updated without changing the stated version of the resource. The list of security labels is a set. Uniqueness is based the system/code, and version and display are ignored.
      */
-    security?: fhir.Coding[] | undefined;
+    security?: (fhir.Coding | null)[] | undefined;
     /**
      * The tags can be updated without changing the stated version of the resource. The list of tags is a set. Uniqueness is based the system/code, and version and display are ignored.
      */
-    tag?: fhir.Coding[] | undefined;
+    tag?: (fhir.Coding | null)[] | undefined;
 }
 //# sourceMappingURL=Meta.d.ts.map

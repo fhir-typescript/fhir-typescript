@@ -73,7 +73,7 @@ export interface InvoiceLineItem extends fhir.BackboneElement {
   /**
    * The price for a ChargeItem may be calculated as a base price with surcharges/deductions that apply in certain conditions. A ChargeItemDefinition resource that defines the prices, factors and conditions that apply to a billing code is currently under development. The priceComponent element can be used to offer transparency to the recipient of the Invoice as to how the prices have been calculated.
    */
-  priceComponent?: fhir.InvoiceLineItemPriceComponent[]|undefined;
+  priceComponent?: (fhir.InvoiceLineItemPriceComponent|null)[]|undefined;
 }
 
 /**
@@ -83,11 +83,11 @@ export interface Invoice extends fhir.DomainResource {
   /**
    * Resource Type Name
    */
-  resourceType: "Invoice";
+  resourceType: "Invoice"|null;
   /**
    * Identifier of this Invoice, often used for reference in correspondence about this invoice or for tracking of payments.
    */
-  identifier?: fhir.Identifier[]|undefined;
+  identifier?: (fhir.Identifier|null)[]|undefined;
   /**
    * The current state of the Invoice.
    */
@@ -127,7 +127,7 @@ export interface Invoice extends fhir.DomainResource {
   /**
    * Indicates who or what performed or participated in the charged service.
    */
-  participant?: fhir.InvoiceParticipant[]|undefined;
+  participant?: (fhir.InvoiceParticipant|null)[]|undefined;
   /**
    * Practitioners and Devices can be associated with multiple organizations. It has to be made clear, on behalf of which Organization the services have been rendered.
    */
@@ -139,11 +139,11 @@ export interface Invoice extends fhir.DomainResource {
   /**
    * Each line item represents one charge for goods and services rendered. Details such as date, code and amount are found in the referenced ChargeItem resource.
    */
-  lineItem?: fhir.InvoiceLineItem[]|undefined;
+  lineItem?: (fhir.InvoiceLineItem|null)[]|undefined;
   /**
    * The total amount for the Invoice may be calculated as the sum of the line items with surcharges/deductions that apply in certain conditions.  The priceComponent element can be used to offer transparency to the recipient of the Invoice of how the total price was calculated.
    */
-  totalPriceComponent?: fhir.InvoiceLineItemPriceComponent[]|undefined;
+  totalPriceComponent?: (fhir.InvoiceLineItemPriceComponent|null)[]|undefined;
   /**
    * There is no reason to carry the price in the instance of a ChargeItem unless circumstances require a manual override. The list prices or are usually defined in a back catalogue of the billing codes  (see ChargeItem.definition). Derived profiles may require a ChargeItem.overrideReason to be provided if either factor or price are manually overridden.
    */
@@ -163,5 +163,5 @@ export interface Invoice extends fhir.DomainResource {
   /**
    * Comments made about the invoice by the issuer, subject, or other participants.
    */
-  note?: fhir.Annotation[]|undefined;
+  note?: (fhir.Annotation|null)[]|undefined;
 }

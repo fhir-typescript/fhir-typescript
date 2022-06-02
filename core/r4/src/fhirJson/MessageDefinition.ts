@@ -73,7 +73,7 @@ export interface MessageDefinition extends fhir.DomainResource {
   /**
    * Resource Type Name
    */
-  resourceType: "MessageDefinition";
+  resourceType: "MessageDefinition"|null;
   /**
    * Can be a urn:uuid: or a urn:oid: but real http: addresses are preferred.  Multiple instances may share the same URL if they have a distinct version.
    * The determination of when to create a new version of a resource (same url, new version) vs. defining a new artifact is up to the author.  Considerations for making this decision are found in [Technical and Business Versions](resource.html#versions). 
@@ -87,7 +87,7 @@ export interface MessageDefinition extends fhir.DomainResource {
   /**
    * Typically, this is used for identifiers that can go in an HL7 V3 II (instance identifier) data type, and can then identify this message definition outside of FHIR, where it is not possible to use the logical URI.
    */
-  identifier?: fhir.Identifier[]|undefined;
+  identifier?: (fhir.Identifier|null)[]|undefined;
   /**
    * There may be different message definition instances that have the same identifier but different versions.  The version can be appended to the url in a reference to allow a reference to a particular business version of the message definition with the format [url]|[version].
    */
@@ -115,7 +115,7 @@ export interface MessageDefinition extends fhir.DomainResource {
   /**
    * A MessageDefinition that is superseded by this definition.
    */
-  replaces?: string[]|undefined;
+  replaces?: (string|null)[]|undefined;
   /**
    * Extended properties for primitive element: MessageDefinition.replaces
    */
@@ -155,7 +155,7 @@ export interface MessageDefinition extends fhir.DomainResource {
   /**
    * May be a web site, an email address, a telephone number, etc.
    */
-  contact?: fhir.ContactDetail[]|undefined;
+  contact?: (fhir.ContactDetail|null)[]|undefined;
   /**
    * This description can be used to capture details such as why the message definition was built, comments about misuse, instructions for clinical use and interpretation, literature references, examples from the paper world, etc. It is not a rendering of the message definition as conveyed in the 'text' field of the resource itself. This item SHOULD be populated unless the information is available from context (e.g. the language of the message definition is presumed to be the predominant language in the place the message definition was created).
    */
@@ -167,11 +167,11 @@ export interface MessageDefinition extends fhir.DomainResource {
   /**
    * When multiple useContexts are specified, there is no expectation that all or any of the contexts apply.
    */
-  useContext?: fhir.UsageContext[]|undefined;
+  useContext?: (fhir.UsageContext|null)[]|undefined;
   /**
    * It may be possible for the message definition to be used in jurisdictions other than those for which it was originally designed or intended.
    */
-  jurisdiction?: fhir.CodeableConcept[]|undefined;
+  jurisdiction?: (fhir.CodeableConcept|null)[]|undefined;
   /**
    * This element does not describe the usage of the message definition. Instead, it provides traceability of ''why'' the resource is either needed or ''why'' it is defined as it is.  This may be used to point to source materials or specifications that drove the structure of this message definition.
    */
@@ -199,7 +199,7 @@ export interface MessageDefinition extends fhir.DomainResource {
   /**
    * It should be possible to use MessageDefinition to describe a message to be used by certain steps in a particular protocol as part of a PlanDefinition or ActivityDefinition.
    */
-  parent?: string[]|undefined;
+  parent?: (string|null)[]|undefined;
   /**
    * Extended properties for primitive element: MessageDefinition.parent
    */
@@ -227,7 +227,7 @@ export interface MessageDefinition extends fhir.DomainResource {
   /**
    * Identifies the resource (or resources) that are being addressed by the event.  For example, the Encounter for an admit message or two Account records for a merge.
    */
-  focus?: fhir.MessageDefinitionFocus[]|undefined;
+  focus?: (fhir.MessageDefinitionFocus|null)[]|undefined;
   /**
    * This enables the capability currently available through MSH-16 (Application Level acknowledgement) in HL7 Version 2 to declare at a message instance level whether a response is required or only upon error or success, or never.
    */
@@ -239,11 +239,11 @@ export interface MessageDefinition extends fhir.DomainResource {
   /**
    * This indicates an application level response to "close" a transaction implicit in a particular request message.  To define a complete workflow scenario, look to the [[PlanDefinition]] resource which allows the definition of complex orchestrations, conditionality, etc.
    */
-  allowedResponse?: fhir.MessageDefinitionAllowedResponse[]|undefined;
+  allowedResponse?: (fhir.MessageDefinitionAllowedResponse|null)[]|undefined;
   /**
    * Canonical reference to a GraphDefinition. If a URL is provided, it is the canonical reference to a [GraphDefinition](graphdefinition.html) that it controls what resources are to be added to the bundle when building the document. The GraphDefinition can also specify profiles that apply to the various resources.
    */
-  graph?: string[]|undefined;
+  graph?: (string|null)[]|undefined;
   /**
    * Extended properties for primitive element: MessageDefinition.graph
    */

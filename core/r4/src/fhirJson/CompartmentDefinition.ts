@@ -21,7 +21,7 @@ export interface CompartmentDefinitionResource extends fhir.BackboneElement {
   /**
    * If no search parameters are listed, then the resource is not linked to the compartment.
    */
-  param?: string[]|undefined;
+  param?: (string|null)[]|undefined;
   /**
    * Extended properties for primitive element: CompartmentDefinition.resource.param
    */
@@ -43,7 +43,7 @@ export interface CompartmentDefinition extends fhir.DomainResource {
   /**
    * Resource Type Name
    */
-  resourceType: "CompartmentDefinition";
+  resourceType: "CompartmentDefinition"|null;
   /**
    * Can be a urn:uuid: or a urn:oid: but real http: addresses are preferred.  Multiple instances may share the same URL if they have a distinct version.
    * The determination of when to create a new version of a resource (same url, new version) vs. defining a new artifact is up to the author.  Considerations for making this decision are found in [Technical and Business Versions](resource.html#versions). 
@@ -105,7 +105,7 @@ export interface CompartmentDefinition extends fhir.DomainResource {
   /**
    * May be a web site, an email address, a telephone number, etc.
    */
-  contact?: fhir.ContactDetail[]|undefined;
+  contact?: (fhir.ContactDetail|null)[]|undefined;
   /**
    * This description can be used to capture details such as why the compartment definition was built, comments about misuse, instructions for clinical use and interpretation, literature references, examples from the paper world, etc. It is not a rendering of the compartment definition as conveyed in the 'text' field of the resource itself. This item SHOULD be populated unless the information is available from context (e.g. the language of the compartment definition is presumed to be the predominant language in the place the compartment definition was created).
    */
@@ -117,7 +117,7 @@ export interface CompartmentDefinition extends fhir.DomainResource {
   /**
    * When multiple useContexts are specified, there is no expectation that all or any of the contexts apply.
    */
-  useContext?: fhir.UsageContext[]|undefined;
+  useContext?: (fhir.UsageContext|null)[]|undefined;
   /**
    * This element does not describe the usage of the compartment definition. Instead, it provides traceability of ''why'' the resource is either needed or ''why'' it is defined as it is.  This may be used to point to source materials or specifications that drove the structure of this compartment definition.
    */
@@ -145,5 +145,5 @@ export interface CompartmentDefinition extends fhir.DomainResource {
   /**
    * Information about how a resource is related to the compartment.
    */
-  resource?: fhir.CompartmentDefinitionResource[]|undefined;
+  resource?: (fhir.CompartmentDefinitionResource|null)[]|undefined;
 }

@@ -30,7 +30,7 @@ export interface SubscriptionChannel extends fhir.BackboneElement {
     /**
      * Exactly what these mean depend on the channel type. They can convey additional information to the recipient and/or meet security requirements; for example, support of multiple headers in the outgoing notifications for rest-hook type subscriptions.
      */
-    header?: string[] | undefined;
+    header?: (string | null)[] | undefined;
     /**
      * Extended properties for primitive element: Subscription.channel.header
      */
@@ -43,7 +43,7 @@ export interface Subscription extends fhir.DomainResource {
     /**
      * Resource Type Name
      */
-    resourceType: "Subscription";
+    resourceType: "Subscription" | null;
     /**
      * A client can only submit subscription resources in the requested or off state. Only the server can  move a subscription from requested to active, and then to error. Either the server or the client can turn a subscription off.
      * This element is labeled as a modifier because the status contains codes that mark the resource as not currently valid.
@@ -56,7 +56,7 @@ export interface Subscription extends fhir.DomainResource {
     /**
      * Contact details for a human to contact about the subscription. The primary use of this for system administrator troubleshooting.
      */
-    contact?: fhir.ContactPoint[] | undefined;
+    contact?: (fhir.ContactPoint | null)[] | undefined;
     /**
      * The server is permitted to deviate from this time but should observe it.
      */

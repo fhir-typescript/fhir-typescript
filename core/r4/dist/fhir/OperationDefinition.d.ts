@@ -160,7 +160,7 @@ export interface OperationDefinitionParameterArgs extends fhir.BackboneElementAr
     /**
      * Often, these profiles are the base definitions from the spec (e.g. http://hl7.org/fhir/StructureDefinition/Patient).
      */
-    targetProfile?: fhir.FhirCanonical[] | string[] | undefined;
+    targetProfile?: fhir.FhirCanonical[] | (string | null)[] | undefined;
     /**
      * Extended properties for primitive element: OperationDefinition.parameter.targetProfile
      */
@@ -357,9 +357,6 @@ export declare class OperationDefinitionParameter extends fhir.BackboneElement {
         readonly Invoice: "Invoice";
         readonly Library: "Library";
         readonly Linkage: "Linkage";
-        /**
-         * Extended properties for primitive element: OperationDefinition.overload.comment
-         */
         readonly List: "List";
         readonly Location: "Location";
         readonly Markdown: "markdown";
@@ -375,7 +372,9 @@ export declare class OperationDefinitionParameter extends fhir.BackboneElement {
         readonly MedicationStatement: "MedicationStatement";
         readonly MedicinalProduct: "MedicinalProduct";
         readonly MedicinalProductAuthorization: "MedicinalProductAuthorization";
-        readonly MedicinalProductContraindication: "MedicinalProductContraindication";
+        readonly MedicinalProductContraindication: "MedicinalProductContraindication"; /**
+         * Allows filtering of operation definitions that are appropriate for use versus not.
+         */
         readonly MedicinalProductIndication: "MedicinalProductIndication";
         readonly MedicinalProductIngredient: "MedicinalProductIngredient";
         readonly MedicinalProductInteraction: "MedicinalProductInteraction";
@@ -392,18 +391,11 @@ export declare class OperationDefinitionParameter extends fhir.BackboneElement {
         readonly NamingSystem: "NamingSystem";
         readonly Narrative: "Narrative";
         readonly NutritionOrder: "NutritionOrder";
-        readonly Observation: "Observation"; /**
-         * What http methods can be used for the operation depends on the .affectsState value and whether the input parameters are primitive or complex:
-         * 1. Servers SHALL support POST method for all operations.
-         * 2. Servers SHALL support GET method if all the parameters for the operation are primitive or there are no parameters and the operation has affectsState = false.
-         */
+        readonly Observation: "Observation";
         readonly ObservationDefinition: "ObservationDefinition";
         readonly Oid: "oid";
         readonly OperationDefinition: "OperationDefinition";
         readonly OperationOutcome: "OperationOutcome";
-        /**
-         * Extended properties for primitive element: OperationDefinition.code
-         */
         readonly Organization: "Organization";
         readonly OrganizationAffiliation: "OrganizationAffiliation";
         readonly ParameterDefinition: "ParameterDefinition";
@@ -411,9 +403,6 @@ export declare class OperationDefinitionParameter extends fhir.BackboneElement {
         readonly Patient: "Patient";
         readonly PaymentNotice: "PaymentNotice";
         readonly PaymentReconciliation: "PaymentReconciliation";
-        /**
-         * Indicates whether this operation can be invoked on a particular instance of one of the given types.
-         */
         readonly Period: "Period";
         readonly Person: "Person";
         readonly PlanDefinition: "PlanDefinition";
@@ -442,11 +431,17 @@ export declare class OperationDefinitionParameter extends fhir.BackboneElement {
         readonly RiskAssessment: "RiskAssessment";
         readonly RiskEvidenceSynthesis: "RiskEvidenceSynthesis";
         readonly SampledData: "SampledData";
-        readonly Schedule: "Schedule";
+        readonly Schedule: "Schedule"; /**
+         * What http methods can be used for the operation depends on the .affectsState value and whether the input parameters are primitive or complex:
+         * 1. Servers SHALL support POST method for all operations.
+         * 2. Servers SHALL support GET method if all the parameters for the operation are primitive or there are no parameters and the operation has affectsState = false.
+         */
         readonly SearchParameter: "SearchParameter";
         readonly ServiceRequest: "ServiceRequest";
         readonly Signature: "Signature";
-        readonly SimpleQuantity: "SimpleQuantity";
+        readonly SimpleQuantity: "SimpleQuantity"; /**
+         * If the type is an abstract resource ("Resource" or "DomainResource") then the operation can be invoked on any concrete specialization.
+         */
         readonly Slot: "Slot";
         readonly Specimen: "Specimen";
         readonly SpecimenDefinition: "SpecimenDefinition";
@@ -508,7 +503,7 @@ export interface OperationDefinitionOverloadArgs extends fhir.BackboneElementArg
     /**
      * Name of parameter to include in overload.
      */
-    parameterName?: fhir.FhirString[] | string[] | undefined;
+    parameterName?: fhir.FhirString[] | (string | null)[] | undefined;
     /**
      * Extended properties for primitive element: OperationDefinition.overload.parameterName
      */
@@ -694,7 +689,7 @@ export interface OperationDefinitionArgs extends fhir.DomainResourceArgs {
     /**
      * If the type is an abstract resource ("Resource" or "DomainResource") then the operation can be invoked on any concrete specialization.
      */
-    resource?: fhir.FhirCode[] | string[] | undefined;
+    resource?: fhir.FhirCode[] | (string | null)[] | undefined;
     /**
      * Extended properties for primitive element: OperationDefinition.resource
      */
@@ -945,15 +940,14 @@ export declare class OperationDefinition extends fhir.DomainResource {
         readonly EnrollmentResponse: "EnrollmentResponse";
         readonly EpisodeOfCare: "EpisodeOfCare";
         readonly EventDefinition: "EventDefinition";
-        readonly Evidence: "Evidence"; /**
-         * If a parameter name is used for both an input and an output parameter, the parameter should be defined twice.
-         */
+        readonly Evidence: "Evidence";
         readonly EvidenceVariable: "EvidenceVariable";
+        /**
+         * The minimum number of times this parameter SHALL appear in the request or response.
+         */
         readonly ExampleScenario: "ExampleScenario";
         readonly ExplanationOfBenefit: "ExplanationOfBenefit";
-        readonly FamilyMemberHistory: "FamilyMemberHistory"; /**
-         * Often, these profiles are the base definitions from the spec (e.g. http://hl7.org/fhir/StructureDefinition/Patient).
-         */
+        readonly FamilyMemberHistory: "FamilyMemberHistory";
         readonly Flag: "Flag";
         readonly Goal: "Goal";
         readonly GraphDefinition: "GraphDefinition";
@@ -1008,11 +1002,11 @@ export declare class OperationDefinition extends fhir.DomainResource {
         readonly Person: "Person";
         readonly PlanDefinition: "PlanDefinition";
         readonly Practitioner: "Practitioner";
-        /**
-         * Named queries are invoked differently, and have different capabilities.
-         */
         readonly PractitionerRole: "PractitionerRole";
         readonly Procedure: "Procedure";
+        /**
+         * Extended properties for primitive element: OperationDefinition.experimental
+         */
         readonly Provenance: "Provenance";
         readonly Questionnaire: "Questionnaire";
         readonly QuestionnaireResponse: "QuestionnaireResponse";

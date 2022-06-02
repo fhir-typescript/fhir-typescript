@@ -39,7 +39,7 @@ export interface ClaimResponseItemDetailSubDetail extends fhir.BackboneElement {
     /**
      * The numbers associated with notes below which apply to the adjudication of this item.
      */
-    noteNumber?: number[] | undefined;
+    noteNumber?: (number | null)[] | undefined;
     /**
      * Extended properties for primitive element: ClaimResponse.item.detail.subDetail.noteNumber
      */
@@ -47,7 +47,7 @@ export interface ClaimResponseItemDetailSubDetail extends fhir.BackboneElement {
     /**
      * The adjudication results.
      */
-    adjudication?: fhir.ClaimResponseItemAdjudication[] | undefined;
+    adjudication?: (fhir.ClaimResponseItemAdjudication | null)[] | undefined;
 }
 /**
  * A claim detail. Either a simple (a product or service) or a 'group' of sub-details which are simple items.
@@ -64,7 +64,7 @@ export interface ClaimResponseItemDetail extends fhir.BackboneElement {
     /**
      * The numbers associated with notes below which apply to the adjudication of this item.
      */
-    noteNumber?: number[] | undefined;
+    noteNumber?: (number | null)[] | undefined;
     /**
      * Extended properties for primitive element: ClaimResponse.item.detail.noteNumber
      */
@@ -72,11 +72,11 @@ export interface ClaimResponseItemDetail extends fhir.BackboneElement {
     /**
      * The adjudication results.
      */
-    adjudication: fhir.ClaimResponseItemAdjudication[] | null;
+    adjudication: (fhir.ClaimResponseItemAdjudication | null)[] | null;
     /**
      * A sub-detail adjudication of a simple product or service.
      */
-    subDetail?: fhir.ClaimResponseItemDetailSubDetail[] | undefined;
+    subDetail?: (fhir.ClaimResponseItemDetailSubDetail | null)[] | undefined;
 }
 /**
  * A claim line. Either a simple (a product or service) or a 'group' of details which can also be a simple items or groups of sub-details.
@@ -93,7 +93,7 @@ export interface ClaimResponseItem extends fhir.BackboneElement {
     /**
      * The numbers associated with notes below which apply to the adjudication of this item.
      */
-    noteNumber?: number[] | undefined;
+    noteNumber?: (number | null)[] | undefined;
     /**
      * Extended properties for primitive element: ClaimResponse.item.noteNumber
      */
@@ -101,11 +101,11 @@ export interface ClaimResponseItem extends fhir.BackboneElement {
     /**
      * If this item is a group then the values here are a summary of the adjudication of the detail items. If this item is a simple product or service then this is the result of the adjudication of this item.
      */
-    adjudication: fhir.ClaimResponseItemAdjudication[] | null;
+    adjudication: (fhir.ClaimResponseItemAdjudication | null)[] | null;
     /**
      * A claim detail. Either a simple (a product or service) or a 'group' of sub-details which are simple items.
      */
-    detail?: fhir.ClaimResponseItemDetail[] | undefined;
+    detail?: (fhir.ClaimResponseItemDetail | null)[] | undefined;
 }
 /**
  * The third-tier service adjudications for payor added services.
@@ -118,7 +118,7 @@ export interface ClaimResponseAddItemDetailSubDetail extends fhir.BackboneElemen
     /**
      * For example in Oral whether the treatment is cosmetic or associated with TMJ, or for Medical whether the treatment was outside the clinic or outside of office hours.
      */
-    modifier?: fhir.CodeableConcept[] | undefined;
+    modifier?: (fhir.CodeableConcept | null)[] | undefined;
     /**
      * The number of repetitions of a service or product.
      */
@@ -142,7 +142,7 @@ export interface ClaimResponseAddItemDetailSubDetail extends fhir.BackboneElemen
     /**
      * The numbers associated with notes below which apply to the adjudication of this item.
      */
-    noteNumber?: number[] | undefined;
+    noteNumber?: (number | null)[] | undefined;
     /**
      * Extended properties for primitive element: ClaimResponse.addItem.detail.subDetail.noteNumber
      */
@@ -150,7 +150,7 @@ export interface ClaimResponseAddItemDetailSubDetail extends fhir.BackboneElemen
     /**
      * The adjudication results.
      */
-    adjudication: fhir.ClaimResponseItemAdjudication[] | null;
+    adjudication: (fhir.ClaimResponseItemAdjudication | null)[] | null;
 }
 /**
  * The second-tier service adjudications for payor added services.
@@ -163,7 +163,7 @@ export interface ClaimResponseAddItemDetail extends fhir.BackboneElement {
     /**
      * For example in Oral whether the treatment is cosmetic or associated with TMJ, or for Medical whether the treatment was outside the clinic or outside of office hours.
      */
-    modifier?: fhir.CodeableConcept[] | undefined;
+    modifier?: (fhir.CodeableConcept | null)[] | undefined;
     /**
      * The number of repetitions of a service or product.
      */
@@ -187,7 +187,7 @@ export interface ClaimResponseAddItemDetail extends fhir.BackboneElement {
     /**
      * The numbers associated with notes below which apply to the adjudication of this item.
      */
-    noteNumber?: number[] | undefined;
+    noteNumber?: (number | null)[] | undefined;
     /**
      * Extended properties for primitive element: ClaimResponse.addItem.detail.noteNumber
      */
@@ -195,11 +195,11 @@ export interface ClaimResponseAddItemDetail extends fhir.BackboneElement {
     /**
      * The adjudication results.
      */
-    adjudication: fhir.ClaimResponseItemAdjudication[] | null;
+    adjudication: (fhir.ClaimResponseItemAdjudication | null)[] | null;
     /**
      * The third-tier service adjudications for payor added services.
      */
-    subDetail?: fhir.ClaimResponseAddItemDetailSubDetail[] | undefined;
+    subDetail?: (fhir.ClaimResponseAddItemDetailSubDetail | null)[] | undefined;
 }
 /**
  * The first-tier service adjudications for payor added product or service lines.
@@ -208,7 +208,7 @@ export interface ClaimResponseAddItem extends fhir.BackboneElement {
     /**
      * Claim items which this service line is intended to replace.
      */
-    itemSequence?: number[] | undefined;
+    itemSequence?: (number | null)[] | undefined;
     /**
      * Extended properties for primitive element: ClaimResponse.addItem.itemSequence
      */
@@ -216,7 +216,7 @@ export interface ClaimResponseAddItem extends fhir.BackboneElement {
     /**
      * The sequence number of the details within the claim item which this line is intended to replace.
      */
-    detailSequence?: number[] | undefined;
+    detailSequence?: (number | null)[] | undefined;
     /**
      * Extended properties for primitive element: ClaimResponse.addItem.detailSequence
      */
@@ -224,7 +224,7 @@ export interface ClaimResponseAddItem extends fhir.BackboneElement {
     /**
      * The sequence number of the sub-details within the details within the claim item which this line is intended to replace.
      */
-    subdetailSequence?: number[] | undefined;
+    subdetailSequence?: (number | null)[] | undefined;
     /**
      * Extended properties for primitive element: ClaimResponse.addItem.subdetailSequence
      */
@@ -232,7 +232,7 @@ export interface ClaimResponseAddItem extends fhir.BackboneElement {
     /**
      * The providers who are authorized for the services rendered to the patient.
      */
-    provider?: fhir.Reference[] | undefined;
+    provider?: (fhir.Reference | null)[] | undefined;
     /**
      * If this is an actual service or product line, i.e. not a Group, then use code to indicate the Professional Service or Product supplied (e.g. CTP, HCPCS, USCLS, ICD10, NCPDP, DIN, RxNorm, ACHI, CCI). If a grouping item then use a group code to indicate the type of thing being grouped e.g. 'glasses' or 'compound'.
      */
@@ -240,11 +240,11 @@ export interface ClaimResponseAddItem extends fhir.BackboneElement {
     /**
      * For example in Oral whether the treatment is cosmetic or associated with TMJ, or for Medical whether the treatment was outside the clinic or outside of office hours.
      */
-    modifier?: fhir.CodeableConcept[] | undefined;
+    modifier?: (fhir.CodeableConcept | null)[] | undefined;
     /**
      * For example: Neonatal program, child dental program or drug users recovery program.
      */
-    programCode?: fhir.CodeableConcept[] | undefined;
+    programCode?: (fhir.CodeableConcept | null)[] | undefined;
     /**
      * The date or dates when the service or product was supplied, performed or completed.
      */
@@ -296,11 +296,11 @@ export interface ClaimResponseAddItem extends fhir.BackboneElement {
     /**
      * A region or surface of the bodySite, e.g. limb region or tooth surface(s).
      */
-    subSite?: fhir.CodeableConcept[] | undefined;
+    subSite?: (fhir.CodeableConcept | null)[] | undefined;
     /**
      * The numbers associated with notes below which apply to the adjudication of this item.
      */
-    noteNumber?: number[] | undefined;
+    noteNumber?: (number | null)[] | undefined;
     /**
      * Extended properties for primitive element: ClaimResponse.addItem.noteNumber
      */
@@ -308,11 +308,11 @@ export interface ClaimResponseAddItem extends fhir.BackboneElement {
     /**
      * The adjudication results.
      */
-    adjudication: fhir.ClaimResponseItemAdjudication[] | null;
+    adjudication: (fhir.ClaimResponseItemAdjudication | null)[] | null;
     /**
      * The second-tier service adjudications for payor added services.
      */
-    detail?: fhir.ClaimResponseAddItemDetail[] | undefined;
+    detail?: (fhir.ClaimResponseAddItemDetail | null)[] | undefined;
 }
 /**
  * Totals for amounts submitted, co-pays, benefits payable etc.
@@ -470,11 +470,11 @@ export interface ClaimResponse extends fhir.DomainResource {
     /**
      * Resource Type Name
      */
-    resourceType: "ClaimResponse";
+    resourceType: "ClaimResponse" | null;
     /**
      * A unique identifier assigned to this claim response.
      */
-    identifier?: fhir.Identifier[] | undefined;
+    identifier?: (fhir.Identifier | null)[] | undefined;
     /**
      * This element is labeled as a modifier because the status contains codes that mark the resource as not currently valid.
      */
@@ -558,19 +558,19 @@ export interface ClaimResponse extends fhir.DomainResource {
     /**
      * A claim line. Either a simple (a product or service) or a 'group' of details which can also be a simple items or groups of sub-details.
      */
-    item?: fhir.ClaimResponseItem[] | undefined;
+    item?: (fhir.ClaimResponseItem | null)[] | undefined;
     /**
      * The first-tier service adjudications for payor added product or service lines.
      */
-    addItem?: fhir.ClaimResponseAddItem[] | undefined;
+    addItem?: (fhir.ClaimResponseAddItem | null)[] | undefined;
     /**
      * The adjudication results which are presented at the header level rather than at the line-item or add-item levels.
      */
-    adjudication?: fhir.ClaimResponseItemAdjudication[] | undefined;
+    adjudication?: (fhir.ClaimResponseItemAdjudication | null)[] | undefined;
     /**
      * Totals for amounts submitted, co-pays, benefits payable etc.
      */
-    total?: fhir.ClaimResponseTotal[] | undefined;
+    total?: (fhir.ClaimResponseTotal | null)[] | undefined;
     /**
      * Payment details for the adjudication of the claim.
      */
@@ -590,18 +590,18 @@ export interface ClaimResponse extends fhir.DomainResource {
     /**
      * A note that describes or explains adjudication results in a human readable form.
      */
-    processNote?: fhir.ClaimResponseProcessNote[] | undefined;
+    processNote?: (fhir.ClaimResponseProcessNote | null)[] | undefined;
     /**
      * For example: professional reports, documents, images, clinical resources, or accident reports.
      */
-    communicationRequest?: fhir.Reference[] | undefined;
+    communicationRequest?: (fhir.Reference | null)[] | undefined;
     /**
      * All insurance coverages for the patient which may be applicable for reimbursement, of the products and services listed in the claim, are typically provided in the claim to allow insurers to confirm the ordering of the insurance coverages relative to local 'coordination of benefit' rules. One coverage (and only one) with 'focal=true' is to be used in the adjudication of this claim. Coverages appearing before the focal Coverage in the list, and where 'subrogation=false', should provide a reference to the ClaimResponse containing the adjudication results of the prior claim.
      */
-    insurance?: fhir.ClaimResponseInsurance[] | undefined;
+    insurance?: (fhir.ClaimResponseInsurance | null)[] | undefined;
     /**
      * If the request contains errors then an error element should be provided and no adjudication related sections (item, addItem, or payment) should be present.
      */
-    error?: fhir.ClaimResponseError[] | undefined;
+    error?: (fhir.ClaimResponseError | null)[] | undefined;
 }
 //# sourceMappingURL=ClaimResponse.d.ts.map

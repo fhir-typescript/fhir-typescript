@@ -6,11 +6,11 @@ export interface OrganizationAffiliation extends fhir.DomainResource {
     /**
      * Resource Type Name
      */
-    resourceType: "OrganizationAffiliation";
+    resourceType: "OrganizationAffiliation" | null;
     /**
      * Business identifiers that are specific to this role.
      */
-    identifier?: fhir.Identifier[] | undefined;
+    identifier?: (fhir.Identifier | null)[] | undefined;
     /**
      * If this value is false, you may refer to the period to see when the role was in active use. If there is no period specified, no inference can be made about when it was active.
      */
@@ -34,30 +34,30 @@ export interface OrganizationAffiliation extends fhir.DomainResource {
     /**
      * Health insurance provider network in which the participatingOrganization provides the role's services (if defined) at the indicated locations (if defined).
      */
-    network?: fhir.Reference[] | undefined;
+    network?: (fhir.Reference | null)[] | undefined;
     /**
      * Definition of the role the participatingOrganization plays in the association.
      */
-    code?: fhir.CodeableConcept[] | undefined;
+    code?: (fhir.CodeableConcept | null)[] | undefined;
     /**
      * Specific specialty of the participatingOrganization in the context of the role.
      */
-    specialty?: fhir.CodeableConcept[] | undefined;
+    specialty?: (fhir.CodeableConcept | null)[] | undefined;
     /**
      * The location(s) at which the role occurs.
      */
-    location?: fhir.Reference[] | undefined;
+    location?: (fhir.Reference | null)[] | undefined;
     /**
      * Healthcare services provided through the role.
      */
-    healthcareService?: fhir.Reference[] | undefined;
+    healthcareService?: (fhir.Reference | null)[] | undefined;
     /**
      * Contact details at the participatingOrganization relevant to this Affiliation.
      */
-    telecom?: fhir.ContactPoint[] | undefined;
+    telecom?: (fhir.ContactPoint | null)[] | undefined;
     /**
      * Technical endpoints providing access to services operated for this role.
      */
-    endpoint?: fhir.Reference[] | undefined;
+    endpoint?: (fhir.Reference | null)[] | undefined;
 }
 //# sourceMappingURL=OrganizationAffiliation.d.ts.map

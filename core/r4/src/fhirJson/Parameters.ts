@@ -301,7 +301,7 @@ export interface ParametersParameter extends fhir.BackboneElement {
   /**
    * Only one level of nested parameters is allowed.
    */
-  part?: fhir.ParametersParameter[]|undefined;
+  part?: (fhir.ParametersParameter|null)[]|undefined;
 }
 
 /**
@@ -311,9 +311,9 @@ export interface Parameters extends fhir.Resource {
   /**
    * Resource Type Name
    */
-  resourceType: "Parameters";
+  resourceType: "Parameters"|null;
   /**
    * A parameter passed to or received from the operation.
    */
-  parameter?: fhir.ParametersParameter[]|undefined;
+  parameter?: (fhir.ParametersParameter|null)[]|undefined;
 }

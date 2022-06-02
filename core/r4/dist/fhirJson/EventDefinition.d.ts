@@ -6,7 +6,7 @@ export interface EventDefinition extends fhir.DomainResource {
     /**
      * Resource Type Name
      */
-    resourceType: "EventDefinition";
+    resourceType: "EventDefinition" | null;
     /**
      * Can be a urn:uuid: or a urn:oid: but real http: addresses are preferred.  Multiple instances may share the same URL if they have a distinct version.
      * The determination of when to create a new version of a resource (same url, new version) vs. defining a new artifact is up to the author.  Considerations for making this decision are found in [Technical and Business Versions](resource.html#versions).
@@ -20,7 +20,7 @@ export interface EventDefinition extends fhir.DomainResource {
     /**
      * Typically, this is used for identifiers that can go in an HL7 V3 II (instance identifier) data type, and can then identify this event definition outside of FHIR, where it is not possible to use the logical URI.
      */
-    identifier?: fhir.Identifier[] | undefined;
+    identifier?: (fhir.Identifier | null)[] | undefined;
     /**
      * There may be different event definition instances that have the same identifier but different versions.  The version can be appended to the url in a reference to allow a reference to a particular business version of the event definition with the format [url]|[version].
      */
@@ -96,7 +96,7 @@ export interface EventDefinition extends fhir.DomainResource {
     /**
      * May be a web site, an email address, a telephone number, etc.
      */
-    contact?: fhir.ContactDetail[] | undefined;
+    contact?: (fhir.ContactDetail | null)[] | undefined;
     /**
      * This description can be used to capture details such as why the event definition was built, comments about misuse, instructions for clinical use and interpretation, literature references, examples from the paper world, etc. It is not a rendering of the event definition as conveyed in the 'text' field of the resource itself. This item SHOULD be populated unless the information is available from context (e.g. the language of the event definition is presumed to be the predominant language in the place the event definition was created).
      */
@@ -108,11 +108,11 @@ export interface EventDefinition extends fhir.DomainResource {
     /**
      * When multiple useContexts are specified, there is no expectation that all or any of the contexts apply.
      */
-    useContext?: fhir.UsageContext[] | undefined;
+    useContext?: (fhir.UsageContext | null)[] | undefined;
     /**
      * It may be possible for the event definition to be used in jurisdictions other than those for which it was originally designed or intended.
      */
-    jurisdiction?: fhir.CodeableConcept[] | undefined;
+    jurisdiction?: (fhir.CodeableConcept | null)[] | undefined;
     /**
      * This element does not describe the usage of the event definition. Instead, it provides traceability of ''why'' the resource is either needed or ''why'' it is defined as it is.  This may be used to point to source materials or specifications that drove the structure of this event definition.
      */
@@ -160,30 +160,30 @@ export interface EventDefinition extends fhir.DomainResource {
     /**
      * Descriptive topics related to the module. Topics provide a high-level categorization of the module that can be useful for filtering and searching.
      */
-    topic?: fhir.CodeableConcept[] | undefined;
+    topic?: (fhir.CodeableConcept | null)[] | undefined;
     /**
      * An individiual or organization primarily involved in the creation and maintenance of the content.
      */
-    author?: fhir.ContactDetail[] | undefined;
+    author?: (fhir.ContactDetail | null)[] | undefined;
     /**
      * An individual or organization primarily responsible for internal coherence of the content.
      */
-    editor?: fhir.ContactDetail[] | undefined;
+    editor?: (fhir.ContactDetail | null)[] | undefined;
     /**
      * An individual or organization primarily responsible for review of some aspect of the content.
      */
-    reviewer?: fhir.ContactDetail[] | undefined;
+    reviewer?: (fhir.ContactDetail | null)[] | undefined;
     /**
      * An individual or organization responsible for officially endorsing the content for use in some setting.
      */
-    endorser?: fhir.ContactDetail[] | undefined;
+    endorser?: (fhir.ContactDetail | null)[] | undefined;
     /**
      * Each related resource is either an attachment, or a reference to another resource, but not both.
      */
-    relatedArtifact?: fhir.RelatedArtifact[] | undefined;
+    relatedArtifact?: (fhir.RelatedArtifact | null)[] | undefined;
     /**
      * The trigger element defines when the event occurs. If more than one trigger condition is specified, the event fires whenever any one of the trigger conditions is met.
      */
-    trigger: fhir.TriggerDefinition[] | null;
+    trigger: (fhir.TriggerDefinition | null)[] | null;
 }
 //# sourceMappingURL=EventDefinition.d.ts.map

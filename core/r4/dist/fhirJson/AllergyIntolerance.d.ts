@@ -10,7 +10,7 @@ export interface AllergyIntoleranceReaction extends fhir.BackboneElement {
     /**
      * Manifestation can be expressed as a single word, phrase or brief description. For example: nausea, rash or no reaction. It is preferable that manifestation should be coded with a terminology, where possible. The values entered here may be used to display on an application screen as part of a list of adverse reactions, as recommended in the UK NHS CUI guidelines.  Terminologies commonly used include, but are not limited to, SNOMED CT or ICD10.
      */
-    manifestation: fhir.CodeableConcept[] | null;
+    manifestation: (fhir.CodeableConcept | null)[] | null;
     /**
      * Use the description to provide any details of a particular event of the occurred reaction such as circumstances, reaction specifics, what happened before/after. Information, related to the event, but not describing a particular care should be captured in the comment field. For example: at the age of four, the patient was given penicillin for strep throat and subsequently developed severe hives.
      */
@@ -42,7 +42,7 @@ export interface AllergyIntoleranceReaction extends fhir.BackboneElement {
     /**
      * Use this field to record information indirectly related to a particular event and not captured in the description. For example: Clinical records are no longer available, recorded based on information provided to the patient by her mother and her mother is deceased.
      */
-    note?: fhir.Annotation[] | undefined;
+    note?: (fhir.Annotation | null)[] | undefined;
 }
 /**
  * Risk of harmful or undesirable, physiological response which is unique to an individual and associated with exposure to a substance.
@@ -51,11 +51,11 @@ export interface AllergyIntolerance extends fhir.DomainResource {
     /**
      * Resource Type Name
      */
-    resourceType: "AllergyIntolerance";
+    resourceType: "AllergyIntolerance" | null;
     /**
      * This is a business identifier, not a resource identifier (see [discussion](resource.html#identifiers)).  It is best practice for the identifier to only appear on a single resource instance, however business practices may occasionally dictate that multiple resource instances with the same identifier can exist - possibly even with different resource types.  For example, multiple Patient and a Person resource instance might share the same social insurance number.
      */
-    identifier?: fhir.Identifier[] | undefined;
+    identifier?: (fhir.Identifier | null)[] | undefined;
     /**
      * Refer to [discussion](extensibility.html#Special-Case) if clincalStatus is missing data.
      * The data type is CodeableConcept because clinicalStatus has some clinical judgment involved, such that there might need to be more specificity than the required FHIR value set allows. For example, a SNOMED coding might allow for additional specificity.
@@ -76,7 +76,7 @@ export interface AllergyIntolerance extends fhir.DomainResource {
     /**
      * This data element has been included because it is currently being captured in some clinical systems. This data can be derived from the substance where coding systems are used, and is effectively redundant in that situation.  When searching on category, consider the implications of AllergyIntolerance resources without a category.  For example, when searching on category = medication, medication allergies that don't have a category valued will not be returned.  Refer to [search](search.html) for more information on how to search category with a :missing modifier to get allergies that don't have a category.  Additionally, category should be used with caution because category can be subjective based on the sender.
      */
-    category?: ('biologic' | 'environment' | 'food' | 'medication')[] | undefined;
+    category?: (('biologic' | 'environment' | 'food' | 'medication') | null)[] | undefined;
     /**
      * Extended properties for primitive element: AllergyIntolerance.category
      */
@@ -158,10 +158,10 @@ export interface AllergyIntolerance extends fhir.DomainResource {
     /**
      * For example: including reason for flagging a seriousness of 'High Risk'; and instructions related to future exposure or administration of the substance, such as administration within an Intensive Care Unit or under corticosteroid cover. The notes should be related to an allergy or intolerance as a condition in general and not related to any particular episode of it. For episode notes and descriptions, use AllergyIntolerance.event.description and  AllergyIntolerance.event.notes.
      */
-    note?: fhir.Annotation[] | undefined;
+    note?: (fhir.Annotation | null)[] | undefined;
     /**
      * Details about each adverse reaction event linked to exposure to the identified substance.
      */
-    reaction?: fhir.AllergyIntoleranceReaction[] | undefined;
+    reaction?: (fhir.AllergyIntoleranceReaction | null)[] | undefined;
 }
 //# sourceMappingURL=AllergyIntolerance.d.ts.map

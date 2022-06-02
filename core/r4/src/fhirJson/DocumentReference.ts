@@ -45,11 +45,11 @@ export interface DocumentReferenceContext extends fhir.BackboneElement {
   /**
    * Describes the clinical encounter or type of care that the document content is associated with.
    */
-  encounter?: fhir.Reference[]|undefined;
+  encounter?: (fhir.Reference|null)[]|undefined;
   /**
    * An event can further specialize the act inherent in the type, such as  where it is simply "Procedure Report" and the procedure was a "colonoscopy". If one or more event codes are included, they shall not conflict with the values inherent in the class or type elements as such a conflict would create an ambiguous situation.
    */
-  event?: fhir.CodeableConcept[]|undefined;
+  event?: (fhir.CodeableConcept|null)[]|undefined;
   /**
    * The time period over which the service that is described by the document was provided.
    */
@@ -69,7 +69,7 @@ export interface DocumentReferenceContext extends fhir.BackboneElement {
   /**
    * May be identifiers or resources that caused the DocumentReference or referenced Document to be created.
    */
-  related?: fhir.Reference[]|undefined;
+  related?: (fhir.Reference|null)[]|undefined;
 }
 
 /**
@@ -79,7 +79,7 @@ export interface DocumentReference extends fhir.DomainResource {
   /**
    * Resource Type Name
    */
-  resourceType: "DocumentReference";
+  resourceType: "DocumentReference"|null;
   /**
    * CDA Document Id extension and root.
    */
@@ -87,7 +87,7 @@ export interface DocumentReference extends fhir.DomainResource {
   /**
    * Other identifiers associated with the document, including version independent identifiers.
    */
-  identifier?: fhir.Identifier[]|undefined;
+  identifier?: (fhir.Identifier|null)[]|undefined;
   /**
    * This is the status of the DocumentReference object, which might be independent from the docStatus element.
    * This element is labeled as a modifier because the status contains the codes that mark the document or reference as not currently valid.
@@ -112,7 +112,7 @@ export interface DocumentReference extends fhir.DomainResource {
   /**
    * Key metadata element describing the the category or classification of the document. This is a broader perspective that groups similar documents based on how they would be used. This is a primary key used in searching.
    */
-  category?: fhir.CodeableConcept[]|undefined;
+  category?: (fhir.CodeableConcept|null)[]|undefined;
   /**
    * Who or what the document is about. The document can be about a person, (patient or healthcare practitioner), a device (e.g. a machine) or even a group of subjects (such as a document about a herd of farm animals, or a set of patients that share a common exposure).
    */
@@ -128,7 +128,7 @@ export interface DocumentReference extends fhir.DomainResource {
   /**
    * Not necessarily who did the actual data entry (i.e. typist) or who was the source (informant).
    */
-  author?: fhir.Reference[]|undefined;
+  author?: (fhir.Reference|null)[]|undefined;
   /**
    * Represents a participant within the author institution who has legally authenticated or attested the document. Legal authentication implies that a document has been signed manually or electronically by the legal Authenticator.
    */
@@ -140,7 +140,7 @@ export interface DocumentReference extends fhir.DomainResource {
   /**
    * This element is labeled as a modifier because documents that append to other documents are incomplete on their own.
    */
-  relatesTo?: fhir.DocumentReferenceRelatesTo[]|undefined;
+  relatesTo?: (fhir.DocumentReferenceRelatesTo|null)[]|undefined;
   /**
    * What the document is about,  a terse summary of the document.
    */
@@ -153,11 +153,11 @@ export interface DocumentReference extends fhir.DomainResource {
    * The confidentiality codes can carry multiple vocabulary items. HL7 has developed an understanding of security and privacy tags that might be desirable in a Document Sharing environment, called HL7 Healthcare Privacy and Security Classification System (HCS). The following specification is recommended but not mandated, as the vocabulary bindings are an administrative domain responsibility. The use of this method is up to the policy domain such as the XDS Affinity Domain or other Trust Domain where all parties including sender and recipients are trusted to appropriately tag and enforce.   
    * In the HL7 Healthcare Privacy and Security Classification (HCS) there are code systems specific to Confidentiality, Sensitivity, Integrity, and Handling Caveats. Some values would come from a local vocabulary as they are related to workflow roles and special projects.
    */
-  securityLabel?: fhir.CodeableConcept[]|undefined;
+  securityLabel?: (fhir.CodeableConcept|null)[]|undefined;
   /**
    * The document and format referenced. There may be multiple content element repetitions, each with a different format.
    */
-  content: fhir.DocumentReferenceContent[]|null;
+  content: (fhir.DocumentReferenceContent|null)[]|null;
   /**
    * These values are primarily added to help with searching for interesting/relevant documents.
    */

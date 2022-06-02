@@ -13,7 +13,7 @@ export interface PractitionerRoleAvailableTime extends fhir.BackboneElement {
   /**
    * Indicates which days of the week are available between the start and end Times.
    */
-  daysOfWeek?: ('fri'|'mon'|'sat'|'sun'|'thu'|'tue'|'wed')[]|undefined;
+  daysOfWeek?: (('fri'|'mon'|'sat'|'sun'|'thu'|'tue'|'wed')|null)[]|undefined;
   /**
    * Extended properties for primitive element: PractitionerRole.availableTime.daysOfWeek
    */
@@ -69,11 +69,11 @@ export interface PractitionerRole extends fhir.DomainResource {
   /**
    * Resource Type Name
    */
-  resourceType: "PractitionerRole";
+  resourceType: "PractitionerRole"|null;
   /**
    * Business Identifiers that are specific to a role/location.
    */
-  identifier?: fhir.Identifier[]|undefined;
+  identifier?: (fhir.Identifier|null)[]|undefined;
   /**
    * If this value is false, you may refer to the period to see when the role was in active use. If there is no period specified, no inference can be made about when it was active.
    */
@@ -97,31 +97,31 @@ export interface PractitionerRole extends fhir.DomainResource {
   /**
    * A person may have more than one role.
    */
-  code?: fhir.CodeableConcept[]|undefined;
+  code?: (fhir.CodeableConcept|null)[]|undefined;
   /**
    * Specific specialty of the practitioner.
    */
-  specialty?: fhir.CodeableConcept[]|undefined;
+  specialty?: (fhir.CodeableConcept|null)[]|undefined;
   /**
    * The location(s) at which this practitioner provides care.
    */
-  location?: fhir.Reference[]|undefined;
+  location?: (fhir.Reference|null)[]|undefined;
   /**
    * The list of healthcare services that this worker provides for this role's Organization/Location(s).
    */
-  healthcareService?: fhir.Reference[]|undefined;
+  healthcareService?: (fhir.Reference|null)[]|undefined;
   /**
    * Contact details that are specific to the role/location/service.
    */
-  telecom?: fhir.ContactPoint[]|undefined;
+  telecom?: (fhir.ContactPoint|null)[]|undefined;
   /**
    * More detailed availability information may be provided in associated Schedule/Slot resources.
    */
-  availableTime?: fhir.PractitionerRoleAvailableTime[]|undefined;
+  availableTime?: (fhir.PractitionerRoleAvailableTime|null)[]|undefined;
   /**
    * The practitioner is not available or performing this role during this period of time due to the provided reason.
    */
-  notAvailable?: fhir.PractitionerRoleNotAvailable[]|undefined;
+  notAvailable?: (fhir.PractitionerRoleNotAvailable|null)[]|undefined;
   /**
    * A description of site availability exceptions, e.g. public holiday availability. Succinctly describing all possible exceptions to normal site availability as details in the available Times and not available Times.
    */
@@ -133,5 +133,5 @@ export interface PractitionerRole extends fhir.DomainResource {
   /**
    * Technical endpoints providing access to services operated for the practitioner with this role.
    */
-  endpoint?: fhir.Reference[]|undefined;
+  endpoint?: (fhir.Reference|null)[]|undefined;
 }

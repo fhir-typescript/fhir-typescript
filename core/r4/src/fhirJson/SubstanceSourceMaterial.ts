@@ -137,7 +137,7 @@ export interface SubstanceSourceMaterialOrganism extends fhir.BackboneElement {
   /**
    * 4.9.13.6.1 Author type (Conditional).
    */
-  author?: fhir.SubstanceSourceMaterialOrganismAuthor[]|undefined;
+  author?: (fhir.SubstanceSourceMaterialOrganismAuthor|null)[]|undefined;
   /**
    * 4.9.13.8.1 Hybrid species maternal organism ID (Optional).
    */
@@ -169,7 +169,7 @@ export interface SubstanceSourceMaterial extends fhir.DomainResource {
   /**
    * Resource Type Name
    */
-  resourceType: "SubstanceSourceMaterial";
+  resourceType: "SubstanceSourceMaterial"|null;
   /**
    * General high level classification of the source material specific to the origin of the material.
    */
@@ -197,11 +197,11 @@ export interface SubstanceSourceMaterial extends fhir.DomainResource {
   /**
    * The parent of the herbal drug Ginkgo biloba, Leaf is the substance ID of the substance (fresh) of Ginkgo biloba L. or Ginkgo biloba L. (Whole plant).
    */
-  parentSubstanceId?: fhir.Identifier[]|undefined;
+  parentSubstanceId?: (fhir.Identifier|null)[]|undefined;
   /**
    * The parent substance of the Herbal Drug, or Herbal preparation.
    */
-  parentSubstanceName?: string[]|undefined;
+  parentSubstanceName?: (string|null)[]|undefined;
   /**
    * Extended properties for primitive element: SubstanceSourceMaterial.parentSubstanceName
    */
@@ -209,11 +209,11 @@ export interface SubstanceSourceMaterial extends fhir.DomainResource {
   /**
    * The country where the plant material is harvested or the countries where the plasma is sourced from as laid down in accordance with the Plasma Master File. For “Plasma-derived substances” the attribute country of origin provides information about the countries used for the manufacturing of the Cryopoor plama or Crioprecipitate.
    */
-  countryOfOrigin?: fhir.CodeableConcept[]|undefined;
+  countryOfOrigin?: (fhir.CodeableConcept|null)[]|undefined;
   /**
    * The place/region where the plant is harvested or the places/regions where the animal source material has its habitat.
    */
-  geographicalLocation?: string[]|undefined;
+  geographicalLocation?: (string|null)[]|undefined;
   /**
    * Extended properties for primitive element: SubstanceSourceMaterial.geographicalLocation
    */
@@ -225,7 +225,7 @@ export interface SubstanceSourceMaterial extends fhir.DomainResource {
   /**
    * Many complex materials are fractions of parts of plants, animals, or minerals. Fraction elements are often necessary to define both Substances and Specified Group 1 Substances. For substances derived from Plants, fraction information will be captured at the Substance information level ( . Oils, Juices and Exudates). Additional information for Extracts, such as extraction solvent composition, will be captured at the Specified Substance Group 1 information level. For plasma-derived products fraction information will be captured at the Substance and the Specified Substance Group 1 levels.
    */
-  fractionDescription?: fhir.SubstanceSourceMaterialFractionDescription[]|undefined;
+  fractionDescription?: (fhir.SubstanceSourceMaterialFractionDescription|null)[]|undefined;
   /**
    * This subclause describes the organism which the substance is derived from. For vaccines, the parent organism shall be specified based on these subclause elements. As an example, full taxonomy will be described for the Substance Name: ., Leaf.
    */
@@ -233,5 +233,5 @@ export interface SubstanceSourceMaterial extends fhir.DomainResource {
   /**
    * To do.
    */
-  partDescription?: fhir.SubstanceSourceMaterialPartDescription[]|undefined;
+  partDescription?: (fhir.SubstanceSourceMaterialPartDescription|null)[]|undefined;
 }

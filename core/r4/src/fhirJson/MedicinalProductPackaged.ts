@@ -27,7 +27,7 @@ export interface MedicinalProductPackagedPackageItem extends fhir.BackboneElemen
   /**
    * Including possibly Data Carrier Identifier.
    */
-  identifier?: fhir.Identifier[]|undefined;
+  identifier?: (fhir.Identifier|null)[]|undefined;
   /**
    * The physical type of the container of the medicine.
    */
@@ -39,23 +39,23 @@ export interface MedicinalProductPackagedPackageItem extends fhir.BackboneElemen
   /**
    * Material type of the package item.
    */
-  material?: fhir.CodeableConcept[]|undefined;
+  material?: (fhir.CodeableConcept|null)[]|undefined;
   /**
    * A possible alternate material for the packaging.
    */
-  alternateMaterial?: fhir.CodeableConcept[]|undefined;
+  alternateMaterial?: (fhir.CodeableConcept|null)[]|undefined;
   /**
    * A device accompanying a medicinal product.
    */
-  device?: fhir.Reference[]|undefined;
+  device?: (fhir.Reference|null)[]|undefined;
   /**
    * The manufactured item as contained in the packaged medicinal product.
    */
-  manufacturedItem?: fhir.Reference[]|undefined;
+  manufacturedItem?: (fhir.Reference|null)[]|undefined;
   /**
    * Allows containers within containers.
    */
-  packageItem?: fhir.MedicinalProductPackagedPackageItem[]|undefined;
+  packageItem?: (fhir.MedicinalProductPackagedPackageItem|null)[]|undefined;
   /**
    * Dimensions, color etc.
    */
@@ -63,15 +63,15 @@ export interface MedicinalProductPackagedPackageItem extends fhir.BackboneElemen
   /**
    * Other codeable characteristics.
    */
-  otherCharacteristics?: fhir.CodeableConcept[]|undefined;
+  otherCharacteristics?: (fhir.CodeableConcept|null)[]|undefined;
   /**
    * Shelf Life and storage information.
    */
-  shelfLifeStorage?: fhir.ProductShelfLife[]|undefined;
+  shelfLifeStorage?: (fhir.ProductShelfLife|null)[]|undefined;
   /**
    * Manufacturer of this Package Item.
    */
-  manufacturer?: fhir.Reference[]|undefined;
+  manufacturer?: (fhir.Reference|null)[]|undefined;
 }
 
 /**
@@ -81,15 +81,15 @@ export interface MedicinalProductPackaged extends fhir.DomainResource {
   /**
    * Resource Type Name
    */
-  resourceType: "MedicinalProductPackaged";
+  resourceType: "MedicinalProductPackaged"|null;
   /**
    * Unique identifier.
    */
-  identifier?: fhir.Identifier[]|undefined;
+  identifier?: (fhir.Identifier|null)[]|undefined;
   /**
    * The product with this is a pack for.
    */
-  subject?: fhir.Reference[]|undefined;
+  subject?: (fhir.Reference|null)[]|undefined;
   /**
    * Textual description.
    */
@@ -105,7 +105,7 @@ export interface MedicinalProductPackaged extends fhir.DomainResource {
   /**
    * Marketing information.
    */
-  marketingStatus?: fhir.MarketingStatus[]|undefined;
+  marketingStatus?: (fhir.MarketingStatus|null)[]|undefined;
   /**
    * Manufacturer of this Package Item.
    */
@@ -113,13 +113,13 @@ export interface MedicinalProductPackaged extends fhir.DomainResource {
   /**
    * Manufacturer of this Package Item.
    */
-  manufacturer?: fhir.Reference[]|undefined;
+  manufacturer?: (fhir.Reference|null)[]|undefined;
   /**
    * Batch numbering.
    */
-  batchIdentifier?: fhir.MedicinalProductPackagedBatchIdentifier[]|undefined;
+  batchIdentifier?: (fhir.MedicinalProductPackagedBatchIdentifier|null)[]|undefined;
   /**
    * A packaging item, as a contained for medicine, possibly with other packaging items within.
    */
-  packageItem: fhir.MedicinalProductPackagedPackageItem[]|null;
+  packageItem: (fhir.MedicinalProductPackagedPackageItem|null)[]|null;
 }

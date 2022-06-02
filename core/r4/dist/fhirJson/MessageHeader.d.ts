@@ -101,7 +101,7 @@ export interface MessageHeader extends fhir.DomainResource {
     /**
      * Resource Type Name
      */
-    resourceType: "MessageHeader";
+    resourceType: "MessageHeader" | null;
     /**
      * The time of the event will be found in the focus resource. The time of the message will be found in [Bundle.timestamp](bundle-definitions.html#Bundle.timestamp).
      */
@@ -117,7 +117,7 @@ export interface MessageHeader extends fhir.DomainResource {
     /**
      * There SHOULD be at least one destination, but in some circumstances, the source system is unaware of any particular destination system.
      */
-    destination?: fhir.MessageHeaderDestination[] | undefined;
+    destination?: (fhir.MessageHeaderDestination | null)[] | undefined;
     /**
      * Use case is for where a (trusted) sending system is responsible for multiple organizations, and therefore cannot differentiate based on source endpoint / authentication alone.
      */
@@ -149,7 +149,7 @@ export interface MessageHeader extends fhir.DomainResource {
     /**
      * The data is defined where the transaction type is defined. The transaction data is always included in the bundle that is the full message.  Only the root resource is specified.  The resources it references should be contained in the bundle but are not also listed here.  Multiple repetitions are allowed to cater for merges and other situations with multiple focal targets.
      */
-    focus?: fhir.Reference[] | undefined;
+    focus?: (fhir.Reference | null)[] | undefined;
     /**
      * Permanent link to the MessageDefinition for this message.
      */

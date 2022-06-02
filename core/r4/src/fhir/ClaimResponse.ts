@@ -181,7 +181,7 @@ export interface ClaimResponseItemDetailSubDetailArgs extends fhir.BackboneEleme
   /**
    * The numbers associated with notes below which apply to the adjudication of this item.
    */
-  noteNumber?: fhir.FhirPositiveInt[]|number[]|undefined;
+  noteNumber?: fhir.FhirPositiveInt[]|(number|null)[]|undefined;
   /**
    * Extended properties for primitive element: ClaimResponse.item.detail.subDetail.noteNumber
    */
@@ -264,7 +264,7 @@ export interface ClaimResponseItemDetailArgs extends fhir.BackboneElementArgs {
   /**
    * The numbers associated with notes below which apply to the adjudication of this item.
    */
-  noteNumber?: fhir.FhirPositiveInt[]|number[]|undefined;
+  noteNumber?: fhir.FhirPositiveInt[]|(number|null)[]|undefined;
   /**
    * Extended properties for primitive element: ClaimResponse.item.detail.noteNumber
    */
@@ -365,7 +365,7 @@ export interface ClaimResponseItemArgs extends fhir.BackboneElementArgs {
   /**
    * The numbers associated with notes below which apply to the adjudication of this item.
    */
-  noteNumber?: fhir.FhirPositiveInt[]|number[]|undefined;
+  noteNumber?: fhir.FhirPositiveInt[]|(number|null)[]|undefined;
   /**
    * Extended properties for primitive element: ClaimResponse.item.noteNumber
    */
@@ -486,7 +486,7 @@ export interface ClaimResponseAddItemDetailSubDetailArgs extends fhir.BackboneEl
   /**
    * The numbers associated with notes below which apply to the adjudication of this item.
    */
-  noteNumber?: fhir.FhirPositiveInt[]|number[]|undefined;
+  noteNumber?: fhir.FhirPositiveInt[]|(number|null)[]|undefined;
   /**
    * Extended properties for primitive element: ClaimResponse.addItem.detail.subDetail.noteNumber
    */
@@ -627,7 +627,7 @@ export interface ClaimResponseAddItemDetailArgs extends fhir.BackboneElementArgs
   /**
    * The numbers associated with notes below which apply to the adjudication of this item.
    */
-  noteNumber?: fhir.FhirPositiveInt[]|number[]|undefined;
+  noteNumber?: fhir.FhirPositiveInt[]|(number|null)[]|undefined;
   /**
    * Extended properties for primitive element: ClaimResponse.addItem.detail.noteNumber
    */
@@ -751,7 +751,7 @@ export interface ClaimResponseAddItemArgs extends fhir.BackboneElementArgs {
   /**
    * Claim items which this service line is intended to replace.
    */
-  itemSequence?: fhir.FhirPositiveInt[]|number[]|undefined;
+  itemSequence?: fhir.FhirPositiveInt[]|(number|null)[]|undefined;
   /**
    * Extended properties for primitive element: ClaimResponse.addItem.itemSequence
    */
@@ -759,7 +759,7 @@ export interface ClaimResponseAddItemArgs extends fhir.BackboneElementArgs {
   /**
    * The sequence number of the details within the claim item which this line is intended to replace.
    */
-  detailSequence?: fhir.FhirPositiveInt[]|number[]|undefined;
+  detailSequence?: fhir.FhirPositiveInt[]|(number|null)[]|undefined;
   /**
    * Extended properties for primitive element: ClaimResponse.addItem.detailSequence
    */
@@ -767,7 +767,7 @@ export interface ClaimResponseAddItemArgs extends fhir.BackboneElementArgs {
   /**
    * The sequence number of the sub-details within the details within the claim item which this line is intended to replace.
    */
-  subdetailSequence?: fhir.FhirPositiveInt[]|number[]|undefined;
+  subdetailSequence?: fhir.FhirPositiveInt[]|(number|null)[]|undefined;
   /**
    * Extended properties for primitive element: ClaimResponse.addItem.subdetailSequence
    */
@@ -847,7 +847,7 @@ export interface ClaimResponseAddItemArgs extends fhir.BackboneElementArgs {
   /**
    * The numbers associated with notes below which apply to the adjudication of this item.
    */
-  noteNumber?: fhir.FhirPositiveInt[]|number[]|undefined;
+  noteNumber?: fhir.FhirPositiveInt[]|(number|null)[]|undefined;
   /**
    * Extended properties for primitive element: ClaimResponse.addItem.noteNumber
    */

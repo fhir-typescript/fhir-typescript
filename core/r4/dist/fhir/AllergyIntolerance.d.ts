@@ -133,7 +133,7 @@ export interface AllergyIntoleranceArgs extends fhir.DomainResourceArgs {
     /**
      * This data element has been included because it is currently being captured in some clinical systems. This data can be derived from the substance where coding systems are used, and is effectively redundant in that situation.  When searching on category, consider the implications of AllergyIntolerance resources without a category.  For example, when searching on category = medication, medication allergies that don't have a category valued will not be returned.  Refer to [search](search.html) for more information on how to search category with a :missing modifier to get allergies that don't have a category.  Additionally, category should be used with caution because category can be subjective based on the sender.
      */
-    category?: fhir.FhirCode<AllergyIntoleranceCategoryCodeType>[] | string[] | undefined;
+    category?: fhir.FhirCode<AllergyIntoleranceCategoryCodeType>[] | (string | null)[] | undefined;
     /**
      * Extended properties for primitive element: AllergyIntolerance.category
      */

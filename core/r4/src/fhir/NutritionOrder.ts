@@ -574,7 +574,7 @@ export interface NutritionOrderArgs extends fhir.DomainResourceArgs {
   /**
    * Note: This is a business identifier, not a resource identifier (see [discussion](resource.html#identifiers)).  It is best practice for the identifier to only appear on a single resource instance, however business practices may occasionally dictate that multiple resource instances with the same identifier can exist - possibly even with different resource types.  For example, multiple Patient and a Person resource instance might share the same social insurance number.
    */
-  instantiatesCanonical?: fhir.FhirCanonical[]|string[]|undefined;
+  instantiatesCanonical?: fhir.FhirCanonical[]|(string|null)[]|undefined;
   /**
    * Extended properties for primitive element: NutritionOrder.instantiatesCanonical
    */
@@ -582,7 +582,7 @@ export interface NutritionOrderArgs extends fhir.DomainResourceArgs {
   /**
    * This might be an HTML page, PDF, etc. or could just be a non-resolvable URI identifier.
    */
-  instantiatesUri?: fhir.FhirUri[]|string[]|undefined;
+  instantiatesUri?: fhir.FhirUri[]|(string|null)[]|undefined;
   /**
    * Extended properties for primitive element: NutritionOrder.instantiatesUri
    */
@@ -590,7 +590,7 @@ export interface NutritionOrderArgs extends fhir.DomainResourceArgs {
   /**
    * The URL pointing to a protocol, guideline, orderset or other definition that is adhered to in whole or in part by this NutritionOrder.
    */
-  instantiates?: fhir.FhirUri[]|string[]|undefined;
+  instantiates?: fhir.FhirUri[]|(string|null)[]|undefined;
   /**
    * Extended properties for primitive element: NutritionOrder.instantiates
    */

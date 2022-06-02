@@ -37,7 +37,7 @@ export interface HumanName extends fhir.FhirElement {
   /**
    * If only initials are recorded, they may be used in place of the full name parts. Initials may be separated into multiple given names but often aren't due to paractical limitations.  This element is not called "first name" since given names do not always come first.
    */
-  given?: string[]|undefined;
+  given?: (string|null)[]|undefined;
   /**
    * Extended properties for primitive element: HumanName.given
    */
@@ -45,7 +45,7 @@ export interface HumanName extends fhir.FhirElement {
   /**
    * Part of the name that is acquired as a title due to academic, legal, employment or nobility status, etc. and that appears at the start of the name.
    */
-  prefix?: string[]|undefined;
+  prefix?: (string|null)[]|undefined;
   /**
    * Extended properties for primitive element: HumanName.prefix
    */
@@ -53,7 +53,7 @@ export interface HumanName extends fhir.FhirElement {
   /**
    * Part of the name that is acquired as a title due to academic, legal, employment or nobility status, etc. and that appears at the end of the name.
    */
-  suffix?: string[]|undefined;
+  suffix?: (string|null)[]|undefined;
   /**
    * Extended properties for primitive element: HumanName.suffix
    */

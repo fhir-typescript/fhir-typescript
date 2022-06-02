@@ -111,7 +111,7 @@ export interface AuditEventAgentArgs extends fhir.BackboneElementArgs {
     /**
      * For example: Where an OAuth token authorizes, the unique identifier from the OAuth token is placed into the policy element Where a policy engine (e.g. XACML) holds policy logic, the unique policy identifier is placed into the policy element.
      */
-    policy?: fhir.FhirUri[] | string[] | undefined;
+    policy?: fhir.FhirUri[] | (string | null)[] | undefined;
     /**
      * Extended properties for primitive element: AuditEvent.agent.policy
      */

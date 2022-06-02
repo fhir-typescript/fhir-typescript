@@ -13,23 +13,23 @@ export interface Slot extends fhir.DomainResource {
   /**
    * Resource Type Name
    */
-  resourceType: "Slot";
+  resourceType: "Slot"|null;
   /**
    * External Ids for this item.
    */
-  identifier?: fhir.Identifier[]|undefined;
+  identifier?: (fhir.Identifier|null)[]|undefined;
   /**
    * A broad categorization of the service that is to be performed during this appointment.
    */
-  serviceCategory?: fhir.CodeableConcept[]|undefined;
+  serviceCategory?: (fhir.CodeableConcept|null)[]|undefined;
   /**
    * The type of appointments that can be booked into this slot (ideally this would be an identifiable service - which is at a location, rather than the location itself). If provided then this overrides the value provided on the availability resource.
    */
-  serviceType?: fhir.CodeableConcept[]|undefined;
+  serviceType?: (fhir.CodeableConcept|null)[]|undefined;
   /**
    * The specialty of a practitioner that would be required to perform the service requested in this appointment.
    */
-  specialty?: fhir.CodeableConcept[]|undefined;
+  specialty?: (fhir.CodeableConcept|null)[]|undefined;
   /**
    * The style of appointment or patient that may be booked in the slot (not service type).
    */

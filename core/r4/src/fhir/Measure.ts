@@ -619,7 +619,7 @@ export interface MeasureArgs extends fhir.DomainResourceArgs {
   /**
    * A reference to a Library resource containing the formal logic used by the measure.
    */
-  library?: fhir.FhirCanonical[]|string[]|undefined;
+  library?: fhir.FhirCanonical[]|(string|null)[]|undefined;
   /**
    * Extended properties for primitive element: Measure.library
    */
@@ -683,7 +683,7 @@ export interface MeasureArgs extends fhir.DomainResourceArgs {
   /**
    * Provides a description of an individual term used within the measure.
    */
-  definition?: fhir.FhirMarkdown[]|string[]|undefined;
+  definition?: fhir.FhirMarkdown[]|(string|null)[]|undefined;
   /**
    * Extended properties for primitive element: Measure.definition
    */

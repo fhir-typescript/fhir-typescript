@@ -31,11 +31,11 @@ export interface RelatedPerson extends fhir.DomainResource {
   /**
    * Resource Type Name
    */
-  resourceType: "RelatedPerson";
+  resourceType: "RelatedPerson"|null;
   /**
    * Identifier for a person within a particular scope.
    */
-  identifier?: fhir.Identifier[]|undefined;
+  identifier?: (fhir.Identifier|null)[]|undefined;
   /**
    * This element is labeled as a modifier because it may be used to mark that the resource was created in error.
    */
@@ -51,15 +51,15 @@ export interface RelatedPerson extends fhir.DomainResource {
   /**
    * The nature of the relationship between a patient and the related person.
    */
-  relationship?: fhir.CodeableConcept[]|undefined;
+  relationship?: (fhir.CodeableConcept|null)[]|undefined;
   /**
    * A name associated with the person.
    */
-  name?: fhir.HumanName[]|undefined;
+  name?: (fhir.HumanName|null)[]|undefined;
   /**
    * Person may have multiple ways to be contacted with different uses or applicable periods.  May need to have options for contacting the person urgently, and also to help with identification.
    */
-  telecom?: fhir.ContactPoint[]|undefined;
+  telecom?: (fhir.ContactPoint|null)[]|undefined;
   /**
    * Administrative Gender - the gender that the person is considered to have for administration and record keeping purposes.
    */
@@ -79,11 +79,11 @@ export interface RelatedPerson extends fhir.DomainResource {
   /**
    * Address where the related person can be contacted or visited.
    */
-  address?: fhir.Address[]|undefined;
+  address?: (fhir.Address|null)[]|undefined;
   /**
    * Image of the person.
    */
-  photo?: fhir.Attachment[]|undefined;
+  photo?: (fhir.Attachment|null)[]|undefined;
   /**
    * The period of time during which this relationship is or was active. If there are no dates defined, then the interval is unknown.
    */
@@ -91,5 +91,5 @@ export interface RelatedPerson extends fhir.DomainResource {
   /**
    * If no language is specified, this *implies* that the default local language is spoken.  If you need to convey proficiency for multiple modes, then you need multiple RelatedPerson.Communication associations.   If the RelatedPerson does not speak the default local language, then the Interpreter Required Standard can be used to explicitly declare that an interpreter is required.
    */
-  communication?: fhir.RelatedPersonCommunication[]|undefined;
+  communication?: (fhir.RelatedPersonCommunication|null)[]|undefined;
 }

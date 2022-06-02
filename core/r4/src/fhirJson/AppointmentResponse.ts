@@ -13,11 +13,11 @@ export interface AppointmentResponse extends fhir.DomainResource {
   /**
    * Resource Type Name
    */
-  resourceType: "AppointmentResponse";
+  resourceType: "AppointmentResponse"|null;
   /**
    * This records identifiers associated with this appointment response concern that are defined by business processes and/ or used to refer to it when a direct URL reference to the resource itself is not appropriate.
    */
-  identifier?: fhir.Identifier[]|undefined;
+  identifier?: (fhir.Identifier|null)[]|undefined;
   /**
    * Appointment that this response is replying to.
    */
@@ -43,7 +43,7 @@ export interface AppointmentResponse extends fhir.DomainResource {
    * If the actor is not specified, then it is expected that the actor will be filled in at a later stage of planning.
    * This value SHALL be the same as specified on the referenced Appointment so that they can be matched, and subsequently updated.
    */
-  participantType?: fhir.CodeableConcept[]|undefined;
+  participantType?: (fhir.CodeableConcept|null)[]|undefined;
   /**
    * A Person, Location, HealthcareService, or Device that is participating in the appointment.
    */

@@ -98,7 +98,7 @@ export interface TimingRepeat extends fhir.FhirElement {
     /**
      * If no days are specified, the action is assumed to happen every day as otherwise specified. The elements frequency and period cannot be used as well as dayOfWeek.
      */
-    dayOfWeek?: ('fri' | 'mon' | 'sat' | 'sun' | 'thu' | 'tue' | 'wed')[] | undefined;
+    dayOfWeek?: (('fri' | 'mon' | 'sat' | 'sun' | 'thu' | 'tue' | 'wed') | null)[] | undefined;
     /**
      * Extended properties for primitive element: Timing.repeat.dayOfWeek
      */
@@ -106,7 +106,7 @@ export interface TimingRepeat extends fhir.FhirElement {
     /**
      * When time of day is specified, it is inferred that the action happens every day (as filtered by dayofWeek) on the specified times. The elements when, frequency and period cannot be used as well as timeOfDay.
      */
-    timeOfDay?: string[] | undefined;
+    timeOfDay?: (string | null)[] | undefined;
     /**
      * Extended properties for primitive element: Timing.repeat.timeOfDay
      */
@@ -114,7 +114,7 @@ export interface TimingRepeat extends fhir.FhirElement {
     /**
      * When more than one event is listed, the event is tied to the union of the specified events.
      */
-    when?: ('AC' | 'ACD' | 'ACM' | 'ACV' | 'AFT' | 'AFT.early' | 'AFT.late' | 'C' | 'CD' | 'CM' | 'CV' | 'EVE' | 'EVE.early' | 'EVE.late' | 'HS' | 'MORN' | 'MORN.early' | 'MORN.late' | 'NIGHT' | 'NOON' | 'PC' | 'PCD' | 'PCM' | 'PCV' | 'PHS' | 'WAKE')[] | undefined;
+    when?: (('AC' | 'ACD' | 'ACM' | 'ACV' | 'AFT' | 'AFT.early' | 'AFT.late' | 'C' | 'CD' | 'CM' | 'CV' | 'EVE' | 'EVE.early' | 'EVE.late' | 'HS' | 'MORN' | 'MORN.early' | 'MORN.late' | 'NIGHT' | 'NOON' | 'PC' | 'PCD' | 'PCM' | 'PCV' | 'PHS' | 'WAKE') | null)[] | undefined;
     /**
      * Extended properties for primitive element: Timing.repeat.when
      */
@@ -135,7 +135,7 @@ export interface Timing extends fhir.BackboneElement {
     /**
      * Identifies specific times when the event occurs.
      */
-    event?: string[] | undefined;
+    event?: (string | null)[] | undefined;
     /**
      * Extended properties for primitive element: Timing.event
      */

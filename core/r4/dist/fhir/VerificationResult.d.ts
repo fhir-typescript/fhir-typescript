@@ -263,7 +263,7 @@ export interface VerificationResultArgs extends fhir.DomainResourceArgs {
     /**
      * The fhirpath location(s) within the resource that was validated.
      */
-    targetLocation?: fhir.FhirString[] | string[] | undefined;
+    targetLocation?: fhir.FhirString[] | (string | null)[] | undefined;
     /**
      * Extended properties for primitive element: VerificationResult.targetLocation
      */

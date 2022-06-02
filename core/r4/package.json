@@ -1,6 +1,6 @@
 {
   "name": "@fhir-typescript/r4-core",
-  "version": "0.0.12-beta.7",
+  "version": "0.0.12-beta.8",
   "description": "Developer pre-release testing of a FHIR TypeScript SDK",
   "keywords": ["fhir", "core", "R4" ],
   "main": "./dist/index.js",

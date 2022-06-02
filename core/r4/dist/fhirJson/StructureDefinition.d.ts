@@ -64,7 +64,7 @@ export interface StructureDefinitionSnapshot extends fhir.BackboneElement {
     /**
      * Captures constraints on each element within the resource.
      */
-    element: fhir.ElementDefinition[] | null;
+    element: (fhir.ElementDefinition | null)[] | null;
 }
 /**
  * A differential view is expressed relative to the base StructureDefinition - a statement of differences that it applies.
@@ -73,7 +73,7 @@ export interface StructureDefinitionDifferential extends fhir.BackboneElement {
     /**
      * Captures constraints on each element within the resource.
      */
-    element: fhir.ElementDefinition[] | null;
+    element: (fhir.ElementDefinition | null)[] | null;
 }
 /**
  * A definition of a FHIR structure. This resource is used to describe the underlying resources, data types defined in FHIR, and also for describing extensions and constraints on resources and data types.
@@ -82,7 +82,7 @@ export interface StructureDefinition extends fhir.DomainResource {
     /**
      * Resource Type Name
      */
-    resourceType: "StructureDefinition";
+    resourceType: "StructureDefinition" | null;
     /**
      * Can be a urn:uuid: or a urn:oid: but real http: addresses are preferred.  Multiple instances may share the same URL if they have a distinct version.
      * The determination of when to create a new version of a resource (same url, new version) vs. defining a new artifact is up to the author.  Considerations for making this decision are found in [Technical and Business Versions](resource.html#versions).
@@ -96,7 +96,7 @@ export interface StructureDefinition extends fhir.DomainResource {
     /**
      * Typically, this is used for identifiers that can go in an HL7 V3 II (instance identifier) data type, and can then identify this structure definition outside of FHIR, where it is not possible to use the logical URI.
      */
-    identifier?: fhir.Identifier[] | undefined;
+    identifier?: (fhir.Identifier | null)[] | undefined;
     /**
      * There may be different structure definition instances that have the same identifier but different versions.  The version can be appended to the url in a reference to allow a reference to a particular business version of the structure definition with the format [url]|[version].
      */
@@ -160,7 +160,7 @@ export interface StructureDefinition extends fhir.DomainResource {
     /**
      * May be a web site, an email address, a telephone number, etc.
      */
-    contact?: fhir.ContactDetail[] | undefined;
+    contact?: (fhir.ContactDetail | null)[] | undefined;
     /**
      * This description can be used to capture details such as why the structure definition was built, comments about misuse, instructions for clinical use and interpretation, literature references, examples from the paper world, etc. It is not a rendering of the structure definition as conveyed in the 'text' field of the resource itself. This item SHOULD be populated unless the information is available from context (e.g. the language of the structure definition is presumed to be the predominant language in the place the structure definition was created).
      */
@@ -172,11 +172,11 @@ export interface StructureDefinition extends fhir.DomainResource {
     /**
      * When multiple useContexts are specified, there is no expectation that all or any of the contexts apply.
      */
-    useContext?: fhir.UsageContext[] | undefined;
+    useContext?: (fhir.UsageContext | null)[] | undefined;
     /**
      * It may be possible for the structure definition to be used in jurisdictions other than those for which it was originally designed or intended.
      */
-    jurisdiction?: fhir.CodeableConcept[] | undefined;
+    jurisdiction?: (fhir.CodeableConcept | null)[] | undefined;
     /**
      * This element does not describe the usage of the structure definition. Instead, it provides traceability of ''why'' the resource is either needed or ''why'' it is defined as it is.  This may be used to point to source materials or specifications that drove the structure of this structure definition.
      */
@@ -196,7 +196,7 @@ export interface StructureDefinition extends fhir.DomainResource {
     /**
      * A set of key words or terms from external terminologies that may be used to assist with indexing and searching of templates nby describing the use of this structure definition, or the content it describes.
      */
-    keyword?: fhir.Coding[] | undefined;
+    keyword?: (fhir.Coding | null)[] | undefined;
     /**
      * A StructureDefinition does not need to specify the target it applies to as StructureDefinitions will often be valid across multiple versions of FHIR. FHIR tooling can determine whether a StructureDefinition is consistent with a particular StructureDefinition if desired.
      */
@@ -208,7 +208,7 @@ export interface StructureDefinition extends fhir.DomainResource {
     /**
      * An external specification that the content is mapped to.
      */
-    mapping?: fhir.StructureDefinitionMapping[] | undefined;
+    mapping?: (fhir.StructureDefinitionMapping | null)[] | undefined;
     /**
      * Defines the kind of structure that this definition is describing.
      */
@@ -228,11 +228,11 @@ export interface StructureDefinition extends fhir.DomainResource {
     /**
      * Identifies the types of resource or data type elements to which the extension can be applied.
      */
-    context?: fhir.StructureDefinitionContext[] | undefined;
+    context?: (fhir.StructureDefinitionContext | null)[] | undefined;
     /**
      * The rules are only evaluated when the extension is present. When evaluating the invariant, the FHIRPath focus is the element that holds the extension, and %extension refers to the extension itself.
      */
-    contextInvariant?: string[] | undefined;
+    contextInvariant?: (string | null)[] | undefined;
     /**
      * Extended properties for primitive element: StructureDefinition.contextInvariant
      */

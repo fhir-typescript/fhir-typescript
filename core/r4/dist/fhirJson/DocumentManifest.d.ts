@@ -19,7 +19,7 @@ export interface DocumentManifest extends fhir.DomainResource {
     /**
      * Resource Type Name
      */
-    resourceType: "DocumentManifest";
+    resourceType: "DocumentManifest" | null;
     /**
      * A single identifier that uniquely identifies this manifest. Principally used to refer to the manifest in non-FHIR contexts.
      */
@@ -27,7 +27,7 @@ export interface DocumentManifest extends fhir.DomainResource {
     /**
      * Other identifiers associated with the document manifest, including version independent  identifiers.
      */
-    identifier?: fhir.Identifier[] | undefined;
+    identifier?: (fhir.Identifier | null)[] | undefined;
     /**
      * This element is labeled as a modifier because the status contains the codes that mark the manifest as not currently valid.
      */
@@ -55,11 +55,11 @@ export interface DocumentManifest extends fhir.DomainResource {
     /**
      * Not necessarily who did the actual data entry (i.e. typist) or who was the source (informant).
      */
-    author?: fhir.Reference[] | undefined;
+    author?: (fhir.Reference | null)[] | undefined;
     /**
      * How the recipient receives the document set or is notified of it is up to the implementation. This element is just a statement of intent. If the recipient is a person, and it is not known whether the person is a patient or a practitioner, RelatedPerson would be the default choice.
      */
-    recipient?: fhir.Reference[] | undefined;
+    recipient?: (fhir.Reference | null)[] | undefined;
     /**
      * Identifies the source system, application, or software that produced the document manifest.
      */
@@ -79,10 +79,10 @@ export interface DocumentManifest extends fhir.DomainResource {
     /**
      * When used for XDS the intended focus of the DocumentManifest is for the reference to target to be a set of DocumentReference Resources. The reference is to "Any" to support EN 13606 usage, where an extract is DocumentManifest that references  List and Composition resources.
      */
-    content: fhir.Reference[] | null;
+    content: (fhir.Reference | null)[] | null;
     /**
      * May be identifiers or resources that caused the DocumentManifest to be created.
      */
-    related?: fhir.DocumentManifestRelated[] | undefined;
+    related?: (fhir.DocumentManifestRelated | null)[] | undefined;
 }
 //# sourceMappingURL=DocumentManifest.d.ts.map

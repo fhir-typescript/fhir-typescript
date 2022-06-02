@@ -72,11 +72,11 @@ export interface Group extends fhir.DomainResource {
     /**
      * Resource Type Name
      */
-    resourceType: "Group";
+    resourceType: "Group" | null;
     /**
      * A unique business identifier for this group.
      */
-    identifier?: fhir.Identifier[] | undefined;
+    identifier?: (fhir.Identifier | null)[] | undefined;
     /**
      * Indicates whether the record for the group is available for use or is merely being retained for historical purposes.
      */
@@ -128,10 +128,10 @@ export interface Group extends fhir.DomainResource {
     /**
      * All the identified characteristics must be true for an entity to a member of the group.
      */
-    characteristic?: fhir.GroupCharacteristic[] | undefined;
+    characteristic?: (fhir.GroupCharacteristic | null)[] | undefined;
     /**
      * Identifies the resource instances that are members of the group.
      */
-    member?: fhir.GroupMember[] | undefined;
+    member?: (fhir.GroupMember | null)[] | undefined;
 }
 //# sourceMappingURL=Group.d.ts.map

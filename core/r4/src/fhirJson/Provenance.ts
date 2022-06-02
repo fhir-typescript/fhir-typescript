@@ -17,7 +17,7 @@ export interface ProvenanceAgent extends fhir.BackboneElement {
   /**
    * For example: doctor, nurse, clerk, etc.
    */
-  role?: fhir.CodeableConcept[]|undefined;
+  role?: (fhir.CodeableConcept|null)[]|undefined;
   /**
    * whoIdentity should be used when the agent is not a Resource type.
    */
@@ -47,7 +47,7 @@ export interface ProvenanceEntity extends fhir.BackboneElement {
   /**
    * A usecase where one Provenance.entity.agent is used where the Entity that was used in the creation/updating of the Target, is not in the context of the same custodianship as the Target, and thus the meaning of Provenance.entity.agent is to say that the entity referenced is managed elsewhere and that this Agent provided access to it.  This would be similar to where the Entity being referenced is managed outside FHIR, such as through HL7 v2, v3, or XDS. This might be where the Entity being referenced is managed in another FHIR resource server. Thus it explains the Provenance of that Entity's use in the context of this Provenance activity.
    */
-  agent?: fhir.ProvenanceAgent[]|undefined;
+  agent?: (fhir.ProvenanceAgent|null)[]|undefined;
 }
 
 /**
@@ -57,11 +57,11 @@ export interface Provenance extends fhir.DomainResource {
   /**
    * Resource Type Name
    */
-  resourceType: "Provenance";
+  resourceType: "Provenance"|null;
   /**
    * Target references are usually version specific, but might not be, if a version has not been assigned or if the provenance information is part of the set of resources being maintained (i.e. a document). When using the RESTful API, the identity of the resource might not be known (especially not the version specific one); the client may either submit the resource first, and then the provenance, or it may submit both using a single transaction. See the notes on transaction for further discussion.
    */
-  target: fhir.Reference[]|null;
+  target: (fhir.Reference|null)[]|null;
   /**
    * The period can be a little arbitrary; where possible, the time should correspond to human assessment of the activity time.
    */
@@ -85,7 +85,7 @@ export interface Provenance extends fhir.DomainResource {
   /**
    * For example: Where an OAuth token authorizes, the unique identifier from the OAuth token is placed into the policy element Where a policy engine (e.g. XACML) holds policy logic, the unique policy identifier is placed into the policy element.
    */
-  policy?: string[]|undefined;
+  policy?: (string|null)[]|undefined;
   /**
    * Extended properties for primitive element: Provenance.policy
    */
@@ -97,7 +97,7 @@ export interface Provenance extends fhir.DomainResource {
   /**
    * The reason that the activity was taking place.
    */
-  reason?: fhir.CodeableConcept[]|undefined;
+  reason?: (fhir.CodeableConcept|null)[]|undefined;
   /**
    * An activity is something that occurs over a period of time and acts upon or with entities; it may include consuming, processing, transforming, modifying, relocating, using, or generating entities.
    */
@@ -105,13 +105,13 @@ export interface Provenance extends fhir.DomainResource {
   /**
    * Several agents may be associated (i.e. has some responsibility for an activity) with an activity and vice-versa.
    */
-  agent: fhir.ProvenanceAgent[]|null;
+  agent: (fhir.ProvenanceAgent|null)[]|null;
   /**
    * An entity used in this activity.
    */
-  entity?: fhir.ProvenanceEntity[]|undefined;
+  entity?: (fhir.ProvenanceEntity|null)[]|undefined;
   /**
    * A digital signature on the target Reference(s). The signer should match a Provenance.agent. The purpose of the signature is indicated.
    */
-  signature?: fhir.Signature[]|undefined;
+  signature?: (fhir.Signature|null)[]|undefined;
 }

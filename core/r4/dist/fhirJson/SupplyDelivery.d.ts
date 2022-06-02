@@ -23,20 +23,20 @@ export interface SupplyDelivery extends fhir.DomainResource {
     /**
      * Resource Type Name
      */
-    resourceType: "SupplyDelivery";
+    resourceType: "SupplyDelivery" | null;
     /**
      * This identifier is typically assigned by the dispenser, and may be used to reference the delivery when exchanging information about it with other systems.
      */
-    identifier?: fhir.Identifier[] | undefined;
+    identifier?: (fhir.Identifier | null)[] | undefined;
     /**
      * A plan, proposal or order that is fulfilled in whole or in part by this event.
      */
-    basedOn?: fhir.Reference[] | undefined;
+    basedOn?: (fhir.Reference | null)[] | undefined;
     /**
      * Not to be used to link an event to an Encounter - use Event.context for that.
      * [The allowed reference resources may be adjusted as appropriate for the event resource].
      */
-    partOf?: fhir.Reference[] | undefined;
+    partOf?: (fhir.Reference | null)[] | undefined;
     /**
      * This element is labeled as a modifier because the status contains codes that mark the resource as not currently valid.
      */
@@ -84,6 +84,6 @@ export interface SupplyDelivery extends fhir.DomainResource {
     /**
      * Identifies the person who picked up the Supply.
      */
-    receiver?: fhir.Reference[] | undefined;
+    receiver?: (fhir.Reference | null)[] | undefined;
 }
 //# sourceMappingURL=SupplyDelivery.d.ts.map

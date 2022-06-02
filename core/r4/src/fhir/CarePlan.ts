@@ -48,7 +48,7 @@ export interface CarePlanActivityDetailArgs extends fhir.BackboneElementArgs {
   /**
    * The URL pointing to a FHIR-defined protocol, guideline, questionnaire or other definition that is adhered to in whole or in part by this CarePlan activity.
    */
-  instantiatesCanonical?: fhir.FhirCanonical[]|string[]|undefined;
+  instantiatesCanonical?: fhir.FhirCanonical[]|(string|null)[]|undefined;
   /**
    * Extended properties for primitive element: CarePlan.activity.detail.instantiatesCanonical
    */
@@ -56,7 +56,7 @@ export interface CarePlanActivityDetailArgs extends fhir.BackboneElementArgs {
   /**
    * This might be an HTML page, PDF, etc. or could just be a non-resolvable URI identifier.
    */
-  instantiatesUri?: fhir.FhirUri[]|string[]|undefined;
+  instantiatesUri?: fhir.FhirUri[]|(string|null)[]|undefined;
   /**
    * Extended properties for primitive element: CarePlan.activity.detail.instantiatesUri
    */
@@ -444,7 +444,7 @@ export interface CarePlanArgs extends fhir.DomainResourceArgs {
   /**
    * The URL pointing to a FHIR-defined protocol, guideline, questionnaire or other definition that is adhered to in whole or in part by this CarePlan.
    */
-  instantiatesCanonical?: fhir.FhirCanonical[]|string[]|undefined;
+  instantiatesCanonical?: fhir.FhirCanonical[]|(string|null)[]|undefined;
   /**
    * Extended properties for primitive element: CarePlan.instantiatesCanonical
    */
@@ -452,7 +452,7 @@ export interface CarePlanArgs extends fhir.DomainResourceArgs {
   /**
    * This might be an HTML page, PDF, etc. or could just be a non-resolvable URI identifier.
    */
-  instantiatesUri?: fhir.FhirUri[]|string[]|undefined;
+  instantiatesUri?: fhir.FhirUri[]|(string|null)[]|undefined;
   /**
    * Extended properties for primitive element: CarePlan.instantiatesUri
    */

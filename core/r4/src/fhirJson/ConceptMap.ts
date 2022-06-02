@@ -83,11 +83,11 @@ export interface ConceptMapGroupElementTarget extends fhir.BackboneElement {
   /**
    * A set of additional dependencies for this mapping to hold. This mapping is only applicable if the specified element can be resolved, and it has the specified value.
    */
-  dependsOn?: fhir.ConceptMapGroupElementTargetDependsOn[]|undefined;
+  dependsOn?: (fhir.ConceptMapGroupElementTargetDependsOn|null)[]|undefined;
   /**
    * A set of additional outcomes from this mapping to other elements. To properly execute this mapping, the specified element must be mapped to some data element or source that is in context. The mapping may still be useful without a place for the additional data elements, but the equivalence cannot be relied on.
    */
-  product?: fhir.ConceptMapGroupElementTargetDependsOn[]|undefined;
+  product?: (fhir.ConceptMapGroupElementTargetDependsOn|null)[]|undefined;
 }
 
 /**
@@ -113,7 +113,7 @@ export interface ConceptMapGroupElement extends fhir.BackboneElement {
   /**
    * Ideally there would only be one map, with equal or equivalent mapping. But multiple maps are allowed for several narrower options, or to assert that other concepts are unmatched.
    */
-  target?: fhir.ConceptMapGroupElementTarget[]|undefined;
+  target?: (fhir.ConceptMapGroupElementTarget|null)[]|undefined;
 }
 
 /**
@@ -193,7 +193,7 @@ export interface ConceptMapGroup extends fhir.BackboneElement {
   /**
    * Generally, the ideal is that there would only be one mapping for each concept in the source value set, but a given concept may be mapped multiple times with different comments or dependencies.
    */
-  element: fhir.ConceptMapGroupElement[]|null;
+  element: (fhir.ConceptMapGroupElement|null)[]|null;
   /**
    * This only applies if the source code has a system value that matches the system defined for the group.
    */
@@ -207,7 +207,7 @@ export interface ConceptMap extends fhir.DomainResource {
   /**
    * Resource Type Name
    */
-  resourceType: "ConceptMap";
+  resourceType: "ConceptMap"|null;
   /**
    * Can be a urn:uuid: or a urn:oid: but real http: addresses are preferred.  Multiple instances may share the same URL if they have a distinct version.
    * The determination of when to create a new version of a resource (same url, new version) vs. defining a new artifact is up to the author.  Considerations for making this decision are found in [Technical and Business Versions](resource.html#versions). 
@@ -281,7 +281,7 @@ export interface ConceptMap extends fhir.DomainResource {
   /**
    * May be a web site, an email address, a telephone number, etc.
    */
-  contact?: fhir.ContactDetail[]|undefined;
+  contact?: (fhir.ContactDetail|null)[]|undefined;
   /**
    * The description is not intended to describe the semantics of the concept map. The description should capture its intended use, which is needed for ensuring integrity for its use in models across future changes.
    */
@@ -293,11 +293,11 @@ export interface ConceptMap extends fhir.DomainResource {
   /**
    * When multiple useContexts are specified, there is no expectation that all or any of the contexts apply.
    */
-  useContext?: fhir.UsageContext[]|undefined;
+  useContext?: (fhir.UsageContext|null)[]|undefined;
   /**
    * It may be possible for the concept map to be used in jurisdictions other than those for which it was originally designed or intended.
    */
-  jurisdiction?: fhir.CodeableConcept[]|undefined;
+  jurisdiction?: (fhir.CodeableConcept|null)[]|undefined;
   /**
    * This element does not describe the usage of the concept map. Instead, it provides traceability of ''why'' the resource is either needed or ''why'' it is defined as it is.  This may be used to point to source materials or specifications that drove the structure of this concept map.
    */
@@ -349,5 +349,5 @@ export interface ConceptMap extends fhir.DomainResource {
   /**
    * A group of mappings that all have the same source and target system.
    */
-  group?: fhir.ConceptMapGroup[]|undefined;
+  group?: (fhir.ConceptMapGroup|null)[]|undefined;
 }

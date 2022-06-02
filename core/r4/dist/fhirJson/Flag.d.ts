@@ -6,11 +6,11 @@ export interface Flag extends fhir.DomainResource {
     /**
      * Resource Type Name
      */
-    resourceType: "Flag";
+    resourceType: "Flag" | null;
     /**
      * This is a business identifier, not a resource identifier (see [discussion](resource.html#identifiers)).  It is best practice for the identifier to only appear on a single resource instance, however business practices may occasionally dictate that multiple resource instances with the same identifier can exist - possibly even with different resource types.  For example, multiple Patient and a Person resource instance might share the same social insurance number.
      */
-    identifier?: fhir.Identifier[] | undefined;
+    identifier?: (fhir.Identifier | null)[] | undefined;
     /**
      * This element is labeled as a modifier because the status contains codes that mark the resource as not currently valid.
      */
@@ -22,7 +22,7 @@ export interface Flag extends fhir.DomainResource {
     /**
      * The value set will often need to be adjusted based on local business rules and usage context.
      */
-    category?: fhir.CodeableConcept[] | undefined;
+    category?: (fhir.CodeableConcept | null)[] | undefined;
     /**
      * If non-coded, use CodeableConcept.text.  This element should always be included in the narrative.
      */

@@ -41,7 +41,7 @@ export interface OperationOutcomeIssue extends fhir.BackboneElement {
   /**
    * The root of the XPath is the resource or bundle that generated OperationOutcome.  Each XPath SHALL resolve to a single node.  This element is deprecated, and is being replaced by expression.
    */
-  location?: string[]|undefined;
+  location?: (string|null)[]|undefined;
   /**
    * Extended properties for primitive element: OperationOutcome.issue.location
    */
@@ -49,7 +49,7 @@ export interface OperationOutcomeIssue extends fhir.BackboneElement {
   /**
    * The root of the FHIRPath is the resource or bundle that generated OperationOutcome.  Each FHIRPath SHALL resolve to a single node.
    */
-  expression?: string[]|undefined;
+  expression?: (string|null)[]|undefined;
   /**
    * Extended properties for primitive element: OperationOutcome.issue.expression
    */
@@ -63,9 +63,9 @@ export interface OperationOutcome extends fhir.DomainResource {
   /**
    * Resource Type Name
    */
-  resourceType: "OperationOutcome";
+  resourceType: "OperationOutcome"|null;
   /**
    * An error, warning, or information message that results from a system action.
    */
-  issue: fhir.OperationOutcomeIssue[]|null;
+  issue: (fhir.OperationOutcomeIssue|null)[]|null;
 }

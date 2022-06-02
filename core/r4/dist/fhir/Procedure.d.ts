@@ -104,7 +104,7 @@ export interface ProcedureArgs extends fhir.DomainResourceArgs {
     /**
      * The URL pointing to a FHIR-defined protocol, guideline, order set or other definition that is adhered to in whole or in part by this Procedure.
      */
-    instantiatesCanonical?: fhir.FhirCanonical[] | string[] | undefined;
+    instantiatesCanonical?: fhir.FhirCanonical[] | (string | null)[] | undefined;
     /**
      * Extended properties for primitive element: Procedure.instantiatesCanonical
      */
@@ -112,7 +112,7 @@ export interface ProcedureArgs extends fhir.DomainResourceArgs {
     /**
      * This might be an HTML page, PDF, etc. or could just be a non-resolvable URI identifier.
      */
-    instantiatesUri?: fhir.FhirUri[] | string[] | undefined;
+    instantiatesUri?: fhir.FhirUri[] | (string | null)[] | undefined;
     /**
      * Extended properties for primitive element: Procedure.instantiatesUri
      */

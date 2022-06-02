@@ -215,7 +215,7 @@ export interface SearchParameterArgs extends fhir.DomainResourceArgs {
   /**
    * A search parameter must always apply to at least one resource type. When search parameters apply to more than one resource type, they can be used against any of the listed resource types, or in a cross-type search (see [Cross Resource Search](http.html#xres-search)).
    */
-  base: fhir.FhirCode[]|string[]|undefined;
+  base: fhir.FhirCode[]|(string|null)[]|undefined;
   /**
    * Extended properties for primitive element: SearchParameter.base
    */
@@ -255,7 +255,7 @@ export interface SearchParameterArgs extends fhir.DomainResourceArgs {
   /**
    * Types of resource (if a resource is referenced).
    */
-  target?: fhir.FhirCode[]|string[]|undefined;
+  target?: fhir.FhirCode[]|(string|null)[]|undefined;
   /**
    * Extended properties for primitive element: SearchParameter.target
    */
@@ -279,7 +279,7 @@ export interface SearchParameterArgs extends fhir.DomainResourceArgs {
   /**
    * If no comparators are listed, clients should not expect servers to support any comparators.
    */
-  comparator?: fhir.FhirCode<SearchComparatorCodeType>[]|string[]|undefined;
+  comparator?: fhir.FhirCode<SearchComparatorCodeType>[]|(string|null)[]|undefined;
   /**
    * Extended properties for primitive element: SearchParameter.comparator
    */
@@ -287,7 +287,7 @@ export interface SearchParameterArgs extends fhir.DomainResourceArgs {
   /**
    * A modifier supported for the search parameter.
    */
-  modifier?: fhir.FhirCode<SearchModifierCodeType>[]|string[]|undefined;
+  modifier?: fhir.FhirCode<SearchModifierCodeType>[]|(string|null)[]|undefined;
   /**
    * Extended properties for primitive element: SearchParameter.modifier
    */
@@ -295,7 +295,7 @@ export interface SearchParameterArgs extends fhir.DomainResourceArgs {
   /**
    * Systems are not required to list all the chain names they support, but if they don't list them, clients might not know to use them.
    */
-  chain?: fhir.FhirString[]|string[]|undefined;
+  chain?: fhir.FhirString[]|(string|null)[]|undefined;
   /**
    * Extended properties for primitive element: SearchParameter.chain
    */

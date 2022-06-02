@@ -435,7 +435,7 @@ export interface MedicationKnowledgeAdministrationGuidelinesPatientCharacteristi
   /**
    * The specific characteristic (e.g. height, weight, gender, etc.).
    */
-  value?: fhir.FhirString[]|string[]|undefined;
+  value?: fhir.FhirString[]|(string|null)[]|undefined;
   /**
    * Extended properties for primitive element: MedicationKnowledge.administrationGuidelines.patientCharacteristics.value
    */
@@ -1074,7 +1074,7 @@ export interface MedicationKnowledgeArgs extends fhir.DomainResourceArgs {
   /**
    * Additional names for a medication, for example, the name(s) given to a medication in different countries.  For example, acetaminophen and paracetamol or salbutamol and albuterol.
    */
-  synonym?: fhir.FhirString[]|string[]|undefined;
+  synonym?: fhir.FhirString[]|(string|null)[]|undefined;
   /**
    * Extended properties for primitive element: MedicationKnowledge.synonym
    */

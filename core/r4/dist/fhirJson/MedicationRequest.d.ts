@@ -77,11 +77,11 @@ export interface MedicationRequest extends fhir.DomainResource {
     /**
      * Resource Type Name
      */
-    resourceType: "MedicationRequest";
+    resourceType: "MedicationRequest" | null;
     /**
      * This is a business identifier, not a resource identifier.
      */
-    identifier?: fhir.Identifier[] | undefined;
+    identifier?: (fhir.Identifier | null)[] | undefined;
     /**
      * This element is labeled as a modifier because the status contains codes that mark the resource as not currently valid.
      */
@@ -107,7 +107,7 @@ export interface MedicationRequest extends fhir.DomainResource {
     /**
      * The category can be used to include where the medication is expected to be consumed or other types of requests.
      */
-    category?: fhir.CodeableConcept[] | undefined;
+    category?: (fhir.CodeableConcept | null)[] | undefined;
     /**
      * Indicates how quickly the Medication Request should be addressed with respect to other requests.
      */
@@ -155,7 +155,7 @@ export interface MedicationRequest extends fhir.DomainResource {
     /**
      * Include additional information (for example, patient height and weight) that supports the ordering of the medication.
      */
-    supportingInformation?: fhir.Reference[] | undefined;
+    supportingInformation?: (fhir.Reference | null)[] | undefined;
     /**
      * The date (and perhaps time) when the prescription was initially written or authored on.
      */
@@ -183,15 +183,15 @@ export interface MedicationRequest extends fhir.DomainResource {
     /**
      * This could be a diagnosis code. If a full condition record exists or additional detail is needed, use reasonReference.
      */
-    reasonCode?: fhir.CodeableConcept[] | undefined;
+    reasonCode?: (fhir.CodeableConcept | null)[] | undefined;
     /**
      * This is a reference to a condition or observation that is the reason for the medication order.  If only a code exists, use reasonCode.
      */
-    reasonReference?: fhir.Reference[] | undefined;
+    reasonReference?: (fhir.Reference | null)[] | undefined;
     /**
      * The URL pointing to a protocol, guideline, orderset, or other definition that is adhered to in whole or in part by this MedicationRequest.
      */
-    instantiatesCanonical?: string[] | undefined;
+    instantiatesCanonical?: (string | null)[] | undefined;
     /**
      * Extended properties for primitive element: MedicationRequest.instantiatesCanonical
      */
@@ -199,7 +199,7 @@ export interface MedicationRequest extends fhir.DomainResource {
     /**
      * The URL pointing to an externally maintained protocol, guideline, orderset or other definition that is adhered to in whole or in part by this MedicationRequest.
      */
-    instantiatesUri?: string[] | undefined;
+    instantiatesUri?: (string | null)[] | undefined;
     /**
      * Extended properties for primitive element: MedicationRequest.instantiatesUri
      */
@@ -207,7 +207,7 @@ export interface MedicationRequest extends fhir.DomainResource {
     /**
      * A plan or request that is fulfilled in whole or in part by this medication request.
      */
-    basedOn?: fhir.Reference[] | undefined;
+    basedOn?: (fhir.Reference | null)[] | undefined;
     /**
      * A shared identifier common to all requests that were authorized more or less simultaneously by a single author, representing the identifier of the requisition or prescription.
      */
@@ -219,15 +219,15 @@ export interface MedicationRequest extends fhir.DomainResource {
     /**
      * Insurance plans, coverage extensions, pre-authorizations and/or pre-determinations that may be required for delivering the requested service.
      */
-    insurance?: fhir.Reference[] | undefined;
+    insurance?: (fhir.Reference | null)[] | undefined;
     /**
      * Extra information about the prescription that could not be conveyed by the other attributes.
      */
-    note?: fhir.Annotation[] | undefined;
+    note?: (fhir.Annotation | null)[] | undefined;
     /**
      * There are examples where a medication request may include the option of an oral dose or an Intravenous or Intramuscular dose.  For example, "Ondansetron 8mg orally or IV twice a day as needed for nausea" or "Compazine® (prochlorperazine) 5-10mg PO or 25mg PR bid prn nausea or vomiting".  In these cases, two medication requests would be created that could be grouped together.  The decision on which dose and route of administration to use is based on the patient's condition at the time the dose is needed.
      */
-    dosageInstruction?: fhir.Dosage[] | undefined;
+    dosageInstruction?: (fhir.Dosage | null)[] | undefined;
     /**
      * Indicates the specific details for the dispense or medication supply part of a medication request (also known as a Medication Prescription or Medication Order).  Note that this information is not always sent with the order.  There may be in some settings (e.g. hospitals) institutional or system support for completing the dispense details in the pharmacy department.
      */
@@ -243,10 +243,10 @@ export interface MedicationRequest extends fhir.DomainResource {
     /**
      * This element can include a detected issue that has been identified either by a decision support system or by a clinician and may include information on the steps that were taken to address the issue.
      */
-    detectedIssue?: fhir.Reference[] | undefined;
+    detectedIssue?: (fhir.Reference | null)[] | undefined;
     /**
      * This might not include provenances for all versions of the request – only those deemed “relevant” or important. This SHALL NOT include the provenance associated with this current version of the resource. (If that provenance is deemed to be a “relevant” change, it will need to be added as part of a later update. Until then, it can be queried directly as the provenance that points to this version using _revinclude All Provenances should have some historical version of this Request as their subject.).
      */
-    eventHistory?: fhir.Reference[] | undefined;
+    eventHistory?: (fhir.Reference | null)[] | undefined;
 }
 //# sourceMappingURL=MedicationRequest.d.ts.map

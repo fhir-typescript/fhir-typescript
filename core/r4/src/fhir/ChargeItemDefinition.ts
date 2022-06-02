@@ -292,7 +292,7 @@ export interface ChargeItemDefinitionArgs extends fhir.DomainResourceArgs {
   /**
    * The URL pointing to an externally-defined charge item definition that is adhered to in whole or in part by this definition.
    */
-  derivedFromUri?: fhir.FhirUri[]|string[]|undefined;
+  derivedFromUri?: fhir.FhirUri[]|(string|null)[]|undefined;
   /**
    * Extended properties for primitive element: ChargeItemDefinition.derivedFromUri
    */
@@ -300,7 +300,7 @@ export interface ChargeItemDefinitionArgs extends fhir.DomainResourceArgs {
   /**
    * A larger definition of which this particular definition is a component or step.
    */
-  partOf?: fhir.FhirCanonical[]|string[]|undefined;
+  partOf?: fhir.FhirCanonical[]|(string|null)[]|undefined;
   /**
    * Extended properties for primitive element: ChargeItemDefinition.partOf
    */
@@ -308,7 +308,7 @@ export interface ChargeItemDefinitionArgs extends fhir.DomainResourceArgs {
   /**
    * As new versions of a protocol or guideline are defined, allows identification of what versions are replaced by a new instance.
    */
-  replaces?: fhir.FhirCanonical[]|string[]|undefined;
+  replaces?: fhir.FhirCanonical[]|(string|null)[]|undefined;
   /**
    * Extended properties for primitive element: ChargeItemDefinition.replaces
    */

@@ -637,7 +637,7 @@ export interface RequestGroupArgs extends fhir.DomainResourceArgs {
   /**
    * A canonical URL referencing a FHIR-defined protocol, guideline, orderset or other definition that is adhered to in whole or in part by this request.
    */
-  instantiatesCanonical?: fhir.FhirCanonical[]|string[]|undefined;
+  instantiatesCanonical?: fhir.FhirCanonical[]|(string|null)[]|undefined;
   /**
    * Extended properties for primitive element: RequestGroup.instantiatesCanonical
    */
@@ -645,7 +645,7 @@ export interface RequestGroupArgs extends fhir.DomainResourceArgs {
   /**
    * A URL referencing an externally defined protocol, guideline, orderset or other definition that is adhered to in whole or in part by this request.
    */
-  instantiatesUri?: fhir.FhirUri[]|string[]|undefined;
+  instantiatesUri?: fhir.FhirUri[]|(string|null)[]|undefined;
   /**
    * Extended properties for primitive element: RequestGroup.instantiatesUri
    */

@@ -93,7 +93,7 @@ export interface ImmunizationProtocolApplied extends fhir.BackboneElement {
     /**
      * The vaccine preventable disease the dose is being administered against.
      */
-    targetDisease?: fhir.CodeableConcept[] | undefined;
+    targetDisease?: (fhir.CodeableConcept | null)[] | undefined;
     /**
      * The use of an integer is preferred if known. A string should only be used in cases where an integer is not available (such as when documenting a recurring booster dose).
      */
@@ -134,11 +134,11 @@ export interface Immunization extends fhir.DomainResource {
     /**
      * Resource Type Name
      */
-    resourceType: "Immunization";
+    resourceType: "Immunization" | null;
     /**
      * A unique identifier assigned to this immunization record.
      */
-    identifier?: fhir.Identifier[] | undefined;
+    identifier?: (fhir.Identifier | null)[] | undefined;
     /**
      * Will generally be set to show that the immunization has been completed or not done.  This element is labeled as a modifier because the status contains codes that mark the resource as not currently valid.
      */
@@ -238,19 +238,19 @@ export interface Immunization extends fhir.DomainResource {
     /**
      * Indicates who performed the immunization event.
      */
-    performer?: fhir.ImmunizationPerformer[] | undefined;
+    performer?: (fhir.ImmunizationPerformer | null)[] | undefined;
     /**
      * Extra information about the immunization that is not conveyed by the other attributes.
      */
-    note?: fhir.Annotation[] | undefined;
+    note?: (fhir.Annotation | null)[] | undefined;
     /**
      * Reasons why the vaccine was administered.
      */
-    reasonCode?: fhir.CodeableConcept[] | undefined;
+    reasonCode?: (fhir.CodeableConcept | null)[] | undefined;
     /**
      * Condition, Observation or DiagnosticReport that supports why the immunization was administered.
      */
-    reasonReference?: fhir.Reference[] | undefined;
+    reasonReference?: (fhir.Reference | null)[] | undefined;
     /**
      * Typically, the recognition of the dose being sub-potent is retrospective, after the administration (ex. notification of a manufacturer recall after administration). However, in the case of a partial administration (the patient moves unexpectedly and only some of the dose is actually administered), subpotency may be recognized immediately, but it is still important to record the event.
      */
@@ -262,15 +262,15 @@ export interface Immunization extends fhir.DomainResource {
     /**
      * Reason why a dose is considered to be subpotent.
      */
-    subpotentReason?: fhir.CodeableConcept[] | undefined;
+    subpotentReason?: (fhir.CodeableConcept | null)[] | undefined;
     /**
      * Educational material presented to the patient (or guardian) at the time of vaccine administration.
      */
-    education?: fhir.ImmunizationEducation[] | undefined;
+    education?: (fhir.ImmunizationEducation | null)[] | undefined;
     /**
      * Indicates a patient's eligibility for a funding program.
      */
-    programEligibility?: fhir.CodeableConcept[] | undefined;
+    programEligibility?: (fhir.CodeableConcept | null)[] | undefined;
     /**
      * Indicates the source of the vaccine actually administered. This may be different than the patient eligibility (e.g. the patient may be eligible for a publically purchased vaccine but due to inventory issues, vaccine purchased with private funds was actually administered).
      */
@@ -278,10 +278,10 @@ export interface Immunization extends fhir.DomainResource {
     /**
      * A reaction may be an indication of an allergy or intolerance and, if this is determined to be the case, it should be recorded as a new AllergyIntolerance resource instance as most systems will not query against past Immunization.reaction elements.
      */
-    reaction?: fhir.ImmunizationReaction[] | undefined;
+    reaction?: (fhir.ImmunizationReaction | null)[] | undefined;
     /**
      * The protocol (set of recommendations) being followed by the provider who administered the dose.
      */
-    protocolApplied?: fhir.ImmunizationProtocolApplied[] | undefined;
+    protocolApplied?: (fhir.ImmunizationProtocolApplied | null)[] | undefined;
 }
 //# sourceMappingURL=Immunization.d.ts.map

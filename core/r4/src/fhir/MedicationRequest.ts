@@ -388,7 +388,7 @@ export interface MedicationRequestArgs extends fhir.DomainResourceArgs {
   /**
    * The URL pointing to a protocol, guideline, orderset, or other definition that is adhered to in whole or in part by this MedicationRequest.
    */
-  instantiatesCanonical?: fhir.FhirCanonical[]|string[]|undefined;
+  instantiatesCanonical?: fhir.FhirCanonical[]|(string|null)[]|undefined;
   /**
    * Extended properties for primitive element: MedicationRequest.instantiatesCanonical
    */
@@ -396,7 +396,7 @@ export interface MedicationRequestArgs extends fhir.DomainResourceArgs {
   /**
    * The URL pointing to an externally maintained protocol, guideline, orderset or other definition that is adhered to in whole or in part by this MedicationRequest.
    */
-  instantiatesUri?: fhir.FhirUri[]|string[]|undefined;
+  instantiatesUri?: fhir.FhirUri[]|(string|null)[]|undefined;
   /**
    * Extended properties for primitive element: MedicationRequest.instantiatesUri
    */

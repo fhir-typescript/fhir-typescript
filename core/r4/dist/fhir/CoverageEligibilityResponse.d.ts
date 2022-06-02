@@ -345,7 +345,7 @@ export interface CoverageEligibilityResponseArgs extends fhir.DomainResourceArgs
     /**
      * Code to specify whether requesting: prior authorization requirements for some service categories or billing codes; benefits for coverages specified or discovered; discovery and return of coverages for the patient; and/or validation that the specified coverage is in-force at the date/period specified or 'now' if not specified.
      */
-    purpose: fhir.FhirCode<EligibilityresponsePurposeCodeType>[] | string[] | undefined;
+    purpose: fhir.FhirCode<EligibilityresponsePurposeCodeType>[] | (string | null)[] | undefined;
     /**
      * Extended properties for primitive element: CoverageEligibilityResponse.purpose
      */

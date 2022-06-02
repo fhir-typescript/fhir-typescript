@@ -239,7 +239,7 @@ export interface OperationDefinitionParameterArgs extends fhir.BackboneElementAr
   /**
    * Often, these profiles are the base definitions from the spec (e.g. http://hl7.org/fhir/StructureDefinition/Patient).
    */
-  targetProfile?: fhir.FhirCanonical[]|string[]|undefined;
+  targetProfile?: fhir.FhirCanonical[]|(string|null)[]|undefined;
   /**
    * Extended properties for primitive element: OperationDefinition.parameter.targetProfile
    */
@@ -442,7 +442,7 @@ export interface OperationDefinitionOverloadArgs extends fhir.BackboneElementArg
   /**
    * Name of parameter to include in overload.
    */
-  parameterName?: fhir.FhirString[]|string[]|undefined;
+  parameterName?: fhir.FhirString[]|(string|null)[]|undefined;
   /**
    * Extended properties for primitive element: OperationDefinition.overload.parameterName
    */
@@ -650,7 +650,7 @@ export interface OperationDefinitionArgs extends fhir.DomainResourceArgs {
   /**
    * If the type is an abstract resource ("Resource" or "DomainResource") then the operation can be invoked on any concrete specialization.
    */
-  resource?: fhir.FhirCode[]|string[]|undefined;
+  resource?: fhir.FhirCode[]|(string|null)[]|undefined;
   /**
    * Extended properties for primitive element: OperationDefinition.resource
    */

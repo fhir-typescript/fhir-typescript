@@ -257,7 +257,7 @@ export interface MessageDefinitionArgs extends fhir.DomainResourceArgs {
   /**
    * A MessageDefinition that is superseded by this definition.
    */
-  replaces?: fhir.FhirCanonical[]|string[]|undefined;
+  replaces?: fhir.FhirCanonical[]|(string|null)[]|undefined;
   /**
    * Extended properties for primitive element: MessageDefinition.replaces
    */
@@ -341,7 +341,7 @@ export interface MessageDefinitionArgs extends fhir.DomainResourceArgs {
   /**
    * It should be possible to use MessageDefinition to describe a message to be used by certain steps in a particular protocol as part of a PlanDefinition or ActivityDefinition.
    */
-  parent?: fhir.FhirCanonical[]|string[]|undefined;
+  parent?: fhir.FhirCanonical[]|(string|null)[]|undefined;
   /**
    * Extended properties for primitive element: MessageDefinition.parent
    */
@@ -385,7 +385,7 @@ export interface MessageDefinitionArgs extends fhir.DomainResourceArgs {
   /**
    * Canonical reference to a GraphDefinition. If a URL is provided, it is the canonical reference to a [GraphDefinition](graphdefinition.html) that it controls what resources are to be added to the bundle when building the document. The GraphDefinition can also specify profiles that apply to the various resources.
    */
-  graph?: fhir.FhirCanonical[]|string[]|undefined;
+  graph?: fhir.FhirCanonical[]|(string|null)[]|undefined;
   /**
    * Extended properties for primitive element: MessageDefinition.graph
    */

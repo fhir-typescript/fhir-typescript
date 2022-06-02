@@ -319,7 +319,7 @@ export interface ObservationDefinitionArgs extends fhir.DomainResourceArgs {
   /**
    * The data types allowed for the value element of the instance observations conforming to this ObservationDefinition.
    */
-  permittedDataType?: fhir.FhirCode<PermittedDataTypeCodeType>[]|string[]|undefined;
+  permittedDataType?: fhir.FhirCode<PermittedDataTypeCodeType>[]|(string|null)[]|undefined;
   /**
    * Extended properties for primitive element: ObservationDefinition.permittedDataType
    */

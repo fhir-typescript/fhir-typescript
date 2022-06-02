@@ -39,11 +39,11 @@ export interface MedicationDispenseSubstitution extends fhir.BackboneElement {
   /**
    * Indicates the reason for the substitution (or lack of substitution) from what was prescribed.
    */
-  reason?: fhir.CodeableConcept[]|undefined;
+  reason?: (fhir.CodeableConcept|null)[]|undefined;
   /**
    * The person or organization that has primary responsibility for the substitution.
    */
-  responsibleParty?: fhir.Reference[]|undefined;
+  responsibleParty?: (fhir.Reference|null)[]|undefined;
 }
 
 /**
@@ -53,15 +53,15 @@ export interface MedicationDispense extends fhir.DomainResource {
   /**
    * Resource Type Name
    */
-  resourceType: "MedicationDispense";
+  resourceType: "MedicationDispense"|null;
   /**
    * This is a business identifier, not a resource identifier.
    */
-  identifier?: fhir.Identifier[]|undefined;
+  identifier?: (fhir.Identifier|null)[]|undefined;
   /**
    * The procedure that trigger the dispense.
    */
-  partOf?: fhir.Reference[]|undefined;
+  partOf?: (fhir.Reference|null)[]|undefined;
   /**
    * This element is labeled as a modifier because the status contains codes that mark the resource as not currently valid.
    */
@@ -101,11 +101,11 @@ export interface MedicationDispense extends fhir.DomainResource {
   /**
    * Additional information that supports the medication being dispensed.
    */
-  supportingInformation?: fhir.Reference[]|undefined;
+  supportingInformation?: (fhir.Reference|null)[]|undefined;
   /**
    * Indicates who or what performed the event.
    */
-  performer?: fhir.MedicationDispensePerformer[]|undefined;
+  performer?: (fhir.MedicationDispensePerformer|null)[]|undefined;
   /**
    * The principal physical location where the dispense was performed.
    */
@@ -113,7 +113,7 @@ export interface MedicationDispense extends fhir.DomainResource {
   /**
    * Maps to basedOn in Event logical model.
    */
-  authorizingPrescription?: fhir.Reference[]|undefined;
+  authorizingPrescription?: (fhir.Reference|null)[]|undefined;
   /**
    * Indicates the type of dispensing event that is performed. For example, Trial Fill, Completion of Trial, Partial Fill, Emergency Fill, Samples, etc.
    */
@@ -149,16 +149,16 @@ export interface MedicationDispense extends fhir.DomainResource {
   /**
    * Identifies the person who picked up the medication.  This will usually be a patient or their caregiver, but some cases exist where it can be a healthcare professional.
    */
-  receiver?: fhir.Reference[]|undefined;
+  receiver?: (fhir.Reference|null)[]|undefined;
   /**
    * Extra information about the dispense that could not be conveyed in the other attributes.
    */
-  note?: fhir.Annotation[]|undefined;
+  note?: (fhir.Annotation|null)[]|undefined;
   /**
    * When the dose or rate is intended to change over the entire administration period (e.g. Tapering dose prescriptions), multiple instances of dosage instructions will need to be supplied to convey the different doses/rates.
    * The pharmacist reviews the medication order prior to dispense and updates the dosageInstruction based on the actual product being dispensed.
    */
-  dosageInstruction?: fhir.Dosage[]|undefined;
+  dosageInstruction?: (fhir.Dosage|null)[]|undefined;
   /**
    * Indicates whether or not substitution was made as part of the dispense.  In some cases, substitution will be expected but does not happen, in other cases substitution is not expected but does happen.  This block explains what substitution did or did not happen and why.  If nothing is specified, substitution was not done.
    */
@@ -166,9 +166,9 @@ export interface MedicationDispense extends fhir.DomainResource {
   /**
    * This element can include a detected issue that has been identified either by a decision support system or by a clinician and may include information on the steps that were taken to address the issue.
    */
-  detectedIssue?: fhir.Reference[]|undefined;
+  detectedIssue?: (fhir.Reference|null)[]|undefined;
   /**
    * This might not include provenances for all versions of the request – only those deemed “relevant” or important. This SHALL NOT include the Provenance associated with this current version of the resource. (If that provenance is deemed to be a “relevant” change, it will need to be added as part of a later update. Until then, it can be queried directly as the Provenance that points to this version using _revinclude All Provenances should have some historical version of this Request as their subject.).
    */
-  eventHistory?: fhir.Reference[]|undefined;
+  eventHistory?: (fhir.Reference|null)[]|undefined;
 }

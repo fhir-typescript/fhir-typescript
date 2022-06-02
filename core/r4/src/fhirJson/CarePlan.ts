@@ -21,7 +21,7 @@ export interface CarePlanActivityDetail extends fhir.BackboneElement {
   /**
    * The URL pointing to a FHIR-defined protocol, guideline, questionnaire or other definition that is adhered to in whole or in part by this CarePlan activity.
    */
-  instantiatesCanonical?: string[]|undefined;
+  instantiatesCanonical?: (string|null)[]|undefined;
   /**
    * Extended properties for primitive element: CarePlan.activity.detail.instantiatesCanonical
    */
@@ -29,7 +29,7 @@ export interface CarePlanActivityDetail extends fhir.BackboneElement {
   /**
    * This might be an HTML page, PDF, etc. or could just be a non-resolvable URI identifier.
    */
-  instantiatesUri?: string[]|undefined;
+  instantiatesUri?: (string|null)[]|undefined;
   /**
    * Extended properties for primitive element: CarePlan.activity.detail.instantiatesUri
    */
@@ -41,15 +41,15 @@ export interface CarePlanActivityDetail extends fhir.BackboneElement {
   /**
    * This could be a diagnosis code.  If a full condition record exists or additional detail is needed, use reasonCondition instead.
    */
-  reasonCode?: fhir.CodeableConcept[]|undefined;
+  reasonCode?: (fhir.CodeableConcept|null)[]|undefined;
   /**
    * Conditions can be identified at the activity level that are not identified as reasons for the overall plan.
    */
-  reasonReference?: fhir.Reference[]|undefined;
+  reasonReference?: (fhir.Reference|null)[]|undefined;
   /**
    * Internal reference that identifies the goals that this activity is intended to contribute towards meeting.
    */
-  goal?: fhir.Reference[]|undefined;
+  goal?: (fhir.Reference|null)[]|undefined;
   /**
    * Some aspects of status can be inferred based on the resources linked in actionTaken.  Note that "status" is only as current as the plan was most recently updated.  
    * The unknown code is not to be used to convey other statuses.  The unknown code should be used when one of the statuses applies, but the authoring system doesn't know the current state of the activity.
@@ -94,7 +94,7 @@ export interface CarePlanActivityDetail extends fhir.BackboneElement {
   /**
    * A performer MAY also be a participant in the care plan.
    */
-  performer?: fhir.Reference[]|undefined;
+  performer?: (fhir.Reference|null)[]|undefined;
   /**
    * Identifies the food, drug or other product to be consumed or supplied in the activity.
    */
@@ -128,15 +128,15 @@ export interface CarePlanActivity extends fhir.BackboneElement {
   /**
    * Note that this should not duplicate the activity status (e.g. completed or in progress).
    */
-  outcomeCodeableConcept?: fhir.CodeableConcept[]|undefined;
+  outcomeCodeableConcept?: (fhir.CodeableConcept|null)[]|undefined;
   /**
    * The activity outcome is independent of the outcome of the related goal(s).  For example, if the goal is to achieve a target body weight of 150 lbs and an activity is defined to diet, then the activity outcome could be calories consumed whereas the goal outcome is an observation for the actual body weight measured.
    */
-  outcomeReference?: fhir.Reference[]|undefined;
+  outcomeReference?: (fhir.Reference|null)[]|undefined;
   /**
    * This element should NOT be used to describe the activity to be performed - that occurs either within the resource pointed to by activity.detail.reference or in activity.detail.description.
    */
-  progress?: fhir.Annotation[]|undefined;
+  progress?: (fhir.Annotation|null)[]|undefined;
   /**
    * Standard extension exists ([resource-pertainsToGoal](extension-resource-pertainstogoal.html)) that allows goals to be referenced from any of the referenced resources in CarePlan.activity.reference.  
    * The goal should be visible when the resource referenced by CarePlan.activity.reference is viewed independently from the CarePlan.  Requests that are pointed to by a CarePlan using this element should *not* point to this CarePlan using the "basedOn" element.  i.e. Requests that are part of a CarePlan are not "based on" the CarePlan.
@@ -155,15 +155,15 @@ export interface CarePlan extends fhir.DomainResource {
   /**
    * Resource Type Name
    */
-  resourceType: "CarePlan";
+  resourceType: "CarePlan"|null;
   /**
    * This is a business identifier, not a resource identifier (see [discussion](resource.html#identifiers)).  It is best practice for the identifier to only appear on a single resource instance, however business practices may occasionally dictate that multiple resource instances with the same identifier can exist - possibly even with different resource types.  For example, multiple Patient and a Person resource instance might share the same social insurance number.
    */
-  identifier?: fhir.Identifier[]|undefined;
+  identifier?: (fhir.Identifier|null)[]|undefined;
   /**
    * The URL pointing to a FHIR-defined protocol, guideline, questionnaire or other definition that is adhered to in whole or in part by this CarePlan.
    */
-  instantiatesCanonical?: string[]|undefined;
+  instantiatesCanonical?: (string|null)[]|undefined;
   /**
    * Extended properties for primitive element: CarePlan.instantiatesCanonical
    */
@@ -171,7 +171,7 @@ export interface CarePlan extends fhir.DomainResource {
   /**
    * This might be an HTML page, PDF, etc. or could just be a non-resolvable URI identifier.
    */
-  instantiatesUri?: string[]|undefined;
+  instantiatesUri?: (string|null)[]|undefined;
   /**
    * Extended properties for primitive element: CarePlan.instantiatesUri
    */
@@ -179,15 +179,15 @@ export interface CarePlan extends fhir.DomainResource {
   /**
    * A care plan that is fulfilled in whole or in part by this care plan.
    */
-  basedOn?: fhir.Reference[]|undefined;
+  basedOn?: (fhir.Reference|null)[]|undefined;
   /**
    * The replacement could be because the initial care plan was immediately rejected (due to an issue) or because the previous care plan was completed, but the need for the action described by the care plan remains ongoing.
    */
-  replaces?: fhir.Reference[]|undefined;
+  replaces?: (fhir.Reference|null)[]|undefined;
   /**
    * Each care plan is an independent request, such that having a care plan be part of another care plan can cause issues with cascading statuses.  As such, this element is still being discussed.
    */
-  partOf?: fhir.Reference[]|undefined;
+  partOf?: (fhir.Reference|null)[]|undefined;
   /**
    * The unknown code is not to be used to convey other statuses.  The unknown code should be used when one of the statuses applies, but the authoring system doesn't know the current state of the care plan.
    * This element is labeled as a modifier because the status contains the code entered-in-error that marks the plan as not currently valid.
@@ -208,7 +208,7 @@ export interface CarePlan extends fhir.DomainResource {
   /**
    * There may be multiple axes of categorization and one plan may serve multiple purposes.  In some cases, this may be redundant with references to CarePlan.concern.
    */
-  category?: fhir.CodeableConcept[]|undefined;
+  category?: (fhir.CodeableConcept|null)[]|undefined;
   /**
    * Human-friendly name for the care plan.
    */
@@ -252,29 +252,29 @@ export interface CarePlan extends fhir.DomainResource {
   /**
    * Collaborative care plans may have multiple contributors.
    */
-  contributor?: fhir.Reference[]|undefined;
+  contributor?: (fhir.Reference|null)[]|undefined;
   /**
    * Identifies all people and organizations who are expected to be involved in the care envisioned by this plan.
    */
-  careTeam?: fhir.Reference[]|undefined;
+  careTeam?: (fhir.Reference|null)[]|undefined;
   /**
    * When the diagnosis is related to an allergy or intolerance, the Condition and AllergyIntolerance resources can both be used. However, to be actionable for decision support, using Condition alone is not sufficient as the allergy or intolerance condition needs to be represented as an AllergyIntolerance.
    */
-  addresses?: fhir.Reference[]|undefined;
+  addresses?: (fhir.Reference|null)[]|undefined;
   /**
    * Use "concern" to identify specific conditions addressed by the care plan.
    */
-  supportingInfo?: fhir.Reference[]|undefined;
+  supportingInfo?: (fhir.Reference|null)[]|undefined;
   /**
    * Goal can be achieving a particular change or merely maintaining a current state or even slowing a decline.
    */
-  goal?: fhir.Reference[]|undefined;
+  goal?: (fhir.Reference|null)[]|undefined;
   /**
    * Identifies a planned action to occur as part of the plan.  For example, a medication to be used, lab tests to perform, self-monitoring, education, etc.
    */
-  activity?: fhir.CarePlanActivity[]|undefined;
+  activity?: (fhir.CarePlanActivity|null)[]|undefined;
   /**
    * General notes about the care plan not covered elsewhere.
    */
-  note?: fhir.Annotation[]|undefined;
+  note?: (fhir.Annotation|null)[]|undefined;
 }

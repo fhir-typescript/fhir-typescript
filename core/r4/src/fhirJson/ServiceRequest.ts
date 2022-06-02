@@ -13,15 +13,15 @@ export interface ServiceRequest extends fhir.DomainResource {
   /**
    * Resource Type Name
    */
-  resourceType: "ServiceRequest";
+  resourceType: "ServiceRequest"|null;
   /**
    * The identifier.type element is used to distinguish between the identifiers assigned by the orderer (known as the 'Placer' in HL7 v2) and the producer of the observations in response to the order (known as the 'Filler' in HL7 v2).  For further discussion and examples see the resource notes section below.
    */
-  identifier?: fhir.Identifier[]|undefined;
+  identifier?: (fhir.Identifier|null)[]|undefined;
   /**
    * Note: This is a business identifier, not a resource identifier (see [discussion](resource.html#identifiers)).  It is best practice for the identifier to only appear on a single resource instance, however business practices may occasionally dictate that multiple resource instances with the same identifier can exist - possibly even with different resource types.  For example, multiple Patient and a Person resource instance might share the same social insurance number.
    */
-  instantiatesCanonical?: string[]|undefined;
+  instantiatesCanonical?: (string|null)[]|undefined;
   /**
    * Extended properties for primitive element: ServiceRequest.instantiatesCanonical
    */
@@ -29,7 +29,7 @@ export interface ServiceRequest extends fhir.DomainResource {
   /**
    * This might be an HTML page, PDF, etc. or could just be a non-resolvable URI identifier.
    */
-  instantiatesUri?: string[]|undefined;
+  instantiatesUri?: (string|null)[]|undefined;
   /**
    * Extended properties for primitive element: ServiceRequest.instantiatesUri
    */
@@ -37,11 +37,11 @@ export interface ServiceRequest extends fhir.DomainResource {
   /**
    * Plan/proposal/order fulfilled by this request.
    */
-  basedOn?: fhir.Reference[]|undefined;
+  basedOn?: (fhir.Reference|null)[]|undefined;
   /**
    * The request takes the place of the referenced completed or terminated request(s).
    */
-  replaces?: fhir.Reference[]|undefined;
+  replaces?: (fhir.Reference|null)[]|undefined;
   /**
    * Requests are linked either by a "basedOn" relationship (i.e. one request is fulfilling another) or by having a common requisition. Requests that are part of the same requisition are generally treated independently from the perspective of changing their state or maintaining them after initial creation.
    */
@@ -65,7 +65,7 @@ export interface ServiceRequest extends fhir.DomainResource {
   /**
    * There may be multiple axis of categorization depending on the context or use case for retrieving or displaying the resource.  The level of granularity is defined by the category concepts in the value set.
    */
-  category?: fhir.CodeableConcept[]|undefined;
+  category?: (fhir.CodeableConcept|null)[]|undefined;
   /**
    * Indicates how quickly the ServiceRequest should be addressed with respect to other requests.
    */
@@ -89,7 +89,7 @@ export interface ServiceRequest extends fhir.DomainResource {
   /**
    * For information from the medical record intended to support the delivery of the requested services, use the `supportingInformation` element.
    */
-  orderDetail?: fhir.CodeableConcept[]|undefined;
+  orderDetail?: (fhir.CodeableConcept|null)[]|undefined;
   /**
    * An amount of service being requested which can be a quantity ( for example $1,500 home modification), a ratio ( for example, 20 half day visits per month), or a range (2.0 to 1.8 Gy per fraction).
    */
@@ -157,43 +157,43 @@ export interface ServiceRequest extends fhir.DomainResource {
   /**
    * If multiple performers are present, it is interpreted as a list of *alternative* performers without any preference regardless of order.  If order of preference is needed use the [request-performerOrder extension](extension-request-performerorder.html).  Use CareTeam to represent a group of performers (for example, Practitioner A *and* Practitioner B).
    */
-  performer?: fhir.Reference[]|undefined;
+  performer?: (fhir.Reference|null)[]|undefined;
   /**
    * The preferred location(s) where the procedure should actually happen in coded or free text form. E.g. at home or nursing day care center.
    */
-  locationCode?: fhir.CodeableConcept[]|undefined;
+  locationCode?: (fhir.CodeableConcept|null)[]|undefined;
   /**
    * A reference to the the preferred location(s) where the procedure should actually happen. E.g. at home or nursing day care center.
    */
-  locationReference?: fhir.Reference[]|undefined;
+  locationReference?: (fhir.Reference|null)[]|undefined;
   /**
    * This element represents why the referral is being made and may be used to decide how the service will be performed, or even if it will be performed at all.   Use `CodeableConcept.text` element if the data is free (uncoded) text as shown in the [CT Scan example](servicerequest-example-di.html).
    */
-  reasonCode?: fhir.CodeableConcept[]|undefined;
+  reasonCode?: (fhir.CodeableConcept|null)[]|undefined;
   /**
    * This element represents why the referral is being made and may be used to decide how the service will be performed, or even if it will be performed at all.    To be as specific as possible,  a reference to  *Observation* or *Condition* should be used if available.  Otherwise when referencing  *DiagnosticReport*  it should contain a finding  in `DiagnosticReport.conclusion` and/or `DiagnosticReport.conclusionCode`.   When using a reference to *DocumentReference*, the target document should contain clear findings language providing the relevant reason for this service request.  Use  the CodeableConcept text element in `ServiceRequest.reasonCode` if the data is free (uncoded) text as shown in the [CT Scan example](servicerequest-example-di.html).
    */
-  reasonReference?: fhir.Reference[]|undefined;
+  reasonReference?: (fhir.Reference|null)[]|undefined;
   /**
    * Insurance plans, coverage extensions, pre-authorizations and/or pre-determinations that may be needed for delivering the requested service.
    */
-  insurance?: fhir.Reference[]|undefined;
+  insurance?: (fhir.Reference|null)[]|undefined;
   /**
    * To represent information about how the services are to be delivered use the `instructions` element.
    */
-  supportingInfo?: fhir.Reference[]|undefined;
+  supportingInfo?: (fhir.Reference|null)[]|undefined;
   /**
    * Many diagnostic procedures need a specimen, but the request itself is not actually about the specimen. This element is for when the diagnostic is requested on already existing specimens and the request points to the specimen it applies to.    Conversely, if the request is entered first with an unknown specimen, then the [Specimen](specimen.html) resource points to the ServiceRequest.
    */
-  specimen?: fhir.Reference[]|undefined;
+  specimen?: (fhir.Reference|null)[]|undefined;
   /**
    * Only used if not implicit in the code found in ServiceRequest.code.  If the use case requires BodySite to be handled as a separate resource instead of an inline coded element (e.g. to identify and track separately)  then use the standard extension [procedure-targetBodyStructure](extension-procedure-targetbodystructure.html).
    */
-  bodySite?: fhir.CodeableConcept[]|undefined;
+  bodySite?: (fhir.CodeableConcept|null)[]|undefined;
   /**
    * Any other notes and comments made about the service request. For example, internal billing notes.
    */
-  note?: fhir.Annotation[]|undefined;
+  note?: (fhir.Annotation|null)[]|undefined;
   /**
    * Instructions in terms that are understood by the patient or consumer.
    */
@@ -207,5 +207,5 @@ export interface ServiceRequest extends fhir.DomainResource {
    * This SHALL NOT include the Provenance associated with this current version of the resource.  (If that provenance is deemed to be a “relevant” change, it will need to be added as part of a later update.  Until then, it can be queried directly as the Provenance that points to this version using _revinclude
    * All Provenances should have some historical version of this Request as their subject.
    */
-  relevantHistory?: fhir.Reference[]|undefined;
+  relevantHistory?: (fhir.Reference|null)[]|undefined;
 }

@@ -105,7 +105,7 @@ export interface OperationDefinitionParameter extends fhir.BackboneElement {
   /**
    * Often, these profiles are the base definitions from the spec (e.g. http://hl7.org/fhir/StructureDefinition/Patient).
    */
-  targetProfile?: string[]|undefined;
+  targetProfile?: (string|null)[]|undefined;
   /**
    * Extended properties for primitive element: OperationDefinition.parameter.targetProfile
    */
@@ -125,11 +125,11 @@ export interface OperationDefinitionParameter extends fhir.BackboneElement {
   /**
    * Resolution applies if the referenced parameter exists.
    */
-  referencedFrom?: fhir.OperationDefinitionParameterReferencedFrom[]|undefined;
+  referencedFrom?: (fhir.OperationDefinitionParameterReferencedFrom|null)[]|undefined;
   /**
    * Query Definitions only have one output parameter, named "result". This might not be described, but can be to allow a profile to be defined.
    */
-  part?: fhir.OperationDefinitionParameter[]|undefined;
+  part?: (fhir.OperationDefinitionParameter|null)[]|undefined;
 }
 
 /**
@@ -139,7 +139,7 @@ export interface OperationDefinitionOverload extends fhir.BackboneElement {
   /**
    * Name of parameter to include in overload.
    */
-  parameterName?: string[]|undefined;
+  parameterName?: (string|null)[]|undefined;
   /**
    * Extended properties for primitive element: OperationDefinition.overload.parameterName
    */
@@ -161,7 +161,7 @@ export interface OperationDefinition extends fhir.DomainResource {
   /**
    * Resource Type Name
    */
-  resourceType: "OperationDefinition";
+  resourceType: "OperationDefinition"|null;
   /**
    * Can be a urn:uuid: or a urn:oid: but real http: addresses are preferred.  Multiple instances may share the same URL if they have a distinct version.
    * The determination of when to create a new version of a resource (same url, new version) vs. defining a new artifact is up to the author.  Considerations for making this decision are found in [Technical and Business Versions](resource.html#versions). 
@@ -239,7 +239,7 @@ export interface OperationDefinition extends fhir.DomainResource {
   /**
    * May be a web site, an email address, a telephone number, etc.
    */
-  contact?: fhir.ContactDetail[]|undefined;
+  contact?: (fhir.ContactDetail|null)[]|undefined;
   /**
    * This description can be used to capture details such as why the operation definition was built, comments about misuse, instructions for clinical use and interpretation, literature references, examples from the paper world, etc. It is not a rendering of the operation definition as conveyed in the 'text' field of the resource itself. This item SHOULD be populated unless the information is available from context (e.g. the language of the operation definition is presumed to be the predominant language in the place the operation definition was created).
    */
@@ -251,11 +251,11 @@ export interface OperationDefinition extends fhir.DomainResource {
   /**
    * When multiple useContexts are specified, there is no expectation that all or any of the contexts apply.
    */
-  useContext?: fhir.UsageContext[]|undefined;
+  useContext?: (fhir.UsageContext|null)[]|undefined;
   /**
    * It may be possible for the operation definition to be used in jurisdictions other than those for which it was originally designed or intended.
    */
-  jurisdiction?: fhir.CodeableConcept[]|undefined;
+  jurisdiction?: (fhir.CodeableConcept|null)[]|undefined;
   /**
    * This element does not describe the usage of the operation definition. Instead, it provides traceability of ''why'' the resource is either needed or ''why'' it is defined as it is.  This may be used to point to source materials or specifications that drove the structure of this operation definition.
    */
@@ -301,7 +301,7 @@ export interface OperationDefinition extends fhir.DomainResource {
   /**
    * If the type is an abstract resource ("Resource" or "DomainResource") then the operation can be invoked on any concrete specialization.
    */
-  resource?: ('Account'|'ActivityDefinition'|'AdverseEvent'|'AllergyIntolerance'|'Appointment'|'AppointmentResponse'|'AuditEvent'|'Basic'|'Binary'|'BiologicallyDerivedProduct'|'BodyStructure'|'Bundle'|'CapabilityStatement'|'CarePlan'|'CareTeam'|'CatalogEntry'|'ChargeItem'|'ChargeItemDefinition'|'Claim'|'ClaimResponse'|'ClinicalImpression'|'CodeSystem'|'Communication'|'CommunicationRequest'|'CompartmentDefinition'|'Composition'|'ConceptMap'|'Condition'|'Consent'|'Contract'|'Coverage'|'CoverageEligibilityRequest'|'CoverageEligibilityResponse'|'DetectedIssue'|'Device'|'DeviceDefinition'|'DeviceMetric'|'DeviceRequest'|'DeviceUseStatement'|'DiagnosticReport'|'DocumentManifest'|'DocumentReference'|'DomainResource'|'EffectEvidenceSynthesis'|'Encounter'|'Endpoint'|'EnrollmentRequest'|'EnrollmentResponse'|'EpisodeOfCare'|'EventDefinition'|'Evidence'|'EvidenceVariable'|'ExampleScenario'|'ExplanationOfBenefit'|'FamilyMemberHistory'|'Flag'|'Goal'|'GraphDefinition'|'Group'|'GuidanceResponse'|'HealthcareService'|'ImagingStudy'|'Immunization'|'ImmunizationEvaluation'|'ImmunizationRecommendation'|'ImplementationGuide'|'InsurancePlan'|'Invoice'|'Library'|'Linkage'|'List'|'Location'|'Measure'|'MeasureReport'|'Media'|'Medication'|'MedicationAdministration'|'MedicationDispense'|'MedicationKnowledge'|'MedicationRequest'|'MedicationStatement'|'MedicinalProduct'|'MedicinalProductAuthorization'|'MedicinalProductContraindication'|'MedicinalProductIndication'|'MedicinalProductIngredient'|'MedicinalProductInteraction'|'MedicinalProductManufactured'|'MedicinalProductPackaged'|'MedicinalProductPharmaceutical'|'MedicinalProductUndesirableEffect'|'MessageDefinition'|'MessageHeader'|'MolecularSequence'|'NamingSystem'|'NutritionOrder'|'Observation'|'ObservationDefinition'|'OperationDefinition'|'OperationOutcome'|'Organization'|'OrganizationAffiliation'|'Parameters'|'Patient'|'PaymentNotice'|'PaymentReconciliation'|'Person'|'PlanDefinition'|'Practitioner'|'PractitionerRole'|'Procedure'|'Provenance'|'Questionnaire'|'QuestionnaireResponse'|'RelatedPerson'|'RequestGroup'|'ResearchDefinition'|'ResearchElementDefinition'|'ResearchStudy'|'ResearchSubject'|'Resource'|'RiskAssessment'|'RiskEvidenceSynthesis'|'Schedule'|'SearchParameter'|'ServiceRequest'|'Slot'|'Specimen'|'SpecimenDefinition'|'StructureDefinition'|'StructureMap'|'Subscription'|'Substance'|'SubstanceNucleicAcid'|'SubstancePolymer'|'SubstanceProtein'|'SubstanceReferenceInformation'|'SubstanceSourceMaterial'|'SubstanceSpecification'|'SupplyDelivery'|'SupplyRequest'|'Task'|'TerminologyCapabilities'|'TestReport'|'TestScript'|'ValueSet'|'VerificationResult'|'VisionPrescription')[]|undefined;
+  resource?: (('Account'|'ActivityDefinition'|'AdverseEvent'|'AllergyIntolerance'|'Appointment'|'AppointmentResponse'|'AuditEvent'|'Basic'|'Binary'|'BiologicallyDerivedProduct'|'BodyStructure'|'Bundle'|'CapabilityStatement'|'CarePlan'|'CareTeam'|'CatalogEntry'|'ChargeItem'|'ChargeItemDefinition'|'Claim'|'ClaimResponse'|'ClinicalImpression'|'CodeSystem'|'Communication'|'CommunicationRequest'|'CompartmentDefinition'|'Composition'|'ConceptMap'|'Condition'|'Consent'|'Contract'|'Coverage'|'CoverageEligibilityRequest'|'CoverageEligibilityResponse'|'DetectedIssue'|'Device'|'DeviceDefinition'|'DeviceMetric'|'DeviceRequest'|'DeviceUseStatement'|'DiagnosticReport'|'DocumentManifest'|'DocumentReference'|'DomainResource'|'EffectEvidenceSynthesis'|'Encounter'|'Endpoint'|'EnrollmentRequest'|'EnrollmentResponse'|'EpisodeOfCare'|'EventDefinition'|'Evidence'|'EvidenceVariable'|'ExampleScenario'|'ExplanationOfBenefit'|'FamilyMemberHistory'|'Flag'|'Goal'|'GraphDefinition'|'Group'|'GuidanceResponse'|'HealthcareService'|'ImagingStudy'|'Immunization'|'ImmunizationEvaluation'|'ImmunizationRecommendation'|'ImplementationGuide'|'InsurancePlan'|'Invoice'|'Library'|'Linkage'|'List'|'Location'|'Measure'|'MeasureReport'|'Media'|'Medication'|'MedicationAdministration'|'MedicationDispense'|'MedicationKnowledge'|'MedicationRequest'|'MedicationStatement'|'MedicinalProduct'|'MedicinalProductAuthorization'|'MedicinalProductContraindication'|'MedicinalProductIndication'|'MedicinalProductIngredient'|'MedicinalProductInteraction'|'MedicinalProductManufactured'|'MedicinalProductPackaged'|'MedicinalProductPharmaceutical'|'MedicinalProductUndesirableEffect'|'MessageDefinition'|'MessageHeader'|'MolecularSequence'|'NamingSystem'|'NutritionOrder'|'Observation'|'ObservationDefinition'|'OperationDefinition'|'OperationOutcome'|'Organization'|'OrganizationAffiliation'|'Parameters'|'Patient'|'PaymentNotice'|'PaymentReconciliation'|'Person'|'PlanDefinition'|'Practitioner'|'PractitionerRole'|'Procedure'|'Provenance'|'Questionnaire'|'QuestionnaireResponse'|'RelatedPerson'|'RequestGroup'|'ResearchDefinition'|'ResearchElementDefinition'|'ResearchStudy'|'ResearchSubject'|'Resource'|'RiskAssessment'|'RiskEvidenceSynthesis'|'Schedule'|'SearchParameter'|'ServiceRequest'|'Slot'|'Specimen'|'SpecimenDefinition'|'StructureDefinition'|'StructureMap'|'Subscription'|'Substance'|'SubstanceNucleicAcid'|'SubstancePolymer'|'SubstanceProtein'|'SubstanceReferenceInformation'|'SubstanceSourceMaterial'|'SubstanceSpecification'|'SupplyDelivery'|'SupplyRequest'|'Task'|'TerminologyCapabilities'|'TestReport'|'TestScript'|'ValueSet'|'VerificationResult'|'VisionPrescription')|null)[]|undefined;
   /**
    * Extended properties for primitive element: OperationDefinition.resource
    */
@@ -349,9 +349,9 @@ export interface OperationDefinition extends fhir.DomainResource {
   /**
    * Query Definitions only have one output parameter, named "result". This might not be described, but can be to allow a profile to be defined.
    */
-  parameter?: fhir.OperationDefinitionParameter[]|undefined;
+  parameter?: (fhir.OperationDefinitionParameter|null)[]|undefined;
   /**
    * The combinations are suggestions as to which sets of parameters to use together, but the combinations are not intended to be authoritative.
    */
-  overload?: fhir.OperationDefinitionOverload[]|undefined;
+  overload?: (fhir.OperationDefinitionOverload|null)[]|undefined;
 }

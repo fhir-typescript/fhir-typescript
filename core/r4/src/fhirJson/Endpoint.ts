@@ -13,11 +13,11 @@ export interface Endpoint extends fhir.DomainResource {
   /**
    * Resource Type Name
    */
-  resourceType: "Endpoint";
+  resourceType: "Endpoint"|null;
   /**
    * Identifier for the organization that is used to identify the endpoint across multiple disparate systems.
    */
-  identifier?: fhir.Identifier[]|undefined;
+  identifier?: (fhir.Identifier|null)[]|undefined;
   /**
    * This element is labeled as a modifier because the status contains codes that mark the endpoint as not currently valid.
    */
@@ -45,7 +45,7 @@ export interface Endpoint extends fhir.DomainResource {
   /**
    * Contact details for a human to contact about the subscription. The primary use of this for system administrator troubleshooting.
    */
-  contact?: fhir.ContactPoint[]|undefined;
+  contact?: (fhir.ContactPoint|null)[]|undefined;
   /**
    * The interval during which the endpoint is expected to be operational.
    */
@@ -53,11 +53,11 @@ export interface Endpoint extends fhir.DomainResource {
   /**
    * The payloadFormat describes the serialization format of the data, where the payloadType indicates the specific document/schema that is being transferred; e.g. DischargeSummary or CarePlan.
    */
-  payloadType: fhir.CodeableConcept[]|null;
+  payloadType: (fhir.CodeableConcept|null)[]|null;
   /**
    * Sending the payload has obvious security consequences. The server is responsible for ensuring that the content is appropriately secured.
    */
-  payloadMimeType?: string[]|undefined;
+  payloadMimeType?: (string|null)[]|undefined;
   /**
    * Extended properties for primitive element: Endpoint.payloadMimeType
    */
@@ -76,7 +76,7 @@ export interface Endpoint extends fhir.DomainResource {
   /**
    * Exactly what these mean depends on the channel type. The can convey additional information to the recipient and/or meet security requirements.
    */
-  header?: string[]|undefined;
+  header?: (string|null)[]|undefined;
   /**
    * Extended properties for primitive element: Endpoint.header
    */

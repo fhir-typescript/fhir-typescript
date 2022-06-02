@@ -55,15 +55,15 @@ export interface PlanDefinitionGoal extends fhir.BackboneElement {
   /**
    * Identifies problems, conditions, issues, or concerns the goal is intended to address.
    */
-  addresses?: fhir.CodeableConcept[]|undefined;
+  addresses?: (fhir.CodeableConcept|null)[]|undefined;
   /**
    * Didactic or other informational resources associated with the goal that provide further supporting information about the goal. Information resources can include inline text commentary and links to web resources.
    */
-  documentation?: fhir.RelatedArtifact[]|undefined;
+  documentation?: (fhir.RelatedArtifact|null)[]|undefined;
   /**
    * Indicates what should be done and within what timeframe.
    */
-  target?: fhir.PlanDefinitionGoalTarget[]|undefined;
+  target?: (fhir.PlanDefinitionGoalTarget|null)[]|undefined;
 }
 
 /**
@@ -197,19 +197,19 @@ export interface PlanDefinitionAction extends fhir.BackboneElement {
   /**
    * A code that provides meaning for the action or action group. For example, a section may have a LOINC code for the section of a documentation template.
    */
-  code?: fhir.CodeableConcept[]|undefined;
+  code?: (fhir.CodeableConcept|null)[]|undefined;
   /**
    * This is different than the clinical evidence documentation, it's an actual business description of the reason for performing the action.
    */
-  reason?: fhir.CodeableConcept[]|undefined;
+  reason?: (fhir.CodeableConcept|null)[]|undefined;
   /**
    * Didactic or other informational resources associated with the action that can be provided to the CDS recipient. Information resources can include inline text commentary and links to web resources.
    */
-  documentation?: fhir.RelatedArtifact[]|undefined;
+  documentation?: (fhir.RelatedArtifact|null)[]|undefined;
   /**
    * Identifies goals that this action supports. The reference must be to a goal element defined within this plan definition.
    */
-  goalId?: string[]|undefined;
+  goalId?: (string|null)[]|undefined;
   /**
    * Extended properties for primitive element: PlanDefinition.action.goalId
    */
@@ -227,23 +227,23 @@ export interface PlanDefinitionAction extends fhir.BackboneElement {
   /**
    * A description of when the action should be triggered.
    */
-  trigger?: fhir.TriggerDefinition[]|undefined;
+  trigger?: (fhir.TriggerDefinition|null)[]|undefined;
   /**
    * When multiple conditions of the same kind are present, the effects are combined using AND semantics, so the overall condition is true only if all the conditions are true.
    */
-  condition?: fhir.PlanDefinitionActionCondition[]|undefined;
+  condition?: (fhir.PlanDefinitionActionCondition|null)[]|undefined;
   /**
    * Defines input data requirements for the action.
    */
-  input?: fhir.DataRequirement[]|undefined;
+  input?: (fhir.DataRequirement|null)[]|undefined;
   /**
    * Defines the outputs of the action, if any.
    */
-  output?: fhir.DataRequirement[]|undefined;
+  output?: (fhir.DataRequirement|null)[]|undefined;
   /**
    * When an action depends on multiple actions, the meaning is that all actions are dependencies, rather than that any of the actions are a dependency.
    */
-  relatedAction?: fhir.PlanDefinitionActionRelatedAction[]|undefined;
+  relatedAction?: (fhir.PlanDefinitionActionRelatedAction|null)[]|undefined;
   /**
    * An optional value describing when the action should be performed.
    */
@@ -275,7 +275,7 @@ export interface PlanDefinitionAction extends fhir.BackboneElement {
   /**
    * Indicates who should participate in performing the action described.
    */
-  participant?: fhir.PlanDefinitionActionParticipant[]|undefined;
+  participant?: (fhir.PlanDefinitionActionParticipant|null)[]|undefined;
   /**
    * The type of action to perform (create, update, remove).
    */
@@ -347,11 +347,11 @@ export interface PlanDefinitionAction extends fhir.BackboneElement {
   /**
    * Dynamic values are applied in the order in which they are defined in the PlanDefinition resource. Note that when dynamic values are also specified by a referenced ActivityDefinition, the dynamicValues from the ActivityDefinition are applied first, followed by the dynamicValues specified here. In addition, if both a transform and dynamic values are specific, the dynamic values are applied to the result of the transform.
    */
-  dynamicValue?: fhir.PlanDefinitionActionDynamicValue[]|undefined;
+  dynamicValue?: (fhir.PlanDefinitionActionDynamicValue|null)[]|undefined;
   /**
    * Sub actions that are contained within the action. The behavior of this action determines the functionality of the sub-actions. For example, a selection behavior of at-most-one indicates that of the sub-actions, at most one may be chosen as part of realizing the action definition.
    */
-  action?: fhir.PlanDefinitionAction[]|undefined;
+  action?: (fhir.PlanDefinitionAction|null)[]|undefined;
 }
 
 /**
@@ -361,7 +361,7 @@ export interface PlanDefinition extends fhir.DomainResource {
   /**
    * Resource Type Name
    */
-  resourceType: "PlanDefinition";
+  resourceType: "PlanDefinition"|null;
   /**
    * Can be a urn:uuid: or a urn:oid: but real http: addresses are preferred.  Multiple instances may share the same URL if they have a distinct version.
    * The determination of when to create a new version of a resource (same url, new version) vs. defining a new artifact is up to the author.  Considerations for making this decision are found in [Technical and Business Versions](resource.html#versions). 
@@ -375,7 +375,7 @@ export interface PlanDefinition extends fhir.DomainResource {
   /**
    * Typically, this is used for identifiers that can go in an HL7 V3 II (instance identifier) data type, and can then identify this plan definition outside of FHIR, where it is not possible to use the logical URI.
    */
-  identifier?: fhir.Identifier[]|undefined;
+  identifier?: (fhir.Identifier|null)[]|undefined;
   /**
    * There may be different plan definition instances that have the same identifier but different versions.  The version can be appended to the url in a reference to allow a reference to a particular business version of the plan definition with the format [url]|[version].
    */
@@ -455,7 +455,7 @@ export interface PlanDefinition extends fhir.DomainResource {
   /**
    * May be a web site, an email address, a telephone number, etc.
    */
-  contact?: fhir.ContactDetail[]|undefined;
+  contact?: (fhir.ContactDetail|null)[]|undefined;
   /**
    * This description can be used to capture details such as why the plan definition was built, comments about misuse, instructions for clinical use and interpretation, literature references, examples from the paper world, etc. It is not a rendering of the plan definition as conveyed in the 'text' field of the resource itself. This item SHOULD be populated unless the information is available from context (e.g. the language of the plan definition is presumed to be the predominant language in the place the plan definition was created).
    */
@@ -467,11 +467,11 @@ export interface PlanDefinition extends fhir.DomainResource {
   /**
    * When multiple useContexts are specified, there is no expectation that all or any of the contexts apply.
    */
-  useContext?: fhir.UsageContext[]|undefined;
+  useContext?: (fhir.UsageContext|null)[]|undefined;
   /**
    * It may be possible for the plan definition to be used in jurisdictions other than those for which it was originally designed or intended.
    */
-  jurisdiction?: fhir.CodeableConcept[]|undefined;
+  jurisdiction?: (fhir.CodeableConcept|null)[]|undefined;
   /**
    * This element does not describe the usage of the plan definition. Instead, it provides traceability of ''why'' the resource is either needed or ''why'' it is defined as it is.  This may be used to point to source materials or specifications that drove the structure of this plan definition.
    */
@@ -519,31 +519,31 @@ export interface PlanDefinition extends fhir.DomainResource {
   /**
    * Descriptive topics related to the content of the plan definition. Topics provide a high-level categorization of the definition that can be useful for filtering and searching.
    */
-  topic?: fhir.CodeableConcept[]|undefined;
+  topic?: (fhir.CodeableConcept|null)[]|undefined;
   /**
    * An individiual or organization primarily involved in the creation and maintenance of the content.
    */
-  author?: fhir.ContactDetail[]|undefined;
+  author?: (fhir.ContactDetail|null)[]|undefined;
   /**
    * An individual or organization primarily responsible for internal coherence of the content.
    */
-  editor?: fhir.ContactDetail[]|undefined;
+  editor?: (fhir.ContactDetail|null)[]|undefined;
   /**
    * An individual or organization primarily responsible for review of some aspect of the content.
    */
-  reviewer?: fhir.ContactDetail[]|undefined;
+  reviewer?: (fhir.ContactDetail|null)[]|undefined;
   /**
    * An individual or organization responsible for officially endorsing the content for use in some setting.
    */
-  endorser?: fhir.ContactDetail[]|undefined;
+  endorser?: (fhir.ContactDetail|null)[]|undefined;
   /**
    * Each related artifact is either an attachment, or a reference to another resource, but not both.
    */
-  relatedArtifact?: fhir.RelatedArtifact[]|undefined;
+  relatedArtifact?: (fhir.RelatedArtifact|null)[]|undefined;
   /**
    * A reference to a Library resource containing any formal logic used by the plan definition.
    */
-  library?: string[]|undefined;
+  library?: (string|null)[]|undefined;
   /**
    * Extended properties for primitive element: PlanDefinition.library
    */
@@ -551,9 +551,9 @@ export interface PlanDefinition extends fhir.DomainResource {
   /**
    * Goals that describe what the activities within the plan are intended to achieve. For example, weight loss, restoring an activity of daily living, obtaining herd immunity via immunization, meeting a process improvement objective, etc.
    */
-  goal?: fhir.PlanDefinitionGoal[]|undefined;
+  goal?: (fhir.PlanDefinitionGoal|null)[]|undefined;
   /**
    * Note that there is overlap between many of the elements defined here and the ActivityDefinition resource. When an ActivityDefinition is referenced (using the definition element), the overlapping elements in the plan override the content of the referenced ActivityDefinition unless otherwise documented in the specific elements. See the PlanDefinition resource for more detailed information.
    */
-  action?: fhir.PlanDefinitionAction[]|undefined;
+  action?: (fhir.PlanDefinitionAction|null)[]|undefined;
 }

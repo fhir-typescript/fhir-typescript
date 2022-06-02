@@ -226,7 +226,7 @@ export interface ClinicalImpressionArgs extends fhir.DomainResourceArgs {
   /**
    * Reference to a specific published clinical protocol that was followed during this assessment, and/or that provides evidence in support of the diagnosis.
    */
-  protocol?: fhir.FhirUri[]|string[]|undefined;
+  protocol?: fhir.FhirUri[]|(string|null)[]|undefined;
   /**
    * Extended properties for primitive element: ClinicalImpression.protocol
    */

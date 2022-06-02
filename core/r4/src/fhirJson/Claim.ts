@@ -161,7 +161,7 @@ export interface ClaimDiagnosis extends fhir.BackboneElement {
   /**
    * For example: admitting, primary, secondary, discharge.
    */
-  type?: fhir.CodeableConcept[]|undefined;
+  type?: (fhir.CodeableConcept|null)[]|undefined;
   /**
    * Indication of whether the diagnosis was present on admission to a facility.
    */
@@ -187,7 +187,7 @@ export interface ClaimProcedure extends fhir.BackboneElement {
   /**
    * For example: primary, secondary.
    */
-  type?: fhir.CodeableConcept[]|undefined;
+  type?: (fhir.CodeableConcept|null)[]|undefined;
   /**
    * Date and optionally time the procedure was performed.
    */
@@ -207,7 +207,7 @@ export interface ClaimProcedure extends fhir.BackboneElement {
   /**
    * Unique Device Identifiers associated with this line item.
    */
-  udi?: fhir.Reference[]|undefined;
+  udi?: (fhir.Reference|null)[]|undefined;
 }
 
 /**
@@ -249,7 +249,7 @@ export interface ClaimInsurance extends fhir.BackboneElement {
   /**
    * This value is an alphanumeric string that may be provided over the phone, via text, via paper, or within a ClaimResponse resource and is not a FHIR Identifier.
    */
-  preAuthRef?: string[]|undefined;
+  preAuthRef?: (string|null)[]|undefined;
   /**
    * Extended properties for primitive element: Claim.insurance.preAuthRef
    */
@@ -313,11 +313,11 @@ export interface ClaimItemDetailSubDetail extends fhir.BackboneElement {
   /**
    * For example in Oral whether the treatment is cosmetic or associated with TMJ, or for Medical whether the treatment was outside the clinic or out of office hours.
    */
-  modifier?: fhir.CodeableConcept[]|undefined;
+  modifier?: (fhir.CodeableConcept|null)[]|undefined;
   /**
    * For example: Neonatal program, child dental program or drug users recovery program.
    */
-  programCode?: fhir.CodeableConcept[]|undefined;
+  programCode?: (fhir.CodeableConcept|null)[]|undefined;
   /**
    * The number of repetitions of a service or product.
    */
@@ -341,7 +341,7 @@ export interface ClaimItemDetailSubDetail extends fhir.BackboneElement {
   /**
    * Unique Device Identifiers associated with this line item.
    */
-  udi?: fhir.Reference[]|undefined;
+  udi?: (fhir.Reference|null)[]|undefined;
 }
 
 /**
@@ -371,11 +371,11 @@ export interface ClaimItemDetail extends fhir.BackboneElement {
   /**
    * For example in Oral whether the treatment is cosmetic or associated with TMJ, or for Medical whether the treatment was outside the clinic or out of office hours.
    */
-  modifier?: fhir.CodeableConcept[]|undefined;
+  modifier?: (fhir.CodeableConcept|null)[]|undefined;
   /**
    * For example: Neonatal program, child dental program or drug users recovery program.
    */
-  programCode?: fhir.CodeableConcept[]|undefined;
+  programCode?: (fhir.CodeableConcept|null)[]|undefined;
   /**
    * The number of repetitions of a service or product.
    */
@@ -399,11 +399,11 @@ export interface ClaimItemDetail extends fhir.BackboneElement {
   /**
    * Unique Device Identifiers associated with this line item.
    */
-  udi?: fhir.Reference[]|undefined;
+  udi?: (fhir.Reference|null)[]|undefined;
   /**
    * A claim detail line. Either a simple (a product or service) or a 'group' of sub-details which are simple items.
    */
-  subDetail?: fhir.ClaimItemDetailSubDetail[]|undefined;
+  subDetail?: (fhir.ClaimItemDetailSubDetail|null)[]|undefined;
 }
 
 /**
@@ -421,7 +421,7 @@ export interface ClaimItem extends fhir.BackboneElement {
   /**
    * CareTeam members related to this service or product.
    */
-  careTeamSequence?: number[]|undefined;
+  careTeamSequence?: (number|null)[]|undefined;
   /**
    * Extended properties for primitive element: Claim.item.careTeamSequence
    */
@@ -429,7 +429,7 @@ export interface ClaimItem extends fhir.BackboneElement {
   /**
    * Diagnosis applicable for this service or product.
    */
-  diagnosisSequence?: number[]|undefined;
+  diagnosisSequence?: (number|null)[]|undefined;
   /**
    * Extended properties for primitive element: Claim.item.diagnosisSequence
    */
@@ -437,7 +437,7 @@ export interface ClaimItem extends fhir.BackboneElement {
   /**
    * Procedures applicable for this service or product.
    */
-  procedureSequence?: number[]|undefined;
+  procedureSequence?: (number|null)[]|undefined;
   /**
    * Extended properties for primitive element: Claim.item.procedureSequence
    */
@@ -445,7 +445,7 @@ export interface ClaimItem extends fhir.BackboneElement {
   /**
    * Exceptions, special conditions and supporting information applicable for this service or product.
    */
-  informationSequence?: number[]|undefined;
+  informationSequence?: (number|null)[]|undefined;
   /**
    * Extended properties for primitive element: Claim.item.informationSequence
    */
@@ -465,11 +465,11 @@ export interface ClaimItem extends fhir.BackboneElement {
   /**
    * For example in Oral whether the treatment is cosmetic or associated with TMJ, or for Medical whether the treatment was outside the clinic or outside of office hours.
    */
-  modifier?: fhir.CodeableConcept[]|undefined;
+  modifier?: (fhir.CodeableConcept|null)[]|undefined;
   /**
    * For example: Neonatal program, child dental program or drug users recovery program.
    */
-  programCode?: fhir.CodeableConcept[]|undefined;
+  programCode?: (fhir.CodeableConcept|null)[]|undefined;
   /**
    * The date or dates when the service or product was supplied, performed or completed.
    */
@@ -517,7 +517,7 @@ export interface ClaimItem extends fhir.BackboneElement {
   /**
    * Unique Device Identifiers associated with this line item.
    */
-  udi?: fhir.Reference[]|undefined;
+  udi?: (fhir.Reference|null)[]|undefined;
   /**
    * For example: Providing a tooth code, allows an insurer to identify a provider performing a filling on a tooth that was previously removed.
    */
@@ -525,15 +525,15 @@ export interface ClaimItem extends fhir.BackboneElement {
   /**
    * A region or surface of the bodySite, e.g. limb region or tooth surface(s).
    */
-  subSite?: fhir.CodeableConcept[]|undefined;
+  subSite?: (fhir.CodeableConcept|null)[]|undefined;
   /**
    * This will typically be the encounter the event occurred within, but some activities may be initiated prior to or after the official completion of an encounter but still be tied to the context of the encounter.
    */
-  encounter?: fhir.Reference[]|undefined;
+  encounter?: (fhir.Reference|null)[]|undefined;
   /**
    * A claim detail line. Either a simple (a product or service) or a 'group' of sub-details which are simple items.
    */
-  detail?: fhir.ClaimItemDetail[]|undefined;
+  detail?: (fhir.ClaimItemDetail|null)[]|undefined;
 }
 
 /**
@@ -543,11 +543,11 @@ export interface Claim extends fhir.DomainResource {
   /**
    * Resource Type Name
    */
-  resourceType: "Claim";
+  resourceType: "Claim"|null;
   /**
    * A unique identifier assigned to this claim.
    */
-  identifier?: fhir.Identifier[]|undefined;
+  identifier?: (fhir.Identifier|null)[]|undefined;
   /**
    * This element is labeled as a modifier because the status contains codes that mark the resource as not currently valid.
    */
@@ -611,7 +611,7 @@ export interface Claim extends fhir.DomainResource {
   /**
    * For example,  for the original treatment and follow-up exams.
    */
-  related?: fhir.ClaimRelated[]|undefined;
+  related?: (fhir.ClaimRelated|null)[]|undefined;
   /**
    * Prescription to support the dispensing of pharmacy, device or vision products.
    */
@@ -635,23 +635,23 @@ export interface Claim extends fhir.DomainResource {
   /**
    * The members of the team who provided the products and services.
    */
-  careTeam?: fhir.ClaimCareTeam[]|undefined;
+  careTeam?: (fhir.ClaimCareTeam|null)[]|undefined;
   /**
    * Often there are multiple jurisdiction specific valuesets which are required.
    */
-  supportingInfo?: fhir.ClaimSupportingInfo[]|undefined;
+  supportingInfo?: (fhir.ClaimSupportingInfo|null)[]|undefined;
   /**
    * Information about diagnoses relevant to the claim items.
    */
-  diagnosis?: fhir.ClaimDiagnosis[]|undefined;
+  diagnosis?: (fhir.ClaimDiagnosis|null)[]|undefined;
   /**
    * Procedures performed on the patient relevant to the billing items with the claim.
    */
-  procedure?: fhir.ClaimProcedure[]|undefined;
+  procedure?: (fhir.ClaimProcedure|null)[]|undefined;
   /**
    * All insurance coverages for the patient which may be applicable for reimbursement, of the products and services listed in the claim, are typically provided in the claim to allow insurers to confirm the ordering of the insurance coverages relative to local 'coordination of benefit' rules. One coverage (and only one) with 'focal=true' is to be used in the adjudication of this claim. Coverages appearing before the focal Coverage in the list, and where 'Coverage.subrogation=false', should provide a reference to the ClaimResponse containing the adjudication results of the prior claim.
    */
-  insurance: fhir.ClaimInsurance[]|null;
+  insurance: (fhir.ClaimInsurance|null)[]|null;
   /**
    * Details of an accident which resulted in injuries which required the products and services listed in the claim.
    */
@@ -659,7 +659,7 @@ export interface Claim extends fhir.DomainResource {
   /**
    * A claim line. Either a simple  product or service or a 'group' of details which can each be a simple items or groups of sub-details.
    */
-  item?: fhir.ClaimItem[]|undefined;
+  item?: (fhir.ClaimItem|null)[]|undefined;
   /**
    * The total value of the all the items in the claim.
    */

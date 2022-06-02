@@ -23,7 +23,7 @@ export interface Linkage extends fhir.DomainResource {
     /**
      * Resource Type Name
      */
-    resourceType: "Linkage";
+    resourceType: "Linkage" | null;
     /**
      * If false, any asserted linkages should not be considered current/relevant/applicable.
      */
@@ -39,6 +39,6 @@ export interface Linkage extends fhir.DomainResource {
     /**
      * Identifies which record considered as the reference to the same real-world occurrence as well as how the items should be evaluated within the collection of linked items.
      */
-    item: fhir.LinkageItem[] | null;
+    item: (fhir.LinkageItem | null)[] | null;
 }
 //# sourceMappingURL=Linkage.d.ts.map

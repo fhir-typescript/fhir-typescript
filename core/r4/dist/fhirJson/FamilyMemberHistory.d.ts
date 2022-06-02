@@ -42,7 +42,7 @@ export interface FamilyMemberHistoryCondition extends fhir.BackboneElement {
     /**
      * An area where general notes can be placed about this specific condition.
      */
-    note?: fhir.Annotation[] | undefined;
+    note?: (fhir.Annotation | null)[] | undefined;
 }
 /**
  * Significant health conditions for a person related to the patient relevant in the context of care for the patient.
@@ -51,15 +51,15 @@ export interface FamilyMemberHistory extends fhir.DomainResource {
     /**
      * Resource Type Name
      */
-    resourceType: "FamilyMemberHistory";
+    resourceType: "FamilyMemberHistory" | null;
     /**
      * This is a business identifier, not a resource identifier (see [discussion](resource.html#identifiers)).  It is best practice for the identifier to only appear on a single resource instance, however business practices may occasionally dictate that multiple resource instances with the same identifier can exist - possibly even with different resource types.  For example, multiple Patient and a Person resource instance might share the same social insurance number.
      */
-    identifier?: fhir.Identifier[] | undefined;
+    identifier?: (fhir.Identifier | null)[] | undefined;
     /**
      * The URL pointing to a FHIR-defined protocol, guideline, orderset or other definition that is adhered to in whole or in part by this FamilyMemberHistory.
      */
-    instantiatesCanonical?: string[] | undefined;
+    instantiatesCanonical?: (string | null)[] | undefined;
     /**
      * Extended properties for primitive element: FamilyMemberHistory.instantiatesCanonical
      */
@@ -67,7 +67,7 @@ export interface FamilyMemberHistory extends fhir.DomainResource {
     /**
      * This might be an HTML page, PDF, etc. or could just be a non-resolvable URI identifier.
      */
-    instantiatesUri?: string[] | undefined;
+    instantiatesUri?: (string | null)[] | undefined;
     /**
      * Extended properties for primitive element: FamilyMemberHistory.instantiatesUri
      */
@@ -191,18 +191,18 @@ export interface FamilyMemberHistory extends fhir.DomainResource {
     /**
      * Textual reasons can be captured using reasonCode.text.
      */
-    reasonCode?: fhir.CodeableConcept[] | undefined;
+    reasonCode?: (fhir.CodeableConcept | null)[] | undefined;
     /**
      * Indicates a Condition, Observation, AllergyIntolerance, or QuestionnaireResponse that justifies this family member history event.
      */
-    reasonReference?: fhir.Reference[] | undefined;
+    reasonReference?: (fhir.Reference | null)[] | undefined;
     /**
      * This property allows a non condition-specific note to the made about the related person. Ideally, the note would be in the condition property, but this is not always possible.
      */
-    note?: fhir.Annotation[] | undefined;
+    note?: (fhir.Annotation | null)[] | undefined;
     /**
      * The significant Conditions (or condition) that the family member had. This is a repeating section to allow a system to represent more than one condition per resource, though there is nothing stopping multiple resources - one per condition.
      */
-    condition?: fhir.FamilyMemberHistoryCondition[] | undefined;
+    condition?: (fhir.FamilyMemberHistoryCondition | null)[] | undefined;
 }
 //# sourceMappingURL=FamilyMemberHistory.d.ts.map

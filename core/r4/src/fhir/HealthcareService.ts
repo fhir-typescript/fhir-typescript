@@ -101,7 +101,7 @@ export interface HealthcareServiceAvailableTimeArgs extends fhir.BackboneElement
   /**
    * Indicates which days of the week are available between the start and end Times.
    */
-  daysOfWeek?: fhir.FhirCode<DaysOfWeekCodeType>[]|string[]|undefined;
+  daysOfWeek?: fhir.FhirCode<DaysOfWeekCodeType>[]|(string|null)[]|undefined;
   /**
    * Extended properties for primitive element: HealthcareService.availableTime.daysOfWeek
    */

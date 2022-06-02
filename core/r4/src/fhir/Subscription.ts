@@ -44,7 +44,7 @@ export interface SubscriptionChannelArgs extends fhir.BackboneElementArgs {
   /**
    * Exactly what these mean depend on the channel type. They can convey additional information to the recipient and/or meet security requirements; for example, support of multiple headers in the outgoing notifications for rest-hook type subscriptions.
    */
-  header?: fhir.FhirString[]|string[]|undefined;
+  header?: fhir.FhirString[]|(string|null)[]|undefined;
   /**
    * Extended properties for primitive element: Subscription.channel.header
    */

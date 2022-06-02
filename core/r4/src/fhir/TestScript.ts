@@ -291,7 +291,7 @@ export interface TestScriptMetadataCapabilityArgs extends fhir.BackboneElementAr
   /**
    * Which origin server these requirements apply to.
    */
-  origin?: fhir.FhirInteger[]|number[]|undefined;
+  origin?: fhir.FhirInteger[]|(number|null)[]|undefined;
   /**
    * Extended properties for primitive element: TestScript.metadata.capability.origin
    */
@@ -307,7 +307,7 @@ export interface TestScriptMetadataCapabilityArgs extends fhir.BackboneElementAr
   /**
    * Links to the FHIR specification that describes this interaction and the resources involved in more detail.
    */
-  link?: fhir.FhirUri[]|string[]|undefined;
+  link?: fhir.FhirUri[]|(string|null)[]|undefined;
   /**
    * Extended properties for primitive element: TestScript.metadata.capability.link
    */

@@ -37,7 +37,7 @@ export interface DataRequirementCodeFilter extends fhir.FhirElement {
   /**
    * The codes for the code filter. If values are given, the filter will return only those data items for which the code-valued attribute specified by the path has a value that is one of the specified codes. If codes are specified in addition to a value set, the filter returns items matching a code in the value set or one of the specified codes.
    */
-  code?: fhir.Coding[]|undefined;
+  code?: (fhir.Coding|null)[]|undefined;
 }
 
 /**
@@ -115,7 +115,7 @@ export interface DataRequirement extends fhir.FhirElement {
   /**
    * The profile of the required data, specified as the uri of the profile definition.
    */
-  profile?: string[]|undefined;
+  profile?: (string|null)[]|undefined;
   /**
    * Extended properties for primitive element: DataRequirement.profile
    */
@@ -132,7 +132,7 @@ export interface DataRequirement extends fhir.FhirElement {
    * Indicates that specific elements of the type are referenced by the knowledge module and must be supported by the consumer in order to obtain an effective evaluation. This does not mean that a value is required for this element, only that the consuming system must understand the element and be able to provide values for it if they are available. 
    * The value of mustSupport SHALL be a FHIRPath resolveable on the type of the DataRequirement. The path SHALL consist only of identifiers, constant indexers, and .resolve() (see the [Simple FHIRPath Profile](fhirpath.html#simple) for full details).
    */
-  mustSupport?: string[]|undefined;
+  mustSupport?: (string|null)[]|undefined;
   /**
    * Extended properties for primitive element: DataRequirement.mustSupport
    */
@@ -140,11 +140,11 @@ export interface DataRequirement extends fhir.FhirElement {
   /**
    * Code filters specify additional constraints on the data, specifying the value set of interest for a particular element of the data. Each code filter defines an additional constraint on the data, i.e. code filters are AND'ed, not OR'ed.
    */
-  codeFilter?: fhir.DataRequirementCodeFilter[]|undefined;
+  codeFilter?: (fhir.DataRequirementCodeFilter|null)[]|undefined;
   /**
    * Date filters specify additional constraints on the data in terms of the applicable date range for specific elements. Each date filter specifies an additional constraint on the data, i.e. date filters are AND'ed, not OR'ed.
    */
-  dateFilter?: fhir.DataRequirementDateFilter[]|undefined;
+  dateFilter?: (fhir.DataRequirementDateFilter|null)[]|undefined;
   /**
    * This element can be used in combination with the sort element to specify quota requirements such as "the most recent 5" or "the highest 5".
    */
@@ -156,5 +156,5 @@ export interface DataRequirement extends fhir.FhirElement {
   /**
    * This element can be used in combination with the sort element to specify quota requirements such as "the most recent 5" or "the highest 5". When multiple sorts are specified, they are applied in the order they appear in the resource.
    */
-  sort?: fhir.DataRequirementSort[]|undefined;
+  sort?: (fhir.DataRequirementSort|null)[]|undefined;
 }

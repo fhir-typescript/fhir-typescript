@@ -65,11 +65,11 @@ export interface MeasureReportGroupStratifierStratum extends fhir.BackboneElemen
     /**
      * A stratifier component value.
      */
-    component?: fhir.MeasureReportGroupStratifierStratumComponent[] | undefined;
+    component?: (fhir.MeasureReportGroupStratifierStratumComponent | null)[] | undefined;
     /**
      * The populations that make up the stratum, one for each type of population appropriate to the measure.
      */
-    population?: fhir.MeasureReportGroupStratifierStratumPopulation[] | undefined;
+    population?: (fhir.MeasureReportGroupStratifierStratumPopulation | null)[] | undefined;
     /**
      * The measure score for this stratum, calculated as appropriate for the measure type and scoring method, and based on only the members of this stratum.
      */
@@ -82,11 +82,11 @@ export interface MeasureReportGroupStratifier extends fhir.BackboneElement {
     /**
      * The meaning of this stratifier, as defined in the measure definition.
      */
-    code?: fhir.CodeableConcept[] | undefined;
+    code?: (fhir.CodeableConcept | null)[] | undefined;
     /**
      * This element contains the results for a single stratum within the stratifier. For example, when stratifying on administrative gender, there will be four strata, one for each possible gender value.
      */
-    stratum?: fhir.MeasureReportGroupStratifierStratum[] | undefined;
+    stratum?: (fhir.MeasureReportGroupStratifierStratum | null)[] | undefined;
 }
 /**
  * The results of the calculation, one for each population group in the measure.
@@ -99,7 +99,7 @@ export interface MeasureReportGroup extends fhir.BackboneElement {
     /**
      * The populations that make up the population group, one for each type of population appropriate for the measure.
      */
-    population?: fhir.MeasureReportGroupPopulation[] | undefined;
+    population?: (fhir.MeasureReportGroupPopulation | null)[] | undefined;
     /**
      * The measure score for this population group, calculated as appropriate for the measure type and scoring method, and based on the contents of the populations defined in the group.
      */
@@ -107,7 +107,7 @@ export interface MeasureReportGroup extends fhir.BackboneElement {
     /**
      * When a measure includes multiple stratifiers, there will be a stratifier group for each stratifier defined by the measure.
      */
-    stratifier?: fhir.MeasureReportGroupStratifier[] | undefined;
+    stratifier?: (fhir.MeasureReportGroupStratifier | null)[] | undefined;
 }
 /**
  * The MeasureReport resource contains the results of the calculation of a measure; and optionally a reference to the resources involved in that calculation.
@@ -116,11 +116,11 @@ export interface MeasureReport extends fhir.DomainResource {
     /**
      * Resource Type Name
      */
-    resourceType: "MeasureReport";
+    resourceType: "MeasureReport" | null;
     /**
      * Typically, this is used for identifiers that can go in an HL7 V3 II data type - e.g. to identify this {{title}} outside of FHIR, where the logical URL is not possible to use.
      */
-    identifier?: fhir.Identifier[] | undefined;
+    identifier?: (fhir.Identifier | null)[] | undefined;
     /**
      * This element is labeled as a modifier because the status contains codes that mark the resource as not currently valid.
      */
@@ -172,10 +172,10 @@ export interface MeasureReport extends fhir.DomainResource {
     /**
      * The results of the calculation, one for each population group in the measure.
      */
-    group?: fhir.MeasureReportGroup[] | undefined;
+    group?: (fhir.MeasureReportGroup | null)[] | undefined;
     /**
      * A reference to a Bundle containing the Resources that were used in the calculation of this measure.
      */
-    evaluatedResource?: fhir.Reference[] | undefined;
+    evaluatedResource?: (fhir.Reference | null)[] | undefined;
 }
 //# sourceMappingURL=MeasureReport.d.ts.map

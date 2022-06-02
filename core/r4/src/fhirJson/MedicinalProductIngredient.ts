@@ -33,7 +33,7 @@ export interface MedicinalProductIngredientSpecifiedSubstanceStrengthReferenceSt
   /**
    * The country or countries for which the strength range applies.
    */
-  country?: fhir.CodeableConcept[]|undefined;
+  country?: (fhir.CodeableConcept|null)[]|undefined;
 }
 
 /**
@@ -67,11 +67,11 @@ export interface MedicinalProductIngredientSpecifiedSubstanceStrength extends fh
   /**
    * The country or countries for which the strength range applies.
    */
-  country?: fhir.CodeableConcept[]|undefined;
+  country?: (fhir.CodeableConcept|null)[]|undefined;
   /**
    * Strength expressed in terms of a reference substance.
    */
-  referenceStrength?: fhir.MedicinalProductIngredientSpecifiedSubstanceStrengthReferenceStrength[]|undefined;
+  referenceStrength?: (fhir.MedicinalProductIngredientSpecifiedSubstanceStrengthReferenceStrength|null)[]|undefined;
 }
 
 /**
@@ -93,7 +93,7 @@ export interface MedicinalProductIngredientSpecifiedSubstance extends fhir.Backb
   /**
    * Quantity of the substance or specified substance present in the manufactured item or pharmaceutical product.
    */
-  strength?: fhir.MedicinalProductIngredientSpecifiedSubstanceStrength[]|undefined;
+  strength?: (fhir.MedicinalProductIngredientSpecifiedSubstanceStrength|null)[]|undefined;
 }
 
 /**
@@ -107,7 +107,7 @@ export interface MedicinalProductIngredientSubstance extends fhir.BackboneElemen
   /**
    * Quantity of the substance or specified substance present in the manufactured item or pharmaceutical product.
    */
-  strength?: fhir.MedicinalProductIngredientSpecifiedSubstanceStrength[]|undefined;
+  strength?: (fhir.MedicinalProductIngredientSpecifiedSubstanceStrength|null)[]|undefined;
 }
 
 /**
@@ -117,7 +117,7 @@ export interface MedicinalProductIngredient extends fhir.DomainResource {
   /**
    * Resource Type Name
    */
-  resourceType: "MedicinalProductIngredient";
+  resourceType: "MedicinalProductIngredient"|null;
   /**
    * The identifier(s) of this Ingredient that are assigned by business processes and/or used to refer to it when a direct URL reference to the resource itself is not appropriate.
    */
@@ -137,11 +137,11 @@ export interface MedicinalProductIngredient extends fhir.DomainResource {
   /**
    * Manufacturer of this Ingredient.
    */
-  manufacturer?: fhir.Reference[]|undefined;
+  manufacturer?: (fhir.Reference|null)[]|undefined;
   /**
    * A specified substance that comprises this ingredient.
    */
-  specifiedSubstance?: fhir.MedicinalProductIngredientSpecifiedSubstance[]|undefined;
+  specifiedSubstance?: (fhir.MedicinalProductIngredientSpecifiedSubstance|null)[]|undefined;
   /**
    * The ingredient substance.
    */

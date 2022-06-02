@@ -340,7 +340,7 @@ export interface MedicinalProductArgs extends fhir.DomainResourceArgs {
     /**
      * Whether the Medicinal Product is subject to special measures for regulatory reasons.
      */
-    specialMeasures?: fhir.FhirString[] | string[] | undefined;
+    specialMeasures?: fhir.FhirString[] | (string | null)[] | undefined;
     /**
      * Extended properties for primitive element: MedicinalProduct.specialMeasures
      */

@@ -13,11 +13,11 @@ export interface DetectedIssueEvidence extends fhir.BackboneElement {
   /**
    * A manifestation that led to the recording of this detected issue.
    */
-  code?: fhir.CodeableConcept[]|undefined;
+  code?: (fhir.CodeableConcept|null)[]|undefined;
   /**
    * Links to resources that constitute evidence for the detected issue such as a GuidanceResponse or MeasureReport.
    */
-  detail?: fhir.Reference[]|undefined;
+  detail?: (fhir.Reference|null)[]|undefined;
 }
 
 /**
@@ -49,11 +49,11 @@ export interface DetectedIssue extends fhir.DomainResource {
   /**
    * Resource Type Name
    */
-  resourceType: "DetectedIssue";
+  resourceType: "DetectedIssue"|null;
   /**
    * Business identifier associated with the detected issue record.
    */
-  identifier?: fhir.Identifier[]|undefined;
+  identifier?: (fhir.Identifier|null)[]|undefined;
   /**
    * This element is labeled as a modifier because the status contains the codes cancelled and entered-in-error that mark the issue as not currently valid.
    */
@@ -97,11 +97,11 @@ export interface DetectedIssue extends fhir.DomainResource {
   /**
    * There's an implicit constraint on the number of implicated resources based on DetectedIssue.type; e.g. For drug-drug, there would be more than one.  For timing, there would typically only be one.
    */
-  implicated?: fhir.Reference[]|undefined;
+  implicated?: (fhir.Reference|null)[]|undefined;
   /**
    * Supporting evidence or manifestations that provide the basis for identifying the detected issue such as a GuidanceResponse or MeasureReport.
    */
-  evidence?: fhir.DetectedIssueEvidence[]|undefined;
+  evidence?: (fhir.DetectedIssueEvidence|null)[]|undefined;
   /**
    * Should focus on information not covered elsewhere as discrete data - no need to duplicate the narrative.
    */
@@ -121,5 +121,5 @@ export interface DetectedIssue extends fhir.DomainResource {
   /**
    * Indicates an action that has been taken or is committed to reduce or eliminate the likelihood of the risk identified by the detected issue from manifesting.  Can also reflect an observation of known mitigating factors that may reduce/eliminate the need for any action.
    */
-  mitigation?: fhir.DetectedIssueMitigation[]|undefined;
+  mitigation?: (fhir.DetectedIssueMitigation|null)[]|undefined;
 }

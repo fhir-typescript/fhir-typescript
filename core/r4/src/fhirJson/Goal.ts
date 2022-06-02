@@ -75,11 +75,11 @@ export interface Goal extends fhir.DomainResource {
   /**
    * Resource Type Name
    */
-  resourceType: "Goal";
+  resourceType: "Goal"|null;
   /**
    * This is a business identifier, not a resource identifier (see [discussion](resource.html#identifiers)).  It is best practice for the identifier to only appear on a single resource instance, however business practices may occasionally dictate that multiple resource instances with the same identifier can exist - possibly even with different resource types.  For example, multiple Patient and a Person resource instance might share the same social insurance number.
    */
-  identifier?: fhir.Identifier[]|undefined;
+  identifier?: (fhir.Identifier|null)[]|undefined;
   /**
    * This element is labeled as a modifier because the lifecycleStatus contains codes that mark the resource as not currently valid.
    */
@@ -95,7 +95,7 @@ export interface Goal extends fhir.DomainResource {
   /**
    * Indicates a category the goal falls within.
    */
-  category?: fhir.CodeableConcept[]|undefined;
+  category?: (fhir.CodeableConcept|null)[]|undefined;
   /**
    * Extensions are available to track priorities as established by each participant (i.e. Priority from the patient's perspective, different practitioners' perspectives, family member's perspectives)
    * The ordinal extension on Coding can be used to convey a numerically comparable ranking to priority.  (Keep in mind that different coding systems may use a "low value=important".
@@ -124,7 +124,7 @@ export interface Goal extends fhir.DomainResource {
   /**
    * When multiple targets are present for a single goal instance, all targets must be met for the overall goal to be met.
    */
-  target?: fhir.GoalTarget[]|undefined;
+  target?: (fhir.GoalTarget|null)[]|undefined;
   /**
    * To see the date for past statuses, query history.
    */
@@ -148,17 +148,17 @@ export interface Goal extends fhir.DomainResource {
   /**
    * The identified conditions and other health record elements that are intended to be addressed by the goal.
    */
-  addresses?: fhir.Reference[]|undefined;
+  addresses?: (fhir.Reference|null)[]|undefined;
   /**
    * May be used for progress notes, concerns or other related information that doesn't actually describe the goal itself.
    */
-  note?: fhir.Annotation[]|undefined;
+  note?: (fhir.Annotation|null)[]|undefined;
   /**
    * Note that this should not duplicate the goal status.
    */
-  outcomeCode?: fhir.CodeableConcept[]|undefined;
+  outcomeCode?: (fhir.CodeableConcept|null)[]|undefined;
   /**
    * The goal outcome is independent of the outcome of the related activities.  For example, if the Goal is to achieve a target body weight of 150 lb and a care plan activity is defined to diet, then the care plan’s activity outcome could be calories consumed whereas goal outcome is an observation for the actual body weight measured.
    */
-  outcomeReference?: fhir.Reference[]|undefined;
+  outcomeReference?: (fhir.Reference|null)[]|undefined;
 }

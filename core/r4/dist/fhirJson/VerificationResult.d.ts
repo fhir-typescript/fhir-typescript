@@ -10,11 +10,11 @@ export interface VerificationResultPrimarySource extends fhir.BackboneElement {
     /**
      * Type of primary source (License Board; Primary Education; Continuing Education; Postal Service; Relationship owner; Registration Authority; legal source; issuing source; authoritative source).
      */
-    type?: fhir.CodeableConcept[] | undefined;
+    type?: (fhir.CodeableConcept | null)[] | undefined;
     /**
      * Method for communicating with the primary source (manual; API; Push).
      */
-    communicationMethod?: fhir.CodeableConcept[] | undefined;
+    communicationMethod?: (fhir.CodeableConcept | null)[] | undefined;
     /**
      * Status of the validation of the target against the primary source (successful; failed; unknown).
      */
@@ -34,7 +34,7 @@ export interface VerificationResultPrimarySource extends fhir.BackboneElement {
     /**
      * Type of alerts/updates the primary source can send (specific requested changes; any changes; as defined by source).
      */
-    pushTypeAvailable?: fhir.CodeableConcept[] | undefined;
+    pushTypeAvailable?: (fhir.CodeableConcept | null)[] | undefined;
 }
 /**
  * Information about the entity attesting to information.
@@ -113,15 +113,15 @@ export interface VerificationResult extends fhir.DomainResource {
     /**
      * Resource Type Name
      */
-    resourceType: "VerificationResult";
+    resourceType: "VerificationResult" | null;
     /**
      * A resource that was validated.
      */
-    target?: fhir.Reference[] | undefined;
+    target?: (fhir.Reference | null)[] | undefined;
     /**
      * The fhirpath location(s) within the resource that was validated.
      */
-    targetLocation?: string[] | undefined;
+    targetLocation?: (string | null)[] | undefined;
     /**
      * Extended properties for primitive element: VerificationResult.targetLocation
      */
@@ -153,7 +153,7 @@ export interface VerificationResult extends fhir.DomainResource {
     /**
      * The primary process by which the target is validated (edit check; value set; primary source; multiple sources; standalone; in context).
      */
-    validationProcess?: fhir.CodeableConcept[] | undefined;
+    validationProcess?: (fhir.CodeableConcept | null)[] | undefined;
     /**
      * Frequency of revalidation.
      */
@@ -181,7 +181,7 @@ export interface VerificationResult extends fhir.DomainResource {
     /**
      * Information about the primary source(s) involved in validation.
      */
-    primarySource?: fhir.VerificationResultPrimarySource[] | undefined;
+    primarySource?: (fhir.VerificationResultPrimarySource | null)[] | undefined;
     /**
      * Information about the entity attesting to information.
      */
@@ -189,6 +189,6 @@ export interface VerificationResult extends fhir.DomainResource {
     /**
      * Information about the entity validating information.
      */
-    validator?: fhir.VerificationResultValidator[] | undefined;
+    validator?: (fhir.VerificationResultValidator | null)[] | undefined;
 }
 //# sourceMappingURL=VerificationResult.d.ts.map

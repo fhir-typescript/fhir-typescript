@@ -109,11 +109,11 @@ export interface SubstanceNucleicAcidSubunit extends fhir.BackboneElement {
   /**
    * The linkages between sugar residues will also be captured.
    */
-  linkage?: fhir.SubstanceNucleicAcidSubunitLinkage[]|undefined;
+  linkage?: (fhir.SubstanceNucleicAcidSubunitLinkage|null)[]|undefined;
   /**
    * 5.3.6.8.1 Sugar ID (Mandatory).
    */
-  sugar?: fhir.SubstanceNucleicAcidSubunitSugar[]|undefined;
+  sugar?: (fhir.SubstanceNucleicAcidSubunitSugar|null)[]|undefined;
 }
 
 /**
@@ -123,7 +123,7 @@ export interface SubstanceNucleicAcid extends fhir.DomainResource {
   /**
    * Resource Type Name
    */
-  resourceType: "SubstanceNucleicAcid";
+  resourceType: "SubstanceNucleicAcid"|null;
   /**
    * The type of the sequence shall be specified based on a controlled vocabulary.
    */
@@ -151,5 +151,5 @@ export interface SubstanceNucleicAcid extends fhir.DomainResource {
   /**
    * Subunits are listed in order of decreasing length; sequences of the same length will be ordered by molecular weight; subunits that have identical sequences will be repeated multiple times.
    */
-  subunit?: fhir.SubstanceNucleicAcidSubunit[]|undefined;
+  subunit?: (fhir.SubstanceNucleicAcidSubunit|null)[]|undefined;
 }

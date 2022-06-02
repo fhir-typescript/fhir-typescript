@@ -31,11 +31,11 @@ export interface MedicinalProductContraindication extends fhir.DomainResource {
   /**
    * Resource Type Name
    */
-  resourceType: "MedicinalProductContraindication";
+  resourceType: "MedicinalProductContraindication"|null;
   /**
    * The medication for which this is an indication.
    */
-  subject?: fhir.Reference[]|undefined;
+  subject?: (fhir.Reference|null)[]|undefined;
   /**
    * The disease, symptom or procedure for the contraindication.
    */
@@ -47,17 +47,17 @@ export interface MedicinalProductContraindication extends fhir.DomainResource {
   /**
    * A comorbidity (concurrent condition) or coinfection.
    */
-  comorbidity?: fhir.CodeableConcept[]|undefined;
+  comorbidity?: (fhir.CodeableConcept|null)[]|undefined;
   /**
    * Information about the use of the medicinal product in relation to other therapies as part of the indication.
    */
-  therapeuticIndication?: fhir.Reference[]|undefined;
+  therapeuticIndication?: (fhir.Reference|null)[]|undefined;
   /**
    * Information about the use of the medicinal product in relation to other therapies described as part of the indication.
    */
-  otherTherapy?: fhir.MedicinalProductContraindicationOtherTherapy[]|undefined;
+  otherTherapy?: (fhir.MedicinalProductContraindicationOtherTherapy|null)[]|undefined;
   /**
    * The population group to which this applies.
    */
-  population?: fhir.Population[]|undefined;
+  population?: (fhir.Population|null)[]|undefined;
 }

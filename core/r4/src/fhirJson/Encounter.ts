@@ -45,7 +45,7 @@ export interface EncounterParticipant extends fhir.BackboneElement {
   /**
    * The participant type indicates how an individual participates in an encounter. It includes non-practitioner participants, and for practitioners this is to describe the action type in the context of this encounter (e.g. Admitting Dr, Attending Dr, Translator, Consulting Dr). This is different to the practitioner roles which are functional roles, derived from terms of employment, education, licensing, etc.
    */
-  type?: fhir.CodeableConcept[]|undefined;
+  type?: (fhir.CodeableConcept|null)[]|undefined;
   /**
    * The period of time that the specified participant participated in the encounter. These can overlap or be sub-sets of the overall encounter's period.
    */
@@ -102,15 +102,15 @@ export interface EncounterHospitalization extends fhir.BackboneElement {
   /**
    * For example, a patient may request both a dairy-free and nut-free diet preference (not mutually exclusive).
    */
-  dietPreference?: fhir.CodeableConcept[]|undefined;
+  dietPreference?: (fhir.CodeableConcept|null)[]|undefined;
   /**
    * Special courtesies (VIP, board member).
    */
-  specialCourtesy?: fhir.CodeableConcept[]|undefined;
+  specialCourtesy?: (fhir.CodeableConcept|null)[]|undefined;
   /**
    * Any special requests that have been made for this hospitalization encounter, such as the provision of specific equipment or other things.
    */
-  specialArrangement?: fhir.CodeableConcept[]|undefined;
+  specialArrangement?: (fhir.CodeableConcept|null)[]|undefined;
   /**
    * Location/organization to which the patient is discharged.
    */
@@ -155,11 +155,11 @@ export interface Encounter extends fhir.DomainResource {
   /**
    * Resource Type Name
    */
-  resourceType: "Encounter";
+  resourceType: "Encounter"|null;
   /**
    * Identifier(s) by which this encounter is known.
    */
-  identifier?: fhir.Identifier[]|undefined;
+  identifier?: (fhir.Identifier|null)[]|undefined;
   /**
    * Note that internal business rules will determine the appropriate transitions that may occur between statuses (and also classes).
    */
@@ -171,7 +171,7 @@ export interface Encounter extends fhir.DomainResource {
   /**
    * The current status is always found in the current version of the resource, not the status history.
    */
-  statusHistory?: fhir.EncounterStatusHistory[]|undefined;
+  statusHistory?: (fhir.EncounterStatusHistory|null)[]|undefined;
   /**
    * Concepts representing classification of patient encounter such as ambulatory (outpatient), inpatient, emergency, home health or others due to local variations.
    */
@@ -179,11 +179,11 @@ export interface Encounter extends fhir.DomainResource {
   /**
    * The class history permits the tracking of the encounters transitions without needing to go  through the resource history.  This would be used for a case where an admission starts of as an emergency encounter, then transitions into an inpatient scenario. Doing this and not restarting a new encounter ensures that any lab/diagnostic results can more easily follow the patient and not require re-processing and not get lost or cancelled during a kind of discharge from emergency to inpatient.
    */
-  classHistory?: fhir.EncounterClassHistory[]|undefined;
+  classHistory?: (fhir.EncounterClassHistory|null)[]|undefined;
   /**
    * Since there are many ways to further classify encounters, this element is 0..*.
    */
-  type?: fhir.CodeableConcept[]|undefined;
+  type?: (fhir.CodeableConcept|null)[]|undefined;
   /**
    * Broad categorization of the service that is to be provided (e.g. cardiology).
    */
@@ -199,19 +199,19 @@ export interface Encounter extends fhir.DomainResource {
   /**
    * Where a specific encounter should be classified as a part of a specific episode(s) of care this field should be used. This association can facilitate grouping of related encounters together for a specific purpose, such as government reporting, issue tracking, association via a common problem.  The association is recorded on the encounter as these are typically created after the episode of care and grouped on entry rather than editing the episode of care to append another encounter to it (the episode of care could span years).
    */
-  episodeOfCare?: fhir.Reference[]|undefined;
+  episodeOfCare?: (fhir.Reference|null)[]|undefined;
   /**
    * The request this encounter satisfies (e.g. incoming referral or procedure request).
    */
-  basedOn?: fhir.Reference[]|undefined;
+  basedOn?: (fhir.Reference|null)[]|undefined;
   /**
    * The list of people responsible for providing the service.
    */
-  participant?: fhir.EncounterParticipant[]|undefined;
+  participant?: (fhir.EncounterParticipant|null)[]|undefined;
   /**
    * The appointment that scheduled this encounter.
    */
-  appointment?: fhir.Reference[]|undefined;
+  appointment?: (fhir.Reference|null)[]|undefined;
   /**
    * If not (yet) known, the end of the Period may be omitted.
    */
@@ -223,19 +223,19 @@ export interface Encounter extends fhir.DomainResource {
   /**
    * For systems that need to know which was the primary diagnosis, these will be marked with the standard extension primaryDiagnosis (which is a sequence value rather than a flag, 1 = primary diagnosis).
    */
-  reasonCode?: fhir.CodeableConcept[]|undefined;
+  reasonCode?: (fhir.CodeableConcept|null)[]|undefined;
   /**
    * For systems that need to know which was the primary diagnosis, these will be marked with the standard extension primaryDiagnosis (which is a sequence value rather than a flag, 1 = primary diagnosis).
    */
-  reasonReference?: fhir.Reference[]|undefined;
+  reasonReference?: (fhir.Reference|null)[]|undefined;
   /**
    * The list of diagnosis relevant to this encounter.
    */
-  diagnosis?: fhir.EncounterDiagnosis[]|undefined;
+  diagnosis?: (fhir.EncounterDiagnosis|null)[]|undefined;
   /**
    * The billing system may choose to allocate billable items associated with the Encounter to different referenced Accounts based on internal business rules.
    */
-  account?: fhir.Reference[]|undefined;
+  account?: (fhir.Reference|null)[]|undefined;
   /**
    * An Encounter may cover more than just the inpatient stay. Contexts such as outpatients, community clinics, and aged care facilities are also included.
    * The duration recorded in the period of this encounter covers the entire scope of this hospitalization record.
@@ -244,7 +244,7 @@ export interface Encounter extends fhir.DomainResource {
   /**
    * Virtual encounters can be recorded in the Encounter by specifying a location reference to a location of type "kind" such as "client's home" and an encounter.class = "virtual".
    */
-  location?: fhir.EncounterLocation[]|undefined;
+  location?: (fhir.EncounterLocation|null)[]|undefined;
   /**
    * The organization that is primarily responsible for this Encounter's services. This MAY be the same as the organization on the Patient record, however it could be different, such as if the actor performing the services was from an external organization (which may be billed seperately) for an external consultation.  Refer to the example bundle showing an abbreviated set of Encounters for a colonoscopy.
    */

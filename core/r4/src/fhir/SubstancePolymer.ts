@@ -446,7 +446,7 @@ export interface SubstancePolymerArgs extends fhir.DomainResourceArgs {
   /**
    * Todo.
    */
-  modification?: fhir.FhirString[]|string[]|undefined;
+  modification?: fhir.FhirString[]|(string|null)[]|undefined;
   /**
    * Extended properties for primitive element: SubstancePolymer.modification
    */

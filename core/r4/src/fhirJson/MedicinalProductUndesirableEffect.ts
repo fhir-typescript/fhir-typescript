@@ -13,11 +13,11 @@ export interface MedicinalProductUndesirableEffect extends fhir.DomainResource {
   /**
    * Resource Type Name
    */
-  resourceType: "MedicinalProductUndesirableEffect";
+  resourceType: "MedicinalProductUndesirableEffect"|null;
   /**
    * The medication for which this is an indication.
    */
-  subject?: fhir.Reference[]|undefined;
+  subject?: (fhir.Reference|null)[]|undefined;
   /**
    * The symptom, condition or undesirable effect.
    */
@@ -33,5 +33,5 @@ export interface MedicinalProductUndesirableEffect extends fhir.DomainResource {
   /**
    * The population group to which this applies.
    */
-  population?: fhir.Population[]|undefined;
+  population?: (fhir.Population|null)[]|undefined;
 }

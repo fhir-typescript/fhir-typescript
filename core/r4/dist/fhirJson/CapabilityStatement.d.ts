@@ -68,7 +68,7 @@ export interface CapabilityStatementRestSecurity extends fhir.BackboneElement {
     /**
      * Types of security services that are supported/required by the system.
      */
-    service?: fhir.CodeableConcept[] | undefined;
+    service?: (fhir.CodeableConcept | null)[] | undefined;
     /**
      * General description of how security works.
      */
@@ -189,7 +189,7 @@ export interface CapabilityStatementRestResource extends fhir.BackboneElement {
     /**
      * Supported profiles are different than the profile that applies to a particular resource in .rest.resource.profile. The resource profile is a general statement of what features of the resource are supported overall by the system - the sum total of the facilities it supports. A supported profile is a deeper statement about the functionality of the data and services provided by the server (or used by the client). A typical case is a laboratory system that produces a set of different reports - this is the list of types of data that it publishes. A key aspect of declaring profiles here is the question of how the client converts knowledge that the server publishes this data into working with the data; the client can inspect individual resources to determine whether they conform to a particular profile, but how does it find the ones that do? It does so by searching using the _profile parameter, so any resources listed here must be valid values for the _profile resource (using the identifier in the target profile).
      */
-    supportedProfile?: string[] | undefined;
+    supportedProfile?: (string | null)[] | undefined;
     /**
      * Extended properties for primitive element: CapabilityStatement.rest.resource.supportedProfile
      */
@@ -205,7 +205,7 @@ export interface CapabilityStatementRestResource extends fhir.BackboneElement {
     /**
      * In general, a Resource will only appear in a CapabilityStatement if the server actually has some capabilities - e.g. there is at least one interaction supported. However interactions can be omitted to support summarization (_summary = true).
      */
-    interaction?: fhir.CapabilityStatementRestResourceInteraction[] | undefined;
+    interaction?: (fhir.CapabilityStatementRestResourceInteraction | null)[] | undefined;
     /**
      * If a server supports versionIds correctly, it SHOULD support vread too, but is not required to do so.
      */
@@ -265,7 +265,7 @@ export interface CapabilityStatementRestResource extends fhir.BackboneElement {
     /**
      * A set of flags that defines how references are supported.
      */
-    referencePolicy?: ('enforced' | 'literal' | 'local' | 'logical' | 'resolves')[] | undefined;
+    referencePolicy?: (('enforced' | 'literal' | 'local' | 'logical' | 'resolves') | null)[] | undefined;
     /**
      * Extended properties for primitive element: CapabilityStatement.rest.resource.referencePolicy
      */
@@ -273,7 +273,7 @@ export interface CapabilityStatementRestResource extends fhir.BackboneElement {
     /**
      * If this list is empty, the server does not support includes.
      */
-    searchInclude?: string[] | undefined;
+    searchInclude?: (string | null)[] | undefined;
     /**
      * Extended properties for primitive element: CapabilityStatement.rest.resource.searchInclude
      */
@@ -281,7 +281,7 @@ export interface CapabilityStatementRestResource extends fhir.BackboneElement {
     /**
      * If this list is empty, the server does not support reverse includes.
      */
-    searchRevInclude?: string[] | undefined;
+    searchRevInclude?: (string | null)[] | undefined;
     /**
      * Extended properties for primitive element: CapabilityStatement.rest.resource.searchRevInclude
      */
@@ -289,12 +289,12 @@ export interface CapabilityStatementRestResource extends fhir.BackboneElement {
     /**
      * The search parameters should include the control search parameters such as _sort, _count, etc. that also apply to this resource (though many will be listed at [CapabilityStatement.rest.searchParam](capabilitystatement-definitions.html#CapabilityStatement.rest.searchParam)). The behavior of some search parameters may be further described by other code or extension elements, or narrative within the capability statement or linked [SearchParameter](searchparameter.html#) definitions.
      */
-    searchParam?: fhir.CapabilityStatementRestResourceSearchParam[] | undefined;
+    searchParam?: (fhir.CapabilityStatementRestResourceSearchParam | null)[] | undefined;
     /**
      * Operations linked from CapabilityStatement.rest.resource.operation must have OperationDefinition.type = true or OperationDefinition.instance = true.
      * If an operation that is listed in multiple CapabilityStatement.rest.resource.operation (e.g. for different resource types), then clients should understand that the operation is only supported on the specified resource types, and that may be a subset of those listed in OperationDefinition.resource.
      */
-    operation?: fhir.CapabilityStatementRestResourceOperation[] | undefined;
+    operation?: (fhir.CapabilityStatementRestResourceOperation | null)[] | undefined;
 }
 /**
  * A specification of restful operations supported by the system.
@@ -344,23 +344,23 @@ export interface CapabilityStatementRest extends fhir.BackboneElement {
     /**
      * Max of one repetition per resource type.
      */
-    resource?: fhir.CapabilityStatementRestResource[] | undefined;
+    resource?: (fhir.CapabilityStatementRestResource | null)[] | undefined;
     /**
      * A specification of restful operations supported by the system.
      */
-    interaction?: fhir.CapabilityStatementRestInteraction[] | undefined;
+    interaction?: (fhir.CapabilityStatementRestInteraction | null)[] | undefined;
     /**
      * Typically, the only search parameters supported for all searches are those that apply to all resources - tags, profiles, text search etc. These search parameters should include the control search parameters such as _sort, _count, etc. that also apply to this resource (though many will be listed at [CapabilityStatement.rest.searchParam](capabilitystatement-definitions.html#CapabilityStatement.rest.searchParam)). The behavior of some search parameters may be further described by other code or extension elements, or narrative within the capability statement or linked [SearchParameter](searchparameter.html#) definitions.
      */
-    searchParam?: fhir.CapabilityStatementRestResourceSearchParam[] | undefined;
+    searchParam?: (fhir.CapabilityStatementRestResourceSearchParam | null)[] | undefined;
     /**
      * CapabilityStatement.rest.operation is for operations invoked at the system level, or for operations that are supported across multiple resource types. Operations linked from CapabilityStatement.rest.operation must have OperationDefinition.system = true, or more than one Operation.resource.
      */
-    operation?: fhir.CapabilityStatementRestResourceOperation[] | undefined;
+    operation?: (fhir.CapabilityStatementRestResourceOperation | null)[] | undefined;
     /**
      * At present, the only defined compartments are at [CompartmentDefinition](compartmentdefinition.html).
      */
-    compartment?: string[] | undefined;
+    compartment?: (string | null)[] | undefined;
     /**
      * Extended properties for primitive element: CapabilityStatement.rest.compartment
      */
@@ -411,7 +411,7 @@ export interface CapabilityStatementMessaging extends fhir.BackboneElement {
     /**
      * An endpoint (network accessible address) to which messages and/or replies are to be sent.
      */
-    endpoint?: fhir.CapabilityStatementMessagingEndpoint[] | undefined;
+    endpoint?: (fhir.CapabilityStatementMessagingEndpoint | null)[] | undefined;
     /**
      * If this value is missing then the application does not implement (receiver) or depend on (sender) reliable messaging.
      */
@@ -431,7 +431,7 @@ export interface CapabilityStatementMessaging extends fhir.BackboneElement {
     /**
      * This is a proposed alternative to the messaging.event structure.
      */
-    supportedMessage?: fhir.CapabilityStatementMessagingSupportedMessage[] | undefined;
+    supportedMessage?: (fhir.CapabilityStatementMessagingSupportedMessage | null)[] | undefined;
 }
 /**
  * A document definition.
@@ -469,7 +469,7 @@ export interface CapabilityStatement extends fhir.DomainResource {
     /**
      * Resource Type Name
      */
-    resourceType: "CapabilityStatement";
+    resourceType: "CapabilityStatement" | null;
     /**
      * Can be a urn:uuid: or a urn:oid: but real http: addresses are preferred.  Multiple instances may share the same URL if they have a distinct version.
      * The determination of when to create a new version of a resource (same url, new version) vs. defining a new artifact is up to the author.  Considerations for making this decision are found in [Technical and Business Versions](resource.html#versions).
@@ -539,7 +539,7 @@ export interface CapabilityStatement extends fhir.DomainResource {
     /**
      * May be a web site, an email address, a telephone number, etc.
      */
-    contact?: fhir.ContactDetail[] | undefined;
+    contact?: (fhir.ContactDetail | null)[] | undefined;
     /**
      * This description can be used to capture details such as why the capability statement was built, comments about misuse, instructions for clinical use and interpretation, literature references, examples from the paper world, etc. It is not a rendering of the capability statement as conveyed in the 'text' field of the resource itself. This item SHOULD be populated unless the information is available from context (e.g. the language of the capability statement is presumed to be the predominant language in the place the capability statement was created).This does not need to be populated if the description is adequately implied by the software or implementation details.
      */
@@ -551,11 +551,11 @@ export interface CapabilityStatement extends fhir.DomainResource {
     /**
      * When multiple useContexts are specified, there is no expectation that all or any of the contexts apply.
      */
-    useContext?: fhir.UsageContext[] | undefined;
+    useContext?: (fhir.UsageContext | null)[] | undefined;
     /**
      * It may be possible for the capability statement to be used in jurisdictions other than those for which it was originally designed or intended.
      */
-    jurisdiction?: fhir.CodeableConcept[] | undefined;
+    jurisdiction?: (fhir.CodeableConcept | null)[] | undefined;
     /**
      * This element does not describe the usage of the capability statement. Instead, it provides traceability of ''why'' the resource is either needed or ''why'' it is defined as it is.  This may be used to point to source materials or specifications that drove the structure of this capability statement.
      */
@@ -584,7 +584,7 @@ export interface CapabilityStatement extends fhir.DomainResource {
      * HL7 defines the following Services: [Terminology Service](terminology-service.html).
      * Many [Implementation Guides](http://fhir.org/guides/registry) define additional services.
      */
-    instantiates?: string[] | undefined;
+    instantiates?: (string | null)[] | undefined;
     /**
      * Extended properties for primitive element: CapabilityStatement.instantiates
      */
@@ -593,7 +593,7 @@ export interface CapabilityStatement extends fhir.DomainResource {
      * the contents of any directly or indirectly imported CapabilityStatements SHALL NOT overlap, i.e. they cannot refer to the same rest/resource, operations/name, searchparam/name, interaction/code, messaging/endpoint, document/mode pair.
      * A capability statement that imports another CapabilityStatement automatically instantiates it too (though this is often not a very useful statement for the kinds of CapabilityStatements that are suitable for importing).
      */
-    imports?: string[] | undefined;
+    imports?: (string | null)[] | undefined;
     /**
      * Extended properties for primitive element: CapabilityStatement.imports
      */
@@ -617,7 +617,7 @@ export interface CapabilityStatement extends fhir.DomainResource {
     /**
      * "xml", "json" and "ttl" are allowed, which describe the simple encodings described in the specification (and imply appropriate bundle support). Otherwise, mime types are legal here.
      */
-    format: string[] | null;
+    format: (string | null)[] | null;
     /**
      * Extended properties for primitive element: CapabilityStatement.format
      */
@@ -625,7 +625,7 @@ export interface CapabilityStatement extends fhir.DomainResource {
     /**
      * At present, the patch mime types application/json-patch+json and application/xml-patch+xml are legal. Generally, if a server supports PATCH, it would be expected to support the patch formats and match the formats it supports, but this is not always possible or necessary.
      */
-    patchFormat?: string[] | undefined;
+    patchFormat?: (string | null)[] | undefined;
     /**
      * Extended properties for primitive element: CapabilityStatement.patchFormat
      */
@@ -633,7 +633,7 @@ export interface CapabilityStatement extends fhir.DomainResource {
     /**
      * A list of implementation guides that the server does (or should) support in their entirety.
      */
-    implementationGuide?: string[] | undefined;
+    implementationGuide?: (string | null)[] | undefined;
     /**
      * Extended properties for primitive element: CapabilityStatement.implementationGuide
      */
@@ -641,14 +641,14 @@ export interface CapabilityStatement extends fhir.DomainResource {
     /**
      * Multiple repetitions allow definition of both client and/or server behaviors or possibly behaviors under different configuration settings (for software or requirements statements).
      */
-    rest?: fhir.CapabilityStatementRest[] | undefined;
+    rest?: (fhir.CapabilityStatementRest | null)[] | undefined;
     /**
      * Multiple repetitions allow the documentation of multiple endpoints per solution.
      */
-    messaging?: fhir.CapabilityStatementMessaging[] | undefined;
+    messaging?: (fhir.CapabilityStatementMessaging | null)[] | undefined;
     /**
      * A document definition.
      */
-    document?: fhir.CapabilityStatementDocument[] | undefined;
+    document?: (fhir.CapabilityStatementDocument | null)[] | undefined;
 }
 //# sourceMappingURL=CapabilityStatement.d.ts.map

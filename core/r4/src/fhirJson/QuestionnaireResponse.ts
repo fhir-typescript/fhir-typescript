@@ -93,7 +93,7 @@ export interface QuestionnaireResponseItemAnswer extends fhir.BackboneElement {
   /**
    * Nested groups and/or questions found within this particular answer.
    */
-  item?: fhir.QuestionnaireResponseItem[]|undefined;
+  item?: (fhir.QuestionnaireResponseItem|null)[]|undefined;
 }
 
 /**
@@ -128,11 +128,11 @@ export interface QuestionnaireResponseItem extends fhir.BackboneElement {
   /**
    * The value is nested because we cannot have a repeating structure that has variable type.
    */
-  answer?: fhir.QuestionnaireResponseItemAnswer[]|undefined;
+  answer?: (fhir.QuestionnaireResponseItemAnswer|null)[]|undefined;
   /**
    * Questions or sub-groups nested beneath a question or group.
    */
-  item?: fhir.QuestionnaireResponseItem[]|undefined;
+  item?: (fhir.QuestionnaireResponseItem|null)[]|undefined;
 }
 
 /**
@@ -142,7 +142,7 @@ export interface QuestionnaireResponse extends fhir.DomainResource {
   /**
    * Resource Type Name
    */
-  resourceType: "QuestionnaireResponse";
+  resourceType: "QuestionnaireResponse"|null;
   /**
    * A business identifier assigned to a particular completed (or partially completed) questionnaire.
    */
@@ -150,11 +150,11 @@ export interface QuestionnaireResponse extends fhir.DomainResource {
   /**
    * The order, proposal or plan that is fulfilled in whole or in part by this QuestionnaireResponse.  For example, a ServiceRequest seeking an intake assessment or a decision support recommendation to assess for post-partum depression.
    */
-  basedOn?: fhir.Reference[]|undefined;
+  basedOn?: (fhir.Reference|null)[]|undefined;
   /**
    * Composition of questionnaire responses will be handled by the parent questionnaire having answers that reference the child questionnaire.  For relationships to referrals, and other types of requests, use basedOn.
    */
-  partOf?: fhir.Reference[]|undefined;
+  partOf?: (fhir.Reference|null)[]|undefined;
   /**
    * If a QuestionnaireResponse references a Questionnaire, then the QuestionnaireResponse structure must be consistent with the Questionnaire (i.e. questions must be organized into the same groups, nested questions must still be nested, etc.).
    */
@@ -199,5 +199,5 @@ export interface QuestionnaireResponse extends fhir.DomainResource {
   /**
    * Groups cannot have answers and therefore must nest directly within item. When dealing with questions, nesting must occur within each answer because some questions may have multiple answers (and the nesting occurs for each answer).
    */
-  item?: fhir.QuestionnaireResponseItem[]|undefined;
+  item?: (fhir.QuestionnaireResponseItem|null)[]|undefined;
 }

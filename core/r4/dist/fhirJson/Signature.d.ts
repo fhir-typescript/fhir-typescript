@@ -6,7 +6,7 @@ export interface Signature extends fhir.FhirElement {
     /**
      * Examples include attesting to: authorship, correct transcription, and witness of specific event. Also known as a &amp;quot;Commitment Type Indication&amp;quot;.
      */
-    type: fhir.Coding[] | null;
+    type: (fhir.Coding | null)[] | null;
     /**
      * This should agree with the information in the signature.
      */

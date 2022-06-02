@@ -32,7 +32,7 @@ export interface CompartmentDefinitionResourceArgs extends fhir.BackboneElementA
   /**
    * If no search parameters are listed, then the resource is not linked to the compartment.
    */
-  param?: fhir.FhirString[]|string[]|undefined;
+  param?: fhir.FhirString[]|(string|null)[]|undefined;
   /**
    * Extended properties for primitive element: CompartmentDefinition.resource.param
    */

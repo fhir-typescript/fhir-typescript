@@ -65,7 +65,7 @@ export interface CoverageCostToBeneficiary extends fhir.BackboneElement {
   /**
    * A suite of codes indicating exceptions or reductions to patient costs and their effective periods.
    */
-  exception?: fhir.CoverageCostToBeneficiaryException[]|undefined;
+  exception?: (fhir.CoverageCostToBeneficiaryException|null)[]|undefined;
 }
 
 /**
@@ -75,11 +75,11 @@ export interface Coverage extends fhir.DomainResource {
   /**
    * Resource Type Name
    */
-  resourceType: "Coverage";
+  resourceType: "Coverage"|null;
   /**
    * The main (and possibly only) identifier for the coverage - often referred to as a Member Id, Certificate number, Personal Health Number or Case ID. May be constructed as the concatenation of the Coverage.SubscriberID and the Coverage.dependant.
    */
-  identifier?: fhir.Identifier[]|undefined;
+  identifier?: (fhir.Identifier|null)[]|undefined;
   /**
    * This element is labeled as a modifier because the status contains the code entered-in-error that marks the coverage as not currently valid.
    */
@@ -132,11 +132,11 @@ export interface Coverage extends fhir.DomainResource {
    * May provide multiple identifiers such as insurance company identifier or business identifier (BIN number).
    * For selfpay it may provide multiple paying persons and/or organizations.
    */
-  payor: fhir.Reference[]|null;
+  payor: (fhir.Reference|null)[]|null;
   /**
    * For example may be used to identify a class of coverage or employer group, Policy, Plan.
    */
-  class?: fhir.CoverageClass[]|undefined;
+  class?: (fhir.CoverageClass|null)[]|undefined;
   /**
    * The order of applicability of this coverage relative to other coverages which are currently in force. Note, there may be gaps in the numbering and this does not imply primary, secondary etc. as the specific positioning of coverages depends upon the episode of care.
    */
@@ -156,7 +156,7 @@ export interface Coverage extends fhir.DomainResource {
   /**
    * For example by knowing the patient visit co-pay, the provider can collect the amount prior to undertaking treatment.
    */
-  costToBeneficiary?: fhir.CoverageCostToBeneficiary[]|undefined;
+  costToBeneficiary?: (fhir.CoverageCostToBeneficiary|null)[]|undefined;
   /**
    * Typically, automotive and worker's compensation policies would be flagged with 'subrogation=true' to enable healthcare payors to collect against accident claims.
    */
@@ -168,5 +168,5 @@ export interface Coverage extends fhir.DomainResource {
   /**
    * The policy(s) which constitute this insurance coverage.
    */
-  contract?: fhir.Reference[]|undefined;
+  contract?: (fhir.Reference|null)[]|undefined;
 }

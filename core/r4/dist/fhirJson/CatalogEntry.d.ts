@@ -23,11 +23,11 @@ export interface CatalogEntry extends fhir.DomainResource {
     /**
      * Resource Type Name
      */
-    resourceType: "CatalogEntry";
+    resourceType: "CatalogEntry" | null;
     /**
      * Used in supporting different identifiers for the same product, e.g. manufacturer code and retailer code.
      */
-    identifier?: fhir.Identifier[] | undefined;
+    identifier?: (fhir.Identifier | null)[] | undefined;
     /**
      * The type of item - medication, device, service, protocol or other.
      */
@@ -47,11 +47,11 @@ export interface CatalogEntry extends fhir.DomainResource {
     /**
      * Used in supporting related concepts, e.g. NDC to RxNorm.
      */
-    additionalIdentifier?: fhir.Identifier[] | undefined;
+    additionalIdentifier?: (fhir.Identifier | null)[] | undefined;
     /**
      * Classes of devices, or ATC for medication.
      */
-    classification?: fhir.CodeableConcept[] | undefined;
+    classification?: (fhir.CodeableConcept | null)[] | undefined;
     /**
      * Used to support catalog exchange even for unsupported products, e.g. getting list of medications even if not prescribable.
      */
@@ -83,14 +83,14 @@ export interface CatalogEntry extends fhir.DomainResource {
     /**
      * Used for examplefor Out of Formulary, or any specifics.
      */
-    additionalCharacteristic?: fhir.CodeableConcept[] | undefined;
+    additionalCharacteristic?: (fhir.CodeableConcept | null)[] | undefined;
     /**
      * User for example for ATC classification, or.
      */
-    additionalClassification?: fhir.CodeableConcept[] | undefined;
+    additionalClassification?: (fhir.CodeableConcept | null)[] | undefined;
     /**
      * Used for example, to point to a substance, or to a device used to administer a medication.
      */
-    relatedEntry?: fhir.CatalogEntryRelatedEntry[] | undefined;
+    relatedEntry?: (fhir.CatalogEntryRelatedEntry | null)[] | undefined;
 }
 //# sourceMappingURL=CatalogEntry.d.ts.map

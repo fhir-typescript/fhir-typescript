@@ -250,7 +250,7 @@ export interface CoverageEligibilityRequestItemArgs extends fhir.BackboneElement
   /**
    * Exceptions, special conditions and supporting information applicable for this service or product line.
    */
-  supportingInfoSequence?: fhir.FhirPositiveInt[]|number[]|undefined;
+  supportingInfoSequence?: fhir.FhirPositiveInt[]|(number|null)[]|undefined;
   /**
    * Extended properties for primitive element: CoverageEligibilityRequest.item.supportingInfoSequence
    */
@@ -413,7 +413,7 @@ export interface CoverageEligibilityRequestArgs extends fhir.DomainResourceArgs 
   /**
    * Code to specify whether requesting: prior authorization requirements for some service categories or billing codes; benefits for coverages specified or discovered; discovery and return of coverages for the patient; and/or validation that the specified coverage is in-force at the date/period specified or 'now' if not specified.
    */
-  purpose: fhir.FhirCode<EligibilityrequestPurposeCodeType>[]|string[]|undefined;
+  purpose: fhir.FhirCode<EligibilityrequestPurposeCodeType>[]|(string|null)[]|undefined;
   /**
    * Extended properties for primitive element: CoverageEligibilityRequest.purpose
    */

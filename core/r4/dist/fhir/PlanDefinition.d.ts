@@ -438,7 +438,7 @@ export interface PlanDefinitionActionArgs extends fhir.BackboneElementArgs {
     /**
      * Identifies goals that this action supports. The reference must be to a goal element defined within this plan definition.
      */
-    goalId?: fhir.FhirId[] | string[] | undefined;
+    goalId?: fhir.FhirId[] | (string | null)[] | undefined;
     /**
      * Extended properties for primitive element: PlanDefinition.action.goalId
      */
@@ -968,7 +968,7 @@ export interface PlanDefinitionArgs extends fhir.DomainResourceArgs {
     /**
      * A reference to a Library resource containing any formal logic used by the plan definition.
      */
-    library?: fhir.FhirCanonical[] | string[] | undefined;
+    library?: fhir.FhirCanonical[] | (string | null)[] | undefined;
     /**
      * Extended properties for primitive element: PlanDefinition.library
      */

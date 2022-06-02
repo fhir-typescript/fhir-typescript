@@ -266,7 +266,7 @@ export interface ContractTermSecurityLabelArgs extends fhir.BackboneElementArgs 
   /**
    * Number used to link this term or term element to the applicable Security Label.
    */
-  number?: fhir.FhirUnsignedInt[]|number[]|undefined;
+  number?: fhir.FhirUnsignedInt[]|(number|null)[]|undefined;
   /**
    * Extended properties for primitive element: Contract.term.securityLabel.number
    */
@@ -558,7 +558,7 @@ export interface ContractTermOfferArgs extends fhir.BackboneElementArgs {
   /**
    * The id of the clause or question text of the offer in the referenced questionnaire/response.
    */
-  linkId?: fhir.FhirString[]|string[]|undefined;
+  linkId?: fhir.FhirString[]|(string|null)[]|undefined;
   /**
    * Extended properties for primitive element: Contract.term.offer.linkId
    */
@@ -566,7 +566,7 @@ export interface ContractTermOfferArgs extends fhir.BackboneElementArgs {
   /**
    * Security labels that protects the offer.
    */
-  securityLabelNumber?: fhir.FhirUnsignedInt[]|number[]|undefined;
+  securityLabelNumber?: fhir.FhirUnsignedInt[]|(number|null)[]|undefined;
   /**
    * Extended properties for primitive element: Contract.term.offer.securityLabelNumber
    */
@@ -838,7 +838,7 @@ export interface ContractTermAssetValuedItemArgs extends fhir.BackboneElementArg
   /**
    * Id  of the clause or question text related to the context of this valuedItem in the referenced form or QuestionnaireResponse.
    */
-  linkId?: fhir.FhirString[]|string[]|undefined;
+  linkId?: fhir.FhirString[]|(string|null)[]|undefined;
   /**
    * Extended properties for primitive element: Contract.term.asset.valuedItem.linkId
    */
@@ -846,7 +846,7 @@ export interface ContractTermAssetValuedItemArgs extends fhir.BackboneElementArg
   /**
    * A set of security labels that define which terms are controlled by this condition.
    */
-  securityLabelNumber?: fhir.FhirUnsignedInt[]|number[]|undefined;
+  securityLabelNumber?: fhir.FhirUnsignedInt[]|(number|null)[]|undefined;
   /**
    * Extended properties for primitive element: Contract.term.asset.valuedItem.securityLabelNumber
    */
@@ -1058,7 +1058,7 @@ export interface ContractTermAssetArgs extends fhir.BackboneElementArgs {
   /**
    * Id [identifier??] of the clause or question text about the asset in the referenced form or QuestionnaireResponse.
    */
-  linkId?: fhir.FhirString[]|string[]|undefined;
+  linkId?: fhir.FhirString[]|(string|null)[]|undefined;
   /**
    * Extended properties for primitive element: Contract.term.asset.linkId
    */
@@ -1070,7 +1070,7 @@ export interface ContractTermAssetArgs extends fhir.BackboneElementArgs {
   /**
    * Security labels that protects the asset.
    */
-  securityLabelNumber?: fhir.FhirUnsignedInt[]|number[]|undefined;
+  securityLabelNumber?: fhir.FhirUnsignedInt[]|(number|null)[]|undefined;
   /**
    * Extended properties for primitive element: Contract.term.asset.securityLabelNumber
    */
@@ -1315,7 +1315,7 @@ export interface ContractTermActionArgs extends fhir.BackboneElementArgs {
   /**
    * Id [identifier??] of the clause or question text related to this action in the referenced form or QuestionnaireResponse.
    */
-  linkId?: fhir.FhirString[]|string[]|undefined;
+  linkId?: fhir.FhirString[]|(string|null)[]|undefined;
   /**
    * Extended properties for primitive element: Contract.term.action.linkId
    */
@@ -1331,7 +1331,7 @@ export interface ContractTermActionArgs extends fhir.BackboneElementArgs {
   /**
    * Id [identifier??] of the clause or question text related to the requester of this action in the referenced form or QuestionnaireResponse.
    */
-  contextLinkId?: fhir.FhirString[]|string[]|undefined;
+  contextLinkId?: fhir.FhirString[]|(string|null)[]|undefined;
   /**
    * Extended properties for primitive element: Contract.term.action.contextLinkId
    */
@@ -1359,7 +1359,7 @@ export interface ContractTermActionArgs extends fhir.BackboneElementArgs {
   /**
    * Id [identifier??] of the clause or question text related to the requester of this action in the referenced form or QuestionnaireResponse.
    */
-  requesterLinkId?: fhir.FhirString[]|string[]|undefined;
+  requesterLinkId?: fhir.FhirString[]|(string|null)[]|undefined;
   /**
    * Extended properties for primitive element: Contract.term.action.requesterLinkId
    */
@@ -1379,7 +1379,7 @@ export interface ContractTermActionArgs extends fhir.BackboneElementArgs {
   /**
    * Id [identifier??] of the clause or question text related to the reason type or reference of this  action in the referenced form or QuestionnaireResponse.
    */
-  performerLinkId?: fhir.FhirString[]|string[]|undefined;
+  performerLinkId?: fhir.FhirString[]|(string|null)[]|undefined;
   /**
    * Extended properties for primitive element: Contract.term.action.performerLinkId
    */
@@ -1395,7 +1395,7 @@ export interface ContractTermActionArgs extends fhir.BackboneElementArgs {
   /**
    * Describes why the action is to be performed or not performed in textual form.
    */
-  reason?: fhir.FhirString[]|string[]|undefined;
+  reason?: fhir.FhirString[]|(string|null)[]|undefined;
   /**
    * Extended properties for primitive element: Contract.term.action.reason
    */
@@ -1403,7 +1403,7 @@ export interface ContractTermActionArgs extends fhir.BackboneElementArgs {
   /**
    * Id [identifier??] of the clause or question text related to the reason type or reference of this  action in the referenced form or QuestionnaireResponse.
    */
-  reasonLinkId?: fhir.FhirString[]|string[]|undefined;
+  reasonLinkId?: fhir.FhirString[]|(string|null)[]|undefined;
   /**
    * Extended properties for primitive element: Contract.term.action.reasonLinkId
    */
@@ -1415,7 +1415,7 @@ export interface ContractTermActionArgs extends fhir.BackboneElementArgs {
   /**
    * Security labels that protects the action.
    */
-  securityLabelNumber?: fhir.FhirUnsignedInt[]|number[]|undefined;
+  securityLabelNumber?: fhir.FhirUnsignedInt[]|(number|null)[]|undefined;
   /**
    * Extended properties for primitive element: Contract.term.action.securityLabelNumber
    */
@@ -2204,7 +2204,7 @@ export interface ContractArgs extends fhir.DomainResourceArgs {
   /**
    * Alternative representation of the title for this Contract definition, derivative, or instance in any legal state., e.g., a domain specific contract number related to legislation.
    */
-  alias?: fhir.FhirString[]|string[]|undefined;
+  alias?: fhir.FhirString[]|(string|null)[]|undefined;
   /**
    * Extended properties for primitive element: Contract.alias
    */

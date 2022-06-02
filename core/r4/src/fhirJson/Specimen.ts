@@ -71,7 +71,7 @@ export interface SpecimenProcessing extends fhir.BackboneElement {
   /**
    * Material used in the processing step.
    */
-  additive?: fhir.Reference[]|undefined;
+  additive?: (fhir.Reference|null)[]|undefined;
   /**
    * A record of the time or period when the specimen processing occurred.  For example the time of sample fixation or the period of time the sample was in formalin.
    */
@@ -93,7 +93,7 @@ export interface SpecimenContainer extends fhir.BackboneElement {
   /**
    * Id for container. There may be multiple; a manufacturer's bar code, lab assigned identifier, etc. The container ID may differ from the specimen id in some circumstances.
    */
-  identifier?: fhir.Identifier[]|undefined;
+  identifier?: (fhir.Identifier|null)[]|undefined;
   /**
    * Textual description of the container.
    */
@@ -131,11 +131,11 @@ export interface Specimen extends fhir.DomainResource {
   /**
    * Resource Type Name
    */
-  resourceType: "Specimen";
+  resourceType: "Specimen"|null;
   /**
    * Id for specimen.
    */
-  identifier?: fhir.Identifier[]|undefined;
+  identifier?: (fhir.Identifier|null)[]|undefined;
   /**
    * The identifier assigned by the lab when accessioning specimen(s). This is not necessarily the same as the specimen identifier, depending on local lab procedures.
    */
@@ -167,11 +167,11 @@ export interface Specimen extends fhir.DomainResource {
   /**
    * The parent specimen could be the source from which the current specimen is derived by some processing step (e.g. an aliquot or isolate or extracted nucleic acids from clinical samples) or one of many specimens that were combined to create a pooled sample.
    */
-  parent?: fhir.Reference[]|undefined;
+  parent?: (fhir.Reference|null)[]|undefined;
   /**
    * The request may be explicit or implied such with a ServiceRequest that requires a blood draw.
    */
-  request?: fhir.Reference[]|undefined;
+  request?: (fhir.Reference|null)[]|undefined;
   /**
    * Details concerning the specimen collection.
    */
@@ -179,17 +179,17 @@ export interface Specimen extends fhir.DomainResource {
   /**
    * Details concerning processing and processing steps for the specimen.
    */
-  processing?: fhir.SpecimenProcessing[]|undefined;
+  processing?: (fhir.SpecimenProcessing|null)[]|undefined;
   /**
    * The container holding the specimen.  The recursive nature of containers; i.e. blood in tube in tray in rack is not addressed here.
    */
-  container?: fhir.SpecimenContainer[]|undefined;
+  container?: (fhir.SpecimenContainer|null)[]|undefined;
   /**
    * Specimen condition is an observation made about the specimen.  It's a point-in-time assessment.  It can be used to assess its quality or appropriateness for a specific test.
    */
-  condition?: fhir.CodeableConcept[]|undefined;
+  condition?: (fhir.CodeableConcept|null)[]|undefined;
   /**
    * To communicate any details or issues about the specimen or during the specimen collection. (for example: broken vial, sent with patient, frozen).
    */
-  note?: fhir.Annotation[]|undefined;
+  note?: (fhir.Annotation|null)[]|undefined;
 }

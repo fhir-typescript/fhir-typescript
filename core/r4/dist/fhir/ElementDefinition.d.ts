@@ -210,7 +210,7 @@ export interface ElementDefinitionTypeArgs extends fhir.FhirElementArgs {
     /**
      * It is possible to profile  backbone element (e.g. part of a resource), using the [profile-element](extension-elementdefinition-profile-element.html) extension.
      */
-    profile?: fhir.FhirCanonical[] | string[] | undefined;
+    profile?: fhir.FhirCanonical[] | (string | null)[] | undefined;
     /**
      * Extended properties for primitive element: ElementDefinition.type.profile
      */
@@ -218,7 +218,7 @@ export interface ElementDefinitionTypeArgs extends fhir.FhirElementArgs {
     /**
      * Used when the type is "Reference" or "canonical", and identifies a profile structure or implementation Guide that applies to the target of the reference this element refers to. If any profiles are specified, then the content must conform to at least one of them. The URL can be a local reference - to a contained StructureDefinition, or a reference to another StructureDefinition or Implementation Guide by a canonical URL. When an implementation guide is specified, the target resource SHALL conform to at least one profile defined in the implementation guide.
      */
-    targetProfile?: fhir.FhirCanonical[] | string[] | undefined;
+    targetProfile?: fhir.FhirCanonical[] | (string | null)[] | undefined;
     /**
      * Extended properties for primitive element: ElementDefinition.type.targetProfile
      */
@@ -226,7 +226,7 @@ export interface ElementDefinitionTypeArgs extends fhir.FhirElementArgs {
     /**
      * See [Aggregation Rules](elementdefinition.html#aggregation) for further clarification.
      */
-    aggregation?: fhir.FhirCode<ResourceAggregationModeCodeType>[] | string[] | undefined;
+    aggregation?: fhir.FhirCode<ResourceAggregationModeCodeType>[] | (string | null)[] | undefined;
     /**
      * Extended properties for primitive element: ElementDefinition.type.aggregation
      */
@@ -808,7 +808,7 @@ export interface ElementDefinitionArgs extends fhir.BackboneElementArgs {
     /**
      * In resources, this is rarely used except for special cases where the representation deviates from the normal, and can only be done in the base standard (and profiles must reproduce what the base standard does). This element is used quite commonly in Logical models when the logical models represent a specific serialization format (e.g. CDA, v2 etc.).
      */
-    representation?: fhir.FhirCode<PropertyRepresentationCodeType>[] | string[] | undefined;
+    representation?: fhir.FhirCode<PropertyRepresentationCodeType>[] | (string | null)[] | undefined;
     /**
      * Extended properties for primitive element: ElementDefinition.representation
      */
@@ -880,7 +880,7 @@ export interface ElementDefinitionArgs extends fhir.BackboneElementArgs {
     /**
      * Identifies additional names by which this element might also be known.
      */
-    alias?: fhir.FhirString[] | string[] | undefined;
+    alias?: fhir.FhirString[] | (string | null)[] | undefined;
     /**
      * Extended properties for primitive element: ElementDefinition.alias
      */
@@ -1691,7 +1691,7 @@ export interface ElementDefinitionArgs extends fhir.BackboneElementArgs {
     /**
      * A reference to an invariant that may make additional statements about the cardinality or value in the instance.
      */
-    condition?: fhir.FhirId[] | string[] | undefined;
+    condition?: fhir.FhirId[] | (string | null)[] | undefined;
     /**
      * Extended properties for primitive element: ElementDefinition.condition
      */

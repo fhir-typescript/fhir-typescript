@@ -31,7 +31,7 @@ export interface HumanNameArgs extends fhir.FhirElementArgs {
     /**
      * If only initials are recorded, they may be used in place of the full name parts. Initials may be separated into multiple given names but often aren't due to paractical limitations.  This element is not called "first name" since given names do not always come first.
      */
-    given?: fhir.FhirString[] | string[] | undefined;
+    given?: fhir.FhirString[] | (string | null)[] | undefined;
     /**
      * Extended properties for primitive element: HumanName.given
      */
@@ -39,7 +39,7 @@ export interface HumanNameArgs extends fhir.FhirElementArgs {
     /**
      * Part of the name that is acquired as a title due to academic, legal, employment or nobility status, etc. and that appears at the start of the name.
      */
-    prefix?: fhir.FhirString[] | string[] | undefined;
+    prefix?: fhir.FhirString[] | (string | null)[] | undefined;
     /**
      * Extended properties for primitive element: HumanName.prefix
      */
@@ -47,7 +47,7 @@ export interface HumanNameArgs extends fhir.FhirElementArgs {
     /**
      * Part of the name that is acquired as a title due to academic, legal, employment or nobility status, etc. and that appears at the end of the name.
      */
-    suffix?: fhir.FhirString[] | string[] | undefined;
+    suffix?: fhir.FhirString[] | (string | null)[] | undefined;
     /**
      * Extended properties for primitive element: HumanName.suffix
      */

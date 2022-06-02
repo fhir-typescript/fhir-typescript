@@ -23,19 +23,19 @@ export interface Person extends fhir.DomainResource {
     /**
      * Resource Type Name
      */
-    resourceType: "Person";
+    resourceType: "Person" | null;
     /**
      * Identifier for a person within a particular scope.
      */
-    identifier?: fhir.Identifier[] | undefined;
+    identifier?: (fhir.Identifier | null)[] | undefined;
     /**
      * Person may have multiple names with different uses or applicable periods.
      */
-    name?: fhir.HumanName[] | undefined;
+    name?: (fhir.HumanName | null)[] | undefined;
     /**
      * Person may have multiple ways to be contacted with different uses or applicable periods.  May need to have options for contacting the person urgently and also to help with identification.
      */
-    telecom?: fhir.ContactPoint[] | undefined;
+    telecom?: (fhir.ContactPoint | null)[] | undefined;
     /**
      * The gender might not match the biological sex as determined by genetics, or the individual's preferred identification. Note that for both humans and particularly animals, there are other legitimate possibilities than M and F, though a clear majority of systems and contexts only support M and F.
      */
@@ -55,7 +55,7 @@ export interface Person extends fhir.DomainResource {
     /**
      * Person may have multiple addresses with different uses or applicable periods.
      */
-    address?: fhir.Address[] | undefined;
+    address?: (fhir.Address | null)[] | undefined;
     /**
      * An image that can be displayed as a thumbnail of the person to enhance the identification of the individual.
      */
@@ -75,6 +75,6 @@ export interface Person extends fhir.DomainResource {
     /**
      * Link to a resource that concerns the same actual person.
      */
-    link?: fhir.PersonLink[] | undefined;
+    link?: (fhir.PersonLink | null)[] | undefined;
 }
 //# sourceMappingURL=Person.d.ts.map

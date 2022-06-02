@@ -233,7 +233,7 @@ export interface MolecularSequenceQualityRocArgs extends fhir.BackboneElementArg
     /**
      * Invidual data point representing the GQ (genotype quality) score threshold.
      */
-    score?: fhir.FhirInteger[] | number[] | undefined;
+    score?: fhir.FhirInteger[] | (number | null)[] | undefined;
     /**
      * Extended properties for primitive element: MolecularSequence.quality.roc.score
      */
@@ -241,7 +241,7 @@ export interface MolecularSequenceQualityRocArgs extends fhir.BackboneElementArg
     /**
      * The number of true positives if the GQ score threshold was set to "score" field value.
      */
-    numTP?: fhir.FhirInteger[] | number[] | undefined;
+    numTP?: fhir.FhirInteger[] | (number | null)[] | undefined;
     /**
      * Extended properties for primitive element: MolecularSequence.quality.roc.numTP
      */
@@ -249,7 +249,7 @@ export interface MolecularSequenceQualityRocArgs extends fhir.BackboneElementArg
     /**
      * The number of false positives if the GQ score threshold was set to "score" field value.
      */
-    numFP?: fhir.FhirInteger[] | number[] | undefined;
+    numFP?: fhir.FhirInteger[] | (number | null)[] | undefined;
     /**
      * Extended properties for primitive element: MolecularSequence.quality.roc.numFP
      */
@@ -257,7 +257,7 @@ export interface MolecularSequenceQualityRocArgs extends fhir.BackboneElementArg
     /**
      * The number of false negatives if the GQ score threshold was set to "score" field value.
      */
-    numFN?: fhir.FhirInteger[] | number[] | undefined;
+    numFN?: fhir.FhirInteger[] | (number | null)[] | undefined;
     /**
      * Extended properties for primitive element: MolecularSequence.quality.roc.numFN
      */
@@ -265,7 +265,7 @@ export interface MolecularSequenceQualityRocArgs extends fhir.BackboneElementArg
     /**
      * Calculated precision if the GQ score threshold was set to "score" field value.
      */
-    precision?: fhir.FhirDecimal[] | number[] | undefined;
+    precision?: fhir.FhirDecimal[] | (number | null)[] | undefined;
     /**
      * Extended properties for primitive element: MolecularSequence.quality.roc.precision
      */
@@ -273,7 +273,7 @@ export interface MolecularSequenceQualityRocArgs extends fhir.BackboneElementArg
     /**
      * Calculated sensitivity if the GQ score threshold was set to "score" field value.
      */
-    sensitivity?: fhir.FhirDecimal[] | number[] | undefined;
+    sensitivity?: fhir.FhirDecimal[] | (number | null)[] | undefined;
     /**
      * Extended properties for primitive element: MolecularSequence.quality.roc.sensitivity
      */
@@ -281,7 +281,7 @@ export interface MolecularSequenceQualityRocArgs extends fhir.BackboneElementArg
     /**
      * Calculated fScore if the GQ score threshold was set to "score" field value.
      */
-    fMeasure?: fhir.FhirDecimal[] | number[] | undefined;
+    fMeasure?: fhir.FhirDecimal[] | (number | null)[] | undefined;
     /**
      * Extended properties for primitive element: MolecularSequence.quality.roc.fMeasure
      */

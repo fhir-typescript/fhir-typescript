@@ -41,23 +41,23 @@ export interface NutritionOrderOralDiet extends fhir.BackboneElement {
   /**
    * The kind of diet or dietary restriction such as fiber restricted diet or diabetic diet.
    */
-  type?: fhir.CodeableConcept[]|undefined;
+  type?: (fhir.CodeableConcept|null)[]|undefined;
   /**
    * The time period and frequency at which the diet should be given.  The diet should be given for the combination of all schedules if more than one schedule is present.
    */
-  schedule?: fhir.Timing[]|undefined;
+  schedule?: (fhir.Timing|null)[]|undefined;
   /**
    * Class that defines the quantity and type of nutrient modifications (for example carbohydrate, fiber or sodium) required for the oral diet.
    */
-  nutrient?: fhir.NutritionOrderOralDietNutrient[]|undefined;
+  nutrient?: (fhir.NutritionOrderOralDietNutrient|null)[]|undefined;
   /**
    * Class that describes any texture modifications required for the patient to safely consume various types of solid foods.
    */
-  texture?: fhir.NutritionOrderOralDietTexture[]|undefined;
+  texture?: (fhir.NutritionOrderOralDietTexture|null)[]|undefined;
   /**
    * The required consistency (e.g. honey-thick, nectar-thick, thin, thickened.) of liquids or fluids served to the patient.
    */
-  fluidConsistencyType?: fhir.CodeableConcept[]|undefined;
+  fluidConsistencyType?: (fhir.CodeableConcept|null)[]|undefined;
   /**
    * Free text dosage instructions can be used for cases where the instructions are too complex to code.
    */
@@ -87,7 +87,7 @@ export interface NutritionOrderSupplement extends fhir.BackboneElement {
   /**
    * The time period and frequency at which the supplement(s) should be given.  The supplement should be given for the combination of all schedules if more than one schedule is present.
    */
-  schedule?: fhir.Timing[]|undefined;
+  schedule?: (fhir.Timing|null)[]|undefined;
   /**
    * The amount of the nutritional supplement to be given.
    */
@@ -163,7 +163,7 @@ export interface NutritionOrderEnteralFormula extends fhir.BackboneElement {
   /**
    * See implementation notes below for further discussion on how to order continuous vs bolus enteral feeding using this resource.
    */
-  administration?: fhir.NutritionOrderEnteralFormulaAdministration[]|undefined;
+  administration?: (fhir.NutritionOrderEnteralFormulaAdministration|null)[]|undefined;
   /**
    * The maximum total quantity of formula that may be administered to a subject over the period of time, e.g. 1440 mL over 24 hours.
    */
@@ -185,15 +185,15 @@ export interface NutritionOrder extends fhir.DomainResource {
   /**
    * Resource Type Name
    */
-  resourceType: "NutritionOrder";
+  resourceType: "NutritionOrder"|null;
   /**
    * The Identifier.type element can be to indicate filler vs. placer if needed.  This is explained in further detail [here](servicerequest.html#notes).
    */
-  identifier?: fhir.Identifier[]|undefined;
+  identifier?: (fhir.Identifier|null)[]|undefined;
   /**
    * Note: This is a business identifier, not a resource identifier (see [discussion](resource.html#identifiers)).  It is best practice for the identifier to only appear on a single resource instance, however business practices may occasionally dictate that multiple resource instances with the same identifier can exist - possibly even with different resource types.  For example, multiple Patient and a Person resource instance might share the same social insurance number.
    */
-  instantiatesCanonical?: string[]|undefined;
+  instantiatesCanonical?: (string|null)[]|undefined;
   /**
    * Extended properties for primitive element: NutritionOrder.instantiatesCanonical
    */
@@ -201,7 +201,7 @@ export interface NutritionOrder extends fhir.DomainResource {
   /**
    * This might be an HTML page, PDF, etc. or could just be a non-resolvable URI identifier.
    */
-  instantiatesUri?: string[]|undefined;
+  instantiatesUri?: (string|null)[]|undefined;
   /**
    * Extended properties for primitive element: NutritionOrder.instantiatesUri
    */
@@ -209,7 +209,7 @@ export interface NutritionOrder extends fhir.DomainResource {
   /**
    * The URL pointing to a protocol, guideline, orderset or other definition that is adhered to in whole or in part by this NutritionOrder.
    */
-  instantiates?: string[]|undefined;
+  instantiates?: (string|null)[]|undefined;
   /**
    * Extended properties for primitive element: NutritionOrder.instantiates
    */
@@ -253,15 +253,15 @@ export interface NutritionOrder extends fhir.DomainResource {
   /**
    * Information on a patient's food allergies and intolerances to inform healthcare personnel about the type of foods that the patient shouldn't receive or consume.
    */
-  allergyIntolerance?: fhir.Reference[]|undefined;
+  allergyIntolerance?: (fhir.Reference|null)[]|undefined;
   /**
    * Information on a patient's food preferences that inform healthcare personnel about the food that the patient should receive or consume.
    */
-  foodPreferenceModifier?: fhir.CodeableConcept[]|undefined;
+  foodPreferenceModifier?: (fhir.CodeableConcept|null)[]|undefined;
   /**
    * Information on a patient's food allergies, intolerances and preferences to inform healthcare personnel about the type  of foods that the patient shouldn't receive or consume.
    */
-  excludeFoodModifier?: fhir.CodeableConcept[]|undefined;
+  excludeFoodModifier?: (fhir.CodeableConcept|null)[]|undefined;
   /**
    * Diet given orally in contrast to enteral (tube) feeding.
    */
@@ -269,7 +269,7 @@ export interface NutritionOrder extends fhir.DomainResource {
   /**
    * Oral nutritional products given in order to add further nutritional value to the patient's diet.
    */
-  supplement?: fhir.NutritionOrderSupplement[]|undefined;
+  supplement?: (fhir.NutritionOrderSupplement|null)[]|undefined;
   /**
    * Feeding provided through the gastrointestinal tract via a tube, catheter, or stoma that delivers nutrition distal to the oral cavity.
    */
@@ -277,5 +277,5 @@ export interface NutritionOrder extends fhir.DomainResource {
   /**
    * This element SHALL NOT be used to supply free text instructions for the diet which are represented in the `.oralDiet.instruction`, `supplement.instruction`, or `enteralFormula.administrationInstruction` elements.
    */
-  note?: fhir.Annotation[]|undefined;
+  note?: (fhir.Annotation|null)[]|undefined;
 }

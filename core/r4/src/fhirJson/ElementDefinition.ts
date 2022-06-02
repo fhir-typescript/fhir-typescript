@@ -35,7 +35,7 @@ export interface ElementDefinitionSlicing extends fhir.FhirElement {
   /**
    * If there is no discriminator, the content is hard to process, so this should be avoided.
    */
-  discriminator?: fhir.ElementDefinitionSlicingDiscriminator[]|undefined;
+  discriminator?: (fhir.ElementDefinitionSlicingDiscriminator|null)[]|undefined;
   /**
    * If it's really not possible to differentiate them, the design should be re-evaluated to make the content usable.
    */
@@ -107,7 +107,7 @@ export interface ElementDefinitionType extends fhir.FhirElement {
   /**
    * It is possible to profile  backbone element (e.g. part of a resource), using the [profile-element](extension-elementdefinition-profile-element.html) extension.
    */
-  profile?: string[]|undefined;
+  profile?: (string|null)[]|undefined;
   /**
    * Extended properties for primitive element: ElementDefinition.type.profile
    */
@@ -115,7 +115,7 @@ export interface ElementDefinitionType extends fhir.FhirElement {
   /**
    * Used when the type is "Reference" or "canonical", and identifies a profile structure or implementation Guide that applies to the target of the reference this element refers to. If any profiles are specified, then the content must conform to at least one of them. The URL can be a local reference - to a contained StructureDefinition, or a reference to another StructureDefinition or Implementation Guide by a canonical URL. When an implementation guide is specified, the target resource SHALL conform to at least one profile defined in the implementation guide.
    */
-  targetProfile?: string[]|undefined;
+  targetProfile?: (string|null)[]|undefined;
   /**
    * Extended properties for primitive element: ElementDefinition.type.targetProfile
    */
@@ -123,7 +123,7 @@ export interface ElementDefinitionType extends fhir.FhirElement {
   /**
    * See [Aggregation Rules](elementdefinition.html#aggregation) for further clarification.
    */
-  aggregation?: ('bundled'|'contained'|'referenced')[]|undefined;
+  aggregation?: (('bundled'|'contained'|'referenced')|null)[]|undefined;
   /**
    * Extended properties for primitive element: ElementDefinition.type.aggregation
    */
@@ -573,7 +573,7 @@ export interface ElementDefinition extends fhir.BackboneElement {
   /**
    * In resources, this is rarely used except for special cases where the representation deviates from the normal, and can only be done in the base standard (and profiles must reproduce what the base standard does). This element is used quite commonly in Logical models when the logical models represent a specific serialization format (e.g. CDA, v2 etc.).
    */
-  representation?: ('cdaText'|'typeAttr'|'xhtml'|'xmlAttr'|'xmlText')[]|undefined;
+  representation?: (('cdaText'|'typeAttr'|'xhtml'|'xmlAttr'|'xmlText')|null)[]|undefined;
   /**
    * Extended properties for primitive element: ElementDefinition.representation
    */
@@ -605,7 +605,7 @@ export interface ElementDefinition extends fhir.BackboneElement {
   /**
    * The concept SHALL be properly aligned with the data element definition and other constraints, as defined in the code system, including relationships, of any code listed here.  Where multiple codes exist in a terminology that could correspond to the data element, the most granular code(s) should be selected, so long as they are not more restrictive than the data element itself. The mappings may be used to provide more or less granular or structured equivalences in the code system.
    */
-  code?: fhir.Coding[]|undefined;
+  code?: (fhir.Coding|null)[]|undefined;
   /**
    * The first element in the sequence, the one that carries the slicing, is the definition that applies to all the slices. This is based on the unconstrained element, but can apply any constraints as appropriate. This may include the common constraints on the children of the element.
    */
@@ -645,7 +645,7 @@ export interface ElementDefinition extends fhir.BackboneElement {
   /**
    * Identifies additional names by which this element might also be known.
    */
-  alias?: string[]|undefined;
+  alias?: (string|null)[]|undefined;
   /**
    * Extended properties for primitive element: ElementDefinition.alias
    */
@@ -681,7 +681,7 @@ export interface ElementDefinition extends fhir.BackboneElement {
   /**
    * The Type of the element can be left blank in a differential constraint, in which case the type is inherited from the resource. Abstract types are not permitted to appear as a type when multiple types are listed.  (I.e. Abstract types cannot be part of a choice).
    */
-  type?: fhir.ElementDefinitionType[]|undefined;
+  type?: (fhir.ElementDefinitionType|null)[]|undefined;
   /**
    * Specifying a default value means that the property can never been unknown - it must always have a value. Further, the default value can never be changed, or changed in constraints on content models. Defining default values creates many difficulties in implementation (e.g. when is a value missing?). For these reasons, default values are (and should be) used extremely sparingly. 
    * No default values are ever defined in the FHIR specification, nor can they be defined in constraints ("profiles") on data types or resources. This element only exists so that default values may be defined in logical models.
@@ -1579,7 +1579,7 @@ export interface ElementDefinition extends fhir.BackboneElement {
   /**
    * Examples will most commonly be present for data where it's not implicitly obvious from either the data type or value set what the values might be.  (I.e. Example values for dates or quantities would generally be unnecessary.)  If the example value is fully populated, the publication tool can generate an instance automatically.
    */
-  example?: fhir.ElementDefinitionExample[]|undefined;
+  example?: (fhir.ElementDefinitionExample|null)[]|undefined;
   /**
    * Except for date/date/instant, the type of the minValue[x] SHALL be the same as the specified type of the element. For the date/dateTime/instant values, the type of minValue[x] SHALL be either the same, or a [Duration](datatypes.html#Duration) which specifies a relative time limit to the current time. The duration value is positive, and is subtracted from the current clock to determine the minimum allowable value.   A minimum value for a Quantity is interpreted as an canonical minimum - e.g. you cannot provide 100mg if the minimum value is 10g.
    */
@@ -1727,7 +1727,7 @@ export interface ElementDefinition extends fhir.BackboneElement {
   /**
    * A reference to an invariant that may make additional statements about the cardinality or value in the instance.
    */
-  condition?: string[]|undefined;
+  condition?: (string|null)[]|undefined;
   /**
    * Extended properties for primitive element: ElementDefinition.condition
    */
@@ -1735,7 +1735,7 @@ export interface ElementDefinition extends fhir.BackboneElement {
   /**
    * Constraints should be declared on the "context" element - the lowest element in the hierarchy that is common to all nodes referenced by the constraint.
    */
-  constraint?: fhir.ElementDefinitionConstraint[]|undefined;
+  constraint?: (fhir.ElementDefinitionConstraint|null)[]|undefined;
   /**
    * "Something useful" is context dependent and impossible to describe in the base FHIR specification. For this reason, tue mustSupport flag is never set to true by the FHIR specification itself - it is only set to true in profiles.  A profile on a type can always make musSupport = true if it is false in the base type but cannot make mustSupport = false if it is true in the base type.   This is done in [Resource Profiles](profiling.html#mustsupport), where the profile labels an element as mustSupport=true. When a profile does this, it SHALL also make clear exactly what kind of "support" is required, as this can mean many things.    Note that an element that has the property IsModifier is not necessarily a "key" element (e.g. one of the important elements to make use of the resource), nor is it automatically mustSupport - however both of these things are more likely to be true for IsModifier elements than for other elements.
    */
@@ -1775,5 +1775,5 @@ export interface ElementDefinition extends fhir.BackboneElement {
   /**
    * Mappings are not necessarily specific enough for safe translation.
    */
-  mapping?: fhir.ElementDefinitionMapping[]|undefined;
+  mapping?: (fhir.ElementDefinitionMapping|null)[]|undefined;
 }

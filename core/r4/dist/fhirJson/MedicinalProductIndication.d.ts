@@ -23,11 +23,11 @@ export interface MedicinalProductIndication extends fhir.DomainResource {
     /**
      * Resource Type Name
      */
-    resourceType: "MedicinalProductIndication";
+    resourceType: "MedicinalProductIndication" | null;
     /**
      * The medication for which this is an indication.
      */
-    subject?: fhir.Reference[] | undefined;
+    subject?: (fhir.Reference | null)[] | undefined;
     /**
      * The disease, symptom or procedure that is the indication for treatment.
      */
@@ -39,7 +39,7 @@ export interface MedicinalProductIndication extends fhir.DomainResource {
     /**
      * Comorbidity (concurrent condition) or co-infection as part of the indication.
      */
-    comorbidity?: fhir.CodeableConcept[] | undefined;
+    comorbidity?: (fhir.CodeableConcept | null)[] | undefined;
     /**
      * The intended effect, aim or strategy to be achieved by the indication.
      */
@@ -51,14 +51,14 @@ export interface MedicinalProductIndication extends fhir.DomainResource {
     /**
      * Information about the use of the medicinal product in relation to other therapies described as part of the indication.
      */
-    otherTherapy?: fhir.MedicinalProductIndicationOtherTherapy[] | undefined;
+    otherTherapy?: (fhir.MedicinalProductIndicationOtherTherapy | null)[] | undefined;
     /**
      * Describe the undesirable effects of the medicinal product.
      */
-    undesirableEffect?: fhir.Reference[] | undefined;
+    undesirableEffect?: (fhir.Reference | null)[] | undefined;
     /**
      * The population group to which this applies.
      */
-    population?: fhir.Population[] | undefined;
+    population?: (fhir.Population | null)[] | undefined;
 }
 //# sourceMappingURL=MedicinalProductIndication.d.ts.map
