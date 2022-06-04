@@ -56,14 +56,14 @@ console.log('Serialied:', JSON.stringify(patient, null, 2));
 // The SDK can check *basic* conformance to the specs (see docs for details)
 let p2:fhir.Patient = new fhir.Patient();
 p2.communication.push(new fhir.PatientCommunication({preferred: false}));
-// let issues:fhir.FtsIssue[] = p2.doModelValidation();
-let issues:fhir.FtsIssue[] = patient.doModelValidation();
+let issues:fhir.FtsIssue[] = p2.doModelValidation();
 /*
   outputs:
 Found issue: {
   severity: 'error',
   code: 'required',
-  diagnostics: 'Missing required property language:fhir.CodeableConcept fhir: Patient.communication.language:CodeableConcept'
+  diagnostics: 'Missing required property language fhir: Patient.communication.language:CodeableConcept',
+  expression: [ 'Patient.communication[0]' ]
 }
 */
 if (issues && (issues.length > 0)) {

@@ -8,6 +8,7 @@
     "clean": "shx rm -rf dist lib dist-cjs dist-es6",
     "type-check": "tsc --noEmit",
     "start": "npm run build && node ./dist/app.js",
+    "start-nobuild": "node ./dist/app.js",
     "build": "npm run clean && tsc -p tsconfig.json",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

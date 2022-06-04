@@ -62,4 +62,6 @@ $ rushx test
 
 ## More Information
 
+The fhir-typescript logo is based on a fire emoji from Vincent Le Moign and licensed under Creative Commons Attribution 4.0 International.  The original source can be found [here](https://commons.wikimedia.org/wiki/File:656-fire.svg)
+
 FHIR&reg; is the registered trademark of HL7 and is used with the permission of HL7.
