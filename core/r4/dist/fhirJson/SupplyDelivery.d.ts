@@ -52,7 +52,7 @@ export interface SupplyDelivery extends fhir.DomainResource {
     /**
      * Indicates the type of dispensing event that is performed. Examples include: Trial Fill, Completion of Trial, Partial Fill, Emergency Fill, Samples, etc.
      */
-    type?: 'device' | 'medication' | undefined;
+    type?: fhir.CodeableConcept | undefined;
     /**
      * The item that is being delivered or has been supplied.
      */

@@ -112,11 +112,11 @@ export interface AdverseEvent extends fhir.DomainResource {
     /**
      * Describes the severity of the adverse event, in relation to the subject. Contrast to AdverseEvent.seriousness - a severe rash might not be serious, but a mild heart problem is.
      */
-    severity?: 'mild' | 'moderate' | 'severe' | undefined;
+    severity?: fhir.CodeableConcept | undefined;
     /**
      * Describes the type of outcome from the adverse event.
      */
-    outcome?: 'fatal' | 'ongoing' | 'recovering' | 'resolved' | 'resolvedWithSequelae' | 'unknown' | undefined;
+    outcome?: fhir.CodeableConcept | undefined;
     /**
      * Information on who recorded the adverse event.  May be the patient or a practitioner.
      */
