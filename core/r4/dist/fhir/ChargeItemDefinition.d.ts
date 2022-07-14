@@ -119,17 +119,6 @@ export declare class ChargeItemDefinitionPropertyGroupPriceComponent extends fhi
      */
     constructor(source?: Partial<ChargeItemDefinitionPropertyGroupPriceComponentArgs>, options?: fhir.FhirConstructorOptions);
     /**
-     * Required-bound Value Set for type (ChargeItemDefinition.propertyGroup.priceComponent.type)
-     */
-    static get typeRequiredCodes(): {
-        readonly BasePrice: "base";
-        readonly Deduction: "deduction";
-        readonly Discount: "discount";
-        readonly Informational: "informational";
-        readonly Surcharge: "surcharge";
-        readonly Tax: "tax";
-    };
-    /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
     doModelValidation(expression?: string): fhir.FtsIssue[];
@@ -441,15 +430,6 @@ export declare class ChargeItemDefinition extends fhir.DomainResource {
      * Default constructor for ChargeItemDefinition - initializes any required elements to null if a value is not provided.
      */
     constructor(source?: Partial<ChargeItemDefinitionArgs>, options?: fhir.FhirConstructorOptions);
-    /**
-     * Required-bound Value Set for status (ChargeItemDefinition.status)
-     */
-    static get statusRequiredCodes(): {
-        readonly Active: "active";
-        readonly Draft: "draft";
-        readonly Retired: "retired";
-        readonly Unknown: "unknown";
-    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */

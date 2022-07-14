@@ -6,13 +6,13 @@
 import * as fhir from '../fhir.js';
 
 // @ts-ignore
-import { ContactentityTypeCodings, ContactentityTypeCodingType,} from '../fhirValueSets/ContactentityTypeCodings.js';
-// @ts-ignore
 import { ContactentityTypeCodes,  ContactentityTypeCodeType } from '../fhirValueSets/ContactentityTypeCodes.js';
 // @ts-ignore
-import { OrganizationTypeCodings, OrganizationTypeCodingType,} from '../fhirValueSets/OrganizationTypeCodings.js';
+import { ContactentityTypeVsValidation } from '../fhirValueSets/ContactentityTypeVsValidation.js';
 // @ts-ignore
 import { OrganizationTypeCodes,  OrganizationTypeCodeType } from '../fhirValueSets/OrganizationTypeCodes.js';
+// @ts-ignore
+import { OrganizationTypeVsValidation } from '../fhirValueSets/OrganizationTypeVsValidation.js';
 /**
  * Valid arguments for the OrganizationContact type.
  */
@@ -71,21 +71,15 @@ export class OrganizationContact extends fhir.BackboneElement {
     if (source['address']) { this.address = new fhir.Address(source.address); }
   }
   /**
-   * Extensible-bound Value Set for purpose (Organization.contact.purpose)
-   */
-  public static get purposeExtensibleCodings():ContactentityTypeCodingType {
-    return ContactentityTypeCodings;
-  }
-  /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'Organization.contact' }
-    if (this["purpose"]) { issues.push(...this.purpose.doModelValidation(expression+'.purpose')); }
-    if (this["name"]) { issues.push(...this.name.doModelValidation(expression+'.name')); }
-    if (this["telecom"]) { this.telecom.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.telecom[${i}]`)); }) }
-    if (this["address"]) { issues.push(...this.address.doModelValidation(expression+'.address')); }
+    this.vOptS('purpose',expression)
+    this.vOptS('name',expression)
+    this.vOptA('telecom',expression)
+    this.vOptS('address',expression)
     return issues;
   }
 }
@@ -253,19 +247,17 @@ export class Organization extends fhir.DomainResource {
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'Organization' }
-    if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType fhir: Organization.resourceType:"Organization"', expression: [expression] });
-    }
-    if (this["identifier"]) { this.identifier.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.identifier[${i}]`)); }) }
-    if (this["active"]) { issues.push(...this.active.doModelValidation(expression+'.active')); }
-    if (this["type"]) { this.type.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.type[${i}]`)); }) }
-    if (this["name"]) { issues.push(...this.name.doModelValidation(expression+'.name')); }
-    if (this["alias"]) { this.alias.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.alias[${i}]`)); }) }
-    if (this["telecom"]) { this.telecom.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.telecom[${i}]`)); }) }
-    if (this["address"]) { this.address.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.address[${i}]`)); }) }
-    if (this["partOf"]) { issues.push(...this.partOf.doModelValidation(expression+'.partOf')); }
-    if (this["contact"]) { this.contact.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.contact[${i}]`)); }) }
-    if (this["endpoint"]) { this.endpoint.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.endpoint[${i}]`)); }) }
+    this.vReqS('resourceType',expression)
+    this.vOptA('identifier',expression)
+    this.vOptS('active',expression)
+    this.vOptA('type',expression)
+    this.vOptS('name',expression)
+    this.vOptA('alias',expression)
+    this.vOptA('telecom',expression)
+    this.vOptA('address',expression)
+    this.vOptS('partOf',expression)
+    this.vOptA('contact',expression)
+    this.vOptA('endpoint',expression)
     return issues;
   }
 }

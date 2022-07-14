@@ -1,8 +1,6 @@
 import * as fhir from '../fhir.js';
 import { NoteTypeCodeType } from '../fhirValueSets/NoteTypeCodes.js';
-import { LanguagesCodingType } from '../fhirValueSets/LanguagesCodings.js';
 import { FmStatusCodeType } from '../fhirValueSets/FmStatusCodes.js';
-import { ClaimTypeCodingType } from '../fhirValueSets/ClaimTypeCodings.js';
 import { ClaimUseCodeType } from '../fhirValueSets/ClaimUseCodes.js';
 import { RemittanceOutcomeCodeType } from '../fhirValueSets/RemittanceOutcomeCodes.js';
 /**
@@ -825,18 +823,6 @@ export declare class ClaimResponseProcessNote extends fhir.BackboneElement {
      */
     constructor(source?: Partial<ClaimResponseProcessNoteArgs>, options?: fhir.FhirConstructorOptions);
     /**
-     * Required-bound Value Set for type (ClaimResponse.processNote.type)
-     */
-    static get typeRequiredCodes(): {
-        readonly Display: "display";
-        readonly PrintForm: "print";
-        readonly PrintOperator: "printoper";
-    };
-    /**
-     * Preferred-bound Value Set for language (ClaimResponse.processNote.language)
-     */
-    static get languagePreferredCodings(): LanguagesCodingType;
-    /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
     doModelValidation(expression?: string): fhir.FtsIssue[];
@@ -1246,36 +1232,6 @@ export declare class ClaimResponse extends fhir.DomainResource {
      * Default constructor for ClaimResponse - initializes any required elements to null if a value is not provided.
      */
     constructor(source?: Partial<ClaimResponseArgs>, options?: fhir.FhirConstructorOptions);
-    /**
-     * Required-bound Value Set for status (ClaimResponse.status)
-     */
-    static get statusRequiredCodes(): {
-        readonly Active: "active";
-        readonly Cancelled: "cancelled";
-        readonly Draft: "draft";
-        readonly EnteredInError: "entered-in-error";
-    };
-    /**
-     * Extensible-bound Value Set for type (ClaimResponse.type)
-     */
-    static get typeExtensibleCodings(): ClaimTypeCodingType;
-    /**
-     * Required-bound Value Set for use (ClaimResponse.use)
-     */
-    static get useRequiredCodes(): {
-        readonly Claim: "claim";
-        readonly Preauthorization: "preauthorization";
-        readonly Predetermination: "predetermination";
-    };
-    /**
-     * Required-bound Value Set for outcome (ClaimResponse.outcome)
-     */
-    static get outcomeRequiredCodes(): {
-        readonly ProcessingComplete: "complete";
-        readonly Error: "error";
-        readonly PartialProcessing: "partial";
-        readonly Queued: "queued";
-    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */

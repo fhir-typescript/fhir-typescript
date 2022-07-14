@@ -6,17 +6,17 @@
 import * as fhir from '../fhir.js';
 
 // @ts-ignore
-import { ConceptMapEquivalenceCodings, ConceptMapEquivalenceCodingType,} from '../fhirValueSets/ConceptMapEquivalenceCodings.js';
-// @ts-ignore
 import { ConceptMapEquivalenceCodes,  ConceptMapEquivalenceCodeType } from '../fhirValueSets/ConceptMapEquivalenceCodes.js';
 // @ts-ignore
-import { ConceptmapUnmappedModeCodings, ConceptmapUnmappedModeCodingType,} from '../fhirValueSets/ConceptmapUnmappedModeCodings.js';
+import { ConceptMapEquivalenceVsValidation } from '../fhirValueSets/ConceptMapEquivalenceVsValidation.js';
 // @ts-ignore
 import { ConceptmapUnmappedModeCodes,  ConceptmapUnmappedModeCodeType } from '../fhirValueSets/ConceptmapUnmappedModeCodes.js';
 // @ts-ignore
-import { PublicationStatusCodings, PublicationStatusCodingType,} from '../fhirValueSets/PublicationStatusCodings.js';
+import { ConceptmapUnmappedModeVsValidation } from '../fhirValueSets/ConceptmapUnmappedModeVsValidation.js';
 // @ts-ignore
 import { PublicationStatusCodes,  PublicationStatusCodeType } from '../fhirValueSets/PublicationStatusCodes.js';
+// @ts-ignore
+import { PublicationStatusVsValidation } from '../fhirValueSets/PublicationStatusVsValidation.js';
 /**
  * Valid arguments for the ConceptMapGroupElementTargetDependsOn type.
  */
@@ -113,16 +113,10 @@ export class ConceptMapGroupElementTargetDependsOn extends fhir.BackboneElement 
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'ConceptMap.group.element.target.dependsOn' }
-    if (!this['property']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property property fhir: ConceptMap.group.element.target.dependsOn.property:uri', expression: [expression] });
-    }
-    if (this["property"]) { issues.push(...this.property.doModelValidation(expression+'.property')); }
-    if (this["system"]) { issues.push(...this.system.doModelValidation(expression+'.system')); }
-    if (!this['value']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property value fhir: ConceptMap.group.element.target.dependsOn.value:string', expression: [expression] });
-    }
-    if (this["value"]) { issues.push(...this.value.doModelValidation(expression+'.value')); }
-    if (this["display"]) { issues.push(...this.display.doModelValidation(expression+'.display')); }
+    this.vReqS('property',expression)
+    this.vOptS('system',expression)
+    this.vReqS('value',expression)
+    this.vOptS('display',expression)
     return issues;
   }
 }
@@ -236,29 +230,17 @@ export class ConceptMapGroupElementTarget extends fhir.BackboneElement {
     else { this.product = []; }
   }
   /**
-   * Required-bound Value Set for equivalence (ConceptMap.group.element.target.equivalence)
-   */
-  public static get equivalenceRequiredCodes() {
-    return ConceptMapEquivalenceCodes;
-  }
-  /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'ConceptMap.group.element.target' }
-    if (this["code"]) { issues.push(...this.code.doModelValidation(expression+'.code')); }
-    if (this["display"]) { issues.push(...this.display.doModelValidation(expression+'.display')); }
-    if (!this['equivalence']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property equivalence fhir: ConceptMap.group.element.target.equivalence:code', expression: [expression] });
-    }
-    if (this['equivalence'] && (!Object.values(ConceptMapEquivalenceCodes).includes(this.equivalence.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'equivalence (ConceptMap.group.element.target.equivalence) of type code is missing code for Required binding to: ConceptMapEquivalence', expression: [expression] });
-    }
-    if (this["equivalence"]) { issues.push(...this.equivalence.doModelValidation(expression+'.equivalence')); }
-    if (this["comment"]) { issues.push(...this.comment.doModelValidation(expression+'.comment')); }
-    if (this["dependsOn"]) { this.dependsOn.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.dependsOn[${i}]`)); }) }
-    if (this["product"]) { this.product.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.product[${i}]`)); }) }
+    this.vOptS('code',expression)
+    this.vOptS('display',expression)
+    this.vReqSV('equivalence',expression,'ConceptMapEquivalence',ConceptMapEquivalenceVsValidation,'r')
+    this.vOptS('comment',expression)
+    this.vOptA('dependsOn',expression)
+    this.vOptA('product',expression)
     return issues;
   }
 }
@@ -332,9 +314,9 @@ export class ConceptMapGroupElement extends fhir.BackboneElement {
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'ConceptMap.group.element' }
-    if (this["code"]) { issues.push(...this.code.doModelValidation(expression+'.code')); }
-    if (this["display"]) { issues.push(...this.display.doModelValidation(expression+'.display')); }
-    if (this["target"]) { this.target.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.target[${i}]`)); }) }
+    this.vOptS('code',expression)
+    this.vOptS('display',expression)
+    this.vOptA('target',expression)
     return issues;
   }
 }
@@ -428,27 +410,15 @@ export class ConceptMapGroupUnmapped extends fhir.BackboneElement {
     }
   }
   /**
-   * Required-bound Value Set for mode (ConceptMap.group.unmapped.mode)
-   */
-  public static get modeRequiredCodes() {
-    return ConceptmapUnmappedModeCodes;
-  }
-  /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'ConceptMap.group.unmapped' }
-    if (!this['mode']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property mode fhir: ConceptMap.group.unmapped.mode:code', expression: [expression] });
-    }
-    if (this['mode'] && (!Object.values(ConceptmapUnmappedModeCodes).includes(this.mode.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'mode (ConceptMap.group.unmapped.mode) of type code is missing code for Required binding to: ConceptmapUnmappedMode', expression: [expression] });
-    }
-    if (this["mode"]) { issues.push(...this.mode.doModelValidation(expression+'.mode')); }
-    if (this["code"]) { issues.push(...this.code.doModelValidation(expression+'.code')); }
-    if (this["display"]) { issues.push(...this.display.doModelValidation(expression+'.display')); }
-    if (this["url"]) { issues.push(...this.url.doModelValidation(expression+'.url')); }
+    this.vReqSV('mode',expression,'ConceptmapUnmappedMode',ConceptmapUnmappedModeVsValidation,'r')
+    this.vOptS('code',expression)
+    this.vOptS('display',expression)
+    this.vOptS('url',expression)
     return issues;
   }
 }
@@ -565,19 +535,12 @@ export class ConceptMapGroup extends fhir.BackboneElement {
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'ConceptMap.group' }
-    if (this["source"]) { issues.push(...this.source.doModelValidation(expression+'.source')); }
-    if (this["sourceVersion"]) { issues.push(...this.sourceVersion.doModelValidation(expression+'.sourceVersion')); }
-    if (this["target"]) { issues.push(...this.target.doModelValidation(expression+'.target')); }
-    if (this["targetVersion"]) { issues.push(...this.targetVersion.doModelValidation(expression+'.targetVersion')); }
-    if (!this['element']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property element fhir: ConceptMap.group.element:element', expression: [expression] });
-    } else if (!Array.isArray(this.element)) {
-      issues.push({ severity: 'error', code: 'structure', diagnostics: 'Found scalar in array property element fhir: ConceptMap.group.element:element', expression: [expression] });
-    } else if (this.element.length === 0) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property element fhir: ConceptMap.group.element:element', expression: [expression] });
-    }
-    if (this["element"]) { this.element.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.element[${i}]`)); }) }
-    if (this["unmapped"]) { issues.push(...this.unmapped.doModelValidation(expression+'.unmapped')); }
+    this.vOptS('source',expression)
+    this.vOptS('sourceVersion',expression)
+    this.vOptS('target',expression)
+    this.vOptS('targetVersion',expression)
+    this.vReqA('element',expression)
+    this.vOptS('unmapped',expression)
     return issues;
   }
 }
@@ -898,42 +861,30 @@ export class ConceptMap extends fhir.DomainResource {
     else { this.group = []; }
   }
   /**
-   * Required-bound Value Set for status (ConceptMap.status)
-   */
-  public static get statusRequiredCodes() {
-    return PublicationStatusCodes;
-  }
-  /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'ConceptMap' }
-    if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType fhir: ConceptMap.resourceType:"ConceptMap"', expression: [expression] });
-    }
-    if (this["url"]) { issues.push(...this.url.doModelValidation(expression+'.url')); }
-    if (this["identifier"]) { issues.push(...this.identifier.doModelValidation(expression+'.identifier')); }
-    if (this["version"]) { issues.push(...this.version.doModelValidation(expression+'.version')); }
-    if (this["name"]) { issues.push(...this.name.doModelValidation(expression+'.name')); }
-    if (this["title"]) { issues.push(...this.title.doModelValidation(expression+'.title')); }
-    if (!this['status']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status fhir: ConceptMap.status:code', expression: [expression] });
-    }
-    if (this['status'] && (!Object.values(PublicationStatusCodes).includes(this.status.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'status (ConceptMap.status) of type code is missing code for Required binding to: PublicationStatus', expression: [expression] });
-    }
-    if (this["status"]) { issues.push(...this.status.doModelValidation(expression+'.status')); }
-    if (this["experimental"]) { issues.push(...this.experimental.doModelValidation(expression+'.experimental')); }
-    if (this["date"]) { issues.push(...this.date.doModelValidation(expression+'.date')); }
-    if (this["publisher"]) { issues.push(...this.publisher.doModelValidation(expression+'.publisher')); }
-    if (this["contact"]) { this.contact.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.contact[${i}]`)); }) }
-    if (this["description"]) { issues.push(...this.description.doModelValidation(expression+'.description')); }
-    if (this["useContext"]) { this.useContext.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.useContext[${i}]`)); }) }
-    if (this["jurisdiction"]) { this.jurisdiction.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.jurisdiction[${i}]`)); }) }
-    if (this["purpose"]) { issues.push(...this.purpose.doModelValidation(expression+'.purpose')); }
-    if (this["copyright"]) { issues.push(...this.copyright.doModelValidation(expression+'.copyright')); }
-    if (this["group"]) { this.group.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.group[${i}]`)); }) }
+    this.vReqS('resourceType',expression)
+    this.vOptS('url',expression)
+    this.vOptS('identifier',expression)
+    this.vOptS('version',expression)
+    this.vOptS('name',expression)
+    this.vOptS('title',expression)
+    this.vReqSV('status',expression,'PublicationStatus',PublicationStatusVsValidation,'r')
+    this.vOptS('experimental',expression)
+    this.vOptS('date',expression)
+    this.vOptS('publisher',expression)
+    this.vOptA('contact',expression)
+    this.vOptS('description',expression)
+    this.vOptA('useContext',expression)
+    this.vOptA('jurisdiction',expression)
+    this.vOptS('purpose',expression)
+    this.vOptS('copyright',expression)
+    this.vOptS('source',expression)
+    this.vOptS('target',expression)
+    this.vOptA('group',expression)
     return issues;
   }
 }

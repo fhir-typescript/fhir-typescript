@@ -1,13 +1,4 @@
 import * as fhir from '../fhir.js';
-import { ParticipationRoleTypeCodingType } from '../fhirValueSets/ParticipationRoleTypeCodings.js';
-import { Dicm405MediatypeCodingType } from '../fhirValueSets/Dicm405MediatypeCodings.js';
-import { V3PurposeOfUseCodingType } from '../fhirValueSets/V3PurposeOfUseCodings.js';
-import { AuditSourceTypeCodingType } from '../fhirValueSets/AuditSourceTypeCodings.js';
-import { AuditEntityTypeCodingType } from '../fhirValueSets/AuditEntityTypeCodings.js';
-import { ObjectRoleCodingType } from '../fhirValueSets/ObjectRoleCodings.js';
-import { SecurityLabelsCodingType } from '../fhirValueSets/SecurityLabelsCodings.js';
-import { AuditEventTypeCodingType } from '../fhirValueSets/AuditEventTypeCodings.js';
-import { AuditEventSubTypeCodingType } from '../fhirValueSets/AuditEventSubTypeCodings.js';
 /**
  * Valid arguments for the AuditEventAgentNetwork type.
  */
@@ -49,16 +40,6 @@ export declare class AuditEventAgentNetwork extends fhir.BackboneElement {
      * Default constructor for AuditEventAgentNetwork - initializes any required elements to null if a value is not provided.
      */
     constructor(source?: Partial<AuditEventAgentNetworkArgs>, options?: fhir.FhirConstructorOptions);
-    /**
-     * Required-bound Value Set for type (AuditEvent.agent.network.type)
-     */
-    static get typeRequiredCodes(): {
-        readonly MachineName: "1";
-        readonly IPAddress: "2";
-        readonly TelephoneNumber: "3";
-        readonly EmailAddress: "4";
-        readonly URI: "5";
-    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
@@ -187,18 +168,6 @@ export declare class AuditEventAgent extends fhir.BackboneElement {
      */
     constructor(source?: Partial<AuditEventAgentArgs>, options?: fhir.FhirConstructorOptions);
     /**
-     * Extensible-bound Value Set for type (AuditEvent.agent.type)
-     */
-    static get typeExtensibleCodings(): ParticipationRoleTypeCodingType;
-    /**
-     * Extensible-bound Value Set for media (AuditEvent.agent.media)
-     */
-    static get mediaExtensibleCodings(): Dicm405MediatypeCodingType;
-    /**
-     * Extensible-bound Value Set for purposeOfUse (AuditEvent.agent.purposeOfUse)
-     */
-    static get purposeOfUseExtensibleCodings(): V3PurposeOfUseCodingType;
-    /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
     doModelValidation(expression?: string): fhir.FtsIssue[];
@@ -248,10 +217,6 @@ export declare class AuditEventSource extends fhir.BackboneElement {
      * Default constructor for AuditEventSource - initializes any required elements to null if a value is not provided.
      */
     constructor(source?: Partial<AuditEventSourceArgs>, options?: fhir.FhirConstructorOptions);
-    /**
-     * Extensible-bound Value Set for type (AuditEvent.source.type)
-     */
-    static get typeExtensibleCodings(): AuditSourceTypeCodingType;
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
@@ -413,18 +378,6 @@ export declare class AuditEventEntity extends fhir.BackboneElement {
      */
     constructor(source?: Partial<AuditEventEntityArgs>, options?: fhir.FhirConstructorOptions);
     /**
-     * Extensible-bound Value Set for type (AuditEvent.entity.type)
-     */
-    static get typeExtensibleCodings(): AuditEntityTypeCodingType;
-    /**
-     * Extensible-bound Value Set for role (AuditEvent.entity.role)
-     */
-    static get roleExtensibleCodings(): ObjectRoleCodingType;
-    /**
-     * Extensible-bound Value Set for securityLabel (AuditEvent.entity.securityLabel)
-     */
-    static get securityLabelExtensibleCodings(): SecurityLabelsCodingType;
-    /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
     doModelValidation(expression?: string): fhir.FtsIssue[];
@@ -560,37 +513,6 @@ export declare class AuditEvent extends fhir.DomainResource {
      * Default constructor for AuditEvent - initializes any required elements to null if a value is not provided.
      */
     constructor(source?: Partial<AuditEventArgs>, options?: fhir.FhirConstructorOptions);
-    /**
-     * Extensible-bound Value Set for type (AuditEvent.type)
-     */
-    static get typeExtensibleCodings(): AuditEventTypeCodingType;
-    /**
-     * Extensible-bound Value Set for subtype (AuditEvent.subtype)
-     */
-    static get subtypeExtensibleCodings(): AuditEventSubTypeCodingType;
-    /**
-     * Required-bound Value Set for action (AuditEvent.action)
-     */
-    static get actionRequiredCodes(): {
-        readonly Create: "C";
-        readonly Delete: "D";
-        readonly Execute: "E";
-        readonly ReadViewPrint: "R";
-        readonly Update: "U";
-    };
-    /**
-     * Required-bound Value Set for outcome (AuditEvent.outcome)
-     */
-    static get outcomeRequiredCodes(): {
-        readonly Success: "0";
-        readonly MajorFailure: "12";
-        readonly MinorFailure: "4";
-        readonly SeriousFailure: "8";
-    };
-    /**
-     * Extensible-bound Value Set for purposeOfEvent (AuditEvent.purposeOfEvent)
-     */
-    static get purposeOfEventExtensibleCodings(): V3PurposeOfUseCodingType;
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */

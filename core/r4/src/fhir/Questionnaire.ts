@@ -6,29 +6,29 @@
 import * as fhir from '../fhir.js';
 
 // @ts-ignore
-import { QuestionnaireEnableOperatorCodings, QuestionnaireEnableOperatorCodingType,} from '../fhirValueSets/QuestionnaireEnableOperatorCodings.js';
-// @ts-ignore
 import { QuestionnaireEnableOperatorCodes,  QuestionnaireEnableOperatorCodeType } from '../fhirValueSets/QuestionnaireEnableOperatorCodes.js';
 // @ts-ignore
-import { QuestionnaireQuestionsCodings, QuestionnaireQuestionsCodingType,} from '../fhirValueSets/QuestionnaireQuestionsCodings.js';
+import { QuestionnaireEnableOperatorVsValidation } from '../fhirValueSets/QuestionnaireEnableOperatorVsValidation.js';
 // @ts-ignore
 import { QuestionnaireQuestionsCodes,  QuestionnaireQuestionsCodeType } from '../fhirValueSets/QuestionnaireQuestionsCodes.js';
 // @ts-ignore
-import { ItemTypeCodings, ItemTypeCodingType,} from '../fhirValueSets/ItemTypeCodings.js';
+import { QuestionnaireQuestionsVsValidation } from '../fhirValueSets/QuestionnaireQuestionsVsValidation.js';
 // @ts-ignore
 import { ItemTypeCodes,  ItemTypeCodeType } from '../fhirValueSets/ItemTypeCodes.js';
 // @ts-ignore
-import { QuestionnaireEnableBehaviorCodings, QuestionnaireEnableBehaviorCodingType,} from '../fhirValueSets/QuestionnaireEnableBehaviorCodings.js';
+import { ItemTypeVsValidation } from '../fhirValueSets/ItemTypeVsValidation.js';
 // @ts-ignore
 import { QuestionnaireEnableBehaviorCodes,  QuestionnaireEnableBehaviorCodeType } from '../fhirValueSets/QuestionnaireEnableBehaviorCodes.js';
 // @ts-ignore
-import { PublicationStatusCodings, PublicationStatusCodingType,} from '../fhirValueSets/PublicationStatusCodings.js';
+import { QuestionnaireEnableBehaviorVsValidation } from '../fhirValueSets/QuestionnaireEnableBehaviorVsValidation.js';
 // @ts-ignore
 import { PublicationStatusCodes,  PublicationStatusCodeType } from '../fhirValueSets/PublicationStatusCodes.js';
 // @ts-ignore
-import { ResourceTypesCodings, ResourceTypesCodingType,} from '../fhirValueSets/ResourceTypesCodings.js';
+import { PublicationStatusVsValidation } from '../fhirValueSets/PublicationStatusVsValidation.js';
 // @ts-ignore
 import { ResourceTypesCodes,  ResourceTypesCodeType } from '../fhirValueSets/ResourceTypesCodes.js';
+// @ts-ignore
+import { ResourceTypesVsValidation } from '../fhirValueSets/ResourceTypesVsValidation.js';
 /**
  * Valid arguments for the QuestionnaireItemEnableWhen type.
  */
@@ -150,31 +150,14 @@ export class QuestionnaireItemEnableWhen extends fhir.BackboneElement {
     else { this.answer = null; }
   }
   /**
-   * Required-bound Value Set for operator (Questionnaire.item.enableWhen.operator)
-   */
-  public static get operatorRequiredCodes() {
-    return QuestionnaireEnableOperatorCodes;
-  }
-  /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'Questionnaire.item.enableWhen' }
-    if (!this['question']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property question fhir: Questionnaire.item.enableWhen.question:string', expression: [expression] });
-    }
-    if (this["question"]) { issues.push(...this.question.doModelValidation(expression+'.question')); }
-    if (!this['operator']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property operator fhir: Questionnaire.item.enableWhen.operator:code', expression: [expression] });
-    }
-    if (this['operator'] && (!Object.values(QuestionnaireEnableOperatorCodes).includes(this.operator.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'operator (Questionnaire.item.enableWhen.operator) of type code is missing code for Required binding to: QuestionnaireEnableOperator', expression: [expression] });
-    }
-    if (this["operator"]) { issues.push(...this.operator.doModelValidation(expression+'.operator')); }
-    if (!this['answer']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property answer fhir: Questionnaire.item.enableWhen.answer[x]:', expression: [expression] });
-    }
+    this.vReqS('question',expression)
+    this.vReqSV('operator',expression,'QuestionnaireEnableOperator',QuestionnaireEnableOperatorVsValidation,'r')
+    this.vReqS('answer',expression)
     return issues;
   }
 }
@@ -265,10 +248,8 @@ export class QuestionnaireItemAnswerOption extends fhir.BackboneElement {
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'Questionnaire.item.answerOption' }
-    if (!this['value']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property value fhir: Questionnaire.item.answerOption.value[x]:', expression: [expression] });
-    }
-    if (this["initialSelected"]) { issues.push(...this.initialSelected.doModelValidation(expression+'.initialSelected')); }
+    this.vReqS('value',expression)
+    this.vOptS('initialSelected',expression)
     return issues;
   }
 }
@@ -372,9 +353,7 @@ export class QuestionnaireItemInitial extends fhir.BackboneElement {
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'Questionnaire.item.initial' }
-    if (!this['value']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property value fhir: Questionnaire.item.initial.value[x]:', expression: [expression] });
-    }
+    this.vReqS('value',expression)
     return issues;
   }
 }
@@ -642,51 +621,27 @@ export class QuestionnaireItem extends fhir.BackboneElement {
     else { this.item = []; }
   }
   /**
-   * Required-bound Value Set for type (Questionnaire.item.type)
-   */
-  public static get typeRequiredCodes() {
-    return ItemTypeCodes;
-  }
-  /**
-   * Required-bound Value Set for enableBehavior (Questionnaire.item.enableBehavior)
-   */
-  public static get enableBehaviorRequiredCodes() {
-    return QuestionnaireEnableBehaviorCodes;
-  }
-  /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'Questionnaire.item' }
-    if (!this['linkId']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property linkId fhir: Questionnaire.item.linkId:string', expression: [expression] });
-    }
-    if (this["linkId"]) { issues.push(...this.linkId.doModelValidation(expression+'.linkId')); }
-    if (this["definition"]) { issues.push(...this.definition.doModelValidation(expression+'.definition')); }
-    if (this["code"]) { this.code.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.code[${i}]`)); }) }
-    if (this["prefix"]) { issues.push(...this.prefix.doModelValidation(expression+'.prefix')); }
-    if (this["text"]) { issues.push(...this.text.doModelValidation(expression+'.text')); }
-    if (!this['type']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property type fhir: Questionnaire.item.type:code', expression: [expression] });
-    }
-    if (this['type'] && (!Object.values(ItemTypeCodes).includes(this.type.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'type (Questionnaire.item.type) of type code is missing code for Required binding to: ItemType', expression: [expression] });
-    }
-    if (this["type"]) { issues.push(...this.type.doModelValidation(expression+'.type')); }
-    if (this["enableWhen"]) { this.enableWhen.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.enableWhen[${i}]`)); }) }
-    if (this['enableBehavior'] && (!Object.values(QuestionnaireEnableBehaviorCodes).includes(this.enableBehavior.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'enableBehavior (Questionnaire.item.enableBehavior) of type code is missing code for Required binding to: QuestionnaireEnableBehavior', expression: [expression] });
-    }
-    if (this["enableBehavior"]) { issues.push(...this.enableBehavior.doModelValidation(expression+'.enableBehavior')); }
-    if (this["required"]) { issues.push(...this.required.doModelValidation(expression+'.required')); }
-    if (this["repeats"]) { issues.push(...this.repeats.doModelValidation(expression+'.repeats')); }
-    if (this["readOnly"]) { issues.push(...this.readOnly.doModelValidation(expression+'.readOnly')); }
-    if (this["maxLength"]) { issues.push(...this.maxLength.doModelValidation(expression+'.maxLength')); }
-    if (this["answerValueSet"]) { issues.push(...this.answerValueSet.doModelValidation(expression+'.answerValueSet')); }
-    if (this["answerOption"]) { this.answerOption.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.answerOption[${i}]`)); }) }
-    if (this["initial"]) { this.initial.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.initial[${i}]`)); }) }
-    if (this["item"]) { this.item.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.item[${i}]`)); }) }
+    this.vReqS('linkId',expression)
+    this.vOptS('definition',expression)
+    this.vOptA('code',expression)
+    this.vOptS('prefix',expression)
+    this.vOptS('text',expression)
+    this.vReqSV('type',expression,'ItemType',ItemTypeVsValidation,'r')
+    this.vOptA('enableWhen',expression)
+    this.vOptSV('enableBehavior',expression,'QuestionnaireEnableBehavior',QuestionnaireEnableBehaviorVsValidation,'r')
+    this.vOptS('required',expression)
+    this.vOptS('repeats',expression)
+    this.vOptS('readOnly',expression)
+    this.vOptS('maxLength',expression)
+    this.vOptS('answerValueSet',expression)
+    this.vOptA('answerOption',expression)
+    this.vOptA('initial',expression)
+    this.vOptA('item',expression)
     return issues;
   }
 }
@@ -1051,61 +1006,34 @@ export class Questionnaire extends fhir.DomainResource {
     else { this.item = []; }
   }
   /**
-   * Required-bound Value Set for status (Questionnaire.status)
-   */
-  public static get statusRequiredCodes() {
-    return PublicationStatusCodes;
-  }
-  /**
-   * Required-bound Value Set for subjectType (Questionnaire.subjectType)
-   */
-  public static get subjectTypeRequiredCodes() {
-    return ResourceTypesCodes;
-  }
-  /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'Questionnaire' }
-    if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType fhir: Questionnaire.resourceType:"Questionnaire"', expression: [expression] });
-    }
-    if (this["url"]) { issues.push(...this.url.doModelValidation(expression+'.url')); }
-    if (this["identifier"]) { this.identifier.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.identifier[${i}]`)); }) }
-    if (this["version"]) { issues.push(...this.version.doModelValidation(expression+'.version')); }
-    if (this["name"]) { issues.push(...this.name.doModelValidation(expression+'.name')); }
-    if (this["title"]) { issues.push(...this.title.doModelValidation(expression+'.title')); }
-    if (this["derivedFrom"]) { this.derivedFrom.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.derivedFrom[${i}]`)); }) }
-    if (!this['status']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status fhir: Questionnaire.status:code', expression: [expression] });
-    }
-    if (this['status'] && (!Object.values(PublicationStatusCodes).includes(this.status.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'status (Questionnaire.status) of type code is missing code for Required binding to: PublicationStatus', expression: [expression] });
-    }
-    if (this["status"]) { issues.push(...this.status.doModelValidation(expression+'.status')); }
-    if (this["experimental"]) { issues.push(...this.experimental.doModelValidation(expression+'.experimental')); }
-    if (this['subjectType']) {
-      this.subjectType.forEach((v) => {
-        if (!Object.values(ResourceTypesCodes).includes(v.value as any)) {
-          issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'subjectType (Questionnaire.subjectType) of type code is missing code for Required binding to: ResourceTypes', expression: [expression] });
-        }
-      });
-    }
-    if (this["subjectType"]) { this.subjectType.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.subjectType[${i}]`)); }) }
-    if (this["date"]) { issues.push(...this.date.doModelValidation(expression+'.date')); }
-    if (this["publisher"]) { issues.push(...this.publisher.doModelValidation(expression+'.publisher')); }
-    if (this["contact"]) { this.contact.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.contact[${i}]`)); }) }
-    if (this["description"]) { issues.push(...this.description.doModelValidation(expression+'.description')); }
-    if (this["useContext"]) { this.useContext.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.useContext[${i}]`)); }) }
-    if (this["jurisdiction"]) { this.jurisdiction.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.jurisdiction[${i}]`)); }) }
-    if (this["purpose"]) { issues.push(...this.purpose.doModelValidation(expression+'.purpose')); }
-    if (this["copyright"]) { issues.push(...this.copyright.doModelValidation(expression+'.copyright')); }
-    if (this["approvalDate"]) { issues.push(...this.approvalDate.doModelValidation(expression+'.approvalDate')); }
-    if (this["lastReviewDate"]) { issues.push(...this.lastReviewDate.doModelValidation(expression+'.lastReviewDate')); }
-    if (this["effectivePeriod"]) { issues.push(...this.effectivePeriod.doModelValidation(expression+'.effectivePeriod')); }
-    if (this["code"]) { this.code.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.code[${i}]`)); }) }
-    if (this["item"]) { this.item.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.item[${i}]`)); }) }
+    this.vReqS('resourceType',expression)
+    this.vOptS('url',expression)
+    this.vOptA('identifier',expression)
+    this.vOptS('version',expression)
+    this.vOptS('name',expression)
+    this.vOptS('title',expression)
+    this.vOptA('derivedFrom',expression)
+    this.vReqSV('status',expression,'PublicationStatus',PublicationStatusVsValidation,'r')
+    this.vOptS('experimental',expression)
+    this.vOptAV('subjectType',expression,'ResourceTypes',ResourceTypesVsValidation,'r')
+    this.vOptS('date',expression)
+    this.vOptS('publisher',expression)
+    this.vOptA('contact',expression)
+    this.vOptS('description',expression)
+    this.vOptA('useContext',expression)
+    this.vOptA('jurisdiction',expression)
+    this.vOptS('purpose',expression)
+    this.vOptS('copyright',expression)
+    this.vOptS('approvalDate',expression)
+    this.vOptS('lastReviewDate',expression)
+    this.vOptS('effectivePeriod',expression)
+    this.vOptA('code',expression)
+    this.vOptA('item',expression)
     return issues;
   }
 }

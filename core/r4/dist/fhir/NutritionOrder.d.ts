@@ -1,5 +1,4 @@
 import * as fhir from '../fhir.js';
-import { EnteralRouteCodingType } from '../fhirValueSets/EnteralRouteCodings.js';
 import { RequestStatusCodeType } from '../fhirValueSets/RequestStatusCodes.js';
 import { RequestIntentCodeType } from '../fhirValueSets/RequestIntentCodes.js';
 /**
@@ -382,10 +381,6 @@ export declare class NutritionOrderEnteralFormula extends fhir.BackboneElement {
      */
     constructor(source?: Partial<NutritionOrderEnteralFormulaArgs>, options?: fhir.FhirConstructorOptions);
     /**
-     * Extensible-bound Value Set for routeofAdministration (NutritionOrder.enteralFormula.routeofAdministration)
-     */
-    static get routeofAdministrationExtensibleCodings(): EnteralRouteCodingType;
-    /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
     doModelValidation(expression?: string): fhir.FtsIssue[];
@@ -575,32 +570,6 @@ export declare class NutritionOrder extends fhir.DomainResource {
      * Default constructor for NutritionOrder - initializes any required elements to null if a value is not provided.
      */
     constructor(source?: Partial<NutritionOrderArgs>, options?: fhir.FhirConstructorOptions);
-    /**
-     * Required-bound Value Set for status (NutritionOrder.status)
-     */
-    static get statusRequiredCodes(): {
-        readonly Active: "active";
-        readonly Completed: "completed";
-        readonly Draft: "draft";
-        readonly EnteredInError: "entered-in-error";
-        readonly OnHold: "on-hold";
-        readonly Revoked: "revoked";
-        readonly Unknown: "unknown";
-    };
-    /**
-     * Required-bound Value Set for intent (NutritionOrder.intent)
-     */
-    static get intentRequiredCodes(): {
-        readonly Directive: "directive";
-        readonly FillerOrder: "filler-order";
-        readonly InstanceOrder: "instance-order";
-        readonly Option: "option";
-        readonly Order: "order";
-        readonly OriginalOrder: "original-order";
-        readonly Plan: "plan";
-        readonly Proposal: "proposal";
-        readonly ReflexOrder: "reflex-order";
-    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */

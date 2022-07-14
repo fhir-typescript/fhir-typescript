@@ -6,25 +6,25 @@
 import * as fhir from '../fhir.js';
 
 // @ts-ignore
-import { GraphCompartmentUseCodings, GraphCompartmentUseCodingType,} from '../fhirValueSets/GraphCompartmentUseCodings.js';
-// @ts-ignore
 import { GraphCompartmentUseCodes,  GraphCompartmentUseCodeType } from '../fhirValueSets/GraphCompartmentUseCodes.js';
 // @ts-ignore
-import { CompartmentTypeCodings, CompartmentTypeCodingType,} from '../fhirValueSets/CompartmentTypeCodings.js';
+import { GraphCompartmentUseVsValidation } from '../fhirValueSets/GraphCompartmentUseVsValidation.js';
 // @ts-ignore
 import { CompartmentTypeCodes,  CompartmentTypeCodeType } from '../fhirValueSets/CompartmentTypeCodes.js';
 // @ts-ignore
-import { GraphCompartmentRuleCodings, GraphCompartmentRuleCodingType,} from '../fhirValueSets/GraphCompartmentRuleCodings.js';
+import { CompartmentTypeVsValidation } from '../fhirValueSets/CompartmentTypeVsValidation.js';
 // @ts-ignore
 import { GraphCompartmentRuleCodes,  GraphCompartmentRuleCodeType } from '../fhirValueSets/GraphCompartmentRuleCodes.js';
 // @ts-ignore
-import { ResourceTypesCodings, ResourceTypesCodingType,} from '../fhirValueSets/ResourceTypesCodings.js';
+import { GraphCompartmentRuleVsValidation } from '../fhirValueSets/GraphCompartmentRuleVsValidation.js';
 // @ts-ignore
 import { ResourceTypesCodes,  ResourceTypesCodeType } from '../fhirValueSets/ResourceTypesCodes.js';
 // @ts-ignore
-import { PublicationStatusCodings, PublicationStatusCodingType,} from '../fhirValueSets/PublicationStatusCodings.js';
+import { ResourceTypesVsValidation } from '../fhirValueSets/ResourceTypesVsValidation.js';
 // @ts-ignore
 import { PublicationStatusCodes,  PublicationStatusCodeType } from '../fhirValueSets/PublicationStatusCodes.js';
+// @ts-ignore
+import { PublicationStatusVsValidation } from '../fhirValueSets/PublicationStatusVsValidation.js';
 /**
  * Valid arguments for the GraphDefinitionLinkTargetCompartment type.
  */
@@ -134,52 +134,16 @@ export class GraphDefinitionLinkTargetCompartment extends fhir.BackboneElement {
     }
   }
   /**
-   * Required-bound Value Set for use (GraphDefinition.link.target.compartment.use)
-   */
-  public static get useRequiredCodes() {
-    return GraphCompartmentUseCodes;
-  }
-  /**
-   * Required-bound Value Set for code (GraphDefinition.link.target.compartment.code)
-   */
-  public static get codeRequiredCodes() {
-    return CompartmentTypeCodes;
-  }
-  /**
-   * Required-bound Value Set for rule (GraphDefinition.link.target.compartment.rule)
-   */
-  public static get ruleRequiredCodes() {
-    return GraphCompartmentRuleCodes;
-  }
-  /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'GraphDefinition.link.target.compartment' }
-    if (!this['use']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property use fhir: GraphDefinition.link.target.compartment.use:code', expression: [expression] });
-    }
-    if (this['use'] && (!Object.values(GraphCompartmentUseCodes).includes(this.use.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'use (GraphDefinition.link.target.compartment.use) of type code is missing code for Required binding to: GraphCompartmentUse', expression: [expression] });
-    }
-    if (this["use"]) { issues.push(...this.use.doModelValidation(expression+'.use')); }
-    if (!this['code']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property code fhir: GraphDefinition.link.target.compartment.code:code', expression: [expression] });
-    }
-    if (this['code'] && (!Object.values(CompartmentTypeCodes).includes(this.code.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'code (GraphDefinition.link.target.compartment.code) of type code is missing code for Required binding to: CompartmentType', expression: [expression] });
-    }
-    if (this["code"]) { issues.push(...this.code.doModelValidation(expression+'.code')); }
-    if (!this['rule']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property rule fhir: GraphDefinition.link.target.compartment.rule:code', expression: [expression] });
-    }
-    if (this['rule'] && (!Object.values(GraphCompartmentRuleCodes).includes(this.rule.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'rule (GraphDefinition.link.target.compartment.rule) of type code is missing code for Required binding to: GraphCompartmentRule', expression: [expression] });
-    }
-    if (this["rule"]) { issues.push(...this.rule.doModelValidation(expression+'.rule')); }
-    if (this["expression"]) { issues.push(...this.expression.doModelValidation(expression+'.expression')); }
-    if (this["description"]) { issues.push(...this.description.doModelValidation(expression+'.description')); }
+    this.vReqSV('use',expression,'GraphCompartmentUse',GraphCompartmentUseVsValidation,'r')
+    this.vReqSV('code',expression,'CompartmentType',CompartmentTypeVsValidation,'r')
+    this.vReqSV('rule',expression,'GraphCompartmentRule',GraphCompartmentRuleVsValidation,'r')
+    this.vOptS('expression',expression)
+    this.vOptS('description',expression)
     return issues;
   }
 }
@@ -276,28 +240,16 @@ export class GraphDefinitionLinkTarget extends fhir.BackboneElement {
     else { this.link = []; }
   }
   /**
-   * Required-bound Value Set for type (GraphDefinition.link.target.type)
-   */
-  public static get typeRequiredCodes() {
-    return ResourceTypesCodes;
-  }
-  /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'GraphDefinition.link.target' }
-    if (!this['type']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property type fhir: GraphDefinition.link.target.type:code', expression: [expression] });
-    }
-    if (this['type'] && (!Object.values(ResourceTypesCodes).includes(this.type.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'type (GraphDefinition.link.target.type) of type code is missing code for Required binding to: ResourceTypes', expression: [expression] });
-    }
-    if (this["type"]) { issues.push(...this.type.doModelValidation(expression+'.type')); }
-    if (this["params"]) { issues.push(...this.params.doModelValidation(expression+'.params')); }
-    if (this["profile"]) { issues.push(...this.profile.doModelValidation(expression+'.profile')); }
-    if (this["compartment"]) { this.compartment.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.compartment[${i}]`)); }) }
-    if (this["link"]) { this.link.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.link[${i}]`)); }) }
+    this.vReqSV('type',expression,'ResourceTypes',ResourceTypesVsValidation,'r')
+    this.vOptS('params',expression)
+    this.vOptS('profile',expression)
+    this.vOptA('compartment',expression)
+    this.vOptA('link',expression)
     return issues;
   }
 }
@@ -422,12 +374,12 @@ export class GraphDefinitionLink extends fhir.BackboneElement {
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'GraphDefinition.link' }
-    if (this["path"]) { issues.push(...this.path.doModelValidation(expression+'.path')); }
-    if (this["sliceName"]) { issues.push(...this.sliceName.doModelValidation(expression+'.sliceName')); }
-    if (this["min"]) { issues.push(...this.min.doModelValidation(expression+'.min')); }
-    if (this["max"]) { issues.push(...this.max.doModelValidation(expression+'.max')); }
-    if (this["description"]) { issues.push(...this.description.doModelValidation(expression+'.description')); }
-    if (this["target"]) { this.target.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.target[${i}]`)); }) }
+    this.vOptS('path',expression)
+    this.vOptS('sliceName',expression)
+    this.vOptS('min',expression)
+    this.vOptS('max',expression)
+    this.vOptS('description',expression)
+    this.vOptA('target',expression)
     return issues;
   }
 }
@@ -695,56 +647,27 @@ export class GraphDefinition extends fhir.DomainResource {
     else { this.link = []; }
   }
   /**
-   * Required-bound Value Set for status (GraphDefinition.status)
-   */
-  public static get statusRequiredCodes() {
-    return PublicationStatusCodes;
-  }
-  /**
-   * Required-bound Value Set for start (GraphDefinition.start)
-   */
-  public static get startRequiredCodes() {
-    return ResourceTypesCodes;
-  }
-  /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'GraphDefinition' }
-    if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType fhir: GraphDefinition.resourceType:"GraphDefinition"', expression: [expression] });
-    }
-    if (this["url"]) { issues.push(...this.url.doModelValidation(expression+'.url')); }
-    if (this["version"]) { issues.push(...this.version.doModelValidation(expression+'.version')); }
-    if (!this['name']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property name fhir: GraphDefinition.name:string', expression: [expression] });
-    }
-    if (this["name"]) { issues.push(...this.name.doModelValidation(expression+'.name')); }
-    if (!this['status']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status fhir: GraphDefinition.status:code', expression: [expression] });
-    }
-    if (this['status'] && (!Object.values(PublicationStatusCodes).includes(this.status.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'status (GraphDefinition.status) of type code is missing code for Required binding to: PublicationStatus', expression: [expression] });
-    }
-    if (this["status"]) { issues.push(...this.status.doModelValidation(expression+'.status')); }
-    if (this["experimental"]) { issues.push(...this.experimental.doModelValidation(expression+'.experimental')); }
-    if (this["date"]) { issues.push(...this.date.doModelValidation(expression+'.date')); }
-    if (this["publisher"]) { issues.push(...this.publisher.doModelValidation(expression+'.publisher')); }
-    if (this["contact"]) { this.contact.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.contact[${i}]`)); }) }
-    if (this["description"]) { issues.push(...this.description.doModelValidation(expression+'.description')); }
-    if (this["useContext"]) { this.useContext.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.useContext[${i}]`)); }) }
-    if (this["jurisdiction"]) { this.jurisdiction.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.jurisdiction[${i}]`)); }) }
-    if (this["purpose"]) { issues.push(...this.purpose.doModelValidation(expression+'.purpose')); }
-    if (!this['start']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property start fhir: GraphDefinition.start:code', expression: [expression] });
-    }
-    if (this['start'] && (!Object.values(ResourceTypesCodes).includes(this.start.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'start (GraphDefinition.start) of type code is missing code for Required binding to: ResourceTypes', expression: [expression] });
-    }
-    if (this["start"]) { issues.push(...this.start.doModelValidation(expression+'.start')); }
-    if (this["profile"]) { issues.push(...this.profile.doModelValidation(expression+'.profile')); }
-    if (this["link"]) { this.link.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.link[${i}]`)); }) }
+    this.vReqS('resourceType',expression)
+    this.vOptS('url',expression)
+    this.vOptS('version',expression)
+    this.vReqS('name',expression)
+    this.vReqSV('status',expression,'PublicationStatus',PublicationStatusVsValidation,'r')
+    this.vOptS('experimental',expression)
+    this.vOptS('date',expression)
+    this.vOptS('publisher',expression)
+    this.vOptA('contact',expression)
+    this.vOptS('description',expression)
+    this.vOptA('useContext',expression)
+    this.vOptA('jurisdiction',expression)
+    this.vOptS('purpose',expression)
+    this.vReqSV('start',expression,'ResourceTypes',ResourceTypesVsValidation,'r')
+    this.vOptS('profile',expression)
+    this.vOptA('link',expression)
     return issues;
   }
 }

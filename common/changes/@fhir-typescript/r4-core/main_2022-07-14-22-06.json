@@ -1,0 +1,15 @@
+{
+  "changes": [
+    {
+      "packageName": "@fhir-typescript/r4-core",
+      "comment": "Improvements to validation.",
+      "type": "none"
+    },
+    {
+      "packageName": "@fhir-typescript/r4-core",
+      "comment": "Reduced bundle size.",
+      "type": "none"
+    }
+  ],
+  "packageName": "@fhir-typescript/r4-core"
+}

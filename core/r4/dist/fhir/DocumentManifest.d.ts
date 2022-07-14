@@ -176,14 +176,6 @@ export declare class DocumentManifest extends fhir.DomainResource {
      */
     constructor(source?: Partial<DocumentManifestArgs>, options?: fhir.FhirConstructorOptions);
     /**
-     * Required-bound Value Set for status (DocumentManifest.status)
-     */
-    static get statusRequiredCodes(): {
-        readonly Current: "current";
-        readonly EnteredInError: "entered-in-error";
-        readonly Superseded: "superseded";
-    };
-    /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
     doModelValidation(expression?: string): fhir.FtsIssue[];

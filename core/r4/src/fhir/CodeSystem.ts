@@ -6,33 +6,33 @@
 import * as fhir from '../fhir.js';
 
 // @ts-ignore
-import { FilterOperatorCodings, FilterOperatorCodingType,} from '../fhirValueSets/FilterOperatorCodings.js';
-// @ts-ignore
 import { FilterOperatorCodes,  FilterOperatorCodeType } from '../fhirValueSets/FilterOperatorCodes.js';
 // @ts-ignore
-import { ConceptPropertyTypeCodings, ConceptPropertyTypeCodingType,} from '../fhirValueSets/ConceptPropertyTypeCodings.js';
+import { FilterOperatorVsValidation } from '../fhirValueSets/FilterOperatorVsValidation.js';
 // @ts-ignore
 import { ConceptPropertyTypeCodes,  ConceptPropertyTypeCodeType } from '../fhirValueSets/ConceptPropertyTypeCodes.js';
 // @ts-ignore
-import { LanguagesCodings, LanguagesCodingType,} from '../fhirValueSets/LanguagesCodings.js';
+import { ConceptPropertyTypeVsValidation } from '../fhirValueSets/ConceptPropertyTypeVsValidation.js';
 // @ts-ignore
 import { LanguagesCodes,  LanguagesCodeType } from '../fhirValueSets/LanguagesCodes.js';
 // @ts-ignore
-import { DesignationUseCodings, DesignationUseCodingType,} from '../fhirValueSets/DesignationUseCodings.js';
+import { LanguagesVsValidation } from '../fhirValueSets/LanguagesVsValidation.js';
 // @ts-ignore
 import { DesignationUseCodes,  DesignationUseCodeType } from '../fhirValueSets/DesignationUseCodes.js';
 // @ts-ignore
-import { PublicationStatusCodings, PublicationStatusCodingType,} from '../fhirValueSets/PublicationStatusCodings.js';
+import { DesignationUseVsValidation } from '../fhirValueSets/DesignationUseVsValidation.js';
 // @ts-ignore
 import { PublicationStatusCodes,  PublicationStatusCodeType } from '../fhirValueSets/PublicationStatusCodes.js';
 // @ts-ignore
-import { CodesystemHierarchyMeaningCodings, CodesystemHierarchyMeaningCodingType,} from '../fhirValueSets/CodesystemHierarchyMeaningCodings.js';
+import { PublicationStatusVsValidation } from '../fhirValueSets/PublicationStatusVsValidation.js';
 // @ts-ignore
 import { CodesystemHierarchyMeaningCodes,  CodesystemHierarchyMeaningCodeType } from '../fhirValueSets/CodesystemHierarchyMeaningCodes.js';
 // @ts-ignore
-import { CodesystemContentModeCodings, CodesystemContentModeCodingType,} from '../fhirValueSets/CodesystemContentModeCodings.js';
+import { CodesystemHierarchyMeaningVsValidation } from '../fhirValueSets/CodesystemHierarchyMeaningVsValidation.js';
 // @ts-ignore
 import { CodesystemContentModeCodes,  CodesystemContentModeCodeType } from '../fhirValueSets/CodesystemContentModeCodes.js';
+// @ts-ignore
+import { CodesystemContentModeVsValidation } from '../fhirValueSets/CodesystemContentModeVsValidation.js';
 /**
  * Valid arguments for the CodeSystemFilter type.
  */
@@ -127,41 +127,15 @@ export class CodeSystemFilter extends fhir.BackboneElement {
     }
   }
   /**
-   * Required-bound Value Set for operator (CodeSystem.filter.operator)
-   */
-  public static get operatorRequiredCodes() {
-    return FilterOperatorCodes;
-  }
-  /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'CodeSystem.filter' }
-    if (!this['code']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property code fhir: CodeSystem.filter.code:code', expression: [expression] });
-    }
-    if (this["code"]) { issues.push(...this.code.doModelValidation(expression+'.code')); }
-    if (this["description"]) { issues.push(...this.description.doModelValidation(expression+'.description')); }
-    if (!this['operator']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property operator fhir: CodeSystem.filter.operator:code', expression: [expression] });
-    } else if (!Array.isArray(this.operator)) {
-      issues.push({ severity: 'error', code: 'structure', diagnostics: 'Found scalar in array property operator fhir: CodeSystem.filter.operator:code', expression: [expression] });
-    } else if (this.operator.length === 0) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property operator fhir: CodeSystem.filter.operator:code', expression: [expression] });
-    }
-    if (this['operator']) {
-      this.operator.forEach((v) => {
-        if (!Object.values(FilterOperatorCodes).includes(v.value as any)) {
-          issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'operator (CodeSystem.filter.operator) of type code is missing code for Required binding to: FilterOperator', expression: [expression] });
-        }
-      });
-    }
-    if (this["operator"]) { this.operator.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.operator[${i}]`)); }) }
-    if (!this['value']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property value fhir: CodeSystem.filter.value:string', expression: [expression] });
-    }
-    if (this["value"]) { issues.push(...this.value.doModelValidation(expression+'.value')); }
+    this.vReqS('code',expression)
+    this.vOptS('description',expression)
+    this.vReqAV('operator',expression,'FilterOperator',FilterOperatorVsValidation,'r')
+    this.vReqS('value',expression)
     return issues;
   }
 }
@@ -256,30 +230,15 @@ export class CodeSystemProperty extends fhir.BackboneElement {
     }
   }
   /**
-   * Required-bound Value Set for type (CodeSystem.property.type)
-   */
-  public static get typeRequiredCodes() {
-    return ConceptPropertyTypeCodes;
-  }
-  /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'CodeSystem.property' }
-    if (!this['code']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property code fhir: CodeSystem.property.code:code', expression: [expression] });
-    }
-    if (this["code"]) { issues.push(...this.code.doModelValidation(expression+'.code')); }
-    if (this["uri"]) { issues.push(...this.uri.doModelValidation(expression+'.uri')); }
-    if (this["description"]) { issues.push(...this.description.doModelValidation(expression+'.description')); }
-    if (!this['type']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property type fhir: CodeSystem.property.type:code', expression: [expression] });
-    }
-    if (this['type'] && (!Object.values(ConceptPropertyTypeCodes).includes(this.type.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'type (CodeSystem.property.type) of type code is missing code for Required binding to: ConceptPropertyType', expression: [expression] });
-    }
-    if (this["type"]) { issues.push(...this.type.doModelValidation(expression+'.type')); }
+    this.vReqS('code',expression)
+    this.vOptS('uri',expression)
+    this.vOptS('description',expression)
+    this.vReqSV('type',expression,'ConceptPropertyType',ConceptPropertyTypeVsValidation,'r')
     return issues;
   }
 }
@@ -348,29 +307,14 @@ export class CodeSystemConceptDesignation extends fhir.BackboneElement {
     }
   }
   /**
-   * Preferred-bound Value Set for language (CodeSystem.concept.designation.language)
-   */
-  public static get languagePreferredCodings():LanguagesCodingType {
-    return LanguagesCodings;
-  }
-  /**
-   * Extensible-bound Value Set for use (CodeSystem.concept.designation.use)
-   */
-  public static get useExtensibleCodings():DesignationUseCodingType {
-    return DesignationUseCodings;
-  }
-  /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'CodeSystem.concept.designation' }
-    if (this["language"]) { issues.push(...this.language.doModelValidation(expression+'.language')); }
-    if (this["use"]) { issues.push(...this.use.doModelValidation(expression+'.use')); }
-    if (!this['value']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property value fhir: CodeSystem.concept.designation.value:string', expression: [expression] });
-    }
-    if (this["value"]) { issues.push(...this.value.doModelValidation(expression+'.value')); }
+    this.vOptS('language',expression)
+    this.vOptS('use',expression)
+    this.vReqS('value',expression)
     return issues;
   }
 }
@@ -467,13 +411,8 @@ export class CodeSystemConceptProperty extends fhir.BackboneElement {
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'CodeSystem.concept.property' }
-    if (!this['code']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property code fhir: CodeSystem.concept.property.code:code', expression: [expression] });
-    }
-    if (this["code"]) { issues.push(...this.code.doModelValidation(expression+'.code')); }
-    if (!this['value']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property value fhir: CodeSystem.concept.property.value[x]:', expression: [expression] });
-    }
+    this.vReqS('code',expression)
+    this.vReqS('value',expression)
     return issues;
   }
 }
@@ -585,15 +524,12 @@ export class CodeSystemConcept extends fhir.BackboneElement {
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'CodeSystem.concept' }
-    if (!this['code']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property code fhir: CodeSystem.concept.code:code', expression: [expression] });
-    }
-    if (this["code"]) { issues.push(...this.code.doModelValidation(expression+'.code')); }
-    if (this["display"]) { issues.push(...this.display.doModelValidation(expression+'.display')); }
-    if (this["definition"]) { issues.push(...this.definition.doModelValidation(expression+'.definition')); }
-    if (this["designation"]) { this.designation.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.designation[${i}]`)); }) }
-    if (this["property"]) { this.property.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.property[${i}]`)); }) }
-    if (this["concept"]) { this.concept.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.concept[${i}]`)); }) }
+    this.vReqS('code',expression)
+    this.vOptS('display',expression)
+    this.vOptS('definition',expression)
+    this.vOptA('designation',expression)
+    this.vOptA('property',expression)
+    this.vOptA('concept',expression)
     return issues;
   }
 }
@@ -1028,73 +964,38 @@ export class CodeSystem extends fhir.DomainResource {
     else { this.concept = []; }
   }
   /**
-   * Required-bound Value Set for status (CodeSystem.status)
-   */
-  public static get statusRequiredCodes() {
-    return PublicationStatusCodes;
-  }
-  /**
-   * Required-bound Value Set for hierarchyMeaning (CodeSystem.hierarchyMeaning)
-   */
-  public static get hierarchyMeaningRequiredCodes() {
-    return CodesystemHierarchyMeaningCodes;
-  }
-  /**
-   * Required-bound Value Set for content (CodeSystem.content)
-   */
-  public static get contentRequiredCodes() {
-    return CodesystemContentModeCodes;
-  }
-  /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'CodeSystem' }
-    if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType fhir: CodeSystem.resourceType:"CodeSystem"', expression: [expression] });
-    }
-    if (this["url"]) { issues.push(...this.url.doModelValidation(expression+'.url')); }
-    if (this["identifier"]) { this.identifier.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.identifier[${i}]`)); }) }
-    if (this["version"]) { issues.push(...this.version.doModelValidation(expression+'.version')); }
-    if (this["name"]) { issues.push(...this.name.doModelValidation(expression+'.name')); }
-    if (this["title"]) { issues.push(...this.title.doModelValidation(expression+'.title')); }
-    if (!this['status']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status fhir: CodeSystem.status:code', expression: [expression] });
-    }
-    if (this['status'] && (!Object.values(PublicationStatusCodes).includes(this.status.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'status (CodeSystem.status) of type code is missing code for Required binding to: PublicationStatus', expression: [expression] });
-    }
-    if (this["status"]) { issues.push(...this.status.doModelValidation(expression+'.status')); }
-    if (this["experimental"]) { issues.push(...this.experimental.doModelValidation(expression+'.experimental')); }
-    if (this["date"]) { issues.push(...this.date.doModelValidation(expression+'.date')); }
-    if (this["publisher"]) { issues.push(...this.publisher.doModelValidation(expression+'.publisher')); }
-    if (this["contact"]) { this.contact.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.contact[${i}]`)); }) }
-    if (this["description"]) { issues.push(...this.description.doModelValidation(expression+'.description')); }
-    if (this["useContext"]) { this.useContext.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.useContext[${i}]`)); }) }
-    if (this["jurisdiction"]) { this.jurisdiction.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.jurisdiction[${i}]`)); }) }
-    if (this["purpose"]) { issues.push(...this.purpose.doModelValidation(expression+'.purpose')); }
-    if (this["copyright"]) { issues.push(...this.copyright.doModelValidation(expression+'.copyright')); }
-    if (this["caseSensitive"]) { issues.push(...this.caseSensitive.doModelValidation(expression+'.caseSensitive')); }
-    if (this["valueSet"]) { issues.push(...this.valueSet.doModelValidation(expression+'.valueSet')); }
-    if (this['hierarchyMeaning'] && (!Object.values(CodesystemHierarchyMeaningCodes).includes(this.hierarchyMeaning.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'hierarchyMeaning (CodeSystem.hierarchyMeaning) of type code is missing code for Required binding to: CodesystemHierarchyMeaning', expression: [expression] });
-    }
-    if (this["hierarchyMeaning"]) { issues.push(...this.hierarchyMeaning.doModelValidation(expression+'.hierarchyMeaning')); }
-    if (this["compositional"]) { issues.push(...this.compositional.doModelValidation(expression+'.compositional')); }
-    if (this["versionNeeded"]) { issues.push(...this.versionNeeded.doModelValidation(expression+'.versionNeeded')); }
-    if (!this['content']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property content fhir: CodeSystem.content:code', expression: [expression] });
-    }
-    if (this['content'] && (!Object.values(CodesystemContentModeCodes).includes(this.content.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'content (CodeSystem.content) of type code is missing code for Required binding to: CodesystemContentMode', expression: [expression] });
-    }
-    if (this["content"]) { issues.push(...this.content.doModelValidation(expression+'.content')); }
-    if (this["supplements"]) { issues.push(...this.supplements.doModelValidation(expression+'.supplements')); }
-    if (this["count"]) { issues.push(...this.count.doModelValidation(expression+'.count')); }
-    if (this["filter"]) { this.filter.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.filter[${i}]`)); }) }
-    if (this["property"]) { this.property.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.property[${i}]`)); }) }
-    if (this["concept"]) { this.concept.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.concept[${i}]`)); }) }
+    this.vReqS('resourceType',expression)
+    this.vOptS('url',expression)
+    this.vOptA('identifier',expression)
+    this.vOptS('version',expression)
+    this.vOptS('name',expression)
+    this.vOptS('title',expression)
+    this.vReqSV('status',expression,'PublicationStatus',PublicationStatusVsValidation,'r')
+    this.vOptS('experimental',expression)
+    this.vOptS('date',expression)
+    this.vOptS('publisher',expression)
+    this.vOptA('contact',expression)
+    this.vOptS('description',expression)
+    this.vOptA('useContext',expression)
+    this.vOptA('jurisdiction',expression)
+    this.vOptS('purpose',expression)
+    this.vOptS('copyright',expression)
+    this.vOptS('caseSensitive',expression)
+    this.vOptS('valueSet',expression)
+    this.vOptSV('hierarchyMeaning',expression,'CodesystemHierarchyMeaning',CodesystemHierarchyMeaningVsValidation,'r')
+    this.vOptS('compositional',expression)
+    this.vOptS('versionNeeded',expression)
+    this.vReqSV('content',expression,'CodesystemContentMode',CodesystemContentModeVsValidation,'r')
+    this.vOptS('supplements',expression)
+    this.vOptS('count',expression)
+    this.vOptA('filter',expression)
+    this.vOptA('property',expression)
+    this.vOptA('concept',expression)
     return issues;
   }
 }

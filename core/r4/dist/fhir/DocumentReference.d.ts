@@ -1,10 +1,7 @@
 import * as fhir from '../fhir.js';
 import { DocumentRelationshipTypeCodeType } from '../fhirValueSets/DocumentRelationshipTypeCodes.js';
-import { FormatCodingType } from '../fhirValueSets/FormatCodings.js';
 import { DocumentReferenceStatusCodeType } from '../fhirValueSets/DocumentReferenceStatusCodes.js';
 import { CompositionStatusCodeType } from '../fhirValueSets/CompositionStatusCodes.js';
-import { C80DocTypeCodingType } from '../fhirValueSets/C80DocTypeCodings.js';
-import { SecurityLabelsCodingType } from '../fhirValueSets/SecurityLabelsCodings.js';
 /**
  * Valid arguments for the DocumentReferenceRelatesTo type.
  */
@@ -43,15 +40,6 @@ export declare class DocumentReferenceRelatesTo extends fhir.BackboneElement {
      */
     constructor(source?: Partial<DocumentReferenceRelatesToArgs>, options?: fhir.FhirConstructorOptions);
     /**
-     * Required-bound Value Set for code (DocumentReference.relatesTo.code)
-     */
-    static get codeRequiredCodes(): {
-        readonly Appends: "appends";
-        readonly Replaces: "replaces";
-        readonly Signs: "signs";
-        readonly Transforms: "transforms";
-    };
-    /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
     doModelValidation(expression?: string): fhir.FtsIssue[];
@@ -89,10 +77,6 @@ export declare class DocumentReferenceContent extends fhir.BackboneElement {
      * Default constructor for DocumentReferenceContent - initializes any required elements to null if a value is not provided.
      */
     constructor(source?: Partial<DocumentReferenceContentArgs>, options?: fhir.FhirConstructorOptions);
-    /**
-     * Preferred-bound Value Set for format (DocumentReference.content.format)
-     */
-    static get formatPreferredCodings(): FormatCodingType;
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
@@ -349,31 +333,6 @@ export declare class DocumentReference extends fhir.DomainResource {
      * Default constructor for DocumentReference - initializes any required elements to null if a value is not provided.
      */
     constructor(source?: Partial<DocumentReferenceArgs>, options?: fhir.FhirConstructorOptions);
-    /**
-     * Required-bound Value Set for status (DocumentReference.status)
-     */
-    static get statusRequiredCodes(): {
-        readonly Current: "current";
-        readonly EnteredInError: "entered-in-error";
-        readonly Superseded: "superseded";
-    };
-    /**
-     * Required-bound Value Set for docStatus (DocumentReference.docStatus)
-     */
-    static get docStatusRequiredCodes(): {
-        readonly Amended: "amended";
-        readonly EnteredInError: "entered-in-error";
-        readonly Final: "final";
-        readonly Preliminary: "preliminary";
-    };
-    /**
-     * Preferred-bound Value Set for type (DocumentReference.type)
-     */
-    static get typePreferredCodings(): C80DocTypeCodingType;
-    /**
-     * Extensible-bound Value Set for securityLabel (DocumentReference.securityLabel)
-     */
-    static get securityLabelExtensibleCodings(): SecurityLabelsCodingType;
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */

@@ -81,5 +81,12 @@ export declare class CodeableConcept extends fhir.FhirElement {
      * @returns True if this concept contains the specified coding, false if it does not.
      */
     hasCodingFromObject(codings: any): boolean;
+    /**
+     * Test whether this CodeableConcept contains a specific coding.
+     * @param system System to search for, empty string will match any system.
+     * @param code Code to search for, empty string will match any code.
+     * @returns True if this concept contains the specified coding, false if it does not.
+     */
+    hasCodingFromValidationObj(vsValidation: Readonly<string[]>): boolean;
 }
 //# sourceMappingURL=CodeableConcept.d.ts.map

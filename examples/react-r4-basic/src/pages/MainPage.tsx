@@ -26,6 +26,8 @@ import {
 } from '@mui/icons-material';
 
 import { fhir } from '@fhir-typescript/r4-core';
+// import * as fhir from '@fhir-typescript/r4-core/dist/fhir';
+
 
 export interface MainPageProps {
   useDarkMode: boolean;
@@ -87,7 +89,7 @@ export default function MainPage(props: MainPageProps) {
       issueFragments.push(<TextField sx={{p:1}} id={`severity-${index}`} defaultValue={issue.severity} label='Severity' InputProps={{readOnly: true}} fullWidth variant='standard' />);
       issueFragments.push(<TextField sx={{p:1}} id={`code-${index}`} defaultValue={issue.code} label='Code' InputProps={{readOnly: true}} fullWidth variant='standard' />);
       issueFragments.push(<TextField sx={{p:1}} id={`expression-${index}`} defaultValue={issue.expression} label='Expression' InputProps={{readOnly: true}} fullWidth variant='standard' />);
-      issueFragments.push(<TextField sx={{p:1}} id={`details-${index}`} defaultValue={issue.details ?? issue.diagnostics} label='Details' multiline InputProps={{readOnly: true}} fullWidth variant='standard' />);
+      issueFragments.push(<TextField sx={{p:1}} id={`details-${index}`} defaultValue={issue.details?.text ?? issue.diagnostics} label='Details' multiline InputProps={{readOnly: true}} fullWidth variant='standard' />);
     });
 
     setOutputFragments(issueFragments);

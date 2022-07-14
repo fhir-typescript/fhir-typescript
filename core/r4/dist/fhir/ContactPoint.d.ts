@@ -75,28 +75,6 @@ export declare class ContactPoint extends fhir.FhirElement {
      */
     constructor(source?: Partial<ContactPointArgs>, options?: fhir.FhirConstructorOptions);
     /**
-     * Required-bound Value Set for system (ContactPoint.system)
-     */
-    static get systemRequiredCodes(): {
-        readonly Email: "email";
-        readonly Fax: "fax";
-        readonly Other: "other";
-        readonly Pager: "pager";
-        readonly Phone: "phone";
-        readonly SMS: "sms";
-        readonly URL: "url";
-    };
-    /**
-     * Required-bound Value Set for use (ContactPoint.use)
-     */
-    static get useRequiredCodes(): {
-        readonly Home: "home";
-        readonly Mobile: "mobile";
-        readonly Old: "old";
-        readonly Temp: "temp";
-        readonly Work: "work";
-    };
-    /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
     doModelValidation(expression?: string): fhir.FtsIssue[];

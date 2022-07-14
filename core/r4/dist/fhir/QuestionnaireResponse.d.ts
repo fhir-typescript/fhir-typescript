@@ -294,16 +294,6 @@ export declare class QuestionnaireResponse extends fhir.DomainResource {
      */
     constructor(source?: Partial<QuestionnaireResponseArgs>, options?: fhir.FhirConstructorOptions);
     /**
-     * Required-bound Value Set for status (QuestionnaireResponse.status)
-     */
-    static get statusRequiredCodes(): {
-        readonly Amended: "amended";
-        readonly Completed: "completed";
-        readonly EnteredInError: "entered-in-error";
-        readonly InProgress: "in-progress";
-        readonly Stopped: "stopped";
-    };
-    /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
     doModelValidation(expression?: string): fhir.FtsIssue[];

@@ -226,16 +226,6 @@ export declare class Account extends fhir.DomainResource {
      */
     constructor(source?: Partial<AccountArgs>, options?: fhir.FhirConstructorOptions);
     /**
-     * Required-bound Value Set for status (Account.status)
-     */
-    static get statusRequiredCodes(): {
-        readonly Active: "active";
-        readonly EnteredInError: "entered-in-error";
-        readonly Inactive: "inactive";
-        readonly OnHold: "on-hold";
-        readonly Unknown: "unknown";
-    };
-    /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
     doModelValidation(expression?: string): fhir.FtsIssue[];

@@ -1,6 +1,5 @@
 import * as fhir from '../fhir.js';
 import { SpecimenStatusCodeType } from '../fhirValueSets/SpecimenStatusCodes.js';
-import { V20493CodingType } from '../fhirValueSets/V20493Codings.js';
 /**
  * Valid arguments for the SpecimenCollection type.
  */
@@ -396,19 +395,6 @@ export declare class Specimen extends fhir.DomainResource {
      * Default constructor for Specimen - initializes any required elements to null if a value is not provided.
      */
     constructor(source?: Partial<SpecimenArgs>, options?: fhir.FhirConstructorOptions);
-    /**
-     * Required-bound Value Set for status (Specimen.status)
-     */
-    static get statusRequiredCodes(): {
-        readonly Available: "available";
-        readonly EnteredInError: "entered-in-error";
-        readonly Unavailable: "unavailable";
-        readonly Unsatisfactory: "unsatisfactory";
-    };
-    /**
-     * Extensible-bound Value Set for condition (Specimen.condition)
-     */
-    static get conditionExtensibleCodings(): V20493CodingType;
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */

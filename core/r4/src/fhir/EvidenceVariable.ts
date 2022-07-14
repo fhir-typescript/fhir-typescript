@@ -6,21 +6,21 @@
 import * as fhir from '../fhir.js';
 
 // @ts-ignore
-import { GroupMeasureCodings, GroupMeasureCodingType,} from '../fhirValueSets/GroupMeasureCodings.js';
-// @ts-ignore
 import { GroupMeasureCodes,  GroupMeasureCodeType } from '../fhirValueSets/GroupMeasureCodes.js';
 // @ts-ignore
-import { PublicationStatusCodings, PublicationStatusCodingType,} from '../fhirValueSets/PublicationStatusCodings.js';
+import { GroupMeasureVsValidation } from '../fhirValueSets/GroupMeasureVsValidation.js';
 // @ts-ignore
 import { PublicationStatusCodes,  PublicationStatusCodeType } from '../fhirValueSets/PublicationStatusCodes.js';
 // @ts-ignore
-import { DefinitionTopicCodings, DefinitionTopicCodingType,} from '../fhirValueSets/DefinitionTopicCodings.js';
+import { PublicationStatusVsValidation } from '../fhirValueSets/PublicationStatusVsValidation.js';
 // @ts-ignore
 import { DefinitionTopicCodes,  DefinitionTopicCodeType } from '../fhirValueSets/DefinitionTopicCodes.js';
 // @ts-ignore
-import { VariableTypeCodings, VariableTypeCodingType,} from '../fhirValueSets/VariableTypeCodings.js';
+import { DefinitionTopicVsValidation } from '../fhirValueSets/DefinitionTopicVsValidation.js';
 // @ts-ignore
 import { VariableTypeCodes,  VariableTypeCodeType } from '../fhirValueSets/VariableTypeCodes.js';
+// @ts-ignore
+import { VariableTypeVsValidation } from '../fhirValueSets/VariableTypeVsValidation.js';
 /**
  * Valid arguments for the EvidenceVariableCharacteristic type.
  */
@@ -189,28 +189,18 @@ export class EvidenceVariableCharacteristic extends fhir.BackboneElement {
     }
   }
   /**
-   * Required-bound Value Set for groupMeasure (EvidenceVariable.characteristic.groupMeasure)
-   */
-  public static get groupMeasureRequiredCodes() {
-    return GroupMeasureCodes;
-  }
-  /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'EvidenceVariable.characteristic' }
-    if (this["description"]) { issues.push(...this.description.doModelValidation(expression+'.description')); }
-    if (!this['definition']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property definition fhir: EvidenceVariable.characteristic.definition[x]:', expression: [expression] });
-    }
-    if (this["usageContext"]) { this.usageContext.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.usageContext[${i}]`)); }) }
-    if (this["exclude"]) { issues.push(...this.exclude.doModelValidation(expression+'.exclude')); }
-    if (this["timeFromStart"]) { issues.push(...this.timeFromStart.doModelValidation(expression+'.timeFromStart')); }
-    if (this['groupMeasure'] && (!Object.values(GroupMeasureCodes).includes(this.groupMeasure.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'groupMeasure (EvidenceVariable.characteristic.groupMeasure) of type code is missing code for Required binding to: GroupMeasure', expression: [expression] });
-    }
-    if (this["groupMeasure"]) { issues.push(...this.groupMeasure.doModelValidation(expression+'.groupMeasure')); }
+    this.vOptS('description',expression)
+    this.vReqS('definition',expression)
+    this.vOptA('usageContext',expression)
+    this.vOptS('exclude',expression)
+    this.vOptS('participantEffective',expression)
+    this.vOptS('timeFromStart',expression)
+    this.vOptSV('groupMeasure',expression,'GroupMeasure',GroupMeasureVsValidation,'r')
     return issues;
   }
 }
@@ -616,69 +606,39 @@ export class EvidenceVariable extends fhir.DomainResource {
     else { this.characteristic = []; }
   }
   /**
-   * Required-bound Value Set for status (EvidenceVariable.status)
-   */
-  public static get statusRequiredCodes() {
-    return PublicationStatusCodes;
-  }
-  /**
-   * Required-bound Value Set for type (EvidenceVariable.type)
-   */
-  public static get typeRequiredCodes() {
-    return VariableTypeCodes;
-  }
-  /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'EvidenceVariable' }
-    if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType fhir: EvidenceVariable.resourceType:"EvidenceVariable"', expression: [expression] });
-    }
-    if (this["url"]) { issues.push(...this.url.doModelValidation(expression+'.url')); }
-    if (this["identifier"]) { this.identifier.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.identifier[${i}]`)); }) }
-    if (this["version"]) { issues.push(...this.version.doModelValidation(expression+'.version')); }
-    if (this["name"]) { issues.push(...this.name.doModelValidation(expression+'.name')); }
-    if (this["title"]) { issues.push(...this.title.doModelValidation(expression+'.title')); }
-    if (this["shortTitle"]) { issues.push(...this.shortTitle.doModelValidation(expression+'.shortTitle')); }
-    if (this["subtitle"]) { issues.push(...this.subtitle.doModelValidation(expression+'.subtitle')); }
-    if (!this['status']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status fhir: EvidenceVariable.status:code', expression: [expression] });
-    }
-    if (this['status'] && (!Object.values(PublicationStatusCodes).includes(this.status.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'status (EvidenceVariable.status) of type code is missing code for Required binding to: PublicationStatus', expression: [expression] });
-    }
-    if (this["status"]) { issues.push(...this.status.doModelValidation(expression+'.status')); }
-    if (this["date"]) { issues.push(...this.date.doModelValidation(expression+'.date')); }
-    if (this["publisher"]) { issues.push(...this.publisher.doModelValidation(expression+'.publisher')); }
-    if (this["contact"]) { this.contact.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.contact[${i}]`)); }) }
-    if (this["description"]) { issues.push(...this.description.doModelValidation(expression+'.description')); }
-    if (this["note"]) { this.note.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.note[${i}]`)); }) }
-    if (this["useContext"]) { this.useContext.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.useContext[${i}]`)); }) }
-    if (this["jurisdiction"]) { this.jurisdiction.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.jurisdiction[${i}]`)); }) }
-    if (this["copyright"]) { issues.push(...this.copyright.doModelValidation(expression+'.copyright')); }
-    if (this["approvalDate"]) { issues.push(...this.approvalDate.doModelValidation(expression+'.approvalDate')); }
-    if (this["lastReviewDate"]) { issues.push(...this.lastReviewDate.doModelValidation(expression+'.lastReviewDate')); }
-    if (this["effectivePeriod"]) { issues.push(...this.effectivePeriod.doModelValidation(expression+'.effectivePeriod')); }
-    if (this["topic"]) { this.topic.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.topic[${i}]`)); }) }
-    if (this["author"]) { this.author.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.author[${i}]`)); }) }
-    if (this["editor"]) { this.editor.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.editor[${i}]`)); }) }
-    if (this["reviewer"]) { this.reviewer.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.reviewer[${i}]`)); }) }
-    if (this["endorser"]) { this.endorser.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.endorser[${i}]`)); }) }
-    if (this["relatedArtifact"]) { this.relatedArtifact.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.relatedArtifact[${i}]`)); }) }
-    if (this['type'] && (!Object.values(VariableTypeCodes).includes(this.type.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'type (EvidenceVariable.type) of type code is missing code for Required binding to: VariableType', expression: [expression] });
-    }
-    if (this["type"]) { issues.push(...this.type.doModelValidation(expression+'.type')); }
-    if (!this['characteristic']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property characteristic fhir: EvidenceVariable.characteristic:characteristic', expression: [expression] });
-    } else if (!Array.isArray(this.characteristic)) {
-      issues.push({ severity: 'error', code: 'structure', diagnostics: 'Found scalar in array property characteristic fhir: EvidenceVariable.characteristic:characteristic', expression: [expression] });
-    } else if (this.characteristic.length === 0) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property characteristic fhir: EvidenceVariable.characteristic:characteristic', expression: [expression] });
-    }
-    if (this["characteristic"]) { this.characteristic.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.characteristic[${i}]`)); }) }
+    this.vReqS('resourceType',expression)
+    this.vOptS('url',expression)
+    this.vOptA('identifier',expression)
+    this.vOptS('version',expression)
+    this.vOptS('name',expression)
+    this.vOptS('title',expression)
+    this.vOptS('shortTitle',expression)
+    this.vOptS('subtitle',expression)
+    this.vReqSV('status',expression,'PublicationStatus',PublicationStatusVsValidation,'r')
+    this.vOptS('date',expression)
+    this.vOptS('publisher',expression)
+    this.vOptA('contact',expression)
+    this.vOptS('description',expression)
+    this.vOptA('note',expression)
+    this.vOptA('useContext',expression)
+    this.vOptA('jurisdiction',expression)
+    this.vOptS('copyright',expression)
+    this.vOptS('approvalDate',expression)
+    this.vOptS('lastReviewDate',expression)
+    this.vOptS('effectivePeriod',expression)
+    this.vOptA('topic',expression)
+    this.vOptA('author',expression)
+    this.vOptA('editor',expression)
+    this.vOptA('reviewer',expression)
+    this.vOptA('endorser',expression)
+    this.vOptA('relatedArtifact',expression)
+    this.vOptSV('type',expression,'VariableType',VariableTypeVsValidation,'r')
+    this.vReqA('characteristic',expression)
     return issues;
   }
 }

@@ -6,69 +6,69 @@
 import * as fhir from '../fhir.js';
 
 // @ts-ignore
-import { EncounterStatusCodings, EncounterStatusCodingType,} from '../fhirValueSets/EncounterStatusCodings.js';
-// @ts-ignore
 import { EncounterStatusCodes,  EncounterStatusCodeType } from '../fhirValueSets/EncounterStatusCodes.js';
 // @ts-ignore
-import { V3ActEncounterCodings, V3ActEncounterCodingType,} from '../fhirValueSets/V3ActEncounterCodings.js';
+import { EncounterStatusVsValidation } from '../fhirValueSets/EncounterStatusVsValidation.js';
 // @ts-ignore
 import { V3ActEncounterCodes,  V3ActEncounterCodeType } from '../fhirValueSets/V3ActEncounterCodes.js';
 // @ts-ignore
-import { EncounterParticipantTypeCodings, EncounterParticipantTypeCodingType,} from '../fhirValueSets/EncounterParticipantTypeCodings.js';
+import { V3ActEncounterVsValidation } from '../fhirValueSets/V3ActEncounterVsValidation.js';
 // @ts-ignore
 import { EncounterParticipantTypeCodes,  EncounterParticipantTypeCodeType } from '../fhirValueSets/EncounterParticipantTypeCodes.js';
 // @ts-ignore
-import { DiagnosisRoleCodings, DiagnosisRoleCodingType,} from '../fhirValueSets/DiagnosisRoleCodings.js';
+import { EncounterParticipantTypeVsValidation } from '../fhirValueSets/EncounterParticipantTypeVsValidation.js';
 // @ts-ignore
 import { DiagnosisRoleCodes,  DiagnosisRoleCodeType } from '../fhirValueSets/DiagnosisRoleCodes.js';
 // @ts-ignore
-import { EncounterAdmitSourceCodings, EncounterAdmitSourceCodingType,} from '../fhirValueSets/EncounterAdmitSourceCodings.js';
+import { DiagnosisRoleVsValidation } from '../fhirValueSets/DiagnosisRoleVsValidation.js';
 // @ts-ignore
 import { EncounterAdmitSourceCodes,  EncounterAdmitSourceCodeType } from '../fhirValueSets/EncounterAdmitSourceCodes.js';
 // @ts-ignore
-import { V20092Codings, V20092CodingType,} from '../fhirValueSets/V20092Codings.js';
+import { EncounterAdmitSourceVsValidation } from '../fhirValueSets/EncounterAdmitSourceVsValidation.js';
 // @ts-ignore
 import { V20092Codes,  V20092CodeType } from '../fhirValueSets/V20092Codes.js';
 // @ts-ignore
-import { EncounterDietCodings, EncounterDietCodingType,} from '../fhirValueSets/EncounterDietCodings.js';
+import { V20092VsValidation } from '../fhirValueSets/V20092VsValidation.js';
 // @ts-ignore
 import { EncounterDietCodes,  EncounterDietCodeType } from '../fhirValueSets/EncounterDietCodes.js';
 // @ts-ignore
-import { EncounterSpecialCourtesyCodings, EncounterSpecialCourtesyCodingType,} from '../fhirValueSets/EncounterSpecialCourtesyCodings.js';
+import { EncounterDietVsValidation } from '../fhirValueSets/EncounterDietVsValidation.js';
 // @ts-ignore
 import { EncounterSpecialCourtesyCodes,  EncounterSpecialCourtesyCodeType } from '../fhirValueSets/EncounterSpecialCourtesyCodes.js';
 // @ts-ignore
-import { EncounterSpecialArrangementsCodings, EncounterSpecialArrangementsCodingType,} from '../fhirValueSets/EncounterSpecialArrangementsCodings.js';
+import { EncounterSpecialCourtesyVsValidation } from '../fhirValueSets/EncounterSpecialCourtesyVsValidation.js';
 // @ts-ignore
 import { EncounterSpecialArrangementsCodes,  EncounterSpecialArrangementsCodeType } from '../fhirValueSets/EncounterSpecialArrangementsCodes.js';
 // @ts-ignore
-import { EncounterDischargeDispositionCodings, EncounterDischargeDispositionCodingType,} from '../fhirValueSets/EncounterDischargeDispositionCodings.js';
+import { EncounterSpecialArrangementsVsValidation } from '../fhirValueSets/EncounterSpecialArrangementsVsValidation.js';
 // @ts-ignore
 import { EncounterDischargeDispositionCodes,  EncounterDischargeDispositionCodeType } from '../fhirValueSets/EncounterDischargeDispositionCodes.js';
 // @ts-ignore
-import { EncounterLocationStatusCodings, EncounterLocationStatusCodingType,} from '../fhirValueSets/EncounterLocationStatusCodings.js';
+import { EncounterDischargeDispositionVsValidation } from '../fhirValueSets/EncounterDischargeDispositionVsValidation.js';
 // @ts-ignore
 import { EncounterLocationStatusCodes,  EncounterLocationStatusCodeType } from '../fhirValueSets/EncounterLocationStatusCodes.js';
 // @ts-ignore
-import { LocationPhysicalTypeCodings, LocationPhysicalTypeCodingType,} from '../fhirValueSets/LocationPhysicalTypeCodings.js';
+import { EncounterLocationStatusVsValidation } from '../fhirValueSets/EncounterLocationStatusVsValidation.js';
 // @ts-ignore
 import { LocationPhysicalTypeCodes,  LocationPhysicalTypeCodeType } from '../fhirValueSets/LocationPhysicalTypeCodes.js';
 // @ts-ignore
-import { EncounterTypeCodings, EncounterTypeCodingType,} from '../fhirValueSets/EncounterTypeCodings.js';
+import { LocationPhysicalTypeVsValidation } from '../fhirValueSets/LocationPhysicalTypeVsValidation.js';
 // @ts-ignore
 import { EncounterTypeCodes,  EncounterTypeCodeType } from '../fhirValueSets/EncounterTypeCodes.js';
 // @ts-ignore
-import { ServiceTypeCodings, ServiceTypeCodingType,} from '../fhirValueSets/ServiceTypeCodings.js';
+import { EncounterTypeVsValidation } from '../fhirValueSets/EncounterTypeVsValidation.js';
 // @ts-ignore
 import { ServiceTypeCodes,  ServiceTypeCodeType } from '../fhirValueSets/ServiceTypeCodes.js';
 // @ts-ignore
-import { V3ActPriorityCodings, V3ActPriorityCodingType,} from '../fhirValueSets/V3ActPriorityCodings.js';
+import { ServiceTypeVsValidation } from '../fhirValueSets/ServiceTypeVsValidation.js';
 // @ts-ignore
 import { V3ActPriorityCodes,  V3ActPriorityCodeType } from '../fhirValueSets/V3ActPriorityCodes.js';
 // @ts-ignore
-import { EncounterReasonCodings, EncounterReasonCodingType,} from '../fhirValueSets/EncounterReasonCodings.js';
+import { V3ActPriorityVsValidation } from '../fhirValueSets/V3ActPriorityVsValidation.js';
 // @ts-ignore
 import { EncounterReasonCodes,  EncounterReasonCodeType } from '../fhirValueSets/EncounterReasonCodes.js';
+// @ts-ignore
+import { EncounterReasonVsValidation } from '../fhirValueSets/EncounterReasonVsValidation.js';
 /**
  * Valid arguments for the EncounterStatusHistory type.
  */
@@ -118,28 +118,13 @@ export class EncounterStatusHistory extends fhir.BackboneElement {
     else { this.period = null; }
   }
   /**
-   * Required-bound Value Set for status (Encounter.statusHistory.status)
-   */
-  public static get statusRequiredCodes() {
-    return EncounterStatusCodes;
-  }
-  /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'Encounter.statusHistory' }
-    if (!this['status']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status fhir: Encounter.statusHistory.status:code', expression: [expression] });
-    }
-    if (this['status'] && (!Object.values(EncounterStatusCodes).includes(this.status.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'status (Encounter.statusHistory.status) of type code is missing code for Required binding to: EncounterStatus', expression: [expression] });
-    }
-    if (this["status"]) { issues.push(...this.status.doModelValidation(expression+'.status')); }
-    if (!this['period']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property period fhir: Encounter.statusHistory.period:Period', expression: [expression] });
-    }
-    if (this["period"]) { issues.push(...this.period.doModelValidation(expression+'.period')); }
+    this.vReqSV('status',expression,'EncounterStatus',EncounterStatusVsValidation,'r')
+    this.vReqS('period',expression)
     return issues;
   }
 }
@@ -184,25 +169,13 @@ export class EncounterClassHistory extends fhir.BackboneElement {
     else { this.period = null; }
   }
   /**
-   * Extensible-bound Value Set for class (Encounter.classHistory.class)
-   */
-  public static get classExtensibleCodings():V3ActEncounterCodingType {
-    return V3ActEncounterCodings;
-  }
-  /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'Encounter.classHistory' }
-    if (!this['class']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property class fhir: Encounter.classHistory.class:Coding', expression: [expression] });
-    }
-    if (this["class"]) { issues.push(...this.class.doModelValidation(expression+'.class')); }
-    if (!this['period']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property period fhir: Encounter.classHistory.period:Period', expression: [expression] });
-    }
-    if (this["period"]) { issues.push(...this.period.doModelValidation(expression+'.period')); }
+    this.vReqS('class',expression)
+    this.vReqS('period',expression)
     return issues;
   }
 }
@@ -255,20 +228,14 @@ export class EncounterParticipant extends fhir.BackboneElement {
     if (source['individual']) { this.individual = new fhir.Reference(source.individual); }
   }
   /**
-   * Extensible-bound Value Set for type (Encounter.participant.type)
-   */
-  public static get typeExtensibleCodings():EncounterParticipantTypeCodingType {
-    return EncounterParticipantTypeCodings;
-  }
-  /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'Encounter.participant' }
-    if (this["type"]) { this.type.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.type[${i}]`)); }) }
-    if (this["period"]) { issues.push(...this.period.doModelValidation(expression+'.period')); }
-    if (this["individual"]) { issues.push(...this.individual.doModelValidation(expression+'.individual')); }
+    this.vOptA('type',expression)
+    this.vOptS('period',expression)
+    this.vOptS('individual',expression)
     return issues;
   }
 }
@@ -329,23 +296,14 @@ export class EncounterDiagnosis extends fhir.BackboneElement {
     }
   }
   /**
-   * Preferred-bound Value Set for use (Encounter.diagnosis.use)
-   */
-  public static get usePreferredCodings():DiagnosisRoleCodingType {
-    return DiagnosisRoleCodings;
-  }
-  /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'Encounter.diagnosis' }
-    if (!this['condition']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property condition fhir: Encounter.diagnosis.condition:Reference', expression: [expression] });
-    }
-    if (this["condition"]) { issues.push(...this.condition.doModelValidation(expression+'.condition')); }
-    if (this["use"]) { issues.push(...this.use.doModelValidation(expression+'.use')); }
-    if (this["rank"]) { issues.push(...this.rank.doModelValidation(expression+'.rank')); }
+    this.vReqS('condition',expression)
+    this.vOptS('use',expression)
+    this.vOptS('rank',expression)
     return issues;
   }
 }
@@ -455,38 +413,20 @@ export class EncounterHospitalization extends fhir.BackboneElement {
     if (source['dischargeDisposition']) { this.dischargeDisposition = new fhir.CodeableConcept(source.dischargeDisposition); }
   }
   /**
-   * Preferred-bound Value Set for admitSource (Encounter.hospitalization.admitSource)
-   */
-  public static get admitSourcePreferredCodings():EncounterAdmitSourceCodingType {
-    return EncounterAdmitSourceCodings;
-  }
-  /**
-   * Preferred-bound Value Set for specialCourtesy (Encounter.hospitalization.specialCourtesy)
-   */
-  public static get specialCourtesyPreferredCodings():EncounterSpecialCourtesyCodingType {
-    return EncounterSpecialCourtesyCodings;
-  }
-  /**
-   * Preferred-bound Value Set for specialArrangement (Encounter.hospitalization.specialArrangement)
-   */
-  public static get specialArrangementPreferredCodings():EncounterSpecialArrangementsCodingType {
-    return EncounterSpecialArrangementsCodings;
-  }
-  /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'Encounter.hospitalization' }
-    if (this["preAdmissionIdentifier"]) { issues.push(...this.preAdmissionIdentifier.doModelValidation(expression+'.preAdmissionIdentifier')); }
-    if (this["origin"]) { issues.push(...this.origin.doModelValidation(expression+'.origin')); }
-    if (this["admitSource"]) { issues.push(...this.admitSource.doModelValidation(expression+'.admitSource')); }
-    if (this["reAdmission"]) { issues.push(...this.reAdmission.doModelValidation(expression+'.reAdmission')); }
-    if (this["dietPreference"]) { this.dietPreference.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.dietPreference[${i}]`)); }) }
-    if (this["specialCourtesy"]) { this.specialCourtesy.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.specialCourtesy[${i}]`)); }) }
-    if (this["specialArrangement"]) { this.specialArrangement.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.specialArrangement[${i}]`)); }) }
-    if (this["destination"]) { issues.push(...this.destination.doModelValidation(expression+'.destination')); }
-    if (this["dischargeDisposition"]) { issues.push(...this.dischargeDisposition.doModelValidation(expression+'.dischargeDisposition')); }
+    this.vOptS('preAdmissionIdentifier',expression)
+    this.vOptS('origin',expression)
+    this.vOptS('admitSource',expression)
+    this.vOptS('reAdmission',expression)
+    this.vOptA('dietPreference',expression)
+    this.vOptA('specialCourtesy',expression)
+    this.vOptA('specialArrangement',expression)
+    this.vOptS('destination',expression)
+    this.vOptS('dischargeDisposition',expression)
     return issues;
   }
 }
@@ -558,27 +498,15 @@ export class EncounterLocation extends fhir.BackboneElement {
     if (source['period']) { this.period = new fhir.Period(source.period); }
   }
   /**
-   * Required-bound Value Set for status (Encounter.location.status)
-   */
-  public static get statusRequiredCodes() {
-    return EncounterLocationStatusCodes;
-  }
-  /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'Encounter.location' }
-    if (!this['location']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property location fhir: Encounter.location.location:Reference', expression: [expression] });
-    }
-    if (this["location"]) { issues.push(...this.location.doModelValidation(expression+'.location')); }
-    if (this['status'] && (!Object.values(EncounterLocationStatusCodes).includes(this.status.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'status (Encounter.location.status) of type code is missing code for Required binding to: EncounterLocationStatus', expression: [expression] });
-    }
-    if (this["status"]) { issues.push(...this.status.doModelValidation(expression+'.status')); }
-    if (this["physicalType"]) { issues.push(...this.physicalType.doModelValidation(expression+'.physicalType')); }
-    if (this["period"]) { issues.push(...this.period.doModelValidation(expression+'.period')); }
+    this.vReqS('location',expression)
+    this.vOptSV('status',expression,'EncounterLocationStatus',EncounterLocationStatusVsValidation,'r')
+    this.vOptS('physicalType',expression)
+    this.vOptS('period',expression)
     return issues;
   }
 }
@@ -846,64 +774,35 @@ export class Encounter extends fhir.DomainResource {
     if (source['partOf']) { this.partOf = new fhir.Reference(source.partOf); }
   }
   /**
-   * Required-bound Value Set for status (Encounter.status)
-   */
-  public static get statusRequiredCodes() {
-    return EncounterStatusCodes;
-  }
-  /**
-   * Extensible-bound Value Set for class (Encounter.class)
-   */
-  public static get classExtensibleCodings():V3ActEncounterCodingType {
-    return V3ActEncounterCodings;
-  }
-  /**
-   * Preferred-bound Value Set for reasonCode (Encounter.reasonCode)
-   */
-  public static get reasonCodePreferredCodings():EncounterReasonCodingType {
-    return EncounterReasonCodings;
-  }
-  /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'Encounter' }
-    if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType fhir: Encounter.resourceType:"Encounter"', expression: [expression] });
-    }
-    if (this["identifier"]) { this.identifier.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.identifier[${i}]`)); }) }
-    if (!this['status']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status fhir: Encounter.status:code', expression: [expression] });
-    }
-    if (this['status'] && (!Object.values(EncounterStatusCodes).includes(this.status.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'status (Encounter.status) of type code is missing code for Required binding to: EncounterStatus', expression: [expression] });
-    }
-    if (this["status"]) { issues.push(...this.status.doModelValidation(expression+'.status')); }
-    if (this["statusHistory"]) { this.statusHistory.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.statusHistory[${i}]`)); }) }
-    if (!this['class']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property class fhir: Encounter.class:Coding', expression: [expression] });
-    }
-    if (this["class"]) { issues.push(...this.class.doModelValidation(expression+'.class')); }
-    if (this["classHistory"]) { this.classHistory.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.classHistory[${i}]`)); }) }
-    if (this["type"]) { this.type.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.type[${i}]`)); }) }
-    if (this["serviceType"]) { issues.push(...this.serviceType.doModelValidation(expression+'.serviceType')); }
-    if (this["priority"]) { issues.push(...this.priority.doModelValidation(expression+'.priority')); }
-    if (this["subject"]) { issues.push(...this.subject.doModelValidation(expression+'.subject')); }
-    if (this["episodeOfCare"]) { this.episodeOfCare.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.episodeOfCare[${i}]`)); }) }
-    if (this["basedOn"]) { this.basedOn.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.basedOn[${i}]`)); }) }
-    if (this["participant"]) { this.participant.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.participant[${i}]`)); }) }
-    if (this["appointment"]) { this.appointment.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.appointment[${i}]`)); }) }
-    if (this["period"]) { issues.push(...this.period.doModelValidation(expression+'.period')); }
-    if (this["length"]) { issues.push(...this.length.doModelValidation(expression+'.length')); }
-    if (this["reasonCode"]) { this.reasonCode.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.reasonCode[${i}]`)); }) }
-    if (this["reasonReference"]) { this.reasonReference.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.reasonReference[${i}]`)); }) }
-    if (this["diagnosis"]) { this.diagnosis.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.diagnosis[${i}]`)); }) }
-    if (this["account"]) { this.account.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.account[${i}]`)); }) }
-    if (this["hospitalization"]) { issues.push(...this.hospitalization.doModelValidation(expression+'.hospitalization')); }
-    if (this["location"]) { this.location.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.location[${i}]`)); }) }
-    if (this["serviceProvider"]) { issues.push(...this.serviceProvider.doModelValidation(expression+'.serviceProvider')); }
-    if (this["partOf"]) { issues.push(...this.partOf.doModelValidation(expression+'.partOf')); }
+    this.vReqS('resourceType',expression)
+    this.vOptA('identifier',expression)
+    this.vReqSV('status',expression,'EncounterStatus',EncounterStatusVsValidation,'r')
+    this.vOptA('statusHistory',expression)
+    this.vReqS('class',expression)
+    this.vOptA('classHistory',expression)
+    this.vOptA('type',expression)
+    this.vOptS('serviceType',expression)
+    this.vOptS('priority',expression)
+    this.vOptS('subject',expression)
+    this.vOptA('episodeOfCare',expression)
+    this.vOptA('basedOn',expression)
+    this.vOptA('participant',expression)
+    this.vOptA('appointment',expression)
+    this.vOptS('period',expression)
+    this.vOptS('length',expression)
+    this.vOptA('reasonCode',expression)
+    this.vOptA('reasonReference',expression)
+    this.vOptA('diagnosis',expression)
+    this.vOptA('account',expression)
+    this.vOptS('hospitalization',expression)
+    this.vOptA('location',expression)
+    this.vOptS('serviceProvider',expression)
+    this.vOptS('partOf',expression)
     return issues;
   }
 }

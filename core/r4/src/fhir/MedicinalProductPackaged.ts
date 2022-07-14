@@ -50,11 +50,8 @@ export class MedicinalProductPackagedBatchIdentifier extends fhir.BackboneElemen
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'MedicinalProductPackaged.batchIdentifier' }
-    if (!this['outerPackaging']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property outerPackaging fhir: MedicinalProductPackaged.batchIdentifier.outerPackaging:Identifier', expression: [expression] });
-    }
-    if (this["outerPackaging"]) { issues.push(...this.outerPackaging.doModelValidation(expression+'.outerPackaging')); }
-    if (this["immediatePackaging"]) { issues.push(...this.immediatePackaging.doModelValidation(expression+'.immediatePackaging')); }
+    this.vReqS('outerPackaging',expression)
+    this.vOptS('immediatePackaging',expression)
     return issues;
   }
 }
@@ -203,24 +200,18 @@ export class MedicinalProductPackagedPackageItem extends fhir.BackboneElement {
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'MedicinalProductPackaged.packageItem' }
-    if (this["identifier"]) { this.identifier.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.identifier[${i}]`)); }) }
-    if (!this['type']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property type fhir: MedicinalProductPackaged.packageItem.type:CodeableConcept', expression: [expression] });
-    }
-    if (this["type"]) { issues.push(...this.type.doModelValidation(expression+'.type')); }
-    if (!this['quantity']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property quantity fhir: MedicinalProductPackaged.packageItem.quantity:Quantity', expression: [expression] });
-    }
-    if (this["quantity"]) { issues.push(...this.quantity.doModelValidation(expression+'.quantity')); }
-    if (this["material"]) { this.material.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.material[${i}]`)); }) }
-    if (this["alternateMaterial"]) { this.alternateMaterial.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.alternateMaterial[${i}]`)); }) }
-    if (this["device"]) { this.device.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.device[${i}]`)); }) }
-    if (this["manufacturedItem"]) { this.manufacturedItem.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.manufacturedItem[${i}]`)); }) }
-    if (this["packageItem"]) { this.packageItem.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.packageItem[${i}]`)); }) }
-    if (this["physicalCharacteristics"]) { issues.push(...this.physicalCharacteristics.doModelValidation(expression+'.physicalCharacteristics')); }
-    if (this["otherCharacteristics"]) { this.otherCharacteristics.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.otherCharacteristics[${i}]`)); }) }
-    if (this["shelfLifeStorage"]) { this.shelfLifeStorage.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.shelfLifeStorage[${i}]`)); }) }
-    if (this["manufacturer"]) { this.manufacturer.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.manufacturer[${i}]`)); }) }
+    this.vOptA('identifier',expression)
+    this.vReqS('type',expression)
+    this.vReqS('quantity',expression)
+    this.vOptA('material',expression)
+    this.vOptA('alternateMaterial',expression)
+    this.vOptA('device',expression)
+    this.vOptA('manufacturedItem',expression)
+    this.vOptA('packageItem',expression)
+    this.vOptS('physicalCharacteristics',expression)
+    this.vOptA('otherCharacteristics',expression)
+    this.vOptA('shelfLifeStorage',expression)
+    this.vOptA('manufacturer',expression)
     return issues;
   }
 }
@@ -354,25 +345,16 @@ export class MedicinalProductPackaged extends fhir.DomainResource {
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'MedicinalProductPackaged' }
-    if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType fhir: MedicinalProductPackaged.resourceType:"MedicinalProductPackaged"', expression: [expression] });
-    }
-    if (this["identifier"]) { this.identifier.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.identifier[${i}]`)); }) }
-    if (this["subject"]) { this.subject.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.subject[${i}]`)); }) }
-    if (this["description"]) { issues.push(...this.description.doModelValidation(expression+'.description')); }
-    if (this["legalStatusOfSupply"]) { issues.push(...this.legalStatusOfSupply.doModelValidation(expression+'.legalStatusOfSupply')); }
-    if (this["marketingStatus"]) { this.marketingStatus.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.marketingStatus[${i}]`)); }) }
-    if (this["marketingAuthorization"]) { issues.push(...this.marketingAuthorization.doModelValidation(expression+'.marketingAuthorization')); }
-    if (this["manufacturer"]) { this.manufacturer.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.manufacturer[${i}]`)); }) }
-    if (this["batchIdentifier"]) { this.batchIdentifier.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.batchIdentifier[${i}]`)); }) }
-    if (!this['packageItem']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property packageItem fhir: MedicinalProductPackaged.packageItem:packageItem', expression: [expression] });
-    } else if (!Array.isArray(this.packageItem)) {
-      issues.push({ severity: 'error', code: 'structure', diagnostics: 'Found scalar in array property packageItem fhir: MedicinalProductPackaged.packageItem:packageItem', expression: [expression] });
-    } else if (this.packageItem.length === 0) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property packageItem fhir: MedicinalProductPackaged.packageItem:packageItem', expression: [expression] });
-    }
-    if (this["packageItem"]) { this.packageItem.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.packageItem[${i}]`)); }) }
+    this.vReqS('resourceType',expression)
+    this.vOptA('identifier',expression)
+    this.vOptA('subject',expression)
+    this.vOptS('description',expression)
+    this.vOptS('legalStatusOfSupply',expression)
+    this.vOptA('marketingStatus',expression)
+    this.vOptS('marketingAuthorization',expression)
+    this.vOptA('manufacturer',expression)
+    this.vOptA('batchIdentifier',expression)
+    this.vReqA('packageItem',expression)
     return issues;
   }
 }

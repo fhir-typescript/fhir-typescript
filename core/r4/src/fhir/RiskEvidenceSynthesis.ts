@@ -6,45 +6,45 @@
 import * as fhir from '../fhir.js';
 
 // @ts-ignore
-import { PrecisionEstimateTypeCodings, PrecisionEstimateTypeCodingType,} from '../fhirValueSets/PrecisionEstimateTypeCodings.js';
-// @ts-ignore
 import { PrecisionEstimateTypeCodes,  PrecisionEstimateTypeCodeType } from '../fhirValueSets/PrecisionEstimateTypeCodes.js';
 // @ts-ignore
-import { RiskEstimateTypeCodings, RiskEstimateTypeCodingType,} from '../fhirValueSets/RiskEstimateTypeCodings.js';
+import { PrecisionEstimateTypeVsValidation } from '../fhirValueSets/PrecisionEstimateTypeVsValidation.js';
 // @ts-ignore
 import { RiskEstimateTypeCodes,  RiskEstimateTypeCodeType } from '../fhirValueSets/RiskEstimateTypeCodes.js';
 // @ts-ignore
-import { UcumUnitsCodings, UcumUnitsCodingType,} from '../fhirValueSets/UcumUnitsCodings.js';
+import { RiskEstimateTypeVsValidation } from '../fhirValueSets/RiskEstimateTypeVsValidation.js';
 // @ts-ignore
 import { UcumUnitsCodes,  UcumUnitsCodeType } from '../fhirValueSets/UcumUnitsCodes.js';
 // @ts-ignore
-import { CertaintySubcomponentTypeCodings, CertaintySubcomponentTypeCodingType,} from '../fhirValueSets/CertaintySubcomponentTypeCodings.js';
+import { UcumUnitsVsValidation } from '../fhirValueSets/UcumUnitsVsValidation.js';
 // @ts-ignore
 import { CertaintySubcomponentTypeCodes,  CertaintySubcomponentTypeCodeType } from '../fhirValueSets/CertaintySubcomponentTypeCodes.js';
 // @ts-ignore
-import { CertaintySubcomponentRatingCodings, CertaintySubcomponentRatingCodingType,} from '../fhirValueSets/CertaintySubcomponentRatingCodings.js';
+import { CertaintySubcomponentTypeVsValidation } from '../fhirValueSets/CertaintySubcomponentTypeVsValidation.js';
 // @ts-ignore
 import { CertaintySubcomponentRatingCodes,  CertaintySubcomponentRatingCodeType } from '../fhirValueSets/CertaintySubcomponentRatingCodes.js';
 // @ts-ignore
-import { EvidenceQualityCodings, EvidenceQualityCodingType,} from '../fhirValueSets/EvidenceQualityCodings.js';
+import { CertaintySubcomponentRatingVsValidation } from '../fhirValueSets/CertaintySubcomponentRatingVsValidation.js';
 // @ts-ignore
 import { EvidenceQualityCodes,  EvidenceQualityCodeType } from '../fhirValueSets/EvidenceQualityCodes.js';
 // @ts-ignore
-import { PublicationStatusCodings, PublicationStatusCodingType,} from '../fhirValueSets/PublicationStatusCodings.js';
+import { EvidenceQualityVsValidation } from '../fhirValueSets/EvidenceQualityVsValidation.js';
 // @ts-ignore
 import { PublicationStatusCodes,  PublicationStatusCodeType } from '../fhirValueSets/PublicationStatusCodes.js';
 // @ts-ignore
-import { DefinitionTopicCodings, DefinitionTopicCodingType,} from '../fhirValueSets/DefinitionTopicCodings.js';
+import { PublicationStatusVsValidation } from '../fhirValueSets/PublicationStatusVsValidation.js';
 // @ts-ignore
 import { DefinitionTopicCodes,  DefinitionTopicCodeType } from '../fhirValueSets/DefinitionTopicCodes.js';
 // @ts-ignore
-import { SynthesisTypeCodings, SynthesisTypeCodingType,} from '../fhirValueSets/SynthesisTypeCodings.js';
+import { DefinitionTopicVsValidation } from '../fhirValueSets/DefinitionTopicVsValidation.js';
 // @ts-ignore
 import { SynthesisTypeCodes,  SynthesisTypeCodeType } from '../fhirValueSets/SynthesisTypeCodes.js';
 // @ts-ignore
-import { StudyTypeCodings, StudyTypeCodingType,} from '../fhirValueSets/StudyTypeCodings.js';
+import { SynthesisTypeVsValidation } from '../fhirValueSets/SynthesisTypeVsValidation.js';
 // @ts-ignore
 import { StudyTypeCodes,  StudyTypeCodeType } from '../fhirValueSets/StudyTypeCodes.js';
+// @ts-ignore
+import { StudyTypeVsValidation } from '../fhirValueSets/StudyTypeVsValidation.js';
 /**
  * Valid arguments for the RiskEvidenceSynthesisSampleSize type.
  */
@@ -122,9 +122,9 @@ export class RiskEvidenceSynthesisSampleSize extends fhir.BackboneElement {
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'RiskEvidenceSynthesis.sampleSize' }
-    if (this["description"]) { issues.push(...this.description.doModelValidation(expression+'.description')); }
-    if (this["numberOfStudies"]) { issues.push(...this.numberOfStudies.doModelValidation(expression+'.numberOfStudies')); }
-    if (this["numberOfParticipants"]) { issues.push(...this.numberOfParticipants.doModelValidation(expression+'.numberOfParticipants')); }
+    this.vOptS('description',expression)
+    this.vOptS('numberOfStudies',expression)
+    this.vOptS('numberOfParticipants',expression)
     return issues;
   }
 }
@@ -209,21 +209,15 @@ export class RiskEvidenceSynthesisRiskEstimatePrecisionEstimate extends fhir.Bac
     }
   }
   /**
-   * Extensible-bound Value Set for type (RiskEvidenceSynthesis.riskEstimate.precisionEstimate.type)
-   */
-  public static get typeExtensibleCodings():PrecisionEstimateTypeCodingType {
-    return PrecisionEstimateTypeCodings;
-  }
-  /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'RiskEvidenceSynthesis.riskEstimate.precisionEstimate' }
-    if (this["type"]) { issues.push(...this.type.doModelValidation(expression+'.type')); }
-    if (this["level"]) { issues.push(...this.level.doModelValidation(expression+'.level')); }
-    if (this["from"]) { issues.push(...this.from.doModelValidation(expression+'.from')); }
-    if (this["to"]) { issues.push(...this.to.doModelValidation(expression+'.to')); }
+    this.vOptS('type',expression)
+    this.vOptS('level',expression)
+    this.vOptS('from',expression)
+    this.vOptS('to',expression)
     return issues;
   }
 }
@@ -344,33 +338,18 @@ export class RiskEvidenceSynthesisRiskEstimate extends fhir.BackboneElement {
     else { this.precisionEstimate = []; }
   }
   /**
-   * Extensible-bound Value Set for type (RiskEvidenceSynthesis.riskEstimate.type)
-   */
-  public static get typeExtensibleCodings():RiskEstimateTypeCodingType {
-    return RiskEstimateTypeCodings;
-  }
-  /**
-   * Required-bound Value Set for unitOfMeasure (RiskEvidenceSynthesis.riskEstimate.unitOfMeasure)
-   */
-  public static get unitOfMeasureRequiredCodes() {
-    return UcumUnitsCodes;
-  }
-  /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'RiskEvidenceSynthesis.riskEstimate' }
-    if (this["description"]) { issues.push(...this.description.doModelValidation(expression+'.description')); }
-    if (this["type"]) { issues.push(...this.type.doModelValidation(expression+'.type')); }
-    if (this["value"]) { issues.push(...this.value.doModelValidation(expression+'.value')); }
-    if (this['unitOfMeasure'] && (!this.unitOfMeasure.hasCodingFromObject(UcumUnitsCodings))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'unitOfMeasure (RiskEvidenceSynthesis.riskEstimate.unitOfMeasure) of type CodeableConcept is missing code for Required binding to: UcumUnits', expression: [expression] });
-    }
-    if (this["unitOfMeasure"]) { issues.push(...this.unitOfMeasure.doModelValidation(expression+'.unitOfMeasure')); }
-    if (this["denominatorCount"]) { issues.push(...this.denominatorCount.doModelValidation(expression+'.denominatorCount')); }
-    if (this["numeratorCount"]) { issues.push(...this.numeratorCount.doModelValidation(expression+'.numeratorCount')); }
-    if (this["precisionEstimate"]) { this.precisionEstimate.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.precisionEstimate[${i}]`)); }) }
+    this.vOptS('description',expression)
+    this.vOptS('type',expression)
+    this.vOptS('value',expression)
+    this.vOptSV('unitOfMeasure',expression,'UcumUnits',UcumUnitsVsValidation,'r')
+    this.vOptS('denominatorCount',expression)
+    this.vOptS('numeratorCount',expression)
+    this.vOptA('precisionEstimate',expression)
     return issues;
   }
 }
@@ -424,26 +403,14 @@ export class RiskEvidenceSynthesisCertaintyCertaintySubcomponent extends fhir.Ba
     else { this.note = []; }
   }
   /**
-   * Extensible-bound Value Set for type (RiskEvidenceSynthesis.certainty.certaintySubcomponent.type)
-   */
-  public static get typeExtensibleCodings():CertaintySubcomponentTypeCodingType {
-    return CertaintySubcomponentTypeCodings;
-  }
-  /**
-   * Extensible-bound Value Set for rating (RiskEvidenceSynthesis.certainty.certaintySubcomponent.rating)
-   */
-  public static get ratingExtensibleCodings():CertaintySubcomponentRatingCodingType {
-    return CertaintySubcomponentRatingCodings;
-  }
-  /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'RiskEvidenceSynthesis.certainty.certaintySubcomponent' }
-    if (this["type"]) { issues.push(...this.type.doModelValidation(expression+'.type')); }
-    if (this["rating"]) { this.rating.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.rating[${i}]`)); }) }
-    if (this["note"]) { this.note.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.note[${i}]`)); }) }
+    this.vOptS('type',expression)
+    this.vOptA('rating',expression)
+    this.vOptA('note',expression)
     return issues;
   }
 }
@@ -498,20 +465,14 @@ export class RiskEvidenceSynthesisCertainty extends fhir.BackboneElement {
     else { this.certaintySubcomponent = []; }
   }
   /**
-   * Extensible-bound Value Set for rating (RiskEvidenceSynthesis.certainty.rating)
-   */
-  public static get ratingExtensibleCodings():EvidenceQualityCodingType {
-    return EvidenceQualityCodings;
-  }
-  /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'RiskEvidenceSynthesis.certainty' }
-    if (this["rating"]) { this.rating.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.rating[${i}]`)); }) }
-    if (this["note"]) { this.note.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.note[${i}]`)); }) }
-    if (this["certaintySubcomponent"]) { this.certaintySubcomponent.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.certaintySubcomponent[${i}]`)); }) }
+    this.vOptA('rating',expression)
+    this.vOptA('note',expression)
+    this.vOptA('certaintySubcomponent',expression)
     return issues;
   }
 }
@@ -931,75 +892,43 @@ export class RiskEvidenceSynthesis extends fhir.DomainResource {
     else { this.certainty = []; }
   }
   /**
-   * Required-bound Value Set for status (RiskEvidenceSynthesis.status)
-   */
-  public static get statusRequiredCodes() {
-    return PublicationStatusCodes;
-  }
-  /**
-   * Extensible-bound Value Set for synthesisType (RiskEvidenceSynthesis.synthesisType)
-   */
-  public static get synthesisTypeExtensibleCodings():SynthesisTypeCodingType {
-    return SynthesisTypeCodings;
-  }
-  /**
-   * Extensible-bound Value Set for studyType (RiskEvidenceSynthesis.studyType)
-   */
-  public static get studyTypeExtensibleCodings():StudyTypeCodingType {
-    return StudyTypeCodings;
-  }
-  /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'RiskEvidenceSynthesis' }
-    if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType fhir: RiskEvidenceSynthesis.resourceType:"RiskEvidenceSynthesis"', expression: [expression] });
-    }
-    if (this["url"]) { issues.push(...this.url.doModelValidation(expression+'.url')); }
-    if (this["identifier"]) { this.identifier.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.identifier[${i}]`)); }) }
-    if (this["version"]) { issues.push(...this.version.doModelValidation(expression+'.version')); }
-    if (this["name"]) { issues.push(...this.name.doModelValidation(expression+'.name')); }
-    if (this["title"]) { issues.push(...this.title.doModelValidation(expression+'.title')); }
-    if (!this['status']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status fhir: RiskEvidenceSynthesis.status:code', expression: [expression] });
-    }
-    if (this['status'] && (!Object.values(PublicationStatusCodes).includes(this.status.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'status (RiskEvidenceSynthesis.status) of type code is missing code for Required binding to: PublicationStatus', expression: [expression] });
-    }
-    if (this["status"]) { issues.push(...this.status.doModelValidation(expression+'.status')); }
-    if (this["date"]) { issues.push(...this.date.doModelValidation(expression+'.date')); }
-    if (this["publisher"]) { issues.push(...this.publisher.doModelValidation(expression+'.publisher')); }
-    if (this["contact"]) { this.contact.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.contact[${i}]`)); }) }
-    if (this["description"]) { issues.push(...this.description.doModelValidation(expression+'.description')); }
-    if (this["note"]) { this.note.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.note[${i}]`)); }) }
-    if (this["useContext"]) { this.useContext.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.useContext[${i}]`)); }) }
-    if (this["jurisdiction"]) { this.jurisdiction.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.jurisdiction[${i}]`)); }) }
-    if (this["copyright"]) { issues.push(...this.copyright.doModelValidation(expression+'.copyright')); }
-    if (this["approvalDate"]) { issues.push(...this.approvalDate.doModelValidation(expression+'.approvalDate')); }
-    if (this["lastReviewDate"]) { issues.push(...this.lastReviewDate.doModelValidation(expression+'.lastReviewDate')); }
-    if (this["effectivePeriod"]) { issues.push(...this.effectivePeriod.doModelValidation(expression+'.effectivePeriod')); }
-    if (this["topic"]) { this.topic.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.topic[${i}]`)); }) }
-    if (this["author"]) { this.author.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.author[${i}]`)); }) }
-    if (this["editor"]) { this.editor.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.editor[${i}]`)); }) }
-    if (this["reviewer"]) { this.reviewer.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.reviewer[${i}]`)); }) }
-    if (this["endorser"]) { this.endorser.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.endorser[${i}]`)); }) }
-    if (this["relatedArtifact"]) { this.relatedArtifact.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.relatedArtifact[${i}]`)); }) }
-    if (this["synthesisType"]) { issues.push(...this.synthesisType.doModelValidation(expression+'.synthesisType')); }
-    if (this["studyType"]) { issues.push(...this.studyType.doModelValidation(expression+'.studyType')); }
-    if (!this['population']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property population fhir: RiskEvidenceSynthesis.population:Reference', expression: [expression] });
-    }
-    if (this["population"]) { issues.push(...this.population.doModelValidation(expression+'.population')); }
-    if (this["exposure"]) { issues.push(...this.exposure.doModelValidation(expression+'.exposure')); }
-    if (!this['outcome']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property outcome fhir: RiskEvidenceSynthesis.outcome:Reference', expression: [expression] });
-    }
-    if (this["outcome"]) { issues.push(...this.outcome.doModelValidation(expression+'.outcome')); }
-    if (this["sampleSize"]) { issues.push(...this.sampleSize.doModelValidation(expression+'.sampleSize')); }
-    if (this["riskEstimate"]) { issues.push(...this.riskEstimate.doModelValidation(expression+'.riskEstimate')); }
-    if (this["certainty"]) { this.certainty.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.certainty[${i}]`)); }) }
+    this.vReqS('resourceType',expression)
+    this.vOptS('url',expression)
+    this.vOptA('identifier',expression)
+    this.vOptS('version',expression)
+    this.vOptS('name',expression)
+    this.vOptS('title',expression)
+    this.vReqSV('status',expression,'PublicationStatus',PublicationStatusVsValidation,'r')
+    this.vOptS('date',expression)
+    this.vOptS('publisher',expression)
+    this.vOptA('contact',expression)
+    this.vOptS('description',expression)
+    this.vOptA('note',expression)
+    this.vOptA('useContext',expression)
+    this.vOptA('jurisdiction',expression)
+    this.vOptS('copyright',expression)
+    this.vOptS('approvalDate',expression)
+    this.vOptS('lastReviewDate',expression)
+    this.vOptS('effectivePeriod',expression)
+    this.vOptA('topic',expression)
+    this.vOptA('author',expression)
+    this.vOptA('editor',expression)
+    this.vOptA('reviewer',expression)
+    this.vOptA('endorser',expression)
+    this.vOptA('relatedArtifact',expression)
+    this.vOptS('synthesisType',expression)
+    this.vOptS('studyType',expression)
+    this.vReqS('population',expression)
+    this.vOptS('exposure',expression)
+    this.vReqS('outcome',expression)
+    this.vOptS('sampleSize',expression)
+    this.vOptS('riskEstimate',expression)
+    this.vOptA('certainty',expression)
     return issues;
   }
 }

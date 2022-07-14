@@ -6,17 +6,17 @@
 import * as fhir from '../fhir.js';
 
 // @ts-ignore
-import { DaysOfWeekCodings, DaysOfWeekCodingType,} from '../fhirValueSets/DaysOfWeekCodings.js';
-// @ts-ignore
 import { DaysOfWeekCodes,  DaysOfWeekCodeType } from '../fhirValueSets/DaysOfWeekCodes.js';
 // @ts-ignore
-import { PractitionerRoleCodings, PractitionerRoleCodingType,} from '../fhirValueSets/PractitionerRoleCodings.js';
+import { DaysOfWeekVsValidation } from '../fhirValueSets/DaysOfWeekVsValidation.js';
 // @ts-ignore
 import { PractitionerRoleCodes,  PractitionerRoleCodeType } from '../fhirValueSets/PractitionerRoleCodes.js';
 // @ts-ignore
-import { C80PracticeCodings, C80PracticeCodingType,} from '../fhirValueSets/C80PracticeCodings.js';
+import { PractitionerRoleVsValidation } from '../fhirValueSets/PractitionerRoleVsValidation.js';
 // @ts-ignore
 import { C80PracticeCodes,  C80PracticeCodeType } from '../fhirValueSets/C80PracticeCodes.js';
+// @ts-ignore
+import { C80PracticeVsValidation } from '../fhirValueSets/C80PracticeVsValidation.js';
 /**
  * Valid arguments for the PractitionerRoleAvailableTime type.
  */
@@ -109,28 +109,15 @@ export class PractitionerRoleAvailableTime extends fhir.BackboneElement {
     }
   }
   /**
-   * Required-bound Value Set for daysOfWeek (PractitionerRole.availableTime.daysOfWeek)
-   */
-  public static get daysOfWeekRequiredCodes() {
-    return DaysOfWeekCodes;
-  }
-  /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'PractitionerRole.availableTime' }
-    if (this['daysOfWeek']) {
-      this.daysOfWeek.forEach((v) => {
-        if (!Object.values(DaysOfWeekCodes).includes(v.value as any)) {
-          issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'daysOfWeek (PractitionerRole.availableTime.daysOfWeek) of type code is missing code for Required binding to: DaysOfWeek', expression: [expression] });
-        }
-      });
-    }
-    if (this["daysOfWeek"]) { this.daysOfWeek.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.daysOfWeek[${i}]`)); }) }
-    if (this["allDay"]) { issues.push(...this.allDay.doModelValidation(expression+'.allDay')); }
-    if (this["availableStartTime"]) { issues.push(...this.availableStartTime.doModelValidation(expression+'.availableStartTime')); }
-    if (this["availableEndTime"]) { issues.push(...this.availableEndTime.doModelValidation(expression+'.availableEndTime')); }
+    this.vOptAV('daysOfWeek',expression,'DaysOfWeek',DaysOfWeekVsValidation,'r')
+    this.vOptS('allDay',expression)
+    this.vOptS('availableStartTime',expression)
+    this.vOptS('availableEndTime',expression)
     return issues;
   }
 }
@@ -187,11 +174,8 @@ export class PractitionerRoleNotAvailable extends fhir.BackboneElement {
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'PractitionerRole.notAvailable' }
-    if (!this['description']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property description fhir: PractitionerRole.notAvailable.description:string', expression: [expression] });
-    }
-    if (this["description"]) { issues.push(...this.description.doModelValidation(expression+'.description')); }
-    if (this["during"]) { issues.push(...this.during.doModelValidation(expression+'.during')); }
+    this.vReqS('description',expression)
+    this.vOptS('during',expression)
     return issues;
   }
 }
@@ -376,34 +360,26 @@ export class PractitionerRole extends fhir.DomainResource {
     else { this.endpoint = []; }
   }
   /**
-   * Preferred-bound Value Set for specialty (PractitionerRole.specialty)
-   */
-  public static get specialtyPreferredCodings():C80PracticeCodingType {
-    return C80PracticeCodings;
-  }
-  /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'PractitionerRole' }
-    if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType fhir: PractitionerRole.resourceType:"PractitionerRole"', expression: [expression] });
-    }
-    if (this["identifier"]) { this.identifier.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.identifier[${i}]`)); }) }
-    if (this["active"]) { issues.push(...this.active.doModelValidation(expression+'.active')); }
-    if (this["period"]) { issues.push(...this.period.doModelValidation(expression+'.period')); }
-    if (this["practitioner"]) { issues.push(...this.practitioner.doModelValidation(expression+'.practitioner')); }
-    if (this["organization"]) { issues.push(...this.organization.doModelValidation(expression+'.organization')); }
-    if (this["code"]) { this.code.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.code[${i}]`)); }) }
-    if (this["specialty"]) { this.specialty.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.specialty[${i}]`)); }) }
-    if (this["location"]) { this.location.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.location[${i}]`)); }) }
-    if (this["healthcareService"]) { this.healthcareService.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.healthcareService[${i}]`)); }) }
-    if (this["telecom"]) { this.telecom.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.telecom[${i}]`)); }) }
-    if (this["availableTime"]) { this.availableTime.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.availableTime[${i}]`)); }) }
-    if (this["notAvailable"]) { this.notAvailable.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.notAvailable[${i}]`)); }) }
-    if (this["availabilityExceptions"]) { issues.push(...this.availabilityExceptions.doModelValidation(expression+'.availabilityExceptions')); }
-    if (this["endpoint"]) { this.endpoint.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.endpoint[${i}]`)); }) }
+    this.vReqS('resourceType',expression)
+    this.vOptA('identifier',expression)
+    this.vOptS('active',expression)
+    this.vOptS('period',expression)
+    this.vOptS('practitioner',expression)
+    this.vOptS('organization',expression)
+    this.vOptA('code',expression)
+    this.vOptA('specialty',expression)
+    this.vOptA('location',expression)
+    this.vOptA('healthcareService',expression)
+    this.vOptA('telecom',expression)
+    this.vOptA('availableTime',expression)
+    this.vOptA('notAvailable',expression)
+    this.vOptS('availabilityExceptions',expression)
+    this.vOptA('endpoint',expression)
     return issues;
   }
 }

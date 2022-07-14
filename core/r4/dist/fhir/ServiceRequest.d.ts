@@ -372,41 +372,6 @@ export declare class ServiceRequest extends fhir.DomainResource {
      */
     constructor(source?: Partial<ServiceRequestArgs>, options?: fhir.FhirConstructorOptions);
     /**
-     * Required-bound Value Set for status (ServiceRequest.status)
-     */
-    static get statusRequiredCodes(): {
-        readonly Active: "active";
-        readonly Completed: "completed";
-        readonly Draft: "draft";
-        readonly EnteredInError: "entered-in-error";
-        readonly OnHold: "on-hold";
-        readonly Revoked: "revoked";
-        readonly Unknown: "unknown";
-    };
-    /**
-     * Required-bound Value Set for intent (ServiceRequest.intent)
-     */
-    static get intentRequiredCodes(): {
-        readonly Directive: "directive";
-        readonly FillerOrder: "filler-order";
-        readonly InstanceOrder: "instance-order";
-        readonly Option: "option";
-        readonly Order: "order";
-        readonly OriginalOrder: "original-order";
-        readonly Plan: "plan";
-        readonly Proposal: "proposal";
-        readonly ReflexOrder: "reflex-order";
-    };
-    /**
-     * Required-bound Value Set for priority (ServiceRequest.priority)
-     */
-    static get priorityRequiredCodes(): {
-        readonly ASAP: "asap";
-        readonly Routine: "routine";
-        readonly STAT: "stat";
-        readonly Urgent: "urgent";
-    };
-    /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
     doModelValidation(expression?: string): fhir.FtsIssue[];

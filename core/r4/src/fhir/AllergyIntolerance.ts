@@ -6,45 +6,45 @@
 import * as fhir from '../fhir.js';
 
 // @ts-ignore
-import { SubstanceCodings, SubstanceCodingType,} from '../fhirValueSets/SubstanceCodings.js';
-// @ts-ignore
 import { SubstanceCodes,  SubstanceCodeType } from '../fhirValueSets/SubstanceCodes.js';
 // @ts-ignore
-import { ClinicalFindingsCodings, ClinicalFindingsCodingType,} from '../fhirValueSets/ClinicalFindingsCodings.js';
+import { SubstanceVsValidation } from '../fhirValueSets/SubstanceVsValidation.js';
 // @ts-ignore
 import { ClinicalFindingsCodes,  ClinicalFindingsCodeType } from '../fhirValueSets/ClinicalFindingsCodes.js';
 // @ts-ignore
-import { ReactionEventSeverityCodings, ReactionEventSeverityCodingType,} from '../fhirValueSets/ReactionEventSeverityCodings.js';
+import { ClinicalFindingsVsValidation } from '../fhirValueSets/ClinicalFindingsVsValidation.js';
 // @ts-ignore
 import { ReactionEventSeverityCodes,  ReactionEventSeverityCodeType } from '../fhirValueSets/ReactionEventSeverityCodes.js';
 // @ts-ignore
-import { RouteCodings, RouteCodingType,} from '../fhirValueSets/RouteCodings.js';
+import { ReactionEventSeverityVsValidation } from '../fhirValueSets/ReactionEventSeverityVsValidation.js';
 // @ts-ignore
 import { RouteCodes,  RouteCodeType } from '../fhirValueSets/RouteCodes.js';
 // @ts-ignore
-import { AllergyintoleranceClinicalCodings, AllergyintoleranceClinicalCodingType,} from '../fhirValueSets/AllergyintoleranceClinicalCodings.js';
+import { RouteVsValidation } from '../fhirValueSets/RouteVsValidation.js';
 // @ts-ignore
 import { AllergyintoleranceClinicalCodes,  AllergyintoleranceClinicalCodeType } from '../fhirValueSets/AllergyintoleranceClinicalCodes.js';
 // @ts-ignore
-import { AllergyintoleranceVerificationCodings, AllergyintoleranceVerificationCodingType,} from '../fhirValueSets/AllergyintoleranceVerificationCodings.js';
+import { AllergyintoleranceClinicalVsValidation } from '../fhirValueSets/AllergyintoleranceClinicalVsValidation.js';
 // @ts-ignore
 import { AllergyintoleranceVerificationCodes,  AllergyintoleranceVerificationCodeType } from '../fhirValueSets/AllergyintoleranceVerificationCodes.js';
 // @ts-ignore
-import { AllergyIntoleranceTypeCodings, AllergyIntoleranceTypeCodingType,} from '../fhirValueSets/AllergyIntoleranceTypeCodings.js';
+import { AllergyintoleranceVerificationVsValidation } from '../fhirValueSets/AllergyintoleranceVerificationVsValidation.js';
 // @ts-ignore
 import { AllergyIntoleranceTypeCodes,  AllergyIntoleranceTypeCodeType } from '../fhirValueSets/AllergyIntoleranceTypeCodes.js';
 // @ts-ignore
-import { AllergyIntoleranceCategoryCodings, AllergyIntoleranceCategoryCodingType,} from '../fhirValueSets/AllergyIntoleranceCategoryCodings.js';
+import { AllergyIntoleranceTypeVsValidation } from '../fhirValueSets/AllergyIntoleranceTypeVsValidation.js';
 // @ts-ignore
 import { AllergyIntoleranceCategoryCodes,  AllergyIntoleranceCategoryCodeType } from '../fhirValueSets/AllergyIntoleranceCategoryCodes.js';
 // @ts-ignore
-import { AllergyIntoleranceCriticalityCodings, AllergyIntoleranceCriticalityCodingType,} from '../fhirValueSets/AllergyIntoleranceCriticalityCodings.js';
+import { AllergyIntoleranceCategoryVsValidation } from '../fhirValueSets/AllergyIntoleranceCategoryVsValidation.js';
 // @ts-ignore
 import { AllergyIntoleranceCriticalityCodes,  AllergyIntoleranceCriticalityCodeType } from '../fhirValueSets/AllergyIntoleranceCriticalityCodes.js';
 // @ts-ignore
-import { AllergyintoleranceCodings, AllergyintoleranceCodingType,} from '../fhirValueSets/AllergyintoleranceCodings.js';
+import { AllergyIntoleranceCriticalityVsValidation } from '../fhirValueSets/AllergyIntoleranceCriticalityVsValidation.js';
 // @ts-ignore
 import { AllergyintoleranceCodes,  AllergyintoleranceCodeType } from '../fhirValueSets/AllergyintoleranceCodes.js';
+// @ts-ignore
+import { AllergyintoleranceVsValidation } from '../fhirValueSets/AllergyintoleranceVsValidation.js';
 /**
  * Valid arguments for the AllergyIntoleranceReaction type.
  */
@@ -155,34 +155,18 @@ export class AllergyIntoleranceReaction extends fhir.BackboneElement {
     else { this.note = []; }
   }
   /**
-   * Required-bound Value Set for severity (AllergyIntolerance.reaction.severity)
-   */
-  public static get severityRequiredCodes() {
-    return ReactionEventSeverityCodes;
-  }
-  /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'AllergyIntolerance.reaction' }
-    if (this["substance"]) { issues.push(...this.substance.doModelValidation(expression+'.substance')); }
-    if (!this['manifestation']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property manifestation fhir: AllergyIntolerance.reaction.manifestation:CodeableConcept', expression: [expression] });
-    } else if (!Array.isArray(this.manifestation)) {
-      issues.push({ severity: 'error', code: 'structure', diagnostics: 'Found scalar in array property manifestation fhir: AllergyIntolerance.reaction.manifestation:CodeableConcept', expression: [expression] });
-    } else if (this.manifestation.length === 0) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property manifestation fhir: AllergyIntolerance.reaction.manifestation:CodeableConcept', expression: [expression] });
-    }
-    if (this["manifestation"]) { this.manifestation.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.manifestation[${i}]`)); }) }
-    if (this["description"]) { issues.push(...this.description.doModelValidation(expression+'.description')); }
-    if (this["onset"]) { issues.push(...this.onset.doModelValidation(expression+'.onset')); }
-    if (this['severity'] && (!Object.values(ReactionEventSeverityCodes).includes(this.severity.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'severity (AllergyIntolerance.reaction.severity) of type code is missing code for Required binding to: ReactionEventSeverity', expression: [expression] });
-    }
-    if (this["severity"]) { issues.push(...this.severity.doModelValidation(expression+'.severity')); }
-    if (this["exposureRoute"]) { issues.push(...this.exposureRoute.doModelValidation(expression+'.exposureRoute')); }
-    if (this["note"]) { this.note.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.note[${i}]`)); }) }
+    this.vOptS('substance',expression)
+    this.vReqA('manifestation',expression)
+    this.vOptS('description',expression)
+    this.vOptS('onset',expression)
+    this.vOptSV('severity',expression,'ReactionEventSeverity',ReactionEventSeverityVsValidation,'r')
+    this.vOptS('exposureRoute',expression)
+    this.vOptA('note',expression)
     return issues;
   }
 }
@@ -442,81 +426,28 @@ export class AllergyIntolerance extends fhir.DomainResource {
     else { this.reaction = []; }
   }
   /**
-   * Required-bound Value Set for clinicalStatus (AllergyIntolerance.clinicalStatus)
-   */
-  public static get clinicalStatusRequiredCodes() {
-    return AllergyintoleranceClinicalCodes;
-  }
-  /**
-   * Required-bound Value Set for verificationStatus (AllergyIntolerance.verificationStatus)
-   */
-  public static get verificationStatusRequiredCodes() {
-    return AllergyintoleranceVerificationCodes;
-  }
-  /**
-   * Required-bound Value Set for type (AllergyIntolerance.type)
-   */
-  public static get typeRequiredCodes() {
-    return AllergyIntoleranceTypeCodes;
-  }
-  /**
-   * Required-bound Value Set for category (AllergyIntolerance.category)
-   */
-  public static get categoryRequiredCodes() {
-    return AllergyIntoleranceCategoryCodes;
-  }
-  /**
-   * Required-bound Value Set for criticality (AllergyIntolerance.criticality)
-   */
-  public static get criticalityRequiredCodes() {
-    return AllergyIntoleranceCriticalityCodes;
-  }
-  /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'AllergyIntolerance' }
-    if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType fhir: AllergyIntolerance.resourceType:"AllergyIntolerance"', expression: [expression] });
-    }
-    if (this["identifier"]) { this.identifier.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.identifier[${i}]`)); }) }
-    if (this['clinicalStatus'] && (!this.clinicalStatus.hasCodingFromObject(AllergyintoleranceClinicalCodings))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'clinicalStatus (AllergyIntolerance.clinicalStatus) of type CodeableConcept is missing code for Required binding to: AllergyintoleranceClinical', expression: [expression] });
-    }
-    if (this["clinicalStatus"]) { issues.push(...this.clinicalStatus.doModelValidation(expression+'.clinicalStatus')); }
-    if (this['verificationStatus'] && (!this.verificationStatus.hasCodingFromObject(AllergyintoleranceVerificationCodings))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'verificationStatus (AllergyIntolerance.verificationStatus) of type CodeableConcept is missing code for Required binding to: AllergyintoleranceVerification', expression: [expression] });
-    }
-    if (this["verificationStatus"]) { issues.push(...this.verificationStatus.doModelValidation(expression+'.verificationStatus')); }
-    if (this['type'] && (!Object.values(AllergyIntoleranceTypeCodes).includes(this.type.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'type (AllergyIntolerance.type) of type code is missing code for Required binding to: AllergyIntoleranceType', expression: [expression] });
-    }
-    if (this["type"]) { issues.push(...this.type.doModelValidation(expression+'.type')); }
-    if (this['category']) {
-      this.category.forEach((v) => {
-        if (!Object.values(AllergyIntoleranceCategoryCodes).includes(v.value as any)) {
-          issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'category (AllergyIntolerance.category) of type code is missing code for Required binding to: AllergyIntoleranceCategory', expression: [expression] });
-        }
-      });
-    }
-    if (this["category"]) { this.category.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.category[${i}]`)); }) }
-    if (this['criticality'] && (!Object.values(AllergyIntoleranceCriticalityCodes).includes(this.criticality.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'criticality (AllergyIntolerance.criticality) of type code is missing code for Required binding to: AllergyIntoleranceCriticality', expression: [expression] });
-    }
-    if (this["criticality"]) { issues.push(...this.criticality.doModelValidation(expression+'.criticality')); }
-    if (this["code"]) { issues.push(...this.code.doModelValidation(expression+'.code')); }
-    if (!this['patient']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property patient fhir: AllergyIntolerance.patient:Reference', expression: [expression] });
-    }
-    if (this["patient"]) { issues.push(...this.patient.doModelValidation(expression+'.patient')); }
-    if (this["encounter"]) { issues.push(...this.encounter.doModelValidation(expression+'.encounter')); }
-    if (this["recordedDate"]) { issues.push(...this.recordedDate.doModelValidation(expression+'.recordedDate')); }
-    if (this["recorder"]) { issues.push(...this.recorder.doModelValidation(expression+'.recorder')); }
-    if (this["asserter"]) { issues.push(...this.asserter.doModelValidation(expression+'.asserter')); }
-    if (this["lastOccurrence"]) { issues.push(...this.lastOccurrence.doModelValidation(expression+'.lastOccurrence')); }
-    if (this["note"]) { this.note.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.note[${i}]`)); }) }
-    if (this["reaction"]) { this.reaction.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.reaction[${i}]`)); }) }
+    this.vReqS('resourceType',expression)
+    this.vOptA('identifier',expression)
+    this.vOptSV('clinicalStatus',expression,'AllergyintoleranceClinical',AllergyintoleranceClinicalVsValidation,'r')
+    this.vOptSV('verificationStatus',expression,'AllergyintoleranceVerification',AllergyintoleranceVerificationVsValidation,'r')
+    this.vOptSV('type',expression,'AllergyIntoleranceType',AllergyIntoleranceTypeVsValidation,'r')
+    this.vOptAV('category',expression,'AllergyIntoleranceCategory',AllergyIntoleranceCategoryVsValidation,'r')
+    this.vOptSV('criticality',expression,'AllergyIntoleranceCriticality',AllergyIntoleranceCriticalityVsValidation,'r')
+    this.vOptS('code',expression)
+    this.vReqS('patient',expression)
+    this.vOptS('encounter',expression)
+    this.vOptS('onset',expression)
+    this.vOptS('recordedDate',expression)
+    this.vOptS('recorder',expression)
+    this.vOptS('asserter',expression)
+    this.vOptS('lastOccurrence',expression)
+    this.vOptA('note',expression)
+    this.vOptA('reaction',expression)
     return issues;
   }
 }

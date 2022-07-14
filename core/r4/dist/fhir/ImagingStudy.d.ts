@@ -1,6 +1,4 @@
 import * as fhir from '../fhir.js';
-import { SeriesPerformerFunctionCodingType } from '../fhirValueSets/SeriesPerformerFunctionCodings.js';
-import { DicomCid29AcquisitionModalityCodingType } from '../fhirValueSets/DicomCid29AcquisitionModalityCodings.js';
 import { ImagingstudyStatusCodeType } from '../fhirValueSets/ImagingstudyStatusCodes.js';
 /**
  * Valid arguments for the ImagingStudySeriesPerformer type.
@@ -35,10 +33,6 @@ export declare class ImagingStudySeriesPerformer extends fhir.BackboneElement {
      * Default constructor for ImagingStudySeriesPerformer - initializes any required elements to null if a value is not provided.
      */
     constructor(source?: Partial<ImagingStudySeriesPerformerArgs>, options?: fhir.FhirConstructorOptions);
-    /**
-     * Extensible-bound Value Set for function (ImagingStudy.series.performer.function)
-     */
-    static get functionExtensibleCodings(): SeriesPerformerFunctionCodingType;
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
@@ -243,10 +237,6 @@ export declare class ImagingStudySeries extends fhir.BackboneElement {
      * Default constructor for ImagingStudySeries - initializes any required elements to null if a value is not provided.
      */
     constructor(source?: Partial<ImagingStudySeriesArgs>, options?: fhir.FhirConstructorOptions);
-    /**
-     * Extensible-bound Value Set for modality (ImagingStudy.series.modality)
-     */
-    static get modalityExtensibleCodings(): DicomCid29AcquisitionModalityCodingType;
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
@@ -457,20 +447,6 @@ export declare class ImagingStudy extends fhir.DomainResource {
      * Default constructor for ImagingStudy - initializes any required elements to null if a value is not provided.
      */
     constructor(source?: Partial<ImagingStudyArgs>, options?: fhir.FhirConstructorOptions);
-    /**
-     * Required-bound Value Set for status (ImagingStudy.status)
-     */
-    static get statusRequiredCodes(): {
-        readonly Available: "available";
-        readonly Cancelled: "cancelled";
-        readonly EnteredInError: "entered-in-error";
-        readonly Registered: "registered";
-        readonly Unknown: "unknown";
-    };
-    /**
-     * Extensible-bound Value Set for modality (ImagingStudy.modality)
-     */
-    static get modalityExtensibleCodings(): DicomCid29AcquisitionModalityCodingType;
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */

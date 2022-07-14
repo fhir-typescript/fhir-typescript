@@ -6,13 +6,13 @@
 import * as fhir from '../fhir.js';
 
 // @ts-ignore
-import { OperationParameterUseCodings, OperationParameterUseCodingType,} from '../fhirValueSets/OperationParameterUseCodings.js';
-// @ts-ignore
 import { OperationParameterUseCodes,  OperationParameterUseCodeType } from '../fhirValueSets/OperationParameterUseCodes.js';
 // @ts-ignore
-import { AllTypesCodings, AllTypesCodingType,} from '../fhirValueSets/AllTypesCodings.js';
+import { OperationParameterUseVsValidation } from '../fhirValueSets/OperationParameterUseVsValidation.js';
 // @ts-ignore
 import { AllTypesCodes,  AllTypesCodeType } from '../fhirValueSets/AllTypesCodes.js';
+// @ts-ignore
+import { AllTypesVsValidation } from '../fhirValueSets/AllTypesVsValidation.js';
 /**
  * Valid arguments for the ParameterDefinition type.
  */
@@ -155,42 +155,18 @@ export class ParameterDefinition extends fhir.FhirElement {
     }
   }
   /**
-   * Required-bound Value Set for use (ParameterDefinition.use)
-   */
-  public static get useRequiredCodes() {
-    return OperationParameterUseCodes;
-  }
-  /**
-   * Required-bound Value Set for type (ParameterDefinition.type)
-   */
-  public static get typeRequiredCodes() {
-    return AllTypesCodes;
-  }
-  /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'ParameterDefinition' }
-    if (this["name"]) { issues.push(...this.name.doModelValidation(expression+'.name')); }
-    if (!this['use']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property use fhir: ParameterDefinition.use:code', expression: [expression] });
-    }
-    if (this['use'] && (!Object.values(OperationParameterUseCodes).includes(this.use.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'use (ParameterDefinition.use) of type code is missing code for Required binding to: OperationParameterUse', expression: [expression] });
-    }
-    if (this["use"]) { issues.push(...this.use.doModelValidation(expression+'.use')); }
-    if (this["min"]) { issues.push(...this.min.doModelValidation(expression+'.min')); }
-    if (this["max"]) { issues.push(...this.max.doModelValidation(expression+'.max')); }
-    if (this["documentation"]) { issues.push(...this.documentation.doModelValidation(expression+'.documentation')); }
-    if (!this['type']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property type fhir: ParameterDefinition.type:code', expression: [expression] });
-    }
-    if (this['type'] && (!Object.values(AllTypesCodes).includes(this.type.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'type (ParameterDefinition.type) of type code is missing code for Required binding to: AllTypes', expression: [expression] });
-    }
-    if (this["type"]) { issues.push(...this.type.doModelValidation(expression+'.type')); }
-    if (this["profile"]) { issues.push(...this.profile.doModelValidation(expression+'.profile')); }
+    this.vOptS('name',expression)
+    this.vReqSV('use',expression,'OperationParameterUse',OperationParameterUseVsValidation,'r')
+    this.vOptS('min',expression)
+    this.vOptS('max',expression)
+    this.vOptS('documentation',expression)
+    this.vReqSV('type',expression,'AllTypes',AllTypesVsValidation,'r')
+    this.vOptS('profile',expression)
     return issues;
   }
 }

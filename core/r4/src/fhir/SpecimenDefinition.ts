@@ -6,41 +6,41 @@
 import * as fhir from '../fhir.js';
 
 // @ts-ignore
-import { ContainerMaterialCodings, ContainerMaterialCodingType,} from '../fhirValueSets/ContainerMaterialCodings.js';
-// @ts-ignore
 import { ContainerMaterialCodes,  ContainerMaterialCodeType } from '../fhirValueSets/ContainerMaterialCodes.js';
 // @ts-ignore
-import { SpecimenContainerTypeCodings, SpecimenContainerTypeCodingType,} from '../fhirValueSets/SpecimenContainerTypeCodings.js';
+import { ContainerMaterialVsValidation } from '../fhirValueSets/ContainerMaterialVsValidation.js';
 // @ts-ignore
 import { SpecimenContainerTypeCodes,  SpecimenContainerTypeCodeType } from '../fhirValueSets/SpecimenContainerTypeCodes.js';
 // @ts-ignore
-import { ContainerCapCodings, ContainerCapCodingType,} from '../fhirValueSets/ContainerCapCodings.js';
+import { SpecimenContainerTypeVsValidation } from '../fhirValueSets/SpecimenContainerTypeVsValidation.js';
 // @ts-ignore
 import { ContainerCapCodes,  ContainerCapCodeType } from '../fhirValueSets/ContainerCapCodes.js';
 // @ts-ignore
-import { HandlingConditionCodings, HandlingConditionCodingType,} from '../fhirValueSets/HandlingConditionCodings.js';
+import { ContainerCapVsValidation } from '../fhirValueSets/ContainerCapVsValidation.js';
 // @ts-ignore
 import { HandlingConditionCodes,  HandlingConditionCodeType } from '../fhirValueSets/HandlingConditionCodes.js';
 // @ts-ignore
-import { V20487Codings, V20487CodingType,} from '../fhirValueSets/V20487Codings.js';
+import { HandlingConditionVsValidation } from '../fhirValueSets/HandlingConditionVsValidation.js';
 // @ts-ignore
 import { V20487Codes,  V20487CodeType } from '../fhirValueSets/V20487Codes.js';
 // @ts-ignore
-import { SpecimenContainedPreferenceCodings, SpecimenContainedPreferenceCodingType,} from '../fhirValueSets/SpecimenContainedPreferenceCodings.js';
+import { V20487VsValidation } from '../fhirValueSets/V20487VsValidation.js';
 // @ts-ignore
 import { SpecimenContainedPreferenceCodes,  SpecimenContainedPreferenceCodeType } from '../fhirValueSets/SpecimenContainedPreferenceCodes.js';
 // @ts-ignore
-import { RejectionCriteriaCodings, RejectionCriteriaCodingType,} from '../fhirValueSets/RejectionCriteriaCodings.js';
+import { SpecimenContainedPreferenceVsValidation } from '../fhirValueSets/SpecimenContainedPreferenceVsValidation.js';
 // @ts-ignore
 import { RejectionCriteriaCodes,  RejectionCriteriaCodeType } from '../fhirValueSets/RejectionCriteriaCodes.js';
 // @ts-ignore
-import { PreparePatientPriorSpecimenCollectionCodings, PreparePatientPriorSpecimenCollectionCodingType,} from '../fhirValueSets/PreparePatientPriorSpecimenCollectionCodings.js';
+import { RejectionCriteriaVsValidation } from '../fhirValueSets/RejectionCriteriaVsValidation.js';
 // @ts-ignore
 import { PreparePatientPriorSpecimenCollectionCodes,  PreparePatientPriorSpecimenCollectionCodeType } from '../fhirValueSets/PreparePatientPriorSpecimenCollectionCodes.js';
 // @ts-ignore
-import { SpecimenCollectionCodings, SpecimenCollectionCodingType,} from '../fhirValueSets/SpecimenCollectionCodings.js';
+import { PreparePatientPriorSpecimenCollectionVsValidation } from '../fhirValueSets/PreparePatientPriorSpecimenCollectionVsValidation.js';
 // @ts-ignore
 import { SpecimenCollectionCodes,  SpecimenCollectionCodeType } from '../fhirValueSets/SpecimenCollectionCodes.js';
+// @ts-ignore
+import { SpecimenCollectionVsValidation } from '../fhirValueSets/SpecimenCollectionVsValidation.js';
 /**
  * Valid arguments for the SpecimenDefinitionTypeTestedContainerAdditive type.
  */
@@ -91,9 +91,7 @@ export class SpecimenDefinitionTypeTestedContainerAdditive extends fhir.Backbone
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'SpecimenDefinition.typeTested.container.additive' }
-    if (!this['additive']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property additive fhir: SpecimenDefinition.typeTested.container.additive.additive[x]:', expression: [expression] });
-    }
+    this.vReqS('additive',expression)
     return issues;
   }
 }
@@ -226,13 +224,14 @@ export class SpecimenDefinitionTypeTestedContainer extends fhir.BackboneElement 
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'SpecimenDefinition.typeTested.container' }
-    if (this["material"]) { issues.push(...this.material.doModelValidation(expression+'.material')); }
-    if (this["type"]) { issues.push(...this.type.doModelValidation(expression+'.type')); }
-    if (this["cap"]) { issues.push(...this.cap.doModelValidation(expression+'.cap')); }
-    if (this["description"]) { issues.push(...this.description.doModelValidation(expression+'.description')); }
-    if (this["capacity"]) { issues.push(...this.capacity.doModelValidation(expression+'.capacity')); }
-    if (this["additive"]) { this.additive.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.additive[${i}]`)); }) }
-    if (this["preparation"]) { issues.push(...this.preparation.doModelValidation(expression+'.preparation')); }
+    this.vOptS('material',expression)
+    this.vOptS('type',expression)
+    this.vOptS('cap',expression)
+    this.vOptS('description',expression)
+    this.vOptS('capacity',expression)
+    this.vOptS('minimumVolume',expression)
+    this.vOptA('additive',expression)
+    this.vOptS('preparation',expression)
     return issues;
   }
 }
@@ -306,10 +305,10 @@ export class SpecimenDefinitionTypeTestedHandling extends fhir.BackboneElement {
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'SpecimenDefinition.typeTested.handling' }
-    if (this["temperatureQualifier"]) { issues.push(...this.temperatureQualifier.doModelValidation(expression+'.temperatureQualifier')); }
-    if (this["temperatureRange"]) { issues.push(...this.temperatureRange.doModelValidation(expression+'.temperatureRange')); }
-    if (this["maxDuration"]) { issues.push(...this.maxDuration.doModelValidation(expression+'.maxDuration')); }
-    if (this["instruction"]) { issues.push(...this.instruction.doModelValidation(expression+'.instruction')); }
+    this.vOptS('temperatureQualifier',expression)
+    this.vOptS('temperatureRange',expression)
+    this.vOptS('maxDuration',expression)
+    this.vOptS('instruction',expression)
     return issues;
   }
 }
@@ -433,31 +432,19 @@ export class SpecimenDefinitionTypeTested extends fhir.BackboneElement {
     else { this.handling = []; }
   }
   /**
-   * Required-bound Value Set for preference (SpecimenDefinition.typeTested.preference)
-   */
-  public static get preferenceRequiredCodes() {
-    return SpecimenContainedPreferenceCodes;
-  }
-  /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'SpecimenDefinition.typeTested' }
-    if (this["isDerived"]) { issues.push(...this.isDerived.doModelValidation(expression+'.isDerived')); }
-    if (this["type"]) { issues.push(...this.type.doModelValidation(expression+'.type')); }
-    if (!this['preference']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property preference fhir: SpecimenDefinition.typeTested.preference:code', expression: [expression] });
-    }
-    if (this['preference'] && (!Object.values(SpecimenContainedPreferenceCodes).includes(this.preference.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'preference (SpecimenDefinition.typeTested.preference) of type code is missing code for Required binding to: SpecimenContainedPreference', expression: [expression] });
-    }
-    if (this["preference"]) { issues.push(...this.preference.doModelValidation(expression+'.preference')); }
-    if (this["container"]) { issues.push(...this.container.doModelValidation(expression+'.container')); }
-    if (this["requirement"]) { issues.push(...this.requirement.doModelValidation(expression+'.requirement')); }
-    if (this["retentionTime"]) { issues.push(...this.retentionTime.doModelValidation(expression+'.retentionTime')); }
-    if (this["rejectionCriterion"]) { this.rejectionCriterion.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.rejectionCriterion[${i}]`)); }) }
-    if (this["handling"]) { this.handling.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.handling[${i}]`)); }) }
+    this.vOptS('isDerived',expression)
+    this.vOptS('type',expression)
+    this.vReqSV('preference',expression,'SpecimenContainedPreference',SpecimenContainedPreferenceVsValidation,'r')
+    this.vOptS('container',expression)
+    this.vOptS('requirement',expression)
+    this.vOptS('retentionTime',expression)
+    this.vOptA('rejectionCriterion',expression)
+    this.vOptA('handling',expression)
     return issues;
   }
 }
@@ -561,15 +548,13 @@ export class SpecimenDefinition extends fhir.DomainResource {
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'SpecimenDefinition' }
-    if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType fhir: SpecimenDefinition.resourceType:"SpecimenDefinition"', expression: [expression] });
-    }
-    if (this["identifier"]) { issues.push(...this.identifier.doModelValidation(expression+'.identifier')); }
-    if (this["typeCollected"]) { issues.push(...this.typeCollected.doModelValidation(expression+'.typeCollected')); }
-    if (this["patientPreparation"]) { this.patientPreparation.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.patientPreparation[${i}]`)); }) }
-    if (this["timeAspect"]) { issues.push(...this.timeAspect.doModelValidation(expression+'.timeAspect')); }
-    if (this["collection"]) { this.collection.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.collection[${i}]`)); }) }
-    if (this["typeTested"]) { this.typeTested.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.typeTested[${i}]`)); }) }
+    this.vReqS('resourceType',expression)
+    this.vOptS('identifier',expression)
+    this.vOptS('typeCollected',expression)
+    this.vOptA('patientPreparation',expression)
+    this.vOptS('timeAspect',expression)
+    this.vOptA('collection',expression)
+    this.vOptA('typeTested',expression)
     return issues;
   }
 }

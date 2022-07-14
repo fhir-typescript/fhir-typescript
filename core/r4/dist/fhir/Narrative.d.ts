@@ -42,15 +42,6 @@ export declare class Narrative extends fhir.FhirElement {
      */
     constructor(source?: Partial<NarrativeArgs>, options?: fhir.FhirConstructorOptions);
     /**
-     * Required-bound Value Set for status (Narrative.status)
-     */
-    static get statusRequiredCodes(): {
-        readonly Additional: "additional";
-        readonly Empty: "empty";
-        readonly Extensions: "extensions";
-        readonly Generated: "generated";
-    };
-    /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
     doModelValidation(expression?: string): fhir.FtsIssue[];

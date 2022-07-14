@@ -94,14 +94,6 @@ export declare class Flag extends fhir.DomainResource {
      */
     constructor(source?: Partial<FlagArgs>, options?: fhir.FhirConstructorOptions);
     /**
-     * Required-bound Value Set for status (Flag.status)
-     */
-    static get statusRequiredCodes(): {
-        readonly Active: "active";
-        readonly EnteredInError: "entered-in-error";
-        readonly Inactive: "inactive";
-    };
-    /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
     doModelValidation(expression?: string): fhir.FtsIssue[];

@@ -6,21 +6,21 @@
 import * as fhir from '../fhir.js';
 
 // @ts-ignore
-import { SupplyrequestStatusCodings, SupplyrequestStatusCodingType,} from '../fhirValueSets/SupplyrequestStatusCodings.js';
-// @ts-ignore
 import { SupplyrequestStatusCodes,  SupplyrequestStatusCodeType } from '../fhirValueSets/SupplyrequestStatusCodes.js';
 // @ts-ignore
-import { SupplyrequestKindCodings, SupplyrequestKindCodingType,} from '../fhirValueSets/SupplyrequestKindCodings.js';
+import { SupplyrequestStatusVsValidation } from '../fhirValueSets/SupplyrequestStatusVsValidation.js';
 // @ts-ignore
 import { SupplyrequestKindCodes,  SupplyrequestKindCodeType } from '../fhirValueSets/SupplyrequestKindCodes.js';
 // @ts-ignore
-import { RequestPriorityCodings, RequestPriorityCodingType,} from '../fhirValueSets/RequestPriorityCodings.js';
+import { SupplyrequestKindVsValidation } from '../fhirValueSets/SupplyrequestKindVsValidation.js';
 // @ts-ignore
 import { RequestPriorityCodes,  RequestPriorityCodeType } from '../fhirValueSets/RequestPriorityCodes.js';
 // @ts-ignore
-import { SupplyrequestReasonCodings, SupplyrequestReasonCodingType,} from '../fhirValueSets/SupplyrequestReasonCodings.js';
+import { RequestPriorityVsValidation } from '../fhirValueSets/RequestPriorityVsValidation.js';
 // @ts-ignore
 import { SupplyrequestReasonCodes,  SupplyrequestReasonCodeType } from '../fhirValueSets/SupplyrequestReasonCodes.js';
+// @ts-ignore
+import { SupplyrequestReasonVsValidation } from '../fhirValueSets/SupplyrequestReasonVsValidation.js';
 /**
  * Valid arguments for the SupplyRequestParameter type.
  */
@@ -89,7 +89,8 @@ export class SupplyRequestParameter extends fhir.BackboneElement {
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'SupplyRequest.parameter' }
-    if (this["code"]) { issues.push(...this.code.doModelValidation(expression+'.code')); }
+    this.vOptS('code',expression)
+    this.vOptS('value',expression)
     return issues;
   }
 }
@@ -322,51 +323,27 @@ export class SupplyRequest extends fhir.DomainResource {
     if (source['deliverTo']) { this.deliverTo = new fhir.Reference(source.deliverTo); }
   }
   /**
-   * Required-bound Value Set for status (SupplyRequest.status)
-   */
-  public static get statusRequiredCodes() {
-    return SupplyrequestStatusCodes;
-  }
-  /**
-   * Required-bound Value Set for priority (SupplyRequest.priority)
-   */
-  public static get priorityRequiredCodes() {
-    return RequestPriorityCodes;
-  }
-  /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'SupplyRequest' }
-    if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType fhir: SupplyRequest.resourceType:"SupplyRequest"', expression: [expression] });
-    }
-    if (this["identifier"]) { this.identifier.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.identifier[${i}]`)); }) }
-    if (this['status'] && (!Object.values(SupplyrequestStatusCodes).includes(this.status.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'status (SupplyRequest.status) of type code is missing code for Required binding to: SupplyrequestStatus', expression: [expression] });
-    }
-    if (this["status"]) { issues.push(...this.status.doModelValidation(expression+'.status')); }
-    if (this["category"]) { issues.push(...this.category.doModelValidation(expression+'.category')); }
-    if (this['priority'] && (!Object.values(RequestPriorityCodes).includes(this.priority.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'priority (SupplyRequest.priority) of type code is missing code for Required binding to: RequestPriority', expression: [expression] });
-    }
-    if (this["priority"]) { issues.push(...this.priority.doModelValidation(expression+'.priority')); }
-    if (!this['item']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property item fhir: SupplyRequest.item[x]:', expression: [expression] });
-    }
-    if (!this['quantity']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property quantity fhir: SupplyRequest.quantity:Quantity', expression: [expression] });
-    }
-    if (this["quantity"]) { issues.push(...this.quantity.doModelValidation(expression+'.quantity')); }
-    if (this["parameter"]) { this.parameter.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.parameter[${i}]`)); }) }
-    if (this["authoredOn"]) { issues.push(...this.authoredOn.doModelValidation(expression+'.authoredOn')); }
-    if (this["requester"]) { issues.push(...this.requester.doModelValidation(expression+'.requester')); }
-    if (this["supplier"]) { this.supplier.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.supplier[${i}]`)); }) }
-    if (this["reasonCode"]) { this.reasonCode.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.reasonCode[${i}]`)); }) }
-    if (this["reasonReference"]) { this.reasonReference.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.reasonReference[${i}]`)); }) }
-    if (this["deliverFrom"]) { issues.push(...this.deliverFrom.doModelValidation(expression+'.deliverFrom')); }
-    if (this["deliverTo"]) { issues.push(...this.deliverTo.doModelValidation(expression+'.deliverTo')); }
+    this.vReqS('resourceType',expression)
+    this.vOptA('identifier',expression)
+    this.vOptSV('status',expression,'SupplyrequestStatus',SupplyrequestStatusVsValidation,'r')
+    this.vOptS('category',expression)
+    this.vOptSV('priority',expression,'RequestPriority',RequestPriorityVsValidation,'r')
+    this.vReqS('item',expression)
+    this.vReqS('quantity',expression)
+    this.vOptA('parameter',expression)
+    this.vOptS('occurrence',expression)
+    this.vOptS('authoredOn',expression)
+    this.vOptS('requester',expression)
+    this.vOptA('supplier',expression)
+    this.vOptA('reasonCode',expression)
+    this.vOptA('reasonReference',expression)
+    this.vOptS('deliverFrom',expression)
+    this.vOptS('deliverTo',expression)
     return issues;
   }
 }

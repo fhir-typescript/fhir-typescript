@@ -6,9 +6,9 @@
 import * as fhir from '../fhir.js';
 
 // @ts-ignore
-import { CurrenciesCodings, CurrenciesCodingType,} from '../fhirValueSets/CurrenciesCodings.js';
-// @ts-ignore
 import { CurrenciesCodes,  CurrenciesCodeType } from '../fhirValueSets/CurrenciesCodes.js';
+// @ts-ignore
+import { CurrenciesVsValidation } from '../fhirValueSets/CurrenciesVsValidation.js';
 /**
  * Valid arguments for the Money type.
  */
@@ -64,22 +64,13 @@ export class Money extends fhir.FhirElement {
     }
   }
   /**
-   * Required-bound Value Set for currency (Money.currency)
-   */
-  public static get currencyRequiredCodes() {
-    return CurrenciesCodes;
-  }
-  /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'Money' }
-    if (this["value"]) { issues.push(...this.value.doModelValidation(expression+'.value')); }
-    if (this['currency'] && (!Object.values(CurrenciesCodes).includes(this.currency.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'currency (Money.currency) of type code is missing code for Required binding to: Currencies', expression: [expression] });
-    }
-    if (this["currency"]) { issues.push(...this.currency.doModelValidation(expression+'.currency')); }
+    this.vOptS('value',expression)
+    this.vOptSV('currency',expression,'Currencies',CurrenciesVsValidation,'r')
     return issues;
   }
 }

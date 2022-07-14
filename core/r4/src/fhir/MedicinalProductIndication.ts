@@ -65,13 +65,8 @@ export class MedicinalProductIndicationOtherTherapy extends fhir.BackboneElement
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'MedicinalProductIndication.otherTherapy' }
-    if (!this['therapyRelationshipType']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property therapyRelationshipType fhir: MedicinalProductIndication.otherTherapy.therapyRelationshipType:CodeableConcept', expression: [expression] });
-    }
-    if (this["therapyRelationshipType"]) { issues.push(...this.therapyRelationshipType.doModelValidation(expression+'.therapyRelationshipType')); }
-    if (!this['medication']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property medication fhir: MedicinalProductIndication.otherTherapy.medication[x]:', expression: [expression] });
-    }
+    this.vReqS('therapyRelationshipType',expression)
+    this.vReqS('medication',expression)
     return issues;
   }
 }
@@ -196,18 +191,16 @@ export class MedicinalProductIndication extends fhir.DomainResource {
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'MedicinalProductIndication' }
-    if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType fhir: MedicinalProductIndication.resourceType:"MedicinalProductIndication"', expression: [expression] });
-    }
-    if (this["subject"]) { this.subject.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.subject[${i}]`)); }) }
-    if (this["diseaseSymptomProcedure"]) { issues.push(...this.diseaseSymptomProcedure.doModelValidation(expression+'.diseaseSymptomProcedure')); }
-    if (this["diseaseStatus"]) { issues.push(...this.diseaseStatus.doModelValidation(expression+'.diseaseStatus')); }
-    if (this["comorbidity"]) { this.comorbidity.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.comorbidity[${i}]`)); }) }
-    if (this["intendedEffect"]) { issues.push(...this.intendedEffect.doModelValidation(expression+'.intendedEffect')); }
-    if (this["duration"]) { issues.push(...this.duration.doModelValidation(expression+'.duration')); }
-    if (this["otherTherapy"]) { this.otherTherapy.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.otherTherapy[${i}]`)); }) }
-    if (this["undesirableEffect"]) { this.undesirableEffect.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.undesirableEffect[${i}]`)); }) }
-    if (this["population"]) { this.population.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.population[${i}]`)); }) }
+    this.vReqS('resourceType',expression)
+    this.vOptA('subject',expression)
+    this.vOptS('diseaseSymptomProcedure',expression)
+    this.vOptS('diseaseStatus',expression)
+    this.vOptA('comorbidity',expression)
+    this.vOptS('intendedEffect',expression)
+    this.vOptS('duration',expression)
+    this.vOptA('otherTherapy',expression)
+    this.vOptA('undesirableEffect',expression)
+    this.vOptA('population',expression)
     return issues;
   }
 }

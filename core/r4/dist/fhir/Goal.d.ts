@@ -1,7 +1,5 @@
 import * as fhir from '../fhir.js';
 import { GoalStatusCodeType } from '../fhirValueSets/GoalStatusCodes.js';
-import { GoalAchievementCodingType } from '../fhirValueSets/GoalAchievementCodings.js';
-import { GoalPriorityCodingType } from '../fhirValueSets/GoalPriorityCodings.js';
 /**
  * Valid arguments for the GoalTarget type.
  */
@@ -271,28 +269,6 @@ export declare class Goal extends fhir.DomainResource {
      * Default constructor for Goal - initializes any required elements to null if a value is not provided.
      */
     constructor(source?: Partial<GoalArgs>, options?: fhir.FhirConstructorOptions);
-    /**
-     * Required-bound Value Set for lifecycleStatus (Goal.lifecycleStatus)
-     */
-    static get lifecycleStatusRequiredCodes(): {
-        readonly Accepted: "accepted";
-        readonly Active: "active";
-        readonly Cancelled: "cancelled";
-        readonly Completed: "completed";
-        readonly EnteredInError: "entered-in-error";
-        readonly OnHold: "on-hold";
-        readonly Planned: "planned";
-        readonly Proposed: "proposed";
-        readonly Rejected: "rejected";
-    };
-    /**
-     * Preferred-bound Value Set for achievementStatus (Goal.achievementStatus)
-     */
-    static get achievementStatusPreferredCodings(): GoalAchievementCodingType;
-    /**
-     * Preferred-bound Value Set for priority (Goal.priority)
-     */
-    static get priorityPreferredCodings(): GoalPriorityCodingType;
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */

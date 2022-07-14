@@ -6,29 +6,29 @@
 import * as fhir from '../fhir.js';
 
 // @ts-ignore
-import { ObservationCodings, ObservationCodingType,} from '../fhirValueSets/ObservationCodings.js';
-// @ts-ignore
 import { ObservationCodes,  ObservationCodeType } from '../fhirValueSets/ObservationCodes.js';
 // @ts-ignore
-import { GoalStatusCodings, GoalStatusCodingType,} from '../fhirValueSets/GoalStatusCodings.js';
+import { ObservationVsValidation } from '../fhirValueSets/ObservationVsValidation.js';
 // @ts-ignore
 import { GoalStatusCodes,  GoalStatusCodeType } from '../fhirValueSets/GoalStatusCodes.js';
 // @ts-ignore
-import { GoalAchievementCodings, GoalAchievementCodingType,} from '../fhirValueSets/GoalAchievementCodings.js';
+import { GoalStatusVsValidation } from '../fhirValueSets/GoalStatusVsValidation.js';
 // @ts-ignore
 import { GoalAchievementCodes,  GoalAchievementCodeType } from '../fhirValueSets/GoalAchievementCodes.js';
 // @ts-ignore
-import { GoalCategoryCodings, GoalCategoryCodingType,} from '../fhirValueSets/GoalCategoryCodings.js';
+import { GoalAchievementVsValidation } from '../fhirValueSets/GoalAchievementVsValidation.js';
 // @ts-ignore
 import { GoalCategoryCodes,  GoalCategoryCodeType } from '../fhirValueSets/GoalCategoryCodes.js';
 // @ts-ignore
-import { GoalPriorityCodings, GoalPriorityCodingType,} from '../fhirValueSets/GoalPriorityCodings.js';
+import { GoalCategoryVsValidation } from '../fhirValueSets/GoalCategoryVsValidation.js';
 // @ts-ignore
 import { GoalPriorityCodes,  GoalPriorityCodeType } from '../fhirValueSets/GoalPriorityCodes.js';
 // @ts-ignore
-import { ClinicalFindingsCodings, ClinicalFindingsCodingType,} from '../fhirValueSets/ClinicalFindingsCodings.js';
+import { GoalPriorityVsValidation } from '../fhirValueSets/GoalPriorityVsValidation.js';
 // @ts-ignore
 import { ClinicalFindingsCodes,  ClinicalFindingsCodeType } from '../fhirValueSets/ClinicalFindingsCodes.js';
+// @ts-ignore
+import { ClinicalFindingsVsValidation } from '../fhirValueSets/ClinicalFindingsVsValidation.js';
 /**
  * Valid arguments for the GoalTarget type.
  */
@@ -135,7 +135,9 @@ export class GoalTarget extends fhir.BackboneElement {
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'Goal.target' }
-    if (this["measure"]) { issues.push(...this.measure.doModelValidation(expression+'.measure')); }
+    this.vOptS('measure',expression)
+    this.vOptS('detail',expression)
+    this.vOptS('due',expression)
     return issues;
   }
 }
@@ -363,59 +365,28 @@ export class Goal extends fhir.DomainResource {
     else { this.outcomeReference = []; }
   }
   /**
-   * Required-bound Value Set for lifecycleStatus (Goal.lifecycleStatus)
-   */
-  public static get lifecycleStatusRequiredCodes() {
-    return GoalStatusCodes;
-  }
-  /**
-   * Preferred-bound Value Set for achievementStatus (Goal.achievementStatus)
-   */
-  public static get achievementStatusPreferredCodings():GoalAchievementCodingType {
-    return GoalAchievementCodings;
-  }
-  /**
-   * Preferred-bound Value Set for priority (Goal.priority)
-   */
-  public static get priorityPreferredCodings():GoalPriorityCodingType {
-    return GoalPriorityCodings;
-  }
-  /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'Goal' }
-    if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType fhir: Goal.resourceType:"Goal"', expression: [expression] });
-    }
-    if (this["identifier"]) { this.identifier.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.identifier[${i}]`)); }) }
-    if (!this['lifecycleStatus']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property lifecycleStatus fhir: Goal.lifecycleStatus:code', expression: [expression] });
-    }
-    if (this['lifecycleStatus'] && (!Object.values(GoalStatusCodes).includes(this.lifecycleStatus.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'lifecycleStatus (Goal.lifecycleStatus) of type code is missing code for Required binding to: GoalStatus', expression: [expression] });
-    }
-    if (this["lifecycleStatus"]) { issues.push(...this.lifecycleStatus.doModelValidation(expression+'.lifecycleStatus')); }
-    if (this["achievementStatus"]) { issues.push(...this.achievementStatus.doModelValidation(expression+'.achievementStatus')); }
-    if (this["category"]) { this.category.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.category[${i}]`)); }) }
-    if (this["priority"]) { issues.push(...this.priority.doModelValidation(expression+'.priority')); }
-    if (!this['description']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property description fhir: Goal.description:CodeableConcept', expression: [expression] });
-    }
-    if (this["description"]) { issues.push(...this.description.doModelValidation(expression+'.description')); }
-    if (!this['subject']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property subject fhir: Goal.subject:Reference', expression: [expression] });
-    }
-    if (this["subject"]) { issues.push(...this.subject.doModelValidation(expression+'.subject')); }
-    if (this["target"]) { this.target.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.target[${i}]`)); }) }
-    if (this["statusDate"]) { issues.push(...this.statusDate.doModelValidation(expression+'.statusDate')); }
-    if (this["statusReason"]) { issues.push(...this.statusReason.doModelValidation(expression+'.statusReason')); }
-    if (this["expressedBy"]) { issues.push(...this.expressedBy.doModelValidation(expression+'.expressedBy')); }
-    if (this["addresses"]) { this.addresses.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.addresses[${i}]`)); }) }
-    if (this["note"]) { this.note.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.note[${i}]`)); }) }
-    if (this["outcomeCode"]) { this.outcomeCode.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.outcomeCode[${i}]`)); }) }
-    if (this["outcomeReference"]) { this.outcomeReference.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.outcomeReference[${i}]`)); }) }
+    this.vReqS('resourceType',expression)
+    this.vOptA('identifier',expression)
+    this.vReqSV('lifecycleStatus',expression,'GoalStatus',GoalStatusVsValidation,'r')
+    this.vOptS('achievementStatus',expression)
+    this.vOptA('category',expression)
+    this.vOptS('priority',expression)
+    this.vReqS('description',expression)
+    this.vReqS('subject',expression)
+    this.vOptS('start',expression)
+    this.vOptA('target',expression)
+    this.vOptS('statusDate',expression)
+    this.vOptS('statusReason',expression)
+    this.vOptS('expressedBy',expression)
+    this.vOptA('addresses',expression)
+    this.vOptA('note',expression)
+    this.vOptA('outcomeCode',expression)
+    this.vOptA('outcomeReference',expression)
     return issues;
   }
 }

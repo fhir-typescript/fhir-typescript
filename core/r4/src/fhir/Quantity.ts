@@ -6,9 +6,9 @@
 import * as fhir from '../fhir.js';
 
 // @ts-ignore
-import { QuantityComparatorCodings, QuantityComparatorCodingType,} from '../fhirValueSets/QuantityComparatorCodings.js';
-// @ts-ignore
 import { QuantityComparatorCodes,  QuantityComparatorCodeType } from '../fhirValueSets/QuantityComparatorCodes.js';
+// @ts-ignore
+import { QuantityComparatorVsValidation } from '../fhirValueSets/QuantityComparatorVsValidation.js';
 /**
  * Valid arguments for the Quantity type.
  */
@@ -115,25 +115,16 @@ export class Quantity extends fhir.FhirElement {
     }
   }
   /**
-   * Required-bound Value Set for comparator (Quantity.comparator)
-   */
-  public static get comparatorRequiredCodes() {
-    return QuantityComparatorCodes;
-  }
-  /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'Quantity' }
-    if (this["value"]) { issues.push(...this.value.doModelValidation(expression+'.value')); }
-    if (this['comparator'] && (!Object.values(QuantityComparatorCodes).includes(this.comparator.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'comparator (Quantity.comparator) of type code is missing code for Required binding to: QuantityComparator', expression: [expression] });
-    }
-    if (this["comparator"]) { issues.push(...this.comparator.doModelValidation(expression+'.comparator')); }
-    if (this["unit"]) { issues.push(...this.unit.doModelValidation(expression+'.unit')); }
-    if (this["system"]) { issues.push(...this.system.doModelValidation(expression+'.system')); }
-    if (this["code"]) { issues.push(...this.code.doModelValidation(expression+'.code')); }
+    this.vOptS('value',expression)
+    this.vOptSV('comparator',expression,'QuantityComparator',QuantityComparatorVsValidation,'r')
+    this.vOptS('unit',expression)
+    this.vOptS('system',expression)
+    this.vOptS('code',expression)
     return issues;
   }
 }

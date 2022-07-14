@@ -6,81 +6,81 @@
 import * as fhir from '../fhir.js';
 
 // @ts-ignore
-import { ObservationCodings, ObservationCodingType,} from '../fhirValueSets/ObservationCodings.js';
-// @ts-ignore
 import { ObservationCodes,  ObservationCodeType } from '../fhirValueSets/ObservationCodes.js';
 // @ts-ignore
-import { GoalCategoryCodings, GoalCategoryCodingType,} from '../fhirValueSets/GoalCategoryCodings.js';
+import { ObservationVsValidation } from '../fhirValueSets/ObservationVsValidation.js';
 // @ts-ignore
 import { GoalCategoryCodes,  GoalCategoryCodeType } from '../fhirValueSets/GoalCategoryCodes.js';
 // @ts-ignore
-import { ClinicalFindingsCodings, ClinicalFindingsCodingType,} from '../fhirValueSets/ClinicalFindingsCodings.js';
+import { GoalCategoryVsValidation } from '../fhirValueSets/GoalCategoryVsValidation.js';
 // @ts-ignore
 import { ClinicalFindingsCodes,  ClinicalFindingsCodeType } from '../fhirValueSets/ClinicalFindingsCodes.js';
 // @ts-ignore
-import { GoalPriorityCodings, GoalPriorityCodingType,} from '../fhirValueSets/GoalPriorityCodings.js';
+import { ClinicalFindingsVsValidation } from '../fhirValueSets/ClinicalFindingsVsValidation.js';
 // @ts-ignore
 import { GoalPriorityCodes,  GoalPriorityCodeType } from '../fhirValueSets/GoalPriorityCodes.js';
 // @ts-ignore
-import { GoalStartEventCodings, GoalStartEventCodingType,} from '../fhirValueSets/GoalStartEventCodings.js';
+import { GoalPriorityVsValidation } from '../fhirValueSets/GoalPriorityVsValidation.js';
 // @ts-ignore
 import { GoalStartEventCodes,  GoalStartEventCodeType } from '../fhirValueSets/GoalStartEventCodes.js';
 // @ts-ignore
-import { ConditionCodings, ConditionCodingType,} from '../fhirValueSets/ConditionCodings.js';
+import { GoalStartEventVsValidation } from '../fhirValueSets/GoalStartEventVsValidation.js';
 // @ts-ignore
 import { ConditionCodes,  ConditionCodeType } from '../fhirValueSets/ConditionCodes.js';
 // @ts-ignore
-import { ActionConditionKindCodings, ActionConditionKindCodingType,} from '../fhirValueSets/ActionConditionKindCodings.js';
+import { ConditionVsValidation } from '../fhirValueSets/ConditionVsValidation.js';
 // @ts-ignore
 import { ActionConditionKindCodes,  ActionConditionKindCodeType } from '../fhirValueSets/ActionConditionKindCodes.js';
 // @ts-ignore
-import { ActionRelationshipTypeCodings, ActionRelationshipTypeCodingType,} from '../fhirValueSets/ActionRelationshipTypeCodings.js';
+import { ActionConditionKindVsValidation } from '../fhirValueSets/ActionConditionKindVsValidation.js';
 // @ts-ignore
 import { ActionRelationshipTypeCodes,  ActionRelationshipTypeCodeType } from '../fhirValueSets/ActionRelationshipTypeCodes.js';
 // @ts-ignore
-import { ActionParticipantTypeCodings, ActionParticipantTypeCodingType,} from '../fhirValueSets/ActionParticipantTypeCodings.js';
+import { ActionRelationshipTypeVsValidation } from '../fhirValueSets/ActionRelationshipTypeVsValidation.js';
 // @ts-ignore
 import { ActionParticipantTypeCodes,  ActionParticipantTypeCodeType } from '../fhirValueSets/ActionParticipantTypeCodes.js';
 // @ts-ignore
-import { RequestPriorityCodings, RequestPriorityCodingType,} from '../fhirValueSets/RequestPriorityCodings.js';
+import { ActionParticipantTypeVsValidation } from '../fhirValueSets/ActionParticipantTypeVsValidation.js';
 // @ts-ignore
 import { RequestPriorityCodes,  RequestPriorityCodeType } from '../fhirValueSets/RequestPriorityCodes.js';
 // @ts-ignore
-import { ActionTypeCodings, ActionTypeCodingType,} from '../fhirValueSets/ActionTypeCodings.js';
+import { RequestPriorityVsValidation } from '../fhirValueSets/RequestPriorityVsValidation.js';
 // @ts-ignore
 import { ActionTypeCodes,  ActionTypeCodeType } from '../fhirValueSets/ActionTypeCodes.js';
 // @ts-ignore
-import { ActionGroupingBehaviorCodings, ActionGroupingBehaviorCodingType,} from '../fhirValueSets/ActionGroupingBehaviorCodings.js';
+import { ActionTypeVsValidation } from '../fhirValueSets/ActionTypeVsValidation.js';
 // @ts-ignore
 import { ActionGroupingBehaviorCodes,  ActionGroupingBehaviorCodeType } from '../fhirValueSets/ActionGroupingBehaviorCodes.js';
 // @ts-ignore
-import { ActionSelectionBehaviorCodings, ActionSelectionBehaviorCodingType,} from '../fhirValueSets/ActionSelectionBehaviorCodings.js';
+import { ActionGroupingBehaviorVsValidation } from '../fhirValueSets/ActionGroupingBehaviorVsValidation.js';
 // @ts-ignore
 import { ActionSelectionBehaviorCodes,  ActionSelectionBehaviorCodeType } from '../fhirValueSets/ActionSelectionBehaviorCodes.js';
 // @ts-ignore
-import { ActionRequiredBehaviorCodings, ActionRequiredBehaviorCodingType,} from '../fhirValueSets/ActionRequiredBehaviorCodings.js';
+import { ActionSelectionBehaviorVsValidation } from '../fhirValueSets/ActionSelectionBehaviorVsValidation.js';
 // @ts-ignore
 import { ActionRequiredBehaviorCodes,  ActionRequiredBehaviorCodeType } from '../fhirValueSets/ActionRequiredBehaviorCodes.js';
 // @ts-ignore
-import { ActionPrecheckBehaviorCodings, ActionPrecheckBehaviorCodingType,} from '../fhirValueSets/ActionPrecheckBehaviorCodings.js';
+import { ActionRequiredBehaviorVsValidation } from '../fhirValueSets/ActionRequiredBehaviorVsValidation.js';
 // @ts-ignore
 import { ActionPrecheckBehaviorCodes,  ActionPrecheckBehaviorCodeType } from '../fhirValueSets/ActionPrecheckBehaviorCodes.js';
 // @ts-ignore
-import { ActionCardinalityBehaviorCodings, ActionCardinalityBehaviorCodingType,} from '../fhirValueSets/ActionCardinalityBehaviorCodings.js';
+import { ActionPrecheckBehaviorVsValidation } from '../fhirValueSets/ActionPrecheckBehaviorVsValidation.js';
 // @ts-ignore
 import { ActionCardinalityBehaviorCodes,  ActionCardinalityBehaviorCodeType } from '../fhirValueSets/ActionCardinalityBehaviorCodes.js';
 // @ts-ignore
-import { PlanDefinitionTypeCodings, PlanDefinitionTypeCodingType,} from '../fhirValueSets/PlanDefinitionTypeCodings.js';
+import { ActionCardinalityBehaviorVsValidation } from '../fhirValueSets/ActionCardinalityBehaviorVsValidation.js';
 // @ts-ignore
 import { PlanDefinitionTypeCodes,  PlanDefinitionTypeCodeType } from '../fhirValueSets/PlanDefinitionTypeCodes.js';
 // @ts-ignore
-import { PublicationStatusCodings, PublicationStatusCodingType,} from '../fhirValueSets/PublicationStatusCodings.js';
+import { PlanDefinitionTypeVsValidation } from '../fhirValueSets/PlanDefinitionTypeVsValidation.js';
 // @ts-ignore
 import { PublicationStatusCodes,  PublicationStatusCodeType } from '../fhirValueSets/PublicationStatusCodes.js';
 // @ts-ignore
-import { DefinitionTopicCodings, DefinitionTopicCodingType,} from '../fhirValueSets/DefinitionTopicCodings.js';
+import { PublicationStatusVsValidation } from '../fhirValueSets/PublicationStatusVsValidation.js';
 // @ts-ignore
 import { DefinitionTopicCodes,  DefinitionTopicCodeType } from '../fhirValueSets/DefinitionTopicCodes.js';
+// @ts-ignore
+import { DefinitionTopicVsValidation } from '../fhirValueSets/DefinitionTopicVsValidation.js';
 /**
  * Valid arguments for the PlanDefinitionGoalTarget type.
  */
@@ -153,8 +153,9 @@ export class PlanDefinitionGoalTarget extends fhir.BackboneElement {
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'PlanDefinition.goal.target' }
-    if (this["measure"]) { issues.push(...this.measure.doModelValidation(expression+'.measure')); }
-    if (this["due"]) { issues.push(...this.due.doModelValidation(expression+'.due')); }
+    this.vOptS('measure',expression)
+    this.vOptS('detail',expression)
+    this.vOptS('due',expression)
     return issues;
   }
 }
@@ -246,27 +247,18 @@ export class PlanDefinitionGoal extends fhir.BackboneElement {
     else { this.target = []; }
   }
   /**
-   * Preferred-bound Value Set for priority (PlanDefinition.goal.priority)
-   */
-  public static get priorityPreferredCodings():GoalPriorityCodingType {
-    return GoalPriorityCodings;
-  }
-  /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'PlanDefinition.goal' }
-    if (this["category"]) { issues.push(...this.category.doModelValidation(expression+'.category')); }
-    if (!this['description']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property description fhir: PlanDefinition.goal.description:CodeableConcept', expression: [expression] });
-    }
-    if (this["description"]) { issues.push(...this.description.doModelValidation(expression+'.description')); }
-    if (this["priority"]) { issues.push(...this.priority.doModelValidation(expression+'.priority')); }
-    if (this["start"]) { issues.push(...this.start.doModelValidation(expression+'.start')); }
-    if (this["addresses"]) { this.addresses.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.addresses[${i}]`)); }) }
-    if (this["documentation"]) { this.documentation.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.documentation[${i}]`)); }) }
-    if (this["target"]) { this.target.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.target[${i}]`)); }) }
+    this.vOptS('category',expression)
+    this.vReqS('description',expression)
+    this.vOptS('priority',expression)
+    this.vOptS('start',expression)
+    this.vOptA('addresses',expression)
+    this.vOptA('documentation',expression)
+    this.vOptA('target',expression)
     return issues;
   }
 }
@@ -318,25 +310,13 @@ export class PlanDefinitionActionCondition extends fhir.BackboneElement {
     if (source['expression']) { this.expression = new fhir.Expression(source.expression); }
   }
   /**
-   * Required-bound Value Set for kind (PlanDefinition.action.condition.kind)
-   */
-  public static get kindRequiredCodes() {
-    return ActionConditionKindCodes;
-  }
-  /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'PlanDefinition.action.condition' }
-    if (!this['kind']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property kind fhir: PlanDefinition.action.condition.kind:code', expression: [expression] });
-    }
-    if (this['kind'] && (!Object.values(ActionConditionKindCodes).includes(this.kind.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'kind (PlanDefinition.action.condition.kind) of type code is missing code for Required binding to: ActionConditionKind', expression: [expression] });
-    }
-    if (this["kind"]) { issues.push(...this.kind.doModelValidation(expression+'.kind')); }
-    if (this["expression"]) { issues.push(...this.expression.doModelValidation(expression+'.expression')); }
+    this.vReqSV('kind',expression,'ActionConditionKind',ActionConditionKindVsValidation,'r')
+    this.vOptS('expression',expression)
     return issues;
   }
 }
@@ -420,28 +400,14 @@ export class PlanDefinitionActionRelatedAction extends fhir.BackboneElement {
     else if (source['offsetRange']) { this.offset = new fhir.Range(source.offsetRange); }
   }
   /**
-   * Required-bound Value Set for relationship (PlanDefinition.action.relatedAction.relationship)
-   */
-  public static get relationshipRequiredCodes() {
-    return ActionRelationshipTypeCodes;
-  }
-  /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'PlanDefinition.action.relatedAction' }
-    if (!this['actionId']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property actionId fhir: PlanDefinition.action.relatedAction.actionId:id', expression: [expression] });
-    }
-    if (this["actionId"]) { issues.push(...this.actionId.doModelValidation(expression+'.actionId')); }
-    if (!this['relationship']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property relationship fhir: PlanDefinition.action.relatedAction.relationship:code', expression: [expression] });
-    }
-    if (this['relationship'] && (!Object.values(ActionRelationshipTypeCodes).includes(this.relationship.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'relationship (PlanDefinition.action.relatedAction.relationship) of type code is missing code for Required binding to: ActionRelationshipType', expression: [expression] });
-    }
-    if (this["relationship"]) { issues.push(...this.relationship.doModelValidation(expression+'.relationship')); }
+    this.vReqS('actionId',expression)
+    this.vReqSV('relationship',expression,'ActionRelationshipType',ActionRelationshipTypeVsValidation,'r')
+    this.vOptS('offset',expression)
     return issues;
   }
 }
@@ -493,25 +459,13 @@ export class PlanDefinitionActionParticipant extends fhir.BackboneElement {
     if (source['role']) { this.role = new fhir.CodeableConcept(source.role); }
   }
   /**
-   * Required-bound Value Set for type (PlanDefinition.action.participant.type)
-   */
-  public static get typeRequiredCodes() {
-    return ActionParticipantTypeCodes;
-  }
-  /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'PlanDefinition.action.participant' }
-    if (!this['type']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property type fhir: PlanDefinition.action.participant.type:code', expression: [expression] });
-    }
-    if (this['type'] && (!Object.values(ActionParticipantTypeCodes).includes(this.type.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'type (PlanDefinition.action.participant.type) of type code is missing code for Required binding to: ActionParticipantType', expression: [expression] });
-    }
-    if (this["type"]) { issues.push(...this.type.doModelValidation(expression+'.type')); }
-    if (this["role"]) { issues.push(...this.role.doModelValidation(expression+'.role')); }
+    this.vReqSV('type',expression,'ActionParticipantType',ActionParticipantTypeVsValidation,'r')
+    this.vOptS('role',expression)
     return issues;
   }
 }
@@ -567,8 +521,8 @@ export class PlanDefinitionActionDynamicValue extends fhir.BackboneElement {
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'PlanDefinition.action.dynamicValue' }
-    if (this["path"]) { issues.push(...this.path.doModelValidation(expression+'.path')); }
-    if (this["expression"]) { issues.push(...this.expression.doModelValidation(expression+'.expression')); }
+    this.vOptS('path',expression)
+    this.vOptS('expression',expression)
     return issues;
   }
 }
@@ -1012,95 +966,38 @@ export class PlanDefinitionAction extends fhir.BackboneElement {
     else { this.action = []; }
   }
   /**
-   * Required-bound Value Set for priority (PlanDefinition.action.priority)
-   */
-  public static get priorityRequiredCodes() {
-    return RequestPriorityCodes;
-  }
-  /**
-   * Extensible-bound Value Set for type (PlanDefinition.action.type)
-   */
-  public static get typeExtensibleCodings():ActionTypeCodingType {
-    return ActionTypeCodings;
-  }
-  /**
-   * Required-bound Value Set for groupingBehavior (PlanDefinition.action.groupingBehavior)
-   */
-  public static get groupingBehaviorRequiredCodes() {
-    return ActionGroupingBehaviorCodes;
-  }
-  /**
-   * Required-bound Value Set for selectionBehavior (PlanDefinition.action.selectionBehavior)
-   */
-  public static get selectionBehaviorRequiredCodes() {
-    return ActionSelectionBehaviorCodes;
-  }
-  /**
-   * Required-bound Value Set for requiredBehavior (PlanDefinition.action.requiredBehavior)
-   */
-  public static get requiredBehaviorRequiredCodes() {
-    return ActionRequiredBehaviorCodes;
-  }
-  /**
-   * Required-bound Value Set for precheckBehavior (PlanDefinition.action.precheckBehavior)
-   */
-  public static get precheckBehaviorRequiredCodes() {
-    return ActionPrecheckBehaviorCodes;
-  }
-  /**
-   * Required-bound Value Set for cardinalityBehavior (PlanDefinition.action.cardinalityBehavior)
-   */
-  public static get cardinalityBehaviorRequiredCodes() {
-    return ActionCardinalityBehaviorCodes;
-  }
-  /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'PlanDefinition.action' }
-    if (this["prefix"]) { issues.push(...this.prefix.doModelValidation(expression+'.prefix')); }
-    if (this["title"]) { issues.push(...this.title.doModelValidation(expression+'.title')); }
-    if (this["description"]) { issues.push(...this.description.doModelValidation(expression+'.description')); }
-    if (this["textEquivalent"]) { issues.push(...this.textEquivalent.doModelValidation(expression+'.textEquivalent')); }
-    if (this['priority'] && (!Object.values(RequestPriorityCodes).includes(this.priority.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'priority (PlanDefinition.action.priority) of type code is missing code for Required binding to: RequestPriority', expression: [expression] });
-    }
-    if (this["priority"]) { issues.push(...this.priority.doModelValidation(expression+'.priority')); }
-    if (this["code"]) { this.code.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.code[${i}]`)); }) }
-    if (this["reason"]) { this.reason.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.reason[${i}]`)); }) }
-    if (this["documentation"]) { this.documentation.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.documentation[${i}]`)); }) }
-    if (this["goalId"]) { this.goalId.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.goalId[${i}]`)); }) }
-    if (this["trigger"]) { this.trigger.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.trigger[${i}]`)); }) }
-    if (this["condition"]) { this.condition.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.condition[${i}]`)); }) }
-    if (this["input"]) { this.input.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.input[${i}]`)); }) }
-    if (this["output"]) { this.output.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.output[${i}]`)); }) }
-    if (this["relatedAction"]) { this.relatedAction.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.relatedAction[${i}]`)); }) }
-    if (this["participant"]) { this.participant.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.participant[${i}]`)); }) }
-    if (this["type"]) { issues.push(...this.type.doModelValidation(expression+'.type')); }
-    if (this['groupingBehavior'] && (!Object.values(ActionGroupingBehaviorCodes).includes(this.groupingBehavior.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'groupingBehavior (PlanDefinition.action.groupingBehavior) of type code is missing code for Required binding to: ActionGroupingBehavior', expression: [expression] });
-    }
-    if (this["groupingBehavior"]) { issues.push(...this.groupingBehavior.doModelValidation(expression+'.groupingBehavior')); }
-    if (this['selectionBehavior'] && (!Object.values(ActionSelectionBehaviorCodes).includes(this.selectionBehavior.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'selectionBehavior (PlanDefinition.action.selectionBehavior) of type code is missing code for Required binding to: ActionSelectionBehavior', expression: [expression] });
-    }
-    if (this["selectionBehavior"]) { issues.push(...this.selectionBehavior.doModelValidation(expression+'.selectionBehavior')); }
-    if (this['requiredBehavior'] && (!Object.values(ActionRequiredBehaviorCodes).includes(this.requiredBehavior.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'requiredBehavior (PlanDefinition.action.requiredBehavior) of type code is missing code for Required binding to: ActionRequiredBehavior', expression: [expression] });
-    }
-    if (this["requiredBehavior"]) { issues.push(...this.requiredBehavior.doModelValidation(expression+'.requiredBehavior')); }
-    if (this['precheckBehavior'] && (!Object.values(ActionPrecheckBehaviorCodes).includes(this.precheckBehavior.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'precheckBehavior (PlanDefinition.action.precheckBehavior) of type code is missing code for Required binding to: ActionPrecheckBehavior', expression: [expression] });
-    }
-    if (this["precheckBehavior"]) { issues.push(...this.precheckBehavior.doModelValidation(expression+'.precheckBehavior')); }
-    if (this['cardinalityBehavior'] && (!Object.values(ActionCardinalityBehaviorCodes).includes(this.cardinalityBehavior.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'cardinalityBehavior (PlanDefinition.action.cardinalityBehavior) of type code is missing code for Required binding to: ActionCardinalityBehavior', expression: [expression] });
-    }
-    if (this["cardinalityBehavior"]) { issues.push(...this.cardinalityBehavior.doModelValidation(expression+'.cardinalityBehavior')); }
-    if (this["transform"]) { issues.push(...this.transform.doModelValidation(expression+'.transform')); }
-    if (this["dynamicValue"]) { this.dynamicValue.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.dynamicValue[${i}]`)); }) }
-    if (this["action"]) { this.action.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.action[${i}]`)); }) }
+    this.vOptS('prefix',expression)
+    this.vOptS('title',expression)
+    this.vOptS('description',expression)
+    this.vOptS('textEquivalent',expression)
+    this.vOptSV('priority',expression,'RequestPriority',RequestPriorityVsValidation,'r')
+    this.vOptA('code',expression)
+    this.vOptA('reason',expression)
+    this.vOptA('documentation',expression)
+    this.vOptA('goalId',expression)
+    this.vOptS('subject',expression)
+    this.vOptA('trigger',expression)
+    this.vOptA('condition',expression)
+    this.vOptA('input',expression)
+    this.vOptA('output',expression)
+    this.vOptA('relatedAction',expression)
+    this.vOptS('timing',expression)
+    this.vOptA('participant',expression)
+    this.vOptS('type',expression)
+    this.vOptSV('groupingBehavior',expression,'ActionGroupingBehavior',ActionGroupingBehaviorVsValidation,'r')
+    this.vOptSV('selectionBehavior',expression,'ActionSelectionBehavior',ActionSelectionBehaviorVsValidation,'r')
+    this.vOptSV('requiredBehavior',expression,'ActionRequiredBehavior',ActionRequiredBehaviorVsValidation,'r')
+    this.vOptSV('precheckBehavior',expression,'ActionPrecheckBehavior',ActionPrecheckBehaviorVsValidation,'r')
+    this.vOptSV('cardinalityBehavior',expression,'ActionCardinalityBehavior',ActionCardinalityBehaviorVsValidation,'r')
+    this.vOptS('definition',expression)
+    this.vOptS('transform',expression)
+    this.vOptA('dynamicValue',expression)
+    this.vOptA('action',expression)
     return issues;
   }
 }
@@ -1575,62 +1472,43 @@ export class PlanDefinition extends fhir.DomainResource {
     else { this.action = []; }
   }
   /**
-   * Extensible-bound Value Set for type (PlanDefinition.type)
-   */
-  public static get typeExtensibleCodings():PlanDefinitionTypeCodingType {
-    return PlanDefinitionTypeCodings;
-  }
-  /**
-   * Required-bound Value Set for status (PlanDefinition.status)
-   */
-  public static get statusRequiredCodes() {
-    return PublicationStatusCodes;
-  }
-  /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'PlanDefinition' }
-    if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType fhir: PlanDefinition.resourceType:"PlanDefinition"', expression: [expression] });
-    }
-    if (this["url"]) { issues.push(...this.url.doModelValidation(expression+'.url')); }
-    if (this["identifier"]) { this.identifier.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.identifier[${i}]`)); }) }
-    if (this["version"]) { issues.push(...this.version.doModelValidation(expression+'.version')); }
-    if (this["name"]) { issues.push(...this.name.doModelValidation(expression+'.name')); }
-    if (this["title"]) { issues.push(...this.title.doModelValidation(expression+'.title')); }
-    if (this["subtitle"]) { issues.push(...this.subtitle.doModelValidation(expression+'.subtitle')); }
-    if (this["type"]) { issues.push(...this.type.doModelValidation(expression+'.type')); }
-    if (!this['status']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status fhir: PlanDefinition.status:code', expression: [expression] });
-    }
-    if (this['status'] && (!Object.values(PublicationStatusCodes).includes(this.status.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'status (PlanDefinition.status) of type code is missing code for Required binding to: PublicationStatus', expression: [expression] });
-    }
-    if (this["status"]) { issues.push(...this.status.doModelValidation(expression+'.status')); }
-    if (this["experimental"]) { issues.push(...this.experimental.doModelValidation(expression+'.experimental')); }
-    if (this["date"]) { issues.push(...this.date.doModelValidation(expression+'.date')); }
-    if (this["publisher"]) { issues.push(...this.publisher.doModelValidation(expression+'.publisher')); }
-    if (this["contact"]) { this.contact.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.contact[${i}]`)); }) }
-    if (this["description"]) { issues.push(...this.description.doModelValidation(expression+'.description')); }
-    if (this["useContext"]) { this.useContext.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.useContext[${i}]`)); }) }
-    if (this["jurisdiction"]) { this.jurisdiction.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.jurisdiction[${i}]`)); }) }
-    if (this["purpose"]) { issues.push(...this.purpose.doModelValidation(expression+'.purpose')); }
-    if (this["usage"]) { issues.push(...this.usage.doModelValidation(expression+'.usage')); }
-    if (this["copyright"]) { issues.push(...this.copyright.doModelValidation(expression+'.copyright')); }
-    if (this["approvalDate"]) { issues.push(...this.approvalDate.doModelValidation(expression+'.approvalDate')); }
-    if (this["lastReviewDate"]) { issues.push(...this.lastReviewDate.doModelValidation(expression+'.lastReviewDate')); }
-    if (this["effectivePeriod"]) { issues.push(...this.effectivePeriod.doModelValidation(expression+'.effectivePeriod')); }
-    if (this["topic"]) { this.topic.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.topic[${i}]`)); }) }
-    if (this["author"]) { this.author.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.author[${i}]`)); }) }
-    if (this["editor"]) { this.editor.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.editor[${i}]`)); }) }
-    if (this["reviewer"]) { this.reviewer.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.reviewer[${i}]`)); }) }
-    if (this["endorser"]) { this.endorser.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.endorser[${i}]`)); }) }
-    if (this["relatedArtifact"]) { this.relatedArtifact.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.relatedArtifact[${i}]`)); }) }
-    if (this["library"]) { this.library.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.library[${i}]`)); }) }
-    if (this["goal"]) { this.goal.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.goal[${i}]`)); }) }
-    if (this["action"]) { this.action.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.action[${i}]`)); }) }
+    this.vReqS('resourceType',expression)
+    this.vOptS('url',expression)
+    this.vOptA('identifier',expression)
+    this.vOptS('version',expression)
+    this.vOptS('name',expression)
+    this.vOptS('title',expression)
+    this.vOptS('subtitle',expression)
+    this.vOptS('type',expression)
+    this.vReqSV('status',expression,'PublicationStatus',PublicationStatusVsValidation,'r')
+    this.vOptS('experimental',expression)
+    this.vOptS('subject',expression)
+    this.vOptS('date',expression)
+    this.vOptS('publisher',expression)
+    this.vOptA('contact',expression)
+    this.vOptS('description',expression)
+    this.vOptA('useContext',expression)
+    this.vOptA('jurisdiction',expression)
+    this.vOptS('purpose',expression)
+    this.vOptS('usage',expression)
+    this.vOptS('copyright',expression)
+    this.vOptS('approvalDate',expression)
+    this.vOptS('lastReviewDate',expression)
+    this.vOptS('effectivePeriod',expression)
+    this.vOptA('topic',expression)
+    this.vOptA('author',expression)
+    this.vOptA('editor',expression)
+    this.vOptA('reviewer',expression)
+    this.vOptA('endorser',expression)
+    this.vOptA('relatedArtifact',expression)
+    this.vOptA('library',expression)
+    this.vOptA('goal',expression)
+    this.vOptA('action',expression)
     return issues;
   }
 }

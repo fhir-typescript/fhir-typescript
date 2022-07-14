@@ -1,5 +1,4 @@
 import * as fhir from '../fhir.js';
-import { ImmunizationFunctionCodingType } from '../fhirValueSets/ImmunizationFunctionCodings.js';
 import { ImmunizationStatusCodeType } from '../fhirValueSets/ImmunizationStatusCodes.js';
 /**
  * Valid arguments for the ImmunizationPerformer type.
@@ -34,10 +33,6 @@ export declare class ImmunizationPerformer extends fhir.BackboneElement {
      * Default constructor for ImmunizationPerformer - initializes any required elements to null if a value is not provided.
      */
     constructor(source?: Partial<ImmunizationPerformerArgs>, options?: fhir.FhirConstructorOptions);
-    /**
-     * Extensible-bound Value Set for function (Immunization.performer.function)
-     */
-    static get functionExtensibleCodings(): ImmunizationFunctionCodingType;
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
@@ -542,14 +537,6 @@ export declare class Immunization extends fhir.DomainResource {
      * Default constructor for Immunization - initializes any required elements to null if a value is not provided.
      */
     constructor(source?: Partial<ImmunizationArgs>, options?: fhir.FhirConstructorOptions);
-    /**
-     * Required-bound Value Set for status (Immunization.status)
-     */
-    static get statusRequiredCodes(): {
-        readonly Completed: "completed";
-        readonly EnteredInError: "entered-in-error";
-        readonly NotDone: "not-done";
-    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */

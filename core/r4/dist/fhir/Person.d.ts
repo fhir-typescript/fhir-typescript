@@ -39,15 +39,6 @@ export declare class PersonLink extends fhir.BackboneElement {
      */
     constructor(source?: Partial<PersonLinkArgs>, options?: fhir.FhirConstructorOptions);
     /**
-     * Required-bound Value Set for assurance (Person.link.assurance)
-     */
-    static get assuranceRequiredCodes(): {
-        readonly Level1: "level1";
-        readonly Level2: "level2";
-        readonly Level3: "level3";
-        readonly Level4: "level4";
-    };
-    /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
     doModelValidation(expression?: string): fhir.FtsIssue[];
@@ -169,15 +160,6 @@ export declare class Person extends fhir.DomainResource {
      * Default constructor for Person - initializes any required elements to null if a value is not provided.
      */
     constructor(source?: Partial<PersonArgs>, options?: fhir.FhirConstructorOptions);
-    /**
-     * Required-bound Value Set for gender (Person.gender)
-     */
-    static get genderRequiredCodes(): {
-        readonly Female: "female";
-        readonly Male: "male";
-        readonly Other: "other";
-        readonly Unknown: "unknown";
-    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */

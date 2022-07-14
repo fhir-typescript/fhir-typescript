@@ -49,8 +49,8 @@ export class SubstanceAmountReferenceRange extends fhir.FhirElement {
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'SubstanceAmount.referenceRange' }
-    if (this["lowLimit"]) { issues.push(...this.lowLimit.doModelValidation(expression+'.lowLimit')); }
-    if (this["highLimit"]) { issues.push(...this.highLimit.doModelValidation(expression+'.highLimit')); }
+    this.vOptS('lowLimit',expression)
+    this.vOptS('highLimit',expression)
     return issues;
   }
 }
@@ -143,9 +143,10 @@ export class SubstanceAmount extends fhir.BackboneElement {
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'SubstanceAmount' }
-    if (this["amountType"]) { issues.push(...this.amountType.doModelValidation(expression+'.amountType')); }
-    if (this["amountText"]) { issues.push(...this.amountText.doModelValidation(expression+'.amountText')); }
-    if (this["referenceRange"]) { issues.push(...this.referenceRange.doModelValidation(expression+'.referenceRange')); }
+    this.vOptS('amount',expression)
+    this.vOptS('amountType',expression)
+    this.vOptS('amountText',expression)
+    this.vOptS('referenceRange',expression)
     return issues;
   }
 }

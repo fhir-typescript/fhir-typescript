@@ -6,13 +6,13 @@
 import * as fhir from '../fhir.js';
 
 // @ts-ignore
-import { InvoicePriceComponentTypeCodings, InvoicePriceComponentTypeCodingType,} from '../fhirValueSets/InvoicePriceComponentTypeCodings.js';
-// @ts-ignore
 import { InvoicePriceComponentTypeCodes,  InvoicePriceComponentTypeCodeType } from '../fhirValueSets/InvoicePriceComponentTypeCodes.js';
 // @ts-ignore
-import { InvoiceStatusCodings, InvoiceStatusCodingType,} from '../fhirValueSets/InvoiceStatusCodings.js';
+import { InvoicePriceComponentTypeVsValidation } from '../fhirValueSets/InvoicePriceComponentTypeVsValidation.js';
 // @ts-ignore
 import { InvoiceStatusCodes,  InvoiceStatusCodeType } from '../fhirValueSets/InvoiceStatusCodes.js';
+// @ts-ignore
+import { InvoiceStatusVsValidation } from '../fhirValueSets/InvoiceStatusVsValidation.js';
 /**
  * Valid arguments for the InvoiceParticipant type.
  */
@@ -58,11 +58,8 @@ export class InvoiceParticipant extends fhir.BackboneElement {
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'Invoice.participant' }
-    if (this["role"]) { issues.push(...this.role.doModelValidation(expression+'.role')); }
-    if (!this['actor']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property actor fhir: Invoice.participant.actor:Reference', expression: [expression] });
-    }
-    if (this["actor"]) { issues.push(...this.actor.doModelValidation(expression+'.actor')); }
+    this.vOptS('role',expression)
+    this.vReqS('actor',expression)
     return issues;
   }
 }
@@ -140,27 +137,15 @@ export class InvoiceLineItemPriceComponent extends fhir.BackboneElement {
     if (source['amount']) { this.amount = new fhir.Money(source.amount); }
   }
   /**
-   * Required-bound Value Set for type (Invoice.lineItem.priceComponent.type)
-   */
-  public static get typeRequiredCodes() {
-    return InvoicePriceComponentTypeCodes;
-  }
-  /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'Invoice.lineItem.priceComponent' }
-    if (!this['type']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property type fhir: Invoice.lineItem.priceComponent.type:code', expression: [expression] });
-    }
-    if (this['type'] && (!Object.values(InvoicePriceComponentTypeCodes).includes(this.type.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'type (Invoice.lineItem.priceComponent.type) of type code is missing code for Required binding to: InvoicePriceComponentType', expression: [expression] });
-    }
-    if (this["type"]) { issues.push(...this.type.doModelValidation(expression+'.type')); }
-    if (this["code"]) { issues.push(...this.code.doModelValidation(expression+'.code')); }
-    if (this["factor"]) { issues.push(...this.factor.doModelValidation(expression+'.factor')); }
-    if (this["amount"]) { issues.push(...this.amount.doModelValidation(expression+'.amount')); }
+    this.vReqSV('type',expression,'InvoicePriceComponentType',InvoicePriceComponentTypeVsValidation,'r')
+    this.vOptS('code',expression)
+    this.vOptS('factor',expression)
+    this.vOptS('amount',expression)
     return issues;
   }
 }
@@ -241,11 +226,9 @@ export class InvoiceLineItem extends fhir.BackboneElement {
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'Invoice.lineItem' }
-    if (this["sequence"]) { issues.push(...this.sequence.doModelValidation(expression+'.sequence')); }
-    if (!this['chargeItem']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property chargeItem fhir: Invoice.lineItem.chargeItem[x]:', expression: [expression] });
-    }
-    if (this["priceComponent"]) { this.priceComponent.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.priceComponent[${i}]`)); }) }
+    this.vOptS('sequence',expression)
+    this.vReqS('chargeItem',expression)
+    this.vOptA('priceComponent',expression)
     return issues;
   }
 }
@@ -461,42 +444,28 @@ export class Invoice extends fhir.DomainResource {
     else { this.note = []; }
   }
   /**
-   * Required-bound Value Set for status (Invoice.status)
-   */
-  public static get statusRequiredCodes() {
-    return InvoiceStatusCodes;
-  }
-  /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'Invoice' }
-    if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType fhir: Invoice.resourceType:"Invoice"', expression: [expression] });
-    }
-    if (this["identifier"]) { this.identifier.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.identifier[${i}]`)); }) }
-    if (!this['status']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status fhir: Invoice.status:code', expression: [expression] });
-    }
-    if (this['status'] && (!Object.values(InvoiceStatusCodes).includes(this.status.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'status (Invoice.status) of type code is missing code for Required binding to: InvoiceStatus', expression: [expression] });
-    }
-    if (this["status"]) { issues.push(...this.status.doModelValidation(expression+'.status')); }
-    if (this["cancelledReason"]) { issues.push(...this.cancelledReason.doModelValidation(expression+'.cancelledReason')); }
-    if (this["type"]) { issues.push(...this.type.doModelValidation(expression+'.type')); }
-    if (this["subject"]) { issues.push(...this.subject.doModelValidation(expression+'.subject')); }
-    if (this["recipient"]) { issues.push(...this.recipient.doModelValidation(expression+'.recipient')); }
-    if (this["date"]) { issues.push(...this.date.doModelValidation(expression+'.date')); }
-    if (this["participant"]) { this.participant.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.participant[${i}]`)); }) }
-    if (this["issuer"]) { issues.push(...this.issuer.doModelValidation(expression+'.issuer')); }
-    if (this["account"]) { issues.push(...this.account.doModelValidation(expression+'.account')); }
-    if (this["lineItem"]) { this.lineItem.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.lineItem[${i}]`)); }) }
-    if (this["totalPriceComponent"]) { this.totalPriceComponent.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.totalPriceComponent[${i}]`)); }) }
-    if (this["totalNet"]) { issues.push(...this.totalNet.doModelValidation(expression+'.totalNet')); }
-    if (this["totalGross"]) { issues.push(...this.totalGross.doModelValidation(expression+'.totalGross')); }
-    if (this["paymentTerms"]) { issues.push(...this.paymentTerms.doModelValidation(expression+'.paymentTerms')); }
-    if (this["note"]) { this.note.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.note[${i}]`)); }) }
+    this.vReqS('resourceType',expression)
+    this.vOptA('identifier',expression)
+    this.vReqSV('status',expression,'InvoiceStatus',InvoiceStatusVsValidation,'r')
+    this.vOptS('cancelledReason',expression)
+    this.vOptS('type',expression)
+    this.vOptS('subject',expression)
+    this.vOptS('recipient',expression)
+    this.vOptS('date',expression)
+    this.vOptA('participant',expression)
+    this.vOptS('issuer',expression)
+    this.vOptS('account',expression)
+    this.vOptA('lineItem',expression)
+    this.vOptA('totalPriceComponent',expression)
+    this.vOptS('totalNet',expression)
+    this.vOptS('totalGross',expression)
+    this.vOptS('paymentTerms',expression)
+    this.vOptA('note',expression)
     return issues;
   }
 }

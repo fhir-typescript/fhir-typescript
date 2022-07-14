@@ -1,7 +1,6 @@
 import * as fhir from '../fhir.js';
 import { UnitsOfTimeCodeType } from '../fhirValueSets/UnitsOfTimeCodes.js';
 import { DaysOfWeekCodeType } from '../fhirValueSets/DaysOfWeekCodes.js';
-import { TimingAbbreviationCodingType } from '../fhirValueSets/TimingAbbreviationCodings.js';
 /**
  * Valid arguments for the TimingRepeat type.
  */
@@ -212,73 +211,6 @@ export declare class TimingRepeat extends fhir.FhirElement {
      */
     constructor(source?: Partial<TimingRepeatArgs>, options?: fhir.FhirConstructorOptions);
     /**
-     * Required-bound Value Set for durationUnit (Timing.repeat.durationUnit)
-     */
-    static get durationUnitRequiredCodes(): {
-        readonly Year: "a";
-        readonly Day: "d";
-        readonly Hour: "h";
-        readonly Minute: "min";
-        readonly Month: "mo";
-        readonly Second: "s";
-        readonly Week: "wk";
-    };
-    /**
-     * Required-bound Value Set for periodUnit (Timing.repeat.periodUnit)
-     */
-    static get periodUnitRequiredCodes(): {
-        readonly Year: "a";
-        readonly Day: "d";
-        readonly Hour: "h";
-        readonly Minute: "min";
-        readonly Month: "mo";
-        readonly Second: "s";
-        readonly Week: "wk";
-    };
-    /**
-     * Required-bound Value Set for dayOfWeek (Timing.repeat.dayOfWeek)
-     */
-    static get dayOfWeekRequiredCodes(): {
-        readonly Friday: "fri";
-        readonly Monday: "mon";
-        readonly Saturday: "sat";
-        readonly Sunday: "sun";
-        readonly Thursday: "thu";
-        readonly Tuesday: "tue";
-        readonly Wednesday: "wed";
-    };
-    /**
-     * Required-bound Value Set for when (Timing.repeat.when)
-     */
-    static get whenRequiredCodes(): {
-        readonly AC: "AC";
-        readonly ACD: "ACD";
-        readonly ACM: "ACM";
-        readonly ACV: "ACV";
-        readonly Afternoon: "AFT";
-        readonly EarlyAfternoon: "AFT.early";
-        readonly LateAfternoon: "AFT.late";
-        readonly C: "C";
-        readonly CD: "CD";
-        readonly CM: "CM";
-        readonly CV: "CV";
-        readonly Evening: "EVE";
-        readonly EarlyEvening: "EVE.early";
-        readonly LateEvening: "EVE.late";
-        readonly HS: "HS";
-        readonly Morning: "MORN";
-        readonly EarlyMorning: "MORN.early";
-        readonly LateMorning: "MORN.late";
-        readonly Night: "NIGHT";
-        readonly Noon: "NOON";
-        readonly PC: "PC";
-        readonly PCD: "PCD";
-        readonly PCM: "PCM";
-        readonly PCV: "PCV";
-        readonly AfterSleep: "PHS";
-        readonly WAKE: "WAKE";
-    };
-    /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
     doModelValidation(expression?: string): fhir.FtsIssue[];
@@ -328,10 +260,6 @@ export declare class Timing extends fhir.BackboneElement {
      * Default constructor for Timing - initializes any required elements to null if a value is not provided.
      */
     constructor(source?: Partial<TimingArgs>, options?: fhir.FhirConstructorOptions);
-    /**
-     * Preferred-bound Value Set for code (Timing.code)
-     */
-    static get codePreferredCodings(): TimingAbbreviationCodingType;
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */

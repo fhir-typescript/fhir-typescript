@@ -58,24 +58,6 @@ export declare class DeviceMetricCalibration extends fhir.BackboneElement {
      */
     constructor(source?: Partial<DeviceMetricCalibrationArgs>, options?: fhir.FhirConstructorOptions);
     /**
-     * Required-bound Value Set for type (DeviceMetric.calibration.type)
-     */
-    static get typeRequiredCodes(): {
-        readonly Gain: "gain";
-        readonly Offset: "offset";
-        readonly TwoPoint: "two-point";
-        readonly Unspecified: "unspecified";
-    };
-    /**
-     * Required-bound Value Set for state (DeviceMetric.calibration.state)
-     */
-    static get stateRequiredCodes(): {
-        readonly Calibrated: "calibrated";
-        readonly CalibrationRequired: "calibration-required";
-        readonly NotCalibrated: "not-calibrated";
-        readonly Unspecified: "unspecified";
-    };
-    /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
     doModelValidation(expression?: string): fhir.FtsIssue[];
@@ -197,37 +179,6 @@ export declare class DeviceMetric extends fhir.DomainResource {
      * Default constructor for DeviceMetric - initializes any required elements to null if a value is not provided.
      */
     constructor(source?: Partial<DeviceMetricArgs>, options?: fhir.FhirConstructorOptions);
-    /**
-     * Required-bound Value Set for operationalStatus (DeviceMetric.operationalStatus)
-     */
-    static get operationalStatusRequiredCodes(): {
-        readonly EnteredInError: "entered-in-error";
-        readonly Off: "off";
-        readonly On: "on";
-        readonly Standby: "standby";
-    };
-    /**
-     * Required-bound Value Set for color (DeviceMetric.color)
-     */
-    static get colorRequiredCodes(): {
-        readonly ColorBlack: "black";
-        readonly ColorBlue: "blue";
-        readonly ColorCyan: "cyan";
-        readonly ColorGreen: "green";
-        readonly ColorMagenta: "magenta";
-        readonly ColorRed: "red";
-        readonly ColorWhite: "white";
-        readonly ColorYellow: "yellow";
-    };
-    /**
-     * Required-bound Value Set for category (DeviceMetric.category)
-     */
-    static get categoryRequiredCodes(): {
-        readonly Calculation: "calculation";
-        readonly Measurement: "measurement";
-        readonly Setting: "setting";
-        readonly Unspecified: "unspecified";
-    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */

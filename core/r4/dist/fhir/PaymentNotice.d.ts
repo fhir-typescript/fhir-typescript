@@ -134,15 +134,6 @@ export declare class PaymentNotice extends fhir.DomainResource {
      */
     constructor(source?: Partial<PaymentNoticeArgs>, options?: fhir.FhirConstructorOptions);
     /**
-     * Required-bound Value Set for status (PaymentNotice.status)
-     */
-    static get statusRequiredCodes(): {
-        readonly Active: "active";
-        readonly Cancelled: "cancelled";
-        readonly Draft: "draft";
-        readonly EnteredInError: "entered-in-error";
-    };
-    /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
     doModelValidation(expression?: string): fhir.FtsIssue[];

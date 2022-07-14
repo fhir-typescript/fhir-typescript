@@ -1,6 +1,5 @@
 import * as fhir from '../fhir.js';
 import { MedicationdispenseStatusCodeType } from '../fhirValueSets/MedicationdispenseStatusCodes.js';
-import { MedicationdispenseCategoryCodingType } from '../fhirValueSets/MedicationdispenseCategoryCodings.js';
 /**
  * Valid arguments for the MedicationDispensePerformer type.
  */
@@ -352,24 +351,6 @@ export declare class MedicationDispense extends fhir.DomainResource {
      * Default constructor for MedicationDispense - initializes any required elements to null if a value is not provided.
      */
     constructor(source?: Partial<MedicationDispenseArgs>, options?: fhir.FhirConstructorOptions);
-    /**
-     * Required-bound Value Set for status (MedicationDispense.status)
-     */
-    static get statusRequiredCodes(): {
-        readonly Cancelled: "cancelled";
-        readonly Completed: "completed";
-        readonly Declined: "declined";
-        readonly EnteredInError: "entered-in-error";
-        readonly InProgress: "in-progress";
-        readonly OnHold: "on-hold";
-        readonly Preparation: "preparation";
-        readonly Stopped: "stopped";
-        readonly Unknown: "unknown";
-    };
-    /**
-     * Preferred-bound Value Set for category (MedicationDispense.category)
-     */
-    static get categoryPreferredCodings(): MedicationdispenseCategoryCodingType;
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */

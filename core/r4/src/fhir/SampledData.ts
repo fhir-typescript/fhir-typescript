@@ -145,22 +145,13 @@ export class SampledData extends fhir.FhirElement {
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'SampledData' }
-    if (!this['origin']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property origin fhir: SampledData.origin:Quantity', expression: [expression] });
-    }
-    if (this["origin"]) { issues.push(...this.origin.doModelValidation(expression+'.origin')); }
-    if (!this['period']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property period fhir: SampledData.period:decimal', expression: [expression] });
-    }
-    if (this["period"]) { issues.push(...this.period.doModelValidation(expression+'.period')); }
-    if (this["factor"]) { issues.push(...this.factor.doModelValidation(expression+'.factor')); }
-    if (this["lowerLimit"]) { issues.push(...this.lowerLimit.doModelValidation(expression+'.lowerLimit')); }
-    if (this["upperLimit"]) { issues.push(...this.upperLimit.doModelValidation(expression+'.upperLimit')); }
-    if (!this['dimensions']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property dimensions fhir: SampledData.dimensions:positiveInt', expression: [expression] });
-    }
-    if (this["dimensions"]) { issues.push(...this.dimensions.doModelValidation(expression+'.dimensions')); }
-    if (this["data"]) { issues.push(...this.data.doModelValidation(expression+'.data')); }
+    this.vReqS('origin',expression)
+    this.vReqS('period',expression)
+    this.vOptS('factor',expression)
+    this.vOptS('lowerLimit',expression)
+    this.vOptS('upperLimit',expression)
+    this.vReqS('dimensions',expression)
+    this.vOptS('data',expression)
     return issues;
   }
 }

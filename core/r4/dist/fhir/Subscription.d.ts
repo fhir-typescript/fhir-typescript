@@ -67,16 +67,6 @@ export declare class SubscriptionChannel extends fhir.BackboneElement {
      */
     constructor(source?: Partial<SubscriptionChannelArgs>, options?: fhir.FhirConstructorOptions);
     /**
-     * Required-bound Value Set for type (Subscription.channel.type)
-     */
-    static get typeRequiredCodes(): {
-        readonly Email: "email";
-        readonly Message: "message";
-        readonly RestHook: "rest-hook";
-        readonly SMS: "sms";
-        readonly Websocket: "websocket";
-    };
-    /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
     doModelValidation(expression?: string): fhir.FtsIssue[];
@@ -184,15 +174,6 @@ export declare class Subscription extends fhir.DomainResource {
      * Default constructor for Subscription - initializes any required elements to null if a value is not provided.
      */
     constructor(source?: Partial<SubscriptionArgs>, options?: fhir.FhirConstructorOptions);
-    /**
-     * Required-bound Value Set for status (Subscription.status)
-     */
-    static get statusRequiredCodes(): {
-        readonly Active: "active";
-        readonly Error: "error";
-        readonly Off: "off";
-        readonly Requested: "requested";
-    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */

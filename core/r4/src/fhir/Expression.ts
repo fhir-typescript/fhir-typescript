@@ -6,9 +6,9 @@
 import * as fhir from '../fhir.js';
 
 // @ts-ignore
-import { ExpressionLanguageCodings, ExpressionLanguageCodingType,} from '../fhirValueSets/ExpressionLanguageCodings.js';
-// @ts-ignore
 import { ExpressionLanguageCodes,  ExpressionLanguageCodeType } from '../fhirValueSets/ExpressionLanguageCodes.js';
+// @ts-ignore
+import { ExpressionLanguageVsValidation } from '../fhirValueSets/ExpressionLanguageVsValidation.js';
 /**
  * Valid arguments for the Expression type.
  */
@@ -116,25 +116,16 @@ export class Expression extends fhir.FhirElement {
     }
   }
   /**
-   * Extensible-bound Value Set for language (Expression.language)
-   */
-  public static get languageExtensibleCodings():ExpressionLanguageCodingType {
-    return ExpressionLanguageCodings;
-  }
-  /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'Expression' }
-    if (this["description"]) { issues.push(...this.description.doModelValidation(expression+'.description')); }
-    if (this["name"]) { issues.push(...this.name.doModelValidation(expression+'.name')); }
-    if (!this['language']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property language fhir: Expression.language:code', expression: [expression] });
-    }
-    if (this["language"]) { issues.push(...this.language.doModelValidation(expression+'.language')); }
-    if (this["expression"]) { issues.push(...this.expression.doModelValidation(expression+'.expression')); }
-    if (this["reference"]) { issues.push(...this.reference.doModelValidation(expression+'.reference')); }
+    this.vOptS('description',expression)
+    this.vOptS('name',expression)
+    this.vReqS('language',expression)
+    this.vOptS('expression',expression)
+    this.vOptS('reference',expression)
     return issues;
   }
 }

@@ -277,27 +277,6 @@ export declare class CommunicationRequest extends fhir.DomainResource {
      */
     constructor(source?: Partial<CommunicationRequestArgs>, options?: fhir.FhirConstructorOptions);
     /**
-     * Required-bound Value Set for status (CommunicationRequest.status)
-     */
-    static get statusRequiredCodes(): {
-        readonly Active: "active";
-        readonly Completed: "completed";
-        readonly Draft: "draft";
-        readonly EnteredInError: "entered-in-error";
-        readonly OnHold: "on-hold";
-        readonly Revoked: "revoked";
-        readonly Unknown: "unknown";
-    };
-    /**
-     * Required-bound Value Set for priority (CommunicationRequest.priority)
-     */
-    static get priorityRequiredCodes(): {
-        readonly ASAP: "asap";
-        readonly Routine: "routine";
-        readonly STAT: "stat";
-        readonly Urgent: "urgent";
-    };
-    /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
     doModelValidation(expression?: string): fhir.FtsIssue[];

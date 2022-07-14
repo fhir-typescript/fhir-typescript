@@ -58,8 +58,8 @@ export class FhirElement extends fhir.FhirBase {
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'Element' }
-    if (this["id"]) { issues.push(...this.id.doModelValidation(expression+'.id')); }
-    if (this["extension"]) { this.extension.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.extension[${i}]`)); }) }
+    this.vOptS('id',expression)
+    this.vOptA('extension',expression)
     return issues;
   }
   /**

@@ -373,7 +373,7 @@ export interface Measure extends fhir.DomainResource {
   /**
    * Information on whether an increase or decrease in score is the preferred result (e.g., a higher score indicates better quality OR a lower score indicates better quality OR quality is within a range).
    */
-  improvementNotation?: fhir.CodeableConcept|undefined;
+  improvementNotation?: 'decrease'|'increase'|undefined;
   /**
    * Provides a description of an individual term used within the measure.
    */

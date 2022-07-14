@@ -1,8 +1,6 @@
 import * as fhir from '../fhir.js';
 import { ListStatusCodeType } from '../fhirValueSets/ListStatusCodes.js';
 import { ListModeCodeType } from '../fhirValueSets/ListModeCodes.js';
-import { ListOrderCodingType } from '../fhirValueSets/ListOrderCodings.js';
-import { ListEmptyReasonCodingType } from '../fhirValueSets/ListEmptyReasonCodings.js';
 /**
  * Valid arguments for the ListEntry type.
  */
@@ -210,30 +208,6 @@ export declare class List extends fhir.DomainResource {
      * Default constructor for List - initializes any required elements to null if a value is not provided.
      */
     constructor(source?: Partial<ListArgs>, options?: fhir.FhirConstructorOptions);
-    /**
-     * Required-bound Value Set for status (List.status)
-     */
-    static get statusRequiredCodes(): {
-        readonly Current: "current";
-        readonly EnteredInError: "entered-in-error";
-        readonly Retired: "retired";
-    };
-    /**
-     * Required-bound Value Set for mode (List.mode)
-     */
-    static get modeRequiredCodes(): {
-        readonly ChangeList: "changes";
-        readonly SnapshotList: "snapshot";
-        readonly WorkingList: "working";
-    };
-    /**
-     * Preferred-bound Value Set for orderedBy (List.orderedBy)
-     */
-    static get orderedByPreferredCodings(): ListOrderCodingType;
-    /**
-     * Preferred-bound Value Set for emptyReason (List.emptyReason)
-     */
-    static get emptyReasonPreferredCodings(): ListEmptyReasonCodingType;
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */

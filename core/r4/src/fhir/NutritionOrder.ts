@@ -6,41 +6,41 @@
 import * as fhir from '../fhir.js';
 
 // @ts-ignore
-import { NutrientCodings, NutrientCodingType,} from '../fhirValueSets/NutrientCodings.js';
-// @ts-ignore
 import { NutrientCodes,  NutrientCodeType } from '../fhirValueSets/NutrientCodes.js';
 // @ts-ignore
-import { ModifiedFoodtypeCodings, ModifiedFoodtypeCodingType,} from '../fhirValueSets/ModifiedFoodtypeCodings.js';
+import { NutrientVsValidation } from '../fhirValueSets/NutrientVsValidation.js';
 // @ts-ignore
 import { ModifiedFoodtypeCodes,  ModifiedFoodtypeCodeType } from '../fhirValueSets/ModifiedFoodtypeCodes.js';
 // @ts-ignore
-import { DietTypeCodings, DietTypeCodingType,} from '../fhirValueSets/DietTypeCodings.js';
+import { ModifiedFoodtypeVsValidation } from '../fhirValueSets/ModifiedFoodtypeVsValidation.js';
 // @ts-ignore
 import { DietTypeCodes,  DietTypeCodeType } from '../fhirValueSets/DietTypeCodes.js';
 // @ts-ignore
-import { EntformulaAdditiveCodings, EntformulaAdditiveCodingType,} from '../fhirValueSets/EntformulaAdditiveCodings.js';
+import { DietTypeVsValidation } from '../fhirValueSets/DietTypeVsValidation.js';
 // @ts-ignore
 import { EntformulaAdditiveCodes,  EntformulaAdditiveCodeType } from '../fhirValueSets/EntformulaAdditiveCodes.js';
 // @ts-ignore
-import { EnteralRouteCodings, EnteralRouteCodingType,} from '../fhirValueSets/EnteralRouteCodings.js';
+import { EntformulaAdditiveVsValidation } from '../fhirValueSets/EntformulaAdditiveVsValidation.js';
 // @ts-ignore
 import { EnteralRouteCodes,  EnteralRouteCodeType } from '../fhirValueSets/EnteralRouteCodes.js';
 // @ts-ignore
-import { RequestStatusCodings, RequestStatusCodingType,} from '../fhirValueSets/RequestStatusCodings.js';
+import { EnteralRouteVsValidation } from '../fhirValueSets/EnteralRouteVsValidation.js';
 // @ts-ignore
 import { RequestStatusCodes,  RequestStatusCodeType } from '../fhirValueSets/RequestStatusCodes.js';
 // @ts-ignore
-import { RequestIntentCodings, RequestIntentCodingType,} from '../fhirValueSets/RequestIntentCodings.js';
+import { RequestStatusVsValidation } from '../fhirValueSets/RequestStatusVsValidation.js';
 // @ts-ignore
 import { RequestIntentCodes,  RequestIntentCodeType } from '../fhirValueSets/RequestIntentCodes.js';
 // @ts-ignore
-import { EncounterDietCodings, EncounterDietCodingType,} from '../fhirValueSets/EncounterDietCodings.js';
+import { RequestIntentVsValidation } from '../fhirValueSets/RequestIntentVsValidation.js';
 // @ts-ignore
 import { EncounterDietCodes,  EncounterDietCodeType } from '../fhirValueSets/EncounterDietCodes.js';
 // @ts-ignore
-import { FoodTypeCodings, FoodTypeCodingType,} from '../fhirValueSets/FoodTypeCodings.js';
+import { EncounterDietVsValidation } from '../fhirValueSets/EncounterDietVsValidation.js';
 // @ts-ignore
 import { FoodTypeCodes,  FoodTypeCodeType } from '../fhirValueSets/FoodTypeCodes.js';
+// @ts-ignore
+import { FoodTypeVsValidation } from '../fhirValueSets/FoodTypeVsValidation.js';
 /**
  * Valid arguments for the NutritionOrderOralDietNutrient type.
  */
@@ -85,8 +85,8 @@ export class NutritionOrderOralDietNutrient extends fhir.BackboneElement {
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'NutritionOrder.oralDiet.nutrient' }
-    if (this["modifier"]) { issues.push(...this.modifier.doModelValidation(expression+'.modifier')); }
-    if (this["amount"]) { issues.push(...this.amount.doModelValidation(expression+'.amount')); }
+    this.vOptS('modifier',expression)
+    this.vOptS('amount',expression)
     return issues;
   }
 }
@@ -134,8 +134,8 @@ export class NutritionOrderOralDietTexture extends fhir.BackboneElement {
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'NutritionOrder.oralDiet.texture' }
-    if (this["modifier"]) { issues.push(...this.modifier.doModelValidation(expression+'.modifier')); }
-    if (this["foodType"]) { issues.push(...this.foodType.doModelValidation(expression+'.foodType')); }
+    this.vOptS('modifier',expression)
+    this.vOptS('foodType',expression)
     return issues;
   }
 }
@@ -232,12 +232,12 @@ export class NutritionOrderOralDiet extends fhir.BackboneElement {
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'NutritionOrder.oralDiet' }
-    if (this["type"]) { this.type.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.type[${i}]`)); }) }
-    if (this["schedule"]) { this.schedule.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.schedule[${i}]`)); }) }
-    if (this["nutrient"]) { this.nutrient.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.nutrient[${i}]`)); }) }
-    if (this["texture"]) { this.texture.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.texture[${i}]`)); }) }
-    if (this["fluidConsistencyType"]) { this.fluidConsistencyType.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.fluidConsistencyType[${i}]`)); }) }
-    if (this["instruction"]) { issues.push(...this.instruction.doModelValidation(expression+'.instruction')); }
+    this.vOptA('type',expression)
+    this.vOptA('schedule',expression)
+    this.vOptA('nutrient',expression)
+    this.vOptA('texture',expression)
+    this.vOptA('fluidConsistencyType',expression)
+    this.vOptS('instruction',expression)
     return issues;
   }
 }
@@ -329,11 +329,11 @@ export class NutritionOrderSupplement extends fhir.BackboneElement {
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'NutritionOrder.supplement' }
-    if (this["type"]) { issues.push(...this.type.doModelValidation(expression+'.type')); }
-    if (this["productName"]) { issues.push(...this.productName.doModelValidation(expression+'.productName')); }
-    if (this["schedule"]) { this.schedule.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.schedule[${i}]`)); }) }
-    if (this["quantity"]) { issues.push(...this.quantity.doModelValidation(expression+'.quantity')); }
-    if (this["instruction"]) { issues.push(...this.instruction.doModelValidation(expression+'.instruction')); }
+    this.vOptS('type',expression)
+    this.vOptS('productName',expression)
+    this.vOptA('schedule',expression)
+    this.vOptS('quantity',expression)
+    this.vOptS('instruction',expression)
     return issues;
   }
 }
@@ -404,8 +404,9 @@ export class NutritionOrderEnteralFormulaAdministration extends fhir.BackboneEle
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'NutritionOrder.enteralFormula.administration' }
-    if (this["schedule"]) { issues.push(...this.schedule.doModelValidation(expression+'.schedule')); }
-    if (this["quantity"]) { issues.push(...this.quantity.doModelValidation(expression+'.quantity')); }
+    this.vOptS('schedule',expression)
+    this.vOptS('quantity',expression)
+    this.vOptS('rate',expression)
     return issues;
   }
 }
@@ -536,26 +537,20 @@ export class NutritionOrderEnteralFormula extends fhir.BackboneElement {
     }
   }
   /**
-   * Extensible-bound Value Set for routeofAdministration (NutritionOrder.enteralFormula.routeofAdministration)
-   */
-  public static get routeofAdministrationExtensibleCodings():EnteralRouteCodingType {
-    return EnteralRouteCodings;
-  }
-  /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'NutritionOrder.enteralFormula' }
-    if (this["baseFormulaType"]) { issues.push(...this.baseFormulaType.doModelValidation(expression+'.baseFormulaType')); }
-    if (this["baseFormulaProductName"]) { issues.push(...this.baseFormulaProductName.doModelValidation(expression+'.baseFormulaProductName')); }
-    if (this["additiveType"]) { issues.push(...this.additiveType.doModelValidation(expression+'.additiveType')); }
-    if (this["additiveProductName"]) { issues.push(...this.additiveProductName.doModelValidation(expression+'.additiveProductName')); }
-    if (this["caloricDensity"]) { issues.push(...this.caloricDensity.doModelValidation(expression+'.caloricDensity')); }
-    if (this["routeofAdministration"]) { issues.push(...this.routeofAdministration.doModelValidation(expression+'.routeofAdministration')); }
-    if (this["administration"]) { this.administration.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.administration[${i}]`)); }) }
-    if (this["maxVolumeToDeliver"]) { issues.push(...this.maxVolumeToDeliver.doModelValidation(expression+'.maxVolumeToDeliver')); }
-    if (this["administrationInstruction"]) { issues.push(...this.administrationInstruction.doModelValidation(expression+'.administrationInstruction')); }
+    this.vOptS('baseFormulaType',expression)
+    this.vOptS('baseFormulaProductName',expression)
+    this.vOptS('additiveType',expression)
+    this.vOptS('additiveProductName',expression)
+    this.vOptS('caloricDensity',expression)
+    this.vOptS('routeofAdministration',expression)
+    this.vOptA('administration',expression)
+    this.vOptS('maxVolumeToDeliver',expression)
+    this.vOptS('administrationInstruction',expression)
     return issues;
   }
 }
@@ -809,61 +804,29 @@ export class NutritionOrder extends fhir.DomainResource {
     else { this.note = []; }
   }
   /**
-   * Required-bound Value Set for status (NutritionOrder.status)
-   */
-  public static get statusRequiredCodes() {
-    return RequestStatusCodes;
-  }
-  /**
-   * Required-bound Value Set for intent (NutritionOrder.intent)
-   */
-  public static get intentRequiredCodes() {
-    return RequestIntentCodes;
-  }
-  /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'NutritionOrder' }
-    if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType fhir: NutritionOrder.resourceType:"NutritionOrder"', expression: [expression] });
-    }
-    if (this["identifier"]) { this.identifier.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.identifier[${i}]`)); }) }
-    if (this["instantiatesCanonical"]) { this.instantiatesCanonical.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.instantiatesCanonical[${i}]`)); }) }
-    if (this["instantiatesUri"]) { this.instantiatesUri.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.instantiatesUri[${i}]`)); }) }
-    if (this["instantiates"]) { this.instantiates.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.instantiates[${i}]`)); }) }
-    if (!this['status']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status fhir: NutritionOrder.status:code', expression: [expression] });
-    }
-    if (this['status'] && (!Object.values(RequestStatusCodes).includes(this.status.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'status (NutritionOrder.status) of type code is missing code for Required binding to: RequestStatus', expression: [expression] });
-    }
-    if (this["status"]) { issues.push(...this.status.doModelValidation(expression+'.status')); }
-    if (!this['intent']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property intent fhir: NutritionOrder.intent:code', expression: [expression] });
-    }
-    if (this['intent'] && (!Object.values(RequestIntentCodes).includes(this.intent.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'intent (NutritionOrder.intent) of type code is missing code for Required binding to: RequestIntent', expression: [expression] });
-    }
-    if (this["intent"]) { issues.push(...this.intent.doModelValidation(expression+'.intent')); }
-    if (!this['patient']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property patient fhir: NutritionOrder.patient:Reference', expression: [expression] });
-    }
-    if (this["patient"]) { issues.push(...this.patient.doModelValidation(expression+'.patient')); }
-    if (this["encounter"]) { issues.push(...this.encounter.doModelValidation(expression+'.encounter')); }
-    if (!this['dateTime']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property dateTime fhir: NutritionOrder.dateTime:dateTime', expression: [expression] });
-    }
-    if (this["dateTime"]) { issues.push(...this.dateTime.doModelValidation(expression+'.dateTime')); }
-    if (this["orderer"]) { issues.push(...this.orderer.doModelValidation(expression+'.orderer')); }
-    if (this["allergyIntolerance"]) { this.allergyIntolerance.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.allergyIntolerance[${i}]`)); }) }
-    if (this["foodPreferenceModifier"]) { this.foodPreferenceModifier.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.foodPreferenceModifier[${i}]`)); }) }
-    if (this["excludeFoodModifier"]) { this.excludeFoodModifier.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.excludeFoodModifier[${i}]`)); }) }
-    if (this["oralDiet"]) { issues.push(...this.oralDiet.doModelValidation(expression+'.oralDiet')); }
-    if (this["supplement"]) { this.supplement.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.supplement[${i}]`)); }) }
-    if (this["enteralFormula"]) { issues.push(...this.enteralFormula.doModelValidation(expression+'.enteralFormula')); }
-    if (this["note"]) { this.note.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.note[${i}]`)); }) }
+    this.vReqS('resourceType',expression)
+    this.vOptA('identifier',expression)
+    this.vOptA('instantiatesCanonical',expression)
+    this.vOptA('instantiatesUri',expression)
+    this.vOptA('instantiates',expression)
+    this.vReqSV('status',expression,'RequestStatus',RequestStatusVsValidation,'r')
+    this.vReqSV('intent',expression,'RequestIntent',RequestIntentVsValidation,'r')
+    this.vReqS('patient',expression)
+    this.vOptS('encounter',expression)
+    this.vReqS('dateTime',expression)
+    this.vOptS('orderer',expression)
+    this.vOptA('allergyIntolerance',expression)
+    this.vOptA('foodPreferenceModifier',expression)
+    this.vOptA('excludeFoodModifier',expression)
+    this.vOptS('oralDiet',expression)
+    this.vOptA('supplement',expression)
+    this.vOptS('enteralFormula',expression)
+    this.vOptA('note',expression)
     return issues;
   }
 }

@@ -6,25 +6,25 @@
 import * as fhir from '../fhir.js';
 
 // @ts-ignore
-import { RequestStatusCodings, RequestStatusCodingType,} from '../fhirValueSets/RequestStatusCodings.js';
-// @ts-ignore
 import { RequestStatusCodes,  RequestStatusCodeType } from '../fhirValueSets/RequestStatusCodes.js';
 // @ts-ignore
-import { RequestIntentCodings, RequestIntentCodingType,} from '../fhirValueSets/RequestIntentCodings.js';
+import { RequestStatusVsValidation } from '../fhirValueSets/RequestStatusVsValidation.js';
 // @ts-ignore
 import { RequestIntentCodes,  RequestIntentCodeType } from '../fhirValueSets/RequestIntentCodes.js';
 // @ts-ignore
-import { RequestPriorityCodings, RequestPriorityCodingType,} from '../fhirValueSets/RequestPriorityCodings.js';
+import { RequestIntentVsValidation } from '../fhirValueSets/RequestIntentVsValidation.js';
 // @ts-ignore
 import { RequestPriorityCodes,  RequestPriorityCodeType } from '../fhirValueSets/RequestPriorityCodes.js';
 // @ts-ignore
-import { ParticipantRoleCodings, ParticipantRoleCodingType,} from '../fhirValueSets/ParticipantRoleCodings.js';
+import { RequestPriorityVsValidation } from '../fhirValueSets/RequestPriorityVsValidation.js';
 // @ts-ignore
 import { ParticipantRoleCodes,  ParticipantRoleCodeType } from '../fhirValueSets/ParticipantRoleCodes.js';
 // @ts-ignore
-import { ConditionCodings, ConditionCodingType,} from '../fhirValueSets/ConditionCodings.js';
+import { ParticipantRoleVsValidation } from '../fhirValueSets/ParticipantRoleVsValidation.js';
 // @ts-ignore
 import { ConditionCodes,  ConditionCodeType } from '../fhirValueSets/ConditionCodes.js';
+// @ts-ignore
+import { ConditionVsValidation } from '../fhirValueSets/ConditionVsValidation.js';
 /**
  * Valid arguments for the DeviceRequestParameter type.
  */
@@ -93,7 +93,8 @@ export class DeviceRequestParameter extends fhir.BackboneElement {
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'DeviceRequest.parameter' }
-    if (this["code"]) { issues.push(...this.code.doModelValidation(expression+'.code')); }
+    this.vOptS('code',expression)
+    this.vOptS('value',expression)
     return issues;
   }
 }
@@ -447,72 +448,36 @@ export class DeviceRequest extends fhir.DomainResource {
     else { this.relevantHistory = []; }
   }
   /**
-   * Required-bound Value Set for status (DeviceRequest.status)
-   */
-  public static get statusRequiredCodes() {
-    return RequestStatusCodes;
-  }
-  /**
-   * Required-bound Value Set for intent (DeviceRequest.intent)
-   */
-  public static get intentRequiredCodes() {
-    return RequestIntentCodes;
-  }
-  /**
-   * Required-bound Value Set for priority (DeviceRequest.priority)
-   */
-  public static get priorityRequiredCodes() {
-    return RequestPriorityCodes;
-  }
-  /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'DeviceRequest' }
-    if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType fhir: DeviceRequest.resourceType:"DeviceRequest"', expression: [expression] });
-    }
-    if (this["identifier"]) { this.identifier.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.identifier[${i}]`)); }) }
-    if (this["instantiatesCanonical"]) { this.instantiatesCanonical.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.instantiatesCanonical[${i}]`)); }) }
-    if (this["instantiatesUri"]) { this.instantiatesUri.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.instantiatesUri[${i}]`)); }) }
-    if (this["basedOn"]) { this.basedOn.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.basedOn[${i}]`)); }) }
-    if (this["priorRequest"]) { this.priorRequest.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.priorRequest[${i}]`)); }) }
-    if (this["groupIdentifier"]) { issues.push(...this.groupIdentifier.doModelValidation(expression+'.groupIdentifier')); }
-    if (this['status'] && (!Object.values(RequestStatusCodes).includes(this.status.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'status (DeviceRequest.status) of type code is missing code for Required binding to: RequestStatus', expression: [expression] });
-    }
-    if (this["status"]) { issues.push(...this.status.doModelValidation(expression+'.status')); }
-    if (!this['intent']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property intent fhir: DeviceRequest.intent:code', expression: [expression] });
-    }
-    if (this['intent'] && (!Object.values(RequestIntentCodes).includes(this.intent.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'intent (DeviceRequest.intent) of type code is missing code for Required binding to: RequestIntent', expression: [expression] });
-    }
-    if (this["intent"]) { issues.push(...this.intent.doModelValidation(expression+'.intent')); }
-    if (this['priority'] && (!Object.values(RequestPriorityCodes).includes(this.priority.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'priority (DeviceRequest.priority) of type code is missing code for Required binding to: RequestPriority', expression: [expression] });
-    }
-    if (this["priority"]) { issues.push(...this.priority.doModelValidation(expression+'.priority')); }
-    if (!this['code']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property code fhir: DeviceRequest.code[x]:', expression: [expression] });
-    }
-    if (this["parameter"]) { this.parameter.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.parameter[${i}]`)); }) }
-    if (!this['subject']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property subject fhir: DeviceRequest.subject:Reference', expression: [expression] });
-    }
-    if (this["subject"]) { issues.push(...this.subject.doModelValidation(expression+'.subject')); }
-    if (this["encounter"]) { issues.push(...this.encounter.doModelValidation(expression+'.encounter')); }
-    if (this["authoredOn"]) { issues.push(...this.authoredOn.doModelValidation(expression+'.authoredOn')); }
-    if (this["requester"]) { issues.push(...this.requester.doModelValidation(expression+'.requester')); }
-    if (this["performerType"]) { issues.push(...this.performerType.doModelValidation(expression+'.performerType')); }
-    if (this["performer"]) { issues.push(...this.performer.doModelValidation(expression+'.performer')); }
-    if (this["reasonCode"]) { this.reasonCode.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.reasonCode[${i}]`)); }) }
-    if (this["reasonReference"]) { this.reasonReference.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.reasonReference[${i}]`)); }) }
-    if (this["insurance"]) { this.insurance.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.insurance[${i}]`)); }) }
-    if (this["supportingInfo"]) { this.supportingInfo.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.supportingInfo[${i}]`)); }) }
-    if (this["note"]) { this.note.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.note[${i}]`)); }) }
-    if (this["relevantHistory"]) { this.relevantHistory.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.relevantHistory[${i}]`)); }) }
+    this.vReqS('resourceType',expression)
+    this.vOptA('identifier',expression)
+    this.vOptA('instantiatesCanonical',expression)
+    this.vOptA('instantiatesUri',expression)
+    this.vOptA('basedOn',expression)
+    this.vOptA('priorRequest',expression)
+    this.vOptS('groupIdentifier',expression)
+    this.vOptSV('status',expression,'RequestStatus',RequestStatusVsValidation,'r')
+    this.vReqSV('intent',expression,'RequestIntent',RequestIntentVsValidation,'r')
+    this.vOptSV('priority',expression,'RequestPriority',RequestPriorityVsValidation,'r')
+    this.vReqS('code',expression)
+    this.vOptA('parameter',expression)
+    this.vReqS('subject',expression)
+    this.vOptS('encounter',expression)
+    this.vOptS('occurrence',expression)
+    this.vOptS('authoredOn',expression)
+    this.vOptS('requester',expression)
+    this.vOptS('performerType',expression)
+    this.vOptS('performer',expression)
+    this.vOptA('reasonCode',expression)
+    this.vOptA('reasonReference',expression)
+    this.vOptA('insurance',expression)
+    this.vOptA('supportingInfo',expression)
+    this.vOptA('note',expression)
+    this.vOptA('relevantHistory',expression)
     return issues;
   }
 }

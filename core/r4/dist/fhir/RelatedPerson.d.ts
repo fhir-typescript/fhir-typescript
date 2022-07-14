@@ -1,6 +1,4 @@
 import * as fhir from '../fhir.js';
-import { LanguagesCodingType } from '../fhirValueSets/LanguagesCodings.js';
-import { RelatedpersonRelationshiptypeCodingType } from '../fhirValueSets/RelatedpersonRelationshiptypeCodings.js';
 import { AdministrativeGenderCodeType } from '../fhirValueSets/AdministrativeGenderCodes.js';
 /**
  * Valid arguments for the RelatedPersonCommunication type.
@@ -39,10 +37,6 @@ export declare class RelatedPersonCommunication extends fhir.BackboneElement {
      * Default constructor for RelatedPersonCommunication - initializes any required elements to null if a value is not provided.
      */
     constructor(source?: Partial<RelatedPersonCommunicationArgs>, options?: fhir.FhirConstructorOptions);
-    /**
-     * Preferred-bound Value Set for language (RelatedPerson.communication.language)
-     */
-    static get languagePreferredCodings(): LanguagesCodingType;
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
@@ -181,19 +175,6 @@ export declare class RelatedPerson extends fhir.DomainResource {
      * Default constructor for RelatedPerson - initializes any required elements to null if a value is not provided.
      */
     constructor(source?: Partial<RelatedPersonArgs>, options?: fhir.FhirConstructorOptions);
-    /**
-     * Preferred-bound Value Set for relationship (RelatedPerson.relationship)
-     */
-    static get relationshipPreferredCodings(): RelatedpersonRelationshiptypeCodingType;
-    /**
-     * Required-bound Value Set for gender (RelatedPerson.gender)
-     */
-    static get genderRequiredCodes(): {
-        readonly Female: "female";
-        readonly Male: "male";
-        readonly Other: "other";
-        readonly Unknown: "unknown";
-    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */

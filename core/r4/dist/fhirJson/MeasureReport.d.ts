@@ -168,7 +168,7 @@ export interface MeasureReport extends fhir.DomainResource {
     /**
      * This element is typically defined by the measure, but reproduced here to ensure the measure score can be interpreted. The element is labeled as a modifier because it changes the interpretation of the reported measure score.
      */
-    improvementNotation?: fhir.CodeableConcept | undefined;
+    improvementNotation?: 'decrease' | 'increase' | undefined;
     /**
      * The results of the calculation, one for each population group in the measure.
      */

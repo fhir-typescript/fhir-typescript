@@ -6,25 +6,25 @@
 import * as fhir from '../fhir.js';
 
 // @ts-ignore
-import { ImmunizationRecommendationDateCriterionCodings, ImmunizationRecommendationDateCriterionCodingType,} from '../fhirValueSets/ImmunizationRecommendationDateCriterionCodings.js';
-// @ts-ignore
 import { ImmunizationRecommendationDateCriterionCodes,  ImmunizationRecommendationDateCriterionCodeType } from '../fhirValueSets/ImmunizationRecommendationDateCriterionCodes.js';
 // @ts-ignore
-import { VaccineCodings, VaccineCodingType,} from '../fhirValueSets/VaccineCodings.js';
+import { ImmunizationRecommendationDateCriterionVsValidation } from '../fhirValueSets/ImmunizationRecommendationDateCriterionVsValidation.js';
 // @ts-ignore
 import { VaccineCodes,  VaccineCodeType } from '../fhirValueSets/VaccineCodes.js';
 // @ts-ignore
-import { ImmunizationRecommendationTargetDiseaseCodings, ImmunizationRecommendationTargetDiseaseCodingType,} from '../fhirValueSets/ImmunizationRecommendationTargetDiseaseCodings.js';
+import { VaccineVsValidation } from '../fhirValueSets/VaccineVsValidation.js';
 // @ts-ignore
 import { ImmunizationRecommendationTargetDiseaseCodes,  ImmunizationRecommendationTargetDiseaseCodeType } from '../fhirValueSets/ImmunizationRecommendationTargetDiseaseCodes.js';
 // @ts-ignore
-import { ImmunizationRecommendationStatusCodings, ImmunizationRecommendationStatusCodingType,} from '../fhirValueSets/ImmunizationRecommendationStatusCodings.js';
+import { ImmunizationRecommendationTargetDiseaseVsValidation } from '../fhirValueSets/ImmunizationRecommendationTargetDiseaseVsValidation.js';
 // @ts-ignore
 import { ImmunizationRecommendationStatusCodes,  ImmunizationRecommendationStatusCodeType } from '../fhirValueSets/ImmunizationRecommendationStatusCodes.js';
 // @ts-ignore
-import { ImmunizationRecommendationReasonCodings, ImmunizationRecommendationReasonCodingType,} from '../fhirValueSets/ImmunizationRecommendationReasonCodings.js';
+import { ImmunizationRecommendationStatusVsValidation } from '../fhirValueSets/ImmunizationRecommendationStatusVsValidation.js';
 // @ts-ignore
 import { ImmunizationRecommendationReasonCodes,  ImmunizationRecommendationReasonCodeType } from '../fhirValueSets/ImmunizationRecommendationReasonCodes.js';
+// @ts-ignore
+import { ImmunizationRecommendationReasonVsValidation } from '../fhirValueSets/ImmunizationRecommendationReasonVsValidation.js';
 /**
  * Valid arguments for the ImmunizationRecommendationRecommendationDateCriterion type.
  */
@@ -79,14 +79,8 @@ export class ImmunizationRecommendationRecommendationDateCriterion extends fhir.
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'ImmunizationRecommendation.recommendation.dateCriterion' }
-    if (!this['code']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property code fhir: ImmunizationRecommendation.recommendation.dateCriterion.code:CodeableConcept', expression: [expression] });
-    }
-    if (this["code"]) { issues.push(...this.code.doModelValidation(expression+'.code')); }
-    if (!this['value']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property value fhir: ImmunizationRecommendation.recommendation.dateCriterion.value:dateTime', expression: [expression] });
-    }
-    if (this["value"]) { issues.push(...this.value.doModelValidation(expression+'.value')); }
+    this.vReqS('code',expression)
+    this.vReqS('value',expression)
     return issues;
   }
 }
@@ -275,19 +269,18 @@ export class ImmunizationRecommendationRecommendation extends fhir.BackboneEleme
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'ImmunizationRecommendation.recommendation' }
-    if (this["vaccineCode"]) { this.vaccineCode.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.vaccineCode[${i}]`)); }) }
-    if (this["targetDisease"]) { issues.push(...this.targetDisease.doModelValidation(expression+'.targetDisease')); }
-    if (this["contraindicatedVaccineCode"]) { this.contraindicatedVaccineCode.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.contraindicatedVaccineCode[${i}]`)); }) }
-    if (!this['forecastStatus']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property forecastStatus fhir: ImmunizationRecommendation.recommendation.forecastStatus:CodeableConcept', expression: [expression] });
-    }
-    if (this["forecastStatus"]) { issues.push(...this.forecastStatus.doModelValidation(expression+'.forecastStatus')); }
-    if (this["forecastReason"]) { this.forecastReason.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.forecastReason[${i}]`)); }) }
-    if (this["dateCriterion"]) { this.dateCriterion.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.dateCriterion[${i}]`)); }) }
-    if (this["description"]) { issues.push(...this.description.doModelValidation(expression+'.description')); }
-    if (this["series"]) { issues.push(...this.series.doModelValidation(expression+'.series')); }
-    if (this["supportingImmunization"]) { this.supportingImmunization.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.supportingImmunization[${i}]`)); }) }
-    if (this["supportingPatientInformation"]) { this.supportingPatientInformation.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.supportingPatientInformation[${i}]`)); }) }
+    this.vOptA('vaccineCode',expression)
+    this.vOptS('targetDisease',expression)
+    this.vOptA('contraindicatedVaccineCode',expression)
+    this.vReqS('forecastStatus',expression)
+    this.vOptA('forecastReason',expression)
+    this.vOptA('dateCriterion',expression)
+    this.vOptS('description',expression)
+    this.vOptS('series',expression)
+    this.vOptS('doseNumber',expression)
+    this.vOptS('seriesDoses',expression)
+    this.vOptA('supportingImmunization',expression)
+    this.vOptA('supportingPatientInformation',expression)
     return issues;
   }
 }
@@ -383,27 +376,12 @@ export class ImmunizationRecommendation extends fhir.DomainResource {
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'ImmunizationRecommendation' }
-    if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType fhir: ImmunizationRecommendation.resourceType:"ImmunizationRecommendation"', expression: [expression] });
-    }
-    if (this["identifier"]) { this.identifier.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.identifier[${i}]`)); }) }
-    if (!this['patient']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property patient fhir: ImmunizationRecommendation.patient:Reference', expression: [expression] });
-    }
-    if (this["patient"]) { issues.push(...this.patient.doModelValidation(expression+'.patient')); }
-    if (!this['date']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property date fhir: ImmunizationRecommendation.date:dateTime', expression: [expression] });
-    }
-    if (this["date"]) { issues.push(...this.date.doModelValidation(expression+'.date')); }
-    if (this["authority"]) { issues.push(...this.authority.doModelValidation(expression+'.authority')); }
-    if (!this['recommendation']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property recommendation fhir: ImmunizationRecommendation.recommendation:recommendation', expression: [expression] });
-    } else if (!Array.isArray(this.recommendation)) {
-      issues.push({ severity: 'error', code: 'structure', diagnostics: 'Found scalar in array property recommendation fhir: ImmunizationRecommendation.recommendation:recommendation', expression: [expression] });
-    } else if (this.recommendation.length === 0) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property recommendation fhir: ImmunizationRecommendation.recommendation:recommendation', expression: [expression] });
-    }
-    if (this["recommendation"]) { this.recommendation.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.recommendation[${i}]`)); }) }
+    this.vReqS('resourceType',expression)
+    this.vOptA('identifier',expression)
+    this.vReqS('patient',expression)
+    this.vReqS('date',expression)
+    this.vOptS('authority',expression)
+    this.vReqA('recommendation',expression)
     return issues;
   }
 }

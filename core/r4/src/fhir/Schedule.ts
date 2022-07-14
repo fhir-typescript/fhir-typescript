@@ -6,17 +6,17 @@
 import * as fhir from '../fhir.js';
 
 // @ts-ignore
-import { ServiceCategoryCodings, ServiceCategoryCodingType,} from '../fhirValueSets/ServiceCategoryCodings.js';
-// @ts-ignore
 import { ServiceCategoryCodes,  ServiceCategoryCodeType } from '../fhirValueSets/ServiceCategoryCodes.js';
 // @ts-ignore
-import { ServiceTypeCodings, ServiceTypeCodingType,} from '../fhirValueSets/ServiceTypeCodings.js';
+import { ServiceCategoryVsValidation } from '../fhirValueSets/ServiceCategoryVsValidation.js';
 // @ts-ignore
 import { ServiceTypeCodes,  ServiceTypeCodeType } from '../fhirValueSets/ServiceTypeCodes.js';
 // @ts-ignore
-import { C80PracticeCodings, C80PracticeCodingType,} from '../fhirValueSets/C80PracticeCodings.js';
+import { ServiceTypeVsValidation } from '../fhirValueSets/ServiceTypeVsValidation.js';
 // @ts-ignore
 import { C80PracticeCodes,  C80PracticeCodeType } from '../fhirValueSets/C80PracticeCodes.js';
+// @ts-ignore
+import { C80PracticeVsValidation } from '../fhirValueSets/C80PracticeVsValidation.js';
 /**
  * Valid arguments for the Schedule type.
  */
@@ -140,35 +140,20 @@ export class Schedule extends fhir.DomainResource {
     }
   }
   /**
-   * Preferred-bound Value Set for specialty (Schedule.specialty)
-   */
-  public static get specialtyPreferredCodings():C80PracticeCodingType {
-    return C80PracticeCodings;
-  }
-  /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'Schedule' }
-    if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType fhir: Schedule.resourceType:"Schedule"', expression: [expression] });
-    }
-    if (this["identifier"]) { this.identifier.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.identifier[${i}]`)); }) }
-    if (this["active"]) { issues.push(...this.active.doModelValidation(expression+'.active')); }
-    if (this["serviceCategory"]) { this.serviceCategory.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.serviceCategory[${i}]`)); }) }
-    if (this["serviceType"]) { this.serviceType.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.serviceType[${i}]`)); }) }
-    if (this["specialty"]) { this.specialty.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.specialty[${i}]`)); }) }
-    if (!this['actor']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property actor fhir: Schedule.actor:Reference', expression: [expression] });
-    } else if (!Array.isArray(this.actor)) {
-      issues.push({ severity: 'error', code: 'structure', diagnostics: 'Found scalar in array property actor fhir: Schedule.actor:Reference', expression: [expression] });
-    } else if (this.actor.length === 0) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property actor fhir: Schedule.actor:Reference', expression: [expression] });
-    }
-    if (this["actor"]) { this.actor.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.actor[${i}]`)); }) }
-    if (this["planningHorizon"]) { issues.push(...this.planningHorizon.doModelValidation(expression+'.planningHorizon')); }
-    if (this["comment"]) { issues.push(...this.comment.doModelValidation(expression+'.comment')); }
+    this.vReqS('resourceType',expression)
+    this.vOptA('identifier',expression)
+    this.vOptS('active',expression)
+    this.vOptA('serviceCategory',expression)
+    this.vOptA('serviceType',expression)
+    this.vOptA('specialty',expression)
+    this.vReqA('actor',expression)
+    this.vOptS('planningHorizon',expression)
+    this.vOptS('comment',expression)
     return issues;
   }
 }

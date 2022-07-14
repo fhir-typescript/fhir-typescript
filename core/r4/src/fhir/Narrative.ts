@@ -6,9 +6,9 @@
 import * as fhir from '../fhir.js';
 
 // @ts-ignore
-import { NarrativeStatusCodings, NarrativeStatusCodingType,} from '../fhirValueSets/NarrativeStatusCodings.js';
-// @ts-ignore
 import { NarrativeStatusCodes,  NarrativeStatusCodeType } from '../fhirValueSets/NarrativeStatusCodes.js';
+// @ts-ignore
+import { NarrativeStatusVsValidation } from '../fhirValueSets/NarrativeStatusVsValidation.js';
 /**
  * Valid arguments for the Narrative type.
  */
@@ -66,28 +66,13 @@ export class Narrative extends fhir.FhirElement {
     }
   }
   /**
-   * Required-bound Value Set for status (Narrative.status)
-   */
-  public static get statusRequiredCodes() {
-    return NarrativeStatusCodes;
-  }
-  /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'Narrative' }
-    if (!this['status']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status fhir: Narrative.status:code', expression: [expression] });
-    }
-    if (this['status'] && (!Object.values(NarrativeStatusCodes).includes(this.status.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'status (Narrative.status) of type code is missing code for Required binding to: NarrativeStatus', expression: [expression] });
-    }
-    if (this["status"]) { issues.push(...this.status.doModelValidation(expression+'.status')); }
-    if (!this['div']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property div fhir: Narrative.div:xhtml', expression: [expression] });
-    }
-    if (this["div"]) { issues.push(...this.div.doModelValidation(expression+'.div')); }
+    this.vReqSV('status',expression,'NarrativeStatus',NarrativeStatusVsValidation,'r')
+    this.vReqS('div',expression)
     return issues;
   }
 }

@@ -87,14 +87,12 @@ export class MedicinalProductUndesirableEffect extends fhir.DomainResource {
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'MedicinalProductUndesirableEffect' }
-    if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType fhir: MedicinalProductUndesirableEffect.resourceType:"MedicinalProductUndesirableEffect"', expression: [expression] });
-    }
-    if (this["subject"]) { this.subject.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.subject[${i}]`)); }) }
-    if (this["symptomConditionEffect"]) { issues.push(...this.symptomConditionEffect.doModelValidation(expression+'.symptomConditionEffect')); }
-    if (this["classification"]) { issues.push(...this.classification.doModelValidation(expression+'.classification')); }
-    if (this["frequencyOfOccurrence"]) { issues.push(...this.frequencyOfOccurrence.doModelValidation(expression+'.frequencyOfOccurrence')); }
-    if (this["population"]) { this.population.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.population[${i}]`)); }) }
+    this.vReqS('resourceType',expression)
+    this.vOptA('subject',expression)
+    this.vOptS('symptomConditionEffect',expression)
+    this.vOptS('classification',expression)
+    this.vOptS('frequencyOfOccurrence',expression)
+    this.vOptA('population',expression)
     return issues;
   }
 }

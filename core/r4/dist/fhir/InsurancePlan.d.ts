@@ -1,5 +1,4 @@
 import * as fhir from '../fhir.js';
-import { ContactentityTypeCodingType } from '../fhirValueSets/ContactentityTypeCodings.js';
 import { PublicationStatusCodeType } from '../fhirValueSets/PublicationStatusCodes.js';
 /**
  * Valid arguments for the InsurancePlanContact type.
@@ -50,10 +49,6 @@ export declare class InsurancePlanContact extends fhir.BackboneElement {
      * Default constructor for InsurancePlanContact - initializes any required elements to null if a value is not provided.
      */
     constructor(source?: Partial<InsurancePlanContactArgs>, options?: fhir.FhirConstructorOptions);
-    /**
-     * Extensible-bound Value Set for purpose (InsurancePlan.contact.purpose)
-     */
-    static get purposeExtensibleCodings(): ContactentityTypeCodingType;
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
@@ -304,14 +299,6 @@ export declare class InsurancePlanPlanSpecificCostBenefitCost extends fhir.Backb
      * Default constructor for InsurancePlanPlanSpecificCostBenefitCost - initializes any required elements to null if a value is not provided.
      */
     constructor(source?: Partial<InsurancePlanPlanSpecificCostBenefitCostArgs>, options?: fhir.FhirConstructorOptions);
-    /**
-     * Required-bound Value Set for applicability (InsurancePlan.plan.specificCost.benefit.cost.applicability)
-     */
-    static get applicabilityRequiredCodes(): {
-        readonly InNetwork: "in-network";
-        readonly Other: "other";
-        readonly OutOfNetwork: "out-of-network";
-    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
@@ -612,15 +599,6 @@ export declare class InsurancePlan extends fhir.DomainResource {
      * Default constructor for InsurancePlan - initializes any required elements to null if a value is not provided.
      */
     constructor(source?: Partial<InsurancePlanArgs>, options?: fhir.FhirConstructorOptions);
-    /**
-     * Required-bound Value Set for status (InsurancePlan.status)
-     */
-    static get statusRequiredCodes(): {
-        readonly Active: "active";
-        readonly Draft: "draft";
-        readonly Retired: "retired";
-        readonly Unknown: "unknown";
-    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */

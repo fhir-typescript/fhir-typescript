@@ -211,33 +211,6 @@ export declare class CarePlanActivityDetail extends fhir.BackboneElement {
      */
     constructor(source?: Partial<CarePlanActivityDetailArgs>, options?: fhir.FhirConstructorOptions);
     /**
-     * Required-bound Value Set for kind (CarePlan.activity.detail.kind)
-     */
-    static get kindRequiredCodes(): {
-        readonly Appointment: "Appointment";
-        readonly CommunicationRequest: "CommunicationRequest";
-        readonly DeviceRequest: "DeviceRequest";
-        readonly MedicationRequest: "MedicationRequest";
-        readonly NutritionOrder: "NutritionOrder";
-        readonly ServiceRequest: "ServiceRequest";
-        readonly Task: "Task";
-        readonly VisionPrescription: "VisionPrescription";
-    };
-    /**
-     * Required-bound Value Set for status (CarePlan.activity.detail.status)
-     */
-    static get statusRequiredCodes(): {
-        readonly Cancelled: "cancelled";
-        readonly Completed: "completed";
-        readonly EnteredInError: "entered-in-error";
-        readonly InProgress: "in-progress";
-        readonly NotStarted: "not-started";
-        readonly OnHold: "on-hold";
-        readonly Scheduled: "scheduled";
-        readonly Stopped: "stopped";
-        readonly Unknown: "unknown";
-    };
-    /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
     doModelValidation(expression?: string): fhir.FtsIssue[];
@@ -545,27 +518,6 @@ export declare class CarePlan extends fhir.DomainResource {
      * Default constructor for CarePlan - initializes any required elements to null if a value is not provided.
      */
     constructor(source?: Partial<CarePlanArgs>, options?: fhir.FhirConstructorOptions);
-    /**
-     * Required-bound Value Set for status (CarePlan.status)
-     */
-    static get statusRequiredCodes(): {
-        readonly Active: "active";
-        readonly Completed: "completed";
-        readonly Draft: "draft";
-        readonly EnteredInError: "entered-in-error";
-        readonly OnHold: "on-hold";
-        readonly Revoked: "revoked";
-        readonly Unknown: "unknown";
-    };
-    /**
-     * Required-bound Value Set for intent (CarePlan.intent)
-     */
-    static get intentRequiredCodes(): {
-        readonly Option: "option";
-        readonly Order: "order";
-        readonly Plan: "plan";
-        readonly Proposal: "proposal";
-    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */

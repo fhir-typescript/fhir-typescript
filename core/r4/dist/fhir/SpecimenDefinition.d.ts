@@ -300,13 +300,6 @@ export declare class SpecimenDefinitionTypeTested extends fhir.BackboneElement {
      */
     constructor(source?: Partial<SpecimenDefinitionTypeTestedArgs>, options?: fhir.FhirConstructorOptions);
     /**
-     * Required-bound Value Set for preference (SpecimenDefinition.typeTested.preference)
-     */
-    static get preferenceRequiredCodes(): {
-        readonly Alternate: "alternate";
-        readonly Preferred: "preferred";
-    };
-    /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
     doModelValidation(expression?: string): fhir.FtsIssue[];

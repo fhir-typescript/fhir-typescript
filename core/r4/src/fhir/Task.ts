@@ -6,25 +6,25 @@
 import * as fhir from '../fhir.js';
 
 // @ts-ignore
-import { TaskStatusCodings, TaskStatusCodingType,} from '../fhirValueSets/TaskStatusCodings.js';
-// @ts-ignore
 import { TaskStatusCodes,  TaskStatusCodeType } from '../fhirValueSets/TaskStatusCodes.js';
 // @ts-ignore
-import { TaskIntentCodings, TaskIntentCodingType,} from '../fhirValueSets/TaskIntentCodings.js';
+import { TaskStatusVsValidation } from '../fhirValueSets/TaskStatusVsValidation.js';
 // @ts-ignore
 import { TaskIntentCodes,  TaskIntentCodeType } from '../fhirValueSets/TaskIntentCodes.js';
 // @ts-ignore
-import { RequestPriorityCodings, RequestPriorityCodingType,} from '../fhirValueSets/RequestPriorityCodings.js';
+import { TaskIntentVsValidation } from '../fhirValueSets/TaskIntentVsValidation.js';
 // @ts-ignore
 import { RequestPriorityCodes,  RequestPriorityCodeType } from '../fhirValueSets/RequestPriorityCodes.js';
 // @ts-ignore
-import { TaskCodings, TaskCodingType,} from '../fhirValueSets/TaskCodings.js';
+import { RequestPriorityVsValidation } from '../fhirValueSets/RequestPriorityVsValidation.js';
 // @ts-ignore
 import { TaskCodes,  TaskCodeType } from '../fhirValueSets/TaskCodes.js';
 // @ts-ignore
-import { PerformerRoleCodings, PerformerRoleCodingType,} from '../fhirValueSets/PerformerRoleCodings.js';
+import { TaskVsValidation } from '../fhirValueSets/TaskVsValidation.js';
 // @ts-ignore
 import { PerformerRoleCodes,  PerformerRoleCodeType } from '../fhirValueSets/PerformerRoleCodes.js';
+// @ts-ignore
+import { PerformerRoleVsValidation } from '../fhirValueSets/PerformerRoleVsValidation.js';
 /**
  * Valid arguments for the TaskRestriction type.
  */
@@ -87,9 +87,9 @@ export class TaskRestriction extends fhir.BackboneElement {
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'Task.restriction' }
-    if (this["repetitions"]) { issues.push(...this.repetitions.doModelValidation(expression+'.repetitions')); }
-    if (this["period"]) { issues.push(...this.period.doModelValidation(expression+'.period')); }
-    if (this["recipient"]) { this.recipient.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.recipient[${i}]`)); }) }
+    this.vOptS('repetitions',expression)
+    this.vOptS('period',expression)
+    this.vOptA('recipient',expression)
     return issues;
   }
 }
@@ -393,13 +393,8 @@ export class TaskInput extends fhir.BackboneElement {
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'Task.input' }
-    if (!this['type']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property type fhir: Task.input.type:CodeableConcept', expression: [expression] });
-    }
-    if (this["type"]) { issues.push(...this.type.doModelValidation(expression+'.type')); }
-    if (!this['value']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property value fhir: Task.input.value[x]:', expression: [expression] });
-    }
+    this.vReqS('type',expression)
+    this.vReqS('value',expression)
     return issues;
   }
 }
@@ -703,13 +698,8 @@ export class TaskOutput extends fhir.BackboneElement {
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'Task.output' }
-    if (!this['type']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property type fhir: Task.output.type:CodeableConcept', expression: [expression] });
-    }
-    if (this["type"]) { issues.push(...this.type.doModelValidation(expression+'.type')); }
-    if (!this['value']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property value fhir: Task.output.value[x]:', expression: [expression] });
-    }
+    this.vReqS('type',expression)
+    this.vReqS('value',expression)
     return issues;
   }
 }
@@ -1099,84 +1089,43 @@ export class Task extends fhir.DomainResource {
     else { this.output = []; }
   }
   /**
-   * Required-bound Value Set for status (Task.status)
-   */
-  public static get statusRequiredCodes() {
-    return TaskStatusCodes;
-  }
-  /**
-   * Required-bound Value Set for intent (Task.intent)
-   */
-  public static get intentRequiredCodes() {
-    return TaskIntentCodes;
-  }
-  /**
-   * Required-bound Value Set for priority (Task.priority)
-   */
-  public static get priorityRequiredCodes() {
-    return RequestPriorityCodes;
-  }
-  /**
-   * Preferred-bound Value Set for performerType (Task.performerType)
-   */
-  public static get performerTypePreferredCodings():PerformerRoleCodingType {
-    return PerformerRoleCodings;
-  }
-  /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'Task' }
-    if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType fhir: Task.resourceType:"Task"', expression: [expression] });
-    }
-    if (this["identifier"]) { this.identifier.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.identifier[${i}]`)); }) }
-    if (this["instantiatesCanonical"]) { issues.push(...this.instantiatesCanonical.doModelValidation(expression+'.instantiatesCanonical')); }
-    if (this["instantiatesUri"]) { issues.push(...this.instantiatesUri.doModelValidation(expression+'.instantiatesUri')); }
-    if (this["basedOn"]) { this.basedOn.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.basedOn[${i}]`)); }) }
-    if (this["groupIdentifier"]) { issues.push(...this.groupIdentifier.doModelValidation(expression+'.groupIdentifier')); }
-    if (this["partOf"]) { this.partOf.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.partOf[${i}]`)); }) }
-    if (!this['status']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status fhir: Task.status:code', expression: [expression] });
-    }
-    if (this['status'] && (!Object.values(TaskStatusCodes).includes(this.status.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'status (Task.status) of type code is missing code for Required binding to: TaskStatus', expression: [expression] });
-    }
-    if (this["status"]) { issues.push(...this.status.doModelValidation(expression+'.status')); }
-    if (this["statusReason"]) { issues.push(...this.statusReason.doModelValidation(expression+'.statusReason')); }
-    if (this["businessStatus"]) { issues.push(...this.businessStatus.doModelValidation(expression+'.businessStatus')); }
-    if (!this['intent']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property intent fhir: Task.intent:code', expression: [expression] });
-    }
-    if (this['intent'] && (!Object.values(TaskIntentCodes).includes(this.intent.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'intent (Task.intent) of type code is missing code for Required binding to: TaskIntent', expression: [expression] });
-    }
-    if (this["intent"]) { issues.push(...this.intent.doModelValidation(expression+'.intent')); }
-    if (this['priority'] && (!Object.values(RequestPriorityCodes).includes(this.priority.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'priority (Task.priority) of type code is missing code for Required binding to: RequestPriority', expression: [expression] });
-    }
-    if (this["priority"]) { issues.push(...this.priority.doModelValidation(expression+'.priority')); }
-    if (this["code"]) { issues.push(...this.code.doModelValidation(expression+'.code')); }
-    if (this["description"]) { issues.push(...this.description.doModelValidation(expression+'.description')); }
-    if (this["focus"]) { issues.push(...this.focus.doModelValidation(expression+'.focus')); }
-    if (this["for"]) { issues.push(...this.for.doModelValidation(expression+'.for')); }
-    if (this["encounter"]) { issues.push(...this.encounter.doModelValidation(expression+'.encounter')); }
-    if (this["executionPeriod"]) { issues.push(...this.executionPeriod.doModelValidation(expression+'.executionPeriod')); }
-    if (this["authoredOn"]) { issues.push(...this.authoredOn.doModelValidation(expression+'.authoredOn')); }
-    if (this["lastModified"]) { issues.push(...this.lastModified.doModelValidation(expression+'.lastModified')); }
-    if (this["requester"]) { issues.push(...this.requester.doModelValidation(expression+'.requester')); }
-    if (this["performerType"]) { this.performerType.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.performerType[${i}]`)); }) }
-    if (this["owner"]) { issues.push(...this.owner.doModelValidation(expression+'.owner')); }
-    if (this["location"]) { issues.push(...this.location.doModelValidation(expression+'.location')); }
-    if (this["reasonCode"]) { issues.push(...this.reasonCode.doModelValidation(expression+'.reasonCode')); }
-    if (this["reasonReference"]) { issues.push(...this.reasonReference.doModelValidation(expression+'.reasonReference')); }
-    if (this["insurance"]) { this.insurance.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.insurance[${i}]`)); }) }
-    if (this["note"]) { this.note.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.note[${i}]`)); }) }
-    if (this["relevantHistory"]) { this.relevantHistory.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.relevantHistory[${i}]`)); }) }
-    if (this["restriction"]) { issues.push(...this.restriction.doModelValidation(expression+'.restriction')); }
-    if (this["input"]) { this.input.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.input[${i}]`)); }) }
-    if (this["output"]) { this.output.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.output[${i}]`)); }) }
+    this.vReqS('resourceType',expression)
+    this.vOptA('identifier',expression)
+    this.vOptS('instantiatesCanonical',expression)
+    this.vOptS('instantiatesUri',expression)
+    this.vOptA('basedOn',expression)
+    this.vOptS('groupIdentifier',expression)
+    this.vOptA('partOf',expression)
+    this.vReqSV('status',expression,'TaskStatus',TaskStatusVsValidation,'r')
+    this.vOptS('statusReason',expression)
+    this.vOptS('businessStatus',expression)
+    this.vReqSV('intent',expression,'TaskIntent',TaskIntentVsValidation,'r')
+    this.vOptSV('priority',expression,'RequestPriority',RequestPriorityVsValidation,'r')
+    this.vOptS('code',expression)
+    this.vOptS('description',expression)
+    this.vOptS('focus',expression)
+    this.vOptS('for',expression)
+    this.vOptS('encounter',expression)
+    this.vOptS('executionPeriod',expression)
+    this.vOptS('authoredOn',expression)
+    this.vOptS('lastModified',expression)
+    this.vOptS('requester',expression)
+    this.vOptA('performerType',expression)
+    this.vOptS('owner',expression)
+    this.vOptS('location',expression)
+    this.vOptS('reasonCode',expression)
+    this.vOptS('reasonReference',expression)
+    this.vOptA('insurance',expression)
+    this.vOptA('note',expression)
+    this.vOptA('relevantHistory',expression)
+    this.vOptS('restriction',expression)
+    this.vOptA('input',expression)
+    this.vOptA('output',expression)
     return issues;
   }
 }

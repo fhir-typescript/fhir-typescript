@@ -6,53 +6,53 @@
 import * as fhir from '../fhir.js';
 
 // @ts-ignore
-import { SecurityRoleTypeCodings, SecurityRoleTypeCodingType,} from '../fhirValueSets/SecurityRoleTypeCodings.js';
-// @ts-ignore
 import { SecurityRoleTypeCodes,  SecurityRoleTypeCodeType } from '../fhirValueSets/SecurityRoleTypeCodes.js';
 // @ts-ignore
-import { ConsentDataMeaningCodings, ConsentDataMeaningCodingType,} from '../fhirValueSets/ConsentDataMeaningCodings.js';
+import { SecurityRoleTypeVsValidation } from '../fhirValueSets/SecurityRoleTypeVsValidation.js';
 // @ts-ignore
 import { ConsentDataMeaningCodes,  ConsentDataMeaningCodeType } from '../fhirValueSets/ConsentDataMeaningCodes.js';
 // @ts-ignore
-import { ConsentProvisionTypeCodings, ConsentProvisionTypeCodingType,} from '../fhirValueSets/ConsentProvisionTypeCodings.js';
+import { ConsentDataMeaningVsValidation } from '../fhirValueSets/ConsentDataMeaningVsValidation.js';
 // @ts-ignore
 import { ConsentProvisionTypeCodes,  ConsentProvisionTypeCodeType } from '../fhirValueSets/ConsentProvisionTypeCodes.js';
 // @ts-ignore
-import { ConsentActionCodings, ConsentActionCodingType,} from '../fhirValueSets/ConsentActionCodings.js';
+import { ConsentProvisionTypeVsValidation } from '../fhirValueSets/ConsentProvisionTypeVsValidation.js';
 // @ts-ignore
 import { ConsentActionCodes,  ConsentActionCodeType } from '../fhirValueSets/ConsentActionCodes.js';
 // @ts-ignore
-import { SecurityLabelsCodings, SecurityLabelsCodingType,} from '../fhirValueSets/SecurityLabelsCodings.js';
+import { ConsentActionVsValidation } from '../fhirValueSets/ConsentActionVsValidation.js';
 // @ts-ignore
 import { SecurityLabelsCodes,  SecurityLabelsCodeType } from '../fhirValueSets/SecurityLabelsCodes.js';
 // @ts-ignore
-import { V3PurposeOfUseCodings, V3PurposeOfUseCodingType,} from '../fhirValueSets/V3PurposeOfUseCodings.js';
+import { SecurityLabelsVsValidation } from '../fhirValueSets/SecurityLabelsVsValidation.js';
 // @ts-ignore
 import { V3PurposeOfUseCodes,  V3PurposeOfUseCodeType } from '../fhirValueSets/V3PurposeOfUseCodes.js';
 // @ts-ignore
-import { ConsentContentClassCodings, ConsentContentClassCodingType,} from '../fhirValueSets/ConsentContentClassCodings.js';
+import { V3PurposeOfUseVsValidation } from '../fhirValueSets/V3PurposeOfUseVsValidation.js';
 // @ts-ignore
 import { ConsentContentClassCodes,  ConsentContentClassCodeType } from '../fhirValueSets/ConsentContentClassCodes.js';
 // @ts-ignore
-import { ConsentContentCodings, ConsentContentCodingType,} from '../fhirValueSets/ConsentContentCodings.js';
+import { ConsentContentClassVsValidation } from '../fhirValueSets/ConsentContentClassVsValidation.js';
 // @ts-ignore
 import { ConsentContentCodes,  ConsentContentCodeType } from '../fhirValueSets/ConsentContentCodes.js';
 // @ts-ignore
-import { ConsentStateCodings, ConsentStateCodingType,} from '../fhirValueSets/ConsentStateCodings.js';
+import { ConsentContentVsValidation } from '../fhirValueSets/ConsentContentVsValidation.js';
 // @ts-ignore
 import { ConsentStateCodes,  ConsentStateCodeType } from '../fhirValueSets/ConsentStateCodes.js';
 // @ts-ignore
-import { ConsentScopeCodings, ConsentScopeCodingType,} from '../fhirValueSets/ConsentScopeCodings.js';
+import { ConsentStateVsValidation } from '../fhirValueSets/ConsentStateVsValidation.js';
 // @ts-ignore
 import { ConsentScopeCodes,  ConsentScopeCodeType } from '../fhirValueSets/ConsentScopeCodes.js';
 // @ts-ignore
-import { ConsentCategoryCodings, ConsentCategoryCodingType,} from '../fhirValueSets/ConsentCategoryCodings.js';
+import { ConsentScopeVsValidation } from '../fhirValueSets/ConsentScopeVsValidation.js';
 // @ts-ignore
 import { ConsentCategoryCodes,  ConsentCategoryCodeType } from '../fhirValueSets/ConsentCategoryCodes.js';
 // @ts-ignore
-import { ConsentPolicyCodings, ConsentPolicyCodingType,} from '../fhirValueSets/ConsentPolicyCodings.js';
+import { ConsentCategoryVsValidation } from '../fhirValueSets/ConsentCategoryVsValidation.js';
 // @ts-ignore
 import { ConsentPolicyCodes,  ConsentPolicyCodeType } from '../fhirValueSets/ConsentPolicyCodes.js';
+// @ts-ignore
+import { ConsentPolicyVsValidation } from '../fhirValueSets/ConsentPolicyVsValidation.js';
 /**
  * Valid arguments for the ConsentPolicy type.
  */
@@ -113,8 +113,8 @@ export class ConsentPolicy extends fhir.BackboneElement {
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'Consent.policy' }
-    if (this["authority"]) { issues.push(...this.authority.doModelValidation(expression+'.authority')); }
-    if (this["uri"]) { issues.push(...this.uri.doModelValidation(expression+'.uri')); }
+    this.vOptS('authority',expression)
+    this.vOptS('uri',expression)
     return issues;
   }
 }
@@ -188,12 +188,9 @@ export class ConsentVerification extends fhir.BackboneElement {
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'Consent.verification' }
-    if (!this['verified']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property verified fhir: Consent.verification.verified:boolean', expression: [expression] });
-    }
-    if (this["verified"]) { issues.push(...this.verified.doModelValidation(expression+'.verified')); }
-    if (this["verifiedWith"]) { issues.push(...this.verifiedWith.doModelValidation(expression+'.verifiedWith')); }
-    if (this["verificationDate"]) { issues.push(...this.verificationDate.doModelValidation(expression+'.verificationDate')); }
+    this.vReqS('verified',expression)
+    this.vOptS('verifiedWith',expression)
+    this.vOptS('verificationDate',expression)
     return issues;
   }
 }
@@ -238,25 +235,13 @@ export class ConsentProvisionActor extends fhir.BackboneElement {
     else { this.reference = null; }
   }
   /**
-   * Extensible-bound Value Set for role (Consent.provision.actor.role)
-   */
-  public static get roleExtensibleCodings():SecurityRoleTypeCodingType {
-    return SecurityRoleTypeCodings;
-  }
-  /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'Consent.provision.actor' }
-    if (!this['role']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property role fhir: Consent.provision.actor.role:CodeableConcept', expression: [expression] });
-    }
-    if (this["role"]) { issues.push(...this.role.doModelValidation(expression+'.role')); }
-    if (!this['reference']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property reference fhir: Consent.provision.actor.reference:Reference', expression: [expression] });
-    }
-    if (this["reference"]) { issues.push(...this.reference.doModelValidation(expression+'.reference')); }
+    this.vReqS('role',expression)
+    this.vReqS('reference',expression)
     return issues;
   }
 }
@@ -309,28 +294,13 @@ export class ConsentProvisionData extends fhir.BackboneElement {
     else { this.reference = null; }
   }
   /**
-   * Required-bound Value Set for meaning (Consent.provision.data.meaning)
-   */
-  public static get meaningRequiredCodes() {
-    return ConsentDataMeaningCodes;
-  }
-  /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'Consent.provision.data' }
-    if (!this['meaning']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property meaning fhir: Consent.provision.data.meaning:code', expression: [expression] });
-    }
-    if (this['meaning'] && (!Object.values(ConsentDataMeaningCodes).includes(this.meaning.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'meaning (Consent.provision.data.meaning) of type code is missing code for Required binding to: ConsentDataMeaning', expression: [expression] });
-    }
-    if (this["meaning"]) { issues.push(...this.meaning.doModelValidation(expression+'.meaning')); }
-    if (!this['reference']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property reference fhir: Consent.provision.data.reference:Reference', expression: [expression] });
-    }
-    if (this["reference"]) { issues.push(...this.reference.doModelValidation(expression+'.reference')); }
+    this.vReqSV('meaning',expression,'ConsentDataMeaning',ConsentDataMeaningVsValidation,'r')
+    this.vReqS('reference',expression)
     return issues;
   }
 }
@@ -470,49 +440,22 @@ export class ConsentProvision extends fhir.BackboneElement {
     else { this.provision = []; }
   }
   /**
-   * Required-bound Value Set for type (Consent.provision.type)
-   */
-  public static get typeRequiredCodes() {
-    return ConsentProvisionTypeCodes;
-  }
-  /**
-   * Extensible-bound Value Set for securityLabel (Consent.provision.securityLabel)
-   */
-  public static get securityLabelExtensibleCodings():SecurityLabelsCodingType {
-    return SecurityLabelsCodings;
-  }
-  /**
-   * Extensible-bound Value Set for purpose (Consent.provision.purpose)
-   */
-  public static get purposeExtensibleCodings():V3PurposeOfUseCodingType {
-    return V3PurposeOfUseCodings;
-  }
-  /**
-   * Extensible-bound Value Set for class (Consent.provision.class)
-   */
-  public static get classExtensibleCodings():ConsentContentClassCodingType {
-    return ConsentContentClassCodings;
-  }
-  /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'Consent.provision' }
-    if (this['type'] && (!Object.values(ConsentProvisionTypeCodes).includes(this.type.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'type (Consent.provision.type) of type code is missing code for Required binding to: ConsentProvisionType', expression: [expression] });
-    }
-    if (this["type"]) { issues.push(...this.type.doModelValidation(expression+'.type')); }
-    if (this["period"]) { issues.push(...this.period.doModelValidation(expression+'.period')); }
-    if (this["actor"]) { this.actor.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.actor[${i}]`)); }) }
-    if (this["action"]) { this.action.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.action[${i}]`)); }) }
-    if (this["securityLabel"]) { this.securityLabel.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.securityLabel[${i}]`)); }) }
-    if (this["purpose"]) { this.purpose.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.purpose[${i}]`)); }) }
-    if (this["class"]) { this.class.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.class[${i}]`)); }) }
-    if (this["code"]) { this.code.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.code[${i}]`)); }) }
-    if (this["dataPeriod"]) { issues.push(...this.dataPeriod.doModelValidation(expression+'.dataPeriod')); }
-    if (this["data"]) { this.data.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.data[${i}]`)); }) }
-    if (this["provision"]) { this.provision.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.provision[${i}]`)); }) }
+    this.vOptSV('type',expression,'ConsentProvisionType',ConsentProvisionTypeVsValidation,'r')
+    this.vOptS('period',expression)
+    this.vOptA('actor',expression)
+    this.vOptA('action',expression)
+    this.vOptA('securityLabel',expression)
+    this.vOptA('purpose',expression)
+    this.vOptA('class',expression)
+    this.vOptA('code',expression)
+    this.vOptS('dataPeriod',expression)
+    this.vOptA('data',expression)
+    this.vOptA('provision',expression)
     return issues;
   }
 }
@@ -701,66 +644,25 @@ export class Consent extends fhir.DomainResource {
     if (source['provision']) { this.provision = new fhir.ConsentProvision(source.provision); }
   }
   /**
-   * Required-bound Value Set for status (Consent.status)
-   */
-  public static get statusRequiredCodes() {
-    return ConsentStateCodes;
-  }
-  /**
-   * Extensible-bound Value Set for scope (Consent.scope)
-   */
-  public static get scopeExtensibleCodings():ConsentScopeCodingType {
-    return ConsentScopeCodings;
-  }
-  /**
-   * Extensible-bound Value Set for category (Consent.category)
-   */
-  public static get categoryExtensibleCodings():ConsentCategoryCodingType {
-    return ConsentCategoryCodings;
-  }
-  /**
-   * Extensible-bound Value Set for policyRule (Consent.policyRule)
-   */
-  public static get policyRuleExtensibleCodings():ConsentPolicyCodingType {
-    return ConsentPolicyCodings;
-  }
-  /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'Consent' }
-    if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType fhir: Consent.resourceType:"Consent"', expression: [expression] });
-    }
-    if (this["identifier"]) { this.identifier.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.identifier[${i}]`)); }) }
-    if (!this['status']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status fhir: Consent.status:code', expression: [expression] });
-    }
-    if (this['status'] && (!Object.values(ConsentStateCodes).includes(this.status.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'status (Consent.status) of type code is missing code for Required binding to: ConsentState', expression: [expression] });
-    }
-    if (this["status"]) { issues.push(...this.status.doModelValidation(expression+'.status')); }
-    if (!this['scope']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property scope fhir: Consent.scope:CodeableConcept', expression: [expression] });
-    }
-    if (this["scope"]) { issues.push(...this.scope.doModelValidation(expression+'.scope')); }
-    if (!this['category']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property category fhir: Consent.category:CodeableConcept', expression: [expression] });
-    } else if (!Array.isArray(this.category)) {
-      issues.push({ severity: 'error', code: 'structure', diagnostics: 'Found scalar in array property category fhir: Consent.category:CodeableConcept', expression: [expression] });
-    } else if (this.category.length === 0) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property category fhir: Consent.category:CodeableConcept', expression: [expression] });
-    }
-    if (this["category"]) { this.category.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.category[${i}]`)); }) }
-    if (this["patient"]) { issues.push(...this.patient.doModelValidation(expression+'.patient')); }
-    if (this["dateTime"]) { issues.push(...this.dateTime.doModelValidation(expression+'.dateTime')); }
-    if (this["performer"]) { this.performer.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.performer[${i}]`)); }) }
-    if (this["organization"]) { this.organization.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.organization[${i}]`)); }) }
-    if (this["policy"]) { this.policy.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.policy[${i}]`)); }) }
-    if (this["policyRule"]) { issues.push(...this.policyRule.doModelValidation(expression+'.policyRule')); }
-    if (this["verification"]) { this.verification.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.verification[${i}]`)); }) }
-    if (this["provision"]) { issues.push(...this.provision.doModelValidation(expression+'.provision')); }
+    this.vReqS('resourceType',expression)
+    this.vOptA('identifier',expression)
+    this.vReqSV('status',expression,'ConsentState',ConsentStateVsValidation,'r')
+    this.vReqS('scope',expression)
+    this.vReqA('category',expression)
+    this.vOptS('patient',expression)
+    this.vOptS('dateTime',expression)
+    this.vOptA('performer',expression)
+    this.vOptA('organization',expression)
+    this.vOptS('source',expression)
+    this.vOptA('policy',expression)
+    this.vOptS('policyRule',expression)
+    this.vOptA('verification',expression)
+    this.vOptS('provision',expression)
     return issues;
   }
 }

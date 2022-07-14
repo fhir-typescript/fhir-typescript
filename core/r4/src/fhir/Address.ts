@@ -6,13 +6,13 @@
 import * as fhir from '../fhir.js';
 
 // @ts-ignore
-import { AddressUseCodings, AddressUseCodingType,} from '../fhirValueSets/AddressUseCodings.js';
-// @ts-ignore
 import { AddressUseCodes,  AddressUseCodeType } from '../fhirValueSets/AddressUseCodes.js';
 // @ts-ignore
-import { AddressTypeCodings, AddressTypeCodingType,} from '../fhirValueSets/AddressTypeCodings.js';
+import { AddressUseVsValidation } from '../fhirValueSets/AddressUseVsValidation.js';
 // @ts-ignore
 import { AddressTypeCodes,  AddressTypeCodeType } from '../fhirValueSets/AddressTypeCodes.js';
+// @ts-ignore
+import { AddressTypeVsValidation } from '../fhirValueSets/AddressTypeVsValidation.js';
 /**
  * Valid arguments for the Address type.
  */
@@ -199,39 +199,21 @@ export class Address extends fhir.FhirElement {
     if (source['period']) { this.period = new fhir.Period(source.period); }
   }
   /**
-   * Required-bound Value Set for use (Address.use)
-   */
-  public static get useRequiredCodes() {
-    return AddressUseCodes;
-  }
-  /**
-   * Required-bound Value Set for type (Address.type)
-   */
-  public static get typeRequiredCodes() {
-    return AddressTypeCodes;
-  }
-  /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'Address' }
-    if (this['use'] && (!Object.values(AddressUseCodes).includes(this.use.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'use (Address.use) of type code is missing code for Required binding to: AddressUse', expression: [expression] });
-    }
-    if (this["use"]) { issues.push(...this.use.doModelValidation(expression+'.use')); }
-    if (this['type'] && (!Object.values(AddressTypeCodes).includes(this.type.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'type (Address.type) of type code is missing code for Required binding to: AddressType', expression: [expression] });
-    }
-    if (this["type"]) { issues.push(...this.type.doModelValidation(expression+'.type')); }
-    if (this["text"]) { issues.push(...this.text.doModelValidation(expression+'.text')); }
-    if (this["line"]) { this.line.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.line[${i}]`)); }) }
-    if (this["city"]) { issues.push(...this.city.doModelValidation(expression+'.city')); }
-    if (this["district"]) { issues.push(...this.district.doModelValidation(expression+'.district')); }
-    if (this["state"]) { issues.push(...this.state.doModelValidation(expression+'.state')); }
-    if (this["postalCode"]) { issues.push(...this.postalCode.doModelValidation(expression+'.postalCode')); }
-    if (this["country"]) { issues.push(...this.country.doModelValidation(expression+'.country')); }
-    if (this["period"]) { issues.push(...this.period.doModelValidation(expression+'.period')); }
+    this.vOptSV('use',expression,'AddressUse',AddressUseVsValidation,'r')
+    this.vOptSV('type',expression,'AddressType',AddressTypeVsValidation,'r')
+    this.vOptS('text',expression)
+    this.vOptA('line',expression)
+    this.vOptS('city',expression)
+    this.vOptS('district',expression)
+    this.vOptS('state',expression)
+    this.vOptS('postalCode',expression)
+    this.vOptS('country',expression)
+    this.vOptS('period',expression)
     return issues;
   }
 }

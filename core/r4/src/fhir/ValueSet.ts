@@ -6,21 +6,21 @@
 import * as fhir from '../fhir.js';
 
 // @ts-ignore
-import { LanguagesCodings, LanguagesCodingType,} from '../fhirValueSets/LanguagesCodings.js';
-// @ts-ignore
 import { LanguagesCodes,  LanguagesCodeType } from '../fhirValueSets/LanguagesCodes.js';
 // @ts-ignore
-import { DesignationUseCodings, DesignationUseCodingType,} from '../fhirValueSets/DesignationUseCodings.js';
+import { LanguagesVsValidation } from '../fhirValueSets/LanguagesVsValidation.js';
 // @ts-ignore
 import { DesignationUseCodes,  DesignationUseCodeType } from '../fhirValueSets/DesignationUseCodes.js';
 // @ts-ignore
-import { FilterOperatorCodings, FilterOperatorCodingType,} from '../fhirValueSets/FilterOperatorCodings.js';
+import { DesignationUseVsValidation } from '../fhirValueSets/DesignationUseVsValidation.js';
 // @ts-ignore
 import { FilterOperatorCodes,  FilterOperatorCodeType } from '../fhirValueSets/FilterOperatorCodes.js';
 // @ts-ignore
-import { PublicationStatusCodings, PublicationStatusCodingType,} from '../fhirValueSets/PublicationStatusCodings.js';
+import { FilterOperatorVsValidation } from '../fhirValueSets/FilterOperatorVsValidation.js';
 // @ts-ignore
 import { PublicationStatusCodes,  PublicationStatusCodeType } from '../fhirValueSets/PublicationStatusCodes.js';
+// @ts-ignore
+import { PublicationStatusVsValidation } from '../fhirValueSets/PublicationStatusVsValidation.js';
 /**
  * Valid arguments for the ValueSetComposeIncludeConceptDesignation type.
  */
@@ -86,29 +86,14 @@ export class ValueSetComposeIncludeConceptDesignation extends fhir.BackboneEleme
     }
   }
   /**
-   * Preferred-bound Value Set for language (ValueSet.compose.include.concept.designation.language)
-   */
-  public static get languagePreferredCodings():LanguagesCodingType {
-    return LanguagesCodings;
-  }
-  /**
-   * Extensible-bound Value Set for use (ValueSet.compose.include.concept.designation.use)
-   */
-  public static get useExtensibleCodings():DesignationUseCodingType {
-    return DesignationUseCodings;
-  }
-  /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'ValueSet.compose.include.concept.designation' }
-    if (this["language"]) { issues.push(...this.language.doModelValidation(expression+'.language')); }
-    if (this["use"]) { issues.push(...this.use.doModelValidation(expression+'.use')); }
-    if (!this['value']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property value fhir: ValueSet.compose.include.concept.designation.value:string', expression: [expression] });
-    }
-    if (this["value"]) { issues.push(...this.value.doModelValidation(expression+'.value')); }
+    this.vOptS('language',expression)
+    this.vOptS('use',expression)
+    this.vReqS('value',expression)
     return issues;
   }
 }
@@ -183,12 +168,9 @@ export class ValueSetComposeIncludeConcept extends fhir.BackboneElement {
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'ValueSet.compose.include.concept' }
-    if (!this['code']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property code fhir: ValueSet.compose.include.concept.code:code', expression: [expression] });
-    }
-    if (this["code"]) { issues.push(...this.code.doModelValidation(expression+'.code')); }
-    if (this["display"]) { issues.push(...this.display.doModelValidation(expression+'.display')); }
-    if (this["designation"]) { this.designation.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.designation[${i}]`)); }) }
+    this.vReqS('code',expression)
+    this.vOptS('display',expression)
+    this.vOptA('designation',expression)
     return issues;
   }
 }
@@ -267,32 +249,14 @@ export class ValueSetComposeIncludeFilter extends fhir.BackboneElement {
     }
   }
   /**
-   * Required-bound Value Set for op (ValueSet.compose.include.filter.op)
-   */
-  public static get opRequiredCodes() {
-    return FilterOperatorCodes;
-  }
-  /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'ValueSet.compose.include.filter' }
-    if (!this['property']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property property fhir: ValueSet.compose.include.filter.property:code', expression: [expression] });
-    }
-    if (this["property"]) { issues.push(...this.property.doModelValidation(expression+'.property')); }
-    if (!this['op']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property op fhir: ValueSet.compose.include.filter.op:code', expression: [expression] });
-    }
-    if (this['op'] && (!Object.values(FilterOperatorCodes).includes(this.op.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'op (ValueSet.compose.include.filter.op) of type code is missing code for Required binding to: FilterOperator', expression: [expression] });
-    }
-    if (this["op"]) { issues.push(...this.op.doModelValidation(expression+'.op')); }
-    if (!this['value']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property value fhir: ValueSet.compose.include.filter.value:string', expression: [expression] });
-    }
-    if (this["value"]) { issues.push(...this.value.doModelValidation(expression+'.value')); }
+    this.vReqS('property',expression)
+    this.vReqSV('op',expression,'FilterOperator',FilterOperatorVsValidation,'r')
+    this.vReqS('value',expression)
     return issues;
   }
 }
@@ -396,11 +360,11 @@ export class ValueSetComposeInclude extends fhir.BackboneElement {
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'ValueSet.compose.include' }
-    if (this["system"]) { issues.push(...this.system.doModelValidation(expression+'.system')); }
-    if (this["version"]) { issues.push(...this.version.doModelValidation(expression+'.version')); }
-    if (this["concept"]) { this.concept.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.concept[${i}]`)); }) }
-    if (this["filter"]) { this.filter.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.filter[${i}]`)); }) }
-    if (this["valueSet"]) { this.valueSet.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.valueSet[${i}]`)); }) }
+    this.vOptS('system',expression)
+    this.vOptS('version',expression)
+    this.vOptA('concept',expression)
+    this.vOptA('filter',expression)
+    this.vOptA('valueSet',expression)
     return issues;
   }
 }
@@ -486,17 +450,10 @@ export class ValueSetCompose extends fhir.BackboneElement {
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'ValueSet.compose' }
-    if (this["lockedDate"]) { issues.push(...this.lockedDate.doModelValidation(expression+'.lockedDate')); }
-    if (this["inactive"]) { issues.push(...this.inactive.doModelValidation(expression+'.inactive')); }
-    if (!this['include']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property include fhir: ValueSet.compose.include:include', expression: [expression] });
-    } else if (!Array.isArray(this.include)) {
-      issues.push({ severity: 'error', code: 'structure', diagnostics: 'Found scalar in array property include fhir: ValueSet.compose.include:include', expression: [expression] });
-    } else if (this.include.length === 0) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property include fhir: ValueSet.compose.include:include', expression: [expression] });
-    }
-    if (this["include"]) { this.include.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.include[${i}]`)); }) }
-    if (this["exclude"]) { this.exclude.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.exclude[${i}]`)); }) }
+    this.vOptS('lockedDate',expression)
+    this.vOptS('inactive',expression)
+    this.vReqA('include',expression)
+    this.vOptA('exclude',expression)
     return issues;
   }
 }
@@ -592,10 +549,8 @@ export class ValueSetExpansionParameter extends fhir.BackboneElement {
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'ValueSet.expansion.parameter' }
-    if (!this['name']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property name fhir: ValueSet.expansion.parameter.name:string', expression: [expression] });
-    }
-    if (this["name"]) { issues.push(...this.name.doModelValidation(expression+'.name')); }
+    this.vReqS('name',expression)
+    this.vOptS('value',expression)
     return issues;
   }
 }
@@ -747,14 +702,14 @@ export class ValueSetExpansionContains extends fhir.BackboneElement {
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'ValueSet.expansion.contains' }
-    if (this["system"]) { issues.push(...this.system.doModelValidation(expression+'.system')); }
-    if (this["abstract"]) { issues.push(...this.abstract.doModelValidation(expression+'.abstract')); }
-    if (this["inactive"]) { issues.push(...this.inactive.doModelValidation(expression+'.inactive')); }
-    if (this["version"]) { issues.push(...this.version.doModelValidation(expression+'.version')); }
-    if (this["code"]) { issues.push(...this.code.doModelValidation(expression+'.code')); }
-    if (this["display"]) { issues.push(...this.display.doModelValidation(expression+'.display')); }
-    if (this["designation"]) { this.designation.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.designation[${i}]`)); }) }
-    if (this["contains"]) { this.contains.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.contains[${i}]`)); }) }
+    this.vOptS('system',expression)
+    this.vOptS('abstract',expression)
+    this.vOptS('inactive',expression)
+    this.vOptS('version',expression)
+    this.vOptS('code',expression)
+    this.vOptS('display',expression)
+    this.vOptA('designation',expression)
+    this.vOptA('contains',expression)
     return issues;
   }
 }
@@ -874,15 +829,12 @@ export class ValueSetExpansion extends fhir.BackboneElement {
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'ValueSet.expansion' }
-    if (this["identifier"]) { issues.push(...this.identifier.doModelValidation(expression+'.identifier')); }
-    if (!this['timestamp']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property timestamp fhir: ValueSet.expansion.timestamp:dateTime', expression: [expression] });
-    }
-    if (this["timestamp"]) { issues.push(...this.timestamp.doModelValidation(expression+'.timestamp')); }
-    if (this["total"]) { issues.push(...this.total.doModelValidation(expression+'.total')); }
-    if (this["offset"]) { issues.push(...this.offset.doModelValidation(expression+'.offset')); }
-    if (this["parameter"]) { this.parameter.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.parameter[${i}]`)); }) }
-    if (this["contains"]) { this.contains.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.contains[${i}]`)); }) }
+    this.vOptS('identifier',expression)
+    this.vReqS('timestamp',expression)
+    this.vOptS('total',expression)
+    this.vOptS('offset',expression)
+    this.vOptA('parameter',expression)
+    this.vOptA('contains',expression)
     return issues;
   }
 }
@@ -1185,44 +1137,30 @@ export class ValueSet extends fhir.DomainResource {
     if (source['expansion']) { this.expansion = new fhir.ValueSetExpansion(source.expansion); }
   }
   /**
-   * Required-bound Value Set for status (ValueSet.status)
-   */
-  public static get statusRequiredCodes() {
-    return PublicationStatusCodes;
-  }
-  /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'ValueSet' }
-    if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType fhir: ValueSet.resourceType:"ValueSet"', expression: [expression] });
-    }
-    if (this["url"]) { issues.push(...this.url.doModelValidation(expression+'.url')); }
-    if (this["identifier"]) { this.identifier.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.identifier[${i}]`)); }) }
-    if (this["version"]) { issues.push(...this.version.doModelValidation(expression+'.version')); }
-    if (this["name"]) { issues.push(...this.name.doModelValidation(expression+'.name')); }
-    if (this["title"]) { issues.push(...this.title.doModelValidation(expression+'.title')); }
-    if (!this['status']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status fhir: ValueSet.status:code', expression: [expression] });
-    }
-    if (this['status'] && (!Object.values(PublicationStatusCodes).includes(this.status.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'status (ValueSet.status) of type code is missing code for Required binding to: PublicationStatus', expression: [expression] });
-    }
-    if (this["status"]) { issues.push(...this.status.doModelValidation(expression+'.status')); }
-    if (this["experimental"]) { issues.push(...this.experimental.doModelValidation(expression+'.experimental')); }
-    if (this["date"]) { issues.push(...this.date.doModelValidation(expression+'.date')); }
-    if (this["publisher"]) { issues.push(...this.publisher.doModelValidation(expression+'.publisher')); }
-    if (this["contact"]) { this.contact.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.contact[${i}]`)); }) }
-    if (this["description"]) { issues.push(...this.description.doModelValidation(expression+'.description')); }
-    if (this["useContext"]) { this.useContext.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.useContext[${i}]`)); }) }
-    if (this["jurisdiction"]) { this.jurisdiction.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.jurisdiction[${i}]`)); }) }
-    if (this["immutable"]) { issues.push(...this.immutable.doModelValidation(expression+'.immutable')); }
-    if (this["purpose"]) { issues.push(...this.purpose.doModelValidation(expression+'.purpose')); }
-    if (this["copyright"]) { issues.push(...this.copyright.doModelValidation(expression+'.copyright')); }
-    if (this["compose"]) { issues.push(...this.compose.doModelValidation(expression+'.compose')); }
-    if (this["expansion"]) { issues.push(...this.expansion.doModelValidation(expression+'.expansion')); }
+    this.vReqS('resourceType',expression)
+    this.vOptS('url',expression)
+    this.vOptA('identifier',expression)
+    this.vOptS('version',expression)
+    this.vOptS('name',expression)
+    this.vOptS('title',expression)
+    this.vReqSV('status',expression,'PublicationStatus',PublicationStatusVsValidation,'r')
+    this.vOptS('experimental',expression)
+    this.vOptS('date',expression)
+    this.vOptS('publisher',expression)
+    this.vOptA('contact',expression)
+    this.vOptS('description',expression)
+    this.vOptA('useContext',expression)
+    this.vOptA('jurisdiction',expression)
+    this.vOptS('immutable',expression)
+    this.vOptS('purpose',expression)
+    this.vOptS('copyright',expression)
+    this.vOptS('compose',expression)
+    this.vOptS('expansion',expression)
     return issues;
   }
 }

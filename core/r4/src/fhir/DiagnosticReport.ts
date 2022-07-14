@@ -6,21 +6,21 @@
 import * as fhir from '../fhir.js';
 
 // @ts-ignore
-import { DiagnosticReportStatusCodings, DiagnosticReportStatusCodingType,} from '../fhirValueSets/DiagnosticReportStatusCodings.js';
-// @ts-ignore
 import { DiagnosticReportStatusCodes,  DiagnosticReportStatusCodeType } from '../fhirValueSets/DiagnosticReportStatusCodes.js';
 // @ts-ignore
-import { DiagnosticServiceSectionsCodings, DiagnosticServiceSectionsCodingType,} from '../fhirValueSets/DiagnosticServiceSectionsCodings.js';
+import { DiagnosticReportStatusVsValidation } from '../fhirValueSets/DiagnosticReportStatusVsValidation.js';
 // @ts-ignore
 import { DiagnosticServiceSectionsCodes,  DiagnosticServiceSectionsCodeType } from '../fhirValueSets/DiagnosticServiceSectionsCodes.js';
 // @ts-ignore
-import { ReportCodings, ReportCodingType,} from '../fhirValueSets/ReportCodings.js';
+import { DiagnosticServiceSectionsVsValidation } from '../fhirValueSets/DiagnosticServiceSectionsVsValidation.js';
 // @ts-ignore
 import { ReportCodes,  ReportCodeType } from '../fhirValueSets/ReportCodes.js';
 // @ts-ignore
-import { ClinicalFindingsCodings, ClinicalFindingsCodingType,} from '../fhirValueSets/ClinicalFindingsCodings.js';
+import { ReportVsValidation } from '../fhirValueSets/ReportVsValidation.js';
 // @ts-ignore
 import { ClinicalFindingsCodes,  ClinicalFindingsCodeType } from '../fhirValueSets/ClinicalFindingsCodes.js';
+// @ts-ignore
+import { ClinicalFindingsVsValidation } from '../fhirValueSets/ClinicalFindingsVsValidation.js';
 /**
  * Valid arguments for the DiagnosticReportMedia type.
  */
@@ -74,11 +74,8 @@ export class DiagnosticReportMedia extends fhir.BackboneElement {
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'DiagnosticReport.media' }
-    if (this["comment"]) { issues.push(...this.comment.doModelValidation(expression+'.comment')); }
-    if (!this['link']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property link fhir: DiagnosticReport.media.link:Reference', expression: [expression] });
-    }
-    if (this["link"]) { issues.push(...this.link.doModelValidation(expression+'.link')); }
+    this.vOptS('comment',expression)
+    this.vReqS('link',expression)
     return issues;
   }
 }
@@ -325,52 +322,30 @@ export class DiagnosticReport extends fhir.DomainResource {
     else { this.presentedForm = []; }
   }
   /**
-   * Required-bound Value Set for status (DiagnosticReport.status)
-   */
-  public static get statusRequiredCodes() {
-    return DiagnosticReportStatusCodes;
-  }
-  /**
-   * Preferred-bound Value Set for code (DiagnosticReport.code)
-   */
-  public static get codePreferredCodings():ReportCodingType {
-    return ReportCodings;
-  }
-  /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'DiagnosticReport' }
-    if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType fhir: DiagnosticReport.resourceType:"DiagnosticReport"', expression: [expression] });
-    }
-    if (this["identifier"]) { this.identifier.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.identifier[${i}]`)); }) }
-    if (this["basedOn"]) { this.basedOn.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.basedOn[${i}]`)); }) }
-    if (!this['status']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status fhir: DiagnosticReport.status:code', expression: [expression] });
-    }
-    if (this['status'] && (!Object.values(DiagnosticReportStatusCodes).includes(this.status.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'status (DiagnosticReport.status) of type code is missing code for Required binding to: DiagnosticReportStatus', expression: [expression] });
-    }
-    if (this["status"]) { issues.push(...this.status.doModelValidation(expression+'.status')); }
-    if (this["category"]) { this.category.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.category[${i}]`)); }) }
-    if (!this['code']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property code fhir: DiagnosticReport.code:CodeableConcept', expression: [expression] });
-    }
-    if (this["code"]) { issues.push(...this.code.doModelValidation(expression+'.code')); }
-    if (this["subject"]) { issues.push(...this.subject.doModelValidation(expression+'.subject')); }
-    if (this["encounter"]) { issues.push(...this.encounter.doModelValidation(expression+'.encounter')); }
-    if (this["issued"]) { issues.push(...this.issued.doModelValidation(expression+'.issued')); }
-    if (this["performer"]) { this.performer.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.performer[${i}]`)); }) }
-    if (this["resultsInterpreter"]) { this.resultsInterpreter.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.resultsInterpreter[${i}]`)); }) }
-    if (this["specimen"]) { this.specimen.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.specimen[${i}]`)); }) }
-    if (this["result"]) { this.result.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.result[${i}]`)); }) }
-    if (this["imagingStudy"]) { this.imagingStudy.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.imagingStudy[${i}]`)); }) }
-    if (this["media"]) { this.media.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.media[${i}]`)); }) }
-    if (this["conclusion"]) { issues.push(...this.conclusion.doModelValidation(expression+'.conclusion')); }
-    if (this["conclusionCode"]) { this.conclusionCode.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.conclusionCode[${i}]`)); }) }
-    if (this["presentedForm"]) { this.presentedForm.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.presentedForm[${i}]`)); }) }
+    this.vReqS('resourceType',expression)
+    this.vOptA('identifier',expression)
+    this.vOptA('basedOn',expression)
+    this.vReqSV('status',expression,'DiagnosticReportStatus',DiagnosticReportStatusVsValidation,'r')
+    this.vOptA('category',expression)
+    this.vReqS('code',expression)
+    this.vOptS('subject',expression)
+    this.vOptS('encounter',expression)
+    this.vOptS('effective',expression)
+    this.vOptS('issued',expression)
+    this.vOptA('performer',expression)
+    this.vOptA('resultsInterpreter',expression)
+    this.vOptA('specimen',expression)
+    this.vOptA('result',expression)
+    this.vOptA('imagingStudy',expression)
+    this.vOptA('media',expression)
+    this.vOptS('conclusion',expression)
+    this.vOptA('conclusionCode',expression)
+    this.vOptA('presentedForm',expression)
     return issues;
   }
 }

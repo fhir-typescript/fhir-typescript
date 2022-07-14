@@ -135,24 +135,6 @@ export declare class Address extends fhir.FhirElement {
      */
     constructor(source?: Partial<AddressArgs>, options?: fhir.FhirConstructorOptions);
     /**
-     * Required-bound Value Set for use (Address.use)
-     */
-    static get useRequiredCodes(): {
-        readonly Billing: "billing";
-        readonly Home: "home";
-        readonly OldIncorrect: "old";
-        readonly Temporary: "temp";
-        readonly Work: "work";
-    };
-    /**
-     * Required-bound Value Set for type (Address.type)
-     */
-    static get typeRequiredCodes(): {
-        readonly PostalAndPhysical: "both";
-        readonly Physical: "physical";
-        readonly Postal: "postal";
-    };
-    /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
     doModelValidation(expression?: string): fhir.FtsIssue[];

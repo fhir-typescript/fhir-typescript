@@ -55,9 +55,7 @@ export class MedicinalProductInteractionInteractant extends fhir.BackboneElement
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'MedicinalProductInteraction.interactant' }
-    if (!this['item']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property item fhir: MedicinalProductInteraction.interactant.item[x]:', expression: [expression] });
-    }
+    this.vReqS('item',expression)
     return issues;
   }
 }
@@ -169,16 +167,14 @@ export class MedicinalProductInteraction extends fhir.DomainResource {
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'MedicinalProductInteraction' }
-    if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType fhir: MedicinalProductInteraction.resourceType:"MedicinalProductInteraction"', expression: [expression] });
-    }
-    if (this["subject"]) { this.subject.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.subject[${i}]`)); }) }
-    if (this["description"]) { issues.push(...this.description.doModelValidation(expression+'.description')); }
-    if (this["interactant"]) { this.interactant.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.interactant[${i}]`)); }) }
-    if (this["type"]) { issues.push(...this.type.doModelValidation(expression+'.type')); }
-    if (this["effect"]) { issues.push(...this.effect.doModelValidation(expression+'.effect')); }
-    if (this["incidence"]) { issues.push(...this.incidence.doModelValidation(expression+'.incidence')); }
-    if (this["management"]) { issues.push(...this.management.doModelValidation(expression+'.management')); }
+    this.vReqS('resourceType',expression)
+    this.vOptA('subject',expression)
+    this.vOptS('description',expression)
+    this.vOptA('interactant',expression)
+    this.vOptS('type',expression)
+    this.vOptS('effect',expression)
+    this.vOptS('incidence',expression)
+    this.vOptS('management',expression)
     return issues;
   }
 }

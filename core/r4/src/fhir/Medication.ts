@@ -6,17 +6,17 @@
 import * as fhir from '../fhir.js';
 
 // @ts-ignore
-import { MedicationCodings, MedicationCodingType,} from '../fhirValueSets/MedicationCodings.js';
-// @ts-ignore
 import { MedicationCodes,  MedicationCodeType } from '../fhirValueSets/MedicationCodes.js';
 // @ts-ignore
-import { MedicationStatusCodings, MedicationStatusCodingType,} from '../fhirValueSets/MedicationStatusCodings.js';
+import { MedicationVsValidation } from '../fhirValueSets/MedicationVsValidation.js';
 // @ts-ignore
 import { MedicationStatusCodes,  MedicationStatusCodeType } from '../fhirValueSets/MedicationStatusCodes.js';
 // @ts-ignore
-import { MedicationFormCodings, MedicationFormCodingType,} from '../fhirValueSets/MedicationFormCodings.js';
+import { MedicationStatusVsValidation } from '../fhirValueSets/MedicationStatusVsValidation.js';
 // @ts-ignore
 import { MedicationFormCodes,  MedicationFormCodeType } from '../fhirValueSets/MedicationFormCodes.js';
+// @ts-ignore
+import { MedicationFormVsValidation } from '../fhirValueSets/MedicationFormVsValidation.js';
 /**
  * Valid arguments for the MedicationIngredient type.
  */
@@ -93,11 +93,9 @@ export class MedicationIngredient extends fhir.BackboneElement {
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'Medication.ingredient' }
-    if (!this['item']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property item fhir: Medication.ingredient.item[x]:', expression: [expression] });
-    }
-    if (this["isActive"]) { issues.push(...this.isActive.doModelValidation(expression+'.isActive')); }
-    if (this["strength"]) { issues.push(...this.strength.doModelValidation(expression+'.strength')); }
+    this.vReqS('item',expression)
+    this.vOptS('isActive',expression)
+    this.vOptS('strength',expression)
     return issues;
   }
 }
@@ -161,8 +159,8 @@ export class MedicationBatch extends fhir.BackboneElement {
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'Medication.batch' }
-    if (this["lotNumber"]) { issues.push(...this.lotNumber.doModelValidation(expression+'.lotNumber')); }
-    if (this["expirationDate"]) { issues.push(...this.expirationDate.doModelValidation(expression+'.expirationDate')); }
+    this.vOptS('lotNumber',expression)
+    this.vOptS('expirationDate',expression)
     return issues;
   }
 }
@@ -278,31 +276,20 @@ export class Medication extends fhir.DomainResource {
     if (source['batch']) { this.batch = new fhir.MedicationBatch(source.batch); }
   }
   /**
-   * Required-bound Value Set for status (Medication.status)
-   */
-  public static get statusRequiredCodes() {
-    return MedicationStatusCodes;
-  }
-  /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'Medication' }
-    if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType fhir: Medication.resourceType:"Medication"', expression: [expression] });
-    }
-    if (this["identifier"]) { this.identifier.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.identifier[${i}]`)); }) }
-    if (this["code"]) { issues.push(...this.code.doModelValidation(expression+'.code')); }
-    if (this['status'] && (!Object.values(MedicationStatusCodes).includes(this.status.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'status (Medication.status) of type code is missing code for Required binding to: MedicationStatus', expression: [expression] });
-    }
-    if (this["status"]) { issues.push(...this.status.doModelValidation(expression+'.status')); }
-    if (this["manufacturer"]) { issues.push(...this.manufacturer.doModelValidation(expression+'.manufacturer')); }
-    if (this["form"]) { issues.push(...this.form.doModelValidation(expression+'.form')); }
-    if (this["amount"]) { issues.push(...this.amount.doModelValidation(expression+'.amount')); }
-    if (this["ingredient"]) { this.ingredient.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.ingredient[${i}]`)); }) }
-    if (this["batch"]) { issues.push(...this.batch.doModelValidation(expression+'.batch')); }
+    this.vReqS('resourceType',expression)
+    this.vOptA('identifier',expression)
+    this.vOptS('code',expression)
+    this.vOptSV('status',expression,'MedicationStatus',MedicationStatusVsValidation,'r')
+    this.vOptS('manufacturer',expression)
+    this.vOptS('form',expression)
+    this.vOptS('amount',expression)
+    this.vOptA('ingredient',expression)
+    this.vOptS('batch',expression)
     return issues;
   }
 }

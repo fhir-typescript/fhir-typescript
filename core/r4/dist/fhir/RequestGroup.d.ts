@@ -2,7 +2,6 @@ import * as fhir from '../fhir.js';
 import { ActionConditionKindCodeType } from '../fhirValueSets/ActionConditionKindCodes.js';
 import { ActionRelationshipTypeCodeType } from '../fhirValueSets/ActionRelationshipTypeCodes.js';
 import { RequestPriorityCodeType } from '../fhirValueSets/RequestPriorityCodes.js';
-import { ActionTypeCodingType } from '../fhirValueSets/ActionTypeCodings.js';
 import { ActionGroupingBehaviorCodeType } from '../fhirValueSets/ActionGroupingBehaviorCodes.js';
 import { ActionSelectionBehaviorCodeType } from '../fhirValueSets/ActionSelectionBehaviorCodes.js';
 import { ActionRequiredBehaviorCodeType } from '../fhirValueSets/ActionRequiredBehaviorCodes.js';
@@ -47,14 +46,6 @@ export declare class RequestGroupActionCondition extends fhir.BackboneElement {
      * Default constructor for RequestGroupActionCondition - initializes any required elements to null if a value is not provided.
      */
     constructor(source?: Partial<RequestGroupActionConditionArgs>, options?: fhir.FhirConstructorOptions);
-    /**
-     * Required-bound Value Set for kind (RequestGroup.action.condition.kind)
-     */
-    static get kindRequiredCodes(): {
-        readonly Applicability: "applicability";
-        readonly Start: "start";
-        readonly Stop: "stop";
-    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
@@ -121,20 +112,6 @@ export declare class RequestGroupActionRelatedAction extends fhir.BackboneElemen
      * Default constructor for RequestGroupActionRelatedAction - initializes any required elements to null if a value is not provided.
      */
     constructor(source?: Partial<RequestGroupActionRelatedActionArgs>, options?: fhir.FhirConstructorOptions);
-    /**
-     * Required-bound Value Set for relationship (RequestGroup.action.relatedAction.relationship)
-     */
-    static get relationshipRequiredCodes(): {
-        readonly After: "after";
-        readonly AfterEnd: "after-end";
-        readonly AfterStart: "after-start";
-        readonly Before: "before";
-        readonly BeforeEnd: "before-end";
-        readonly BeforeStart: "before-start";
-        readonly Concurrent: "concurrent";
-        readonly ConcurrentWithEnd: "concurrent-with-end";
-        readonly ConcurrentWithStart: "concurrent-with-start";
-    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
@@ -378,60 +355,6 @@ export declare class RequestGroupAction extends fhir.BackboneElement {
      */
     constructor(source?: Partial<RequestGroupActionArgs>, options?: fhir.FhirConstructorOptions);
     /**
-     * Required-bound Value Set for priority (RequestGroup.action.priority)
-     */
-    static get priorityRequiredCodes(): {
-        readonly ASAP: "asap";
-        readonly Routine: "routine";
-        readonly STAT: "stat";
-        readonly Urgent: "urgent";
-    };
-    /**
-     * Extensible-bound Value Set for type (RequestGroup.action.type)
-     */
-    static get typeExtensibleCodings(): ActionTypeCodingType;
-    /**
-     * Required-bound Value Set for groupingBehavior (RequestGroup.action.groupingBehavior)
-     */
-    static get groupingBehaviorRequiredCodes(): {
-        readonly LogicalGroup: "logical-group";
-        readonly SentenceGroup: "sentence-group";
-        readonly VisualGroup: "visual-group";
-    };
-    /**
-     * Required-bound Value Set for selectionBehavior (RequestGroup.action.selectionBehavior)
-     */
-    static get selectionBehaviorRequiredCodes(): {
-        readonly All: "all";
-        readonly AllOrNone: "all-or-none";
-        readonly Any: "any";
-        readonly AtMostOne: "at-most-one";
-        readonly ExactlyOne: "exactly-one";
-        readonly OneOrMore: "one-or-more";
-    };
-    /**
-     * Required-bound Value Set for requiredBehavior (RequestGroup.action.requiredBehavior)
-     */
-    static get requiredBehaviorRequiredCodes(): {
-        readonly Could: "could";
-        readonly Must: "must";
-        readonly MustUnlessDocumented: "must-unless-documented";
-    };
-    /**
-     * Required-bound Value Set for precheckBehavior (RequestGroup.action.precheckBehavior)
-     */
-    static get precheckBehaviorRequiredCodes(): {
-        readonly No: "no";
-        readonly Yes: "yes";
-    };
-    /**
-     * Required-bound Value Set for cardinalityBehavior (RequestGroup.action.cardinalityBehavior)
-     */
-    static get cardinalityBehaviorRequiredCodes(): {
-        readonly Multiple: "multiple";
-        readonly Single: "single";
-    };
-    /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
     doModelValidation(expression?: string): fhir.FtsIssue[];
@@ -629,41 +552,6 @@ export declare class RequestGroup extends fhir.DomainResource {
      * Default constructor for RequestGroup - initializes any required elements to null if a value is not provided.
      */
     constructor(source?: Partial<RequestGroupArgs>, options?: fhir.FhirConstructorOptions);
-    /**
-     * Required-bound Value Set for status (RequestGroup.status)
-     */
-    static get statusRequiredCodes(): {
-        readonly Active: "active";
-        readonly Completed: "completed";
-        readonly Draft: "draft";
-        readonly EnteredInError: "entered-in-error";
-        readonly OnHold: "on-hold";
-        readonly Revoked: "revoked";
-        readonly Unknown: "unknown";
-    };
-    /**
-     * Required-bound Value Set for intent (RequestGroup.intent)
-     */
-    static get intentRequiredCodes(): {
-        readonly Directive: "directive";
-        readonly FillerOrder: "filler-order";
-        readonly InstanceOrder: "instance-order";
-        readonly Option: "option";
-        readonly Order: "order";
-        readonly OriginalOrder: "original-order";
-        readonly Plan: "plan";
-        readonly Proposal: "proposal";
-        readonly ReflexOrder: "reflex-order";
-    };
-    /**
-     * Required-bound Value Set for priority (RequestGroup.priority)
-     */
-    static get priorityRequiredCodes(): {
-        readonly ASAP: "asap";
-        readonly Routine: "routine";
-        readonly STAT: "stat";
-        readonly Urgent: "urgent";
-    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */

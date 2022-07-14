@@ -331,12 +331,10 @@ export class ParametersParameter extends fhir.BackboneElement {
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'Parameters.parameter' }
-    if (!this['name']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property name fhir: Parameters.parameter.name:string', expression: [expression] });
-    }
-    if (this["name"]) { issues.push(...this.name.doModelValidation(expression+'.name')); }
-    if (this["resource"]) { issues.push(...this.resource.doModelValidation(expression+'.resource')); }
-    if (this["part"]) { this.part.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.part[${i}]`)); }) }
+    this.vReqS('name',expression)
+    this.vOptS('value',expression)
+    this.vOptS('resource',expression)
+    this.vOptA('part',expression)
     return issues;
   }
 }
@@ -385,10 +383,8 @@ export class Parameters extends fhir.Resource {
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'Parameters' }
-    if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType fhir: Parameters.resourceType:"Parameters"', expression: [expression] });
-    }
-    if (this["parameter"]) { this.parameter.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.parameter[${i}]`)); }) }
+    this.vReqS('resourceType',expression)
+    this.vOptA('parameter',expression)
     return issues;
   }
 }

@@ -1,9 +1,5 @@
 import * as fhir from '../fhir.js';
-import { ReferencerangeMeaningCodingType } from '../fhirValueSets/ReferencerangeMeaningCodings.js';
-import { DataAbsentReasonCodingType } from '../fhirValueSets/DataAbsentReasonCodings.js';
-import { ObservationInterpretationCodingType } from '../fhirValueSets/ObservationInterpretationCodings.js';
 import { ObservationStatusCodeType } from '../fhirValueSets/ObservationStatusCodes.js';
-import { ObservationCategoryCodingType } from '../fhirValueSets/ObservationCategoryCodings.js';
 /**
  * Valid arguments for the ObservationReferenceRange type.
  */
@@ -73,10 +69,6 @@ export declare class ObservationReferenceRange extends fhir.BackboneElement {
      * Default constructor for ObservationReferenceRange - initializes any required elements to null if a value is not provided.
      */
     constructor(source?: Partial<ObservationReferenceRangeArgs>, options?: fhir.FhirConstructorOptions);
-    /**
-     * Preferred-bound Value Set for type (Observation.referenceRange.type)
-     */
-    static get typePreferredCodings(): ReferencerangeMeaningCodingType;
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
@@ -189,14 +181,6 @@ export declare class ObservationComponent extends fhir.BackboneElement {
      * Default constructor for ObservationComponent - initializes any required elements to null if a value is not provided.
      */
     constructor(source?: Partial<ObservationComponentArgs>, options?: fhir.FhirConstructorOptions);
-    /**
-     * Extensible-bound Value Set for dataAbsentReason (Observation.component.dataAbsentReason)
-     */
-    static get dataAbsentReasonExtensibleCodings(): DataAbsentReasonCodingType;
-    /**
-     * Extensible-bound Value Set for interpretation (Observation.component.interpretation)
-     */
-    static get interpretationExtensibleCodings(): ObservationInterpretationCodingType;
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
@@ -499,31 +483,6 @@ export declare class Observation extends fhir.DomainResource {
      * Default constructor for Observation - initializes any required elements to null if a value is not provided.
      */
     constructor(source?: Partial<ObservationArgs>, options?: fhir.FhirConstructorOptions);
-    /**
-     * Required-bound Value Set for status (Observation.status)
-     */
-    static get statusRequiredCodes(): {
-        readonly Amended: "amended";
-        readonly Cancelled: "cancelled";
-        readonly Corrected: "corrected";
-        readonly EnteredInError: "entered-in-error";
-        readonly Final: "final";
-        readonly Preliminary: "preliminary";
-        readonly Registered: "registered";
-        readonly Unknown: "unknown";
-    };
-    /**
-     * Preferred-bound Value Set for category (Observation.category)
-     */
-    static get categoryPreferredCodings(): ObservationCategoryCodingType;
-    /**
-     * Extensible-bound Value Set for dataAbsentReason (Observation.dataAbsentReason)
-     */
-    static get dataAbsentReasonExtensibleCodings(): DataAbsentReasonCodingType;
-    /**
-     * Extensible-bound Value Set for interpretation (Observation.interpretation)
-     */
-    static get interpretationExtensibleCodings(): ObservationInterpretationCodingType;
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */

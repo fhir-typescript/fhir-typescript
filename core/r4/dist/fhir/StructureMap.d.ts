@@ -73,15 +73,6 @@ export declare class StructureMapStructure extends fhir.BackboneElement {
      */
     constructor(source?: Partial<StructureMapStructureArgs>, options?: fhir.FhirConstructorOptions);
     /**
-     * Required-bound Value Set for mode (StructureMap.structure.mode)
-     */
-    static get modeRequiredCodes(): {
-        readonly ProducedStructureDefinition: "produced";
-        readonly QueriedStructureDefinition: "queried";
-        readonly SourceStructureDefinition: "source";
-        readonly TargetStructureDefinition: "target";
-    };
-    /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
     doModelValidation(expression?: string): fhir.FtsIssue[];
@@ -151,13 +142,6 @@ export declare class StructureMapGroupInput extends fhir.BackboneElement {
      * Default constructor for StructureMapGroupInput - initializes any required elements to null if a value is not provided.
      */
     constructor(source?: Partial<StructureMapGroupInputArgs>, options?: fhir.FhirConstructorOptions);
-    /**
-     * Required-bound Value Set for mode (StructureMap.group.input.mode)
-     */
-    static get modeRequiredCodes(): {
-        readonly SourceInstance: "source";
-        readonly TargetInstance: "target";
-    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
@@ -513,16 +497,6 @@ export declare class StructureMapGroupRuleSource extends fhir.BackboneElement {
      */
     constructor(source?: Partial<StructureMapGroupRuleSourceArgs>, options?: fhir.FhirConstructorOptions);
     /**
-     * Required-bound Value Set for listMode (StructureMap.group.rule.source.listMode)
-     */
-    static get listModeRequiredCodes(): {
-        readonly First: "first";
-        readonly Last: "last";
-        readonly AllButTheFirst: "not_first";
-        readonly AllButTheLast: "not_last";
-        readonly EnforceOnlyOne: "only_one";
-    };
-    /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
     doModelValidation(expression?: string): fhir.FtsIssue[];
@@ -690,44 +664,6 @@ export declare class StructureMapGroupRuleTarget extends fhir.BackboneElement {
      * Default constructor for StructureMapGroupRuleTarget - initializes any required elements to null if a value is not provided.
      */
     constructor(source?: Partial<StructureMapGroupRuleTargetArgs>, options?: fhir.FhirConstructorOptions);
-    /**
-     * Required-bound Value Set for contextType (StructureMap.group.rule.target.contextType)
-     */
-    static get contextTypeRequiredCodes(): {
-        readonly Type: "type";
-        readonly Variable: "variable";
-    };
-    /**
-     * Required-bound Value Set for listMode (StructureMap.group.rule.target.listMode)
-     */
-    static get listModeRequiredCodes(): {
-        readonly Collate: "collate";
-        readonly First: "first";
-        readonly Last: "last";
-        readonly Share: "share";
-    };
-    /**
-     * Required-bound Value Set for transform (StructureMap.group.rule.target.transform)
-     */
-    static get transformRequiredCodes(): {
-        readonly Append: "append";
-        readonly C: "c";
-        readonly Cast: "cast";
-        readonly Cc: "cc";
-        readonly Copy: "copy";
-        readonly Cp: "cp";
-        readonly Create: "create";
-        readonly DateOp: "dateOp";
-        readonly Escape: "escape";
-        readonly Evaluate: "evaluate";
-        readonly Id: "id";
-        readonly Pointer: "pointer";
-        readonly Qty: "qty";
-        readonly Reference: "reference";
-        readonly Translate: "translate";
-        readonly Truncate: "truncate";
-        readonly Uuid: "uuid";
-    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
@@ -938,14 +874,6 @@ export declare class StructureMapGroup extends fhir.BackboneElement {
      * Default constructor for StructureMapGroup - initializes any required elements to null if a value is not provided.
      */
     constructor(source?: Partial<StructureMapGroupArgs>, options?: fhir.FhirConstructorOptions);
-    /**
-     * Required-bound Value Set for typeMode (StructureMap.group.typeMode)
-     */
-    static get typeModeRequiredCodes(): {
-        readonly NotADefault: "none";
-        readonly DefaultForTypePlusCombination: "type-and-types";
-        readonly DefaultForTypeCombination: "types";
-    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
@@ -1172,15 +1100,6 @@ export declare class StructureMap extends fhir.DomainResource {
      * Default constructor for StructureMap - initializes any required elements to null if a value is not provided.
      */
     constructor(source?: Partial<StructureMapArgs>, options?: fhir.FhirConstructorOptions);
-    /**
-     * Required-bound Value Set for status (StructureMap.status)
-     */
-    static get statusRequiredCodes(): {
-        readonly Active: "active";
-        readonly Draft: "draft";
-        readonly Retired: "retired";
-        readonly Unknown: "unknown";
-    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */

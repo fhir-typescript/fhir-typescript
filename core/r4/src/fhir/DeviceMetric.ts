@@ -6,25 +6,25 @@
 import * as fhir from '../fhir.js';
 
 // @ts-ignore
-import { MetricCalibrationTypeCodings, MetricCalibrationTypeCodingType,} from '../fhirValueSets/MetricCalibrationTypeCodings.js';
-// @ts-ignore
 import { MetricCalibrationTypeCodes,  MetricCalibrationTypeCodeType } from '../fhirValueSets/MetricCalibrationTypeCodes.js';
 // @ts-ignore
-import { MetricCalibrationStateCodings, MetricCalibrationStateCodingType,} from '../fhirValueSets/MetricCalibrationStateCodings.js';
+import { MetricCalibrationTypeVsValidation } from '../fhirValueSets/MetricCalibrationTypeVsValidation.js';
 // @ts-ignore
 import { MetricCalibrationStateCodes,  MetricCalibrationStateCodeType } from '../fhirValueSets/MetricCalibrationStateCodes.js';
 // @ts-ignore
-import { MetricOperationalStatusCodings, MetricOperationalStatusCodingType,} from '../fhirValueSets/MetricOperationalStatusCodings.js';
+import { MetricCalibrationStateVsValidation } from '../fhirValueSets/MetricCalibrationStateVsValidation.js';
 // @ts-ignore
 import { MetricOperationalStatusCodes,  MetricOperationalStatusCodeType } from '../fhirValueSets/MetricOperationalStatusCodes.js';
 // @ts-ignore
-import { MetricColorCodings, MetricColorCodingType,} from '../fhirValueSets/MetricColorCodings.js';
+import { MetricOperationalStatusVsValidation } from '../fhirValueSets/MetricOperationalStatusVsValidation.js';
 // @ts-ignore
 import { MetricColorCodes,  MetricColorCodeType } from '../fhirValueSets/MetricColorCodes.js';
 // @ts-ignore
-import { MetricCategoryCodings, MetricCategoryCodingType,} from '../fhirValueSets/MetricCategoryCodings.js';
+import { MetricColorVsValidation } from '../fhirValueSets/MetricColorVsValidation.js';
 // @ts-ignore
 import { MetricCategoryCodes,  MetricCategoryCodeType } from '../fhirValueSets/MetricCategoryCodes.js';
+// @ts-ignore
+import { MetricCategoryVsValidation } from '../fhirValueSets/MetricCategoryVsValidation.js';
 /**
  * Valid arguments for the DeviceMetricCalibration type.
  */
@@ -97,32 +97,14 @@ export class DeviceMetricCalibration extends fhir.BackboneElement {
     }
   }
   /**
-   * Required-bound Value Set for type (DeviceMetric.calibration.type)
-   */
-  public static get typeRequiredCodes() {
-    return MetricCalibrationTypeCodes;
-  }
-  /**
-   * Required-bound Value Set for state (DeviceMetric.calibration.state)
-   */
-  public static get stateRequiredCodes() {
-    return MetricCalibrationStateCodes;
-  }
-  /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'DeviceMetric.calibration' }
-    if (this['type'] && (!Object.values(MetricCalibrationTypeCodes).includes(this.type.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'type (DeviceMetric.calibration.type) of type code is missing code for Required binding to: MetricCalibrationType', expression: [expression] });
-    }
-    if (this["type"]) { issues.push(...this.type.doModelValidation(expression+'.type')); }
-    if (this['state'] && (!Object.values(MetricCalibrationStateCodes).includes(this.state.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'state (DeviceMetric.calibration.state) of type code is missing code for Required binding to: MetricCalibrationState', expression: [expression] });
-    }
-    if (this["state"]) { issues.push(...this.state.doModelValidation(expression+'.state')); }
-    if (this["time"]) { issues.push(...this.time.doModelValidation(expression+'.time')); }
+    this.vOptSV('type',expression,'MetricCalibrationType',MetricCalibrationTypeVsValidation,'r')
+    this.vOptSV('state',expression,'MetricCalibrationState',MetricCalibrationStateVsValidation,'r')
+    this.vOptS('time',expression)
     return issues;
   }
 }
@@ -274,57 +256,22 @@ export class DeviceMetric extends fhir.DomainResource {
     else { this.calibration = []; }
   }
   /**
-   * Required-bound Value Set for operationalStatus (DeviceMetric.operationalStatus)
-   */
-  public static get operationalStatusRequiredCodes() {
-    return MetricOperationalStatusCodes;
-  }
-  /**
-   * Required-bound Value Set for color (DeviceMetric.color)
-   */
-  public static get colorRequiredCodes() {
-    return MetricColorCodes;
-  }
-  /**
-   * Required-bound Value Set for category (DeviceMetric.category)
-   */
-  public static get categoryRequiredCodes() {
-    return MetricCategoryCodes;
-  }
-  /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'DeviceMetric' }
-    if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType fhir: DeviceMetric.resourceType:"DeviceMetric"', expression: [expression] });
-    }
-    if (this["identifier"]) { this.identifier.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.identifier[${i}]`)); }) }
-    if (!this['type']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property type fhir: DeviceMetric.type:CodeableConcept', expression: [expression] });
-    }
-    if (this["type"]) { issues.push(...this.type.doModelValidation(expression+'.type')); }
-    if (this["unit"]) { issues.push(...this.unit.doModelValidation(expression+'.unit')); }
-    if (this["source"]) { issues.push(...this.source.doModelValidation(expression+'.source')); }
-    if (this["parent"]) { issues.push(...this.parent.doModelValidation(expression+'.parent')); }
-    if (this['operationalStatus'] && (!Object.values(MetricOperationalStatusCodes).includes(this.operationalStatus.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'operationalStatus (DeviceMetric.operationalStatus) of type code is missing code for Required binding to: MetricOperationalStatus', expression: [expression] });
-    }
-    if (this["operationalStatus"]) { issues.push(...this.operationalStatus.doModelValidation(expression+'.operationalStatus')); }
-    if (this['color'] && (!Object.values(MetricColorCodes).includes(this.color.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'color (DeviceMetric.color) of type code is missing code for Required binding to: MetricColor', expression: [expression] });
-    }
-    if (this["color"]) { issues.push(...this.color.doModelValidation(expression+'.color')); }
-    if (!this['category']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property category fhir: DeviceMetric.category:code', expression: [expression] });
-    }
-    if (this['category'] && (!Object.values(MetricCategoryCodes).includes(this.category.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'category (DeviceMetric.category) of type code is missing code for Required binding to: MetricCategory', expression: [expression] });
-    }
-    if (this["category"]) { issues.push(...this.category.doModelValidation(expression+'.category')); }
-    if (this["measurementPeriod"]) { issues.push(...this.measurementPeriod.doModelValidation(expression+'.measurementPeriod')); }
-    if (this["calibration"]) { this.calibration.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.calibration[${i}]`)); }) }
+    this.vReqS('resourceType',expression)
+    this.vOptA('identifier',expression)
+    this.vReqS('type',expression)
+    this.vOptS('unit',expression)
+    this.vOptS('source',expression)
+    this.vOptS('parent',expression)
+    this.vOptSV('operationalStatus',expression,'MetricOperationalStatus',MetricOperationalStatusVsValidation,'r')
+    this.vOptSV('color',expression,'MetricColor',MetricColorVsValidation,'r')
+    this.vReqSV('category',expression,'MetricCategory',MetricCategoryVsValidation,'r')
+    this.vOptS('measurementPeriod',expression)
+    this.vOptA('calibration',expression)
     return issues;
   }
 }

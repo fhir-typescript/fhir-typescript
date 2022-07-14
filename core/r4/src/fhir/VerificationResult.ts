@@ -6,45 +6,45 @@
 import * as fhir from '../fhir.js';
 
 // @ts-ignore
-import { VerificationresultPrimarySourceTypeCodings, VerificationresultPrimarySourceTypeCodingType,} from '../fhirValueSets/VerificationresultPrimarySourceTypeCodings.js';
-// @ts-ignore
 import { VerificationresultPrimarySourceTypeCodes,  VerificationresultPrimarySourceTypeCodeType } from '../fhirValueSets/VerificationresultPrimarySourceTypeCodes.js';
 // @ts-ignore
-import { VerificationresultCommunicationMethodCodings, VerificationresultCommunicationMethodCodingType,} from '../fhirValueSets/VerificationresultCommunicationMethodCodings.js';
+import { VerificationresultPrimarySourceTypeVsValidation } from '../fhirValueSets/VerificationresultPrimarySourceTypeVsValidation.js';
 // @ts-ignore
 import { VerificationresultCommunicationMethodCodes,  VerificationresultCommunicationMethodCodeType } from '../fhirValueSets/VerificationresultCommunicationMethodCodes.js';
 // @ts-ignore
-import { VerificationresultValidationStatusCodings, VerificationresultValidationStatusCodingType,} from '../fhirValueSets/VerificationresultValidationStatusCodings.js';
+import { VerificationresultCommunicationMethodVsValidation } from '../fhirValueSets/VerificationresultCommunicationMethodVsValidation.js';
 // @ts-ignore
 import { VerificationresultValidationStatusCodes,  VerificationresultValidationStatusCodeType } from '../fhirValueSets/VerificationresultValidationStatusCodes.js';
 // @ts-ignore
-import { VerificationresultCanPushUpdatesCodings, VerificationresultCanPushUpdatesCodingType,} from '../fhirValueSets/VerificationresultCanPushUpdatesCodings.js';
+import { VerificationresultValidationStatusVsValidation } from '../fhirValueSets/VerificationresultValidationStatusVsValidation.js';
 // @ts-ignore
 import { VerificationresultCanPushUpdatesCodes,  VerificationresultCanPushUpdatesCodeType } from '../fhirValueSets/VerificationresultCanPushUpdatesCodes.js';
 // @ts-ignore
-import { VerificationresultPushTypeAvailableCodings, VerificationresultPushTypeAvailableCodingType,} from '../fhirValueSets/VerificationresultPushTypeAvailableCodings.js';
+import { VerificationresultCanPushUpdatesVsValidation } from '../fhirValueSets/VerificationresultCanPushUpdatesVsValidation.js';
 // @ts-ignore
 import { VerificationresultPushTypeAvailableCodes,  VerificationresultPushTypeAvailableCodeType } from '../fhirValueSets/VerificationresultPushTypeAvailableCodes.js';
 // @ts-ignore
-import { VerificationresultNeedCodings, VerificationresultNeedCodingType,} from '../fhirValueSets/VerificationresultNeedCodings.js';
+import { VerificationresultPushTypeAvailableVsValidation } from '../fhirValueSets/VerificationresultPushTypeAvailableVsValidation.js';
 // @ts-ignore
 import { VerificationresultNeedCodes,  VerificationresultNeedCodeType } from '../fhirValueSets/VerificationresultNeedCodes.js';
 // @ts-ignore
-import { VerificationresultStatusCodings, VerificationresultStatusCodingType,} from '../fhirValueSets/VerificationresultStatusCodings.js';
+import { VerificationresultNeedVsValidation } from '../fhirValueSets/VerificationresultNeedVsValidation.js';
 // @ts-ignore
 import { VerificationresultStatusCodes,  VerificationresultStatusCodeType } from '../fhirValueSets/VerificationresultStatusCodes.js';
 // @ts-ignore
-import { VerificationresultValidationTypeCodings, VerificationresultValidationTypeCodingType,} from '../fhirValueSets/VerificationresultValidationTypeCodings.js';
+import { VerificationresultStatusVsValidation } from '../fhirValueSets/VerificationresultStatusVsValidation.js';
 // @ts-ignore
 import { VerificationresultValidationTypeCodes,  VerificationresultValidationTypeCodeType } from '../fhirValueSets/VerificationresultValidationTypeCodes.js';
 // @ts-ignore
-import { VerificationresultValidationProcessCodings, VerificationresultValidationProcessCodingType,} from '../fhirValueSets/VerificationresultValidationProcessCodings.js';
+import { VerificationresultValidationTypeVsValidation } from '../fhirValueSets/VerificationresultValidationTypeVsValidation.js';
 // @ts-ignore
 import { VerificationresultValidationProcessCodes,  VerificationresultValidationProcessCodeType } from '../fhirValueSets/VerificationresultValidationProcessCodes.js';
 // @ts-ignore
-import { VerificationresultFailureActionCodings, VerificationresultFailureActionCodingType,} from '../fhirValueSets/VerificationresultFailureActionCodings.js';
+import { VerificationresultValidationProcessVsValidation } from '../fhirValueSets/VerificationresultValidationProcessVsValidation.js';
 // @ts-ignore
 import { VerificationresultFailureActionCodes,  VerificationresultFailureActionCodeType } from '../fhirValueSets/VerificationresultFailureActionCodes.js';
+// @ts-ignore
+import { VerificationresultFailureActionVsValidation } from '../fhirValueSets/VerificationresultFailureActionVsValidation.js';
 /**
  * Valid arguments for the VerificationResultPrimarySource type.
  */
@@ -140,36 +140,18 @@ export class VerificationResultPrimarySource extends fhir.BackboneElement {
     else { this.pushTypeAvailable = []; }
   }
   /**
-   * Preferred-bound Value Set for validationStatus (VerificationResult.primarySource.validationStatus)
-   */
-  public static get validationStatusPreferredCodings():VerificationresultValidationStatusCodingType {
-    return VerificationresultValidationStatusCodings;
-  }
-  /**
-   * Preferred-bound Value Set for canPushUpdates (VerificationResult.primarySource.canPushUpdates)
-   */
-  public static get canPushUpdatesPreferredCodings():VerificationresultCanPushUpdatesCodingType {
-    return VerificationresultCanPushUpdatesCodings;
-  }
-  /**
-   * Preferred-bound Value Set for pushTypeAvailable (VerificationResult.primarySource.pushTypeAvailable)
-   */
-  public static get pushTypeAvailablePreferredCodings():VerificationresultPushTypeAvailableCodingType {
-    return VerificationresultPushTypeAvailableCodings;
-  }
-  /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'VerificationResult.primarySource' }
-    if (this["who"]) { issues.push(...this.who.doModelValidation(expression+'.who')); }
-    if (this["type"]) { this.type.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.type[${i}]`)); }) }
-    if (this["communicationMethod"]) { this.communicationMethod.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.communicationMethod[${i}]`)); }) }
-    if (this["validationStatus"]) { issues.push(...this.validationStatus.doModelValidation(expression+'.validationStatus')); }
-    if (this["validationDate"]) { issues.push(...this.validationDate.doModelValidation(expression+'.validationDate')); }
-    if (this["canPushUpdates"]) { issues.push(...this.canPushUpdates.doModelValidation(expression+'.canPushUpdates')); }
-    if (this["pushTypeAvailable"]) { this.pushTypeAvailable.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.pushTypeAvailable[${i}]`)); }) }
+    this.vOptS('who',expression)
+    this.vOptA('type',expression)
+    this.vOptA('communicationMethod',expression)
+    this.vOptS('validationStatus',expression)
+    this.vOptS('validationDate',expression)
+    this.vOptS('canPushUpdates',expression)
+    this.vOptA('pushTypeAvailable',expression)
     return issues;
   }
 }
@@ -295,14 +277,14 @@ export class VerificationResultAttestation extends fhir.BackboneElement {
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'VerificationResult.attestation' }
-    if (this["who"]) { issues.push(...this.who.doModelValidation(expression+'.who')); }
-    if (this["onBehalfOf"]) { issues.push(...this.onBehalfOf.doModelValidation(expression+'.onBehalfOf')); }
-    if (this["communicationMethod"]) { issues.push(...this.communicationMethod.doModelValidation(expression+'.communicationMethod')); }
-    if (this["date"]) { issues.push(...this.date.doModelValidation(expression+'.date')); }
-    if (this["sourceIdentityCertificate"]) { issues.push(...this.sourceIdentityCertificate.doModelValidation(expression+'.sourceIdentityCertificate')); }
-    if (this["proxyIdentityCertificate"]) { issues.push(...this.proxyIdentityCertificate.doModelValidation(expression+'.proxyIdentityCertificate')); }
-    if (this["proxySignature"]) { issues.push(...this.proxySignature.doModelValidation(expression+'.proxySignature')); }
-    if (this["sourceSignature"]) { issues.push(...this.sourceSignature.doModelValidation(expression+'.sourceSignature')); }
+    this.vOptS('who',expression)
+    this.vOptS('onBehalfOf',expression)
+    this.vOptS('communicationMethod',expression)
+    this.vOptS('date',expression)
+    this.vOptS('sourceIdentityCertificate',expression)
+    this.vOptS('proxyIdentityCertificate',expression)
+    this.vOptS('proxySignature',expression)
+    this.vOptS('sourceSignature',expression)
     return issues;
   }
 }
@@ -368,12 +350,9 @@ export class VerificationResultValidator extends fhir.BackboneElement {
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'VerificationResult.validator' }
-    if (!this['organization']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property organization fhir: VerificationResult.validator.organization:Reference', expression: [expression] });
-    }
-    if (this["organization"]) { issues.push(...this.organization.doModelValidation(expression+'.organization')); }
-    if (this["identityCertificate"]) { issues.push(...this.identityCertificate.doModelValidation(expression+'.identityCertificate')); }
-    if (this["attestationSignature"]) { issues.push(...this.attestationSignature.doModelValidation(expression+'.attestationSignature')); }
+    this.vReqS('organization',expression)
+    this.vOptS('identityCertificate',expression)
+    this.vOptS('attestationSignature',expression)
     return issues;
   }
 }
@@ -581,58 +560,26 @@ export class VerificationResult extends fhir.DomainResource {
     else { this.validator = []; }
   }
   /**
-   * Preferred-bound Value Set for need (VerificationResult.need)
-   */
-  public static get needPreferredCodings():VerificationresultNeedCodingType {
-    return VerificationresultNeedCodings;
-  }
-  /**
-   * Required-bound Value Set for status (VerificationResult.status)
-   */
-  public static get statusRequiredCodes() {
-    return VerificationresultStatusCodes;
-  }
-  /**
-   * Preferred-bound Value Set for validationType (VerificationResult.validationType)
-   */
-  public static get validationTypePreferredCodings():VerificationresultValidationTypeCodingType {
-    return VerificationresultValidationTypeCodings;
-  }
-  /**
-   * Preferred-bound Value Set for failureAction (VerificationResult.failureAction)
-   */
-  public static get failureActionPreferredCodings():VerificationresultFailureActionCodingType {
-    return VerificationresultFailureActionCodings;
-  }
-  /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'VerificationResult' }
-    if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType fhir: VerificationResult.resourceType:"VerificationResult"', expression: [expression] });
-    }
-    if (this["target"]) { this.target.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.target[${i}]`)); }) }
-    if (this["targetLocation"]) { this.targetLocation.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.targetLocation[${i}]`)); }) }
-    if (this["need"]) { issues.push(...this.need.doModelValidation(expression+'.need')); }
-    if (!this['status']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status fhir: VerificationResult.status:code', expression: [expression] });
-    }
-    if (this['status'] && (!Object.values(VerificationresultStatusCodes).includes(this.status.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'status (VerificationResult.status) of type code is missing code for Required binding to: VerificationresultStatus', expression: [expression] });
-    }
-    if (this["status"]) { issues.push(...this.status.doModelValidation(expression+'.status')); }
-    if (this["statusDate"]) { issues.push(...this.statusDate.doModelValidation(expression+'.statusDate')); }
-    if (this["validationType"]) { issues.push(...this.validationType.doModelValidation(expression+'.validationType')); }
-    if (this["validationProcess"]) { this.validationProcess.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.validationProcess[${i}]`)); }) }
-    if (this["frequency"]) { issues.push(...this.frequency.doModelValidation(expression+'.frequency')); }
-    if (this["lastPerformed"]) { issues.push(...this.lastPerformed.doModelValidation(expression+'.lastPerformed')); }
-    if (this["nextScheduled"]) { issues.push(...this.nextScheduled.doModelValidation(expression+'.nextScheduled')); }
-    if (this["failureAction"]) { issues.push(...this.failureAction.doModelValidation(expression+'.failureAction')); }
-    if (this["primarySource"]) { this.primarySource.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.primarySource[${i}]`)); }) }
-    if (this["attestation"]) { issues.push(...this.attestation.doModelValidation(expression+'.attestation')); }
-    if (this["validator"]) { this.validator.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.validator[${i}]`)); }) }
+    this.vReqS('resourceType',expression)
+    this.vOptA('target',expression)
+    this.vOptA('targetLocation',expression)
+    this.vOptS('need',expression)
+    this.vReqSV('status',expression,'VerificationresultStatus',VerificationresultStatusVsValidation,'r')
+    this.vOptS('statusDate',expression)
+    this.vOptS('validationType',expression)
+    this.vOptA('validationProcess',expression)
+    this.vOptS('frequency',expression)
+    this.vOptS('lastPerformed',expression)
+    this.vOptS('nextScheduled',expression)
+    this.vOptS('failureAction',expression)
+    this.vOptA('primarySource',expression)
+    this.vOptS('attestation',expression)
+    this.vOptA('validator',expression)
     return issues;
   }
 }

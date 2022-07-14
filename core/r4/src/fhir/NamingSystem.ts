@@ -6,21 +6,21 @@
 import * as fhir from '../fhir.js';
 
 // @ts-ignore
-import { NamingsystemIdentifierTypeCodings, NamingsystemIdentifierTypeCodingType,} from '../fhirValueSets/NamingsystemIdentifierTypeCodings.js';
-// @ts-ignore
 import { NamingsystemIdentifierTypeCodes,  NamingsystemIdentifierTypeCodeType } from '../fhirValueSets/NamingsystemIdentifierTypeCodes.js';
 // @ts-ignore
-import { PublicationStatusCodings, PublicationStatusCodingType,} from '../fhirValueSets/PublicationStatusCodings.js';
+import { NamingsystemIdentifierTypeVsValidation } from '../fhirValueSets/NamingsystemIdentifierTypeVsValidation.js';
 // @ts-ignore
 import { PublicationStatusCodes,  PublicationStatusCodeType } from '../fhirValueSets/PublicationStatusCodes.js';
 // @ts-ignore
-import { NamingsystemTypeCodings, NamingsystemTypeCodingType,} from '../fhirValueSets/NamingsystemTypeCodings.js';
+import { PublicationStatusVsValidation } from '../fhirValueSets/PublicationStatusVsValidation.js';
 // @ts-ignore
 import { NamingsystemTypeCodes,  NamingsystemTypeCodeType } from '../fhirValueSets/NamingsystemTypeCodes.js';
 // @ts-ignore
-import { IdentifierTypeCodings, IdentifierTypeCodingType,} from '../fhirValueSets/IdentifierTypeCodings.js';
+import { NamingsystemTypeVsValidation } from '../fhirValueSets/NamingsystemTypeVsValidation.js';
 // @ts-ignore
 import { IdentifierTypeCodes,  IdentifierTypeCodeType } from '../fhirValueSets/IdentifierTypeCodes.js';
+// @ts-ignore
+import { IdentifierTypeVsValidation } from '../fhirValueSets/IdentifierTypeVsValidation.js';
 /**
  * Valid arguments for the NamingSystemUniqueId type.
  */
@@ -121,31 +121,16 @@ export class NamingSystemUniqueId extends fhir.BackboneElement {
     if (source['period']) { this.period = new fhir.Period(source.period); }
   }
   /**
-   * Required-bound Value Set for type (NamingSystem.uniqueId.type)
-   */
-  public static get typeRequiredCodes() {
-    return NamingsystemIdentifierTypeCodes;
-  }
-  /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'NamingSystem.uniqueId' }
-    if (!this['type']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property type fhir: NamingSystem.uniqueId.type:code', expression: [expression] });
-    }
-    if (this['type'] && (!Object.values(NamingsystemIdentifierTypeCodes).includes(this.type.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'type (NamingSystem.uniqueId.type) of type code is missing code for Required binding to: NamingsystemIdentifierType', expression: [expression] });
-    }
-    if (this["type"]) { issues.push(...this.type.doModelValidation(expression+'.type')); }
-    if (!this['value']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property value fhir: NamingSystem.uniqueId.value:string', expression: [expression] });
-    }
-    if (this["value"]) { issues.push(...this.value.doModelValidation(expression+'.value')); }
-    if (this["preferred"]) { issues.push(...this.preferred.doModelValidation(expression+'.preferred')); }
-    if (this["comment"]) { issues.push(...this.comment.doModelValidation(expression+'.comment')); }
-    if (this["period"]) { issues.push(...this.period.doModelValidation(expression+'.period')); }
+    this.vReqSV('type',expression,'NamingsystemIdentifierType',NamingsystemIdentifierTypeVsValidation,'r')
+    this.vReqS('value',expression)
+    this.vOptS('preferred',expression)
+    this.vOptS('comment',expression)
+    this.vOptS('period',expression)
     return issues;
   }
 }
@@ -368,70 +353,25 @@ export class NamingSystem extends fhir.DomainResource {
     else { this.uniqueId = []; }
   }
   /**
-   * Required-bound Value Set for status (NamingSystem.status)
-   */
-  public static get statusRequiredCodes() {
-    return PublicationStatusCodes;
-  }
-  /**
-   * Required-bound Value Set for kind (NamingSystem.kind)
-   */
-  public static get kindRequiredCodes() {
-    return NamingsystemTypeCodes;
-  }
-  /**
-   * Extensible-bound Value Set for type (NamingSystem.type)
-   */
-  public static get typeExtensibleCodings():IdentifierTypeCodingType {
-    return IdentifierTypeCodings;
-  }
-  /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'NamingSystem' }
-    if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType fhir: NamingSystem.resourceType:"NamingSystem"', expression: [expression] });
-    }
-    if (!this['name']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property name fhir: NamingSystem.name:string', expression: [expression] });
-    }
-    if (this["name"]) { issues.push(...this.name.doModelValidation(expression+'.name')); }
-    if (!this['status']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status fhir: NamingSystem.status:code', expression: [expression] });
-    }
-    if (this['status'] && (!Object.values(PublicationStatusCodes).includes(this.status.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'status (NamingSystem.status) of type code is missing code for Required binding to: PublicationStatus', expression: [expression] });
-    }
-    if (this["status"]) { issues.push(...this.status.doModelValidation(expression+'.status')); }
-    if (!this['kind']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property kind fhir: NamingSystem.kind:code', expression: [expression] });
-    }
-    if (this['kind'] && (!Object.values(NamingsystemTypeCodes).includes(this.kind.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'kind (NamingSystem.kind) of type code is missing code for Required binding to: NamingsystemType', expression: [expression] });
-    }
-    if (this["kind"]) { issues.push(...this.kind.doModelValidation(expression+'.kind')); }
-    if (!this['date']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property date fhir: NamingSystem.date:dateTime', expression: [expression] });
-    }
-    if (this["date"]) { issues.push(...this.date.doModelValidation(expression+'.date')); }
-    if (this["publisher"]) { issues.push(...this.publisher.doModelValidation(expression+'.publisher')); }
-    if (this["contact"]) { this.contact.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.contact[${i}]`)); }) }
-    if (this["responsible"]) { issues.push(...this.responsible.doModelValidation(expression+'.responsible')); }
-    if (this["type"]) { issues.push(...this.type.doModelValidation(expression+'.type')); }
-    if (this["description"]) { issues.push(...this.description.doModelValidation(expression+'.description')); }
-    if (this["useContext"]) { this.useContext.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.useContext[${i}]`)); }) }
-    if (this["jurisdiction"]) { this.jurisdiction.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.jurisdiction[${i}]`)); }) }
-    if (this["usage"]) { issues.push(...this.usage.doModelValidation(expression+'.usage')); }
-    if (!this['uniqueId']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property uniqueId fhir: NamingSystem.uniqueId:uniqueId', expression: [expression] });
-    } else if (!Array.isArray(this.uniqueId)) {
-      issues.push({ severity: 'error', code: 'structure', diagnostics: 'Found scalar in array property uniqueId fhir: NamingSystem.uniqueId:uniqueId', expression: [expression] });
-    } else if (this.uniqueId.length === 0) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property uniqueId fhir: NamingSystem.uniqueId:uniqueId', expression: [expression] });
-    }
-    if (this["uniqueId"]) { this.uniqueId.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.uniqueId[${i}]`)); }) }
+    this.vReqS('resourceType',expression)
+    this.vReqS('name',expression)
+    this.vReqSV('status',expression,'PublicationStatus',PublicationStatusVsValidation,'r')
+    this.vReqSV('kind',expression,'NamingsystemType',NamingsystemTypeVsValidation,'r')
+    this.vReqS('date',expression)
+    this.vOptS('publisher',expression)
+    this.vOptA('contact',expression)
+    this.vOptS('responsible',expression)
+    this.vOptS('type',expression)
+    this.vOptS('description',expression)
+    this.vOptA('useContext',expression)
+    this.vOptA('jurisdiction',expression)
+    this.vOptS('usage',expression)
+    this.vReqA('uniqueId',expression)
     return issues;
   }
 }

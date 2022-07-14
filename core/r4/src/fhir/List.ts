@@ -6,29 +6,29 @@
 import * as fhir from '../fhir.js';
 
 // @ts-ignore
-import { ListItemFlagCodings, ListItemFlagCodingType,} from '../fhirValueSets/ListItemFlagCodings.js';
-// @ts-ignore
 import { ListItemFlagCodes,  ListItemFlagCodeType } from '../fhirValueSets/ListItemFlagCodes.js';
 // @ts-ignore
-import { ListStatusCodings, ListStatusCodingType,} from '../fhirValueSets/ListStatusCodings.js';
+import { ListItemFlagVsValidation } from '../fhirValueSets/ListItemFlagVsValidation.js';
 // @ts-ignore
 import { ListStatusCodes,  ListStatusCodeType } from '../fhirValueSets/ListStatusCodes.js';
 // @ts-ignore
-import { ListModeCodings, ListModeCodingType,} from '../fhirValueSets/ListModeCodings.js';
+import { ListStatusVsValidation } from '../fhirValueSets/ListStatusVsValidation.js';
 // @ts-ignore
 import { ListModeCodes,  ListModeCodeType } from '../fhirValueSets/ListModeCodes.js';
 // @ts-ignore
-import { ListExampleCodings, ListExampleCodingType,} from '../fhirValueSets/ListExampleCodings.js';
+import { ListModeVsValidation } from '../fhirValueSets/ListModeVsValidation.js';
 // @ts-ignore
 import { ListExampleCodes,  ListExampleCodeType } from '../fhirValueSets/ListExampleCodes.js';
 // @ts-ignore
-import { ListOrderCodings, ListOrderCodingType,} from '../fhirValueSets/ListOrderCodings.js';
+import { ListExampleVsValidation } from '../fhirValueSets/ListExampleVsValidation.js';
 // @ts-ignore
 import { ListOrderCodes,  ListOrderCodeType } from '../fhirValueSets/ListOrderCodes.js';
 // @ts-ignore
-import { ListEmptyReasonCodings, ListEmptyReasonCodingType,} from '../fhirValueSets/ListEmptyReasonCodings.js';
+import { ListOrderVsValidation } from '../fhirValueSets/ListOrderVsValidation.js';
 // @ts-ignore
 import { ListEmptyReasonCodes,  ListEmptyReasonCodeType } from '../fhirValueSets/ListEmptyReasonCodes.js';
+// @ts-ignore
+import { ListEmptyReasonVsValidation } from '../fhirValueSets/ListEmptyReasonVsValidation.js';
 /**
  * Valid arguments for the ListEntry type.
  */
@@ -108,13 +108,10 @@ export class ListEntry extends fhir.BackboneElement {
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'List.entry' }
-    if (this["flag"]) { issues.push(...this.flag.doModelValidation(expression+'.flag')); }
-    if (this["deleted"]) { issues.push(...this.deleted.doModelValidation(expression+'.deleted')); }
-    if (this["date"]) { issues.push(...this.date.doModelValidation(expression+'.date')); }
-    if (!this['item']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property item fhir: List.entry.item:Reference', expression: [expression] });
-    }
-    if (this["item"]) { issues.push(...this.item.doModelValidation(expression+'.item')); }
+    this.vOptS('flag',expression)
+    this.vOptS('deleted',expression)
+    this.vOptS('date',expression)
+    this.vReqS('item',expression)
     return issues;
   }
 }
@@ -302,63 +299,25 @@ export class List extends fhir.DomainResource {
     if (source['emptyReason']) { this.emptyReason = new fhir.CodeableConcept(source.emptyReason); }
   }
   /**
-   * Required-bound Value Set for status (List.status)
-   */
-  public static get statusRequiredCodes() {
-    return ListStatusCodes;
-  }
-  /**
-   * Required-bound Value Set for mode (List.mode)
-   */
-  public static get modeRequiredCodes() {
-    return ListModeCodes;
-  }
-  /**
-   * Preferred-bound Value Set for orderedBy (List.orderedBy)
-   */
-  public static get orderedByPreferredCodings():ListOrderCodingType {
-    return ListOrderCodings;
-  }
-  /**
-   * Preferred-bound Value Set for emptyReason (List.emptyReason)
-   */
-  public static get emptyReasonPreferredCodings():ListEmptyReasonCodingType {
-    return ListEmptyReasonCodings;
-  }
-  /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'List' }
-    if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType fhir: List.resourceType:"List"', expression: [expression] });
-    }
-    if (this["identifier"]) { this.identifier.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.identifier[${i}]`)); }) }
-    if (!this['status']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status fhir: List.status:code', expression: [expression] });
-    }
-    if (this['status'] && (!Object.values(ListStatusCodes).includes(this.status.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'status (List.status) of type code is missing code for Required binding to: ListStatus', expression: [expression] });
-    }
-    if (this["status"]) { issues.push(...this.status.doModelValidation(expression+'.status')); }
-    if (!this['mode']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property mode fhir: List.mode:code', expression: [expression] });
-    }
-    if (this['mode'] && (!Object.values(ListModeCodes).includes(this.mode.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'mode (List.mode) of type code is missing code for Required binding to: ListMode', expression: [expression] });
-    }
-    if (this["mode"]) { issues.push(...this.mode.doModelValidation(expression+'.mode')); }
-    if (this["title"]) { issues.push(...this.title.doModelValidation(expression+'.title')); }
-    if (this["code"]) { issues.push(...this.code.doModelValidation(expression+'.code')); }
-    if (this["subject"]) { issues.push(...this.subject.doModelValidation(expression+'.subject')); }
-    if (this["encounter"]) { issues.push(...this.encounter.doModelValidation(expression+'.encounter')); }
-    if (this["date"]) { issues.push(...this.date.doModelValidation(expression+'.date')); }
-    if (this["source"]) { issues.push(...this.source.doModelValidation(expression+'.source')); }
-    if (this["orderedBy"]) { issues.push(...this.orderedBy.doModelValidation(expression+'.orderedBy')); }
-    if (this["note"]) { this.note.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.note[${i}]`)); }) }
-    if (this["entry"]) { this.entry.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.entry[${i}]`)); }) }
-    if (this["emptyReason"]) { issues.push(...this.emptyReason.doModelValidation(expression+'.emptyReason')); }
+    this.vReqS('resourceType',expression)
+    this.vOptA('identifier',expression)
+    this.vReqSV('status',expression,'ListStatus',ListStatusVsValidation,'r')
+    this.vReqSV('mode',expression,'ListMode',ListModeVsValidation,'r')
+    this.vOptS('title',expression)
+    this.vOptS('code',expression)
+    this.vOptS('subject',expression)
+    this.vOptS('encounter',expression)
+    this.vOptS('date',expression)
+    this.vOptS('source',expression)
+    this.vOptS('orderedBy',expression)
+    this.vOptA('note',expression)
+    this.vOptA('entry',expression)
+    this.vOptS('emptyReason',expression)
     return issues;
   }
 }

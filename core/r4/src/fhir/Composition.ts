@@ -6,49 +6,49 @@
 import * as fhir from '../fhir.js';
 
 // @ts-ignore
-import { CompositionAttestationModeCodings, CompositionAttestationModeCodingType,} from '../fhirValueSets/CompositionAttestationModeCodings.js';
-// @ts-ignore
 import { CompositionAttestationModeCodes,  CompositionAttestationModeCodeType } from '../fhirValueSets/CompositionAttestationModeCodes.js';
 // @ts-ignore
-import { DocumentRelationshipTypeCodings, DocumentRelationshipTypeCodingType,} from '../fhirValueSets/DocumentRelationshipTypeCodings.js';
+import { CompositionAttestationModeVsValidation } from '../fhirValueSets/CompositionAttestationModeVsValidation.js';
 // @ts-ignore
 import { DocumentRelationshipTypeCodes,  DocumentRelationshipTypeCodeType } from '../fhirValueSets/DocumentRelationshipTypeCodes.js';
 // @ts-ignore
-import { V3ActCodings, V3ActCodingType,} from '../fhirValueSets/V3ActCodings.js';
+import { DocumentRelationshipTypeVsValidation } from '../fhirValueSets/DocumentRelationshipTypeVsValidation.js';
 // @ts-ignore
 import { V3ActCodes,  V3ActCodeType } from '../fhirValueSets/V3ActCodes.js';
 // @ts-ignore
-import { DocSectionCodings, DocSectionCodingType,} from '../fhirValueSets/DocSectionCodings.js';
+import { V3ActVsValidation } from '../fhirValueSets/V3ActVsValidation.js';
 // @ts-ignore
 import { DocSectionCodes,  DocSectionCodeType } from '../fhirValueSets/DocSectionCodes.js';
 // @ts-ignore
-import { ListModeCodings, ListModeCodingType,} from '../fhirValueSets/ListModeCodings.js';
+import { DocSectionVsValidation } from '../fhirValueSets/DocSectionVsValidation.js';
 // @ts-ignore
 import { ListModeCodes,  ListModeCodeType } from '../fhirValueSets/ListModeCodes.js';
 // @ts-ignore
-import { ListOrderCodings, ListOrderCodingType,} from '../fhirValueSets/ListOrderCodings.js';
+import { ListModeVsValidation } from '../fhirValueSets/ListModeVsValidation.js';
 // @ts-ignore
 import { ListOrderCodes,  ListOrderCodeType } from '../fhirValueSets/ListOrderCodes.js';
 // @ts-ignore
-import { ListEmptyReasonCodings, ListEmptyReasonCodingType,} from '../fhirValueSets/ListEmptyReasonCodings.js';
+import { ListOrderVsValidation } from '../fhirValueSets/ListOrderVsValidation.js';
 // @ts-ignore
 import { ListEmptyReasonCodes,  ListEmptyReasonCodeType } from '../fhirValueSets/ListEmptyReasonCodes.js';
 // @ts-ignore
-import { CompositionStatusCodings, CompositionStatusCodingType,} from '../fhirValueSets/CompositionStatusCodings.js';
+import { ListEmptyReasonVsValidation } from '../fhirValueSets/ListEmptyReasonVsValidation.js';
 // @ts-ignore
 import { CompositionStatusCodes,  CompositionStatusCodeType } from '../fhirValueSets/CompositionStatusCodes.js';
 // @ts-ignore
-import { DocTypeCodings, DocTypeCodingType,} from '../fhirValueSets/DocTypeCodings.js';
+import { CompositionStatusVsValidation } from '../fhirValueSets/CompositionStatusVsValidation.js';
 // @ts-ignore
 import { DocTypeCodes,  DocTypeCodeType } from '../fhirValueSets/DocTypeCodes.js';
 // @ts-ignore
-import { DocumentClassCodings, DocumentClassCodingType,} from '../fhirValueSets/DocumentClassCodings.js';
+import { DocTypeVsValidation } from '../fhirValueSets/DocTypeVsValidation.js';
 // @ts-ignore
 import { DocumentClassCodes,  DocumentClassCodeType } from '../fhirValueSets/DocumentClassCodes.js';
 // @ts-ignore
-import { V3ConfidentialityClassificationCodings, V3ConfidentialityClassificationCodingType,} from '../fhirValueSets/V3ConfidentialityClassificationCodings.js';
+import { DocumentClassVsValidation } from '../fhirValueSets/DocumentClassVsValidation.js';
 // @ts-ignore
 import { V3ConfidentialityClassificationCodes,  V3ConfidentialityClassificationCodeType } from '../fhirValueSets/V3ConfidentialityClassificationCodes.js';
+// @ts-ignore
+import { V3ConfidentialityClassificationVsValidation } from '../fhirValueSets/V3ConfidentialityClassificationVsValidation.js';
 /**
  * Valid arguments for the CompositionAttester type.
  */
@@ -114,26 +114,14 @@ export class CompositionAttester extends fhir.BackboneElement {
     if (source['party']) { this.party = new fhir.Reference(source.party); }
   }
   /**
-   * Required-bound Value Set for mode (Composition.attester.mode)
-   */
-  public static get modeRequiredCodes() {
-    return CompositionAttestationModeCodes;
-  }
-  /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'Composition.attester' }
-    if (!this['mode']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property mode fhir: Composition.attester.mode:code', expression: [expression] });
-    }
-    if (this['mode'] && (!Object.values(CompositionAttestationModeCodes).includes(this.mode.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'mode (Composition.attester.mode) of type code is missing code for Required binding to: CompositionAttestationMode', expression: [expression] });
-    }
-    if (this["mode"]) { issues.push(...this.mode.doModelValidation(expression+'.mode')); }
-    if (this["time"]) { issues.push(...this.time.doModelValidation(expression+'.time')); }
-    if (this["party"]) { issues.push(...this.party.doModelValidation(expression+'.party')); }
+    this.vReqSV('mode',expression,'CompositionAttestationMode',CompositionAttestationModeVsValidation,'r')
+    this.vOptS('time',expression)
+    this.vOptS('party',expression)
     return issues;
   }
 }
@@ -200,27 +188,13 @@ export class CompositionRelatesTo extends fhir.BackboneElement {
     else { this.target = null; }
   }
   /**
-   * Required-bound Value Set for code (Composition.relatesTo.code)
-   */
-  public static get codeRequiredCodes() {
-    return DocumentRelationshipTypeCodes;
-  }
-  /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'Composition.relatesTo' }
-    if (!this['code']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property code fhir: Composition.relatesTo.code:code', expression: [expression] });
-    }
-    if (this['code'] && (!Object.values(DocumentRelationshipTypeCodes).includes(this.code.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'code (Composition.relatesTo.code) of type code is missing code for Required binding to: DocumentRelationshipType', expression: [expression] });
-    }
-    if (this["code"]) { issues.push(...this.code.doModelValidation(expression+'.code')); }
-    if (!this['target']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property target fhir: Composition.relatesTo.target[x]:', expression: [expression] });
-    }
+    this.vReqSV('code',expression,'DocumentRelationshipType',DocumentRelationshipTypeVsValidation,'r')
+    this.vReqS('target',expression)
     return issues;
   }
 }
@@ -279,9 +253,9 @@ export class CompositionEvent extends fhir.BackboneElement {
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'Composition.event' }
-    if (this["code"]) { this.code.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.code[${i}]`)); }) }
-    if (this["period"]) { issues.push(...this.period.doModelValidation(expression+'.period')); }
-    if (this["detail"]) { this.detail.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.detail[${i}]`)); }) }
+    this.vOptA('code',expression)
+    this.vOptS('period',expression)
+    this.vOptA('detail',expression)
     return issues;
   }
 }
@@ -417,42 +391,21 @@ export class CompositionSection extends fhir.BackboneElement {
     else { this.section = []; }
   }
   /**
-   * Required-bound Value Set for mode (Composition.section.mode)
-   */
-  public static get modeRequiredCodes() {
-    return ListModeCodes;
-  }
-  /**
-   * Preferred-bound Value Set for orderedBy (Composition.section.orderedBy)
-   */
-  public static get orderedByPreferredCodings():ListOrderCodingType {
-    return ListOrderCodings;
-  }
-  /**
-   * Preferred-bound Value Set for emptyReason (Composition.section.emptyReason)
-   */
-  public static get emptyReasonPreferredCodings():ListEmptyReasonCodingType {
-    return ListEmptyReasonCodings;
-  }
-  /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'Composition.section' }
-    if (this["title"]) { issues.push(...this.title.doModelValidation(expression+'.title')); }
-    if (this["code"]) { issues.push(...this.code.doModelValidation(expression+'.code')); }
-    if (this["author"]) { this.author.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.author[${i}]`)); }) }
-    if (this["focus"]) { issues.push(...this.focus.doModelValidation(expression+'.focus')); }
-    if (this["text"]) { issues.push(...this.text.doModelValidation(expression+'.text')); }
-    if (this['mode'] && (!Object.values(ListModeCodes).includes(this.mode.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'mode (Composition.section.mode) of type code is missing code for Required binding to: ListMode', expression: [expression] });
-    }
-    if (this["mode"]) { issues.push(...this.mode.doModelValidation(expression+'.mode')); }
-    if (this["orderedBy"]) { issues.push(...this.orderedBy.doModelValidation(expression+'.orderedBy')); }
-    if (this["entry"]) { this.entry.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.entry[${i}]`)); }) }
-    if (this["emptyReason"]) { issues.push(...this.emptyReason.doModelValidation(expression+'.emptyReason')); }
-    if (this["section"]) { this.section.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.section[${i}]`)); }) }
+    this.vOptS('title',expression)
+    this.vOptS('code',expression)
+    this.vOptA('author',expression)
+    this.vOptS('focus',expression)
+    this.vOptS('text',expression)
+    this.vOptSV('mode',expression,'ListMode',ListModeVsValidation,'r')
+    this.vOptS('orderedBy',expression)
+    this.vOptA('entry',expression)
+    this.vOptS('emptyReason',expression)
+    this.vOptA('section',expression)
     return issues;
   }
 }
@@ -665,72 +618,27 @@ export class Composition extends fhir.DomainResource {
     else { this.section = []; }
   }
   /**
-   * Required-bound Value Set for status (Composition.status)
-   */
-  public static get statusRequiredCodes() {
-    return CompositionStatusCodes;
-  }
-  /**
-   * Preferred-bound Value Set for type (Composition.type)
-   */
-  public static get typePreferredCodings():DocTypeCodingType {
-    return DocTypeCodings;
-  }
-  /**
-   * Required-bound Value Set for confidentiality (Composition.confidentiality)
-   */
-  public static get confidentialityRequiredCodes() {
-    return V3ConfidentialityClassificationCodes;
-  }
-  /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'Composition' }
-    if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType fhir: Composition.resourceType:"Composition"', expression: [expression] });
-    }
-    if (this["identifier"]) { issues.push(...this.identifier.doModelValidation(expression+'.identifier')); }
-    if (!this['status']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status fhir: Composition.status:code', expression: [expression] });
-    }
-    if (this['status'] && (!Object.values(CompositionStatusCodes).includes(this.status.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'status (Composition.status) of type code is missing code for Required binding to: CompositionStatus', expression: [expression] });
-    }
-    if (this["status"]) { issues.push(...this.status.doModelValidation(expression+'.status')); }
-    if (!this['type']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property type fhir: Composition.type:CodeableConcept', expression: [expression] });
-    }
-    if (this["type"]) { issues.push(...this.type.doModelValidation(expression+'.type')); }
-    if (this["category"]) { this.category.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.category[${i}]`)); }) }
-    if (this["subject"]) { issues.push(...this.subject.doModelValidation(expression+'.subject')); }
-    if (this["encounter"]) { issues.push(...this.encounter.doModelValidation(expression+'.encounter')); }
-    if (!this['date']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property date fhir: Composition.date:dateTime', expression: [expression] });
-    }
-    if (this["date"]) { issues.push(...this.date.doModelValidation(expression+'.date')); }
-    if (!this['author']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property author fhir: Composition.author:Reference', expression: [expression] });
-    } else if (!Array.isArray(this.author)) {
-      issues.push({ severity: 'error', code: 'structure', diagnostics: 'Found scalar in array property author fhir: Composition.author:Reference', expression: [expression] });
-    } else if (this.author.length === 0) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property author fhir: Composition.author:Reference', expression: [expression] });
-    }
-    if (this["author"]) { this.author.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.author[${i}]`)); }) }
-    if (!this['title']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property title fhir: Composition.title:string', expression: [expression] });
-    }
-    if (this["title"]) { issues.push(...this.title.doModelValidation(expression+'.title')); }
-    if (this['confidentiality'] && (!Object.values(V3ConfidentialityClassificationCodes).includes(this.confidentiality.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'confidentiality (Composition.confidentiality) of type code is missing code for Required binding to: V3ConfidentialityClassification', expression: [expression] });
-    }
-    if (this["confidentiality"]) { issues.push(...this.confidentiality.doModelValidation(expression+'.confidentiality')); }
-    if (this["attester"]) { this.attester.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.attester[${i}]`)); }) }
-    if (this["custodian"]) { issues.push(...this.custodian.doModelValidation(expression+'.custodian')); }
-    if (this["relatesTo"]) { this.relatesTo.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.relatesTo[${i}]`)); }) }
-    if (this["event"]) { this.event.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.event[${i}]`)); }) }
-    if (this["section"]) { this.section.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.section[${i}]`)); }) }
+    this.vReqS('resourceType',expression)
+    this.vOptS('identifier',expression)
+    this.vReqSV('status',expression,'CompositionStatus',CompositionStatusVsValidation,'r')
+    this.vReqS('type',expression)
+    this.vOptA('category',expression)
+    this.vOptS('subject',expression)
+    this.vOptS('encounter',expression)
+    this.vReqS('date',expression)
+    this.vReqA('author',expression)
+    this.vReqS('title',expression)
+    this.vOptSV('confidentiality',expression,'V3ConfidentialityClassification',V3ConfidentialityClassificationVsValidation,'r')
+    this.vOptA('attester',expression)
+    this.vOptS('custodian',expression)
+    this.vOptA('relatesTo',expression)
+    this.vOptA('event',expression)
+    this.vOptA('section',expression)
     return issues;
   }
 }

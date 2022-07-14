@@ -89,6 +89,74 @@ export declare class FhirBase {
      */
     doModelValidation(_expression?: string): FtsIssue[];
     /**
+     * Validate an Optional Scalar element
+     * @param p
+     * @param exp
+     * @returns
+     */
+    vOptS(p: Readonly<string>, exp: Readonly<string>): FtsIssue[];
+    /**
+     * Validate an Optional Scalar element bound to a Value set
+     * @param p
+     * @param exp
+     * @param vsN
+     * @param vsV
+     * @param vsS
+     * @returns
+     */
+    vOptSV(p: Readonly<string>, exp: Readonly<string>, vsN: string, vsV: Readonly<string[]>, vsS: Readonly<string>): FtsIssue[];
+    /**
+     * Validate an Optional Array element
+     * @param p
+     * @param exp
+     * @returns
+     */
+    vOptA(p: Readonly<string>, exp: Readonly<string>): FtsIssue[];
+    /**
+     * Validate an Optional Array element bound to a Value set
+     * @param p
+     * @param exp
+     * @param vsN
+     * @param vsV
+     * @param vsS
+     * @returns
+     */
+    vOptAV(p: Readonly<string>, exp: Readonly<string>, vsN: string, vsV: Readonly<string[]>, vsS: Readonly<string>): FtsIssue[];
+    /**
+     * Validate a Required Scalar element
+     * @param p
+     * @param exp
+     * @returns
+     */
+    vReqS(p: Readonly<string>, exp: Readonly<string>): FtsIssue[];
+    /**
+     * Validate a Required Scalar element bound to a Value set
+     * @param p
+     * @param exp
+     * @param vsN
+     * @param vsV
+     * @param vsS
+     * @returns
+     */
+    vReqSV(p: Readonly<string>, exp: Readonly<string>, vsN: string, vsV: Readonly<string[]>, vsS: Readonly<string>): FtsIssue[];
+    /**
+     * Validate a Required Array element
+     * @param p
+     * @param exp
+     * @returns
+     */
+    vReqA(p: Readonly<string>, exp: Readonly<string>): FtsIssue[];
+    /**
+     * Validate a Required Array element bound to a Value set
+     * @param p
+     * @param exp
+     * @param vsN
+     * @param vsV
+     * @param vsS
+     * @returns
+     */
+    vReqAV(p: Readonly<string>, exp: Readonly<string>, vsN: string, vsV: Readonly<string[]>, vsS: Readonly<string>): FtsIssue[];
+    /**
      * Function to strip invalid element values for serialization.
      */
     toJSON(): any;

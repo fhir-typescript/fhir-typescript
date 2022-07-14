@@ -6,53 +6,53 @@
 import * as fhir from '../fhir.js';
 
 // @ts-ignore
-import { PerformerRoleCodings, PerformerRoleCodingType,} from '../fhirValueSets/PerformerRoleCodings.js';
-// @ts-ignore
 import { PerformerRoleCodes,  PerformerRoleCodeType } from '../fhirValueSets/PerformerRoleCodes.js';
 // @ts-ignore
-import { DeviceActionCodings, DeviceActionCodingType,} from '../fhirValueSets/DeviceActionCodings.js';
+import { PerformerRoleVsValidation } from '../fhirValueSets/PerformerRoleVsValidation.js';
 // @ts-ignore
 import { DeviceActionCodes,  DeviceActionCodeType } from '../fhirValueSets/DeviceActionCodes.js';
 // @ts-ignore
-import { EventStatusCodings, EventStatusCodingType,} from '../fhirValueSets/EventStatusCodings.js';
+import { DeviceActionVsValidation } from '../fhirValueSets/DeviceActionVsValidation.js';
 // @ts-ignore
 import { EventStatusCodes,  EventStatusCodeType } from '../fhirValueSets/EventStatusCodes.js';
 // @ts-ignore
-import { ProcedureNotPerformedReasonCodings, ProcedureNotPerformedReasonCodingType,} from '../fhirValueSets/ProcedureNotPerformedReasonCodings.js';
+import { EventStatusVsValidation } from '../fhirValueSets/EventStatusVsValidation.js';
 // @ts-ignore
 import { ProcedureNotPerformedReasonCodes,  ProcedureNotPerformedReasonCodeType } from '../fhirValueSets/ProcedureNotPerformedReasonCodes.js';
 // @ts-ignore
-import { ProcedureCategoryCodings, ProcedureCategoryCodingType,} from '../fhirValueSets/ProcedureCategoryCodings.js';
+import { ProcedureNotPerformedReasonVsValidation } from '../fhirValueSets/ProcedureNotPerformedReasonVsValidation.js';
 // @ts-ignore
 import { ProcedureCategoryCodes,  ProcedureCategoryCodeType } from '../fhirValueSets/ProcedureCategoryCodes.js';
 // @ts-ignore
-import { ProcedureCodings, ProcedureCodingType,} from '../fhirValueSets/ProcedureCodings.js';
+import { ProcedureCategoryVsValidation } from '../fhirValueSets/ProcedureCategoryVsValidation.js';
 // @ts-ignore
 import { ProcedureCodes,  ProcedureCodeType } from '../fhirValueSets/ProcedureCodes.js';
 // @ts-ignore
-import { ProcedureReasonCodings, ProcedureReasonCodingType,} from '../fhirValueSets/ProcedureReasonCodings.js';
+import { ProcedureVsValidation } from '../fhirValueSets/ProcedureVsValidation.js';
 // @ts-ignore
 import { ProcedureReasonCodes,  ProcedureReasonCodeType } from '../fhirValueSets/ProcedureReasonCodes.js';
 // @ts-ignore
-import { BodySiteCodings, BodySiteCodingType,} from '../fhirValueSets/BodySiteCodings.js';
+import { ProcedureReasonVsValidation } from '../fhirValueSets/ProcedureReasonVsValidation.js';
 // @ts-ignore
 import { BodySiteCodes,  BodySiteCodeType } from '../fhirValueSets/BodySiteCodes.js';
 // @ts-ignore
-import { ProcedureOutcomeCodings, ProcedureOutcomeCodingType,} from '../fhirValueSets/ProcedureOutcomeCodings.js';
+import { BodySiteVsValidation } from '../fhirValueSets/BodySiteVsValidation.js';
 // @ts-ignore
 import { ProcedureOutcomeCodes,  ProcedureOutcomeCodeType } from '../fhirValueSets/ProcedureOutcomeCodes.js';
 // @ts-ignore
-import { ConditionCodings, ConditionCodingType,} from '../fhirValueSets/ConditionCodings.js';
+import { ProcedureOutcomeVsValidation } from '../fhirValueSets/ProcedureOutcomeVsValidation.js';
 // @ts-ignore
 import { ConditionCodes,  ConditionCodeType } from '../fhirValueSets/ConditionCodes.js';
 // @ts-ignore
-import { ProcedureFollowupCodings, ProcedureFollowupCodingType,} from '../fhirValueSets/ProcedureFollowupCodings.js';
+import { ConditionVsValidation } from '../fhirValueSets/ConditionVsValidation.js';
 // @ts-ignore
 import { ProcedureFollowupCodes,  ProcedureFollowupCodeType } from '../fhirValueSets/ProcedureFollowupCodes.js';
 // @ts-ignore
-import { DeviceKindCodings, DeviceKindCodingType,} from '../fhirValueSets/DeviceKindCodings.js';
+import { ProcedureFollowupVsValidation } from '../fhirValueSets/ProcedureFollowupVsValidation.js';
 // @ts-ignore
 import { DeviceKindCodes,  DeviceKindCodeType } from '../fhirValueSets/DeviceKindCodes.js';
+// @ts-ignore
+import { DeviceKindVsValidation } from '../fhirValueSets/DeviceKindVsValidation.js';
 /**
  * Valid arguments for the ProcedurePerformer type.
  */
@@ -107,12 +107,9 @@ export class ProcedurePerformer extends fhir.BackboneElement {
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'Procedure.performer' }
-    if (this["function"]) { issues.push(...this.function.doModelValidation(expression+'.function')); }
-    if (!this['actor']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property actor fhir: Procedure.performer.actor:Reference', expression: [expression] });
-    }
-    if (this["actor"]) { issues.push(...this.actor.doModelValidation(expression+'.actor')); }
-    if (this["onBehalfOf"]) { issues.push(...this.onBehalfOf.doModelValidation(expression+'.onBehalfOf')); }
+    this.vOptS('function',expression)
+    this.vReqS('actor',expression)
+    this.vOptS('onBehalfOf',expression)
     return issues;
   }
 }
@@ -156,22 +153,13 @@ export class ProcedureFocalDevice extends fhir.BackboneElement {
     else { this.manipulated = null; }
   }
   /**
-   * Preferred-bound Value Set for action (Procedure.focalDevice.action)
-   */
-  public static get actionPreferredCodings():DeviceActionCodingType {
-    return DeviceActionCodings;
-  }
-  /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'Procedure.focalDevice' }
-    if (this["action"]) { issues.push(...this.action.doModelValidation(expression+'.action')); }
-    if (!this['manipulated']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property manipulated fhir: Procedure.focalDevice.manipulated:Reference', expression: [expression] });
-    }
-    if (this["manipulated"]) { issues.push(...this.manipulated.doModelValidation(expression+'.manipulated')); }
+    this.vOptS('action',expression)
+    this.vReqS('manipulated',expression)
     return issues;
   }
 }
@@ -537,56 +525,40 @@ export class Procedure extends fhir.DomainResource {
     else { this.usedCode = []; }
   }
   /**
-   * Required-bound Value Set for status (Procedure.status)
-   */
-  public static get statusRequiredCodes() {
-    return EventStatusCodes;
-  }
-  /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'Procedure' }
-    if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType fhir: Procedure.resourceType:"Procedure"', expression: [expression] });
-    }
-    if (this["identifier"]) { this.identifier.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.identifier[${i}]`)); }) }
-    if (this["instantiatesCanonical"]) { this.instantiatesCanonical.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.instantiatesCanonical[${i}]`)); }) }
-    if (this["instantiatesUri"]) { this.instantiatesUri.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.instantiatesUri[${i}]`)); }) }
-    if (this["basedOn"]) { this.basedOn.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.basedOn[${i}]`)); }) }
-    if (this["partOf"]) { this.partOf.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.partOf[${i}]`)); }) }
-    if (!this['status']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status fhir: Procedure.status:code', expression: [expression] });
-    }
-    if (this['status'] && (!Object.values(EventStatusCodes).includes(this.status.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'status (Procedure.status) of type code is missing code for Required binding to: EventStatus', expression: [expression] });
-    }
-    if (this["status"]) { issues.push(...this.status.doModelValidation(expression+'.status')); }
-    if (this["statusReason"]) { issues.push(...this.statusReason.doModelValidation(expression+'.statusReason')); }
-    if (this["category"]) { issues.push(...this.category.doModelValidation(expression+'.category')); }
-    if (this["code"]) { issues.push(...this.code.doModelValidation(expression+'.code')); }
-    if (!this['subject']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property subject fhir: Procedure.subject:Reference', expression: [expression] });
-    }
-    if (this["subject"]) { issues.push(...this.subject.doModelValidation(expression+'.subject')); }
-    if (this["encounter"]) { issues.push(...this.encounter.doModelValidation(expression+'.encounter')); }
-    if (this["recorder"]) { issues.push(...this.recorder.doModelValidation(expression+'.recorder')); }
-    if (this["asserter"]) { issues.push(...this.asserter.doModelValidation(expression+'.asserter')); }
-    if (this["performer"]) { this.performer.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.performer[${i}]`)); }) }
-    if (this["location"]) { issues.push(...this.location.doModelValidation(expression+'.location')); }
-    if (this["reasonCode"]) { this.reasonCode.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.reasonCode[${i}]`)); }) }
-    if (this["reasonReference"]) { this.reasonReference.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.reasonReference[${i}]`)); }) }
-    if (this["bodySite"]) { this.bodySite.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.bodySite[${i}]`)); }) }
-    if (this["outcome"]) { issues.push(...this.outcome.doModelValidation(expression+'.outcome')); }
-    if (this["report"]) { this.report.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.report[${i}]`)); }) }
-    if (this["complication"]) { this.complication.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.complication[${i}]`)); }) }
-    if (this["complicationDetail"]) { this.complicationDetail.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.complicationDetail[${i}]`)); }) }
-    if (this["followUp"]) { this.followUp.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.followUp[${i}]`)); }) }
-    if (this["note"]) { this.note.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.note[${i}]`)); }) }
-    if (this["focalDevice"]) { this.focalDevice.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.focalDevice[${i}]`)); }) }
-    if (this["usedReference"]) { this.usedReference.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.usedReference[${i}]`)); }) }
-    if (this["usedCode"]) { this.usedCode.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.usedCode[${i}]`)); }) }
+    this.vReqS('resourceType',expression)
+    this.vOptA('identifier',expression)
+    this.vOptA('instantiatesCanonical',expression)
+    this.vOptA('instantiatesUri',expression)
+    this.vOptA('basedOn',expression)
+    this.vOptA('partOf',expression)
+    this.vReqSV('status',expression,'EventStatus',EventStatusVsValidation,'r')
+    this.vOptS('statusReason',expression)
+    this.vOptS('category',expression)
+    this.vOptS('code',expression)
+    this.vReqS('subject',expression)
+    this.vOptS('encounter',expression)
+    this.vOptS('performed',expression)
+    this.vOptS('recorder',expression)
+    this.vOptS('asserter',expression)
+    this.vOptA('performer',expression)
+    this.vOptS('location',expression)
+    this.vOptA('reasonCode',expression)
+    this.vOptA('reasonReference',expression)
+    this.vOptA('bodySite',expression)
+    this.vOptS('outcome',expression)
+    this.vOptA('report',expression)
+    this.vOptA('complication',expression)
+    this.vOptA('complicationDetail',expression)
+    this.vOptA('followUp',expression)
+    this.vOptA('note',expression)
+    this.vOptA('focalDevice',expression)
+    this.vOptA('usedReference',expression)
+    this.vOptA('usedCode',expression)
     return issues;
   }
 }

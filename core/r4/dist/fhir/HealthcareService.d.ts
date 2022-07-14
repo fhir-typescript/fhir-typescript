@@ -1,7 +1,5 @@
 import * as fhir from '../fhir.js';
 import { DaysOfWeekCodeType } from '../fhirValueSets/DaysOfWeekCodes.js';
-import { C80PracticeCodingType } from '../fhirValueSets/C80PracticeCodings.js';
-import { LanguagesCodingType } from '../fhirValueSets/LanguagesCodings.js';
 /**
  * Valid arguments for the HealthcareServiceEligibility type.
  */
@@ -109,18 +107,6 @@ export declare class HealthcareServiceAvailableTime extends fhir.BackboneElement
      * Default constructor for HealthcareServiceAvailableTime - initializes any required elements to null if a value is not provided.
      */
     constructor(source?: Partial<HealthcareServiceAvailableTimeArgs>, options?: fhir.FhirConstructorOptions);
-    /**
-     * Required-bound Value Set for daysOfWeek (HealthcareService.availableTime.daysOfWeek)
-     */
-    static get daysOfWeekRequiredCodes(): {
-        readonly Friday: "fri";
-        readonly Monday: "mon";
-        readonly Saturday: "sat";
-        readonly Sunday: "sun";
-        readonly Thursday: "thu";
-        readonly Tuesday: "tue";
-        readonly Wednesday: "wed";
-    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
@@ -409,14 +395,6 @@ export declare class HealthcareService extends fhir.DomainResource {
      * Default constructor for HealthcareService - initializes any required elements to null if a value is not provided.
      */
     constructor(source?: Partial<HealthcareServiceArgs>, options?: fhir.FhirConstructorOptions);
-    /**
-     * Preferred-bound Value Set for specialty (HealthcareService.specialty)
-     */
-    static get specialtyPreferredCodings(): C80PracticeCodingType;
-    /**
-     * Preferred-bound Value Set for communication (HealthcareService.communication)
-     */
-    static get communicationPreferredCodings(): LanguagesCodingType;
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */

@@ -123,7 +123,7 @@ export interface InsurancePlanPlanSpecificCostBenefitCost extends fhir.BackboneE
   /**
    * Whether the cost applies to in-network or out-of-network providers (in-network; out-of-network; other).
    */
-  applicability?: fhir.CodeableConcept|undefined;
+  applicability?: 'in-network'|'other'|'out-of-network'|undefined;
   /**
    * Additional information about the cost, such as information about funding sources (e.g. HSA, HRA, FSA, RRA).
    */

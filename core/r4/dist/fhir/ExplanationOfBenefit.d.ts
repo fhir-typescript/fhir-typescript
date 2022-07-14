@@ -1,9 +1,6 @@
 import * as fhir from '../fhir.js';
-import { V3ActIncidentCodingType } from '../fhirValueSets/V3ActIncidentCodings.js';
 import { NoteTypeCodeType } from '../fhirValueSets/NoteTypeCodes.js';
-import { LanguagesCodingType } from '../fhirValueSets/LanguagesCodings.js';
 import { ExplanationofbenefitStatusCodeType } from '../fhirValueSets/ExplanationofbenefitStatusCodes.js';
-import { ClaimTypeCodingType } from '../fhirValueSets/ClaimTypeCodings.js';
 import { ClaimUseCodeType } from '../fhirValueSets/ClaimUseCodes.js';
 import { RemittanceOutcomeCodeType } from '../fhirValueSets/RemittanceOutcomeCodes.js';
 /**
@@ -541,10 +538,6 @@ export declare class ExplanationOfBenefitAccident extends fhir.BackboneElement {
      * Default constructor for ExplanationOfBenefitAccident - initializes any required elements to null if a value is not provided.
      */
     constructor(source?: Partial<ExplanationOfBenefitAccidentArgs>, options?: fhir.FhirConstructorOptions);
-    /**
-     * Extensible-bound Value Set for type (ExplanationOfBenefit.accident.type)
-     */
-    static get typeExtensibleCodings(): V3ActIncidentCodingType;
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
@@ -1738,18 +1731,6 @@ export declare class ExplanationOfBenefitProcessNote extends fhir.BackboneElemen
      */
     constructor(source?: Partial<ExplanationOfBenefitProcessNoteArgs>, options?: fhir.FhirConstructorOptions);
     /**
-     * Required-bound Value Set for type (ExplanationOfBenefit.processNote.type)
-     */
-    static get typeRequiredCodes(): {
-        readonly Display: "display";
-        readonly PrintForm: "print";
-        readonly PrintOperator: "printoper";
-    };
-    /**
-     * Preferred-bound Value Set for language (ExplanationOfBenefit.processNote.language)
-     */
-    static get languagePreferredCodings(): LanguagesCodingType;
-    /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
     doModelValidation(expression?: string): fhir.FtsIssue[];
@@ -2323,36 +2304,6 @@ export declare class ExplanationOfBenefit extends fhir.DomainResource {
      * Default constructor for ExplanationOfBenefit - initializes any required elements to null if a value is not provided.
      */
     constructor(source?: Partial<ExplanationOfBenefitArgs>, options?: fhir.FhirConstructorOptions);
-    /**
-     * Required-bound Value Set for status (ExplanationOfBenefit.status)
-     */
-    static get statusRequiredCodes(): {
-        readonly Active: "active";
-        readonly Cancelled: "cancelled";
-        readonly Draft: "draft";
-        readonly EnteredInError: "entered-in-error";
-    };
-    /**
-     * Extensible-bound Value Set for type (ExplanationOfBenefit.type)
-     */
-    static get typeExtensibleCodings(): ClaimTypeCodingType;
-    /**
-     * Required-bound Value Set for use (ExplanationOfBenefit.use)
-     */
-    static get useRequiredCodes(): {
-        readonly Claim: "claim";
-        readonly Preauthorization: "preauthorization";
-        readonly Predetermination: "predetermination";
-    };
-    /**
-     * Required-bound Value Set for outcome (ExplanationOfBenefit.outcome)
-     */
-    static get outcomeRequiredCodes(): {
-        readonly ProcessingComplete: "complete";
-        readonly Error: "error";
-        readonly PartialProcessing: "partial";
-        readonly Queued: "queued";
-    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */

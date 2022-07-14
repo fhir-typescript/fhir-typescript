@@ -6,17 +6,17 @@
 import * as fhir from '../fhir.js';
 
 // @ts-ignore
-import { SubstanceStatusCodings, SubstanceStatusCodingType,} from '../fhirValueSets/SubstanceStatusCodings.js';
-// @ts-ignore
 import { SubstanceStatusCodes,  SubstanceStatusCodeType } from '../fhirValueSets/SubstanceStatusCodes.js';
 // @ts-ignore
-import { SubstanceCategoryCodings, SubstanceCategoryCodingType,} from '../fhirValueSets/SubstanceCategoryCodings.js';
+import { SubstanceStatusVsValidation } from '../fhirValueSets/SubstanceStatusVsValidation.js';
 // @ts-ignore
 import { SubstanceCategoryCodes,  SubstanceCategoryCodeType } from '../fhirValueSets/SubstanceCategoryCodes.js';
 // @ts-ignore
-import { SubstanceCodings, SubstanceCodingType,} from '../fhirValueSets/SubstanceCodings.js';
+import { SubstanceCategoryVsValidation } from '../fhirValueSets/SubstanceCategoryVsValidation.js';
 // @ts-ignore
 import { SubstanceCodes,  SubstanceCodeType } from '../fhirValueSets/SubstanceCodes.js';
+// @ts-ignore
+import { SubstanceVsValidation } from '../fhirValueSets/SubstanceVsValidation.js';
 /**
  * Valid arguments for the SubstanceInstance type.
  */
@@ -78,9 +78,9 @@ export class SubstanceInstance extends fhir.BackboneElement {
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'Substance.instance' }
-    if (this["identifier"]) { issues.push(...this.identifier.doModelValidation(expression+'.identifier')); }
-    if (this["expiry"]) { issues.push(...this.expiry.doModelValidation(expression+'.expiry')); }
-    if (this["quantity"]) { issues.push(...this.quantity.doModelValidation(expression+'.quantity')); }
+    this.vOptS('identifier',expression)
+    this.vOptS('expiry',expression)
+    this.vOptS('quantity',expression)
     return issues;
   }
 }
@@ -143,10 +143,8 @@ export class SubstanceIngredient extends fhir.BackboneElement {
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'Substance.ingredient' }
-    if (this["quantity"]) { issues.push(...this.quantity.doModelValidation(expression+'.quantity')); }
-    if (!this['substance']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property substance fhir: Substance.ingredient.substance[x]:', expression: [expression] });
-    }
+    this.vOptS('quantity',expression)
+    this.vReqS('substance',expression)
     return issues;
   }
 }
@@ -264,39 +262,19 @@ export class Substance extends fhir.DomainResource {
     else { this.ingredient = []; }
   }
   /**
-   * Required-bound Value Set for status (Substance.status)
-   */
-  public static get statusRequiredCodes() {
-    return SubstanceStatusCodes;
-  }
-  /**
-   * Extensible-bound Value Set for category (Substance.category)
-   */
-  public static get categoryExtensibleCodings():SubstanceCategoryCodingType {
-    return SubstanceCategoryCodings;
-  }
-  /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'Substance' }
-    if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType fhir: Substance.resourceType:"Substance"', expression: [expression] });
-    }
-    if (this["identifier"]) { this.identifier.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.identifier[${i}]`)); }) }
-    if (this['status'] && (!Object.values(SubstanceStatusCodes).includes(this.status.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'status (Substance.status) of type code is missing code for Required binding to: SubstanceStatus', expression: [expression] });
-    }
-    if (this["status"]) { issues.push(...this.status.doModelValidation(expression+'.status')); }
-    if (this["category"]) { this.category.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.category[${i}]`)); }) }
-    if (!this['code']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property code fhir: Substance.code:CodeableConcept', expression: [expression] });
-    }
-    if (this["code"]) { issues.push(...this.code.doModelValidation(expression+'.code')); }
-    if (this["description"]) { issues.push(...this.description.doModelValidation(expression+'.description')); }
-    if (this["instance"]) { this.instance.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.instance[${i}]`)); }) }
-    if (this["ingredient"]) { this.ingredient.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.ingredient[${i}]`)); }) }
+    this.vReqS('resourceType',expression)
+    this.vOptA('identifier',expression)
+    this.vOptSV('status',expression,'SubstanceStatus',SubstanceStatusVsValidation,'r')
+    this.vOptA('category',expression)
+    this.vReqS('code',expression)
+    this.vOptS('description',expression)
+    this.vOptA('instance',expression)
+    this.vOptA('ingredient',expression)
     return issues;
   }
 }

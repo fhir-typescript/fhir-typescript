@@ -84,15 +84,10 @@ export class Binary extends fhir.Resource {
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'Binary' }
-    if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType fhir: Binary.resourceType:"Binary"', expression: [expression] });
-    }
-    if (!this['contentType']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property contentType fhir: Binary.contentType:code', expression: [expression] });
-    }
-    if (this["contentType"]) { issues.push(...this.contentType.doModelValidation(expression+'.contentType')); }
-    if (this["securityContext"]) { issues.push(...this.securityContext.doModelValidation(expression+'.securityContext')); }
-    if (this["data"]) { issues.push(...this.data.doModelValidation(expression+'.data')); }
+    this.vReqS('resourceType',expression)
+    this.vReqS('contentType',expression)
+    this.vOptS('securityContext',expression)
+    this.vOptS('data',expression)
     return issues;
   }
 }

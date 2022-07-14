@@ -6,9 +6,9 @@
 import * as fhir from '../fhir.js';
 
 // @ts-ignore
-import { ResourceTypesCodings, ResourceTypesCodingType,} from '../fhirValueSets/ResourceTypesCodings.js';
-// @ts-ignore
 import { ResourceTypesCodes,  ResourceTypesCodeType } from '../fhirValueSets/ResourceTypesCodes.js';
+// @ts-ignore
+import { ResourceTypesVsValidation } from '../fhirValueSets/ResourceTypesVsValidation.js';
 /**
  * Valid arguments for the Reference type.
  */
@@ -96,21 +96,15 @@ export class Reference extends fhir.FhirElement {
     }
   }
   /**
-   * Extensible-bound Value Set for type (Reference.type)
-   */
-  public static get typeExtensibleCodings():ResourceTypesCodingType {
-    return ResourceTypesCodings;
-  }
-  /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'Reference' }
-    if (this["reference"]) { issues.push(...this.reference.doModelValidation(expression+'.reference')); }
-    if (this["type"]) { issues.push(...this.type.doModelValidation(expression+'.type')); }
-    if (this["identifier"]) { issues.push(...this.identifier.doModelValidation(expression+'.identifier')); }
-    if (this["display"]) { issues.push(...this.display.doModelValidation(expression+'.display')); }
+    this.vOptS('reference',expression)
+    this.vOptS('type',expression)
+    this.vOptS('identifier',expression)
+    this.vOptS('display',expression)
     return issues;
   }
 

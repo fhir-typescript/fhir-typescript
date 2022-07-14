@@ -6,53 +6,53 @@
 import * as fhir from '../fhir.js';
 
 // @ts-ignore
-import { ImmunizationFunctionCodings, ImmunizationFunctionCodingType,} from '../fhirValueSets/ImmunizationFunctionCodings.js';
-// @ts-ignore
 import { ImmunizationFunctionCodes,  ImmunizationFunctionCodeType } from '../fhirValueSets/ImmunizationFunctionCodes.js';
 // @ts-ignore
-import { ImmunizationTargetDiseaseCodings, ImmunizationTargetDiseaseCodingType,} from '../fhirValueSets/ImmunizationTargetDiseaseCodings.js';
+import { ImmunizationFunctionVsValidation } from '../fhirValueSets/ImmunizationFunctionVsValidation.js';
 // @ts-ignore
 import { ImmunizationTargetDiseaseCodes,  ImmunizationTargetDiseaseCodeType } from '../fhirValueSets/ImmunizationTargetDiseaseCodes.js';
 // @ts-ignore
-import { ImmunizationStatusCodings, ImmunizationStatusCodingType,} from '../fhirValueSets/ImmunizationStatusCodings.js';
+import { ImmunizationTargetDiseaseVsValidation } from '../fhirValueSets/ImmunizationTargetDiseaseVsValidation.js';
 // @ts-ignore
 import { ImmunizationStatusCodes,  ImmunizationStatusCodeType } from '../fhirValueSets/ImmunizationStatusCodes.js';
 // @ts-ignore
-import { ImmunizationStatusReasonCodings, ImmunizationStatusReasonCodingType,} from '../fhirValueSets/ImmunizationStatusReasonCodings.js';
+import { ImmunizationStatusVsValidation } from '../fhirValueSets/ImmunizationStatusVsValidation.js';
 // @ts-ignore
 import { ImmunizationStatusReasonCodes,  ImmunizationStatusReasonCodeType } from '../fhirValueSets/ImmunizationStatusReasonCodes.js';
 // @ts-ignore
-import { VaccineCodings, VaccineCodingType,} from '../fhirValueSets/VaccineCodings.js';
+import { ImmunizationStatusReasonVsValidation } from '../fhirValueSets/ImmunizationStatusReasonVsValidation.js';
 // @ts-ignore
 import { VaccineCodes,  VaccineCodeType } from '../fhirValueSets/VaccineCodes.js';
 // @ts-ignore
-import { ImmunizationOriginCodings, ImmunizationOriginCodingType,} from '../fhirValueSets/ImmunizationOriginCodings.js';
+import { VaccineVsValidation } from '../fhirValueSets/VaccineVsValidation.js';
 // @ts-ignore
 import { ImmunizationOriginCodes,  ImmunizationOriginCodeType } from '../fhirValueSets/ImmunizationOriginCodes.js';
 // @ts-ignore
-import { ImmunizationSiteCodings, ImmunizationSiteCodingType,} from '../fhirValueSets/ImmunizationSiteCodings.js';
+import { ImmunizationOriginVsValidation } from '../fhirValueSets/ImmunizationOriginVsValidation.js';
 // @ts-ignore
 import { ImmunizationSiteCodes,  ImmunizationSiteCodeType } from '../fhirValueSets/ImmunizationSiteCodes.js';
 // @ts-ignore
-import { ImmunizationRouteCodings, ImmunizationRouteCodingType,} from '../fhirValueSets/ImmunizationRouteCodings.js';
+import { ImmunizationSiteVsValidation } from '../fhirValueSets/ImmunizationSiteVsValidation.js';
 // @ts-ignore
 import { ImmunizationRouteCodes,  ImmunizationRouteCodeType } from '../fhirValueSets/ImmunizationRouteCodes.js';
 // @ts-ignore
-import { ImmunizationReasonCodings, ImmunizationReasonCodingType,} from '../fhirValueSets/ImmunizationReasonCodings.js';
+import { ImmunizationRouteVsValidation } from '../fhirValueSets/ImmunizationRouteVsValidation.js';
 // @ts-ignore
 import { ImmunizationReasonCodes,  ImmunizationReasonCodeType } from '../fhirValueSets/ImmunizationReasonCodes.js';
 // @ts-ignore
-import { ImmunizationSubpotentReasonCodings, ImmunizationSubpotentReasonCodingType,} from '../fhirValueSets/ImmunizationSubpotentReasonCodings.js';
+import { ImmunizationReasonVsValidation } from '../fhirValueSets/ImmunizationReasonVsValidation.js';
 // @ts-ignore
 import { ImmunizationSubpotentReasonCodes,  ImmunizationSubpotentReasonCodeType } from '../fhirValueSets/ImmunizationSubpotentReasonCodes.js';
 // @ts-ignore
-import { ImmunizationProgramEligibilityCodings, ImmunizationProgramEligibilityCodingType,} from '../fhirValueSets/ImmunizationProgramEligibilityCodings.js';
+import { ImmunizationSubpotentReasonVsValidation } from '../fhirValueSets/ImmunizationSubpotentReasonVsValidation.js';
 // @ts-ignore
 import { ImmunizationProgramEligibilityCodes,  ImmunizationProgramEligibilityCodeType } from '../fhirValueSets/ImmunizationProgramEligibilityCodes.js';
 // @ts-ignore
-import { ImmunizationFundingSourceCodings, ImmunizationFundingSourceCodingType,} from '../fhirValueSets/ImmunizationFundingSourceCodings.js';
+import { ImmunizationProgramEligibilityVsValidation } from '../fhirValueSets/ImmunizationProgramEligibilityVsValidation.js';
 // @ts-ignore
 import { ImmunizationFundingSourceCodes,  ImmunizationFundingSourceCodeType } from '../fhirValueSets/ImmunizationFundingSourceCodes.js';
+// @ts-ignore
+import { ImmunizationFundingSourceVsValidation } from '../fhirValueSets/ImmunizationFundingSourceVsValidation.js';
 /**
  * Valid arguments for the ImmunizationPerformer type.
  */
@@ -93,22 +93,13 @@ export class ImmunizationPerformer extends fhir.BackboneElement {
     else { this.actor = null; }
   }
   /**
-   * Extensible-bound Value Set for function (Immunization.performer.function)
-   */
-  public static get functionExtensibleCodings():ImmunizationFunctionCodingType {
-    return ImmunizationFunctionCodings;
-  }
-  /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'Immunization.performer' }
-    if (this["function"]) { issues.push(...this.function.doModelValidation(expression+'.function')); }
-    if (!this['actor']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property actor fhir: Immunization.performer.actor:Reference', expression: [expression] });
-    }
-    if (this["actor"]) { issues.push(...this.actor.doModelValidation(expression+'.actor')); }
+    this.vOptS('function',expression)
+    this.vReqS('actor',expression)
     return issues;
   }
 }
@@ -206,10 +197,10 @@ export class ImmunizationEducation extends fhir.BackboneElement {
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'Immunization.education' }
-    if (this["documentType"]) { issues.push(...this.documentType.doModelValidation(expression+'.documentType')); }
-    if (this["reference"]) { issues.push(...this.reference.doModelValidation(expression+'.reference')); }
-    if (this["publicationDate"]) { issues.push(...this.publicationDate.doModelValidation(expression+'.publicationDate')); }
-    if (this["presentationDate"]) { issues.push(...this.presentationDate.doModelValidation(expression+'.presentationDate')); }
+    this.vOptS('documentType',expression)
+    this.vOptS('reference',expression)
+    this.vOptS('publicationDate',expression)
+    this.vOptS('presentationDate',expression)
     return issues;
   }
 }
@@ -282,9 +273,9 @@ export class ImmunizationReaction extends fhir.BackboneElement {
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'Immunization.reaction' }
-    if (this["date"]) { issues.push(...this.date.doModelValidation(expression+'.date')); }
-    if (this["detail"]) { issues.push(...this.detail.doModelValidation(expression+'.detail')); }
-    if (this["reported"]) { issues.push(...this.reported.doModelValidation(expression+'.reported')); }
+    this.vOptS('date',expression)
+    this.vOptS('detail',expression)
+    this.vOptS('reported',expression)
     return issues;
   }
 }
@@ -397,12 +388,11 @@ export class ImmunizationProtocolApplied extends fhir.BackboneElement {
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'Immunization.protocolApplied' }
-    if (this["series"]) { issues.push(...this.series.doModelValidation(expression+'.series')); }
-    if (this["authority"]) { issues.push(...this.authority.doModelValidation(expression+'.authority')); }
-    if (this["targetDisease"]) { this.targetDisease.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.targetDisease[${i}]`)); }) }
-    if (!this['doseNumber']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property doseNumber fhir: Immunization.protocolApplied.doseNumber[x]:', expression: [expression] });
-    }
+    this.vOptS('series',expression)
+    this.vOptS('authority',expression)
+    this.vOptA('targetDisease',expression)
+    this.vReqS('doseNumber',expression)
+    this.vOptS('seriesDoses',expression)
     return issues;
   }
 }
@@ -764,62 +754,40 @@ export class Immunization extends fhir.DomainResource {
     else { this.protocolApplied = []; }
   }
   /**
-   * Required-bound Value Set for status (Immunization.status)
-   */
-  public static get statusRequiredCodes() {
-    return ImmunizationStatusCodes;
-  }
-  /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'Immunization' }
-    if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType fhir: Immunization.resourceType:"Immunization"', expression: [expression] });
-    }
-    if (this["identifier"]) { this.identifier.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.identifier[${i}]`)); }) }
-    if (!this['status']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status fhir: Immunization.status:code', expression: [expression] });
-    }
-    if (this['status'] && (!Object.values(ImmunizationStatusCodes).includes(this.status.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'status (Immunization.status) of type code is missing code for Required binding to: ImmunizationStatus', expression: [expression] });
-    }
-    if (this["status"]) { issues.push(...this.status.doModelValidation(expression+'.status')); }
-    if (this["statusReason"]) { issues.push(...this.statusReason.doModelValidation(expression+'.statusReason')); }
-    if (!this['vaccineCode']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property vaccineCode fhir: Immunization.vaccineCode:CodeableConcept', expression: [expression] });
-    }
-    if (this["vaccineCode"]) { issues.push(...this.vaccineCode.doModelValidation(expression+'.vaccineCode')); }
-    if (!this['patient']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property patient fhir: Immunization.patient:Reference', expression: [expression] });
-    }
-    if (this["patient"]) { issues.push(...this.patient.doModelValidation(expression+'.patient')); }
-    if (this["encounter"]) { issues.push(...this.encounter.doModelValidation(expression+'.encounter')); }
-    if (!this['occurrence']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property occurrence fhir: Immunization.occurrence[x]:', expression: [expression] });
-    }
-    if (this["recorded"]) { issues.push(...this.recorded.doModelValidation(expression+'.recorded')); }
-    if (this["primarySource"]) { issues.push(...this.primarySource.doModelValidation(expression+'.primarySource')); }
-    if (this["reportOrigin"]) { issues.push(...this.reportOrigin.doModelValidation(expression+'.reportOrigin')); }
-    if (this["location"]) { issues.push(...this.location.doModelValidation(expression+'.location')); }
-    if (this["manufacturer"]) { issues.push(...this.manufacturer.doModelValidation(expression+'.manufacturer')); }
-    if (this["lotNumber"]) { issues.push(...this.lotNumber.doModelValidation(expression+'.lotNumber')); }
-    if (this["expirationDate"]) { issues.push(...this.expirationDate.doModelValidation(expression+'.expirationDate')); }
-    if (this["site"]) { issues.push(...this.site.doModelValidation(expression+'.site')); }
-    if (this["route"]) { issues.push(...this.route.doModelValidation(expression+'.route')); }
-    if (this["doseQuantity"]) { issues.push(...this.doseQuantity.doModelValidation(expression+'.doseQuantity')); }
-    if (this["performer"]) { this.performer.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.performer[${i}]`)); }) }
-    if (this["note"]) { this.note.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.note[${i}]`)); }) }
-    if (this["reasonCode"]) { this.reasonCode.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.reasonCode[${i}]`)); }) }
-    if (this["reasonReference"]) { this.reasonReference.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.reasonReference[${i}]`)); }) }
-    if (this["isSubpotent"]) { issues.push(...this.isSubpotent.doModelValidation(expression+'.isSubpotent')); }
-    if (this["subpotentReason"]) { this.subpotentReason.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.subpotentReason[${i}]`)); }) }
-    if (this["education"]) { this.education.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.education[${i}]`)); }) }
-    if (this["programEligibility"]) { this.programEligibility.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.programEligibility[${i}]`)); }) }
-    if (this["fundingSource"]) { issues.push(...this.fundingSource.doModelValidation(expression+'.fundingSource')); }
-    if (this["reaction"]) { this.reaction.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.reaction[${i}]`)); }) }
-    if (this["protocolApplied"]) { this.protocolApplied.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.protocolApplied[${i}]`)); }) }
+    this.vReqS('resourceType',expression)
+    this.vOptA('identifier',expression)
+    this.vReqSV('status',expression,'ImmunizationStatus',ImmunizationStatusVsValidation,'r')
+    this.vOptS('statusReason',expression)
+    this.vReqS('vaccineCode',expression)
+    this.vReqS('patient',expression)
+    this.vOptS('encounter',expression)
+    this.vReqS('occurrence',expression)
+    this.vOptS('recorded',expression)
+    this.vOptS('primarySource',expression)
+    this.vOptS('reportOrigin',expression)
+    this.vOptS('location',expression)
+    this.vOptS('manufacturer',expression)
+    this.vOptS('lotNumber',expression)
+    this.vOptS('expirationDate',expression)
+    this.vOptS('site',expression)
+    this.vOptS('route',expression)
+    this.vOptS('doseQuantity',expression)
+    this.vOptA('performer',expression)
+    this.vOptA('note',expression)
+    this.vOptA('reasonCode',expression)
+    this.vOptA('reasonReference',expression)
+    this.vOptS('isSubpotent',expression)
+    this.vOptA('subpotentReason',expression)
+    this.vOptA('education',expression)
+    this.vOptA('programEligibility',expression)
+    this.vOptS('fundingSource',expression)
+    this.vOptA('reaction',expression)
+    this.vOptA('protocolApplied',expression)
     return issues;
   }
 }

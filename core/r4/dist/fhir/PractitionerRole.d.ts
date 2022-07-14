@@ -1,6 +1,5 @@
 import * as fhir from '../fhir.js';
 import { DaysOfWeekCodeType } from '../fhirValueSets/DaysOfWeekCodes.js';
-import { C80PracticeCodingType } from '../fhirValueSets/C80PracticeCodings.js';
 /**
  * Valid arguments for the PractitionerRoleAvailableTime type.
  */
@@ -66,18 +65,6 @@ export declare class PractitionerRoleAvailableTime extends fhir.BackboneElement 
      * Default constructor for PractitionerRoleAvailableTime - initializes any required elements to null if a value is not provided.
      */
     constructor(source?: Partial<PractitionerRoleAvailableTimeArgs>, options?: fhir.FhirConstructorOptions);
-    /**
-     * Required-bound Value Set for daysOfWeek (PractitionerRole.availableTime.daysOfWeek)
-     */
-    static get daysOfWeekRequiredCodes(): {
-        readonly Friday: "fri";
-        readonly Monday: "mon";
-        readonly Saturday: "sat";
-        readonly Sunday: "sun";
-        readonly Thursday: "thu";
-        readonly Tuesday: "tue";
-        readonly Wednesday: "wed";
-    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
@@ -270,10 +257,6 @@ export declare class PractitionerRole extends fhir.DomainResource {
      * Default constructor for PractitionerRole - initializes any required elements to null if a value is not provided.
      */
     constructor(source?: Partial<PractitionerRoleArgs>, options?: fhir.FhirConstructorOptions);
-    /**
-     * Preferred-bound Value Set for specialty (PractitionerRole.specialty)
-     */
-    static get specialtyPreferredCodings(): C80PracticeCodingType;
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */

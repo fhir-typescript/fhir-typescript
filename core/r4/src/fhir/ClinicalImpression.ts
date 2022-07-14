@@ -6,21 +6,21 @@
 import * as fhir from '../fhir.js';
 
 // @ts-ignore
-import { InvestigationSetsCodings, InvestigationSetsCodingType,} from '../fhirValueSets/InvestigationSetsCodings.js';
-// @ts-ignore
 import { InvestigationSetsCodes,  InvestigationSetsCodeType } from '../fhirValueSets/InvestigationSetsCodes.js';
 // @ts-ignore
-import { ConditionCodings, ConditionCodingType,} from '../fhirValueSets/ConditionCodings.js';
+import { InvestigationSetsVsValidation } from '../fhirValueSets/InvestigationSetsVsValidation.js';
 // @ts-ignore
 import { ConditionCodes,  ConditionCodeType } from '../fhirValueSets/ConditionCodes.js';
 // @ts-ignore
-import { ClinicalimpressionStatusCodings, ClinicalimpressionStatusCodingType,} from '../fhirValueSets/ClinicalimpressionStatusCodings.js';
+import { ConditionVsValidation } from '../fhirValueSets/ConditionVsValidation.js';
 // @ts-ignore
 import { ClinicalimpressionStatusCodes,  ClinicalimpressionStatusCodeType } from '../fhirValueSets/ClinicalimpressionStatusCodes.js';
 // @ts-ignore
-import { ClinicalimpressionPrognosisCodings, ClinicalimpressionPrognosisCodingType,} from '../fhirValueSets/ClinicalimpressionPrognosisCodings.js';
+import { ClinicalimpressionStatusVsValidation } from '../fhirValueSets/ClinicalimpressionStatusVsValidation.js';
 // @ts-ignore
 import { ClinicalimpressionPrognosisCodes,  ClinicalimpressionPrognosisCodeType } from '../fhirValueSets/ClinicalimpressionPrognosisCodes.js';
+// @ts-ignore
+import { ClinicalimpressionPrognosisVsValidation } from '../fhirValueSets/ClinicalimpressionPrognosisVsValidation.js';
 /**
  * Valid arguments for the ClinicalImpressionInvestigation type.
  */
@@ -67,11 +67,8 @@ export class ClinicalImpressionInvestigation extends fhir.BackboneElement {
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'ClinicalImpression.investigation' }
-    if (!this['code']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property code fhir: ClinicalImpression.investigation.code:CodeableConcept', expression: [expression] });
-    }
-    if (this["code"]) { issues.push(...this.code.doModelValidation(expression+'.code')); }
-    if (this["item"]) { this.item.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.item[${i}]`)); }) }
+    this.vReqS('code',expression)
+    this.vOptA('item',expression)
     return issues;
   }
 }
@@ -136,9 +133,9 @@ export class ClinicalImpressionFinding extends fhir.BackboneElement {
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'ClinicalImpression.finding' }
-    if (this["itemCodeableConcept"]) { issues.push(...this.itemCodeableConcept.doModelValidation(expression+'.itemCodeableConcept')); }
-    if (this["itemReference"]) { issues.push(...this.itemReference.doModelValidation(expression+'.itemReference')); }
-    if (this["basis"]) { issues.push(...this.basis.doModelValidation(expression+'.basis')); }
+    this.vOptS('itemCodeableConcept',expression)
+    this.vOptS('itemReference',expression)
+    this.vOptS('basis',expression)
     return issues;
   }
 }
@@ -421,48 +418,32 @@ export class ClinicalImpression extends fhir.DomainResource {
     else { this.note = []; }
   }
   /**
-   * Required-bound Value Set for status (ClinicalImpression.status)
-   */
-  public static get statusRequiredCodes() {
-    return ClinicalimpressionStatusCodes;
-  }
-  /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'ClinicalImpression' }
-    if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType fhir: ClinicalImpression.resourceType:"ClinicalImpression"', expression: [expression] });
-    }
-    if (this["identifier"]) { this.identifier.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.identifier[${i}]`)); }) }
-    if (!this['status']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status fhir: ClinicalImpression.status:code', expression: [expression] });
-    }
-    if (this['status'] && (!Object.values(ClinicalimpressionStatusCodes).includes(this.status.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'status (ClinicalImpression.status) of type code is missing code for Required binding to: ClinicalimpressionStatus', expression: [expression] });
-    }
-    if (this["status"]) { issues.push(...this.status.doModelValidation(expression+'.status')); }
-    if (this["statusReason"]) { issues.push(...this.statusReason.doModelValidation(expression+'.statusReason')); }
-    if (this["code"]) { issues.push(...this.code.doModelValidation(expression+'.code')); }
-    if (this["description"]) { issues.push(...this.description.doModelValidation(expression+'.description')); }
-    if (!this['subject']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property subject fhir: ClinicalImpression.subject:Reference', expression: [expression] });
-    }
-    if (this["subject"]) { issues.push(...this.subject.doModelValidation(expression+'.subject')); }
-    if (this["encounter"]) { issues.push(...this.encounter.doModelValidation(expression+'.encounter')); }
-    if (this["date"]) { issues.push(...this.date.doModelValidation(expression+'.date')); }
-    if (this["assessor"]) { issues.push(...this.assessor.doModelValidation(expression+'.assessor')); }
-    if (this["previous"]) { issues.push(...this.previous.doModelValidation(expression+'.previous')); }
-    if (this["problem"]) { this.problem.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.problem[${i}]`)); }) }
-    if (this["investigation"]) { this.investigation.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.investigation[${i}]`)); }) }
-    if (this["protocol"]) { this.protocol.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.protocol[${i}]`)); }) }
-    if (this["summary"]) { issues.push(...this.summary.doModelValidation(expression+'.summary')); }
-    if (this["finding"]) { this.finding.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.finding[${i}]`)); }) }
-    if (this["prognosisCodeableConcept"]) { this.prognosisCodeableConcept.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.prognosisCodeableConcept[${i}]`)); }) }
-    if (this["prognosisReference"]) { this.prognosisReference.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.prognosisReference[${i}]`)); }) }
-    if (this["supportingInfo"]) { this.supportingInfo.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.supportingInfo[${i}]`)); }) }
-    if (this["note"]) { this.note.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.note[${i}]`)); }) }
+    this.vReqS('resourceType',expression)
+    this.vOptA('identifier',expression)
+    this.vReqSV('status',expression,'ClinicalimpressionStatus',ClinicalimpressionStatusVsValidation,'r')
+    this.vOptS('statusReason',expression)
+    this.vOptS('code',expression)
+    this.vOptS('description',expression)
+    this.vReqS('subject',expression)
+    this.vOptS('encounter',expression)
+    this.vOptS('effective',expression)
+    this.vOptS('date',expression)
+    this.vOptS('assessor',expression)
+    this.vOptS('previous',expression)
+    this.vOptA('problem',expression)
+    this.vOptA('investigation',expression)
+    this.vOptA('protocol',expression)
+    this.vOptS('summary',expression)
+    this.vOptA('finding',expression)
+    this.vOptA('prognosisCodeableConcept',expression)
+    this.vOptA('prognosisReference',expression)
+    this.vOptA('supportingInfo',expression)
+    this.vOptA('note',expression)
     return issues;
   }
 }

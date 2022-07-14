@@ -49,8 +49,8 @@ export class Range extends fhir.FhirElement {
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'Range' }
-    if (this["low"]) { issues.push(...this.low.doModelValidation(expression+'.low')); }
-    if (this["high"]) { issues.push(...this.high.doModelValidation(expression+'.high')); }
+    this.vOptS('low',expression)
+    this.vOptS('high',expression)
     return issues;
   }
 }

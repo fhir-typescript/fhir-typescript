@@ -186,22 +186,6 @@ export declare class SupplyDelivery extends fhir.DomainResource {
      */
     constructor(source?: Partial<SupplyDeliveryArgs>, options?: fhir.FhirConstructorOptions);
     /**
-     * Required-bound Value Set for status (SupplyDelivery.status)
-     */
-    static get statusRequiredCodes(): {
-        readonly Abandoned: "abandoned";
-        readonly Delivered: "completed";
-        readonly EnteredInError: "entered-in-error";
-        readonly InProgress: "in-progress";
-    };
-    /**
-     * Required-bound Value Set for type (SupplyDelivery.type)
-     */
-    static get typeRequiredCodes(): {
-        readonly Device: "device";
-        readonly Medication: "medication";
-    };
-    /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
     doModelValidation(expression?: string): fhir.FtsIssue[];

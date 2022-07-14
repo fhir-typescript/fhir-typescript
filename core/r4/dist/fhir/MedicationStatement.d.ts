@@ -1,6 +1,5 @@
 import * as fhir from '../fhir.js';
 import { MedicationStatementStatusCodeType } from '../fhirValueSets/MedicationStatementStatusCodes.js';
-import { MedicationStatementCategoryCodingType } from '../fhirValueSets/MedicationStatementCategoryCodings.js';
 /**
  * Valid arguments for the MedicationStatement type.
  */
@@ -197,25 +196,6 @@ export declare class MedicationStatement extends fhir.DomainResource {
      * Default constructor for MedicationStatement - initializes any required elements to null if a value is not provided.
      */
     constructor(source?: Partial<MedicationStatementArgs>, options?: fhir.FhirConstructorOptions);
-    /**
-     * Required-bound Value Set for status (MedicationStatement.status)
-     */
-    static get statusRequiredCodes(): {
-        readonly Active: "active";
-        readonly Completed: "completed";
-        readonly EnteredInError: "entered-in-error";
-        readonly Intended: "intended";
-        readonly NotTaken: "not-taken";
-        readonly OnHold: "on-hold";
-        readonly Stopped: "stopped";
-        readonly Unknown: "unknown"; /**
-         * Resource Type Name
-         */
-    };
-    /**
-     * Preferred-bound Value Set for category (MedicationStatement.category)
-     */
-    static get categoryPreferredCodings(): MedicationStatementCategoryCodingType;
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */

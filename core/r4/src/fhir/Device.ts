@@ -6,25 +6,25 @@
 import * as fhir from '../fhir.js';
 
 // @ts-ignore
-import { UdiEntryTypeCodings, UdiEntryTypeCodingType,} from '../fhirValueSets/UdiEntryTypeCodings.js';
-// @ts-ignore
 import { UdiEntryTypeCodes,  UdiEntryTypeCodeType } from '../fhirValueSets/UdiEntryTypeCodes.js';
 // @ts-ignore
-import { DeviceNametypeCodings, DeviceNametypeCodingType,} from '../fhirValueSets/DeviceNametypeCodings.js';
+import { UdiEntryTypeVsValidation } from '../fhirValueSets/UdiEntryTypeVsValidation.js';
 // @ts-ignore
 import { DeviceNametypeCodes,  DeviceNametypeCodeType } from '../fhirValueSets/DeviceNametypeCodes.js';
 // @ts-ignore
-import { DeviceStatusCodings, DeviceStatusCodingType,} from '../fhirValueSets/DeviceStatusCodings.js';
+import { DeviceNametypeVsValidation } from '../fhirValueSets/DeviceNametypeVsValidation.js';
 // @ts-ignore
 import { DeviceStatusCodes,  DeviceStatusCodeType } from '../fhirValueSets/DeviceStatusCodes.js';
 // @ts-ignore
-import { DeviceStatusReasonCodings, DeviceStatusReasonCodingType,} from '../fhirValueSets/DeviceStatusReasonCodings.js';
+import { DeviceStatusVsValidation } from '../fhirValueSets/DeviceStatusVsValidation.js';
 // @ts-ignore
 import { DeviceStatusReasonCodes,  DeviceStatusReasonCodeType } from '../fhirValueSets/DeviceStatusReasonCodes.js';
 // @ts-ignore
-import { DeviceTypeCodings, DeviceTypeCodingType,} from '../fhirValueSets/DeviceTypeCodings.js';
+import { DeviceStatusReasonVsValidation } from '../fhirValueSets/DeviceStatusReasonVsValidation.js';
 // @ts-ignore
 import { DeviceTypeCodes,  DeviceTypeCodeType } from '../fhirValueSets/DeviceTypeCodes.js';
+// @ts-ignore
+import { DeviceTypeVsValidation } from '../fhirValueSets/DeviceTypeVsValidation.js';
 /**
  * Valid arguments for the DeviceUdiCarrier type.
  */
@@ -164,26 +164,17 @@ export class DeviceUdiCarrier extends fhir.BackboneElement {
     }
   }
   /**
-   * Required-bound Value Set for entryType (Device.udiCarrier.entryType)
-   */
-  public static get entryTypeRequiredCodes() {
-    return UdiEntryTypeCodes;
-  }
-  /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'Device.udiCarrier' }
-    if (this["deviceIdentifier"]) { issues.push(...this.deviceIdentifier.doModelValidation(expression+'.deviceIdentifier')); }
-    if (this["issuer"]) { issues.push(...this.issuer.doModelValidation(expression+'.issuer')); }
-    if (this["jurisdiction"]) { issues.push(...this.jurisdiction.doModelValidation(expression+'.jurisdiction')); }
-    if (this["carrierAIDC"]) { issues.push(...this.carrierAIDC.doModelValidation(expression+'.carrierAIDC')); }
-    if (this["carrierHRF"]) { issues.push(...this.carrierHRF.doModelValidation(expression+'.carrierHRF')); }
-    if (this['entryType'] && (!Object.values(UdiEntryTypeCodes).includes(this.entryType.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'entryType (Device.udiCarrier.entryType) of type code is missing code for Required binding to: UdiEntryType', expression: [expression] });
-    }
-    if (this["entryType"]) { issues.push(...this.entryType.doModelValidation(expression+'.entryType')); }
+    this.vOptS('deviceIdentifier',expression)
+    this.vOptS('issuer',expression)
+    this.vOptS('jurisdiction',expression)
+    this.vOptS('carrierAIDC',expression)
+    this.vOptS('carrierHRF',expression)
+    this.vOptSV('entryType',expression,'UdiEntryType',UdiEntryTypeVsValidation,'r')
     return issues;
   }
 }
@@ -246,28 +237,13 @@ export class DeviceDeviceName extends fhir.BackboneElement {
     }
   }
   /**
-   * Required-bound Value Set for type (Device.deviceName.type)
-   */
-  public static get typeRequiredCodes() {
-    return DeviceNametypeCodes;
-  }
-  /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'Device.deviceName' }
-    if (!this['name']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property name fhir: Device.deviceName.name:string', expression: [expression] });
-    }
-    if (this["name"]) { issues.push(...this.name.doModelValidation(expression+'.name')); }
-    if (!this['type']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property type fhir: Device.deviceName.type:code', expression: [expression] });
-    }
-    if (this['type'] && (!Object.values(DeviceNametypeCodes).includes(this.type.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'type (Device.deviceName.type) of type code is missing code for Required binding to: DeviceNametype', expression: [expression] });
-    }
-    if (this["type"]) { issues.push(...this.type.doModelValidation(expression+'.type')); }
+    this.vReqS('name',expression)
+    this.vReqSV('type',expression,'DeviceNametype',DeviceNametypeVsValidation,'r')
     return issues;
   }
 }
@@ -324,11 +300,8 @@ export class DeviceSpecialization extends fhir.BackboneElement {
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'Device.specialization' }
-    if (!this['systemType']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property systemType fhir: Device.specialization.systemType:CodeableConcept', expression: [expression] });
-    }
-    if (this["systemType"]) { issues.push(...this.systemType.doModelValidation(expression+'.systemType')); }
-    if (this["version"]) { issues.push(...this.version.doModelValidation(expression+'.version')); }
+    this.vReqS('systemType',expression)
+    this.vOptS('version',expression)
     return issues;
   }
 }
@@ -394,12 +367,9 @@ export class DeviceVersion extends fhir.BackboneElement {
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'Device.version' }
-    if (this["type"]) { issues.push(...this.type.doModelValidation(expression+'.type')); }
-    if (this["component"]) { issues.push(...this.component.doModelValidation(expression+'.component')); }
-    if (!this['value']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property value fhir: Device.version.value:string', expression: [expression] });
-    }
-    if (this["value"]) { issues.push(...this.value.doModelValidation(expression+'.value')); }
+    this.vOptS('type',expression)
+    this.vOptS('component',expression)
+    this.vReqS('value',expression)
     return issues;
   }
 }
@@ -459,12 +429,9 @@ export class DeviceProperty extends fhir.BackboneElement {
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'Device.property' }
-    if (!this['type']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property type fhir: Device.property.type:CodeableConcept', expression: [expression] });
-    }
-    if (this["type"]) { issues.push(...this.type.doModelValidation(expression+'.type')); }
-    if (this["valueQuantity"]) { this.valueQuantity.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.valueQuantity[${i}]`)); }) }
-    if (this["valueCode"]) { this.valueCode.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.valueCode[${i}]`)); }) }
+    this.vReqS('type',expression)
+    this.vOptA('valueQuantity',expression)
+    this.vOptA('valueCode',expression)
     return issues;
   }
 }
@@ -822,55 +789,38 @@ export class Device extends fhir.DomainResource {
     if (source['parent']) { this.parent = new fhir.Reference(source.parent); }
   }
   /**
-   * Required-bound Value Set for status (Device.status)
-   */
-  public static get statusRequiredCodes() {
-    return DeviceStatusCodes;
-  }
-  /**
-   * Extensible-bound Value Set for statusReason (Device.statusReason)
-   */
-  public static get statusReasonExtensibleCodings():DeviceStatusReasonCodingType {
-    return DeviceStatusReasonCodings;
-  }
-  /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'Device' }
-    if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType fhir: Device.resourceType:"Device"', expression: [expression] });
-    }
-    if (this["identifier"]) { this.identifier.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.identifier[${i}]`)); }) }
-    if (this["definition"]) { issues.push(...this.definition.doModelValidation(expression+'.definition')); }
-    if (this["udiCarrier"]) { this.udiCarrier.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.udiCarrier[${i}]`)); }) }
-    if (this['status'] && (!Object.values(DeviceStatusCodes).includes(this.status.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'status (Device.status) of type code is missing code for Required binding to: DeviceStatus', expression: [expression] });
-    }
-    if (this["status"]) { issues.push(...this.status.doModelValidation(expression+'.status')); }
-    if (this["statusReason"]) { this.statusReason.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.statusReason[${i}]`)); }) }
-    if (this["distinctIdentifier"]) { issues.push(...this.distinctIdentifier.doModelValidation(expression+'.distinctIdentifier')); }
-    if (this["manufacturer"]) { issues.push(...this.manufacturer.doModelValidation(expression+'.manufacturer')); }
-    if (this["manufactureDate"]) { issues.push(...this.manufactureDate.doModelValidation(expression+'.manufactureDate')); }
-    if (this["expirationDate"]) { issues.push(...this.expirationDate.doModelValidation(expression+'.expirationDate')); }
-    if (this["lotNumber"]) { issues.push(...this.lotNumber.doModelValidation(expression+'.lotNumber')); }
-    if (this["serialNumber"]) { issues.push(...this.serialNumber.doModelValidation(expression+'.serialNumber')); }
-    if (this["deviceName"]) { this.deviceName.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.deviceName[${i}]`)); }) }
-    if (this["modelNumber"]) { issues.push(...this.modelNumber.doModelValidation(expression+'.modelNumber')); }
-    if (this["partNumber"]) { issues.push(...this.partNumber.doModelValidation(expression+'.partNumber')); }
-    if (this["type"]) { issues.push(...this.type.doModelValidation(expression+'.type')); }
-    if (this["specialization"]) { this.specialization.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.specialization[${i}]`)); }) }
-    if (this["version"]) { this.version.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.version[${i}]`)); }) }
-    if (this["property"]) { this.property.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.property[${i}]`)); }) }
-    if (this["patient"]) { issues.push(...this.patient.doModelValidation(expression+'.patient')); }
-    if (this["owner"]) { issues.push(...this.owner.doModelValidation(expression+'.owner')); }
-    if (this["contact"]) { this.contact.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.contact[${i}]`)); }) }
-    if (this["location"]) { issues.push(...this.location.doModelValidation(expression+'.location')); }
-    if (this["url"]) { issues.push(...this.url.doModelValidation(expression+'.url')); }
-    if (this["note"]) { this.note.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.note[${i}]`)); }) }
-    if (this["safety"]) { this.safety.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.safety[${i}]`)); }) }
-    if (this["parent"]) { issues.push(...this.parent.doModelValidation(expression+'.parent')); }
+    this.vReqS('resourceType',expression)
+    this.vOptA('identifier',expression)
+    this.vOptS('definition',expression)
+    this.vOptA('udiCarrier',expression)
+    this.vOptSV('status',expression,'DeviceStatus',DeviceStatusVsValidation,'r')
+    this.vOptA('statusReason',expression)
+    this.vOptS('distinctIdentifier',expression)
+    this.vOptS('manufacturer',expression)
+    this.vOptS('manufactureDate',expression)
+    this.vOptS('expirationDate',expression)
+    this.vOptS('lotNumber',expression)
+    this.vOptS('serialNumber',expression)
+    this.vOptA('deviceName',expression)
+    this.vOptS('modelNumber',expression)
+    this.vOptS('partNumber',expression)
+    this.vOptS('type',expression)
+    this.vOptA('specialization',expression)
+    this.vOptA('version',expression)
+    this.vOptA('property',expression)
+    this.vOptS('patient',expression)
+    this.vOptS('owner',expression)
+    this.vOptA('contact',expression)
+    this.vOptS('location',expression)
+    this.vOptS('url',expression)
+    this.vOptA('note',expression)
+    this.vOptA('safety',expression)
+    this.vOptS('parent',expression)
     return issues;
   }
 }

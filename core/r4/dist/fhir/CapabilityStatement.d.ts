@@ -1,5 +1,4 @@
 import * as fhir from '../fhir.js';
-import { RestfulSecurityServiceCodingType } from '../fhirValueSets/RestfulSecurityServiceCodings.js';
 import { TypeRestfulInteractionCodeType } from '../fhirValueSets/TypeRestfulInteractionCodes.js';
 import { SearchParamTypeCodeType } from '../fhirValueSets/SearchParamTypeCodes.js';
 import { VersioningPolicyCodeType } from '../fhirValueSets/VersioningPolicyCodes.js';
@@ -8,7 +7,6 @@ import { ConditionalDeleteStatusCodeType } from '../fhirValueSets/ConditionalDel
 import { ReferenceHandlingPolicyCodeType } from '../fhirValueSets/ReferenceHandlingPolicyCodes.js';
 import { SystemRestfulInteractionCodeType } from '../fhirValueSets/SystemRestfulInteractionCodes.js';
 import { RestfulCapabilityModeCodeType } from '../fhirValueSets/RestfulCapabilityModeCodes.js';
-import { MessageTransportCodingType } from '../fhirValueSets/MessageTransportCodings.js';
 import { EventCapabilityModeCodeType } from '../fhirValueSets/EventCapabilityModeCodes.js';
 import { DocumentModeCodeType } from '../fhirValueSets/DocumentModeCodes.js';
 import { PublicationStatusCodeType } from '../fhirValueSets/PublicationStatusCodes.js';
@@ -175,10 +173,6 @@ export declare class CapabilityStatementRestSecurity extends fhir.BackboneElemen
      */
     constructor(source?: Partial<CapabilityStatementRestSecurityArgs>, options?: fhir.FhirConstructorOptions);
     /**
-     * Extensible-bound Value Set for service (CapabilityStatement.rest.security.service)
-     */
-    static get serviceExtensibleCodings(): RestfulSecurityServiceCodingType;
-    /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
     doModelValidation(expression?: string): fhir.FtsIssue[];
@@ -224,20 +218,6 @@ export declare class CapabilityStatementRestResourceInteraction extends fhir.Bac
      * Default constructor for CapabilityStatementRestResourceInteraction - initializes any required elements to null if a value is not provided.
      */
     constructor(source?: Partial<CapabilityStatementRestResourceInteractionArgs>, options?: fhir.FhirConstructorOptions);
-    /**
-     * Required-bound Value Set for code (CapabilityStatement.rest.resource.interaction.code)
-     */
-    static get codeRequiredCodes(): {
-        readonly Create: "create";
-        readonly Delete: "delete";
-        readonly HistoryInstance: "history-instance";
-        readonly HistoryType: "history-type";
-        readonly Patch: "patch";
-        readonly Read: "read";
-        readonly SearchType: "search-type";
-        readonly Update: "update";
-        readonly Vread: "vread";
-    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
@@ -308,20 +288,6 @@ export declare class CapabilityStatementRestResourceSearchParam extends fhir.Bac
      * Default constructor for CapabilityStatementRestResourceSearchParam - initializes any required elements to null if a value is not provided.
      */
     constructor(source?: Partial<CapabilityStatementRestResourceSearchParamArgs>, options?: fhir.FhirConstructorOptions);
-    /**
-     * Required-bound Value Set for type (CapabilityStatement.rest.resource.searchParam.type)
-     */
-    static get typeRequiredCodes(): {
-        readonly Composite: "composite";
-        readonly DateDateTime: "date";
-        readonly Number: "number";
-        readonly Quantity: "quantity";
-        readonly Reference: "reference";
-        readonly Special: "special";
-        readonly String: "string";
-        readonly Token: "token";
-        readonly URI: "uri";
-    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
@@ -598,206 +564,6 @@ export declare class CapabilityStatementRestResource extends fhir.BackboneElemen
      */
     constructor(source?: Partial<CapabilityStatementRestResourceArgs>, options?: fhir.FhirConstructorOptions);
     /**
-     * Required-bound Value Set for type (CapabilityStatement.rest.resource.type)
-     */
-    static get typeRequiredCodes(): {
-        readonly Account: "Account";
-        readonly ActivityDefinition: "ActivityDefinition";
-        readonly AdverseEvent: "AdverseEvent";
-        readonly AllergyIntolerance: "AllergyIntolerance";
-        readonly Appointment: "Appointment";
-        readonly AppointmentResponse: "AppointmentResponse";
-        readonly AuditEvent: "AuditEvent";
-        readonly Basic: "Basic";
-        readonly Binary: "Binary";
-        readonly BiologicallyDerivedProduct: "BiologicallyDerivedProduct";
-        readonly BodyStructure: "BodyStructure";
-        readonly Bundle: "Bundle";
-        readonly CapabilityStatement: "CapabilityStatement";
-        readonly CarePlan: "CarePlan";
-        readonly CareTeam: "CareTeam";
-        readonly CatalogEntry: "CatalogEntry";
-        readonly ChargeItem: "ChargeItem";
-        readonly ChargeItemDefinition: "ChargeItemDefinition";
-        readonly Claim: "Claim";
-        readonly ClaimResponse: "ClaimResponse";
-        readonly ClinicalImpression: "ClinicalImpression";
-        readonly CodeSystem: "CodeSystem";
-        readonly Communication: "Communication";
-        readonly CommunicationRequest: "CommunicationRequest";
-        readonly CompartmentDefinition: "CompartmentDefinition";
-        readonly Composition: "Composition";
-        readonly ConceptMap: "ConceptMap";
-        readonly Condition: "Condition";
-        readonly Consent: "Consent";
-        readonly Contract: "Contract";
-        readonly Coverage: "Coverage";
-        readonly CoverageEligibilityRequest: "CoverageEligibilityRequest";
-        readonly CoverageEligibilityResponse: "CoverageEligibilityResponse";
-        readonly DetectedIssue: "DetectedIssue";
-        readonly Device: "Device";
-        readonly DeviceDefinition: "DeviceDefinition";
-        readonly DeviceMetric: "DeviceMetric";
-        readonly DeviceRequest: "DeviceRequest";
-        readonly DeviceUseStatement: "DeviceUseStatement";
-        readonly DiagnosticReport: "DiagnosticReport";
-        readonly DocumentManifest: "DocumentManifest";
-        readonly DocumentReference: "DocumentReference";
-        readonly DomainResource: "DomainResource";
-        readonly EffectEvidenceSynthesis: "EffectEvidenceSynthesis";
-        readonly Encounter: "Encounter";
-        readonly Endpoint: "Endpoint";
-        readonly EnrollmentRequest: "EnrollmentRequest";
-        readonly EnrollmentResponse: "EnrollmentResponse";
-        readonly EpisodeOfCare: "EpisodeOfCare";
-        readonly EventDefinition: "EventDefinition";
-        readonly Evidence: "Evidence";
-        readonly EvidenceVariable: "EvidenceVariable";
-        readonly ExampleScenario: "ExampleScenario";
-        readonly ExplanationOfBenefit: "ExplanationOfBenefit";
-        readonly FamilyMemberHistory: "FamilyMemberHistory";
-        readonly Flag: "Flag";
-        readonly Goal: "Goal";
-        readonly GraphDefinition: "GraphDefinition";
-        readonly Group: "Group";
-        readonly GuidanceResponse: "GuidanceResponse";
-        readonly HealthcareService: "HealthcareService";
-        readonly ImagingStudy: "ImagingStudy";
-        readonly Immunization: "Immunization";
-        readonly ImmunizationEvaluation: "ImmunizationEvaluation"; /**
-         * Extended properties for primitive element: CapabilityStatement.rest.resource.interaction.code
-         */
-        readonly ImmunizationRecommendation: "ImmunizationRecommendation";
-        readonly ImplementationGuide: "ImplementationGuide";
-        readonly InsurancePlan: "InsurancePlan";
-        readonly Invoice: "Invoice";
-        /**
-         * Mapping of this datatype to a FHIR equivalent
-         */
-        readonly Library: "Library";
-        readonly Linkage: "Linkage";
-        readonly List: "List";
-        readonly Location: "Location";
-        readonly Measure: "Measure";
-        readonly MeasureReport: "MeasureReport";
-        readonly Media: "Media";
-        readonly Medication: "Medication";
-        readonly MedicationAdministration: "MedicationAdministration";
-        readonly MedicationDispense: "MedicationDispense";
-        readonly MedicationKnowledge: "MedicationKnowledge";
-        readonly MedicationRequest: "MedicationRequest";
-        readonly MedicationStatement: "MedicationStatement";
-        readonly MedicinalProduct: "MedicinalProduct";
-        readonly MedicinalProductAuthorization: "MedicinalProductAuthorization";
-        readonly MedicinalProductContraindication: "MedicinalProductContraindication";
-        readonly MedicinalProductIndication: "MedicinalProductIndication";
-        readonly MedicinalProductIngredient: "MedicinalProductIngredient";
-        readonly MedicinalProductInteraction: "MedicinalProductInteraction";
-        readonly MedicinalProductManufactured: "MedicinalProductManufactured";
-        readonly MedicinalProductPackaged: "MedicinalProductPackaged";
-        readonly MedicinalProductPharmaceutical: "MedicinalProductPharmaceutical";
-        readonly MedicinalProductUndesirableEffect: "MedicinalProductUndesirableEffect";
-        readonly MessageDefinition: "MessageDefinition";
-        readonly MessageHeader: "MessageHeader";
-        readonly MolecularSequence: "MolecularSequence";
-        readonly NamingSystem: "NamingSystem";
-        readonly NutritionOrder: "NutritionOrder";
-        readonly Observation: "Observation";
-        readonly ObservationDefinition: "ObservationDefinition";
-        readonly OperationDefinition: "OperationDefinition";
-        readonly OperationOutcome: "OperationOutcome";
-        readonly Organization: "Organization";
-        readonly OrganizationAffiliation: "OrganizationAffiliation";
-        readonly Parameters: "Parameters";
-        readonly Patient: "Patient";
-        readonly PaymentNotice: "PaymentNotice";
-        readonly PaymentReconciliation: "PaymentReconciliation";
-        readonly Person: "Person";
-        readonly PlanDefinition: "PlanDefinition";
-        readonly Practitioner: "Practitioner";
-        readonly PractitionerRole: "PractitionerRole";
-        readonly Procedure: "Procedure";
-        readonly Provenance: "Provenance";
-        /**
-         * Operations linked from CapabilityStatement.rest.resource.operation must have OperationDefinition.type = true or OperationDefinition.instance = true.
-         * If an operation that is listed in multiple CapabilityStatement.rest.resource.operation (e.g. for different resource types), then clients should understand that the operation is only supported on the specified resource types, and that may be a subset of those listed in OperationDefinition.resource.
-         */
-        readonly Questionnaire: "Questionnaire";
-        readonly QuestionnaireResponse: "QuestionnaireResponse";
-        readonly RelatedPerson: "RelatedPerson";
-        readonly RequestGroup: "RequestGroup";
-        readonly ResearchDefinition: "ResearchDefinition";
-        readonly ResearchElementDefinition: "ResearchElementDefinition";
-        readonly ResearchStudy: "ResearchStudy";
-        readonly ResearchSubject: "ResearchSubject";
-        readonly Resource: "Resource";
-        readonly RiskAssessment: "RiskAssessment";
-        readonly RiskEvidenceSynthesis: "RiskEvidenceSynthesis";
-        readonly Schedule: "Schedule";
-        readonly SearchParameter: "SearchParameter";
-        readonly ServiceRequest: "ServiceRequest";
-        readonly Slot: "Slot";
-        readonly Specimen: "Specimen";
-        readonly SpecimenDefinition: "SpecimenDefinition";
-        readonly StructureDefinition: "StructureDefinition";
-        /**
-         * Valid arguments for the CapabilityStatementRestResource type.
-         */
-        readonly StructureMap: "StructureMap";
-        readonly Subscription: "Subscription";
-        readonly Substance: "Substance";
-        readonly SubstanceNucleicAcid: "SubstanceNucleicAcid";
-        readonly SubstancePolymer: "SubstancePolymer";
-        readonly SubstanceProtein: "SubstanceProtein";
-        readonly SubstanceReferenceInformation: "SubstanceReferenceInformation";
-        readonly SubstanceSourceMaterial: "SubstanceSourceMaterial";
-        readonly SubstanceSpecification: "SubstanceSpecification";
-        readonly SupplyDelivery: "SupplyDelivery";
-        readonly SupplyRequest: "SupplyRequest";
-        readonly Task: "Task";
-        readonly TerminologyCapabilities: "TerminologyCapabilities";
-        readonly TestReport: "TestReport";
-        readonly TestScript: "TestScript";
-        readonly ValueSet: "ValueSet";
-        readonly VerificationResult: "VerificationResult";
-        readonly VisionPrescription: "VisionPrescription";
-    };
-    /**
-     * Required-bound Value Set for versioning (CapabilityStatement.rest.resource.versioning)
-     */
-    static get versioningRequiredCodes(): {
-        readonly NoVersionIdSupport: "no-version";
-        readonly Versioned: "versioned";
-        readonly VersionIdTrackedFully: "versioned-update";
-    };
-    /**
-     * Required-bound Value Set for conditionalRead (CapabilityStatement.rest.resource.conditionalRead)
-     */
-    static get conditionalReadRequiredCodes(): {
-        readonly FullSupport: "full-support";
-        readonly IfModifiedSince: "modified-since";
-        readonly IfNoneMatch: "not-match";
-        readonly NotSupported: "not-supported";
-    };
-    /**
-     * Required-bound Value Set for conditionalDelete (CapabilityStatement.rest.resource.conditionalDelete)
-     */
-    static get conditionalDeleteRequiredCodes(): {
-        readonly MultipleDeletesSupported: "multiple";
-        readonly NotSupported: "not-supported";
-        readonly SingleDeletesSupported: "single";
-    };
-    /**
-     * Required-bound Value Set for referencePolicy (CapabilityStatement.rest.resource.referencePolicy)
-     */
-    static get referencePolicyRequiredCodes(): {
-        readonly ReferenceIntegrityEnforced: "enforced";
-        readonly LiteralReferences: "literal";
-        readonly LocalReferencesOnly: "local";
-        readonly LogicalReferences: "logical";
-        readonly ResolvesReferences: "resolves";
-    };
-    /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
     doModelValidation(expression?: string): fhir.FtsIssue[];
@@ -843,15 +609,6 @@ export declare class CapabilityStatementRestInteraction extends fhir.BackboneEle
      * Default constructor for CapabilityStatementRestInteraction - initializes any required elements to null if a value is not provided.
      */
     constructor(source?: Partial<CapabilityStatementRestInteractionArgs>, options?: fhir.FhirConstructorOptions);
-    /**
-     * Required-bound Value Set for code (CapabilityStatement.rest.interaction.code)
-     */
-    static get codeRequiredCodes(): {
-        readonly Batch: "batch";
-        readonly HistorySystem: "history-system";
-        readonly SearchSystem: "search-system";
-        readonly Transaction: "transaction";
-    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
@@ -951,13 +708,6 @@ export declare class CapabilityStatementRest extends fhir.BackboneElement {
      */
     constructor(source?: Partial<CapabilityStatementRestArgs>, options?: fhir.FhirConstructorOptions);
     /**
-     * Required-bound Value Set for mode (CapabilityStatement.rest.mode)
-     */
-    static get modeRequiredCodes(): {
-        readonly Client: "client";
-        readonly Server: "server";
-    };
-    /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
     doModelValidation(expression?: string): fhir.FtsIssue[];
@@ -999,10 +749,6 @@ export declare class CapabilityStatementMessagingEndpoint extends fhir.BackboneE
      * Default constructor for CapabilityStatementMessagingEndpoint - initializes any required elements to null if a value is not provided.
      */
     constructor(source?: Partial<CapabilityStatementMessagingEndpointArgs>, options?: fhir.FhirConstructorOptions);
-    /**
-     * Extensible-bound Value Set for protocol (CapabilityStatement.messaging.endpoint.protocol)
-     */
-    static get protocolExtensibleCodings(): MessageTransportCodingType;
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
@@ -1049,13 +795,6 @@ export declare class CapabilityStatementMessagingSupportedMessage extends fhir.B
      * Default constructor for CapabilityStatementMessagingSupportedMessage - initializes any required elements to null if a value is not provided.
      */
     constructor(source?: Partial<CapabilityStatementMessagingSupportedMessageArgs>, options?: fhir.FhirConstructorOptions);
-    /**
-     * Required-bound Value Set for mode (CapabilityStatement.messaging.supportedMessage.mode)
-     */
-    static get modeRequiredCodes(): {
-        readonly Receiver: "receiver";
-        readonly Sender: "sender";
-    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
@@ -1176,13 +915,6 @@ export declare class CapabilityStatementDocument extends fhir.BackboneElement {
      * Default constructor for CapabilityStatementDocument - initializes any required elements to null if a value is not provided.
      */
     constructor(source?: Partial<CapabilityStatementDocumentArgs>, options?: fhir.FhirConstructorOptions);
-    /**
-     * Required-bound Value Set for mode (CapabilityStatement.document.mode)
-     */
-    static get modeRequiredCodes(): {
-        readonly Consumer: "consumer";
-        readonly Producer: "producer";
-    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
@@ -1501,50 +1233,6 @@ export declare class CapabilityStatement extends fhir.DomainResource {
      * Default constructor for CapabilityStatement - initializes any required elements to null if a value is not provided.
      */
     constructor(source?: Partial<CapabilityStatementArgs>, options?: fhir.FhirConstructorOptions);
-    /**
-     * Required-bound Value Set for status (CapabilityStatement.status)
-     */
-    static get statusRequiredCodes(): {
-        readonly Active: "active";
-        readonly Draft: "draft";
-        readonly Retired: "retired";
-        readonly Unknown: "unknown";
-    };
-    /**
-     * Required-bound Value Set for kind (CapabilityStatement.kind)
-     */
-    static get kindRequiredCodes(): {
-        readonly Capability: "capability";
-        readonly Instance: "instance";
-        readonly Requirements: "requirements";
-    };
-    /**
-     * Required-bound Value Set for fhirVersion (CapabilityStatement.fhirVersion)
-     */
-    static get fhirVersionRequiredCodes(): {
-        readonly VAL0080: "0.0.80";
-        readonly VAL0081: "0.0.81";
-        readonly VAL0082: "0.0.82";
-        readonly VAL001: "0.01";
-        readonly VAL005: "0.05";
-        readonly VAL006: "0.06";
-        readonly VAL011: "0.11";
-        readonly VAL040: "0.4.0";
-        readonly VAL050: "0.5.0";
-        readonly VAL100: "1.0.0";
-        readonly VAL101: "1.0.1";
-        readonly VAL102: "1.0.2";
-        readonly VAL110: "1.1.0";
-        readonly VAL140: "1.4.0";
-        readonly VAL160: "1.6.0";
-        readonly VAL180: "1.8.0";
-        readonly VAL300: "3.0.0";
-        readonly VAL301: "3.0.1";
-        readonly VAL330: "3.3.0";
-        readonly VAL350: "3.5.0";
-        readonly VAL400: "4.0.0";
-        readonly VAL401: "4.0.1";
-    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */

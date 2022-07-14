@@ -6,33 +6,33 @@
 import * as fhir from '../fhir.js';
 
 // @ts-ignore
-import { EventStatusCodings, EventStatusCodingType,} from '../fhirValueSets/EventStatusCodings.js';
-// @ts-ignore
 import { EventStatusCodes,  EventStatusCodeType } from '../fhirValueSets/EventStatusCodes.js';
 // @ts-ignore
-import { CommunicationNotDoneReasonCodings, CommunicationNotDoneReasonCodingType,} from '../fhirValueSets/CommunicationNotDoneReasonCodings.js';
+import { EventStatusVsValidation } from '../fhirValueSets/EventStatusVsValidation.js';
 // @ts-ignore
 import { CommunicationNotDoneReasonCodes,  CommunicationNotDoneReasonCodeType } from '../fhirValueSets/CommunicationNotDoneReasonCodes.js';
 // @ts-ignore
-import { CommunicationCategoryCodings, CommunicationCategoryCodingType,} from '../fhirValueSets/CommunicationCategoryCodings.js';
+import { CommunicationNotDoneReasonVsValidation } from '../fhirValueSets/CommunicationNotDoneReasonVsValidation.js';
 // @ts-ignore
 import { CommunicationCategoryCodes,  CommunicationCategoryCodeType } from '../fhirValueSets/CommunicationCategoryCodes.js';
 // @ts-ignore
-import { RequestPriorityCodings, RequestPriorityCodingType,} from '../fhirValueSets/RequestPriorityCodings.js';
+import { CommunicationCategoryVsValidation } from '../fhirValueSets/CommunicationCategoryVsValidation.js';
 // @ts-ignore
 import { RequestPriorityCodes,  RequestPriorityCodeType } from '../fhirValueSets/RequestPriorityCodes.js';
 // @ts-ignore
-import { V3ParticipationModeCodings, V3ParticipationModeCodingType,} from '../fhirValueSets/V3ParticipationModeCodings.js';
+import { RequestPriorityVsValidation } from '../fhirValueSets/RequestPriorityVsValidation.js';
 // @ts-ignore
 import { V3ParticipationModeCodes,  V3ParticipationModeCodeType } from '../fhirValueSets/V3ParticipationModeCodes.js';
 // @ts-ignore
-import { CommunicationTopicCodings, CommunicationTopicCodingType,} from '../fhirValueSets/CommunicationTopicCodings.js';
+import { V3ParticipationModeVsValidation } from '../fhirValueSets/V3ParticipationModeVsValidation.js';
 // @ts-ignore
 import { CommunicationTopicCodes,  CommunicationTopicCodeType } from '../fhirValueSets/CommunicationTopicCodes.js';
 // @ts-ignore
-import { ClinicalFindingsCodings, ClinicalFindingsCodingType,} from '../fhirValueSets/ClinicalFindingsCodings.js';
+import { CommunicationTopicVsValidation } from '../fhirValueSets/CommunicationTopicVsValidation.js';
 // @ts-ignore
 import { ClinicalFindingsCodes,  ClinicalFindingsCodeType } from '../fhirValueSets/ClinicalFindingsCodes.js';
+// @ts-ignore
+import { ClinicalFindingsVsValidation } from '../fhirValueSets/ClinicalFindingsVsValidation.js';
 /**
  * Valid arguments for the CommunicationPayload type.
  */
@@ -88,9 +88,7 @@ export class CommunicationPayload extends fhir.BackboneElement {
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'Communication.payload' }
-    if (!this['content']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property content fhir: Communication.payload.content[x]:', expression: [expression] });
-    }
+    this.vReqS('content',expression)
     return issues;
   }
 }
@@ -398,58 +396,35 @@ export class Communication extends fhir.DomainResource {
     else { this.note = []; }
   }
   /**
-   * Required-bound Value Set for status (Communication.status)
-   */
-  public static get statusRequiredCodes() {
-    return EventStatusCodes;
-  }
-  /**
-   * Required-bound Value Set for priority (Communication.priority)
-   */
-  public static get priorityRequiredCodes() {
-    return RequestPriorityCodes;
-  }
-  /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'Communication' }
-    if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType fhir: Communication.resourceType:"Communication"', expression: [expression] });
-    }
-    if (this["identifier"]) { this.identifier.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.identifier[${i}]`)); }) }
-    if (this["instantiatesCanonical"]) { this.instantiatesCanonical.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.instantiatesCanonical[${i}]`)); }) }
-    if (this["instantiatesUri"]) { this.instantiatesUri.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.instantiatesUri[${i}]`)); }) }
-    if (this["basedOn"]) { this.basedOn.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.basedOn[${i}]`)); }) }
-    if (this["partOf"]) { this.partOf.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.partOf[${i}]`)); }) }
-    if (this["inResponseTo"]) { this.inResponseTo.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.inResponseTo[${i}]`)); }) }
-    if (!this['status']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status fhir: Communication.status:code', expression: [expression] });
-    }
-    if (this['status'] && (!Object.values(EventStatusCodes).includes(this.status.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'status (Communication.status) of type code is missing code for Required binding to: EventStatus', expression: [expression] });
-    }
-    if (this["status"]) { issues.push(...this.status.doModelValidation(expression+'.status')); }
-    if (this["statusReason"]) { issues.push(...this.statusReason.doModelValidation(expression+'.statusReason')); }
-    if (this["category"]) { this.category.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.category[${i}]`)); }) }
-    if (this['priority'] && (!Object.values(RequestPriorityCodes).includes(this.priority.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'priority (Communication.priority) of type code is missing code for Required binding to: RequestPriority', expression: [expression] });
-    }
-    if (this["priority"]) { issues.push(...this.priority.doModelValidation(expression+'.priority')); }
-    if (this["medium"]) { this.medium.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.medium[${i}]`)); }) }
-    if (this["subject"]) { issues.push(...this.subject.doModelValidation(expression+'.subject')); }
-    if (this["topic"]) { issues.push(...this.topic.doModelValidation(expression+'.topic')); }
-    if (this["about"]) { this.about.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.about[${i}]`)); }) }
-    if (this["encounter"]) { issues.push(...this.encounter.doModelValidation(expression+'.encounter')); }
-    if (this["sent"]) { issues.push(...this.sent.doModelValidation(expression+'.sent')); }
-    if (this["received"]) { issues.push(...this.received.doModelValidation(expression+'.received')); }
-    if (this["recipient"]) { this.recipient.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.recipient[${i}]`)); }) }
-    if (this["sender"]) { issues.push(...this.sender.doModelValidation(expression+'.sender')); }
-    if (this["reasonCode"]) { this.reasonCode.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.reasonCode[${i}]`)); }) }
-    if (this["reasonReference"]) { this.reasonReference.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.reasonReference[${i}]`)); }) }
-    if (this["payload"]) { this.payload.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.payload[${i}]`)); }) }
-    if (this["note"]) { this.note.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.note[${i}]`)); }) }
+    this.vReqS('resourceType',expression)
+    this.vOptA('identifier',expression)
+    this.vOptA('instantiatesCanonical',expression)
+    this.vOptA('instantiatesUri',expression)
+    this.vOptA('basedOn',expression)
+    this.vOptA('partOf',expression)
+    this.vOptA('inResponseTo',expression)
+    this.vReqSV('status',expression,'EventStatus',EventStatusVsValidation,'r')
+    this.vOptS('statusReason',expression)
+    this.vOptA('category',expression)
+    this.vOptSV('priority',expression,'RequestPriority',RequestPriorityVsValidation,'r')
+    this.vOptA('medium',expression)
+    this.vOptS('subject',expression)
+    this.vOptS('topic',expression)
+    this.vOptA('about',expression)
+    this.vOptS('encounter',expression)
+    this.vOptS('sent',expression)
+    this.vOptS('received',expression)
+    this.vOptA('recipient',expression)
+    this.vOptS('sender',expression)
+    this.vOptA('reasonCode',expression)
+    this.vOptA('reasonReference',expression)
+    this.vOptA('payload',expression)
+    this.vOptA('note',expression)
     return issues;
   }
 }

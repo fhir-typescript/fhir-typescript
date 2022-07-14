@@ -89,14 +89,6 @@ export declare class AllergyIntoleranceReaction extends fhir.BackboneElement {
      */
     constructor(source?: Partial<AllergyIntoleranceReactionArgs>, options?: fhir.FhirConstructorOptions);
     /**
-     * Required-bound Value Set for severity (AllergyIntolerance.reaction.severity)
-     */
-    static get severityRequiredCodes(): {
-        readonly Mild: "mild";
-        readonly Moderate: "moderate";
-        readonly Severe: "severe";
-    };
-    /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
     doModelValidation(expression?: string): fhir.FtsIssue[];
@@ -304,47 +296,6 @@ export declare class AllergyIntolerance extends fhir.DomainResource {
      * Default constructor for AllergyIntolerance - initializes any required elements to null if a value is not provided.
      */
     constructor(source?: Partial<AllergyIntoleranceArgs>, options?: fhir.FhirConstructorOptions);
-    /**
-     * Required-bound Value Set for clinicalStatus (AllergyIntolerance.clinicalStatus)
-     */
-    static get clinicalStatusRequiredCodes(): {
-        readonly Active: "active";
-        readonly Inactive: "inactive";
-        readonly Resolved: "resolved";
-    };
-    /**
-     * Required-bound Value Set for verificationStatus (AllergyIntolerance.verificationStatus)
-     */
-    static get verificationStatusRequiredCodes(): {
-        readonly Confirmed: "confirmed";
-        readonly EnteredInError: "entered-in-error";
-        readonly Refuted: "refuted";
-        readonly Unconfirmed: "unconfirmed";
-    };
-    /**
-     * Required-bound Value Set for type (AllergyIntolerance.type)
-     */
-    static get typeRequiredCodes(): {
-        readonly Allergy: "allergy";
-        readonly Intolerance: "intolerance";
-    };
-    /**
-     * Required-bound Value Set for category (AllergyIntolerance.category)
-     */
-    static get categoryRequiredCodes(): {
-        readonly Biologic: "biologic";
-        readonly Environment: "environment";
-        readonly Food: "food";
-        readonly Medication: "medication";
-    };
-    /**
-     * Required-bound Value Set for criticality (AllergyIntolerance.criticality)
-     */
-    static get criticalityRequiredCodes(): {
-        readonly HighRisk: "high";
-        readonly LowRisk: "low";
-        readonly UnableToAssessRisk: "unable-to-assess";
-    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */

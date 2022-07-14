@@ -86,54 +86,6 @@ export declare class OperationOutcomeIssue extends fhir.BackboneElement {
      */
     constructor(source?: Partial<OperationOutcomeIssueArgs>, options?: fhir.FhirConstructorOptions);
     /**
-     * Required-bound Value Set for severity (OperationOutcome.issue.severity)
-     */
-    static get severityRequiredCodes(): {
-        readonly Error: "error";
-        readonly Fatal: "fatal";
-        readonly Information: "information";
-        readonly Warning: "warning";
-    };
-    /**
-     * Required-bound Value Set for code (OperationOutcome.issue.code)
-     */
-    static get codeRequiredCodes(): {
-        readonly BusinessRuleViolation: "business-rule";
-        readonly InvalidCode: "code-invalid";
-        readonly EditVersionConflict: "conflict";
-        readonly Deleted: "deleted";
-        readonly Duplicate: "duplicate";
-        readonly Exception: "exception";
-        readonly SessionExpired: "expired";
-        /**
-         * Describes the type of the issue. The system that creates an OperationOutcome SHALL choose the most applicable code from the IssueType value set, and may additional provide its own code for the error in the details element.
-         */
-        readonly UnacceptableExtension: "extension";
-        readonly Forbidden: "forbidden";
-        readonly IncompleteResults: "incomplete";
-        readonly InformationalNote: "informational";
-        readonly InvalidContent: "invalid";
-        readonly ValidationRuleFailed: "invariant";
-        readonly LockError: "lock-error";
-        readonly LoginRequired: "login";
-        readonly MultipleMatches: "multiple-matches";
-        readonly NoStoreAvailable: "no-store";
-        readonly NotFound: "not-found";
-        readonly ContentNotSupported: "not-supported";
-        readonly ProcessingFailure: "processing";
-        readonly RequiredElementMissing: "required";
-        readonly SecurityProblem: "security";
-        readonly StructuralIssue: "structure";
-        readonly InformationSuppressed: "suppressed";
-        readonly Throttled: "throttled";
-        readonly Timeout: "timeout";
-        readonly OperationTooCostly: "too-costly";
-        readonly ContentTooLong: "too-long";
-        readonly TransientIssue: "transient";
-        readonly UnknownUser: "unknown";
-        readonly ElementValueInvalid: "value";
-    };
-    /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
     doModelValidation(expression?: string): fhir.FtsIssue[];

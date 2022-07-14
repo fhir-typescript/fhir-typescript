@@ -94,14 +94,6 @@ export declare class BundleEntrySearch extends fhir.BackboneElement {
      */
     constructor(source?: Partial<BundleEntrySearchArgs>, options?: fhir.FhirConstructorOptions);
     /**
-     * Required-bound Value Set for mode (Bundle.entry.search.mode)
-     */
-    static get modeRequiredCodes(): {
-        readonly Include: "include";
-        readonly Match: "match";
-        readonly Outcome: "outcome";
-    };
-    /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
     doModelValidation(expression?: string): fhir.FtsIssue[];
@@ -195,17 +187,6 @@ export declare class BundleEntryRequest extends fhir.BackboneElement {
      * Default constructor for BundleEntryRequest - initializes any required elements to null if a value is not provided.
      */
     constructor(source?: Partial<BundleEntryRequestArgs>, options?: fhir.FhirConstructorOptions);
-    /**
-     * Required-bound Value Set for method (Bundle.entry.request.method)
-     */
-    static get methodRequiredCodes(): {
-        readonly DELETE: "DELETE";
-        readonly GET: "GET";
-        readonly HEAD: "HEAD";
-        readonly PATCH: "PATCH";
-        readonly POST: "POST";
-        readonly PUT: "PUT";
-    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
@@ -482,20 +463,6 @@ export declare class Bundle extends fhir.Resource {
      * Default constructor for Bundle - initializes any required elements to null if a value is not provided.
      */
     constructor(source?: Partial<BundleArgs>, options?: fhir.FhirConstructorOptions);
-    /**
-     * Required-bound Value Set for type (Bundle.type)
-     */
-    static get typeRequiredCodes(): {
-        readonly Batch: "batch";
-        readonly BatchResponse: "batch-response";
-        readonly Collection: "collection";
-        readonly Document: "document";
-        readonly HistoryList: "history";
-        readonly Message: "message";
-        readonly SearchResults: "searchset";
-        readonly Transaction: "transaction";
-        readonly TransactionResponse: "transaction-response";
-    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */

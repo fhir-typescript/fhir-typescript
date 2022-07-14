@@ -1,6 +1,4 @@
 import * as fhir from '../fhir.js';
-import { C80PracticeCodingType } from '../fhirValueSets/C80PracticeCodings.js';
-import { V20276CodingType } from '../fhirValueSets/V20276Codings.js';
 import { SlotstatusCodeType } from '../fhirValueSets/SlotstatusCodes.js';
 /**
  * Valid arguments for the Slot type.
@@ -135,24 +133,6 @@ export declare class Slot extends fhir.DomainResource {
      * Default constructor for Slot - initializes any required elements to null if a value is not provided.
      */
     constructor(source?: Partial<SlotArgs>, options?: fhir.FhirConstructorOptions);
-    /**
-     * Preferred-bound Value Set for specialty (Slot.specialty)
-     */
-    static get specialtyPreferredCodings(): C80PracticeCodingType;
-    /**
-     * Preferred-bound Value Set for appointmentType (Slot.appointmentType)
-     */
-    static get appointmentTypePreferredCodings(): V20276CodingType;
-    /**
-     * Required-bound Value Set for status (Slot.status)
-     */
-    static get statusRequiredCodes(): {
-        readonly Busy: "busy";
-        readonly BusyTentative: "busy-tentative";
-        readonly BusyUnavailable: "busy-unavailable";
-        readonly EnteredInError: "entered-in-error";
-        readonly Free: "free";
-    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */

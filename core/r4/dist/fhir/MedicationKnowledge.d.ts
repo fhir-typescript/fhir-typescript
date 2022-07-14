@@ -938,14 +938,6 @@ export declare class MedicationKnowledge extends fhir.DomainResource {
      */
     constructor(source?: Partial<MedicationKnowledgeArgs>, options?: fhir.FhirConstructorOptions);
     /**
-     * Required-bound Value Set for status (MedicationKnowledge.status)
-     */
-    static get statusRequiredCodes(): {
-        readonly Active: "active";
-        readonly EnteredInError: "entered-in-error";
-        readonly Inactive: "inactive";
-    };
-    /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
     doModelValidation(expression?: string): fhir.FtsIssue[];

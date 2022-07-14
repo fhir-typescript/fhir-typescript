@@ -1,6 +1,5 @@
 import * as fhir from '../fhir.js';
 import { PublicationStatusCodeType } from '../fhirValueSets/PublicationStatusCodes.js';
-import { LibraryTypeCodingType } from '../fhirValueSets/LibraryTypeCodings.js';
 /**
  * Valid arguments for the Library type.
  */
@@ -350,19 +349,6 @@ export declare class Library extends fhir.DomainResource {
      * Default constructor for Library - initializes any required elements to null if a value is not provided.
      */
     constructor(source?: Partial<LibraryArgs>, options?: fhir.FhirConstructorOptions);
-    /**
-     * Required-bound Value Set for status (Library.status)
-     */
-    static get statusRequiredCodes(): {
-        readonly Active: "active";
-        readonly Draft: "draft";
-        readonly Retired: "retired";
-        readonly Unknown: "unknown";
-    };
-    /**
-     * Extensible-bound Value Set for type (Library.type)
-     */
-    static get typeExtensibleCodings(): LibraryTypeCodingType;
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */

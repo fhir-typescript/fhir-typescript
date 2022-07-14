@@ -41,15 +41,6 @@ export declare class ActivityDefinitionParticipant extends fhir.BackboneElement 
      */
     constructor(source?: Partial<ActivityDefinitionParticipantArgs>, options?: fhir.FhirConstructorOptions);
     /**
-     * Required-bound Value Set for type (ActivityDefinition.participant.type)
-     */
-    static get typeRequiredCodes(): {
-        readonly Device: "device";
-        readonly Patient: "patient";
-        readonly Practitioner: "practitioner";
-        readonly RelatedPerson: "related-person";
-    };
-    /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
     doModelValidation(expression?: string): fhir.FtsIssue[];
@@ -633,58 +624,6 @@ export declare class ActivityDefinition extends fhir.DomainResource {
      * Default constructor for ActivityDefinition - initializes any required elements to null if a value is not provided.
      */
     constructor(source?: Partial<ActivityDefinitionArgs>, options?: fhir.FhirConstructorOptions);
-    /**
-     * Required-bound Value Set for status (ActivityDefinition.status)
-     */
-    static get statusRequiredCodes(): {
-        readonly Active: "active";
-        readonly Draft: "draft";
-        readonly Retired: "retired";
-        readonly Unknown: "unknown";
-    };
-    /**
-     * Required-bound Value Set for kind (ActivityDefinition.kind)
-     */
-    static get kindRequiredCodes(): {
-        readonly Appointment: "Appointment";
-        readonly AppointmentResponse: "AppointmentResponse";
-        readonly CarePlan: "CarePlan";
-        readonly Claim: "Claim";
-        readonly CommunicationRequest: "CommunicationRequest";
-        readonly Contract: "Contract";
-        readonly DeviceRequest: "DeviceRequest";
-        readonly EnrollmentRequest: "EnrollmentRequest";
-        readonly ImmunizationRecommendation: "ImmunizationRecommendation";
-        readonly MedicationRequest: "MedicationRequest";
-        readonly NutritionOrder: "NutritionOrder";
-        readonly ServiceRequest: "ServiceRequest";
-        readonly SupplyRequest: "SupplyRequest";
-        readonly Task: "Task";
-        readonly VisionPrescription: "VisionPrescription";
-    };
-    /**
-     * Required-bound Value Set for intent (ActivityDefinition.intent)
-     */
-    static get intentRequiredCodes(): {
-        readonly Directive: "directive";
-        readonly FillerOrder: "filler-order";
-        readonly InstanceOrder: "instance-order";
-        readonly Option: "option";
-        readonly Order: "order";
-        readonly OriginalOrder: "original-order";
-        readonly Plan: "plan";
-        readonly Proposal: "proposal";
-        readonly ReflexOrder: "reflex-order";
-    };
-    /**
-     * Required-bound Value Set for priority (ActivityDefinition.priority)
-     */
-    static get priorityRequiredCodes(): {
-        readonly ASAP: "asap";
-        readonly Routine: "routine";
-        readonly STAT: "stat";
-        readonly Urgent: "urgent";
-    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */

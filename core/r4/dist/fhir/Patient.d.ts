@@ -1,9 +1,6 @@
 import * as fhir from '../fhir.js';
-import { PatientContactrelationshipCodingType } from '../fhirValueSets/PatientContactrelationshipCodings.js';
 import { AdministrativeGenderCodeType } from '../fhirValueSets/AdministrativeGenderCodes.js';
-import { LanguagesCodingType } from '../fhirValueSets/LanguagesCodings.js';
 import { LinkTypeCodeType } from '../fhirValueSets/LinkTypeCodes.js';
-import { MaritalStatusCodingType } from '../fhirValueSets/MaritalStatusCodings.js';
 /**
  * Valid arguments for the PatientContact type.
  */
@@ -82,19 +79,6 @@ export declare class PatientContact extends fhir.BackboneElement {
      */
     constructor(source?: Partial<PatientContactArgs>, options?: fhir.FhirConstructorOptions);
     /**
-     * Extensible-bound Value Set for relationship (Patient.contact.relationship)
-     */
-    static get relationshipExtensibleCodings(): PatientContactrelationshipCodingType;
-    /**
-     * Required-bound Value Set for gender (Patient.contact.gender)
-     */
-    static get genderRequiredCodes(): {
-        readonly Female: "female";
-        readonly Male: "male";
-        readonly Other: "other";
-        readonly Unknown: "unknown";
-    };
-    /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
     doModelValidation(expression?: string): fhir.FtsIssue[];
@@ -137,10 +121,6 @@ export declare class PatientCommunication extends fhir.BackboneElement {
      */
     constructor(source?: Partial<PatientCommunicationArgs>, options?: fhir.FhirConstructorOptions);
     /**
-     * Preferred-bound Value Set for language (Patient.communication.language)
-     */
-    static get languagePreferredCodings(): LanguagesCodingType;
-    /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
     doModelValidation(expression?: string): fhir.FtsIssue[];
@@ -182,15 +162,6 @@ export declare class PatientLink extends fhir.BackboneElement {
      * Default constructor for PatientLink - initializes any required elements to null if a value is not provided.
      */
     constructor(source?: Partial<PatientLinkArgs>, options?: fhir.FhirConstructorOptions);
-    /**
-     * Required-bound Value Set for type (Patient.link.type)
-     */
-    static get typeRequiredCodes(): {
-        readonly Refer: "refer";
-        readonly ReplacedBy: "replaced-by";
-        readonly Replaces: "replaces";
-        readonly SeeAlso: "seealso";
-    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
@@ -395,19 +366,6 @@ export declare class Patient extends fhir.DomainResource {
      * Default constructor for Patient - initializes any required elements to null if a value is not provided.
      */
     constructor(source?: Partial<PatientArgs>, options?: fhir.FhirConstructorOptions);
-    /**
-     * Required-bound Value Set for gender (Patient.gender)
-     */
-    static get genderRequiredCodes(): {
-        readonly Female: "female";
-        readonly Male: "male";
-        readonly Other: "other";
-        readonly Unknown: "unknown";
-    };
-    /**
-     * Extensible-bound Value Set for maritalStatus (Patient.maritalStatus)
-     */
-    static get maritalStatusExtensibleCodings(): MaritalStatusCodingType;
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */

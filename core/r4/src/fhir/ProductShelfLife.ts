@@ -70,16 +70,10 @@ export class ProductShelfLife extends fhir.BackboneElement {
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'ProductShelfLife' }
-    if (this["identifier"]) { issues.push(...this.identifier.doModelValidation(expression+'.identifier')); }
-    if (!this['type']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property type fhir: ProductShelfLife.type:CodeableConcept', expression: [expression] });
-    }
-    if (this["type"]) { issues.push(...this.type.doModelValidation(expression+'.type')); }
-    if (!this['period']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property period fhir: ProductShelfLife.period:Quantity', expression: [expression] });
-    }
-    if (this["period"]) { issues.push(...this.period.doModelValidation(expression+'.period')); }
-    if (this["specialPrecautionsForStorage"]) { this.specialPrecautionsForStorage.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.specialPrecautionsForStorage[${i}]`)); }) }
+    this.vOptS('identifier',expression)
+    this.vReqS('type',expression)
+    this.vReqS('period',expression)
+    this.vOptA('specialPrecautionsForStorage',expression)
     return issues;
   }
 }

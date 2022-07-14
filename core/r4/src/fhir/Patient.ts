@@ -6,25 +6,25 @@
 import * as fhir from '../fhir.js';
 
 // @ts-ignore
-import { PatientContactrelationshipCodings, PatientContactrelationshipCodingType,} from '../fhirValueSets/PatientContactrelationshipCodings.js';
-// @ts-ignore
 import { PatientContactrelationshipCodes,  PatientContactrelationshipCodeType } from '../fhirValueSets/PatientContactrelationshipCodes.js';
 // @ts-ignore
-import { AdministrativeGenderCodings, AdministrativeGenderCodingType,} from '../fhirValueSets/AdministrativeGenderCodings.js';
+import { PatientContactrelationshipVsValidation } from '../fhirValueSets/PatientContactrelationshipVsValidation.js';
 // @ts-ignore
 import { AdministrativeGenderCodes,  AdministrativeGenderCodeType } from '../fhirValueSets/AdministrativeGenderCodes.js';
 // @ts-ignore
-import { LanguagesCodings, LanguagesCodingType,} from '../fhirValueSets/LanguagesCodings.js';
+import { AdministrativeGenderVsValidation } from '../fhirValueSets/AdministrativeGenderVsValidation.js';
 // @ts-ignore
 import { LanguagesCodes,  LanguagesCodeType } from '../fhirValueSets/LanguagesCodes.js';
 // @ts-ignore
-import { LinkTypeCodings, LinkTypeCodingType,} from '../fhirValueSets/LinkTypeCodings.js';
+import { LanguagesVsValidation } from '../fhirValueSets/LanguagesVsValidation.js';
 // @ts-ignore
 import { LinkTypeCodes,  LinkTypeCodeType } from '../fhirValueSets/LinkTypeCodes.js';
 // @ts-ignore
-import { MaritalStatusCodings, MaritalStatusCodingType,} from '../fhirValueSets/MaritalStatusCodings.js';
+import { LinkTypeVsValidation } from '../fhirValueSets/LinkTypeVsValidation.js';
 // @ts-ignore
 import { MaritalStatusCodes,  MaritalStatusCodeType } from '../fhirValueSets/MaritalStatusCodes.js';
+// @ts-ignore
+import { MaritalStatusVsValidation } from '../fhirValueSets/MaritalStatusVsValidation.js';
 /**
  * Valid arguments for the PatientContact type.
  */
@@ -119,33 +119,18 @@ export class PatientContact extends fhir.BackboneElement {
     if (source['period']) { this.period = new fhir.Period(source.period); }
   }
   /**
-   * Extensible-bound Value Set for relationship (Patient.contact.relationship)
-   */
-  public static get relationshipExtensibleCodings():PatientContactrelationshipCodingType {
-    return PatientContactrelationshipCodings;
-  }
-  /**
-   * Required-bound Value Set for gender (Patient.contact.gender)
-   */
-  public static get genderRequiredCodes() {
-    return AdministrativeGenderCodes;
-  }
-  /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'Patient.contact' }
-    if (this["relationship"]) { this.relationship.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.relationship[${i}]`)); }) }
-    if (this["name"]) { issues.push(...this.name.doModelValidation(expression+'.name')); }
-    if (this["telecom"]) { this.telecom.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.telecom[${i}]`)); }) }
-    if (this["address"]) { issues.push(...this.address.doModelValidation(expression+'.address')); }
-    if (this['gender'] && (!Object.values(AdministrativeGenderCodes).includes(this.gender.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'gender (Patient.contact.gender) of type code is missing code for Required binding to: AdministrativeGender', expression: [expression] });
-    }
-    if (this["gender"]) { issues.push(...this.gender.doModelValidation(expression+'.gender')); }
-    if (this["organization"]) { issues.push(...this.organization.doModelValidation(expression+'.organization')); }
-    if (this["period"]) { issues.push(...this.period.doModelValidation(expression+'.period')); }
+    this.vOptA('relationship',expression)
+    this.vOptS('name',expression)
+    this.vOptA('telecom',expression)
+    this.vOptS('address',expression)
+    this.vOptSV('gender',expression,'AdministrativeGender',AdministrativeGenderVsValidation,'r')
+    this.vOptS('organization',expression)
+    this.vOptS('period',expression)
     return issues;
   }
 }
@@ -197,22 +182,13 @@ export class PatientCommunication extends fhir.BackboneElement {
     }
   }
   /**
-   * Preferred-bound Value Set for language (Patient.communication.language)
-   */
-  public static get languagePreferredCodings():LanguagesCodingType {
-    return LanguagesCodings;
-  }
-  /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'Patient.communication' }
-    if (!this['language']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property language fhir: Patient.communication.language:CodeableConcept', expression: [expression] });
-    }
-    if (this["language"]) { issues.push(...this.language.doModelValidation(expression+'.language')); }
-    if (this["preferred"]) { issues.push(...this.preferred.doModelValidation(expression+'.preferred')); }
+    this.vReqS('language',expression)
+    this.vOptS('preferred',expression)
     return issues;
   }
 }
@@ -265,28 +241,13 @@ export class PatientLink extends fhir.BackboneElement {
     }
   }
   /**
-   * Required-bound Value Set for type (Patient.link.type)
-   */
-  public static get typeRequiredCodes() {
-    return LinkTypeCodes;
-  }
-  /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'Patient.link' }
-    if (!this['other']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property other fhir: Patient.link.other:Reference', expression: [expression] });
-    }
-    if (this["other"]) { issues.push(...this.other.doModelValidation(expression+'.other')); }
-    if (!this['type']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property type fhir: Patient.link.type:code', expression: [expression] });
-    }
-    if (this['type'] && (!Object.values(LinkTypeCodes).includes(this.type.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'type (Patient.link.type) of type code is missing code for Required binding to: LinkType', expression: [expression] });
-    }
-    if (this["type"]) { issues.push(...this.type.doModelValidation(expression+'.type')); }
+    this.vReqS('other',expression)
+    this.vReqSV('type',expression,'LinkType',LinkTypeVsValidation,'r')
     return issues;
   }
 }
@@ -535,43 +496,28 @@ export class Patient extends fhir.DomainResource {
     else { this.link = []; }
   }
   /**
-   * Required-bound Value Set for gender (Patient.gender)
-   */
-  public static get genderRequiredCodes() {
-    return AdministrativeGenderCodes;
-  }
-  /**
-   * Extensible-bound Value Set for maritalStatus (Patient.maritalStatus)
-   */
-  public static get maritalStatusExtensibleCodings():MaritalStatusCodingType {
-    return MaritalStatusCodings;
-  }
-  /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'Patient' }
-    if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType fhir: Patient.resourceType:"Patient"', expression: [expression] });
-    }
-    if (this["identifier"]) { this.identifier.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.identifier[${i}]`)); }) }
-    if (this["active"]) { issues.push(...this.active.doModelValidation(expression+'.active')); }
-    if (this["name"]) { this.name.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.name[${i}]`)); }) }
-    if (this["telecom"]) { this.telecom.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.telecom[${i}]`)); }) }
-    if (this['gender'] && (!Object.values(AdministrativeGenderCodes).includes(this.gender.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'gender (Patient.gender) of type code is missing code for Required binding to: AdministrativeGender', expression: [expression] });
-    }
-    if (this["gender"]) { issues.push(...this.gender.doModelValidation(expression+'.gender')); }
-    if (this["birthDate"]) { issues.push(...this.birthDate.doModelValidation(expression+'.birthDate')); }
-    if (this["address"]) { this.address.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.address[${i}]`)); }) }
-    if (this["maritalStatus"]) { issues.push(...this.maritalStatus.doModelValidation(expression+'.maritalStatus')); }
-    if (this["photo"]) { this.photo.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.photo[${i}]`)); }) }
-    if (this["contact"]) { this.contact.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.contact[${i}]`)); }) }
-    if (this["communication"]) { this.communication.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.communication[${i}]`)); }) }
-    if (this["generalPractitioner"]) { this.generalPractitioner.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.generalPractitioner[${i}]`)); }) }
-    if (this["managingOrganization"]) { issues.push(...this.managingOrganization.doModelValidation(expression+'.managingOrganization')); }
-    if (this["link"]) { this.link.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.link[${i}]`)); }) }
+    this.vReqS('resourceType',expression)
+    this.vOptA('identifier',expression)
+    this.vOptS('active',expression)
+    this.vOptA('name',expression)
+    this.vOptA('telecom',expression)
+    this.vOptSV('gender',expression,'AdministrativeGender',AdministrativeGenderVsValidation,'r')
+    this.vOptS('birthDate',expression)
+    this.vOptS('deceased',expression)
+    this.vOptA('address',expression)
+    this.vOptS('maritalStatus',expression)
+    this.vOptS('multipleBirth',expression)
+    this.vOptA('photo',expression)
+    this.vOptA('contact',expression)
+    this.vOptA('communication',expression)
+    this.vOptA('generalPractitioner',expression)
+    this.vOptS('managingOrganization',expression)
+    this.vOptA('link',expression)
     return issues;
   }
 }

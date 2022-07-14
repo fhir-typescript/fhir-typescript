@@ -136,17 +136,6 @@ export declare class EvidenceVariableCharacteristic extends fhir.BackboneElement
      */
     constructor(source?: Partial<EvidenceVariableCharacteristicArgs>, options?: fhir.FhirConstructorOptions);
     /**
-     * Required-bound Value Set for groupMeasure (EvidenceVariable.characteristic.groupMeasure)
-     */
-    static get groupMeasureRequiredCodes(): {
-        readonly Mean: "mean";
-        readonly MeanOfStudyMeans: "mean-of-mean";
-        readonly MeanOfStudyMedins: "mean-of-median";
-        readonly Median: "median";
-        readonly MedianOfStudyMeans: "median-of-mean";
-        readonly MedianOfStudyMedians: "median-of-median";
-    };
-    /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
     doModelValidation(expression?: string): fhir.FtsIssue[];
@@ -452,23 +441,6 @@ export declare class EvidenceVariable extends fhir.DomainResource {
      * Default constructor for EvidenceVariable - initializes any required elements to null if a value is not provided.
      */
     constructor(source?: Partial<EvidenceVariableArgs>, options?: fhir.FhirConstructorOptions);
-    /**
-     * Required-bound Value Set for status (EvidenceVariable.status)
-     */
-    static get statusRequiredCodes(): {
-        readonly Active: "active";
-        readonly Draft: "draft";
-        readonly Retired: "retired";
-        readonly Unknown: "unknown";
-    };
-    /**
-     * Required-bound Value Set for type (EvidenceVariable.type)
-     */
-    static get typeRequiredCodes(): {
-        readonly Continuous: "continuous";
-        readonly Descriptive: "descriptive";
-        readonly Dichotomous: "dichotomous";
-    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */

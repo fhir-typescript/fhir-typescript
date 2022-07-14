@@ -98,21 +98,6 @@ export declare class RelatedArtifact extends fhir.FhirElement {
      */
     constructor(source?: Partial<RelatedArtifactArgs>, options?: fhir.FhirConstructorOptions);
     /**
-     * Required-bound Value Set for type (RelatedArtifact.type)
-     */
-    static get typeRequiredCodes(): {
-        readonly Citation: "citation";
-        readonly ComposedOf: "composed-of"; /**
-         * Extended properties for primitive element: RelatedArtifact.type
-         */
-        readonly DependsOn: "depends-on";
-        readonly DerivedFrom: "derived-from";
-        readonly Documentation: "documentation";
-        readonly Justification: "justification";
-        readonly Predecessor: "predecessor";
-        readonly Successor: "successor";
-    };
-    /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
     doModelValidation(expression?: string): fhir.FtsIssue[];

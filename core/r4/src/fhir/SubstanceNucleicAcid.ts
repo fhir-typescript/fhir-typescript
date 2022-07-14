@@ -91,10 +91,10 @@ export class SubstanceNucleicAcidSubunitLinkage extends fhir.BackboneElement {
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'SubstanceNucleicAcid.subunit.linkage' }
-    if (this["connectivity"]) { issues.push(...this.connectivity.doModelValidation(expression+'.connectivity')); }
-    if (this["identifier"]) { issues.push(...this.identifier.doModelValidation(expression+'.identifier')); }
-    if (this["name"]) { issues.push(...this.name.doModelValidation(expression+'.name')); }
-    if (this["residueSite"]) { issues.push(...this.residueSite.doModelValidation(expression+'.residueSite')); }
+    this.vOptS('connectivity',expression)
+    this.vOptS('identifier',expression)
+    this.vOptS('name',expression)
+    this.vOptS('residueSite',expression)
     return issues;
   }
 }
@@ -167,9 +167,9 @@ export class SubstanceNucleicAcidSubunitSugar extends fhir.BackboneElement {
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'SubstanceNucleicAcid.subunit.sugar' }
-    if (this["identifier"]) { issues.push(...this.identifier.doModelValidation(expression+'.identifier')); }
-    if (this["name"]) { issues.push(...this.name.doModelValidation(expression+'.name')); }
-    if (this["residueSite"]) { issues.push(...this.residueSite.doModelValidation(expression+'.residueSite')); }
+    this.vOptS('identifier',expression)
+    this.vOptS('name',expression)
+    this.vOptS('residueSite',expression)
     return issues;
   }
 }
@@ -297,14 +297,14 @@ export class SubstanceNucleicAcidSubunit extends fhir.BackboneElement {
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'SubstanceNucleicAcid.subunit' }
-    if (this["subunit"]) { issues.push(...this.subunit.doModelValidation(expression+'.subunit')); }
-    if (this["sequence"]) { issues.push(...this.sequence.doModelValidation(expression+'.sequence')); }
-    if (this["length"]) { issues.push(...this.length.doModelValidation(expression+'.length')); }
-    if (this["sequenceAttachment"]) { issues.push(...this.sequenceAttachment.doModelValidation(expression+'.sequenceAttachment')); }
-    if (this["fivePrime"]) { issues.push(...this.fivePrime.doModelValidation(expression+'.fivePrime')); }
-    if (this["threePrime"]) { issues.push(...this.threePrime.doModelValidation(expression+'.threePrime')); }
-    if (this["linkage"]) { this.linkage.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.linkage[${i}]`)); }) }
-    if (this["sugar"]) { this.sugar.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.sugar[${i}]`)); }) }
+    this.vOptS('subunit',expression)
+    this.vOptS('sequence',expression)
+    this.vOptS('length',expression)
+    this.vOptS('sequenceAttachment',expression)
+    this.vOptS('fivePrime',expression)
+    this.vOptS('threePrime',expression)
+    this.vOptA('linkage',expression)
+    this.vOptA('sugar',expression)
     return issues;
   }
 }
@@ -405,14 +405,12 @@ export class SubstanceNucleicAcid extends fhir.DomainResource {
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'SubstanceNucleicAcid' }
-    if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType fhir: SubstanceNucleicAcid.resourceType:"SubstanceNucleicAcid"', expression: [expression] });
-    }
-    if (this["sequenceType"]) { issues.push(...this.sequenceType.doModelValidation(expression+'.sequenceType')); }
-    if (this["numberOfSubunits"]) { issues.push(...this.numberOfSubunits.doModelValidation(expression+'.numberOfSubunits')); }
-    if (this["areaOfHybridisation"]) { issues.push(...this.areaOfHybridisation.doModelValidation(expression+'.areaOfHybridisation')); }
-    if (this["oligoNucleotideType"]) { issues.push(...this.oligoNucleotideType.doModelValidation(expression+'.oligoNucleotideType')); }
-    if (this["subunit"]) { this.subunit.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.subunit[${i}]`)); }) }
+    this.vReqS('resourceType',expression)
+    this.vOptS('sequenceType',expression)
+    this.vOptS('numberOfSubunits',expression)
+    this.vOptS('areaOfHybridisation',expression)
+    this.vOptS('oligoNucleotideType',expression)
+    this.vOptA('subunit',expression)
     return issues;
   }
 }

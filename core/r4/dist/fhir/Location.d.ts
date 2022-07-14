@@ -1,9 +1,7 @@
 import * as fhir from '../fhir.js';
 import { DaysOfWeekCodeType } from '../fhirValueSets/DaysOfWeekCodes.js';
 import { LocationStatusCodeType } from '../fhirValueSets/LocationStatusCodes.js';
-import { V20116CodingType } from '../fhirValueSets/V20116Codings.js';
 import { LocationModeCodeType } from '../fhirValueSets/LocationModeCodes.js';
-import { V3ServiceDeliveryLocationRoleTypeCodingType } from '../fhirValueSets/V3ServiceDeliveryLocationRoleTypeCodings.js';
 /**
  * Valid arguments for the LocationPosition type.
  */
@@ -128,18 +126,6 @@ export declare class LocationHoursOfOperation extends fhir.BackboneElement {
      * Default constructor for LocationHoursOfOperation - initializes any required elements to null if a value is not provided.
      */
     constructor(source?: Partial<LocationHoursOfOperationArgs>, options?: fhir.FhirConstructorOptions);
-    /**
-     * Required-bound Value Set for daysOfWeek (Location.hoursOfOperation.daysOfWeek)
-     */
-    static get daysOfWeekRequiredCodes(): {
-        readonly Friday: "fri";
-        readonly Monday: "mon";
-        readonly Saturday: "sat";
-        readonly Sunday: "sun";
-        readonly Thursday: "thu";
-        readonly Tuesday: "tue";
-        readonly Wednesday: "wed";
-    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
@@ -332,29 +318,6 @@ export declare class Location extends fhir.DomainResource {
      * Default constructor for Location - initializes any required elements to null if a value is not provided.
      */
     constructor(source?: Partial<LocationArgs>, options?: fhir.FhirConstructorOptions);
-    /**
-     * Required-bound Value Set for status (Location.status)
-     */
-    static get statusRequiredCodes(): {
-        readonly Active: "active";
-        readonly Inactive: "inactive";
-        readonly Suspended: "suspended";
-    };
-    /**
-     * Preferred-bound Value Set for operationalStatus (Location.operationalStatus)
-     */
-    static get operationalStatusPreferredCodings(): V20116CodingType;
-    /**
-     * Required-bound Value Set for mode (Location.mode)
-     */
-    static get modeRequiredCodes(): {
-        readonly Instance: "instance";
-        readonly Kind: "kind";
-    };
-    /**
-     * Extensible-bound Value Set for type (Location.type)
-     */
-    static get typeExtensibleCodings(): V3ServiceDeliveryLocationRoleTypeCodingType;
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */

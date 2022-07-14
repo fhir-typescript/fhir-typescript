@@ -76,10 +76,10 @@ export class DomainResource extends fhir.Resource {
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'DomainResource' }
-    if (this["text"]) { issues.push(...this.text.doModelValidation(expression+'.text')); }
-    if (this["contained"]) { this.contained.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.contained[${i}]`)); }) }
-    if (this["extension"]) { this.extension.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.extension[${i}]`)); }) }
-    if (this["modifierExtension"]) { this.modifierExtension.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.modifierExtension[${i}]`)); }) }
+    this.vOptS('text',expression)
+    this.vOptA('contained',expression)
+    this.vOptA('extension',expression)
+    this.vOptA('modifierExtension',expression)
     return issues;
   }
   /**

@@ -58,8 +58,8 @@ export class ContactDetail extends fhir.FhirElement {
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'ContactDetail' }
-    if (this["name"]) { issues.push(...this.name.doModelValidation(expression+'.name')); }
-    if (this["telecom"]) { this.telecom.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.telecom[${i}]`)); }) }
+    this.vOptS('name',expression)
+    this.vOptA('telecom',expression)
     return issues;
   }
 }

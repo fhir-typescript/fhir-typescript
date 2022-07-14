@@ -6,17 +6,17 @@
 import * as fhir from '../fhir.js';
 
 // @ts-ignore
-import { InvoicePriceComponentTypeCodings, InvoicePriceComponentTypeCodingType,} from '../fhirValueSets/InvoicePriceComponentTypeCodings.js';
-// @ts-ignore
 import { InvoicePriceComponentTypeCodes,  InvoicePriceComponentTypeCodeType } from '../fhirValueSets/InvoicePriceComponentTypeCodes.js';
 // @ts-ignore
-import { PublicationStatusCodings, PublicationStatusCodingType,} from '../fhirValueSets/PublicationStatusCodings.js';
+import { InvoicePriceComponentTypeVsValidation } from '../fhirValueSets/InvoicePriceComponentTypeVsValidation.js';
 // @ts-ignore
 import { PublicationStatusCodes,  PublicationStatusCodeType } from '../fhirValueSets/PublicationStatusCodes.js';
 // @ts-ignore
-import { ChargeitemBillingCodings, ChargeitemBillingCodingType,} from '../fhirValueSets/ChargeitemBillingCodings.js';
+import { PublicationStatusVsValidation } from '../fhirValueSets/PublicationStatusVsValidation.js';
 // @ts-ignore
 import { ChargeitemBillingCodes,  ChargeitemBillingCodeType } from '../fhirValueSets/ChargeitemBillingCodes.js';
+// @ts-ignore
+import { ChargeitemBillingVsValidation } from '../fhirValueSets/ChargeitemBillingVsValidation.js';
 /**
  * Valid arguments for the ChargeItemDefinitionApplicability type.
  */
@@ -96,9 +96,9 @@ export class ChargeItemDefinitionApplicability extends fhir.BackboneElement {
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'ChargeItemDefinition.applicability' }
-    if (this["description"]) { issues.push(...this.description.doModelValidation(expression+'.description')); }
-    if (this["language"]) { issues.push(...this.language.doModelValidation(expression+'.language')); }
-    if (this["expression"]) { issues.push(...this.expression.doModelValidation(expression+'.expression')); }
+    this.vOptS('description',expression)
+    this.vOptS('language',expression)
+    this.vOptS('expression',expression)
     return issues;
   }
 }
@@ -176,27 +176,15 @@ export class ChargeItemDefinitionPropertyGroupPriceComponent extends fhir.Backbo
     if (source['amount']) { this.amount = new fhir.Money(source.amount); }
   }
   /**
-   * Required-bound Value Set for type (ChargeItemDefinition.propertyGroup.priceComponent.type)
-   */
-  public static get typeRequiredCodes() {
-    return InvoicePriceComponentTypeCodes;
-  }
-  /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'ChargeItemDefinition.propertyGroup.priceComponent' }
-    if (!this['type']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property type fhir: ChargeItemDefinition.propertyGroup.priceComponent.type:code', expression: [expression] });
-    }
-    if (this['type'] && (!Object.values(InvoicePriceComponentTypeCodes).includes(this.type.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'type (ChargeItemDefinition.propertyGroup.priceComponent.type) of type code is missing code for Required binding to: InvoicePriceComponentType', expression: [expression] });
-    }
-    if (this["type"]) { issues.push(...this.type.doModelValidation(expression+'.type')); }
-    if (this["code"]) { issues.push(...this.code.doModelValidation(expression+'.code')); }
-    if (this["factor"]) { issues.push(...this.factor.doModelValidation(expression+'.factor')); }
-    if (this["amount"]) { issues.push(...this.amount.doModelValidation(expression+'.amount')); }
+    this.vReqSV('type',expression,'InvoicePriceComponentType',InvoicePriceComponentTypeVsValidation,'r')
+    this.vOptS('code',expression)
+    this.vOptS('factor',expression)
+    this.vOptS('amount',expression)
     return issues;
   }
 }
@@ -246,8 +234,8 @@ export class ChargeItemDefinitionPropertyGroup extends fhir.BackboneElement {
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'ChargeItemDefinition.propertyGroup' }
-    if (this["applicability"]) { this.applicability.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.applicability[${i}]`)); }) }
-    if (this["priceComponent"]) { this.priceComponent.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.priceComponent[${i}]`)); }) }
+    this.vOptA('applicability',expression)
+    this.vOptA('priceComponent',expression)
     return issues;
   }
 }
@@ -622,52 +610,35 @@ export class ChargeItemDefinition extends fhir.DomainResource {
     else { this.propertyGroup = []; }
   }
   /**
-   * Required-bound Value Set for status (ChargeItemDefinition.status)
-   */
-  public static get statusRequiredCodes() {
-    return PublicationStatusCodes;
-  }
-  /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'ChargeItemDefinition' }
-    if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType fhir: ChargeItemDefinition.resourceType:"ChargeItemDefinition"', expression: [expression] });
-    }
-    if (!this['url']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property url fhir: ChargeItemDefinition.url:uri', expression: [expression] });
-    }
-    if (this["url"]) { issues.push(...this.url.doModelValidation(expression+'.url')); }
-    if (this["identifier"]) { this.identifier.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.identifier[${i}]`)); }) }
-    if (this["version"]) { issues.push(...this.version.doModelValidation(expression+'.version')); }
-    if (this["title"]) { issues.push(...this.title.doModelValidation(expression+'.title')); }
-    if (this["derivedFromUri"]) { this.derivedFromUri.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.derivedFromUri[${i}]`)); }) }
-    if (this["partOf"]) { this.partOf.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.partOf[${i}]`)); }) }
-    if (this["replaces"]) { this.replaces.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.replaces[${i}]`)); }) }
-    if (!this['status']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status fhir: ChargeItemDefinition.status:code', expression: [expression] });
-    }
-    if (this['status'] && (!Object.values(PublicationStatusCodes).includes(this.status.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'status (ChargeItemDefinition.status) of type code is missing code for Required binding to: PublicationStatus', expression: [expression] });
-    }
-    if (this["status"]) { issues.push(...this.status.doModelValidation(expression+'.status')); }
-    if (this["experimental"]) { issues.push(...this.experimental.doModelValidation(expression+'.experimental')); }
-    if (this["date"]) { issues.push(...this.date.doModelValidation(expression+'.date')); }
-    if (this["publisher"]) { issues.push(...this.publisher.doModelValidation(expression+'.publisher')); }
-    if (this["contact"]) { this.contact.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.contact[${i}]`)); }) }
-    if (this["description"]) { issues.push(...this.description.doModelValidation(expression+'.description')); }
-    if (this["useContext"]) { this.useContext.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.useContext[${i}]`)); }) }
-    if (this["jurisdiction"]) { this.jurisdiction.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.jurisdiction[${i}]`)); }) }
-    if (this["copyright"]) { issues.push(...this.copyright.doModelValidation(expression+'.copyright')); }
-    if (this["approvalDate"]) { issues.push(...this.approvalDate.doModelValidation(expression+'.approvalDate')); }
-    if (this["lastReviewDate"]) { issues.push(...this.lastReviewDate.doModelValidation(expression+'.lastReviewDate')); }
-    if (this["effectivePeriod"]) { issues.push(...this.effectivePeriod.doModelValidation(expression+'.effectivePeriod')); }
-    if (this["code"]) { issues.push(...this.code.doModelValidation(expression+'.code')); }
-    if (this["instance"]) { this.instance.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.instance[${i}]`)); }) }
-    if (this["applicability"]) { this.applicability.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.applicability[${i}]`)); }) }
-    if (this["propertyGroup"]) { this.propertyGroup.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.propertyGroup[${i}]`)); }) }
+    this.vReqS('resourceType',expression)
+    this.vReqS('url',expression)
+    this.vOptA('identifier',expression)
+    this.vOptS('version',expression)
+    this.vOptS('title',expression)
+    this.vOptA('derivedFromUri',expression)
+    this.vOptA('partOf',expression)
+    this.vOptA('replaces',expression)
+    this.vReqSV('status',expression,'PublicationStatus',PublicationStatusVsValidation,'r')
+    this.vOptS('experimental',expression)
+    this.vOptS('date',expression)
+    this.vOptS('publisher',expression)
+    this.vOptA('contact',expression)
+    this.vOptS('description',expression)
+    this.vOptA('useContext',expression)
+    this.vOptA('jurisdiction',expression)
+    this.vOptS('copyright',expression)
+    this.vOptS('approvalDate',expression)
+    this.vOptS('lastReviewDate',expression)
+    this.vOptS('effectivePeriod',expression)
+    this.vOptS('code',expression)
+    this.vOptA('instance',expression)
+    this.vOptA('applicability',expression)
+    this.vOptA('propertyGroup',expression)
     return issues;
   }
 }

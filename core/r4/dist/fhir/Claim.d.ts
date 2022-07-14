@@ -1,7 +1,5 @@
 import * as fhir from '../fhir.js';
-import { V3ActIncidentCodingType } from '../fhirValueSets/V3ActIncidentCodings.js';
 import { FmStatusCodeType } from '../fhirValueSets/FmStatusCodes.js';
-import { ClaimTypeCodingType } from '../fhirValueSets/ClaimTypeCodings.js';
 import { ClaimUseCodeType } from '../fhirValueSets/ClaimUseCodes.js';
 /**
  * Valid arguments for the ClaimRelated type.
@@ -578,10 +576,6 @@ export declare class ClaimAccident extends fhir.BackboneElement {
      * Default constructor for ClaimAccident - initializes any required elements to null if a value is not provided.
      */
     constructor(source?: Partial<ClaimAccidentArgs>, options?: fhir.FhirConstructorOptions);
-    /**
-     * Extensible-bound Value Set for type (Claim.accident.type)
-     */
-    static get typeExtensibleCodings(): V3ActIncidentCodingType;
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
@@ -1326,27 +1320,6 @@ export declare class Claim extends fhir.DomainResource {
      * Default constructor for Claim - initializes any required elements to null if a value is not provided.
      */
     constructor(source?: Partial<ClaimArgs>, options?: fhir.FhirConstructorOptions);
-    /**
-     * Required-bound Value Set for status (Claim.status)
-     */
-    static get statusRequiredCodes(): {
-        readonly Active: "active";
-        readonly Cancelled: "cancelled";
-        readonly Draft: "draft";
-        readonly EnteredInError: "entered-in-error";
-    };
-    /**
-     * Extensible-bound Value Set for type (Claim.type)
-     */
-    static get typeExtensibleCodings(): ClaimTypeCodingType;
-    /**
-     * Required-bound Value Set for use (Claim.use)
-     */
-    static get useRequiredCodes(): {
-        readonly Claim: "claim";
-        readonly Preauthorization: "preauthorization";
-        readonly Predetermination: "predetermination";
-    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */

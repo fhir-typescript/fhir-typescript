@@ -6,21 +6,21 @@
 import * as fhir from '../fhir.js';
 
 // @ts-ignore
-import { MeasurePopulationCodings, MeasurePopulationCodingType,} from '../fhirValueSets/MeasurePopulationCodings.js';
-// @ts-ignore
 import { MeasurePopulationCodes,  MeasurePopulationCodeType } from '../fhirValueSets/MeasurePopulationCodes.js';
 // @ts-ignore
-import { MeasureReportStatusCodings, MeasureReportStatusCodingType,} from '../fhirValueSets/MeasureReportStatusCodings.js';
+import { MeasurePopulationVsValidation } from '../fhirValueSets/MeasurePopulationVsValidation.js';
 // @ts-ignore
 import { MeasureReportStatusCodes,  MeasureReportStatusCodeType } from '../fhirValueSets/MeasureReportStatusCodes.js';
 // @ts-ignore
-import { MeasureReportTypeCodings, MeasureReportTypeCodingType,} from '../fhirValueSets/MeasureReportTypeCodings.js';
+import { MeasureReportStatusVsValidation } from '../fhirValueSets/MeasureReportStatusVsValidation.js';
 // @ts-ignore
 import { MeasureReportTypeCodes,  MeasureReportTypeCodeType } from '../fhirValueSets/MeasureReportTypeCodes.js';
 // @ts-ignore
-import { MeasureImprovementNotationCodings, MeasureImprovementNotationCodingType,} from '../fhirValueSets/MeasureImprovementNotationCodings.js';
+import { MeasureReportTypeVsValidation } from '../fhirValueSets/MeasureReportTypeVsValidation.js';
 // @ts-ignore
 import { MeasureImprovementNotationCodes,  MeasureImprovementNotationCodeType } from '../fhirValueSets/MeasureImprovementNotationCodes.js';
+// @ts-ignore
+import { MeasureImprovementNotationVsValidation } from '../fhirValueSets/MeasureImprovementNotationVsValidation.js';
 /**
  * Valid arguments for the MeasureReportGroupPopulation type.
  */
@@ -77,20 +77,14 @@ export class MeasureReportGroupPopulation extends fhir.BackboneElement {
     if (source['subjectResults']) { this.subjectResults = new fhir.Reference(source.subjectResults); }
   }
   /**
-   * Extensible-bound Value Set for code (MeasureReport.group.population.code)
-   */
-  public static get codeExtensibleCodings():MeasurePopulationCodingType {
-    return MeasurePopulationCodings;
-  }
-  /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'MeasureReport.group.population' }
-    if (this["code"]) { issues.push(...this.code.doModelValidation(expression+'.code')); }
-    if (this["count"]) { issues.push(...this.count.doModelValidation(expression+'.count')); }
-    if (this["subjectResults"]) { issues.push(...this.subjectResults.doModelValidation(expression+'.subjectResults')); }
+    this.vOptS('code',expression)
+    this.vOptS('count',expression)
+    this.vOptS('subjectResults',expression)
     return issues;
   }
 }
@@ -140,14 +134,8 @@ export class MeasureReportGroupStratifierStratumComponent extends fhir.BackboneE
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'MeasureReport.group.stratifier.stratum.component' }
-    if (!this['code']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property code fhir: MeasureReport.group.stratifier.stratum.component.code:CodeableConcept', expression: [expression] });
-    }
-    if (this["code"]) { issues.push(...this.code.doModelValidation(expression+'.code')); }
-    if (!this['value']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property value fhir: MeasureReport.group.stratifier.stratum.component.value:CodeableConcept', expression: [expression] });
-    }
-    if (this["value"]) { issues.push(...this.value.doModelValidation(expression+'.value')); }
+    this.vReqS('code',expression)
+    this.vReqS('value',expression)
     return issues;
   }
 }
@@ -207,20 +195,14 @@ export class MeasureReportGroupStratifierStratumPopulation extends fhir.Backbone
     if (source['subjectResults']) { this.subjectResults = new fhir.Reference(source.subjectResults); }
   }
   /**
-   * Extensible-bound Value Set for code (MeasureReport.group.stratifier.stratum.population.code)
-   */
-  public static get codeExtensibleCodings():MeasurePopulationCodingType {
-    return MeasurePopulationCodings;
-  }
-  /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'MeasureReport.group.stratifier.stratum.population' }
-    if (this["code"]) { issues.push(...this.code.doModelValidation(expression+'.code')); }
-    if (this["count"]) { issues.push(...this.count.doModelValidation(expression+'.count')); }
-    if (this["subjectResults"]) { issues.push(...this.subjectResults.doModelValidation(expression+'.subjectResults')); }
+    this.vOptS('code',expression)
+    this.vOptS('count',expression)
+    this.vOptS('subjectResults',expression)
     return issues;
   }
 }
@@ -288,10 +270,10 @@ export class MeasureReportGroupStratifierStratum extends fhir.BackboneElement {
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'MeasureReport.group.stratifier.stratum' }
-    if (this["value"]) { issues.push(...this.value.doModelValidation(expression+'.value')); }
-    if (this["component"]) { this.component.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.component[${i}]`)); }) }
-    if (this["population"]) { this.population.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.population[${i}]`)); }) }
-    if (this["measureScore"]) { issues.push(...this.measureScore.doModelValidation(expression+'.measureScore')); }
+    this.vOptS('value',expression)
+    this.vOptA('component',expression)
+    this.vOptA('population',expression)
+    this.vOptS('measureScore',expression)
     return issues;
   }
 }
@@ -341,8 +323,8 @@ export class MeasureReportGroupStratifier extends fhir.BackboneElement {
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'MeasureReport.group.stratifier' }
-    if (this["code"]) { this.code.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.code[${i}]`)); }) }
-    if (this["stratum"]) { this.stratum.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.stratum[${i}]`)); }) }
+    this.vOptA('code',expression)
+    this.vOptA('stratum',expression)
     return issues;
   }
 }
@@ -410,10 +392,10 @@ export class MeasureReportGroup extends fhir.BackboneElement {
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'MeasureReport.group' }
-    if (this["code"]) { issues.push(...this.code.doModelValidation(expression+'.code')); }
-    if (this["population"]) { this.population.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.population[${i}]`)); }) }
-    if (this["measureScore"]) { issues.push(...this.measureScore.doModelValidation(expression+'.measureScore')); }
-    if (this["stratifier"]) { this.stratifier.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.stratifier[${i}]`)); }) }
+    this.vOptS('code',expression)
+    this.vOptA('population',expression)
+    this.vOptS('measureScore',expression)
+    this.vOptA('stratifier',expression)
     return issues;
   }
 }
@@ -585,64 +567,23 @@ export class MeasureReport extends fhir.DomainResource {
     else { this.evaluatedResource = []; }
   }
   /**
-   * Required-bound Value Set for status (MeasureReport.status)
-   */
-  public static get statusRequiredCodes() {
-    return MeasureReportStatusCodes;
-  }
-  /**
-   * Required-bound Value Set for type (MeasureReport.type)
-   */
-  public static get typeRequiredCodes() {
-    return MeasureReportTypeCodes;
-  }
-  /**
-   * Required-bound Value Set for improvementNotation (MeasureReport.improvementNotation)
-   */
-  public static get improvementNotationRequiredCodes() {
-    return MeasureImprovementNotationCodes;
-  }
-  /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'MeasureReport' }
-    if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType fhir: MeasureReport.resourceType:"MeasureReport"', expression: [expression] });
-    }
-    if (this["identifier"]) { this.identifier.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.identifier[${i}]`)); }) }
-    if (!this['status']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status fhir: MeasureReport.status:code', expression: [expression] });
-    }
-    if (this['status'] && (!Object.values(MeasureReportStatusCodes).includes(this.status.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'status (MeasureReport.status) of type code is missing code for Required binding to: MeasureReportStatus', expression: [expression] });
-    }
-    if (this["status"]) { issues.push(...this.status.doModelValidation(expression+'.status')); }
-    if (!this['type']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property type fhir: MeasureReport.type:code', expression: [expression] });
-    }
-    if (this['type'] && (!Object.values(MeasureReportTypeCodes).includes(this.type.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'type (MeasureReport.type) of type code is missing code for Required binding to: MeasureReportType', expression: [expression] });
-    }
-    if (this["type"]) { issues.push(...this.type.doModelValidation(expression+'.type')); }
-    if (!this['measure']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property measure fhir: MeasureReport.measure:canonical', expression: [expression] });
-    }
-    if (this["measure"]) { issues.push(...this.measure.doModelValidation(expression+'.measure')); }
-    if (this["subject"]) { issues.push(...this.subject.doModelValidation(expression+'.subject')); }
-    if (this["date"]) { issues.push(...this.date.doModelValidation(expression+'.date')); }
-    if (this["reporter"]) { issues.push(...this.reporter.doModelValidation(expression+'.reporter')); }
-    if (!this['period']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property period fhir: MeasureReport.period:Period', expression: [expression] });
-    }
-    if (this["period"]) { issues.push(...this.period.doModelValidation(expression+'.period')); }
-    if (this['improvementNotation'] && (!this.improvementNotation.hasCodingFromObject(MeasureImprovementNotationCodings))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'improvementNotation (MeasureReport.improvementNotation) of type CodeableConcept is missing code for Required binding to: MeasureImprovementNotation', expression: [expression] });
-    }
-    if (this["improvementNotation"]) { issues.push(...this.improvementNotation.doModelValidation(expression+'.improvementNotation')); }
-    if (this["group"]) { this.group.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.group[${i}]`)); }) }
-    if (this["evaluatedResource"]) { this.evaluatedResource.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.evaluatedResource[${i}]`)); }) }
+    this.vReqS('resourceType',expression)
+    this.vOptA('identifier',expression)
+    this.vReqSV('status',expression,'MeasureReportStatus',MeasureReportStatusVsValidation,'r')
+    this.vReqSV('type',expression,'MeasureReportType',MeasureReportTypeVsValidation,'r')
+    this.vReqS('measure',expression)
+    this.vOptS('subject',expression)
+    this.vOptS('date',expression)
+    this.vOptS('reporter',expression)
+    this.vReqS('period',expression)
+    this.vOptSV('improvementNotation',expression,'MeasureImprovementNotation',MeasureImprovementNotationVsValidation,'r')
+    this.vOptA('group',expression)
+    this.vOptA('evaluatedResource',expression)
     return issues;
   }
 }

@@ -6,33 +6,33 @@
 import * as fhir from '../fhir.js';
 
 // @ts-ignore
-import { ConditionCodings, ConditionCodingType,} from '../fhirValueSets/ConditionCodings.js';
-// @ts-ignore
 import { ConditionCodes,  ConditionCodeType } from '../fhirValueSets/ConditionCodes.js';
 // @ts-ignore
-import { ConditionOutcomeCodings, ConditionOutcomeCodingType,} from '../fhirValueSets/ConditionOutcomeCodings.js';
+import { ConditionVsValidation } from '../fhirValueSets/ConditionVsValidation.js';
 // @ts-ignore
 import { ConditionOutcomeCodes,  ConditionOutcomeCodeType } from '../fhirValueSets/ConditionOutcomeCodes.js';
 // @ts-ignore
-import { HistoryStatusCodings, HistoryStatusCodingType,} from '../fhirValueSets/HistoryStatusCodings.js';
+import { ConditionOutcomeVsValidation } from '../fhirValueSets/ConditionOutcomeVsValidation.js';
 // @ts-ignore
 import { HistoryStatusCodes,  HistoryStatusCodeType } from '../fhirValueSets/HistoryStatusCodes.js';
 // @ts-ignore
-import { HistoryAbsentReasonCodings, HistoryAbsentReasonCodingType,} from '../fhirValueSets/HistoryAbsentReasonCodings.js';
+import { HistoryStatusVsValidation } from '../fhirValueSets/HistoryStatusVsValidation.js';
 // @ts-ignore
 import { HistoryAbsentReasonCodes,  HistoryAbsentReasonCodeType } from '../fhirValueSets/HistoryAbsentReasonCodes.js';
 // @ts-ignore
-import { V3FamilyMemberCodings, V3FamilyMemberCodingType,} from '../fhirValueSets/V3FamilyMemberCodings.js';
+import { HistoryAbsentReasonVsValidation } from '../fhirValueSets/HistoryAbsentReasonVsValidation.js';
 // @ts-ignore
 import { V3FamilyMemberCodes,  V3FamilyMemberCodeType } from '../fhirValueSets/V3FamilyMemberCodes.js';
 // @ts-ignore
-import { AdministrativeGenderCodings, AdministrativeGenderCodingType,} from '../fhirValueSets/AdministrativeGenderCodings.js';
+import { V3FamilyMemberVsValidation } from '../fhirValueSets/V3FamilyMemberVsValidation.js';
 // @ts-ignore
 import { AdministrativeGenderCodes,  AdministrativeGenderCodeType } from '../fhirValueSets/AdministrativeGenderCodes.js';
 // @ts-ignore
-import { ClinicalFindingsCodings, ClinicalFindingsCodingType,} from '../fhirValueSets/ClinicalFindingsCodings.js';
+import { AdministrativeGenderVsValidation } from '../fhirValueSets/AdministrativeGenderVsValidation.js';
 // @ts-ignore
 import { ClinicalFindingsCodes,  ClinicalFindingsCodeType } from '../fhirValueSets/ClinicalFindingsCodes.js';
+// @ts-ignore
+import { ClinicalFindingsVsValidation } from '../fhirValueSets/ClinicalFindingsVsValidation.js';
 /**
  * Valid arguments for the FamilyMemberHistoryCondition type.
  */
@@ -138,13 +138,11 @@ export class FamilyMemberHistoryCondition extends fhir.BackboneElement {
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'FamilyMemberHistory.condition' }
-    if (!this['code']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property code fhir: FamilyMemberHistory.condition.code:CodeableConcept', expression: [expression] });
-    }
-    if (this["code"]) { issues.push(...this.code.doModelValidation(expression+'.code')); }
-    if (this["outcome"]) { issues.push(...this.outcome.doModelValidation(expression+'.outcome')); }
-    if (this["contributedToDeath"]) { issues.push(...this.contributedToDeath.doModelValidation(expression+'.contributedToDeath')); }
-    if (this["note"]) { this.note.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.note[${i}]`)); }) }
+    this.vReqS('code',expression)
+    this.vOptS('outcome',expression)
+    this.vOptS('contributedToDeath',expression)
+    this.vOptS('onset',expression)
+    this.vOptA('note',expression)
     return issues;
   }
 }
@@ -469,53 +467,30 @@ export class FamilyMemberHistory extends fhir.DomainResource {
     else { this.condition = []; }
   }
   /**
-   * Required-bound Value Set for status (FamilyMemberHistory.status)
-   */
-  public static get statusRequiredCodes() {
-    return HistoryStatusCodes;
-  }
-  /**
-   * Extensible-bound Value Set for sex (FamilyMemberHistory.sex)
-   */
-  public static get sexExtensibleCodings():AdministrativeGenderCodingType {
-    return AdministrativeGenderCodings;
-  }
-  /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'FamilyMemberHistory' }
-    if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType fhir: FamilyMemberHistory.resourceType:"FamilyMemberHistory"', expression: [expression] });
-    }
-    if (this["identifier"]) { this.identifier.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.identifier[${i}]`)); }) }
-    if (this["instantiatesCanonical"]) { this.instantiatesCanonical.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.instantiatesCanonical[${i}]`)); }) }
-    if (this["instantiatesUri"]) { this.instantiatesUri.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.instantiatesUri[${i}]`)); }) }
-    if (!this['status']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status fhir: FamilyMemberHistory.status:code', expression: [expression] });
-    }
-    if (this['status'] && (!Object.values(HistoryStatusCodes).includes(this.status.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'status (FamilyMemberHistory.status) of type code is missing code for Required binding to: HistoryStatus', expression: [expression] });
-    }
-    if (this["status"]) { issues.push(...this.status.doModelValidation(expression+'.status')); }
-    if (this["dataAbsentReason"]) { issues.push(...this.dataAbsentReason.doModelValidation(expression+'.dataAbsentReason')); }
-    if (!this['patient']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property patient fhir: FamilyMemberHistory.patient:Reference', expression: [expression] });
-    }
-    if (this["patient"]) { issues.push(...this.patient.doModelValidation(expression+'.patient')); }
-    if (this["date"]) { issues.push(...this.date.doModelValidation(expression+'.date')); }
-    if (this["name"]) { issues.push(...this.name.doModelValidation(expression+'.name')); }
-    if (!this['relationship']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property relationship fhir: FamilyMemberHistory.relationship:CodeableConcept', expression: [expression] });
-    }
-    if (this["relationship"]) { issues.push(...this.relationship.doModelValidation(expression+'.relationship')); }
-    if (this["sex"]) { issues.push(...this.sex.doModelValidation(expression+'.sex')); }
-    if (this["estimatedAge"]) { issues.push(...this.estimatedAge.doModelValidation(expression+'.estimatedAge')); }
-    if (this["reasonCode"]) { this.reasonCode.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.reasonCode[${i}]`)); }) }
-    if (this["reasonReference"]) { this.reasonReference.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.reasonReference[${i}]`)); }) }
-    if (this["note"]) { this.note.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.note[${i}]`)); }) }
-    if (this["condition"]) { this.condition.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.condition[${i}]`)); }) }
+    this.vReqS('resourceType',expression)
+    this.vOptA('identifier',expression)
+    this.vOptA('instantiatesCanonical',expression)
+    this.vOptA('instantiatesUri',expression)
+    this.vReqSV('status',expression,'HistoryStatus',HistoryStatusVsValidation,'r')
+    this.vOptS('dataAbsentReason',expression)
+    this.vReqS('patient',expression)
+    this.vOptS('date',expression)
+    this.vOptS('name',expression)
+    this.vReqS('relationship',expression)
+    this.vOptS('sex',expression)
+    this.vOptS('born',expression)
+    this.vOptS('age',expression)
+    this.vOptS('estimatedAge',expression)
+    this.vOptS('deceased',expression)
+    this.vOptA('reasonCode',expression)
+    this.vOptA('reasonReference',expression)
+    this.vOptA('note',expression)
+    this.vOptA('condition',expression)
     return issues;
   }
 }

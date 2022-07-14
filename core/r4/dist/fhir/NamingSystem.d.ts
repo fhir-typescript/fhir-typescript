@@ -2,7 +2,6 @@ import * as fhir from '../fhir.js';
 import { NamingsystemIdentifierTypeCodeType } from '../fhirValueSets/NamingsystemIdentifierTypeCodes.js';
 import { PublicationStatusCodeType } from '../fhirValueSets/PublicationStatusCodes.js';
 import { NamingsystemTypeCodeType } from '../fhirValueSets/NamingsystemTypeCodes.js';
-import { IdentifierTypeCodingType } from '../fhirValueSets/IdentifierTypeCodings.js';
 /**
  * Valid arguments for the NamingSystemUniqueId type.
  */
@@ -76,15 +75,6 @@ export declare class NamingSystemUniqueId extends fhir.BackboneElement {
      * Default constructor for NamingSystemUniqueId - initializes any required elements to null if a value is not provided.
      */
     constructor(source?: Partial<NamingSystemUniqueIdArgs>, options?: fhir.FhirConstructorOptions);
-    /**
-     * Required-bound Value Set for type (NamingSystem.uniqueId.type)
-     */
-    static get typeRequiredCodes(): {
-        readonly OID: "oid";
-        readonly Other: "other";
-        readonly URI: "uri";
-        readonly UUID: "uuid";
-    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
@@ -251,27 +241,6 @@ export declare class NamingSystem extends fhir.DomainResource {
      * Default constructor for NamingSystem - initializes any required elements to null if a value is not provided.
      */
     constructor(source?: Partial<NamingSystemArgs>, options?: fhir.FhirConstructorOptions);
-    /**
-     * Required-bound Value Set for status (NamingSystem.status)
-     */
-    static get statusRequiredCodes(): {
-        readonly Active: "active";
-        readonly Draft: "draft";
-        readonly Retired: "retired";
-        readonly Unknown: "unknown";
-    };
-    /**
-     * Required-bound Value Set for kind (NamingSystem.kind)
-     */
-    static get kindRequiredCodes(): {
-        readonly CodeSystem: "codesystem";
-        readonly Identifier: "identifier";
-        readonly Root: "root";
-    };
-    /**
-     * Extensible-bound Value Set for type (NamingSystem.type)
-     */
-    static get typeExtensibleCodings(): IdentifierTypeCodingType;
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */

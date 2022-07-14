@@ -38,6 +38,13 @@ export declare class FhirCode<CodeType extends string = string> extends fhir.Fhi
      */
     doModelValidation(expression?: string): fhir.FtsIssue[];
     /**
+     * Test whether this CodeableConcept contains a specific coding.
+     * @param system System to search for, empty string will match any system.
+     * @param code Code to search for, empty string will match any code.
+     * @returns True if this concept contains the specified coding, false if it does not.
+     */
+    hasCodingFromValidationObj(vsValidation: Readonly<string[]>): boolean;
+    /**
      * Returns a string representation of a string.
      */
     toString(): string;

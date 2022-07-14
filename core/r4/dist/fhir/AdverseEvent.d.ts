@@ -1,6 +1,5 @@
 import * as fhir from '../fhir.js';
 import { AdverseEventActualityCodeType } from '../fhirValueSets/AdverseEventActualityCodes.js';
-import { AdverseEventCategoryCodingType } from '../fhirValueSets/AdverseEventCategoryCodings.js';
 /**
  * Valid arguments for the AdverseEventSuspectEntityCausality type.
  */
@@ -298,36 +297,6 @@ export declare class AdverseEvent extends fhir.DomainResource {
      * Default constructor for AdverseEvent - initializes any required elements to null if a value is not provided.
      */
     constructor(source?: Partial<AdverseEventArgs>, options?: fhir.FhirConstructorOptions);
-    /**
-     * Required-bound Value Set for actuality (AdverseEvent.actuality)
-     */
-    static get actualityRequiredCodes(): {
-        readonly AdverseEvent: "actual";
-        readonly PotentialAdverseEvent: "potential";
-    };
-    /**
-     * Extensible-bound Value Set for category (AdverseEvent.category)
-     */
-    static get categoryExtensibleCodings(): AdverseEventCategoryCodingType;
-    /**
-     * Required-bound Value Set for severity (AdverseEvent.severity)
-     */
-    static get severityRequiredCodes(): {
-        readonly Mild: "mild";
-        readonly Moderate: "moderate";
-        readonly Severe: "severe";
-    };
-    /**
-     * Required-bound Value Set for outcome (AdverseEvent.outcome)
-     */
-    static get outcomeRequiredCodes(): {
-        readonly Fatal: "fatal";
-        readonly Ongoing: "ongoing";
-        readonly Recovering: "recovering";
-        readonly Resolved: "resolved";
-        readonly ResolvedWithSequelae: "resolvedWithSequelae";
-        readonly Unknown: "unknown";
-    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */

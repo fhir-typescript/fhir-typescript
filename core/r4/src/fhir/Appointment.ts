@@ -6,45 +6,45 @@
 import * as fhir from '../fhir.js';
 
 // @ts-ignore
-import { EncounterParticipantTypeCodings, EncounterParticipantTypeCodingType,} from '../fhirValueSets/EncounterParticipantTypeCodings.js';
-// @ts-ignore
 import { EncounterParticipantTypeCodes,  EncounterParticipantTypeCodeType } from '../fhirValueSets/EncounterParticipantTypeCodes.js';
 // @ts-ignore
-import { ParticipantrequiredCodings, ParticipantrequiredCodingType,} from '../fhirValueSets/ParticipantrequiredCodings.js';
+import { EncounterParticipantTypeVsValidation } from '../fhirValueSets/EncounterParticipantTypeVsValidation.js';
 // @ts-ignore
 import { ParticipantrequiredCodes,  ParticipantrequiredCodeType } from '../fhirValueSets/ParticipantrequiredCodes.js';
 // @ts-ignore
-import { ParticipationstatusCodings, ParticipationstatusCodingType,} from '../fhirValueSets/ParticipationstatusCodings.js';
+import { ParticipantrequiredVsValidation } from '../fhirValueSets/ParticipantrequiredVsValidation.js';
 // @ts-ignore
 import { ParticipationstatusCodes,  ParticipationstatusCodeType } from '../fhirValueSets/ParticipationstatusCodes.js';
 // @ts-ignore
-import { AppointmentstatusCodings, AppointmentstatusCodingType,} from '../fhirValueSets/AppointmentstatusCodings.js';
+import { ParticipationstatusVsValidation } from '../fhirValueSets/ParticipationstatusVsValidation.js';
 // @ts-ignore
 import { AppointmentstatusCodes,  AppointmentstatusCodeType } from '../fhirValueSets/AppointmentstatusCodes.js';
 // @ts-ignore
-import { AppointmentCancellationReasonCodings, AppointmentCancellationReasonCodingType,} from '../fhirValueSets/AppointmentCancellationReasonCodings.js';
+import { AppointmentstatusVsValidation } from '../fhirValueSets/AppointmentstatusVsValidation.js';
 // @ts-ignore
 import { AppointmentCancellationReasonCodes,  AppointmentCancellationReasonCodeType } from '../fhirValueSets/AppointmentCancellationReasonCodes.js';
 // @ts-ignore
-import { ServiceCategoryCodings, ServiceCategoryCodingType,} from '../fhirValueSets/ServiceCategoryCodings.js';
+import { AppointmentCancellationReasonVsValidation } from '../fhirValueSets/AppointmentCancellationReasonVsValidation.js';
 // @ts-ignore
 import { ServiceCategoryCodes,  ServiceCategoryCodeType } from '../fhirValueSets/ServiceCategoryCodes.js';
 // @ts-ignore
-import { ServiceTypeCodings, ServiceTypeCodingType,} from '../fhirValueSets/ServiceTypeCodings.js';
+import { ServiceCategoryVsValidation } from '../fhirValueSets/ServiceCategoryVsValidation.js';
 // @ts-ignore
 import { ServiceTypeCodes,  ServiceTypeCodeType } from '../fhirValueSets/ServiceTypeCodes.js';
 // @ts-ignore
-import { C80PracticeCodings, C80PracticeCodingType,} from '../fhirValueSets/C80PracticeCodings.js';
+import { ServiceTypeVsValidation } from '../fhirValueSets/ServiceTypeVsValidation.js';
 // @ts-ignore
 import { C80PracticeCodes,  C80PracticeCodeType } from '../fhirValueSets/C80PracticeCodes.js';
 // @ts-ignore
-import { V20276Codings, V20276CodingType,} from '../fhirValueSets/V20276Codings.js';
+import { C80PracticeVsValidation } from '../fhirValueSets/C80PracticeVsValidation.js';
 // @ts-ignore
 import { V20276Codes,  V20276CodeType } from '../fhirValueSets/V20276Codes.js';
 // @ts-ignore
-import { EncounterReasonCodings, EncounterReasonCodingType,} from '../fhirValueSets/EncounterReasonCodings.js';
+import { V20276VsValidation } from '../fhirValueSets/V20276VsValidation.js';
 // @ts-ignore
 import { EncounterReasonCodes,  EncounterReasonCodeType } from '../fhirValueSets/EncounterReasonCodes.js';
+// @ts-ignore
+import { EncounterReasonVsValidation } from '../fhirValueSets/EncounterReasonVsValidation.js';
 /**
  * Valid arguments for the AppointmentParticipant type.
  */
@@ -133,43 +133,16 @@ export class AppointmentParticipant extends fhir.BackboneElement {
     if (source['period']) { this.period = new fhir.Period(source.period); }
   }
   /**
-   * Extensible-bound Value Set for type (Appointment.participant.type)
-   */
-  public static get typeExtensibleCodings():EncounterParticipantTypeCodingType {
-    return EncounterParticipantTypeCodings;
-  }
-  /**
-   * Required-bound Value Set for required (Appointment.participant.required)
-   */
-  public static get requiredRequiredCodes() {
-    return ParticipantrequiredCodes;
-  }
-  /**
-   * Required-bound Value Set for status (Appointment.participant.status)
-   */
-  public static get statusRequiredCodes() {
-    return ParticipationstatusCodes;
-  }
-  /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'Appointment.participant' }
-    if (this["type"]) { this.type.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.type[${i}]`)); }) }
-    if (this["actor"]) { issues.push(...this.actor.doModelValidation(expression+'.actor')); }
-    if (this['required'] && (!Object.values(ParticipantrequiredCodes).includes(this.required.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'required (Appointment.participant.required) of type code is missing code for Required binding to: Participantrequired', expression: [expression] });
-    }
-    if (this["required"]) { issues.push(...this.required.doModelValidation(expression+'.required')); }
-    if (!this['status']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status fhir: Appointment.participant.status:code', expression: [expression] });
-    }
-    if (this['status'] && (!Object.values(ParticipationstatusCodes).includes(this.status.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'status (Appointment.participant.status) of type code is missing code for Required binding to: Participationstatus', expression: [expression] });
-    }
-    if (this["status"]) { issues.push(...this.status.doModelValidation(expression+'.status')); }
-    if (this["period"]) { issues.push(...this.period.doModelValidation(expression+'.period')); }
+    this.vOptA('type',expression)
+    this.vOptS('actor',expression)
+    this.vOptSV('required',expression,'Participantrequired',ParticipantrequiredVsValidation,'r')
+    this.vReqSV('status',expression,'Participationstatus',ParticipationstatusVsValidation,'r')
+    this.vOptS('period',expression)
     return issues;
   }
 }
@@ -491,73 +464,34 @@ export class Appointment extends fhir.DomainResource {
     else { this.requestedPeriod = []; }
   }
   /**
-   * Required-bound Value Set for status (Appointment.status)
-   */
-  public static get statusRequiredCodes() {
-    return AppointmentstatusCodes;
-  }
-  /**
-   * Preferred-bound Value Set for specialty (Appointment.specialty)
-   */
-  public static get specialtyPreferredCodings():C80PracticeCodingType {
-    return C80PracticeCodings;
-  }
-  /**
-   * Preferred-bound Value Set for appointmentType (Appointment.appointmentType)
-   */
-  public static get appointmentTypePreferredCodings():V20276CodingType {
-    return V20276Codings;
-  }
-  /**
-   * Preferred-bound Value Set for reasonCode (Appointment.reasonCode)
-   */
-  public static get reasonCodePreferredCodings():EncounterReasonCodingType {
-    return EncounterReasonCodings;
-  }
-  /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'Appointment' }
-    if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType fhir: Appointment.resourceType:"Appointment"', expression: [expression] });
-    }
-    if (this["identifier"]) { this.identifier.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.identifier[${i}]`)); }) }
-    if (!this['status']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status fhir: Appointment.status:code', expression: [expression] });
-    }
-    if (this['status'] && (!Object.values(AppointmentstatusCodes).includes(this.status.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'status (Appointment.status) of type code is missing code for Required binding to: Appointmentstatus', expression: [expression] });
-    }
-    if (this["status"]) { issues.push(...this.status.doModelValidation(expression+'.status')); }
-    if (this["cancelationReason"]) { issues.push(...this.cancelationReason.doModelValidation(expression+'.cancelationReason')); }
-    if (this["serviceCategory"]) { this.serviceCategory.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.serviceCategory[${i}]`)); }) }
-    if (this["serviceType"]) { this.serviceType.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.serviceType[${i}]`)); }) }
-    if (this["specialty"]) { this.specialty.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.specialty[${i}]`)); }) }
-    if (this["appointmentType"]) { issues.push(...this.appointmentType.doModelValidation(expression+'.appointmentType')); }
-    if (this["reasonCode"]) { this.reasonCode.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.reasonCode[${i}]`)); }) }
-    if (this["reasonReference"]) { this.reasonReference.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.reasonReference[${i}]`)); }) }
-    if (this["priority"]) { issues.push(...this.priority.doModelValidation(expression+'.priority')); }
-    if (this["description"]) { issues.push(...this.description.doModelValidation(expression+'.description')); }
-    if (this["supportingInformation"]) { this.supportingInformation.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.supportingInformation[${i}]`)); }) }
-    if (this["start"]) { issues.push(...this.start.doModelValidation(expression+'.start')); }
-    if (this["end"]) { issues.push(...this.end.doModelValidation(expression+'.end')); }
-    if (this["minutesDuration"]) { issues.push(...this.minutesDuration.doModelValidation(expression+'.minutesDuration')); }
-    if (this["slot"]) { this.slot.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.slot[${i}]`)); }) }
-    if (this["created"]) { issues.push(...this.created.doModelValidation(expression+'.created')); }
-    if (this["comment"]) { issues.push(...this.comment.doModelValidation(expression+'.comment')); }
-    if (this["patientInstruction"]) { issues.push(...this.patientInstruction.doModelValidation(expression+'.patientInstruction')); }
-    if (this["basedOn"]) { this.basedOn.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.basedOn[${i}]`)); }) }
-    if (!this['participant']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property participant fhir: Appointment.participant:participant', expression: [expression] });
-    } else if (!Array.isArray(this.participant)) {
-      issues.push({ severity: 'error', code: 'structure', diagnostics: 'Found scalar in array property participant fhir: Appointment.participant:participant', expression: [expression] });
-    } else if (this.participant.length === 0) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property participant fhir: Appointment.participant:participant', expression: [expression] });
-    }
-    if (this["participant"]) { this.participant.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.participant[${i}]`)); }) }
-    if (this["requestedPeriod"]) { this.requestedPeriod.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.requestedPeriod[${i}]`)); }) }
+    this.vReqS('resourceType',expression)
+    this.vOptA('identifier',expression)
+    this.vReqSV('status',expression,'Appointmentstatus',AppointmentstatusVsValidation,'r')
+    this.vOptS('cancelationReason',expression)
+    this.vOptA('serviceCategory',expression)
+    this.vOptA('serviceType',expression)
+    this.vOptA('specialty',expression)
+    this.vOptS('appointmentType',expression)
+    this.vOptA('reasonCode',expression)
+    this.vOptA('reasonReference',expression)
+    this.vOptS('priority',expression)
+    this.vOptS('description',expression)
+    this.vOptA('supportingInformation',expression)
+    this.vOptS('start',expression)
+    this.vOptS('end',expression)
+    this.vOptS('minutesDuration',expression)
+    this.vOptA('slot',expression)
+    this.vOptS('created',expression)
+    this.vOptS('comment',expression)
+    this.vOptS('patientInstruction',expression)
+    this.vOptA('basedOn',expression)
+    this.vReqA('participant',expression)
+    this.vOptA('requestedPeriod',expression)
     return issues;
   }
 }

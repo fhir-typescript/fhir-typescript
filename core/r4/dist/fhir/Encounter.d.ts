@@ -1,13 +1,6 @@
 import * as fhir from '../fhir.js';
 import { EncounterStatusCodeType } from '../fhirValueSets/EncounterStatusCodes.js';
-import { V3ActEncounterCodingType } from '../fhirValueSets/V3ActEncounterCodings.js';
-import { EncounterParticipantTypeCodingType } from '../fhirValueSets/EncounterParticipantTypeCodings.js';
-import { DiagnosisRoleCodingType } from '../fhirValueSets/DiagnosisRoleCodings.js';
-import { EncounterAdmitSourceCodingType } from '../fhirValueSets/EncounterAdmitSourceCodings.js';
-import { EncounterSpecialCourtesyCodingType } from '../fhirValueSets/EncounterSpecialCourtesyCodings.js';
-import { EncounterSpecialArrangementsCodingType } from '../fhirValueSets/EncounterSpecialArrangementsCodings.js';
 import { EncounterLocationStatusCodeType } from '../fhirValueSets/EncounterLocationStatusCodes.js';
-import { EncounterReasonCodingType } from '../fhirValueSets/EncounterReasonCodings.js';
 /**
  * Valid arguments for the EncounterStatusHistory type.
  */
@@ -46,20 +39,6 @@ export declare class EncounterStatusHistory extends fhir.BackboneElement {
      */
     constructor(source?: Partial<EncounterStatusHistoryArgs>, options?: fhir.FhirConstructorOptions);
     /**
-     * Required-bound Value Set for status (Encounter.statusHistory.status)
-     */
-    static get statusRequiredCodes(): {
-        readonly Arrived: "arrived";
-        readonly Cancelled: "cancelled";
-        readonly EnteredInError: "entered-in-error";
-        readonly Finished: "finished";
-        readonly InProgress: "in-progress";
-        readonly OnLeave: "onleave";
-        readonly Planned: "planned";
-        readonly Triaged: "triaged";
-        readonly Unknown: "unknown";
-    };
-    /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
     doModelValidation(expression?: string): fhir.FtsIssue[];
@@ -97,10 +76,6 @@ export declare class EncounterClassHistory extends fhir.BackboneElement {
      * Default constructor for EncounterClassHistory - initializes any required elements to null if a value is not provided.
      */
     constructor(source?: Partial<EncounterClassHistoryArgs>, options?: fhir.FhirConstructorOptions);
-    /**
-     * Extensible-bound Value Set for class (Encounter.classHistory.class)
-     */
-    static get classExtensibleCodings(): V3ActEncounterCodingType;
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
@@ -147,10 +122,6 @@ export declare class EncounterParticipant extends fhir.BackboneElement {
      * Default constructor for EncounterParticipant - initializes any required elements to null if a value is not provided.
      */
     constructor(source?: Partial<EncounterParticipantArgs>, options?: fhir.FhirConstructorOptions);
-    /**
-     * Extensible-bound Value Set for type (Encounter.participant.type)
-     */
-    static get typeExtensibleCodings(): EncounterParticipantTypeCodingType;
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
@@ -201,10 +172,6 @@ export declare class EncounterDiagnosis extends fhir.BackboneElement {
      * Default constructor for EncounterDiagnosis - initializes any required elements to null if a value is not provided.
      */
     constructor(source?: Partial<EncounterDiagnosisArgs>, options?: fhir.FhirConstructorOptions);
-    /**
-     * Preferred-bound Value Set for use (Encounter.diagnosis.use)
-     */
-    static get usePreferredCodings(): DiagnosisRoleCodingType;
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
@@ -301,18 +268,6 @@ export declare class EncounterHospitalization extends fhir.BackboneElement {
      */
     constructor(source?: Partial<EncounterHospitalizationArgs>, options?: fhir.FhirConstructorOptions);
     /**
-     * Preferred-bound Value Set for admitSource (Encounter.hospitalization.admitSource)
-     */
-    static get admitSourcePreferredCodings(): EncounterAdmitSourceCodingType;
-    /**
-     * Preferred-bound Value Set for specialCourtesy (Encounter.hospitalization.specialCourtesy)
-     */
-    static get specialCourtesyPreferredCodings(): EncounterSpecialCourtesyCodingType;
-    /**
-     * Preferred-bound Value Set for specialArrangement (Encounter.hospitalization.specialArrangement)
-     */
-    static get specialArrangementPreferredCodings(): EncounterSpecialArrangementsCodingType;
-    /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
     doModelValidation(expression?: string): fhir.FtsIssue[];
@@ -372,15 +327,6 @@ export declare class EncounterLocation extends fhir.BackboneElement {
      * Default constructor for EncounterLocation - initializes any required elements to null if a value is not provided.
      */
     constructor(source?: Partial<EncounterLocationArgs>, options?: fhir.FhirConstructorOptions);
-    /**
-     * Required-bound Value Set for status (Encounter.location.status)
-     */
-    static get statusRequiredCodes(): {
-        readonly Active: "active";
-        readonly Completed: "completed";
-        readonly Planned: "planned";
-        readonly Reserved: "reserved";
-    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
@@ -603,28 +549,6 @@ export declare class Encounter extends fhir.DomainResource {
      * Default constructor for Encounter - initializes any required elements to null if a value is not provided.
      */
     constructor(source?: Partial<EncounterArgs>, options?: fhir.FhirConstructorOptions);
-    /**
-     * Required-bound Value Set for status (Encounter.status)
-     */
-    static get statusRequiredCodes(): {
-        readonly Arrived: "arrived";
-        readonly Cancelled: "cancelled";
-        readonly EnteredInError: "entered-in-error";
-        readonly Finished: "finished";
-        readonly InProgress: "in-progress";
-        readonly OnLeave: "onleave";
-        readonly Planned: "planned";
-        readonly Triaged: "triaged";
-        readonly Unknown: "unknown";
-    };
-    /**
-     * Extensible-bound Value Set for class (Encounter.class)
-     */
-    static get classExtensibleCodings(): V3ActEncounterCodingType;
-    /**
-     * Preferred-bound Value Set for reasonCode (Encounter.reasonCode)
-     */
-    static get reasonCodePreferredCodings(): EncounterReasonCodingType;
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */

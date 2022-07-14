@@ -53,12 +53,12 @@ export interface Condition extends fhir.DomainResource {
   /**
    * The data type is CodeableConcept because clinicalStatus has some clinical judgment involved, such that there might need to be more specificity than the required FHIR value set allows. For example, a SNOMED coding might allow for additional specificity.
    */
-  clinicalStatus?: fhir.CodeableConcept|undefined;
+  clinicalStatus?: 'active'|'inactive'|'recurrence'|'relapse'|'remission'|'resolved'|undefined;
   /**
    * verificationStatus is not required.  For example, when a patient has abdominal pain in the ED, there is not likely going to be a verification status.
    * The data type is CodeableConcept because verificationStatus has some clinical judgment involved, such that there might need to be more specificity than the required FHIR value set allows. For example, a SNOMED coding might allow for additional specificity.
    */
-  verificationStatus?: fhir.CodeableConcept|undefined;
+  verificationStatus?: 'confirmed'|'differential'|'entered-in-error'|'provisional'|'refuted'|'unconfirmed'|undefined;
   /**
    * The categorization is often highly contextual and may appear poorly differentiated or not very useful in other contexts.
    */

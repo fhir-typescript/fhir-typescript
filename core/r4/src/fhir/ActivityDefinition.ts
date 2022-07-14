@@ -6,37 +6,37 @@
 import * as fhir from '../fhir.js';
 
 // @ts-ignore
-import { ActionParticipantTypeCodings, ActionParticipantTypeCodingType,} from '../fhirValueSets/ActionParticipantTypeCodings.js';
-// @ts-ignore
 import { ActionParticipantTypeCodes,  ActionParticipantTypeCodeType } from '../fhirValueSets/ActionParticipantTypeCodes.js';
 // @ts-ignore
-import { PublicationStatusCodings, PublicationStatusCodingType,} from '../fhirValueSets/PublicationStatusCodings.js';
+import { ActionParticipantTypeVsValidation } from '../fhirValueSets/ActionParticipantTypeVsValidation.js';
 // @ts-ignore
 import { PublicationStatusCodes,  PublicationStatusCodeType } from '../fhirValueSets/PublicationStatusCodes.js';
 // @ts-ignore
-import { DefinitionTopicCodings, DefinitionTopicCodingType,} from '../fhirValueSets/DefinitionTopicCodings.js';
+import { PublicationStatusVsValidation } from '../fhirValueSets/PublicationStatusVsValidation.js';
 // @ts-ignore
 import { DefinitionTopicCodes,  DefinitionTopicCodeType } from '../fhirValueSets/DefinitionTopicCodes.js';
 // @ts-ignore
-import { RequestResourceTypesCodings, RequestResourceTypesCodingType,} from '../fhirValueSets/RequestResourceTypesCodings.js';
+import { DefinitionTopicVsValidation } from '../fhirValueSets/DefinitionTopicVsValidation.js';
 // @ts-ignore
 import { RequestResourceTypesCodes,  RequestResourceTypesCodeType } from '../fhirValueSets/RequestResourceTypesCodes.js';
 // @ts-ignore
-import { ProcedureCodings, ProcedureCodingType,} from '../fhirValueSets/ProcedureCodings.js';
+import { RequestResourceTypesVsValidation } from '../fhirValueSets/RequestResourceTypesVsValidation.js';
 // @ts-ignore
 import { ProcedureCodes,  ProcedureCodeType } from '../fhirValueSets/ProcedureCodes.js';
 // @ts-ignore
-import { RequestIntentCodings, RequestIntentCodingType,} from '../fhirValueSets/RequestIntentCodings.js';
+import { ProcedureVsValidation } from '../fhirValueSets/ProcedureVsValidation.js';
 // @ts-ignore
 import { RequestIntentCodes,  RequestIntentCodeType } from '../fhirValueSets/RequestIntentCodes.js';
 // @ts-ignore
-import { RequestPriorityCodings, RequestPriorityCodingType,} from '../fhirValueSets/RequestPriorityCodings.js';
+import { RequestIntentVsValidation } from '../fhirValueSets/RequestIntentVsValidation.js';
 // @ts-ignore
 import { RequestPriorityCodes,  RequestPriorityCodeType } from '../fhirValueSets/RequestPriorityCodes.js';
 // @ts-ignore
-import { BodySiteCodings, BodySiteCodingType,} from '../fhirValueSets/BodySiteCodings.js';
+import { RequestPriorityVsValidation } from '../fhirValueSets/RequestPriorityVsValidation.js';
 // @ts-ignore
 import { BodySiteCodes,  BodySiteCodeType } from '../fhirValueSets/BodySiteCodes.js';
+// @ts-ignore
+import { BodySiteVsValidation } from '../fhirValueSets/BodySiteVsValidation.js';
 /**
  * Valid arguments for the ActivityDefinitionParticipant type.
  */
@@ -85,25 +85,13 @@ export class ActivityDefinitionParticipant extends fhir.BackboneElement {
     if (source['role']) { this.role = new fhir.CodeableConcept(source.role); }
   }
   /**
-   * Required-bound Value Set for type (ActivityDefinition.participant.type)
-   */
-  public static get typeRequiredCodes() {
-    return ActionParticipantTypeCodes;
-  }
-  /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'ActivityDefinition.participant' }
-    if (!this['type']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property type fhir: ActivityDefinition.participant.type:code', expression: [expression] });
-    }
-    if (this['type'] && (!Object.values(ActionParticipantTypeCodes).includes(this.type.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'type (ActivityDefinition.participant.type) of type code is missing code for Required binding to: ActionParticipantType', expression: [expression] });
-    }
-    if (this["type"]) { issues.push(...this.type.doModelValidation(expression+'.type')); }
-    if (this["role"]) { issues.push(...this.role.doModelValidation(expression+'.role')); }
+    this.vReqSV('type',expression,'ActionParticipantType',ActionParticipantTypeVsValidation,'r')
+    this.vOptS('role',expression)
     return issues;
   }
 }
@@ -161,14 +149,8 @@ export class ActivityDefinitionDynamicValue extends fhir.BackboneElement {
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'ActivityDefinition.dynamicValue' }
-    if (!this['path']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property path fhir: ActivityDefinition.dynamicValue.path:string', expression: [expression] });
-    }
-    if (this["path"]) { issues.push(...this.path.doModelValidation(expression+'.path')); }
-    if (!this['expression']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property expression fhir: ActivityDefinition.dynamicValue.expression:Expression', expression: [expression] });
-    }
-    if (this["expression"]) { issues.push(...this.expression.doModelValidation(expression+'.expression')); }
+    this.vReqS('path',expression)
+    this.vReqS('expression',expression)
     return issues;
   }
 }
@@ -879,96 +861,58 @@ export class ActivityDefinition extends fhir.DomainResource {
     else { this.dynamicValue = []; }
   }
   /**
-   * Required-bound Value Set for status (ActivityDefinition.status)
-   */
-  public static get statusRequiredCodes() {
-    return PublicationStatusCodes;
-  }
-  /**
-   * Required-bound Value Set for kind (ActivityDefinition.kind)
-   */
-  public static get kindRequiredCodes() {
-    return RequestResourceTypesCodes;
-  }
-  /**
-   * Required-bound Value Set for intent (ActivityDefinition.intent)
-   */
-  public static get intentRequiredCodes() {
-    return RequestIntentCodes;
-  }
-  /**
-   * Required-bound Value Set for priority (ActivityDefinition.priority)
-   */
-  public static get priorityRequiredCodes() {
-    return RequestPriorityCodes;
-  }
-  /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'ActivityDefinition' }
-    if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType fhir: ActivityDefinition.resourceType:"ActivityDefinition"', expression: [expression] });
-    }
-    if (this["url"]) { issues.push(...this.url.doModelValidation(expression+'.url')); }
-    if (this["identifier"]) { this.identifier.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.identifier[${i}]`)); }) }
-    if (this["version"]) { issues.push(...this.version.doModelValidation(expression+'.version')); }
-    if (this["name"]) { issues.push(...this.name.doModelValidation(expression+'.name')); }
-    if (this["title"]) { issues.push(...this.title.doModelValidation(expression+'.title')); }
-    if (this["subtitle"]) { issues.push(...this.subtitle.doModelValidation(expression+'.subtitle')); }
-    if (!this['status']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status fhir: ActivityDefinition.status:code', expression: [expression] });
-    }
-    if (this['status'] && (!Object.values(PublicationStatusCodes).includes(this.status.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'status (ActivityDefinition.status) of type code is missing code for Required binding to: PublicationStatus', expression: [expression] });
-    }
-    if (this["status"]) { issues.push(...this.status.doModelValidation(expression+'.status')); }
-    if (this["experimental"]) { issues.push(...this.experimental.doModelValidation(expression+'.experimental')); }
-    if (this["date"]) { issues.push(...this.date.doModelValidation(expression+'.date')); }
-    if (this["publisher"]) { issues.push(...this.publisher.doModelValidation(expression+'.publisher')); }
-    if (this["contact"]) { this.contact.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.contact[${i}]`)); }) }
-    if (this["description"]) { issues.push(...this.description.doModelValidation(expression+'.description')); }
-    if (this["useContext"]) { this.useContext.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.useContext[${i}]`)); }) }
-    if (this["jurisdiction"]) { this.jurisdiction.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.jurisdiction[${i}]`)); }) }
-    if (this["purpose"]) { issues.push(...this.purpose.doModelValidation(expression+'.purpose')); }
-    if (this["usage"]) { issues.push(...this.usage.doModelValidation(expression+'.usage')); }
-    if (this["copyright"]) { issues.push(...this.copyright.doModelValidation(expression+'.copyright')); }
-    if (this["approvalDate"]) { issues.push(...this.approvalDate.doModelValidation(expression+'.approvalDate')); }
-    if (this["lastReviewDate"]) { issues.push(...this.lastReviewDate.doModelValidation(expression+'.lastReviewDate')); }
-    if (this["effectivePeriod"]) { issues.push(...this.effectivePeriod.doModelValidation(expression+'.effectivePeriod')); }
-    if (this["topic"]) { this.topic.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.topic[${i}]`)); }) }
-    if (this["author"]) { this.author.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.author[${i}]`)); }) }
-    if (this["editor"]) { this.editor.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.editor[${i}]`)); }) }
-    if (this["reviewer"]) { this.reviewer.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.reviewer[${i}]`)); }) }
-    if (this["endorser"]) { this.endorser.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.endorser[${i}]`)); }) }
-    if (this["relatedArtifact"]) { this.relatedArtifact.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.relatedArtifact[${i}]`)); }) }
-    if (this["library"]) { this.library.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.library[${i}]`)); }) }
-    if (this['kind'] && (!Object.values(RequestResourceTypesCodes).includes(this.kind.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'kind (ActivityDefinition.kind) of type code is missing code for Required binding to: RequestResourceTypes', expression: [expression] });
-    }
-    if (this["kind"]) { issues.push(...this.kind.doModelValidation(expression+'.kind')); }
-    if (this["profile"]) { issues.push(...this.profile.doModelValidation(expression+'.profile')); }
-    if (this["code"]) { issues.push(...this.code.doModelValidation(expression+'.code')); }
-    if (this['intent'] && (!Object.values(RequestIntentCodes).includes(this.intent.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'intent (ActivityDefinition.intent) of type code is missing code for Required binding to: RequestIntent', expression: [expression] });
-    }
-    if (this["intent"]) { issues.push(...this.intent.doModelValidation(expression+'.intent')); }
-    if (this['priority'] && (!Object.values(RequestPriorityCodes).includes(this.priority.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'priority (ActivityDefinition.priority) of type code is missing code for Required binding to: RequestPriority', expression: [expression] });
-    }
-    if (this["priority"]) { issues.push(...this.priority.doModelValidation(expression+'.priority')); }
-    if (this["doNotPerform"]) { issues.push(...this.doNotPerform.doModelValidation(expression+'.doNotPerform')); }
-    if (this["location"]) { issues.push(...this.location.doModelValidation(expression+'.location')); }
-    if (this["participant"]) { this.participant.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.participant[${i}]`)); }) }
-    if (this["quantity"]) { issues.push(...this.quantity.doModelValidation(expression+'.quantity')); }
-    if (this["dosage"]) { this.dosage.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.dosage[${i}]`)); }) }
-    if (this["bodySite"]) { this.bodySite.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.bodySite[${i}]`)); }) }
-    if (this["specimenRequirement"]) { this.specimenRequirement.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.specimenRequirement[${i}]`)); }) }
-    if (this["observationRequirement"]) { this.observationRequirement.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.observationRequirement[${i}]`)); }) }
-    if (this["observationResultRequirement"]) { this.observationResultRequirement.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.observationResultRequirement[${i}]`)); }) }
-    if (this["transform"]) { issues.push(...this.transform.doModelValidation(expression+'.transform')); }
-    if (this["dynamicValue"]) { this.dynamicValue.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.dynamicValue[${i}]`)); }) }
+    this.vReqS('resourceType',expression)
+    this.vOptS('url',expression)
+    this.vOptA('identifier',expression)
+    this.vOptS('version',expression)
+    this.vOptS('name',expression)
+    this.vOptS('title',expression)
+    this.vOptS('subtitle',expression)
+    this.vReqSV('status',expression,'PublicationStatus',PublicationStatusVsValidation,'r')
+    this.vOptS('experimental',expression)
+    this.vOptS('subject',expression)
+    this.vOptS('date',expression)
+    this.vOptS('publisher',expression)
+    this.vOptA('contact',expression)
+    this.vOptS('description',expression)
+    this.vOptA('useContext',expression)
+    this.vOptA('jurisdiction',expression)
+    this.vOptS('purpose',expression)
+    this.vOptS('usage',expression)
+    this.vOptS('copyright',expression)
+    this.vOptS('approvalDate',expression)
+    this.vOptS('lastReviewDate',expression)
+    this.vOptS('effectivePeriod',expression)
+    this.vOptA('topic',expression)
+    this.vOptA('author',expression)
+    this.vOptA('editor',expression)
+    this.vOptA('reviewer',expression)
+    this.vOptA('endorser',expression)
+    this.vOptA('relatedArtifact',expression)
+    this.vOptA('library',expression)
+    this.vOptSV('kind',expression,'RequestResourceTypes',RequestResourceTypesVsValidation,'r')
+    this.vOptS('profile',expression)
+    this.vOptS('code',expression)
+    this.vOptSV('intent',expression,'RequestIntent',RequestIntentVsValidation,'r')
+    this.vOptSV('priority',expression,'RequestPriority',RequestPriorityVsValidation,'r')
+    this.vOptS('doNotPerform',expression)
+    this.vOptS('timing',expression)
+    this.vOptS('location',expression)
+    this.vOptA('participant',expression)
+    this.vOptS('product',expression)
+    this.vOptS('quantity',expression)
+    this.vOptA('dosage',expression)
+    this.vOptA('bodySite',expression)
+    this.vOptA('specimenRequirement',expression)
+    this.vOptA('observationRequirement',expression)
+    this.vOptA('observationResultRequirement',expression)
+    this.vOptS('transform',expression)
+    this.vOptA('dynamicValue',expression)
     return issues;
   }
 }

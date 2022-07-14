@@ -6,21 +6,21 @@
 import * as fhir from '../fhir.js';
 
 // @ts-ignore
-import { UnitsOfTimeCodings, UnitsOfTimeCodingType,} from '../fhirValueSets/UnitsOfTimeCodings.js';
-// @ts-ignore
 import { UnitsOfTimeCodes,  UnitsOfTimeCodeType } from '../fhirValueSets/UnitsOfTimeCodes.js';
 // @ts-ignore
-import { DaysOfWeekCodings, DaysOfWeekCodingType,} from '../fhirValueSets/DaysOfWeekCodings.js';
+import { UnitsOfTimeVsValidation } from '../fhirValueSets/UnitsOfTimeVsValidation.js';
 // @ts-ignore
 import { DaysOfWeekCodes,  DaysOfWeekCodeType } from '../fhirValueSets/DaysOfWeekCodes.js';
 // @ts-ignore
-import { EventTimingCodings, EventTimingCodingType,} from '../fhirValueSets/EventTimingCodings.js';
+import { DaysOfWeekVsValidation } from '../fhirValueSets/DaysOfWeekVsValidation.js';
 // @ts-ignore
 import { EventTimingCodes,  EventTimingCodeType } from '../fhirValueSets/EventTimingCodes.js';
 // @ts-ignore
-import { TimingAbbreviationCodings, TimingAbbreviationCodingType,} from '../fhirValueSets/TimingAbbreviationCodings.js';
+import { EventTimingVsValidation } from '../fhirValueSets/EventTimingVsValidation.js';
 // @ts-ignore
 import { TimingAbbreviationCodes,  TimingAbbreviationCodeType } from '../fhirValueSets/TimingAbbreviationCodes.js';
+// @ts-ignore
+import { TimingAbbreviationVsValidation } from '../fhirValueSets/TimingAbbreviationVsValidation.js';
 /**
  * Valid arguments for the TimingRepeat type.
  */
@@ -317,69 +317,26 @@ export class TimingRepeat extends fhir.FhirElement {
     }
   }
   /**
-   * Required-bound Value Set for durationUnit (Timing.repeat.durationUnit)
-   */
-  public static get durationUnitRequiredCodes() {
-    return UnitsOfTimeCodes;
-  }
-  /**
-   * Required-bound Value Set for periodUnit (Timing.repeat.periodUnit)
-   */
-  public static get periodUnitRequiredCodes() {
-    return UnitsOfTimeCodes;
-  }
-  /**
-   * Required-bound Value Set for dayOfWeek (Timing.repeat.dayOfWeek)
-   */
-  public static get dayOfWeekRequiredCodes() {
-    return DaysOfWeekCodes;
-  }
-  /**
-   * Required-bound Value Set for when (Timing.repeat.when)
-   */
-  public static get whenRequiredCodes() {
-    return EventTimingCodes;
-  }
-  /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'Timing.repeat' }
-    if (this["count"]) { issues.push(...this.count.doModelValidation(expression+'.count')); }
-    if (this["countMax"]) { issues.push(...this.countMax.doModelValidation(expression+'.countMax')); }
-    if (this["duration"]) { issues.push(...this.duration.doModelValidation(expression+'.duration')); }
-    if (this["durationMax"]) { issues.push(...this.durationMax.doModelValidation(expression+'.durationMax')); }
-    if (this['durationUnit'] && (!Object.values(UnitsOfTimeCodes).includes(this.durationUnit.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'durationUnit (Timing.repeat.durationUnit) of type code is missing code for Required binding to: UnitsOfTime', expression: [expression] });
-    }
-    if (this["durationUnit"]) { issues.push(...this.durationUnit.doModelValidation(expression+'.durationUnit')); }
-    if (this["frequency"]) { issues.push(...this.frequency.doModelValidation(expression+'.frequency')); }
-    if (this["frequencyMax"]) { issues.push(...this.frequencyMax.doModelValidation(expression+'.frequencyMax')); }
-    if (this["period"]) { issues.push(...this.period.doModelValidation(expression+'.period')); }
-    if (this["periodMax"]) { issues.push(...this.periodMax.doModelValidation(expression+'.periodMax')); }
-    if (this['periodUnit'] && (!Object.values(UnitsOfTimeCodes).includes(this.periodUnit.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'periodUnit (Timing.repeat.periodUnit) of type code is missing code for Required binding to: UnitsOfTime', expression: [expression] });
-    }
-    if (this["periodUnit"]) { issues.push(...this.periodUnit.doModelValidation(expression+'.periodUnit')); }
-    if (this['dayOfWeek']) {
-      this.dayOfWeek.forEach((v) => {
-        if (!Object.values(DaysOfWeekCodes).includes(v.value as any)) {
-          issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'dayOfWeek (Timing.repeat.dayOfWeek) of type code is missing code for Required binding to: DaysOfWeek', expression: [expression] });
-        }
-      });
-    }
-    if (this["dayOfWeek"]) { this.dayOfWeek.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.dayOfWeek[${i}]`)); }) }
-    if (this["timeOfDay"]) { this.timeOfDay.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.timeOfDay[${i}]`)); }) }
-    if (this['when']) {
-      this.when.forEach((v) => {
-        if (!Object.values(EventTimingCodes).includes(v.value as any)) {
-          issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'when (Timing.repeat.when) of type code is missing code for Required binding to: EventTiming', expression: [expression] });
-        }
-      });
-    }
-    if (this["when"]) { this.when.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.when[${i}]`)); }) }
-    if (this["offset"]) { issues.push(...this.offset.doModelValidation(expression+'.offset')); }
+    this.vOptS('bounds',expression)
+    this.vOptS('count',expression)
+    this.vOptS('countMax',expression)
+    this.vOptS('duration',expression)
+    this.vOptS('durationMax',expression)
+    this.vOptSV('durationUnit',expression,'UnitsOfTime',UnitsOfTimeVsValidation,'r')
+    this.vOptS('frequency',expression)
+    this.vOptS('frequencyMax',expression)
+    this.vOptS('period',expression)
+    this.vOptS('periodMax',expression)
+    this.vOptSV('periodUnit',expression,'UnitsOfTime',UnitsOfTimeVsValidation,'r')
+    this.vOptAV('dayOfWeek',expression,'DaysOfWeek',DaysOfWeekVsValidation,'r')
+    this.vOptA('timeOfDay',expression)
+    this.vOptAV('when',expression,'EventTiming',EventTimingVsValidation,'r')
+    this.vOptS('offset',expression)
     return issues;
   }
 }
@@ -442,20 +399,14 @@ export class Timing extends fhir.BackboneElement {
     if (source['code']) { this.code = new fhir.CodeableConcept(source.code); }
   }
   /**
-   * Preferred-bound Value Set for code (Timing.code)
-   */
-  public static get codePreferredCodings():TimingAbbreviationCodingType {
-    return TimingAbbreviationCodings;
-  }
-  /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'Timing' }
-    if (this["event"]) { this.event.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.event[${i}]`)); }) }
-    if (this["repeat"]) { issues.push(...this.repeat.doModelValidation(expression+'.repeat')); }
-    if (this["code"]) { issues.push(...this.code.doModelValidation(expression+'.code')); }
+    this.vOptA('event',expression)
+    this.vOptS('repeat',expression)
+    this.vOptS('code',expression)
     return issues;
   }
 }

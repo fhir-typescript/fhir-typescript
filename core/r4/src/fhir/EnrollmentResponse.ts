@@ -6,13 +6,13 @@
 import * as fhir from '../fhir.js';
 
 // @ts-ignore
-import { FmStatusCodings, FmStatusCodingType,} from '../fhirValueSets/FmStatusCodings.js';
-// @ts-ignore
 import { FmStatusCodes,  FmStatusCodeType } from '../fhirValueSets/FmStatusCodes.js';
 // @ts-ignore
-import { RemittanceOutcomeCodings, RemittanceOutcomeCodingType,} from '../fhirValueSets/RemittanceOutcomeCodings.js';
+import { FmStatusVsValidation } from '../fhirValueSets/FmStatusVsValidation.js';
 // @ts-ignore
 import { RemittanceOutcomeCodes,  RemittanceOutcomeCodeType } from '../fhirValueSets/RemittanceOutcomeCodes.js';
+// @ts-ignore
+import { RemittanceOutcomeVsValidation } from '../fhirValueSets/RemittanceOutcomeVsValidation.js';
 /**
  * Valid arguments for the EnrollmentResponse type.
  */
@@ -148,40 +148,20 @@ export class EnrollmentResponse extends fhir.DomainResource {
     if (source['requestProvider']) { this.requestProvider = new fhir.Reference(source.requestProvider); }
   }
   /**
-   * Required-bound Value Set for status (EnrollmentResponse.status)
-   */
-  public static get statusRequiredCodes() {
-    return FmStatusCodes;
-  }
-  /**
-   * Required-bound Value Set for outcome (EnrollmentResponse.outcome)
-   */
-  public static get outcomeRequiredCodes() {
-    return RemittanceOutcomeCodes;
-  }
-  /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'EnrollmentResponse' }
-    if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType fhir: EnrollmentResponse.resourceType:"EnrollmentResponse"', expression: [expression] });
-    }
-    if (this["identifier"]) { this.identifier.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.identifier[${i}]`)); }) }
-    if (this['status'] && (!Object.values(FmStatusCodes).includes(this.status.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'status (EnrollmentResponse.status) of type code is missing code for Required binding to: FmStatus', expression: [expression] });
-    }
-    if (this["status"]) { issues.push(...this.status.doModelValidation(expression+'.status')); }
-    if (this["request"]) { issues.push(...this.request.doModelValidation(expression+'.request')); }
-    if (this['outcome'] && (!Object.values(RemittanceOutcomeCodes).includes(this.outcome.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'outcome (EnrollmentResponse.outcome) of type code is missing code for Required binding to: RemittanceOutcome', expression: [expression] });
-    }
-    if (this["outcome"]) { issues.push(...this.outcome.doModelValidation(expression+'.outcome')); }
-    if (this["disposition"]) { issues.push(...this.disposition.doModelValidation(expression+'.disposition')); }
-    if (this["created"]) { issues.push(...this.created.doModelValidation(expression+'.created')); }
-    if (this["organization"]) { issues.push(...this.organization.doModelValidation(expression+'.organization')); }
-    if (this["requestProvider"]) { issues.push(...this.requestProvider.doModelValidation(expression+'.requestProvider')); }
+    this.vReqS('resourceType',expression)
+    this.vOptA('identifier',expression)
+    this.vOptSV('status',expression,'FmStatus',FmStatusVsValidation,'r')
+    this.vOptS('request',expression)
+    this.vOptSV('outcome',expression,'RemittanceOutcome',RemittanceOutcomeVsValidation,'r')
+    this.vOptS('disposition',expression)
+    this.vOptS('created',expression)
+    this.vOptS('organization',expression)
+    this.vOptS('requestProvider',expression)
     return issues;
   }
 }

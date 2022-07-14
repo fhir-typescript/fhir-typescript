@@ -6,33 +6,33 @@
 import * as fhir from '../fhir.js';
 
 // @ts-ignore
-import { CarePlanActivityKindCodings, CarePlanActivityKindCodingType,} from '../fhirValueSets/CarePlanActivityKindCodings.js';
-// @ts-ignore
 import { CarePlanActivityKindCodes,  CarePlanActivityKindCodeType } from '../fhirValueSets/CarePlanActivityKindCodes.js';
 // @ts-ignore
-import { ProcedureCodings, ProcedureCodingType,} from '../fhirValueSets/ProcedureCodings.js';
+import { CarePlanActivityKindVsValidation } from '../fhirValueSets/CarePlanActivityKindVsValidation.js';
 // @ts-ignore
 import { ProcedureCodes,  ProcedureCodeType } from '../fhirValueSets/ProcedureCodes.js';
 // @ts-ignore
-import { ClinicalFindingsCodings, ClinicalFindingsCodingType,} from '../fhirValueSets/ClinicalFindingsCodings.js';
+import { ProcedureVsValidation } from '../fhirValueSets/ProcedureVsValidation.js';
 // @ts-ignore
 import { ClinicalFindingsCodes,  ClinicalFindingsCodeType } from '../fhirValueSets/ClinicalFindingsCodes.js';
 // @ts-ignore
-import { CarePlanActivityStatusCodings, CarePlanActivityStatusCodingType,} from '../fhirValueSets/CarePlanActivityStatusCodings.js';
+import { ClinicalFindingsVsValidation } from '../fhirValueSets/ClinicalFindingsVsValidation.js';
 // @ts-ignore
 import { CarePlanActivityStatusCodes,  CarePlanActivityStatusCodeType } from '../fhirValueSets/CarePlanActivityStatusCodes.js';
 // @ts-ignore
-import { CarePlanActivityOutcomeCodings, CarePlanActivityOutcomeCodingType,} from '../fhirValueSets/CarePlanActivityOutcomeCodings.js';
+import { CarePlanActivityStatusVsValidation } from '../fhirValueSets/CarePlanActivityStatusVsValidation.js';
 // @ts-ignore
 import { CarePlanActivityOutcomeCodes,  CarePlanActivityOutcomeCodeType } from '../fhirValueSets/CarePlanActivityOutcomeCodes.js';
 // @ts-ignore
-import { RequestStatusCodings, RequestStatusCodingType,} from '../fhirValueSets/RequestStatusCodings.js';
+import { CarePlanActivityOutcomeVsValidation } from '../fhirValueSets/CarePlanActivityOutcomeVsValidation.js';
 // @ts-ignore
 import { RequestStatusCodes,  RequestStatusCodeType } from '../fhirValueSets/RequestStatusCodes.js';
 // @ts-ignore
-import { CarePlanIntentCodings, CarePlanIntentCodingType,} from '../fhirValueSets/CarePlanIntentCodings.js';
+import { RequestStatusVsValidation } from '../fhirValueSets/RequestStatusVsValidation.js';
 // @ts-ignore
 import { CarePlanIntentCodes,  CarePlanIntentCodeType } from '../fhirValueSets/CarePlanIntentCodes.js';
+// @ts-ignore
+import { CarePlanIntentVsValidation } from '../fhirValueSets/CarePlanIntentVsValidation.js';
 /**
  * Valid arguments for the CarePlanActivityDetail type.
  */
@@ -301,47 +301,28 @@ export class CarePlanActivityDetail extends fhir.BackboneElement {
     }
   }
   /**
-   * Required-bound Value Set for kind (CarePlan.activity.detail.kind)
-   */
-  public static get kindRequiredCodes() {
-    return CarePlanActivityKindCodes;
-  }
-  /**
-   * Required-bound Value Set for status (CarePlan.activity.detail.status)
-   */
-  public static get statusRequiredCodes() {
-    return CarePlanActivityStatusCodes;
-  }
-  /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'CarePlan.activity.detail' }
-    if (this['kind'] && (!Object.values(CarePlanActivityKindCodes).includes(this.kind.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'kind (CarePlan.activity.detail.kind) of type code is missing code for Required binding to: CarePlanActivityKind', expression: [expression] });
-    }
-    if (this["kind"]) { issues.push(...this.kind.doModelValidation(expression+'.kind')); }
-    if (this["instantiatesCanonical"]) { this.instantiatesCanonical.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.instantiatesCanonical[${i}]`)); }) }
-    if (this["instantiatesUri"]) { this.instantiatesUri.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.instantiatesUri[${i}]`)); }) }
-    if (this["code"]) { issues.push(...this.code.doModelValidation(expression+'.code')); }
-    if (this["reasonCode"]) { this.reasonCode.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.reasonCode[${i}]`)); }) }
-    if (this["reasonReference"]) { this.reasonReference.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.reasonReference[${i}]`)); }) }
-    if (this["goal"]) { this.goal.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.goal[${i}]`)); }) }
-    if (!this['status']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status fhir: CarePlan.activity.detail.status:code', expression: [expression] });
-    }
-    if (this['status'] && (!Object.values(CarePlanActivityStatusCodes).includes(this.status.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'status (CarePlan.activity.detail.status) of type code is missing code for Required binding to: CarePlanActivityStatus', expression: [expression] });
-    }
-    if (this["status"]) { issues.push(...this.status.doModelValidation(expression+'.status')); }
-    if (this["statusReason"]) { issues.push(...this.statusReason.doModelValidation(expression+'.statusReason')); }
-    if (this["doNotPerform"]) { issues.push(...this.doNotPerform.doModelValidation(expression+'.doNotPerform')); }
-    if (this["location"]) { issues.push(...this.location.doModelValidation(expression+'.location')); }
-    if (this["performer"]) { this.performer.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.performer[${i}]`)); }) }
-    if (this["dailyAmount"]) { issues.push(...this.dailyAmount.doModelValidation(expression+'.dailyAmount')); }
-    if (this["quantity"]) { issues.push(...this.quantity.doModelValidation(expression+'.quantity')); }
-    if (this["description"]) { issues.push(...this.description.doModelValidation(expression+'.description')); }
+    this.vOptSV('kind',expression,'CarePlanActivityKind',CarePlanActivityKindVsValidation,'r')
+    this.vOptA('instantiatesCanonical',expression)
+    this.vOptA('instantiatesUri',expression)
+    this.vOptS('code',expression)
+    this.vOptA('reasonCode',expression)
+    this.vOptA('reasonReference',expression)
+    this.vOptA('goal',expression)
+    this.vReqSV('status',expression,'CarePlanActivityStatus',CarePlanActivityStatusVsValidation,'r')
+    this.vOptS('statusReason',expression)
+    this.vOptS('doNotPerform',expression)
+    this.vOptS('scheduled',expression)
+    this.vOptS('location',expression)
+    this.vOptA('performer',expression)
+    this.vOptS('product',expression)
+    this.vOptS('dailyAmount',expression)
+    this.vOptS('quantity',expression)
+    this.vOptS('description',expression)
     return issues;
   }
 }
@@ -421,11 +402,11 @@ export class CarePlanActivity extends fhir.BackboneElement {
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'CarePlan.activity' }
-    if (this["outcomeCodeableConcept"]) { this.outcomeCodeableConcept.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.outcomeCodeableConcept[${i}]`)); }) }
-    if (this["outcomeReference"]) { this.outcomeReference.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.outcomeReference[${i}]`)); }) }
-    if (this["progress"]) { this.progress.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.progress[${i}]`)); }) }
-    if (this["reference"]) { issues.push(...this.reference.doModelValidation(expression+'.reference')); }
-    if (this["detail"]) { issues.push(...this.detail.doModelValidation(expression+'.detail')); }
+    this.vOptA('outcomeCodeableConcept',expression)
+    this.vOptA('outcomeReference',expression)
+    this.vOptA('progress',expression)
+    this.vOptS('reference',expression)
+    this.vOptS('detail',expression)
     return issues;
   }
 }
@@ -745,64 +726,35 @@ export class CarePlan extends fhir.DomainResource {
     else { this.note = []; }
   }
   /**
-   * Required-bound Value Set for status (CarePlan.status)
-   */
-  public static get statusRequiredCodes() {
-    return RequestStatusCodes;
-  }
-  /**
-   * Required-bound Value Set for intent (CarePlan.intent)
-   */
-  public static get intentRequiredCodes() {
-    return CarePlanIntentCodes;
-  }
-  /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'CarePlan' }
-    if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType fhir: CarePlan.resourceType:"CarePlan"', expression: [expression] });
-    }
-    if (this["identifier"]) { this.identifier.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.identifier[${i}]`)); }) }
-    if (this["instantiatesCanonical"]) { this.instantiatesCanonical.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.instantiatesCanonical[${i}]`)); }) }
-    if (this["instantiatesUri"]) { this.instantiatesUri.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.instantiatesUri[${i}]`)); }) }
-    if (this["basedOn"]) { this.basedOn.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.basedOn[${i}]`)); }) }
-    if (this["replaces"]) { this.replaces.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.replaces[${i}]`)); }) }
-    if (this["partOf"]) { this.partOf.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.partOf[${i}]`)); }) }
-    if (!this['status']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status fhir: CarePlan.status:code', expression: [expression] });
-    }
-    if (this['status'] && (!Object.values(RequestStatusCodes).includes(this.status.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'status (CarePlan.status) of type code is missing code for Required binding to: RequestStatus', expression: [expression] });
-    }
-    if (this["status"]) { issues.push(...this.status.doModelValidation(expression+'.status')); }
-    if (!this['intent']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property intent fhir: CarePlan.intent:code', expression: [expression] });
-    }
-    if (this['intent'] && (!Object.values(CarePlanIntentCodes).includes(this.intent.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'intent (CarePlan.intent) of type code is missing code for Required binding to: CarePlanIntent', expression: [expression] });
-    }
-    if (this["intent"]) { issues.push(...this.intent.doModelValidation(expression+'.intent')); }
-    if (this["category"]) { this.category.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.category[${i}]`)); }) }
-    if (this["title"]) { issues.push(...this.title.doModelValidation(expression+'.title')); }
-    if (this["description"]) { issues.push(...this.description.doModelValidation(expression+'.description')); }
-    if (!this['subject']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property subject fhir: CarePlan.subject:Reference', expression: [expression] });
-    }
-    if (this["subject"]) { issues.push(...this.subject.doModelValidation(expression+'.subject')); }
-    if (this["encounter"]) { issues.push(...this.encounter.doModelValidation(expression+'.encounter')); }
-    if (this["period"]) { issues.push(...this.period.doModelValidation(expression+'.period')); }
-    if (this["created"]) { issues.push(...this.created.doModelValidation(expression+'.created')); }
-    if (this["author"]) { issues.push(...this.author.doModelValidation(expression+'.author')); }
-    if (this["contributor"]) { this.contributor.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.contributor[${i}]`)); }) }
-    if (this["careTeam"]) { this.careTeam.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.careTeam[${i}]`)); }) }
-    if (this["addresses"]) { this.addresses.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.addresses[${i}]`)); }) }
-    if (this["supportingInfo"]) { this.supportingInfo.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.supportingInfo[${i}]`)); }) }
-    if (this["goal"]) { this.goal.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.goal[${i}]`)); }) }
-    if (this["activity"]) { this.activity.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.activity[${i}]`)); }) }
-    if (this["note"]) { this.note.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.note[${i}]`)); }) }
+    this.vReqS('resourceType',expression)
+    this.vOptA('identifier',expression)
+    this.vOptA('instantiatesCanonical',expression)
+    this.vOptA('instantiatesUri',expression)
+    this.vOptA('basedOn',expression)
+    this.vOptA('replaces',expression)
+    this.vOptA('partOf',expression)
+    this.vReqSV('status',expression,'RequestStatus',RequestStatusVsValidation,'r')
+    this.vReqSV('intent',expression,'CarePlanIntent',CarePlanIntentVsValidation,'r')
+    this.vOptA('category',expression)
+    this.vOptS('title',expression)
+    this.vOptS('description',expression)
+    this.vReqS('subject',expression)
+    this.vOptS('encounter',expression)
+    this.vOptS('period',expression)
+    this.vOptS('created',expression)
+    this.vOptS('author',expression)
+    this.vOptA('contributor',expression)
+    this.vOptA('careTeam',expression)
+    this.vOptA('addresses',expression)
+    this.vOptA('supportingInfo',expression)
+    this.vOptA('goal',expression)
+    this.vOptA('activity',expression)
+    this.vOptA('note',expression)
     return issues;
   }
 }

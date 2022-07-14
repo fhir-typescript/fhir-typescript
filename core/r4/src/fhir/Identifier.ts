@@ -6,13 +6,13 @@
 import * as fhir from '../fhir.js';
 
 // @ts-ignore
-import { IdentifierUseCodings, IdentifierUseCodingType,} from '../fhirValueSets/IdentifierUseCodings.js';
-// @ts-ignore
 import { IdentifierUseCodes,  IdentifierUseCodeType } from '../fhirValueSets/IdentifierUseCodes.js';
 // @ts-ignore
-import { IdentifierTypeCodings, IdentifierTypeCodingType,} from '../fhirValueSets/IdentifierTypeCodings.js';
+import { IdentifierUseVsValidation } from '../fhirValueSets/IdentifierUseVsValidation.js';
 // @ts-ignore
 import { IdentifierTypeCodes,  IdentifierTypeCodeType } from '../fhirValueSets/IdentifierTypeCodes.js';
+// @ts-ignore
+import { IdentifierTypeVsValidation } from '../fhirValueSets/IdentifierTypeVsValidation.js';
 /**
  * Valid arguments for the Identifier type.
  */
@@ -112,32 +112,17 @@ export class Identifier extends fhir.FhirElement {
     if (source['assigner']) { this.assigner = new fhir.Reference(source.assigner); }
   }
   /**
-   * Required-bound Value Set for use (Identifier.use)
-   */
-  public static get useRequiredCodes() {
-    return IdentifierUseCodes;
-  }
-  /**
-   * Extensible-bound Value Set for type (Identifier.type)
-   */
-  public static get typeExtensibleCodings():IdentifierTypeCodingType {
-    return IdentifierTypeCodings;
-  }
-  /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'Identifier' }
-    if (this['use'] && (!Object.values(IdentifierUseCodes).includes(this.use.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'use (Identifier.use) of type code is missing code for Required binding to: IdentifierUse', expression: [expression] });
-    }
-    if (this["use"]) { issues.push(...this.use.doModelValidation(expression+'.use')); }
-    if (this["type"]) { issues.push(...this.type.doModelValidation(expression+'.type')); }
-    if (this["system"]) { issues.push(...this.system.doModelValidation(expression+'.system')); }
-    if (this["value"]) { issues.push(...this.value.doModelValidation(expression+'.value')); }
-    if (this["period"]) { issues.push(...this.period.doModelValidation(expression+'.period')); }
-    if (this["assigner"]) { issues.push(...this.assigner.doModelValidation(expression+'.assigner')); }
+    this.vOptSV('use',expression,'IdentifierUse',IdentifierUseVsValidation,'r')
+    this.vOptS('type',expression)
+    this.vOptS('system',expression)
+    this.vOptS('value',expression)
+    this.vOptS('period',expression)
+    this.vOptS('assigner',expression)
     return issues;
   }
 }

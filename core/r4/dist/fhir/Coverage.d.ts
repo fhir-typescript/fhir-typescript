@@ -1,9 +1,5 @@
 import * as fhir from '../fhir.js';
-import { CoverageClassCodingType } from '../fhirValueSets/CoverageClassCodings.js';
-import { CoverageCopayTypeCodingType } from '../fhirValueSets/CoverageCopayTypeCodings.js';
 import { FmStatusCodeType } from '../fhirValueSets/FmStatusCodes.js';
-import { CoverageTypeCodingType } from '../fhirValueSets/CoverageTypeCodings.js';
-import { SubscriberRelationshipCodingType } from '../fhirValueSets/SubscriberRelationshipCodings.js';
 /**
  * Valid arguments for the CoverageClass type.
  */
@@ -53,10 +49,6 @@ export declare class CoverageClass extends fhir.BackboneElement {
      * Default constructor for CoverageClass - initializes any required elements to null if a value is not provided.
      */
     constructor(source?: Partial<CoverageClassArgs>, options?: fhir.FhirConstructorOptions);
-    /**
-     * Extensible-bound Value Set for type (Coverage.class.type)
-     */
-    static get typeExtensibleCodings(): CoverageClassCodingType;
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
@@ -153,10 +145,6 @@ export declare class CoverageCostToBeneficiary extends fhir.BackboneElement {
      * Default constructor for CoverageCostToBeneficiary - initializes any required elements to null if a value is not provided.
      */
     constructor(source?: Partial<CoverageCostToBeneficiaryArgs>, options?: fhir.FhirConstructorOptions);
-    /**
-     * Extensible-bound Value Set for type (Coverage.costToBeneficiary.type)
-     */
-    static get typeExtensibleCodings(): CoverageCopayTypeCodingType;
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
@@ -349,23 +337,6 @@ export declare class Coverage extends fhir.DomainResource {
      * Default constructor for Coverage - initializes any required elements to null if a value is not provided.
      */
     constructor(source?: Partial<CoverageArgs>, options?: fhir.FhirConstructorOptions);
-    /**
-     * Required-bound Value Set for status (Coverage.status)
-     */
-    static get statusRequiredCodes(): {
-        readonly Active: "active";
-        readonly Cancelled: "cancelled";
-        readonly Draft: "draft";
-        readonly EnteredInError: "entered-in-error";
-    };
-    /**
-     * Preferred-bound Value Set for type (Coverage.type)
-     */
-    static get typePreferredCodings(): CoverageTypeCodingType;
-    /**
-     * Extensible-bound Value Set for relationship (Coverage.relationship)
-     */
-    static get relationshipExtensibleCodings(): SubscriberRelationshipCodingType;
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */

@@ -38,14 +38,6 @@ export declare class LinkageItem extends fhir.BackboneElement {
      */
     constructor(source?: Partial<LinkageItemArgs>, options?: fhir.FhirConstructorOptions);
     /**
-     * Required-bound Value Set for type (Linkage.item.type)
-     */
-    static get typeRequiredCodes(): {
-        readonly AlternateRecord: "alternate";
-        readonly HistoricalObsoleteRecord: "historical";
-        readonly SourceOfTruth: "source";
-    };
-    /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
     doModelValidation(expression?: string): fhir.FtsIssue[];

@@ -6,9 +6,9 @@
 import * as fhir from '../fhir.js';
 
 // @ts-ignore
-import { RelatedArtifactTypeCodings, RelatedArtifactTypeCodingType,} from '../fhirValueSets/RelatedArtifactTypeCodings.js';
-// @ts-ignore
 import { RelatedArtifactTypeCodes,  RelatedArtifactTypeCodeType } from '../fhirValueSets/RelatedArtifactTypeCodes.js';
+// @ts-ignore
+import { RelatedArtifactTypeVsValidation } from '../fhirValueSets/RelatedArtifactTypeVsValidation.js';
 /**
  * Valid arguments for the RelatedArtifact type.
  */
@@ -142,30 +142,18 @@ export class RelatedArtifact extends fhir.FhirElement {
     }
   }
   /**
-   * Required-bound Value Set for type (RelatedArtifact.type)
-   */
-  public static get typeRequiredCodes() {
-    return RelatedArtifactTypeCodes;
-  }
-  /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'RelatedArtifact' }
-    if (!this['type']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property type fhir: RelatedArtifact.type:code', expression: [expression] });
-    }
-    if (this['type'] && (!Object.values(RelatedArtifactTypeCodes).includes(this.type.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'type (RelatedArtifact.type) of type code is missing code for Required binding to: RelatedArtifactType', expression: [expression] });
-    }
-    if (this["type"]) { issues.push(...this.type.doModelValidation(expression+'.type')); }
-    if (this["label"]) { issues.push(...this.label.doModelValidation(expression+'.label')); }
-    if (this["display"]) { issues.push(...this.display.doModelValidation(expression+'.display')); }
-    if (this["citation"]) { issues.push(...this.citation.doModelValidation(expression+'.citation')); }
-    if (this["url"]) { issues.push(...this.url.doModelValidation(expression+'.url')); }
-    if (this["document"]) { issues.push(...this.document.doModelValidation(expression+'.document')); }
-    if (this["resource"]) { issues.push(...this.resource.doModelValidation(expression+'.resource')); }
+    this.vReqSV('type',expression,'RelatedArtifactType',RelatedArtifactTypeVsValidation,'r')
+    this.vOptS('label',expression)
+    this.vOptS('display',expression)
+    this.vOptS('citation',expression)
+    this.vOptS('url',expression)
+    this.vOptS('document',expression)
+    this.vOptS('resource',expression)
     return issues;
   }
 }

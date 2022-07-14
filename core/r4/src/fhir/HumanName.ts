@@ -6,9 +6,9 @@
 import * as fhir from '../fhir.js';
 
 // @ts-ignore
-import { NameUseCodings, NameUseCodingType,} from '../fhirValueSets/NameUseCodings.js';
-// @ts-ignore
 import { NameUseCodes,  NameUseCodeType } from '../fhirValueSets/NameUseCodes.js';
+// @ts-ignore
+import { NameUseVsValidation } from '../fhirValueSets/NameUseVsValidation.js';
 /**
  * Valid arguments for the HumanName type.
  */
@@ -150,27 +150,18 @@ export class HumanName extends fhir.FhirElement {
     if (source['period']) { this.period = new fhir.Period(source.period); }
   }
   /**
-   * Required-bound Value Set for use (HumanName.use)
-   */
-  public static get useRequiredCodes() {
-    return NameUseCodes;
-  }
-  /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'HumanName' }
-    if (this['use'] && (!Object.values(NameUseCodes).includes(this.use.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'use (HumanName.use) of type code is missing code for Required binding to: NameUse', expression: [expression] });
-    }
-    if (this["use"]) { issues.push(...this.use.doModelValidation(expression+'.use')); }
-    if (this["text"]) { issues.push(...this.text.doModelValidation(expression+'.text')); }
-    if (this["family"]) { issues.push(...this.family.doModelValidation(expression+'.family')); }
-    if (this["given"]) { this.given.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.given[${i}]`)); }) }
-    if (this["prefix"]) { this.prefix.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.prefix[${i}]`)); }) }
-    if (this["suffix"]) { this.suffix.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.suffix[${i}]`)); }) }
-    if (this["period"]) { issues.push(...this.period.doModelValidation(expression+'.period')); }
+    this.vOptSV('use',expression,'NameUse',NameUseVsValidation,'r')
+    this.vOptS('text',expression)
+    this.vOptS('family',expression)
+    this.vOptA('given',expression)
+    this.vOptA('prefix',expression)
+    this.vOptA('suffix',expression)
+    this.vOptS('period',expression)
     return issues;
   }
 

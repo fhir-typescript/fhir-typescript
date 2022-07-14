@@ -6,13 +6,13 @@
 import * as fhir from '../fhir.js';
 
 // @ts-ignore
-import { AccountStatusCodings, AccountStatusCodingType,} from '../fhirValueSets/AccountStatusCodings.js';
-// @ts-ignore
 import { AccountStatusCodes,  AccountStatusCodeType } from '../fhirValueSets/AccountStatusCodes.js';
 // @ts-ignore
-import { AccountTypeCodings, AccountTypeCodingType,} from '../fhirValueSets/AccountTypeCodings.js';
+import { AccountStatusVsValidation } from '../fhirValueSets/AccountStatusVsValidation.js';
 // @ts-ignore
 import { AccountTypeCodes,  AccountTypeCodeType } from '../fhirValueSets/AccountTypeCodes.js';
+// @ts-ignore
+import { AccountTypeVsValidation } from '../fhirValueSets/AccountTypeVsValidation.js';
 /**
  * Valid arguments for the AccountCoverage type.
  */
@@ -70,11 +70,8 @@ export class AccountCoverage extends fhir.BackboneElement {
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'Account.coverage' }
-    if (!this['coverage']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property coverage fhir: Account.coverage.coverage:Reference', expression: [expression] });
-    }
-    if (this["coverage"]) { issues.push(...this.coverage.doModelValidation(expression+'.coverage')); }
-    if (this["priority"]) { issues.push(...this.priority.doModelValidation(expression+'.priority')); }
+    this.vReqS('coverage',expression)
+    this.vOptS('priority',expression)
     return issues;
   }
 }
@@ -140,12 +137,9 @@ export class AccountGuarantor extends fhir.BackboneElement {
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'Account.guarantor' }
-    if (!this['party']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property party fhir: Account.guarantor.party:Reference', expression: [expression] });
-    }
-    if (this["party"]) { issues.push(...this.party.doModelValidation(expression+'.party')); }
-    if (this["onHold"]) { issues.push(...this.onHold.doModelValidation(expression+'.onHold')); }
-    if (this["period"]) { issues.push(...this.period.doModelValidation(expression+'.period')); }
+    this.vReqS('party',expression)
+    this.vOptS('onHold',expression)
+    this.vOptS('period',expression)
     return issues;
   }
 }
@@ -311,37 +305,23 @@ export class Account extends fhir.DomainResource {
     if (source['partOf']) { this.partOf = new fhir.Reference(source.partOf); }
   }
   /**
-   * Required-bound Value Set for status (Account.status)
-   */
-  public static get statusRequiredCodes() {
-    return AccountStatusCodes;
-  }
-  /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'Account' }
-    if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType fhir: Account.resourceType:"Account"', expression: [expression] });
-    }
-    if (this["identifier"]) { this.identifier.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.identifier[${i}]`)); }) }
-    if (!this['status']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status fhir: Account.status:code', expression: [expression] });
-    }
-    if (this['status'] && (!Object.values(AccountStatusCodes).includes(this.status.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'status (Account.status) of type code is missing code for Required binding to: AccountStatus', expression: [expression] });
-    }
-    if (this["status"]) { issues.push(...this.status.doModelValidation(expression+'.status')); }
-    if (this["type"]) { issues.push(...this.type.doModelValidation(expression+'.type')); }
-    if (this["name"]) { issues.push(...this.name.doModelValidation(expression+'.name')); }
-    if (this["subject"]) { this.subject.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.subject[${i}]`)); }) }
-    if (this["servicePeriod"]) { issues.push(...this.servicePeriod.doModelValidation(expression+'.servicePeriod')); }
-    if (this["coverage"]) { this.coverage.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.coverage[${i}]`)); }) }
-    if (this["owner"]) { issues.push(...this.owner.doModelValidation(expression+'.owner')); }
-    if (this["description"]) { issues.push(...this.description.doModelValidation(expression+'.description')); }
-    if (this["guarantor"]) { this.guarantor.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.guarantor[${i}]`)); }) }
-    if (this["partOf"]) { issues.push(...this.partOf.doModelValidation(expression+'.partOf')); }
+    this.vReqS('resourceType',expression)
+    this.vOptA('identifier',expression)
+    this.vReqSV('status',expression,'AccountStatus',AccountStatusVsValidation,'r')
+    this.vOptS('type',expression)
+    this.vOptS('name',expression)
+    this.vOptA('subject',expression)
+    this.vOptS('servicePeriod',expression)
+    this.vOptA('coverage',expression)
+    this.vOptS('owner',expression)
+    this.vOptS('description',expression)
+    this.vOptA('guarantor',expression)
+    this.vOptS('partOf',expression)
     return issues;
   }
 }

@@ -1,0 +1,16 @@
+{
+  "changes": [
+    {
+      "packageName": "@fhir-typescript/r4-core",
+      "comment": "Moved fhir-codegen language input to this repo",
+      "type": "none"
+    },
+    {
+      "packageName": "@fhir-typescript/r4-core",
+      "comment": "Changed validation text results from 'diagnostics' to 'details.text'",
+      "type": "none"
+    }
+
+  ],
+  "packageName": "@fhir-typescript/r4-core"
+}

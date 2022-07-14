@@ -1,7 +1,5 @@
 import * as fhir from '../fhir.js';
-import { DetectedissueMitigationActionCodingType } from '../fhirValueSets/DetectedissueMitigationActionCodings.js';
 import { ObservationStatusCodeType } from '../fhirValueSets/ObservationStatusCodes.js';
-import { DetectedissueCategoryCodingType } from '../fhirValueSets/DetectedissueCategoryCodings.js';
 import { DetectedissueSeverityCodeType } from '../fhirValueSets/DetectedissueSeverityCodes.js';
 /**
  * Valid arguments for the DetectedIssueEvidence type.
@@ -86,10 +84,6 @@ export declare class DetectedIssueMitigation extends fhir.BackboneElement {
      * Default constructor for DetectedIssueMitigation - initializes any required elements to null if a value is not provided.
      */
     constructor(source?: Partial<DetectedIssueMitigationArgs>, options?: fhir.FhirConstructorOptions);
-    /**
-     * Preferred-bound Value Set for action (DetectedIssue.mitigation.action)
-     */
-    static get actionPreferredCodings(): DetectedissueMitigationActionCodingType;
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
@@ -244,31 +238,6 @@ export declare class DetectedIssue extends fhir.DomainResource {
      * Default constructor for DetectedIssue - initializes any required elements to null if a value is not provided.
      */
     constructor(source?: Partial<DetectedIssueArgs>, options?: fhir.FhirConstructorOptions);
-    /**
-     * Required-bound Value Set for status (DetectedIssue.status)
-     */
-    static get statusRequiredCodes(): {
-        readonly Amended: "amended";
-        readonly Cancelled: "cancelled";
-        readonly Corrected: "corrected";
-        readonly EnteredInError: "entered-in-error";
-        readonly Final: "final";
-        readonly Preliminary: "preliminary";
-        readonly Registered: "registered";
-        readonly Unknown: "unknown";
-    };
-    /**
-     * Preferred-bound Value Set for code (DetectedIssue.code)
-     */
-    static get codePreferredCodings(): DetectedissueCategoryCodingType;
-    /**
-     * Required-bound Value Set for severity (DetectedIssue.severity)
-     */
-    static get severityRequiredCodes(): {
-        readonly High: "high";
-        readonly Low: "low";
-        readonly Moderate: "moderate";
-    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */

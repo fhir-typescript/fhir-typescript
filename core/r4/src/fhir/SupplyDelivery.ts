@@ -6,13 +6,13 @@
 import * as fhir from '../fhir.js';
 
 // @ts-ignore
-import { SupplydeliveryStatusCodings, SupplydeliveryStatusCodingType,} from '../fhirValueSets/SupplydeliveryStatusCodings.js';
-// @ts-ignore
 import { SupplydeliveryStatusCodes,  SupplydeliveryStatusCodeType } from '../fhirValueSets/SupplydeliveryStatusCodes.js';
 // @ts-ignore
-import { SupplydeliveryTypeCodings, SupplydeliveryTypeCodingType,} from '../fhirValueSets/SupplydeliveryTypeCodings.js';
+import { SupplydeliveryStatusVsValidation } from '../fhirValueSets/SupplydeliveryStatusVsValidation.js';
 // @ts-ignore
 import { SupplydeliveryTypeCodes,  SupplydeliveryTypeCodeType } from '../fhirValueSets/SupplydeliveryTypeCodes.js';
+// @ts-ignore
+import { SupplydeliveryTypeVsValidation } from '../fhirValueSets/SupplydeliveryTypeVsValidation.js';
 /**
  * Valid arguments for the SupplyDeliverySuppliedItem type.
  */
@@ -71,7 +71,8 @@ export class SupplyDeliverySuppliedItem extends fhir.BackboneElement {
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'SupplyDelivery.suppliedItem' }
-    if (this["quantity"]) { issues.push(...this.quantity.doModelValidation(expression+'.quantity')); }
+    this.vOptS('quantity',expression)
+    this.vOptS('item',expression)
     return issues;
   }
 }
@@ -237,42 +238,23 @@ export class SupplyDelivery extends fhir.DomainResource {
     else { this.receiver = []; }
   }
   /**
-   * Required-bound Value Set for status (SupplyDelivery.status)
-   */
-  public static get statusRequiredCodes() {
-    return SupplydeliveryStatusCodes;
-  }
-  /**
-   * Required-bound Value Set for type (SupplyDelivery.type)
-   */
-  public static get typeRequiredCodes() {
-    return SupplydeliveryTypeCodes;
-  }
-  /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'SupplyDelivery' }
-    if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType fhir: SupplyDelivery.resourceType:"SupplyDelivery"', expression: [expression] });
-    }
-    if (this["identifier"]) { this.identifier.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.identifier[${i}]`)); }) }
-    if (this["basedOn"]) { this.basedOn.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.basedOn[${i}]`)); }) }
-    if (this["partOf"]) { this.partOf.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.partOf[${i}]`)); }) }
-    if (this['status'] && (!Object.values(SupplydeliveryStatusCodes).includes(this.status.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'status (SupplyDelivery.status) of type code is missing code for Required binding to: SupplydeliveryStatus', expression: [expression] });
-    }
-    if (this["status"]) { issues.push(...this.status.doModelValidation(expression+'.status')); }
-    if (this["patient"]) { issues.push(...this.patient.doModelValidation(expression+'.patient')); }
-    if (this['type'] && (!this.type.hasCodingFromObject(SupplydeliveryTypeCodings))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'type (SupplyDelivery.type) of type CodeableConcept is missing code for Required binding to: SupplydeliveryType', expression: [expression] });
-    }
-    if (this["type"]) { issues.push(...this.type.doModelValidation(expression+'.type')); }
-    if (this["suppliedItem"]) { issues.push(...this.suppliedItem.doModelValidation(expression+'.suppliedItem')); }
-    if (this["supplier"]) { issues.push(...this.supplier.doModelValidation(expression+'.supplier')); }
-    if (this["destination"]) { issues.push(...this.destination.doModelValidation(expression+'.destination')); }
-    if (this["receiver"]) { this.receiver.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.receiver[${i}]`)); }) }
+    this.vReqS('resourceType',expression)
+    this.vOptA('identifier',expression)
+    this.vOptA('basedOn',expression)
+    this.vOptA('partOf',expression)
+    this.vOptSV('status',expression,'SupplydeliveryStatus',SupplydeliveryStatusVsValidation,'r')
+    this.vOptS('patient',expression)
+    this.vOptSV('type',expression,'SupplydeliveryType',SupplydeliveryTypeVsValidation,'r')
+    this.vOptS('suppliedItem',expression)
+    this.vOptS('occurrence',expression)
+    this.vOptS('supplier',expression)
+    this.vOptS('destination',expression)
+    this.vOptA('receiver',expression)
     return issues;
   }
 }

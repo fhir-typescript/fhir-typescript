@@ -6,29 +6,29 @@
 import * as fhir from '../fhir.js';
 
 // @ts-ignore
-import { MedicationknowledgePackageTypeCodings, MedicationknowledgePackageTypeCodingType,} from '../fhirValueSets/MedicationknowledgePackageTypeCodings.js';
-// @ts-ignore
 import { MedicationknowledgePackageTypeCodes,  MedicationknowledgePackageTypeCodeType } from '../fhirValueSets/MedicationknowledgePackageTypeCodes.js';
 // @ts-ignore
-import { MedicationknowledgeCharacteristicCodings, MedicationknowledgeCharacteristicCodingType,} from '../fhirValueSets/MedicationknowledgeCharacteristicCodings.js';
+import { MedicationknowledgePackageTypeVsValidation } from '../fhirValueSets/MedicationknowledgePackageTypeVsValidation.js';
 // @ts-ignore
 import { MedicationknowledgeCharacteristicCodes,  MedicationknowledgeCharacteristicCodeType } from '../fhirValueSets/MedicationknowledgeCharacteristicCodes.js';
 // @ts-ignore
-import { MedicationCodings, MedicationCodingType,} from '../fhirValueSets/MedicationCodings.js';
+import { MedicationknowledgeCharacteristicVsValidation } from '../fhirValueSets/MedicationknowledgeCharacteristicVsValidation.js';
 // @ts-ignore
 import { MedicationCodes,  MedicationCodeType } from '../fhirValueSets/MedicationCodes.js';
 // @ts-ignore
-import { MedicationknowledgeStatusCodings, MedicationknowledgeStatusCodingType,} from '../fhirValueSets/MedicationknowledgeStatusCodings.js';
+import { MedicationVsValidation } from '../fhirValueSets/MedicationVsValidation.js';
 // @ts-ignore
 import { MedicationknowledgeStatusCodes,  MedicationknowledgeStatusCodeType } from '../fhirValueSets/MedicationknowledgeStatusCodes.js';
 // @ts-ignore
-import { MedicationFormCodings, MedicationFormCodingType,} from '../fhirValueSets/MedicationFormCodings.js';
+import { MedicationknowledgeStatusVsValidation } from '../fhirValueSets/MedicationknowledgeStatusVsValidation.js';
 // @ts-ignore
 import { MedicationFormCodes,  MedicationFormCodeType } from '../fhirValueSets/MedicationFormCodes.js';
 // @ts-ignore
-import { RouteCodings, RouteCodingType,} from '../fhirValueSets/RouteCodings.js';
+import { MedicationFormVsValidation } from '../fhirValueSets/MedicationFormVsValidation.js';
 // @ts-ignore
 import { RouteCodes,  RouteCodeType } from '../fhirValueSets/RouteCodes.js';
+// @ts-ignore
+import { RouteVsValidation } from '../fhirValueSets/RouteVsValidation.js';
 /**
  * Valid arguments for the MedicationKnowledgeRelatedMedicationKnowledge type.
  */
@@ -75,18 +75,8 @@ export class MedicationKnowledgeRelatedMedicationKnowledge extends fhir.Backbone
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'MedicationKnowledge.relatedMedicationKnowledge' }
-    if (!this['type']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property type fhir: MedicationKnowledge.relatedMedicationKnowledge.type:CodeableConcept', expression: [expression] });
-    }
-    if (this["type"]) { issues.push(...this.type.doModelValidation(expression+'.type')); }
-    if (!this['reference']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property reference fhir: MedicationKnowledge.relatedMedicationKnowledge.reference:Reference', expression: [expression] });
-    } else if (!Array.isArray(this.reference)) {
-      issues.push({ severity: 'error', code: 'structure', diagnostics: 'Found scalar in array property reference fhir: MedicationKnowledge.relatedMedicationKnowledge.reference:Reference', expression: [expression] });
-    } else if (this.reference.length === 0) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property reference fhir: MedicationKnowledge.relatedMedicationKnowledge.reference:Reference', expression: [expression] });
-    }
-    if (this["reference"]) { this.reference.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.reference[${i}]`)); }) }
+    this.vReqS('type',expression)
+    this.vReqA('reference',expression)
     return issues;
   }
 }
@@ -134,8 +124,8 @@ export class MedicationKnowledgeMonograph extends fhir.BackboneElement {
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'MedicationKnowledge.monograph' }
-    if (this["type"]) { issues.push(...this.type.doModelValidation(expression+'.type')); }
-    if (this["source"]) { issues.push(...this.source.doModelValidation(expression+'.source')); }
+    this.vOptS('type',expression)
+    this.vOptS('source',expression)
     return issues;
   }
 }
@@ -215,11 +205,9 @@ export class MedicationKnowledgeIngredient extends fhir.BackboneElement {
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'MedicationKnowledge.ingredient' }
-    if (!this['item']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property item fhir: MedicationKnowledge.ingredient.item[x]:', expression: [expression] });
-    }
-    if (this["isActive"]) { issues.push(...this.isActive.doModelValidation(expression+'.isActive')); }
-    if (this["strength"]) { issues.push(...this.strength.doModelValidation(expression+'.strength')); }
+    this.vReqS('item',expression)
+    this.vOptS('isActive',expression)
+    this.vOptS('strength',expression)
     return issues;
   }
 }
@@ -286,15 +274,9 @@ export class MedicationKnowledgeCost extends fhir.BackboneElement {
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'MedicationKnowledge.cost' }
-    if (!this['type']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property type fhir: MedicationKnowledge.cost.type:CodeableConcept', expression: [expression] });
-    }
-    if (this["type"]) { issues.push(...this.type.doModelValidation(expression+'.type')); }
-    if (this["source"]) { issues.push(...this.source.doModelValidation(expression+'.source')); }
-    if (!this['cost']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property cost fhir: MedicationKnowledge.cost.cost:Money', expression: [expression] });
-    }
-    if (this["cost"]) { issues.push(...this.cost.doModelValidation(expression+'.cost')); }
+    this.vReqS('type',expression)
+    this.vOptS('source',expression)
+    this.vReqS('cost',expression)
     return issues;
   }
 }
@@ -350,8 +332,8 @@ export class MedicationKnowledgeMonitoringProgram extends fhir.BackboneElement {
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'MedicationKnowledge.monitoringProgram' }
-    if (this["type"]) { issues.push(...this.type.doModelValidation(expression+'.type')); }
-    if (this["name"]) { issues.push(...this.name.doModelValidation(expression+'.name')); }
+    this.vOptS('type',expression)
+    this.vOptS('name',expression)
     return issues;
   }
 }
@@ -401,18 +383,8 @@ export class MedicationKnowledgeAdministrationGuidelinesDosage extends fhir.Back
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'MedicationKnowledge.administrationGuidelines.dosage' }
-    if (!this['type']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property type fhir: MedicationKnowledge.administrationGuidelines.dosage.type:CodeableConcept', expression: [expression] });
-    }
-    if (this["type"]) { issues.push(...this.type.doModelValidation(expression+'.type')); }
-    if (!this['dosage']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property dosage fhir: MedicationKnowledge.administrationGuidelines.dosage.dosage:Dosage', expression: [expression] });
-    } else if (!Array.isArray(this.dosage)) {
-      issues.push({ severity: 'error', code: 'structure', diagnostics: 'Found scalar in array property dosage fhir: MedicationKnowledge.administrationGuidelines.dosage.dosage:Dosage', expression: [expression] });
-    } else if (this.dosage.length === 0) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property dosage fhir: MedicationKnowledge.administrationGuidelines.dosage.dosage:Dosage', expression: [expression] });
-    }
-    if (this["dosage"]) { this.dosage.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.dosage[${i}]`)); }) }
+    this.vReqS('type',expression)
+    this.vReqA('dosage',expression)
     return issues;
   }
 }
@@ -486,10 +458,8 @@ export class MedicationKnowledgeAdministrationGuidelinesPatientCharacteristics e
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'MedicationKnowledge.administrationGuidelines.patientCharacteristics' }
-    if (!this['characteristic']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property characteristic fhir: MedicationKnowledge.administrationGuidelines.patientCharacteristics.characteristic[x]:', expression: [expression] });
-    }
-    if (this["value"]) { this.value.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.value[${i}]`)); }) }
+    this.vReqS('characteristic',expression)
+    this.vOptA('value',expression)
     return issues;
   }
 }
@@ -562,8 +532,9 @@ export class MedicationKnowledgeAdministrationGuidelines extends fhir.BackboneEl
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'MedicationKnowledge.administrationGuidelines' }
-    if (this["dosage"]) { this.dosage.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.dosage[${i}]`)); }) }
-    if (this["patientCharacteristics"]) { this.patientCharacteristics.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.patientCharacteristics[${i}]`)); }) }
+    this.vOptA('dosage',expression)
+    this.vOptS('indication',expression)
+    this.vOptA('patientCharacteristics',expression)
     return issues;
   }
 }
@@ -613,11 +584,8 @@ export class MedicationKnowledgeMedicineClassification extends fhir.BackboneElem
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'MedicationKnowledge.medicineClassification' }
-    if (!this['type']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property type fhir: MedicationKnowledge.medicineClassification.type:CodeableConcept', expression: [expression] });
-    }
-    if (this["type"]) { issues.push(...this.type.doModelValidation(expression+'.type')); }
-    if (this["classification"]) { this.classification.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.classification[${i}]`)); }) }
+    this.vReqS('type',expression)
+    this.vOptA('classification',expression)
     return issues;
   }
 }
@@ -665,8 +633,8 @@ export class MedicationKnowledgePackaging extends fhir.BackboneElement {
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'MedicationKnowledge.packaging' }
-    if (this["type"]) { issues.push(...this.type.doModelValidation(expression+'.type')); }
-    if (this["quantity"]) { issues.push(...this.quantity.doModelValidation(expression+'.quantity')); }
+    this.vOptS('type',expression)
+    this.vOptS('quantity',expression)
     return issues;
   }
 }
@@ -738,7 +706,8 @@ export class MedicationKnowledgeDrugCharacteristic extends fhir.BackboneElement 
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'MedicationKnowledge.drugCharacteristic' }
-    if (this["type"]) { issues.push(...this.type.doModelValidation(expression+'.type')); }
+    this.vOptS('type',expression)
+    this.vOptS('value',expression)
     return issues;
   }
 }
@@ -796,14 +765,8 @@ export class MedicationKnowledgeRegulatorySubstitution extends fhir.BackboneElem
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'MedicationKnowledge.regulatory.substitution' }
-    if (!this['type']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property type fhir: MedicationKnowledge.regulatory.substitution.type:CodeableConcept', expression: [expression] });
-    }
-    if (this["type"]) { issues.push(...this.type.doModelValidation(expression+'.type')); }
-    if (!this['allowed']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property allowed fhir: MedicationKnowledge.regulatory.substitution.allowed:boolean', expression: [expression] });
-    }
-    if (this["allowed"]) { issues.push(...this.allowed.doModelValidation(expression+'.allowed')); }
+    this.vReqS('type',expression)
+    this.vReqS('allowed',expression)
     return issues;
   }
 }
@@ -843,10 +806,7 @@ export class MedicationKnowledgeRegulatorySchedule extends fhir.BackboneElement 
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'MedicationKnowledge.regulatory.schedule' }
-    if (!this['schedule']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property schedule fhir: MedicationKnowledge.regulatory.schedule.schedule:CodeableConcept', expression: [expression] });
-    }
-    if (this["schedule"]) { issues.push(...this.schedule.doModelValidation(expression+'.schedule')); }
+    this.vReqS('schedule',expression)
     return issues;
   }
 }
@@ -895,11 +855,8 @@ export class MedicationKnowledgeRegulatoryMaxDispense extends fhir.BackboneEleme
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'MedicationKnowledge.regulatory.maxDispense' }
-    if (!this['quantity']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property quantity fhir: MedicationKnowledge.regulatory.maxDispense.quantity:Quantity', expression: [expression] });
-    }
-    if (this["quantity"]) { issues.push(...this.quantity.doModelValidation(expression+'.quantity')); }
-    if (this["period"]) { issues.push(...this.period.doModelValidation(expression+'.period')); }
+    this.vReqS('quantity',expression)
+    this.vOptS('period',expression)
     return issues;
   }
 }
@@ -968,13 +925,10 @@ export class MedicationKnowledgeRegulatory extends fhir.BackboneElement {
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'MedicationKnowledge.regulatory' }
-    if (!this['regulatoryAuthority']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property regulatoryAuthority fhir: MedicationKnowledge.regulatory.regulatoryAuthority:Reference', expression: [expression] });
-    }
-    if (this["regulatoryAuthority"]) { issues.push(...this.regulatoryAuthority.doModelValidation(expression+'.regulatoryAuthority')); }
-    if (this["substitution"]) { this.substitution.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.substitution[${i}]`)); }) }
-    if (this["schedule"]) { this.schedule.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.schedule[${i}]`)); }) }
-    if (this["maxDispense"]) { issues.push(...this.maxDispense.doModelValidation(expression+'.maxDispense')); }
+    this.vReqS('regulatoryAuthority',expression)
+    this.vOptA('substitution',expression)
+    this.vOptA('schedule',expression)
+    this.vOptS('maxDispense',expression)
     return issues;
   }
 }
@@ -1033,9 +987,9 @@ export class MedicationKnowledgeKinetics extends fhir.BackboneElement {
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'MedicationKnowledge.kinetics' }
-    if (this["areaUnderCurve"]) { this.areaUnderCurve.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.areaUnderCurve[${i}]`)); }) }
-    if (this["lethalDose50"]) { this.lethalDose50.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.lethalDose50[${i}]`)); }) }
-    if (this["halfLifePeriod"]) { issues.push(...this.halfLifePeriod.doModelValidation(expression+'.halfLifePeriod')); }
+    this.vOptA('areaUnderCurve',expression)
+    this.vOptA('lethalDose50',expression)
+    this.vOptS('halfLifePeriod',expression)
     return issues;
   }
 }
@@ -1308,45 +1262,34 @@ export class MedicationKnowledge extends fhir.DomainResource {
     else { this.kinetics = []; }
   }
   /**
-   * Required-bound Value Set for status (MedicationKnowledge.status)
-   */
-  public static get statusRequiredCodes() {
-    return MedicationknowledgeStatusCodes;
-  }
-  /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'MedicationKnowledge' }
-    if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType fhir: MedicationKnowledge.resourceType:"MedicationKnowledge"', expression: [expression] });
-    }
-    if (this["code"]) { issues.push(...this.code.doModelValidation(expression+'.code')); }
-    if (this['status'] && (!Object.values(MedicationknowledgeStatusCodes).includes(this.status.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'status (MedicationKnowledge.status) of type code is missing code for Required binding to: MedicationknowledgeStatus', expression: [expression] });
-    }
-    if (this["status"]) { issues.push(...this.status.doModelValidation(expression+'.status')); }
-    if (this["manufacturer"]) { issues.push(...this.manufacturer.doModelValidation(expression+'.manufacturer')); }
-    if (this["doseForm"]) { issues.push(...this.doseForm.doModelValidation(expression+'.doseForm')); }
-    if (this["amount"]) { issues.push(...this.amount.doModelValidation(expression+'.amount')); }
-    if (this["synonym"]) { this.synonym.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.synonym[${i}]`)); }) }
-    if (this["relatedMedicationKnowledge"]) { this.relatedMedicationKnowledge.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.relatedMedicationKnowledge[${i}]`)); }) }
-    if (this["associatedMedication"]) { this.associatedMedication.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.associatedMedication[${i}]`)); }) }
-    if (this["productType"]) { this.productType.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.productType[${i}]`)); }) }
-    if (this["monograph"]) { this.monograph.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.monograph[${i}]`)); }) }
-    if (this["ingredient"]) { this.ingredient.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.ingredient[${i}]`)); }) }
-    if (this["preparationInstruction"]) { issues.push(...this.preparationInstruction.doModelValidation(expression+'.preparationInstruction')); }
-    if (this["intendedRoute"]) { this.intendedRoute.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.intendedRoute[${i}]`)); }) }
-    if (this["cost"]) { this.cost.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.cost[${i}]`)); }) }
-    if (this["monitoringProgram"]) { this.monitoringProgram.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.monitoringProgram[${i}]`)); }) }
-    if (this["administrationGuidelines"]) { this.administrationGuidelines.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.administrationGuidelines[${i}]`)); }) }
-    if (this["medicineClassification"]) { this.medicineClassification.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.medicineClassification[${i}]`)); }) }
-    if (this["packaging"]) { issues.push(...this.packaging.doModelValidation(expression+'.packaging')); }
-    if (this["drugCharacteristic"]) { this.drugCharacteristic.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.drugCharacteristic[${i}]`)); }) }
-    if (this["contraindication"]) { this.contraindication.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.contraindication[${i}]`)); }) }
-    if (this["regulatory"]) { this.regulatory.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.regulatory[${i}]`)); }) }
-    if (this["kinetics"]) { this.kinetics.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.kinetics[${i}]`)); }) }
+    this.vReqS('resourceType',expression)
+    this.vOptS('code',expression)
+    this.vOptSV('status',expression,'MedicationknowledgeStatus',MedicationknowledgeStatusVsValidation,'r')
+    this.vOptS('manufacturer',expression)
+    this.vOptS('doseForm',expression)
+    this.vOptS('amount',expression)
+    this.vOptA('synonym',expression)
+    this.vOptA('relatedMedicationKnowledge',expression)
+    this.vOptA('associatedMedication',expression)
+    this.vOptA('productType',expression)
+    this.vOptA('monograph',expression)
+    this.vOptA('ingredient',expression)
+    this.vOptS('preparationInstruction',expression)
+    this.vOptA('intendedRoute',expression)
+    this.vOptA('cost',expression)
+    this.vOptA('monitoringProgram',expression)
+    this.vOptA('administrationGuidelines',expression)
+    this.vOptA('medicineClassification',expression)
+    this.vOptS('packaging',expression)
+    this.vOptA('drugCharacteristic',expression)
+    this.vOptA('contraindication',expression)
+    this.vOptA('regulatory',expression)
+    this.vOptA('kinetics',expression)
     return issues;
   }
 }

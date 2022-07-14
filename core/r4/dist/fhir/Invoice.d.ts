@@ -97,17 +97,6 @@ export declare class InvoiceLineItemPriceComponent extends fhir.BackboneElement 
      */
     constructor(source?: Partial<InvoiceLineItemPriceComponentArgs>, options?: fhir.FhirConstructorOptions);
     /**
-     * Required-bound Value Set for type (Invoice.lineItem.priceComponent.type)
-     */
-    static get typeRequiredCodes(): {
-        readonly BasePrice: "base";
-        readonly Deduction: "deduction";
-        readonly Discount: "discount";
-        readonly Informational: "informational";
-        readonly Surcharge: "surcharge";
-        readonly Tax: "tax";
-    };
-    /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
     doModelValidation(expression?: string): fhir.FtsIssue[];
@@ -343,16 +332,6 @@ export declare class Invoice extends fhir.DomainResource {
      * Default constructor for Invoice - initializes any required elements to null if a value is not provided.
      */
     constructor(source?: Partial<InvoiceArgs>, options?: fhir.FhirConstructorOptions);
-    /**
-     * Required-bound Value Set for status (Invoice.status)
-     */
-    static get statusRequiredCodes(): {
-        readonly Balanced: "balanced";
-        readonly Cancelled: "cancelled";
-        readonly Draft: "draft";
-        readonly EnteredInError: "entered-in-error";
-        readonly Issued: "issued";
-    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */

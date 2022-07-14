@@ -78,15 +78,6 @@ export declare class Quantity extends fhir.FhirElement {
      */
     constructor(source?: Partial<QuantityArgs>, options?: fhir.FhirConstructorOptions);
     /**
-     * Required-bound Value Set for comparator (Quantity.comparator)
-     */
-    static get comparatorRequiredCodes(): {
-        readonly LessThan: "<";
-        readonly LessOrEqualTo: "<=";
-        readonly GreaterThan: ">";
-        readonly GreaterOrEqualTo: ">=";
-    };
-    /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
     doModelValidation(expression?: string): fhir.FtsIssue[];

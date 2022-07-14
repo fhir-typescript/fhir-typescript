@@ -246,14 +246,6 @@ export declare class BiologicallyDerivedProductStorage extends fhir.BackboneElem
      */
     constructor(source?: Partial<BiologicallyDerivedProductStorageArgs>, options?: fhir.FhirConstructorOptions);
     /**
-     * Required-bound Value Set for scale (BiologicallyDerivedProduct.storage.scale)
-     */
-    static get scaleRequiredCodes(): {
-        readonly Celsius: "celsius";
-        readonly Fahrenheit: "farenheit";
-        readonly Kelvin: "kelvin";
-    };
-    /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
     doModelValidation(expression?: string): fhir.FtsIssue[];
@@ -384,23 +376,6 @@ export declare class BiologicallyDerivedProduct extends fhir.DomainResource {
      * Default constructor for BiologicallyDerivedProduct - initializes any required elements to null if a value is not provided.
      */
     constructor(source?: Partial<BiologicallyDerivedProductArgs>, options?: fhir.FhirConstructorOptions);
-    /**
-     * Required-bound Value Set for productCategory (BiologicallyDerivedProduct.productCategory)
-     */
-    static get productCategoryRequiredCodes(): {
-        readonly BiologicalAgent: "biologicalAgent";
-        readonly Cells: "cells";
-        readonly Fluid: "fluid";
-        readonly Organ: "organ";
-        readonly Tissue: "tissue";
-    };
-    /**
-     * Required-bound Value Set for status (BiologicallyDerivedProduct.status)
-     */
-    static get statusRequiredCodes(): {
-        readonly Available: "available";
-        readonly Unavailable: "unavailable";
-    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */

@@ -44,15 +44,6 @@ export declare class VisionPrescriptionLensSpecificationPrism extends fhir.Backb
      */
     constructor(source?: Partial<VisionPrescriptionLensSpecificationPrismArgs>, options?: fhir.FhirConstructorOptions);
     /**
-     * Required-bound Value Set for base (VisionPrescription.lensSpecification.prism.base)
-     */
-    static get baseRequiredCodes(): {
-        readonly Down: "down";
-        readonly In: "in";
-        readonly Out: "out";
-        readonly Up: "up";
-    };
-    /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
     doModelValidation(expression?: string): fhir.FtsIssue[];
@@ -229,13 +220,6 @@ export declare class VisionPrescriptionLensSpecification extends fhir.BackboneEl
      */
     constructor(source?: Partial<VisionPrescriptionLensSpecificationArgs>, options?: fhir.FhirConstructorOptions);
     /**
-     * Required-bound Value Set for eye (VisionPrescription.lensSpecification.eye)
-     */
-    static get eyeRequiredCodes(): {
-        readonly LeftEye: "left";
-        readonly RightEye: "right";
-    };
-    /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
     doModelValidation(expression?: string): fhir.FtsIssue[];
@@ -341,15 +325,6 @@ export declare class VisionPrescription extends fhir.DomainResource {
      * Default constructor for VisionPrescription - initializes any required elements to null if a value is not provided.
      */
     constructor(source?: Partial<VisionPrescriptionArgs>, options?: fhir.FhirConstructorOptions);
-    /**
-     * Required-bound Value Set for status (VisionPrescription.status)
-     */
-    static get statusRequiredCodes(): {
-        readonly Active: "active";
-        readonly Cancelled: "cancelled";
-        readonly Draft: "draft";
-        readonly EnteredInError: "entered-in-error";
-    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */

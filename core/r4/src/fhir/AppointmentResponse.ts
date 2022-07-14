@@ -6,13 +6,13 @@
 import * as fhir from '../fhir.js';
 
 // @ts-ignore
-import { EncounterParticipantTypeCodings, EncounterParticipantTypeCodingType,} from '../fhirValueSets/EncounterParticipantTypeCodings.js';
-// @ts-ignore
 import { EncounterParticipantTypeCodes,  EncounterParticipantTypeCodeType } from '../fhirValueSets/EncounterParticipantTypeCodes.js';
 // @ts-ignore
-import { ParticipationstatusCodings, ParticipationstatusCodingType,} from '../fhirValueSets/ParticipationstatusCodings.js';
+import { EncounterParticipantTypeVsValidation } from '../fhirValueSets/EncounterParticipantTypeVsValidation.js';
 // @ts-ignore
 import { ParticipationstatusCodes,  ParticipationstatusCodeType } from '../fhirValueSets/ParticipationstatusCodes.js';
+// @ts-ignore
+import { ParticipationstatusVsValidation } from '../fhirValueSets/ParticipationstatusVsValidation.js';
 /**
  * Valid arguments for the AppointmentResponse type.
  */
@@ -155,43 +155,20 @@ export class AppointmentResponse extends fhir.DomainResource {
     }
   }
   /**
-   * Extensible-bound Value Set for participantType (AppointmentResponse.participantType)
-   */
-  public static get participantTypeExtensibleCodings():EncounterParticipantTypeCodingType {
-    return EncounterParticipantTypeCodings;
-  }
-  /**
-   * Required-bound Value Set for participantStatus (AppointmentResponse.participantStatus)
-   */
-  public static get participantStatusRequiredCodes() {
-    return ParticipationstatusCodes;
-  }
-  /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'AppointmentResponse' }
-    if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType fhir: AppointmentResponse.resourceType:"AppointmentResponse"', expression: [expression] });
-    }
-    if (this["identifier"]) { this.identifier.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.identifier[${i}]`)); }) }
-    if (!this['appointment']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property appointment fhir: AppointmentResponse.appointment:Reference', expression: [expression] });
-    }
-    if (this["appointment"]) { issues.push(...this.appointment.doModelValidation(expression+'.appointment')); }
-    if (this["start"]) { issues.push(...this.start.doModelValidation(expression+'.start')); }
-    if (this["end"]) { issues.push(...this.end.doModelValidation(expression+'.end')); }
-    if (this["participantType"]) { this.participantType.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.participantType[${i}]`)); }) }
-    if (this["actor"]) { issues.push(...this.actor.doModelValidation(expression+'.actor')); }
-    if (!this['participantStatus']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property participantStatus fhir: AppointmentResponse.participantStatus:code', expression: [expression] });
-    }
-    if (this['participantStatus'] && (!Object.values(ParticipationstatusCodes).includes(this.participantStatus.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'participantStatus (AppointmentResponse.participantStatus) of type code is missing code for Required binding to: Participationstatus', expression: [expression] });
-    }
-    if (this["participantStatus"]) { issues.push(...this.participantStatus.doModelValidation(expression+'.participantStatus')); }
-    if (this["comment"]) { issues.push(...this.comment.doModelValidation(expression+'.comment')); }
+    this.vReqS('resourceType',expression)
+    this.vOptA('identifier',expression)
+    this.vReqS('appointment',expression)
+    this.vOptS('start',expression)
+    this.vOptS('end',expression)
+    this.vOptA('participantType',expression)
+    this.vOptS('actor',expression)
+    this.vReqSV('participantStatus',expression,'Participationstatus',ParticipationstatusVsValidation,'r')
+    this.vOptS('comment',expression)
     return issues;
   }
 }

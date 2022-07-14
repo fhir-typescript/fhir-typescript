@@ -154,21 +154,6 @@ export declare class ConceptMapGroupElementTarget extends fhir.BackboneElement {
      */
     constructor(source?: Partial<ConceptMapGroupElementTargetArgs>, options?: fhir.FhirConstructorOptions);
     /**
-     * Required-bound Value Set for equivalence (ConceptMap.group.element.target.equivalence)
-     */
-    static get equivalenceRequiredCodes(): {
-        readonly Disjoint: "disjoint";
-        readonly Equal: "equal";
-        readonly Equivalent: "equivalent";
-        readonly Inexact: "inexact";
-        readonly Narrower: "narrower";
-        readonly RelatedTo: "relatedto";
-        readonly Specializes: "specializes";
-        readonly Subsumes: "subsumes";
-        readonly Unmatched: "unmatched";
-        readonly Wider: "wider";
-    };
-    /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
     doModelValidation(expression?: string): fhir.FtsIssue[];
@@ -292,14 +277,6 @@ export declare class ConceptMapGroupUnmapped extends fhir.BackboneElement {
      * Default constructor for ConceptMapGroupUnmapped - initializes any required elements to null if a value is not provided.
      */
     constructor(source?: Partial<ConceptMapGroupUnmappedArgs>, options?: fhir.FhirConstructorOptions);
-    /**
-     * Required-bound Value Set for mode (ConceptMap.group.unmapped.mode)
-     */
-    static get modeRequiredCodes(): {
-        readonly FixedCode: "fixed";
-        readonly OtherMap: "other-map";
-        readonly ProvidedCode: "provided";
-    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
@@ -632,15 +609,6 @@ export declare class ConceptMap extends fhir.DomainResource {
      * Default constructor for ConceptMap - initializes any required elements to null if a value is not provided.
      */
     constructor(source?: Partial<ConceptMapArgs>, options?: fhir.FhirConstructorOptions);
-    /**
-     * Required-bound Value Set for status (ConceptMap.status)
-     */
-    static get statusRequiredCodes(): {
-        readonly Active: "active";
-        readonly Draft: "draft";
-        readonly Retired: "retired";
-        readonly Unknown: "unknown";
-    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */

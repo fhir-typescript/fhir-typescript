@@ -124,12 +124,13 @@ export class SubstanceSpecificationMoiety extends fhir.BackboneElement {
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'SubstanceSpecification.moiety' }
-    if (this["role"]) { issues.push(...this.role.doModelValidation(expression+'.role')); }
-    if (this["identifier"]) { issues.push(...this.identifier.doModelValidation(expression+'.identifier')); }
-    if (this["name"]) { issues.push(...this.name.doModelValidation(expression+'.name')); }
-    if (this["stereochemistry"]) { issues.push(...this.stereochemistry.doModelValidation(expression+'.stereochemistry')); }
-    if (this["opticalActivity"]) { issues.push(...this.opticalActivity.doModelValidation(expression+'.opticalActivity')); }
-    if (this["molecularFormula"]) { issues.push(...this.molecularFormula.doModelValidation(expression+'.molecularFormula')); }
+    this.vOptS('role',expression)
+    this.vOptS('identifier',expression)
+    this.vOptS('name',expression)
+    this.vOptS('stereochemistry',expression)
+    this.vOptS('opticalActivity',expression)
+    this.vOptS('molecularFormula',expression)
+    this.vOptS('amount',expression)
     return issues;
   }
 }
@@ -240,9 +241,11 @@ export class SubstanceSpecificationProperty extends fhir.BackboneElement {
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'SubstanceSpecification.property' }
-    if (this["category"]) { issues.push(...this.category.doModelValidation(expression+'.category')); }
-    if (this["code"]) { issues.push(...this.code.doModelValidation(expression+'.code')); }
-    if (this["parameters"]) { issues.push(...this.parameters.doModelValidation(expression+'.parameters')); }
+    this.vOptS('category',expression)
+    this.vOptS('code',expression)
+    this.vOptS('parameters',expression)
+    this.vOptS('definingSubstance',expression)
+    this.vOptS('amount',expression)
     return issues;
   }
 }
@@ -299,9 +302,9 @@ export class SubstanceSpecificationStructureIsotopeMolecularWeight extends fhir.
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'SubstanceSpecification.structure.isotope.molecularWeight' }
-    if (this["method"]) { issues.push(...this.method.doModelValidation(expression+'.method')); }
-    if (this["type"]) { issues.push(...this.type.doModelValidation(expression+'.type')); }
-    if (this["amount"]) { issues.push(...this.amount.doModelValidation(expression+'.amount')); }
+    this.vOptS('method',expression)
+    this.vOptS('type',expression)
+    this.vOptS('amount',expression)
     return issues;
   }
 }
@@ -376,11 +379,11 @@ export class SubstanceSpecificationStructureIsotope extends fhir.BackboneElement
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'SubstanceSpecification.structure.isotope' }
-    if (this["identifier"]) { issues.push(...this.identifier.doModelValidation(expression+'.identifier')); }
-    if (this["name"]) { issues.push(...this.name.doModelValidation(expression+'.name')); }
-    if (this["substitution"]) { issues.push(...this.substitution.doModelValidation(expression+'.substitution')); }
-    if (this["halfLife"]) { issues.push(...this.halfLife.doModelValidation(expression+'.halfLife')); }
-    if (this["molecularWeight"]) { issues.push(...this.molecularWeight.doModelValidation(expression+'.molecularWeight')); }
+    this.vOptS('identifier',expression)
+    this.vOptS('name',expression)
+    this.vOptS('substitution',expression)
+    this.vOptS('halfLife',expression)
+    this.vOptS('molecularWeight',expression)
     return issues;
   }
 }
@@ -445,9 +448,9 @@ export class SubstanceSpecificationStructureRepresentation extends fhir.Backbone
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'SubstanceSpecification.structure.representation' }
-    if (this["type"]) { issues.push(...this.type.doModelValidation(expression+'.type')); }
-    if (this["representation"]) { issues.push(...this.representation.doModelValidation(expression+'.representation')); }
-    if (this["attachment"]) { issues.push(...this.attachment.doModelValidation(expression+'.attachment')); }
+    this.vOptS('type',expression)
+    this.vOptS('representation',expression)
+    this.vOptS('attachment',expression)
     return issues;
   }
 }
@@ -568,14 +571,14 @@ export class SubstanceSpecificationStructure extends fhir.BackboneElement {
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'SubstanceSpecification.structure' }
-    if (this["stereochemistry"]) { issues.push(...this.stereochemistry.doModelValidation(expression+'.stereochemistry')); }
-    if (this["opticalActivity"]) { issues.push(...this.opticalActivity.doModelValidation(expression+'.opticalActivity')); }
-    if (this["molecularFormula"]) { issues.push(...this.molecularFormula.doModelValidation(expression+'.molecularFormula')); }
-    if (this["molecularFormulaByMoiety"]) { issues.push(...this.molecularFormulaByMoiety.doModelValidation(expression+'.molecularFormulaByMoiety')); }
-    if (this["isotope"]) { this.isotope.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.isotope[${i}]`)); }) }
-    if (this["molecularWeight"]) { issues.push(...this.molecularWeight.doModelValidation(expression+'.molecularWeight')); }
-    if (this["source"]) { this.source.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.source[${i}]`)); }) }
-    if (this["representation"]) { this.representation.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.representation[${i}]`)); }) }
+    this.vOptS('stereochemistry',expression)
+    this.vOptS('opticalActivity',expression)
+    this.vOptS('molecularFormula',expression)
+    this.vOptS('molecularFormulaByMoiety',expression)
+    this.vOptA('isotope',expression)
+    this.vOptS('molecularWeight',expression)
+    this.vOptA('source',expression)
+    this.vOptA('representation',expression)
     return issues;
   }
 }
@@ -667,11 +670,11 @@ export class SubstanceSpecificationCode extends fhir.BackboneElement {
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'SubstanceSpecification.code' }
-    if (this["code"]) { issues.push(...this.code.doModelValidation(expression+'.code')); }
-    if (this["status"]) { issues.push(...this.status.doModelValidation(expression+'.status')); }
-    if (this["statusDate"]) { issues.push(...this.statusDate.doModelValidation(expression+'.statusDate')); }
-    if (this["comment"]) { issues.push(...this.comment.doModelValidation(expression+'.comment')); }
-    if (this["source"]) { this.source.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.source[${i}]`)); }) }
+    this.vOptS('code',expression)
+    this.vOptS('status',expression)
+    this.vOptS('statusDate',expression)
+    this.vOptS('comment',expression)
+    this.vOptA('source',expression)
     return issues;
   }
 }
@@ -736,9 +739,9 @@ export class SubstanceSpecificationNameOfficial extends fhir.BackboneElement {
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'SubstanceSpecification.name.official' }
-    if (this["authority"]) { issues.push(...this.authority.doModelValidation(expression+'.authority')); }
-    if (this["status"]) { issues.push(...this.status.doModelValidation(expression+'.status')); }
-    if (this["date"]) { issues.push(...this.date.doModelValidation(expression+'.date')); }
+    this.vOptS('authority',expression)
+    this.vOptS('status',expression)
+    this.vOptS('date',expression)
     return issues;
   }
 }
@@ -891,20 +894,17 @@ export class SubstanceSpecificationName extends fhir.BackboneElement {
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'SubstanceSpecification.name' }
-    if (!this['name']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property name fhir: SubstanceSpecification.name.name:string', expression: [expression] });
-    }
-    if (this["name"]) { issues.push(...this.name.doModelValidation(expression+'.name')); }
-    if (this["type"]) { issues.push(...this.type.doModelValidation(expression+'.type')); }
-    if (this["status"]) { issues.push(...this.status.doModelValidation(expression+'.status')); }
-    if (this["preferred"]) { issues.push(...this.preferred.doModelValidation(expression+'.preferred')); }
-    if (this["language"]) { this.language.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.language[${i}]`)); }) }
-    if (this["domain"]) { this.domain.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.domain[${i}]`)); }) }
-    if (this["jurisdiction"]) { this.jurisdiction.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.jurisdiction[${i}]`)); }) }
-    if (this["synonym"]) { this.synonym.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.synonym[${i}]`)); }) }
-    if (this["translation"]) { this.translation.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.translation[${i}]`)); }) }
-    if (this["official"]) { this.official.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.official[${i}]`)); }) }
-    if (this["source"]) { this.source.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.source[${i}]`)); }) }
+    this.vReqS('name',expression)
+    this.vOptS('type',expression)
+    this.vOptS('status',expression)
+    this.vOptS('preferred',expression)
+    this.vOptA('language',expression)
+    this.vOptA('domain',expression)
+    this.vOptA('jurisdiction',expression)
+    this.vOptA('synonym',expression)
+    this.vOptA('translation',expression)
+    this.vOptA('official',expression)
+    this.vOptA('source',expression)
     return issues;
   }
 }
@@ -1044,11 +1044,13 @@ export class SubstanceSpecificationRelationship extends fhir.BackboneElement {
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'SubstanceSpecification.relationship' }
-    if (this["relationship"]) { issues.push(...this.relationship.doModelValidation(expression+'.relationship')); }
-    if (this["isDefining"]) { issues.push(...this.isDefining.doModelValidation(expression+'.isDefining')); }
-    if (this["amountRatioLowLimit"]) { issues.push(...this.amountRatioLowLimit.doModelValidation(expression+'.amountRatioLowLimit')); }
-    if (this["amountType"]) { issues.push(...this.amountType.doModelValidation(expression+'.amountType')); }
-    if (this["source"]) { this.source.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.source[${i}]`)); }) }
+    this.vOptS('substance',expression)
+    this.vOptS('relationship',expression)
+    this.vOptS('isDefining',expression)
+    this.vOptS('amount',expression)
+    this.vOptS('amountRatioLowLimit',expression)
+    this.vOptS('amountType',expression)
+    this.vOptA('source',expression)
     return issues;
   }
 }
@@ -1281,28 +1283,26 @@ export class SubstanceSpecification extends fhir.DomainResource {
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'SubstanceSpecification' }
-    if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType fhir: SubstanceSpecification.resourceType:"SubstanceSpecification"', expression: [expression] });
-    }
-    if (this["identifier"]) { issues.push(...this.identifier.doModelValidation(expression+'.identifier')); }
-    if (this["type"]) { issues.push(...this.type.doModelValidation(expression+'.type')); }
-    if (this["status"]) { issues.push(...this.status.doModelValidation(expression+'.status')); }
-    if (this["domain"]) { issues.push(...this.domain.doModelValidation(expression+'.domain')); }
-    if (this["description"]) { issues.push(...this.description.doModelValidation(expression+'.description')); }
-    if (this["source"]) { this.source.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.source[${i}]`)); }) }
-    if (this["comment"]) { issues.push(...this.comment.doModelValidation(expression+'.comment')); }
-    if (this["moiety"]) { this.moiety.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.moiety[${i}]`)); }) }
-    if (this["property"]) { this.property.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.property[${i}]`)); }) }
-    if (this["referenceInformation"]) { issues.push(...this.referenceInformation.doModelValidation(expression+'.referenceInformation')); }
-    if (this["structure"]) { issues.push(...this.structure.doModelValidation(expression+'.structure')); }
-    if (this["code"]) { this.code.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.code[${i}]`)); }) }
-    if (this["name"]) { this.name.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.name[${i}]`)); }) }
-    if (this["molecularWeight"]) { this.molecularWeight.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.molecularWeight[${i}]`)); }) }
-    if (this["relationship"]) { this.relationship.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.relationship[${i}]`)); }) }
-    if (this["nucleicAcid"]) { issues.push(...this.nucleicAcid.doModelValidation(expression+'.nucleicAcid')); }
-    if (this["polymer"]) { issues.push(...this.polymer.doModelValidation(expression+'.polymer')); }
-    if (this["protein"]) { issues.push(...this.protein.doModelValidation(expression+'.protein')); }
-    if (this["sourceMaterial"]) { issues.push(...this.sourceMaterial.doModelValidation(expression+'.sourceMaterial')); }
+    this.vReqS('resourceType',expression)
+    this.vOptS('identifier',expression)
+    this.vOptS('type',expression)
+    this.vOptS('status',expression)
+    this.vOptS('domain',expression)
+    this.vOptS('description',expression)
+    this.vOptA('source',expression)
+    this.vOptS('comment',expression)
+    this.vOptA('moiety',expression)
+    this.vOptA('property',expression)
+    this.vOptS('referenceInformation',expression)
+    this.vOptS('structure',expression)
+    this.vOptA('code',expression)
+    this.vOptA('name',expression)
+    this.vOptA('molecularWeight',expression)
+    this.vOptA('relationship',expression)
+    this.vOptS('nucleicAcid',expression)
+    this.vOptS('polymer',expression)
+    this.vOptS('protein',expression)
+    this.vOptS('sourceMaterial',expression)
     return issues;
   }
 }

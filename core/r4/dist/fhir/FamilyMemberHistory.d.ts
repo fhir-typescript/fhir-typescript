@@ -1,6 +1,5 @@
 import * as fhir from '../fhir.js';
 import { HistoryStatusCodeType } from '../fhirValueSets/HistoryStatusCodes.js';
-import { AdministrativeGenderCodingType } from '../fhirValueSets/AdministrativeGenderCodings.js';
 /**
  * Valid arguments for the FamilyMemberHistoryCondition type.
  */
@@ -336,19 +335,6 @@ export declare class FamilyMemberHistory extends fhir.DomainResource {
      * Default constructor for FamilyMemberHistory - initializes any required elements to null if a value is not provided.
      */
     constructor(source?: Partial<FamilyMemberHistoryArgs>, options?: fhir.FhirConstructorOptions);
-    /**
-     * Required-bound Value Set for status (FamilyMemberHistory.status)
-     */
-    static get statusRequiredCodes(): {
-        readonly Completed: "completed";
-        readonly EnteredInError: "entered-in-error";
-        readonly HealthUnknown: "health-unknown";
-        readonly Partial: "partial";
-    };
-    /**
-     * Extensible-bound Value Set for sex (FamilyMemberHistory.sex)
-     */
-    static get sexExtensibleCodings(): AdministrativeGenderCodingType;
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */

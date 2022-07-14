@@ -41,7 +41,7 @@ export class BackboneElement extends fhir.FhirElement {
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'BackboneElement' }
-    if (this["modifierExtension"]) { this.modifierExtension.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.modifierExtension[${i}]`)); }) }
+    this.vOptA('modifierExtension',expression)
     return issues;
   }
 }

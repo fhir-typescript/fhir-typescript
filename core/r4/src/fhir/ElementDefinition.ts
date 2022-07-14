@@ -6,41 +6,41 @@
 import * as fhir from '../fhir.js';
 
 // @ts-ignore
-import { DiscriminatorTypeCodings, DiscriminatorTypeCodingType,} from '../fhirValueSets/DiscriminatorTypeCodings.js';
-// @ts-ignore
 import { DiscriminatorTypeCodes,  DiscriminatorTypeCodeType } from '../fhirValueSets/DiscriminatorTypeCodes.js';
 // @ts-ignore
-import { ResourceSlicingRulesCodings, ResourceSlicingRulesCodingType,} from '../fhirValueSets/ResourceSlicingRulesCodings.js';
+import { DiscriminatorTypeVsValidation } from '../fhirValueSets/DiscriminatorTypeVsValidation.js';
 // @ts-ignore
 import { ResourceSlicingRulesCodes,  ResourceSlicingRulesCodeType } from '../fhirValueSets/ResourceSlicingRulesCodes.js';
 // @ts-ignore
-import { DefinedTypesCodings, DefinedTypesCodingType,} from '../fhirValueSets/DefinedTypesCodings.js';
+import { ResourceSlicingRulesVsValidation } from '../fhirValueSets/ResourceSlicingRulesVsValidation.js';
 // @ts-ignore
 import { DefinedTypesCodes,  DefinedTypesCodeType } from '../fhirValueSets/DefinedTypesCodes.js';
 // @ts-ignore
-import { ResourceAggregationModeCodings, ResourceAggregationModeCodingType,} from '../fhirValueSets/ResourceAggregationModeCodings.js';
+import { DefinedTypesVsValidation } from '../fhirValueSets/DefinedTypesVsValidation.js';
 // @ts-ignore
 import { ResourceAggregationModeCodes,  ResourceAggregationModeCodeType } from '../fhirValueSets/ResourceAggregationModeCodes.js';
 // @ts-ignore
-import { ReferenceVersionRulesCodings, ReferenceVersionRulesCodingType,} from '../fhirValueSets/ReferenceVersionRulesCodings.js';
+import { ResourceAggregationModeVsValidation } from '../fhirValueSets/ResourceAggregationModeVsValidation.js';
 // @ts-ignore
 import { ReferenceVersionRulesCodes,  ReferenceVersionRulesCodeType } from '../fhirValueSets/ReferenceVersionRulesCodes.js';
 // @ts-ignore
-import { ConstraintSeverityCodings, ConstraintSeverityCodingType,} from '../fhirValueSets/ConstraintSeverityCodings.js';
+import { ReferenceVersionRulesVsValidation } from '../fhirValueSets/ReferenceVersionRulesVsValidation.js';
 // @ts-ignore
 import { ConstraintSeverityCodes,  ConstraintSeverityCodeType } from '../fhirValueSets/ConstraintSeverityCodes.js';
 // @ts-ignore
-import { BindingStrengthCodings, BindingStrengthCodingType,} from '../fhirValueSets/BindingStrengthCodings.js';
+import { ConstraintSeverityVsValidation } from '../fhirValueSets/ConstraintSeverityVsValidation.js';
 // @ts-ignore
 import { BindingStrengthCodes,  BindingStrengthCodeType } from '../fhirValueSets/BindingStrengthCodes.js';
 // @ts-ignore
-import { PropertyRepresentationCodings, PropertyRepresentationCodingType,} from '../fhirValueSets/PropertyRepresentationCodings.js';
+import { BindingStrengthVsValidation } from '../fhirValueSets/BindingStrengthVsValidation.js';
 // @ts-ignore
 import { PropertyRepresentationCodes,  PropertyRepresentationCodeType } from '../fhirValueSets/PropertyRepresentationCodes.js';
 // @ts-ignore
-import { ObservationCodings, ObservationCodingType,} from '../fhirValueSets/ObservationCodings.js';
+import { PropertyRepresentationVsValidation } from '../fhirValueSets/PropertyRepresentationVsValidation.js';
 // @ts-ignore
 import { ObservationCodes,  ObservationCodeType } from '../fhirValueSets/ObservationCodes.js';
+// @ts-ignore
+import { ObservationVsValidation } from '../fhirValueSets/ObservationVsValidation.js';
 /**
  * Valid arguments for the ElementDefinitionSlicingDiscriminator type.
  */
@@ -98,28 +98,13 @@ export class ElementDefinitionSlicingDiscriminator extends fhir.FhirElement {
     }
   }
   /**
-   * Required-bound Value Set for type (ElementDefinition.slicing.discriminator.type)
-   */
-  public static get typeRequiredCodes() {
-    return DiscriminatorTypeCodes;
-  }
-  /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'ElementDefinition.slicing.discriminator' }
-    if (!this['type']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property type fhir: ElementDefinition.slicing.discriminator.type:code', expression: [expression] });
-    }
-    if (this['type'] && (!Object.values(DiscriminatorTypeCodes).includes(this.type.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'type (ElementDefinition.slicing.discriminator.type) of type code is missing code for Required binding to: DiscriminatorType', expression: [expression] });
-    }
-    if (this["type"]) { issues.push(...this.type.doModelValidation(expression+'.type')); }
-    if (!this['path']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property path fhir: ElementDefinition.slicing.discriminator.path:string', expression: [expression] });
-    }
-    if (this["path"]) { issues.push(...this.path.doModelValidation(expression+'.path')); }
+    this.vReqSV('type',expression,'DiscriminatorType',DiscriminatorTypeVsValidation,'r')
+    this.vReqS('path',expression)
     return issues;
   }
 }
@@ -206,27 +191,15 @@ export class ElementDefinitionSlicing extends fhir.FhirElement {
     }
   }
   /**
-   * Required-bound Value Set for rules (ElementDefinition.slicing.rules)
-   */
-  public static get rulesRequiredCodes() {
-    return ResourceSlicingRulesCodes;
-  }
-  /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'ElementDefinition.slicing' }
-    if (this["discriminator"]) { this.discriminator.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.discriminator[${i}]`)); }) }
-    if (this["description"]) { issues.push(...this.description.doModelValidation(expression+'.description')); }
-    if (this["ordered"]) { issues.push(...this.ordered.doModelValidation(expression+'.ordered')); }
-    if (!this['rules']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property rules fhir: ElementDefinition.slicing.rules:code', expression: [expression] });
-    }
-    if (this['rules'] && (!Object.values(ResourceSlicingRulesCodes).includes(this.rules.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'rules (ElementDefinition.slicing.rules) of type code is missing code for Required binding to: ResourceSlicingRules', expression: [expression] });
-    }
-    if (this["rules"]) { issues.push(...this.rules.doModelValidation(expression+'.rules')); }
+    this.vOptA('discriminator',expression)
+    this.vOptS('description',expression)
+    this.vOptS('ordered',expression)
+    this.vReqSV('rules',expression,'ResourceSlicingRules',ResourceSlicingRulesVsValidation,'r')
     return issues;
   }
 }
@@ -310,18 +283,9 @@ export class ElementDefinitionBase extends fhir.FhirElement {
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'ElementDefinition.base' }
-    if (!this['path']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property path fhir: ElementDefinition.base.path:string', expression: [expression] });
-    }
-    if (this["path"]) { issues.push(...this.path.doModelValidation(expression+'.path')); }
-    if (!this['min']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property min fhir: ElementDefinition.base.min:unsignedInt', expression: [expression] });
-    }
-    if (this["min"]) { issues.push(...this.min.doModelValidation(expression+'.min')); }
-    if (!this['max']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property max fhir: ElementDefinition.base.max:string', expression: [expression] });
-    }
-    if (this["max"]) { issues.push(...this.max.doModelValidation(expression+'.max')); }
+    this.vReqS('path',expression)
+    this.vReqS('min',expression)
+    this.vReqS('max',expression)
     return issues;
   }
 }
@@ -441,47 +405,16 @@ export class ElementDefinitionType extends fhir.FhirElement {
     }
   }
   /**
-   * Extensible-bound Value Set for code (ElementDefinition.type.code)
-   */
-  public static get codeExtensibleCodings():DefinedTypesCodingType {
-    return DefinedTypesCodings;
-  }
-  /**
-   * Required-bound Value Set for aggregation (ElementDefinition.type.aggregation)
-   */
-  public static get aggregationRequiredCodes() {
-    return ResourceAggregationModeCodes;
-  }
-  /**
-   * Required-bound Value Set for versioning (ElementDefinition.type.versioning)
-   */
-  public static get versioningRequiredCodes() {
-    return ReferenceVersionRulesCodes;
-  }
-  /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'ElementDefinition.type' }
-    if (!this['code']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property code fhir: ElementDefinition.type.code:uri', expression: [expression] });
-    }
-    if (this["code"]) { issues.push(...this.code.doModelValidation(expression+'.code')); }
-    if (this["profile"]) { this.profile.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.profile[${i}]`)); }) }
-    if (this["targetProfile"]) { this.targetProfile.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.targetProfile[${i}]`)); }) }
-    if (this['aggregation']) {
-      this.aggregation.forEach((v) => {
-        if (!Object.values(ResourceAggregationModeCodes).includes(v.value as any)) {
-          issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'aggregation (ElementDefinition.type.aggregation) of type code is missing code for Required binding to: ResourceAggregationMode', expression: [expression] });
-        }
-      });
-    }
-    if (this["aggregation"]) { this.aggregation.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.aggregation[${i}]`)); }) }
-    if (this['versioning'] && (!Object.values(ReferenceVersionRulesCodes).includes(this.versioning.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'versioning (ElementDefinition.type.versioning) of type code is missing code for Required binding to: ReferenceVersionRules', expression: [expression] });
-    }
-    if (this["versioning"]) { issues.push(...this.versioning.doModelValidation(expression+'.versioning')); }
+    this.vReqS('code',expression)
+    this.vOptA('profile',expression)
+    this.vOptA('targetProfile',expression)
+    this.vOptAV('aggregation',expression,'ResourceAggregationMode',ResourceAggregationModeVsValidation,'r')
+    this.vOptSV('versioning',expression,'ReferenceVersionRules',ReferenceVersionRulesVsValidation,'r')
     return issues;
   }
 }
@@ -793,13 +726,8 @@ export class ElementDefinitionExample extends fhir.FhirElement {
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'ElementDefinition.example' }
-    if (!this['label']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property label fhir: ElementDefinition.example.label:string', expression: [expression] });
-    }
-    if (this["label"]) { issues.push(...this.label.doModelValidation(expression+'.label')); }
-    if (!this['value']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property value fhir: ElementDefinition.example.value[x]:', expression: [expression] });
-    }
+    this.vReqS('label',expression)
+    this.vReqS('value',expression)
     return issues;
   }
 }
@@ -946,36 +874,18 @@ export class ElementDefinitionConstraint extends fhir.FhirElement {
     }
   }
   /**
-   * Required-bound Value Set for severity (ElementDefinition.constraint.severity)
-   */
-  public static get severityRequiredCodes() {
-    return ConstraintSeverityCodes;
-  }
-  /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'ElementDefinition.constraint' }
-    if (!this['key']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property key fhir: ElementDefinition.constraint.key:id', expression: [expression] });
-    }
-    if (this["key"]) { issues.push(...this.key.doModelValidation(expression+'.key')); }
-    if (this["requirements"]) { issues.push(...this.requirements.doModelValidation(expression+'.requirements')); }
-    if (!this['severity']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property severity fhir: ElementDefinition.constraint.severity:code', expression: [expression] });
-    }
-    if (this['severity'] && (!Object.values(ConstraintSeverityCodes).includes(this.severity.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'severity (ElementDefinition.constraint.severity) of type code is missing code for Required binding to: ConstraintSeverity', expression: [expression] });
-    }
-    if (this["severity"]) { issues.push(...this.severity.doModelValidation(expression+'.severity')); }
-    if (!this['human']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property human fhir: ElementDefinition.constraint.human:string', expression: [expression] });
-    }
-    if (this["human"]) { issues.push(...this.human.doModelValidation(expression+'.human')); }
-    if (this["expression"]) { issues.push(...this.expression.doModelValidation(expression+'.expression')); }
-    if (this["xpath"]) { issues.push(...this.xpath.doModelValidation(expression+'.xpath')); }
-    if (this["source"]) { issues.push(...this.source.doModelValidation(expression+'.source')); }
+    this.vReqS('key',expression)
+    this.vOptS('requirements',expression)
+    this.vReqSV('severity',expression,'ConstraintSeverity',ConstraintSeverityVsValidation,'r')
+    this.vReqS('human',expression)
+    this.vOptS('expression',expression)
+    this.vOptS('xpath',expression)
+    this.vOptS('source',expression)
     return issues;
   }
 }
@@ -1052,26 +962,14 @@ export class ElementDefinitionBinding extends fhir.FhirElement {
     }
   }
   /**
-   * Required-bound Value Set for strength (ElementDefinition.binding.strength)
-   */
-  public static get strengthRequiredCodes() {
-    return BindingStrengthCodes;
-  }
-  /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'ElementDefinition.binding' }
-    if (!this['strength']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property strength fhir: ElementDefinition.binding.strength:code', expression: [expression] });
-    }
-    if (this['strength'] && (!Object.values(BindingStrengthCodes).includes(this.strength.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'strength (ElementDefinition.binding.strength) of type code is missing code for Required binding to: BindingStrength', expression: [expression] });
-    }
-    if (this["strength"]) { issues.push(...this.strength.doModelValidation(expression+'.strength')); }
-    if (this["description"]) { issues.push(...this.description.doModelValidation(expression+'.description')); }
-    if (this["valueSet"]) { issues.push(...this.valueSet.doModelValidation(expression+'.valueSet')); }
+    this.vReqSV('strength',expression,'BindingStrength',BindingStrengthVsValidation,'r')
+    this.vOptS('description',expression)
+    this.vOptS('valueSet',expression)
     return issues;
   }
 }
@@ -1171,16 +1069,10 @@ export class ElementDefinitionMapping extends fhir.FhirElement {
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'ElementDefinition.mapping' }
-    if (!this['identity']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property identity fhir: ElementDefinition.mapping.identity:id', expression: [expression] });
-    }
-    if (this["identity"]) { issues.push(...this.identity.doModelValidation(expression+'.identity')); }
-    if (this["language"]) { issues.push(...this.language.doModelValidation(expression+'.language')); }
-    if (!this['map']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property map fhir: ElementDefinition.mapping.map:string', expression: [expression] });
-    }
-    if (this["map"]) { issues.push(...this.map.doModelValidation(expression+'.map')); }
-    if (this["comment"]) { issues.push(...this.comment.doModelValidation(expression+'.comment')); }
+    this.vReqS('identity',expression)
+    this.vOptS('language',expression)
+    this.vReqS('map',expression)
+    this.vOptS('comment',expression)
     return issues;
   }
 }
@@ -2606,56 +2498,45 @@ export class ElementDefinition extends fhir.BackboneElement {
     else { this.mapping = []; }
   }
   /**
-   * Required-bound Value Set for representation (ElementDefinition.representation)
-   */
-  public static get representationRequiredCodes() {
-    return PropertyRepresentationCodes;
-  }
-  /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'ElementDefinition' }
-    if (!this['path']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property path fhir: ElementDefinition.path:string', expression: [expression] });
-    }
-    if (this["path"]) { issues.push(...this.path.doModelValidation(expression+'.path')); }
-    if (this['representation']) {
-      this.representation.forEach((v) => {
-        if (!Object.values(PropertyRepresentationCodes).includes(v.value as any)) {
-          issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'representation (ElementDefinition.representation) of type code is missing code for Required binding to: PropertyRepresentation', expression: [expression] });
-        }
-      });
-    }
-    if (this["representation"]) { this.representation.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.representation[${i}]`)); }) }
-    if (this["sliceName"]) { issues.push(...this.sliceName.doModelValidation(expression+'.sliceName')); }
-    if (this["sliceIsConstraining"]) { issues.push(...this.sliceIsConstraining.doModelValidation(expression+'.sliceIsConstraining')); }
-    if (this["label"]) { issues.push(...this.label.doModelValidation(expression+'.label')); }
-    if (this["code"]) { this.code.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.code[${i}]`)); }) }
-    if (this["slicing"]) { issues.push(...this.slicing.doModelValidation(expression+'.slicing')); }
-    if (this["short"]) { issues.push(...this.short.doModelValidation(expression+'.short')); }
-    if (this["definition"]) { issues.push(...this.definition.doModelValidation(expression+'.definition')); }
-    if (this["comment"]) { issues.push(...this.comment.doModelValidation(expression+'.comment')); }
-    if (this["requirements"]) { issues.push(...this.requirements.doModelValidation(expression+'.requirements')); }
-    if (this["alias"]) { this.alias.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.alias[${i}]`)); }) }
-    if (this["min"]) { issues.push(...this.min.doModelValidation(expression+'.min')); }
-    if (this["max"]) { issues.push(...this.max.doModelValidation(expression+'.max')); }
-    if (this["base"]) { issues.push(...this.base.doModelValidation(expression+'.base')); }
-    if (this["contentReference"]) { issues.push(...this.contentReference.doModelValidation(expression+'.contentReference')); }
-    if (this["type"]) { this.type.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.type[${i}]`)); }) }
-    if (this["meaningWhenMissing"]) { issues.push(...this.meaningWhenMissing.doModelValidation(expression+'.meaningWhenMissing')); }
-    if (this["orderMeaning"]) { issues.push(...this.orderMeaning.doModelValidation(expression+'.orderMeaning')); }
-    if (this["example"]) { this.example.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.example[${i}]`)); }) }
-    if (this["maxLength"]) { issues.push(...this.maxLength.doModelValidation(expression+'.maxLength')); }
-    if (this["condition"]) { this.condition.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.condition[${i}]`)); }) }
-    if (this["constraint"]) { this.constraint.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.constraint[${i}]`)); }) }
-    if (this["mustSupport"]) { issues.push(...this.mustSupport.doModelValidation(expression+'.mustSupport')); }
-    if (this["isModifier"]) { issues.push(...this.isModifier.doModelValidation(expression+'.isModifier')); }
-    if (this["isModifierReason"]) { issues.push(...this.isModifierReason.doModelValidation(expression+'.isModifierReason')); }
-    if (this["isSummary"]) { issues.push(...this.isSummary.doModelValidation(expression+'.isSummary')); }
-    if (this["binding"]) { issues.push(...this.binding.doModelValidation(expression+'.binding')); }
-    if (this["mapping"]) { this.mapping.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.mapping[${i}]`)); }) }
+    this.vReqS('path',expression)
+    this.vOptAV('representation',expression,'PropertyRepresentation',PropertyRepresentationVsValidation,'r')
+    this.vOptS('sliceName',expression)
+    this.vOptS('sliceIsConstraining',expression)
+    this.vOptS('label',expression)
+    this.vOptA('code',expression)
+    this.vOptS('slicing',expression)
+    this.vOptS('short',expression)
+    this.vOptS('definition',expression)
+    this.vOptS('comment',expression)
+    this.vOptS('requirements',expression)
+    this.vOptA('alias',expression)
+    this.vOptS('min',expression)
+    this.vOptS('max',expression)
+    this.vOptS('base',expression)
+    this.vOptS('contentReference',expression)
+    this.vOptA('type',expression)
+    this.vOptS('defaultValue',expression)
+    this.vOptS('meaningWhenMissing',expression)
+    this.vOptS('orderMeaning',expression)
+    this.vOptS('fixed',expression)
+    this.vOptS('pattern',expression)
+    this.vOptA('example',expression)
+    this.vOptS('minValue',expression)
+    this.vOptS('maxValue',expression)
+    this.vOptS('maxLength',expression)
+    this.vOptA('condition',expression)
+    this.vOptA('constraint',expression)
+    this.vOptS('mustSupport',expression)
+    this.vOptS('isModifier',expression)
+    this.vOptS('isModifierReason',expression)
+    this.vOptS('isSummary',expression)
+    this.vOptS('binding',expression)
+    this.vOptA('mapping',expression)
     return issues;
   }
 }

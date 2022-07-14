@@ -1,11 +1,7 @@
 import * as fhir from '../fhir.js';
-import { EncounterParticipantTypeCodingType } from '../fhirValueSets/EncounterParticipantTypeCodings.js';
 import { ParticipantrequiredCodeType } from '../fhirValueSets/ParticipantrequiredCodes.js';
 import { ParticipationstatusCodeType } from '../fhirValueSets/ParticipationstatusCodes.js';
 import { AppointmentstatusCodeType } from '../fhirValueSets/AppointmentstatusCodes.js';
-import { C80PracticeCodingType } from '../fhirValueSets/C80PracticeCodings.js';
-import { V20276CodingType } from '../fhirValueSets/V20276Codings.js';
-import { EncounterReasonCodingType } from '../fhirValueSets/EncounterReasonCodings.js';
 /**
  * Valid arguments for the AppointmentParticipant type.
  */
@@ -75,27 +71,6 @@ export declare class AppointmentParticipant extends fhir.BackboneElement {
      * Default constructor for AppointmentParticipant - initializes any required elements to null if a value is not provided.
      */
     constructor(source?: Partial<AppointmentParticipantArgs>, options?: fhir.FhirConstructorOptions);
-    /**
-     * Extensible-bound Value Set for type (Appointment.participant.type)
-     */
-    static get typeExtensibleCodings(): EncounterParticipantTypeCodingType;
-    /**
-     * Required-bound Value Set for required (Appointment.participant.required)
-     */
-    static get requiredRequiredCodes(): {
-        readonly InformationOnly: "information-only";
-        readonly Optional: "optional";
-        readonly Required: "required";
-    };
-    /**
-     * Required-bound Value Set for status (Appointment.participant.status)
-     */
-    static get statusRequiredCodes(): {
-        readonly Accepted: "accepted";
-        readonly Declined: "declined";
-        readonly NeedsAction: "needs-action";
-        readonly Tentative: "tentative";
-    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
@@ -344,33 +319,6 @@ export declare class Appointment extends fhir.DomainResource {
      * Default constructor for Appointment - initializes any required elements to null if a value is not provided.
      */
     constructor(source?: Partial<AppointmentArgs>, options?: fhir.FhirConstructorOptions);
-    /**
-     * Required-bound Value Set for status (Appointment.status)
-     */
-    static get statusRequiredCodes(): {
-        readonly Arrived: "arrived";
-        readonly Booked: "booked";
-        readonly Cancelled: "cancelled";
-        readonly CheckedIn: "checked-in";
-        readonly EnteredInError: "entered-in-error";
-        readonly Fulfilled: "fulfilled";
-        readonly NoShow: "noshow";
-        readonly Pending: "pending";
-        readonly Proposed: "proposed";
-        readonly Waitlisted: "waitlist";
-    };
-    /**
-     * Preferred-bound Value Set for specialty (Appointment.specialty)
-     */
-    static get specialtyPreferredCodings(): C80PracticeCodingType;
-    /**
-     * Preferred-bound Value Set for appointmentType (Appointment.appointmentType)
-     */
-    static get appointmentTypePreferredCodings(): V20276CodingType;
-    /**
-     * Preferred-bound Value Set for reasonCode (Appointment.reasonCode)
-     */
-    static get reasonCodePreferredCodings(): EncounterReasonCodingType;
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */

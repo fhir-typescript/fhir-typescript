@@ -1,5 +1,4 @@
 import * as fhir from '../fhir.js';
-import { DeviceActionCodingType } from '../fhirValueSets/DeviceActionCodings.js';
 import { EventStatusCodeType } from '../fhirValueSets/EventStatusCodes.js';
 /**
  * Valid arguments for the ProcedurePerformer type.
@@ -80,10 +79,6 @@ export declare class ProcedureFocalDevice extends fhir.BackboneElement {
      * Default constructor for ProcedureFocalDevice - initializes any required elements to null if a value is not provided.
      */
     constructor(source?: Partial<ProcedureFocalDeviceArgs>, options?: fhir.FhirConstructorOptions);
-    /**
-     * Preferred-bound Value Set for action (Procedure.focalDevice.action)
-     */
-    static get actionPreferredCodings(): DeviceActionCodingType;
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
@@ -378,19 +373,6 @@ export declare class Procedure extends fhir.DomainResource {
      * Default constructor for Procedure - initializes any required elements to null if a value is not provided.
      */
     constructor(source?: Partial<ProcedureArgs>, options?: fhir.FhirConstructorOptions);
-    /**
-     * Required-bound Value Set for status (Procedure.status)
-     */
-    static get statusRequiredCodes(): {
-        readonly Completed: "completed";
-        readonly EnteredInError: "entered-in-error";
-        readonly InProgress: "in-progress";
-        readonly NotDone: "not-done";
-        readonly OnHold: "on-hold";
-        readonly Preparation: "preparation";
-        readonly Stopped: "stopped";
-        readonly Unknown: "unknown";
-    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */

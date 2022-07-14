@@ -161,17 +161,17 @@ export class ProdCharacteristic extends fhir.BackboneElement {
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'ProdCharacteristic' }
-    if (this["height"]) { issues.push(...this.height.doModelValidation(expression+'.height')); }
-    if (this["width"]) { issues.push(...this.width.doModelValidation(expression+'.width')); }
-    if (this["depth"]) { issues.push(...this.depth.doModelValidation(expression+'.depth')); }
-    if (this["weight"]) { issues.push(...this.weight.doModelValidation(expression+'.weight')); }
-    if (this["nominalVolume"]) { issues.push(...this.nominalVolume.doModelValidation(expression+'.nominalVolume')); }
-    if (this["externalDiameter"]) { issues.push(...this.externalDiameter.doModelValidation(expression+'.externalDiameter')); }
-    if (this["shape"]) { issues.push(...this.shape.doModelValidation(expression+'.shape')); }
-    if (this["color"]) { this.color.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.color[${i}]`)); }) }
-    if (this["imprint"]) { this.imprint.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.imprint[${i}]`)); }) }
-    if (this["image"]) { this.image.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.image[${i}]`)); }) }
-    if (this["scoring"]) { issues.push(...this.scoring.doModelValidation(expression+'.scoring')); }
+    this.vOptS('height',expression)
+    this.vOptS('width',expression)
+    this.vOptS('depth',expression)
+    this.vOptS('weight',expression)
+    this.vOptS('nominalVolume',expression)
+    this.vOptS('externalDiameter',expression)
+    this.vOptS('shape',expression)
+    this.vOptA('color',expression)
+    this.vOptA('imprint',expression)
+    this.vOptA('image',expression)
+    this.vOptS('scoring',expression)
     return issues;
   }
 }

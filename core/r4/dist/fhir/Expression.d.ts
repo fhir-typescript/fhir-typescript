@@ -1,5 +1,4 @@
 import * as fhir from '../fhir.js';
-import { ExpressionLanguageCodingType } from '../fhirValueSets/ExpressionLanguageCodings.js';
 /**
  * Valid arguments for the Expression type.
  */
@@ -77,10 +76,6 @@ export declare class Expression extends fhir.FhirElement {
      * Default constructor for Expression - initializes any required elements to null if a value is not provided.
      */
     constructor(source?: Partial<ExpressionArgs>, options?: fhir.FhirConstructorOptions);
-    /**
-     * Extensible-bound Value Set for language (Expression.language)
-     */
-    static get languageExtensibleCodings(): ExpressionLanguageCodingType;
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */

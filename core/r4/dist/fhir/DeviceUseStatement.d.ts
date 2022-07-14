@@ -156,17 +156,6 @@ export declare class DeviceUseStatement extends fhir.DomainResource {
      */
     constructor(source?: Partial<DeviceUseStatementArgs>, options?: fhir.FhirConstructorOptions);
     /**
-     * Required-bound Value Set for status (DeviceUseStatement.status)
-     */
-    static get statusRequiredCodes(): {
-        readonly Active: "active";
-        readonly Completed: "completed";
-        readonly EnteredInError: "entered-in-error";
-        readonly Intended: "intended";
-        readonly OnHold: "on-hold";
-        readonly Stopped: "stopped";
-    };
-    /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
     doModelValidation(expression?: string): fhir.FtsIssue[];

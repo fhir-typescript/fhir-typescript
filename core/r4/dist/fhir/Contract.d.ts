@@ -1,10 +1,6 @@
 import * as fhir from '../fhir.js';
 import { ContractPublicationstatusCodeType } from '../fhirValueSets/ContractPublicationstatusCodes.js';
-import { V3ActConsentDirectiveCodingType } from '../fhirValueSets/V3ActConsentDirectiveCodings.js';
-import { ConsentContentClassCodingType } from '../fhirValueSets/ConsentContentClassCodings.js';
-import { ContractSignerTypeCodingType } from '../fhirValueSets/ContractSignerTypeCodings.js';
 import { ContractStatusCodeType } from '../fhirValueSets/ContractStatusCodes.js';
-import { ContractLegalstateCodingType } from '../fhirValueSets/ContractLegalstateCodings.js';
 /**
  * Valid arguments for the ContractContentDefinition type.
  */
@@ -82,26 +78,6 @@ export declare class ContractContentDefinition extends fhir.BackboneElement {
      * Default constructor for ContractContentDefinition - initializes any required elements to null if a value is not provided.
      */
     constructor(source?: Partial<ContractContentDefinitionArgs>, options?: fhir.FhirConstructorOptions);
-    /**
-     * Required-bound Value Set for publicationStatus (Contract.contentDefinition.publicationStatus)
-     */
-    static get publicationStatusRequiredCodes(): {
-        readonly Amended: "amended";
-        readonly Appended: "appended";
-        readonly Cancelled: "cancelled";
-        readonly Disputed: "disputed";
-        readonly EnteredInError: "entered-in-error";
-        readonly Executable: "executable";
-        readonly Executed: "executed";
-        readonly Negotiable: "negotiable";
-        readonly Offered: "offered";
-        readonly Policy: "policy";
-        readonly Rejected: "rejected";
-        readonly Renewed: "renewed";
-        readonly Resolved: "resolved";
-        readonly Revoked: "revoked";
-        readonly Terminated: "terminated";
-    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
@@ -400,10 +376,6 @@ export declare class ContractTermOffer extends fhir.BackboneElement {
      * Default constructor for ContractTermOffer - initializes any required elements to null if a value is not provided.
      */
     constructor(source?: Partial<ContractTermOfferArgs>, options?: fhir.FhirConstructorOptions);
-    /**
-     * Extensible-bound Value Set for decision (Contract.term.offer.decision)
-     */
-    static get decisionExtensibleCodings(): V3ActConsentDirectiveCodingType;
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
@@ -786,10 +758,6 @@ export declare class ContractTermAsset extends fhir.BackboneElement {
      * Default constructor for ContractTermAsset - initializes any required elements to null if a value is not provided.
      */
     constructor(source?: Partial<ContractTermAssetArgs>, options?: fhir.FhirConstructorOptions);
-    /**
-     * Extensible-bound Value Set for relationship (Contract.term.asset.relationship)
-     */
-    static get relationshipExtensibleCodings(): ConsentContentClassCodingType;
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
@@ -1254,10 +1222,6 @@ export declare class ContractSigner extends fhir.BackboneElement {
      * Default constructor for ContractSigner - initializes any required elements to null if a value is not provided.
      */
     constructor(source?: Partial<ContractSignerArgs>, options?: fhir.FhirConstructorOptions);
-    /**
-     * Preferred-bound Value Set for type (Contract.signer.type)
-     */
-    static get typePreferredCodings(): ContractSignerTypeCodingType;
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
@@ -1744,30 +1708,6 @@ export declare class Contract extends fhir.DomainResource {
      * Default constructor for Contract - initializes any required elements to null if a value is not provided.
      */
     constructor(source?: Partial<ContractArgs>, options?: fhir.FhirConstructorOptions);
-    /**
-     * Required-bound Value Set for status (Contract.status)
-     */
-    static get statusRequiredCodes(): {
-        readonly Amended: "amended";
-        readonly Appended: "appended";
-        readonly Cancelled: "cancelled";
-        readonly Disputed: "disputed";
-        readonly EnteredInError: "entered-in-error";
-        readonly Executable: "executable";
-        readonly Executed: "executed";
-        readonly Negotiable: "negotiable";
-        readonly Offered: "offered";
-        readonly Policy: "policy";
-        readonly Rejected: "rejected";
-        readonly Renewed: "renewed";
-        readonly Resolved: "resolved";
-        readonly Revoked: "revoked";
-        readonly Terminated: "terminated";
-    };
-    /**
-     * Extensible-bound Value Set for legalState (Contract.legalState)
-     */
-    static get legalStateExtensibleCodings(): ContractLegalstateCodingType;
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */

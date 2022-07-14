@@ -1,6 +1,5 @@
 import * as fhir from '../fhir.js';
 import { AdministrativeGenderCodeType } from '../fhirValueSets/AdministrativeGenderCodes.js';
-import { LanguagesCodingType } from '../fhirValueSets/LanguagesCodings.js';
 /**
  * Valid arguments for the PractitionerQualification type.
  */
@@ -184,19 +183,6 @@ export declare class Practitioner extends fhir.DomainResource {
      * Default constructor for Practitioner - initializes any required elements to null if a value is not provided.
      */
     constructor(source?: Partial<PractitionerArgs>, options?: fhir.FhirConstructorOptions);
-    /**
-     * Required-bound Value Set for gender (Practitioner.gender)
-     */
-    static get genderRequiredCodes(): {
-        readonly Female: "female";
-        readonly Male: "male";
-        readonly Other: "other";
-        readonly Unknown: "unknown";
-    };
-    /**
-     * Preferred-bound Value Set for communication (Practitioner.communication)
-     */
-    static get communicationPreferredCodings(): LanguagesCodingType;
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */

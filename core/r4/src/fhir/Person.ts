@@ -6,13 +6,13 @@
 import * as fhir from '../fhir.js';
 
 // @ts-ignore
-import { IdentityAssuranceLevelCodings, IdentityAssuranceLevelCodingType,} from '../fhirValueSets/IdentityAssuranceLevelCodings.js';
-// @ts-ignore
 import { IdentityAssuranceLevelCodes,  IdentityAssuranceLevelCodeType } from '../fhirValueSets/IdentityAssuranceLevelCodes.js';
 // @ts-ignore
-import { AdministrativeGenderCodings, AdministrativeGenderCodingType,} from '../fhirValueSets/AdministrativeGenderCodings.js';
+import { IdentityAssuranceLevelVsValidation } from '../fhirValueSets/IdentityAssuranceLevelVsValidation.js';
 // @ts-ignore
 import { AdministrativeGenderCodes,  AdministrativeGenderCodeType } from '../fhirValueSets/AdministrativeGenderCodes.js';
+// @ts-ignore
+import { AdministrativeGenderVsValidation } from '../fhirValueSets/AdministrativeGenderVsValidation.js';
 /**
  * Valid arguments for the PersonLink type.
  */
@@ -61,25 +61,13 @@ export class PersonLink extends fhir.BackboneElement {
     }
   }
   /**
-   * Required-bound Value Set for assurance (Person.link.assurance)
-   */
-  public static get assuranceRequiredCodes() {
-    return IdentityAssuranceLevelCodes;
-  }
-  /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'Person.link' }
-    if (!this['target']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property target fhir: Person.link.target:Reference', expression: [expression] });
-    }
-    if (this["target"]) { issues.push(...this.target.doModelValidation(expression+'.target')); }
-    if (this['assurance'] && (!Object.values(IdentityAssuranceLevelCodes).includes(this.assurance.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'assurance (Person.link.assurance) of type code is missing code for Required binding to: IdentityAssuranceLevel', expression: [expression] });
-    }
-    if (this["assurance"]) { issues.push(...this.assurance.doModelValidation(expression+'.assurance')); }
+    this.vReqS('target',expression)
+    this.vOptSV('assurance',expression,'IdentityAssuranceLevel',IdentityAssuranceLevelVsValidation,'r')
     return issues;
   }
 }
@@ -232,33 +220,22 @@ export class Person extends fhir.DomainResource {
     else { this.link = []; }
   }
   /**
-   * Required-bound Value Set for gender (Person.gender)
-   */
-  public static get genderRequiredCodes() {
-    return AdministrativeGenderCodes;
-  }
-  /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'Person' }
-    if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType fhir: Person.resourceType:"Person"', expression: [expression] });
-    }
-    if (this["identifier"]) { this.identifier.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.identifier[${i}]`)); }) }
-    if (this["name"]) { this.name.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.name[${i}]`)); }) }
-    if (this["telecom"]) { this.telecom.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.telecom[${i}]`)); }) }
-    if (this['gender'] && (!Object.values(AdministrativeGenderCodes).includes(this.gender.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'gender (Person.gender) of type code is missing code for Required binding to: AdministrativeGender', expression: [expression] });
-    }
-    if (this["gender"]) { issues.push(...this.gender.doModelValidation(expression+'.gender')); }
-    if (this["birthDate"]) { issues.push(...this.birthDate.doModelValidation(expression+'.birthDate')); }
-    if (this["address"]) { this.address.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.address[${i}]`)); }) }
-    if (this["photo"]) { issues.push(...this.photo.doModelValidation(expression+'.photo')); }
-    if (this["managingOrganization"]) { issues.push(...this.managingOrganization.doModelValidation(expression+'.managingOrganization')); }
-    if (this["active"]) { issues.push(...this.active.doModelValidation(expression+'.active')); }
-    if (this["link"]) { this.link.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.link[${i}]`)); }) }
+    this.vReqS('resourceType',expression)
+    this.vOptA('identifier',expression)
+    this.vOptA('name',expression)
+    this.vOptA('telecom',expression)
+    this.vOptSV('gender',expression,'AdministrativeGender',AdministrativeGenderVsValidation,'r')
+    this.vOptS('birthDate',expression)
+    this.vOptA('address',expression)
+    this.vOptS('photo',expression)
+    this.vOptS('managingOrganization',expression)
+    this.vOptS('active',expression)
+    this.vOptA('link',expression)
     return issues;
   }
 }

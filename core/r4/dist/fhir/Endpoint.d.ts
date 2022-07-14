@@ -1,6 +1,5 @@
 import * as fhir from '../fhir.js';
 import { EndpointStatusCodeType } from '../fhirValueSets/EndpointStatusCodes.js';
-import { EndpointConnectionTypeCodingType } from '../fhirValueSets/EndpointConnectionTypeCodings.js';
 /**
  * Valid arguments for the Endpoint type.
  */
@@ -140,21 +139,6 @@ export declare class Endpoint extends fhir.DomainResource {
      * Default constructor for Endpoint - initializes any required elements to null if a value is not provided.
      */
     constructor(source?: Partial<EndpointArgs>, options?: fhir.FhirConstructorOptions);
-    /**
-     * Required-bound Value Set for status (Endpoint.status)
-     */
-    static get statusRequiredCodes(): {
-        readonly Active: "active";
-        readonly EnteredInError: "entered-in-error";
-        readonly Error: "error";
-        readonly Off: "off";
-        readonly Suspended: "suspended";
-        readonly Test: "test";
-    };
-    /**
-     * Extensible-bound Value Set for connectionType (Endpoint.connectionType)
-     */
-    static get connectionTypeExtensibleCodings(): EndpointConnectionTypeCodingType;
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */

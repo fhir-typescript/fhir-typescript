@@ -1,6 +1,5 @@
 import * as fhir from '../fhir.js';
 import { IdentifierUseCodeType } from '../fhirValueSets/IdentifierUseCodes.js';
-import { IdentifierTypeCodingType } from '../fhirValueSets/IdentifierTypeCodings.js';
 /**
  * Valid arguments for the Identifier type.
  */
@@ -78,22 +77,6 @@ export declare class Identifier extends fhir.FhirElement {
      * Default constructor for Identifier - initializes any required elements to null if a value is not provided.
      */
     constructor(source?: Partial<IdentifierArgs>, options?: fhir.FhirConstructorOptions);
-    /**
-     * Required-bound Value Set for use (Identifier.use)
-     */
-    static get useRequiredCodes(): {
-        readonly Official: "official";
-        readonly Old: "old";
-        readonly Secondary: "secondary";
-        readonly Temp: "temp"; /**
-         * This element deals only with general categories of identifiers.  It SHOULD not be used for codes that correspond 1..1 with the Identifier.system. Some identifiers may fall into multiple categories due to common usage.   Where the system is known, a type is unnecessary because the type is always part of the system definition. However systems often need to handle identifiers where the system is not known. There is not a 1:1 relationship between type and system, since many different systems have the same type.
-         */
-        readonly Usual: "usual";
-    };
-    /**
-     * Extensible-bound Value Set for type (Identifier.type)
-     */
-    static get typeExtensibleCodings(): IdentifierTypeCodingType;
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */

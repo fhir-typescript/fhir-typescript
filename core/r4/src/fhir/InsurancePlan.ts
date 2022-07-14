@@ -6,21 +6,21 @@
 import * as fhir from '../fhir.js';
 
 // @ts-ignore
-import { ContactentityTypeCodings, ContactentityTypeCodingType,} from '../fhirValueSets/ContactentityTypeCodings.js';
-// @ts-ignore
 import { ContactentityTypeCodes,  ContactentityTypeCodeType } from '../fhirValueSets/ContactentityTypeCodes.js';
 // @ts-ignore
-import { InsuranceplanApplicabilityCodings, InsuranceplanApplicabilityCodingType,} from '../fhirValueSets/InsuranceplanApplicabilityCodings.js';
+import { ContactentityTypeVsValidation } from '../fhirValueSets/ContactentityTypeVsValidation.js';
 // @ts-ignore
 import { InsuranceplanApplicabilityCodes,  InsuranceplanApplicabilityCodeType } from '../fhirValueSets/InsuranceplanApplicabilityCodes.js';
 // @ts-ignore
-import { PublicationStatusCodings, PublicationStatusCodingType,} from '../fhirValueSets/PublicationStatusCodings.js';
+import { InsuranceplanApplicabilityVsValidation } from '../fhirValueSets/InsuranceplanApplicabilityVsValidation.js';
 // @ts-ignore
 import { PublicationStatusCodes,  PublicationStatusCodeType } from '../fhirValueSets/PublicationStatusCodes.js';
 // @ts-ignore
-import { InsuranceplanTypeCodings, InsuranceplanTypeCodingType,} from '../fhirValueSets/InsuranceplanTypeCodings.js';
+import { PublicationStatusVsValidation } from '../fhirValueSets/PublicationStatusVsValidation.js';
 // @ts-ignore
 import { InsuranceplanTypeCodes,  InsuranceplanTypeCodeType } from '../fhirValueSets/InsuranceplanTypeCodes.js';
+// @ts-ignore
+import { InsuranceplanTypeVsValidation } from '../fhirValueSets/InsuranceplanTypeVsValidation.js';
 /**
  * Valid arguments for the InsurancePlanContact type.
  */
@@ -79,21 +79,15 @@ export class InsurancePlanContact extends fhir.BackboneElement {
     if (source['address']) { this.address = new fhir.Address(source.address); }
   }
   /**
-   * Extensible-bound Value Set for purpose (InsurancePlan.contact.purpose)
-   */
-  public static get purposeExtensibleCodings():ContactentityTypeCodingType {
-    return ContactentityTypeCodings;
-  }
-  /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'InsurancePlan.contact' }
-    if (this["purpose"]) { issues.push(...this.purpose.doModelValidation(expression+'.purpose')); }
-    if (this["name"]) { issues.push(...this.name.doModelValidation(expression+'.name')); }
-    if (this["telecom"]) { this.telecom.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.telecom[${i}]`)); }) }
-    if (this["address"]) { issues.push(...this.address.doModelValidation(expression+'.address')); }
+    this.vOptS('purpose',expression)
+    this.vOptS('name',expression)
+    this.vOptA('telecom',expression)
+    this.vOptS('address',expression)
     return issues;
   }
 }
@@ -141,8 +135,8 @@ export class InsurancePlanCoverageBenefitLimit extends fhir.BackboneElement {
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'InsurancePlan.coverage.benefit.limit' }
-    if (this["value"]) { issues.push(...this.value.doModelValidation(expression+'.value')); }
-    if (this["code"]) { issues.push(...this.code.doModelValidation(expression+'.code')); }
+    this.vOptS('value',expression)
+    this.vOptS('code',expression)
     return issues;
   }
 }
@@ -209,12 +203,9 @@ export class InsurancePlanCoverageBenefit extends fhir.BackboneElement {
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'InsurancePlan.coverage.benefit' }
-    if (!this['type']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property type fhir: InsurancePlan.coverage.benefit.type:CodeableConcept', expression: [expression] });
-    }
-    if (this["type"]) { issues.push(...this.type.doModelValidation(expression+'.type')); }
-    if (this["requirement"]) { issues.push(...this.requirement.doModelValidation(expression+'.requirement')); }
-    if (this["limit"]) { this.limit.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.limit[${i}]`)); }) }
+    this.vReqS('type',expression)
+    this.vOptS('requirement',expression)
+    this.vOptA('limit',expression)
     return issues;
   }
 }
@@ -274,19 +265,9 @@ export class InsurancePlanCoverage extends fhir.BackboneElement {
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'InsurancePlan.coverage' }
-    if (!this['type']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property type fhir: InsurancePlan.coverage.type:CodeableConcept', expression: [expression] });
-    }
-    if (this["type"]) { issues.push(...this.type.doModelValidation(expression+'.type')); }
-    if (this["network"]) { this.network.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.network[${i}]`)); }) }
-    if (!this['benefit']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property benefit fhir: InsurancePlan.coverage.benefit:benefit', expression: [expression] });
-    } else if (!Array.isArray(this.benefit)) {
-      issues.push({ severity: 'error', code: 'structure', diagnostics: 'Found scalar in array property benefit fhir: InsurancePlan.coverage.benefit:benefit', expression: [expression] });
-    } else if (this.benefit.length === 0) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property benefit fhir: InsurancePlan.coverage.benefit:benefit', expression: [expression] });
-    }
-    if (this["benefit"]) { this.benefit.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.benefit[${i}]`)); }) }
+    this.vReqS('type',expression)
+    this.vOptA('network',expression)
+    this.vReqA('benefit',expression)
     return issues;
   }
 }
@@ -368,10 +349,10 @@ export class InsurancePlanPlanGeneralCost extends fhir.BackboneElement {
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'InsurancePlan.plan.generalCost' }
-    if (this["type"]) { issues.push(...this.type.doModelValidation(expression+'.type')); }
-    if (this["groupSize"]) { issues.push(...this.groupSize.doModelValidation(expression+'.groupSize')); }
-    if (this["cost"]) { issues.push(...this.cost.doModelValidation(expression+'.cost')); }
-    if (this["comment"]) { issues.push(...this.comment.doModelValidation(expression+'.comment')); }
+    this.vOptS('type',expression)
+    this.vOptS('groupSize',expression)
+    this.vOptS('cost',expression)
+    this.vOptS('comment',expression)
     return issues;
   }
 }
@@ -434,27 +415,15 @@ export class InsurancePlanPlanSpecificCostBenefitCost extends fhir.BackboneEleme
     if (source['value']) { this.value = new fhir.Quantity(source.value); }
   }
   /**
-   * Required-bound Value Set for applicability (InsurancePlan.plan.specificCost.benefit.cost.applicability)
-   */
-  public static get applicabilityRequiredCodes() {
-    return InsuranceplanApplicabilityCodes;
-  }
-  /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'InsurancePlan.plan.specificCost.benefit.cost' }
-    if (!this['type']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property type fhir: InsurancePlan.plan.specificCost.benefit.cost.type:CodeableConcept', expression: [expression] });
-    }
-    if (this["type"]) { issues.push(...this.type.doModelValidation(expression+'.type')); }
-    if (this['applicability'] && (!this.applicability.hasCodingFromObject(InsuranceplanApplicabilityCodings))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'applicability (InsurancePlan.plan.specificCost.benefit.cost.applicability) of type CodeableConcept is missing code for Required binding to: InsuranceplanApplicability', expression: [expression] });
-    }
-    if (this["applicability"]) { issues.push(...this.applicability.doModelValidation(expression+'.applicability')); }
-    if (this["qualifiers"]) { this.qualifiers.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.qualifiers[${i}]`)); }) }
-    if (this["value"]) { issues.push(...this.value.doModelValidation(expression+'.value')); }
+    this.vReqS('type',expression)
+    this.vOptSV('applicability',expression,'InsuranceplanApplicability',InsuranceplanApplicabilityVsValidation,'r')
+    this.vOptA('qualifiers',expression)
+    this.vOptS('value',expression)
     return issues;
   }
 }
@@ -504,11 +473,8 @@ export class InsurancePlanPlanSpecificCostBenefit extends fhir.BackboneElement {
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'InsurancePlan.plan.specificCost.benefit' }
-    if (!this['type']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property type fhir: InsurancePlan.plan.specificCost.benefit.type:CodeableConcept', expression: [expression] });
-    }
-    if (this["type"]) { issues.push(...this.type.doModelValidation(expression+'.type')); }
-    if (this["cost"]) { this.cost.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.cost[${i}]`)); }) }
+    this.vReqS('type',expression)
+    this.vOptA('cost',expression)
     return issues;
   }
 }
@@ -558,11 +524,8 @@ export class InsurancePlanPlanSpecificCost extends fhir.BackboneElement {
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'InsurancePlan.plan.specificCost' }
-    if (!this['category']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property category fhir: InsurancePlan.plan.specificCost.category:CodeableConcept', expression: [expression] });
-    }
-    if (this["category"]) { issues.push(...this.category.doModelValidation(expression+'.category')); }
-    if (this["benefit"]) { this.benefit.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.benefit[${i}]`)); }) }
+    this.vReqS('category',expression)
+    this.vOptA('benefit',expression)
     return issues;
   }
 }
@@ -651,12 +614,12 @@ export class InsurancePlanPlan extends fhir.BackboneElement {
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'InsurancePlan.plan' }
-    if (this["identifier"]) { this.identifier.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.identifier[${i}]`)); }) }
-    if (this["type"]) { issues.push(...this.type.doModelValidation(expression+'.type')); }
-    if (this["coverageArea"]) { this.coverageArea.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.coverageArea[${i}]`)); }) }
-    if (this["network"]) { this.network.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.network[${i}]`)); }) }
-    if (this["generalCost"]) { this.generalCost.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.generalCost[${i}]`)); }) }
-    if (this["specificCost"]) { this.specificCost.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.specificCost[${i}]`)); }) }
+    this.vOptA('identifier',expression)
+    this.vOptS('type',expression)
+    this.vOptA('coverageArea',expression)
+    this.vOptA('network',expression)
+    this.vOptA('generalCost',expression)
+    this.vOptA('specificCost',expression)
     return issues;
   }
 }
@@ -851,37 +814,26 @@ export class InsurancePlan extends fhir.DomainResource {
     else { this.plan = []; }
   }
   /**
-   * Required-bound Value Set for status (InsurancePlan.status)
-   */
-  public static get statusRequiredCodes() {
-    return PublicationStatusCodes;
-  }
-  /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'InsurancePlan' }
-    if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType fhir: InsurancePlan.resourceType:"InsurancePlan"', expression: [expression] });
-    }
-    if (this["identifier"]) { this.identifier.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.identifier[${i}]`)); }) }
-    if (this['status'] && (!Object.values(PublicationStatusCodes).includes(this.status.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'status (InsurancePlan.status) of type code is missing code for Required binding to: PublicationStatus', expression: [expression] });
-    }
-    if (this["status"]) { issues.push(...this.status.doModelValidation(expression+'.status')); }
-    if (this["type"]) { this.type.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.type[${i}]`)); }) }
-    if (this["name"]) { issues.push(...this.name.doModelValidation(expression+'.name')); }
-    if (this["alias"]) { this.alias.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.alias[${i}]`)); }) }
-    if (this["period"]) { issues.push(...this.period.doModelValidation(expression+'.period')); }
-    if (this["ownedBy"]) { issues.push(...this.ownedBy.doModelValidation(expression+'.ownedBy')); }
-    if (this["administeredBy"]) { issues.push(...this.administeredBy.doModelValidation(expression+'.administeredBy')); }
-    if (this["coverageArea"]) { this.coverageArea.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.coverageArea[${i}]`)); }) }
-    if (this["contact"]) { this.contact.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.contact[${i}]`)); }) }
-    if (this["endpoint"]) { this.endpoint.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.endpoint[${i}]`)); }) }
-    if (this["network"]) { this.network.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.network[${i}]`)); }) }
-    if (this["coverage"]) { this.coverage.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.coverage[${i}]`)); }) }
-    if (this["plan"]) { this.plan.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.plan[${i}]`)); }) }
+    this.vReqS('resourceType',expression)
+    this.vOptA('identifier',expression)
+    this.vOptSV('status',expression,'PublicationStatus',PublicationStatusVsValidation,'r')
+    this.vOptA('type',expression)
+    this.vOptS('name',expression)
+    this.vOptA('alias',expression)
+    this.vOptS('period',expression)
+    this.vOptS('ownedBy',expression)
+    this.vOptS('administeredBy',expression)
+    this.vOptA('coverageArea',expression)
+    this.vOptA('contact',expression)
+    this.vOptA('endpoint',expression)
+    this.vOptA('network',expression)
+    this.vOptA('coverage',expression)
+    this.vOptA('plan',expression)
     return issues;
   }
 }

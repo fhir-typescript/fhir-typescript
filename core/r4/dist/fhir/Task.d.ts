@@ -2,7 +2,6 @@ import * as fhir from '../fhir.js';
 import { TaskStatusCodeType } from '../fhirValueSets/TaskStatusCodes.js';
 import { TaskIntentCodeType } from '../fhirValueSets/TaskIntentCodes.js';
 import { RequestPriorityCodeType } from '../fhirValueSets/RequestPriorityCodes.js';
-import { PerformerRoleCodingType } from '../fhirValueSets/PerformerRoleCodings.js';
 /**
  * Valid arguments for the TaskRestriction type.
  */
@@ -844,53 +843,6 @@ export declare class Task extends fhir.DomainResource {
      * Default constructor for Task - initializes any required elements to null if a value is not provided.
      */
     constructor(source?: Partial<TaskArgs>, options?: fhir.FhirConstructorOptions);
-    /**
-     * Required-bound Value Set for status (Task.status)
-     */
-    static get statusRequiredCodes(): {
-        readonly Accepted: "accepted";
-        readonly Cancelled: "cancelled";
-        readonly Completed: "completed";
-        readonly Draft: "draft";
-        readonly EnteredInError: "entered-in-error";
-        readonly Failed: "failed";
-        readonly InProgress: "in-progress";
-        readonly OnHold: "on-hold";
-        readonly Ready: "ready";
-        readonly Received: "received";
-        readonly Rejected: "rejected";
-        readonly Requested: "requested";
-    };
-    /**
-     * Required-bound Value Set for intent (Task.intent)
-     */
-    static get intentRequiredCodes(): {
-        readonly FillerOrder: "filler-order";
-        readonly InstanceOrder: "instance-order";
-        readonly Option: "option";
-        readonly Order: "order";
-        readonly OriginalOrder: "original-order";
-        readonly Plan: "plan";
-        readonly Proposal: "proposal";
-        /**
-         * Note that period.high is the due date representing the time by which the task should be completed.
-         */
-        readonly ReflexOrder: "reflex-order";
-        readonly Unknown: "unknown";
-    };
-    /**
-     * Required-bound Value Set for priority (Task.priority)
-     */
-    static get priorityRequiredCodes(): {
-        readonly ASAP: "asap";
-        readonly Routine: "routine";
-        readonly STAT: "stat";
-        readonly Urgent: "urgent";
-    };
-    /**
-     * Preferred-bound Value Set for performerType (Task.performerType)
-     */
-    static get performerTypePreferredCodings(): PerformerRoleCodingType;
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */

@@ -6,13 +6,13 @@
 import * as fhir from '../fhir.js';
 
 // @ts-ignore
-import { OrganizationRoleCodings, OrganizationRoleCodingType,} from '../fhirValueSets/OrganizationRoleCodings.js';
-// @ts-ignore
 import { OrganizationRoleCodes,  OrganizationRoleCodeType } from '../fhirValueSets/OrganizationRoleCodes.js';
 // @ts-ignore
-import { C80PracticeCodings, C80PracticeCodingType,} from '../fhirValueSets/C80PracticeCodings.js';
+import { OrganizationRoleVsValidation } from '../fhirValueSets/OrganizationRoleVsValidation.js';
 // @ts-ignore
 import { C80PracticeCodes,  C80PracticeCodeType } from '../fhirValueSets/C80PracticeCodes.js';
+// @ts-ignore
+import { C80PracticeVsValidation } from '../fhirValueSets/C80PracticeVsValidation.js';
 /**
  * Valid arguments for the OrganizationAffiliation type.
  */
@@ -167,32 +167,24 @@ export class OrganizationAffiliation extends fhir.DomainResource {
     else { this.endpoint = []; }
   }
   /**
-   * Preferred-bound Value Set for specialty (OrganizationAffiliation.specialty)
-   */
-  public static get specialtyPreferredCodings():C80PracticeCodingType {
-    return C80PracticeCodings;
-  }
-  /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'OrganizationAffiliation' }
-    if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType fhir: OrganizationAffiliation.resourceType:"OrganizationAffiliation"', expression: [expression] });
-    }
-    if (this["identifier"]) { this.identifier.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.identifier[${i}]`)); }) }
-    if (this["active"]) { issues.push(...this.active.doModelValidation(expression+'.active')); }
-    if (this["period"]) { issues.push(...this.period.doModelValidation(expression+'.period')); }
-    if (this["organization"]) { issues.push(...this.organization.doModelValidation(expression+'.organization')); }
-    if (this["participatingOrganization"]) { issues.push(...this.participatingOrganization.doModelValidation(expression+'.participatingOrganization')); }
-    if (this["network"]) { this.network.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.network[${i}]`)); }) }
-    if (this["code"]) { this.code.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.code[${i}]`)); }) }
-    if (this["specialty"]) { this.specialty.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.specialty[${i}]`)); }) }
-    if (this["location"]) { this.location.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.location[${i}]`)); }) }
-    if (this["healthcareService"]) { this.healthcareService.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.healthcareService[${i}]`)); }) }
-    if (this["telecom"]) { this.telecom.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.telecom[${i}]`)); }) }
-    if (this["endpoint"]) { this.endpoint.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.endpoint[${i}]`)); }) }
+    this.vReqS('resourceType',expression)
+    this.vOptA('identifier',expression)
+    this.vOptS('active',expression)
+    this.vOptS('period',expression)
+    this.vOptS('organization',expression)
+    this.vOptS('participatingOrganization',expression)
+    this.vOptA('network',expression)
+    this.vOptA('code',expression)
+    this.vOptA('specialty',expression)
+    this.vOptA('location',expression)
+    this.vOptA('healthcareService',expression)
+    this.vOptA('telecom',expression)
+    this.vOptA('endpoint',expression)
     return issues;
   }
 }

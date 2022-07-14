@@ -1,6 +1,4 @@
 import * as fhir from '../fhir.js';
-import { ConditionCategoryCodingType } from '../fhirValueSets/ConditionCategoryCodings.js';
-import { ConditionSeverityCodingType } from '../fhirValueSets/ConditionSeverityCodings.js';
 /**
  * Valid arguments for the ConditionStage type.
  */
@@ -300,36 +298,6 @@ export declare class Condition extends fhir.DomainResource {
      * Default constructor for Condition - initializes any required elements to null if a value is not provided.
      */
     constructor(source?: Partial<ConditionArgs>, options?: fhir.FhirConstructorOptions);
-    /**
-     * Required-bound Value Set for clinicalStatus (Condition.clinicalStatus)
-     */
-    static get clinicalStatusRequiredCodes(): {
-        readonly Active: "active";
-        readonly Inactive: "inactive";
-        readonly Recurrence: "recurrence";
-        readonly Relapse: "relapse";
-        readonly Remission: "remission";
-        readonly Resolved: "resolved";
-    };
-    /**
-     * Required-bound Value Set for verificationStatus (Condition.verificationStatus)
-     */
-    static get verificationStatusRequiredCodes(): {
-        readonly Confirmed: "confirmed";
-        readonly Differential: "differential";
-        readonly EnteredInError: "entered-in-error";
-        readonly Provisional: "provisional";
-        readonly Refuted: "refuted";
-        readonly Unconfirmed: "unconfirmed";
-    };
-    /**
-     * Extensible-bound Value Set for category (Condition.category)
-     */
-    static get categoryExtensibleCodings(): ConditionCategoryCodingType;
-    /**
-     * Preferred-bound Value Set for severity (Condition.severity)
-     */
-    static get severityPreferredCodings(): ConditionSeverityCodingType;
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */

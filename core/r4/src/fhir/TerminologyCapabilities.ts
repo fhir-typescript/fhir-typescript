@@ -6,17 +6,17 @@
 import * as fhir from '../fhir.js';
 
 // @ts-ignore
-import { PublicationStatusCodings, PublicationStatusCodingType,} from '../fhirValueSets/PublicationStatusCodings.js';
-// @ts-ignore
 import { PublicationStatusCodes,  PublicationStatusCodeType } from '../fhirValueSets/PublicationStatusCodes.js';
 // @ts-ignore
-import { CapabilityStatementKindCodings, CapabilityStatementKindCodingType,} from '../fhirValueSets/CapabilityStatementKindCodings.js';
+import { PublicationStatusVsValidation } from '../fhirValueSets/PublicationStatusVsValidation.js';
 // @ts-ignore
 import { CapabilityStatementKindCodes,  CapabilityStatementKindCodeType } from '../fhirValueSets/CapabilityStatementKindCodes.js';
 // @ts-ignore
-import { CodeSearchSupportCodings, CodeSearchSupportCodingType,} from '../fhirValueSets/CodeSearchSupportCodings.js';
+import { CapabilityStatementKindVsValidation } from '../fhirValueSets/CapabilityStatementKindVsValidation.js';
 // @ts-ignore
 import { CodeSearchSupportCodes,  CodeSearchSupportCodeType } from '../fhirValueSets/CodeSearchSupportCodes.js';
+// @ts-ignore
+import { CodeSearchSupportVsValidation } from '../fhirValueSets/CodeSearchSupportVsValidation.js';
 /**
  * Valid arguments for the TerminologyCapabilitiesSoftware type.
  */
@@ -78,11 +78,8 @@ export class TerminologyCapabilitiesSoftware extends fhir.BackboneElement {
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'TerminologyCapabilities.software' }
-    if (!this['name']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property name fhir: TerminologyCapabilities.software.name:string', expression: [expression] });
-    }
-    if (this["name"]) { issues.push(...this.name.doModelValidation(expression+'.name')); }
-    if (this["version"]) { issues.push(...this.version.doModelValidation(expression+'.version')); }
+    this.vReqS('name',expression)
+    this.vOptS('version',expression)
     return issues;
   }
 }
@@ -147,11 +144,8 @@ export class TerminologyCapabilitiesImplementation extends fhir.BackboneElement 
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'TerminologyCapabilities.implementation' }
-    if (!this['description']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property description fhir: TerminologyCapabilities.implementation.description:string', expression: [expression] });
-    }
-    if (this["description"]) { issues.push(...this.description.doModelValidation(expression+'.description')); }
-    if (this["url"]) { issues.push(...this.url.doModelValidation(expression+'.url')); }
+    this.vReqS('description',expression)
+    this.vOptS('url',expression)
     return issues;
   }
 }
@@ -219,18 +213,8 @@ export class TerminologyCapabilitiesCodeSystemVersionFilter extends fhir.Backbon
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'TerminologyCapabilities.codeSystem.version.filter' }
-    if (!this['code']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property code fhir: TerminologyCapabilities.codeSystem.version.filter.code:code', expression: [expression] });
-    }
-    if (this["code"]) { issues.push(...this.code.doModelValidation(expression+'.code')); }
-    if (!this['op']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property op fhir: TerminologyCapabilities.codeSystem.version.filter.op:code', expression: [expression] });
-    } else if (!Array.isArray(this.op)) {
-      issues.push({ severity: 'error', code: 'structure', diagnostics: 'Found scalar in array property op fhir: TerminologyCapabilities.codeSystem.version.filter.op:code', expression: [expression] });
-    } else if (this.op.length === 0) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property op fhir: TerminologyCapabilities.codeSystem.version.filter.op:code', expression: [expression] });
-    }
-    if (this["op"]) { this.op.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.op[${i}]`)); }) }
+    this.vReqS('code',expression)
+    this.vReqA('op',expression)
     return issues;
   }
 }
@@ -361,12 +345,12 @@ export class TerminologyCapabilitiesCodeSystemVersion extends fhir.BackboneEleme
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'TerminologyCapabilities.codeSystem.version' }
-    if (this["code"]) { issues.push(...this.code.doModelValidation(expression+'.code')); }
-    if (this["isDefault"]) { issues.push(...this.isDefault.doModelValidation(expression+'.isDefault')); }
-    if (this["compositional"]) { issues.push(...this.compositional.doModelValidation(expression+'.compositional')); }
-    if (this["language"]) { this.language.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.language[${i}]`)); }) }
-    if (this["filter"]) { this.filter.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.filter[${i}]`)); }) }
-    if (this["property"]) { this.property.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.property[${i}]`)); }) }
+    this.vOptS('code',expression)
+    this.vOptS('isDefault',expression)
+    this.vOptS('compositional',expression)
+    this.vOptA('language',expression)
+    this.vOptA('filter',expression)
+    this.vOptA('property',expression)
     return issues;
   }
 }
@@ -440,9 +424,9 @@ export class TerminologyCapabilitiesCodeSystem extends fhir.BackboneElement {
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'TerminologyCapabilities.codeSystem' }
-    if (this["uri"]) { issues.push(...this.uri.doModelValidation(expression+'.uri')); }
-    if (this["version"]) { this.version.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.version[${i}]`)); }) }
-    if (this["subsumption"]) { issues.push(...this.subsumption.doModelValidation(expression+'.subsumption')); }
+    this.vOptS('uri',expression)
+    this.vOptA('version',expression)
+    this.vOptS('subsumption',expression)
     return issues;
   }
 }
@@ -507,11 +491,8 @@ export class TerminologyCapabilitiesExpansionParameter extends fhir.BackboneElem
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'TerminologyCapabilities.expansion.parameter' }
-    if (!this['name']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property name fhir: TerminologyCapabilities.expansion.parameter.name:code', expression: [expression] });
-    }
-    if (this["name"]) { issues.push(...this.name.doModelValidation(expression+'.name')); }
-    if (this["documentation"]) { issues.push(...this.documentation.doModelValidation(expression+'.documentation')); }
+    this.vReqS('name',expression)
+    this.vOptS('documentation',expression)
     return issues;
   }
 }
@@ -619,11 +600,11 @@ export class TerminologyCapabilitiesExpansion extends fhir.BackboneElement {
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'TerminologyCapabilities.expansion' }
-    if (this["hierarchical"]) { issues.push(...this.hierarchical.doModelValidation(expression+'.hierarchical')); }
-    if (this["paging"]) { issues.push(...this.paging.doModelValidation(expression+'.paging')); }
-    if (this["incomplete"]) { issues.push(...this.incomplete.doModelValidation(expression+'.incomplete')); }
-    if (this["parameter"]) { this.parameter.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.parameter[${i}]`)); }) }
-    if (this["textFilter"]) { issues.push(...this.textFilter.doModelValidation(expression+'.textFilter')); }
+    this.vOptS('hierarchical',expression)
+    this.vOptS('paging',expression)
+    this.vOptS('incomplete',expression)
+    this.vOptA('parameter',expression)
+    this.vOptS('textFilter',expression)
     return issues;
   }
 }
@@ -671,10 +652,7 @@ export class TerminologyCapabilitiesValidateCode extends fhir.BackboneElement {
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'TerminologyCapabilities.validateCode' }
-    if (!this['translations']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property translations fhir: TerminologyCapabilities.validateCode.translations:boolean', expression: [expression] });
-    }
-    if (this["translations"]) { issues.push(...this.translations.doModelValidation(expression+'.translations')); }
+    this.vReqS('translations',expression)
     return issues;
   }
 }
@@ -722,10 +700,7 @@ export class TerminologyCapabilitiesTranslation extends fhir.BackboneElement {
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'TerminologyCapabilities.translation' }
-    if (!this['needsMap']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property needsMap fhir: TerminologyCapabilities.translation.needsMap:boolean', expression: [expression] });
-    }
-    if (this["needsMap"]) { issues.push(...this.needsMap.doModelValidation(expression+'.needsMap')); }
+    this.vReqS('needsMap',expression)
     return issues;
   }
 }
@@ -772,7 +747,7 @@ export class TerminologyCapabilitiesClosure extends fhir.BackboneElement {
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'TerminologyCapabilities.closure' }
-    if (this["translation"]) { issues.push(...this.translation.doModelValidation(expression+'.translation')); }
+    this.vOptS('translation',expression)
     return issues;
   }
 }
@@ -1145,74 +1120,36 @@ export class TerminologyCapabilities extends fhir.DomainResource {
     if (source['closure']) { this.closure = new fhir.TerminologyCapabilitiesClosure(source.closure); }
   }
   /**
-   * Required-bound Value Set for status (TerminologyCapabilities.status)
-   */
-  public static get statusRequiredCodes() {
-    return PublicationStatusCodes;
-  }
-  /**
-   * Required-bound Value Set for kind (TerminologyCapabilities.kind)
-   */
-  public static get kindRequiredCodes() {
-    return CapabilityStatementKindCodes;
-  }
-  /**
-   * Required-bound Value Set for codeSearch (TerminologyCapabilities.codeSearch)
-   */
-  public static get codeSearchRequiredCodes() {
-    return CodeSearchSupportCodes;
-  }
-  /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'TerminologyCapabilities' }
-    if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType fhir: TerminologyCapabilities.resourceType:"TerminologyCapabilities"', expression: [expression] });
-    }
-    if (this["url"]) { issues.push(...this.url.doModelValidation(expression+'.url')); }
-    if (this["version"]) { issues.push(...this.version.doModelValidation(expression+'.version')); }
-    if (this["name"]) { issues.push(...this.name.doModelValidation(expression+'.name')); }
-    if (this["title"]) { issues.push(...this.title.doModelValidation(expression+'.title')); }
-    if (!this['status']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status fhir: TerminologyCapabilities.status:code', expression: [expression] });
-    }
-    if (this['status'] && (!Object.values(PublicationStatusCodes).includes(this.status.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'status (TerminologyCapabilities.status) of type code is missing code for Required binding to: PublicationStatus', expression: [expression] });
-    }
-    if (this["status"]) { issues.push(...this.status.doModelValidation(expression+'.status')); }
-    if (this["experimental"]) { issues.push(...this.experimental.doModelValidation(expression+'.experimental')); }
-    if (!this['date']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property date fhir: TerminologyCapabilities.date:dateTime', expression: [expression] });
-    }
-    if (this["date"]) { issues.push(...this.date.doModelValidation(expression+'.date')); }
-    if (this["publisher"]) { issues.push(...this.publisher.doModelValidation(expression+'.publisher')); }
-    if (this["contact"]) { this.contact.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.contact[${i}]`)); }) }
-    if (this["description"]) { issues.push(...this.description.doModelValidation(expression+'.description')); }
-    if (this["useContext"]) { this.useContext.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.useContext[${i}]`)); }) }
-    if (this["jurisdiction"]) { this.jurisdiction.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.jurisdiction[${i}]`)); }) }
-    if (this["purpose"]) { issues.push(...this.purpose.doModelValidation(expression+'.purpose')); }
-    if (this["copyright"]) { issues.push(...this.copyright.doModelValidation(expression+'.copyright')); }
-    if (!this['kind']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property kind fhir: TerminologyCapabilities.kind:code', expression: [expression] });
-    }
-    if (this['kind'] && (!Object.values(CapabilityStatementKindCodes).includes(this.kind.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'kind (TerminologyCapabilities.kind) of type code is missing code for Required binding to: CapabilityStatementKind', expression: [expression] });
-    }
-    if (this["kind"]) { issues.push(...this.kind.doModelValidation(expression+'.kind')); }
-    if (this["software"]) { issues.push(...this.software.doModelValidation(expression+'.software')); }
-    if (this["implementation"]) { issues.push(...this.implementation.doModelValidation(expression+'.implementation')); }
-    if (this["lockedDate"]) { issues.push(...this.lockedDate.doModelValidation(expression+'.lockedDate')); }
-    if (this["codeSystem"]) { this.codeSystem.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.codeSystem[${i}]`)); }) }
-    if (this["expansion"]) { issues.push(...this.expansion.doModelValidation(expression+'.expansion')); }
-    if (this['codeSearch'] && (!Object.values(CodeSearchSupportCodes).includes(this.codeSearch.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'codeSearch (TerminologyCapabilities.codeSearch) of type code is missing code for Required binding to: CodeSearchSupport', expression: [expression] });
-    }
-    if (this["codeSearch"]) { issues.push(...this.codeSearch.doModelValidation(expression+'.codeSearch')); }
-    if (this["validateCode"]) { issues.push(...this.validateCode.doModelValidation(expression+'.validateCode')); }
-    if (this["translation"]) { issues.push(...this.translation.doModelValidation(expression+'.translation')); }
-    if (this["closure"]) { issues.push(...this.closure.doModelValidation(expression+'.closure')); }
+    this.vReqS('resourceType',expression)
+    this.vOptS('url',expression)
+    this.vOptS('version',expression)
+    this.vOptS('name',expression)
+    this.vOptS('title',expression)
+    this.vReqSV('status',expression,'PublicationStatus',PublicationStatusVsValidation,'r')
+    this.vOptS('experimental',expression)
+    this.vReqS('date',expression)
+    this.vOptS('publisher',expression)
+    this.vOptA('contact',expression)
+    this.vOptS('description',expression)
+    this.vOptA('useContext',expression)
+    this.vOptA('jurisdiction',expression)
+    this.vOptS('purpose',expression)
+    this.vOptS('copyright',expression)
+    this.vReqSV('kind',expression,'CapabilityStatementKind',CapabilityStatementKindVsValidation,'r')
+    this.vOptS('software',expression)
+    this.vOptS('implementation',expression)
+    this.vOptS('lockedDate',expression)
+    this.vOptA('codeSystem',expression)
+    this.vOptS('expansion',expression)
+    this.vOptSV('codeSearch',expression,'CodeSearchSupport',CodeSearchSupportVsValidation,'r')
+    this.vOptS('validateCode',expression)
+    this.vOptS('translation',expression)
+    this.vOptS('closure',expression)
     return issues;
   }
 }

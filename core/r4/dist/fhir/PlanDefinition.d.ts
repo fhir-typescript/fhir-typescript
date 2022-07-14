@@ -1,16 +1,13 @@
 import * as fhir from '../fhir.js';
-import { GoalPriorityCodingType } from '../fhirValueSets/GoalPriorityCodings.js';
 import { ActionConditionKindCodeType } from '../fhirValueSets/ActionConditionKindCodes.js';
 import { ActionRelationshipTypeCodeType } from '../fhirValueSets/ActionRelationshipTypeCodes.js';
 import { ActionParticipantTypeCodeType } from '../fhirValueSets/ActionParticipantTypeCodes.js';
 import { RequestPriorityCodeType } from '../fhirValueSets/RequestPriorityCodes.js';
-import { ActionTypeCodingType } from '../fhirValueSets/ActionTypeCodings.js';
 import { ActionGroupingBehaviorCodeType } from '../fhirValueSets/ActionGroupingBehaviorCodes.js';
 import { ActionSelectionBehaviorCodeType } from '../fhirValueSets/ActionSelectionBehaviorCodes.js';
 import { ActionRequiredBehaviorCodeType } from '../fhirValueSets/ActionRequiredBehaviorCodes.js';
 import { ActionPrecheckBehaviorCodeType } from '../fhirValueSets/ActionPrecheckBehaviorCodes.js';
 import { ActionCardinalityBehaviorCodeType } from '../fhirValueSets/ActionCardinalityBehaviorCodes.js';
-import { PlanDefinitionTypeCodingType } from '../fhirValueSets/PlanDefinitionTypeCodings.js';
 import { PublicationStatusCodeType } from '../fhirValueSets/PublicationStatusCodes.js';
 /**
  * Valid arguments for the PlanDefinitionGoalTarget type.
@@ -148,10 +145,6 @@ export declare class PlanDefinitionGoal extends fhir.BackboneElement {
      */
     constructor(source?: Partial<PlanDefinitionGoalArgs>, options?: fhir.FhirConstructorOptions);
     /**
-     * Preferred-bound Value Set for priority (PlanDefinition.goal.priority)
-     */
-    static get priorityPreferredCodings(): GoalPriorityCodingType;
-    /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
     doModelValidation(expression?: string): fhir.FtsIssue[];
@@ -193,14 +186,6 @@ export declare class PlanDefinitionActionCondition extends fhir.BackboneElement 
      * Default constructor for PlanDefinitionActionCondition - initializes any required elements to null if a value is not provided.
      */
     constructor(source?: Partial<PlanDefinitionActionConditionArgs>, options?: fhir.FhirConstructorOptions);
-    /**
-     * Required-bound Value Set for kind (PlanDefinition.action.condition.kind)
-     */
-    static get kindRequiredCodes(): {
-        readonly Applicability: "applicability";
-        readonly Start: "start";
-        readonly Stop: "stop";
-    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
@@ -268,20 +253,6 @@ export declare class PlanDefinitionActionRelatedAction extends fhir.BackboneElem
      */
     constructor(source?: Partial<PlanDefinitionActionRelatedActionArgs>, options?: fhir.FhirConstructorOptions);
     /**
-     * Required-bound Value Set for relationship (PlanDefinition.action.relatedAction.relationship)
-     */
-    static get relationshipRequiredCodes(): {
-        readonly After: "after";
-        readonly AfterEnd: "after-end";
-        readonly AfterStart: "after-start";
-        readonly Before: "before";
-        readonly BeforeEnd: "before-end";
-        readonly BeforeStart: "before-start";
-        readonly Concurrent: "concurrent";
-        readonly ConcurrentWithEnd: "concurrent-with-end";
-        readonly ConcurrentWithStart: "concurrent-with-start";
-    };
-    /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
     doModelValidation(expression?: string): fhir.FtsIssue[];
@@ -323,15 +294,6 @@ export declare class PlanDefinitionActionParticipant extends fhir.BackboneElemen
      * Default constructor for PlanDefinitionActionParticipant - initializes any required elements to null if a value is not provided.
      */
     constructor(source?: Partial<PlanDefinitionActionParticipantArgs>, options?: fhir.FhirConstructorOptions);
-    /**
-     * Required-bound Value Set for type (PlanDefinition.action.participant.type)
-     */
-    static get typeRequiredCodes(): {
-        readonly Device: "device";
-        readonly Patient: "patient";
-        readonly Practitioner: "practitioner";
-        readonly RelatedPerson: "related-person";
-    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
@@ -717,60 +679,6 @@ export declare class PlanDefinitionAction extends fhir.BackboneElement {
      */
     constructor(source?: Partial<PlanDefinitionActionArgs>, options?: fhir.FhirConstructorOptions);
     /**
-     * Required-bound Value Set for priority (PlanDefinition.action.priority)
-     */
-    static get priorityRequiredCodes(): {
-        readonly ASAP: "asap";
-        readonly Routine: "routine";
-        readonly STAT: "stat";
-        readonly Urgent: "urgent";
-    };
-    /**
-     * Extensible-bound Value Set for type (PlanDefinition.action.type)
-     */
-    static get typeExtensibleCodings(): ActionTypeCodingType;
-    /**
-     * Required-bound Value Set for groupingBehavior (PlanDefinition.action.groupingBehavior)
-     */
-    static get groupingBehaviorRequiredCodes(): {
-        readonly LogicalGroup: "logical-group";
-        readonly SentenceGroup: "sentence-group";
-        readonly VisualGroup: "visual-group";
-    };
-    /**
-     * Required-bound Value Set for selectionBehavior (PlanDefinition.action.selectionBehavior)
-     */
-    static get selectionBehaviorRequiredCodes(): {
-        readonly All: "all";
-        readonly AllOrNone: "all-or-none";
-        readonly Any: "any";
-        readonly AtMostOne: "at-most-one";
-        readonly ExactlyOne: "exactly-one";
-        readonly OneOrMore: "one-or-more";
-    };
-    /**
-     * Required-bound Value Set for requiredBehavior (PlanDefinition.action.requiredBehavior)
-     */
-    static get requiredBehaviorRequiredCodes(): {
-        readonly Could: "could";
-        readonly Must: "must";
-        readonly MustUnlessDocumented: "must-unless-documented";
-    };
-    /**
-     * Required-bound Value Set for precheckBehavior (PlanDefinition.action.precheckBehavior)
-     */
-    static get precheckBehaviorRequiredCodes(): {
-        readonly No: "no";
-        readonly Yes: "yes";
-    };
-    /**
-     * Required-bound Value Set for cardinalityBehavior (PlanDefinition.action.cardinalityBehavior)
-     */
-    static get cardinalityBehaviorRequiredCodes(): {
-        readonly Multiple: "multiple";
-        readonly Single: "single";
-    };
-    /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
     doModelValidation(expression?: string): fhir.FtsIssue[];
@@ -1128,19 +1036,6 @@ export declare class PlanDefinition extends fhir.DomainResource {
      * Default constructor for PlanDefinition - initializes any required elements to null if a value is not provided.
      */
     constructor(source?: Partial<PlanDefinitionArgs>, options?: fhir.FhirConstructorOptions);
-    /**
-     * Extensible-bound Value Set for type (PlanDefinition.type)
-     */
-    static get typeExtensibleCodings(): PlanDefinitionTypeCodingType;
-    /**
-     * Required-bound Value Set for status (PlanDefinition.status)
-     */
-    static get statusRequiredCodes(): {
-        readonly Active: "active";
-        readonly Draft: "draft";
-        readonly Retired: "retired";
-        readonly Unknown: "unknown";
-    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */

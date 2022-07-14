@@ -6,17 +6,17 @@
 import * as fhir from '../fhir.js';
 
 // @ts-ignore
-import { LanguagesCodings, LanguagesCodingType,} from '../fhirValueSets/LanguagesCodings.js';
-// @ts-ignore
 import { LanguagesCodes,  LanguagesCodeType } from '../fhirValueSets/LanguagesCodes.js';
 // @ts-ignore
-import { RelatedpersonRelationshiptypeCodings, RelatedpersonRelationshiptypeCodingType,} from '../fhirValueSets/RelatedpersonRelationshiptypeCodings.js';
+import { LanguagesVsValidation } from '../fhirValueSets/LanguagesVsValidation.js';
 // @ts-ignore
 import { RelatedpersonRelationshiptypeCodes,  RelatedpersonRelationshiptypeCodeType } from '../fhirValueSets/RelatedpersonRelationshiptypeCodes.js';
 // @ts-ignore
-import { AdministrativeGenderCodings, AdministrativeGenderCodingType,} from '../fhirValueSets/AdministrativeGenderCodings.js';
+import { RelatedpersonRelationshiptypeVsValidation } from '../fhirValueSets/RelatedpersonRelationshiptypeVsValidation.js';
 // @ts-ignore
 import { AdministrativeGenderCodes,  AdministrativeGenderCodeType } from '../fhirValueSets/AdministrativeGenderCodes.js';
+// @ts-ignore
+import { AdministrativeGenderVsValidation } from '../fhirValueSets/AdministrativeGenderVsValidation.js';
 /**
  * Valid arguments for the RelatedPersonCommunication type.
  */
@@ -65,22 +65,13 @@ export class RelatedPersonCommunication extends fhir.BackboneElement {
     }
   }
   /**
-   * Preferred-bound Value Set for language (RelatedPerson.communication.language)
-   */
-  public static get languagePreferredCodings():LanguagesCodingType {
-    return LanguagesCodings;
-  }
-  /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'RelatedPerson.communication' }
-    if (!this['language']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property language fhir: RelatedPerson.communication.language:CodeableConcept', expression: [expression] });
-    }
-    if (this["language"]) { issues.push(...this.language.doModelValidation(expression+'.language')); }
-    if (this["preferred"]) { issues.push(...this.preferred.doModelValidation(expression+'.preferred')); }
+    this.vReqS('language',expression)
+    this.vOptS('preferred',expression)
     return issues;
   }
 }
@@ -254,44 +245,24 @@ export class RelatedPerson extends fhir.DomainResource {
     else { this.communication = []; }
   }
   /**
-   * Preferred-bound Value Set for relationship (RelatedPerson.relationship)
-   */
-  public static get relationshipPreferredCodings():RelatedpersonRelationshiptypeCodingType {
-    return RelatedpersonRelationshiptypeCodings;
-  }
-  /**
-   * Required-bound Value Set for gender (RelatedPerson.gender)
-   */
-  public static get genderRequiredCodes() {
-    return AdministrativeGenderCodes;
-  }
-  /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'RelatedPerson' }
-    if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType fhir: RelatedPerson.resourceType:"RelatedPerson"', expression: [expression] });
-    }
-    if (this["identifier"]) { this.identifier.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.identifier[${i}]`)); }) }
-    if (this["active"]) { issues.push(...this.active.doModelValidation(expression+'.active')); }
-    if (!this['patient']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property patient fhir: RelatedPerson.patient:Reference', expression: [expression] });
-    }
-    if (this["patient"]) { issues.push(...this.patient.doModelValidation(expression+'.patient')); }
-    if (this["relationship"]) { this.relationship.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.relationship[${i}]`)); }) }
-    if (this["name"]) { this.name.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.name[${i}]`)); }) }
-    if (this["telecom"]) { this.telecom.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.telecom[${i}]`)); }) }
-    if (this['gender'] && (!Object.values(AdministrativeGenderCodes).includes(this.gender.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'gender (RelatedPerson.gender) of type code is missing code for Required binding to: AdministrativeGender', expression: [expression] });
-    }
-    if (this["gender"]) { issues.push(...this.gender.doModelValidation(expression+'.gender')); }
-    if (this["birthDate"]) { issues.push(...this.birthDate.doModelValidation(expression+'.birthDate')); }
-    if (this["address"]) { this.address.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.address[${i}]`)); }) }
-    if (this["photo"]) { this.photo.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.photo[${i}]`)); }) }
-    if (this["period"]) { issues.push(...this.period.doModelValidation(expression+'.period')); }
-    if (this["communication"]) { this.communication.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.communication[${i}]`)); }) }
+    this.vReqS('resourceType',expression)
+    this.vOptA('identifier',expression)
+    this.vOptS('active',expression)
+    this.vReqS('patient',expression)
+    this.vOptA('relationship',expression)
+    this.vOptA('name',expression)
+    this.vOptA('telecom',expression)
+    this.vOptSV('gender',expression,'AdministrativeGender',AdministrativeGenderVsValidation,'r')
+    this.vOptS('birthDate',expression)
+    this.vOptA('address',expression)
+    this.vOptA('photo',expression)
+    this.vOptS('period',expression)
+    this.vOptA('communication',expression)
     return issues;
   }
 }

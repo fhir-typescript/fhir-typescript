@@ -68,11 +68,11 @@ export interface AllergyIntolerance extends fhir.DomainResource {
    * Refer to [discussion](extensibility.html#Special-Case) if clincalStatus is missing data.
    * The data type is CodeableConcept because clinicalStatus has some clinical judgment involved, such that there might need to be more specificity than the required FHIR value set allows. For example, a SNOMED coding might allow for additional specificity.
    */
-  clinicalStatus?: fhir.CodeableConcept|undefined;
+  clinicalStatus?: 'active'|'inactive'|'resolved'|undefined;
   /**
    * The data type is CodeableConcept because verificationStatus has some clinical judgment involved, such that there might need to be more specificity than the required FHIR value set allows. For example, a SNOMED coding might allow for additional specificity.
    */
-  verificationStatus?: fhir.CodeableConcept|undefined;
+  verificationStatus?: 'confirmed'|'entered-in-error'|'refuted'|'unconfirmed'|undefined;
   /**
    * Allergic (typically immune-mediated) reactions have been traditionally regarded as an indicator for potential escalation to significant future risk. Contemporary knowledge suggests that some reactions previously thought to be immune-mediated are, in fact, non-immune, but in some cases can still pose a life threatening risk. It is acknowledged that many clinicians might not be in a position to distinguish the mechanism of a particular reaction. Often the term "allergy" is used rather generically and may overlap with the use of "intolerance" - in practice the boundaries between these two concepts might not be well-defined or understood. This data element is included nevertheless, because many legacy systems have captured this attribute. Immunologic testing may provide supporting evidence for the basis of the reaction and the causative substance, but no tests are 100% sensitive or specific for sensitivity to a particular substance. If, as is commonly the case, it is unclear whether the reaction is due to an allergy or an intolerance, then the type element should be omitted from the resource.
    */

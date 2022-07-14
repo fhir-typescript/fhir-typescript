@@ -81,9 +81,10 @@ export class Population extends fhir.BackboneElement {
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'Population' }
-    if (this["gender"]) { issues.push(...this.gender.doModelValidation(expression+'.gender')); }
-    if (this["race"]) { issues.push(...this.race.doModelValidation(expression+'.race')); }
-    if (this["physiologicalCondition"]) { issues.push(...this.physiologicalCondition.doModelValidation(expression+'.physiologicalCondition')); }
+    this.vOptS('age',expression)
+    this.vOptS('gender',expression)
+    this.vOptS('race',expression)
+    this.vOptS('physiologicalCondition',expression)
     return issues;
   }
 }

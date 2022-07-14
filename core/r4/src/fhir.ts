@@ -370,7 +370,7 @@ type FhirResource =
  * Factory creator for FHIR Resources
  */
 function resourceFactory(source:any) : FhirResource|null {
-  switch (source["resourceType"]) {
+  switch (source['resourceType']) {
     case "Account": return new Account(source);
     case "ActivityDefinition": return new ActivityDefinition(source);
     case "AdverseEvent": return new AdverseEvent(source);

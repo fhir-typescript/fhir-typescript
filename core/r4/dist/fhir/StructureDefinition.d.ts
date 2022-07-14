@@ -1,9 +1,7 @@
 import * as fhir from '../fhir.js';
 import { ExtensionContextTypeCodeType } from '../fhirValueSets/ExtensionContextTypeCodes.js';
 import { PublicationStatusCodeType } from '../fhirValueSets/PublicationStatusCodes.js';
-import { DefinitionUseCodingType } from '../fhirValueSets/DefinitionUseCodings.js';
 import { StructureDefinitionKindCodeType } from '../fhirValueSets/StructureDefinitionKindCodes.js';
-import { DefinedTypesCodingType } from '../fhirValueSets/DefinedTypesCodings.js';
 import { TypeDerivationRuleCodeType } from '../fhirValueSets/TypeDerivationRuleCodes.js';
 /**
  * Valid arguments for the StructureDefinitionMapping type.
@@ -116,14 +114,6 @@ export declare class StructureDefinitionContext extends fhir.BackboneElement {
      * Default constructor for StructureDefinitionContext - initializes any required elements to null if a value is not provided.
      */
     constructor(source?: Partial<StructureDefinitionContextArgs>, options?: fhir.FhirConstructorOptions);
-    /**
-     * Required-bound Value Set for type (StructureDefinition.context.type)
-     */
-    static get typeRequiredCodes(): {
-        readonly ElementID: "element";
-        readonly ExtensionURL: "extension";
-        readonly FHIRPath: "fhirpath";
-    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
@@ -516,66 +506,6 @@ export declare class StructureDefinition extends fhir.DomainResource {
      * Default constructor for StructureDefinition - initializes any required elements to null if a value is not provided.
      */
     constructor(source?: Partial<StructureDefinitionArgs>, options?: fhir.FhirConstructorOptions);
-    /**
-     * Required-bound Value Set for status (StructureDefinition.status)
-     */
-    static get statusRequiredCodes(): {
-        readonly Active: "active";
-        readonly Draft: "draft";
-        readonly Retired: "retired";
-        readonly Unknown: "unknown";
-    };
-    /**
-     * Extensible-bound Value Set for keyword (StructureDefinition.keyword)
-     */
-    static get keywordExtensibleCodings(): DefinitionUseCodingType;
-    /**
-     * Required-bound Value Set for fhirVersion (StructureDefinition.fhirVersion)
-     */
-    static get fhirVersionRequiredCodes(): {
-        readonly VAL0080: "0.0.80";
-        readonly VAL0081: "0.0.81";
-        readonly VAL0082: "0.0.82";
-        readonly VAL001: "0.01";
-        readonly VAL005: "0.05";
-        readonly VAL006: "0.06";
-        readonly VAL011: "0.11";
-        readonly VAL040: "0.4.0";
-        readonly VAL050: "0.5.0";
-        readonly VAL100: "1.0.0";
-        readonly VAL101: "1.0.1";
-        readonly VAL102: "1.0.2";
-        readonly VAL110: "1.1.0";
-        readonly VAL140: "1.4.0";
-        readonly VAL160: "1.6.0";
-        readonly VAL180: "1.8.0";
-        readonly VAL300: "3.0.0";
-        readonly VAL301: "3.0.1";
-        readonly VAL330: "3.3.0";
-        readonly VAL350: "3.5.0";
-        readonly VAL400: "4.0.0";
-        readonly VAL401: "4.0.1";
-    };
-    /**
-     * Required-bound Value Set for kind (StructureDefinition.kind)
-     */
-    static get kindRequiredCodes(): {
-        readonly ComplexDataType: "complex-type";
-        readonly Logical: "logical";
-        readonly PrimitiveDataType: "primitive-type";
-        readonly Resource: "resource";
-    };
-    /**
-     * Extensible-bound Value Set for type (StructureDefinition.type)
-     */
-    static get typeExtensibleCodings(): DefinedTypesCodingType;
-    /**
-     * Required-bound Value Set for derivation (StructureDefinition.derivation)
-     */
-    static get derivationRequiredCodes(): {
-        readonly Constraint: "constraint";
-        readonly Specialization: "specialization";
-    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */

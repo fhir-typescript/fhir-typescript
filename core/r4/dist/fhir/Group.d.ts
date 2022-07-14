@@ -258,19 +258,6 @@ export declare class Group extends fhir.DomainResource {
      */
     constructor(source?: Partial<GroupArgs>, options?: fhir.FhirConstructorOptions);
     /**
-     * Required-bound Value Set for type (Group.type)
-     */
-    static get typeRequiredCodes(): {
-        readonly Animal: "animal";
-        readonly Device: "device";
-        readonly Medication: "medication";
-        readonly Person: "person";
-        readonly Practitioner: "practitioner";
-        readonly Substance: "substance"; /**
-         * For Range, it means members of the group have a value that falls somewhere within the specified range.
-         */
-    };
-    /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
     doModelValidation(expression?: string): fhir.FtsIssue[];

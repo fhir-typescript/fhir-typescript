@@ -39,13 +39,6 @@ export declare class CatalogEntryRelatedEntry extends fhir.BackboneElement {
      */
     constructor(source?: Partial<CatalogEntryRelatedEntryArgs>, options?: fhir.FhirConstructorOptions);
     /**
-     * Required-bound Value Set for relationtype (CatalogEntry.relatedEntry.relationtype)
-     */
-    static get relationtypeRequiredCodes(): {
-        readonly ReplacedBy: "is-replaced-by";
-        readonly Triggers: "triggers";
-    };
-    /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
     doModelValidation(expression?: string): fhir.FtsIssue[];
@@ -195,15 +188,6 @@ export declare class CatalogEntry extends fhir.DomainResource {
      * Default constructor for CatalogEntry - initializes any required elements to null if a value is not provided.
      */
     constructor(source?: Partial<CatalogEntryArgs>, options?: fhir.FhirConstructorOptions);
-    /**
-     * Required-bound Value Set for status (CatalogEntry.status)
-     */
-    static get statusRequiredCodes(): {
-        readonly Active: "active";
-        readonly Draft: "draft";
-        readonly Retired: "retired";
-        readonly Unknown: "unknown";
-    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */

@@ -65,8 +65,8 @@ export class Period extends fhir.FhirElement {
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'Period' }
-    if (this["start"]) { issues.push(...this.start.doModelValidation(expression+'.start')); }
-    if (this["end"]) { issues.push(...this.end.doModelValidation(expression+'.end')); }
+    this.vOptS('start',expression)
+    this.vOptS('end',expression)
     return issues;
   }
 }

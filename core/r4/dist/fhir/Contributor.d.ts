@@ -50,17 +50,6 @@ export declare class Contributor extends fhir.FhirElement {
      */
     constructor(source?: Partial<ContributorArgs>, options?: fhir.FhirConstructorOptions);
     /**
-     * Required-bound Value Set for type (Contributor.type)
-     */
-    static get typeRequiredCodes(): {
-        readonly Author: "author";
-        readonly Editor: "editor"; /**
-         * Valid arguments for the Contributor type.
-         */
-        readonly Endorser: "endorser";
-        readonly Reviewer: "reviewer";
-    };
-    /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
     doModelValidation(expression?: string): fhir.FtsIssue[];

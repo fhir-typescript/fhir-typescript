@@ -6,21 +6,21 @@
 import * as fhir from '../fhir.js';
 
 // @ts-ignore
-import { ImmunizationEvaluationStatusCodings, ImmunizationEvaluationStatusCodingType,} from '../fhirValueSets/ImmunizationEvaluationStatusCodings.js';
-// @ts-ignore
 import { ImmunizationEvaluationStatusCodes,  ImmunizationEvaluationStatusCodeType } from '../fhirValueSets/ImmunizationEvaluationStatusCodes.js';
 // @ts-ignore
-import { ImmunizationEvaluationTargetDiseaseCodings, ImmunizationEvaluationTargetDiseaseCodingType,} from '../fhirValueSets/ImmunizationEvaluationTargetDiseaseCodings.js';
+import { ImmunizationEvaluationStatusVsValidation } from '../fhirValueSets/ImmunizationEvaluationStatusVsValidation.js';
 // @ts-ignore
 import { ImmunizationEvaluationTargetDiseaseCodes,  ImmunizationEvaluationTargetDiseaseCodeType } from '../fhirValueSets/ImmunizationEvaluationTargetDiseaseCodes.js';
 // @ts-ignore
-import { ImmunizationEvaluationDoseStatusCodings, ImmunizationEvaluationDoseStatusCodingType,} from '../fhirValueSets/ImmunizationEvaluationDoseStatusCodings.js';
+import { ImmunizationEvaluationTargetDiseaseVsValidation } from '../fhirValueSets/ImmunizationEvaluationTargetDiseaseVsValidation.js';
 // @ts-ignore
 import { ImmunizationEvaluationDoseStatusCodes,  ImmunizationEvaluationDoseStatusCodeType } from '../fhirValueSets/ImmunizationEvaluationDoseStatusCodes.js';
 // @ts-ignore
-import { ImmunizationEvaluationDoseStatusReasonCodings, ImmunizationEvaluationDoseStatusReasonCodingType,} from '../fhirValueSets/ImmunizationEvaluationDoseStatusReasonCodings.js';
+import { ImmunizationEvaluationDoseStatusVsValidation } from '../fhirValueSets/ImmunizationEvaluationDoseStatusVsValidation.js';
 // @ts-ignore
 import { ImmunizationEvaluationDoseStatusReasonCodes,  ImmunizationEvaluationDoseStatusReasonCodeType } from '../fhirValueSets/ImmunizationEvaluationDoseStatusReasonCodes.js';
+// @ts-ignore
+import { ImmunizationEvaluationDoseStatusReasonVsValidation } from '../fhirValueSets/ImmunizationEvaluationDoseStatusReasonVsValidation.js';
 /**
  * Valid arguments for the ImmunizationEvaluation type.
  */
@@ -235,49 +235,25 @@ export class ImmunizationEvaluation extends fhir.DomainResource {
     else if (source['seriesDosesString']) { this.seriesDoses = new fhir.FhirString({value: source.seriesDosesString}); }
   }
   /**
-   * Required-bound Value Set for status (ImmunizationEvaluation.status)
-   */
-  public static get statusRequiredCodes() {
-    return ImmunizationEvaluationStatusCodes;
-  }
-  /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'ImmunizationEvaluation' }
-    if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType fhir: ImmunizationEvaluation.resourceType:"ImmunizationEvaluation"', expression: [expression] });
-    }
-    if (this["identifier"]) { this.identifier.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.identifier[${i}]`)); }) }
-    if (!this['status']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status fhir: ImmunizationEvaluation.status:code', expression: [expression] });
-    }
-    if (this['status'] && (!Object.values(ImmunizationEvaluationStatusCodes).includes(this.status.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'status (ImmunizationEvaluation.status) of type code is missing code for Required binding to: ImmunizationEvaluationStatus', expression: [expression] });
-    }
-    if (this["status"]) { issues.push(...this.status.doModelValidation(expression+'.status')); }
-    if (!this['patient']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property patient fhir: ImmunizationEvaluation.patient:Reference', expression: [expression] });
-    }
-    if (this["patient"]) { issues.push(...this.patient.doModelValidation(expression+'.patient')); }
-    if (this["date"]) { issues.push(...this.date.doModelValidation(expression+'.date')); }
-    if (this["authority"]) { issues.push(...this.authority.doModelValidation(expression+'.authority')); }
-    if (!this['targetDisease']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property targetDisease fhir: ImmunizationEvaluation.targetDisease:CodeableConcept', expression: [expression] });
-    }
-    if (this["targetDisease"]) { issues.push(...this.targetDisease.doModelValidation(expression+'.targetDisease')); }
-    if (!this['immunizationEvent']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property immunizationEvent fhir: ImmunizationEvaluation.immunizationEvent:Reference', expression: [expression] });
-    }
-    if (this["immunizationEvent"]) { issues.push(...this.immunizationEvent.doModelValidation(expression+'.immunizationEvent')); }
-    if (!this['doseStatus']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property doseStatus fhir: ImmunizationEvaluation.doseStatus:CodeableConcept', expression: [expression] });
-    }
-    if (this["doseStatus"]) { issues.push(...this.doseStatus.doModelValidation(expression+'.doseStatus')); }
-    if (this["doseStatusReason"]) { this.doseStatusReason.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.doseStatusReason[${i}]`)); }) }
-    if (this["description"]) { issues.push(...this.description.doModelValidation(expression+'.description')); }
-    if (this["series"]) { issues.push(...this.series.doModelValidation(expression+'.series')); }
+    this.vReqS('resourceType',expression)
+    this.vOptA('identifier',expression)
+    this.vReqSV('status',expression,'ImmunizationEvaluationStatus',ImmunizationEvaluationStatusVsValidation,'r')
+    this.vReqS('patient',expression)
+    this.vOptS('date',expression)
+    this.vOptS('authority',expression)
+    this.vReqS('targetDisease',expression)
+    this.vReqS('immunizationEvent',expression)
+    this.vReqS('doseStatus',expression)
+    this.vOptA('doseStatusReason',expression)
+    this.vOptS('description',expression)
+    this.vOptS('series',expression)
+    this.vOptS('doseNumber',expression)
+    this.vOptS('seriesDoses',expression)
     return issues;
   }
 }

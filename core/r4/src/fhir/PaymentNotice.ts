@@ -6,13 +6,13 @@
 import * as fhir from '../fhir.js';
 
 // @ts-ignore
-import { FmStatusCodings, FmStatusCodingType,} from '../fhirValueSets/FmStatusCodings.js';
-// @ts-ignore
 import { FmStatusCodes,  FmStatusCodeType } from '../fhirValueSets/FmStatusCodes.js';
 // @ts-ignore
-import { PaymentStatusCodings, PaymentStatusCodingType,} from '../fhirValueSets/PaymentStatusCodings.js';
+import { FmStatusVsValidation } from '../fhirValueSets/FmStatusVsValidation.js';
 // @ts-ignore
 import { PaymentStatusCodes,  PaymentStatusCodeType } from '../fhirValueSets/PaymentStatusCodes.js';
+// @ts-ignore
+import { PaymentStatusVsValidation } from '../fhirValueSets/PaymentStatusVsValidation.js';
 /**
  * Valid arguments for the PaymentNotice type.
  */
@@ -181,50 +181,24 @@ export class PaymentNotice extends fhir.DomainResource {
     if (source['paymentStatus']) { this.paymentStatus = new fhir.CodeableConcept(source.paymentStatus); }
   }
   /**
-   * Required-bound Value Set for status (PaymentNotice.status)
-   */
-  public static get statusRequiredCodes() {
-    return FmStatusCodes;
-  }
-  /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'PaymentNotice' }
-    if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType fhir: PaymentNotice.resourceType:"PaymentNotice"', expression: [expression] });
-    }
-    if (this["identifier"]) { this.identifier.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.identifier[${i}]`)); }) }
-    if (!this['status']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status fhir: PaymentNotice.status:code', expression: [expression] });
-    }
-    if (this['status'] && (!Object.values(FmStatusCodes).includes(this.status.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'status (PaymentNotice.status) of type code is missing code for Required binding to: FmStatus', expression: [expression] });
-    }
-    if (this["status"]) { issues.push(...this.status.doModelValidation(expression+'.status')); }
-    if (this["request"]) { issues.push(...this.request.doModelValidation(expression+'.request')); }
-    if (this["response"]) { issues.push(...this.response.doModelValidation(expression+'.response')); }
-    if (!this['created']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property created fhir: PaymentNotice.created:dateTime', expression: [expression] });
-    }
-    if (this["created"]) { issues.push(...this.created.doModelValidation(expression+'.created')); }
-    if (this["provider"]) { issues.push(...this.provider.doModelValidation(expression+'.provider')); }
-    if (!this['payment']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property payment fhir: PaymentNotice.payment:Reference', expression: [expression] });
-    }
-    if (this["payment"]) { issues.push(...this.payment.doModelValidation(expression+'.payment')); }
-    if (this["paymentDate"]) { issues.push(...this.paymentDate.doModelValidation(expression+'.paymentDate')); }
-    if (this["payee"]) { issues.push(...this.payee.doModelValidation(expression+'.payee')); }
-    if (!this['recipient']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property recipient fhir: PaymentNotice.recipient:Reference', expression: [expression] });
-    }
-    if (this["recipient"]) { issues.push(...this.recipient.doModelValidation(expression+'.recipient')); }
-    if (!this['amount']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property amount fhir: PaymentNotice.amount:Money', expression: [expression] });
-    }
-    if (this["amount"]) { issues.push(...this.amount.doModelValidation(expression+'.amount')); }
-    if (this["paymentStatus"]) { issues.push(...this.paymentStatus.doModelValidation(expression+'.paymentStatus')); }
+    this.vReqS('resourceType',expression)
+    this.vOptA('identifier',expression)
+    this.vReqSV('status',expression,'FmStatus',FmStatusVsValidation,'r')
+    this.vOptS('request',expression)
+    this.vOptS('response',expression)
+    this.vReqS('created',expression)
+    this.vOptS('provider',expression)
+    this.vReqS('payment',expression)
+    this.vOptS('paymentDate',expression)
+    this.vOptS('payee',expression)
+    this.vReqS('recipient',expression)
+    this.vReqS('amount',expression)
+    this.vOptS('paymentStatus',expression)
     return issues;
   }
 }

@@ -1,5 +1,4 @@
 import * as fhir from '../fhir.js';
-import { MeasurePopulationCodingType } from '../fhirValueSets/MeasurePopulationCodings.js';
 import { MeasureReportStatusCodeType } from '../fhirValueSets/MeasureReportStatusCodes.js';
 import { MeasureReportTypeCodeType } from '../fhirValueSets/MeasureReportTypeCodes.js';
 /**
@@ -47,10 +46,6 @@ export declare class MeasureReportGroupPopulation extends fhir.BackboneElement {
      * Default constructor for MeasureReportGroupPopulation - initializes any required elements to null if a value is not provided.
      */
     constructor(source?: Partial<MeasureReportGroupPopulationArgs>, options?: fhir.FhirConstructorOptions);
-    /**
-     * Extensible-bound Value Set for code (MeasureReport.group.population.code)
-     */
-    static get codeExtensibleCodings(): MeasurePopulationCodingType;
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
@@ -139,10 +134,6 @@ export declare class MeasureReportGroupStratifierStratumPopulation extends fhir.
      * Default constructor for MeasureReportGroupStratifierStratumPopulation - initializes any required elements to null if a value is not provided.
      */
     constructor(source?: Partial<MeasureReportGroupStratifierStratumPopulationArgs>, options?: fhir.FhirConstructorOptions);
-    /**
-     * Extensible-bound Value Set for code (MeasureReport.group.stratifier.stratum.population.code)
-     */
-    static get codeExtensibleCodings(): MeasurePopulationCodingType;
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
@@ -423,30 +414,6 @@ export declare class MeasureReport extends fhir.DomainResource {
      * Default constructor for MeasureReport - initializes any required elements to null if a value is not provided.
      */
     constructor(source?: Partial<MeasureReportArgs>, options?: fhir.FhirConstructorOptions);
-    /**
-     * Required-bound Value Set for status (MeasureReport.status)
-     */
-    static get statusRequiredCodes(): {
-        readonly Complete: "complete";
-        readonly Error: "error";
-        readonly Pending: "pending";
-    };
-    /**
-     * Required-bound Value Set for type (MeasureReport.type)
-     */
-    static get typeRequiredCodes(): {
-        readonly DataCollection: "data-collection";
-        readonly Individual: "individual";
-        readonly SubjectList: "subject-list";
-        readonly Summary: "summary";
-    };
-    /**
-     * Required-bound Value Set for improvementNotation (MeasureReport.improvementNotation)
-     */
-    static get improvementNotationRequiredCodes(): {
-        readonly DecreasedScoreIndicatesImprovement: "decrease";
-        readonly IncreasedScoreIndicatesImprovement: "increase";
-    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */

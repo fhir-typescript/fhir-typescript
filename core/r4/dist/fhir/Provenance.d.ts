@@ -1,8 +1,5 @@
 import * as fhir from '../fhir.js';
-import { ProvenanceAgentTypeCodingType } from '../fhirValueSets/ProvenanceAgentTypeCodings.js';
 import { ProvenanceEntityRoleCodeType } from '../fhirValueSets/ProvenanceEntityRoleCodes.js';
-import { V3PurposeOfUseCodingType } from '../fhirValueSets/V3PurposeOfUseCodings.js';
-import { ProvenanceActivityTypeCodingType } from '../fhirValueSets/ProvenanceActivityTypeCodings.js';
 /**
  * Valid arguments for the ProvenanceAgent type.
  */
@@ -53,10 +50,6 @@ export declare class ProvenanceAgent extends fhir.BackboneElement {
      */
     constructor(source?: Partial<ProvenanceAgentArgs>, options?: fhir.FhirConstructorOptions);
     /**
-     * Extensible-bound Value Set for type (Provenance.agent.type)
-     */
-    static get typeExtensibleCodings(): ProvenanceAgentTypeCodingType;
-    /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
     doModelValidation(expression?: string): fhir.FtsIssue[];
@@ -106,16 +99,6 @@ export declare class ProvenanceEntity extends fhir.BackboneElement {
      * Default constructor for ProvenanceEntity - initializes any required elements to null if a value is not provided.
      */
     constructor(source?: Partial<ProvenanceEntityArgs>, options?: fhir.FhirConstructorOptions);
-    /**
-     * Required-bound Value Set for role (Provenance.entity.role)
-     */
-    static get roleRequiredCodes(): {
-        readonly Derivation: "derivation";
-        readonly Quotation: "quotation";
-        readonly Removal: "removal";
-        readonly Revision: "revision";
-        readonly Source: "source";
-    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
@@ -246,14 +229,6 @@ export declare class Provenance extends fhir.DomainResource {
      * Default constructor for Provenance - initializes any required elements to null if a value is not provided.
      */
     constructor(source?: Partial<ProvenanceArgs>, options?: fhir.FhirConstructorOptions);
-    /**
-     * Extensible-bound Value Set for reason (Provenance.reason)
-     */
-    static get reasonExtensibleCodings(): V3PurposeOfUseCodingType;
-    /**
-     * Extensible-bound Value Set for activity (Provenance.activity)
-     */
-    static get activityExtensibleCodings(): ProvenanceActivityTypeCodingType;
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */

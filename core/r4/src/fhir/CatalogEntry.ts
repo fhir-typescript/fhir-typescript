@@ -6,13 +6,13 @@
 import * as fhir from '../fhir.js';
 
 // @ts-ignore
-import { RelationTypeCodings, RelationTypeCodingType,} from '../fhirValueSets/RelationTypeCodings.js';
-// @ts-ignore
 import { RelationTypeCodes,  RelationTypeCodeType } from '../fhirValueSets/RelationTypeCodes.js';
 // @ts-ignore
-import { PublicationStatusCodings, PublicationStatusCodingType,} from '../fhirValueSets/PublicationStatusCodings.js';
+import { RelationTypeVsValidation } from '../fhirValueSets/RelationTypeVsValidation.js';
 // @ts-ignore
 import { PublicationStatusCodes,  PublicationStatusCodeType } from '../fhirValueSets/PublicationStatusCodes.js';
+// @ts-ignore
+import { PublicationStatusVsValidation } from '../fhirValueSets/PublicationStatusVsValidation.js';
 /**
  * Valid arguments for the CatalogEntryRelatedEntry type.
  */
@@ -62,28 +62,13 @@ export class CatalogEntryRelatedEntry extends fhir.BackboneElement {
     else { this.item = null; }
   }
   /**
-   * Required-bound Value Set for relationtype (CatalogEntry.relatedEntry.relationtype)
-   */
-  public static get relationtypeRequiredCodes() {
-    return RelationTypeCodes;
-  }
-  /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'CatalogEntry.relatedEntry' }
-    if (!this['relationtype']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property relationtype fhir: CatalogEntry.relatedEntry.relationtype:code', expression: [expression] });
-    }
-    if (this['relationtype'] && (!Object.values(RelationTypeCodes).includes(this.relationtype.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'relationtype (CatalogEntry.relatedEntry.relationtype) of type code is missing code for Required binding to: RelationType', expression: [expression] });
-    }
-    if (this["relationtype"]) { issues.push(...this.relationtype.doModelValidation(expression+'.relationtype')); }
-    if (!this['item']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property item fhir: CatalogEntry.relatedEntry.item:Reference', expression: [expression] });
-    }
-    if (this["item"]) { issues.push(...this.item.doModelValidation(expression+'.item')); }
+    this.vReqSV('relationtype',expression,'RelationType',RelationTypeVsValidation,'r')
+    this.vReqS('item',expression)
     return issues;
   }
 }
@@ -274,42 +259,25 @@ export class CatalogEntry extends fhir.DomainResource {
     else { this.relatedEntry = []; }
   }
   /**
-   * Required-bound Value Set for status (CatalogEntry.status)
-   */
-  public static get statusRequiredCodes() {
-    return PublicationStatusCodes;
-  }
-  /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'CatalogEntry' }
-    if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType fhir: CatalogEntry.resourceType:"CatalogEntry"', expression: [expression] });
-    }
-    if (this["identifier"]) { this.identifier.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.identifier[${i}]`)); }) }
-    if (this["type"]) { issues.push(...this.type.doModelValidation(expression+'.type')); }
-    if (!this['orderable']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property orderable fhir: CatalogEntry.orderable:boolean', expression: [expression] });
-    }
-    if (this["orderable"]) { issues.push(...this.orderable.doModelValidation(expression+'.orderable')); }
-    if (!this['referencedItem']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property referencedItem fhir: CatalogEntry.referencedItem:Reference', expression: [expression] });
-    }
-    if (this["referencedItem"]) { issues.push(...this.referencedItem.doModelValidation(expression+'.referencedItem')); }
-    if (this["additionalIdentifier"]) { this.additionalIdentifier.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.additionalIdentifier[${i}]`)); }) }
-    if (this["classification"]) { this.classification.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.classification[${i}]`)); }) }
-    if (this['status'] && (!Object.values(PublicationStatusCodes).includes(this.status.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'status (CatalogEntry.status) of type code is missing code for Required binding to: PublicationStatus', expression: [expression] });
-    }
-    if (this["status"]) { issues.push(...this.status.doModelValidation(expression+'.status')); }
-    if (this["validityPeriod"]) { issues.push(...this.validityPeriod.doModelValidation(expression+'.validityPeriod')); }
-    if (this["validTo"]) { issues.push(...this.validTo.doModelValidation(expression+'.validTo')); }
-    if (this["lastUpdated"]) { issues.push(...this.lastUpdated.doModelValidation(expression+'.lastUpdated')); }
-    if (this["additionalCharacteristic"]) { this.additionalCharacteristic.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.additionalCharacteristic[${i}]`)); }) }
-    if (this["additionalClassification"]) { this.additionalClassification.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.additionalClassification[${i}]`)); }) }
-    if (this["relatedEntry"]) { this.relatedEntry.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.relatedEntry[${i}]`)); }) }
+    this.vReqS('resourceType',expression)
+    this.vOptA('identifier',expression)
+    this.vOptS('type',expression)
+    this.vReqS('orderable',expression)
+    this.vReqS('referencedItem',expression)
+    this.vOptA('additionalIdentifier',expression)
+    this.vOptA('classification',expression)
+    this.vOptSV('status',expression,'PublicationStatus',PublicationStatusVsValidation,'r')
+    this.vOptS('validityPeriod',expression)
+    this.vOptS('validTo',expression)
+    this.vOptS('lastUpdated',expression)
+    this.vOptA('additionalCharacteristic',expression)
+    this.vOptA('additionalClassification',expression)
+    this.vOptA('relatedEntry',expression)
     return issues;
   }
 }

@@ -504,33 +504,6 @@ export declare class CoverageEligibilityResponse extends fhir.DomainResource {
      */
     constructor(source?: Partial<CoverageEligibilityResponseArgs>, options?: fhir.FhirConstructorOptions);
     /**
-     * Required-bound Value Set for status (CoverageEligibilityResponse.status)
-     */
-    static get statusRequiredCodes(): {
-        readonly Active: "active";
-        readonly Cancelled: "cancelled";
-        readonly Draft: "draft";
-        readonly EnteredInError: "entered-in-error";
-    };
-    /**
-     * Required-bound Value Set for purpose (CoverageEligibilityResponse.purpose)
-     */
-    static get purposeRequiredCodes(): {
-        readonly CoverageAuthRequirements: "auth-requirements";
-        readonly CoverageBenefits: "benefits";
-        readonly CoverageDiscovery: "discovery";
-        readonly CoverageValidation: "validation";
-    };
-    /**
-     * Required-bound Value Set for outcome (CoverageEligibilityResponse.outcome)
-     */
-    static get outcomeRequiredCodes(): {
-        readonly ProcessingComplete: "complete";
-        readonly Error: "error";
-        readonly PartialProcessing: "partial";
-        readonly Queued: "queued";
-    };
-    /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
     doModelValidation(expression?: string): fhir.FtsIssue[];

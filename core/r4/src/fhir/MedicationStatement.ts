@@ -6,21 +6,21 @@
 import * as fhir from '../fhir.js';
 
 // @ts-ignore
-import { MedicationStatementStatusCodings, MedicationStatementStatusCodingType,} from '../fhirValueSets/MedicationStatementStatusCodings.js';
-// @ts-ignore
 import { MedicationStatementStatusCodes,  MedicationStatementStatusCodeType } from '../fhirValueSets/MedicationStatementStatusCodes.js';
 // @ts-ignore
-import { ReasonMedicationStatusCodings, ReasonMedicationStatusCodingType,} from '../fhirValueSets/ReasonMedicationStatusCodings.js';
+import { MedicationStatementStatusVsValidation } from '../fhirValueSets/MedicationStatementStatusVsValidation.js';
 // @ts-ignore
 import { ReasonMedicationStatusCodes,  ReasonMedicationStatusCodeType } from '../fhirValueSets/ReasonMedicationStatusCodes.js';
 // @ts-ignore
-import { MedicationStatementCategoryCodings, MedicationStatementCategoryCodingType,} from '../fhirValueSets/MedicationStatementCategoryCodings.js';
+import { ReasonMedicationStatusVsValidation } from '../fhirValueSets/ReasonMedicationStatusVsValidation.js';
 // @ts-ignore
 import { MedicationStatementCategoryCodes,  MedicationStatementCategoryCodeType } from '../fhirValueSets/MedicationStatementCategoryCodes.js';
 // @ts-ignore
-import { ConditionCodings, ConditionCodingType,} from '../fhirValueSets/ConditionCodings.js';
+import { MedicationStatementCategoryVsValidation } from '../fhirValueSets/MedicationStatementCategoryVsValidation.js';
 // @ts-ignore
 import { ConditionCodes,  ConditionCodeType } from '../fhirValueSets/ConditionCodes.js';
+// @ts-ignore
+import { ConditionVsValidation } from '../fhirValueSets/ConditionVsValidation.js';
 /**
  * Valid arguments for the MedicationStatement type.
  */
@@ -263,53 +263,29 @@ export class MedicationStatement extends fhir.DomainResource {
     else { this.dosage = []; }
   }
   /**
-   * Required-bound Value Set for status (MedicationStatement.status)
-   */
-  public static get statusRequiredCodes() {
-    return MedicationStatementStatusCodes;
-  }
-  /**
-   * Preferred-bound Value Set for category (MedicationStatement.category)
-   */
-  public static get categoryPreferredCodings():MedicationStatementCategoryCodingType {
-    return MedicationStatementCategoryCodings;
-  }
-  /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'MedicationStatement' }
-    if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType fhir: MedicationStatement.resourceType:"MedicationStatement"', expression: [expression] });
-    }
-    if (this["identifier"]) { this.identifier.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.identifier[${i}]`)); }) }
-    if (this["basedOn"]) { this.basedOn.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.basedOn[${i}]`)); }) }
-    if (this["partOf"]) { this.partOf.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.partOf[${i}]`)); }) }
-    if (!this['status']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status fhir: MedicationStatement.status:code', expression: [expression] });
-    }
-    if (this['status'] && (!Object.values(MedicationStatementStatusCodes).includes(this.status.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'status (MedicationStatement.status) of type code is missing code for Required binding to: MedicationStatementStatus', expression: [expression] });
-    }
-    if (this["status"]) { issues.push(...this.status.doModelValidation(expression+'.status')); }
-    if (this["statusReason"]) { this.statusReason.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.statusReason[${i}]`)); }) }
-    if (this["category"]) { issues.push(...this.category.doModelValidation(expression+'.category')); }
-    if (!this['medication']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property medication fhir: MedicationStatement.medication[x]:', expression: [expression] });
-    }
-    if (!this['subject']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property subject fhir: MedicationStatement.subject:Reference', expression: [expression] });
-    }
-    if (this["subject"]) { issues.push(...this.subject.doModelValidation(expression+'.subject')); }
-    if (this["context"]) { issues.push(...this.context.doModelValidation(expression+'.context')); }
-    if (this["dateAsserted"]) { issues.push(...this.dateAsserted.doModelValidation(expression+'.dateAsserted')); }
-    if (this["informationSource"]) { issues.push(...this.informationSource.doModelValidation(expression+'.informationSource')); }
-    if (this["derivedFrom"]) { this.derivedFrom.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.derivedFrom[${i}]`)); }) }
-    if (this["reasonCode"]) { this.reasonCode.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.reasonCode[${i}]`)); }) }
-    if (this["reasonReference"]) { this.reasonReference.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.reasonReference[${i}]`)); }) }
-    if (this["note"]) { this.note.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.note[${i}]`)); }) }
-    if (this["dosage"]) { this.dosage.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.dosage[${i}]`)); }) }
+    this.vReqS('resourceType',expression)
+    this.vOptA('identifier',expression)
+    this.vOptA('basedOn',expression)
+    this.vOptA('partOf',expression)
+    this.vReqSV('status',expression,'MedicationStatementStatus',MedicationStatementStatusVsValidation,'r')
+    this.vOptA('statusReason',expression)
+    this.vOptS('category',expression)
+    this.vReqS('medication',expression)
+    this.vReqS('subject',expression)
+    this.vOptS('context',expression)
+    this.vOptS('effective',expression)
+    this.vOptS('dateAsserted',expression)
+    this.vOptS('informationSource',expression)
+    this.vOptA('derivedFrom',expression)
+    this.vOptA('reasonCode',expression)
+    this.vOptA('reasonReference',expression)
+    this.vOptA('note',expression)
+    this.vOptA('dosage',expression)
     return issues;
   }
 }

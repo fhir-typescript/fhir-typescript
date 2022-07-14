@@ -6,25 +6,25 @@
 import * as fhir from '../fhir.js';
 
 // @ts-ignore
-import { ProvenanceAgentTypeCodings, ProvenanceAgentTypeCodingType,} from '../fhirValueSets/ProvenanceAgentTypeCodings.js';
-// @ts-ignore
 import { ProvenanceAgentTypeCodes,  ProvenanceAgentTypeCodeType } from '../fhirValueSets/ProvenanceAgentTypeCodes.js';
 // @ts-ignore
-import { SecurityRoleTypeCodings, SecurityRoleTypeCodingType,} from '../fhirValueSets/SecurityRoleTypeCodings.js';
+import { ProvenanceAgentTypeVsValidation } from '../fhirValueSets/ProvenanceAgentTypeVsValidation.js';
 // @ts-ignore
 import { SecurityRoleTypeCodes,  SecurityRoleTypeCodeType } from '../fhirValueSets/SecurityRoleTypeCodes.js';
 // @ts-ignore
-import { ProvenanceEntityRoleCodings, ProvenanceEntityRoleCodingType,} from '../fhirValueSets/ProvenanceEntityRoleCodings.js';
+import { SecurityRoleTypeVsValidation } from '../fhirValueSets/SecurityRoleTypeVsValidation.js';
 // @ts-ignore
 import { ProvenanceEntityRoleCodes,  ProvenanceEntityRoleCodeType } from '../fhirValueSets/ProvenanceEntityRoleCodes.js';
 // @ts-ignore
-import { V3PurposeOfUseCodings, V3PurposeOfUseCodingType,} from '../fhirValueSets/V3PurposeOfUseCodings.js';
+import { ProvenanceEntityRoleVsValidation } from '../fhirValueSets/ProvenanceEntityRoleVsValidation.js';
 // @ts-ignore
 import { V3PurposeOfUseCodes,  V3PurposeOfUseCodeType } from '../fhirValueSets/V3PurposeOfUseCodes.js';
 // @ts-ignore
-import { ProvenanceActivityTypeCodings, ProvenanceActivityTypeCodingType,} from '../fhirValueSets/ProvenanceActivityTypeCodings.js';
+import { V3PurposeOfUseVsValidation } from '../fhirValueSets/V3PurposeOfUseVsValidation.js';
 // @ts-ignore
 import { ProvenanceActivityTypeCodes,  ProvenanceActivityTypeCodeType } from '../fhirValueSets/ProvenanceActivityTypeCodes.js';
+// @ts-ignore
+import { ProvenanceActivityTypeVsValidation } from '../fhirValueSets/ProvenanceActivityTypeVsValidation.js';
 /**
  * Valid arguments for the ProvenanceAgent type.
  */
@@ -84,24 +84,15 @@ export class ProvenanceAgent extends fhir.BackboneElement {
     if (source['onBehalfOf']) { this.onBehalfOf = new fhir.Reference(source.onBehalfOf); }
   }
   /**
-   * Extensible-bound Value Set for type (Provenance.agent.type)
-   */
-  public static get typeExtensibleCodings():ProvenanceAgentTypeCodingType {
-    return ProvenanceAgentTypeCodings;
-  }
-  /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'Provenance.agent' }
-    if (this["type"]) { issues.push(...this.type.doModelValidation(expression+'.type')); }
-    if (this["role"]) { this.role.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.role[${i}]`)); }) }
-    if (!this['who']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property who fhir: Provenance.agent.who:Reference', expression: [expression] });
-    }
-    if (this["who"]) { issues.push(...this.who.doModelValidation(expression+'.who')); }
-    if (this["onBehalfOf"]) { issues.push(...this.onBehalfOf.doModelValidation(expression+'.onBehalfOf')); }
+    this.vOptS('type',expression)
+    this.vOptA('role',expression)
+    this.vReqS('who',expression)
+    this.vOptS('onBehalfOf',expression)
     return issues;
   }
 }
@@ -164,29 +155,14 @@ export class ProvenanceEntity extends fhir.BackboneElement {
     else { this.agent = []; }
   }
   /**
-   * Required-bound Value Set for role (Provenance.entity.role)
-   */
-  public static get roleRequiredCodes() {
-    return ProvenanceEntityRoleCodes;
-  }
-  /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'Provenance.entity' }
-    if (!this['role']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property role fhir: Provenance.entity.role:code', expression: [expression] });
-    }
-    if (this['role'] && (!Object.values(ProvenanceEntityRoleCodes).includes(this.role.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'role (Provenance.entity.role) of type code is missing code for Required binding to: ProvenanceEntityRole', expression: [expression] });
-    }
-    if (this["role"]) { issues.push(...this.role.doModelValidation(expression+'.role')); }
-    if (!this['what']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property what fhir: Provenance.entity.what:Reference', expression: [expression] });
-    }
-    if (this["what"]) { issues.push(...this.what.doModelValidation(expression+'.what')); }
-    if (this["agent"]) { this.agent.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.agent[${i}]`)); }) }
+    this.vReqSV('role',expression,'ProvenanceEntityRole',ProvenanceEntityRoleVsValidation,'r')
+    this.vReqS('what',expression)
+    this.vOptA('agent',expression)
     return issues;
   }
 }
@@ -349,52 +325,22 @@ export class Provenance extends fhir.DomainResource {
     else { this.signature = []; }
   }
   /**
-   * Extensible-bound Value Set for reason (Provenance.reason)
-   */
-  public static get reasonExtensibleCodings():V3PurposeOfUseCodingType {
-    return V3PurposeOfUseCodings;
-  }
-  /**
-   * Extensible-bound Value Set for activity (Provenance.activity)
-   */
-  public static get activityExtensibleCodings():ProvenanceActivityTypeCodingType {
-    return ProvenanceActivityTypeCodings;
-  }
-  /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'Provenance' }
-    if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType fhir: Provenance.resourceType:"Provenance"', expression: [expression] });
-    }
-    if (!this['target']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property target fhir: Provenance.target:Reference', expression: [expression] });
-    } else if (!Array.isArray(this.target)) {
-      issues.push({ severity: 'error', code: 'structure', diagnostics: 'Found scalar in array property target fhir: Provenance.target:Reference', expression: [expression] });
-    } else if (this.target.length === 0) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property target fhir: Provenance.target:Reference', expression: [expression] });
-    }
-    if (this["target"]) { this.target.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.target[${i}]`)); }) }
-    if (!this['recorded']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property recorded fhir: Provenance.recorded:instant', expression: [expression] });
-    }
-    if (this["recorded"]) { issues.push(...this.recorded.doModelValidation(expression+'.recorded')); }
-    if (this["policy"]) { this.policy.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.policy[${i}]`)); }) }
-    if (this["location"]) { issues.push(...this.location.doModelValidation(expression+'.location')); }
-    if (this["reason"]) { this.reason.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.reason[${i}]`)); }) }
-    if (this["activity"]) { issues.push(...this.activity.doModelValidation(expression+'.activity')); }
-    if (!this['agent']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property agent fhir: Provenance.agent:agent', expression: [expression] });
-    } else if (!Array.isArray(this.agent)) {
-      issues.push({ severity: 'error', code: 'structure', diagnostics: 'Found scalar in array property agent fhir: Provenance.agent:agent', expression: [expression] });
-    } else if (this.agent.length === 0) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property agent fhir: Provenance.agent:agent', expression: [expression] });
-    }
-    if (this["agent"]) { this.agent.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.agent[${i}]`)); }) }
-    if (this["entity"]) { this.entity.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.entity[${i}]`)); }) }
-    if (this["signature"]) { this.signature.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.signature[${i}]`)); }) }
+    this.vReqS('resourceType',expression)
+    this.vReqA('target',expression)
+    this.vOptS('occurred',expression)
+    this.vReqS('recorded',expression)
+    this.vOptA('policy',expression)
+    this.vOptS('location',expression)
+    this.vOptA('reason',expression)
+    this.vOptS('activity',expression)
+    this.vReqA('agent',expression)
+    this.vOptA('entity',expression)
+    this.vOptA('signature',expression)
     return issues;
   }
 }

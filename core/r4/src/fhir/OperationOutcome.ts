@@ -6,17 +6,17 @@
 import * as fhir from '../fhir.js';
 
 // @ts-ignore
-import { IssueSeverityCodings, IssueSeverityCodingType,} from '../fhirValueSets/IssueSeverityCodings.js';
-// @ts-ignore
 import { IssueSeverityCodes,  IssueSeverityCodeType } from '../fhirValueSets/IssueSeverityCodes.js';
 // @ts-ignore
-import { IssueTypeCodings, IssueTypeCodingType,} from '../fhirValueSets/IssueTypeCodings.js';
+import { IssueSeverityVsValidation } from '../fhirValueSets/IssueSeverityVsValidation.js';
 // @ts-ignore
 import { IssueTypeCodes,  IssueTypeCodeType } from '../fhirValueSets/IssueTypeCodes.js';
 // @ts-ignore
-import { OperationOutcomeCodings, OperationOutcomeCodingType,} from '../fhirValueSets/OperationOutcomeCodings.js';
+import { IssueTypeVsValidation } from '../fhirValueSets/IssueTypeVsValidation.js';
 // @ts-ignore
 import { OperationOutcomeCodes,  OperationOutcomeCodeType } from '../fhirValueSets/OperationOutcomeCodes.js';
+// @ts-ignore
+import { OperationOutcomeVsValidation } from '../fhirValueSets/OperationOutcomeVsValidation.js';
 /**
  * Valid arguments for the OperationOutcomeIssue type.
  */
@@ -140,41 +140,17 @@ export class OperationOutcomeIssue extends fhir.BackboneElement {
     }
   }
   /**
-   * Required-bound Value Set for severity (OperationOutcome.issue.severity)
-   */
-  public static get severityRequiredCodes() {
-    return IssueSeverityCodes;
-  }
-  /**
-   * Required-bound Value Set for code (OperationOutcome.issue.code)
-   */
-  public static get codeRequiredCodes() {
-    return IssueTypeCodes;
-  }
-  /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'OperationOutcome.issue' }
-    if (!this['severity']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property severity fhir: OperationOutcome.issue.severity:code', expression: [expression] });
-    }
-    if (this['severity'] && (!Object.values(IssueSeverityCodes).includes(this.severity.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'severity (OperationOutcome.issue.severity) of type code is missing code for Required binding to: IssueSeverity', expression: [expression] });
-    }
-    if (this["severity"]) { issues.push(...this.severity.doModelValidation(expression+'.severity')); }
-    if (!this['code']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property code fhir: OperationOutcome.issue.code:code', expression: [expression] });
-    }
-    if (this['code'] && (!Object.values(IssueTypeCodes).includes(this.code.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'code (OperationOutcome.issue.code) of type code is missing code for Required binding to: IssueType', expression: [expression] });
-    }
-    if (this["code"]) { issues.push(...this.code.doModelValidation(expression+'.code')); }
-    if (this["details"]) { issues.push(...this.details.doModelValidation(expression+'.details')); }
-    if (this["diagnostics"]) { issues.push(...this.diagnostics.doModelValidation(expression+'.diagnostics')); }
-    if (this["location"]) { this.location.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.location[${i}]`)); }) }
-    if (this["expression"]) { this.expression.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.expression[${i}]`)); }) }
+    this.vReqSV('severity',expression,'IssueSeverity',IssueSeverityVsValidation,'r')
+    this.vReqSV('code',expression,'IssueType',IssueTypeVsValidation,'r')
+    this.vOptS('details',expression)
+    this.vOptS('diagnostics',expression)
+    this.vOptA('location',expression)
+    this.vOptA('expression',expression)
     return issues;
   }
 }
@@ -223,17 +199,8 @@ export class OperationOutcome extends fhir.DomainResource {
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'OperationOutcome' }
-    if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType fhir: OperationOutcome.resourceType:"OperationOutcome"', expression: [expression] });
-    }
-    if (!this['issue']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property issue fhir: OperationOutcome.issue:issue', expression: [expression] });
-    } else if (!Array.isArray(this.issue)) {
-      issues.push({ severity: 'error', code: 'structure', diagnostics: 'Found scalar in array property issue fhir: OperationOutcome.issue:issue', expression: [expression] });
-    } else if (this.issue.length === 0) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property issue fhir: OperationOutcome.issue:issue', expression: [expression] });
-    }
-    if (this["issue"]) { this.issue.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.issue[${i}]`)); }) }
+    this.vReqS('resourceType',expression)
+    this.vReqA('issue',expression)
     return issues;
   }
 }

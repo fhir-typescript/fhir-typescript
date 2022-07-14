@@ -788,30 +788,6 @@ export declare class TerminologyCapabilities extends fhir.DomainResource {
      */
     constructor(source?: Partial<TerminologyCapabilitiesArgs>, options?: fhir.FhirConstructorOptions);
     /**
-     * Required-bound Value Set for status (TerminologyCapabilities.status)
-     */
-    static get statusRequiredCodes(): {
-        readonly Active: "active";
-        readonly Draft: "draft";
-        readonly Retired: "retired";
-        readonly Unknown: "unknown";
-    };
-    /**
-     * Required-bound Value Set for kind (TerminologyCapabilities.kind)
-     */
-    static get kindRequiredCodes(): {
-        readonly Capability: "capability";
-        readonly Instance: "instance";
-        readonly Requirements: "requirements";
-    };
-    /**
-     * Required-bound Value Set for codeSearch (TerminologyCapabilities.codeSearch)
-     */
-    static get codeSearchRequiredCodes(): {
-        readonly ImplicitCodes: "all";
-        readonly ExplicitCodes: "explicit";
-    };
-    /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
     doModelValidation(expression?: string): fhir.FtsIssue[];

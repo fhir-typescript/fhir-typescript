@@ -1,7 +1,6 @@
 import * as fhir from '../fhir.js';
 import { DiscriminatorTypeCodeType } from '../fhirValueSets/DiscriminatorTypeCodes.js';
 import { ResourceSlicingRulesCodeType } from '../fhirValueSets/ResourceSlicingRulesCodes.js';
-import { DefinedTypesCodingType } from '../fhirValueSets/DefinedTypesCodings.js';
 import { ResourceAggregationModeCodeType } from '../fhirValueSets/ResourceAggregationModeCodes.js';
 import { ReferenceVersionRulesCodeType } from '../fhirValueSets/ReferenceVersionRulesCodes.js';
 import { ConstraintSeverityCodeType } from '../fhirValueSets/ConstraintSeverityCodes.js';
@@ -48,16 +47,6 @@ export declare class ElementDefinitionSlicingDiscriminator extends fhir.FhirElem
      * Default constructor for ElementDefinitionSlicingDiscriminator - initializes any required elements to null if a value is not provided.
      */
     constructor(source?: Partial<ElementDefinitionSlicingDiscriminatorArgs>, options?: fhir.FhirConstructorOptions);
-    /**
-     * Required-bound Value Set for type (ElementDefinition.slicing.discriminator.type)
-     */
-    static get typeRequiredCodes(): {
-        readonly Exists: "exists";
-        readonly Pattern: "pattern";
-        readonly Profile: "profile";
-        readonly Type: "type";
-        readonly Value: "value";
-    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
@@ -124,14 +113,6 @@ export declare class ElementDefinitionSlicing extends fhir.FhirElement {
      * Default constructor for ElementDefinitionSlicing - initializes any required elements to null if a value is not provided.
      */
     constructor(source?: Partial<ElementDefinitionSlicingArgs>, options?: fhir.FhirConstructorOptions);
-    /**
-     * Required-bound Value Set for rules (ElementDefinition.slicing.rules)
-     */
-    static get rulesRequiredCodes(): {
-        readonly Closed: "closed";
-        readonly Open: "open";
-        readonly OpenAtEnd: "openAtEnd";
-    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
@@ -272,26 +253,6 @@ export declare class ElementDefinitionType extends fhir.FhirElement {
      * Default constructor for ElementDefinitionType - initializes any required elements to null if a value is not provided.
      */
     constructor(source?: Partial<ElementDefinitionTypeArgs>, options?: fhir.FhirConstructorOptions);
-    /**
-     * Extensible-bound Value Set for code (ElementDefinition.type.code)
-     */
-    static get codeExtensibleCodings(): DefinedTypesCodingType;
-    /**
-     * Required-bound Value Set for aggregation (ElementDefinition.type.aggregation)
-     */
-    static get aggregationRequiredCodes(): {
-        readonly Bundled: "bundled";
-        readonly Contained: "contained";
-        readonly Referenced: "referenced";
-    };
-    /**
-     * Required-bound Value Set for versioning (ElementDefinition.type.versioning)
-     */
-    static get versioningRequiredCodes(): {
-        readonly EitherSpecificOrIndependent: "either";
-        readonly VersionIndependent: "independent";
-        readonly VersionSpecific: "specific";
-    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
@@ -645,13 +606,6 @@ export declare class ElementDefinitionConstraint extends fhir.FhirElement {
      */
     constructor(source?: Partial<ElementDefinitionConstraintArgs>, options?: fhir.FhirConstructorOptions);
     /**
-     * Required-bound Value Set for severity (ElementDefinition.constraint.severity)
-     */
-    static get severityRequiredCodes(): {
-        readonly Error: "error";
-        readonly Warning: "warning";
-    };
-    /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
     doModelValidation(expression?: string): fhir.FtsIssue[];
@@ -709,15 +663,6 @@ export declare class ElementDefinitionBinding extends fhir.FhirElement {
      * Default constructor for ElementDefinitionBinding - initializes any required elements to null if a value is not provided.
      */
     constructor(source?: Partial<ElementDefinitionBindingArgs>, options?: fhir.FhirConstructorOptions);
-    /**
-     * Required-bound Value Set for strength (ElementDefinition.binding.strength)
-     */
-    static get strengthRequiredCodes(): {
-        readonly Example: "example";
-        readonly Extensible: "extensible";
-        readonly Preferred: "preferred";
-        readonly Required: "required";
-    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
@@ -1910,16 +1855,6 @@ export declare class ElementDefinition extends fhir.BackboneElement {
      * Default constructor for ElementDefinition - initializes any required elements to null if a value is not provided.
      */
     constructor(source?: Partial<ElementDefinitionArgs>, options?: fhir.FhirConstructorOptions);
-    /**
-     * Required-bound Value Set for representation (ElementDefinition.representation)
-     */
-    static get representationRequiredCodes(): {
-        readonly CDATextFormat: "cdaText";
-        readonly TypeAttribute: "typeAttr";
-        readonly XHTML: "xhtml";
-        readonly XMLAttribute: "xmlAttr";
-        readonly XMLText: "xmlText";
-    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */

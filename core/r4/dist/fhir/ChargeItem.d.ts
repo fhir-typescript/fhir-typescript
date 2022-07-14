@@ -326,18 +326,6 @@ export declare class ChargeItem extends fhir.DomainResource {
      */
     constructor(source?: Partial<ChargeItemArgs>, options?: fhir.FhirConstructorOptions);
     /**
-     * Required-bound Value Set for status (ChargeItem.status)
-     */
-    static get statusRequiredCodes(): {
-        readonly Aborted: "aborted";
-        readonly Billable: "billable";
-        readonly Billed: "billed";
-        readonly EnteredInError: "entered-in-error";
-        readonly NotBillable: "not-billable";
-        readonly Planned: "planned";
-        readonly Unknown: "unknown";
-    };
-    /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
     doModelValidation(expression?: string): fhir.FtsIssue[];

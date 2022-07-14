@@ -90,15 +90,6 @@ export declare class EnrollmentRequest extends fhir.DomainResource {
      */
     constructor(source?: Partial<EnrollmentRequestArgs>, options?: fhir.FhirConstructorOptions);
     /**
-     * Required-bound Value Set for status (EnrollmentRequest.status)
-     */
-    static get statusRequiredCodes(): {
-        readonly Active: "active";
-        readonly Cancelled: "cancelled";
-        readonly Draft: "draft";
-        readonly EnteredInError: "entered-in-error";
-    };
-    /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
     doModelValidation(expression?: string): fhir.FtsIssue[];

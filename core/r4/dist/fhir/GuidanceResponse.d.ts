@@ -170,17 +170,6 @@ export declare class GuidanceResponse extends fhir.DomainResource {
      */
     constructor(source?: Partial<GuidanceResponseArgs>, options?: fhir.FhirConstructorOptions);
     /**
-     * Required-bound Value Set for status (GuidanceResponse.status)
-     */
-    static get statusRequiredCodes(): {
-        readonly DataRequested: "data-requested";
-        readonly DataRequired: "data-required";
-        readonly EnteredInError: "entered-in-error";
-        readonly Failure: "failure";
-        readonly InProgress: "in-progress";
-        readonly Success: "success";
-    };
-    /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
     doModelValidation(expression?: string): fhir.FtsIssue[];

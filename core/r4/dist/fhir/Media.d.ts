@@ -1,6 +1,5 @@
 import * as fhir from '../fhir.js';
 import { EventStatusCodeType } from '../fhirValueSets/EventStatusCodes.js';
-import { MediaTypeCodingType } from '../fhirValueSets/MediaTypeCodings.js';
 /**
  * Valid arguments for the Media type.
  */
@@ -248,23 +247,6 @@ export declare class Media extends fhir.DomainResource {
      * Default constructor for Media - initializes any required elements to null if a value is not provided.
      */
     constructor(source?: Partial<MediaArgs>, options?: fhir.FhirConstructorOptions);
-    /**
-     * Required-bound Value Set for status (Media.status)
-     */
-    static get statusRequiredCodes(): {
-        readonly Completed: "completed";
-        readonly EnteredInError: "entered-in-error";
-        readonly InProgress: "in-progress";
-        readonly NotDone: "not-done";
-        readonly OnHold: "on-hold";
-        readonly Preparation: "preparation";
-        readonly Stopped: "stopped";
-        readonly Unknown: "unknown";
-    };
-    /**
-     * Extensible-bound Value Set for type (Media.type)
-     */
-    static get typeExtensibleCodings(): MediaTypeCodingType;
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */

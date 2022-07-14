@@ -6,37 +6,37 @@
 import * as fhir from '../fhir.js';
 
 // @ts-ignore
-import { AdverseEventCausalityAssessCodings, AdverseEventCausalityAssessCodingType,} from '../fhirValueSets/AdverseEventCausalityAssessCodings.js';
-// @ts-ignore
 import { AdverseEventCausalityAssessCodes,  AdverseEventCausalityAssessCodeType } from '../fhirValueSets/AdverseEventCausalityAssessCodes.js';
 // @ts-ignore
-import { AdverseEventCausalityMethodCodings, AdverseEventCausalityMethodCodingType,} from '../fhirValueSets/AdverseEventCausalityMethodCodings.js';
+import { AdverseEventCausalityAssessVsValidation } from '../fhirValueSets/AdverseEventCausalityAssessVsValidation.js';
 // @ts-ignore
 import { AdverseEventCausalityMethodCodes,  AdverseEventCausalityMethodCodeType } from '../fhirValueSets/AdverseEventCausalityMethodCodes.js';
 // @ts-ignore
-import { AdverseEventActualityCodings, AdverseEventActualityCodingType,} from '../fhirValueSets/AdverseEventActualityCodings.js';
+import { AdverseEventCausalityMethodVsValidation } from '../fhirValueSets/AdverseEventCausalityMethodVsValidation.js';
 // @ts-ignore
 import { AdverseEventActualityCodes,  AdverseEventActualityCodeType } from '../fhirValueSets/AdverseEventActualityCodes.js';
 // @ts-ignore
-import { AdverseEventCategoryCodings, AdverseEventCategoryCodingType,} from '../fhirValueSets/AdverseEventCategoryCodings.js';
+import { AdverseEventActualityVsValidation } from '../fhirValueSets/AdverseEventActualityVsValidation.js';
 // @ts-ignore
 import { AdverseEventCategoryCodes,  AdverseEventCategoryCodeType } from '../fhirValueSets/AdverseEventCategoryCodes.js';
 // @ts-ignore
-import { AdverseEventTypeCodings, AdverseEventTypeCodingType,} from '../fhirValueSets/AdverseEventTypeCodings.js';
+import { AdverseEventCategoryVsValidation } from '../fhirValueSets/AdverseEventCategoryVsValidation.js';
 // @ts-ignore
 import { AdverseEventTypeCodes,  AdverseEventTypeCodeType } from '../fhirValueSets/AdverseEventTypeCodes.js';
 // @ts-ignore
-import { AdverseEventSeriousnessCodings, AdverseEventSeriousnessCodingType,} from '../fhirValueSets/AdverseEventSeriousnessCodings.js';
+import { AdverseEventTypeVsValidation } from '../fhirValueSets/AdverseEventTypeVsValidation.js';
 // @ts-ignore
 import { AdverseEventSeriousnessCodes,  AdverseEventSeriousnessCodeType } from '../fhirValueSets/AdverseEventSeriousnessCodes.js';
 // @ts-ignore
-import { AdverseEventSeverityCodings, AdverseEventSeverityCodingType,} from '../fhirValueSets/AdverseEventSeverityCodings.js';
+import { AdverseEventSeriousnessVsValidation } from '../fhirValueSets/AdverseEventSeriousnessVsValidation.js';
 // @ts-ignore
 import { AdverseEventSeverityCodes,  AdverseEventSeverityCodeType } from '../fhirValueSets/AdverseEventSeverityCodes.js';
 // @ts-ignore
-import { AdverseEventOutcomeCodings, AdverseEventOutcomeCodingType,} from '../fhirValueSets/AdverseEventOutcomeCodings.js';
+import { AdverseEventSeverityVsValidation } from '../fhirValueSets/AdverseEventSeverityVsValidation.js';
 // @ts-ignore
 import { AdverseEventOutcomeCodes,  AdverseEventOutcomeCodeType } from '../fhirValueSets/AdverseEventOutcomeCodes.js';
+// @ts-ignore
+import { AdverseEventOutcomeVsValidation } from '../fhirValueSets/AdverseEventOutcomeVsValidation.js';
 /**
  * Valid arguments for the AdverseEventSuspectEntityCausality type.
  */
@@ -107,10 +107,10 @@ export class AdverseEventSuspectEntityCausality extends fhir.BackboneElement {
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'AdverseEvent.suspectEntity.causality' }
-    if (this["assessment"]) { issues.push(...this.assessment.doModelValidation(expression+'.assessment')); }
-    if (this["productRelatedness"]) { issues.push(...this.productRelatedness.doModelValidation(expression+'.productRelatedness')); }
-    if (this["author"]) { issues.push(...this.author.doModelValidation(expression+'.author')); }
-    if (this["method"]) { issues.push(...this.method.doModelValidation(expression+'.method')); }
+    this.vOptS('assessment',expression)
+    this.vOptS('productRelatedness',expression)
+    this.vOptS('author',expression)
+    this.vOptS('method',expression)
     return issues;
   }
 }
@@ -160,11 +160,8 @@ export class AdverseEventSuspectEntity extends fhir.BackboneElement {
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'AdverseEvent.suspectEntity' }
-    if (!this['instance']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property instance fhir: AdverseEvent.suspectEntity.instance:Reference', expression: [expression] });
-    }
-    if (this["instance"]) { issues.push(...this.instance.doModelValidation(expression+'.instance')); }
-    if (this["causality"]) { this.causality.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.causality[${i}]`)); }) }
+    this.vReqS('instance',expression)
+    this.vOptA('causality',expression)
     return issues;
   }
 }
@@ -419,73 +416,32 @@ export class AdverseEvent extends fhir.DomainResource {
     else { this.study = []; }
   }
   /**
-   * Required-bound Value Set for actuality (AdverseEvent.actuality)
-   */
-  public static get actualityRequiredCodes() {
-    return AdverseEventActualityCodes;
-  }
-  /**
-   * Extensible-bound Value Set for category (AdverseEvent.category)
-   */
-  public static get categoryExtensibleCodings():AdverseEventCategoryCodingType {
-    return AdverseEventCategoryCodings;
-  }
-  /**
-   * Required-bound Value Set for severity (AdverseEvent.severity)
-   */
-  public static get severityRequiredCodes() {
-    return AdverseEventSeverityCodes;
-  }
-  /**
-   * Required-bound Value Set for outcome (AdverseEvent.outcome)
-   */
-  public static get outcomeRequiredCodes() {
-    return AdverseEventOutcomeCodes;
-  }
-  /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'AdverseEvent' }
-    if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType fhir: AdverseEvent.resourceType:"AdverseEvent"', expression: [expression] });
-    }
-    if (this["identifier"]) { issues.push(...this.identifier.doModelValidation(expression+'.identifier')); }
-    if (!this['actuality']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property actuality fhir: AdverseEvent.actuality:code', expression: [expression] });
-    }
-    if (this['actuality'] && (!Object.values(AdverseEventActualityCodes).includes(this.actuality.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'actuality (AdverseEvent.actuality) of type code is missing code for Required binding to: AdverseEventActuality', expression: [expression] });
-    }
-    if (this["actuality"]) { issues.push(...this.actuality.doModelValidation(expression+'.actuality')); }
-    if (this["category"]) { this.category.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.category[${i}]`)); }) }
-    if (this["event"]) { issues.push(...this.event.doModelValidation(expression+'.event')); }
-    if (!this['subject']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property subject fhir: AdverseEvent.subject:Reference', expression: [expression] });
-    }
-    if (this["subject"]) { issues.push(...this.subject.doModelValidation(expression+'.subject')); }
-    if (this["encounter"]) { issues.push(...this.encounter.doModelValidation(expression+'.encounter')); }
-    if (this["date"]) { issues.push(...this.date.doModelValidation(expression+'.date')); }
-    if (this["detected"]) { issues.push(...this.detected.doModelValidation(expression+'.detected')); }
-    if (this["recordedDate"]) { issues.push(...this.recordedDate.doModelValidation(expression+'.recordedDate')); }
-    if (this["resultingCondition"]) { this.resultingCondition.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.resultingCondition[${i}]`)); }) }
-    if (this["location"]) { issues.push(...this.location.doModelValidation(expression+'.location')); }
-    if (this["seriousness"]) { issues.push(...this.seriousness.doModelValidation(expression+'.seriousness')); }
-    if (this['severity'] && (!this.severity.hasCodingFromObject(AdverseEventSeverityCodings))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'severity (AdverseEvent.severity) of type CodeableConcept is missing code for Required binding to: AdverseEventSeverity', expression: [expression] });
-    }
-    if (this["severity"]) { issues.push(...this.severity.doModelValidation(expression+'.severity')); }
-    if (this['outcome'] && (!this.outcome.hasCodingFromObject(AdverseEventOutcomeCodings))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'outcome (AdverseEvent.outcome) of type CodeableConcept is missing code for Required binding to: AdverseEventOutcome', expression: [expression] });
-    }
-    if (this["outcome"]) { issues.push(...this.outcome.doModelValidation(expression+'.outcome')); }
-    if (this["recorder"]) { issues.push(...this.recorder.doModelValidation(expression+'.recorder')); }
-    if (this["contributor"]) { this.contributor.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.contributor[${i}]`)); }) }
-    if (this["suspectEntity"]) { this.suspectEntity.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.suspectEntity[${i}]`)); }) }
-    if (this["subjectMedicalHistory"]) { this.subjectMedicalHistory.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.subjectMedicalHistory[${i}]`)); }) }
-    if (this["referenceDocument"]) { this.referenceDocument.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.referenceDocument[${i}]`)); }) }
-    if (this["study"]) { this.study.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.study[${i}]`)); }) }
+    this.vReqS('resourceType',expression)
+    this.vOptS('identifier',expression)
+    this.vReqSV('actuality',expression,'AdverseEventActuality',AdverseEventActualityVsValidation,'r')
+    this.vOptA('category',expression)
+    this.vOptS('event',expression)
+    this.vReqS('subject',expression)
+    this.vOptS('encounter',expression)
+    this.vOptS('date',expression)
+    this.vOptS('detected',expression)
+    this.vOptS('recordedDate',expression)
+    this.vOptA('resultingCondition',expression)
+    this.vOptS('location',expression)
+    this.vOptS('seriousness',expression)
+    this.vOptSV('severity',expression,'AdverseEventSeverity',AdverseEventSeverityVsValidation,'r')
+    this.vOptSV('outcome',expression,'AdverseEventOutcome',AdverseEventOutcomeVsValidation,'r')
+    this.vOptS('recorder',expression)
+    this.vOptA('contributor',expression)
+    this.vOptA('suspectEntity',expression)
+    this.vOptA('subjectMedicalHistory',expression)
+    this.vOptA('referenceDocument',expression)
+    this.vOptA('study',expression)
     return issues;
   }
 }

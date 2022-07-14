@@ -1,6 +1,5 @@
 import * as fhir from '../fhir.js';
 import { DiagnosticReportStatusCodeType } from '../fhirValueSets/DiagnosticReportStatusCodes.js';
-import { ReportCodingType } from '../fhirValueSets/ReportCodings.js';
 /**
  * Valid arguments for the DiagnosticReportMedia type.
  */
@@ -236,25 +235,6 @@ export declare class DiagnosticReport extends fhir.DomainResource {
      * Default constructor for DiagnosticReport - initializes any required elements to null if a value is not provided.
      */
     constructor(source?: Partial<DiagnosticReportArgs>, options?: fhir.FhirConstructorOptions);
-    /**
-     * Required-bound Value Set for status (DiagnosticReport.status)
-     */
-    static get statusRequiredCodes(): {
-        readonly Amended: "amended";
-        readonly Appended: "appended";
-        readonly Cancelled: "cancelled";
-        readonly Corrected: "corrected";
-        readonly EnteredInError: "entered-in-error";
-        readonly Final: "final";
-        readonly Partial: "partial";
-        readonly Preliminary: "preliminary";
-        readonly Registered: "registered";
-        readonly Unknown: "unknown";
-    };
-    /**
-     * Preferred-bound Value Set for code (DiagnosticReport.code)
-     */
-    static get codePreferredCodings(): ReportCodingType;
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */

@@ -118,20 +118,6 @@ export declare class MolecularSequenceReferenceSeq extends fhir.BackboneElement 
      */
     constructor(source?: Partial<MolecularSequenceReferenceSeqArgs>, options?: fhir.FhirConstructorOptions);
     /**
-     * Required-bound Value Set for orientation (MolecularSequence.referenceSeq.orientation)
-     */
-    static get orientationRequiredCodes(): {
-        readonly AntisenseOrientationOfReferenceSeq: "antisense";
-        readonly SenseOrientationOfReferenceSeq: "sense";
-    };
-    /**
-     * Required-bound Value Set for strand (MolecularSequence.referenceSeq.strand)
-     */
-    static get strandRequiredCodes(): {
-        readonly CrickStrandOfReferenceSeq: "crick";
-        readonly WatsonStrandOfReferenceSeq: "watson";
-    };
-    /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
     doModelValidation(expression?: string): fhir.FtsIssue[];
@@ -514,14 +500,6 @@ export declare class MolecularSequenceQuality extends fhir.BackboneElement {
      */
     constructor(source?: Partial<MolecularSequenceQualityArgs>, options?: fhir.FhirConstructorOptions);
     /**
-     * Required-bound Value Set for type (MolecularSequence.quality.type)
-     */
-    static get typeRequiredCodes(): {
-        readonly INDELComparison: "indel";
-        readonly SNPComparison: "snp";
-        readonly UNKNOWNComparison: "unknown";
-    };
-    /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
     doModelValidation(expression?: string): fhir.FtsIssue[];
@@ -615,16 +593,6 @@ export declare class MolecularSequenceRepository extends fhir.BackboneElement {
      * Default constructor for MolecularSequenceRepository - initializes any required elements to null if a value is not provided.
      */
     constructor(source?: Partial<MolecularSequenceRepositoryArgs>, options?: fhir.FhirConstructorOptions);
-    /**
-     * Required-bound Value Set for type (MolecularSequence.repository.type)
-     */
-    static get typeRequiredCodes(): {
-        readonly ClickAndSee: "directlink";
-        readonly ResultCannotBeAccessUnlessAnAccountIsLoggedIn: "login";
-        readonly ResultNeedToBeFetchedWithAPIAndNeedLOGINOrCookiesAreRequiredWhenVisitingTheLinkOfResource: "oauth";
-        readonly TheURLIsTheRESTfulOrOtherKindOfAPIThatCanAccessToTheResult: "openapi";
-        readonly SomeOtherComplicatedOrParticularWayToGetResourceFromURL: "other";
-    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
@@ -961,14 +929,6 @@ export declare class MolecularSequence extends fhir.DomainResource {
      * Default constructor for MolecularSequence - initializes any required elements to null if a value is not provided.
      */
     constructor(source?: Partial<MolecularSequenceArgs>, options?: fhir.FhirConstructorOptions);
-    /**
-     * Required-bound Value Set for type (MolecularSequence.type)
-     */
-    static get typeRequiredCodes(): {
-        readonly AASequence: "aa";
-        readonly DNASequence: "dna";
-        readonly RNASequence: "rna";
-    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */

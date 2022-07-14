@@ -510,41 +510,6 @@ export declare class MedicationRequest extends fhir.DomainResource {
      */
     constructor(source?: Partial<MedicationRequestArgs>, options?: fhir.FhirConstructorOptions);
     /**
-     * Required-bound Value Set for status (MedicationRequest.status)
-     */
-    static get statusRequiredCodes(): {
-        readonly Active: "active";
-        readonly Cancelled: "cancelled";
-        readonly Completed: "completed";
-        readonly Draft: "draft";
-        readonly EnteredInError: "entered-in-error";
-        readonly OnHold: "on-hold";
-        readonly Stopped: "stopped";
-        readonly Unknown: "unknown";
-    };
-    /**
-     * Required-bound Value Set for intent (MedicationRequest.intent)
-     */
-    static get intentRequiredCodes(): {
-        readonly FillerOrder: "filler-order";
-        readonly InstanceOrder: "instance-order";
-        readonly Option: "option";
-        readonly Order: "order";
-        readonly OriginalOrder: "original-order";
-        readonly Plan: "plan";
-        readonly Proposal: "proposal";
-        readonly ReflexOrder: "reflex-order";
-    };
-    /**
-     * Required-bound Value Set for priority (MedicationRequest.priority)
-     */
-    static get priorityRequiredCodes(): {
-        readonly ASAP: "asap";
-        readonly Routine: "routine";
-        readonly STAT: "stat";
-        readonly Urgent: "urgent";
-    };
-    /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
     doModelValidation(expression?: string): fhir.FtsIssue[];

@@ -1,5 +1,4 @@
 import * as fhir from '../fhir.js';
-import { C80PracticeCodingType } from '../fhirValueSets/C80PracticeCodings.js';
 /**
  * Valid arguments for the OrganizationAffiliation type.
  */
@@ -125,10 +124,6 @@ export declare class OrganizationAffiliation extends fhir.DomainResource {
      * Default constructor for OrganizationAffiliation - initializes any required elements to null if a value is not provided.
      */
     constructor(source?: Partial<OrganizationAffiliationArgs>, options?: fhir.FhirConstructorOptions);
-    /**
-     * Preferred-bound Value Set for specialty (OrganizationAffiliation.specialty)
-     */
-    static get specialtyPreferredCodings(): C80PracticeCodingType;
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */

@@ -143,14 +143,14 @@ export class SubstanceProteinSubunit extends fhir.BackboneElement {
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'SubstanceProtein.subunit' }
-    if (this["subunit"]) { issues.push(...this.subunit.doModelValidation(expression+'.subunit')); }
-    if (this["sequence"]) { issues.push(...this.sequence.doModelValidation(expression+'.sequence')); }
-    if (this["length"]) { issues.push(...this.length.doModelValidation(expression+'.length')); }
-    if (this["sequenceAttachment"]) { issues.push(...this.sequenceAttachment.doModelValidation(expression+'.sequenceAttachment')); }
-    if (this["nTerminalModificationId"]) { issues.push(...this.nTerminalModificationId.doModelValidation(expression+'.nTerminalModificationId')); }
-    if (this["nTerminalModification"]) { issues.push(...this.nTerminalModification.doModelValidation(expression+'.nTerminalModification')); }
-    if (this["cTerminalModificationId"]) { issues.push(...this.cTerminalModificationId.doModelValidation(expression+'.cTerminalModificationId')); }
-    if (this["cTerminalModification"]) { issues.push(...this.cTerminalModification.doModelValidation(expression+'.cTerminalModification')); }
+    this.vOptS('subunit',expression)
+    this.vOptS('sequence',expression)
+    this.vOptS('length',expression)
+    this.vOptS('sequenceAttachment',expression)
+    this.vOptS('nTerminalModificationId',expression)
+    this.vOptS('nTerminalModification',expression)
+    this.vOptS('cTerminalModificationId',expression)
+    this.vOptS('cTerminalModification',expression)
     return issues;
   }
 }
@@ -245,13 +245,11 @@ export class SubstanceProtein extends fhir.DomainResource {
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'SubstanceProtein' }
-    if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType fhir: SubstanceProtein.resourceType:"SubstanceProtein"', expression: [expression] });
-    }
-    if (this["sequenceType"]) { issues.push(...this.sequenceType.doModelValidation(expression+'.sequenceType')); }
-    if (this["numberOfSubunits"]) { issues.push(...this.numberOfSubunits.doModelValidation(expression+'.numberOfSubunits')); }
-    if (this["disulfideLinkage"]) { this.disulfideLinkage.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.disulfideLinkage[${i}]`)); }) }
-    if (this["subunit"]) { this.subunit.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.subunit[${i}]`)); }) }
+    this.vReqS('resourceType',expression)
+    this.vOptS('sequenceType',expression)
+    this.vOptS('numberOfSubunits',expression)
+    this.vOptA('disulfideLinkage',expression)
+    this.vOptA('subunit',expression)
     return issues;
   }
 }

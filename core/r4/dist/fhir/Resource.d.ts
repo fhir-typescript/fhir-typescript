@@ -1,5 +1,4 @@
 import * as fhir from '../fhir.js';
-import { LanguagesCodingType } from '../fhirValueSets/LanguagesCodings.js';
 /**
  * Valid arguments for the Resource type.
  */
@@ -69,10 +68,6 @@ export declare class Resource extends fhir.FhirBase {
      * Default constructor for Resource - initializes any required elements to null if a value is not provided.
      */
     constructor(source?: Partial<ResourceArgs>, options?: fhir.FhirConstructorOptions);
-    /**
-     * Preferred-bound Value Set for language (Resource.language)
-     */
-    static get languagePreferredCodings(): LanguagesCodingType;
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */

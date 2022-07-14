@@ -6,25 +6,25 @@
 import * as fhir from '../fhir.js';
 
 // @ts-ignore
-import { ManifestationOrSymptomCodings, ManifestationOrSymptomCodingType,} from '../fhirValueSets/ManifestationOrSymptomCodings.js';
-// @ts-ignore
 import { ManifestationOrSymptomCodes,  ManifestationOrSymptomCodeType } from '../fhirValueSets/ManifestationOrSymptomCodes.js';
 // @ts-ignore
-import { DetectedissueMitigationActionCodings, DetectedissueMitigationActionCodingType,} from '../fhirValueSets/DetectedissueMitigationActionCodings.js';
+import { ManifestationOrSymptomVsValidation } from '../fhirValueSets/ManifestationOrSymptomVsValidation.js';
 // @ts-ignore
 import { DetectedissueMitigationActionCodes,  DetectedissueMitigationActionCodeType } from '../fhirValueSets/DetectedissueMitigationActionCodes.js';
 // @ts-ignore
-import { ObservationStatusCodings, ObservationStatusCodingType,} from '../fhirValueSets/ObservationStatusCodings.js';
+import { DetectedissueMitigationActionVsValidation } from '../fhirValueSets/DetectedissueMitigationActionVsValidation.js';
 // @ts-ignore
 import { ObservationStatusCodes,  ObservationStatusCodeType } from '../fhirValueSets/ObservationStatusCodes.js';
 // @ts-ignore
-import { DetectedissueCategoryCodings, DetectedissueCategoryCodingType,} from '../fhirValueSets/DetectedissueCategoryCodings.js';
+import { ObservationStatusVsValidation } from '../fhirValueSets/ObservationStatusVsValidation.js';
 // @ts-ignore
 import { DetectedissueCategoryCodes,  DetectedissueCategoryCodeType } from '../fhirValueSets/DetectedissueCategoryCodes.js';
 // @ts-ignore
-import { DetectedissueSeverityCodings, DetectedissueSeverityCodingType,} from '../fhirValueSets/DetectedissueSeverityCodings.js';
+import { DetectedissueCategoryVsValidation } from '../fhirValueSets/DetectedissueCategoryVsValidation.js';
 // @ts-ignore
 import { DetectedissueSeverityCodes,  DetectedissueSeverityCodeType } from '../fhirValueSets/DetectedissueSeverityCodes.js';
+// @ts-ignore
+import { DetectedissueSeverityVsValidation } from '../fhirValueSets/DetectedissueSeverityVsValidation.js';
 /**
  * Valid arguments for the DetectedIssueEvidence type.
  */
@@ -71,8 +71,8 @@ export class DetectedIssueEvidence extends fhir.BackboneElement {
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'DetectedIssue.evidence' }
-    if (this["code"]) { this.code.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.code[${i}]`)); }) }
-    if (this["detail"]) { this.detail.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.detail[${i}]`)); }) }
+    this.vOptA('code',expression)
+    this.vOptA('detail',expression)
     return issues;
   }
 }
@@ -133,23 +133,14 @@ export class DetectedIssueMitigation extends fhir.BackboneElement {
     if (source['author']) { this.author = new fhir.Reference(source.author); }
   }
   /**
-   * Preferred-bound Value Set for action (DetectedIssue.mitigation.action)
-   */
-  public static get actionPreferredCodings():DetectedissueMitigationActionCodingType {
-    return DetectedissueMitigationActionCodings;
-  }
-  /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'DetectedIssue.mitigation' }
-    if (!this['action']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property action fhir: DetectedIssue.mitigation.action:CodeableConcept', expression: [expression] });
-    }
-    if (this["action"]) { issues.push(...this.action.doModelValidation(expression+'.action')); }
-    if (this["date"]) { issues.push(...this.date.doModelValidation(expression+'.date')); }
-    if (this["author"]) { issues.push(...this.author.doModelValidation(expression+'.author')); }
+    this.vReqS('action',expression)
+    this.vOptS('date',expression)
+    this.vOptS('author',expression)
     return issues;
   }
 }
@@ -342,52 +333,24 @@ export class DetectedIssue extends fhir.DomainResource {
     else { this.mitigation = []; }
   }
   /**
-   * Required-bound Value Set for status (DetectedIssue.status)
-   */
-  public static get statusRequiredCodes() {
-    return ObservationStatusCodes;
-  }
-  /**
-   * Preferred-bound Value Set for code (DetectedIssue.code)
-   */
-  public static get codePreferredCodings():DetectedissueCategoryCodingType {
-    return DetectedissueCategoryCodings;
-  }
-  /**
-   * Required-bound Value Set for severity (DetectedIssue.severity)
-   */
-  public static get severityRequiredCodes() {
-    return DetectedissueSeverityCodes;
-  }
-  /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'DetectedIssue' }
-    if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType fhir: DetectedIssue.resourceType:"DetectedIssue"', expression: [expression] });
-    }
-    if (this["identifier"]) { this.identifier.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.identifier[${i}]`)); }) }
-    if (!this['status']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status fhir: DetectedIssue.status:code', expression: [expression] });
-    }
-    if (this['status'] && (!Object.values(ObservationStatusCodes).includes(this.status.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'status (DetectedIssue.status) of type code is missing code for Required binding to: ObservationStatus', expression: [expression] });
-    }
-    if (this["status"]) { issues.push(...this.status.doModelValidation(expression+'.status')); }
-    if (this["code"]) { issues.push(...this.code.doModelValidation(expression+'.code')); }
-    if (this['severity'] && (!Object.values(DetectedissueSeverityCodes).includes(this.severity.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'severity (DetectedIssue.severity) of type code is missing code for Required binding to: DetectedissueSeverity', expression: [expression] });
-    }
-    if (this["severity"]) { issues.push(...this.severity.doModelValidation(expression+'.severity')); }
-    if (this["patient"]) { issues.push(...this.patient.doModelValidation(expression+'.patient')); }
-    if (this["author"]) { issues.push(...this.author.doModelValidation(expression+'.author')); }
-    if (this["implicated"]) { this.implicated.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.implicated[${i}]`)); }) }
-    if (this["evidence"]) { this.evidence.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.evidence[${i}]`)); }) }
-    if (this["detail"]) { issues.push(...this.detail.doModelValidation(expression+'.detail')); }
-    if (this["reference"]) { issues.push(...this.reference.doModelValidation(expression+'.reference')); }
-    if (this["mitigation"]) { this.mitigation.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.mitigation[${i}]`)); }) }
+    this.vReqS('resourceType',expression)
+    this.vOptA('identifier',expression)
+    this.vReqSV('status',expression,'ObservationStatus',ObservationStatusVsValidation,'r')
+    this.vOptS('code',expression)
+    this.vOptSV('severity',expression,'DetectedissueSeverity',DetectedissueSeverityVsValidation,'r')
+    this.vOptS('patient',expression)
+    this.vOptS('identified',expression)
+    this.vOptS('author',expression)
+    this.vOptA('implicated',expression)
+    this.vOptA('evidence',expression)
+    this.vOptS('detail',expression)
+    this.vOptS('reference',expression)
+    this.vOptA('mitigation',expression)
     return issues;
   }
 }

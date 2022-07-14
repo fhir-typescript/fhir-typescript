@@ -326,15 +326,6 @@ export declare class EventDefinition extends fhir.DomainResource {
      */
     constructor(source?: Partial<EventDefinitionArgs>, options?: fhir.FhirConstructorOptions);
     /**
-     * Required-bound Value Set for status (EventDefinition.status)
-     */
-    static get statusRequiredCodes(): {
-        readonly Active: "active";
-        readonly Draft: "draft";
-        readonly Retired: "retired";
-        readonly Unknown: "unknown";
-    };
-    /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
     doModelValidation(expression?: string): fhir.FtsIssue[];

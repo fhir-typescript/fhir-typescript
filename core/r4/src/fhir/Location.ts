@@ -6,29 +6,29 @@
 import * as fhir from '../fhir.js';
 
 // @ts-ignore
-import { DaysOfWeekCodings, DaysOfWeekCodingType,} from '../fhirValueSets/DaysOfWeekCodings.js';
-// @ts-ignore
 import { DaysOfWeekCodes,  DaysOfWeekCodeType } from '../fhirValueSets/DaysOfWeekCodes.js';
 // @ts-ignore
-import { LocationStatusCodings, LocationStatusCodingType,} from '../fhirValueSets/LocationStatusCodings.js';
+import { DaysOfWeekVsValidation } from '../fhirValueSets/DaysOfWeekVsValidation.js';
 // @ts-ignore
 import { LocationStatusCodes,  LocationStatusCodeType } from '../fhirValueSets/LocationStatusCodes.js';
 // @ts-ignore
-import { V20116Codings, V20116CodingType,} from '../fhirValueSets/V20116Codings.js';
+import { LocationStatusVsValidation } from '../fhirValueSets/LocationStatusVsValidation.js';
 // @ts-ignore
 import { V20116Codes,  V20116CodeType } from '../fhirValueSets/V20116Codes.js';
 // @ts-ignore
-import { LocationModeCodings, LocationModeCodingType,} from '../fhirValueSets/LocationModeCodings.js';
+import { V20116VsValidation } from '../fhirValueSets/V20116VsValidation.js';
 // @ts-ignore
 import { LocationModeCodes,  LocationModeCodeType } from '../fhirValueSets/LocationModeCodes.js';
 // @ts-ignore
-import { V3ServiceDeliveryLocationRoleTypeCodings, V3ServiceDeliveryLocationRoleTypeCodingType,} from '../fhirValueSets/V3ServiceDeliveryLocationRoleTypeCodings.js';
+import { LocationModeVsValidation } from '../fhirValueSets/LocationModeVsValidation.js';
 // @ts-ignore
 import { V3ServiceDeliveryLocationRoleTypeCodes,  V3ServiceDeliveryLocationRoleTypeCodeType } from '../fhirValueSets/V3ServiceDeliveryLocationRoleTypeCodes.js';
 // @ts-ignore
-import { LocationPhysicalTypeCodings, LocationPhysicalTypeCodingType,} from '../fhirValueSets/LocationPhysicalTypeCodings.js';
+import { V3ServiceDeliveryLocationRoleTypeVsValidation } from '../fhirValueSets/V3ServiceDeliveryLocationRoleTypeVsValidation.js';
 // @ts-ignore
 import { LocationPhysicalTypeCodes,  LocationPhysicalTypeCodeType } from '../fhirValueSets/LocationPhysicalTypeCodes.js';
+// @ts-ignore
+import { LocationPhysicalTypeVsValidation } from '../fhirValueSets/LocationPhysicalTypeVsValidation.js';
 /**
  * Valid arguments for the LocationPosition type.
  */
@@ -108,15 +108,9 @@ export class LocationPosition extends fhir.BackboneElement {
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'Location.position' }
-    if (!this['longitude']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property longitude fhir: Location.position.longitude:decimal', expression: [expression] });
-    }
-    if (this["longitude"]) { issues.push(...this.longitude.doModelValidation(expression+'.longitude')); }
-    if (!this['latitude']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property latitude fhir: Location.position.latitude:decimal', expression: [expression] });
-    }
-    if (this["latitude"]) { issues.push(...this.latitude.doModelValidation(expression+'.latitude')); }
-    if (this["altitude"]) { issues.push(...this.altitude.doModelValidation(expression+'.altitude')); }
+    this.vReqS('longitude',expression)
+    this.vReqS('latitude',expression)
+    this.vOptS('altitude',expression)
     return issues;
   }
 }
@@ -213,28 +207,15 @@ export class LocationHoursOfOperation extends fhir.BackboneElement {
     }
   }
   /**
-   * Required-bound Value Set for daysOfWeek (Location.hoursOfOperation.daysOfWeek)
-   */
-  public static get daysOfWeekRequiredCodes() {
-    return DaysOfWeekCodes;
-  }
-  /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'Location.hoursOfOperation' }
-    if (this['daysOfWeek']) {
-      this.daysOfWeek.forEach((v) => {
-        if (!Object.values(DaysOfWeekCodes).includes(v.value as any)) {
-          issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'daysOfWeek (Location.hoursOfOperation.daysOfWeek) of type code is missing code for Required binding to: DaysOfWeek', expression: [expression] });
-        }
-      });
-    }
-    if (this["daysOfWeek"]) { this.daysOfWeek.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.daysOfWeek[${i}]`)); }) }
-    if (this["allDay"]) { issues.push(...this.allDay.doModelValidation(expression+'.allDay')); }
-    if (this["openingTime"]) { issues.push(...this.openingTime.doModelValidation(expression+'.openingTime')); }
-    if (this["closingTime"]) { issues.push(...this.closingTime.doModelValidation(expression+'.closingTime')); }
+    this.vOptAV('daysOfWeek',expression,'DaysOfWeek',DaysOfWeekVsValidation,'r')
+    this.vOptS('allDay',expression)
+    this.vOptS('openingTime',expression)
+    this.vOptS('closingTime',expression)
     return issues;
   }
 }
@@ -479,61 +460,29 @@ export class Location extends fhir.DomainResource {
     else { this.endpoint = []; }
   }
   /**
-   * Required-bound Value Set for status (Location.status)
-   */
-  public static get statusRequiredCodes() {
-    return LocationStatusCodes;
-  }
-  /**
-   * Preferred-bound Value Set for operationalStatus (Location.operationalStatus)
-   */
-  public static get operationalStatusPreferredCodings():V20116CodingType {
-    return V20116Codings;
-  }
-  /**
-   * Required-bound Value Set for mode (Location.mode)
-   */
-  public static get modeRequiredCodes() {
-    return LocationModeCodes;
-  }
-  /**
-   * Extensible-bound Value Set for type (Location.type)
-   */
-  public static get typeExtensibleCodings():V3ServiceDeliveryLocationRoleTypeCodingType {
-    return V3ServiceDeliveryLocationRoleTypeCodings;
-  }
-  /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'Location' }
-    if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType fhir: Location.resourceType:"Location"', expression: [expression] });
-    }
-    if (this["identifier"]) { this.identifier.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.identifier[${i}]`)); }) }
-    if (this['status'] && (!Object.values(LocationStatusCodes).includes(this.status.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'status (Location.status) of type code is missing code for Required binding to: LocationStatus', expression: [expression] });
-    }
-    if (this["status"]) { issues.push(...this.status.doModelValidation(expression+'.status')); }
-    if (this["operationalStatus"]) { issues.push(...this.operationalStatus.doModelValidation(expression+'.operationalStatus')); }
-    if (this["name"]) { issues.push(...this.name.doModelValidation(expression+'.name')); }
-    if (this["alias"]) { this.alias.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.alias[${i}]`)); }) }
-    if (this["description"]) { issues.push(...this.description.doModelValidation(expression+'.description')); }
-    if (this['mode'] && (!Object.values(LocationModeCodes).includes(this.mode.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'mode (Location.mode) of type code is missing code for Required binding to: LocationMode', expression: [expression] });
-    }
-    if (this["mode"]) { issues.push(...this.mode.doModelValidation(expression+'.mode')); }
-    if (this["type"]) { this.type.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.type[${i}]`)); }) }
-    if (this["telecom"]) { this.telecom.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.telecom[${i}]`)); }) }
-    if (this["address"]) { issues.push(...this.address.doModelValidation(expression+'.address')); }
-    if (this["physicalType"]) { issues.push(...this.physicalType.doModelValidation(expression+'.physicalType')); }
-    if (this["position"]) { issues.push(...this.position.doModelValidation(expression+'.position')); }
-    if (this["managingOrganization"]) { issues.push(...this.managingOrganization.doModelValidation(expression+'.managingOrganization')); }
-    if (this["partOf"]) { issues.push(...this.partOf.doModelValidation(expression+'.partOf')); }
-    if (this["hoursOfOperation"]) { this.hoursOfOperation.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.hoursOfOperation[${i}]`)); }) }
-    if (this["availabilityExceptions"]) { issues.push(...this.availabilityExceptions.doModelValidation(expression+'.availabilityExceptions')); }
-    if (this["endpoint"]) { this.endpoint.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.endpoint[${i}]`)); }) }
+    this.vReqS('resourceType',expression)
+    this.vOptA('identifier',expression)
+    this.vOptSV('status',expression,'LocationStatus',LocationStatusVsValidation,'r')
+    this.vOptS('operationalStatus',expression)
+    this.vOptS('name',expression)
+    this.vOptA('alias',expression)
+    this.vOptS('description',expression)
+    this.vOptSV('mode',expression,'LocationMode',LocationModeVsValidation,'r')
+    this.vOptA('type',expression)
+    this.vOptA('telecom',expression)
+    this.vOptS('address',expression)
+    this.vOptS('physicalType',expression)
+    this.vOptS('position',expression)
+    this.vOptS('managingOrganization',expression)
+    this.vOptS('partOf',expression)
+    this.vOptA('hoursOfOperation',expression)
+    this.vOptS('availabilityExceptions',expression)
+    this.vOptA('endpoint',expression)
     return issues;
   }
 }

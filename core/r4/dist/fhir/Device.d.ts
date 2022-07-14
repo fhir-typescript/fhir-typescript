@@ -2,7 +2,6 @@ import * as fhir from '../fhir.js';
 import { UdiEntryTypeCodeType } from '../fhirValueSets/UdiEntryTypeCodes.js';
 import { DeviceNametypeCodeType } from '../fhirValueSets/DeviceNametypeCodes.js';
 import { DeviceStatusCodeType } from '../fhirValueSets/DeviceStatusCodes.js';
-import { DeviceStatusReasonCodingType } from '../fhirValueSets/DeviceStatusReasonCodings.js';
 /**
  * Valid arguments for the DeviceUdiCarrier type.
  */
@@ -109,17 +108,6 @@ export declare class DeviceUdiCarrier extends fhir.BackboneElement {
      */
     constructor(source?: Partial<DeviceUdiCarrierArgs>, options?: fhir.FhirConstructorOptions);
     /**
-     * Required-bound Value Set for entryType (Device.udiCarrier.entryType)
-     */
-    static get entryTypeRequiredCodes(): {
-        readonly Barcode: "barcode";
-        readonly Card: "card";
-        readonly Manual: "manual";
-        readonly RFID: "rfid";
-        readonly SelfReported: "self-reported";
-        readonly Unknown: "unknown";
-    };
-    /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
     doModelValidation(expression?: string): fhir.FtsIssue[];
@@ -167,17 +155,6 @@ export declare class DeviceDeviceName extends fhir.BackboneElement {
      * Default constructor for DeviceDeviceName - initializes any required elements to null if a value is not provided.
      */
     constructor(source?: Partial<DeviceDeviceNameArgs>, options?: fhir.FhirConstructorOptions);
-    /**
-     * Required-bound Value Set for type (Device.deviceName.type)
-     */
-    static get typeRequiredCodes(): {
-        readonly ManufacturerName: "manufacturer-name";
-        readonly ModelName: "model-name";
-        readonly Other: "other";
-        readonly PatientReportedName: "patient-reported-name";
-        readonly UDILabelName: "udi-label-name";
-        readonly UserFriendlyName: "user-friendly-name";
-    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
@@ -594,19 +571,6 @@ export declare class Device extends fhir.DomainResource {
      * Default constructor for Device - initializes any required elements to null if a value is not provided.
      */
     constructor(source?: Partial<DeviceArgs>, options?: fhir.FhirConstructorOptions);
-    /**
-     * Required-bound Value Set for status (Device.status)
-     */
-    static get statusRequiredCodes(): {
-        readonly Active: "active";
-        readonly EnteredInError: "entered-in-error";
-        readonly Inactive: "inactive";
-        readonly Unknown: "unknown";
-    };
-    /**
-     * Extensible-bound Value Set for statusReason (Device.statusReason)
-     */
-    static get statusReasonExtensibleCodings(): DeviceStatusReasonCodingType;
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */

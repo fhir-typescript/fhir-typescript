@@ -1,5 +1,5 @@
 // import { fhir, valueSetCodes, valueSetCodings } from "r4-core/dist/index.js";
-import { fhir, valueSetCodes } from "r4-core/dist/index.js";
+import { fhir, valueSetCodes, valueSetCodings } from "r4-core/dist/index.js";
 
 // create a new patient object
 let patient:fhir.Patient = new fhir.Patient({
@@ -18,19 +18,19 @@ let patient:fhir.Patient = new fhir.Patient({
 // all array-type elements are non-nullable to simplify your code
 patient.identifier.push(new fhir.Identifier({value: 'abc-123'}));
 
-// Codes are exposed as constants:
+// Codes are exposed as constants based on their names:
 patient.contact.push(new fhir.PatientContact({gender: valueSetCodes.AdministrativeGenderCodes.Female}));
-// and codes are exposed from the root class as well, according to the element and binding strength
-patient.contact.push(new fhir.PatientContact({gender: fhir.Patient.genderRequiredCodes.Other}));
-// // and have type hinting
-// patient.gender = new fhir.FhirCode<valueSetCodes.AdministrativeGenderCodeType>({value: 'other'});
+// and exposed based on the element and binding strength
+patient.contact.push(new fhir.PatientContact({gender: valueSetCodes.Patient_Gender_Required_Codes.Other}));
+// and have type hinting
+patient.gender = new fhir.FhirCode<valueSetCodes.AdministrativeGenderCodeType>({value: 'other'});
 
 // Codings are also available
-patient.maritalStatus = new fhir.CodeableConcept({ coding: [fhir.Patient.maritalStatusExtensibleCodings.Unknown]});
+patient.maritalStatus = new fhir.CodeableConcept({ coding: [valueSetCodings.Patient_MaritalStatus_Extensible_Codings.Unknown]});
 // and can be used fluently
 patient.maritalStatus = new fhir.CodeableConcept()
-  .addCoding(fhir.Patient.maritalStatusExtensibleCodings.Unmarried)
-  .addCoding(fhir.Patient.maritalStatusExtensibleCodings.NeverMarried);
+  .addCoding(valueSetCodings.Patient_MaritalStatus_Extensible_Codings.Unmarried)
+  .addCoding(valueSetCodings.Patient_MaritalStatus_Extensible_Codings.NeverMarried);
 
 // Extensions are also fluent
 patient
@@ -65,7 +65,7 @@ let issues:any[] = p2.doModelValidation();
 Found issue: {
   severity: 'error',
   code: 'required',
-  diagnostics: 'Missing required property language:fhir.CodeableConcept fhir: Patient.communication.language:CodeableConcept'
+  details: { text: 'Missing required property language fhir: Patient.communication.language:CodeableConcept' },
 }
 */
 if (issues && (issues.length > 0)) {

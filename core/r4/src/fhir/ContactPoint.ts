@@ -6,13 +6,13 @@
 import * as fhir from '../fhir.js';
 
 // @ts-ignore
-import { ContactPointSystemCodings, ContactPointSystemCodingType,} from '../fhirValueSets/ContactPointSystemCodings.js';
-// @ts-ignore
 import { ContactPointSystemCodes,  ContactPointSystemCodeType } from '../fhirValueSets/ContactPointSystemCodes.js';
 // @ts-ignore
-import { ContactPointUseCodings, ContactPointUseCodingType,} from '../fhirValueSets/ContactPointUseCodings.js';
+import { ContactPointSystemVsValidation } from '../fhirValueSets/ContactPointSystemVsValidation.js';
 // @ts-ignore
 import { ContactPointUseCodes,  ContactPointUseCodeType } from '../fhirValueSets/ContactPointUseCodes.js';
+// @ts-ignore
+import { ContactPointUseVsValidation } from '../fhirValueSets/ContactPointUseVsValidation.js';
 /**
  * Valid arguments for the ContactPoint type.
  */
@@ -111,34 +111,16 @@ export class ContactPoint extends fhir.FhirElement {
     if (source['period']) { this.period = new fhir.Period(source.period); }
   }
   /**
-   * Required-bound Value Set for system (ContactPoint.system)
-   */
-  public static get systemRequiredCodes() {
-    return ContactPointSystemCodes;
-  }
-  /**
-   * Required-bound Value Set for use (ContactPoint.use)
-   */
-  public static get useRequiredCodes() {
-    return ContactPointUseCodes;
-  }
-  /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'ContactPoint' }
-    if (this['system'] && (!Object.values(ContactPointSystemCodes).includes(this.system.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'system (ContactPoint.system) of type code is missing code for Required binding to: ContactPointSystem', expression: [expression] });
-    }
-    if (this["system"]) { issues.push(...this.system.doModelValidation(expression+'.system')); }
-    if (this["value"]) { issues.push(...this.value.doModelValidation(expression+'.value')); }
-    if (this['use'] && (!Object.values(ContactPointUseCodes).includes(this.use.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'use (ContactPoint.use) of type code is missing code for Required binding to: ContactPointUse', expression: [expression] });
-    }
-    if (this["use"]) { issues.push(...this.use.doModelValidation(expression+'.use')); }
-    if (this["rank"]) { issues.push(...this.rank.doModelValidation(expression+'.rank')); }
-    if (this["period"]) { issues.push(...this.period.doModelValidation(expression+'.period')); }
+    this.vOptSV('system',expression,'ContactPointSystem',ContactPointSystemVsValidation,'r')
+    this.vOptS('value',expression)
+    this.vOptSV('use',expression,'ContactPointUse',ContactPointUseVsValidation,'r')
+    this.vOptS('rank',expression)
+    this.vOptS('period',expression)
     return issues;
   }
 }

@@ -194,16 +194,6 @@ export declare class CareTeam extends fhir.DomainResource {
      */
     constructor(source?: Partial<CareTeamArgs>, options?: fhir.FhirConstructorOptions);
     /**
-     * Required-bound Value Set for status (CareTeam.status)
-     */
-    static get statusRequiredCodes(): {
-        readonly Active: "active";
-        readonly EnteredInError: "entered-in-error";
-        readonly Inactive: "inactive";
-        readonly Proposed: "proposed";
-        readonly Suspended: "suspended";
-    };
-    /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
     doModelValidation(expression?: string): fhir.FtsIssue[];

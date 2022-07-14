@@ -1,5 +1,4 @@
 import * as fhir from '../fhir.js';
-import { C80PracticeCodingType } from '../fhirValueSets/C80PracticeCodings.js';
 /**
  * Valid arguments for the Schedule type.
  */
@@ -97,10 +96,6 @@ export declare class Schedule extends fhir.DomainResource {
      * Default constructor for Schedule - initializes any required elements to null if a value is not provided.
      */
     constructor(source?: Partial<ScheduleArgs>, options?: fhir.FhirConstructorOptions);
-    /**
-     * Preferred-bound Value Set for specialty (Schedule.specialty)
-     */
-    static get specialtyPreferredCodings(): C80PracticeCodingType;
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */

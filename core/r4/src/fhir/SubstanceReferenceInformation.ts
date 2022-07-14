@@ -59,9 +59,9 @@ export class SubstanceReferenceInformationGene extends fhir.BackboneElement {
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'SubstanceReferenceInformation.gene' }
-    if (this["geneSequenceOrigin"]) { issues.push(...this.geneSequenceOrigin.doModelValidation(expression+'.geneSequenceOrigin')); }
-    if (this["gene"]) { issues.push(...this.gene.doModelValidation(expression+'.gene')); }
-    if (this["source"]) { this.source.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.source[${i}]`)); }) }
+    this.vOptS('geneSequenceOrigin',expression)
+    this.vOptS('gene',expression)
+    this.vOptA('source',expression)
     return issues;
   }
 }
@@ -119,9 +119,9 @@ export class SubstanceReferenceInformationGeneElement extends fhir.BackboneEleme
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'SubstanceReferenceInformation.geneElement' }
-    if (this["type"]) { issues.push(...this.type.doModelValidation(expression+'.type')); }
-    if (this["element"]) { issues.push(...this.element.doModelValidation(expression+'.element')); }
-    if (this["source"]) { this.source.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.source[${i}]`)); }) }
+    this.vOptS('type',expression)
+    this.vOptS('element',expression)
+    this.vOptA('source',expression)
     return issues;
   }
 }
@@ -189,10 +189,10 @@ export class SubstanceReferenceInformationClassification extends fhir.BackboneEl
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'SubstanceReferenceInformation.classification' }
-    if (this["domain"]) { issues.push(...this.domain.doModelValidation(expression+'.domain')); }
-    if (this["classification"]) { issues.push(...this.classification.doModelValidation(expression+'.classification')); }
-    if (this["subtype"]) { this.subtype.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.subtype[${i}]`)); }) }
-    if (this["source"]) { this.source.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.source[${i}]`)); }) }
+    this.vOptS('domain',expression)
+    this.vOptS('classification',expression)
+    this.vOptA('subtype',expression)
+    this.vOptA('source',expression)
     return issues;
   }
 }
@@ -314,13 +314,14 @@ export class SubstanceReferenceInformationTarget extends fhir.BackboneElement {
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'SubstanceReferenceInformation.target' }
-    if (this["target"]) { issues.push(...this.target.doModelValidation(expression+'.target')); }
-    if (this["type"]) { issues.push(...this.type.doModelValidation(expression+'.type')); }
-    if (this["interaction"]) { issues.push(...this.interaction.doModelValidation(expression+'.interaction')); }
-    if (this["organism"]) { issues.push(...this.organism.doModelValidation(expression+'.organism')); }
-    if (this["organismType"]) { issues.push(...this.organismType.doModelValidation(expression+'.organismType')); }
-    if (this["amountType"]) { issues.push(...this.amountType.doModelValidation(expression+'.amountType')); }
-    if (this["source"]) { this.source.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.source[${i}]`)); }) }
+    this.vOptS('target',expression)
+    this.vOptS('type',expression)
+    this.vOptS('interaction',expression)
+    this.vOptS('organism',expression)
+    this.vOptS('organismType',expression)
+    this.vOptS('amount',expression)
+    this.vOptS('amountType',expression)
+    this.vOptA('source',expression)
     return issues;
   }
 }
@@ -416,14 +417,12 @@ export class SubstanceReferenceInformation extends fhir.DomainResource {
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'SubstanceReferenceInformation' }
-    if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType fhir: SubstanceReferenceInformation.resourceType:"SubstanceReferenceInformation"', expression: [expression] });
-    }
-    if (this["comment"]) { issues.push(...this.comment.doModelValidation(expression+'.comment')); }
-    if (this["gene"]) { this.gene.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.gene[${i}]`)); }) }
-    if (this["geneElement"]) { this.geneElement.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.geneElement[${i}]`)); }) }
-    if (this["classification"]) { this.classification.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.classification[${i}]`)); }) }
-    if (this["target"]) { this.target.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.target[${i}]`)); }) }
+    this.vReqS('resourceType',expression)
+    this.vOptS('comment',expression)
+    this.vOptA('gene',expression)
+    this.vOptA('geneElement',expression)
+    this.vOptA('classification',expression)
+    this.vOptA('target',expression)
     return issues;
   }
 }

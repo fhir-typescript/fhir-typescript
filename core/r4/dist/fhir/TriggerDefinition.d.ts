@@ -86,21 +86,6 @@ export declare class TriggerDefinition extends fhir.FhirElement {
      */
     constructor(source?: Partial<TriggerDefinitionArgs>, options?: fhir.FhirConstructorOptions);
     /**
-     * Required-bound Value Set for type (TriggerDefinition.type)
-     */
-    static get typeRequiredCodes(): {
-        readonly DataAccessEnded: "data-access-ended";
-        readonly DataAccessed: "data-accessed";
-        readonly DataAdded: "data-added"; /**
-         * Extended properties for primitive element: TriggerDefinition.type
-         */
-        readonly DataChanged: "data-changed";
-        readonly DataUpdated: "data-modified";
-        readonly DataRemoved: "data-removed";
-        readonly NamedEvent: "named-event";
-        readonly Periodic: "periodic";
-    };
-    /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
     doModelValidation(expression?: string): fhir.FtsIssue[];

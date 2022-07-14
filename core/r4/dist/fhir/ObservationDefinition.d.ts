@@ -1,7 +1,5 @@
 import * as fhir from '../fhir.js';
-import { UcumUnitsCodingType } from '../fhirValueSets/UcumUnitsCodings.js';
 import { ObservationRangeCategoryCodeType } from '../fhirValueSets/ObservationRangeCategoryCodes.js';
-import { ReferencerangeMeaningCodingType } from '../fhirValueSets/ReferencerangeMeaningCodings.js';
 import { AdministrativeGenderCodeType } from '../fhirValueSets/AdministrativeGenderCodes.js';
 import { PermittedDataTypeCodeType } from '../fhirValueSets/PermittedDataTypeCodes.js';
 /**
@@ -61,14 +59,6 @@ export declare class ObservationDefinitionQuantitativeDetails extends fhir.Backb
      * Default constructor for ObservationDefinitionQuantitativeDetails - initializes any required elements to null if a value is not provided.
      */
     constructor(source?: Partial<ObservationDefinitionQuantitativeDetailsArgs>, options?: fhir.FhirConstructorOptions);
-    /**
-     * Extensible-bound Value Set for customaryUnit (ObservationDefinition.quantitativeDetails.customaryUnit)
-     */
-    static get customaryUnitExtensibleCodings(): UcumUnitsCodingType;
-    /**
-     * Extensible-bound Value Set for unit (ObservationDefinition.quantitativeDetails.unit)
-     */
-    static get unitExtensibleCodings(): UcumUnitsCodingType;
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
@@ -167,27 +157,6 @@ export declare class ObservationDefinitionQualifiedInterval extends fhir.Backbon
      * Default constructor for ObservationDefinitionQualifiedInterval - initializes any required elements to null if a value is not provided.
      */
     constructor(source?: Partial<ObservationDefinitionQualifiedIntervalArgs>, options?: fhir.FhirConstructorOptions);
-    /**
-     * Required-bound Value Set for category (ObservationDefinition.qualifiedInterval.category)
-     */
-    static get categoryRequiredCodes(): {
-        readonly AbsoluteRange: "absolute";
-        readonly CriticalRange: "critical";
-        readonly ReferenceRange: "reference";
-    };
-    /**
-     * Extensible-bound Value Set for context (ObservationDefinition.qualifiedInterval.context)
-     */
-    static get contextExtensibleCodings(): ReferencerangeMeaningCodingType;
-    /**
-     * Required-bound Value Set for gender (ObservationDefinition.qualifiedInterval.gender)
-     */
-    static get genderRequiredCodes(): {
-        readonly Female: "female";
-        readonly Male: "male";
-        readonly Other: "other";
-        readonly Unknown: "unknown";
-    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
@@ -334,22 +303,6 @@ export declare class ObservationDefinition extends fhir.DomainResource {
      * Default constructor for ObservationDefinition - initializes any required elements to null if a value is not provided.
      */
     constructor(source?: Partial<ObservationDefinitionArgs>, options?: fhir.FhirConstructorOptions);
-    /**
-     * Required-bound Value Set for permittedDataType (ObservationDefinition.permittedDataType)
-     */
-    static get permittedDataTypeRequiredCodes(): {
-        readonly VALBoolean: "boolean";
-        readonly CodeableConcept: "CodeableConcept";
-        readonly DateTime: "dateTime";
-        readonly Integer: "integer";
-        readonly Period: "Period";
-        readonly Quantity: "Quantity";
-        readonly Range: "Range";
-        readonly Ratio: "Ratio";
-        readonly SampledData: "SampledData";
-        readonly VALString: "string";
-        readonly Time: "time";
-    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */

@@ -6,21 +6,21 @@
 import * as fhir from '../fhir.js';
 
 // @ts-ignore
-import { ResourceTypesCodings, ResourceTypesCodingType,} from '../fhirValueSets/ResourceTypesCodings.js';
-// @ts-ignore
 import { ResourceTypesCodes,  ResourceTypesCodeType } from '../fhirValueSets/ResourceTypesCodes.js';
 // @ts-ignore
-import { PublicationStatusCodings, PublicationStatusCodingType,} from '../fhirValueSets/PublicationStatusCodings.js';
+import { ResourceTypesVsValidation } from '../fhirValueSets/ResourceTypesVsValidation.js';
 // @ts-ignore
 import { PublicationStatusCodes,  PublicationStatusCodeType } from '../fhirValueSets/PublicationStatusCodes.js';
 // @ts-ignore
-import { MessageSignificanceCategoryCodings, MessageSignificanceCategoryCodingType,} from '../fhirValueSets/MessageSignificanceCategoryCodings.js';
+import { PublicationStatusVsValidation } from '../fhirValueSets/PublicationStatusVsValidation.js';
 // @ts-ignore
 import { MessageSignificanceCategoryCodes,  MessageSignificanceCategoryCodeType } from '../fhirValueSets/MessageSignificanceCategoryCodes.js';
 // @ts-ignore
-import { MessageheaderResponseRequestCodings, MessageheaderResponseRequestCodingType,} from '../fhirValueSets/MessageheaderResponseRequestCodings.js';
+import { MessageSignificanceCategoryVsValidation } from '../fhirValueSets/MessageSignificanceCategoryVsValidation.js';
 // @ts-ignore
 import { MessageheaderResponseRequestCodes,  MessageheaderResponseRequestCodeType } from '../fhirValueSets/MessageheaderResponseRequestCodes.js';
+// @ts-ignore
+import { MessageheaderResponseRequestVsValidation } from '../fhirValueSets/MessageheaderResponseRequestVsValidation.js';
 /**
  * Valid arguments for the MessageDefinitionFocus type.
  */
@@ -112,30 +112,15 @@ export class MessageDefinitionFocus extends fhir.BackboneElement {
     }
   }
   /**
-   * Required-bound Value Set for code (MessageDefinition.focus.code)
-   */
-  public static get codeRequiredCodes() {
-    return ResourceTypesCodes;
-  }
-  /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'MessageDefinition.focus' }
-    if (!this['code']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property code fhir: MessageDefinition.focus.code:code', expression: [expression] });
-    }
-    if (this['code'] && (!Object.values(ResourceTypesCodes).includes(this.code.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'code (MessageDefinition.focus.code) of type code is missing code for Required binding to: ResourceTypes', expression: [expression] });
-    }
-    if (this["code"]) { issues.push(...this.code.doModelValidation(expression+'.code')); }
-    if (this["profile"]) { issues.push(...this.profile.doModelValidation(expression+'.profile')); }
-    if (!this['min']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property min fhir: MessageDefinition.focus.min:unsignedInt', expression: [expression] });
-    }
-    if (this["min"]) { issues.push(...this.min.doModelValidation(expression+'.min')); }
-    if (this["max"]) { issues.push(...this.max.doModelValidation(expression+'.max')); }
+    this.vReqSV('code',expression,'ResourceTypes',ResourceTypesVsValidation,'r')
+    this.vOptS('profile',expression)
+    this.vReqS('min',expression)
+    this.vOptS('max',expression)
     return issues;
   }
 }
@@ -200,11 +185,8 @@ export class MessageDefinitionAllowedResponse extends fhir.BackboneElement {
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'MessageDefinition.allowedResponse' }
-    if (!this['message']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property message fhir: MessageDefinition.allowedResponse.message:canonical', expression: [expression] });
-    }
-    if (this["message"]) { issues.push(...this.message.doModelValidation(expression+'.message')); }
-    if (this["situation"]) { issues.push(...this.situation.doModelValidation(expression+'.situation')); }
+    this.vReqS('message',expression)
+    this.vOptS('situation',expression)
     return issues;
   }
 }
@@ -626,73 +608,36 @@ export class MessageDefinition extends fhir.DomainResource {
     }
   }
   /**
-   * Required-bound Value Set for status (MessageDefinition.status)
-   */
-  public static get statusRequiredCodes() {
-    return PublicationStatusCodes;
-  }
-  /**
-   * Required-bound Value Set for category (MessageDefinition.category)
-   */
-  public static get categoryRequiredCodes() {
-    return MessageSignificanceCategoryCodes;
-  }
-  /**
-   * Required-bound Value Set for responseRequired (MessageDefinition.responseRequired)
-   */
-  public static get responseRequiredRequiredCodes() {
-    return MessageheaderResponseRequestCodes;
-  }
-  /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'MessageDefinition' }
-    if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType fhir: MessageDefinition.resourceType:"MessageDefinition"', expression: [expression] });
-    }
-    if (this["url"]) { issues.push(...this.url.doModelValidation(expression+'.url')); }
-    if (this["identifier"]) { this.identifier.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.identifier[${i}]`)); }) }
-    if (this["version"]) { issues.push(...this.version.doModelValidation(expression+'.version')); }
-    if (this["name"]) { issues.push(...this.name.doModelValidation(expression+'.name')); }
-    if (this["title"]) { issues.push(...this.title.doModelValidation(expression+'.title')); }
-    if (this["replaces"]) { this.replaces.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.replaces[${i}]`)); }) }
-    if (!this['status']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status fhir: MessageDefinition.status:code', expression: [expression] });
-    }
-    if (this['status'] && (!Object.values(PublicationStatusCodes).includes(this.status.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'status (MessageDefinition.status) of type code is missing code for Required binding to: PublicationStatus', expression: [expression] });
-    }
-    if (this["status"]) { issues.push(...this.status.doModelValidation(expression+'.status')); }
-    if (this["experimental"]) { issues.push(...this.experimental.doModelValidation(expression+'.experimental')); }
-    if (!this['date']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property date fhir: MessageDefinition.date:dateTime', expression: [expression] });
-    }
-    if (this["date"]) { issues.push(...this.date.doModelValidation(expression+'.date')); }
-    if (this["publisher"]) { issues.push(...this.publisher.doModelValidation(expression+'.publisher')); }
-    if (this["contact"]) { this.contact.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.contact[${i}]`)); }) }
-    if (this["description"]) { issues.push(...this.description.doModelValidation(expression+'.description')); }
-    if (this["useContext"]) { this.useContext.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.useContext[${i}]`)); }) }
-    if (this["jurisdiction"]) { this.jurisdiction.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.jurisdiction[${i}]`)); }) }
-    if (this["purpose"]) { issues.push(...this.purpose.doModelValidation(expression+'.purpose')); }
-    if (this["copyright"]) { issues.push(...this.copyright.doModelValidation(expression+'.copyright')); }
-    if (this["base"]) { issues.push(...this.base.doModelValidation(expression+'.base')); }
-    if (this["parent"]) { this.parent.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.parent[${i}]`)); }) }
-    if (!this['event']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property event fhir: MessageDefinition.event[x]:', expression: [expression] });
-    }
-    if (this['category'] && (!Object.values(MessageSignificanceCategoryCodes).includes(this.category.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'category (MessageDefinition.category) of type code is missing code for Required binding to: MessageSignificanceCategory', expression: [expression] });
-    }
-    if (this["category"]) { issues.push(...this.category.doModelValidation(expression+'.category')); }
-    if (this["focus"]) { this.focus.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.focus[${i}]`)); }) }
-    if (this['responseRequired'] && (!Object.values(MessageheaderResponseRequestCodes).includes(this.responseRequired.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'responseRequired (MessageDefinition.responseRequired) of type code is missing code for Required binding to: MessageheaderResponseRequest', expression: [expression] });
-    }
-    if (this["responseRequired"]) { issues.push(...this.responseRequired.doModelValidation(expression+'.responseRequired')); }
-    if (this["allowedResponse"]) { this.allowedResponse.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.allowedResponse[${i}]`)); }) }
-    if (this["graph"]) { this.graph.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.graph[${i}]`)); }) }
+    this.vReqS('resourceType',expression)
+    this.vOptS('url',expression)
+    this.vOptA('identifier',expression)
+    this.vOptS('version',expression)
+    this.vOptS('name',expression)
+    this.vOptS('title',expression)
+    this.vOptA('replaces',expression)
+    this.vReqSV('status',expression,'PublicationStatus',PublicationStatusVsValidation,'r')
+    this.vOptS('experimental',expression)
+    this.vReqS('date',expression)
+    this.vOptS('publisher',expression)
+    this.vOptA('contact',expression)
+    this.vOptS('description',expression)
+    this.vOptA('useContext',expression)
+    this.vOptA('jurisdiction',expression)
+    this.vOptS('purpose',expression)
+    this.vOptS('copyright',expression)
+    this.vOptS('base',expression)
+    this.vOptA('parent',expression)
+    this.vReqS('event',expression)
+    this.vOptSV('category',expression,'MessageSignificanceCategory',MessageSignificanceCategoryVsValidation,'r')
+    this.vOptA('focus',expression)
+    this.vOptSV('responseRequired',expression,'MessageheaderResponseRequest',MessageheaderResponseRequestVsValidation,'r')
+    this.vOptA('allowedResponse',expression)
+    this.vOptA('graph',expression)
     return issues;
   }
 }

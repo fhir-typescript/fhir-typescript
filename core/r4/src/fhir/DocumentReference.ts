@@ -6,45 +6,45 @@
 import * as fhir from '../fhir.js';
 
 // @ts-ignore
-import { DocumentRelationshipTypeCodings, DocumentRelationshipTypeCodingType,} from '../fhirValueSets/DocumentRelationshipTypeCodings.js';
-// @ts-ignore
 import { DocumentRelationshipTypeCodes,  DocumentRelationshipTypeCodeType } from '../fhirValueSets/DocumentRelationshipTypeCodes.js';
 // @ts-ignore
-import { FormatCodings, FormatCodingType,} from '../fhirValueSets/FormatCodings.js';
+import { DocumentRelationshipTypeVsValidation } from '../fhirValueSets/DocumentRelationshipTypeVsValidation.js';
 // @ts-ignore
 import { FormatCodes,  FormatCodeType } from '../fhirValueSets/FormatCodes.js';
 // @ts-ignore
-import { V3ActCodings, V3ActCodingType,} from '../fhirValueSets/V3ActCodings.js';
+import { FormatVsValidation } from '../fhirValueSets/FormatVsValidation.js';
 // @ts-ignore
 import { V3ActCodes,  V3ActCodeType } from '../fhirValueSets/V3ActCodes.js';
 // @ts-ignore
-import { C80FacilityCodings, C80FacilityCodingType,} from '../fhirValueSets/C80FacilityCodings.js';
+import { V3ActVsValidation } from '../fhirValueSets/V3ActVsValidation.js';
 // @ts-ignore
 import { C80FacilityCodes,  C80FacilityCodeType } from '../fhirValueSets/C80FacilityCodes.js';
 // @ts-ignore
-import { C80PracticeCodings, C80PracticeCodingType,} from '../fhirValueSets/C80PracticeCodings.js';
+import { C80FacilityVsValidation } from '../fhirValueSets/C80FacilityVsValidation.js';
 // @ts-ignore
 import { C80PracticeCodes,  C80PracticeCodeType } from '../fhirValueSets/C80PracticeCodes.js';
 // @ts-ignore
-import { DocumentReferenceStatusCodings, DocumentReferenceStatusCodingType,} from '../fhirValueSets/DocumentReferenceStatusCodings.js';
+import { C80PracticeVsValidation } from '../fhirValueSets/C80PracticeVsValidation.js';
 // @ts-ignore
 import { DocumentReferenceStatusCodes,  DocumentReferenceStatusCodeType } from '../fhirValueSets/DocumentReferenceStatusCodes.js';
 // @ts-ignore
-import { CompositionStatusCodings, CompositionStatusCodingType,} from '../fhirValueSets/CompositionStatusCodings.js';
+import { DocumentReferenceStatusVsValidation } from '../fhirValueSets/DocumentReferenceStatusVsValidation.js';
 // @ts-ignore
 import { CompositionStatusCodes,  CompositionStatusCodeType } from '../fhirValueSets/CompositionStatusCodes.js';
 // @ts-ignore
-import { C80DocTypeCodings, C80DocTypeCodingType,} from '../fhirValueSets/C80DocTypeCodings.js';
+import { CompositionStatusVsValidation } from '../fhirValueSets/CompositionStatusVsValidation.js';
 // @ts-ignore
 import { C80DocTypeCodes,  C80DocTypeCodeType } from '../fhirValueSets/C80DocTypeCodes.js';
 // @ts-ignore
-import { DocumentClassCodings, DocumentClassCodingType,} from '../fhirValueSets/DocumentClassCodings.js';
+import { C80DocTypeVsValidation } from '../fhirValueSets/C80DocTypeVsValidation.js';
 // @ts-ignore
 import { DocumentClassCodes,  DocumentClassCodeType } from '../fhirValueSets/DocumentClassCodes.js';
 // @ts-ignore
-import { SecurityLabelsCodings, SecurityLabelsCodingType,} from '../fhirValueSets/SecurityLabelsCodings.js';
+import { DocumentClassVsValidation } from '../fhirValueSets/DocumentClassVsValidation.js';
 // @ts-ignore
 import { SecurityLabelsCodes,  SecurityLabelsCodeType } from '../fhirValueSets/SecurityLabelsCodes.js';
+// @ts-ignore
+import { SecurityLabelsVsValidation } from '../fhirValueSets/SecurityLabelsVsValidation.js';
 /**
  * Valid arguments for the DocumentReferenceRelatesTo type.
  */
@@ -94,28 +94,13 @@ export class DocumentReferenceRelatesTo extends fhir.BackboneElement {
     else { this.target = null; }
   }
   /**
-   * Required-bound Value Set for code (DocumentReference.relatesTo.code)
-   */
-  public static get codeRequiredCodes() {
-    return DocumentRelationshipTypeCodes;
-  }
-  /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'DocumentReference.relatesTo' }
-    if (!this['code']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property code fhir: DocumentReference.relatesTo.code:code', expression: [expression] });
-    }
-    if (this['code'] && (!Object.values(DocumentRelationshipTypeCodes).includes(this.code.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'code (DocumentReference.relatesTo.code) of type code is missing code for Required binding to: DocumentRelationshipType', expression: [expression] });
-    }
-    if (this["code"]) { issues.push(...this.code.doModelValidation(expression+'.code')); }
-    if (!this['target']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property target fhir: DocumentReference.relatesTo.target:Reference', expression: [expression] });
-    }
-    if (this["target"]) { issues.push(...this.target.doModelValidation(expression+'.target')); }
+    this.vReqSV('code',expression,'DocumentRelationshipType',DocumentRelationshipTypeVsValidation,'r')
+    this.vReqS('target',expression)
     return issues;
   }
 }
@@ -159,22 +144,13 @@ export class DocumentReferenceContent extends fhir.BackboneElement {
     if (source['format']) { this.format = new fhir.Coding(source.format); }
   }
   /**
-   * Preferred-bound Value Set for format (DocumentReference.content.format)
-   */
-  public static get formatPreferredCodings():FormatCodingType {
-    return FormatCodings;
-  }
-  /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'DocumentReference.content' }
-    if (!this['attachment']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property attachment fhir: DocumentReference.content.attachment:Attachment', expression: [expression] });
-    }
-    if (this["attachment"]) { issues.push(...this.attachment.doModelValidation(expression+'.attachment')); }
-    if (this["format"]) { issues.push(...this.format.doModelValidation(expression+'.format')); }
+    this.vReqS('attachment',expression)
+    this.vOptS('format',expression)
     return issues;
   }
 }
@@ -270,13 +246,13 @@ export class DocumentReferenceContext extends fhir.BackboneElement {
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'DocumentReference.context' }
-    if (this["encounter"]) { this.encounter.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.encounter[${i}]`)); }) }
-    if (this["event"]) { this.event.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.event[${i}]`)); }) }
-    if (this["period"]) { issues.push(...this.period.doModelValidation(expression+'.period')); }
-    if (this["facilityType"]) { issues.push(...this.facilityType.doModelValidation(expression+'.facilityType')); }
-    if (this["practiceSetting"]) { issues.push(...this.practiceSetting.doModelValidation(expression+'.practiceSetting')); }
-    if (this["sourcePatientInfo"]) { issues.push(...this.sourcePatientInfo.doModelValidation(expression+'.sourcePatientInfo')); }
-    if (this["related"]) { this.related.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.related[${i}]`)); }) }
+    this.vOptA('encounter',expression)
+    this.vOptA('event',expression)
+    this.vOptS('period',expression)
+    this.vOptS('facilityType',expression)
+    this.vOptS('practiceSetting',expression)
+    this.vOptS('sourcePatientInfo',expression)
+    this.vOptA('related',expression)
     return issues;
   }
 }
@@ -497,70 +473,28 @@ export class DocumentReference extends fhir.DomainResource {
     if (source['context']) { this.context = new fhir.DocumentReferenceContext(source.context); }
   }
   /**
-   * Required-bound Value Set for status (DocumentReference.status)
-   */
-  public static get statusRequiredCodes() {
-    return DocumentReferenceStatusCodes;
-  }
-  /**
-   * Required-bound Value Set for docStatus (DocumentReference.docStatus)
-   */
-  public static get docStatusRequiredCodes() {
-    return CompositionStatusCodes;
-  }
-  /**
-   * Preferred-bound Value Set for type (DocumentReference.type)
-   */
-  public static get typePreferredCodings():C80DocTypeCodingType {
-    return C80DocTypeCodings;
-  }
-  /**
-   * Extensible-bound Value Set for securityLabel (DocumentReference.securityLabel)
-   */
-  public static get securityLabelExtensibleCodings():SecurityLabelsCodingType {
-    return SecurityLabelsCodings;
-  }
-  /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'DocumentReference' }
-    if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType fhir: DocumentReference.resourceType:"DocumentReference"', expression: [expression] });
-    }
-    if (this["masterIdentifier"]) { issues.push(...this.masterIdentifier.doModelValidation(expression+'.masterIdentifier')); }
-    if (this["identifier"]) { this.identifier.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.identifier[${i}]`)); }) }
-    if (!this['status']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status fhir: DocumentReference.status:code', expression: [expression] });
-    }
-    if (this['status'] && (!Object.values(DocumentReferenceStatusCodes).includes(this.status.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'status (DocumentReference.status) of type code is missing code for Required binding to: DocumentReferenceStatus', expression: [expression] });
-    }
-    if (this["status"]) { issues.push(...this.status.doModelValidation(expression+'.status')); }
-    if (this['docStatus'] && (!Object.values(CompositionStatusCodes).includes(this.docStatus.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'docStatus (DocumentReference.docStatus) of type code is missing code for Required binding to: CompositionStatus', expression: [expression] });
-    }
-    if (this["docStatus"]) { issues.push(...this.docStatus.doModelValidation(expression+'.docStatus')); }
-    if (this["type"]) { issues.push(...this.type.doModelValidation(expression+'.type')); }
-    if (this["category"]) { this.category.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.category[${i}]`)); }) }
-    if (this["subject"]) { issues.push(...this.subject.doModelValidation(expression+'.subject')); }
-    if (this["date"]) { issues.push(...this.date.doModelValidation(expression+'.date')); }
-    if (this["author"]) { this.author.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.author[${i}]`)); }) }
-    if (this["authenticator"]) { issues.push(...this.authenticator.doModelValidation(expression+'.authenticator')); }
-    if (this["custodian"]) { issues.push(...this.custodian.doModelValidation(expression+'.custodian')); }
-    if (this["relatesTo"]) { this.relatesTo.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.relatesTo[${i}]`)); }) }
-    if (this["description"]) { issues.push(...this.description.doModelValidation(expression+'.description')); }
-    if (this["securityLabel"]) { this.securityLabel.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.securityLabel[${i}]`)); }) }
-    if (!this['content']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property content fhir: DocumentReference.content:content', expression: [expression] });
-    } else if (!Array.isArray(this.content)) {
-      issues.push({ severity: 'error', code: 'structure', diagnostics: 'Found scalar in array property content fhir: DocumentReference.content:content', expression: [expression] });
-    } else if (this.content.length === 0) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property content fhir: DocumentReference.content:content', expression: [expression] });
-    }
-    if (this["content"]) { this.content.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.content[${i}]`)); }) }
-    if (this["context"]) { issues.push(...this.context.doModelValidation(expression+'.context')); }
+    this.vReqS('resourceType',expression)
+    this.vOptS('masterIdentifier',expression)
+    this.vOptA('identifier',expression)
+    this.vReqSV('status',expression,'DocumentReferenceStatus',DocumentReferenceStatusVsValidation,'r')
+    this.vOptSV('docStatus',expression,'CompositionStatus',CompositionStatusVsValidation,'r')
+    this.vOptS('type',expression)
+    this.vOptA('category',expression)
+    this.vOptS('subject',expression)
+    this.vOptS('date',expression)
+    this.vOptA('author',expression)
+    this.vOptS('authenticator',expression)
+    this.vOptS('custodian',expression)
+    this.vOptA('relatesTo',expression)
+    this.vOptS('description',expression)
+    this.vOptA('securityLabel',expression)
+    this.vReqA('content',expression)
+    this.vOptS('context',expression)
     return issues;
   }
 }

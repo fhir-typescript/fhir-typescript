@@ -1,6 +1,4 @@
 import * as fhir from '../fhir.js';
-import { LanguagesCodingType } from '../fhirValueSets/LanguagesCodings.js';
-import { DesignationUseCodingType } from '../fhirValueSets/DesignationUseCodings.js';
 import { FilterOperatorCodeType } from '../fhirValueSets/FilterOperatorCodes.js';
 import { PublicationStatusCodeType } from '../fhirValueSets/PublicationStatusCodes.js';
 /**
@@ -52,14 +50,6 @@ export declare class ValueSetComposeIncludeConceptDesignation extends fhir.Backb
      * Default constructor for ValueSetComposeIncludeConceptDesignation - initializes any required elements to null if a value is not provided.
      */
     constructor(source?: Partial<ValueSetComposeIncludeConceptDesignationArgs>, options?: fhir.FhirConstructorOptions);
-    /**
-     * Preferred-bound Value Set for language (ValueSet.compose.include.concept.designation.language)
-     */
-    static get languagePreferredCodings(): LanguagesCodingType;
-    /**
-     * Extensible-bound Value Set for use (ValueSet.compose.include.concept.designation.use)
-     */
-    static get useExtensibleCodings(): DesignationUseCodingType;
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
@@ -172,20 +162,6 @@ export declare class ValueSetComposeIncludeFilter extends fhir.BackboneElement {
      * Default constructor for ValueSetComposeIncludeFilter - initializes any required elements to null if a value is not provided.
      */
     constructor(source?: Partial<ValueSetComposeIncludeFilterArgs>, options?: fhir.FhirConstructorOptions);
-    /**
-     * Required-bound Value Set for op (ValueSet.compose.include.filter.op)
-     */
-    static get opRequiredCodes(): {
-        readonly Equals: "=";
-        readonly DescendentOfBySubsumption: "descendent-of";
-        readonly Exists: "exists";
-        readonly GeneralizesBySubsumption: "generalizes";
-        readonly InSet: "in";
-        readonly IsABySubsumption: "is-a";
-        readonly NotIsABySubsumption: "is-not-a";
-        readonly NotInSet: "not-in";
-        readonly RegularExpression: "regex";
-    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
@@ -823,15 +799,6 @@ export declare class ValueSet extends fhir.DomainResource {
      * Default constructor for ValueSet - initializes any required elements to null if a value is not provided.
      */
     constructor(source?: Partial<ValueSetArgs>, options?: fhir.FhirConstructorOptions);
-    /**
-     * Required-bound Value Set for status (ValueSet.status)
-     */
-    static get statusRequiredCodes(): {
-        readonly Active: "active";
-        readonly Draft: "draft";
-        readonly Retired: "retired";
-        readonly Unknown: "unknown";
-    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */

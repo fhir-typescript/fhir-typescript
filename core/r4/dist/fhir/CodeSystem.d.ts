@@ -1,8 +1,6 @@
 import * as fhir from '../fhir.js';
 import { FilterOperatorCodeType } from '../fhirValueSets/FilterOperatorCodes.js';
 import { ConceptPropertyTypeCodeType } from '../fhirValueSets/ConceptPropertyTypeCodes.js';
-import { LanguagesCodingType } from '../fhirValueSets/LanguagesCodings.js';
-import { DesignationUseCodingType } from '../fhirValueSets/DesignationUseCodings.js';
 import { PublicationStatusCodeType } from '../fhirValueSets/PublicationStatusCodes.js';
 import { CodesystemHierarchyMeaningCodeType } from '../fhirValueSets/CodesystemHierarchyMeaningCodes.js';
 import { CodesystemContentModeCodeType } from '../fhirValueSets/CodesystemContentModeCodes.js';
@@ -71,20 +69,6 @@ export declare class CodeSystemFilter extends fhir.BackboneElement {
      * Default constructor for CodeSystemFilter - initializes any required elements to null if a value is not provided.
      */
     constructor(source?: Partial<CodeSystemFilterArgs>, options?: fhir.FhirConstructorOptions);
-    /**
-     * Required-bound Value Set for operator (CodeSystem.filter.operator)
-     */
-    static get operatorRequiredCodes(): {
-        readonly Equals: "=";
-        readonly DescendentOfBySubsumption: "descendent-of";
-        readonly Exists: "exists";
-        readonly GeneralizesBySubsumption: "generalizes";
-        readonly InSet: "in";
-        readonly IsABySubsumption: "is-a";
-        readonly NotIsABySubsumption: "is-not-a";
-        readonly NotInSet: "not-in";
-        readonly RegularExpression: "regex";
-    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
@@ -156,18 +140,6 @@ export declare class CodeSystemProperty extends fhir.BackboneElement {
      */
     constructor(source?: Partial<CodeSystemPropertyArgs>, options?: fhir.FhirConstructorOptions);
     /**
-     * Required-bound Value Set for type (CodeSystem.property.type)
-     */
-    static get typeRequiredCodes(): {
-        readonly VALBoolean: "boolean";
-        readonly CodeInternalReference: "code";
-        readonly CodingExternalReference: "Coding";
-        readonly DateTime: "dateTime";
-        readonly Decimal: "decimal";
-        readonly Integer: "integer";
-        readonly VALString: "string";
-    };
-    /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
     doModelValidation(expression?: string): fhir.FtsIssue[];
@@ -221,14 +193,6 @@ export declare class CodeSystemConceptDesignation extends fhir.BackboneElement {
      * Default constructor for CodeSystemConceptDesignation - initializes any required elements to null if a value is not provided.
      */
     constructor(source?: Partial<CodeSystemConceptDesignationArgs>, options?: fhir.FhirConstructorOptions);
-    /**
-     * Preferred-bound Value Set for language (CodeSystem.concept.designation.language)
-     */
-    static get languagePreferredCodings(): LanguagesCodingType;
-    /**
-     * Extensible-bound Value Set for use (CodeSystem.concept.designation.use)
-     */
-    static get useExtensibleCodings(): DesignationUseCodingType;
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
@@ -705,34 +669,6 @@ export declare class CodeSystem extends fhir.DomainResource {
      * Default constructor for CodeSystem - initializes any required elements to null if a value is not provided.
      */
     constructor(source?: Partial<CodeSystemArgs>, options?: fhir.FhirConstructorOptions);
-    /**
-     * Required-bound Value Set for status (CodeSystem.status)
-     */
-    static get statusRequiredCodes(): {
-        readonly Active: "active";
-        readonly Draft: "draft";
-        readonly Retired: "retired";
-        readonly Unknown: "unknown";
-    };
-    /**
-     * Required-bound Value Set for hierarchyMeaning (CodeSystem.hierarchyMeaning)
-     */
-    static get hierarchyMeaningRequiredCodes(): {
-        readonly ClassifiedWith: "classified-with";
-        readonly GroupedBy: "grouped-by";
-        readonly IsA: "is-a";
-        readonly PartOf: "part-of";
-    };
-    /**
-     * Required-bound Value Set for content (CodeSystem.content)
-     */
-    static get contentRequiredCodes(): {
-        readonly Complete: "complete";
-        readonly Example: "example";
-        readonly Fragment: "fragment";
-        readonly NotPresent: "not-present";
-        readonly Supplement: "supplement";
-    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */

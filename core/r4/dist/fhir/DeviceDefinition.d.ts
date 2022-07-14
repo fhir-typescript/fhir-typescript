@@ -102,17 +102,6 @@ export declare class DeviceDefinitionDeviceName extends fhir.BackboneElement {
      */
     constructor(source?: Partial<DeviceDefinitionDeviceNameArgs>, options?: fhir.FhirConstructorOptions);
     /**
-     * Required-bound Value Set for type (DeviceDefinition.deviceName.type)
-     */
-    static get typeRequiredCodes(): {
-        readonly ManufacturerName: "manufacturer-name";
-        readonly ModelName: "model-name";
-        readonly Other: "other";
-        readonly PatientReportedName: "patient-reported-name";
-        readonly UDILabelName: "udi-label-name";
-        readonly UserFriendlyName: "user-friendly-name";
-    };
-    /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
     doModelValidation(expression?: string): fhir.FtsIssue[];

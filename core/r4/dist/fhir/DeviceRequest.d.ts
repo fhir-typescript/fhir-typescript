@@ -334,43 +334,6 @@ export declare class DeviceRequest extends fhir.DomainResource {
      */
     constructor(source?: Partial<DeviceRequestArgs>, options?: fhir.FhirConstructorOptions);
     /**
-     * Required-bound Value Set for status (DeviceRequest.status)
-     */
-    static get statusRequiredCodes(): {
-        readonly Active: "active";
-        readonly Completed: "completed";
-        readonly Draft: "draft";
-        readonly EnteredInError: "entered-in-error";
-        readonly OnHold: "on-hold";
-        readonly Revoked: "revoked";
-        readonly Unknown: "unknown";
-    };
-    /**
-     * Required-bound Value Set for intent (DeviceRequest.intent)
-     */
-    static get intentRequiredCodes(): {
-        readonly Directive: "directive";
-        readonly FillerOrder: "filler-order";
-        readonly InstanceOrder: "instance-order";
-        readonly Option: "option";
-        readonly Order: "order";
-        readonly OriginalOrder: "original-order";
-        readonly Plan: "plan"; /**
-         * Range means device should have a value that falls somewhere within the specified range.
-         */
-        readonly Proposal: "proposal";
-        readonly ReflexOrder: "reflex-order";
-    };
-    /**
-     * Required-bound Value Set for priority (DeviceRequest.priority)
-     */
-    static get priorityRequiredCodes(): {
-        readonly ASAP: "asap";
-        readonly Routine: "routine";
-        readonly STAT: "stat";
-        readonly Urgent: "urgent";
-    };
-    /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
     doModelValidation(expression?: string): fhir.FtsIssue[];

@@ -6,9 +6,9 @@
 import * as fhir from '../fhir.js';
 
 // @ts-ignore
-import { ResearchSubjectStatusCodings, ResearchSubjectStatusCodingType,} from '../fhirValueSets/ResearchSubjectStatusCodings.js';
-// @ts-ignore
 import { ResearchSubjectStatusCodes,  ResearchSubjectStatusCodeType } from '../fhirValueSets/ResearchSubjectStatusCodes.js';
+// @ts-ignore
+import { ResearchSubjectStatusVsValidation } from '../fhirValueSets/ResearchSubjectStatusVsValidation.js';
 /**
  * Valid arguments for the ResearchSubject type.
  */
@@ -139,40 +139,20 @@ export class ResearchSubject extends fhir.DomainResource {
     if (source['consent']) { this.consent = new fhir.Reference(source.consent); }
   }
   /**
-   * Required-bound Value Set for status (ResearchSubject.status)
-   */
-  public static get statusRequiredCodes() {
-    return ResearchSubjectStatusCodes;
-  }
-  /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'ResearchSubject' }
-    if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType fhir: ResearchSubject.resourceType:"ResearchSubject"', expression: [expression] });
-    }
-    if (this["identifier"]) { this.identifier.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.identifier[${i}]`)); }) }
-    if (!this['status']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status fhir: ResearchSubject.status:code', expression: [expression] });
-    }
-    if (this['status'] && (!Object.values(ResearchSubjectStatusCodes).includes(this.status.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'status (ResearchSubject.status) of type code is missing code for Required binding to: ResearchSubjectStatus', expression: [expression] });
-    }
-    if (this["status"]) { issues.push(...this.status.doModelValidation(expression+'.status')); }
-    if (this["period"]) { issues.push(...this.period.doModelValidation(expression+'.period')); }
-    if (!this['study']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property study fhir: ResearchSubject.study:Reference', expression: [expression] });
-    }
-    if (this["study"]) { issues.push(...this.study.doModelValidation(expression+'.study')); }
-    if (!this['individual']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property individual fhir: ResearchSubject.individual:Reference', expression: [expression] });
-    }
-    if (this["individual"]) { issues.push(...this.individual.doModelValidation(expression+'.individual')); }
-    if (this["assignedArm"]) { issues.push(...this.assignedArm.doModelValidation(expression+'.assignedArm')); }
-    if (this["actualArm"]) { issues.push(...this.actualArm.doModelValidation(expression+'.actualArm')); }
-    if (this["consent"]) { issues.push(...this.consent.doModelValidation(expression+'.consent')); }
+    this.vReqS('resourceType',expression)
+    this.vOptA('identifier',expression)
+    this.vReqSV('status',expression,'ResearchSubjectStatus',ResearchSubjectStatusVsValidation,'r')
+    this.vOptS('period',expression)
+    this.vReqS('study',expression)
+    this.vReqS('individual',expression)
+    this.vOptS('assignedArm',expression)
+    this.vOptS('actualArm',expression)
+    this.vOptS('consent',expression)
     return issues;
   }
 }

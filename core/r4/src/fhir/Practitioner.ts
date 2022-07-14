@@ -6,17 +6,17 @@
 import * as fhir from '../fhir.js';
 
 // @ts-ignore
-import { V2270360Codings, V2270360CodingType,} from '../fhirValueSets/V2270360Codings.js';
-// @ts-ignore
 import { V2270360Codes,  V2270360CodeType } from '../fhirValueSets/V2270360Codes.js';
 // @ts-ignore
-import { AdministrativeGenderCodings, AdministrativeGenderCodingType,} from '../fhirValueSets/AdministrativeGenderCodings.js';
+import { V2270360VsValidation } from '../fhirValueSets/V2270360VsValidation.js';
 // @ts-ignore
 import { AdministrativeGenderCodes,  AdministrativeGenderCodeType } from '../fhirValueSets/AdministrativeGenderCodes.js';
 // @ts-ignore
-import { LanguagesCodings, LanguagesCodingType,} from '../fhirValueSets/LanguagesCodings.js';
+import { AdministrativeGenderVsValidation } from '../fhirValueSets/AdministrativeGenderVsValidation.js';
 // @ts-ignore
 import { LanguagesCodes,  LanguagesCodeType } from '../fhirValueSets/LanguagesCodes.js';
+// @ts-ignore
+import { LanguagesVsValidation } from '../fhirValueSets/LanguagesVsValidation.js';
 /**
  * Valid arguments for the PractitionerQualification type.
  */
@@ -81,13 +81,10 @@ export class PractitionerQualification extends fhir.BackboneElement {
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'Practitioner.qualification' }
-    if (this["identifier"]) { this.identifier.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.identifier[${i}]`)); }) }
-    if (!this['code']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property code fhir: Practitioner.qualification.code:CodeableConcept', expression: [expression] });
-    }
-    if (this["code"]) { issues.push(...this.code.doModelValidation(expression+'.code')); }
-    if (this["period"]) { issues.push(...this.period.doModelValidation(expression+'.period')); }
-    if (this["issuer"]) { issues.push(...this.issuer.doModelValidation(expression+'.issuer')); }
+    this.vOptA('identifier',expression)
+    this.vReqS('code',expression)
+    this.vOptS('period',expression)
+    this.vOptS('issuer',expression)
     return issues;
   }
 }
@@ -254,39 +251,22 @@ export class Practitioner extends fhir.DomainResource {
     else { this.communication = []; }
   }
   /**
-   * Required-bound Value Set for gender (Practitioner.gender)
-   */
-  public static get genderRequiredCodes() {
-    return AdministrativeGenderCodes;
-  }
-  /**
-   * Preferred-bound Value Set for communication (Practitioner.communication)
-   */
-  public static get communicationPreferredCodings():LanguagesCodingType {
-    return LanguagesCodings;
-  }
-  /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'Practitioner' }
-    if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType fhir: Practitioner.resourceType:"Practitioner"', expression: [expression] });
-    }
-    if (this["identifier"]) { this.identifier.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.identifier[${i}]`)); }) }
-    if (this["active"]) { issues.push(...this.active.doModelValidation(expression+'.active')); }
-    if (this["name"]) { this.name.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.name[${i}]`)); }) }
-    if (this["telecom"]) { this.telecom.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.telecom[${i}]`)); }) }
-    if (this["address"]) { this.address.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.address[${i}]`)); }) }
-    if (this['gender'] && (!Object.values(AdministrativeGenderCodes).includes(this.gender.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'gender (Practitioner.gender) of type code is missing code for Required binding to: AdministrativeGender', expression: [expression] });
-    }
-    if (this["gender"]) { issues.push(...this.gender.doModelValidation(expression+'.gender')); }
-    if (this["birthDate"]) { issues.push(...this.birthDate.doModelValidation(expression+'.birthDate')); }
-    if (this["photo"]) { this.photo.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.photo[${i}]`)); }) }
-    if (this["qualification"]) { this.qualification.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.qualification[${i}]`)); }) }
-    if (this["communication"]) { this.communication.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.communication[${i}]`)); }) }
+    this.vReqS('resourceType',expression)
+    this.vOptA('identifier',expression)
+    this.vOptS('active',expression)
+    this.vOptA('name',expression)
+    this.vOptA('telecom',expression)
+    this.vOptA('address',expression)
+    this.vOptSV('gender',expression,'AdministrativeGender',AdministrativeGenderVsValidation,'r')
+    this.vOptS('birthDate',expression)
+    this.vOptA('photo',expression)
+    this.vOptA('qualification',expression)
+    this.vOptA('communication',expression)
     return issues;
   }
 }

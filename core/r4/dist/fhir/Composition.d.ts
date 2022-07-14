@@ -2,10 +2,7 @@ import * as fhir from '../fhir.js';
 import { CompositionAttestationModeCodeType } from '../fhirValueSets/CompositionAttestationModeCodes.js';
 import { DocumentRelationshipTypeCodeType } from '../fhirValueSets/DocumentRelationshipTypeCodes.js';
 import { ListModeCodeType } from '../fhirValueSets/ListModeCodes.js';
-import { ListOrderCodingType } from '../fhirValueSets/ListOrderCodings.js';
-import { ListEmptyReasonCodingType } from '../fhirValueSets/ListEmptyReasonCodings.js';
 import { CompositionStatusCodeType } from '../fhirValueSets/CompositionStatusCodes.js';
-import { DocTypeCodingType } from '../fhirValueSets/DocTypeCodings.js';
 /**
  * Valid arguments for the CompositionAttester type.
  */
@@ -55,15 +52,6 @@ export declare class CompositionAttester extends fhir.BackboneElement {
      * Default constructor for CompositionAttester - initializes any required elements to null if a value is not provided.
      */
     constructor(source?: Partial<CompositionAttesterArgs>, options?: fhir.FhirConstructorOptions);
-    /**
-     * Required-bound Value Set for mode (Composition.attester.mode)
-     */
-    static get modeRequiredCodes(): {
-        readonly Legal: "legal";
-        readonly Official: "official";
-        readonly Personal: "personal";
-        readonly Professional: "professional";
-    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
@@ -118,15 +106,6 @@ export declare class CompositionRelatesTo extends fhir.BackboneElement {
      * Default constructor for CompositionRelatesTo - initializes any required elements to null if a value is not provided.
      */
     constructor(source?: Partial<CompositionRelatesToArgs>, options?: fhir.FhirConstructorOptions);
-    /**
-     * Required-bound Value Set for code (Composition.relatesTo.code)
-     */
-    static get codeRequiredCodes(): {
-        readonly Appends: "appends";
-        readonly Replaces: "replaces";
-        readonly Signs: "signs";
-        readonly Transforms: "transforms";
-    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
@@ -285,22 +264,6 @@ export declare class CompositionSection extends fhir.BackboneElement {
      * Default constructor for CompositionSection - initializes any required elements to null if a value is not provided.
      */
     constructor(source?: Partial<CompositionSectionArgs>, options?: fhir.FhirConstructorOptions);
-    /**
-     * Required-bound Value Set for mode (Composition.section.mode)
-     */
-    static get modeRequiredCodes(): {
-        readonly ChangeList: "changes";
-        readonly SnapshotList: "snapshot";
-        readonly WorkingList: "working";
-    };
-    /**
-     * Preferred-bound Value Set for orderedBy (Composition.section.orderedBy)
-     */
-    static get orderedByPreferredCodings(): ListOrderCodingType;
-    /**
-     * Preferred-bound Value Set for emptyReason (Composition.section.emptyReason)
-     */
-    static get emptyReasonPreferredCodings(): ListEmptyReasonCodingType;
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
@@ -469,32 +432,6 @@ export declare class Composition extends fhir.DomainResource {
      * Default constructor for Composition - initializes any required elements to null if a value is not provided.
      */
     constructor(source?: Partial<CompositionArgs>, options?: fhir.FhirConstructorOptions);
-    /**
-     * Required-bound Value Set for status (Composition.status)
-     */
-    static get statusRequiredCodes(): {
-        readonly Amended: "amended";
-        readonly EnteredInError: "entered-in-error";
-        readonly Final: "final";
-        readonly Preliminary: "preliminary";
-    };
-    /**
-     * Preferred-bound Value Set for type (Composition.type)
-     */
-    static get typePreferredCodings(): DocTypeCodingType;
-    /**
-     * Required-bound Value Set for confidentiality (Composition.confidentiality)
-     */
-    static get confidentialityRequiredCodes(): {
-        readonly Low: "L";
-        readonly Moderate: "M";
-        readonly Normal: "N";
-        readonly Restricted: "R";
-        readonly Unrestricted: "U";
-        readonly VeryRestricted: "V"; /**
-         * The target composition/document of this relationship.
-         */
-    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */

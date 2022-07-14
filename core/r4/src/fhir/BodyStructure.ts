@@ -6,17 +6,17 @@
 import * as fhir from '../fhir.js';
 
 // @ts-ignore
-import { BodystructureCodings, BodystructureCodingType,} from '../fhirValueSets/BodystructureCodings.js';
-// @ts-ignore
 import { BodystructureCodes,  BodystructureCodeType } from '../fhirValueSets/BodystructureCodes.js';
 // @ts-ignore
-import { BodySiteCodings, BodySiteCodingType,} from '../fhirValueSets/BodySiteCodings.js';
+import { BodystructureVsValidation } from '../fhirValueSets/BodystructureVsValidation.js';
 // @ts-ignore
 import { BodySiteCodes,  BodySiteCodeType } from '../fhirValueSets/BodySiteCodes.js';
 // @ts-ignore
-import { BodystructureRelativeLocationCodings, BodystructureRelativeLocationCodingType,} from '../fhirValueSets/BodystructureRelativeLocationCodings.js';
+import { BodySiteVsValidation } from '../fhirValueSets/BodySiteVsValidation.js';
 // @ts-ignore
 import { BodystructureRelativeLocationCodes,  BodystructureRelativeLocationCodeType } from '../fhirValueSets/BodystructureRelativeLocationCodes.js';
+// @ts-ignore
+import { BodystructureRelativeLocationVsValidation } from '../fhirValueSets/BodystructureRelativeLocationVsValidation.js';
 /**
  * Valid arguments for the BodyStructure type.
  */
@@ -144,20 +144,15 @@ export class BodyStructure extends fhir.DomainResource {
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'BodyStructure' }
-    if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType fhir: BodyStructure.resourceType:"BodyStructure"', expression: [expression] });
-    }
-    if (this["identifier"]) { this.identifier.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.identifier[${i}]`)); }) }
-    if (this["active"]) { issues.push(...this.active.doModelValidation(expression+'.active')); }
-    if (this["morphology"]) { issues.push(...this.morphology.doModelValidation(expression+'.morphology')); }
-    if (this["location"]) { issues.push(...this.location.doModelValidation(expression+'.location')); }
-    if (this["locationQualifier"]) { this.locationQualifier.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.locationQualifier[${i}]`)); }) }
-    if (this["description"]) { issues.push(...this.description.doModelValidation(expression+'.description')); }
-    if (this["image"]) { this.image.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.image[${i}]`)); }) }
-    if (!this['patient']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property patient fhir: BodyStructure.patient:Reference', expression: [expression] });
-    }
-    if (this["patient"]) { issues.push(...this.patient.doModelValidation(expression+'.patient')); }
+    this.vReqS('resourceType',expression)
+    this.vOptA('identifier',expression)
+    this.vOptS('active',expression)
+    this.vOptS('morphology',expression)
+    this.vOptS('location',expression)
+    this.vOptA('locationQualifier',expression)
+    this.vOptS('description',expression)
+    this.vOptA('image',expression)
+    this.vReqS('patient',expression)
     return issues;
   }
 }

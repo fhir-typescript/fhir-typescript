@@ -6,57 +6,57 @@
 import * as fhir from '../fhir.js';
 
 // @ts-ignore
-import { NetworkTypeCodings, NetworkTypeCodingType,} from '../fhirValueSets/NetworkTypeCodings.js';
-// @ts-ignore
 import { NetworkTypeCodes,  NetworkTypeCodeType } from '../fhirValueSets/NetworkTypeCodes.js';
 // @ts-ignore
-import { ParticipationRoleTypeCodings, ParticipationRoleTypeCodingType,} from '../fhirValueSets/ParticipationRoleTypeCodings.js';
+import { NetworkTypeVsValidation } from '../fhirValueSets/NetworkTypeVsValidation.js';
 // @ts-ignore
 import { ParticipationRoleTypeCodes,  ParticipationRoleTypeCodeType } from '../fhirValueSets/ParticipationRoleTypeCodes.js';
 // @ts-ignore
-import { SecurityRoleTypeCodings, SecurityRoleTypeCodingType,} from '../fhirValueSets/SecurityRoleTypeCodings.js';
+import { ParticipationRoleTypeVsValidation } from '../fhirValueSets/ParticipationRoleTypeVsValidation.js';
 // @ts-ignore
 import { SecurityRoleTypeCodes,  SecurityRoleTypeCodeType } from '../fhirValueSets/SecurityRoleTypeCodes.js';
 // @ts-ignore
-import { Dicm405MediatypeCodings, Dicm405MediatypeCodingType,} from '../fhirValueSets/Dicm405MediatypeCodings.js';
+import { SecurityRoleTypeVsValidation } from '../fhirValueSets/SecurityRoleTypeVsValidation.js';
 // @ts-ignore
 import { Dicm405MediatypeCodes,  Dicm405MediatypeCodeType } from '../fhirValueSets/Dicm405MediatypeCodes.js';
 // @ts-ignore
-import { V3PurposeOfUseCodings, V3PurposeOfUseCodingType,} from '../fhirValueSets/V3PurposeOfUseCodings.js';
+import { Dicm405MediatypeVsValidation } from '../fhirValueSets/Dicm405MediatypeVsValidation.js';
 // @ts-ignore
 import { V3PurposeOfUseCodes,  V3PurposeOfUseCodeType } from '../fhirValueSets/V3PurposeOfUseCodes.js';
 // @ts-ignore
-import { AuditSourceTypeCodings, AuditSourceTypeCodingType,} from '../fhirValueSets/AuditSourceTypeCodings.js';
+import { V3PurposeOfUseVsValidation } from '../fhirValueSets/V3PurposeOfUseVsValidation.js';
 // @ts-ignore
 import { AuditSourceTypeCodes,  AuditSourceTypeCodeType } from '../fhirValueSets/AuditSourceTypeCodes.js';
 // @ts-ignore
-import { AuditEntityTypeCodings, AuditEntityTypeCodingType,} from '../fhirValueSets/AuditEntityTypeCodings.js';
+import { AuditSourceTypeVsValidation } from '../fhirValueSets/AuditSourceTypeVsValidation.js';
 // @ts-ignore
 import { AuditEntityTypeCodes,  AuditEntityTypeCodeType } from '../fhirValueSets/AuditEntityTypeCodes.js';
 // @ts-ignore
-import { ObjectRoleCodings, ObjectRoleCodingType,} from '../fhirValueSets/ObjectRoleCodings.js';
+import { AuditEntityTypeVsValidation } from '../fhirValueSets/AuditEntityTypeVsValidation.js';
 // @ts-ignore
 import { ObjectRoleCodes,  ObjectRoleCodeType } from '../fhirValueSets/ObjectRoleCodes.js';
 // @ts-ignore
-import { SecurityLabelsCodings, SecurityLabelsCodingType,} from '../fhirValueSets/SecurityLabelsCodings.js';
+import { ObjectRoleVsValidation } from '../fhirValueSets/ObjectRoleVsValidation.js';
 // @ts-ignore
 import { SecurityLabelsCodes,  SecurityLabelsCodeType } from '../fhirValueSets/SecurityLabelsCodes.js';
 // @ts-ignore
-import { AuditEventTypeCodings, AuditEventTypeCodingType,} from '../fhirValueSets/AuditEventTypeCodings.js';
+import { SecurityLabelsVsValidation } from '../fhirValueSets/SecurityLabelsVsValidation.js';
 // @ts-ignore
 import { AuditEventTypeCodes,  AuditEventTypeCodeType } from '../fhirValueSets/AuditEventTypeCodes.js';
 // @ts-ignore
-import { AuditEventSubTypeCodings, AuditEventSubTypeCodingType,} from '../fhirValueSets/AuditEventSubTypeCodings.js';
+import { AuditEventTypeVsValidation } from '../fhirValueSets/AuditEventTypeVsValidation.js';
 // @ts-ignore
 import { AuditEventSubTypeCodes,  AuditEventSubTypeCodeType } from '../fhirValueSets/AuditEventSubTypeCodes.js';
 // @ts-ignore
-import { AuditEventActionCodings, AuditEventActionCodingType,} from '../fhirValueSets/AuditEventActionCodings.js';
+import { AuditEventSubTypeVsValidation } from '../fhirValueSets/AuditEventSubTypeVsValidation.js';
 // @ts-ignore
 import { AuditEventActionCodes,  AuditEventActionCodeType } from '../fhirValueSets/AuditEventActionCodes.js';
 // @ts-ignore
-import { AuditEventOutcomeCodings, AuditEventOutcomeCodingType,} from '../fhirValueSets/AuditEventOutcomeCodings.js';
+import { AuditEventActionVsValidation } from '../fhirValueSets/AuditEventActionVsValidation.js';
 // @ts-ignore
 import { AuditEventOutcomeCodes,  AuditEventOutcomeCodeType } from '../fhirValueSets/AuditEventOutcomeCodes.js';
+// @ts-ignore
+import { AuditEventOutcomeVsValidation } from '../fhirValueSets/AuditEventOutcomeVsValidation.js';
 /**
  * Valid arguments for the AuditEventAgentNetwork type.
  */
@@ -112,22 +112,13 @@ export class AuditEventAgentNetwork extends fhir.BackboneElement {
     }
   }
   /**
-   * Required-bound Value Set for type (AuditEvent.agent.network.type)
-   */
-  public static get typeRequiredCodes() {
-    return NetworkTypeCodes;
-  }
-  /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'AuditEvent.agent.network' }
-    if (this["address"]) { issues.push(...this.address.doModelValidation(expression+'.address')); }
-    if (this['type'] && (!Object.values(NetworkTypeCodes).includes(this.type.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'type (AuditEvent.agent.network.type) of type code is missing code for Required binding to: NetworkType', expression: [expression] });
-    }
-    if (this["type"]) { issues.push(...this.type.doModelValidation(expression+'.type')); }
+    this.vOptS('address',expression)
+    this.vOptSV('type',expression,'NetworkType',NetworkTypeVsValidation,'r')
     return issues;
   }
 }
@@ -290,43 +281,22 @@ export class AuditEventAgent extends fhir.BackboneElement {
     else { this.purposeOfUse = []; }
   }
   /**
-   * Extensible-bound Value Set for type (AuditEvent.agent.type)
-   */
-  public static get typeExtensibleCodings():ParticipationRoleTypeCodingType {
-    return ParticipationRoleTypeCodings;
-  }
-  /**
-   * Extensible-bound Value Set for media (AuditEvent.agent.media)
-   */
-  public static get mediaExtensibleCodings():Dicm405MediatypeCodingType {
-    return Dicm405MediatypeCodings;
-  }
-  /**
-   * Extensible-bound Value Set for purposeOfUse (AuditEvent.agent.purposeOfUse)
-   */
-  public static get purposeOfUseExtensibleCodings():V3PurposeOfUseCodingType {
-    return V3PurposeOfUseCodings;
-  }
-  /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'AuditEvent.agent' }
-    if (this["type"]) { issues.push(...this.type.doModelValidation(expression+'.type')); }
-    if (this["role"]) { this.role.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.role[${i}]`)); }) }
-    if (this["who"]) { issues.push(...this.who.doModelValidation(expression+'.who')); }
-    if (this["altId"]) { issues.push(...this.altId.doModelValidation(expression+'.altId')); }
-    if (this["name"]) { issues.push(...this.name.doModelValidation(expression+'.name')); }
-    if (!this['requestor']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property requestor fhir: AuditEvent.agent.requestor:boolean', expression: [expression] });
-    }
-    if (this["requestor"]) { issues.push(...this.requestor.doModelValidation(expression+'.requestor')); }
-    if (this["location"]) { issues.push(...this.location.doModelValidation(expression+'.location')); }
-    if (this["policy"]) { this.policy.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.policy[${i}]`)); }) }
-    if (this["media"]) { issues.push(...this.media.doModelValidation(expression+'.media')); }
-    if (this["network"]) { issues.push(...this.network.doModelValidation(expression+'.network')); }
-    if (this["purposeOfUse"]) { this.purposeOfUse.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.purposeOfUse[${i}]`)); }) }
+    this.vOptS('type',expression)
+    this.vOptA('role',expression)
+    this.vOptS('who',expression)
+    this.vOptS('altId',expression)
+    this.vOptS('name',expression)
+    this.vReqS('requestor',expression)
+    this.vOptS('location',expression)
+    this.vOptA('policy',expression)
+    this.vOptS('media',expression)
+    this.vOptS('network',expression)
+    this.vOptA('purposeOfUse',expression)
     return issues;
   }
 }
@@ -388,23 +358,14 @@ export class AuditEventSource extends fhir.BackboneElement {
     else { this.type = []; }
   }
   /**
-   * Extensible-bound Value Set for type (AuditEvent.source.type)
-   */
-  public static get typeExtensibleCodings():AuditSourceTypeCodingType {
-    return AuditSourceTypeCodings;
-  }
-  /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'AuditEvent.source' }
-    if (this["site"]) { issues.push(...this.site.doModelValidation(expression+'.site')); }
-    if (!this['observer']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property observer fhir: AuditEvent.source.observer:Reference', expression: [expression] });
-    }
-    if (this["observer"]) { issues.push(...this.observer.doModelValidation(expression+'.observer')); }
-    if (this["type"]) { this.type.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.type[${i}]`)); }) }
+    this.vOptS('site',expression)
+    this.vReqS('observer',expression)
+    this.vOptA('type',expression)
     return issues;
   }
 }
@@ -476,13 +437,8 @@ export class AuditEventEntityDetail extends fhir.BackboneElement {
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'AuditEvent.entity.detail' }
-    if (!this['type']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property type fhir: AuditEvent.entity.detail.type:string', expression: [expression] });
-    }
-    if (this["type"]) { issues.push(...this.type.doModelValidation(expression+'.type')); }
-    if (!this['value']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property value fhir: AuditEvent.entity.detail.value[x]:', expression: [expression] });
-    }
+    this.vReqS('type',expression)
+    this.vReqS('value',expression)
     return issues;
   }
 }
@@ -614,38 +570,20 @@ export class AuditEventEntity extends fhir.BackboneElement {
     else { this.detail = []; }
   }
   /**
-   * Extensible-bound Value Set for type (AuditEvent.entity.type)
-   */
-  public static get typeExtensibleCodings():AuditEntityTypeCodingType {
-    return AuditEntityTypeCodings;
-  }
-  /**
-   * Extensible-bound Value Set for role (AuditEvent.entity.role)
-   */
-  public static get roleExtensibleCodings():ObjectRoleCodingType {
-    return ObjectRoleCodings;
-  }
-  /**
-   * Extensible-bound Value Set for securityLabel (AuditEvent.entity.securityLabel)
-   */
-  public static get securityLabelExtensibleCodings():SecurityLabelsCodingType {
-    return SecurityLabelsCodings;
-  }
-  /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'AuditEvent.entity' }
-    if (this["what"]) { issues.push(...this.what.doModelValidation(expression+'.what')); }
-    if (this["type"]) { issues.push(...this.type.doModelValidation(expression+'.type')); }
-    if (this["role"]) { issues.push(...this.role.doModelValidation(expression+'.role')); }
-    if (this["lifecycle"]) { issues.push(...this.lifecycle.doModelValidation(expression+'.lifecycle')); }
-    if (this["securityLabel"]) { this.securityLabel.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.securityLabel[${i}]`)); }) }
-    if (this["name"]) { issues.push(...this.name.doModelValidation(expression+'.name')); }
-    if (this["description"]) { issues.push(...this.description.doModelValidation(expression+'.description')); }
-    if (this["query"]) { issues.push(...this.query.doModelValidation(expression+'.query')); }
-    if (this["detail"]) { this.detail.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.detail[${i}]`)); }) }
+    this.vOptS('what',expression)
+    this.vOptS('type',expression)
+    this.vOptS('role',expression)
+    this.vOptS('lifecycle',expression)
+    this.vOptA('securityLabel',expression)
+    this.vOptS('name',expression)
+    this.vOptS('description',expression)
+    this.vOptS('query',expression)
+    this.vOptA('detail',expression)
     return issues;
   }
 }
@@ -819,77 +757,23 @@ export class AuditEvent extends fhir.DomainResource {
     else { this.entity = []; }
   }
   /**
-   * Extensible-bound Value Set for type (AuditEvent.type)
-   */
-  public static get typeExtensibleCodings():AuditEventTypeCodingType {
-    return AuditEventTypeCodings;
-  }
-  /**
-   * Extensible-bound Value Set for subtype (AuditEvent.subtype)
-   */
-  public static get subtypeExtensibleCodings():AuditEventSubTypeCodingType {
-    return AuditEventSubTypeCodings;
-  }
-  /**
-   * Required-bound Value Set for action (AuditEvent.action)
-   */
-  public static get actionRequiredCodes() {
-    return AuditEventActionCodes;
-  }
-  /**
-   * Required-bound Value Set for outcome (AuditEvent.outcome)
-   */
-  public static get outcomeRequiredCodes() {
-    return AuditEventOutcomeCodes;
-  }
-  /**
-   * Extensible-bound Value Set for purposeOfEvent (AuditEvent.purposeOfEvent)
-   */
-  public static get purposeOfEventExtensibleCodings():V3PurposeOfUseCodingType {
-    return V3PurposeOfUseCodings;
-  }
-  /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'AuditEvent' }
-    if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType fhir: AuditEvent.resourceType:"AuditEvent"', expression: [expression] });
-    }
-    if (!this['type']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property type fhir: AuditEvent.type:Coding', expression: [expression] });
-    }
-    if (this["type"]) { issues.push(...this.type.doModelValidation(expression+'.type')); }
-    if (this["subtype"]) { this.subtype.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.subtype[${i}]`)); }) }
-    if (this['action'] && (!Object.values(AuditEventActionCodes).includes(this.action.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'action (AuditEvent.action) of type code is missing code for Required binding to: AuditEventAction', expression: [expression] });
-    }
-    if (this["action"]) { issues.push(...this.action.doModelValidation(expression+'.action')); }
-    if (this["period"]) { issues.push(...this.period.doModelValidation(expression+'.period')); }
-    if (!this['recorded']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property recorded fhir: AuditEvent.recorded:instant', expression: [expression] });
-    }
-    if (this["recorded"]) { issues.push(...this.recorded.doModelValidation(expression+'.recorded')); }
-    if (this['outcome'] && (!Object.values(AuditEventOutcomeCodes).includes(this.outcome.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'outcome (AuditEvent.outcome) of type code is missing code for Required binding to: AuditEventOutcome', expression: [expression] });
-    }
-    if (this["outcome"]) { issues.push(...this.outcome.doModelValidation(expression+'.outcome')); }
-    if (this["outcomeDesc"]) { issues.push(...this.outcomeDesc.doModelValidation(expression+'.outcomeDesc')); }
-    if (this["purposeOfEvent"]) { this.purposeOfEvent.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.purposeOfEvent[${i}]`)); }) }
-    if (!this['agent']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property agent fhir: AuditEvent.agent:agent', expression: [expression] });
-    } else if (!Array.isArray(this.agent)) {
-      issues.push({ severity: 'error', code: 'structure', diagnostics: 'Found scalar in array property agent fhir: AuditEvent.agent:agent', expression: [expression] });
-    } else if (this.agent.length === 0) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property agent fhir: AuditEvent.agent:agent', expression: [expression] });
-    }
-    if (this["agent"]) { this.agent.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.agent[${i}]`)); }) }
-    if (!this['source']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property source fhir: AuditEvent.source:source', expression: [expression] });
-    }
-    if (this["source"]) { issues.push(...this.source.doModelValidation(expression+'.source')); }
-    if (this["entity"]) { this.entity.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.entity[${i}]`)); }) }
+    this.vReqS('resourceType',expression)
+    this.vReqS('type',expression)
+    this.vOptA('subtype',expression)
+    this.vOptSV('action',expression,'AuditEventAction',AuditEventActionVsValidation,'r')
+    this.vOptS('period',expression)
+    this.vReqS('recorded',expression)
+    this.vOptSV('outcome',expression,'AuditEventOutcome',AuditEventOutcomeVsValidation,'r')
+    this.vOptS('outcomeDesc',expression)
+    this.vOptA('purposeOfEvent',expression)
+    this.vReqA('agent',expression)
+    this.vReqS('source',expression)
+    this.vOptA('entity',expression)
     return issues;
   }
 }

@@ -1,5 +1,4 @@
 import * as fhir from '../fhir.js';
-import { SignatureTypeCodingType } from '../fhirValueSets/SignatureTypeCodings.js';
 /**
  * Valid arguments for the Signature type.
  */
@@ -89,10 +88,6 @@ export declare class Signature extends fhir.FhirElement {
      * Default constructor for Signature - initializes any required elements to null if a value is not provided.
      */
     constructor(source?: Partial<SignatureArgs>, options?: fhir.FhirConstructorOptions);
-    /**
-     * Preferred-bound Value Set for type (Signature.type)
-     */
-    static get typePreferredCodings(): SignatureTypeCodingType;
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */

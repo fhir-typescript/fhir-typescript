@@ -6,21 +6,21 @@
 import * as fhir from '../fhir.js';
 
 // @ts-ignore
-import { DoseRateTypeCodings, DoseRateTypeCodingType,} from '../fhirValueSets/DoseRateTypeCodings.js';
-// @ts-ignore
 import { DoseRateTypeCodes,  DoseRateTypeCodeType } from '../fhirValueSets/DoseRateTypeCodes.js';
 // @ts-ignore
-import { ApproachSiteCodings, ApproachSiteCodingType,} from '../fhirValueSets/ApproachSiteCodings.js';
+import { DoseRateTypeVsValidation } from '../fhirValueSets/DoseRateTypeVsValidation.js';
 // @ts-ignore
 import { ApproachSiteCodes,  ApproachSiteCodeType } from '../fhirValueSets/ApproachSiteCodes.js';
 // @ts-ignore
-import { RouteCodings, RouteCodingType,} from '../fhirValueSets/RouteCodings.js';
+import { ApproachSiteVsValidation } from '../fhirValueSets/ApproachSiteVsValidation.js';
 // @ts-ignore
 import { RouteCodes,  RouteCodeType } from '../fhirValueSets/RouteCodes.js';
 // @ts-ignore
-import { AdministrationMethodCodings, AdministrationMethodCodingType,} from '../fhirValueSets/AdministrationMethodCodings.js';
+import { RouteVsValidation } from '../fhirValueSets/RouteVsValidation.js';
 // @ts-ignore
 import { AdministrationMethodCodes,  AdministrationMethodCodeType } from '../fhirValueSets/AdministrationMethodCodes.js';
+// @ts-ignore
+import { AdministrationMethodVsValidation } from '../fhirValueSets/AdministrationMethodVsValidation.js';
 /**
  * Valid arguments for the DosageDoseAndRate type.
  */
@@ -112,7 +112,9 @@ export class DosageDoseAndRate extends fhir.FhirElement {
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'Dosage.doseAndRate' }
-    if (this["type"]) { issues.push(...this.type.doModelValidation(expression+'.type')); }
+    this.vOptS('type',expression)
+    this.vOptS('dose',expression)
+    this.vOptS('rate',expression)
     return issues;
   }
 }
@@ -299,18 +301,19 @@ export class Dosage extends fhir.BackboneElement {
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'Dosage' }
-    if (this["sequence"]) { issues.push(...this.sequence.doModelValidation(expression+'.sequence')); }
-    if (this["text"]) { issues.push(...this.text.doModelValidation(expression+'.text')); }
-    if (this["additionalInstruction"]) { this.additionalInstruction.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.additionalInstruction[${i}]`)); }) }
-    if (this["patientInstruction"]) { issues.push(...this.patientInstruction.doModelValidation(expression+'.patientInstruction')); }
-    if (this["timing"]) { issues.push(...this.timing.doModelValidation(expression+'.timing')); }
-    if (this["site"]) { issues.push(...this.site.doModelValidation(expression+'.site')); }
-    if (this["route"]) { issues.push(...this.route.doModelValidation(expression+'.route')); }
-    if (this["method"]) { issues.push(...this.method.doModelValidation(expression+'.method')); }
-    if (this["doseAndRate"]) { this.doseAndRate.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.doseAndRate[${i}]`)); }) }
-    if (this["maxDosePerPeriod"]) { issues.push(...this.maxDosePerPeriod.doModelValidation(expression+'.maxDosePerPeriod')); }
-    if (this["maxDosePerAdministration"]) { issues.push(...this.maxDosePerAdministration.doModelValidation(expression+'.maxDosePerAdministration')); }
-    if (this["maxDosePerLifetime"]) { issues.push(...this.maxDosePerLifetime.doModelValidation(expression+'.maxDosePerLifetime')); }
+    this.vOptS('sequence',expression)
+    this.vOptS('text',expression)
+    this.vOptA('additionalInstruction',expression)
+    this.vOptS('patientInstruction',expression)
+    this.vOptS('timing',expression)
+    this.vOptS('asNeeded',expression)
+    this.vOptS('site',expression)
+    this.vOptS('route',expression)
+    this.vOptS('method',expression)
+    this.vOptA('doseAndRate',expression)
+    this.vOptS('maxDosePerPeriod',expression)
+    this.vOptS('maxDosePerAdministration',expression)
+    this.vOptS('maxDosePerLifetime',expression)
     return issues;
   }
 }

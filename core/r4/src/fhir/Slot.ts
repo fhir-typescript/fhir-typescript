@@ -6,25 +6,25 @@
 import * as fhir from '../fhir.js';
 
 // @ts-ignore
-import { ServiceCategoryCodings, ServiceCategoryCodingType,} from '../fhirValueSets/ServiceCategoryCodings.js';
-// @ts-ignore
 import { ServiceCategoryCodes,  ServiceCategoryCodeType } from '../fhirValueSets/ServiceCategoryCodes.js';
 // @ts-ignore
-import { ServiceTypeCodings, ServiceTypeCodingType,} from '../fhirValueSets/ServiceTypeCodings.js';
+import { ServiceCategoryVsValidation } from '../fhirValueSets/ServiceCategoryVsValidation.js';
 // @ts-ignore
 import { ServiceTypeCodes,  ServiceTypeCodeType } from '../fhirValueSets/ServiceTypeCodes.js';
 // @ts-ignore
-import { C80PracticeCodings, C80PracticeCodingType,} from '../fhirValueSets/C80PracticeCodings.js';
+import { ServiceTypeVsValidation } from '../fhirValueSets/ServiceTypeVsValidation.js';
 // @ts-ignore
 import { C80PracticeCodes,  C80PracticeCodeType } from '../fhirValueSets/C80PracticeCodes.js';
 // @ts-ignore
-import { V20276Codings, V20276CodingType,} from '../fhirValueSets/V20276Codings.js';
+import { C80PracticeVsValidation } from '../fhirValueSets/C80PracticeVsValidation.js';
 // @ts-ignore
 import { V20276Codes,  V20276CodeType } from '../fhirValueSets/V20276Codes.js';
 // @ts-ignore
-import { SlotstatusCodings, SlotstatusCodingType,} from '../fhirValueSets/SlotstatusCodings.js';
+import { V20276VsValidation } from '../fhirValueSets/V20276VsValidation.js';
 // @ts-ignore
 import { SlotstatusCodes,  SlotstatusCodeType } from '../fhirValueSets/SlotstatusCodes.js';
+// @ts-ignore
+import { SlotstatusVsValidation } from '../fhirValueSets/SlotstatusVsValidation.js';
 /**
  * Valid arguments for the Slot type.
  */
@@ -202,58 +202,23 @@ export class Slot extends fhir.DomainResource {
     }
   }
   /**
-   * Preferred-bound Value Set for specialty (Slot.specialty)
-   */
-  public static get specialtyPreferredCodings():C80PracticeCodingType {
-    return C80PracticeCodings;
-  }
-  /**
-   * Preferred-bound Value Set for appointmentType (Slot.appointmentType)
-   */
-  public static get appointmentTypePreferredCodings():V20276CodingType {
-    return V20276Codings;
-  }
-  /**
-   * Required-bound Value Set for status (Slot.status)
-   */
-  public static get statusRequiredCodes() {
-    return SlotstatusCodes;
-  }
-  /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'Slot' }
-    if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType fhir: Slot.resourceType:"Slot"', expression: [expression] });
-    }
-    if (this["identifier"]) { this.identifier.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.identifier[${i}]`)); }) }
-    if (this["serviceCategory"]) { this.serviceCategory.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.serviceCategory[${i}]`)); }) }
-    if (this["serviceType"]) { this.serviceType.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.serviceType[${i}]`)); }) }
-    if (this["specialty"]) { this.specialty.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.specialty[${i}]`)); }) }
-    if (this["appointmentType"]) { issues.push(...this.appointmentType.doModelValidation(expression+'.appointmentType')); }
-    if (!this['schedule']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property schedule fhir: Slot.schedule:Reference', expression: [expression] });
-    }
-    if (this["schedule"]) { issues.push(...this.schedule.doModelValidation(expression+'.schedule')); }
-    if (!this['status']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status fhir: Slot.status:code', expression: [expression] });
-    }
-    if (this['status'] && (!Object.values(SlotstatusCodes).includes(this.status.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'status (Slot.status) of type code is missing code for Required binding to: Slotstatus', expression: [expression] });
-    }
-    if (this["status"]) { issues.push(...this.status.doModelValidation(expression+'.status')); }
-    if (!this['start']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property start fhir: Slot.start:instant', expression: [expression] });
-    }
-    if (this["start"]) { issues.push(...this.start.doModelValidation(expression+'.start')); }
-    if (!this['end']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property end fhir: Slot.end:instant', expression: [expression] });
-    }
-    if (this["end"]) { issues.push(...this.end.doModelValidation(expression+'.end')); }
-    if (this["overbooked"]) { issues.push(...this.overbooked.doModelValidation(expression+'.overbooked')); }
-    if (this["comment"]) { issues.push(...this.comment.doModelValidation(expression+'.comment')); }
+    this.vReqS('resourceType',expression)
+    this.vOptA('identifier',expression)
+    this.vOptA('serviceCategory',expression)
+    this.vOptA('serviceType',expression)
+    this.vOptA('specialty',expression)
+    this.vOptS('appointmentType',expression)
+    this.vReqS('schedule',expression)
+    this.vReqSV('status',expression,'Slotstatus',SlotstatusVsValidation,'r')
+    this.vReqS('start',expression)
+    this.vReqS('end',expression)
+    this.vOptS('overbooked',expression)
+    this.vOptS('comment',expression)
     return issues;
   }
 }

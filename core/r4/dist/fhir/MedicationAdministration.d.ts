@@ -1,6 +1,5 @@
 import * as fhir from '../fhir.js';
 import { MedicationAdminStatusCodeType } from '../fhirValueSets/MedicationAdminStatusCodes.js';
-import { MedicationAdminCategoryCodingType } from '../fhirValueSets/MedicationAdminCategoryCodings.js';
 /**
  * Valid arguments for the MedicationAdministrationPerformer type.
  */
@@ -336,22 +335,6 @@ export declare class MedicationAdministration extends fhir.DomainResource {
      * Default constructor for MedicationAdministration - initializes any required elements to null if a value is not provided.
      */
     constructor(source?: Partial<MedicationAdministrationArgs>, options?: fhir.FhirConstructorOptions);
-    /**
-     * Required-bound Value Set for status (MedicationAdministration.status)
-     */
-    static get statusRequiredCodes(): {
-        readonly Completed: "completed";
-        readonly EnteredInError: "entered-in-error";
-        readonly InProgress: "in-progress";
-        readonly NotDone: "not-done";
-        readonly OnHold: "on-hold";
-        readonly Stopped: "stopped";
-        readonly Unknown: "unknown";
-    };
-    /**
-     * Preferred-bound Value Set for category (MedicationAdministration.category)
-     */
-    static get categoryPreferredCodings(): MedicationAdminCategoryCodingType;
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */

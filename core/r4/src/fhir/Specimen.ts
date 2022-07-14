@@ -6,33 +6,33 @@
 import * as fhir from '../fhir.js';
 
 // @ts-ignore
-import { SpecimenCollectionMethodCodings, SpecimenCollectionMethodCodingType,} from '../fhirValueSets/SpecimenCollectionMethodCodings.js';
-// @ts-ignore
 import { SpecimenCollectionMethodCodes,  SpecimenCollectionMethodCodeType } from '../fhirValueSets/SpecimenCollectionMethodCodes.js';
 // @ts-ignore
-import { BodySiteCodings, BodySiteCodingType,} from '../fhirValueSets/BodySiteCodings.js';
+import { SpecimenCollectionMethodVsValidation } from '../fhirValueSets/SpecimenCollectionMethodVsValidation.js';
 // @ts-ignore
 import { BodySiteCodes,  BodySiteCodeType } from '../fhirValueSets/BodySiteCodes.js';
 // @ts-ignore
-import { SpecimenProcessingProcedureCodings, SpecimenProcessingProcedureCodingType,} from '../fhirValueSets/SpecimenProcessingProcedureCodings.js';
+import { BodySiteVsValidation } from '../fhirValueSets/BodySiteVsValidation.js';
 // @ts-ignore
 import { SpecimenProcessingProcedureCodes,  SpecimenProcessingProcedureCodeType } from '../fhirValueSets/SpecimenProcessingProcedureCodes.js';
 // @ts-ignore
-import { SpecimenContainerTypeCodings, SpecimenContainerTypeCodingType,} from '../fhirValueSets/SpecimenContainerTypeCodings.js';
+import { SpecimenProcessingProcedureVsValidation } from '../fhirValueSets/SpecimenProcessingProcedureVsValidation.js';
 // @ts-ignore
 import { SpecimenContainerTypeCodes,  SpecimenContainerTypeCodeType } from '../fhirValueSets/SpecimenContainerTypeCodes.js';
 // @ts-ignore
-import { SpecimenStatusCodings, SpecimenStatusCodingType,} from '../fhirValueSets/SpecimenStatusCodings.js';
+import { SpecimenContainerTypeVsValidation } from '../fhirValueSets/SpecimenContainerTypeVsValidation.js';
 // @ts-ignore
 import { SpecimenStatusCodes,  SpecimenStatusCodeType } from '../fhirValueSets/SpecimenStatusCodes.js';
 // @ts-ignore
-import { V20487Codings, V20487CodingType,} from '../fhirValueSets/V20487Codings.js';
+import { SpecimenStatusVsValidation } from '../fhirValueSets/SpecimenStatusVsValidation.js';
 // @ts-ignore
 import { V20487Codes,  V20487CodeType } from '../fhirValueSets/V20487Codes.js';
 // @ts-ignore
-import { V20493Codings, V20493CodingType,} from '../fhirValueSets/V20493Codings.js';
+import { V20487VsValidation } from '../fhirValueSets/V20487VsValidation.js';
 // @ts-ignore
 import { V20493Codes,  V20493CodeType } from '../fhirValueSets/V20493Codes.js';
+// @ts-ignore
+import { V20493VsValidation } from '../fhirValueSets/V20493VsValidation.js';
 /**
  * Valid arguments for the SpecimenCollection type.
  */
@@ -150,11 +150,13 @@ export class SpecimenCollection extends fhir.BackboneElement {
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'Specimen.collection' }
-    if (this["collector"]) { issues.push(...this.collector.doModelValidation(expression+'.collector')); }
-    if (this["duration"]) { issues.push(...this.duration.doModelValidation(expression+'.duration')); }
-    if (this["quantity"]) { issues.push(...this.quantity.doModelValidation(expression+'.quantity')); }
-    if (this["method"]) { issues.push(...this.method.doModelValidation(expression+'.method')); }
-    if (this["bodySite"]) { issues.push(...this.bodySite.doModelValidation(expression+'.bodySite')); }
+    this.vOptS('collector',expression)
+    this.vOptS('collected',expression)
+    this.vOptS('duration',expression)
+    this.vOptS('quantity',expression)
+    this.vOptS('method',expression)
+    this.vOptS('bodySite',expression)
+    this.vOptS('fastingStatus',expression)
     return issues;
   }
 }
@@ -243,9 +245,10 @@ export class SpecimenProcessing extends fhir.BackboneElement {
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'Specimen.processing' }
-    if (this["description"]) { issues.push(...this.description.doModelValidation(expression+'.description')); }
-    if (this["procedure"]) { issues.push(...this.procedure.doModelValidation(expression+'.procedure')); }
-    if (this["additive"]) { this.additive.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.additive[${i}]`)); }) }
+    this.vOptS('description',expression)
+    this.vOptS('procedure',expression)
+    this.vOptA('additive',expression)
+    this.vOptS('time',expression)
     return issues;
   }
 }
@@ -352,11 +355,12 @@ export class SpecimenContainer extends fhir.BackboneElement {
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'Specimen.container' }
-    if (this["identifier"]) { this.identifier.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.identifier[${i}]`)); }) }
-    if (this["description"]) { issues.push(...this.description.doModelValidation(expression+'.description')); }
-    if (this["type"]) { issues.push(...this.type.doModelValidation(expression+'.type')); }
-    if (this["capacity"]) { issues.push(...this.capacity.doModelValidation(expression+'.capacity')); }
-    if (this["specimenQuantity"]) { issues.push(...this.specimenQuantity.doModelValidation(expression+'.specimenQuantity')); }
+    this.vOptA('identifier',expression)
+    this.vOptS('description',expression)
+    this.vOptS('type',expression)
+    this.vOptS('capacity',expression)
+    this.vOptS('specimenQuantity',expression)
+    this.vOptS('additive',expression)
     return issues;
   }
 }
@@ -530,42 +534,25 @@ export class Specimen extends fhir.DomainResource {
     else { this.note = []; }
   }
   /**
-   * Required-bound Value Set for status (Specimen.status)
-   */
-  public static get statusRequiredCodes() {
-    return SpecimenStatusCodes;
-  }
-  /**
-   * Extensible-bound Value Set for condition (Specimen.condition)
-   */
-  public static get conditionExtensibleCodings():V20493CodingType {
-    return V20493Codings;
-  }
-  /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'Specimen' }
-    if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType fhir: Specimen.resourceType:"Specimen"', expression: [expression] });
-    }
-    if (this["identifier"]) { this.identifier.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.identifier[${i}]`)); }) }
-    if (this["accessionIdentifier"]) { issues.push(...this.accessionIdentifier.doModelValidation(expression+'.accessionIdentifier')); }
-    if (this['status'] && (!Object.values(SpecimenStatusCodes).includes(this.status.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'status (Specimen.status) of type code is missing code for Required binding to: SpecimenStatus', expression: [expression] });
-    }
-    if (this["status"]) { issues.push(...this.status.doModelValidation(expression+'.status')); }
-    if (this["type"]) { issues.push(...this.type.doModelValidation(expression+'.type')); }
-    if (this["subject"]) { issues.push(...this.subject.doModelValidation(expression+'.subject')); }
-    if (this["receivedTime"]) { issues.push(...this.receivedTime.doModelValidation(expression+'.receivedTime')); }
-    if (this["parent"]) { this.parent.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.parent[${i}]`)); }) }
-    if (this["request"]) { this.request.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.request[${i}]`)); }) }
-    if (this["collection"]) { issues.push(...this.collection.doModelValidation(expression+'.collection')); }
-    if (this["processing"]) { this.processing.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.processing[${i}]`)); }) }
-    if (this["container"]) { this.container.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.container[${i}]`)); }) }
-    if (this["condition"]) { this.condition.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.condition[${i}]`)); }) }
-    if (this["note"]) { this.note.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.note[${i}]`)); }) }
+    this.vReqS('resourceType',expression)
+    this.vOptA('identifier',expression)
+    this.vOptS('accessionIdentifier',expression)
+    this.vOptSV('status',expression,'SpecimenStatus',SpecimenStatusVsValidation,'r')
+    this.vOptS('type',expression)
+    this.vOptS('subject',expression)
+    this.vOptS('receivedTime',expression)
+    this.vOptA('parent',expression)
+    this.vOptA('request',expression)
+    this.vOptS('collection',expression)
+    this.vOptA('processing',expression)
+    this.vOptA('container',expression)
+    this.vOptA('condition',expression)
+    this.vOptA('note',expression)
     return issues;
   }
 }

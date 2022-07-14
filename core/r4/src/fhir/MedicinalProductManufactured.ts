@@ -108,22 +108,14 @@ export class MedicinalProductManufactured extends fhir.DomainResource {
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'MedicinalProductManufactured' }
-    if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType fhir: MedicinalProductManufactured.resourceType:"MedicinalProductManufactured"', expression: [expression] });
-    }
-    if (!this['manufacturedDoseForm']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property manufacturedDoseForm fhir: MedicinalProductManufactured.manufacturedDoseForm:CodeableConcept', expression: [expression] });
-    }
-    if (this["manufacturedDoseForm"]) { issues.push(...this.manufacturedDoseForm.doModelValidation(expression+'.manufacturedDoseForm')); }
-    if (this["unitOfPresentation"]) { issues.push(...this.unitOfPresentation.doModelValidation(expression+'.unitOfPresentation')); }
-    if (!this['quantity']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property quantity fhir: MedicinalProductManufactured.quantity:Quantity', expression: [expression] });
-    }
-    if (this["quantity"]) { issues.push(...this.quantity.doModelValidation(expression+'.quantity')); }
-    if (this["manufacturer"]) { this.manufacturer.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.manufacturer[${i}]`)); }) }
-    if (this["ingredient"]) { this.ingredient.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.ingredient[${i}]`)); }) }
-    if (this["physicalCharacteristics"]) { issues.push(...this.physicalCharacteristics.doModelValidation(expression+'.physicalCharacteristics')); }
-    if (this["otherCharacteristics"]) { this.otherCharacteristics.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.otherCharacteristics[${i}]`)); }) }
+    this.vReqS('resourceType',expression)
+    this.vReqS('manufacturedDoseForm',expression)
+    this.vOptS('unitOfPresentation',expression)
+    this.vReqS('quantity',expression)
+    this.vOptA('manufacturer',expression)
+    this.vOptA('ingredient',expression)
+    this.vOptS('physicalCharacteristics',expression)
+    this.vOptA('otherCharacteristics',expression)
     return issues;
   }
 }

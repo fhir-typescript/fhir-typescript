@@ -1,10 +1,5 @@
 import * as fhir from '../fhir.js';
-import { MeasurePopulationCodingType } from '../fhirValueSets/MeasurePopulationCodings.js';
-import { MeasureDataUsageCodingType } from '../fhirValueSets/MeasureDataUsageCodings.js';
 import { PublicationStatusCodeType } from '../fhirValueSets/PublicationStatusCodes.js';
-import { MeasureScoringCodingType } from '../fhirValueSets/MeasureScoringCodings.js';
-import { CompositeMeasureScoringCodingType } from '../fhirValueSets/CompositeMeasureScoringCodings.js';
-import { MeasureTypeCodingType } from '../fhirValueSets/MeasureTypeCodings.js';
 /**
  * Valid arguments for the MeasureGroupPopulation type.
  */
@@ -50,10 +45,6 @@ export declare class MeasureGroupPopulation extends fhir.BackboneElement {
      * Default constructor for MeasureGroupPopulation - initializes any required elements to null if a value is not provided.
      */
     constructor(source?: Partial<MeasureGroupPopulationArgs>, options?: fhir.FhirConstructorOptions);
-    /**
-     * Extensible-bound Value Set for code (Measure.group.population.code)
-     */
-    static get codeExtensibleCodings(): MeasurePopulationCodingType;
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
@@ -278,10 +269,6 @@ export declare class MeasureSupplementalData extends fhir.BackboneElement {
      * Default constructor for MeasureSupplementalData - initializes any required elements to null if a value is not provided.
      */
     constructor(source?: Partial<MeasureSupplementalDataArgs>, options?: fhir.FhirConstructorOptions);
-    /**
-     * Extensible-bound Value Set for usage (Measure.supplementalData.usage)
-     */
-    static get usageExtensibleCodings(): MeasureDataUsageCodingType;
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
@@ -748,34 +735,6 @@ export declare class Measure extends fhir.DomainResource {
      * Default constructor for Measure - initializes any required elements to null if a value is not provided.
      */
     constructor(source?: Partial<MeasureArgs>, options?: fhir.FhirConstructorOptions);
-    /**
-     * Required-bound Value Set for status (Measure.status)
-     */
-    static get statusRequiredCodes(): {
-        readonly Active: "active";
-        readonly Draft: "draft";
-        readonly Retired: "retired";
-        readonly Unknown: "unknown";
-    };
-    /**
-     * Extensible-bound Value Set for scoring (Measure.scoring)
-     */
-    static get scoringExtensibleCodings(): MeasureScoringCodingType;
-    /**
-     * Extensible-bound Value Set for compositeScoring (Measure.compositeScoring)
-     */
-    static get compositeScoringExtensibleCodings(): CompositeMeasureScoringCodingType;
-    /**
-     * Extensible-bound Value Set for type (Measure.type)
-     */
-    static get typeExtensibleCodings(): MeasureTypeCodingType;
-    /**
-     * Required-bound Value Set for improvementNotation (Measure.improvementNotation)
-     */
-    static get improvementNotationRequiredCodes(): {
-        readonly DecreasedScoreIndicatesImprovement: "decrease";
-        readonly IncreasedScoreIndicatesImprovement: "increase";
-    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */

@@ -6,25 +6,25 @@
 import * as fhir from '../fhir.js';
 
 // @ts-ignore
-import { EventStatusCodings, EventStatusCodingType,} from '../fhirValueSets/EventStatusCodings.js';
-// @ts-ignore
 import { EventStatusCodes,  EventStatusCodeType } from '../fhirValueSets/EventStatusCodes.js';
 // @ts-ignore
-import { MediaTypeCodings, MediaTypeCodingType,} from '../fhirValueSets/MediaTypeCodings.js';
+import { EventStatusVsValidation } from '../fhirValueSets/EventStatusVsValidation.js';
 // @ts-ignore
 import { MediaTypeCodes,  MediaTypeCodeType } from '../fhirValueSets/MediaTypeCodes.js';
 // @ts-ignore
-import { MediaViewCodings, MediaViewCodingType,} from '../fhirValueSets/MediaViewCodings.js';
+import { MediaTypeVsValidation } from '../fhirValueSets/MediaTypeVsValidation.js';
 // @ts-ignore
 import { MediaViewCodes,  MediaViewCodeType } from '../fhirValueSets/MediaViewCodes.js';
 // @ts-ignore
-import { ProcedureReasonCodings, ProcedureReasonCodingType,} from '../fhirValueSets/ProcedureReasonCodings.js';
+import { MediaViewVsValidation } from '../fhirValueSets/MediaViewVsValidation.js';
 // @ts-ignore
 import { ProcedureReasonCodes,  ProcedureReasonCodeType } from '../fhirValueSets/ProcedureReasonCodes.js';
 // @ts-ignore
-import { BodySiteCodings, BodySiteCodingType,} from '../fhirValueSets/BodySiteCodings.js';
+import { ProcedureReasonVsValidation } from '../fhirValueSets/ProcedureReasonVsValidation.js';
 // @ts-ignore
 import { BodySiteCodes,  BodySiteCodeType } from '../fhirValueSets/BodySiteCodes.js';
+// @ts-ignore
+import { BodySiteVsValidation } from '../fhirValueSets/BodySiteVsValidation.js';
 /**
  * Valid arguments for the Media type.
  */
@@ -336,56 +336,34 @@ export class Media extends fhir.DomainResource {
     else { this.note = []; }
   }
   /**
-   * Required-bound Value Set for status (Media.status)
-   */
-  public static get statusRequiredCodes() {
-    return EventStatusCodes;
-  }
-  /**
-   * Extensible-bound Value Set for type (Media.type)
-   */
-  public static get typeExtensibleCodings():MediaTypeCodingType {
-    return MediaTypeCodings;
-  }
-  /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'Media' }
-    if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType fhir: Media.resourceType:"Media"', expression: [expression] });
-    }
-    if (this["identifier"]) { this.identifier.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.identifier[${i}]`)); }) }
-    if (this["basedOn"]) { this.basedOn.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.basedOn[${i}]`)); }) }
-    if (this["partOf"]) { this.partOf.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.partOf[${i}]`)); }) }
-    if (!this['status']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status fhir: Media.status:code', expression: [expression] });
-    }
-    if (this['status'] && (!Object.values(EventStatusCodes).includes(this.status.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'status (Media.status) of type code is missing code for Required binding to: EventStatus', expression: [expression] });
-    }
-    if (this["status"]) { issues.push(...this.status.doModelValidation(expression+'.status')); }
-    if (this["type"]) { issues.push(...this.type.doModelValidation(expression+'.type')); }
-    if (this["modality"]) { issues.push(...this.modality.doModelValidation(expression+'.modality')); }
-    if (this["view"]) { issues.push(...this.view.doModelValidation(expression+'.view')); }
-    if (this["subject"]) { issues.push(...this.subject.doModelValidation(expression+'.subject')); }
-    if (this["encounter"]) { issues.push(...this.encounter.doModelValidation(expression+'.encounter')); }
-    if (this["issued"]) { issues.push(...this.issued.doModelValidation(expression+'.issued')); }
-    if (this["operator"]) { issues.push(...this.operator.doModelValidation(expression+'.operator')); }
-    if (this["reasonCode"]) { this.reasonCode.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.reasonCode[${i}]`)); }) }
-    if (this["bodySite"]) { issues.push(...this.bodySite.doModelValidation(expression+'.bodySite')); }
-    if (this["deviceName"]) { issues.push(...this.deviceName.doModelValidation(expression+'.deviceName')); }
-    if (this["device"]) { issues.push(...this.device.doModelValidation(expression+'.device')); }
-    if (this["height"]) { issues.push(...this.height.doModelValidation(expression+'.height')); }
-    if (this["width"]) { issues.push(...this.width.doModelValidation(expression+'.width')); }
-    if (this["frames"]) { issues.push(...this.frames.doModelValidation(expression+'.frames')); }
-    if (this["duration"]) { issues.push(...this.duration.doModelValidation(expression+'.duration')); }
-    if (!this['content']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property content fhir: Media.content:Attachment', expression: [expression] });
-    }
-    if (this["content"]) { issues.push(...this.content.doModelValidation(expression+'.content')); }
-    if (this["note"]) { this.note.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.note[${i}]`)); }) }
+    this.vReqS('resourceType',expression)
+    this.vOptA('identifier',expression)
+    this.vOptA('basedOn',expression)
+    this.vOptA('partOf',expression)
+    this.vReqSV('status',expression,'EventStatus',EventStatusVsValidation,'r')
+    this.vOptS('type',expression)
+    this.vOptS('modality',expression)
+    this.vOptS('view',expression)
+    this.vOptS('subject',expression)
+    this.vOptS('encounter',expression)
+    this.vOptS('created',expression)
+    this.vOptS('issued',expression)
+    this.vOptS('operator',expression)
+    this.vOptA('reasonCode',expression)
+    this.vOptS('bodySite',expression)
+    this.vOptS('deviceName',expression)
+    this.vOptS('device',expression)
+    this.vOptS('height',expression)
+    this.vOptS('width',expression)
+    this.vOptS('frames',expression)
+    this.vOptS('duration',expression)
+    this.vReqS('content',expression)
+    this.vOptA('note',expression)
     return issues;
   }
 }

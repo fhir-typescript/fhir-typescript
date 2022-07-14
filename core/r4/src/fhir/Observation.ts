@@ -6,41 +6,41 @@
 import * as fhir from '../fhir.js';
 
 // @ts-ignore
-import { ReferencerangeMeaningCodings, ReferencerangeMeaningCodingType,} from '../fhirValueSets/ReferencerangeMeaningCodings.js';
-// @ts-ignore
 import { ReferencerangeMeaningCodes,  ReferencerangeMeaningCodeType } from '../fhirValueSets/ReferencerangeMeaningCodes.js';
 // @ts-ignore
-import { ReferencerangeAppliestoCodings, ReferencerangeAppliestoCodingType,} from '../fhirValueSets/ReferencerangeAppliestoCodings.js';
+import { ReferencerangeMeaningVsValidation } from '../fhirValueSets/ReferencerangeMeaningVsValidation.js';
 // @ts-ignore
 import { ReferencerangeAppliestoCodes,  ReferencerangeAppliestoCodeType } from '../fhirValueSets/ReferencerangeAppliestoCodes.js';
 // @ts-ignore
-import { ObservationCodings, ObservationCodingType,} from '../fhirValueSets/ObservationCodings.js';
+import { ReferencerangeAppliestoVsValidation } from '../fhirValueSets/ReferencerangeAppliestoVsValidation.js';
 // @ts-ignore
 import { ObservationCodes,  ObservationCodeType } from '../fhirValueSets/ObservationCodes.js';
 // @ts-ignore
-import { DataAbsentReasonCodings, DataAbsentReasonCodingType,} from '../fhirValueSets/DataAbsentReasonCodings.js';
+import { ObservationVsValidation } from '../fhirValueSets/ObservationVsValidation.js';
 // @ts-ignore
 import { DataAbsentReasonCodes,  DataAbsentReasonCodeType } from '../fhirValueSets/DataAbsentReasonCodes.js';
 // @ts-ignore
-import { ObservationInterpretationCodings, ObservationInterpretationCodingType,} from '../fhirValueSets/ObservationInterpretationCodings.js';
+import { DataAbsentReasonVsValidation } from '../fhirValueSets/DataAbsentReasonVsValidation.js';
 // @ts-ignore
 import { ObservationInterpretationCodes,  ObservationInterpretationCodeType } from '../fhirValueSets/ObservationInterpretationCodes.js';
 // @ts-ignore
-import { ObservationStatusCodings, ObservationStatusCodingType,} from '../fhirValueSets/ObservationStatusCodings.js';
+import { ObservationInterpretationVsValidation } from '../fhirValueSets/ObservationInterpretationVsValidation.js';
 // @ts-ignore
 import { ObservationStatusCodes,  ObservationStatusCodeType } from '../fhirValueSets/ObservationStatusCodes.js';
 // @ts-ignore
-import { ObservationCategoryCodings, ObservationCategoryCodingType,} from '../fhirValueSets/ObservationCategoryCodings.js';
+import { ObservationStatusVsValidation } from '../fhirValueSets/ObservationStatusVsValidation.js';
 // @ts-ignore
 import { ObservationCategoryCodes,  ObservationCategoryCodeType } from '../fhirValueSets/ObservationCategoryCodes.js';
 // @ts-ignore
-import { BodySiteCodings, BodySiteCodingType,} from '../fhirValueSets/BodySiteCodings.js';
+import { ObservationCategoryVsValidation } from '../fhirValueSets/ObservationCategoryVsValidation.js';
 // @ts-ignore
 import { BodySiteCodes,  BodySiteCodeType } from '../fhirValueSets/BodySiteCodes.js';
 // @ts-ignore
-import { ObservationMethodsCodings, ObservationMethodsCodingType,} from '../fhirValueSets/ObservationMethodsCodings.js';
+import { BodySiteVsValidation } from '../fhirValueSets/BodySiteVsValidation.js';
 // @ts-ignore
 import { ObservationMethodsCodes,  ObservationMethodsCodeType } from '../fhirValueSets/ObservationMethodsCodes.js';
+// @ts-ignore
+import { ObservationMethodsVsValidation } from '../fhirValueSets/ObservationMethodsVsValidation.js';
 /**
  * Valid arguments for the ObservationReferenceRange type.
  */
@@ -125,23 +125,17 @@ export class ObservationReferenceRange extends fhir.BackboneElement {
     }
   }
   /**
-   * Preferred-bound Value Set for type (Observation.referenceRange.type)
-   */
-  public static get typePreferredCodings():ReferencerangeMeaningCodingType {
-    return ReferencerangeMeaningCodings;
-  }
-  /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'Observation.referenceRange' }
-    if (this["low"]) { issues.push(...this.low.doModelValidation(expression+'.low')); }
-    if (this["high"]) { issues.push(...this.high.doModelValidation(expression+'.high')); }
-    if (this["type"]) { issues.push(...this.type.doModelValidation(expression+'.type')); }
-    if (this["appliesTo"]) { this.appliesTo.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.appliesTo[${i}]`)); }) }
-    if (this["age"]) { issues.push(...this.age.doModelValidation(expression+'.age')); }
-    if (this["text"]) { issues.push(...this.text.doModelValidation(expression+'.text')); }
+    this.vOptS('low',expression)
+    this.vOptS('high',expression)
+    this.vOptS('type',expression)
+    this.vOptA('appliesTo',expression)
+    this.vOptS('age',expression)
+    this.vOptS('text',expression)
     return issues;
   }
 }
@@ -275,30 +269,16 @@ export class ObservationComponent extends fhir.BackboneElement {
     else { this.referenceRange = []; }
   }
   /**
-   * Extensible-bound Value Set for dataAbsentReason (Observation.component.dataAbsentReason)
-   */
-  public static get dataAbsentReasonExtensibleCodings():DataAbsentReasonCodingType {
-    return DataAbsentReasonCodings;
-  }
-  /**
-   * Extensible-bound Value Set for interpretation (Observation.component.interpretation)
-   */
-  public static get interpretationExtensibleCodings():ObservationInterpretationCodingType {
-    return ObservationInterpretationCodings;
-  }
-  /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'Observation.component' }
-    if (!this['code']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property code fhir: Observation.component.code:CodeableConcept', expression: [expression] });
-    }
-    if (this["code"]) { issues.push(...this.code.doModelValidation(expression+'.code')); }
-    if (this["dataAbsentReason"]) { issues.push(...this.dataAbsentReason.doModelValidation(expression+'.dataAbsentReason')); }
-    if (this["interpretation"]) { this.interpretation.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.interpretation[${i}]`)); }) }
-    if (this["referenceRange"]) { this.referenceRange.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.referenceRange[${i}]`)); }) }
+    this.vReqS('code',expression)
+    this.vOptS('value',expression)
+    this.vOptS('dataAbsentReason',expression)
+    this.vOptA('interpretation',expression)
+    this.vOptA('referenceRange',expression)
     return issues;
   }
 }
@@ -665,69 +645,36 @@ export class Observation extends fhir.DomainResource {
     else { this.component = []; }
   }
   /**
-   * Required-bound Value Set for status (Observation.status)
-   */
-  public static get statusRequiredCodes() {
-    return ObservationStatusCodes;
-  }
-  /**
-   * Preferred-bound Value Set for category (Observation.category)
-   */
-  public static get categoryPreferredCodings():ObservationCategoryCodingType {
-    return ObservationCategoryCodings;
-  }
-  /**
-   * Extensible-bound Value Set for dataAbsentReason (Observation.dataAbsentReason)
-   */
-  public static get dataAbsentReasonExtensibleCodings():DataAbsentReasonCodingType {
-    return DataAbsentReasonCodings;
-  }
-  /**
-   * Extensible-bound Value Set for interpretation (Observation.interpretation)
-   */
-  public static get interpretationExtensibleCodings():ObservationInterpretationCodingType {
-    return ObservationInterpretationCodings;
-  }
-  /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'Observation' }
-    if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType fhir: Observation.resourceType:"Observation"', expression: [expression] });
-    }
-    if (this["identifier"]) { this.identifier.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.identifier[${i}]`)); }) }
-    if (this["basedOn"]) { this.basedOn.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.basedOn[${i}]`)); }) }
-    if (this["partOf"]) { this.partOf.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.partOf[${i}]`)); }) }
-    if (!this['status']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status fhir: Observation.status:code', expression: [expression] });
-    }
-    if (this['status'] && (!Object.values(ObservationStatusCodes).includes(this.status.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'status (Observation.status) of type code is missing code for Required binding to: ObservationStatus', expression: [expression] });
-    }
-    if (this["status"]) { issues.push(...this.status.doModelValidation(expression+'.status')); }
-    if (this["category"]) { this.category.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.category[${i}]`)); }) }
-    if (!this['code']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property code fhir: Observation.code:CodeableConcept', expression: [expression] });
-    }
-    if (this["code"]) { issues.push(...this.code.doModelValidation(expression+'.code')); }
-    if (this["subject"]) { issues.push(...this.subject.doModelValidation(expression+'.subject')); }
-    if (this["focus"]) { this.focus.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.focus[${i}]`)); }) }
-    if (this["encounter"]) { issues.push(...this.encounter.doModelValidation(expression+'.encounter')); }
-    if (this["issued"]) { issues.push(...this.issued.doModelValidation(expression+'.issued')); }
-    if (this["performer"]) { this.performer.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.performer[${i}]`)); }) }
-    if (this["dataAbsentReason"]) { issues.push(...this.dataAbsentReason.doModelValidation(expression+'.dataAbsentReason')); }
-    if (this["interpretation"]) { this.interpretation.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.interpretation[${i}]`)); }) }
-    if (this["note"]) { this.note.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.note[${i}]`)); }) }
-    if (this["bodySite"]) { issues.push(...this.bodySite.doModelValidation(expression+'.bodySite')); }
-    if (this["method"]) { issues.push(...this.method.doModelValidation(expression+'.method')); }
-    if (this["specimen"]) { issues.push(...this.specimen.doModelValidation(expression+'.specimen')); }
-    if (this["device"]) { issues.push(...this.device.doModelValidation(expression+'.device')); }
-    if (this["referenceRange"]) { this.referenceRange.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.referenceRange[${i}]`)); }) }
-    if (this["hasMember"]) { this.hasMember.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.hasMember[${i}]`)); }) }
-    if (this["derivedFrom"]) { this.derivedFrom.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.derivedFrom[${i}]`)); }) }
-    if (this["component"]) { this.component.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.component[${i}]`)); }) }
+    this.vReqS('resourceType',expression)
+    this.vOptA('identifier',expression)
+    this.vOptA('basedOn',expression)
+    this.vOptA('partOf',expression)
+    this.vReqSV('status',expression,'ObservationStatus',ObservationStatusVsValidation,'r')
+    this.vOptA('category',expression)
+    this.vReqS('code',expression)
+    this.vOptS('subject',expression)
+    this.vOptA('focus',expression)
+    this.vOptS('encounter',expression)
+    this.vOptS('effective',expression)
+    this.vOptS('issued',expression)
+    this.vOptA('performer',expression)
+    this.vOptS('value',expression)
+    this.vOptS('dataAbsentReason',expression)
+    this.vOptA('interpretation',expression)
+    this.vOptA('note',expression)
+    this.vOptS('bodySite',expression)
+    this.vOptS('method',expression)
+    this.vOptS('specimen',expression)
+    this.vOptS('device',expression)
+    this.vOptA('referenceRange',expression)
+    this.vOptA('hasMember',expression)
+    this.vOptA('derivedFrom',expression)
+    this.vOptA('component',expression)
     return issues;
   }
 }

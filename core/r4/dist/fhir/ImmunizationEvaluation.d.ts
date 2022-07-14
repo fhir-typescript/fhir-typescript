@@ -170,13 +170,6 @@ export declare class ImmunizationEvaluation extends fhir.DomainResource {
      */
     constructor(source?: Partial<ImmunizationEvaluationArgs>, options?: fhir.FhirConstructorOptions);
     /**
-     * Required-bound Value Set for status (ImmunizationEvaluation.status)
-     */
-    static get statusRequiredCodes(): {
-        readonly Completed: "completed";
-        readonly EnteredInError: "entered-in-error";
-    };
-    /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
     doModelValidation(expression?: string): fhir.FtsIssue[];

@@ -58,8 +58,8 @@ export class CodeableConcept extends fhir.FhirElement {
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'CodeableConcept' }
-    if (this["coding"]) { this.coding.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.coding[${i}]`)); }) }
-    if (this["text"]) { issues.push(...this.text.doModelValidation(expression+'.text')); }
+    this.vOptA('coding',expression)
+    this.vOptS('text',expression)
     return issues;
   }
   /**
@@ -165,6 +165,29 @@ export class CodeableConcept extends fhir.FhirElement {
       const code:string = (obj as any)['code'] ?? '';
 
       if (this.hasCoding(system, code)) {
+        return true;
+      }
+    }
+
+    return false;
+  }
+
+  /**
+   * Test whether this CodeableConcept contains a specific coding.
+   * @param system System to search for, empty string will match any system.
+   * @param code Code to search for, empty string will match any code.
+   * @returns True if this concept contains the specified coding, false if it does not.
+   */
+  public hasCodingFromValidationObj(vsValidation:Readonly<string[]>):boolean {
+    if (this.coding.length === 0) {
+      return false;
+    }
+
+    for (const coding of this.coding) {
+      const sc:string = (coding.system?.value ?? '') + '|' + (coding.code?.value ?? '');
+      const c:string = coding.code?.value ?? '';
+
+      if (vsValidation.find((v) => (v === sc) || (v === c))) {
         return true;
       }
     }

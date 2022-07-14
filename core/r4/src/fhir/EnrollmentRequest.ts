@@ -6,9 +6,9 @@
 import * as fhir from '../fhir.js';
 
 // @ts-ignore
-import { FmStatusCodings, FmStatusCodingType,} from '../fhirValueSets/FmStatusCodings.js';
-// @ts-ignore
 import { FmStatusCodes,  FmStatusCodeType } from '../fhirValueSets/FmStatusCodes.js';
+// @ts-ignore
+import { FmStatusVsValidation } from '../fhirValueSets/FmStatusVsValidation.js';
 /**
  * Valid arguments for the EnrollmentRequest type.
  */
@@ -119,30 +119,19 @@ export class EnrollmentRequest extends fhir.DomainResource {
     if (source['coverage']) { this.coverage = new fhir.Reference(source.coverage); }
   }
   /**
-   * Required-bound Value Set for status (EnrollmentRequest.status)
-   */
-  public static get statusRequiredCodes() {
-    return FmStatusCodes;
-  }
-  /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'EnrollmentRequest' }
-    if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType fhir: EnrollmentRequest.resourceType:"EnrollmentRequest"', expression: [expression] });
-    }
-    if (this["identifier"]) { this.identifier.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.identifier[${i}]`)); }) }
-    if (this['status'] && (!Object.values(FmStatusCodes).includes(this.status.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'status (EnrollmentRequest.status) of type code is missing code for Required binding to: FmStatus', expression: [expression] });
-    }
-    if (this["status"]) { issues.push(...this.status.doModelValidation(expression+'.status')); }
-    if (this["created"]) { issues.push(...this.created.doModelValidation(expression+'.created')); }
-    if (this["insurer"]) { issues.push(...this.insurer.doModelValidation(expression+'.insurer')); }
-    if (this["provider"]) { issues.push(...this.provider.doModelValidation(expression+'.provider')); }
-    if (this["candidate"]) { issues.push(...this.candidate.doModelValidation(expression+'.candidate')); }
-    if (this["coverage"]) { issues.push(...this.coverage.doModelValidation(expression+'.coverage')); }
+    this.vReqS('resourceType',expression)
+    this.vOptA('identifier',expression)
+    this.vOptSV('status',expression,'FmStatus',FmStatusVsValidation,'r')
+    this.vOptS('created',expression)
+    this.vOptS('insurer',expression)
+    this.vOptS('provider',expression)
+    this.vOptS('candidate',expression)
+    this.vOptS('coverage',expression)
     return issues;
   }
 }

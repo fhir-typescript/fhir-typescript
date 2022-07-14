@@ -1,6 +1,5 @@
 import * as fhir from '../fhir.js';
 import { SubstanceStatusCodeType } from '../fhirValueSets/SubstanceStatusCodes.js';
-import { SubstanceCategoryCodingType } from '../fhirValueSets/SubstanceCategoryCodings.js';
 /**
  * Valid arguments for the SubstanceInstance type.
  */
@@ -190,18 +189,6 @@ export declare class Substance extends fhir.DomainResource {
      * Default constructor for Substance - initializes any required elements to null if a value is not provided.
      */
     constructor(source?: Partial<SubstanceArgs>, options?: fhir.FhirConstructorOptions);
-    /**
-     * Required-bound Value Set for status (Substance.status)
-     */
-    static get statusRequiredCodes(): {
-        readonly Active: "active";
-        readonly EnteredInError: "entered-in-error";
-        readonly Inactive: "inactive";
-    };
-    /**
-     * Extensible-bound Value Set for category (Substance.category)
-     */
-    static get categoryExtensibleCodings(): SubstanceCategoryCodingType;
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */

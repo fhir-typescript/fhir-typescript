@@ -6,9 +6,9 @@
 import * as fhir from '../fhir.js';
 
 // @ts-ignore
-import { TriggerTypeCodings, TriggerTypeCodingType,} from '../fhirValueSets/TriggerTypeCodings.js';
-// @ts-ignore
 import { TriggerTypeCodes,  TriggerTypeCodeType } from '../fhirValueSets/TriggerTypeCodes.js';
+// @ts-ignore
+import { TriggerTypeVsValidation } from '../fhirValueSets/TriggerTypeVsValidation.js';
 /**
  * Valid arguments for the TriggerDefinition type.
  */
@@ -117,27 +117,16 @@ export class TriggerDefinition extends fhir.FhirElement {
     if (source['condition']) { this.condition = new fhir.Expression(source.condition); }
   }
   /**
-   * Required-bound Value Set for type (TriggerDefinition.type)
-   */
-  public static get typeRequiredCodes() {
-    return TriggerTypeCodes;
-  }
-  /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'TriggerDefinition' }
-    if (!this['type']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property type fhir: TriggerDefinition.type:code', expression: [expression] });
-    }
-    if (this['type'] && (!Object.values(TriggerTypeCodes).includes(this.type.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'type (TriggerDefinition.type) of type code is missing code for Required binding to: TriggerType', expression: [expression] });
-    }
-    if (this["type"]) { issues.push(...this.type.doModelValidation(expression+'.type')); }
-    if (this["name"]) { issues.push(...this.name.doModelValidation(expression+'.name')); }
-    if (this["data"]) { this.data.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.data[${i}]`)); }) }
-    if (this["condition"]) { issues.push(...this.condition.doModelValidation(expression+'.condition')); }
+    this.vReqSV('type',expression,'TriggerType',TriggerTypeVsValidation,'r')
+    this.vOptS('name',expression)
+    this.vOptS('timing',expression)
+    this.vOptA('data',expression)
+    this.vOptS('condition',expression)
     return issues;
   }
 }

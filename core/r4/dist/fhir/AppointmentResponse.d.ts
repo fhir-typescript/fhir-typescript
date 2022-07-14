@@ -1,5 +1,4 @@
 import * as fhir from '../fhir.js';
-import { EncounterParticipantTypeCodingType } from '../fhirValueSets/EncounterParticipantTypeCodings.js';
 import { ParticipationstatusCodeType } from '../fhirValueSets/ParticipationstatusCodes.js';
 /**
  * Valid arguments for the AppointmentResponse type.
@@ -110,19 +109,6 @@ export declare class AppointmentResponse extends fhir.DomainResource {
      * Default constructor for AppointmentResponse - initializes any required elements to null if a value is not provided.
      */
     constructor(source?: Partial<AppointmentResponseArgs>, options?: fhir.FhirConstructorOptions);
-    /**
-     * Extensible-bound Value Set for participantType (AppointmentResponse.participantType)
-     */
-    static get participantTypeExtensibleCodings(): EncounterParticipantTypeCodingType;
-    /**
-     * Required-bound Value Set for participantStatus (AppointmentResponse.participantStatus)
-     */
-    static get participantStatusRequiredCodes(): {
-        readonly Accepted: "accepted";
-        readonly Declined: "declined";
-        readonly NeedsAction: "needs-action";
-        readonly Tentative: "tentative";
-    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */

@@ -6,41 +6,41 @@
 import * as fhir from '../fhir.js';
 
 // @ts-ignore
-import { ConditionStageCodings, ConditionStageCodingType,} from '../fhirValueSets/ConditionStageCodings.js';
-// @ts-ignore
 import { ConditionStageCodes,  ConditionStageCodeType } from '../fhirValueSets/ConditionStageCodes.js';
 // @ts-ignore
-import { ConditionStageTypeCodings, ConditionStageTypeCodingType,} from '../fhirValueSets/ConditionStageTypeCodings.js';
+import { ConditionStageVsValidation } from '../fhirValueSets/ConditionStageVsValidation.js';
 // @ts-ignore
 import { ConditionStageTypeCodes,  ConditionStageTypeCodeType } from '../fhirValueSets/ConditionStageTypeCodes.js';
 // @ts-ignore
-import { ManifestationOrSymptomCodings, ManifestationOrSymptomCodingType,} from '../fhirValueSets/ManifestationOrSymptomCodings.js';
+import { ConditionStageTypeVsValidation } from '../fhirValueSets/ConditionStageTypeVsValidation.js';
 // @ts-ignore
 import { ManifestationOrSymptomCodes,  ManifestationOrSymptomCodeType } from '../fhirValueSets/ManifestationOrSymptomCodes.js';
 // @ts-ignore
-import { ConditionClinicalCodings, ConditionClinicalCodingType,} from '../fhirValueSets/ConditionClinicalCodings.js';
+import { ManifestationOrSymptomVsValidation } from '../fhirValueSets/ManifestationOrSymptomVsValidation.js';
 // @ts-ignore
 import { ConditionClinicalCodes,  ConditionClinicalCodeType } from '../fhirValueSets/ConditionClinicalCodes.js';
 // @ts-ignore
-import { ConditionVerStatusCodings, ConditionVerStatusCodingType,} from '../fhirValueSets/ConditionVerStatusCodings.js';
+import { ConditionClinicalVsValidation } from '../fhirValueSets/ConditionClinicalVsValidation.js';
 // @ts-ignore
 import { ConditionVerStatusCodes,  ConditionVerStatusCodeType } from '../fhirValueSets/ConditionVerStatusCodes.js';
 // @ts-ignore
-import { ConditionCategoryCodings, ConditionCategoryCodingType,} from '../fhirValueSets/ConditionCategoryCodings.js';
+import { ConditionVerStatusVsValidation } from '../fhirValueSets/ConditionVerStatusVsValidation.js';
 // @ts-ignore
 import { ConditionCategoryCodes,  ConditionCategoryCodeType } from '../fhirValueSets/ConditionCategoryCodes.js';
 // @ts-ignore
-import { ConditionSeverityCodings, ConditionSeverityCodingType,} from '../fhirValueSets/ConditionSeverityCodings.js';
+import { ConditionCategoryVsValidation } from '../fhirValueSets/ConditionCategoryVsValidation.js';
 // @ts-ignore
 import { ConditionSeverityCodes,  ConditionSeverityCodeType } from '../fhirValueSets/ConditionSeverityCodes.js';
 // @ts-ignore
-import { ConditionCodings, ConditionCodingType,} from '../fhirValueSets/ConditionCodings.js';
+import { ConditionSeverityVsValidation } from '../fhirValueSets/ConditionSeverityVsValidation.js';
 // @ts-ignore
 import { ConditionCodes,  ConditionCodeType } from '../fhirValueSets/ConditionCodes.js';
 // @ts-ignore
-import { BodySiteCodings, BodySiteCodingType,} from '../fhirValueSets/BodySiteCodings.js';
+import { ConditionVsValidation } from '../fhirValueSets/ConditionVsValidation.js';
 // @ts-ignore
 import { BodySiteCodes,  BodySiteCodeType } from '../fhirValueSets/BodySiteCodes.js';
+// @ts-ignore
+import { BodySiteVsValidation } from '../fhirValueSets/BodySiteVsValidation.js';
 /**
  * Valid arguments for the ConditionStage type.
  */
@@ -95,9 +95,9 @@ export class ConditionStage extends fhir.BackboneElement {
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'Condition.stage' }
-    if (this["summary"]) { issues.push(...this.summary.doModelValidation(expression+'.summary')); }
-    if (this["assessment"]) { this.assessment.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.assessment[${i}]`)); }) }
-    if (this["type"]) { issues.push(...this.type.doModelValidation(expression+'.type')); }
+    this.vOptS('summary',expression)
+    this.vOptA('assessment',expression)
+    this.vOptS('type',expression)
     return issues;
   }
 }
@@ -147,8 +147,8 @@ export class ConditionEvidence extends fhir.BackboneElement {
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'Condition.evidence' }
-    if (this["code"]) { this.code.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.code[${i}]`)); }) }
-    if (this["detail"]) { this.detail.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.detail[${i}]`)); }) }
+    this.vOptA('code',expression)
+    this.vOptA('detail',expression)
     return issues;
   }
 }
@@ -410,62 +410,29 @@ export class Condition extends fhir.DomainResource {
     else { this.note = []; }
   }
   /**
-   * Required-bound Value Set for clinicalStatus (Condition.clinicalStatus)
-   */
-  public static get clinicalStatusRequiredCodes() {
-    return ConditionClinicalCodes;
-  }
-  /**
-   * Required-bound Value Set for verificationStatus (Condition.verificationStatus)
-   */
-  public static get verificationStatusRequiredCodes() {
-    return ConditionVerStatusCodes;
-  }
-  /**
-   * Extensible-bound Value Set for category (Condition.category)
-   */
-  public static get categoryExtensibleCodings():ConditionCategoryCodingType {
-    return ConditionCategoryCodings;
-  }
-  /**
-   * Preferred-bound Value Set for severity (Condition.severity)
-   */
-  public static get severityPreferredCodings():ConditionSeverityCodingType {
-    return ConditionSeverityCodings;
-  }
-  /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'Condition' }
-    if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType fhir: Condition.resourceType:"Condition"', expression: [expression] });
-    }
-    if (this["identifier"]) { this.identifier.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.identifier[${i}]`)); }) }
-    if (this['clinicalStatus'] && (!this.clinicalStatus.hasCodingFromObject(ConditionClinicalCodings))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'clinicalStatus (Condition.clinicalStatus) of type CodeableConcept is missing code for Required binding to: ConditionClinical', expression: [expression] });
-    }
-    if (this["clinicalStatus"]) { issues.push(...this.clinicalStatus.doModelValidation(expression+'.clinicalStatus')); }
-    if (this['verificationStatus'] && (!this.verificationStatus.hasCodingFromObject(ConditionVerStatusCodings))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'verificationStatus (Condition.verificationStatus) of type CodeableConcept is missing code for Required binding to: ConditionVerStatus', expression: [expression] });
-    }
-    if (this["verificationStatus"]) { issues.push(...this.verificationStatus.doModelValidation(expression+'.verificationStatus')); }
-    if (this["category"]) { this.category.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.category[${i}]`)); }) }
-    if (this["severity"]) { issues.push(...this.severity.doModelValidation(expression+'.severity')); }
-    if (this["code"]) { issues.push(...this.code.doModelValidation(expression+'.code')); }
-    if (this["bodySite"]) { this.bodySite.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.bodySite[${i}]`)); }) }
-    if (!this['subject']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property subject fhir: Condition.subject:Reference', expression: [expression] });
-    }
-    if (this["subject"]) { issues.push(...this.subject.doModelValidation(expression+'.subject')); }
-    if (this["encounter"]) { issues.push(...this.encounter.doModelValidation(expression+'.encounter')); }
-    if (this["recordedDate"]) { issues.push(...this.recordedDate.doModelValidation(expression+'.recordedDate')); }
-    if (this["recorder"]) { issues.push(...this.recorder.doModelValidation(expression+'.recorder')); }
-    if (this["asserter"]) { issues.push(...this.asserter.doModelValidation(expression+'.asserter')); }
-    if (this["stage"]) { this.stage.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.stage[${i}]`)); }) }
-    if (this["evidence"]) { this.evidence.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.evidence[${i}]`)); }) }
-    if (this["note"]) { this.note.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.note[${i}]`)); }) }
+    this.vReqS('resourceType',expression)
+    this.vOptA('identifier',expression)
+    this.vOptSV('clinicalStatus',expression,'ConditionClinical',ConditionClinicalVsValidation,'r')
+    this.vOptSV('verificationStatus',expression,'ConditionVerStatus',ConditionVerStatusVsValidation,'r')
+    this.vOptA('category',expression)
+    this.vOptS('severity',expression)
+    this.vOptS('code',expression)
+    this.vOptA('bodySite',expression)
+    this.vReqS('subject',expression)
+    this.vOptS('encounter',expression)
+    this.vOptS('onset',expression)
+    this.vOptS('abatement',expression)
+    this.vOptS('recordedDate',expression)
+    this.vOptS('recorder',expression)
+    this.vOptS('asserter',expression)
+    this.vOptA('stage',expression)
+    this.vOptA('evidence',expression)
+    this.vOptA('note',expression)
     return issues;
   }
 }

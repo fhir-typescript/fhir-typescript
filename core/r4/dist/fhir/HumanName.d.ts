@@ -98,18 +98,6 @@ export declare class HumanName extends fhir.FhirElement {
      */
     constructor(source?: Partial<HumanNameArgs>, options?: fhir.FhirConstructorOptions);
     /**
-     * Required-bound Value Set for use (HumanName.use)
-     */
-    static get useRequiredCodes(): {
-        readonly Anonymous: "anonymous";
-        readonly NameChangedForMarriage: "maiden";
-        readonly Nickname: "nickname";
-        readonly Official: "official";
-        readonly Old: "old";
-        readonly Temp: "temp";
-        readonly Usual: "usual";
-    };
-    /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
     doModelValidation(expression?: string): fhir.FtsIssue[];

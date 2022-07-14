@@ -1,14 +1,7 @@
 import * as fhir from '../fhir.js';
-import { SecurityRoleTypeCodingType } from '../fhirValueSets/SecurityRoleTypeCodings.js';
 import { ConsentDataMeaningCodeType } from '../fhirValueSets/ConsentDataMeaningCodes.js';
 import { ConsentProvisionTypeCodeType } from '../fhirValueSets/ConsentProvisionTypeCodes.js';
-import { SecurityLabelsCodingType } from '../fhirValueSets/SecurityLabelsCodings.js';
-import { V3PurposeOfUseCodingType } from '../fhirValueSets/V3PurposeOfUseCodings.js';
-import { ConsentContentClassCodingType } from '../fhirValueSets/ConsentContentClassCodings.js';
 import { ConsentStateCodeType } from '../fhirValueSets/ConsentStateCodes.js';
-import { ConsentScopeCodingType } from '../fhirValueSets/ConsentScopeCodings.js';
-import { ConsentCategoryCodingType } from '../fhirValueSets/ConsentCategoryCodings.js';
-import { ConsentPolicyCodingType } from '../fhirValueSets/ConsentPolicyCodings.js';
 /**
  * Valid arguments for the ConsentPolicy type.
  */
@@ -143,10 +136,6 @@ export declare class ConsentProvisionActor extends fhir.BackboneElement {
      */
     constructor(source?: Partial<ConsentProvisionActorArgs>, options?: fhir.FhirConstructorOptions);
     /**
-     * Extensible-bound Value Set for role (Consent.provision.actor.role)
-     */
-    static get roleExtensibleCodings(): SecurityRoleTypeCodingType;
-    /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
     doModelValidation(expression?: string): fhir.FtsIssue[];
@@ -188,15 +177,6 @@ export declare class ConsentProvisionData extends fhir.BackboneElement {
      * Default constructor for ConsentProvisionData - initializes any required elements to null if a value is not provided.
      */
     constructor(source?: Partial<ConsentProvisionDataArgs>, options?: fhir.FhirConstructorOptions);
-    /**
-     * Required-bound Value Set for meaning (Consent.provision.data.meaning)
-     */
-    static get meaningRequiredCodes(): {
-        readonly AuthoredBy: "authoredby";
-        readonly Dependents: "dependents";
-        readonly Instance: "instance";
-        readonly Related: "related";
-    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
@@ -311,25 +291,6 @@ export declare class ConsentProvision extends fhir.BackboneElement {
      * Default constructor for ConsentProvision - initializes any required elements to null if a value is not provided.
      */
     constructor(source?: Partial<ConsentProvisionArgs>, options?: fhir.FhirConstructorOptions);
-    /**
-     * Required-bound Value Set for type (Consent.provision.type)
-     */
-    static get typeRequiredCodes(): {
-        readonly OptOut: "deny";
-        readonly OptIn: "permit";
-    };
-    /**
-     * Extensible-bound Value Set for securityLabel (Consent.provision.securityLabel)
-     */
-    static get securityLabelExtensibleCodings(): SecurityLabelsCodingType;
-    /**
-     * Extensible-bound Value Set for purpose (Consent.provision.purpose)
-     */
-    static get purposeExtensibleCodings(): V3PurposeOfUseCodingType;
-    /**
-     * Extensible-bound Value Set for class (Consent.provision.class)
-     */
-    static get classExtensibleCodings(): ConsentContentClassCodingType;
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
@@ -484,29 +445,6 @@ export declare class Consent extends fhir.DomainResource {
      * Default constructor for Consent - initializes any required elements to null if a value is not provided.
      */
     constructor(source?: Partial<ConsentArgs>, options?: fhir.FhirConstructorOptions);
-    /**
-     * Required-bound Value Set for status (Consent.status)
-     */
-    static get statusRequiredCodes(): {
-        readonly Active: "active";
-        readonly Pending: "draft";
-        readonly EnteredInError: "entered-in-error";
-        readonly Inactive: "inactive";
-        readonly Proposed: "proposed";
-        readonly Rejected: "rejected";
-    };
-    /**
-     * Extensible-bound Value Set for scope (Consent.scope)
-     */
-    static get scopeExtensibleCodings(): ConsentScopeCodingType;
-    /**
-     * Extensible-bound Value Set for category (Consent.category)
-     */
-    static get categoryExtensibleCodings(): ConsentCategoryCodingType;
-    /**
-     * Extensible-bound Value Set for policyRule (Consent.policyRule)
-     */
-    static get policyRuleExtensibleCodings(): ConsentPolicyCodingType;
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */

@@ -6,13 +6,13 @@
 import * as fhir from '../fhir.js';
 
 // @ts-ignore
-import { DocumentReferenceStatusCodings, DocumentReferenceStatusCodingType,} from '../fhirValueSets/DocumentReferenceStatusCodings.js';
-// @ts-ignore
 import { DocumentReferenceStatusCodes,  DocumentReferenceStatusCodeType } from '../fhirValueSets/DocumentReferenceStatusCodes.js';
 // @ts-ignore
-import { V3ActCodings, V3ActCodingType,} from '../fhirValueSets/V3ActCodings.js';
+import { DocumentReferenceStatusVsValidation } from '../fhirValueSets/DocumentReferenceStatusVsValidation.js';
 // @ts-ignore
 import { V3ActCodes,  V3ActCodeType } from '../fhirValueSets/V3ActCodes.js';
+// @ts-ignore
+import { V3ActVsValidation } from '../fhirValueSets/V3ActVsValidation.js';
 /**
  * Valid arguments for the DocumentManifestRelated type.
  */
@@ -57,8 +57,8 @@ export class DocumentManifestRelated extends fhir.BackboneElement {
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'DocumentManifest.related' }
-    if (this["identifier"]) { issues.push(...this.identifier.doModelValidation(expression+'.identifier')); }
-    if (this["ref"]) { issues.push(...this.ref.doModelValidation(expression+'.ref')); }
+    this.vOptS('identifier',expression)
+    this.vOptS('ref',expression)
     return issues;
   }
 }
@@ -238,45 +238,24 @@ export class DocumentManifest extends fhir.DomainResource {
     else { this.related = []; }
   }
   /**
-   * Required-bound Value Set for status (DocumentManifest.status)
-   */
-  public static get statusRequiredCodes() {
-    return DocumentReferenceStatusCodes;
-  }
-  /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'DocumentManifest' }
-    if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType fhir: DocumentManifest.resourceType:"DocumentManifest"', expression: [expression] });
-    }
-    if (this["masterIdentifier"]) { issues.push(...this.masterIdentifier.doModelValidation(expression+'.masterIdentifier')); }
-    if (this["identifier"]) { this.identifier.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.identifier[${i}]`)); }) }
-    if (!this['status']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status fhir: DocumentManifest.status:code', expression: [expression] });
-    }
-    if (this['status'] && (!Object.values(DocumentReferenceStatusCodes).includes(this.status.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'status (DocumentManifest.status) of type code is missing code for Required binding to: DocumentReferenceStatus', expression: [expression] });
-    }
-    if (this["status"]) { issues.push(...this.status.doModelValidation(expression+'.status')); }
-    if (this["type"]) { issues.push(...this.type.doModelValidation(expression+'.type')); }
-    if (this["subject"]) { issues.push(...this.subject.doModelValidation(expression+'.subject')); }
-    if (this["created"]) { issues.push(...this.created.doModelValidation(expression+'.created')); }
-    if (this["author"]) { this.author.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.author[${i}]`)); }) }
-    if (this["recipient"]) { this.recipient.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.recipient[${i}]`)); }) }
-    if (this["source"]) { issues.push(...this.source.doModelValidation(expression+'.source')); }
-    if (this["description"]) { issues.push(...this.description.doModelValidation(expression+'.description')); }
-    if (!this['content']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property content fhir: DocumentManifest.content:Reference', expression: [expression] });
-    } else if (!Array.isArray(this.content)) {
-      issues.push({ severity: 'error', code: 'structure', diagnostics: 'Found scalar in array property content fhir: DocumentManifest.content:Reference', expression: [expression] });
-    } else if (this.content.length === 0) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property content fhir: DocumentManifest.content:Reference', expression: [expression] });
-    }
-    if (this["content"]) { this.content.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.content[${i}]`)); }) }
-    if (this["related"]) { this.related.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.related[${i}]`)); }) }
+    this.vReqS('resourceType',expression)
+    this.vOptS('masterIdentifier',expression)
+    this.vOptA('identifier',expression)
+    this.vReqSV('status',expression,'DocumentReferenceStatus',DocumentReferenceStatusVsValidation,'r')
+    this.vOptS('type',expression)
+    this.vOptS('subject',expression)
+    this.vOptS('created',expression)
+    this.vOptA('author',expression)
+    this.vOptA('recipient',expression)
+    this.vOptS('source',expression)
+    this.vOptS('description',expression)
+    this.vReqA('content',expression)
+    this.vOptA('related',expression)
     return issues;
   }
 }

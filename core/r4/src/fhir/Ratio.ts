@@ -49,8 +49,8 @@ export class Ratio extends fhir.FhirElement {
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'Ratio' }
-    if (this["numerator"]) { issues.push(...this.numerator.doModelValidation(expression+'.numerator')); }
-    if (this["denominator"]) { issues.push(...this.denominator.doModelValidation(expression+'.denominator')); }
+    this.vOptS('numerator',expression)
+    this.vOptS('denominator',expression)
     return issues;
   }
 }

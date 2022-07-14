@@ -6,13 +6,13 @@
 import * as fhir from '../fhir.js';
 
 // @ts-ignore
-import { SortDirectionCodings, SortDirectionCodingType,} from '../fhirValueSets/SortDirectionCodings.js';
-// @ts-ignore
 import { SortDirectionCodes,  SortDirectionCodeType } from '../fhirValueSets/SortDirectionCodes.js';
 // @ts-ignore
-import { AllTypesCodings, AllTypesCodingType,} from '../fhirValueSets/AllTypesCodings.js';
+import { SortDirectionVsValidation } from '../fhirValueSets/SortDirectionVsValidation.js';
 // @ts-ignore
 import { AllTypesCodes,  AllTypesCodeType } from '../fhirValueSets/AllTypesCodes.js';
+// @ts-ignore
+import { AllTypesVsValidation } from '../fhirValueSets/AllTypesVsValidation.js';
 /**
  * Valid arguments for the DataRequirementCodeFilter type.
  */
@@ -100,10 +100,10 @@ export class DataRequirementCodeFilter extends fhir.FhirElement {
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'DataRequirement.codeFilter' }
-    if (this["path"]) { issues.push(...this.path.doModelValidation(expression+'.path')); }
-    if (this["searchParam"]) { issues.push(...this.searchParam.doModelValidation(expression+'.searchParam')); }
-    if (this["valueSet"]) { issues.push(...this.valueSet.doModelValidation(expression+'.valueSet')); }
-    if (this["code"]) { this.code.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.code[${i}]`)); }) }
+    this.vOptS('path',expression)
+    this.vOptS('searchParam',expression)
+    this.vOptS('valueSet',expression)
+    this.vOptA('code',expression)
     return issues;
   }
 }
@@ -195,8 +195,9 @@ export class DataRequirementDateFilter extends fhir.FhirElement {
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'DataRequirement.dateFilter' }
-    if (this["path"]) { issues.push(...this.path.doModelValidation(expression+'.path')); }
-    if (this["searchParam"]) { issues.push(...this.searchParam.doModelValidation(expression+'.searchParam')); }
+    this.vOptS('path',expression)
+    this.vOptS('searchParam',expression)
+    this.vOptS('value',expression)
     return issues;
   }
 }
@@ -257,28 +258,13 @@ export class DataRequirementSort extends fhir.FhirElement {
     }
   }
   /**
-   * Required-bound Value Set for direction (DataRequirement.sort.direction)
-   */
-  public static get directionRequiredCodes() {
-    return SortDirectionCodes;
-  }
-  /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'DataRequirement.sort' }
-    if (!this['path']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property path fhir: DataRequirement.sort.path:string', expression: [expression] });
-    }
-    if (this["path"]) { issues.push(...this.path.doModelValidation(expression+'.path')); }
-    if (!this['direction']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property direction fhir: DataRequirement.sort.direction:code', expression: [expression] });
-    }
-    if (this['direction'] && (!Object.values(SortDirectionCodes).includes(this.direction.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'direction (DataRequirement.sort.direction) of type code is missing code for Required binding to: SortDirection', expression: [expression] });
-    }
-    if (this["direction"]) { issues.push(...this.direction.doModelValidation(expression+'.direction')); }
+    this.vReqS('path',expression)
+    this.vReqSV('direction',expression,'SortDirection',SortDirectionVsValidation,'r')
     return issues;
   }
 }
@@ -433,30 +419,19 @@ export class DataRequirement extends fhir.FhirElement {
     else { this.sort = []; }
   }
   /**
-   * Required-bound Value Set for type (DataRequirement.type)
-   */
-  public static get typeRequiredCodes() {
-    return AllTypesCodes;
-  }
-  /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'DataRequirement' }
-    if (!this['type']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property type fhir: DataRequirement.type:code', expression: [expression] });
-    }
-    if (this['type'] && (!Object.values(AllTypesCodes).includes(this.type.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'type (DataRequirement.type) of type code is missing code for Required binding to: AllTypes', expression: [expression] });
-    }
-    if (this["type"]) { issues.push(...this.type.doModelValidation(expression+'.type')); }
-    if (this["profile"]) { this.profile.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.profile[${i}]`)); }) }
-    if (this["mustSupport"]) { this.mustSupport.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.mustSupport[${i}]`)); }) }
-    if (this["codeFilter"]) { this.codeFilter.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.codeFilter[${i}]`)); }) }
-    if (this["dateFilter"]) { this.dateFilter.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.dateFilter[${i}]`)); }) }
-    if (this["limit"]) { issues.push(...this.limit.doModelValidation(expression+'.limit')); }
-    if (this["sort"]) { this.sort.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.sort[${i}]`)); }) }
+    this.vReqSV('type',expression,'AllTypes',AllTypesVsValidation,'r')
+    this.vOptA('profile',expression)
+    this.vOptS('subject',expression)
+    this.vOptA('mustSupport',expression)
+    this.vOptA('codeFilter',expression)
+    this.vOptA('dateFilter',expression)
+    this.vOptS('limit',expression)
+    this.vOptA('sort',expression)
     return issues;
   }
 }

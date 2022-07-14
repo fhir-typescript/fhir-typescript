@@ -102,24 +102,6 @@ export declare class ResearchSubject extends fhir.DomainResource {
      */
     constructor(source?: Partial<ResearchSubjectArgs>, options?: fhir.FhirConstructorOptions);
     /**
-     * Required-bound Value Set for status (ResearchSubject.status)
-     */
-    static get statusRequiredCodes(): {
-        readonly Candidate: "candidate";
-        readonly Eligible: "eligible";
-        readonly FollowUp: "follow-up";
-        readonly Ineligible: "ineligible";
-        readonly NotRegistered: "not-registered";
-        readonly OffStudy: "off-study";
-        readonly OnStudy: "on-study";
-        readonly OnStudyIntervention: "on-study-intervention";
-        readonly OnStudyObservation: "on-study-observation";
-        readonly PendingOnStudy: "pending-on-study";
-        readonly PotentialCandidate: "potential-candidate";
-        readonly Screening: "screening";
-        readonly Withdrawn: "withdrawn";
-    };
-    /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
     doModelValidation(expression?: string): fhir.FtsIssue[];

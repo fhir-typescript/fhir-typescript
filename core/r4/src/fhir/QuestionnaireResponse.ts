@@ -6,9 +6,9 @@
 import * as fhir from '../fhir.js';
 
 // @ts-ignore
-import { QuestionnaireAnswersStatusCodings, QuestionnaireAnswersStatusCodingType,} from '../fhirValueSets/QuestionnaireAnswersStatusCodings.js';
-// @ts-ignore
 import { QuestionnaireAnswersStatusCodes,  QuestionnaireAnswersStatusCodeType } from '../fhirValueSets/QuestionnaireAnswersStatusCodes.js';
+// @ts-ignore
+import { QuestionnaireAnswersStatusVsValidation } from '../fhirValueSets/QuestionnaireAnswersStatusVsValidation.js';
 /**
  * Valid arguments for the QuestionnaireResponseItemAnswer type.
  */
@@ -118,7 +118,8 @@ export class QuestionnaireResponseItemAnswer extends fhir.BackboneElement {
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'QuestionnaireResponse.item.answer' }
-    if (this["item"]) { this.item.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.item[${i}]`)); }) }
+    this.vOptS('value',expression)
+    this.vOptA('item',expression)
     return issues;
   }
 }
@@ -222,14 +223,11 @@ export class QuestionnaireResponseItem extends fhir.BackboneElement {
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'QuestionnaireResponse.item' }
-    if (!this['linkId']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property linkId fhir: QuestionnaireResponse.item.linkId:string', expression: [expression] });
-    }
-    if (this["linkId"]) { issues.push(...this.linkId.doModelValidation(expression+'.linkId')); }
-    if (this["definition"]) { issues.push(...this.definition.doModelValidation(expression+'.definition')); }
-    if (this["text"]) { issues.push(...this.text.doModelValidation(expression+'.text')); }
-    if (this["answer"]) { this.answer.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.answer[${i}]`)); }) }
-    if (this["item"]) { this.item.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.item[${i}]`)); }) }
+    this.vReqS('linkId',expression)
+    this.vOptS('definition',expression)
+    this.vOptS('text',expression)
+    this.vOptA('answer',expression)
+    this.vOptA('item',expression)
     return issues;
   }
 }
@@ -392,37 +390,23 @@ export class QuestionnaireResponse extends fhir.DomainResource {
     else { this.item = []; }
   }
   /**
-   * Required-bound Value Set for status (QuestionnaireResponse.status)
-   */
-  public static get statusRequiredCodes() {
-    return QuestionnaireAnswersStatusCodes;
-  }
-  /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'QuestionnaireResponse' }
-    if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType fhir: QuestionnaireResponse.resourceType:"QuestionnaireResponse"', expression: [expression] });
-    }
-    if (this["identifier"]) { issues.push(...this.identifier.doModelValidation(expression+'.identifier')); }
-    if (this["basedOn"]) { this.basedOn.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.basedOn[${i}]`)); }) }
-    if (this["partOf"]) { this.partOf.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.partOf[${i}]`)); }) }
-    if (this["questionnaire"]) { issues.push(...this.questionnaire.doModelValidation(expression+'.questionnaire')); }
-    if (!this['status']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status fhir: QuestionnaireResponse.status:code', expression: [expression] });
-    }
-    if (this['status'] && (!Object.values(QuestionnaireAnswersStatusCodes).includes(this.status.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'status (QuestionnaireResponse.status) of type code is missing code for Required binding to: QuestionnaireAnswersStatus', expression: [expression] });
-    }
-    if (this["status"]) { issues.push(...this.status.doModelValidation(expression+'.status')); }
-    if (this["subject"]) { issues.push(...this.subject.doModelValidation(expression+'.subject')); }
-    if (this["encounter"]) { issues.push(...this.encounter.doModelValidation(expression+'.encounter')); }
-    if (this["authored"]) { issues.push(...this.authored.doModelValidation(expression+'.authored')); }
-    if (this["author"]) { issues.push(...this.author.doModelValidation(expression+'.author')); }
-    if (this["source"]) { issues.push(...this.source.doModelValidation(expression+'.source')); }
-    if (this["item"]) { this.item.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.item[${i}]`)); }) }
+    this.vReqS('resourceType',expression)
+    this.vOptS('identifier',expression)
+    this.vOptA('basedOn',expression)
+    this.vOptA('partOf',expression)
+    this.vOptS('questionnaire',expression)
+    this.vReqSV('status',expression,'QuestionnaireAnswersStatus',QuestionnaireAnswersStatusVsValidation,'r')
+    this.vOptS('subject',expression)
+    this.vOptS('encounter',expression)
+    this.vOptS('authored',expression)
+    this.vOptS('author',expression)
+    this.vOptS('source',expression)
+    this.vOptA('item',expression)
     return issues;
   }
 }

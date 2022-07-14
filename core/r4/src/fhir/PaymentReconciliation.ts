@@ -6,25 +6,25 @@
 import * as fhir from '../fhir.js';
 
 // @ts-ignore
-import { PaymentTypeCodings, PaymentTypeCodingType,} from '../fhirValueSets/PaymentTypeCodings.js';
-// @ts-ignore
 import { PaymentTypeCodes,  PaymentTypeCodeType } from '../fhirValueSets/PaymentTypeCodes.js';
 // @ts-ignore
-import { NoteTypeCodings, NoteTypeCodingType,} from '../fhirValueSets/NoteTypeCodings.js';
+import { PaymentTypeVsValidation } from '../fhirValueSets/PaymentTypeVsValidation.js';
 // @ts-ignore
 import { NoteTypeCodes,  NoteTypeCodeType } from '../fhirValueSets/NoteTypeCodes.js';
 // @ts-ignore
-import { FmStatusCodings, FmStatusCodingType,} from '../fhirValueSets/FmStatusCodings.js';
+import { NoteTypeVsValidation } from '../fhirValueSets/NoteTypeVsValidation.js';
 // @ts-ignore
 import { FmStatusCodes,  FmStatusCodeType } from '../fhirValueSets/FmStatusCodes.js';
 // @ts-ignore
-import { RemittanceOutcomeCodings, RemittanceOutcomeCodingType,} from '../fhirValueSets/RemittanceOutcomeCodings.js';
+import { FmStatusVsValidation } from '../fhirValueSets/FmStatusVsValidation.js';
 // @ts-ignore
 import { RemittanceOutcomeCodes,  RemittanceOutcomeCodeType } from '../fhirValueSets/RemittanceOutcomeCodes.js';
 // @ts-ignore
-import { FormsCodings, FormsCodingType,} from '../fhirValueSets/FormsCodings.js';
+import { RemittanceOutcomeVsValidation } from '../fhirValueSets/RemittanceOutcomeVsValidation.js';
 // @ts-ignore
 import { FormsCodes,  FormsCodeType } from '../fhirValueSets/FormsCodes.js';
+// @ts-ignore
+import { FormsVsValidation } from '../fhirValueSets/FormsVsValidation.js';
 /**
  * Valid arguments for the PaymentReconciliationDetail type.
  */
@@ -150,19 +150,16 @@ export class PaymentReconciliationDetail extends fhir.BackboneElement {
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'PaymentReconciliation.detail' }
-    if (this["identifier"]) { issues.push(...this.identifier.doModelValidation(expression+'.identifier')); }
-    if (this["predecessor"]) { issues.push(...this.predecessor.doModelValidation(expression+'.predecessor')); }
-    if (!this['type']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property type fhir: PaymentReconciliation.detail.type:CodeableConcept', expression: [expression] });
-    }
-    if (this["type"]) { issues.push(...this.type.doModelValidation(expression+'.type')); }
-    if (this["request"]) { issues.push(...this.request.doModelValidation(expression+'.request')); }
-    if (this["submitter"]) { issues.push(...this.submitter.doModelValidation(expression+'.submitter')); }
-    if (this["response"]) { issues.push(...this.response.doModelValidation(expression+'.response')); }
-    if (this["date"]) { issues.push(...this.date.doModelValidation(expression+'.date')); }
-    if (this["responsible"]) { issues.push(...this.responsible.doModelValidation(expression+'.responsible')); }
-    if (this["payee"]) { issues.push(...this.payee.doModelValidation(expression+'.payee')); }
-    if (this["amount"]) { issues.push(...this.amount.doModelValidation(expression+'.amount')); }
+    this.vOptS('identifier',expression)
+    this.vOptS('predecessor',expression)
+    this.vReqS('type',expression)
+    this.vOptS('request',expression)
+    this.vOptS('submitter',expression)
+    this.vOptS('response',expression)
+    this.vOptS('date',expression)
+    this.vOptS('responsible',expression)
+    this.vOptS('payee',expression)
+    this.vOptS('amount',expression)
     return issues;
   }
 }
@@ -221,22 +218,13 @@ export class PaymentReconciliationProcessNote extends fhir.BackboneElement {
     }
   }
   /**
-   * Required-bound Value Set for type (PaymentReconciliation.processNote.type)
-   */
-  public static get typeRequiredCodes() {
-    return NoteTypeCodes;
-  }
-  /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'PaymentReconciliation.processNote' }
-    if (this['type'] && (!Object.values(NoteTypeCodes).includes(this.type.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'type (PaymentReconciliation.processNote.type) of type code is missing code for Required binding to: NoteType', expression: [expression] });
-    }
-    if (this["type"]) { issues.push(...this.type.doModelValidation(expression+'.type')); }
-    if (this["text"]) { issues.push(...this.text.doModelValidation(expression+'.text')); }
+    this.vOptSV('type',expression,'NoteType',NoteTypeVsValidation,'r')
+    this.vOptS('text',expression)
     return issues;
   }
 }
@@ -452,59 +440,27 @@ export class PaymentReconciliation extends fhir.DomainResource {
     else { this.processNote = []; }
   }
   /**
-   * Required-bound Value Set for status (PaymentReconciliation.status)
-   */
-  public static get statusRequiredCodes() {
-    return FmStatusCodes;
-  }
-  /**
-   * Required-bound Value Set for outcome (PaymentReconciliation.outcome)
-   */
-  public static get outcomeRequiredCodes() {
-    return RemittanceOutcomeCodes;
-  }
-  /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'PaymentReconciliation' }
-    if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType fhir: PaymentReconciliation.resourceType:"PaymentReconciliation"', expression: [expression] });
-    }
-    if (this["identifier"]) { this.identifier.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.identifier[${i}]`)); }) }
-    if (!this['status']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status fhir: PaymentReconciliation.status:code', expression: [expression] });
-    }
-    if (this['status'] && (!Object.values(FmStatusCodes).includes(this.status.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'status (PaymentReconciliation.status) of type code is missing code for Required binding to: FmStatus', expression: [expression] });
-    }
-    if (this["status"]) { issues.push(...this.status.doModelValidation(expression+'.status')); }
-    if (this["period"]) { issues.push(...this.period.doModelValidation(expression+'.period')); }
-    if (!this['created']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property created fhir: PaymentReconciliation.created:dateTime', expression: [expression] });
-    }
-    if (this["created"]) { issues.push(...this.created.doModelValidation(expression+'.created')); }
-    if (this["paymentIssuer"]) { issues.push(...this.paymentIssuer.doModelValidation(expression+'.paymentIssuer')); }
-    if (this["request"]) { issues.push(...this.request.doModelValidation(expression+'.request')); }
-    if (this["requestor"]) { issues.push(...this.requestor.doModelValidation(expression+'.requestor')); }
-    if (this['outcome'] && (!Object.values(RemittanceOutcomeCodes).includes(this.outcome.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'outcome (PaymentReconciliation.outcome) of type code is missing code for Required binding to: RemittanceOutcome', expression: [expression] });
-    }
-    if (this["outcome"]) { issues.push(...this.outcome.doModelValidation(expression+'.outcome')); }
-    if (this["disposition"]) { issues.push(...this.disposition.doModelValidation(expression+'.disposition')); }
-    if (!this['paymentDate']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property paymentDate fhir: PaymentReconciliation.paymentDate:date', expression: [expression] });
-    }
-    if (this["paymentDate"]) { issues.push(...this.paymentDate.doModelValidation(expression+'.paymentDate')); }
-    if (!this['paymentAmount']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property paymentAmount fhir: PaymentReconciliation.paymentAmount:Money', expression: [expression] });
-    }
-    if (this["paymentAmount"]) { issues.push(...this.paymentAmount.doModelValidation(expression+'.paymentAmount')); }
-    if (this["paymentIdentifier"]) { issues.push(...this.paymentIdentifier.doModelValidation(expression+'.paymentIdentifier')); }
-    if (this["detail"]) { this.detail.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.detail[${i}]`)); }) }
-    if (this["formCode"]) { issues.push(...this.formCode.doModelValidation(expression+'.formCode')); }
-    if (this["processNote"]) { this.processNote.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.processNote[${i}]`)); }) }
+    this.vReqS('resourceType',expression)
+    this.vOptA('identifier',expression)
+    this.vReqSV('status',expression,'FmStatus',FmStatusVsValidation,'r')
+    this.vOptS('period',expression)
+    this.vReqS('created',expression)
+    this.vOptS('paymentIssuer',expression)
+    this.vOptS('request',expression)
+    this.vOptS('requestor',expression)
+    this.vOptSV('outcome',expression,'RemittanceOutcome',RemittanceOutcomeVsValidation,'r')
+    this.vOptS('disposition',expression)
+    this.vReqS('paymentDate',expression)
+    this.vReqS('paymentAmount',expression)
+    this.vOptS('paymentIdentifier',expression)
+    this.vOptA('detail',expression)
+    this.vOptS('formCode',expression)
+    this.vOptA('processNote',expression)
     return issues;
   }
 }

@@ -6,13 +6,13 @@
 import * as fhir from '../fhir.js';
 
 // @ts-ignore
-import { ResourceTypesValueSetCodings, ResourceTypesValueSetCodingType,} from '../fhirValueSets/ResourceTypesValueSetCodings.js';
-// @ts-ignore
 import { ResourceTypesValueSetCodes,  ResourceTypesValueSetCodeType } from '../fhirValueSets/ResourceTypesValueSetCodes.js';
 // @ts-ignore
-import { LanguagesCodings, LanguagesCodingType,} from '../fhirValueSets/LanguagesCodings.js';
+import { ResourceTypesValueSetVsValidation } from '../fhirValueSets/ResourceTypesValueSetVsValidation.js';
 // @ts-ignore
 import { LanguagesCodes,  LanguagesCodeType } from '../fhirValueSets/LanguagesCodes.js';
+// @ts-ignore
+import { LanguagesVsValidation } from '../fhirValueSets/LanguagesVsValidation.js';
 /**
  * Valid arguments for the Resource type.
  */
@@ -103,24 +103,16 @@ export class Resource extends fhir.FhirBase {
     }
   }
   /**
-   * Preferred-bound Value Set for language (Resource.language)
-   */
-  public static get languagePreferredCodings():LanguagesCodingType {
-    return LanguagesCodings;
-  }
-  /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'Resource' }
-    if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType fhir: Resource.resourceType:string', expression: [expression] });
-    }
-    if (this["id"]) { issues.push(...this.id.doModelValidation(expression+'.id')); }
-    if (this["meta"]) { issues.push(...this.meta.doModelValidation(expression+'.meta')); }
-    if (this["implicitRules"]) { issues.push(...this.implicitRules.doModelValidation(expression+'.implicitRules')); }
-    if (this["language"]) { issues.push(...this.language.doModelValidation(expression+'.language')); }
+    this.vReqS('resourceType',expression)
+    this.vOptS('id',expression)
+    this.vOptS('meta',expression)
+    this.vOptS('implicitRules',expression)
+    this.vOptS('language',expression)
     return issues;
   }
 }

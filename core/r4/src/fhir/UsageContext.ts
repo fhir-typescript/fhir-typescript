@@ -6,9 +6,9 @@
 import * as fhir from '../fhir.js';
 
 // @ts-ignore
-import { UsageContextTypeCodings, UsageContextTypeCodingType,} from '../fhirValueSets/UsageContextTypeCodings.js';
-// @ts-ignore
 import { UsageContextTypeCodes,  UsageContextTypeCodeType } from '../fhirValueSets/UsageContextTypeCodes.js';
+// @ts-ignore
+import { UsageContextTypeVsValidation } from '../fhirValueSets/UsageContextTypeVsValidation.js';
 /**
  * Valid arguments for the UsageContext type.
  */
@@ -74,24 +74,13 @@ export class UsageContext extends fhir.FhirElement {
     else { this.value = null; }
   }
   /**
-   * Extensible-bound Value Set for code (UsageContext.code)
-   */
-  public static get codeExtensibleCodings():UsageContextTypeCodingType {
-    return UsageContextTypeCodings;
-  }
-  /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'UsageContext' }
-    if (!this['code']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property code fhir: UsageContext.code:Coding', expression: [expression] });
-    }
-    if (this["code"]) { issues.push(...this.code.doModelValidation(expression+'.code')); }
-    if (!this['value']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property value fhir: UsageContext.value[x]:', expression: [expression] });
-    }
+    this.vReqS('code',expression)
+    this.vReqS('value',expression)
     return issues;
   }
 }

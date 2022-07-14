@@ -190,14 +190,6 @@ export declare class MessageHeaderResponse extends fhir.BackboneElement {
      */
     constructor(source?: Partial<MessageHeaderResponseArgs>, options?: fhir.FhirConstructorOptions);
     /**
-     * Required-bound Value Set for code (MessageHeader.response.code)
-     */
-    static get codeRequiredCodes(): {
-        readonly FatalError: "fatal-error";
-        readonly OK: "ok";
-        readonly TransientError: "transient-error";
-    };
-    /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
     doModelValidation(expression?: string): fhir.FtsIssue[];

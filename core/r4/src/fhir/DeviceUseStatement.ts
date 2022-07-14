@@ -6,13 +6,13 @@
 import * as fhir from '../fhir.js';
 
 // @ts-ignore
-import { DeviceStatementStatusCodings, DeviceStatementStatusCodingType,} from '../fhirValueSets/DeviceStatementStatusCodings.js';
-// @ts-ignore
 import { DeviceStatementStatusCodes,  DeviceStatementStatusCodeType } from '../fhirValueSets/DeviceStatementStatusCodes.js';
 // @ts-ignore
-import { BodySiteCodings, BodySiteCodingType,} from '../fhirValueSets/BodySiteCodings.js';
+import { DeviceStatementStatusVsValidation } from '../fhirValueSets/DeviceStatementStatusVsValidation.js';
 // @ts-ignore
 import { BodySiteCodes,  BodySiteCodeType } from '../fhirValueSets/BodySiteCodes.js';
+// @ts-ignore
+import { BodySiteVsValidation } from '../fhirValueSets/BodySiteVsValidation.js';
 /**
  * Valid arguments for the DeviceUseStatement type.
  */
@@ -206,44 +206,25 @@ export class DeviceUseStatement extends fhir.DomainResource {
     else { this.note = []; }
   }
   /**
-   * Required-bound Value Set for status (DeviceUseStatement.status)
-   */
-  public static get statusRequiredCodes() {
-    return DeviceStatementStatusCodes;
-  }
-  /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'DeviceUseStatement' }
-    if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType fhir: DeviceUseStatement.resourceType:"DeviceUseStatement"', expression: [expression] });
-    }
-    if (this["identifier"]) { this.identifier.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.identifier[${i}]`)); }) }
-    if (this["basedOn"]) { this.basedOn.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.basedOn[${i}]`)); }) }
-    if (!this['status']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status fhir: DeviceUseStatement.status:code', expression: [expression] });
-    }
-    if (this['status'] && (!Object.values(DeviceStatementStatusCodes).includes(this.status.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'status (DeviceUseStatement.status) of type code is missing code for Required binding to: DeviceStatementStatus', expression: [expression] });
-    }
-    if (this["status"]) { issues.push(...this.status.doModelValidation(expression+'.status')); }
-    if (!this['subject']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property subject fhir: DeviceUseStatement.subject:Reference', expression: [expression] });
-    }
-    if (this["subject"]) { issues.push(...this.subject.doModelValidation(expression+'.subject')); }
-    if (this["derivedFrom"]) { this.derivedFrom.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.derivedFrom[${i}]`)); }) }
-    if (this["recordedOn"]) { issues.push(...this.recordedOn.doModelValidation(expression+'.recordedOn')); }
-    if (this["source"]) { issues.push(...this.source.doModelValidation(expression+'.source')); }
-    if (!this['device']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property device fhir: DeviceUseStatement.device:Reference', expression: [expression] });
-    }
-    if (this["device"]) { issues.push(...this.device.doModelValidation(expression+'.device')); }
-    if (this["reasonCode"]) { this.reasonCode.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.reasonCode[${i}]`)); }) }
-    if (this["reasonReference"]) { this.reasonReference.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.reasonReference[${i}]`)); }) }
-    if (this["bodySite"]) { issues.push(...this.bodySite.doModelValidation(expression+'.bodySite')); }
-    if (this["note"]) { this.note.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.note[${i}]`)); }) }
+    this.vReqS('resourceType',expression)
+    this.vOptA('identifier',expression)
+    this.vOptA('basedOn',expression)
+    this.vReqSV('status',expression,'DeviceStatementStatus',DeviceStatementStatusVsValidation,'r')
+    this.vReqS('subject',expression)
+    this.vOptA('derivedFrom',expression)
+    this.vOptS('timing',expression)
+    this.vOptS('recordedOn',expression)
+    this.vOptS('source',expression)
+    this.vReqS('device',expression)
+    this.vOptA('reasonCode',expression)
+    this.vOptA('reasonReference',expression)
+    this.vOptS('bodySite',expression)
+    this.vOptA('note',expression)
     return issues;
   }
 }

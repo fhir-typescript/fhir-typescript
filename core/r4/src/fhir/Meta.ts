@@ -6,13 +6,13 @@
 import * as fhir from '../fhir.js';
 
 // @ts-ignore
-import { SecurityLabelsCodings, SecurityLabelsCodingType,} from '../fhirValueSets/SecurityLabelsCodings.js';
-// @ts-ignore
 import { SecurityLabelsCodes,  SecurityLabelsCodeType } from '../fhirValueSets/SecurityLabelsCodes.js';
 // @ts-ignore
-import { CommonTagsCodings, CommonTagsCodingType,} from '../fhirValueSets/CommonTagsCodings.js';
+import { SecurityLabelsVsValidation } from '../fhirValueSets/SecurityLabelsVsValidation.js';
 // @ts-ignore
 import { CommonTagsCodes,  CommonTagsCodeType } from '../fhirValueSets/CommonTagsCodes.js';
+// @ts-ignore
+import { CommonTagsVsValidation } from '../fhirValueSets/CommonTagsVsValidation.js';
 /**
  * Valid arguments for the Meta type.
  */
@@ -127,23 +127,17 @@ export class Meta extends fhir.FhirElement {
     else { this.tag = []; }
   }
   /**
-   * Extensible-bound Value Set for security (Meta.security)
-   */
-  public static get securityExtensibleCodings():SecurityLabelsCodingType {
-    return SecurityLabelsCodings;
-  }
-  /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'Meta' }
-    if (this["versionId"]) { issues.push(...this.versionId.doModelValidation(expression+'.versionId')); }
-    if (this["lastUpdated"]) { issues.push(...this.lastUpdated.doModelValidation(expression+'.lastUpdated')); }
-    if (this["source"]) { issues.push(...this.source.doModelValidation(expression+'.source')); }
-    if (this["profile"]) { this.profile.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.profile[${i}]`)); }) }
-    if (this["security"]) { this.security.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.security[${i}]`)); }) }
-    if (this["tag"]) { this.tag.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.tag[${i}]`)); }) }
+    this.vOptS('versionId',expression)
+    this.vOptS('lastUpdated',expression)
+    this.vOptS('source',expression)
+    this.vOptA('profile',expression)
+    this.vOptA('security',expression)
+    this.vOptA('tag',expression)
     return issues;
   }
 }

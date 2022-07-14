@@ -6,17 +6,17 @@
 import * as fhir from '../fhir.js';
 
 // @ts-ignore
-import { ParticipantRoleCodings, ParticipantRoleCodingType,} from '../fhirValueSets/ParticipantRoleCodings.js';
-// @ts-ignore
 import { ParticipantRoleCodes,  ParticipantRoleCodeType } from '../fhirValueSets/ParticipantRoleCodes.js';
 // @ts-ignore
-import { CareTeamStatusCodings, CareTeamStatusCodingType,} from '../fhirValueSets/CareTeamStatusCodings.js';
+import { ParticipantRoleVsValidation } from '../fhirValueSets/ParticipantRoleVsValidation.js';
 // @ts-ignore
 import { CareTeamStatusCodes,  CareTeamStatusCodeType } from '../fhirValueSets/CareTeamStatusCodes.js';
 // @ts-ignore
-import { ClinicalFindingsCodings, ClinicalFindingsCodingType,} from '../fhirValueSets/ClinicalFindingsCodings.js';
+import { CareTeamStatusVsValidation } from '../fhirValueSets/CareTeamStatusVsValidation.js';
 // @ts-ignore
 import { ClinicalFindingsCodes,  ClinicalFindingsCodeType } from '../fhirValueSets/ClinicalFindingsCodes.js';
+// @ts-ignore
+import { ClinicalFindingsVsValidation } from '../fhirValueSets/ClinicalFindingsVsValidation.js';
 /**
  * Valid arguments for the CareTeamParticipant type.
  */
@@ -82,10 +82,10 @@ export class CareTeamParticipant extends fhir.BackboneElement {
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'CareTeam.participant' }
-    if (this["role"]) { this.role.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.role[${i}]`)); }) }
-    if (this["member"]) { issues.push(...this.member.doModelValidation(expression+'.member')); }
-    if (this["onBehalfOf"]) { issues.push(...this.onBehalfOf.doModelValidation(expression+'.onBehalfOf')); }
-    if (this["period"]) { issues.push(...this.period.doModelValidation(expression+'.period')); }
+    this.vOptA('role',expression)
+    this.vOptS('member',expression)
+    this.vOptS('onBehalfOf',expression)
+    this.vOptS('period',expression)
     return issues;
   }
 }
@@ -260,36 +260,25 @@ export class CareTeam extends fhir.DomainResource {
     else { this.note = []; }
   }
   /**
-   * Required-bound Value Set for status (CareTeam.status)
-   */
-  public static get statusRequiredCodes() {
-    return CareTeamStatusCodes;
-  }
-  /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'CareTeam' }
-    if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType fhir: CareTeam.resourceType:"CareTeam"', expression: [expression] });
-    }
-    if (this["identifier"]) { this.identifier.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.identifier[${i}]`)); }) }
-    if (this['status'] && (!Object.values(CareTeamStatusCodes).includes(this.status.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'status (CareTeam.status) of type code is missing code for Required binding to: CareTeamStatus', expression: [expression] });
-    }
-    if (this["status"]) { issues.push(...this.status.doModelValidation(expression+'.status')); }
-    if (this["category"]) { this.category.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.category[${i}]`)); }) }
-    if (this["name"]) { issues.push(...this.name.doModelValidation(expression+'.name')); }
-    if (this["subject"]) { issues.push(...this.subject.doModelValidation(expression+'.subject')); }
-    if (this["encounter"]) { issues.push(...this.encounter.doModelValidation(expression+'.encounter')); }
-    if (this["period"]) { issues.push(...this.period.doModelValidation(expression+'.period')); }
-    if (this["participant"]) { this.participant.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.participant[${i}]`)); }) }
-    if (this["reasonCode"]) { this.reasonCode.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.reasonCode[${i}]`)); }) }
-    if (this["reasonReference"]) { this.reasonReference.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.reasonReference[${i}]`)); }) }
-    if (this["managingOrganization"]) { this.managingOrganization.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.managingOrganization[${i}]`)); }) }
-    if (this["telecom"]) { this.telecom.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.telecom[${i}]`)); }) }
-    if (this["note"]) { this.note.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.note[${i}]`)); }) }
+    this.vReqS('resourceType',expression)
+    this.vOptA('identifier',expression)
+    this.vOptSV('status',expression,'CareTeamStatus',CareTeamStatusVsValidation,'r')
+    this.vOptA('category',expression)
+    this.vOptS('name',expression)
+    this.vOptS('subject',expression)
+    this.vOptS('encounter',expression)
+    this.vOptS('period',expression)
+    this.vOptA('participant',expression)
+    this.vOptA('reasonCode',expression)
+    this.vOptA('reasonReference',expression)
+    this.vOptA('managingOrganization',expression)
+    this.vOptA('telecom',expression)
+    this.vOptA('note',expression)
     return issues;
   }
 }

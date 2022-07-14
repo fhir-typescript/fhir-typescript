@@ -6,21 +6,21 @@
 import * as fhir from '../fhir.js';
 
 // @ts-ignore
-import { PerformerRoleCodings, PerformerRoleCodingType,} from '../fhirValueSets/PerformerRoleCodings.js';
-// @ts-ignore
 import { PerformerRoleCodes,  PerformerRoleCodeType } from '../fhirValueSets/PerformerRoleCodes.js';
 // @ts-ignore
-import { ChargeitemStatusCodings, ChargeitemStatusCodingType,} from '../fhirValueSets/ChargeitemStatusCodings.js';
+import { PerformerRoleVsValidation } from '../fhirValueSets/PerformerRoleVsValidation.js';
 // @ts-ignore
 import { ChargeitemStatusCodes,  ChargeitemStatusCodeType } from '../fhirValueSets/ChargeitemStatusCodes.js';
 // @ts-ignore
-import { ChargeitemBillingCodings, ChargeitemBillingCodingType,} from '../fhirValueSets/ChargeitemBillingCodings.js';
+import { ChargeitemStatusVsValidation } from '../fhirValueSets/ChargeitemStatusVsValidation.js';
 // @ts-ignore
 import { ChargeitemBillingCodes,  ChargeitemBillingCodeType } from '../fhirValueSets/ChargeitemBillingCodes.js';
 // @ts-ignore
-import { BodySiteCodings, BodySiteCodingType,} from '../fhirValueSets/BodySiteCodings.js';
+import { ChargeitemBillingVsValidation } from '../fhirValueSets/ChargeitemBillingVsValidation.js';
 // @ts-ignore
 import { BodySiteCodes,  BodySiteCodeType } from '../fhirValueSets/BodySiteCodes.js';
+// @ts-ignore
+import { BodySiteVsValidation } from '../fhirValueSets/BodySiteVsValidation.js';
 /**
  * Valid arguments for the ChargeItemPerformer type.
  */
@@ -66,11 +66,8 @@ export class ChargeItemPerformer extends fhir.BackboneElement {
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'ChargeItem.performer' }
-    if (this["function"]) { issues.push(...this.function.doModelValidation(expression+'.function')); }
-    if (!this['actor']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property actor fhir: ChargeItem.performer.actor:Reference', expression: [expression] });
-    }
-    if (this["actor"]) { issues.push(...this.actor.doModelValidation(expression+'.actor')); }
+    this.vOptS('function',expression)
+    this.vReqS('actor',expression)
     return issues;
   }
 }
@@ -439,56 +436,38 @@ export class ChargeItem extends fhir.DomainResource {
     else { this.supportingInformation = []; }
   }
   /**
-   * Required-bound Value Set for status (ChargeItem.status)
-   */
-  public static get statusRequiredCodes() {
-    return ChargeitemStatusCodes;
-  }
-  /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'ChargeItem' }
-    if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType fhir: ChargeItem.resourceType:"ChargeItem"', expression: [expression] });
-    }
-    if (this["identifier"]) { this.identifier.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.identifier[${i}]`)); }) }
-    if (this["definitionUri"]) { this.definitionUri.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.definitionUri[${i}]`)); }) }
-    if (this["definitionCanonical"]) { this.definitionCanonical.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.definitionCanonical[${i}]`)); }) }
-    if (!this['status']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status fhir: ChargeItem.status:code', expression: [expression] });
-    }
-    if (this['status'] && (!Object.values(ChargeitemStatusCodes).includes(this.status.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'status (ChargeItem.status) of type code is missing code for Required binding to: ChargeitemStatus', expression: [expression] });
-    }
-    if (this["status"]) { issues.push(...this.status.doModelValidation(expression+'.status')); }
-    if (this["partOf"]) { this.partOf.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.partOf[${i}]`)); }) }
-    if (!this['code']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property code fhir: ChargeItem.code:CodeableConcept', expression: [expression] });
-    }
-    if (this["code"]) { issues.push(...this.code.doModelValidation(expression+'.code')); }
-    if (!this['subject']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property subject fhir: ChargeItem.subject:Reference', expression: [expression] });
-    }
-    if (this["subject"]) { issues.push(...this.subject.doModelValidation(expression+'.subject')); }
-    if (this["context"]) { issues.push(...this.context.doModelValidation(expression+'.context')); }
-    if (this["performer"]) { this.performer.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.performer[${i}]`)); }) }
-    if (this["performingOrganization"]) { issues.push(...this.performingOrganization.doModelValidation(expression+'.performingOrganization')); }
-    if (this["requestingOrganization"]) { issues.push(...this.requestingOrganization.doModelValidation(expression+'.requestingOrganization')); }
-    if (this["costCenter"]) { issues.push(...this.costCenter.doModelValidation(expression+'.costCenter')); }
-    if (this["quantity"]) { issues.push(...this.quantity.doModelValidation(expression+'.quantity')); }
-    if (this["bodysite"]) { this.bodysite.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.bodysite[${i}]`)); }) }
-    if (this["factorOverride"]) { issues.push(...this.factorOverride.doModelValidation(expression+'.factorOverride')); }
-    if (this["priceOverride"]) { issues.push(...this.priceOverride.doModelValidation(expression+'.priceOverride')); }
-    if (this["overrideReason"]) { issues.push(...this.overrideReason.doModelValidation(expression+'.overrideReason')); }
-    if (this["enterer"]) { issues.push(...this.enterer.doModelValidation(expression+'.enterer')); }
-    if (this["enteredDate"]) { issues.push(...this.enteredDate.doModelValidation(expression+'.enteredDate')); }
-    if (this["reason"]) { this.reason.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.reason[${i}]`)); }) }
-    if (this["service"]) { this.service.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.service[${i}]`)); }) }
-    if (this["account"]) { this.account.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.account[${i}]`)); }) }
-    if (this["note"]) { this.note.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.note[${i}]`)); }) }
-    if (this["supportingInformation"]) { this.supportingInformation.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.supportingInformation[${i}]`)); }) }
+    this.vReqS('resourceType',expression)
+    this.vOptA('identifier',expression)
+    this.vOptA('definitionUri',expression)
+    this.vOptA('definitionCanonical',expression)
+    this.vReqSV('status',expression,'ChargeitemStatus',ChargeitemStatusVsValidation,'r')
+    this.vOptA('partOf',expression)
+    this.vReqS('code',expression)
+    this.vReqS('subject',expression)
+    this.vOptS('context',expression)
+    this.vOptS('occurrence',expression)
+    this.vOptA('performer',expression)
+    this.vOptS('performingOrganization',expression)
+    this.vOptS('requestingOrganization',expression)
+    this.vOptS('costCenter',expression)
+    this.vOptS('quantity',expression)
+    this.vOptA('bodysite',expression)
+    this.vOptS('factorOverride',expression)
+    this.vOptS('priceOverride',expression)
+    this.vOptS('overrideReason',expression)
+    this.vOptS('enterer',expression)
+    this.vOptS('enteredDate',expression)
+    this.vOptA('reason',expression)
+    this.vOptA('service',expression)
+    this.vOptS('product',expression)
+    this.vOptA('account',expression)
+    this.vOptA('note',expression)
+    this.vOptA('supportingInformation',expression)
     return issues;
   }
 }

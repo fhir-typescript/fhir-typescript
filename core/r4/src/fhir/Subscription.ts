@@ -6,13 +6,13 @@
 import * as fhir from '../fhir.js';
 
 // @ts-ignore
-import { SubscriptionChannelTypeCodings, SubscriptionChannelTypeCodingType,} from '../fhirValueSets/SubscriptionChannelTypeCodings.js';
-// @ts-ignore
 import { SubscriptionChannelTypeCodes,  SubscriptionChannelTypeCodeType } from '../fhirValueSets/SubscriptionChannelTypeCodes.js';
 // @ts-ignore
-import { SubscriptionStatusCodings, SubscriptionStatusCodingType,} from '../fhirValueSets/SubscriptionStatusCodings.js';
+import { SubscriptionChannelTypeVsValidation } from '../fhirValueSets/SubscriptionChannelTypeVsValidation.js';
 // @ts-ignore
 import { SubscriptionStatusCodes,  SubscriptionStatusCodeType } from '../fhirValueSets/SubscriptionStatusCodes.js';
+// @ts-ignore
+import { SubscriptionStatusVsValidation } from '../fhirValueSets/SubscriptionStatusVsValidation.js';
 /**
  * Valid arguments for the SubscriptionChannel type.
  */
@@ -106,27 +106,15 @@ export class SubscriptionChannel extends fhir.BackboneElement {
     }
   }
   /**
-   * Required-bound Value Set for type (Subscription.channel.type)
-   */
-  public static get typeRequiredCodes() {
-    return SubscriptionChannelTypeCodes;
-  }
-  /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'Subscription.channel' }
-    if (!this['type']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property type fhir: Subscription.channel.type:code', expression: [expression] });
-    }
-    if (this['type'] && (!Object.values(SubscriptionChannelTypeCodes).includes(this.type.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'type (Subscription.channel.type) of type code is missing code for Required binding to: SubscriptionChannelType', expression: [expression] });
-    }
-    if (this["type"]) { issues.push(...this.type.doModelValidation(expression+'.type')); }
-    if (this["endpoint"]) { issues.push(...this.endpoint.doModelValidation(expression+'.endpoint')); }
-    if (this["payload"]) { issues.push(...this.payload.doModelValidation(expression+'.payload')); }
-    if (this["header"]) { this.header.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.header[${i}]`)); }) }
+    this.vReqSV('type',expression,'SubscriptionChannelType',SubscriptionChannelTypeVsValidation,'r')
+    this.vOptS('endpoint',expression)
+    this.vOptS('payload',expression)
+    this.vOptA('header',expression)
     return issues;
   }
 }
@@ -270,42 +258,19 @@ export class Subscription extends fhir.DomainResource {
     else { this.channel = null; }
   }
   /**
-   * Required-bound Value Set for status (Subscription.status)
-   */
-  public static get statusRequiredCodes() {
-    return SubscriptionStatusCodes;
-  }
-  /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'Subscription' }
-    if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType fhir: Subscription.resourceType:"Subscription"', expression: [expression] });
-    }
-    if (!this['status']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status fhir: Subscription.status:code', expression: [expression] });
-    }
-    if (this['status'] && (!Object.values(SubscriptionStatusCodes).includes(this.status.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'status (Subscription.status) of type code is missing code for Required binding to: SubscriptionStatus', expression: [expression] });
-    }
-    if (this["status"]) { issues.push(...this.status.doModelValidation(expression+'.status')); }
-    if (this["contact"]) { this.contact.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.contact[${i}]`)); }) }
-    if (this["end"]) { issues.push(...this.end.doModelValidation(expression+'.end')); }
-    if (!this['reason']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property reason fhir: Subscription.reason:string', expression: [expression] });
-    }
-    if (this["reason"]) { issues.push(...this.reason.doModelValidation(expression+'.reason')); }
-    if (!this['criteria']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property criteria fhir: Subscription.criteria:string', expression: [expression] });
-    }
-    if (this["criteria"]) { issues.push(...this.criteria.doModelValidation(expression+'.criteria')); }
-    if (this["error"]) { issues.push(...this.error.doModelValidation(expression+'.error')); }
-    if (!this['channel']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property channel fhir: Subscription.channel:channel', expression: [expression] });
-    }
-    if (this["channel"]) { issues.push(...this.channel.doModelValidation(expression+'.channel')); }
+    this.vReqS('resourceType',expression)
+    this.vReqSV('status',expression,'SubscriptionStatus',SubscriptionStatusVsValidation,'r')
+    this.vOptA('contact',expression)
+    this.vOptS('end',expression)
+    this.vReqS('reason',expression)
+    this.vReqS('criteria',expression)
+    this.vOptS('error',expression)
+    this.vReqS('channel',expression)
     return issues;
   }
 }

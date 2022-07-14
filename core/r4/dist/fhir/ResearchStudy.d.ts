@@ -1,7 +1,5 @@
 import * as fhir from '../fhir.js';
-import { ResearchStudyObjectiveTypeCodingType } from '../fhirValueSets/ResearchStudyObjectiveTypeCodings.js';
 import { ResearchStudyStatusCodeType } from '../fhirValueSets/ResearchStudyStatusCodes.js';
-import { ResearchStudyPrimPurpTypeCodingType } from '../fhirValueSets/ResearchStudyPrimPurpTypeCodings.js';
 /**
  * Valid arguments for the ResearchStudyArm type.
  */
@@ -93,10 +91,6 @@ export declare class ResearchStudyObjective extends fhir.BackboneElement {
      * Default constructor for ResearchStudyObjective - initializes any required elements to null if a value is not provided.
      */
     constructor(source?: Partial<ResearchStudyObjectiveArgs>, options?: fhir.FhirConstructorOptions);
-    /**
-     * Preferred-bound Value Set for type (ResearchStudy.objective.type)
-     */
-    static get typePreferredCodings(): ResearchStudyObjectiveTypeCodingType;
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
@@ -331,26 +325,6 @@ export declare class ResearchStudy extends fhir.DomainResource {
      * Default constructor for ResearchStudy - initializes any required elements to null if a value is not provided.
      */
     constructor(source?: Partial<ResearchStudyArgs>, options?: fhir.FhirConstructorOptions);
-    /**
-     * Required-bound Value Set for status (ResearchStudy.status)
-     */
-    static get statusRequiredCodes(): {
-        readonly Active: "active";
-        readonly AdministrativelyCompleted: "administratively-completed";
-        readonly Approved: "approved";
-        readonly ClosedToAccrual: "closed-to-accrual";
-        readonly ClosedToAccrualAndIntervention: "closed-to-accrual-and-intervention";
-        readonly Completed: "completed";
-        readonly Disapproved: "disapproved";
-        readonly InReview: "in-review";
-        readonly TemporarilyClosedToAccrual: "temporarily-closed-to-accrual";
-        readonly TemporarilyClosedToAccrualAndIntervention: "temporarily-closed-to-accrual-and-intervention";
-        readonly Withdrawn: "withdrawn";
-    };
-    /**
-     * Extensible-bound Value Set for primaryPurposeType (ResearchStudy.primaryPurposeType)
-     */
-    static get primaryPurposeTypeExtensibleCodings(): ResearchStudyPrimPurpTypeCodingType;
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */

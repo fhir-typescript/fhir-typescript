@@ -6,13 +6,13 @@
 import * as fhir from '../fhir.js';
 
 // @ts-ignore
-import { RiskProbabilityCodings, RiskProbabilityCodingType,} from '../fhirValueSets/RiskProbabilityCodings.js';
-// @ts-ignore
 import { RiskProbabilityCodes,  RiskProbabilityCodeType } from '../fhirValueSets/RiskProbabilityCodes.js';
 // @ts-ignore
-import { ObservationStatusCodings, ObservationStatusCodingType,} from '../fhirValueSets/ObservationStatusCodings.js';
+import { RiskProbabilityVsValidation } from '../fhirValueSets/RiskProbabilityVsValidation.js';
 // @ts-ignore
 import { ObservationStatusCodes,  ObservationStatusCodeType } from '../fhirValueSets/ObservationStatusCodes.js';
+// @ts-ignore
+import { ObservationStatusVsValidation } from '../fhirValueSets/ObservationStatusVsValidation.js';
 /**
  * Valid arguments for the RiskAssessmentPrediction type.
  */
@@ -137,10 +137,12 @@ export class RiskAssessmentPrediction extends fhir.BackboneElement {
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'RiskAssessment.prediction' }
-    if (this["outcome"]) { issues.push(...this.outcome.doModelValidation(expression+'.outcome')); }
-    if (this["qualitativeRisk"]) { issues.push(...this.qualitativeRisk.doModelValidation(expression+'.qualitativeRisk')); }
-    if (this["relativeRisk"]) { issues.push(...this.relativeRisk.doModelValidation(expression+'.relativeRisk')); }
-    if (this["rationale"]) { issues.push(...this.rationale.doModelValidation(expression+'.rationale')); }
+    this.vOptS('outcome',expression)
+    this.vOptS('probability',expression)
+    this.vOptS('qualitativeRisk',expression)
+    this.vOptS('relativeRisk',expression)
+    this.vOptS('when',expression)
+    this.vOptS('rationale',expression)
     return issues;
   }
 }
@@ -365,45 +367,29 @@ export class RiskAssessment extends fhir.DomainResource {
     else { this.note = []; }
   }
   /**
-   * Required-bound Value Set for status (RiskAssessment.status)
-   */
-  public static get statusRequiredCodes() {
-    return ObservationStatusCodes;
-  }
-  /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'RiskAssessment' }
-    if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType fhir: RiskAssessment.resourceType:"RiskAssessment"', expression: [expression] });
-    }
-    if (this["identifier"]) { this.identifier.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.identifier[${i}]`)); }) }
-    if (this["basedOn"]) { issues.push(...this.basedOn.doModelValidation(expression+'.basedOn')); }
-    if (this["parent"]) { issues.push(...this.parent.doModelValidation(expression+'.parent')); }
-    if (!this['status']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status fhir: RiskAssessment.status:code', expression: [expression] });
-    }
-    if (this['status'] && (!Object.values(ObservationStatusCodes).includes(this.status.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'status (RiskAssessment.status) of type code is missing code for Required binding to: ObservationStatus', expression: [expression] });
-    }
-    if (this["status"]) { issues.push(...this.status.doModelValidation(expression+'.status')); }
-    if (this["method"]) { issues.push(...this.method.doModelValidation(expression+'.method')); }
-    if (this["code"]) { issues.push(...this.code.doModelValidation(expression+'.code')); }
-    if (!this['subject']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property subject fhir: RiskAssessment.subject:Reference', expression: [expression] });
-    }
-    if (this["subject"]) { issues.push(...this.subject.doModelValidation(expression+'.subject')); }
-    if (this["encounter"]) { issues.push(...this.encounter.doModelValidation(expression+'.encounter')); }
-    if (this["condition"]) { issues.push(...this.condition.doModelValidation(expression+'.condition')); }
-    if (this["performer"]) { issues.push(...this.performer.doModelValidation(expression+'.performer')); }
-    if (this["reasonCode"]) { this.reasonCode.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.reasonCode[${i}]`)); }) }
-    if (this["reasonReference"]) { this.reasonReference.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.reasonReference[${i}]`)); }) }
-    if (this["basis"]) { this.basis.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.basis[${i}]`)); }) }
-    if (this["prediction"]) { this.prediction.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.prediction[${i}]`)); }) }
-    if (this["mitigation"]) { issues.push(...this.mitigation.doModelValidation(expression+'.mitigation')); }
-    if (this["note"]) { this.note.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.note[${i}]`)); }) }
+    this.vReqS('resourceType',expression)
+    this.vOptA('identifier',expression)
+    this.vOptS('basedOn',expression)
+    this.vOptS('parent',expression)
+    this.vReqSV('status',expression,'ObservationStatus',ObservationStatusVsValidation,'r')
+    this.vOptS('method',expression)
+    this.vOptS('code',expression)
+    this.vReqS('subject',expression)
+    this.vOptS('encounter',expression)
+    this.vOptS('occurrence',expression)
+    this.vOptS('condition',expression)
+    this.vOptS('performer',expression)
+    this.vOptA('reasonCode',expression)
+    this.vOptA('reasonReference',expression)
+    this.vOptA('basis',expression)
+    this.vOptA('prediction',expression)
+    this.vOptS('mitigation',expression)
+    this.vOptA('note',expression)
     return issues;
   }
 }

@@ -6,17 +6,17 @@
 import * as fhir from '../fhir.js';
 
 // @ts-ignore
-import { ResourceTypesCodings, ResourceTypesCodingType,} from '../fhirValueSets/ResourceTypesCodings.js';
-// @ts-ignore
 import { ResourceTypesCodes,  ResourceTypesCodeType } from '../fhirValueSets/ResourceTypesCodes.js';
 // @ts-ignore
-import { PublicationStatusCodings, PublicationStatusCodingType,} from '../fhirValueSets/PublicationStatusCodings.js';
+import { ResourceTypesVsValidation } from '../fhirValueSets/ResourceTypesVsValidation.js';
 // @ts-ignore
 import { PublicationStatusCodes,  PublicationStatusCodeType } from '../fhirValueSets/PublicationStatusCodes.js';
 // @ts-ignore
-import { CompartmentTypeCodings, CompartmentTypeCodingType,} from '../fhirValueSets/CompartmentTypeCodings.js';
+import { PublicationStatusVsValidation } from '../fhirValueSets/PublicationStatusVsValidation.js';
 // @ts-ignore
 import { CompartmentTypeCodes,  CompartmentTypeCodeType } from '../fhirValueSets/CompartmentTypeCodes.js';
+// @ts-ignore
+import { CompartmentTypeVsValidation } from '../fhirValueSets/CompartmentTypeVsValidation.js';
 /**
  * Valid arguments for the CompartmentDefinitionResource type.
  */
@@ -93,26 +93,14 @@ export class CompartmentDefinitionResource extends fhir.BackboneElement {
     }
   }
   /**
-   * Required-bound Value Set for code (CompartmentDefinition.resource.code)
-   */
-  public static get codeRequiredCodes() {
-    return ResourceTypesCodes;
-  }
-  /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'CompartmentDefinition.resource' }
-    if (!this['code']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property code fhir: CompartmentDefinition.resource.code:code', expression: [expression] });
-    }
-    if (this['code'] && (!Object.values(ResourceTypesCodes).includes(this.code.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'code (CompartmentDefinition.resource.code) of type code is missing code for Required binding to: ResourceTypes', expression: [expression] });
-    }
-    if (this["code"]) { issues.push(...this.code.doModelValidation(expression+'.code')); }
-    if (this["param"]) { this.param.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.param[${i}]`)); }) }
-    if (this["documentation"]) { issues.push(...this.documentation.doModelValidation(expression+'.documentation')); }
+    this.vReqSV('code',expression,'ResourceTypes',ResourceTypesVsValidation,'r')
+    this.vOptA('param',expression)
+    this.vOptS('documentation',expression)
     return issues;
   }
 }
@@ -372,61 +360,26 @@ export class CompartmentDefinition extends fhir.DomainResource {
     else { this.resource = []; }
   }
   /**
-   * Required-bound Value Set for status (CompartmentDefinition.status)
-   */
-  public static get statusRequiredCodes() {
-    return PublicationStatusCodes;
-  }
-  /**
-   * Required-bound Value Set for code (CompartmentDefinition.code)
-   */
-  public static get codeRequiredCodes() {
-    return CompartmentTypeCodes;
-  }
-  /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'CompartmentDefinition' }
-    if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType fhir: CompartmentDefinition.resourceType:"CompartmentDefinition"', expression: [expression] });
-    }
-    if (!this['url']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property url fhir: CompartmentDefinition.url:uri', expression: [expression] });
-    }
-    if (this["url"]) { issues.push(...this.url.doModelValidation(expression+'.url')); }
-    if (this["version"]) { issues.push(...this.version.doModelValidation(expression+'.version')); }
-    if (!this['name']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property name fhir: CompartmentDefinition.name:string', expression: [expression] });
-    }
-    if (this["name"]) { issues.push(...this.name.doModelValidation(expression+'.name')); }
-    if (!this['status']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status fhir: CompartmentDefinition.status:code', expression: [expression] });
-    }
-    if (this['status'] && (!Object.values(PublicationStatusCodes).includes(this.status.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'status (CompartmentDefinition.status) of type code is missing code for Required binding to: PublicationStatus', expression: [expression] });
-    }
-    if (this["status"]) { issues.push(...this.status.doModelValidation(expression+'.status')); }
-    if (this["experimental"]) { issues.push(...this.experimental.doModelValidation(expression+'.experimental')); }
-    if (this["date"]) { issues.push(...this.date.doModelValidation(expression+'.date')); }
-    if (this["publisher"]) { issues.push(...this.publisher.doModelValidation(expression+'.publisher')); }
-    if (this["contact"]) { this.contact.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.contact[${i}]`)); }) }
-    if (this["description"]) { issues.push(...this.description.doModelValidation(expression+'.description')); }
-    if (this["useContext"]) { this.useContext.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.useContext[${i}]`)); }) }
-    if (this["purpose"]) { issues.push(...this.purpose.doModelValidation(expression+'.purpose')); }
-    if (!this['code']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property code fhir: CompartmentDefinition.code:code', expression: [expression] });
-    }
-    if (this['code'] && (!Object.values(CompartmentTypeCodes).includes(this.code.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'code (CompartmentDefinition.code) of type code is missing code for Required binding to: CompartmentType', expression: [expression] });
-    }
-    if (this["code"]) { issues.push(...this.code.doModelValidation(expression+'.code')); }
-    if (!this['search']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property search fhir: CompartmentDefinition.search:boolean', expression: [expression] });
-    }
-    if (this["search"]) { issues.push(...this.search.doModelValidation(expression+'.search')); }
-    if (this["resource"]) { this.resource.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.resource[${i}]`)); }) }
+    this.vReqS('resourceType',expression)
+    this.vReqS('url',expression)
+    this.vOptS('version',expression)
+    this.vReqS('name',expression)
+    this.vReqSV('status',expression,'PublicationStatus',PublicationStatusVsValidation,'r')
+    this.vOptS('experimental',expression)
+    this.vOptS('date',expression)
+    this.vOptS('publisher',expression)
+    this.vOptA('contact',expression)
+    this.vOptS('description',expression)
+    this.vOptA('useContext',expression)
+    this.vOptS('purpose',expression)
+    this.vReqSV('code',expression,'CompartmentType',CompartmentTypeVsValidation,'r')
+    this.vReqS('search',expression)
+    this.vOptA('resource',expression)
     return issues;
   }
 }

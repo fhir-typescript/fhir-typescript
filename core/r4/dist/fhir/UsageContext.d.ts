@@ -1,5 +1,4 @@
 import * as fhir from '../fhir.js';
-import { UsageContextTypeCodingType } from '../fhirValueSets/UsageContextTypeCodings.js';
 /**
  * Valid arguments for the UsageContext type.
  */
@@ -53,10 +52,6 @@ export declare class UsageContext extends fhir.FhirElement {
      * Default constructor for UsageContext - initializes any required elements to null if a value is not provided.
      */
     constructor(source?: Partial<UsageContextArgs>, options?: fhir.FhirConstructorOptions);
-    /**
-     * Extensible-bound Value Set for code (UsageContext.code)
-     */
-    static get codeExtensibleCodings(): UsageContextTypeCodingType;
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */

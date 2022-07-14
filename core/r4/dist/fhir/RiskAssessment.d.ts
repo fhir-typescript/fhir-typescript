@@ -284,19 +284,6 @@ export declare class RiskAssessment extends fhir.DomainResource {
      */
     constructor(source?: Partial<RiskAssessmentArgs>, options?: fhir.FhirConstructorOptions);
     /**
-     * Required-bound Value Set for status (RiskAssessment.status)
-     */
-    static get statusRequiredCodes(): {
-        readonly Amended: "amended";
-        readonly Cancelled: "cancelled";
-        readonly Corrected: "corrected";
-        readonly EnteredInError: "entered-in-error";
-        readonly Final: "final";
-        readonly Preliminary: "preliminary";
-        readonly Registered: "registered";
-        readonly Unknown: "unknown";
-    };
-    /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
     doModelValidation(expression?: string): fhir.FtsIssue[];

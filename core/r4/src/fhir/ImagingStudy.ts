@@ -6,29 +6,29 @@
 import * as fhir from '../fhir.js';
 
 // @ts-ignore
-import { SeriesPerformerFunctionCodings, SeriesPerformerFunctionCodingType,} from '../fhirValueSets/SeriesPerformerFunctionCodings.js';
-// @ts-ignore
 import { SeriesPerformerFunctionCodes,  SeriesPerformerFunctionCodeType } from '../fhirValueSets/SeriesPerformerFunctionCodes.js';
 // @ts-ignore
-import { DicomCid29AcquisitionModalityCodings, DicomCid29AcquisitionModalityCodingType,} from '../fhirValueSets/DicomCid29AcquisitionModalityCodings.js';
+import { SeriesPerformerFunctionVsValidation } from '../fhirValueSets/SeriesPerformerFunctionVsValidation.js';
 // @ts-ignore
 import { DicomCid29AcquisitionModalityCodes,  DicomCid29AcquisitionModalityCodeType } from '../fhirValueSets/DicomCid29AcquisitionModalityCodes.js';
 // @ts-ignore
-import { BodySiteCodings, BodySiteCodingType,} from '../fhirValueSets/BodySiteCodings.js';
+import { DicomCid29AcquisitionModalityVsValidation } from '../fhirValueSets/DicomCid29AcquisitionModalityVsValidation.js';
 // @ts-ignore
 import { BodySiteCodes,  BodySiteCodeType } from '../fhirValueSets/BodySiteCodes.js';
 // @ts-ignore
-import { BodysiteLateralityCodings, BodysiteLateralityCodingType,} from '../fhirValueSets/BodysiteLateralityCodings.js';
+import { BodySiteVsValidation } from '../fhirValueSets/BodySiteVsValidation.js';
 // @ts-ignore
 import { BodysiteLateralityCodes,  BodysiteLateralityCodeType } from '../fhirValueSets/BodysiteLateralityCodes.js';
 // @ts-ignore
-import { ImagingstudyStatusCodings, ImagingstudyStatusCodingType,} from '../fhirValueSets/ImagingstudyStatusCodings.js';
+import { BodysiteLateralityVsValidation } from '../fhirValueSets/BodysiteLateralityVsValidation.js';
 // @ts-ignore
 import { ImagingstudyStatusCodes,  ImagingstudyStatusCodeType } from '../fhirValueSets/ImagingstudyStatusCodes.js';
 // @ts-ignore
-import { ProcedureReasonCodings, ProcedureReasonCodingType,} from '../fhirValueSets/ProcedureReasonCodings.js';
+import { ImagingstudyStatusVsValidation } from '../fhirValueSets/ImagingstudyStatusVsValidation.js';
 // @ts-ignore
 import { ProcedureReasonCodes,  ProcedureReasonCodeType } from '../fhirValueSets/ProcedureReasonCodes.js';
+// @ts-ignore
+import { ProcedureReasonVsValidation } from '../fhirValueSets/ProcedureReasonVsValidation.js';
 /**
  * Valid arguments for the ImagingStudySeriesPerformer type.
  */
@@ -69,22 +69,13 @@ export class ImagingStudySeriesPerformer extends fhir.BackboneElement {
     else { this.actor = null; }
   }
   /**
-   * Extensible-bound Value Set for function (ImagingStudy.series.performer.function)
-   */
-  public static get functionExtensibleCodings():SeriesPerformerFunctionCodingType {
-    return SeriesPerformerFunctionCodings;
-  }
-  /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'ImagingStudy.series.performer' }
-    if (this["function"]) { issues.push(...this.function.doModelValidation(expression+'.function')); }
-    if (!this['actor']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property actor fhir: ImagingStudy.series.performer.actor:Reference', expression: [expression] });
-    }
-    if (this["actor"]) { issues.push(...this.actor.doModelValidation(expression+'.actor')); }
+    this.vOptS('function',expression)
+    this.vReqS('actor',expression)
     return issues;
   }
 }
@@ -176,16 +167,10 @@ export class ImagingStudySeriesInstance extends fhir.BackboneElement {
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'ImagingStudy.series.instance' }
-    if (!this['uid']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property uid fhir: ImagingStudy.series.instance.uid:id', expression: [expression] });
-    }
-    if (this["uid"]) { issues.push(...this.uid.doModelValidation(expression+'.uid')); }
-    if (!this['sopClass']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property sopClass fhir: ImagingStudy.series.instance.sopClass:Coding', expression: [expression] });
-    }
-    if (this["sopClass"]) { issues.push(...this.sopClass.doModelValidation(expression+'.sopClass')); }
-    if (this["number"]) { issues.push(...this.number.doModelValidation(expression+'.number')); }
-    if (this["title"]) { issues.push(...this.title.doModelValidation(expression+'.title')); }
+    this.vReqS('uid',expression)
+    this.vReqS('sopClass',expression)
+    this.vOptS('number',expression)
+    this.vOptS('title',expression)
     return issues;
   }
 }
@@ -364,35 +349,23 @@ export class ImagingStudySeries extends fhir.BackboneElement {
     else { this.instance = []; }
   }
   /**
-   * Extensible-bound Value Set for modality (ImagingStudy.series.modality)
-   */
-  public static get modalityExtensibleCodings():DicomCid29AcquisitionModalityCodingType {
-    return DicomCid29AcquisitionModalityCodings;
-  }
-  /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'ImagingStudy.series' }
-    if (!this['uid']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property uid fhir: ImagingStudy.series.uid:id', expression: [expression] });
-    }
-    if (this["uid"]) { issues.push(...this.uid.doModelValidation(expression+'.uid')); }
-    if (this["number"]) { issues.push(...this.number.doModelValidation(expression+'.number')); }
-    if (!this['modality']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property modality fhir: ImagingStudy.series.modality:Coding', expression: [expression] });
-    }
-    if (this["modality"]) { issues.push(...this.modality.doModelValidation(expression+'.modality')); }
-    if (this["description"]) { issues.push(...this.description.doModelValidation(expression+'.description')); }
-    if (this["numberOfInstances"]) { issues.push(...this.numberOfInstances.doModelValidation(expression+'.numberOfInstances')); }
-    if (this["endpoint"]) { this.endpoint.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.endpoint[${i}]`)); }) }
-    if (this["bodySite"]) { issues.push(...this.bodySite.doModelValidation(expression+'.bodySite')); }
-    if (this["laterality"]) { issues.push(...this.laterality.doModelValidation(expression+'.laterality')); }
-    if (this["specimen"]) { this.specimen.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.specimen[${i}]`)); }) }
-    if (this["started"]) { issues.push(...this.started.doModelValidation(expression+'.started')); }
-    if (this["performer"]) { this.performer.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.performer[${i}]`)); }) }
-    if (this["instance"]) { this.instance.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.instance[${i}]`)); }) }
+    this.vReqS('uid',expression)
+    this.vOptS('number',expression)
+    this.vReqS('modality',expression)
+    this.vOptS('description',expression)
+    this.vOptS('numberOfInstances',expression)
+    this.vOptA('endpoint',expression)
+    this.vOptS('bodySite',expression)
+    this.vOptS('laterality',expression)
+    this.vOptA('specimen',expression)
+    this.vOptS('started',expression)
+    this.vOptA('performer',expression)
+    this.vOptA('instance',expression)
     return issues;
   }
 }
@@ -658,55 +631,32 @@ export class ImagingStudy extends fhir.DomainResource {
     else { this.series = []; }
   }
   /**
-   * Required-bound Value Set for status (ImagingStudy.status)
-   */
-  public static get statusRequiredCodes() {
-    return ImagingstudyStatusCodes;
-  }
-  /**
-   * Extensible-bound Value Set for modality (ImagingStudy.modality)
-   */
-  public static get modalityExtensibleCodings():DicomCid29AcquisitionModalityCodingType {
-    return DicomCid29AcquisitionModalityCodings;
-  }
-  /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'ImagingStudy' }
-    if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType fhir: ImagingStudy.resourceType:"ImagingStudy"', expression: [expression] });
-    }
-    if (this["identifier"]) { this.identifier.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.identifier[${i}]`)); }) }
-    if (!this['status']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status fhir: ImagingStudy.status:code', expression: [expression] });
-    }
-    if (this['status'] && (!Object.values(ImagingstudyStatusCodes).includes(this.status.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'status (ImagingStudy.status) of type code is missing code for Required binding to: ImagingstudyStatus', expression: [expression] });
-    }
-    if (this["status"]) { issues.push(...this.status.doModelValidation(expression+'.status')); }
-    if (this["modality"]) { this.modality.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.modality[${i}]`)); }) }
-    if (!this['subject']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property subject fhir: ImagingStudy.subject:Reference', expression: [expression] });
-    }
-    if (this["subject"]) { issues.push(...this.subject.doModelValidation(expression+'.subject')); }
-    if (this["encounter"]) { issues.push(...this.encounter.doModelValidation(expression+'.encounter')); }
-    if (this["started"]) { issues.push(...this.started.doModelValidation(expression+'.started')); }
-    if (this["basedOn"]) { this.basedOn.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.basedOn[${i}]`)); }) }
-    if (this["referrer"]) { issues.push(...this.referrer.doModelValidation(expression+'.referrer')); }
-    if (this["interpreter"]) { this.interpreter.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.interpreter[${i}]`)); }) }
-    if (this["endpoint"]) { this.endpoint.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.endpoint[${i}]`)); }) }
-    if (this["numberOfSeries"]) { issues.push(...this.numberOfSeries.doModelValidation(expression+'.numberOfSeries')); }
-    if (this["numberOfInstances"]) { issues.push(...this.numberOfInstances.doModelValidation(expression+'.numberOfInstances')); }
-    if (this["procedureReference"]) { issues.push(...this.procedureReference.doModelValidation(expression+'.procedureReference')); }
-    if (this["procedureCode"]) { this.procedureCode.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.procedureCode[${i}]`)); }) }
-    if (this["location"]) { issues.push(...this.location.doModelValidation(expression+'.location')); }
-    if (this["reasonCode"]) { this.reasonCode.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.reasonCode[${i}]`)); }) }
-    if (this["reasonReference"]) { this.reasonReference.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.reasonReference[${i}]`)); }) }
-    if (this["note"]) { this.note.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.note[${i}]`)); }) }
-    if (this["description"]) { issues.push(...this.description.doModelValidation(expression+'.description')); }
-    if (this["series"]) { this.series.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.series[${i}]`)); }) }
+    this.vReqS('resourceType',expression)
+    this.vOptA('identifier',expression)
+    this.vReqSV('status',expression,'ImagingstudyStatus',ImagingstudyStatusVsValidation,'r')
+    this.vOptA('modality',expression)
+    this.vReqS('subject',expression)
+    this.vOptS('encounter',expression)
+    this.vOptS('started',expression)
+    this.vOptA('basedOn',expression)
+    this.vOptS('referrer',expression)
+    this.vOptA('interpreter',expression)
+    this.vOptA('endpoint',expression)
+    this.vOptS('numberOfSeries',expression)
+    this.vOptS('numberOfInstances',expression)
+    this.vOptS('procedureReference',expression)
+    this.vOptA('procedureCode',expression)
+    this.vOptS('location',expression)
+    this.vOptA('reasonCode',expression)
+    this.vOptA('reasonReference',expression)
+    this.vOptA('note',expression)
+    this.vOptS('description',expression)
+    this.vOptA('series',expression)
     return issues;
   }
 }

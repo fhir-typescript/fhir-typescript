@@ -1,5 +1,4 @@
 import * as fhir from '../fhir.js';
-import { ContactentityTypeCodingType } from '../fhirValueSets/ContactentityTypeCodings.js';
 /**
  * Valid arguments for the OrganizationContact type.
  */
@@ -49,10 +48,6 @@ export declare class OrganizationContact extends fhir.BackboneElement {
      * Default constructor for OrganizationContact - initializes any required elements to null if a value is not provided.
      */
     constructor(source?: Partial<OrganizationContactArgs>, options?: fhir.FhirConstructorOptions);
-    /**
-     * Extensible-bound Value Set for purpose (Organization.contact.purpose)
-     */
-    static get purposeExtensibleCodings(): ContactentityTypeCodingType;
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */

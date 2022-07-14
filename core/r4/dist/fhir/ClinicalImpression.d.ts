@@ -308,14 +308,6 @@ export declare class ClinicalImpression extends fhir.DomainResource {
      */
     constructor(source?: Partial<ClinicalImpressionArgs>, options?: fhir.FhirConstructorOptions);
     /**
-     * Required-bound Value Set for status (ClinicalImpression.status)
-     */
-    static get statusRequiredCodes(): {
-        readonly Completed: "completed";
-        readonly EnteredInError: "entered-in-error";
-        readonly InProgress: "in-progress";
-    };
-    /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
     doModelValidation(expression?: string): fhir.FtsIssue[];

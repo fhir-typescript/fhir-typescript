@@ -6,9 +6,9 @@
 import * as fhir from '../fhir.js';
 
 // @ts-ignore
-import { BasicResourceTypeCodings, BasicResourceTypeCodingType,} from '../fhirValueSets/BasicResourceTypeCodings.js';
-// @ts-ignore
 import { BasicResourceTypeCodes,  BasicResourceTypeCodeType } from '../fhirValueSets/BasicResourceTypeCodes.js';
+// @ts-ignore
+import { BasicResourceTypeVsValidation } from '../fhirValueSets/BasicResourceTypeVsValidation.js';
 /**
  * Valid arguments for the Basic type.
  */
@@ -101,17 +101,12 @@ export class Basic extends fhir.DomainResource {
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'Basic' }
-    if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType fhir: Basic.resourceType:"Basic"', expression: [expression] });
-    }
-    if (this["identifier"]) { this.identifier.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.identifier[${i}]`)); }) }
-    if (!this['code']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property code fhir: Basic.code:CodeableConcept', expression: [expression] });
-    }
-    if (this["code"]) { issues.push(...this.code.doModelValidation(expression+'.code')); }
-    if (this["subject"]) { issues.push(...this.subject.doModelValidation(expression+'.subject')); }
-    if (this["created"]) { issues.push(...this.created.doModelValidation(expression+'.created')); }
-    if (this["author"]) { issues.push(...this.author.doModelValidation(expression+'.author')); }
+    this.vReqS('resourceType',expression)
+    this.vOptA('identifier',expression)
+    this.vReqS('code',expression)
+    this.vOptS('subject',expression)
+    this.vOptS('created',expression)
+    this.vOptS('author',expression)
     return issues;
   }
 }

@@ -57,14 +57,6 @@ export declare class TestReportParticipant extends fhir.BackboneElement {
      */
     constructor(source?: Partial<TestReportParticipantArgs>, options?: fhir.FhirConstructorOptions);
     /**
-     * Required-bound Value Set for type (TestReport.participant.type)
-     */
-    static get typeRequiredCodes(): {
-        readonly Client: "client";
-        readonly Server: "server";
-        readonly TestEngine: "test-engine";
-    };
-    /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
     doModelValidation(expression?: string): fhir.FtsIssue[];
@@ -123,16 +115,6 @@ export declare class TestReportSetupActionOperation extends fhir.BackboneElement
      */
     constructor(source?: Partial<TestReportSetupActionOperationArgs>, options?: fhir.FhirConstructorOptions);
     /**
-     * Required-bound Value Set for result (TestReport.setup.action.operation.result)
-     */
-    static get resultRequiredCodes(): {
-        readonly Error: "error";
-        readonly Fail: "fail";
-        readonly Pass: "pass";
-        readonly Skip: "skip";
-        readonly Warning: "warning";
-    };
-    /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
     doModelValidation(expression?: string): fhir.FtsIssue[];
@@ -190,16 +172,6 @@ export declare class TestReportSetupActionAssert extends fhir.BackboneElement {
      * Default constructor for TestReportSetupActionAssert - initializes any required elements to null if a value is not provided.
      */
     constructor(source?: Partial<TestReportSetupActionAssertArgs>, options?: fhir.FhirConstructorOptions);
-    /**
-     * Required-bound Value Set for result (TestReport.setup.action.assert.result)
-     */
-    static get resultRequiredCodes(): {
-        readonly Error: "error";
-        readonly Fail: "fail";
-        readonly Pass: "pass";
-        readonly Skip: "skip";
-        readonly Warning: "warning";
-    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
@@ -572,24 +544,6 @@ export declare class TestReport extends fhir.DomainResource {
      * Default constructor for TestReport - initializes any required elements to null if a value is not provided.
      */
     constructor(source?: Partial<TestReportArgs>, options?: fhir.FhirConstructorOptions);
-    /**
-     * Required-bound Value Set for status (TestReport.status)
-     */
-    static get statusRequiredCodes(): {
-        readonly Completed: "completed";
-        readonly EnteredInError: "entered-in-error";
-        readonly InProgress: "in-progress";
-        readonly Stopped: "stopped";
-        readonly Waiting: "waiting";
-    };
-    /**
-     * Required-bound Value Set for result (TestReport.result)
-     */
-    static get resultRequiredCodes(): {
-        readonly Fail: "fail";
-        readonly Pass: "pass";
-        readonly Pending: "pending";
-    };
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */

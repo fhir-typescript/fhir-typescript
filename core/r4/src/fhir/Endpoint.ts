@@ -6,13 +6,13 @@
 import * as fhir from '../fhir.js';
 
 // @ts-ignore
-import { EndpointStatusCodings, EndpointStatusCodingType,} from '../fhirValueSets/EndpointStatusCodings.js';
-// @ts-ignore
 import { EndpointStatusCodes,  EndpointStatusCodeType } from '../fhirValueSets/EndpointStatusCodes.js';
 // @ts-ignore
-import { EndpointConnectionTypeCodings, EndpointConnectionTypeCodingType,} from '../fhirValueSets/EndpointConnectionTypeCodings.js';
+import { EndpointStatusVsValidation } from '../fhirValueSets/EndpointStatusVsValidation.js';
 // @ts-ignore
 import { EndpointConnectionTypeCodes,  EndpointConnectionTypeCodeType } from '../fhirValueSets/EndpointConnectionTypeCodes.js';
+// @ts-ignore
+import { EndpointConnectionTypeVsValidation } from '../fhirValueSets/EndpointConnectionTypeVsValidation.js';
 /**
  * Valid arguments for the Endpoint type.
  */
@@ -200,56 +200,23 @@ export class Endpoint extends fhir.DomainResource {
     }
   }
   /**
-   * Required-bound Value Set for status (Endpoint.status)
-   */
-  public static get statusRequiredCodes() {
-    return EndpointStatusCodes;
-  }
-  /**
-   * Extensible-bound Value Set for connectionType (Endpoint.connectionType)
-   */
-  public static get connectionTypeExtensibleCodings():EndpointConnectionTypeCodingType {
-    return EndpointConnectionTypeCodings;
-  }
-  /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'Endpoint' }
-    if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType fhir: Endpoint.resourceType:"Endpoint"', expression: [expression] });
-    }
-    if (this["identifier"]) { this.identifier.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.identifier[${i}]`)); }) }
-    if (!this['status']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status fhir: Endpoint.status:code', expression: [expression] });
-    }
-    if (this['status'] && (!Object.values(EndpointStatusCodes).includes(this.status.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'status (Endpoint.status) of type code is missing code for Required binding to: EndpointStatus', expression: [expression] });
-    }
-    if (this["status"]) { issues.push(...this.status.doModelValidation(expression+'.status')); }
-    if (!this['connectionType']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property connectionType fhir: Endpoint.connectionType:Coding', expression: [expression] });
-    }
-    if (this["connectionType"]) { issues.push(...this.connectionType.doModelValidation(expression+'.connectionType')); }
-    if (this["name"]) { issues.push(...this.name.doModelValidation(expression+'.name')); }
-    if (this["managingOrganization"]) { issues.push(...this.managingOrganization.doModelValidation(expression+'.managingOrganization')); }
-    if (this["contact"]) { this.contact.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.contact[${i}]`)); }) }
-    if (this["period"]) { issues.push(...this.period.doModelValidation(expression+'.period')); }
-    if (!this['payloadType']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property payloadType fhir: Endpoint.payloadType:CodeableConcept', expression: [expression] });
-    } else if (!Array.isArray(this.payloadType)) {
-      issues.push({ severity: 'error', code: 'structure', diagnostics: 'Found scalar in array property payloadType fhir: Endpoint.payloadType:CodeableConcept', expression: [expression] });
-    } else if (this.payloadType.length === 0) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property payloadType fhir: Endpoint.payloadType:CodeableConcept', expression: [expression] });
-    }
-    if (this["payloadType"]) { this.payloadType.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.payloadType[${i}]`)); }) }
-    if (this["payloadMimeType"]) { this.payloadMimeType.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.payloadMimeType[${i}]`)); }) }
-    if (!this['address']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property address fhir: Endpoint.address:url', expression: [expression] });
-    }
-    if (this["address"]) { issues.push(...this.address.doModelValidation(expression+'.address')); }
-    if (this["header"]) { this.header.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.header[${i}]`)); }) }
+    this.vReqS('resourceType',expression)
+    this.vOptA('identifier',expression)
+    this.vReqSV('status',expression,'EndpointStatus',EndpointStatusVsValidation,'r')
+    this.vReqS('connectionType',expression)
+    this.vOptS('name',expression)
+    this.vOptS('managingOrganization',expression)
+    this.vOptA('contact',expression)
+    this.vOptS('period',expression)
+    this.vReqA('payloadType',expression)
+    this.vOptA('payloadMimeType',expression)
+    this.vReqS('address',expression)
+    this.vOptA('header',expression)
     return issues;
   }
 }

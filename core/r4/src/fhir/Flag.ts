@@ -6,17 +6,17 @@
 import * as fhir from '../fhir.js';
 
 // @ts-ignore
-import { FlagStatusCodings, FlagStatusCodingType,} from '../fhirValueSets/FlagStatusCodings.js';
-// @ts-ignore
 import { FlagStatusCodes,  FlagStatusCodeType } from '../fhirValueSets/FlagStatusCodes.js';
 // @ts-ignore
-import { FlagCategoryCodings, FlagCategoryCodingType,} from '../fhirValueSets/FlagCategoryCodings.js';
+import { FlagStatusVsValidation } from '../fhirValueSets/FlagStatusVsValidation.js';
 // @ts-ignore
 import { FlagCategoryCodes,  FlagCategoryCodeType } from '../fhirValueSets/FlagCategoryCodes.js';
 // @ts-ignore
-import { FlagCodings, FlagCodingType,} from '../fhirValueSets/FlagCodings.js';
+import { FlagCategoryVsValidation } from '../fhirValueSets/FlagCategoryVsValidation.js';
 // @ts-ignore
 import { FlagCodes,  FlagCodeType } from '../fhirValueSets/FlagCodes.js';
+// @ts-ignore
+import { FlagVsValidation } from '../fhirValueSets/FlagVsValidation.js';
 /**
  * Valid arguments for the Flag type.
  */
@@ -132,40 +132,20 @@ export class Flag extends fhir.DomainResource {
     if (source['author']) { this.author = new fhir.Reference(source.author); }
   }
   /**
-   * Required-bound Value Set for status (Flag.status)
-   */
-  public static get statusRequiredCodes() {
-    return FlagStatusCodes;
-  }
-  /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
     let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
     if (expression === '') { expression = 'Flag' }
-    if (!this['resourceType']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property resourceType fhir: Flag.resourceType:"Flag"', expression: [expression] });
-    }
-    if (this["identifier"]) { this.identifier.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.identifier[${i}]`)); }) }
-    if (!this['status']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property status fhir: Flag.status:code', expression: [expression] });
-    }
-    if (this['status'] && (!Object.values(FlagStatusCodes).includes(this.status.value as any))) {
-      issues.push({ severity: 'error', code: 'code-invalid', diagnostics: 'status (Flag.status) of type code is missing code for Required binding to: FlagStatus', expression: [expression] });
-    }
-    if (this["status"]) { issues.push(...this.status.doModelValidation(expression+'.status')); }
-    if (this["category"]) { this.category.forEach((x,i) => { issues.push(...x.doModelValidation(expression+`.category[${i}]`)); }) }
-    if (!this['code']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property code fhir: Flag.code:CodeableConcept', expression: [expression] });
-    }
-    if (this["code"]) { issues.push(...this.code.doModelValidation(expression+'.code')); }
-    if (!this['subject']) {
-      issues.push({ severity: 'error', code: 'required', diagnostics: 'Missing required property subject fhir: Flag.subject:Reference', expression: [expression] });
-    }
-    if (this["subject"]) { issues.push(...this.subject.doModelValidation(expression+'.subject')); }
-    if (this["period"]) { issues.push(...this.period.doModelValidation(expression+'.period')); }
-    if (this["encounter"]) { issues.push(...this.encounter.doModelValidation(expression+'.encounter')); }
-    if (this["author"]) { issues.push(...this.author.doModelValidation(expression+'.author')); }
+    this.vReqS('resourceType',expression)
+    this.vOptA('identifier',expression)
+    this.vReqSV('status',expression,'FlagStatus',FlagStatusVsValidation,'r')
+    this.vOptA('category',expression)
+    this.vReqS('code',expression)
+    this.vReqS('subject',expression)
+    this.vOptS('period',expression)
+    this.vOptS('encounter',expression)
+    this.vOptS('author',expression)
     return issues;
   }
 }
