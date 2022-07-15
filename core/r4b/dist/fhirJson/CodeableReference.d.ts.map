@@ -1,0 +1,1 @@
+{"version":3,"file":"CodeableReference.d.ts","sourceRoot":"./src/","sources":["fhirJson/CodeableReference.ts"],"names":[],"mappings":"AAKA,OAAO,KAAK,IAAI,MAAM,gBAAgB,CAAC;AAGvC;;GAEG;AACH,MAAM,WAAW,iBAAkB,SAAQ,IAAI,CAAC,WAAW;IACzD;;OAEG;IACH,OAAO,CAAC,EAAE,IAAI,CAAC,eAAe,GAAC,SAAS,CAAC;IACzC;;OAEG;IACH,SAAS,CAAC,EAAE,IAAI,CAAC,SAAS,GAAC,SAAS,CAAC;CACtC"}

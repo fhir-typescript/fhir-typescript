@@ -404,9 +404,27 @@
    */
   "projects": [
     {
+      "packageName": "@fhir-typescript/r2-core",
+      "projectFolder": "core/r2",
+      "tags": ["fhir", "core", "R2", "DSTU2"],
+      "versionPolicyName": "ftsVersionPolicy"
+    },
+    {
+      "packageName": "@fhir-typescript/r3-core",
+      "projectFolder": "core/r3",
+      "tags": ["fhir", "core", "R3", "STU3"],
+      "versionPolicyName": "ftsVersionPolicy"
+    },
+    {
       "packageName": "@fhir-typescript/r4-core",
       "projectFolder": "core/r4",
       "tags": ["fhir", "core", "R4"],
+      "versionPolicyName": "ftsVersionPolicy"
+    },
+    {
+      "packageName": "@fhir-typescript/r4b-core",
+      "projectFolder": "core/r4b",
+      "tags": ["fhir", "core", "R4B"],
       "versionPolicyName": "ftsVersionPolicy"
     },
     {

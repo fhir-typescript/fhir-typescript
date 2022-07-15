@@ -1,0 +1,10 @@
+{
+  "changes": [
+    {
+      "packageName": "@fhir-typescript/r3-core",
+      "comment": "Initial pass of R3 build (STU3)",
+      "type": "none"
+    }
+  ],
+  "packageName": "@fhir-typescript/r3-core"
+}

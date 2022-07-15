@@ -1,0 +1,1 @@
+{"version":3,"file":"AddressUseCodes.d.ts","sourceRoot":"./src/","sources":["fhirValueSets/AddressUseCodes.ts"],"names":[],"mappings":"AAKA;;;;GAIG;AACH,eAAO,MAAM,eAAe;IAC1B;;OAEG;;IAEH;;OAEG;;IAEH;;OAEG;;IAEH;;OAEG;;CAEK,CAAC;AAEX;;;;GAIG;AACH,oBAAY,kBAAkB,GAAG,OAAO,eAAe,CAAC,MAAM,OAAO,eAAe,CAAC,CAAC"}

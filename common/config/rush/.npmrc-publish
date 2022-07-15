@@ -18,3 +18,5 @@
 #
 #   //registry.npmjs.org/:_authToken=${NPM_AUTH_TOKEN}
 #
+# @fhir-typescript:registry=//registry.npmjs.org/:_authToken=${NPM_AUTH_TOKEN_FHIR_TS}
+registry=//registry.npmjs.org/:_authToken=${NPM_AUTH_TOKEN_FHIR_TS}

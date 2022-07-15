@@ -1,0 +1,1 @@
+{"version":3,"file":"SubscriptionTagCodings.d.ts","sourceRoot":"./src/","sources":["fhirValueSets/SubscriptionTagCodings.ts"],"names":[],"mappings":"AAKA,OAAO,EAAE,UAAU,EAAE,MAAM,mBAAmB,CAAA;AAE9C;;GAEG;AACH,oBAAY,yBAAyB,GAAG;IACtC;;OAEG;IACH,SAAS,EAAE,UAAU,CAAC;IACtB;;OAEG;IACH,MAAM,EAAE,UAAU,CAAC;CACpB,CAAA;AAED;;GAEG;AACH,eAAO,MAAM,sBAAsB,EAAC,yBAiB1B,CAAC"}

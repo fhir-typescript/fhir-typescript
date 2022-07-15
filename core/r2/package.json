@@ -1,0 +1,41 @@
+{
+  "name": "@fhir-typescript/r2-core",
+  "version": "0.0.12-beta.13",
+  "description": "A FHIR TypeScript SDK",
+  "keywords": ["fhir", "core", "R2", "DSTU2" ],
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "type": "module",
+  "files": [
+    "dist",
+    "src"
+  ],
+  "scripts": {
+    "clean": "shx rm -rf dist lib",
+    "clean:coverage": "rimraf ../../.nyc_output/*",
+    "type-check": "tsc --noEmit",
+    "type-check:watch": "npm run type-check -- --watch",
+    "build": "npm run clean && tsc -p tsconfig.json",
+    "test": "jest --runInBand",
+    "test:coverage": "jest --coverage",
+    "test:coverage:only": "npm run clean:coverage && npm run test:coverage"
+  },
+  "homepage": "https://github.com/fhir-typescript/fhir-typescript.git",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fhir-typescript/fhir-typescript.git"
+  },
+  "author": {
+    "name": "Gino Canessa"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "shx": "~0.3.4",
+    "typescript": "^4.7.2",
+    "tslib": "~2.4.0",
+    "rimraf": "~3.0.2",
+    "@types/jest": "^27.5.1",
+    "ts-jest": "~28.0.3",
+    "jest": "~28.1.0"
+  }
+}

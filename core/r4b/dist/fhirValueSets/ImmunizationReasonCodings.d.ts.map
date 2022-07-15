@@ -1,0 +1,1 @@
+{"version":3,"file":"ImmunizationReasonCodings.d.ts","sourceRoot":"./src/","sources":["fhirValueSets/ImmunizationReasonCodings.ts"],"names":[],"mappings":"AAKA,OAAO,EAAE,UAAU,EAAE,MAAM,mBAAmB,CAAA;AAE9C;;GAEG;AACH,oBAAY,4BAA4B,GAAG;IACzC;;OAEG;IACH,YAAY,EAAE,UAAU,CAAC;IACzB;;OAEG;IACH,YAAY,EAAE,UAAU,CAAC;CAC1B,CAAA;AAED;;GAEG;AACH,eAAO,MAAM,yBAAyB,EAAC,4BAe7B,CAAC"}

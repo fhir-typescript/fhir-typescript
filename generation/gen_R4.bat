@@ -1,1 +1,1 @@
-../../fhir-codegen/src/fhir-codegen-cli/bin/Release/net6.0/fhir-codegen-cli.exe  --output-path ../core/r4/src --load-r4 latest --language TypeScriptSdk --language-input-dir ./fhir-codegen-input --official-expansions-only true
+..\..\fhir-codegen\src\fhir-codegen-cli\bin\Release\net6.0\fhir-codegen-cli.exe --output-path ../core/r4/src --load-r4 latest --language TypeScriptSdk --language-input-dir ./fhir-codegen-input --official-expansions-only true
