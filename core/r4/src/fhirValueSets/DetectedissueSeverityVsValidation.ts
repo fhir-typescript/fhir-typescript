@@ -7,7 +7,10 @@
  * Indicates the potential degree of impact of the identified issue on the patient.
  */
 export const DetectedissueSeverityVsValidation: readonly string[] = [
-  "high", "http://hl7.org/fhir/detectedissue-severity|high", 
-  "low", "http://hl7.org/fhir/detectedissue-severity|low", 
-  "moderate", "http://hl7.org/fhir/detectedissue-severity|moderate", 
+  "high",
+  "http://hl7.org/fhir/detectedissue-severity|high",
+  "http://hl7.org/fhir/detectedissue-severity|low",
+  "http://hl7.org/fhir/detectedissue-severity|moderate",
+  "low",
+  "moderate",
 ] as const;

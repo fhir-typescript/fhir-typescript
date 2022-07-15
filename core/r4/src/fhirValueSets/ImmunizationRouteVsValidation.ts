@@ -7,11 +7,18 @@
  * The value set to instantiate this attribute should be drawn from a terminologically robust code system that consists of or contains concepts to support describing the administrative routes used during vaccination. This value set is provided as a suggestive example.
  */
 export const ImmunizationRouteVsValidation: readonly string[] = [
-  "IDINJ", "http://terminology.hl7.org/CodeSystem/v3-RouteOfAdministration|IDINJ", 
-  "IM", "http://terminology.hl7.org/CodeSystem/v3-RouteOfAdministration|IM", 
-  "IVINJ", "http://terminology.hl7.org/CodeSystem/v3-RouteOfAdministration|IVINJ", 
-  "NASINHLC", "http://terminology.hl7.org/CodeSystem/v3-RouteOfAdministration|NASINHLC", 
-  "PO", "http://terminology.hl7.org/CodeSystem/v3-RouteOfAdministration|PO", 
-  "SQ", "http://terminology.hl7.org/CodeSystem/v3-RouteOfAdministration|SQ", 
-  "TRNSDERM", "http://terminology.hl7.org/CodeSystem/v3-RouteOfAdministration|TRNSDERM", 
+  "http://terminology.hl7.org/CodeSystem/v3-RouteOfAdministration|IDINJ",
+  "http://terminology.hl7.org/CodeSystem/v3-RouteOfAdministration|IM",
+  "http://terminology.hl7.org/CodeSystem/v3-RouteOfAdministration|IVINJ",
+  "http://terminology.hl7.org/CodeSystem/v3-RouteOfAdministration|NASINHLC",
+  "http://terminology.hl7.org/CodeSystem/v3-RouteOfAdministration|PO",
+  "http://terminology.hl7.org/CodeSystem/v3-RouteOfAdministration|SQ",
+  "http://terminology.hl7.org/CodeSystem/v3-RouteOfAdministration|TRNSDERM",
+  "IDINJ",
+  "IM",
+  "IVINJ",
+  "NASINHLC",
+  "PO",
+  "SQ",
+  "TRNSDERM",
 ] as const;

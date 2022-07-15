@@ -63,11 +63,11 @@ export class PersonLink extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'Person.link' }
-    this.vReqS('target',expression)
-    this.vOptSV('assurance',expression,'IdentityAssuranceLevel',IdentityAssuranceLevelVsValidation,'r')
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'Person.link' }
+    this.vRS('target',exp)
+    this.vOSV('assurance',exp,'IdentityAssuranceLevel',IdentityAssuranceLevelVsValidation,'r')
     return issues;
   }
 }
@@ -222,20 +222,20 @@ export class Person extends fhir.DomainResource {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'Person' }
-    this.vReqS('resourceType',expression)
-    this.vOptA('identifier',expression)
-    this.vOptA('name',expression)
-    this.vOptA('telecom',expression)
-    this.vOptSV('gender',expression,'AdministrativeGender',AdministrativeGenderVsValidation,'r')
-    this.vOptS('birthDate',expression)
-    this.vOptA('address',expression)
-    this.vOptS('photo',expression)
-    this.vOptS('managingOrganization',expression)
-    this.vOptS('active',expression)
-    this.vOptA('link',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'Person' }
+    this.vRS('resourceType',exp)
+    this.vOA('identifier',exp)
+    this.vOA('name',exp)
+    this.vOA('telecom',exp)
+    this.vOSV('gender',exp,'AdministrativeGender',AdministrativeGenderVsValidation,'r')
+    this.vOS('birthDate',exp)
+    this.vOA('address',exp)
+    this.vOS('photo',exp)
+    this.vOS('managingOrganization',exp)
+    this.vOS('active',exp)
+    this.vOA('link',exp)
     return issues;
   }
 }

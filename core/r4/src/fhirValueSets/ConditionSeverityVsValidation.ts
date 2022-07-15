@@ -7,7 +7,10 @@
  * Preferred value set for Condition/Diagnosis severity grading.
  */
 export const ConditionSeverityVsValidation: readonly string[] = [
-  "24484000", "http://snomed.info/sct|24484000", 
-  "255604002", "http://snomed.info/sct|255604002", 
-  "6736007", "http://snomed.info/sct|6736007", 
+  "24484000",
+  "255604002",
+  "6736007",
+  "http://snomed.info/sct|24484000",
+  "http://snomed.info/sct|255604002",
+  "http://snomed.info/sct|6736007",
 ] as const;

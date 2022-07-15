@@ -7,7 +7,10 @@
  * How resource references can be aggregated.
  */
 export const ResourceAggregationModeVsValidation: readonly string[] = [
-  "bundled", "http://hl7.org/fhir/resource-aggregation-mode|bundled", 
-  "contained", "http://hl7.org/fhir/resource-aggregation-mode|contained", 
-  "referenced", "http://hl7.org/fhir/resource-aggregation-mode|referenced", 
+  "bundled",
+  "contained",
+  "http://hl7.org/fhir/resource-aggregation-mode|bundled",
+  "http://hl7.org/fhir/resource-aggregation-mode|contained",
+  "http://hl7.org/fhir/resource-aggregation-mode|referenced",
+  "referenced",
 ] as const;

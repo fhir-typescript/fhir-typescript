@@ -7,9 +7,14 @@
  * Type for access of external URI.
  */
 export const RepositoryTypeVsValidation: readonly string[] = [
-  "directlink", "http://hl7.org/fhir/repository-type|directlink", 
-  "login", "http://hl7.org/fhir/repository-type|login", 
-  "oauth", "http://hl7.org/fhir/repository-type|oauth", 
-  "openapi", "http://hl7.org/fhir/repository-type|openapi", 
-  "other", "http://hl7.org/fhir/repository-type|other", 
+  "directlink",
+  "http://hl7.org/fhir/repository-type|directlink",
+  "http://hl7.org/fhir/repository-type|login",
+  "http://hl7.org/fhir/repository-type|oauth",
+  "http://hl7.org/fhir/repository-type|openapi",
+  "http://hl7.org/fhir/repository-type|other",
+  "login",
+  "oauth",
+  "openapi",
+  "other",
 ] as const;

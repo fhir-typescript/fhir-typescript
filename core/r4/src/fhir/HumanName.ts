@@ -152,16 +152,16 @@ export class HumanName extends fhir.FhirElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'HumanName' }
-    this.vOptSV('use',expression,'NameUse',NameUseVsValidation,'r')
-    this.vOptS('text',expression)
-    this.vOptS('family',expression)
-    this.vOptA('given',expression)
-    this.vOptA('prefix',expression)
-    this.vOptA('suffix',expression)
-    this.vOptS('period',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'HumanName' }
+    this.vOSV('use',exp,'NameUse',NameUseVsValidation,'r')
+    this.vOS('text',exp)
+    this.vOS('family',exp)
+    this.vOA('given',exp)
+    this.vOA('prefix',exp)
+    this.vOA('suffix',exp)
+    this.vOS('period',exp)
     return issues;
   }
 

@@ -82,11 +82,11 @@ export class MedicationRequestDispenseRequestInitialFill extends fhir.BackboneEl
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'MedicationRequest.dispenseRequest.initialFill' }
-    this.vOptS('quantity',expression)
-    this.vOptS('duration',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'MedicationRequest.dispenseRequest.initialFill' }
+    this.vOS('quantity',exp)
+    this.vOS('duration',exp)
     return issues;
   }
 }
@@ -184,16 +184,16 @@ export class MedicationRequestDispenseRequest extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'MedicationRequest.dispenseRequest' }
-    this.vOptS('initialFill',expression)
-    this.vOptS('dispenseInterval',expression)
-    this.vOptS('validityPeriod',expression)
-    this.vOptS('numberOfRepeatsAllowed',expression)
-    this.vOptS('quantity',expression)
-    this.vOptS('expectedSupplyDuration',expression)
-    this.vOptS('performer',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'MedicationRequest.dispenseRequest' }
+    this.vOS('initialFill',exp)
+    this.vOS('dispenseInterval',exp)
+    this.vOS('validityPeriod',exp)
+    this.vOS('numberOfRepeatsAllowed',exp)
+    this.vOS('quantity',exp)
+    this.vOS('expectedSupplyDuration',exp)
+    this.vOS('performer',exp)
     return issues;
   }
 }
@@ -253,11 +253,11 @@ export class MedicationRequestSubstitution extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'MedicationRequest.substitution' }
-    this.vReqS('allowed',expression)
-    this.vOptS('reason',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'MedicationRequest.substitution' }
+    this.vRS('allowed',exp)
+    this.vOS('reason',exp)
     return issues;
   }
 }
@@ -690,42 +690,42 @@ export class MedicationRequest extends fhir.DomainResource {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'MedicationRequest' }
-    this.vReqS('resourceType',expression)
-    this.vOptA('identifier',expression)
-    this.vReqSV('status',expression,'MedicationrequestStatus',MedicationrequestStatusVsValidation,'r')
-    this.vOptS('statusReason',expression)
-    this.vReqSV('intent',expression,'MedicationrequestIntent',MedicationrequestIntentVsValidation,'r')
-    this.vOptA('category',expression)
-    this.vOptSV('priority',expression,'RequestPriority',RequestPriorityVsValidation,'r')
-    this.vOptS('doNotPerform',expression)
-    this.vOptS('reported',expression)
-    this.vReqS('medication',expression)
-    this.vReqS('subject',expression)
-    this.vOptS('encounter',expression)
-    this.vOptA('supportingInformation',expression)
-    this.vOptS('authoredOn',expression)
-    this.vOptS('requester',expression)
-    this.vOptS('performer',expression)
-    this.vOptS('performerType',expression)
-    this.vOptS('recorder',expression)
-    this.vOptA('reasonCode',expression)
-    this.vOptA('reasonReference',expression)
-    this.vOptA('instantiatesCanonical',expression)
-    this.vOptA('instantiatesUri',expression)
-    this.vOptA('basedOn',expression)
-    this.vOptS('groupIdentifier',expression)
-    this.vOptS('courseOfTherapyType',expression)
-    this.vOptA('insurance',expression)
-    this.vOptA('note',expression)
-    this.vOptA('dosageInstruction',expression)
-    this.vOptS('dispenseRequest',expression)
-    this.vOptS('substitution',expression)
-    this.vOptS('priorPrescription',expression)
-    this.vOptA('detectedIssue',expression)
-    this.vOptA('eventHistory',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'MedicationRequest' }
+    this.vRS('resourceType',exp)
+    this.vOA('identifier',exp)
+    this.vRSV('status',exp,'MedicationrequestStatus',MedicationrequestStatusVsValidation,'r')
+    this.vOS('statusReason',exp)
+    this.vRSV('intent',exp,'MedicationrequestIntent',MedicationrequestIntentVsValidation,'r')
+    this.vOA('category',exp)
+    this.vOSV('priority',exp,'RequestPriority',RequestPriorityVsValidation,'r')
+    this.vOS('doNotPerform',exp)
+    this.vOS('reported',exp)
+    this.vRS('medication',exp)
+    this.vRS('subject',exp)
+    this.vOS('encounter',exp)
+    this.vOA('supportingInformation',exp)
+    this.vOS('authoredOn',exp)
+    this.vOS('requester',exp)
+    this.vOS('performer',exp)
+    this.vOS('performerType',exp)
+    this.vOS('recorder',exp)
+    this.vOA('reasonCode',exp)
+    this.vOA('reasonReference',exp)
+    this.vOA('instantiatesCanonical',exp)
+    this.vOA('instantiatesUri',exp)
+    this.vOA('basedOn',exp)
+    this.vOS('groupIdentifier',exp)
+    this.vOS('courseOfTherapyType',exp)
+    this.vOA('insurance',exp)
+    this.vOA('note',exp)
+    this.vOA('dosageInstruction',exp)
+    this.vOS('dispenseRequest',exp)
+    this.vOS('substitution',exp)
+    this.vOS('priorPrescription',exp)
+    this.vOA('detectedIssue',exp)
+    this.vOA('eventHistory',exp)
     return issues;
   }
 }

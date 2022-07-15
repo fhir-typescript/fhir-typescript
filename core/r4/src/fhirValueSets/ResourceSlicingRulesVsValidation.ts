@@ -7,7 +7,10 @@
  * How slices are interpreted when evaluating an instance.
  */
 export const ResourceSlicingRulesVsValidation: readonly string[] = [
-  "closed", "http://hl7.org/fhir/resource-slicing-rules|closed", 
-  "open", "http://hl7.org/fhir/resource-slicing-rules|open", 
-  "openAtEnd", "http://hl7.org/fhir/resource-slicing-rules|openAtEnd", 
+  "closed",
+  "http://hl7.org/fhir/resource-slicing-rules|closed",
+  "http://hl7.org/fhir/resource-slicing-rules|open",
+  "http://hl7.org/fhir/resource-slicing-rules|openAtEnd",
+  "open",
+  "openAtEnd",
 ] as const;

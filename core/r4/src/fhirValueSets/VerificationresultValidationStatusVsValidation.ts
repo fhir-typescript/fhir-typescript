@@ -7,7 +7,10 @@
  * Status of the validation of the target against the primary source
  */
 export const VerificationresultValidationStatusVsValidation: readonly string[] = [
-  "failed", "http://terminology.hl7.org/CodeSystem/validation-status|failed", 
-  "successful", "http://terminology.hl7.org/CodeSystem/validation-status|successful", 
-  "unknown", "http://terminology.hl7.org/CodeSystem/validation-status|unknown", 
+  "failed",
+  "http://terminology.hl7.org/CodeSystem/validation-status|failed",
+  "http://terminology.hl7.org/CodeSystem/validation-status|successful",
+  "http://terminology.hl7.org/CodeSystem/validation-status|unknown",
+  "successful",
+  "unknown",
 ] as const;

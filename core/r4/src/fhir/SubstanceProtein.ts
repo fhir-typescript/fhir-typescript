@@ -140,17 +140,17 @@ export class SubstanceProteinSubunit extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'SubstanceProtein.subunit' }
-    this.vOptS('subunit',expression)
-    this.vOptS('sequence',expression)
-    this.vOptS('length',expression)
-    this.vOptS('sequenceAttachment',expression)
-    this.vOptS('nTerminalModificationId',expression)
-    this.vOptS('nTerminalModification',expression)
-    this.vOptS('cTerminalModificationId',expression)
-    this.vOptS('cTerminalModification',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'SubstanceProtein.subunit' }
+    this.vOS('subunit',exp)
+    this.vOS('sequence',exp)
+    this.vOS('length',exp)
+    this.vOS('sequenceAttachment',exp)
+    this.vOS('nTerminalModificationId',exp)
+    this.vOS('nTerminalModification',exp)
+    this.vOS('cTerminalModificationId',exp)
+    this.vOS('cTerminalModification',exp)
     return issues;
   }
 }
@@ -242,14 +242,14 @@ export class SubstanceProtein extends fhir.DomainResource {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'SubstanceProtein' }
-    this.vReqS('resourceType',expression)
-    this.vOptS('sequenceType',expression)
-    this.vOptS('numberOfSubunits',expression)
-    this.vOptA('disulfideLinkage',expression)
-    this.vOptA('subunit',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'SubstanceProtein' }
+    this.vRS('resourceType',exp)
+    this.vOS('sequenceType',exp)
+    this.vOS('numberOfSubunits',exp)
+    this.vOA('disulfideLinkage',exp)
+    this.vOA('subunit',exp)
     return issues;
   }
 }

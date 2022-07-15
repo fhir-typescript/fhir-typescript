@@ -7,10 +7,16 @@
  * HTTP verbs (in the HTTP command line). See [HTTP rfc](https://tools.ietf.org/html/rfc7231) for details.
  */
 export const HttpVerbVsValidation: readonly string[] = [
-  "DELETE", "http://hl7.org/fhir/http-verb|DELETE", 
-  "GET", "http://hl7.org/fhir/http-verb|GET", 
-  "HEAD", "http://hl7.org/fhir/http-verb|HEAD", 
-  "PATCH", "http://hl7.org/fhir/http-verb|PATCH", 
-  "POST", "http://hl7.org/fhir/http-verb|POST", 
-  "PUT", "http://hl7.org/fhir/http-verb|PUT", 
+  "DELETE",
+  "GET",
+  "HEAD",
+  "http://hl7.org/fhir/http-verb|DELETE",
+  "http://hl7.org/fhir/http-verb|GET",
+  "http://hl7.org/fhir/http-verb|HEAD",
+  "http://hl7.org/fhir/http-verb|PATCH",
+  "http://hl7.org/fhir/http-verb|POST",
+  "http://hl7.org/fhir/http-verb|PUT",
+  "PATCH",
+  "POST",
+  "PUT",
 ] as const;

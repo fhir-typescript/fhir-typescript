@@ -134,15 +134,15 @@ export class RiskAssessmentPrediction extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'RiskAssessment.prediction' }
-    this.vOptS('outcome',expression)
-    this.vOptS('probability',expression)
-    this.vOptS('qualitativeRisk',expression)
-    this.vOptS('relativeRisk',expression)
-    this.vOptS('when',expression)
-    this.vOptS('rationale',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'RiskAssessment.prediction' }
+    this.vOS('outcome',exp)
+    this.vOS('probability',exp)
+    this.vOS('qualitativeRisk',exp)
+    this.vOS('relativeRisk',exp)
+    this.vOS('when',exp)
+    this.vOS('rationale',exp)
     return issues;
   }
 }
@@ -369,27 +369,27 @@ export class RiskAssessment extends fhir.DomainResource {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'RiskAssessment' }
-    this.vReqS('resourceType',expression)
-    this.vOptA('identifier',expression)
-    this.vOptS('basedOn',expression)
-    this.vOptS('parent',expression)
-    this.vReqSV('status',expression,'ObservationStatus',ObservationStatusVsValidation,'r')
-    this.vOptS('method',expression)
-    this.vOptS('code',expression)
-    this.vReqS('subject',expression)
-    this.vOptS('encounter',expression)
-    this.vOptS('occurrence',expression)
-    this.vOptS('condition',expression)
-    this.vOptS('performer',expression)
-    this.vOptA('reasonCode',expression)
-    this.vOptA('reasonReference',expression)
-    this.vOptA('basis',expression)
-    this.vOptA('prediction',expression)
-    this.vOptS('mitigation',expression)
-    this.vOptA('note',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'RiskAssessment' }
+    this.vRS('resourceType',exp)
+    this.vOA('identifier',exp)
+    this.vOS('basedOn',exp)
+    this.vOS('parent',exp)
+    this.vRSV('status',exp,'ObservationStatus',ObservationStatusVsValidation,'r')
+    this.vOS('method',exp)
+    this.vOS('code',exp)
+    this.vRS('subject',exp)
+    this.vOS('encounter',exp)
+    this.vOS('occurrence',exp)
+    this.vOS('condition',exp)
+    this.vOS('performer',exp)
+    this.vOA('reasonCode',exp)
+    this.vOA('reasonReference',exp)
+    this.vOA('basis',exp)
+    this.vOA('prediction',exp)
+    this.vOS('mitigation',exp)
+    this.vOA('note',exp)
     return issues;
   }
 }

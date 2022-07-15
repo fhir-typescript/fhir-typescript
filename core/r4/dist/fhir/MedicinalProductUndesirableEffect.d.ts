@@ -67,6 +67,6 @@ export declare class MedicinalProductUndesirableEffect extends fhir.DomainResour
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(expression?: string): fhir.FtsIssue[];
+    doModelValidation(exp?: string): fhir.FtsIssue[];
 }
 //# sourceMappingURL=MedicinalProductUndesirableEffect.d.ts.map

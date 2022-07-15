@@ -7,9 +7,14 @@
  * The type of measure (includes codes from 2.16.840.1.113883.1.11.20368).
  */
 export const MeasureTypeVsValidation: readonly string[] = [
-  "composite", "http://terminology.hl7.org/CodeSystem/measure-type|composite", 
-  "outcome", "http://terminology.hl7.org/CodeSystem/measure-type|outcome", 
-  "patient-reported-outcome", "http://terminology.hl7.org/CodeSystem/measure-type|patient-reported-outcome", 
-  "process", "http://terminology.hl7.org/CodeSystem/measure-type|process", 
-  "structure", "http://terminology.hl7.org/CodeSystem/measure-type|structure", 
+  "composite",
+  "http://terminology.hl7.org/CodeSystem/measure-type|composite",
+  "http://terminology.hl7.org/CodeSystem/measure-type|outcome",
+  "http://terminology.hl7.org/CodeSystem/measure-type|patient-reported-outcome",
+  "http://terminology.hl7.org/CodeSystem/measure-type|process",
+  "http://terminology.hl7.org/CodeSystem/measure-type|structure",
+  "outcome",
+  "patient-reported-outcome",
+  "process",
+  "structure",
 ] as const;

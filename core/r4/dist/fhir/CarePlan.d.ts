@@ -213,7 +213,7 @@ export declare class CarePlanActivityDetail extends fhir.BackboneElement {
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(expression?: string): fhir.FtsIssue[];
+    doModelValidation(exp?: string): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the CarePlanActivity type.
@@ -277,7 +277,7 @@ export declare class CarePlanActivity extends fhir.BackboneElement {
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(expression?: string): fhir.FtsIssue[];
+    doModelValidation(exp?: string): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the CarePlan type.
@@ -521,6 +521,6 @@ export declare class CarePlan extends fhir.DomainResource {
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(expression?: string): fhir.FtsIssue[];
+    doModelValidation(exp?: string): fhir.FtsIssue[];
 }
 //# sourceMappingURL=CarePlan.d.ts.map

@@ -7,10 +7,16 @@
  * Codes indicating the kind of the price component.
  */
 export const InvoicePriceComponentTypeVsValidation: readonly string[] = [
-  "base", "http://hl7.org/fhir/invoice-priceComponentType|base", 
-  "deduction", "http://hl7.org/fhir/invoice-priceComponentType|deduction", 
-  "discount", "http://hl7.org/fhir/invoice-priceComponentType|discount", 
-  "informational", "http://hl7.org/fhir/invoice-priceComponentType|informational", 
-  "surcharge", "http://hl7.org/fhir/invoice-priceComponentType|surcharge", 
-  "tax", "http://hl7.org/fhir/invoice-priceComponentType|tax", 
+  "base",
+  "deduction",
+  "discount",
+  "http://hl7.org/fhir/invoice-priceComponentType|base",
+  "http://hl7.org/fhir/invoice-priceComponentType|deduction",
+  "http://hl7.org/fhir/invoice-priceComponentType|discount",
+  "http://hl7.org/fhir/invoice-priceComponentType|informational",
+  "http://hl7.org/fhir/invoice-priceComponentType|surcharge",
+  "http://hl7.org/fhir/invoice-priceComponentType|tax",
+  "informational",
+  "surcharge",
+  "tax",
 ] as const;

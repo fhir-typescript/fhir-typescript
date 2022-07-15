@@ -78,11 +78,11 @@ export class BundleLink extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'Bundle.link' }
-    this.vReqS('relation',expression)
-    this.vReqS('url',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'Bundle.link' }
+    this.vRS('relation',exp)
+    this.vRS('url',exp)
     return issues;
   }
 }
@@ -145,11 +145,11 @@ export class BundleEntrySearch extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'Bundle.entry.search' }
-    this.vOptSV('mode',expression,'SearchEntryMode',SearchEntryModeVsValidation,'r')
-    this.vOptS('score',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'Bundle.entry.search' }
+    this.vOSV('mode',exp,'SearchEntryMode',SearchEntryModeVsValidation,'r')
+    this.vOS('score',exp)
     return issues;
   }
 }
@@ -280,15 +280,15 @@ export class BundleEntryRequest extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'Bundle.entry.request' }
-    this.vReqSV('method',expression,'HttpVerb',HttpVerbVsValidation,'r')
-    this.vReqS('url',expression)
-    this.vOptS('ifNoneMatch',expression)
-    this.vOptS('ifModifiedSince',expression)
-    this.vOptS('ifMatch',expression)
-    this.vOptS('ifNoneExist',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'Bundle.entry.request' }
+    this.vRSV('method',exp,'HttpVerb',HttpVerbVsValidation,'r')
+    this.vRS('url',exp)
+    this.vOS('ifNoneMatch',exp)
+    this.vOS('ifModifiedSince',exp)
+    this.vOS('ifMatch',exp)
+    this.vOS('ifNoneExist',exp)
     return issues;
   }
 }
@@ -395,14 +395,14 @@ export class BundleEntryResponse extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'Bundle.entry.response' }
-    this.vReqS('status',expression)
-    this.vOptS('location',expression)
-    this.vOptS('etag',expression)
-    this.vOptS('lastModified',expression)
-    this.vOptS('outcome',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'Bundle.entry.response' }
+    this.vRS('status',exp)
+    this.vOS('location',exp)
+    this.vOS('etag',exp)
+    this.vOS('lastModified',exp)
+    this.vOS('outcome',exp)
     return issues;
   }
 }
@@ -494,15 +494,15 @@ export class BundleEntry extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'Bundle.entry' }
-    this.vOptA('link',expression)
-    this.vOptS('fullUrl',expression)
-    this.vOptS('resource',expression)
-    this.vOptS('search',expression)
-    this.vOptS('request',expression)
-    this.vOptS('response',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'Bundle.entry' }
+    this.vOA('link',exp)
+    this.vOS('fullUrl',exp)
+    this.vOS('resource',exp)
+    this.vOS('search',exp)
+    this.vOS('request',exp)
+    this.vOS('response',exp)
     return issues;
   }
 
@@ -653,17 +653,17 @@ export class Bundle extends fhir.Resource {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'Bundle' }
-    this.vReqS('resourceType',expression)
-    this.vOptS('identifier',expression)
-    this.vReqSV('type',expression,'BundleType',BundleTypeVsValidation,'r')
-    this.vOptS('timestamp',expression)
-    this.vOptS('total',expression)
-    this.vOptA('link',expression)
-    this.vOptA('entry',expression)
-    this.vOptS('signature',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'Bundle' }
+    this.vRS('resourceType',exp)
+    this.vOS('identifier',exp)
+    this.vRSV('type',exp,'BundleType',BundleTypeVsValidation,'r')
+    this.vOS('timestamp',exp)
+    this.vOS('total',exp)
+    this.vOA('link',exp)
+    this.vOA('entry',exp)
+    this.vOS('signature',exp)
     return issues;
   }
 }

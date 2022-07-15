@@ -7,9 +7,14 @@
  * An example value set of Codified order entry details concepts.  These concepts only make sense in the context of what is being ordered.  This example is for a patient ventilation order
  */
 export const ServicerequestOrderdetailVsValidation: readonly string[] = [
-  "243144002", "http://snomed.info/sct|243144002", 
-  "243150007", "http://snomed.info/sct|243150007", 
-  "286812008", "http://snomed.info/sct|286812008", 
-  "47545007", "http://snomed.info/sct|47545007", 
-  "59427005", "http://snomed.info/sct|59427005", 
+  "243144002",
+  "243150007",
+  "286812008",
+  "47545007",
+  "59427005",
+  "http://snomed.info/sct|243144002",
+  "http://snomed.info/sct|243150007",
+  "http://snomed.info/sct|286812008",
+  "http://snomed.info/sct|47545007",
+  "http://snomed.info/sct|59427005",
 ] as const;

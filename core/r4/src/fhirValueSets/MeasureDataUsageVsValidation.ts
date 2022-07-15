@@ -7,6 +7,8 @@
  * The intended usage for supplemental data elements in the measure.
  */
 export const MeasureDataUsageVsValidation: readonly string[] = [
-  "risk-adjustment-factor", "http://terminology.hl7.org/CodeSystem/measure-data-usage|risk-adjustment-factor", 
-  "supplemental-data", "http://terminology.hl7.org/CodeSystem/measure-data-usage|supplemental-data", 
+  "http://terminology.hl7.org/CodeSystem/measure-data-usage|risk-adjustment-factor",
+  "http://terminology.hl7.org/CodeSystem/measure-data-usage|supplemental-data",
+  "risk-adjustment-factor",
+  "supplemental-data",
 ] as const;

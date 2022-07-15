@@ -7,8 +7,12 @@
  * Preferred value set for AllergyIntolerance Verification Status.
  */
 export const AllergyintoleranceVerificationVsValidation: readonly string[] = [
-  "confirmed", "http://terminology.hl7.org/CodeSystem/allergyintolerance-verification|confirmed", 
-  "entered-in-error", "http://terminology.hl7.org/CodeSystem/allergyintolerance-verification|entered-in-error", 
-  "refuted", "http://terminology.hl7.org/CodeSystem/allergyintolerance-verification|refuted", 
-  "unconfirmed", "http://terminology.hl7.org/CodeSystem/allergyintolerance-verification|unconfirmed", 
+  "confirmed",
+  "entered-in-error",
+  "http://terminology.hl7.org/CodeSystem/allergyintolerance-verification|confirmed",
+  "http://terminology.hl7.org/CodeSystem/allergyintolerance-verification|entered-in-error",
+  "http://terminology.hl7.org/CodeSystem/allergyintolerance-verification|refuted",
+  "http://terminology.hl7.org/CodeSystem/allergyintolerance-verification|unconfirmed",
+  "refuted",
+  "unconfirmed",
 ] as const;

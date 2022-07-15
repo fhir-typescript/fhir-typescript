@@ -7,7 +7,10 @@
  * Codes that reflect the current state of a clinical impression within its overall lifecycle.
  */
 export const ClinicalimpressionStatusVsValidation: readonly string[] = [
-  "completed", "http://hl7.org/fhir/event-status|completed", 
-  "entered-in-error", "http://hl7.org/fhir/event-status|entered-in-error", 
-  "in-progress", "http://hl7.org/fhir/event-status|in-progress", 
+  "completed",
+  "entered-in-error",
+  "http://hl7.org/fhir/event-status|completed",
+  "http://hl7.org/fhir/event-status|entered-in-error",
+  "http://hl7.org/fhir/event-status|in-progress",
+  "in-progress",
 ] as const;

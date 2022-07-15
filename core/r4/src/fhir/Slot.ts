@@ -204,21 +204,21 @@ export class Slot extends fhir.DomainResource {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'Slot' }
-    this.vReqS('resourceType',expression)
-    this.vOptA('identifier',expression)
-    this.vOptA('serviceCategory',expression)
-    this.vOptA('serviceType',expression)
-    this.vOptA('specialty',expression)
-    this.vOptS('appointmentType',expression)
-    this.vReqS('schedule',expression)
-    this.vReqSV('status',expression,'Slotstatus',SlotstatusVsValidation,'r')
-    this.vReqS('start',expression)
-    this.vReqS('end',expression)
-    this.vOptS('overbooked',expression)
-    this.vOptS('comment',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'Slot' }
+    this.vRS('resourceType',exp)
+    this.vOA('identifier',exp)
+    this.vOA('serviceCategory',exp)
+    this.vOA('serviceType',exp)
+    this.vOA('specialty',exp)
+    this.vOS('appointmentType',exp)
+    this.vRS('schedule',exp)
+    this.vRSV('status',exp,'Slotstatus',SlotstatusVsValidation,'r')
+    this.vRS('start',exp)
+    this.vRS('end',exp)
+    this.vOS('overbooked',exp)
+    this.vOS('comment',exp)
     return issues;
   }
 }

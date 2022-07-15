@@ -7,8 +7,12 @@
  * The status of a resource narrative.
  */
 export const NarrativeStatusVsValidation: readonly string[] = [
-  "additional", "http://hl7.org/fhir/narrative-status|additional", 
-  "empty", "http://hl7.org/fhir/narrative-status|empty", 
-  "extensions", "http://hl7.org/fhir/narrative-status|extensions", 
-  "generated", "http://hl7.org/fhir/narrative-status|generated", 
+  "additional",
+  "empty",
+  "extensions",
+  "generated",
+  "http://hl7.org/fhir/narrative-status|additional",
+  "http://hl7.org/fhir/narrative-status|empty",
+  "http://hl7.org/fhir/narrative-status|extensions",
+  "http://hl7.org/fhir/narrative-status|generated",
 ] as const;

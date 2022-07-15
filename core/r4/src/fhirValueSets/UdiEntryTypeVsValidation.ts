@@ -7,10 +7,16 @@
  * Codes to identify how UDI data was entered.
  */
 export const UdiEntryTypeVsValidation: readonly string[] = [
-  "barcode", "http://hl7.org/fhir/udi-entry-type|barcode", 
-  "card", "http://hl7.org/fhir/udi-entry-type|card", 
-  "manual", "http://hl7.org/fhir/udi-entry-type|manual", 
-  "rfid", "http://hl7.org/fhir/udi-entry-type|rfid", 
-  "self-reported", "http://hl7.org/fhir/udi-entry-type|self-reported", 
-  "unknown", "http://hl7.org/fhir/udi-entry-type|unknown", 
+  "barcode",
+  "card",
+  "http://hl7.org/fhir/udi-entry-type|barcode",
+  "http://hl7.org/fhir/udi-entry-type|card",
+  "http://hl7.org/fhir/udi-entry-type|manual",
+  "http://hl7.org/fhir/udi-entry-type|rfid",
+  "http://hl7.org/fhir/udi-entry-type|self-reported",
+  "http://hl7.org/fhir/udi-entry-type|unknown",
+  "manual",
+  "rfid",
+  "self-reported",
+  "unknown",
 ] as const;

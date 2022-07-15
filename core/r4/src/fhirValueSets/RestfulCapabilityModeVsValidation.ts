@@ -7,6 +7,8 @@
  * The mode of a RESTful capability statement.
  */
 export const RestfulCapabilityModeVsValidation: readonly string[] = [
-  "client", "http://hl7.org/fhir/restful-capability-mode|client", 
-  "server", "http://hl7.org/fhir/restful-capability-mode|server", 
+  "client",
+  "http://hl7.org/fhir/restful-capability-mode|client",
+  "http://hl7.org/fhir/restful-capability-mode|server",
+  "server",
 ] as const;

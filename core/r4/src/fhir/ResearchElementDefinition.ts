@@ -274,21 +274,21 @@ export class ResearchElementDefinitionCharacteristic extends fhir.BackboneElemen
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'ResearchElementDefinition.characteristic' }
-    this.vReqS('definition',expression)
-    this.vOptA('usageContext',expression)
-    this.vOptS('exclude',expression)
-    this.vOptSV('unitOfMeasure',expression,'UcumUnits',UcumUnitsVsValidation,'r')
-    this.vOptS('studyEffectiveDescription',expression)
-    this.vOptS('studyEffective',expression)
-    this.vOptS('studyEffectiveTimeFromStart',expression)
-    this.vOptSV('studyEffectiveGroupMeasure',expression,'GroupMeasure',GroupMeasureVsValidation,'r')
-    this.vOptS('participantEffectiveDescription',expression)
-    this.vOptS('participantEffective',expression)
-    this.vOptS('participantEffectiveTimeFromStart',expression)
-    this.vOptSV('participantEffectiveGroupMeasure',expression,'GroupMeasure',GroupMeasureVsValidation,'r')
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'ResearchElementDefinition.characteristic' }
+    this.vRS('definition',exp)
+    this.vOA('usageContext',exp)
+    this.vOS('exclude',exp)
+    this.vOSV('unitOfMeasure',exp,'UcumUnits',UcumUnitsVsValidation,'r')
+    this.vOS('studyEffectiveDescription',exp)
+    this.vOS('studyEffective',exp)
+    this.vOS('studyEffectiveTimeFromStart',exp)
+    this.vOSV('studyEffectiveGroupMeasure',exp,'GroupMeasure',GroupMeasureVsValidation,'r')
+    this.vOS('participantEffectiveDescription',exp)
+    this.vOS('participantEffective',exp)
+    this.vOS('participantEffectiveTimeFromStart',exp)
+    this.vOSV('participantEffectiveGroupMeasure',exp,'GroupMeasure',GroupMeasureVsValidation,'r')
     return issues;
   }
 }
@@ -818,43 +818,43 @@ export class ResearchElementDefinition extends fhir.DomainResource {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'ResearchElementDefinition' }
-    this.vReqS('resourceType',expression)
-    this.vOptS('url',expression)
-    this.vOptA('identifier',expression)
-    this.vOptS('version',expression)
-    this.vOptS('name',expression)
-    this.vOptS('title',expression)
-    this.vOptS('shortTitle',expression)
-    this.vOptS('subtitle',expression)
-    this.vReqSV('status',expression,'PublicationStatus',PublicationStatusVsValidation,'r')
-    this.vOptS('experimental',expression)
-    this.vOptS('subject',expression)
-    this.vOptS('date',expression)
-    this.vOptS('publisher',expression)
-    this.vOptA('contact',expression)
-    this.vOptS('description',expression)
-    this.vOptA('comment',expression)
-    this.vOptA('useContext',expression)
-    this.vOptA('jurisdiction',expression)
-    this.vOptS('purpose',expression)
-    this.vOptS('usage',expression)
-    this.vOptS('copyright',expression)
-    this.vOptS('approvalDate',expression)
-    this.vOptS('lastReviewDate',expression)
-    this.vOptS('effectivePeriod',expression)
-    this.vOptA('topic',expression)
-    this.vOptA('author',expression)
-    this.vOptA('editor',expression)
-    this.vOptA('reviewer',expression)
-    this.vOptA('endorser',expression)
-    this.vOptA('relatedArtifact',expression)
-    this.vOptA('library',expression)
-    this.vReqSV('type',expression,'ResearchElementType',ResearchElementTypeVsValidation,'r')
-    this.vOptSV('variableType',expression,'VariableType',VariableTypeVsValidation,'r')
-    this.vReqA('characteristic',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'ResearchElementDefinition' }
+    this.vRS('resourceType',exp)
+    this.vOS('url',exp)
+    this.vOA('identifier',exp)
+    this.vOS('version',exp)
+    this.vOS('name',exp)
+    this.vOS('title',exp)
+    this.vOS('shortTitle',exp)
+    this.vOS('subtitle',exp)
+    this.vRSV('status',exp,'PublicationStatus',PublicationStatusVsValidation,'r')
+    this.vOS('experimental',exp)
+    this.vOS('subject',exp)
+    this.vOS('date',exp)
+    this.vOS('publisher',exp)
+    this.vOA('contact',exp)
+    this.vOS('description',exp)
+    this.vOA('comment',exp)
+    this.vOA('useContext',exp)
+    this.vOA('jurisdiction',exp)
+    this.vOS('purpose',exp)
+    this.vOS('usage',exp)
+    this.vOS('copyright',exp)
+    this.vOS('approvalDate',exp)
+    this.vOS('lastReviewDate',exp)
+    this.vOS('effectivePeriod',exp)
+    this.vOA('topic',exp)
+    this.vOA('author',exp)
+    this.vOA('editor',exp)
+    this.vOA('reviewer',exp)
+    this.vOA('endorser',exp)
+    this.vOA('relatedArtifact',exp)
+    this.vOA('library',exp)
+    this.vRSV('type',exp,'ResearchElementType',ResearchElementTypeVsValidation,'r')
+    this.vOSV('variableType',exp,'VariableType',VariableTypeVsValidation,'r')
+    this.vRA('characteristic',exp)
     return issues;
   }
 }

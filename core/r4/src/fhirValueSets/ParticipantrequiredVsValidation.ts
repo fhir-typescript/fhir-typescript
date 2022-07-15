@@ -7,7 +7,10 @@
  * Is the Participant required to attend the appointment.
  */
 export const ParticipantrequiredVsValidation: readonly string[] = [
-  "information-only", "http://hl7.org/fhir/participantrequired|information-only", 
-  "optional", "http://hl7.org/fhir/participantrequired|optional", 
-  "required", "http://hl7.org/fhir/participantrequired|required", 
+  "http://hl7.org/fhir/participantrequired|information-only",
+  "http://hl7.org/fhir/participantrequired|optional",
+  "http://hl7.org/fhir/participantrequired|required",
+  "information-only",
+  "optional",
+  "required",
 ] as const;

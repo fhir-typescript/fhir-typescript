@@ -7,8 +7,12 @@
  * If field is a list, how to manage the production.
  */
 export const MapTargetListModeVsValidation: readonly string[] = [
-  "collate", "http://hl7.org/fhir/map-target-list-mode|collate", 
-  "first", "http://hl7.org/fhir/map-target-list-mode|first", 
-  "last", "http://hl7.org/fhir/map-target-list-mode|last", 
-  "share", "http://hl7.org/fhir/map-target-list-mode|share", 
+  "collate",
+  "first",
+  "http://hl7.org/fhir/map-target-list-mode|collate",
+  "http://hl7.org/fhir/map-target-list-mode|first",
+  "http://hl7.org/fhir/map-target-list-mode|last",
+  "http://hl7.org/fhir/map-target-list-mode|share",
+  "last",
+  "share",
 ] as const;

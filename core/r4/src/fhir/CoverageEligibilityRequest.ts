@@ -97,12 +97,12 @@ export class CoverageEligibilityRequestSupportingInfo extends fhir.BackboneEleme
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'CoverageEligibilityRequest.supportingInfo' }
-    this.vReqS('sequence',expression)
-    this.vReqS('information',expression)
-    this.vOptS('appliesToAll',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'CoverageEligibilityRequest.supportingInfo' }
+    this.vRS('sequence',exp)
+    this.vRS('information',exp)
+    this.vOS('appliesToAll',exp)
     return issues;
   }
 }
@@ -173,12 +173,12 @@ export class CoverageEligibilityRequestInsurance extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'CoverageEligibilityRequest.insurance' }
-    this.vOptS('focal',expression)
-    this.vReqS('coverage',expression)
-    this.vOptS('businessArrangement',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'CoverageEligibilityRequest.insurance' }
+    this.vOS('focal',exp)
+    this.vRS('coverage',exp)
+    this.vOS('businessArrangement',exp)
     return issues;
   }
 }
@@ -228,10 +228,10 @@ export class CoverageEligibilityRequestItemDiagnosis extends fhir.BackboneElemen
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'CoverageEligibilityRequest.item.diagnosis' }
-    this.vOptS('diagnosis',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'CoverageEligibilityRequest.item.diagnosis' }
+    this.vOS('diagnosis',exp)
     return issues;
   }
 }
@@ -362,19 +362,19 @@ export class CoverageEligibilityRequestItem extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'CoverageEligibilityRequest.item' }
-    this.vOptA('supportingInfoSequence',expression)
-    this.vOptS('category',expression)
-    this.vOptS('productOrService',expression)
-    this.vOptA('modifier',expression)
-    this.vOptS('provider',expression)
-    this.vOptS('quantity',expression)
-    this.vOptS('unitPrice',expression)
-    this.vOptS('facility',expression)
-    this.vOptA('diagnosis',expression)
-    this.vOptA('detail',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'CoverageEligibilityRequest.item' }
+    this.vOA('supportingInfoSequence',exp)
+    this.vOS('category',exp)
+    this.vOS('productOrService',exp)
+    this.vOA('modifier',exp)
+    this.vOS('provider',exp)
+    this.vOS('quantity',exp)
+    this.vOS('unitPrice',exp)
+    this.vOS('facility',exp)
+    this.vOA('diagnosis',exp)
+    this.vOA('detail',exp)
     return issues;
   }
 }
@@ -585,24 +585,24 @@ export class CoverageEligibilityRequest extends fhir.DomainResource {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'CoverageEligibilityRequest' }
-    this.vReqS('resourceType',expression)
-    this.vOptA('identifier',expression)
-    this.vReqSV('status',expression,'FmStatus',FmStatusVsValidation,'r')
-    this.vOptS('priority',expression)
-    this.vReqAV('purpose',expression,'EligibilityrequestPurpose',EligibilityrequestPurposeVsValidation,'r')
-    this.vReqS('patient',expression)
-    this.vOptS('serviced',expression)
-    this.vReqS('created',expression)
-    this.vOptS('enterer',expression)
-    this.vOptS('provider',expression)
-    this.vReqS('insurer',expression)
-    this.vOptS('facility',expression)
-    this.vOptA('supportingInfo',expression)
-    this.vOptA('insurance',expression)
-    this.vOptA('item',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'CoverageEligibilityRequest' }
+    this.vRS('resourceType',exp)
+    this.vOA('identifier',exp)
+    this.vRSV('status',exp,'FmStatus',FmStatusVsValidation,'r')
+    this.vOS('priority',exp)
+    this.vRAV('purpose',exp,'EligibilityrequestPurpose',EligibilityrequestPurposeVsValidation,'r')
+    this.vRS('patient',exp)
+    this.vOS('serviced',exp)
+    this.vRS('created',exp)
+    this.vOS('enterer',exp)
+    this.vOS('provider',exp)
+    this.vRS('insurer',exp)
+    this.vOS('facility',exp)
+    this.vOA('supportingInfo',exp)
+    this.vOA('insurance',exp)
+    this.vOA('item',exp)
     return issues;
   }
 }

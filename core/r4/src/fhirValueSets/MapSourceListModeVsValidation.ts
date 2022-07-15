@@ -7,9 +7,14 @@
  * If field is a list, how to manage the source.
  */
 export const MapSourceListModeVsValidation: readonly string[] = [
-  "first", "http://hl7.org/fhir/map-source-list-mode|first", 
-  "last", "http://hl7.org/fhir/map-source-list-mode|last", 
-  "not_first", "http://hl7.org/fhir/map-source-list-mode|not_first", 
-  "not_last", "http://hl7.org/fhir/map-source-list-mode|not_last", 
-  "only_one", "http://hl7.org/fhir/map-source-list-mode|only_one", 
+  "first",
+  "http://hl7.org/fhir/map-source-list-mode|first",
+  "http://hl7.org/fhir/map-source-list-mode|last",
+  "http://hl7.org/fhir/map-source-list-mode|not_first",
+  "http://hl7.org/fhir/map-source-list-mode|not_last",
+  "http://hl7.org/fhir/map-source-list-mode|only_one",
+  "last",
+  "not_first",
+  "not_last",
+  "only_one",
 ] as const;

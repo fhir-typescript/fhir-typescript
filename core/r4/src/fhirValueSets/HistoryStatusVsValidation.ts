@@ -7,8 +7,12 @@
  * A code that identifies the status of the family history record.
  */
 export const HistoryStatusVsValidation: readonly string[] = [
-  "completed", "http://hl7.org/fhir/history-status|completed", 
-  "entered-in-error", "http://hl7.org/fhir/history-status|entered-in-error", 
-  "health-unknown", "http://hl7.org/fhir/history-status|health-unknown", 
-  "partial", "http://hl7.org/fhir/history-status|partial", 
+  "completed",
+  "entered-in-error",
+  "health-unknown",
+  "http://hl7.org/fhir/history-status|completed",
+  "http://hl7.org/fhir/history-status|entered-in-error",
+  "http://hl7.org/fhir/history-status|health-unknown",
+  "http://hl7.org/fhir/history-status|partial",
+  "partial",
 ] as const;

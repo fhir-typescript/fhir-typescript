@@ -7,7 +7,10 @@
  * The status of the measure report.
  */
 export const MeasureReportStatusVsValidation: readonly string[] = [
-  "complete", "http://hl7.org/fhir/measure-report-status|complete", 
-  "error", "http://hl7.org/fhir/measure-report-status|error", 
-  "pending", "http://hl7.org/fhir/measure-report-status|pending", 
+  "complete",
+  "error",
+  "http://hl7.org/fhir/measure-report-status|complete",
+  "http://hl7.org/fhir/measure-report-status|error",
+  "http://hl7.org/fhir/measure-report-status|pending",
+  "pending",
 ] as const;

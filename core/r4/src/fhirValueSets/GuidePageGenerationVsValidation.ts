@@ -7,8 +7,12 @@
  * A code that indicates how the page is generated.
  */
 export const GuidePageGenerationVsValidation: readonly string[] = [
-  "generated", "http://hl7.org/fhir/guide-page-generation|generated", 
-  "html", "http://hl7.org/fhir/guide-page-generation|html", 
-  "markdown", "http://hl7.org/fhir/guide-page-generation|markdown", 
-  "xml", "http://hl7.org/fhir/guide-page-generation|xml", 
+  "generated",
+  "html",
+  "http://hl7.org/fhir/guide-page-generation|generated",
+  "http://hl7.org/fhir/guide-page-generation|html",
+  "http://hl7.org/fhir/guide-page-generation|markdown",
+  "http://hl7.org/fhir/guide-page-generation|xml",
+  "markdown",
+  "xml",
 ] as const;

@@ -7,6 +7,8 @@
  * This value set includes sample Related Claim Relationship codes.
  */
 export const RelatedClaimRelationshipVsValidation: readonly string[] = [
-  "associated", "http://terminology.hl7.org/CodeSystem/ex-relatedclaimrelationship|associated", 
-  "prior", "http://terminology.hl7.org/CodeSystem/ex-relatedclaimrelationship|prior", 
+  "associated",
+  "http://terminology.hl7.org/CodeSystem/ex-relatedclaimrelationship|associated",
+  "http://terminology.hl7.org/CodeSystem/ex-relatedclaimrelationship|prior",
+  "prior",
 ] as const;

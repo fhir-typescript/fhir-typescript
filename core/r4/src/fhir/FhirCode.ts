@@ -44,18 +44,16 @@ export class FhirCode<CodeType extends string = string> extends fhir.FhirPrimiti
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
     if ((this.value !== undefined) && (this.value !== null) && ((this.value === '') || (typeof this.value !== 'string') || (!FhirCode._fts_regex.test(this.value)))) {
-      issues.push({ severity: 'error', code: 'invalid', details: { text: 'Invalid value in primitive type code' }, expression: [expression]});
+      issues.push({ severity: 'error', code: 'invalid', details: { text: 'Invalid value in primitive type code' }, expression: [exp]});
     }
     return issues;
   }
 
   /**
-   * Test whether this CodeableConcept contains a specific coding.
-   * @param system System to search for, empty string will match any system.
-   * @param code Code to search for, empty string will match any code.
+   * Test whether this code contains a specific value.
    * @returns True if this concept contains the specified coding, false if it does not.
    */
    public hasCodingFromValidationObj(vsValidation:Readonly<string[]>):boolean {
@@ -64,6 +62,18 @@ export class FhirCode<CodeType extends string = string> extends fhir.FhirPrimiti
     }
 
     return vsValidation.includes(this.value);
+  }
+
+  /**
+   * Test whether this code contains a specific value.
+   * @returns True if this concept contains the specified coding, false if it does not.
+   */
+   public hasCodingFromValidationHash(vsValidation:Readonly<number[]>):boolean {
+    if (!this.value) {
+      return false;
+    }
+
+    return vsValidation.includes(fhir.FhirBase._hash52_1a_fast(this.value));
   }
 
   /**

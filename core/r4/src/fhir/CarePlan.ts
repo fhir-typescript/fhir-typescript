@@ -303,26 +303,26 @@ export class CarePlanActivityDetail extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'CarePlan.activity.detail' }
-    this.vOptSV('kind',expression,'CarePlanActivityKind',CarePlanActivityKindVsValidation,'r')
-    this.vOptA('instantiatesCanonical',expression)
-    this.vOptA('instantiatesUri',expression)
-    this.vOptS('code',expression)
-    this.vOptA('reasonCode',expression)
-    this.vOptA('reasonReference',expression)
-    this.vOptA('goal',expression)
-    this.vReqSV('status',expression,'CarePlanActivityStatus',CarePlanActivityStatusVsValidation,'r')
-    this.vOptS('statusReason',expression)
-    this.vOptS('doNotPerform',expression)
-    this.vOptS('scheduled',expression)
-    this.vOptS('location',expression)
-    this.vOptA('performer',expression)
-    this.vOptS('product',expression)
-    this.vOptS('dailyAmount',expression)
-    this.vOptS('quantity',expression)
-    this.vOptS('description',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'CarePlan.activity.detail' }
+    this.vOSV('kind',exp,'CarePlanActivityKind',CarePlanActivityKindVsValidation,'r')
+    this.vOA('instantiatesCanonical',exp)
+    this.vOA('instantiatesUri',exp)
+    this.vOS('code',exp)
+    this.vOA('reasonCode',exp)
+    this.vOA('reasonReference',exp)
+    this.vOA('goal',exp)
+    this.vRSV('status',exp,'CarePlanActivityStatus',CarePlanActivityStatusVsValidation,'r')
+    this.vOS('statusReason',exp)
+    this.vOS('doNotPerform',exp)
+    this.vOS('scheduled',exp)
+    this.vOS('location',exp)
+    this.vOA('performer',exp)
+    this.vOS('product',exp)
+    this.vOS('dailyAmount',exp)
+    this.vOS('quantity',exp)
+    this.vOS('description',exp)
     return issues;
   }
 }
@@ -399,14 +399,14 @@ export class CarePlanActivity extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'CarePlan.activity' }
-    this.vOptA('outcomeCodeableConcept',expression)
-    this.vOptA('outcomeReference',expression)
-    this.vOptA('progress',expression)
-    this.vOptS('reference',expression)
-    this.vOptS('detail',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'CarePlan.activity' }
+    this.vOA('outcomeCodeableConcept',exp)
+    this.vOA('outcomeReference',exp)
+    this.vOA('progress',exp)
+    this.vOS('reference',exp)
+    this.vOS('detail',exp)
     return issues;
   }
 }
@@ -728,33 +728,33 @@ export class CarePlan extends fhir.DomainResource {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'CarePlan' }
-    this.vReqS('resourceType',expression)
-    this.vOptA('identifier',expression)
-    this.vOptA('instantiatesCanonical',expression)
-    this.vOptA('instantiatesUri',expression)
-    this.vOptA('basedOn',expression)
-    this.vOptA('replaces',expression)
-    this.vOptA('partOf',expression)
-    this.vReqSV('status',expression,'RequestStatus',RequestStatusVsValidation,'r')
-    this.vReqSV('intent',expression,'CarePlanIntent',CarePlanIntentVsValidation,'r')
-    this.vOptA('category',expression)
-    this.vOptS('title',expression)
-    this.vOptS('description',expression)
-    this.vReqS('subject',expression)
-    this.vOptS('encounter',expression)
-    this.vOptS('period',expression)
-    this.vOptS('created',expression)
-    this.vOptS('author',expression)
-    this.vOptA('contributor',expression)
-    this.vOptA('careTeam',expression)
-    this.vOptA('addresses',expression)
-    this.vOptA('supportingInfo',expression)
-    this.vOptA('goal',expression)
-    this.vOptA('activity',expression)
-    this.vOptA('note',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'CarePlan' }
+    this.vRS('resourceType',exp)
+    this.vOA('identifier',exp)
+    this.vOA('instantiatesCanonical',exp)
+    this.vOA('instantiatesUri',exp)
+    this.vOA('basedOn',exp)
+    this.vOA('replaces',exp)
+    this.vOA('partOf',exp)
+    this.vRSV('status',exp,'RequestStatus',RequestStatusVsValidation,'r')
+    this.vRSV('intent',exp,'CarePlanIntent',CarePlanIntentVsValidation,'r')
+    this.vOA('category',exp)
+    this.vOS('title',exp)
+    this.vOS('description',exp)
+    this.vRS('subject',exp)
+    this.vOS('encounter',exp)
+    this.vOS('period',exp)
+    this.vOS('created',exp)
+    this.vOS('author',exp)
+    this.vOA('contributor',exp)
+    this.vOA('careTeam',exp)
+    this.vOA('addresses',exp)
+    this.vOA('supportingInfo',exp)
+    this.vOA('goal',exp)
+    this.vOA('activity',exp)
+    this.vOA('note',exp)
     return issues;
   }
 }

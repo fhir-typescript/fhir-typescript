@@ -7,10 +7,16 @@
  * Example Message Reasons. These are the set of codes that might be used an updating an encounter using admin-update.
  */
 export const MessageReasonEncounterVsValidation: readonly string[] = [
-  "absent", "http://terminology.hl7.org/CodeSystem/message-reasons-encounter|absent", 
-  "admit", "http://terminology.hl7.org/CodeSystem/message-reasons-encounter|admit", 
-  "discharge", "http://terminology.hl7.org/CodeSystem/message-reasons-encounter|discharge", 
-  "edit", "http://terminology.hl7.org/CodeSystem/message-reasons-encounter|edit", 
-  "moved", "http://terminology.hl7.org/CodeSystem/message-reasons-encounter|moved", 
-  "return", "http://terminology.hl7.org/CodeSystem/message-reasons-encounter|return", 
+  "absent",
+  "admit",
+  "discharge",
+  "edit",
+  "http://terminology.hl7.org/CodeSystem/message-reasons-encounter|absent",
+  "http://terminology.hl7.org/CodeSystem/message-reasons-encounter|admit",
+  "http://terminology.hl7.org/CodeSystem/message-reasons-encounter|discharge",
+  "http://terminology.hl7.org/CodeSystem/message-reasons-encounter|edit",
+  "http://terminology.hl7.org/CodeSystem/message-reasons-encounter|moved",
+  "http://terminology.hl7.org/CodeSystem/message-reasons-encounter|return",
+  "moved",
+  "return",
 ] as const;

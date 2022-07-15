@@ -7,6 +7,8 @@
  * The degree to which the server supports the code search parameter on ValueSet, if it is supported.
  */
 export const CodeSearchSupportVsValidation: readonly string[] = [
-  "all", "http://hl7.org/fhir/code-search-support|all", 
-  "explicit", "http://hl7.org/fhir/code-search-support|explicit", 
+  "all",
+  "explicit",
+  "http://hl7.org/fhir/code-search-support|all",
+  "http://hl7.org/fhir/code-search-support|explicit",
 ] as const;

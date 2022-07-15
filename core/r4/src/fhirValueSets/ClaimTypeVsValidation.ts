@@ -7,9 +7,14 @@
  * This value set includes Claim Type codes.
  */
 export const ClaimTypeVsValidation: readonly string[] = [
-  "institutional", "http://terminology.hl7.org/CodeSystem/claim-type|institutional", 
-  "oral", "http://terminology.hl7.org/CodeSystem/claim-type|oral", 
-  "pharmacy", "http://terminology.hl7.org/CodeSystem/claim-type|pharmacy", 
-  "professional", "http://terminology.hl7.org/CodeSystem/claim-type|professional", 
-  "vision", "http://terminology.hl7.org/CodeSystem/claim-type|vision", 
+  "http://terminology.hl7.org/CodeSystem/claim-type|institutional",
+  "http://terminology.hl7.org/CodeSystem/claim-type|oral",
+  "http://terminology.hl7.org/CodeSystem/claim-type|pharmacy",
+  "http://terminology.hl7.org/CodeSystem/claim-type|professional",
+  "http://terminology.hl7.org/CodeSystem/claim-type|vision",
+  "institutional",
+  "oral",
+  "pharmacy",
+  "professional",
+  "vision",
 ] as const;

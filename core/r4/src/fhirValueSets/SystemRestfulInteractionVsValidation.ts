@@ -7,8 +7,12 @@
  * Operations supported by REST at the system level.
  */
 export const SystemRestfulInteractionVsValidation: readonly string[] = [
-  "batch", "http://hl7.org/fhir/restful-interaction|batch", 
-  "history-system", "http://hl7.org/fhir/restful-interaction|history-system", 
-  "search-system", "http://hl7.org/fhir/restful-interaction|search-system", 
-  "transaction", "http://hl7.org/fhir/restful-interaction|transaction", 
+  "batch",
+  "history-system",
+  "http://hl7.org/fhir/restful-interaction|batch",
+  "http://hl7.org/fhir/restful-interaction|history-system",
+  "http://hl7.org/fhir/restful-interaction|search-system",
+  "http://hl7.org/fhir/restful-interaction|transaction",
+  "search-system",
+  "transaction",
 ] as const;

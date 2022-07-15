@@ -87,14 +87,20 @@ export declare class FhirBase {
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(_expression?: string): FtsIssue[];
+    doModelValidation(_exp?: string): FtsIssue[];
+    /**
+     * FNV-1a implementation from https://github.com/tjwebb/fnv-plus
+     * @param str
+     * @returns
+     */
+    static _hash52_1a_fast(str: string): number;
     /**
      * Validate an Optional Scalar element
      * @param p
      * @param exp
      * @returns
      */
-    vOptS(p: Readonly<string>, exp: Readonly<string>): FtsIssue[];
+    vOS(p: Readonly<string>, exp: Readonly<string>): FtsIssue[];
     /**
      * Validate an Optional Scalar element bound to a Value set
      * @param p
@@ -104,14 +110,14 @@ export declare class FhirBase {
      * @param vsS
      * @returns
      */
-    vOptSV(p: Readonly<string>, exp: Readonly<string>, vsN: string, vsV: Readonly<string[]>, vsS: Readonly<string>): FtsIssue[];
+    vOSV(p: Readonly<string>, exp: Readonly<string>, vsN: string, vsV: Readonly<string[]>, vsS: Readonly<string>): FtsIssue[];
     /**
      * Validate an Optional Array element
      * @param p
      * @param exp
      * @returns
      */
-    vOptA(p: Readonly<string>, exp: Readonly<string>): FtsIssue[];
+    vOA(p: Readonly<string>, exp: Readonly<string>): FtsIssue[];
     /**
      * Validate an Optional Array element bound to a Value set
      * @param p
@@ -121,14 +127,14 @@ export declare class FhirBase {
      * @param vsS
      * @returns
      */
-    vOptAV(p: Readonly<string>, exp: Readonly<string>, vsN: string, vsV: Readonly<string[]>, vsS: Readonly<string>): FtsIssue[];
+    vOAV(p: Readonly<string>, exp: Readonly<string>, vsN: string, vsV: Readonly<string[]>, vsS: Readonly<string>): FtsIssue[];
     /**
      * Validate a Required Scalar element
      * @param p
      * @param exp
      * @returns
      */
-    vReqS(p: Readonly<string>, exp: Readonly<string>): FtsIssue[];
+    vRS(p: Readonly<string>, exp: Readonly<string>): FtsIssue[];
     /**
      * Validate a Required Scalar element bound to a Value set
      * @param p
@@ -138,14 +144,14 @@ export declare class FhirBase {
      * @param vsS
      * @returns
      */
-    vReqSV(p: Readonly<string>, exp: Readonly<string>, vsN: string, vsV: Readonly<string[]>, vsS: Readonly<string>): FtsIssue[];
+    vRSV(p: Readonly<string>, exp: Readonly<string>, vsN: string, vsV: Readonly<string[]>, vsS: Readonly<string>): FtsIssue[];
     /**
      * Validate a Required Array element
      * @param p
      * @param exp
      * @returns
      */
-    vReqA(p: Readonly<string>, exp: Readonly<string>): FtsIssue[];
+    vRA(p: Readonly<string>, exp: Readonly<string>): FtsIssue[];
     /**
      * Validate a Required Array element bound to a Value set
      * @param p
@@ -155,7 +161,7 @@ export declare class FhirBase {
      * @param vsS
      * @returns
      */
-    vReqAV(p: Readonly<string>, exp: Readonly<string>, vsN: string, vsV: Readonly<string[]>, vsS: Readonly<string>): FtsIssue[];
+    vRAV(p: Readonly<string>, exp: Readonly<string>, vsN: string, vsV: Readonly<string[]>, vsS: Readonly<string>): FtsIssue[];
     /**
      * Function to strip invalid element values for serialization.
      */

@@ -90,12 +90,12 @@ export class MedicationIngredient extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'Medication.ingredient' }
-    this.vReqS('item',expression)
-    this.vOptS('isActive',expression)
-    this.vOptS('strength',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'Medication.ingredient' }
+    this.vRS('item',exp)
+    this.vOS('isActive',exp)
+    this.vOS('strength',exp)
     return issues;
   }
 }
@@ -156,11 +156,11 @@ export class MedicationBatch extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'Medication.batch' }
-    this.vOptS('lotNumber',expression)
-    this.vOptS('expirationDate',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'Medication.batch' }
+    this.vOS('lotNumber',exp)
+    this.vOS('expirationDate',exp)
     return issues;
   }
 }
@@ -278,18 +278,18 @@ export class Medication extends fhir.DomainResource {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'Medication' }
-    this.vReqS('resourceType',expression)
-    this.vOptA('identifier',expression)
-    this.vOptS('code',expression)
-    this.vOptSV('status',expression,'MedicationStatus',MedicationStatusVsValidation,'r')
-    this.vOptS('manufacturer',expression)
-    this.vOptS('form',expression)
-    this.vOptS('amount',expression)
-    this.vOptA('ingredient',expression)
-    this.vOptS('batch',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'Medication' }
+    this.vRS('resourceType',exp)
+    this.vOA('identifier',exp)
+    this.vOS('code',exp)
+    this.vOSV('status',exp,'MedicationStatus',MedicationStatusVsValidation,'r')
+    this.vOS('manufacturer',exp)
+    this.vOS('form',exp)
+    this.vOS('amount',exp)
+    this.vOA('ingredient',exp)
+    this.vOS('batch',exp)
     return issues;
   }
 }

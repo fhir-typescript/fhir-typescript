@@ -7,6 +7,8 @@
  * This value set includes a smattering of Prescription Product codes.
  */
 export const VisionProductVsValidation: readonly string[] = [
-  "contact", "http://terminology.hl7.org/CodeSystem/ex-visionprescriptionproduct|contact", 
-  "lens", "http://terminology.hl7.org/CodeSystem/ex-visionprescriptionproduct|lens", 
+  "contact",
+  "http://terminology.hl7.org/CodeSystem/ex-visionprescriptionproduct|contact",
+  "http://terminology.hl7.org/CodeSystem/ex-visionprescriptionproduct|lens",
+  "lens",
 ] as const;

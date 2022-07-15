@@ -98,13 +98,13 @@ export class Reference extends fhir.FhirElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'Reference' }
-    this.vOptS('reference',expression)
-    this.vOptS('type',expression)
-    this.vOptS('identifier',expression)
-    this.vOptS('display',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'Reference' }
+    this.vOS('reference',exp)
+    this.vOS('type',exp)
+    this.vOS('identifier',exp)
+    this.vOS('display',exp)
     return issues;
   }
 

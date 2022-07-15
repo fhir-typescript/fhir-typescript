@@ -7,9 +7,14 @@
  * The type of network access point of this agent in the audit event.
  */
 export const NetworkTypeVsValidation: readonly string[] = [
-  "1", "http://hl7.org/fhir/network-type|1", 
-  "2", "http://hl7.org/fhir/network-type|2", 
-  "3", "http://hl7.org/fhir/network-type|3", 
-  "4", "http://hl7.org/fhir/network-type|4", 
-  "5", "http://hl7.org/fhir/network-type|5", 
+  "1",
+  "2",
+  "3",
+  "4",
+  "5",
+  "http://hl7.org/fhir/network-type|1",
+  "http://hl7.org/fhir/network-type|2",
+  "http://hl7.org/fhir/network-type|3",
+  "http://hl7.org/fhir/network-type|4",
+  "http://hl7.org/fhir/network-type|5",
 ] as const;

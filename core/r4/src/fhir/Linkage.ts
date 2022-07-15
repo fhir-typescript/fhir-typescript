@@ -60,11 +60,11 @@ export class LinkageItem extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'Linkage.item' }
-    this.vReqSV('type',expression,'LinkageType',LinkageTypeVsValidation,'r')
-    this.vReqS('resource',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'Linkage.item' }
+    this.vRSV('type',exp,'LinkageType',LinkageTypeVsValidation,'r')
+    this.vRS('resource',exp)
     return issues;
   }
 }
@@ -136,13 +136,13 @@ export class Linkage extends fhir.DomainResource {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'Linkage' }
-    this.vReqS('resourceType',expression)
-    this.vOptS('active',expression)
-    this.vOptS('author',expression)
-    this.vReqA('item',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'Linkage' }
+    this.vRS('resourceType',exp)
+    this.vOS('active',exp)
+    this.vOS('author',exp)
+    this.vRA('item',exp)
     return issues;
   }
 }

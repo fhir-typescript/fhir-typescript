@@ -104,13 +104,13 @@ export class AdverseEventSuspectEntityCausality extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'AdverseEvent.suspectEntity.causality' }
-    this.vOptS('assessment',expression)
-    this.vOptS('productRelatedness',expression)
-    this.vOptS('author',expression)
-    this.vOptS('method',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'AdverseEvent.suspectEntity.causality' }
+    this.vOS('assessment',exp)
+    this.vOS('productRelatedness',exp)
+    this.vOS('author',exp)
+    this.vOS('method',exp)
     return issues;
   }
 }
@@ -157,11 +157,11 @@ export class AdverseEventSuspectEntity extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'AdverseEvent.suspectEntity' }
-    this.vReqS('instance',expression)
-    this.vOptA('causality',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'AdverseEvent.suspectEntity' }
+    this.vRS('instance',exp)
+    this.vOA('causality',exp)
     return issues;
   }
 }
@@ -418,30 +418,30 @@ export class AdverseEvent extends fhir.DomainResource {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'AdverseEvent' }
-    this.vReqS('resourceType',expression)
-    this.vOptS('identifier',expression)
-    this.vReqSV('actuality',expression,'AdverseEventActuality',AdverseEventActualityVsValidation,'r')
-    this.vOptA('category',expression)
-    this.vOptS('event',expression)
-    this.vReqS('subject',expression)
-    this.vOptS('encounter',expression)
-    this.vOptS('date',expression)
-    this.vOptS('detected',expression)
-    this.vOptS('recordedDate',expression)
-    this.vOptA('resultingCondition',expression)
-    this.vOptS('location',expression)
-    this.vOptS('seriousness',expression)
-    this.vOptSV('severity',expression,'AdverseEventSeverity',AdverseEventSeverityVsValidation,'r')
-    this.vOptSV('outcome',expression,'AdverseEventOutcome',AdverseEventOutcomeVsValidation,'r')
-    this.vOptS('recorder',expression)
-    this.vOptA('contributor',expression)
-    this.vOptA('suspectEntity',expression)
-    this.vOptA('subjectMedicalHistory',expression)
-    this.vOptA('referenceDocument',expression)
-    this.vOptA('study',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'AdverseEvent' }
+    this.vRS('resourceType',exp)
+    this.vOS('identifier',exp)
+    this.vRSV('actuality',exp,'AdverseEventActuality',AdverseEventActualityVsValidation,'r')
+    this.vOA('category',exp)
+    this.vOS('event',exp)
+    this.vRS('subject',exp)
+    this.vOS('encounter',exp)
+    this.vOS('date',exp)
+    this.vOS('detected',exp)
+    this.vOS('recordedDate',exp)
+    this.vOA('resultingCondition',exp)
+    this.vOS('location',exp)
+    this.vOS('seriousness',exp)
+    this.vOSV('severity',exp,'AdverseEventSeverity',AdverseEventSeverityVsValidation,'r')
+    this.vOSV('outcome',exp,'AdverseEventOutcome',AdverseEventOutcomeVsValidation,'r')
+    this.vOS('recorder',exp)
+    this.vOA('contributor',exp)
+    this.vOA('suspectEntity',exp)
+    this.vOA('subjectMedicalHistory',exp)
+    this.vOA('referenceDocument',exp)
+    this.vOA('study',exp)
     return issues;
   }
 }

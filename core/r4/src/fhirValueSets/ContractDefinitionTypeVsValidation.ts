@@ -7,5 +7,6 @@
  * This value set contract specific codes for status.
  */
 export const ContractDefinitionTypeVsValidation: readonly string[] = [
-  "temp", "http://hl7.org/fhir/contract-definition-type|temp", 
+  "http://hl7.org/fhir/contract-definition-type|temp",
+  "temp",
 ] as const;

@@ -7,8 +7,12 @@
  * The type of action to be performed.
  */
 export const ActionTypeVsValidation: readonly string[] = [
-  "create", "http://terminology.hl7.org/CodeSystem/action-type|create", 
-  "fire-event", "http://terminology.hl7.org/CodeSystem/action-type|fire-event", 
-  "remove", "http://terminology.hl7.org/CodeSystem/action-type|remove", 
-  "update", "http://terminology.hl7.org/CodeSystem/action-type|update", 
+  "create",
+  "fire-event",
+  "http://terminology.hl7.org/CodeSystem/action-type|create",
+  "http://terminology.hl7.org/CodeSystem/action-type|fire-event",
+  "http://terminology.hl7.org/CodeSystem/action-type|remove",
+  "http://terminology.hl7.org/CodeSystem/action-type|update",
+  "remove",
+  "update",
 ] as const;

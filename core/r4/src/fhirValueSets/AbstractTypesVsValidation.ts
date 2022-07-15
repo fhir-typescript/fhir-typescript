@@ -7,6 +7,8 @@
  * A list of the base types defined by this version of the FHIR specification - types that are defined, but for which only specializations actually are created.
  */
 export const AbstractTypesVsValidation: readonly string[] = [
-  "Any", "http://hl7.org/fhir/abstract-types|Any", 
-  "Type", "http://hl7.org/fhir/abstract-types|Type", 
+  "Any",
+  "http://hl7.org/fhir/abstract-types|Any",
+  "http://hl7.org/fhir/abstract-types|Type",
+  "Type",
 ] as const;

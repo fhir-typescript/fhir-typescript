@@ -7,12 +7,20 @@
  * Codes providing the status of an observation.
  */
 export const ObservationStatusVsValidation: readonly string[] = [
-  "amended", "http://hl7.org/fhir/observation-status|amended", 
-  "cancelled", "http://hl7.org/fhir/observation-status|cancelled", 
-  "corrected", "http://hl7.org/fhir/observation-status|corrected", 
-  "entered-in-error", "http://hl7.org/fhir/observation-status|entered-in-error", 
-  "final", "http://hl7.org/fhir/observation-status|final", 
-  "preliminary", "http://hl7.org/fhir/observation-status|preliminary", 
-  "registered", "http://hl7.org/fhir/observation-status|registered", 
-  "unknown", "http://hl7.org/fhir/observation-status|unknown", 
+  "amended",
+  "cancelled",
+  "corrected",
+  "entered-in-error",
+  "final",
+  "http://hl7.org/fhir/observation-status|amended",
+  "http://hl7.org/fhir/observation-status|cancelled",
+  "http://hl7.org/fhir/observation-status|corrected",
+  "http://hl7.org/fhir/observation-status|entered-in-error",
+  "http://hl7.org/fhir/observation-status|final",
+  "http://hl7.org/fhir/observation-status|preliminary",
+  "http://hl7.org/fhir/observation-status|registered",
+  "http://hl7.org/fhir/observation-status|unknown",
+  "preliminary",
+  "registered",
+  "unknown",
 ] as const;

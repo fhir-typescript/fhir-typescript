@@ -7,6 +7,8 @@
  * Indicates whether a resource instance represents a specific location or a class of locations.
  */
 export const LocationModeVsValidation: readonly string[] = [
-  "instance", "http://hl7.org/fhir/location-mode|instance", 
-  "kind", "http://hl7.org/fhir/location-mode|kind", 
+  "http://hl7.org/fhir/location-mode|instance",
+  "http://hl7.org/fhir/location-mode|kind",
+  "instance",
+  "kind",
 ] as const;

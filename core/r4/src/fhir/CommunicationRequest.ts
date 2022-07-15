@@ -77,10 +77,10 @@ export class CommunicationRequestPayload extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'CommunicationRequest.payload' }
-    this.vReqS('content',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'CommunicationRequest.payload' }
+    this.vRS('content',exp)
     return issues;
   }
 }
@@ -372,32 +372,32 @@ export class CommunicationRequest extends fhir.DomainResource {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'CommunicationRequest' }
-    this.vReqS('resourceType',expression)
-    this.vOptA('identifier',expression)
-    this.vOptA('basedOn',expression)
-    this.vOptA('replaces',expression)
-    this.vOptS('groupIdentifier',expression)
-    this.vReqSV('status',expression,'RequestStatus',RequestStatusVsValidation,'r')
-    this.vOptS('statusReason',expression)
-    this.vOptA('category',expression)
-    this.vOptSV('priority',expression,'RequestPriority',RequestPriorityVsValidation,'r')
-    this.vOptS('doNotPerform',expression)
-    this.vOptA('medium',expression)
-    this.vOptS('subject',expression)
-    this.vOptA('about',expression)
-    this.vOptS('encounter',expression)
-    this.vOptA('payload',expression)
-    this.vOptS('occurrence',expression)
-    this.vOptS('authoredOn',expression)
-    this.vOptS('requester',expression)
-    this.vOptA('recipient',expression)
-    this.vOptS('sender',expression)
-    this.vOptA('reasonCode',expression)
-    this.vOptA('reasonReference',expression)
-    this.vOptA('note',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'CommunicationRequest' }
+    this.vRS('resourceType',exp)
+    this.vOA('identifier',exp)
+    this.vOA('basedOn',exp)
+    this.vOA('replaces',exp)
+    this.vOS('groupIdentifier',exp)
+    this.vRSV('status',exp,'RequestStatus',RequestStatusVsValidation,'r')
+    this.vOS('statusReason',exp)
+    this.vOA('category',exp)
+    this.vOSV('priority',exp,'RequestPriority',RequestPriorityVsValidation,'r')
+    this.vOS('doNotPerform',exp)
+    this.vOA('medium',exp)
+    this.vOS('subject',exp)
+    this.vOA('about',exp)
+    this.vOS('encounter',exp)
+    this.vOA('payload',exp)
+    this.vOS('occurrence',exp)
+    this.vOS('authoredOn',exp)
+    this.vOS('requester',exp)
+    this.vOA('recipient',exp)
+    this.vOS('sender',exp)
+    this.vOA('reasonCode',exp)
+    this.vOA('reasonReference',exp)
+    this.vOA('note',exp)
     return issues;
   }
 }

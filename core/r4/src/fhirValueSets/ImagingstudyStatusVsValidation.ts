@@ -7,9 +7,14 @@
  * The status of the ImagingStudy.
  */
 export const ImagingstudyStatusVsValidation: readonly string[] = [
-  "available", "http://hl7.org/fhir/imagingstudy-status|available", 
-  "cancelled", "http://hl7.org/fhir/imagingstudy-status|cancelled", 
-  "entered-in-error", "http://hl7.org/fhir/imagingstudy-status|entered-in-error", 
-  "registered", "http://hl7.org/fhir/imagingstudy-status|registered", 
-  "unknown", "http://hl7.org/fhir/imagingstudy-status|unknown", 
+  "available",
+  "cancelled",
+  "entered-in-error",
+  "http://hl7.org/fhir/imagingstudy-status|available",
+  "http://hl7.org/fhir/imagingstudy-status|cancelled",
+  "http://hl7.org/fhir/imagingstudy-status|entered-in-error",
+  "http://hl7.org/fhir/imagingstudy-status|registered",
+  "http://hl7.org/fhir/imagingstudy-status|unknown",
+  "registered",
+  "unknown",
 ] as const;

@@ -7,10 +7,16 @@
  * A set of generally useful codes defined so they can be included in value sets.
  */
 export const SpecialValuesVsValidation: readonly string[] = [
-  "false", "http://terminology.hl7.org/CodeSystem/special-values|false", 
-  "nil-known", "http://terminology.hl7.org/CodeSystem/special-values|nil-known", 
-  "sufficient", "http://terminology.hl7.org/CodeSystem/special-values|sufficient", 
-  "trace", "http://terminology.hl7.org/CodeSystem/special-values|trace", 
-  "true", "http://terminology.hl7.org/CodeSystem/special-values|true", 
-  "withdrawn", "http://terminology.hl7.org/CodeSystem/special-values|withdrawn", 
+  "false",
+  "http://terminology.hl7.org/CodeSystem/special-values|false",
+  "http://terminology.hl7.org/CodeSystem/special-values|nil-known",
+  "http://terminology.hl7.org/CodeSystem/special-values|sufficient",
+  "http://terminology.hl7.org/CodeSystem/special-values|trace",
+  "http://terminology.hl7.org/CodeSystem/special-values|true",
+  "http://terminology.hl7.org/CodeSystem/special-values|withdrawn",
+  "nil-known",
+  "sufficient",
+  "trace",
+  "true",
+  "withdrawn",
 ] as const;

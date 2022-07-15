@@ -7,6 +7,8 @@
  * The type of relations between entries.
  */
 export const RelationTypeVsValidation: readonly string[] = [
-  "is-replaced-by", "http://hl7.org/fhir/relation-type|is-replaced-by", 
-  "triggers", "http://hl7.org/fhir/relation-type|triggers", 
+  "http://hl7.org/fhir/relation-type|is-replaced-by",
+  "http://hl7.org/fhir/relation-type|triggers",
+  "is-replaced-by",
+  "triggers",
 ] as const;

@@ -7,7 +7,10 @@
  * This value set includes sample ICD-10 Procedure codes.
  */
 export const Icd10ProceduresVsValidation: readonly string[] = [
-  "123001", "http://hl7.org/fhir/sid/ex-icd-10-procedures|123001", 
-  "123002", "http://hl7.org/fhir/sid/ex-icd-10-procedures|123002", 
-  "123003", "http://hl7.org/fhir/sid/ex-icd-10-procedures|123003", 
+  "123001",
+  "123002",
+  "123003",
+  "http://hl7.org/fhir/sid/ex-icd-10-procedures|123001",
+  "http://hl7.org/fhir/sid/ex-icd-10-procedures|123002",
+  "http://hl7.org/fhir/sid/ex-icd-10-procedures|123003",
 ] as const;

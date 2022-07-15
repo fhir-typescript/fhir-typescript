@@ -68,11 +68,11 @@ export class EpisodeOfCareStatusHistory extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'EpisodeOfCare.statusHistory' }
-    this.vReqSV('status',expression,'EpisodeOfCareStatus',EpisodeOfCareStatusVsValidation,'r')
-    this.vReqS('period',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'EpisodeOfCare.statusHistory' }
+    this.vRSV('status',exp,'EpisodeOfCareStatus',EpisodeOfCareStatusVsValidation,'r')
+    this.vRS('period',exp)
     return issues;
   }
 }
@@ -135,12 +135,12 @@ export class EpisodeOfCareDiagnosis extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'EpisodeOfCare.diagnosis' }
-    this.vReqS('condition',expression)
-    this.vOptS('role',expression)
-    this.vOptS('rank',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'EpisodeOfCare.diagnosis' }
+    this.vRS('condition',exp)
+    this.vOS('role',exp)
+    this.vOS('rank',exp)
     return issues;
   }
 }
@@ -301,22 +301,22 @@ export class EpisodeOfCare extends fhir.DomainResource {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'EpisodeOfCare' }
-    this.vReqS('resourceType',expression)
-    this.vOptA('identifier',expression)
-    this.vReqSV('status',expression,'EpisodeOfCareStatus',EpisodeOfCareStatusVsValidation,'r')
-    this.vOptA('statusHistory',expression)
-    this.vOptA('type',expression)
-    this.vOptA('diagnosis',expression)
-    this.vReqS('patient',expression)
-    this.vOptS('managingOrganization',expression)
-    this.vOptS('period',expression)
-    this.vOptA('referralRequest',expression)
-    this.vOptS('careManager',expression)
-    this.vOptA('team',expression)
-    this.vOptA('account',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'EpisodeOfCare' }
+    this.vRS('resourceType',exp)
+    this.vOA('identifier',exp)
+    this.vRSV('status',exp,'EpisodeOfCareStatus',EpisodeOfCareStatusVsValidation,'r')
+    this.vOA('statusHistory',exp)
+    this.vOA('type',exp)
+    this.vOA('diagnosis',exp)
+    this.vRS('patient',exp)
+    this.vOS('managingOrganization',exp)
+    this.vOS('period',exp)
+    this.vOA('referralRequest',exp)
+    this.vOS('careManager',exp)
+    this.vOA('team',exp)
+    this.vOA('account',exp)
     return issues;
   }
 }

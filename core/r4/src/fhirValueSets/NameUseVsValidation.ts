@@ -7,11 +7,18 @@
  * The use of a human name.
  */
 export const NameUseVsValidation: readonly string[] = [
-  "anonymous", "http://hl7.org/fhir/name-use|anonymous", 
-  "maiden", "http://hl7.org/fhir/name-use|maiden", 
-  "nickname", "http://hl7.org/fhir/name-use|nickname", 
-  "official", "http://hl7.org/fhir/name-use|official", 
-  "old", "http://hl7.org/fhir/name-use|old", 
-  "temp", "http://hl7.org/fhir/name-use|temp", 
-  "usual", "http://hl7.org/fhir/name-use|usual", 
+  "anonymous",
+  "http://hl7.org/fhir/name-use|anonymous",
+  "http://hl7.org/fhir/name-use|maiden",
+  "http://hl7.org/fhir/name-use|nickname",
+  "http://hl7.org/fhir/name-use|official",
+  "http://hl7.org/fhir/name-use|old",
+  "http://hl7.org/fhir/name-use|temp",
+  "http://hl7.org/fhir/name-use|usual",
+  "maiden",
+  "nickname",
+  "official",
+  "old",
+  "temp",
+  "usual",
 ] as const;

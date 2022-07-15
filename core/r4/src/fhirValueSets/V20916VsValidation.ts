@@ -7,7 +7,10 @@
  * FHIR Value set/code system definition for HL7 v2 table 0916 ( Relevant Clincial Information)
  */
 export const V20916VsValidation: readonly string[] = [
-  "F", "http://terminology.hl7.org/CodeSystem/v2-0916|F", 
-  "NF", "http://terminology.hl7.org/CodeSystem/v2-0916|NF", 
-  "NG", "http://terminology.hl7.org/CodeSystem/v2-0916|NG", 
+  "F",
+  "http://terminology.hl7.org/CodeSystem/v2-0916|F",
+  "http://terminology.hl7.org/CodeSystem/v2-0916|NF",
+  "http://terminology.hl7.org/CodeSystem/v2-0916|NG",
+  "NF",
+  "NG",
 ] as const;

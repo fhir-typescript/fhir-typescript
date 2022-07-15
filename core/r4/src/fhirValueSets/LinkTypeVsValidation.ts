@@ -7,8 +7,12 @@
  * The type of link between this patient resource and another patient resource.
  */
 export const LinkTypeVsValidation: readonly string[] = [
-  "refer", "http://hl7.org/fhir/link-type|refer", 
-  "replaced-by", "http://hl7.org/fhir/link-type|replaced-by", 
-  "replaces", "http://hl7.org/fhir/link-type|replaces", 
-  "seealso", "http://hl7.org/fhir/link-type|seealso", 
+  "http://hl7.org/fhir/link-type|refer",
+  "http://hl7.org/fhir/link-type|replaced-by",
+  "http://hl7.org/fhir/link-type|replaces",
+  "http://hl7.org/fhir/link-type|seealso",
+  "refer",
+  "replaced-by",
+  "replaces",
+  "seealso",
 ] as const;

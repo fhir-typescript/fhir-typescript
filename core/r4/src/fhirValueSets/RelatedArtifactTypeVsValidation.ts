@@ -7,12 +7,20 @@
  * The type of relationship to the related artifact.
  */
 export const RelatedArtifactTypeVsValidation: readonly string[] = [
-  "citation", "http://hl7.org/fhir/related-artifact-type|citation", 
-  "composed-of", "http://hl7.org/fhir/related-artifact-type|composed-of", 
-  "depends-on", "http://hl7.org/fhir/related-artifact-type|depends-on", 
-  "derived-from", "http://hl7.org/fhir/related-artifact-type|derived-from", 
-  "documentation", "http://hl7.org/fhir/related-artifact-type|documentation", 
-  "justification", "http://hl7.org/fhir/related-artifact-type|justification", 
-  "predecessor", "http://hl7.org/fhir/related-artifact-type|predecessor", 
-  "successor", "http://hl7.org/fhir/related-artifact-type|successor", 
+  "citation",
+  "composed-of",
+  "depends-on",
+  "derived-from",
+  "documentation",
+  "http://hl7.org/fhir/related-artifact-type|citation",
+  "http://hl7.org/fhir/related-artifact-type|composed-of",
+  "http://hl7.org/fhir/related-artifact-type|depends-on",
+  "http://hl7.org/fhir/related-artifact-type|derived-from",
+  "http://hl7.org/fhir/related-artifact-type|documentation",
+  "http://hl7.org/fhir/related-artifact-type|justification",
+  "http://hl7.org/fhir/related-artifact-type|predecessor",
+  "http://hl7.org/fhir/related-artifact-type|successor",
+  "justification",
+  "predecessor",
+  "successor",
 ] as const;

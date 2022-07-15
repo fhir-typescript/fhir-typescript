@@ -7,8 +7,12 @@
  * MedicationDispense Performer Function Codes
  */
 export const MedicationdispensePerformerFunctionVsValidation: readonly string[] = [
-  "checker", "http://terminology.hl7.org/CodeSystem/medicationdispense-performer-function|checker", 
-  "dataenterer", "http://terminology.hl7.org/CodeSystem/medicationdispense-performer-function|dataenterer", 
-  "finalchecker", "http://terminology.hl7.org/CodeSystem/medicationdispense-performer-function|finalchecker", 
-  "packager", "http://terminology.hl7.org/CodeSystem/medicationdispense-performer-function|packager", 
+  "checker",
+  "dataenterer",
+  "finalchecker",
+  "http://terminology.hl7.org/CodeSystem/medicationdispense-performer-function|checker",
+  "http://terminology.hl7.org/CodeSystem/medicationdispense-performer-function|dataenterer",
+  "http://terminology.hl7.org/CodeSystem/medicationdispense-performer-function|finalchecker",
+  "http://terminology.hl7.org/CodeSystem/medicationdispense-performer-function|packager",
+  "packager",
 ] as const;

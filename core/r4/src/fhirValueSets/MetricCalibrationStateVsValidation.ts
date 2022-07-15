@@ -7,8 +7,12 @@
  * Describes the state of a metric calibration.
  */
 export const MetricCalibrationStateVsValidation: readonly string[] = [
-  "calibrated", "http://hl7.org/fhir/metric-calibration-state|calibrated", 
-  "calibration-required", "http://hl7.org/fhir/metric-calibration-state|calibration-required", 
-  "not-calibrated", "http://hl7.org/fhir/metric-calibration-state|not-calibrated", 
-  "unspecified", "http://hl7.org/fhir/metric-calibration-state|unspecified", 
+  "calibrated",
+  "calibration-required",
+  "http://hl7.org/fhir/metric-calibration-state|calibrated",
+  "http://hl7.org/fhir/metric-calibration-state|calibration-required",
+  "http://hl7.org/fhir/metric-calibration-state|not-calibrated",
+  "http://hl7.org/fhir/metric-calibration-state|unspecified",
+  "not-calibrated",
+  "unspecified",
 ] as const;

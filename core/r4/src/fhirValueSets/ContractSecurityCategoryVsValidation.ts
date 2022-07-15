@@ -7,5 +7,6 @@
  * This value set contract specific codes for security category.
  */
 export const ContractSecurityCategoryVsValidation: readonly string[] = [
-  "policy", "http://hl7.org/fhir/contract-security-category|policy", 
+  "http://hl7.org/fhir/contract-security-category|policy",
+  "policy",
 ] as const;

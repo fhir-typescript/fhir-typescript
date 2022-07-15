@@ -7,9 +7,14 @@
  * FHIR Value set/code system definition for HL7 v2 table 0276 ( Appointment Reason Codes)
  */
 export const V20276VsValidation: readonly string[] = [
-  "CHECKUP", "http://terminology.hl7.org/CodeSystem/v2-0276|CHECKUP", 
-  "EMERGENCY", "http://terminology.hl7.org/CodeSystem/v2-0276|EMERGENCY", 
-  "FOLLOWUP", "http://terminology.hl7.org/CodeSystem/v2-0276|FOLLOWUP", 
-  "ROUTINE", "http://terminology.hl7.org/CodeSystem/v2-0276|ROUTINE", 
-  "WALKIN", "http://terminology.hl7.org/CodeSystem/v2-0276|WALKIN", 
+  "CHECKUP",
+  "EMERGENCY",
+  "FOLLOWUP",
+  "http://terminology.hl7.org/CodeSystem/v2-0276|CHECKUP",
+  "http://terminology.hl7.org/CodeSystem/v2-0276|EMERGENCY",
+  "http://terminology.hl7.org/CodeSystem/v2-0276|FOLLOWUP",
+  "http://terminology.hl7.org/CodeSystem/v2-0276|ROUTINE",
+  "http://terminology.hl7.org/CodeSystem/v2-0276|WALKIN",
+  "ROUTINE",
+  "WALKIN",
 ] as const;

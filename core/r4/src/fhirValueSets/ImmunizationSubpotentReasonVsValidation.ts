@@ -7,7 +7,10 @@
  * The value set to instantiate this attribute should be drawn from a terminologically robust code system that consists of or contains concepts to support describing the reason why a dose is considered to be subpotent. This value set is provided as a suggestive example.
  */
 export const ImmunizationSubpotentReasonVsValidation: readonly string[] = [
-  "coldchainbreak", "http://terminology.hl7.org/CodeSystem/immunization-subpotent-reason|coldchainbreak", 
-  "partial", "http://terminology.hl7.org/CodeSystem/immunization-subpotent-reason|partial", 
-  "recall", "http://terminology.hl7.org/CodeSystem/immunization-subpotent-reason|recall", 
+  "coldchainbreak",
+  "http://terminology.hl7.org/CodeSystem/immunization-subpotent-reason|coldchainbreak",
+  "http://terminology.hl7.org/CodeSystem/immunization-subpotent-reason|partial",
+  "http://terminology.hl7.org/CodeSystem/immunization-subpotent-reason|recall",
+  "partial",
+  "recall",
 ] as const;

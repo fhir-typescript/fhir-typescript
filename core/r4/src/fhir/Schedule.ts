@@ -142,18 +142,18 @@ export class Schedule extends fhir.DomainResource {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'Schedule' }
-    this.vReqS('resourceType',expression)
-    this.vOptA('identifier',expression)
-    this.vOptS('active',expression)
-    this.vOptA('serviceCategory',expression)
-    this.vOptA('serviceType',expression)
-    this.vOptA('specialty',expression)
-    this.vReqA('actor',expression)
-    this.vOptS('planningHorizon',expression)
-    this.vOptS('comment',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'Schedule' }
+    this.vRS('resourceType',exp)
+    this.vOA('identifier',exp)
+    this.vOS('active',exp)
+    this.vOA('serviceCategory',exp)
+    this.vOA('serviceType',exp)
+    this.vOA('specialty',exp)
+    this.vRA('actor',exp)
+    this.vOS('planningHorizon',exp)
+    this.vOS('comment',exp)
     return issues;
   }
 }

@@ -7,10 +7,16 @@
  * TODO (and should this be required?).
  */
 export const AdverseEventOutcomeVsValidation: readonly string[] = [
-  "fatal", "http://terminology.hl7.org/CodeSystem/adverse-event-outcome|fatal", 
-  "ongoing", "http://terminology.hl7.org/CodeSystem/adverse-event-outcome|ongoing", 
-  "recovering", "http://terminology.hl7.org/CodeSystem/adverse-event-outcome|recovering", 
-  "resolved", "http://terminology.hl7.org/CodeSystem/adverse-event-outcome|resolved", 
-  "resolvedWithSequelae", "http://terminology.hl7.org/CodeSystem/adverse-event-outcome|resolvedWithSequelae", 
-  "unknown", "http://terminology.hl7.org/CodeSystem/adverse-event-outcome|unknown", 
+  "fatal",
+  "http://terminology.hl7.org/CodeSystem/adverse-event-outcome|fatal",
+  "http://terminology.hl7.org/CodeSystem/adverse-event-outcome|ongoing",
+  "http://terminology.hl7.org/CodeSystem/adverse-event-outcome|recovering",
+  "http://terminology.hl7.org/CodeSystem/adverse-event-outcome|resolved",
+  "http://terminology.hl7.org/CodeSystem/adverse-event-outcome|resolvedWithSequelae",
+  "http://terminology.hl7.org/CodeSystem/adverse-event-outcome|unknown",
+  "ongoing",
+  "recovering",
+  "resolved",
+  "resolvedWithSequelae",
+  "unknown",
 ] as const;

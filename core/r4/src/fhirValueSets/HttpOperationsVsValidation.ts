@@ -7,11 +7,18 @@
  * The allowable request method or HTTP operation codes.
  */
 export const HttpOperationsVsValidation: readonly string[] = [
-  "delete", "http://hl7.org/fhir/http-operations|delete", 
-  "get", "http://hl7.org/fhir/http-operations|get", 
-  "head", "http://hl7.org/fhir/http-operations|head", 
-  "options", "http://hl7.org/fhir/http-operations|options", 
-  "patch", "http://hl7.org/fhir/http-operations|patch", 
-  "post", "http://hl7.org/fhir/http-operations|post", 
-  "put", "http://hl7.org/fhir/http-operations|put", 
+  "delete",
+  "get",
+  "head",
+  "http://hl7.org/fhir/http-operations|delete",
+  "http://hl7.org/fhir/http-operations|get",
+  "http://hl7.org/fhir/http-operations|head",
+  "http://hl7.org/fhir/http-operations|options",
+  "http://hl7.org/fhir/http-operations|patch",
+  "http://hl7.org/fhir/http-operations|post",
+  "http://hl7.org/fhir/http-operations|put",
+  "options",
+  "patch",
+  "post",
+  "put",
 ] as const;

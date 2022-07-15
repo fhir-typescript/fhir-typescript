@@ -7,9 +7,14 @@
  * The current status of the test report.
  */
 export const ReportStatusVsValidation: readonly string[] = [
-  "completed", "http://hl7.org/fhir/report-status-codes|completed", 
-  "entered-in-error", "http://hl7.org/fhir/report-status-codes|entered-in-error", 
-  "in-progress", "http://hl7.org/fhir/report-status-codes|in-progress", 
-  "stopped", "http://hl7.org/fhir/report-status-codes|stopped", 
-  "waiting", "http://hl7.org/fhir/report-status-codes|waiting", 
+  "completed",
+  "entered-in-error",
+  "http://hl7.org/fhir/report-status-codes|completed",
+  "http://hl7.org/fhir/report-status-codes|entered-in-error",
+  "http://hl7.org/fhir/report-status-codes|in-progress",
+  "http://hl7.org/fhir/report-status-codes|stopped",
+  "http://hl7.org/fhir/report-status-codes|waiting",
+  "in-progress",
+  "stopped",
+  "waiting",
 ] as const;

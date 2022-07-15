@@ -44,10 +44,10 @@ export class FhirDateTime extends fhir.FhirPrimitive {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
     if ((this.value !== undefined) && (this.value !== null) && ((this.value === '') || (typeof this.value !== 'string') || (!FhirDateTime._fts_regex.test(this.value)))) {
-      issues.push({ severity: 'error', code: 'invalid', details: { text: 'Invalid value in primitive type dateTime' }, expression: [expression]});
+      issues.push({ severity: 'error', code: 'invalid', details: { text: 'Invalid value in primitive type dateTime' }, expression: [exp]});
     }
     return issues;
   }

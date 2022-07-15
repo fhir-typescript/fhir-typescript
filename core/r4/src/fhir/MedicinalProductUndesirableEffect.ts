@@ -84,15 +84,15 @@ export class MedicinalProductUndesirableEffect extends fhir.DomainResource {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'MedicinalProductUndesirableEffect' }
-    this.vReqS('resourceType',expression)
-    this.vOptA('subject',expression)
-    this.vOptS('symptomConditionEffect',expression)
-    this.vOptS('classification',expression)
-    this.vOptS('frequencyOfOccurrence',expression)
-    this.vOptA('population',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'MedicinalProductUndesirableEffect' }
+    this.vRS('resourceType',exp)
+    this.vOA('subject',exp)
+    this.vOS('symptomConditionEffect',exp)
+    this.vOS('classification',exp)
+    this.vOS('frequencyOfOccurrence',exp)
+    this.vOA('population',exp)
     return issues;
   }
 }

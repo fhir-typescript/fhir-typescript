@@ -7,7 +7,10 @@
  * Type if a sequence -- DNA, RNA, or amino acid sequence.
  */
 export const SequenceTypeVsValidation: readonly string[] = [
-  "aa", "http://hl7.org/fhir/sequence-type|aa", 
-  "dna", "http://hl7.org/fhir/sequence-type|dna", 
-  "rna", "http://hl7.org/fhir/sequence-type|rna", 
+  "aa",
+  "dna",
+  "http://hl7.org/fhir/sequence-type|aa",
+  "http://hl7.org/fhir/sequence-type|dna",
+  "http://hl7.org/fhir/sequence-type|rna",
+  "rna",
 ] as const;

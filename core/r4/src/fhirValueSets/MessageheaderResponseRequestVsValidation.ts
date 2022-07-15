@@ -7,8 +7,12 @@
  * HL7-defined table of codes which identify conditions under which acknowledgments are required to be returned in response to a message.
  */
 export const MessageheaderResponseRequestVsValidation: readonly string[] = [
-  "always", "http://hl7.org/fhir/messageheader-response-request|always", 
-  "never", "http://hl7.org/fhir/messageheader-response-request|never", 
-  "on-error", "http://hl7.org/fhir/messageheader-response-request|on-error", 
-  "on-success", "http://hl7.org/fhir/messageheader-response-request|on-success", 
+  "always",
+  "http://hl7.org/fhir/messageheader-response-request|always",
+  "http://hl7.org/fhir/messageheader-response-request|never",
+  "http://hl7.org/fhir/messageheader-response-request|on-error",
+  "http://hl7.org/fhir/messageheader-response-request|on-success",
+  "never",
+  "on-error",
+  "on-success",
 ] as const;

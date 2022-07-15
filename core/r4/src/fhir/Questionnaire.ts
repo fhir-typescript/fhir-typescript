@@ -152,12 +152,12 @@ export class QuestionnaireItemEnableWhen extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'Questionnaire.item.enableWhen' }
-    this.vReqS('question',expression)
-    this.vReqSV('operator',expression,'QuestionnaireEnableOperator',QuestionnaireEnableOperatorVsValidation,'r')
-    this.vReqS('answer',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'Questionnaire.item.enableWhen' }
+    this.vRS('question',exp)
+    this.vRSV('operator',exp,'QuestionnaireEnableOperator',QuestionnaireEnableOperatorVsValidation,'r')
+    this.vRS('answer',exp)
     return issues;
   }
 }
@@ -245,11 +245,11 @@ export class QuestionnaireItemAnswerOption extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'Questionnaire.item.answerOption' }
-    this.vReqS('value',expression)
-    this.vOptS('initialSelected',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'Questionnaire.item.answerOption' }
+    this.vRS('value',exp)
+    this.vOS('initialSelected',exp)
     return issues;
   }
 }
@@ -350,10 +350,10 @@ export class QuestionnaireItemInitial extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'Questionnaire.item.initial' }
-    this.vReqS('value',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'Questionnaire.item.initial' }
+    this.vRS('value',exp)
     return issues;
   }
 }
@@ -623,25 +623,25 @@ export class QuestionnaireItem extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'Questionnaire.item' }
-    this.vReqS('linkId',expression)
-    this.vOptS('definition',expression)
-    this.vOptA('code',expression)
-    this.vOptS('prefix',expression)
-    this.vOptS('text',expression)
-    this.vReqSV('type',expression,'ItemType',ItemTypeVsValidation,'r')
-    this.vOptA('enableWhen',expression)
-    this.vOptSV('enableBehavior',expression,'QuestionnaireEnableBehavior',QuestionnaireEnableBehaviorVsValidation,'r')
-    this.vOptS('required',expression)
-    this.vOptS('repeats',expression)
-    this.vOptS('readOnly',expression)
-    this.vOptS('maxLength',expression)
-    this.vOptS('answerValueSet',expression)
-    this.vOptA('answerOption',expression)
-    this.vOptA('initial',expression)
-    this.vOptA('item',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'Questionnaire.item' }
+    this.vRS('linkId',exp)
+    this.vOS('definition',exp)
+    this.vOA('code',exp)
+    this.vOS('prefix',exp)
+    this.vOS('text',exp)
+    this.vRSV('type',exp,'ItemType',ItemTypeVsValidation,'r')
+    this.vOA('enableWhen',exp)
+    this.vOSV('enableBehavior',exp,'QuestionnaireEnableBehavior',QuestionnaireEnableBehaviorVsValidation,'r')
+    this.vOS('required',exp)
+    this.vOS('repeats',exp)
+    this.vOS('readOnly',exp)
+    this.vOS('maxLength',exp)
+    this.vOS('answerValueSet',exp)
+    this.vOA('answerOption',exp)
+    this.vOA('initial',exp)
+    this.vOA('item',exp)
     return issues;
   }
 }
@@ -1008,32 +1008,32 @@ export class Questionnaire extends fhir.DomainResource {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'Questionnaire' }
-    this.vReqS('resourceType',expression)
-    this.vOptS('url',expression)
-    this.vOptA('identifier',expression)
-    this.vOptS('version',expression)
-    this.vOptS('name',expression)
-    this.vOptS('title',expression)
-    this.vOptA('derivedFrom',expression)
-    this.vReqSV('status',expression,'PublicationStatus',PublicationStatusVsValidation,'r')
-    this.vOptS('experimental',expression)
-    this.vOptAV('subjectType',expression,'ResourceTypes',ResourceTypesVsValidation,'r')
-    this.vOptS('date',expression)
-    this.vOptS('publisher',expression)
-    this.vOptA('contact',expression)
-    this.vOptS('description',expression)
-    this.vOptA('useContext',expression)
-    this.vOptA('jurisdiction',expression)
-    this.vOptS('purpose',expression)
-    this.vOptS('copyright',expression)
-    this.vOptS('approvalDate',expression)
-    this.vOptS('lastReviewDate',expression)
-    this.vOptS('effectivePeriod',expression)
-    this.vOptA('code',expression)
-    this.vOptA('item',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'Questionnaire' }
+    this.vRS('resourceType',exp)
+    this.vOS('url',exp)
+    this.vOA('identifier',exp)
+    this.vOS('version',exp)
+    this.vOS('name',exp)
+    this.vOS('title',exp)
+    this.vOA('derivedFrom',exp)
+    this.vRSV('status',exp,'PublicationStatus',PublicationStatusVsValidation,'r')
+    this.vOS('experimental',exp)
+    this.vOAV('subjectType',exp,'ResourceTypes',ResourceTypesVsValidation,'r')
+    this.vOS('date',exp)
+    this.vOS('publisher',exp)
+    this.vOA('contact',exp)
+    this.vOS('description',exp)
+    this.vOA('useContext',exp)
+    this.vOA('jurisdiction',exp)
+    this.vOS('purpose',exp)
+    this.vOS('copyright',exp)
+    this.vOS('approvalDate',exp)
+    this.vOS('lastReviewDate',exp)
+    this.vOS('effectivePeriod',exp)
+    this.vOA('code',exp)
+    this.vOA('item',exp)
     return issues;
   }
 }

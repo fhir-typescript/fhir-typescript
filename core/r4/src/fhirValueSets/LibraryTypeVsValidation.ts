@@ -7,8 +7,12 @@
  * The type of knowledge asset this library contains.
  */
 export const LibraryTypeVsValidation: readonly string[] = [
-  "asset-collection", "http://terminology.hl7.org/CodeSystem/library-type|asset-collection", 
-  "logic-library", "http://terminology.hl7.org/CodeSystem/library-type|logic-library", 
-  "model-definition", "http://terminology.hl7.org/CodeSystem/library-type|model-definition", 
-  "module-definition", "http://terminology.hl7.org/CodeSystem/library-type|module-definition", 
+  "asset-collection",
+  "http://terminology.hl7.org/CodeSystem/library-type|asset-collection",
+  "http://terminology.hl7.org/CodeSystem/library-type|logic-library",
+  "http://terminology.hl7.org/CodeSystem/library-type|model-definition",
+  "http://terminology.hl7.org/CodeSystem/library-type|module-definition",
+  "logic-library",
+  "model-definition",
+  "module-definition",
 ] as const;

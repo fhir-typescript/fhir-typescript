@@ -68,11 +68,11 @@ export class SupplyDeliverySuppliedItem extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'SupplyDelivery.suppliedItem' }
-    this.vOptS('quantity',expression)
-    this.vOptS('item',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'SupplyDelivery.suppliedItem' }
+    this.vOS('quantity',exp)
+    this.vOS('item',exp)
     return issues;
   }
 }
@@ -240,21 +240,21 @@ export class SupplyDelivery extends fhir.DomainResource {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'SupplyDelivery' }
-    this.vReqS('resourceType',expression)
-    this.vOptA('identifier',expression)
-    this.vOptA('basedOn',expression)
-    this.vOptA('partOf',expression)
-    this.vOptSV('status',expression,'SupplydeliveryStatus',SupplydeliveryStatusVsValidation,'r')
-    this.vOptS('patient',expression)
-    this.vOptSV('type',expression,'SupplydeliveryType',SupplydeliveryTypeVsValidation,'r')
-    this.vOptS('suppliedItem',expression)
-    this.vOptS('occurrence',expression)
-    this.vOptS('supplier',expression)
-    this.vOptS('destination',expression)
-    this.vOptA('receiver',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'SupplyDelivery' }
+    this.vRS('resourceType',exp)
+    this.vOA('identifier',exp)
+    this.vOA('basedOn',exp)
+    this.vOA('partOf',exp)
+    this.vOSV('status',exp,'SupplydeliveryStatus',SupplydeliveryStatusVsValidation,'r')
+    this.vOS('patient',exp)
+    this.vOSV('type',exp,'SupplydeliveryType',SupplydeliveryTypeVsValidation,'r')
+    this.vOS('suppliedItem',exp)
+    this.vOS('occurrence',exp)
+    this.vOS('supplier',exp)
+    this.vOS('destination',exp)
+    this.vOA('receiver',exp)
     return issues;
   }
 }

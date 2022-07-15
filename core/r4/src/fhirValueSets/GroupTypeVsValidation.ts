@@ -7,10 +7,16 @@
  * Types of resources that are part of group.
  */
 export const GroupTypeVsValidation: readonly string[] = [
-  "animal", "http://hl7.org/fhir/group-type|animal", 
-  "device", "http://hl7.org/fhir/group-type|device", 
-  "medication", "http://hl7.org/fhir/group-type|medication", 
-  "person", "http://hl7.org/fhir/group-type|person", 
-  "practitioner", "http://hl7.org/fhir/group-type|practitioner", 
-  "substance", "http://hl7.org/fhir/group-type|substance", 
+  "animal",
+  "device",
+  "http://hl7.org/fhir/group-type|animal",
+  "http://hl7.org/fhir/group-type|device",
+  "http://hl7.org/fhir/group-type|medication",
+  "http://hl7.org/fhir/group-type|person",
+  "http://hl7.org/fhir/group-type|practitioner",
+  "http://hl7.org/fhir/group-type|substance",
+  "medication",
+  "person",
+  "practitioner",
+  "substance",
 ] as const;

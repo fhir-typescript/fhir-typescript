@@ -7,8 +7,12 @@
  * Attested information may be validated by process that are manual or automated. For automated processes it may accomplished by the system of record reaching out through another system's API or information may be sent to the system of record. This value set defines a set of codes to describing the process, the how, a resource or data element is validated.
  */
 export const VerificationresultCommunicationMethodVsValidation: readonly string[] = [
-  "manual", "http://terminology.hl7.org/CodeSystem/verificationresult-communication-method|manual", 
-  "portal", "http://terminology.hl7.org/CodeSystem/verificationresult-communication-method|portal", 
-  "pull", "http://terminology.hl7.org/CodeSystem/verificationresult-communication-method|pull", 
-  "push", "http://terminology.hl7.org/CodeSystem/verificationresult-communication-method|push", 
+  "http://terminology.hl7.org/CodeSystem/verificationresult-communication-method|manual",
+  "http://terminology.hl7.org/CodeSystem/verificationresult-communication-method|portal",
+  "http://terminology.hl7.org/CodeSystem/verificationresult-communication-method|pull",
+  "http://terminology.hl7.org/CodeSystem/verificationresult-communication-method|push",
+  "manual",
+  "portal",
+  "pull",
+  "push",
 ] as const;

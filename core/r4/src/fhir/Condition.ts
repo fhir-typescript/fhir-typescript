@@ -92,12 +92,12 @@ export class ConditionStage extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'Condition.stage' }
-    this.vOptS('summary',expression)
-    this.vOptA('assessment',expression)
-    this.vOptS('type',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'Condition.stage' }
+    this.vOS('summary',exp)
+    this.vOA('assessment',exp)
+    this.vOS('type',exp)
     return issues;
   }
 }
@@ -144,11 +144,11 @@ export class ConditionEvidence extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'Condition.evidence' }
-    this.vOptA('code',expression)
-    this.vOptA('detail',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'Condition.evidence' }
+    this.vOA('code',exp)
+    this.vOA('detail',exp)
     return issues;
   }
 }
@@ -412,27 +412,27 @@ export class Condition extends fhir.DomainResource {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'Condition' }
-    this.vReqS('resourceType',expression)
-    this.vOptA('identifier',expression)
-    this.vOptSV('clinicalStatus',expression,'ConditionClinical',ConditionClinicalVsValidation,'r')
-    this.vOptSV('verificationStatus',expression,'ConditionVerStatus',ConditionVerStatusVsValidation,'r')
-    this.vOptA('category',expression)
-    this.vOptS('severity',expression)
-    this.vOptS('code',expression)
-    this.vOptA('bodySite',expression)
-    this.vReqS('subject',expression)
-    this.vOptS('encounter',expression)
-    this.vOptS('onset',expression)
-    this.vOptS('abatement',expression)
-    this.vOptS('recordedDate',expression)
-    this.vOptS('recorder',expression)
-    this.vOptS('asserter',expression)
-    this.vOptA('stage',expression)
-    this.vOptA('evidence',expression)
-    this.vOptA('note',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'Condition' }
+    this.vRS('resourceType',exp)
+    this.vOA('identifier',exp)
+    this.vOSV('clinicalStatus',exp,'ConditionClinical',ConditionClinicalVsValidation,'r')
+    this.vOSV('verificationStatus',exp,'ConditionVerStatus',ConditionVerStatusVsValidation,'r')
+    this.vOA('category',exp)
+    this.vOS('severity',exp)
+    this.vOS('code',exp)
+    this.vOA('bodySite',exp)
+    this.vRS('subject',exp)
+    this.vOS('encounter',exp)
+    this.vOS('onset',exp)
+    this.vOS('abatement',exp)
+    this.vOS('recordedDate',exp)
+    this.vOS('recorder',exp)
+    this.vOS('asserter',exp)
+    this.vOA('stage',exp)
+    this.vOA('evidence',exp)
+    this.vOA('note',exp)
     return issues;
   }
 }

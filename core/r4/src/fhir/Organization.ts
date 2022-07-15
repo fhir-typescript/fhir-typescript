@@ -73,13 +73,13 @@ export class OrganizationContact extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'Organization.contact' }
-    this.vOptS('purpose',expression)
-    this.vOptS('name',expression)
-    this.vOptA('telecom',expression)
-    this.vOptS('address',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'Organization.contact' }
+    this.vOS('purpose',exp)
+    this.vOS('name',exp)
+    this.vOA('telecom',exp)
+    this.vOS('address',exp)
     return issues;
   }
 }
@@ -244,20 +244,20 @@ export class Organization extends fhir.DomainResource {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'Organization' }
-    this.vReqS('resourceType',expression)
-    this.vOptA('identifier',expression)
-    this.vOptS('active',expression)
-    this.vOptA('type',expression)
-    this.vOptS('name',expression)
-    this.vOptA('alias',expression)
-    this.vOptA('telecom',expression)
-    this.vOptA('address',expression)
-    this.vOptS('partOf',expression)
-    this.vOptA('contact',expression)
-    this.vOptA('endpoint',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'Organization' }
+    this.vRS('resourceType',exp)
+    this.vOA('identifier',exp)
+    this.vOS('active',exp)
+    this.vOA('type',exp)
+    this.vOS('name',exp)
+    this.vOA('alias',exp)
+    this.vOA('telecom',exp)
+    this.vOA('address',exp)
+    this.vOS('partOf',exp)
+    this.vOA('contact',exp)
+    this.vOA('endpoint',exp)
     return issues;
   }
 }

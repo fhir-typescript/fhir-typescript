@@ -7,12 +7,20 @@
  * The type of trigger.
  */
 export const TriggerTypeVsValidation: readonly string[] = [
-  "data-access-ended", "http://hl7.org/fhir/trigger-type|data-access-ended", 
-  "data-accessed", "http://hl7.org/fhir/trigger-type|data-accessed", 
-  "data-added", "http://hl7.org/fhir/trigger-type|data-added", 
-  "data-changed", "http://hl7.org/fhir/trigger-type|data-changed", 
-  "data-modified", "http://hl7.org/fhir/trigger-type|data-modified", 
-  "data-removed", "http://hl7.org/fhir/trigger-type|data-removed", 
-  "named-event", "http://hl7.org/fhir/trigger-type|named-event", 
-  "periodic", "http://hl7.org/fhir/trigger-type|periodic", 
+  "data-access-ended",
+  "data-accessed",
+  "data-added",
+  "data-changed",
+  "data-modified",
+  "data-removed",
+  "http://hl7.org/fhir/trigger-type|data-access-ended",
+  "http://hl7.org/fhir/trigger-type|data-accessed",
+  "http://hl7.org/fhir/trigger-type|data-added",
+  "http://hl7.org/fhir/trigger-type|data-changed",
+  "http://hl7.org/fhir/trigger-type|data-modified",
+  "http://hl7.org/fhir/trigger-type|data-removed",
+  "http://hl7.org/fhir/trigger-type|named-event",
+  "http://hl7.org/fhir/trigger-type|periodic",
+  "named-event",
+  "periodic",
 ] as const;

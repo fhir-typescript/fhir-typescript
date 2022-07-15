@@ -7,8 +7,12 @@
  * Codes providing the status/availability of a specimen.
  */
 export const SpecimenStatusVsValidation: readonly string[] = [
-  "available", "http://hl7.org/fhir/specimen-status|available", 
-  "entered-in-error", "http://hl7.org/fhir/specimen-status|entered-in-error", 
-  "unavailable", "http://hl7.org/fhir/specimen-status|unavailable", 
-  "unsatisfactory", "http://hl7.org/fhir/specimen-status|unsatisfactory", 
+  "available",
+  "entered-in-error",
+  "http://hl7.org/fhir/specimen-status|available",
+  "http://hl7.org/fhir/specimen-status|entered-in-error",
+  "http://hl7.org/fhir/specimen-status|unavailable",
+  "http://hl7.org/fhir/specimen-status|unsatisfactory",
+  "unavailable",
+  "unsatisfactory",
 ] as const;

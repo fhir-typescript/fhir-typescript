@@ -7,6 +7,8 @@
  * A coded concept listing the eye codes.
  */
 export const VisionEyeVsValidation: readonly string[] = [
-  "left", "http://hl7.org/fhir/vision-eye-codes|left", 
-  "right", "http://hl7.org/fhir/vision-eye-codes|right", 
+  "http://hl7.org/fhir/vision-eye-codes|left",
+  "http://hl7.org/fhir/vision-eye-codes|right",
+  "left",
+  "right",
 ] as const;

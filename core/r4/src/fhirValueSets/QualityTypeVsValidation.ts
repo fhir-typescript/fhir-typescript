@@ -7,7 +7,10 @@
  * Type for quality report.
  */
 export const QualityTypeVsValidation: readonly string[] = [
-  "indel", "http://hl7.org/fhir/quality-type|indel", 
-  "snp", "http://hl7.org/fhir/quality-type|snp", 
-  "unknown", "http://hl7.org/fhir/quality-type|unknown", 
+  "http://hl7.org/fhir/quality-type|indel",
+  "http://hl7.org/fhir/quality-type|snp",
+  "http://hl7.org/fhir/quality-type|unknown",
+  "indel",
+  "snp",
+  "unknown",
 ] as const;

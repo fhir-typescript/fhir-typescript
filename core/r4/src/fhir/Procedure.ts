@@ -104,12 +104,12 @@ export class ProcedurePerformer extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'Procedure.performer' }
-    this.vOptS('function',expression)
-    this.vReqS('actor',expression)
-    this.vOptS('onBehalfOf',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'Procedure.performer' }
+    this.vOS('function',exp)
+    this.vRS('actor',exp)
+    this.vOS('onBehalfOf',exp)
     return issues;
   }
 }
@@ -155,11 +155,11 @@ export class ProcedureFocalDevice extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'Procedure.focalDevice' }
-    this.vOptS('action',expression)
-    this.vReqS('manipulated',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'Procedure.focalDevice' }
+    this.vOS('action',exp)
+    this.vRS('manipulated',exp)
     return issues;
   }
 }
@@ -527,38 +527,38 @@ export class Procedure extends fhir.DomainResource {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'Procedure' }
-    this.vReqS('resourceType',expression)
-    this.vOptA('identifier',expression)
-    this.vOptA('instantiatesCanonical',expression)
-    this.vOptA('instantiatesUri',expression)
-    this.vOptA('basedOn',expression)
-    this.vOptA('partOf',expression)
-    this.vReqSV('status',expression,'EventStatus',EventStatusVsValidation,'r')
-    this.vOptS('statusReason',expression)
-    this.vOptS('category',expression)
-    this.vOptS('code',expression)
-    this.vReqS('subject',expression)
-    this.vOptS('encounter',expression)
-    this.vOptS('performed',expression)
-    this.vOptS('recorder',expression)
-    this.vOptS('asserter',expression)
-    this.vOptA('performer',expression)
-    this.vOptS('location',expression)
-    this.vOptA('reasonCode',expression)
-    this.vOptA('reasonReference',expression)
-    this.vOptA('bodySite',expression)
-    this.vOptS('outcome',expression)
-    this.vOptA('report',expression)
-    this.vOptA('complication',expression)
-    this.vOptA('complicationDetail',expression)
-    this.vOptA('followUp',expression)
-    this.vOptA('note',expression)
-    this.vOptA('focalDevice',expression)
-    this.vOptA('usedReference',expression)
-    this.vOptA('usedCode',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'Procedure' }
+    this.vRS('resourceType',exp)
+    this.vOA('identifier',exp)
+    this.vOA('instantiatesCanonical',exp)
+    this.vOA('instantiatesUri',exp)
+    this.vOA('basedOn',exp)
+    this.vOA('partOf',exp)
+    this.vRSV('status',exp,'EventStatus',EventStatusVsValidation,'r')
+    this.vOS('statusReason',exp)
+    this.vOS('category',exp)
+    this.vOS('code',exp)
+    this.vRS('subject',exp)
+    this.vOS('encounter',exp)
+    this.vOS('performed',exp)
+    this.vOS('recorder',exp)
+    this.vOS('asserter',exp)
+    this.vOA('performer',exp)
+    this.vOS('location',exp)
+    this.vOA('reasonCode',exp)
+    this.vOA('reasonReference',exp)
+    this.vOA('bodySite',exp)
+    this.vOS('outcome',exp)
+    this.vOA('report',exp)
+    this.vOA('complication',exp)
+    this.vOA('complicationDetail',exp)
+    this.vOA('followUp',exp)
+    this.vOA('note',exp)
+    this.vOA('focalDevice',exp)
+    this.vOA('usedReference',exp)
+    this.vOA('usedCode',exp)
     return issues;
   }
 }

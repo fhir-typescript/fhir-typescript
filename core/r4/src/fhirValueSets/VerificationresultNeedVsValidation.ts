@@ -7,7 +7,10 @@
  * The frequency with which the target must be validated
  */
 export const VerificationresultNeedVsValidation: readonly string[] = [
-  "initial", "http://terminology.hl7.org/CodeSystem/need|initial", 
-  "none", "http://terminology.hl7.org/CodeSystem/need|none", 
-  "periodic", "http://terminology.hl7.org/CodeSystem/need|periodic", 
+  "http://terminology.hl7.org/CodeSystem/need|initial",
+  "http://terminology.hl7.org/CodeSystem/need|none",
+  "http://terminology.hl7.org/CodeSystem/need|periodic",
+  "initial",
+  "none",
+  "periodic",
 ] as const;

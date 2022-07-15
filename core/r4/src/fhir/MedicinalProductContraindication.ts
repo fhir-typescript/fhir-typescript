@@ -62,11 +62,11 @@ export class MedicinalProductContraindicationOtherTherapy extends fhir.BackboneE
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'MedicinalProductContraindication.otherTherapy' }
-    this.vReqS('therapyRelationshipType',expression)
-    this.vReqS('medication',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'MedicinalProductContraindication.otherTherapy' }
+    this.vRS('therapyRelationshipType',exp)
+    this.vRS('medication',exp)
     return issues;
   }
 }
@@ -170,17 +170,17 @@ export class MedicinalProductContraindication extends fhir.DomainResource {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'MedicinalProductContraindication' }
-    this.vReqS('resourceType',expression)
-    this.vOptA('subject',expression)
-    this.vOptS('disease',expression)
-    this.vOptS('diseaseStatus',expression)
-    this.vOptA('comorbidity',expression)
-    this.vOptA('therapeuticIndication',expression)
-    this.vOptA('otherTherapy',expression)
-    this.vOptA('population',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'MedicinalProductContraindication' }
+    this.vRS('resourceType',exp)
+    this.vOA('subject',exp)
+    this.vOS('disease',exp)
+    this.vOS('diseaseStatus',exp)
+    this.vOA('comorbidity',exp)
+    this.vOA('therapeuticIndication',exp)
+    this.vOA('otherTherapy',exp)
+    this.vOA('population',exp)
     return issues;
   }
 }

@@ -7,7 +7,10 @@
  * The impact of the content of a message.
  */
 export const MessageSignificanceCategoryVsValidation: readonly string[] = [
-  "consequence", "http://hl7.org/fhir/message-significance-category|consequence", 
-  "currency", "http://hl7.org/fhir/message-significance-category|currency", 
-  "notification", "http://hl7.org/fhir/message-significance-category|notification", 
+  "consequence",
+  "currency",
+  "http://hl7.org/fhir/message-significance-category|consequence",
+  "http://hl7.org/fhir/message-significance-category|currency",
+  "http://hl7.org/fhir/message-significance-category|notification",
+  "notification",
 ] as const;

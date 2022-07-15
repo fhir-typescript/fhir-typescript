@@ -7,8 +7,12 @@
  * This is an example set of Content Derivative type codes, which represent the minimal content derived from the basal information source at a specific stage in its lifecycle, which is sufficient to manage that source information, for example, in a repository, registry, processes and workflows, for making access control decisions, and providing query responses.
  */
 export const ContractContentDerivativeVsValidation: readonly string[] = [
-  "registration", "http://terminology.hl7.org/CodeSystem/contract-content-derivative|registration", 
-  "retrieval", "http://terminology.hl7.org/CodeSystem/contract-content-derivative|retrieval", 
-  "shareable", "http://terminology.hl7.org/CodeSystem/contract-content-derivative|shareable", 
-  "statement", "http://terminology.hl7.org/CodeSystem/contract-content-derivative|statement", 
+  "http://terminology.hl7.org/CodeSystem/contract-content-derivative|registration",
+  "http://terminology.hl7.org/CodeSystem/contract-content-derivative|retrieval",
+  "http://terminology.hl7.org/CodeSystem/contract-content-derivative|shareable",
+  "http://terminology.hl7.org/CodeSystem/contract-content-derivative|statement",
+  "registration",
+  "retrieval",
+  "shareable",
+  "statement",
 ] as const;

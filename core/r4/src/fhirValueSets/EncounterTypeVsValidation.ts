@@ -7,8 +7,12 @@
  * This example value set defines a set of codes that can be used to indicate the type of encounter: a specific code indicating type of service provided.
  */
 export const EncounterTypeVsValidation: readonly string[] = [
-  "ADMS", "http://terminology.hl7.org/CodeSystem/encounter-type|ADMS", 
-  "BD/BM-clin", "http://terminology.hl7.org/CodeSystem/encounter-type|BD/BM-clin", 
-  "CCS60", "http://terminology.hl7.org/CodeSystem/encounter-type|CCS60", 
-  "OKI", "http://terminology.hl7.org/CodeSystem/encounter-type|OKI", 
+  "ADMS",
+  "BD/BM-clin",
+  "CCS60",
+  "http://terminology.hl7.org/CodeSystem/encounter-type|ADMS",
+  "http://terminology.hl7.org/CodeSystem/encounter-type|BD/BM-clin",
+  "http://terminology.hl7.org/CodeSystem/encounter-type|CCS60",
+  "http://terminology.hl7.org/CodeSystem/encounter-type|OKI",
+  "OKI",
 ] as const;

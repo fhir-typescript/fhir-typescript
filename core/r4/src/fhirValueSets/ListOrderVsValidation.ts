@@ -7,12 +7,20 @@
  * Base values for the order of the items in a list resource.
  */
 export const ListOrderVsValidation: readonly string[] = [
-  "alphabetic", "http://terminology.hl7.org/CodeSystem/list-order|alphabetic", 
-  "category", "http://terminology.hl7.org/CodeSystem/list-order|category", 
-  "entry-date", "http://terminology.hl7.org/CodeSystem/list-order|entry-date", 
-  "event-date", "http://terminology.hl7.org/CodeSystem/list-order|event-date", 
-  "patient", "http://terminology.hl7.org/CodeSystem/list-order|patient", 
-  "priority", "http://terminology.hl7.org/CodeSystem/list-order|priority", 
-  "system", "http://terminology.hl7.org/CodeSystem/list-order|system", 
-  "user", "http://terminology.hl7.org/CodeSystem/list-order|user", 
+  "alphabetic",
+  "category",
+  "entry-date",
+  "event-date",
+  "http://terminology.hl7.org/CodeSystem/list-order|alphabetic",
+  "http://terminology.hl7.org/CodeSystem/list-order|category",
+  "http://terminology.hl7.org/CodeSystem/list-order|entry-date",
+  "http://terminology.hl7.org/CodeSystem/list-order|event-date",
+  "http://terminology.hl7.org/CodeSystem/list-order|patient",
+  "http://terminology.hl7.org/CodeSystem/list-order|priority",
+  "http://terminology.hl7.org/CodeSystem/list-order|system",
+  "http://terminology.hl7.org/CodeSystem/list-order|user",
+  "patient",
+  "priority",
+  "system",
+  "user",
 ] as const;

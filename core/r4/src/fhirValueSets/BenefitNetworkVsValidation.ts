@@ -7,6 +7,8 @@
  * This value set includes a smattering of Network type codes.
  */
 export const BenefitNetworkVsValidation: readonly string[] = [
-  "in", "http://terminology.hl7.org/CodeSystem/benefit-network|in", 
-  "out", "http://terminology.hl7.org/CodeSystem/benefit-network|out", 
+  "http://terminology.hl7.org/CodeSystem/benefit-network|in",
+  "http://terminology.hl7.org/CodeSystem/benefit-network|out",
+  "in",
+  "out",
 ] as const;

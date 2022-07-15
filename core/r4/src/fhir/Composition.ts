@@ -116,12 +116,12 @@ export class CompositionAttester extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'Composition.attester' }
-    this.vReqSV('mode',expression,'CompositionAttestationMode',CompositionAttestationModeVsValidation,'r')
-    this.vOptS('time',expression)
-    this.vOptS('party',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'Composition.attester' }
+    this.vRSV('mode',exp,'CompositionAttestationMode',CompositionAttestationModeVsValidation,'r')
+    this.vOS('time',exp)
+    this.vOS('party',exp)
     return issues;
   }
 }
@@ -190,11 +190,11 @@ export class CompositionRelatesTo extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'Composition.relatesTo' }
-    this.vReqSV('code',expression,'DocumentRelationshipType',DocumentRelationshipTypeVsValidation,'r')
-    this.vReqS('target',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'Composition.relatesTo' }
+    this.vRSV('code',exp,'DocumentRelationshipType',DocumentRelationshipTypeVsValidation,'r')
+    this.vRS('target',exp)
     return issues;
   }
 }
@@ -250,12 +250,12 @@ export class CompositionEvent extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'Composition.event' }
-    this.vOptA('code',expression)
-    this.vOptS('period',expression)
-    this.vOptA('detail',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'Composition.event' }
+    this.vOA('code',exp)
+    this.vOS('period',exp)
+    this.vOA('detail',exp)
     return issues;
   }
 }
@@ -393,19 +393,19 @@ export class CompositionSection extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'Composition.section' }
-    this.vOptS('title',expression)
-    this.vOptS('code',expression)
-    this.vOptA('author',expression)
-    this.vOptS('focus',expression)
-    this.vOptS('text',expression)
-    this.vOptSV('mode',expression,'ListMode',ListModeVsValidation,'r')
-    this.vOptS('orderedBy',expression)
-    this.vOptA('entry',expression)
-    this.vOptS('emptyReason',expression)
-    this.vOptA('section',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'Composition.section' }
+    this.vOS('title',exp)
+    this.vOS('code',exp)
+    this.vOA('author',exp)
+    this.vOS('focus',exp)
+    this.vOS('text',exp)
+    this.vOSV('mode',exp,'ListMode',ListModeVsValidation,'r')
+    this.vOS('orderedBy',exp)
+    this.vOA('entry',exp)
+    this.vOS('emptyReason',exp)
+    this.vOA('section',exp)
     return issues;
   }
 }
@@ -620,25 +620,25 @@ export class Composition extends fhir.DomainResource {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'Composition' }
-    this.vReqS('resourceType',expression)
-    this.vOptS('identifier',expression)
-    this.vReqSV('status',expression,'CompositionStatus',CompositionStatusVsValidation,'r')
-    this.vReqS('type',expression)
-    this.vOptA('category',expression)
-    this.vOptS('subject',expression)
-    this.vOptS('encounter',expression)
-    this.vReqS('date',expression)
-    this.vReqA('author',expression)
-    this.vReqS('title',expression)
-    this.vOptSV('confidentiality',expression,'V3ConfidentialityClassification',V3ConfidentialityClassificationVsValidation,'r')
-    this.vOptA('attester',expression)
-    this.vOptS('custodian',expression)
-    this.vOptA('relatesTo',expression)
-    this.vOptA('event',expression)
-    this.vOptA('section',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'Composition' }
+    this.vRS('resourceType',exp)
+    this.vOS('identifier',exp)
+    this.vRSV('status',exp,'CompositionStatus',CompositionStatusVsValidation,'r')
+    this.vRS('type',exp)
+    this.vOA('category',exp)
+    this.vOS('subject',exp)
+    this.vOS('encounter',exp)
+    this.vRS('date',exp)
+    this.vRA('author',exp)
+    this.vRS('title',exp)
+    this.vOSV('confidentiality',exp,'V3ConfidentialityClassification',V3ConfidentialityClassificationVsValidation,'r')
+    this.vOA('attester',exp)
+    this.vOS('custodian',exp)
+    this.vOA('relatesTo',exp)
+    this.vOA('event',exp)
+    this.vOA('section',exp)
     return issues;
   }
 }

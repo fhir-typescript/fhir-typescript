@@ -7,6 +7,8 @@
  * This value set includes smattering of Payment Adjustment Reason codes.
  */
 export const PaymentAdjustmentReasonVsValidation: readonly string[] = [
-  "a001", "http://terminology.hl7.org/CodeSystem/payment-adjustment-reason|a001", 
-  "a002", "http://terminology.hl7.org/CodeSystem/payment-adjustment-reason|a002", 
+  "a001",
+  "a002",
+  "http://terminology.hl7.org/CodeSystem/payment-adjustment-reason|a001",
+  "http://terminology.hl7.org/CodeSystem/payment-adjustment-reason|a002",
 ] as const;

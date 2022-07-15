@@ -78,12 +78,12 @@ export class Contributor extends fhir.FhirElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'Contributor' }
-    this.vReqSV('type',expression,'ContributorType',ContributorTypeVsValidation,'r')
-    this.vReqS('name',expression)
-    this.vOptA('contact',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'Contributor' }
+    this.vRSV('type',exp,'ContributorType',ContributorTypeVsValidation,'r')
+    this.vRS('name',exp)
+    this.vOA('contact',exp)
     return issues;
   }
 }

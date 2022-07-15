@@ -71,11 +71,11 @@ export class ImagingStudySeriesPerformer extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'ImagingStudy.series.performer' }
-    this.vOptS('function',expression)
-    this.vReqS('actor',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'ImagingStudy.series.performer' }
+    this.vOS('function',exp)
+    this.vRS('actor',exp)
     return issues;
   }
 }
@@ -164,13 +164,13 @@ export class ImagingStudySeriesInstance extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'ImagingStudy.series.instance' }
-    this.vReqS('uid',expression)
-    this.vReqS('sopClass',expression)
-    this.vOptS('number',expression)
-    this.vOptS('title',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'ImagingStudy.series.instance' }
+    this.vRS('uid',exp)
+    this.vRS('sopClass',exp)
+    this.vOS('number',exp)
+    this.vOS('title',exp)
     return issues;
   }
 }
@@ -351,21 +351,21 @@ export class ImagingStudySeries extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'ImagingStudy.series' }
-    this.vReqS('uid',expression)
-    this.vOptS('number',expression)
-    this.vReqS('modality',expression)
-    this.vOptS('description',expression)
-    this.vOptS('numberOfInstances',expression)
-    this.vOptA('endpoint',expression)
-    this.vOptS('bodySite',expression)
-    this.vOptS('laterality',expression)
-    this.vOptA('specimen',expression)
-    this.vOptS('started',expression)
-    this.vOptA('performer',expression)
-    this.vOptA('instance',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'ImagingStudy.series' }
+    this.vRS('uid',exp)
+    this.vOS('number',exp)
+    this.vRS('modality',exp)
+    this.vOS('description',exp)
+    this.vOS('numberOfInstances',exp)
+    this.vOA('endpoint',exp)
+    this.vOS('bodySite',exp)
+    this.vOS('laterality',exp)
+    this.vOA('specimen',exp)
+    this.vOS('started',exp)
+    this.vOA('performer',exp)
+    this.vOA('instance',exp)
     return issues;
   }
 }
@@ -633,30 +633,30 @@ export class ImagingStudy extends fhir.DomainResource {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'ImagingStudy' }
-    this.vReqS('resourceType',expression)
-    this.vOptA('identifier',expression)
-    this.vReqSV('status',expression,'ImagingstudyStatus',ImagingstudyStatusVsValidation,'r')
-    this.vOptA('modality',expression)
-    this.vReqS('subject',expression)
-    this.vOptS('encounter',expression)
-    this.vOptS('started',expression)
-    this.vOptA('basedOn',expression)
-    this.vOptS('referrer',expression)
-    this.vOptA('interpreter',expression)
-    this.vOptA('endpoint',expression)
-    this.vOptS('numberOfSeries',expression)
-    this.vOptS('numberOfInstances',expression)
-    this.vOptS('procedureReference',expression)
-    this.vOptA('procedureCode',expression)
-    this.vOptS('location',expression)
-    this.vOptA('reasonCode',expression)
-    this.vOptA('reasonReference',expression)
-    this.vOptA('note',expression)
-    this.vOptS('description',expression)
-    this.vOptA('series',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'ImagingStudy' }
+    this.vRS('resourceType',exp)
+    this.vOA('identifier',exp)
+    this.vRSV('status',exp,'ImagingstudyStatus',ImagingstudyStatusVsValidation,'r')
+    this.vOA('modality',exp)
+    this.vRS('subject',exp)
+    this.vOS('encounter',exp)
+    this.vOS('started',exp)
+    this.vOA('basedOn',exp)
+    this.vOS('referrer',exp)
+    this.vOA('interpreter',exp)
+    this.vOA('endpoint',exp)
+    this.vOS('numberOfSeries',exp)
+    this.vOS('numberOfInstances',exp)
+    this.vOS('procedureReference',exp)
+    this.vOA('procedureCode',exp)
+    this.vOS('location',exp)
+    this.vOA('reasonCode',exp)
+    this.vOA('reasonReference',exp)
+    this.vOA('note',exp)
+    this.vOS('description',exp)
+    this.vOA('series',exp)
     return issues;
   }
 }

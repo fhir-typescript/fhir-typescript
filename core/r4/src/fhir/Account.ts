@@ -67,11 +67,11 @@ export class AccountCoverage extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'Account.coverage' }
-    this.vReqS('coverage',expression)
-    this.vOptS('priority',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'Account.coverage' }
+    this.vRS('coverage',exp)
+    this.vOS('priority',exp)
     return issues;
   }
 }
@@ -134,12 +134,12 @@ export class AccountGuarantor extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'Account.guarantor' }
-    this.vReqS('party',expression)
-    this.vOptS('onHold',expression)
-    this.vOptS('period',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'Account.guarantor' }
+    this.vRS('party',exp)
+    this.vOS('onHold',exp)
+    this.vOS('period',exp)
     return issues;
   }
 }
@@ -307,21 +307,21 @@ export class Account extends fhir.DomainResource {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'Account' }
-    this.vReqS('resourceType',expression)
-    this.vOptA('identifier',expression)
-    this.vReqSV('status',expression,'AccountStatus',AccountStatusVsValidation,'r')
-    this.vOptS('type',expression)
-    this.vOptS('name',expression)
-    this.vOptA('subject',expression)
-    this.vOptS('servicePeriod',expression)
-    this.vOptA('coverage',expression)
-    this.vOptS('owner',expression)
-    this.vOptS('description',expression)
-    this.vOptA('guarantor',expression)
-    this.vOptS('partOf',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'Account' }
+    this.vRS('resourceType',exp)
+    this.vOA('identifier',exp)
+    this.vRSV('status',exp,'AccountStatus',AccountStatusVsValidation,'r')
+    this.vOS('type',exp)
+    this.vOS('name',exp)
+    this.vOA('subject',exp)
+    this.vOS('servicePeriod',exp)
+    this.vOA('coverage',exp)
+    this.vOS('owner',exp)
+    this.vOS('description',exp)
+    this.vOA('guarantor',exp)
+    this.vOS('partOf',exp)
     return issues;
   }
 }

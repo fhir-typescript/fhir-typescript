@@ -7,7 +7,10 @@
  * The media type of the expression language.
  */
 export const ExpressionLanguageVsValidation: readonly string[] = [
-  "application/x-fhir-query", "http://hl7.org/fhir/expression-language|application/x-fhir-query", 
-  "text/cql", "http://hl7.org/fhir/expression-language|text/cql", 
-  "text/fhirpath", "http://hl7.org/fhir/expression-language|text/fhirpath", 
+  "application/x-fhir-query",
+  "http://hl7.org/fhir/expression-language|application/x-fhir-query",
+  "http://hl7.org/fhir/expression-language|text/cql",
+  "http://hl7.org/fhir/expression-language|text/fhirpath",
+  "text/cql",
+  "text/fhirpath",
 ] as const;

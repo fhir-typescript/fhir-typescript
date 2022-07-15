@@ -7,7 +7,10 @@
  * The code(s) that detail the conditions under which the healthcare service is available/offered.
  */
 export const ServiceProvisionConditionsVsValidation: readonly string[] = [
-  "cost", "http://terminology.hl7.org/CodeSystem/service-provision-conditions|cost", 
-  "disc", "http://terminology.hl7.org/CodeSystem/service-provision-conditions|disc", 
-  "free", "http://terminology.hl7.org/CodeSystem/service-provision-conditions|free", 
+  "cost",
+  "disc",
+  "free",
+  "http://terminology.hl7.org/CodeSystem/service-provision-conditions|cost",
+  "http://terminology.hl7.org/CodeSystem/service-provision-conditions|disc",
+  "http://terminology.hl7.org/CodeSystem/service-provision-conditions|free",
 ] as const;

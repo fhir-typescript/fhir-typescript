@@ -7,9 +7,14 @@
  * A set of flags that defines how references are supported.
  */
 export const ReferenceHandlingPolicyVsValidation: readonly string[] = [
-  "enforced", "http://hl7.org/fhir/reference-handling-policy|enforced", 
-  "literal", "http://hl7.org/fhir/reference-handling-policy|literal", 
-  "local", "http://hl7.org/fhir/reference-handling-policy|local", 
-  "logical", "http://hl7.org/fhir/reference-handling-policy|logical", 
-  "resolves", "http://hl7.org/fhir/reference-handling-policy|resolves", 
+  "enforced",
+  "http://hl7.org/fhir/reference-handling-policy|enforced",
+  "http://hl7.org/fhir/reference-handling-policy|literal",
+  "http://hl7.org/fhir/reference-handling-policy|local",
+  "http://hl7.org/fhir/reference-handling-policy|logical",
+  "http://hl7.org/fhir/reference-handling-policy|resolves",
+  "literal",
+  "local",
+  "logical",
+  "resolves",
 ] as const;

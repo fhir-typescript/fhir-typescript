@@ -319,24 +319,24 @@ export class TimingRepeat extends fhir.FhirElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'Timing.repeat' }
-    this.vOptS('bounds',expression)
-    this.vOptS('count',expression)
-    this.vOptS('countMax',expression)
-    this.vOptS('duration',expression)
-    this.vOptS('durationMax',expression)
-    this.vOptSV('durationUnit',expression,'UnitsOfTime',UnitsOfTimeVsValidation,'r')
-    this.vOptS('frequency',expression)
-    this.vOptS('frequencyMax',expression)
-    this.vOptS('period',expression)
-    this.vOptS('periodMax',expression)
-    this.vOptSV('periodUnit',expression,'UnitsOfTime',UnitsOfTimeVsValidation,'r')
-    this.vOptAV('dayOfWeek',expression,'DaysOfWeek',DaysOfWeekVsValidation,'r')
-    this.vOptA('timeOfDay',expression)
-    this.vOptAV('when',expression,'EventTiming',EventTimingVsValidation,'r')
-    this.vOptS('offset',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'Timing.repeat' }
+    this.vOS('bounds',exp)
+    this.vOS('count',exp)
+    this.vOS('countMax',exp)
+    this.vOS('duration',exp)
+    this.vOS('durationMax',exp)
+    this.vOSV('durationUnit',exp,'UnitsOfTime',UnitsOfTimeVsValidation,'r')
+    this.vOS('frequency',exp)
+    this.vOS('frequencyMax',exp)
+    this.vOS('period',exp)
+    this.vOS('periodMax',exp)
+    this.vOSV('periodUnit',exp,'UnitsOfTime',UnitsOfTimeVsValidation,'r')
+    this.vOAV('dayOfWeek',exp,'DaysOfWeek',DaysOfWeekVsValidation,'r')
+    this.vOA('timeOfDay',exp)
+    this.vOAV('when',exp,'EventTiming',EventTimingVsValidation,'r')
+    this.vOS('offset',exp)
     return issues;
   }
 }
@@ -401,12 +401,12 @@ export class Timing extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'Timing' }
-    this.vOptA('event',expression)
-    this.vOptS('repeat',expression)
-    this.vOptS('code',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'Timing' }
+    this.vOA('event',exp)
+    this.vOS('repeat',exp)
+    this.vOS('code',exp)
     return issues;
   }
 }

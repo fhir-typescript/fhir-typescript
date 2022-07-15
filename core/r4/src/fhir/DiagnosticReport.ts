@@ -71,11 +71,11 @@ export class DiagnosticReportMedia extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'DiagnosticReport.media' }
-    this.vOptS('comment',expression)
-    this.vReqS('link',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'DiagnosticReport.media' }
+    this.vOS('comment',exp)
+    this.vRS('link',exp)
     return issues;
   }
 }
@@ -324,28 +324,28 @@ export class DiagnosticReport extends fhir.DomainResource {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'DiagnosticReport' }
-    this.vReqS('resourceType',expression)
-    this.vOptA('identifier',expression)
-    this.vOptA('basedOn',expression)
-    this.vReqSV('status',expression,'DiagnosticReportStatus',DiagnosticReportStatusVsValidation,'r')
-    this.vOptA('category',expression)
-    this.vReqS('code',expression)
-    this.vOptS('subject',expression)
-    this.vOptS('encounter',expression)
-    this.vOptS('effective',expression)
-    this.vOptS('issued',expression)
-    this.vOptA('performer',expression)
-    this.vOptA('resultsInterpreter',expression)
-    this.vOptA('specimen',expression)
-    this.vOptA('result',expression)
-    this.vOptA('imagingStudy',expression)
-    this.vOptA('media',expression)
-    this.vOptS('conclusion',expression)
-    this.vOptA('conclusionCode',expression)
-    this.vOptA('presentedForm',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'DiagnosticReport' }
+    this.vRS('resourceType',exp)
+    this.vOA('identifier',exp)
+    this.vOA('basedOn',exp)
+    this.vRSV('status',exp,'DiagnosticReportStatus',DiagnosticReportStatusVsValidation,'r')
+    this.vOA('category',exp)
+    this.vRS('code',exp)
+    this.vOS('subject',exp)
+    this.vOS('encounter',exp)
+    this.vOS('effective',exp)
+    this.vOS('issued',exp)
+    this.vOA('performer',exp)
+    this.vOA('resultsInterpreter',exp)
+    this.vOA('specimen',exp)
+    this.vOA('result',exp)
+    this.vOA('imagingStudy',exp)
+    this.vOA('media',exp)
+    this.vOS('conclusion',exp)
+    this.vOA('conclusionCode',exp)
+    this.vOA('presentedForm',exp)
     return issues;
   }
 }

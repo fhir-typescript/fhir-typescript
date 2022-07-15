@@ -79,12 +79,12 @@ export class MeasureReportGroupPopulation extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'MeasureReport.group.population' }
-    this.vOptS('code',expression)
-    this.vOptS('count',expression)
-    this.vOptS('subjectResults',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'MeasureReport.group.population' }
+    this.vOS('code',exp)
+    this.vOS('count',exp)
+    this.vOS('subjectResults',exp)
     return issues;
   }
 }
@@ -131,11 +131,11 @@ export class MeasureReportGroupStratifierStratumComponent extends fhir.BackboneE
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'MeasureReport.group.stratifier.stratum.component' }
-    this.vReqS('code',expression)
-    this.vReqS('value',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'MeasureReport.group.stratifier.stratum.component' }
+    this.vRS('code',exp)
+    this.vRS('value',exp)
     return issues;
   }
 }
@@ -197,12 +197,12 @@ export class MeasureReportGroupStratifierStratumPopulation extends fhir.Backbone
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'MeasureReport.group.stratifier.stratum.population' }
-    this.vOptS('code',expression)
-    this.vOptS('count',expression)
-    this.vOptS('subjectResults',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'MeasureReport.group.stratifier.stratum.population' }
+    this.vOS('code',exp)
+    this.vOS('count',exp)
+    this.vOS('subjectResults',exp)
     return issues;
   }
 }
@@ -267,13 +267,13 @@ export class MeasureReportGroupStratifierStratum extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'MeasureReport.group.stratifier.stratum' }
-    this.vOptS('value',expression)
-    this.vOptA('component',expression)
-    this.vOptA('population',expression)
-    this.vOptS('measureScore',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'MeasureReport.group.stratifier.stratum' }
+    this.vOS('value',exp)
+    this.vOA('component',exp)
+    this.vOA('population',exp)
+    this.vOS('measureScore',exp)
     return issues;
   }
 }
@@ -320,11 +320,11 @@ export class MeasureReportGroupStratifier extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'MeasureReport.group.stratifier' }
-    this.vOptA('code',expression)
-    this.vOptA('stratum',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'MeasureReport.group.stratifier' }
+    this.vOA('code',exp)
+    this.vOA('stratum',exp)
     return issues;
   }
 }
@@ -389,13 +389,13 @@ export class MeasureReportGroup extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'MeasureReport.group' }
-    this.vOptS('code',expression)
-    this.vOptA('population',expression)
-    this.vOptS('measureScore',expression)
-    this.vOptA('stratifier',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'MeasureReport.group' }
+    this.vOS('code',exp)
+    this.vOA('population',exp)
+    this.vOS('measureScore',exp)
+    this.vOA('stratifier',exp)
     return issues;
   }
 }
@@ -569,21 +569,21 @@ export class MeasureReport extends fhir.DomainResource {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'MeasureReport' }
-    this.vReqS('resourceType',expression)
-    this.vOptA('identifier',expression)
-    this.vReqSV('status',expression,'MeasureReportStatus',MeasureReportStatusVsValidation,'r')
-    this.vReqSV('type',expression,'MeasureReportType',MeasureReportTypeVsValidation,'r')
-    this.vReqS('measure',expression)
-    this.vOptS('subject',expression)
-    this.vOptS('date',expression)
-    this.vOptS('reporter',expression)
-    this.vReqS('period',expression)
-    this.vOptSV('improvementNotation',expression,'MeasureImprovementNotation',MeasureImprovementNotationVsValidation,'r')
-    this.vOptA('group',expression)
-    this.vOptA('evaluatedResource',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'MeasureReport' }
+    this.vRS('resourceType',exp)
+    this.vOA('identifier',exp)
+    this.vRSV('status',exp,'MeasureReportStatus',MeasureReportStatusVsValidation,'r')
+    this.vRSV('type',exp,'MeasureReportType',MeasureReportTypeVsValidation,'r')
+    this.vRS('measure',exp)
+    this.vOS('subject',exp)
+    this.vOS('date',exp)
+    this.vOS('reporter',exp)
+    this.vRS('period',exp)
+    this.vOSV('improvementNotation',exp,'MeasureImprovementNotation',MeasureImprovementNotationVsValidation,'r')
+    this.vOA('group',exp)
+    this.vOA('evaluatedResource',exp)
     return issues;
   }
 }

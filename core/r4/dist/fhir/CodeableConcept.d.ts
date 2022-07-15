@@ -39,7 +39,7 @@ export declare class CodeableConcept extends fhir.FhirElement {
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(expression?: string): fhir.FtsIssue[];
+    doModelValidation(exp?: string): fhir.FtsIssue[];
     /**
      * Fluent-style function to add codings
      * @param coding
@@ -88,5 +88,12 @@ export declare class CodeableConcept extends fhir.FhirElement {
      * @returns True if this concept contains the specified coding, false if it does not.
      */
     hasCodingFromValidationObj(vsValidation: Readonly<string[]>): boolean;
+    /**
+     * Test whether this CodeableConcept contains a specific coding.
+     * @param system System to search for, empty string will match any system.
+     * @param code Code to search for, empty string will match any code.
+     * @returns True if this concept contains the specified coding, false if it does not.
+     */
+    hasCodingFromValidationHash(vsValidation: Readonly<number[]>): boolean;
 }
 //# sourceMappingURL=CodeableConcept.d.ts.map

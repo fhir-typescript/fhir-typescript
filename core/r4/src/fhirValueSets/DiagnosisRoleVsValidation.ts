@@ -7,11 +7,18 @@
  * This value set defines a set of codes that can be used to express the role of a diagnosis on the Encounter or EpisodeOfCare record.
  */
 export const DiagnosisRoleVsValidation: readonly string[] = [
-  "AD", "http://terminology.hl7.org/CodeSystem/diagnosis-role|AD", 
-  "billing", "http://terminology.hl7.org/CodeSystem/diagnosis-role|billing", 
-  "CC", "http://terminology.hl7.org/CodeSystem/diagnosis-role|CC", 
-  "CM", "http://terminology.hl7.org/CodeSystem/diagnosis-role|CM", 
-  "DD", "http://terminology.hl7.org/CodeSystem/diagnosis-role|DD", 
-  "post-op", "http://terminology.hl7.org/CodeSystem/diagnosis-role|post-op", 
-  "pre-op", "http://terminology.hl7.org/CodeSystem/diagnosis-role|pre-op", 
+  "AD",
+  "billing",
+  "CC",
+  "CM",
+  "DD",
+  "http://terminology.hl7.org/CodeSystem/diagnosis-role|AD",
+  "http://terminology.hl7.org/CodeSystem/diagnosis-role|billing",
+  "http://terminology.hl7.org/CodeSystem/diagnosis-role|CC",
+  "http://terminology.hl7.org/CodeSystem/diagnosis-role|CM",
+  "http://terminology.hl7.org/CodeSystem/diagnosis-role|DD",
+  "http://terminology.hl7.org/CodeSystem/diagnosis-role|post-op",
+  "http://terminology.hl7.org/CodeSystem/diagnosis-role|pre-op",
+  "post-op",
+  "pre-op",
 ] as const;

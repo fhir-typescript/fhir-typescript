@@ -7,8 +7,12 @@
  * The type of PlanDefinition.
  */
 export const PlanDefinitionTypeVsValidation: readonly string[] = [
-  "clinical-protocol", "http://terminology.hl7.org/CodeSystem/plan-definition-type|clinical-protocol", 
-  "eca-rule", "http://terminology.hl7.org/CodeSystem/plan-definition-type|eca-rule", 
-  "order-set", "http://terminology.hl7.org/CodeSystem/plan-definition-type|order-set", 
-  "workflow-definition", "http://terminology.hl7.org/CodeSystem/plan-definition-type|workflow-definition", 
+  "clinical-protocol",
+  "eca-rule",
+  "http://terminology.hl7.org/CodeSystem/plan-definition-type|clinical-protocol",
+  "http://terminology.hl7.org/CodeSystem/plan-definition-type|eca-rule",
+  "http://terminology.hl7.org/CodeSystem/plan-definition-type|order-set",
+  "http://terminology.hl7.org/CodeSystem/plan-definition-type|workflow-definition",
+  "order-set",
+  "workflow-definition",
 ] as const;

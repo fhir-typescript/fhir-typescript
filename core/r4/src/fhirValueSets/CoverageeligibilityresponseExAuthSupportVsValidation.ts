@@ -7,12 +7,20 @@
  * This value set includes CoverageEligibilityResponse Auth Support codes.
  */
 export const CoverageeligibilityresponseExAuthSupportVsValidation: readonly string[] = [
-  "accidentreport", "http://terminology.hl7.org/CodeSystem/coverageeligibilityresponse-ex-auth-support|accidentreport", 
-  "diagnosticimageorder", "http://terminology.hl7.org/CodeSystem/coverageeligibilityresponse-ex-auth-support|diagnosticimageorder", 
-  "diagnosticimagereport", "http://terminology.hl7.org/CodeSystem/coverageeligibilityresponse-ex-auth-support|diagnosticimagereport", 
-  "laborder", "http://terminology.hl7.org/CodeSystem/coverageeligibilityresponse-ex-auth-support|laborder", 
-  "labreport", "http://terminology.hl7.org/CodeSystem/coverageeligibilityresponse-ex-auth-support|labreport", 
-  "model", "http://terminology.hl7.org/CodeSystem/coverageeligibilityresponse-ex-auth-support|model", 
-  "picture", "http://terminology.hl7.org/CodeSystem/coverageeligibilityresponse-ex-auth-support|picture", 
-  "professionalreport", "http://terminology.hl7.org/CodeSystem/coverageeligibilityresponse-ex-auth-support|professionalreport", 
+  "accidentreport",
+  "diagnosticimageorder",
+  "diagnosticimagereport",
+  "http://terminology.hl7.org/CodeSystem/coverageeligibilityresponse-ex-auth-support|accidentreport",
+  "http://terminology.hl7.org/CodeSystem/coverageeligibilityresponse-ex-auth-support|diagnosticimageorder",
+  "http://terminology.hl7.org/CodeSystem/coverageeligibilityresponse-ex-auth-support|diagnosticimagereport",
+  "http://terminology.hl7.org/CodeSystem/coverageeligibilityresponse-ex-auth-support|laborder",
+  "http://terminology.hl7.org/CodeSystem/coverageeligibilityresponse-ex-auth-support|labreport",
+  "http://terminology.hl7.org/CodeSystem/coverageeligibilityresponse-ex-auth-support|model",
+  "http://terminology.hl7.org/CodeSystem/coverageeligibilityresponse-ex-auth-support|picture",
+  "http://terminology.hl7.org/CodeSystem/coverageeligibilityresponse-ex-auth-support|professionalreport",
+  "laborder",
+  "labreport",
+  "model",
+  "picture",
+  "professionalreport",
 ] as const;

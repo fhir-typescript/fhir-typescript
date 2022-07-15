@@ -7,8 +7,12 @@
  * The workflow/clinical status of the composition.
  */
 export const CompositionStatusVsValidation: readonly string[] = [
-  "amended", "http://hl7.org/fhir/composition-status|amended", 
-  "entered-in-error", "http://hl7.org/fhir/composition-status|entered-in-error", 
-  "final", "http://hl7.org/fhir/composition-status|final", 
-  "preliminary", "http://hl7.org/fhir/composition-status|preliminary", 
+  "amended",
+  "entered-in-error",
+  "final",
+  "http://hl7.org/fhir/composition-status|amended",
+  "http://hl7.org/fhir/composition-status|entered-in-error",
+  "http://hl7.org/fhir/composition-status|final",
+  "http://hl7.org/fhir/composition-status|preliminary",
+  "preliminary",
 ] as const;

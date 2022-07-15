@@ -7,6 +7,8 @@
  * Details of how a designation would be used
  */
 export const DesignationUseVsValidation: readonly string[] = [
-  "900000000000003001", "http://snomed.info/sct|900000000000003001", 
-  "900000000000013009", "http://snomed.info/sct|900000000000013009", 
+  "900000000000003001",
+  "900000000000013009",
+  "http://snomed.info/sct|900000000000003001",
+  "http://snomed.info/sct|900000000000013009",
 ] as const;

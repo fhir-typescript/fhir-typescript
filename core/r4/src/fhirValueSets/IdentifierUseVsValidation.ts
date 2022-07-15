@@ -7,9 +7,14 @@
  * Identifies the purpose for this identifier, if known .
  */
 export const IdentifierUseVsValidation: readonly string[] = [
-  "official", "http://hl7.org/fhir/identifier-use|official", 
-  "old", "http://hl7.org/fhir/identifier-use|old", 
-  "secondary", "http://hl7.org/fhir/identifier-use|secondary", 
-  "temp", "http://hl7.org/fhir/identifier-use|temp", 
-  "usual", "http://hl7.org/fhir/identifier-use|usual", 
+  "http://hl7.org/fhir/identifier-use|official",
+  "http://hl7.org/fhir/identifier-use|old",
+  "http://hl7.org/fhir/identifier-use|secondary",
+  "http://hl7.org/fhir/identifier-use|temp",
+  "http://hl7.org/fhir/identifier-use|usual",
+  "official",
+  "old",
+  "secondary",
+  "temp",
+  "usual",
 ] as const;

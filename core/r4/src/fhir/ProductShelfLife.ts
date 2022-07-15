@@ -67,13 +67,13 @@ export class ProductShelfLife extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'ProductShelfLife' }
-    this.vOptS('identifier',expression)
-    this.vReqS('type',expression)
-    this.vReqS('period',expression)
-    this.vOptA('specialPrecautionsForStorage',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'ProductShelfLife' }
+    this.vOS('identifier',exp)
+    this.vRS('type',exp)
+    this.vRS('period',exp)
+    this.vOA('specialPrecautionsForStorage',exp)
     return issues;
   }
 }

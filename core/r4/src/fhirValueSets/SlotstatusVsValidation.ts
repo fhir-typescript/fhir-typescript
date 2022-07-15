@@ -7,9 +7,14 @@
  * The free/busy status of the slot.
  */
 export const SlotstatusVsValidation: readonly string[] = [
-  "busy", "http://hl7.org/fhir/slotstatus|busy", 
-  "busy-tentative", "http://hl7.org/fhir/slotstatus|busy-tentative", 
-  "busy-unavailable", "http://hl7.org/fhir/slotstatus|busy-unavailable", 
-  "entered-in-error", "http://hl7.org/fhir/slotstatus|entered-in-error", 
-  "free", "http://hl7.org/fhir/slotstatus|free", 
+  "busy",
+  "busy-tentative",
+  "busy-unavailable",
+  "entered-in-error",
+  "free",
+  "http://hl7.org/fhir/slotstatus|busy",
+  "http://hl7.org/fhir/slotstatus|busy-tentative",
+  "http://hl7.org/fhir/slotstatus|busy-unavailable",
+  "http://hl7.org/fhir/slotstatus|entered-in-error",
+  "http://hl7.org/fhir/slotstatus|free",
 ] as const;

@@ -7,7 +7,10 @@
  * The reported execution result.
  */
 export const ReportResultVsValidation: readonly string[] = [
-  "fail", "http://hl7.org/fhir/report-result-codes|fail", 
-  "pass", "http://hl7.org/fhir/report-result-codes|pass", 
-  "pending", "http://hl7.org/fhir/report-result-codes|pending", 
+  "fail",
+  "http://hl7.org/fhir/report-result-codes|fail",
+  "http://hl7.org/fhir/report-result-codes|pass",
+  "http://hl7.org/fhir/report-result-codes|pending",
+  "pass",
+  "pending",
 ] as const;

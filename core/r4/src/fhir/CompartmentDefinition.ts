@@ -95,12 +95,12 @@ export class CompartmentDefinitionResource extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'CompartmentDefinition.resource' }
-    this.vReqSV('code',expression,'ResourceTypes',ResourceTypesVsValidation,'r')
-    this.vOptA('param',expression)
-    this.vOptS('documentation',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'CompartmentDefinition.resource' }
+    this.vRSV('code',exp,'ResourceTypes',ResourceTypesVsValidation,'r')
+    this.vOA('param',exp)
+    this.vOS('documentation',exp)
     return issues;
   }
 }
@@ -362,24 +362,24 @@ export class CompartmentDefinition extends fhir.DomainResource {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'CompartmentDefinition' }
-    this.vReqS('resourceType',expression)
-    this.vReqS('url',expression)
-    this.vOptS('version',expression)
-    this.vReqS('name',expression)
-    this.vReqSV('status',expression,'PublicationStatus',PublicationStatusVsValidation,'r')
-    this.vOptS('experimental',expression)
-    this.vOptS('date',expression)
-    this.vOptS('publisher',expression)
-    this.vOptA('contact',expression)
-    this.vOptS('description',expression)
-    this.vOptA('useContext',expression)
-    this.vOptS('purpose',expression)
-    this.vReqSV('code',expression,'CompartmentType',CompartmentTypeVsValidation,'r')
-    this.vReqS('search',expression)
-    this.vOptA('resource',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'CompartmentDefinition' }
+    this.vRS('resourceType',exp)
+    this.vRS('url',exp)
+    this.vOS('version',exp)
+    this.vRS('name',exp)
+    this.vRSV('status',exp,'PublicationStatus',PublicationStatusVsValidation,'r')
+    this.vOS('experimental',exp)
+    this.vOS('date',exp)
+    this.vOS('publisher',exp)
+    this.vOA('contact',exp)
+    this.vOS('description',exp)
+    this.vOA('useContext',exp)
+    this.vOS('purpose',exp)
+    this.vRSV('code',exp,'CompartmentType',CompartmentTypeVsValidation,'r')
+    this.vRS('search',exp)
+    this.vOA('resource',exp)
     return issues;
   }
 }

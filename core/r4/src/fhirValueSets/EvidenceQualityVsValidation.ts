@@ -7,8 +7,12 @@
  * A rating system that describes the quality of evidence such as the GRADE, DynaMed, or Oxford CEBM systems.
  */
 export const EvidenceQualityVsValidation: readonly string[] = [
-  "high", "http://terminology.hl7.org/CodeSystem/evidence-quality|high", 
-  "low", "http://terminology.hl7.org/CodeSystem/evidence-quality|low", 
-  "moderate", "http://terminology.hl7.org/CodeSystem/evidence-quality|moderate", 
-  "very-low", "http://terminology.hl7.org/CodeSystem/evidence-quality|very-low", 
+  "high",
+  "http://terminology.hl7.org/CodeSystem/evidence-quality|high",
+  "http://terminology.hl7.org/CodeSystem/evidence-quality|low",
+  "http://terminology.hl7.org/CodeSystem/evidence-quality|moderate",
+  "http://terminology.hl7.org/CodeSystem/evidence-quality|very-low",
+  "low",
+  "moderate",
+  "very-low",
 ] as const;

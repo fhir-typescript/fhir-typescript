@@ -7,11 +7,18 @@
  * The type of a property value.
  */
 export const ConceptPropertyTypeVsValidation: readonly string[] = [
-  "boolean", "http://hl7.org/fhir/concept-property-type|boolean", 
-  "code", "http://hl7.org/fhir/concept-property-type|code", 
-  "Coding", "http://hl7.org/fhir/concept-property-type|Coding", 
-  "dateTime", "http://hl7.org/fhir/concept-property-type|dateTime", 
-  "decimal", "http://hl7.org/fhir/concept-property-type|decimal", 
-  "integer", "http://hl7.org/fhir/concept-property-type|integer", 
-  "string", "http://hl7.org/fhir/concept-property-type|string", 
+  "boolean",
+  "code",
+  "Coding",
+  "dateTime",
+  "decimal",
+  "http://hl7.org/fhir/concept-property-type|boolean",
+  "http://hl7.org/fhir/concept-property-type|code",
+  "http://hl7.org/fhir/concept-property-type|Coding",
+  "http://hl7.org/fhir/concept-property-type|dateTime",
+  "http://hl7.org/fhir/concept-property-type|decimal",
+  "http://hl7.org/fhir/concept-property-type|integer",
+  "http://hl7.org/fhir/concept-property-type|string",
+  "integer",
+  "string",
 ] as const;

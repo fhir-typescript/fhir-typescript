@@ -7,12 +7,20 @@
  * Overall seriousness of this event for the patient.
  */
 export const AdverseEventSeriousnessVsValidation: readonly string[] = [
-  "Non-serious", "http://terminology.hl7.org/CodeSystem/adverse-event-seriousness|Non-serious", 
-  "Serious", "http://terminology.hl7.org/CodeSystem/adverse-event-seriousness|Serious", 
-  "SeriousIsBirthDefect", "http://terminology.hl7.org/CodeSystem/adverse-event-seriousness|SeriousIsBirthDefect", 
-  "SeriousIsLifeThreatening", "http://terminology.hl7.org/CodeSystem/adverse-event-seriousness|SeriousIsLifeThreatening", 
-  "SeriousRequiresPreventImpairment", "http://terminology.hl7.org/CodeSystem/adverse-event-seriousness|SeriousRequiresPreventImpairment", 
-  "SeriousResultsInDeath", "http://terminology.hl7.org/CodeSystem/adverse-event-seriousness|SeriousResultsInDeath", 
-  "SeriousResultsInDisability", "http://terminology.hl7.org/CodeSystem/adverse-event-seriousness|SeriousResultsInDisability", 
-  "SeriousResultsInHospitalization", "http://terminology.hl7.org/CodeSystem/adverse-event-seriousness|SeriousResultsInHospitalization", 
+  "http://terminology.hl7.org/CodeSystem/adverse-event-seriousness|Non-serious",
+  "http://terminology.hl7.org/CodeSystem/adverse-event-seriousness|Serious",
+  "http://terminology.hl7.org/CodeSystem/adverse-event-seriousness|SeriousIsBirthDefect",
+  "http://terminology.hl7.org/CodeSystem/adverse-event-seriousness|SeriousIsLifeThreatening",
+  "http://terminology.hl7.org/CodeSystem/adverse-event-seriousness|SeriousRequiresPreventImpairment",
+  "http://terminology.hl7.org/CodeSystem/adverse-event-seriousness|SeriousResultsInDeath",
+  "http://terminology.hl7.org/CodeSystem/adverse-event-seriousness|SeriousResultsInDisability",
+  "http://terminology.hl7.org/CodeSystem/adverse-event-seriousness|SeriousResultsInHospitalization",
+  "Non-serious",
+  "Serious",
+  "SeriousIsBirthDefect",
+  "SeriousIsLifeThreatening",
+  "SeriousRequiresPreventImpairment",
+  "SeriousResultsInDeath",
+  "SeriousResultsInDisability",
+  "SeriousResultsInHospitalization",
 ] as const;

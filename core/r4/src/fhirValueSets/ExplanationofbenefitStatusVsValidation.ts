@@ -7,8 +7,12 @@
  * A code specifying the state of the resource instance.
  */
 export const ExplanationofbenefitStatusVsValidation: readonly string[] = [
-  "active", "http://hl7.org/fhir/explanationofbenefit-status|active", 
-  "cancelled", "http://hl7.org/fhir/explanationofbenefit-status|cancelled", 
-  "draft", "http://hl7.org/fhir/explanationofbenefit-status|draft", 
-  "entered-in-error", "http://hl7.org/fhir/explanationofbenefit-status|entered-in-error", 
+  "active",
+  "cancelled",
+  "draft",
+  "entered-in-error",
+  "http://hl7.org/fhir/explanationofbenefit-status|active",
+  "http://hl7.org/fhir/explanationofbenefit-status|cancelled",
+  "http://hl7.org/fhir/explanationofbenefit-status|draft",
+  "http://hl7.org/fhir/explanationofbenefit-status|entered-in-error",
 ] as const;

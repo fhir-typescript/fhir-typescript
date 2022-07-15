@@ -7,7 +7,10 @@
  * Defines organization behavior of a group.
  */
 export const ActionGroupingBehaviorVsValidation: readonly string[] = [
-  "logical-group", "http://hl7.org/fhir/action-grouping-behavior|logical-group", 
-  "sentence-group", "http://hl7.org/fhir/action-grouping-behavior|sentence-group", 
-  "visual-group", "http://hl7.org/fhir/action-grouping-behavior|visual-group", 
+  "http://hl7.org/fhir/action-grouping-behavior|logical-group",
+  "http://hl7.org/fhir/action-grouping-behavior|sentence-group",
+  "http://hl7.org/fhir/action-grouping-behavior|visual-group",
+  "logical-group",
+  "sentence-group",
+  "visual-group",
 ] as const;

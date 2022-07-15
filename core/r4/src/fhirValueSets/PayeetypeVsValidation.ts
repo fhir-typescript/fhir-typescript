@@ -7,7 +7,10 @@
  * This value set includes sample Payee Type codes.
  */
 export const PayeetypeVsValidation: readonly string[] = [
-  "other", "http://terminology.hl7.org/CodeSystem/payeetype|other", 
-  "provider", "http://terminology.hl7.org/CodeSystem/payeetype|provider", 
-  "subscriber", "http://terminology.hl7.org/CodeSystem/payeetype|subscriber", 
+  "http://terminology.hl7.org/CodeSystem/payeetype|other",
+  "http://terminology.hl7.org/CodeSystem/payeetype|provider",
+  "http://terminology.hl7.org/CodeSystem/payeetype|subscriber",
+  "other",
+  "provider",
+  "subscriber",
 ] as const;

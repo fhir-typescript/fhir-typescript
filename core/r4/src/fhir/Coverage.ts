@@ -97,12 +97,12 @@ export class CoverageClass extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'Coverage.class' }
-    this.vReqS('type',expression)
-    this.vReqS('value',expression)
-    this.vOptS('name',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'Coverage.class' }
+    this.vRS('type',exp)
+    this.vRS('value',exp)
+    this.vOS('name',exp)
     return issues;
   }
 }
@@ -148,11 +148,11 @@ export class CoverageCostToBeneficiaryException extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'Coverage.costToBeneficiary.exception' }
-    this.vReqS('type',expression)
-    this.vOptS('period',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'Coverage.costToBeneficiary.exception' }
+    this.vRS('type',exp)
+    this.vOS('period',exp)
     return issues;
   }
 }
@@ -222,12 +222,12 @@ export class CoverageCostToBeneficiary extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'Coverage.costToBeneficiary' }
-    this.vOptS('type',expression)
-    this.vReqS('value',expression)
-    this.vOptA('exception',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'Coverage.costToBeneficiary' }
+    this.vOS('type',exp)
+    this.vRS('value',exp)
+    this.vOA('exception',exp)
     return issues;
   }
 }
@@ -473,27 +473,27 @@ export class Coverage extends fhir.DomainResource {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'Coverage' }
-    this.vReqS('resourceType',expression)
-    this.vOptA('identifier',expression)
-    this.vReqSV('status',expression,'FmStatus',FmStatusVsValidation,'r')
-    this.vOptS('type',expression)
-    this.vOptS('policyHolder',expression)
-    this.vOptS('subscriber',expression)
-    this.vOptS('subscriberId',expression)
-    this.vReqS('beneficiary',expression)
-    this.vOptS('dependent',expression)
-    this.vOptS('relationship',expression)
-    this.vOptS('period',expression)
-    this.vReqA('payor',expression)
-    this.vOptA('class',expression)
-    this.vOptS('order',expression)
-    this.vOptS('network',expression)
-    this.vOptA('costToBeneficiary',expression)
-    this.vOptS('subrogation',expression)
-    this.vOptA('contract',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'Coverage' }
+    this.vRS('resourceType',exp)
+    this.vOA('identifier',exp)
+    this.vRSV('status',exp,'FmStatus',FmStatusVsValidation,'r')
+    this.vOS('type',exp)
+    this.vOS('policyHolder',exp)
+    this.vOS('subscriber',exp)
+    this.vOS('subscriberId',exp)
+    this.vRS('beneficiary',exp)
+    this.vOS('dependent',exp)
+    this.vOS('relationship',exp)
+    this.vOS('period',exp)
+    this.vRA('payor',exp)
+    this.vOA('class',exp)
+    this.vOS('order',exp)
+    this.vOS('network',exp)
+    this.vOA('costToBeneficiary',exp)
+    this.vOS('subrogation',exp)
+    this.vOA('contract',exp)
     return issues;
   }
 }

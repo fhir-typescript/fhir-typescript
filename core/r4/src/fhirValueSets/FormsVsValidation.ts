@@ -7,6 +7,8 @@
  * This value set includes a sample set of Forms codes.
  */
 export const FormsVsValidation: readonly string[] = [
-  "1", "http://terminology.hl7.org/CodeSystem/forms-codes|1", 
-  "2", "http://terminology.hl7.org/CodeSystem/forms-codes|2", 
+  "1",
+  "2",
+  "http://terminology.hl7.org/CodeSystem/forms-codes|1",
+  "http://terminology.hl7.org/CodeSystem/forms-codes|2",
 ] as const;

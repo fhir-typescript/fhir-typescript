@@ -7,7 +7,10 @@
  * MedicationAdministration Category Codes
  */
 export const MedicationAdminCategoryVsValidation: readonly string[] = [
-  "community", "http://terminology.hl7.org/CodeSystem/medication-admin-category|community", 
-  "inpatient", "http://terminology.hl7.org/CodeSystem/medication-admin-category|inpatient", 
-  "outpatient", "http://terminology.hl7.org/CodeSystem/medication-admin-category|outpatient", 
+  "community",
+  "http://terminology.hl7.org/CodeSystem/medication-admin-category|community",
+  "http://terminology.hl7.org/CodeSystem/medication-admin-category|inpatient",
+  "http://terminology.hl7.org/CodeSystem/medication-admin-category|outpatient",
+  "inpatient",
+  "outpatient",
 ] as const;

@@ -7,6 +7,8 @@
  * This value set includes sample Exception codes.
  */
 export const ClaimExceptionVsValidation: readonly string[] = [
-  "disabled", "http://terminology.hl7.org/CodeSystem/claim-exception|disabled", 
-  "student", "http://terminology.hl7.org/CodeSystem/claim-exception|student", 
+  "disabled",
+  "http://terminology.hl7.org/CodeSystem/claim-exception|disabled",
+  "http://terminology.hl7.org/CodeSystem/claim-exception|student",
+  "student",
 ] as const;

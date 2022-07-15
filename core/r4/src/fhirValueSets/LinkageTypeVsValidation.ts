@@ -7,7 +7,10 @@
  * Used to distinguish different roles a resource can play within a set of linked resources.
  */
 export const LinkageTypeVsValidation: readonly string[] = [
-  "alternate", "http://hl7.org/fhir/linkage-type|alternate", 
-  "historical", "http://hl7.org/fhir/linkage-type|historical", 
-  "source", "http://hl7.org/fhir/linkage-type|source", 
+  "alternate",
+  "historical",
+  "http://hl7.org/fhir/linkage-type|alternate",
+  "http://hl7.org/fhir/linkage-type|historical",
+  "http://hl7.org/fhir/linkage-type|source",
+  "source",
 ] as const;

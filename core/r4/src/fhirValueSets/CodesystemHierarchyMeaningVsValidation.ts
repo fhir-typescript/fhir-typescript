@@ -7,8 +7,12 @@
  * The meaning of the hierarchy of concepts in a code system.
  */
 export const CodesystemHierarchyMeaningVsValidation: readonly string[] = [
-  "classified-with", "http://hl7.org/fhir/codesystem-hierarchy-meaning|classified-with", 
-  "grouped-by", "http://hl7.org/fhir/codesystem-hierarchy-meaning|grouped-by", 
-  "is-a", "http://hl7.org/fhir/codesystem-hierarchy-meaning|is-a", 
-  "part-of", "http://hl7.org/fhir/codesystem-hierarchy-meaning|part-of", 
+  "classified-with",
+  "grouped-by",
+  "http://hl7.org/fhir/codesystem-hierarchy-meaning|classified-with",
+  "http://hl7.org/fhir/codesystem-hierarchy-meaning|grouped-by",
+  "http://hl7.org/fhir/codesystem-hierarchy-meaning|is-a",
+  "http://hl7.org/fhir/codesystem-hierarchy-meaning|part-of",
+  "is-a",
+  "part-of",
 ] as const;

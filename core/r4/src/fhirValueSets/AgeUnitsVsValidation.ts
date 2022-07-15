@@ -7,10 +7,16 @@
  * Unified Code for Units of Measure (UCUM). This value set includes all UCUM codes
  */
 export const AgeUnitsVsValidation: readonly string[] = [
-  "a", "http://unitsofmeasure.org|a", 
-  "d", "http://unitsofmeasure.org|d", 
-  "h", "http://unitsofmeasure.org|h", 
-  "min", "http://unitsofmeasure.org|min", 
-  "mo", "http://unitsofmeasure.org|mo", 
-  "wk", "http://unitsofmeasure.org|wk", 
+  "a",
+  "d",
+  "h",
+  "http://unitsofmeasure.org|a",
+  "http://unitsofmeasure.org|d",
+  "http://unitsofmeasure.org|h",
+  "http://unitsofmeasure.org|min",
+  "http://unitsofmeasure.org|mo",
+  "http://unitsofmeasure.org|wk",
+  "min",
+  "mo",
+  "wk",
 ] as const;

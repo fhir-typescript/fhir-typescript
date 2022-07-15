@@ -328,13 +328,13 @@ export class ParametersParameter extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'Parameters.parameter' }
-    this.vReqS('name',expression)
-    this.vOptS('value',expression)
-    this.vOptS('resource',expression)
-    this.vOptA('part',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'Parameters.parameter' }
+    this.vRS('name',exp)
+    this.vOS('value',exp)
+    this.vOS('resource',exp)
+    this.vOA('part',exp)
     return issues;
   }
 }
@@ -380,11 +380,11 @@ export class Parameters extends fhir.Resource {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'Parameters' }
-    this.vReqS('resourceType',expression)
-    this.vOptA('parameter',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'Parameters' }
+    this.vRS('resourceType',exp)
+    this.vOA('parameter',exp)
     return issues;
   }
 }

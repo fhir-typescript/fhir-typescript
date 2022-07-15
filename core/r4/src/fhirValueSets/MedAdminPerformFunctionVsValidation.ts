@@ -7,7 +7,10 @@
  * MedicationAdministration Performer Function Codes
  */
 export const MedAdminPerformFunctionVsValidation: readonly string[] = [
-  "performer", "http://terminology.hl7.org/CodeSystem/med-admin-perform-function|performer", 
-  "verifier", "http://terminology.hl7.org/CodeSystem/med-admin-perform-function|verifier", 
-  "witness", "http://terminology.hl7.org/CodeSystem/med-admin-perform-function|witness", 
+  "http://terminology.hl7.org/CodeSystem/med-admin-perform-function|performer",
+  "http://terminology.hl7.org/CodeSystem/med-admin-perform-function|verifier",
+  "http://terminology.hl7.org/CodeSystem/med-admin-perform-function|witness",
+  "performer",
+  "verifier",
+  "witness",
 ] as const;

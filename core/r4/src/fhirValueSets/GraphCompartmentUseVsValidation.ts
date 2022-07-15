@@ -7,6 +7,8 @@
  * Defines how a compartment rule is used.
  */
 export const GraphCompartmentUseVsValidation: readonly string[] = [
-  "condition", "http://hl7.org/fhir/graph-compartment-use|condition", 
-  "requirement", "http://hl7.org/fhir/graph-compartment-use|requirement", 
+  "condition",
+  "http://hl7.org/fhir/graph-compartment-use|condition",
+  "http://hl7.org/fhir/graph-compartment-use|requirement",
+  "requirement",
 ] as const;

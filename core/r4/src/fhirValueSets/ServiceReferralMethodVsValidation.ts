@@ -7,9 +7,14 @@
  * The methods of referral can be used when referring to a specific HealthCareService resource.
  */
 export const ServiceReferralMethodVsValidation: readonly string[] = [
-  "elec", "http://terminology.hl7.org/CodeSystem/service-referral-method|elec", 
-  "fax", "http://terminology.hl7.org/CodeSystem/service-referral-method|fax", 
-  "mail", "http://terminology.hl7.org/CodeSystem/service-referral-method|mail", 
-  "phone", "http://terminology.hl7.org/CodeSystem/service-referral-method|phone", 
-  "semail", "http://terminology.hl7.org/CodeSystem/service-referral-method|semail", 
+  "elec",
+  "fax",
+  "http://terminology.hl7.org/CodeSystem/service-referral-method|elec",
+  "http://terminology.hl7.org/CodeSystem/service-referral-method|fax",
+  "http://terminology.hl7.org/CodeSystem/service-referral-method|mail",
+  "http://terminology.hl7.org/CodeSystem/service-referral-method|phone",
+  "http://terminology.hl7.org/CodeSystem/service-referral-method|semail",
+  "mail",
+  "phone",
+  "semail",
 ] as const;

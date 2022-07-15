@@ -7,10 +7,16 @@
  * This value set includes sample Modifier type codes.
  */
 export const ClaimModifiersVsValidation: readonly string[] = [
-  "a", "http://terminology.hl7.org/CodeSystem/modifiers|a", 
-  "b", "http://terminology.hl7.org/CodeSystem/modifiers|b", 
-  "c", "http://terminology.hl7.org/CodeSystem/modifiers|c", 
-  "e", "http://terminology.hl7.org/CodeSystem/modifiers|e", 
-  "rooh", "http://terminology.hl7.org/CodeSystem/modifiers|rooh", 
-  "x", "http://terminology.hl7.org/CodeSystem/modifiers|x", 
+  "a",
+  "b",
+  "c",
+  "e",
+  "http://terminology.hl7.org/CodeSystem/modifiers|a",
+  "http://terminology.hl7.org/CodeSystem/modifiers|b",
+  "http://terminology.hl7.org/CodeSystem/modifiers|c",
+  "http://terminology.hl7.org/CodeSystem/modifiers|e",
+  "http://terminology.hl7.org/CodeSystem/modifiers|rooh",
+  "http://terminology.hl7.org/CodeSystem/modifiers|x",
+  "rooh",
+  "x",
 ] as const;

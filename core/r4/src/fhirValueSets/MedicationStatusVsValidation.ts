@@ -7,7 +7,10 @@
  * Medication Status Codes
  */
 export const MedicationStatusVsValidation: readonly string[] = [
-  "active", "http://hl7.org/fhir/CodeSystem/medication-status|active", 
-  "entered-in-error", "http://hl7.org/fhir/CodeSystem/medication-status|entered-in-error", 
-  "inactive", "http://hl7.org/fhir/CodeSystem/medication-status|inactive", 
+  "active",
+  "entered-in-error",
+  "http://hl7.org/fhir/CodeSystem/medication-status|active",
+  "http://hl7.org/fhir/CodeSystem/medication-status|entered-in-error",
+  "http://hl7.org/fhir/CodeSystem/medication-status|inactive",
+  "inactive",
 ] as const;

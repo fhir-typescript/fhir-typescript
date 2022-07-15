@@ -73,13 +73,13 @@ export class DomainResource extends fhir.Resource {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'DomainResource' }
-    this.vOptS('text',expression)
-    this.vOptA('contained',expression)
-    this.vOptA('extension',expression)
-    this.vOptA('modifierExtension',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'DomainResource' }
+    this.vOS('text',exp)
+    this.vOA('contained',exp)
+    this.vOA('extension',exp)
+    this.vOA('modifierExtension',exp)
     return issues;
   }
   /**

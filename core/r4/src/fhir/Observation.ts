@@ -127,15 +127,15 @@ export class ObservationReferenceRange extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'Observation.referenceRange' }
-    this.vOptS('low',expression)
-    this.vOptS('high',expression)
-    this.vOptS('type',expression)
-    this.vOptA('appliesTo',expression)
-    this.vOptS('age',expression)
-    this.vOptS('text',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'Observation.referenceRange' }
+    this.vOS('low',exp)
+    this.vOS('high',exp)
+    this.vOS('type',exp)
+    this.vOA('appliesTo',exp)
+    this.vOS('age',exp)
+    this.vOS('text',exp)
     return issues;
   }
 }
@@ -271,14 +271,14 @@ export class ObservationComponent extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'Observation.component' }
-    this.vReqS('code',expression)
-    this.vOptS('value',expression)
-    this.vOptS('dataAbsentReason',expression)
-    this.vOptA('interpretation',expression)
-    this.vOptA('referenceRange',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'Observation.component' }
+    this.vRS('code',exp)
+    this.vOS('value',exp)
+    this.vOS('dataAbsentReason',exp)
+    this.vOA('interpretation',exp)
+    this.vOA('referenceRange',exp)
     return issues;
   }
 }
@@ -647,34 +647,34 @@ export class Observation extends fhir.DomainResource {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'Observation' }
-    this.vReqS('resourceType',expression)
-    this.vOptA('identifier',expression)
-    this.vOptA('basedOn',expression)
-    this.vOptA('partOf',expression)
-    this.vReqSV('status',expression,'ObservationStatus',ObservationStatusVsValidation,'r')
-    this.vOptA('category',expression)
-    this.vReqS('code',expression)
-    this.vOptS('subject',expression)
-    this.vOptA('focus',expression)
-    this.vOptS('encounter',expression)
-    this.vOptS('effective',expression)
-    this.vOptS('issued',expression)
-    this.vOptA('performer',expression)
-    this.vOptS('value',expression)
-    this.vOptS('dataAbsentReason',expression)
-    this.vOptA('interpretation',expression)
-    this.vOptA('note',expression)
-    this.vOptS('bodySite',expression)
-    this.vOptS('method',expression)
-    this.vOptS('specimen',expression)
-    this.vOptS('device',expression)
-    this.vOptA('referenceRange',expression)
-    this.vOptA('hasMember',expression)
-    this.vOptA('derivedFrom',expression)
-    this.vOptA('component',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'Observation' }
+    this.vRS('resourceType',exp)
+    this.vOA('identifier',exp)
+    this.vOA('basedOn',exp)
+    this.vOA('partOf',exp)
+    this.vRSV('status',exp,'ObservationStatus',ObservationStatusVsValidation,'r')
+    this.vOA('category',exp)
+    this.vRS('code',exp)
+    this.vOS('subject',exp)
+    this.vOA('focus',exp)
+    this.vOS('encounter',exp)
+    this.vOS('effective',exp)
+    this.vOS('issued',exp)
+    this.vOA('performer',exp)
+    this.vOS('value',exp)
+    this.vOS('dataAbsentReason',exp)
+    this.vOA('interpretation',exp)
+    this.vOA('note',exp)
+    this.vOS('bodySite',exp)
+    this.vOS('method',exp)
+    this.vOS('specimen',exp)
+    this.vOS('device',exp)
+    this.vOA('referenceRange',exp)
+    this.vOA('hasMember',exp)
+    this.vOA('derivedFrom',exp)
+    this.vOA('component',exp)
     return issues;
   }
 }

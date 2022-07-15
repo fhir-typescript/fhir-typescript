@@ -110,7 +110,7 @@ export declare class DeviceUdiCarrier extends fhir.BackboneElement {
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(expression?: string): fhir.FtsIssue[];
+    doModelValidation(exp?: string): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the DeviceDeviceName type.
@@ -158,7 +158,7 @@ export declare class DeviceDeviceName extends fhir.BackboneElement {
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(expression?: string): fhir.FtsIssue[];
+    doModelValidation(exp?: string): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the DeviceSpecialization type.
@@ -200,7 +200,7 @@ export declare class DeviceSpecialization extends fhir.BackboneElement {
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(expression?: string): fhir.FtsIssue[];
+    doModelValidation(exp?: string): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the DeviceVersion type.
@@ -250,7 +250,7 @@ export declare class DeviceVersion extends fhir.BackboneElement {
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(expression?: string): fhir.FtsIssue[];
+    doModelValidation(exp?: string): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the DeviceProperty type.
@@ -296,7 +296,7 @@ export declare class DeviceProperty extends fhir.BackboneElement {
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(expression?: string): fhir.FtsIssue[];
+    doModelValidation(exp?: string): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the Device type.
@@ -574,6 +574,6 @@ export declare class Device extends fhir.DomainResource {
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(expression?: string): fhir.FtsIssue[];
+    doModelValidation(exp?: string): fhir.FtsIssue[];
 }
 //# sourceMappingURL=Device.d.ts.map

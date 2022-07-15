@@ -7,8 +7,12 @@
  * The Participation status of an appointment.
  */
 export const ParticipationstatusVsValidation: readonly string[] = [
-  "accepted", "http://hl7.org/fhir/participationstatus|accepted", 
-  "declined", "http://hl7.org/fhir/participationstatus|declined", 
-  "needs-action", "http://hl7.org/fhir/participationstatus|needs-action", 
-  "tentative", "http://hl7.org/fhir/participationstatus|tentative", 
+  "accepted",
+  "declined",
+  "http://hl7.org/fhir/participationstatus|accepted",
+  "http://hl7.org/fhir/participationstatus|declined",
+  "http://hl7.org/fhir/participationstatus|needs-action",
+  "http://hl7.org/fhir/participationstatus|tentative",
+  "needs-action",
+  "tentative",
 ] as const;

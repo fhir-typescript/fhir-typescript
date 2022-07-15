@@ -7,7 +7,10 @@
  * How a capability statement is intended to be used.
  */
 export const CapabilityStatementKindVsValidation: readonly string[] = [
-  "capability", "http://hl7.org/fhir/capability-statement-kind|capability", 
-  "instance", "http://hl7.org/fhir/capability-statement-kind|instance", 
-  "requirements", "http://hl7.org/fhir/capability-statement-kind|requirements", 
+  "capability",
+  "http://hl7.org/fhir/capability-statement-kind|capability",
+  "http://hl7.org/fhir/capability-statement-kind|instance",
+  "http://hl7.org/fhir/capability-statement-kind|requirements",
+  "instance",
+  "requirements",
 ] as const;

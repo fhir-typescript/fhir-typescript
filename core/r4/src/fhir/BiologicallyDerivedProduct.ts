@@ -85,12 +85,12 @@ export class BiologicallyDerivedProductCollection extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'BiologicallyDerivedProduct.collection' }
-    this.vOptS('collector',expression)
-    this.vOptS('source',expression)
-    this.vOptS('collected',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'BiologicallyDerivedProduct.collection' }
+    this.vOS('collector',exp)
+    this.vOS('source',exp)
+    this.vOS('collected',exp)
     return issues;
   }
 }
@@ -175,13 +175,13 @@ export class BiologicallyDerivedProductProcessing extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'BiologicallyDerivedProduct.processing' }
-    this.vOptS('description',expression)
-    this.vOptS('procedure',expression)
-    this.vOptS('additive',expression)
-    this.vOptS('time',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'BiologicallyDerivedProduct.processing' }
+    this.vOS('description',exp)
+    this.vOS('procedure',exp)
+    this.vOS('additive',exp)
+    this.vOS('time',exp)
     return issues;
   }
 }
@@ -248,11 +248,11 @@ export class BiologicallyDerivedProductManipulation extends fhir.BackboneElement
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'BiologicallyDerivedProduct.manipulation' }
-    this.vOptS('description',expression)
-    this.vOptS('time',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'BiologicallyDerivedProduct.manipulation' }
+    this.vOS('description',exp)
+    this.vOS('time',exp)
     return issues;
   }
 }
@@ -339,13 +339,13 @@ export class BiologicallyDerivedProductStorage extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'BiologicallyDerivedProduct.storage' }
-    this.vOptS('description',expression)
-    this.vOptS('temperature',expression)
-    this.vOptSV('scale',expression,'ProductStorageScale',ProductStorageScaleVsValidation,'r')
-    this.vOptS('duration',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'BiologicallyDerivedProduct.storage' }
+    this.vOS('description',exp)
+    this.vOS('temperature',exp)
+    this.vOSV('scale',exp,'ProductStorageScale',ProductStorageScaleVsValidation,'r')
+    this.vOS('duration',exp)
     return issues;
   }
 }
@@ -510,21 +510,21 @@ export class BiologicallyDerivedProduct extends fhir.DomainResource {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'BiologicallyDerivedProduct' }
-    this.vReqS('resourceType',expression)
-    this.vOptA('identifier',expression)
-    this.vOptSV('productCategory',expression,'ProductCategory',ProductCategoryVsValidation,'r')
-    this.vOptS('productCode',expression)
-    this.vOptSV('status',expression,'ProductStatus',ProductStatusVsValidation,'r')
-    this.vOptA('request',expression)
-    this.vOptS('quantity',expression)
-    this.vOptA('parent',expression)
-    this.vOptS('collection',expression)
-    this.vOptA('processing',expression)
-    this.vOptS('manipulation',expression)
-    this.vOptA('storage',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'BiologicallyDerivedProduct' }
+    this.vRS('resourceType',exp)
+    this.vOA('identifier',exp)
+    this.vOSV('productCategory',exp,'ProductCategory',ProductCategoryVsValidation,'r')
+    this.vOS('productCode',exp)
+    this.vOSV('status',exp,'ProductStatus',ProductStatusVsValidation,'r')
+    this.vOA('request',exp)
+    this.vOS('quantity',exp)
+    this.vOA('parent',exp)
+    this.vOS('collection',exp)
+    this.vOA('processing',exp)
+    this.vOS('manipulation',exp)
+    this.vOA('storage',exp)
     return issues;
   }
 }

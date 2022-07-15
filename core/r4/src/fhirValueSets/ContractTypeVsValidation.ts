@@ -7,9 +7,14 @@
  * This value set includes sample Contract Type codes.
  */
 export const ContractTypeVsValidation: readonly string[] = [
-  "consent", "http://terminology.hl7.org/CodeSystem/contract-type|consent", 
-  "disclosure", "http://terminology.hl7.org/CodeSystem/contract-type|disclosure", 
-  "healthinsurance", "http://terminology.hl7.org/CodeSystem/contract-type|healthinsurance", 
-  "privacy", "http://terminology.hl7.org/CodeSystem/contract-type|privacy", 
-  "supply", "http://terminology.hl7.org/CodeSystem/contract-type|supply", 
+  "consent",
+  "disclosure",
+  "healthinsurance",
+  "http://terminology.hl7.org/CodeSystem/contract-type|consent",
+  "http://terminology.hl7.org/CodeSystem/contract-type|disclosure",
+  "http://terminology.hl7.org/CodeSystem/contract-type|healthinsurance",
+  "http://terminology.hl7.org/CodeSystem/contract-type|privacy",
+  "http://terminology.hl7.org/CodeSystem/contract-type|supply",
+  "privacy",
+  "supply",
 ] as const;

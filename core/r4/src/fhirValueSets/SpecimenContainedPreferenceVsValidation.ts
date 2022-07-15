@@ -7,6 +7,8 @@
  * Degree of preference of a type of conditioned specimen.
  */
 export const SpecimenContainedPreferenceVsValidation: readonly string[] = [
-  "alternate", "http://hl7.org/fhir/specimen-contained-preference|alternate", 
-  "preferred", "http://hl7.org/fhir/specimen-contained-preference|preferred", 
+  "alternate",
+  "http://hl7.org/fhir/specimen-contained-preference|alternate",
+  "http://hl7.org/fhir/specimen-contained-preference|preferred",
+  "preferred",
 ] as const;

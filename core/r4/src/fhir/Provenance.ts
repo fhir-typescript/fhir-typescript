@@ -86,13 +86,13 @@ export class ProvenanceAgent extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'Provenance.agent' }
-    this.vOptS('type',expression)
-    this.vOptA('role',expression)
-    this.vReqS('who',expression)
-    this.vOptS('onBehalfOf',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'Provenance.agent' }
+    this.vOS('type',exp)
+    this.vOA('role',exp)
+    this.vRS('who',exp)
+    this.vOS('onBehalfOf',exp)
     return issues;
   }
 }
@@ -157,12 +157,12 @@ export class ProvenanceEntity extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'Provenance.entity' }
-    this.vReqSV('role',expression,'ProvenanceEntityRole',ProvenanceEntityRoleVsValidation,'r')
-    this.vReqS('what',expression)
-    this.vOptA('agent',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'Provenance.entity' }
+    this.vRSV('role',exp,'ProvenanceEntityRole',ProvenanceEntityRoleVsValidation,'r')
+    this.vRS('what',exp)
+    this.vOA('agent',exp)
     return issues;
   }
 }
@@ -327,20 +327,20 @@ export class Provenance extends fhir.DomainResource {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'Provenance' }
-    this.vReqS('resourceType',expression)
-    this.vReqA('target',expression)
-    this.vOptS('occurred',expression)
-    this.vReqS('recorded',expression)
-    this.vOptA('policy',expression)
-    this.vOptS('location',expression)
-    this.vOptA('reason',expression)
-    this.vOptS('activity',expression)
-    this.vReqA('agent',expression)
-    this.vOptA('entity',expression)
-    this.vOptA('signature',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'Provenance' }
+    this.vRS('resourceType',exp)
+    this.vRA('target',exp)
+    this.vOS('occurred',exp)
+    this.vRS('recorded',exp)
+    this.vOA('policy',exp)
+    this.vOS('location',exp)
+    this.vOA('reason',exp)
+    this.vOS('activity',exp)
+    this.vRA('agent',exp)
+    this.vOA('entity',exp)
+    this.vOA('signature',exp)
     return issues;
   }
 }

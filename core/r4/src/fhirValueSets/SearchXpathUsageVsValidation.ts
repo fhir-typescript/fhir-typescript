@@ -7,9 +7,14 @@
  * How a search parameter relates to the set of elements returned by evaluating its xpath query.
  */
 export const SearchXpathUsageVsValidation: readonly string[] = [
-  "distance", "http://hl7.org/fhir/search-xpath-usage|distance", 
-  "nearby", "http://hl7.org/fhir/search-xpath-usage|nearby", 
-  "normal", "http://hl7.org/fhir/search-xpath-usage|normal", 
-  "other", "http://hl7.org/fhir/search-xpath-usage|other", 
-  "phonetic", "http://hl7.org/fhir/search-xpath-usage|phonetic", 
+  "distance",
+  "http://hl7.org/fhir/search-xpath-usage|distance",
+  "http://hl7.org/fhir/search-xpath-usage|nearby",
+  "http://hl7.org/fhir/search-xpath-usage|normal",
+  "http://hl7.org/fhir/search-xpath-usage|other",
+  "http://hl7.org/fhir/search-xpath-usage|phonetic",
+  "nearby",
+  "normal",
+  "other",
+  "phonetic",
 ] as const;

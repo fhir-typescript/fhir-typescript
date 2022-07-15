@@ -7,8 +7,12 @@
  * This value set includes sample Claim Care Team Role codes.
  */
 export const ClaimCareteamroleVsValidation: readonly string[] = [
-  "assist", "http://terminology.hl7.org/CodeSystem/claimcareteamrole|assist", 
-  "other", "http://terminology.hl7.org/CodeSystem/claimcareteamrole|other", 
-  "primary", "http://terminology.hl7.org/CodeSystem/claimcareteamrole|primary", 
-  "supervisor", "http://terminology.hl7.org/CodeSystem/claimcareteamrole|supervisor", 
+  "assist",
+  "http://terminology.hl7.org/CodeSystem/claimcareteamrole|assist",
+  "http://terminology.hl7.org/CodeSystem/claimcareteamrole|other",
+  "http://terminology.hl7.org/CodeSystem/claimcareteamrole|primary",
+  "http://terminology.hl7.org/CodeSystem/claimcareteamrole|supervisor",
+  "other",
+  "primary",
+  "supervisor",
 ] as const;

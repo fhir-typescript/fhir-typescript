@@ -63,11 +63,11 @@ export class ChargeItemPerformer extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'ChargeItem.performer' }
-    this.vOptS('function',expression)
-    this.vReqS('actor',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'ChargeItem.performer' }
+    this.vOS('function',exp)
+    this.vRS('actor',exp)
     return issues;
   }
 }
@@ -438,36 +438,36 @@ export class ChargeItem extends fhir.DomainResource {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'ChargeItem' }
-    this.vReqS('resourceType',expression)
-    this.vOptA('identifier',expression)
-    this.vOptA('definitionUri',expression)
-    this.vOptA('definitionCanonical',expression)
-    this.vReqSV('status',expression,'ChargeitemStatus',ChargeitemStatusVsValidation,'r')
-    this.vOptA('partOf',expression)
-    this.vReqS('code',expression)
-    this.vReqS('subject',expression)
-    this.vOptS('context',expression)
-    this.vOptS('occurrence',expression)
-    this.vOptA('performer',expression)
-    this.vOptS('performingOrganization',expression)
-    this.vOptS('requestingOrganization',expression)
-    this.vOptS('costCenter',expression)
-    this.vOptS('quantity',expression)
-    this.vOptA('bodysite',expression)
-    this.vOptS('factorOverride',expression)
-    this.vOptS('priceOverride',expression)
-    this.vOptS('overrideReason',expression)
-    this.vOptS('enterer',expression)
-    this.vOptS('enteredDate',expression)
-    this.vOptA('reason',expression)
-    this.vOptA('service',expression)
-    this.vOptS('product',expression)
-    this.vOptA('account',expression)
-    this.vOptA('note',expression)
-    this.vOptA('supportingInformation',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'ChargeItem' }
+    this.vRS('resourceType',exp)
+    this.vOA('identifier',exp)
+    this.vOA('definitionUri',exp)
+    this.vOA('definitionCanonical',exp)
+    this.vRSV('status',exp,'ChargeitemStatus',ChargeitemStatusVsValidation,'r')
+    this.vOA('partOf',exp)
+    this.vRS('code',exp)
+    this.vRS('subject',exp)
+    this.vOS('context',exp)
+    this.vOS('occurrence',exp)
+    this.vOA('performer',exp)
+    this.vOS('performingOrganization',exp)
+    this.vOS('requestingOrganization',exp)
+    this.vOS('costCenter',exp)
+    this.vOS('quantity',exp)
+    this.vOA('bodysite',exp)
+    this.vOS('factorOverride',exp)
+    this.vOS('priceOverride',exp)
+    this.vOS('overrideReason',exp)
+    this.vOS('enterer',exp)
+    this.vOS('enteredDate',exp)
+    this.vOA('reason',exp)
+    this.vOA('service',exp)
+    this.vOS('product',exp)
+    this.vOA('account',exp)
+    this.vOA('note',exp)
+    this.vOA('supportingInformation',exp)
     return issues;
   }
 }

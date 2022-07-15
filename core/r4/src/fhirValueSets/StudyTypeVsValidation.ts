@@ -7,11 +7,18 @@
  * Types of research studies (types of research methods).
  */
 export const StudyTypeVsValidation: readonly string[] = [
-  "case-control", "http://terminology.hl7.org/CodeSystem/study-type|case-control", 
-  "case-report", "http://terminology.hl7.org/CodeSystem/study-type|case-report", 
-  "CCT", "http://terminology.hl7.org/CodeSystem/study-type|CCT", 
-  "cohort", "http://terminology.hl7.org/CodeSystem/study-type|cohort", 
-  "mixed", "http://terminology.hl7.org/CodeSystem/study-type|mixed", 
-  "RCT", "http://terminology.hl7.org/CodeSystem/study-type|RCT", 
-  "series", "http://terminology.hl7.org/CodeSystem/study-type|series", 
+  "case-control",
+  "case-report",
+  "CCT",
+  "cohort",
+  "http://terminology.hl7.org/CodeSystem/study-type|case-control",
+  "http://terminology.hl7.org/CodeSystem/study-type|case-report",
+  "http://terminology.hl7.org/CodeSystem/study-type|CCT",
+  "http://terminology.hl7.org/CodeSystem/study-type|cohort",
+  "http://terminology.hl7.org/CodeSystem/study-type|mixed",
+  "http://terminology.hl7.org/CodeSystem/study-type|RCT",
+  "http://terminology.hl7.org/CodeSystem/study-type|series",
+  "mixed",
+  "RCT",
+  "series",
 ] as const;

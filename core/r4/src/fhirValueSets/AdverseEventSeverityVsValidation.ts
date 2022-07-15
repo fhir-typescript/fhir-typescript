@@ -7,7 +7,10 @@
  * The severity of the adverse event itself, in direct relation to the subject.
  */
 export const AdverseEventSeverityVsValidation: readonly string[] = [
-  "mild", "http://terminology.hl7.org/CodeSystem/adverse-event-severity|mild", 
-  "moderate", "http://terminology.hl7.org/CodeSystem/adverse-event-severity|moderate", 
-  "severe", "http://terminology.hl7.org/CodeSystem/adverse-event-severity|severe", 
+  "http://terminology.hl7.org/CodeSystem/adverse-event-severity|mild",
+  "http://terminology.hl7.org/CodeSystem/adverse-event-severity|moderate",
+  "http://terminology.hl7.org/CodeSystem/adverse-event-severity|severe",
+  "mild",
+  "moderate",
+  "severe",
 ] as const;

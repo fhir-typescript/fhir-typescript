@@ -132,12 +132,12 @@ export class GoalTarget extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'Goal.target' }
-    this.vOptS('measure',expression)
-    this.vOptS('detail',expression)
-    this.vOptS('due',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'Goal.target' }
+    this.vOS('measure',exp)
+    this.vOS('detail',exp)
+    this.vOS('due',exp)
     return issues;
   }
 }
@@ -367,26 +367,26 @@ export class Goal extends fhir.DomainResource {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'Goal' }
-    this.vReqS('resourceType',expression)
-    this.vOptA('identifier',expression)
-    this.vReqSV('lifecycleStatus',expression,'GoalStatus',GoalStatusVsValidation,'r')
-    this.vOptS('achievementStatus',expression)
-    this.vOptA('category',expression)
-    this.vOptS('priority',expression)
-    this.vReqS('description',expression)
-    this.vReqS('subject',expression)
-    this.vOptS('start',expression)
-    this.vOptA('target',expression)
-    this.vOptS('statusDate',expression)
-    this.vOptS('statusReason',expression)
-    this.vOptS('expressedBy',expression)
-    this.vOptA('addresses',expression)
-    this.vOptA('note',expression)
-    this.vOptA('outcomeCode',expression)
-    this.vOptA('outcomeReference',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'Goal' }
+    this.vRS('resourceType',exp)
+    this.vOA('identifier',exp)
+    this.vRSV('lifecycleStatus',exp,'GoalStatus',GoalStatusVsValidation,'r')
+    this.vOS('achievementStatus',exp)
+    this.vOA('category',exp)
+    this.vOS('priority',exp)
+    this.vRS('description',exp)
+    this.vRS('subject',exp)
+    this.vOS('start',exp)
+    this.vOA('target',exp)
+    this.vOS('statusDate',exp)
+    this.vOS('statusReason',exp)
+    this.vOS('expressedBy',exp)
+    this.vOA('addresses',exp)
+    this.vOA('note',exp)
+    this.vOA('outcomeCode',exp)
+    this.vOA('outcomeReference',exp)
     return issues;
   }
 }

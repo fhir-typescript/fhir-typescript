@@ -7,11 +7,18 @@
  * The nature of the relationship between the patient and the contact person.
  */
 export const PatientContactrelationshipVsValidation: readonly string[] = [
-  "C", "http://terminology.hl7.org/CodeSystem/v2-0131|C", 
-  "E", "http://terminology.hl7.org/CodeSystem/v2-0131|E", 
-  "F", "http://terminology.hl7.org/CodeSystem/v2-0131|F", 
-  "I", "http://terminology.hl7.org/CodeSystem/v2-0131|I", 
-  "N", "http://terminology.hl7.org/CodeSystem/v2-0131|N", 
-  "S", "http://terminology.hl7.org/CodeSystem/v2-0131|S", 
-  "U", "http://terminology.hl7.org/CodeSystem/v2-0131|U", 
+  "C",
+  "E",
+  "F",
+  "http://terminology.hl7.org/CodeSystem/v2-0131|C",
+  "http://terminology.hl7.org/CodeSystem/v2-0131|E",
+  "http://terminology.hl7.org/CodeSystem/v2-0131|F",
+  "http://terminology.hl7.org/CodeSystem/v2-0131|I",
+  "http://terminology.hl7.org/CodeSystem/v2-0131|N",
+  "http://terminology.hl7.org/CodeSystem/v2-0131|S",
+  "http://terminology.hl7.org/CodeSystem/v2-0131|U",
+  "I",
+  "N",
+  "S",
+  "U",
 ] as const;

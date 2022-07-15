@@ -201,19 +201,19 @@ export class Address extends fhir.FhirElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'Address' }
-    this.vOptSV('use',expression,'AddressUse',AddressUseVsValidation,'r')
-    this.vOptSV('type',expression,'AddressType',AddressTypeVsValidation,'r')
-    this.vOptS('text',expression)
-    this.vOptA('line',expression)
-    this.vOptS('city',expression)
-    this.vOptS('district',expression)
-    this.vOptS('state',expression)
-    this.vOptS('postalCode',expression)
-    this.vOptS('country',expression)
-    this.vOptS('period',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'Address' }
+    this.vOSV('use',exp,'AddressUse',AddressUseVsValidation,'r')
+    this.vOSV('type',exp,'AddressType',AddressTypeVsValidation,'r')
+    this.vOS('text',exp)
+    this.vOA('line',exp)
+    this.vOS('city',exp)
+    this.vOS('district',exp)
+    this.vOS('state',exp)
+    this.vOS('postalCode',exp)
+    this.vOS('country',exp)
+    this.vOS('period',exp)
     return issues;
   }
 }

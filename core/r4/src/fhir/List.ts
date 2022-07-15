@@ -105,13 +105,13 @@ export class ListEntry extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'List.entry' }
-    this.vOptS('flag',expression)
-    this.vOptS('deleted',expression)
-    this.vOptS('date',expression)
-    this.vReqS('item',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'List.entry' }
+    this.vOS('flag',exp)
+    this.vOS('deleted',exp)
+    this.vOS('date',exp)
+    this.vRS('item',exp)
     return issues;
   }
 }
@@ -301,23 +301,23 @@ export class List extends fhir.DomainResource {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'List' }
-    this.vReqS('resourceType',expression)
-    this.vOptA('identifier',expression)
-    this.vReqSV('status',expression,'ListStatus',ListStatusVsValidation,'r')
-    this.vReqSV('mode',expression,'ListMode',ListModeVsValidation,'r')
-    this.vOptS('title',expression)
-    this.vOptS('code',expression)
-    this.vOptS('subject',expression)
-    this.vOptS('encounter',expression)
-    this.vOptS('date',expression)
-    this.vOptS('source',expression)
-    this.vOptS('orderedBy',expression)
-    this.vOptA('note',expression)
-    this.vOptA('entry',expression)
-    this.vOptS('emptyReason',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'List' }
+    this.vRS('resourceType',exp)
+    this.vOA('identifier',exp)
+    this.vRSV('status',exp,'ListStatus',ListStatusVsValidation,'r')
+    this.vRSV('mode',exp,'ListMode',ListModeVsValidation,'r')
+    this.vOS('title',exp)
+    this.vOS('code',exp)
+    this.vOS('subject',exp)
+    this.vOS('encounter',exp)
+    this.vOS('date',exp)
+    this.vOS('source',exp)
+    this.vOS('orderedBy',exp)
+    this.vOA('note',exp)
+    this.vOA('entry',exp)
+    this.vOS('emptyReason',exp)
     return issues;
   }
 }

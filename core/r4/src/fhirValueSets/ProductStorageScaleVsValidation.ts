@@ -7,7 +7,10 @@
  * BiologicallyDerived Product Storage Scale.
  */
 export const ProductStorageScaleVsValidation: readonly string[] = [
-  "celsius", "http://hl7.org/fhir/product-storage-scale|celsius", 
-  "farenheit", "http://hl7.org/fhir/product-storage-scale|farenheit", 
-  "kelvin", "http://hl7.org/fhir/product-storage-scale|kelvin", 
+  "celsius",
+  "farenheit",
+  "http://hl7.org/fhir/product-storage-scale|celsius",
+  "http://hl7.org/fhir/product-storage-scale|farenheit",
+  "http://hl7.org/fhir/product-storage-scale|kelvin",
+  "kelvin",
 ] as const;

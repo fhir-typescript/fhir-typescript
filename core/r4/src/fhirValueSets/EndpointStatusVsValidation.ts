@@ -7,10 +7,16 @@
  * The status of the endpoint.
  */
 export const EndpointStatusVsValidation: readonly string[] = [
-  "active", "http://hl7.org/fhir/endpoint-status|active", 
-  "entered-in-error", "http://hl7.org/fhir/endpoint-status|entered-in-error", 
-  "error", "http://hl7.org/fhir/endpoint-status|error", 
-  "off", "http://hl7.org/fhir/endpoint-status|off", 
-  "suspended", "http://hl7.org/fhir/endpoint-status|suspended", 
-  "test", "http://hl7.org/fhir/endpoint-status|test", 
+  "active",
+  "entered-in-error",
+  "error",
+  "http://hl7.org/fhir/endpoint-status|active",
+  "http://hl7.org/fhir/endpoint-status|entered-in-error",
+  "http://hl7.org/fhir/endpoint-status|error",
+  "http://hl7.org/fhir/endpoint-status|off",
+  "http://hl7.org/fhir/endpoint-status|suspended",
+  "http://hl7.org/fhir/endpoint-status|test",
+  "off",
+  "suspended",
+  "test",
 ] as const;

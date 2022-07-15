@@ -7,6 +7,8 @@
  * The value set to instantiate this attribute should be drawn from a terminologically robust code system that consists of or contains concepts to support describing the function a practitioner or organization may play in the immunization event. This value set is provided as a suggestive example.
  */
 export const ImmunizationFunctionVsValidation: readonly string[] = [
-  "AP", "http://terminology.hl7.org/CodeSystem/v2-0443|AP", 
-  "OP", "http://terminology.hl7.org/CodeSystem/v2-0443|OP", 
+  "AP",
+  "http://terminology.hl7.org/CodeSystem/v2-0443|AP",
+  "http://terminology.hl7.org/CodeSystem/v2-0443|OP",
+  "OP",
 ] as const;

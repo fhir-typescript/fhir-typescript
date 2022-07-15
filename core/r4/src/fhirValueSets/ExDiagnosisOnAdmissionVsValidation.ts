@@ -7,8 +7,12 @@
  * This value set includes example Diagnosis on Admission codes.
  */
 export const ExDiagnosisOnAdmissionVsValidation: readonly string[] = [
-  "n", "http://terminology.hl7.org/CodeSystem/ex-diagnosis-on-admission|n", 
-  "u", "http://terminology.hl7.org/CodeSystem/ex-diagnosis-on-admission|u", 
-  "w", "http://terminology.hl7.org/CodeSystem/ex-diagnosis-on-admission|w", 
-  "y", "http://terminology.hl7.org/CodeSystem/ex-diagnosis-on-admission|y", 
+  "http://terminology.hl7.org/CodeSystem/ex-diagnosis-on-admission|n",
+  "http://terminology.hl7.org/CodeSystem/ex-diagnosis-on-admission|u",
+  "http://terminology.hl7.org/CodeSystem/ex-diagnosis-on-admission|w",
+  "http://terminology.hl7.org/CodeSystem/ex-diagnosis-on-admission|y",
+  "n",
+  "u",
+  "w",
+  "y",
 ] as const;

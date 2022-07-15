@@ -80,14 +80,14 @@ export class FhirPrimitive extends fhir.FhirBase  {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
     if ((this.value === undefined) && (!this.id) && ((!this.extension) || (this.extension.length === 0))) {
       issues.push({
         severity: 'error',
         code: 'required',
         details: { text: 'Primitive values must have a value, id, or extensions.' },
-        expression: [expression],
+        expression: [exp],
       });
     }
     return issues;

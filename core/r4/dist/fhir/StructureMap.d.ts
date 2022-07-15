@@ -75,7 +75,7 @@ export declare class StructureMapStructure extends fhir.BackboneElement {
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(expression?: string): fhir.FtsIssue[];
+    doModelValidation(exp?: string): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the StructureMapGroupInput type.
@@ -145,7 +145,7 @@ export declare class StructureMapGroupInput extends fhir.BackboneElement {
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(expression?: string): fhir.FtsIssue[];
+    doModelValidation(exp?: string): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the StructureMapGroupRuleSource type.
@@ -499,7 +499,7 @@ export declare class StructureMapGroupRuleSource extends fhir.BackboneElement {
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(expression?: string): fhir.FtsIssue[];
+    doModelValidation(exp?: string): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the StructureMapGroupRuleTargetParameter type.
@@ -553,7 +553,7 @@ export declare class StructureMapGroupRuleTargetParameter extends fhir.BackboneE
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(expression?: string): fhir.FtsIssue[];
+    doModelValidation(exp?: string): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the StructureMapGroupRuleTarget type.
@@ -667,7 +667,7 @@ export declare class StructureMapGroupRuleTarget extends fhir.BackboneElement {
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(expression?: string): fhir.FtsIssue[];
+    doModelValidation(exp?: string): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the StructureMapGroupRuleDependent type.
@@ -713,7 +713,7 @@ export declare class StructureMapGroupRuleDependent extends fhir.BackboneElement
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(expression?: string): fhir.FtsIssue[];
+    doModelValidation(exp?: string): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the StructureMapGroupRule type.
@@ -791,7 +791,7 @@ export declare class StructureMapGroupRule extends fhir.BackboneElement {
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(expression?: string): fhir.FtsIssue[];
+    doModelValidation(exp?: string): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the StructureMapGroup type.
@@ -877,7 +877,7 @@ export declare class StructureMapGroup extends fhir.BackboneElement {
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(expression?: string): fhir.FtsIssue[];
+    doModelValidation(exp?: string): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the StructureMap type.
@@ -1103,6 +1103,6 @@ export declare class StructureMap extends fhir.DomainResource {
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(expression?: string): fhir.FtsIssue[];
+    doModelValidation(exp?: string): fhir.FtsIssue[];
 }
 //# sourceMappingURL=StructureMap.d.ts.map

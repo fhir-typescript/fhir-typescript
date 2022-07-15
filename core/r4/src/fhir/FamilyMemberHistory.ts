@@ -135,14 +135,14 @@ export class FamilyMemberHistoryCondition extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'FamilyMemberHistory.condition' }
-    this.vReqS('code',expression)
-    this.vOptS('outcome',expression)
-    this.vOptS('contributedToDeath',expression)
-    this.vOptS('onset',expression)
-    this.vOptA('note',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'FamilyMemberHistory.condition' }
+    this.vRS('code',exp)
+    this.vOS('outcome',exp)
+    this.vOS('contributedToDeath',exp)
+    this.vOS('onset',exp)
+    this.vOA('note',exp)
     return issues;
   }
 }
@@ -469,28 +469,28 @@ export class FamilyMemberHistory extends fhir.DomainResource {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'FamilyMemberHistory' }
-    this.vReqS('resourceType',expression)
-    this.vOptA('identifier',expression)
-    this.vOptA('instantiatesCanonical',expression)
-    this.vOptA('instantiatesUri',expression)
-    this.vReqSV('status',expression,'HistoryStatus',HistoryStatusVsValidation,'r')
-    this.vOptS('dataAbsentReason',expression)
-    this.vReqS('patient',expression)
-    this.vOptS('date',expression)
-    this.vOptS('name',expression)
-    this.vReqS('relationship',expression)
-    this.vOptS('sex',expression)
-    this.vOptS('born',expression)
-    this.vOptS('age',expression)
-    this.vOptS('estimatedAge',expression)
-    this.vOptS('deceased',expression)
-    this.vOptA('reasonCode',expression)
-    this.vOptA('reasonReference',expression)
-    this.vOptA('note',expression)
-    this.vOptA('condition',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'FamilyMemberHistory' }
+    this.vRS('resourceType',exp)
+    this.vOA('identifier',exp)
+    this.vOA('instantiatesCanonical',exp)
+    this.vOA('instantiatesUri',exp)
+    this.vRSV('status',exp,'HistoryStatus',HistoryStatusVsValidation,'r')
+    this.vOS('dataAbsentReason',exp)
+    this.vRS('patient',exp)
+    this.vOS('date',exp)
+    this.vOS('name',exp)
+    this.vRS('relationship',exp)
+    this.vOS('sex',exp)
+    this.vOS('born',exp)
+    this.vOS('age',exp)
+    this.vOS('estimatedAge',exp)
+    this.vOS('deceased',exp)
+    this.vOA('reasonCode',exp)
+    this.vOA('reasonReference',exp)
+    this.vOA('note',exp)
+    this.vOA('condition',exp)
     return issues;
   }
 }

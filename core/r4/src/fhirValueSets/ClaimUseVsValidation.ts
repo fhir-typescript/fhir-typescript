@@ -7,7 +7,10 @@
  * The purpose of the Claim: predetermination, preauthorization, claim.
  */
 export const ClaimUseVsValidation: readonly string[] = [
-  "claim", "http://hl7.org/fhir/claim-use|claim", 
-  "preauthorization", "http://hl7.org/fhir/claim-use|preauthorization", 
-  "predetermination", "http://hl7.org/fhir/claim-use|predetermination", 
+  "claim",
+  "http://hl7.org/fhir/claim-use|claim",
+  "http://hl7.org/fhir/claim-use|preauthorization",
+  "http://hl7.org/fhir/claim-use|predetermination",
+  "preauthorization",
+  "predetermination",
 ] as const;

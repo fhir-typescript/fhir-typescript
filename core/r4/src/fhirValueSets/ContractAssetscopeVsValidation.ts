@@ -7,5 +7,6 @@
  * This value set contract specific codes for asset scope.
  */
 export const ContractAssetscopeVsValidation: readonly string[] = [
-  "thing", "http://hl7.org/fhir/contract-asset-scope|thing", 
+  "http://hl7.org/fhir/contract-asset-scope|thing",
+  "thing",
 ] as const;

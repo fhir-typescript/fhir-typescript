@@ -104,12 +104,12 @@ export class ImplementationGuideDependsOn extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'ImplementationGuide.dependsOn' }
-    this.vReqS('uri',expression)
-    this.vOptS('packageId',expression)
-    this.vOptS('version',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'ImplementationGuide.dependsOn' }
+    this.vRS('uri',exp)
+    this.vOS('packageId',exp)
+    this.vOS('version',exp)
     return issues;
   }
 }
@@ -172,11 +172,11 @@ export class ImplementationGuideGlobal extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'ImplementationGuide.global' }
-    this.vReqSV('type',expression,'ResourceTypes',ResourceTypesVsValidation,'r')
-    this.vReqS('profile',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'ImplementationGuide.global' }
+    this.vRSV('type',exp,'ResourceTypes',ResourceTypesVsValidation,'r')
+    this.vRS('profile',exp)
     return issues;
   }
 }
@@ -238,11 +238,11 @@ export class ImplementationGuideDefinitionGrouping extends fhir.BackboneElement 
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'ImplementationGuide.definition.grouping' }
-    this.vReqS('name',expression)
-    this.vOptS('description',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'ImplementationGuide.definition.grouping' }
+    this.vRS('name',exp)
+    this.vOS('description',exp)
     return issues;
   }
 }
@@ -389,15 +389,15 @@ export class ImplementationGuideDefinitionResource extends fhir.BackboneElement 
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'ImplementationGuide.definition.resource' }
-    this.vReqS('reference',expression)
-    this.vOptAV('fhirVersion',expression,'FHIRVersion',FHIRVersionVsValidation,'r')
-    this.vOptS('name',expression)
-    this.vOptS('description',expression)
-    this.vOptS('example',expression)
-    this.vOptS('groupingId',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'ImplementationGuide.definition.resource' }
+    this.vRS('reference',exp)
+    this.vOAV('fhirVersion',exp,'FHIRVersion',FHIRVersionVsValidation,'r')
+    this.vOS('name',exp)
+    this.vOS('description',exp)
+    this.vOS('example',exp)
+    this.vOS('groupingId',exp)
     return issues;
   }
 }
@@ -494,13 +494,13 @@ export class ImplementationGuideDefinitionPage extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'ImplementationGuide.definition.page' }
-    this.vReqS('name',expression)
-    this.vReqS('title',expression)
-    this.vReqSV('generation',expression,'GuidePageGeneration',GuidePageGenerationVsValidation,'r')
-    this.vOptA('page',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'ImplementationGuide.definition.page' }
+    this.vRS('name',exp)
+    this.vRS('title',exp)
+    this.vRSV('generation',exp,'GuidePageGeneration',GuidePageGenerationVsValidation,'r')
+    this.vOA('page',exp)
     return issues;
   }
 }
@@ -563,11 +563,11 @@ export class ImplementationGuideDefinitionParameter extends fhir.BackboneElement
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'ImplementationGuide.definition.parameter' }
-    this.vReqSV('code',expression,'GuideParameter',GuideParameterVsValidation,'r')
-    this.vReqS('value',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'ImplementationGuide.definition.parameter' }
+    this.vRSV('code',exp,'GuideParameter',GuideParameterVsValidation,'r')
+    this.vRS('value',exp)
     return issues;
   }
 }
@@ -647,12 +647,12 @@ export class ImplementationGuideDefinitionTemplate extends fhir.BackboneElement 
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'ImplementationGuide.definition.template' }
-    this.vReqS('code',expression)
-    this.vReqS('source',expression)
-    this.vOptS('scope',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'ImplementationGuide.definition.template' }
+    this.vRS('code',exp)
+    this.vRS('source',exp)
+    this.vOS('scope',exp)
     return issues;
   }
 }
@@ -728,14 +728,14 @@ export class ImplementationGuideDefinition extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'ImplementationGuide.definition' }
-    this.vOptA('grouping',expression)
-    this.vReqA('resource',expression)
-    this.vOptS('page',expression)
-    this.vOptA('parameter',expression)
-    this.vOptA('template',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'ImplementationGuide.definition' }
+    this.vOA('grouping',exp)
+    this.vRA('resource',exp)
+    this.vOS('page',exp)
+    this.vOA('parameter',exp)
+    this.vOA('template',exp)
     return issues;
   }
 }
@@ -812,12 +812,12 @@ export class ImplementationGuideManifestResource extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'ImplementationGuide.manifest.resource' }
-    this.vReqS('reference',expression)
-    this.vOptS('example',expression)
-    this.vOptS('relativePath',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'ImplementationGuide.manifest.resource' }
+    this.vRS('reference',exp)
+    this.vOS('example',exp)
+    this.vOS('relativePath',exp)
     return issues;
   }
 }
@@ -899,12 +899,12 @@ export class ImplementationGuideManifestPage extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'ImplementationGuide.manifest.page' }
-    this.vReqS('name',expression)
-    this.vOptS('title',expression)
-    this.vOptA('anchor',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'ImplementationGuide.manifest.page' }
+    this.vRS('name',exp)
+    this.vOS('title',exp)
+    this.vOA('anchor',exp)
     return issues;
   }
 }
@@ -1008,14 +1008,14 @@ export class ImplementationGuideManifest extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'ImplementationGuide.manifest' }
-    this.vOptS('rendering',expression)
-    this.vReqA('resource',expression)
-    this.vOptA('page',expression)
-    this.vOptA('image',expression)
-    this.vOptA('other',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'ImplementationGuide.manifest' }
+    this.vOS('rendering',exp)
+    this.vRA('resource',exp)
+    this.vOA('page',exp)
+    this.vOA('image',exp)
+    this.vOA('other',exp)
     return issues;
   }
 }
@@ -1351,30 +1351,30 @@ export class ImplementationGuide extends fhir.DomainResource {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'ImplementationGuide' }
-    this.vReqS('resourceType',expression)
-    this.vReqS('url',expression)
-    this.vOptS('version',expression)
-    this.vReqS('name',expression)
-    this.vOptS('title',expression)
-    this.vReqSV('status',expression,'PublicationStatus',PublicationStatusVsValidation,'r')
-    this.vOptS('experimental',expression)
-    this.vOptS('date',expression)
-    this.vOptS('publisher',expression)
-    this.vOptA('contact',expression)
-    this.vOptS('description',expression)
-    this.vOptA('useContext',expression)
-    this.vOptA('jurisdiction',expression)
-    this.vOptS('copyright',expression)
-    this.vReqS('packageId',expression)
-    this.vOptSV('license',expression,'SpdxLicense',SpdxLicenseVsValidation,'r')
-    this.vReqAV('fhirVersion',expression,'FHIRVersion',FHIRVersionVsValidation,'r')
-    this.vOptA('dependsOn',expression)
-    this.vOptA('global',expression)
-    this.vOptS('definition',expression)
-    this.vOptS('manifest',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'ImplementationGuide' }
+    this.vRS('resourceType',exp)
+    this.vRS('url',exp)
+    this.vOS('version',exp)
+    this.vRS('name',exp)
+    this.vOS('title',exp)
+    this.vRSV('status',exp,'PublicationStatus',PublicationStatusVsValidation,'r')
+    this.vOS('experimental',exp)
+    this.vOS('date',exp)
+    this.vOS('publisher',exp)
+    this.vOA('contact',exp)
+    this.vOS('description',exp)
+    this.vOA('useContext',exp)
+    this.vOA('jurisdiction',exp)
+    this.vOS('copyright',exp)
+    this.vRS('packageId',exp)
+    this.vOSV('license',exp,'SpdxLicense',SpdxLicenseVsValidation,'r')
+    this.vRAV('fhirVersion',exp,'FHIRVersion',FHIRVersionVsValidation,'r')
+    this.vOA('dependsOn',exp)
+    this.vOA('global',exp)
+    this.vOS('definition',exp)
+    this.vOS('manifest',exp)
     return issues;
   }
 }

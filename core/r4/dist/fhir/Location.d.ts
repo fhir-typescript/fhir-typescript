@@ -58,7 +58,7 @@ export declare class LocationPosition extends fhir.BackboneElement {
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(expression?: string): fhir.FtsIssue[];
+    doModelValidation(exp?: string): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the LocationHoursOfOperation type.
@@ -129,7 +129,7 @@ export declare class LocationHoursOfOperation extends fhir.BackboneElement {
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(expression?: string): fhir.FtsIssue[];
+    doModelValidation(exp?: string): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the Location type.
@@ -321,6 +321,6 @@ export declare class Location extends fhir.DomainResource {
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(expression?: string): fhir.FtsIssue[];
+    doModelValidation(exp?: string): fhir.FtsIssue[];
 }
 //# sourceMappingURL=Location.d.ts.map

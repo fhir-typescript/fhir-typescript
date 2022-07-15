@@ -121,16 +121,16 @@ export class PatientContact extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'Patient.contact' }
-    this.vOptA('relationship',expression)
-    this.vOptS('name',expression)
-    this.vOptA('telecom',expression)
-    this.vOptS('address',expression)
-    this.vOptSV('gender',expression,'AdministrativeGender',AdministrativeGenderVsValidation,'r')
-    this.vOptS('organization',expression)
-    this.vOptS('period',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'Patient.contact' }
+    this.vOA('relationship',exp)
+    this.vOS('name',exp)
+    this.vOA('telecom',exp)
+    this.vOS('address',exp)
+    this.vOSV('gender',exp,'AdministrativeGender',AdministrativeGenderVsValidation,'r')
+    this.vOS('organization',exp)
+    this.vOS('period',exp)
     return issues;
   }
 }
@@ -184,11 +184,11 @@ export class PatientCommunication extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'Patient.communication' }
-    this.vReqS('language',expression)
-    this.vOptS('preferred',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'Patient.communication' }
+    this.vRS('language',exp)
+    this.vOS('preferred',exp)
     return issues;
   }
 }
@@ -243,11 +243,11 @@ export class PatientLink extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'Patient.link' }
-    this.vReqS('other',expression)
-    this.vReqSV('type',expression,'LinkType',LinkTypeVsValidation,'r')
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'Patient.link' }
+    this.vRS('other',exp)
+    this.vRSV('type',exp,'LinkType',LinkTypeVsValidation,'r')
     return issues;
   }
 }
@@ -498,26 +498,26 @@ export class Patient extends fhir.DomainResource {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'Patient' }
-    this.vReqS('resourceType',expression)
-    this.vOptA('identifier',expression)
-    this.vOptS('active',expression)
-    this.vOptA('name',expression)
-    this.vOptA('telecom',expression)
-    this.vOptSV('gender',expression,'AdministrativeGender',AdministrativeGenderVsValidation,'r')
-    this.vOptS('birthDate',expression)
-    this.vOptS('deceased',expression)
-    this.vOptA('address',expression)
-    this.vOptS('maritalStatus',expression)
-    this.vOptS('multipleBirth',expression)
-    this.vOptA('photo',expression)
-    this.vOptA('contact',expression)
-    this.vOptA('communication',expression)
-    this.vOptA('generalPractitioner',expression)
-    this.vOptS('managingOrganization',expression)
-    this.vOptA('link',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'Patient' }
+    this.vRS('resourceType',exp)
+    this.vOA('identifier',exp)
+    this.vOS('active',exp)
+    this.vOA('name',exp)
+    this.vOA('telecom',exp)
+    this.vOSV('gender',exp,'AdministrativeGender',AdministrativeGenderVsValidation,'r')
+    this.vOS('birthDate',exp)
+    this.vOS('deceased',exp)
+    this.vOA('address',exp)
+    this.vOS('maritalStatus',exp)
+    this.vOS('multipleBirth',exp)
+    this.vOA('photo',exp)
+    this.vOA('contact',exp)
+    this.vOA('communication',exp)
+    this.vOA('generalPractitioner',exp)
+    this.vOS('managingOrganization',exp)
+    this.vOA('link',exp)
     return issues;
   }
 }

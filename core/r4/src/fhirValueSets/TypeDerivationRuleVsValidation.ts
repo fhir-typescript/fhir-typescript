@@ -7,6 +7,8 @@
  * How a type relates to its baseDefinition.
  */
 export const TypeDerivationRuleVsValidation: readonly string[] = [
-  "constraint", "http://hl7.org/fhir/type-derivation-rule|constraint", 
-  "specialization", "http://hl7.org/fhir/type-derivation-rule|specialization", 
+  "constraint",
+  "http://hl7.org/fhir/type-derivation-rule|constraint",
+  "http://hl7.org/fhir/type-derivation-rule|specialization",
+  "specialization",
 ] as const;

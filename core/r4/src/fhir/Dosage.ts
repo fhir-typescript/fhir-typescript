@@ -109,12 +109,12 @@ export class DosageDoseAndRate extends fhir.FhirElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'Dosage.doseAndRate' }
-    this.vOptS('type',expression)
-    this.vOptS('dose',expression)
-    this.vOptS('rate',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'Dosage.doseAndRate' }
+    this.vOS('type',exp)
+    this.vOS('dose',exp)
+    this.vOS('rate',exp)
     return issues;
   }
 }
@@ -298,22 +298,22 @@ export class Dosage extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'Dosage' }
-    this.vOptS('sequence',expression)
-    this.vOptS('text',expression)
-    this.vOptA('additionalInstruction',expression)
-    this.vOptS('patientInstruction',expression)
-    this.vOptS('timing',expression)
-    this.vOptS('asNeeded',expression)
-    this.vOptS('site',expression)
-    this.vOptS('route',expression)
-    this.vOptS('method',expression)
-    this.vOptA('doseAndRate',expression)
-    this.vOptS('maxDosePerPeriod',expression)
-    this.vOptS('maxDosePerAdministration',expression)
-    this.vOptS('maxDosePerLifetime',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'Dosage' }
+    this.vOS('sequence',exp)
+    this.vOS('text',exp)
+    this.vOA('additionalInstruction',exp)
+    this.vOS('patientInstruction',exp)
+    this.vOS('timing',exp)
+    this.vOS('asNeeded',exp)
+    this.vOS('site',exp)
+    this.vOS('route',exp)
+    this.vOS('method',exp)
+    this.vOA('doseAndRate',exp)
+    this.vOS('maxDosePerPeriod',exp)
+    this.vOS('maxDosePerAdministration',exp)
+    this.vOS('maxDosePerLifetime',exp)
     return issues;
   }
 }

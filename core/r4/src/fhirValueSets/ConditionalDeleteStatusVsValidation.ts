@@ -7,7 +7,10 @@
  * A code that indicates how the server supports conditional delete.
  */
 export const ConditionalDeleteStatusVsValidation: readonly string[] = [
-  "multiple", "http://hl7.org/fhir/conditional-delete-status|multiple", 
-  "not-supported", "http://hl7.org/fhir/conditional-delete-status|not-supported", 
-  "single", "http://hl7.org/fhir/conditional-delete-status|single", 
+  "http://hl7.org/fhir/conditional-delete-status|multiple",
+  "http://hl7.org/fhir/conditional-delete-status|not-supported",
+  "http://hl7.org/fhir/conditional-delete-status|single",
+  "multiple",
+  "not-supported",
+  "single",
 ] as const;

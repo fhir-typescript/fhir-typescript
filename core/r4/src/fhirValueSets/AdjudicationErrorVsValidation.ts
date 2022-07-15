@@ -7,6 +7,8 @@
  * This value set includes a smattering of adjudication codes.
  */
 export const AdjudicationErrorVsValidation: readonly string[] = [
-  "a001", "http://terminology.hl7.org/CodeSystem/adjudication-error|a001", 
-  "a002", "http://terminology.hl7.org/CodeSystem/adjudication-error|a002", 
+  "a001",
+  "a002",
+  "http://terminology.hl7.org/CodeSystem/adjudication-error|a001",
+  "http://terminology.hl7.org/CodeSystem/adjudication-error|a002",
 ] as const;

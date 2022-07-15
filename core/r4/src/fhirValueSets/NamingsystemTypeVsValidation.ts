@@ -7,7 +7,10 @@
  * Identifies the purpose of the naming system.
  */
 export const NamingsystemTypeVsValidation: readonly string[] = [
-  "codesystem", "http://hl7.org/fhir/namingsystem-type|codesystem", 
-  "identifier", "http://hl7.org/fhir/namingsystem-type|identifier", 
-  "root", "http://hl7.org/fhir/namingsystem-type|root", 
+  "codesystem",
+  "http://hl7.org/fhir/namingsystem-type|codesystem",
+  "http://hl7.org/fhir/namingsystem-type|identifier",
+  "http://hl7.org/fhir/namingsystem-type|root",
+  "identifier",
+  "root",
 ] as const;

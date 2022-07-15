@@ -72,11 +72,11 @@ export class MedicationKnowledgeRelatedMedicationKnowledge extends fhir.Backbone
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'MedicationKnowledge.relatedMedicationKnowledge' }
-    this.vReqS('type',expression)
-    this.vReqA('reference',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'MedicationKnowledge.relatedMedicationKnowledge' }
+    this.vRS('type',exp)
+    this.vRA('reference',exp)
     return issues;
   }
 }
@@ -121,11 +121,11 @@ export class MedicationKnowledgeMonograph extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'MedicationKnowledge.monograph' }
-    this.vOptS('type',expression)
-    this.vOptS('source',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'MedicationKnowledge.monograph' }
+    this.vOS('type',exp)
+    this.vOS('source',exp)
     return issues;
   }
 }
@@ -202,12 +202,12 @@ export class MedicationKnowledgeIngredient extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'MedicationKnowledge.ingredient' }
-    this.vReqS('item',expression)
-    this.vOptS('isActive',expression)
-    this.vOptS('strength',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'MedicationKnowledge.ingredient' }
+    this.vRS('item',exp)
+    this.vOS('isActive',exp)
+    this.vOS('strength',exp)
     return issues;
   }
 }
@@ -271,12 +271,12 @@ export class MedicationKnowledgeCost extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'MedicationKnowledge.cost' }
-    this.vReqS('type',expression)
-    this.vOptS('source',expression)
-    this.vReqS('cost',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'MedicationKnowledge.cost' }
+    this.vRS('type',exp)
+    this.vOS('source',exp)
+    this.vRS('cost',exp)
     return issues;
   }
 }
@@ -329,11 +329,11 @@ export class MedicationKnowledgeMonitoringProgram extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'MedicationKnowledge.monitoringProgram' }
-    this.vOptS('type',expression)
-    this.vOptS('name',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'MedicationKnowledge.monitoringProgram' }
+    this.vOS('type',exp)
+    this.vOS('name',exp)
     return issues;
   }
 }
@@ -380,11 +380,11 @@ export class MedicationKnowledgeAdministrationGuidelinesDosage extends fhir.Back
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'MedicationKnowledge.administrationGuidelines.dosage' }
-    this.vReqS('type',expression)
-    this.vReqA('dosage',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'MedicationKnowledge.administrationGuidelines.dosage' }
+    this.vRS('type',exp)
+    this.vRA('dosage',exp)
     return issues;
   }
 }
@@ -455,11 +455,11 @@ export class MedicationKnowledgeAdministrationGuidelinesPatientCharacteristics e
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'MedicationKnowledge.administrationGuidelines.patientCharacteristics' }
-    this.vReqS('characteristic',expression)
-    this.vOptA('value',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'MedicationKnowledge.administrationGuidelines.patientCharacteristics' }
+    this.vRS('characteristic',exp)
+    this.vOA('value',exp)
     return issues;
   }
 }
@@ -529,12 +529,12 @@ export class MedicationKnowledgeAdministrationGuidelines extends fhir.BackboneEl
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'MedicationKnowledge.administrationGuidelines' }
-    this.vOptA('dosage',expression)
-    this.vOptS('indication',expression)
-    this.vOptA('patientCharacteristics',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'MedicationKnowledge.administrationGuidelines' }
+    this.vOA('dosage',exp)
+    this.vOS('indication',exp)
+    this.vOA('patientCharacteristics',exp)
     return issues;
   }
 }
@@ -581,11 +581,11 @@ export class MedicationKnowledgeMedicineClassification extends fhir.BackboneElem
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'MedicationKnowledge.medicineClassification' }
-    this.vReqS('type',expression)
-    this.vOptA('classification',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'MedicationKnowledge.medicineClassification' }
+    this.vRS('type',exp)
+    this.vOA('classification',exp)
     return issues;
   }
 }
@@ -630,11 +630,11 @@ export class MedicationKnowledgePackaging extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'MedicationKnowledge.packaging' }
-    this.vOptS('type',expression)
-    this.vOptS('quantity',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'MedicationKnowledge.packaging' }
+    this.vOS('type',exp)
+    this.vOS('quantity',exp)
     return issues;
   }
 }
@@ -703,11 +703,11 @@ export class MedicationKnowledgeDrugCharacteristic extends fhir.BackboneElement 
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'MedicationKnowledge.drugCharacteristic' }
-    this.vOptS('type',expression)
-    this.vOptS('value',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'MedicationKnowledge.drugCharacteristic' }
+    this.vOS('type',exp)
+    this.vOS('value',exp)
     return issues;
   }
 }
@@ -762,11 +762,11 @@ export class MedicationKnowledgeRegulatorySubstitution extends fhir.BackboneElem
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'MedicationKnowledge.regulatory.substitution' }
-    this.vReqS('type',expression)
-    this.vReqS('allowed',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'MedicationKnowledge.regulatory.substitution' }
+    this.vRS('type',exp)
+    this.vRS('allowed',exp)
     return issues;
   }
 }
@@ -803,10 +803,10 @@ export class MedicationKnowledgeRegulatorySchedule extends fhir.BackboneElement 
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'MedicationKnowledge.regulatory.schedule' }
-    this.vReqS('schedule',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'MedicationKnowledge.regulatory.schedule' }
+    this.vRS('schedule',exp)
     return issues;
   }
 }
@@ -852,11 +852,11 @@ export class MedicationKnowledgeRegulatoryMaxDispense extends fhir.BackboneEleme
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'MedicationKnowledge.regulatory.maxDispense' }
-    this.vReqS('quantity',expression)
-    this.vOptS('period',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'MedicationKnowledge.regulatory.maxDispense' }
+    this.vRS('quantity',exp)
+    this.vOS('period',exp)
     return issues;
   }
 }
@@ -922,13 +922,13 @@ export class MedicationKnowledgeRegulatory extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'MedicationKnowledge.regulatory' }
-    this.vReqS('regulatoryAuthority',expression)
-    this.vOptA('substitution',expression)
-    this.vOptA('schedule',expression)
-    this.vOptS('maxDispense',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'MedicationKnowledge.regulatory' }
+    this.vRS('regulatoryAuthority',exp)
+    this.vOA('substitution',exp)
+    this.vOA('schedule',exp)
+    this.vOS('maxDispense',exp)
     return issues;
   }
 }
@@ -984,12 +984,12 @@ export class MedicationKnowledgeKinetics extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'MedicationKnowledge.kinetics' }
-    this.vOptA('areaUnderCurve',expression)
-    this.vOptA('lethalDose50',expression)
-    this.vOptS('halfLifePeriod',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'MedicationKnowledge.kinetics' }
+    this.vOA('areaUnderCurve',exp)
+    this.vOA('lethalDose50',exp)
+    this.vOS('halfLifePeriod',exp)
     return issues;
   }
 }
@@ -1264,32 +1264,32 @@ export class MedicationKnowledge extends fhir.DomainResource {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'MedicationKnowledge' }
-    this.vReqS('resourceType',expression)
-    this.vOptS('code',expression)
-    this.vOptSV('status',expression,'MedicationknowledgeStatus',MedicationknowledgeStatusVsValidation,'r')
-    this.vOptS('manufacturer',expression)
-    this.vOptS('doseForm',expression)
-    this.vOptS('amount',expression)
-    this.vOptA('synonym',expression)
-    this.vOptA('relatedMedicationKnowledge',expression)
-    this.vOptA('associatedMedication',expression)
-    this.vOptA('productType',expression)
-    this.vOptA('monograph',expression)
-    this.vOptA('ingredient',expression)
-    this.vOptS('preparationInstruction',expression)
-    this.vOptA('intendedRoute',expression)
-    this.vOptA('cost',expression)
-    this.vOptA('monitoringProgram',expression)
-    this.vOptA('administrationGuidelines',expression)
-    this.vOptA('medicineClassification',expression)
-    this.vOptS('packaging',expression)
-    this.vOptA('drugCharacteristic',expression)
-    this.vOptA('contraindication',expression)
-    this.vOptA('regulatory',expression)
-    this.vOptA('kinetics',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'MedicationKnowledge' }
+    this.vRS('resourceType',exp)
+    this.vOS('code',exp)
+    this.vOSV('status',exp,'MedicationknowledgeStatus',MedicationknowledgeStatusVsValidation,'r')
+    this.vOS('manufacturer',exp)
+    this.vOS('doseForm',exp)
+    this.vOS('amount',exp)
+    this.vOA('synonym',exp)
+    this.vOA('relatedMedicationKnowledge',exp)
+    this.vOA('associatedMedication',exp)
+    this.vOA('productType',exp)
+    this.vOA('monograph',exp)
+    this.vOA('ingredient',exp)
+    this.vOS('preparationInstruction',exp)
+    this.vOA('intendedRoute',exp)
+    this.vOA('cost',exp)
+    this.vOA('monitoringProgram',exp)
+    this.vOA('administrationGuidelines',exp)
+    this.vOA('medicineClassification',exp)
+    this.vOS('packaging',exp)
+    this.vOA('drugCharacteristic',exp)
+    this.vOA('contraindication',exp)
+    this.vOA('regulatory',exp)
+    this.vOA('kinetics',exp)
     return issues;
   }
 }

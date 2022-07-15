@@ -157,16 +157,16 @@ export class AllergyIntoleranceReaction extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'AllergyIntolerance.reaction' }
-    this.vOptS('substance',expression)
-    this.vReqA('manifestation',expression)
-    this.vOptS('description',expression)
-    this.vOptS('onset',expression)
-    this.vOptSV('severity',expression,'ReactionEventSeverity',ReactionEventSeverityVsValidation,'r')
-    this.vOptS('exposureRoute',expression)
-    this.vOptA('note',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'AllergyIntolerance.reaction' }
+    this.vOS('substance',exp)
+    this.vRA('manifestation',exp)
+    this.vOS('description',exp)
+    this.vOS('onset',exp)
+    this.vOSV('severity',exp,'ReactionEventSeverity',ReactionEventSeverityVsValidation,'r')
+    this.vOS('exposureRoute',exp)
+    this.vOA('note',exp)
     return issues;
   }
 }
@@ -428,26 +428,26 @@ export class AllergyIntolerance extends fhir.DomainResource {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'AllergyIntolerance' }
-    this.vReqS('resourceType',expression)
-    this.vOptA('identifier',expression)
-    this.vOptSV('clinicalStatus',expression,'AllergyintoleranceClinical',AllergyintoleranceClinicalVsValidation,'r')
-    this.vOptSV('verificationStatus',expression,'AllergyintoleranceVerification',AllergyintoleranceVerificationVsValidation,'r')
-    this.vOptSV('type',expression,'AllergyIntoleranceType',AllergyIntoleranceTypeVsValidation,'r')
-    this.vOptAV('category',expression,'AllergyIntoleranceCategory',AllergyIntoleranceCategoryVsValidation,'r')
-    this.vOptSV('criticality',expression,'AllergyIntoleranceCriticality',AllergyIntoleranceCriticalityVsValidation,'r')
-    this.vOptS('code',expression)
-    this.vReqS('patient',expression)
-    this.vOptS('encounter',expression)
-    this.vOptS('onset',expression)
-    this.vOptS('recordedDate',expression)
-    this.vOptS('recorder',expression)
-    this.vOptS('asserter',expression)
-    this.vOptS('lastOccurrence',expression)
-    this.vOptA('note',expression)
-    this.vOptA('reaction',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'AllergyIntolerance' }
+    this.vRS('resourceType',exp)
+    this.vOA('identifier',exp)
+    this.vOSV('clinicalStatus',exp,'AllergyintoleranceClinical',AllergyintoleranceClinicalVsValidation,'r')
+    this.vOSV('verificationStatus',exp,'AllergyintoleranceVerification',AllergyintoleranceVerificationVsValidation,'r')
+    this.vOSV('type',exp,'AllergyIntoleranceType',AllergyIntoleranceTypeVsValidation,'r')
+    this.vOAV('category',exp,'AllergyIntoleranceCategory',AllergyIntoleranceCategoryVsValidation,'r')
+    this.vOSV('criticality',exp,'AllergyIntoleranceCriticality',AllergyIntoleranceCriticalityVsValidation,'r')
+    this.vOS('code',exp)
+    this.vRS('patient',exp)
+    this.vOS('encounter',exp)
+    this.vOS('onset',exp)
+    this.vOS('recordedDate',exp)
+    this.vOS('recorder',exp)
+    this.vOS('asserter',exp)
+    this.vOS('lastOccurrence',exp)
+    this.vOA('note',exp)
+    this.vOA('reaction',exp)
     return issues;
   }
 }

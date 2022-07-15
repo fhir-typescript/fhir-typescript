@@ -7,9 +7,14 @@
  * EnteralFormulaAdditiveType: Codes for the type of modular component such as protein, carbohydrate or fiber to be provided in addition to or mixed with the base formula. This value set is provided as a suggestive example.
  */
 export const EntformulaAdditiveVsValidation: readonly string[] = [
-  "carbohydrate", "http://terminology.hl7.org/CodeSystem/entformula-additive|carbohydrate", 
-  "fiber", "http://terminology.hl7.org/CodeSystem/entformula-additive|fiber", 
-  "lipid", "http://terminology.hl7.org/CodeSystem/entformula-additive|lipid", 
-  "protein", "http://terminology.hl7.org/CodeSystem/entformula-additive|protein", 
-  "water", "http://terminology.hl7.org/CodeSystem/entformula-additive|water", 
+  "carbohydrate",
+  "fiber",
+  "http://terminology.hl7.org/CodeSystem/entformula-additive|carbohydrate",
+  "http://terminology.hl7.org/CodeSystem/entformula-additive|fiber",
+  "http://terminology.hl7.org/CodeSystem/entformula-additive|lipid",
+  "http://terminology.hl7.org/CodeSystem/entformula-additive|protein",
+  "http://terminology.hl7.org/CodeSystem/entformula-additive|water",
+  "lipid",
+  "protein",
+  "water",
 ] as const;

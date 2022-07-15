@@ -7,6 +7,8 @@
  * This value set includes a sample set of Payment Status codes.
  */
 export const PaymentStatusVsValidation: readonly string[] = [
-  "cleared", "http://terminology.hl7.org/CodeSystem/paymentstatus|cleared", 
-  "paid", "http://terminology.hl7.org/CodeSystem/paymentstatus|paid", 
+  "cleared",
+  "http://terminology.hl7.org/CodeSystem/paymentstatus|cleared",
+  "http://terminology.hl7.org/CodeSystem/paymentstatus|paid",
+  "paid",
 ] as const;

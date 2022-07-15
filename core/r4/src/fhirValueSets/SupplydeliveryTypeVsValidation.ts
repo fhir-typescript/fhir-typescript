@@ -7,6 +7,8 @@
  * This value sets refers to a specific supply item.
  */
 export const SupplydeliveryTypeVsValidation: readonly string[] = [
-  "device", "http://terminology.hl7.org/CodeSystem/supply-item-type|device", 
-  "medication", "http://terminology.hl7.org/CodeSystem/supply-item-type|medication", 
+  "device",
+  "http://terminology.hl7.org/CodeSystem/supply-item-type|device",
+  "http://terminology.hl7.org/CodeSystem/supply-item-type|medication",
+  "medication",
 ] as const;

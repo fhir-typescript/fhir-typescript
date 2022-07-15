@@ -7,6 +7,8 @@
  * This value set includes sample Contract Actor Role codes.
  */
 export const ContractActorroleVsValidation: readonly string[] = [
-  "patient", "http://terminology.hl7.org/CodeSystem/contractactorrole|patient", 
-  "practitioner", "http://terminology.hl7.org/CodeSystem/contractactorrole|practitioner", 
+  "http://terminology.hl7.org/CodeSystem/contractactorrole|patient",
+  "http://terminology.hl7.org/CodeSystem/contractactorrole|practitioner",
+  "patient",
+  "practitioner",
 ] as const;

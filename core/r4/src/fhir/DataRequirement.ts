@@ -97,13 +97,13 @@ export class DataRequirementCodeFilter extends fhir.FhirElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'DataRequirement.codeFilter' }
-    this.vOptS('path',expression)
-    this.vOptS('searchParam',expression)
-    this.vOptS('valueSet',expression)
-    this.vOptA('code',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'DataRequirement.codeFilter' }
+    this.vOS('path',exp)
+    this.vOS('searchParam',exp)
+    this.vOS('valueSet',exp)
+    this.vOA('code',exp)
     return issues;
   }
 }
@@ -192,12 +192,12 @@ export class DataRequirementDateFilter extends fhir.FhirElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'DataRequirement.dateFilter' }
-    this.vOptS('path',expression)
-    this.vOptS('searchParam',expression)
-    this.vOptS('value',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'DataRequirement.dateFilter' }
+    this.vOS('path',exp)
+    this.vOS('searchParam',exp)
+    this.vOS('value',exp)
     return issues;
   }
 }
@@ -260,11 +260,11 @@ export class DataRequirementSort extends fhir.FhirElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'DataRequirement.sort' }
-    this.vReqS('path',expression)
-    this.vReqSV('direction',expression,'SortDirection',SortDirectionVsValidation,'r')
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'DataRequirement.sort' }
+    this.vRS('path',exp)
+    this.vRSV('direction',exp,'SortDirection',SortDirectionVsValidation,'r')
     return issues;
   }
 }
@@ -421,17 +421,17 @@ export class DataRequirement extends fhir.FhirElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'DataRequirement' }
-    this.vReqSV('type',expression,'AllTypes',AllTypesVsValidation,'r')
-    this.vOptA('profile',expression)
-    this.vOptS('subject',expression)
-    this.vOptA('mustSupport',expression)
-    this.vOptA('codeFilter',expression)
-    this.vOptA('dateFilter',expression)
-    this.vOptS('limit',expression)
-    this.vOptA('sort',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'DataRequirement' }
+    this.vRSV('type',exp,'AllTypes',AllTypesVsValidation,'r')
+    this.vOA('profile',exp)
+    this.vOS('subject',exp)
+    this.vOA('mustSupport',exp)
+    this.vOA('codeFilter',exp)
+    this.vOA('dateFilter',exp)
+    this.vOS('limit',exp)
+    this.vOA('sort',exp)
     return issues;
   }
 }

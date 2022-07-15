@@ -48,7 +48,7 @@ export declare class SubstanceInstance extends fhir.BackboneElement {
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(expression?: string): fhir.FtsIssue[];
+    doModelValidation(exp?: string): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the SubstanceIngredient type.
@@ -98,7 +98,7 @@ export declare class SubstanceIngredient extends fhir.BackboneElement {
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(expression?: string): fhir.FtsIssue[];
+    doModelValidation(exp?: string): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the Substance type.
@@ -192,6 +192,6 @@ export declare class Substance extends fhir.DomainResource {
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(expression?: string): fhir.FtsIssue[];
+    doModelValidation(exp?: string): fhir.FtsIssue[];
 }
 //# sourceMappingURL=Substance.d.ts.map

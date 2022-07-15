@@ -7,7 +7,10 @@
  * TODO.
  */
 export const AdverseEventCausalityMethodVsValidation: readonly string[] = [
-  "Bayesian", "http://terminology.hl7.org/CodeSystem/adverse-event-causality-method|Bayesian", 
-  "Checklist", "http://terminology.hl7.org/CodeSystem/adverse-event-causality-method|Checklist", 
-  "ProbabilityScale", "http://terminology.hl7.org/CodeSystem/adverse-event-causality-method|ProbabilityScale", 
+  "Bayesian",
+  "Checklist",
+  "http://terminology.hl7.org/CodeSystem/adverse-event-causality-method|Bayesian",
+  "http://terminology.hl7.org/CodeSystem/adverse-event-causality-method|Checklist",
+  "http://terminology.hl7.org/CodeSystem/adverse-event-causality-method|ProbabilityScale",
+  "ProbabilityScale",
 ] as const;

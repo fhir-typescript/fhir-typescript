@@ -7,7 +7,10 @@
  * Indicates whether the location is still in use.
  */
 export const LocationStatusVsValidation: readonly string[] = [
-  "active", "http://hl7.org/fhir/location-status|active", 
-  "inactive", "http://hl7.org/fhir/location-status|inactive", 
-  "suspended", "http://hl7.org/fhir/location-status|suspended", 
+  "active",
+  "http://hl7.org/fhir/location-status|active",
+  "http://hl7.org/fhir/location-status|inactive",
+  "http://hl7.org/fhir/location-status|suspended",
+  "inactive",
+  "suspended",
 ] as const;

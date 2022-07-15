@@ -7,10 +7,16 @@
  * The verification status to support or decline the clinical status of the condition or diagnosis.
  */
 export const ConditionVerStatusVsValidation: readonly string[] = [
-  "confirmed", "http://terminology.hl7.org/CodeSystem/condition-ver-status|confirmed", 
-  "differential", "http://terminology.hl7.org/CodeSystem/condition-ver-status|differential", 
-  "entered-in-error", "http://terminology.hl7.org/CodeSystem/condition-ver-status|entered-in-error", 
-  "provisional", "http://terminology.hl7.org/CodeSystem/condition-ver-status|provisional", 
-  "refuted", "http://terminology.hl7.org/CodeSystem/condition-ver-status|refuted", 
-  "unconfirmed", "http://terminology.hl7.org/CodeSystem/condition-ver-status|unconfirmed", 
+  "confirmed",
+  "differential",
+  "entered-in-error",
+  "http://terminology.hl7.org/CodeSystem/condition-ver-status|confirmed",
+  "http://terminology.hl7.org/CodeSystem/condition-ver-status|differential",
+  "http://terminology.hl7.org/CodeSystem/condition-ver-status|entered-in-error",
+  "http://terminology.hl7.org/CodeSystem/condition-ver-status|provisional",
+  "http://terminology.hl7.org/CodeSystem/condition-ver-status|refuted",
+  "http://terminology.hl7.org/CodeSystem/condition-ver-status|unconfirmed",
+  "provisional",
+  "refuted",
+  "unconfirmed",
 ] as const;

@@ -7,9 +7,14 @@
  * This value set defines a set of codes that can be used to indicate the kinds of special arrangements in place for a patients visit.
  */
 export const EncounterSpecialArrangementsVsValidation: readonly string[] = [
-  "add-bed", "http://terminology.hl7.org/CodeSystem/encounter-special-arrangements|add-bed", 
-  "att", "http://terminology.hl7.org/CodeSystem/encounter-special-arrangements|att", 
-  "dog", "http://terminology.hl7.org/CodeSystem/encounter-special-arrangements|dog", 
-  "int", "http://terminology.hl7.org/CodeSystem/encounter-special-arrangements|int", 
-  "wheel", "http://terminology.hl7.org/CodeSystem/encounter-special-arrangements|wheel", 
+  "add-bed",
+  "att",
+  "dog",
+  "http://terminology.hl7.org/CodeSystem/encounter-special-arrangements|add-bed",
+  "http://terminology.hl7.org/CodeSystem/encounter-special-arrangements|att",
+  "http://terminology.hl7.org/CodeSystem/encounter-special-arrangements|dog",
+  "http://terminology.hl7.org/CodeSystem/encounter-special-arrangements|int",
+  "http://terminology.hl7.org/CodeSystem/encounter-special-arrangements|wheel",
+  "int",
+  "wheel",
 ] as const;

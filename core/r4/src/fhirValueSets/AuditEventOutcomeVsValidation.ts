@@ -7,8 +7,12 @@
  * Indicates whether the event succeeded or failed.
  */
 export const AuditEventOutcomeVsValidation: readonly string[] = [
-  "0", "http://hl7.org/fhir/audit-event-outcome|0", 
-  "12", "http://hl7.org/fhir/audit-event-outcome|12", 
-  "4", "http://hl7.org/fhir/audit-event-outcome|4", 
-  "8", "http://hl7.org/fhir/audit-event-outcome|8", 
+  "0",
+  "12",
+  "4",
+  "8",
+  "http://hl7.org/fhir/audit-event-outcome|0",
+  "http://hl7.org/fhir/audit-event-outcome|12",
+  "http://hl7.org/fhir/audit-event-outcome|4",
+  "http://hl7.org/fhir/audit-event-outcome|8",
 ] as const;

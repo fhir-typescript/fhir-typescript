@@ -7,6 +7,8 @@
  * Observation values that indicate what change in a measurement value or score is indicative of an improvement in the measured item or scored issue.
  */
 export const MeasureImprovementNotationVsValidation: readonly string[] = [
-  "decrease", "http://terminology.hl7.org/CodeSystem/measure-improvement-notation|decrease", 
-  "increase", "http://terminology.hl7.org/CodeSystem/measure-improvement-notation|increase", 
+  "decrease",
+  "http://terminology.hl7.org/CodeSystem/measure-improvement-notation|decrease",
+  "http://terminology.hl7.org/CodeSystem/measure-improvement-notation|increase",
+  "increase",
 ] as const;

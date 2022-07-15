@@ -7,6 +7,8 @@
  * Mode for this instance of data.
  */
 export const MapInputModeVsValidation: readonly string[] = [
-  "source", "http://hl7.org/fhir/map-input-mode|source", 
-  "target", "http://hl7.org/fhir/map-input-mode|target", 
+  "http://hl7.org/fhir/map-input-mode|source",
+  "http://hl7.org/fhir/map-input-mode|target",
+  "source",
+  "target",
 ] as const;

@@ -7,7 +7,10 @@
  * Type of alerts/updates the primary source can send
  */
 export const VerificationresultPushTypeAvailableVsValidation: readonly string[] = [
-  "any", "http://terminology.hl7.org/CodeSystem/push-type-available|any", 
-  "source", "http://terminology.hl7.org/CodeSystem/push-type-available|source", 
-  "specific", "http://terminology.hl7.org/CodeSystem/push-type-available|specific", 
+  "any",
+  "http://terminology.hl7.org/CodeSystem/push-type-available|any",
+  "http://terminology.hl7.org/CodeSystem/push-type-available|source",
+  "http://terminology.hl7.org/CodeSystem/push-type-available|specific",
+  "source",
+  "specific",
 ] as const;

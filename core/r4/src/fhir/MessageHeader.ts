@@ -89,13 +89,13 @@ export class MessageHeaderDestination extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'MessageHeader.destination' }
-    this.vOptS('name',expression)
-    this.vOptS('target',expression)
-    this.vReqS('endpoint',expression)
-    this.vOptS('receiver',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'MessageHeader.destination' }
+    this.vOS('name',exp)
+    this.vOS('target',exp)
+    this.vRS('endpoint',exp)
+    this.vOS('receiver',exp)
     return issues;
   }
 }
@@ -200,14 +200,14 @@ export class MessageHeaderSource extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'MessageHeader.source' }
-    this.vOptS('name',expression)
-    this.vOptS('software',expression)
-    this.vOptS('version',expression)
-    this.vOptS('contact',expression)
-    this.vReqS('endpoint',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'MessageHeader.source' }
+    this.vOS('name',exp)
+    this.vOS('software',exp)
+    this.vOS('version',exp)
+    this.vOS('contact',exp)
+    this.vRS('endpoint',exp)
     return issues;
   }
 }
@@ -279,12 +279,12 @@ export class MessageHeaderResponse extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'MessageHeader.response' }
-    this.vReqS('identifier',expression)
-    this.vReqSV('code',expression,'Response',ResponseVsValidation,'r')
-    this.vOptS('details',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'MessageHeader.response' }
+    this.vRS('identifier',exp)
+    this.vRSV('code',exp,'Response',ResponseVsValidation,'r')
+    this.vOS('details',exp)
     return issues;
   }
 }
@@ -445,21 +445,21 @@ export class MessageHeader extends fhir.DomainResource {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'MessageHeader' }
-    this.vReqS('resourceType',expression)
-    this.vReqS('event',expression)
-    this.vOptA('destination',expression)
-    this.vOptS('sender',expression)
-    this.vOptS('enterer',expression)
-    this.vOptS('author',expression)
-    this.vReqS('source',expression)
-    this.vOptS('responsible',expression)
-    this.vOptS('reason',expression)
-    this.vOptS('response',expression)
-    this.vOptA('focus',expression)
-    this.vOptS('definition',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'MessageHeader' }
+    this.vRS('resourceType',exp)
+    this.vRS('event',exp)
+    this.vOA('destination',exp)
+    this.vOS('sender',exp)
+    this.vOS('enterer',exp)
+    this.vOS('author',exp)
+    this.vRS('source',exp)
+    this.vOS('responsible',exp)
+    this.vOS('reason',exp)
+    this.vOS('response',exp)
+    this.vOA('focus',exp)
+    this.vOS('definition',exp)
     return issues;
   }
 }

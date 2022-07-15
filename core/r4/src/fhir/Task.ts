@@ -84,12 +84,12 @@ export class TaskRestriction extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'Task.restriction' }
-    this.vOptS('repetitions',expression)
-    this.vOptS('period',expression)
-    this.vOptA('recipient',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'Task.restriction' }
+    this.vOS('repetitions',exp)
+    this.vOS('period',exp)
+    this.vOA('recipient',exp)
     return issues;
   }
 }
@@ -390,11 +390,11 @@ export class TaskInput extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'Task.input' }
-    this.vReqS('type',expression)
-    this.vReqS('value',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'Task.input' }
+    this.vRS('type',exp)
+    this.vRS('value',exp)
     return issues;
   }
 }
@@ -695,11 +695,11 @@ export class TaskOutput extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'Task.output' }
-    this.vReqS('type',expression)
-    this.vReqS('value',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'Task.output' }
+    this.vRS('type',exp)
+    this.vRS('value',exp)
     return issues;
   }
 }
@@ -1091,41 +1091,41 @@ export class Task extends fhir.DomainResource {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'Task' }
-    this.vReqS('resourceType',expression)
-    this.vOptA('identifier',expression)
-    this.vOptS('instantiatesCanonical',expression)
-    this.vOptS('instantiatesUri',expression)
-    this.vOptA('basedOn',expression)
-    this.vOptS('groupIdentifier',expression)
-    this.vOptA('partOf',expression)
-    this.vReqSV('status',expression,'TaskStatus',TaskStatusVsValidation,'r')
-    this.vOptS('statusReason',expression)
-    this.vOptS('businessStatus',expression)
-    this.vReqSV('intent',expression,'TaskIntent',TaskIntentVsValidation,'r')
-    this.vOptSV('priority',expression,'RequestPriority',RequestPriorityVsValidation,'r')
-    this.vOptS('code',expression)
-    this.vOptS('description',expression)
-    this.vOptS('focus',expression)
-    this.vOptS('for',expression)
-    this.vOptS('encounter',expression)
-    this.vOptS('executionPeriod',expression)
-    this.vOptS('authoredOn',expression)
-    this.vOptS('lastModified',expression)
-    this.vOptS('requester',expression)
-    this.vOptA('performerType',expression)
-    this.vOptS('owner',expression)
-    this.vOptS('location',expression)
-    this.vOptS('reasonCode',expression)
-    this.vOptS('reasonReference',expression)
-    this.vOptA('insurance',expression)
-    this.vOptA('note',expression)
-    this.vOptA('relevantHistory',expression)
-    this.vOptS('restriction',expression)
-    this.vOptA('input',expression)
-    this.vOptA('output',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'Task' }
+    this.vRS('resourceType',exp)
+    this.vOA('identifier',exp)
+    this.vOS('instantiatesCanonical',exp)
+    this.vOS('instantiatesUri',exp)
+    this.vOA('basedOn',exp)
+    this.vOS('groupIdentifier',exp)
+    this.vOA('partOf',exp)
+    this.vRSV('status',exp,'TaskStatus',TaskStatusVsValidation,'r')
+    this.vOS('statusReason',exp)
+    this.vOS('businessStatus',exp)
+    this.vRSV('intent',exp,'TaskIntent',TaskIntentVsValidation,'r')
+    this.vOSV('priority',exp,'RequestPriority',RequestPriorityVsValidation,'r')
+    this.vOS('code',exp)
+    this.vOS('description',exp)
+    this.vOS('focus',exp)
+    this.vOS('for',exp)
+    this.vOS('encounter',exp)
+    this.vOS('executionPeriod',exp)
+    this.vOS('authoredOn',exp)
+    this.vOS('lastModified',exp)
+    this.vOS('requester',exp)
+    this.vOA('performerType',exp)
+    this.vOS('owner',exp)
+    this.vOS('location',exp)
+    this.vOS('reasonCode',exp)
+    this.vOS('reasonReference',exp)
+    this.vOA('insurance',exp)
+    this.vOA('note',exp)
+    this.vOA('relevantHistory',exp)
+    this.vOS('restriction',exp)
+    this.vOA('input',exp)
+    this.vOA('output',exp)
     return issues;
   }
 }

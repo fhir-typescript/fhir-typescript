@@ -7,10 +7,16 @@
  * General reasons for a list to be empty. Reasons are either related to a summary list (i.e. problem or medication list) or to a workflow related list (i.e. consultation list).
  */
 export const ListEmptyReasonVsValidation: readonly string[] = [
-  "closed", "http://terminology.hl7.org/CodeSystem/list-empty-reason|closed", 
-  "nilknown", "http://terminology.hl7.org/CodeSystem/list-empty-reason|nilknown", 
-  "notasked", "http://terminology.hl7.org/CodeSystem/list-empty-reason|notasked", 
-  "notstarted", "http://terminology.hl7.org/CodeSystem/list-empty-reason|notstarted", 
-  "unavailable", "http://terminology.hl7.org/CodeSystem/list-empty-reason|unavailable", 
-  "withheld", "http://terminology.hl7.org/CodeSystem/list-empty-reason|withheld", 
+  "closed",
+  "http://terminology.hl7.org/CodeSystem/list-empty-reason|closed",
+  "http://terminology.hl7.org/CodeSystem/list-empty-reason|nilknown",
+  "http://terminology.hl7.org/CodeSystem/list-empty-reason|notasked",
+  "http://terminology.hl7.org/CodeSystem/list-empty-reason|notstarted",
+  "http://terminology.hl7.org/CodeSystem/list-empty-reason|unavailable",
+  "http://terminology.hl7.org/CodeSystem/list-empty-reason|withheld",
+  "nilknown",
+  "notasked",
+  "notstarted",
+  "unavailable",
+  "withheld",
 ] as const;

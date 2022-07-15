@@ -7,5 +7,6 @@
  * This value set contract specific codes for offer party participation.
  */
 export const ContractPartyRoleVsValidation: readonly string[] = [
-  "flunky", "http://hl7.org/fhir/contract-party-role|flunky", 
+  "flunky",
+  "http://hl7.org/fhir/contract-party-role|flunky",
 ] as const;

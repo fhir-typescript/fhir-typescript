@@ -7,8 +7,12 @@
  * MedicationDispense Category Codes
  */
 export const MedicationdispenseCategoryVsValidation: readonly string[] = [
-  "community", "http://terminology.hl7.org/fhir/CodeSystem/medicationdispense-category|community", 
-  "discharge", "http://terminology.hl7.org/fhir/CodeSystem/medicationdispense-category|discharge", 
-  "inpatient", "http://terminology.hl7.org/fhir/CodeSystem/medicationdispense-category|inpatient", 
-  "outpatient", "http://terminology.hl7.org/fhir/CodeSystem/medicationdispense-category|outpatient", 
+  "community",
+  "discharge",
+  "http://terminology.hl7.org/fhir/CodeSystem/medicationdispense-category|community",
+  "http://terminology.hl7.org/fhir/CodeSystem/medicationdispense-category|discharge",
+  "http://terminology.hl7.org/fhir/CodeSystem/medicationdispense-category|inpatient",
+  "http://terminology.hl7.org/fhir/CodeSystem/medicationdispense-category|outpatient",
+  "inpatient",
+  "outpatient",
 ] as const;

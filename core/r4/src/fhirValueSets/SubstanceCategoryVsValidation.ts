@@ -7,11 +7,18 @@
  * Substance category codes
  */
 export const SubstanceCategoryVsValidation: readonly string[] = [
-  "allergen", "http://terminology.hl7.org/CodeSystem/substance-category|allergen", 
-  "biological", "http://terminology.hl7.org/CodeSystem/substance-category|biological", 
-  "body", "http://terminology.hl7.org/CodeSystem/substance-category|body", 
-  "chemical", "http://terminology.hl7.org/CodeSystem/substance-category|chemical", 
-  "drug", "http://terminology.hl7.org/CodeSystem/substance-category|drug", 
-  "food", "http://terminology.hl7.org/CodeSystem/substance-category|food", 
-  "material", "http://terminology.hl7.org/CodeSystem/substance-category|material", 
+  "allergen",
+  "biological",
+  "body",
+  "chemical",
+  "drug",
+  "food",
+  "http://terminology.hl7.org/CodeSystem/substance-category|allergen",
+  "http://terminology.hl7.org/CodeSystem/substance-category|biological",
+  "http://terminology.hl7.org/CodeSystem/substance-category|body",
+  "http://terminology.hl7.org/CodeSystem/substance-category|chemical",
+  "http://terminology.hl7.org/CodeSystem/substance-category|drug",
+  "http://terminology.hl7.org/CodeSystem/substance-category|food",
+  "http://terminology.hl7.org/CodeSystem/substance-category|material",
+  "material",
 ] as const;

@@ -7,9 +7,14 @@
  * Possible types of subjects.
  */
 export const SubjectTypeVsValidation: readonly string[] = [
-  "Device", "http://hl7.org/fhir/resource-types|Device", 
-  "Location", "http://hl7.org/fhir/resource-types|Location", 
-  "Organization", "http://hl7.org/fhir/resource-types|Organization", 
-  "Patient", "http://hl7.org/fhir/resource-types|Patient", 
-  "Practitioner", "http://hl7.org/fhir/resource-types|Practitioner", 
+  "Device",
+  "http://hl7.org/fhir/resource-types|Device",
+  "http://hl7.org/fhir/resource-types|Location",
+  "http://hl7.org/fhir/resource-types|Organization",
+  "http://hl7.org/fhir/resource-types|Patient",
+  "http://hl7.org/fhir/resource-types|Practitioner",
+  "Location",
+  "Organization",
+  "Patient",
+  "Practitioner",
 ] as const;

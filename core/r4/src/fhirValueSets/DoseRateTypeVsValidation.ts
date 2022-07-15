@@ -7,6 +7,8 @@
  * The kind of dose or rate specified.
  */
 export const DoseRateTypeVsValidation: readonly string[] = [
-  "calculated", "http://terminology.hl7.org/CodeSystem/dose-rate-type|calculated", 
-  "ordered", "http://terminology.hl7.org/CodeSystem/dose-rate-type|ordered", 
+  "calculated",
+  "http://terminology.hl7.org/CodeSystem/dose-rate-type|calculated",
+  "http://terminology.hl7.org/CodeSystem/dose-rate-type|ordered",
+  "ordered",
 ] as const;

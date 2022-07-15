@@ -81,13 +81,13 @@ export class Binary extends fhir.Resource {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'Binary' }
-    this.vReqS('resourceType',expression)
-    this.vReqS('contentType',expression)
-    this.vOptS('securityContext',expression)
-    this.vOptS('data',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'Binary' }
+    this.vRS('resourceType',exp)
+    this.vRS('contentType',exp)
+    this.vOS('securityContext',exp)
+    this.vOS('data',exp)
     return issues;
   }
 }

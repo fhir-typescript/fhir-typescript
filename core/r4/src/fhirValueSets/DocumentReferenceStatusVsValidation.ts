@@ -7,7 +7,10 @@
  * The status of the document reference.
  */
 export const DocumentReferenceStatusVsValidation: readonly string[] = [
-  "current", "http://hl7.org/fhir/document-reference-status|current", 
-  "entered-in-error", "http://hl7.org/fhir/document-reference-status|entered-in-error", 
-  "superseded", "http://hl7.org/fhir/document-reference-status|superseded", 
+  "current",
+  "entered-in-error",
+  "http://hl7.org/fhir/document-reference-status|current",
+  "http://hl7.org/fhir/document-reference-status|entered-in-error",
+  "http://hl7.org/fhir/document-reference-status|superseded",
+  "superseded",
 ] as const;

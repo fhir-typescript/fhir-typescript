@@ -39,7 +39,7 @@ export declare class MedicinalProductNameNamePart extends fhir.BackboneElement {
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(expression?: string): fhir.FtsIssue[];
+    doModelValidation(exp?: string): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the MedicinalProductNameCountryLanguage type.
@@ -85,7 +85,7 @@ export declare class MedicinalProductNameCountryLanguage extends fhir.BackboneEl
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(expression?: string): fhir.FtsIssue[];
+    doModelValidation(exp?: string): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the MedicinalProductName type.
@@ -135,7 +135,7 @@ export declare class MedicinalProductName extends fhir.BackboneElement {
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(expression?: string): fhir.FtsIssue[];
+    doModelValidation(exp?: string): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the MedicinalProductManufacturingBusinessOperation type.
@@ -209,7 +209,7 @@ export declare class MedicinalProductManufacturingBusinessOperation extends fhir
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(expression?: string): fhir.FtsIssue[];
+    doModelValidation(exp?: string): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the MedicinalProductSpecialDesignation type.
@@ -303,7 +303,7 @@ export declare class MedicinalProductSpecialDesignation extends fhir.BackboneEle
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(expression?: string): fhir.FtsIssue[];
+    doModelValidation(exp?: string): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the MedicinalProduct type.
@@ -497,6 +497,6 @@ export declare class MedicinalProduct extends fhir.DomainResource {
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(expression?: string): fhir.FtsIssue[];
+    doModelValidation(exp?: string): fhir.FtsIssue[];
 }
 //# sourceMappingURL=MedicinalProduct.d.ts.map

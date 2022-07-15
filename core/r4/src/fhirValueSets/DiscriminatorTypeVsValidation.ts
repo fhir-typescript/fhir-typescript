@@ -7,9 +7,14 @@
  * How an element value is interpreted when discrimination is evaluated.
  */
 export const DiscriminatorTypeVsValidation: readonly string[] = [
-  "exists", "http://hl7.org/fhir/discriminator-type|exists", 
-  "pattern", "http://hl7.org/fhir/discriminator-type|pattern", 
-  "profile", "http://hl7.org/fhir/discriminator-type|profile", 
-  "type", "http://hl7.org/fhir/discriminator-type|type", 
-  "value", "http://hl7.org/fhir/discriminator-type|value", 
+  "exists",
+  "http://hl7.org/fhir/discriminator-type|exists",
+  "http://hl7.org/fhir/discriminator-type|pattern",
+  "http://hl7.org/fhir/discriminator-type|profile",
+  "http://hl7.org/fhir/discriminator-type|type",
+  "http://hl7.org/fhir/discriminator-type|value",
+  "pattern",
+  "profile",
+  "type",
+  "value",
 ] as const;

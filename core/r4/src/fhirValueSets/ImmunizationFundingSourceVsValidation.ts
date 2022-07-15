@@ -7,6 +7,8 @@
  * The value set to instantiate this attribute should be drawn from a terminologically robust code system that consists of or contains concepts to support describing the source of the vaccine administered. This value set is provided as a suggestive example.
  */
 export const ImmunizationFundingSourceVsValidation: readonly string[] = [
-  "private", "http://terminology.hl7.org/CodeSystem/immunization-funding-source|private", 
-  "public", "http://terminology.hl7.org/CodeSystem/immunization-funding-source|public", 
+  "http://terminology.hl7.org/CodeSystem/immunization-funding-source|private",
+  "http://terminology.hl7.org/CodeSystem/immunization-funding-source|public",
+  "private",
+  "public",
 ] as const;

@@ -7,9 +7,14 @@
  * Performer function of an agent in an imaging study series
  */
 export const SeriesPerformerFunctionVsValidation: readonly string[] = [
-  "CON", "http://terminology.hl7.org/CodeSystem/v3-ParticipationType|CON", 
-  "PRF", "http://terminology.hl7.org/CodeSystem/v3-ParticipationType|PRF", 
-  "REF", "http://terminology.hl7.org/CodeSystem/v3-ParticipationType|REF", 
-  "SPRF", "http://terminology.hl7.org/CodeSystem/v3-ParticipationType|SPRF", 
-  "VRF", "http://terminology.hl7.org/CodeSystem/v3-ParticipationType|VRF", 
+  "CON",
+  "http://terminology.hl7.org/CodeSystem/v3-ParticipationType|CON",
+  "http://terminology.hl7.org/CodeSystem/v3-ParticipationType|PRF",
+  "http://terminology.hl7.org/CodeSystem/v3-ParticipationType|REF",
+  "http://terminology.hl7.org/CodeSystem/v3-ParticipationType|SPRF",
+  "http://terminology.hl7.org/CodeSystem/v3-ParticipationType|VRF",
+  "PRF",
+  "REF",
+  "SPRF",
+  "VRF",
 ] as const;

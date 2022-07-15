@@ -7,8 +7,12 @@
  * The composite scoring method of the measure.
  */
 export const CompositeMeasureScoringVsValidation: readonly string[] = [
-  "all-or-nothing", "http://terminology.hl7.org/CodeSystem/composite-measure-scoring|all-or-nothing", 
-  "linear", "http://terminology.hl7.org/CodeSystem/composite-measure-scoring|linear", 
-  "opportunity", "http://terminology.hl7.org/CodeSystem/composite-measure-scoring|opportunity", 
-  "weighted", "http://terminology.hl7.org/CodeSystem/composite-measure-scoring|weighted", 
+  "all-or-nothing",
+  "http://terminology.hl7.org/CodeSystem/composite-measure-scoring|all-or-nothing",
+  "http://terminology.hl7.org/CodeSystem/composite-measure-scoring|linear",
+  "http://terminology.hl7.org/CodeSystem/composite-measure-scoring|opportunity",
+  "http://terminology.hl7.org/CodeSystem/composite-measure-scoring|weighted",
+  "linear",
+  "opportunity",
+  "weighted",
 ] as const;

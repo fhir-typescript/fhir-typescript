@@ -7,8 +7,12 @@
  *  Set of codes indicating the type of incident or accident.
  */
 export const V3ActIncidentVsValidation: readonly string[] = [
-  "MVA", "http://terminology.hl7.org/CodeSystem/v3-ActCode|MVA", 
-  "SCHOOL", "http://terminology.hl7.org/CodeSystem/v3-ActCode|SCHOOL", 
-  "SPT", "http://terminology.hl7.org/CodeSystem/v3-ActCode|SPT", 
-  "WPA", "http://terminology.hl7.org/CodeSystem/v3-ActCode|WPA", 
+  "http://terminology.hl7.org/CodeSystem/v3-ActCode|MVA",
+  "http://terminology.hl7.org/CodeSystem/v3-ActCode|SCHOOL",
+  "http://terminology.hl7.org/CodeSystem/v3-ActCode|SPT",
+  "http://terminology.hl7.org/CodeSystem/v3-ActCode|WPA",
+  "MVA",
+  "SCHOOL",
+  "SPT",
+  "WPA",
 ] as const;

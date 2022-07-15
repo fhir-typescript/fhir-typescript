@@ -7,6 +7,8 @@
  * This value set includes Example Coverage Financial Exception Codes.
  */
 export const CoverageFinancialExceptionVsValidation: readonly string[] = [
-  "foster", "http://terminology.hl7.org/CodeSystem/ex-coverage-financial-exception|foster", 
-  "retired", "http://terminology.hl7.org/CodeSystem/ex-coverage-financial-exception|retired", 
+  "foster",
+  "http://terminology.hl7.org/CodeSystem/ex-coverage-financial-exception|foster",
+  "http://terminology.hl7.org/CodeSystem/ex-coverage-financial-exception|retired",
+  "retired",
 ] as const;

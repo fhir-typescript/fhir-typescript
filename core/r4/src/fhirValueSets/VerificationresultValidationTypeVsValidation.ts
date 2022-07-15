@@ -7,7 +7,10 @@
  * What the target is validated against
  */
 export const VerificationresultValidationTypeVsValidation: readonly string[] = [
-  "multiple", "http://terminology.hl7.org/CodeSystem/validation-type|multiple", 
-  "nothing", "http://terminology.hl7.org/CodeSystem/validation-type|nothing", 
-  "primary", "http://terminology.hl7.org/CodeSystem/validation-type|primary", 
+  "http://terminology.hl7.org/CodeSystem/validation-type|multiple",
+  "http://terminology.hl7.org/CodeSystem/validation-type|nothing",
+  "http://terminology.hl7.org/CodeSystem/validation-type|primary",
+  "multiple",
+  "nothing",
+  "primary",
 ] as const;

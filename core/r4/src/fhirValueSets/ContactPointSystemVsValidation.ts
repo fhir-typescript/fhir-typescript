@@ -7,11 +7,18 @@
  * Telecommunications form for contact point.
  */
 export const ContactPointSystemVsValidation: readonly string[] = [
-  "email", "http://hl7.org/fhir/contact-point-system|email", 
-  "fax", "http://hl7.org/fhir/contact-point-system|fax", 
-  "other", "http://hl7.org/fhir/contact-point-system|other", 
-  "pager", "http://hl7.org/fhir/contact-point-system|pager", 
-  "phone", "http://hl7.org/fhir/contact-point-system|phone", 
-  "sms", "http://hl7.org/fhir/contact-point-system|sms", 
-  "url", "http://hl7.org/fhir/contact-point-system|url", 
+  "email",
+  "fax",
+  "http://hl7.org/fhir/contact-point-system|email",
+  "http://hl7.org/fhir/contact-point-system|fax",
+  "http://hl7.org/fhir/contact-point-system|other",
+  "http://hl7.org/fhir/contact-point-system|pager",
+  "http://hl7.org/fhir/contact-point-system|phone",
+  "http://hl7.org/fhir/contact-point-system|sms",
+  "http://hl7.org/fhir/contact-point-system|url",
+  "other",
+  "pager",
+  "phone",
+  "sms",
+  "url",
 ] as const;

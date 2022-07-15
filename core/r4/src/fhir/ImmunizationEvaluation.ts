@@ -237,23 +237,23 @@ export class ImmunizationEvaluation extends fhir.DomainResource {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'ImmunizationEvaluation' }
-    this.vReqS('resourceType',expression)
-    this.vOptA('identifier',expression)
-    this.vReqSV('status',expression,'ImmunizationEvaluationStatus',ImmunizationEvaluationStatusVsValidation,'r')
-    this.vReqS('patient',expression)
-    this.vOptS('date',expression)
-    this.vOptS('authority',expression)
-    this.vReqS('targetDisease',expression)
-    this.vReqS('immunizationEvent',expression)
-    this.vReqS('doseStatus',expression)
-    this.vOptA('doseStatusReason',expression)
-    this.vOptS('description',expression)
-    this.vOptS('series',expression)
-    this.vOptS('doseNumber',expression)
-    this.vOptS('seriesDoses',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'ImmunizationEvaluation' }
+    this.vRS('resourceType',exp)
+    this.vOA('identifier',exp)
+    this.vRSV('status',exp,'ImmunizationEvaluationStatus',ImmunizationEvaluationStatusVsValidation,'r')
+    this.vRS('patient',exp)
+    this.vOS('date',exp)
+    this.vOS('authority',exp)
+    this.vRS('targetDisease',exp)
+    this.vRS('immunizationEvent',exp)
+    this.vRS('doseStatus',exp)
+    this.vOA('doseStatusReason',exp)
+    this.vOS('description',exp)
+    this.vOS('series',exp)
+    this.vOS('doseNumber',exp)
+    this.vOS('seriesDoses',exp)
     return issues;
   }
 }

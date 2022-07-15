@@ -7,6 +7,8 @@
  * Type for strand.
  */
 export const StrandTypeVsValidation: readonly string[] = [
-  "crick", "http://hl7.org/fhir/strand-type|crick", 
-  "watson", "http://hl7.org/fhir/strand-type|watson", 
+  "crick",
+  "http://hl7.org/fhir/strand-type|crick",
+  "http://hl7.org/fhir/strand-type|watson",
+  "watson",
 ] as const;

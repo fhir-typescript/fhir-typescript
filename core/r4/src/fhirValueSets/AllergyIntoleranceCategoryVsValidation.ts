@@ -7,8 +7,12 @@
  * Category of an identified substance associated with allergies or intolerances.
  */
 export const AllergyIntoleranceCategoryVsValidation: readonly string[] = [
-  "biologic", "http://hl7.org/fhir/allergy-intolerance-category|biologic", 
-  "environment", "http://hl7.org/fhir/allergy-intolerance-category|environment", 
-  "food", "http://hl7.org/fhir/allergy-intolerance-category|food", 
-  "medication", "http://hl7.org/fhir/allergy-intolerance-category|medication", 
+  "biologic",
+  "environment",
+  "food",
+  "http://hl7.org/fhir/allergy-intolerance-category|biologic",
+  "http://hl7.org/fhir/allergy-intolerance-category|environment",
+  "http://hl7.org/fhir/allergy-intolerance-category|food",
+  "http://hl7.org/fhir/allergy-intolerance-category|medication",
+  "medication",
 ] as const;

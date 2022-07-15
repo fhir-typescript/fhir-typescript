@@ -144,16 +144,16 @@ export class RelatedArtifact extends fhir.FhirElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'RelatedArtifact' }
-    this.vReqSV('type',expression,'RelatedArtifactType',RelatedArtifactTypeVsValidation,'r')
-    this.vOptS('label',expression)
-    this.vOptS('display',expression)
-    this.vOptS('citation',expression)
-    this.vOptS('url',expression)
-    this.vOptS('document',expression)
-    this.vOptS('resource',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'RelatedArtifact' }
+    this.vRSV('type',exp,'RelatedArtifactType',RelatedArtifactTypeVsValidation,'r')
+    this.vOS('label',exp)
+    this.vOS('display',exp)
+    this.vOS('citation',exp)
+    this.vOS('url',exp)
+    this.vOS('document',exp)
+    this.vOS('resource',exp)
     return issues;
   }
 }

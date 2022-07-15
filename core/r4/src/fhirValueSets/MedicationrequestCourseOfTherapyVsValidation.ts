@@ -7,7 +7,10 @@
  * MedicationRequest Course of Therapy Codes
  */
 export const MedicationrequestCourseOfTherapyVsValidation: readonly string[] = [
-  "acute", "http://terminology.hl7.org/CodeSystem/medicationrequest-course-of-therapy|acute", 
-  "continuous", "http://terminology.hl7.org/CodeSystem/medicationrequest-course-of-therapy|continuous", 
-  "seasonal", "http://terminology.hl7.org/CodeSystem/medicationrequest-course-of-therapy|seasonal", 
+  "acute",
+  "continuous",
+  "http://terminology.hl7.org/CodeSystem/medicationrequest-course-of-therapy|acute",
+  "http://terminology.hl7.org/CodeSystem/medicationrequest-course-of-therapy|continuous",
+  "http://terminology.hl7.org/CodeSystem/medicationrequest-course-of-therapy|seasonal",
+  "seasonal",
 ] as const;

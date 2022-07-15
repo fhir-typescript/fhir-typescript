@@ -7,8 +7,12 @@
  * The status of a subscription.
  */
 export const SubscriptionStatusVsValidation: readonly string[] = [
-  "active", "http://hl7.org/fhir/subscription-status|active", 
-  "error", "http://hl7.org/fhir/subscription-status|error", 
-  "off", "http://hl7.org/fhir/subscription-status|off", 
-  "requested", "http://hl7.org/fhir/subscription-status|requested", 
+  "active",
+  "error",
+  "http://hl7.org/fhir/subscription-status|active",
+  "http://hl7.org/fhir/subscription-status|error",
+  "http://hl7.org/fhir/subscription-status|off",
+  "http://hl7.org/fhir/subscription-status|requested",
+  "off",
+  "requested",
 ] as const;

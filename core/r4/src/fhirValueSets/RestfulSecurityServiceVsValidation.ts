@@ -7,10 +7,16 @@
  * Types of security services used with FHIR.
  */
 export const RestfulSecurityServiceVsValidation: readonly string[] = [
-  "Basic", "http://terminology.hl7.org/CodeSystem/restful-security-service|Basic", 
-  "Certificates", "http://terminology.hl7.org/CodeSystem/restful-security-service|Certificates", 
-  "Kerberos", "http://terminology.hl7.org/CodeSystem/restful-security-service|Kerberos", 
-  "NTLM", "http://terminology.hl7.org/CodeSystem/restful-security-service|NTLM", 
-  "OAuth", "http://terminology.hl7.org/CodeSystem/restful-security-service|OAuth", 
-  "SMART-on-FHIR", "http://terminology.hl7.org/CodeSystem/restful-security-service|SMART-on-FHIR", 
+  "Basic",
+  "Certificates",
+  "http://terminology.hl7.org/CodeSystem/restful-security-service|Basic",
+  "http://terminology.hl7.org/CodeSystem/restful-security-service|Certificates",
+  "http://terminology.hl7.org/CodeSystem/restful-security-service|Kerberos",
+  "http://terminology.hl7.org/CodeSystem/restful-security-service|NTLM",
+  "http://terminology.hl7.org/CodeSystem/restful-security-service|OAuth",
+  "http://terminology.hl7.org/CodeSystem/restful-security-service|SMART-on-FHIR",
+  "Kerberos",
+  "NTLM",
+  "OAuth",
+  "SMART-on-FHIR",
 ] as const;

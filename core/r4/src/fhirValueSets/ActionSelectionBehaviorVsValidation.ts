@@ -7,10 +7,16 @@
  * Defines selection behavior of a group.
  */
 export const ActionSelectionBehaviorVsValidation: readonly string[] = [
-  "all", "http://hl7.org/fhir/action-selection-behavior|all", 
-  "all-or-none", "http://hl7.org/fhir/action-selection-behavior|all-or-none", 
-  "any", "http://hl7.org/fhir/action-selection-behavior|any", 
-  "at-most-one", "http://hl7.org/fhir/action-selection-behavior|at-most-one", 
-  "exactly-one", "http://hl7.org/fhir/action-selection-behavior|exactly-one", 
-  "one-or-more", "http://hl7.org/fhir/action-selection-behavior|one-or-more", 
+  "all",
+  "all-or-none",
+  "any",
+  "at-most-one",
+  "exactly-one",
+  "http://hl7.org/fhir/action-selection-behavior|all",
+  "http://hl7.org/fhir/action-selection-behavior|all-or-none",
+  "http://hl7.org/fhir/action-selection-behavior|any",
+  "http://hl7.org/fhir/action-selection-behavior|at-most-one",
+  "http://hl7.org/fhir/action-selection-behavior|exactly-one",
+  "http://hl7.org/fhir/action-selection-behavior|one-or-more",
+  "one-or-more",
 ] as const;

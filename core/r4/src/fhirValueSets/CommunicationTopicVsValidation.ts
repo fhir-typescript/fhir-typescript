@@ -7,10 +7,16 @@
  * Codes describing the purpose or content of the communication.
  */
 export const CommunicationTopicVsValidation: readonly string[] = [
-  "appointment-reminder", "http://terminology.hl7.org/CodeSystem/communication-topic|appointment-reminder", 
-  "phone-consult", "http://terminology.hl7.org/CodeSystem/communication-topic|phone-consult", 
-  "prescription-refill-request", "http://terminology.hl7.org/CodeSystem/communication-topic|prescription-refill-request", 
-  "progress-update", "http://terminology.hl7.org/CodeSystem/communication-topic|progress-update", 
-  "report-labs", "http://terminology.hl7.org/CodeSystem/communication-topic|report-labs", 
-  "summary-report", "http://terminology.hl7.org/CodeSystem/communication-topic|summary-report", 
+  "appointment-reminder",
+  "http://terminology.hl7.org/CodeSystem/communication-topic|appointment-reminder",
+  "http://terminology.hl7.org/CodeSystem/communication-topic|phone-consult",
+  "http://terminology.hl7.org/CodeSystem/communication-topic|prescription-refill-request",
+  "http://terminology.hl7.org/CodeSystem/communication-topic|progress-update",
+  "http://terminology.hl7.org/CodeSystem/communication-topic|report-labs",
+  "http://terminology.hl7.org/CodeSystem/communication-topic|summary-report",
+  "phone-consult",
+  "prescription-refill-request",
+  "progress-update",
+  "report-labs",
+  "summary-report",
 ] as const;

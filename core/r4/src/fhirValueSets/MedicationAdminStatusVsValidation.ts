@@ -7,11 +7,18 @@
  * MedicationAdministration Status Codes
  */
 export const MedicationAdminStatusVsValidation: readonly string[] = [
-  "completed", "http://terminology.hl7.org/CodeSystem/medication-admin-status|completed", 
-  "entered-in-error", "http://terminology.hl7.org/CodeSystem/medication-admin-status|entered-in-error", 
-  "in-progress", "http://terminology.hl7.org/CodeSystem/medication-admin-status|in-progress", 
-  "not-done", "http://terminology.hl7.org/CodeSystem/medication-admin-status|not-done", 
-  "on-hold", "http://terminology.hl7.org/CodeSystem/medication-admin-status|on-hold", 
-  "stopped", "http://terminology.hl7.org/CodeSystem/medication-admin-status|stopped", 
-  "unknown", "http://terminology.hl7.org/CodeSystem/medication-admin-status|unknown", 
+  "completed",
+  "entered-in-error",
+  "http://terminology.hl7.org/CodeSystem/medication-admin-status|completed",
+  "http://terminology.hl7.org/CodeSystem/medication-admin-status|entered-in-error",
+  "http://terminology.hl7.org/CodeSystem/medication-admin-status|in-progress",
+  "http://terminology.hl7.org/CodeSystem/medication-admin-status|not-done",
+  "http://terminology.hl7.org/CodeSystem/medication-admin-status|on-hold",
+  "http://terminology.hl7.org/CodeSystem/medication-admin-status|stopped",
+  "http://terminology.hl7.org/CodeSystem/medication-admin-status|unknown",
+  "in-progress",
+  "not-done",
+  "on-hold",
+  "stopped",
+  "unknown",
 ] as const;

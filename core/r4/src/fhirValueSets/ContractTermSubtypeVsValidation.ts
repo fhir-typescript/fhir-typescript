@@ -7,7 +7,10 @@
  * This value set includes sample Contract Term SubType codes.
  */
 export const ContractTermSubtypeVsValidation: readonly string[] = [
-  "condition", "http://terminology.hl7.org/CodeSystem/contracttermsubtypecodes|condition", 
-  "innominate", "http://terminology.hl7.org/CodeSystem/contracttermsubtypecodes|innominate", 
-  "warranty", "http://terminology.hl7.org/CodeSystem/contracttermsubtypecodes|warranty", 
+  "condition",
+  "http://terminology.hl7.org/CodeSystem/contracttermsubtypecodes|condition",
+  "http://terminology.hl7.org/CodeSystem/contracttermsubtypecodes|innominate",
+  "http://terminology.hl7.org/CodeSystem/contracttermsubtypecodes|warranty",
+  "innominate",
+  "warranty",
 ] as const;

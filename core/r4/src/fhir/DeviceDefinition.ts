@@ -90,12 +90,12 @@ export class DeviceDefinitionUdiDeviceIdentifier extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'DeviceDefinition.udiDeviceIdentifier' }
-    this.vReqS('deviceIdentifier',expression)
-    this.vReqS('issuer',expression)
-    this.vReqS('jurisdiction',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'DeviceDefinition.udiDeviceIdentifier' }
+    this.vRS('deviceIdentifier',exp)
+    this.vRS('issuer',exp)
+    this.vRS('jurisdiction',exp)
     return issues;
   }
 }
@@ -160,11 +160,11 @@ export class DeviceDefinitionDeviceName extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'DeviceDefinition.deviceName' }
-    this.vReqS('name',expression)
-    this.vReqSV('type',expression,'DeviceNametype',DeviceNametypeVsValidation,'r')
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'DeviceDefinition.deviceName' }
+    this.vRS('name',exp)
+    this.vRSV('type',exp,'DeviceNametype',DeviceNametypeVsValidation,'r')
     return issues;
   }
 }
@@ -226,11 +226,11 @@ export class DeviceDefinitionSpecialization extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'DeviceDefinition.specialization' }
-    this.vReqS('systemType',expression)
-    this.vOptS('version',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'DeviceDefinition.specialization' }
+    this.vRS('systemType',exp)
+    this.vOS('version',exp)
     return issues;
   }
 }
@@ -277,11 +277,11 @@ export class DeviceDefinitionCapability extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'DeviceDefinition.capability' }
-    this.vReqS('type',expression)
-    this.vOptA('description',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'DeviceDefinition.capability' }
+    this.vRS('type',exp)
+    this.vOA('description',exp)
     return issues;
   }
 }
@@ -338,12 +338,12 @@ export class DeviceDefinitionProperty extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'DeviceDefinition.property' }
-    this.vReqS('type',expression)
-    this.vOptA('valueQuantity',expression)
-    this.vOptA('valueCode',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'DeviceDefinition.property' }
+    this.vRS('type',exp)
+    this.vOA('valueQuantity',exp)
+    this.vOA('valueCode',exp)
     return issues;
   }
 }
@@ -414,12 +414,12 @@ export class DeviceDefinitionMaterial extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'DeviceDefinition.material' }
-    this.vReqS('substance',expression)
-    this.vOptS('alternate',expression)
-    this.vOptS('allergenicIndicator',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'DeviceDefinition.material' }
+    this.vRS('substance',exp)
+    this.vOS('alternate',exp)
+    this.vOS('allergenicIndicator',exp)
     return issues;
   }
 }
@@ -714,32 +714,32 @@ export class DeviceDefinition extends fhir.DomainResource {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'DeviceDefinition' }
-    this.vReqS('resourceType',expression)
-    this.vOptA('identifier',expression)
-    this.vOptA('udiDeviceIdentifier',expression)
-    this.vOptS('manufacturer',expression)
-    this.vOptA('deviceName',expression)
-    this.vOptS('modelNumber',expression)
-    this.vOptS('type',expression)
-    this.vOptA('specialization',expression)
-    this.vOptA('version',expression)
-    this.vOptA('safety',expression)
-    this.vOptA('shelfLifeStorage',expression)
-    this.vOptS('physicalCharacteristics',expression)
-    this.vOptA('languageCode',expression)
-    this.vOptA('capability',expression)
-    this.vOptA('property',expression)
-    this.vOptS('owner',expression)
-    this.vOptA('contact',expression)
-    this.vOptS('url',expression)
-    this.vOptS('onlineInformation',expression)
-    this.vOptA('note',expression)
-    this.vOptS('quantity',expression)
-    this.vOptS('parentDevice',expression)
-    this.vOptA('material',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'DeviceDefinition' }
+    this.vRS('resourceType',exp)
+    this.vOA('identifier',exp)
+    this.vOA('udiDeviceIdentifier',exp)
+    this.vOS('manufacturer',exp)
+    this.vOA('deviceName',exp)
+    this.vOS('modelNumber',exp)
+    this.vOS('type',exp)
+    this.vOA('specialization',exp)
+    this.vOA('version',exp)
+    this.vOA('safety',exp)
+    this.vOA('shelfLifeStorage',exp)
+    this.vOS('physicalCharacteristics',exp)
+    this.vOA('languageCode',exp)
+    this.vOA('capability',exp)
+    this.vOA('property',exp)
+    this.vOS('owner',exp)
+    this.vOA('contact',exp)
+    this.vOS('url',exp)
+    this.vOS('onlineInformation',exp)
+    this.vOA('note',exp)
+    this.vOS('quantity',exp)
+    this.vOS('parentDevice',exp)
+    this.vOA('material',exp)
     return issues;
   }
 }

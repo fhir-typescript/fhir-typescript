@@ -79,13 +79,13 @@ export class CareTeamParticipant extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'CareTeam.participant' }
-    this.vOptA('role',expression)
-    this.vOptS('member',expression)
-    this.vOptS('onBehalfOf',expression)
-    this.vOptS('period',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'CareTeam.participant' }
+    this.vOA('role',exp)
+    this.vOS('member',exp)
+    this.vOS('onBehalfOf',exp)
+    this.vOS('period',exp)
     return issues;
   }
 }
@@ -262,23 +262,23 @@ export class CareTeam extends fhir.DomainResource {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'CareTeam' }
-    this.vReqS('resourceType',expression)
-    this.vOptA('identifier',expression)
-    this.vOptSV('status',expression,'CareTeamStatus',CareTeamStatusVsValidation,'r')
-    this.vOptA('category',expression)
-    this.vOptS('name',expression)
-    this.vOptS('subject',expression)
-    this.vOptS('encounter',expression)
-    this.vOptS('period',expression)
-    this.vOptA('participant',expression)
-    this.vOptA('reasonCode',expression)
-    this.vOptA('reasonReference',expression)
-    this.vOptA('managingOrganization',expression)
-    this.vOptA('telecom',expression)
-    this.vOptA('note',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'CareTeam' }
+    this.vRS('resourceType',exp)
+    this.vOA('identifier',exp)
+    this.vOSV('status',exp,'CareTeamStatus',CareTeamStatusVsValidation,'r')
+    this.vOA('category',exp)
+    this.vOS('name',exp)
+    this.vOS('subject',exp)
+    this.vOS('encounter',exp)
+    this.vOS('period',exp)
+    this.vOA('participant',exp)
+    this.vOA('reasonCode',exp)
+    this.vOA('reasonReference',exp)
+    this.vOA('managingOrganization',exp)
+    this.vOA('telecom',exp)
+    this.vOA('note',exp)
     return issues;
   }
 }

@@ -7,10 +7,16 @@
  * Codes for the reason why a communication did not happen.
  */
 export const CommunicationNotDoneReasonVsValidation: readonly string[] = [
-  "family-objection", "http://terminology.hl7.org/CodeSystem/communication-not-done-reason|family-objection", 
-  "invalid-phone-number", "http://terminology.hl7.org/CodeSystem/communication-not-done-reason|invalid-phone-number", 
-  "patient-objection", "http://terminology.hl7.org/CodeSystem/communication-not-done-reason|patient-objection", 
-  "recipient-unavailable", "http://terminology.hl7.org/CodeSystem/communication-not-done-reason|recipient-unavailable", 
-  "system-error", "http://terminology.hl7.org/CodeSystem/communication-not-done-reason|system-error", 
-  "unknown", "http://terminology.hl7.org/CodeSystem/communication-not-done-reason|unknown", 
+  "family-objection",
+  "http://terminology.hl7.org/CodeSystem/communication-not-done-reason|family-objection",
+  "http://terminology.hl7.org/CodeSystem/communication-not-done-reason|invalid-phone-number",
+  "http://terminology.hl7.org/CodeSystem/communication-not-done-reason|patient-objection",
+  "http://terminology.hl7.org/CodeSystem/communication-not-done-reason|recipient-unavailable",
+  "http://terminology.hl7.org/CodeSystem/communication-not-done-reason|system-error",
+  "http://terminology.hl7.org/CodeSystem/communication-not-done-reason|unknown",
+  "invalid-phone-number",
+  "patient-objection",
+  "recipient-unavailable",
+  "system-error",
+  "unknown",
 ] as const;

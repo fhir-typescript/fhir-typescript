@@ -7,7 +7,10 @@
  * If this is the default rule set to apply for the source type, or this combination of types.
  */
 export const MapGroupTypeModeVsValidation: readonly string[] = [
-  "none", "http://hl7.org/fhir/map-group-type-mode|none", 
-  "type-and-types", "http://hl7.org/fhir/map-group-type-mode|type-and-types", 
-  "types", "http://hl7.org/fhir/map-group-type-mode|types", 
+  "http://hl7.org/fhir/map-group-type-mode|none",
+  "http://hl7.org/fhir/map-group-type-mode|type-and-types",
+  "http://hl7.org/fhir/map-group-type-mode|types",
+  "none",
+  "type-and-types",
+  "types",
 ] as const;

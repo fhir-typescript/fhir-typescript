@@ -90,11 +90,11 @@ export class DeviceRequestParameter extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'DeviceRequest.parameter' }
-    this.vOptS('code',expression)
-    this.vOptS('value',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'DeviceRequest.parameter' }
+    this.vOS('code',exp)
+    this.vOS('value',exp)
     return issues;
   }
 }
@@ -450,34 +450,34 @@ export class DeviceRequest extends fhir.DomainResource {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'DeviceRequest' }
-    this.vReqS('resourceType',expression)
-    this.vOptA('identifier',expression)
-    this.vOptA('instantiatesCanonical',expression)
-    this.vOptA('instantiatesUri',expression)
-    this.vOptA('basedOn',expression)
-    this.vOptA('priorRequest',expression)
-    this.vOptS('groupIdentifier',expression)
-    this.vOptSV('status',expression,'RequestStatus',RequestStatusVsValidation,'r')
-    this.vReqSV('intent',expression,'RequestIntent',RequestIntentVsValidation,'r')
-    this.vOptSV('priority',expression,'RequestPriority',RequestPriorityVsValidation,'r')
-    this.vReqS('code',expression)
-    this.vOptA('parameter',expression)
-    this.vReqS('subject',expression)
-    this.vOptS('encounter',expression)
-    this.vOptS('occurrence',expression)
-    this.vOptS('authoredOn',expression)
-    this.vOptS('requester',expression)
-    this.vOptS('performerType',expression)
-    this.vOptS('performer',expression)
-    this.vOptA('reasonCode',expression)
-    this.vOptA('reasonReference',expression)
-    this.vOptA('insurance',expression)
-    this.vOptA('supportingInfo',expression)
-    this.vOptA('note',expression)
-    this.vOptA('relevantHistory',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'DeviceRequest' }
+    this.vRS('resourceType',exp)
+    this.vOA('identifier',exp)
+    this.vOA('instantiatesCanonical',exp)
+    this.vOA('instantiatesUri',exp)
+    this.vOA('basedOn',exp)
+    this.vOA('priorRequest',exp)
+    this.vOS('groupIdentifier',exp)
+    this.vOSV('status',exp,'RequestStatus',RequestStatusVsValidation,'r')
+    this.vRSV('intent',exp,'RequestIntent',RequestIntentVsValidation,'r')
+    this.vOSV('priority',exp,'RequestPriority',RequestPriorityVsValidation,'r')
+    this.vRS('code',exp)
+    this.vOA('parameter',exp)
+    this.vRS('subject',exp)
+    this.vOS('encounter',exp)
+    this.vOS('occurrence',exp)
+    this.vOS('authoredOn',exp)
+    this.vOS('requester',exp)
+    this.vOS('performerType',exp)
+    this.vOS('performer',exp)
+    this.vOA('reasonCode',exp)
+    this.vOA('reasonReference',exp)
+    this.vOA('insurance',exp)
+    this.vOA('supportingInfo',exp)
+    this.vOA('note',exp)
+    this.vOA('relevantHistory',exp)
     return issues;
   }
 }

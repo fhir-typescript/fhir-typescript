@@ -7,8 +7,12 @@
  * Method of reporting variability of estimates, such as confidence intervals, interquartile range or standard deviation.
  */
 export const PrecisionEstimateTypeVsValidation: readonly string[] = [
-  "CI", "http://terminology.hl7.org/CodeSystem/precision-estimate-type|CI", 
-  "IQR", "http://terminology.hl7.org/CodeSystem/precision-estimate-type|IQR", 
-  "SD", "http://terminology.hl7.org/CodeSystem/precision-estimate-type|SD", 
-  "SE", "http://terminology.hl7.org/CodeSystem/precision-estimate-type|SE", 
+  "CI",
+  "http://terminology.hl7.org/CodeSystem/precision-estimate-type|CI",
+  "http://terminology.hl7.org/CodeSystem/precision-estimate-type|IQR",
+  "http://terminology.hl7.org/CodeSystem/precision-estimate-type|SD",
+  "http://terminology.hl7.org/CodeSystem/precision-estimate-type|SE",
+  "IQR",
+  "SD",
+  "SE",
 ] as const;

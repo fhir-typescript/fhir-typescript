@@ -54,11 +54,11 @@ export class SubstanceSourceMaterialFractionDescription extends fhir.BackboneEle
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'SubstanceSourceMaterial.fractionDescription' }
-    this.vOptS('fraction',expression)
-    this.vOptS('materialType',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'SubstanceSourceMaterial.fractionDescription' }
+    this.vOS('fraction',exp)
+    this.vOS('materialType',exp)
     return issues;
   }
 }
@@ -111,11 +111,11 @@ export class SubstanceSourceMaterialOrganismAuthor extends fhir.BackboneElement 
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'SubstanceSourceMaterial.organism.author' }
-    this.vOptS('authorType',expression)
-    this.vOptS('authorDescription',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'SubstanceSourceMaterial.organism.author' }
+    this.vOS('authorType',exp)
+    this.vOS('authorDescription',exp)
     return issues;
   }
 }
@@ -219,14 +219,14 @@ export class SubstanceSourceMaterialOrganismHybrid extends fhir.BackboneElement 
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'SubstanceSourceMaterial.organism.hybrid' }
-    this.vOptS('maternalOrganismId',expression)
-    this.vOptS('maternalOrganismName',expression)
-    this.vOptS('paternalOrganismId',expression)
-    this.vOptS('paternalOrganismName',expression)
-    this.vOptS('hybridType',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'SubstanceSourceMaterial.organism.hybrid' }
+    this.vOS('maternalOrganismId',exp)
+    this.vOS('maternalOrganismName',exp)
+    this.vOS('paternalOrganismId',exp)
+    this.vOS('paternalOrganismName',exp)
+    this.vOS('hybridType',exp)
     return issues;
   }
 }
@@ -289,13 +289,13 @@ export class SubstanceSourceMaterialOrganismOrganismGeneral extends fhir.Backbon
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'SubstanceSourceMaterial.organism.organismGeneral' }
-    this.vOptS('kingdom',expression)
-    this.vOptS('phylum',expression)
-    this.vOptS('class',expression)
-    this.vOptS('order',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'SubstanceSourceMaterial.organism.organismGeneral' }
+    this.vOS('kingdom',exp)
+    this.vOS('phylum',exp)
+    this.vOS('class',exp)
+    this.vOS('order',exp)
     return issues;
   }
 }
@@ -403,17 +403,17 @@ export class SubstanceSourceMaterialOrganism extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'SubstanceSourceMaterial.organism' }
-    this.vOptS('family',expression)
-    this.vOptS('genus',expression)
-    this.vOptS('species',expression)
-    this.vOptS('intraspecificType',expression)
-    this.vOptS('intraspecificDescription',expression)
-    this.vOptA('author',expression)
-    this.vOptS('hybrid',expression)
-    this.vOptS('organismGeneral',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'SubstanceSourceMaterial.organism' }
+    this.vOS('family',exp)
+    this.vOS('genus',exp)
+    this.vOS('species',exp)
+    this.vOS('intraspecificType',exp)
+    this.vOS('intraspecificDescription',exp)
+    this.vOA('author',exp)
+    this.vOS('hybrid',exp)
+    this.vOS('organismGeneral',exp)
     return issues;
   }
 }
@@ -458,11 +458,11 @@ export class SubstanceSourceMaterialPartDescription extends fhir.BackboneElement
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'SubstanceSourceMaterial.partDescription' }
-    this.vOptS('part',expression)
-    this.vOptS('partLocation',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'SubstanceSourceMaterial.partDescription' }
+    this.vOS('part',exp)
+    this.vOS('partLocation',exp)
     return issues;
   }
 }
@@ -649,23 +649,23 @@ export class SubstanceSourceMaterial extends fhir.DomainResource {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'SubstanceSourceMaterial' }
-    this.vReqS('resourceType',expression)
-    this.vOptS('sourceMaterialClass',expression)
-    this.vOptS('sourceMaterialType',expression)
-    this.vOptS('sourceMaterialState',expression)
-    this.vOptS('organismId',expression)
-    this.vOptS('organismName',expression)
-    this.vOptA('parentSubstanceId',expression)
-    this.vOptA('parentSubstanceName',expression)
-    this.vOptA('countryOfOrigin',expression)
-    this.vOptA('geographicalLocation',expression)
-    this.vOptS('developmentStage',expression)
-    this.vOptA('fractionDescription',expression)
-    this.vOptS('organism',expression)
-    this.vOptA('partDescription',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'SubstanceSourceMaterial' }
+    this.vRS('resourceType',exp)
+    this.vOS('sourceMaterialClass',exp)
+    this.vOS('sourceMaterialType',exp)
+    this.vOS('sourceMaterialState',exp)
+    this.vOS('organismId',exp)
+    this.vOS('organismName',exp)
+    this.vOA('parentSubstanceId',exp)
+    this.vOA('parentSubstanceName',exp)
+    this.vOA('countryOfOrigin',exp)
+    this.vOA('geographicalLocation',exp)
+    this.vOS('developmentStage',exp)
+    this.vOA('fractionDescription',exp)
+    this.vOS('organism',exp)
+    this.vOA('partDescription',exp)
     return issues;
   }
 }

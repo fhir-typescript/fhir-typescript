@@ -7,6 +7,8 @@
  * The possible sort directions, ascending or descending.
  */
 export const SortDirectionVsValidation: readonly string[] = [
-  "ascending", "http://hl7.org/fhir/sort-direction|ascending", 
-  "descending", "http://hl7.org/fhir/sort-direction|descending", 
+  "ascending",
+  "descending",
+  "http://hl7.org/fhir/sort-direction|ascending",
+  "http://hl7.org/fhir/sort-direction|descending",
 ] as const;

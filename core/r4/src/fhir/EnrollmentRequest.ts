@@ -121,17 +121,17 @@ export class EnrollmentRequest extends fhir.DomainResource {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'EnrollmentRequest' }
-    this.vReqS('resourceType',expression)
-    this.vOptA('identifier',expression)
-    this.vOptSV('status',expression,'FmStatus',FmStatusVsValidation,'r')
-    this.vOptS('created',expression)
-    this.vOptS('insurer',expression)
-    this.vOptS('provider',expression)
-    this.vOptS('candidate',expression)
-    this.vOptS('coverage',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'EnrollmentRequest' }
+    this.vRS('resourceType',exp)
+    this.vOA('identifier',exp)
+    this.vOSV('status',exp,'FmStatus',FmStatusVsValidation,'r')
+    this.vOS('created',exp)
+    this.vOS('insurer',exp)
+    this.vOS('provider',exp)
+    this.vOS('candidate',exp)
+    this.vOS('coverage',exp)
     return issues;
   }
 }

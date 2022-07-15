@@ -7,7 +7,10 @@
  * High-level categorization of the definition, used for searching, sorting, and filtering.
  */
 export const DefinitionTopicVsValidation: readonly string[] = [
-  "assessment", "http://terminology.hl7.org/CodeSystem/definition-topic|assessment", 
-  "education", "http://terminology.hl7.org/CodeSystem/definition-topic|education", 
-  "treatment", "http://terminology.hl7.org/CodeSystem/definition-topic|treatment", 
+  "assessment",
+  "education",
+  "http://terminology.hl7.org/CodeSystem/definition-topic|assessment",
+  "http://terminology.hl7.org/CodeSystem/definition-topic|education",
+  "http://terminology.hl7.org/CodeSystem/definition-topic|treatment",
+  "treatment",
 ] as const;

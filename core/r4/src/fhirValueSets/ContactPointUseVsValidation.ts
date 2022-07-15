@@ -7,9 +7,14 @@
  * Use of contact point.
  */
 export const ContactPointUseVsValidation: readonly string[] = [
-  "home", "http://hl7.org/fhir/contact-point-use|home", 
-  "mobile", "http://hl7.org/fhir/contact-point-use|mobile", 
-  "old", "http://hl7.org/fhir/contact-point-use|old", 
-  "temp", "http://hl7.org/fhir/contact-point-use|temp", 
-  "work", "http://hl7.org/fhir/contact-point-use|work", 
+  "home",
+  "http://hl7.org/fhir/contact-point-use|home",
+  "http://hl7.org/fhir/contact-point-use|mobile",
+  "http://hl7.org/fhir/contact-point-use|old",
+  "http://hl7.org/fhir/contact-point-use|temp",
+  "http://hl7.org/fhir/contact-point-use|work",
+  "mobile",
+  "old",
+  "temp",
+  "work",
 ] as const;

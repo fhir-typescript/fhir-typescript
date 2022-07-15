@@ -7,6 +7,8 @@
  * Whether the application produces or consumes documents.
  */
 export const DocumentModeVsValidation: readonly string[] = [
-  "consumer", "http://hl7.org/fhir/document-mode|consumer", 
-  "producer", "http://hl7.org/fhir/document-mode|producer", 
+  "consumer",
+  "http://hl7.org/fhir/document-mode|consumer",
+  "http://hl7.org/fhir/document-mode|producer",
+  "producer",
 ] as const;

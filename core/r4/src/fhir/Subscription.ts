@@ -108,13 +108,13 @@ export class SubscriptionChannel extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'Subscription.channel' }
-    this.vReqSV('type',expression,'SubscriptionChannelType',SubscriptionChannelTypeVsValidation,'r')
-    this.vOptS('endpoint',expression)
-    this.vOptS('payload',expression)
-    this.vOptA('header',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'Subscription.channel' }
+    this.vRSV('type',exp,'SubscriptionChannelType',SubscriptionChannelTypeVsValidation,'r')
+    this.vOS('endpoint',exp)
+    this.vOS('payload',exp)
+    this.vOA('header',exp)
     return issues;
   }
 }
@@ -260,17 +260,17 @@ export class Subscription extends fhir.DomainResource {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'Subscription' }
-    this.vReqS('resourceType',expression)
-    this.vReqSV('status',expression,'SubscriptionStatus',SubscriptionStatusVsValidation,'r')
-    this.vOptA('contact',expression)
-    this.vOptS('end',expression)
-    this.vReqS('reason',expression)
-    this.vReqS('criteria',expression)
-    this.vOptS('error',expression)
-    this.vReqS('channel',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'Subscription' }
+    this.vRS('resourceType',exp)
+    this.vRSV('status',exp,'SubscriptionStatus',SubscriptionStatusVsValidation,'r')
+    this.vOA('contact',exp)
+    this.vOS('end',exp)
+    this.vRS('reason',exp)
+    this.vRS('criteria',exp)
+    this.vOS('error',exp)
+    this.vRS('channel',exp)
     return issues;
   }
 }

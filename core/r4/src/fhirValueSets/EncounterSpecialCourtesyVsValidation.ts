@@ -7,10 +7,16 @@
  * This value set defines a set of codes that can be used to indicate special courtesies provided to the patient.
  */
 export const EncounterSpecialCourtesyVsValidation: readonly string[] = [
-  "EXT", "http://terminology.hl7.org/CodeSystem/v3-EncounterSpecialCourtesy|EXT", 
-  "NRM", "http://terminology.hl7.org/CodeSystem/v3-EncounterSpecialCourtesy|NRM", 
-  "PRF", "http://terminology.hl7.org/CodeSystem/v3-EncounterSpecialCourtesy|PRF", 
-  "STF", "http://terminology.hl7.org/CodeSystem/v3-EncounterSpecialCourtesy|STF", 
-  "UNK", "http://terminology.hl7.org/CodeSystem/v3-NullFlavor|UNK", 
-  "VIP", "http://terminology.hl7.org/CodeSystem/v3-EncounterSpecialCourtesy|VIP", 
+  "EXT",
+  "http://terminology.hl7.org/CodeSystem/v3-EncounterSpecialCourtesy|EXT",
+  "http://terminology.hl7.org/CodeSystem/v3-EncounterSpecialCourtesy|NRM",
+  "http://terminology.hl7.org/CodeSystem/v3-EncounterSpecialCourtesy|PRF",
+  "http://terminology.hl7.org/CodeSystem/v3-EncounterSpecialCourtesy|STF",
+  "http://terminology.hl7.org/CodeSystem/v3-EncounterSpecialCourtesy|VIP",
+  "http://terminology.hl7.org/CodeSystem/v3-NullFlavor|UNK",
+  "NRM",
+  "PRF",
+  "STF",
+  "UNK",
+  "VIP",
 ] as const;

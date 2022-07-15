@@ -7,11 +7,18 @@
  * MedicationKnowledge Characteristic Codes
  */
 export const MedicationknowledgeCharacteristicVsValidation: readonly string[] = [
-  "coating", "http://terminology.hl7.org/CodeSystem/medicationknowledge-characteristic|coating", 
-  "color", "http://terminology.hl7.org/CodeSystem/medicationknowledge-characteristic|color", 
-  "imprintcd", "http://terminology.hl7.org/CodeSystem/medicationknowledge-characteristic|imprintcd", 
-  "logo", "http://terminology.hl7.org/CodeSystem/medicationknowledge-characteristic|logo", 
-  "scoring", "http://terminology.hl7.org/CodeSystem/medicationknowledge-characteristic|scoring", 
-  "shape", "http://terminology.hl7.org/CodeSystem/medicationknowledge-characteristic|shape", 
-  "size", "http://terminology.hl7.org/CodeSystem/medicationknowledge-characteristic|size", 
+  "coating",
+  "color",
+  "http://terminology.hl7.org/CodeSystem/medicationknowledge-characteristic|coating",
+  "http://terminology.hl7.org/CodeSystem/medicationknowledge-characteristic|color",
+  "http://terminology.hl7.org/CodeSystem/medicationknowledge-characteristic|imprintcd",
+  "http://terminology.hl7.org/CodeSystem/medicationknowledge-characteristic|logo",
+  "http://terminology.hl7.org/CodeSystem/medicationknowledge-characteristic|scoring",
+  "http://terminology.hl7.org/CodeSystem/medicationknowledge-characteristic|shape",
+  "http://terminology.hl7.org/CodeSystem/medicationknowledge-characteristic|size",
+  "imprintcd",
+  "logo",
+  "scoring",
+  "shape",
+  "size",
 ] as const;

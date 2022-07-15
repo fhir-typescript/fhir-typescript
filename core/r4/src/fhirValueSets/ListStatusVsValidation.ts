@@ -7,7 +7,10 @@
  * The current state of the list.
  */
 export const ListStatusVsValidation: readonly string[] = [
-  "current", "http://hl7.org/fhir/list-status|current", 
-  "entered-in-error", "http://hl7.org/fhir/list-status|entered-in-error", 
-  "retired", "http://hl7.org/fhir/list-status|retired", 
+  "current",
+  "entered-in-error",
+  "http://hl7.org/fhir/list-status|current",
+  "http://hl7.org/fhir/list-status|entered-in-error",
+  "http://hl7.org/fhir/list-status|retired",
+  "retired",
 ] as const;

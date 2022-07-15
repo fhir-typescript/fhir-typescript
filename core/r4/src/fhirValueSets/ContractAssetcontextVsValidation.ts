@@ -7,5 +7,6 @@
  * This value set contract specific codes for asset context.
  */
 export const ContractAssetcontextVsValidation: readonly string[] = [
-  "custodian", "http://hl7.org/fhir/contract-asset-context|custodian", 
+  "custodian",
+  "http://hl7.org/fhir/contract-asset-context|custodian",
 ] as const;

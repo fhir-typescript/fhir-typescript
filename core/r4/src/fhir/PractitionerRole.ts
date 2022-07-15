@@ -111,13 +111,13 @@ export class PractitionerRoleAvailableTime extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'PractitionerRole.availableTime' }
-    this.vOptAV('daysOfWeek',expression,'DaysOfWeek',DaysOfWeekVsValidation,'r')
-    this.vOptS('allDay',expression)
-    this.vOptS('availableStartTime',expression)
-    this.vOptS('availableEndTime',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'PractitionerRole.availableTime' }
+    this.vOAV('daysOfWeek',exp,'DaysOfWeek',DaysOfWeekVsValidation,'r')
+    this.vOS('allDay',exp)
+    this.vOS('availableStartTime',exp)
+    this.vOS('availableEndTime',exp)
     return issues;
   }
 }
@@ -171,11 +171,11 @@ export class PractitionerRoleNotAvailable extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'PractitionerRole.notAvailable' }
-    this.vReqS('description',expression)
-    this.vOptS('during',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'PractitionerRole.notAvailable' }
+    this.vRS('description',exp)
+    this.vOS('during',exp)
     return issues;
   }
 }
@@ -362,24 +362,24 @@ export class PractitionerRole extends fhir.DomainResource {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'PractitionerRole' }
-    this.vReqS('resourceType',expression)
-    this.vOptA('identifier',expression)
-    this.vOptS('active',expression)
-    this.vOptS('period',expression)
-    this.vOptS('practitioner',expression)
-    this.vOptS('organization',expression)
-    this.vOptA('code',expression)
-    this.vOptA('specialty',expression)
-    this.vOptA('location',expression)
-    this.vOptA('healthcareService',expression)
-    this.vOptA('telecom',expression)
-    this.vOptA('availableTime',expression)
-    this.vOptA('notAvailable',expression)
-    this.vOptS('availabilityExceptions',expression)
-    this.vOptA('endpoint',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'PractitionerRole' }
+    this.vRS('resourceType',exp)
+    this.vOA('identifier',exp)
+    this.vOS('active',exp)
+    this.vOS('period',exp)
+    this.vOS('practitioner',exp)
+    this.vOS('organization',exp)
+    this.vOA('code',exp)
+    this.vOA('specialty',exp)
+    this.vOA('location',exp)
+    this.vOA('healthcareService',exp)
+    this.vOA('telecom',exp)
+    this.vOA('availableTime',exp)
+    this.vOA('notAvailable',exp)
+    this.vOS('availabilityExceptions',exp)
+    this.vOA('endpoint',exp)
     return issues;
   }
 }

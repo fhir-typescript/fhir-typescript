@@ -96,11 +96,11 @@ export class DocumentReferenceRelatesTo extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'DocumentReference.relatesTo' }
-    this.vReqSV('code',expression,'DocumentRelationshipType',DocumentRelationshipTypeVsValidation,'r')
-    this.vReqS('target',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'DocumentReference.relatesTo' }
+    this.vRSV('code',exp,'DocumentRelationshipType',DocumentRelationshipTypeVsValidation,'r')
+    this.vRS('target',exp)
     return issues;
   }
 }
@@ -146,11 +146,11 @@ export class DocumentReferenceContent extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'DocumentReference.content' }
-    this.vReqS('attachment',expression)
-    this.vOptS('format',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'DocumentReference.content' }
+    this.vRS('attachment',exp)
+    this.vOS('format',exp)
     return issues;
   }
 }
@@ -243,16 +243,16 @@ export class DocumentReferenceContext extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'DocumentReference.context' }
-    this.vOptA('encounter',expression)
-    this.vOptA('event',expression)
-    this.vOptS('period',expression)
-    this.vOptS('facilityType',expression)
-    this.vOptS('practiceSetting',expression)
-    this.vOptS('sourcePatientInfo',expression)
-    this.vOptA('related',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'DocumentReference.context' }
+    this.vOA('encounter',exp)
+    this.vOA('event',exp)
+    this.vOS('period',exp)
+    this.vOS('facilityType',exp)
+    this.vOS('practiceSetting',exp)
+    this.vOS('sourcePatientInfo',exp)
+    this.vOA('related',exp)
     return issues;
   }
 }
@@ -475,26 +475,26 @@ export class DocumentReference extends fhir.DomainResource {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'DocumentReference' }
-    this.vReqS('resourceType',expression)
-    this.vOptS('masterIdentifier',expression)
-    this.vOptA('identifier',expression)
-    this.vReqSV('status',expression,'DocumentReferenceStatus',DocumentReferenceStatusVsValidation,'r')
-    this.vOptSV('docStatus',expression,'CompositionStatus',CompositionStatusVsValidation,'r')
-    this.vOptS('type',expression)
-    this.vOptA('category',expression)
-    this.vOptS('subject',expression)
-    this.vOptS('date',expression)
-    this.vOptA('author',expression)
-    this.vOptS('authenticator',expression)
-    this.vOptS('custodian',expression)
-    this.vOptA('relatesTo',expression)
-    this.vOptS('description',expression)
-    this.vOptA('securityLabel',expression)
-    this.vReqA('content',expression)
-    this.vOptS('context',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'DocumentReference' }
+    this.vRS('resourceType',exp)
+    this.vOS('masterIdentifier',exp)
+    this.vOA('identifier',exp)
+    this.vRSV('status',exp,'DocumentReferenceStatus',DocumentReferenceStatusVsValidation,'r')
+    this.vOSV('docStatus',exp,'CompositionStatus',CompositionStatusVsValidation,'r')
+    this.vOS('type',exp)
+    this.vOA('category',exp)
+    this.vOS('subject',exp)
+    this.vOS('date',exp)
+    this.vOA('author',exp)
+    this.vOS('authenticator',exp)
+    this.vOS('custodian',exp)
+    this.vOA('relatesTo',exp)
+    this.vOS('description',exp)
+    this.vOA('securityLabel',exp)
+    this.vRA('content',exp)
+    this.vOS('context',exp)
     return issues;
   }
 }

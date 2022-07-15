@@ -7,6 +7,8 @@
  * Overall nature of the adverse event, e.g. real or potential.
  */
 export const AdverseEventActualityVsValidation: readonly string[] = [
-  "actual", "http://hl7.org/fhir/adverse-event-actuality|actual", 
-  "potential", "http://hl7.org/fhir/adverse-event-actuality|potential", 
+  "actual",
+  "http://hl7.org/fhir/adverse-event-actuality|actual",
+  "http://hl7.org/fhir/adverse-event-actuality|potential",
+  "potential",
 ] as const;

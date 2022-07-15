@@ -7,8 +7,12 @@
  * The type of relationship between documents.
  */
 export const DocumentRelationshipTypeVsValidation: readonly string[] = [
-  "appends", "http://hl7.org/fhir/document-relationship-type|appends", 
-  "replaces", "http://hl7.org/fhir/document-relationship-type|replaces", 
-  "signs", "http://hl7.org/fhir/document-relationship-type|signs", 
-  "transforms", "http://hl7.org/fhir/document-relationship-type|transforms", 
+  "appends",
+  "http://hl7.org/fhir/document-relationship-type|appends",
+  "http://hl7.org/fhir/document-relationship-type|replaces",
+  "http://hl7.org/fhir/document-relationship-type|signs",
+  "http://hl7.org/fhir/document-relationship-type|transforms",
+  "replaces",
+  "signs",
+  "transforms",
 ] as const;

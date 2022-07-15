@@ -116,13 +116,13 @@ export class ObservationDefinitionQuantitativeDetails extends fhir.BackboneEleme
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'ObservationDefinition.quantitativeDetails' }
-    this.vOptS('customaryUnit',expression)
-    this.vOptS('unit',expression)
-    this.vOptS('conversionFactor',expression)
-    this.vOptS('decimalPrecision',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'ObservationDefinition.quantitativeDetails' }
+    this.vOS('customaryUnit',exp)
+    this.vOS('unit',exp)
+    this.vOS('conversionFactor',exp)
+    this.vOS('decimalPrecision',exp)
     return issues;
   }
 }
@@ -246,17 +246,17 @@ export class ObservationDefinitionQualifiedInterval extends fhir.BackboneElement
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'ObservationDefinition.qualifiedInterval' }
-    this.vOptSV('category',expression,'ObservationRangeCategory',ObservationRangeCategoryVsValidation,'r')
-    this.vOptS('range',expression)
-    this.vOptS('context',expression)
-    this.vOptA('appliesTo',expression)
-    this.vOptSV('gender',expression,'AdministrativeGender',AdministrativeGenderVsValidation,'r')
-    this.vOptS('age',expression)
-    this.vOptS('gestationalAge',expression)
-    this.vOptS('condition',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'ObservationDefinition.qualifiedInterval' }
+    this.vOSV('category',exp,'ObservationRangeCategory',ObservationRangeCategoryVsValidation,'r')
+    this.vOS('range',exp)
+    this.vOS('context',exp)
+    this.vOA('appliesTo',exp)
+    this.vOSV('gender',exp,'AdministrativeGender',AdministrativeGenderVsValidation,'r')
+    this.vOS('age',exp)
+    this.vOS('gestationalAge',exp)
+    this.vOS('condition',exp)
     return issues;
   }
 }
@@ -440,23 +440,23 @@ export class ObservationDefinition extends fhir.DomainResource {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'ObservationDefinition' }
-    this.vReqS('resourceType',expression)
-    this.vOptA('category',expression)
-    this.vReqS('code',expression)
-    this.vOptA('identifier',expression)
-    this.vOptAV('permittedDataType',expression,'PermittedDataType',PermittedDataTypeVsValidation,'r')
-    this.vOptS('multipleResultsAllowed',expression)
-    this.vOptS('method',expression)
-    this.vOptS('preferredReportName',expression)
-    this.vOptS('quantitativeDetails',expression)
-    this.vOptA('qualifiedInterval',expression)
-    this.vOptS('validCodedValueSet',expression)
-    this.vOptS('normalCodedValueSet',expression)
-    this.vOptS('abnormalCodedValueSet',expression)
-    this.vOptS('criticalCodedValueSet',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'ObservationDefinition' }
+    this.vRS('resourceType',exp)
+    this.vOA('category',exp)
+    this.vRS('code',exp)
+    this.vOA('identifier',exp)
+    this.vOAV('permittedDataType',exp,'PermittedDataType',PermittedDataTypeVsValidation,'r')
+    this.vOS('multipleResultsAllowed',exp)
+    this.vOS('method',exp)
+    this.vOS('preferredReportName',exp)
+    this.vOS('quantitativeDetails',exp)
+    this.vOA('qualifiedInterval',exp)
+    this.vOS('validCodedValueSet',exp)
+    this.vOS('normalCodedValueSet',exp)
+    this.vOS('abnormalCodedValueSet',exp)
+    this.vOS('criticalCodedValueSet',exp)
     return issues;
   }
 }

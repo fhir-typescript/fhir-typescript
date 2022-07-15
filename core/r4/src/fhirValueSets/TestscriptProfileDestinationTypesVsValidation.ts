@@ -7,8 +7,12 @@
  * This value set defines a set of codes that are used to indicate the profile type of a test system when acting as the destination within a TestScript.
  */
 export const TestscriptProfileDestinationTypesVsValidation: readonly string[] = [
-  "FHIR-SDC-FormManager", "http://terminology.hl7.org/CodeSystem/testscript-profile-destination-types|FHIR-SDC-FormManager", 
-  "FHIR-SDC-FormProcessor", "http://terminology.hl7.org/CodeSystem/testscript-profile-destination-types|FHIR-SDC-FormProcessor", 
-  "FHIR-SDC-FormReceiver", "http://terminology.hl7.org/CodeSystem/testscript-profile-destination-types|FHIR-SDC-FormReceiver", 
-  "FHIR-Server", "http://terminology.hl7.org/CodeSystem/testscript-profile-destination-types|FHIR-Server", 
+  "FHIR-SDC-FormManager",
+  "FHIR-SDC-FormProcessor",
+  "FHIR-SDC-FormReceiver",
+  "FHIR-Server",
+  "http://terminology.hl7.org/CodeSystem/testscript-profile-destination-types|FHIR-SDC-FormManager",
+  "http://terminology.hl7.org/CodeSystem/testscript-profile-destination-types|FHIR-SDC-FormProcessor",
+  "http://terminology.hl7.org/CodeSystem/testscript-profile-destination-types|FHIR-SDC-FormReceiver",
+  "http://terminology.hl7.org/CodeSystem/testscript-profile-destination-types|FHIR-Server",
 ] as const;

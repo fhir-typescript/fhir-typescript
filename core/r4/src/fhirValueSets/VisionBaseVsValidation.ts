@@ -7,8 +7,12 @@
  * A coded concept listing the base codes.
  */
 export const VisionBaseVsValidation: readonly string[] = [
-  "down", "http://hl7.org/fhir/vision-base-codes|down", 
-  "in", "http://hl7.org/fhir/vision-base-codes|in", 
-  "out", "http://hl7.org/fhir/vision-base-codes|out", 
-  "up", "http://hl7.org/fhir/vision-base-codes|up", 
+  "down",
+  "http://hl7.org/fhir/vision-base-codes|down",
+  "http://hl7.org/fhir/vision-base-codes|in",
+  "http://hl7.org/fhir/vision-base-codes|out",
+  "http://hl7.org/fhir/vision-base-codes|up",
+  "in",
+  "out",
+  "up",
 ] as const;

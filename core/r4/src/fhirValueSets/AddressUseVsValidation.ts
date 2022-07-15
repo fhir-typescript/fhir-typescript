@@ -7,9 +7,14 @@
  * The use of an address.
  */
 export const AddressUseVsValidation: readonly string[] = [
-  "billing", "http://hl7.org/fhir/address-use|billing", 
-  "home", "http://hl7.org/fhir/address-use|home", 
-  "old", "http://hl7.org/fhir/address-use|old", 
-  "temp", "http://hl7.org/fhir/address-use|temp", 
-  "work", "http://hl7.org/fhir/address-use|work", 
+  "billing",
+  "home",
+  "http://hl7.org/fhir/address-use|billing",
+  "http://hl7.org/fhir/address-use|home",
+  "http://hl7.org/fhir/address-use|old",
+  "http://hl7.org/fhir/address-use|temp",
+  "http://hl7.org/fhir/address-use|work",
+  "old",
+  "temp",
+  "work",
 ] as const;

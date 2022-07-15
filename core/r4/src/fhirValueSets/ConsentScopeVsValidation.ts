@@ -7,8 +7,12 @@
  * This value set includes the four Consent scope codes.
  */
 export const ConsentScopeVsValidation: readonly string[] = [
-  "adr", "http://terminology.hl7.org/CodeSystem/consentscope|adr", 
-  "patient-privacy", "http://terminology.hl7.org/CodeSystem/consentscope|patient-privacy", 
-  "research", "http://terminology.hl7.org/CodeSystem/consentscope|research", 
-  "treatment", "http://terminology.hl7.org/CodeSystem/consentscope|treatment", 
+  "adr",
+  "http://terminology.hl7.org/CodeSystem/consentscope|adr",
+  "http://terminology.hl7.org/CodeSystem/consentscope|patient-privacy",
+  "http://terminology.hl7.org/CodeSystem/consentscope|research",
+  "http://terminology.hl7.org/CodeSystem/consentscope|treatment",
+  "patient-privacy",
+  "research",
+  "treatment",
 ] as const;

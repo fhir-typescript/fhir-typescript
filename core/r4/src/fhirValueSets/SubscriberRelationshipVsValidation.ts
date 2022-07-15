@@ -7,11 +7,18 @@
  * This value set includes codes for the relationship between the Subscriber and the Beneficiary (insured/covered party/patient).
  */
 export const SubscriberRelationshipVsValidation: readonly string[] = [
-  "child", "http://terminology.hl7.org/CodeSystem/subscriber-relationship|child", 
-  "common", "http://terminology.hl7.org/CodeSystem/subscriber-relationship|common", 
-  "injured", "http://terminology.hl7.org/CodeSystem/subscriber-relationship|injured", 
-  "other", "http://terminology.hl7.org/CodeSystem/subscriber-relationship|other", 
-  "parent", "http://terminology.hl7.org/CodeSystem/subscriber-relationship|parent", 
-  "self", "http://terminology.hl7.org/CodeSystem/subscriber-relationship|self", 
-  "spouse", "http://terminology.hl7.org/CodeSystem/subscriber-relationship|spouse", 
+  "child",
+  "common",
+  "http://terminology.hl7.org/CodeSystem/subscriber-relationship|child",
+  "http://terminology.hl7.org/CodeSystem/subscriber-relationship|common",
+  "http://terminology.hl7.org/CodeSystem/subscriber-relationship|injured",
+  "http://terminology.hl7.org/CodeSystem/subscriber-relationship|other",
+  "http://terminology.hl7.org/CodeSystem/subscriber-relationship|parent",
+  "http://terminology.hl7.org/CodeSystem/subscriber-relationship|self",
+  "http://terminology.hl7.org/CodeSystem/subscriber-relationship|spouse",
+  "injured",
+  "other",
+  "parent",
+  "self",
+  "spouse",
 ] as const;

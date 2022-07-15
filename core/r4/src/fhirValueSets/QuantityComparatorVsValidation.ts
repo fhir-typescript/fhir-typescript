@@ -7,8 +7,12 @@
  * How the Quantity should be understood and represented.
  */
 export const QuantityComparatorVsValidation: readonly string[] = [
-  "<", "http://hl7.org/fhir/quantity-comparator|<", 
-  "<=", "http://hl7.org/fhir/quantity-comparator|<=", 
-  ">", "http://hl7.org/fhir/quantity-comparator|>", 
-  ">=", "http://hl7.org/fhir/quantity-comparator|>=", 
+  "<",
+  "<=",
+  ">",
+  ">=",
+  "http://hl7.org/fhir/quantity-comparator|<",
+  "http://hl7.org/fhir/quantity-comparator|<=",
+  "http://hl7.org/fhir/quantity-comparator|>",
+  "http://hl7.org/fhir/quantity-comparator|>=",
 ] as const;

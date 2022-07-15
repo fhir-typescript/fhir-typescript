@@ -108,13 +108,13 @@ export class GroupCharacteristic extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'Group.characteristic' }
-    this.vReqS('code',expression)
-    this.vReqS('value',expression)
-    this.vReqS('exclude',expression)
-    this.vOptS('period',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'Group.characteristic' }
+    this.vRS('code',exp)
+    this.vRS('value',exp)
+    this.vRS('exclude',exp)
+    this.vOS('period',exp)
     return issues;
   }
 }
@@ -177,12 +177,12 @@ export class GroupMember extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'Group.member' }
-    this.vReqS('entity',expression)
-    this.vOptS('period',expression)
-    this.vOptS('inactive',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'Group.member' }
+    this.vRS('entity',exp)
+    this.vOS('period',exp)
+    this.vOS('inactive',exp)
     return issues;
   }
 }
@@ -353,20 +353,20 @@ export class Group extends fhir.DomainResource {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'Group' }
-    this.vReqS('resourceType',expression)
-    this.vOptA('identifier',expression)
-    this.vOptS('active',expression)
-    this.vReqSV('type',expression,'GroupType',GroupTypeVsValidation,'r')
-    this.vReqS('actual',expression)
-    this.vOptS('code',expression)
-    this.vOptS('name',expression)
-    this.vOptS('quantity',expression)
-    this.vOptS('managingEntity',expression)
-    this.vOptA('characteristic',expression)
-    this.vOptA('member',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'Group' }
+    this.vRS('resourceType',exp)
+    this.vOA('identifier',exp)
+    this.vOS('active',exp)
+    this.vRSV('type',exp,'GroupType',GroupTypeVsValidation,'r')
+    this.vRS('actual',exp)
+    this.vOS('code',exp)
+    this.vOS('name',exp)
+    this.vOS('quantity',exp)
+    this.vOS('managingEntity',exp)
+    this.vOA('characteristic',exp)
+    this.vOA('member',exp)
     return issues;
   }
 }

@@ -99,11 +99,11 @@ export class RequestGroupActionCondition extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'RequestGroup.action.condition' }
-    this.vReqSV('kind',expression,'ActionConditionKind',ActionConditionKindVsValidation,'r')
-    this.vOptS('expression',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'RequestGroup.action.condition' }
+    this.vRSV('kind',exp,'ActionConditionKind',ActionConditionKindVsValidation,'r')
+    this.vOS('expression',exp)
     return issues;
   }
 }
@@ -189,12 +189,12 @@ export class RequestGroupActionRelatedAction extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'RequestGroup.action.relatedAction' }
-    this.vReqS('actionId',expression)
-    this.vReqSV('relationship',expression,'ActionRelationshipType',ActionRelationshipTypeVsValidation,'r')
-    this.vOptS('offset',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'RequestGroup.action.relatedAction' }
+    this.vRS('actionId',exp)
+    this.vRSV('relationship',exp,'ActionRelationshipType',ActionRelationshipTypeVsValidation,'r')
+    this.vOS('offset',exp)
     return issues;
   }
 }
@@ -512,28 +512,28 @@ export class RequestGroupAction extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'RequestGroup.action' }
-    this.vOptS('prefix',expression)
-    this.vOptS('title',expression)
-    this.vOptS('description',expression)
-    this.vOptS('textEquivalent',expression)
-    this.vOptSV('priority',expression,'RequestPriority',RequestPriorityVsValidation,'r')
-    this.vOptA('code',expression)
-    this.vOptA('documentation',expression)
-    this.vOptA('condition',expression)
-    this.vOptA('relatedAction',expression)
-    this.vOptS('timing',expression)
-    this.vOptA('participant',expression)
-    this.vOptS('type',expression)
-    this.vOptSV('groupingBehavior',expression,'ActionGroupingBehavior',ActionGroupingBehaviorVsValidation,'r')
-    this.vOptSV('selectionBehavior',expression,'ActionSelectionBehavior',ActionSelectionBehaviorVsValidation,'r')
-    this.vOptSV('requiredBehavior',expression,'ActionRequiredBehavior',ActionRequiredBehaviorVsValidation,'r')
-    this.vOptSV('precheckBehavior',expression,'ActionPrecheckBehavior',ActionPrecheckBehaviorVsValidation,'r')
-    this.vOptSV('cardinalityBehavior',expression,'ActionCardinalityBehavior',ActionCardinalityBehaviorVsValidation,'r')
-    this.vOptS('resource',expression)
-    this.vOptA('action',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'RequestGroup.action' }
+    this.vOS('prefix',exp)
+    this.vOS('title',exp)
+    this.vOS('description',exp)
+    this.vOS('textEquivalent',exp)
+    this.vOSV('priority',exp,'RequestPriority',RequestPriorityVsValidation,'r')
+    this.vOA('code',exp)
+    this.vOA('documentation',exp)
+    this.vOA('condition',exp)
+    this.vOA('relatedAction',exp)
+    this.vOS('timing',exp)
+    this.vOA('participant',exp)
+    this.vOS('type',exp)
+    this.vOSV('groupingBehavior',exp,'ActionGroupingBehavior',ActionGroupingBehaviorVsValidation,'r')
+    this.vOSV('selectionBehavior',exp,'ActionSelectionBehavior',ActionSelectionBehaviorVsValidation,'r')
+    this.vOSV('requiredBehavior',exp,'ActionRequiredBehavior',ActionRequiredBehaviorVsValidation,'r')
+    this.vOSV('precheckBehavior',exp,'ActionPrecheckBehavior',ActionPrecheckBehaviorVsValidation,'r')
+    this.vOSV('cardinalityBehavior',exp,'ActionCardinalityBehavior',ActionCardinalityBehaviorVsValidation,'r')
+    this.vOS('resource',exp)
+    this.vOA('action',exp)
     return issues;
   }
 }
@@ -794,28 +794,28 @@ export class RequestGroup extends fhir.DomainResource {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'RequestGroup' }
-    this.vReqS('resourceType',expression)
-    this.vOptA('identifier',expression)
-    this.vOptA('instantiatesCanonical',expression)
-    this.vOptA('instantiatesUri',expression)
-    this.vOptA('basedOn',expression)
-    this.vOptA('replaces',expression)
-    this.vOptS('groupIdentifier',expression)
-    this.vReqSV('status',expression,'RequestStatus',RequestStatusVsValidation,'r')
-    this.vReqSV('intent',expression,'RequestIntent',RequestIntentVsValidation,'r')
-    this.vOptSV('priority',expression,'RequestPriority',RequestPriorityVsValidation,'r')
-    this.vOptS('code',expression)
-    this.vOptS('subject',expression)
-    this.vOptS('encounter',expression)
-    this.vOptS('authoredOn',expression)
-    this.vOptS('author',expression)
-    this.vOptA('reasonCode',expression)
-    this.vOptA('reasonReference',expression)
-    this.vOptA('note',expression)
-    this.vOptA('action',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'RequestGroup' }
+    this.vRS('resourceType',exp)
+    this.vOA('identifier',exp)
+    this.vOA('instantiatesCanonical',exp)
+    this.vOA('instantiatesUri',exp)
+    this.vOA('basedOn',exp)
+    this.vOA('replaces',exp)
+    this.vOS('groupIdentifier',exp)
+    this.vRSV('status',exp,'RequestStatus',RequestStatusVsValidation,'r')
+    this.vRSV('intent',exp,'RequestIntent',RequestIntentVsValidation,'r')
+    this.vOSV('priority',exp,'RequestPriority',RequestPriorityVsValidation,'r')
+    this.vOS('code',exp)
+    this.vOS('subject',exp)
+    this.vOS('encounter',exp)
+    this.vOS('authoredOn',exp)
+    this.vOS('author',exp)
+    this.vOA('reasonCode',exp)
+    this.vOA('reasonReference',exp)
+    this.vOA('note',exp)
+    this.vOA('action',exp)
     return issues;
   }
 }

@@ -7,12 +7,20 @@
  * Medication Status Codes
  */
 export const MedicationStatementStatusVsValidation: readonly string[] = [
-  "active", "http://hl7.org/fhir/CodeSystem/medication-statement-status|active", 
-  "completed", "http://hl7.org/fhir/CodeSystem/medication-statement-status|completed", 
-  "entered-in-error", "http://hl7.org/fhir/CodeSystem/medication-statement-status|entered-in-error", 
-  "intended", "http://hl7.org/fhir/CodeSystem/medication-statement-status|intended", 
-  "not-taken", "http://hl7.org/fhir/CodeSystem/medication-statement-status|not-taken", 
-  "on-hold", "http://hl7.org/fhir/CodeSystem/medication-statement-status|on-hold", 
-  "stopped", "http://hl7.org/fhir/CodeSystem/medication-statement-status|stopped", 
-  "unknown", "http://hl7.org/fhir/CodeSystem/medication-statement-status|unknown", 
+  "active",
+  "completed",
+  "entered-in-error",
+  "http://hl7.org/fhir/CodeSystem/medication-statement-status|active",
+  "http://hl7.org/fhir/CodeSystem/medication-statement-status|completed",
+  "http://hl7.org/fhir/CodeSystem/medication-statement-status|entered-in-error",
+  "http://hl7.org/fhir/CodeSystem/medication-statement-status|intended",
+  "http://hl7.org/fhir/CodeSystem/medication-statement-status|not-taken",
+  "http://hl7.org/fhir/CodeSystem/medication-statement-status|on-hold",
+  "http://hl7.org/fhir/CodeSystem/medication-statement-status|stopped",
+  "http://hl7.org/fhir/CodeSystem/medication-statement-status|unknown",
+  "intended",
+  "not-taken",
+  "on-hold",
+  "stopped",
+  "unknown",
 ] as const;

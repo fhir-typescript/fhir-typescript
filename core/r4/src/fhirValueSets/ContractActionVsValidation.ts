@@ -7,6 +7,8 @@
  * This value set includes sample Contract Action codes.
  */
 export const ContractActionVsValidation: readonly string[] = [
-  "action-a", "http://terminology.hl7.org/CodeSystem/contractaction|action-a", 
-  "action-b", "http://terminology.hl7.org/CodeSystem/contractaction|action-b", 
+  "action-a",
+  "action-b",
+  "http://terminology.hl7.org/CodeSystem/contractaction|action-a",
+  "http://terminology.hl7.org/CodeSystem/contractaction|action-b",
 ] as const;

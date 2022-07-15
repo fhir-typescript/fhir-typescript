@@ -202,21 +202,21 @@ export class Endpoint extends fhir.DomainResource {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'Endpoint' }
-    this.vReqS('resourceType',expression)
-    this.vOptA('identifier',expression)
-    this.vReqSV('status',expression,'EndpointStatus',EndpointStatusVsValidation,'r')
-    this.vReqS('connectionType',expression)
-    this.vOptS('name',expression)
-    this.vOptS('managingOrganization',expression)
-    this.vOptA('contact',expression)
-    this.vOptS('period',expression)
-    this.vReqA('payloadType',expression)
-    this.vOptA('payloadMimeType',expression)
-    this.vReqS('address',expression)
-    this.vOptA('header',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'Endpoint' }
+    this.vRS('resourceType',exp)
+    this.vOA('identifier',exp)
+    this.vRSV('status',exp,'EndpointStatus',EndpointStatusVsValidation,'r')
+    this.vRS('connectionType',exp)
+    this.vOS('name',exp)
+    this.vOS('managingOrganization',exp)
+    this.vOA('contact',exp)
+    this.vOS('period',exp)
+    this.vRA('payloadType',exp)
+    this.vOA('payloadMimeType',exp)
+    this.vRS('address',exp)
+    this.vOA('header',exp)
     return issues;
   }
 }

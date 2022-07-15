@@ -58,7 +58,7 @@ export declare class BiologicallyDerivedProductCollection extends fhir.BackboneE
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(expression?: string): fhir.FtsIssue[];
+    doModelValidation(exp?: string): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the BiologicallyDerivedProductProcessing type.
@@ -128,7 +128,7 @@ export declare class BiologicallyDerivedProductProcessing extends fhir.BackboneE
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(expression?: string): fhir.FtsIssue[];
+    doModelValidation(exp?: string): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the BiologicallyDerivedProductManipulation type.
@@ -182,7 +182,7 @@ export declare class BiologicallyDerivedProductManipulation extends fhir.Backbon
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(expression?: string): fhir.FtsIssue[];
+    doModelValidation(exp?: string): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the BiologicallyDerivedProductStorage type.
@@ -248,7 +248,7 @@ export declare class BiologicallyDerivedProductStorage extends fhir.BackboneElem
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(expression?: string): fhir.FtsIssue[];
+    doModelValidation(exp?: string): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the BiologicallyDerivedProduct type.
@@ -379,6 +379,6 @@ export declare class BiologicallyDerivedProduct extends fhir.DomainResource {
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(expression?: string): fhir.FtsIssue[];
+    doModelValidation(exp?: string): fhir.FtsIssue[];
 }
 //# sourceMappingURL=BiologicallyDerivedProduct.d.ts.map

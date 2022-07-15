@@ -7,6 +7,8 @@
  * Whether an operation parameter is an input or an output parameter.
  */
 export const OperationParameterUseVsValidation: readonly string[] = [
-  "in", "http://hl7.org/fhir/operation-parameter-use|in", 
-  "out", "http://hl7.org/fhir/operation-parameter-use|out", 
+  "http://hl7.org/fhir/operation-parameter-use|in",
+  "http://hl7.org/fhir/operation-parameter-use|out",
+  "in",
+  "out",
 ] as const;

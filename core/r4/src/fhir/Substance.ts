@@ -75,12 +75,12 @@ export class SubstanceInstance extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'Substance.instance' }
-    this.vOptS('identifier',expression)
-    this.vOptS('expiry',expression)
-    this.vOptS('quantity',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'Substance.instance' }
+    this.vOS('identifier',exp)
+    this.vOS('expiry',exp)
+    this.vOS('quantity',exp)
     return issues;
   }
 }
@@ -140,11 +140,11 @@ export class SubstanceIngredient extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'Substance.ingredient' }
-    this.vOptS('quantity',expression)
-    this.vReqS('substance',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'Substance.ingredient' }
+    this.vOS('quantity',exp)
+    this.vRS('substance',exp)
     return issues;
   }
 }
@@ -264,17 +264,17 @@ export class Substance extends fhir.DomainResource {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'Substance' }
-    this.vReqS('resourceType',expression)
-    this.vOptA('identifier',expression)
-    this.vOptSV('status',expression,'SubstanceStatus',SubstanceStatusVsValidation,'r')
-    this.vOptA('category',expression)
-    this.vReqS('code',expression)
-    this.vOptS('description',expression)
-    this.vOptA('instance',expression)
-    this.vOptA('ingredient',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'Substance' }
+    this.vRS('resourceType',exp)
+    this.vOA('identifier',exp)
+    this.vOSV('status',exp,'SubstanceStatus',SubstanceStatusVsValidation,'r')
+    this.vOA('category',exp)
+    this.vRS('code',exp)
+    this.vOS('description',exp)
+    this.vOA('instance',exp)
+    this.vOA('ingredient',exp)
     return issues;
   }
 }

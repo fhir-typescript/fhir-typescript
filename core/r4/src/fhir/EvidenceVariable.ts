@@ -191,16 +191,16 @@ export class EvidenceVariableCharacteristic extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'EvidenceVariable.characteristic' }
-    this.vOptS('description',expression)
-    this.vReqS('definition',expression)
-    this.vOptA('usageContext',expression)
-    this.vOptS('exclude',expression)
-    this.vOptS('participantEffective',expression)
-    this.vOptS('timeFromStart',expression)
-    this.vOptSV('groupMeasure',expression,'GroupMeasure',GroupMeasureVsValidation,'r')
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'EvidenceVariable.characteristic' }
+    this.vOS('description',exp)
+    this.vRS('definition',exp)
+    this.vOA('usageContext',exp)
+    this.vOS('exclude',exp)
+    this.vOS('participantEffective',exp)
+    this.vOS('timeFromStart',exp)
+    this.vOSV('groupMeasure',exp,'GroupMeasure',GroupMeasureVsValidation,'r')
     return issues;
   }
 }
@@ -608,37 +608,37 @@ export class EvidenceVariable extends fhir.DomainResource {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'EvidenceVariable' }
-    this.vReqS('resourceType',expression)
-    this.vOptS('url',expression)
-    this.vOptA('identifier',expression)
-    this.vOptS('version',expression)
-    this.vOptS('name',expression)
-    this.vOptS('title',expression)
-    this.vOptS('shortTitle',expression)
-    this.vOptS('subtitle',expression)
-    this.vReqSV('status',expression,'PublicationStatus',PublicationStatusVsValidation,'r')
-    this.vOptS('date',expression)
-    this.vOptS('publisher',expression)
-    this.vOptA('contact',expression)
-    this.vOptS('description',expression)
-    this.vOptA('note',expression)
-    this.vOptA('useContext',expression)
-    this.vOptA('jurisdiction',expression)
-    this.vOptS('copyright',expression)
-    this.vOptS('approvalDate',expression)
-    this.vOptS('lastReviewDate',expression)
-    this.vOptS('effectivePeriod',expression)
-    this.vOptA('topic',expression)
-    this.vOptA('author',expression)
-    this.vOptA('editor',expression)
-    this.vOptA('reviewer',expression)
-    this.vOptA('endorser',expression)
-    this.vOptA('relatedArtifact',expression)
-    this.vOptSV('type',expression,'VariableType',VariableTypeVsValidation,'r')
-    this.vReqA('characteristic',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'EvidenceVariable' }
+    this.vRS('resourceType',exp)
+    this.vOS('url',exp)
+    this.vOA('identifier',exp)
+    this.vOS('version',exp)
+    this.vOS('name',exp)
+    this.vOS('title',exp)
+    this.vOS('shortTitle',exp)
+    this.vOS('subtitle',exp)
+    this.vRSV('status',exp,'PublicationStatus',PublicationStatusVsValidation,'r')
+    this.vOS('date',exp)
+    this.vOS('publisher',exp)
+    this.vOA('contact',exp)
+    this.vOS('description',exp)
+    this.vOA('note',exp)
+    this.vOA('useContext',exp)
+    this.vOA('jurisdiction',exp)
+    this.vOS('copyright',exp)
+    this.vOS('approvalDate',exp)
+    this.vOS('lastReviewDate',exp)
+    this.vOS('effectivePeriod',exp)
+    this.vOA('topic',exp)
+    this.vOA('author',exp)
+    this.vOA('editor',exp)
+    this.vOA('reviewer',exp)
+    this.vOA('endorser',exp)
+    this.vOA('relatedArtifact',exp)
+    this.vOSV('type',exp,'VariableType',VariableTypeVsValidation,'r')
+    this.vRA('characteristic',exp)
     return issues;
   }
 }

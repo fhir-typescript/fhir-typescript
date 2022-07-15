@@ -142,16 +142,16 @@ export class VerificationResultPrimarySource extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'VerificationResult.primarySource' }
-    this.vOptS('who',expression)
-    this.vOptA('type',expression)
-    this.vOptA('communicationMethod',expression)
-    this.vOptS('validationStatus',expression)
-    this.vOptS('validationDate',expression)
-    this.vOptS('canPushUpdates',expression)
-    this.vOptA('pushTypeAvailable',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'VerificationResult.primarySource' }
+    this.vOS('who',exp)
+    this.vOA('type',exp)
+    this.vOA('communicationMethod',exp)
+    this.vOS('validationStatus',exp)
+    this.vOS('validationDate',exp)
+    this.vOS('canPushUpdates',exp)
+    this.vOA('pushTypeAvailable',exp)
     return issues;
   }
 }
@@ -274,17 +274,17 @@ export class VerificationResultAttestation extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'VerificationResult.attestation' }
-    this.vOptS('who',expression)
-    this.vOptS('onBehalfOf',expression)
-    this.vOptS('communicationMethod',expression)
-    this.vOptS('date',expression)
-    this.vOptS('sourceIdentityCertificate',expression)
-    this.vOptS('proxyIdentityCertificate',expression)
-    this.vOptS('proxySignature',expression)
-    this.vOptS('sourceSignature',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'VerificationResult.attestation' }
+    this.vOS('who',exp)
+    this.vOS('onBehalfOf',exp)
+    this.vOS('communicationMethod',exp)
+    this.vOS('date',exp)
+    this.vOS('sourceIdentityCertificate',exp)
+    this.vOS('proxyIdentityCertificate',exp)
+    this.vOS('proxySignature',exp)
+    this.vOS('sourceSignature',exp)
     return issues;
   }
 }
@@ -347,12 +347,12 @@ export class VerificationResultValidator extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'VerificationResult.validator' }
-    this.vReqS('organization',expression)
-    this.vOptS('identityCertificate',expression)
-    this.vOptS('attestationSignature',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'VerificationResult.validator' }
+    this.vRS('organization',exp)
+    this.vOS('identityCertificate',exp)
+    this.vOS('attestationSignature',exp)
     return issues;
   }
 }
@@ -562,24 +562,24 @@ export class VerificationResult extends fhir.DomainResource {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'VerificationResult' }
-    this.vReqS('resourceType',expression)
-    this.vOptA('target',expression)
-    this.vOptA('targetLocation',expression)
-    this.vOptS('need',expression)
-    this.vReqSV('status',expression,'VerificationresultStatus',VerificationresultStatusVsValidation,'r')
-    this.vOptS('statusDate',expression)
-    this.vOptS('validationType',expression)
-    this.vOptA('validationProcess',expression)
-    this.vOptS('frequency',expression)
-    this.vOptS('lastPerformed',expression)
-    this.vOptS('nextScheduled',expression)
-    this.vOptS('failureAction',expression)
-    this.vOptA('primarySource',expression)
-    this.vOptS('attestation',expression)
-    this.vOptA('validator',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'VerificationResult' }
+    this.vRS('resourceType',exp)
+    this.vOA('target',exp)
+    this.vOA('targetLocation',exp)
+    this.vOS('need',exp)
+    this.vRSV('status',exp,'VerificationresultStatus',VerificationresultStatusVsValidation,'r')
+    this.vOS('statusDate',exp)
+    this.vOS('validationType',exp)
+    this.vOA('validationProcess',exp)
+    this.vOS('frequency',exp)
+    this.vOS('lastPerformed',exp)
+    this.vOS('nextScheduled',exp)
+    this.vOS('failureAction',exp)
+    this.vOA('primarySource',exp)
+    this.vOS('attestation',exp)
+    this.vOA('validator',exp)
     return issues;
   }
 }

@@ -7,7 +7,10 @@
  * Ability of the primary source to push updates/alerts
  */
 export const VerificationresultCanPushUpdatesVsValidation: readonly string[] = [
-  "no", "http://terminology.hl7.org/CodeSystem/can-push-updates|no", 
-  "undetermined", "http://terminology.hl7.org/CodeSystem/can-push-updates|undetermined", 
-  "yes", "http://terminology.hl7.org/CodeSystem/can-push-updates|yes", 
+  "http://terminology.hl7.org/CodeSystem/can-push-updates|no",
+  "http://terminology.hl7.org/CodeSystem/can-push-updates|undetermined",
+  "http://terminology.hl7.org/CodeSystem/can-push-updates|yes",
+  "no",
+  "undetermined",
+  "yes",
 ] as const;

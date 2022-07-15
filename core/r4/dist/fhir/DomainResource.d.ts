@@ -51,7 +51,7 @@ export declare class DomainResource extends fhir.Resource {
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(expression?: string): fhir.FtsIssue[];
+    doModelValidation(exp?: string): fhir.FtsIssue[];
     /**
      * Fluent-style function to add extensions
      * @param ext

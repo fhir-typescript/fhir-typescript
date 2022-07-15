@@ -147,19 +147,19 @@ export class PaymentReconciliationDetail extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'PaymentReconciliation.detail' }
-    this.vOptS('identifier',expression)
-    this.vOptS('predecessor',expression)
-    this.vReqS('type',expression)
-    this.vOptS('request',expression)
-    this.vOptS('submitter',expression)
-    this.vOptS('response',expression)
-    this.vOptS('date',expression)
-    this.vOptS('responsible',expression)
-    this.vOptS('payee',expression)
-    this.vOptS('amount',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'PaymentReconciliation.detail' }
+    this.vOS('identifier',exp)
+    this.vOS('predecessor',exp)
+    this.vRS('type',exp)
+    this.vOS('request',exp)
+    this.vOS('submitter',exp)
+    this.vOS('response',exp)
+    this.vOS('date',exp)
+    this.vOS('responsible',exp)
+    this.vOS('payee',exp)
+    this.vOS('amount',exp)
     return issues;
   }
 }
@@ -220,11 +220,11 @@ export class PaymentReconciliationProcessNote extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'PaymentReconciliation.processNote' }
-    this.vOptSV('type',expression,'NoteType',NoteTypeVsValidation,'r')
-    this.vOptS('text',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'PaymentReconciliation.processNote' }
+    this.vOSV('type',exp,'NoteType',NoteTypeVsValidation,'r')
+    this.vOS('text',exp)
     return issues;
   }
 }
@@ -442,25 +442,25 @@ export class PaymentReconciliation extends fhir.DomainResource {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'PaymentReconciliation' }
-    this.vReqS('resourceType',expression)
-    this.vOptA('identifier',expression)
-    this.vReqSV('status',expression,'FmStatus',FmStatusVsValidation,'r')
-    this.vOptS('period',expression)
-    this.vReqS('created',expression)
-    this.vOptS('paymentIssuer',expression)
-    this.vOptS('request',expression)
-    this.vOptS('requestor',expression)
-    this.vOptSV('outcome',expression,'RemittanceOutcome',RemittanceOutcomeVsValidation,'r')
-    this.vOptS('disposition',expression)
-    this.vReqS('paymentDate',expression)
-    this.vReqS('paymentAmount',expression)
-    this.vOptS('paymentIdentifier',expression)
-    this.vOptA('detail',expression)
-    this.vOptS('formCode',expression)
-    this.vOptA('processNote',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'PaymentReconciliation' }
+    this.vRS('resourceType',exp)
+    this.vOA('identifier',exp)
+    this.vRSV('status',exp,'FmStatus',FmStatusVsValidation,'r')
+    this.vOS('period',exp)
+    this.vRS('created',exp)
+    this.vOS('paymentIssuer',exp)
+    this.vOS('request',exp)
+    this.vOS('requestor',exp)
+    this.vOSV('outcome',exp,'RemittanceOutcome',RemittanceOutcomeVsValidation,'r')
+    this.vOS('disposition',exp)
+    this.vRS('paymentDate',exp)
+    this.vRS('paymentAmount',exp)
+    this.vOS('paymentIdentifier',exp)
+    this.vOA('detail',exp)
+    this.vOS('formCode',exp)
+    this.vOA('processNote',exp)
     return issues;
   }
 }

@@ -7,7 +7,10 @@
  * How the system supports versioning for a resource.
  */
 export const VersioningPolicyVsValidation: readonly string[] = [
-  "no-version", "http://hl7.org/fhir/versioning-policy|no-version", 
-  "versioned", "http://hl7.org/fhir/versioning-policy|versioned", 
-  "versioned-update", "http://hl7.org/fhir/versioning-policy|versioned-update", 
+  "http://hl7.org/fhir/versioning-policy|no-version",
+  "http://hl7.org/fhir/versioning-policy|versioned",
+  "http://hl7.org/fhir/versioning-policy|versioned-update",
+  "no-version",
+  "versioned",
+  "versioned-update",
 ] as const;

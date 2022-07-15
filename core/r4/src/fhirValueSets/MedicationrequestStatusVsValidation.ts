@@ -7,12 +7,20 @@
  * MedicationRequest Status Codes
  */
 export const MedicationrequestStatusVsValidation: readonly string[] = [
-  "active", "http://hl7.org/fhir/CodeSystem/medicationrequest-status|active", 
-  "cancelled", "http://hl7.org/fhir/CodeSystem/medicationrequest-status|cancelled", 
-  "completed", "http://hl7.org/fhir/CodeSystem/medicationrequest-status|completed", 
-  "draft", "http://hl7.org/fhir/CodeSystem/medicationrequest-status|draft", 
-  "entered-in-error", "http://hl7.org/fhir/CodeSystem/medicationrequest-status|entered-in-error", 
-  "on-hold", "http://hl7.org/fhir/CodeSystem/medicationrequest-status|on-hold", 
-  "stopped", "http://hl7.org/fhir/CodeSystem/medicationrequest-status|stopped", 
-  "unknown", "http://hl7.org/fhir/CodeSystem/medicationrequest-status|unknown", 
+  "active",
+  "cancelled",
+  "completed",
+  "draft",
+  "entered-in-error",
+  "http://hl7.org/fhir/CodeSystem/medicationrequest-status|active",
+  "http://hl7.org/fhir/CodeSystem/medicationrequest-status|cancelled",
+  "http://hl7.org/fhir/CodeSystem/medicationrequest-status|completed",
+  "http://hl7.org/fhir/CodeSystem/medicationrequest-status|draft",
+  "http://hl7.org/fhir/CodeSystem/medicationrequest-status|entered-in-error",
+  "http://hl7.org/fhir/CodeSystem/medicationrequest-status|on-hold",
+  "http://hl7.org/fhir/CodeSystem/medicationrequest-status|stopped",
+  "http://hl7.org/fhir/CodeSystem/medicationrequest-status|unknown",
+  "on-hold",
+  "stopped",
+  "unknown",
 ] as const;

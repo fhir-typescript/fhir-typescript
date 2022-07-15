@@ -7,7 +7,10 @@
  * Defines expectations around whether an action or action group is required.
  */
 export const ActionRequiredBehaviorVsValidation: readonly string[] = [
-  "could", "http://hl7.org/fhir/action-required-behavior|could", 
-  "must", "http://hl7.org/fhir/action-required-behavior|must", 
-  "must-unless-documented", "http://hl7.org/fhir/action-required-behavior|must-unless-documented", 
+  "could",
+  "http://hl7.org/fhir/action-required-behavior|could",
+  "http://hl7.org/fhir/action-required-behavior|must",
+  "http://hl7.org/fhir/action-required-behavior|must-unless-documented",
+  "must",
+  "must-unless-documented",
 ] as const;

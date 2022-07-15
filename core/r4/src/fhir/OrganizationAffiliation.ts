@@ -169,22 +169,22 @@ export class OrganizationAffiliation extends fhir.DomainResource {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'OrganizationAffiliation' }
-    this.vReqS('resourceType',expression)
-    this.vOptA('identifier',expression)
-    this.vOptS('active',expression)
-    this.vOptS('period',expression)
-    this.vOptS('organization',expression)
-    this.vOptS('participatingOrganization',expression)
-    this.vOptA('network',expression)
-    this.vOptA('code',expression)
-    this.vOptA('specialty',expression)
-    this.vOptA('location',expression)
-    this.vOptA('healthcareService',expression)
-    this.vOptA('telecom',expression)
-    this.vOptA('endpoint',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'OrganizationAffiliation' }
+    this.vRS('resourceType',exp)
+    this.vOA('identifier',exp)
+    this.vOS('active',exp)
+    this.vOS('period',exp)
+    this.vOS('organization',exp)
+    this.vOS('participatingOrganization',exp)
+    this.vOA('network',exp)
+    this.vOA('code',exp)
+    this.vOA('specialty',exp)
+    this.vOA('location',exp)
+    this.vOA('healthcareService',exp)
+    this.vOA('telecom',exp)
+    this.vOA('endpoint',exp)
     return issues;
   }
 }

@@ -7,5 +7,6 @@
  * This value set has asset availability codes.
  */
 export const AssetAvailabilityVsValidation: readonly string[] = [
-  "lease", "http://hl7.org/fhir/asset-availability|lease", 
+  "http://hl7.org/fhir/asset-availability|lease",
+  "lease",
 ] as const;

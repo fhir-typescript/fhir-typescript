@@ -7,5 +7,6 @@
  * Common Tag Codes defined by FHIR project
  */
 export const CommonTagsVsValidation: readonly string[] = [
-  "actionable", "http://terminology.hl7.org/CodeSystem/common-tags|actionable", 
+  "actionable",
+  "http://terminology.hl7.org/CodeSystem/common-tags|actionable",
 ] as const;

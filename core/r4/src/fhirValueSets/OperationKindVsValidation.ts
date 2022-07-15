@@ -7,6 +7,8 @@
  * Whether an operation is a normal operation or a query.
  */
 export const OperationKindVsValidation: readonly string[] = [
-  "operation", "http://hl7.org/fhir/operation-kind|operation", 
-  "query", "http://hl7.org/fhir/operation-kind|query", 
+  "http://hl7.org/fhir/operation-kind|operation",
+  "http://hl7.org/fhir/operation-kind|query",
+  "operation",
+  "query",
 ] as const;

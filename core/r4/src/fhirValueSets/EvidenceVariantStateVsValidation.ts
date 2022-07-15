@@ -7,7 +7,10 @@
  * Used for results by exposure in variant states such as low-risk, medium-risk and high-risk states.
  */
 export const EvidenceVariantStateVsValidation: readonly string[] = [
-  "high-risk", "http://terminology.hl7.org/CodeSystem/evidence-variant-state|high-risk", 
-  "low-risk", "http://terminology.hl7.org/CodeSystem/evidence-variant-state|low-risk", 
-  "medium-risk", "http://terminology.hl7.org/CodeSystem/evidence-variant-state|medium-risk", 
+  "high-risk",
+  "http://terminology.hl7.org/CodeSystem/evidence-variant-state|high-risk",
+  "http://terminology.hl7.org/CodeSystem/evidence-variant-state|low-risk",
+  "http://terminology.hl7.org/CodeSystem/evidence-variant-state|medium-risk",
+  "low-risk",
+  "medium-risk",
 ] as const;

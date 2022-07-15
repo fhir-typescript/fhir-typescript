@@ -7,8 +7,12 @@
  * The clinical priority of a diagnostic order.
  */
 export const RequestPriorityVsValidation: readonly string[] = [
-  "asap", "http://hl7.org/fhir/request-priority|asap", 
-  "routine", "http://hl7.org/fhir/request-priority|routine", 
-  "stat", "http://hl7.org/fhir/request-priority|stat", 
-  "urgent", "http://hl7.org/fhir/request-priority|urgent", 
+  "asap",
+  "http://hl7.org/fhir/request-priority|asap",
+  "http://hl7.org/fhir/request-priority|routine",
+  "http://hl7.org/fhir/request-priority|stat",
+  "http://hl7.org/fhir/request-priority|urgent",
+  "routine",
+  "stat",
+  "urgent",
 ] as const;

@@ -7,6 +7,8 @@
  * Identification of the underlying physiological mechanism for a Reaction Risk.
  */
 export const AllergyIntoleranceTypeVsValidation: readonly string[] = [
-  "allergy", "http://hl7.org/fhir/allergy-intolerance-type|allergy", 
-  "intolerance", "http://hl7.org/fhir/allergy-intolerance-type|intolerance", 
+  "allergy",
+  "http://hl7.org/fhir/allergy-intolerance-type|allergy",
+  "http://hl7.org/fhir/allergy-intolerance-type|intolerance",
+  "intolerance",
 ] as const;

@@ -7,7 +7,10 @@
  * The kind of response to a message.
  */
 export const ResponseVsValidation: readonly string[] = [
-  "fatal-error", "http://hl7.org/fhir/response-code|fatal-error", 
-  "ok", "http://hl7.org/fhir/response-code|ok", 
-  "transient-error", "http://hl7.org/fhir/response-code|transient-error", 
+  "fatal-error",
+  "http://hl7.org/fhir/response-code|fatal-error",
+  "http://hl7.org/fhir/response-code|ok",
+  "http://hl7.org/fhir/response-code|transient-error",
+  "ok",
+  "transient-error",
 ] as const;

@@ -7,6 +7,8 @@
  * This value set includes example Payment Type codes.
  */
 export const ExPaymenttypeVsValidation: readonly string[] = [
-  "complete", "http://terminology.hl7.org/CodeSystem/ex-paymenttype|complete", 
-  "partial", "http://terminology.hl7.org/CodeSystem/ex-paymenttype|partial", 
+  "complete",
+  "http://terminology.hl7.org/CodeSystem/ex-paymenttype|complete",
+  "http://terminology.hl7.org/CodeSystem/ex-paymenttype|partial",
+  "partial",
 ] as const;

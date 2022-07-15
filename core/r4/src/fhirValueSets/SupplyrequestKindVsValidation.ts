@@ -7,6 +7,8 @@
  * This value sets refers to a Category of supply.
  */
 export const SupplyrequestKindVsValidation: readonly string[] = [
-  "central", "http://terminology.hl7.org/CodeSystem/supply-kind|central", 
-  "nonstock", "http://terminology.hl7.org/CodeSystem/supply-kind|nonstock", 
+  "central",
+  "http://terminology.hl7.org/CodeSystem/supply-kind|central",
+  "http://terminology.hl7.org/CodeSystem/supply-kind|nonstock",
+  "nonstock",
 ] as const;

@@ -88,10 +88,10 @@ export class SpecimenDefinitionTypeTestedContainerAdditive extends fhir.Backbone
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'SpecimenDefinition.typeTested.container.additive' }
-    this.vReqS('additive',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'SpecimenDefinition.typeTested.container.additive' }
+    this.vRS('additive',exp)
     return issues;
   }
 }
@@ -221,17 +221,17 @@ export class SpecimenDefinitionTypeTestedContainer extends fhir.BackboneElement 
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'SpecimenDefinition.typeTested.container' }
-    this.vOptS('material',expression)
-    this.vOptS('type',expression)
-    this.vOptS('cap',expression)
-    this.vOptS('description',expression)
-    this.vOptS('capacity',expression)
-    this.vOptS('minimumVolume',expression)
-    this.vOptA('additive',expression)
-    this.vOptS('preparation',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'SpecimenDefinition.typeTested.container' }
+    this.vOS('material',exp)
+    this.vOS('type',exp)
+    this.vOS('cap',exp)
+    this.vOS('description',exp)
+    this.vOS('capacity',exp)
+    this.vOS('minimumVolume',exp)
+    this.vOA('additive',exp)
+    this.vOS('preparation',exp)
     return issues;
   }
 }
@@ -302,13 +302,13 @@ export class SpecimenDefinitionTypeTestedHandling extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'SpecimenDefinition.typeTested.handling' }
-    this.vOptS('temperatureQualifier',expression)
-    this.vOptS('temperatureRange',expression)
-    this.vOptS('maxDuration',expression)
-    this.vOptS('instruction',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'SpecimenDefinition.typeTested.handling' }
+    this.vOS('temperatureQualifier',exp)
+    this.vOS('temperatureRange',exp)
+    this.vOS('maxDuration',exp)
+    this.vOS('instruction',exp)
     return issues;
   }
 }
@@ -434,17 +434,17 @@ export class SpecimenDefinitionTypeTested extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'SpecimenDefinition.typeTested' }
-    this.vOptS('isDerived',expression)
-    this.vOptS('type',expression)
-    this.vReqSV('preference',expression,'SpecimenContainedPreference',SpecimenContainedPreferenceVsValidation,'r')
-    this.vOptS('container',expression)
-    this.vOptS('requirement',expression)
-    this.vOptS('retentionTime',expression)
-    this.vOptA('rejectionCriterion',expression)
-    this.vOptA('handling',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'SpecimenDefinition.typeTested' }
+    this.vOS('isDerived',exp)
+    this.vOS('type',exp)
+    this.vRSV('preference',exp,'SpecimenContainedPreference',SpecimenContainedPreferenceVsValidation,'r')
+    this.vOS('container',exp)
+    this.vOS('requirement',exp)
+    this.vOS('retentionTime',exp)
+    this.vOA('rejectionCriterion',exp)
+    this.vOA('handling',exp)
     return issues;
   }
 }
@@ -545,16 +545,16 @@ export class SpecimenDefinition extends fhir.DomainResource {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'SpecimenDefinition' }
-    this.vReqS('resourceType',expression)
-    this.vOptS('identifier',expression)
-    this.vOptS('typeCollected',expression)
-    this.vOptA('patientPreparation',expression)
-    this.vOptS('timeAspect',expression)
-    this.vOptA('collection',expression)
-    this.vOptA('typeTested',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'SpecimenDefinition' }
+    this.vRS('resourceType',exp)
+    this.vOS('identifier',exp)
+    this.vOS('typeCollected',exp)
+    this.vOA('patientPreparation',exp)
+    this.vOS('timeAspect',exp)
+    this.vOA('collection',exp)
+    this.vOA('typeTested',exp)
     return issues;
   }
 }

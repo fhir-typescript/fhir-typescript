@@ -7,8 +7,12 @@
  * How the issue affects the success of the action.
  */
 export const IssueSeverityVsValidation: readonly string[] = [
-  "error", "http://hl7.org/fhir/issue-severity|error", 
-  "fatal", "http://hl7.org/fhir/issue-severity|fatal", 
-  "information", "http://hl7.org/fhir/issue-severity|information", 
-  "warning", "http://hl7.org/fhir/issue-severity|warning", 
+  "error",
+  "fatal",
+  "http://hl7.org/fhir/issue-severity|error",
+  "http://hl7.org/fhir/issue-severity|fatal",
+  "http://hl7.org/fhir/issue-severity|information",
+  "http://hl7.org/fhir/issue-severity|warning",
+  "information",
+  "warning",
 ] as const;

@@ -7,7 +7,10 @@
  * The protocol used for message transport.
  */
 export const MessageTransportVsValidation: readonly string[] = [
-  "ftp", "http://terminology.hl7.org/CodeSystem/message-transport|ftp", 
-  "http", "http://terminology.hl7.org/CodeSystem/message-transport|http", 
-  "mllp", "http://terminology.hl7.org/CodeSystem/message-transport|mllp", 
+  "ftp",
+  "http",
+  "http://terminology.hl7.org/CodeSystem/message-transport|ftp",
+  "http://terminology.hl7.org/CodeSystem/message-transport|http",
+  "http://terminology.hl7.org/CodeSystem/message-transport|mllp",
+  "mllp",
 ] as const;

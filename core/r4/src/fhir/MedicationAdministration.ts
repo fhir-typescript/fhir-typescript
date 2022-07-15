@@ -79,11 +79,11 @@ export class MedicationAdministrationPerformer extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'MedicationAdministration.performer' }
-    this.vOptS('function',expression)
-    this.vReqS('actor',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'MedicationAdministration.performer' }
+    this.vOS('function',exp)
+    this.vRS('actor',exp)
     return issues;
   }
 }
@@ -188,15 +188,15 @@ export class MedicationAdministrationDosage extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'MedicationAdministration.dosage' }
-    this.vOptS('text',expression)
-    this.vOptS('site',expression)
-    this.vOptS('route',expression)
-    this.vOptS('method',expression)
-    this.vOptS('dose',expression)
-    this.vOptS('rate',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'MedicationAdministration.dosage' }
+    this.vOS('text',exp)
+    this.vOS('site',exp)
+    this.vOS('route',exp)
+    this.vOS('method',exp)
+    this.vOS('dose',exp)
+    this.vOS('rate',exp)
     return issues;
   }
 }
@@ -464,29 +464,29 @@ export class MedicationAdministration extends fhir.DomainResource {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'MedicationAdministration' }
-    this.vReqS('resourceType',expression)
-    this.vOptA('identifier',expression)
-    this.vOptA('instantiates',expression)
-    this.vOptA('partOf',expression)
-    this.vReqSV('status',expression,'MedicationAdminStatus',MedicationAdminStatusVsValidation,'r')
-    this.vOptA('statusReason',expression)
-    this.vOptS('category',expression)
-    this.vReqS('medication',expression)
-    this.vReqS('subject',expression)
-    this.vOptS('context',expression)
-    this.vOptA('supportingInformation',expression)
-    this.vReqS('effective',expression)
-    this.vOptA('performer',expression)
-    this.vOptA('reasonCode',expression)
-    this.vOptA('reasonReference',expression)
-    this.vOptS('request',expression)
-    this.vOptA('device',expression)
-    this.vOptA('note',expression)
-    this.vOptS('dosage',expression)
-    this.vOptA('eventHistory',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'MedicationAdministration' }
+    this.vRS('resourceType',exp)
+    this.vOA('identifier',exp)
+    this.vOA('instantiates',exp)
+    this.vOA('partOf',exp)
+    this.vRSV('status',exp,'MedicationAdminStatus',MedicationAdminStatusVsValidation,'r')
+    this.vOA('statusReason',exp)
+    this.vOS('category',exp)
+    this.vRS('medication',exp)
+    this.vRS('subject',exp)
+    this.vOS('context',exp)
+    this.vOA('supportingInformation',exp)
+    this.vRS('effective',exp)
+    this.vOA('performer',exp)
+    this.vOA('reasonCode',exp)
+    this.vOA('reasonReference',exp)
+    this.vOS('request',exp)
+    this.vOA('device',exp)
+    this.vOA('note',exp)
+    this.vOS('dosage',exp)
+    this.vOA('eventHistory',exp)
     return issues;
   }
 }

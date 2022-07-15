@@ -7,11 +7,18 @@
  * The days of the week.
  */
 export const DaysOfWeekVsValidation: readonly string[] = [
-  "fri", "http://hl7.org/fhir/days-of-week|fri", 
-  "mon", "http://hl7.org/fhir/days-of-week|mon", 
-  "sat", "http://hl7.org/fhir/days-of-week|sat", 
-  "sun", "http://hl7.org/fhir/days-of-week|sun", 
-  "thu", "http://hl7.org/fhir/days-of-week|thu", 
-  "tue", "http://hl7.org/fhir/days-of-week|tue", 
-  "wed", "http://hl7.org/fhir/days-of-week|wed", 
+  "fri",
+  "http://hl7.org/fhir/days-of-week|fri",
+  "http://hl7.org/fhir/days-of-week|mon",
+  "http://hl7.org/fhir/days-of-week|sat",
+  "http://hl7.org/fhir/days-of-week|sun",
+  "http://hl7.org/fhir/days-of-week|thu",
+  "http://hl7.org/fhir/days-of-week|tue",
+  "http://hl7.org/fhir/days-of-week|wed",
+  "mon",
+  "sat",
+  "sun",
+  "thu",
+  "tue",
+  "wed",
 ] as const;

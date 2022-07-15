@@ -55,11 +55,11 @@ export class CodeableConcept extends fhir.FhirElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'CodeableConcept' }
-    this.vOptA('coding',expression)
-    this.vOptS('text',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'CodeableConcept' }
+    this.vOA('coding',exp)
+    this.vOS('text',exp)
     return issues;
   }
   /**
@@ -194,4 +194,27 @@ export class CodeableConcept extends fhir.FhirElement {
 
     return false;
   }
-}
+
+  /**
+   * Test whether this CodeableConcept contains a specific coding.
+   * @param system System to search for, empty string will match any system.
+   * @param code Code to search for, empty string will match any code.
+   * @returns True if this concept contains the specified coding, false if it does not.
+   */
+  public hasCodingFromValidationHash(vsValidation:Readonly<number[]>):boolean {
+    if (this.coding.length === 0) {
+      return false;
+    }
+
+    for (const coding of this.coding) {
+      const sc:number = fhir.FhirBase._hash52_1a_fast((coding.system?.value ?? '') + '|' + (coding.code?.value ?? ''));
+      const c:number = fhir.FhirBase._hash52_1a_fast(coding.code?.value ?? '');
+
+      if (vsValidation.find((v) => (v === sc) || (v === c))) {
+        return true;
+      }
+    }
+
+    return false;
+  }
+  }

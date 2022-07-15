@@ -7,6 +7,8 @@
  * The type of direction to use for assertion.
  */
 export const AssertDirectionVsValidation: readonly string[] = [
-  "request", "http://hl7.org/fhir/assert-direction-codes|request", 
-  "response", "http://hl7.org/fhir/assert-direction-codes|response", 
+  "http://hl7.org/fhir/assert-direction-codes|request",
+  "http://hl7.org/fhir/assert-direction-codes|response",
+  "request",
+  "response",
 ] as const;

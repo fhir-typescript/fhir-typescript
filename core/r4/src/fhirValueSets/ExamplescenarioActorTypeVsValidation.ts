@@ -7,6 +7,8 @@
  * The type of actor - system or human.
  */
 export const ExamplescenarioActorTypeVsValidation: readonly string[] = [
-  "entity", "http://hl7.org/fhir/examplescenario-actor-type|entity", 
-  "person", "http://hl7.org/fhir/examplescenario-actor-type|person", 
+  "entity",
+  "http://hl7.org/fhir/examplescenario-actor-type|entity",
+  "http://hl7.org/fhir/examplescenario-actor-type|person",
+  "person",
 ] as const;

@@ -7,9 +7,14 @@
  * Lifecycle status of the questionnaire response.
  */
 export const QuestionnaireAnswersStatusVsValidation: readonly string[] = [
-  "amended", "http://hl7.org/fhir/questionnaire-answers-status|amended", 
-  "completed", "http://hl7.org/fhir/questionnaire-answers-status|completed", 
-  "entered-in-error", "http://hl7.org/fhir/questionnaire-answers-status|entered-in-error", 
-  "in-progress", "http://hl7.org/fhir/questionnaire-answers-status|in-progress", 
-  "stopped", "http://hl7.org/fhir/questionnaire-answers-status|stopped", 
+  "amended",
+  "completed",
+  "entered-in-error",
+  "http://hl7.org/fhir/questionnaire-answers-status|amended",
+  "http://hl7.org/fhir/questionnaire-answers-status|completed",
+  "http://hl7.org/fhir/questionnaire-answers-status|entered-in-error",
+  "http://hl7.org/fhir/questionnaire-answers-status|in-progress",
+  "http://hl7.org/fhir/questionnaire-answers-status|stopped",
+  "in-progress",
+  "stopped",
 ] as const;

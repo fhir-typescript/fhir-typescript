@@ -56,12 +56,12 @@ export class SubstanceReferenceInformationGene extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'SubstanceReferenceInformation.gene' }
-    this.vOptS('geneSequenceOrigin',expression)
-    this.vOptS('gene',expression)
-    this.vOptA('source',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'SubstanceReferenceInformation.gene' }
+    this.vOS('geneSequenceOrigin',exp)
+    this.vOS('gene',exp)
+    this.vOA('source',exp)
     return issues;
   }
 }
@@ -116,12 +116,12 @@ export class SubstanceReferenceInformationGeneElement extends fhir.BackboneEleme
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'SubstanceReferenceInformation.geneElement' }
-    this.vOptS('type',expression)
-    this.vOptS('element',expression)
-    this.vOptA('source',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'SubstanceReferenceInformation.geneElement' }
+    this.vOS('type',exp)
+    this.vOS('element',exp)
+    this.vOA('source',exp)
     return issues;
   }
 }
@@ -186,13 +186,13 @@ export class SubstanceReferenceInformationClassification extends fhir.BackboneEl
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'SubstanceReferenceInformation.classification' }
-    this.vOptS('domain',expression)
-    this.vOptS('classification',expression)
-    this.vOptA('subtype',expression)
-    this.vOptA('source',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'SubstanceReferenceInformation.classification' }
+    this.vOS('domain',exp)
+    this.vOS('classification',exp)
+    this.vOA('subtype',exp)
+    this.vOA('source',exp)
     return issues;
   }
 }
@@ -311,17 +311,17 @@ export class SubstanceReferenceInformationTarget extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'SubstanceReferenceInformation.target' }
-    this.vOptS('target',expression)
-    this.vOptS('type',expression)
-    this.vOptS('interaction',expression)
-    this.vOptS('organism',expression)
-    this.vOptS('organismType',expression)
-    this.vOptS('amount',expression)
-    this.vOptS('amountType',expression)
-    this.vOptA('source',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'SubstanceReferenceInformation.target' }
+    this.vOS('target',exp)
+    this.vOS('type',exp)
+    this.vOS('interaction',exp)
+    this.vOS('organism',exp)
+    this.vOS('organismType',exp)
+    this.vOS('amount',exp)
+    this.vOS('amountType',exp)
+    this.vOA('source',exp)
     return issues;
   }
 }
@@ -414,15 +414,15 @@ export class SubstanceReferenceInformation extends fhir.DomainResource {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'SubstanceReferenceInformation' }
-    this.vReqS('resourceType',expression)
-    this.vOptS('comment',expression)
-    this.vOptA('gene',expression)
-    this.vOptA('geneElement',expression)
-    this.vOptA('classification',expression)
-    this.vOptA('target',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'SubstanceReferenceInformation' }
+    this.vRS('resourceType',exp)
+    this.vOS('comment',exp)
+    this.vOA('gene',exp)
+    this.vOA('geneElement',exp)
+    this.vOA('classification',exp)
+    this.vOA('target',exp)
     return issues;
   }
 }

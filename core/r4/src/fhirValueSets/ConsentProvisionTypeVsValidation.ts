@@ -7,6 +7,8 @@
  * How a rule statement is applied, such as adding additional consent or removing consent.
  */
 export const ConsentProvisionTypeVsValidation: readonly string[] = [
-  "deny", "http://hl7.org/fhir/consent-provision-type|deny", 
-  "permit", "http://hl7.org/fhir/consent-provision-type|permit", 
+  "deny",
+  "http://hl7.org/fhir/consent-provision-type|deny",
+  "http://hl7.org/fhir/consent-provision-type|permit",
+  "permit",
 ] as const;

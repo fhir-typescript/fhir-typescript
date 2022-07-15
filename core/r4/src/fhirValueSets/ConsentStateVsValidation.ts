@@ -7,10 +7,16 @@
  * Indicates the state of the consent.
  */
 export const ConsentStateVsValidation: readonly string[] = [
-  "active", "http://hl7.org/fhir/consent-state-codes|active", 
-  "draft", "http://hl7.org/fhir/consent-state-codes|draft", 
-  "entered-in-error", "http://hl7.org/fhir/consent-state-codes|entered-in-error", 
-  "inactive", "http://hl7.org/fhir/consent-state-codes|inactive", 
-  "proposed", "http://hl7.org/fhir/consent-state-codes|proposed", 
-  "rejected", "http://hl7.org/fhir/consent-state-codes|rejected", 
+  "active",
+  "draft",
+  "entered-in-error",
+  "http://hl7.org/fhir/consent-state-codes|active",
+  "http://hl7.org/fhir/consent-state-codes|draft",
+  "http://hl7.org/fhir/consent-state-codes|entered-in-error",
+  "http://hl7.org/fhir/consent-state-codes|inactive",
+  "http://hl7.org/fhir/consent-state-codes|proposed",
+  "http://hl7.org/fhir/consent-state-codes|rejected",
+  "inactive",
+  "proposed",
+  "rejected",
 ] as const;

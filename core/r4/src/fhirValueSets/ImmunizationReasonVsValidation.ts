@@ -7,6 +7,8 @@
  * The value set to instantiate this attribute should be drawn from a terminologically robust code system that consists of or contains concepts to support describing the reason why a dose of vaccine was administered. This value set is provided as a suggestive example.
  */
 export const ImmunizationReasonVsValidation: readonly string[] = [
-  "281657000", "http://snomed.info/sct|281657000", 
-  "429060002", "http://snomed.info/sct|429060002", 
+  "281657000",
+  "429060002",
+  "http://snomed.info/sct|281657000",
+  "http://snomed.info/sct|429060002",
 ] as const;

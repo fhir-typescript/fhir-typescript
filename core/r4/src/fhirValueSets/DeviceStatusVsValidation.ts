@@ -7,8 +7,12 @@
  * The availability status of the device.
  */
 export const DeviceStatusVsValidation: readonly string[] = [
-  "active", "http://hl7.org/fhir/device-status|active", 
-  "entered-in-error", "http://hl7.org/fhir/device-status|entered-in-error", 
-  "inactive", "http://hl7.org/fhir/device-status|inactive", 
-  "unknown", "http://hl7.org/fhir/device-status|unknown", 
+  "active",
+  "entered-in-error",
+  "http://hl7.org/fhir/device-status|active",
+  "http://hl7.org/fhir/device-status|entered-in-error",
+  "http://hl7.org/fhir/device-status|inactive",
+  "http://hl7.org/fhir/device-status|unknown",
+  "inactive",
+  "unknown",
 ] as const;

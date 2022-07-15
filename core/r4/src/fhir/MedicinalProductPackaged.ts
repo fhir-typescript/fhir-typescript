@@ -47,11 +47,11 @@ export class MedicinalProductPackagedBatchIdentifier extends fhir.BackboneElemen
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'MedicinalProductPackaged.batchIdentifier' }
-    this.vReqS('outerPackaging',expression)
-    this.vOptS('immediatePackaging',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'MedicinalProductPackaged.batchIdentifier' }
+    this.vRS('outerPackaging',exp)
+    this.vOS('immediatePackaging',exp)
     return issues;
   }
 }
@@ -197,21 +197,21 @@ export class MedicinalProductPackagedPackageItem extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'MedicinalProductPackaged.packageItem' }
-    this.vOptA('identifier',expression)
-    this.vReqS('type',expression)
-    this.vReqS('quantity',expression)
-    this.vOptA('material',expression)
-    this.vOptA('alternateMaterial',expression)
-    this.vOptA('device',expression)
-    this.vOptA('manufacturedItem',expression)
-    this.vOptA('packageItem',expression)
-    this.vOptS('physicalCharacteristics',expression)
-    this.vOptA('otherCharacteristics',expression)
-    this.vOptA('shelfLifeStorage',expression)
-    this.vOptA('manufacturer',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'MedicinalProductPackaged.packageItem' }
+    this.vOA('identifier',exp)
+    this.vRS('type',exp)
+    this.vRS('quantity',exp)
+    this.vOA('material',exp)
+    this.vOA('alternateMaterial',exp)
+    this.vOA('device',exp)
+    this.vOA('manufacturedItem',exp)
+    this.vOA('packageItem',exp)
+    this.vOS('physicalCharacteristics',exp)
+    this.vOA('otherCharacteristics',exp)
+    this.vOA('shelfLifeStorage',exp)
+    this.vOA('manufacturer',exp)
     return issues;
   }
 }
@@ -342,19 +342,19 @@ export class MedicinalProductPackaged extends fhir.DomainResource {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'MedicinalProductPackaged' }
-    this.vReqS('resourceType',expression)
-    this.vOptA('identifier',expression)
-    this.vOptA('subject',expression)
-    this.vOptS('description',expression)
-    this.vOptS('legalStatusOfSupply',expression)
-    this.vOptA('marketingStatus',expression)
-    this.vOptS('marketingAuthorization',expression)
-    this.vOptA('manufacturer',expression)
-    this.vOptA('batchIdentifier',expression)
-    this.vReqA('packageItem',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'MedicinalProductPackaged' }
+    this.vRS('resourceType',exp)
+    this.vOA('identifier',exp)
+    this.vOA('subject',exp)
+    this.vOS('description',exp)
+    this.vOS('legalStatusOfSupply',exp)
+    this.vOA('marketingStatus',exp)
+    this.vOS('marketingAuthorization',exp)
+    this.vOA('manufacturer',exp)
+    this.vOA('batchIdentifier',exp)
+    this.vRA('packageItem',exp)
     return issues;
   }
 }

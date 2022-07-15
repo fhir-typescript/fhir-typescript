@@ -7,9 +7,14 @@
  * Codes representing the likelihood of a particular outcome in a risk assessment.
  */
 export const RiskProbabilityVsValidation: readonly string[] = [
-  "certain", "http://terminology.hl7.org/CodeSystem/risk-probability|certain", 
-  "high", "http://terminology.hl7.org/CodeSystem/risk-probability|high", 
-  "low", "http://terminology.hl7.org/CodeSystem/risk-probability|low", 
-  "moderate", "http://terminology.hl7.org/CodeSystem/risk-probability|moderate", 
-  "negligible", "http://terminology.hl7.org/CodeSystem/risk-probability|negligible", 
+  "certain",
+  "high",
+  "http://terminology.hl7.org/CodeSystem/risk-probability|certain",
+  "http://terminology.hl7.org/CodeSystem/risk-probability|high",
+  "http://terminology.hl7.org/CodeSystem/risk-probability|low",
+  "http://terminology.hl7.org/CodeSystem/risk-probability|moderate",
+  "http://terminology.hl7.org/CodeSystem/risk-probability|negligible",
+  "low",
+  "moderate",
+  "negligible",
 ] as const;

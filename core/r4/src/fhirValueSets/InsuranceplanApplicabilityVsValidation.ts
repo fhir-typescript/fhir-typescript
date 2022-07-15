@@ -7,7 +7,10 @@
  * Whether the cost applies to in-network or out-of-network providers.
  */
 export const InsuranceplanApplicabilityVsValidation: readonly string[] = [
-  "in-network", "http://terminology.hl7.org/CodeSystem/applicability|in-network", 
-  "other", "http://terminology.hl7.org/CodeSystem/applicability|other", 
-  "out-of-network", "http://terminology.hl7.org/CodeSystem/applicability|out-of-network", 
+  "http://terminology.hl7.org/CodeSystem/applicability|in-network",
+  "http://terminology.hl7.org/CodeSystem/applicability|other",
+  "http://terminology.hl7.org/CodeSystem/applicability|out-of-network",
+  "in-network",
+  "other",
+  "out-of-network",
 ] as const;

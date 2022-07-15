@@ -130,13 +130,13 @@ export class StructureMapStructure extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'StructureMap.structure' }
-    this.vReqS('url',expression)
-    this.vReqSV('mode',expression,'MapModelMode',MapModelModeVsValidation,'r')
-    this.vOptS('alias',expression)
-    this.vOptS('documentation',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'StructureMap.structure' }
+    this.vRS('url',exp)
+    this.vRSV('mode',exp,'MapModelMode',MapModelModeVsValidation,'r')
+    this.vOS('alias',exp)
+    this.vOS('documentation',exp)
     return issues;
   }
 }
@@ -233,13 +233,13 @@ export class StructureMapGroupInput extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'StructureMap.group.input' }
-    this.vReqS('name',expression)
-    this.vOptS('type',expression)
-    this.vReqSV('mode',expression,'MapInputMode',MapInputModeVsValidation,'r')
-    this.vOptS('documentation',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'StructureMap.group.input' }
+    this.vRS('name',exp)
+    this.vOS('type',exp)
+    this.vRSV('mode',exp,'MapInputMode',MapInputModeVsValidation,'r')
+    this.vOS('documentation',exp)
     return issues;
   }
 }
@@ -700,20 +700,20 @@ export class StructureMapGroupRuleSource extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'StructureMap.group.rule.source' }
-    this.vReqS('context',expression)
-    this.vOptS('min',expression)
-    this.vOptS('max',expression)
-    this.vOptS('type',expression)
-    this.vOptS('defaultValue',expression)
-    this.vOptS('element',expression)
-    this.vOptSV('listMode',expression,'MapSourceListMode',MapSourceListModeVsValidation,'r')
-    this.vOptS('variable',expression)
-    this.vOptS('condition',expression)
-    this.vOptS('check',expression)
-    this.vOptS('logMessage',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'StructureMap.group.rule.source' }
+    this.vRS('context',exp)
+    this.vOS('min',exp)
+    this.vOS('max',exp)
+    this.vOS('type',exp)
+    this.vOS('defaultValue',exp)
+    this.vOS('element',exp)
+    this.vOSV('listMode',exp,'MapSourceListMode',MapSourceListModeVsValidation,'r')
+    this.vOS('variable',exp)
+    this.vOS('condition',exp)
+    this.vOS('check',exp)
+    this.vOS('logMessage',exp)
     return issues;
   }
 }
@@ -779,10 +779,10 @@ export class StructureMapGroupRuleTargetParameter extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'StructureMap.group.rule.target.parameter' }
-    this.vReqS('value',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'StructureMap.group.rule.target.parameter' }
+    this.vRS('value',exp)
     return issues;
   }
 }
@@ -941,17 +941,17 @@ export class StructureMapGroupRuleTarget extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'StructureMap.group.rule.target' }
-    this.vOptS('context',expression)
-    this.vOptSV('contextType',expression,'MapContextType',MapContextTypeVsValidation,'r')
-    this.vOptS('element',expression)
-    this.vOptS('variable',expression)
-    this.vOptAV('listMode',expression,'MapTargetListMode',MapTargetListModeVsValidation,'r')
-    this.vOptS('listRuleId',expression)
-    this.vOptSV('transform',expression,'MapTransform',MapTransformVsValidation,'r')
-    this.vOptA('parameter',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'StructureMap.group.rule.target' }
+    this.vOS('context',exp)
+    this.vOSV('contextType',exp,'MapContextType',MapContextTypeVsValidation,'r')
+    this.vOS('element',exp)
+    this.vOS('variable',exp)
+    this.vOAV('listMode',exp,'MapTargetListMode',MapTargetListModeVsValidation,'r')
+    this.vOS('listRuleId',exp)
+    this.vOSV('transform',exp,'MapTransform',MapTransformVsValidation,'r')
+    this.vOA('parameter',exp)
     return issues;
   }
 }
@@ -1016,11 +1016,11 @@ export class StructureMapGroupRuleDependent extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'StructureMap.group.rule.dependent' }
-    this.vReqS('name',expression)
-    this.vReqA('variable',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'StructureMap.group.rule.dependent' }
+    this.vRS('name',exp)
+    this.vRA('variable',exp)
     return issues;
   }
 }
@@ -1122,15 +1122,15 @@ export class StructureMapGroupRule extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'StructureMap.group.rule' }
-    this.vReqS('name',expression)
-    this.vReqA('source',expression)
-    this.vOptA('target',expression)
-    this.vOptA('rule',expression)
-    this.vOptA('dependent',expression)
-    this.vOptS('documentation',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'StructureMap.group.rule' }
+    this.vRS('name',exp)
+    this.vRA('source',exp)
+    this.vOA('target',exp)
+    this.vOA('rule',exp)
+    this.vOA('dependent',exp)
+    this.vOS('documentation',exp)
     return issues;
   }
 }
@@ -1247,15 +1247,15 @@ export class StructureMapGroup extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'StructureMap.group' }
-    this.vReqS('name',expression)
-    this.vOptS('extends',expression)
-    this.vReqSV('typeMode',expression,'MapGroupTypeMode',MapGroupTypeModeVsValidation,'r')
-    this.vOptS('documentation',expression)
-    this.vReqA('input',expression)
-    this.vReqA('rule',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'StructureMap.group' }
+    this.vRS('name',exp)
+    this.vOS('extends',exp)
+    this.vRSV('typeMode',exp,'MapGroupTypeMode',MapGroupTypeModeVsValidation,'r')
+    this.vOS('documentation',exp)
+    this.vRA('input',exp)
+    this.vRA('rule',exp)
     return issues;
   }
 }
@@ -1565,28 +1565,28 @@ export class StructureMap extends fhir.DomainResource {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'StructureMap' }
-    this.vReqS('resourceType',expression)
-    this.vReqS('url',expression)
-    this.vOptA('identifier',expression)
-    this.vOptS('version',expression)
-    this.vReqS('name',expression)
-    this.vOptS('title',expression)
-    this.vReqSV('status',expression,'PublicationStatus',PublicationStatusVsValidation,'r')
-    this.vOptS('experimental',expression)
-    this.vOptS('date',expression)
-    this.vOptS('publisher',expression)
-    this.vOptA('contact',expression)
-    this.vOptS('description',expression)
-    this.vOptA('useContext',expression)
-    this.vOptA('jurisdiction',expression)
-    this.vOptS('purpose',expression)
-    this.vOptS('copyright',expression)
-    this.vOptA('structure',expression)
-    this.vOptA('import',expression)
-    this.vReqA('group',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'StructureMap' }
+    this.vRS('resourceType',exp)
+    this.vRS('url',exp)
+    this.vOA('identifier',exp)
+    this.vOS('version',exp)
+    this.vRS('name',exp)
+    this.vOS('title',exp)
+    this.vRSV('status',exp,'PublicationStatus',PublicationStatusVsValidation,'r')
+    this.vOS('experimental',exp)
+    this.vOS('date',exp)
+    this.vOS('publisher',exp)
+    this.vOA('contact',exp)
+    this.vOS('description',exp)
+    this.vOA('useContext',exp)
+    this.vOA('jurisdiction',exp)
+    this.vOS('purpose',exp)
+    this.vOS('copyright',exp)
+    this.vOA('structure',exp)
+    this.vOA('import',exp)
+    this.vRA('group',exp)
     return issues;
   }
 }

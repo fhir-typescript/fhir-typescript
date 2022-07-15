@@ -7,5 +7,6 @@
  * This value set contract specific codes for action status.
  */
 export const ContractActionstatusVsValidation: readonly string[] = [
-  "complete", "http://hl7.org/fhir/contract-action-status|complete", 
+  "complete",
+  "http://hl7.org/fhir/contract-action-status|complete",
 ] as const;

@@ -7,6 +7,8 @@
  * Controls how multiple enableWhen values are interpreted -  whether all or any must be true.
  */
 export const QuestionnaireEnableBehaviorVsValidation: readonly string[] = [
-  "all", "http://hl7.org/fhir/questionnaire-enable-behavior|all", 
-  "any", "http://hl7.org/fhir/questionnaire-enable-behavior|any", 
+  "all",
+  "any",
+  "http://hl7.org/fhir/questionnaire-enable-behavior|all",
+  "http://hl7.org/fhir/questionnaire-enable-behavior|any",
 ] as const;

@@ -142,15 +142,15 @@ export class OperationOutcomeIssue extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'OperationOutcome.issue' }
-    this.vReqSV('severity',expression,'IssueSeverity',IssueSeverityVsValidation,'r')
-    this.vReqSV('code',expression,'IssueType',IssueTypeVsValidation,'r')
-    this.vOptS('details',expression)
-    this.vOptS('diagnostics',expression)
-    this.vOptA('location',expression)
-    this.vOptA('expression',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'OperationOutcome.issue' }
+    this.vRSV('severity',exp,'IssueSeverity',IssueSeverityVsValidation,'r')
+    this.vRSV('code',exp,'IssueType',IssueTypeVsValidation,'r')
+    this.vOS('details',exp)
+    this.vOS('diagnostics',exp)
+    this.vOA('location',exp)
+    this.vOA('expression',exp)
     return issues;
   }
 }
@@ -196,11 +196,11 @@ export class OperationOutcome extends fhir.DomainResource {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'OperationOutcome' }
-    this.vReqS('resourceType',expression)
-    this.vReqA('issue',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'OperationOutcome' }
+    this.vRS('resourceType',exp)
+    this.vRA('issue',exp)
     return issues;
   }
 }

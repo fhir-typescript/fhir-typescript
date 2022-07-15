@@ -7,7 +7,10 @@
  * The possible types of variables for exposures or outcomes (E.g. Dichotomous, Continuous, Descriptive).
  */
 export const VariableTypeVsValidation: readonly string[] = [
-  "continuous", "http://hl7.org/fhir/variable-type|continuous", 
-  "descriptive", "http://hl7.org/fhir/variable-type|descriptive", 
-  "dichotomous", "http://hl7.org/fhir/variable-type|dichotomous", 
+  "continuous",
+  "descriptive",
+  "dichotomous",
+  "http://hl7.org/fhir/variable-type|continuous",
+  "http://hl7.org/fhir/variable-type|descriptive",
+  "http://hl7.org/fhir/variable-type|dichotomous",
 ] as const;

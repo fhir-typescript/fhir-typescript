@@ -36,6 +36,6 @@ export declare class FhirTime extends fhir.FhirPrimitive {
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(expression?: string): fhir.FtsIssue[];
+    doModelValidation(exp?: string): fhir.FtsIssue[];
 }
 //# sourceMappingURL=FhirTime.d.ts.map

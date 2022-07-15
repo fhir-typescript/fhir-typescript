@@ -97,12 +97,12 @@ export class TestReportParticipant extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'TestReport.participant' }
-    this.vReqSV('type',expression,'ReportParticipantType',ReportParticipantTypeVsValidation,'r')
-    this.vReqS('uri',expression)
-    this.vOptS('display',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'TestReport.participant' }
+    this.vRSV('type',exp,'ReportParticipantType',ReportParticipantTypeVsValidation,'r')
+    this.vRS('uri',exp)
+    this.vOS('display',exp)
     return issues;
   }
 }
@@ -181,12 +181,12 @@ export class TestReportSetupActionOperation extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'TestReport.setup.action.operation' }
-    this.vReqSV('result',expression,'ReportActionResult',ReportActionResultVsValidation,'r')
-    this.vOptS('message',expression)
-    this.vOptS('detail',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'TestReport.setup.action.operation' }
+    this.vRSV('result',exp,'ReportActionResult',ReportActionResultVsValidation,'r')
+    this.vOS('message',exp)
+    this.vOS('detail',exp)
     return issues;
   }
 }
@@ -265,12 +265,12 @@ export class TestReportSetupActionAssert extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'TestReport.setup.action.assert' }
-    this.vReqSV('result',expression,'ReportActionResult',ReportActionResultVsValidation,'r')
-    this.vOptS('message',expression)
-    this.vOptS('detail',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'TestReport.setup.action.assert' }
+    this.vRSV('result',exp,'ReportActionResult',ReportActionResultVsValidation,'r')
+    this.vOS('message',exp)
+    this.vOS('detail',exp)
     return issues;
   }
 }
@@ -315,11 +315,11 @@ export class TestReportSetupAction extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'TestReport.setup.action' }
-    this.vOptS('operation',expression)
-    this.vOptS('assert',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'TestReport.setup.action' }
+    this.vOS('operation',exp)
+    this.vOS('assert',exp)
     return issues;
   }
 }
@@ -356,10 +356,10 @@ export class TestReportSetup extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'TestReport.setup' }
-    this.vReqA('action',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'TestReport.setup' }
+    this.vRA('action',exp)
     return issues;
   }
 }
@@ -404,11 +404,11 @@ export class TestReportTestAction extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'TestReport.test.action' }
-    this.vOptS('operation',expression)
-    this.vOptS('assert',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'TestReport.test.action' }
+    this.vOS('operation',exp)
+    this.vOS('assert',exp)
     return issues;
   }
 }
@@ -479,12 +479,12 @@ export class TestReportTest extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'TestReport.test' }
-    this.vOptS('name',expression)
-    this.vOptS('description',expression)
-    this.vReqA('action',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'TestReport.test' }
+    this.vOS('name',exp)
+    this.vOS('description',exp)
+    this.vRA('action',exp)
     return issues;
   }
 }
@@ -521,10 +521,10 @@ export class TestReportTeardownAction extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'TestReport.teardown.action' }
-    this.vReqS('operation',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'TestReport.teardown.action' }
+    this.vRS('operation',exp)
     return issues;
   }
 }
@@ -561,10 +561,10 @@ export class TestReportTeardown extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'TestReport.teardown' }
-    this.vReqA('action',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'TestReport.teardown' }
+    this.vRA('action',exp)
     return issues;
   }
 }
@@ -763,22 +763,22 @@ export class TestReport extends fhir.DomainResource {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'TestReport' }
-    this.vReqS('resourceType',expression)
-    this.vOptS('identifier',expression)
-    this.vOptS('name',expression)
-    this.vReqSV('status',expression,'ReportStatus',ReportStatusVsValidation,'r')
-    this.vReqS('testScript',expression)
-    this.vReqSV('result',expression,'ReportResult',ReportResultVsValidation,'r')
-    this.vOptS('score',expression)
-    this.vOptS('tester',expression)
-    this.vOptS('issued',expression)
-    this.vOptA('participant',expression)
-    this.vOptS('setup',expression)
-    this.vOptA('test',expression)
-    this.vOptS('teardown',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'TestReport' }
+    this.vRS('resourceType',exp)
+    this.vOS('identifier',exp)
+    this.vOS('name',exp)
+    this.vRSV('status',exp,'ReportStatus',ReportStatusVsValidation,'r')
+    this.vRS('testScript',exp)
+    this.vRSV('result',exp,'ReportResult',ReportResultVsValidation,'r')
+    this.vOS('score',exp)
+    this.vOS('tester',exp)
+    this.vOS('issued',exp)
+    this.vOA('participant',exp)
+    this.vOS('setup',exp)
+    this.vOA('test',exp)
+    this.vOS('teardown',exp)
     return issues;
   }
 }

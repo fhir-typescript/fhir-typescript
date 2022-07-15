@@ -7,12 +7,20 @@
  * Codes for the main intent of the study.
  */
 export const ResearchStudyPrimPurpTypeVsValidation: readonly string[] = [
-  "basic-science", "http://terminology.hl7.org/CodeSystem/research-study-prim-purp-type|basic-science", 
-  "device-feasibility", "http://terminology.hl7.org/CodeSystem/research-study-prim-purp-type|device-feasibility", 
-  "diagnostic", "http://terminology.hl7.org/CodeSystem/research-study-prim-purp-type|diagnostic", 
-  "health-services-research", "http://terminology.hl7.org/CodeSystem/research-study-prim-purp-type|health-services-research", 
-  "prevention", "http://terminology.hl7.org/CodeSystem/research-study-prim-purp-type|prevention", 
-  "screening", "http://terminology.hl7.org/CodeSystem/research-study-prim-purp-type|screening", 
-  "supportive-care", "http://terminology.hl7.org/CodeSystem/research-study-prim-purp-type|supportive-care", 
-  "treatment", "http://terminology.hl7.org/CodeSystem/research-study-prim-purp-type|treatment", 
+  "basic-science",
+  "device-feasibility",
+  "diagnostic",
+  "health-services-research",
+  "http://terminology.hl7.org/CodeSystem/research-study-prim-purp-type|basic-science",
+  "http://terminology.hl7.org/CodeSystem/research-study-prim-purp-type|device-feasibility",
+  "http://terminology.hl7.org/CodeSystem/research-study-prim-purp-type|diagnostic",
+  "http://terminology.hl7.org/CodeSystem/research-study-prim-purp-type|health-services-research",
+  "http://terminology.hl7.org/CodeSystem/research-study-prim-purp-type|prevention",
+  "http://terminology.hl7.org/CodeSystem/research-study-prim-purp-type|screening",
+  "http://terminology.hl7.org/CodeSystem/research-study-prim-purp-type|supportive-care",
+  "http://terminology.hl7.org/CodeSystem/research-study-prim-purp-type|treatment",
+  "prevention",
+  "screening",
+  "supportive-care",
+  "treatment",
 ] as const;

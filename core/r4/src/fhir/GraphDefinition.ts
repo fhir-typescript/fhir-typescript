@@ -136,14 +136,14 @@ export class GraphDefinitionLinkTargetCompartment extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'GraphDefinition.link.target.compartment' }
-    this.vReqSV('use',expression,'GraphCompartmentUse',GraphCompartmentUseVsValidation,'r')
-    this.vReqSV('code',expression,'CompartmentType',CompartmentTypeVsValidation,'r')
-    this.vReqSV('rule',expression,'GraphCompartmentRule',GraphCompartmentRuleVsValidation,'r')
-    this.vOptS('expression',expression)
-    this.vOptS('description',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'GraphDefinition.link.target.compartment' }
+    this.vRSV('use',exp,'GraphCompartmentUse',GraphCompartmentUseVsValidation,'r')
+    this.vRSV('code',exp,'CompartmentType',CompartmentTypeVsValidation,'r')
+    this.vRSV('rule',exp,'GraphCompartmentRule',GraphCompartmentRuleVsValidation,'r')
+    this.vOS('expression',exp)
+    this.vOS('description',exp)
     return issues;
   }
 }
@@ -242,14 +242,14 @@ export class GraphDefinitionLinkTarget extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'GraphDefinition.link.target' }
-    this.vReqSV('type',expression,'ResourceTypes',ResourceTypesVsValidation,'r')
-    this.vOptS('params',expression)
-    this.vOptS('profile',expression)
-    this.vOptA('compartment',expression)
-    this.vOptA('link',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'GraphDefinition.link.target' }
+    this.vRSV('type',exp,'ResourceTypes',ResourceTypesVsValidation,'r')
+    this.vOS('params',exp)
+    this.vOS('profile',exp)
+    this.vOA('compartment',exp)
+    this.vOA('link',exp)
     return issues;
   }
 }
@@ -371,15 +371,15 @@ export class GraphDefinitionLink extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'GraphDefinition.link' }
-    this.vOptS('path',expression)
-    this.vOptS('sliceName',expression)
-    this.vOptS('min',expression)
-    this.vOptS('max',expression)
-    this.vOptS('description',expression)
-    this.vOptA('target',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'GraphDefinition.link' }
+    this.vOS('path',exp)
+    this.vOS('sliceName',exp)
+    this.vOS('min',exp)
+    this.vOS('max',exp)
+    this.vOS('description',exp)
+    this.vOA('target',exp)
     return issues;
   }
 }
@@ -649,25 +649,25 @@ export class GraphDefinition extends fhir.DomainResource {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'GraphDefinition' }
-    this.vReqS('resourceType',expression)
-    this.vOptS('url',expression)
-    this.vOptS('version',expression)
-    this.vReqS('name',expression)
-    this.vReqSV('status',expression,'PublicationStatus',PublicationStatusVsValidation,'r')
-    this.vOptS('experimental',expression)
-    this.vOptS('date',expression)
-    this.vOptS('publisher',expression)
-    this.vOptA('contact',expression)
-    this.vOptS('description',expression)
-    this.vOptA('useContext',expression)
-    this.vOptA('jurisdiction',expression)
-    this.vOptS('purpose',expression)
-    this.vReqSV('start',expression,'ResourceTypes',ResourceTypesVsValidation,'r')
-    this.vOptS('profile',expression)
-    this.vOptA('link',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'GraphDefinition' }
+    this.vRS('resourceType',exp)
+    this.vOS('url',exp)
+    this.vOS('version',exp)
+    this.vRS('name',exp)
+    this.vRSV('status',exp,'PublicationStatus',PublicationStatusVsValidation,'r')
+    this.vOS('experimental',exp)
+    this.vOS('date',exp)
+    this.vOS('publisher',exp)
+    this.vOA('contact',exp)
+    this.vOS('description',exp)
+    this.vOA('useContext',exp)
+    this.vOA('jurisdiction',exp)
+    this.vOS('purpose',exp)
+    this.vRSV('start',exp,'ResourceTypes',ResourceTypesVsValidation,'r')
+    this.vOS('profile',exp)
+    this.vOA('link',exp)
     return issues;
   }
 }

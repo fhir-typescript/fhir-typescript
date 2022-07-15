@@ -7,6 +7,8 @@
  * This value set includes example Procedure Type codes.
  */
 export const ExProcedureTypeVsValidation: readonly string[] = [
-  "primary", "http://terminology.hl7.org/CodeSystem/ex-procedure-type|primary", 
-  "secondary", "http://terminology.hl7.org/CodeSystem/ex-procedure-type|secondary", 
+  "http://terminology.hl7.org/CodeSystem/ex-procedure-type|primary",
+  "http://terminology.hl7.org/CodeSystem/ex-procedure-type|secondary",
+  "primary",
+  "secondary",
 ] as const;

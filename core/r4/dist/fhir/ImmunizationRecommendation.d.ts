@@ -39,7 +39,7 @@ export declare class ImmunizationRecommendationRecommendationDateCriterion exten
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(expression?: string): fhir.FtsIssue[];
+    doModelValidation(exp?: string): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the ImmunizationRecommendationRecommendation type.
@@ -189,7 +189,7 @@ export declare class ImmunizationRecommendationRecommendation extends fhir.Backb
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(expression?: string): fhir.FtsIssue[];
+    doModelValidation(exp?: string): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the ImmunizationRecommendation type.
@@ -263,6 +263,6 @@ export declare class ImmunizationRecommendation extends fhir.DomainResource {
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(expression?: string): fhir.FtsIssue[];
+    doModelValidation(exp?: string): fhir.FtsIssue[];
 }
 //# sourceMappingURL=ImmunizationRecommendation.d.ts.map

@@ -7,8 +7,12 @@
  * The status of the location.
  */
 export const EncounterLocationStatusVsValidation: readonly string[] = [
-  "active", "http://hl7.org/fhir/encounter-location-status|active", 
-  "completed", "http://hl7.org/fhir/encounter-location-status|completed", 
-  "planned", "http://hl7.org/fhir/encounter-location-status|planned", 
-  "reserved", "http://hl7.org/fhir/encounter-location-status|reserved", 
+  "active",
+  "completed",
+  "http://hl7.org/fhir/encounter-location-status|active",
+  "http://hl7.org/fhir/encounter-location-status|completed",
+  "http://hl7.org/fhir/encounter-location-status|planned",
+  "http://hl7.org/fhir/encounter-location-status|reserved",
+  "planned",
+  "reserved",
 ] as const;

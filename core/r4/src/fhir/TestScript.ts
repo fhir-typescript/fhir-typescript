@@ -96,11 +96,11 @@ export class TestScriptOrigin extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'TestScript.origin' }
-    this.vReqS('index',expression)
-    this.vReqS('profile',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'TestScript.origin' }
+    this.vRS('index',exp)
+    this.vRS('profile',exp)
     return issues;
   }
 }
@@ -159,11 +159,11 @@ export class TestScriptDestination extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'TestScript.destination' }
-    this.vReqS('index',expression)
-    this.vReqS('profile',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'TestScript.destination' }
+    this.vRS('index',exp)
+    this.vRS('profile',exp)
     return issues;
   }
 }
@@ -225,11 +225,11 @@ export class TestScriptMetadataLink extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'TestScript.metadata.link' }
-    this.vReqS('url',expression)
-    this.vOptS('description',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'TestScript.metadata.link' }
+    this.vRS('url',exp)
+    this.vOS('description',exp)
     return issues;
   }
 }
@@ -384,16 +384,16 @@ export class TestScriptMetadataCapability extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'TestScript.metadata.capability' }
-    this.vReqS('required',expression)
-    this.vReqS('validated',expression)
-    this.vOptS('description',expression)
-    this.vOptA('origin',expression)
-    this.vOptS('destination',expression)
-    this.vOptA('link',expression)
-    this.vReqS('capabilities',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'TestScript.metadata.capability' }
+    this.vRS('required',exp)
+    this.vRS('validated',exp)
+    this.vOS('description',exp)
+    this.vOA('origin',exp)
+    this.vOS('destination',exp)
+    this.vOA('link',exp)
+    this.vRS('capabilities',exp)
     return issues;
   }
 }
@@ -440,11 +440,11 @@ export class TestScriptMetadata extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'TestScript.metadata' }
-    this.vOptA('link',expression)
-    this.vReqA('capability',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'TestScript.metadata' }
+    this.vOA('link',exp)
+    this.vRA('capability',exp)
     return issues;
   }
 }
@@ -516,12 +516,12 @@ export class TestScriptFixture extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'TestScript.fixture' }
-    this.vReqS('autocreate',expression)
-    this.vReqS('autodelete',expression)
-    this.vOptS('resource',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'TestScript.fixture' }
+    this.vRS('autocreate',exp)
+    this.vRS('autodelete',exp)
+    this.vOS('resource',exp)
     return issues;
   }
 }
@@ -685,17 +685,17 @@ export class TestScriptVariable extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'TestScript.variable' }
-    this.vReqS('name',expression)
-    this.vOptS('defaultValue',expression)
-    this.vOptS('description',expression)
-    this.vOptS('expression',expression)
-    this.vOptS('headerField',expression)
-    this.vOptS('hint',expression)
-    this.vOptS('path',expression)
-    this.vOptS('sourceId',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'TestScript.variable' }
+    this.vRS('name',exp)
+    this.vOS('defaultValue',exp)
+    this.vOS('description',exp)
+    this.vOS('expression',exp)
+    this.vOS('headerField',exp)
+    this.vOS('hint',exp)
+    this.vOS('path',exp)
+    this.vOS('sourceId',exp)
     return issues;
   }
 }
@@ -758,11 +758,11 @@ export class TestScriptSetupActionOperationRequestHeader extends fhir.BackboneEl
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'TestScript.setup.action.operation.requestHeader' }
-    this.vReqS('field',expression)
-    this.vReqS('value',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'TestScript.setup.action.operation.requestHeader' }
+    this.vRS('field',exp)
+    this.vRS('value',exp)
     return issues;
   }
 }
@@ -1064,26 +1064,26 @@ export class TestScriptSetupActionOperation extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'TestScript.setup.action.operation' }
-    this.vOptS('type',expression)
-    this.vOptSV('resource',expression,'DefinedTypes',DefinedTypesVsValidation,'r')
-    this.vOptS('label',expression)
-    this.vOptS('description',expression)
-    this.vOptS('accept',expression)
-    this.vOptS('contentType',expression)
-    this.vOptS('destination',expression)
-    this.vReqS('encodeRequestUrl',expression)
-    this.vOptSV('method',expression,'HttpOperations',HttpOperationsVsValidation,'r')
-    this.vOptS('origin',expression)
-    this.vOptS('params',expression)
-    this.vOptA('requestHeader',expression)
-    this.vOptS('requestId',expression)
-    this.vOptS('responseId',expression)
-    this.vOptS('sourceId',expression)
-    this.vOptS('targetId',expression)
-    this.vOptS('url',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'TestScript.setup.action.operation' }
+    this.vOS('type',exp)
+    this.vOSV('resource',exp,'DefinedTypes',DefinedTypesVsValidation,'r')
+    this.vOS('label',exp)
+    this.vOS('description',exp)
+    this.vOS('accept',exp)
+    this.vOS('contentType',exp)
+    this.vOS('destination',exp)
+    this.vRS('encodeRequestUrl',exp)
+    this.vOSV('method',exp,'HttpOperations',HttpOperationsVsValidation,'r')
+    this.vOS('origin',exp)
+    this.vOS('params',exp)
+    this.vOA('requestHeader',exp)
+    this.vOS('requestId',exp)
+    this.vOS('responseId',exp)
+    this.vOS('sourceId',exp)
+    this.vOS('targetId',exp)
+    this.vOS('url',exp)
     return issues;
   }
 }
@@ -1485,31 +1485,31 @@ export class TestScriptSetupActionAssert extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'TestScript.setup.action.assert' }
-    this.vOptS('label',expression)
-    this.vOptS('description',expression)
-    this.vOptSV('direction',expression,'AssertDirection',AssertDirectionVsValidation,'r')
-    this.vOptS('compareToSourceId',expression)
-    this.vOptS('compareToSourceExpression',expression)
-    this.vOptS('compareToSourcePath',expression)
-    this.vOptS('contentType',expression)
-    this.vOptS('expression',expression)
-    this.vOptS('headerField',expression)
-    this.vOptS('minimumId',expression)
-    this.vOptS('navigationLinks',expression)
-    this.vOptSV('operator',expression,'AssertOperator',AssertOperatorVsValidation,'r')
-    this.vOptS('path',expression)
-    this.vOptSV('requestMethod',expression,'HttpOperations',HttpOperationsVsValidation,'r')
-    this.vOptS('requestURL',expression)
-    this.vOptSV('resource',expression,'DefinedTypes',DefinedTypesVsValidation,'r')
-    this.vOptSV('response',expression,'AssertResponseCodeTypes',AssertResponseCodeTypesVsValidation,'r')
-    this.vOptS('responseCode',expression)
-    this.vOptS('sourceId',expression)
-    this.vOptS('validateProfileId',expression)
-    this.vOptS('value',expression)
-    this.vReqS('warningOnly',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'TestScript.setup.action.assert' }
+    this.vOS('label',exp)
+    this.vOS('description',exp)
+    this.vOSV('direction',exp,'AssertDirection',AssertDirectionVsValidation,'r')
+    this.vOS('compareToSourceId',exp)
+    this.vOS('compareToSourceExpression',exp)
+    this.vOS('compareToSourcePath',exp)
+    this.vOS('contentType',exp)
+    this.vOS('expression',exp)
+    this.vOS('headerField',exp)
+    this.vOS('minimumId',exp)
+    this.vOS('navigationLinks',exp)
+    this.vOSV('operator',exp,'AssertOperator',AssertOperatorVsValidation,'r')
+    this.vOS('path',exp)
+    this.vOSV('requestMethod',exp,'HttpOperations',HttpOperationsVsValidation,'r')
+    this.vOS('requestURL',exp)
+    this.vOSV('resource',exp,'DefinedTypes',DefinedTypesVsValidation,'r')
+    this.vOSV('response',exp,'AssertResponseCodeTypes',AssertResponseCodeTypesVsValidation,'r')
+    this.vOS('responseCode',exp)
+    this.vOS('sourceId',exp)
+    this.vOS('validateProfileId',exp)
+    this.vOS('value',exp)
+    this.vRS('warningOnly',exp)
     return issues;
   }
 }
@@ -1554,11 +1554,11 @@ export class TestScriptSetupAction extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'TestScript.setup.action' }
-    this.vOptS('operation',expression)
-    this.vOptS('assert',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'TestScript.setup.action' }
+    this.vOS('operation',exp)
+    this.vOS('assert',exp)
     return issues;
   }
 }
@@ -1595,10 +1595,10 @@ export class TestScriptSetup extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'TestScript.setup' }
-    this.vReqA('action',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'TestScript.setup' }
+    this.vRA('action',exp)
     return issues;
   }
 }
@@ -1643,11 +1643,11 @@ export class TestScriptTestAction extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'TestScript.test.action' }
-    this.vOptS('operation',expression)
-    this.vOptS('assert',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'TestScript.test.action' }
+    this.vOS('operation',exp)
+    this.vOS('assert',exp)
     return issues;
   }
 }
@@ -1718,12 +1718,12 @@ export class TestScriptTest extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'TestScript.test' }
-    this.vOptS('name',expression)
-    this.vOptS('description',expression)
-    this.vReqA('action',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'TestScript.test' }
+    this.vOS('name',exp)
+    this.vOS('description',exp)
+    this.vRA('action',exp)
     return issues;
   }
 }
@@ -1760,10 +1760,10 @@ export class TestScriptTeardownAction extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'TestScript.teardown.action' }
-    this.vReqS('operation',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'TestScript.teardown.action' }
+    this.vRS('operation',exp)
     return issues;
   }
 }
@@ -1800,10 +1800,10 @@ export class TestScriptTeardown extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'TestScript.teardown' }
-    this.vReqA('action',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'TestScript.teardown' }
+    this.vRA('action',exp)
     return issues;
   }
 }
@@ -2159,34 +2159,34 @@ export class TestScript extends fhir.DomainResource {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'TestScript' }
-    this.vReqS('resourceType',expression)
-    this.vReqS('url',expression)
-    this.vOptS('identifier',expression)
-    this.vOptS('version',expression)
-    this.vReqS('name',expression)
-    this.vOptS('title',expression)
-    this.vReqSV('status',expression,'PublicationStatus',PublicationStatusVsValidation,'r')
-    this.vOptS('experimental',expression)
-    this.vOptS('date',expression)
-    this.vOptS('publisher',expression)
-    this.vOptA('contact',expression)
-    this.vOptS('description',expression)
-    this.vOptA('useContext',expression)
-    this.vOptA('jurisdiction',expression)
-    this.vOptS('purpose',expression)
-    this.vOptS('copyright',expression)
-    this.vOptA('origin',expression)
-    this.vOptA('destination',expression)
-    this.vOptS('metadata',expression)
-    this.vOptA('fixture',expression)
-    this.vOptA('profile',expression)
-    this.vOptA('variable',expression)
-    this.vOptS('setup',expression)
-    this.vOptA('test',expression)
-    this.vOptS('teardown',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'TestScript' }
+    this.vRS('resourceType',exp)
+    this.vRS('url',exp)
+    this.vOS('identifier',exp)
+    this.vOS('version',exp)
+    this.vRS('name',exp)
+    this.vOS('title',exp)
+    this.vRSV('status',exp,'PublicationStatus',PublicationStatusVsValidation,'r')
+    this.vOS('experimental',exp)
+    this.vOS('date',exp)
+    this.vOS('publisher',exp)
+    this.vOA('contact',exp)
+    this.vOS('description',exp)
+    this.vOA('useContext',exp)
+    this.vOA('jurisdiction',exp)
+    this.vOS('purpose',exp)
+    this.vOS('copyright',exp)
+    this.vOA('origin',exp)
+    this.vOA('destination',exp)
+    this.vOS('metadata',exp)
+    this.vOA('fixture',exp)
+    this.vOA('profile',exp)
+    this.vOA('variable',exp)
+    this.vOS('setup',exp)
+    this.vOA('test',exp)
+    this.vOS('teardown',exp)
     return issues;
   }
 }

@@ -7,8 +7,12 @@
  * No Description Provided
  */
 export const V3SubstanceAdminSubstitutionReasonVsValidation: readonly string[] = [
-  "CT", "http://terminology.hl7.org/CodeSystem/v3-ActReason|CT", 
-  "FP", "http://terminology.hl7.org/CodeSystem/v3-ActReason|FP", 
-  "OS", "http://terminology.hl7.org/CodeSystem/v3-ActReason|OS", 
-  "RR", "http://terminology.hl7.org/CodeSystem/v3-ActReason|RR", 
+  "CT",
+  "FP",
+  "http://terminology.hl7.org/CodeSystem/v3-ActReason|CT",
+  "http://terminology.hl7.org/CodeSystem/v3-ActReason|FP",
+  "http://terminology.hl7.org/CodeSystem/v3-ActReason|OS",
+  "http://terminology.hl7.org/CodeSystem/v3-ActReason|RR",
+  "OS",
+  "RR",
 ] as const;

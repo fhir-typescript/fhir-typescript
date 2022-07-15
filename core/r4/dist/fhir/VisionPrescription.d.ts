@@ -46,7 +46,7 @@ export declare class VisionPrescriptionLensSpecificationPrism extends fhir.Backb
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(expression?: string): fhir.FtsIssue[];
+    doModelValidation(exp?: string): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the VisionPrescriptionLensSpecification type.
@@ -222,7 +222,7 @@ export declare class VisionPrescriptionLensSpecification extends fhir.BackboneEl
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(expression?: string): fhir.FtsIssue[];
+    doModelValidation(exp?: string): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the VisionPrescription type.
@@ -328,6 +328,6 @@ export declare class VisionPrescription extends fhir.DomainResource {
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(expression?: string): fhir.FtsIssue[];
+    doModelValidation(exp?: string): fhir.FtsIssue[];
 }
 //# sourceMappingURL=VisionPrescription.d.ts.map

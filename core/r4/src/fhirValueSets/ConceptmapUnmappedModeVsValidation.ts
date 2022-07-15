@@ -7,7 +7,10 @@
  * Defines which action to take if there is no match in the group.
  */
 export const ConceptmapUnmappedModeVsValidation: readonly string[] = [
-  "fixed", "http://hl7.org/fhir/conceptmap-unmapped-mode|fixed", 
-  "other-map", "http://hl7.org/fhir/conceptmap-unmapped-mode|other-map", 
-  "provided", "http://hl7.org/fhir/conceptmap-unmapped-mode|provided", 
+  "fixed",
+  "http://hl7.org/fhir/conceptmap-unmapped-mode|fixed",
+  "http://hl7.org/fhir/conceptmap-unmapped-mode|other-map",
+  "http://hl7.org/fhir/conceptmap-unmapped-mode|provided",
+  "other-map",
+  "provided",
 ] as const;

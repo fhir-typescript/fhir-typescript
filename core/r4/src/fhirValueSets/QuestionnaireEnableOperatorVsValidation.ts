@@ -7,11 +7,18 @@
  * The criteria by which a question is enabled.
  */
 export const QuestionnaireEnableOperatorVsValidation: readonly string[] = [
-  "!=", "http://hl7.org/fhir/questionnaire-enable-operator|!=", 
-  "<", "http://hl7.org/fhir/questionnaire-enable-operator|<", 
-  "<=", "http://hl7.org/fhir/questionnaire-enable-operator|<=", 
-  "=", "http://hl7.org/fhir/questionnaire-enable-operator|=", 
-  ">", "http://hl7.org/fhir/questionnaire-enable-operator|>", 
-  ">=", "http://hl7.org/fhir/questionnaire-enable-operator|>=", 
-  "exists", "http://hl7.org/fhir/questionnaire-enable-operator|exists", 
+  "!=",
+  "<",
+  "<=",
+  "=",
+  ">",
+  ">=",
+  "exists",
+  "http://hl7.org/fhir/questionnaire-enable-operator|!=",
+  "http://hl7.org/fhir/questionnaire-enable-operator|<",
+  "http://hl7.org/fhir/questionnaire-enable-operator|<=",
+  "http://hl7.org/fhir/questionnaire-enable-operator|=",
+  "http://hl7.org/fhir/questionnaire-enable-operator|>",
+  "http://hl7.org/fhir/questionnaire-enable-operator|>=",
+  "http://hl7.org/fhir/questionnaire-enable-operator|exists",
 ] as const;

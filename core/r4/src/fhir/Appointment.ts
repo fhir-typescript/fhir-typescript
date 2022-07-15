@@ -135,14 +135,14 @@ export class AppointmentParticipant extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'Appointment.participant' }
-    this.vOptA('type',expression)
-    this.vOptS('actor',expression)
-    this.vOptSV('required',expression,'Participantrequired',ParticipantrequiredVsValidation,'r')
-    this.vReqSV('status',expression,'Participationstatus',ParticipationstatusVsValidation,'r')
-    this.vOptS('period',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'Appointment.participant' }
+    this.vOA('type',exp)
+    this.vOS('actor',exp)
+    this.vOSV('required',exp,'Participantrequired',ParticipantrequiredVsValidation,'r')
+    this.vRSV('status',exp,'Participationstatus',ParticipationstatusVsValidation,'r')
+    this.vOS('period',exp)
     return issues;
   }
 }
@@ -466,32 +466,32 @@ export class Appointment extends fhir.DomainResource {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'Appointment' }
-    this.vReqS('resourceType',expression)
-    this.vOptA('identifier',expression)
-    this.vReqSV('status',expression,'Appointmentstatus',AppointmentstatusVsValidation,'r')
-    this.vOptS('cancelationReason',expression)
-    this.vOptA('serviceCategory',expression)
-    this.vOptA('serviceType',expression)
-    this.vOptA('specialty',expression)
-    this.vOptS('appointmentType',expression)
-    this.vOptA('reasonCode',expression)
-    this.vOptA('reasonReference',expression)
-    this.vOptS('priority',expression)
-    this.vOptS('description',expression)
-    this.vOptA('supportingInformation',expression)
-    this.vOptS('start',expression)
-    this.vOptS('end',expression)
-    this.vOptS('minutesDuration',expression)
-    this.vOptA('slot',expression)
-    this.vOptS('created',expression)
-    this.vOptS('comment',expression)
-    this.vOptS('patientInstruction',expression)
-    this.vOptA('basedOn',expression)
-    this.vReqA('participant',expression)
-    this.vOptA('requestedPeriod',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'Appointment' }
+    this.vRS('resourceType',exp)
+    this.vOA('identifier',exp)
+    this.vRSV('status',exp,'Appointmentstatus',AppointmentstatusVsValidation,'r')
+    this.vOS('cancelationReason',exp)
+    this.vOA('serviceCategory',exp)
+    this.vOA('serviceType',exp)
+    this.vOA('specialty',exp)
+    this.vOS('appointmentType',exp)
+    this.vOA('reasonCode',exp)
+    this.vOA('reasonReference',exp)
+    this.vOS('priority',exp)
+    this.vOS('description',exp)
+    this.vOA('supportingInformation',exp)
+    this.vOS('start',exp)
+    this.vOS('end',exp)
+    this.vOS('minutesDuration',exp)
+    this.vOA('slot',exp)
+    this.vOS('created',exp)
+    this.vOS('comment',exp)
+    this.vOS('patientInstruction',exp)
+    this.vOA('basedOn',exp)
+    this.vRA('participant',exp)
+    this.vOA('requestedPeriod',exp)
     return issues;
   }
 }

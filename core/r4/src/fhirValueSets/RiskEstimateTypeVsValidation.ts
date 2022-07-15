@@ -7,10 +7,16 @@
  * Whether the risk estimate is dichotomous, continuous or qualitative and the specific type of risk estimate (eg proportion or median).
  */
 export const RiskEstimateTypeVsValidation: readonly string[] = [
-  "count", "http://terminology.hl7.org/CodeSystem/risk-estimate-type|count", 
-  "derivedProportion", "http://terminology.hl7.org/CodeSystem/risk-estimate-type|derivedProportion", 
-  "descriptive", "http://terminology.hl7.org/CodeSystem/risk-estimate-type|descriptive", 
-  "mean", "http://terminology.hl7.org/CodeSystem/risk-estimate-type|mean", 
-  "median", "http://terminology.hl7.org/CodeSystem/risk-estimate-type|median", 
-  "proportion", "http://terminology.hl7.org/CodeSystem/risk-estimate-type|proportion", 
+  "count",
+  "derivedProportion",
+  "descriptive",
+  "http://terminology.hl7.org/CodeSystem/risk-estimate-type|count",
+  "http://terminology.hl7.org/CodeSystem/risk-estimate-type|derivedProportion",
+  "http://terminology.hl7.org/CodeSystem/risk-estimate-type|descriptive",
+  "http://terminology.hl7.org/CodeSystem/risk-estimate-type|mean",
+  "http://terminology.hl7.org/CodeSystem/risk-estimate-type|median",
+  "http://terminology.hl7.org/CodeSystem/risk-estimate-type|proportion",
+  "mean",
+  "median",
+  "proportion",
 ] as const;

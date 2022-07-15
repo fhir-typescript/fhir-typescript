@@ -7,10 +7,16 @@
  *  Set of codes used to value Act.Confidentiality and Role.Confidentiality attribute in accordance with the definition for concept domain "Confidentiality".
  */
 export const V3ConfidentialityClassificationVsValidation: readonly string[] = [
-  "L", "http://terminology.hl7.org/CodeSystem/v3-Confidentiality|L", 
-  "M", "http://terminology.hl7.org/CodeSystem/v3-Confidentiality|M", 
-  "N", "http://terminology.hl7.org/CodeSystem/v3-Confidentiality|N", 
-  "R", "http://terminology.hl7.org/CodeSystem/v3-Confidentiality|R", 
-  "U", "http://terminology.hl7.org/CodeSystem/v3-Confidentiality|U", 
-  "V", "http://terminology.hl7.org/CodeSystem/v3-Confidentiality|V", 
+  "http://terminology.hl7.org/CodeSystem/v3-Confidentiality|L",
+  "http://terminology.hl7.org/CodeSystem/v3-Confidentiality|M",
+  "http://terminology.hl7.org/CodeSystem/v3-Confidentiality|N",
+  "http://terminology.hl7.org/CodeSystem/v3-Confidentiality|R",
+  "http://terminology.hl7.org/CodeSystem/v3-Confidentiality|U",
+  "http://terminology.hl7.org/CodeSystem/v3-Confidentiality|V",
+  "L",
+  "M",
+  "N",
+  "R",
+  "U",
+  "V",
 ] as const;

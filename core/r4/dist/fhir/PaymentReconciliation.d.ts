@@ -106,7 +106,7 @@ export declare class PaymentReconciliationDetail extends fhir.BackboneElement {
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(expression?: string): fhir.FtsIssue[];
+    doModelValidation(exp?: string): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the PaymentReconciliationProcessNote type.
@@ -152,7 +152,7 @@ export declare class PaymentReconciliationProcessNote extends fhir.BackboneEleme
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(expression?: string): fhir.FtsIssue[];
+    doModelValidation(exp?: string): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the PaymentReconciliation type.
@@ -322,6 +322,6 @@ export declare class PaymentReconciliation extends fhir.DomainResource {
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(expression?: string): fhir.FtsIssue[];
+    doModelValidation(exp?: string): fhir.FtsIssue[];
 }
 //# sourceMappingURL=PaymentReconciliation.d.ts.map

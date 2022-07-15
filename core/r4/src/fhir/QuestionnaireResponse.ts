@@ -115,11 +115,11 @@ export class QuestionnaireResponseItemAnswer extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'QuestionnaireResponse.item.answer' }
-    this.vOptS('value',expression)
-    this.vOptA('item',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'QuestionnaireResponse.item.answer' }
+    this.vOS('value',exp)
+    this.vOA('item',exp)
     return issues;
   }
 }
@@ -220,14 +220,14 @@ export class QuestionnaireResponseItem extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'QuestionnaireResponse.item' }
-    this.vReqS('linkId',expression)
-    this.vOptS('definition',expression)
-    this.vOptS('text',expression)
-    this.vOptA('answer',expression)
-    this.vOptA('item',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'QuestionnaireResponse.item' }
+    this.vRS('linkId',exp)
+    this.vOS('definition',exp)
+    this.vOS('text',exp)
+    this.vOA('answer',exp)
+    this.vOA('item',exp)
     return issues;
   }
 }
@@ -392,21 +392,21 @@ export class QuestionnaireResponse extends fhir.DomainResource {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'QuestionnaireResponse' }
-    this.vReqS('resourceType',expression)
-    this.vOptS('identifier',expression)
-    this.vOptA('basedOn',expression)
-    this.vOptA('partOf',expression)
-    this.vOptS('questionnaire',expression)
-    this.vReqSV('status',expression,'QuestionnaireAnswersStatus',QuestionnaireAnswersStatusVsValidation,'r')
-    this.vOptS('subject',expression)
-    this.vOptS('encounter',expression)
-    this.vOptS('authored',expression)
-    this.vOptS('author',expression)
-    this.vOptS('source',expression)
-    this.vOptA('item',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'QuestionnaireResponse' }
+    this.vRS('resourceType',exp)
+    this.vOS('identifier',exp)
+    this.vOA('basedOn',exp)
+    this.vOA('partOf',exp)
+    this.vOS('questionnaire',exp)
+    this.vRSV('status',exp,'QuestionnaireAnswersStatus',QuestionnaireAnswersStatusVsValidation,'r')
+    this.vOS('subject',exp)
+    this.vOS('encounter',exp)
+    this.vOS('authored',exp)
+    this.vOS('author',exp)
+    this.vOS('source',exp)
+    this.vOA('item',exp)
     return issues;
   }
 }

@@ -70,7 +70,7 @@ export declare class MessageDefinitionFocus extends fhir.BackboneElement {
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(expression?: string): fhir.FtsIssue[];
+    doModelValidation(exp?: string): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the MessageDefinitionAllowedResponse type.
@@ -116,7 +116,7 @@ export declare class MessageDefinitionAllowedResponse extends fhir.BackboneEleme
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(expression?: string): fhir.FtsIssue[];
+    doModelValidation(exp?: string): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the MessageDefinition type.
@@ -422,6 +422,6 @@ export declare class MessageDefinition extends fhir.DomainResource {
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(expression?: string): fhir.FtsIssue[];
+    doModelValidation(exp?: string): fhir.FtsIssue[];
 }
 //# sourceMappingURL=MessageDefinition.d.ts.map

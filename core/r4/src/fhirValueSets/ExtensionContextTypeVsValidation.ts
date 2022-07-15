@@ -7,7 +7,10 @@
  * How an extension context is interpreted.
  */
 export const ExtensionContextTypeVsValidation: readonly string[] = [
-  "element", "http://hl7.org/fhir/extension-context-type|element", 
-  "extension", "http://hl7.org/fhir/extension-context-type|extension", 
-  "fhirpath", "http://hl7.org/fhir/extension-context-type|fhirpath", 
+  "element",
+  "extension",
+  "fhirpath",
+  "http://hl7.org/fhir/extension-context-type|element",
+  "http://hl7.org/fhir/extension-context-type|extension",
+  "http://hl7.org/fhir/extension-context-type|fhirpath",
 ] as const;

@@ -7,7 +7,10 @@
  * Why an entry is in the result set - whether it's included as a match or because of an _include requirement, or to convey information or warning information about the search process.
  */
 export const SearchEntryModeVsValidation: readonly string[] = [
-  "include", "http://hl7.org/fhir/search-entry-mode|include", 
-  "match", "http://hl7.org/fhir/search-entry-mode|match", 
-  "outcome", "http://hl7.org/fhir/search-entry-mode|outcome", 
+  "http://hl7.org/fhir/search-entry-mode|include",
+  "http://hl7.org/fhir/search-entry-mode|match",
+  "http://hl7.org/fhir/search-entry-mode|outcome",
+  "include",
+  "match",
+  "outcome",
 ] as const;

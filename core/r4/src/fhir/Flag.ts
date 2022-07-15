@@ -134,18 +134,18 @@ export class Flag extends fhir.DomainResource {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'Flag' }
-    this.vReqS('resourceType',expression)
-    this.vOptA('identifier',expression)
-    this.vReqSV('status',expression,'FlagStatus',FlagStatusVsValidation,'r')
-    this.vOptA('category',expression)
-    this.vReqS('code',expression)
-    this.vReqS('subject',expression)
-    this.vOptS('period',expression)
-    this.vOptS('encounter',expression)
-    this.vOptS('author',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'Flag' }
+    this.vRS('resourceType',exp)
+    this.vOA('identifier',exp)
+    this.vRSV('status',exp,'FlagStatus',FlagStatusVsValidation,'r')
+    this.vOA('category',exp)
+    this.vRS('code',exp)
+    this.vRS('subject',exp)
+    this.vOS('period',exp)
+    this.vOS('encounter',exp)
+    this.vOS('author',exp)
     return issues;
   }
 }

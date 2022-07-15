@@ -7,7 +7,10 @@
  * Codes for high level media categories.
  */
 export const MediaTypeVsValidation: readonly string[] = [
-  "audio", "http://terminology.hl7.org/CodeSystem/media-type|audio", 
-  "image", "http://terminology.hl7.org/CodeSystem/media-type|image", 
-  "video", "http://terminology.hl7.org/CodeSystem/media-type|video", 
+  "audio",
+  "http://terminology.hl7.org/CodeSystem/media-type|audio",
+  "http://terminology.hl7.org/CodeSystem/media-type|image",
+  "http://terminology.hl7.org/CodeSystem/media-type|video",
+  "image",
+  "video",
 ] as const;

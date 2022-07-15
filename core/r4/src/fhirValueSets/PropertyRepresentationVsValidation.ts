@@ -7,9 +7,14 @@
  * How a property is represented when serialized.
  */
 export const PropertyRepresentationVsValidation: readonly string[] = [
-  "cdaText", "http://hl7.org/fhir/property-representation|cdaText", 
-  "typeAttr", "http://hl7.org/fhir/property-representation|typeAttr", 
-  "xhtml", "http://hl7.org/fhir/property-representation|xhtml", 
-  "xmlAttr", "http://hl7.org/fhir/property-representation|xmlAttr", 
-  "xmlText", "http://hl7.org/fhir/property-representation|xmlText", 
+  "cdaText",
+  "http://hl7.org/fhir/property-representation|cdaText",
+  "http://hl7.org/fhir/property-representation|typeAttr",
+  "http://hl7.org/fhir/property-representation|xhtml",
+  "http://hl7.org/fhir/property-representation|xmlAttr",
+  "http://hl7.org/fhir/property-representation|xmlText",
+  "typeAttr",
+  "xhtml",
+  "xmlAttr",
+  "xmlText",
 ] as const;

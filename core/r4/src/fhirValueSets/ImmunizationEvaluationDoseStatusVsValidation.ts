@@ -7,6 +7,8 @@
  * The value set to instantiate this attribute should be drawn from a terminologically robust code system that consists of or contains concepts to support describing the validity of a dose relative to a particular recommended schedule. This value set is provided as a suggestive example.
  */
 export const ImmunizationEvaluationDoseStatusVsValidation: readonly string[] = [
-  "notvalid", "http://terminology.hl7.org/CodeSystem/immunization-evaluation-dose-status|notvalid", 
-  "valid", "http://terminology.hl7.org/CodeSystem/immunization-evaluation-dose-status|valid", 
+  "http://terminology.hl7.org/CodeSystem/immunization-evaluation-dose-status|notvalid",
+  "http://terminology.hl7.org/CodeSystem/immunization-evaluation-dose-status|valid",
+  "notvalid",
+  "valid",
 ] as const;

@@ -52,10 +52,10 @@ export class MedicinalProductInteractionInteractant extends fhir.BackboneElement
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'MedicinalProductInteraction.interactant' }
-    this.vReqS('item',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'MedicinalProductInteraction.interactant' }
+    this.vRS('item',exp)
     return issues;
   }
 }
@@ -164,17 +164,17 @@ export class MedicinalProductInteraction extends fhir.DomainResource {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'MedicinalProductInteraction' }
-    this.vReqS('resourceType',expression)
-    this.vOptA('subject',expression)
-    this.vOptS('description',expression)
-    this.vOptA('interactant',expression)
-    this.vOptS('type',expression)
-    this.vOptS('effect',expression)
-    this.vOptS('incidence',expression)
-    this.vOptS('management',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'MedicinalProductInteraction' }
+    this.vRS('resourceType',exp)
+    this.vOA('subject',exp)
+    this.vOS('description',exp)
+    this.vOA('interactant',exp)
+    this.vOS('type',exp)
+    this.vOS('effect',exp)
+    this.vOS('incidence',exp)
+    this.vOS('management',exp)
     return issues;
   }
 }

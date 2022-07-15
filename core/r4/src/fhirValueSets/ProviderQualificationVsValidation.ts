@@ -7,7 +7,10 @@
  * This value set includes sample Provider Qualification codes.
  */
 export const ProviderQualificationVsValidation: readonly string[] = [
-  "311405", "http://terminology.hl7.org/CodeSystem/ex-providerqualification|311405", 
-  "604210", "http://terminology.hl7.org/CodeSystem/ex-providerqualification|604210", 
-  "604215", "http://terminology.hl7.org/CodeSystem/ex-providerqualification|604215", 
+  "311405",
+  "604210",
+  "604215",
+  "http://terminology.hl7.org/CodeSystem/ex-providerqualification|311405",
+  "http://terminology.hl7.org/CodeSystem/ex-providerqualification|604210",
+  "http://terminology.hl7.org/CodeSystem/ex-providerqualification|604215",
 ] as const;

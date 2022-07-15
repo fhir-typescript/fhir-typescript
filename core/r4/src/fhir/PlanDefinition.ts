@@ -150,12 +150,12 @@ export class PlanDefinitionGoalTarget extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'PlanDefinition.goal.target' }
-    this.vOptS('measure',expression)
-    this.vOptS('detail',expression)
-    this.vOptS('due',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'PlanDefinition.goal.target' }
+    this.vOS('measure',exp)
+    this.vOS('detail',exp)
+    this.vOS('due',exp)
     return issues;
   }
 }
@@ -249,16 +249,16 @@ export class PlanDefinitionGoal extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'PlanDefinition.goal' }
-    this.vOptS('category',expression)
-    this.vReqS('description',expression)
-    this.vOptS('priority',expression)
-    this.vOptS('start',expression)
-    this.vOptA('addresses',expression)
-    this.vOptA('documentation',expression)
-    this.vOptA('target',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'PlanDefinition.goal' }
+    this.vOS('category',exp)
+    this.vRS('description',exp)
+    this.vOS('priority',exp)
+    this.vOS('start',exp)
+    this.vOA('addresses',exp)
+    this.vOA('documentation',exp)
+    this.vOA('target',exp)
     return issues;
   }
 }
@@ -312,11 +312,11 @@ export class PlanDefinitionActionCondition extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'PlanDefinition.action.condition' }
-    this.vReqSV('kind',expression,'ActionConditionKind',ActionConditionKindVsValidation,'r')
-    this.vOptS('expression',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'PlanDefinition.action.condition' }
+    this.vRSV('kind',exp,'ActionConditionKind',ActionConditionKindVsValidation,'r')
+    this.vOS('expression',exp)
     return issues;
   }
 }
@@ -402,12 +402,12 @@ export class PlanDefinitionActionRelatedAction extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'PlanDefinition.action.relatedAction' }
-    this.vReqS('actionId',expression)
-    this.vReqSV('relationship',expression,'ActionRelationshipType',ActionRelationshipTypeVsValidation,'r')
-    this.vOptS('offset',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'PlanDefinition.action.relatedAction' }
+    this.vRS('actionId',exp)
+    this.vRSV('relationship',exp,'ActionRelationshipType',ActionRelationshipTypeVsValidation,'r')
+    this.vOS('offset',exp)
     return issues;
   }
 }
@@ -461,11 +461,11 @@ export class PlanDefinitionActionParticipant extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'PlanDefinition.action.participant' }
-    this.vReqSV('type',expression,'ActionParticipantType',ActionParticipantTypeVsValidation,'r')
-    this.vOptS('role',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'PlanDefinition.action.participant' }
+    this.vRSV('type',exp,'ActionParticipantType',ActionParticipantTypeVsValidation,'r')
+    this.vOS('role',exp)
     return issues;
   }
 }
@@ -518,11 +518,11 @@ export class PlanDefinitionActionDynamicValue extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'PlanDefinition.action.dynamicValue' }
-    this.vOptS('path',expression)
-    this.vOptS('expression',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'PlanDefinition.action.dynamicValue' }
+    this.vOS('path',exp)
+    this.vOS('expression',exp)
     return issues;
   }
 }
@@ -968,36 +968,36 @@ export class PlanDefinitionAction extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'PlanDefinition.action' }
-    this.vOptS('prefix',expression)
-    this.vOptS('title',expression)
-    this.vOptS('description',expression)
-    this.vOptS('textEquivalent',expression)
-    this.vOptSV('priority',expression,'RequestPriority',RequestPriorityVsValidation,'r')
-    this.vOptA('code',expression)
-    this.vOptA('reason',expression)
-    this.vOptA('documentation',expression)
-    this.vOptA('goalId',expression)
-    this.vOptS('subject',expression)
-    this.vOptA('trigger',expression)
-    this.vOptA('condition',expression)
-    this.vOptA('input',expression)
-    this.vOptA('output',expression)
-    this.vOptA('relatedAction',expression)
-    this.vOptS('timing',expression)
-    this.vOptA('participant',expression)
-    this.vOptS('type',expression)
-    this.vOptSV('groupingBehavior',expression,'ActionGroupingBehavior',ActionGroupingBehaviorVsValidation,'r')
-    this.vOptSV('selectionBehavior',expression,'ActionSelectionBehavior',ActionSelectionBehaviorVsValidation,'r')
-    this.vOptSV('requiredBehavior',expression,'ActionRequiredBehavior',ActionRequiredBehaviorVsValidation,'r')
-    this.vOptSV('precheckBehavior',expression,'ActionPrecheckBehavior',ActionPrecheckBehaviorVsValidation,'r')
-    this.vOptSV('cardinalityBehavior',expression,'ActionCardinalityBehavior',ActionCardinalityBehaviorVsValidation,'r')
-    this.vOptS('definition',expression)
-    this.vOptS('transform',expression)
-    this.vOptA('dynamicValue',expression)
-    this.vOptA('action',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'PlanDefinition.action' }
+    this.vOS('prefix',exp)
+    this.vOS('title',exp)
+    this.vOS('description',exp)
+    this.vOS('textEquivalent',exp)
+    this.vOSV('priority',exp,'RequestPriority',RequestPriorityVsValidation,'r')
+    this.vOA('code',exp)
+    this.vOA('reason',exp)
+    this.vOA('documentation',exp)
+    this.vOA('goalId',exp)
+    this.vOS('subject',exp)
+    this.vOA('trigger',exp)
+    this.vOA('condition',exp)
+    this.vOA('input',exp)
+    this.vOA('output',exp)
+    this.vOA('relatedAction',exp)
+    this.vOS('timing',exp)
+    this.vOA('participant',exp)
+    this.vOS('type',exp)
+    this.vOSV('groupingBehavior',exp,'ActionGroupingBehavior',ActionGroupingBehaviorVsValidation,'r')
+    this.vOSV('selectionBehavior',exp,'ActionSelectionBehavior',ActionSelectionBehaviorVsValidation,'r')
+    this.vOSV('requiredBehavior',exp,'ActionRequiredBehavior',ActionRequiredBehaviorVsValidation,'r')
+    this.vOSV('precheckBehavior',exp,'ActionPrecheckBehavior',ActionPrecheckBehaviorVsValidation,'r')
+    this.vOSV('cardinalityBehavior',exp,'ActionCardinalityBehavior',ActionCardinalityBehaviorVsValidation,'r')
+    this.vOS('definition',exp)
+    this.vOS('transform',exp)
+    this.vOA('dynamicValue',exp)
+    this.vOA('action',exp)
     return issues;
   }
 }
@@ -1474,41 +1474,41 @@ export class PlanDefinition extends fhir.DomainResource {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'PlanDefinition' }
-    this.vReqS('resourceType',expression)
-    this.vOptS('url',expression)
-    this.vOptA('identifier',expression)
-    this.vOptS('version',expression)
-    this.vOptS('name',expression)
-    this.vOptS('title',expression)
-    this.vOptS('subtitle',expression)
-    this.vOptS('type',expression)
-    this.vReqSV('status',expression,'PublicationStatus',PublicationStatusVsValidation,'r')
-    this.vOptS('experimental',expression)
-    this.vOptS('subject',expression)
-    this.vOptS('date',expression)
-    this.vOptS('publisher',expression)
-    this.vOptA('contact',expression)
-    this.vOptS('description',expression)
-    this.vOptA('useContext',expression)
-    this.vOptA('jurisdiction',expression)
-    this.vOptS('purpose',expression)
-    this.vOptS('usage',expression)
-    this.vOptS('copyright',expression)
-    this.vOptS('approvalDate',expression)
-    this.vOptS('lastReviewDate',expression)
-    this.vOptS('effectivePeriod',expression)
-    this.vOptA('topic',expression)
-    this.vOptA('author',expression)
-    this.vOptA('editor',expression)
-    this.vOptA('reviewer',expression)
-    this.vOptA('endorser',expression)
-    this.vOptA('relatedArtifact',expression)
-    this.vOptA('library',expression)
-    this.vOptA('goal',expression)
-    this.vOptA('action',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'PlanDefinition' }
+    this.vRS('resourceType',exp)
+    this.vOS('url',exp)
+    this.vOA('identifier',exp)
+    this.vOS('version',exp)
+    this.vOS('name',exp)
+    this.vOS('title',exp)
+    this.vOS('subtitle',exp)
+    this.vOS('type',exp)
+    this.vRSV('status',exp,'PublicationStatus',PublicationStatusVsValidation,'r')
+    this.vOS('experimental',exp)
+    this.vOS('subject',exp)
+    this.vOS('date',exp)
+    this.vOS('publisher',exp)
+    this.vOA('contact',exp)
+    this.vOS('description',exp)
+    this.vOA('useContext',exp)
+    this.vOA('jurisdiction',exp)
+    this.vOS('purpose',exp)
+    this.vOS('usage',exp)
+    this.vOS('copyright',exp)
+    this.vOS('approvalDate',exp)
+    this.vOS('lastReviewDate',exp)
+    this.vOS('effectivePeriod',exp)
+    this.vOA('topic',exp)
+    this.vOA('author',exp)
+    this.vOA('editor',exp)
+    this.vOA('reviewer',exp)
+    this.vOA('endorser',exp)
+    this.vOA('relatedArtifact',exp)
+    this.vOA('library',exp)
+    this.vOA('goal',exp)
+    this.vOA('action',exp)
     return issues;
   }
 }

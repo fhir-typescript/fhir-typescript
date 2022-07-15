@@ -7,8 +7,12 @@
  * How a resource reference is interpreted when testing consent restrictions.
  */
 export const ConsentDataMeaningVsValidation: readonly string[] = [
-  "authoredby", "http://hl7.org/fhir/consent-data-meaning|authoredby", 
-  "dependents", "http://hl7.org/fhir/consent-data-meaning|dependents", 
-  "instance", "http://hl7.org/fhir/consent-data-meaning|instance", 
-  "related", "http://hl7.org/fhir/consent-data-meaning|related", 
+  "authoredby",
+  "dependents",
+  "http://hl7.org/fhir/consent-data-meaning|authoredby",
+  "http://hl7.org/fhir/consent-data-meaning|dependents",
+  "http://hl7.org/fhir/consent-data-meaning|instance",
+  "http://hl7.org/fhir/consent-data-meaning|related",
+  "instance",
+  "related",
 ] as const;

@@ -7,7 +7,10 @@
  * MedicationKnowledge Status Codes
  */
 export const MedicationknowledgeStatusVsValidation: readonly string[] = [
-  "active", "http://terminology.hl7.org/CodeSystem/medicationknowledge-status|active", 
-  "entered-in-error", "http://terminology.hl7.org/CodeSystem/medicationknowledge-status|entered-in-error", 
-  "inactive", "http://terminology.hl7.org/CodeSystem/medicationknowledge-status|inactive", 
+  "active",
+  "entered-in-error",
+  "http://terminology.hl7.org/CodeSystem/medicationknowledge-status|active",
+  "http://terminology.hl7.org/CodeSystem/medicationknowledge-status|entered-in-error",
+  "http://terminology.hl7.org/CodeSystem/medicationknowledge-status|inactive",
+  "inactive",
 ] as const;

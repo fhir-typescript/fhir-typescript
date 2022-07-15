@@ -95,11 +95,11 @@ export class ImmunizationPerformer extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'Immunization.performer' }
-    this.vOptS('function',expression)
-    this.vReqS('actor',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'Immunization.performer' }
+    this.vOS('function',exp)
+    this.vRS('actor',exp)
     return issues;
   }
 }
@@ -194,13 +194,13 @@ export class ImmunizationEducation extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'Immunization.education' }
-    this.vOptS('documentType',expression)
-    this.vOptS('reference',expression)
-    this.vOptS('publicationDate',expression)
-    this.vOptS('presentationDate',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'Immunization.education' }
+    this.vOS('documentType',exp)
+    this.vOS('reference',exp)
+    this.vOS('publicationDate',exp)
+    this.vOS('presentationDate',exp)
     return issues;
   }
 }
@@ -270,12 +270,12 @@ export class ImmunizationReaction extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'Immunization.reaction' }
-    this.vOptS('date',expression)
-    this.vOptS('detail',expression)
-    this.vOptS('reported',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'Immunization.reaction' }
+    this.vOS('date',exp)
+    this.vOS('detail',exp)
+    this.vOS('reported',exp)
     return issues;
   }
 }
@@ -385,14 +385,14 @@ export class ImmunizationProtocolApplied extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'Immunization.protocolApplied' }
-    this.vOptS('series',expression)
-    this.vOptS('authority',expression)
-    this.vOptA('targetDisease',expression)
-    this.vReqS('doseNumber',expression)
-    this.vOptS('seriesDoses',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'Immunization.protocolApplied' }
+    this.vOS('series',exp)
+    this.vOS('authority',exp)
+    this.vOA('targetDisease',exp)
+    this.vRS('doseNumber',exp)
+    this.vOS('seriesDoses',exp)
     return issues;
   }
 }
@@ -756,38 +756,38 @@ export class Immunization extends fhir.DomainResource {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'Immunization' }
-    this.vReqS('resourceType',expression)
-    this.vOptA('identifier',expression)
-    this.vReqSV('status',expression,'ImmunizationStatus',ImmunizationStatusVsValidation,'r')
-    this.vOptS('statusReason',expression)
-    this.vReqS('vaccineCode',expression)
-    this.vReqS('patient',expression)
-    this.vOptS('encounter',expression)
-    this.vReqS('occurrence',expression)
-    this.vOptS('recorded',expression)
-    this.vOptS('primarySource',expression)
-    this.vOptS('reportOrigin',expression)
-    this.vOptS('location',expression)
-    this.vOptS('manufacturer',expression)
-    this.vOptS('lotNumber',expression)
-    this.vOptS('expirationDate',expression)
-    this.vOptS('site',expression)
-    this.vOptS('route',expression)
-    this.vOptS('doseQuantity',expression)
-    this.vOptA('performer',expression)
-    this.vOptA('note',expression)
-    this.vOptA('reasonCode',expression)
-    this.vOptA('reasonReference',expression)
-    this.vOptS('isSubpotent',expression)
-    this.vOptA('subpotentReason',expression)
-    this.vOptA('education',expression)
-    this.vOptA('programEligibility',expression)
-    this.vOptS('fundingSource',expression)
-    this.vOptA('reaction',expression)
-    this.vOptA('protocolApplied',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'Immunization' }
+    this.vRS('resourceType',exp)
+    this.vOA('identifier',exp)
+    this.vRSV('status',exp,'ImmunizationStatus',ImmunizationStatusVsValidation,'r')
+    this.vOS('statusReason',exp)
+    this.vRS('vaccineCode',exp)
+    this.vRS('patient',exp)
+    this.vOS('encounter',exp)
+    this.vRS('occurrence',exp)
+    this.vOS('recorded',exp)
+    this.vOS('primarySource',exp)
+    this.vOS('reportOrigin',exp)
+    this.vOS('location',exp)
+    this.vOS('manufacturer',exp)
+    this.vOS('lotNumber',exp)
+    this.vOS('expirationDate',exp)
+    this.vOS('site',exp)
+    this.vOS('route',exp)
+    this.vOS('doseQuantity',exp)
+    this.vOA('performer',exp)
+    this.vOA('note',exp)
+    this.vOA('reasonCode',exp)
+    this.vOA('reasonReference',exp)
+    this.vOS('isSubpotent',exp)
+    this.vOA('subpotentReason',exp)
+    this.vOA('education',exp)
+    this.vOA('programEligibility',exp)
+    this.vOS('fundingSource',exp)
+    this.vOA('reaction',exp)
+    this.vOA('protocolApplied',exp)
     return issues;
   }
 }

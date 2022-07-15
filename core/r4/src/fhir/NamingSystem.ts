@@ -123,14 +123,14 @@ export class NamingSystemUniqueId extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'NamingSystem.uniqueId' }
-    this.vReqSV('type',expression,'NamingsystemIdentifierType',NamingsystemIdentifierTypeVsValidation,'r')
-    this.vReqS('value',expression)
-    this.vOptS('preferred',expression)
-    this.vOptS('comment',expression)
-    this.vOptS('period',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'NamingSystem.uniqueId' }
+    this.vRSV('type',exp,'NamingsystemIdentifierType',NamingsystemIdentifierTypeVsValidation,'r')
+    this.vRS('value',exp)
+    this.vOS('preferred',exp)
+    this.vOS('comment',exp)
+    this.vOS('period',exp)
     return issues;
   }
 }
@@ -355,23 +355,23 @@ export class NamingSystem extends fhir.DomainResource {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'NamingSystem' }
-    this.vReqS('resourceType',expression)
-    this.vReqS('name',expression)
-    this.vReqSV('status',expression,'PublicationStatus',PublicationStatusVsValidation,'r')
-    this.vReqSV('kind',expression,'NamingsystemType',NamingsystemTypeVsValidation,'r')
-    this.vReqS('date',expression)
-    this.vOptS('publisher',expression)
-    this.vOptA('contact',expression)
-    this.vOptS('responsible',expression)
-    this.vOptS('type',expression)
-    this.vOptS('description',expression)
-    this.vOptA('useContext',expression)
-    this.vOptA('jurisdiction',expression)
-    this.vOptS('usage',expression)
-    this.vReqA('uniqueId',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'NamingSystem' }
+    this.vRS('resourceType',exp)
+    this.vRS('name',exp)
+    this.vRSV('status',exp,'PublicationStatus',PublicationStatusVsValidation,'r')
+    this.vRSV('kind',exp,'NamingsystemType',NamingsystemTypeVsValidation,'r')
+    this.vRS('date',exp)
+    this.vOS('publisher',exp)
+    this.vOA('contact',exp)
+    this.vOS('responsible',exp)
+    this.vOS('type',exp)
+    this.vOS('description',exp)
+    this.vOA('useContext',exp)
+    this.vOA('jurisdiction',exp)
+    this.vOS('usage',exp)
+    this.vRA('uniqueId',exp)
     return issues;
   }
 }

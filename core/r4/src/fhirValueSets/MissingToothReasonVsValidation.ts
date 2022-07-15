@@ -7,8 +7,12 @@
  * This value set includes sample Missing Tooth Reason codes.
  */
 export const MissingToothReasonVsValidation: readonly string[] = [
-  "c", "http://terminology.hl7.org/CodeSystem/missingtoothreason|c", 
-  "e", "http://terminology.hl7.org/CodeSystem/missingtoothreason|e", 
-  "o", "http://terminology.hl7.org/CodeSystem/missingtoothreason|o", 
-  "u", "http://terminology.hl7.org/CodeSystem/missingtoothreason|u", 
+  "c",
+  "e",
+  "http://terminology.hl7.org/CodeSystem/missingtoothreason|c",
+  "http://terminology.hl7.org/CodeSystem/missingtoothreason|e",
+  "http://terminology.hl7.org/CodeSystem/missingtoothreason|o",
+  "http://terminology.hl7.org/CodeSystem/missingtoothreason|u",
+  "o",
+  "u",
 ] as const;

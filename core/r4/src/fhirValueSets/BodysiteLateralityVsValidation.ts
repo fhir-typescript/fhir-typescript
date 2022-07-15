@@ -7,7 +7,10 @@
  * Laterality: SNOMED-CT concepts for 'left', 'right', and 'bilateral'
  */
 export const BodysiteLateralityVsValidation: readonly string[] = [
-  "419161000", "http://snomed.info/sct|419161000", 
-  "419465000", "http://snomed.info/sct|419465000", 
-  "51440002", "http://snomed.info/sct|51440002", 
+  "419161000",
+  "419465000",
+  "51440002",
+  "http://snomed.info/sct|419161000",
+  "http://snomed.info/sct|419465000",
+  "http://snomed.info/sct|51440002",
 ] as const;

@@ -7,8 +7,12 @@
  * Codes describing the reason why a family member's history is not available.
  */
 export const HistoryAbsentReasonVsValidation: readonly string[] = [
-  "deferred", "http://terminology.hl7.org/CodeSystem/history-absent-reason|deferred", 
-  "subject-unknown", "http://terminology.hl7.org/CodeSystem/history-absent-reason|subject-unknown", 
-  "unable-to-obtain", "http://terminology.hl7.org/CodeSystem/history-absent-reason|unable-to-obtain", 
-  "withheld", "http://terminology.hl7.org/CodeSystem/history-absent-reason|withheld", 
+  "deferred",
+  "http://terminology.hl7.org/CodeSystem/history-absent-reason|deferred",
+  "http://terminology.hl7.org/CodeSystem/history-absent-reason|subject-unknown",
+  "http://terminology.hl7.org/CodeSystem/history-absent-reason|unable-to-obtain",
+  "http://terminology.hl7.org/CodeSystem/history-absent-reason|withheld",
+  "subject-unknown",
+  "unable-to-obtain",
+  "withheld",
 ] as const;

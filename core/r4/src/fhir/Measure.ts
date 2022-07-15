@@ -96,12 +96,12 @@ export class MeasureGroupPopulation extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'Measure.group.population' }
-    this.vOptS('code',expression)
-    this.vOptS('description',expression)
-    this.vReqS('criteria',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'Measure.group.population' }
+    this.vOS('code',exp)
+    this.vOS('description',exp)
+    this.vRS('criteria',exp)
     return issues;
   }
 }
@@ -164,12 +164,12 @@ export class MeasureGroupStratifierComponent extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'Measure.group.stratifier.component' }
-    this.vOptS('code',expression)
-    this.vOptS('description',expression)
-    this.vReqS('criteria',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'Measure.group.stratifier.component' }
+    this.vOS('code',exp)
+    this.vOS('description',exp)
+    this.vRS('criteria',exp)
     return issues;
   }
 }
@@ -241,13 +241,13 @@ export class MeasureGroupStratifier extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'Measure.group.stratifier' }
-    this.vOptS('code',expression)
-    this.vOptS('description',expression)
-    this.vOptS('criteria',expression)
-    this.vOptA('component',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'Measure.group.stratifier' }
+    this.vOS('code',exp)
+    this.vOS('description',exp)
+    this.vOS('criteria',exp)
+    this.vOA('component',exp)
     return issues;
   }
 }
@@ -320,13 +320,13 @@ export class MeasureGroup extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'Measure.group' }
-    this.vOptS('code',expression)
-    this.vOptS('description',expression)
-    this.vOptA('population',expression)
-    this.vOptA('stratifier',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'Measure.group' }
+    this.vOS('code',exp)
+    this.vOS('description',exp)
+    this.vOA('population',exp)
+    this.vOA('stratifier',exp)
     return issues;
   }
 }
@@ -399,13 +399,13 @@ export class MeasureSupplementalData extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'Measure.supplementalData' }
-    this.vOptS('code',expression)
-    this.vOptA('usage',expression)
-    this.vOptS('description',expression)
-    this.vReqS('criteria',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'Measure.supplementalData' }
+    this.vOS('code',exp)
+    this.vOA('usage',exp)
+    this.vOS('description',exp)
+    this.vRS('criteria',exp)
     return issues;
   }
 }
@@ -1032,51 +1032,51 @@ export class Measure extends fhir.DomainResource {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'Measure' }
-    this.vReqS('resourceType',expression)
-    this.vOptS('url',expression)
-    this.vOptA('identifier',expression)
-    this.vOptS('version',expression)
-    this.vOptS('name',expression)
-    this.vOptS('title',expression)
-    this.vOptS('subtitle',expression)
-    this.vReqSV('status',expression,'PublicationStatus',PublicationStatusVsValidation,'r')
-    this.vOptS('experimental',expression)
-    this.vOptS('subject',expression)
-    this.vOptS('date',expression)
-    this.vOptS('publisher',expression)
-    this.vOptA('contact',expression)
-    this.vOptS('description',expression)
-    this.vOptA('useContext',expression)
-    this.vOptA('jurisdiction',expression)
-    this.vOptS('purpose',expression)
-    this.vOptS('usage',expression)
-    this.vOptS('copyright',expression)
-    this.vOptS('approvalDate',expression)
-    this.vOptS('lastReviewDate',expression)
-    this.vOptS('effectivePeriod',expression)
-    this.vOptA('topic',expression)
-    this.vOptA('author',expression)
-    this.vOptA('editor',expression)
-    this.vOptA('reviewer',expression)
-    this.vOptA('endorser',expression)
-    this.vOptA('relatedArtifact',expression)
-    this.vOptA('library',expression)
-    this.vOptS('disclaimer',expression)
-    this.vOptS('scoring',expression)
-    this.vOptS('compositeScoring',expression)
-    this.vOptA('type',expression)
-    this.vOptS('riskAdjustment',expression)
-    this.vOptS('rateAggregation',expression)
-    this.vOptS('rationale',expression)
-    this.vOptS('clinicalRecommendationStatement',expression)
-    this.vOptSV('improvementNotation',expression,'MeasureImprovementNotation',MeasureImprovementNotationVsValidation,'r')
-    this.vOptA('definition',expression)
-    this.vOptS('guidance',expression)
-    this.vOptA('group',expression)
-    this.vOptA('supplementalData',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'Measure' }
+    this.vRS('resourceType',exp)
+    this.vOS('url',exp)
+    this.vOA('identifier',exp)
+    this.vOS('version',exp)
+    this.vOS('name',exp)
+    this.vOS('title',exp)
+    this.vOS('subtitle',exp)
+    this.vRSV('status',exp,'PublicationStatus',PublicationStatusVsValidation,'r')
+    this.vOS('experimental',exp)
+    this.vOS('subject',exp)
+    this.vOS('date',exp)
+    this.vOS('publisher',exp)
+    this.vOA('contact',exp)
+    this.vOS('description',exp)
+    this.vOA('useContext',exp)
+    this.vOA('jurisdiction',exp)
+    this.vOS('purpose',exp)
+    this.vOS('usage',exp)
+    this.vOS('copyright',exp)
+    this.vOS('approvalDate',exp)
+    this.vOS('lastReviewDate',exp)
+    this.vOS('effectivePeriod',exp)
+    this.vOA('topic',exp)
+    this.vOA('author',exp)
+    this.vOA('editor',exp)
+    this.vOA('reviewer',exp)
+    this.vOA('endorser',exp)
+    this.vOA('relatedArtifact',exp)
+    this.vOA('library',exp)
+    this.vOS('disclaimer',exp)
+    this.vOS('scoring',exp)
+    this.vOS('compositeScoring',exp)
+    this.vOA('type',exp)
+    this.vOS('riskAdjustment',exp)
+    this.vOS('rateAggregation',exp)
+    this.vOS('rationale',exp)
+    this.vOS('clinicalRecommendationStatement',exp)
+    this.vOSV('improvementNotation',exp,'MeasureImprovementNotation',MeasureImprovementNotationVsValidation,'r')
+    this.vOA('definition',exp)
+    this.vOS('guidance',exp)
+    this.vOA('group',exp)
+    this.vOA('supplementalData',exp)
     return issues;
   }
 }

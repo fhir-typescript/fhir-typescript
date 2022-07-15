@@ -7,7 +7,10 @@
  * Example set of codes that can be used for billing purposes.
  */
 export const ChargeitemBillingVsValidation: readonly string[] = [
-  "1100", "http://terminology.hl7.org/CodeSystem/chargeitem-billingcodes|1100", 
-  "1210", "http://terminology.hl7.org/CodeSystem/chargeitem-billingcodes|1210", 
-  "1320", "http://terminology.hl7.org/CodeSystem/chargeitem-billingcodes|1320", 
+  "1100",
+  "1210",
+  "1320",
+  "http://terminology.hl7.org/CodeSystem/chargeitem-billingcodes|1100",
+  "http://terminology.hl7.org/CodeSystem/chargeitem-billingcodes|1210",
+  "http://terminology.hl7.org/CodeSystem/chargeitem-billingcodes|1320",
 ] as const;

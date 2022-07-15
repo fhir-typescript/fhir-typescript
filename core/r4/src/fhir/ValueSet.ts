@@ -88,12 +88,12 @@ export class ValueSetComposeIncludeConceptDesignation extends fhir.BackboneEleme
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'ValueSet.compose.include.concept.designation' }
-    this.vOptS('language',expression)
-    this.vOptS('use',expression)
-    this.vReqS('value',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'ValueSet.compose.include.concept.designation' }
+    this.vOS('language',exp)
+    this.vOS('use',exp)
+    this.vRS('value',exp)
     return issues;
   }
 }
@@ -165,12 +165,12 @@ export class ValueSetComposeIncludeConcept extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'ValueSet.compose.include.concept' }
-    this.vReqS('code',expression)
-    this.vOptS('display',expression)
-    this.vOptA('designation',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'ValueSet.compose.include.concept' }
+    this.vRS('code',exp)
+    this.vOS('display',exp)
+    this.vOA('designation',exp)
     return issues;
   }
 }
@@ -251,12 +251,12 @@ export class ValueSetComposeIncludeFilter extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'ValueSet.compose.include.filter' }
-    this.vReqS('property',expression)
-    this.vReqSV('op',expression,'FilterOperator',FilterOperatorVsValidation,'r')
-    this.vReqS('value',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'ValueSet.compose.include.filter' }
+    this.vRS('property',exp)
+    this.vRSV('op',exp,'FilterOperator',FilterOperatorVsValidation,'r')
+    this.vRS('value',exp)
     return issues;
   }
 }
@@ -357,14 +357,14 @@ export class ValueSetComposeInclude extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'ValueSet.compose.include' }
-    this.vOptS('system',expression)
-    this.vOptS('version',expression)
-    this.vOptA('concept',expression)
-    this.vOptA('filter',expression)
-    this.vOptA('valueSet',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'ValueSet.compose.include' }
+    this.vOS('system',exp)
+    this.vOS('version',exp)
+    this.vOA('concept',exp)
+    this.vOA('filter',exp)
+    this.vOA('valueSet',exp)
     return issues;
   }
 }
@@ -447,13 +447,13 @@ export class ValueSetCompose extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'ValueSet.compose' }
-    this.vOptS('lockedDate',expression)
-    this.vOptS('inactive',expression)
-    this.vReqA('include',expression)
-    this.vOptA('exclude',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'ValueSet.compose' }
+    this.vOS('lockedDate',exp)
+    this.vOS('inactive',exp)
+    this.vRA('include',exp)
+    this.vOA('exclude',exp)
     return issues;
   }
 }
@@ -546,11 +546,11 @@ export class ValueSetExpansionParameter extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'ValueSet.expansion.parameter' }
-    this.vReqS('name',expression)
-    this.vOptS('value',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'ValueSet.expansion.parameter' }
+    this.vRS('name',exp)
+    this.vOS('value',exp)
     return issues;
   }
 }
@@ -699,17 +699,17 @@ export class ValueSetExpansionContains extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'ValueSet.expansion.contains' }
-    this.vOptS('system',expression)
-    this.vOptS('abstract',expression)
-    this.vOptS('inactive',expression)
-    this.vOptS('version',expression)
-    this.vOptS('code',expression)
-    this.vOptS('display',expression)
-    this.vOptA('designation',expression)
-    this.vOptA('contains',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'ValueSet.expansion.contains' }
+    this.vOS('system',exp)
+    this.vOS('abstract',exp)
+    this.vOS('inactive',exp)
+    this.vOS('version',exp)
+    this.vOS('code',exp)
+    this.vOS('display',exp)
+    this.vOA('designation',exp)
+    this.vOA('contains',exp)
     return issues;
   }
 }
@@ -826,15 +826,15 @@ export class ValueSetExpansion extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'ValueSet.expansion' }
-    this.vOptS('identifier',expression)
-    this.vReqS('timestamp',expression)
-    this.vOptS('total',expression)
-    this.vOptS('offset',expression)
-    this.vOptA('parameter',expression)
-    this.vOptA('contains',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'ValueSet.expansion' }
+    this.vOS('identifier',exp)
+    this.vRS('timestamp',exp)
+    this.vOS('total',exp)
+    this.vOS('offset',exp)
+    this.vOA('parameter',exp)
+    this.vOA('contains',exp)
     return issues;
   }
 }
@@ -1139,28 +1139,28 @@ export class ValueSet extends fhir.DomainResource {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'ValueSet' }
-    this.vReqS('resourceType',expression)
-    this.vOptS('url',expression)
-    this.vOptA('identifier',expression)
-    this.vOptS('version',expression)
-    this.vOptS('name',expression)
-    this.vOptS('title',expression)
-    this.vReqSV('status',expression,'PublicationStatus',PublicationStatusVsValidation,'r')
-    this.vOptS('experimental',expression)
-    this.vOptS('date',expression)
-    this.vOptS('publisher',expression)
-    this.vOptA('contact',expression)
-    this.vOptS('description',expression)
-    this.vOptA('useContext',expression)
-    this.vOptA('jurisdiction',expression)
-    this.vOptS('immutable',expression)
-    this.vOptS('purpose',expression)
-    this.vOptS('copyright',expression)
-    this.vOptS('compose',expression)
-    this.vOptS('expansion',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'ValueSet' }
+    this.vRS('resourceType',exp)
+    this.vOS('url',exp)
+    this.vOA('identifier',exp)
+    this.vOS('version',exp)
+    this.vOS('name',exp)
+    this.vOS('title',exp)
+    this.vRSV('status',exp,'PublicationStatus',PublicationStatusVsValidation,'r')
+    this.vOS('experimental',exp)
+    this.vOS('date',exp)
+    this.vOS('publisher',exp)
+    this.vOA('contact',exp)
+    this.vOS('description',exp)
+    this.vOA('useContext',exp)
+    this.vOA('jurisdiction',exp)
+    this.vOS('immutable',exp)
+    this.vOS('purpose',exp)
+    this.vOS('copyright',exp)
+    this.vOS('compose',exp)
+    this.vOS('expansion',exp)
     return issues;
   }
 }

@@ -67,11 +67,11 @@ export class RelatedPersonCommunication extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'RelatedPerson.communication' }
-    this.vReqS('language',expression)
-    this.vOptS('preferred',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'RelatedPerson.communication' }
+    this.vRS('language',exp)
+    this.vOS('preferred',exp)
     return issues;
   }
 }
@@ -247,22 +247,22 @@ export class RelatedPerson extends fhir.DomainResource {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'RelatedPerson' }
-    this.vReqS('resourceType',expression)
-    this.vOptA('identifier',expression)
-    this.vOptS('active',expression)
-    this.vReqS('patient',expression)
-    this.vOptA('relationship',expression)
-    this.vOptA('name',expression)
-    this.vOptA('telecom',expression)
-    this.vOptSV('gender',expression,'AdministrativeGender',AdministrativeGenderVsValidation,'r')
-    this.vOptS('birthDate',expression)
-    this.vOptA('address',expression)
-    this.vOptA('photo',expression)
-    this.vOptS('period',expression)
-    this.vOptA('communication',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'RelatedPerson' }
+    this.vRS('resourceType',exp)
+    this.vOA('identifier',exp)
+    this.vOS('active',exp)
+    this.vRS('patient',exp)
+    this.vOA('relationship',exp)
+    this.vOA('name',exp)
+    this.vOA('telecom',exp)
+    this.vOSV('gender',exp,'AdministrativeGender',AdministrativeGenderVsValidation,'r')
+    this.vOS('birthDate',exp)
+    this.vOA('address',exp)
+    this.vOA('photo',exp)
+    this.vOS('period',exp)
+    this.vOA('communication',exp)
     return issues;
   }
 }

@@ -7,6 +7,8 @@
  * The reason why the supply item was requested.
  */
 export const SupplyrequestReasonVsValidation: readonly string[] = [
-  "patient-care", "http://terminology.hl7.org/CodeSystem/supplyrequest-reason|patient-care", 
-  "ward-stock", "http://terminology.hl7.org/CodeSystem/supplyrequest-reason|ward-stock", 
+  "http://terminology.hl7.org/CodeSystem/supplyrequest-reason|patient-care",
+  "http://terminology.hl7.org/CodeSystem/supplyrequest-reason|ward-stock",
+  "patient-care",
+  "ward-stock",
 ] as const;

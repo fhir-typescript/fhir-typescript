@@ -56,7 +56,7 @@ export declare class AdverseEventSuspectEntityCausality extends fhir.BackboneEle
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(expression?: string): fhir.FtsIssue[];
+    doModelValidation(exp?: string): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the AdverseEventSuspectEntity type.
@@ -94,7 +94,7 @@ export declare class AdverseEventSuspectEntity extends fhir.BackboneElement {
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(expression?: string): fhir.FtsIssue[];
+    doModelValidation(exp?: string): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the AdverseEvent type.
@@ -300,6 +300,6 @@ export declare class AdverseEvent extends fhir.DomainResource {
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(expression?: string): fhir.FtsIssue[];
+    doModelValidation(exp?: string): fhir.FtsIssue[];
 }
 //# sourceMappingURL=AdverseEvent.d.ts.map

@@ -81,13 +81,13 @@ export class InsurancePlanContact extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'InsurancePlan.contact' }
-    this.vOptS('purpose',expression)
-    this.vOptS('name',expression)
-    this.vOptA('telecom',expression)
-    this.vOptS('address',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'InsurancePlan.contact' }
+    this.vOS('purpose',exp)
+    this.vOS('name',exp)
+    this.vOA('telecom',exp)
+    this.vOS('address',exp)
     return issues;
   }
 }
@@ -132,11 +132,11 @@ export class InsurancePlanCoverageBenefitLimit extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'InsurancePlan.coverage.benefit.limit' }
-    this.vOptS('value',expression)
-    this.vOptS('code',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'InsurancePlan.coverage.benefit.limit' }
+    this.vOS('value',exp)
+    this.vOS('code',exp)
     return issues;
   }
 }
@@ -200,12 +200,12 @@ export class InsurancePlanCoverageBenefit extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'InsurancePlan.coverage.benefit' }
-    this.vReqS('type',expression)
-    this.vOptS('requirement',expression)
-    this.vOptA('limit',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'InsurancePlan.coverage.benefit' }
+    this.vRS('type',exp)
+    this.vOS('requirement',exp)
+    this.vOA('limit',exp)
     return issues;
   }
 }
@@ -262,12 +262,12 @@ export class InsurancePlanCoverage extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'InsurancePlan.coverage' }
-    this.vReqS('type',expression)
-    this.vOptA('network',expression)
-    this.vReqA('benefit',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'InsurancePlan.coverage' }
+    this.vRS('type',exp)
+    this.vOA('network',exp)
+    this.vRA('benefit',exp)
     return issues;
   }
 }
@@ -346,13 +346,13 @@ export class InsurancePlanPlanGeneralCost extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'InsurancePlan.plan.generalCost' }
-    this.vOptS('type',expression)
-    this.vOptS('groupSize',expression)
-    this.vOptS('cost',expression)
-    this.vOptS('comment',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'InsurancePlan.plan.generalCost' }
+    this.vOS('type',exp)
+    this.vOS('groupSize',exp)
+    this.vOS('cost',exp)
+    this.vOS('comment',exp)
     return issues;
   }
 }
@@ -417,13 +417,13 @@ export class InsurancePlanPlanSpecificCostBenefitCost extends fhir.BackboneEleme
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'InsurancePlan.plan.specificCost.benefit.cost' }
-    this.vReqS('type',expression)
-    this.vOptSV('applicability',expression,'InsuranceplanApplicability',InsuranceplanApplicabilityVsValidation,'r')
-    this.vOptA('qualifiers',expression)
-    this.vOptS('value',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'InsurancePlan.plan.specificCost.benefit.cost' }
+    this.vRS('type',exp)
+    this.vOSV('applicability',exp,'InsuranceplanApplicability',InsuranceplanApplicabilityVsValidation,'r')
+    this.vOA('qualifiers',exp)
+    this.vOS('value',exp)
     return issues;
   }
 }
@@ -470,11 +470,11 @@ export class InsurancePlanPlanSpecificCostBenefit extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'InsurancePlan.plan.specificCost.benefit' }
-    this.vReqS('type',expression)
-    this.vOptA('cost',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'InsurancePlan.plan.specificCost.benefit' }
+    this.vRS('type',exp)
+    this.vOA('cost',exp)
     return issues;
   }
 }
@@ -521,11 +521,11 @@ export class InsurancePlanPlanSpecificCost extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'InsurancePlan.plan.specificCost' }
-    this.vReqS('category',expression)
-    this.vOptA('benefit',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'InsurancePlan.plan.specificCost' }
+    this.vRS('category',exp)
+    this.vOA('benefit',exp)
     return issues;
   }
 }
@@ -611,15 +611,15 @@ export class InsurancePlanPlan extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'InsurancePlan.plan' }
-    this.vOptA('identifier',expression)
-    this.vOptS('type',expression)
-    this.vOptA('coverageArea',expression)
-    this.vOptA('network',expression)
-    this.vOptA('generalCost',expression)
-    this.vOptA('specificCost',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'InsurancePlan.plan' }
+    this.vOA('identifier',exp)
+    this.vOS('type',exp)
+    this.vOA('coverageArea',exp)
+    this.vOA('network',exp)
+    this.vOA('generalCost',exp)
+    this.vOA('specificCost',exp)
     return issues;
   }
 }
@@ -816,24 +816,24 @@ export class InsurancePlan extends fhir.DomainResource {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'InsurancePlan' }
-    this.vReqS('resourceType',expression)
-    this.vOptA('identifier',expression)
-    this.vOptSV('status',expression,'PublicationStatus',PublicationStatusVsValidation,'r')
-    this.vOptA('type',expression)
-    this.vOptS('name',expression)
-    this.vOptA('alias',expression)
-    this.vOptS('period',expression)
-    this.vOptS('ownedBy',expression)
-    this.vOptS('administeredBy',expression)
-    this.vOptA('coverageArea',expression)
-    this.vOptA('contact',expression)
-    this.vOptA('endpoint',expression)
-    this.vOptA('network',expression)
-    this.vOptA('coverage',expression)
-    this.vOptA('plan',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'InsurancePlan' }
+    this.vRS('resourceType',exp)
+    this.vOA('identifier',exp)
+    this.vOSV('status',exp,'PublicationStatus',PublicationStatusVsValidation,'r')
+    this.vOA('type',exp)
+    this.vOS('name',exp)
+    this.vOA('alias',exp)
+    this.vOS('period',exp)
+    this.vOS('ownedBy',exp)
+    this.vOS('administeredBy',exp)
+    this.vOA('coverageArea',exp)
+    this.vOA('contact',exp)
+    this.vOA('endpoint',exp)
+    this.vOA('network',exp)
+    this.vOA('coverage',exp)
+    this.vOA('plan',exp)
     return issues;
   }
 }

@@ -84,14 +84,14 @@ export class MarketingStatus extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'MarketingStatus' }
-    this.vReqS('country',expression)
-    this.vOptS('jurisdiction',expression)
-    this.vReqS('status',expression)
-    this.vReqS('dateRange',expression)
-    this.vOptS('restoreDate',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'MarketingStatus' }
+    this.vRS('country',exp)
+    this.vOS('jurisdiction',exp)
+    this.vRS('status',exp)
+    this.vRS('dateRange',exp)
+    this.vOS('restoreDate',exp)
     return issues;
   }
 }

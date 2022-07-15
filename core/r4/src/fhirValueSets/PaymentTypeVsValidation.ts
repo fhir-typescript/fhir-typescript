@@ -7,7 +7,10 @@
  * This value set includes sample Payment Type codes.
  */
 export const PaymentTypeVsValidation: readonly string[] = [
-  "adjustment", "http://terminology.hl7.org/CodeSystem/payment-type|adjustment", 
-  "advance", "http://terminology.hl7.org/CodeSystem/payment-type|advance", 
-  "payment", "http://terminology.hl7.org/CodeSystem/payment-type|payment", 
+  "adjustment",
+  "advance",
+  "http://terminology.hl7.org/CodeSystem/payment-type|adjustment",
+  "http://terminology.hl7.org/CodeSystem/payment-type|advance",
+  "http://terminology.hl7.org/CodeSystem/payment-type|payment",
+  "payment",
 ] as const;

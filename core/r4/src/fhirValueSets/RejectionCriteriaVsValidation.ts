@@ -7,9 +7,14 @@
  * Criterion for rejection of the specimen by laboratory.
  */
 export const RejectionCriteriaVsValidation: readonly string[] = [
-  "broken", "http://terminology.hl7.org/CodeSystem/rejection-criteria|broken", 
-  "clotted", "http://terminology.hl7.org/CodeSystem/rejection-criteria|clotted", 
-  "hemolized", "http://terminology.hl7.org/CodeSystem/rejection-criteria|hemolized", 
-  "insufficient", "http://terminology.hl7.org/CodeSystem/rejection-criteria|insufficient", 
-  "wrong-temperature", "http://terminology.hl7.org/CodeSystem/rejection-criteria|wrong-temperature", 
+  "broken",
+  "clotted",
+  "hemolized",
+  "http://terminology.hl7.org/CodeSystem/rejection-criteria|broken",
+  "http://terminology.hl7.org/CodeSystem/rejection-criteria|clotted",
+  "http://terminology.hl7.org/CodeSystem/rejection-criteria|hemolized",
+  "http://terminology.hl7.org/CodeSystem/rejection-criteria|insufficient",
+  "http://terminology.hl7.org/CodeSystem/rejection-criteria|wrong-temperature",
+  "insufficient",
+  "wrong-temperature",
 ] as const;

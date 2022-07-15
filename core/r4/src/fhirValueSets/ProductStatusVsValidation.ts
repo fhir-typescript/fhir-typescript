@@ -7,6 +7,8 @@
  * Biologically Derived Product Status.
  */
 export const ProductStatusVsValidation: readonly string[] = [
-  "available", "http://hl7.org/fhir/product-status|available", 
-  "unavailable", "http://hl7.org/fhir/product-status|unavailable", 
+  "available",
+  "http://hl7.org/fhir/product-status|available",
+  "http://hl7.org/fhir/product-status|unavailable",
+  "unavailable",
 ] as const;

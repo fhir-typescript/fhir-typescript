@@ -7,9 +7,14 @@
  * Indicates whether the account is available to be used.
  */
 export const AccountStatusVsValidation: readonly string[] = [
-  "active", "http://hl7.org/fhir/account-status|active", 
-  "entered-in-error", "http://hl7.org/fhir/account-status|entered-in-error", 
-  "inactive", "http://hl7.org/fhir/account-status|inactive", 
-  "on-hold", "http://hl7.org/fhir/account-status|on-hold", 
-  "unknown", "http://hl7.org/fhir/account-status|unknown", 
+  "active",
+  "entered-in-error",
+  "http://hl7.org/fhir/account-status|active",
+  "http://hl7.org/fhir/account-status|entered-in-error",
+  "http://hl7.org/fhir/account-status|inactive",
+  "http://hl7.org/fhir/account-status|on-hold",
+  "http://hl7.org/fhir/account-status|unknown",
+  "inactive",
+  "on-hold",
+  "unknown",
 ] as const;

@@ -96,12 +96,12 @@ export class ResearchStudyArm extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'ResearchStudy.arm' }
-    this.vReqS('name',expression)
-    this.vOptS('type',expression)
-    this.vOptS('description',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'ResearchStudy.arm' }
+    this.vRS('name',exp)
+    this.vOS('type',exp)
+    this.vOS('description',exp)
     return issues;
   }
 }
@@ -154,11 +154,11 @@ export class ResearchStudyObjective extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'ResearchStudy.objective' }
-    this.vOptS('name',expression)
-    this.vOptS('type',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'ResearchStudy.objective' }
+    this.vOS('name',exp)
+    this.vOS('type',exp)
     return issues;
   }
 }
@@ -450,34 +450,34 @@ export class ResearchStudy extends fhir.DomainResource {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'ResearchStudy' }
-    this.vReqS('resourceType',expression)
-    this.vOptA('identifier',expression)
-    this.vOptS('title',expression)
-    this.vOptA('protocol',expression)
-    this.vOptA('partOf',expression)
-    this.vReqSV('status',expression,'ResearchStudyStatus',ResearchStudyStatusVsValidation,'r')
-    this.vOptS('primaryPurposeType',expression)
-    this.vOptS('phase',expression)
-    this.vOptA('category',expression)
-    this.vOptA('focus',expression)
-    this.vOptA('condition',expression)
-    this.vOptA('contact',expression)
-    this.vOptA('relatedArtifact',expression)
-    this.vOptA('keyword',expression)
-    this.vOptA('location',expression)
-    this.vOptS('description',expression)
-    this.vOptA('enrollment',expression)
-    this.vOptS('period',expression)
-    this.vOptS('sponsor',expression)
-    this.vOptS('principalInvestigator',expression)
-    this.vOptA('site',expression)
-    this.vOptS('reasonStopped',expression)
-    this.vOptA('note',expression)
-    this.vOptA('arm',expression)
-    this.vOptA('objective',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'ResearchStudy' }
+    this.vRS('resourceType',exp)
+    this.vOA('identifier',exp)
+    this.vOS('title',exp)
+    this.vOA('protocol',exp)
+    this.vOA('partOf',exp)
+    this.vRSV('status',exp,'ResearchStudyStatus',ResearchStudyStatusVsValidation,'r')
+    this.vOS('primaryPurposeType',exp)
+    this.vOS('phase',exp)
+    this.vOA('category',exp)
+    this.vOA('focus',exp)
+    this.vOA('condition',exp)
+    this.vOA('contact',exp)
+    this.vOA('relatedArtifact',exp)
+    this.vOA('keyword',exp)
+    this.vOA('location',exp)
+    this.vOS('description',exp)
+    this.vOA('enrollment',exp)
+    this.vOS('period',exp)
+    this.vOS('sponsor',exp)
+    this.vOS('principalInvestigator',exp)
+    this.vOA('site',exp)
+    this.vOS('reasonStopped',exp)
+    this.vOA('note',exp)
+    this.vOA('arm',exp)
+    this.vOA('objective',exp)
     return issues;
   }
 }

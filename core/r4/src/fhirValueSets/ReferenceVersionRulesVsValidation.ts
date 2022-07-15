@@ -7,7 +7,10 @@
  * Whether a reference needs to be version specific or version independent, or whether either can be used.
  */
 export const ReferenceVersionRulesVsValidation: readonly string[] = [
-  "either", "http://hl7.org/fhir/reference-version-rules|either", 
-  "independent", "http://hl7.org/fhir/reference-version-rules|independent", 
-  "specific", "http://hl7.org/fhir/reference-version-rules|specific", 
+  "either",
+  "http://hl7.org/fhir/reference-version-rules|either",
+  "http://hl7.org/fhir/reference-version-rules|independent",
+  "http://hl7.org/fhir/reference-version-rules|specific",
+  "independent",
+  "specific",
 ] as const;

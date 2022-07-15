@@ -7,10 +7,16 @@
  * FHIR Value set/code system definition for HL7 v2 table 0116 ( BED STATUS)
  */
 export const V20116VsValidation: readonly string[] = [
-  "C", "http://terminology.hl7.org/CodeSystem/v2-0116|C", 
-  "H", "http://terminology.hl7.org/CodeSystem/v2-0116|H", 
-  "I", "http://terminology.hl7.org/CodeSystem/v2-0116|I", 
-  "K", "http://terminology.hl7.org/CodeSystem/v2-0116|K", 
-  "O", "http://terminology.hl7.org/CodeSystem/v2-0116|O", 
-  "U", "http://terminology.hl7.org/CodeSystem/v2-0116|U", 
+  "C",
+  "H",
+  "http://terminology.hl7.org/CodeSystem/v2-0116|C",
+  "http://terminology.hl7.org/CodeSystem/v2-0116|H",
+  "http://terminology.hl7.org/CodeSystem/v2-0116|I",
+  "http://terminology.hl7.org/CodeSystem/v2-0116|K",
+  "http://terminology.hl7.org/CodeSystem/v2-0116|O",
+  "http://terminology.hl7.org/CodeSystem/v2-0116|U",
+  "I",
+  "K",
+  "O",
+  "U",
 ] as const;

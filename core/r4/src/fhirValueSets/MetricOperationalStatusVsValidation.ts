@@ -7,8 +7,12 @@
  * Describes the operational status of the DeviceMetric.
  */
 export const MetricOperationalStatusVsValidation: readonly string[] = [
-  "entered-in-error", "http://hl7.org/fhir/metric-operational-status|entered-in-error", 
-  "off", "http://hl7.org/fhir/metric-operational-status|off", 
-  "on", "http://hl7.org/fhir/metric-operational-status|on", 
-  "standby", "http://hl7.org/fhir/metric-operational-status|standby", 
+  "entered-in-error",
+  "http://hl7.org/fhir/metric-operational-status|entered-in-error",
+  "http://hl7.org/fhir/metric-operational-status|off",
+  "http://hl7.org/fhir/metric-operational-status|on",
+  "http://hl7.org/fhir/metric-operational-status|standby",
+  "off",
+  "on",
+  "standby",
 ] as const;

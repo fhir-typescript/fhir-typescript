@@ -7,7 +7,10 @@
  * The type of an address (physical / postal).
  */
 export const AddressTypeVsValidation: readonly string[] = [
-  "both", "http://hl7.org/fhir/address-type|both", 
-  "physical", "http://hl7.org/fhir/address-type|physical", 
-  "postal", "http://hl7.org/fhir/address-type|postal", 
+  "both",
+  "http://hl7.org/fhir/address-type|both",
+  "http://hl7.org/fhir/address-type|physical",
+  "http://hl7.org/fhir/address-type|postal",
+  "physical",
+  "postal",
 ] as const;

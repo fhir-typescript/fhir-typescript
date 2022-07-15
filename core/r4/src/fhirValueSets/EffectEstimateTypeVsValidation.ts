@@ -7,11 +7,18 @@
  * Whether the effect estimate is an absolute effect estimate (absolute difference) or a relative effect estimate (relative difference), and the specific type of effect estimate (eg relative risk or median difference).
  */
 export const EffectEstimateTypeVsValidation: readonly string[] = [
-  "absolute-ARD", "http://terminology.hl7.org/CodeSystem/effect-estimate-type|absolute-ARD", 
-  "absolute-MeanDiff", "http://terminology.hl7.org/CodeSystem/effect-estimate-type|absolute-MeanDiff", 
-  "absolute-MedianDiff", "http://terminology.hl7.org/CodeSystem/effect-estimate-type|absolute-MedianDiff", 
-  "absolute-SMD", "http://terminology.hl7.org/CodeSystem/effect-estimate-type|absolute-SMD", 
-  "relative-HR", "http://terminology.hl7.org/CodeSystem/effect-estimate-type|relative-HR", 
-  "relative-OR", "http://terminology.hl7.org/CodeSystem/effect-estimate-type|relative-OR", 
-  "relative-RR", "http://terminology.hl7.org/CodeSystem/effect-estimate-type|relative-RR", 
+  "absolute-ARD",
+  "absolute-MeanDiff",
+  "absolute-MedianDiff",
+  "absolute-SMD",
+  "http://terminology.hl7.org/CodeSystem/effect-estimate-type|absolute-ARD",
+  "http://terminology.hl7.org/CodeSystem/effect-estimate-type|absolute-MeanDiff",
+  "http://terminology.hl7.org/CodeSystem/effect-estimate-type|absolute-MedianDiff",
+  "http://terminology.hl7.org/CodeSystem/effect-estimate-type|absolute-SMD",
+  "http://terminology.hl7.org/CodeSystem/effect-estimate-type|relative-HR",
+  "http://terminology.hl7.org/CodeSystem/effect-estimate-type|relative-OR",
+  "http://terminology.hl7.org/CodeSystem/effect-estimate-type|relative-RR",
+  "relative-HR",
+  "relative-OR",
+  "relative-RR",
 ] as const;

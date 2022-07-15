@@ -47,11 +47,11 @@ export class MedicinalProductPharmaceuticalCharacteristics extends fhir.Backbone
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'MedicinalProductPharmaceutical.characteristics' }
-    this.vReqS('code',expression)
-    this.vOptS('status',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'MedicinalProductPharmaceutical.characteristics' }
+    this.vRS('code',exp)
+    this.vOS('status',exp)
     return issues;
   }
 }
@@ -115,12 +115,12 @@ export class MedicinalProductPharmaceuticalRouteOfAdministrationTargetSpeciesWit
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'MedicinalProductPharmaceutical.routeOfAdministration.targetSpecies.withdrawalPeriod' }
-    this.vReqS('tissue',expression)
-    this.vReqS('value',expression)
-    this.vOptS('supportingInformation',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'MedicinalProductPharmaceutical.routeOfAdministration.targetSpecies.withdrawalPeriod' }
+    this.vRS('tissue',exp)
+    this.vRS('value',exp)
+    this.vOS('supportingInformation',exp)
     return issues;
   }
 }
@@ -167,11 +167,11 @@ export class MedicinalProductPharmaceuticalRouteOfAdministrationTargetSpecies ex
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'MedicinalProductPharmaceutical.routeOfAdministration.targetSpecies' }
-    this.vReqS('code',expression)
-    this.vOptA('withdrawalPeriod',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'MedicinalProductPharmaceutical.routeOfAdministration.targetSpecies' }
+    this.vRS('code',exp)
+    this.vOA('withdrawalPeriod',exp)
     return issues;
   }
 }
@@ -263,16 +263,16 @@ export class MedicinalProductPharmaceuticalRouteOfAdministration extends fhir.Ba
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'MedicinalProductPharmaceutical.routeOfAdministration' }
-    this.vReqS('code',expression)
-    this.vOptS('firstDose',expression)
-    this.vOptS('maxSingleDose',expression)
-    this.vOptS('maxDosePerDay',expression)
-    this.vOptS('maxDosePerTreatmentPeriod',expression)
-    this.vOptS('maxTreatmentPeriod',expression)
-    this.vOptA('targetSpecies',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'MedicinalProductPharmaceutical.routeOfAdministration' }
+    this.vRS('code',exp)
+    this.vOS('firstDose',exp)
+    this.vOS('maxSingleDose',exp)
+    this.vOS('maxDosePerDay',exp)
+    this.vOS('maxDosePerTreatmentPeriod',exp)
+    this.vOS('maxTreatmentPeriod',exp)
+    this.vOA('targetSpecies',exp)
     return issues;
   }
 }
@@ -377,17 +377,17 @@ export class MedicinalProductPharmaceutical extends fhir.DomainResource {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'MedicinalProductPharmaceutical' }
-    this.vReqS('resourceType',expression)
-    this.vOptA('identifier',expression)
-    this.vReqS('administrableDoseForm',expression)
-    this.vOptS('unitOfPresentation',expression)
-    this.vOptA('ingredient',expression)
-    this.vOptA('device',expression)
-    this.vOptA('characteristics',expression)
-    this.vReqA('routeOfAdministration',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'MedicinalProductPharmaceutical' }
+    this.vRS('resourceType',exp)
+    this.vOA('identifier',exp)
+    this.vRS('administrableDoseForm',exp)
+    this.vOS('unitOfPresentation',exp)
+    this.vOA('ingredient',exp)
+    this.vOA('device',exp)
+    this.vOA('characteristics',exp)
+    this.vRA('routeOfAdministration',exp)
     return issues;
   }
 }

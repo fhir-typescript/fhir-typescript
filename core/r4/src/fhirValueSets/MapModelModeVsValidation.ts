@@ -7,8 +7,12 @@
  * How the referenced structure is used in this mapping.
  */
 export const MapModelModeVsValidation: readonly string[] = [
-  "produced", "http://hl7.org/fhir/map-model-mode|produced", 
-  "queried", "http://hl7.org/fhir/map-model-mode|queried", 
-  "source", "http://hl7.org/fhir/map-model-mode|source", 
-  "target", "http://hl7.org/fhir/map-model-mode|target", 
+  "http://hl7.org/fhir/map-model-mode|produced",
+  "http://hl7.org/fhir/map-model-mode|queried",
+  "http://hl7.org/fhir/map-model-mode|source",
+  "http://hl7.org/fhir/map-model-mode|target",
+  "produced",
+  "queried",
+  "source",
+  "target",
 ] as const;

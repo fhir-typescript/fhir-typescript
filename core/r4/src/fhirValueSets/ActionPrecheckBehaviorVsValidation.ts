@@ -7,6 +7,8 @@
  * Defines selection frequency behavior for an action or group.
  */
 export const ActionPrecheckBehaviorVsValidation: readonly string[] = [
-  "no", "http://hl7.org/fhir/action-precheck-behavior|no", 
-  "yes", "http://hl7.org/fhir/action-precheck-behavior|yes", 
+  "http://hl7.org/fhir/action-precheck-behavior|no",
+  "http://hl7.org/fhir/action-precheck-behavior|yes",
+  "no",
+  "yes",
 ] as const;

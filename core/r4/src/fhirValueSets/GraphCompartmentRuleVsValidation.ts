@@ -7,8 +7,12 @@
  * How a compartment must be linked.
  */
 export const GraphCompartmentRuleVsValidation: readonly string[] = [
-  "custom", "http://hl7.org/fhir/graph-compartment-rule|custom", 
-  "different", "http://hl7.org/fhir/graph-compartment-rule|different", 
-  "identical", "http://hl7.org/fhir/graph-compartment-rule|identical", 
-  "matching", "http://hl7.org/fhir/graph-compartment-rule|matching", 
+  "custom",
+  "different",
+  "http://hl7.org/fhir/graph-compartment-rule|custom",
+  "http://hl7.org/fhir/graph-compartment-rule|different",
+  "http://hl7.org/fhir/graph-compartment-rule|identical",
+  "http://hl7.org/fhir/graph-compartment-rule|matching",
+  "identical",
+  "matching",
 ] as const;

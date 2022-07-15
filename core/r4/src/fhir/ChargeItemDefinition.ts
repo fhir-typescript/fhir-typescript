@@ -93,12 +93,12 @@ export class ChargeItemDefinitionApplicability extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'ChargeItemDefinition.applicability' }
-    this.vOptS('description',expression)
-    this.vOptS('language',expression)
-    this.vOptS('expression',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'ChargeItemDefinition.applicability' }
+    this.vOS('description',exp)
+    this.vOS('language',exp)
+    this.vOS('expression',exp)
     return issues;
   }
 }
@@ -178,13 +178,13 @@ export class ChargeItemDefinitionPropertyGroupPriceComponent extends fhir.Backbo
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'ChargeItemDefinition.propertyGroup.priceComponent' }
-    this.vReqSV('type',expression,'InvoicePriceComponentType',InvoicePriceComponentTypeVsValidation,'r')
-    this.vOptS('code',expression)
-    this.vOptS('factor',expression)
-    this.vOptS('amount',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'ChargeItemDefinition.propertyGroup.priceComponent' }
+    this.vRSV('type',exp,'InvoicePriceComponentType',InvoicePriceComponentTypeVsValidation,'r')
+    this.vOS('code',exp)
+    this.vOS('factor',exp)
+    this.vOS('amount',exp)
     return issues;
   }
 }
@@ -231,11 +231,11 @@ export class ChargeItemDefinitionPropertyGroup extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'ChargeItemDefinition.propertyGroup' }
-    this.vOptA('applicability',expression)
-    this.vOptA('priceComponent',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'ChargeItemDefinition.propertyGroup' }
+    this.vOA('applicability',exp)
+    this.vOA('priceComponent',exp)
     return issues;
   }
 }
@@ -612,33 +612,33 @@ export class ChargeItemDefinition extends fhir.DomainResource {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'ChargeItemDefinition' }
-    this.vReqS('resourceType',expression)
-    this.vReqS('url',expression)
-    this.vOptA('identifier',expression)
-    this.vOptS('version',expression)
-    this.vOptS('title',expression)
-    this.vOptA('derivedFromUri',expression)
-    this.vOptA('partOf',expression)
-    this.vOptA('replaces',expression)
-    this.vReqSV('status',expression,'PublicationStatus',PublicationStatusVsValidation,'r')
-    this.vOptS('experimental',expression)
-    this.vOptS('date',expression)
-    this.vOptS('publisher',expression)
-    this.vOptA('contact',expression)
-    this.vOptS('description',expression)
-    this.vOptA('useContext',expression)
-    this.vOptA('jurisdiction',expression)
-    this.vOptS('copyright',expression)
-    this.vOptS('approvalDate',expression)
-    this.vOptS('lastReviewDate',expression)
-    this.vOptS('effectivePeriod',expression)
-    this.vOptS('code',expression)
-    this.vOptA('instance',expression)
-    this.vOptA('applicability',expression)
-    this.vOptA('propertyGroup',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'ChargeItemDefinition' }
+    this.vRS('resourceType',exp)
+    this.vRS('url',exp)
+    this.vOA('identifier',exp)
+    this.vOS('version',exp)
+    this.vOS('title',exp)
+    this.vOA('derivedFromUri',exp)
+    this.vOA('partOf',exp)
+    this.vOA('replaces',exp)
+    this.vRSV('status',exp,'PublicationStatus',PublicationStatusVsValidation,'r')
+    this.vOS('experimental',exp)
+    this.vOS('date',exp)
+    this.vOS('publisher',exp)
+    this.vOA('contact',exp)
+    this.vOS('description',exp)
+    this.vOA('useContext',exp)
+    this.vOA('jurisdiction',exp)
+    this.vOS('copyright',exp)
+    this.vOS('approvalDate',exp)
+    this.vOS('lastReviewDate',exp)
+    this.vOS('effectivePeriod',exp)
+    this.vOS('code',exp)
+    this.vOA('instance',exp)
+    this.vOA('applicability',exp)
+    this.vOA('propertyGroup',exp)
     return issues;
   }
 }

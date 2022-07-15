@@ -7,9 +7,14 @@
  * The value set to instantiate this attribute should be drawn from a terminologically robust code system that consists of or contains concepts to support describing the reason why an administered dose has been assigned a particular status. Often, this reason describes why a dose is considered invalid. This value set is provided as a suggestive example.
  */
 export const ImmunizationEvaluationDoseStatusReasonVsValidation: readonly string[] = [
-  "advstorage", "http://terminology.hl7.org/CodeSystem/immunization-evaluation-dose-status-reason|advstorage", 
-  "coldchbrk", "http://terminology.hl7.org/CodeSystem/immunization-evaluation-dose-status-reason|coldchbrk", 
-  "explot", "http://terminology.hl7.org/CodeSystem/immunization-evaluation-dose-status-reason|explot", 
-  "outsidesched", "http://terminology.hl7.org/CodeSystem/immunization-evaluation-dose-status-reason|outsidesched", 
-  "prodrecall", "http://terminology.hl7.org/CodeSystem/immunization-evaluation-dose-status-reason|prodrecall", 
+  "advstorage",
+  "coldchbrk",
+  "explot",
+  "http://terminology.hl7.org/CodeSystem/immunization-evaluation-dose-status-reason|advstorage",
+  "http://terminology.hl7.org/CodeSystem/immunization-evaluation-dose-status-reason|coldchbrk",
+  "http://terminology.hl7.org/CodeSystem/immunization-evaluation-dose-status-reason|explot",
+  "http://terminology.hl7.org/CodeSystem/immunization-evaluation-dose-status-reason|outsidesched",
+  "http://terminology.hl7.org/CodeSystem/immunization-evaluation-dose-status-reason|prodrecall",
+  "outsidesched",
+  "prodrecall",
 ] as const;

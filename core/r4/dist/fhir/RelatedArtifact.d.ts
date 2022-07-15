@@ -100,6 +100,6 @@ export declare class RelatedArtifact extends fhir.FhirElement {
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(expression?: string): fhir.FtsIssue[];
+    doModelValidation(exp?: string): fhir.FtsIssue[];
 }
 //# sourceMappingURL=RelatedArtifact.d.ts.map

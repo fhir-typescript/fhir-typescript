@@ -7,11 +7,18 @@
  * The status of the episode of care.
  */
 export const EpisodeOfCareStatusVsValidation: readonly string[] = [
-  "active", "http://hl7.org/fhir/episode-of-care-status|active", 
-  "cancelled", "http://hl7.org/fhir/episode-of-care-status|cancelled", 
-  "entered-in-error", "http://hl7.org/fhir/episode-of-care-status|entered-in-error", 
-  "finished", "http://hl7.org/fhir/episode-of-care-status|finished", 
-  "onhold", "http://hl7.org/fhir/episode-of-care-status|onhold", 
-  "planned", "http://hl7.org/fhir/episode-of-care-status|planned", 
-  "waitlist", "http://hl7.org/fhir/episode-of-care-status|waitlist", 
+  "active",
+  "cancelled",
+  "entered-in-error",
+  "finished",
+  "http://hl7.org/fhir/episode-of-care-status|active",
+  "http://hl7.org/fhir/episode-of-care-status|cancelled",
+  "http://hl7.org/fhir/episode-of-care-status|entered-in-error",
+  "http://hl7.org/fhir/episode-of-care-status|finished",
+  "http://hl7.org/fhir/episode-of-care-status|onhold",
+  "http://hl7.org/fhir/episode-of-care-status|planned",
+  "http://hl7.org/fhir/episode-of-care-status|waitlist",
+  "onhold",
+  "planned",
+  "waitlist",
 ] as const;

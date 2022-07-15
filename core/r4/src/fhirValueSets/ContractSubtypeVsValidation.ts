@@ -7,6 +7,8 @@
  * This value set includes sample Contract Subtype codes.
  */
 export const ContractSubtypeVsValidation: readonly string[] = [
-  "disclosure-ca", "http://terminology.hl7.org/CodeSystem/contractsubtypecodes|disclosure-ca", 
-  "disclosure-us", "http://terminology.hl7.org/CodeSystem/contractsubtypecodes|disclosure-us", 
+  "disclosure-ca",
+  "disclosure-us",
+  "http://terminology.hl7.org/CodeSystem/contractsubtypecodes|disclosure-ca",
+  "http://terminology.hl7.org/CodeSystem/contractsubtypecodes|disclosure-us",
 ] as const;

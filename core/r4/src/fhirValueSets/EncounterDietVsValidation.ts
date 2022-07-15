@@ -7,11 +7,18 @@
  * This value set defines a set of codes that can be used to indicate dietary preferences or restrictions a patient may have.
  */
 export const EncounterDietVsValidation: readonly string[] = [
-  "dairy-free", "http://terminology.hl7.org/CodeSystem/diet|dairy-free", 
-  "gluten-free", "http://terminology.hl7.org/CodeSystem/diet|gluten-free", 
-  "halal", "http://terminology.hl7.org/CodeSystem/diet|halal", 
-  "kosher", "http://terminology.hl7.org/CodeSystem/diet|kosher", 
-  "nut-free", "http://terminology.hl7.org/CodeSystem/diet|nut-free", 
-  "vegan", "http://terminology.hl7.org/CodeSystem/diet|vegan", 
-  "vegetarian", "http://terminology.hl7.org/CodeSystem/diet|vegetarian", 
+  "dairy-free",
+  "gluten-free",
+  "halal",
+  "http://terminology.hl7.org/CodeSystem/diet|dairy-free",
+  "http://terminology.hl7.org/CodeSystem/diet|gluten-free",
+  "http://terminology.hl7.org/CodeSystem/diet|halal",
+  "http://terminology.hl7.org/CodeSystem/diet|kosher",
+  "http://terminology.hl7.org/CodeSystem/diet|nut-free",
+  "http://terminology.hl7.org/CodeSystem/diet|vegan",
+  "http://terminology.hl7.org/CodeSystem/diet|vegetarian",
+  "kosher",
+  "nut-free",
+  "vegan",
+  "vegetarian",
 ] as const;

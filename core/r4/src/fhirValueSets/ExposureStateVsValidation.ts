@@ -7,6 +7,8 @@
  * Whether the results by exposure is describing the results for the primary exposure of interest (exposure) or the alternative state (exposureAlternative).
  */
 export const ExposureStateVsValidation: readonly string[] = [
-  "exposure", "http://hl7.org/fhir/exposure-state|exposure", 
-  "exposure-alternative", "http://hl7.org/fhir/exposure-state|exposure-alternative", 
+  "exposure",
+  "exposure-alternative",
+  "http://hl7.org/fhir/exposure-state|exposure",
+  "http://hl7.org/fhir/exposure-state|exposure-alternative",
 ] as const;

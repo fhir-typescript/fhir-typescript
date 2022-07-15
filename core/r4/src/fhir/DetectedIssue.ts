@@ -68,11 +68,11 @@ export class DetectedIssueEvidence extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'DetectedIssue.evidence' }
-    this.vOptA('code',expression)
-    this.vOptA('detail',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'DetectedIssue.evidence' }
+    this.vOA('code',exp)
+    this.vOA('detail',exp)
     return issues;
   }
 }
@@ -135,12 +135,12 @@ export class DetectedIssueMitigation extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'DetectedIssue.mitigation' }
-    this.vReqS('action',expression)
-    this.vOptS('date',expression)
-    this.vOptS('author',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'DetectedIssue.mitigation' }
+    this.vRS('action',exp)
+    this.vOS('date',exp)
+    this.vOS('author',exp)
     return issues;
   }
 }
@@ -335,22 +335,22 @@ export class DetectedIssue extends fhir.DomainResource {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'DetectedIssue' }
-    this.vReqS('resourceType',expression)
-    this.vOptA('identifier',expression)
-    this.vReqSV('status',expression,'ObservationStatus',ObservationStatusVsValidation,'r')
-    this.vOptS('code',expression)
-    this.vOptSV('severity',expression,'DetectedissueSeverity',DetectedissueSeverityVsValidation,'r')
-    this.vOptS('patient',expression)
-    this.vOptS('identified',expression)
-    this.vOptS('author',expression)
-    this.vOptA('implicated',expression)
-    this.vOptA('evidence',expression)
-    this.vOptS('detail',expression)
-    this.vOptS('reference',expression)
-    this.vOptA('mitigation',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'DetectedIssue' }
+    this.vRS('resourceType',exp)
+    this.vOA('identifier',exp)
+    this.vRSV('status',exp,'ObservationStatus',ObservationStatusVsValidation,'r')
+    this.vOS('code',exp)
+    this.vOSV('severity',exp,'DetectedissueSeverity',DetectedissueSeverityVsValidation,'r')
+    this.vOS('patient',exp)
+    this.vOS('identified',exp)
+    this.vOS('author',exp)
+    this.vOA('implicated',exp)
+    this.vOA('evidence',exp)
+    this.vOS('detail',exp)
+    this.vOS('reference',exp)
+    this.vOA('mitigation',exp)
     return issues;
   }
 }

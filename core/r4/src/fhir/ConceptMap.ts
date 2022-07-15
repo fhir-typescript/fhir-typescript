@@ -110,13 +110,13 @@ export class ConceptMapGroupElementTargetDependsOn extends fhir.BackboneElement 
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'ConceptMap.group.element.target.dependsOn' }
-    this.vReqS('property',expression)
-    this.vOptS('system',expression)
-    this.vReqS('value',expression)
-    this.vOptS('display',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'ConceptMap.group.element.target.dependsOn' }
+    this.vRS('property',exp)
+    this.vOS('system',exp)
+    this.vRS('value',exp)
+    this.vOS('display',exp)
     return issues;
   }
 }
@@ -232,15 +232,15 @@ export class ConceptMapGroupElementTarget extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'ConceptMap.group.element.target' }
-    this.vOptS('code',expression)
-    this.vOptS('display',expression)
-    this.vReqSV('equivalence',expression,'ConceptMapEquivalence',ConceptMapEquivalenceVsValidation,'r')
-    this.vOptS('comment',expression)
-    this.vOptA('dependsOn',expression)
-    this.vOptA('product',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'ConceptMap.group.element.target' }
+    this.vOS('code',exp)
+    this.vOS('display',exp)
+    this.vRSV('equivalence',exp,'ConceptMapEquivalence',ConceptMapEquivalenceVsValidation,'r')
+    this.vOS('comment',exp)
+    this.vOA('dependsOn',exp)
+    this.vOA('product',exp)
     return issues;
   }
 }
@@ -311,12 +311,12 @@ export class ConceptMapGroupElement extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'ConceptMap.group.element' }
-    this.vOptS('code',expression)
-    this.vOptS('display',expression)
-    this.vOptA('target',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'ConceptMap.group.element' }
+    this.vOS('code',exp)
+    this.vOS('display',exp)
+    this.vOA('target',exp)
     return issues;
   }
 }
@@ -412,13 +412,13 @@ export class ConceptMapGroupUnmapped extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'ConceptMap.group.unmapped' }
-    this.vReqSV('mode',expression,'ConceptmapUnmappedMode',ConceptmapUnmappedModeVsValidation,'r')
-    this.vOptS('code',expression)
-    this.vOptS('display',expression)
-    this.vOptS('url',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'ConceptMap.group.unmapped' }
+    this.vRSV('mode',exp,'ConceptmapUnmappedMode',ConceptmapUnmappedModeVsValidation,'r')
+    this.vOS('code',exp)
+    this.vOS('display',exp)
+    this.vOS('url',exp)
     return issues;
   }
 }
@@ -532,15 +532,15 @@ export class ConceptMapGroup extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'ConceptMap.group' }
-    this.vOptS('source',expression)
-    this.vOptS('sourceVersion',expression)
-    this.vOptS('target',expression)
-    this.vOptS('targetVersion',expression)
-    this.vReqA('element',expression)
-    this.vOptS('unmapped',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'ConceptMap.group' }
+    this.vOS('source',exp)
+    this.vOS('sourceVersion',exp)
+    this.vOS('target',exp)
+    this.vOS('targetVersion',exp)
+    this.vRA('element',exp)
+    this.vOS('unmapped',exp)
     return issues;
   }
 }
@@ -863,28 +863,28 @@ export class ConceptMap extends fhir.DomainResource {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'ConceptMap' }
-    this.vReqS('resourceType',expression)
-    this.vOptS('url',expression)
-    this.vOptS('identifier',expression)
-    this.vOptS('version',expression)
-    this.vOptS('name',expression)
-    this.vOptS('title',expression)
-    this.vReqSV('status',expression,'PublicationStatus',PublicationStatusVsValidation,'r')
-    this.vOptS('experimental',expression)
-    this.vOptS('date',expression)
-    this.vOptS('publisher',expression)
-    this.vOptA('contact',expression)
-    this.vOptS('description',expression)
-    this.vOptA('useContext',expression)
-    this.vOptA('jurisdiction',expression)
-    this.vOptS('purpose',expression)
-    this.vOptS('copyright',expression)
-    this.vOptS('source',expression)
-    this.vOptS('target',expression)
-    this.vOptA('group',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'ConceptMap' }
+    this.vRS('resourceType',exp)
+    this.vOS('url',exp)
+    this.vOS('identifier',exp)
+    this.vOS('version',exp)
+    this.vOS('name',exp)
+    this.vOS('title',exp)
+    this.vRSV('status',exp,'PublicationStatus',PublicationStatusVsValidation,'r')
+    this.vOS('experimental',exp)
+    this.vOS('date',exp)
+    this.vOS('publisher',exp)
+    this.vOA('contact',exp)
+    this.vOS('description',exp)
+    this.vOA('useContext',exp)
+    this.vOA('jurisdiction',exp)
+    this.vOS('purpose',exp)
+    this.vOS('copyright',exp)
+    this.vOS('source',exp)
+    this.vOS('target',exp)
+    this.vOA('group',exp)
     return issues;
   }
 }

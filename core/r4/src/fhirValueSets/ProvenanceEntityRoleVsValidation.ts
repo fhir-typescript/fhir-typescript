@@ -7,9 +7,14 @@
  * How an entity was used in an activity.
  */
 export const ProvenanceEntityRoleVsValidation: readonly string[] = [
-  "derivation", "http://hl7.org/fhir/provenance-entity-role|derivation", 
-  "quotation", "http://hl7.org/fhir/provenance-entity-role|quotation", 
-  "removal", "http://hl7.org/fhir/provenance-entity-role|removal", 
-  "revision", "http://hl7.org/fhir/provenance-entity-role|revision", 
-  "source", "http://hl7.org/fhir/provenance-entity-role|source", 
+  "derivation",
+  "http://hl7.org/fhir/provenance-entity-role|derivation",
+  "http://hl7.org/fhir/provenance-entity-role|quotation",
+  "http://hl7.org/fhir/provenance-entity-role|removal",
+  "http://hl7.org/fhir/provenance-entity-role|revision",
+  "http://hl7.org/fhir/provenance-entity-role|source",
+  "quotation",
+  "removal",
+  "revision",
+  "source",
 ] as const;

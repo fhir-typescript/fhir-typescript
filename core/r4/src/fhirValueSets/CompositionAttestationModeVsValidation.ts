@@ -7,8 +7,12 @@
  * The way in which a person authenticated a composition.
  */
 export const CompositionAttestationModeVsValidation: readonly string[] = [
-  "legal", "http://hl7.org/fhir/composition-attestation-mode|legal", 
-  "official", "http://hl7.org/fhir/composition-attestation-mode|official", 
-  "personal", "http://hl7.org/fhir/composition-attestation-mode|personal", 
-  "professional", "http://hl7.org/fhir/composition-attestation-mode|professional", 
+  "http://hl7.org/fhir/composition-attestation-mode|legal",
+  "http://hl7.org/fhir/composition-attestation-mode|official",
+  "http://hl7.org/fhir/composition-attestation-mode|personal",
+  "http://hl7.org/fhir/composition-attestation-mode|professional",
+  "legal",
+  "official",
+  "personal",
+  "professional",
 ] as const;

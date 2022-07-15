@@ -7,8 +7,12 @@
  * Codes indicating the degree of authority/intentionality associated with a care plan.
  */
 export const CarePlanIntentVsValidation: readonly string[] = [
-  "option", "http://hl7.org/fhir/request-intent|option", 
-  "order", "http://hl7.org/fhir/request-intent|order", 
-  "plan", "http://hl7.org/fhir/request-intent|plan", 
-  "proposal", "http://hl7.org/fhir/request-intent|proposal", 
+  "http://hl7.org/fhir/request-intent|option",
+  "http://hl7.org/fhir/request-intent|order",
+  "http://hl7.org/fhir/request-intent|plan",
+  "http://hl7.org/fhir/request-intent|proposal",
+  "option",
+  "order",
+  "plan",
+  "proposal",
 ] as const;

@@ -7,8 +7,12 @@
  * Indication of the degree of conformance expectations associated with a binding.
  */
 export const BindingStrengthVsValidation: readonly string[] = [
-  "example", "http://hl7.org/fhir/binding-strength|example", 
-  "extensible", "http://hl7.org/fhir/binding-strength|extensible", 
-  "preferred", "http://hl7.org/fhir/binding-strength|preferred", 
-  "required", "http://hl7.org/fhir/binding-strength|required", 
+  "example",
+  "extensible",
+  "http://hl7.org/fhir/binding-strength|example",
+  "http://hl7.org/fhir/binding-strength|extensible",
+  "http://hl7.org/fhir/binding-strength|preferred",
+  "http://hl7.org/fhir/binding-strength|required",
+  "preferred",
+  "required",
 ] as const;

@@ -7,8 +7,12 @@
  * The type of contributor.
  */
 export const ContributorTypeVsValidation: readonly string[] = [
-  "author", "http://hl7.org/fhir/contributor-type|author", 
-  "editor", "http://hl7.org/fhir/contributor-type|editor", 
-  "endorser", "http://hl7.org/fhir/contributor-type|endorser", 
-  "reviewer", "http://hl7.org/fhir/contributor-type|reviewer", 
+  "author",
+  "editor",
+  "endorser",
+  "http://hl7.org/fhir/contributor-type|author",
+  "http://hl7.org/fhir/contributor-type|editor",
+  "http://hl7.org/fhir/contributor-type|endorser",
+  "http://hl7.org/fhir/contributor-type|reviewer",
+  "reviewer",
 ] as const;

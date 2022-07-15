@@ -7,9 +7,14 @@
  * Example codes for grouping goals to use for filtering or presentation.
  */
 export const GoalCategoryVsValidation: readonly string[] = [
-  "behavioral", "http://terminology.hl7.org/CodeSystem/goal-category|behavioral", 
-  "dietary", "http://terminology.hl7.org/CodeSystem/goal-category|dietary", 
-  "nursing", "http://terminology.hl7.org/CodeSystem/goal-category|nursing", 
-  "physiotherapy", "http://terminology.hl7.org/CodeSystem/goal-category|physiotherapy", 
-  "safety", "http://terminology.hl7.org/CodeSystem/goal-category|safety", 
+  "behavioral",
+  "dietary",
+  "http://terminology.hl7.org/CodeSystem/goal-category|behavioral",
+  "http://terminology.hl7.org/CodeSystem/goal-category|dietary",
+  "http://terminology.hl7.org/CodeSystem/goal-category|nursing",
+  "http://terminology.hl7.org/CodeSystem/goal-category|physiotherapy",
+  "http://terminology.hl7.org/CodeSystem/goal-category|safety",
+  "nursing",
+  "physiotherapy",
+  "safety",
 ] as const;

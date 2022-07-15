@@ -7,7 +7,10 @@
  * A code to indicate if the substance is actively used.
  */
 export const SubstanceStatusVsValidation: readonly string[] = [
-  "active", "http://hl7.org/fhir/substance-status|active", 
-  "entered-in-error", "http://hl7.org/fhir/substance-status|entered-in-error", 
-  "inactive", "http://hl7.org/fhir/substance-status|inactive", 
+  "active",
+  "entered-in-error",
+  "http://hl7.org/fhir/substance-status|active",
+  "http://hl7.org/fhir/substance-status|entered-in-error",
+  "http://hl7.org/fhir/substance-status|inactive",
+  "inactive",
 ] as const;

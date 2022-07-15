@@ -7,6 +7,8 @@
  * This value set includes sample Claim SubType codes which are used to distinguish the claim types for example within type institutional there may be subtypes for emergency services, bed stay and transportation.
  */
 export const ClaimSubtypeVsValidation: readonly string[] = [
-  "emergency", "http://terminology.hl7.org/CodeSystem/ex-claimsubtype|emergency", 
-  "ortho", "http://terminology.hl7.org/CodeSystem/ex-claimsubtype|ortho", 
+  "emergency",
+  "http://terminology.hl7.org/CodeSystem/ex-claimsubtype|emergency",
+  "http://terminology.hl7.org/CodeSystem/ex-claimsubtype|ortho",
+  "ortho",
 ] as const;

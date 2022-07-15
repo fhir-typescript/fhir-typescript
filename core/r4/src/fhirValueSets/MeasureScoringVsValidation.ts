@@ -7,8 +7,12 @@
  * The scoring type of the measure.
  */
 export const MeasureScoringVsValidation: readonly string[] = [
-  "cohort", "http://terminology.hl7.org/CodeSystem/measure-scoring|cohort", 
-  "continuous-variable", "http://terminology.hl7.org/CodeSystem/measure-scoring|continuous-variable", 
-  "proportion", "http://terminology.hl7.org/CodeSystem/measure-scoring|proportion", 
-  "ratio", "http://terminology.hl7.org/CodeSystem/measure-scoring|ratio", 
+  "cohort",
+  "continuous-variable",
+  "http://terminology.hl7.org/CodeSystem/measure-scoring|cohort",
+  "http://terminology.hl7.org/CodeSystem/measure-scoring|continuous-variable",
+  "http://terminology.hl7.org/CodeSystem/measure-scoring|proportion",
+  "http://terminology.hl7.org/CodeSystem/measure-scoring|ratio",
+  "proportion",
+  "ratio",
 ] as const;

@@ -7,7 +7,10 @@
  * This value set includes SNOMED CT codes for materials that specimen containers are made of
  */
 export const ContainerMaterialVsValidation: readonly string[] = [
-  "32039001", "http://snomed.info/sct|32039001", 
-  "425620007", "http://snomed.info/sct|425620007", 
-  "61088005", "http://snomed.info/sct|61088005", 
+  "32039001",
+  "425620007",
+  "61088005",
+  "http://snomed.info/sct|32039001",
+  "http://snomed.info/sct|425620007",
+  "http://snomed.info/sct|61088005",
 ] as const;

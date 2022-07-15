@@ -64,11 +64,11 @@ export class CatalogEntryRelatedEntry extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'CatalogEntry.relatedEntry' }
-    this.vReqSV('relationtype',expression,'RelationType',RelationTypeVsValidation,'r')
-    this.vReqS('item',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'CatalogEntry.relatedEntry' }
+    this.vRSV('relationtype',exp,'RelationType',RelationTypeVsValidation,'r')
+    this.vRS('item',exp)
     return issues;
   }
 }
@@ -261,23 +261,23 @@ export class CatalogEntry extends fhir.DomainResource {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'CatalogEntry' }
-    this.vReqS('resourceType',expression)
-    this.vOptA('identifier',expression)
-    this.vOptS('type',expression)
-    this.vReqS('orderable',expression)
-    this.vReqS('referencedItem',expression)
-    this.vOptA('additionalIdentifier',expression)
-    this.vOptA('classification',expression)
-    this.vOptSV('status',expression,'PublicationStatus',PublicationStatusVsValidation,'r')
-    this.vOptS('validityPeriod',expression)
-    this.vOptS('validTo',expression)
-    this.vOptS('lastUpdated',expression)
-    this.vOptA('additionalCharacteristic',expression)
-    this.vOptA('additionalClassification',expression)
-    this.vOptA('relatedEntry',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'CatalogEntry' }
+    this.vRS('resourceType',exp)
+    this.vOA('identifier',exp)
+    this.vOS('type',exp)
+    this.vRS('orderable',exp)
+    this.vRS('referencedItem',exp)
+    this.vOA('additionalIdentifier',exp)
+    this.vOA('classification',exp)
+    this.vOSV('status',exp,'PublicationStatus',PublicationStatusVsValidation,'r')
+    this.vOS('validityPeriod',exp)
+    this.vOS('validTo',exp)
+    this.vOS('lastUpdated',exp)
+    this.vOA('additionalCharacteristic',exp)
+    this.vOA('additionalClassification',exp)
+    this.vOA('relatedEntry',exp)
     return issues;
   }
 }

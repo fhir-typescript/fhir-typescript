@@ -46,7 +46,7 @@ export declare class TerminologyCapabilitiesSoftware extends fhir.BackboneElemen
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(expression?: string): fhir.FtsIssue[];
+    doModelValidation(exp?: string): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the TerminologyCapabilitiesImplementation type.
@@ -92,7 +92,7 @@ export declare class TerminologyCapabilitiesImplementation extends fhir.Backbone
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(expression?: string): fhir.FtsIssue[];
+    doModelValidation(exp?: string): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the TerminologyCapabilitiesCodeSystemVersionFilter type.
@@ -138,7 +138,7 @@ export declare class TerminologyCapabilitiesCodeSystemVersionFilter extends fhir
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(expression?: string): fhir.FtsIssue[];
+    doModelValidation(exp?: string): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the TerminologyCapabilitiesCodeSystemVersion type.
@@ -228,7 +228,7 @@ export declare class TerminologyCapabilitiesCodeSystemVersion extends fhir.Backb
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(expression?: string): fhir.FtsIssue[];
+    doModelValidation(exp?: string): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the TerminologyCapabilitiesCodeSystem type.
@@ -282,7 +282,7 @@ export declare class TerminologyCapabilitiesCodeSystem extends fhir.BackboneElem
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(expression?: string): fhir.FtsIssue[];
+    doModelValidation(exp?: string): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the TerminologyCapabilitiesExpansionParameter type.
@@ -328,7 +328,7 @@ export declare class TerminologyCapabilitiesExpansionParameter extends fhir.Back
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(expression?: string): fhir.FtsIssue[];
+    doModelValidation(exp?: string): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the TerminologyCapabilitiesExpansion type.
@@ -406,7 +406,7 @@ export declare class TerminologyCapabilitiesExpansion extends fhir.BackboneEleme
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(expression?: string): fhir.FtsIssue[];
+    doModelValidation(exp?: string): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the TerminologyCapabilitiesValidateCode type.
@@ -440,7 +440,7 @@ export declare class TerminologyCapabilitiesValidateCode extends fhir.BackboneEl
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(expression?: string): fhir.FtsIssue[];
+    doModelValidation(exp?: string): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the TerminologyCapabilitiesTranslation type.
@@ -474,7 +474,7 @@ export declare class TerminologyCapabilitiesTranslation extends fhir.BackboneEle
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(expression?: string): fhir.FtsIssue[];
+    doModelValidation(exp?: string): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the TerminologyCapabilitiesClosure type.
@@ -508,7 +508,7 @@ export declare class TerminologyCapabilitiesClosure extends fhir.BackboneElement
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(expression?: string): fhir.FtsIssue[];
+    doModelValidation(exp?: string): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the TerminologyCapabilities type.
@@ -790,6 +790,6 @@ export declare class TerminologyCapabilities extends fhir.DomainResource {
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(expression?: string): fhir.FtsIssue[];
+    doModelValidation(exp?: string): fhir.FtsIssue[];
 }
 //# sourceMappingURL=TerminologyCapabilities.d.ts.map

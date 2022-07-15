@@ -92,11 +92,11 @@ export class OperationDefinitionParameterBinding extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'OperationDefinition.parameter.binding' }
-    this.vReqSV('strength',expression,'BindingStrength',BindingStrengthVsValidation,'r')
-    this.vReqS('valueSet',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'OperationDefinition.parameter.binding' }
+    this.vRSV('strength',exp,'BindingStrength',BindingStrengthVsValidation,'r')
+    this.vRS('valueSet',exp)
     return issues;
   }
 }
@@ -158,11 +158,11 @@ export class OperationDefinitionParameterReferencedFrom extends fhir.BackboneEle
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'OperationDefinition.parameter.referencedFrom' }
-    this.vReqS('source',expression)
-    this.vOptS('sourceId',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'OperationDefinition.parameter.referencedFrom' }
+    this.vRS('source',exp)
+    this.vOS('sourceId',exp)
     return issues;
   }
 }
@@ -361,20 +361,20 @@ export class OperationDefinitionParameter extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'OperationDefinition.parameter' }
-    this.vReqS('name',expression)
-    this.vReqSV('use',expression,'OperationParameterUse',OperationParameterUseVsValidation,'r')
-    this.vReqS('min',expression)
-    this.vReqS('max',expression)
-    this.vOptS('documentation',expression)
-    this.vOptSV('type',expression,'AllTypes',AllTypesVsValidation,'r')
-    this.vOptA('targetProfile',expression)
-    this.vOptSV('searchType',expression,'SearchParamType',SearchParamTypeVsValidation,'r')
-    this.vOptS('binding',expression)
-    this.vOptA('referencedFrom',expression)
-    this.vOptA('part',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'OperationDefinition.parameter' }
+    this.vRS('name',exp)
+    this.vRSV('use',exp,'OperationParameterUse',OperationParameterUseVsValidation,'r')
+    this.vRS('min',exp)
+    this.vRS('max',exp)
+    this.vOS('documentation',exp)
+    this.vOSV('type',exp,'AllTypes',AllTypesVsValidation,'r')
+    this.vOA('targetProfile',exp)
+    this.vOSV('searchType',exp,'SearchParamType',SearchParamTypeVsValidation,'r')
+    this.vOS('binding',exp)
+    this.vOA('referencedFrom',exp)
+    this.vOA('part',exp)
     return issues;
   }
 }
@@ -438,11 +438,11 @@ export class OperationDefinitionOverload extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'OperationDefinition.overload' }
-    this.vOptA('parameterName',expression)
-    this.vOptS('comment',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'OperationDefinition.overload' }
+    this.vOA('parameterName',exp)
+    this.vOS('comment',exp)
     return issues;
   }
 }
@@ -903,36 +903,36 @@ export class OperationDefinition extends fhir.DomainResource {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'OperationDefinition' }
-    this.vReqS('resourceType',expression)
-    this.vOptS('url',expression)
-    this.vOptS('version',expression)
-    this.vReqS('name',expression)
-    this.vOptS('title',expression)
-    this.vReqSV('status',expression,'PublicationStatus',PublicationStatusVsValidation,'r')
-    this.vReqSV('kind',expression,'OperationKind',OperationKindVsValidation,'r')
-    this.vOptS('experimental',expression)
-    this.vOptS('date',expression)
-    this.vOptS('publisher',expression)
-    this.vOptA('contact',expression)
-    this.vOptS('description',expression)
-    this.vOptA('useContext',expression)
-    this.vOptA('jurisdiction',expression)
-    this.vOptS('purpose',expression)
-    this.vOptS('affectsState',expression)
-    this.vReqS('code',expression)
-    this.vOptS('comment',expression)
-    this.vOptS('base',expression)
-    this.vOptAV('resource',expression,'ResourceTypes',ResourceTypesVsValidation,'r')
-    this.vReqS('system',expression)
-    this.vReqS('type',expression)
-    this.vReqS('instance',expression)
-    this.vOptS('inputProfile',expression)
-    this.vOptS('outputProfile',expression)
-    this.vOptA('parameter',expression)
-    this.vOptA('overload',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'OperationDefinition' }
+    this.vRS('resourceType',exp)
+    this.vOS('url',exp)
+    this.vOS('version',exp)
+    this.vRS('name',exp)
+    this.vOS('title',exp)
+    this.vRSV('status',exp,'PublicationStatus',PublicationStatusVsValidation,'r')
+    this.vRSV('kind',exp,'OperationKind',OperationKindVsValidation,'r')
+    this.vOS('experimental',exp)
+    this.vOS('date',exp)
+    this.vOS('publisher',exp)
+    this.vOA('contact',exp)
+    this.vOS('description',exp)
+    this.vOA('useContext',exp)
+    this.vOA('jurisdiction',exp)
+    this.vOS('purpose',exp)
+    this.vOS('affectsState',exp)
+    this.vRS('code',exp)
+    this.vOS('comment',exp)
+    this.vOS('base',exp)
+    this.vOAV('resource',exp,'ResourceTypes',ResourceTypesVsValidation,'r')
+    this.vRS('system',exp)
+    this.vRS('type',exp)
+    this.vRS('instance',exp)
+    this.vOS('inputProfile',exp)
+    this.vOS('outputProfile',exp)
+    this.vOA('parameter',exp)
+    this.vOA('overload',exp)
     return issues;
   }
 }

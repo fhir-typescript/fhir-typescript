@@ -7,9 +7,14 @@
  * Indicator for type of action performed during the event that generated the event.
  */
 export const AuditEventActionVsValidation: readonly string[] = [
-  "C", "http://hl7.org/fhir/audit-event-action|C", 
-  "D", "http://hl7.org/fhir/audit-event-action|D", 
-  "E", "http://hl7.org/fhir/audit-event-action|E", 
-  "R", "http://hl7.org/fhir/audit-event-action|R", 
-  "U", "http://hl7.org/fhir/audit-event-action|U", 
+  "C",
+  "D",
+  "E",
+  "http://hl7.org/fhir/audit-event-action|C",
+  "http://hl7.org/fhir/audit-event-action|D",
+  "http://hl7.org/fhir/audit-event-action|E",
+  "http://hl7.org/fhir/audit-event-action|R",
+  "http://hl7.org/fhir/audit-event-action|U",
+  "R",
+  "U",
 ] as const;

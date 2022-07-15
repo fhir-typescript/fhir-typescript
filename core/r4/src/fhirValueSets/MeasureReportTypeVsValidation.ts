@@ -7,8 +7,12 @@
  * The type of the measure report.
  */
 export const MeasureReportTypeVsValidation: readonly string[] = [
-  "data-collection", "http://hl7.org/fhir/measure-report-type|data-collection", 
-  "individual", "http://hl7.org/fhir/measure-report-type|individual", 
-  "subject-list", "http://hl7.org/fhir/measure-report-type|subject-list", 
-  "summary", "http://hl7.org/fhir/measure-report-type|summary", 
+  "data-collection",
+  "http://hl7.org/fhir/measure-report-type|data-collection",
+  "http://hl7.org/fhir/measure-report-type|individual",
+  "http://hl7.org/fhir/measure-report-type|subject-list",
+  "http://hl7.org/fhir/measure-report-type|summary",
+  "individual",
+  "subject-list",
+  "summary",
 ] as const;

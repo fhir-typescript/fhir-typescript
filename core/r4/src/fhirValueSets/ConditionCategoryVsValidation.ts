@@ -7,6 +7,8 @@
  * Preferred value set for Condition Categories.
  */
 export const ConditionCategoryVsValidation: readonly string[] = [
-  "encounter-diagnosis", "http://terminology.hl7.org/CodeSystem/condition-category|encounter-diagnosis", 
-  "problem-list-item", "http://terminology.hl7.org/CodeSystem/condition-category|problem-list-item", 
+  "encounter-diagnosis",
+  "http://terminology.hl7.org/CodeSystem/condition-category|encounter-diagnosis",
+  "http://terminology.hl7.org/CodeSystem/condition-category|problem-list-item",
+  "problem-list-item",
 ] as const;

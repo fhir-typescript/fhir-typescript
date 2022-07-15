@@ -7,8 +7,12 @@
  * Describes the type of a metric calibration.
  */
 export const MetricCalibrationTypeVsValidation: readonly string[] = [
-  "gain", "http://hl7.org/fhir/metric-calibration-type|gain", 
-  "offset", "http://hl7.org/fhir/metric-calibration-type|offset", 
-  "two-point", "http://hl7.org/fhir/metric-calibration-type|two-point", 
-  "unspecified", "http://hl7.org/fhir/metric-calibration-type|unspecified", 
+  "gain",
+  "http://hl7.org/fhir/metric-calibration-type|gain",
+  "http://hl7.org/fhir/metric-calibration-type|offset",
+  "http://hl7.org/fhir/metric-calibration-type|two-point",
+  "http://hl7.org/fhir/metric-calibration-type|unspecified",
+  "offset",
+  "two-point",
+  "unspecified",
 ] as const;

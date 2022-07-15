@@ -7,7 +7,10 @@
  * Codes identifying the category of observation range.
  */
 export const ObservationRangeCategoryVsValidation: readonly string[] = [
-  "absolute", "http://hl7.org/fhir/observation-range-category|absolute", 
-  "critical", "http://hl7.org/fhir/observation-range-category|critical", 
-  "reference", "http://hl7.org/fhir/observation-range-category|reference", 
+  "absolute",
+  "critical",
+  "http://hl7.org/fhir/observation-range-category|absolute",
+  "http://hl7.org/fhir/observation-range-category|critical",
+  "http://hl7.org/fhir/observation-range-category|reference",
+  "reference",
 ] as const;

@@ -7,8 +7,12 @@
  * A code that indicates how the server supports conditional read.
  */
 export const ConditionalReadStatusVsValidation: readonly string[] = [
-  "full-support", "http://hl7.org/fhir/conditional-read-status|full-support", 
-  "modified-since", "http://hl7.org/fhir/conditional-read-status|modified-since", 
-  "not-match", "http://hl7.org/fhir/conditional-read-status|not-match", 
-  "not-supported", "http://hl7.org/fhir/conditional-read-status|not-supported", 
+  "full-support",
+  "http://hl7.org/fhir/conditional-read-status|full-support",
+  "http://hl7.org/fhir/conditional-read-status|modified-since",
+  "http://hl7.org/fhir/conditional-read-status|not-match",
+  "http://hl7.org/fhir/conditional-read-status|not-supported",
+  "modified-since",
+  "not-match",
+  "not-supported",
 ] as const;

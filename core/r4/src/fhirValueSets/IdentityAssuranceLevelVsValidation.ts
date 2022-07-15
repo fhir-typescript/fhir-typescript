@@ -7,8 +7,12 @@
  * The level of confidence that this link represents the same actual person, based on NIST Authentication Levels.
  */
 export const IdentityAssuranceLevelVsValidation: readonly string[] = [
-  "level1", "http://hl7.org/fhir/identity-assuranceLevel|level1", 
-  "level2", "http://hl7.org/fhir/identity-assuranceLevel|level2", 
-  "level3", "http://hl7.org/fhir/identity-assuranceLevel|level3", 
-  "level4", "http://hl7.org/fhir/identity-assuranceLevel|level4", 
+  "http://hl7.org/fhir/identity-assuranceLevel|level1",
+  "http://hl7.org/fhir/identity-assuranceLevel|level2",
+  "http://hl7.org/fhir/identity-assuranceLevel|level3",
+  "http://hl7.org/fhir/identity-assuranceLevel|level4",
+  "level1",
+  "level2",
+  "level3",
+  "level4",
 ] as const;

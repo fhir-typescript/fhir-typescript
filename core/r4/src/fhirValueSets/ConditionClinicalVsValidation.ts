@@ -7,10 +7,16 @@
  * Preferred value set for Condition Clinical Status.
  */
 export const ConditionClinicalVsValidation: readonly string[] = [
-  "active", "http://terminology.hl7.org/CodeSystem/condition-clinical|active", 
-  "inactive", "http://terminology.hl7.org/CodeSystem/condition-clinical|inactive", 
-  "recurrence", "http://terminology.hl7.org/CodeSystem/condition-clinical|recurrence", 
-  "relapse", "http://terminology.hl7.org/CodeSystem/condition-clinical|relapse", 
-  "remission", "http://terminology.hl7.org/CodeSystem/condition-clinical|remission", 
-  "resolved", "http://terminology.hl7.org/CodeSystem/condition-clinical|resolved", 
+  "active",
+  "http://terminology.hl7.org/CodeSystem/condition-clinical|active",
+  "http://terminology.hl7.org/CodeSystem/condition-clinical|inactive",
+  "http://terminology.hl7.org/CodeSystem/condition-clinical|recurrence",
+  "http://terminology.hl7.org/CodeSystem/condition-clinical|relapse",
+  "http://terminology.hl7.org/CodeSystem/condition-clinical|remission",
+  "http://terminology.hl7.org/CodeSystem/condition-clinical|resolved",
+  "inactive",
+  "recurrence",
+  "relapse",
+  "remission",
+  "resolved",
 ] as const;

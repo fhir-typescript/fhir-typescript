@@ -232,15 +232,15 @@ export class ContractContentDefinition extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'Contract.contentDefinition' }
-    this.vReqS('type',expression)
-    this.vOptS('subType',expression)
-    this.vOptS('publisher',expression)
-    this.vOptS('publicationDate',expression)
-    this.vReqSV('publicationStatus',expression,'ContractPublicationstatus',ContractPublicationstatusVsValidation,'r')
-    this.vOptS('copyright',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'Contract.contentDefinition' }
+    this.vRS('type',exp)
+    this.vOS('subType',exp)
+    this.vOS('publisher',exp)
+    this.vOS('publicationDate',exp)
+    this.vRSV('publicationStatus',exp,'ContractPublicationstatus',ContractPublicationstatusVsValidation,'r')
+    this.vOS('copyright',exp)
     return issues;
   }
 }
@@ -317,13 +317,13 @@ export class ContractTermSecurityLabel extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'Contract.term.securityLabel' }
-    this.vOptA('number',expression)
-    this.vReqS('classification',expression)
-    this.vOptA('category',expression)
-    this.vOptA('control',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'Contract.term.securityLabel' }
+    this.vOA('number',exp)
+    this.vRS('classification',exp)
+    this.vOA('category',exp)
+    this.vOA('control',exp)
     return issues;
   }
 }
@@ -370,11 +370,11 @@ export class ContractTermOfferParty extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'Contract.term.offer.party' }
-    this.vReqA('reference',expression)
-    this.vReqS('role',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'Contract.term.offer.party' }
+    this.vRA('reference',exp)
+    this.vRS('role',exp)
     return issues;
   }
 }
@@ -475,10 +475,10 @@ export class ContractTermOfferAnswer extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'Contract.term.offer.answer' }
-    this.vReqS('value',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'Contract.term.offer.answer' }
+    this.vRS('value',exp)
     return issues;
   }
 }
@@ -635,19 +635,19 @@ export class ContractTermOffer extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'Contract.term.offer' }
-    this.vOptA('identifier',expression)
-    this.vOptA('party',expression)
-    this.vOptS('topic',expression)
-    this.vOptS('type',expression)
-    this.vOptS('decision',expression)
-    this.vOptA('decisionMode',expression)
-    this.vOptA('answer',expression)
-    this.vOptS('text',expression)
-    this.vOptA('linkId',expression)
-    this.vOptA('securityLabelNumber',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'Contract.term.offer' }
+    this.vOA('identifier',exp)
+    this.vOA('party',exp)
+    this.vOS('topic',exp)
+    this.vOS('type',exp)
+    this.vOS('decision',exp)
+    this.vOA('decisionMode',exp)
+    this.vOA('answer',exp)
+    this.vOS('text',exp)
+    this.vOA('linkId',exp)
+    this.vOA('securityLabelNumber',exp)
     return issues;
   }
 }
@@ -710,12 +710,12 @@ export class ContractTermAssetContext extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'Contract.term.asset.context' }
-    this.vOptS('reference',expression)
-    this.vOptA('code',expression)
-    this.vOptS('text',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'Contract.term.asset.context' }
+    this.vOS('reference',exp)
+    this.vOA('code',exp)
+    this.vOS('text',exp)
     return issues;
   }
 }
@@ -944,23 +944,23 @@ export class ContractTermAssetValuedItem extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'Contract.term.asset.valuedItem' }
-    this.vOptS('entity',expression)
-    this.vOptS('identifier',expression)
-    this.vOptS('effectiveTime',expression)
-    this.vOptS('quantity',expression)
-    this.vOptS('unitPrice',expression)
-    this.vOptS('factor',expression)
-    this.vOptS('points',expression)
-    this.vOptS('net',expression)
-    this.vOptS('payment',expression)
-    this.vOptS('paymentDate',expression)
-    this.vOptS('responsible',expression)
-    this.vOptS('recipient',expression)
-    this.vOptA('linkId',expression)
-    this.vOptA('securityLabelNumber',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'Contract.term.asset.valuedItem' }
+    this.vOS('entity',exp)
+    this.vOS('identifier',exp)
+    this.vOS('effectiveTime',exp)
+    this.vOS('quantity',exp)
+    this.vOS('unitPrice',exp)
+    this.vOS('factor',exp)
+    this.vOS('points',exp)
+    this.vOS('net',exp)
+    this.vOS('payment',exp)
+    this.vOS('paymentDate',exp)
+    this.vOS('responsible',exp)
+    this.vOS('recipient',exp)
+    this.vOA('linkId',exp)
+    this.vOA('securityLabelNumber',exp)
     return issues;
   }
 }
@@ -1169,24 +1169,24 @@ export class ContractTermAsset extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'Contract.term.asset' }
-    this.vOptS('scope',expression)
-    this.vOptA('type',expression)
-    this.vOptA('typeReference',expression)
-    this.vOptA('subtype',expression)
-    this.vOptS('relationship',expression)
-    this.vOptA('context',expression)
-    this.vOptS('condition',expression)
-    this.vOptA('periodType',expression)
-    this.vOptA('period',expression)
-    this.vOptA('usePeriod',expression)
-    this.vOptS('text',expression)
-    this.vOptA('linkId',expression)
-    this.vOptA('answer',expression)
-    this.vOptA('securityLabelNumber',expression)
-    this.vOptA('valuedItem',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'Contract.term.asset' }
+    this.vOS('scope',exp)
+    this.vOA('type',exp)
+    this.vOA('typeReference',exp)
+    this.vOA('subtype',exp)
+    this.vOS('relationship',exp)
+    this.vOA('context',exp)
+    this.vOS('condition',exp)
+    this.vOA('periodType',exp)
+    this.vOA('period',exp)
+    this.vOA('usePeriod',exp)
+    this.vOS('text',exp)
+    this.vOA('linkId',exp)
+    this.vOA('answer',exp)
+    this.vOA('securityLabelNumber',exp)
+    this.vOA('valuedItem',exp)
     return issues;
   }
 }
@@ -1232,11 +1232,11 @@ export class ContractTermActionSubject extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'Contract.term.action.subject' }
-    this.vReqA('reference',expression)
-    this.vOptS('role',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'Contract.term.action.subject' }
+    this.vRA('reference',exp)
+    this.vOS('role',exp)
     return issues;
   }
 }
@@ -1566,30 +1566,30 @@ export class ContractTermAction extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'Contract.term.action' }
-    this.vOptS('doNotPerform',expression)
-    this.vReqS('type',expression)
-    this.vOptA('subject',expression)
-    this.vReqS('intent',expression)
-    this.vOptA('linkId',expression)
-    this.vReqS('status',expression)
-    this.vOptS('context',expression)
-    this.vOptA('contextLinkId',expression)
-    this.vOptS('occurrence',expression)
-    this.vOptA('requester',expression)
-    this.vOptA('requesterLinkId',expression)
-    this.vOptA('performerType',expression)
-    this.vOptS('performerRole',expression)
-    this.vOptS('performer',expression)
-    this.vOptA('performerLinkId',expression)
-    this.vOptA('reasonCode',expression)
-    this.vOptA('reasonReference',expression)
-    this.vOptA('reason',expression)
-    this.vOptA('reasonLinkId',expression)
-    this.vOptA('note',expression)
-    this.vOptA('securityLabelNumber',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'Contract.term.action' }
+    this.vOS('doNotPerform',exp)
+    this.vRS('type',exp)
+    this.vOA('subject',exp)
+    this.vRS('intent',exp)
+    this.vOA('linkId',exp)
+    this.vRS('status',exp)
+    this.vOS('context',exp)
+    this.vOA('contextLinkId',exp)
+    this.vOS('occurrence',exp)
+    this.vOA('requester',exp)
+    this.vOA('requesterLinkId',exp)
+    this.vOA('performerType',exp)
+    this.vOS('performerRole',exp)
+    this.vOS('performer',exp)
+    this.vOA('performerLinkId',exp)
+    this.vOA('reasonCode',exp)
+    this.vOA('reasonReference',exp)
+    this.vOA('reason',exp)
+    this.vOA('reasonLinkId',exp)
+    this.vOA('note',exp)
+    this.vOA('securityLabelNumber',exp)
     return issues;
   }
 }
@@ -1761,21 +1761,21 @@ export class ContractTerm extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'Contract.term' }
-    this.vOptS('identifier',expression)
-    this.vOptS('issued',expression)
-    this.vOptS('applies',expression)
-    this.vOptS('topic',expression)
-    this.vOptS('type',expression)
-    this.vOptS('subType',expression)
-    this.vOptS('text',expression)
-    this.vOptA('securityLabel',expression)
-    this.vReqS('offer',expression)
-    this.vOptA('asset',expression)
-    this.vOptA('action',expression)
-    this.vOptA('group',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'Contract.term' }
+    this.vOS('identifier',exp)
+    this.vOS('issued',exp)
+    this.vOS('applies',exp)
+    this.vOS('topic',exp)
+    this.vOS('type',exp)
+    this.vOS('subType',exp)
+    this.vOS('text',exp)
+    this.vOA('securityLabel',exp)
+    this.vRS('offer',exp)
+    this.vOA('asset',exp)
+    this.vOA('action',exp)
+    this.vOA('group',exp)
     return issues;
   }
 }
@@ -1833,12 +1833,12 @@ export class ContractSigner extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'Contract.signer' }
-    this.vReqS('type',expression)
-    this.vReqS('party',expression)
-    this.vReqA('signature',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'Contract.signer' }
+    this.vRS('type',exp)
+    this.vRS('party',exp)
+    this.vRA('signature',exp)
     return issues;
   }
 }
@@ -1889,10 +1889,10 @@ export class ContractFriendly extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'Contract.friendly' }
-    this.vReqS('content',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'Contract.friendly' }
+    this.vRS('content',exp)
     return issues;
   }
 }
@@ -1943,10 +1943,10 @@ export class ContractLegal extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'Contract.legal' }
-    this.vReqS('content',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'Contract.legal' }
+    this.vRS('content',exp)
     return issues;
   }
 }
@@ -1997,10 +1997,10 @@ export class ContractRule extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'Contract.rule' }
-    this.vReqS('content',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'Contract.rule' }
+    this.vRS('content',exp)
     return issues;
   }
 }
@@ -2455,43 +2455,43 @@ export class Contract extends fhir.DomainResource {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'Contract' }
-    this.vReqS('resourceType',expression)
-    this.vOptA('identifier',expression)
-    this.vOptS('url',expression)
-    this.vOptS('version',expression)
-    this.vOptSV('status',expression,'ContractStatus',ContractStatusVsValidation,'r')
-    this.vOptS('legalState',expression)
-    this.vOptS('instantiatesCanonical',expression)
-    this.vOptS('instantiatesUri',expression)
-    this.vOptS('contentDerivative',expression)
-    this.vOptS('issued',expression)
-    this.vOptS('applies',expression)
-    this.vOptS('expirationType',expression)
-    this.vOptA('subject',expression)
-    this.vOptA('authority',expression)
-    this.vOptA('domain',expression)
-    this.vOptA('site',expression)
-    this.vOptS('name',expression)
-    this.vOptS('title',expression)
-    this.vOptS('subtitle',expression)
-    this.vOptA('alias',expression)
-    this.vOptS('author',expression)
-    this.vOptS('scope',expression)
-    this.vOptS('topic',expression)
-    this.vOptS('type',expression)
-    this.vOptA('subType',expression)
-    this.vOptS('contentDefinition',expression)
-    this.vOptA('term',expression)
-    this.vOptA('supportingInfo',expression)
-    this.vOptA('relevantHistory',expression)
-    this.vOptA('signer',expression)
-    this.vOptA('friendly',expression)
-    this.vOptA('legal',expression)
-    this.vOptA('rule',expression)
-    this.vOptS('legallyBinding',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'Contract' }
+    this.vRS('resourceType',exp)
+    this.vOA('identifier',exp)
+    this.vOS('url',exp)
+    this.vOS('version',exp)
+    this.vOSV('status',exp,'ContractStatus',ContractStatusVsValidation,'r')
+    this.vOS('legalState',exp)
+    this.vOS('instantiatesCanonical',exp)
+    this.vOS('instantiatesUri',exp)
+    this.vOS('contentDerivative',exp)
+    this.vOS('issued',exp)
+    this.vOS('applies',exp)
+    this.vOS('expirationType',exp)
+    this.vOA('subject',exp)
+    this.vOA('authority',exp)
+    this.vOA('domain',exp)
+    this.vOA('site',exp)
+    this.vOS('name',exp)
+    this.vOS('title',exp)
+    this.vOS('subtitle',exp)
+    this.vOA('alias',exp)
+    this.vOS('author',exp)
+    this.vOS('scope',exp)
+    this.vOS('topic',exp)
+    this.vOS('type',exp)
+    this.vOA('subType',exp)
+    this.vOS('contentDefinition',exp)
+    this.vOA('term',exp)
+    this.vOA('supportingInfo',exp)
+    this.vOA('relevantHistory',exp)
+    this.vOA('signer',exp)
+    this.vOA('friendly',exp)
+    this.vOA('legal',exp)
+    this.vOA('rule',exp)
+    this.vOS('legallyBinding',exp)
     return issues;
   }
 }

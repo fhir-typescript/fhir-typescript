@@ -7,7 +7,10 @@
  * Clinical assessment of the severity of a reaction event as a whole, potentially considering multiple different manifestations.
  */
 export const ReactionEventSeverityVsValidation: readonly string[] = [
-  "mild", "http://hl7.org/fhir/reaction-event-severity|mild", 
-  "moderate", "http://hl7.org/fhir/reaction-event-severity|moderate", 
-  "severe", "http://hl7.org/fhir/reaction-event-severity|severe", 
+  "http://hl7.org/fhir/reaction-event-severity|mild",
+  "http://hl7.org/fhir/reaction-event-severity|moderate",
+  "http://hl7.org/fhir/reaction-event-severity|severe",
+  "mild",
+  "moderate",
+  "severe",
 ] as const;

@@ -7,9 +7,14 @@
  * Indicates the status of the care team.
  */
 export const CareTeamStatusVsValidation: readonly string[] = [
-  "active", "http://hl7.org/fhir/care-team-status|active", 
-  "entered-in-error", "http://hl7.org/fhir/care-team-status|entered-in-error", 
-  "inactive", "http://hl7.org/fhir/care-team-status|inactive", 
-  "proposed", "http://hl7.org/fhir/care-team-status|proposed", 
-  "suspended", "http://hl7.org/fhir/care-team-status|suspended", 
+  "active",
+  "entered-in-error",
+  "http://hl7.org/fhir/care-team-status|active",
+  "http://hl7.org/fhir/care-team-status|entered-in-error",
+  "http://hl7.org/fhir/care-team-status|inactive",
+  "http://hl7.org/fhir/care-team-status|proposed",
+  "http://hl7.org/fhir/care-team-status|suspended",
+  "inactive",
+  "proposed",
+  "suspended",
 ] as const;

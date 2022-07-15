@@ -7,7 +7,10 @@
  * Estimate of the potential clinical harm, or seriousness, of a reaction to an identified substance.
  */
 export const AllergyIntoleranceCriticalityVsValidation: readonly string[] = [
-  "high", "http://hl7.org/fhir/allergy-intolerance-criticality|high", 
-  "low", "http://hl7.org/fhir/allergy-intolerance-criticality|low", 
-  "unable-to-assess", "http://hl7.org/fhir/allergy-intolerance-criticality|unable-to-assess", 
+  "high",
+  "http://hl7.org/fhir/allergy-intolerance-criticality|high",
+  "http://hl7.org/fhir/allergy-intolerance-criticality|low",
+  "http://hl7.org/fhir/allergy-intolerance-criticality|unable-to-assess",
+  "low",
+  "unable-to-assess",
 ] as const;

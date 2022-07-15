@@ -265,27 +265,27 @@ export class MedicationStatement extends fhir.DomainResource {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'MedicationStatement' }
-    this.vReqS('resourceType',expression)
-    this.vOptA('identifier',expression)
-    this.vOptA('basedOn',expression)
-    this.vOptA('partOf',expression)
-    this.vReqSV('status',expression,'MedicationStatementStatus',MedicationStatementStatusVsValidation,'r')
-    this.vOptA('statusReason',expression)
-    this.vOptS('category',expression)
-    this.vReqS('medication',expression)
-    this.vReqS('subject',expression)
-    this.vOptS('context',expression)
-    this.vOptS('effective',expression)
-    this.vOptS('dateAsserted',expression)
-    this.vOptS('informationSource',expression)
-    this.vOptA('derivedFrom',expression)
-    this.vOptA('reasonCode',expression)
-    this.vOptA('reasonReference',expression)
-    this.vOptA('note',expression)
-    this.vOptA('dosage',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'MedicationStatement' }
+    this.vRS('resourceType',exp)
+    this.vOA('identifier',exp)
+    this.vOA('basedOn',exp)
+    this.vOA('partOf',exp)
+    this.vRSV('status',exp,'MedicationStatementStatus',MedicationStatementStatusVsValidation,'r')
+    this.vOA('statusReason',exp)
+    this.vOS('category',exp)
+    this.vRS('medication',exp)
+    this.vRS('subject',exp)
+    this.vOS('context',exp)
+    this.vOS('effective',exp)
+    this.vOS('dateAsserted',exp)
+    this.vOS('informationSource',exp)
+    this.vOA('derivedFrom',exp)
+    this.vOA('reasonCode',exp)
+    this.vOA('reasonReference',exp)
+    this.vOA('note',exp)
+    this.vOA('dosage',exp)
     return issues;
   }
 }

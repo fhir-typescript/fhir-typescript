@@ -146,12 +146,12 @@ export class CoverageEligibilityResponseInsuranceItemBenefit extends fhir.Backbo
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'CoverageEligibilityResponse.insurance.item.benefit' }
-    this.vReqS('type',expression)
-    this.vOptS('allowed',expression)
-    this.vOptS('used',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'CoverageEligibilityResponse.insurance.item.benefit' }
+    this.vRS('type',exp)
+    this.vOS('allowed',exp)
+    this.vOS('used',exp)
     return issues;
   }
 }
@@ -347,23 +347,23 @@ export class CoverageEligibilityResponseInsuranceItem extends fhir.BackboneEleme
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'CoverageEligibilityResponse.insurance.item' }
-    this.vOptS('category',expression)
-    this.vOptS('productOrService',expression)
-    this.vOptA('modifier',expression)
-    this.vOptS('provider',expression)
-    this.vOptS('excluded',expression)
-    this.vOptS('name',expression)
-    this.vOptS('description',expression)
-    this.vOptS('network',expression)
-    this.vOptS('unit',expression)
-    this.vOptS('term',expression)
-    this.vOptA('benefit',expression)
-    this.vOptS('authorizationRequired',expression)
-    this.vOptA('authorizationSupporting',expression)
-    this.vOptS('authorizationUrl',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'CoverageEligibilityResponse.insurance.item' }
+    this.vOS('category',exp)
+    this.vOS('productOrService',exp)
+    this.vOA('modifier',exp)
+    this.vOS('provider',exp)
+    this.vOS('excluded',exp)
+    this.vOS('name',exp)
+    this.vOS('description',exp)
+    this.vOS('network',exp)
+    this.vOS('unit',exp)
+    this.vOS('term',exp)
+    this.vOA('benefit',exp)
+    this.vOS('authorizationRequired',exp)
+    this.vOA('authorizationSupporting',exp)
+    this.vOS('authorizationUrl',exp)
     return issues;
   }
 }
@@ -436,13 +436,13 @@ export class CoverageEligibilityResponseInsurance extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'CoverageEligibilityResponse.insurance' }
-    this.vReqS('coverage',expression)
-    this.vOptS('inforce',expression)
-    this.vOptS('benefitPeriod',expression)
-    this.vOptA('item',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'CoverageEligibilityResponse.insurance' }
+    this.vRS('coverage',exp)
+    this.vOS('inforce',exp)
+    this.vOS('benefitPeriod',exp)
+    this.vOA('item',exp)
     return issues;
   }
 }
@@ -479,10 +479,10 @@ export class CoverageEligibilityResponseError extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'CoverageEligibilityResponse.error' }
-    this.vReqS('code',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'CoverageEligibilityResponse.error' }
+    this.vRS('code',exp)
     return issues;
   }
 }
@@ -727,25 +727,25 @@ export class CoverageEligibilityResponse extends fhir.DomainResource {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'CoverageEligibilityResponse' }
-    this.vReqS('resourceType',expression)
-    this.vOptA('identifier',expression)
-    this.vReqSV('status',expression,'FmStatus',FmStatusVsValidation,'r')
-    this.vReqAV('purpose',expression,'EligibilityresponsePurpose',EligibilityresponsePurposeVsValidation,'r')
-    this.vReqS('patient',expression)
-    this.vOptS('serviced',expression)
-    this.vReqS('created',expression)
-    this.vOptS('requestor',expression)
-    this.vReqS('request',expression)
-    this.vReqSV('outcome',expression,'RemittanceOutcome',RemittanceOutcomeVsValidation,'r')
-    this.vOptS('disposition',expression)
-    this.vReqS('insurer',expression)
-    this.vOptA('insurance',expression)
-    this.vOptS('preAuthRef',expression)
-    this.vOptS('form',expression)
-    this.vOptA('error',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'CoverageEligibilityResponse' }
+    this.vRS('resourceType',exp)
+    this.vOA('identifier',exp)
+    this.vRSV('status',exp,'FmStatus',FmStatusVsValidation,'r')
+    this.vRAV('purpose',exp,'EligibilityresponsePurpose',EligibilityresponsePurposeVsValidation,'r')
+    this.vRS('patient',exp)
+    this.vOS('serviced',exp)
+    this.vRS('created',exp)
+    this.vOS('requestor',exp)
+    this.vRS('request',exp)
+    this.vRSV('outcome',exp,'RemittanceOutcome',RemittanceOutcomeVsValidation,'r')
+    this.vOS('disposition',exp)
+    this.vRS('insurer',exp)
+    this.vOA('insurance',exp)
+    this.vOS('preAuthRef',exp)
+    this.vOS('form',exp)
+    this.vOA('error',exp)
     return issues;
   }
 }

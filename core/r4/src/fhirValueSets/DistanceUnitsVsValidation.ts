@@ -7,9 +7,14 @@
  * Unified Code for Units of Measure (UCUM). This value set includes common UCUM codes for units of distance
  */
 export const DistanceUnitsVsValidation: readonly string[] = [
-  "km", "http://unitsofmeasure.org|km", 
-  "m", "http://unitsofmeasure.org|m", 
-  "mm", "http://unitsofmeasure.org|mm", 
-  "nm", "http://unitsofmeasure.org|nm", 
-  "um", "http://unitsofmeasure.org|um", 
+  "http://unitsofmeasure.org|km",
+  "http://unitsofmeasure.org|m",
+  "http://unitsofmeasure.org|mm",
+  "http://unitsofmeasure.org|nm",
+  "http://unitsofmeasure.org|um",
+  "km",
+  "m",
+  "mm",
+  "nm",
+  "um",
 ] as const;

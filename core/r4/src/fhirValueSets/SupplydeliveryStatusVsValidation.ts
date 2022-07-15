@@ -7,8 +7,12 @@
  * Status of the supply delivery.
  */
 export const SupplydeliveryStatusVsValidation: readonly string[] = [
-  "abandoned", "http://hl7.org/fhir/supplydelivery-status|abandoned", 
-  "completed", "http://hl7.org/fhir/supplydelivery-status|completed", 
-  "entered-in-error", "http://hl7.org/fhir/supplydelivery-status|entered-in-error", 
-  "in-progress", "http://hl7.org/fhir/supplydelivery-status|in-progress", 
+  "abandoned",
+  "completed",
+  "entered-in-error",
+  "http://hl7.org/fhir/supplydelivery-status|abandoned",
+  "http://hl7.org/fhir/supplydelivery-status|completed",
+  "http://hl7.org/fhir/supplydelivery-status|entered-in-error",
+  "http://hl7.org/fhir/supplydelivery-status|in-progress",
+  "in-progress",
 ] as const;

@@ -125,13 +125,13 @@ export class StructureDefinitionMapping extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'StructureDefinition.mapping' }
-    this.vReqS('identity',expression)
-    this.vOptS('uri',expression)
-    this.vOptS('name',expression)
-    this.vOptS('comment',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'StructureDefinition.mapping' }
+    this.vRS('identity',exp)
+    this.vOS('uri',exp)
+    this.vOS('name',exp)
+    this.vOS('comment',exp)
     return issues;
   }
 }
@@ -194,11 +194,11 @@ export class StructureDefinitionContext extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'StructureDefinition.context' }
-    this.vReqSV('type',expression,'ExtensionContextType',ExtensionContextTypeVsValidation,'r')
-    this.vReqS('expression',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'StructureDefinition.context' }
+    this.vRSV('type',exp,'ExtensionContextType',ExtensionContextTypeVsValidation,'r')
+    this.vRS('expression',exp)
     return issues;
   }
 }
@@ -235,10 +235,10 @@ export class StructureDefinitionSnapshot extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'StructureDefinition.snapshot' }
-    this.vReqA('element',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'StructureDefinition.snapshot' }
+    this.vRA('element',exp)
     return issues;
   }
 }
@@ -275,10 +275,10 @@ export class StructureDefinitionDifferential extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'StructureDefinition.differential' }
-    this.vReqA('element',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'StructureDefinition.differential' }
+    this.vRA('element',exp)
     return issues;
   }
 }
@@ -731,37 +731,37 @@ export class StructureDefinition extends fhir.DomainResource {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'StructureDefinition' }
-    this.vReqS('resourceType',expression)
-    this.vReqS('url',expression)
-    this.vOptA('identifier',expression)
-    this.vOptS('version',expression)
-    this.vReqS('name',expression)
-    this.vOptS('title',expression)
-    this.vReqSV('status',expression,'PublicationStatus',PublicationStatusVsValidation,'r')
-    this.vOptS('experimental',expression)
-    this.vOptS('date',expression)
-    this.vOptS('publisher',expression)
-    this.vOptA('contact',expression)
-    this.vOptS('description',expression)
-    this.vOptA('useContext',expression)
-    this.vOptA('jurisdiction',expression)
-    this.vOptS('purpose',expression)
-    this.vOptS('copyright',expression)
-    this.vOptA('keyword',expression)
-    this.vOptSV('fhirVersion',expression,'FHIRVersion',FHIRVersionVsValidation,'r')
-    this.vOptA('mapping',expression)
-    this.vReqSV('kind',expression,'StructureDefinitionKind',StructureDefinitionKindVsValidation,'r')
-    this.vReqS('abstract',expression)
-    this.vOptA('context',expression)
-    this.vOptA('contextInvariant',expression)
-    this.vReqS('type',expression)
-    this.vOptS('baseDefinition',expression)
-    this.vOptSV('derivation',expression,'TypeDerivationRule',TypeDerivationRuleVsValidation,'r')
-    this.vOptS('snapshot',expression)
-    this.vOptS('differential',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'StructureDefinition' }
+    this.vRS('resourceType',exp)
+    this.vRS('url',exp)
+    this.vOA('identifier',exp)
+    this.vOS('version',exp)
+    this.vRS('name',exp)
+    this.vOS('title',exp)
+    this.vRSV('status',exp,'PublicationStatus',PublicationStatusVsValidation,'r')
+    this.vOS('experimental',exp)
+    this.vOS('date',exp)
+    this.vOS('publisher',exp)
+    this.vOA('contact',exp)
+    this.vOS('description',exp)
+    this.vOA('useContext',exp)
+    this.vOA('jurisdiction',exp)
+    this.vOS('purpose',exp)
+    this.vOS('copyright',exp)
+    this.vOA('keyword',exp)
+    this.vOSV('fhirVersion',exp,'FHIRVersion',FHIRVersionVsValidation,'r')
+    this.vOA('mapping',exp)
+    this.vRSV('kind',exp,'StructureDefinitionKind',StructureDefinitionKindVsValidation,'r')
+    this.vRS('abstract',exp)
+    this.vOA('context',exp)
+    this.vOA('contextInvariant',exp)
+    this.vRS('type',exp)
+    this.vOS('baseDefinition',exp)
+    this.vOSV('derivation',exp,'TypeDerivationRule',TypeDerivationRuleVsValidation,'r')
+    this.vOS('snapshot',exp)
+    this.vOS('differential',exp)
     return issues;
   }
 }

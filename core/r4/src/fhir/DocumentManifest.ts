@@ -54,11 +54,11 @@ export class DocumentManifestRelated extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'DocumentManifest.related' }
-    this.vOptS('identifier',expression)
-    this.vOptS('ref',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'DocumentManifest.related' }
+    this.vOS('identifier',exp)
+    this.vOS('ref',exp)
     return issues;
   }
 }
@@ -240,22 +240,22 @@ export class DocumentManifest extends fhir.DomainResource {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'DocumentManifest' }
-    this.vReqS('resourceType',expression)
-    this.vOptS('masterIdentifier',expression)
-    this.vOptA('identifier',expression)
-    this.vReqSV('status',expression,'DocumentReferenceStatus',DocumentReferenceStatusVsValidation,'r')
-    this.vOptS('type',expression)
-    this.vOptS('subject',expression)
-    this.vOptS('created',expression)
-    this.vOptA('author',expression)
-    this.vOptA('recipient',expression)
-    this.vOptS('source',expression)
-    this.vOptS('description',expression)
-    this.vReqA('content',expression)
-    this.vOptA('related',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'DocumentManifest' }
+    this.vRS('resourceType',exp)
+    this.vOS('masterIdentifier',exp)
+    this.vOA('identifier',exp)
+    this.vRSV('status',exp,'DocumentReferenceStatus',DocumentReferenceStatusVsValidation,'r')
+    this.vOS('type',exp)
+    this.vOS('subject',exp)
+    this.vOS('created',exp)
+    this.vOA('author',exp)
+    this.vOA('recipient',exp)
+    this.vOS('source',exp)
+    this.vOS('description',exp)
+    this.vRA('content',exp)
+    this.vOA('related',exp)
     return issues;
   }
 }

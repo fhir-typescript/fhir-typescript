@@ -129,15 +129,15 @@ export class Meta extends fhir.FhirElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'Meta' }
-    this.vOptS('versionId',expression)
-    this.vOptS('lastUpdated',expression)
-    this.vOptS('source',expression)
-    this.vOptA('profile',expression)
-    this.vOptA('security',expression)
-    this.vOptA('tag',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'Meta' }
+    this.vOS('versionId',exp)
+    this.vOS('lastUpdated',exp)
+    this.vOS('source',exp)
+    this.vOA('profile',exp)
+    this.vOA('security',exp)
+    this.vOA('tag',exp)
     return issues;
   }
 }

@@ -7,7 +7,10 @@
  * The type of participant.
  */
 export const ReportParticipantTypeVsValidation: readonly string[] = [
-  "client", "http://hl7.org/fhir/report-participant-type|client", 
-  "server", "http://hl7.org/fhir/report-participant-type|server", 
-  "test-engine", "http://hl7.org/fhir/report-participant-type|test-engine", 
+  "client",
+  "http://hl7.org/fhir/report-participant-type|client",
+  "http://hl7.org/fhir/report-participant-type|server",
+  "http://hl7.org/fhir/report-participant-type|test-engine",
+  "server",
+  "test-engine",
 ] as const;

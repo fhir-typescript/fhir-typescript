@@ -7,12 +7,20 @@
  * The availability status reason of the device.
  */
 export const DeviceStatusReasonVsValidation: readonly string[] = [
-  "hw-discon", "http://terminology.hl7.org/CodeSystem/device-status-reason|hw-discon", 
-  "not-ready", "http://terminology.hl7.org/CodeSystem/device-status-reason|not-ready", 
-  "off", "http://terminology.hl7.org/CodeSystem/device-status-reason|off", 
-  "offline", "http://terminology.hl7.org/CodeSystem/device-status-reason|offline", 
-  "online", "http://terminology.hl7.org/CodeSystem/device-status-reason|online", 
-  "paused", "http://terminology.hl7.org/CodeSystem/device-status-reason|paused", 
-  "standby", "http://terminology.hl7.org/CodeSystem/device-status-reason|standby", 
-  "transduc-discon", "http://terminology.hl7.org/CodeSystem/device-status-reason|transduc-discon", 
+  "http://terminology.hl7.org/CodeSystem/device-status-reason|hw-discon",
+  "http://terminology.hl7.org/CodeSystem/device-status-reason|not-ready",
+  "http://terminology.hl7.org/CodeSystem/device-status-reason|off",
+  "http://terminology.hl7.org/CodeSystem/device-status-reason|offline",
+  "http://terminology.hl7.org/CodeSystem/device-status-reason|online",
+  "http://terminology.hl7.org/CodeSystem/device-status-reason|paused",
+  "http://terminology.hl7.org/CodeSystem/device-status-reason|standby",
+  "http://terminology.hl7.org/CodeSystem/device-status-reason|transduc-discon",
+  "hw-discon",
+  "not-ready",
+  "off",
+  "offline",
+  "online",
+  "paused",
+  "standby",
+  "transduc-discon",
 ] as const;

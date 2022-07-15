@@ -71,11 +71,11 @@ export class MedicationDispensePerformer extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'MedicationDispense.performer' }
-    this.vOptS('function',expression)
-    this.vReqS('actor',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'MedicationDispense.performer' }
+    this.vOS('function',exp)
+    this.vRS('actor',exp)
     return issues;
   }
 }
@@ -149,13 +149,13 @@ export class MedicationDispenseSubstitution extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'MedicationDispense.substitution' }
-    this.vReqS('wasSubstituted',expression)
-    this.vOptS('type',expression)
-    this.vOptA('reason',expression)
-    this.vOptA('responsibleParty',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'MedicationDispense.substitution' }
+    this.vRS('wasSubstituted',exp)
+    this.vOS('type',exp)
+    this.vOA('reason',exp)
+    this.vOA('responsibleParty',exp)
     return issues;
   }
 }
@@ -473,34 +473,34 @@ export class MedicationDispense extends fhir.DomainResource {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'MedicationDispense' }
-    this.vReqS('resourceType',expression)
-    this.vOptA('identifier',expression)
-    this.vOptA('partOf',expression)
-    this.vReqSV('status',expression,'MedicationdispenseStatus',MedicationdispenseStatusVsValidation,'r')
-    this.vOptS('statusReason',expression)
-    this.vOptS('category',expression)
-    this.vReqS('medication',expression)
-    this.vOptS('subject',expression)
-    this.vOptS('context',expression)
-    this.vOptA('supportingInformation',expression)
-    this.vOptA('performer',expression)
-    this.vOptS('location',expression)
-    this.vOptA('authorizingPrescription',expression)
-    this.vOptS('type',expression)
-    this.vOptS('quantity',expression)
-    this.vOptS('daysSupply',expression)
-    this.vOptS('whenPrepared',expression)
-    this.vOptS('whenHandedOver',expression)
-    this.vOptS('destination',expression)
-    this.vOptA('receiver',expression)
-    this.vOptA('note',expression)
-    this.vOptA('dosageInstruction',expression)
-    this.vOptS('substitution',expression)
-    this.vOptA('detectedIssue',expression)
-    this.vOptA('eventHistory',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'MedicationDispense' }
+    this.vRS('resourceType',exp)
+    this.vOA('identifier',exp)
+    this.vOA('partOf',exp)
+    this.vRSV('status',exp,'MedicationdispenseStatus',MedicationdispenseStatusVsValidation,'r')
+    this.vOS('statusReason',exp)
+    this.vOS('category',exp)
+    this.vRS('medication',exp)
+    this.vOS('subject',exp)
+    this.vOS('context',exp)
+    this.vOA('supportingInformation',exp)
+    this.vOA('performer',exp)
+    this.vOS('location',exp)
+    this.vOA('authorizingPrescription',exp)
+    this.vOS('type',exp)
+    this.vOS('quantity',exp)
+    this.vOS('daysSupply',exp)
+    this.vOS('whenPrepared',exp)
+    this.vOS('whenHandedOver',exp)
+    this.vOS('destination',exp)
+    this.vOA('receiver',exp)
+    this.vOA('note',exp)
+    this.vOA('dosageInstruction',exp)
+    this.vOS('substitution',exp)
+    this.vOA('detectedIssue',exp)
+    this.vOA('eventHistory',exp)
     return issues;
   }
 }

@@ -7,5 +7,6 @@
  * This value set contract specific codes for scope.
  */
 export const ContractScopeVsValidation: readonly string[] = [
-  "policy", "http://hl7.org/fhir/contract-scope|policy", 
+  "http://hl7.org/fhir/contract-scope|policy",
+  "policy",
 ] as const;

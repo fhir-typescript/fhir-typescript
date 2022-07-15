@@ -37,7 +37,7 @@ export declare class NutritionOrderOralDietNutrient extends fhir.BackboneElement
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(expression?: string): fhir.FtsIssue[];
+    doModelValidation(exp?: string): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the NutritionOrderOralDietTexture type.
@@ -75,7 +75,7 @@ export declare class NutritionOrderOralDietTexture extends fhir.BackboneElement 
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(expression?: string): fhir.FtsIssue[];
+    doModelValidation(exp?: string): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the NutritionOrderOralDiet type.
@@ -149,7 +149,7 @@ export declare class NutritionOrderOralDiet extends fhir.BackboneElement {
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(expression?: string): fhir.FtsIssue[];
+    doModelValidation(exp?: string): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the NutritionOrderSupplement type.
@@ -219,7 +219,7 @@ export declare class NutritionOrderSupplement extends fhir.BackboneElement {
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(expression?: string): fhir.FtsIssue[];
+    doModelValidation(exp?: string): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the NutritionOrderEnteralFormulaAdministration type.
@@ -277,7 +277,7 @@ export declare class NutritionOrderEnteralFormulaAdministration extends fhir.Bac
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(expression?: string): fhir.FtsIssue[];
+    doModelValidation(exp?: string): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the NutritionOrderEnteralFormula type.
@@ -383,7 +383,7 @@ export declare class NutritionOrderEnteralFormula extends fhir.BackboneElement {
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(expression?: string): fhir.FtsIssue[];
+    doModelValidation(exp?: string): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the NutritionOrder type.
@@ -573,6 +573,6 @@ export declare class NutritionOrder extends fhir.DomainResource {
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(expression?: string): fhir.FtsIssue[];
+    doModelValidation(exp?: string): fhir.FtsIssue[];
 }
 //# sourceMappingURL=NutritionOrder.d.ts.map

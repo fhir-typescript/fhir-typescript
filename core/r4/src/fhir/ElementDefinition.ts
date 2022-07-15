@@ -100,11 +100,11 @@ export class ElementDefinitionSlicingDiscriminator extends fhir.FhirElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'ElementDefinition.slicing.discriminator' }
-    this.vReqSV('type',expression,'DiscriminatorType',DiscriminatorTypeVsValidation,'r')
-    this.vReqS('path',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'ElementDefinition.slicing.discriminator' }
+    this.vRSV('type',exp,'DiscriminatorType',DiscriminatorTypeVsValidation,'r')
+    this.vRS('path',exp)
     return issues;
   }
 }
@@ -193,13 +193,13 @@ export class ElementDefinitionSlicing extends fhir.FhirElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'ElementDefinition.slicing' }
-    this.vOptA('discriminator',expression)
-    this.vOptS('description',expression)
-    this.vOptS('ordered',expression)
-    this.vReqSV('rules',expression,'ResourceSlicingRules',ResourceSlicingRulesVsValidation,'r')
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'ElementDefinition.slicing' }
+    this.vOA('discriminator',exp)
+    this.vOS('description',exp)
+    this.vOS('ordered',exp)
+    this.vRSV('rules',exp,'ResourceSlicingRules',ResourceSlicingRulesVsValidation,'r')
     return issues;
   }
 }
@@ -280,12 +280,12 @@ export class ElementDefinitionBase extends fhir.FhirElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'ElementDefinition.base' }
-    this.vReqS('path',expression)
-    this.vReqS('min',expression)
-    this.vReqS('max',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'ElementDefinition.base' }
+    this.vRS('path',exp)
+    this.vRS('min',exp)
+    this.vRS('max',exp)
     return issues;
   }
 }
@@ -407,14 +407,14 @@ export class ElementDefinitionType extends fhir.FhirElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'ElementDefinition.type' }
-    this.vReqS('code',expression)
-    this.vOptA('profile',expression)
-    this.vOptA('targetProfile',expression)
-    this.vOptAV('aggregation',expression,'ResourceAggregationMode',ResourceAggregationModeVsValidation,'r')
-    this.vOptSV('versioning',expression,'ReferenceVersionRules',ReferenceVersionRulesVsValidation,'r')
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'ElementDefinition.type' }
+    this.vRS('code',exp)
+    this.vOA('profile',exp)
+    this.vOA('targetProfile',exp)
+    this.vOAV('aggregation',exp,'ResourceAggregationMode',ResourceAggregationModeVsValidation,'r')
+    this.vOSV('versioning',exp,'ReferenceVersionRules',ReferenceVersionRulesVsValidation,'r')
     return issues;
   }
 }
@@ -723,11 +723,11 @@ export class ElementDefinitionExample extends fhir.FhirElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'ElementDefinition.example' }
-    this.vReqS('label',expression)
-    this.vReqS('value',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'ElementDefinition.example' }
+    this.vRS('label',exp)
+    this.vRS('value',exp)
     return issues;
   }
 }
@@ -876,16 +876,16 @@ export class ElementDefinitionConstraint extends fhir.FhirElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'ElementDefinition.constraint' }
-    this.vReqS('key',expression)
-    this.vOptS('requirements',expression)
-    this.vReqSV('severity',expression,'ConstraintSeverity',ConstraintSeverityVsValidation,'r')
-    this.vReqS('human',expression)
-    this.vOptS('expression',expression)
-    this.vOptS('xpath',expression)
-    this.vOptS('source',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'ElementDefinition.constraint' }
+    this.vRS('key',exp)
+    this.vOS('requirements',exp)
+    this.vRSV('severity',exp,'ConstraintSeverity',ConstraintSeverityVsValidation,'r')
+    this.vRS('human',exp)
+    this.vOS('expression',exp)
+    this.vOS('xpath',exp)
+    this.vOS('source',exp)
     return issues;
   }
 }
@@ -964,12 +964,12 @@ export class ElementDefinitionBinding extends fhir.FhirElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'ElementDefinition.binding' }
-    this.vReqSV('strength',expression,'BindingStrength',BindingStrengthVsValidation,'r')
-    this.vOptS('description',expression)
-    this.vOptS('valueSet',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'ElementDefinition.binding' }
+    this.vRSV('strength',exp,'BindingStrength',BindingStrengthVsValidation,'r')
+    this.vOS('description',exp)
+    this.vOS('valueSet',exp)
     return issues;
   }
 }
@@ -1066,13 +1066,13 @@ export class ElementDefinitionMapping extends fhir.FhirElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'ElementDefinition.mapping' }
-    this.vReqS('identity',expression)
-    this.vOptS('language',expression)
-    this.vReqS('map',expression)
-    this.vOptS('comment',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'ElementDefinition.mapping' }
+    this.vRS('identity',exp)
+    this.vOS('language',exp)
+    this.vRS('map',exp)
+    this.vOS('comment',exp)
     return issues;
   }
 }
@@ -2500,43 +2500,43 @@ export class ElementDefinition extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'ElementDefinition' }
-    this.vReqS('path',expression)
-    this.vOptAV('representation',expression,'PropertyRepresentation',PropertyRepresentationVsValidation,'r')
-    this.vOptS('sliceName',expression)
-    this.vOptS('sliceIsConstraining',expression)
-    this.vOptS('label',expression)
-    this.vOptA('code',expression)
-    this.vOptS('slicing',expression)
-    this.vOptS('short',expression)
-    this.vOptS('definition',expression)
-    this.vOptS('comment',expression)
-    this.vOptS('requirements',expression)
-    this.vOptA('alias',expression)
-    this.vOptS('min',expression)
-    this.vOptS('max',expression)
-    this.vOptS('base',expression)
-    this.vOptS('contentReference',expression)
-    this.vOptA('type',expression)
-    this.vOptS('defaultValue',expression)
-    this.vOptS('meaningWhenMissing',expression)
-    this.vOptS('orderMeaning',expression)
-    this.vOptS('fixed',expression)
-    this.vOptS('pattern',expression)
-    this.vOptA('example',expression)
-    this.vOptS('minValue',expression)
-    this.vOptS('maxValue',expression)
-    this.vOptS('maxLength',expression)
-    this.vOptA('condition',expression)
-    this.vOptA('constraint',expression)
-    this.vOptS('mustSupport',expression)
-    this.vOptS('isModifier',expression)
-    this.vOptS('isModifierReason',expression)
-    this.vOptS('isSummary',expression)
-    this.vOptS('binding',expression)
-    this.vOptA('mapping',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'ElementDefinition' }
+    this.vRS('path',exp)
+    this.vOAV('representation',exp,'PropertyRepresentation',PropertyRepresentationVsValidation,'r')
+    this.vOS('sliceName',exp)
+    this.vOS('sliceIsConstraining',exp)
+    this.vOS('label',exp)
+    this.vOA('code',exp)
+    this.vOS('slicing',exp)
+    this.vOS('short',exp)
+    this.vOS('definition',exp)
+    this.vOS('comment',exp)
+    this.vOS('requirements',exp)
+    this.vOA('alias',exp)
+    this.vOS('min',exp)
+    this.vOS('max',exp)
+    this.vOS('base',exp)
+    this.vOS('contentReference',exp)
+    this.vOA('type',exp)
+    this.vOS('defaultValue',exp)
+    this.vOS('meaningWhenMissing',exp)
+    this.vOS('orderMeaning',exp)
+    this.vOS('fixed',exp)
+    this.vOS('pattern',exp)
+    this.vOA('example',exp)
+    this.vOS('minValue',exp)
+    this.vOS('maxValue',exp)
+    this.vOS('maxLength',exp)
+    this.vOA('condition',exp)
+    this.vOA('constraint',exp)
+    this.vOS('mustSupport',exp)
+    this.vOS('isModifier',exp)
+    this.vOS('isModifierReason',exp)
+    this.vOS('isSummary',exp)
+    this.vOS('binding',exp)
+    this.vOA('mapping',exp)
     return issues;
   }
 }

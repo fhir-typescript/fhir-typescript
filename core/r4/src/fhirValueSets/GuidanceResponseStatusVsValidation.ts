@@ -7,10 +7,16 @@
  * The status of a guidance response.
  */
 export const GuidanceResponseStatusVsValidation: readonly string[] = [
-  "data-requested", "http://hl7.org/fhir/guidance-response-status|data-requested", 
-  "data-required", "http://hl7.org/fhir/guidance-response-status|data-required", 
-  "entered-in-error", "http://hl7.org/fhir/guidance-response-status|entered-in-error", 
-  "failure", "http://hl7.org/fhir/guidance-response-status|failure", 
-  "in-progress", "http://hl7.org/fhir/guidance-response-status|in-progress", 
-  "success", "http://hl7.org/fhir/guidance-response-status|success", 
+  "data-requested",
+  "data-required",
+  "entered-in-error",
+  "failure",
+  "http://hl7.org/fhir/guidance-response-status|data-requested",
+  "http://hl7.org/fhir/guidance-response-status|data-required",
+  "http://hl7.org/fhir/guidance-response-status|entered-in-error",
+  "http://hl7.org/fhir/guidance-response-status|failure",
+  "http://hl7.org/fhir/guidance-response-status|in-progress",
+  "http://hl7.org/fhir/guidance-response-status|success",
+  "in-progress",
+  "success",
 ] as const;

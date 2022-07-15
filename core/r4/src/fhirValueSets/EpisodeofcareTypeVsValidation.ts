@@ -7,9 +7,14 @@
  * This example value set defines a set of codes that can be used to express the usage type of an EpisodeOfCare record.
  */
 export const EpisodeofcareTypeVsValidation: readonly string[] = [
-  "cacp", "http://terminology.hl7.org/CodeSystem/episodeofcare-type|cacp", 
-  "da", "http://terminology.hl7.org/CodeSystem/episodeofcare-type|da", 
-  "diab", "http://terminology.hl7.org/CodeSystem/episodeofcare-type|diab", 
-  "hacc", "http://terminology.hl7.org/CodeSystem/episodeofcare-type|hacc", 
-  "pac", "http://terminology.hl7.org/CodeSystem/episodeofcare-type|pac", 
+  "cacp",
+  "da",
+  "diab",
+  "hacc",
+  "http://terminology.hl7.org/CodeSystem/episodeofcare-type|cacp",
+  "http://terminology.hl7.org/CodeSystem/episodeofcare-type|da",
+  "http://terminology.hl7.org/CodeSystem/episodeofcare-type|diab",
+  "http://terminology.hl7.org/CodeSystem/episodeofcare-type|hacc",
+  "http://terminology.hl7.org/CodeSystem/episodeofcare-type|pac",
+  "pac",
 ] as const;

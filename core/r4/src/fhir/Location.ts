@@ -105,12 +105,12 @@ export class LocationPosition extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'Location.position' }
-    this.vReqS('longitude',expression)
-    this.vReqS('latitude',expression)
-    this.vOptS('altitude',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'Location.position' }
+    this.vRS('longitude',exp)
+    this.vRS('latitude',exp)
+    this.vOS('altitude',exp)
     return issues;
   }
 }
@@ -209,13 +209,13 @@ export class LocationHoursOfOperation extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'Location.hoursOfOperation' }
-    this.vOptAV('daysOfWeek',expression,'DaysOfWeek',DaysOfWeekVsValidation,'r')
-    this.vOptS('allDay',expression)
-    this.vOptS('openingTime',expression)
-    this.vOptS('closingTime',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'Location.hoursOfOperation' }
+    this.vOAV('daysOfWeek',exp,'DaysOfWeek',DaysOfWeekVsValidation,'r')
+    this.vOS('allDay',exp)
+    this.vOS('openingTime',exp)
+    this.vOS('closingTime',exp)
     return issues;
   }
 }
@@ -462,27 +462,27 @@ export class Location extends fhir.DomainResource {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'Location' }
-    this.vReqS('resourceType',expression)
-    this.vOptA('identifier',expression)
-    this.vOptSV('status',expression,'LocationStatus',LocationStatusVsValidation,'r')
-    this.vOptS('operationalStatus',expression)
-    this.vOptS('name',expression)
-    this.vOptA('alias',expression)
-    this.vOptS('description',expression)
-    this.vOptSV('mode',expression,'LocationMode',LocationModeVsValidation,'r')
-    this.vOptA('type',expression)
-    this.vOptA('telecom',expression)
-    this.vOptS('address',expression)
-    this.vOptS('physicalType',expression)
-    this.vOptS('position',expression)
-    this.vOptS('managingOrganization',expression)
-    this.vOptS('partOf',expression)
-    this.vOptA('hoursOfOperation',expression)
-    this.vOptS('availabilityExceptions',expression)
-    this.vOptA('endpoint',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'Location' }
+    this.vRS('resourceType',exp)
+    this.vOA('identifier',exp)
+    this.vOSV('status',exp,'LocationStatus',LocationStatusVsValidation,'r')
+    this.vOS('operationalStatus',exp)
+    this.vOS('name',exp)
+    this.vOA('alias',exp)
+    this.vOS('description',exp)
+    this.vOSV('mode',exp,'LocationMode',LocationModeVsValidation,'r')
+    this.vOA('type',exp)
+    this.vOA('telecom',exp)
+    this.vOS('address',exp)
+    this.vOS('physicalType',exp)
+    this.vOS('position',exp)
+    this.vOS('managingOrganization',exp)
+    this.vOS('partOf',exp)
+    this.vOA('hoursOfOperation',exp)
+    this.vOS('availabilityExceptions',exp)
+    this.vOA('endpoint',exp)
     return issues;
   }
 }

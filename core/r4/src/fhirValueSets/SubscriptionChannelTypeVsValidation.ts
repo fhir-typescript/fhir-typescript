@@ -7,9 +7,14 @@
  * The type of method used to execute a subscription.
  */
 export const SubscriptionChannelTypeVsValidation: readonly string[] = [
-  "email", "http://hl7.org/fhir/subscription-channel-type|email", 
-  "message", "http://hl7.org/fhir/subscription-channel-type|message", 
-  "rest-hook", "http://hl7.org/fhir/subscription-channel-type|rest-hook", 
-  "sms", "http://hl7.org/fhir/subscription-channel-type|sms", 
-  "websocket", "http://hl7.org/fhir/subscription-channel-type|websocket", 
+  "email",
+  "http://hl7.org/fhir/subscription-channel-type|email",
+  "http://hl7.org/fhir/subscription-channel-type|message",
+  "http://hl7.org/fhir/subscription-channel-type|rest-hook",
+  "http://hl7.org/fhir/subscription-channel-type|sms",
+  "http://hl7.org/fhir/subscription-channel-type|websocket",
+  "message",
+  "rest-hook",
+  "sms",
+  "websocket",
 ] as const;

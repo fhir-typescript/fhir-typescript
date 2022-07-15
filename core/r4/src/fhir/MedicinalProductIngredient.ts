@@ -83,14 +83,14 @@ export class MedicinalProductIngredientSpecifiedSubstanceStrengthReferenceStreng
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'MedicinalProductIngredient.specifiedSubstance.strength.referenceStrength' }
-    this.vOptS('substance',expression)
-    this.vReqS('strength',expression)
-    this.vOptS('strengthLowLimit',expression)
-    this.vOptS('measurementPoint',expression)
-    this.vOptA('country',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'MedicinalProductIngredient.specifiedSubstance.strength.referenceStrength' }
+    this.vOS('substance',exp)
+    this.vRS('strength',exp)
+    this.vOS('strengthLowLimit',exp)
+    this.vOS('measurementPoint',exp)
+    this.vOA('country',exp)
     return issues;
   }
 }
@@ -191,16 +191,16 @@ export class MedicinalProductIngredientSpecifiedSubstanceStrength extends fhir.B
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'MedicinalProductIngredient.specifiedSubstance.strength' }
-    this.vReqS('presentation',expression)
-    this.vOptS('presentationLowLimit',expression)
-    this.vOptS('concentration',expression)
-    this.vOptS('concentrationLowLimit',expression)
-    this.vOptS('measurementPoint',expression)
-    this.vOptA('country',expression)
-    this.vOptA('referenceStrength',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'MedicinalProductIngredient.specifiedSubstance.strength' }
+    this.vRS('presentation',exp)
+    this.vOS('presentationLowLimit',exp)
+    this.vOS('concentration',exp)
+    this.vOS('concentrationLowLimit',exp)
+    this.vOS('measurementPoint',exp)
+    this.vOA('country',exp)
+    this.vOA('referenceStrength',exp)
     return issues;
   }
 }
@@ -266,13 +266,13 @@ export class MedicinalProductIngredientSpecifiedSubstance extends fhir.BackboneE
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'MedicinalProductIngredient.specifiedSubstance' }
-    this.vReqS('code',expression)
-    this.vReqS('group',expression)
-    this.vOptS('confidentiality',expression)
-    this.vOptA('strength',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'MedicinalProductIngredient.specifiedSubstance' }
+    this.vRS('code',exp)
+    this.vRS('group',exp)
+    this.vOS('confidentiality',exp)
+    this.vOA('strength',exp)
     return issues;
   }
 }
@@ -319,11 +319,11 @@ export class MedicinalProductIngredientSubstance extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'MedicinalProductIngredient.substance' }
-    this.vReqS('code',expression)
-    this.vOptA('strength',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'MedicinalProductIngredient.substance' }
+    this.vRS('code',exp)
+    this.vOA('strength',exp)
     return issues;
   }
 }
@@ -424,16 +424,16 @@ export class MedicinalProductIngredient extends fhir.DomainResource {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'MedicinalProductIngredient' }
-    this.vReqS('resourceType',expression)
-    this.vOptS('identifier',expression)
-    this.vReqS('role',expression)
-    this.vOptS('allergenicIndicator',expression)
-    this.vOptA('manufacturer',expression)
-    this.vOptA('specifiedSubstance',expression)
-    this.vOptS('substance',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'MedicinalProductIngredient' }
+    this.vRS('resourceType',exp)
+    this.vOS('identifier',exp)
+    this.vRS('role',exp)
+    this.vOS('allergenicIndicator',exp)
+    this.vOA('manufacturer',exp)
+    this.vOA('specifiedSubstance',exp)
+    this.vOS('substance',exp)
     return issues;
   }
 }

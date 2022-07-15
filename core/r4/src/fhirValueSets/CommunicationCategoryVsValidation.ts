@@ -7,8 +7,12 @@
  * Codes for general categories of communications such as alerts, instructions, etc.
  */
 export const CommunicationCategoryVsValidation: readonly string[] = [
-  "alert", "http://terminology.hl7.org/CodeSystem/communication-category|alert", 
-  "instruction", "http://terminology.hl7.org/CodeSystem/communication-category|instruction", 
-  "notification", "http://terminology.hl7.org/CodeSystem/communication-category|notification", 
-  "reminder", "http://terminology.hl7.org/CodeSystem/communication-category|reminder", 
+  "alert",
+  "http://terminology.hl7.org/CodeSystem/communication-category|alert",
+  "http://terminology.hl7.org/CodeSystem/communication-category|instruction",
+  "http://terminology.hl7.org/CodeSystem/communication-category|notification",
+  "http://terminology.hl7.org/CodeSystem/communication-category|reminder",
+  "instruction",
+  "notification",
+  "reminder",
 ] as const;

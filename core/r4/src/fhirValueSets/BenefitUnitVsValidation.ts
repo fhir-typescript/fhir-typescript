@@ -7,6 +7,8 @@
  * This value set includes a smattering of Unit type codes.
  */
 export const BenefitUnitVsValidation: readonly string[] = [
-  "family", "http://terminology.hl7.org/CodeSystem/benefit-unit|family", 
-  "individual", "http://terminology.hl7.org/CodeSystem/benefit-unit|individual", 
+  "family",
+  "http://terminology.hl7.org/CodeSystem/benefit-unit|family",
+  "http://terminology.hl7.org/CodeSystem/benefit-unit|individual",
+  "individual",
 ] as const;

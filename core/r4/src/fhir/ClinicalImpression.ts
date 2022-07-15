@@ -64,11 +64,11 @@ export class ClinicalImpressionInvestigation extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'ClinicalImpression.investigation' }
-    this.vReqS('code',expression)
-    this.vOptA('item',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'ClinicalImpression.investigation' }
+    this.vRS('code',exp)
+    this.vOA('item',exp)
     return issues;
   }
 }
@@ -130,12 +130,12 @@ export class ClinicalImpressionFinding extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'ClinicalImpression.finding' }
-    this.vOptS('itemCodeableConcept',expression)
-    this.vOptS('itemReference',expression)
-    this.vOptS('basis',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'ClinicalImpression.finding' }
+    this.vOS('itemCodeableConcept',exp)
+    this.vOS('itemReference',exp)
+    this.vOS('basis',exp)
     return issues;
   }
 }
@@ -420,30 +420,30 @@ export class ClinicalImpression extends fhir.DomainResource {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'ClinicalImpression' }
-    this.vReqS('resourceType',expression)
-    this.vOptA('identifier',expression)
-    this.vReqSV('status',expression,'ClinicalimpressionStatus',ClinicalimpressionStatusVsValidation,'r')
-    this.vOptS('statusReason',expression)
-    this.vOptS('code',expression)
-    this.vOptS('description',expression)
-    this.vReqS('subject',expression)
-    this.vOptS('encounter',expression)
-    this.vOptS('effective',expression)
-    this.vOptS('date',expression)
-    this.vOptS('assessor',expression)
-    this.vOptS('previous',expression)
-    this.vOptA('problem',expression)
-    this.vOptA('investigation',expression)
-    this.vOptA('protocol',expression)
-    this.vOptS('summary',expression)
-    this.vOptA('finding',expression)
-    this.vOptA('prognosisCodeableConcept',expression)
-    this.vOptA('prognosisReference',expression)
-    this.vOptA('supportingInfo',expression)
-    this.vOptA('note',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'ClinicalImpression' }
+    this.vRS('resourceType',exp)
+    this.vOA('identifier',exp)
+    this.vRSV('status',exp,'ClinicalimpressionStatus',ClinicalimpressionStatusVsValidation,'r')
+    this.vOS('statusReason',exp)
+    this.vOS('code',exp)
+    this.vOS('description',exp)
+    this.vRS('subject',exp)
+    this.vOS('encounter',exp)
+    this.vOS('effective',exp)
+    this.vOS('date',exp)
+    this.vOS('assessor',exp)
+    this.vOS('previous',exp)
+    this.vOA('problem',exp)
+    this.vOA('investigation',exp)
+    this.vOA('protocol',exp)
+    this.vOS('summary',exp)
+    this.vOA('finding',exp)
+    this.vOA('prognosisCodeableConcept',exp)
+    this.vOA('prognosisReference',exp)
+    this.vOA('supportingInfo',exp)
+    this.vOA('note',exp)
     return issues;
   }
 }

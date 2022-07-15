@@ -110,13 +110,13 @@ export class ExampleScenarioActor extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'ExampleScenario.actor' }
-    this.vReqS('actorId',expression)
-    this.vReqSV('type',expression,'ExamplescenarioActorType',ExamplescenarioActorTypeVsValidation,'r')
-    this.vOptS('name',expression)
-    this.vOptS('description',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'ExampleScenario.actor' }
+    this.vRS('actorId',exp)
+    this.vRSV('type',exp,'ExamplescenarioActorType',ExamplescenarioActorTypeVsValidation,'r')
+    this.vOS('name',exp)
+    this.vOS('description',exp)
     return issues;
   }
 }
@@ -179,11 +179,11 @@ export class ExampleScenarioInstanceVersion extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'ExampleScenario.instance.version' }
-    this.vReqS('versionId',expression)
-    this.vReqS('description',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'ExampleScenario.instance.version' }
+    this.vRS('versionId',exp)
+    this.vRS('description',exp)
     return issues;
   }
 }
@@ -245,11 +245,11 @@ export class ExampleScenarioInstanceContainedInstance extends fhir.BackboneEleme
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'ExampleScenario.instance.containedInstance' }
-    this.vReqS('resourceId',expression)
-    this.vOptS('versionId',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'ExampleScenario.instance.containedInstance' }
+    this.vRS('resourceId',exp)
+    this.vOS('versionId',exp)
     return issues;
   }
 }
@@ -366,15 +366,15 @@ export class ExampleScenarioInstance extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'ExampleScenario.instance' }
-    this.vReqS('resourceId',expression)
-    this.vReqSV('resourceType',expression,'ResourceTypes',ResourceTypesVsValidation,'r')
-    this.vOptS('name',expression)
-    this.vOptS('description',expression)
-    this.vOptA('version',expression)
-    this.vOptA('containedInstance',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'ExampleScenario.instance' }
+    this.vRS('resourceId',exp)
+    this.vRSV('resourceType',exp,'ResourceTypes',ResourceTypesVsValidation,'r')
+    this.vOS('name',exp)
+    this.vOS('description',exp)
+    this.vOA('version',exp)
+    this.vOA('containedInstance',exp)
     return issues;
   }
 }
@@ -556,19 +556,19 @@ export class ExampleScenarioProcessStepOperation extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'ExampleScenario.process.step.operation' }
-    this.vReqS('number',expression)
-    this.vOptS('type',expression)
-    this.vOptS('name',expression)
-    this.vOptS('initiator',expression)
-    this.vOptS('receiver',expression)
-    this.vOptS('description',expression)
-    this.vOptS('initiatorActive',expression)
-    this.vOptS('receiverActive',expression)
-    this.vOptS('request',expression)
-    this.vOptS('response',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'ExampleScenario.process.step.operation' }
+    this.vRS('number',exp)
+    this.vOS('type',exp)
+    this.vOS('name',exp)
+    this.vOS('initiator',exp)
+    this.vOS('receiver',exp)
+    this.vOS('description',exp)
+    this.vOS('initiatorActive',exp)
+    this.vOS('receiverActive',exp)
+    this.vOS('request',exp)
+    this.vOS('response',exp)
     return issues;
   }
 }
@@ -640,12 +640,12 @@ export class ExampleScenarioProcessStepAlternative extends fhir.BackboneElement 
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'ExampleScenario.process.step.alternative' }
-    this.vReqS('title',expression)
-    this.vOptS('description',expression)
-    this.vOptA('step',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'ExampleScenario.process.step.alternative' }
+    this.vRS('title',exp)
+    this.vOS('description',exp)
+    this.vOA('step',exp)
     return issues;
   }
 }
@@ -718,13 +718,13 @@ export class ExampleScenarioProcessStep extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'ExampleScenario.process.step' }
-    this.vOptA('process',expression)
-    this.vOptS('pause',expression)
-    this.vOptS('operation',expression)
-    this.vOptA('alternative',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'ExampleScenario.process.step' }
+    this.vOA('process',exp)
+    this.vOS('pause',exp)
+    this.vOS('operation',exp)
+    this.vOA('alternative',exp)
     return issues;
   }
 }
@@ -830,14 +830,14 @@ export class ExampleScenarioProcess extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'ExampleScenario.process' }
-    this.vReqS('title',expression)
-    this.vOptS('description',expression)
-    this.vOptS('preConditions',expression)
-    this.vOptS('postConditions',expression)
-    this.vOptA('step',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'ExampleScenario.process' }
+    this.vRS('title',exp)
+    this.vOS('description',exp)
+    this.vOS('preConditions',exp)
+    this.vOS('postConditions',exp)
+    this.vOA('step',exp)
     return issues;
   }
 }
@@ -1121,27 +1121,27 @@ export class ExampleScenario extends fhir.DomainResource {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'ExampleScenario' }
-    this.vReqS('resourceType',expression)
-    this.vOptS('url',expression)
-    this.vOptA('identifier',expression)
-    this.vOptS('version',expression)
-    this.vOptS('name',expression)
-    this.vReqSV('status',expression,'PublicationStatus',PublicationStatusVsValidation,'r')
-    this.vOptS('experimental',expression)
-    this.vOptS('date',expression)
-    this.vOptS('publisher',expression)
-    this.vOptA('contact',expression)
-    this.vOptA('useContext',expression)
-    this.vOptA('jurisdiction',expression)
-    this.vOptS('copyright',expression)
-    this.vOptS('purpose',expression)
-    this.vOptA('actor',expression)
-    this.vOptA('instance',expression)
-    this.vOptA('process',expression)
-    this.vOptA('workflow',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'ExampleScenario' }
+    this.vRS('resourceType',exp)
+    this.vOS('url',exp)
+    this.vOA('identifier',exp)
+    this.vOS('version',exp)
+    this.vOS('name',exp)
+    this.vRSV('status',exp,'PublicationStatus',PublicationStatusVsValidation,'r')
+    this.vOS('experimental',exp)
+    this.vOS('date',exp)
+    this.vOS('publisher',exp)
+    this.vOA('contact',exp)
+    this.vOA('useContext',exp)
+    this.vOA('jurisdiction',exp)
+    this.vOS('copyright',exp)
+    this.vOS('purpose',exp)
+    this.vOA('actor',exp)
+    this.vOA('instance',exp)
+    this.vOA('process',exp)
+    this.vOA('workflow',exp)
     return issues;
   }
 }

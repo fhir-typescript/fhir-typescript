@@ -99,12 +99,12 @@ export class DeviceMetricCalibration extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'DeviceMetric.calibration' }
-    this.vOptSV('type',expression,'MetricCalibrationType',MetricCalibrationTypeVsValidation,'r')
-    this.vOptSV('state',expression,'MetricCalibrationState',MetricCalibrationStateVsValidation,'r')
-    this.vOptS('time',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'DeviceMetric.calibration' }
+    this.vOSV('type',exp,'MetricCalibrationType',MetricCalibrationTypeVsValidation,'r')
+    this.vOSV('state',exp,'MetricCalibrationState',MetricCalibrationStateVsValidation,'r')
+    this.vOS('time',exp)
     return issues;
   }
 }
@@ -258,20 +258,20 @@ export class DeviceMetric extends fhir.DomainResource {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'DeviceMetric' }
-    this.vReqS('resourceType',expression)
-    this.vOptA('identifier',expression)
-    this.vReqS('type',expression)
-    this.vOptS('unit',expression)
-    this.vOptS('source',expression)
-    this.vOptS('parent',expression)
-    this.vOptSV('operationalStatus',expression,'MetricOperationalStatus',MetricOperationalStatusVsValidation,'r')
-    this.vOptSV('color',expression,'MetricColor',MetricColorVsValidation,'r')
-    this.vReqSV('category',expression,'MetricCategory',MetricCategoryVsValidation,'r')
-    this.vOptS('measurementPeriod',expression)
-    this.vOptA('calibration',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'DeviceMetric' }
+    this.vRS('resourceType',exp)
+    this.vOA('identifier',exp)
+    this.vRS('type',exp)
+    this.vOS('unit',exp)
+    this.vOS('source',exp)
+    this.vOS('parent',exp)
+    this.vOSV('operationalStatus',exp,'MetricOperationalStatus',MetricOperationalStatusVsValidation,'r')
+    this.vOSV('color',exp,'MetricColor',MetricColorVsValidation,'r')
+    this.vRSV('category',exp,'MetricCategory',MetricCategoryVsValidation,'r')
+    this.vOS('measurementPeriod',exp)
+    this.vOA('calibration',exp)
     return issues;
   }
 }

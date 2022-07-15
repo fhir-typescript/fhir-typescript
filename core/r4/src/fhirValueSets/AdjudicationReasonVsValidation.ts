@@ -7,6 +7,8 @@
  * This value set includes smattering of Adjudication Reason codes.
  */
 export const AdjudicationReasonVsValidation: readonly string[] = [
-  "ar001", "http://terminology.hl7.org/CodeSystem/adjudication-reason|ar001", 
-  "ar002", "http://terminology.hl7.org/CodeSystem/adjudication-reason|ar002", 
+  "ar001",
+  "ar002",
+  "http://terminology.hl7.org/CodeSystem/adjudication-reason|ar001",
+  "http://terminology.hl7.org/CodeSystem/adjudication-reason|ar002",
 ] as const;

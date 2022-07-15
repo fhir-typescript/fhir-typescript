@@ -7,8 +7,12 @@
  * The result if validation fails
  */
 export const VerificationresultFailureActionVsValidation: readonly string[] = [
-  "fatal", "http://terminology.hl7.org/CodeSystem/failure-action|fatal", 
-  "none", "http://terminology.hl7.org/CodeSystem/failure-action|none", 
-  "rec-only", "http://terminology.hl7.org/CodeSystem/failure-action|rec-only", 
-  "warn", "http://terminology.hl7.org/CodeSystem/failure-action|warn", 
+  "fatal",
+  "http://terminology.hl7.org/CodeSystem/failure-action|fatal",
+  "http://terminology.hl7.org/CodeSystem/failure-action|none",
+  "http://terminology.hl7.org/CodeSystem/failure-action|rec-only",
+  "http://terminology.hl7.org/CodeSystem/failure-action|warn",
+  "none",
+  "rec-only",
+  "warn",
 ] as const;

@@ -7,12 +7,20 @@
  * The subcomponent classification of quality of evidence rating systems.
  */
 export const CertaintySubcomponentTypeVsValidation: readonly string[] = [
-  "DoseResponseGradient", "http://terminology.hl7.org/CodeSystem/certainty-subcomponent-type|DoseResponseGradient", 
-  "Imprecision", "http://terminology.hl7.org/CodeSystem/certainty-subcomponent-type|Imprecision", 
-  "Inconsistency", "http://terminology.hl7.org/CodeSystem/certainty-subcomponent-type|Inconsistency", 
-  "Indirectness", "http://terminology.hl7.org/CodeSystem/certainty-subcomponent-type|Indirectness", 
-  "LargeEffect", "http://terminology.hl7.org/CodeSystem/certainty-subcomponent-type|LargeEffect", 
-  "PlausibleConfounding", "http://terminology.hl7.org/CodeSystem/certainty-subcomponent-type|PlausibleConfounding", 
-  "PublicationBias", "http://terminology.hl7.org/CodeSystem/certainty-subcomponent-type|PublicationBias", 
-  "RiskOfBias", "http://terminology.hl7.org/CodeSystem/certainty-subcomponent-type|RiskOfBias", 
+  "DoseResponseGradient",
+  "http://terminology.hl7.org/CodeSystem/certainty-subcomponent-type|DoseResponseGradient",
+  "http://terminology.hl7.org/CodeSystem/certainty-subcomponent-type|Imprecision",
+  "http://terminology.hl7.org/CodeSystem/certainty-subcomponent-type|Inconsistency",
+  "http://terminology.hl7.org/CodeSystem/certainty-subcomponent-type|Indirectness",
+  "http://terminology.hl7.org/CodeSystem/certainty-subcomponent-type|LargeEffect",
+  "http://terminology.hl7.org/CodeSystem/certainty-subcomponent-type|PlausibleConfounding",
+  "http://terminology.hl7.org/CodeSystem/certainty-subcomponent-type|PublicationBias",
+  "http://terminology.hl7.org/CodeSystem/certainty-subcomponent-type|RiskOfBias",
+  "Imprecision",
+  "Inconsistency",
+  "Indirectness",
+  "LargeEffect",
+  "PlausibleConfounding",
+  "PublicationBias",
+  "RiskOfBias",
 ] as const;

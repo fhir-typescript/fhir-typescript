@@ -7,6 +7,8 @@
  * Type for orientation.
  */
 export const OrientationTypeVsValidation: readonly string[] = [
-  "antisense", "http://hl7.org/fhir/orientation-type|antisense", 
-  "sense", "http://hl7.org/fhir/orientation-type|sense", 
+  "antisense",
+  "http://hl7.org/fhir/orientation-type|antisense",
+  "http://hl7.org/fhir/orientation-type|sense",
+  "sense",
 ] as const;

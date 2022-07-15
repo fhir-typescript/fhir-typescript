@@ -7,12 +7,20 @@
  * MedicationRequest Intent Codes
  */
 export const MedicationrequestIntentVsValidation: readonly string[] = [
-  "filler-order", "http://hl7.org/fhir/CodeSystem/medicationrequest-intent|filler-order", 
-  "instance-order", "http://hl7.org/fhir/CodeSystem/medicationrequest-intent|instance-order", 
-  "option", "http://hl7.org/fhir/CodeSystem/medicationrequest-intent|option", 
-  "order", "http://hl7.org/fhir/CodeSystem/medicationrequest-intent|order", 
-  "original-order", "http://hl7.org/fhir/CodeSystem/medicationrequest-intent|original-order", 
-  "plan", "http://hl7.org/fhir/CodeSystem/medicationrequest-intent|plan", 
-  "proposal", "http://hl7.org/fhir/CodeSystem/medicationrequest-intent|proposal", 
-  "reflex-order", "http://hl7.org/fhir/CodeSystem/medicationrequest-intent|reflex-order", 
+  "filler-order",
+  "http://hl7.org/fhir/CodeSystem/medicationrequest-intent|filler-order",
+  "http://hl7.org/fhir/CodeSystem/medicationrequest-intent|instance-order",
+  "http://hl7.org/fhir/CodeSystem/medicationrequest-intent|option",
+  "http://hl7.org/fhir/CodeSystem/medicationrequest-intent|order",
+  "http://hl7.org/fhir/CodeSystem/medicationrequest-intent|original-order",
+  "http://hl7.org/fhir/CodeSystem/medicationrequest-intent|plan",
+  "http://hl7.org/fhir/CodeSystem/medicationrequest-intent|proposal",
+  "http://hl7.org/fhir/CodeSystem/medicationrequest-intent|reflex-order",
+  "instance-order",
+  "option",
+  "order",
+  "original-order",
+  "plan",
+  "proposal",
+  "reflex-order",
 ] as const;

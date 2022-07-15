@@ -7,7 +7,10 @@
  * The value set to instantiate this attribute should be drawn from a terminologically robust code system that consists of or contains concepts to support describing the current status of the administered dose of vaccine.
  */
 export const ImmunizationStatusVsValidation: readonly string[] = [
-  "completed", "http://hl7.org/fhir/event-status|completed", 
-  "entered-in-error", "http://hl7.org/fhir/event-status|entered-in-error", 
-  "not-done", "http://hl7.org/fhir/event-status|not-done", 
+  "completed",
+  "entered-in-error",
+  "http://hl7.org/fhir/event-status|completed",
+  "http://hl7.org/fhir/event-status|entered-in-error",
+  "http://hl7.org/fhir/event-status|not-done",
+  "not-done",
 ] as const;

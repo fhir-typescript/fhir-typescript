@@ -117,14 +117,14 @@ export class Quantity extends fhir.FhirElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'Quantity' }
-    this.vOptS('value',expression)
-    this.vOptSV('comparator',expression,'QuantityComparator',QuantityComparatorVsValidation,'r')
-    this.vOptS('unit',expression)
-    this.vOptS('system',expression)
-    this.vOptS('code',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'Quantity' }
+    this.vOS('value',exp)
+    this.vOSV('comparator',exp,'QuantityComparator',QuantityComparatorVsValidation,'r')
+    this.vOS('unit',exp)
+    this.vOS('system',exp)
+    this.vOS('code',exp)
     return issues;
   }
 }

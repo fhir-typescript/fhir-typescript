@@ -46,11 +46,11 @@ export class Ratio extends fhir.FhirElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'Ratio' }
-    this.vOptS('numerator',expression)
-    this.vOptS('denominator',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'Ratio' }
+    this.vOS('numerator',exp)
+    this.vOS('denominator',exp)
     return issues;
   }
 }

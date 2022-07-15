@@ -88,11 +88,11 @@ export class SearchParameterComponent extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'SearchParameter.component' }
-    this.vReqS('definition',expression)
-    this.vReqS('expression',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'SearchParameter.component' }
+    this.vRS('definition',exp)
+    this.vRS('expression',exp)
     return issues;
   }
 }
@@ -567,36 +567,36 @@ export class SearchParameter extends fhir.DomainResource {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'SearchParameter' }
-    this.vReqS('resourceType',expression)
-    this.vReqS('url',expression)
-    this.vOptS('version',expression)
-    this.vReqS('name',expression)
-    this.vOptS('derivedFrom',expression)
-    this.vReqSV('status',expression,'PublicationStatus',PublicationStatusVsValidation,'r')
-    this.vOptS('experimental',expression)
-    this.vOptS('date',expression)
-    this.vOptS('publisher',expression)
-    this.vOptA('contact',expression)
-    this.vReqS('description',expression)
-    this.vOptA('useContext',expression)
-    this.vOptA('jurisdiction',expression)
-    this.vOptS('purpose',expression)
-    this.vReqS('code',expression)
-    this.vReqAV('base',expression,'ResourceTypes',ResourceTypesVsValidation,'r')
-    this.vReqSV('type',expression,'SearchParamType',SearchParamTypeVsValidation,'r')
-    this.vOptS('expression',expression)
-    this.vOptS('xpath',expression)
-    this.vOptSV('xpathUsage',expression,'SearchXpathUsage',SearchXpathUsageVsValidation,'r')
-    this.vOptAV('target',expression,'ResourceTypes',ResourceTypesVsValidation,'r')
-    this.vOptS('multipleOr',expression)
-    this.vOptS('multipleAnd',expression)
-    this.vOptAV('comparator',expression,'SearchComparator',SearchComparatorVsValidation,'r')
-    this.vOptAV('modifier',expression,'SearchModifier',SearchModifierVsValidation,'r')
-    this.vOptA('chain',expression)
-    this.vOptA('component',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'SearchParameter' }
+    this.vRS('resourceType',exp)
+    this.vRS('url',exp)
+    this.vOS('version',exp)
+    this.vRS('name',exp)
+    this.vOS('derivedFrom',exp)
+    this.vRSV('status',exp,'PublicationStatus',PublicationStatusVsValidation,'r')
+    this.vOS('experimental',exp)
+    this.vOS('date',exp)
+    this.vOS('publisher',exp)
+    this.vOA('contact',exp)
+    this.vRS('description',exp)
+    this.vOA('useContext',exp)
+    this.vOA('jurisdiction',exp)
+    this.vOS('purpose',exp)
+    this.vRS('code',exp)
+    this.vRAV('base',exp,'ResourceTypes',ResourceTypesVsValidation,'r')
+    this.vRSV('type',exp,'SearchParamType',SearchParamTypeVsValidation,'r')
+    this.vOS('expression',exp)
+    this.vOS('xpath',exp)
+    this.vOSV('xpathUsage',exp,'SearchXpathUsage',SearchXpathUsageVsValidation,'r')
+    this.vOAV('target',exp,'ResourceTypes',ResourceTypesVsValidation,'r')
+    this.vOS('multipleOr',exp)
+    this.vOS('multipleAnd',exp)
+    this.vOAV('comparator',exp,'SearchComparator',SearchComparatorVsValidation,'r')
+    this.vOAV('modifier',exp,'SearchModifier',SearchModifierVsValidation,'r')
+    this.vOA('chain',exp)
+    this.vOA('component',exp)
     return issues;
   }
 }

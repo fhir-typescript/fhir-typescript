@@ -7,5 +7,6 @@
  * This value set contract specific codes for status.
  */
 export const ContractExpirationTypeVsValidation: readonly string[] = [
-  "breach", "http://hl7.org/fhir/contract-expiration-type|breach", 
+  "breach",
+  "http://hl7.org/fhir/contract-expiration-type|breach",
 ] as const;

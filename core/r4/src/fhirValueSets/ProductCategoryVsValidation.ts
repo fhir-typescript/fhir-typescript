@@ -7,9 +7,14 @@
  * Biologically Derived Product Category.
  */
 export const ProductCategoryVsValidation: readonly string[] = [
-  "biologicalAgent", "http://hl7.org/fhir/product-category|biologicalAgent", 
-  "cells", "http://hl7.org/fhir/product-category|cells", 
-  "fluid", "http://hl7.org/fhir/product-category|fluid", 
-  "organ", "http://hl7.org/fhir/product-category|organ", 
-  "tissue", "http://hl7.org/fhir/product-category|tissue", 
+  "biologicalAgent",
+  "cells",
+  "fluid",
+  "http://hl7.org/fhir/product-category|biologicalAgent",
+  "http://hl7.org/fhir/product-category|cells",
+  "http://hl7.org/fhir/product-category|fluid",
+  "http://hl7.org/fhir/product-category|organ",
+  "http://hl7.org/fhir/product-category|tissue",
+  "organ",
+  "tissue",
 ] as const;

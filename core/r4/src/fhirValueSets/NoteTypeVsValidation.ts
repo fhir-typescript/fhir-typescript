@@ -7,7 +7,10 @@
  * The presentation types of notes.
  */
 export const NoteTypeVsValidation: readonly string[] = [
-  "display", "http://hl7.org/fhir/note-type|display", 
-  "print", "http://hl7.org/fhir/note-type|print", 
-  "printoper", "http://hl7.org/fhir/note-type|printoper", 
+  "display",
+  "http://hl7.org/fhir/note-type|display",
+  "http://hl7.org/fhir/note-type|print",
+  "http://hl7.org/fhir/note-type|printoper",
+  "print",
+  "printoper",
 ] as const;

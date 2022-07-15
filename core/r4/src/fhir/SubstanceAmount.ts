@@ -46,11 +46,11 @@ export class SubstanceAmountReferenceRange extends fhir.FhirElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'SubstanceAmount.referenceRange' }
-    this.vOptS('lowLimit',expression)
-    this.vOptS('highLimit',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'SubstanceAmount.referenceRange' }
+    this.vOS('lowLimit',exp)
+    this.vOS('highLimit',exp)
     return issues;
   }
 }
@@ -140,13 +140,13 @@ export class SubstanceAmount extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'SubstanceAmount' }
-    this.vOptS('amount',expression)
-    this.vOptS('amountType',expression)
-    this.vOptS('amountText',expression)
-    this.vOptS('referenceRange',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'SubstanceAmount' }
+    this.vOS('amount',exp)
+    this.vOS('amountType',exp)
+    this.vOS('amountText',exp)
+    this.vOS('referenceRange',exp)
     return issues;
   }
 }

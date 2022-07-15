@@ -7,5 +7,6 @@
  * This value set contract specific codes for asset subtype.
  */
 export const ContractAssetsubtypeVsValidation: readonly string[] = [
-  "participation", "http://hl7.org/fhir/contract-asset-subtype|participation", 
+  "http://hl7.org/fhir/contract-asset-subtype|participation",
+  "participation",
 ] as const;

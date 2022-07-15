@@ -7,8 +7,12 @@
  * Identifies types of events that might trigger the start of a goal.
  */
 export const GoalStartEventVsValidation: readonly string[] = [
-  "308283009", "http://snomed.info/sct|308283009", 
-  "32485007", "http://snomed.info/sct|32485007", 
-  "386216000", "http://snomed.info/sct|386216000", 
-  "442137000", "http://snomed.info/sct|442137000", 
+  "308283009",
+  "32485007",
+  "386216000",
+  "442137000",
+  "http://snomed.info/sct|308283009",
+  "http://snomed.info/sct|32485007",
+  "http://snomed.info/sct|386216000",
+  "http://snomed.info/sct|442137000",
 ] as const;

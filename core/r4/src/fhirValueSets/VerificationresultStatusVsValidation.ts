@@ -7,10 +7,16 @@
  * The validation status of the target
  */
 export const VerificationresultStatusVsValidation: readonly string[] = [
-  "attested", "http://hl7.org/fhir/CodeSystem/status|attested", 
-  "in-process", "http://hl7.org/fhir/CodeSystem/status|in-process", 
-  "req-revalid", "http://hl7.org/fhir/CodeSystem/status|req-revalid", 
-  "reval-fail", "http://hl7.org/fhir/CodeSystem/status|reval-fail", 
-  "val-fail", "http://hl7.org/fhir/CodeSystem/status|val-fail", 
-  "validated", "http://hl7.org/fhir/CodeSystem/status|validated", 
+  "attested",
+  "http://hl7.org/fhir/CodeSystem/status|attested",
+  "http://hl7.org/fhir/CodeSystem/status|in-process",
+  "http://hl7.org/fhir/CodeSystem/status|req-revalid",
+  "http://hl7.org/fhir/CodeSystem/status|reval-fail",
+  "http://hl7.org/fhir/CodeSystem/status|val-fail",
+  "http://hl7.org/fhir/CodeSystem/status|validated",
+  "in-process",
+  "req-revalid",
+  "reval-fail",
+  "val-fail",
+  "validated",
 ] as const;

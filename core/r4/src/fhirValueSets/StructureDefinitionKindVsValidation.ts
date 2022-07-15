@@ -7,8 +7,12 @@
  * Defines the type of structure that a definition is describing.
  */
 export const StructureDefinitionKindVsValidation: readonly string[] = [
-  "complex-type", "http://hl7.org/fhir/structure-definition-kind|complex-type", 
-  "logical", "http://hl7.org/fhir/structure-definition-kind|logical", 
-  "primitive-type", "http://hl7.org/fhir/structure-definition-kind|primitive-type", 
-  "resource", "http://hl7.org/fhir/structure-definition-kind|resource", 
+  "complex-type",
+  "http://hl7.org/fhir/structure-definition-kind|complex-type",
+  "http://hl7.org/fhir/structure-definition-kind|logical",
+  "http://hl7.org/fhir/structure-definition-kind|primitive-type",
+  "http://hl7.org/fhir/structure-definition-kind|resource",
+  "logical",
+  "primitive-type",
+  "resource",
 ] as const;

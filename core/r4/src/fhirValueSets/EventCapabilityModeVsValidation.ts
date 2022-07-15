@@ -7,6 +7,8 @@
  * The mode of a message capability statement.
  */
 export const EventCapabilityModeVsValidation: readonly string[] = [
-  "receiver", "http://hl7.org/fhir/event-capability-mode|receiver", 
-  "sender", "http://hl7.org/fhir/event-capability-mode|sender", 
+  "http://hl7.org/fhir/event-capability-mode|receiver",
+  "http://hl7.org/fhir/event-capability-mode|sender",
+  "receiver",
+  "sender",
 ] as const;

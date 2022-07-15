@@ -7,7 +7,10 @@
  * Preferred value set for AllergyIntolerance Clinical Status.
  */
 export const AllergyintoleranceClinicalVsValidation: readonly string[] = [
-  "active", "http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical|active", 
-  "inactive", "http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical|inactive", 
-  "resolved", "http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical|resolved", 
+  "active",
+  "http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical|active",
+  "http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical|inactive",
+  "http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical|resolved",
+  "inactive",
+  "resolved",
 ] as const;

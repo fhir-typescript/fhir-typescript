@@ -208,23 +208,23 @@ export class DeviceUseStatement extends fhir.DomainResource {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'DeviceUseStatement' }
-    this.vReqS('resourceType',expression)
-    this.vOptA('identifier',expression)
-    this.vOptA('basedOn',expression)
-    this.vReqSV('status',expression,'DeviceStatementStatus',DeviceStatementStatusVsValidation,'r')
-    this.vReqS('subject',expression)
-    this.vOptA('derivedFrom',expression)
-    this.vOptS('timing',expression)
-    this.vOptS('recordedOn',expression)
-    this.vOptS('source',expression)
-    this.vReqS('device',expression)
-    this.vOptA('reasonCode',expression)
-    this.vOptA('reasonReference',expression)
-    this.vOptS('bodySite',expression)
-    this.vOptA('note',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'DeviceUseStatement' }
+    this.vRS('resourceType',exp)
+    this.vOA('identifier',exp)
+    this.vOA('basedOn',exp)
+    this.vRSV('status',exp,'DeviceStatementStatus',DeviceStatementStatusVsValidation,'r')
+    this.vRS('subject',exp)
+    this.vOA('derivedFrom',exp)
+    this.vOS('timing',exp)
+    this.vOS('recordedOn',exp)
+    this.vOS('source',exp)
+    this.vRS('device',exp)
+    this.vOA('reasonCode',exp)
+    this.vOA('reasonReference',exp)
+    this.vOS('bodySite',exp)
+    this.vOA('note',exp)
     return issues;
   }
 }

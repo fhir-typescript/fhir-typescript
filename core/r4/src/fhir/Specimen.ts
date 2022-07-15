@@ -147,16 +147,16 @@ export class SpecimenCollection extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'Specimen.collection' }
-    this.vOptS('collector',expression)
-    this.vOptS('collected',expression)
-    this.vOptS('duration',expression)
-    this.vOptS('quantity',expression)
-    this.vOptS('method',expression)
-    this.vOptS('bodySite',expression)
-    this.vOptS('fastingStatus',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'Specimen.collection' }
+    this.vOS('collector',exp)
+    this.vOS('collected',exp)
+    this.vOS('duration',exp)
+    this.vOS('quantity',exp)
+    this.vOS('method',exp)
+    this.vOS('bodySite',exp)
+    this.vOS('fastingStatus',exp)
     return issues;
   }
 }
@@ -242,13 +242,13 @@ export class SpecimenProcessing extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'Specimen.processing' }
-    this.vOptS('description',expression)
-    this.vOptS('procedure',expression)
-    this.vOptA('additive',expression)
-    this.vOptS('time',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'Specimen.processing' }
+    this.vOS('description',exp)
+    this.vOS('procedure',exp)
+    this.vOA('additive',exp)
+    this.vOS('time',exp)
     return issues;
   }
 }
@@ -352,15 +352,15 @@ export class SpecimenContainer extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'Specimen.container' }
-    this.vOptA('identifier',expression)
-    this.vOptS('description',expression)
-    this.vOptS('type',expression)
-    this.vOptS('capacity',expression)
-    this.vOptS('specimenQuantity',expression)
-    this.vOptS('additive',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'Specimen.container' }
+    this.vOA('identifier',exp)
+    this.vOS('description',exp)
+    this.vOS('type',exp)
+    this.vOS('capacity',exp)
+    this.vOS('specimenQuantity',exp)
+    this.vOS('additive',exp)
     return issues;
   }
 }
@@ -536,23 +536,23 @@ export class Specimen extends fhir.DomainResource {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'Specimen' }
-    this.vReqS('resourceType',expression)
-    this.vOptA('identifier',expression)
-    this.vOptS('accessionIdentifier',expression)
-    this.vOptSV('status',expression,'SpecimenStatus',SpecimenStatusVsValidation,'r')
-    this.vOptS('type',expression)
-    this.vOptS('subject',expression)
-    this.vOptS('receivedTime',expression)
-    this.vOptA('parent',expression)
-    this.vOptA('request',expression)
-    this.vOptS('collection',expression)
-    this.vOptA('processing',expression)
-    this.vOptA('container',expression)
-    this.vOptA('condition',expression)
-    this.vOptA('note',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'Specimen' }
+    this.vRS('resourceType',exp)
+    this.vOA('identifier',exp)
+    this.vOS('accessionIdentifier',exp)
+    this.vOSV('status',exp,'SpecimenStatus',SpecimenStatusVsValidation,'r')
+    this.vOS('type',exp)
+    this.vOS('subject',exp)
+    this.vOS('receivedTime',exp)
+    this.vOA('parent',exp)
+    this.vOA('request',exp)
+    this.vOS('collection',exp)
+    this.vOA('processing',exp)
+    this.vOA('container',exp)
+    this.vOA('condition',exp)
+    this.vOA('note',exp)
     return issues;
   }
 }

@@ -7,9 +7,14 @@
  * The extent of the content of the code system (the concepts and codes it defines) are represented in a code system resource.
  */
 export const CodesystemContentModeVsValidation: readonly string[] = [
-  "complete", "http://hl7.org/fhir/codesystem-content-mode|complete", 
-  "example", "http://hl7.org/fhir/codesystem-content-mode|example", 
-  "fragment", "http://hl7.org/fhir/codesystem-content-mode|fragment", 
-  "not-present", "http://hl7.org/fhir/codesystem-content-mode|not-present", 
-  "supplement", "http://hl7.org/fhir/codesystem-content-mode|supplement", 
+  "complete",
+  "example",
+  "fragment",
+  "http://hl7.org/fhir/codesystem-content-mode|complete",
+  "http://hl7.org/fhir/codesystem-content-mode|example",
+  "http://hl7.org/fhir/codesystem-content-mode|fragment",
+  "http://hl7.org/fhir/codesystem-content-mode|not-present",
+  "http://hl7.org/fhir/codesystem-content-mode|supplement",
+  "not-present",
+  "supplement",
 ] as const;

@@ -181,18 +181,18 @@ export class MolecularSequenceReferenceSeq extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'MolecularSequence.referenceSeq' }
-    this.vOptS('chromosome',expression)
-    this.vOptS('genomeBuild',expression)
-    this.vOptSV('orientation',expression,'OrientationType',OrientationTypeVsValidation,'r')
-    this.vOptS('referenceSeqId',expression)
-    this.vOptS('referenceSeqPointer',expression)
-    this.vOptS('referenceSeqString',expression)
-    this.vOptSV('strand',expression,'StrandType',StrandTypeVsValidation,'r')
-    this.vOptS('windowStart',expression)
-    this.vOptS('windowEnd',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'MolecularSequence.referenceSeq' }
+    this.vOS('chromosome',exp)
+    this.vOS('genomeBuild',exp)
+    this.vOSV('orientation',exp,'OrientationType',OrientationTypeVsValidation,'r')
+    this.vOS('referenceSeqId',exp)
+    this.vOS('referenceSeqPointer',exp)
+    this.vOS('referenceSeqString',exp)
+    this.vOSV('strand',exp,'StrandType',StrandTypeVsValidation,'r')
+    this.vOS('windowStart',exp)
+    this.vOS('windowEnd',exp)
     return issues;
   }
 }
@@ -313,15 +313,15 @@ export class MolecularSequenceVariant extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'MolecularSequence.variant' }
-    this.vOptS('start',expression)
-    this.vOptS('end',expression)
-    this.vOptS('observedAllele',expression)
-    this.vOptS('referenceAllele',expression)
-    this.vOptS('cigar',expression)
-    this.vOptS('variantPointer',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'MolecularSequence.variant' }
+    this.vOS('start',exp)
+    this.vOS('end',exp)
+    this.vOS('observedAllele',exp)
+    this.vOS('referenceAllele',exp)
+    this.vOS('cigar',exp)
+    this.vOS('variantPointer',exp)
     return issues;
   }
 }
@@ -488,16 +488,16 @@ export class MolecularSequenceQualityRoc extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'MolecularSequence.quality.roc' }
-    this.vOptA('score',expression)
-    this.vOptA('numTP',expression)
-    this.vOptA('numFP',expression)
-    this.vOptA('numFN',expression)
-    this.vOptA('precision',expression)
-    this.vOptA('sensitivity',expression)
-    this.vOptA('fMeasure',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'MolecularSequence.quality.roc' }
+    this.vOA('score',exp)
+    this.vOA('numTP',exp)
+    this.vOA('numFP',exp)
+    this.vOA('numFN',exp)
+    this.vOA('precision',exp)
+    this.vOA('sensitivity',exp)
+    this.vOA('fMeasure',exp)
     return issues;
   }
 }
@@ -748,24 +748,24 @@ export class MolecularSequenceQuality extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'MolecularSequence.quality' }
-    this.vReqSV('type',expression,'QualityType',QualityTypeVsValidation,'r')
-    this.vOptS('standardSequence',expression)
-    this.vOptS('start',expression)
-    this.vOptS('end',expression)
-    this.vOptS('score',expression)
-    this.vOptS('method',expression)
-    this.vOptS('truthTP',expression)
-    this.vOptS('queryTP',expression)
-    this.vOptS('truthFN',expression)
-    this.vOptS('queryFP',expression)
-    this.vOptS('gtFP',expression)
-    this.vOptS('precision',expression)
-    this.vOptS('recall',expression)
-    this.vOptS('fScore',expression)
-    this.vOptS('roc',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'MolecularSequence.quality' }
+    this.vRSV('type',exp,'QualityType',QualityTypeVsValidation,'r')
+    this.vOS('standardSequence',exp)
+    this.vOS('start',exp)
+    this.vOS('end',exp)
+    this.vOS('score',exp)
+    this.vOS('method',exp)
+    this.vOS('truthTP',exp)
+    this.vOS('queryTP',exp)
+    this.vOS('truthFN',exp)
+    this.vOS('queryFP',exp)
+    this.vOS('gtFP',exp)
+    this.vOS('precision',exp)
+    this.vOS('recall',exp)
+    this.vOS('fScore',exp)
+    this.vOS('roc',exp)
     return issues;
   }
 }
@@ -895,15 +895,15 @@ export class MolecularSequenceRepository extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'MolecularSequence.repository' }
-    this.vReqSV('type',expression,'RepositoryType',RepositoryTypeVsValidation,'r')
-    this.vOptS('url',expression)
-    this.vOptS('name',expression)
-    this.vOptS('datasetId',expression)
-    this.vOptS('variantsetId',expression)
-    this.vOptS('readsetId',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'MolecularSequence.repository' }
+    this.vRSV('type',exp,'RepositoryType',RepositoryTypeVsValidation,'r')
+    this.vOS('url',exp)
+    this.vOS('name',exp)
+    this.vOS('datasetId',exp)
+    this.vOS('variantsetId',exp)
+    this.vOS('readsetId',exp)
     return issues;
   }
 }
@@ -964,11 +964,11 @@ export class MolecularSequenceStructureVariantOuter extends fhir.BackboneElement
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'MolecularSequence.structureVariant.outer' }
-    this.vOptS('start',expression)
-    this.vOptS('end',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'MolecularSequence.structureVariant.outer' }
+    this.vOS('start',exp)
+    this.vOS('end',exp)
     return issues;
   }
 }
@@ -1029,11 +1029,11 @@ export class MolecularSequenceStructureVariantInner extends fhir.BackboneElement
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'MolecularSequence.structureVariant.inner' }
-    this.vOptS('start',expression)
-    this.vOptS('end',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'MolecularSequence.structureVariant.inner' }
+    this.vOS('start',exp)
+    this.vOS('end',exp)
     return issues;
   }
 }
@@ -1121,14 +1121,14 @@ export class MolecularSequenceStructureVariant extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'MolecularSequence.structureVariant' }
-    this.vOptS('variantType',expression)
-    this.vOptS('exact',expression)
-    this.vOptS('length',expression)
-    this.vOptS('outer',expression)
-    this.vOptS('inner',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'MolecularSequence.structureVariant' }
+    this.vOS('variantType',exp)
+    this.vOS('exact',exp)
+    this.vOS('length',exp)
+    this.vOS('outer',exp)
+    this.vOS('inner',exp)
     return issues;
   }
 }
@@ -1347,26 +1347,26 @@ export class MolecularSequence extends fhir.DomainResource {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'MolecularSequence' }
-    this.vReqS('resourceType',expression)
-    this.vOptA('identifier',expression)
-    this.vOptSV('type',expression,'SequenceType',SequenceTypeVsValidation,'r')
-    this.vReqS('coordinateSystem',expression)
-    this.vOptS('patient',expression)
-    this.vOptS('specimen',expression)
-    this.vOptS('device',expression)
-    this.vOptS('performer',expression)
-    this.vOptS('quantity',expression)
-    this.vOptS('referenceSeq',expression)
-    this.vOptA('variant',expression)
-    this.vOptS('observedSeq',expression)
-    this.vOptA('quality',expression)
-    this.vOptS('readCoverage',expression)
-    this.vOptA('repository',expression)
-    this.vOptA('pointer',expression)
-    this.vOptA('structureVariant',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'MolecularSequence' }
+    this.vRS('resourceType',exp)
+    this.vOA('identifier',exp)
+    this.vOSV('type',exp,'SequenceType',SequenceTypeVsValidation,'r')
+    this.vRS('coordinateSystem',exp)
+    this.vOS('patient',exp)
+    this.vOS('specimen',exp)
+    this.vOS('device',exp)
+    this.vOS('performer',exp)
+    this.vOS('quantity',exp)
+    this.vOS('referenceSeq',exp)
+    this.vOA('variant',exp)
+    this.vOS('observedSeq',exp)
+    this.vOA('quality',exp)
+    this.vOS('readCoverage',exp)
+    this.vOA('repository',exp)
+    this.vOA('pointer',exp)
+    this.vOA('structureVariant',exp)
     return issues;
   }
 }

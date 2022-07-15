@@ -7,8 +7,12 @@
  * This value set includes sample Program Reason Span codes.
  */
 export const ExProgramVsValidation: readonly string[] = [
-  "as", "http://terminology.hl7.org/CodeSystem/ex-programcode|as", 
-  "auscr", "http://terminology.hl7.org/CodeSystem/ex-programcode|auscr", 
-  "hd", "http://terminology.hl7.org/CodeSystem/ex-programcode|hd", 
-  "none", "http://terminology.hl7.org/CodeSystem/ex-programcode|none", 
+  "as",
+  "auscr",
+  "hd",
+  "http://terminology.hl7.org/CodeSystem/ex-programcode|as",
+  "http://terminology.hl7.org/CodeSystem/ex-programcode|auscr",
+  "http://terminology.hl7.org/CodeSystem/ex-programcode|hd",
+  "http://terminology.hl7.org/CodeSystem/ex-programcode|none",
+  "none",
 ] as const;

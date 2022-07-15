@@ -7,10 +7,16 @@
  * A coded concept indicating the current status of the Device Usage.
  */
 export const DeviceStatementStatusVsValidation: readonly string[] = [
-  "active", "http://hl7.org/fhir/device-statement-status|active", 
-  "completed", "http://hl7.org/fhir/device-statement-status|completed", 
-  "entered-in-error", "http://hl7.org/fhir/device-statement-status|entered-in-error", 
-  "intended", "http://hl7.org/fhir/device-statement-status|intended", 
-  "on-hold", "http://hl7.org/fhir/device-statement-status|on-hold", 
-  "stopped", "http://hl7.org/fhir/device-statement-status|stopped", 
+  "active",
+  "completed",
+  "entered-in-error",
+  "http://hl7.org/fhir/device-statement-status|active",
+  "http://hl7.org/fhir/device-statement-status|completed",
+  "http://hl7.org/fhir/device-statement-status|entered-in-error",
+  "http://hl7.org/fhir/device-statement-status|intended",
+  "http://hl7.org/fhir/device-statement-status|on-hold",
+  "http://hl7.org/fhir/device-statement-status|stopped",
+  "intended",
+  "on-hold",
+  "stopped",
 ] as const;

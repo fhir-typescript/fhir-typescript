@@ -7,12 +7,20 @@
  * Resource types defined as part of FHIR that can be represented as in-line definitions of a care plan activity.
  */
 export const CarePlanActivityKindVsValidation: readonly string[] = [
-  "Appointment", "http://hl7.org/fhir/resource-types|Appointment", 
-  "CommunicationRequest", "http://hl7.org/fhir/resource-types|CommunicationRequest", 
-  "DeviceRequest", "http://hl7.org/fhir/resource-types|DeviceRequest", 
-  "MedicationRequest", "http://hl7.org/fhir/resource-types|MedicationRequest", 
-  "NutritionOrder", "http://hl7.org/fhir/resource-types|NutritionOrder", 
-  "ServiceRequest", "http://hl7.org/fhir/resource-types|ServiceRequest", 
-  "Task", "http://hl7.org/fhir/resource-types|Task", 
-  "VisionPrescription", "http://hl7.org/fhir/resource-types|VisionPrescription", 
+  "Appointment",
+  "CommunicationRequest",
+  "DeviceRequest",
+  "http://hl7.org/fhir/resource-types|Appointment",
+  "http://hl7.org/fhir/resource-types|CommunicationRequest",
+  "http://hl7.org/fhir/resource-types|DeviceRequest",
+  "http://hl7.org/fhir/resource-types|MedicationRequest",
+  "http://hl7.org/fhir/resource-types|NutritionOrder",
+  "http://hl7.org/fhir/resource-types|ServiceRequest",
+  "http://hl7.org/fhir/resource-types|Task",
+  "http://hl7.org/fhir/resource-types|VisionPrescription",
+  "MedicationRequest",
+  "NutritionOrder",
+  "ServiceRequest",
+  "Task",
+  "VisionPrescription",
 ] as const;

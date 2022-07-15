@@ -7,5 +7,6 @@
  * FHIR Value set/code system definition for HL7 v2 table 0092 ( RE-ADMISSION INDICATOR)
  */
 export const V20092VsValidation: readonly string[] = [
-  "R", "http://terminology.hl7.org/CodeSystem/v2-0092|R", 
+  "http://terminology.hl7.org/CodeSystem/v2-0092|R",
+  "R",
 ] as const;

@@ -7,8 +7,12 @@
  * MedicationRequest Category Codes
  */
 export const MedicationrequestCategoryVsValidation: readonly string[] = [
-  "community", "http://terminology.hl7.org/CodeSystem/medicationrequest-category|community", 
-  "discharge", "http://terminology.hl7.org/CodeSystem/medicationrequest-category|discharge", 
-  "inpatient", "http://terminology.hl7.org/CodeSystem/medicationrequest-category|inpatient", 
-  "outpatient", "http://terminology.hl7.org/CodeSystem/medicationrequest-category|outpatient", 
+  "community",
+  "discharge",
+  "http://terminology.hl7.org/CodeSystem/medicationrequest-category|community",
+  "http://terminology.hl7.org/CodeSystem/medicationrequest-category|discharge",
+  "http://terminology.hl7.org/CodeSystem/medicationrequest-category|inpatient",
+  "http://terminology.hl7.org/CodeSystem/medicationrequest-category|outpatient",
+  "inpatient",
+  "outpatient",
 ] as const;

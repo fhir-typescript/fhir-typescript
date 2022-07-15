@@ -7,6 +7,8 @@
  * How to interpret the context.
  */
 export const MapContextTypeVsValidation: readonly string[] = [
-  "type", "http://hl7.org/fhir/map-context-type|type", 
-  "variable", "http://hl7.org/fhir/map-context-type|variable", 
+  "http://hl7.org/fhir/map-context-type|type",
+  "http://hl7.org/fhir/map-context-type|variable",
+  "type",
+  "variable",
 ] as const;

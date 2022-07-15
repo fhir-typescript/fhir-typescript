@@ -129,13 +129,13 @@ export class CodeSystemFilter extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'CodeSystem.filter' }
-    this.vReqS('code',expression)
-    this.vOptS('description',expression)
-    this.vReqAV('operator',expression,'FilterOperator',FilterOperatorVsValidation,'r')
-    this.vReqS('value',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'CodeSystem.filter' }
+    this.vRS('code',exp)
+    this.vOS('description',exp)
+    this.vRAV('operator',exp,'FilterOperator',FilterOperatorVsValidation,'r')
+    this.vRS('value',exp)
     return issues;
   }
 }
@@ -232,13 +232,13 @@ export class CodeSystemProperty extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'CodeSystem.property' }
-    this.vReqS('code',expression)
-    this.vOptS('uri',expression)
-    this.vOptS('description',expression)
-    this.vReqSV('type',expression,'ConceptPropertyType',ConceptPropertyTypeVsValidation,'r')
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'CodeSystem.property' }
+    this.vRS('code',exp)
+    this.vOS('uri',exp)
+    this.vOS('description',exp)
+    this.vRSV('type',exp,'ConceptPropertyType',ConceptPropertyTypeVsValidation,'r')
     return issues;
   }
 }
@@ -309,12 +309,12 @@ export class CodeSystemConceptDesignation extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'CodeSystem.concept.designation' }
-    this.vOptS('language',expression)
-    this.vOptS('use',expression)
-    this.vReqS('value',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'CodeSystem.concept.designation' }
+    this.vOS('language',exp)
+    this.vOS('use',exp)
+    this.vRS('value',exp)
     return issues;
   }
 }
@@ -408,11 +408,11 @@ export class CodeSystemConceptProperty extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'CodeSystem.concept.property' }
-    this.vReqS('code',expression)
-    this.vReqS('value',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'CodeSystem.concept.property' }
+    this.vRS('code',exp)
+    this.vRS('value',exp)
     return issues;
   }
 }
@@ -521,15 +521,15 @@ export class CodeSystemConcept extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'CodeSystem.concept' }
-    this.vReqS('code',expression)
-    this.vOptS('display',expression)
-    this.vOptS('definition',expression)
-    this.vOptA('designation',expression)
-    this.vOptA('property',expression)
-    this.vOptA('concept',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'CodeSystem.concept' }
+    this.vRS('code',exp)
+    this.vOS('display',exp)
+    this.vOS('definition',exp)
+    this.vOA('designation',exp)
+    this.vOA('property',exp)
+    this.vOA('concept',exp)
     return issues;
   }
 }
@@ -966,36 +966,36 @@ export class CodeSystem extends fhir.DomainResource {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'CodeSystem' }
-    this.vReqS('resourceType',expression)
-    this.vOptS('url',expression)
-    this.vOptA('identifier',expression)
-    this.vOptS('version',expression)
-    this.vOptS('name',expression)
-    this.vOptS('title',expression)
-    this.vReqSV('status',expression,'PublicationStatus',PublicationStatusVsValidation,'r')
-    this.vOptS('experimental',expression)
-    this.vOptS('date',expression)
-    this.vOptS('publisher',expression)
-    this.vOptA('contact',expression)
-    this.vOptS('description',expression)
-    this.vOptA('useContext',expression)
-    this.vOptA('jurisdiction',expression)
-    this.vOptS('purpose',expression)
-    this.vOptS('copyright',expression)
-    this.vOptS('caseSensitive',expression)
-    this.vOptS('valueSet',expression)
-    this.vOptSV('hierarchyMeaning',expression,'CodesystemHierarchyMeaning',CodesystemHierarchyMeaningVsValidation,'r')
-    this.vOptS('compositional',expression)
-    this.vOptS('versionNeeded',expression)
-    this.vReqSV('content',expression,'CodesystemContentMode',CodesystemContentModeVsValidation,'r')
-    this.vOptS('supplements',expression)
-    this.vOptS('count',expression)
-    this.vOptA('filter',expression)
-    this.vOptA('property',expression)
-    this.vOptA('concept',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'CodeSystem' }
+    this.vRS('resourceType',exp)
+    this.vOS('url',exp)
+    this.vOA('identifier',exp)
+    this.vOS('version',exp)
+    this.vOS('name',exp)
+    this.vOS('title',exp)
+    this.vRSV('status',exp,'PublicationStatus',PublicationStatusVsValidation,'r')
+    this.vOS('experimental',exp)
+    this.vOS('date',exp)
+    this.vOS('publisher',exp)
+    this.vOA('contact',exp)
+    this.vOS('description',exp)
+    this.vOA('useContext',exp)
+    this.vOA('jurisdiction',exp)
+    this.vOS('purpose',exp)
+    this.vOS('copyright',exp)
+    this.vOS('caseSensitive',exp)
+    this.vOS('valueSet',exp)
+    this.vOSV('hierarchyMeaning',exp,'CodesystemHierarchyMeaning',CodesystemHierarchyMeaningVsValidation,'r')
+    this.vOS('compositional',exp)
+    this.vOS('versionNeeded',exp)
+    this.vRSV('content',exp,'CodesystemContentMode',CodesystemContentModeVsValidation,'r')
+    this.vOS('supplements',exp)
+    this.vOS('count',exp)
+    this.vOA('filter',exp)
+    this.vOA('property',exp)
+    this.vOA('concept',exp)
     return issues;
   }
 }

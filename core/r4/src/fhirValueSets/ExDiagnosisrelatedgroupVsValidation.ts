@@ -7,8 +7,12 @@
  * This value set includes example Diagnosis Related Group codes.
  */
 export const ExDiagnosisrelatedgroupVsValidation: readonly string[] = [
-  "100", "http://terminology.hl7.org/CodeSystem/ex-diagnosisrelatedgroup|100", 
-  "101", "http://terminology.hl7.org/CodeSystem/ex-diagnosisrelatedgroup|101", 
-  "300", "http://terminology.hl7.org/CodeSystem/ex-diagnosisrelatedgroup|300", 
-  "400", "http://terminology.hl7.org/CodeSystem/ex-diagnosisrelatedgroup|400", 
+  "100",
+  "101",
+  "300",
+  "400",
+  "http://terminology.hl7.org/CodeSystem/ex-diagnosisrelatedgroup|100",
+  "http://terminology.hl7.org/CodeSystem/ex-diagnosisrelatedgroup|101",
+  "http://terminology.hl7.org/CodeSystem/ex-diagnosisrelatedgroup|300",
+  "http://terminology.hl7.org/CodeSystem/ex-diagnosisrelatedgroup|400",
 ] as const;

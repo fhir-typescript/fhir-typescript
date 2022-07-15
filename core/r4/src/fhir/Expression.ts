@@ -118,14 +118,14 @@ export class Expression extends fhir.FhirElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'Expression' }
-    this.vOptS('description',expression)
-    this.vOptS('name',expression)
-    this.vReqS('language',expression)
-    this.vOptS('expression',expression)
-    this.vOptS('reference',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'Expression' }
+    this.vOS('description',exp)
+    this.vOS('name',exp)
+    this.vRS('language',exp)
+    this.vOS('expression',exp)
+    this.vOS('reference',exp)
     return issues;
   }
 }

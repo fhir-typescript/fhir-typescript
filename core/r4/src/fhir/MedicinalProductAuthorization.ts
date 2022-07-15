@@ -75,14 +75,14 @@ export class MedicinalProductAuthorizationJurisdictionalAuthorization extends fh
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'MedicinalProductAuthorization.jurisdictionalAuthorization' }
-    this.vOptA('identifier',expression)
-    this.vOptS('country',expression)
-    this.vOptA('jurisdiction',expression)
-    this.vOptS('legalStatusOfSupply',expression)
-    this.vOptS('validityPeriod',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'MedicinalProductAuthorization.jurisdictionalAuthorization' }
+    this.vOA('identifier',exp)
+    this.vOS('country',exp)
+    this.vOA('jurisdiction',exp)
+    this.vOS('legalStatusOfSupply',exp)
+    this.vOS('validityPeriod',exp)
     return issues;
   }
 }
@@ -161,13 +161,13 @@ export class MedicinalProductAuthorizationProcedure extends fhir.BackboneElement
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'MedicinalProductAuthorization.procedure' }
-    this.vOptS('identifier',expression)
-    this.vReqS('type',expression)
-    this.vOptS('date',expression)
-    this.vOptA('application',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'MedicinalProductAuthorization.procedure' }
+    this.vOS('identifier',exp)
+    this.vRS('type',exp)
+    this.vOS('date',exp)
+    this.vOA('application',exp)
     return issues;
   }
 }
@@ -383,26 +383,26 @@ export class MedicinalProductAuthorization extends fhir.DomainResource {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'MedicinalProductAuthorization' }
-    this.vReqS('resourceType',expression)
-    this.vOptA('identifier',expression)
-    this.vOptS('subject',expression)
-    this.vOptA('country',expression)
-    this.vOptA('jurisdiction',expression)
-    this.vOptS('status',expression)
-    this.vOptS('statusDate',expression)
-    this.vOptS('restoreDate',expression)
-    this.vOptS('validityPeriod',expression)
-    this.vOptS('dataExclusivityPeriod',expression)
-    this.vOptS('dateOfFirstAuthorization',expression)
-    this.vOptS('internationalBirthDate',expression)
-    this.vOptS('legalBasis',expression)
-    this.vOptA('jurisdictionalAuthorization',expression)
-    this.vOptS('holder',expression)
-    this.vOptS('regulator',expression)
-    this.vOptS('procedure',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'MedicinalProductAuthorization' }
+    this.vRS('resourceType',exp)
+    this.vOA('identifier',exp)
+    this.vOS('subject',exp)
+    this.vOA('country',exp)
+    this.vOA('jurisdiction',exp)
+    this.vOS('status',exp)
+    this.vOS('statusDate',exp)
+    this.vOS('restoreDate',exp)
+    this.vOS('validityPeriod',exp)
+    this.vOS('dataExclusivityPeriod',exp)
+    this.vOS('dateOfFirstAuthorization',exp)
+    this.vOS('internationalBirthDate',exp)
+    this.vOS('legalBasis',exp)
+    this.vOA('jurisdictionalAuthorization',exp)
+    this.vOS('holder',exp)
+    this.vOS('regulator',exp)
+    this.vOS('procedure',exp)
     return issues;
   }
 }

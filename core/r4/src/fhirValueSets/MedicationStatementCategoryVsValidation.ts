@@ -7,8 +7,12 @@
  * Medication Status Codes
  */
 export const MedicationStatementCategoryVsValidation: readonly string[] = [
-  "community", "http://terminology.hl7.org/CodeSystem/medication-statement-category|community", 
-  "inpatient", "http://terminology.hl7.org/CodeSystem/medication-statement-category|inpatient", 
-  "outpatient", "http://terminology.hl7.org/CodeSystem/medication-statement-category|outpatient", 
-  "patientspecified", "http://terminology.hl7.org/CodeSystem/medication-statement-category|patientspecified", 
+  "community",
+  "http://terminology.hl7.org/CodeSystem/medication-statement-category|community",
+  "http://terminology.hl7.org/CodeSystem/medication-statement-category|inpatient",
+  "http://terminology.hl7.org/CodeSystem/medication-statement-category|outpatient",
+  "http://terminology.hl7.org/CodeSystem/medication-statement-category|patientspecified",
+  "inpatient",
+  "outpatient",
+  "patientspecified",
 ] as const;

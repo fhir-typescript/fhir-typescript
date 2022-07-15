@@ -7,12 +7,20 @@
  * Codes identifying the lifecycle stage of an event.
  */
 export const EventStatusVsValidation: readonly string[] = [
-  "completed", "http://hl7.org/fhir/event-status|completed", 
-  "entered-in-error", "http://hl7.org/fhir/event-status|entered-in-error", 
-  "in-progress", "http://hl7.org/fhir/event-status|in-progress", 
-  "not-done", "http://hl7.org/fhir/event-status|not-done", 
-  "on-hold", "http://hl7.org/fhir/event-status|on-hold", 
-  "preparation", "http://hl7.org/fhir/event-status|preparation", 
-  "stopped", "http://hl7.org/fhir/event-status|stopped", 
-  "unknown", "http://hl7.org/fhir/event-status|unknown", 
+  "completed",
+  "entered-in-error",
+  "http://hl7.org/fhir/event-status|completed",
+  "http://hl7.org/fhir/event-status|entered-in-error",
+  "http://hl7.org/fhir/event-status|in-progress",
+  "http://hl7.org/fhir/event-status|not-done",
+  "http://hl7.org/fhir/event-status|on-hold",
+  "http://hl7.org/fhir/event-status|preparation",
+  "http://hl7.org/fhir/event-status|stopped",
+  "http://hl7.org/fhir/event-status|unknown",
+  "in-progress",
+  "not-done",
+  "on-hold",
+  "preparation",
+  "stopped",
+  "unknown",
 ] as const;

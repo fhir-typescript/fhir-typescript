@@ -7,10 +7,16 @@
  * Codes for the assessment of whether the entity caused the event.
  */
 export const AdverseEventCausalityAssessVsValidation: readonly string[] = [
-  "Certain", "http://terminology.hl7.org/CodeSystem/adverse-event-causality-assess|Certain", 
-  "Conditional-Classified", "http://terminology.hl7.org/CodeSystem/adverse-event-causality-assess|Conditional-Classified", 
-  "Possible", "http://terminology.hl7.org/CodeSystem/adverse-event-causality-assess|Possible", 
-  "Probably-Likely", "http://terminology.hl7.org/CodeSystem/adverse-event-causality-assess|Probably-Likely", 
-  "Unassessable-Unclassifiable", "http://terminology.hl7.org/CodeSystem/adverse-event-causality-assess|Unassessable-Unclassifiable", 
-  "Unlikely", "http://terminology.hl7.org/CodeSystem/adverse-event-causality-assess|Unlikely", 
+  "Certain",
+  "Conditional-Classified",
+  "http://terminology.hl7.org/CodeSystem/adverse-event-causality-assess|Certain",
+  "http://terminology.hl7.org/CodeSystem/adverse-event-causality-assess|Conditional-Classified",
+  "http://terminology.hl7.org/CodeSystem/adverse-event-causality-assess|Possible",
+  "http://terminology.hl7.org/CodeSystem/adverse-event-causality-assess|Probably-Likely",
+  "http://terminology.hl7.org/CodeSystem/adverse-event-causality-assess|Unassessable-Unclassifiable",
+  "http://terminology.hl7.org/CodeSystem/adverse-event-causality-assess|Unlikely",
+  "Possible",
+  "Probably-Likely",
+  "Unassessable-Unclassifiable",
+  "Unlikely",
 ] as const;

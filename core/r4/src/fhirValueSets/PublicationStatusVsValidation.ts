@@ -7,8 +7,12 @@
  * The lifecycle status of an artifact.
  */
 export const PublicationStatusVsValidation: readonly string[] = [
-  "active", "http://hl7.org/fhir/publication-status|active", 
-  "draft", "http://hl7.org/fhir/publication-status|draft", 
-  "retired", "http://hl7.org/fhir/publication-status|retired", 
-  "unknown", "http://hl7.org/fhir/publication-status|unknown", 
+  "active",
+  "draft",
+  "http://hl7.org/fhir/publication-status|active",
+  "http://hl7.org/fhir/publication-status|draft",
+  "http://hl7.org/fhir/publication-status|retired",
+  "http://hl7.org/fhir/publication-status|unknown",
+  "retired",
+  "unknown",
 ] as const;

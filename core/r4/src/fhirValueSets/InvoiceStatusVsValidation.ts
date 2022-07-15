@@ -7,9 +7,14 @@
  * Codes identifying the lifecycle stage of an Invoice.
  */
 export const InvoiceStatusVsValidation: readonly string[] = [
-  "balanced", "http://hl7.org/fhir/invoice-status|balanced", 
-  "cancelled", "http://hl7.org/fhir/invoice-status|cancelled", 
-  "draft", "http://hl7.org/fhir/invoice-status|draft", 
-  "entered-in-error", "http://hl7.org/fhir/invoice-status|entered-in-error", 
-  "issued", "http://hl7.org/fhir/invoice-status|issued", 
+  "balanced",
+  "cancelled",
+  "draft",
+  "entered-in-error",
+  "http://hl7.org/fhir/invoice-status|balanced",
+  "http://hl7.org/fhir/invoice-status|cancelled",
+  "http://hl7.org/fhir/invoice-status|draft",
+  "http://hl7.org/fhir/invoice-status|entered-in-error",
+  "http://hl7.org/fhir/invoice-status|issued",
+  "issued",
 ] as const;

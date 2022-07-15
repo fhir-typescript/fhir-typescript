@@ -7,7 +7,10 @@
  * Set of handling instructions prior testing of the specimen.
  */
 export const HandlingConditionVsValidation: readonly string[] = [
-  "frozen", "http://terminology.hl7.org/CodeSystem/handling-condition|frozen", 
-  "refrigerated", "http://terminology.hl7.org/CodeSystem/handling-condition|refrigerated", 
-  "room", "http://terminology.hl7.org/CodeSystem/handling-condition|room", 
+  "frozen",
+  "http://terminology.hl7.org/CodeSystem/handling-condition|frozen",
+  "http://terminology.hl7.org/CodeSystem/handling-condition|refrigerated",
+  "http://terminology.hl7.org/CodeSystem/handling-condition|room",
+  "refrigerated",
+  "room",
 ] as const;

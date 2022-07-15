@@ -82,11 +82,11 @@ export class NutritionOrderOralDietNutrient extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'NutritionOrder.oralDiet.nutrient' }
-    this.vOptS('modifier',expression)
-    this.vOptS('amount',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'NutritionOrder.oralDiet.nutrient' }
+    this.vOS('modifier',exp)
+    this.vOS('amount',exp)
     return issues;
   }
 }
@@ -131,11 +131,11 @@ export class NutritionOrderOralDietTexture extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'NutritionOrder.oralDiet.texture' }
-    this.vOptS('modifier',expression)
-    this.vOptS('foodType',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'NutritionOrder.oralDiet.texture' }
+    this.vOS('modifier',exp)
+    this.vOS('foodType',exp)
     return issues;
   }
 }
@@ -229,15 +229,15 @@ export class NutritionOrderOralDiet extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'NutritionOrder.oralDiet' }
-    this.vOptA('type',expression)
-    this.vOptA('schedule',expression)
-    this.vOptA('nutrient',expression)
-    this.vOptA('texture',expression)
-    this.vOptA('fluidConsistencyType',expression)
-    this.vOptS('instruction',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'NutritionOrder.oralDiet' }
+    this.vOA('type',exp)
+    this.vOA('schedule',exp)
+    this.vOA('nutrient',exp)
+    this.vOA('texture',exp)
+    this.vOA('fluidConsistencyType',exp)
+    this.vOS('instruction',exp)
     return issues;
   }
 }
@@ -326,14 +326,14 @@ export class NutritionOrderSupplement extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'NutritionOrder.supplement' }
-    this.vOptS('type',expression)
-    this.vOptS('productName',expression)
-    this.vOptA('schedule',expression)
-    this.vOptS('quantity',expression)
-    this.vOptS('instruction',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'NutritionOrder.supplement' }
+    this.vOS('type',exp)
+    this.vOS('productName',exp)
+    this.vOA('schedule',exp)
+    this.vOS('quantity',exp)
+    this.vOS('instruction',exp)
     return issues;
   }
 }
@@ -401,12 +401,12 @@ export class NutritionOrderEnteralFormulaAdministration extends fhir.BackboneEle
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'NutritionOrder.enteralFormula.administration' }
-    this.vOptS('schedule',expression)
-    this.vOptS('quantity',expression)
-    this.vOptS('rate',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'NutritionOrder.enteralFormula.administration' }
+    this.vOS('schedule',exp)
+    this.vOS('quantity',exp)
+    this.vOS('rate',exp)
     return issues;
   }
 }
@@ -539,18 +539,18 @@ export class NutritionOrderEnteralFormula extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'NutritionOrder.enteralFormula' }
-    this.vOptS('baseFormulaType',expression)
-    this.vOptS('baseFormulaProductName',expression)
-    this.vOptS('additiveType',expression)
-    this.vOptS('additiveProductName',expression)
-    this.vOptS('caloricDensity',expression)
-    this.vOptS('routeofAdministration',expression)
-    this.vOptA('administration',expression)
-    this.vOptS('maxVolumeToDeliver',expression)
-    this.vOptS('administrationInstruction',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'NutritionOrder.enteralFormula' }
+    this.vOS('baseFormulaType',exp)
+    this.vOS('baseFormulaProductName',exp)
+    this.vOS('additiveType',exp)
+    this.vOS('additiveProductName',exp)
+    this.vOS('caloricDensity',exp)
+    this.vOS('routeofAdministration',exp)
+    this.vOA('administration',exp)
+    this.vOS('maxVolumeToDeliver',exp)
+    this.vOS('administrationInstruction',exp)
     return issues;
   }
 }
@@ -806,27 +806,27 @@ export class NutritionOrder extends fhir.DomainResource {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'NutritionOrder' }
-    this.vReqS('resourceType',expression)
-    this.vOptA('identifier',expression)
-    this.vOptA('instantiatesCanonical',expression)
-    this.vOptA('instantiatesUri',expression)
-    this.vOptA('instantiates',expression)
-    this.vReqSV('status',expression,'RequestStatus',RequestStatusVsValidation,'r')
-    this.vReqSV('intent',expression,'RequestIntent',RequestIntentVsValidation,'r')
-    this.vReqS('patient',expression)
-    this.vOptS('encounter',expression)
-    this.vReqS('dateTime',expression)
-    this.vOptS('orderer',expression)
-    this.vOptA('allergyIntolerance',expression)
-    this.vOptA('foodPreferenceModifier',expression)
-    this.vOptA('excludeFoodModifier',expression)
-    this.vOptS('oralDiet',expression)
-    this.vOptA('supplement',expression)
-    this.vOptS('enteralFormula',expression)
-    this.vOptA('note',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'NutritionOrder' }
+    this.vRS('resourceType',exp)
+    this.vOA('identifier',exp)
+    this.vOA('instantiatesCanonical',exp)
+    this.vOA('instantiatesUri',exp)
+    this.vOA('instantiates',exp)
+    this.vRSV('status',exp,'RequestStatus',RequestStatusVsValidation,'r')
+    this.vRSV('intent',exp,'RequestIntent',RequestIntentVsValidation,'r')
+    this.vRS('patient',exp)
+    this.vOS('encounter',exp)
+    this.vRS('dateTime',exp)
+    this.vOS('orderer',exp)
+    this.vOA('allergyIntolerance',exp)
+    this.vOA('foodPreferenceModifier',exp)
+    this.vOA('excludeFoodModifier',exp)
+    this.vOS('oralDiet',exp)
+    this.vOA('supplement',exp)
+    this.vOS('enteralFormula',exp)
+    this.vOA('note',exp)
     return issues;
   }
 }

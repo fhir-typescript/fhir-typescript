@@ -7,7 +7,10 @@
  * The possible types of research elements (E.g. Population, Exposure, Outcome).
  */
 export const ResearchElementTypeVsValidation: readonly string[] = [
-  "exposure", "http://hl7.org/fhir/research-element-type|exposure", 
-  "outcome", "http://hl7.org/fhir/research-element-type|outcome", 
-  "population", "http://hl7.org/fhir/research-element-type|population", 
+  "exposure",
+  "http://hl7.org/fhir/research-element-type|exposure",
+  "http://hl7.org/fhir/research-element-type|outcome",
+  "http://hl7.org/fhir/research-element-type|population",
+  "outcome",
+  "population",
 ] as const;

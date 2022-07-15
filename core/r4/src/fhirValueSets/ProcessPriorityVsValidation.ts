@@ -7,7 +7,10 @@
  * This value set includes the financial processing priority codes.
  */
 export const ProcessPriorityVsValidation: readonly string[] = [
-  "deferred", "http://terminology.hl7.org/CodeSystem/processpriority|deferred", 
-  "normal", "http://terminology.hl7.org/CodeSystem/processpriority|normal", 
-  "stat", "http://terminology.hl7.org/CodeSystem/processpriority|stat", 
+  "deferred",
+  "http://terminology.hl7.org/CodeSystem/processpriority|deferred",
+  "http://terminology.hl7.org/CodeSystem/processpriority|normal",
+  "http://terminology.hl7.org/CodeSystem/processpriority|stat",
+  "normal",
+  "stat",
 ] as const;

@@ -7,12 +7,20 @@
  * Describes the typical color of representation.
  */
 export const MetricColorVsValidation: readonly string[] = [
-  "black", "http://hl7.org/fhir/metric-color|black", 
-  "blue", "http://hl7.org/fhir/metric-color|blue", 
-  "cyan", "http://hl7.org/fhir/metric-color|cyan", 
-  "green", "http://hl7.org/fhir/metric-color|green", 
-  "magenta", "http://hl7.org/fhir/metric-color|magenta", 
-  "red", "http://hl7.org/fhir/metric-color|red", 
-  "white", "http://hl7.org/fhir/metric-color|white", 
-  "yellow", "http://hl7.org/fhir/metric-color|yellow", 
+  "black",
+  "blue",
+  "cyan",
+  "green",
+  "http://hl7.org/fhir/metric-color|black",
+  "http://hl7.org/fhir/metric-color|blue",
+  "http://hl7.org/fhir/metric-color|cyan",
+  "http://hl7.org/fhir/metric-color|green",
+  "http://hl7.org/fhir/metric-color|magenta",
+  "http://hl7.org/fhir/metric-color|red",
+  "http://hl7.org/fhir/metric-color|white",
+  "http://hl7.org/fhir/metric-color|yellow",
+  "magenta",
+  "red",
+  "white",
+  "yellow",
 ] as const;

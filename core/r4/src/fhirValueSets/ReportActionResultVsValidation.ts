@@ -7,9 +7,14 @@
  * The results of executing an action.
  */
 export const ReportActionResultVsValidation: readonly string[] = [
-  "error", "http://hl7.org/fhir/report-action-result-codes|error", 
-  "fail", "http://hl7.org/fhir/report-action-result-codes|fail", 
-  "pass", "http://hl7.org/fhir/report-action-result-codes|pass", 
-  "skip", "http://hl7.org/fhir/report-action-result-codes|skip", 
-  "warning", "http://hl7.org/fhir/report-action-result-codes|warning", 
+  "error",
+  "fail",
+  "http://hl7.org/fhir/report-action-result-codes|error",
+  "http://hl7.org/fhir/report-action-result-codes|fail",
+  "http://hl7.org/fhir/report-action-result-codes|pass",
+  "http://hl7.org/fhir/report-action-result-codes|skip",
+  "http://hl7.org/fhir/report-action-result-codes|warning",
+  "pass",
+  "skip",
+  "warning",
 ] as const;

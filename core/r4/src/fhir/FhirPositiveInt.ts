@@ -44,10 +44,10 @@ export class FhirPositiveInt extends fhir.FhirPrimitive {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
     if ((this.value !== undefined) && (this.value !== null) && ((typeof this.value !== 'number') || (!Number.isInteger(this.value)) || (this.value <= 0) || (!FhirPositiveInt._fts_regex.test(this.value.toString())))) {
-      issues.push({ severity: 'error', code: 'invalid', details: { text: 'Invalid value in primitive type positiveInt' }, expression: [expression]});
+      issues.push({ severity: 'error', code: 'invalid', details: { text: 'Invalid value in primitive type positiveInt' }, expression: [exp]});
     }
     return issues;
   }

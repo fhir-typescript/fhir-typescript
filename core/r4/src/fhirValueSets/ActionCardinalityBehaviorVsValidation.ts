@@ -7,6 +7,8 @@
  * Defines behavior for an action or a group for how many times that item may be repeated.
  */
 export const ActionCardinalityBehaviorVsValidation: readonly string[] = [
-  "multiple", "http://hl7.org/fhir/action-cardinality-behavior|multiple", 
-  "single", "http://hl7.org/fhir/action-cardinality-behavior|single", 
+  "http://hl7.org/fhir/action-cardinality-behavior|multiple",
+  "http://hl7.org/fhir/action-cardinality-behavior|single",
+  "multiple",
+  "single",
 ] as const;

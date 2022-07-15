@@ -7,10 +7,16 @@
  * The primary process by which the target is validated
  */
 export const VerificationresultValidationProcessVsValidation: readonly string[] = [
-  "edit-check", "http://terminology.hl7.org/CodeSystem/validation-process|edit-check", 
-  "in-context", "http://terminology.hl7.org/CodeSystem/validation-process|in-context", 
-  "multi", "http://terminology.hl7.org/CodeSystem/validation-process|multi", 
-  "primary", "http://terminology.hl7.org/CodeSystem/validation-process|primary", 
-  "standalone", "http://terminology.hl7.org/CodeSystem/validation-process|standalone", 
-  "valueset", "http://terminology.hl7.org/CodeSystem/validation-process|valueset", 
+  "edit-check",
+  "http://terminology.hl7.org/CodeSystem/validation-process|edit-check",
+  "http://terminology.hl7.org/CodeSystem/validation-process|in-context",
+  "http://terminology.hl7.org/CodeSystem/validation-process|multi",
+  "http://terminology.hl7.org/CodeSystem/validation-process|primary",
+  "http://terminology.hl7.org/CodeSystem/validation-process|standalone",
+  "http://terminology.hl7.org/CodeSystem/validation-process|valueset",
+  "in-context",
+  "multi",
+  "primary",
+  "standalone",
+  "valueset",
 ] as const;

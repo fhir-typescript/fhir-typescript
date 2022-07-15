@@ -55,11 +55,11 @@ export class InvoiceParticipant extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'Invoice.participant' }
-    this.vOptS('role',expression)
-    this.vReqS('actor',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'Invoice.participant' }
+    this.vOS('role',exp)
+    this.vRS('actor',exp)
     return issues;
   }
 }
@@ -139,13 +139,13 @@ export class InvoiceLineItemPriceComponent extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'Invoice.lineItem.priceComponent' }
-    this.vReqSV('type',expression,'InvoicePriceComponentType',InvoicePriceComponentTypeVsValidation,'r')
-    this.vOptS('code',expression)
-    this.vOptS('factor',expression)
-    this.vOptS('amount',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'Invoice.lineItem.priceComponent' }
+    this.vRSV('type',exp,'InvoicePriceComponentType',InvoicePriceComponentTypeVsValidation,'r')
+    this.vOS('code',exp)
+    this.vOS('factor',exp)
+    this.vOS('amount',exp)
     return issues;
   }
 }
@@ -223,12 +223,12 @@ export class InvoiceLineItem extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'Invoice.lineItem' }
-    this.vOptS('sequence',expression)
-    this.vReqS('chargeItem',expression)
-    this.vOptA('priceComponent',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'Invoice.lineItem' }
+    this.vOS('sequence',exp)
+    this.vRS('chargeItem',exp)
+    this.vOA('priceComponent',exp)
     return issues;
   }
 }
@@ -446,26 +446,26 @@ export class Invoice extends fhir.DomainResource {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'Invoice' }
-    this.vReqS('resourceType',expression)
-    this.vOptA('identifier',expression)
-    this.vReqSV('status',expression,'InvoiceStatus',InvoiceStatusVsValidation,'r')
-    this.vOptS('cancelledReason',expression)
-    this.vOptS('type',expression)
-    this.vOptS('subject',expression)
-    this.vOptS('recipient',expression)
-    this.vOptS('date',expression)
-    this.vOptA('participant',expression)
-    this.vOptS('issuer',expression)
-    this.vOptS('account',expression)
-    this.vOptA('lineItem',expression)
-    this.vOptA('totalPriceComponent',expression)
-    this.vOptS('totalNet',expression)
-    this.vOptS('totalGross',expression)
-    this.vOptS('paymentTerms',expression)
-    this.vOptA('note',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'Invoice' }
+    this.vRS('resourceType',exp)
+    this.vOA('identifier',exp)
+    this.vRSV('status',exp,'InvoiceStatus',InvoiceStatusVsValidation,'r')
+    this.vOS('cancelledReason',exp)
+    this.vOS('type',exp)
+    this.vOS('subject',exp)
+    this.vOS('recipient',exp)
+    this.vOS('date',exp)
+    this.vOA('participant',exp)
+    this.vOS('issuer',exp)
+    this.vOS('account',exp)
+    this.vOA('lineItem',exp)
+    this.vOA('totalPriceComponent',exp)
+    this.vOS('totalNet',exp)
+    this.vOS('totalGross',exp)
+    this.vOS('paymentTerms',exp)
+    this.vOA('note',exp)
     return issues;
   }
 }

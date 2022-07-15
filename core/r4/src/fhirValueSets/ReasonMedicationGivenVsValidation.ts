@@ -7,7 +7,10 @@
  * This value set is provided as an example. The value set to instantiate this attribute should be drawn from a robust terminology code system that consists of or contains concepts to support the medication process.
  */
 export const ReasonMedicationGivenVsValidation: readonly string[] = [
-  "a", "http://terminology.hl7.org/CodeSystem/reason-medication-given|a", 
-  "b", "http://terminology.hl7.org/CodeSystem/reason-medication-given|b", 
-  "c", "http://terminology.hl7.org/CodeSystem/reason-medication-given|c", 
+  "a",
+  "b",
+  "c",
+  "http://terminology.hl7.org/CodeSystem/reason-medication-given|a",
+  "http://terminology.hl7.org/CodeSystem/reason-medication-given|b",
+  "http://terminology.hl7.org/CodeSystem/reason-medication-given|c",
 ] as const;

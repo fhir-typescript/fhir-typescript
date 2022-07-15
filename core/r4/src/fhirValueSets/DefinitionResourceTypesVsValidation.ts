@@ -7,10 +7,16 @@
  * A list of all the definition resource types defined in this version of the FHIR specification.
  */
 export const DefinitionResourceTypesVsValidation: readonly string[] = [
-  "ActivityDefinition", "http://hl7.org/fhir/definition-resource-types|ActivityDefinition", 
-  "EventDefinition", "http://hl7.org/fhir/definition-resource-types|EventDefinition", 
-  "Measure", "http://hl7.org/fhir/definition-resource-types|Measure", 
-  "OperationDefinition", "http://hl7.org/fhir/definition-resource-types|OperationDefinition", 
-  "PlanDefinition", "http://hl7.org/fhir/definition-resource-types|PlanDefinition", 
-  "Questionnaire", "http://hl7.org/fhir/definition-resource-types|Questionnaire", 
+  "ActivityDefinition",
+  "EventDefinition",
+  "http://hl7.org/fhir/definition-resource-types|ActivityDefinition",
+  "http://hl7.org/fhir/definition-resource-types|EventDefinition",
+  "http://hl7.org/fhir/definition-resource-types|Measure",
+  "http://hl7.org/fhir/definition-resource-types|OperationDefinition",
+  "http://hl7.org/fhir/definition-resource-types|PlanDefinition",
+  "http://hl7.org/fhir/definition-resource-types|Questionnaire",
+  "Measure",
+  "OperationDefinition",
+  "PlanDefinition",
+  "Questionnaire",
 ] as const;

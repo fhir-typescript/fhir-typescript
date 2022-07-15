@@ -7,11 +7,18 @@
  * Codes indicating the type of action that is expected to be performed
  */
 export const TaskVsValidation: readonly string[] = [
-  "abort", "http://hl7.org/fhir/CodeSystem/task-code|abort", 
-  "approve", "http://hl7.org/fhir/CodeSystem/task-code|approve", 
-  "change", "http://hl7.org/fhir/CodeSystem/task-code|change", 
-  "fulfill", "http://hl7.org/fhir/CodeSystem/task-code|fulfill", 
-  "replace", "http://hl7.org/fhir/CodeSystem/task-code|replace", 
-  "resume", "http://hl7.org/fhir/CodeSystem/task-code|resume", 
-  "suspend", "http://hl7.org/fhir/CodeSystem/task-code|suspend", 
+  "abort",
+  "approve",
+  "change",
+  "fulfill",
+  "http://hl7.org/fhir/CodeSystem/task-code|abort",
+  "http://hl7.org/fhir/CodeSystem/task-code|approve",
+  "http://hl7.org/fhir/CodeSystem/task-code|change",
+  "http://hl7.org/fhir/CodeSystem/task-code|fulfill",
+  "http://hl7.org/fhir/CodeSystem/task-code|replace",
+  "http://hl7.org/fhir/CodeSystem/task-code|resume",
+  "http://hl7.org/fhir/CodeSystem/task-code|suspend",
+  "replace",
+  "resume",
+  "suspend",
 ] as const;

@@ -183,22 +183,22 @@ export class PaymentNotice extends fhir.DomainResource {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'PaymentNotice' }
-    this.vReqS('resourceType',expression)
-    this.vOptA('identifier',expression)
-    this.vReqSV('status',expression,'FmStatus',FmStatusVsValidation,'r')
-    this.vOptS('request',expression)
-    this.vOptS('response',expression)
-    this.vReqS('created',expression)
-    this.vOptS('provider',expression)
-    this.vReqS('payment',expression)
-    this.vOptS('paymentDate',expression)
-    this.vOptS('payee',expression)
-    this.vReqS('recipient',expression)
-    this.vReqS('amount',expression)
-    this.vOptS('paymentStatus',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'PaymentNotice' }
+    this.vRS('resourceType',exp)
+    this.vOA('identifier',exp)
+    this.vRSV('status',exp,'FmStatus',FmStatusVsValidation,'r')
+    this.vOS('request',exp)
+    this.vOS('response',exp)
+    this.vRS('created',exp)
+    this.vOS('provider',exp)
+    this.vRS('payment',exp)
+    this.vOS('paymentDate',exp)
+    this.vOS('payee',exp)
+    this.vRS('recipient',exp)
+    this.vRS('amount',exp)
+    this.vOS('paymentStatus',exp)
     return issues;
   }
 }

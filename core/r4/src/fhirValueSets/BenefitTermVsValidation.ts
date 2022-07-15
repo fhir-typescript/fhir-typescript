@@ -7,7 +7,10 @@
  * This value set includes a smattering of Benefit Term codes.
  */
 export const BenefitTermVsValidation: readonly string[] = [
-  "annual", "http://terminology.hl7.org/CodeSystem/benefit-term|annual", 
-  "day", "http://terminology.hl7.org/CodeSystem/benefit-term|day", 
-  "lifetime", "http://terminology.hl7.org/CodeSystem/benefit-term|lifetime", 
+  "annual",
+  "day",
+  "http://terminology.hl7.org/CodeSystem/benefit-term|annual",
+  "http://terminology.hl7.org/CodeSystem/benefit-term|day",
+  "http://terminology.hl7.org/CodeSystem/benefit-term|lifetime",
+  "lifetime",
 ] as const;

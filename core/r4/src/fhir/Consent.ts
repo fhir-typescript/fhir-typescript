@@ -110,11 +110,11 @@ export class ConsentPolicy extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'Consent.policy' }
-    this.vOptS('authority',expression)
-    this.vOptS('uri',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'Consent.policy' }
+    this.vOS('authority',exp)
+    this.vOS('uri',exp)
     return issues;
   }
 }
@@ -185,12 +185,12 @@ export class ConsentVerification extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'Consent.verification' }
-    this.vReqS('verified',expression)
-    this.vOptS('verifiedWith',expression)
-    this.vOptS('verificationDate',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'Consent.verification' }
+    this.vRS('verified',exp)
+    this.vOS('verifiedWith',exp)
+    this.vOS('verificationDate',exp)
     return issues;
   }
 }
@@ -237,11 +237,11 @@ export class ConsentProvisionActor extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'Consent.provision.actor' }
-    this.vReqS('role',expression)
-    this.vReqS('reference',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'Consent.provision.actor' }
+    this.vRS('role',exp)
+    this.vRS('reference',exp)
     return issues;
   }
 }
@@ -296,11 +296,11 @@ export class ConsentProvisionData extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'Consent.provision.data' }
-    this.vReqSV('meaning',expression,'ConsentDataMeaning',ConsentDataMeaningVsValidation,'r')
-    this.vReqS('reference',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'Consent.provision.data' }
+    this.vRSV('meaning',exp,'ConsentDataMeaning',ConsentDataMeaningVsValidation,'r')
+    this.vRS('reference',exp)
     return issues;
   }
 }
@@ -442,20 +442,20 @@ export class ConsentProvision extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'Consent.provision' }
-    this.vOptSV('type',expression,'ConsentProvisionType',ConsentProvisionTypeVsValidation,'r')
-    this.vOptS('period',expression)
-    this.vOptA('actor',expression)
-    this.vOptA('action',expression)
-    this.vOptA('securityLabel',expression)
-    this.vOptA('purpose',expression)
-    this.vOptA('class',expression)
-    this.vOptA('code',expression)
-    this.vOptS('dataPeriod',expression)
-    this.vOptA('data',expression)
-    this.vOptA('provision',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'Consent.provision' }
+    this.vOSV('type',exp,'ConsentProvisionType',ConsentProvisionTypeVsValidation,'r')
+    this.vOS('period',exp)
+    this.vOA('actor',exp)
+    this.vOA('action',exp)
+    this.vOA('securityLabel',exp)
+    this.vOA('purpose',exp)
+    this.vOA('class',exp)
+    this.vOA('code',exp)
+    this.vOS('dataPeriod',exp)
+    this.vOA('data',exp)
+    this.vOA('provision',exp)
     return issues;
   }
 }
@@ -646,23 +646,23 @@ export class Consent extends fhir.DomainResource {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'Consent' }
-    this.vReqS('resourceType',expression)
-    this.vOptA('identifier',expression)
-    this.vReqSV('status',expression,'ConsentState',ConsentStateVsValidation,'r')
-    this.vReqS('scope',expression)
-    this.vReqA('category',expression)
-    this.vOptS('patient',expression)
-    this.vOptS('dateTime',expression)
-    this.vOptA('performer',expression)
-    this.vOptA('organization',expression)
-    this.vOptS('source',expression)
-    this.vOptA('policy',expression)
-    this.vOptS('policyRule',expression)
-    this.vOptA('verification',expression)
-    this.vOptS('provision',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'Consent' }
+    this.vRS('resourceType',exp)
+    this.vOA('identifier',exp)
+    this.vRSV('status',exp,'ConsentState',ConsentStateVsValidation,'r')
+    this.vRS('scope',exp)
+    this.vRA('category',exp)
+    this.vOS('patient',exp)
+    this.vOS('dateTime',exp)
+    this.vOA('performer',exp)
+    this.vOA('organization',exp)
+    this.vOS('source',exp)
+    this.vOA('policy',exp)
+    this.vOS('policyRule',exp)
+    this.vOA('verification',exp)
+    this.vOS('provision',exp)
     return issues;
   }
 }

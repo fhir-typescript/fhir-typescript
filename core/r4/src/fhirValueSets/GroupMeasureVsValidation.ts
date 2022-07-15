@@ -7,10 +7,16 @@
  * Possible group measure aggregates (E.g. Mean, Median).
  */
 export const GroupMeasureVsValidation: readonly string[] = [
-  "mean", "http://hl7.org/fhir/group-measure|mean", 
-  "mean-of-mean", "http://hl7.org/fhir/group-measure|mean-of-mean", 
-  "mean-of-median", "http://hl7.org/fhir/group-measure|mean-of-median", 
-  "median", "http://hl7.org/fhir/group-measure|median", 
-  "median-of-mean", "http://hl7.org/fhir/group-measure|median-of-mean", 
-  "median-of-median", "http://hl7.org/fhir/group-measure|median-of-median", 
+  "http://hl7.org/fhir/group-measure|mean",
+  "http://hl7.org/fhir/group-measure|mean-of-mean",
+  "http://hl7.org/fhir/group-measure|mean-of-median",
+  "http://hl7.org/fhir/group-measure|median",
+  "http://hl7.org/fhir/group-measure|median-of-mean",
+  "http://hl7.org/fhir/group-measure|median-of-median",
+  "mean",
+  "mean-of-mean",
+  "mean-of-median",
+  "median",
+  "median-of-mean",
+  "median-of-median",
 ] as const;

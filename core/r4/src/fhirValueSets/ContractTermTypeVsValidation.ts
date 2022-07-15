@@ -7,6 +7,8 @@
  * This value set includes sample Contract Term Type codes.
  */
 export const ContractTermTypeVsValidation: readonly string[] = [
-  "statutory", "http://terminology.hl7.org/CodeSystem/contracttermtypecodes|statutory", 
-  "subject-to", "http://terminology.hl7.org/CodeSystem/contracttermtypecodes|subject-to", 
+  "http://terminology.hl7.org/CodeSystem/contracttermtypecodes|statutory",
+  "http://terminology.hl7.org/CodeSystem/contracttermtypecodes|subject-to",
+  "statutory",
+  "subject-to",
 ] as const;

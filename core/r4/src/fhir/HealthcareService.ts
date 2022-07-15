@@ -86,11 +86,11 @@ export class HealthcareServiceEligibility extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'HealthcareService.eligibility' }
-    this.vOptS('code',expression)
-    this.vOptS('comment',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'HealthcareService.eligibility' }
+    this.vOS('code',exp)
+    this.vOS('comment',exp)
     return issues;
   }
 }
@@ -188,13 +188,13 @@ export class HealthcareServiceAvailableTime extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'HealthcareService.availableTime' }
-    this.vOptAV('daysOfWeek',expression,'DaysOfWeek',DaysOfWeekVsValidation,'r')
-    this.vOptS('allDay',expression)
-    this.vOptS('availableStartTime',expression)
-    this.vOptS('availableEndTime',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'HealthcareService.availableTime' }
+    this.vOAV('daysOfWeek',exp,'DaysOfWeek',DaysOfWeekVsValidation,'r')
+    this.vOS('allDay',exp)
+    this.vOS('availableStartTime',exp)
+    this.vOS('availableEndTime',exp)
     return issues;
   }
 }
@@ -248,11 +248,11 @@ export class HealthcareServiceNotAvailable extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'HealthcareService.notAvailable' }
-    this.vReqS('description',expression)
-    this.vOptS('during',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'HealthcareService.notAvailable' }
+    this.vRS('description',exp)
+    this.vOS('during',exp)
     return issues;
   }
 }
@@ -568,34 +568,34 @@ export class HealthcareService extends fhir.DomainResource {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'HealthcareService' }
-    this.vReqS('resourceType',expression)
-    this.vOptA('identifier',expression)
-    this.vOptS('active',expression)
-    this.vOptS('providedBy',expression)
-    this.vOptA('category',expression)
-    this.vOptA('type',expression)
-    this.vOptA('specialty',expression)
-    this.vOptA('location',expression)
-    this.vOptS('name',expression)
-    this.vOptS('comment',expression)
-    this.vOptS('extraDetails',expression)
-    this.vOptS('photo',expression)
-    this.vOptA('telecom',expression)
-    this.vOptA('coverageArea',expression)
-    this.vOptA('serviceProvisionCode',expression)
-    this.vOptA('eligibility',expression)
-    this.vOptA('program',expression)
-    this.vOptA('characteristic',expression)
-    this.vOptA('communication',expression)
-    this.vOptA('referralMethod',expression)
-    this.vOptS('appointmentRequired',expression)
-    this.vOptA('availableTime',expression)
-    this.vOptA('notAvailable',expression)
-    this.vOptS('availabilityExceptions',expression)
-    this.vOptA('endpoint',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'HealthcareService' }
+    this.vRS('resourceType',exp)
+    this.vOA('identifier',exp)
+    this.vOS('active',exp)
+    this.vOS('providedBy',exp)
+    this.vOA('category',exp)
+    this.vOA('type',exp)
+    this.vOA('specialty',exp)
+    this.vOA('location',exp)
+    this.vOS('name',exp)
+    this.vOS('comment',exp)
+    this.vOS('extraDetails',exp)
+    this.vOS('photo',exp)
+    this.vOA('telecom',exp)
+    this.vOA('coverageArea',exp)
+    this.vOA('serviceProvisionCode',exp)
+    this.vOA('eligibility',exp)
+    this.vOA('program',exp)
+    this.vOA('characteristic',exp)
+    this.vOA('communication',exp)
+    this.vOA('referralMethod',exp)
+    this.vOS('appointmentRequired',exp)
+    this.vOA('availableTime',exp)
+    this.vOA('notAvailable',exp)
+    this.vOS('availabilityExceptions',exp)
+    this.vOA('endpoint',exp)
     return issues;
   }
 }

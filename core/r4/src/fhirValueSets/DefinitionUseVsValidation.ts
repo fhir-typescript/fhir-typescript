@@ -7,10 +7,16 @@
  * Structure Definition Use Codes / Keywords
  */
 export const DefinitionUseVsValidation: readonly string[] = [
-  "archetype", "http://terminology.hl7.org/CodeSystem/definition-use|archetype", 
-  "custom-resource", "http://terminology.hl7.org/CodeSystem/definition-use|custom-resource", 
-  "dam", "http://terminology.hl7.org/CodeSystem/definition-use|dam", 
-  "fhir-structure", "http://terminology.hl7.org/CodeSystem/definition-use|fhir-structure", 
-  "template", "http://terminology.hl7.org/CodeSystem/definition-use|template", 
-  "wire-format", "http://terminology.hl7.org/CodeSystem/definition-use|wire-format", 
+  "archetype",
+  "custom-resource",
+  "dam",
+  "fhir-structure",
+  "http://terminology.hl7.org/CodeSystem/definition-use|archetype",
+  "http://terminology.hl7.org/CodeSystem/definition-use|custom-resource",
+  "http://terminology.hl7.org/CodeSystem/definition-use|dam",
+  "http://terminology.hl7.org/CodeSystem/definition-use|fhir-structure",
+  "http://terminology.hl7.org/CodeSystem/definition-use|template",
+  "http://terminology.hl7.org/CodeSystem/definition-use|wire-format",
+  "template",
+  "wire-format",
 ] as const;

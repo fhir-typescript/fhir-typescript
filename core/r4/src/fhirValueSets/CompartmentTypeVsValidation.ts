@@ -7,9 +7,14 @@
  * Which type a compartment definition describes.
  */
 export const CompartmentTypeVsValidation: readonly string[] = [
-  "Device", "http://hl7.org/fhir/compartment-type|Device", 
-  "Encounter", "http://hl7.org/fhir/compartment-type|Encounter", 
-  "Patient", "http://hl7.org/fhir/compartment-type|Patient", 
-  "Practitioner", "http://hl7.org/fhir/compartment-type|Practitioner", 
-  "RelatedPerson", "http://hl7.org/fhir/compartment-type|RelatedPerson", 
+  "Device",
+  "Encounter",
+  "http://hl7.org/fhir/compartment-type|Device",
+  "http://hl7.org/fhir/compartment-type|Encounter",
+  "http://hl7.org/fhir/compartment-type|Patient",
+  "http://hl7.org/fhir/compartment-type|Practitioner",
+  "http://hl7.org/fhir/compartment-type|RelatedPerson",
+  "Patient",
+  "Practitioner",
+  "RelatedPerson",
 ] as const;

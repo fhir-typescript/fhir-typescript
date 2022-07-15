@@ -86,11 +86,11 @@ export class SupplyRequestParameter extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'SupplyRequest.parameter' }
-    this.vOptS('code',expression)
-    this.vOptS('value',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'SupplyRequest.parameter' }
+    this.vOS('code',exp)
+    this.vOS('value',exp)
     return issues;
   }
 }
@@ -325,25 +325,25 @@ export class SupplyRequest extends fhir.DomainResource {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'SupplyRequest' }
-    this.vReqS('resourceType',expression)
-    this.vOptA('identifier',expression)
-    this.vOptSV('status',expression,'SupplyrequestStatus',SupplyrequestStatusVsValidation,'r')
-    this.vOptS('category',expression)
-    this.vOptSV('priority',expression,'RequestPriority',RequestPriorityVsValidation,'r')
-    this.vReqS('item',expression)
-    this.vReqS('quantity',expression)
-    this.vOptA('parameter',expression)
-    this.vOptS('occurrence',expression)
-    this.vOptS('authoredOn',expression)
-    this.vOptS('requester',expression)
-    this.vOptA('supplier',expression)
-    this.vOptA('reasonCode',expression)
-    this.vOptA('reasonReference',expression)
-    this.vOptS('deliverFrom',expression)
-    this.vOptS('deliverTo',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'SupplyRequest' }
+    this.vRS('resourceType',exp)
+    this.vOA('identifier',exp)
+    this.vOSV('status',exp,'SupplyrequestStatus',SupplyrequestStatusVsValidation,'r')
+    this.vOS('category',exp)
+    this.vOSV('priority',exp,'RequestPriority',RequestPriorityVsValidation,'r')
+    this.vRS('item',exp)
+    this.vRS('quantity',exp)
+    this.vOA('parameter',exp)
+    this.vOS('occurrence',exp)
+    this.vOS('authoredOn',exp)
+    this.vOS('requester',exp)
+    this.vOA('supplier',exp)
+    this.vOA('reasonCode',exp)
+    this.vOA('reasonReference',exp)
+    this.vOS('deliverFrom',exp)
+    this.vOS('deliverTo',exp)
     return issues;
   }
 }

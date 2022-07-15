@@ -7,8 +7,12 @@
  * A code specifying the types of information being requested.
  */
 export const EligibilityresponsePurposeVsValidation: readonly string[] = [
-  "auth-requirements", "http://hl7.org/fhir/eligibilityresponse-purpose|auth-requirements", 
-  "benefits", "http://hl7.org/fhir/eligibilityresponse-purpose|benefits", 
-  "discovery", "http://hl7.org/fhir/eligibilityresponse-purpose|discovery", 
-  "validation", "http://hl7.org/fhir/eligibilityresponse-purpose|validation", 
+  "auth-requirements",
+  "benefits",
+  "discovery",
+  "http://hl7.org/fhir/eligibilityresponse-purpose|auth-requirements",
+  "http://hl7.org/fhir/eligibilityresponse-purpose|benefits",
+  "http://hl7.org/fhir/eligibilityresponse-purpose|discovery",
+  "http://hl7.org/fhir/eligibilityresponse-purpose|validation",
+  "validation",
 ] as const;

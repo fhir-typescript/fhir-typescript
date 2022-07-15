@@ -7,7 +7,10 @@
  * Defines the kinds of conditions that can appear on actions.
  */
 export const ActionConditionKindVsValidation: readonly string[] = [
-  "applicability", "http://hl7.org/fhir/action-condition-kind|applicability", 
-  "start", "http://hl7.org/fhir/action-condition-kind|start", 
-  "stop", "http://hl7.org/fhir/action-condition-kind|stop", 
+  "applicability",
+  "http://hl7.org/fhir/action-condition-kind|applicability",
+  "http://hl7.org/fhir/action-condition-kind|start",
+  "http://hl7.org/fhir/action-condition-kind|stop",
+  "start",
+  "stop",
 ] as const;

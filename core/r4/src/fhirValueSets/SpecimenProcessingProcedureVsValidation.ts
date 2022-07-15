@@ -7,12 +7,20 @@
  * The technique that is used to perform the process or preserve the specimen.
  */
 export const SpecimenProcessingProcedureVsValidation: readonly string[] = [
-  "ACID", "http://terminology.hl7.org/CodeSystem/v2-0373|ACID", 
-  "ALK", "http://terminology.hl7.org/CodeSystem/v2-0373|ALK", 
-  "DEFB", "http://terminology.hl7.org/CodeSystem/v2-0373|DEFB", 
-  "FILT", "http://terminology.hl7.org/CodeSystem/v2-0373|FILT", 
-  "LDLP", "http://terminology.hl7.org/CodeSystem/v2-0373|LDLP", 
-  "NEUT", "http://terminology.hl7.org/CodeSystem/v2-0373|NEUT", 
-  "RECA", "http://terminology.hl7.org/CodeSystem/v2-0373|RECA", 
-  "UFIL", "http://terminology.hl7.org/CodeSystem/v2-0373|UFIL", 
+  "ACID",
+  "ALK",
+  "DEFB",
+  "FILT",
+  "http://terminology.hl7.org/CodeSystem/v2-0373|ACID",
+  "http://terminology.hl7.org/CodeSystem/v2-0373|ALK",
+  "http://terminology.hl7.org/CodeSystem/v2-0373|DEFB",
+  "http://terminology.hl7.org/CodeSystem/v2-0373|FILT",
+  "http://terminology.hl7.org/CodeSystem/v2-0373|LDLP",
+  "http://terminology.hl7.org/CodeSystem/v2-0373|NEUT",
+  "http://terminology.hl7.org/CodeSystem/v2-0373|RECA",
+  "http://terminology.hl7.org/CodeSystem/v2-0373|UFIL",
+  "LDLP",
+  "NEUT",
+  "RECA",
+  "UFIL",
 ] as const;

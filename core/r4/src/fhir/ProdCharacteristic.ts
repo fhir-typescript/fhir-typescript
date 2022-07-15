@@ -158,20 +158,20 @@ export class ProdCharacteristic extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'ProdCharacteristic' }
-    this.vOptS('height',expression)
-    this.vOptS('width',expression)
-    this.vOptS('depth',expression)
-    this.vOptS('weight',expression)
-    this.vOptS('nominalVolume',expression)
-    this.vOptS('externalDiameter',expression)
-    this.vOptS('shape',expression)
-    this.vOptA('color',expression)
-    this.vOptA('imprint',expression)
-    this.vOptA('image',expression)
-    this.vOptS('scoring',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'ProdCharacteristic' }
+    this.vOS('height',exp)
+    this.vOS('width',exp)
+    this.vOS('depth',exp)
+    this.vOS('weight',exp)
+    this.vOS('nominalVolume',exp)
+    this.vOS('externalDiameter',exp)
+    this.vOS('shape',exp)
+    this.vOA('color',exp)
+    this.vOA('imprint',exp)
+    this.vOA('image',exp)
+    this.vOS('scoring',exp)
     return issues;
   }
 }

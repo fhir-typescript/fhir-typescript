@@ -69,7 +69,7 @@ export declare class ExampleScenarioActor extends fhir.BackboneElement {
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(expression?: string): fhir.FtsIssue[];
+    doModelValidation(exp?: string): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the ExampleScenarioInstanceVersion type.
@@ -115,7 +115,7 @@ export declare class ExampleScenarioInstanceVersion extends fhir.BackboneElement
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(expression?: string): fhir.FtsIssue[];
+    doModelValidation(exp?: string): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the ExampleScenarioInstanceContainedInstance type.
@@ -161,7 +161,7 @@ export declare class ExampleScenarioInstanceContainedInstance extends fhir.Backb
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(expression?: string): fhir.FtsIssue[];
+    doModelValidation(exp?: string): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the ExampleScenarioInstance type.
@@ -247,7 +247,7 @@ export declare class ExampleScenarioInstance extends fhir.BackboneElement {
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(expression?: string): fhir.FtsIssue[];
+    doModelValidation(exp?: string): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the ExampleScenarioProcessStepOperation type.
@@ -381,7 +381,7 @@ export declare class ExampleScenarioProcessStepOperation extends fhir.BackboneEl
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(expression?: string): fhir.FtsIssue[];
+    doModelValidation(exp?: string): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the ExampleScenarioProcessStepAlternative type.
@@ -435,7 +435,7 @@ export declare class ExampleScenarioProcessStepAlternative extends fhir.Backbone
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(expression?: string): fhir.FtsIssue[];
+    doModelValidation(exp?: string): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the ExampleScenarioProcessStep type.
@@ -493,7 +493,7 @@ export declare class ExampleScenarioProcessStep extends fhir.BackboneElement {
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(expression?: string): fhir.FtsIssue[];
+    doModelValidation(exp?: string): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the ExampleScenarioProcess type.
@@ -571,7 +571,7 @@ export declare class ExampleScenarioProcess extends fhir.BackboneElement {
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(expression?: string): fhir.FtsIssue[];
+    doModelValidation(exp?: string): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the ExampleScenario type.
@@ -781,6 +781,6 @@ export declare class ExampleScenario extends fhir.DomainResource {
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(expression?: string): fhir.FtsIssue[];
+    doModelValidation(exp?: string): fhir.FtsIssue[];
 }
 //# sourceMappingURL=ExampleScenario.d.ts.map

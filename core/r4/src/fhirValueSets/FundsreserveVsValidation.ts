@@ -7,7 +7,10 @@
  * This value set includes sample funds reservation type codes.
  */
 export const FundsreserveVsValidation: readonly string[] = [
-  "none", "http://terminology.hl7.org/CodeSystem/fundsreserve|none", 
-  "patient", "http://terminology.hl7.org/CodeSystem/fundsreserve|patient", 
-  "provider", "http://terminology.hl7.org/CodeSystem/fundsreserve|provider", 
+  "http://terminology.hl7.org/CodeSystem/fundsreserve|none",
+  "http://terminology.hl7.org/CodeSystem/fundsreserve|patient",
+  "http://terminology.hl7.org/CodeSystem/fundsreserve|provider",
+  "none",
+  "patient",
+  "provider",
 ] as const;

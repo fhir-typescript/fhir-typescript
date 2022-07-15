@@ -35,7 +35,7 @@ export declare class MedicinalProductPharmaceuticalCharacteristics extends fhir.
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(expression?: string): fhir.FtsIssue[];
+    doModelValidation(exp?: string): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the MedicinalProductPharmaceuticalRouteOfAdministrationTargetSpeciesWithdrawalPeriod type.
@@ -85,7 +85,7 @@ export declare class MedicinalProductPharmaceuticalRouteOfAdministrationTargetSp
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(expression?: string): fhir.FtsIssue[];
+    doModelValidation(exp?: string): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the MedicinalProductPharmaceuticalRouteOfAdministrationTargetSpecies type.
@@ -123,7 +123,7 @@ export declare class MedicinalProductPharmaceuticalRouteOfAdministrationTargetSp
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(expression?: string): fhir.FtsIssue[];
+    doModelValidation(exp?: string): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the MedicinalProductPharmaceuticalRouteOfAdministration type.
@@ -201,7 +201,7 @@ export declare class MedicinalProductPharmaceuticalRouteOfAdministration extends
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(expression?: string): fhir.FtsIssue[];
+    doModelValidation(exp?: string): fhir.FtsIssue[];
 }
 /**
  * Valid arguments for the MedicinalProductPharmaceutical type.
@@ -287,6 +287,6 @@ export declare class MedicinalProductPharmaceutical extends fhir.DomainResource 
     /**
      * Function to perform basic model validation (e.g., check if required elements are present).
      */
-    doModelValidation(expression?: string): fhir.FtsIssue[];
+    doModelValidation(exp?: string): fhir.FtsIssue[];
 }
 //# sourceMappingURL=MedicinalProductPharmaceutical.d.ts.map

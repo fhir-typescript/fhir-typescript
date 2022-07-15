@@ -338,32 +338,32 @@ export class Media extends fhir.DomainResource {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'Media' }
-    this.vReqS('resourceType',expression)
-    this.vOptA('identifier',expression)
-    this.vOptA('basedOn',expression)
-    this.vOptA('partOf',expression)
-    this.vReqSV('status',expression,'EventStatus',EventStatusVsValidation,'r')
-    this.vOptS('type',expression)
-    this.vOptS('modality',expression)
-    this.vOptS('view',expression)
-    this.vOptS('subject',expression)
-    this.vOptS('encounter',expression)
-    this.vOptS('created',expression)
-    this.vOptS('issued',expression)
-    this.vOptS('operator',expression)
-    this.vOptA('reasonCode',expression)
-    this.vOptS('bodySite',expression)
-    this.vOptS('deviceName',expression)
-    this.vOptS('device',expression)
-    this.vOptS('height',expression)
-    this.vOptS('width',expression)
-    this.vOptS('frames',expression)
-    this.vOptS('duration',expression)
-    this.vReqS('content',expression)
-    this.vOptA('note',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'Media' }
+    this.vRS('resourceType',exp)
+    this.vOA('identifier',exp)
+    this.vOA('basedOn',exp)
+    this.vOA('partOf',exp)
+    this.vRSV('status',exp,'EventStatus',EventStatusVsValidation,'r')
+    this.vOS('type',exp)
+    this.vOS('modality',exp)
+    this.vOS('view',exp)
+    this.vOS('subject',exp)
+    this.vOS('encounter',exp)
+    this.vOS('created',exp)
+    this.vOS('issued',exp)
+    this.vOS('operator',exp)
+    this.vOA('reasonCode',exp)
+    this.vOS('bodySite',exp)
+    this.vOS('deviceName',exp)
+    this.vOS('device',exp)
+    this.vOS('height',exp)
+    this.vOS('width',exp)
+    this.vOS('frames',exp)
+    this.vOS('duration',exp)
+    this.vRS('content',exp)
+    this.vOA('note',exp)
     return issues;
   }
 }

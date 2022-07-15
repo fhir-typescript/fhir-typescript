@@ -7,6 +7,8 @@
  * The value set to instantiate this attribute should be drawn from a terminologically robust code system that consists of or contains concepts to support describing the current status of the evaluation for vaccine administration event.
  */
 export const ImmunizationEvaluationStatusVsValidation: readonly string[] = [
-  "completed", "http://terminology.hl7.org/CodeSystem/medication-admin-status|completed", 
-  "entered-in-error", "http://terminology.hl7.org/CodeSystem/medication-admin-status|entered-in-error", 
+  "completed",
+  "entered-in-error",
+  "http://terminology.hl7.org/CodeSystem/medication-admin-status|completed",
+  "http://terminology.hl7.org/CodeSystem/medication-admin-status|entered-in-error",
 ] as const;

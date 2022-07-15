@@ -7,7 +7,10 @@
  * The processing mode that applies to this list.
  */
 export const ListModeVsValidation: readonly string[] = [
-  "changes", "http://hl7.org/fhir/list-mode|changes", 
-  "snapshot", "http://hl7.org/fhir/list-mode|snapshot", 
-  "working", "http://hl7.org/fhir/list-mode|working", 
+  "changes",
+  "http://hl7.org/fhir/list-mode|changes",
+  "http://hl7.org/fhir/list-mode|snapshot",
+  "http://hl7.org/fhir/list-mode|working",
+  "snapshot",
+  "working",
 ] as const;

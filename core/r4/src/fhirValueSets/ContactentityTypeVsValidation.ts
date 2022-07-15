@@ -7,10 +7,16 @@
  * This example value set defines a set of codes that can be used to indicate the purpose for which you would contact a contact party.
  */
 export const ContactentityTypeVsValidation: readonly string[] = [
-  "ADMIN", "http://terminology.hl7.org/CodeSystem/contactentity-type|ADMIN", 
-  "BILL", "http://terminology.hl7.org/CodeSystem/contactentity-type|BILL", 
-  "HR", "http://terminology.hl7.org/CodeSystem/contactentity-type|HR", 
-  "PATINF", "http://terminology.hl7.org/CodeSystem/contactentity-type|PATINF", 
-  "PAYOR", "http://terminology.hl7.org/CodeSystem/contactentity-type|PAYOR", 
-  "PRESS", "http://terminology.hl7.org/CodeSystem/contactentity-type|PRESS", 
+  "ADMIN",
+  "BILL",
+  "HR",
+  "http://terminology.hl7.org/CodeSystem/contactentity-type|ADMIN",
+  "http://terminology.hl7.org/CodeSystem/contactentity-type|BILL",
+  "http://terminology.hl7.org/CodeSystem/contactentity-type|HR",
+  "http://terminology.hl7.org/CodeSystem/contactentity-type|PATINF",
+  "http://terminology.hl7.org/CodeSystem/contactentity-type|PAYOR",
+  "http://terminology.hl7.org/CodeSystem/contactentity-type|PRESS",
+  "PATINF",
+  "PAYOR",
+  "PRESS",
 ] as const;

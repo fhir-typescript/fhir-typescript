@@ -105,14 +105,14 @@ export class Resource extends fhir.FhirBase {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'Resource' }
-    this.vReqS('resourceType',expression)
-    this.vOptS('id',expression)
-    this.vOptS('meta',expression)
-    this.vOptS('implicitRules',expression)
-    this.vOptS('language',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'Resource' }
+    this.vRS('resourceType',exp)
+    this.vOS('id',exp)
+    this.vOS('meta',exp)
+    this.vOS('implicitRules',exp)
+    this.vOS('language',exp)
     return issues;
   }
 }

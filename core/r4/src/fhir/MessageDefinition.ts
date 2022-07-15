@@ -114,13 +114,13 @@ export class MessageDefinitionFocus extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'MessageDefinition.focus' }
-    this.vReqSV('code',expression,'ResourceTypes',ResourceTypesVsValidation,'r')
-    this.vOptS('profile',expression)
-    this.vReqS('min',expression)
-    this.vOptS('max',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'MessageDefinition.focus' }
+    this.vRSV('code',exp,'ResourceTypes',ResourceTypesVsValidation,'r')
+    this.vOS('profile',exp)
+    this.vRS('min',exp)
+    this.vOS('max',exp)
     return issues;
   }
 }
@@ -182,11 +182,11 @@ export class MessageDefinitionAllowedResponse extends fhir.BackboneElement {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'MessageDefinition.allowedResponse' }
-    this.vReqS('message',expression)
-    this.vOptS('situation',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'MessageDefinition.allowedResponse' }
+    this.vRS('message',exp)
+    this.vOS('situation',exp)
     return issues;
   }
 }
@@ -610,34 +610,34 @@ export class MessageDefinition extends fhir.DomainResource {
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
-  public override doModelValidation(expression:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(expression);
-    if (expression === '') { expression = 'MessageDefinition' }
-    this.vReqS('resourceType',expression)
-    this.vOptS('url',expression)
-    this.vOptA('identifier',expression)
-    this.vOptS('version',expression)
-    this.vOptS('name',expression)
-    this.vOptS('title',expression)
-    this.vOptA('replaces',expression)
-    this.vReqSV('status',expression,'PublicationStatus',PublicationStatusVsValidation,'r')
-    this.vOptS('experimental',expression)
-    this.vReqS('date',expression)
-    this.vOptS('publisher',expression)
-    this.vOptA('contact',expression)
-    this.vOptS('description',expression)
-    this.vOptA('useContext',expression)
-    this.vOptA('jurisdiction',expression)
-    this.vOptS('purpose',expression)
-    this.vOptS('copyright',expression)
-    this.vOptS('base',expression)
-    this.vOptA('parent',expression)
-    this.vReqS('event',expression)
-    this.vOptSV('category',expression,'MessageSignificanceCategory',MessageSignificanceCategoryVsValidation,'r')
-    this.vOptA('focus',expression)
-    this.vOptSV('responseRequired',expression,'MessageheaderResponseRequest',MessageheaderResponseRequestVsValidation,'r')
-    this.vOptA('allowedResponse',expression)
-    this.vOptA('graph',expression)
+  public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
+    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    if (exp === '') { exp = 'MessageDefinition' }
+    this.vRS('resourceType',exp)
+    this.vOS('url',exp)
+    this.vOA('identifier',exp)
+    this.vOS('version',exp)
+    this.vOS('name',exp)
+    this.vOS('title',exp)
+    this.vOA('replaces',exp)
+    this.vRSV('status',exp,'PublicationStatus',PublicationStatusVsValidation,'r')
+    this.vOS('experimental',exp)
+    this.vRS('date',exp)
+    this.vOS('publisher',exp)
+    this.vOA('contact',exp)
+    this.vOS('description',exp)
+    this.vOA('useContext',exp)
+    this.vOA('jurisdiction',exp)
+    this.vOS('purpose',exp)
+    this.vOS('copyright',exp)
+    this.vOS('base',exp)
+    this.vOA('parent',exp)
+    this.vRS('event',exp)
+    this.vOSV('category',exp,'MessageSignificanceCategory',MessageSignificanceCategoryVsValidation,'r')
+    this.vOA('focus',exp)
+    this.vOSV('responseRequired',exp,'MessageheaderResponseRequest',MessageheaderResponseRequestVsValidation,'r')
+    this.vOA('allowedResponse',exp)
+    this.vOA('graph',exp)
     return issues;
   }
 }

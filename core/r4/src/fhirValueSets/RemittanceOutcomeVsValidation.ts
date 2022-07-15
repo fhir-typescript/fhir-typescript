@@ -7,8 +7,12 @@
  * This value set includes Claim Processing Outcome codes.
  */
 export const RemittanceOutcomeVsValidation: readonly string[] = [
-  "complete", "http://hl7.org/fhir/remittance-outcome|complete", 
-  "error", "http://hl7.org/fhir/remittance-outcome|error", 
-  "partial", "http://hl7.org/fhir/remittance-outcome|partial", 
-  "queued", "http://hl7.org/fhir/remittance-outcome|queued", 
+  "complete",
+  "error",
+  "http://hl7.org/fhir/remittance-outcome|complete",
+  "http://hl7.org/fhir/remittance-outcome|error",
+  "http://hl7.org/fhir/remittance-outcome|partial",
+  "http://hl7.org/fhir/remittance-outcome|queued",
+  "partial",
+  "queued",
 ] as const;

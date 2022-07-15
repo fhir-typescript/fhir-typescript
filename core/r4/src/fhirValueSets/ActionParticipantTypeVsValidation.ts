@@ -7,8 +7,12 @@
  * The type of participant for the action.
  */
 export const ActionParticipantTypeVsValidation: readonly string[] = [
-  "device", "http://hl7.org/fhir/action-participant-type|device", 
-  "patient", "http://hl7.org/fhir/action-participant-type|patient", 
-  "practitioner", "http://hl7.org/fhir/action-participant-type|practitioner", 
-  "related-person", "http://hl7.org/fhir/action-participant-type|related-person", 
+  "device",
+  "http://hl7.org/fhir/action-participant-type|device",
+  "http://hl7.org/fhir/action-participant-type|patient",
+  "http://hl7.org/fhir/action-participant-type|practitioner",
+  "http://hl7.org/fhir/action-participant-type|related-person",
+  "patient",
+  "practitioner",
+  "related-person",
 ] as const;

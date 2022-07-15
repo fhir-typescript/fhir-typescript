@@ -7,8 +7,12 @@
  * The gender of a person used for administrative purposes.
  */
 export const AdministrativeGenderVsValidation: readonly string[] = [
-  "female", "http://hl7.org/fhir/administrative-gender|female", 
-  "male", "http://hl7.org/fhir/administrative-gender|male", 
-  "other", "http://hl7.org/fhir/administrative-gender|other", 
-  "unknown", "http://hl7.org/fhir/administrative-gender|unknown", 
+  "female",
+  "http://hl7.org/fhir/administrative-gender|female",
+  "http://hl7.org/fhir/administrative-gender|male",
+  "http://hl7.org/fhir/administrative-gender|other",
+  "http://hl7.org/fhir/administrative-gender|unknown",
+  "male",
+  "other",
+  "unknown",
 ] as const;

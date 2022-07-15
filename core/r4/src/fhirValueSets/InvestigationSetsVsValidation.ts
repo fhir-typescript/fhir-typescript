@@ -7,6 +7,8 @@
  * Example value set for investigation type.
  */
 export const InvestigationSetsVsValidation: readonly string[] = [
-  "160237006", "http://snomed.info/sct|160237006", 
-  "271336007", "http://snomed.info/sct|271336007", 
+  "160237006",
+  "271336007",
+  "http://snomed.info/sct|160237006",
+  "http://snomed.info/sct|271336007",
 ] as const;

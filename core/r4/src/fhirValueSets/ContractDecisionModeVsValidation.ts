@@ -7,5 +7,6 @@
  * This value set contract specific codes for decision modes.
  */
 export const ContractDecisionModeVsValidation: readonly string[] = [
-  "policy", "http://hl7.org/fhir/contract-decision-mode|policy", 
+  "http://hl7.org/fhir/contract-decision-mode|policy",
+  "policy",
 ] as const;

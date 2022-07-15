@@ -7,11 +7,18 @@
  * Codes identifying the lifecycle stage of a ChargeItem.
  */
 export const ChargeitemStatusVsValidation: readonly string[] = [
-  "aborted", "http://hl7.org/fhir/chargeitem-status|aborted", 
-  "billable", "http://hl7.org/fhir/chargeitem-status|billable", 
-  "billed", "http://hl7.org/fhir/chargeitem-status|billed", 
-  "entered-in-error", "http://hl7.org/fhir/chargeitem-status|entered-in-error", 
-  "not-billable", "http://hl7.org/fhir/chargeitem-status|not-billable", 
-  "planned", "http://hl7.org/fhir/chargeitem-status|planned", 
-  "unknown", "http://hl7.org/fhir/chargeitem-status|unknown", 
+  "aborted",
+  "billable",
+  "billed",
+  "entered-in-error",
+  "http://hl7.org/fhir/chargeitem-status|aborted",
+  "http://hl7.org/fhir/chargeitem-status|billable",
+  "http://hl7.org/fhir/chargeitem-status|billed",
+  "http://hl7.org/fhir/chargeitem-status|entered-in-error",
+  "http://hl7.org/fhir/chargeitem-status|not-billable",
+  "http://hl7.org/fhir/chargeitem-status|planned",
+  "http://hl7.org/fhir/chargeitem-status|unknown",
+  "not-billable",
+  "planned",
+  "unknown",
 ] as const;

@@ -7,8 +7,12 @@
  * Describes the category of the metric.
  */
 export const MetricCategoryVsValidation: readonly string[] = [
-  "calculation", "http://hl7.org/fhir/metric-category|calculation", 
-  "measurement", "http://hl7.org/fhir/metric-category|measurement", 
-  "setting", "http://hl7.org/fhir/metric-category|setting", 
-  "unspecified", "http://hl7.org/fhir/metric-category|unspecified", 
+  "calculation",
+  "http://hl7.org/fhir/metric-category|calculation",
+  "http://hl7.org/fhir/metric-category|measurement",
+  "http://hl7.org/fhir/metric-category|setting",
+  "http://hl7.org/fhir/metric-category|unspecified",
+  "measurement",
+  "setting",
+  "unspecified",
 ] as const;

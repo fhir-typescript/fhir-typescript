@@ -7,11 +7,18 @@
  * Status of the supply request.
  */
 export const SupplyrequestStatusVsValidation: readonly string[] = [
-  "active", "http://hl7.org/fhir/supplyrequest-status|active", 
-  "cancelled", "http://hl7.org/fhir/supplyrequest-status|cancelled", 
-  "completed", "http://hl7.org/fhir/supplyrequest-status|completed", 
-  "draft", "http://hl7.org/fhir/supplyrequest-status|draft", 
-  "entered-in-error", "http://hl7.org/fhir/supplyrequest-status|entered-in-error", 
-  "suspended", "http://hl7.org/fhir/supplyrequest-status|suspended", 
-  "unknown", "http://hl7.org/fhir/supplyrequest-status|unknown", 
+  "active",
+  "cancelled",
+  "completed",
+  "draft",
+  "entered-in-error",
+  "http://hl7.org/fhir/supplyrequest-status|active",
+  "http://hl7.org/fhir/supplyrequest-status|cancelled",
+  "http://hl7.org/fhir/supplyrequest-status|completed",
+  "http://hl7.org/fhir/supplyrequest-status|draft",
+  "http://hl7.org/fhir/supplyrequest-status|entered-in-error",
+  "http://hl7.org/fhir/supplyrequest-status|suspended",
+  "http://hl7.org/fhir/supplyrequest-status|unknown",
+  "suspended",
+  "unknown",
 ] as const;

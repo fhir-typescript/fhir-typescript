@@ -7,8 +7,12 @@
  * Identifies the style of unique identifier used to identify a namespace.
  */
 export const NamingsystemIdentifierTypeVsValidation: readonly string[] = [
-  "oid", "http://hl7.org/fhir/namingsystem-identifier-type|oid", 
-  "other", "http://hl7.org/fhir/namingsystem-identifier-type|other", 
-  "uri", "http://hl7.org/fhir/namingsystem-identifier-type|uri", 
-  "uuid", "http://hl7.org/fhir/namingsystem-identifier-type|uuid", 
+  "http://hl7.org/fhir/namingsystem-identifier-type|oid",
+  "http://hl7.org/fhir/namingsystem-identifier-type|other",
+  "http://hl7.org/fhir/namingsystem-identifier-type|uri",
+  "http://hl7.org/fhir/namingsystem-identifier-type|uuid",
+  "oid",
+  "other",
+  "uri",
+  "uuid",
 ] as const;
