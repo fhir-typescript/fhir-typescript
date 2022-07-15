@@ -130,3 +130,27 @@
 
     return false;
   }
+
+  /**
+   * Test whether this CodeableConcept contains a specific coding.
+   * @param system System to search for, empty string will match any system.
+   * @param code Code to search for, empty string will match any code.
+   * @returns True if this concept contains the specified coding, false if it does not.
+   */
+  public hasCodingFromValidationHash(vsValidation:Readonly<number[]>):boolean {
+    if (this.coding.length === 0) {
+      return false;
+    }
+
+    for (const coding of this.coding) {
+      const sc:number = fhir.FhirBase._hash52_1a_fast((coding.system?.value ?? '') + '|' + (coding.code?.value ?? ''));
+      const c:number = fhir.FhirBase._hash52_1a_fast(coding.code?.value ?? '');
+
+      if (vsValidation.find((v) => (v === sc) || (v === c))) {
+        return true;
+      }
+    }
+
+    return false;
+  }
+  
