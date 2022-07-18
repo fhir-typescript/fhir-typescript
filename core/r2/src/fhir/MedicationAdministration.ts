@@ -123,15 +123,15 @@ export class MedicationAdministrationDosage extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'MedicationAdministration.dosage' }
-    this.vOS('text',exp)
-    this.vOS('site',exp)
-    this.vOS('route',exp)
-    this.vOS('method',exp)
-    this.vOS('quantity',exp)
-    this.vOS('rate',exp)
-    return issues;
+    iss.push(...this.vOS('text',exp));
+    iss.push(...this.vOS('site',exp));
+    iss.push(...this.vOS('route',exp));
+    iss.push(...this.vOS('method',exp));
+    iss.push(...this.vOS('quantity',exp));
+    iss.push(...this.vOS('rate',exp));
+    return iss;
   }
 }
 /**
@@ -353,23 +353,23 @@ export class MedicationAdministration extends fhir.DomainResource {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'MedicationAdministration' }
-    this.vRS('resourceType',exp)
-    this.vOA('identifier',exp)
-    this.vRSV('status',exp,'MedicationAdminStatus',MedicationAdminStatusVsValidation,'r')
-    this.vRS('patient',exp)
-    this.vOS('practitioner',exp)
-    this.vOS('encounter',exp)
-    this.vOS('prescription',exp)
-    this.vOS('wasNotGiven',exp)
-    this.vOA('reasonNotGiven',exp)
-    this.vOA('reasonGiven',exp)
-    this.vRS('effectiveTime',exp)
-    this.vRS('medication',exp)
-    this.vOA('device',exp)
-    this.vOS('note',exp)
-    this.vOS('dosage',exp)
-    return issues;
+    iss.push(...this.vRPS('resourceType',exp));
+    iss.push(...this.vOA('identifier',exp));
+    iss.push(...this.vRSV('status',exp,'MedicationAdminStatus',MedicationAdminStatusVsValidation,'r'));
+    iss.push(...this.vRS('patient',exp));
+    iss.push(...this.vOS('practitioner',exp));
+    iss.push(...this.vOS('encounter',exp));
+    iss.push(...this.vOS('prescription',exp));
+    iss.push(...this.vOS('wasNotGiven',exp));
+    iss.push(...this.vOA('reasonNotGiven',exp));
+    iss.push(...this.vOA('reasonGiven',exp));
+    iss.push(...this.vRS('effectiveTime',exp));
+    iss.push(...this.vRS('medication',exp));
+    iss.push(...this.vOA('device',exp));
+    iss.push(...this.vOS('note',exp));
+    iss.push(...this.vOS('dosage',exp));
+    return iss;
   }
 }

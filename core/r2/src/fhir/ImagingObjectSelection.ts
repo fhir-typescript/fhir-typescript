@@ -67,11 +67,11 @@ export class ImagingObjectSelectionStudySeriesInstanceFrames extends fhir.Backbo
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'ImagingObjectSelection.study.series.instance.frames' }
-    this.vRA('frameNumbers',exp)
-    this.vRS('url',exp)
-    return issues;
+    iss.push(...this.vRA('frameNumbers',exp));
+    iss.push(...this.vRS('url',exp));
+    return iss;
   }
 }
 /**
@@ -162,13 +162,13 @@ export class ImagingObjectSelectionStudySeriesInstance extends fhir.BackboneElem
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'ImagingObjectSelection.study.series.instance' }
-    this.vRS('sopClass',exp)
-    this.vRS('uid',exp)
-    this.vRS('url',exp)
-    this.vOA('frames',exp)
-    return issues;
+    iss.push(...this.vRS('sopClass',exp));
+    iss.push(...this.vRS('uid',exp));
+    iss.push(...this.vRS('url',exp));
+    iss.push(...this.vOA('frames',exp));
+    return iss;
   }
 }
 /**
@@ -239,12 +239,12 @@ export class ImagingObjectSelectionStudySeries extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'ImagingObjectSelection.study.series' }
-    this.vOS('uid',exp)
-    this.vOS('url',exp)
-    this.vRA('instance',exp)
-    return issues;
+    iss.push(...this.vOS('uid',exp));
+    iss.push(...this.vOS('url',exp));
+    iss.push(...this.vRA('instance',exp));
+    return iss;
   }
 }
 /**
@@ -325,13 +325,13 @@ export class ImagingObjectSelectionStudy extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'ImagingObjectSelection.study' }
-    this.vRS('uid',exp)
-    this.vOS('url',exp)
-    this.vOS('imagingStudy',exp)
-    this.vRA('series',exp)
-    return issues;
+    iss.push(...this.vRS('uid',exp));
+    iss.push(...this.vOS('url',exp));
+    iss.push(...this.vOS('imagingStudy',exp));
+    iss.push(...this.vRA('series',exp));
+    return iss;
   }
 }
 /**
@@ -458,16 +458,16 @@ export class ImagingObjectSelection extends fhir.DomainResource {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'ImagingObjectSelection' }
-    this.vRS('resourceType',exp)
-    this.vRS('uid',exp)
-    this.vRS('patient',exp)
-    this.vRS('title',exp)
-    this.vOS('description',exp)
-    this.vOS('author',exp)
-    this.vOS('authoringTime',exp)
-    this.vRA('study',exp)
-    return issues;
+    iss.push(...this.vRPS('resourceType',exp));
+    iss.push(...this.vRS('uid',exp));
+    iss.push(...this.vRS('patient',exp));
+    iss.push(...this.vRS('title',exp));
+    iss.push(...this.vOS('description',exp));
+    iss.push(...this.vOS('author',exp));
+    iss.push(...this.vOS('authoringTime',exp));
+    iss.push(...this.vRA('study',exp));
+    return iss;
   }
 }

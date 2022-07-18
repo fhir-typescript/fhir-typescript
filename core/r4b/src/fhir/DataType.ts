@@ -29,8 +29,8 @@ export class DataType extends fhir.FhirElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'DataType' }
-    return issues;
+    return iss;
   }
 }

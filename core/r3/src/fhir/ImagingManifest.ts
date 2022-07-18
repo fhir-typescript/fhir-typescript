@@ -65,11 +65,11 @@ export class ImagingManifestStudySeriesInstance extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'ImagingManifest.study.series.instance' }
-    this.vRS('sopClass',exp)
-    this.vRS('uid',exp)
-    return issues;
+    iss.push(...this.vRS('sopClass',exp));
+    iss.push(...this.vRS('uid',exp));
+    return iss;
   }
 }
 /**
@@ -134,12 +134,12 @@ export class ImagingManifestStudySeries extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'ImagingManifest.study.series' }
-    this.vRS('uid',exp)
-    this.vOA('endpoint',exp)
-    this.vRA('instance',exp)
-    return issues;
+    iss.push(...this.vRS('uid',exp));
+    iss.push(...this.vOA('endpoint',exp));
+    iss.push(...this.vRA('instance',exp));
+    return iss;
   }
 }
 /**
@@ -213,13 +213,13 @@ export class ImagingManifestStudy extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'ImagingManifest.study' }
-    this.vRS('uid',exp)
-    this.vOS('imagingStudy',exp)
-    this.vOA('endpoint',exp)
-    this.vRA('series',exp)
-    return issues;
+    iss.push(...this.vRS('uid',exp));
+    iss.push(...this.vOS('imagingStudy',exp));
+    iss.push(...this.vOA('endpoint',exp));
+    iss.push(...this.vRA('series',exp));
+    return iss;
   }
 }
 /**
@@ -327,15 +327,15 @@ export class ImagingManifest extends fhir.DomainResource {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'ImagingManifest' }
-    this.vRS('resourceType',exp)
-    this.vOS('identifier',exp)
-    this.vRS('patient',exp)
-    this.vOS('authoringTime',exp)
-    this.vOS('author',exp)
-    this.vOS('description',exp)
-    this.vRA('study',exp)
-    return issues;
+    iss.push(...this.vRPS('resourceType',exp));
+    iss.push(...this.vOS('identifier',exp));
+    iss.push(...this.vRS('patient',exp));
+    iss.push(...this.vOS('authoringTime',exp));
+    iss.push(...this.vOS('author',exp));
+    iss.push(...this.vOS('description',exp));
+    iss.push(...this.vRA('study',exp));
+    return iss;
   }
 }

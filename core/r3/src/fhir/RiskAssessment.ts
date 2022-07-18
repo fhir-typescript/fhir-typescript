@@ -136,15 +136,15 @@ export class RiskAssessmentPrediction extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'RiskAssessment.prediction' }
-    this.vRS('outcome',exp)
-    this.vOS('probability',exp)
-    this.vOS('qualitativeRisk',exp)
-    this.vOS('relativeRisk',exp)
-    this.vOS('when',exp)
-    this.vOS('rationale',exp)
-    return issues;
+    iss.push(...this.vRS('outcome',exp));
+    iss.push(...this.vOS('probability',exp));
+    iss.push(...this.vOS('qualitativeRisk',exp));
+    iss.push(...this.vOS('relativeRisk',exp));
+    iss.push(...this.vOS('when',exp));
+    iss.push(...this.vOS('rationale',exp));
+    return iss;
   }
 }
 /**
@@ -379,25 +379,25 @@ export class RiskAssessment extends fhir.DomainResource {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'RiskAssessment' }
-    this.vRS('resourceType',exp)
-    this.vOS('identifier',exp)
-    this.vOS('basedOn',exp)
-    this.vOS('parent',exp)
-    this.vRSV('status',exp,'ObservationStatus',ObservationStatusVsValidation,'r')
-    this.vOS('method',exp)
-    this.vOS('code',exp)
-    this.vOS('subject',exp)
-    this.vOS('context',exp)
-    this.vOS('occurrence',exp)
-    this.vOS('condition',exp)
-    this.vOS('performer',exp)
-    this.vOS('reason',exp)
-    this.vOA('basis',exp)
-    this.vOA('prediction',exp)
-    this.vOS('mitigation',exp)
-    this.vOS('comment',exp)
-    return issues;
+    iss.push(...this.vRPS('resourceType',exp));
+    iss.push(...this.vOS('identifier',exp));
+    iss.push(...this.vOS('basedOn',exp));
+    iss.push(...this.vOS('parent',exp));
+    iss.push(...this.vRSV('status',exp,'ObservationStatus',ObservationStatusVsValidation,'r'));
+    iss.push(...this.vOS('method',exp));
+    iss.push(...this.vOS('code',exp));
+    iss.push(...this.vOS('subject',exp));
+    iss.push(...this.vOS('context',exp));
+    iss.push(...this.vOS('occurrence',exp));
+    iss.push(...this.vOS('condition',exp));
+    iss.push(...this.vOS('performer',exp));
+    iss.push(...this.vOS('reason',exp));
+    iss.push(...this.vOA('basis',exp));
+    iss.push(...this.vOA('prediction',exp));
+    iss.push(...this.vOS('mitigation',exp));
+    iss.push(...this.vOS('comment',exp));
+    return iss;
   }
 }

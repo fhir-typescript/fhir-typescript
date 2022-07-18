@@ -119,13 +119,13 @@ export class GraphDefinitionLinkTargetCompartment extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'GraphDefinition.link.target.compartment' }
-    this.vRSV('code',exp,'CompartmentType',CompartmentTypeVsValidation,'r')
-    this.vRSV('rule',exp,'GraphCompartmentRule',GraphCompartmentRuleVsValidation,'r')
-    this.vOS('expression',exp)
-    this.vOS('description',exp)
-    return issues;
+    iss.push(...this.vRSV('code',exp,'CompartmentType',CompartmentTypeVsValidation,'r'));
+    iss.push(...this.vRSV('rule',exp,'GraphCompartmentRule',GraphCompartmentRuleVsValidation,'r'));
+    iss.push(...this.vOS('expression',exp));
+    iss.push(...this.vOS('description',exp));
+    return iss;
   }
 }
 /**
@@ -207,13 +207,13 @@ export class GraphDefinitionLinkTarget extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'GraphDefinition.link.target' }
-    this.vRSV('type',exp,'ResourceTypes',ResourceTypesVsValidation,'r')
-    this.vOS('profile',exp)
-    this.vOA('compartment',exp)
-    this.vOA('link',exp)
-    return issues;
+    iss.push(...this.vRSV('type',exp,'ResourceTypes',ResourceTypesVsValidation,'r'));
+    iss.push(...this.vOS('profile',exp));
+    iss.push(...this.vOA('compartment',exp));
+    iss.push(...this.vOA('link',exp));
+    return iss;
   }
 }
 /**
@@ -336,15 +336,15 @@ export class GraphDefinitionLink extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'GraphDefinition.link' }
-    this.vRS('path',exp)
-    this.vOS('sliceName',exp)
-    this.vOS('min',exp)
-    this.vOS('max',exp)
-    this.vOS('description',exp)
-    this.vRA('target',exp)
-    return issues;
+    iss.push(...this.vRS('path',exp));
+    iss.push(...this.vOS('sliceName',exp));
+    iss.push(...this.vOS('min',exp));
+    iss.push(...this.vOS('max',exp));
+    iss.push(...this.vOS('description',exp));
+    iss.push(...this.vRA('target',exp));
+    return iss;
   }
 }
 /**
@@ -612,24 +612,24 @@ export class GraphDefinition extends fhir.DomainResource {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'GraphDefinition' }
-    this.vRS('resourceType',exp)
-    this.vOS('url',exp)
-    this.vOS('version',exp)
-    this.vRS('name',exp)
-    this.vRSV('status',exp,'PublicationStatus',PublicationStatusVsValidation,'r')
-    this.vOS('experimental',exp)
-    this.vOS('date',exp)
-    this.vOS('publisher',exp)
-    this.vOA('contact',exp)
-    this.vOS('description',exp)
-    this.vOA('useContext',exp)
-    this.vOA('jurisdiction',exp)
-    this.vOS('purpose',exp)
-    this.vRSV('start',exp,'ResourceTypes',ResourceTypesVsValidation,'r')
-    this.vOS('profile',exp)
-    this.vOA('link',exp)
-    return issues;
+    iss.push(...this.vRPS('resourceType',exp));
+    iss.push(...this.vOS('url',exp));
+    iss.push(...this.vOS('version',exp));
+    iss.push(...this.vRS('name',exp));
+    iss.push(...this.vRSV('status',exp,'PublicationStatus',PublicationStatusVsValidation,'r'));
+    iss.push(...this.vOS('experimental',exp));
+    iss.push(...this.vOS('date',exp));
+    iss.push(...this.vOS('publisher',exp));
+    iss.push(...this.vOA('contact',exp));
+    iss.push(...this.vOS('description',exp));
+    iss.push(...this.vOA('useContext',exp));
+    iss.push(...this.vOA('jurisdiction',exp));
+    iss.push(...this.vOS('purpose',exp));
+    iss.push(...this.vRSV('start',exp,'ResourceTypes',ResourceTypesVsValidation,'r'));
+    iss.push(...this.vOS('profile',exp));
+    iss.push(...this.vOA('link',exp));
+    return iss;
   }
 }

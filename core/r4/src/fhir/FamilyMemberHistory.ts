@@ -136,14 +136,14 @@ export class FamilyMemberHistoryCondition extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'FamilyMemberHistory.condition' }
-    this.vRS('code',exp)
-    this.vOS('outcome',exp)
-    this.vOS('contributedToDeath',exp)
-    this.vOS('onset',exp)
-    this.vOA('note',exp)
-    return issues;
+    iss.push(...this.vRS('code',exp));
+    iss.push(...this.vOS('outcome',exp));
+    iss.push(...this.vOS('contributedToDeath',exp));
+    iss.push(...this.vOS('onset',exp));
+    iss.push(...this.vOA('note',exp));
+    return iss;
   }
 }
 /**
@@ -470,27 +470,27 @@ export class FamilyMemberHistory extends fhir.DomainResource {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'FamilyMemberHistory' }
-    this.vRS('resourceType',exp)
-    this.vOA('identifier',exp)
-    this.vOA('instantiatesCanonical',exp)
-    this.vOA('instantiatesUri',exp)
-    this.vRSV('status',exp,'HistoryStatus',HistoryStatusVsValidation,'r')
-    this.vOS('dataAbsentReason',exp)
-    this.vRS('patient',exp)
-    this.vOS('date',exp)
-    this.vOS('name',exp)
-    this.vRS('relationship',exp)
-    this.vOS('sex',exp)
-    this.vOS('born',exp)
-    this.vOS('age',exp)
-    this.vOS('estimatedAge',exp)
-    this.vOS('deceased',exp)
-    this.vOA('reasonCode',exp)
-    this.vOA('reasonReference',exp)
-    this.vOA('note',exp)
-    this.vOA('condition',exp)
-    return issues;
+    iss.push(...this.vRPS('resourceType',exp));
+    iss.push(...this.vOA('identifier',exp));
+    iss.push(...this.vOA('instantiatesCanonical',exp));
+    iss.push(...this.vOA('instantiatesUri',exp));
+    iss.push(...this.vRSV('status',exp,'HistoryStatus',HistoryStatusVsValidation,'r'));
+    iss.push(...this.vOS('dataAbsentReason',exp));
+    iss.push(...this.vRS('patient',exp));
+    iss.push(...this.vOS('date',exp));
+    iss.push(...this.vOS('name',exp));
+    iss.push(...this.vRS('relationship',exp));
+    iss.push(...this.vOS('sex',exp));
+    iss.push(...this.vOS('born',exp));
+    iss.push(...this.vOS('age',exp));
+    iss.push(...this.vOS('estimatedAge',exp));
+    iss.push(...this.vOS('deceased',exp));
+    iss.push(...this.vOA('reasonCode',exp));
+    iss.push(...this.vOA('reasonReference',exp));
+    iss.push(...this.vOA('note',exp));
+    iss.push(...this.vOA('condition',exp));
+    return iss;
   }
 }

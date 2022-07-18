@@ -239,22 +239,22 @@ export class Dosage extends fhir.FhirElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'Dosage' }
-    this.vOS('sequence',exp)
-    this.vOS('text',exp)
-    this.vOA('additionalInstruction',exp)
-    this.vOS('patientInstruction',exp)
-    this.vOS('timing',exp)
-    this.vOS('asNeeded',exp)
-    this.vOS('site',exp)
-    this.vOS('route',exp)
-    this.vOS('method',exp)
-    this.vOS('dose',exp)
-    this.vOS('maxDosePerPeriod',exp)
-    this.vOS('maxDosePerAdministration',exp)
-    this.vOS('maxDosePerLifetime',exp)
-    this.vOS('rate',exp)
-    return issues;
+    iss.push(...this.vOS('sequence',exp));
+    iss.push(...this.vOS('text',exp));
+    iss.push(...this.vOA('additionalInstruction',exp));
+    iss.push(...this.vOS('patientInstruction',exp));
+    iss.push(...this.vOS('timing',exp));
+    iss.push(...this.vOS('asNeeded',exp));
+    iss.push(...this.vOS('site',exp));
+    iss.push(...this.vOS('route',exp));
+    iss.push(...this.vOS('method',exp));
+    iss.push(...this.vOS('dose',exp));
+    iss.push(...this.vOS('maxDosePerPeriod',exp));
+    iss.push(...this.vOS('maxDosePerAdministration',exp));
+    iss.push(...this.vOS('maxDosePerLifetime',exp));
+    iss.push(...this.vOS('rate',exp));
+    return iss;
   }
 }

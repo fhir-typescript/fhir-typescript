@@ -130,12 +130,12 @@ export class EligibilityResponseInsuranceBenefitBalanceFinancial extends fhir.Ba
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'EligibilityResponse.insurance.benefitBalance.financial' }
-    this.vRS('type',exp)
-    this.vOS('allowed',exp)
-    this.vOS('used',exp)
-    return issues;
+    iss.push(...this.vRS('type',exp));
+    iss.push(...this.vOS('allowed',exp));
+    iss.push(...this.vOS('used',exp));
+    return iss;
   }
 }
 /**
@@ -269,18 +269,18 @@ export class EligibilityResponseInsuranceBenefitBalance extends fhir.BackboneEle
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'EligibilityResponse.insurance.benefitBalance' }
-    this.vRS('category',exp)
-    this.vOS('subCategory',exp)
-    this.vOS('excluded',exp)
-    this.vOS('name',exp)
-    this.vOS('description',exp)
-    this.vOS('network',exp)
-    this.vOS('unit',exp)
-    this.vOS('term',exp)
-    this.vOA('financial',exp)
-    return issues;
+    iss.push(...this.vRS('category',exp));
+    iss.push(...this.vOS('subCategory',exp));
+    iss.push(...this.vOS('excluded',exp));
+    iss.push(...this.vOS('name',exp));
+    iss.push(...this.vOS('description',exp));
+    iss.push(...this.vOS('network',exp));
+    iss.push(...this.vOS('unit',exp));
+    iss.push(...this.vOS('term',exp));
+    iss.push(...this.vOA('financial',exp));
+    return iss;
   }
 }
 /**
@@ -335,12 +335,12 @@ export class EligibilityResponseInsurance extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'EligibilityResponse.insurance' }
-    this.vOS('coverage',exp)
-    this.vOS('contract',exp)
-    this.vOA('benefitBalance',exp)
-    return issues;
+    iss.push(...this.vOS('coverage',exp));
+    iss.push(...this.vOS('contract',exp));
+    iss.push(...this.vOA('benefitBalance',exp));
+    return iss;
   }
 }
 /**
@@ -377,10 +377,10 @@ export class EligibilityResponseError extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'EligibilityResponse.error' }
-    this.vRS('code',exp)
-    return issues;
+    iss.push(...this.vRS('code',exp));
+    return iss;
   }
 }
 /**
@@ -568,22 +568,22 @@ export class EligibilityResponse extends fhir.DomainResource {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'EligibilityResponse' }
-    this.vRS('resourceType',exp)
-    this.vOA('identifier',exp)
-    this.vOSV('status',exp,'FmStatus',FmStatusVsValidation,'r')
-    this.vOS('created',exp)
-    this.vOS('requestProvider',exp)
-    this.vOS('requestOrganization',exp)
-    this.vOS('request',exp)
-    this.vOSV('outcome',exp,'RemittanceOutcome',RemittanceOutcomeVsValidation,'r')
-    this.vOS('disposition',exp)
-    this.vOS('insurer',exp)
-    this.vOS('inforce',exp)
-    this.vOA('insurance',exp)
-    this.vOS('form',exp)
-    this.vOA('error',exp)
-    return issues;
+    iss.push(...this.vRPS('resourceType',exp));
+    iss.push(...this.vOA('identifier',exp));
+    iss.push(...this.vOSV('status',exp,'FmStatus',FmStatusVsValidation,'r'));
+    iss.push(...this.vOS('created',exp));
+    iss.push(...this.vOS('requestProvider',exp));
+    iss.push(...this.vOS('requestOrganization',exp));
+    iss.push(...this.vOS('request',exp));
+    iss.push(...this.vOSV('outcome',exp,'RemittanceOutcome',RemittanceOutcomeVsValidation,'r'));
+    iss.push(...this.vOS('disposition',exp));
+    iss.push(...this.vOS('insurer',exp));
+    iss.push(...this.vOS('inforce',exp));
+    iss.push(...this.vOA('insurance',exp));
+    iss.push(...this.vOS('form',exp));
+    iss.push(...this.vOA('error',exp));
+    return iss;
   }
 }

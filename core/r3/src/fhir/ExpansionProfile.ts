@@ -103,12 +103,12 @@ export class ExpansionProfileFixedVersion extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'ExpansionProfile.fixedVersion' }
-    this.vRS('system',exp)
-    this.vRS('version',exp)
-    this.vRSV('mode',exp,'SystemVersionProcessingMode',SystemVersionProcessingModeVsValidation,'r')
-    return issues;
+    iss.push(...this.vRS('system',exp));
+    iss.push(...this.vRS('version',exp));
+    iss.push(...this.vRSV('mode',exp,'SystemVersionProcessingMode',SystemVersionProcessingModeVsValidation,'r'));
+    return iss;
   }
 }
 /**
@@ -170,11 +170,11 @@ export class ExpansionProfileExcludedSystem extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'ExpansionProfile.excludedSystem' }
-    this.vRS('system',exp)
-    this.vOS('version',exp)
-    return issues;
+    iss.push(...this.vRS('system',exp));
+    iss.push(...this.vOS('version',exp));
+    return iss;
   }
 }
 /**
@@ -227,11 +227,11 @@ export class ExpansionProfileDesignationIncludeDesignation extends fhir.Backbone
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'ExpansionProfile.designation.include.designation' }
-    this.vOS('language',exp)
-    this.vOSV('use',exp,'DesignationUse',DesignationUseVsValidation,'r')
-    return issues;
+    iss.push(...this.vOS('language',exp));
+    iss.push(...this.vOSV('use',exp,'DesignationUse',DesignationUseVsValidation,'r'));
+    return iss;
   }
 }
 /**
@@ -268,10 +268,10 @@ export class ExpansionProfileDesignationInclude extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'ExpansionProfile.designation.include' }
-    this.vOA('designation',exp)
-    return issues;
+    iss.push(...this.vOA('designation',exp));
+    return iss;
   }
 }
 /**
@@ -324,11 +324,11 @@ export class ExpansionProfileDesignationExcludeDesignation extends fhir.Backbone
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'ExpansionProfile.designation.exclude.designation' }
-    this.vOS('language',exp)
-    this.vOSV('use',exp,'DesignationUse',DesignationUseVsValidation,'r')
-    return issues;
+    iss.push(...this.vOS('language',exp));
+    iss.push(...this.vOSV('use',exp,'DesignationUse',DesignationUseVsValidation,'r'));
+    return iss;
   }
 }
 /**
@@ -365,10 +365,10 @@ export class ExpansionProfileDesignationExclude extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'ExpansionProfile.designation.exclude' }
-    this.vOA('designation',exp)
-    return issues;
+    iss.push(...this.vOA('designation',exp));
+    return iss;
   }
 }
 /**
@@ -413,11 +413,11 @@ export class ExpansionProfileDesignation extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'ExpansionProfile.designation' }
-    this.vOS('include',exp)
-    this.vOS('exclude',exp)
-    return issues;
+    iss.push(...this.vOS('include',exp));
+    iss.push(...this.vOS('exclude',exp));
+    return iss;
   }
 }
 /**
@@ -795,32 +795,32 @@ export class ExpansionProfile extends fhir.DomainResource {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'ExpansionProfile' }
-    this.vRS('resourceType',exp)
-    this.vOS('url',exp)
-    this.vOS('identifier',exp)
-    this.vOS('version',exp)
-    this.vOS('name',exp)
-    this.vRSV('status',exp,'PublicationStatus',PublicationStatusVsValidation,'r')
-    this.vOS('experimental',exp)
-    this.vOS('date',exp)
-    this.vOS('publisher',exp)
-    this.vOA('contact',exp)
-    this.vOS('description',exp)
-    this.vOA('useContext',exp)
-    this.vOA('jurisdiction',exp)
-    this.vOA('fixedVersion',exp)
-    this.vOS('excludedSystem',exp)
-    this.vOS('includeDesignations',exp)
-    this.vOS('designation',exp)
-    this.vOS('includeDefinition',exp)
-    this.vOS('activeOnly',exp)
-    this.vOS('excludeNested',exp)
-    this.vOS('excludeNotForUI',exp)
-    this.vOS('excludePostCoordinated',exp)
-    this.vOS('displayLanguage',exp)
-    this.vOS('limitedExpansion',exp)
-    return issues;
+    iss.push(...this.vRPS('resourceType',exp));
+    iss.push(...this.vOS('url',exp));
+    iss.push(...this.vOS('identifier',exp));
+    iss.push(...this.vOS('version',exp));
+    iss.push(...this.vOS('name',exp));
+    iss.push(...this.vRSV('status',exp,'PublicationStatus',PublicationStatusVsValidation,'r'));
+    iss.push(...this.vOS('experimental',exp));
+    iss.push(...this.vOS('date',exp));
+    iss.push(...this.vOS('publisher',exp));
+    iss.push(...this.vOA('contact',exp));
+    iss.push(...this.vOS('description',exp));
+    iss.push(...this.vOA('useContext',exp));
+    iss.push(...this.vOA('jurisdiction',exp));
+    iss.push(...this.vOA('fixedVersion',exp));
+    iss.push(...this.vOS('excludedSystem',exp));
+    iss.push(...this.vOS('includeDesignations',exp));
+    iss.push(...this.vOS('designation',exp));
+    iss.push(...this.vOS('includeDefinition',exp));
+    iss.push(...this.vOS('activeOnly',exp));
+    iss.push(...this.vOS('excludeNested',exp));
+    iss.push(...this.vOS('excludeNotForUI',exp));
+    iss.push(...this.vOS('excludePostCoordinated',exp));
+    iss.push(...this.vOS('displayLanguage',exp));
+    iss.push(...this.vOS('limitedExpansion',exp));
+    return iss;
   }
 }

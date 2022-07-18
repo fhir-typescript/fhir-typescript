@@ -140,13 +140,13 @@ export class EvidenceReportSubjectCharacteristic extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'EvidenceReport.subject.characteristic' }
-    this.vRS('code',exp)
-    this.vRS('value',exp)
-    this.vOS('exclude',exp)
-    this.vOS('period',exp)
-    return issues;
+    iss.push(...this.vRS('code',exp));
+    iss.push(...this.vRS('value',exp));
+    iss.push(...this.vOS('exclude',exp));
+    iss.push(...this.vOS('period',exp));
+    return iss;
   }
 }
 /**
@@ -193,11 +193,11 @@ export class EvidenceReportSubject extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'EvidenceReport.subject' }
-    this.vOA('characteristic',exp)
-    this.vOA('note',exp)
-    return issues;
+    iss.push(...this.vOA('characteristic',exp));
+    iss.push(...this.vOA('note',exp));
+    return iss;
   }
 }
 /**
@@ -266,11 +266,11 @@ export class EvidenceReportRelatesTo extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'EvidenceReport.relatesTo' }
-    this.vRSV('code',exp,'ReportRelationType',ReportRelationTypeVsValidation,'r')
-    this.vRS('target',exp)
-    return issues;
+    iss.push(...this.vRSV('code',exp,'ReportRelationType',ReportRelationTypeVsValidation,'r'));
+    iss.push(...this.vRS('target',exp));
+    return iss;
   }
 }
 /**
@@ -428,21 +428,21 @@ export class EvidenceReportSection extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'EvidenceReport.section' }
-    this.vOS('title',exp)
-    this.vOS('focus',exp)
-    this.vOS('focusReference',exp)
-    this.vOA('author',exp)
-    this.vOS('text',exp)
-    this.vOSV('mode',exp,'ListMode',ListModeVsValidation,'r')
-    this.vOS('orderedBy',exp)
-    this.vOA('entryClassifier',exp)
-    this.vOA('entryReference',exp)
-    this.vOA('entryQuantity',exp)
-    this.vOS('emptyReason',exp)
-    this.vOA('section',exp)
-    return issues;
+    iss.push(...this.vOS('title',exp));
+    iss.push(...this.vOS('focus',exp));
+    iss.push(...this.vOS('focusReference',exp));
+    iss.push(...this.vOA('author',exp));
+    iss.push(...this.vOS('text',exp));
+    iss.push(...this.vOSV('mode',exp,'ListMode',ListModeVsValidation,'r'));
+    iss.push(...this.vOS('orderedBy',exp));
+    iss.push(...this.vOA('entryClassifier',exp));
+    iss.push(...this.vOA('entryReference',exp));
+    iss.push(...this.vOA('entryQuantity',exp));
+    iss.push(...this.vOS('emptyReason',exp));
+    iss.push(...this.vOA('section',exp));
+    return iss;
   }
 }
 /**
@@ -692,27 +692,27 @@ export class EvidenceReport extends fhir.DomainResource {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'EvidenceReport' }
-    this.vRS('resourceType',exp)
-    this.vOS('url',exp)
-    this.vRSV('status',exp,'PublicationStatus',PublicationStatusVsValidation,'r')
-    this.vOA('useContext',exp)
-    this.vOA('identifier',exp)
-    this.vOA('relatedIdentifier',exp)
-    this.vOS('citeAs',exp)
-    this.vOS('type',exp)
-    this.vOA('note',exp)
-    this.vOA('relatedArtifact',exp)
-    this.vRS('subject',exp)
-    this.vOS('publisher',exp)
-    this.vOA('contact',exp)
-    this.vOA('author',exp)
-    this.vOA('editor',exp)
-    this.vOA('reviewer',exp)
-    this.vOA('endorser',exp)
-    this.vOA('relatesTo',exp)
-    this.vOA('section',exp)
-    return issues;
+    iss.push(...this.vRPS('resourceType',exp));
+    iss.push(...this.vOS('url',exp));
+    iss.push(...this.vRSV('status',exp,'PublicationStatus',PublicationStatusVsValidation,'r'));
+    iss.push(...this.vOA('useContext',exp));
+    iss.push(...this.vOA('identifier',exp));
+    iss.push(...this.vOA('relatedIdentifier',exp));
+    iss.push(...this.vOS('citeAs',exp));
+    iss.push(...this.vOS('type',exp));
+    iss.push(...this.vOA('note',exp));
+    iss.push(...this.vOA('relatedArtifact',exp));
+    iss.push(...this.vRS('subject',exp));
+    iss.push(...this.vOS('publisher',exp));
+    iss.push(...this.vOA('contact',exp));
+    iss.push(...this.vOA('author',exp));
+    iss.push(...this.vOA('editor',exp));
+    iss.push(...this.vOA('reviewer',exp));
+    iss.push(...this.vOA('endorser',exp));
+    iss.push(...this.vOA('relatesTo',exp));
+    iss.push(...this.vOA('section',exp));
+    return iss;
   }
 }

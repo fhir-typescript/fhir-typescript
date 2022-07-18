@@ -182,18 +182,18 @@ export class MolecularSequenceReferenceSeq extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'MolecularSequence.referenceSeq' }
-    this.vOS('chromosome',exp)
-    this.vOS('genomeBuild',exp)
-    this.vOSV('orientation',exp,'OrientationType',OrientationTypeVsValidation,'r')
-    this.vOS('referenceSeqId',exp)
-    this.vOS('referenceSeqPointer',exp)
-    this.vOS('referenceSeqString',exp)
-    this.vOSV('strand',exp,'StrandType',StrandTypeVsValidation,'r')
-    this.vOS('windowStart',exp)
-    this.vOS('windowEnd',exp)
-    return issues;
+    iss.push(...this.vOS('chromosome',exp));
+    iss.push(...this.vOS('genomeBuild',exp));
+    iss.push(...this.vOSV('orientation',exp,'OrientationType',OrientationTypeVsValidation,'r'));
+    iss.push(...this.vOS('referenceSeqId',exp));
+    iss.push(...this.vOS('referenceSeqPointer',exp));
+    iss.push(...this.vOS('referenceSeqString',exp));
+    iss.push(...this.vOSV('strand',exp,'StrandType',StrandTypeVsValidation,'r'));
+    iss.push(...this.vOS('windowStart',exp));
+    iss.push(...this.vOS('windowEnd',exp));
+    return iss;
   }
 }
 /**
@@ -314,15 +314,15 @@ export class MolecularSequenceVariant extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'MolecularSequence.variant' }
-    this.vOS('start',exp)
-    this.vOS('end',exp)
-    this.vOS('observedAllele',exp)
-    this.vOS('referenceAllele',exp)
-    this.vOS('cigar',exp)
-    this.vOS('variantPointer',exp)
-    return issues;
+    iss.push(...this.vOS('start',exp));
+    iss.push(...this.vOS('end',exp));
+    iss.push(...this.vOS('observedAllele',exp));
+    iss.push(...this.vOS('referenceAllele',exp));
+    iss.push(...this.vOS('cigar',exp));
+    iss.push(...this.vOS('variantPointer',exp));
+    return iss;
   }
 }
 /**
@@ -489,16 +489,16 @@ export class MolecularSequenceQualityRoc extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'MolecularSequence.quality.roc' }
-    this.vOA('score',exp)
-    this.vOA('numTP',exp)
-    this.vOA('numFP',exp)
-    this.vOA('numFN',exp)
-    this.vOA('precision',exp)
-    this.vOA('sensitivity',exp)
-    this.vOA('fMeasure',exp)
-    return issues;
+    iss.push(...this.vOA('score',exp));
+    iss.push(...this.vOA('numTP',exp));
+    iss.push(...this.vOA('numFP',exp));
+    iss.push(...this.vOA('numFN',exp));
+    iss.push(...this.vOA('precision',exp));
+    iss.push(...this.vOA('sensitivity',exp));
+    iss.push(...this.vOA('fMeasure',exp));
+    return iss;
   }
 }
 /**
@@ -749,24 +749,24 @@ export class MolecularSequenceQuality extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'MolecularSequence.quality' }
-    this.vRSV('type',exp,'QualityType',QualityTypeVsValidation,'r')
-    this.vOS('standardSequence',exp)
-    this.vOS('start',exp)
-    this.vOS('end',exp)
-    this.vOS('score',exp)
-    this.vOS('method',exp)
-    this.vOS('truthTP',exp)
-    this.vOS('queryTP',exp)
-    this.vOS('truthFN',exp)
-    this.vOS('queryFP',exp)
-    this.vOS('gtFP',exp)
-    this.vOS('precision',exp)
-    this.vOS('recall',exp)
-    this.vOS('fScore',exp)
-    this.vOS('roc',exp)
-    return issues;
+    iss.push(...this.vRSV('type',exp,'QualityType',QualityTypeVsValidation,'r'));
+    iss.push(...this.vOS('standardSequence',exp));
+    iss.push(...this.vOS('start',exp));
+    iss.push(...this.vOS('end',exp));
+    iss.push(...this.vOS('score',exp));
+    iss.push(...this.vOS('method',exp));
+    iss.push(...this.vOS('truthTP',exp));
+    iss.push(...this.vOS('queryTP',exp));
+    iss.push(...this.vOS('truthFN',exp));
+    iss.push(...this.vOS('queryFP',exp));
+    iss.push(...this.vOS('gtFP',exp));
+    iss.push(...this.vOS('precision',exp));
+    iss.push(...this.vOS('recall',exp));
+    iss.push(...this.vOS('fScore',exp));
+    iss.push(...this.vOS('roc',exp));
+    return iss;
   }
 }
 /**
@@ -896,15 +896,15 @@ export class MolecularSequenceRepository extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'MolecularSequence.repository' }
-    this.vRSV('type',exp,'RepositoryType',RepositoryTypeVsValidation,'r')
-    this.vOS('url',exp)
-    this.vOS('name',exp)
-    this.vOS('datasetId',exp)
-    this.vOS('variantsetId',exp)
-    this.vOS('readsetId',exp)
-    return issues;
+    iss.push(...this.vRSV('type',exp,'RepositoryType',RepositoryTypeVsValidation,'r'));
+    iss.push(...this.vOS('url',exp));
+    iss.push(...this.vOS('name',exp));
+    iss.push(...this.vOS('datasetId',exp));
+    iss.push(...this.vOS('variantsetId',exp));
+    iss.push(...this.vOS('readsetId',exp));
+    return iss;
   }
 }
 /**
@@ -965,11 +965,11 @@ export class MolecularSequenceStructureVariantOuter extends fhir.BackboneElement
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'MolecularSequence.structureVariant.outer' }
-    this.vOS('start',exp)
-    this.vOS('end',exp)
-    return issues;
+    iss.push(...this.vOS('start',exp));
+    iss.push(...this.vOS('end',exp));
+    return iss;
   }
 }
 /**
@@ -1030,11 +1030,11 @@ export class MolecularSequenceStructureVariantInner extends fhir.BackboneElement
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'MolecularSequence.structureVariant.inner' }
-    this.vOS('start',exp)
-    this.vOS('end',exp)
-    return issues;
+    iss.push(...this.vOS('start',exp));
+    iss.push(...this.vOS('end',exp));
+    return iss;
   }
 }
 /**
@@ -1122,14 +1122,14 @@ export class MolecularSequenceStructureVariant extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'MolecularSequence.structureVariant' }
-    this.vOS('variantType',exp)
-    this.vOS('exact',exp)
-    this.vOS('length',exp)
-    this.vOS('outer',exp)
-    this.vOS('inner',exp)
-    return issues;
+    iss.push(...this.vOS('variantType',exp));
+    iss.push(...this.vOS('exact',exp));
+    iss.push(...this.vOS('length',exp));
+    iss.push(...this.vOS('outer',exp));
+    iss.push(...this.vOS('inner',exp));
+    return iss;
   }
 }
 /**
@@ -1348,25 +1348,25 @@ export class MolecularSequence extends fhir.DomainResource {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'MolecularSequence' }
-    this.vRS('resourceType',exp)
-    this.vOA('identifier',exp)
-    this.vOSV('type',exp,'SequenceType',SequenceTypeVsValidation,'r')
-    this.vRS('coordinateSystem',exp)
-    this.vOS('patient',exp)
-    this.vOS('specimen',exp)
-    this.vOS('device',exp)
-    this.vOS('performer',exp)
-    this.vOS('quantity',exp)
-    this.vOS('referenceSeq',exp)
-    this.vOA('variant',exp)
-    this.vOS('observedSeq',exp)
-    this.vOA('quality',exp)
-    this.vOS('readCoverage',exp)
-    this.vOA('repository',exp)
-    this.vOA('pointer',exp)
-    this.vOA('structureVariant',exp)
-    return issues;
+    iss.push(...this.vRPS('resourceType',exp));
+    iss.push(...this.vOA('identifier',exp));
+    iss.push(...this.vOSV('type',exp,'SequenceType',SequenceTypeVsValidation,'r'));
+    iss.push(...this.vRS('coordinateSystem',exp));
+    iss.push(...this.vOS('patient',exp));
+    iss.push(...this.vOS('specimen',exp));
+    iss.push(...this.vOS('device',exp));
+    iss.push(...this.vOS('performer',exp));
+    iss.push(...this.vOS('quantity',exp));
+    iss.push(...this.vOS('referenceSeq',exp));
+    iss.push(...this.vOA('variant',exp));
+    iss.push(...this.vOS('observedSeq',exp));
+    iss.push(...this.vOA('quality',exp));
+    iss.push(...this.vOS('readCoverage',exp));
+    iss.push(...this.vOA('repository',exp));
+    iss.push(...this.vOA('pointer',exp));
+    iss.push(...this.vOA('structureVariant',exp));
+    return iss;
   }
 }

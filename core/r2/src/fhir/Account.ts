@@ -166,20 +166,20 @@ export class Account extends fhir.DomainResource {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'Account' }
-    this.vRS('resourceType',exp)
-    this.vOA('identifier',exp)
-    this.vOS('name',exp)
-    this.vOS('type',exp)
-    this.vOS('status',exp)
-    this.vOS('activePeriod',exp)
-    this.vOS('currency',exp)
-    this.vOS('balance',exp)
-    this.vOS('coveragePeriod',exp)
-    this.vOS('subject',exp)
-    this.vOS('owner',exp)
-    this.vOS('description',exp)
-    return issues;
+    iss.push(...this.vRPS('resourceType',exp));
+    iss.push(...this.vOA('identifier',exp));
+    iss.push(...this.vOS('name',exp));
+    iss.push(...this.vOS('type',exp));
+    iss.push(...this.vOS('status',exp));
+    iss.push(...this.vOS('activePeriod',exp));
+    iss.push(...this.vOS('currency',exp));
+    iss.push(...this.vOS('balance',exp));
+    iss.push(...this.vOS('coveragePeriod',exp));
+    iss.push(...this.vOS('subject',exp));
+    iss.push(...this.vOS('owner',exp));
+    iss.push(...this.vOS('description',exp));
+    return iss;
   }
 }

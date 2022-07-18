@@ -65,11 +65,11 @@ export class ProvenanceAgentRelatedAgent extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'Provenance.agent.relatedAgent' }
-    this.vRS('type',exp)
-    this.vRS('target',exp)
-    return issues;
+    iss.push(...this.vRS('type',exp));
+    iss.push(...this.vRS('target',exp));
+    return iss;
   }
 }
 /**
@@ -134,13 +134,13 @@ export class ProvenanceAgent extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'Provenance.agent' }
-    this.vRS('role',exp)
-    this.vOS('actor',exp)
-    this.vOS('userId',exp)
-    this.vOA('relatedAgent',exp)
-    return issues;
+    iss.push(...this.vRS('role',exp));
+    iss.push(...this.vOS('actor',exp));
+    iss.push(...this.vOS('userId',exp));
+    iss.push(...this.vOA('relatedAgent',exp));
+    return iss;
   }
 }
 /**
@@ -239,14 +239,14 @@ export class ProvenanceEntity extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'Provenance.entity' }
-    this.vRSV('role',exp,'ProvenanceEntityRole',ProvenanceEntityRoleVsValidation,'r')
-    this.vRS('type',exp)
-    this.vRS('reference',exp)
-    this.vOS('display',exp)
-    this.vOS('agent',exp)
-    return issues;
+    iss.push(...this.vRSV('role',exp,'ProvenanceEntityRole',ProvenanceEntityRoleVsValidation,'r'));
+    iss.push(...this.vRS('type',exp));
+    iss.push(...this.vRS('reference',exp));
+    iss.push(...this.vOS('display',exp));
+    iss.push(...this.vOS('agent',exp));
+    return iss;
   }
 }
 /**
@@ -397,19 +397,19 @@ export class Provenance extends fhir.DomainResource {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'Provenance' }
-    this.vRS('resourceType',exp)
-    this.vRA('target',exp)
-    this.vOS('period',exp)
-    this.vRS('recorded',exp)
-    this.vOA('reason',exp)
-    this.vOS('activity',exp)
-    this.vOS('location',exp)
-    this.vOA('policy',exp)
-    this.vOA('agent',exp)
-    this.vOA('entity',exp)
-    this.vOA('signature',exp)
-    return issues;
+    iss.push(...this.vRPS('resourceType',exp));
+    iss.push(...this.vRA('target',exp));
+    iss.push(...this.vOS('period',exp));
+    iss.push(...this.vRS('recorded',exp));
+    iss.push(...this.vOA('reason',exp));
+    iss.push(...this.vOS('activity',exp));
+    iss.push(...this.vOS('location',exp));
+    iss.push(...this.vOA('policy',exp));
+    iss.push(...this.vOA('agent',exp));
+    iss.push(...this.vOA('entity',exp));
+    iss.push(...this.vOA('signature',exp));
+    return iss;
   }
 }

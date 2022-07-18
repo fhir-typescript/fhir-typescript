@@ -73,13 +73,13 @@ export class SubstancePolymerMonomerSetStartingMaterial extends fhir.BackboneEle
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'SubstancePolymer.monomerSet.startingMaterial' }
-    this.vOS('material',exp)
-    this.vOS('type',exp)
-    this.vOS('isDefining',exp)
-    this.vOS('amount',exp)
-    return issues;
+    iss.push(...this.vOS('material',exp));
+    iss.push(...this.vOS('type',exp));
+    iss.push(...this.vOS('isDefining',exp));
+    iss.push(...this.vOS('amount',exp));
+    return iss;
   }
 }
 /**
@@ -125,11 +125,11 @@ export class SubstancePolymerMonomerSet extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'SubstancePolymer.monomerSet' }
-    this.vOS('ratioType',exp)
-    this.vOA('startingMaterial',exp)
-    return issues;
+    iss.push(...this.vOS('ratioType',exp));
+    iss.push(...this.vOA('startingMaterial',exp));
+    return iss;
   }
 }
 /**
@@ -174,11 +174,11 @@ export class SubstancePolymerRepeatRepeatUnitDegreeOfPolymerisation extends fhir
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'SubstancePolymer.repeat.repeatUnit.degreeOfPolymerisation' }
-    this.vOS('degree',exp)
-    this.vOS('amount',exp)
-    return issues;
+    iss.push(...this.vOS('degree',exp));
+    iss.push(...this.vOS('amount',exp));
+    return iss;
   }
 }
 /**
@@ -240,12 +240,12 @@ export class SubstancePolymerRepeatRepeatUnitStructuralRepresentation extends fh
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'SubstancePolymer.repeat.repeatUnit.structuralRepresentation' }
-    this.vOS('type',exp)
-    this.vOS('representation',exp)
-    this.vOS('attachment',exp)
-    return issues;
+    iss.push(...this.vOS('type',exp));
+    iss.push(...this.vOS('representation',exp));
+    iss.push(...this.vOS('attachment',exp));
+    return iss;
   }
 }
 /**
@@ -327,14 +327,14 @@ export class SubstancePolymerRepeatRepeatUnit extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'SubstancePolymer.repeat.repeatUnit' }
-    this.vOS('orientationOfPolymerisation',exp)
-    this.vOS('repeatUnit',exp)
-    this.vOS('amount',exp)
-    this.vOA('degreeOfPolymerisation',exp)
-    this.vOA('structuralRepresentation',exp)
-    return issues;
+    iss.push(...this.vOS('orientationOfPolymerisation',exp));
+    iss.push(...this.vOS('repeatUnit',exp));
+    iss.push(...this.vOS('amount',exp));
+    iss.push(...this.vOA('degreeOfPolymerisation',exp));
+    iss.push(...this.vOA('structuralRepresentation',exp));
+    return iss;
   }
 }
 /**
@@ -414,13 +414,13 @@ export class SubstancePolymerRepeat extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'SubstancePolymer.repeat' }
-    this.vOS('numberOfUnits',exp)
-    this.vOS('averageMolecularFormula',exp)
-    this.vOS('repeatUnitAmountType',exp)
-    this.vOA('repeatUnit',exp)
-    return issues;
+    iss.push(...this.vOS('numberOfUnits',exp));
+    iss.push(...this.vOS('averageMolecularFormula',exp));
+    iss.push(...this.vOS('repeatUnitAmountType',exp));
+    iss.push(...this.vOA('repeatUnit',exp));
+    return iss;
   }
 }
 /**
@@ -524,15 +524,15 @@ export class SubstancePolymer extends fhir.DomainResource {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'SubstancePolymer' }
-    this.vRS('resourceType',exp)
-    this.vOS('class',exp)
-    this.vOS('geometry',exp)
-    this.vOA('copolymerConnectivity',exp)
-    this.vOA('modification',exp)
-    this.vOA('monomerSet',exp)
-    this.vOA('repeat',exp)
-    return issues;
+    iss.push(...this.vRPS('resourceType',exp));
+    iss.push(...this.vOS('class',exp));
+    iss.push(...this.vOS('geometry',exp));
+    iss.push(...this.vOA('copolymerConnectivity',exp));
+    iss.push(...this.vOA('modification',exp));
+    iss.push(...this.vOA('monomerSet',exp));
+    iss.push(...this.vOA('repeat',exp));
+    return iss;
   }
 }

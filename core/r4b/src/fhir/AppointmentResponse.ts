@@ -158,17 +158,17 @@ export class AppointmentResponse extends fhir.DomainResource {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'AppointmentResponse' }
-    this.vRS('resourceType',exp)
-    this.vOA('identifier',exp)
-    this.vRS('appointment',exp)
-    this.vOS('start',exp)
-    this.vOS('end',exp)
-    this.vOA('participantType',exp)
-    this.vOS('actor',exp)
-    this.vRSV('participantStatus',exp,'Participationstatus',ParticipationstatusVsValidation,'r')
-    this.vOS('comment',exp)
-    return issues;
+    iss.push(...this.vRPS('resourceType',exp));
+    iss.push(...this.vOA('identifier',exp));
+    iss.push(...this.vRS('appointment',exp));
+    iss.push(...this.vOS('start',exp));
+    iss.push(...this.vOS('end',exp));
+    iss.push(...this.vOA('participantType',exp));
+    iss.push(...this.vOS('actor',exp));
+    iss.push(...this.vRSV('participantStatus',exp,'Participationstatus',ParticipationstatusVsValidation,'r'));
+    iss.push(...this.vOS('comment',exp));
+    return iss;
   }
 }

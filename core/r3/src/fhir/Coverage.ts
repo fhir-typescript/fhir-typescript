@@ -245,21 +245,21 @@ export class CoverageGrouping extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'Coverage.grouping' }
-    this.vOS('group',exp)
-    this.vOS('groupDisplay',exp)
-    this.vOS('subGroup',exp)
-    this.vOS('subGroupDisplay',exp)
-    this.vOS('plan',exp)
-    this.vOS('planDisplay',exp)
-    this.vOS('subPlan',exp)
-    this.vOS('subPlanDisplay',exp)
-    this.vOS('class',exp)
-    this.vOS('classDisplay',exp)
-    this.vOS('subClass',exp)
-    this.vOS('subClassDisplay',exp)
-    return issues;
+    iss.push(...this.vOS('group',exp));
+    iss.push(...this.vOS('groupDisplay',exp));
+    iss.push(...this.vOS('subGroup',exp));
+    iss.push(...this.vOS('subGroupDisplay',exp));
+    iss.push(...this.vOS('plan',exp));
+    iss.push(...this.vOS('planDisplay',exp));
+    iss.push(...this.vOS('subPlan',exp));
+    iss.push(...this.vOS('subPlanDisplay',exp));
+    iss.push(...this.vOS('class',exp));
+    iss.push(...this.vOS('classDisplay',exp));
+    iss.push(...this.vOS('subClass',exp));
+    iss.push(...this.vOS('subClassDisplay',exp));
+    return iss;
   }
 }
 /**
@@ -490,25 +490,25 @@ export class Coverage extends fhir.DomainResource {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'Coverage' }
-    this.vRS('resourceType',exp)
-    this.vOA('identifier',exp)
-    this.vOSV('status',exp,'FmStatus',FmStatusVsValidation,'r')
-    this.vOS('type',exp)
-    this.vOS('policyHolder',exp)
-    this.vOS('subscriber',exp)
-    this.vOS('subscriberId',exp)
-    this.vOS('beneficiary',exp)
-    this.vOS('relationship',exp)
-    this.vOS('period',exp)
-    this.vOA('payor',exp)
-    this.vOS('grouping',exp)
-    this.vOS('dependent',exp)
-    this.vOS('sequence',exp)
-    this.vOS('order',exp)
-    this.vOS('network',exp)
-    this.vOA('contract',exp)
-    return issues;
+    iss.push(...this.vRPS('resourceType',exp));
+    iss.push(...this.vOA('identifier',exp));
+    iss.push(...this.vOSV('status',exp,'FmStatus',FmStatusVsValidation,'r'));
+    iss.push(...this.vOS('type',exp));
+    iss.push(...this.vOS('policyHolder',exp));
+    iss.push(...this.vOS('subscriber',exp));
+    iss.push(...this.vOS('subscriberId',exp));
+    iss.push(...this.vOS('beneficiary',exp));
+    iss.push(...this.vOS('relationship',exp));
+    iss.push(...this.vOS('period',exp));
+    iss.push(...this.vOA('payor',exp));
+    iss.push(...this.vOS('grouping',exp));
+    iss.push(...this.vOS('dependent',exp));
+    iss.push(...this.vOS('sequence',exp));
+    iss.push(...this.vOS('order',exp));
+    iss.push(...this.vOS('network',exp));
+    iss.push(...this.vOA('contract',exp));
+    return iss;
   }
 }

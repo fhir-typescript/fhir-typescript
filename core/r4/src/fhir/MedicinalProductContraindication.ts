@@ -63,11 +63,11 @@ export class MedicinalProductContraindicationOtherTherapy extends fhir.BackboneE
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'MedicinalProductContraindication.otherTherapy' }
-    this.vRS('therapyRelationshipType',exp)
-    this.vRS('medication',exp)
-    return issues;
+    iss.push(...this.vRS('therapyRelationshipType',exp));
+    iss.push(...this.vRS('medication',exp));
+    return iss;
   }
 }
 /**
@@ -171,16 +171,16 @@ export class MedicinalProductContraindication extends fhir.DomainResource {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'MedicinalProductContraindication' }
-    this.vRS('resourceType',exp)
-    this.vOA('subject',exp)
-    this.vOS('disease',exp)
-    this.vOS('diseaseStatus',exp)
-    this.vOA('comorbidity',exp)
-    this.vOA('therapeuticIndication',exp)
-    this.vOA('otherTherapy',exp)
-    this.vOA('population',exp)
-    return issues;
+    iss.push(...this.vRPS('resourceType',exp));
+    iss.push(...this.vOA('subject',exp));
+    iss.push(...this.vOS('disease',exp));
+    iss.push(...this.vOS('diseaseStatus',exp));
+    iss.push(...this.vOA('comorbidity',exp));
+    iss.push(...this.vOA('therapeuticIndication',exp));
+    iss.push(...this.vOA('otherTherapy',exp));
+    iss.push(...this.vOA('population',exp));
+    return iss;
   }
 }

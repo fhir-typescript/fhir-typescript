@@ -244,22 +244,22 @@ export class DeviceUseRequest extends fhir.DomainResource {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'DeviceUseRequest' }
-    this.vRS('resourceType',exp)
-    this.vOS('bodySite',exp)
-    this.vOSV('status',exp,'DeviceUseRequestStatus',DeviceUseRequestStatusVsValidation,'r')
-    this.vRS('device',exp)
-    this.vOS('encounter',exp)
-    this.vOA('identifier',exp)
-    this.vOA('indication',exp)
-    this.vOA('notes',exp)
-    this.vOA('prnReason',exp)
-    this.vOS('orderedOn',exp)
-    this.vOS('recordedOn',exp)
-    this.vRS('subject',exp)
-    this.vOS('timing',exp)
-    this.vOSV('priority',exp,'DeviceUseRequestPriority',DeviceUseRequestPriorityVsValidation,'r')
-    return issues;
+    iss.push(...this.vRPS('resourceType',exp));
+    iss.push(...this.vOS('bodySite',exp));
+    iss.push(...this.vOSV('status',exp,'DeviceUseRequestStatus',DeviceUseRequestStatusVsValidation,'r'));
+    iss.push(...this.vRS('device',exp));
+    iss.push(...this.vOS('encounter',exp));
+    iss.push(...this.vOA('identifier',exp));
+    iss.push(...this.vOA('indication',exp));
+    iss.push(...this.vOA('notes',exp));
+    iss.push(...this.vOA('prnReason',exp));
+    iss.push(...this.vOS('orderedOn',exp));
+    iss.push(...this.vOS('recordedOn',exp));
+    iss.push(...this.vRS('subject',exp));
+    iss.push(...this.vOS('timing',exp));
+    iss.push(...this.vOSV('priority',exp,'DeviceUseRequestPriority',DeviceUseRequestPriorityVsValidation,'r'));
+    return iss;
   }
 }

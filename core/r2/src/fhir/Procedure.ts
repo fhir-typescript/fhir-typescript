@@ -51,11 +51,11 @@ export class ProcedurePerformer extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'Procedure.performer' }
-    this.vOS('actor',exp)
-    this.vOS('role',exp)
-    return issues;
+    iss.push(...this.vOS('actor',exp));
+    iss.push(...this.vOS('role',exp));
+    return iss;
   }
 }
 /**
@@ -101,11 +101,11 @@ export class ProcedureFocalDevice extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'Procedure.focalDevice' }
-    this.vOS('action',exp)
-    this.vRS('manipulated',exp)
-    return issues;
+    iss.push(...this.vOS('action',exp));
+    iss.push(...this.vRS('manipulated',exp));
+    return iss;
   }
 }
 /**
@@ -387,30 +387,30 @@ export class Procedure extends fhir.DomainResource {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'Procedure' }
-    this.vRS('resourceType',exp)
-    this.vOA('identifier',exp)
-    this.vRS('subject',exp)
-    this.vRSV('status',exp,'ProcedureStatus',ProcedureStatusVsValidation,'r')
-    this.vOS('category',exp)
-    this.vRS('code',exp)
-    this.vOS('notPerformed',exp)
-    this.vOA('reasonNotPerformed',exp)
-    this.vOA('bodySite',exp)
-    this.vOS('reason',exp)
-    this.vOA('performer',exp)
-    this.vOS('performed',exp)
-    this.vOS('encounter',exp)
-    this.vOS('location',exp)
-    this.vOS('outcome',exp)
-    this.vOA('report',exp)
-    this.vOA('complication',exp)
-    this.vOA('followUp',exp)
-    this.vOS('request',exp)
-    this.vOA('notes',exp)
-    this.vOA('focalDevice',exp)
-    this.vOA('used',exp)
-    return issues;
+    iss.push(...this.vRPS('resourceType',exp));
+    iss.push(...this.vOA('identifier',exp));
+    iss.push(...this.vRS('subject',exp));
+    iss.push(...this.vRSV('status',exp,'ProcedureStatus',ProcedureStatusVsValidation,'r'));
+    iss.push(...this.vOS('category',exp));
+    iss.push(...this.vRS('code',exp));
+    iss.push(...this.vOS('notPerformed',exp));
+    iss.push(...this.vOA('reasonNotPerformed',exp));
+    iss.push(...this.vOA('bodySite',exp));
+    iss.push(...this.vOS('reason',exp));
+    iss.push(...this.vOA('performer',exp));
+    iss.push(...this.vOS('performed',exp));
+    iss.push(...this.vOS('encounter',exp));
+    iss.push(...this.vOS('location',exp));
+    iss.push(...this.vOS('outcome',exp));
+    iss.push(...this.vOA('report',exp));
+    iss.push(...this.vOA('complication',exp));
+    iss.push(...this.vOA('followUp',exp));
+    iss.push(...this.vOS('request',exp));
+    iss.push(...this.vOA('notes',exp));
+    iss.push(...this.vOA('focalDevice',exp));
+    iss.push(...this.vOA('used',exp));
+    return iss;
   }
 }

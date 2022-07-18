@@ -53,11 +53,11 @@ export class ClinicalImpressionInvestigations extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'ClinicalImpression.investigations' }
-    this.vRS('code',exp)
-    this.vOA('item',exp)
-    return issues;
+    iss.push(...this.vRS('code',exp));
+    iss.push(...this.vOA('item',exp));
+    return iss;
   }
 }
 /**
@@ -111,11 +111,11 @@ export class ClinicalImpressionFinding extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'ClinicalImpression.finding' }
-    this.vRS('item',exp)
-    this.vOS('cause',exp)
-    return issues;
+    iss.push(...this.vRS('item',exp));
+    iss.push(...this.vOS('cause',exp));
+    return iss;
   }
 }
 /**
@@ -169,11 +169,11 @@ export class ClinicalImpressionRuledOut extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'ClinicalImpression.ruledOut' }
-    this.vRS('item',exp)
-    this.vOS('reason',exp)
-    return issues;
+    iss.push(...this.vRS('item',exp));
+    iss.push(...this.vOS('reason',exp));
+    return iss;
   }
 }
 /**
@@ -433,26 +433,26 @@ export class ClinicalImpression extends fhir.DomainResource {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'ClinicalImpression' }
-    this.vRS('resourceType',exp)
-    this.vRS('patient',exp)
-    this.vOS('assessor',exp)
-    this.vRSV('status',exp,'ClinicalImpressionStatus',ClinicalImpressionStatusVsValidation,'r')
-    this.vOS('date',exp)
-    this.vOS('description',exp)
-    this.vOS('previous',exp)
-    this.vOA('problem',exp)
-    this.vOS('trigger',exp)
-    this.vOA('investigations',exp)
-    this.vOS('protocol',exp)
-    this.vOS('summary',exp)
-    this.vOA('finding',exp)
-    this.vOA('resolved',exp)
-    this.vOA('ruledOut',exp)
-    this.vOS('prognosis',exp)
-    this.vOA('plan',exp)
-    this.vOA('action',exp)
-    return issues;
+    iss.push(...this.vRPS('resourceType',exp));
+    iss.push(...this.vRS('patient',exp));
+    iss.push(...this.vOS('assessor',exp));
+    iss.push(...this.vRSV('status',exp,'ClinicalImpressionStatus',ClinicalImpressionStatusVsValidation,'r'));
+    iss.push(...this.vOS('date',exp));
+    iss.push(...this.vOS('description',exp));
+    iss.push(...this.vOS('previous',exp));
+    iss.push(...this.vOA('problem',exp));
+    iss.push(...this.vOS('trigger',exp));
+    iss.push(...this.vOA('investigations',exp));
+    iss.push(...this.vOS('protocol',exp));
+    iss.push(...this.vOS('summary',exp));
+    iss.push(...this.vOA('finding',exp));
+    iss.push(...this.vOA('resolved',exp));
+    iss.push(...this.vOA('ruledOut',exp));
+    iss.push(...this.vOS('prognosis',exp));
+    iss.push(...this.vOA('plan',exp));
+    iss.push(...this.vOA('action',exp));
+    return iss;
   }
 }

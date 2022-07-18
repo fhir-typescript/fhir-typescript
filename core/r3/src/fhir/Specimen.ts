@@ -112,14 +112,14 @@ export class SpecimenCollection extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'Specimen.collection' }
-    this.vOS('collector',exp)
-    this.vOS('collected',exp)
-    this.vOS('quantity',exp)
-    this.vOS('method',exp)
-    this.vOS('bodySite',exp)
-    return issues;
+    iss.push(...this.vOS('collector',exp));
+    iss.push(...this.vOS('collected',exp));
+    iss.push(...this.vOS('quantity',exp));
+    iss.push(...this.vOS('method',exp));
+    iss.push(...this.vOS('bodySite',exp));
+    return iss;
   }
 }
 /**
@@ -205,13 +205,13 @@ export class SpecimenProcessing extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'Specimen.processing' }
-    this.vOS('description',exp)
-    this.vOS('procedure',exp)
-    this.vOA('additive',exp)
-    this.vOS('time',exp)
-    return issues;
+    iss.push(...this.vOS('description',exp));
+    iss.push(...this.vOS('procedure',exp));
+    iss.push(...this.vOA('additive',exp));
+    iss.push(...this.vOS('time',exp));
+    return iss;
   }
 }
 /**
@@ -315,15 +315,15 @@ export class SpecimenContainer extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'Specimen.container' }
-    this.vOA('identifier',exp)
-    this.vOS('description',exp)
-    this.vOS('type',exp)
-    this.vOS('capacity',exp)
-    this.vOS('specimenQuantity',exp)
-    this.vOS('additive',exp)
-    return issues;
+    iss.push(...this.vOA('identifier',exp));
+    iss.push(...this.vOS('description',exp));
+    iss.push(...this.vOS('type',exp));
+    iss.push(...this.vOS('capacity',exp));
+    iss.push(...this.vOS('specimenQuantity',exp));
+    iss.push(...this.vOS('additive',exp));
+    return iss;
   }
 }
 /**
@@ -490,21 +490,21 @@ export class Specimen extends fhir.DomainResource {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'Specimen' }
-    this.vRS('resourceType',exp)
-    this.vOA('identifier',exp)
-    this.vOS('accessionIdentifier',exp)
-    this.vOSV('status',exp,'SpecimenStatus',SpecimenStatusVsValidation,'r')
-    this.vOS('type',exp)
-    this.vRS('subject',exp)
-    this.vOS('receivedTime',exp)
-    this.vOA('parent',exp)
-    this.vOA('request',exp)
-    this.vOS('collection',exp)
-    this.vOA('processing',exp)
-    this.vOA('container',exp)
-    this.vOA('note',exp)
-    return issues;
+    iss.push(...this.vRPS('resourceType',exp));
+    iss.push(...this.vOA('identifier',exp));
+    iss.push(...this.vOS('accessionIdentifier',exp));
+    iss.push(...this.vOSV('status',exp,'SpecimenStatus',SpecimenStatusVsValidation,'r'));
+    iss.push(...this.vOS('type',exp));
+    iss.push(...this.vRS('subject',exp));
+    iss.push(...this.vOS('receivedTime',exp));
+    iss.push(...this.vOA('parent',exp));
+    iss.push(...this.vOA('request',exp));
+    iss.push(...this.vOS('collection',exp));
+    iss.push(...this.vOA('processing',exp));
+    iss.push(...this.vOA('container',exp));
+    iss.push(...this.vOA('note',exp));
+    return iss;
   }
 }

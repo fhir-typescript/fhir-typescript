@@ -89,12 +89,12 @@ export class ValueSetComposeIncludeConceptDesignation extends fhir.BackboneEleme
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'ValueSet.compose.include.concept.designation' }
-    this.vOS('language',exp)
-    this.vOS('use',exp)
-    this.vRS('value',exp)
-    return issues;
+    iss.push(...this.vOS('language',exp));
+    iss.push(...this.vOS('use',exp));
+    iss.push(...this.vRS('value',exp));
+    return iss;
   }
 }
 /**
@@ -166,12 +166,12 @@ export class ValueSetComposeIncludeConcept extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'ValueSet.compose.include.concept' }
-    this.vRS('code',exp)
-    this.vOS('display',exp)
-    this.vOA('designation',exp)
-    return issues;
+    iss.push(...this.vRS('code',exp));
+    iss.push(...this.vOS('display',exp));
+    iss.push(...this.vOA('designation',exp));
+    return iss;
   }
 }
 /**
@@ -252,12 +252,12 @@ export class ValueSetComposeIncludeFilter extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'ValueSet.compose.include.filter' }
-    this.vRS('property',exp)
-    this.vRSV('op',exp,'FilterOperator',FilterOperatorVsValidation,'r')
-    this.vRS('value',exp)
-    return issues;
+    iss.push(...this.vRS('property',exp));
+    iss.push(...this.vRSV('op',exp,'FilterOperator',FilterOperatorVsValidation,'r'));
+    iss.push(...this.vRS('value',exp));
+    return iss;
   }
 }
 /**
@@ -358,14 +358,14 @@ export class ValueSetComposeInclude extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'ValueSet.compose.include' }
-    this.vOS('system',exp)
-    this.vOS('version',exp)
-    this.vOA('concept',exp)
-    this.vOA('filter',exp)
-    this.vOA('valueSet',exp)
-    return issues;
+    iss.push(...this.vOS('system',exp));
+    iss.push(...this.vOS('version',exp));
+    iss.push(...this.vOA('concept',exp));
+    iss.push(...this.vOA('filter',exp));
+    iss.push(...this.vOA('valueSet',exp));
+    return iss;
   }
 }
 /**
@@ -448,13 +448,13 @@ export class ValueSetCompose extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'ValueSet.compose' }
-    this.vOS('lockedDate',exp)
-    this.vOS('inactive',exp)
-    this.vRA('include',exp)
-    this.vOA('exclude',exp)
-    return issues;
+    iss.push(...this.vOS('lockedDate',exp));
+    iss.push(...this.vOS('inactive',exp));
+    iss.push(...this.vRA('include',exp));
+    iss.push(...this.vOA('exclude',exp));
+    return iss;
   }
 }
 /**
@@ -547,11 +547,11 @@ export class ValueSetExpansionParameter extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'ValueSet.expansion.parameter' }
-    this.vRS('name',exp)
-    this.vOS('value',exp)
-    return issues;
+    iss.push(...this.vRS('name',exp));
+    iss.push(...this.vOS('value',exp));
+    return iss;
   }
 }
 /**
@@ -700,17 +700,17 @@ export class ValueSetExpansionContains extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'ValueSet.expansion.contains' }
-    this.vOS('system',exp)
-    this.vOS('abstract',exp)
-    this.vOS('inactive',exp)
-    this.vOS('version',exp)
-    this.vOS('code',exp)
-    this.vOS('display',exp)
-    this.vOA('designation',exp)
-    this.vOA('contains',exp)
-    return issues;
+    iss.push(...this.vOS('system',exp));
+    iss.push(...this.vOS('abstract',exp));
+    iss.push(...this.vOS('inactive',exp));
+    iss.push(...this.vOS('version',exp));
+    iss.push(...this.vOS('code',exp));
+    iss.push(...this.vOS('display',exp));
+    iss.push(...this.vOA('designation',exp));
+    iss.push(...this.vOA('contains',exp));
+    return iss;
   }
 }
 /**
@@ -827,15 +827,15 @@ export class ValueSetExpansion extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'ValueSet.expansion' }
-    this.vOS('identifier',exp)
-    this.vRS('timestamp',exp)
-    this.vOS('total',exp)
-    this.vOS('offset',exp)
-    this.vOA('parameter',exp)
-    this.vOA('contains',exp)
-    return issues;
+    iss.push(...this.vOS('identifier',exp));
+    iss.push(...this.vRS('timestamp',exp));
+    iss.push(...this.vOS('total',exp));
+    iss.push(...this.vOS('offset',exp));
+    iss.push(...this.vOA('parameter',exp));
+    iss.push(...this.vOA('contains',exp));
+    return iss;
   }
 }
 /**
@@ -1140,27 +1140,27 @@ export class ValueSet extends fhir.DomainResource {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'ValueSet' }
-    this.vRS('resourceType',exp)
-    this.vOS('url',exp)
-    this.vOA('identifier',exp)
-    this.vOS('version',exp)
-    this.vOS('name',exp)
-    this.vOS('title',exp)
-    this.vRSV('status',exp,'PublicationStatus',PublicationStatusVsValidation,'r')
-    this.vOS('experimental',exp)
-    this.vOS('date',exp)
-    this.vOS('publisher',exp)
-    this.vOA('contact',exp)
-    this.vOS('description',exp)
-    this.vOA('useContext',exp)
-    this.vOA('jurisdiction',exp)
-    this.vOS('immutable',exp)
-    this.vOS('purpose',exp)
-    this.vOS('copyright',exp)
-    this.vOS('compose',exp)
-    this.vOS('expansion',exp)
-    return issues;
+    iss.push(...this.vRPS('resourceType',exp));
+    iss.push(...this.vOS('url',exp));
+    iss.push(...this.vOA('identifier',exp));
+    iss.push(...this.vOS('version',exp));
+    iss.push(...this.vOS('name',exp));
+    iss.push(...this.vOS('title',exp));
+    iss.push(...this.vRSV('status',exp,'PublicationStatus',PublicationStatusVsValidation,'r'));
+    iss.push(...this.vOS('experimental',exp));
+    iss.push(...this.vOS('date',exp));
+    iss.push(...this.vOS('publisher',exp));
+    iss.push(...this.vOA('contact',exp));
+    iss.push(...this.vOS('description',exp));
+    iss.push(...this.vOA('useContext',exp));
+    iss.push(...this.vOA('jurisdiction',exp));
+    iss.push(...this.vOS('immutable',exp));
+    iss.push(...this.vOS('purpose',exp));
+    iss.push(...this.vOS('copyright',exp));
+    iss.push(...this.vOS('compose',exp));
+    iss.push(...this.vOS('expansion',exp));
+    return iss;
   }
 }

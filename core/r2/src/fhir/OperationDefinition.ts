@@ -80,11 +80,11 @@ export class OperationDefinitionContact extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'OperationDefinition.contact' }
-    this.vOS('name',exp)
-    this.vOA('telecom',exp)
-    return issues;
+    iss.push(...this.vOS('name',exp));
+    iss.push(...this.vOA('telecom',exp));
+    return iss;
   }
 }
 /**
@@ -153,11 +153,11 @@ export class OperationDefinitionParameterBinding extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'OperationDefinition.parameter.binding' }
-    this.vRSV('strength',exp,'BindingStrength',BindingStrengthVsValidation,'r')
-    this.vRS('valueSet',exp)
-    return issues;
+    iss.push(...this.vRSV('strength',exp,'BindingStrength',BindingStrengthVsValidation,'r'));
+    iss.push(...this.vRS('valueSet',exp));
+    return iss;
   }
 }
 /**
@@ -318,18 +318,18 @@ export class OperationDefinitionParameter extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'OperationDefinition.parameter' }
-    this.vRS('name',exp)
-    this.vRSV('use',exp,'OperationParameterUse',OperationParameterUseVsValidation,'r')
-    this.vRS('min',exp)
-    this.vRS('max',exp)
-    this.vOS('documentation',exp)
-    this.vOSV('type',exp,'OperationParameterType',OperationParameterTypeVsValidation,'r')
-    this.vOS('profile',exp)
-    this.vOS('binding',exp)
-    this.vOA('part',exp)
-    return issues;
+    iss.push(...this.vRS('name',exp));
+    iss.push(...this.vRSV('use',exp,'OperationParameterUse',OperationParameterUseVsValidation,'r'));
+    iss.push(...this.vRS('min',exp));
+    iss.push(...this.vRS('max',exp));
+    iss.push(...this.vOS('documentation',exp));
+    iss.push(...this.vOSV('type',exp,'OperationParameterType',OperationParameterTypeVsValidation,'r'));
+    iss.push(...this.vOS('profile',exp));
+    iss.push(...this.vOS('binding',exp));
+    iss.push(...this.vOA('part',exp));
+    return iss;
   }
 }
 /**
@@ -675,28 +675,28 @@ export class OperationDefinition extends fhir.DomainResource {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'OperationDefinition' }
-    this.vRS('resourceType',exp)
-    this.vOS('url',exp)
-    this.vOS('version',exp)
-    this.vRS('name',exp)
-    this.vRSV('status',exp,'ConformanceResourceStatus',ConformanceResourceStatusVsValidation,'r')
-    this.vRSV('kind',exp,'OperationKind',OperationKindVsValidation,'r')
-    this.vOS('experimental',exp)
-    this.vOS('publisher',exp)
-    this.vOA('contact',exp)
-    this.vOS('date',exp)
-    this.vOS('description',exp)
-    this.vOS('requirements',exp)
-    this.vOS('idempotent',exp)
-    this.vRS('code',exp)
-    this.vOS('notes',exp)
-    this.vOS('base',exp)
-    this.vRS('system',exp)
-    this.vOAV('type',exp,'ResourceTypes',ResourceTypesVsValidation,'r')
-    this.vRS('instance',exp)
-    this.vOA('parameter',exp)
-    return issues;
+    iss.push(...this.vRPS('resourceType',exp));
+    iss.push(...this.vOS('url',exp));
+    iss.push(...this.vOS('version',exp));
+    iss.push(...this.vRS('name',exp));
+    iss.push(...this.vRSV('status',exp,'ConformanceResourceStatus',ConformanceResourceStatusVsValidation,'r'));
+    iss.push(...this.vRSV('kind',exp,'OperationKind',OperationKindVsValidation,'r'));
+    iss.push(...this.vOS('experimental',exp));
+    iss.push(...this.vOS('publisher',exp));
+    iss.push(...this.vOA('contact',exp));
+    iss.push(...this.vOS('date',exp));
+    iss.push(...this.vOS('description',exp));
+    iss.push(...this.vOS('requirements',exp));
+    iss.push(...this.vOS('idempotent',exp));
+    iss.push(...this.vRS('code',exp));
+    iss.push(...this.vOS('notes',exp));
+    iss.push(...this.vOS('base',exp));
+    iss.push(...this.vRS('system',exp));
+    iss.push(...this.vOAV('type',exp,'ResourceTypes',ResourceTypesVsValidation,'r'));
+    iss.push(...this.vRS('instance',exp));
+    iss.push(...this.vOA('parameter',exp));
+    return iss;
   }
 }

@@ -1,6 +1,6 @@
 {
   "name": "@fhir-typescript/r2-core",
-  "version": "0.0.12-beta.13",
+  "version": "0.0.12-beta.14",
   "description": "A FHIR TypeScript SDK",
   "keywords": ["fhir", "core", "R2", "DSTU2" ],
   "main": "./dist/index.js",

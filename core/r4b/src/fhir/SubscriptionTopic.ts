@@ -142,14 +142,14 @@ export class SubscriptionTopicResourceTriggerQueryCriteria extends fhir.Backbone
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'SubscriptionTopic.resourceTrigger.queryCriteria' }
-    this.vOS('previous',exp)
-    this.vOSV('resultForCreate',exp,'SubscriptiontopicCrBehavior',SubscriptiontopicCrBehaviorVsValidation,'r')
-    this.vOS('current',exp)
-    this.vOSV('resultForDelete',exp,'SubscriptiontopicCrBehavior',SubscriptiontopicCrBehaviorVsValidation,'r')
-    this.vOS('requireBoth',exp)
-    return issues;
+    iss.push(...this.vOS('previous',exp));
+    iss.push(...this.vOSV('resultForCreate',exp,'SubscriptiontopicCrBehavior',SubscriptiontopicCrBehaviorVsValidation,'r'));
+    iss.push(...this.vOS('current',exp));
+    iss.push(...this.vOSV('resultForDelete',exp,'SubscriptiontopicCrBehavior',SubscriptiontopicCrBehaviorVsValidation,'r'));
+    iss.push(...this.vOS('requireBoth',exp));
+    return iss;
   }
 }
 /**
@@ -257,14 +257,14 @@ export class SubscriptionTopicResourceTrigger extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'SubscriptionTopic.resourceTrigger' }
-    this.vOS('description',exp)
-    this.vRS('resource',exp)
-    this.vOAV('supportedInteraction',exp,'InteractionTrigger',InteractionTriggerVsValidation,'r')
-    this.vOS('queryCriteria',exp)
-    this.vOS('fhirPathCriteria',exp)
-    return issues;
+    iss.push(...this.vOS('description',exp));
+    iss.push(...this.vRS('resource',exp));
+    iss.push(...this.vOAV('supportedInteraction',exp,'InteractionTrigger',InteractionTriggerVsValidation,'r'));
+    iss.push(...this.vOS('queryCriteria',exp));
+    iss.push(...this.vOS('fhirPathCriteria',exp));
+    return iss;
   }
 }
 /**
@@ -336,12 +336,12 @@ export class SubscriptionTopicEventTrigger extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'SubscriptionTopic.eventTrigger' }
-    this.vOS('description',exp)
-    this.vRS('event',exp)
-    this.vRS('resource',exp)
-    return issues;
+    iss.push(...this.vOS('description',exp));
+    iss.push(...this.vRS('event',exp));
+    iss.push(...this.vRS('resource',exp));
+    return iss;
   }
 }
 /**
@@ -457,14 +457,14 @@ export class SubscriptionTopicCanFilterBy extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'SubscriptionTopic.canFilterBy' }
-    this.vOS('description',exp)
-    this.vOS('resource',exp)
-    this.vRS('filterParameter',exp)
-    this.vOS('filterDefinition',exp)
-    this.vOAV('modifier',exp,'SubscriptionSearchModifier',SubscriptionSearchModifierVsValidation,'r')
-    return issues;
+    iss.push(...this.vOS('description',exp));
+    iss.push(...this.vOS('resource',exp));
+    iss.push(...this.vRS('filterParameter',exp));
+    iss.push(...this.vOS('filterDefinition',exp));
+    iss.push(...this.vOAV('modifier',exp,'SubscriptionSearchModifier',SubscriptionSearchModifierVsValidation,'r'));
+    return iss;
   }
 }
 /**
@@ -549,12 +549,12 @@ export class SubscriptionTopicNotificationShape extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'SubscriptionTopic.notificationShape' }
-    this.vRS('resource',exp)
-    this.vOA('include',exp)
-    this.vOA('revInclude',exp)
-    return issues;
+    iss.push(...this.vRS('resource',exp));
+    iss.push(...this.vOA('include',exp));
+    iss.push(...this.vOA('revInclude',exp));
+    return iss;
   }
 }
 /**
@@ -911,31 +911,31 @@ export class SubscriptionTopic extends fhir.DomainResource {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'SubscriptionTopic' }
-    this.vRS('resourceType',exp)
-    this.vRS('url',exp)
-    this.vOA('identifier',exp)
-    this.vOS('version',exp)
-    this.vOS('title',exp)
-    this.vOA('derivedFrom',exp)
-    this.vRSV('status',exp,'PublicationStatus',PublicationStatusVsValidation,'r')
-    this.vOS('experimental',exp)
-    this.vOS('date',exp)
-    this.vOS('publisher',exp)
-    this.vOA('contact',exp)
-    this.vOS('description',exp)
-    this.vOA('useContext',exp)
-    this.vOA('jurisdiction',exp)
-    this.vOS('purpose',exp)
-    this.vOS('copyright',exp)
-    this.vOS('approvalDate',exp)
-    this.vOS('lastReviewDate',exp)
-    this.vOS('effectivePeriod',exp)
-    this.vOA('resourceTrigger',exp)
-    this.vOA('eventTrigger',exp)
-    this.vOA('canFilterBy',exp)
-    this.vOA('notificationShape',exp)
-    return issues;
+    iss.push(...this.vRPS('resourceType',exp));
+    iss.push(...this.vRS('url',exp));
+    iss.push(...this.vOA('identifier',exp));
+    iss.push(...this.vOS('version',exp));
+    iss.push(...this.vOS('title',exp));
+    iss.push(...this.vOA('derivedFrom',exp));
+    iss.push(...this.vRSV('status',exp,'PublicationStatus',PublicationStatusVsValidation,'r'));
+    iss.push(...this.vOS('experimental',exp));
+    iss.push(...this.vOS('date',exp));
+    iss.push(...this.vOS('publisher',exp));
+    iss.push(...this.vOA('contact',exp));
+    iss.push(...this.vOS('description',exp));
+    iss.push(...this.vOA('useContext',exp));
+    iss.push(...this.vOA('jurisdiction',exp));
+    iss.push(...this.vOS('purpose',exp));
+    iss.push(...this.vOS('copyright',exp));
+    iss.push(...this.vOS('approvalDate',exp));
+    iss.push(...this.vOS('lastReviewDate',exp));
+    iss.push(...this.vOS('effectivePeriod',exp));
+    iss.push(...this.vOA('resourceTrigger',exp));
+    iss.push(...this.vOA('eventTrigger',exp));
+    iss.push(...this.vOA('canFilterBy',exp));
+    iss.push(...this.vOA('notificationShape',exp));
+    return iss;
   }
 }

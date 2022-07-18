@@ -88,12 +88,12 @@ export class DeviceComponentProductionSpecification extends fhir.BackboneElement
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'DeviceComponent.productionSpecification' }
-    this.vOS('specType',exp)
-    this.vOS('componentId',exp)
-    this.vOS('productionSpec',exp)
-    return issues;
+    iss.push(...this.vOS('specType',exp));
+    iss.push(...this.vOS('componentId',exp));
+    iss.push(...this.vOS('productionSpec',exp));
+    return iss;
   }
 }
 /**
@@ -239,19 +239,19 @@ export class DeviceComponent extends fhir.DomainResource {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'DeviceComponent' }
-    this.vRS('resourceType',exp)
-    this.vRS('identifier',exp)
-    this.vRS('type',exp)
-    this.vOS('lastSystemChange',exp)
-    this.vOS('source',exp)
-    this.vOS('parent',exp)
-    this.vOA('operationalStatus',exp)
-    this.vOS('parameterGroup',exp)
-    this.vOSV('measurementPrinciple',exp,'MeasurementPrinciple',MeasurementPrincipleVsValidation,'r')
-    this.vOA('productionSpecification',exp)
-    this.vOS('languageCode',exp)
-    return issues;
+    iss.push(...this.vRPS('resourceType',exp));
+    iss.push(...this.vRS('identifier',exp));
+    iss.push(...this.vRS('type',exp));
+    iss.push(...this.vOS('lastSystemChange',exp));
+    iss.push(...this.vOS('source',exp));
+    iss.push(...this.vOS('parent',exp));
+    iss.push(...this.vOA('operationalStatus',exp));
+    iss.push(...this.vOS('parameterGroup',exp));
+    iss.push(...this.vOSV('measurementPrinciple',exp,'MeasurementPrinciple',MeasurementPrincipleVsValidation,'r'));
+    iss.push(...this.vOA('productionSpecification',exp));
+    iss.push(...this.vOS('languageCode',exp));
+    return iss;
   }
 }

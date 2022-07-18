@@ -61,11 +61,11 @@ export class ClinicalImpressionInvestigation extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'ClinicalImpression.investigation' }
-    this.vRS('code',exp)
-    this.vOA('item',exp)
-    return issues;
+    iss.push(...this.vRS('code',exp));
+    iss.push(...this.vOA('item',exp));
+    return iss;
   }
 }
 /**
@@ -133,11 +133,11 @@ export class ClinicalImpressionFinding extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'ClinicalImpression.finding' }
-    this.vRS('item',exp)
-    this.vOS('basis',exp)
-    return issues;
+    iss.push(...this.vRS('item',exp));
+    iss.push(...this.vOS('basis',exp));
+    return iss;
   }
 }
 /**
@@ -411,28 +411,28 @@ export class ClinicalImpression extends fhir.DomainResource {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'ClinicalImpression' }
-    this.vRS('resourceType',exp)
-    this.vOA('identifier',exp)
-    this.vRSV('status',exp,'ClinicalImpressionStatus',ClinicalImpressionStatusVsValidation,'r')
-    this.vOS('code',exp)
-    this.vOS('description',exp)
-    this.vRS('subject',exp)
-    this.vOS('context',exp)
-    this.vOS('effective',exp)
-    this.vOS('date',exp)
-    this.vOS('assessor',exp)
-    this.vOS('previous',exp)
-    this.vOA('problem',exp)
-    this.vOA('investigation',exp)
-    this.vOA('protocol',exp)
-    this.vOS('summary',exp)
-    this.vOA('finding',exp)
-    this.vOA('prognosisCodeableConcept',exp)
-    this.vOA('prognosisReference',exp)
-    this.vOA('action',exp)
-    this.vOA('note',exp)
-    return issues;
+    iss.push(...this.vRPS('resourceType',exp));
+    iss.push(...this.vOA('identifier',exp));
+    iss.push(...this.vRSV('status',exp,'ClinicalImpressionStatus',ClinicalImpressionStatusVsValidation,'r'));
+    iss.push(...this.vOS('code',exp));
+    iss.push(...this.vOS('description',exp));
+    iss.push(...this.vRS('subject',exp));
+    iss.push(...this.vOS('context',exp));
+    iss.push(...this.vOS('effective',exp));
+    iss.push(...this.vOS('date',exp));
+    iss.push(...this.vOS('assessor',exp));
+    iss.push(...this.vOS('previous',exp));
+    iss.push(...this.vOA('problem',exp));
+    iss.push(...this.vOA('investigation',exp));
+    iss.push(...this.vOA('protocol',exp));
+    iss.push(...this.vOS('summary',exp));
+    iss.push(...this.vOA('finding',exp));
+    iss.push(...this.vOA('prognosisCodeableConcept',exp));
+    iss.push(...this.vOA('prognosisReference',exp));
+    iss.push(...this.vOA('action',exp));
+    iss.push(...this.vOA('note',exp));
+    return iss;
   }
 }

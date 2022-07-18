@@ -277,25 +277,25 @@ export class CarePlanActivityDetail extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'CarePlan.activity.detail' }
-    this.vOS('category',exp)
-    this.vOS('definition',exp)
-    this.vOS('code',exp)
-    this.vOA('reasonCode',exp)
-    this.vOA('reasonReference',exp)
-    this.vOA('goal',exp)
-    this.vRSV('status',exp,'CarePlanActivityStatus',CarePlanActivityStatusVsValidation,'r')
-    this.vOS('statusReason',exp)
-    this.vOS('prohibited',exp)
-    this.vOS('scheduled',exp)
-    this.vOS('location',exp)
-    this.vOA('performer',exp)
-    this.vOS('product',exp)
-    this.vOS('dailyAmount',exp)
-    this.vOS('quantity',exp)
-    this.vOS('description',exp)
-    return issues;
+    iss.push(...this.vOS('category',exp));
+    iss.push(...this.vOS('definition',exp));
+    iss.push(...this.vOS('code',exp));
+    iss.push(...this.vOA('reasonCode',exp));
+    iss.push(...this.vOA('reasonReference',exp));
+    iss.push(...this.vOA('goal',exp));
+    iss.push(...this.vRSV('status',exp,'CarePlanActivityStatus',CarePlanActivityStatusVsValidation,'r'));
+    iss.push(...this.vOS('statusReason',exp));
+    iss.push(...this.vOS('prohibited',exp));
+    iss.push(...this.vOS('scheduled',exp));
+    iss.push(...this.vOS('location',exp));
+    iss.push(...this.vOA('performer',exp));
+    iss.push(...this.vOS('product',exp));
+    iss.push(...this.vOS('dailyAmount',exp));
+    iss.push(...this.vOS('quantity',exp));
+    iss.push(...this.vOS('description',exp));
+    return iss;
   }
 }
 /**
@@ -372,14 +372,14 @@ export class CarePlanActivity extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'CarePlan.activity' }
-    this.vOA('outcomeCodeableConcept',exp)
-    this.vOA('outcomeReference',exp)
-    this.vOA('progress',exp)
-    this.vOS('reference',exp)
-    this.vOS('detail',exp)
-    return issues;
+    iss.push(...this.vOA('outcomeCodeableConcept',exp));
+    iss.push(...this.vOA('outcomeReference',exp));
+    iss.push(...this.vOA('progress',exp));
+    iss.push(...this.vOS('reference',exp));
+    iss.push(...this.vOS('detail',exp));
+    return iss;
   }
 }
 /**
@@ -645,29 +645,29 @@ export class CarePlan extends fhir.DomainResource {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'CarePlan' }
-    this.vRS('resourceType',exp)
-    this.vOA('identifier',exp)
-    this.vOA('definition',exp)
-    this.vOA('basedOn',exp)
-    this.vOA('replaces',exp)
-    this.vOA('partOf',exp)
-    this.vRSV('status',exp,'CarePlanStatus',CarePlanStatusVsValidation,'r')
-    this.vRSV('intent',exp,'CarePlanIntent',CarePlanIntentVsValidation,'r')
-    this.vOA('category',exp)
-    this.vOS('title',exp)
-    this.vOS('description',exp)
-    this.vRS('subject',exp)
-    this.vOS('context',exp)
-    this.vOS('period',exp)
-    this.vOA('author',exp)
-    this.vOA('careTeam',exp)
-    this.vOA('addresses',exp)
-    this.vOA('supportingInfo',exp)
-    this.vOA('goal',exp)
-    this.vOA('activity',exp)
-    this.vOA('note',exp)
-    return issues;
+    iss.push(...this.vRPS('resourceType',exp));
+    iss.push(...this.vOA('identifier',exp));
+    iss.push(...this.vOA('definition',exp));
+    iss.push(...this.vOA('basedOn',exp));
+    iss.push(...this.vOA('replaces',exp));
+    iss.push(...this.vOA('partOf',exp));
+    iss.push(...this.vRSV('status',exp,'CarePlanStatus',CarePlanStatusVsValidation,'r'));
+    iss.push(...this.vRSV('intent',exp,'CarePlanIntent',CarePlanIntentVsValidation,'r'));
+    iss.push(...this.vOA('category',exp));
+    iss.push(...this.vOS('title',exp));
+    iss.push(...this.vOS('description',exp));
+    iss.push(...this.vRS('subject',exp));
+    iss.push(...this.vOS('context',exp));
+    iss.push(...this.vOS('period',exp));
+    iss.push(...this.vOA('author',exp));
+    iss.push(...this.vOA('careTeam',exp));
+    iss.push(...this.vOA('addresses',exp));
+    iss.push(...this.vOA('supportingInfo',exp));
+    iss.push(...this.vOA('goal',exp));
+    iss.push(...this.vOA('activity',exp));
+    iss.push(...this.vOA('note',exp));
+    return iss;
   }
 }

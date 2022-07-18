@@ -72,11 +72,11 @@ export class StructureDefinitionContact extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'StructureDefinition.contact' }
-    this.vOS('name',exp)
-    this.vOA('telecom',exp)
-    return issues;
+    iss.push(...this.vOS('name',exp));
+    iss.push(...this.vOA('telecom',exp));
+    return iss;
   }
 }
 /**
@@ -172,13 +172,13 @@ export class StructureDefinitionMapping extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'StructureDefinition.mapping' }
-    this.vRS('identity',exp)
-    this.vOS('uri',exp)
-    this.vOS('name',exp)
-    this.vOS('comments',exp)
-    return issues;
+    iss.push(...this.vRS('identity',exp));
+    iss.push(...this.vOS('uri',exp));
+    iss.push(...this.vOS('name',exp));
+    iss.push(...this.vOS('comments',exp));
+    return iss;
   }
 }
 /**
@@ -215,10 +215,10 @@ export class StructureDefinitionSnapshot extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'StructureDefinition.snapshot' }
-    this.vRA('element',exp)
-    return issues;
+    iss.push(...this.vRA('element',exp));
+    return iss;
   }
 }
 /**
@@ -255,10 +255,10 @@ export class StructureDefinitionDifferential extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'StructureDefinition.differential' }
-    this.vRA('element',exp)
-    return issues;
+    iss.push(...this.vRA('element',exp));
+    return iss;
   }
 }
 /**
@@ -676,34 +676,34 @@ export class StructureDefinition extends fhir.DomainResource {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'StructureDefinition' }
-    this.vRS('resourceType',exp)
-    this.vRS('url',exp)
-    this.vOA('identifier',exp)
-    this.vOS('version',exp)
-    this.vRS('name',exp)
-    this.vOS('display',exp)
-    this.vRSV('status',exp,'ConformanceResourceStatus',ConformanceResourceStatusVsValidation,'r')
-    this.vOS('experimental',exp)
-    this.vOS('publisher',exp)
-    this.vOA('contact',exp)
-    this.vOS('date',exp)
-    this.vOS('description',exp)
-    this.vOA('useContext',exp)
-    this.vOS('requirements',exp)
-    this.vOS('copyright',exp)
-    this.vOA('code',exp)
-    this.vOS('fhirVersion',exp)
-    this.vOA('mapping',exp)
-    this.vRSV('kind',exp,'StructureDefinitionKind',StructureDefinitionKindVsValidation,'r')
-    this.vOSV('constrainedType',exp,'DefinedTypes',DefinedTypesVsValidation,'r')
-    this.vRS('abstract',exp)
-    this.vOSV('contextType',exp,'ExtensionContext',ExtensionContextVsValidation,'r')
-    this.vOA('context',exp)
-    this.vOS('base',exp)
-    this.vOS('snapshot',exp)
-    this.vOS('differential',exp)
-    return issues;
+    iss.push(...this.vRPS('resourceType',exp));
+    iss.push(...this.vRS('url',exp));
+    iss.push(...this.vOA('identifier',exp));
+    iss.push(...this.vOS('version',exp));
+    iss.push(...this.vRS('name',exp));
+    iss.push(...this.vOS('display',exp));
+    iss.push(...this.vRSV('status',exp,'ConformanceResourceStatus',ConformanceResourceStatusVsValidation,'r'));
+    iss.push(...this.vOS('experimental',exp));
+    iss.push(...this.vOS('publisher',exp));
+    iss.push(...this.vOA('contact',exp));
+    iss.push(...this.vOS('date',exp));
+    iss.push(...this.vOS('description',exp));
+    iss.push(...this.vOA('useContext',exp));
+    iss.push(...this.vOS('requirements',exp));
+    iss.push(...this.vOS('copyright',exp));
+    iss.push(...this.vOA('code',exp));
+    iss.push(...this.vOS('fhirVersion',exp));
+    iss.push(...this.vOA('mapping',exp));
+    iss.push(...this.vRSV('kind',exp,'StructureDefinitionKind',StructureDefinitionKindVsValidation,'r'));
+    iss.push(...this.vOSV('constrainedType',exp,'DefinedTypes',DefinedTypesVsValidation,'r'));
+    iss.push(...this.vRS('abstract',exp));
+    iss.push(...this.vOSV('contextType',exp,'ExtensionContext',ExtensionContextVsValidation,'r'));
+    iss.push(...this.vOA('context',exp));
+    iss.push(...this.vOS('base',exp));
+    iss.push(...this.vOS('snapshot',exp));
+    iss.push(...this.vOS('differential',exp));
+    return iss;
   }
 }

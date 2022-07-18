@@ -140,19 +140,19 @@ export class EnrollmentRequest extends fhir.DomainResource {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'EnrollmentRequest' }
-    this.vRS('resourceType',exp)
-    this.vOA('identifier',exp)
-    this.vOS('ruleset',exp)
-    this.vOS('originalRuleset',exp)
-    this.vOS('created',exp)
-    this.vOS('target',exp)
-    this.vOS('provider',exp)
-    this.vOS('organization',exp)
-    this.vRS('subject',exp)
-    this.vRS('coverage',exp)
-    this.vRS('relationship',exp)
-    return issues;
+    iss.push(...this.vRPS('resourceType',exp));
+    iss.push(...this.vOA('identifier',exp));
+    iss.push(...this.vOS('ruleset',exp));
+    iss.push(...this.vOS('originalRuleset',exp));
+    iss.push(...this.vOS('created',exp));
+    iss.push(...this.vOS('target',exp));
+    iss.push(...this.vOS('provider',exp));
+    iss.push(...this.vOS('organization',exp));
+    iss.push(...this.vRS('subject',exp));
+    iss.push(...this.vRS('coverage',exp));
+    iss.push(...this.vRS('relationship',exp));
+    return iss;
   }
 }

@@ -47,11 +47,11 @@ export class SubstanceAmountReferenceRange extends fhir.FhirElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'SubstanceAmount.referenceRange' }
-    this.vOS('lowLimit',exp)
-    this.vOS('highLimit',exp)
-    return issues;
+    iss.push(...this.vOS('lowLimit',exp));
+    iss.push(...this.vOS('highLimit',exp));
+    return iss;
   }
 }
 /**
@@ -141,12 +141,12 @@ export class SubstanceAmount extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'SubstanceAmount' }
-    this.vOS('amount',exp)
-    this.vOS('amountType',exp)
-    this.vOS('amountText',exp)
-    this.vOS('referenceRange',exp)
-    return issues;
+    iss.push(...this.vOS('amount',exp));
+    iss.push(...this.vOS('amountType',exp));
+    iss.push(...this.vOS('amountText',exp));
+    iss.push(...this.vOS('referenceRange',exp));
+    return iss;
   }
 }

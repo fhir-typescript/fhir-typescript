@@ -288,27 +288,27 @@ export class MedicationStatement extends fhir.DomainResource {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'MedicationStatement' }
-    this.vRS('resourceType',exp)
-    this.vOA('identifier',exp)
-    this.vOA('basedOn',exp)
-    this.vOA('partOf',exp)
-    this.vOS('context',exp)
-    this.vRSV('status',exp,'MedicationStatementStatus',MedicationStatementStatusVsValidation,'r')
-    this.vOS('category',exp)
-    this.vRS('medication',exp)
-    this.vOS('effective',exp)
-    this.vOS('dateAsserted',exp)
-    this.vOS('informationSource',exp)
-    this.vRS('subject',exp)
-    this.vOA('derivedFrom',exp)
-    this.vRSV('taken',exp,'MedicationStatementTaken',MedicationStatementTakenVsValidation,'r')
-    this.vOA('reasonNotTaken',exp)
-    this.vOA('reasonCode',exp)
-    this.vOA('reasonReference',exp)
-    this.vOA('note',exp)
-    this.vOA('dosage',exp)
-    return issues;
+    iss.push(...this.vRPS('resourceType',exp));
+    iss.push(...this.vOA('identifier',exp));
+    iss.push(...this.vOA('basedOn',exp));
+    iss.push(...this.vOA('partOf',exp));
+    iss.push(...this.vOS('context',exp));
+    iss.push(...this.vRSV('status',exp,'MedicationStatementStatus',MedicationStatementStatusVsValidation,'r'));
+    iss.push(...this.vOS('category',exp));
+    iss.push(...this.vRS('medication',exp));
+    iss.push(...this.vOS('effective',exp));
+    iss.push(...this.vOS('dateAsserted',exp));
+    iss.push(...this.vOS('informationSource',exp));
+    iss.push(...this.vRS('subject',exp));
+    iss.push(...this.vOA('derivedFrom',exp));
+    iss.push(...this.vRSV('taken',exp,'MedicationStatementTaken',MedicationStatementTakenVsValidation,'r'));
+    iss.push(...this.vOA('reasonNotTaken',exp));
+    iss.push(...this.vOA('reasonCode',exp));
+    iss.push(...this.vOA('reasonReference',exp));
+    iss.push(...this.vOA('note',exp));
+    iss.push(...this.vOA('dosage',exp));
+    return iss;
   }
 }

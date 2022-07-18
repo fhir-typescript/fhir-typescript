@@ -148,19 +148,19 @@ export class PaymentReconciliationDetail extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'PaymentReconciliation.detail' }
-    this.vOS('identifier',exp)
-    this.vOS('predecessor',exp)
-    this.vRS('type',exp)
-    this.vOS('request',exp)
-    this.vOS('submitter',exp)
-    this.vOS('response',exp)
-    this.vOS('date',exp)
-    this.vOS('responsible',exp)
-    this.vOS('payee',exp)
-    this.vOS('amount',exp)
-    return issues;
+    iss.push(...this.vOS('identifier',exp));
+    iss.push(...this.vOS('predecessor',exp));
+    iss.push(...this.vRS('type',exp));
+    iss.push(...this.vOS('request',exp));
+    iss.push(...this.vOS('submitter',exp));
+    iss.push(...this.vOS('response',exp));
+    iss.push(...this.vOS('date',exp));
+    iss.push(...this.vOS('responsible',exp));
+    iss.push(...this.vOS('payee',exp));
+    iss.push(...this.vOS('amount',exp));
+    return iss;
   }
 }
 /**
@@ -221,11 +221,11 @@ export class PaymentReconciliationProcessNote extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'PaymentReconciliation.processNote' }
-    this.vOSV('type',exp,'NoteType',NoteTypeVsValidation,'r')
-    this.vOS('text',exp)
-    return issues;
+    iss.push(...this.vOSV('type',exp,'NoteType',NoteTypeVsValidation,'r'));
+    iss.push(...this.vOS('text',exp));
+    return iss;
   }
 }
 /**
@@ -443,24 +443,24 @@ export class PaymentReconciliation extends fhir.DomainResource {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'PaymentReconciliation' }
-    this.vRS('resourceType',exp)
-    this.vOA('identifier',exp)
-    this.vRSV('status',exp,'FmStatus',FmStatusVsValidation,'r')
-    this.vOS('period',exp)
-    this.vRS('created',exp)
-    this.vOS('paymentIssuer',exp)
-    this.vOS('request',exp)
-    this.vOS('requestor',exp)
-    this.vOSV('outcome',exp,'RemittanceOutcome',RemittanceOutcomeVsValidation,'r')
-    this.vOS('disposition',exp)
-    this.vRS('paymentDate',exp)
-    this.vRS('paymentAmount',exp)
-    this.vOS('paymentIdentifier',exp)
-    this.vOA('detail',exp)
-    this.vOS('formCode',exp)
-    this.vOA('processNote',exp)
-    return issues;
+    iss.push(...this.vRPS('resourceType',exp));
+    iss.push(...this.vOA('identifier',exp));
+    iss.push(...this.vRSV('status',exp,'FmStatus',FmStatusVsValidation,'r'));
+    iss.push(...this.vOS('period',exp));
+    iss.push(...this.vRS('created',exp));
+    iss.push(...this.vOS('paymentIssuer',exp));
+    iss.push(...this.vOS('request',exp));
+    iss.push(...this.vOS('requestor',exp));
+    iss.push(...this.vOSV('outcome',exp,'RemittanceOutcome',RemittanceOutcomeVsValidation,'r'));
+    iss.push(...this.vOS('disposition',exp));
+    iss.push(...this.vRS('paymentDate',exp));
+    iss.push(...this.vRS('paymentAmount',exp));
+    iss.push(...this.vOS('paymentIdentifier',exp));
+    iss.push(...this.vOA('detail',exp));
+    iss.push(...this.vOS('formCode',exp));
+    iss.push(...this.vOA('processNote',exp));
+    return iss;
   }
 }

@@ -59,11 +59,11 @@ export class ProcessResponseNotes extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'ProcessResponse.notes' }
-    this.vOSV('type',exp,'NoteType',NoteTypeVsValidation,'r')
-    this.vOS('text',exp)
-    return issues;
+    iss.push(...this.vOSV('type',exp,'NoteType',NoteTypeVsValidation,'r'));
+    iss.push(...this.vOS('text',exp));
+    return iss;
   }
 }
 /**
@@ -235,22 +235,22 @@ export class ProcessResponse extends fhir.DomainResource {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'ProcessResponse' }
-    this.vRS('resourceType',exp)
-    this.vOA('identifier',exp)
-    this.vOS('request',exp)
-    this.vOS('outcome',exp)
-    this.vOS('disposition',exp)
-    this.vOS('ruleset',exp)
-    this.vOS('originalRuleset',exp)
-    this.vOS('created',exp)
-    this.vOS('organization',exp)
-    this.vOS('requestProvider',exp)
-    this.vOS('requestOrganization',exp)
-    this.vOS('form',exp)
-    this.vOA('notes',exp)
-    this.vOA('error',exp)
-    return issues;
+    iss.push(...this.vRPS('resourceType',exp));
+    iss.push(...this.vOA('identifier',exp));
+    iss.push(...this.vOS('request',exp));
+    iss.push(...this.vOS('outcome',exp));
+    iss.push(...this.vOS('disposition',exp));
+    iss.push(...this.vOS('ruleset',exp));
+    iss.push(...this.vOS('originalRuleset',exp));
+    iss.push(...this.vOS('created',exp));
+    iss.push(...this.vOS('organization',exp));
+    iss.push(...this.vOS('requestProvider',exp));
+    iss.push(...this.vOS('requestOrganization',exp));
+    iss.push(...this.vOS('form',exp));
+    iss.push(...this.vOA('notes',exp));
+    iss.push(...this.vOA('error',exp));
+    return iss;
   }
 }

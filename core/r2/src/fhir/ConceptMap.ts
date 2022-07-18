@@ -64,11 +64,11 @@ export class ConceptMapContact extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'ConceptMap.contact' }
-    this.vOS('name',exp)
-    this.vOA('telecom',exp)
-    return issues;
+    iss.push(...this.vOS('name',exp));
+    iss.push(...this.vOA('telecom',exp));
+    return iss;
   }
 }
 /**
@@ -149,12 +149,12 @@ export class ConceptMapElementTargetDependsOn extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'ConceptMap.element.target.dependsOn' }
-    this.vRS('element',exp)
-    this.vRS('codeSystem',exp)
-    this.vRS('code',exp)
-    return issues;
+    iss.push(...this.vRS('element',exp));
+    iss.push(...this.vRS('codeSystem',exp));
+    iss.push(...this.vRS('code',exp));
+    return iss;
   }
 }
 /**
@@ -270,15 +270,15 @@ export class ConceptMapElementTarget extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'ConceptMap.element.target' }
-    this.vOS('codeSystem',exp)
-    this.vOS('code',exp)
-    this.vRSV('equivalence',exp,'ConceptMapEquivalence',ConceptMapEquivalenceVsValidation,'r')
-    this.vOS('comments',exp)
-    this.vOA('dependsOn',exp)
-    this.vOA('product',exp)
-    return issues;
+    iss.push(...this.vOS('codeSystem',exp));
+    iss.push(...this.vOS('code',exp));
+    iss.push(...this.vRSV('equivalence',exp,'ConceptMapEquivalence',ConceptMapEquivalenceVsValidation,'r'));
+    iss.push(...this.vOS('comments',exp));
+    iss.push(...this.vOA('dependsOn',exp));
+    iss.push(...this.vOA('product',exp));
+    return iss;
   }
 }
 /**
@@ -349,12 +349,12 @@ export class ConceptMapElement extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'ConceptMap.element' }
-    this.vOS('codeSystem',exp)
-    this.vOS('code',exp)
-    this.vOA('target',exp)
-    return issues;
+    iss.push(...this.vOS('codeSystem',exp));
+    iss.push(...this.vOS('code',exp));
+    iss.push(...this.vOA('target',exp));
+    return iss;
   }
 }
 /**
@@ -648,25 +648,25 @@ export class ConceptMap extends fhir.DomainResource {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'ConceptMap' }
-    this.vRS('resourceType',exp)
-    this.vOS('url',exp)
-    this.vOS('identifier',exp)
-    this.vOS('version',exp)
-    this.vOS('name',exp)
-    this.vRSV('status',exp,'ConformanceResourceStatus',ConformanceResourceStatusVsValidation,'r')
-    this.vOS('experimental',exp)
-    this.vOS('publisher',exp)
-    this.vOA('contact',exp)
-    this.vOS('date',exp)
-    this.vOS('description',exp)
-    this.vOA('useContext',exp)
-    this.vOS('requirements',exp)
-    this.vOS('copyright',exp)
-    this.vRS('source',exp)
-    this.vRS('target',exp)
-    this.vOA('element',exp)
-    return issues;
+    iss.push(...this.vRPS('resourceType',exp));
+    iss.push(...this.vOS('url',exp));
+    iss.push(...this.vOS('identifier',exp));
+    iss.push(...this.vOS('version',exp));
+    iss.push(...this.vOS('name',exp));
+    iss.push(...this.vRSV('status',exp,'ConformanceResourceStatus',ConformanceResourceStatusVsValidation,'r'));
+    iss.push(...this.vOS('experimental',exp));
+    iss.push(...this.vOS('publisher',exp));
+    iss.push(...this.vOA('contact',exp));
+    iss.push(...this.vOS('date',exp));
+    iss.push(...this.vOS('description',exp));
+    iss.push(...this.vOA('useContext',exp));
+    iss.push(...this.vOS('requirements',exp));
+    iss.push(...this.vOS('copyright',exp));
+    iss.push(...this.vRS('source',exp));
+    iss.push(...this.vRS('target',exp));
+    iss.push(...this.vOA('element',exp));
+    return iss;
   }
 }

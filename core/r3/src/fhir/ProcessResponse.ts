@@ -75,11 +75,11 @@ export class ProcessResponseProcessNote extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'ProcessResponse.processNote' }
-    this.vOSV('type',exp,'NoteType',NoteTypeVsValidation,'r')
-    this.vOS('text',exp)
-    return issues;
+    iss.push(...this.vOSV('type',exp,'NoteType',NoteTypeVsValidation,'r'));
+    iss.push(...this.vOS('text',exp));
+    return iss;
   }
 }
 /**
@@ -260,22 +260,22 @@ export class ProcessResponse extends fhir.DomainResource {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'ProcessResponse' }
-    this.vRS('resourceType',exp)
-    this.vOA('identifier',exp)
-    this.vOSV('status',exp,'FmStatus',FmStatusVsValidation,'r')
-    this.vOS('created',exp)
-    this.vOS('organization',exp)
-    this.vOS('request',exp)
-    this.vOS('outcome',exp)
-    this.vOS('disposition',exp)
-    this.vOS('requestProvider',exp)
-    this.vOS('requestOrganization',exp)
-    this.vOS('form',exp)
-    this.vOA('processNote',exp)
-    this.vOA('error',exp)
-    this.vOA('communicationRequest',exp)
-    return issues;
+    iss.push(...this.vRPS('resourceType',exp));
+    iss.push(...this.vOA('identifier',exp));
+    iss.push(...this.vOSV('status',exp,'FmStatus',FmStatusVsValidation,'r'));
+    iss.push(...this.vOS('created',exp));
+    iss.push(...this.vOS('organization',exp));
+    iss.push(...this.vOS('request',exp));
+    iss.push(...this.vOS('outcome',exp));
+    iss.push(...this.vOS('disposition',exp));
+    iss.push(...this.vOS('requestProvider',exp));
+    iss.push(...this.vOS('requestOrganization',exp));
+    iss.push(...this.vOS('form',exp));
+    iss.push(...this.vOA('processNote',exp));
+    iss.push(...this.vOA('error',exp));
+    iss.push(...this.vOA('communicationRequest',exp));
+    return iss;
   }
 }

@@ -72,11 +72,11 @@ export class SearchParameterContact extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'SearchParameter.contact' }
-    this.vOS('name',exp)
-    this.vOA('telecom',exp)
-    return issues;
+    iss.push(...this.vOS('name',exp));
+    iss.push(...this.vOA('telecom',exp));
+    return iss;
   }
 }
 /**
@@ -369,24 +369,24 @@ export class SearchParameter extends fhir.DomainResource {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'SearchParameter' }
-    this.vRS('resourceType',exp)
-    this.vRS('url',exp)
-    this.vRS('name',exp)
-    this.vOSV('status',exp,'ConformanceResourceStatus',ConformanceResourceStatusVsValidation,'r')
-    this.vOS('experimental',exp)
-    this.vOS('publisher',exp)
-    this.vOA('contact',exp)
-    this.vOS('date',exp)
-    this.vOS('requirements',exp)
-    this.vRS('code',exp)
-    this.vRSV('base',exp,'ResourceTypes',ResourceTypesVsValidation,'r')
-    this.vRSV('type',exp,'SearchParamType',SearchParamTypeVsValidation,'r')
-    this.vRS('description',exp)
-    this.vOS('xpath',exp)
-    this.vOSV('xpathUsage',exp,'SearchXpathUsage',SearchXpathUsageVsValidation,'r')
-    this.vOAV('target',exp,'ResourceTypes',ResourceTypesVsValidation,'r')
-    return issues;
+    iss.push(...this.vRPS('resourceType',exp));
+    iss.push(...this.vRS('url',exp));
+    iss.push(...this.vRS('name',exp));
+    iss.push(...this.vOSV('status',exp,'ConformanceResourceStatus',ConformanceResourceStatusVsValidation,'r'));
+    iss.push(...this.vOS('experimental',exp));
+    iss.push(...this.vOS('publisher',exp));
+    iss.push(...this.vOA('contact',exp));
+    iss.push(...this.vOS('date',exp));
+    iss.push(...this.vOS('requirements',exp));
+    iss.push(...this.vRS('code',exp));
+    iss.push(...this.vRSV('base',exp,'ResourceTypes',ResourceTypesVsValidation,'r'));
+    iss.push(...this.vRSV('type',exp,'SearchParamType',SearchParamTypeVsValidation,'r'));
+    iss.push(...this.vRS('description',exp));
+    iss.push(...this.vOS('xpath',exp));
+    iss.push(...this.vOSV('xpathUsage',exp,'SearchXpathUsage',SearchXpathUsageVsValidation,'r'));
+    iss.push(...this.vOAV('target',exp,'ResourceTypes',ResourceTypesVsValidation,'r'));
+    return iss;
   }
 }

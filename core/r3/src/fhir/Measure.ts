@@ -131,14 +131,14 @@ export class MeasureGroupPopulation extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'Measure.group.population' }
-    this.vOS('identifier',exp)
-    this.vOS('code',exp)
-    this.vOS('name',exp)
-    this.vOS('description',exp)
-    this.vRS('criteria',exp)
-    return issues;
+    iss.push(...this.vOS('identifier',exp));
+    iss.push(...this.vOS('code',exp));
+    iss.push(...this.vOS('name',exp));
+    iss.push(...this.vOS('description',exp));
+    iss.push(...this.vRS('criteria',exp));
+    return iss;
   }
 }
 /**
@@ -208,12 +208,12 @@ export class MeasureGroupStratifier extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'Measure.group.stratifier' }
-    this.vOS('identifier',exp)
-    this.vOS('criteria',exp)
-    this.vOS('path',exp)
-    return issues;
+    iss.push(...this.vOS('identifier',exp));
+    iss.push(...this.vOS('criteria',exp));
+    iss.push(...this.vOS('path',exp));
+    return iss;
   }
 }
 /**
@@ -304,14 +304,14 @@ export class MeasureGroup extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'Measure.group' }
-    this.vRS('identifier',exp)
-    this.vOS('name',exp)
-    this.vOS('description',exp)
-    this.vOA('population',exp)
-    this.vOA('stratifier',exp)
-    return issues;
+    iss.push(...this.vRS('identifier',exp));
+    iss.push(...this.vOS('name',exp));
+    iss.push(...this.vOS('description',exp));
+    iss.push(...this.vOA('population',exp));
+    iss.push(...this.vOA('stratifier',exp));
+    return iss;
   }
 }
 /**
@@ -391,13 +391,13 @@ export class MeasureSupplementalData extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'Measure.supplementalData' }
-    this.vOS('identifier',exp)
-    this.vOA('usage',exp)
-    this.vOS('criteria',exp)
-    this.vOS('path',exp)
-    return issues;
+    iss.push(...this.vOS('identifier',exp));
+    iss.push(...this.vOA('usage',exp));
+    iss.push(...this.vOS('criteria',exp));
+    iss.push(...this.vOS('path',exp));
+    return iss;
   }
 }
 /**
@@ -967,46 +967,46 @@ export class Measure extends fhir.DomainResource {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'Measure' }
-    this.vRS('resourceType',exp)
-    this.vOS('url',exp)
-    this.vOA('identifier',exp)
-    this.vOS('version',exp)
-    this.vOS('name',exp)
-    this.vOS('title',exp)
-    this.vRSV('status',exp,'PublicationStatus',PublicationStatusVsValidation,'r')
-    this.vOS('experimental',exp)
-    this.vOS('date',exp)
-    this.vOS('publisher',exp)
-    this.vOS('description',exp)
-    this.vOS('purpose',exp)
-    this.vOS('usage',exp)
-    this.vOS('approvalDate',exp)
-    this.vOS('lastReviewDate',exp)
-    this.vOS('effectivePeriod',exp)
-    this.vOA('useContext',exp)
-    this.vOA('jurisdiction',exp)
-    this.vOA('topic',exp)
-    this.vOA('contributor',exp)
-    this.vOA('contact',exp)
-    this.vOS('copyright',exp)
-    this.vOA('relatedArtifact',exp)
-    this.vOA('library',exp)
-    this.vOS('disclaimer',exp)
-    this.vOS('scoring',exp)
-    this.vOS('compositeScoring',exp)
-    this.vOA('type',exp)
-    this.vOS('riskAdjustment',exp)
-    this.vOS('rateAggregation',exp)
-    this.vOS('rationale',exp)
-    this.vOS('clinicalRecommendationStatement',exp)
-    this.vOS('improvementNotation',exp)
-    this.vOA('definition',exp)
-    this.vOS('guidance',exp)
-    this.vOS('set',exp)
-    this.vOA('group',exp)
-    this.vOA('supplementalData',exp)
-    return issues;
+    iss.push(...this.vRPS('resourceType',exp));
+    iss.push(...this.vOS('url',exp));
+    iss.push(...this.vOA('identifier',exp));
+    iss.push(...this.vOS('version',exp));
+    iss.push(...this.vOS('name',exp));
+    iss.push(...this.vOS('title',exp));
+    iss.push(...this.vRSV('status',exp,'PublicationStatus',PublicationStatusVsValidation,'r'));
+    iss.push(...this.vOS('experimental',exp));
+    iss.push(...this.vOS('date',exp));
+    iss.push(...this.vOS('publisher',exp));
+    iss.push(...this.vOS('description',exp));
+    iss.push(...this.vOS('purpose',exp));
+    iss.push(...this.vOS('usage',exp));
+    iss.push(...this.vOS('approvalDate',exp));
+    iss.push(...this.vOS('lastReviewDate',exp));
+    iss.push(...this.vOS('effectivePeriod',exp));
+    iss.push(...this.vOA('useContext',exp));
+    iss.push(...this.vOA('jurisdiction',exp));
+    iss.push(...this.vOA('topic',exp));
+    iss.push(...this.vOA('contributor',exp));
+    iss.push(...this.vOA('contact',exp));
+    iss.push(...this.vOS('copyright',exp));
+    iss.push(...this.vOA('relatedArtifact',exp));
+    iss.push(...this.vOA('library',exp));
+    iss.push(...this.vOS('disclaimer',exp));
+    iss.push(...this.vOS('scoring',exp));
+    iss.push(...this.vOS('compositeScoring',exp));
+    iss.push(...this.vOA('type',exp));
+    iss.push(...this.vOS('riskAdjustment',exp));
+    iss.push(...this.vOS('rateAggregation',exp));
+    iss.push(...this.vOS('rationale',exp));
+    iss.push(...this.vOS('clinicalRecommendationStatement',exp));
+    iss.push(...this.vOS('improvementNotation',exp));
+    iss.push(...this.vOA('definition',exp));
+    iss.push(...this.vOS('guidance',exp));
+    iss.push(...this.vOS('set',exp));
+    iss.push(...this.vOA('group',exp));
+    iss.push(...this.vOA('supplementalData',exp));
+    return iss;
   }
 }

@@ -73,13 +73,13 @@ export class ClaimPayee extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'Claim.payee' }
-    this.vOS('type',exp)
-    this.vOS('provider',exp)
-    this.vOS('organization',exp)
-    this.vOS('person',exp)
-    return issues;
+    iss.push(...this.vOS('type',exp));
+    iss.push(...this.vOS('provider',exp));
+    iss.push(...this.vOS('organization',exp));
+    iss.push(...this.vOS('person',exp));
+    return iss;
   }
 }
 /**
@@ -134,11 +134,11 @@ export class ClaimDiagnosis extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'Claim.diagnosis' }
-    this.vRS('sequence',exp)
-    this.vRS('diagnosis',exp)
-    return issues;
+    iss.push(...this.vRS('sequence',exp));
+    iss.push(...this.vRS('diagnosis',exp));
+    return iss;
   }
 }
 /**
@@ -276,17 +276,17 @@ export class ClaimCoverage extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'Claim.coverage' }
-    this.vRS('sequence',exp)
-    this.vRS('focal',exp)
-    this.vRS('coverage',exp)
-    this.vOS('businessArrangement',exp)
-    this.vRS('relationship',exp)
-    this.vOA('preAuthRef',exp)
-    this.vOS('claimResponse',exp)
-    this.vOS('originalRuleset',exp)
-    return issues;
+    iss.push(...this.vRS('sequence',exp));
+    iss.push(...this.vRS('focal',exp));
+    iss.push(...this.vRS('coverage',exp));
+    iss.push(...this.vOS('businessArrangement',exp));
+    iss.push(...this.vRS('relationship',exp));
+    iss.push(...this.vOA('preAuthRef',exp));
+    iss.push(...this.vOS('claimResponse',exp));
+    iss.push(...this.vOS('originalRuleset',exp));
+    return iss;
   }
 }
 /**
@@ -421,18 +421,18 @@ export class ClaimItemDetailSubDetail extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'Claim.item.detail.subDetail' }
-    this.vRS('sequence',exp)
-    this.vRS('type',exp)
-    this.vRS('service',exp)
-    this.vOS('quantity',exp)
-    this.vOS('unitPrice',exp)
-    this.vOS('factor',exp)
-    this.vOS('points',exp)
-    this.vOS('net',exp)
-    this.vOS('udi',exp)
-    return issues;
+    iss.push(...this.vRS('sequence',exp));
+    iss.push(...this.vRS('type',exp));
+    iss.push(...this.vRS('service',exp));
+    iss.push(...this.vOS('quantity',exp));
+    iss.push(...this.vOS('unitPrice',exp));
+    iss.push(...this.vOS('factor',exp));
+    iss.push(...this.vOS('points',exp));
+    iss.push(...this.vOS('net',exp));
+    iss.push(...this.vOS('udi',exp));
+    return iss;
   }
 }
 /**
@@ -577,19 +577,19 @@ export class ClaimItemDetail extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'Claim.item.detail' }
-    this.vRS('sequence',exp)
-    this.vRS('type',exp)
-    this.vRS('service',exp)
-    this.vOS('quantity',exp)
-    this.vOS('unitPrice',exp)
-    this.vOS('factor',exp)
-    this.vOS('points',exp)
-    this.vOS('net',exp)
-    this.vOS('udi',exp)
-    this.vOA('subDetail',exp)
-    return issues;
+    iss.push(...this.vRS('sequence',exp));
+    iss.push(...this.vRS('type',exp));
+    iss.push(...this.vRS('service',exp));
+    iss.push(...this.vOS('quantity',exp));
+    iss.push(...this.vOS('unitPrice',exp));
+    iss.push(...this.vOS('factor',exp));
+    iss.push(...this.vOS('points',exp));
+    iss.push(...this.vOS('net',exp));
+    iss.push(...this.vOS('udi',exp));
+    iss.push(...this.vOA('subDetail',exp));
+    return iss;
   }
 }
 /**
@@ -659,12 +659,12 @@ export class ClaimItemProsthesis extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'Claim.item.prosthesis' }
-    this.vOS('initial',exp)
-    this.vOS('priorDate',exp)
-    this.vOS('priorMaterial',exp)
-    return issues;
+    iss.push(...this.vOS('initial',exp));
+    iss.push(...this.vOS('priorDate',exp));
+    iss.push(...this.vOS('priorMaterial',exp));
+    return iss;
   }
 }
 /**
@@ -893,26 +893,26 @@ export class ClaimItem extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'Claim.item' }
-    this.vRS('sequence',exp)
-    this.vRS('type',exp)
-    this.vOS('provider',exp)
-    this.vOA('diagnosisLinkId',exp)
-    this.vRS('service',exp)
-    this.vOS('serviceDate',exp)
-    this.vOS('quantity',exp)
-    this.vOS('unitPrice',exp)
-    this.vOS('factor',exp)
-    this.vOS('points',exp)
-    this.vOS('net',exp)
-    this.vOS('udi',exp)
-    this.vOS('bodySite',exp)
-    this.vOA('subSite',exp)
-    this.vOA('modifier',exp)
-    this.vOA('detail',exp)
-    this.vOS('prosthesis',exp)
-    return issues;
+    iss.push(...this.vRS('sequence',exp));
+    iss.push(...this.vRS('type',exp));
+    iss.push(...this.vOS('provider',exp));
+    iss.push(...this.vOA('diagnosisLinkId',exp));
+    iss.push(...this.vRS('service',exp));
+    iss.push(...this.vOS('serviceDate',exp));
+    iss.push(...this.vOS('quantity',exp));
+    iss.push(...this.vOS('unitPrice',exp));
+    iss.push(...this.vOS('factor',exp));
+    iss.push(...this.vOS('points',exp));
+    iss.push(...this.vOS('net',exp));
+    iss.push(...this.vOS('udi',exp));
+    iss.push(...this.vOS('bodySite',exp));
+    iss.push(...this.vOA('subSite',exp));
+    iss.push(...this.vOA('modifier',exp));
+    iss.push(...this.vOA('detail',exp));
+    iss.push(...this.vOS('prosthesis',exp));
+    return iss;
   }
 }
 /**
@@ -975,12 +975,12 @@ export class ClaimMissingTeeth extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'Claim.missingTeeth' }
-    this.vRS('tooth',exp)
-    this.vOS('reason',exp)
-    this.vOS('extractionDate',exp)
-    return issues;
+    iss.push(...this.vRS('tooth',exp));
+    iss.push(...this.vOS('reason',exp));
+    iss.push(...this.vOS('extractionDate',exp));
+    return iss;
   }
 }
 /**
@@ -1328,38 +1328,38 @@ export class Claim extends fhir.DomainResource {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'Claim' }
-    this.vRS('resourceType',exp)
-    this.vRSV('type',exp,'ClaimTypeLink',ClaimTypeLinkVsValidation,'r')
-    this.vOA('identifier',exp)
-    this.vOS('ruleset',exp)
-    this.vOS('originalRuleset',exp)
-    this.vOS('created',exp)
-    this.vOS('target',exp)
-    this.vOS('provider',exp)
-    this.vOS('organization',exp)
-    this.vOSV('use',exp,'ClaimUseLink',ClaimUseLinkVsValidation,'r')
-    this.vOS('priority',exp)
-    this.vOS('fundsReserve',exp)
-    this.vOS('enterer',exp)
-    this.vOS('facility',exp)
-    this.vOS('prescription',exp)
-    this.vOS('originalPrescription',exp)
-    this.vOS('payee',exp)
-    this.vOS('referral',exp)
-    this.vOA('diagnosis',exp)
-    this.vOA('condition',exp)
-    this.vRS('patient',exp)
-    this.vOA('coverage',exp)
-    this.vOA('exception',exp)
-    this.vOS('school',exp)
-    this.vOS('accident',exp)
-    this.vOS('accidentType',exp)
-    this.vOA('interventionException',exp)
-    this.vOA('item',exp)
-    this.vOA('additionalMaterials',exp)
-    this.vOA('missingTeeth',exp)
-    return issues;
+    iss.push(...this.vRPS('resourceType',exp));
+    iss.push(...this.vRSV('type',exp,'ClaimTypeLink',ClaimTypeLinkVsValidation,'r'));
+    iss.push(...this.vOA('identifier',exp));
+    iss.push(...this.vOS('ruleset',exp));
+    iss.push(...this.vOS('originalRuleset',exp));
+    iss.push(...this.vOS('created',exp));
+    iss.push(...this.vOS('target',exp));
+    iss.push(...this.vOS('provider',exp));
+    iss.push(...this.vOS('organization',exp));
+    iss.push(...this.vOSV('use',exp,'ClaimUseLink',ClaimUseLinkVsValidation,'r'));
+    iss.push(...this.vOS('priority',exp));
+    iss.push(...this.vOS('fundsReserve',exp));
+    iss.push(...this.vOS('enterer',exp));
+    iss.push(...this.vOS('facility',exp));
+    iss.push(...this.vOS('prescription',exp));
+    iss.push(...this.vOS('originalPrescription',exp));
+    iss.push(...this.vOS('payee',exp));
+    iss.push(...this.vOS('referral',exp));
+    iss.push(...this.vOA('diagnosis',exp));
+    iss.push(...this.vOA('condition',exp));
+    iss.push(...this.vRS('patient',exp));
+    iss.push(...this.vOA('coverage',exp));
+    iss.push(...this.vOA('exception',exp));
+    iss.push(...this.vOS('school',exp));
+    iss.push(...this.vOS('accident',exp));
+    iss.push(...this.vOS('accidentType',exp));
+    iss.push(...this.vOA('interventionException',exp));
+    iss.push(...this.vOA('item',exp));
+    iss.push(...this.vOA('additionalMaterials',exp));
+    iss.push(...this.vOA('missingTeeth',exp));
+    return iss;
   }
 }

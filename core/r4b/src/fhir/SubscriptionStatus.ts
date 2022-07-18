@@ -95,13 +95,13 @@ export class SubscriptionStatusNotificationEvent extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'SubscriptionStatus.notificationEvent' }
-    this.vRS('eventNumber',exp)
-    this.vOS('timestamp',exp)
-    this.vOS('focus',exp)
-    this.vOA('additionalContext',exp)
-    return issues;
+    iss.push(...this.vRS('eventNumber',exp));
+    iss.push(...this.vOS('timestamp',exp));
+    iss.push(...this.vOS('focus',exp));
+    iss.push(...this.vOA('additionalContext',exp));
+    return iss;
   }
 }
 /**
@@ -236,16 +236,16 @@ export class SubscriptionStatus extends fhir.DomainResource {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'SubscriptionStatus' }
-    this.vRS('resourceType',exp)
-    this.vOSV('status',exp,'SubscriptionStatus',SubscriptionStatusVsValidation,'r')
-    this.vRSV('type',exp,'SubscriptionNotificationType',SubscriptionNotificationTypeVsValidation,'r')
-    this.vOS('eventsSinceSubscriptionStart',exp)
-    this.vOA('notificationEvent',exp)
-    this.vRS('subscription',exp)
-    this.vOS('topic',exp)
-    this.vOA('error',exp)
-    return issues;
+    iss.push(...this.vRPS('resourceType',exp));
+    iss.push(...this.vOSV('status',exp,'SubscriptionStatus',SubscriptionStatusVsValidation,'r'));
+    iss.push(...this.vRSV('type',exp,'SubscriptionNotificationType',SubscriptionNotificationTypeVsValidation,'r'));
+    iss.push(...this.vOS('eventsSinceSubscriptionStart',exp));
+    iss.push(...this.vOA('notificationEvent',exp));
+    iss.push(...this.vRS('subscription',exp));
+    iss.push(...this.vOS('topic',exp));
+    iss.push(...this.vOA('error',exp));
+    return iss;
   }
 }

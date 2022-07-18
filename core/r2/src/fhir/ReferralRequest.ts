@@ -227,25 +227,25 @@ export class ReferralRequest extends fhir.DomainResource {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'ReferralRequest' }
-    this.vRS('resourceType',exp)
-    this.vRSV('status',exp,'Referralstatus',ReferralstatusVsValidation,'r')
-    this.vOA('identifier',exp)
-    this.vOS('date',exp)
-    this.vOS('type',exp)
-    this.vOS('specialty',exp)
-    this.vOS('priority',exp)
-    this.vOS('patient',exp)
-    this.vOS('requester',exp)
-    this.vOA('recipient',exp)
-    this.vOS('encounter',exp)
-    this.vOS('dateSent',exp)
-    this.vOS('reason',exp)
-    this.vOS('description',exp)
-    this.vOA('serviceRequested',exp)
-    this.vOA('supportingInformation',exp)
-    this.vOS('fulfillmentTime',exp)
-    return issues;
+    iss.push(...this.vRPS('resourceType',exp));
+    iss.push(...this.vRSV('status',exp,'Referralstatus',ReferralstatusVsValidation,'r'));
+    iss.push(...this.vOA('identifier',exp));
+    iss.push(...this.vOS('date',exp));
+    iss.push(...this.vOS('type',exp));
+    iss.push(...this.vOS('specialty',exp));
+    iss.push(...this.vOS('priority',exp));
+    iss.push(...this.vOS('patient',exp));
+    iss.push(...this.vOS('requester',exp));
+    iss.push(...this.vOA('recipient',exp));
+    iss.push(...this.vOS('encounter',exp));
+    iss.push(...this.vOS('dateSent',exp));
+    iss.push(...this.vOS('reason',exp));
+    iss.push(...this.vOS('description',exp));
+    iss.push(...this.vOA('serviceRequested',exp));
+    iss.push(...this.vOA('supportingInformation',exp));
+    iss.push(...this.vOS('fulfillmentTime',exp));
+    return iss;
   }
 }

@@ -48,11 +48,11 @@ export class MedicationProductIngredient extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'Medication.product.ingredient' }
-    this.vRS('item',exp)
-    this.vOS('amount',exp)
-    return issues;
+    iss.push(...this.vRS('item',exp));
+    iss.push(...this.vOS('amount',exp));
+    return iss;
   }
 }
 /**
@@ -113,11 +113,11 @@ export class MedicationProductBatch extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'Medication.product.batch' }
-    this.vOS('lotNumber',exp)
-    this.vOS('expirationDate',exp)
-    return issues;
+    iss.push(...this.vOS('lotNumber',exp));
+    iss.push(...this.vOS('expirationDate',exp));
+    return iss;
   }
 }
 /**
@@ -173,12 +173,12 @@ export class MedicationProduct extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'Medication.product' }
-    this.vOS('form',exp)
-    this.vOA('ingredient',exp)
-    this.vOA('batch',exp)
-    return issues;
+    iss.push(...this.vOS('form',exp));
+    iss.push(...this.vOA('ingredient',exp));
+    iss.push(...this.vOA('batch',exp));
+    return iss;
   }
 }
 /**
@@ -224,11 +224,11 @@ export class MedicationPackageContent extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'Medication.package.content' }
-    this.vRS('item',exp)
-    this.vOS('amount',exp)
-    return issues;
+    iss.push(...this.vRS('item',exp));
+    iss.push(...this.vOS('amount',exp));
+    return iss;
   }
 }
 /**
@@ -274,11 +274,11 @@ export class MedicationPackage extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'Medication.package' }
-    this.vOS('container',exp)
-    this.vOA('content',exp)
-    return issues;
+    iss.push(...this.vOS('container',exp));
+    iss.push(...this.vOA('content',exp));
+    return iss;
   }
 }
 /**
@@ -367,14 +367,14 @@ export class Medication extends fhir.DomainResource {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'Medication' }
-    this.vRS('resourceType',exp)
-    this.vOS('code',exp)
-    this.vOS('isBrand',exp)
-    this.vOS('manufacturer',exp)
-    this.vOS('product',exp)
-    this.vOS('package',exp)
-    return issues;
+    iss.push(...this.vRPS('resourceType',exp));
+    iss.push(...this.vOS('code',exp));
+    iss.push(...this.vOS('isBrand',exp));
+    iss.push(...this.vOS('manufacturer',exp));
+    iss.push(...this.vOS('product',exp));
+    iss.push(...this.vOS('package',exp));
+    return iss;
   }
 }

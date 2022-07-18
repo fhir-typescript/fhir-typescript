@@ -135,17 +135,17 @@ export class Schedule extends fhir.DomainResource {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'Schedule' }
-    this.vRS('resourceType',exp)
-    this.vOA('identifier',exp)
-    this.vOS('active',exp)
-    this.vOA('serviceCategory',exp)
-    this.vOA('serviceType',exp)
-    this.vOA('specialty',exp)
-    this.vRA('actor',exp)
-    this.vOS('planningHorizon',exp)
-    this.vOS('comment',exp)
-    return issues;
+    iss.push(...this.vRPS('resourceType',exp));
+    iss.push(...this.vOA('identifier',exp));
+    iss.push(...this.vOS('active',exp));
+    iss.push(...this.vOA('serviceCategory',exp));
+    iss.push(...this.vOA('serviceType',exp));
+    iss.push(...this.vOA('specialty',exp));
+    iss.push(...this.vRA('actor',exp));
+    iss.push(...this.vOS('planningHorizon',exp));
+    iss.push(...this.vOS('comment',exp));
+    return iss;
   }
 }

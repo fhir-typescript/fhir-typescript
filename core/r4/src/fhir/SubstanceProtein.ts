@@ -141,17 +141,17 @@ export class SubstanceProteinSubunit extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'SubstanceProtein.subunit' }
-    this.vOS('subunit',exp)
-    this.vOS('sequence',exp)
-    this.vOS('length',exp)
-    this.vOS('sequenceAttachment',exp)
-    this.vOS('nTerminalModificationId',exp)
-    this.vOS('nTerminalModification',exp)
-    this.vOS('cTerminalModificationId',exp)
-    this.vOS('cTerminalModification',exp)
-    return issues;
+    iss.push(...this.vOS('subunit',exp));
+    iss.push(...this.vOS('sequence',exp));
+    iss.push(...this.vOS('length',exp));
+    iss.push(...this.vOS('sequenceAttachment',exp));
+    iss.push(...this.vOS('nTerminalModificationId',exp));
+    iss.push(...this.vOS('nTerminalModification',exp));
+    iss.push(...this.vOS('cTerminalModificationId',exp));
+    iss.push(...this.vOS('cTerminalModification',exp));
+    return iss;
   }
 }
 /**
@@ -243,13 +243,13 @@ export class SubstanceProtein extends fhir.DomainResource {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'SubstanceProtein' }
-    this.vRS('resourceType',exp)
-    this.vOS('sequenceType',exp)
-    this.vOS('numberOfSubunits',exp)
-    this.vOA('disulfideLinkage',exp)
-    this.vOA('subunit',exp)
-    return issues;
+    iss.push(...this.vRPS('resourceType',exp));
+    iss.push(...this.vOS('sequenceType',exp));
+    iss.push(...this.vOS('numberOfSubunits',exp));
+    iss.push(...this.vOA('disulfideLinkage',exp));
+    iss.push(...this.vOA('subunit',exp));
+    return iss;
   }
 }

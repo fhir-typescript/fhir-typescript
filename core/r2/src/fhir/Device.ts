@@ -262,25 +262,25 @@ export class Device extends fhir.DomainResource {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'Device' }
-    this.vRS('resourceType',exp)
-    this.vOA('identifier',exp)
-    this.vRS('type',exp)
-    this.vOA('note',exp)
-    this.vOSV('status',exp,'Devicestatus',DevicestatusVsValidation,'r')
-    this.vOS('manufacturer',exp)
-    this.vOS('model',exp)
-    this.vOS('version',exp)
-    this.vOS('manufactureDate',exp)
-    this.vOS('expiry',exp)
-    this.vOS('udi',exp)
-    this.vOS('lotNumber',exp)
-    this.vOS('owner',exp)
-    this.vOS('location',exp)
-    this.vOS('patient',exp)
-    this.vOA('contact',exp)
-    this.vOS('url',exp)
-    return issues;
+    iss.push(...this.vRPS('resourceType',exp));
+    iss.push(...this.vOA('identifier',exp));
+    iss.push(...this.vRS('type',exp));
+    iss.push(...this.vOA('note',exp));
+    iss.push(...this.vOSV('status',exp,'Devicestatus',DevicestatusVsValidation,'r'));
+    iss.push(...this.vOS('manufacturer',exp));
+    iss.push(...this.vOS('model',exp));
+    iss.push(...this.vOS('version',exp));
+    iss.push(...this.vOS('manufactureDate',exp));
+    iss.push(...this.vOS('expiry',exp));
+    iss.push(...this.vOS('udi',exp));
+    iss.push(...this.vOS('lotNumber',exp));
+    iss.push(...this.vOS('owner',exp));
+    iss.push(...this.vOS('location',exp));
+    iss.push(...this.vOS('patient',exp));
+    iss.push(...this.vOA('contact',exp));
+    iss.push(...this.vOS('url',exp));
+    return iss;
   }
 }

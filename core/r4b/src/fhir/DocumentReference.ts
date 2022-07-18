@@ -97,11 +97,11 @@ export class DocumentReferenceRelatesTo extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'DocumentReference.relatesTo' }
-    this.vRSV('code',exp,'DocumentRelationshipType',DocumentRelationshipTypeVsValidation,'r')
-    this.vRS('target',exp)
-    return issues;
+    iss.push(...this.vRSV('code',exp,'DocumentRelationshipType',DocumentRelationshipTypeVsValidation,'r'));
+    iss.push(...this.vRS('target',exp));
+    return iss;
   }
 }
 /**
@@ -147,11 +147,11 @@ export class DocumentReferenceContent extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'DocumentReference.content' }
-    this.vRS('attachment',exp)
-    this.vOS('format',exp)
-    return issues;
+    iss.push(...this.vRS('attachment',exp));
+    iss.push(...this.vOS('format',exp));
+    return iss;
   }
 }
 /**
@@ -244,16 +244,16 @@ export class DocumentReferenceContext extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'DocumentReference.context' }
-    this.vOA('encounter',exp)
-    this.vOA('event',exp)
-    this.vOS('period',exp)
-    this.vOS('facilityType',exp)
-    this.vOS('practiceSetting',exp)
-    this.vOS('sourcePatientInfo',exp)
-    this.vOA('related',exp)
-    return issues;
+    iss.push(...this.vOA('encounter',exp));
+    iss.push(...this.vOA('event',exp));
+    iss.push(...this.vOS('period',exp));
+    iss.push(...this.vOS('facilityType',exp));
+    iss.push(...this.vOS('practiceSetting',exp));
+    iss.push(...this.vOS('sourcePatientInfo',exp));
+    iss.push(...this.vOA('related',exp));
+    return iss;
   }
 }
 /**
@@ -476,25 +476,25 @@ export class DocumentReference extends fhir.DomainResource {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'DocumentReference' }
-    this.vRS('resourceType',exp)
-    this.vOS('masterIdentifier',exp)
-    this.vOA('identifier',exp)
-    this.vRSV('status',exp,'DocumentReferenceStatus',DocumentReferenceStatusVsValidation,'r')
-    this.vOSV('docStatus',exp,'CompositionStatus',CompositionStatusVsValidation,'r')
-    this.vOS('type',exp)
-    this.vOA('category',exp)
-    this.vOS('subject',exp)
-    this.vOS('date',exp)
-    this.vOA('author',exp)
-    this.vOS('authenticator',exp)
-    this.vOS('custodian',exp)
-    this.vOA('relatesTo',exp)
-    this.vOS('description',exp)
-    this.vOA('securityLabel',exp)
-    this.vRA('content',exp)
-    this.vOS('context',exp)
-    return issues;
+    iss.push(...this.vRPS('resourceType',exp));
+    iss.push(...this.vOS('masterIdentifier',exp));
+    iss.push(...this.vOA('identifier',exp));
+    iss.push(...this.vRSV('status',exp,'DocumentReferenceStatus',DocumentReferenceStatusVsValidation,'r'));
+    iss.push(...this.vOSV('docStatus',exp,'CompositionStatus',CompositionStatusVsValidation,'r'));
+    iss.push(...this.vOS('type',exp));
+    iss.push(...this.vOA('category',exp));
+    iss.push(...this.vOS('subject',exp));
+    iss.push(...this.vOS('date',exp));
+    iss.push(...this.vOA('author',exp));
+    iss.push(...this.vOS('authenticator',exp));
+    iss.push(...this.vOS('custodian',exp));
+    iss.push(...this.vOA('relatesTo',exp));
+    iss.push(...this.vOS('description',exp));
+    iss.push(...this.vOA('securityLabel',exp));
+    iss.push(...this.vRA('content',exp));
+    iss.push(...this.vOS('context',exp));
+    return iss;
   }
 }

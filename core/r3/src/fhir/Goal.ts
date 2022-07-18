@@ -109,12 +109,12 @@ export class GoalTarget extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'Goal.target' }
-    this.vOS('measure',exp)
-    this.vOS('detail',exp)
-    this.vOS('due',exp)
-    return issues;
+    iss.push(...this.vOS('measure',exp));
+    iss.push(...this.vOS('detail',exp));
+    iss.push(...this.vOS('due',exp));
+    return iss;
   }
 }
 /**
@@ -333,24 +333,24 @@ export class Goal extends fhir.DomainResource {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'Goal' }
-    this.vRS('resourceType',exp)
-    this.vOA('identifier',exp)
-    this.vRSV('status',exp,'GoalStatus',GoalStatusVsValidation,'r')
-    this.vOA('category',exp)
-    this.vOS('priority',exp)
-    this.vRS('description',exp)
-    this.vOS('subject',exp)
-    this.vOS('start',exp)
-    this.vOS('target',exp)
-    this.vOS('statusDate',exp)
-    this.vOS('statusReason',exp)
-    this.vOS('expressedBy',exp)
-    this.vOA('addresses',exp)
-    this.vOA('note',exp)
-    this.vOA('outcomeCode',exp)
-    this.vOA('outcomeReference',exp)
-    return issues;
+    iss.push(...this.vRPS('resourceType',exp));
+    iss.push(...this.vOA('identifier',exp));
+    iss.push(...this.vRSV('status',exp,'GoalStatus',GoalStatusVsValidation,'r'));
+    iss.push(...this.vOA('category',exp));
+    iss.push(...this.vOS('priority',exp));
+    iss.push(...this.vRS('description',exp));
+    iss.push(...this.vOS('subject',exp));
+    iss.push(...this.vOS('start',exp));
+    iss.push(...this.vOS('target',exp));
+    iss.push(...this.vOS('statusDate',exp));
+    iss.push(...this.vOS('statusReason',exp));
+    iss.push(...this.vOS('expressedBy',exp));
+    iss.push(...this.vOA('addresses',exp));
+    iss.push(...this.vOA('note',exp));
+    iss.push(...this.vOA('outcomeCode',exp));
+    iss.push(...this.vOA('outcomeReference',exp));
+    return iss;
   }
 }

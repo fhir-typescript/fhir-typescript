@@ -77,11 +77,11 @@ export class BundleLink extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'Bundle.link' }
-    this.vRS('relation',exp)
-    this.vRS('url',exp)
-    return issues;
+    iss.push(...this.vRS('relation',exp));
+    iss.push(...this.vRS('url',exp));
+    return iss;
   }
 }
 /**
@@ -142,11 +142,11 @@ export class BundleEntrySearch extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'Bundle.entry.search' }
-    this.vOSV('mode',exp,'SearchEntryMode',SearchEntryModeVsValidation,'r')
-    this.vOS('score',exp)
-    return issues;
+    iss.push(...this.vOSV('mode',exp,'SearchEntryMode',SearchEntryModeVsValidation,'r'));
+    iss.push(...this.vOS('score',exp));
+    return iss;
   }
 }
 /**
@@ -277,15 +277,15 @@ export class BundleEntryRequest extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'Bundle.entry.request' }
-    this.vRSV('method',exp,'HttpVerb',HttpVerbVsValidation,'r')
-    this.vRS('url',exp)
-    this.vOS('ifNoneMatch',exp)
-    this.vOS('ifModifiedSince',exp)
-    this.vOS('ifMatch',exp)
-    this.vOS('ifNoneExist',exp)
-    return issues;
+    iss.push(...this.vRSV('method',exp,'HttpVerb',HttpVerbVsValidation,'r'));
+    iss.push(...this.vRS('url',exp));
+    iss.push(...this.vOS('ifNoneMatch',exp));
+    iss.push(...this.vOS('ifModifiedSince',exp));
+    iss.push(...this.vOS('ifMatch',exp));
+    iss.push(...this.vOS('ifNoneExist',exp));
+    return iss;
   }
 }
 /**
@@ -390,14 +390,14 @@ export class BundleEntryResponse extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'Bundle.entry.response' }
-    this.vRS('status',exp)
-    this.vOS('location',exp)
-    this.vOS('etag',exp)
-    this.vOS('lastModified',exp)
-    this.vOS('outcome',exp)
-    return issues;
+    iss.push(...this.vRS('status',exp));
+    iss.push(...this.vOS('location',exp));
+    iss.push(...this.vOS('etag',exp));
+    iss.push(...this.vOS('lastModified',exp));
+    iss.push(...this.vOS('outcome',exp));
+    return iss;
   }
 }
 /**
@@ -487,15 +487,15 @@ export class BundleEntry extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'Bundle.entry' }
-    this.vOA('link',exp)
-    this.vOS('fullUrl',exp)
-    this.vOS('resource',exp)
-    this.vOS('search',exp)
-    this.vOS('request',exp)
-    this.vOS('response',exp)
-    return issues;
+    iss.push(...this.vOA('link',exp));
+    iss.push(...this.vOS('fullUrl',exp));
+    iss.push(...this.vOS('resource',exp));
+    iss.push(...this.vOS('search',exp));
+    iss.push(...this.vOS('request',exp));
+    iss.push(...this.vOS('response',exp));
+    return iss;
   }
 
 /**
@@ -611,15 +611,15 @@ export class Bundle extends fhir.Resource {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'Bundle' }
-    this.vRS('resourceType',exp)
-    this.vOS('identifier',exp)
-    this.vRSV('type',exp,'BundleType',BundleTypeVsValidation,'r')
-    this.vOS('total',exp)
-    this.vOA('link',exp)
-    this.vOA('entry',exp)
-    this.vOS('signature',exp)
-    return issues;
+    iss.push(...this.vRPS('resourceType',exp));
+    iss.push(...this.vOS('identifier',exp));
+    iss.push(...this.vRSV('type',exp,'BundleType',BundleTypeVsValidation,'r'));
+    iss.push(...this.vOS('total',exp));
+    iss.push(...this.vOA('link',exp));
+    iss.push(...this.vOA('entry',exp));
+    iss.push(...this.vOS('signature',exp));
+    return iss;
   }
 }

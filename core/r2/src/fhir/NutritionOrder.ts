@@ -51,11 +51,11 @@ export class NutritionOrderOralDietNutrient extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'NutritionOrder.oralDiet.nutrient' }
-    this.vOS('modifier',exp)
-    this.vOS('amount',exp)
-    return issues;
+    iss.push(...this.vOS('modifier',exp));
+    iss.push(...this.vOS('amount',exp));
+    return iss;
   }
 }
 /**
@@ -100,11 +100,11 @@ export class NutritionOrderOralDietTexture extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'NutritionOrder.oralDiet.texture' }
-    this.vOS('modifier',exp)
-    this.vOS('foodType',exp)
-    return issues;
+    iss.push(...this.vOS('modifier',exp));
+    iss.push(...this.vOS('foodType',exp));
+    return iss;
   }
 }
 /**
@@ -198,15 +198,15 @@ export class NutritionOrderOralDiet extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'NutritionOrder.oralDiet' }
-    this.vOA('type',exp)
-    this.vOA('schedule',exp)
-    this.vOA('nutrient',exp)
-    this.vOA('texture',exp)
-    this.vOA('fluidConsistencyType',exp)
-    this.vOS('instruction',exp)
-    return issues;
+    iss.push(...this.vOA('type',exp));
+    iss.push(...this.vOA('schedule',exp));
+    iss.push(...this.vOA('nutrient',exp));
+    iss.push(...this.vOA('texture',exp));
+    iss.push(...this.vOA('fluidConsistencyType',exp));
+    iss.push(...this.vOS('instruction',exp));
+    return iss;
   }
 }
 /**
@@ -295,14 +295,14 @@ export class NutritionOrderSupplement extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'NutritionOrder.supplement' }
-    this.vOS('type',exp)
-    this.vOS('productName',exp)
-    this.vOA('schedule',exp)
-    this.vOS('quantity',exp)
-    this.vOS('instruction',exp)
-    return issues;
+    iss.push(...this.vOS('type',exp));
+    iss.push(...this.vOS('productName',exp));
+    iss.push(...this.vOA('schedule',exp));
+    iss.push(...this.vOS('quantity',exp));
+    iss.push(...this.vOS('instruction',exp));
+    return iss;
   }
 }
 /**
@@ -370,12 +370,12 @@ export class NutritionOrderEnteralFormulaAdministration extends fhir.BackboneEle
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'NutritionOrder.enteralFormula.administration' }
-    this.vOS('schedule',exp)
-    this.vOS('quantity',exp)
-    this.vOS('rate',exp)
-    return issues;
+    iss.push(...this.vOS('schedule',exp));
+    iss.push(...this.vOS('quantity',exp));
+    iss.push(...this.vOS('rate',exp));
+    return iss;
   }
 }
 /**
@@ -508,18 +508,18 @@ export class NutritionOrderEnteralFormula extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'NutritionOrder.enteralFormula' }
-    this.vOS('baseFormulaType',exp)
-    this.vOS('baseFormulaProductName',exp)
-    this.vOS('additiveType',exp)
-    this.vOS('additiveProductName',exp)
-    this.vOS('caloricDensity',exp)
-    this.vOS('routeofAdministration',exp)
-    this.vOA('administration',exp)
-    this.vOS('maxVolumeToDeliver',exp)
-    this.vOS('administrationInstruction',exp)
-    return issues;
+    iss.push(...this.vOS('baseFormulaType',exp));
+    iss.push(...this.vOS('baseFormulaProductName',exp));
+    iss.push(...this.vOS('additiveType',exp));
+    iss.push(...this.vOS('additiveProductName',exp));
+    iss.push(...this.vOS('caloricDensity',exp));
+    iss.push(...this.vOS('routeofAdministration',exp));
+    iss.push(...this.vOA('administration',exp));
+    iss.push(...this.vOS('maxVolumeToDeliver',exp));
+    iss.push(...this.vOS('administrationInstruction',exp));
+    return iss;
   }
 }
 /**
@@ -686,21 +686,21 @@ export class NutritionOrder extends fhir.DomainResource {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'NutritionOrder' }
-    this.vRS('resourceType',exp)
-    this.vRS('patient',exp)
-    this.vOS('orderer',exp)
-    this.vOA('identifier',exp)
-    this.vOS('encounter',exp)
-    this.vRS('dateTime',exp)
-    this.vOSV('status',exp,'NutritionOrderStatus',NutritionOrderStatusVsValidation,'r')
-    this.vOA('allergyIntolerance',exp)
-    this.vOA('foodPreferenceModifier',exp)
-    this.vOA('excludeFoodModifier',exp)
-    this.vOS('oralDiet',exp)
-    this.vOA('supplement',exp)
-    this.vOS('enteralFormula',exp)
-    return issues;
+    iss.push(...this.vRPS('resourceType',exp));
+    iss.push(...this.vRS('patient',exp));
+    iss.push(...this.vOS('orderer',exp));
+    iss.push(...this.vOA('identifier',exp));
+    iss.push(...this.vOS('encounter',exp));
+    iss.push(...this.vRS('dateTime',exp));
+    iss.push(...this.vOSV('status',exp,'NutritionOrderStatus',NutritionOrderStatusVsValidation,'r'));
+    iss.push(...this.vOA('allergyIntolerance',exp));
+    iss.push(...this.vOA('foodPreferenceModifier',exp));
+    iss.push(...this.vOA('excludeFoodModifier',exp));
+    iss.push(...this.vOS('oralDiet',exp));
+    iss.push(...this.vOA('supplement',exp));
+    iss.push(...this.vOS('enteralFormula',exp));
+    return iss;
   }
 }

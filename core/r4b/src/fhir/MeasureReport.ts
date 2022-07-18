@@ -92,12 +92,12 @@ export class MeasureReportGroupPopulation extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'MeasureReport.group.population' }
-    this.vOS('code',exp)
-    this.vOS('count',exp)
-    this.vOS('subjectResults',exp)
-    return issues;
+    iss.push(...this.vOS('code',exp));
+    iss.push(...this.vOS('count',exp));
+    iss.push(...this.vOS('subjectResults',exp));
+    return iss;
   }
 }
 /**
@@ -144,11 +144,11 @@ export class MeasureReportGroupStratifierStratumComponent extends fhir.BackboneE
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'MeasureReport.group.stratifier.stratum.component' }
-    this.vRS('code',exp)
-    this.vRS('value',exp)
-    return issues;
+    iss.push(...this.vRS('code',exp));
+    iss.push(...this.vRS('value',exp));
+    return iss;
   }
 }
 /**
@@ -210,12 +210,12 @@ export class MeasureReportGroupStratifierStratumPopulation extends fhir.Backbone
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'MeasureReport.group.stratifier.stratum.population' }
-    this.vOS('code',exp)
-    this.vOS('count',exp)
-    this.vOS('subjectResults',exp)
-    return issues;
+    iss.push(...this.vOS('code',exp));
+    iss.push(...this.vOS('count',exp));
+    iss.push(...this.vOS('subjectResults',exp));
+    return iss;
   }
 }
 /**
@@ -280,13 +280,13 @@ export class MeasureReportGroupStratifierStratum extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'MeasureReport.group.stratifier.stratum' }
-    this.vOS('value',exp)
-    this.vOA('component',exp)
-    this.vOA('population',exp)
-    this.vOS('measureScore',exp)
-    return issues;
+    iss.push(...this.vOS('value',exp));
+    iss.push(...this.vOA('component',exp));
+    iss.push(...this.vOA('population',exp));
+    iss.push(...this.vOS('measureScore',exp));
+    return iss;
   }
 }
 /**
@@ -333,11 +333,11 @@ export class MeasureReportGroupStratifier extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'MeasureReport.group.stratifier' }
-    this.vOA('code',exp)
-    this.vOA('stratum',exp)
-    return issues;
+    iss.push(...this.vOA('code',exp));
+    iss.push(...this.vOA('stratum',exp));
+    return iss;
   }
 }
 /**
@@ -402,13 +402,13 @@ export class MeasureReportGroup extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'MeasureReport.group' }
-    this.vOS('code',exp)
-    this.vOA('population',exp)
-    this.vOS('measureScore',exp)
-    this.vOA('stratifier',exp)
-    return issues;
+    iss.push(...this.vOS('code',exp));
+    iss.push(...this.vOA('population',exp));
+    iss.push(...this.vOS('measureScore',exp));
+    iss.push(...this.vOA('stratifier',exp));
+    return iss;
   }
 }
 /**
@@ -582,20 +582,20 @@ export class MeasureReport extends fhir.DomainResource {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'MeasureReport' }
-    this.vRS('resourceType',exp)
-    this.vOA('identifier',exp)
-    this.vRSV('status',exp,'MeasureReportStatus',MeasureReportStatusVsValidation,'r')
-    this.vRSV('type',exp,'MeasureReportType',MeasureReportTypeVsValidation,'r')
-    this.vRS('measure',exp)
-    this.vOS('subject',exp)
-    this.vOS('date',exp)
-    this.vOS('reporter',exp)
-    this.vRS('period',exp)
-    this.vOSV('improvementNotation',exp,'MeasureImprovementNotation',MeasureImprovementNotationVsValidation,'r')
-    this.vOA('group',exp)
-    this.vOA('evaluatedResource',exp)
-    return issues;
+    iss.push(...this.vRPS('resourceType',exp));
+    iss.push(...this.vOA('identifier',exp));
+    iss.push(...this.vRSV('status',exp,'MeasureReportStatus',MeasureReportStatusVsValidation,'r'));
+    iss.push(...this.vRSV('type',exp,'MeasureReportType',MeasureReportTypeVsValidation,'r'));
+    iss.push(...this.vRS('measure',exp));
+    iss.push(...this.vOS('subject',exp));
+    iss.push(...this.vOS('date',exp));
+    iss.push(...this.vOS('reporter',exp));
+    iss.push(...this.vRS('period',exp));
+    iss.push(...this.vOSV('improvementNotation',exp,'MeasureImprovementNotation',MeasureImprovementNotationVsValidation,'r'));
+    iss.push(...this.vOA('group',exp));
+    iss.push(...this.vOA('evaluatedResource',exp));
+    return iss;
   }
 }

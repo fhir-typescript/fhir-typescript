@@ -90,12 +90,12 @@ export class LocationPosition extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'Location.position' }
-    this.vRS('longitude',exp)
-    this.vRS('latitude',exp)
-    this.vOS('altitude',exp)
-    return issues;
+    iss.push(...this.vRS('longitude',exp));
+    iss.push(...this.vRS('latitude',exp));
+    iss.push(...this.vOS('altitude',exp));
+    return iss;
   }
 }
 /**
@@ -273,21 +273,21 @@ export class Location extends fhir.DomainResource {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'Location' }
-    this.vRS('resourceType',exp)
-    this.vOA('identifier',exp)
-    this.vOSV('status',exp,'LocationStatus',LocationStatusVsValidation,'r')
-    this.vOS('name',exp)
-    this.vOS('description',exp)
-    this.vOSV('mode',exp,'LocationMode',LocationModeVsValidation,'r')
-    this.vOS('type',exp)
-    this.vOA('telecom',exp)
-    this.vOS('address',exp)
-    this.vOS('physicalType',exp)
-    this.vOS('position',exp)
-    this.vOS('managingOrganization',exp)
-    this.vOS('partOf',exp)
-    return issues;
+    iss.push(...this.vRPS('resourceType',exp));
+    iss.push(...this.vOA('identifier',exp));
+    iss.push(...this.vOSV('status',exp,'LocationStatus',LocationStatusVsValidation,'r'));
+    iss.push(...this.vOS('name',exp));
+    iss.push(...this.vOS('description',exp));
+    iss.push(...this.vOSV('mode',exp,'LocationMode',LocationModeVsValidation,'r'));
+    iss.push(...this.vOS('type',exp));
+    iss.push(...this.vOA('telecom',exp));
+    iss.push(...this.vOS('address',exp));
+    iss.push(...this.vOS('physicalType',exp));
+    iss.push(...this.vOS('position',exp));
+    iss.push(...this.vOS('managingOrganization',exp));
+    iss.push(...this.vOS('partOf',exp));
+    return iss;
   }
 }

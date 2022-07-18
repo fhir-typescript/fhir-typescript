@@ -124,13 +124,13 @@ export class HealthcareServiceAvailableTime extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'HealthcareService.availableTime' }
-    this.vOAV('daysOfWeek',exp,'DaysOfWeek',DaysOfWeekVsValidation,'r')
-    this.vOS('allDay',exp)
-    this.vOS('availableStartTime',exp)
-    this.vOS('availableEndTime',exp)
-    return issues;
+    iss.push(...this.vOAV('daysOfWeek',exp,'DaysOfWeek',DaysOfWeekVsValidation,'r'));
+    iss.push(...this.vOS('allDay',exp));
+    iss.push(...this.vOS('availableStartTime',exp));
+    iss.push(...this.vOS('availableEndTime',exp));
+    return iss;
   }
 }
 /**
@@ -184,11 +184,11 @@ export class HealthcareServiceNotAvailable extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'HealthcareService.notAvailable' }
-    this.vRS('description',exp)
-    this.vOS('during',exp)
-    return issues;
+    iss.push(...this.vRS('description',exp));
+    iss.push(...this.vOS('during',exp));
+    return iss;
   }
 }
 /**
@@ -519,33 +519,33 @@ export class HealthcareService extends fhir.DomainResource {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'HealthcareService' }
-    this.vRS('resourceType',exp)
-    this.vOA('identifier',exp)
-    this.vOS('active',exp)
-    this.vOS('providedBy',exp)
-    this.vOS('category',exp)
-    this.vOA('type',exp)
-    this.vOA('specialty',exp)
-    this.vOA('location',exp)
-    this.vOS('name',exp)
-    this.vOS('comment',exp)
-    this.vOS('extraDetails',exp)
-    this.vOS('photo',exp)
-    this.vOA('telecom',exp)
-    this.vOA('coverageArea',exp)
-    this.vOA('serviceProvisionCode',exp)
-    this.vOS('eligibility',exp)
-    this.vOS('eligibilityNote',exp)
-    this.vOA('programName',exp)
-    this.vOA('characteristic',exp)
-    this.vOA('referralMethod',exp)
-    this.vOS('appointmentRequired',exp)
-    this.vOA('availableTime',exp)
-    this.vOA('notAvailable',exp)
-    this.vOS('availabilityExceptions',exp)
-    this.vOA('endpoint',exp)
-    return issues;
+    iss.push(...this.vRPS('resourceType',exp));
+    iss.push(...this.vOA('identifier',exp));
+    iss.push(...this.vOS('active',exp));
+    iss.push(...this.vOS('providedBy',exp));
+    iss.push(...this.vOS('category',exp));
+    iss.push(...this.vOA('type',exp));
+    iss.push(...this.vOA('specialty',exp));
+    iss.push(...this.vOA('location',exp));
+    iss.push(...this.vOS('name',exp));
+    iss.push(...this.vOS('comment',exp));
+    iss.push(...this.vOS('extraDetails',exp));
+    iss.push(...this.vOS('photo',exp));
+    iss.push(...this.vOA('telecom',exp));
+    iss.push(...this.vOA('coverageArea',exp));
+    iss.push(...this.vOA('serviceProvisionCode',exp));
+    iss.push(...this.vOS('eligibility',exp));
+    iss.push(...this.vOS('eligibilityNote',exp));
+    iss.push(...this.vOA('programName',exp));
+    iss.push(...this.vOA('characteristic',exp));
+    iss.push(...this.vOA('referralMethod',exp));
+    iss.push(...this.vOS('appointmentRequired',exp));
+    iss.push(...this.vOA('availableTime',exp));
+    iss.push(...this.vOA('notAvailable',exp));
+    iss.push(...this.vOS('availabilityExceptions',exp));
+    iss.push(...this.vOA('endpoint',exp));
+    return iss;
   }
 }

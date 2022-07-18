@@ -143,16 +143,16 @@ export class VerificationResultPrimarySource extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'VerificationResult.primarySource' }
-    this.vOS('who',exp)
-    this.vOA('type',exp)
-    this.vOA('communicationMethod',exp)
-    this.vOS('validationStatus',exp)
-    this.vOS('validationDate',exp)
-    this.vOS('canPushUpdates',exp)
-    this.vOA('pushTypeAvailable',exp)
-    return issues;
+    iss.push(...this.vOS('who',exp));
+    iss.push(...this.vOA('type',exp));
+    iss.push(...this.vOA('communicationMethod',exp));
+    iss.push(...this.vOS('validationStatus',exp));
+    iss.push(...this.vOS('validationDate',exp));
+    iss.push(...this.vOS('canPushUpdates',exp));
+    iss.push(...this.vOA('pushTypeAvailable',exp));
+    return iss;
   }
 }
 /**
@@ -275,17 +275,17 @@ export class VerificationResultAttestation extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'VerificationResult.attestation' }
-    this.vOS('who',exp)
-    this.vOS('onBehalfOf',exp)
-    this.vOS('communicationMethod',exp)
-    this.vOS('date',exp)
-    this.vOS('sourceIdentityCertificate',exp)
-    this.vOS('proxyIdentityCertificate',exp)
-    this.vOS('proxySignature',exp)
-    this.vOS('sourceSignature',exp)
-    return issues;
+    iss.push(...this.vOS('who',exp));
+    iss.push(...this.vOS('onBehalfOf',exp));
+    iss.push(...this.vOS('communicationMethod',exp));
+    iss.push(...this.vOS('date',exp));
+    iss.push(...this.vOS('sourceIdentityCertificate',exp));
+    iss.push(...this.vOS('proxyIdentityCertificate',exp));
+    iss.push(...this.vOS('proxySignature',exp));
+    iss.push(...this.vOS('sourceSignature',exp));
+    return iss;
   }
 }
 /**
@@ -348,12 +348,12 @@ export class VerificationResultValidator extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'VerificationResult.validator' }
-    this.vRS('organization',exp)
-    this.vOS('identityCertificate',exp)
-    this.vOS('attestationSignature',exp)
-    return issues;
+    iss.push(...this.vRS('organization',exp));
+    iss.push(...this.vOS('identityCertificate',exp));
+    iss.push(...this.vOS('attestationSignature',exp));
+    return iss;
   }
 }
 /**
@@ -563,23 +563,23 @@ export class VerificationResult extends fhir.DomainResource {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'VerificationResult' }
-    this.vRS('resourceType',exp)
-    this.vOA('target',exp)
-    this.vOA('targetLocation',exp)
-    this.vOS('need',exp)
-    this.vRSV('status',exp,'VerificationresultStatus',VerificationresultStatusVsValidation,'r')
-    this.vOS('statusDate',exp)
-    this.vOS('validationType',exp)
-    this.vOA('validationProcess',exp)
-    this.vOS('frequency',exp)
-    this.vOS('lastPerformed',exp)
-    this.vOS('nextScheduled',exp)
-    this.vOS('failureAction',exp)
-    this.vOA('primarySource',exp)
-    this.vOS('attestation',exp)
-    this.vOA('validator',exp)
-    return issues;
+    iss.push(...this.vRPS('resourceType',exp));
+    iss.push(...this.vOA('target',exp));
+    iss.push(...this.vOA('targetLocation',exp));
+    iss.push(...this.vOS('need',exp));
+    iss.push(...this.vRSV('status',exp,'VerificationresultStatus',VerificationresultStatusVsValidation,'r'));
+    iss.push(...this.vOS('statusDate',exp));
+    iss.push(...this.vOS('validationType',exp));
+    iss.push(...this.vOA('validationProcess',exp));
+    iss.push(...this.vOS('frequency',exp));
+    iss.push(...this.vOS('lastPerformed',exp));
+    iss.push(...this.vOS('nextScheduled',exp));
+    iss.push(...this.vOS('failureAction',exp));
+    iss.push(...this.vOA('primarySource',exp));
+    iss.push(...this.vOS('attestation',exp));
+    iss.push(...this.vOA('validator',exp));
+    return iss;
   }
 }

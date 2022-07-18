@@ -87,11 +87,11 @@ export class DeviceRequestParameter extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'DeviceRequest.parameter' }
-    this.vOS('code',exp)
-    this.vOS('value',exp)
-    return issues;
+    iss.push(...this.vOS('code',exp));
+    iss.push(...this.vOS('value',exp));
+    return iss;
   }
 }
 /**
@@ -447,33 +447,33 @@ export class DeviceRequest extends fhir.DomainResource {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'DeviceRequest' }
-    this.vRS('resourceType',exp)
-    this.vOA('identifier',exp)
-    this.vOA('instantiatesCanonical',exp)
-    this.vOA('instantiatesUri',exp)
-    this.vOA('basedOn',exp)
-    this.vOA('priorRequest',exp)
-    this.vOS('groupIdentifier',exp)
-    this.vOSV('status',exp,'RequestStatus',RequestStatusVsValidation,'r')
-    this.vRSV('intent',exp,'RequestIntent',RequestIntentVsValidation,'r')
-    this.vOSV('priority',exp,'RequestPriority',RequestPriorityVsValidation,'r')
-    this.vRS('code',exp)
-    this.vOA('parameter',exp)
-    this.vRS('subject',exp)
-    this.vOS('encounter',exp)
-    this.vOS('occurrence',exp)
-    this.vOS('authoredOn',exp)
-    this.vOS('requester',exp)
-    this.vOS('performerType',exp)
-    this.vOS('performer',exp)
-    this.vOA('reasonCode',exp)
-    this.vOA('reasonReference',exp)
-    this.vOA('insurance',exp)
-    this.vOA('supportingInfo',exp)
-    this.vOA('note',exp)
-    this.vOA('relevantHistory',exp)
-    return issues;
+    iss.push(...this.vRPS('resourceType',exp));
+    iss.push(...this.vOA('identifier',exp));
+    iss.push(...this.vOA('instantiatesCanonical',exp));
+    iss.push(...this.vOA('instantiatesUri',exp));
+    iss.push(...this.vOA('basedOn',exp));
+    iss.push(...this.vOA('priorRequest',exp));
+    iss.push(...this.vOS('groupIdentifier',exp));
+    iss.push(...this.vOSV('status',exp,'RequestStatus',RequestStatusVsValidation,'r'));
+    iss.push(...this.vRSV('intent',exp,'RequestIntent',RequestIntentVsValidation,'r'));
+    iss.push(...this.vOSV('priority',exp,'RequestPriority',RequestPriorityVsValidation,'r'));
+    iss.push(...this.vRS('code',exp));
+    iss.push(...this.vOA('parameter',exp));
+    iss.push(...this.vRS('subject',exp));
+    iss.push(...this.vOS('encounter',exp));
+    iss.push(...this.vOS('occurrence',exp));
+    iss.push(...this.vOS('authoredOn',exp));
+    iss.push(...this.vOS('requester',exp));
+    iss.push(...this.vOS('performerType',exp));
+    iss.push(...this.vOS('performer',exp));
+    iss.push(...this.vOA('reasonCode',exp));
+    iss.push(...this.vOA('reasonReference',exp));
+    iss.push(...this.vOA('insurance',exp));
+    iss.push(...this.vOA('supportingInfo',exp));
+    iss.push(...this.vOA('note',exp));
+    iss.push(...this.vOA('relevantHistory',exp));
+    return iss;
   }
 }

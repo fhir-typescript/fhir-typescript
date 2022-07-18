@@ -196,12 +196,12 @@ export class ExplanationOfBenefitRelated extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'ExplanationOfBenefit.related' }
-    this.vOS('claim',exp)
-    this.vOS('relationship',exp)
-    this.vOS('reference',exp)
-    return issues;
+    iss.push(...this.vOS('claim',exp));
+    iss.push(...this.vOS('relationship',exp));
+    iss.push(...this.vOS('reference',exp));
+    return iss;
   }
 }
 /**
@@ -255,12 +255,12 @@ export class ExplanationOfBenefitPayee extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'ExplanationOfBenefit.payee' }
-    this.vOS('type',exp)
-    this.vOSV('resourceType',exp,'ResourceTypeLink',ResourceTypeLinkVsValidation,'r')
-    this.vOS('party',exp)
-    return issues;
+    iss.push(...this.vOS('type',exp));
+    iss.push(...this.vOSV('resourceType',exp,'ResourceTypeLink',ResourceTypeLinkVsValidation,'r'));
+    iss.push(...this.vOS('party',exp));
+    return iss;
   }
 }
 /**
@@ -389,15 +389,15 @@ export class ExplanationOfBenefitInformation extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'ExplanationOfBenefit.information' }
-    this.vRS('sequence',exp)
-    this.vRS('category',exp)
-    this.vOS('code',exp)
-    this.vOS('timing',exp)
-    this.vOS('value',exp)
-    this.vOS('reason',exp)
-    return issues;
+    iss.push(...this.vRS('sequence',exp));
+    iss.push(...this.vRS('category',exp));
+    iss.push(...this.vOS('code',exp));
+    iss.push(...this.vOS('timing',exp));
+    iss.push(...this.vOS('value',exp));
+    iss.push(...this.vOS('reason',exp));
+    return iss;
   }
 }
 /**
@@ -487,14 +487,14 @@ export class ExplanationOfBenefitCareTeam extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'ExplanationOfBenefit.careTeam' }
-    this.vRS('sequence',exp)
-    this.vRS('provider',exp)
-    this.vOS('responsible',exp)
-    this.vOS('role',exp)
-    this.vOS('qualification',exp)
-    return issues;
+    iss.push(...this.vRS('sequence',exp));
+    iss.push(...this.vRS('provider',exp));
+    iss.push(...this.vOS('responsible',exp));
+    iss.push(...this.vOS('role',exp));
+    iss.push(...this.vOS('qualification',exp));
+    return iss;
   }
 }
 /**
@@ -582,13 +582,13 @@ export class ExplanationOfBenefitDiagnosis extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'ExplanationOfBenefit.diagnosis' }
-    this.vRS('sequence',exp)
-    this.vRS('diagnosis',exp)
-    this.vOA('type',exp)
-    this.vOS('packageCode',exp)
-    return issues;
+    iss.push(...this.vRS('sequence',exp));
+    iss.push(...this.vRS('diagnosis',exp));
+    iss.push(...this.vOA('type',exp));
+    iss.push(...this.vOS('packageCode',exp));
+    return iss;
   }
 }
 /**
@@ -674,12 +674,12 @@ export class ExplanationOfBenefitProcedure extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'ExplanationOfBenefit.procedure' }
-    this.vRS('sequence',exp)
-    this.vOS('date',exp)
-    this.vRS('procedure',exp)
-    return issues;
+    iss.push(...this.vRS('sequence',exp));
+    iss.push(...this.vOS('date',exp));
+    iss.push(...this.vRS('procedure',exp));
+    return iss;
   }
 }
 /**
@@ -735,11 +735,11 @@ export class ExplanationOfBenefitInsurance extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'ExplanationOfBenefit.insurance' }
-    this.vOS('coverage',exp)
-    this.vOA('preAuthRef',exp)
-    return issues;
+    iss.push(...this.vOS('coverage',exp));
+    iss.push(...this.vOA('preAuthRef',exp));
+    return iss;
   }
 }
 /**
@@ -815,12 +815,12 @@ export class ExplanationOfBenefitAccident extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'ExplanationOfBenefit.accident' }
-    this.vOS('date',exp)
-    this.vOSV('type',exp,'V3ActIncident',V3ActIncidentVsValidation,'r')
-    this.vOS('location',exp)
-    return issues;
+    iss.push(...this.vOS('date',exp));
+    iss.push(...this.vOSV('type',exp,'V3ActIncident',V3ActIncidentVsValidation,'r'));
+    iss.push(...this.vOS('location',exp));
+    return iss;
   }
 }
 /**
@@ -892,13 +892,13 @@ export class ExplanationOfBenefitItemAdjudication extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'ExplanationOfBenefit.item.adjudication' }
-    this.vRS('category',exp)
-    this.vOS('reason',exp)
-    this.vOS('amount',exp)
-    this.vOS('value',exp)
-    return issues;
+    iss.push(...this.vRS('category',exp));
+    iss.push(...this.vOS('reason',exp));
+    iss.push(...this.vOS('amount',exp));
+    iss.push(...this.vOS('value',exp));
+    return iss;
   }
 }
 /**
@@ -1084,23 +1084,23 @@ export class ExplanationOfBenefitItemDetailSubDetail extends fhir.BackboneElemen
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'ExplanationOfBenefit.item.detail.subDetail' }
-    this.vRS('sequence',exp)
-    this.vRSV('type',exp,'V3ActInvoiceGroup',V3ActInvoiceGroupVsValidation,'r')
-    this.vOS('revenue',exp)
-    this.vOS('category',exp)
-    this.vOS('service',exp)
-    this.vOA('modifier',exp)
-    this.vOA('programCode',exp)
-    this.vOS('quantity',exp)
-    this.vOS('unitPrice',exp)
-    this.vOS('factor',exp)
-    this.vOS('net',exp)
-    this.vOA('udi',exp)
-    this.vOA('noteNumber',exp)
-    this.vOA('adjudication',exp)
-    return issues;
+    iss.push(...this.vRS('sequence',exp));
+    iss.push(...this.vRSV('type',exp,'V3ActInvoiceGroup',V3ActInvoiceGroupVsValidation,'r'));
+    iss.push(...this.vOS('revenue',exp));
+    iss.push(...this.vOS('category',exp));
+    iss.push(...this.vOS('service',exp));
+    iss.push(...this.vOA('modifier',exp));
+    iss.push(...this.vOA('programCode',exp));
+    iss.push(...this.vOS('quantity',exp));
+    iss.push(...this.vOS('unitPrice',exp));
+    iss.push(...this.vOS('factor',exp));
+    iss.push(...this.vOS('net',exp));
+    iss.push(...this.vOA('udi',exp));
+    iss.push(...this.vOA('noteNumber',exp));
+    iss.push(...this.vOA('adjudication',exp));
+    return iss;
   }
 }
 /**
@@ -1296,24 +1296,24 @@ export class ExplanationOfBenefitItemDetail extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'ExplanationOfBenefit.item.detail' }
-    this.vRS('sequence',exp)
-    this.vRSV('type',exp,'V3ActInvoiceGroup',V3ActInvoiceGroupVsValidation,'r')
-    this.vOS('revenue',exp)
-    this.vOS('category',exp)
-    this.vOS('service',exp)
-    this.vOA('modifier',exp)
-    this.vOA('programCode',exp)
-    this.vOS('quantity',exp)
-    this.vOS('unitPrice',exp)
-    this.vOS('factor',exp)
-    this.vOS('net',exp)
-    this.vOA('udi',exp)
-    this.vOA('noteNumber',exp)
-    this.vOA('adjudication',exp)
-    this.vOA('subDetail',exp)
-    return issues;
+    iss.push(...this.vRS('sequence',exp));
+    iss.push(...this.vRSV('type',exp,'V3ActInvoiceGroup',V3ActInvoiceGroupVsValidation,'r'));
+    iss.push(...this.vOS('revenue',exp));
+    iss.push(...this.vOS('category',exp));
+    iss.push(...this.vOS('service',exp));
+    iss.push(...this.vOA('modifier',exp));
+    iss.push(...this.vOA('programCode',exp));
+    iss.push(...this.vOS('quantity',exp));
+    iss.push(...this.vOS('unitPrice',exp));
+    iss.push(...this.vOS('factor',exp));
+    iss.push(...this.vOS('net',exp));
+    iss.push(...this.vOA('udi',exp));
+    iss.push(...this.vOA('noteNumber',exp));
+    iss.push(...this.vOA('adjudication',exp));
+    iss.push(...this.vOA('subDetail',exp));
+    return iss;
   }
 }
 /**
@@ -1659,32 +1659,32 @@ export class ExplanationOfBenefitItem extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'ExplanationOfBenefit.item' }
-    this.vRS('sequence',exp)
-    this.vOA('careTeamLinkId',exp)
-    this.vOA('diagnosisLinkId',exp)
-    this.vOA('procedureLinkId',exp)
-    this.vOA('informationLinkId',exp)
-    this.vOS('revenue',exp)
-    this.vOS('category',exp)
-    this.vOS('service',exp)
-    this.vOA('modifier',exp)
-    this.vOA('programCode',exp)
-    this.vOS('serviced',exp)
-    this.vOS('location',exp)
-    this.vOS('quantity',exp)
-    this.vOS('unitPrice',exp)
-    this.vOS('factor',exp)
-    this.vOS('net',exp)
-    this.vOA('udi',exp)
-    this.vOS('bodySite',exp)
-    this.vOA('subSite',exp)
-    this.vOA('encounter',exp)
-    this.vOA('noteNumber',exp)
-    this.vOA('adjudication',exp)
-    this.vOA('detail',exp)
-    return issues;
+    iss.push(...this.vRS('sequence',exp));
+    iss.push(...this.vOA('careTeamLinkId',exp));
+    iss.push(...this.vOA('diagnosisLinkId',exp));
+    iss.push(...this.vOA('procedureLinkId',exp));
+    iss.push(...this.vOA('informationLinkId',exp));
+    iss.push(...this.vOS('revenue',exp));
+    iss.push(...this.vOS('category',exp));
+    iss.push(...this.vOS('service',exp));
+    iss.push(...this.vOA('modifier',exp));
+    iss.push(...this.vOA('programCode',exp));
+    iss.push(...this.vOS('serviced',exp));
+    iss.push(...this.vOS('location',exp));
+    iss.push(...this.vOS('quantity',exp));
+    iss.push(...this.vOS('unitPrice',exp));
+    iss.push(...this.vOS('factor',exp));
+    iss.push(...this.vOS('net',exp));
+    iss.push(...this.vOA('udi',exp));
+    iss.push(...this.vOS('bodySite',exp));
+    iss.push(...this.vOA('subSite',exp));
+    iss.push(...this.vOA('encounter',exp));
+    iss.push(...this.vOA('noteNumber',exp));
+    iss.push(...this.vOA('adjudication',exp));
+    iss.push(...this.vOA('detail',exp));
+    return iss;
   }
 }
 /**
@@ -1787,16 +1787,16 @@ export class ExplanationOfBenefitAddItemDetail extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'ExplanationOfBenefit.addItem.detail' }
-    this.vOS('revenue',exp)
-    this.vOS('category',exp)
-    this.vOS('service',exp)
-    this.vOA('modifier',exp)
-    this.vOS('fee',exp)
-    this.vOA('noteNumber',exp)
-    this.vOA('adjudication',exp)
-    return issues;
+    iss.push(...this.vOS('revenue',exp));
+    iss.push(...this.vOS('category',exp));
+    iss.push(...this.vOS('service',exp));
+    iss.push(...this.vOA('modifier',exp));
+    iss.push(...this.vOS('fee',exp));
+    iss.push(...this.vOA('noteNumber',exp));
+    iss.push(...this.vOA('adjudication',exp));
+    return iss;
   }
 }
 /**
@@ -1929,18 +1929,18 @@ export class ExplanationOfBenefitAddItem extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'ExplanationOfBenefit.addItem' }
-    this.vOA('sequenceLinkId',exp)
-    this.vOS('revenue',exp)
-    this.vOS('category',exp)
-    this.vOS('service',exp)
-    this.vOA('modifier',exp)
-    this.vOS('fee',exp)
-    this.vOA('noteNumber',exp)
-    this.vOA('adjudication',exp)
-    this.vOA('detail',exp)
-    return issues;
+    iss.push(...this.vOA('sequenceLinkId',exp));
+    iss.push(...this.vOS('revenue',exp));
+    iss.push(...this.vOS('category',exp));
+    iss.push(...this.vOS('service',exp));
+    iss.push(...this.vOA('modifier',exp));
+    iss.push(...this.vOS('fee',exp));
+    iss.push(...this.vOA('noteNumber',exp));
+    iss.push(...this.vOA('adjudication',exp));
+    iss.push(...this.vOA('detail',exp));
+    return iss;
   }
 }
 /**
@@ -2029,15 +2029,15 @@ export class ExplanationOfBenefitPayment extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'ExplanationOfBenefit.payment' }
-    this.vOS('type',exp)
-    this.vOS('adjustment',exp)
-    this.vOS('adjustmentReason',exp)
-    this.vOS('date',exp)
-    this.vOS('amount',exp)
-    this.vOS('identifier',exp)
-    return issues;
+    iss.push(...this.vOS('type',exp));
+    iss.push(...this.vOS('adjustment',exp));
+    iss.push(...this.vOS('adjustmentReason',exp));
+    iss.push(...this.vOS('date',exp));
+    iss.push(...this.vOS('amount',exp));
+    iss.push(...this.vOS('identifier',exp));
+    return iss;
   }
 }
 /**
@@ -2116,13 +2116,13 @@ export class ExplanationOfBenefitProcessNote extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'ExplanationOfBenefit.processNote' }
-    this.vOS('number',exp)
-    this.vOSV('type',exp,'NoteType',NoteTypeVsValidation,'r')
-    this.vOS('text',exp)
-    this.vOS('language',exp)
-    return issues;
+    iss.push(...this.vOS('number',exp));
+    iss.push(...this.vOSV('type',exp,'NoteType',NoteTypeVsValidation,'r'));
+    iss.push(...this.vOS('text',exp));
+    iss.push(...this.vOS('language',exp));
+    return iss;
   }
 }
 /**
@@ -2210,12 +2210,12 @@ export class ExplanationOfBenefitBenefitBalanceFinancial extends fhir.BackboneEl
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'ExplanationOfBenefit.benefitBalance.financial' }
-    this.vRS('type',exp)
-    this.vOS('allowed',exp)
-    this.vOS('used',exp)
-    return issues;
+    iss.push(...this.vRS('type',exp));
+    iss.push(...this.vOS('allowed',exp));
+    iss.push(...this.vOS('used',exp));
+    return iss;
   }
 }
 /**
@@ -2349,18 +2349,18 @@ export class ExplanationOfBenefitBenefitBalance extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'ExplanationOfBenefit.benefitBalance' }
-    this.vRS('category',exp)
-    this.vOS('subCategory',exp)
-    this.vOS('excluded',exp)
-    this.vOS('name',exp)
-    this.vOS('description',exp)
-    this.vOS('network',exp)
-    this.vOS('unit',exp)
-    this.vOS('term',exp)
-    this.vOA('financial',exp)
-    return issues;
+    iss.push(...this.vRS('category',exp));
+    iss.push(...this.vOS('subCategory',exp));
+    iss.push(...this.vOS('excluded',exp));
+    iss.push(...this.vOS('name',exp));
+    iss.push(...this.vOS('description',exp));
+    iss.push(...this.vOS('network',exp));
+    iss.push(...this.vOS('unit',exp));
+    iss.push(...this.vOS('term',exp));
+    iss.push(...this.vOA('financial',exp));
+    return iss;
   }
 }
 /**
@@ -2790,48 +2790,48 @@ export class ExplanationOfBenefit extends fhir.DomainResource {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'ExplanationOfBenefit' }
-    this.vRS('resourceType',exp)
-    this.vOA('identifier',exp)
-    this.vOSV('status',exp,'ExplanationofbenefitStatus',ExplanationofbenefitStatusVsValidation,'r')
-    this.vOSV('type',exp,'ClaimType',ClaimTypeVsValidation,'r')
-    this.vOA('subType',exp)
-    this.vOS('patient',exp)
-    this.vOS('billablePeriod',exp)
-    this.vOS('created',exp)
-    this.vOS('enterer',exp)
-    this.vOS('insurer',exp)
-    this.vOS('provider',exp)
-    this.vOS('organization',exp)
-    this.vOS('referral',exp)
-    this.vOS('facility',exp)
-    this.vOS('claim',exp)
-    this.vOS('claimResponse',exp)
-    this.vOS('outcome',exp)
-    this.vOS('disposition',exp)
-    this.vOA('related',exp)
-    this.vOS('prescription',exp)
-    this.vOS('originalPrescription',exp)
-    this.vOS('payee',exp)
-    this.vOA('information',exp)
-    this.vOA('careTeam',exp)
-    this.vOA('diagnosis',exp)
-    this.vOA('procedure',exp)
-    this.vOS('precedence',exp)
-    this.vOS('insurance',exp)
-    this.vOS('accident',exp)
-    this.vOS('employmentImpacted',exp)
-    this.vOS('hospitalization',exp)
-    this.vOA('item',exp)
-    this.vOA('addItem',exp)
-    this.vOS('totalCost',exp)
-    this.vOS('unallocDeductable',exp)
-    this.vOS('totalBenefit',exp)
-    this.vOS('payment',exp)
-    this.vOS('form',exp)
-    this.vOA('processNote',exp)
-    this.vOA('benefitBalance',exp)
-    return issues;
+    iss.push(...this.vRPS('resourceType',exp));
+    iss.push(...this.vOA('identifier',exp));
+    iss.push(...this.vOSV('status',exp,'ExplanationofbenefitStatus',ExplanationofbenefitStatusVsValidation,'r'));
+    iss.push(...this.vOSV('type',exp,'ClaimType',ClaimTypeVsValidation,'r'));
+    iss.push(...this.vOA('subType',exp));
+    iss.push(...this.vOS('patient',exp));
+    iss.push(...this.vOS('billablePeriod',exp));
+    iss.push(...this.vOS('created',exp));
+    iss.push(...this.vOS('enterer',exp));
+    iss.push(...this.vOS('insurer',exp));
+    iss.push(...this.vOS('provider',exp));
+    iss.push(...this.vOS('organization',exp));
+    iss.push(...this.vOS('referral',exp));
+    iss.push(...this.vOS('facility',exp));
+    iss.push(...this.vOS('claim',exp));
+    iss.push(...this.vOS('claimResponse',exp));
+    iss.push(...this.vOS('outcome',exp));
+    iss.push(...this.vOS('disposition',exp));
+    iss.push(...this.vOA('related',exp));
+    iss.push(...this.vOS('prescription',exp));
+    iss.push(...this.vOS('originalPrescription',exp));
+    iss.push(...this.vOS('payee',exp));
+    iss.push(...this.vOA('information',exp));
+    iss.push(...this.vOA('careTeam',exp));
+    iss.push(...this.vOA('diagnosis',exp));
+    iss.push(...this.vOA('procedure',exp));
+    iss.push(...this.vOS('precedence',exp));
+    iss.push(...this.vOS('insurance',exp));
+    iss.push(...this.vOS('accident',exp));
+    iss.push(...this.vOS('employmentImpacted',exp));
+    iss.push(...this.vOS('hospitalization',exp));
+    iss.push(...this.vOA('item',exp));
+    iss.push(...this.vOA('addItem',exp));
+    iss.push(...this.vOS('totalCost',exp));
+    iss.push(...this.vOS('unallocDeductable',exp));
+    iss.push(...this.vOS('totalBenefit',exp));
+    iss.push(...this.vOS('payment',exp));
+    iss.push(...this.vOS('form',exp));
+    iss.push(...this.vOA('processNote',exp));
+    iss.push(...this.vOA('benefitBalance',exp));
+    return iss;
   }
 }

@@ -91,12 +91,12 @@ export class CompositionAttester extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'Composition.attester' }
-    this.vRAV('mode',exp,'CompositionAttestationMode',CompositionAttestationModeVsValidation,'r')
-    this.vOS('time',exp)
-    this.vOS('party',exp)
-    return issues;
+    iss.push(...this.vRAV('mode',exp,'CompositionAttestationMode',CompositionAttestationModeVsValidation,'r'));
+    iss.push(...this.vOS('time',exp));
+    iss.push(...this.vOS('party',exp));
+    return iss;
   }
 }
 /**
@@ -152,12 +152,12 @@ export class CompositionEvent extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'Composition.event' }
-    this.vOA('code',exp)
-    this.vOS('period',exp)
-    this.vOA('detail',exp)
-    return issues;
+    iss.push(...this.vOA('code',exp));
+    iss.push(...this.vOS('period',exp));
+    iss.push(...this.vOA('detail',exp));
+    return iss;
   }
 }
 /**
@@ -274,17 +274,17 @@ export class CompositionSection extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'Composition.section' }
-    this.vOS('title',exp)
-    this.vOS('code',exp)
-    this.vOS('text',exp)
-    this.vOSV('mode',exp,'ListMode',ListModeVsValidation,'r')
-    this.vOS('orderedBy',exp)
-    this.vOA('entry',exp)
-    this.vOS('emptyReason',exp)
-    this.vOA('section',exp)
-    return issues;
+    iss.push(...this.vOS('title',exp));
+    iss.push(...this.vOS('code',exp));
+    iss.push(...this.vOS('text',exp));
+    iss.push(...this.vOSV('mode',exp,'ListMode',ListModeVsValidation,'r'));
+    iss.push(...this.vOS('orderedBy',exp));
+    iss.push(...this.vOA('entry',exp));
+    iss.push(...this.vOS('emptyReason',exp));
+    iss.push(...this.vOA('section',exp));
+    return iss;
   }
 }
 /**
@@ -487,23 +487,23 @@ export class Composition extends fhir.DomainResource {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'Composition' }
-    this.vRS('resourceType',exp)
-    this.vOS('identifier',exp)
-    this.vRS('date',exp)
-    this.vRS('type',exp)
-    this.vOS('class',exp)
-    this.vRS('title',exp)
-    this.vRSV('status',exp,'CompositionStatus',CompositionStatusVsValidation,'r')
-    this.vOSV('confidentiality',exp,'V3Confidentiality',V3ConfidentialityVsValidation,'r')
-    this.vRS('subject',exp)
-    this.vRA('author',exp)
-    this.vOA('attester',exp)
-    this.vOS('custodian',exp)
-    this.vOA('event',exp)
-    this.vOS('encounter',exp)
-    this.vOA('section',exp)
-    return issues;
+    iss.push(...this.vRPS('resourceType',exp));
+    iss.push(...this.vOS('identifier',exp));
+    iss.push(...this.vRS('date',exp));
+    iss.push(...this.vRS('type',exp));
+    iss.push(...this.vOS('class',exp));
+    iss.push(...this.vRS('title',exp));
+    iss.push(...this.vRSV('status',exp,'CompositionStatus',CompositionStatusVsValidation,'r'));
+    iss.push(...this.vOSV('confidentiality',exp,'V3Confidentiality',V3ConfidentialityVsValidation,'r'));
+    iss.push(...this.vRS('subject',exp));
+    iss.push(...this.vRA('author',exp));
+    iss.push(...this.vOA('attester',exp));
+    iss.push(...this.vOS('custodian',exp));
+    iss.push(...this.vOA('event',exp));
+    iss.push(...this.vOS('encounter',exp));
+    iss.push(...this.vOA('section',exp));
+    return iss;
   }
 }

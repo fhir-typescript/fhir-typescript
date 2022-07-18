@@ -75,13 +75,13 @@ export class PractitionerQualification extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'Practitioner.qualification' }
-    this.vOA('identifier',exp)
-    this.vRS('code',exp)
-    this.vOS('period',exp)
-    this.vOS('issuer',exp)
-    return issues;
+    iss.push(...this.vOA('identifier',exp));
+    iss.push(...this.vRS('code',exp));
+    iss.push(...this.vOS('period',exp));
+    iss.push(...this.vOS('issuer',exp));
+    return iss;
   }
 }
 /**
@@ -250,19 +250,19 @@ export class Practitioner extends fhir.DomainResource {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'Practitioner' }
-    this.vRS('resourceType',exp)
-    this.vOA('identifier',exp)
-    this.vOS('active',exp)
-    this.vOA('name',exp)
-    this.vOA('telecom',exp)
-    this.vOA('address',exp)
-    this.vOSV('gender',exp,'AdministrativeGender',AdministrativeGenderVsValidation,'r')
-    this.vOS('birthDate',exp)
-    this.vOA('photo',exp)
-    this.vOA('qualification',exp)
-    this.vOA('communication',exp)
-    return issues;
+    iss.push(...this.vRPS('resourceType',exp));
+    iss.push(...this.vOA('identifier',exp));
+    iss.push(...this.vOS('active',exp));
+    iss.push(...this.vOA('name',exp));
+    iss.push(...this.vOA('telecom',exp));
+    iss.push(...this.vOA('address',exp));
+    iss.push(...this.vOSV('gender',exp,'AdministrativeGender',AdministrativeGenderVsValidation,'r'));
+    iss.push(...this.vOS('birthDate',exp));
+    iss.push(...this.vOA('photo',exp));
+    iss.push(...this.vOA('qualification',exp));
+    iss.push(...this.vOA('communication',exp));
+    return iss;
   }
 }

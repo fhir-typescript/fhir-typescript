@@ -154,13 +154,13 @@ export class ClaimResponseItemAdjudication extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'ClaimResponse.item.adjudication' }
-    this.vRS('category',exp)
-    this.vOS('reason',exp)
-    this.vOS('amount',exp)
-    this.vOS('value',exp)
-    return issues;
+    iss.push(...this.vRS('category',exp));
+    iss.push(...this.vOS('reason',exp));
+    iss.push(...this.vOS('amount',exp));
+    iss.push(...this.vOS('value',exp));
+    return iss;
   }
 }
 /**
@@ -235,12 +235,12 @@ export class ClaimResponseItemDetailSubDetail extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'ClaimResponse.item.detail.subDetail' }
-    this.vRS('subDetailSequence',exp)
-    this.vOA('noteNumber',exp)
-    this.vOA('adjudication',exp)
-    return issues;
+    iss.push(...this.vRS('subDetailSequence',exp));
+    iss.push(...this.vOA('noteNumber',exp));
+    iss.push(...this.vOA('adjudication',exp));
+    return iss;
   }
 }
 /**
@@ -325,13 +325,13 @@ export class ClaimResponseItemDetail extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'ClaimResponse.item.detail' }
-    this.vRS('detailSequence',exp)
-    this.vOA('noteNumber',exp)
-    this.vRA('adjudication',exp)
-    this.vOA('subDetail',exp)
-    return issues;
+    iss.push(...this.vRS('detailSequence',exp));
+    iss.push(...this.vOA('noteNumber',exp));
+    iss.push(...this.vRA('adjudication',exp));
+    iss.push(...this.vOA('subDetail',exp));
+    return iss;
   }
 }
 /**
@@ -416,13 +416,13 @@ export class ClaimResponseItem extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'ClaimResponse.item' }
-    this.vRS('itemSequence',exp)
-    this.vOA('noteNumber',exp)
-    this.vRA('adjudication',exp)
-    this.vOA('detail',exp)
-    return issues;
+    iss.push(...this.vRS('itemSequence',exp));
+    iss.push(...this.vOA('noteNumber',exp));
+    iss.push(...this.vRA('adjudication',exp));
+    iss.push(...this.vOA('detail',exp));
+    return iss;
   }
 }
 /**
@@ -543,17 +543,17 @@ export class ClaimResponseAddItemDetailSubDetail extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'ClaimResponse.addItem.detail.subDetail' }
-    this.vRS('productOrService',exp)
-    this.vOA('modifier',exp)
-    this.vOS('quantity',exp)
-    this.vOS('unitPrice',exp)
-    this.vOS('factor',exp)
-    this.vOS('net',exp)
-    this.vOA('noteNumber',exp)
-    this.vRA('adjudication',exp)
-    return issues;
+    iss.push(...this.vRS('productOrService',exp));
+    iss.push(...this.vOA('modifier',exp));
+    iss.push(...this.vOS('quantity',exp));
+    iss.push(...this.vOS('unitPrice',exp));
+    iss.push(...this.vOS('factor',exp));
+    iss.push(...this.vOS('net',exp));
+    iss.push(...this.vOA('noteNumber',exp));
+    iss.push(...this.vRA('adjudication',exp));
+    return iss;
   }
 }
 /**
@@ -684,18 +684,18 @@ export class ClaimResponseAddItemDetail extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'ClaimResponse.addItem.detail' }
-    this.vRS('productOrService',exp)
-    this.vOA('modifier',exp)
-    this.vOS('quantity',exp)
-    this.vOS('unitPrice',exp)
-    this.vOS('factor',exp)
-    this.vOS('net',exp)
-    this.vOA('noteNumber',exp)
-    this.vRA('adjudication',exp)
-    this.vOA('subDetail',exp)
-    return issues;
+    iss.push(...this.vRS('productOrService',exp));
+    iss.push(...this.vOA('modifier',exp));
+    iss.push(...this.vOS('quantity',exp));
+    iss.push(...this.vOS('unitPrice',exp));
+    iss.push(...this.vOS('factor',exp));
+    iss.push(...this.vOS('net',exp));
+    iss.push(...this.vOA('noteNumber',exp));
+    iss.push(...this.vRA('adjudication',exp));
+    iss.push(...this.vOA('subDetail',exp));
+    return iss;
   }
 }
 /**
@@ -976,27 +976,27 @@ export class ClaimResponseAddItem extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'ClaimResponse.addItem' }
-    this.vOA('itemSequence',exp)
-    this.vOA('detailSequence',exp)
-    this.vOA('subdetailSequence',exp)
-    this.vOA('provider',exp)
-    this.vRS('productOrService',exp)
-    this.vOA('modifier',exp)
-    this.vOA('programCode',exp)
-    this.vOS('serviced',exp)
-    this.vOS('location',exp)
-    this.vOS('quantity',exp)
-    this.vOS('unitPrice',exp)
-    this.vOS('factor',exp)
-    this.vOS('net',exp)
-    this.vOS('bodySite',exp)
-    this.vOA('subSite',exp)
-    this.vOA('noteNumber',exp)
-    this.vRA('adjudication',exp)
-    this.vOA('detail',exp)
-    return issues;
+    iss.push(...this.vOA('itemSequence',exp));
+    iss.push(...this.vOA('detailSequence',exp));
+    iss.push(...this.vOA('subdetailSequence',exp));
+    iss.push(...this.vOA('provider',exp));
+    iss.push(...this.vRS('productOrService',exp));
+    iss.push(...this.vOA('modifier',exp));
+    iss.push(...this.vOA('programCode',exp));
+    iss.push(...this.vOS('serviced',exp));
+    iss.push(...this.vOS('location',exp));
+    iss.push(...this.vOS('quantity',exp));
+    iss.push(...this.vOS('unitPrice',exp));
+    iss.push(...this.vOS('factor',exp));
+    iss.push(...this.vOS('net',exp));
+    iss.push(...this.vOS('bodySite',exp));
+    iss.push(...this.vOA('subSite',exp));
+    iss.push(...this.vOA('noteNumber',exp));
+    iss.push(...this.vRA('adjudication',exp));
+    iss.push(...this.vOA('detail',exp));
+    return iss;
   }
 }
 /**
@@ -1043,11 +1043,11 @@ export class ClaimResponseTotal extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'ClaimResponse.total' }
-    this.vRS('category',exp)
-    this.vRS('amount',exp)
-    return issues;
+    iss.push(...this.vRS('category',exp));
+    iss.push(...this.vRS('amount',exp));
+    return iss;
   }
 }
 /**
@@ -1138,15 +1138,15 @@ export class ClaimResponsePayment extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'ClaimResponse.payment' }
-    this.vRS('type',exp)
-    this.vOS('adjustment',exp)
-    this.vOS('adjustmentReason',exp)
-    this.vOS('date',exp)
-    this.vRS('amount',exp)
-    this.vOS('identifier',exp)
-    return issues;
+    iss.push(...this.vRS('type',exp));
+    iss.push(...this.vOS('adjustment',exp));
+    iss.push(...this.vOS('adjustmentReason',exp));
+    iss.push(...this.vOS('date',exp));
+    iss.push(...this.vRS('amount',exp));
+    iss.push(...this.vOS('identifier',exp));
+    return iss;
   }
 }
 /**
@@ -1234,13 +1234,13 @@ export class ClaimResponseProcessNote extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'ClaimResponse.processNote' }
-    this.vOS('number',exp)
-    this.vOSV('type',exp,'NoteType',NoteTypeVsValidation,'r')
-    this.vRS('text',exp)
-    this.vOS('language',exp)
-    return issues;
+    iss.push(...this.vOS('number',exp));
+    iss.push(...this.vOSV('type',exp,'NoteType',NoteTypeVsValidation,'r'));
+    iss.push(...this.vRS('text',exp));
+    iss.push(...this.vOS('language',exp));
+    return iss;
   }
 }
 /**
@@ -1339,14 +1339,14 @@ export class ClaimResponseInsurance extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'ClaimResponse.insurance' }
-    this.vRS('sequence',exp)
-    this.vRS('focal',exp)
-    this.vRS('coverage',exp)
-    this.vOS('businessArrangement',exp)
-    this.vOS('claimResponse',exp)
-    return issues;
+    iss.push(...this.vRS('sequence',exp));
+    iss.push(...this.vRS('focal',exp));
+    iss.push(...this.vRS('coverage',exp));
+    iss.push(...this.vOS('businessArrangement',exp));
+    iss.push(...this.vOS('claimResponse',exp));
+    return iss;
   }
 }
 /**
@@ -1434,13 +1434,13 @@ export class ClaimResponseError extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'ClaimResponse.error' }
-    this.vOS('itemSequence',exp)
-    this.vOS('detailSequence',exp)
-    this.vOS('subDetailSequence',exp)
-    this.vRS('code',exp)
-    return issues;
+    iss.push(...this.vOS('itemSequence',exp));
+    iss.push(...this.vOS('detailSequence',exp));
+    iss.push(...this.vOS('subDetailSequence',exp));
+    iss.push(...this.vRS('code',exp));
+    return iss;
   }
 }
 /**
@@ -1783,36 +1783,36 @@ export class ClaimResponse extends fhir.DomainResource {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'ClaimResponse' }
-    this.vRS('resourceType',exp)
-    this.vOA('identifier',exp)
-    this.vRSV('status',exp,'FmStatus',FmStatusVsValidation,'r')
-    this.vRS('type',exp)
-    this.vOS('subType',exp)
-    this.vRSV('use',exp,'ClaimUse',ClaimUseVsValidation,'r')
-    this.vRS('patient',exp)
-    this.vRS('created',exp)
-    this.vRS('insurer',exp)
-    this.vOS('requestor',exp)
-    this.vOS('request',exp)
-    this.vRSV('outcome',exp,'RemittanceOutcome',RemittanceOutcomeVsValidation,'r')
-    this.vOS('disposition',exp)
-    this.vOS('preAuthRef',exp)
-    this.vOS('preAuthPeriod',exp)
-    this.vOS('payeeType',exp)
-    this.vOA('item',exp)
-    this.vOA('addItem',exp)
-    this.vOA('adjudication',exp)
-    this.vOA('total',exp)
-    this.vOS('payment',exp)
-    this.vOS('fundsReserve',exp)
-    this.vOS('formCode',exp)
-    this.vOS('form',exp)
-    this.vOA('processNote',exp)
-    this.vOA('communicationRequest',exp)
-    this.vOA('insurance',exp)
-    this.vOA('error',exp)
-    return issues;
+    iss.push(...this.vRPS('resourceType',exp));
+    iss.push(...this.vOA('identifier',exp));
+    iss.push(...this.vRSV('status',exp,'FmStatus',FmStatusVsValidation,'r'));
+    iss.push(...this.vRS('type',exp));
+    iss.push(...this.vOS('subType',exp));
+    iss.push(...this.vRSV('use',exp,'ClaimUse',ClaimUseVsValidation,'r'));
+    iss.push(...this.vRS('patient',exp));
+    iss.push(...this.vRS('created',exp));
+    iss.push(...this.vRS('insurer',exp));
+    iss.push(...this.vOS('requestor',exp));
+    iss.push(...this.vOS('request',exp));
+    iss.push(...this.vRSV('outcome',exp,'RemittanceOutcome',RemittanceOutcomeVsValidation,'r'));
+    iss.push(...this.vOS('disposition',exp));
+    iss.push(...this.vOS('preAuthRef',exp));
+    iss.push(...this.vOS('preAuthPeriod',exp));
+    iss.push(...this.vOS('payeeType',exp));
+    iss.push(...this.vOA('item',exp));
+    iss.push(...this.vOA('addItem',exp));
+    iss.push(...this.vOA('adjudication',exp));
+    iss.push(...this.vOA('total',exp));
+    iss.push(...this.vOS('payment',exp));
+    iss.push(...this.vOS('fundsReserve',exp));
+    iss.push(...this.vOS('formCode',exp));
+    iss.push(...this.vOS('form',exp));
+    iss.push(...this.vOA('processNote',exp));
+    iss.push(...this.vOA('communicationRequest',exp));
+    iss.push(...this.vOA('insurance',exp));
+    iss.push(...this.vOA('error',exp));
+    return iss;
   }
 }

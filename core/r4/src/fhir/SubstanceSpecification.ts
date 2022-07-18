@@ -122,16 +122,16 @@ export class SubstanceSpecificationMoiety extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'SubstanceSpecification.moiety' }
-    this.vOS('role',exp)
-    this.vOS('identifier',exp)
-    this.vOS('name',exp)
-    this.vOS('stereochemistry',exp)
-    this.vOS('opticalActivity',exp)
-    this.vOS('molecularFormula',exp)
-    this.vOS('amount',exp)
-    return issues;
+    iss.push(...this.vOS('role',exp));
+    iss.push(...this.vOS('identifier',exp));
+    iss.push(...this.vOS('name',exp));
+    iss.push(...this.vOS('stereochemistry',exp));
+    iss.push(...this.vOS('opticalActivity',exp));
+    iss.push(...this.vOS('molecularFormula',exp));
+    iss.push(...this.vOS('amount',exp));
+    return iss;
   }
 }
 /**
@@ -239,14 +239,14 @@ export class SubstanceSpecificationProperty extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'SubstanceSpecification.property' }
-    this.vOS('category',exp)
-    this.vOS('code',exp)
-    this.vOS('parameters',exp)
-    this.vOS('definingSubstance',exp)
-    this.vOS('amount',exp)
-    return issues;
+    iss.push(...this.vOS('category',exp));
+    iss.push(...this.vOS('code',exp));
+    iss.push(...this.vOS('parameters',exp));
+    iss.push(...this.vOS('definingSubstance',exp));
+    iss.push(...this.vOS('amount',exp));
+    return iss;
   }
 }
 /**
@@ -300,12 +300,12 @@ export class SubstanceSpecificationStructureIsotopeMolecularWeight extends fhir.
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'SubstanceSpecification.structure.isotope.molecularWeight' }
-    this.vOS('method',exp)
-    this.vOS('type',exp)
-    this.vOS('amount',exp)
-    return issues;
+    iss.push(...this.vOS('method',exp));
+    iss.push(...this.vOS('type',exp));
+    iss.push(...this.vOS('amount',exp));
+    return iss;
   }
 }
 /**
@@ -377,14 +377,14 @@ export class SubstanceSpecificationStructureIsotope extends fhir.BackboneElement
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'SubstanceSpecification.structure.isotope' }
-    this.vOS('identifier',exp)
-    this.vOS('name',exp)
-    this.vOS('substitution',exp)
-    this.vOS('halfLife',exp)
-    this.vOS('molecularWeight',exp)
-    return issues;
+    iss.push(...this.vOS('identifier',exp));
+    iss.push(...this.vOS('name',exp));
+    iss.push(...this.vOS('substitution',exp));
+    iss.push(...this.vOS('halfLife',exp));
+    iss.push(...this.vOS('molecularWeight',exp));
+    return iss;
   }
 }
 /**
@@ -446,12 +446,12 @@ export class SubstanceSpecificationStructureRepresentation extends fhir.Backbone
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'SubstanceSpecification.structure.representation' }
-    this.vOS('type',exp)
-    this.vOS('representation',exp)
-    this.vOS('attachment',exp)
-    return issues;
+    iss.push(...this.vOS('type',exp));
+    iss.push(...this.vOS('representation',exp));
+    iss.push(...this.vOS('attachment',exp));
+    return iss;
   }
 }
 /**
@@ -569,17 +569,17 @@ export class SubstanceSpecificationStructure extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'SubstanceSpecification.structure' }
-    this.vOS('stereochemistry',exp)
-    this.vOS('opticalActivity',exp)
-    this.vOS('molecularFormula',exp)
-    this.vOS('molecularFormulaByMoiety',exp)
-    this.vOA('isotope',exp)
-    this.vOS('molecularWeight',exp)
-    this.vOA('source',exp)
-    this.vOA('representation',exp)
-    return issues;
+    iss.push(...this.vOS('stereochemistry',exp));
+    iss.push(...this.vOS('opticalActivity',exp));
+    iss.push(...this.vOS('molecularFormula',exp));
+    iss.push(...this.vOS('molecularFormulaByMoiety',exp));
+    iss.push(...this.vOA('isotope',exp));
+    iss.push(...this.vOS('molecularWeight',exp));
+    iss.push(...this.vOA('source',exp));
+    iss.push(...this.vOA('representation',exp));
+    return iss;
   }
 }
 /**
@@ -668,14 +668,14 @@ export class SubstanceSpecificationCode extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'SubstanceSpecification.code' }
-    this.vOS('code',exp)
-    this.vOS('status',exp)
-    this.vOS('statusDate',exp)
-    this.vOS('comment',exp)
-    this.vOA('source',exp)
-    return issues;
+    iss.push(...this.vOS('code',exp));
+    iss.push(...this.vOS('status',exp));
+    iss.push(...this.vOS('statusDate',exp));
+    iss.push(...this.vOS('comment',exp));
+    iss.push(...this.vOA('source',exp));
+    return iss;
   }
 }
 /**
@@ -737,12 +737,12 @@ export class SubstanceSpecificationNameOfficial extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'SubstanceSpecification.name.official' }
-    this.vOS('authority',exp)
-    this.vOS('status',exp)
-    this.vOS('date',exp)
-    return issues;
+    iss.push(...this.vOS('authority',exp));
+    iss.push(...this.vOS('status',exp));
+    iss.push(...this.vOS('date',exp));
+    return iss;
   }
 }
 /**
@@ -892,20 +892,20 @@ export class SubstanceSpecificationName extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'SubstanceSpecification.name' }
-    this.vRS('name',exp)
-    this.vOS('type',exp)
-    this.vOS('status',exp)
-    this.vOS('preferred',exp)
-    this.vOA('language',exp)
-    this.vOA('domain',exp)
-    this.vOA('jurisdiction',exp)
-    this.vOA('synonym',exp)
-    this.vOA('translation',exp)
-    this.vOA('official',exp)
-    this.vOA('source',exp)
-    return issues;
+    iss.push(...this.vRS('name',exp));
+    iss.push(...this.vOS('type',exp));
+    iss.push(...this.vOS('status',exp));
+    iss.push(...this.vOS('preferred',exp));
+    iss.push(...this.vOA('language',exp));
+    iss.push(...this.vOA('domain',exp));
+    iss.push(...this.vOA('jurisdiction',exp));
+    iss.push(...this.vOA('synonym',exp));
+    iss.push(...this.vOA('translation',exp));
+    iss.push(...this.vOA('official',exp));
+    iss.push(...this.vOA('source',exp));
+    return iss;
   }
 }
 /**
@@ -1042,16 +1042,16 @@ export class SubstanceSpecificationRelationship extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'SubstanceSpecification.relationship' }
-    this.vOS('substance',exp)
-    this.vOS('relationship',exp)
-    this.vOS('isDefining',exp)
-    this.vOS('amount',exp)
-    this.vOS('amountRatioLowLimit',exp)
-    this.vOS('amountType',exp)
-    this.vOA('source',exp)
-    return issues;
+    iss.push(...this.vOS('substance',exp));
+    iss.push(...this.vOS('relationship',exp));
+    iss.push(...this.vOS('isDefining',exp));
+    iss.push(...this.vOS('amount',exp));
+    iss.push(...this.vOS('amountRatioLowLimit',exp));
+    iss.push(...this.vOS('amountType',exp));
+    iss.push(...this.vOA('source',exp));
+    return iss;
   }
 }
 /**
@@ -1281,28 +1281,28 @@ export class SubstanceSpecification extends fhir.DomainResource {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'SubstanceSpecification' }
-    this.vRS('resourceType',exp)
-    this.vOS('identifier',exp)
-    this.vOS('type',exp)
-    this.vOS('status',exp)
-    this.vOS('domain',exp)
-    this.vOS('description',exp)
-    this.vOA('source',exp)
-    this.vOS('comment',exp)
-    this.vOA('moiety',exp)
-    this.vOA('property',exp)
-    this.vOS('referenceInformation',exp)
-    this.vOS('structure',exp)
-    this.vOA('code',exp)
-    this.vOA('name',exp)
-    this.vOA('molecularWeight',exp)
-    this.vOA('relationship',exp)
-    this.vOS('nucleicAcid',exp)
-    this.vOS('polymer',exp)
-    this.vOS('protein',exp)
-    this.vOS('sourceMaterial',exp)
-    return issues;
+    iss.push(...this.vRPS('resourceType',exp));
+    iss.push(...this.vOS('identifier',exp));
+    iss.push(...this.vOS('type',exp));
+    iss.push(...this.vOS('status',exp));
+    iss.push(...this.vOS('domain',exp));
+    iss.push(...this.vOS('description',exp));
+    iss.push(...this.vOA('source',exp));
+    iss.push(...this.vOS('comment',exp));
+    iss.push(...this.vOA('moiety',exp));
+    iss.push(...this.vOA('property',exp));
+    iss.push(...this.vOS('referenceInformation',exp));
+    iss.push(...this.vOS('structure',exp));
+    iss.push(...this.vOA('code',exp));
+    iss.push(...this.vOA('name',exp));
+    iss.push(...this.vOA('molecularWeight',exp));
+    iss.push(...this.vOA('relationship',exp));
+    iss.push(...this.vOS('nucleicAcid',exp));
+    iss.push(...this.vOS('polymer',exp));
+    iss.push(...this.vOS('protein',exp));
+    iss.push(...this.vOS('sourceMaterial',exp));
+    return iss;
   }
 }

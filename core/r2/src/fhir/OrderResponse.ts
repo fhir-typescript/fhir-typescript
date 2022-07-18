@@ -133,16 +133,16 @@ export class OrderResponse extends fhir.DomainResource {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'OrderResponse' }
-    this.vRS('resourceType',exp)
-    this.vOA('identifier',exp)
-    this.vRS('request',exp)
-    this.vOS('date',exp)
-    this.vOS('who',exp)
-    this.vRSV('orderStatus',exp,'OrderStatus',OrderStatusVsValidation,'r')
-    this.vOS('description',exp)
-    this.vOA('fulfillment',exp)
-    return issues;
+    iss.push(...this.vRPS('resourceType',exp));
+    iss.push(...this.vOA('identifier',exp));
+    iss.push(...this.vRS('request',exp));
+    iss.push(...this.vOS('date',exp));
+    iss.push(...this.vOS('who',exp));
+    iss.push(...this.vRSV('orderStatus',exp,'OrderStatus',OrderStatusVsValidation,'r'));
+    iss.push(...this.vOS('description',exp));
+    iss.push(...this.vOA('fulfillment',exp));
+    return iss;
   }
 }

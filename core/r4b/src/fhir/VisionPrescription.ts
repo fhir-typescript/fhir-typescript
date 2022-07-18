@@ -81,11 +81,11 @@ export class VisionPrescriptionLensSpecificationPrism extends fhir.BackboneEleme
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'VisionPrescription.lensSpecification.prism' }
-    this.vRS('amount',exp)
-    this.vRSV('base',exp,'VisionBase',VisionBaseVsValidation,'r')
-    return issues;
+    iss.push(...this.vRS('amount',exp));
+    iss.push(...this.vRSV('base',exp,'VisionBase',VisionBaseVsValidation,'r'));
+    return iss;
   }
 }
 /**
@@ -324,23 +324,23 @@ export class VisionPrescriptionLensSpecification extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'VisionPrescription.lensSpecification' }
-    this.vRS('product',exp)
-    this.vRSV('eye',exp,'VisionEye',VisionEyeVsValidation,'r')
-    this.vOS('sphere',exp)
-    this.vOS('cylinder',exp)
-    this.vOS('axis',exp)
-    this.vOA('prism',exp)
-    this.vOS('add',exp)
-    this.vOS('power',exp)
-    this.vOS('backCurve',exp)
-    this.vOS('diameter',exp)
-    this.vOS('duration',exp)
-    this.vOS('color',exp)
-    this.vOS('brand',exp)
-    this.vOA('note',exp)
-    return issues;
+    iss.push(...this.vRS('product',exp));
+    iss.push(...this.vRSV('eye',exp,'VisionEye',VisionEyeVsValidation,'r'));
+    iss.push(...this.vOS('sphere',exp));
+    iss.push(...this.vOS('cylinder',exp));
+    iss.push(...this.vOS('axis',exp));
+    iss.push(...this.vOA('prism',exp));
+    iss.push(...this.vOS('add',exp));
+    iss.push(...this.vOS('power',exp));
+    iss.push(...this.vOS('backCurve',exp));
+    iss.push(...this.vOS('diameter',exp));
+    iss.push(...this.vOS('duration',exp));
+    iss.push(...this.vOS('color',exp));
+    iss.push(...this.vOS('brand',exp));
+    iss.push(...this.vOA('note',exp));
+    return iss;
   }
 }
 /**
@@ -479,17 +479,17 @@ export class VisionPrescription extends fhir.DomainResource {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'VisionPrescription' }
-    this.vRS('resourceType',exp)
-    this.vOA('identifier',exp)
-    this.vRSV('status',exp,'FmStatus',FmStatusVsValidation,'r')
-    this.vRS('created',exp)
-    this.vRS('patient',exp)
-    this.vOS('encounter',exp)
-    this.vRS('dateWritten',exp)
-    this.vRS('prescriber',exp)
-    this.vRA('lensSpecification',exp)
-    return issues;
+    iss.push(...this.vRPS('resourceType',exp));
+    iss.push(...this.vOA('identifier',exp));
+    iss.push(...this.vRSV('status',exp,'FmStatus',FmStatusVsValidation,'r'));
+    iss.push(...this.vRS('created',exp));
+    iss.push(...this.vRS('patient',exp));
+    iss.push(...this.vOS('encounter',exp));
+    iss.push(...this.vRS('dateWritten',exp));
+    iss.push(...this.vRS('prescriber',exp));
+    iss.push(...this.vRA('lensSpecification',exp));
+    return iss;
   }
 }

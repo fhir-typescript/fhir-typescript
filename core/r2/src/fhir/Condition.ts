@@ -56,11 +56,11 @@ export class ConditionStage extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'Condition.stage' }
-    this.vOS('summary',exp)
-    this.vOA('assessment',exp)
-    return issues;
+    iss.push(...this.vOS('summary',exp));
+    iss.push(...this.vOA('assessment',exp));
+    return iss;
   }
 }
 /**
@@ -106,11 +106,11 @@ export class ConditionEvidence extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'Condition.evidence' }
-    this.vOS('code',exp)
-    this.vOA('detail',exp)
-    return issues;
+    iss.push(...this.vOS('code',exp));
+    iss.push(...this.vOA('detail',exp));
+    return iss;
   }
 }
 /**
@@ -391,25 +391,25 @@ export class Condition extends fhir.DomainResource {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'Condition' }
-    this.vRS('resourceType',exp)
-    this.vOA('identifier',exp)
-    this.vRS('patient',exp)
-    this.vOS('encounter',exp)
-    this.vOS('asserter',exp)
-    this.vOS('dateRecorded',exp)
-    this.vRS('code',exp)
-    this.vOS('category',exp)
-    this.vOS('clinicalStatus',exp)
-    this.vRSV('verificationStatus',exp,'ConditionVerStatus',ConditionVerStatusVsValidation,'r')
-    this.vOS('severity',exp)
-    this.vOS('onset',exp)
-    this.vOS('abatement',exp)
-    this.vOS('stage',exp)
-    this.vOA('evidence',exp)
-    this.vOA('bodySite',exp)
-    this.vOS('notes',exp)
-    return issues;
+    iss.push(...this.vRPS('resourceType',exp));
+    iss.push(...this.vOA('identifier',exp));
+    iss.push(...this.vRS('patient',exp));
+    iss.push(...this.vOS('encounter',exp));
+    iss.push(...this.vOS('asserter',exp));
+    iss.push(...this.vOS('dateRecorded',exp));
+    iss.push(...this.vRS('code',exp));
+    iss.push(...this.vOS('category',exp));
+    iss.push(...this.vOS('clinicalStatus',exp));
+    iss.push(...this.vRSV('verificationStatus',exp,'ConditionVerStatus',ConditionVerStatusVsValidation,'r'));
+    iss.push(...this.vOS('severity',exp));
+    iss.push(...this.vOS('onset',exp));
+    iss.push(...this.vOS('abatement',exp));
+    iss.push(...this.vOS('stage',exp));
+    iss.push(...this.vOA('evidence',exp));
+    iss.push(...this.vOA('bodySite',exp));
+    iss.push(...this.vOS('notes',exp));
+    return iss;
   }
 }

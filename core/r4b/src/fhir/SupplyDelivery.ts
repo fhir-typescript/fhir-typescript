@@ -69,11 +69,11 @@ export class SupplyDeliverySuppliedItem extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'SupplyDelivery.suppliedItem' }
-    this.vOS('quantity',exp)
-    this.vOS('item',exp)
-    return issues;
+    iss.push(...this.vOS('quantity',exp));
+    iss.push(...this.vOS('item',exp));
+    return iss;
   }
 }
 /**
@@ -241,20 +241,20 @@ export class SupplyDelivery extends fhir.DomainResource {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'SupplyDelivery' }
-    this.vRS('resourceType',exp)
-    this.vOA('identifier',exp)
-    this.vOA('basedOn',exp)
-    this.vOA('partOf',exp)
-    this.vOSV('status',exp,'SupplydeliveryStatus',SupplydeliveryStatusVsValidation,'r')
-    this.vOS('patient',exp)
-    this.vOSV('type',exp,'SupplydeliveryType',SupplydeliveryTypeVsValidation,'r')
-    this.vOS('suppliedItem',exp)
-    this.vOS('occurrence',exp)
-    this.vOS('supplier',exp)
-    this.vOS('destination',exp)
-    this.vOA('receiver',exp)
-    return issues;
+    iss.push(...this.vRPS('resourceType',exp));
+    iss.push(...this.vOA('identifier',exp));
+    iss.push(...this.vOA('basedOn',exp));
+    iss.push(...this.vOA('partOf',exp));
+    iss.push(...this.vOSV('status',exp,'SupplydeliveryStatus',SupplydeliveryStatusVsValidation,'r'));
+    iss.push(...this.vOS('patient',exp));
+    iss.push(...this.vOSV('type',exp,'SupplydeliveryType',SupplydeliveryTypeVsValidation,'r'));
+    iss.push(...this.vOS('suppliedItem',exp));
+    iss.push(...this.vOS('occurrence',exp));
+    iss.push(...this.vOS('supplier',exp));
+    iss.push(...this.vOS('destination',exp));
+    iss.push(...this.vOA('receiver',exp));
+    return iss;
   }
 }

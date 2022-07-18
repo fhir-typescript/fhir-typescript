@@ -110,13 +110,13 @@ export class DataElementMapping extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'DataElement.mapping' }
-    this.vRS('identity',exp)
-    this.vOS('uri',exp)
-    this.vOS('name',exp)
-    this.vOS('comment',exp)
-    return issues;
+    iss.push(...this.vRS('identity',exp));
+    iss.push(...this.vOS('uri',exp));
+    iss.push(...this.vOS('name',exp));
+    iss.push(...this.vOS('comment',exp));
+    return iss;
   }
 }
 /**
@@ -385,25 +385,25 @@ export class DataElement extends fhir.DomainResource {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'DataElement' }
-    this.vRS('resourceType',exp)
-    this.vOS('url',exp)
-    this.vOA('identifier',exp)
-    this.vOS('version',exp)
-    this.vRSV('status',exp,'PublicationStatus',PublicationStatusVsValidation,'r')
-    this.vOS('experimental',exp)
-    this.vOS('date',exp)
-    this.vOS('publisher',exp)
-    this.vOS('name',exp)
-    this.vOS('title',exp)
-    this.vOA('contact',exp)
-    this.vOA('useContext',exp)
-    this.vOA('jurisdiction',exp)
-    this.vOS('copyright',exp)
-    this.vOSV('stringency',exp,'DataelementStringency',DataelementStringencyVsValidation,'r')
-    this.vOA('mapping',exp)
-    this.vRA('element',exp)
-    return issues;
+    iss.push(...this.vRPS('resourceType',exp));
+    iss.push(...this.vOS('url',exp));
+    iss.push(...this.vOA('identifier',exp));
+    iss.push(...this.vOS('version',exp));
+    iss.push(...this.vRSV('status',exp,'PublicationStatus',PublicationStatusVsValidation,'r'));
+    iss.push(...this.vOS('experimental',exp));
+    iss.push(...this.vOS('date',exp));
+    iss.push(...this.vOS('publisher',exp));
+    iss.push(...this.vOS('name',exp));
+    iss.push(...this.vOS('title',exp));
+    iss.push(...this.vOA('contact',exp));
+    iss.push(...this.vOA('useContext',exp));
+    iss.push(...this.vOA('jurisdiction',exp));
+    iss.push(...this.vOS('copyright',exp));
+    iss.push(...this.vOSV('stringency',exp,'DataelementStringency',DataelementStringencyVsValidation,'r'));
+    iss.push(...this.vOA('mapping',exp));
+    iss.push(...this.vRA('element',exp));
+    return iss;
   }
 }

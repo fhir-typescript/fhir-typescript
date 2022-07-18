@@ -104,13 +104,13 @@ export class GroupCharacteristic extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'Group.characteristic' }
-    this.vRS('code',exp)
-    this.vRS('value',exp)
-    this.vRS('exclude',exp)
-    this.vOS('period',exp)
-    return issues;
+    iss.push(...this.vRS('code',exp));
+    iss.push(...this.vRS('value',exp));
+    iss.push(...this.vRS('exclude',exp));
+    iss.push(...this.vOS('period',exp));
+    return iss;
   }
 }
 /**
@@ -173,12 +173,12 @@ export class GroupMember extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'Group.member' }
-    this.vRS('entity',exp)
-    this.vOS('period',exp)
-    this.vOS('inactive',exp)
-    return issues;
+    iss.push(...this.vRS('entity',exp));
+    iss.push(...this.vOS('period',exp));
+    iss.push(...this.vOS('inactive',exp));
+    return iss;
   }
 }
 /**
@@ -340,18 +340,18 @@ export class Group extends fhir.DomainResource {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'Group' }
-    this.vRS('resourceType',exp)
-    this.vOA('identifier',exp)
-    this.vOS('active',exp)
-    this.vRSV('type',exp,'GroupType',GroupTypeVsValidation,'r')
-    this.vRS('actual',exp)
-    this.vOS('code',exp)
-    this.vOS('name',exp)
-    this.vOS('quantity',exp)
-    this.vOA('characteristic',exp)
-    this.vOA('member',exp)
-    return issues;
+    iss.push(...this.vRPS('resourceType',exp));
+    iss.push(...this.vOA('identifier',exp));
+    iss.push(...this.vOS('active',exp));
+    iss.push(...this.vRSV('type',exp,'GroupType',GroupTypeVsValidation,'r'));
+    iss.push(...this.vRS('actual',exp));
+    iss.push(...this.vOS('code',exp));
+    iss.push(...this.vOS('name',exp));
+    iss.push(...this.vOS('quantity',exp));
+    iss.push(...this.vOA('characteristic',exp));
+    iss.push(...this.vOA('member',exp));
+    return iss;
   }
 }

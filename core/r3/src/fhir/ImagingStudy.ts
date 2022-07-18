@@ -123,13 +123,13 @@ export class ImagingStudySeriesInstance extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'ImagingStudy.series.instance' }
-    this.vRS('uid',exp)
-    this.vOS('number',exp)
-    this.vRS('sopClass',exp)
-    this.vOS('title',exp)
-    return issues;
+    iss.push(...this.vRS('uid',exp));
+    iss.push(...this.vOS('number',exp));
+    iss.push(...this.vRS('sopClass',exp));
+    iss.push(...this.vOS('title',exp));
+    return iss;
   }
 }
 /**
@@ -317,21 +317,21 @@ export class ImagingStudySeries extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'ImagingStudy.series' }
-    this.vRS('uid',exp)
-    this.vOS('number',exp)
-    this.vRS('modality',exp)
-    this.vOS('description',exp)
-    this.vOS('numberOfInstances',exp)
-    this.vOSV('availability',exp,'InstanceAvailability',InstanceAvailabilityVsValidation,'r')
-    this.vOA('endpoint',exp)
-    this.vOS('bodySite',exp)
-    this.vOS('laterality',exp)
-    this.vOS('started',exp)
-    this.vOA('performer',exp)
-    this.vOA('instance',exp)
-    return issues;
+    iss.push(...this.vRS('uid',exp));
+    iss.push(...this.vOS('number',exp));
+    iss.push(...this.vRS('modality',exp));
+    iss.push(...this.vOS('description',exp));
+    iss.push(...this.vOS('numberOfInstances',exp));
+    iss.push(...this.vOSV('availability',exp,'InstanceAvailability',InstanceAvailabilityVsValidation,'r'));
+    iss.push(...this.vOA('endpoint',exp));
+    iss.push(...this.vOS('bodySite',exp));
+    iss.push(...this.vOS('laterality',exp));
+    iss.push(...this.vOS('started',exp));
+    iss.push(...this.vOA('performer',exp));
+    iss.push(...this.vOA('instance',exp));
+    return iss;
   }
 }
 /**
@@ -596,28 +596,28 @@ export class ImagingStudy extends fhir.DomainResource {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'ImagingStudy' }
-    this.vRS('resourceType',exp)
-    this.vRS('uid',exp)
-    this.vOS('accession',exp)
-    this.vOA('identifier',exp)
-    this.vOSV('availability',exp,'InstanceAvailability',InstanceAvailabilityVsValidation,'r')
-    this.vOA('modalityList',exp)
-    this.vRS('patient',exp)
-    this.vOS('context',exp)
-    this.vOS('started',exp)
-    this.vOA('basedOn',exp)
-    this.vOS('referrer',exp)
-    this.vOA('interpreter',exp)
-    this.vOA('endpoint',exp)
-    this.vOS('numberOfSeries',exp)
-    this.vOS('numberOfInstances',exp)
-    this.vOA('procedureReference',exp)
-    this.vOA('procedureCode',exp)
-    this.vOS('reason',exp)
-    this.vOS('description',exp)
-    this.vOA('series',exp)
-    return issues;
+    iss.push(...this.vRPS('resourceType',exp));
+    iss.push(...this.vRS('uid',exp));
+    iss.push(...this.vOS('accession',exp));
+    iss.push(...this.vOA('identifier',exp));
+    iss.push(...this.vOSV('availability',exp,'InstanceAvailability',InstanceAvailabilityVsValidation,'r'));
+    iss.push(...this.vOA('modalityList',exp));
+    iss.push(...this.vRS('patient',exp));
+    iss.push(...this.vOS('context',exp));
+    iss.push(...this.vOS('started',exp));
+    iss.push(...this.vOA('basedOn',exp));
+    iss.push(...this.vOS('referrer',exp));
+    iss.push(...this.vOA('interpreter',exp));
+    iss.push(...this.vOA('endpoint',exp));
+    iss.push(...this.vOS('numberOfSeries',exp));
+    iss.push(...this.vOS('numberOfInstances',exp));
+    iss.push(...this.vOA('procedureReference',exp));
+    iss.push(...this.vOA('procedureCode',exp));
+    iss.push(...this.vOS('reason',exp));
+    iss.push(...this.vOS('description',exp));
+    iss.push(...this.vOA('series',exp));
+    return iss;
   }
 }

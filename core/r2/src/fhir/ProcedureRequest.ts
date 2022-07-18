@@ -248,23 +248,23 @@ export class ProcedureRequest extends fhir.DomainResource {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'ProcedureRequest' }
-    this.vRS('resourceType',exp)
-    this.vOA('identifier',exp)
-    this.vRS('subject',exp)
-    this.vRS('code',exp)
-    this.vOA('bodySite',exp)
-    this.vOS('reason',exp)
-    this.vOS('scheduled',exp)
-    this.vOS('encounter',exp)
-    this.vOS('performer',exp)
-    this.vOSV('status',exp,'ProcedureRequestStatus',ProcedureRequestStatusVsValidation,'r')
-    this.vOA('notes',exp)
-    this.vOS('asNeeded',exp)
-    this.vOS('orderedOn',exp)
-    this.vOS('orderer',exp)
-    this.vOSV('priority',exp,'ProcedureRequestPriority',ProcedureRequestPriorityVsValidation,'r')
-    return issues;
+    iss.push(...this.vRPS('resourceType',exp));
+    iss.push(...this.vOA('identifier',exp));
+    iss.push(...this.vRS('subject',exp));
+    iss.push(...this.vRS('code',exp));
+    iss.push(...this.vOA('bodySite',exp));
+    iss.push(...this.vOS('reason',exp));
+    iss.push(...this.vOS('scheduled',exp));
+    iss.push(...this.vOS('encounter',exp));
+    iss.push(...this.vOS('performer',exp));
+    iss.push(...this.vOSV('status',exp,'ProcedureRequestStatus',ProcedureRequestStatusVsValidation,'r'));
+    iss.push(...this.vOA('notes',exp));
+    iss.push(...this.vOS('asNeeded',exp));
+    iss.push(...this.vOS('orderedOn',exp));
+    iss.push(...this.vOS('orderer',exp));
+    iss.push(...this.vOSV('priority',exp,'ProcedureRequestPriority',ProcedureRequestPriorityVsValidation,'r'));
+    return iss;
   }
 }

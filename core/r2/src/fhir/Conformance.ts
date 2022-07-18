@@ -120,11 +120,11 @@ export class ConformanceContact extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'Conformance.contact' }
-    this.vOS('name',exp)
-    this.vOA('telecom',exp)
-    return issues;
+    iss.push(...this.vOS('name',exp));
+    iss.push(...this.vOA('telecom',exp));
+    return iss;
   }
 }
 /**
@@ -203,12 +203,12 @@ export class ConformanceSoftware extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'Conformance.software' }
-    this.vRS('name',exp)
-    this.vOS('version',exp)
-    this.vOS('releaseDate',exp)
-    return issues;
+    iss.push(...this.vRS('name',exp));
+    iss.push(...this.vOS('version',exp));
+    iss.push(...this.vOS('releaseDate',exp));
+    return iss;
   }
 }
 /**
@@ -270,11 +270,11 @@ export class ConformanceImplementation extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'Conformance.implementation' }
-    this.vRS('description',exp)
-    this.vOS('url',exp)
-    return issues;
+    iss.push(...this.vRS('description',exp));
+    iss.push(...this.vOS('url',exp));
+    return iss;
   }
 }
 /**
@@ -335,11 +335,11 @@ export class ConformanceRestSecurityCertificate extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'Conformance.rest.security.certificate' }
-    this.vOS('type',exp)
-    this.vOS('blob',exp)
-    return issues;
+    iss.push(...this.vOS('type',exp));
+    iss.push(...this.vOS('blob',exp));
+    return iss;
   }
 }
 /**
@@ -420,13 +420,13 @@ export class ConformanceRestSecurity extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'Conformance.rest.security' }
-    this.vOS('cors',exp)
-    this.vOA('service',exp)
-    this.vOS('description',exp)
-    this.vOA('certificate',exp)
-    return issues;
+    iss.push(...this.vOS('cors',exp));
+    iss.push(...this.vOA('service',exp));
+    iss.push(...this.vOS('description',exp));
+    iss.push(...this.vOA('certificate',exp));
+    return iss;
   }
 }
 /**
@@ -488,11 +488,11 @@ export class ConformanceRestResourceInteraction extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'Conformance.rest.resource.interaction' }
-    this.vRSV('code',exp,'TypeRestfulInteraction',TypeRestfulInteractionVsValidation,'r')
-    this.vOS('documentation',exp)
-    return issues;
+    iss.push(...this.vRSV('code',exp,'TypeRestfulInteraction',TypeRestfulInteractionVsValidation,'r'));
+    iss.push(...this.vOS('documentation',exp));
+    return iss;
   }
 }
 /**
@@ -649,16 +649,16 @@ export class ConformanceRestResourceSearchParam extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'Conformance.rest.resource.searchParam' }
-    this.vRS('name',exp)
-    this.vOS('definition',exp)
-    this.vRSV('type',exp,'SearchParamType',SearchParamTypeVsValidation,'r')
-    this.vOS('documentation',exp)
-    this.vOAV('target',exp,'ResourceTypes',ResourceTypesVsValidation,'r')
-    this.vOAV('modifier',exp,'SearchModifier',SearchModifierVsValidation,'r')
-    this.vOA('chain',exp)
-    return issues;
+    iss.push(...this.vRS('name',exp));
+    iss.push(...this.vOS('definition',exp));
+    iss.push(...this.vRSV('type',exp,'SearchParamType',SearchParamTypeVsValidation,'r'));
+    iss.push(...this.vOS('documentation',exp));
+    iss.push(...this.vOAV('target',exp,'ResourceTypes',ResourceTypesVsValidation,'r'));
+    iss.push(...this.vOAV('modifier',exp,'SearchModifier',SearchModifierVsValidation,'r'));
+    iss.push(...this.vOA('chain',exp));
+    return iss;
   }
 }
 /**
@@ -874,21 +874,21 @@ export class ConformanceRestResource extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'Conformance.rest.resource' }
-    this.vRSV('type',exp,'ResourceTypes',ResourceTypesVsValidation,'r')
-    this.vOS('profile',exp)
-    this.vRA('interaction',exp)
-    this.vOSV('versioning',exp,'VersioningPolicy',VersioningPolicyVsValidation,'r')
-    this.vOS('readHistory',exp)
-    this.vOS('updateCreate',exp)
-    this.vOS('conditionalCreate',exp)
-    this.vOS('conditionalUpdate',exp)
-    this.vOSV('conditionalDelete',exp,'ConditionalDeleteStatus',ConditionalDeleteStatusVsValidation,'r')
-    this.vOA('searchInclude',exp)
-    this.vOA('searchRevInclude',exp)
-    this.vOA('searchParam',exp)
-    return issues;
+    iss.push(...this.vRSV('type',exp,'ResourceTypes',ResourceTypesVsValidation,'r'));
+    iss.push(...this.vOS('profile',exp));
+    iss.push(...this.vRA('interaction',exp));
+    iss.push(...this.vOSV('versioning',exp,'VersioningPolicy',VersioningPolicyVsValidation,'r'));
+    iss.push(...this.vOS('readHistory',exp));
+    iss.push(...this.vOS('updateCreate',exp));
+    iss.push(...this.vOS('conditionalCreate',exp));
+    iss.push(...this.vOS('conditionalUpdate',exp));
+    iss.push(...this.vOSV('conditionalDelete',exp,'ConditionalDeleteStatus',ConditionalDeleteStatusVsValidation,'r'));
+    iss.push(...this.vOA('searchInclude',exp));
+    iss.push(...this.vOA('searchRevInclude',exp));
+    iss.push(...this.vOA('searchParam',exp));
+    return iss;
   }
 }
 /**
@@ -950,11 +950,11 @@ export class ConformanceRestInteraction extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'Conformance.rest.interaction' }
-    this.vRSV('code',exp,'SystemRestfulInteraction',SystemRestfulInteractionVsValidation,'r')
-    this.vOS('documentation',exp)
-    return issues;
+    iss.push(...this.vRSV('code',exp,'SystemRestfulInteraction',SystemRestfulInteractionVsValidation,'r'));
+    iss.push(...this.vOS('documentation',exp));
+    return iss;
   }
 }
 /**
@@ -1009,11 +1009,11 @@ export class ConformanceRestOperation extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'Conformance.rest.operation' }
-    this.vRS('name',exp)
-    this.vRS('definition',exp)
-    return issues;
+    iss.push(...this.vRS('name',exp));
+    iss.push(...this.vRS('definition',exp));
+    return iss;
   }
 }
 /**
@@ -1161,18 +1161,18 @@ export class ConformanceRest extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'Conformance.rest' }
-    this.vRSV('mode',exp,'RestfulConformanceMode',RestfulConformanceModeVsValidation,'r')
-    this.vOS('documentation',exp)
-    this.vOS('security',exp)
-    this.vRA('resource',exp)
-    this.vOA('interaction',exp)
-    this.vOSV('transactionMode',exp,'TransactionMode',TransactionModeVsValidation,'r')
-    this.vOA('searchParam',exp)
-    this.vOA('operation',exp)
-    this.vOA('compartment',exp)
-    return issues;
+    iss.push(...this.vRSV('mode',exp,'RestfulConformanceMode',RestfulConformanceModeVsValidation,'r'));
+    iss.push(...this.vOS('documentation',exp));
+    iss.push(...this.vOS('security',exp));
+    iss.push(...this.vRA('resource',exp));
+    iss.push(...this.vOA('interaction',exp));
+    iss.push(...this.vOSV('transactionMode',exp,'TransactionMode',TransactionModeVsValidation,'r'));
+    iss.push(...this.vOA('searchParam',exp));
+    iss.push(...this.vOA('operation',exp));
+    iss.push(...this.vOA('compartment',exp));
+    return iss;
   }
 }
 /**
@@ -1227,11 +1227,11 @@ export class ConformanceMessagingEndpoint extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'Conformance.messaging.endpoint' }
-    this.vRS('protocol',exp)
-    this.vRS('address',exp)
-    return issues;
+    iss.push(...this.vRS('protocol',exp));
+    iss.push(...this.vRS('address',exp));
+    return iss;
   }
 }
 /**
@@ -1358,16 +1358,16 @@ export class ConformanceMessagingEvent extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'Conformance.messaging.event' }
-    this.vRS('code',exp)
-    this.vOSV('category',exp,'MessageSignificanceCategory',MessageSignificanceCategoryVsValidation,'r')
-    this.vRSV('mode',exp,'MessageConformanceEventMode',MessageConformanceEventModeVsValidation,'r')
-    this.vRSV('focus',exp,'ResourceTypes',ResourceTypesVsValidation,'r')
-    this.vRS('request',exp)
-    this.vRS('response',exp)
-    this.vOS('documentation',exp)
-    return issues;
+    iss.push(...this.vRS('code',exp));
+    iss.push(...this.vOSV('category',exp,'MessageSignificanceCategory',MessageSignificanceCategoryVsValidation,'r'));
+    iss.push(...this.vRSV('mode',exp,'MessageConformanceEventMode',MessageConformanceEventModeVsValidation,'r'));
+    iss.push(...this.vRSV('focus',exp,'ResourceTypes',ResourceTypesVsValidation,'r'));
+    iss.push(...this.vRS('request',exp));
+    iss.push(...this.vRS('response',exp));
+    iss.push(...this.vOS('documentation',exp));
+    return iss;
   }
 }
 /**
@@ -1448,13 +1448,13 @@ export class ConformanceMessaging extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'Conformance.messaging' }
-    this.vOA('endpoint',exp)
-    this.vOS('reliableCache',exp)
-    this.vOS('documentation',exp)
-    this.vRA('event',exp)
-    return issues;
+    iss.push(...this.vOA('endpoint',exp));
+    iss.push(...this.vOS('reliableCache',exp));
+    iss.push(...this.vOS('documentation',exp));
+    iss.push(...this.vRA('event',exp));
+    return iss;
   }
 }
 /**
@@ -1526,12 +1526,12 @@ export class ConformanceDocument extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'Conformance.document' }
-    this.vRSV('mode',exp,'DocumentMode',DocumentModeVsValidation,'r')
-    this.vOS('documentation',exp)
-    this.vRS('profile',exp)
-    return issues;
+    iss.push(...this.vRSV('mode',exp,'DocumentMode',DocumentModeVsValidation,'r'));
+    iss.push(...this.vOS('documentation',exp));
+    iss.push(...this.vRS('profile',exp));
+    return iss;
   }
 }
 /**
@@ -1880,30 +1880,30 @@ export class Conformance extends fhir.DomainResource {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'Conformance' }
-    this.vRS('resourceType',exp)
-    this.vOS('url',exp)
-    this.vOS('version',exp)
-    this.vOS('name',exp)
-    this.vOSV('status',exp,'ConformanceResourceStatus',ConformanceResourceStatusVsValidation,'r')
-    this.vOS('experimental',exp)
-    this.vOS('publisher',exp)
-    this.vOA('contact',exp)
-    this.vRS('date',exp)
-    this.vOS('description',exp)
-    this.vOS('requirements',exp)
-    this.vOS('copyright',exp)
-    this.vRSV('kind',exp,'ConformanceStatementKind',ConformanceStatementKindVsValidation,'r')
-    this.vOS('software',exp)
-    this.vOS('implementation',exp)
-    this.vRS('fhirVersion',exp)
-    this.vRSV('acceptUnknown',exp,'UnknownContent',UnknownContentVsValidation,'r')
-    this.vRA('format',exp)
-    this.vOA('profile',exp)
-    this.vOA('rest',exp)
-    this.vOA('messaging',exp)
-    this.vOA('document',exp)
-    return issues;
+    iss.push(...this.vRPS('resourceType',exp));
+    iss.push(...this.vOS('url',exp));
+    iss.push(...this.vOS('version',exp));
+    iss.push(...this.vOS('name',exp));
+    iss.push(...this.vOSV('status',exp,'ConformanceResourceStatus',ConformanceResourceStatusVsValidation,'r'));
+    iss.push(...this.vOS('experimental',exp));
+    iss.push(...this.vOS('publisher',exp));
+    iss.push(...this.vOA('contact',exp));
+    iss.push(...this.vRS('date',exp));
+    iss.push(...this.vOS('description',exp));
+    iss.push(...this.vOS('requirements',exp));
+    iss.push(...this.vOS('copyright',exp));
+    iss.push(...this.vRSV('kind',exp,'ConformanceStatementKind',ConformanceStatementKindVsValidation,'r'));
+    iss.push(...this.vOS('software',exp));
+    iss.push(...this.vOS('implementation',exp));
+    iss.push(...this.vRS('fhirVersion',exp));
+    iss.push(...this.vRSV('acceptUnknown',exp,'UnknownContent',UnknownContentVsValidation,'r'));
+    iss.push(...this.vRA('format',exp));
+    iss.push(...this.vOA('profile',exp));
+    iss.push(...this.vOA('rest',exp));
+    iss.push(...this.vOA('messaging',exp));
+    iss.push(...this.vOA('document',exp));
+    return iss;
   }
 }

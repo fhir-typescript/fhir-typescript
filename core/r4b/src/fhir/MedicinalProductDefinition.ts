@@ -124,11 +124,11 @@ export class MedicinalProductDefinitionContact extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'MedicinalProductDefinition.contact' }
-    this.vOS('type',exp)
-    this.vRS('contact',exp)
-    return issues;
+    iss.push(...this.vOS('type',exp));
+    iss.push(...this.vRS('contact',exp));
+    return iss;
   }
 }
 /**
@@ -183,11 +183,11 @@ export class MedicinalProductDefinitionNameNamePart extends fhir.BackboneElement
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'MedicinalProductDefinition.name.namePart' }
-    this.vRS('part',exp)
-    this.vRS('type',exp)
-    return issues;
+    iss.push(...this.vRS('part',exp));
+    iss.push(...this.vRS('type',exp));
+    return iss;
   }
 }
 /**
@@ -243,12 +243,12 @@ export class MedicinalProductDefinitionNameCountryLanguage extends fhir.Backbone
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'MedicinalProductDefinition.name.countryLanguage' }
-    this.vRS('country',exp)
-    this.vOS('jurisdiction',exp)
-    this.vRS('language',exp)
-    return issues;
+    iss.push(...this.vRS('country',exp));
+    iss.push(...this.vOS('jurisdiction',exp));
+    iss.push(...this.vRS('language',exp));
+    return iss;
   }
 }
 /**
@@ -322,13 +322,13 @@ export class MedicinalProductDefinitionName extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'MedicinalProductDefinition.name' }
-    this.vRS('productName',exp)
-    this.vOS('type',exp)
-    this.vOA('namePart',exp)
-    this.vOA('countryLanguage',exp)
-    return issues;
+    iss.push(...this.vRS('productName',exp));
+    iss.push(...this.vOS('type',exp));
+    iss.push(...this.vOA('namePart',exp));
+    iss.push(...this.vOA('countryLanguage',exp));
+    return iss;
   }
 }
 /**
@@ -374,11 +374,11 @@ export class MedicinalProductDefinitionCrossReference extends fhir.BackboneEleme
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'MedicinalProductDefinition.crossReference' }
-    this.vRS('product',exp)
-    this.vOS('type',exp)
-    return issues;
+    iss.push(...this.vRS('product',exp));
+    iss.push(...this.vOS('type',exp));
+    return iss;
   }
 }
 /**
@@ -442,13 +442,13 @@ export class MedicinalProductDefinitionOperation extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'MedicinalProductDefinition.operation' }
-    this.vOS('type',exp)
-    this.vOS('effectiveDate',exp)
-    this.vOA('organization',exp)
-    this.vOS('confidentialityIndicator',exp)
-    return issues;
+    iss.push(...this.vOS('type',exp));
+    iss.push(...this.vOS('effectiveDate',exp));
+    iss.push(...this.vOA('organization',exp));
+    iss.push(...this.vOS('confidentialityIndicator',exp));
+    return iss;
   }
 }
 /**
@@ -523,11 +523,11 @@ export class MedicinalProductDefinitionCharacteristic extends fhir.BackboneEleme
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'MedicinalProductDefinition.characteristic' }
-    this.vRS('type',exp)
-    this.vOS('value',exp)
-    return issues;
+    iss.push(...this.vRS('type',exp));
+    iss.push(...this.vOS('value',exp));
+    return iss;
   }
 }
 /**
@@ -864,37 +864,37 @@ export class MedicinalProductDefinition extends fhir.DomainResource {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'MedicinalProductDefinition' }
-    this.vRS('resourceType',exp)
-    this.vOA('identifier',exp)
-    this.vOS('type',exp)
-    this.vOS('domain',exp)
-    this.vOS('version',exp)
-    this.vOS('status',exp)
-    this.vOS('statusDate',exp)
-    this.vOS('description',exp)
-    this.vOS('combinedPharmaceuticalDoseForm',exp)
-    this.vOA('route',exp)
-    this.vOS('indication',exp)
-    this.vOS('legalStatusOfSupply',exp)
-    this.vOS('additionalMonitoringIndicator',exp)
-    this.vOA('specialMeasures',exp)
-    this.vOS('pediatricUseIndicator',exp)
-    this.vOA('classification',exp)
-    this.vOA('marketingStatus',exp)
-    this.vOA('packagedMedicinalProduct',exp)
-    this.vOA('ingredient',exp)
-    this.vOA('impurity',exp)
-    this.vOA('attachedDocument',exp)
-    this.vOA('masterFile',exp)
-    this.vOA('contact',exp)
-    this.vOA('clinicalTrial',exp)
-    this.vOA('code',exp)
-    this.vRA('name',exp)
-    this.vOA('crossReference',exp)
-    this.vOA('operation',exp)
-    this.vOA('characteristic',exp)
-    return issues;
+    iss.push(...this.vRPS('resourceType',exp));
+    iss.push(...this.vOA('identifier',exp));
+    iss.push(...this.vOS('type',exp));
+    iss.push(...this.vOS('domain',exp));
+    iss.push(...this.vOS('version',exp));
+    iss.push(...this.vOS('status',exp));
+    iss.push(...this.vOS('statusDate',exp));
+    iss.push(...this.vOS('description',exp));
+    iss.push(...this.vOS('combinedPharmaceuticalDoseForm',exp));
+    iss.push(...this.vOA('route',exp));
+    iss.push(...this.vOS('indication',exp));
+    iss.push(...this.vOS('legalStatusOfSupply',exp));
+    iss.push(...this.vOS('additionalMonitoringIndicator',exp));
+    iss.push(...this.vOA('specialMeasures',exp));
+    iss.push(...this.vOS('pediatricUseIndicator',exp));
+    iss.push(...this.vOA('classification',exp));
+    iss.push(...this.vOA('marketingStatus',exp));
+    iss.push(...this.vOA('packagedMedicinalProduct',exp));
+    iss.push(...this.vOA('ingredient',exp));
+    iss.push(...this.vOA('impurity',exp));
+    iss.push(...this.vOA('attachedDocument',exp));
+    iss.push(...this.vOA('masterFile',exp));
+    iss.push(...this.vOA('contact',exp));
+    iss.push(...this.vOA('clinicalTrial',exp));
+    iss.push(...this.vOA('code',exp));
+    iss.push(...this.vRA('name',exp));
+    iss.push(...this.vOA('crossReference',exp));
+    iss.push(...this.vOA('operation',exp));
+    iss.push(...this.vOA('characteristic',exp));
+    return iss;
   }
 }

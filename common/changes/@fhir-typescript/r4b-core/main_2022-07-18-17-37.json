@@ -1,0 +1,10 @@
+{
+  "changes": [
+    {
+      "packageName": "@fhir-typescript/r4b-core",
+      "comment": "Fixed regression in model validation",
+      "type": "none"
+    }
+  ],
+  "packageName": "@fhir-typescript/r4b-core"
+}

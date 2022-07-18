@@ -51,10 +51,10 @@ export class ProcessRequestItem extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'ProcessRequest.item' }
-    this.vRS('sequenceLinkId',exp)
-    return issues;
+    iss.push(...this.vRS('sequenceLinkId',exp));
+    return iss;
   }
 }
 /**
@@ -291,25 +291,25 @@ export class ProcessRequest extends fhir.DomainResource {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'ProcessRequest' }
-    this.vRS('resourceType',exp)
-    this.vRSV('action',exp,'Actionlist',ActionlistVsValidation,'r')
-    this.vOA('identifier',exp)
-    this.vOS('ruleset',exp)
-    this.vOS('originalRuleset',exp)
-    this.vOS('created',exp)
-    this.vOS('target',exp)
-    this.vOS('provider',exp)
-    this.vOS('organization',exp)
-    this.vOS('request',exp)
-    this.vOS('response',exp)
-    this.vOS('nullify',exp)
-    this.vOS('reference',exp)
-    this.vOA('item',exp)
-    this.vOA('include',exp)
-    this.vOA('exclude',exp)
-    this.vOS('period',exp)
-    return issues;
+    iss.push(...this.vRPS('resourceType',exp));
+    iss.push(...this.vRSV('action',exp,'Actionlist',ActionlistVsValidation,'r'));
+    iss.push(...this.vOA('identifier',exp));
+    iss.push(...this.vOS('ruleset',exp));
+    iss.push(...this.vOS('originalRuleset',exp));
+    iss.push(...this.vOS('created',exp));
+    iss.push(...this.vOS('target',exp));
+    iss.push(...this.vOS('provider',exp));
+    iss.push(...this.vOS('organization',exp));
+    iss.push(...this.vOS('request',exp));
+    iss.push(...this.vOS('response',exp));
+    iss.push(...this.vOS('nullify',exp));
+    iss.push(...this.vOS('reference',exp));
+    iss.push(...this.vOA('item',exp));
+    iss.push(...this.vOA('include',exp));
+    iss.push(...this.vOA('exclude',exp));
+    iss.push(...this.vOS('period',exp));
+    return iss;
   }
 }

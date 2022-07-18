@@ -72,11 +72,11 @@ export class ImagingStudySeriesPerformer extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'ImagingStudy.series.performer' }
-    this.vOS('function',exp)
-    this.vRS('actor',exp)
-    return issues;
+    iss.push(...this.vOS('function',exp));
+    iss.push(...this.vRS('actor',exp));
+    return iss;
   }
 }
 /**
@@ -165,13 +165,13 @@ export class ImagingStudySeriesInstance extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'ImagingStudy.series.instance' }
-    this.vRS('uid',exp)
-    this.vRS('sopClass',exp)
-    this.vOS('number',exp)
-    this.vOS('title',exp)
-    return issues;
+    iss.push(...this.vRS('uid',exp));
+    iss.push(...this.vRS('sopClass',exp));
+    iss.push(...this.vOS('number',exp));
+    iss.push(...this.vOS('title',exp));
+    return iss;
   }
 }
 /**
@@ -352,21 +352,21 @@ export class ImagingStudySeries extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'ImagingStudy.series' }
-    this.vRS('uid',exp)
-    this.vOS('number',exp)
-    this.vRS('modality',exp)
-    this.vOS('description',exp)
-    this.vOS('numberOfInstances',exp)
-    this.vOA('endpoint',exp)
-    this.vOS('bodySite',exp)
-    this.vOS('laterality',exp)
-    this.vOA('specimen',exp)
-    this.vOS('started',exp)
-    this.vOA('performer',exp)
-    this.vOA('instance',exp)
-    return issues;
+    iss.push(...this.vRS('uid',exp));
+    iss.push(...this.vOS('number',exp));
+    iss.push(...this.vRS('modality',exp));
+    iss.push(...this.vOS('description',exp));
+    iss.push(...this.vOS('numberOfInstances',exp));
+    iss.push(...this.vOA('endpoint',exp));
+    iss.push(...this.vOS('bodySite',exp));
+    iss.push(...this.vOS('laterality',exp));
+    iss.push(...this.vOA('specimen',exp));
+    iss.push(...this.vOS('started',exp));
+    iss.push(...this.vOA('performer',exp));
+    iss.push(...this.vOA('instance',exp));
+    return iss;
   }
 }
 /**
@@ -634,29 +634,29 @@ export class ImagingStudy extends fhir.DomainResource {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'ImagingStudy' }
-    this.vRS('resourceType',exp)
-    this.vOA('identifier',exp)
-    this.vRSV('status',exp,'ImagingstudyStatus',ImagingstudyStatusVsValidation,'r')
-    this.vOA('modality',exp)
-    this.vRS('subject',exp)
-    this.vOS('encounter',exp)
-    this.vOS('started',exp)
-    this.vOA('basedOn',exp)
-    this.vOS('referrer',exp)
-    this.vOA('interpreter',exp)
-    this.vOA('endpoint',exp)
-    this.vOS('numberOfSeries',exp)
-    this.vOS('numberOfInstances',exp)
-    this.vOS('procedureReference',exp)
-    this.vOA('procedureCode',exp)
-    this.vOS('location',exp)
-    this.vOA('reasonCode',exp)
-    this.vOA('reasonReference',exp)
-    this.vOA('note',exp)
-    this.vOS('description',exp)
-    this.vOA('series',exp)
-    return issues;
+    iss.push(...this.vRPS('resourceType',exp));
+    iss.push(...this.vOA('identifier',exp));
+    iss.push(...this.vRSV('status',exp,'ImagingstudyStatus',ImagingstudyStatusVsValidation,'r'));
+    iss.push(...this.vOA('modality',exp));
+    iss.push(...this.vRS('subject',exp));
+    iss.push(...this.vOS('encounter',exp));
+    iss.push(...this.vOS('started',exp));
+    iss.push(...this.vOA('basedOn',exp));
+    iss.push(...this.vOS('referrer',exp));
+    iss.push(...this.vOA('interpreter',exp));
+    iss.push(...this.vOA('endpoint',exp));
+    iss.push(...this.vOS('numberOfSeries',exp));
+    iss.push(...this.vOS('numberOfInstances',exp));
+    iss.push(...this.vOS('procedureReference',exp));
+    iss.push(...this.vOA('procedureCode',exp));
+    iss.push(...this.vOS('location',exp));
+    iss.push(...this.vOA('reasonCode',exp));
+    iss.push(...this.vOA('reasonReference',exp));
+    iss.push(...this.vOA('note',exp));
+    iss.push(...this.vOS('description',exp));
+    iss.push(...this.vOA('series',exp));
+    return iss;
   }
 }

@@ -56,11 +56,11 @@ export class RatioRange extends fhir.FhirElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'RatioRange' }
-    this.vOS('lowNumerator',exp)
-    this.vOS('highNumerator',exp)
-    this.vOS('denominator',exp)
-    return issues;
+    iss.push(...this.vOS('lowNumerator',exp));
+    iss.push(...this.vOS('highNumerator',exp));
+    iss.push(...this.vOS('denominator',exp));
+    return iss;
   }
 }

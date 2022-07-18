@@ -141,17 +141,17 @@ export class ResearchSubject extends fhir.DomainResource {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'ResearchSubject' }
-    this.vRS('resourceType',exp)
-    this.vOS('identifier',exp)
-    this.vRSV('status',exp,'ResearchSubjectStatus',ResearchSubjectStatusVsValidation,'r')
-    this.vOS('period',exp)
-    this.vRS('study',exp)
-    this.vRS('individual',exp)
-    this.vOS('assignedArm',exp)
-    this.vOS('actualArm',exp)
-    this.vOS('consent',exp)
-    return issues;
+    iss.push(...this.vRPS('resourceType',exp));
+    iss.push(...this.vOS('identifier',exp));
+    iss.push(...this.vRSV('status',exp,'ResearchSubjectStatus',ResearchSubjectStatusVsValidation,'r'));
+    iss.push(...this.vOS('period',exp));
+    iss.push(...this.vRS('study',exp));
+    iss.push(...this.vRS('individual',exp));
+    iss.push(...this.vOS('assignedArm',exp));
+    iss.push(...this.vOS('actualArm',exp));
+    iss.push(...this.vOS('consent',exp));
+    return iss;
   }
 }

@@ -128,12 +128,12 @@ export class EffectEvidenceSynthesisSampleSize extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'EffectEvidenceSynthesis.sampleSize' }
-    this.vOS('description',exp)
-    this.vOS('numberOfStudies',exp)
-    this.vOS('numberOfParticipants',exp)
-    return issues;
+    iss.push(...this.vOS('description',exp));
+    iss.push(...this.vOS('numberOfStudies',exp));
+    iss.push(...this.vOS('numberOfParticipants',exp));
+    return iss;
   }
 }
 /**
@@ -213,13 +213,13 @@ export class EffectEvidenceSynthesisResultsByExposure extends fhir.BackboneEleme
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'EffectEvidenceSynthesis.resultsByExposure' }
-    this.vOS('description',exp)
-    this.vOSV('exposureState',exp,'ExposureState',ExposureStateVsValidation,'r')
-    this.vOS('variantState',exp)
-    this.vRS('riskEvidenceSynthesis',exp)
-    return issues;
+    iss.push(...this.vOS('description',exp));
+    iss.push(...this.vOSV('exposureState',exp,'ExposureState',ExposureStateVsValidation,'r'));
+    iss.push(...this.vOS('variantState',exp));
+    iss.push(...this.vRS('riskEvidenceSynthesis',exp));
+    return iss;
   }
 }
 /**
@@ -306,13 +306,13 @@ export class EffectEvidenceSynthesisEffectEstimatePrecisionEstimate extends fhir
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'EffectEvidenceSynthesis.effectEstimate.precisionEstimate' }
-    this.vOS('type',exp)
-    this.vOS('level',exp)
-    this.vOS('from',exp)
-    this.vOS('to',exp)
-    return issues;
+    iss.push(...this.vOS('type',exp));
+    iss.push(...this.vOS('level',exp));
+    iss.push(...this.vOS('from',exp));
+    iss.push(...this.vOS('to',exp));
+    return iss;
   }
 }
 /**
@@ -410,15 +410,15 @@ export class EffectEvidenceSynthesisEffectEstimate extends fhir.BackboneElement 
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'EffectEvidenceSynthesis.effectEstimate' }
-    this.vOS('description',exp)
-    this.vOS('type',exp)
-    this.vOS('variantState',exp)
-    this.vOS('value',exp)
-    this.vOSV('unitOfMeasure',exp,'UcumUnits',UcumUnitsVsValidation,'r')
-    this.vOA('precisionEstimate',exp)
-    return issues;
+    iss.push(...this.vOS('description',exp));
+    iss.push(...this.vOS('type',exp));
+    iss.push(...this.vOS('variantState',exp));
+    iss.push(...this.vOS('value',exp));
+    iss.push(...this.vOSV('unitOfMeasure',exp,'UcumUnits',UcumUnitsVsValidation,'r'));
+    iss.push(...this.vOA('precisionEstimate',exp));
+    return iss;
   }
 }
 /**
@@ -474,12 +474,12 @@ export class EffectEvidenceSynthesisCertaintyCertaintySubcomponent extends fhir.
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'EffectEvidenceSynthesis.certainty.certaintySubcomponent' }
-    this.vOS('type',exp)
-    this.vOA('rating',exp)
-    this.vOA('note',exp)
-    return issues;
+    iss.push(...this.vOS('type',exp));
+    iss.push(...this.vOA('rating',exp));
+    iss.push(...this.vOA('note',exp));
+    return iss;
   }
 }
 /**
@@ -536,12 +536,12 @@ export class EffectEvidenceSynthesisCertainty extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'EffectEvidenceSynthesis.certainty' }
-    this.vOA('rating',exp)
-    this.vOA('note',exp)
-    this.vOA('certaintySubcomponent',exp)
-    return issues;
+    iss.push(...this.vOA('rating',exp));
+    iss.push(...this.vOA('note',exp));
+    iss.push(...this.vOA('certaintySubcomponent',exp));
+    return iss;
   }
 }
 /**
@@ -985,42 +985,42 @@ export class EffectEvidenceSynthesis extends fhir.DomainResource {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'EffectEvidenceSynthesis' }
-    this.vRS('resourceType',exp)
-    this.vOS('url',exp)
-    this.vOA('identifier',exp)
-    this.vOS('version',exp)
-    this.vOS('name',exp)
-    this.vOS('title',exp)
-    this.vRSV('status',exp,'PublicationStatus',PublicationStatusVsValidation,'r')
-    this.vOS('date',exp)
-    this.vOS('publisher',exp)
-    this.vOA('contact',exp)
-    this.vOS('description',exp)
-    this.vOA('note',exp)
-    this.vOA('useContext',exp)
-    this.vOA('jurisdiction',exp)
-    this.vOS('copyright',exp)
-    this.vOS('approvalDate',exp)
-    this.vOS('lastReviewDate',exp)
-    this.vOS('effectivePeriod',exp)
-    this.vOA('topic',exp)
-    this.vOA('author',exp)
-    this.vOA('editor',exp)
-    this.vOA('reviewer',exp)
-    this.vOA('endorser',exp)
-    this.vOA('relatedArtifact',exp)
-    this.vOS('synthesisType',exp)
-    this.vOS('studyType',exp)
-    this.vRS('population',exp)
-    this.vRS('exposure',exp)
-    this.vRS('exposureAlternative',exp)
-    this.vRS('outcome',exp)
-    this.vOS('sampleSize',exp)
-    this.vOA('resultsByExposure',exp)
-    this.vOA('effectEstimate',exp)
-    this.vOA('certainty',exp)
-    return issues;
+    iss.push(...this.vRPS('resourceType',exp));
+    iss.push(...this.vOS('url',exp));
+    iss.push(...this.vOA('identifier',exp));
+    iss.push(...this.vOS('version',exp));
+    iss.push(...this.vOS('name',exp));
+    iss.push(...this.vOS('title',exp));
+    iss.push(...this.vRSV('status',exp,'PublicationStatus',PublicationStatusVsValidation,'r'));
+    iss.push(...this.vOS('date',exp));
+    iss.push(...this.vOS('publisher',exp));
+    iss.push(...this.vOA('contact',exp));
+    iss.push(...this.vOS('description',exp));
+    iss.push(...this.vOA('note',exp));
+    iss.push(...this.vOA('useContext',exp));
+    iss.push(...this.vOA('jurisdiction',exp));
+    iss.push(...this.vOS('copyright',exp));
+    iss.push(...this.vOS('approvalDate',exp));
+    iss.push(...this.vOS('lastReviewDate',exp));
+    iss.push(...this.vOS('effectivePeriod',exp));
+    iss.push(...this.vOA('topic',exp));
+    iss.push(...this.vOA('author',exp));
+    iss.push(...this.vOA('editor',exp));
+    iss.push(...this.vOA('reviewer',exp));
+    iss.push(...this.vOA('endorser',exp));
+    iss.push(...this.vOA('relatedArtifact',exp));
+    iss.push(...this.vOS('synthesisType',exp));
+    iss.push(...this.vOS('studyType',exp));
+    iss.push(...this.vRS('population',exp));
+    iss.push(...this.vRS('exposure',exp));
+    iss.push(...this.vRS('exposureAlternative',exp));
+    iss.push(...this.vRS('outcome',exp));
+    iss.push(...this.vOS('sampleSize',exp));
+    iss.push(...this.vOA('resultsByExposure',exp));
+    iss.push(...this.vOA('effectEstimate',exp));
+    iss.push(...this.vOA('certainty',exp));
+    return iss;
   }
 }

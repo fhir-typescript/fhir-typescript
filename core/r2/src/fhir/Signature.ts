@@ -117,13 +117,13 @@ export class Signature extends fhir.FhirElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'Signature' }
-    this.vRA('type',exp)
-    this.vRS('when',exp)
-    this.vRS('who',exp)
-    this.vRS('contentType',exp)
-    this.vRS('blob',exp)
-    return issues;
+    iss.push(...this.vRA('type',exp));
+    iss.push(...this.vRS('when',exp));
+    iss.push(...this.vRS('who',exp));
+    iss.push(...this.vRS('contentType',exp));
+    iss.push(...this.vRS('blob',exp));
+    return iss;
   }
 }

@@ -220,24 +220,24 @@ export class GuidanceResponse extends fhir.DomainResource {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'GuidanceResponse' }
-    this.vRS('resourceType',exp)
-    this.vOS('requestIdentifier',exp)
-    this.vOA('identifier',exp)
-    this.vRS('module',exp)
-    this.vRSV('status',exp,'GuidanceResponseStatus',GuidanceResponseStatusVsValidation,'r')
-    this.vOS('subject',exp)
-    this.vOS('encounter',exp)
-    this.vOS('occurrenceDateTime',exp)
-    this.vOS('performer',exp)
-    this.vOA('reasonCode',exp)
-    this.vOA('reasonReference',exp)
-    this.vOA('note',exp)
-    this.vOA('evaluationMessage',exp)
-    this.vOS('outputParameters',exp)
-    this.vOS('result',exp)
-    this.vOA('dataRequirement',exp)
-    return issues;
+    iss.push(...this.vRPS('resourceType',exp));
+    iss.push(...this.vOS('requestIdentifier',exp));
+    iss.push(...this.vOA('identifier',exp));
+    iss.push(...this.vRS('module',exp));
+    iss.push(...this.vRSV('status',exp,'GuidanceResponseStatus',GuidanceResponseStatusVsValidation,'r'));
+    iss.push(...this.vOS('subject',exp));
+    iss.push(...this.vOS('encounter',exp));
+    iss.push(...this.vOS('occurrenceDateTime',exp));
+    iss.push(...this.vOS('performer',exp));
+    iss.push(...this.vOA('reasonCode',exp));
+    iss.push(...this.vOA('reasonReference',exp));
+    iss.push(...this.vOA('note',exp));
+    iss.push(...this.vOA('evaluationMessage',exp));
+    iss.push(...this.vOS('outputParameters',exp));
+    iss.push(...this.vOS('result',exp));
+    iss.push(...this.vOA('dataRequirement',exp));
+    return iss;
   }
 }

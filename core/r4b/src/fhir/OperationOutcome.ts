@@ -139,15 +139,15 @@ export class OperationOutcomeIssue extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'OperationOutcome.issue' }
-    this.vRSV('severity',exp,'IssueSeverity',IssueSeverityVsValidation,'r')
-    this.vRSV('code',exp,'IssueType',IssueTypeVsValidation,'r')
-    this.vOS('details',exp)
-    this.vOS('diagnostics',exp)
-    this.vOA('location',exp)
-    this.vOA('expression',exp)
-    return issues;
+    iss.push(...this.vRSV('severity',exp,'IssueSeverity',IssueSeverityVsValidation,'r'));
+    iss.push(...this.vRSV('code',exp,'IssueType',IssueTypeVsValidation,'r'));
+    iss.push(...this.vOS('details',exp));
+    iss.push(...this.vOS('diagnostics',exp));
+    iss.push(...this.vOA('location',exp));
+    iss.push(...this.vOA('expression',exp));
+    return iss;
   }
 }
 /**
@@ -193,10 +193,10 @@ export class OperationOutcome extends fhir.DomainResource {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'OperationOutcome' }
-    this.vRS('resourceType',exp)
-    this.vRA('issue',exp)
-    return issues;
+    iss.push(...this.vRPS('resourceType',exp));
+    iss.push(...this.vRA('issue',exp));
+    return iss;
   }
 }

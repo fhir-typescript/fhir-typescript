@@ -98,12 +98,12 @@ export class CoverageEligibilityRequestSupportingInfo extends fhir.BackboneEleme
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'CoverageEligibilityRequest.supportingInfo' }
-    this.vRS('sequence',exp)
-    this.vRS('information',exp)
-    this.vOS('appliesToAll',exp)
-    return issues;
+    iss.push(...this.vRS('sequence',exp));
+    iss.push(...this.vRS('information',exp));
+    iss.push(...this.vOS('appliesToAll',exp));
+    return iss;
   }
 }
 /**
@@ -174,12 +174,12 @@ export class CoverageEligibilityRequestInsurance extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'CoverageEligibilityRequest.insurance' }
-    this.vOS('focal',exp)
-    this.vRS('coverage',exp)
-    this.vOS('businessArrangement',exp)
-    return issues;
+    iss.push(...this.vOS('focal',exp));
+    iss.push(...this.vRS('coverage',exp));
+    iss.push(...this.vOS('businessArrangement',exp));
+    return iss;
   }
 }
 /**
@@ -229,10 +229,10 @@ export class CoverageEligibilityRequestItemDiagnosis extends fhir.BackboneElemen
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'CoverageEligibilityRequest.item.diagnosis' }
-    this.vOS('diagnosis',exp)
-    return issues;
+    iss.push(...this.vOS('diagnosis',exp));
+    return iss;
   }
 }
 /**
@@ -363,19 +363,19 @@ export class CoverageEligibilityRequestItem extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'CoverageEligibilityRequest.item' }
-    this.vOA('supportingInfoSequence',exp)
-    this.vOS('category',exp)
-    this.vOS('productOrService',exp)
-    this.vOA('modifier',exp)
-    this.vOS('provider',exp)
-    this.vOS('quantity',exp)
-    this.vOS('unitPrice',exp)
-    this.vOS('facility',exp)
-    this.vOA('diagnosis',exp)
-    this.vOA('detail',exp)
-    return issues;
+    iss.push(...this.vOA('supportingInfoSequence',exp));
+    iss.push(...this.vOS('category',exp));
+    iss.push(...this.vOS('productOrService',exp));
+    iss.push(...this.vOA('modifier',exp));
+    iss.push(...this.vOS('provider',exp));
+    iss.push(...this.vOS('quantity',exp));
+    iss.push(...this.vOS('unitPrice',exp));
+    iss.push(...this.vOS('facility',exp));
+    iss.push(...this.vOA('diagnosis',exp));
+    iss.push(...this.vOA('detail',exp));
+    return iss;
   }
 }
 /**
@@ -586,23 +586,23 @@ export class CoverageEligibilityRequest extends fhir.DomainResource {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'CoverageEligibilityRequest' }
-    this.vRS('resourceType',exp)
-    this.vOA('identifier',exp)
-    this.vRSV('status',exp,'FmStatus',FmStatusVsValidation,'r')
-    this.vOS('priority',exp)
-    this.vRAV('purpose',exp,'EligibilityrequestPurpose',EligibilityrequestPurposeVsValidation,'r')
-    this.vRS('patient',exp)
-    this.vOS('serviced',exp)
-    this.vRS('created',exp)
-    this.vOS('enterer',exp)
-    this.vOS('provider',exp)
-    this.vRS('insurer',exp)
-    this.vOS('facility',exp)
-    this.vOA('supportingInfo',exp)
-    this.vOA('insurance',exp)
-    this.vOA('item',exp)
-    return issues;
+    iss.push(...this.vRPS('resourceType',exp));
+    iss.push(...this.vOA('identifier',exp));
+    iss.push(...this.vRSV('status',exp,'FmStatus',FmStatusVsValidation,'r'));
+    iss.push(...this.vOS('priority',exp));
+    iss.push(...this.vRAV('purpose',exp,'EligibilityrequestPurpose',EligibilityrequestPurposeVsValidation,'r'));
+    iss.push(...this.vRS('patient',exp));
+    iss.push(...this.vOS('serviced',exp));
+    iss.push(...this.vRS('created',exp));
+    iss.push(...this.vOS('enterer',exp));
+    iss.push(...this.vOS('provider',exp));
+    iss.push(...this.vRS('insurer',exp));
+    iss.push(...this.vOS('facility',exp));
+    iss.push(...this.vOA('supportingInfo',exp));
+    iss.push(...this.vOA('insurance',exp));
+    iss.push(...this.vOA('item',exp));
+    return iss;
   }
 }

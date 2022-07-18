@@ -121,11 +121,11 @@ export class QuestionnaireResponseGroupQuestionAnswer extends fhir.BackboneEleme
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'QuestionnaireResponse.group.question.answer' }
-    this.vOS('value',exp)
-    this.vOA('group',exp)
-    return issues;
+    iss.push(...this.vOS('value',exp));
+    iss.push(...this.vOA('group',exp));
+    return iss;
   }
 }
 /**
@@ -196,12 +196,12 @@ export class QuestionnaireResponseGroupQuestion extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'QuestionnaireResponse.group.question' }
-    this.vOS('linkId',exp)
-    this.vOS('text',exp)
-    this.vOA('answer',exp)
-    return issues;
+    iss.push(...this.vOS('linkId',exp));
+    iss.push(...this.vOS('text',exp));
+    iss.push(...this.vOA('answer',exp));
+    return iss;
   }
 }
 /**
@@ -308,15 +308,15 @@ export class QuestionnaireResponseGroup extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'QuestionnaireResponse.group' }
-    this.vOS('linkId',exp)
-    this.vOS('title',exp)
-    this.vOS('text',exp)
-    this.vOS('subject',exp)
-    this.vOA('group',exp)
-    this.vOA('question',exp)
-    return issues;
+    iss.push(...this.vOS('linkId',exp));
+    iss.push(...this.vOS('title',exp));
+    iss.push(...this.vOS('text',exp));
+    iss.push(...this.vOS('subject',exp));
+    iss.push(...this.vOA('group',exp));
+    iss.push(...this.vOA('question',exp));
+    return iss;
   }
 }
 /**
@@ -450,18 +450,18 @@ export class QuestionnaireResponse extends fhir.DomainResource {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'QuestionnaireResponse' }
-    this.vRS('resourceType',exp)
-    this.vOS('identifier',exp)
-    this.vOS('questionnaire',exp)
-    this.vRSV('status',exp,'QuestionnaireAnswersStatus',QuestionnaireAnswersStatusVsValidation,'r')
-    this.vOS('subject',exp)
-    this.vOS('author',exp)
-    this.vOS('authored',exp)
-    this.vOS('source',exp)
-    this.vOS('encounter',exp)
-    this.vOS('group',exp)
-    return issues;
+    iss.push(...this.vRPS('resourceType',exp));
+    iss.push(...this.vOS('identifier',exp));
+    iss.push(...this.vOS('questionnaire',exp));
+    iss.push(...this.vRSV('status',exp,'QuestionnaireAnswersStatus',QuestionnaireAnswersStatusVsValidation,'r'));
+    iss.push(...this.vOS('subject',exp));
+    iss.push(...this.vOS('author',exp));
+    iss.push(...this.vOS('authored',exp));
+    iss.push(...this.vOS('source',exp));
+    iss.push(...this.vOS('encounter',exp));
+    iss.push(...this.vOS('group',exp));
+    return iss;
   }
 }

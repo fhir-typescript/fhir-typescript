@@ -98,13 +98,13 @@ export class DataRequirementCodeFilter extends fhir.FhirElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'DataRequirement.codeFilter' }
-    this.vOS('path',exp)
-    this.vOS('searchParam',exp)
-    this.vOS('valueSet',exp)
-    this.vOA('code',exp)
-    return issues;
+    iss.push(...this.vOS('path',exp));
+    iss.push(...this.vOS('searchParam',exp));
+    iss.push(...this.vOS('valueSet',exp));
+    iss.push(...this.vOA('code',exp));
+    return iss;
   }
 }
 /**
@@ -193,12 +193,12 @@ export class DataRequirementDateFilter extends fhir.FhirElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'DataRequirement.dateFilter' }
-    this.vOS('path',exp)
-    this.vOS('searchParam',exp)
-    this.vOS('value',exp)
-    return issues;
+    iss.push(...this.vOS('path',exp));
+    iss.push(...this.vOS('searchParam',exp));
+    iss.push(...this.vOS('value',exp));
+    return iss;
   }
 }
 /**
@@ -261,11 +261,11 @@ export class DataRequirementSort extends fhir.FhirElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'DataRequirement.sort' }
-    this.vRS('path',exp)
-    this.vRSV('direction',exp,'SortDirection',SortDirectionVsValidation,'r')
-    return issues;
+    iss.push(...this.vRS('path',exp));
+    iss.push(...this.vRSV('direction',exp,'SortDirection',SortDirectionVsValidation,'r'));
+    return iss;
   }
 }
 /**
@@ -422,16 +422,16 @@ export class DataRequirement extends fhir.FhirElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'DataRequirement' }
-    this.vRSV('type',exp,'AllTypes',AllTypesVsValidation,'r')
-    this.vOA('profile',exp)
-    this.vOS('subject',exp)
-    this.vOA('mustSupport',exp)
-    this.vOA('codeFilter',exp)
-    this.vOA('dateFilter',exp)
-    this.vOS('limit',exp)
-    this.vOA('sort',exp)
-    return issues;
+    iss.push(...this.vRSV('type',exp,'AllTypes',AllTypesVsValidation,'r'));
+    iss.push(...this.vOA('profile',exp));
+    iss.push(...this.vOS('subject',exp));
+    iss.push(...this.vOA('mustSupport',exp));
+    iss.push(...this.vOA('codeFilter',exp));
+    iss.push(...this.vOA('dateFilter',exp));
+    iss.push(...this.vOS('limit',exp));
+    iss.push(...this.vOA('sort',exp));
+    return iss;
   }
 }

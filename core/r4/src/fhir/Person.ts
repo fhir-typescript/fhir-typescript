@@ -64,11 +64,11 @@ export class PersonLink extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'Person.link' }
-    this.vRS('target',exp)
-    this.vOSV('assurance',exp,'IdentityAssuranceLevel',IdentityAssuranceLevelVsValidation,'r')
-    return issues;
+    iss.push(...this.vRS('target',exp));
+    iss.push(...this.vOSV('assurance',exp,'IdentityAssuranceLevel',IdentityAssuranceLevelVsValidation,'r'));
+    return iss;
   }
 }
 /**
@@ -223,19 +223,19 @@ export class Person extends fhir.DomainResource {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'Person' }
-    this.vRS('resourceType',exp)
-    this.vOA('identifier',exp)
-    this.vOA('name',exp)
-    this.vOA('telecom',exp)
-    this.vOSV('gender',exp,'AdministrativeGender',AdministrativeGenderVsValidation,'r')
-    this.vOS('birthDate',exp)
-    this.vOA('address',exp)
-    this.vOS('photo',exp)
-    this.vOS('managingOrganization',exp)
-    this.vOS('active',exp)
-    this.vOA('link',exp)
-    return issues;
+    iss.push(...this.vRPS('resourceType',exp));
+    iss.push(...this.vOA('identifier',exp));
+    iss.push(...this.vOA('name',exp));
+    iss.push(...this.vOA('telecom',exp));
+    iss.push(...this.vOSV('gender',exp,'AdministrativeGender',AdministrativeGenderVsValidation,'r'));
+    iss.push(...this.vOS('birthDate',exp));
+    iss.push(...this.vOA('address',exp));
+    iss.push(...this.vOS('photo',exp));
+    iss.push(...this.vOS('managingOrganization',exp));
+    iss.push(...this.vOS('active',exp));
+    iss.push(...this.vOA('link',exp));
+    return iss;
   }
 }

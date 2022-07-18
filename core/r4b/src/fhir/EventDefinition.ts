@@ -452,37 +452,37 @@ export class EventDefinition extends fhir.DomainResource {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'EventDefinition' }
-    this.vRS('resourceType',exp)
-    this.vOS('url',exp)
-    this.vOA('identifier',exp)
-    this.vOS('version',exp)
-    this.vOS('name',exp)
-    this.vOS('title',exp)
-    this.vOS('subtitle',exp)
-    this.vRSV('status',exp,'PublicationStatus',PublicationStatusVsValidation,'r')
-    this.vOS('experimental',exp)
-    this.vOS('subject',exp)
-    this.vOS('date',exp)
-    this.vOS('publisher',exp)
-    this.vOA('contact',exp)
-    this.vOS('description',exp)
-    this.vOA('useContext',exp)
-    this.vOA('jurisdiction',exp)
-    this.vOS('purpose',exp)
-    this.vOS('usage',exp)
-    this.vOS('copyright',exp)
-    this.vOS('approvalDate',exp)
-    this.vOS('lastReviewDate',exp)
-    this.vOS('effectivePeriod',exp)
-    this.vOA('topic',exp)
-    this.vOA('author',exp)
-    this.vOA('editor',exp)
-    this.vOA('reviewer',exp)
-    this.vOA('endorser',exp)
-    this.vOA('relatedArtifact',exp)
-    this.vRA('trigger',exp)
-    return issues;
+    iss.push(...this.vRPS('resourceType',exp));
+    iss.push(...this.vOS('url',exp));
+    iss.push(...this.vOA('identifier',exp));
+    iss.push(...this.vOS('version',exp));
+    iss.push(...this.vOS('name',exp));
+    iss.push(...this.vOS('title',exp));
+    iss.push(...this.vOS('subtitle',exp));
+    iss.push(...this.vRSV('status',exp,'PublicationStatus',PublicationStatusVsValidation,'r'));
+    iss.push(...this.vOS('experimental',exp));
+    iss.push(...this.vOS('subject',exp));
+    iss.push(...this.vOS('date',exp));
+    iss.push(...this.vOS('publisher',exp));
+    iss.push(...this.vOA('contact',exp));
+    iss.push(...this.vOS('description',exp));
+    iss.push(...this.vOA('useContext',exp));
+    iss.push(...this.vOA('jurisdiction',exp));
+    iss.push(...this.vOS('purpose',exp));
+    iss.push(...this.vOS('usage',exp));
+    iss.push(...this.vOS('copyright',exp));
+    iss.push(...this.vOS('approvalDate',exp));
+    iss.push(...this.vOS('lastReviewDate',exp));
+    iss.push(...this.vOS('effectivePeriod',exp));
+    iss.push(...this.vOA('topic',exp));
+    iss.push(...this.vOA('author',exp));
+    iss.push(...this.vOA('editor',exp));
+    iss.push(...this.vOA('reviewer',exp));
+    iss.push(...this.vOA('endorser',exp));
+    iss.push(...this.vOA('relatedArtifact',exp));
+    iss.push(...this.vRA('trigger',exp));
+    return iss;
   }
 }

@@ -84,11 +84,11 @@ export class ActivityDefinitionParticipant extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'ActivityDefinition.participant' }
-    this.vRSV('type',exp,'ActionParticipantType',ActionParticipantTypeVsValidation,'r')
-    this.vOS('role',exp)
-    return issues;
+    iss.push(...this.vRSV('type',exp,'ActionParticipantType',ActionParticipantTypeVsValidation,'r'));
+    iss.push(...this.vOS('role',exp));
+    return iss;
   }
 }
 /**
@@ -183,13 +183,13 @@ export class ActivityDefinitionDynamicValue extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'ActivityDefinition.dynamicValue' }
-    this.vOS('description',exp)
-    this.vOS('path',exp)
-    this.vOS('language',exp)
-    this.vOS('expression',exp)
-    return issues;
+    iss.push(...this.vOS('description',exp));
+    iss.push(...this.vOS('path',exp));
+    iss.push(...this.vOS('language',exp));
+    iss.push(...this.vOS('expression',exp));
+    return iss;
   }
 }
 /**
@@ -704,43 +704,43 @@ export class ActivityDefinition extends fhir.DomainResource {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'ActivityDefinition' }
-    this.vRS('resourceType',exp)
-    this.vOS('url',exp)
-    this.vOA('identifier',exp)
-    this.vOS('version',exp)
-    this.vOS('name',exp)
-    this.vOS('title',exp)
-    this.vRSV('status',exp,'PublicationStatus',PublicationStatusVsValidation,'r')
-    this.vOS('experimental',exp)
-    this.vOS('date',exp)
-    this.vOS('publisher',exp)
-    this.vOS('description',exp)
-    this.vOS('purpose',exp)
-    this.vOS('usage',exp)
-    this.vOS('approvalDate',exp)
-    this.vOS('lastReviewDate',exp)
-    this.vOS('effectivePeriod',exp)
-    this.vOA('useContext',exp)
-    this.vOA('jurisdiction',exp)
-    this.vOA('topic',exp)
-    this.vOA('contributor',exp)
-    this.vOA('contact',exp)
-    this.vOS('copyright',exp)
-    this.vOA('relatedArtifact',exp)
-    this.vOA('library',exp)
-    this.vOSV('kind',exp,'ResourceTypes',ResourceTypesVsValidation,'r')
-    this.vOS('code',exp)
-    this.vOS('timing',exp)
-    this.vOS('location',exp)
-    this.vOA('participant',exp)
-    this.vOS('product',exp)
-    this.vOS('quantity',exp)
-    this.vOA('dosage',exp)
-    this.vOA('bodySite',exp)
-    this.vOS('transform',exp)
-    this.vOA('dynamicValue',exp)
-    return issues;
+    iss.push(...this.vRPS('resourceType',exp));
+    iss.push(...this.vOS('url',exp));
+    iss.push(...this.vOA('identifier',exp));
+    iss.push(...this.vOS('version',exp));
+    iss.push(...this.vOS('name',exp));
+    iss.push(...this.vOS('title',exp));
+    iss.push(...this.vRSV('status',exp,'PublicationStatus',PublicationStatusVsValidation,'r'));
+    iss.push(...this.vOS('experimental',exp));
+    iss.push(...this.vOS('date',exp));
+    iss.push(...this.vOS('publisher',exp));
+    iss.push(...this.vOS('description',exp));
+    iss.push(...this.vOS('purpose',exp));
+    iss.push(...this.vOS('usage',exp));
+    iss.push(...this.vOS('approvalDate',exp));
+    iss.push(...this.vOS('lastReviewDate',exp));
+    iss.push(...this.vOS('effectivePeriod',exp));
+    iss.push(...this.vOA('useContext',exp));
+    iss.push(...this.vOA('jurisdiction',exp));
+    iss.push(...this.vOA('topic',exp));
+    iss.push(...this.vOA('contributor',exp));
+    iss.push(...this.vOA('contact',exp));
+    iss.push(...this.vOS('copyright',exp));
+    iss.push(...this.vOA('relatedArtifact',exp));
+    iss.push(...this.vOA('library',exp));
+    iss.push(...this.vOSV('kind',exp,'ResourceTypes',ResourceTypesVsValidation,'r'));
+    iss.push(...this.vOS('code',exp));
+    iss.push(...this.vOS('timing',exp));
+    iss.push(...this.vOS('location',exp));
+    iss.push(...this.vOA('participant',exp));
+    iss.push(...this.vOS('product',exp));
+    iss.push(...this.vOS('quantity',exp));
+    iss.push(...this.vOA('dosage',exp));
+    iss.push(...this.vOA('bodySite',exp));
+    iss.push(...this.vOS('transform',exp));
+    iss.push(...this.vOA('dynamicValue',exp));
+    return iss;
   }
 }

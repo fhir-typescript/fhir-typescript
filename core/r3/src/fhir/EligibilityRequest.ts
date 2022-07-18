@@ -228,24 +228,24 @@ export class EligibilityRequest extends fhir.DomainResource {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'EligibilityRequest' }
-    this.vRS('resourceType',exp)
-    this.vOA('identifier',exp)
-    this.vOSV('status',exp,'FmStatus',FmStatusVsValidation,'r')
-    this.vOS('priority',exp)
-    this.vOS('patient',exp)
-    this.vOS('serviced',exp)
-    this.vOS('created',exp)
-    this.vOS('enterer',exp)
-    this.vOS('provider',exp)
-    this.vOS('organization',exp)
-    this.vOS('insurer',exp)
-    this.vOS('facility',exp)
-    this.vOS('coverage',exp)
-    this.vOS('businessArrangement',exp)
-    this.vOS('benefitCategory',exp)
-    this.vOS('benefitSubCategory',exp)
-    return issues;
+    iss.push(...this.vRPS('resourceType',exp));
+    iss.push(...this.vOA('identifier',exp));
+    iss.push(...this.vOSV('status',exp,'FmStatus',FmStatusVsValidation,'r'));
+    iss.push(...this.vOS('priority',exp));
+    iss.push(...this.vOS('patient',exp));
+    iss.push(...this.vOS('serviced',exp));
+    iss.push(...this.vOS('created',exp));
+    iss.push(...this.vOS('enterer',exp));
+    iss.push(...this.vOS('provider',exp));
+    iss.push(...this.vOS('organization',exp));
+    iss.push(...this.vOS('insurer',exp));
+    iss.push(...this.vOS('facility',exp));
+    iss.push(...this.vOS('coverage',exp));
+    iss.push(...this.vOS('businessArrangement',exp));
+    iss.push(...this.vOS('benefitCategory',exp));
+    iss.push(...this.vOS('benefitSubCategory',exp));
+    return iss;
   }
 }

@@ -98,12 +98,12 @@ export class CoverageClass extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'Coverage.class' }
-    this.vRS('type',exp)
-    this.vRS('value',exp)
-    this.vOS('name',exp)
-    return issues;
+    iss.push(...this.vRS('type',exp));
+    iss.push(...this.vRS('value',exp));
+    iss.push(...this.vOS('name',exp));
+    return iss;
   }
 }
 /**
@@ -149,11 +149,11 @@ export class CoverageCostToBeneficiaryException extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'Coverage.costToBeneficiary.exception' }
-    this.vRS('type',exp)
-    this.vOS('period',exp)
-    return issues;
+    iss.push(...this.vRS('type',exp));
+    iss.push(...this.vOS('period',exp));
+    return iss;
   }
 }
 /**
@@ -223,12 +223,12 @@ export class CoverageCostToBeneficiary extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'Coverage.costToBeneficiary' }
-    this.vOS('type',exp)
-    this.vRS('value',exp)
-    this.vOA('exception',exp)
-    return issues;
+    iss.push(...this.vOS('type',exp));
+    iss.push(...this.vRS('value',exp));
+    iss.push(...this.vOA('exception',exp));
+    return iss;
   }
 }
 /**
@@ -474,26 +474,26 @@ export class Coverage extends fhir.DomainResource {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'Coverage' }
-    this.vRS('resourceType',exp)
-    this.vOA('identifier',exp)
-    this.vRSV('status',exp,'FmStatus',FmStatusVsValidation,'r')
-    this.vOS('type',exp)
-    this.vOS('policyHolder',exp)
-    this.vOS('subscriber',exp)
-    this.vOS('subscriberId',exp)
-    this.vRS('beneficiary',exp)
-    this.vOS('dependent',exp)
-    this.vOS('relationship',exp)
-    this.vOS('period',exp)
-    this.vRA('payor',exp)
-    this.vOA('class',exp)
-    this.vOS('order',exp)
-    this.vOS('network',exp)
-    this.vOA('costToBeneficiary',exp)
-    this.vOS('subrogation',exp)
-    this.vOA('contract',exp)
-    return issues;
+    iss.push(...this.vRPS('resourceType',exp));
+    iss.push(...this.vOA('identifier',exp));
+    iss.push(...this.vRSV('status',exp,'FmStatus',FmStatusVsValidation,'r'));
+    iss.push(...this.vOS('type',exp));
+    iss.push(...this.vOS('policyHolder',exp));
+    iss.push(...this.vOS('subscriber',exp));
+    iss.push(...this.vOS('subscriberId',exp));
+    iss.push(...this.vRS('beneficiary',exp));
+    iss.push(...this.vOS('dependent',exp));
+    iss.push(...this.vOS('relationship',exp));
+    iss.push(...this.vOS('period',exp));
+    iss.push(...this.vRA('payor',exp));
+    iss.push(...this.vOA('class',exp));
+    iss.push(...this.vOS('order',exp));
+    iss.push(...this.vOS('network',exp));
+    iss.push(...this.vOA('costToBeneficiary',exp));
+    iss.push(...this.vOS('subrogation',exp));
+    iss.push(...this.vOA('contract',exp));
+    return iss;
   }
 }

@@ -68,11 +68,11 @@ export class AccountCoverage extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'Account.coverage' }
-    this.vRS('coverage',exp)
-    this.vOS('priority',exp)
-    return issues;
+    iss.push(...this.vRS('coverage',exp));
+    iss.push(...this.vOS('priority',exp));
+    return iss;
   }
 }
 /**
@@ -135,12 +135,12 @@ export class AccountGuarantor extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'Account.guarantor' }
-    this.vRS('party',exp)
-    this.vOS('onHold',exp)
-    this.vOS('period',exp)
-    return issues;
+    iss.push(...this.vRS('party',exp));
+    iss.push(...this.vOS('onHold',exp));
+    iss.push(...this.vOS('period',exp));
+    return iss;
   }
 }
 /**
@@ -317,21 +317,21 @@ export class Account extends fhir.DomainResource {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'Account' }
-    this.vRS('resourceType',exp)
-    this.vOA('identifier',exp)
-    this.vOSV('status',exp,'AccountStatus',AccountStatusVsValidation,'r')
-    this.vOS('type',exp)
-    this.vOS('name',exp)
-    this.vOS('subject',exp)
-    this.vOS('period',exp)
-    this.vOS('active',exp)
-    this.vOS('balance',exp)
-    this.vOA('coverage',exp)
-    this.vOS('owner',exp)
-    this.vOS('description',exp)
-    this.vOA('guarantor',exp)
-    return issues;
+    iss.push(...this.vRPS('resourceType',exp));
+    iss.push(...this.vOA('identifier',exp));
+    iss.push(...this.vOSV('status',exp,'AccountStatus',AccountStatusVsValidation,'r'));
+    iss.push(...this.vOS('type',exp));
+    iss.push(...this.vOS('name',exp));
+    iss.push(...this.vOS('subject',exp));
+    iss.push(...this.vOS('period',exp));
+    iss.push(...this.vOS('active',exp));
+    iss.push(...this.vOS('balance',exp));
+    iss.push(...this.vOA('coverage',exp));
+    iss.push(...this.vOS('owner',exp));
+    iss.push(...this.vOS('description',exp));
+    iss.push(...this.vOA('guarantor',exp));
+    return iss;
   }
 }

@@ -187,19 +187,19 @@ export class MedicationOrderDosageInstruction extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'MedicationOrder.dosageInstruction' }
-    this.vOS('text',exp)
-    this.vOS('additionalInstructions',exp)
-    this.vOS('timing',exp)
-    this.vOS('asNeeded',exp)
-    this.vOS('site',exp)
-    this.vOS('route',exp)
-    this.vOS('method',exp)
-    this.vOS('dose',exp)
-    this.vOS('rate',exp)
-    this.vOS('maxDosePerPeriod',exp)
-    return issues;
+    iss.push(...this.vOS('text',exp));
+    iss.push(...this.vOS('additionalInstructions',exp));
+    iss.push(...this.vOS('timing',exp));
+    iss.push(...this.vOS('asNeeded',exp));
+    iss.push(...this.vOS('site',exp));
+    iss.push(...this.vOS('route',exp));
+    iss.push(...this.vOS('method',exp));
+    iss.push(...this.vOS('dose',exp));
+    iss.push(...this.vOS('rate',exp));
+    iss.push(...this.vOS('maxDosePerPeriod',exp));
+    return iss;
   }
 }
 /**
@@ -293,14 +293,14 @@ export class MedicationOrderDispenseRequest extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'MedicationOrder.dispenseRequest' }
-    this.vOS('medication',exp)
-    this.vOS('validityPeriod',exp)
-    this.vOS('numberOfRepeatsAllowed',exp)
-    this.vOS('quantity',exp)
-    this.vOS('expectedSupplyDuration',exp)
-    return issues;
+    iss.push(...this.vOS('medication',exp));
+    iss.push(...this.vOS('validityPeriod',exp));
+    iss.push(...this.vOS('numberOfRepeatsAllowed',exp));
+    iss.push(...this.vOS('quantity',exp));
+    iss.push(...this.vOS('expectedSupplyDuration',exp));
+    return iss;
   }
 }
 /**
@@ -346,11 +346,11 @@ export class MedicationOrderSubstitution extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'MedicationOrder.substitution' }
-    this.vRS('type',exp)
-    this.vOS('reason',exp)
-    return issues;
+    iss.push(...this.vRS('type',exp));
+    iss.push(...this.vOS('reason',exp));
+    return iss;
   }
 }
 /**
@@ -584,24 +584,24 @@ export class MedicationOrder extends fhir.DomainResource {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'MedicationOrder' }
-    this.vRS('resourceType',exp)
-    this.vOA('identifier',exp)
-    this.vOS('dateWritten',exp)
-    this.vOSV('status',exp,'MedicationOrderStatus',MedicationOrderStatusVsValidation,'r')
-    this.vOS('dateEnded',exp)
-    this.vOS('reasonEnded',exp)
-    this.vOS('patient',exp)
-    this.vOS('prescriber',exp)
-    this.vOS('encounter',exp)
-    this.vOS('reason',exp)
-    this.vOS('note',exp)
-    this.vRS('medication',exp)
-    this.vOA('dosageInstruction',exp)
-    this.vOS('dispenseRequest',exp)
-    this.vOS('substitution',exp)
-    this.vOS('priorPrescription',exp)
-    return issues;
+    iss.push(...this.vRPS('resourceType',exp));
+    iss.push(...this.vOA('identifier',exp));
+    iss.push(...this.vOS('dateWritten',exp));
+    iss.push(...this.vOSV('status',exp,'MedicationOrderStatus',MedicationOrderStatusVsValidation,'r'));
+    iss.push(...this.vOS('dateEnded',exp));
+    iss.push(...this.vOS('reasonEnded',exp));
+    iss.push(...this.vOS('patient',exp));
+    iss.push(...this.vOS('prescriber',exp));
+    iss.push(...this.vOS('encounter',exp));
+    iss.push(...this.vOS('reason',exp));
+    iss.push(...this.vOS('note',exp));
+    iss.push(...this.vRS('medication',exp));
+    iss.push(...this.vOA('dosageInstruction',exp));
+    iss.push(...this.vOS('dispenseRequest',exp));
+    iss.push(...this.vOS('substitution',exp));
+    iss.push(...this.vOS('priorPrescription',exp));
+    return iss;
   }
 }

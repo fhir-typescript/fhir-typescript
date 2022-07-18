@@ -516,42 +516,42 @@ export class ServiceRequest extends fhir.DomainResource {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'ServiceRequest' }
-    this.vRS('resourceType',exp)
-    this.vOA('identifier',exp)
-    this.vOA('instantiatesCanonical',exp)
-    this.vOA('instantiatesUri',exp)
-    this.vOA('basedOn',exp)
-    this.vOA('replaces',exp)
-    this.vOS('requisition',exp)
-    this.vRSV('status',exp,'RequestStatus',RequestStatusVsValidation,'r')
-    this.vRSV('intent',exp,'RequestIntent',RequestIntentVsValidation,'r')
-    this.vOA('category',exp)
-    this.vOSV('priority',exp,'RequestPriority',RequestPriorityVsValidation,'r')
-    this.vOS('doNotPerform',exp)
-    this.vOS('code',exp)
-    this.vOA('orderDetail',exp)
-    this.vOS('quantity',exp)
-    this.vRS('subject',exp)
-    this.vOS('encounter',exp)
-    this.vOS('occurrence',exp)
-    this.vOS('asNeeded',exp)
-    this.vOS('authoredOn',exp)
-    this.vOS('requester',exp)
-    this.vOS('performerType',exp)
-    this.vOA('performer',exp)
-    this.vOA('locationCode',exp)
-    this.vOA('locationReference',exp)
-    this.vOA('reasonCode',exp)
-    this.vOA('reasonReference',exp)
-    this.vOA('insurance',exp)
-    this.vOA('supportingInfo',exp)
-    this.vOA('specimen',exp)
-    this.vOA('bodySite',exp)
-    this.vOA('note',exp)
-    this.vOS('patientInstruction',exp)
-    this.vOA('relevantHistory',exp)
-    return issues;
+    iss.push(...this.vRPS('resourceType',exp));
+    iss.push(...this.vOA('identifier',exp));
+    iss.push(...this.vOA('instantiatesCanonical',exp));
+    iss.push(...this.vOA('instantiatesUri',exp));
+    iss.push(...this.vOA('basedOn',exp));
+    iss.push(...this.vOA('replaces',exp));
+    iss.push(...this.vOS('requisition',exp));
+    iss.push(...this.vRSV('status',exp,'RequestStatus',RequestStatusVsValidation,'r'));
+    iss.push(...this.vRSV('intent',exp,'RequestIntent',RequestIntentVsValidation,'r'));
+    iss.push(...this.vOA('category',exp));
+    iss.push(...this.vOSV('priority',exp,'RequestPriority',RequestPriorityVsValidation,'r'));
+    iss.push(...this.vOS('doNotPerform',exp));
+    iss.push(...this.vOS('code',exp));
+    iss.push(...this.vOA('orderDetail',exp));
+    iss.push(...this.vOS('quantity',exp));
+    iss.push(...this.vRS('subject',exp));
+    iss.push(...this.vOS('encounter',exp));
+    iss.push(...this.vOS('occurrence',exp));
+    iss.push(...this.vOS('asNeeded',exp));
+    iss.push(...this.vOS('authoredOn',exp));
+    iss.push(...this.vOS('requester',exp));
+    iss.push(...this.vOS('performerType',exp));
+    iss.push(...this.vOA('performer',exp));
+    iss.push(...this.vOA('locationCode',exp));
+    iss.push(...this.vOA('locationReference',exp));
+    iss.push(...this.vOA('reasonCode',exp));
+    iss.push(...this.vOA('reasonReference',exp));
+    iss.push(...this.vOA('insurance',exp));
+    iss.push(...this.vOA('supportingInfo',exp));
+    iss.push(...this.vOA('specimen',exp));
+    iss.push(...this.vOA('bodySite',exp));
+    iss.push(...this.vOA('note',exp));
+    iss.push(...this.vOS('patientInstruction',exp));
+    iss.push(...this.vOA('relevantHistory',exp));
+    return iss;
   }
 }

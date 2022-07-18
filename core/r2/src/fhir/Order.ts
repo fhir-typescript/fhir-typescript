@@ -47,11 +47,11 @@ export class OrderWhen extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'Order.when' }
-    this.vOS('code',exp)
-    this.vOS('schedule',exp)
-    return issues;
+    iss.push(...this.vOS('code',exp));
+    iss.push(...this.vOS('schedule',exp));
+    return iss;
   }
 }
 /**
@@ -183,17 +183,17 @@ export class Order extends fhir.DomainResource {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'Order' }
-    this.vRS('resourceType',exp)
-    this.vOA('identifier',exp)
-    this.vOS('date',exp)
-    this.vOS('subject',exp)
-    this.vOS('source',exp)
-    this.vOS('target',exp)
-    this.vOS('reason',exp)
-    this.vOS('when',exp)
-    this.vRA('detail',exp)
-    return issues;
+    iss.push(...this.vRPS('resourceType',exp));
+    iss.push(...this.vOA('identifier',exp));
+    iss.push(...this.vOS('date',exp));
+    iss.push(...this.vOS('subject',exp));
+    iss.push(...this.vOS('source',exp));
+    iss.push(...this.vOS('target',exp));
+    iss.push(...this.vOS('reason',exp));
+    iss.push(...this.vOS('when',exp));
+    iss.push(...this.vRA('detail',exp));
+    return iss;
   }
 }

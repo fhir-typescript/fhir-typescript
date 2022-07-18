@@ -91,13 +91,13 @@ export class DiagnosticOrderEvent extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'DiagnosticOrder.event' }
-    this.vRSV('status',exp,'DiagnosticOrderStatus',DiagnosticOrderStatusVsValidation,'r')
-    this.vOS('description',exp)
-    this.vRS('dateTime',exp)
-    this.vOS('actor',exp)
-    return issues;
+    iss.push(...this.vRSV('status',exp,'DiagnosticOrderStatus',DiagnosticOrderStatusVsValidation,'r'));
+    iss.push(...this.vOS('description',exp));
+    iss.push(...this.vRS('dateTime',exp));
+    iss.push(...this.vOS('actor',exp));
+    return iss;
   }
 }
 /**
@@ -180,14 +180,14 @@ export class DiagnosticOrderItem extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'DiagnosticOrder.item' }
-    this.vRS('code',exp)
-    this.vOA('specimen',exp)
-    this.vOS('bodySite',exp)
-    this.vOSV('status',exp,'DiagnosticOrderStatus',DiagnosticOrderStatusVsValidation,'r')
-    this.vOA('event',exp)
-    return issues;
+    iss.push(...this.vRS('code',exp));
+    iss.push(...this.vOA('specimen',exp));
+    iss.push(...this.vOS('bodySite',exp));
+    iss.push(...this.vOSV('status',exp,'DiagnosticOrderStatus',DiagnosticOrderStatusVsValidation,'r'));
+    iss.push(...this.vOA('event',exp));
+    return iss;
   }
 }
 /**
@@ -355,21 +355,21 @@ export class DiagnosticOrder extends fhir.DomainResource {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'DiagnosticOrder' }
-    this.vRS('resourceType',exp)
-    this.vRS('subject',exp)
-    this.vOS('orderer',exp)
-    this.vOA('identifier',exp)
-    this.vOS('encounter',exp)
-    this.vOA('reason',exp)
-    this.vOA('supportingInformation',exp)
-    this.vOA('specimen',exp)
-    this.vOSV('status',exp,'DiagnosticOrderStatus',DiagnosticOrderStatusVsValidation,'r')
-    this.vOSV('priority',exp,'DiagnosticOrderPriority',DiagnosticOrderPriorityVsValidation,'r')
-    this.vOA('event',exp)
-    this.vOA('item',exp)
-    this.vOA('note',exp)
-    return issues;
+    iss.push(...this.vRPS('resourceType',exp));
+    iss.push(...this.vRS('subject',exp));
+    iss.push(...this.vOS('orderer',exp));
+    iss.push(...this.vOA('identifier',exp));
+    iss.push(...this.vOS('encounter',exp));
+    iss.push(...this.vOA('reason',exp));
+    iss.push(...this.vOA('supportingInformation',exp));
+    iss.push(...this.vOA('specimen',exp));
+    iss.push(...this.vOSV('status',exp,'DiagnosticOrderStatus',DiagnosticOrderStatusVsValidation,'r'));
+    iss.push(...this.vOSV('priority',exp,'DiagnosticOrderPriority',DiagnosticOrderPriorityVsValidation,'r'));
+    iss.push(...this.vOA('event',exp));
+    iss.push(...this.vOA('item',exp));
+    iss.push(...this.vOA('note',exp));
+    return iss;
   }
 }

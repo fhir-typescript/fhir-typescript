@@ -56,11 +56,11 @@ export class FhirElement extends fhir.FhirBase {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'Element' }
-    this.vOS('id',exp)
-    this.vOA('extension',exp)
-    return issues;
+    iss.push(...this.vOS('id',exp));
+    iss.push(...this.vOA('extension',exp));
+    return iss;
   }
   /**
    * Fluent-style function to add extensions

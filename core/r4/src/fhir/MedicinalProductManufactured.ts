@@ -106,16 +106,16 @@ export class MedicinalProductManufactured extends fhir.DomainResource {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'MedicinalProductManufactured' }
-    this.vRS('resourceType',exp)
-    this.vRS('manufacturedDoseForm',exp)
-    this.vOS('unitOfPresentation',exp)
-    this.vRS('quantity',exp)
-    this.vOA('manufacturer',exp)
-    this.vOA('ingredient',exp)
-    this.vOS('physicalCharacteristics',exp)
-    this.vOA('otherCharacteristics',exp)
-    return issues;
+    iss.push(...this.vRPS('resourceType',exp));
+    iss.push(...this.vRS('manufacturedDoseForm',exp));
+    iss.push(...this.vOS('unitOfPresentation',exp));
+    iss.push(...this.vRS('quantity',exp));
+    iss.push(...this.vOA('manufacturer',exp));
+    iss.push(...this.vOA('ingredient',exp));
+    iss.push(...this.vOS('physicalCharacteristics',exp));
+    iss.push(...this.vOA('otherCharacteristics',exp));
+    return iss;
   }
 }

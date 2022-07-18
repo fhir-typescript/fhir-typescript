@@ -144,11 +144,11 @@ export class CitationSummary extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'Citation.summary' }
-    this.vOS('style',exp)
-    this.vRS('text',exp)
-    return issues;
+    iss.push(...this.vOS('style',exp));
+    iss.push(...this.vRS('text',exp));
+    return iss;
   }
 }
 /**
@@ -194,11 +194,11 @@ export class CitationClassification extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'Citation.classification' }
-    this.vOS('type',exp)
-    this.vOA('classifier',exp)
-    return issues;
+    iss.push(...this.vOS('type',exp));
+    iss.push(...this.vOA('classifier',exp));
+    return iss;
   }
 }
 /**
@@ -262,12 +262,12 @@ export class CitationStatusDate extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'Citation.statusDate' }
-    this.vRS('activity',exp)
-    this.vOS('actual',exp)
-    this.vRS('period',exp)
-    return issues;
+    iss.push(...this.vRS('activity',exp));
+    iss.push(...this.vOS('actual',exp));
+    iss.push(...this.vRS('period',exp));
+    return iss;
   }
 }
 /**
@@ -348,12 +348,12 @@ export class CitationRelatesTo extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'Citation.relatesTo' }
-    this.vRS('relationshipType',exp)
-    this.vOA('targetClassifier',exp)
-    this.vRS('target',exp)
-    return issues;
+    iss.push(...this.vRS('relationshipType',exp));
+    iss.push(...this.vOA('targetClassifier',exp));
+    iss.push(...this.vRS('target',exp));
+    return iss;
   }
 }
 /**
@@ -407,11 +407,11 @@ export class CitationCitedArtifactVersion extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'Citation.citedArtifact.version' }
-    this.vRS('value',exp)
-    this.vOS('baseCitation',exp)
-    return issues;
+    iss.push(...this.vRS('value',exp));
+    iss.push(...this.vOS('baseCitation',exp));
+    return iss;
   }
 }
 /**
@@ -475,12 +475,12 @@ export class CitationCitedArtifactStatusDate extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'Citation.citedArtifact.statusDate' }
-    this.vRS('activity',exp)
-    this.vOS('actual',exp)
-    this.vRS('period',exp)
-    return issues;
+    iss.push(...this.vRS('activity',exp));
+    iss.push(...this.vOS('actual',exp));
+    iss.push(...this.vRS('period',exp));
+    return iss;
   }
 }
 /**
@@ -544,12 +544,12 @@ export class CitationCitedArtifactTitle extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'Citation.citedArtifact.title' }
-    this.vOA('type',exp)
-    this.vOS('language',exp)
-    this.vRS('text',exp)
-    return issues;
+    iss.push(...this.vOA('type',exp));
+    iss.push(...this.vOS('language',exp));
+    iss.push(...this.vRS('text',exp));
+    return iss;
   }
 }
 /**
@@ -629,13 +629,13 @@ export class CitationCitedArtifactAbstract extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'Citation.citedArtifact.abstract' }
-    this.vOS('type',exp)
-    this.vOS('language',exp)
-    this.vRS('text',exp)
-    this.vOS('copyright',exp)
-    return issues;
+    iss.push(...this.vOS('type',exp));
+    iss.push(...this.vOS('language',exp));
+    iss.push(...this.vRS('text',exp));
+    iss.push(...this.vOS('copyright',exp));
+    return iss;
   }
 }
 /**
@@ -697,12 +697,12 @@ export class CitationCitedArtifactPart extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'Citation.citedArtifact.part' }
-    this.vOS('type',exp)
-    this.vOS('value',exp)
-    this.vOS('baseCitation',exp)
-    return issues;
+    iss.push(...this.vOS('type',exp));
+    iss.push(...this.vOS('value',exp));
+    iss.push(...this.vOS('baseCitation',exp));
+    return iss;
   }
 }
 /**
@@ -783,12 +783,12 @@ export class CitationCitedArtifactRelatesTo extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'Citation.citedArtifact.relatesTo' }
-    this.vRS('relationshipType',exp)
-    this.vOA('targetClassifier',exp)
-    this.vRS('target',exp)
-    return issues;
+    iss.push(...this.vRS('relationshipType',exp));
+    iss.push(...this.vOA('targetClassifier',exp));
+    iss.push(...this.vRS('target',exp));
+    return iss;
   }
 }
 /**
@@ -877,14 +877,14 @@ export class CitationCitedArtifactPublicationFormPublishedIn extends fhir.Backbo
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'Citation.citedArtifact.publicationForm.publishedIn' }
-    this.vOS('type',exp)
-    this.vOA('identifier',exp)
-    this.vOS('title',exp)
-    this.vOS('publisher',exp)
-    this.vOS('publisherLocation',exp)
-    return issues;
+    iss.push(...this.vOS('type',exp));
+    iss.push(...this.vOA('identifier',exp));
+    iss.push(...this.vOS('title',exp));
+    iss.push(...this.vOS('publisher',exp));
+    iss.push(...this.vOS('publisherLocation',exp));
+    return iss;
   }
 }
 /**
@@ -1013,15 +1013,15 @@ export class CitationCitedArtifactPublicationFormPeriodicReleaseDateOfPublicatio
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'Citation.citedArtifact.publicationForm.periodicRelease.dateOfPublication' }
-    this.vOS('date',exp)
-    this.vOS('year',exp)
-    this.vOS('month',exp)
-    this.vOS('day',exp)
-    this.vOS('season',exp)
-    this.vOS('text',exp)
-    return issues;
+    iss.push(...this.vOS('date',exp));
+    iss.push(...this.vOS('year',exp));
+    iss.push(...this.vOS('month',exp));
+    iss.push(...this.vOS('day',exp));
+    iss.push(...this.vOS('season',exp));
+    iss.push(...this.vOS('text',exp));
+    return iss;
   }
 }
 /**
@@ -1100,13 +1100,13 @@ export class CitationCitedArtifactPublicationFormPeriodicRelease extends fhir.Ba
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'Citation.citedArtifact.publicationForm.periodicRelease' }
-    this.vOS('citedMedium',exp)
-    this.vOS('volume',exp)
-    this.vOS('issue',exp)
-    this.vOS('dateOfPublication',exp)
-    return issues;
+    iss.push(...this.vOS('citedMedium',exp));
+    iss.push(...this.vOS('volume',exp));
+    iss.push(...this.vOS('issue',exp));
+    iss.push(...this.vOS('dateOfPublication',exp));
+    return iss;
   }
 }
 /**
@@ -1297,20 +1297,20 @@ export class CitationCitedArtifactPublicationForm extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'Citation.citedArtifact.publicationForm' }
-    this.vOS('publishedIn',exp)
-    this.vOS('periodicRelease',exp)
-    this.vOS('articleDate',exp)
-    this.vOS('lastRevisionDate',exp)
-    this.vOA('language',exp)
-    this.vOS('accessionNumber',exp)
-    this.vOS('pageString',exp)
-    this.vOS('firstPage',exp)
-    this.vOS('lastPage',exp)
-    this.vOS('pageCount',exp)
-    this.vOS('copyright',exp)
-    return issues;
+    iss.push(...this.vOS('publishedIn',exp));
+    iss.push(...this.vOS('periodicRelease',exp));
+    iss.push(...this.vOS('articleDate',exp));
+    iss.push(...this.vOS('lastRevisionDate',exp));
+    iss.push(...this.vOA('language',exp));
+    iss.push(...this.vOS('accessionNumber',exp));
+    iss.push(...this.vOS('pageString',exp));
+    iss.push(...this.vOS('firstPage',exp));
+    iss.push(...this.vOS('lastPage',exp));
+    iss.push(...this.vOS('pageCount',exp));
+    iss.push(...this.vOS('copyright',exp));
+    return iss;
   }
 }
 /**
@@ -1363,11 +1363,11 @@ export class CitationCitedArtifactWebLocation extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'Citation.citedArtifact.webLocation' }
-    this.vOS('type',exp)
-    this.vOS('url',exp)
-    return issues;
+    iss.push(...this.vOS('type',exp));
+    iss.push(...this.vOS('url',exp));
+    return iss;
   }
 }
 /**
@@ -1455,14 +1455,14 @@ export class CitationCitedArtifactClassificationWhoClassified extends fhir.Backb
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'Citation.citedArtifact.classification.whoClassified' }
-    this.vOS('person',exp)
-    this.vOS('organization',exp)
-    this.vOS('publisher',exp)
-    this.vOS('classifierCopyright',exp)
-    this.vOS('freeToShare',exp)
-    return issues;
+    iss.push(...this.vOS('person',exp));
+    iss.push(...this.vOS('organization',exp));
+    iss.push(...this.vOS('publisher',exp));
+    iss.push(...this.vOS('classifierCopyright',exp));
+    iss.push(...this.vOS('freeToShare',exp));
+    return iss;
   }
 }
 /**
@@ -1517,12 +1517,12 @@ export class CitationCitedArtifactClassification extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'Citation.citedArtifact.classification' }
-    this.vOS('type',exp)
-    this.vOA('classifier',exp)
-    this.vOS('whoClassified',exp)
-    return issues;
+    iss.push(...this.vOS('type',exp));
+    iss.push(...this.vOA('classifier',exp));
+    iss.push(...this.vOS('whoClassified',exp));
+    return iss;
   }
 }
 /**
@@ -1593,12 +1593,12 @@ export class CitationCitedArtifactContributorshipEntryAffiliationInfo extends fh
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'Citation.citedArtifact.contributorship.entry.affiliationInfo' }
-    this.vOS('affiliation',exp)
-    this.vOS('role',exp)
-    this.vOA('identifier',exp)
-    return issues;
+    iss.push(...this.vOS('affiliation',exp));
+    iss.push(...this.vOS('role',exp));
+    iss.push(...this.vOA('identifier',exp));
+    return iss;
   }
 }
 /**
@@ -1652,11 +1652,11 @@ export class CitationCitedArtifactContributorshipEntryContributionInstance exten
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'Citation.citedArtifact.contributorship.entry.contributionInstance' }
-    this.vRS('type',exp)
-    this.vOS('time',exp)
-    return issues;
+    iss.push(...this.vRS('type',exp));
+    iss.push(...this.vOS('time',exp));
+    return iss;
   }
 }
 /**
@@ -1829,21 +1829,21 @@ export class CitationCitedArtifactContributorshipEntry extends fhir.BackboneElem
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'Citation.citedArtifact.contributorship.entry' }
-    this.vOS('name',exp)
-    this.vOS('initials',exp)
-    this.vOS('collectiveName',exp)
-    this.vOA('identifier',exp)
-    this.vOA('affiliationInfo',exp)
-    this.vOA('address',exp)
-    this.vOA('telecom',exp)
-    this.vOA('contributionType',exp)
-    this.vOS('role',exp)
-    this.vOA('contributionInstance',exp)
-    this.vOS('correspondingContact',exp)
-    this.vOS('listOrder',exp)
-    return issues;
+    iss.push(...this.vOS('name',exp));
+    iss.push(...this.vOS('initials',exp));
+    iss.push(...this.vOS('collectiveName',exp));
+    iss.push(...this.vOA('identifier',exp));
+    iss.push(...this.vOA('affiliationInfo',exp));
+    iss.push(...this.vOA('address',exp));
+    iss.push(...this.vOA('telecom',exp));
+    iss.push(...this.vOA('contributionType',exp));
+    iss.push(...this.vOS('role',exp));
+    iss.push(...this.vOA('contributionInstance',exp));
+    iss.push(...this.vOS('correspondingContact',exp));
+    iss.push(...this.vOS('listOrder',exp));
+    return iss;
   }
 }
 /**
@@ -1915,13 +1915,13 @@ export class CitationCitedArtifactContributorshipSummary extends fhir.BackboneEl
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'Citation.citedArtifact.contributorship.summary' }
-    this.vOS('type',exp)
-    this.vOS('style',exp)
-    this.vOS('source',exp)
-    this.vRS('value',exp)
-    return issues;
+    iss.push(...this.vOS('type',exp));
+    iss.push(...this.vOS('style',exp));
+    iss.push(...this.vOS('source',exp));
+    iss.push(...this.vRS('value',exp));
+    return iss;
   }
 }
 /**
@@ -1985,12 +1985,12 @@ export class CitationCitedArtifactContributorship extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'Citation.citedArtifact.contributorship' }
-    this.vOS('complete',exp)
-    this.vOA('entry',exp)
-    this.vOA('summary',exp)
-    return issues;
+    iss.push(...this.vOS('complete',exp));
+    iss.push(...this.vOA('entry',exp));
+    iss.push(...this.vOA('summary',exp));
+    return iss;
   }
 }
 /**
@@ -2171,24 +2171,24 @@ export class CitationCitedArtifact extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'Citation.citedArtifact' }
-    this.vOA('identifier',exp)
-    this.vOA('relatedIdentifier',exp)
-    this.vOS('dateAccessed',exp)
-    this.vOS('version',exp)
-    this.vOA('currentState',exp)
-    this.vOA('statusDate',exp)
-    this.vOA('title',exp)
-    this.vOA('abstract',exp)
-    this.vOS('part',exp)
-    this.vOA('relatesTo',exp)
-    this.vOA('publicationForm',exp)
-    this.vOA('webLocation',exp)
-    this.vOA('classification',exp)
-    this.vOS('contributorship',exp)
-    this.vOA('note',exp)
-    return issues;
+    iss.push(...this.vOA('identifier',exp));
+    iss.push(...this.vOA('relatedIdentifier',exp));
+    iss.push(...this.vOS('dateAccessed',exp));
+    iss.push(...this.vOS('version',exp));
+    iss.push(...this.vOA('currentState',exp));
+    iss.push(...this.vOA('statusDate',exp));
+    iss.push(...this.vOA('title',exp));
+    iss.push(...this.vOA('abstract',exp));
+    iss.push(...this.vOS('part',exp));
+    iss.push(...this.vOA('relatesTo',exp));
+    iss.push(...this.vOA('publicationForm',exp));
+    iss.push(...this.vOA('webLocation',exp));
+    iss.push(...this.vOA('classification',exp));
+    iss.push(...this.vOS('contributorship',exp));
+    iss.push(...this.vOA('note',exp));
+    return iss;
   }
 }
 /**
@@ -2604,38 +2604,38 @@ export class Citation extends fhir.DomainResource {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'Citation' }
-    this.vRS('resourceType',exp)
-    this.vOS('url',exp)
-    this.vOA('identifier',exp)
-    this.vOS('version',exp)
-    this.vOS('name',exp)
-    this.vOS('title',exp)
-    this.vRSV('status',exp,'PublicationStatus',PublicationStatusVsValidation,'r')
-    this.vOS('experimental',exp)
-    this.vOS('date',exp)
-    this.vOS('publisher',exp)
-    this.vOA('contact',exp)
-    this.vOS('description',exp)
-    this.vOA('useContext',exp)
-    this.vOA('jurisdiction',exp)
-    this.vOS('purpose',exp)
-    this.vOS('copyright',exp)
-    this.vOS('approvalDate',exp)
-    this.vOS('lastReviewDate',exp)
-    this.vOS('effectivePeriod',exp)
-    this.vOA('author',exp)
-    this.vOA('editor',exp)
-    this.vOA('reviewer',exp)
-    this.vOA('endorser',exp)
-    this.vOA('summary',exp)
-    this.vOA('classification',exp)
-    this.vOA('note',exp)
-    this.vOA('currentState',exp)
-    this.vOA('statusDate',exp)
-    this.vOA('relatesTo',exp)
-    this.vOS('citedArtifact',exp)
-    return issues;
+    iss.push(...this.vRPS('resourceType',exp));
+    iss.push(...this.vOS('url',exp));
+    iss.push(...this.vOA('identifier',exp));
+    iss.push(...this.vOS('version',exp));
+    iss.push(...this.vOS('name',exp));
+    iss.push(...this.vOS('title',exp));
+    iss.push(...this.vRSV('status',exp,'PublicationStatus',PublicationStatusVsValidation,'r'));
+    iss.push(...this.vOS('experimental',exp));
+    iss.push(...this.vOS('date',exp));
+    iss.push(...this.vOS('publisher',exp));
+    iss.push(...this.vOA('contact',exp));
+    iss.push(...this.vOS('description',exp));
+    iss.push(...this.vOA('useContext',exp));
+    iss.push(...this.vOA('jurisdiction',exp));
+    iss.push(...this.vOS('purpose',exp));
+    iss.push(...this.vOS('copyright',exp));
+    iss.push(...this.vOS('approvalDate',exp));
+    iss.push(...this.vOS('lastReviewDate',exp));
+    iss.push(...this.vOS('effectivePeriod',exp));
+    iss.push(...this.vOA('author',exp));
+    iss.push(...this.vOA('editor',exp));
+    iss.push(...this.vOA('reviewer',exp));
+    iss.push(...this.vOA('endorser',exp));
+    iss.push(...this.vOA('summary',exp));
+    iss.push(...this.vOA('classification',exp));
+    iss.push(...this.vOA('note',exp));
+    iss.push(...this.vOA('currentState',exp));
+    iss.push(...this.vOA('statusDate',exp));
+    iss.push(...this.vOA('relatesTo',exp));
+    iss.push(...this.vOS('citedArtifact',exp));
+    return iss;
   }
 }

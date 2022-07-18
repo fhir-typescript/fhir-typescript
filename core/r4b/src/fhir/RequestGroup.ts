@@ -100,11 +100,11 @@ export class RequestGroupActionCondition extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'RequestGroup.action.condition' }
-    this.vRSV('kind',exp,'ActionConditionKind',ActionConditionKindVsValidation,'r')
-    this.vOS('expression',exp)
-    return issues;
+    iss.push(...this.vRSV('kind',exp,'ActionConditionKind',ActionConditionKindVsValidation,'r'));
+    iss.push(...this.vOS('expression',exp));
+    return iss;
   }
 }
 /**
@@ -190,12 +190,12 @@ export class RequestGroupActionRelatedAction extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'RequestGroup.action.relatedAction' }
-    this.vRS('actionId',exp)
-    this.vRSV('relationship',exp,'ActionRelationshipType',ActionRelationshipTypeVsValidation,'r')
-    this.vOS('offset',exp)
-    return issues;
+    iss.push(...this.vRS('actionId',exp));
+    iss.push(...this.vRSV('relationship',exp,'ActionRelationshipType',ActionRelationshipTypeVsValidation,'r'));
+    iss.push(...this.vOS('offset',exp));
+    return iss;
   }
 }
 /**
@@ -513,28 +513,28 @@ export class RequestGroupAction extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'RequestGroup.action' }
-    this.vOS('prefix',exp)
-    this.vOS('title',exp)
-    this.vOS('description',exp)
-    this.vOS('textEquivalent',exp)
-    this.vOSV('priority',exp,'RequestPriority',RequestPriorityVsValidation,'r')
-    this.vOA('code',exp)
-    this.vOA('documentation',exp)
-    this.vOA('condition',exp)
-    this.vOA('relatedAction',exp)
-    this.vOS('timing',exp)
-    this.vOA('participant',exp)
-    this.vOS('type',exp)
-    this.vOSV('groupingBehavior',exp,'ActionGroupingBehavior',ActionGroupingBehaviorVsValidation,'r')
-    this.vOSV('selectionBehavior',exp,'ActionSelectionBehavior',ActionSelectionBehaviorVsValidation,'r')
-    this.vOSV('requiredBehavior',exp,'ActionRequiredBehavior',ActionRequiredBehaviorVsValidation,'r')
-    this.vOSV('precheckBehavior',exp,'ActionPrecheckBehavior',ActionPrecheckBehaviorVsValidation,'r')
-    this.vOSV('cardinalityBehavior',exp,'ActionCardinalityBehavior',ActionCardinalityBehaviorVsValidation,'r')
-    this.vOS('resource',exp)
-    this.vOA('action',exp)
-    return issues;
+    iss.push(...this.vOS('prefix',exp));
+    iss.push(...this.vOS('title',exp));
+    iss.push(...this.vOS('description',exp));
+    iss.push(...this.vOS('textEquivalent',exp));
+    iss.push(...this.vOSV('priority',exp,'RequestPriority',RequestPriorityVsValidation,'r'));
+    iss.push(...this.vOA('code',exp));
+    iss.push(...this.vOA('documentation',exp));
+    iss.push(...this.vOA('condition',exp));
+    iss.push(...this.vOA('relatedAction',exp));
+    iss.push(...this.vOS('timing',exp));
+    iss.push(...this.vOA('participant',exp));
+    iss.push(...this.vOS('type',exp));
+    iss.push(...this.vOSV('groupingBehavior',exp,'ActionGroupingBehavior',ActionGroupingBehaviorVsValidation,'r'));
+    iss.push(...this.vOSV('selectionBehavior',exp,'ActionSelectionBehavior',ActionSelectionBehaviorVsValidation,'r'));
+    iss.push(...this.vOSV('requiredBehavior',exp,'ActionRequiredBehavior',ActionRequiredBehaviorVsValidation,'r'));
+    iss.push(...this.vOSV('precheckBehavior',exp,'ActionPrecheckBehavior',ActionPrecheckBehaviorVsValidation,'r'));
+    iss.push(...this.vOSV('cardinalityBehavior',exp,'ActionCardinalityBehavior',ActionCardinalityBehaviorVsValidation,'r'));
+    iss.push(...this.vOS('resource',exp));
+    iss.push(...this.vOA('action',exp));
+    return iss;
   }
 }
 /**
@@ -795,27 +795,27 @@ export class RequestGroup extends fhir.DomainResource {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'RequestGroup' }
-    this.vRS('resourceType',exp)
-    this.vOA('identifier',exp)
-    this.vOA('instantiatesCanonical',exp)
-    this.vOA('instantiatesUri',exp)
-    this.vOA('basedOn',exp)
-    this.vOA('replaces',exp)
-    this.vOS('groupIdentifier',exp)
-    this.vRSV('status',exp,'RequestStatus',RequestStatusVsValidation,'r')
-    this.vRSV('intent',exp,'RequestIntent',RequestIntentVsValidation,'r')
-    this.vOSV('priority',exp,'RequestPriority',RequestPriorityVsValidation,'r')
-    this.vOS('code',exp)
-    this.vOS('subject',exp)
-    this.vOS('encounter',exp)
-    this.vOS('authoredOn',exp)
-    this.vOS('author',exp)
-    this.vOA('reasonCode',exp)
-    this.vOA('reasonReference',exp)
-    this.vOA('note',exp)
-    this.vOA('action',exp)
-    return issues;
+    iss.push(...this.vRPS('resourceType',exp));
+    iss.push(...this.vOA('identifier',exp));
+    iss.push(...this.vOA('instantiatesCanonical',exp));
+    iss.push(...this.vOA('instantiatesUri',exp));
+    iss.push(...this.vOA('basedOn',exp));
+    iss.push(...this.vOA('replaces',exp));
+    iss.push(...this.vOS('groupIdentifier',exp));
+    iss.push(...this.vRSV('status',exp,'RequestStatus',RequestStatusVsValidation,'r'));
+    iss.push(...this.vRSV('intent',exp,'RequestIntent',RequestIntentVsValidation,'r'));
+    iss.push(...this.vOSV('priority',exp,'RequestPriority',RequestPriorityVsValidation,'r'));
+    iss.push(...this.vOS('code',exp));
+    iss.push(...this.vOS('subject',exp));
+    iss.push(...this.vOS('encounter',exp));
+    iss.push(...this.vOS('authoredOn',exp));
+    iss.push(...this.vOS('author',exp));
+    iss.push(...this.vOA('reasonCode',exp));
+    iss.push(...this.vOA('reasonReference',exp));
+    iss.push(...this.vOA('note',exp));
+    iss.push(...this.vOA('action',exp));
+    return iss;
   }
 }

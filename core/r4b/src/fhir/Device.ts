@@ -167,15 +167,15 @@ export class DeviceUdiCarrier extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'Device.udiCarrier' }
-    this.vOS('deviceIdentifier',exp)
-    this.vOS('issuer',exp)
-    this.vOS('jurisdiction',exp)
-    this.vOS('carrierAIDC',exp)
-    this.vOS('carrierHRF',exp)
-    this.vOSV('entryType',exp,'UdiEntryType',UdiEntryTypeVsValidation,'r')
-    return issues;
+    iss.push(...this.vOS('deviceIdentifier',exp));
+    iss.push(...this.vOS('issuer',exp));
+    iss.push(...this.vOS('jurisdiction',exp));
+    iss.push(...this.vOS('carrierAIDC',exp));
+    iss.push(...this.vOS('carrierHRF',exp));
+    iss.push(...this.vOSV('entryType',exp,'UdiEntryType',UdiEntryTypeVsValidation,'r'));
+    return iss;
   }
 }
 /**
@@ -240,11 +240,11 @@ export class DeviceDeviceName extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'Device.deviceName' }
-    this.vRS('name',exp)
-    this.vRSV('type',exp,'DeviceNametype',DeviceNametypeVsValidation,'r')
-    return issues;
+    iss.push(...this.vRS('name',exp));
+    iss.push(...this.vRSV('type',exp,'DeviceNametype',DeviceNametypeVsValidation,'r'));
+    return iss;
   }
 }
 /**
@@ -298,11 +298,11 @@ export class DeviceSpecialization extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'Device.specialization' }
-    this.vRS('systemType',exp)
-    this.vOS('version',exp)
-    return issues;
+    iss.push(...this.vRS('systemType',exp));
+    iss.push(...this.vOS('version',exp));
+    return iss;
   }
 }
 /**
@@ -365,12 +365,12 @@ export class DeviceVersion extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'Device.version' }
-    this.vOS('type',exp)
-    this.vOS('component',exp)
-    this.vRS('value',exp)
-    return issues;
+    iss.push(...this.vOS('type',exp));
+    iss.push(...this.vOS('component',exp));
+    iss.push(...this.vRS('value',exp));
+    return iss;
   }
 }
 /**
@@ -427,12 +427,12 @@ export class DeviceProperty extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'Device.property' }
-    this.vRS('type',exp)
-    this.vOA('valueQuantity',exp)
-    this.vOA('valueCode',exp)
-    return issues;
+    iss.push(...this.vRS('type',exp));
+    iss.push(...this.vOA('valueQuantity',exp));
+    iss.push(...this.vOA('valueCode',exp));
+    return iss;
   }
 }
 /**
@@ -792,35 +792,35 @@ export class Device extends fhir.DomainResource {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'Device' }
-    this.vRS('resourceType',exp)
-    this.vOA('identifier',exp)
-    this.vOS('definition',exp)
-    this.vOA('udiCarrier',exp)
-    this.vOSV('status',exp,'DeviceStatus',DeviceStatusVsValidation,'r')
-    this.vOA('statusReason',exp)
-    this.vOS('distinctIdentifier',exp)
-    this.vOS('manufacturer',exp)
-    this.vOS('manufactureDate',exp)
-    this.vOS('expirationDate',exp)
-    this.vOS('lotNumber',exp)
-    this.vOS('serialNumber',exp)
-    this.vOA('deviceName',exp)
-    this.vOS('modelNumber',exp)
-    this.vOS('partNumber',exp)
-    this.vOS('type',exp)
-    this.vOA('specialization',exp)
-    this.vOA('version',exp)
-    this.vOA('property',exp)
-    this.vOS('patient',exp)
-    this.vOS('owner',exp)
-    this.vOA('contact',exp)
-    this.vOS('location',exp)
-    this.vOS('url',exp)
-    this.vOA('note',exp)
-    this.vOA('safety',exp)
-    this.vOS('parent',exp)
-    return issues;
+    iss.push(...this.vRPS('resourceType',exp));
+    iss.push(...this.vOA('identifier',exp));
+    iss.push(...this.vOS('definition',exp));
+    iss.push(...this.vOA('udiCarrier',exp));
+    iss.push(...this.vOSV('status',exp,'DeviceStatus',DeviceStatusVsValidation,'r'));
+    iss.push(...this.vOA('statusReason',exp));
+    iss.push(...this.vOS('distinctIdentifier',exp));
+    iss.push(...this.vOS('manufacturer',exp));
+    iss.push(...this.vOS('manufactureDate',exp));
+    iss.push(...this.vOS('expirationDate',exp));
+    iss.push(...this.vOS('lotNumber',exp));
+    iss.push(...this.vOS('serialNumber',exp));
+    iss.push(...this.vOA('deviceName',exp));
+    iss.push(...this.vOS('modelNumber',exp));
+    iss.push(...this.vOS('partNumber',exp));
+    iss.push(...this.vOS('type',exp));
+    iss.push(...this.vOA('specialization',exp));
+    iss.push(...this.vOA('version',exp));
+    iss.push(...this.vOA('property',exp));
+    iss.push(...this.vOS('patient',exp));
+    iss.push(...this.vOS('owner',exp));
+    iss.push(...this.vOA('contact',exp));
+    iss.push(...this.vOS('location',exp));
+    iss.push(...this.vOS('url',exp));
+    iss.push(...this.vOA('note',exp));
+    iss.push(...this.vOA('safety',exp));
+    iss.push(...this.vOS('parent',exp));
+    return iss;
   }
 }

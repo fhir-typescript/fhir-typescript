@@ -75,11 +75,11 @@ export class PackagedProductDefinitionLegalStatusOfSupply extends fhir.BackboneE
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'PackagedProductDefinition.legalStatusOfSupply' }
-    this.vOS('code',exp)
-    this.vOS('jurisdiction',exp)
-    return issues;
+    iss.push(...this.vOS('code',exp));
+    iss.push(...this.vOS('jurisdiction',exp));
+    return iss;
   }
 }
 /**
@@ -148,12 +148,12 @@ export class PackagedProductDefinitionPackageShelfLifeStorage extends fhir.Backb
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'PackagedProductDefinition.package.shelfLifeStorage' }
-    this.vOS('type',exp)
-    this.vOS('period',exp)
-    this.vOA('specialPrecautionsForStorage',exp)
-    return issues;
+    iss.push(...this.vOS('type',exp));
+    iss.push(...this.vOS('period',exp));
+    iss.push(...this.vOA('specialPrecautionsForStorage',exp));
+    return iss;
   }
 }
 /**
@@ -228,11 +228,11 @@ export class PackagedProductDefinitionPackageProperty extends fhir.BackboneEleme
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'PackagedProductDefinition.package.property' }
-    this.vRS('type',exp)
-    this.vOS('value',exp)
-    return issues;
+    iss.push(...this.vRS('type',exp));
+    iss.push(...this.vOS('value',exp));
+    return iss;
   }
 }
 /**
@@ -278,11 +278,11 @@ export class PackagedProductDefinitionPackageContainedItem extends fhir.Backbone
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'PackagedProductDefinition.package.containedItem' }
-    this.vRS('item',exp)
-    this.vOS('amount',exp)
-    return issues;
+    iss.push(...this.vRS('item',exp));
+    iss.push(...this.vOS('amount',exp));
+    return iss;
   }
 }
 /**
@@ -415,19 +415,19 @@ export class PackagedProductDefinitionPackage extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'PackagedProductDefinition.package' }
-    this.vOA('identifier',exp)
-    this.vOS('type',exp)
-    this.vOS('quantity',exp)
-    this.vOA('material',exp)
-    this.vOA('alternateMaterial',exp)
-    this.vOA('shelfLifeStorage',exp)
-    this.vOA('manufacturer',exp)
-    this.vOA('property',exp)
-    this.vOA('containedItem',exp)
-    this.vOA('package',exp)
-    return issues;
+    iss.push(...this.vOA('identifier',exp));
+    iss.push(...this.vOS('type',exp));
+    iss.push(...this.vOS('quantity',exp));
+    iss.push(...this.vOA('material',exp));
+    iss.push(...this.vOA('alternateMaterial',exp));
+    iss.push(...this.vOA('shelfLifeStorage',exp));
+    iss.push(...this.vOA('manufacturer',exp));
+    iss.push(...this.vOA('property',exp));
+    iss.push(...this.vOA('containedItem',exp));
+    iss.push(...this.vOA('package',exp));
+    return iss;
   }
 }
 /**
@@ -628,23 +628,23 @@ export class PackagedProductDefinition extends fhir.DomainResource {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'PackagedProductDefinition' }
-    this.vRS('resourceType',exp)
-    this.vOA('identifier',exp)
-    this.vOS('name',exp)
-    this.vOS('type',exp)
-    this.vOA('packageFor',exp)
-    this.vOS('status',exp)
-    this.vOS('statusDate',exp)
-    this.vOA('containedItemQuantity',exp)
-    this.vOS('description',exp)
-    this.vOA('legalStatusOfSupply',exp)
-    this.vOA('marketingStatus',exp)
-    this.vOA('characteristic',exp)
-    this.vOS('copackagedIndicator',exp)
-    this.vOA('manufacturer',exp)
-    this.vOS('package',exp)
-    return issues;
+    iss.push(...this.vRPS('resourceType',exp));
+    iss.push(...this.vOA('identifier',exp));
+    iss.push(...this.vOS('name',exp));
+    iss.push(...this.vOS('type',exp));
+    iss.push(...this.vOA('packageFor',exp));
+    iss.push(...this.vOS('status',exp));
+    iss.push(...this.vOS('statusDate',exp));
+    iss.push(...this.vOA('containedItemQuantity',exp));
+    iss.push(...this.vOS('description',exp));
+    iss.push(...this.vOA('legalStatusOfSupply',exp));
+    iss.push(...this.vOA('marketingStatus',exp));
+    iss.push(...this.vOA('characteristic',exp));
+    iss.push(...this.vOS('copackagedIndicator',exp));
+    iss.push(...this.vOA('manufacturer',exp));
+    iss.push(...this.vOS('package',exp));
+    return iss;
   }
 }

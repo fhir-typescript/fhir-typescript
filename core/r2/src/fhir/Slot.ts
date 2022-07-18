@@ -159,17 +159,17 @@ export class Slot extends fhir.DomainResource {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'Slot' }
-    this.vRS('resourceType',exp)
-    this.vOA('identifier',exp)
-    this.vOS('type',exp)
-    this.vRS('schedule',exp)
-    this.vRSV('freeBusyType',exp,'Slotstatus',SlotstatusVsValidation,'r')
-    this.vRS('start',exp)
-    this.vRS('end',exp)
-    this.vOS('overbooked',exp)
-    this.vOS('comment',exp)
-    return issues;
+    iss.push(...this.vRPS('resourceType',exp));
+    iss.push(...this.vOA('identifier',exp));
+    iss.push(...this.vOS('type',exp));
+    iss.push(...this.vRS('schedule',exp));
+    iss.push(...this.vRSV('freeBusyType',exp,'Slotstatus',SlotstatusVsValidation,'r'));
+    iss.push(...this.vRS('start',exp));
+    iss.push(...this.vRS('end',exp));
+    iss.push(...this.vOS('overbooked',exp));
+    iss.push(...this.vOS('comment',exp));
+    return iss;
   }
 }

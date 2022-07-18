@@ -111,11 +111,11 @@ export class ConsentPolicy extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'Consent.policy' }
-    this.vOS('authority',exp)
-    this.vOS('uri',exp)
-    return issues;
+    iss.push(...this.vOS('authority',exp));
+    iss.push(...this.vOS('uri',exp));
+    return iss;
   }
 }
 /**
@@ -186,12 +186,12 @@ export class ConsentVerification extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'Consent.verification' }
-    this.vRS('verified',exp)
-    this.vOS('verifiedWith',exp)
-    this.vOS('verificationDate',exp)
-    return issues;
+    iss.push(...this.vRS('verified',exp));
+    iss.push(...this.vOS('verifiedWith',exp));
+    iss.push(...this.vOS('verificationDate',exp));
+    return iss;
   }
 }
 /**
@@ -238,11 +238,11 @@ export class ConsentProvisionActor extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'Consent.provision.actor' }
-    this.vRS('role',exp)
-    this.vRS('reference',exp)
-    return issues;
+    iss.push(...this.vRS('role',exp));
+    iss.push(...this.vRS('reference',exp));
+    return iss;
   }
 }
 /**
@@ -297,11 +297,11 @@ export class ConsentProvisionData extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'Consent.provision.data' }
-    this.vRSV('meaning',exp,'ConsentDataMeaning',ConsentDataMeaningVsValidation,'r')
-    this.vRS('reference',exp)
-    return issues;
+    iss.push(...this.vRSV('meaning',exp,'ConsentDataMeaning',ConsentDataMeaningVsValidation,'r'));
+    iss.push(...this.vRS('reference',exp));
+    return iss;
   }
 }
 /**
@@ -443,20 +443,20 @@ export class ConsentProvision extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'Consent.provision' }
-    this.vOSV('type',exp,'ConsentProvisionType',ConsentProvisionTypeVsValidation,'r')
-    this.vOS('period',exp)
-    this.vOA('actor',exp)
-    this.vOA('action',exp)
-    this.vOA('securityLabel',exp)
-    this.vOA('purpose',exp)
-    this.vOA('class',exp)
-    this.vOA('code',exp)
-    this.vOS('dataPeriod',exp)
-    this.vOA('data',exp)
-    this.vOA('provision',exp)
-    return issues;
+    iss.push(...this.vOSV('type',exp,'ConsentProvisionType',ConsentProvisionTypeVsValidation,'r'));
+    iss.push(...this.vOS('period',exp));
+    iss.push(...this.vOA('actor',exp));
+    iss.push(...this.vOA('action',exp));
+    iss.push(...this.vOA('securityLabel',exp));
+    iss.push(...this.vOA('purpose',exp));
+    iss.push(...this.vOA('class',exp));
+    iss.push(...this.vOA('code',exp));
+    iss.push(...this.vOS('dataPeriod',exp));
+    iss.push(...this.vOA('data',exp));
+    iss.push(...this.vOA('provision',exp));
+    return iss;
   }
 }
 /**
@@ -647,22 +647,22 @@ export class Consent extends fhir.DomainResource {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'Consent' }
-    this.vRS('resourceType',exp)
-    this.vOA('identifier',exp)
-    this.vRSV('status',exp,'ConsentState',ConsentStateVsValidation,'r')
-    this.vRS('scope',exp)
-    this.vRA('category',exp)
-    this.vOS('patient',exp)
-    this.vOS('dateTime',exp)
-    this.vOA('performer',exp)
-    this.vOA('organization',exp)
-    this.vOS('source',exp)
-    this.vOA('policy',exp)
-    this.vOS('policyRule',exp)
-    this.vOA('verification',exp)
-    this.vOS('provision',exp)
-    return issues;
+    iss.push(...this.vRPS('resourceType',exp));
+    iss.push(...this.vOA('identifier',exp));
+    iss.push(...this.vRSV('status',exp,'ConsentState',ConsentStateVsValidation,'r'));
+    iss.push(...this.vRS('scope',exp));
+    iss.push(...this.vRA('category',exp));
+    iss.push(...this.vOS('patient',exp));
+    iss.push(...this.vOS('dateTime',exp));
+    iss.push(...this.vOA('performer',exp));
+    iss.push(...this.vOA('organization',exp));
+    iss.push(...this.vOS('source',exp));
+    iss.push(...this.vOA('policy',exp));
+    iss.push(...this.vOS('policyRule',exp));
+    iss.push(...this.vOA('verification',exp));
+    iss.push(...this.vOS('provision',exp));
+    return iss;
   }
 }

@@ -85,11 +85,11 @@ export class SearchParameterComponent extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'SearchParameter.component' }
-    this.vRS('definition',exp)
-    this.vRS('expression',exp)
-    return issues;
+    iss.push(...this.vRS('definition',exp));
+    iss.push(...this.vRS('expression',exp));
+    return iss;
   }
 }
 /**
@@ -528,33 +528,33 @@ export class SearchParameter extends fhir.DomainResource {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'SearchParameter' }
-    this.vRS('resourceType',exp)
-    this.vRS('url',exp)
-    this.vOS('version',exp)
-    this.vRS('name',exp)
-    this.vRSV('status',exp,'PublicationStatus',PublicationStatusVsValidation,'r')
-    this.vOS('experimental',exp)
-    this.vOS('date',exp)
-    this.vOS('publisher',exp)
-    this.vOA('contact',exp)
-    this.vOA('useContext',exp)
-    this.vOA('jurisdiction',exp)
-    this.vOS('purpose',exp)
-    this.vRS('code',exp)
-    this.vRAV('base',exp,'ResourceTypes',ResourceTypesVsValidation,'r')
-    this.vRSV('type',exp,'SearchParamType',SearchParamTypeVsValidation,'r')
-    this.vOS('derivedFrom',exp)
-    this.vRS('description',exp)
-    this.vOS('expression',exp)
-    this.vOS('xpath',exp)
-    this.vOSV('xpathUsage',exp,'SearchXpathUsage',SearchXpathUsageVsValidation,'r')
-    this.vOAV('target',exp,'ResourceTypes',ResourceTypesVsValidation,'r')
-    this.vOAV('comparator',exp,'SearchComparator',SearchComparatorVsValidation,'r')
-    this.vOAV('modifier',exp,'SearchModifier',SearchModifierVsValidation,'r')
-    this.vOA('chain',exp)
-    this.vOA('component',exp)
-    return issues;
+    iss.push(...this.vRPS('resourceType',exp));
+    iss.push(...this.vRS('url',exp));
+    iss.push(...this.vOS('version',exp));
+    iss.push(...this.vRS('name',exp));
+    iss.push(...this.vRSV('status',exp,'PublicationStatus',PublicationStatusVsValidation,'r'));
+    iss.push(...this.vOS('experimental',exp));
+    iss.push(...this.vOS('date',exp));
+    iss.push(...this.vOS('publisher',exp));
+    iss.push(...this.vOA('contact',exp));
+    iss.push(...this.vOA('useContext',exp));
+    iss.push(...this.vOA('jurisdiction',exp));
+    iss.push(...this.vOS('purpose',exp));
+    iss.push(...this.vRS('code',exp));
+    iss.push(...this.vRAV('base',exp,'ResourceTypes',ResourceTypesVsValidation,'r'));
+    iss.push(...this.vRSV('type',exp,'SearchParamType',SearchParamTypeVsValidation,'r'));
+    iss.push(...this.vOS('derivedFrom',exp));
+    iss.push(...this.vRS('description',exp));
+    iss.push(...this.vOS('expression',exp));
+    iss.push(...this.vOS('xpath',exp));
+    iss.push(...this.vOSV('xpathUsage',exp,'SearchXpathUsage',SearchXpathUsageVsValidation,'r'));
+    iss.push(...this.vOAV('target',exp,'ResourceTypes',ResourceTypesVsValidation,'r'));
+    iss.push(...this.vOAV('comparator',exp,'SearchComparator',SearchComparatorVsValidation,'r'));
+    iss.push(...this.vOAV('modifier',exp,'SearchModifier',SearchModifierVsValidation,'r'));
+    iss.push(...this.vOA('chain',exp));
+    iss.push(...this.vOA('component',exp));
+    return iss;
   }
 }

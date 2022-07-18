@@ -57,12 +57,12 @@ export class SubstanceReferenceInformationGene extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'SubstanceReferenceInformation.gene' }
-    this.vOS('geneSequenceOrigin',exp)
-    this.vOS('gene',exp)
-    this.vOA('source',exp)
-    return issues;
+    iss.push(...this.vOS('geneSequenceOrigin',exp));
+    iss.push(...this.vOS('gene',exp));
+    iss.push(...this.vOA('source',exp));
+    return iss;
   }
 }
 /**
@@ -117,12 +117,12 @@ export class SubstanceReferenceInformationGeneElement extends fhir.BackboneEleme
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'SubstanceReferenceInformation.geneElement' }
-    this.vOS('type',exp)
-    this.vOS('element',exp)
-    this.vOA('source',exp)
-    return issues;
+    iss.push(...this.vOS('type',exp));
+    iss.push(...this.vOS('element',exp));
+    iss.push(...this.vOA('source',exp));
+    return iss;
   }
 }
 /**
@@ -187,13 +187,13 @@ export class SubstanceReferenceInformationClassification extends fhir.BackboneEl
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'SubstanceReferenceInformation.classification' }
-    this.vOS('domain',exp)
-    this.vOS('classification',exp)
-    this.vOA('subtype',exp)
-    this.vOA('source',exp)
-    return issues;
+    iss.push(...this.vOS('domain',exp));
+    iss.push(...this.vOS('classification',exp));
+    iss.push(...this.vOA('subtype',exp));
+    iss.push(...this.vOA('source',exp));
+    return iss;
   }
 }
 /**
@@ -312,17 +312,17 @@ export class SubstanceReferenceInformationTarget extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'SubstanceReferenceInformation.target' }
-    this.vOS('target',exp)
-    this.vOS('type',exp)
-    this.vOS('interaction',exp)
-    this.vOS('organism',exp)
-    this.vOS('organismType',exp)
-    this.vOS('amount',exp)
-    this.vOS('amountType',exp)
-    this.vOA('source',exp)
-    return issues;
+    iss.push(...this.vOS('target',exp));
+    iss.push(...this.vOS('type',exp));
+    iss.push(...this.vOS('interaction',exp));
+    iss.push(...this.vOS('organism',exp));
+    iss.push(...this.vOS('organismType',exp));
+    iss.push(...this.vOS('amount',exp));
+    iss.push(...this.vOS('amountType',exp));
+    iss.push(...this.vOA('source',exp));
+    return iss;
   }
 }
 /**
@@ -415,14 +415,14 @@ export class SubstanceReferenceInformation extends fhir.DomainResource {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'SubstanceReferenceInformation' }
-    this.vRS('resourceType',exp)
-    this.vOS('comment',exp)
-    this.vOA('gene',exp)
-    this.vOA('geneElement',exp)
-    this.vOA('classification',exp)
-    this.vOA('target',exp)
-    return issues;
+    iss.push(...this.vRPS('resourceType',exp));
+    iss.push(...this.vOS('comment',exp));
+    iss.push(...this.vOA('gene',exp));
+    iss.push(...this.vOA('geneElement',exp));
+    iss.push(...this.vOA('classification',exp));
+    iss.push(...this.vOA('target',exp));
+    return iss;
   }
 }

@@ -85,12 +85,12 @@ export class TaskRestriction extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'Task.restriction' }
-    this.vOS('repetitions',exp)
-    this.vOS('period',exp)
-    this.vOA('recipient',exp)
-    return issues;
+    iss.push(...this.vOS('repetitions',exp));
+    iss.push(...this.vOS('period',exp));
+    iss.push(...this.vOA('recipient',exp));
+    return iss;
   }
 }
 /**
@@ -391,11 +391,11 @@ export class TaskInput extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'Task.input' }
-    this.vRS('type',exp)
-    this.vRS('value',exp)
-    return issues;
+    iss.push(...this.vRS('type',exp));
+    iss.push(...this.vRS('value',exp));
+    return iss;
   }
 }
 /**
@@ -696,11 +696,11 @@ export class TaskOutput extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'Task.output' }
-    this.vRS('type',exp)
-    this.vRS('value',exp)
-    return issues;
+    iss.push(...this.vRS('type',exp));
+    iss.push(...this.vRS('value',exp));
+    return iss;
   }
 }
 /**
@@ -1092,40 +1092,40 @@ export class Task extends fhir.DomainResource {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'Task' }
-    this.vRS('resourceType',exp)
-    this.vOA('identifier',exp)
-    this.vOS('instantiatesCanonical',exp)
-    this.vOS('instantiatesUri',exp)
-    this.vOA('basedOn',exp)
-    this.vOS('groupIdentifier',exp)
-    this.vOA('partOf',exp)
-    this.vRSV('status',exp,'TaskStatus',TaskStatusVsValidation,'r')
-    this.vOS('statusReason',exp)
-    this.vOS('businessStatus',exp)
-    this.vRSV('intent',exp,'TaskIntent',TaskIntentVsValidation,'r')
-    this.vOSV('priority',exp,'RequestPriority',RequestPriorityVsValidation,'r')
-    this.vOS('code',exp)
-    this.vOS('description',exp)
-    this.vOS('focus',exp)
-    this.vOS('for',exp)
-    this.vOS('encounter',exp)
-    this.vOS('executionPeriod',exp)
-    this.vOS('authoredOn',exp)
-    this.vOS('lastModified',exp)
-    this.vOS('requester',exp)
-    this.vOA('performerType',exp)
-    this.vOS('owner',exp)
-    this.vOS('location',exp)
-    this.vOS('reasonCode',exp)
-    this.vOS('reasonReference',exp)
-    this.vOA('insurance',exp)
-    this.vOA('note',exp)
-    this.vOA('relevantHistory',exp)
-    this.vOS('restriction',exp)
-    this.vOA('input',exp)
-    this.vOA('output',exp)
-    return issues;
+    iss.push(...this.vRPS('resourceType',exp));
+    iss.push(...this.vOA('identifier',exp));
+    iss.push(...this.vOS('instantiatesCanonical',exp));
+    iss.push(...this.vOS('instantiatesUri',exp));
+    iss.push(...this.vOA('basedOn',exp));
+    iss.push(...this.vOS('groupIdentifier',exp));
+    iss.push(...this.vOA('partOf',exp));
+    iss.push(...this.vRSV('status',exp,'TaskStatus',TaskStatusVsValidation,'r'));
+    iss.push(...this.vOS('statusReason',exp));
+    iss.push(...this.vOS('businessStatus',exp));
+    iss.push(...this.vRSV('intent',exp,'TaskIntent',TaskIntentVsValidation,'r'));
+    iss.push(...this.vOSV('priority',exp,'RequestPriority',RequestPriorityVsValidation,'r'));
+    iss.push(...this.vOS('code',exp));
+    iss.push(...this.vOS('description',exp));
+    iss.push(...this.vOS('focus',exp));
+    iss.push(...this.vOS('for',exp));
+    iss.push(...this.vOS('encounter',exp));
+    iss.push(...this.vOS('executionPeriod',exp));
+    iss.push(...this.vOS('authoredOn',exp));
+    iss.push(...this.vOS('lastModified',exp));
+    iss.push(...this.vOS('requester',exp));
+    iss.push(...this.vOA('performerType',exp));
+    iss.push(...this.vOS('owner',exp));
+    iss.push(...this.vOS('location',exp));
+    iss.push(...this.vOS('reasonCode',exp));
+    iss.push(...this.vOS('reasonReference',exp));
+    iss.push(...this.vOA('insurance',exp));
+    iss.push(...this.vOA('note',exp));
+    iss.push(...this.vOA('relevantHistory',exp));
+    iss.push(...this.vOS('restriction',exp));
+    iss.push(...this.vOA('input',exp));
+    iss.push(...this.vOA('output',exp));
+    return iss;
   }
 }

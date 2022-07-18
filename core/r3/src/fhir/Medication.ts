@@ -95,12 +95,12 @@ export class MedicationIngredient extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'Medication.ingredient' }
-    this.vRS('item',exp)
-    this.vOS('isActive',exp)
-    this.vOS('amount',exp)
-    return issues;
+    iss.push(...this.vRS('item',exp));
+    iss.push(...this.vOS('isActive',exp));
+    iss.push(...this.vOS('amount',exp));
+    return iss;
   }
 }
 /**
@@ -160,11 +160,11 @@ export class MedicationPackageContent extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'Medication.package.content' }
-    this.vRS('item',exp)
-    this.vOS('amount',exp)
-    return issues;
+    iss.push(...this.vRS('item',exp));
+    iss.push(...this.vOS('amount',exp));
+    return iss;
   }
 }
 /**
@@ -225,11 +225,11 @@ export class MedicationPackageBatch extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'Medication.package.batch' }
-    this.vOS('lotNumber',exp)
-    this.vOS('expirationDate',exp)
-    return issues;
+    iss.push(...this.vOS('lotNumber',exp));
+    iss.push(...this.vOS('expirationDate',exp));
+    return iss;
   }
 }
 /**
@@ -285,12 +285,12 @@ export class MedicationPackage extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'Medication.package' }
-    this.vOS('container',exp)
-    this.vOA('content',exp)
-    this.vOA('batch',exp)
-    return issues;
+    iss.push(...this.vOS('container',exp));
+    iss.push(...this.vOA('content',exp));
+    iss.push(...this.vOA('batch',exp));
+    return iss;
   }
 }
 /**
@@ -433,18 +433,18 @@ export class Medication extends fhir.DomainResource {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'Medication' }
-    this.vRS('resourceType',exp)
-    this.vOS('code',exp)
-    this.vOSV('status',exp,'MedicationStatus',MedicationStatusVsValidation,'r')
-    this.vOS('isBrand',exp)
-    this.vOS('isOverTheCounter',exp)
-    this.vOS('manufacturer',exp)
-    this.vOS('form',exp)
-    this.vOA('ingredient',exp)
-    this.vOS('package',exp)
-    this.vOA('image',exp)
-    return issues;
+    iss.push(...this.vRPS('resourceType',exp));
+    iss.push(...this.vOS('code',exp));
+    iss.push(...this.vOSV('status',exp,'MedicationStatus',MedicationStatusVsValidation,'r'));
+    iss.push(...this.vOS('isBrand',exp));
+    iss.push(...this.vOS('isOverTheCounter',exp));
+    iss.push(...this.vOS('manufacturer',exp));
+    iss.push(...this.vOS('form',exp));
+    iss.push(...this.vOA('ingredient',exp));
+    iss.push(...this.vOS('package',exp));
+    iss.push(...this.vOA('image',exp));
+    return iss;
   }
 }

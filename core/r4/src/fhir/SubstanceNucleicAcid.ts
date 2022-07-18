@@ -89,13 +89,13 @@ export class SubstanceNucleicAcidSubunitLinkage extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'SubstanceNucleicAcid.subunit.linkage' }
-    this.vOS('connectivity',exp)
-    this.vOS('identifier',exp)
-    this.vOS('name',exp)
-    this.vOS('residueSite',exp)
-    return issues;
+    iss.push(...this.vOS('connectivity',exp));
+    iss.push(...this.vOS('identifier',exp));
+    iss.push(...this.vOS('name',exp));
+    iss.push(...this.vOS('residueSite',exp));
+    return iss;
   }
 }
 /**
@@ -165,12 +165,12 @@ export class SubstanceNucleicAcidSubunitSugar extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'SubstanceNucleicAcid.subunit.sugar' }
-    this.vOS('identifier',exp)
-    this.vOS('name',exp)
-    this.vOS('residueSite',exp)
-    return issues;
+    iss.push(...this.vOS('identifier',exp));
+    iss.push(...this.vOS('name',exp));
+    iss.push(...this.vOS('residueSite',exp));
+    return iss;
   }
 }
 /**
@@ -295,17 +295,17 @@ export class SubstanceNucleicAcidSubunit extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'SubstanceNucleicAcid.subunit' }
-    this.vOS('subunit',exp)
-    this.vOS('sequence',exp)
-    this.vOS('length',exp)
-    this.vOS('sequenceAttachment',exp)
-    this.vOS('fivePrime',exp)
-    this.vOS('threePrime',exp)
-    this.vOA('linkage',exp)
-    this.vOA('sugar',exp)
-    return issues;
+    iss.push(...this.vOS('subunit',exp));
+    iss.push(...this.vOS('sequence',exp));
+    iss.push(...this.vOS('length',exp));
+    iss.push(...this.vOS('sequenceAttachment',exp));
+    iss.push(...this.vOS('fivePrime',exp));
+    iss.push(...this.vOS('threePrime',exp));
+    iss.push(...this.vOA('linkage',exp));
+    iss.push(...this.vOA('sugar',exp));
+    return iss;
   }
 }
 /**
@@ -403,14 +403,14 @@ export class SubstanceNucleicAcid extends fhir.DomainResource {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'SubstanceNucleicAcid' }
-    this.vRS('resourceType',exp)
-    this.vOS('sequenceType',exp)
-    this.vOS('numberOfSubunits',exp)
-    this.vOS('areaOfHybridisation',exp)
-    this.vOS('oligoNucleotideType',exp)
-    this.vOA('subunit',exp)
-    return issues;
+    iss.push(...this.vRPS('resourceType',exp));
+    iss.push(...this.vOS('sequenceType',exp));
+    iss.push(...this.vOS('numberOfSubunits',exp));
+    iss.push(...this.vOS('areaOfHybridisation',exp));
+    iss.push(...this.vOS('oligoNucleotideType',exp));
+    iss.push(...this.vOA('subunit',exp));
+    return iss;
   }
 }

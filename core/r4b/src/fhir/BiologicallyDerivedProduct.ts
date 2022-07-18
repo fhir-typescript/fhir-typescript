@@ -86,12 +86,12 @@ export class BiologicallyDerivedProductCollection extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'BiologicallyDerivedProduct.collection' }
-    this.vOS('collector',exp)
-    this.vOS('source',exp)
-    this.vOS('collected',exp)
-    return issues;
+    iss.push(...this.vOS('collector',exp));
+    iss.push(...this.vOS('source',exp));
+    iss.push(...this.vOS('collected',exp));
+    return iss;
   }
 }
 /**
@@ -176,13 +176,13 @@ export class BiologicallyDerivedProductProcessing extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'BiologicallyDerivedProduct.processing' }
-    this.vOS('description',exp)
-    this.vOS('procedure',exp)
-    this.vOS('additive',exp)
-    this.vOS('time',exp)
-    return issues;
+    iss.push(...this.vOS('description',exp));
+    iss.push(...this.vOS('procedure',exp));
+    iss.push(...this.vOS('additive',exp));
+    iss.push(...this.vOS('time',exp));
+    return iss;
   }
 }
 /**
@@ -249,11 +249,11 @@ export class BiologicallyDerivedProductManipulation extends fhir.BackboneElement
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'BiologicallyDerivedProduct.manipulation' }
-    this.vOS('description',exp)
-    this.vOS('time',exp)
-    return issues;
+    iss.push(...this.vOS('description',exp));
+    iss.push(...this.vOS('time',exp));
+    return iss;
   }
 }
 /**
@@ -340,13 +340,13 @@ export class BiologicallyDerivedProductStorage extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'BiologicallyDerivedProduct.storage' }
-    this.vOS('description',exp)
-    this.vOS('temperature',exp)
-    this.vOSV('scale',exp,'ProductStorageScale',ProductStorageScaleVsValidation,'r')
-    this.vOS('duration',exp)
-    return issues;
+    iss.push(...this.vOS('description',exp));
+    iss.push(...this.vOS('temperature',exp));
+    iss.push(...this.vOSV('scale',exp,'ProductStorageScale',ProductStorageScaleVsValidation,'r'));
+    iss.push(...this.vOS('duration',exp));
+    return iss;
   }
 }
 /**
@@ -511,20 +511,20 @@ export class BiologicallyDerivedProduct extends fhir.DomainResource {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'BiologicallyDerivedProduct' }
-    this.vRS('resourceType',exp)
-    this.vOA('identifier',exp)
-    this.vOSV('productCategory',exp,'ProductCategory',ProductCategoryVsValidation,'r')
-    this.vOS('productCode',exp)
-    this.vOSV('status',exp,'ProductStatus',ProductStatusVsValidation,'r')
-    this.vOA('request',exp)
-    this.vOS('quantity',exp)
-    this.vOA('parent',exp)
-    this.vOS('collection',exp)
-    this.vOA('processing',exp)
-    this.vOS('manipulation',exp)
-    this.vOA('storage',exp)
-    return issues;
+    iss.push(...this.vRPS('resourceType',exp));
+    iss.push(...this.vOA('identifier',exp));
+    iss.push(...this.vOSV('productCategory',exp,'ProductCategory',ProductCategoryVsValidation,'r'));
+    iss.push(...this.vOS('productCode',exp));
+    iss.push(...this.vOSV('status',exp,'ProductStatus',ProductStatusVsValidation,'r'));
+    iss.push(...this.vOA('request',exp));
+    iss.push(...this.vOS('quantity',exp));
+    iss.push(...this.vOA('parent',exp));
+    iss.push(...this.vOS('collection',exp));
+    iss.push(...this.vOA('processing',exp));
+    iss.push(...this.vOS('manipulation',exp));
+    iss.push(...this.vOA('storage',exp));
+    return iss;
   }
 }

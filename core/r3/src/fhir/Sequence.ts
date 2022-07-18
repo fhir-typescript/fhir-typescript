@@ -159,17 +159,17 @@ export class SequenceReferenceSeq extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'Sequence.referenceSeq' }
-    this.vOS('chromosome',exp)
-    this.vOS('genomeBuild',exp)
-    this.vOS('referenceSeqId',exp)
-    this.vOS('referenceSeqPointer',exp)
-    this.vOS('referenceSeqString',exp)
-    this.vOS('strand',exp)
-    this.vRS('windowStart',exp)
-    this.vRS('windowEnd',exp)
-    return issues;
+    iss.push(...this.vOS('chromosome',exp));
+    iss.push(...this.vOS('genomeBuild',exp));
+    iss.push(...this.vOS('referenceSeqId',exp));
+    iss.push(...this.vOS('referenceSeqPointer',exp));
+    iss.push(...this.vOS('referenceSeqString',exp));
+    iss.push(...this.vOS('strand',exp));
+    iss.push(...this.vRS('windowStart',exp));
+    iss.push(...this.vRS('windowEnd',exp));
+    return iss;
   }
 }
 /**
@@ -290,15 +290,15 @@ export class SequenceVariant extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'Sequence.variant' }
-    this.vOS('start',exp)
-    this.vOS('end',exp)
-    this.vOS('observedAllele',exp)
-    this.vOS('referenceAllele',exp)
-    this.vOS('cigar',exp)
-    this.vOS('variantPointer',exp)
-    return issues;
+    iss.push(...this.vOS('start',exp));
+    iss.push(...this.vOS('end',exp));
+    iss.push(...this.vOS('observedAllele',exp));
+    iss.push(...this.vOS('referenceAllele',exp));
+    iss.push(...this.vOS('cigar',exp));
+    iss.push(...this.vOS('variantPointer',exp));
+    return iss;
   }
 }
 /**
@@ -540,23 +540,23 @@ export class SequenceQuality extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'Sequence.quality' }
-    this.vRSV('type',exp,'QualityType',QualityTypeVsValidation,'r')
-    this.vOS('standardSequence',exp)
-    this.vOS('start',exp)
-    this.vOS('end',exp)
-    this.vOS('score',exp)
-    this.vOS('method',exp)
-    this.vOS('truthTP',exp)
-    this.vOS('queryTP',exp)
-    this.vOS('truthFN',exp)
-    this.vOS('queryFP',exp)
-    this.vOS('gtFP',exp)
-    this.vOS('precision',exp)
-    this.vOS('recall',exp)
-    this.vOS('fScore',exp)
-    return issues;
+    iss.push(...this.vRSV('type',exp,'QualityType',QualityTypeVsValidation,'r'));
+    iss.push(...this.vOS('standardSequence',exp));
+    iss.push(...this.vOS('start',exp));
+    iss.push(...this.vOS('end',exp));
+    iss.push(...this.vOS('score',exp));
+    iss.push(...this.vOS('method',exp));
+    iss.push(...this.vOS('truthTP',exp));
+    iss.push(...this.vOS('queryTP',exp));
+    iss.push(...this.vOS('truthFN',exp));
+    iss.push(...this.vOS('queryFP',exp));
+    iss.push(...this.vOS('gtFP',exp));
+    iss.push(...this.vOS('precision',exp));
+    iss.push(...this.vOS('recall',exp));
+    iss.push(...this.vOS('fScore',exp));
+    return iss;
   }
 }
 /**
@@ -686,15 +686,15 @@ export class SequenceRepository extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'Sequence.repository' }
-    this.vRSV('type',exp,'RepositoryType',RepositoryTypeVsValidation,'r')
-    this.vOS('url',exp)
-    this.vOS('name',exp)
-    this.vOS('datasetId',exp)
-    this.vOS('variantsetId',exp)
-    this.vOS('readsetId',exp)
-    return issues;
+    iss.push(...this.vRSV('type',exp,'RepositoryType',RepositoryTypeVsValidation,'r'));
+    iss.push(...this.vOS('url',exp));
+    iss.push(...this.vOS('name',exp));
+    iss.push(...this.vOS('datasetId',exp));
+    iss.push(...this.vOS('variantsetId',exp));
+    iss.push(...this.vOS('readsetId',exp));
+    return iss;
   }
 }
 /**
@@ -903,24 +903,24 @@ export class Sequence extends fhir.DomainResource {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'Sequence' }
-    this.vRS('resourceType',exp)
-    this.vOA('identifier',exp)
-    this.vOS('type',exp)
-    this.vRS('coordinateSystem',exp)
-    this.vOS('patient',exp)
-    this.vOS('specimen',exp)
-    this.vOS('device',exp)
-    this.vOS('performer',exp)
-    this.vOS('quantity',exp)
-    this.vOS('referenceSeq',exp)
-    this.vOA('variant',exp)
-    this.vOS('observedSeq',exp)
-    this.vOA('quality',exp)
-    this.vOS('readCoverage',exp)
-    this.vOA('repository',exp)
-    this.vOA('pointer',exp)
-    return issues;
+    iss.push(...this.vRPS('resourceType',exp));
+    iss.push(...this.vOA('identifier',exp));
+    iss.push(...this.vOS('type',exp));
+    iss.push(...this.vRS('coordinateSystem',exp));
+    iss.push(...this.vOS('patient',exp));
+    iss.push(...this.vOS('specimen',exp));
+    iss.push(...this.vOS('device',exp));
+    iss.push(...this.vOS('performer',exp));
+    iss.push(...this.vOS('quantity',exp));
+    iss.push(...this.vOS('referenceSeq',exp));
+    iss.push(...this.vOA('variant',exp));
+    iss.push(...this.vOS('observedSeq',exp));
+    iss.push(...this.vOA('quality',exp));
+    iss.push(...this.vOS('readCoverage',exp));
+    iss.push(...this.vOA('repository',exp));
+    iss.push(...this.vOA('pointer',exp));
+    return iss;
   }
 }

@@ -130,15 +130,15 @@ export class ImagingStudySeriesInstance extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'ImagingStudy.series.instance' }
-    this.vOS('number',exp)
-    this.vRS('uid',exp)
-    this.vRS('sopClass',exp)
-    this.vOS('type',exp)
-    this.vOS('title',exp)
-    this.vOA('content',exp)
-    return issues;
+    iss.push(...this.vOS('number',exp));
+    iss.push(...this.vRS('uid',exp));
+    iss.push(...this.vRS('sopClass',exp));
+    iss.push(...this.vOS('type',exp));
+    iss.push(...this.vOS('title',exp));
+    iss.push(...this.vOA('content',exp));
+    return iss;
   }
 }
 /**
@@ -324,20 +324,20 @@ export class ImagingStudySeries extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'ImagingStudy.series' }
-    this.vOS('number',exp)
-    this.vRS('modality',exp)
-    this.vRS('uid',exp)
-    this.vOS('description',exp)
-    this.vRS('numberOfInstances',exp)
-    this.vOSV('availability',exp,'InstanceAvailability',InstanceAvailabilityVsValidation,'r')
-    this.vOS('url',exp)
-    this.vOS('bodySite',exp)
-    this.vOS('laterality',exp)
-    this.vOS('started',exp)
-    this.vOA('instance',exp)
-    return issues;
+    iss.push(...this.vOS('number',exp));
+    iss.push(...this.vRS('modality',exp));
+    iss.push(...this.vRS('uid',exp));
+    iss.push(...this.vOS('description',exp));
+    iss.push(...this.vRS('numberOfInstances',exp));
+    iss.push(...this.vOSV('availability',exp,'InstanceAvailability',InstanceAvailabilityVsValidation,'r'));
+    iss.push(...this.vOS('url',exp));
+    iss.push(...this.vOS('bodySite',exp));
+    iss.push(...this.vOS('laterality',exp));
+    iss.push(...this.vOS('started',exp));
+    iss.push(...this.vOA('instance',exp));
+    return iss;
   }
 }
 /**
@@ -582,25 +582,25 @@ export class ImagingStudy extends fhir.DomainResource {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'ImagingStudy' }
-    this.vRS('resourceType',exp)
-    this.vOS('started',exp)
-    this.vRS('patient',exp)
-    this.vRS('uid',exp)
-    this.vOS('accession',exp)
-    this.vOA('identifier',exp)
-    this.vOA('order',exp)
-    this.vOA('modalityList',exp)
-    this.vOS('referrer',exp)
-    this.vOSV('availability',exp,'InstanceAvailability',InstanceAvailabilityVsValidation,'r')
-    this.vOS('url',exp)
-    this.vRS('numberOfSeries',exp)
-    this.vRS('numberOfInstances',exp)
-    this.vOA('procedure',exp)
-    this.vOS('interpreter',exp)
-    this.vOS('description',exp)
-    this.vOA('series',exp)
-    return issues;
+    iss.push(...this.vRPS('resourceType',exp));
+    iss.push(...this.vOS('started',exp));
+    iss.push(...this.vRS('patient',exp));
+    iss.push(...this.vRS('uid',exp));
+    iss.push(...this.vOS('accession',exp));
+    iss.push(...this.vOA('identifier',exp));
+    iss.push(...this.vOA('order',exp));
+    iss.push(...this.vOA('modalityList',exp));
+    iss.push(...this.vOS('referrer',exp));
+    iss.push(...this.vOSV('availability',exp,'InstanceAvailability',InstanceAvailabilityVsValidation,'r'));
+    iss.push(...this.vOS('url',exp));
+    iss.push(...this.vRS('numberOfSeries',exp));
+    iss.push(...this.vRS('numberOfInstances',exp));
+    iss.push(...this.vOA('procedure',exp));
+    iss.push(...this.vOS('interpreter',exp));
+    iss.push(...this.vOS('description',exp));
+    iss.push(...this.vOA('series',exp));
+    return iss;
   }
 }

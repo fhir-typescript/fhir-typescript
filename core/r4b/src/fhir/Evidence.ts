@@ -137,15 +137,15 @@ export class EvidenceVariableDefinition extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'Evidence.variableDefinition' }
-    this.vOS('description',exp)
-    this.vOA('note',exp)
-    this.vRS('variableRole',exp)
-    this.vOS('observed',exp)
-    this.vOS('intended',exp)
-    this.vOS('directnessMatch',exp)
-    return issues;
+    iss.push(...this.vOS('description',exp));
+    iss.push(...this.vOA('note',exp));
+    iss.push(...this.vRS('variableRole',exp));
+    iss.push(...this.vOS('observed',exp));
+    iss.push(...this.vOS('intended',exp));
+    iss.push(...this.vOS('directnessMatch',exp));
+    return iss;
   }
 }
 /**
@@ -250,14 +250,14 @@ export class EvidenceStatisticSampleSize extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'Evidence.statistic.sampleSize' }
-    this.vOS('description',exp)
-    this.vOA('note',exp)
-    this.vOS('numberOfStudies',exp)
-    this.vOS('numberOfParticipants',exp)
-    this.vOS('knownDataCount',exp)
-    return issues;
+    iss.push(...this.vOS('description',exp));
+    iss.push(...this.vOA('note',exp));
+    iss.push(...this.vOS('numberOfStudies',exp));
+    iss.push(...this.vOS('numberOfParticipants',exp));
+    iss.push(...this.vOS('knownDataCount',exp));
+    return iss;
   }
 }
 /**
@@ -365,16 +365,16 @@ export class EvidenceStatisticAttributeEstimate extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'Evidence.statistic.attributeEstimate' }
-    this.vOS('description',exp)
-    this.vOA('note',exp)
-    this.vOS('type',exp)
-    this.vOS('quantity',exp)
-    this.vOS('level',exp)
-    this.vOS('range',exp)
-    this.vOA('attributeEstimate',exp)
-    return issues;
+    iss.push(...this.vOS('description',exp));
+    iss.push(...this.vOA('note',exp));
+    iss.push(...this.vOS('type',exp));
+    iss.push(...this.vOS('quantity',exp));
+    iss.push(...this.vOS('level',exp));
+    iss.push(...this.vOS('range',exp));
+    iss.push(...this.vOA('attributeEstimate',exp));
+    return iss;
   }
 }
 /**
@@ -458,14 +458,14 @@ export class EvidenceStatisticModelCharacteristicVariable extends fhir.BackboneE
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'Evidence.statistic.modelCharacteristic.variable' }
-    this.vRS('variableDefinition',exp)
-    this.vOSV('handling',exp,'VariableHandling',VariableHandlingVsValidation,'r')
-    this.vOA('valueCategory',exp)
-    this.vOA('valueQuantity',exp)
-    this.vOA('valueRange',exp)
-    return issues;
+    iss.push(...this.vRS('variableDefinition',exp));
+    iss.push(...this.vOSV('handling',exp,'VariableHandling',VariableHandlingVsValidation,'r'));
+    iss.push(...this.vOA('valueCategory',exp));
+    iss.push(...this.vOA('valueQuantity',exp));
+    iss.push(...this.vOA('valueRange',exp));
+    return iss;
   }
 }
 /**
@@ -531,13 +531,13 @@ export class EvidenceStatisticModelCharacteristic extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'Evidence.statistic.modelCharacteristic' }
-    this.vRS('code',exp)
-    this.vOS('value',exp)
-    this.vOA('variable',exp)
-    this.vOA('attributeEstimate',exp)
-    return issues;
+    iss.push(...this.vRS('code',exp));
+    iss.push(...this.vOS('value',exp));
+    iss.push(...this.vOA('variable',exp));
+    iss.push(...this.vOA('attributeEstimate',exp));
+    return iss;
   }
 }
 /**
@@ -681,19 +681,19 @@ export class EvidenceStatistic extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'Evidence.statistic' }
-    this.vOS('description',exp)
-    this.vOA('note',exp)
-    this.vOS('statisticType',exp)
-    this.vOS('category',exp)
-    this.vOS('quantity',exp)
-    this.vOS('numberOfEvents',exp)
-    this.vOS('numberAffected',exp)
-    this.vOS('sampleSize',exp)
-    this.vOA('attributeEstimate',exp)
-    this.vOA('modelCharacteristic',exp)
-    return issues;
+    iss.push(...this.vOS('description',exp));
+    iss.push(...this.vOA('note',exp));
+    iss.push(...this.vOS('statisticType',exp));
+    iss.push(...this.vOS('category',exp));
+    iss.push(...this.vOS('quantity',exp));
+    iss.push(...this.vOS('numberOfEvents',exp));
+    iss.push(...this.vOS('numberAffected',exp));
+    iss.push(...this.vOS('sampleSize',exp));
+    iss.push(...this.vOA('attributeEstimate',exp));
+    iss.push(...this.vOA('modelCharacteristic',exp));
+    return iss;
   }
 }
 /**
@@ -792,15 +792,15 @@ export class EvidenceCertainty extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'Evidence.certainty' }
-    this.vOS('description',exp)
-    this.vOA('note',exp)
-    this.vOS('type',exp)
-    this.vOS('rating',exp)
-    this.vOS('rater',exp)
-    this.vOA('subcomponent',exp)
-    return issues;
+    iss.push(...this.vOS('description',exp));
+    iss.push(...this.vOA('note',exp));
+    iss.push(...this.vOS('type',exp));
+    iss.push(...this.vOS('rating',exp));
+    iss.push(...this.vOS('rater',exp));
+    iss.push(...this.vOA('subcomponent',exp));
+    return iss;
   }
 }
 /**
@@ -1168,34 +1168,34 @@ export class Evidence extends fhir.DomainResource {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'Evidence' }
-    this.vRS('resourceType',exp)
-    this.vOS('url',exp)
-    this.vOA('identifier',exp)
-    this.vOS('version',exp)
-    this.vOS('title',exp)
-    this.vOS('citeAs',exp)
-    this.vRSV('status',exp,'PublicationStatus',PublicationStatusVsValidation,'r')
-    this.vOS('date',exp)
-    this.vOA('useContext',exp)
-    this.vOS('approvalDate',exp)
-    this.vOS('lastReviewDate',exp)
-    this.vOS('publisher',exp)
-    this.vOA('contact',exp)
-    this.vOA('author',exp)
-    this.vOA('editor',exp)
-    this.vOA('reviewer',exp)
-    this.vOA('endorser',exp)
-    this.vOA('relatedArtifact',exp)
-    this.vOS('description',exp)
-    this.vOS('assertion',exp)
-    this.vOA('note',exp)
-    this.vRA('variableDefinition',exp)
-    this.vOS('synthesisType',exp)
-    this.vOS('studyType',exp)
-    this.vOA('statistic',exp)
-    this.vOA('certainty',exp)
-    return issues;
+    iss.push(...this.vRPS('resourceType',exp));
+    iss.push(...this.vOS('url',exp));
+    iss.push(...this.vOA('identifier',exp));
+    iss.push(...this.vOS('version',exp));
+    iss.push(...this.vOS('title',exp));
+    iss.push(...this.vOS('citeAs',exp));
+    iss.push(...this.vRSV('status',exp,'PublicationStatus',PublicationStatusVsValidation,'r'));
+    iss.push(...this.vOS('date',exp));
+    iss.push(...this.vOA('useContext',exp));
+    iss.push(...this.vOS('approvalDate',exp));
+    iss.push(...this.vOS('lastReviewDate',exp));
+    iss.push(...this.vOS('publisher',exp));
+    iss.push(...this.vOA('contact',exp));
+    iss.push(...this.vOA('author',exp));
+    iss.push(...this.vOA('editor',exp));
+    iss.push(...this.vOA('reviewer',exp));
+    iss.push(...this.vOA('endorser',exp));
+    iss.push(...this.vOA('relatedArtifact',exp));
+    iss.push(...this.vOS('description',exp));
+    iss.push(...this.vOS('assertion',exp));
+    iss.push(...this.vOA('note',exp));
+    iss.push(...this.vRA('variableDefinition',exp));
+    iss.push(...this.vOS('synthesisType',exp));
+    iss.push(...this.vOS('studyType',exp));
+    iss.push(...this.vOA('statistic',exp));
+    iss.push(...this.vOA('certainty',exp));
+    return iss;
   }
 }

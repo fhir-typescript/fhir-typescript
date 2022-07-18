@@ -96,11 +96,11 @@ export class ImmunizationPerformer extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'Immunization.performer' }
-    this.vOS('function',exp)
-    this.vRS('actor',exp)
-    return issues;
+    iss.push(...this.vOS('function',exp));
+    iss.push(...this.vRS('actor',exp));
+    return iss;
   }
 }
 /**
@@ -195,13 +195,13 @@ export class ImmunizationEducation extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'Immunization.education' }
-    this.vOS('documentType',exp)
-    this.vOS('reference',exp)
-    this.vOS('publicationDate',exp)
-    this.vOS('presentationDate',exp)
-    return issues;
+    iss.push(...this.vOS('documentType',exp));
+    iss.push(...this.vOS('reference',exp));
+    iss.push(...this.vOS('publicationDate',exp));
+    iss.push(...this.vOS('presentationDate',exp));
+    return iss;
   }
 }
 /**
@@ -271,12 +271,12 @@ export class ImmunizationReaction extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'Immunization.reaction' }
-    this.vOS('date',exp)
-    this.vOS('detail',exp)
-    this.vOS('reported',exp)
-    return issues;
+    iss.push(...this.vOS('date',exp));
+    iss.push(...this.vOS('detail',exp));
+    iss.push(...this.vOS('reported',exp));
+    return iss;
   }
 }
 /**
@@ -386,14 +386,14 @@ export class ImmunizationProtocolApplied extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'Immunization.protocolApplied' }
-    this.vOS('series',exp)
-    this.vOS('authority',exp)
-    this.vOA('targetDisease',exp)
-    this.vRS('doseNumber',exp)
-    this.vOS('seriesDoses',exp)
-    return issues;
+    iss.push(...this.vOS('series',exp));
+    iss.push(...this.vOS('authority',exp));
+    iss.push(...this.vOA('targetDisease',exp));
+    iss.push(...this.vRS('doseNumber',exp));
+    iss.push(...this.vOS('seriesDoses',exp));
+    return iss;
   }
 }
 /**
@@ -757,37 +757,37 @@ export class Immunization extends fhir.DomainResource {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'Immunization' }
-    this.vRS('resourceType',exp)
-    this.vOA('identifier',exp)
-    this.vRSV('status',exp,'ImmunizationStatus',ImmunizationStatusVsValidation,'r')
-    this.vOS('statusReason',exp)
-    this.vRS('vaccineCode',exp)
-    this.vRS('patient',exp)
-    this.vOS('encounter',exp)
-    this.vRS('occurrence',exp)
-    this.vOS('recorded',exp)
-    this.vOS('primarySource',exp)
-    this.vOS('reportOrigin',exp)
-    this.vOS('location',exp)
-    this.vOS('manufacturer',exp)
-    this.vOS('lotNumber',exp)
-    this.vOS('expirationDate',exp)
-    this.vOS('site',exp)
-    this.vOS('route',exp)
-    this.vOS('doseQuantity',exp)
-    this.vOA('performer',exp)
-    this.vOA('note',exp)
-    this.vOA('reasonCode',exp)
-    this.vOA('reasonReference',exp)
-    this.vOS('isSubpotent',exp)
-    this.vOA('subpotentReason',exp)
-    this.vOA('education',exp)
-    this.vOA('programEligibility',exp)
-    this.vOS('fundingSource',exp)
-    this.vOA('reaction',exp)
-    this.vOA('protocolApplied',exp)
-    return issues;
+    iss.push(...this.vRPS('resourceType',exp));
+    iss.push(...this.vOA('identifier',exp));
+    iss.push(...this.vRSV('status',exp,'ImmunizationStatus',ImmunizationStatusVsValidation,'r'));
+    iss.push(...this.vOS('statusReason',exp));
+    iss.push(...this.vRS('vaccineCode',exp));
+    iss.push(...this.vRS('patient',exp));
+    iss.push(...this.vOS('encounter',exp));
+    iss.push(...this.vRS('occurrence',exp));
+    iss.push(...this.vOS('recorded',exp));
+    iss.push(...this.vOS('primarySource',exp));
+    iss.push(...this.vOS('reportOrigin',exp));
+    iss.push(...this.vOS('location',exp));
+    iss.push(...this.vOS('manufacturer',exp));
+    iss.push(...this.vOS('lotNumber',exp));
+    iss.push(...this.vOS('expirationDate',exp));
+    iss.push(...this.vOS('site',exp));
+    iss.push(...this.vOS('route',exp));
+    iss.push(...this.vOS('doseQuantity',exp));
+    iss.push(...this.vOA('performer',exp));
+    iss.push(...this.vOA('note',exp));
+    iss.push(...this.vOA('reasonCode',exp));
+    iss.push(...this.vOA('reasonReference',exp));
+    iss.push(...this.vOS('isSubpotent',exp));
+    iss.push(...this.vOA('subpotentReason',exp));
+    iss.push(...this.vOA('education',exp));
+    iss.push(...this.vOA('programEligibility',exp));
+    iss.push(...this.vOS('fundingSource',exp));
+    iss.push(...this.vOA('reaction',exp));
+    iss.push(...this.vOA('protocolApplied',exp));
+    return iss;
   }
 }

@@ -280,27 +280,27 @@ export class Media extends fhir.DomainResource {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'Media' }
-    this.vRS('resourceType',exp)
-    this.vOA('identifier',exp)
-    this.vOA('basedOn',exp)
-    this.vRSV('type',exp,'DigitalMediaType',DigitalMediaTypeVsValidation,'r')
-    this.vOS('subtype',exp)
-    this.vOS('view',exp)
-    this.vOS('subject',exp)
-    this.vOS('context',exp)
-    this.vOS('occurrence',exp)
-    this.vOS('operator',exp)
-    this.vOA('reasonCode',exp)
-    this.vOS('bodySite',exp)
-    this.vOS('device',exp)
-    this.vOS('height',exp)
-    this.vOS('width',exp)
-    this.vOS('frames',exp)
-    this.vOS('duration',exp)
-    this.vRS('content',exp)
-    this.vOA('note',exp)
-    return issues;
+    iss.push(...this.vRPS('resourceType',exp));
+    iss.push(...this.vOA('identifier',exp));
+    iss.push(...this.vOA('basedOn',exp));
+    iss.push(...this.vRSV('type',exp,'DigitalMediaType',DigitalMediaTypeVsValidation,'r'));
+    iss.push(...this.vOS('subtype',exp));
+    iss.push(...this.vOS('view',exp));
+    iss.push(...this.vOS('subject',exp));
+    iss.push(...this.vOS('context',exp));
+    iss.push(...this.vOS('occurrence',exp));
+    iss.push(...this.vOS('operator',exp));
+    iss.push(...this.vOA('reasonCode',exp));
+    iss.push(...this.vOS('bodySite',exp));
+    iss.push(...this.vOS('device',exp));
+    iss.push(...this.vOS('height',exp));
+    iss.push(...this.vOS('width',exp));
+    iss.push(...this.vOS('frames',exp));
+    iss.push(...this.vOS('duration',exp));
+    iss.push(...this.vRS('content',exp));
+    iss.push(...this.vOA('note',exp));
+    return iss;
   }
 }

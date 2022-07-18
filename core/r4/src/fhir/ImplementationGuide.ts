@@ -105,12 +105,12 @@ export class ImplementationGuideDependsOn extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'ImplementationGuide.dependsOn' }
-    this.vRS('uri',exp)
-    this.vOS('packageId',exp)
-    this.vOS('version',exp)
-    return issues;
+    iss.push(...this.vRS('uri',exp));
+    iss.push(...this.vOS('packageId',exp));
+    iss.push(...this.vOS('version',exp));
+    return iss;
   }
 }
 /**
@@ -173,11 +173,11 @@ export class ImplementationGuideGlobal extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'ImplementationGuide.global' }
-    this.vRSV('type',exp,'ResourceTypes',ResourceTypesVsValidation,'r')
-    this.vRS('profile',exp)
-    return issues;
+    iss.push(...this.vRSV('type',exp,'ResourceTypes',ResourceTypesVsValidation,'r'));
+    iss.push(...this.vRS('profile',exp));
+    return iss;
   }
 }
 /**
@@ -239,11 +239,11 @@ export class ImplementationGuideDefinitionGrouping extends fhir.BackboneElement 
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'ImplementationGuide.definition.grouping' }
-    this.vRS('name',exp)
-    this.vOS('description',exp)
-    return issues;
+    iss.push(...this.vRS('name',exp));
+    iss.push(...this.vOS('description',exp));
+    return iss;
   }
 }
 /**
@@ -390,15 +390,15 @@ export class ImplementationGuideDefinitionResource extends fhir.BackboneElement 
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'ImplementationGuide.definition.resource' }
-    this.vRS('reference',exp)
-    this.vOAV('fhirVersion',exp,'FHIRVersion',FHIRVersionVsValidation,'r')
-    this.vOS('name',exp)
-    this.vOS('description',exp)
-    this.vOS('example',exp)
-    this.vOS('groupingId',exp)
-    return issues;
+    iss.push(...this.vRS('reference',exp));
+    iss.push(...this.vOAV('fhirVersion',exp,'FHIRVersion',FHIRVersionVsValidation,'r'));
+    iss.push(...this.vOS('name',exp));
+    iss.push(...this.vOS('description',exp));
+    iss.push(...this.vOS('example',exp));
+    iss.push(...this.vOS('groupingId',exp));
+    return iss;
   }
 }
 /**
@@ -495,13 +495,13 @@ export class ImplementationGuideDefinitionPage extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'ImplementationGuide.definition.page' }
-    this.vRS('name',exp)
-    this.vRS('title',exp)
-    this.vRSV('generation',exp,'GuidePageGeneration',GuidePageGenerationVsValidation,'r')
-    this.vOA('page',exp)
-    return issues;
+    iss.push(...this.vRS('name',exp));
+    iss.push(...this.vRS('title',exp));
+    iss.push(...this.vRSV('generation',exp,'GuidePageGeneration',GuidePageGenerationVsValidation,'r'));
+    iss.push(...this.vOA('page',exp));
+    return iss;
   }
 }
 /**
@@ -564,11 +564,11 @@ export class ImplementationGuideDefinitionParameter extends fhir.BackboneElement
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'ImplementationGuide.definition.parameter' }
-    this.vRSV('code',exp,'GuideParameter',GuideParameterVsValidation,'r')
-    this.vRS('value',exp)
-    return issues;
+    iss.push(...this.vRSV('code',exp,'GuideParameter',GuideParameterVsValidation,'r'));
+    iss.push(...this.vRS('value',exp));
+    return iss;
   }
 }
 /**
@@ -648,12 +648,12 @@ export class ImplementationGuideDefinitionTemplate extends fhir.BackboneElement 
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'ImplementationGuide.definition.template' }
-    this.vRS('code',exp)
-    this.vRS('source',exp)
-    this.vOS('scope',exp)
-    return issues;
+    iss.push(...this.vRS('code',exp));
+    iss.push(...this.vRS('source',exp));
+    iss.push(...this.vOS('scope',exp));
+    return iss;
   }
 }
 /**
@@ -729,14 +729,14 @@ export class ImplementationGuideDefinition extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'ImplementationGuide.definition' }
-    this.vOA('grouping',exp)
-    this.vRA('resource',exp)
-    this.vOS('page',exp)
-    this.vOA('parameter',exp)
-    this.vOA('template',exp)
-    return issues;
+    iss.push(...this.vOA('grouping',exp));
+    iss.push(...this.vRA('resource',exp));
+    iss.push(...this.vOS('page',exp));
+    iss.push(...this.vOA('parameter',exp));
+    iss.push(...this.vOA('template',exp));
+    return iss;
   }
 }
 /**
@@ -813,12 +813,12 @@ export class ImplementationGuideManifestResource extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'ImplementationGuide.manifest.resource' }
-    this.vRS('reference',exp)
-    this.vOS('example',exp)
-    this.vOS('relativePath',exp)
-    return issues;
+    iss.push(...this.vRS('reference',exp));
+    iss.push(...this.vOS('example',exp));
+    iss.push(...this.vOS('relativePath',exp));
+    return iss;
   }
 }
 /**
@@ -900,12 +900,12 @@ export class ImplementationGuideManifestPage extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'ImplementationGuide.manifest.page' }
-    this.vRS('name',exp)
-    this.vOS('title',exp)
-    this.vOA('anchor',exp)
-    return issues;
+    iss.push(...this.vRS('name',exp));
+    iss.push(...this.vOS('title',exp));
+    iss.push(...this.vOA('anchor',exp));
+    return iss;
   }
 }
 /**
@@ -1009,14 +1009,14 @@ export class ImplementationGuideManifest extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'ImplementationGuide.manifest' }
-    this.vOS('rendering',exp)
-    this.vRA('resource',exp)
-    this.vOA('page',exp)
-    this.vOA('image',exp)
-    this.vOA('other',exp)
-    return issues;
+    iss.push(...this.vOS('rendering',exp));
+    iss.push(...this.vRA('resource',exp));
+    iss.push(...this.vOA('page',exp));
+    iss.push(...this.vOA('image',exp));
+    iss.push(...this.vOA('other',exp));
+    return iss;
   }
 }
 /**
@@ -1352,29 +1352,29 @@ export class ImplementationGuide extends fhir.DomainResource {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'ImplementationGuide' }
-    this.vRS('resourceType',exp)
-    this.vRS('url',exp)
-    this.vOS('version',exp)
-    this.vRS('name',exp)
-    this.vOS('title',exp)
-    this.vRSV('status',exp,'PublicationStatus',PublicationStatusVsValidation,'r')
-    this.vOS('experimental',exp)
-    this.vOS('date',exp)
-    this.vOS('publisher',exp)
-    this.vOA('contact',exp)
-    this.vOS('description',exp)
-    this.vOA('useContext',exp)
-    this.vOA('jurisdiction',exp)
-    this.vOS('copyright',exp)
-    this.vRS('packageId',exp)
-    this.vOSV('license',exp,'SpdxLicense',SpdxLicenseVsValidation,'r')
-    this.vRAV('fhirVersion',exp,'FHIRVersion',FHIRVersionVsValidation,'r')
-    this.vOA('dependsOn',exp)
-    this.vOA('global',exp)
-    this.vOS('definition',exp)
-    this.vOS('manifest',exp)
-    return issues;
+    iss.push(...this.vRPS('resourceType',exp));
+    iss.push(...this.vRS('url',exp));
+    iss.push(...this.vOS('version',exp));
+    iss.push(...this.vRS('name',exp));
+    iss.push(...this.vOS('title',exp));
+    iss.push(...this.vRSV('status',exp,'PublicationStatus',PublicationStatusVsValidation,'r'));
+    iss.push(...this.vOS('experimental',exp));
+    iss.push(...this.vOS('date',exp));
+    iss.push(...this.vOS('publisher',exp));
+    iss.push(...this.vOA('contact',exp));
+    iss.push(...this.vOS('description',exp));
+    iss.push(...this.vOA('useContext',exp));
+    iss.push(...this.vOA('jurisdiction',exp));
+    iss.push(...this.vOS('copyright',exp));
+    iss.push(...this.vRS('packageId',exp));
+    iss.push(...this.vOSV('license',exp,'SpdxLicense',SpdxLicenseVsValidation,'r'));
+    iss.push(...this.vRAV('fhirVersion',exp,'FHIRVersion',FHIRVersionVsValidation,'r'));
+    iss.push(...this.vOA('dependsOn',exp));
+    iss.push(...this.vOA('global',exp));
+    iss.push(...this.vOS('definition',exp));
+    iss.push(...this.vOS('manifest',exp));
+    return iss;
   }
 }

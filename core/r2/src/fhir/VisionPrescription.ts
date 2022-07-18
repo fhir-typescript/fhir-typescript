@@ -277,24 +277,24 @@ export class VisionPrescriptionDispense extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'VisionPrescription.dispense' }
-    this.vRS('product',exp)
-    this.vOSV('eye',exp,'VisionEye',VisionEyeVsValidation,'r')
-    this.vOS('sphere',exp)
-    this.vOS('cylinder',exp)
-    this.vOS('axis',exp)
-    this.vOS('prism',exp)
-    this.vOSV('base',exp,'VisionBase',VisionBaseVsValidation,'r')
-    this.vOS('add',exp)
-    this.vOS('power',exp)
-    this.vOS('backCurve',exp)
-    this.vOS('diameter',exp)
-    this.vOS('duration',exp)
-    this.vOS('color',exp)
-    this.vOS('brand',exp)
-    this.vOS('notes',exp)
-    return issues;
+    iss.push(...this.vRS('product',exp));
+    iss.push(...this.vOSV('eye',exp,'VisionEye',VisionEyeVsValidation,'r'));
+    iss.push(...this.vOS('sphere',exp));
+    iss.push(...this.vOS('cylinder',exp));
+    iss.push(...this.vOS('axis',exp));
+    iss.push(...this.vOS('prism',exp));
+    iss.push(...this.vOSV('base',exp,'VisionBase',VisionBaseVsValidation,'r'));
+    iss.push(...this.vOS('add',exp));
+    iss.push(...this.vOS('power',exp));
+    iss.push(...this.vOS('backCurve',exp));
+    iss.push(...this.vOS('diameter',exp));
+    iss.push(...this.vOS('duration',exp));
+    iss.push(...this.vOS('color',exp));
+    iss.push(...this.vOS('brand',exp));
+    iss.push(...this.vOS('notes',exp));
+    return iss;
   }
 }
 /**
@@ -417,16 +417,16 @@ export class VisionPrescription extends fhir.DomainResource {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'VisionPrescription' }
-    this.vRS('resourceType',exp)
-    this.vOA('identifier',exp)
-    this.vOS('dateWritten',exp)
-    this.vOS('patient',exp)
-    this.vOS('prescriber',exp)
-    this.vOS('encounter',exp)
-    this.vOS('reason',exp)
-    this.vOA('dispense',exp)
-    return issues;
+    iss.push(...this.vRPS('resourceType',exp));
+    iss.push(...this.vOA('identifier',exp));
+    iss.push(...this.vOS('dateWritten',exp));
+    iss.push(...this.vOS('patient',exp));
+    iss.push(...this.vOS('prescriber',exp));
+    iss.push(...this.vOS('encounter',exp));
+    iss.push(...this.vOS('reason',exp));
+    iss.push(...this.vOA('dispense',exp));
+    return iss;
   }
 }

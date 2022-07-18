@@ -61,11 +61,11 @@ export class EpisodeOfCareStatusHistory extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'EpisodeOfCare.statusHistory' }
-    this.vRSV('status',exp,'EpisodeOfCareStatus',EpisodeOfCareStatusVsValidation,'r')
-    this.vRS('period',exp)
-    return issues;
+    iss.push(...this.vRSV('status',exp,'EpisodeOfCareStatus',EpisodeOfCareStatusVsValidation,'r'));
+    iss.push(...this.vRS('period',exp));
+    return iss;
   }
 }
 /**
@@ -120,12 +120,12 @@ export class EpisodeOfCareCareTeam extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'EpisodeOfCare.careTeam' }
-    this.vOA('role',exp)
-    this.vOS('period',exp)
-    this.vOS('member',exp)
-    return issues;
+    iss.push(...this.vOA('role',exp));
+    iss.push(...this.vOS('period',exp));
+    iss.push(...this.vOS('member',exp));
+    return iss;
   }
 }
 /**
@@ -276,20 +276,20 @@ export class EpisodeOfCare extends fhir.DomainResource {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'EpisodeOfCare' }
-    this.vRS('resourceType',exp)
-    this.vOA('identifier',exp)
-    this.vRSV('status',exp,'EpisodeOfCareStatus',EpisodeOfCareStatusVsValidation,'r')
-    this.vOA('statusHistory',exp)
-    this.vOA('type',exp)
-    this.vOA('condition',exp)
-    this.vRS('patient',exp)
-    this.vOS('managingOrganization',exp)
-    this.vOS('period',exp)
-    this.vOA('referralRequest',exp)
-    this.vOS('careManager',exp)
-    this.vOA('careTeam',exp)
-    return issues;
+    iss.push(...this.vRPS('resourceType',exp));
+    iss.push(...this.vOA('identifier',exp));
+    iss.push(...this.vRSV('status',exp,'EpisodeOfCareStatus',EpisodeOfCareStatusVsValidation,'r'));
+    iss.push(...this.vOA('statusHistory',exp));
+    iss.push(...this.vOA('type',exp));
+    iss.push(...this.vOA('condition',exp));
+    iss.push(...this.vRS('patient',exp));
+    iss.push(...this.vOS('managingOrganization',exp));
+    iss.push(...this.vOS('period',exp));
+    iss.push(...this.vOA('referralRequest',exp));
+    iss.push(...this.vOS('careManager',exp));
+    iss.push(...this.vOA('careTeam',exp));
+    return iss;
   }
 }

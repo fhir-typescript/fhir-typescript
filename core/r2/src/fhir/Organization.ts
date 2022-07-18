@@ -66,13 +66,13 @@ export class OrganizationContact extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'Organization.contact' }
-    this.vOS('purpose',exp)
-    this.vOS('name',exp)
-    this.vOA('telecom',exp)
-    this.vOS('address',exp)
-    return issues;
+    iss.push(...this.vOS('purpose',exp));
+    iss.push(...this.vOS('name',exp));
+    iss.push(...this.vOA('telecom',exp));
+    iss.push(...this.vOS('address',exp));
+    return iss;
   }
 }
 /**
@@ -200,17 +200,17 @@ export class Organization extends fhir.DomainResource {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'Organization' }
-    this.vRS('resourceType',exp)
-    this.vOA('identifier',exp)
-    this.vOS('active',exp)
-    this.vOS('type',exp)
-    this.vOS('name',exp)
-    this.vOA('telecom',exp)
-    this.vOA('address',exp)
-    this.vOS('partOf',exp)
-    this.vOA('contact',exp)
-    return issues;
+    iss.push(...this.vRPS('resourceType',exp));
+    iss.push(...this.vOA('identifier',exp));
+    iss.push(...this.vOS('active',exp));
+    iss.push(...this.vOS('type',exp));
+    iss.push(...this.vOS('name',exp));
+    iss.push(...this.vOA('telecom',exp));
+    iss.push(...this.vOA('address',exp));
+    iss.push(...this.vOS('partOf',exp));
+    iss.push(...this.vOA('contact',exp));
+    return iss;
   }
 }

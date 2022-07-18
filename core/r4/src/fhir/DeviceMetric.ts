@@ -100,12 +100,12 @@ export class DeviceMetricCalibration extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'DeviceMetric.calibration' }
-    this.vOSV('type',exp,'MetricCalibrationType',MetricCalibrationTypeVsValidation,'r')
-    this.vOSV('state',exp,'MetricCalibrationState',MetricCalibrationStateVsValidation,'r')
-    this.vOS('time',exp)
-    return issues;
+    iss.push(...this.vOSV('type',exp,'MetricCalibrationType',MetricCalibrationTypeVsValidation,'r'));
+    iss.push(...this.vOSV('state',exp,'MetricCalibrationState',MetricCalibrationStateVsValidation,'r'));
+    iss.push(...this.vOS('time',exp));
+    return iss;
   }
 }
 /**
@@ -259,19 +259,19 @@ export class DeviceMetric extends fhir.DomainResource {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'DeviceMetric' }
-    this.vRS('resourceType',exp)
-    this.vOA('identifier',exp)
-    this.vRS('type',exp)
-    this.vOS('unit',exp)
-    this.vOS('source',exp)
-    this.vOS('parent',exp)
-    this.vOSV('operationalStatus',exp,'MetricOperationalStatus',MetricOperationalStatusVsValidation,'r')
-    this.vOSV('color',exp,'MetricColor',MetricColorVsValidation,'r')
-    this.vRSV('category',exp,'MetricCategory',MetricCategoryVsValidation,'r')
-    this.vOS('measurementPeriod',exp)
-    this.vOA('calibration',exp)
-    return issues;
+    iss.push(...this.vRPS('resourceType',exp));
+    iss.push(...this.vOA('identifier',exp));
+    iss.push(...this.vRS('type',exp));
+    iss.push(...this.vOS('unit',exp));
+    iss.push(...this.vOS('source',exp));
+    iss.push(...this.vOS('parent',exp));
+    iss.push(...this.vOSV('operationalStatus',exp,'MetricOperationalStatus',MetricOperationalStatusVsValidation,'r'));
+    iss.push(...this.vOSV('color',exp,'MetricColor',MetricColorVsValidation,'r'));
+    iss.push(...this.vRSV('category',exp,'MetricCategory',MetricCategoryVsValidation,'r'));
+    iss.push(...this.vOS('measurementPeriod',exp));
+    iss.push(...this.vOA('calibration',exp));
+    return iss;
   }
 }

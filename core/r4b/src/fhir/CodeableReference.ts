@@ -47,10 +47,10 @@ export class CodeableReference extends fhir.FhirElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'CodeableReference' }
-    this.vOS('concept',exp)
-    this.vOS('reference',exp)
-    return issues;
+    iss.push(...this.vOS('concept',exp));
+    iss.push(...this.vOS('reference',exp));
+    return iss;
   }
 }

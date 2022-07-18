@@ -96,12 +96,12 @@ export class CompartmentDefinitionResource extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'CompartmentDefinition.resource' }
-    this.vRSV('code',exp,'ResourceTypes',ResourceTypesVsValidation,'r')
-    this.vOA('param',exp)
-    this.vOS('documentation',exp)
-    return issues;
+    iss.push(...this.vRSV('code',exp,'ResourceTypes',ResourceTypesVsValidation,'r'));
+    iss.push(...this.vOA('param',exp));
+    iss.push(...this.vOS('documentation',exp));
+    return iss;
   }
 }
 /**
@@ -363,23 +363,23 @@ export class CompartmentDefinition extends fhir.DomainResource {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'CompartmentDefinition' }
-    this.vRS('resourceType',exp)
-    this.vRS('url',exp)
-    this.vOS('version',exp)
-    this.vRS('name',exp)
-    this.vRSV('status',exp,'PublicationStatus',PublicationStatusVsValidation,'r')
-    this.vOS('experimental',exp)
-    this.vOS('date',exp)
-    this.vOS('publisher',exp)
-    this.vOA('contact',exp)
-    this.vOS('description',exp)
-    this.vOA('useContext',exp)
-    this.vOS('purpose',exp)
-    this.vRSV('code',exp,'CompartmentType',CompartmentTypeVsValidation,'r')
-    this.vRS('search',exp)
-    this.vOA('resource',exp)
-    return issues;
+    iss.push(...this.vRPS('resourceType',exp));
+    iss.push(...this.vRS('url',exp));
+    iss.push(...this.vOS('version',exp));
+    iss.push(...this.vRS('name',exp));
+    iss.push(...this.vRSV('status',exp,'PublicationStatus',PublicationStatusVsValidation,'r'));
+    iss.push(...this.vOS('experimental',exp));
+    iss.push(...this.vOS('date',exp));
+    iss.push(...this.vOS('publisher',exp));
+    iss.push(...this.vOA('contact',exp));
+    iss.push(...this.vOS('description',exp));
+    iss.push(...this.vOA('useContext',exp));
+    iss.push(...this.vOS('purpose',exp));
+    iss.push(...this.vRSV('code',exp,'CompartmentType',CompartmentTypeVsValidation,'r'));
+    iss.push(...this.vRS('search',exp));
+    iss.push(...this.vOA('resource',exp));
+    return iss;
   }
 }

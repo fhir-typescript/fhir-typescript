@@ -91,12 +91,12 @@ export class DeviceDefinitionUdiDeviceIdentifier extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'DeviceDefinition.udiDeviceIdentifier' }
-    this.vRS('deviceIdentifier',exp)
-    this.vRS('issuer',exp)
-    this.vRS('jurisdiction',exp)
-    return issues;
+    iss.push(...this.vRS('deviceIdentifier',exp));
+    iss.push(...this.vRS('issuer',exp));
+    iss.push(...this.vRS('jurisdiction',exp));
+    return iss;
   }
 }
 /**
@@ -161,11 +161,11 @@ export class DeviceDefinitionDeviceName extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'DeviceDefinition.deviceName' }
-    this.vRS('name',exp)
-    this.vRSV('type',exp,'DeviceNametype',DeviceNametypeVsValidation,'r')
-    return issues;
+    iss.push(...this.vRS('name',exp));
+    iss.push(...this.vRSV('type',exp,'DeviceNametype',DeviceNametypeVsValidation,'r'));
+    return iss;
   }
 }
 /**
@@ -227,11 +227,11 @@ export class DeviceDefinitionSpecialization extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'DeviceDefinition.specialization' }
-    this.vRS('systemType',exp)
-    this.vOS('version',exp)
-    return issues;
+    iss.push(...this.vRS('systemType',exp));
+    iss.push(...this.vOS('version',exp));
+    return iss;
   }
 }
 /**
@@ -278,11 +278,11 @@ export class DeviceDefinitionCapability extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'DeviceDefinition.capability' }
-    this.vRS('type',exp)
-    this.vOA('description',exp)
-    return issues;
+    iss.push(...this.vRS('type',exp));
+    iss.push(...this.vOA('description',exp));
+    return iss;
   }
 }
 /**
@@ -339,12 +339,12 @@ export class DeviceDefinitionProperty extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'DeviceDefinition.property' }
-    this.vRS('type',exp)
-    this.vOA('valueQuantity',exp)
-    this.vOA('valueCode',exp)
-    return issues;
+    iss.push(...this.vRS('type',exp));
+    iss.push(...this.vOA('valueQuantity',exp));
+    iss.push(...this.vOA('valueCode',exp));
+    return iss;
   }
 }
 /**
@@ -415,12 +415,12 @@ export class DeviceDefinitionMaterial extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'DeviceDefinition.material' }
-    this.vRS('substance',exp)
-    this.vOS('alternate',exp)
-    this.vOS('allergenicIndicator',exp)
-    return issues;
+    iss.push(...this.vRS('substance',exp));
+    iss.push(...this.vOS('alternate',exp));
+    iss.push(...this.vOS('allergenicIndicator',exp));
+    return iss;
   }
 }
 /**
@@ -715,31 +715,31 @@ export class DeviceDefinition extends fhir.DomainResource {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'DeviceDefinition' }
-    this.vRS('resourceType',exp)
-    this.vOA('identifier',exp)
-    this.vOA('udiDeviceIdentifier',exp)
-    this.vOS('manufacturer',exp)
-    this.vOA('deviceName',exp)
-    this.vOS('modelNumber',exp)
-    this.vOS('type',exp)
-    this.vOA('specialization',exp)
-    this.vOA('version',exp)
-    this.vOA('safety',exp)
-    this.vOA('shelfLifeStorage',exp)
-    this.vOS('physicalCharacteristics',exp)
-    this.vOA('languageCode',exp)
-    this.vOA('capability',exp)
-    this.vOA('property',exp)
-    this.vOS('owner',exp)
-    this.vOA('contact',exp)
-    this.vOS('url',exp)
-    this.vOS('onlineInformation',exp)
-    this.vOA('note',exp)
-    this.vOS('quantity',exp)
-    this.vOS('parentDevice',exp)
-    this.vOA('material',exp)
-    return issues;
+    iss.push(...this.vRPS('resourceType',exp));
+    iss.push(...this.vOA('identifier',exp));
+    iss.push(...this.vOA('udiDeviceIdentifier',exp));
+    iss.push(...this.vOS('manufacturer',exp));
+    iss.push(...this.vOA('deviceName',exp));
+    iss.push(...this.vOS('modelNumber',exp));
+    iss.push(...this.vOS('type',exp));
+    iss.push(...this.vOA('specialization',exp));
+    iss.push(...this.vOA('version',exp));
+    iss.push(...this.vOA('safety',exp));
+    iss.push(...this.vOA('shelfLifeStorage',exp));
+    iss.push(...this.vOS('physicalCharacteristics',exp));
+    iss.push(...this.vOA('languageCode',exp));
+    iss.push(...this.vOA('capability',exp));
+    iss.push(...this.vOA('property',exp));
+    iss.push(...this.vOS('owner',exp));
+    iss.push(...this.vOA('contact',exp));
+    iss.push(...this.vOS('url',exp));
+    iss.push(...this.vOS('onlineInformation',exp));
+    iss.push(...this.vOA('note',exp));
+    iss.push(...this.vOS('quantity',exp));
+    iss.push(...this.vOS('parentDevice',exp));
+    iss.push(...this.vOA('material',exp));
+    return iss;
   }
 }

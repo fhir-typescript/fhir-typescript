@@ -90,13 +90,13 @@ export class MessageHeaderDestination extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'MessageHeader.destination' }
-    this.vOS('name',exp)
-    this.vOS('target',exp)
-    this.vRS('endpoint',exp)
-    this.vOS('receiver',exp)
-    return issues;
+    iss.push(...this.vOS('name',exp));
+    iss.push(...this.vOS('target',exp));
+    iss.push(...this.vRS('endpoint',exp));
+    iss.push(...this.vOS('receiver',exp));
+    return iss;
   }
 }
 /**
@@ -201,14 +201,14 @@ export class MessageHeaderSource extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'MessageHeader.source' }
-    this.vOS('name',exp)
-    this.vOS('software',exp)
-    this.vOS('version',exp)
-    this.vOS('contact',exp)
-    this.vRS('endpoint',exp)
-    return issues;
+    iss.push(...this.vOS('name',exp));
+    iss.push(...this.vOS('software',exp));
+    iss.push(...this.vOS('version',exp));
+    iss.push(...this.vOS('contact',exp));
+    iss.push(...this.vRS('endpoint',exp));
+    return iss;
   }
 }
 /**
@@ -280,12 +280,12 @@ export class MessageHeaderResponse extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'MessageHeader.response' }
-    this.vRS('identifier',exp)
-    this.vRSV('code',exp,'Response',ResponseVsValidation,'r')
-    this.vOS('details',exp)
-    return issues;
+    iss.push(...this.vRS('identifier',exp));
+    iss.push(...this.vRSV('code',exp,'Response',ResponseVsValidation,'r'));
+    iss.push(...this.vOS('details',exp));
+    return iss;
   }
 }
 /**
@@ -446,20 +446,20 @@ export class MessageHeader extends fhir.DomainResource {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'MessageHeader' }
-    this.vRS('resourceType',exp)
-    this.vRS('event',exp)
-    this.vOA('destination',exp)
-    this.vOS('sender',exp)
-    this.vOS('enterer',exp)
-    this.vOS('author',exp)
-    this.vRS('source',exp)
-    this.vOS('responsible',exp)
-    this.vOS('reason',exp)
-    this.vOS('response',exp)
-    this.vOA('focus',exp)
-    this.vOS('definition',exp)
-    return issues;
+    iss.push(...this.vRPS('resourceType',exp));
+    iss.push(...this.vRS('event',exp));
+    iss.push(...this.vOA('destination',exp));
+    iss.push(...this.vOS('sender',exp));
+    iss.push(...this.vOS('enterer',exp));
+    iss.push(...this.vOS('author',exp));
+    iss.push(...this.vRS('source',exp));
+    iss.push(...this.vOS('responsible',exp));
+    iss.push(...this.vOS('reason',exp));
+    iss.push(...this.vOS('response',exp));
+    iss.push(...this.vOA('focus',exp));
+    iss.push(...this.vOS('definition',exp));
+    return iss;
   }
 }

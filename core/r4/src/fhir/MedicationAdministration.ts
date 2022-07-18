@@ -80,11 +80,11 @@ export class MedicationAdministrationPerformer extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'MedicationAdministration.performer' }
-    this.vOS('function',exp)
-    this.vRS('actor',exp)
-    return issues;
+    iss.push(...this.vOS('function',exp));
+    iss.push(...this.vRS('actor',exp));
+    return iss;
   }
 }
 /**
@@ -189,15 +189,15 @@ export class MedicationAdministrationDosage extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'MedicationAdministration.dosage' }
-    this.vOS('text',exp)
-    this.vOS('site',exp)
-    this.vOS('route',exp)
-    this.vOS('method',exp)
-    this.vOS('dose',exp)
-    this.vOS('rate',exp)
-    return issues;
+    iss.push(...this.vOS('text',exp));
+    iss.push(...this.vOS('site',exp));
+    iss.push(...this.vOS('route',exp));
+    iss.push(...this.vOS('method',exp));
+    iss.push(...this.vOS('dose',exp));
+    iss.push(...this.vOS('rate',exp));
+    return iss;
   }
 }
 /**
@@ -465,28 +465,28 @@ export class MedicationAdministration extends fhir.DomainResource {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'MedicationAdministration' }
-    this.vRS('resourceType',exp)
-    this.vOA('identifier',exp)
-    this.vOA('instantiates',exp)
-    this.vOA('partOf',exp)
-    this.vRSV('status',exp,'MedicationAdminStatus',MedicationAdminStatusVsValidation,'r')
-    this.vOA('statusReason',exp)
-    this.vOS('category',exp)
-    this.vRS('medication',exp)
-    this.vRS('subject',exp)
-    this.vOS('context',exp)
-    this.vOA('supportingInformation',exp)
-    this.vRS('effective',exp)
-    this.vOA('performer',exp)
-    this.vOA('reasonCode',exp)
-    this.vOA('reasonReference',exp)
-    this.vOS('request',exp)
-    this.vOA('device',exp)
-    this.vOA('note',exp)
-    this.vOS('dosage',exp)
-    this.vOA('eventHistory',exp)
-    return issues;
+    iss.push(...this.vRPS('resourceType',exp));
+    iss.push(...this.vOA('identifier',exp));
+    iss.push(...this.vOA('instantiates',exp));
+    iss.push(...this.vOA('partOf',exp));
+    iss.push(...this.vRSV('status',exp,'MedicationAdminStatus',MedicationAdminStatusVsValidation,'r'));
+    iss.push(...this.vOA('statusReason',exp));
+    iss.push(...this.vOS('category',exp));
+    iss.push(...this.vRS('medication',exp));
+    iss.push(...this.vRS('subject',exp));
+    iss.push(...this.vOS('context',exp));
+    iss.push(...this.vOA('supportingInformation',exp));
+    iss.push(...this.vRS('effective',exp));
+    iss.push(...this.vOA('performer',exp));
+    iss.push(...this.vOA('reasonCode',exp));
+    iss.push(...this.vOA('reasonReference',exp));
+    iss.push(...this.vOS('request',exp));
+    iss.push(...this.vOA('device',exp));
+    iss.push(...this.vOA('note',exp));
+    iss.push(...this.vOS('dosage',exp));
+    iss.push(...this.vOA('eventHistory',exp));
+    return iss;
   }
 }

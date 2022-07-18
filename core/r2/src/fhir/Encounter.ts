@@ -69,11 +69,11 @@ export class EncounterStatusHistory extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'Encounter.statusHistory' }
-    this.vRSV('status',exp,'EncounterState',EncounterStateVsValidation,'r')
-    this.vRS('period',exp)
-    return issues;
+    iss.push(...this.vRSV('status',exp,'EncounterState',EncounterStateVsValidation,'r'));
+    iss.push(...this.vRS('period',exp));
+    return iss;
   }
 }
 /**
@@ -128,12 +128,12 @@ export class EncounterParticipant extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'Encounter.participant' }
-    this.vOA('type',exp)
-    this.vOS('period',exp)
-    this.vOS('individual',exp)
-    return issues;
+    iss.push(...this.vOA('type',exp));
+    iss.push(...this.vOS('period',exp));
+    iss.push(...this.vOS('individual',exp));
+    return iss;
   }
 }
 /**
@@ -264,20 +264,20 @@ export class EncounterHospitalization extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'Encounter.hospitalization' }
-    this.vOS('preAdmissionIdentifier',exp)
-    this.vOS('origin',exp)
-    this.vOS('admitSource',exp)
-    this.vOA('admittingDiagnosis',exp)
-    this.vOS('reAdmission',exp)
-    this.vOA('dietPreference',exp)
-    this.vOA('specialCourtesy',exp)
-    this.vOA('specialArrangement',exp)
-    this.vOS('destination',exp)
-    this.vOS('dischargeDisposition',exp)
-    this.vOA('dischargeDiagnosis',exp)
-    return issues;
+    iss.push(...this.vOS('preAdmissionIdentifier',exp));
+    iss.push(...this.vOS('origin',exp));
+    iss.push(...this.vOS('admitSource',exp));
+    iss.push(...this.vOA('admittingDiagnosis',exp));
+    iss.push(...this.vOS('reAdmission',exp));
+    iss.push(...this.vOA('dietPreference',exp));
+    iss.push(...this.vOA('specialCourtesy',exp));
+    iss.push(...this.vOA('specialArrangement',exp));
+    iss.push(...this.vOS('destination',exp));
+    iss.push(...this.vOS('dischargeDisposition',exp));
+    iss.push(...this.vOA('dischargeDiagnosis',exp));
+    return iss;
   }
 }
 /**
@@ -340,12 +340,12 @@ export class EncounterLocation extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'Encounter.location' }
-    this.vRS('location',exp)
-    this.vOSV('status',exp,'EncounterLocationStatus',EncounterLocationStatusVsValidation,'r')
-    this.vOS('period',exp)
-    return issues;
+    iss.push(...this.vRS('location',exp));
+    iss.push(...this.vOSV('status',exp,'EncounterLocationStatus',EncounterLocationStatusVsValidation,'r'));
+    iss.push(...this.vOS('period',exp));
+    return iss;
   }
 }
 /**
@@ -578,28 +578,28 @@ export class Encounter extends fhir.DomainResource {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'Encounter' }
-    this.vRS('resourceType',exp)
-    this.vOA('identifier',exp)
-    this.vRSV('status',exp,'EncounterState',EncounterStateVsValidation,'r')
-    this.vOA('statusHistory',exp)
-    this.vOSV('class',exp,'EncounterClass',EncounterClassVsValidation,'r')
-    this.vOA('type',exp)
-    this.vOS('priority',exp)
-    this.vOS('patient',exp)
-    this.vOA('episodeOfCare',exp)
-    this.vOA('incomingReferral',exp)
-    this.vOA('participant',exp)
-    this.vOS('appointment',exp)
-    this.vOS('period',exp)
-    this.vOS('length',exp)
-    this.vOA('reason',exp)
-    this.vOA('indication',exp)
-    this.vOS('hospitalization',exp)
-    this.vOA('location',exp)
-    this.vOS('serviceProvider',exp)
-    this.vOS('partOf',exp)
-    return issues;
+    iss.push(...this.vRPS('resourceType',exp));
+    iss.push(...this.vOA('identifier',exp));
+    iss.push(...this.vRSV('status',exp,'EncounterState',EncounterStateVsValidation,'r'));
+    iss.push(...this.vOA('statusHistory',exp));
+    iss.push(...this.vOSV('class',exp,'EncounterClass',EncounterClassVsValidation,'r'));
+    iss.push(...this.vOA('type',exp));
+    iss.push(...this.vOS('priority',exp));
+    iss.push(...this.vOS('patient',exp));
+    iss.push(...this.vOA('episodeOfCare',exp));
+    iss.push(...this.vOA('incomingReferral',exp));
+    iss.push(...this.vOA('participant',exp));
+    iss.push(...this.vOS('appointment',exp));
+    iss.push(...this.vOS('period',exp));
+    iss.push(...this.vOS('length',exp));
+    iss.push(...this.vOA('reason',exp));
+    iss.push(...this.vOA('indication',exp));
+    iss.push(...this.vOS('hospitalization',exp));
+    iss.push(...this.vOA('location',exp));
+    iss.push(...this.vOS('serviceProvider',exp));
+    iss.push(...this.vOS('partOf',exp));
+    return iss;
   }
 }

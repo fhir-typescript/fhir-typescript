@@ -63,11 +63,11 @@ export class MedicinalProductIndicationOtherTherapy extends fhir.BackboneElement
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'MedicinalProductIndication.otherTherapy' }
-    this.vRS('therapyRelationshipType',exp)
-    this.vRS('medication',exp)
-    return issues;
+    iss.push(...this.vRS('therapyRelationshipType',exp));
+    iss.push(...this.vRS('medication',exp));
+    return iss;
   }
 }
 /**
@@ -189,18 +189,18 @@ export class MedicinalProductIndication extends fhir.DomainResource {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'MedicinalProductIndication' }
-    this.vRS('resourceType',exp)
-    this.vOA('subject',exp)
-    this.vOS('diseaseSymptomProcedure',exp)
-    this.vOS('diseaseStatus',exp)
-    this.vOA('comorbidity',exp)
-    this.vOS('intendedEffect',exp)
-    this.vOS('duration',exp)
-    this.vOA('otherTherapy',exp)
-    this.vOA('undesirableEffect',exp)
-    this.vOA('population',exp)
-    return issues;
+    iss.push(...this.vRPS('resourceType',exp));
+    iss.push(...this.vOA('subject',exp));
+    iss.push(...this.vOS('diseaseSymptomProcedure',exp));
+    iss.push(...this.vOS('diseaseStatus',exp));
+    iss.push(...this.vOA('comorbidity',exp));
+    iss.push(...this.vOS('intendedEffect',exp));
+    iss.push(...this.vOS('duration',exp));
+    iss.push(...this.vOA('otherTherapy',exp));
+    iss.push(...this.vOA('undesirableEffect',exp));
+    iss.push(...this.vOA('population',exp));
+    return iss;
   }
 }

@@ -192,16 +192,16 @@ export class EvidenceVariableCharacteristic extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'EvidenceVariable.characteristic' }
-    this.vOS('description',exp)
-    this.vRS('definition',exp)
-    this.vOA('usageContext',exp)
-    this.vOS('exclude',exp)
-    this.vOS('participantEffective',exp)
-    this.vOS('timeFromStart',exp)
-    this.vOSV('groupMeasure',exp,'GroupMeasure',GroupMeasureVsValidation,'r')
-    return issues;
+    iss.push(...this.vOS('description',exp));
+    iss.push(...this.vRS('definition',exp));
+    iss.push(...this.vOA('usageContext',exp));
+    iss.push(...this.vOS('exclude',exp));
+    iss.push(...this.vOS('participantEffective',exp));
+    iss.push(...this.vOS('timeFromStart',exp));
+    iss.push(...this.vOSV('groupMeasure',exp,'GroupMeasure',GroupMeasureVsValidation,'r'));
+    return iss;
   }
 }
 /**
@@ -609,36 +609,36 @@ export class EvidenceVariable extends fhir.DomainResource {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'EvidenceVariable' }
-    this.vRS('resourceType',exp)
-    this.vOS('url',exp)
-    this.vOA('identifier',exp)
-    this.vOS('version',exp)
-    this.vOS('name',exp)
-    this.vOS('title',exp)
-    this.vOS('shortTitle',exp)
-    this.vOS('subtitle',exp)
-    this.vRSV('status',exp,'PublicationStatus',PublicationStatusVsValidation,'r')
-    this.vOS('date',exp)
-    this.vOS('publisher',exp)
-    this.vOA('contact',exp)
-    this.vOS('description',exp)
-    this.vOA('note',exp)
-    this.vOA('useContext',exp)
-    this.vOA('jurisdiction',exp)
-    this.vOS('copyright',exp)
-    this.vOS('approvalDate',exp)
-    this.vOS('lastReviewDate',exp)
-    this.vOS('effectivePeriod',exp)
-    this.vOA('topic',exp)
-    this.vOA('author',exp)
-    this.vOA('editor',exp)
-    this.vOA('reviewer',exp)
-    this.vOA('endorser',exp)
-    this.vOA('relatedArtifact',exp)
-    this.vOSV('type',exp,'VariableType',VariableTypeVsValidation,'r')
-    this.vRA('characteristic',exp)
-    return issues;
+    iss.push(...this.vRPS('resourceType',exp));
+    iss.push(...this.vOS('url',exp));
+    iss.push(...this.vOA('identifier',exp));
+    iss.push(...this.vOS('version',exp));
+    iss.push(...this.vOS('name',exp));
+    iss.push(...this.vOS('title',exp));
+    iss.push(...this.vOS('shortTitle',exp));
+    iss.push(...this.vOS('subtitle',exp));
+    iss.push(...this.vRSV('status',exp,'PublicationStatus',PublicationStatusVsValidation,'r'));
+    iss.push(...this.vOS('date',exp));
+    iss.push(...this.vOS('publisher',exp));
+    iss.push(...this.vOA('contact',exp));
+    iss.push(...this.vOS('description',exp));
+    iss.push(...this.vOA('note',exp));
+    iss.push(...this.vOA('useContext',exp));
+    iss.push(...this.vOA('jurisdiction',exp));
+    iss.push(...this.vOS('copyright',exp));
+    iss.push(...this.vOS('approvalDate',exp));
+    iss.push(...this.vOS('lastReviewDate',exp));
+    iss.push(...this.vOS('effectivePeriod',exp));
+    iss.push(...this.vOA('topic',exp));
+    iss.push(...this.vOA('author',exp));
+    iss.push(...this.vOA('editor',exp));
+    iss.push(...this.vOA('reviewer',exp));
+    iss.push(...this.vOA('endorser',exp));
+    iss.push(...this.vOA('relatedArtifact',exp));
+    iss.push(...this.vOSV('type',exp,'VariableType',VariableTypeVsValidation,'r'));
+    iss.push(...this.vRA('characteristic',exp));
+    return iss;
   }
 }

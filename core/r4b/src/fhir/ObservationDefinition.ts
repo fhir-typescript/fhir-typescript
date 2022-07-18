@@ -117,13 +117,13 @@ export class ObservationDefinitionQuantitativeDetails extends fhir.BackboneEleme
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'ObservationDefinition.quantitativeDetails' }
-    this.vOS('customaryUnit',exp)
-    this.vOS('unit',exp)
-    this.vOS('conversionFactor',exp)
-    this.vOS('decimalPrecision',exp)
-    return issues;
+    iss.push(...this.vOS('customaryUnit',exp));
+    iss.push(...this.vOS('unit',exp));
+    iss.push(...this.vOS('conversionFactor',exp));
+    iss.push(...this.vOS('decimalPrecision',exp));
+    return iss;
   }
 }
 /**
@@ -247,17 +247,17 @@ export class ObservationDefinitionQualifiedInterval extends fhir.BackboneElement
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'ObservationDefinition.qualifiedInterval' }
-    this.vOSV('category',exp,'ObservationRangeCategory',ObservationRangeCategoryVsValidation,'r')
-    this.vOS('range',exp)
-    this.vOS('context',exp)
-    this.vOA('appliesTo',exp)
-    this.vOSV('gender',exp,'AdministrativeGender',AdministrativeGenderVsValidation,'r')
-    this.vOS('age',exp)
-    this.vOS('gestationalAge',exp)
-    this.vOS('condition',exp)
-    return issues;
+    iss.push(...this.vOSV('category',exp,'ObservationRangeCategory',ObservationRangeCategoryVsValidation,'r'));
+    iss.push(...this.vOS('range',exp));
+    iss.push(...this.vOS('context',exp));
+    iss.push(...this.vOA('appliesTo',exp));
+    iss.push(...this.vOSV('gender',exp,'AdministrativeGender',AdministrativeGenderVsValidation,'r'));
+    iss.push(...this.vOS('age',exp));
+    iss.push(...this.vOS('gestationalAge',exp));
+    iss.push(...this.vOS('condition',exp));
+    return iss;
   }
 }
 /**
@@ -441,22 +441,22 @@ export class ObservationDefinition extends fhir.DomainResource {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'ObservationDefinition' }
-    this.vRS('resourceType',exp)
-    this.vOA('category',exp)
-    this.vRS('code',exp)
-    this.vOA('identifier',exp)
-    this.vOAV('permittedDataType',exp,'PermittedDataType',PermittedDataTypeVsValidation,'r')
-    this.vOS('multipleResultsAllowed',exp)
-    this.vOS('method',exp)
-    this.vOS('preferredReportName',exp)
-    this.vOS('quantitativeDetails',exp)
-    this.vOA('qualifiedInterval',exp)
-    this.vOS('validCodedValueSet',exp)
-    this.vOS('normalCodedValueSet',exp)
-    this.vOS('abnormalCodedValueSet',exp)
-    this.vOS('criticalCodedValueSet',exp)
-    return issues;
+    iss.push(...this.vRPS('resourceType',exp));
+    iss.push(...this.vOA('category',exp));
+    iss.push(...this.vRS('code',exp));
+    iss.push(...this.vOA('identifier',exp));
+    iss.push(...this.vOAV('permittedDataType',exp,'PermittedDataType',PermittedDataTypeVsValidation,'r'));
+    iss.push(...this.vOS('multipleResultsAllowed',exp));
+    iss.push(...this.vOS('method',exp));
+    iss.push(...this.vOS('preferredReportName',exp));
+    iss.push(...this.vOS('quantitativeDetails',exp));
+    iss.push(...this.vOA('qualifiedInterval',exp));
+    iss.push(...this.vOS('validCodedValueSet',exp));
+    iss.push(...this.vOS('normalCodedValueSet',exp));
+    iss.push(...this.vOS('abnormalCodedValueSet',exp));
+    iss.push(...this.vOS('criticalCodedValueSet',exp));
+    return iss;
   }
 }

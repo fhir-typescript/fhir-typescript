@@ -99,8 +99,7 @@ export class FhirBase {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
    public doModelValidation(_exp:string = ''):FtsIssue[] {
-    let issues:FtsIssue[] = [];
-    return issues;
+    return [];
   }
 
   /**
@@ -147,17 +146,22 @@ export class FhirBase {
    * @returns 
    */
    public vOS(p:Readonly<string>, exp:Readonly<string>):FtsIssue[] {
-    if ((this as any)[p]) {
-      if (Array.isArray((this as any)[p])) {
-        return [{
-          severity: 'error',
-          code: 'structure',
-          details: {text: `Found array in scalar property ${p} (${exp})`}
-        }];
-      }
-      return (this as any)[p].doModelValidation(exp+'.'+p);
-    };
-    return [];
+    if (((this as any)[p] === undefined) || 
+        ((this as any)[p] === null) ||
+        ((this as any)[p] === '') ||
+        (Number.isNaN((this as any)[p]))) {
+      return [];
+    }
+
+    if (Array.isArray((this as any)[p])) {
+      return [{
+        severity: 'error',
+        code: 'structure',
+        details: {text: `Found array in scalar property ${p} (${exp})`}
+      }];
+    }
+
+    return (this as any)[p].doModelValidation(exp+'.'+p);
   }
 
   /**
@@ -175,23 +179,31 @@ export class FhirBase {
     vsN:string,
     vsV:Readonly<string[]>,
     vsS:Readonly<string>):FtsIssue[] {
+
+    if (((this as any)[p] === undefined) || 
+        ((this as any)[p] === null) ||
+        ((this as any)[p] === '') ||
+        (Number.isNaN((this as any)[p]))) {
+      return [];
+    }
+
+    if (Array.isArray((this as any)[p])) {
+      return [{
+        severity: 'error',
+        code: 'structure',
+        details: {text: `Found array in scalar property ${p} (${exp})`}
+      }];
+    }
+
     let iss:FtsIssue[] = [];
-    if ((this as any)[p]) {
-      if (Array.isArray((this as any)[p])) {
-        return [{
-          severity: 'error',
-          code: 'structure',
-          details: {text: `Found array in scalar property ${p} (${exp})`}
-        }];
-      }
-      iss.push(...(this as any)[p].doModelValidation(exp+'.'+p));
-      if (!(this as any)[p].hasCodingFromValidationObj(vsV)) {
-        iss.push({
-          severity: (vsS === 'r') ? 'error' : 'information', 
-          code:'code-invalid', 
-          details:{text:`${p} (${exp}) does not contain code from bound value set ${vsN}`}});
-      }
-    };
+    iss.push(...(this as any)[p].doModelValidation(exp+'.'+p));
+    if (!(this as any)[p].hasCodingFromValidationObj(vsV)) {
+      iss.push({
+        severity: (vsS === 'r') ? 'error' : 'information', 
+        code:'code-invalid', 
+        details:{text:`${p} (${exp}) does not contain code from bound value set ${vsN}`}});
+    }
+
     return iss;
   }
 
@@ -202,17 +214,24 @@ export class FhirBase {
    * @returns 
    */
   public vOA(p:Readonly<string>, exp:Readonly<string>):FtsIssue[] {
+    if (((this as any)[p] === undefined) || 
+        ((this as any)[p] === null) ||
+        ((this as any)[p] === '') ||
+        (Number.isNaN((this as any)[p]))) {
+      return [];
+    }
+
+    if (!Array.isArray((this as any)[p])) {
+      return [{
+        severity: 'error',
+        code: 'structure',
+        details: {text: `Found scalar in array property ${p} (${exp})`}
+      }];
+    }
+
     let iss:FtsIssue[] = [];
-    if ((this as any)[p]) {
-      if (!Array.isArray((this as any)[p])) {
-        return [{
-          severity: 'error',
-          code: 'structure',
-          details: {text: `Found scalar in array property ${p} (${exp})`}
-        }];
-      }
-      (this as any)[p].forEach((x:any,i:number) => {iss.push(...x.doModelValidation(`${exp}.${p}[${i}]`))} );
-    };
+    (this as any)[p].forEach((x:any,i:number) => {iss.push(...x.doModelValidation(`${exp}.${p}[${i}]`))} );
+
     return iss;
   }
 
@@ -232,24 +251,32 @@ export class FhirBase {
     vsV:Readonly<string[]>,
     vsS:Readonly<string>):FtsIssue[] {
     let iss:FtsIssue[] = [];
-    if ((this as any)[p]) {
-      if (!Array.isArray((this as any)[p])) {
-        return [{
-          severity: 'error',
-          code: 'structure',
-          details: {text: `Found scalar in array property ${p} (${exp})`}
-        }];
+
+    if (((this as any)[p] === undefined) || 
+        ((this as any)[p] === null) ||
+        ((this as any)[p] === '') ||
+        (Number.isNaN((this as any)[p]))) {
+      return [];
+    }
+
+    if (!Array.isArray((this as any)[p])) {
+      return [{
+        severity: 'error',
+        code: 'structure',
+        details: {text: `Found scalar in array property ${p} (${exp})`}
+      }];
+    }
+
+    (this as any)[p].forEach((x:any,i:number) => {
+      iss.push(...x.doModelValidation(`${exp}.${p}[${i}]`));
+      if (!(this as any)[p].hasCodingFromValidationObj(vsV)) {
+        iss.push({
+          severity: (vsS === 'r') ? 'error' : 'information', 
+          code:'code-invalid', 
+          details:{text:`${p} (${exp}) does not contain code from bound value set ${vsN}`}});
       }
-      (this as any)[p].forEach((x:any,i:number) => {
-        iss.push(...x.doModelValidation(`${exp}.${p}[${i}]`));
-        if (!(this as any)[p].hasCodingFromValidationObj(vsV)) {
-          iss.push({
-            severity: (vsS === 'r') ? 'error' : 'information', 
-            code:'code-invalid', 
-            details:{text:`${p} (${exp}) does not contain code from bound value set ${vsN}`}});
-        }
-      });
-    };
+    });
+
     return iss;
   }
 
@@ -260,21 +287,34 @@ export class FhirBase {
    * @returns 
    */
   public vRS(p:Readonly<string>, exp:Readonly<string>):FtsIssue[] {
-    if ((this as any)[p]) { 
-      if (Array.isArray((this as any)[p])) {
-        return [{
-          severity: 'error',
-          code: 'structure',
-          details: {text: `Found array in scalar property ${p} (${exp})`}
-        }];
-      }
-      return (this as any)[p].doModelValidation(exp+'.'+p);
-    };
-    return [{
-      severity: 'error',
-      code: 'required',
-      details: {text: `Missing required property '${p}', ${exp}`}
-    }];
+    if (((this as any)[p] === undefined) || 
+        ((this as any)[p] === null) ||
+        ((this as any)[p] === '') ||
+        (Number.isNaN((this as any)[p]))) {
+      return [{
+        severity: 'error',
+        code: 'required',
+        details: {text: `Missing required property '${p}', ${exp}`}
+      }];
+    }
+
+    if (Array.isArray((this as any)[p])) {
+      return [{
+        severity: 'error',
+        code: 'structure',
+        details: {text: `Found array in scalar property ${p} (${exp})`}
+      }];
+    }
+
+    if ((this as any)[p].length === 0) {
+      return [{
+        severity: 'error',
+        code: 'required',
+        details: {text: `Missing required property '${p}', ${exp}`}
+      }];
+    }
+
+    return (this as any)[p].doModelValidation(exp+'.'+p);
   }
 
   /**
@@ -292,29 +332,35 @@ export class FhirBase {
     vsN:string,
     vsV:Readonly<string[]>,
     vsS:Readonly<string>):FtsIssue[] {
-    if ((this as any)[p]) {
-      if (Array.isArray((this as any)[p])) {
-        return [{
-          severity: 'error',
-          code: 'structure',
-          details: {text: `Found array in scalar property ${p} (${exp})`}
-        }];
-      }
-      let iss:FtsIssue[] = [];
-      iss.push(...(this as any)[p].doModelValidation(exp+'.'+p));
-      if (!(this as any)[p].hasCodingFromValidationObj(vsV)) {
-        iss.push({
-          severity: (vsS === 'r') ? 'error' : 'information', 
-          code:'code-invalid', 
-          details:{text:`${p} (${exp}) does not contain code from bound value set ${vsN}`}});
-      }
-      return iss;
-    };
-    return [{
-      severity: 'error',
-      code: 'required',
-      details: {text: `Missing required property '${p}', ${exp}`}
-    }];
+
+    if (((this as any)[p] === undefined) || 
+        ((this as any)[p] === null) ||
+        ((this as any)[p] === '') ||
+        (Number.isNaN((this as any)[p]))) {
+      return [{
+        severity: 'error',
+        code: 'required',
+        details: {text: `Missing required property '${p}', ${exp}`}
+      }];
+    }
+
+    if (Array.isArray((this as any)[p])) {
+      return [{
+        severity: 'error',
+        code: 'structure',
+        details: {text: `Found array in scalar property ${p} (${exp})`}
+      }];
+    }
+
+    let iss:FtsIssue[] = [];
+    iss.push(...(this as any)[p].doModelValidation(exp+'.'+p));
+    if (!(this as any)[p].hasCodingFromValidationObj(vsV)) {
+      iss.push({
+        severity: (vsS === 'r') ? 'error' : 'information', 
+        code:'code-invalid', 
+        details:{text:`${p} (${exp}) does not contain code from bound value set ${vsN}`}});
+    }
+    return iss;
   }
   
   /**
@@ -324,30 +370,36 @@ export class FhirBase {
    * @returns 
    */
   public vRA(p:Readonly<string>, exp:Readonly<string>):FtsIssue[] {
-    if ((this as any)[p]) {
-      let iss:FtsIssue[] = [];
-      if (!Array.isArray((this as any)[p])) {
-        return [{
-          severity: 'error',
-          code: 'structure',
-          details: {text: `Found scalar in array property ${p} (${exp})`}
-        }];
-      }
-      if ((this as any)[p].length === 0) {
-        return [{
-          severity: 'error',
-          code: 'required',
-          details: {text: `Missing required property '${p}', ${exp}`}
-        }];
-      }
-      (this as any)[p].forEach((x:any,i:number) => {iss.push(...x.doModelValidation(`${exp}.${p}[${i}]`))} );
-      return iss;
+    if (((this as any)[p] === undefined) || 
+        ((this as any)[p] === null) ||
+        ((this as any)[p] === '') ||
+        (Number.isNaN((this as any)[p]))) {
+      return [{
+        severity: 'error',
+        code: 'required',
+        details: {text: `Missing required property '${p}', ${exp}`}
+      }];
     }
-    return [{
-      severity: 'error',
-      code: 'required',
-      details: {text: `Missing required property '${p}', ${exp}`}
-    }];
+
+    if (!Array.isArray((this as any)[p])) {
+      return [{
+        severity: 'error',
+        code: 'structure',
+        details: {text: `Found scalar in array property ${p} (${exp})`}
+      }];
+    }
+
+    if ((this as any)[p].length === 0) {
+      return [{
+        severity: 'error',
+        code: 'required',
+        details: {text: `Missing required property '${p}', ${exp}`}
+      }];
+    }
+
+    let iss:FtsIssue[] = [];
+    (this as any)[p].forEach((x:any,i:number) => {iss.push(...x.doModelValidation(`${exp}.${p}[${i}]`))} );
+    return iss;
   }
 
   /**
@@ -365,31 +417,111 @@ export class FhirBase {
     vsN:string,
     vsV:Readonly<string[]>,
     vsS:Readonly<string>):FtsIssue[] {
-    if ((this as any)[p]) {
-      let iss:FtsIssue[] = [];
-      if (!Array.isArray((this as any)[p])) {
-        return [{
-          severity: 'error',
-          code: 'structure',
-          details: {text: `Found scalar in array property ${p} (${exp})`}
-        }];
-      }
-      (this as any)[p].forEach((x:any,i:number) => {
-        iss.push(...x.doModelValidation(`${exp}.${p}[${i}]`));
-        if (!(this as any)[p].hasCodingFromValidationObj(vsV)) {
-          iss.push({
-            severity: (vsS === 'r') ? 'error' : 'information', 
-            code:'code-invalid', 
-            details:{text:`${p} (${exp}) does not contain code from bound value set ${vsN}`}});
-        }
-      });
-      return iss;
+
+    if (((this as any)[p] === undefined) || 
+        ((this as any)[p] === null) ||
+        ((this as any)[p] === '') ||
+        (Number.isNaN((this as any)[p]))) {
+      return [{
+        severity: 'error',
+        code: 'required',
+        details: {text: `Missing required property '${p}', ${exp}`}
+      }];
     }
-    return [{
-      severity: 'error',
-      code: 'required',
-      details: {text: `Missing required property '${p}', ${exp}`}
-    }];
+
+    if (!Array.isArray((this as any)[p])) {
+      return [{
+        severity: 'error',
+        code: 'structure',
+        details: {text: `Found scalar in array property ${p} (${exp})`}
+      }];
+    }
+
+    if ((this as any)[p].length === 0) {
+      return [{
+        severity: 'error',
+        code: 'required',
+        details: {text: `Missing required property '${p}', ${exp}`}
+      }];
+    }
+
+    let iss:FtsIssue[] = [];
+    (this as any)[p].forEach((x:any,i:number) => {
+      iss.push(...x.doModelValidation(`${exp}.${p}[${i}]`));
+      if (!(this as any)[p].hasCodingFromValidationObj(vsV)) {
+        iss.push({
+          severity: (vsS === 'r') ? 'error' : 'information', 
+          code:'code-invalid', 
+          details:{text:`${p} (${exp}) does not contain code from bound value set ${vsN}`}});
+      }
+    });
+    return iss;
+  }
+
+  /**
+   * Validate a Required Primitive Scalar element
+   * @param p 
+   * @param exp 
+   * @returns 
+   */
+  public vRPS(p:Readonly<string>, exp:Readonly<string>):FtsIssue[] {
+    if (((this as any)[p] === undefined) || 
+        ((this as any)[p] === null) ||
+        ((this as any)[p] === '') ||
+        (Number.isNaN((this as any)[p]))) {
+      return [{
+        severity: 'error',
+        code: 'required',
+        details: {text: `Missing required property '${p}', ${exp}`}
+      }];
+    }
+
+    if (Array.isArray((this as any)[p])) {
+      return [{
+        severity: 'error',
+        code: 'structure',
+        details: {text: `Found array in scalar property ${p} (${exp})`}
+      }];
+    }
+
+    return [];
+  }
+
+  /**
+   * Validate a Required Array element
+   * @param p 
+   * @param exp 
+   * @returns 
+   */
+  public vRPA(p:Readonly<string>, exp:Readonly<string>):FtsIssue[] {
+    if (((this as any)[p] === undefined) || 
+        ((this as any)[p] === null) ||
+        ((this as any)[p] === '') ||
+        (Number.isNaN((this as any)[p]))) {
+      return [{
+        severity: 'error',
+        code: 'required',
+        details: {text: `Missing required property '${p}', ${exp}`}
+      }];
+    }
+
+    if (!Array.isArray((this as any)[p])) {
+      return [{
+        severity: 'error',
+        code: 'structure',
+        details: {text: `Found scalar in array property ${p} (${exp})`}
+      }];
+    }
+
+    if ((this as any)[p].length === 0) {
+      return [{
+        severity: 'error',
+        code: 'required',
+        details: {text: `Missing required property '${p}', ${exp}`}
+      }];
+    }
+
+    return [];
   }
 
   /**

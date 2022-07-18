@@ -81,12 +81,12 @@ export class ResearchStudyArm extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'ResearchStudy.arm' }
-    this.vRS('name',exp)
-    this.vOS('code',exp)
-    this.vOS('description',exp)
-    return issues;
+    iss.push(...this.vRS('name',exp));
+    iss.push(...this.vOS('code',exp));
+    iss.push(...this.vOS('description',exp));
+    return iss;
   }
 }
 /**
@@ -340,29 +340,29 @@ export class ResearchStudy extends fhir.DomainResource {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'ResearchStudy' }
-    this.vRS('resourceType',exp)
-    this.vOA('identifier',exp)
-    this.vOS('title',exp)
-    this.vOA('protocol',exp)
-    this.vOA('partOf',exp)
-    this.vRSV('status',exp,'ResearchStudyStatus',ResearchStudyStatusVsValidation,'r')
-    this.vOA('category',exp)
-    this.vOA('focus',exp)
-    this.vOA('contact',exp)
-    this.vOA('relatedArtifact',exp)
-    this.vOA('keyword',exp)
-    this.vOA('jurisdiction',exp)
-    this.vOS('description',exp)
-    this.vOA('enrollment',exp)
-    this.vOS('period',exp)
-    this.vOS('sponsor',exp)
-    this.vOS('principalInvestigator',exp)
-    this.vOA('site',exp)
-    this.vOS('reasonStopped',exp)
-    this.vOA('note',exp)
-    this.vOA('arm',exp)
-    return issues;
+    iss.push(...this.vRPS('resourceType',exp));
+    iss.push(...this.vOA('identifier',exp));
+    iss.push(...this.vOS('title',exp));
+    iss.push(...this.vOA('protocol',exp));
+    iss.push(...this.vOA('partOf',exp));
+    iss.push(...this.vRSV('status',exp,'ResearchStudyStatus',ResearchStudyStatusVsValidation,'r'));
+    iss.push(...this.vOA('category',exp));
+    iss.push(...this.vOA('focus',exp));
+    iss.push(...this.vOA('contact',exp));
+    iss.push(...this.vOA('relatedArtifact',exp));
+    iss.push(...this.vOA('keyword',exp));
+    iss.push(...this.vOA('jurisdiction',exp));
+    iss.push(...this.vOS('description',exp));
+    iss.push(...this.vOA('enrollment',exp));
+    iss.push(...this.vOS('period',exp));
+    iss.push(...this.vOS('sponsor',exp));
+    iss.push(...this.vOS('principalInvestigator',exp));
+    iss.push(...this.vOA('site',exp));
+    iss.push(...this.vOS('reasonStopped',exp));
+    iss.push(...this.vOA('note',exp));
+    iss.push(...this.vOA('arm',exp));
+    return iss;
   }
 }

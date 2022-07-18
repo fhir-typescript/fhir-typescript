@@ -142,17 +142,17 @@ export class BodyStructure extends fhir.DomainResource {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'BodyStructure' }
-    this.vRS('resourceType',exp)
-    this.vOA('identifier',exp)
-    this.vOS('active',exp)
-    this.vOS('morphology',exp)
-    this.vOS('location',exp)
-    this.vOA('locationQualifier',exp)
-    this.vOS('description',exp)
-    this.vOA('image',exp)
-    this.vRS('patient',exp)
-    return issues;
+    iss.push(...this.vRPS('resourceType',exp));
+    iss.push(...this.vOA('identifier',exp));
+    iss.push(...this.vOS('active',exp));
+    iss.push(...this.vOS('morphology',exp));
+    iss.push(...this.vOS('location',exp));
+    iss.push(...this.vOA('locationQualifier',exp));
+    iss.push(...this.vOS('description',exp));
+    iss.push(...this.vOA('image',exp));
+    iss.push(...this.vRS('patient',exp));
+    return iss;
   }
 }

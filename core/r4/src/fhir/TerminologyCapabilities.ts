@@ -76,11 +76,11 @@ export class TerminologyCapabilitiesSoftware extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'TerminologyCapabilities.software' }
-    this.vRS('name',exp)
-    this.vOS('version',exp)
-    return issues;
+    iss.push(...this.vRS('name',exp));
+    iss.push(...this.vOS('version',exp));
+    return iss;
   }
 }
 /**
@@ -142,11 +142,11 @@ export class TerminologyCapabilitiesImplementation extends fhir.BackboneElement 
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'TerminologyCapabilities.implementation' }
-    this.vRS('description',exp)
-    this.vOS('url',exp)
-    return issues;
+    iss.push(...this.vRS('description',exp));
+    iss.push(...this.vOS('url',exp));
+    return iss;
   }
 }
 /**
@@ -211,11 +211,11 @@ export class TerminologyCapabilitiesCodeSystemVersionFilter extends fhir.Backbon
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'TerminologyCapabilities.codeSystem.version.filter' }
-    this.vRS('code',exp)
-    this.vRA('op',exp)
-    return issues;
+    iss.push(...this.vRS('code',exp));
+    iss.push(...this.vRA('op',exp));
+    return iss;
   }
 }
 /**
@@ -343,15 +343,15 @@ export class TerminologyCapabilitiesCodeSystemVersion extends fhir.BackboneEleme
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'TerminologyCapabilities.codeSystem.version' }
-    this.vOS('code',exp)
-    this.vOS('isDefault',exp)
-    this.vOS('compositional',exp)
-    this.vOA('language',exp)
-    this.vOA('filter',exp)
-    this.vOA('property',exp)
-    return issues;
+    iss.push(...this.vOS('code',exp));
+    iss.push(...this.vOS('isDefault',exp));
+    iss.push(...this.vOS('compositional',exp));
+    iss.push(...this.vOA('language',exp));
+    iss.push(...this.vOA('filter',exp));
+    iss.push(...this.vOA('property',exp));
+    return iss;
   }
 }
 /**
@@ -422,12 +422,12 @@ export class TerminologyCapabilitiesCodeSystem extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'TerminologyCapabilities.codeSystem' }
-    this.vOS('uri',exp)
-    this.vOA('version',exp)
-    this.vOS('subsumption',exp)
-    return issues;
+    iss.push(...this.vOS('uri',exp));
+    iss.push(...this.vOA('version',exp));
+    iss.push(...this.vOS('subsumption',exp));
+    return iss;
   }
 }
 /**
@@ -489,11 +489,11 @@ export class TerminologyCapabilitiesExpansionParameter extends fhir.BackboneElem
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'TerminologyCapabilities.expansion.parameter' }
-    this.vRS('name',exp)
-    this.vOS('documentation',exp)
-    return issues;
+    iss.push(...this.vRS('name',exp));
+    iss.push(...this.vOS('documentation',exp));
+    return iss;
   }
 }
 /**
@@ -598,14 +598,14 @@ export class TerminologyCapabilitiesExpansion extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'TerminologyCapabilities.expansion' }
-    this.vOS('hierarchical',exp)
-    this.vOS('paging',exp)
-    this.vOS('incomplete',exp)
-    this.vOA('parameter',exp)
-    this.vOS('textFilter',exp)
-    return issues;
+    iss.push(...this.vOS('hierarchical',exp));
+    iss.push(...this.vOS('paging',exp));
+    iss.push(...this.vOS('incomplete',exp));
+    iss.push(...this.vOA('parameter',exp));
+    iss.push(...this.vOS('textFilter',exp));
+    return iss;
   }
 }
 /**
@@ -650,10 +650,10 @@ export class TerminologyCapabilitiesValidateCode extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'TerminologyCapabilities.validateCode' }
-    this.vRS('translations',exp)
-    return issues;
+    iss.push(...this.vRS('translations',exp));
+    return iss;
   }
 }
 /**
@@ -698,10 +698,10 @@ export class TerminologyCapabilitiesTranslation extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'TerminologyCapabilities.translation' }
-    this.vRS('needsMap',exp)
-    return issues;
+    iss.push(...this.vRS('needsMap',exp));
+    return iss;
   }
 }
 /**
@@ -745,10 +745,10 @@ export class TerminologyCapabilitiesClosure extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'TerminologyCapabilities.closure' }
-    this.vOS('translation',exp)
-    return issues;
+    iss.push(...this.vOS('translation',exp));
+    return iss;
   }
 }
 /**
@@ -1123,33 +1123,33 @@ export class TerminologyCapabilities extends fhir.DomainResource {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'TerminologyCapabilities' }
-    this.vRS('resourceType',exp)
-    this.vOS('url',exp)
-    this.vOS('version',exp)
-    this.vOS('name',exp)
-    this.vOS('title',exp)
-    this.vRSV('status',exp,'PublicationStatus',PublicationStatusVsValidation,'r')
-    this.vOS('experimental',exp)
-    this.vRS('date',exp)
-    this.vOS('publisher',exp)
-    this.vOA('contact',exp)
-    this.vOS('description',exp)
-    this.vOA('useContext',exp)
-    this.vOA('jurisdiction',exp)
-    this.vOS('purpose',exp)
-    this.vOS('copyright',exp)
-    this.vRSV('kind',exp,'CapabilityStatementKind',CapabilityStatementKindVsValidation,'r')
-    this.vOS('software',exp)
-    this.vOS('implementation',exp)
-    this.vOS('lockedDate',exp)
-    this.vOA('codeSystem',exp)
-    this.vOS('expansion',exp)
-    this.vOSV('codeSearch',exp,'CodeSearchSupport',CodeSearchSupportVsValidation,'r')
-    this.vOS('validateCode',exp)
-    this.vOS('translation',exp)
-    this.vOS('closure',exp)
-    return issues;
+    iss.push(...this.vRPS('resourceType',exp));
+    iss.push(...this.vOS('url',exp));
+    iss.push(...this.vOS('version',exp));
+    iss.push(...this.vOS('name',exp));
+    iss.push(...this.vOS('title',exp));
+    iss.push(...this.vRSV('status',exp,'PublicationStatus',PublicationStatusVsValidation,'r'));
+    iss.push(...this.vOS('experimental',exp));
+    iss.push(...this.vRS('date',exp));
+    iss.push(...this.vOS('publisher',exp));
+    iss.push(...this.vOA('contact',exp));
+    iss.push(...this.vOS('description',exp));
+    iss.push(...this.vOA('useContext',exp));
+    iss.push(...this.vOA('jurisdiction',exp));
+    iss.push(...this.vOS('purpose',exp));
+    iss.push(...this.vOS('copyright',exp));
+    iss.push(...this.vRSV('kind',exp,'CapabilityStatementKind',CapabilityStatementKindVsValidation,'r'));
+    iss.push(...this.vOS('software',exp));
+    iss.push(...this.vOS('implementation',exp));
+    iss.push(...this.vOS('lockedDate',exp));
+    iss.push(...this.vOA('codeSystem',exp));
+    iss.push(...this.vOS('expansion',exp));
+    iss.push(...this.vOSV('codeSearch',exp,'CodeSearchSupport',CodeSearchSupportVsValidation,'r'));
+    iss.push(...this.vOS('validateCode',exp));
+    iss.push(...this.vOS('translation',exp));
+    iss.push(...this.vOS('closure',exp));
+    return iss;
   }
 }

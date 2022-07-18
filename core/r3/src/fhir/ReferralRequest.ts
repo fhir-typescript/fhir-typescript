@@ -76,11 +76,11 @@ export class ReferralRequestRequester extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'ReferralRequest.requester' }
-    this.vRS('agent',exp)
-    this.vOS('onBehalfOf',exp)
-    return issues;
+    iss.push(...this.vRS('agent',exp));
+    iss.push(...this.vOS('onBehalfOf',exp));
+    return iss;
   }
 }
 /**
@@ -391,32 +391,32 @@ export class ReferralRequest extends fhir.DomainResource {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'ReferralRequest' }
-    this.vRS('resourceType',exp)
-    this.vOA('identifier',exp)
-    this.vOA('definition',exp)
-    this.vOA('basedOn',exp)
-    this.vOA('replaces',exp)
-    this.vOS('groupIdentifier',exp)
-    this.vRSV('status',exp,'RequestStatus',RequestStatusVsValidation,'r')
-    this.vRSV('intent',exp,'RequestIntent',RequestIntentVsValidation,'r')
-    this.vOS('type',exp)
-    this.vOSV('priority',exp,'RequestPriority',RequestPriorityVsValidation,'r')
-    this.vOA('serviceRequested',exp)
-    this.vRS('subject',exp)
-    this.vOS('context',exp)
-    this.vOS('occurrence',exp)
-    this.vOS('authoredOn',exp)
-    this.vOS('requester',exp)
-    this.vOS('specialty',exp)
-    this.vOA('recipient',exp)
-    this.vOA('reasonCode',exp)
-    this.vOA('reasonReference',exp)
-    this.vOS('description',exp)
-    this.vOA('supportingInfo',exp)
-    this.vOA('note',exp)
-    this.vOA('relevantHistory',exp)
-    return issues;
+    iss.push(...this.vRPS('resourceType',exp));
+    iss.push(...this.vOA('identifier',exp));
+    iss.push(...this.vOA('definition',exp));
+    iss.push(...this.vOA('basedOn',exp));
+    iss.push(...this.vOA('replaces',exp));
+    iss.push(...this.vOS('groupIdentifier',exp));
+    iss.push(...this.vRSV('status',exp,'RequestStatus',RequestStatusVsValidation,'r'));
+    iss.push(...this.vRSV('intent',exp,'RequestIntent',RequestIntentVsValidation,'r'));
+    iss.push(...this.vOS('type',exp));
+    iss.push(...this.vOSV('priority',exp,'RequestPriority',RequestPriorityVsValidation,'r'));
+    iss.push(...this.vOA('serviceRequested',exp));
+    iss.push(...this.vRS('subject',exp));
+    iss.push(...this.vOS('context',exp));
+    iss.push(...this.vOS('occurrence',exp));
+    iss.push(...this.vOS('authoredOn',exp));
+    iss.push(...this.vOS('requester',exp));
+    iss.push(...this.vOS('specialty',exp));
+    iss.push(...this.vOA('recipient',exp));
+    iss.push(...this.vOA('reasonCode',exp));
+    iss.push(...this.vOA('reasonReference',exp));
+    iss.push(...this.vOS('description',exp));
+    iss.push(...this.vOA('supportingInfo',exp));
+    iss.push(...this.vOA('note',exp));
+    iss.push(...this.vOA('relevantHistory',exp));
+    return iss;
   }
 }

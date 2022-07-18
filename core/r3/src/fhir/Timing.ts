@@ -320,24 +320,24 @@ export class TimingRepeat extends fhir.FhirElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'Timing.repeat' }
-    this.vOS('bounds',exp)
-    this.vOS('count',exp)
-    this.vOS('countMax',exp)
-    this.vOS('duration',exp)
-    this.vOS('durationMax',exp)
-    this.vOSV('durationUnit',exp,'UnitsOfTime',UnitsOfTimeVsValidation,'r')
-    this.vOS('frequency',exp)
-    this.vOS('frequencyMax',exp)
-    this.vOS('period',exp)
-    this.vOS('periodMax',exp)
-    this.vOSV('periodUnit',exp,'UnitsOfTime',UnitsOfTimeVsValidation,'r')
-    this.vOAV('dayOfWeek',exp,'DaysOfWeek',DaysOfWeekVsValidation,'r')
-    this.vOA('timeOfDay',exp)
-    this.vOAV('when',exp,'EventTiming',EventTimingVsValidation,'r')
-    this.vOS('offset',exp)
-    return issues;
+    iss.push(...this.vOS('bounds',exp));
+    iss.push(...this.vOS('count',exp));
+    iss.push(...this.vOS('countMax',exp));
+    iss.push(...this.vOS('duration',exp));
+    iss.push(...this.vOS('durationMax',exp));
+    iss.push(...this.vOSV('durationUnit',exp,'UnitsOfTime',UnitsOfTimeVsValidation,'r'));
+    iss.push(...this.vOS('frequency',exp));
+    iss.push(...this.vOS('frequencyMax',exp));
+    iss.push(...this.vOS('period',exp));
+    iss.push(...this.vOS('periodMax',exp));
+    iss.push(...this.vOSV('periodUnit',exp,'UnitsOfTime',UnitsOfTimeVsValidation,'r'));
+    iss.push(...this.vOAV('dayOfWeek',exp,'DaysOfWeek',DaysOfWeekVsValidation,'r'));
+    iss.push(...this.vOA('timeOfDay',exp));
+    iss.push(...this.vOAV('when',exp,'EventTiming',EventTimingVsValidation,'r'));
+    iss.push(...this.vOS('offset',exp));
+    return iss;
   }
 }
 /**
@@ -402,11 +402,11 @@ export class Timing extends fhir.FhirElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'Timing' }
-    this.vOA('event',exp)
-    this.vOS('repeat',exp)
-    this.vOS('code',exp)
-    return issues;
+    iss.push(...this.vOA('event',exp));
+    iss.push(...this.vOS('repeat',exp));
+    iss.push(...this.vOS('code',exp));
+    return iss;
   }
 }

@@ -76,11 +76,11 @@ export class IngredientManufacturer extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'Ingredient.manufacturer' }
-    this.vOSV('role',exp,'IngredientManufacturerRole',IngredientManufacturerRoleVsValidation,'r')
-    this.vRS('manufacturer',exp)
-    return issues;
+    iss.push(...this.vOSV('role',exp,'IngredientManufacturerRole',IngredientManufacturerRoleVsValidation,'r'));
+    iss.push(...this.vRS('manufacturer',exp));
+    return iss;
   }
 }
 /**
@@ -167,13 +167,13 @@ export class IngredientSubstanceStrengthReferenceStrength extends fhir.BackboneE
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'Ingredient.substance.strength.referenceStrength' }
-    this.vOS('substance',exp)
-    this.vRS('strength',exp)
-    this.vOS('measurementPoint',exp)
-    this.vOA('country',exp)
-    return issues;
+    iss.push(...this.vOS('substance',exp));
+    iss.push(...this.vRS('strength',exp));
+    iss.push(...this.vOS('measurementPoint',exp));
+    iss.push(...this.vOA('country',exp));
+    return iss;
   }
 }
 /**
@@ -317,16 +317,16 @@ export class IngredientSubstanceStrength extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'Ingredient.substance.strength' }
-    this.vOS('presentation',exp)
-    this.vOS('textPresentation',exp)
-    this.vOS('concentration',exp)
-    this.vOS('textConcentration',exp)
-    this.vOS('measurementPoint',exp)
-    this.vOA('country',exp)
-    this.vOA('referenceStrength',exp)
-    return issues;
+    iss.push(...this.vOS('presentation',exp));
+    iss.push(...this.vOS('textPresentation',exp));
+    iss.push(...this.vOS('concentration',exp));
+    iss.push(...this.vOS('textConcentration',exp));
+    iss.push(...this.vOS('measurementPoint',exp));
+    iss.push(...this.vOA('country',exp));
+    iss.push(...this.vOA('referenceStrength',exp));
+    return iss;
   }
 }
 /**
@@ -373,11 +373,11 @@ export class IngredientSubstance extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'Ingredient.substance' }
-    this.vRS('code',exp)
-    this.vOA('strength',exp)
-    return issues;
+    iss.push(...this.vRS('code',exp));
+    iss.push(...this.vOA('strength',exp));
+    return iss;
   }
 }
 /**
@@ -507,17 +507,17 @@ export class Ingredient extends fhir.DomainResource {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'Ingredient' }
-    this.vRS('resourceType',exp)
-    this.vOS('identifier',exp)
-    this.vRSV('status',exp,'PublicationStatus',PublicationStatusVsValidation,'r')
-    this.vOA('for',exp)
-    this.vRS('role',exp)
-    this.vOA('function',exp)
-    this.vOS('allergenicIndicator',exp)
-    this.vOA('manufacturer',exp)
-    this.vRS('substance',exp)
-    return issues;
+    iss.push(...this.vRPS('resourceType',exp));
+    iss.push(...this.vOS('identifier',exp));
+    iss.push(...this.vRSV('status',exp,'PublicationStatus',PublicationStatusVsValidation,'r'));
+    iss.push(...this.vOA('for',exp));
+    iss.push(...this.vRS('role',exp));
+    iss.push(...this.vOA('function',exp));
+    iss.push(...this.vOS('allergenicIndicator',exp));
+    iss.push(...this.vOA('manufacturer',exp));
+    iss.push(...this.vRS('substance',exp));
+    return iss;
   }
 }

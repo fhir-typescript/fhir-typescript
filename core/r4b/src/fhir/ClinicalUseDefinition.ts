@@ -113,11 +113,11 @@ export class ClinicalUseDefinitionContraindicationOtherTherapy extends fhir.Back
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'ClinicalUseDefinition.contraindication.otherTherapy' }
-    this.vRS('relationshipType',exp)
-    this.vRS('therapy',exp)
-    return issues;
+    iss.push(...this.vRS('relationshipType',exp));
+    iss.push(...this.vRS('therapy',exp));
+    return iss;
   }
 }
 /**
@@ -192,14 +192,14 @@ export class ClinicalUseDefinitionContraindication extends fhir.BackboneElement 
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'ClinicalUseDefinition.contraindication' }
-    this.vOS('diseaseSymptomProcedure',exp)
-    this.vOS('diseaseStatus',exp)
-    this.vOA('comorbidity',exp)
-    this.vOA('indication',exp)
-    this.vOA('otherTherapy',exp)
-    return issues;
+    iss.push(...this.vOS('diseaseSymptomProcedure',exp));
+    iss.push(...this.vOS('diseaseStatus',exp));
+    iss.push(...this.vOA('comorbidity',exp));
+    iss.push(...this.vOA('indication',exp));
+    iss.push(...this.vOA('otherTherapy',exp));
+    return iss;
   }
 }
 /**
@@ -306,16 +306,16 @@ export class ClinicalUseDefinitionIndication extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'ClinicalUseDefinition.indication' }
-    this.vOS('diseaseSymptomProcedure',exp)
-    this.vOS('diseaseStatus',exp)
-    this.vOA('comorbidity',exp)
-    this.vOS('intendedEffect',exp)
-    this.vOS('duration',exp)
-    this.vOA('undesirableEffect',exp)
-    this.vOA('otherTherapy',exp)
-    return issues;
+    iss.push(...this.vOS('diseaseSymptomProcedure',exp));
+    iss.push(...this.vOS('diseaseStatus',exp));
+    iss.push(...this.vOA('comorbidity',exp));
+    iss.push(...this.vOS('intendedEffect',exp));
+    iss.push(...this.vOS('duration',exp));
+    iss.push(...this.vOA('undesirableEffect',exp));
+    iss.push(...this.vOA('otherTherapy',exp));
+    return iss;
   }
 }
 /**
@@ -366,10 +366,10 @@ export class ClinicalUseDefinitionInteractionInteractant extends fhir.BackboneEl
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'ClinicalUseDefinition.interaction.interactant' }
-    this.vRS('item',exp)
-    return issues;
+    iss.push(...this.vRS('item',exp));
+    return iss;
   }
 }
 /**
@@ -443,14 +443,14 @@ export class ClinicalUseDefinitionInteraction extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'ClinicalUseDefinition.interaction' }
-    this.vOA('interactant',exp)
-    this.vOS('type',exp)
-    this.vOS('effect',exp)
-    this.vOS('incidence',exp)
-    this.vOA('management',exp)
-    return issues;
+    iss.push(...this.vOA('interactant',exp));
+    iss.push(...this.vOS('type',exp));
+    iss.push(...this.vOS('effect',exp));
+    iss.push(...this.vOS('incidence',exp));
+    iss.push(...this.vOA('management',exp));
+    return iss;
   }
 }
 /**
@@ -504,12 +504,12 @@ export class ClinicalUseDefinitionUndesirableEffect extends fhir.BackboneElement
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'ClinicalUseDefinition.undesirableEffect' }
-    this.vOS('symptomConditionEffect',exp)
-    this.vOS('classification',exp)
-    this.vOS('frequencyOfOccurrence',exp)
-    return issues;
+    iss.push(...this.vOS('symptomConditionEffect',exp));
+    iss.push(...this.vOS('classification',exp));
+    iss.push(...this.vOS('frequencyOfOccurrence',exp));
+    return iss;
   }
 }
 /**
@@ -562,11 +562,11 @@ export class ClinicalUseDefinitionWarning extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'ClinicalUseDefinition.warning' }
-    this.vOS('description',exp)
-    this.vOS('code',exp)
-    return issues;
+    iss.push(...this.vOS('description',exp));
+    iss.push(...this.vOS('code',exp));
+    return iss;
   }
 }
 /**
@@ -714,20 +714,20 @@ export class ClinicalUseDefinition extends fhir.DomainResource {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'ClinicalUseDefinition' }
-    this.vRS('resourceType',exp)
-    this.vOA('identifier',exp)
-    this.vRSV('type',exp,'ClinicalUseDefinitionType',ClinicalUseDefinitionTypeVsValidation,'r')
-    this.vOA('category',exp)
-    this.vOA('subject',exp)
-    this.vOS('status',exp)
-    this.vOS('contraindication',exp)
-    this.vOS('indication',exp)
-    this.vOS('interaction',exp)
-    this.vOA('population',exp)
-    this.vOS('undesirableEffect',exp)
-    this.vOS('warning',exp)
-    return issues;
+    iss.push(...this.vRPS('resourceType',exp));
+    iss.push(...this.vOA('identifier',exp));
+    iss.push(...this.vRSV('type',exp,'ClinicalUseDefinitionType',ClinicalUseDefinitionTypeVsValidation,'r'));
+    iss.push(...this.vOA('category',exp));
+    iss.push(...this.vOA('subject',exp));
+    iss.push(...this.vOS('status',exp));
+    iss.push(...this.vOS('contraindication',exp));
+    iss.push(...this.vOS('indication',exp));
+    iss.push(...this.vOS('interaction',exp));
+    iss.push(...this.vOA('population',exp));
+    iss.push(...this.vOS('undesirableEffect',exp));
+    iss.push(...this.vOS('warning',exp));
+    return iss;
   }
 }

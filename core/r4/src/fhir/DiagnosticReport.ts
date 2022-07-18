@@ -72,11 +72,11 @@ export class DiagnosticReportMedia extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'DiagnosticReport.media' }
-    this.vOS('comment',exp)
-    this.vRS('link',exp)
-    return issues;
+    iss.push(...this.vOS('comment',exp));
+    iss.push(...this.vRS('link',exp));
+    return iss;
   }
 }
 /**
@@ -325,27 +325,27 @@ export class DiagnosticReport extends fhir.DomainResource {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'DiagnosticReport' }
-    this.vRS('resourceType',exp)
-    this.vOA('identifier',exp)
-    this.vOA('basedOn',exp)
-    this.vRSV('status',exp,'DiagnosticReportStatus',DiagnosticReportStatusVsValidation,'r')
-    this.vOA('category',exp)
-    this.vRS('code',exp)
-    this.vOS('subject',exp)
-    this.vOS('encounter',exp)
-    this.vOS('effective',exp)
-    this.vOS('issued',exp)
-    this.vOA('performer',exp)
-    this.vOA('resultsInterpreter',exp)
-    this.vOA('specimen',exp)
-    this.vOA('result',exp)
-    this.vOA('imagingStudy',exp)
-    this.vOA('media',exp)
-    this.vOS('conclusion',exp)
-    this.vOA('conclusionCode',exp)
-    this.vOA('presentedForm',exp)
-    return issues;
+    iss.push(...this.vRPS('resourceType',exp));
+    iss.push(...this.vOA('identifier',exp));
+    iss.push(...this.vOA('basedOn',exp));
+    iss.push(...this.vRSV('status',exp,'DiagnosticReportStatus',DiagnosticReportStatusVsValidation,'r'));
+    iss.push(...this.vOA('category',exp));
+    iss.push(...this.vRS('code',exp));
+    iss.push(...this.vOS('subject',exp));
+    iss.push(...this.vOS('encounter',exp));
+    iss.push(...this.vOS('effective',exp));
+    iss.push(...this.vOS('issued',exp));
+    iss.push(...this.vOA('performer',exp));
+    iss.push(...this.vOA('resultsInterpreter',exp));
+    iss.push(...this.vOA('specimen',exp));
+    iss.push(...this.vOA('result',exp));
+    iss.push(...this.vOA('imagingStudy',exp));
+    iss.push(...this.vOA('media',exp));
+    iss.push(...this.vOS('conclusion',exp));
+    iss.push(...this.vOA('conclusionCode',exp));
+    iss.push(...this.vOA('presentedForm',exp));
+    return iss;
   }
 }

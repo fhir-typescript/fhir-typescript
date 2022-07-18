@@ -98,12 +98,12 @@ export class ChargeItemDefinitionApplicability extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'ChargeItemDefinition.applicability' }
-    this.vOS('description',exp)
-    this.vOS('language',exp)
-    this.vOS('expression',exp)
-    return issues;
+    iss.push(...this.vOS('description',exp));
+    iss.push(...this.vOS('language',exp));
+    iss.push(...this.vOS('expression',exp));
+    return iss;
   }
 }
 /**
@@ -183,13 +183,13 @@ export class ChargeItemDefinitionPropertyGroupPriceComponent extends fhir.Backbo
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'ChargeItemDefinition.propertyGroup.priceComponent' }
-    this.vRSV('type',exp,'InvoicePriceComponentType',InvoicePriceComponentTypeVsValidation,'r')
-    this.vOS('code',exp)
-    this.vOS('factor',exp)
-    this.vOS('amount',exp)
-    return issues;
+    iss.push(...this.vRSV('type',exp,'InvoicePriceComponentType',InvoicePriceComponentTypeVsValidation,'r'));
+    iss.push(...this.vOS('code',exp));
+    iss.push(...this.vOS('factor',exp));
+    iss.push(...this.vOS('amount',exp));
+    return iss;
   }
 }
 /**
@@ -236,11 +236,11 @@ export class ChargeItemDefinitionPropertyGroup extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'ChargeItemDefinition.propertyGroup' }
-    this.vOA('applicability',exp)
-    this.vOA('priceComponent',exp)
-    return issues;
+    iss.push(...this.vOA('applicability',exp));
+    iss.push(...this.vOA('priceComponent',exp));
+    return iss;
   }
 }
 /**
@@ -617,32 +617,32 @@ export class ChargeItemDefinition extends fhir.DomainResource {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'ChargeItemDefinition' }
-    this.vRS('resourceType',exp)
-    this.vRS('url',exp)
-    this.vOA('identifier',exp)
-    this.vOS('version',exp)
-    this.vOS('title',exp)
-    this.vOA('derivedFromUri',exp)
-    this.vOA('partOf',exp)
-    this.vOA('replaces',exp)
-    this.vRSV('status',exp,'PublicationStatus',PublicationStatusVsValidation,'r')
-    this.vOS('experimental',exp)
-    this.vOS('date',exp)
-    this.vOS('publisher',exp)
-    this.vOA('contact',exp)
-    this.vOS('description',exp)
-    this.vOA('useContext',exp)
-    this.vOA('jurisdiction',exp)
-    this.vOS('copyright',exp)
-    this.vOS('approvalDate',exp)
-    this.vOS('lastReviewDate',exp)
-    this.vOS('effectivePeriod',exp)
-    this.vOS('code',exp)
-    this.vOA('instance',exp)
-    this.vOA('applicability',exp)
-    this.vOA('propertyGroup',exp)
-    return issues;
+    iss.push(...this.vRPS('resourceType',exp));
+    iss.push(...this.vRS('url',exp));
+    iss.push(...this.vOA('identifier',exp));
+    iss.push(...this.vOS('version',exp));
+    iss.push(...this.vOS('title',exp));
+    iss.push(...this.vOA('derivedFromUri',exp));
+    iss.push(...this.vOA('partOf',exp));
+    iss.push(...this.vOA('replaces',exp));
+    iss.push(...this.vRSV('status',exp,'PublicationStatus',PublicationStatusVsValidation,'r'));
+    iss.push(...this.vOS('experimental',exp));
+    iss.push(...this.vOS('date',exp));
+    iss.push(...this.vOS('publisher',exp));
+    iss.push(...this.vOA('contact',exp));
+    iss.push(...this.vOS('description',exp));
+    iss.push(...this.vOA('useContext',exp));
+    iss.push(...this.vOA('jurisdiction',exp));
+    iss.push(...this.vOS('copyright',exp));
+    iss.push(...this.vOS('approvalDate',exp));
+    iss.push(...this.vOS('lastReviewDate',exp));
+    iss.push(...this.vOS('effectivePeriod',exp));
+    iss.push(...this.vOS('code',exp));
+    iss.push(...this.vOA('instance',exp));
+    iss.push(...this.vOA('applicability',exp));
+    iss.push(...this.vOA('propertyGroup',exp));
+    return iss;
   }
 }

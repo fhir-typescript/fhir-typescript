@@ -163,12 +163,12 @@ export class PlanDefinitionGoalTarget extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'PlanDefinition.goal.target' }
-    this.vOS('measure',exp)
-    this.vOS('detail',exp)
-    this.vOS('due',exp)
-    return issues;
+    iss.push(...this.vOS('measure',exp));
+    iss.push(...this.vOS('detail',exp));
+    iss.push(...this.vOS('due',exp));
+    return iss;
   }
 }
 /**
@@ -262,16 +262,16 @@ export class PlanDefinitionGoal extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'PlanDefinition.goal' }
-    this.vOS('category',exp)
-    this.vRS('description',exp)
-    this.vOS('priority',exp)
-    this.vOS('start',exp)
-    this.vOA('addresses',exp)
-    this.vOA('documentation',exp)
-    this.vOA('target',exp)
-    return issues;
+    iss.push(...this.vOS('category',exp));
+    iss.push(...this.vRS('description',exp));
+    iss.push(...this.vOS('priority',exp));
+    iss.push(...this.vOS('start',exp));
+    iss.push(...this.vOA('addresses',exp));
+    iss.push(...this.vOA('documentation',exp));
+    iss.push(...this.vOA('target',exp));
+    return iss;
   }
 }
 /**
@@ -325,11 +325,11 @@ export class PlanDefinitionActionCondition extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'PlanDefinition.action.condition' }
-    this.vRSV('kind',exp,'ActionConditionKind',ActionConditionKindVsValidation,'r')
-    this.vOS('expression',exp)
-    return issues;
+    iss.push(...this.vRSV('kind',exp,'ActionConditionKind',ActionConditionKindVsValidation,'r'));
+    iss.push(...this.vOS('expression',exp));
+    return iss;
   }
 }
 /**
@@ -415,12 +415,12 @@ export class PlanDefinitionActionRelatedAction extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'PlanDefinition.action.relatedAction' }
-    this.vRS('actionId',exp)
-    this.vRSV('relationship',exp,'ActionRelationshipType',ActionRelationshipTypeVsValidation,'r')
-    this.vOS('offset',exp)
-    return issues;
+    iss.push(...this.vRS('actionId',exp));
+    iss.push(...this.vRSV('relationship',exp,'ActionRelationshipType',ActionRelationshipTypeVsValidation,'r'));
+    iss.push(...this.vOS('offset',exp));
+    return iss;
   }
 }
 /**
@@ -474,11 +474,11 @@ export class PlanDefinitionActionParticipant extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'PlanDefinition.action.participant' }
-    this.vRSV('type',exp,'ActionParticipantType',ActionParticipantTypeVsValidation,'r')
-    this.vOS('role',exp)
-    return issues;
+    iss.push(...this.vRSV('type',exp,'ActionParticipantType',ActionParticipantTypeVsValidation,'r'));
+    iss.push(...this.vOS('role',exp));
+    return iss;
   }
 }
 /**
@@ -531,11 +531,11 @@ export class PlanDefinitionActionDynamicValue extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'PlanDefinition.action.dynamicValue' }
-    this.vOS('path',exp)
-    this.vOS('expression',exp)
-    return issues;
+    iss.push(...this.vOS('path',exp));
+    iss.push(...this.vOS('expression',exp));
+    return iss;
   }
 }
 /**
@@ -987,36 +987,36 @@ export class PlanDefinitionAction extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'PlanDefinition.action' }
-    this.vOS('prefix',exp)
-    this.vOS('title',exp)
-    this.vOS('description',exp)
-    this.vOS('textEquivalent',exp)
-    this.vOSV('priority',exp,'RequestPriority',RequestPriorityVsValidation,'r')
-    this.vOA('code',exp)
-    this.vOA('reason',exp)
-    this.vOA('documentation',exp)
-    this.vOA('goalId',exp)
-    this.vOS('subject',exp)
-    this.vOA('trigger',exp)
-    this.vOA('condition',exp)
-    this.vOA('input',exp)
-    this.vOA('output',exp)
-    this.vOA('relatedAction',exp)
-    this.vOS('timing',exp)
-    this.vOA('participant',exp)
-    this.vOS('type',exp)
-    this.vOSV('groupingBehavior',exp,'ActionGroupingBehavior',ActionGroupingBehaviorVsValidation,'r')
-    this.vOSV('selectionBehavior',exp,'ActionSelectionBehavior',ActionSelectionBehaviorVsValidation,'r')
-    this.vOSV('requiredBehavior',exp,'ActionRequiredBehavior',ActionRequiredBehaviorVsValidation,'r')
-    this.vOSV('precheckBehavior',exp,'ActionPrecheckBehavior',ActionPrecheckBehaviorVsValidation,'r')
-    this.vOSV('cardinalityBehavior',exp,'ActionCardinalityBehavior',ActionCardinalityBehaviorVsValidation,'r')
-    this.vOS('definition',exp)
-    this.vOS('transform',exp)
-    this.vOA('dynamicValue',exp)
-    this.vOA('action',exp)
-    return issues;
+    iss.push(...this.vOS('prefix',exp));
+    iss.push(...this.vOS('title',exp));
+    iss.push(...this.vOS('description',exp));
+    iss.push(...this.vOS('textEquivalent',exp));
+    iss.push(...this.vOSV('priority',exp,'RequestPriority',RequestPriorityVsValidation,'r'));
+    iss.push(...this.vOA('code',exp));
+    iss.push(...this.vOA('reason',exp));
+    iss.push(...this.vOA('documentation',exp));
+    iss.push(...this.vOA('goalId',exp));
+    iss.push(...this.vOS('subject',exp));
+    iss.push(...this.vOA('trigger',exp));
+    iss.push(...this.vOA('condition',exp));
+    iss.push(...this.vOA('input',exp));
+    iss.push(...this.vOA('output',exp));
+    iss.push(...this.vOA('relatedAction',exp));
+    iss.push(...this.vOS('timing',exp));
+    iss.push(...this.vOA('participant',exp));
+    iss.push(...this.vOS('type',exp));
+    iss.push(...this.vOSV('groupingBehavior',exp,'ActionGroupingBehavior',ActionGroupingBehaviorVsValidation,'r'));
+    iss.push(...this.vOSV('selectionBehavior',exp,'ActionSelectionBehavior',ActionSelectionBehaviorVsValidation,'r'));
+    iss.push(...this.vOSV('requiredBehavior',exp,'ActionRequiredBehavior',ActionRequiredBehaviorVsValidation,'r'));
+    iss.push(...this.vOSV('precheckBehavior',exp,'ActionPrecheckBehavior',ActionPrecheckBehaviorVsValidation,'r'));
+    iss.push(...this.vOSV('cardinalityBehavior',exp,'ActionCardinalityBehavior',ActionCardinalityBehaviorVsValidation,'r'));
+    iss.push(...this.vOS('definition',exp));
+    iss.push(...this.vOS('transform',exp));
+    iss.push(...this.vOA('dynamicValue',exp));
+    iss.push(...this.vOA('action',exp));
+    return iss;
   }
 }
 /**
@@ -1498,40 +1498,40 @@ export class PlanDefinition extends fhir.DomainResource {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'PlanDefinition' }
-    this.vRS('resourceType',exp)
-    this.vOS('url',exp)
-    this.vOA('identifier',exp)
-    this.vOS('version',exp)
-    this.vOS('name',exp)
-    this.vOS('title',exp)
-    this.vOS('subtitle',exp)
-    this.vOS('type',exp)
-    this.vRSV('status',exp,'PublicationStatus',PublicationStatusVsValidation,'r')
-    this.vOS('experimental',exp)
-    this.vOS('subject',exp)
-    this.vOS('date',exp)
-    this.vOS('publisher',exp)
-    this.vOA('contact',exp)
-    this.vOS('description',exp)
-    this.vOA('useContext',exp)
-    this.vOA('jurisdiction',exp)
-    this.vOS('purpose',exp)
-    this.vOS('usage',exp)
-    this.vOS('copyright',exp)
-    this.vOS('approvalDate',exp)
-    this.vOS('lastReviewDate',exp)
-    this.vOS('effectivePeriod',exp)
-    this.vOA('topic',exp)
-    this.vOA('author',exp)
-    this.vOA('editor',exp)
-    this.vOA('reviewer',exp)
-    this.vOA('endorser',exp)
-    this.vOA('relatedArtifact',exp)
-    this.vOA('library',exp)
-    this.vOA('goal',exp)
-    this.vOA('action',exp)
-    return issues;
+    iss.push(...this.vRPS('resourceType',exp));
+    iss.push(...this.vOS('url',exp));
+    iss.push(...this.vOA('identifier',exp));
+    iss.push(...this.vOS('version',exp));
+    iss.push(...this.vOS('name',exp));
+    iss.push(...this.vOS('title',exp));
+    iss.push(...this.vOS('subtitle',exp));
+    iss.push(...this.vOS('type',exp));
+    iss.push(...this.vRSV('status',exp,'PublicationStatus',PublicationStatusVsValidation,'r'));
+    iss.push(...this.vOS('experimental',exp));
+    iss.push(...this.vOS('subject',exp));
+    iss.push(...this.vOS('date',exp));
+    iss.push(...this.vOS('publisher',exp));
+    iss.push(...this.vOA('contact',exp));
+    iss.push(...this.vOS('description',exp));
+    iss.push(...this.vOA('useContext',exp));
+    iss.push(...this.vOA('jurisdiction',exp));
+    iss.push(...this.vOS('purpose',exp));
+    iss.push(...this.vOS('usage',exp));
+    iss.push(...this.vOS('copyright',exp));
+    iss.push(...this.vOS('approvalDate',exp));
+    iss.push(...this.vOS('lastReviewDate',exp));
+    iss.push(...this.vOS('effectivePeriod',exp));
+    iss.push(...this.vOA('topic',exp));
+    iss.push(...this.vOA('author',exp));
+    iss.push(...this.vOA('editor',exp));
+    iss.push(...this.vOA('reviewer',exp));
+    iss.push(...this.vOA('endorser',exp));
+    iss.push(...this.vOA('relatedArtifact',exp));
+    iss.push(...this.vOA('library',exp));
+    iss.push(...this.vOA('goal',exp));
+    iss.push(...this.vOA('action',exp));
+    return iss;
   }
 }

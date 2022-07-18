@@ -80,13 +80,13 @@ export class CareTeamParticipant extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'CareTeam.participant' }
-    this.vOA('role',exp)
-    this.vOS('member',exp)
-    this.vOS('onBehalfOf',exp)
-    this.vOS('period',exp)
-    return issues;
+    iss.push(...this.vOA('role',exp));
+    iss.push(...this.vOS('member',exp));
+    iss.push(...this.vOS('onBehalfOf',exp));
+    iss.push(...this.vOS('period',exp));
+    return iss;
   }
 }
 /**
@@ -263,22 +263,22 @@ export class CareTeam extends fhir.DomainResource {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'CareTeam' }
-    this.vRS('resourceType',exp)
-    this.vOA('identifier',exp)
-    this.vOSV('status',exp,'CareTeamStatus',CareTeamStatusVsValidation,'r')
-    this.vOA('category',exp)
-    this.vOS('name',exp)
-    this.vOS('subject',exp)
-    this.vOS('encounter',exp)
-    this.vOS('period',exp)
-    this.vOA('participant',exp)
-    this.vOA('reasonCode',exp)
-    this.vOA('reasonReference',exp)
-    this.vOA('managingOrganization',exp)
-    this.vOA('telecom',exp)
-    this.vOA('note',exp)
-    return issues;
+    iss.push(...this.vRPS('resourceType',exp));
+    iss.push(...this.vOA('identifier',exp));
+    iss.push(...this.vOSV('status',exp,'CareTeamStatus',CareTeamStatusVsValidation,'r'));
+    iss.push(...this.vOA('category',exp));
+    iss.push(...this.vOS('name',exp));
+    iss.push(...this.vOS('subject',exp));
+    iss.push(...this.vOS('encounter',exp));
+    iss.push(...this.vOS('period',exp));
+    iss.push(...this.vOA('participant',exp));
+    iss.push(...this.vOA('reasonCode',exp));
+    iss.push(...this.vOA('reasonReference',exp));
+    iss.push(...this.vOA('managingOrganization',exp));
+    iss.push(...this.vOA('telecom',exp));
+    iss.push(...this.vOA('note',exp));
+    return iss;
   }
 }

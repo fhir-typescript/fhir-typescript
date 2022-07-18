@@ -158,15 +158,15 @@ export class ParameterDefinition extends fhir.FhirElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'ParameterDefinition' }
-    this.vOS('name',exp)
-    this.vRSV('use',exp,'OperationParameterUse',OperationParameterUseVsValidation,'r')
-    this.vOS('min',exp)
-    this.vOS('max',exp)
-    this.vOS('documentation',exp)
-    this.vRSV('type',exp,'AllTypes',AllTypesVsValidation,'r')
-    this.vOS('profile',exp)
-    return issues;
+    iss.push(...this.vOS('name',exp));
+    iss.push(...this.vRSV('use',exp,'OperationParameterUse',OperationParameterUseVsValidation,'r'));
+    iss.push(...this.vOS('min',exp));
+    iss.push(...this.vOS('max',exp));
+    iss.push(...this.vOS('documentation',exp));
+    iss.push(...this.vRSV('type',exp,'AllTypes',AllTypesVsValidation,'r'));
+    iss.push(...this.vOS('profile',exp));
+    return iss;
   }
 }

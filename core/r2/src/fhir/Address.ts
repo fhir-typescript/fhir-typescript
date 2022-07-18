@@ -202,18 +202,18 @@ export class Address extends fhir.FhirElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'Address' }
-    this.vOSV('use',exp,'AddressUse',AddressUseVsValidation,'r')
-    this.vOSV('type',exp,'AddressType',AddressTypeVsValidation,'r')
-    this.vOS('text',exp)
-    this.vOA('line',exp)
-    this.vOS('city',exp)
-    this.vOS('district',exp)
-    this.vOS('state',exp)
-    this.vOS('postalCode',exp)
-    this.vOS('country',exp)
-    this.vOS('period',exp)
-    return issues;
+    iss.push(...this.vOSV('use',exp,'AddressUse',AddressUseVsValidation,'r'));
+    iss.push(...this.vOSV('type',exp,'AddressType',AddressTypeVsValidation,'r'));
+    iss.push(...this.vOS('text',exp));
+    iss.push(...this.vOA('line',exp));
+    iss.push(...this.vOS('city',exp));
+    iss.push(...this.vOS('district',exp));
+    iss.push(...this.vOS('state',exp));
+    iss.push(...this.vOS('postalCode',exp));
+    iss.push(...this.vOS('country',exp));
+    iss.push(...this.vOS('period',exp));
+    return iss;
   }
 }

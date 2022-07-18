@@ -87,13 +87,13 @@ export class ProvenanceAgent extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'Provenance.agent' }
-    this.vOS('type',exp)
-    this.vOA('role',exp)
-    this.vRS('who',exp)
-    this.vOS('onBehalfOf',exp)
-    return issues;
+    iss.push(...this.vOS('type',exp));
+    iss.push(...this.vOA('role',exp));
+    iss.push(...this.vRS('who',exp));
+    iss.push(...this.vOS('onBehalfOf',exp));
+    return iss;
   }
 }
 /**
@@ -158,12 +158,12 @@ export class ProvenanceEntity extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'Provenance.entity' }
-    this.vRSV('role',exp,'ProvenanceEntityRole',ProvenanceEntityRoleVsValidation,'r')
-    this.vRS('what',exp)
-    this.vOA('agent',exp)
-    return issues;
+    iss.push(...this.vRSV('role',exp,'ProvenanceEntityRole',ProvenanceEntityRoleVsValidation,'r'));
+    iss.push(...this.vRS('what',exp));
+    iss.push(...this.vOA('agent',exp));
+    return iss;
   }
 }
 /**
@@ -328,19 +328,19 @@ export class Provenance extends fhir.DomainResource {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'Provenance' }
-    this.vRS('resourceType',exp)
-    this.vRA('target',exp)
-    this.vOS('occurred',exp)
-    this.vRS('recorded',exp)
-    this.vOA('policy',exp)
-    this.vOS('location',exp)
-    this.vOA('reason',exp)
-    this.vOS('activity',exp)
-    this.vRA('agent',exp)
-    this.vOA('entity',exp)
-    this.vOA('signature',exp)
-    return issues;
+    iss.push(...this.vRPS('resourceType',exp));
+    iss.push(...this.vRA('target',exp));
+    iss.push(...this.vOS('occurred',exp));
+    iss.push(...this.vRS('recorded',exp));
+    iss.push(...this.vOA('policy',exp));
+    iss.push(...this.vOS('location',exp));
+    iss.push(...this.vOA('reason',exp));
+    iss.push(...this.vOS('activity',exp));
+    iss.push(...this.vRA('agent',exp));
+    iss.push(...this.vOA('entity',exp));
+    iss.push(...this.vOA('signature',exp));
+    return iss;
   }
 }

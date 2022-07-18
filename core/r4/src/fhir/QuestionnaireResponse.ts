@@ -116,11 +116,11 @@ export class QuestionnaireResponseItemAnswer extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'QuestionnaireResponse.item.answer' }
-    this.vOS('value',exp)
-    this.vOA('item',exp)
-    return issues;
+    iss.push(...this.vOS('value',exp));
+    iss.push(...this.vOA('item',exp));
+    return iss;
   }
 }
 /**
@@ -221,14 +221,14 @@ export class QuestionnaireResponseItem extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'QuestionnaireResponse.item' }
-    this.vRS('linkId',exp)
-    this.vOS('definition',exp)
-    this.vOS('text',exp)
-    this.vOA('answer',exp)
-    this.vOA('item',exp)
-    return issues;
+    iss.push(...this.vRS('linkId',exp));
+    iss.push(...this.vOS('definition',exp));
+    iss.push(...this.vOS('text',exp));
+    iss.push(...this.vOA('answer',exp));
+    iss.push(...this.vOA('item',exp));
+    return iss;
   }
 }
 /**
@@ -393,20 +393,20 @@ export class QuestionnaireResponse extends fhir.DomainResource {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'QuestionnaireResponse' }
-    this.vRS('resourceType',exp)
-    this.vOS('identifier',exp)
-    this.vOA('basedOn',exp)
-    this.vOA('partOf',exp)
-    this.vOS('questionnaire',exp)
-    this.vRSV('status',exp,'QuestionnaireAnswersStatus',QuestionnaireAnswersStatusVsValidation,'r')
-    this.vOS('subject',exp)
-    this.vOS('encounter',exp)
-    this.vOS('authored',exp)
-    this.vOS('author',exp)
-    this.vOS('source',exp)
-    this.vOA('item',exp)
-    return issues;
+    iss.push(...this.vRPS('resourceType',exp));
+    iss.push(...this.vOS('identifier',exp));
+    iss.push(...this.vOA('basedOn',exp));
+    iss.push(...this.vOA('partOf',exp));
+    iss.push(...this.vOS('questionnaire',exp));
+    iss.push(...this.vRSV('status',exp,'QuestionnaireAnswersStatus',QuestionnaireAnswersStatusVsValidation,'r'));
+    iss.push(...this.vOS('subject',exp));
+    iss.push(...this.vOS('encounter',exp));
+    iss.push(...this.vOS('authored',exp));
+    iss.push(...this.vOS('author',exp));
+    iss.push(...this.vOS('source',exp));
+    iss.push(...this.vOA('item',exp));
+    return iss;
   }
 }

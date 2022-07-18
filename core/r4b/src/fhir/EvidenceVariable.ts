@@ -94,13 +94,13 @@ export class EvidenceVariableCharacteristicTimeFromStart extends fhir.BackboneEl
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'EvidenceVariable.characteristic.timeFromStart' }
-    this.vOS('description',exp)
-    this.vOS('quantity',exp)
-    this.vOS('range',exp)
-    this.vOA('note',exp)
-    return issues;
+    iss.push(...this.vOS('description',exp));
+    iss.push(...this.vOS('quantity',exp));
+    iss.push(...this.vOS('range',exp));
+    iss.push(...this.vOA('note',exp));
+    return iss;
   }
 }
 /**
@@ -239,16 +239,16 @@ export class EvidenceVariableCharacteristic extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'EvidenceVariable.characteristic' }
-    this.vOS('description',exp)
-    this.vRS('definition',exp)
-    this.vOS('method',exp)
-    this.vOS('device',exp)
-    this.vOS('exclude',exp)
-    this.vOS('timeFromStart',exp)
-    this.vOSV('groupMeasure',exp,'GroupMeasure',GroupMeasureVsValidation,'r')
-    return issues;
+    iss.push(...this.vOS('description',exp));
+    iss.push(...this.vRS('definition',exp));
+    iss.push(...this.vOS('method',exp));
+    iss.push(...this.vOS('device',exp));
+    iss.push(...this.vOS('exclude',exp));
+    iss.push(...this.vOS('timeFromStart',exp));
+    iss.push(...this.vOSV('groupMeasure',exp,'GroupMeasure',GroupMeasureVsValidation,'r'));
+    return iss;
   }
 }
 /**
@@ -320,11 +320,11 @@ export class EvidenceVariableCategory extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'EvidenceVariable.category' }
-    this.vOS('name',exp)
-    this.vOS('value',exp)
-    return issues;
+    iss.push(...this.vOS('name',exp));
+    iss.push(...this.vOS('value',exp));
+    return iss;
   }
 }
 /**
@@ -696,33 +696,33 @@ export class EvidenceVariable extends fhir.DomainResource {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'EvidenceVariable' }
-    this.vRS('resourceType',exp)
-    this.vOS('url',exp)
-    this.vOA('identifier',exp)
-    this.vOS('version',exp)
-    this.vOS('name',exp)
-    this.vOS('title',exp)
-    this.vOS('shortTitle',exp)
-    this.vOS('subtitle',exp)
-    this.vRSV('status',exp,'PublicationStatus',PublicationStatusVsValidation,'r')
-    this.vOS('date',exp)
-    this.vOS('description',exp)
-    this.vOA('note',exp)
-    this.vOA('useContext',exp)
-    this.vOS('publisher',exp)
-    this.vOA('contact',exp)
-    this.vOA('author',exp)
-    this.vOA('editor',exp)
-    this.vOA('reviewer',exp)
-    this.vOA('endorser',exp)
-    this.vOA('relatedArtifact',exp)
-    this.vOS('actual',exp)
-    this.vOSV('characteristicCombination',exp,'CharacteristicCombination',CharacteristicCombinationVsValidation,'r')
-    this.vOA('characteristic',exp)
-    this.vOSV('handling',exp,'VariableHandling',VariableHandlingVsValidation,'r')
-    this.vOA('category',exp)
-    return issues;
+    iss.push(...this.vRPS('resourceType',exp));
+    iss.push(...this.vOS('url',exp));
+    iss.push(...this.vOA('identifier',exp));
+    iss.push(...this.vOS('version',exp));
+    iss.push(...this.vOS('name',exp));
+    iss.push(...this.vOS('title',exp));
+    iss.push(...this.vOS('shortTitle',exp));
+    iss.push(...this.vOS('subtitle',exp));
+    iss.push(...this.vRSV('status',exp,'PublicationStatus',PublicationStatusVsValidation,'r'));
+    iss.push(...this.vOS('date',exp));
+    iss.push(...this.vOS('description',exp));
+    iss.push(...this.vOA('note',exp));
+    iss.push(...this.vOA('useContext',exp));
+    iss.push(...this.vOS('publisher',exp));
+    iss.push(...this.vOA('contact',exp));
+    iss.push(...this.vOA('author',exp));
+    iss.push(...this.vOA('editor',exp));
+    iss.push(...this.vOA('reviewer',exp));
+    iss.push(...this.vOA('endorser',exp));
+    iss.push(...this.vOA('relatedArtifact',exp));
+    iss.push(...this.vOS('actual',exp));
+    iss.push(...this.vOSV('characteristicCombination',exp,'CharacteristicCombination',CharacteristicCombinationVsValidation,'r'));
+    iss.push(...this.vOA('characteristic',exp));
+    iss.push(...this.vOSV('handling',exp,'VariableHandling',VariableHandlingVsValidation,'r'));
+    iss.push(...this.vOA('category',exp));
+    return iss;
   }
 }

@@ -165,18 +165,18 @@ export class QuestionnaireGroupQuestion extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'Questionnaire.group.question' }
-    this.vOS('linkId',exp)
-    this.vOA('concept',exp)
-    this.vOS('text',exp)
-    this.vOSV('type',exp,'AnswerFormat',AnswerFormatVsValidation,'r')
-    this.vOS('required',exp)
-    this.vOS('repeats',exp)
-    this.vOS('options',exp)
-    this.vOA('option',exp)
-    this.vOA('group',exp)
-    return issues;
+    iss.push(...this.vOS('linkId',exp));
+    iss.push(...this.vOA('concept',exp));
+    iss.push(...this.vOS('text',exp));
+    iss.push(...this.vOSV('type',exp,'AnswerFormat',AnswerFormatVsValidation,'r'));
+    iss.push(...this.vOS('required',exp));
+    iss.push(...this.vOS('repeats',exp));
+    iss.push(...this.vOS('options',exp));
+    iss.push(...this.vOA('option',exp));
+    iss.push(...this.vOA('group',exp));
+    return iss;
   }
 }
 /**
@@ -318,17 +318,17 @@ export class QuestionnaireGroup extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'Questionnaire.group' }
-    this.vOS('linkId',exp)
-    this.vOS('title',exp)
-    this.vOA('concept',exp)
-    this.vOS('text',exp)
-    this.vOS('required',exp)
-    this.vOS('repeats',exp)
-    this.vOA('group',exp)
-    this.vOA('question',exp)
-    return issues;
+    iss.push(...this.vOS('linkId',exp));
+    iss.push(...this.vOS('title',exp));
+    iss.push(...this.vOA('concept',exp));
+    iss.push(...this.vOS('text',exp));
+    iss.push(...this.vOS('required',exp));
+    iss.push(...this.vOS('repeats',exp));
+    iss.push(...this.vOA('group',exp));
+    iss.push(...this.vOA('question',exp));
+    return iss;
   }
 }
 /**
@@ -483,17 +483,17 @@ export class Questionnaire extends fhir.DomainResource {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'Questionnaire' }
-    this.vRS('resourceType',exp)
-    this.vOA('identifier',exp)
-    this.vOS('version',exp)
-    this.vRSV('status',exp,'QuestionnaireStatus',QuestionnaireStatusVsValidation,'r')
-    this.vOS('date',exp)
-    this.vOS('publisher',exp)
-    this.vOA('telecom',exp)
-    this.vOAV('subjectType',exp,'ResourceTypes',ResourceTypesVsValidation,'r')
-    this.vRS('group',exp)
-    return issues;
+    iss.push(...this.vRPS('resourceType',exp));
+    iss.push(...this.vOA('identifier',exp));
+    iss.push(...this.vOS('version',exp));
+    iss.push(...this.vRSV('status',exp,'QuestionnaireStatus',QuestionnaireStatusVsValidation,'r'));
+    iss.push(...this.vOS('date',exp));
+    iss.push(...this.vOS('publisher',exp));
+    iss.push(...this.vOA('telecom',exp));
+    iss.push(...this.vOAV('subjectType',exp,'ResourceTypes',ResourceTypesVsValidation,'r'));
+    iss.push(...this.vRS('group',exp));
+    return iss;
   }
 }

@@ -111,13 +111,13 @@ export class ExampleScenarioActor extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'ExampleScenario.actor' }
-    this.vRS('actorId',exp)
-    this.vRSV('type',exp,'ExamplescenarioActorType',ExamplescenarioActorTypeVsValidation,'r')
-    this.vOS('name',exp)
-    this.vOS('description',exp)
-    return issues;
+    iss.push(...this.vRS('actorId',exp));
+    iss.push(...this.vRSV('type',exp,'ExamplescenarioActorType',ExamplescenarioActorTypeVsValidation,'r'));
+    iss.push(...this.vOS('name',exp));
+    iss.push(...this.vOS('description',exp));
+    return iss;
   }
 }
 /**
@@ -180,11 +180,11 @@ export class ExampleScenarioInstanceVersion extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'ExampleScenario.instance.version' }
-    this.vRS('versionId',exp)
-    this.vRS('description',exp)
-    return issues;
+    iss.push(...this.vRS('versionId',exp));
+    iss.push(...this.vRS('description',exp));
+    return iss;
   }
 }
 /**
@@ -246,11 +246,11 @@ export class ExampleScenarioInstanceContainedInstance extends fhir.BackboneEleme
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'ExampleScenario.instance.containedInstance' }
-    this.vRS('resourceId',exp)
-    this.vOS('versionId',exp)
-    return issues;
+    iss.push(...this.vRS('resourceId',exp));
+    iss.push(...this.vOS('versionId',exp));
+    return iss;
   }
 }
 /**
@@ -367,15 +367,15 @@ export class ExampleScenarioInstance extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'ExampleScenario.instance' }
-    this.vRS('resourceId',exp)
-    this.vRSV('resourceType',exp,'ResourceTypes',ResourceTypesVsValidation,'r')
-    this.vOS('name',exp)
-    this.vOS('description',exp)
-    this.vOA('version',exp)
-    this.vOA('containedInstance',exp)
-    return issues;
+    iss.push(...this.vRS('resourceId',exp));
+    iss.push(...this.vRSV('resourceType',exp,'ResourceTypes',ResourceTypesVsValidation,'r'));
+    iss.push(...this.vOS('name',exp));
+    iss.push(...this.vOS('description',exp));
+    iss.push(...this.vOA('version',exp));
+    iss.push(...this.vOA('containedInstance',exp));
+    return iss;
   }
 }
 /**
@@ -557,19 +557,19 @@ export class ExampleScenarioProcessStepOperation extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'ExampleScenario.process.step.operation' }
-    this.vRS('number',exp)
-    this.vOS('type',exp)
-    this.vOS('name',exp)
-    this.vOS('initiator',exp)
-    this.vOS('receiver',exp)
-    this.vOS('description',exp)
-    this.vOS('initiatorActive',exp)
-    this.vOS('receiverActive',exp)
-    this.vOS('request',exp)
-    this.vOS('response',exp)
-    return issues;
+    iss.push(...this.vRS('number',exp));
+    iss.push(...this.vOS('type',exp));
+    iss.push(...this.vOS('name',exp));
+    iss.push(...this.vOS('initiator',exp));
+    iss.push(...this.vOS('receiver',exp));
+    iss.push(...this.vOS('description',exp));
+    iss.push(...this.vOS('initiatorActive',exp));
+    iss.push(...this.vOS('receiverActive',exp));
+    iss.push(...this.vOS('request',exp));
+    iss.push(...this.vOS('response',exp));
+    return iss;
   }
 }
 /**
@@ -641,12 +641,12 @@ export class ExampleScenarioProcessStepAlternative extends fhir.BackboneElement 
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'ExampleScenario.process.step.alternative' }
-    this.vRS('title',exp)
-    this.vOS('description',exp)
-    this.vOA('step',exp)
-    return issues;
+    iss.push(...this.vRS('title',exp));
+    iss.push(...this.vOS('description',exp));
+    iss.push(...this.vOA('step',exp));
+    return iss;
   }
 }
 /**
@@ -719,13 +719,13 @@ export class ExampleScenarioProcessStep extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'ExampleScenario.process.step' }
-    this.vOA('process',exp)
-    this.vOS('pause',exp)
-    this.vOS('operation',exp)
-    this.vOA('alternative',exp)
-    return issues;
+    iss.push(...this.vOA('process',exp));
+    iss.push(...this.vOS('pause',exp));
+    iss.push(...this.vOS('operation',exp));
+    iss.push(...this.vOA('alternative',exp));
+    return iss;
   }
 }
 /**
@@ -831,14 +831,14 @@ export class ExampleScenarioProcess extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'ExampleScenario.process' }
-    this.vRS('title',exp)
-    this.vOS('description',exp)
-    this.vOS('preConditions',exp)
-    this.vOS('postConditions',exp)
-    this.vOA('step',exp)
-    return issues;
+    iss.push(...this.vRS('title',exp));
+    iss.push(...this.vOS('description',exp));
+    iss.push(...this.vOS('preConditions',exp));
+    iss.push(...this.vOS('postConditions',exp));
+    iss.push(...this.vOA('step',exp));
+    return iss;
   }
 }
 /**
@@ -1122,26 +1122,26 @@ export class ExampleScenario extends fhir.DomainResource {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'ExampleScenario' }
-    this.vRS('resourceType',exp)
-    this.vOS('url',exp)
-    this.vOA('identifier',exp)
-    this.vOS('version',exp)
-    this.vOS('name',exp)
-    this.vRSV('status',exp,'PublicationStatus',PublicationStatusVsValidation,'r')
-    this.vOS('experimental',exp)
-    this.vOS('date',exp)
-    this.vOS('publisher',exp)
-    this.vOA('contact',exp)
-    this.vOA('useContext',exp)
-    this.vOA('jurisdiction',exp)
-    this.vOS('copyright',exp)
-    this.vOS('purpose',exp)
-    this.vOA('actor',exp)
-    this.vOA('instance',exp)
-    this.vOA('process',exp)
-    this.vOA('workflow',exp)
-    return issues;
+    iss.push(...this.vRPS('resourceType',exp));
+    iss.push(...this.vOS('url',exp));
+    iss.push(...this.vOA('identifier',exp));
+    iss.push(...this.vOS('version',exp));
+    iss.push(...this.vOS('name',exp));
+    iss.push(...this.vRSV('status',exp,'PublicationStatus',PublicationStatusVsValidation,'r'));
+    iss.push(...this.vOS('experimental',exp));
+    iss.push(...this.vOS('date',exp));
+    iss.push(...this.vOS('publisher',exp));
+    iss.push(...this.vOA('contact',exp));
+    iss.push(...this.vOA('useContext',exp));
+    iss.push(...this.vOA('jurisdiction',exp));
+    iss.push(...this.vOS('copyright',exp));
+    iss.push(...this.vOS('purpose',exp));
+    iss.push(...this.vOA('actor',exp));
+    iss.push(...this.vOA('instance',exp));
+    iss.push(...this.vOA('process',exp));
+    iss.push(...this.vOA('workflow',exp));
+    return iss;
   }
 }

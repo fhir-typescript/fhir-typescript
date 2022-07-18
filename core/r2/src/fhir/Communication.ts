@@ -62,10 +62,10 @@ export class CommunicationPayload extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'Communication.payload' }
-    this.vRS('content',exp)
-    return issues;
+    iss.push(...this.vRS('content',exp));
+    return iss;
   }
 }
 /**
@@ -247,22 +247,22 @@ export class Communication extends fhir.DomainResource {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'Communication' }
-    this.vRS('resourceType',exp)
-    this.vOA('identifier',exp)
-    this.vOS('category',exp)
-    this.vOS('sender',exp)
-    this.vOA('recipient',exp)
-    this.vOA('payload',exp)
-    this.vOA('medium',exp)
-    this.vOSV('status',exp,'CommunicationStatus',CommunicationStatusVsValidation,'r')
-    this.vOS('encounter',exp)
-    this.vOS('sent',exp)
-    this.vOS('received',exp)
-    this.vOA('reason',exp)
-    this.vOS('subject',exp)
-    this.vOS('requestDetail',exp)
-    return issues;
+    iss.push(...this.vRPS('resourceType',exp));
+    iss.push(...this.vOA('identifier',exp));
+    iss.push(...this.vOS('category',exp));
+    iss.push(...this.vOS('sender',exp));
+    iss.push(...this.vOA('recipient',exp));
+    iss.push(...this.vOA('payload',exp));
+    iss.push(...this.vOA('medium',exp));
+    iss.push(...this.vOSV('status',exp,'CommunicationStatus',CommunicationStatusVsValidation,'r'));
+    iss.push(...this.vOS('encounter',exp));
+    iss.push(...this.vOS('sent',exp));
+    iss.push(...this.vOS('received',exp));
+    iss.push(...this.vOA('reason',exp));
+    iss.push(...this.vOS('subject',exp));
+    iss.push(...this.vOS('requestDetail',exp));
+    return iss;
   }
 }

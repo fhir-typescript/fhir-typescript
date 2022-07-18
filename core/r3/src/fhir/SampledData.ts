@@ -144,15 +144,15 @@ export class SampledData extends fhir.FhirElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'SampledData' }
-    this.vRS('origin',exp)
-    this.vRS('period',exp)
-    this.vOS('factor',exp)
-    this.vOS('lowerLimit',exp)
-    this.vOS('upperLimit',exp)
-    this.vRS('dimensions',exp)
-    this.vRS('data',exp)
-    return issues;
+    iss.push(...this.vRS('origin',exp));
+    iss.push(...this.vRS('period',exp));
+    iss.push(...this.vOS('factor',exp));
+    iss.push(...this.vOS('lowerLimit',exp));
+    iss.push(...this.vOS('upperLimit',exp));
+    iss.push(...this.vRS('dimensions',exp));
+    iss.push(...this.vRS('data',exp));
+    return iss;
   }
 }

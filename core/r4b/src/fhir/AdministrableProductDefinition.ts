@@ -110,12 +110,12 @@ export class AdministrableProductDefinitionProperty extends fhir.BackboneElement
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'AdministrableProductDefinition.property' }
-    this.vRS('type',exp)
-    this.vOS('value',exp)
-    this.vOSV('status',exp,'PublicationStatus',PublicationStatusVsValidation,'r')
-    return issues;
+    iss.push(...this.vRS('type',exp));
+    iss.push(...this.vOS('value',exp));
+    iss.push(...this.vOSV('status',exp,'PublicationStatus',PublicationStatusVsValidation,'r'));
+    return iss;
   }
 }
 /**
@@ -179,12 +179,12 @@ export class AdministrableProductDefinitionRouteOfAdministrationTargetSpeciesWit
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'AdministrableProductDefinition.routeOfAdministration.targetSpecies.withdrawalPeriod' }
-    this.vRS('tissue',exp)
-    this.vRS('value',exp)
-    this.vOS('supportingInformation',exp)
-    return issues;
+    iss.push(...this.vRS('tissue',exp));
+    iss.push(...this.vRS('value',exp));
+    iss.push(...this.vOS('supportingInformation',exp));
+    return iss;
   }
 }
 /**
@@ -231,11 +231,11 @@ export class AdministrableProductDefinitionRouteOfAdministrationTargetSpecies ex
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'AdministrableProductDefinition.routeOfAdministration.targetSpecies' }
-    this.vRS('code',exp)
-    this.vOA('withdrawalPeriod',exp)
-    return issues;
+    iss.push(...this.vRS('code',exp));
+    iss.push(...this.vOA('withdrawalPeriod',exp));
+    return iss;
   }
 }
 /**
@@ -327,16 +327,16 @@ export class AdministrableProductDefinitionRouteOfAdministration extends fhir.Ba
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'AdministrableProductDefinition.routeOfAdministration' }
-    this.vRS('code',exp)
-    this.vOS('firstDose',exp)
-    this.vOS('maxSingleDose',exp)
-    this.vOS('maxDosePerDay',exp)
-    this.vOS('maxDosePerTreatmentPeriod',exp)
-    this.vOS('maxTreatmentPeriod',exp)
-    this.vOA('targetSpecies',exp)
-    return issues;
+    iss.push(...this.vRS('code',exp));
+    iss.push(...this.vOS('firstDose',exp));
+    iss.push(...this.vOS('maxSingleDose',exp));
+    iss.push(...this.vOS('maxDosePerDay',exp));
+    iss.push(...this.vOS('maxDosePerTreatmentPeriod',exp));
+    iss.push(...this.vOS('maxTreatmentPeriod',exp));
+    iss.push(...this.vOA('targetSpecies',exp));
+    return iss;
   }
 }
 /**
@@ -477,19 +477,19 @@ export class AdministrableProductDefinition extends fhir.DomainResource {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'AdministrableProductDefinition' }
-    this.vRS('resourceType',exp)
-    this.vOA('identifier',exp)
-    this.vRSV('status',exp,'PublicationStatus',PublicationStatusVsValidation,'r')
-    this.vOA('formOf',exp)
-    this.vOS('administrableDoseForm',exp)
-    this.vOS('unitOfPresentation',exp)
-    this.vOA('producedFrom',exp)
-    this.vOA('ingredient',exp)
-    this.vOS('device',exp)
-    this.vOA('property',exp)
-    this.vRA('routeOfAdministration',exp)
-    return issues;
+    iss.push(...this.vRPS('resourceType',exp));
+    iss.push(...this.vOA('identifier',exp));
+    iss.push(...this.vRSV('status',exp,'PublicationStatus',PublicationStatusVsValidation,'r'));
+    iss.push(...this.vOA('formOf',exp));
+    iss.push(...this.vOS('administrableDoseForm',exp));
+    iss.push(...this.vOS('unitOfPresentation',exp));
+    iss.push(...this.vOA('producedFrom',exp));
+    iss.push(...this.vOA('ingredient',exp));
+    iss.push(...this.vOS('device',exp));
+    iss.push(...this.vOA('property',exp));
+    iss.push(...this.vRA('routeOfAdministration',exp));
+    return iss;
   }
 }

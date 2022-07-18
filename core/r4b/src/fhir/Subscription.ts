@@ -109,13 +109,13 @@ export class SubscriptionChannel extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'Subscription.channel' }
-    this.vRSV('type',exp,'SubscriptionChannelType',SubscriptionChannelTypeVsValidation,'r')
-    this.vOS('endpoint',exp)
-    this.vOS('payload',exp)
-    this.vOA('header',exp)
-    return issues;
+    iss.push(...this.vRSV('type',exp,'SubscriptionChannelType',SubscriptionChannelTypeVsValidation,'r'));
+    iss.push(...this.vOS('endpoint',exp));
+    iss.push(...this.vOS('payload',exp));
+    iss.push(...this.vOA('header',exp));
+    return iss;
   }
 }
 /**
@@ -261,16 +261,16 @@ export class Subscription extends fhir.DomainResource {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'Subscription' }
-    this.vRS('resourceType',exp)
-    this.vRSV('status',exp,'SubscriptionStatus',SubscriptionStatusVsValidation,'r')
-    this.vOA('contact',exp)
-    this.vOS('end',exp)
-    this.vRS('reason',exp)
-    this.vRS('criteria',exp)
-    this.vOS('error',exp)
-    this.vRS('channel',exp)
-    return issues;
+    iss.push(...this.vRPS('resourceType',exp));
+    iss.push(...this.vRSV('status',exp,'SubscriptionStatus',SubscriptionStatusVsValidation,'r'));
+    iss.push(...this.vOA('contact',exp));
+    iss.push(...this.vOS('end',exp));
+    iss.push(...this.vRS('reason',exp));
+    iss.push(...this.vRS('criteria',exp));
+    iss.push(...this.vOS('error',exp));
+    iss.push(...this.vRS('channel',exp));
+    return iss;
   }
 }

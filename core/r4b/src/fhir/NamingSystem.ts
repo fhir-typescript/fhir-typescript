@@ -128,14 +128,14 @@ export class NamingSystemUniqueId extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'NamingSystem.uniqueId' }
-    this.vRSV('type',exp,'NamingsystemIdentifierType',NamingsystemIdentifierTypeVsValidation,'r')
-    this.vRS('value',exp)
-    this.vOS('preferred',exp)
-    this.vOS('comment',exp)
-    this.vOS('period',exp)
-    return issues;
+    iss.push(...this.vRSV('type',exp,'NamingsystemIdentifierType',NamingsystemIdentifierTypeVsValidation,'r'));
+    iss.push(...this.vRS('value',exp));
+    iss.push(...this.vOS('preferred',exp));
+    iss.push(...this.vOS('comment',exp));
+    iss.push(...this.vOS('period',exp));
+    return iss;
   }
 }
 /**
@@ -360,22 +360,22 @@ export class NamingSystem extends fhir.DomainResource {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'NamingSystem' }
-    this.vRS('resourceType',exp)
-    this.vRS('name',exp)
-    this.vRSV('status',exp,'PublicationStatus',PublicationStatusVsValidation,'r')
-    this.vRSV('kind',exp,'NamingsystemType',NamingsystemTypeVsValidation,'r')
-    this.vRS('date',exp)
-    this.vOS('publisher',exp)
-    this.vOA('contact',exp)
-    this.vOS('responsible',exp)
-    this.vOS('type',exp)
-    this.vOS('description',exp)
-    this.vOA('useContext',exp)
-    this.vOA('jurisdiction',exp)
-    this.vOS('usage',exp)
-    this.vRA('uniqueId',exp)
-    return issues;
+    iss.push(...this.vRPS('resourceType',exp));
+    iss.push(...this.vRS('name',exp));
+    iss.push(...this.vRSV('status',exp,'PublicationStatus',PublicationStatusVsValidation,'r'));
+    iss.push(...this.vRSV('kind',exp,'NamingsystemType',NamingsystemTypeVsValidation,'r'));
+    iss.push(...this.vRS('date',exp));
+    iss.push(...this.vOS('publisher',exp));
+    iss.push(...this.vOA('contact',exp));
+    iss.push(...this.vOS('responsible',exp));
+    iss.push(...this.vOS('type',exp));
+    iss.push(...this.vOS('description',exp));
+    iss.push(...this.vOA('useContext',exp));
+    iss.push(...this.vOA('jurisdiction',exp));
+    iss.push(...this.vOS('usage',exp));
+    iss.push(...this.vRA('uniqueId',exp));
+    return iss;
   }
 }

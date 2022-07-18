@@ -77,11 +77,11 @@ export class ImmunizationRecommendationRecommendationDateCriterion extends fhir.
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'ImmunizationRecommendation.recommendation.dateCriterion' }
-    this.vRS('code',exp)
-    this.vRS('value',exp)
-    return issues;
+    iss.push(...this.vRS('code',exp));
+    iss.push(...this.vRS('value',exp));
+    return iss;
   }
 }
 /**
@@ -267,21 +267,21 @@ export class ImmunizationRecommendationRecommendation extends fhir.BackboneEleme
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'ImmunizationRecommendation.recommendation' }
-    this.vOA('vaccineCode',exp)
-    this.vOS('targetDisease',exp)
-    this.vOA('contraindicatedVaccineCode',exp)
-    this.vRS('forecastStatus',exp)
-    this.vOA('forecastReason',exp)
-    this.vOA('dateCriterion',exp)
-    this.vOS('description',exp)
-    this.vOS('series',exp)
-    this.vOS('doseNumber',exp)
-    this.vOS('seriesDoses',exp)
-    this.vOA('supportingImmunization',exp)
-    this.vOA('supportingPatientInformation',exp)
-    return issues;
+    iss.push(...this.vOA('vaccineCode',exp));
+    iss.push(...this.vOS('targetDisease',exp));
+    iss.push(...this.vOA('contraindicatedVaccineCode',exp));
+    iss.push(...this.vRS('forecastStatus',exp));
+    iss.push(...this.vOA('forecastReason',exp));
+    iss.push(...this.vOA('dateCriterion',exp));
+    iss.push(...this.vOS('description',exp));
+    iss.push(...this.vOS('series',exp));
+    iss.push(...this.vOS('doseNumber',exp));
+    iss.push(...this.vOS('seriesDoses',exp));
+    iss.push(...this.vOA('supportingImmunization',exp));
+    iss.push(...this.vOA('supportingPatientInformation',exp));
+    return iss;
   }
 }
 /**
@@ -374,14 +374,14 @@ export class ImmunizationRecommendation extends fhir.DomainResource {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'ImmunizationRecommendation' }
-    this.vRS('resourceType',exp)
-    this.vOA('identifier',exp)
-    this.vRS('patient',exp)
-    this.vRS('date',exp)
-    this.vOS('authority',exp)
-    this.vRA('recommendation',exp)
-    return issues;
+    iss.push(...this.vRPS('resourceType',exp));
+    iss.push(...this.vOA('identifier',exp));
+    iss.push(...this.vRS('patient',exp));
+    iss.push(...this.vRS('date',exp));
+    iss.push(...this.vOS('authority',exp));
+    iss.push(...this.vRA('recommendation',exp));
+    return iss;
   }
 }

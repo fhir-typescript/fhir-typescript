@@ -175,18 +175,18 @@ export class DeviceUseStatement extends fhir.DomainResource {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'DeviceUseStatement' }
-    this.vRS('resourceType',exp)
-    this.vOS('bodySite',exp)
-    this.vOS('whenUsed',exp)
-    this.vRS('device',exp)
-    this.vOA('identifier',exp)
-    this.vOA('indication',exp)
-    this.vOA('notes',exp)
-    this.vOS('recordedOn',exp)
-    this.vRS('subject',exp)
-    this.vOS('timing',exp)
-    return issues;
+    iss.push(...this.vRPS('resourceType',exp));
+    iss.push(...this.vOS('bodySite',exp));
+    iss.push(...this.vOS('whenUsed',exp));
+    iss.push(...this.vRS('device',exp));
+    iss.push(...this.vOA('identifier',exp));
+    iss.push(...this.vOA('indication',exp));
+    iss.push(...this.vOA('notes',exp));
+    iss.push(...this.vOS('recordedOn',exp));
+    iss.push(...this.vRS('subject',exp));
+    iss.push(...this.vOS('timing',exp));
+    return iss;
   }
 }

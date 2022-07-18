@@ -110,12 +110,12 @@ export class TriggerDefinition extends fhir.FhirElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'TriggerDefinition' }
-    this.vRSV('type',exp,'TriggerType',TriggerTypeVsValidation,'r')
-    this.vOS('eventName',exp)
-    this.vOS('eventTiming',exp)
-    this.vOS('eventData',exp)
-    return issues;
+    iss.push(...this.vRSV('type',exp,'TriggerType',TriggerTypeVsValidation,'r'));
+    iss.push(...this.vOS('eventName',exp));
+    iss.push(...this.vOS('eventTiming',exp));
+    iss.push(...this.vOS('eventData',exp));
+    return iss;
   }
 }

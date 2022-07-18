@@ -48,11 +48,11 @@ export class MedicinalProductPackagedBatchIdentifier extends fhir.BackboneElemen
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'MedicinalProductPackaged.batchIdentifier' }
-    this.vRS('outerPackaging',exp)
-    this.vOS('immediatePackaging',exp)
-    return issues;
+    iss.push(...this.vRS('outerPackaging',exp));
+    iss.push(...this.vOS('immediatePackaging',exp));
+    return iss;
   }
 }
 /**
@@ -198,21 +198,21 @@ export class MedicinalProductPackagedPackageItem extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'MedicinalProductPackaged.packageItem' }
-    this.vOA('identifier',exp)
-    this.vRS('type',exp)
-    this.vRS('quantity',exp)
-    this.vOA('material',exp)
-    this.vOA('alternateMaterial',exp)
-    this.vOA('device',exp)
-    this.vOA('manufacturedItem',exp)
-    this.vOA('packageItem',exp)
-    this.vOS('physicalCharacteristics',exp)
-    this.vOA('otherCharacteristics',exp)
-    this.vOA('shelfLifeStorage',exp)
-    this.vOA('manufacturer',exp)
-    return issues;
+    iss.push(...this.vOA('identifier',exp));
+    iss.push(...this.vRS('type',exp));
+    iss.push(...this.vRS('quantity',exp));
+    iss.push(...this.vOA('material',exp));
+    iss.push(...this.vOA('alternateMaterial',exp));
+    iss.push(...this.vOA('device',exp));
+    iss.push(...this.vOA('manufacturedItem',exp));
+    iss.push(...this.vOA('packageItem',exp));
+    iss.push(...this.vOS('physicalCharacteristics',exp));
+    iss.push(...this.vOA('otherCharacteristics',exp));
+    iss.push(...this.vOA('shelfLifeStorage',exp));
+    iss.push(...this.vOA('manufacturer',exp));
+    return iss;
   }
 }
 /**
@@ -343,18 +343,18 @@ export class MedicinalProductPackaged extends fhir.DomainResource {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'MedicinalProductPackaged' }
-    this.vRS('resourceType',exp)
-    this.vOA('identifier',exp)
-    this.vOA('subject',exp)
-    this.vOS('description',exp)
-    this.vOS('legalStatusOfSupply',exp)
-    this.vOA('marketingStatus',exp)
-    this.vOS('marketingAuthorization',exp)
-    this.vOA('manufacturer',exp)
-    this.vOA('batchIdentifier',exp)
-    this.vRA('packageItem',exp)
-    return issues;
+    iss.push(...this.vRPS('resourceType',exp));
+    iss.push(...this.vOA('identifier',exp));
+    iss.push(...this.vOA('subject',exp));
+    iss.push(...this.vOS('description',exp));
+    iss.push(...this.vOS('legalStatusOfSupply',exp));
+    iss.push(...this.vOA('marketingStatus',exp));
+    iss.push(...this.vOS('marketingAuthorization',exp));
+    iss.push(...this.vOA('manufacturer',exp));
+    iss.push(...this.vOA('batchIdentifier',exp));
+    iss.push(...this.vRA('packageItem',exp));
+    return iss;
   }
 }

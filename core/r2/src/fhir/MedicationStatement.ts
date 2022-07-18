@@ -178,18 +178,18 @@ export class MedicationStatementDosage extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'MedicationStatement.dosage' }
-    this.vOS('text',exp)
-    this.vOS('timing',exp)
-    this.vOS('asNeeded',exp)
-    this.vOS('site',exp)
-    this.vOS('route',exp)
-    this.vOS('method',exp)
-    this.vOS('quantity',exp)
-    this.vOS('rate',exp)
-    this.vOS('maxDosePerPeriod',exp)
-    return issues;
+    iss.push(...this.vOS('text',exp));
+    iss.push(...this.vOS('timing',exp));
+    iss.push(...this.vOS('asNeeded',exp));
+    iss.push(...this.vOS('site',exp));
+    iss.push(...this.vOS('route',exp));
+    iss.push(...this.vOS('method',exp));
+    iss.push(...this.vOS('quantity',exp));
+    iss.push(...this.vOS('rate',exp));
+    iss.push(...this.vOS('maxDosePerPeriod',exp));
+    return iss;
   }
 }
 /**
@@ -423,22 +423,22 @@ export class MedicationStatement extends fhir.DomainResource {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'MedicationStatement' }
-    this.vRS('resourceType',exp)
-    this.vOA('identifier',exp)
-    this.vRS('patient',exp)
-    this.vOS('informationSource',exp)
-    this.vOS('dateAsserted',exp)
-    this.vRSV('status',exp,'MedicationStatementStatus',MedicationStatementStatusVsValidation,'r')
-    this.vOS('wasNotTaken',exp)
-    this.vOA('reasonNotTaken',exp)
-    this.vOS('reasonForUse',exp)
-    this.vOS('effective',exp)
-    this.vOS('note',exp)
-    this.vOA('supportingInformation',exp)
-    this.vRS('medication',exp)
-    this.vOA('dosage',exp)
-    return issues;
+    iss.push(...this.vRPS('resourceType',exp));
+    iss.push(...this.vOA('identifier',exp));
+    iss.push(...this.vRS('patient',exp));
+    iss.push(...this.vOS('informationSource',exp));
+    iss.push(...this.vOS('dateAsserted',exp));
+    iss.push(...this.vRSV('status',exp,'MedicationStatementStatus',MedicationStatementStatusVsValidation,'r'));
+    iss.push(...this.vOS('wasNotTaken',exp));
+    iss.push(...this.vOA('reasonNotTaken',exp));
+    iss.push(...this.vOS('reasonForUse',exp));
+    iss.push(...this.vOS('effective',exp));
+    iss.push(...this.vOS('note',exp));
+    iss.push(...this.vOA('supportingInformation',exp));
+    iss.push(...this.vRS('medication',exp));
+    iss.push(...this.vOA('dosage',exp));
+    return iss;
   }
 }

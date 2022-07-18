@@ -165,16 +165,16 @@ export class Attachment extends fhir.FhirElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'Attachment' }
-    this.vOS('contentType',exp)
-    this.vOS('language',exp)
-    this.vOS('data',exp)
-    this.vOS('url',exp)
-    this.vOS('size',exp)
-    this.vOS('hash',exp)
-    this.vOS('title',exp)
-    this.vOS('creation',exp)
-    return issues;
+    iss.push(...this.vOS('contentType',exp));
+    iss.push(...this.vOS('language',exp));
+    iss.push(...this.vOS('data',exp));
+    iss.push(...this.vOS('url',exp));
+    iss.push(...this.vOS('size',exp));
+    iss.push(...this.vOS('hash',exp));
+    iss.push(...this.vOS('title',exp));
+    iss.push(...this.vOS('creation',exp));
+    return iss;
   }
 }

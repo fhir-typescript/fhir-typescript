@@ -119,13 +119,13 @@ export class MessageDefinitionFocus extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'MessageDefinition.focus' }
-    this.vRSV('code',exp,'ResourceTypes',ResourceTypesVsValidation,'r')
-    this.vOS('profile',exp)
-    this.vRS('min',exp)
-    this.vOS('max',exp)
-    return issues;
+    iss.push(...this.vRSV('code',exp,'ResourceTypes',ResourceTypesVsValidation,'r'));
+    iss.push(...this.vOS('profile',exp));
+    iss.push(...this.vRS('min',exp));
+    iss.push(...this.vOS('max',exp));
+    return iss;
   }
 }
 /**
@@ -187,11 +187,11 @@ export class MessageDefinitionAllowedResponse extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'MessageDefinition.allowedResponse' }
-    this.vRS('message',exp)
-    this.vOS('situation',exp)
-    return issues;
+    iss.push(...this.vRS('message',exp));
+    iss.push(...this.vOS('situation',exp));
+    return iss;
   }
 }
 /**
@@ -615,33 +615,33 @@ export class MessageDefinition extends fhir.DomainResource {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'MessageDefinition' }
-    this.vRS('resourceType',exp)
-    this.vOS('url',exp)
-    this.vOA('identifier',exp)
-    this.vOS('version',exp)
-    this.vOS('name',exp)
-    this.vOS('title',exp)
-    this.vOA('replaces',exp)
-    this.vRSV('status',exp,'PublicationStatus',PublicationStatusVsValidation,'r')
-    this.vOS('experimental',exp)
-    this.vRS('date',exp)
-    this.vOS('publisher',exp)
-    this.vOA('contact',exp)
-    this.vOS('description',exp)
-    this.vOA('useContext',exp)
-    this.vOA('jurisdiction',exp)
-    this.vOS('purpose',exp)
-    this.vOS('copyright',exp)
-    this.vOS('base',exp)
-    this.vOA('parent',exp)
-    this.vRS('event',exp)
-    this.vOSV('category',exp,'MessageSignificanceCategory',MessageSignificanceCategoryVsValidation,'r')
-    this.vOA('focus',exp)
-    this.vOSV('responseRequired',exp,'MessageheaderResponseRequest',MessageheaderResponseRequestVsValidation,'r')
-    this.vOA('allowedResponse',exp)
-    this.vOA('graph',exp)
-    return issues;
+    iss.push(...this.vRPS('resourceType',exp));
+    iss.push(...this.vOS('url',exp));
+    iss.push(...this.vOA('identifier',exp));
+    iss.push(...this.vOS('version',exp));
+    iss.push(...this.vOS('name',exp));
+    iss.push(...this.vOS('title',exp));
+    iss.push(...this.vOA('replaces',exp));
+    iss.push(...this.vRSV('status',exp,'PublicationStatus',PublicationStatusVsValidation,'r'));
+    iss.push(...this.vOS('experimental',exp));
+    iss.push(...this.vRS('date',exp));
+    iss.push(...this.vOS('publisher',exp));
+    iss.push(...this.vOA('contact',exp));
+    iss.push(...this.vOS('description',exp));
+    iss.push(...this.vOA('useContext',exp));
+    iss.push(...this.vOA('jurisdiction',exp));
+    iss.push(...this.vOS('purpose',exp));
+    iss.push(...this.vOS('copyright',exp));
+    iss.push(...this.vOS('base',exp));
+    iss.push(...this.vOA('parent',exp));
+    iss.push(...this.vRS('event',exp));
+    iss.push(...this.vOSV('category',exp,'MessageSignificanceCategory',MessageSignificanceCategoryVsValidation,'r'));
+    iss.push(...this.vOA('focus',exp));
+    iss.push(...this.vOSV('responseRequired',exp,'MessageheaderResponseRequest',MessageheaderResponseRequestVsValidation,'r'));
+    iss.push(...this.vOA('allowedResponse',exp));
+    iss.push(...this.vOA('graph',exp));
+    return iss;
   }
 }

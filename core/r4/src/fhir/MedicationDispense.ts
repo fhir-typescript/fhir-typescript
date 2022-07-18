@@ -72,11 +72,11 @@ export class MedicationDispensePerformer extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'MedicationDispense.performer' }
-    this.vOS('function',exp)
-    this.vRS('actor',exp)
-    return issues;
+    iss.push(...this.vOS('function',exp));
+    iss.push(...this.vRS('actor',exp));
+    return iss;
   }
 }
 /**
@@ -150,13 +150,13 @@ export class MedicationDispenseSubstitution extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'MedicationDispense.substitution' }
-    this.vRS('wasSubstituted',exp)
-    this.vOS('type',exp)
-    this.vOA('reason',exp)
-    this.vOA('responsibleParty',exp)
-    return issues;
+    iss.push(...this.vRS('wasSubstituted',exp));
+    iss.push(...this.vOS('type',exp));
+    iss.push(...this.vOA('reason',exp));
+    iss.push(...this.vOA('responsibleParty',exp));
+    return iss;
   }
 }
 /**
@@ -474,33 +474,33 @@ export class MedicationDispense extends fhir.DomainResource {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'MedicationDispense' }
-    this.vRS('resourceType',exp)
-    this.vOA('identifier',exp)
-    this.vOA('partOf',exp)
-    this.vRSV('status',exp,'MedicationdispenseStatus',MedicationdispenseStatusVsValidation,'r')
-    this.vOS('statusReason',exp)
-    this.vOS('category',exp)
-    this.vRS('medication',exp)
-    this.vOS('subject',exp)
-    this.vOS('context',exp)
-    this.vOA('supportingInformation',exp)
-    this.vOA('performer',exp)
-    this.vOS('location',exp)
-    this.vOA('authorizingPrescription',exp)
-    this.vOS('type',exp)
-    this.vOS('quantity',exp)
-    this.vOS('daysSupply',exp)
-    this.vOS('whenPrepared',exp)
-    this.vOS('whenHandedOver',exp)
-    this.vOS('destination',exp)
-    this.vOA('receiver',exp)
-    this.vOA('note',exp)
-    this.vOA('dosageInstruction',exp)
-    this.vOS('substitution',exp)
-    this.vOA('detectedIssue',exp)
-    this.vOA('eventHistory',exp)
-    return issues;
+    iss.push(...this.vRPS('resourceType',exp));
+    iss.push(...this.vOA('identifier',exp));
+    iss.push(...this.vOA('partOf',exp));
+    iss.push(...this.vRSV('status',exp,'MedicationdispenseStatus',MedicationdispenseStatusVsValidation,'r'));
+    iss.push(...this.vOS('statusReason',exp));
+    iss.push(...this.vOS('category',exp));
+    iss.push(...this.vRS('medication',exp));
+    iss.push(...this.vOS('subject',exp));
+    iss.push(...this.vOS('context',exp));
+    iss.push(...this.vOA('supportingInformation',exp));
+    iss.push(...this.vOA('performer',exp));
+    iss.push(...this.vOS('location',exp));
+    iss.push(...this.vOA('authorizingPrescription',exp));
+    iss.push(...this.vOS('type',exp));
+    iss.push(...this.vOS('quantity',exp));
+    iss.push(...this.vOS('daysSupply',exp));
+    iss.push(...this.vOS('whenPrepared',exp));
+    iss.push(...this.vOS('whenHandedOver',exp));
+    iss.push(...this.vOS('destination',exp));
+    iss.push(...this.vOA('receiver',exp));
+    iss.push(...this.vOA('note',exp));
+    iss.push(...this.vOA('dosageInstruction',exp));
+    iss.push(...this.vOS('substitution',exp));
+    iss.push(...this.vOA('detectedIssue',exp));
+    iss.push(...this.vOA('eventHistory',exp));
+    return iss;
   }
 }

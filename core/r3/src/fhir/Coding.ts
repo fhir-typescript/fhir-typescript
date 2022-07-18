@@ -114,13 +114,13 @@ export class Coding extends fhir.FhirElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'Coding' }
-    this.vOS('system',exp)
-    this.vOS('version',exp)
-    this.vOS('code',exp)
-    this.vOS('display',exp)
-    this.vOS('userSelected',exp)
-    return issues;
+    iss.push(...this.vOS('system',exp));
+    iss.push(...this.vOS('version',exp));
+    iss.push(...this.vOS('code',exp));
+    iss.push(...this.vOS('display',exp));
+    iss.push(...this.vOS('userSelected',exp));
+    return iss;
   }
 }

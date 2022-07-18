@@ -107,11 +107,11 @@ export class AuditEventAgentNetwork extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'AuditEvent.agent.network' }
-    this.vOS('address',exp)
-    this.vOSV('type',exp,'NetworkType',NetworkTypeVsValidation,'r')
-    return issues;
+    iss.push(...this.vOS('address',exp));
+    iss.push(...this.vOSV('type',exp,'NetworkType',NetworkTypeVsValidation,'r'));
+    return iss;
   }
 }
 /**
@@ -276,20 +276,20 @@ export class AuditEventAgent extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'AuditEvent.agent' }
-    this.vOA('role',exp)
-    this.vOS('reference',exp)
-    this.vOS('userId',exp)
-    this.vOS('altId',exp)
-    this.vOS('name',exp)
-    this.vRS('requestor',exp)
-    this.vOS('location',exp)
-    this.vOA('policy',exp)
-    this.vOS('media',exp)
-    this.vOS('network',exp)
-    this.vOA('purposeOfUse',exp)
-    return issues;
+    iss.push(...this.vOA('role',exp));
+    iss.push(...this.vOS('reference',exp));
+    iss.push(...this.vOS('userId',exp));
+    iss.push(...this.vOS('altId',exp));
+    iss.push(...this.vOS('name',exp));
+    iss.push(...this.vRS('requestor',exp));
+    iss.push(...this.vOS('location',exp));
+    iss.push(...this.vOA('policy',exp));
+    iss.push(...this.vOS('media',exp));
+    iss.push(...this.vOS('network',exp));
+    iss.push(...this.vOA('purposeOfUse',exp));
+    return iss;
   }
 }
 /**
@@ -353,12 +353,12 @@ export class AuditEventSource extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'AuditEvent.source' }
-    this.vOS('site',exp)
-    this.vRS('identifier',exp)
-    this.vOA('type',exp)
-    return issues;
+    iss.push(...this.vOS('site',exp));
+    iss.push(...this.vRS('identifier',exp));
+    iss.push(...this.vOA('type',exp));
+    return iss;
   }
 }
 /**
@@ -421,11 +421,11 @@ export class AuditEventEntityDetail extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'AuditEvent.entity.detail' }
-    this.vRS('type',exp)
-    this.vRS('value',exp)
-    return issues;
+    iss.push(...this.vRS('type',exp));
+    iss.push(...this.vRS('value',exp));
+    return iss;
   }
 }
 /**
@@ -568,19 +568,19 @@ export class AuditEventEntity extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'AuditEvent.entity' }
-    this.vOS('identifier',exp)
-    this.vOS('reference',exp)
-    this.vOS('type',exp)
-    this.vOS('role',exp)
-    this.vOS('lifecycle',exp)
-    this.vOA('securityLabel',exp)
-    this.vOS('name',exp)
-    this.vOS('description',exp)
-    this.vOS('query',exp)
-    this.vOA('detail',exp)
-    return issues;
+    iss.push(...this.vOS('identifier',exp));
+    iss.push(...this.vOS('reference',exp));
+    iss.push(...this.vOS('type',exp));
+    iss.push(...this.vOS('role',exp));
+    iss.push(...this.vOS('lifecycle',exp));
+    iss.push(...this.vOA('securityLabel',exp));
+    iss.push(...this.vOS('name',exp));
+    iss.push(...this.vOS('description',exp));
+    iss.push(...this.vOS('query',exp));
+    iss.push(...this.vOA('detail',exp));
+    return iss;
   }
 }
 /**
@@ -747,19 +747,19 @@ export class AuditEvent extends fhir.DomainResource {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'AuditEvent' }
-    this.vRS('resourceType',exp)
-    this.vRS('type',exp)
-    this.vOA('subtype',exp)
-    this.vOSV('action',exp,'AuditEventAction',AuditEventActionVsValidation,'r')
-    this.vRS('recorded',exp)
-    this.vOSV('outcome',exp,'AuditEventOutcome',AuditEventOutcomeVsValidation,'r')
-    this.vOS('outcomeDesc',exp)
-    this.vOA('purposeOfEvent',exp)
-    this.vRA('agent',exp)
-    this.vRS('source',exp)
-    this.vOA('entity',exp)
-    return issues;
+    iss.push(...this.vRPS('resourceType',exp));
+    iss.push(...this.vRS('type',exp));
+    iss.push(...this.vOA('subtype',exp));
+    iss.push(...this.vOSV('action',exp,'AuditEventAction',AuditEventActionVsValidation,'r'));
+    iss.push(...this.vRS('recorded',exp));
+    iss.push(...this.vOSV('outcome',exp,'AuditEventOutcome',AuditEventOutcomeVsValidation,'r'));
+    iss.push(...this.vOS('outcomeDesc',exp));
+    iss.push(...this.vOA('purposeOfEvent',exp));
+    iss.push(...this.vRA('agent',exp));
+    iss.push(...this.vRS('source',exp));
+    iss.push(...this.vOA('entity',exp));
+    return iss;
   }
 }

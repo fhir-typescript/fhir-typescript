@@ -206,23 +206,23 @@ export class Coverage extends fhir.DomainResource {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'Coverage' }
-    this.vRS('resourceType',exp)
-    this.vOS('issuer',exp)
-    this.vOS('bin',exp)
-    this.vOS('period',exp)
-    this.vOS('type',exp)
-    this.vOS('subscriberId',exp)
-    this.vOA('identifier',exp)
-    this.vOS('group',exp)
-    this.vOS('plan',exp)
-    this.vOS('subPlan',exp)
-    this.vOS('dependent',exp)
-    this.vOS('sequence',exp)
-    this.vOS('subscriber',exp)
-    this.vOS('network',exp)
-    this.vOA('contract',exp)
-    return issues;
+    iss.push(...this.vRPS('resourceType',exp));
+    iss.push(...this.vOS('issuer',exp));
+    iss.push(...this.vOS('bin',exp));
+    iss.push(...this.vOS('period',exp));
+    iss.push(...this.vOS('type',exp));
+    iss.push(...this.vOS('subscriberId',exp));
+    iss.push(...this.vOA('identifier',exp));
+    iss.push(...this.vOS('group',exp));
+    iss.push(...this.vOS('plan',exp));
+    iss.push(...this.vOS('subPlan',exp));
+    iss.push(...this.vOS('dependent',exp));
+    iss.push(...this.vOS('sequence',exp));
+    iss.push(...this.vOS('subscriber',exp));
+    iss.push(...this.vOS('network',exp));
+    iss.push(...this.vOA('contract',exp));
+    return iss;
   }
 }

@@ -76,12 +76,12 @@ export class SubstanceInstance extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'Substance.instance' }
-    this.vOS('identifier',exp)
-    this.vOS('expiry',exp)
-    this.vOS('quantity',exp)
-    return issues;
+    iss.push(...this.vOS('identifier',exp));
+    iss.push(...this.vOS('expiry',exp));
+    iss.push(...this.vOS('quantity',exp));
+    return iss;
   }
 }
 /**
@@ -141,11 +141,11 @@ export class SubstanceIngredient extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'Substance.ingredient' }
-    this.vOS('quantity',exp)
-    this.vRS('substance',exp)
-    return issues;
+    iss.push(...this.vOS('quantity',exp));
+    iss.push(...this.vRS('substance',exp));
+    return iss;
   }
 }
 /**
@@ -265,16 +265,16 @@ export class Substance extends fhir.DomainResource {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'Substance' }
-    this.vRS('resourceType',exp)
-    this.vOA('identifier',exp)
-    this.vOSV('status',exp,'SubstanceStatus',SubstanceStatusVsValidation,'r')
-    this.vOA('category',exp)
-    this.vRS('code',exp)
-    this.vOS('description',exp)
-    this.vOA('instance',exp)
-    this.vOA('ingredient',exp)
-    return issues;
+    iss.push(...this.vRPS('resourceType',exp));
+    iss.push(...this.vOA('identifier',exp));
+    iss.push(...this.vOSV('status',exp,'SubstanceStatus',SubstanceStatusVsValidation,'r'));
+    iss.push(...this.vOA('category',exp));
+    iss.push(...this.vRS('code',exp));
+    iss.push(...this.vOS('description',exp));
+    iss.push(...this.vOA('instance',exp));
+    iss.push(...this.vOA('ingredient',exp));
+    return iss;
   }
 }

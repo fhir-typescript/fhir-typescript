@@ -203,20 +203,20 @@ export class Endpoint extends fhir.DomainResource {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'Endpoint' }
-    this.vRS('resourceType',exp)
-    this.vOA('identifier',exp)
-    this.vRSV('status',exp,'EndpointStatus',EndpointStatusVsValidation,'r')
-    this.vRS('connectionType',exp)
-    this.vOS('name',exp)
-    this.vOS('managingOrganization',exp)
-    this.vOA('contact',exp)
-    this.vOS('period',exp)
-    this.vRA('payloadType',exp)
-    this.vOA('payloadMimeType',exp)
-    this.vRS('address',exp)
-    this.vOA('header',exp)
-    return issues;
+    iss.push(...this.vRPS('resourceType',exp));
+    iss.push(...this.vOA('identifier',exp));
+    iss.push(...this.vRSV('status',exp,'EndpointStatus',EndpointStatusVsValidation,'r'));
+    iss.push(...this.vRS('connectionType',exp));
+    iss.push(...this.vOS('name',exp));
+    iss.push(...this.vOS('managingOrganization',exp));
+    iss.push(...this.vOA('contact',exp));
+    iss.push(...this.vOS('period',exp));
+    iss.push(...this.vRA('payloadType',exp));
+    iss.push(...this.vOA('payloadMimeType',exp));
+    iss.push(...this.vRS('address',exp));
+    iss.push(...this.vOA('header',exp));
+    return iss;
   }
 }

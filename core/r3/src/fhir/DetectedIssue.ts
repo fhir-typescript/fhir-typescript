@@ -81,12 +81,12 @@ export class DetectedIssueMitigation extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'DetectedIssue.mitigation' }
-    this.vRS('action',exp)
-    this.vOS('date',exp)
-    this.vOS('author',exp)
-    return issues;
+    iss.push(...this.vRS('action',exp));
+    iss.push(...this.vOS('date',exp));
+    iss.push(...this.vOS('author',exp));
+    return iss;
   }
 }
 /**
@@ -264,20 +264,20 @@ export class DetectedIssue extends fhir.DomainResource {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'DetectedIssue' }
-    this.vRS('resourceType',exp)
-    this.vOS('identifier',exp)
-    this.vRSV('status',exp,'ObservationStatus',ObservationStatusVsValidation,'r')
-    this.vOS('category',exp)
-    this.vOSV('severity',exp,'DetectedissueSeverity',DetectedissueSeverityVsValidation,'r')
-    this.vOS('patient',exp)
-    this.vOS('date',exp)
-    this.vOS('author',exp)
-    this.vOA('implicated',exp)
-    this.vOS('detail',exp)
-    this.vOS('reference',exp)
-    this.vOA('mitigation',exp)
-    return issues;
+    iss.push(...this.vRPS('resourceType',exp));
+    iss.push(...this.vOS('identifier',exp));
+    iss.push(...this.vRSV('status',exp,'ObservationStatus',ObservationStatusVsValidation,'r'));
+    iss.push(...this.vOS('category',exp));
+    iss.push(...this.vOSV('severity',exp,'DetectedissueSeverity',DetectedissueSeverityVsValidation,'r'));
+    iss.push(...this.vOS('patient',exp));
+    iss.push(...this.vOS('date',exp));
+    iss.push(...this.vOS('author',exp));
+    iss.push(...this.vOA('implicated',exp));
+    iss.push(...this.vOS('detail',exp));
+    iss.push(...this.vOS('reference',exp));
+    iss.push(...this.vOA('mitigation',exp));
+    return iss;
   }
 }

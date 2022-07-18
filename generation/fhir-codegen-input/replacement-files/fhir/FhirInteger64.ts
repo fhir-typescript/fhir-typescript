@@ -48,10 +48,10 @@ export class FhirInteger64 extends fhir.FhirPrimitive {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if ((this.value !== undefined) && (this.value !== null) && ((typeof this.value !== 'string') || (!FhirInteger64._fts_regex.test(this.value)))) {
-      issues.push({ severity: 'error', code: 'invalid', details: { text: 'Invalid value in primitive type unsignedInt' }, expression: [exp]});
+      iss.push({ severity: 'error', code: 'invalid', details: { text: 'Invalid value in primitive type unsignedInt' }, expression: [exp]});
     }
-    return issues;
+    return iss;
   }
 }

@@ -157,12 +157,12 @@ export class QuestionnaireItemEnableWhen extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'Questionnaire.item.enableWhen' }
-    this.vRS('question',exp)
-    this.vRSV('operator',exp,'QuestionnaireEnableOperator',QuestionnaireEnableOperatorVsValidation,'r')
-    this.vRS('answer',exp)
-    return issues;
+    iss.push(...this.vRS('question',exp));
+    iss.push(...this.vRSV('operator',exp,'QuestionnaireEnableOperator',QuestionnaireEnableOperatorVsValidation,'r'));
+    iss.push(...this.vRS('answer',exp));
+    return iss;
   }
 }
 /**
@@ -250,11 +250,11 @@ export class QuestionnaireItemAnswerOption extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'Questionnaire.item.answerOption' }
-    this.vRS('value',exp)
-    this.vOS('initialSelected',exp)
-    return issues;
+    iss.push(...this.vRS('value',exp));
+    iss.push(...this.vOS('initialSelected',exp));
+    return iss;
   }
 }
 /**
@@ -355,10 +355,10 @@ export class QuestionnaireItemInitial extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'Questionnaire.item.initial' }
-    this.vRS('value',exp)
-    return issues;
+    iss.push(...this.vRS('value',exp));
+    return iss;
   }
 }
 /**
@@ -628,25 +628,25 @@ export class QuestionnaireItem extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'Questionnaire.item' }
-    this.vRS('linkId',exp)
-    this.vOS('definition',exp)
-    this.vOA('code',exp)
-    this.vOS('prefix',exp)
-    this.vOS('text',exp)
-    this.vRSV('type',exp,'ItemType',ItemTypeVsValidation,'r')
-    this.vOA('enableWhen',exp)
-    this.vOSV('enableBehavior',exp,'QuestionnaireEnableBehavior',QuestionnaireEnableBehaviorVsValidation,'r')
-    this.vOS('required',exp)
-    this.vOS('repeats',exp)
-    this.vOS('readOnly',exp)
-    this.vOS('maxLength',exp)
-    this.vOS('answerValueSet',exp)
-    this.vOA('answerOption',exp)
-    this.vOA('initial',exp)
-    this.vOA('item',exp)
-    return issues;
+    iss.push(...this.vRS('linkId',exp));
+    iss.push(...this.vOS('definition',exp));
+    iss.push(...this.vOA('code',exp));
+    iss.push(...this.vOS('prefix',exp));
+    iss.push(...this.vOS('text',exp));
+    iss.push(...this.vRSV('type',exp,'ItemType',ItemTypeVsValidation,'r'));
+    iss.push(...this.vOA('enableWhen',exp));
+    iss.push(...this.vOSV('enableBehavior',exp,'QuestionnaireEnableBehavior',QuestionnaireEnableBehaviorVsValidation,'r'));
+    iss.push(...this.vOS('required',exp));
+    iss.push(...this.vOS('repeats',exp));
+    iss.push(...this.vOS('readOnly',exp));
+    iss.push(...this.vOS('maxLength',exp));
+    iss.push(...this.vOS('answerValueSet',exp));
+    iss.push(...this.vOA('answerOption',exp));
+    iss.push(...this.vOA('initial',exp));
+    iss.push(...this.vOA('item',exp));
+    return iss;
   }
 }
 /**
@@ -1013,31 +1013,31 @@ export class Questionnaire extends fhir.DomainResource {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'Questionnaire' }
-    this.vRS('resourceType',exp)
-    this.vOS('url',exp)
-    this.vOA('identifier',exp)
-    this.vOS('version',exp)
-    this.vOS('name',exp)
-    this.vOS('title',exp)
-    this.vOA('derivedFrom',exp)
-    this.vRSV('status',exp,'PublicationStatus',PublicationStatusVsValidation,'r')
-    this.vOS('experimental',exp)
-    this.vOAV('subjectType',exp,'ResourceTypes',ResourceTypesVsValidation,'r')
-    this.vOS('date',exp)
-    this.vOS('publisher',exp)
-    this.vOA('contact',exp)
-    this.vOS('description',exp)
-    this.vOA('useContext',exp)
-    this.vOA('jurisdiction',exp)
-    this.vOS('purpose',exp)
-    this.vOS('copyright',exp)
-    this.vOS('approvalDate',exp)
-    this.vOS('lastReviewDate',exp)
-    this.vOS('effectivePeriod',exp)
-    this.vOA('code',exp)
-    this.vOA('item',exp)
-    return issues;
+    iss.push(...this.vRPS('resourceType',exp));
+    iss.push(...this.vOS('url',exp));
+    iss.push(...this.vOA('identifier',exp));
+    iss.push(...this.vOS('version',exp));
+    iss.push(...this.vOS('name',exp));
+    iss.push(...this.vOS('title',exp));
+    iss.push(...this.vOA('derivedFrom',exp));
+    iss.push(...this.vRSV('status',exp,'PublicationStatus',PublicationStatusVsValidation,'r'));
+    iss.push(...this.vOS('experimental',exp));
+    iss.push(...this.vOAV('subjectType',exp,'ResourceTypes',ResourceTypesVsValidation,'r'));
+    iss.push(...this.vOS('date',exp));
+    iss.push(...this.vOS('publisher',exp));
+    iss.push(...this.vOA('contact',exp));
+    iss.push(...this.vOS('description',exp));
+    iss.push(...this.vOA('useContext',exp));
+    iss.push(...this.vOA('jurisdiction',exp));
+    iss.push(...this.vOS('purpose',exp));
+    iss.push(...this.vOS('copyright',exp));
+    iss.push(...this.vOS('approvalDate',exp));
+    iss.push(...this.vOS('lastReviewDate',exp));
+    iss.push(...this.vOS('effectivePeriod',exp));
+    iss.push(...this.vOA('code',exp));
+    iss.push(...this.vOA('item',exp));
+    return iss;
   }
 }

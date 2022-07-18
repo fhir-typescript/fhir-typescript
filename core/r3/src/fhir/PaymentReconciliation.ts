@@ -121,16 +121,16 @@ export class PaymentReconciliationDetail extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'PaymentReconciliation.detail' }
-    this.vRS('type',exp)
-    this.vOS('request',exp)
-    this.vOS('response',exp)
-    this.vOS('submitter',exp)
-    this.vOS('payee',exp)
-    this.vOS('date',exp)
-    this.vOS('amount',exp)
-    return issues;
+    iss.push(...this.vRS('type',exp));
+    iss.push(...this.vOS('request',exp));
+    iss.push(...this.vOS('response',exp));
+    iss.push(...this.vOS('submitter',exp));
+    iss.push(...this.vOS('payee',exp));
+    iss.push(...this.vOS('date',exp));
+    iss.push(...this.vOS('amount',exp));
+    return iss;
   }
 }
 /**
@@ -183,11 +183,11 @@ export class PaymentReconciliationProcessNote extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'PaymentReconciliation.processNote' }
-    this.vOSV('type',exp,'NoteType',NoteTypeVsValidation,'r')
-    this.vOS('text',exp)
-    return issues;
+    iss.push(...this.vOSV('type',exp,'NoteType',NoteTypeVsValidation,'r'));
+    iss.push(...this.vOS('text',exp));
+    return iss;
   }
 }
 /**
@@ -376,23 +376,23 @@ export class PaymentReconciliation extends fhir.DomainResource {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'PaymentReconciliation' }
-    this.vRS('resourceType',exp)
-    this.vOA('identifier',exp)
-    this.vOSV('status',exp,'FmStatus',FmStatusVsValidation,'r')
-    this.vOS('period',exp)
-    this.vOS('created',exp)
-    this.vOS('organization',exp)
-    this.vOS('request',exp)
-    this.vOSV('outcome',exp,'RemittanceOutcome',RemittanceOutcomeVsValidation,'r')
-    this.vOS('disposition',exp)
-    this.vOS('requestProvider',exp)
-    this.vOS('requestOrganization',exp)
-    this.vOA('detail',exp)
-    this.vOS('form',exp)
-    this.vOS('total',exp)
-    this.vOA('processNote',exp)
-    return issues;
+    iss.push(...this.vRPS('resourceType',exp));
+    iss.push(...this.vOA('identifier',exp));
+    iss.push(...this.vOSV('status',exp,'FmStatus',FmStatusVsValidation,'r'));
+    iss.push(...this.vOS('period',exp));
+    iss.push(...this.vOS('created',exp));
+    iss.push(...this.vOS('organization',exp));
+    iss.push(...this.vOS('request',exp));
+    iss.push(...this.vOSV('outcome',exp,'RemittanceOutcome',RemittanceOutcomeVsValidation,'r'));
+    iss.push(...this.vOS('disposition',exp));
+    iss.push(...this.vOS('requestProvider',exp));
+    iss.push(...this.vOS('requestOrganization',exp));
+    iss.push(...this.vOA('detail',exp));
+    iss.push(...this.vOS('form',exp));
+    iss.push(...this.vOS('total',exp));
+    iss.push(...this.vOA('processNote',exp));
+    return iss;
   }
 }

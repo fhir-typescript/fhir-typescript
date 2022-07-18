@@ -114,14 +114,14 @@ export class DataRequirementCodeFilter extends fhir.FhirElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'DataRequirement.codeFilter' }
-    this.vRS('path',exp)
-    this.vOS('valueSet',exp)
-    this.vOA('valueCode',exp)
-    this.vOA('valueCoding',exp)
-    this.vOA('valueCodeableConcept',exp)
-    return issues;
+    iss.push(...this.vRS('path',exp));
+    iss.push(...this.vOS('valueSet',exp));
+    iss.push(...this.vOA('valueCode',exp));
+    iss.push(...this.vOA('valueCoding',exp));
+    iss.push(...this.vOA('valueCodeableConcept',exp));
+    return iss;
   }
 }
 /**
@@ -194,11 +194,11 @@ export class DataRequirementDateFilter extends fhir.FhirElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'DataRequirement.dateFilter' }
-    this.vRS('path',exp)
-    this.vOS('value',exp)
-    return issues;
+    iss.push(...this.vRS('path',exp));
+    iss.push(...this.vOS('value',exp));
+    return iss;
   }
 }
 /**
@@ -303,13 +303,13 @@ export class DataRequirement extends fhir.FhirElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'DataRequirement' }
-    this.vRSV('type',exp,'AllTypes',AllTypesVsValidation,'r')
-    this.vOA('profile',exp)
-    this.vOA('mustSupport',exp)
-    this.vOA('codeFilter',exp)
-    this.vOA('dateFilter',exp)
-    return issues;
+    iss.push(...this.vRSV('type',exp,'AllTypes',AllTypesVsValidation,'r'));
+    iss.push(...this.vOA('profile',exp));
+    iss.push(...this.vOA('mustSupport',exp));
+    iss.push(...this.vOA('codeFilter',exp));
+    iss.push(...this.vOA('dateFilter',exp));
+    return iss;
   }
 }

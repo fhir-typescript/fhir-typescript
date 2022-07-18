@@ -149,12 +149,12 @@ export class CapabilityStatementSoftware extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'CapabilityStatement.software' }
-    this.vRS('name',exp)
-    this.vOS('version',exp)
-    this.vOS('releaseDate',exp)
-    return issues;
+    iss.push(...this.vRS('name',exp));
+    iss.push(...this.vOS('version',exp));
+    iss.push(...this.vOS('releaseDate',exp));
+    return iss;
   }
 }
 /**
@@ -225,12 +225,12 @@ export class CapabilityStatementImplementation extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'CapabilityStatement.implementation' }
-    this.vRS('description',exp)
-    this.vOS('url',exp)
-    this.vOS('custodian',exp)
-    return issues;
+    iss.push(...this.vRS('description',exp));
+    iss.push(...this.vOS('url',exp));
+    iss.push(...this.vOS('custodian',exp));
+    return iss;
   }
 }
 /**
@@ -301,12 +301,12 @@ export class CapabilityStatementRestSecurity extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'CapabilityStatement.rest.security' }
-    this.vOS('cors',exp)
-    this.vOA('service',exp)
-    this.vOS('description',exp)
-    return issues;
+    iss.push(...this.vOS('cors',exp));
+    iss.push(...this.vOA('service',exp));
+    iss.push(...this.vOS('description',exp));
+    return iss;
   }
 }
 /**
@@ -368,11 +368,11 @@ export class CapabilityStatementRestResourceInteraction extends fhir.BackboneEle
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'CapabilityStatement.rest.resource.interaction' }
-    this.vRSV('code',exp,'TypeRestfulInteraction',TypeRestfulInteractionVsValidation,'r')
-    this.vOS('documentation',exp)
-    return issues;
+    iss.push(...this.vRSV('code',exp,'TypeRestfulInteraction',TypeRestfulInteractionVsValidation,'r'));
+    iss.push(...this.vOS('documentation',exp));
+    return iss;
   }
 }
 /**
@@ -469,13 +469,13 @@ export class CapabilityStatementRestResourceSearchParam extends fhir.BackboneEle
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'CapabilityStatement.rest.resource.searchParam' }
-    this.vRS('name',exp)
-    this.vOS('definition',exp)
-    this.vRSV('type',exp,'SearchParamType',SearchParamTypeVsValidation,'r')
-    this.vOS('documentation',exp)
-    return issues;
+    iss.push(...this.vRS('name',exp));
+    iss.push(...this.vOS('definition',exp));
+    iss.push(...this.vRSV('type',exp,'SearchParamType',SearchParamTypeVsValidation,'r'));
+    iss.push(...this.vOS('documentation',exp));
+    return iss;
   }
 }
 /**
@@ -556,12 +556,12 @@ export class CapabilityStatementRestResourceOperation extends fhir.BackboneEleme
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'CapabilityStatement.rest.resource.operation' }
-    this.vRS('name',exp)
-    this.vRS('definition',exp)
-    this.vOS('documentation',exp)
-    return issues;
+    iss.push(...this.vRS('name',exp));
+    iss.push(...this.vRS('definition',exp));
+    iss.push(...this.vOS('documentation',exp));
+    return iss;
   }
 }
 /**
@@ -871,26 +871,26 @@ export class CapabilityStatementRestResource extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'CapabilityStatement.rest.resource' }
-    this.vRSV('type',exp,'ResourceTypes',ResourceTypesVsValidation,'r')
-    this.vOS('profile',exp)
-    this.vOA('supportedProfile',exp)
-    this.vOS('documentation',exp)
-    this.vOA('interaction',exp)
-    this.vOSV('versioning',exp,'VersioningPolicy',VersioningPolicyVsValidation,'r')
-    this.vOS('readHistory',exp)
-    this.vOS('updateCreate',exp)
-    this.vOS('conditionalCreate',exp)
-    this.vOSV('conditionalRead',exp,'ConditionalReadStatus',ConditionalReadStatusVsValidation,'r')
-    this.vOS('conditionalUpdate',exp)
-    this.vOSV('conditionalDelete',exp,'ConditionalDeleteStatus',ConditionalDeleteStatusVsValidation,'r')
-    this.vOAV('referencePolicy',exp,'ReferenceHandlingPolicy',ReferenceHandlingPolicyVsValidation,'r')
-    this.vOA('searchInclude',exp)
-    this.vOA('searchRevInclude',exp)
-    this.vOA('searchParam',exp)
-    this.vOA('operation',exp)
-    return issues;
+    iss.push(...this.vRSV('type',exp,'ResourceTypes',ResourceTypesVsValidation,'r'));
+    iss.push(...this.vOS('profile',exp));
+    iss.push(...this.vOA('supportedProfile',exp));
+    iss.push(...this.vOS('documentation',exp));
+    iss.push(...this.vOA('interaction',exp));
+    iss.push(...this.vOSV('versioning',exp,'VersioningPolicy',VersioningPolicyVsValidation,'r'));
+    iss.push(...this.vOS('readHistory',exp));
+    iss.push(...this.vOS('updateCreate',exp));
+    iss.push(...this.vOS('conditionalCreate',exp));
+    iss.push(...this.vOSV('conditionalRead',exp,'ConditionalReadStatus',ConditionalReadStatusVsValidation,'r'));
+    iss.push(...this.vOS('conditionalUpdate',exp));
+    iss.push(...this.vOSV('conditionalDelete',exp,'ConditionalDeleteStatus',ConditionalDeleteStatusVsValidation,'r'));
+    iss.push(...this.vOAV('referencePolicy',exp,'ReferenceHandlingPolicy',ReferenceHandlingPolicyVsValidation,'r'));
+    iss.push(...this.vOA('searchInclude',exp));
+    iss.push(...this.vOA('searchRevInclude',exp));
+    iss.push(...this.vOA('searchParam',exp));
+    iss.push(...this.vOA('operation',exp));
+    return iss;
   }
 }
 /**
@@ -952,11 +952,11 @@ export class CapabilityStatementRestInteraction extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'CapabilityStatement.rest.interaction' }
-    this.vRSV('code',exp,'SystemRestfulInteraction',SystemRestfulInteractionVsValidation,'r')
-    this.vOS('documentation',exp)
-    return issues;
+    iss.push(...this.vRSV('code',exp,'SystemRestfulInteraction',SystemRestfulInteractionVsValidation,'r'));
+    iss.push(...this.vOS('documentation',exp));
+    return iss;
   }
 }
 /**
@@ -1087,17 +1087,17 @@ export class CapabilityStatementRest extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'CapabilityStatement.rest' }
-    this.vRSV('mode',exp,'RestfulCapabilityMode',RestfulCapabilityModeVsValidation,'r')
-    this.vOS('documentation',exp)
-    this.vOS('security',exp)
-    this.vOA('resource',exp)
-    this.vOA('interaction',exp)
-    this.vOA('searchParam',exp)
-    this.vOA('operation',exp)
-    this.vOA('compartment',exp)
-    return issues;
+    iss.push(...this.vRSV('mode',exp,'RestfulCapabilityMode',RestfulCapabilityModeVsValidation,'r'));
+    iss.push(...this.vOS('documentation',exp));
+    iss.push(...this.vOS('security',exp));
+    iss.push(...this.vOA('resource',exp));
+    iss.push(...this.vOA('interaction',exp));
+    iss.push(...this.vOA('searchParam',exp));
+    iss.push(...this.vOA('operation',exp));
+    iss.push(...this.vOA('compartment',exp));
+    return iss;
   }
 }
 /**
@@ -1152,11 +1152,11 @@ export class CapabilityStatementMessagingEndpoint extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'CapabilityStatement.messaging.endpoint' }
-    this.vRS('protocol',exp)
-    this.vRS('address',exp)
-    return issues;
+    iss.push(...this.vRS('protocol',exp));
+    iss.push(...this.vRS('address',exp));
+    return iss;
   }
 }
 /**
@@ -1219,11 +1219,11 @@ export class CapabilityStatementMessagingSupportedMessage extends fhir.BackboneE
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'CapabilityStatement.messaging.supportedMessage' }
-    this.vRSV('mode',exp,'EventCapabilityMode',EventCapabilityModeVsValidation,'r')
-    this.vRS('definition',exp)
-    return issues;
+    iss.push(...this.vRSV('mode',exp,'EventCapabilityMode',EventCapabilityModeVsValidation,'r'));
+    iss.push(...this.vRS('definition',exp));
+    return iss;
   }
 }
 /**
@@ -1304,13 +1304,13 @@ export class CapabilityStatementMessaging extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'CapabilityStatement.messaging' }
-    this.vOA('endpoint',exp)
-    this.vOS('reliableCache',exp)
-    this.vOS('documentation',exp)
-    this.vOA('supportedMessage',exp)
-    return issues;
+    iss.push(...this.vOA('endpoint',exp));
+    iss.push(...this.vOS('reliableCache',exp));
+    iss.push(...this.vOS('documentation',exp));
+    iss.push(...this.vOA('supportedMessage',exp));
+    return iss;
   }
 }
 /**
@@ -1390,12 +1390,12 @@ export class CapabilityStatementDocument extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'CapabilityStatement.document' }
-    this.vRSV('mode',exp,'DocumentMode',DocumentModeVsValidation,'r')
-    this.vOS('documentation',exp)
-    this.vRS('profile',exp)
-    return issues;
+    iss.push(...this.vRSV('mode',exp,'DocumentMode',DocumentModeVsValidation,'r'));
+    iss.push(...this.vOS('documentation',exp));
+    iss.push(...this.vRS('profile',exp));
+    return iss;
   }
 }
 /**
@@ -1842,35 +1842,35 @@ export class CapabilityStatement extends fhir.DomainResource {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'CapabilityStatement' }
-    this.vRS('resourceType',exp)
-    this.vOS('url',exp)
-    this.vOS('version',exp)
-    this.vOS('name',exp)
-    this.vOS('title',exp)
-    this.vRSV('status',exp,'PublicationStatus',PublicationStatusVsValidation,'r')
-    this.vOS('experimental',exp)
-    this.vRS('date',exp)
-    this.vOS('publisher',exp)
-    this.vOA('contact',exp)
-    this.vOS('description',exp)
-    this.vOA('useContext',exp)
-    this.vOA('jurisdiction',exp)
-    this.vOS('purpose',exp)
-    this.vOS('copyright',exp)
-    this.vRSV('kind',exp,'CapabilityStatementKind',CapabilityStatementKindVsValidation,'r')
-    this.vOA('instantiates',exp)
-    this.vOA('imports',exp)
-    this.vOS('software',exp)
-    this.vOS('implementation',exp)
-    this.vRSV('fhirVersion',exp,'FHIRVersion',FHIRVersionVsValidation,'r')
-    this.vRA('format',exp)
-    this.vOA('patchFormat',exp)
-    this.vOA('implementationGuide',exp)
-    this.vOA('rest',exp)
-    this.vOA('messaging',exp)
-    this.vOA('document',exp)
-    return issues;
+    iss.push(...this.vRPS('resourceType',exp));
+    iss.push(...this.vOS('url',exp));
+    iss.push(...this.vOS('version',exp));
+    iss.push(...this.vOS('name',exp));
+    iss.push(...this.vOS('title',exp));
+    iss.push(...this.vRSV('status',exp,'PublicationStatus',PublicationStatusVsValidation,'r'));
+    iss.push(...this.vOS('experimental',exp));
+    iss.push(...this.vRS('date',exp));
+    iss.push(...this.vOS('publisher',exp));
+    iss.push(...this.vOA('contact',exp));
+    iss.push(...this.vOS('description',exp));
+    iss.push(...this.vOA('useContext',exp));
+    iss.push(...this.vOA('jurisdiction',exp));
+    iss.push(...this.vOS('purpose',exp));
+    iss.push(...this.vOS('copyright',exp));
+    iss.push(...this.vRSV('kind',exp,'CapabilityStatementKind',CapabilityStatementKindVsValidation,'r'));
+    iss.push(...this.vOA('instantiates',exp));
+    iss.push(...this.vOA('imports',exp));
+    iss.push(...this.vOS('software',exp));
+    iss.push(...this.vOS('implementation',exp));
+    iss.push(...this.vRSV('fhirVersion',exp,'FHIRVersion',FHIRVersionVsValidation,'r'));
+    iss.push(...this.vRA('format',exp));
+    iss.push(...this.vOA('patchFormat',exp));
+    iss.push(...this.vOA('implementationGuide',exp));
+    iss.push(...this.vOA('rest',exp));
+    iss.push(...this.vOA('messaging',exp));
+    iss.push(...this.vOA('document',exp));
+    return iss;
   }
 }

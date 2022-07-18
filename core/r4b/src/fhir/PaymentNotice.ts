@@ -184,21 +184,21 @@ export class PaymentNotice extends fhir.DomainResource {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'PaymentNotice' }
-    this.vRS('resourceType',exp)
-    this.vOA('identifier',exp)
-    this.vRSV('status',exp,'FmStatus',FmStatusVsValidation,'r')
-    this.vOS('request',exp)
-    this.vOS('response',exp)
-    this.vRS('created',exp)
-    this.vOS('provider',exp)
-    this.vRS('payment',exp)
-    this.vOS('paymentDate',exp)
-    this.vOS('payee',exp)
-    this.vRS('recipient',exp)
-    this.vRS('amount',exp)
-    this.vOS('paymentStatus',exp)
-    return issues;
+    iss.push(...this.vRPS('resourceType',exp));
+    iss.push(...this.vOA('identifier',exp));
+    iss.push(...this.vRSV('status',exp,'FmStatus',FmStatusVsValidation,'r'));
+    iss.push(...this.vOS('request',exp));
+    iss.push(...this.vOS('response',exp));
+    iss.push(...this.vRS('created',exp));
+    iss.push(...this.vOS('provider',exp));
+    iss.push(...this.vRS('payment',exp));
+    iss.push(...this.vOS('paymentDate',exp));
+    iss.push(...this.vOS('payee',exp));
+    iss.push(...this.vRS('recipient',exp));
+    iss.push(...this.vRS('amount',exp));
+    iss.push(...this.vOS('paymentStatus',exp));
+    return iss;
   }
 }

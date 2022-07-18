@@ -170,21 +170,21 @@ export class OrganizationAffiliation extends fhir.DomainResource {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'OrganizationAffiliation' }
-    this.vRS('resourceType',exp)
-    this.vOA('identifier',exp)
-    this.vOS('active',exp)
-    this.vOS('period',exp)
-    this.vOS('organization',exp)
-    this.vOS('participatingOrganization',exp)
-    this.vOA('network',exp)
-    this.vOA('code',exp)
-    this.vOA('specialty',exp)
-    this.vOA('location',exp)
-    this.vOA('healthcareService',exp)
-    this.vOA('telecom',exp)
-    this.vOA('endpoint',exp)
-    return issues;
+    iss.push(...this.vRPS('resourceType',exp));
+    iss.push(...this.vOA('identifier',exp));
+    iss.push(...this.vOS('active',exp));
+    iss.push(...this.vOS('period',exp));
+    iss.push(...this.vOS('organization',exp));
+    iss.push(...this.vOS('participatingOrganization',exp));
+    iss.push(...this.vOA('network',exp));
+    iss.push(...this.vOA('code',exp));
+    iss.push(...this.vOA('specialty',exp));
+    iss.push(...this.vOA('location',exp));
+    iss.push(...this.vOA('healthcareService',exp));
+    iss.push(...this.vOA('telecom',exp));
+    iss.push(...this.vOA('endpoint',exp));
+    return iss;
   }
 }

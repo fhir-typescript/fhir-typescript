@@ -56,11 +56,11 @@ export class InvoiceParticipant extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'Invoice.participant' }
-    this.vOS('role',exp)
-    this.vRS('actor',exp)
-    return issues;
+    iss.push(...this.vOS('role',exp));
+    iss.push(...this.vRS('actor',exp));
+    return iss;
   }
 }
 /**
@@ -140,13 +140,13 @@ export class InvoiceLineItemPriceComponent extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'Invoice.lineItem.priceComponent' }
-    this.vRSV('type',exp,'InvoicePriceComponentType',InvoicePriceComponentTypeVsValidation,'r')
-    this.vOS('code',exp)
-    this.vOS('factor',exp)
-    this.vOS('amount',exp)
-    return issues;
+    iss.push(...this.vRSV('type',exp,'InvoicePriceComponentType',InvoicePriceComponentTypeVsValidation,'r'));
+    iss.push(...this.vOS('code',exp));
+    iss.push(...this.vOS('factor',exp));
+    iss.push(...this.vOS('amount',exp));
+    return iss;
   }
 }
 /**
@@ -224,12 +224,12 @@ export class InvoiceLineItem extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'Invoice.lineItem' }
-    this.vOS('sequence',exp)
-    this.vRS('chargeItem',exp)
-    this.vOA('priceComponent',exp)
-    return issues;
+    iss.push(...this.vOS('sequence',exp));
+    iss.push(...this.vRS('chargeItem',exp));
+    iss.push(...this.vOA('priceComponent',exp));
+    return iss;
   }
 }
 /**
@@ -447,25 +447,25 @@ export class Invoice extends fhir.DomainResource {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'Invoice' }
-    this.vRS('resourceType',exp)
-    this.vOA('identifier',exp)
-    this.vRSV('status',exp,'InvoiceStatus',InvoiceStatusVsValidation,'r')
-    this.vOS('cancelledReason',exp)
-    this.vOS('type',exp)
-    this.vOS('subject',exp)
-    this.vOS('recipient',exp)
-    this.vOS('date',exp)
-    this.vOA('participant',exp)
-    this.vOS('issuer',exp)
-    this.vOS('account',exp)
-    this.vOA('lineItem',exp)
-    this.vOA('totalPriceComponent',exp)
-    this.vOS('totalNet',exp)
-    this.vOS('totalGross',exp)
-    this.vOS('paymentTerms',exp)
-    this.vOA('note',exp)
-    return issues;
+    iss.push(...this.vRPS('resourceType',exp));
+    iss.push(...this.vOA('identifier',exp));
+    iss.push(...this.vRSV('status',exp,'InvoiceStatus',InvoiceStatusVsValidation,'r'));
+    iss.push(...this.vOS('cancelledReason',exp));
+    iss.push(...this.vOS('type',exp));
+    iss.push(...this.vOS('subject',exp));
+    iss.push(...this.vOS('recipient',exp));
+    iss.push(...this.vOS('date',exp));
+    iss.push(...this.vOA('participant',exp));
+    iss.push(...this.vOS('issuer',exp));
+    iss.push(...this.vOS('account',exp));
+    iss.push(...this.vOA('lineItem',exp));
+    iss.push(...this.vOA('totalPriceComponent',exp));
+    iss.push(...this.vOS('totalNet',exp));
+    iss.push(...this.vOS('totalGross',exp));
+    iss.push(...this.vOS('paymentTerms',exp));
+    iss.push(...this.vOA('note',exp));
+    return iss;
   }
 }

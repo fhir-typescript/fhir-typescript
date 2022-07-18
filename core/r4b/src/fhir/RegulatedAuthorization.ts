@@ -113,14 +113,14 @@ export class RegulatedAuthorizationCase extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'RegulatedAuthorization.case' }
-    this.vOS('identifier',exp)
-    this.vOS('type',exp)
-    this.vOS('status',exp)
-    this.vOS('date',exp)
-    this.vOA('application',exp)
-    return issues;
+    iss.push(...this.vOS('identifier',exp));
+    iss.push(...this.vOS('type',exp));
+    iss.push(...this.vOS('status',exp));
+    iss.push(...this.vOS('date',exp));
+    iss.push(...this.vOA('application',exp));
+    return iss;
   }
 }
 /**
@@ -302,23 +302,23 @@ export class RegulatedAuthorization extends fhir.DomainResource {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'RegulatedAuthorization' }
-    this.vRS('resourceType',exp)
-    this.vOA('identifier',exp)
-    this.vOA('subject',exp)
-    this.vOS('type',exp)
-    this.vOS('description',exp)
-    this.vOA('region',exp)
-    this.vOS('status',exp)
-    this.vOS('statusDate',exp)
-    this.vOS('validityPeriod',exp)
-    this.vOS('indication',exp)
-    this.vOS('intendedUse',exp)
-    this.vOA('basis',exp)
-    this.vOS('holder',exp)
-    this.vOS('regulator',exp)
-    this.vOS('case',exp)
-    return issues;
+    iss.push(...this.vRPS('resourceType',exp));
+    iss.push(...this.vOA('identifier',exp));
+    iss.push(...this.vOA('subject',exp));
+    iss.push(...this.vOS('type',exp));
+    iss.push(...this.vOS('description',exp));
+    iss.push(...this.vOA('region',exp));
+    iss.push(...this.vOS('status',exp));
+    iss.push(...this.vOS('statusDate',exp));
+    iss.push(...this.vOS('validityPeriod',exp));
+    iss.push(...this.vOS('indication',exp));
+    iss.push(...this.vOS('intendedUse',exp));
+    iss.push(...this.vOA('basis',exp));
+    iss.push(...this.vOS('holder',exp));
+    iss.push(...this.vOS('regulator',exp));
+    iss.push(...this.vOS('case',exp));
+    return iss;
   }
 }

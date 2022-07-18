@@ -52,11 +52,11 @@ export class NutritionProductNutrient extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'NutritionProduct.nutrient' }
-    this.vOS('item',exp)
-    this.vOA('amount',exp)
-    return issues;
+    iss.push(...this.vOS('item',exp));
+    iss.push(...this.vOA('amount',exp));
+    return iss;
   }
 }
 /**
@@ -103,11 +103,11 @@ export class NutritionProductIngredient extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'NutritionProduct.ingredient' }
-    this.vRS('item',exp)
-    this.vOA('amount',exp)
-    return issues;
+    iss.push(...this.vRS('item',exp));
+    iss.push(...this.vOA('amount',exp));
+    return iss;
   }
 }
 /**
@@ -188,11 +188,11 @@ export class NutritionProductProductCharacteristic extends fhir.BackboneElement 
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'NutritionProduct.productCharacteristic' }
-    this.vRS('type',exp)
-    this.vRS('value',exp)
-    return issues;
+    iss.push(...this.vRS('type',exp));
+    iss.push(...this.vRS('value',exp));
+    return iss;
   }
 }
 /**
@@ -289,14 +289,14 @@ export class NutritionProductInstance extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'NutritionProduct.instance' }
-    this.vOS('quantity',exp)
-    this.vOA('identifier',exp)
-    this.vOS('lotNumber',exp)
-    this.vOS('expiry',exp)
-    this.vOS('useBy',exp)
-    return issues;
+    iss.push(...this.vOS('quantity',exp));
+    iss.push(...this.vOA('identifier',exp));
+    iss.push(...this.vOS('lotNumber',exp));
+    iss.push(...this.vOS('expiry',exp));
+    iss.push(...this.vOS('useBy',exp));
+    return iss;
   }
 }
 /**
@@ -438,19 +438,19 @@ export class NutritionProduct extends fhir.DomainResource {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'NutritionProduct' }
-    this.vRS('resourceType',exp)
-    this.vRSV('status',exp,'NutritionproductStatus',NutritionproductStatusVsValidation,'r')
-    this.vOA('category',exp)
-    this.vOS('code',exp)
-    this.vOA('manufacturer',exp)
-    this.vOA('nutrient',exp)
-    this.vOA('ingredient',exp)
-    this.vOA('knownAllergen',exp)
-    this.vOA('productCharacteristic',exp)
-    this.vOS('instance',exp)
-    this.vOA('note',exp)
-    return issues;
+    iss.push(...this.vRPS('resourceType',exp));
+    iss.push(...this.vRSV('status',exp,'NutritionproductStatus',NutritionproductStatusVsValidation,'r'));
+    iss.push(...this.vOA('category',exp));
+    iss.push(...this.vOS('code',exp));
+    iss.push(...this.vOA('manufacturer',exp));
+    iss.push(...this.vOA('nutrient',exp));
+    iss.push(...this.vOA('ingredient',exp));
+    iss.push(...this.vOA('knownAllergen',exp));
+    iss.push(...this.vOA('productCharacteristic',exp));
+    iss.push(...this.vOS('instance',exp));
+    iss.push(...this.vOA('note',exp));
+    return iss;
   }
 }

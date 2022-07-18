@@ -187,19 +187,19 @@ export class MedicationDispenseDosageInstruction extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'MedicationDispense.dosageInstruction' }
-    this.vOS('text',exp)
-    this.vOS('additionalInstructions',exp)
-    this.vOS('timing',exp)
-    this.vOS('asNeeded',exp)
-    this.vOS('site',exp)
-    this.vOS('route',exp)
-    this.vOS('method',exp)
-    this.vOS('dose',exp)
-    this.vOS('rate',exp)
-    this.vOS('maxDosePerPeriod',exp)
-    return issues;
+    iss.push(...this.vOS('text',exp));
+    iss.push(...this.vOS('additionalInstructions',exp));
+    iss.push(...this.vOS('timing',exp));
+    iss.push(...this.vOS('asNeeded',exp));
+    iss.push(...this.vOS('site',exp));
+    iss.push(...this.vOS('route',exp));
+    iss.push(...this.vOS('method',exp));
+    iss.push(...this.vOS('dose',exp));
+    iss.push(...this.vOS('rate',exp));
+    iss.push(...this.vOS('maxDosePerPeriod',exp));
+    return iss;
   }
 }
 /**
@@ -256,12 +256,12 @@ export class MedicationDispenseSubstitution extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'MedicationDispense.substitution' }
-    this.vRS('type',exp)
-    this.vOA('reason',exp)
-    this.vOA('responsibleParty',exp)
-    return issues;
+    iss.push(...this.vRS('type',exp));
+    iss.push(...this.vOA('reason',exp));
+    iss.push(...this.vOA('responsibleParty',exp));
+    return iss;
   }
 }
 /**
@@ -491,25 +491,25 @@ export class MedicationDispense extends fhir.DomainResource {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'MedicationDispense' }
-    this.vRS('resourceType',exp)
-    this.vOS('identifier',exp)
-    this.vOSV('status',exp,'MedicationDispenseStatus',MedicationDispenseStatusVsValidation,'r')
-    this.vOS('patient',exp)
-    this.vOS('dispenser',exp)
-    this.vOA('authorizingPrescription',exp)
-    this.vOS('type',exp)
-    this.vOS('quantity',exp)
-    this.vOS('daysSupply',exp)
-    this.vRS('medication',exp)
-    this.vOS('whenPrepared',exp)
-    this.vOS('whenHandedOver',exp)
-    this.vOS('destination',exp)
-    this.vOA('receiver',exp)
-    this.vOS('note',exp)
-    this.vOA('dosageInstruction',exp)
-    this.vOS('substitution',exp)
-    return issues;
+    iss.push(...this.vRPS('resourceType',exp));
+    iss.push(...this.vOS('identifier',exp));
+    iss.push(...this.vOSV('status',exp,'MedicationDispenseStatus',MedicationDispenseStatusVsValidation,'r'));
+    iss.push(...this.vOS('patient',exp));
+    iss.push(...this.vOS('dispenser',exp));
+    iss.push(...this.vOA('authorizingPrescription',exp));
+    iss.push(...this.vOS('type',exp));
+    iss.push(...this.vOS('quantity',exp));
+    iss.push(...this.vOS('daysSupply',exp));
+    iss.push(...this.vRS('medication',exp));
+    iss.push(...this.vOS('whenPrepared',exp));
+    iss.push(...this.vOS('whenHandedOver',exp));
+    iss.push(...this.vOS('destination',exp));
+    iss.push(...this.vOA('receiver',exp));
+    iss.push(...this.vOS('note',exp));
+    iss.push(...this.vOA('dosageInstruction',exp));
+    iss.push(...this.vOS('substitution',exp));
+    return iss;
   }
 }

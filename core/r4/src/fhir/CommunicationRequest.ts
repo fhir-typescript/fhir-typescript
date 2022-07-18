@@ -78,10 +78,10 @@ export class CommunicationRequestPayload extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'CommunicationRequest.payload' }
-    this.vRS('content',exp)
-    return issues;
+    iss.push(...this.vRS('content',exp));
+    return iss;
   }
 }
 /**
@@ -373,31 +373,31 @@ export class CommunicationRequest extends fhir.DomainResource {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'CommunicationRequest' }
-    this.vRS('resourceType',exp)
-    this.vOA('identifier',exp)
-    this.vOA('basedOn',exp)
-    this.vOA('replaces',exp)
-    this.vOS('groupIdentifier',exp)
-    this.vRSV('status',exp,'RequestStatus',RequestStatusVsValidation,'r')
-    this.vOS('statusReason',exp)
-    this.vOA('category',exp)
-    this.vOSV('priority',exp,'RequestPriority',RequestPriorityVsValidation,'r')
-    this.vOS('doNotPerform',exp)
-    this.vOA('medium',exp)
-    this.vOS('subject',exp)
-    this.vOA('about',exp)
-    this.vOS('encounter',exp)
-    this.vOA('payload',exp)
-    this.vOS('occurrence',exp)
-    this.vOS('authoredOn',exp)
-    this.vOS('requester',exp)
-    this.vOA('recipient',exp)
-    this.vOS('sender',exp)
-    this.vOA('reasonCode',exp)
-    this.vOA('reasonReference',exp)
-    this.vOA('note',exp)
-    return issues;
+    iss.push(...this.vRPS('resourceType',exp));
+    iss.push(...this.vOA('identifier',exp));
+    iss.push(...this.vOA('basedOn',exp));
+    iss.push(...this.vOA('replaces',exp));
+    iss.push(...this.vOS('groupIdentifier',exp));
+    iss.push(...this.vRSV('status',exp,'RequestStatus',RequestStatusVsValidation,'r'));
+    iss.push(...this.vOS('statusReason',exp));
+    iss.push(...this.vOA('category',exp));
+    iss.push(...this.vOSV('priority',exp,'RequestPriority',RequestPriorityVsValidation,'r'));
+    iss.push(...this.vOS('doNotPerform',exp));
+    iss.push(...this.vOA('medium',exp));
+    iss.push(...this.vOS('subject',exp));
+    iss.push(...this.vOA('about',exp));
+    iss.push(...this.vOS('encounter',exp));
+    iss.push(...this.vOA('payload',exp));
+    iss.push(...this.vOS('occurrence',exp));
+    iss.push(...this.vOS('authoredOn',exp));
+    iss.push(...this.vOS('requester',exp));
+    iss.push(...this.vOA('recipient',exp));
+    iss.push(...this.vOS('sender',exp));
+    iss.push(...this.vOA('reasonCode',exp));
+    iss.push(...this.vOA('reasonReference',exp));
+    iss.push(...this.vOA('note',exp));
+    return iss;
   }
 }

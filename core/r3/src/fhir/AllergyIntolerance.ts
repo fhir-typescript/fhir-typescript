@@ -158,16 +158,16 @@ export class AllergyIntoleranceReaction extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'AllergyIntolerance.reaction' }
-    this.vOS('substance',exp)
-    this.vRA('manifestation',exp)
-    this.vOS('description',exp)
-    this.vOS('onset',exp)
-    this.vOSV('severity',exp,'ReactionEventSeverity',ReactionEventSeverityVsValidation,'r')
-    this.vOS('exposureRoute',exp)
-    this.vOA('note',exp)
-    return issues;
+    iss.push(...this.vOS('substance',exp));
+    iss.push(...this.vRA('manifestation',exp));
+    iss.push(...this.vOS('description',exp));
+    iss.push(...this.vOS('onset',exp));
+    iss.push(...this.vOSV('severity',exp,'ReactionEventSeverity',ReactionEventSeverityVsValidation,'r'));
+    iss.push(...this.vOS('exposureRoute',exp));
+    iss.push(...this.vOA('note',exp));
+    return iss;
   }
 }
 /**
@@ -437,24 +437,24 @@ export class AllergyIntolerance extends fhir.DomainResource {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'AllergyIntolerance' }
-    this.vRS('resourceType',exp)
-    this.vOA('identifier',exp)
-    this.vOSV('clinicalStatus',exp,'AllergyClinicalStatus',AllergyClinicalStatusVsValidation,'r')
-    this.vRSV('verificationStatus',exp,'AllergyVerificationStatus',AllergyVerificationStatusVsValidation,'r')
-    this.vOSV('type',exp,'AllergyIntoleranceType',AllergyIntoleranceTypeVsValidation,'r')
-    this.vOAV('category',exp,'AllergyIntoleranceCategory',AllergyIntoleranceCategoryVsValidation,'r')
-    this.vOSV('criticality',exp,'AllergyIntoleranceCriticality',AllergyIntoleranceCriticalityVsValidation,'r')
-    this.vOS('code',exp)
-    this.vRS('patient',exp)
-    this.vOS('onset',exp)
-    this.vOS('assertedDate',exp)
-    this.vOS('recorder',exp)
-    this.vOS('asserter',exp)
-    this.vOS('lastOccurrence',exp)
-    this.vOA('note',exp)
-    this.vOA('reaction',exp)
-    return issues;
+    iss.push(...this.vRPS('resourceType',exp));
+    iss.push(...this.vOA('identifier',exp));
+    iss.push(...this.vOSV('clinicalStatus',exp,'AllergyClinicalStatus',AllergyClinicalStatusVsValidation,'r'));
+    iss.push(...this.vRSV('verificationStatus',exp,'AllergyVerificationStatus',AllergyVerificationStatusVsValidation,'r'));
+    iss.push(...this.vOSV('type',exp,'AllergyIntoleranceType',AllergyIntoleranceTypeVsValidation,'r'));
+    iss.push(...this.vOAV('category',exp,'AllergyIntoleranceCategory',AllergyIntoleranceCategoryVsValidation,'r'));
+    iss.push(...this.vOSV('criticality',exp,'AllergyIntoleranceCriticality',AllergyIntoleranceCriticalityVsValidation,'r'));
+    iss.push(...this.vOS('code',exp));
+    iss.push(...this.vRS('patient',exp));
+    iss.push(...this.vOS('onset',exp));
+    iss.push(...this.vOS('assertedDate',exp));
+    iss.push(...this.vOS('recorder',exp));
+    iss.push(...this.vOS('asserter',exp));
+    iss.push(...this.vOS('lastOccurrence',exp));
+    iss.push(...this.vOA('note',exp));
+    iss.push(...this.vOA('reaction',exp));
+    return iss;
   }
 }

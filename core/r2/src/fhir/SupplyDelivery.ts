@@ -158,20 +158,20 @@ export class SupplyDelivery extends fhir.DomainResource {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'SupplyDelivery' }
-    this.vRS('resourceType',exp)
-    this.vOS('identifier',exp)
-    this.vOSV('status',exp,'SupplydeliveryStatus',SupplydeliveryStatusVsValidation,'r')
-    this.vOS('patient',exp)
-    this.vOS('type',exp)
-    this.vOS('quantity',exp)
-    this.vOS('suppliedItem',exp)
-    this.vOS('supplier',exp)
-    this.vOS('whenPrepared',exp)
-    this.vOS('time',exp)
-    this.vOS('destination',exp)
-    this.vOA('receiver',exp)
-    return issues;
+    iss.push(...this.vRPS('resourceType',exp));
+    iss.push(...this.vOS('identifier',exp));
+    iss.push(...this.vOSV('status',exp,'SupplydeliveryStatus',SupplydeliveryStatusVsValidation,'r'));
+    iss.push(...this.vOS('patient',exp));
+    iss.push(...this.vOS('type',exp));
+    iss.push(...this.vOS('quantity',exp));
+    iss.push(...this.vOS('suppliedItem',exp));
+    iss.push(...this.vOS('supplier',exp));
+    iss.push(...this.vOS('whenPrepared',exp));
+    iss.push(...this.vOS('time',exp));
+    iss.push(...this.vOS('destination',exp));
+    iss.push(...this.vOA('receiver',exp));
+    return iss;
   }
 }

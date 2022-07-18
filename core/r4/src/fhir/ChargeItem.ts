@@ -64,11 +64,11 @@ export class ChargeItemPerformer extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'ChargeItem.performer' }
-    this.vOS('function',exp)
-    this.vRS('actor',exp)
-    return issues;
+    iss.push(...this.vOS('function',exp));
+    iss.push(...this.vRS('actor',exp));
+    return iss;
   }
 }
 /**
@@ -439,35 +439,35 @@ export class ChargeItem extends fhir.DomainResource {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'ChargeItem' }
-    this.vRS('resourceType',exp)
-    this.vOA('identifier',exp)
-    this.vOA('definitionUri',exp)
-    this.vOA('definitionCanonical',exp)
-    this.vRSV('status',exp,'ChargeitemStatus',ChargeitemStatusVsValidation,'r')
-    this.vOA('partOf',exp)
-    this.vRS('code',exp)
-    this.vRS('subject',exp)
-    this.vOS('context',exp)
-    this.vOS('occurrence',exp)
-    this.vOA('performer',exp)
-    this.vOS('performingOrganization',exp)
-    this.vOS('requestingOrganization',exp)
-    this.vOS('costCenter',exp)
-    this.vOS('quantity',exp)
-    this.vOA('bodysite',exp)
-    this.vOS('factorOverride',exp)
-    this.vOS('priceOverride',exp)
-    this.vOS('overrideReason',exp)
-    this.vOS('enterer',exp)
-    this.vOS('enteredDate',exp)
-    this.vOA('reason',exp)
-    this.vOA('service',exp)
-    this.vOS('product',exp)
-    this.vOA('account',exp)
-    this.vOA('note',exp)
-    this.vOA('supportingInformation',exp)
-    return issues;
+    iss.push(...this.vRPS('resourceType',exp));
+    iss.push(...this.vOA('identifier',exp));
+    iss.push(...this.vOA('definitionUri',exp));
+    iss.push(...this.vOA('definitionCanonical',exp));
+    iss.push(...this.vRSV('status',exp,'ChargeitemStatus',ChargeitemStatusVsValidation,'r'));
+    iss.push(...this.vOA('partOf',exp));
+    iss.push(...this.vRS('code',exp));
+    iss.push(...this.vRS('subject',exp));
+    iss.push(...this.vOS('context',exp));
+    iss.push(...this.vOS('occurrence',exp));
+    iss.push(...this.vOA('performer',exp));
+    iss.push(...this.vOS('performingOrganization',exp));
+    iss.push(...this.vOS('requestingOrganization',exp));
+    iss.push(...this.vOS('costCenter',exp));
+    iss.push(...this.vOS('quantity',exp));
+    iss.push(...this.vOA('bodysite',exp));
+    iss.push(...this.vOS('factorOverride',exp));
+    iss.push(...this.vOS('priceOverride',exp));
+    iss.push(...this.vOS('overrideReason',exp));
+    iss.push(...this.vOS('enterer',exp));
+    iss.push(...this.vOS('enteredDate',exp));
+    iss.push(...this.vOA('reason',exp));
+    iss.push(...this.vOA('service',exp));
+    iss.push(...this.vOS('product',exp));
+    iss.push(...this.vOA('account',exp));
+    iss.push(...this.vOA('note',exp));
+    iss.push(...this.vOA('supportingInformation',exp));
+    return iss;
   }
 }

@@ -105,12 +105,12 @@ export class ProcedurePerformer extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'Procedure.performer' }
-    this.vOS('function',exp)
-    this.vRS('actor',exp)
-    this.vOS('onBehalfOf',exp)
-    return issues;
+    iss.push(...this.vOS('function',exp));
+    iss.push(...this.vRS('actor',exp));
+    iss.push(...this.vOS('onBehalfOf',exp));
+    return iss;
   }
 }
 /**
@@ -156,11 +156,11 @@ export class ProcedureFocalDevice extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'Procedure.focalDevice' }
-    this.vOS('action',exp)
-    this.vRS('manipulated',exp)
-    return issues;
+    iss.push(...this.vOS('action',exp));
+    iss.push(...this.vRS('manipulated',exp));
+    return iss;
   }
 }
 /**
@@ -528,37 +528,37 @@ export class Procedure extends fhir.DomainResource {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'Procedure' }
-    this.vRS('resourceType',exp)
-    this.vOA('identifier',exp)
-    this.vOA('instantiatesCanonical',exp)
-    this.vOA('instantiatesUri',exp)
-    this.vOA('basedOn',exp)
-    this.vOA('partOf',exp)
-    this.vRSV('status',exp,'EventStatus',EventStatusVsValidation,'r')
-    this.vOS('statusReason',exp)
-    this.vOS('category',exp)
-    this.vOS('code',exp)
-    this.vRS('subject',exp)
-    this.vOS('encounter',exp)
-    this.vOS('performed',exp)
-    this.vOS('recorder',exp)
-    this.vOS('asserter',exp)
-    this.vOA('performer',exp)
-    this.vOS('location',exp)
-    this.vOA('reasonCode',exp)
-    this.vOA('reasonReference',exp)
-    this.vOA('bodySite',exp)
-    this.vOS('outcome',exp)
-    this.vOA('report',exp)
-    this.vOA('complication',exp)
-    this.vOA('complicationDetail',exp)
-    this.vOA('followUp',exp)
-    this.vOA('note',exp)
-    this.vOA('focalDevice',exp)
-    this.vOA('usedReference',exp)
-    this.vOA('usedCode',exp)
-    return issues;
+    iss.push(...this.vRPS('resourceType',exp));
+    iss.push(...this.vOA('identifier',exp));
+    iss.push(...this.vOA('instantiatesCanonical',exp));
+    iss.push(...this.vOA('instantiatesUri',exp));
+    iss.push(...this.vOA('basedOn',exp));
+    iss.push(...this.vOA('partOf',exp));
+    iss.push(...this.vRSV('status',exp,'EventStatus',EventStatusVsValidation,'r'));
+    iss.push(...this.vOS('statusReason',exp));
+    iss.push(...this.vOS('category',exp));
+    iss.push(...this.vOS('code',exp));
+    iss.push(...this.vRS('subject',exp));
+    iss.push(...this.vOS('encounter',exp));
+    iss.push(...this.vOS('performed',exp));
+    iss.push(...this.vOS('recorder',exp));
+    iss.push(...this.vOS('asserter',exp));
+    iss.push(...this.vOA('performer',exp));
+    iss.push(...this.vOS('location',exp));
+    iss.push(...this.vOA('reasonCode',exp));
+    iss.push(...this.vOA('reasonReference',exp));
+    iss.push(...this.vOA('bodySite',exp));
+    iss.push(...this.vOS('outcome',exp));
+    iss.push(...this.vOA('report',exp));
+    iss.push(...this.vOA('complication',exp));
+    iss.push(...this.vOA('complicationDetail',exp));
+    iss.push(...this.vOA('followUp',exp));
+    iss.push(...this.vOA('note',exp));
+    iss.push(...this.vOA('focalDevice',exp));
+    iss.push(...this.vOA('usedReference',exp));
+    iss.push(...this.vOA('usedCode',exp));
+    return iss;
   }
 }

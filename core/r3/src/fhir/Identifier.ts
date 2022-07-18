@@ -117,14 +117,14 @@ export class Identifier extends fhir.FhirElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'Identifier' }
-    this.vOSV('use',exp,'IdentifierUse',IdentifierUseVsValidation,'r')
-    this.vOS('type',exp)
-    this.vOS('system',exp)
-    this.vOS('value',exp)
-    this.vOS('period',exp)
-    this.vOS('assigner',exp)
-    return issues;
+    iss.push(...this.vOSV('use',exp,'IdentifierUse',IdentifierUseVsValidation,'r'));
+    iss.push(...this.vOS('type',exp));
+    iss.push(...this.vOS('system',exp));
+    iss.push(...this.vOS('value',exp));
+    iss.push(...this.vOS('period',exp));
+    iss.push(...this.vOS('assigner',exp));
+    return iss;
   }
 }

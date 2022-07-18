@@ -128,15 +128,15 @@ export class ObservationReferenceRange extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'Observation.referenceRange' }
-    this.vOS('low',exp)
-    this.vOS('high',exp)
-    this.vOS('type',exp)
-    this.vOA('appliesTo',exp)
-    this.vOS('age',exp)
-    this.vOS('text',exp)
-    return issues;
+    iss.push(...this.vOS('low',exp));
+    iss.push(...this.vOS('high',exp));
+    iss.push(...this.vOS('type',exp));
+    iss.push(...this.vOA('appliesTo',exp));
+    iss.push(...this.vOS('age',exp));
+    iss.push(...this.vOS('text',exp));
+    return iss;
   }
 }
 /**
@@ -272,14 +272,14 @@ export class ObservationComponent extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'Observation.component' }
-    this.vRS('code',exp)
-    this.vOS('value',exp)
-    this.vOS('dataAbsentReason',exp)
-    this.vOA('interpretation',exp)
-    this.vOA('referenceRange',exp)
-    return issues;
+    iss.push(...this.vRS('code',exp));
+    iss.push(...this.vOS('value',exp));
+    iss.push(...this.vOS('dataAbsentReason',exp));
+    iss.push(...this.vOA('interpretation',exp));
+    iss.push(...this.vOA('referenceRange',exp));
+    return iss;
   }
 }
 /**
@@ -648,33 +648,33 @@ export class Observation extends fhir.DomainResource {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'Observation' }
-    this.vRS('resourceType',exp)
-    this.vOA('identifier',exp)
-    this.vOA('basedOn',exp)
-    this.vOA('partOf',exp)
-    this.vRSV('status',exp,'ObservationStatus',ObservationStatusVsValidation,'r')
-    this.vOA('category',exp)
-    this.vRS('code',exp)
-    this.vOS('subject',exp)
-    this.vOA('focus',exp)
-    this.vOS('encounter',exp)
-    this.vOS('effective',exp)
-    this.vOS('issued',exp)
-    this.vOA('performer',exp)
-    this.vOS('value',exp)
-    this.vOS('dataAbsentReason',exp)
-    this.vOA('interpretation',exp)
-    this.vOA('note',exp)
-    this.vOS('bodySite',exp)
-    this.vOS('method',exp)
-    this.vOS('specimen',exp)
-    this.vOS('device',exp)
-    this.vOA('referenceRange',exp)
-    this.vOA('hasMember',exp)
-    this.vOA('derivedFrom',exp)
-    this.vOA('component',exp)
-    return issues;
+    iss.push(...this.vRPS('resourceType',exp));
+    iss.push(...this.vOA('identifier',exp));
+    iss.push(...this.vOA('basedOn',exp));
+    iss.push(...this.vOA('partOf',exp));
+    iss.push(...this.vRSV('status',exp,'ObservationStatus',ObservationStatusVsValidation,'r'));
+    iss.push(...this.vOA('category',exp));
+    iss.push(...this.vRS('code',exp));
+    iss.push(...this.vOS('subject',exp));
+    iss.push(...this.vOA('focus',exp));
+    iss.push(...this.vOS('encounter',exp));
+    iss.push(...this.vOS('effective',exp));
+    iss.push(...this.vOS('issued',exp));
+    iss.push(...this.vOA('performer',exp));
+    iss.push(...this.vOS('value',exp));
+    iss.push(...this.vOS('dataAbsentReason',exp));
+    iss.push(...this.vOA('interpretation',exp));
+    iss.push(...this.vOA('note',exp));
+    iss.push(...this.vOS('bodySite',exp));
+    iss.push(...this.vOS('method',exp));
+    iss.push(...this.vOS('specimen',exp));
+    iss.push(...this.vOS('device',exp));
+    iss.push(...this.vOA('referenceRange',exp));
+    iss.push(...this.vOA('hasMember',exp));
+    iss.push(...this.vOA('derivedFrom',exp));
+    iss.push(...this.vOA('component',exp));
+    return iss;
   }
 }

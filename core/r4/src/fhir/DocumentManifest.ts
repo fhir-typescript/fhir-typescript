@@ -55,11 +55,11 @@ export class DocumentManifestRelated extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'DocumentManifest.related' }
-    this.vOS('identifier',exp)
-    this.vOS('ref',exp)
-    return issues;
+    iss.push(...this.vOS('identifier',exp));
+    iss.push(...this.vOS('ref',exp));
+    return iss;
   }
 }
 /**
@@ -241,21 +241,21 @@ export class DocumentManifest extends fhir.DomainResource {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'DocumentManifest' }
-    this.vRS('resourceType',exp)
-    this.vOS('masterIdentifier',exp)
-    this.vOA('identifier',exp)
-    this.vRSV('status',exp,'DocumentReferenceStatus',DocumentReferenceStatusVsValidation,'r')
-    this.vOS('type',exp)
-    this.vOS('subject',exp)
-    this.vOS('created',exp)
-    this.vOA('author',exp)
-    this.vOA('recipient',exp)
-    this.vOS('source',exp)
-    this.vOS('description',exp)
-    this.vRA('content',exp)
-    this.vOA('related',exp)
-    return issues;
+    iss.push(...this.vRPS('resourceType',exp));
+    iss.push(...this.vOS('masterIdentifier',exp));
+    iss.push(...this.vOA('identifier',exp));
+    iss.push(...this.vRSV('status',exp,'DocumentReferenceStatus',DocumentReferenceStatusVsValidation,'r'));
+    iss.push(...this.vOS('type',exp));
+    iss.push(...this.vOS('subject',exp));
+    iss.push(...this.vOS('created',exp));
+    iss.push(...this.vOA('author',exp));
+    iss.push(...this.vOA('recipient',exp));
+    iss.push(...this.vOS('source',exp));
+    iss.push(...this.vOS('description',exp));
+    iss.push(...this.vRA('content',exp));
+    iss.push(...this.vOA('related',exp));
+    return iss;
   }
 }

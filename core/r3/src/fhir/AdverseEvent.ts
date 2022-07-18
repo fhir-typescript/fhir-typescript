@@ -141,16 +141,16 @@ export class AdverseEventSuspectEntity extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'AdverseEvent.suspectEntity' }
-    this.vRS('instance',exp)
-    this.vOSV('causality',exp,'AdverseEventCausality',AdverseEventCausalityVsValidation,'r')
-    this.vOS('causalityAssessment',exp)
-    this.vOS('causalityProductRelatedness',exp)
-    this.vOS('causalityMethod',exp)
-    this.vOS('causalityAuthor',exp)
-    this.vOS('causalityResult',exp)
-    return issues;
+    iss.push(...this.vRS('instance',exp));
+    iss.push(...this.vOSV('causality',exp,'AdverseEventCausality',AdverseEventCausalityVsValidation,'r'));
+    iss.push(...this.vOS('causalityAssessment',exp));
+    iss.push(...this.vOS('causalityProductRelatedness',exp));
+    iss.push(...this.vOS('causalityMethod',exp));
+    iss.push(...this.vOS('causalityAuthor',exp));
+    iss.push(...this.vOS('causalityResult',exp));
+    return iss;
   }
 }
 /**
@@ -359,25 +359,25 @@ export class AdverseEvent extends fhir.DomainResource {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'AdverseEvent' }
-    this.vRS('resourceType',exp)
-    this.vOS('identifier',exp)
-    this.vOSV('category',exp,'AdverseEventCategory',AdverseEventCategoryVsValidation,'r')
-    this.vOS('type',exp)
-    this.vOS('subject',exp)
-    this.vOS('date',exp)
-    this.vOA('reaction',exp)
-    this.vOS('location',exp)
-    this.vOS('seriousness',exp)
-    this.vOSV('outcome',exp,'AdverseEventOutcome',AdverseEventOutcomeVsValidation,'r')
-    this.vOS('recorder',exp)
-    this.vOS('eventParticipant',exp)
-    this.vOS('description',exp)
-    this.vOA('suspectEntity',exp)
-    this.vOA('subjectMedicalHistory',exp)
-    this.vOA('referenceDocument',exp)
-    this.vOA('study',exp)
-    return issues;
+    iss.push(...this.vRPS('resourceType',exp));
+    iss.push(...this.vOS('identifier',exp));
+    iss.push(...this.vOSV('category',exp,'AdverseEventCategory',AdverseEventCategoryVsValidation,'r'));
+    iss.push(...this.vOS('type',exp));
+    iss.push(...this.vOS('subject',exp));
+    iss.push(...this.vOS('date',exp));
+    iss.push(...this.vOA('reaction',exp));
+    iss.push(...this.vOS('location',exp));
+    iss.push(...this.vOS('seriousness',exp));
+    iss.push(...this.vOSV('outcome',exp,'AdverseEventOutcome',AdverseEventOutcomeVsValidation,'r'));
+    iss.push(...this.vOS('recorder',exp));
+    iss.push(...this.vOS('eventParticipant',exp));
+    iss.push(...this.vOS('description',exp));
+    iss.push(...this.vOA('suspectEntity',exp));
+    iss.push(...this.vOA('subjectMedicalHistory',exp));
+    iss.push(...this.vOA('referenceDocument',exp));
+    iss.push(...this.vOA('study',exp));
+    return iss;
   }
 }

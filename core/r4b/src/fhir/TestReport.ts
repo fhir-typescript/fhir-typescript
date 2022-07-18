@@ -98,12 +98,12 @@ export class TestReportParticipant extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'TestReport.participant' }
-    this.vRSV('type',exp,'ReportParticipantType',ReportParticipantTypeVsValidation,'r')
-    this.vRS('uri',exp)
-    this.vOS('display',exp)
-    return issues;
+    iss.push(...this.vRSV('type',exp,'ReportParticipantType',ReportParticipantTypeVsValidation,'r'));
+    iss.push(...this.vRS('uri',exp));
+    iss.push(...this.vOS('display',exp));
+    return iss;
   }
 }
 /**
@@ -182,12 +182,12 @@ export class TestReportSetupActionOperation extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'TestReport.setup.action.operation' }
-    this.vRSV('result',exp,'ReportActionResult',ReportActionResultVsValidation,'r')
-    this.vOS('message',exp)
-    this.vOS('detail',exp)
-    return issues;
+    iss.push(...this.vRSV('result',exp,'ReportActionResult',ReportActionResultVsValidation,'r'));
+    iss.push(...this.vOS('message',exp));
+    iss.push(...this.vOS('detail',exp));
+    return iss;
   }
 }
 /**
@@ -266,12 +266,12 @@ export class TestReportSetupActionAssert extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'TestReport.setup.action.assert' }
-    this.vRSV('result',exp,'ReportActionResult',ReportActionResultVsValidation,'r')
-    this.vOS('message',exp)
-    this.vOS('detail',exp)
-    return issues;
+    iss.push(...this.vRSV('result',exp,'ReportActionResult',ReportActionResultVsValidation,'r'));
+    iss.push(...this.vOS('message',exp));
+    iss.push(...this.vOS('detail',exp));
+    return iss;
   }
 }
 /**
@@ -316,11 +316,11 @@ export class TestReportSetupAction extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'TestReport.setup.action' }
-    this.vOS('operation',exp)
-    this.vOS('assert',exp)
-    return issues;
+    iss.push(...this.vOS('operation',exp));
+    iss.push(...this.vOS('assert',exp));
+    return iss;
   }
 }
 /**
@@ -357,10 +357,10 @@ export class TestReportSetup extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'TestReport.setup' }
-    this.vRA('action',exp)
-    return issues;
+    iss.push(...this.vRA('action',exp));
+    return iss;
   }
 }
 /**
@@ -405,11 +405,11 @@ export class TestReportTestAction extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'TestReport.test.action' }
-    this.vOS('operation',exp)
-    this.vOS('assert',exp)
-    return issues;
+    iss.push(...this.vOS('operation',exp));
+    iss.push(...this.vOS('assert',exp));
+    return iss;
   }
 }
 /**
@@ -480,12 +480,12 @@ export class TestReportTest extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'TestReport.test' }
-    this.vOS('name',exp)
-    this.vOS('description',exp)
-    this.vRA('action',exp)
-    return issues;
+    iss.push(...this.vOS('name',exp));
+    iss.push(...this.vOS('description',exp));
+    iss.push(...this.vRA('action',exp));
+    return iss;
   }
 }
 /**
@@ -522,10 +522,10 @@ export class TestReportTeardownAction extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'TestReport.teardown.action' }
-    this.vRS('operation',exp)
-    return issues;
+    iss.push(...this.vRS('operation',exp));
+    return iss;
   }
 }
 /**
@@ -562,10 +562,10 @@ export class TestReportTeardown extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'TestReport.teardown' }
-    this.vRA('action',exp)
-    return issues;
+    iss.push(...this.vRA('action',exp));
+    return iss;
   }
 }
 /**
@@ -764,21 +764,21 @@ export class TestReport extends fhir.DomainResource {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'TestReport' }
-    this.vRS('resourceType',exp)
-    this.vOS('identifier',exp)
-    this.vOS('name',exp)
-    this.vRSV('status',exp,'ReportStatus',ReportStatusVsValidation,'r')
-    this.vRS('testScript',exp)
-    this.vRSV('result',exp,'ReportResult',ReportResultVsValidation,'r')
-    this.vOS('score',exp)
-    this.vOS('tester',exp)
-    this.vOS('issued',exp)
-    this.vOA('participant',exp)
-    this.vOS('setup',exp)
-    this.vOA('test',exp)
-    this.vOS('teardown',exp)
-    return issues;
+    iss.push(...this.vRPS('resourceType',exp));
+    iss.push(...this.vOS('identifier',exp));
+    iss.push(...this.vOS('name',exp));
+    iss.push(...this.vRSV('status',exp,'ReportStatus',ReportStatusVsValidation,'r'));
+    iss.push(...this.vRS('testScript',exp));
+    iss.push(...this.vRSV('result',exp,'ReportResult',ReportResultVsValidation,'r'));
+    iss.push(...this.vOS('score',exp));
+    iss.push(...this.vOS('tester',exp));
+    iss.push(...this.vOS('issued',exp));
+    iss.push(...this.vOA('participant',exp));
+    iss.push(...this.vOS('setup',exp));
+    iss.push(...this.vOA('test',exp));
+    iss.push(...this.vOS('teardown',exp));
+    return iss;
   }
 }

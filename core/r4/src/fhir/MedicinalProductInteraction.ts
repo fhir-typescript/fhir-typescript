@@ -53,10 +53,10 @@ export class MedicinalProductInteractionInteractant extends fhir.BackboneElement
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'MedicinalProductInteraction.interactant' }
-    this.vRS('item',exp)
-    return issues;
+    iss.push(...this.vRS('item',exp));
+    return iss;
   }
 }
 /**
@@ -165,16 +165,16 @@ export class MedicinalProductInteraction extends fhir.DomainResource {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'MedicinalProductInteraction' }
-    this.vRS('resourceType',exp)
-    this.vOA('subject',exp)
-    this.vOS('description',exp)
-    this.vOA('interactant',exp)
-    this.vOS('type',exp)
-    this.vOS('effect',exp)
-    this.vOS('incidence',exp)
-    this.vOS('management',exp)
-    return issues;
+    iss.push(...this.vRPS('resourceType',exp));
+    iss.push(...this.vOA('subject',exp));
+    iss.push(...this.vOS('description',exp));
+    iss.push(...this.vOA('interactant',exp));
+    iss.push(...this.vOS('type',exp));
+    iss.push(...this.vOS('effect',exp));
+    iss.push(...this.vOS('incidence',exp));
+    iss.push(...this.vOS('management',exp));
+    return iss;
   }
 }

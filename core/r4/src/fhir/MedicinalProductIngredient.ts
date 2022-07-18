@@ -84,14 +84,14 @@ export class MedicinalProductIngredientSpecifiedSubstanceStrengthReferenceStreng
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'MedicinalProductIngredient.specifiedSubstance.strength.referenceStrength' }
-    this.vOS('substance',exp)
-    this.vRS('strength',exp)
-    this.vOS('strengthLowLimit',exp)
-    this.vOS('measurementPoint',exp)
-    this.vOA('country',exp)
-    return issues;
+    iss.push(...this.vOS('substance',exp));
+    iss.push(...this.vRS('strength',exp));
+    iss.push(...this.vOS('strengthLowLimit',exp));
+    iss.push(...this.vOS('measurementPoint',exp));
+    iss.push(...this.vOA('country',exp));
+    return iss;
   }
 }
 /**
@@ -192,16 +192,16 @@ export class MedicinalProductIngredientSpecifiedSubstanceStrength extends fhir.B
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'MedicinalProductIngredient.specifiedSubstance.strength' }
-    this.vRS('presentation',exp)
-    this.vOS('presentationLowLimit',exp)
-    this.vOS('concentration',exp)
-    this.vOS('concentrationLowLimit',exp)
-    this.vOS('measurementPoint',exp)
-    this.vOA('country',exp)
-    this.vOA('referenceStrength',exp)
-    return issues;
+    iss.push(...this.vRS('presentation',exp));
+    iss.push(...this.vOS('presentationLowLimit',exp));
+    iss.push(...this.vOS('concentration',exp));
+    iss.push(...this.vOS('concentrationLowLimit',exp));
+    iss.push(...this.vOS('measurementPoint',exp));
+    iss.push(...this.vOA('country',exp));
+    iss.push(...this.vOA('referenceStrength',exp));
+    return iss;
   }
 }
 /**
@@ -267,13 +267,13 @@ export class MedicinalProductIngredientSpecifiedSubstance extends fhir.BackboneE
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'MedicinalProductIngredient.specifiedSubstance' }
-    this.vRS('code',exp)
-    this.vRS('group',exp)
-    this.vOS('confidentiality',exp)
-    this.vOA('strength',exp)
-    return issues;
+    iss.push(...this.vRS('code',exp));
+    iss.push(...this.vRS('group',exp));
+    iss.push(...this.vOS('confidentiality',exp));
+    iss.push(...this.vOA('strength',exp));
+    return iss;
   }
 }
 /**
@@ -320,11 +320,11 @@ export class MedicinalProductIngredientSubstance extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'MedicinalProductIngredient.substance' }
-    this.vRS('code',exp)
-    this.vOA('strength',exp)
-    return issues;
+    iss.push(...this.vRS('code',exp));
+    iss.push(...this.vOA('strength',exp));
+    return iss;
   }
 }
 /**
@@ -425,15 +425,15 @@ export class MedicinalProductIngredient extends fhir.DomainResource {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'MedicinalProductIngredient' }
-    this.vRS('resourceType',exp)
-    this.vOS('identifier',exp)
-    this.vRS('role',exp)
-    this.vOS('allergenicIndicator',exp)
-    this.vOA('manufacturer',exp)
-    this.vOA('specifiedSubstance',exp)
-    this.vOS('substance',exp)
-    return issues;
+    iss.push(...this.vRPS('resourceType',exp));
+    iss.push(...this.vOS('identifier',exp));
+    iss.push(...this.vRS('role',exp));
+    iss.push(...this.vOS('allergenicIndicator',exp));
+    iss.push(...this.vOA('manufacturer',exp));
+    iss.push(...this.vOA('specifiedSubstance',exp));
+    iss.push(...this.vOS('substance',exp));
+    return iss;
   }
 }

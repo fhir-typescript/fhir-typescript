@@ -51,11 +51,11 @@ export class SupplyRequestWhen extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'SupplyRequest.when' }
-    this.vOS('code',exp)
-    this.vOS('schedule',exp)
-    return issues;
+    iss.push(...this.vOS('code',exp));
+    iss.push(...this.vOS('schedule',exp));
+    return iss;
   }
 }
 /**
@@ -212,19 +212,19 @@ export class SupplyRequest extends fhir.DomainResource {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'SupplyRequest' }
-    this.vRS('resourceType',exp)
-    this.vOS('patient',exp)
-    this.vOS('source',exp)
-    this.vOS('date',exp)
-    this.vOS('identifier',exp)
-    this.vOSV('status',exp,'SupplyrequestStatus',SupplyrequestStatusVsValidation,'r')
-    this.vOS('kind',exp)
-    this.vOS('orderedItem',exp)
-    this.vOA('supplier',exp)
-    this.vOS('reason',exp)
-    this.vOS('when',exp)
-    return issues;
+    iss.push(...this.vRPS('resourceType',exp));
+    iss.push(...this.vOS('patient',exp));
+    iss.push(...this.vOS('source',exp));
+    iss.push(...this.vOS('date',exp));
+    iss.push(...this.vOS('identifier',exp));
+    iss.push(...this.vOSV('status',exp,'SupplyrequestStatus',SupplyrequestStatusVsValidation,'r'));
+    iss.push(...this.vOS('kind',exp));
+    iss.push(...this.vOS('orderedItem',exp));
+    iss.push(...this.vOA('supplier',exp));
+    iss.push(...this.vOS('reason',exp));
+    iss.push(...this.vOS('when',exp));
+    return iss;
   }
 }

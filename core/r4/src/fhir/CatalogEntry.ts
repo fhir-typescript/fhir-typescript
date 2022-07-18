@@ -65,11 +65,11 @@ export class CatalogEntryRelatedEntry extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'CatalogEntry.relatedEntry' }
-    this.vRSV('relationtype',exp,'RelationType',RelationTypeVsValidation,'r')
-    this.vRS('item',exp)
-    return issues;
+    iss.push(...this.vRSV('relationtype',exp,'RelationType',RelationTypeVsValidation,'r'));
+    iss.push(...this.vRS('item',exp));
+    return iss;
   }
 }
 /**
@@ -262,22 +262,22 @@ export class CatalogEntry extends fhir.DomainResource {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'CatalogEntry' }
-    this.vRS('resourceType',exp)
-    this.vOA('identifier',exp)
-    this.vOS('type',exp)
-    this.vRS('orderable',exp)
-    this.vRS('referencedItem',exp)
-    this.vOA('additionalIdentifier',exp)
-    this.vOA('classification',exp)
-    this.vOSV('status',exp,'PublicationStatus',PublicationStatusVsValidation,'r')
-    this.vOS('validityPeriod',exp)
-    this.vOS('validTo',exp)
-    this.vOS('lastUpdated',exp)
-    this.vOA('additionalCharacteristic',exp)
-    this.vOA('additionalClassification',exp)
-    this.vOA('relatedEntry',exp)
-    return issues;
+    iss.push(...this.vRPS('resourceType',exp));
+    iss.push(...this.vOA('identifier',exp));
+    iss.push(...this.vOS('type',exp));
+    iss.push(...this.vRS('orderable',exp));
+    iss.push(...this.vRS('referencedItem',exp));
+    iss.push(...this.vOA('additionalIdentifier',exp));
+    iss.push(...this.vOA('classification',exp));
+    iss.push(...this.vOSV('status',exp,'PublicationStatus',PublicationStatusVsValidation,'r'));
+    iss.push(...this.vOS('validityPeriod',exp));
+    iss.push(...this.vOS('validTo',exp));
+    iss.push(...this.vOS('lastUpdated',exp));
+    iss.push(...this.vOA('additionalCharacteristic',exp));
+    iss.push(...this.vOA('additionalClassification',exp));
+    iss.push(...this.vOA('relatedEntry',exp));
+    return iss;
   }
 }

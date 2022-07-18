@@ -106,13 +106,13 @@ export class ListEntry extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'List.entry' }
-    this.vOS('flag',exp)
-    this.vOS('deleted',exp)
-    this.vOS('date',exp)
-    this.vRS('item',exp)
-    return issues;
+    iss.push(...this.vOS('flag',exp));
+    iss.push(...this.vOS('deleted',exp));
+    iss.push(...this.vOS('date',exp));
+    iss.push(...this.vRS('item',exp));
+    return iss;
   }
 }
 /**
@@ -302,22 +302,22 @@ export class List extends fhir.DomainResource {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'List' }
-    this.vRS('resourceType',exp)
-    this.vOA('identifier',exp)
-    this.vRSV('status',exp,'ListStatus',ListStatusVsValidation,'r')
-    this.vRSV('mode',exp,'ListMode',ListModeVsValidation,'r')
-    this.vOS('title',exp)
-    this.vOS('code',exp)
-    this.vOS('subject',exp)
-    this.vOS('encounter',exp)
-    this.vOS('date',exp)
-    this.vOS('source',exp)
-    this.vOS('orderedBy',exp)
-    this.vOA('note',exp)
-    this.vOA('entry',exp)
-    this.vOS('emptyReason',exp)
-    return issues;
+    iss.push(...this.vRPS('resourceType',exp));
+    iss.push(...this.vOA('identifier',exp));
+    iss.push(...this.vRSV('status',exp,'ListStatus',ListStatusVsValidation,'r'));
+    iss.push(...this.vRSV('mode',exp,'ListMode',ListModeVsValidation,'r'));
+    iss.push(...this.vOS('title',exp));
+    iss.push(...this.vOS('code',exp));
+    iss.push(...this.vOS('subject',exp));
+    iss.push(...this.vOS('encounter',exp));
+    iss.push(...this.vOS('date',exp));
+    iss.push(...this.vOS('source',exp));
+    iss.push(...this.vOS('orderedBy',exp));
+    iss.push(...this.vOA('note',exp));
+    iss.push(...this.vOA('entry',exp));
+    iss.push(...this.vOS('emptyReason',exp));
+    return iss;
   }
 }

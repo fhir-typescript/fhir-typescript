@@ -136,14 +136,14 @@ export class AppointmentParticipant extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'Appointment.participant' }
-    this.vOA('type',exp)
-    this.vOS('actor',exp)
-    this.vOSV('required',exp,'Participantrequired',ParticipantrequiredVsValidation,'r')
-    this.vRSV('status',exp,'Participationstatus',ParticipationstatusVsValidation,'r')
-    this.vOS('period',exp)
-    return issues;
+    iss.push(...this.vOA('type',exp));
+    iss.push(...this.vOS('actor',exp));
+    iss.push(...this.vOSV('required',exp,'Participantrequired',ParticipantrequiredVsValidation,'r'));
+    iss.push(...this.vRSV('status',exp,'Participationstatus',ParticipationstatusVsValidation,'r'));
+    iss.push(...this.vOS('period',exp));
+    return iss;
   }
 }
 /**
@@ -467,31 +467,31 @@ export class Appointment extends fhir.DomainResource {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'Appointment' }
-    this.vRS('resourceType',exp)
-    this.vOA('identifier',exp)
-    this.vRSV('status',exp,'Appointmentstatus',AppointmentstatusVsValidation,'r')
-    this.vOS('cancelationReason',exp)
-    this.vOA('serviceCategory',exp)
-    this.vOA('serviceType',exp)
-    this.vOA('specialty',exp)
-    this.vOS('appointmentType',exp)
-    this.vOA('reasonCode',exp)
-    this.vOA('reasonReference',exp)
-    this.vOS('priority',exp)
-    this.vOS('description',exp)
-    this.vOA('supportingInformation',exp)
-    this.vOS('start',exp)
-    this.vOS('end',exp)
-    this.vOS('minutesDuration',exp)
-    this.vOA('slot',exp)
-    this.vOS('created',exp)
-    this.vOS('comment',exp)
-    this.vOS('patientInstruction',exp)
-    this.vOA('basedOn',exp)
-    this.vRA('participant',exp)
-    this.vOA('requestedPeriod',exp)
-    return issues;
+    iss.push(...this.vRPS('resourceType',exp));
+    iss.push(...this.vOA('identifier',exp));
+    iss.push(...this.vRSV('status',exp,'Appointmentstatus',AppointmentstatusVsValidation,'r'));
+    iss.push(...this.vOS('cancelationReason',exp));
+    iss.push(...this.vOA('serviceCategory',exp));
+    iss.push(...this.vOA('serviceType',exp));
+    iss.push(...this.vOA('specialty',exp));
+    iss.push(...this.vOS('appointmentType',exp));
+    iss.push(...this.vOA('reasonCode',exp));
+    iss.push(...this.vOA('reasonReference',exp));
+    iss.push(...this.vOS('priority',exp));
+    iss.push(...this.vOS('description',exp));
+    iss.push(...this.vOA('supportingInformation',exp));
+    iss.push(...this.vOS('start',exp));
+    iss.push(...this.vOS('end',exp));
+    iss.push(...this.vOS('minutesDuration',exp));
+    iss.push(...this.vOA('slot',exp));
+    iss.push(...this.vOS('created',exp));
+    iss.push(...this.vOS('comment',exp));
+    iss.push(...this.vOS('patientInstruction',exp));
+    iss.push(...this.vOA('basedOn',exp));
+    iss.push(...this.vRA('participant',exp));
+    iss.push(...this.vOA('requestedPeriod',exp));
+    return iss;
   }
 }

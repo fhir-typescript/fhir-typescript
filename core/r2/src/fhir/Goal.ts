@@ -56,10 +56,10 @@ export class GoalOutcome extends fhir.BackboneElement {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'Goal.outcome' }
-    this.vOS('result',exp)
-    return issues;
+    iss.push(...this.vOS('result',exp));
+    return iss;
   }
 }
 /**
@@ -280,23 +280,23 @@ export class Goal extends fhir.DomainResource {
    * Function to perform basic model validation (e.g., check if required elements are present).
    */
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
-    let issues:fhir.FtsIssue[] = super.doModelValidation(exp);
+    let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'Goal' }
-    this.vRS('resourceType',exp)
-    this.vOA('identifier',exp)
-    this.vOS('subject',exp)
-    this.vOS('start',exp)
-    this.vOS('target',exp)
-    this.vOA('category',exp)
-    this.vRS('description',exp)
-    this.vRSV('status',exp,'GoalStatus',GoalStatusVsValidation,'r')
-    this.vOS('statusDate',exp)
-    this.vOS('statusReason',exp)
-    this.vOS('author',exp)
-    this.vOS('priority',exp)
-    this.vOA('addresses',exp)
-    this.vOA('note',exp)
-    this.vOA('outcome',exp)
-    return issues;
+    iss.push(...this.vRPS('resourceType',exp));
+    iss.push(...this.vOA('identifier',exp));
+    iss.push(...this.vOS('subject',exp));
+    iss.push(...this.vOS('start',exp));
+    iss.push(...this.vOS('target',exp));
+    iss.push(...this.vOA('category',exp));
+    iss.push(...this.vRS('description',exp));
+    iss.push(...this.vRSV('status',exp,'GoalStatus',GoalStatusVsValidation,'r'));
+    iss.push(...this.vOS('statusDate',exp));
+    iss.push(...this.vOS('statusReason',exp));
+    iss.push(...this.vOS('author',exp));
+    iss.push(...this.vOS('priority',exp));
+    iss.push(...this.vOA('addresses',exp));
+    iss.push(...this.vOA('note',exp));
+    iss.push(...this.vOA('outcome',exp));
+    return iss;
   }
 }
