@@ -1,7 +1,8 @@
  import { fhir, valueSetCodes, valueSetCodings } from '@fhir-typescript/r4-core';
 
  // create a new patient object
- let patient:fhir.Patient = new fhir.Patient({
+let patient: fhir.Patient = new fhir.Patient({
+     id: "test",
    name: [ { 
      // you can use the native TS/JS types for values
      given: ['givenName'], 
