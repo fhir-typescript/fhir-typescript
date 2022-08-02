@@ -1283,7 +1283,6 @@ export class SubstanceSpecification extends fhir.DomainResource {
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
     let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'SubstanceSpecification' }
-    iss.push(...this.vRPS('resourceType',exp));
     iss.push(...this.vOS('identifier',exp));
     iss.push(...this.vOS('type',exp));
     iss.push(...this.vOS('status',exp));

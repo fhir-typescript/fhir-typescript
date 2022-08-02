@@ -378,7 +378,6 @@ export class ImmunizationRecommendation extends fhir.DomainResource {
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
     let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'ImmunizationRecommendation' }
-    iss.push(...this.vRPS('resourceType',exp));
     iss.push(...this.vOA('identifier',exp));
     iss.push(...this.vRS('patient',exp));
     iss.push(...this.vRA('recommendation',exp));

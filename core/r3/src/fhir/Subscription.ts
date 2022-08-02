@@ -277,7 +277,6 @@ export class Subscription extends fhir.DomainResource {
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
     let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'Subscription' }
-    iss.push(...this.vRPS('resourceType',exp));
     iss.push(...this.vRSV('status',exp,'SubscriptionStatus',SubscriptionStatusVsValidation,'r'));
     iss.push(...this.vOA('contact',exp));
     iss.push(...this.vOS('end',exp));

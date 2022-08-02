@@ -572,7 +572,6 @@ export class MeasureReport extends fhir.DomainResource {
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
     let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'MeasureReport' }
-    iss.push(...this.vRPS('resourceType',exp));
     iss.push(...this.vOA('identifier',exp));
     iss.push(...this.vRSV('status',exp,'MeasureReportStatus',MeasureReportStatusVsValidation,'r'));
     iss.push(...this.vRSV('type',exp,'MeasureReportType',MeasureReportTypeVsValidation,'r'));

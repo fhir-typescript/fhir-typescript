@@ -214,7 +214,6 @@ export class SupplyRequest extends fhir.DomainResource {
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
     let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'SupplyRequest' }
-    iss.push(...this.vRPS('resourceType',exp));
     iss.push(...this.vOS('patient',exp));
     iss.push(...this.vOS('source',exp));
     iss.push(...this.vOS('date',exp));

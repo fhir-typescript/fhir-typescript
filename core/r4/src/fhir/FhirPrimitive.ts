@@ -50,7 +50,7 @@ export class FhirPrimitive extends fhir.FhirBase  {
    * @param options 
    */
   constructor(source:Partial<FhirPrimitiveArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
-    super();
+    super({}, options);
     if (source) {
       if ((source.value !== undefined) && (source.value.constructor) && (source.value.constructor['_fts_dataType'])) {
         this.value = source.value.value ?? null;

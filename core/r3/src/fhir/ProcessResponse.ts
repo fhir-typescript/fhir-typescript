@@ -262,7 +262,6 @@ export class ProcessResponse extends fhir.DomainResource {
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
     let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'ProcessResponse' }
-    iss.push(...this.vRPS('resourceType',exp));
     iss.push(...this.vOA('identifier',exp));
     iss.push(...this.vOSV('status',exp,'FmStatus',FmStatusVsValidation,'r'));
     iss.push(...this.vOS('created',exp));

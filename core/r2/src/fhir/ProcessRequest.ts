@@ -293,7 +293,6 @@ export class ProcessRequest extends fhir.DomainResource {
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
     let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'ProcessRequest' }
-    iss.push(...this.vRPS('resourceType',exp));
     iss.push(...this.vRSV('action',exp,'Actionlist',ActionlistVsValidation,'r'));
     iss.push(...this.vOA('identifier',exp));
     iss.push(...this.vOS('ruleset',exp));

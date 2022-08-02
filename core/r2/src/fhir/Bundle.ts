@@ -594,7 +594,6 @@ export class Bundle extends fhir.Resource {
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
     let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'Bundle' }
-    iss.push(...this.vRPS('resourceType',exp));
     iss.push(...this.vRSV('type',exp,'BundleType',BundleTypeVsValidation,'r'));
     iss.push(...this.vOS('total',exp));
     iss.push(...this.vOA('link',exp));

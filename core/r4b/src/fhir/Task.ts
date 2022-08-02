@@ -1094,7 +1094,6 @@ export class Task extends fhir.DomainResource {
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
     let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'Task' }
-    iss.push(...this.vRPS('resourceType',exp));
     iss.push(...this.vOA('identifier',exp));
     iss.push(...this.vOS('instantiatesCanonical',exp));
     iss.push(...this.vOS('instantiatesUri',exp));

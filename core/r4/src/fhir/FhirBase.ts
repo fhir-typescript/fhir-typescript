@@ -269,7 +269,7 @@ export class FhirBase {
 
     (this as any)[p].forEach((x:any,i:number) => {
       iss.push(...x.doModelValidation(`${exp}.${p}[${i}]`));
-      if (!(this as any)[p].hasCodingFromValidationObj(vsV)) {
+      if (!x.hasCodingFromValidationObj(vsV)) {
         iss.push({
           severity: (vsS === 'r') ? 'error' : 'information', 
           code:'code-invalid', 
@@ -458,71 +458,71 @@ export class FhirBase {
     return iss;
   }
 
-  /**
-   * Validate a Required Primitive Scalar element
-   * @param p 
-   * @param exp 
-   * @returns 
-   */
-  public vRPS(p:Readonly<string>, exp:Readonly<string>):FtsIssue[] {
-    if (((this as any)[p] === undefined) || 
-        ((this as any)[p] === null) ||
-        ((this as any)[p] === '') ||
-        (Number.isNaN((this as any)[p]))) {
-      return [{
-        severity: 'error',
-        code: 'required',
-        details: {text: `Missing required property '${p}', ${exp}`}
-      }];
-    }
+  // /**
+  //  * Validate a Required Primitive Scalar element
+  //  * @param p 
+  //  * @param exp 
+  //  * @returns 
+  //  */
+  // public vRPS(p:Readonly<string>, exp:Readonly<string>):FtsIssue[] {
+  //   if (((this as any)[p] === undefined) || 
+  //       ((this as any)[p] === null) ||
+  //       ((this as any)[p] === '') ||
+  //       (Number.isNaN((this as any)[p]))) {
+  //     return [{
+  //       severity: 'error',
+  //       code: 'required',
+  //       details: {text: `Missing required property '${p}', ${exp}`}
+  //     }];
+  //   }
 
-    if (Array.isArray((this as any)[p])) {
-      return [{
-        severity: 'error',
-        code: 'structure',
-        details: {text: `Found array in scalar property ${p} (${exp})`}
-      }];
-    }
+  //   if (Array.isArray((this as any)[p])) {
+  //     return [{
+  //       severity: 'error',
+  //       code: 'structure',
+  //       details: {text: `Found array in scalar property ${p} (${exp})`}
+  //     }];
+  //   }
 
-    return [];
-  }
+  //   return [];
+  // }
 
-  /**
-   * Validate a Required Array element
-   * @param p 
-   * @param exp 
-   * @returns 
-   */
-  public vRPA(p:Readonly<string>, exp:Readonly<string>):FtsIssue[] {
-    if (((this as any)[p] === undefined) || 
-        ((this as any)[p] === null) ||
-        ((this as any)[p] === '') ||
-        (Number.isNaN((this as any)[p]))) {
-      return [{
-        severity: 'error',
-        code: 'required',
-        details: {text: `Missing required property '${p}', ${exp}`}
-      }];
-    }
+  // /**
+  //  * Validate a Required Array element
+  //  * @param p 
+  //  * @param exp 
+  //  * @returns 
+  //  */
+  // public vRPA(p:Readonly<string>, exp:Readonly<string>):FtsIssue[] {
+  //   if (((this as any)[p] === undefined) || 
+  //       ((this as any)[p] === null) ||
+  //       ((this as any)[p] === '') ||
+  //       (Number.isNaN((this as any)[p]))) {
+  //     return [{
+  //       severity: 'error',
+  //       code: 'required',
+  //       details: {text: `Missing required property '${p}', ${exp}`}
+  //     }];
+  //   }
 
-    if (!Array.isArray((this as any)[p])) {
-      return [{
-        severity: 'error',
-        code: 'structure',
-        details: {text: `Found scalar in array property ${p} (${exp})`}
-      }];
-    }
+  //   if (!Array.isArray((this as any)[p])) {
+  //     return [{
+  //       severity: 'error',
+  //       code: 'structure',
+  //       details: {text: `Found scalar in array property ${p} (${exp})`}
+  //     }];
+  //   }
 
-    if ((this as any)[p].length === 0) {
-      return [{
-        severity: 'error',
-        code: 'required',
-        details: {text: `Missing required property '${p}', ${exp}`}
-      }];
-    }
+  //   if ((this as any)[p].length === 0) {
+  //     return [{
+  //       severity: 'error',
+  //       code: 'required',
+  //       details: {text: `Missing required property '${p}', ${exp}`}
+  //     }];
+  //   }
 
-    return [];
-  }
+  //   return [];
+  // }
 
   /**
    * Function to strip invalid element values for serialization.

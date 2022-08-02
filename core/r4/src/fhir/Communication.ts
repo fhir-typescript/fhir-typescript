@@ -401,7 +401,6 @@ export class Communication extends fhir.DomainResource {
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
     let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'Communication' }
-    iss.push(...this.vRPS('resourceType',exp));
     iss.push(...this.vOA('identifier',exp));
     iss.push(...this.vOA('instantiatesCanonical',exp));
     iss.push(...this.vOA('instantiatesUri',exp));

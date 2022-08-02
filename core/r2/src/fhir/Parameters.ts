@@ -298,7 +298,6 @@ export class Parameters extends fhir.Resource {
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
     let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'Parameters' }
-    iss.push(...this.vRPS('resourceType',exp));
     iss.push(...this.vOA('parameter',exp));
     return iss;
   }

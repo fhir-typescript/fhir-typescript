@@ -717,7 +717,6 @@ export class DeviceDefinition extends fhir.DomainResource {
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
     let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'DeviceDefinition' }
-    iss.push(...this.vRPS('resourceType',exp));
     iss.push(...this.vOA('identifier',exp));
     iss.push(...this.vOA('udiDeviceIdentifier',exp));
     iss.push(...this.vOS('manufacturer',exp));

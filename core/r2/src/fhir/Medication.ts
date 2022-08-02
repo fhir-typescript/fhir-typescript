@@ -369,7 +369,6 @@ export class Medication extends fhir.DomainResource {
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
     let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'Medication' }
-    iss.push(...this.vRPS('resourceType',exp));
     iss.push(...this.vOS('code',exp));
     iss.push(...this.vOS('isBrand',exp));
     iss.push(...this.vOS('manufacturer',exp));

@@ -10,7 +10,7 @@ export interface ResourceArgs extends fhir.FhirBaseArgs {
     /**
      * The only time that a resource does not have an id is when it is being submitted to the server using a create operation.
      */
-    id?: fhir.FhirId | string | undefined;
+    id?: fhir.FhirIdSimple | string | undefined;
     /**
      * Extended properties for primitive element: Resource.id
      */
@@ -51,7 +51,7 @@ export declare class Resource extends fhir.FhirBase {
     /**
      * The only time that a resource does not have an id is when it is being submitted to the server using a create operation.
      */
-    id?: fhir.FhirId | undefined;
+    id?: fhir.FhirIdSimple | undefined;
     /**
      * The metadata about the resource. This is content that is maintained by the infrastructure. Changes to the content might not always be associated with version changes to the resource.
      */

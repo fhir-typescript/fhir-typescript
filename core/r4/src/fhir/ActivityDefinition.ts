@@ -866,7 +866,6 @@ export class ActivityDefinition extends fhir.DomainResource {
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
     let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'ActivityDefinition' }
-    iss.push(...this.vRPS('resourceType',exp));
     iss.push(...this.vOS('url',exp));
     iss.push(...this.vOA('identifier',exp));
     iss.push(...this.vOS('version',exp));

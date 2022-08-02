@@ -734,7 +734,6 @@ export class NutritionOrder extends fhir.DomainResource {
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
     let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'NutritionOrder' }
-    iss.push(...this.vRPS('resourceType',exp));
     iss.push(...this.vOA('identifier',exp));
     iss.push(...this.vOSV('status',exp,'NutritionRequestStatus',NutritionRequestStatusVsValidation,'r'));
     iss.push(...this.vRS('patient',exp));

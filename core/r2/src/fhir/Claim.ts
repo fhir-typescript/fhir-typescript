@@ -1330,7 +1330,6 @@ export class Claim extends fhir.DomainResource {
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
     let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'Claim' }
-    iss.push(...this.vRPS('resourceType',exp));
     iss.push(...this.vRSV('type',exp,'ClaimTypeLink',ClaimTypeLinkVsValidation,'r'));
     iss.push(...this.vOA('identifier',exp));
     iss.push(...this.vOS('ruleset',exp));

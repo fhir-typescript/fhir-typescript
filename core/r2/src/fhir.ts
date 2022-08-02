@@ -4,6 +4,7 @@
 
 import { FhirConstructorOptions, FtsElement, FtsCoding, FtsCodeableConcept, FtsIssue, FhirBaseArgs, FhirBase } from './fhir/FhirBase.js';
 import { FhirPrimitiveArgs, FhirPrimitive } from './fhir/FhirPrimitive.js';
+import { FhirPrimitiveSimpleArgs, FhirPrimitiveSimple } from './fhir/FhirPrimitiveSimple.js';
 import { FhirBase64BinaryArgs, FhirBase64Binary } from './fhir/FhirBase64Binary.js';
 import { FhirBooleanArgs, FhirBoolean } from './fhir/FhirBoolean.js';
 import { FhirCodeArgs, FhirCode } from './fhir/FhirCode.js';
@@ -11,6 +12,7 @@ import { FhirDateArgs, FhirDate } from './fhir/FhirDate.js';
 import { FhirDateTimeArgs, FhirDateTime } from './fhir/FhirDateTime.js';
 import { FhirDecimalArgs, FhirDecimal } from './fhir/FhirDecimal.js';
 import { FhirIdArgs, FhirId } from './fhir/FhirId.js';
+import { FhirIdSimpleArgs, FhirIdSimple } from './fhir/FhirIdSimple.js';
 import { FhirInstantArgs, FhirInstant } from './fhir/FhirInstant.js';
 import { FhirIntegerArgs, FhirInteger } from './fhir/FhirInteger.js';
 import { FhirMarkdownArgs, FhirMarkdown } from './fhir/FhirMarkdown.js';
@@ -20,6 +22,7 @@ import { FhirStringArgs, FhirString } from './fhir/FhirString.js';
 import { FhirTimeArgs, FhirTime } from './fhir/FhirTime.js';
 import { FhirUnsignedIntArgs, FhirUnsignedInt } from './fhir/FhirUnsignedInt.js';
 import { FhirUriArgs, FhirUri } from './fhir/FhirUri.js';
+import { FhirUriSimpleArgs, FhirUriSimple } from './fhir/FhirUriSimple.js';
 import { FhirUuidArgs, FhirUuid } from './fhir/FhirUuid.js';
 import { FhirXhtmlArgs, FhirXhtml } from './fhir/FhirXhtml.js';
 import { FhirElementArgs, FhirElement } from './fhir/FhirElement.js';
@@ -355,6 +358,7 @@ function resourceFactory(source:any) : FhirResource|null {
 export {
   type FhirConstructorOptions, type FtsElement, type FtsCoding, type FtsCodeableConcept, type FtsIssue, type FhirBaseArgs, FhirBase, 
   type FhirPrimitiveArgs, FhirPrimitive, 
+  type FhirPrimitiveSimpleArgs, FhirPrimitiveSimple, 
   type FhirBase64BinaryArgs, FhirBase64Binary, 
   type FhirBooleanArgs, FhirBoolean, 
   type FhirCodeArgs, FhirCode, 
@@ -362,6 +366,7 @@ export {
   type FhirDateTimeArgs, FhirDateTime, 
   type FhirDecimalArgs, FhirDecimal, 
   type FhirIdArgs, FhirId, 
+  type FhirIdSimpleArgs, FhirIdSimple, 
   type FhirInstantArgs, FhirInstant, 
   type FhirIntegerArgs, FhirInteger, 
   type FhirMarkdownArgs, FhirMarkdown, 
@@ -371,6 +376,7 @@ export {
   type FhirTimeArgs, FhirTime, 
   type FhirUnsignedIntArgs, FhirUnsignedInt, 
   type FhirUriArgs, FhirUri, 
+  type FhirUriSimpleArgs, FhirUriSimple, 
   type FhirUuidArgs, FhirUuid, 
   type FhirXhtmlArgs, FhirXhtml, 
   type FhirElementArgs, FhirElement, 

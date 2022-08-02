@@ -598,7 +598,6 @@ export class ImagingStudy extends fhir.DomainResource {
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
     let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'ImagingStudy' }
-    iss.push(...this.vRPS('resourceType',exp));
     iss.push(...this.vRS('uid',exp));
     iss.push(...this.vOS('accession',exp));
     iss.push(...this.vOA('identifier',exp));

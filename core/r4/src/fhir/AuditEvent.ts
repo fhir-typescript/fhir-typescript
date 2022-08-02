@@ -762,7 +762,6 @@ export class AuditEvent extends fhir.DomainResource {
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
     let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'AuditEvent' }
-    iss.push(...this.vRPS('resourceType',exp));
     iss.push(...this.vRS('type',exp));
     iss.push(...this.vOA('subtype',exp));
     iss.push(...this.vOSV('action',exp,'AuditEventAction',AuditEventActionVsValidation,'r'));

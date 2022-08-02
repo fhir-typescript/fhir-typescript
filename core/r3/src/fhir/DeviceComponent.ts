@@ -241,7 +241,6 @@ export class DeviceComponent extends fhir.DomainResource {
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
     let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'DeviceComponent' }
-    iss.push(...this.vRPS('resourceType',exp));
     iss.push(...this.vRS('identifier',exp));
     iss.push(...this.vRS('type',exp));
     iss.push(...this.vOS('lastSystemChange',exp));

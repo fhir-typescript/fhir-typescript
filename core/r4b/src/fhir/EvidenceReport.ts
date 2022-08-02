@@ -694,7 +694,6 @@ export class EvidenceReport extends fhir.DomainResource {
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
     let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'EvidenceReport' }
-    iss.push(...this.vRPS('resourceType',exp));
     iss.push(...this.vOS('url',exp));
     iss.push(...this.vRSV('status',exp,'PublicationStatus',PublicationStatusVsValidation,'r'));
     iss.push(...this.vOA('useContext',exp));

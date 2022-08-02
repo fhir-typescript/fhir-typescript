@@ -65,12 +65,6 @@ export class FhirElement extends fhir.FhirBase {
     else { this.extension = []; }
     if (source['fhir_comments']) { this.fhir_comments = source.fhir_comments.map((x) => new fhir.FhirString({value: x})); }
     else { this.fhir_comments = []; }
-    if (source['_fhir_comments']) {
-      source._fhir_comments.forEach((x,i) => {
-        if (this.fhir_comments.length >= i) { if (x) { this.fhir_comments[i].addExtendedProperties(x); } }
-        else { if (x) { this.fhir_comments.push(new fhir.FhirString(x as Partial<fhir.FhirStringArgs>)); } }
-      });
-    }
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).

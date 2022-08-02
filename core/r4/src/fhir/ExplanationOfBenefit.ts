@@ -3265,7 +3265,6 @@ export class ExplanationOfBenefit extends fhir.DomainResource {
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
     let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'ExplanationOfBenefit' }
-    iss.push(...this.vRPS('resourceType',exp));
     iss.push(...this.vOA('identifier',exp));
     iss.push(...this.vRSV('status',exp,'ExplanationofbenefitStatus',ExplanationofbenefitStatusVsValidation,'r'));
     iss.push(...this.vRS('type',exp));

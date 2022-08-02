@@ -460,7 +460,6 @@ export class ImagingObjectSelection extends fhir.DomainResource {
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
     let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'ImagingObjectSelection' }
-    iss.push(...this.vRPS('resourceType',exp));
     iss.push(...this.vRS('uid',exp));
     iss.push(...this.vRS('patient',exp));
     iss.push(...this.vRS('title',exp));

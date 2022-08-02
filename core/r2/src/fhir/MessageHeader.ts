@@ -425,7 +425,6 @@ export class MessageHeader extends fhir.DomainResource {
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
     let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'MessageHeader' }
-    iss.push(...this.vRPS('resourceType',exp));
     iss.push(...this.vRS('timestamp',exp));
     iss.push(...this.vRS('event',exp));
     iss.push(...this.vOS('response',exp));

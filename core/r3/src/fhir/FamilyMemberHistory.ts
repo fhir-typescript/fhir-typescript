@@ -449,7 +449,6 @@ export class FamilyMemberHistory extends fhir.DomainResource {
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
     let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'FamilyMemberHistory' }
-    iss.push(...this.vRPS('resourceType',exp));
     iss.push(...this.vOA('identifier',exp));
     iss.push(...this.vOA('definition',exp));
     iss.push(...this.vRSV('status',exp,'HistoryStatus',HistoryStatusVsValidation,'r'));

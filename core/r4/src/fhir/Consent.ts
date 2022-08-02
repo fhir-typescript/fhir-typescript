@@ -649,7 +649,6 @@ export class Consent extends fhir.DomainResource {
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
     let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'Consent' }
-    iss.push(...this.vRPS('resourceType',exp));
     iss.push(...this.vOA('identifier',exp));
     iss.push(...this.vRSV('status',exp,'ConsentState',ConsentStateVsValidation,'r'));
     iss.push(...this.vRS('scope',exp));

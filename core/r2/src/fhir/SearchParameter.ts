@@ -371,7 +371,6 @@ export class SearchParameter extends fhir.DomainResource {
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
     let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'SearchParameter' }
-    iss.push(...this.vRPS('resourceType',exp));
     iss.push(...this.vRS('url',exp));
     iss.push(...this.vRS('name',exp));
     iss.push(...this.vOSV('status',exp,'ConformanceResourceStatus',ConformanceResourceStatusVsValidation,'r'));

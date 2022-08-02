@@ -310,7 +310,6 @@ export class Account extends fhir.DomainResource {
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
     let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'Account' }
-    iss.push(...this.vRPS('resourceType',exp));
     iss.push(...this.vOA('identifier',exp));
     iss.push(...this.vRSV('status',exp,'AccountStatus',AccountStatusVsValidation,'r'));
     iss.push(...this.vOS('type',exp));

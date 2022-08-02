@@ -190,7 +190,6 @@ export class DeviceUseStatement extends fhir.DomainResource {
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
     let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'DeviceUseStatement' }
-    iss.push(...this.vRPS('resourceType',exp));
     iss.push(...this.vOA('identifier',exp));
     iss.push(...this.vRSV('status',exp,'DeviceStatementStatus',DeviceStatementStatusVsValidation,'r'));
     iss.push(...this.vRS('subject',exp));

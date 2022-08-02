@@ -326,7 +326,6 @@ export class Location extends fhir.DomainResource {
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
     let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'Location' }
-    iss.push(...this.vRPS('resourceType',exp));
     iss.push(...this.vOA('identifier',exp));
     iss.push(...this.vOSV('status',exp,'LocationStatus',LocationStatusVsValidation,'r'));
     iss.push(...this.vOS('operationalStatus',exp));

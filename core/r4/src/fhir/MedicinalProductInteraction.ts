@@ -167,7 +167,6 @@ export class MedicinalProductInteraction extends fhir.DomainResource {
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
     let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'MedicinalProductInteraction' }
-    iss.push(...this.vRPS('resourceType',exp));
     iss.push(...this.vOA('subject',exp));
     iss.push(...this.vOS('description',exp));
     iss.push(...this.vOA('interactant',exp));

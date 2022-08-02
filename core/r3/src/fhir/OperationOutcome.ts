@@ -199,7 +199,6 @@ export class OperationOutcome extends fhir.DomainResource {
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
     let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'OperationOutcome' }
-    iss.push(...this.vRPS('resourceType',exp));
     iss.push(...this.vRA('issue',exp));
     return iss;
   }

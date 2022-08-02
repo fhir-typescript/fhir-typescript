@@ -172,7 +172,6 @@ export class OrganizationAffiliation extends fhir.DomainResource {
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
     let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'OrganizationAffiliation' }
-    iss.push(...this.vRPS('resourceType',exp));
     iss.push(...this.vOA('identifier',exp));
     iss.push(...this.vOS('active',exp));
     iss.push(...this.vOS('period',exp));

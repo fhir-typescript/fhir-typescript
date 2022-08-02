@@ -652,7 +652,6 @@ export class SubstanceSourceMaterial extends fhir.DomainResource {
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
     let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'SubstanceSourceMaterial' }
-    iss.push(...this.vRPS('resourceType',exp));
     iss.push(...this.vOS('sourceMaterialClass',exp));
     iss.push(...this.vOS('sourceMaterialType',exp));
     iss.push(...this.vOS('sourceMaterialState',exp));

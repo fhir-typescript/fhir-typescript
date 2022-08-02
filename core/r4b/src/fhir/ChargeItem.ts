@@ -445,7 +445,6 @@ export class ChargeItem extends fhir.DomainResource {
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
     let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'ChargeItem' }
-    iss.push(...this.vRPS('resourceType',exp));
     iss.push(...this.vOA('identifier',exp));
     iss.push(...this.vOA('definitionUri',exp));
     iss.push(...this.vOA('definitionCanonical',exp));

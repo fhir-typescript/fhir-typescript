@@ -421,7 +421,6 @@ export class AdverseEvent extends fhir.DomainResource {
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
     let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'AdverseEvent' }
-    iss.push(...this.vRPS('resourceType',exp));
     iss.push(...this.vOS('identifier',exp));
     iss.push(...this.vRSV('actuality',exp,'AdverseEventActuality',AdverseEventActualityVsValidation,'r'));
     iss.push(...this.vOA('category',exp));

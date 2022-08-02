@@ -370,7 +370,6 @@ export class Goal extends fhir.DomainResource {
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
     let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'Goal' }
-    iss.push(...this.vRPS('resourceType',exp));
     iss.push(...this.vOA('identifier',exp));
     iss.push(...this.vRSV('lifecycleStatus',exp,'GoalStatus',GoalStatusVsValidation,'r'));
     iss.push(...this.vOS('achievementStatus',exp));

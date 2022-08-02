@@ -362,7 +362,6 @@ export class NamingSystem extends fhir.DomainResource {
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
     let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'NamingSystem' }
-    iss.push(...this.vRPS('resourceType',exp));
     iss.push(...this.vRS('name',exp));
     iss.push(...this.vRSV('status',exp,'PublicationStatus',PublicationStatusVsValidation,'r'));
     iss.push(...this.vRSV('kind',exp,'NamingsystemType',NamingsystemTypeVsValidation,'r'));

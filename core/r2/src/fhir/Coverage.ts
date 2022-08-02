@@ -208,7 +208,6 @@ export class Coverage extends fhir.DomainResource {
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
     let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'Coverage' }
-    iss.push(...this.vRPS('resourceType',exp));
     iss.push(...this.vOS('issuer',exp));
     iss.push(...this.vOS('bin',exp));
     iss.push(...this.vOS('period',exp));

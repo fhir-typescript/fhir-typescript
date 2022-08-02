@@ -526,7 +526,6 @@ export class SubstancePolymer extends fhir.DomainResource {
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
     let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'SubstancePolymer' }
-    iss.push(...this.vRPS('resourceType',exp));
     iss.push(...this.vOS('class',exp));
     iss.push(...this.vOS('geometry',exp));
     iss.push(...this.vOA('copolymerConnectivity',exp));

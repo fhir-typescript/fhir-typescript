@@ -213,7 +213,6 @@ export class GuidanceResponse extends fhir.DomainResource {
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
     let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'GuidanceResponse' }
-    iss.push(...this.vRPS('resourceType',exp));
     iss.push(...this.vOS('requestId',exp));
     iss.push(...this.vOS('identifier',exp));
     iss.push(...this.vRS('module',exp));

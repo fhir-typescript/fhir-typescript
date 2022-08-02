@@ -24,7 +24,7 @@ export interface ResourceArgs extends fhir.FhirBaseArgs {
   /**
    * The only time that a resource does not have an id is when it is being submitted to the server using a create operation.
    */
-  id?: fhir.FhirId|string|undefined;
+  id?: fhir.FhirIdSimple|string|undefined;
   /**
    * Extended properties for primitive element: Resource.id
    */
@@ -66,7 +66,7 @@ export class Resource extends fhir.FhirBase {
   /**
    * The only time that a resource does not have an id is when it is being submitted to the server using a create operation.
    */
-  public id?: fhir.FhirId|undefined;
+  public id?: fhir.FhirIdSimple|undefined;
   /**
    * The metadata about the resource. This is content that is maintained by the infrastructure. Changes to the content might not always be associated with version changes to the resource.
    */
@@ -85,11 +85,7 @@ export class Resource extends fhir.FhirBase {
   constructor(source:Partial<ResourceArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
     this.resourceType = 'Resource';
-    if (source['id']) { this.id = new fhir.FhirId({value: source.id}); }
-    if (source['_id']) {
-      if (this.id) { this.id.addExtendedProperties(source._id!); }
-      else { this.id = new fhir.FhirId(source._id as Partial<fhir.FhirIdArgs>); }
-    }
+    if (source['id']) { this.id = new fhir.FhirIdSimple({value: source.id}); }
     if (source['meta']) { this.meta = new fhir.Meta(source.meta); }
     if (source['implicitRules']) { this.implicitRules = new fhir.FhirUri({value: source.implicitRules}); }
     if (source['_implicitRules']) {
@@ -108,7 +104,6 @@ export class Resource extends fhir.FhirBase {
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
     let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'Resource' }
-    iss.push(...this.vRPS('resourceType',exp));
     iss.push(...this.vOS('id',exp));
     iss.push(...this.vOS('meta',exp));
     iss.push(...this.vOS('implicitRules',exp));

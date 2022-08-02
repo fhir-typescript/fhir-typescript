@@ -1350,7 +1350,6 @@ export class MolecularSequence extends fhir.DomainResource {
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
     let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'MolecularSequence' }
-    iss.push(...this.vRPS('resourceType',exp));
     iss.push(...this.vOA('identifier',exp));
     iss.push(...this.vOSV('type',exp,'SequenceType',SequenceTypeVsValidation,'r'));
     iss.push(...this.vRS('coordinateSystem',exp));

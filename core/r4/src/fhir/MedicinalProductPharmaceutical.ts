@@ -380,7 +380,6 @@ export class MedicinalProductPharmaceutical extends fhir.DomainResource {
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
     let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'MedicinalProductPharmaceutical' }
-    iss.push(...this.vRPS('resourceType',exp));
     iss.push(...this.vOA('identifier',exp));
     iss.push(...this.vRS('administrableDoseForm',exp));
     iss.push(...this.vOS('unitOfPresentation',exp));

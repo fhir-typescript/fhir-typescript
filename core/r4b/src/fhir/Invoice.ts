@@ -449,7 +449,6 @@ export class Invoice extends fhir.DomainResource {
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
     let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'Invoice' }
-    iss.push(...this.vRPS('resourceType',exp));
     iss.push(...this.vOA('identifier',exp));
     iss.push(...this.vRSV('status',exp,'InvoiceStatus',InvoiceStatusVsValidation,'r'));
     iss.push(...this.vOS('cancelledReason',exp));

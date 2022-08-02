@@ -763,7 +763,6 @@ export class OperationDefinition extends fhir.DomainResource {
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
     let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'OperationDefinition' }
-    iss.push(...this.vRPS('resourceType',exp));
     iss.push(...this.vOS('url',exp));
     iss.push(...this.vOS('version',exp));
     iss.push(...this.vRS('name',exp));

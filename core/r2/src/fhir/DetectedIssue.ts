@@ -236,7 +236,6 @@ export class DetectedIssue extends fhir.DomainResource {
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
     let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'DetectedIssue' }
-    iss.push(...this.vRPS('resourceType',exp));
     iss.push(...this.vOS('patient',exp));
     iss.push(...this.vOS('category',exp));
     iss.push(...this.vOSV('severity',exp,'DetectedissueSeverity',DetectedissueSeverityVsValidation,'r'));

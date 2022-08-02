@@ -548,7 +548,6 @@ export class SpecimenDefinition extends fhir.DomainResource {
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
     let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'SpecimenDefinition' }
-    iss.push(...this.vRPS('resourceType',exp));
     iss.push(...this.vOS('identifier',exp));
     iss.push(...this.vOS('typeCollected',exp));
     iss.push(...this.vOA('patientPreparation',exp));

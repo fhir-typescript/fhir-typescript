@@ -399,7 +399,6 @@ export class Provenance extends fhir.DomainResource {
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
     let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'Provenance' }
-    iss.push(...this.vRPS('resourceType',exp));
     iss.push(...this.vRA('target',exp));
     iss.push(...this.vOS('period',exp));
     iss.push(...this.vRS('recorded',exp));

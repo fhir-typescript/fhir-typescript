@@ -435,7 +435,6 @@ export class ClinicalImpression extends fhir.DomainResource {
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
     let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'ClinicalImpression' }
-    iss.push(...this.vRPS('resourceType',exp));
     iss.push(...this.vRS('patient',exp));
     iss.push(...this.vOS('assessor',exp));
     iss.push(...this.vRSV('status',exp,'ClinicalImpressionStatus',ClinicalImpressionStatusVsValidation,'r'));

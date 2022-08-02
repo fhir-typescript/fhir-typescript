@@ -76,7 +76,6 @@ export class Binary extends fhir.Resource {
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
     let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'Binary' }
-    iss.push(...this.vRPS('resourceType',exp));
     iss.push(...this.vRS('contentType',exp));
     iss.push(...this.vRS('content',exp));
     return iss;

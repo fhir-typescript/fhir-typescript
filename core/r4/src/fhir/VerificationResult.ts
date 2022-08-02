@@ -565,7 +565,6 @@ export class VerificationResult extends fhir.DomainResource {
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
     let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'VerificationResult' }
-    iss.push(...this.vRPS('resourceType',exp));
     iss.push(...this.vOA('target',exp));
     iss.push(...this.vOA('targetLocation',exp));
     iss.push(...this.vOS('need',exp));

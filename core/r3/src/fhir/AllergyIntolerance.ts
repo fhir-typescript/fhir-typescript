@@ -439,7 +439,6 @@ export class AllergyIntolerance extends fhir.DomainResource {
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
     let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'AllergyIntolerance' }
-    iss.push(...this.vRPS('resourceType',exp));
     iss.push(...this.vOA('identifier',exp));
     iss.push(...this.vOSV('clinicalStatus',exp,'AllergyClinicalStatus',AllergyClinicalStatusVsValidation,'r'));
     iss.push(...this.vRSV('verificationStatus',exp,'AllergyVerificationStatus',AllergyVerificationStatusVsValidation,'r'));

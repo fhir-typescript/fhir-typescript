@@ -485,7 +485,6 @@ export class Questionnaire extends fhir.DomainResource {
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
     let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'Questionnaire' }
-    iss.push(...this.vRPS('resourceType',exp));
     iss.push(...this.vOA('identifier',exp));
     iss.push(...this.vOS('version',exp));
     iss.push(...this.vRSV('status',exp,'QuestionnaireStatus',QuestionnaireStatusVsValidation,'r'));

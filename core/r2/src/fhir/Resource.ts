@@ -104,7 +104,6 @@ export class Resource extends fhir.FhirBase {
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
     let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'Resource' }
-    iss.push(...this.vRPS('resourceType',exp));
     iss.push(...this.vOS('id',exp));
     iss.push(...this.vOS('meta',exp));
     iss.push(...this.vOS('implicitRules',exp));

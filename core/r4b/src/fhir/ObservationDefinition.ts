@@ -443,7 +443,6 @@ export class ObservationDefinition extends fhir.DomainResource {
   public override doModelValidation(exp:string = ''):fhir.FtsIssue[] {
     let iss:fhir.FtsIssue[] = super.doModelValidation(exp);
     if (exp === '') { exp = 'ObservationDefinition' }
-    iss.push(...this.vRPS('resourceType',exp));
     iss.push(...this.vOA('category',exp));
     iss.push(...this.vRS('code',exp));
     iss.push(...this.vOA('identifier',exp));
