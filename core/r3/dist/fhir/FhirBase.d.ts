@@ -163,20 +163,6 @@ export declare class FhirBase {
      */
     vRAV(p: Readonly<string>, exp: Readonly<string>, vsN: string, vsV: Readonly<string[]>, vsS: Readonly<string>): FtsIssue[];
     /**
-     * Validate a Required Primitive Scalar element
-     * @param p
-     * @param exp
-     * @returns
-     */
-    vRPS(p: Readonly<string>, exp: Readonly<string>): FtsIssue[];
-    /**
-     * Validate a Required Array element
-     * @param p
-     * @param exp
-     * @returns
-     */
-    vRPA(p: Readonly<string>, exp: Readonly<string>): FtsIssue[];
-    /**
      * Function to strip invalid element values for serialization.
      */
     toJSON(): any;
