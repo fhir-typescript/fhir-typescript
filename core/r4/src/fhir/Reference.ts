@@ -78,21 +78,21 @@ export class Reference extends fhir.FhirElement {
    */
   constructor(source:Partial<ReferenceArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['reference']) { this.reference = new fhir.FhirString({value: source.reference}); }
+    if (source['reference'] !== undefined) { this.reference = new fhir.FhirString({value: source.reference}, options); }
     if (source['_reference']) {
       if (this.reference) { this.reference.addExtendedProperties(source._reference!); }
-      else { this.reference = new fhir.FhirString(source._reference as Partial<fhir.FhirStringArgs>); }
+      else { this.reference = new fhir.FhirString(source._reference as Partial<fhir.FhirStringArgs>, options); }
     }
-    if (source['type']) { this.type = new fhir.FhirUri({value: source.type}); }
+    if (source['type'] !== undefined) { this.type = new fhir.FhirUri({value: source.type}, options); }
     if (source['_type']) {
       if (this.type) { this.type.addExtendedProperties(source._type!); }
-      else { this.type = new fhir.FhirUri(source._type as Partial<fhir.FhirUriArgs>); }
+      else { this.type = new fhir.FhirUri(source._type as Partial<fhir.FhirUriArgs>, options); }
     }
-    if (source['identifier']) { this.identifier = new fhir.Identifier(source.identifier); }
-    if (source['display']) { this.display = new fhir.FhirString({value: source.display}); }
+    if (source['identifier']) { this.identifier = new fhir.Identifier(source.identifier, options); }
+    if (source['display'] !== undefined) { this.display = new fhir.FhirString({value: source.display}, options); }
     if (source['_display']) {
       if (this.display) { this.display.addExtendedProperties(source._display!); }
-      else { this.display = new fhir.FhirString(source._display as Partial<fhir.FhirStringArgs>); }
+      else { this.display = new fhir.FhirString(source._display as Partial<fhir.FhirStringArgs>, options); }
     }
   }
   /**

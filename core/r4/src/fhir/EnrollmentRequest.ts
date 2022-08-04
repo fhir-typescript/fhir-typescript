@@ -101,22 +101,22 @@ export class EnrollmentRequest extends fhir.DomainResource {
   constructor(source:Partial<EnrollmentRequestArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
     this.resourceType = 'EnrollmentRequest';
-    if (source['identifier']) { this.identifier = source.identifier.map((x) => new fhir.Identifier(x)); }
+    if (source['identifier']) { this.identifier = source.identifier.map((x) => new fhir.Identifier(x, options)); }
     else { this.identifier = []; }
-    if (source['status']) { this.status = new fhir.FhirCode<FmStatusCodeType>({value: source.status}); }
+    if (source['status'] !== undefined) { this.status = new fhir.FhirCode<FmStatusCodeType>({value: source.status}, options); }
     if (source['_status']) {
       if (this.status) { this.status.addExtendedProperties(source._status!); }
-      else { this.status = new fhir.FhirCode<FmStatusCodeType>(source._status as Partial<fhir.FhirCode>); }
+      else { this.status = new fhir.FhirCode<FmStatusCodeType>(source._status as Partial<fhir.FhirCode>, options); }
     }
-    if (source['created']) { this.created = new fhir.FhirDateTime({value: source.created}); }
+    if (source['created'] !== undefined) { this.created = new fhir.FhirDateTime({value: source.created}, options); }
     if (source['_created']) {
       if (this.created) { this.created.addExtendedProperties(source._created!); }
-      else { this.created = new fhir.FhirDateTime(source._created as Partial<fhir.FhirDateTimeArgs>); }
+      else { this.created = new fhir.FhirDateTime(source._created as Partial<fhir.FhirDateTimeArgs>, options); }
     }
-    if (source['insurer']) { this.insurer = new fhir.Reference(source.insurer); }
-    if (source['provider']) { this.provider = new fhir.Reference(source.provider); }
-    if (source['candidate']) { this.candidate = new fhir.Reference(source.candidate); }
-    if (source['coverage']) { this.coverage = new fhir.Reference(source.coverage); }
+    if (source['insurer']) { this.insurer = new fhir.Reference(source.insurer, options); }
+    if (source['provider']) { this.provider = new fhir.Reference(source.provider, options); }
+    if (source['candidate']) { this.candidate = new fhir.Reference(source.candidate, options); }
+    if (source['coverage']) { this.coverage = new fhir.Reference(source.coverage, options); }
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).

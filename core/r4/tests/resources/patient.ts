@@ -32,7 +32,7 @@ test('patientGenderConstructorFhirCode', () => {
 });
 
 test('patientGenderConstructorCodeFromPatient', () => {
-    let v:fhir.Patient = new fhir.Patient({gender: fhir.Patient.genderRequiredCodes.Other});
+    let v:fhir.Patient = new fhir.Patient({gender: valueSetCodes.AdministrativeGenderCodes.Other});
     expect(v).toBeDefined();
     expect(v.resourceType).toBe('Patient');
     expect(v.gender).toBeDefined();

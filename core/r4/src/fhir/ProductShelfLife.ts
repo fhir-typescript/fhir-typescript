@@ -56,12 +56,12 @@ export class ProductShelfLife extends fhir.BackboneElement {
    */
   constructor(source:Partial<ProductShelfLifeArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['identifier']) { this.identifier = new fhir.Identifier(source.identifier); }
-    if (source['type']) { this.type = new fhir.CodeableConcept(source.type); }
+    if (source['identifier']) { this.identifier = new fhir.Identifier(source.identifier, options); }
+    if (source['type']) { this.type = new fhir.CodeableConcept(source.type, options); }
     else { this.type = null; }
-    if (source['period']) { this.period = new fhir.Quantity(source.period); }
+    if (source['period']) { this.period = new fhir.Quantity(source.period, options); }
     else { this.period = null; }
-    if (source['specialPrecautionsForStorage']) { this.specialPrecautionsForStorage = source.specialPrecautionsForStorage.map((x) => new fhir.CodeableConcept(x)); }
+    if (source['specialPrecautionsForStorage']) { this.specialPrecautionsForStorage = source.specialPrecautionsForStorage.map((x) => new fhir.CodeableConcept(x, options)); }
     else { this.specialPrecautionsForStorage = []; }
   }
   /**

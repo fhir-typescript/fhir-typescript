@@ -1,0 +1,189 @@
+﻿@page "/"
+@using GenHelperBlazor.Services
+@inject ICodeGenService CodeService
+@inject ITestGenService TestService
+
+<PageTitle>fhir-typescript Code Generation Helper</PageTitle>
+
+<p>
+    @foreach((string package, string display) in fhirPackages)
+    {
+        <button
+            type="button"
+            class=@GetButtonClass(selectedPackages.Contains(package))
+            @onclick="() => TogglePackageSelection(package)"
+            >
+            @display
+        </button>
+    }
+</p>
+
+<p>
+    <button class="@GetExportButtonClass()" type="button" @onclick="() => StartCodeGen()">Generate Code</button>
+    <button class="@GetExportButtonClass()" type="button" @onclick="() => StartTestGen()">Generate Tests</button>
+    @if (exportInProgress)
+    {
+        <div class="col-1"><span class="spinner-border align-content-center"></span></div>
+    }
+</p>
+
+<p>
+    <span class="fw-bold text-danger m-1">@uiMessage</span>
+</p>
+
+
+@code {
+    /// <summary>The FHIR packages.</summary>
+    private Dictionary<string, string> fhirPackages = new();
+
+    /// <summary>The selected packages.</summary>
+    private HashSet<string> selectedPackages = new();
+
+    /// <summary>
+    /// Gets or sets a value indicating whether the in progress should be exported.
+    /// </summary>
+    private bool exportInProgress { get; set; } = false;
+
+    /// <summary>The exports in progress.</summary>
+    private int exportsInProgress = 0;
+
+    private int exportsRequested = 0;
+    private int exportsFailed = 0;
+    private int exportsCompleted = 0;
+
+    private string uiMessage { get; set; } = "";
+
+    /// <summary>Executes the initialized asynchronous action.</summary>
+    /// <returns>An asynchronous result.</returns>
+    protected override void OnInitialized()
+    {
+        base.OnInitialized();
+
+        fhirPackages.Add("hl7.fhir.r2", "DSTU2");
+        fhirPackages.Add("hl7.fhir.r3", "STU3");
+        fhirPackages.Add("hl7.fhir.r4", "R4");
+        fhirPackages.Add("hl7.fhir.r4b", "R4B");
+    }
+
+    /// <summary>Toggle package selection.</summary>
+    /// <param name="package">The package.</param>
+    private void TogglePackageSelection(string package)
+    {
+        if (selectedPackages.Contains(package))
+        {
+            selectedPackages.Remove(package);
+        }
+        else
+        {
+            selectedPackages.Add(package);
+        }
+
+        InvokeAsync(() => StateHasChanged());
+    }
+
+    /// <summary>Gets export button class.</summary>
+    /// <returns>The export button class.</returns>
+    string GetExportButtonClass()
+    {
+        return exportInProgress ? "btn btn-dark disabled m-1" : "btn btn-primary m-1";
+    }
+
+    /// <summary>Gets button class.</summary>
+    /// <param name="enabled">True to enable, false to disable.</param>
+    /// <returns>The button class.</returns>
+    private string GetButtonClass(bool enabled)
+    {
+        if (enabled)
+        {
+            return "btn btn-primary m-1";
+        }
+
+        return "btn btn-outline-primary m-1";
+    }
+
+    /// <summary>Starts test generation for selected pacakges.</summary>
+    void StartTestGen()
+    {
+        if (exportInProgress)
+        {
+            return;
+        }
+
+        exportInProgress = true;
+
+        exportsRequested = selectedPackages.Count;
+        exportsCompleted = 0;
+        exportsFailed = 0;
+        exportsInProgress = 0;
+
+        uiMessage = $"Starting test generation of {exportsRequested} packages";
+
+        foreach (string package in selectedPackages)
+        {
+            Task exportTask = TestService.BuildTests(package);
+
+            Interlocked.Increment(ref exportsInProgress);
+            exportTask.ContinueWith(at => ExportCompleteHandler(at));
+            exportTask.Start();
+        }
+    }
+
+    /// <summary>Starts code generation for selected packages.</summary>
+    void StartCodeGen()
+    {
+        if (exportInProgress)
+        {
+            return;
+        }
+
+        exportInProgress = true;
+
+        exportsRequested = selectedPackages.Count;
+        exportsCompleted = 0;
+        exportsFailed = 0;
+        exportsInProgress = 0;
+
+        uiMessage = $"Starting export of {exportsRequested} packages";
+
+        foreach (string package in selectedPackages)
+        {
+            Task exportTask = CodeService.RequestExport(package);
+
+            Interlocked.Increment(ref exportsInProgress);
+            exportTask.ContinueWith(at => ExportCompleteHandler(at));
+            exportTask.Start();
+        }
+    }
+
+    /// <summary>Handler, called when the export complete.</summary>
+    /// <param name="exportTask">The export task.</param>
+    void ExportCompleteHandler(Task exportTask)
+    {
+        int remaining = Interlocked.Decrement(ref exportsInProgress);
+
+        int failed;
+        int completed;
+        if (exportTask.IsCompletedSuccessfully)
+        {
+            completed = Interlocked.Increment(ref exportsCompleted);
+            failed = exportsFailed;
+        }
+        else
+        {
+            completed = exportsCompleted;
+            failed = Interlocked.Increment(ref exportsFailed);
+        }
+
+        if (remaining == 0)
+        {
+            exportInProgress = false;
+            uiMessage = $"Done! Complete: {completed}, Failed: {failed}";
+        }
+        else
+        {
+            uiMessage = $"In Progress: {remaining}, Complete: {completed}, Failed: {failed}";
+        }
+
+        InvokeAsync(() => StateHasChanged());
+    }
+}

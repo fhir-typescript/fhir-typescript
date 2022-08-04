@@ -52,11 +52,11 @@ export class MedicinalProductContraindicationOtherTherapy extends fhir.BackboneE
    */
   constructor(source:Partial<MedicinalProductContraindicationOtherTherapyArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['therapyRelationshipType']) { this.therapyRelationshipType = new fhir.CodeableConcept(source.therapyRelationshipType); }
+    if (source['therapyRelationshipType']) { this.therapyRelationshipType = new fhir.CodeableConcept(source.therapyRelationshipType, options); }
     else { this.therapyRelationshipType = null; }
     if (source['medication']) { this.medication = source.medication; }
-    else if (source['medicationCodeableConcept']) { this.medication = new fhir.CodeableConcept(source.medicationCodeableConcept); }
-    else if (source['medicationReference']) { this.medication = new fhir.Reference(source.medicationReference); }
+    else if (source['medicationCodeableConcept']) { this.medication = new fhir.CodeableConcept(source.medicationCodeableConcept, options); }
+    else if (source['medicationReference']) { this.medication = new fhir.Reference(source.medicationReference, options); }
     else { this.medication = null; }
   }
   /**
@@ -154,17 +154,17 @@ export class MedicinalProductContraindication extends fhir.DomainResource {
   constructor(source:Partial<MedicinalProductContraindicationArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
     this.resourceType = 'MedicinalProductContraindication';
-    if (source['subject']) { this.subject = source.subject.map((x) => new fhir.Reference(x)); }
+    if (source['subject']) { this.subject = source.subject.map((x) => new fhir.Reference(x, options)); }
     else { this.subject = []; }
-    if (source['disease']) { this.disease = new fhir.CodeableConcept(source.disease); }
-    if (source['diseaseStatus']) { this.diseaseStatus = new fhir.CodeableConcept(source.diseaseStatus); }
-    if (source['comorbidity']) { this.comorbidity = source.comorbidity.map((x) => new fhir.CodeableConcept(x)); }
+    if (source['disease']) { this.disease = new fhir.CodeableConcept(source.disease, options); }
+    if (source['diseaseStatus']) { this.diseaseStatus = new fhir.CodeableConcept(source.diseaseStatus, options); }
+    if (source['comorbidity']) { this.comorbidity = source.comorbidity.map((x) => new fhir.CodeableConcept(x, options)); }
     else { this.comorbidity = []; }
-    if (source['therapeuticIndication']) { this.therapeuticIndication = source.therapeuticIndication.map((x) => new fhir.Reference(x)); }
+    if (source['therapeuticIndication']) { this.therapeuticIndication = source.therapeuticIndication.map((x) => new fhir.Reference(x, options)); }
     else { this.therapeuticIndication = []; }
-    if (source['otherTherapy']) { this.otherTherapy = source.otherTherapy.map((x) => new fhir.MedicinalProductContraindicationOtherTherapy(x)); }
+    if (source['otherTherapy']) { this.otherTherapy = source.otherTherapy.map((x) => new fhir.MedicinalProductContraindicationOtherTherapy(x, options)); }
     else { this.otherTherapy = []; }
-    if (source['population']) { this.population = source.population.map((x) => new fhir.Population(x)); }
+    if (source['population']) { this.population = source.population.map((x) => new fhir.Population(x, options)); }
     else { this.population = []; }
   }
   /**

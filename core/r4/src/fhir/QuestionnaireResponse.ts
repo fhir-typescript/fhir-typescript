@@ -97,19 +97,19 @@ export class QuestionnaireResponseItemAnswer extends fhir.BackboneElement {
   constructor(source:Partial<QuestionnaireResponseItemAnswerArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
     if (source['value']) { this.value = source.value; }
-    else if (source['valueBoolean']) { this.value = new fhir.FhirBoolean({value: source.valueBoolean}); }
-    else if (source['valueDecimal']) { this.value = new fhir.FhirDecimal({value: source.valueDecimal}); }
-    else if (source['valueInteger']) { this.value = new fhir.FhirInteger({value: source.valueInteger}); }
-    else if (source['valueDate']) { this.value = new fhir.FhirDate({value: source.valueDate}); }
-    else if (source['valueDateTime']) { this.value = new fhir.FhirDateTime({value: source.valueDateTime}); }
-    else if (source['valueTime']) { this.value = new fhir.FhirTime({value: source.valueTime}); }
-    else if (source['valueString']) { this.value = new fhir.FhirString({value: source.valueString}); }
-    else if (source['valueUri']) { this.value = new fhir.FhirUri({value: source.valueUri}); }
-    else if (source['valueAttachment']) { this.value = new fhir.Attachment(source.valueAttachment); }
-    else if (source['valueCoding']) { this.value = new fhir.Coding(source.valueCoding); }
-    else if (source['valueQuantity']) { this.value = new fhir.Quantity(source.valueQuantity); }
-    else if (source['valueReference']) { this.value = new fhir.Reference(source.valueReference); }
-    if (source['item']) { this.item = source.item.map((x) => new fhir.QuestionnaireResponseItem(x)); }
+    else if (source['valueBoolean'] !== undefined) { this.value = new fhir.FhirBoolean({value: source.valueBoolean}, options); }
+    else if (source['valueDecimal'] !== undefined) { this.value = new fhir.FhirDecimal({value: source.valueDecimal}, options); }
+    else if (source['valueInteger'] !== undefined) { this.value = new fhir.FhirInteger({value: source.valueInteger}, options); }
+    else if (source['valueDate'] !== undefined) { this.value = new fhir.FhirDate({value: source.valueDate}, options); }
+    else if (source['valueDateTime'] !== undefined) { this.value = new fhir.FhirDateTime({value: source.valueDateTime}, options); }
+    else if (source['valueTime'] !== undefined) { this.value = new fhir.FhirTime({value: source.valueTime}, options); }
+    else if (source['valueString'] !== undefined) { this.value = new fhir.FhirString({value: source.valueString}, options); }
+    else if (source['valueUri'] !== undefined) { this.value = new fhir.FhirUri({value: source.valueUri}, options); }
+    else if (source['valueAttachment']) { this.value = new fhir.Attachment(source.valueAttachment, options); }
+    else if (source['valueCoding']) { this.value = new fhir.Coding(source.valueCoding, options); }
+    else if (source['valueQuantity']) { this.value = new fhir.Quantity(source.valueQuantity, options); }
+    else if (source['valueReference']) { this.value = new fhir.Reference(source.valueReference, options); }
+    if (source['item']) { this.item = source.item.map((x) => new fhir.QuestionnaireResponseItem(x, options)); }
     else { this.item = []; }
   }
   /**
@@ -196,25 +196,25 @@ export class QuestionnaireResponseItem extends fhir.BackboneElement {
    */
   constructor(source:Partial<QuestionnaireResponseItemArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['linkId']) { this.linkId = new fhir.FhirString({value: source.linkId}); }
+    if (source['linkId'] !== undefined) { this.linkId = new fhir.FhirString({value: source.linkId}, options); }
     else { this.linkId = null; }
     if (source['_linkId']) {
       if (this.linkId) { this.linkId.addExtendedProperties(source._linkId!); }
-      else { this.linkId = new fhir.FhirString(source._linkId as Partial<fhir.FhirStringArgs>); }
+      else { this.linkId = new fhir.FhirString(source._linkId as Partial<fhir.FhirStringArgs>, options); }
     }
-    if (source['definition']) { this.definition = new fhir.FhirUri({value: source.definition}); }
+    if (source['definition'] !== undefined) { this.definition = new fhir.FhirUri({value: source.definition}, options); }
     if (source['_definition']) {
       if (this.definition) { this.definition.addExtendedProperties(source._definition!); }
-      else { this.definition = new fhir.FhirUri(source._definition as Partial<fhir.FhirUriArgs>); }
+      else { this.definition = new fhir.FhirUri(source._definition as Partial<fhir.FhirUriArgs>, options); }
     }
-    if (source['text']) { this.text = new fhir.FhirString({value: source.text}); }
+    if (source['text'] !== undefined) { this.text = new fhir.FhirString({value: source.text}, options); }
     if (source['_text']) {
       if (this.text) { this.text.addExtendedProperties(source._text!); }
-      else { this.text = new fhir.FhirString(source._text as Partial<fhir.FhirStringArgs>); }
+      else { this.text = new fhir.FhirString(source._text as Partial<fhir.FhirStringArgs>, options); }
     }
-    if (source['answer']) { this.answer = source.answer.map((x) => new fhir.QuestionnaireResponseItemAnswer(x)); }
+    if (source['answer']) { this.answer = source.answer.map((x) => new fhir.QuestionnaireResponseItemAnswer(x, options)); }
     else { this.answer = []; }
-    if (source['item']) { this.item = source.item.map((x) => new fhir.QuestionnaireResponseItem(x)); }
+    if (source['item']) { this.item = source.item.map((x) => new fhir.QuestionnaireResponseItem(x, options)); }
     else { this.item = []; }
   }
   /**
@@ -361,32 +361,32 @@ export class QuestionnaireResponse extends fhir.DomainResource {
   constructor(source:Partial<QuestionnaireResponseArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
     this.resourceType = 'QuestionnaireResponse';
-    if (source['identifier']) { this.identifier = new fhir.Identifier(source.identifier); }
-    if (source['basedOn']) { this.basedOn = source.basedOn.map((x) => new fhir.Reference(x)); }
+    if (source['identifier']) { this.identifier = new fhir.Identifier(source.identifier, options); }
+    if (source['basedOn']) { this.basedOn = source.basedOn.map((x) => new fhir.Reference(x, options)); }
     else { this.basedOn = []; }
-    if (source['partOf']) { this.partOf = source.partOf.map((x) => new fhir.Reference(x)); }
+    if (source['partOf']) { this.partOf = source.partOf.map((x) => new fhir.Reference(x, options)); }
     else { this.partOf = []; }
-    if (source['questionnaire']) { this.questionnaire = new fhir.FhirCanonical({value: source.questionnaire}); }
+    if (source['questionnaire'] !== undefined) { this.questionnaire = new fhir.FhirCanonical({value: source.questionnaire}, options); }
     if (source['_questionnaire']) {
       if (this.questionnaire) { this.questionnaire.addExtendedProperties(source._questionnaire!); }
-      else { this.questionnaire = new fhir.FhirCanonical(source._questionnaire as Partial<fhir.FhirCanonicalArgs>); }
+      else { this.questionnaire = new fhir.FhirCanonical(source._questionnaire as Partial<fhir.FhirCanonicalArgs>, options); }
     }
-    if (source['status']) { this.status = new fhir.FhirCode<QuestionnaireAnswersStatusCodeType>({value: source.status}); }
+    if (source['status'] !== undefined) { this.status = new fhir.FhirCode<QuestionnaireAnswersStatusCodeType>({value: source.status}, options); }
     else { this.status = null; }
     if (source['_status']) {
       if (this.status) { this.status.addExtendedProperties(source._status!); }
-      else { this.status = new fhir.FhirCode<QuestionnaireAnswersStatusCodeType>(source._status as Partial<fhir.FhirCode>); }
+      else { this.status = new fhir.FhirCode<QuestionnaireAnswersStatusCodeType>(source._status as Partial<fhir.FhirCode>, options); }
     }
-    if (source['subject']) { this.subject = new fhir.Reference(source.subject); }
-    if (source['encounter']) { this.encounter = new fhir.Reference(source.encounter); }
-    if (source['authored']) { this.authored = new fhir.FhirDateTime({value: source.authored}); }
+    if (source['subject']) { this.subject = new fhir.Reference(source.subject, options); }
+    if (source['encounter']) { this.encounter = new fhir.Reference(source.encounter, options); }
+    if (source['authored'] !== undefined) { this.authored = new fhir.FhirDateTime({value: source.authored}, options); }
     if (source['_authored']) {
       if (this.authored) { this.authored.addExtendedProperties(source._authored!); }
-      else { this.authored = new fhir.FhirDateTime(source._authored as Partial<fhir.FhirDateTimeArgs>); }
+      else { this.authored = new fhir.FhirDateTime(source._authored as Partial<fhir.FhirDateTimeArgs>, options); }
     }
-    if (source['author']) { this.author = new fhir.Reference(source.author); }
-    if (source['source']) { this.source = new fhir.Reference(source.source); }
-    if (source['item']) { this.item = source.item.map((x) => new fhir.QuestionnaireResponseItem(x)); }
+    if (source['author']) { this.author = new fhir.Reference(source.author, options); }
+    if (source['source']) { this.source = new fhir.Reference(source.source, options); }
+    if (source['item']) { this.item = source.item.map((x) => new fhir.QuestionnaireResponseItem(x, options)); }
     else { this.item = []; }
   }
   /**

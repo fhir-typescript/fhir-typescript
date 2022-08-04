@@ -60,10 +60,10 @@ export class SupplyDeliverySuppliedItem extends fhir.BackboneElement {
    */
   constructor(source:Partial<SupplyDeliverySuppliedItemArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['quantity']) { this.quantity = new fhir.Quantity(source.quantity); }
+    if (source['quantity']) { this.quantity = new fhir.Quantity(source.quantity, options); }
     if (source['item']) { this.item = source.item; }
-    else if (source['itemCodeableConcept']) { this.item = new fhir.CodeableConcept(source.itemCodeableConcept); }
-    else if (source['itemReference']) { this.item = new fhir.Reference(source.itemReference); }
+    else if (source['itemCodeableConcept']) { this.item = new fhir.CodeableConcept(source.itemCodeableConcept, options); }
+    else if (source['itemReference']) { this.item = new fhir.Reference(source.itemReference, options); }
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -214,27 +214,27 @@ export class SupplyDelivery extends fhir.DomainResource {
   constructor(source:Partial<SupplyDeliveryArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
     this.resourceType = 'SupplyDelivery';
-    if (source['identifier']) { this.identifier = source.identifier.map((x) => new fhir.Identifier(x)); }
+    if (source['identifier']) { this.identifier = source.identifier.map((x) => new fhir.Identifier(x, options)); }
     else { this.identifier = []; }
-    if (source['basedOn']) { this.basedOn = source.basedOn.map((x) => new fhir.Reference(x)); }
+    if (source['basedOn']) { this.basedOn = source.basedOn.map((x) => new fhir.Reference(x, options)); }
     else { this.basedOn = []; }
-    if (source['partOf']) { this.partOf = source.partOf.map((x) => new fhir.Reference(x)); }
+    if (source['partOf']) { this.partOf = source.partOf.map((x) => new fhir.Reference(x, options)); }
     else { this.partOf = []; }
-    if (source['status']) { this.status = new fhir.FhirCode<SupplydeliveryStatusCodeType>({value: source.status}); }
+    if (source['status'] !== undefined) { this.status = new fhir.FhirCode<SupplydeliveryStatusCodeType>({value: source.status}, options); }
     if (source['_status']) {
       if (this.status) { this.status.addExtendedProperties(source._status!); }
-      else { this.status = new fhir.FhirCode<SupplydeliveryStatusCodeType>(source._status as Partial<fhir.FhirCode>); }
+      else { this.status = new fhir.FhirCode<SupplydeliveryStatusCodeType>(source._status as Partial<fhir.FhirCode>, options); }
     }
-    if (source['patient']) { this.patient = new fhir.Reference(source.patient); }
-    if (source['type']) { this.type = new fhir.CodeableConcept(source.type); }
-    if (source['suppliedItem']) { this.suppliedItem = new fhir.SupplyDeliverySuppliedItem(source.suppliedItem); }
+    if (source['patient']) { this.patient = new fhir.Reference(source.patient, options); }
+    if (source['type']) { this.type = new fhir.CodeableConcept(source.type, options); }
+    if (source['suppliedItem']) { this.suppliedItem = new fhir.SupplyDeliverySuppliedItem(source.suppliedItem, options); }
     if (source['occurrence']) { this.occurrence = source.occurrence; }
-    else if (source['occurrenceDateTime']) { this.occurrence = new fhir.FhirDateTime({value: source.occurrenceDateTime}); }
-    else if (source['occurrencePeriod']) { this.occurrence = new fhir.Period(source.occurrencePeriod); }
-    else if (source['occurrenceTiming']) { this.occurrence = new fhir.Timing(source.occurrenceTiming); }
-    if (source['supplier']) { this.supplier = new fhir.Reference(source.supplier); }
-    if (source['destination']) { this.destination = new fhir.Reference(source.destination); }
-    if (source['receiver']) { this.receiver = source.receiver.map((x) => new fhir.Reference(x)); }
+    else if (source['occurrenceDateTime'] !== undefined) { this.occurrence = new fhir.FhirDateTime({value: source.occurrenceDateTime}, options); }
+    else if (source['occurrencePeriod']) { this.occurrence = new fhir.Period(source.occurrencePeriod, options); }
+    else if (source['occurrenceTiming']) { this.occurrence = new fhir.Timing(source.occurrenceTiming, options); }
+    if (source['supplier']) { this.supplier = new fhir.Reference(source.supplier, options); }
+    if (source['destination']) { this.destination = new fhir.Reference(source.destination, options); }
+    if (source['receiver']) { this.receiver = source.receiver.map((x) => new fhir.Reference(x, options)); }
     else { this.receiver = []; }
   }
   /**

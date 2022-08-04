@@ -7,7 +7,8 @@ export default {
     globals: {
         'ts-jest': {
             useESM: true,
-            tsconfig: 'tsconfig.json'
+            tsconfig: 'tsconfig.json',
+            isolatedModules: true
         },
     },
     moduleNameMapper: {

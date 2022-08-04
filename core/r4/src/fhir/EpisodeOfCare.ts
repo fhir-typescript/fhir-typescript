@@ -56,13 +56,13 @@ export class EpisodeOfCareStatusHistory extends fhir.BackboneElement {
    */
   constructor(source:Partial<EpisodeOfCareStatusHistoryArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['status']) { this.status = new fhir.FhirCode<EpisodeOfCareStatusCodeType>({value: source.status}); }
+    if (source['status'] !== undefined) { this.status = new fhir.FhirCode<EpisodeOfCareStatusCodeType>({value: source.status}, options); }
     else { this.status = null; }
     if (source['_status']) {
       if (this.status) { this.status.addExtendedProperties(source._status!); }
-      else { this.status = new fhir.FhirCode<EpisodeOfCareStatusCodeType>(source._status as Partial<fhir.FhirCode>); }
+      else { this.status = new fhir.FhirCode<EpisodeOfCareStatusCodeType>(source._status as Partial<fhir.FhirCode>, options); }
     }
-    if (source['period']) { this.period = new fhir.Period(source.period); }
+    if (source['period']) { this.period = new fhir.Period(source.period, options); }
     else { this.period = null; }
   }
   /**
@@ -123,13 +123,13 @@ export class EpisodeOfCareDiagnosis extends fhir.BackboneElement {
    */
   constructor(source:Partial<EpisodeOfCareDiagnosisArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['condition']) { this.condition = new fhir.Reference(source.condition); }
+    if (source['condition']) { this.condition = new fhir.Reference(source.condition, options); }
     else { this.condition = null; }
-    if (source['role']) { this.role = new fhir.CodeableConcept(source.role); }
-    if (source['rank']) { this.rank = new fhir.FhirPositiveInt({value: source.rank}); }
+    if (source['role']) { this.role = new fhir.CodeableConcept(source.role, options); }
+    if (source['rank'] !== undefined) { this.rank = new fhir.FhirPositiveInt({value: source.rank}, options); }
     if (source['_rank']) {
       if (this.rank) { this.rank.addExtendedProperties(source._rank!); }
-      else { this.rank = new fhir.FhirPositiveInt(source._rank as Partial<fhir.FhirPositiveIntArgs>); }
+      else { this.rank = new fhir.FhirPositiveInt(source._rank as Partial<fhir.FhirPositiveIntArgs>, options); }
     }
   }
   /**
@@ -272,30 +272,30 @@ export class EpisodeOfCare extends fhir.DomainResource {
   constructor(source:Partial<EpisodeOfCareArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
     this.resourceType = 'EpisodeOfCare';
-    if (source['identifier']) { this.identifier = source.identifier.map((x) => new fhir.Identifier(x)); }
+    if (source['identifier']) { this.identifier = source.identifier.map((x) => new fhir.Identifier(x, options)); }
     else { this.identifier = []; }
-    if (source['status']) { this.status = new fhir.FhirCode<EpisodeOfCareStatusCodeType>({value: source.status}); }
+    if (source['status'] !== undefined) { this.status = new fhir.FhirCode<EpisodeOfCareStatusCodeType>({value: source.status}, options); }
     else { this.status = null; }
     if (source['_status']) {
       if (this.status) { this.status.addExtendedProperties(source._status!); }
-      else { this.status = new fhir.FhirCode<EpisodeOfCareStatusCodeType>(source._status as Partial<fhir.FhirCode>); }
+      else { this.status = new fhir.FhirCode<EpisodeOfCareStatusCodeType>(source._status as Partial<fhir.FhirCode>, options); }
     }
-    if (source['statusHistory']) { this.statusHistory = source.statusHistory.map((x) => new fhir.EpisodeOfCareStatusHistory(x)); }
+    if (source['statusHistory']) { this.statusHistory = source.statusHistory.map((x) => new fhir.EpisodeOfCareStatusHistory(x, options)); }
     else { this.statusHistory = []; }
-    if (source['type']) { this.type = source.type.map((x) => new fhir.CodeableConcept(x)); }
+    if (source['type']) { this.type = source.type.map((x) => new fhir.CodeableConcept(x, options)); }
     else { this.type = []; }
-    if (source['diagnosis']) { this.diagnosis = source.diagnosis.map((x) => new fhir.EpisodeOfCareDiagnosis(x)); }
+    if (source['diagnosis']) { this.diagnosis = source.diagnosis.map((x) => new fhir.EpisodeOfCareDiagnosis(x, options)); }
     else { this.diagnosis = []; }
-    if (source['patient']) { this.patient = new fhir.Reference(source.patient); }
+    if (source['patient']) { this.patient = new fhir.Reference(source.patient, options); }
     else { this.patient = null; }
-    if (source['managingOrganization']) { this.managingOrganization = new fhir.Reference(source.managingOrganization); }
-    if (source['period']) { this.period = new fhir.Period(source.period); }
-    if (source['referralRequest']) { this.referralRequest = source.referralRequest.map((x) => new fhir.Reference(x)); }
+    if (source['managingOrganization']) { this.managingOrganization = new fhir.Reference(source.managingOrganization, options); }
+    if (source['period']) { this.period = new fhir.Period(source.period, options); }
+    if (source['referralRequest']) { this.referralRequest = source.referralRequest.map((x) => new fhir.Reference(x, options)); }
     else { this.referralRequest = []; }
-    if (source['careManager']) { this.careManager = new fhir.Reference(source.careManager); }
-    if (source['team']) { this.team = source.team.map((x) => new fhir.Reference(x)); }
+    if (source['careManager']) { this.careManager = new fhir.Reference(source.careManager, options); }
+    if (source['team']) { this.team = source.team.map((x) => new fhir.Reference(x, options)); }
     else { this.team = []; }
-    if (source['account']) { this.account = source.account.map((x) => new fhir.Reference(x)); }
+    if (source['account']) { this.account = source.account.map((x) => new fhir.Reference(x, options)); }
     else { this.account = []; }
   }
   /**

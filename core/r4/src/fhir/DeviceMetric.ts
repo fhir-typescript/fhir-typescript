@@ -80,20 +80,20 @@ export class DeviceMetricCalibration extends fhir.BackboneElement {
    */
   constructor(source:Partial<DeviceMetricCalibrationArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['type']) { this.type = new fhir.FhirCode<MetricCalibrationTypeCodeType>({value: source.type}); }
+    if (source['type'] !== undefined) { this.type = new fhir.FhirCode<MetricCalibrationTypeCodeType>({value: source.type}, options); }
     if (source['_type']) {
       if (this.type) { this.type.addExtendedProperties(source._type!); }
-      else { this.type = new fhir.FhirCode<MetricCalibrationTypeCodeType>(source._type as Partial<fhir.FhirCode>); }
+      else { this.type = new fhir.FhirCode<MetricCalibrationTypeCodeType>(source._type as Partial<fhir.FhirCode>, options); }
     }
-    if (source['state']) { this.state = new fhir.FhirCode<MetricCalibrationStateCodeType>({value: source.state}); }
+    if (source['state'] !== undefined) { this.state = new fhir.FhirCode<MetricCalibrationStateCodeType>({value: source.state}, options); }
     if (source['_state']) {
       if (this.state) { this.state.addExtendedProperties(source._state!); }
-      else { this.state = new fhir.FhirCode<MetricCalibrationStateCodeType>(source._state as Partial<fhir.FhirCode>); }
+      else { this.state = new fhir.FhirCode<MetricCalibrationStateCodeType>(source._state as Partial<fhir.FhirCode>, options); }
     }
-    if (source['time']) { this.time = new fhir.FhirInstant({value: source.time}); }
+    if (source['time'] !== undefined) { this.time = new fhir.FhirInstant({value: source.time}, options); }
     if (source['_time']) {
       if (this.time) { this.time.addExtendedProperties(source._time!); }
-      else { this.time = new fhir.FhirInstant(source._time as Partial<fhir.FhirInstantArgs>); }
+      else { this.time = new fhir.FhirInstant(source._time as Partial<fhir.FhirInstantArgs>, options); }
     }
   }
   /**
@@ -228,31 +228,31 @@ export class DeviceMetric extends fhir.DomainResource {
   constructor(source:Partial<DeviceMetricArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
     this.resourceType = 'DeviceMetric';
-    if (source['identifier']) { this.identifier = source.identifier.map((x) => new fhir.Identifier(x)); }
+    if (source['identifier']) { this.identifier = source.identifier.map((x) => new fhir.Identifier(x, options)); }
     else { this.identifier = []; }
-    if (source['type']) { this.type = new fhir.CodeableConcept(source.type); }
+    if (source['type']) { this.type = new fhir.CodeableConcept(source.type, options); }
     else { this.type = null; }
-    if (source['unit']) { this.unit = new fhir.CodeableConcept(source.unit); }
-    if (source['source']) { this.source = new fhir.Reference(source.source); }
-    if (source['parent']) { this.parent = new fhir.Reference(source.parent); }
-    if (source['operationalStatus']) { this.operationalStatus = new fhir.FhirCode<MetricOperationalStatusCodeType>({value: source.operationalStatus}); }
+    if (source['unit']) { this.unit = new fhir.CodeableConcept(source.unit, options); }
+    if (source['source']) { this.source = new fhir.Reference(source.source, options); }
+    if (source['parent']) { this.parent = new fhir.Reference(source.parent, options); }
+    if (source['operationalStatus'] !== undefined) { this.operationalStatus = new fhir.FhirCode<MetricOperationalStatusCodeType>({value: source.operationalStatus}, options); }
     if (source['_operationalStatus']) {
       if (this.operationalStatus) { this.operationalStatus.addExtendedProperties(source._operationalStatus!); }
-      else { this.operationalStatus = new fhir.FhirCode<MetricOperationalStatusCodeType>(source._operationalStatus as Partial<fhir.FhirCode>); }
+      else { this.operationalStatus = new fhir.FhirCode<MetricOperationalStatusCodeType>(source._operationalStatus as Partial<fhir.FhirCode>, options); }
     }
-    if (source['color']) { this.color = new fhir.FhirCode<MetricColorCodeType>({value: source.color}); }
+    if (source['color'] !== undefined) { this.color = new fhir.FhirCode<MetricColorCodeType>({value: source.color}, options); }
     if (source['_color']) {
       if (this.color) { this.color.addExtendedProperties(source._color!); }
-      else { this.color = new fhir.FhirCode<MetricColorCodeType>(source._color as Partial<fhir.FhirCode>); }
+      else { this.color = new fhir.FhirCode<MetricColorCodeType>(source._color as Partial<fhir.FhirCode>, options); }
     }
-    if (source['category']) { this.category = new fhir.FhirCode<MetricCategoryCodeType>({value: source.category}); }
+    if (source['category'] !== undefined) { this.category = new fhir.FhirCode<MetricCategoryCodeType>({value: source.category}, options); }
     else { this.category = null; }
     if (source['_category']) {
       if (this.category) { this.category.addExtendedProperties(source._category!); }
-      else { this.category = new fhir.FhirCode<MetricCategoryCodeType>(source._category as Partial<fhir.FhirCode>); }
+      else { this.category = new fhir.FhirCode<MetricCategoryCodeType>(source._category as Partial<fhir.FhirCode>, options); }
     }
-    if (source['measurementPeriod']) { this.measurementPeriod = new fhir.Timing(source.measurementPeriod); }
-    if (source['calibration']) { this.calibration = source.calibration.map((x) => new fhir.DeviceMetricCalibration(x)); }
+    if (source['measurementPeriod']) { this.measurementPeriod = new fhir.Timing(source.measurementPeriod, options); }
+    if (source['calibration']) { this.calibration = source.calibration.map((x) => new fhir.DeviceMetricCalibration(x, options)); }
     else { this.calibration = []; }
   }
   /**

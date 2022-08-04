@@ -44,12 +44,12 @@ export class SubstanceSourceMaterialFractionDescription extends fhir.BackboneEle
    */
   constructor(source:Partial<SubstanceSourceMaterialFractionDescriptionArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['fraction']) { this.fraction = new fhir.FhirString({value: source.fraction}); }
+    if (source['fraction'] !== undefined) { this.fraction = new fhir.FhirString({value: source.fraction}, options); }
     if (source['_fraction']) {
       if (this.fraction) { this.fraction.addExtendedProperties(source._fraction!); }
-      else { this.fraction = new fhir.FhirString(source._fraction as Partial<fhir.FhirStringArgs>); }
+      else { this.fraction = new fhir.FhirString(source._fraction as Partial<fhir.FhirStringArgs>, options); }
     }
-    if (source['materialType']) { this.materialType = new fhir.CodeableConcept(source.materialType); }
+    if (source['materialType']) { this.materialType = new fhir.CodeableConcept(source.materialType, options); }
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -101,11 +101,11 @@ export class SubstanceSourceMaterialOrganismAuthor extends fhir.BackboneElement 
    */
   constructor(source:Partial<SubstanceSourceMaterialOrganismAuthorArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['authorType']) { this.authorType = new fhir.CodeableConcept(source.authorType); }
-    if (source['authorDescription']) { this.authorDescription = new fhir.FhirString({value: source.authorDescription}); }
+    if (source['authorType']) { this.authorType = new fhir.CodeableConcept(source.authorType, options); }
+    if (source['authorDescription'] !== undefined) { this.authorDescription = new fhir.FhirString({value: source.authorDescription}, options); }
     if (source['_authorDescription']) {
       if (this.authorDescription) { this.authorDescription.addExtendedProperties(source._authorDescription!); }
-      else { this.authorDescription = new fhir.FhirString(source._authorDescription as Partial<fhir.FhirStringArgs>); }
+      else { this.authorDescription = new fhir.FhirString(source._authorDescription as Partial<fhir.FhirStringArgs>, options); }
     }
   }
   /**
@@ -194,27 +194,27 @@ export class SubstanceSourceMaterialOrganismHybrid extends fhir.BackboneElement 
    */
   constructor(source:Partial<SubstanceSourceMaterialOrganismHybridArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['maternalOrganismId']) { this.maternalOrganismId = new fhir.FhirString({value: source.maternalOrganismId}); }
+    if (source['maternalOrganismId'] !== undefined) { this.maternalOrganismId = new fhir.FhirString({value: source.maternalOrganismId}, options); }
     if (source['_maternalOrganismId']) {
       if (this.maternalOrganismId) { this.maternalOrganismId.addExtendedProperties(source._maternalOrganismId!); }
-      else { this.maternalOrganismId = new fhir.FhirString(source._maternalOrganismId as Partial<fhir.FhirStringArgs>); }
+      else { this.maternalOrganismId = new fhir.FhirString(source._maternalOrganismId as Partial<fhir.FhirStringArgs>, options); }
     }
-    if (source['maternalOrganismName']) { this.maternalOrganismName = new fhir.FhirString({value: source.maternalOrganismName}); }
+    if (source['maternalOrganismName'] !== undefined) { this.maternalOrganismName = new fhir.FhirString({value: source.maternalOrganismName}, options); }
     if (source['_maternalOrganismName']) {
       if (this.maternalOrganismName) { this.maternalOrganismName.addExtendedProperties(source._maternalOrganismName!); }
-      else { this.maternalOrganismName = new fhir.FhirString(source._maternalOrganismName as Partial<fhir.FhirStringArgs>); }
+      else { this.maternalOrganismName = new fhir.FhirString(source._maternalOrganismName as Partial<fhir.FhirStringArgs>, options); }
     }
-    if (source['paternalOrganismId']) { this.paternalOrganismId = new fhir.FhirString({value: source.paternalOrganismId}); }
+    if (source['paternalOrganismId'] !== undefined) { this.paternalOrganismId = new fhir.FhirString({value: source.paternalOrganismId}, options); }
     if (source['_paternalOrganismId']) {
       if (this.paternalOrganismId) { this.paternalOrganismId.addExtendedProperties(source._paternalOrganismId!); }
-      else { this.paternalOrganismId = new fhir.FhirString(source._paternalOrganismId as Partial<fhir.FhirStringArgs>); }
+      else { this.paternalOrganismId = new fhir.FhirString(source._paternalOrganismId as Partial<fhir.FhirStringArgs>, options); }
     }
-    if (source['paternalOrganismName']) { this.paternalOrganismName = new fhir.FhirString({value: source.paternalOrganismName}); }
+    if (source['paternalOrganismName'] !== undefined) { this.paternalOrganismName = new fhir.FhirString({value: source.paternalOrganismName}, options); }
     if (source['_paternalOrganismName']) {
       if (this.paternalOrganismName) { this.paternalOrganismName.addExtendedProperties(source._paternalOrganismName!); }
-      else { this.paternalOrganismName = new fhir.FhirString(source._paternalOrganismName as Partial<fhir.FhirStringArgs>); }
+      else { this.paternalOrganismName = new fhir.FhirString(source._paternalOrganismName as Partial<fhir.FhirStringArgs>, options); }
     }
-    if (source['hybridType']) { this.hybridType = new fhir.CodeableConcept(source.hybridType); }
+    if (source['hybridType']) { this.hybridType = new fhir.CodeableConcept(source.hybridType, options); }
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -281,10 +281,10 @@ export class SubstanceSourceMaterialOrganismOrganismGeneral extends fhir.Backbon
    */
   constructor(source:Partial<SubstanceSourceMaterialOrganismOrganismGeneralArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['kingdom']) { this.kingdom = new fhir.CodeableConcept(source.kingdom); }
-    if (source['phylum']) { this.phylum = new fhir.CodeableConcept(source.phylum); }
-    if (source['class']) { this.class = new fhir.CodeableConcept(source.class); }
-    if (source['order']) { this.order = new fhir.CodeableConcept(source.order); }
+    if (source['kingdom']) { this.kingdom = new fhir.CodeableConcept(source.kingdom, options); }
+    if (source['phylum']) { this.phylum = new fhir.CodeableConcept(source.phylum, options); }
+    if (source['class']) { this.class = new fhir.CodeableConcept(source.class, options); }
+    if (source['order']) { this.order = new fhir.CodeableConcept(source.order, options); }
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -386,19 +386,19 @@ export class SubstanceSourceMaterialOrganism extends fhir.BackboneElement {
    */
   constructor(source:Partial<SubstanceSourceMaterialOrganismArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['family']) { this.family = new fhir.CodeableConcept(source.family); }
-    if (source['genus']) { this.genus = new fhir.CodeableConcept(source.genus); }
-    if (source['species']) { this.species = new fhir.CodeableConcept(source.species); }
-    if (source['intraspecificType']) { this.intraspecificType = new fhir.CodeableConcept(source.intraspecificType); }
-    if (source['intraspecificDescription']) { this.intraspecificDescription = new fhir.FhirString({value: source.intraspecificDescription}); }
+    if (source['family']) { this.family = new fhir.CodeableConcept(source.family, options); }
+    if (source['genus']) { this.genus = new fhir.CodeableConcept(source.genus, options); }
+    if (source['species']) { this.species = new fhir.CodeableConcept(source.species, options); }
+    if (source['intraspecificType']) { this.intraspecificType = new fhir.CodeableConcept(source.intraspecificType, options); }
+    if (source['intraspecificDescription'] !== undefined) { this.intraspecificDescription = new fhir.FhirString({value: source.intraspecificDescription}, options); }
     if (source['_intraspecificDescription']) {
       if (this.intraspecificDescription) { this.intraspecificDescription.addExtendedProperties(source._intraspecificDescription!); }
-      else { this.intraspecificDescription = new fhir.FhirString(source._intraspecificDescription as Partial<fhir.FhirStringArgs>); }
+      else { this.intraspecificDescription = new fhir.FhirString(source._intraspecificDescription as Partial<fhir.FhirStringArgs>, options); }
     }
-    if (source['author']) { this.author = source.author.map((x) => new fhir.SubstanceSourceMaterialOrganismAuthor(x)); }
+    if (source['author']) { this.author = source.author.map((x) => new fhir.SubstanceSourceMaterialOrganismAuthor(x, options)); }
     else { this.author = []; }
-    if (source['hybrid']) { this.hybrid = new fhir.SubstanceSourceMaterialOrganismHybrid(source.hybrid); }
-    if (source['organismGeneral']) { this.organismGeneral = new fhir.SubstanceSourceMaterialOrganismOrganismGeneral(source.organismGeneral); }
+    if (source['hybrid']) { this.hybrid = new fhir.SubstanceSourceMaterialOrganismHybrid(source.hybrid, options); }
+    if (source['organismGeneral']) { this.organismGeneral = new fhir.SubstanceSourceMaterialOrganismOrganismGeneral(source.organismGeneral, options); }
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -452,8 +452,8 @@ export class SubstanceSourceMaterialPartDescription extends fhir.BackboneElement
    */
   constructor(source:Partial<SubstanceSourceMaterialPartDescriptionArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['part']) { this.part = new fhir.CodeableConcept(source.part); }
-    if (source['partLocation']) { this.partLocation = new fhir.CodeableConcept(source.partLocation); }
+    if (source['part']) { this.part = new fhir.CodeableConcept(source.part, options); }
+    if (source['partLocation']) { this.partLocation = new fhir.CodeableConcept(source.partLocation, options); }
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -610,18 +610,18 @@ export class SubstanceSourceMaterial extends fhir.DomainResource {
   constructor(source:Partial<SubstanceSourceMaterialArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
     this.resourceType = 'SubstanceSourceMaterial';
-    if (source['sourceMaterialClass']) { this.sourceMaterialClass = new fhir.CodeableConcept(source.sourceMaterialClass); }
-    if (source['sourceMaterialType']) { this.sourceMaterialType = new fhir.CodeableConcept(source.sourceMaterialType); }
-    if (source['sourceMaterialState']) { this.sourceMaterialState = new fhir.CodeableConcept(source.sourceMaterialState); }
-    if (source['organismId']) { this.organismId = new fhir.Identifier(source.organismId); }
-    if (source['organismName']) { this.organismName = new fhir.FhirString({value: source.organismName}); }
+    if (source['sourceMaterialClass']) { this.sourceMaterialClass = new fhir.CodeableConcept(source.sourceMaterialClass, options); }
+    if (source['sourceMaterialType']) { this.sourceMaterialType = new fhir.CodeableConcept(source.sourceMaterialType, options); }
+    if (source['sourceMaterialState']) { this.sourceMaterialState = new fhir.CodeableConcept(source.sourceMaterialState, options); }
+    if (source['organismId']) { this.organismId = new fhir.Identifier(source.organismId, options); }
+    if (source['organismName'] !== undefined) { this.organismName = new fhir.FhirString({value: source.organismName}, options); }
     if (source['_organismName']) {
       if (this.organismName) { this.organismName.addExtendedProperties(source._organismName!); }
-      else { this.organismName = new fhir.FhirString(source._organismName as Partial<fhir.FhirStringArgs>); }
+      else { this.organismName = new fhir.FhirString(source._organismName as Partial<fhir.FhirStringArgs>, options); }
     }
-    if (source['parentSubstanceId']) { this.parentSubstanceId = source.parentSubstanceId.map((x) => new fhir.Identifier(x)); }
+    if (source['parentSubstanceId']) { this.parentSubstanceId = source.parentSubstanceId.map((x) => new fhir.Identifier(x, options)); }
     else { this.parentSubstanceId = []; }
-    if (source['parentSubstanceName']) { this.parentSubstanceName = source.parentSubstanceName.map((x) => new fhir.FhirString({value: x})); }
+    if (source['parentSubstanceName'] !== undefined) { this.parentSubstanceName = source.parentSubstanceName.map((x) => new fhir.FhirString({value: x}, options)); }
     else { this.parentSubstanceName = []; }
     if (source['_parentSubstanceName']) {
       source._parentSubstanceName.forEach((x,i) => {
@@ -629,9 +629,9 @@ export class SubstanceSourceMaterial extends fhir.DomainResource {
         else { if (x) { this.parentSubstanceName.push(new fhir.FhirString(x as Partial<fhir.FhirStringArgs>)); } }
       });
     }
-    if (source['countryOfOrigin']) { this.countryOfOrigin = source.countryOfOrigin.map((x) => new fhir.CodeableConcept(x)); }
+    if (source['countryOfOrigin']) { this.countryOfOrigin = source.countryOfOrigin.map((x) => new fhir.CodeableConcept(x, options)); }
     else { this.countryOfOrigin = []; }
-    if (source['geographicalLocation']) { this.geographicalLocation = source.geographicalLocation.map((x) => new fhir.FhirString({value: x})); }
+    if (source['geographicalLocation'] !== undefined) { this.geographicalLocation = source.geographicalLocation.map((x) => new fhir.FhirString({value: x}, options)); }
     else { this.geographicalLocation = []; }
     if (source['_geographicalLocation']) {
       source._geographicalLocation.forEach((x,i) => {
@@ -639,11 +639,11 @@ export class SubstanceSourceMaterial extends fhir.DomainResource {
         else { if (x) { this.geographicalLocation.push(new fhir.FhirString(x as Partial<fhir.FhirStringArgs>)); } }
       });
     }
-    if (source['developmentStage']) { this.developmentStage = new fhir.CodeableConcept(source.developmentStage); }
-    if (source['fractionDescription']) { this.fractionDescription = source.fractionDescription.map((x) => new fhir.SubstanceSourceMaterialFractionDescription(x)); }
+    if (source['developmentStage']) { this.developmentStage = new fhir.CodeableConcept(source.developmentStage, options); }
+    if (source['fractionDescription']) { this.fractionDescription = source.fractionDescription.map((x) => new fhir.SubstanceSourceMaterialFractionDescription(x, options)); }
     else { this.fractionDescription = []; }
-    if (source['organism']) { this.organism = new fhir.SubstanceSourceMaterialOrganism(source.organism); }
-    if (source['partDescription']) { this.partDescription = source.partDescription.map((x) => new fhir.SubstanceSourceMaterialPartDescription(x)); }
+    if (source['organism']) { this.organism = new fhir.SubstanceSourceMaterialOrganism(source.organism, options); }
+    if (source['partDescription']) { this.partDescription = source.partDescription.map((x) => new fhir.SubstanceSourceMaterialPartDescription(x, options)); }
     else { this.partDescription = []; }
   }
   /**

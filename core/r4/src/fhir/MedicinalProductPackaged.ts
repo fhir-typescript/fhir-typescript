@@ -40,9 +40,9 @@ export class MedicinalProductPackagedBatchIdentifier extends fhir.BackboneElemen
    */
   constructor(source:Partial<MedicinalProductPackagedBatchIdentifierArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['outerPackaging']) { this.outerPackaging = new fhir.Identifier(source.outerPackaging); }
+    if (source['outerPackaging']) { this.outerPackaging = new fhir.Identifier(source.outerPackaging, options); }
     else { this.outerPackaging = null; }
-    if (source['immediatePackaging']) { this.immediatePackaging = new fhir.Identifier(source.immediatePackaging); }
+    if (source['immediatePackaging']) { this.immediatePackaging = new fhir.Identifier(source.immediatePackaging, options); }
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -170,28 +170,28 @@ export class MedicinalProductPackagedPackageItem extends fhir.BackboneElement {
    */
   constructor(source:Partial<MedicinalProductPackagedPackageItemArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['identifier']) { this.identifier = source.identifier.map((x) => new fhir.Identifier(x)); }
+    if (source['identifier']) { this.identifier = source.identifier.map((x) => new fhir.Identifier(x, options)); }
     else { this.identifier = []; }
-    if (source['type']) { this.type = new fhir.CodeableConcept(source.type); }
+    if (source['type']) { this.type = new fhir.CodeableConcept(source.type, options); }
     else { this.type = null; }
-    if (source['quantity']) { this.quantity = new fhir.Quantity(source.quantity); }
+    if (source['quantity']) { this.quantity = new fhir.Quantity(source.quantity, options); }
     else { this.quantity = null; }
-    if (source['material']) { this.material = source.material.map((x) => new fhir.CodeableConcept(x)); }
+    if (source['material']) { this.material = source.material.map((x) => new fhir.CodeableConcept(x, options)); }
     else { this.material = []; }
-    if (source['alternateMaterial']) { this.alternateMaterial = source.alternateMaterial.map((x) => new fhir.CodeableConcept(x)); }
+    if (source['alternateMaterial']) { this.alternateMaterial = source.alternateMaterial.map((x) => new fhir.CodeableConcept(x, options)); }
     else { this.alternateMaterial = []; }
-    if (source['device']) { this.device = source.device.map((x) => new fhir.Reference(x)); }
+    if (source['device']) { this.device = source.device.map((x) => new fhir.Reference(x, options)); }
     else { this.device = []; }
-    if (source['manufacturedItem']) { this.manufacturedItem = source.manufacturedItem.map((x) => new fhir.Reference(x)); }
+    if (source['manufacturedItem']) { this.manufacturedItem = source.manufacturedItem.map((x) => new fhir.Reference(x, options)); }
     else { this.manufacturedItem = []; }
-    if (source['packageItem']) { this.packageItem = source.packageItem.map((x) => new fhir.MedicinalProductPackagedPackageItem(x)); }
+    if (source['packageItem']) { this.packageItem = source.packageItem.map((x) => new fhir.MedicinalProductPackagedPackageItem(x, options)); }
     else { this.packageItem = []; }
-    if (source['physicalCharacteristics']) { this.physicalCharacteristics = new fhir.ProdCharacteristic(source.physicalCharacteristics); }
-    if (source['otherCharacteristics']) { this.otherCharacteristics = source.otherCharacteristics.map((x) => new fhir.CodeableConcept(x)); }
+    if (source['physicalCharacteristics']) { this.physicalCharacteristics = new fhir.ProdCharacteristic(source.physicalCharacteristics, options); }
+    if (source['otherCharacteristics']) { this.otherCharacteristics = source.otherCharacteristics.map((x) => new fhir.CodeableConcept(x, options)); }
     else { this.otherCharacteristics = []; }
-    if (source['shelfLifeStorage']) { this.shelfLifeStorage = source.shelfLifeStorage.map((x) => new fhir.ProductShelfLife(x)); }
+    if (source['shelfLifeStorage']) { this.shelfLifeStorage = source.shelfLifeStorage.map((x) => new fhir.ProductShelfLife(x, options)); }
     else { this.shelfLifeStorage = []; }
-    if (source['manufacturer']) { this.manufacturer = source.manufacturer.map((x) => new fhir.Reference(x)); }
+    if (source['manufacturer']) { this.manufacturer = source.manufacturer.map((x) => new fhir.Reference(x, options)); }
     else { this.manufacturer = []; }
   }
   /**
@@ -319,24 +319,24 @@ export class MedicinalProductPackaged extends fhir.DomainResource {
   constructor(source:Partial<MedicinalProductPackagedArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
     this.resourceType = 'MedicinalProductPackaged';
-    if (source['identifier']) { this.identifier = source.identifier.map((x) => new fhir.Identifier(x)); }
+    if (source['identifier']) { this.identifier = source.identifier.map((x) => new fhir.Identifier(x, options)); }
     else { this.identifier = []; }
-    if (source['subject']) { this.subject = source.subject.map((x) => new fhir.Reference(x)); }
+    if (source['subject']) { this.subject = source.subject.map((x) => new fhir.Reference(x, options)); }
     else { this.subject = []; }
-    if (source['description']) { this.description = new fhir.FhirString({value: source.description}); }
+    if (source['description'] !== undefined) { this.description = new fhir.FhirString({value: source.description}, options); }
     if (source['_description']) {
       if (this.description) { this.description.addExtendedProperties(source._description!); }
-      else { this.description = new fhir.FhirString(source._description as Partial<fhir.FhirStringArgs>); }
+      else { this.description = new fhir.FhirString(source._description as Partial<fhir.FhirStringArgs>, options); }
     }
-    if (source['legalStatusOfSupply']) { this.legalStatusOfSupply = new fhir.CodeableConcept(source.legalStatusOfSupply); }
-    if (source['marketingStatus']) { this.marketingStatus = source.marketingStatus.map((x) => new fhir.MarketingStatus(x)); }
+    if (source['legalStatusOfSupply']) { this.legalStatusOfSupply = new fhir.CodeableConcept(source.legalStatusOfSupply, options); }
+    if (source['marketingStatus']) { this.marketingStatus = source.marketingStatus.map((x) => new fhir.MarketingStatus(x, options)); }
     else { this.marketingStatus = []; }
-    if (source['marketingAuthorization']) { this.marketingAuthorization = new fhir.Reference(source.marketingAuthorization); }
-    if (source['manufacturer']) { this.manufacturer = source.manufacturer.map((x) => new fhir.Reference(x)); }
+    if (source['marketingAuthorization']) { this.marketingAuthorization = new fhir.Reference(source.marketingAuthorization, options); }
+    if (source['manufacturer']) { this.manufacturer = source.manufacturer.map((x) => new fhir.Reference(x, options)); }
     else { this.manufacturer = []; }
-    if (source['batchIdentifier']) { this.batchIdentifier = source.batchIdentifier.map((x) => new fhir.MedicinalProductPackagedBatchIdentifier(x)); }
+    if (source['batchIdentifier']) { this.batchIdentifier = source.batchIdentifier.map((x) => new fhir.MedicinalProductPackagedBatchIdentifier(x, options)); }
     else { this.batchIdentifier = []; }
-    if (source['packageItem']) { this.packageItem = source.packageItem.map((x) => new fhir.MedicinalProductPackagedPackageItem(x)); }
+    if (source['packageItem']) { this.packageItem = source.packageItem.map((x) => new fhir.MedicinalProductPackagedPackageItem(x, options)); }
     else { this.packageItem = []; }
   }
   /**

@@ -48,8 +48,8 @@ export class InvoiceParticipant extends fhir.BackboneElement {
    */
   constructor(source:Partial<InvoiceParticipantArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['role']) { this.role = new fhir.CodeableConcept(source.role); }
-    if (source['actor']) { this.actor = new fhir.Reference(source.actor); }
+    if (source['role']) { this.role = new fhir.CodeableConcept(source.role, options); }
+    if (source['actor']) { this.actor = new fhir.Reference(source.actor, options); }
     else { this.actor = null; }
   }
   /**
@@ -122,19 +122,19 @@ export class InvoiceLineItemPriceComponent extends fhir.BackboneElement {
    */
   constructor(source:Partial<InvoiceLineItemPriceComponentArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['type']) { this.type = new fhir.FhirCode<InvoicePriceComponentTypeCodeType>({value: source.type}); }
+    if (source['type'] !== undefined) { this.type = new fhir.FhirCode<InvoicePriceComponentTypeCodeType>({value: source.type}, options); }
     else { this.type = null; }
     if (source['_type']) {
       if (this.type) { this.type.addExtendedProperties(source._type!); }
-      else { this.type = new fhir.FhirCode<InvoicePriceComponentTypeCodeType>(source._type as Partial<fhir.FhirCode>); }
+      else { this.type = new fhir.FhirCode<InvoicePriceComponentTypeCodeType>(source._type as Partial<fhir.FhirCode>, options); }
     }
-    if (source['code']) { this.code = new fhir.CodeableConcept(source.code); }
-    if (source['factor']) { this.factor = new fhir.FhirDecimal({value: source.factor}); }
+    if (source['code']) { this.code = new fhir.CodeableConcept(source.code, options); }
+    if (source['factor'] !== undefined) { this.factor = new fhir.FhirDecimal({value: source.factor}, options); }
     if (source['_factor']) {
       if (this.factor) { this.factor.addExtendedProperties(source._factor!); }
-      else { this.factor = new fhir.FhirDecimal(source._factor as Partial<fhir.FhirDecimalArgs>); }
+      else { this.factor = new fhir.FhirDecimal(source._factor as Partial<fhir.FhirDecimalArgs>, options); }
     }
-    if (source['amount']) { this.amount = new fhir.Money(source.amount); }
+    if (source['amount']) { this.amount = new fhir.Money(source.amount, options); }
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -208,16 +208,16 @@ export class InvoiceLineItem extends fhir.BackboneElement {
    */
   constructor(source:Partial<InvoiceLineItemArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['sequence']) { this.sequence = new fhir.FhirPositiveInt({value: source.sequence}); }
+    if (source['sequence'] !== undefined) { this.sequence = new fhir.FhirPositiveInt({value: source.sequence}, options); }
     if (source['_sequence']) {
       if (this.sequence) { this.sequence.addExtendedProperties(source._sequence!); }
-      else { this.sequence = new fhir.FhirPositiveInt(source._sequence as Partial<fhir.FhirPositiveIntArgs>); }
+      else { this.sequence = new fhir.FhirPositiveInt(source._sequence as Partial<fhir.FhirPositiveIntArgs>, options); }
     }
     if (source['chargeItem']) { this.chargeItem = source.chargeItem; }
-    else if (source['chargeItemReference']) { this.chargeItem = new fhir.Reference(source.chargeItemReference); }
-    else if (source['chargeItemCodeableConcept']) { this.chargeItem = new fhir.CodeableConcept(source.chargeItemCodeableConcept); }
+    else if (source['chargeItemReference']) { this.chargeItem = new fhir.Reference(source.chargeItemReference, options); }
+    else if (source['chargeItemCodeableConcept']) { this.chargeItem = new fhir.CodeableConcept(source.chargeItemCodeableConcept, options); }
     else { this.chargeItem = null; }
-    if (source['priceComponent']) { this.priceComponent = source.priceComponent.map((x) => new fhir.InvoiceLineItemPriceComponent(x)); }
+    if (source['priceComponent']) { this.priceComponent = source.priceComponent.map((x) => new fhir.InvoiceLineItemPriceComponent(x, options)); }
     else { this.priceComponent = []; }
   }
   /**
@@ -404,43 +404,43 @@ export class Invoice extends fhir.DomainResource {
   constructor(source:Partial<InvoiceArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
     this.resourceType = 'Invoice';
-    if (source['identifier']) { this.identifier = source.identifier.map((x) => new fhir.Identifier(x)); }
+    if (source['identifier']) { this.identifier = source.identifier.map((x) => new fhir.Identifier(x, options)); }
     else { this.identifier = []; }
-    if (source['status']) { this.status = new fhir.FhirCode<InvoiceStatusCodeType>({value: source.status}); }
+    if (source['status'] !== undefined) { this.status = new fhir.FhirCode<InvoiceStatusCodeType>({value: source.status}, options); }
     else { this.status = null; }
     if (source['_status']) {
       if (this.status) { this.status.addExtendedProperties(source._status!); }
-      else { this.status = new fhir.FhirCode<InvoiceStatusCodeType>(source._status as Partial<fhir.FhirCode>); }
+      else { this.status = new fhir.FhirCode<InvoiceStatusCodeType>(source._status as Partial<fhir.FhirCode>, options); }
     }
-    if (source['cancelledReason']) { this.cancelledReason = new fhir.FhirString({value: source.cancelledReason}); }
+    if (source['cancelledReason'] !== undefined) { this.cancelledReason = new fhir.FhirString({value: source.cancelledReason}, options); }
     if (source['_cancelledReason']) {
       if (this.cancelledReason) { this.cancelledReason.addExtendedProperties(source._cancelledReason!); }
-      else { this.cancelledReason = new fhir.FhirString(source._cancelledReason as Partial<fhir.FhirStringArgs>); }
+      else { this.cancelledReason = new fhir.FhirString(source._cancelledReason as Partial<fhir.FhirStringArgs>, options); }
     }
-    if (source['type']) { this.type = new fhir.CodeableConcept(source.type); }
-    if (source['subject']) { this.subject = new fhir.Reference(source.subject); }
-    if (source['recipient']) { this.recipient = new fhir.Reference(source.recipient); }
-    if (source['date']) { this.date = new fhir.FhirDateTime({value: source.date}); }
+    if (source['type']) { this.type = new fhir.CodeableConcept(source.type, options); }
+    if (source['subject']) { this.subject = new fhir.Reference(source.subject, options); }
+    if (source['recipient']) { this.recipient = new fhir.Reference(source.recipient, options); }
+    if (source['date'] !== undefined) { this.date = new fhir.FhirDateTime({value: source.date}, options); }
     if (source['_date']) {
       if (this.date) { this.date.addExtendedProperties(source._date!); }
-      else { this.date = new fhir.FhirDateTime(source._date as Partial<fhir.FhirDateTimeArgs>); }
+      else { this.date = new fhir.FhirDateTime(source._date as Partial<fhir.FhirDateTimeArgs>, options); }
     }
-    if (source['participant']) { this.participant = source.participant.map((x) => new fhir.InvoiceParticipant(x)); }
+    if (source['participant']) { this.participant = source.participant.map((x) => new fhir.InvoiceParticipant(x, options)); }
     else { this.participant = []; }
-    if (source['issuer']) { this.issuer = new fhir.Reference(source.issuer); }
-    if (source['account']) { this.account = new fhir.Reference(source.account); }
-    if (source['lineItem']) { this.lineItem = source.lineItem.map((x) => new fhir.InvoiceLineItem(x)); }
+    if (source['issuer']) { this.issuer = new fhir.Reference(source.issuer, options); }
+    if (source['account']) { this.account = new fhir.Reference(source.account, options); }
+    if (source['lineItem']) { this.lineItem = source.lineItem.map((x) => new fhir.InvoiceLineItem(x, options)); }
     else { this.lineItem = []; }
-    if (source['totalPriceComponent']) { this.totalPriceComponent = source.totalPriceComponent.map((x) => new fhir.InvoiceLineItemPriceComponent(x)); }
+    if (source['totalPriceComponent']) { this.totalPriceComponent = source.totalPriceComponent.map((x) => new fhir.InvoiceLineItemPriceComponent(x, options)); }
     else { this.totalPriceComponent = []; }
-    if (source['totalNet']) { this.totalNet = new fhir.Money(source.totalNet); }
-    if (source['totalGross']) { this.totalGross = new fhir.Money(source.totalGross); }
-    if (source['paymentTerms']) { this.paymentTerms = new fhir.FhirMarkdown({value: source.paymentTerms}); }
+    if (source['totalNet']) { this.totalNet = new fhir.Money(source.totalNet, options); }
+    if (source['totalGross']) { this.totalGross = new fhir.Money(source.totalGross, options); }
+    if (source['paymentTerms'] !== undefined) { this.paymentTerms = new fhir.FhirMarkdown({value: source.paymentTerms}, options); }
     if (source['_paymentTerms']) {
       if (this.paymentTerms) { this.paymentTerms.addExtendedProperties(source._paymentTerms!); }
-      else { this.paymentTerms = new fhir.FhirMarkdown(source._paymentTerms as Partial<fhir.FhirMarkdownArgs>); }
+      else { this.paymentTerms = new fhir.FhirMarkdown(source._paymentTerms as Partial<fhir.FhirMarkdownArgs>, options); }
     }
-    if (source['note']) { this.note = source.note.map((x) => new fhir.Annotation(x)); }
+    if (source['note']) { this.note = source.note.map((x) => new fhir.Annotation(x, options)); }
     else { this.note = []; }
   }
   /**

@@ -69,18 +69,18 @@ export class Annotation extends fhir.FhirElement {
   constructor(source:Partial<AnnotationArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
     if (source['author']) { this.author = source.author; }
-    else if (source['authorReference']) { this.author = new fhir.Reference(source.authorReference); }
-    else if (source['authorString']) { this.author = new fhir.FhirString({value: source.authorString}); }
-    if (source['time']) { this.time = new fhir.FhirDateTime({value: source.time}); }
+    else if (source['authorReference']) { this.author = new fhir.Reference(source.authorReference, options); }
+    else if (source['authorString'] !== undefined) { this.author = new fhir.FhirString({value: source.authorString}, options); }
+    if (source['time'] !== undefined) { this.time = new fhir.FhirDateTime({value: source.time}, options); }
     if (source['_time']) {
       if (this.time) { this.time.addExtendedProperties(source._time!); }
-      else { this.time = new fhir.FhirDateTime(source._time as Partial<fhir.FhirDateTimeArgs>); }
+      else { this.time = new fhir.FhirDateTime(source._time as Partial<fhir.FhirDateTimeArgs>, options); }
     }
-    if (source['text']) { this.text = new fhir.FhirMarkdown({value: source.text}); }
+    if (source['text'] !== undefined) { this.text = new fhir.FhirMarkdown({value: source.text}, options); }
     else { this.text = null; }
     if (source['_text']) {
       if (this.text) { this.text.addExtendedProperties(source._text!); }
-      else { this.text = new fhir.FhirMarkdown(source._text as Partial<fhir.FhirMarkdownArgs>); }
+      else { this.text = new fhir.FhirMarkdown(source._text as Partial<fhir.FhirMarkdownArgs>, options); }
     }
   }
   /**

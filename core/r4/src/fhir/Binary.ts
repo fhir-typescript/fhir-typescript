@@ -65,17 +65,17 @@ export class Binary extends fhir.Resource {
   constructor(source:Partial<BinaryArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
     this.resourceType = 'Binary';
-    if (source['contentType']) { this.contentType = new fhir.FhirCode({value: source.contentType}); }
+    if (source['contentType'] !== undefined) { this.contentType = new fhir.FhirCode({value: source.contentType}, options); }
     else { this.contentType = null; }
     if (source['_contentType']) {
       if (this.contentType) { this.contentType.addExtendedProperties(source._contentType!); }
-      else { this.contentType = new fhir.FhirCode(source._contentType as Partial<fhir.FhirCodeArgs>); }
+      else { this.contentType = new fhir.FhirCode(source._contentType as Partial<fhir.FhirCodeArgs>, options); }
     }
-    if (source['securityContext']) { this.securityContext = new fhir.Reference(source.securityContext); }
-    if (source['data']) { this.data = new fhir.FhirBase64Binary({value: source.data}); }
+    if (source['securityContext']) { this.securityContext = new fhir.Reference(source.securityContext, options); }
+    if (source['data'] !== undefined) { this.data = new fhir.FhirBase64Binary({value: source.data}, options); }
     if (source['_data']) {
       if (this.data) { this.data.addExtendedProperties(source._data!); }
-      else { this.data = new fhir.FhirBase64Binary(source._data as Partial<fhir.FhirBase64BinaryArgs>); }
+      else { this.data = new fhir.FhirBase64Binary(source._data as Partial<fhir.FhirBase64BinaryArgs>, options); }
     }
   }
   /**

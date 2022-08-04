@@ -40,9 +40,9 @@ export class MedicinalProductPharmaceuticalCharacteristics extends fhir.Backbone
    */
   constructor(source:Partial<MedicinalProductPharmaceuticalCharacteristicsArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['code']) { this.code = new fhir.CodeableConcept(source.code); }
+    if (source['code']) { this.code = new fhir.CodeableConcept(source.code, options); }
     else { this.code = null; }
-    if (source['status']) { this.status = new fhir.CodeableConcept(source.status); }
+    if (source['status']) { this.status = new fhir.CodeableConcept(source.status, options); }
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -102,14 +102,14 @@ export class MedicinalProductPharmaceuticalRouteOfAdministrationTargetSpeciesWit
    */
   constructor(source:Partial<MedicinalProductPharmaceuticalRouteOfAdministrationTargetSpeciesWithdrawalPeriodArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['tissue']) { this.tissue = new fhir.CodeableConcept(source.tissue); }
+    if (source['tissue']) { this.tissue = new fhir.CodeableConcept(source.tissue, options); }
     else { this.tissue = null; }
-    if (source['value']) { this.value = new fhir.Quantity(source.value); }
+    if (source['value']) { this.value = new fhir.Quantity(source.value, options); }
     else { this.value = null; }
-    if (source['supportingInformation']) { this.supportingInformation = new fhir.FhirString({value: source.supportingInformation}); }
+    if (source['supportingInformation'] !== undefined) { this.supportingInformation = new fhir.FhirString({value: source.supportingInformation}, options); }
     if (source['_supportingInformation']) {
       if (this.supportingInformation) { this.supportingInformation.addExtendedProperties(source._supportingInformation!); }
-      else { this.supportingInformation = new fhir.FhirString(source._supportingInformation as Partial<fhir.FhirStringArgs>); }
+      else { this.supportingInformation = new fhir.FhirString(source._supportingInformation as Partial<fhir.FhirStringArgs>, options); }
     }
   }
   /**
@@ -159,9 +159,9 @@ export class MedicinalProductPharmaceuticalRouteOfAdministrationTargetSpecies ex
    */
   constructor(source:Partial<MedicinalProductPharmaceuticalRouteOfAdministrationTargetSpeciesArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['code']) { this.code = new fhir.CodeableConcept(source.code); }
+    if (source['code']) { this.code = new fhir.CodeableConcept(source.code, options); }
     else { this.code = null; }
-    if (source['withdrawalPeriod']) { this.withdrawalPeriod = source.withdrawalPeriod.map((x) => new fhir.MedicinalProductPharmaceuticalRouteOfAdministrationTargetSpeciesWithdrawalPeriod(x)); }
+    if (source['withdrawalPeriod']) { this.withdrawalPeriod = source.withdrawalPeriod.map((x) => new fhir.MedicinalProductPharmaceuticalRouteOfAdministrationTargetSpeciesWithdrawalPeriod(x, options)); }
     else { this.withdrawalPeriod = []; }
   }
   /**
@@ -250,14 +250,14 @@ export class MedicinalProductPharmaceuticalRouteOfAdministration extends fhir.Ba
    */
   constructor(source:Partial<MedicinalProductPharmaceuticalRouteOfAdministrationArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['code']) { this.code = new fhir.CodeableConcept(source.code); }
+    if (source['code']) { this.code = new fhir.CodeableConcept(source.code, options); }
     else { this.code = null; }
-    if (source['firstDose']) { this.firstDose = new fhir.Quantity(source.firstDose); }
-    if (source['maxSingleDose']) { this.maxSingleDose = new fhir.Quantity(source.maxSingleDose); }
-    if (source['maxDosePerDay']) { this.maxDosePerDay = new fhir.Quantity(source.maxDosePerDay); }
-    if (source['maxDosePerTreatmentPeriod']) { this.maxDosePerTreatmentPeriod = new fhir.Ratio(source.maxDosePerTreatmentPeriod); }
-    if (source['maxTreatmentPeriod']) { this.maxTreatmentPeriod = new fhir.Duration(source.maxTreatmentPeriod); }
-    if (source['targetSpecies']) { this.targetSpecies = source.targetSpecies.map((x) => new fhir.MedicinalProductPharmaceuticalRouteOfAdministrationTargetSpecies(x)); }
+    if (source['firstDose']) { this.firstDose = new fhir.Quantity(source.firstDose, options); }
+    if (source['maxSingleDose']) { this.maxSingleDose = new fhir.Quantity(source.maxSingleDose, options); }
+    if (source['maxDosePerDay']) { this.maxDosePerDay = new fhir.Quantity(source.maxDosePerDay, options); }
+    if (source['maxDosePerTreatmentPeriod']) { this.maxDosePerTreatmentPeriod = new fhir.Ratio(source.maxDosePerTreatmentPeriod, options); }
+    if (source['maxTreatmentPeriod']) { this.maxTreatmentPeriod = new fhir.Duration(source.maxTreatmentPeriod, options); }
+    if (source['targetSpecies']) { this.targetSpecies = source.targetSpecies.map((x) => new fhir.MedicinalProductPharmaceuticalRouteOfAdministrationTargetSpecies(x, options)); }
     else { this.targetSpecies = []; }
   }
   /**
@@ -360,18 +360,18 @@ export class MedicinalProductPharmaceutical extends fhir.DomainResource {
   constructor(source:Partial<MedicinalProductPharmaceuticalArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
     this.resourceType = 'MedicinalProductPharmaceutical';
-    if (source['identifier']) { this.identifier = source.identifier.map((x) => new fhir.Identifier(x)); }
+    if (source['identifier']) { this.identifier = source.identifier.map((x) => new fhir.Identifier(x, options)); }
     else { this.identifier = []; }
-    if (source['administrableDoseForm']) { this.administrableDoseForm = new fhir.CodeableConcept(source.administrableDoseForm); }
+    if (source['administrableDoseForm']) { this.administrableDoseForm = new fhir.CodeableConcept(source.administrableDoseForm, options); }
     else { this.administrableDoseForm = null; }
-    if (source['unitOfPresentation']) { this.unitOfPresentation = new fhir.CodeableConcept(source.unitOfPresentation); }
-    if (source['ingredient']) { this.ingredient = source.ingredient.map((x) => new fhir.Reference(x)); }
+    if (source['unitOfPresentation']) { this.unitOfPresentation = new fhir.CodeableConcept(source.unitOfPresentation, options); }
+    if (source['ingredient']) { this.ingredient = source.ingredient.map((x) => new fhir.Reference(x, options)); }
     else { this.ingredient = []; }
-    if (source['device']) { this.device = source.device.map((x) => new fhir.Reference(x)); }
+    if (source['device']) { this.device = source.device.map((x) => new fhir.Reference(x, options)); }
     else { this.device = []; }
-    if (source['characteristics']) { this.characteristics = source.characteristics.map((x) => new fhir.MedicinalProductPharmaceuticalCharacteristics(x)); }
+    if (source['characteristics']) { this.characteristics = source.characteristics.map((x) => new fhir.MedicinalProductPharmaceuticalCharacteristics(x, options)); }
     else { this.characteristics = []; }
-    if (source['routeOfAdministration']) { this.routeOfAdministration = source.routeOfAdministration.map((x) => new fhir.MedicinalProductPharmaceuticalRouteOfAdministration(x)); }
+    if (source['routeOfAdministration']) { this.routeOfAdministration = source.routeOfAdministration.map((x) => new fhir.MedicinalProductPharmaceuticalRouteOfAdministration(x, options)); }
     else { this.routeOfAdministration = []; }
   }
   /**

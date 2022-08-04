@@ -64,13 +64,13 @@ export class UsageContext extends fhir.FhirElement {
    */
   constructor(source:Partial<UsageContextArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['code']) { this.code = new fhir.Coding(source.code); }
+    if (source['code']) { this.code = new fhir.Coding(source.code, options); }
     else { this.code = null; }
     if (source['value']) { this.value = source.value; }
-    else if (source['valueCodeableConcept']) { this.value = new fhir.CodeableConcept(source.valueCodeableConcept); }
-    else if (source['valueQuantity']) { this.value = new fhir.Quantity(source.valueQuantity); }
-    else if (source['valueRange']) { this.value = new fhir.Range(source.valueRange); }
-    else if (source['valueReference']) { this.value = new fhir.Reference(source.valueReference); }
+    else if (source['valueCodeableConcept']) { this.value = new fhir.CodeableConcept(source.valueCodeableConcept, options); }
+    else if (source['valueQuantity']) { this.value = new fhir.Quantity(source.valueQuantity, options); }
+    else if (source['valueRange']) { this.value = new fhir.Range(source.valueRange, options); }
+    else if (source['valueReference']) { this.value = new fhir.Reference(source.valueReference, options); }
     else { this.value = null; }
   }
   /**

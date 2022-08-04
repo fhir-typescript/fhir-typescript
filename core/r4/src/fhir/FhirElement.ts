@@ -44,12 +44,12 @@ export class FhirElement extends fhir.FhirBase {
    */
   constructor(source:Partial<FhirElementArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['id']) { this.id = new fhir.FhirString({value: source.id}); }
+    if (source['id'] !== undefined) { this.id = new fhir.FhirString({value: source.id}, options); }
     if (source['_id']) {
       if (this.id) { this.id.addExtendedProperties(source._id!); }
-      else { this.id = new fhir.FhirString(source._id as Partial<fhir.FhirStringArgs>); }
+      else { this.id = new fhir.FhirString(source._id as Partial<fhir.FhirStringArgs>, options); }
     }
-    if (source['extension']) { this.extension = source.extension.map((x) => new fhir.Extension(x)); }
+    if (source['extension']) { this.extension = source.extension.map((x) => new fhir.Extension(x, options)); }
     else { this.extension = []; }
   }
   /**

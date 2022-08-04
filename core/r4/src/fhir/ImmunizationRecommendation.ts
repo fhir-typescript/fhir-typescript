@@ -64,13 +64,13 @@ export class ImmunizationRecommendationRecommendationDateCriterion extends fhir.
    */
   constructor(source:Partial<ImmunizationRecommendationRecommendationDateCriterionArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['code']) { this.code = new fhir.CodeableConcept(source.code); }
+    if (source['code']) { this.code = new fhir.CodeableConcept(source.code, options); }
     else { this.code = null; }
-    if (source['value']) { this.value = new fhir.FhirDateTime({value: source.value}); }
+    if (source['value'] !== undefined) { this.value = new fhir.FhirDateTime({value: source.value}, options); }
     else { this.value = null; }
     if (source['_value']) {
       if (this.value) { this.value.addExtendedProperties(source._value!); }
-      else { this.value = new fhir.FhirDateTime(source._value as Partial<fhir.FhirDateTimeArgs>); }
+      else { this.value = new fhir.FhirDateTime(source._value as Partial<fhir.FhirDateTimeArgs>, options); }
     }
   }
   /**
@@ -231,36 +231,36 @@ export class ImmunizationRecommendationRecommendation extends fhir.BackboneEleme
    */
   constructor(source:Partial<ImmunizationRecommendationRecommendationArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['vaccineCode']) { this.vaccineCode = source.vaccineCode.map((x) => new fhir.CodeableConcept(x)); }
+    if (source['vaccineCode']) { this.vaccineCode = source.vaccineCode.map((x) => new fhir.CodeableConcept(x, options)); }
     else { this.vaccineCode = []; }
-    if (source['targetDisease']) { this.targetDisease = new fhir.CodeableConcept(source.targetDisease); }
-    if (source['contraindicatedVaccineCode']) { this.contraindicatedVaccineCode = source.contraindicatedVaccineCode.map((x) => new fhir.CodeableConcept(x)); }
+    if (source['targetDisease']) { this.targetDisease = new fhir.CodeableConcept(source.targetDisease, options); }
+    if (source['contraindicatedVaccineCode']) { this.contraindicatedVaccineCode = source.contraindicatedVaccineCode.map((x) => new fhir.CodeableConcept(x, options)); }
     else { this.contraindicatedVaccineCode = []; }
-    if (source['forecastStatus']) { this.forecastStatus = new fhir.CodeableConcept(source.forecastStatus); }
+    if (source['forecastStatus']) { this.forecastStatus = new fhir.CodeableConcept(source.forecastStatus, options); }
     else { this.forecastStatus = null; }
-    if (source['forecastReason']) { this.forecastReason = source.forecastReason.map((x) => new fhir.CodeableConcept(x)); }
+    if (source['forecastReason']) { this.forecastReason = source.forecastReason.map((x) => new fhir.CodeableConcept(x, options)); }
     else { this.forecastReason = []; }
-    if (source['dateCriterion']) { this.dateCriterion = source.dateCriterion.map((x) => new fhir.ImmunizationRecommendationRecommendationDateCriterion(x)); }
+    if (source['dateCriterion']) { this.dateCriterion = source.dateCriterion.map((x) => new fhir.ImmunizationRecommendationRecommendationDateCriterion(x, options)); }
     else { this.dateCriterion = []; }
-    if (source['description']) { this.description = new fhir.FhirString({value: source.description}); }
+    if (source['description'] !== undefined) { this.description = new fhir.FhirString({value: source.description}, options); }
     if (source['_description']) {
       if (this.description) { this.description.addExtendedProperties(source._description!); }
-      else { this.description = new fhir.FhirString(source._description as Partial<fhir.FhirStringArgs>); }
+      else { this.description = new fhir.FhirString(source._description as Partial<fhir.FhirStringArgs>, options); }
     }
-    if (source['series']) { this.series = new fhir.FhirString({value: source.series}); }
+    if (source['series'] !== undefined) { this.series = new fhir.FhirString({value: source.series}, options); }
     if (source['_series']) {
       if (this.series) { this.series.addExtendedProperties(source._series!); }
-      else { this.series = new fhir.FhirString(source._series as Partial<fhir.FhirStringArgs>); }
+      else { this.series = new fhir.FhirString(source._series as Partial<fhir.FhirStringArgs>, options); }
     }
     if (source['doseNumber']) { this.doseNumber = source.doseNumber; }
-    else if (source['doseNumberPositiveInt']) { this.doseNumber = new fhir.FhirPositiveInt({value: source.doseNumberPositiveInt}); }
-    else if (source['doseNumberString']) { this.doseNumber = new fhir.FhirString({value: source.doseNumberString}); }
+    else if (source['doseNumberPositiveInt'] !== undefined) { this.doseNumber = new fhir.FhirPositiveInt({value: source.doseNumberPositiveInt}, options); }
+    else if (source['doseNumberString'] !== undefined) { this.doseNumber = new fhir.FhirString({value: source.doseNumberString}, options); }
     if (source['seriesDoses']) { this.seriesDoses = source.seriesDoses; }
-    else if (source['seriesDosesPositiveInt']) { this.seriesDoses = new fhir.FhirPositiveInt({value: source.seriesDosesPositiveInt}); }
-    else if (source['seriesDosesString']) { this.seriesDoses = new fhir.FhirString({value: source.seriesDosesString}); }
-    if (source['supportingImmunization']) { this.supportingImmunization = source.supportingImmunization.map((x) => new fhir.Reference(x)); }
+    else if (source['seriesDosesPositiveInt'] !== undefined) { this.seriesDoses = new fhir.FhirPositiveInt({value: source.seriesDosesPositiveInt}, options); }
+    else if (source['seriesDosesString'] !== undefined) { this.seriesDoses = new fhir.FhirString({value: source.seriesDosesString}, options); }
+    if (source['supportingImmunization']) { this.supportingImmunization = source.supportingImmunization.map((x) => new fhir.Reference(x, options)); }
     else { this.supportingImmunization = []; }
-    if (source['supportingPatientInformation']) { this.supportingPatientInformation = source.supportingPatientInformation.map((x) => new fhir.Reference(x)); }
+    if (source['supportingPatientInformation']) { this.supportingPatientInformation = source.supportingPatientInformation.map((x) => new fhir.Reference(x, options)); }
     else { this.supportingPatientInformation = []; }
   }
   /**
@@ -356,18 +356,18 @@ export class ImmunizationRecommendation extends fhir.DomainResource {
   constructor(source:Partial<ImmunizationRecommendationArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
     this.resourceType = 'ImmunizationRecommendation';
-    if (source['identifier']) { this.identifier = source.identifier.map((x) => new fhir.Identifier(x)); }
+    if (source['identifier']) { this.identifier = source.identifier.map((x) => new fhir.Identifier(x, options)); }
     else { this.identifier = []; }
-    if (source['patient']) { this.patient = new fhir.Reference(source.patient); }
+    if (source['patient']) { this.patient = new fhir.Reference(source.patient, options); }
     else { this.patient = null; }
-    if (source['date']) { this.date = new fhir.FhirDateTime({value: source.date}); }
+    if (source['date'] !== undefined) { this.date = new fhir.FhirDateTime({value: source.date}, options); }
     else { this.date = null; }
     if (source['_date']) {
       if (this.date) { this.date.addExtendedProperties(source._date!); }
-      else { this.date = new fhir.FhirDateTime(source._date as Partial<fhir.FhirDateTimeArgs>); }
+      else { this.date = new fhir.FhirDateTime(source._date as Partial<fhir.FhirDateTimeArgs>, options); }
     }
-    if (source['authority']) { this.authority = new fhir.Reference(source.authority); }
-    if (source['recommendation']) { this.recommendation = source.recommendation.map((x) => new fhir.ImmunizationRecommendationRecommendation(x)); }
+    if (source['authority']) { this.authority = new fhir.Reference(source.authority, options); }
+    if (source['recommendation']) { this.recommendation = source.recommendation.map((x) => new fhir.ImmunizationRecommendationRecommendation(x, options)); }
     else { this.recommendation = []; }
   }
   /**

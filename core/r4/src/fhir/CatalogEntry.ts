@@ -52,13 +52,13 @@ export class CatalogEntryRelatedEntry extends fhir.BackboneElement {
    */
   constructor(source:Partial<CatalogEntryRelatedEntryArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['relationtype']) { this.relationtype = new fhir.FhirCode<RelationTypeCodeType>({value: source.relationtype}); }
+    if (source['relationtype'] !== undefined) { this.relationtype = new fhir.FhirCode<RelationTypeCodeType>({value: source.relationtype}, options); }
     else { this.relationtype = null; }
     if (source['_relationtype']) {
       if (this.relationtype) { this.relationtype.addExtendedProperties(source._relationtype!); }
-      else { this.relationtype = new fhir.FhirCode<RelationTypeCodeType>(source._relationtype as Partial<fhir.FhirCode>); }
+      else { this.relationtype = new fhir.FhirCode<RelationTypeCodeType>(source._relationtype as Partial<fhir.FhirCode>, options); }
     }
-    if (source['item']) { this.item = new fhir.Reference(source.item); }
+    if (source['item']) { this.item = new fhir.Reference(source.item, options); }
     else { this.item = null; }
   }
   /**
@@ -220,42 +220,42 @@ export class CatalogEntry extends fhir.DomainResource {
   constructor(source:Partial<CatalogEntryArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
     this.resourceType = 'CatalogEntry';
-    if (source['identifier']) { this.identifier = source.identifier.map((x) => new fhir.Identifier(x)); }
+    if (source['identifier']) { this.identifier = source.identifier.map((x) => new fhir.Identifier(x, options)); }
     else { this.identifier = []; }
-    if (source['type']) { this.type = new fhir.CodeableConcept(source.type); }
-    if (source['orderable']) { this.orderable = new fhir.FhirBoolean({value: source.orderable}); }
+    if (source['type']) { this.type = new fhir.CodeableConcept(source.type, options); }
+    if (source['orderable'] !== undefined) { this.orderable = new fhir.FhirBoolean({value: source.orderable}, options); }
     else { this.orderable = null; }
     if (source['_orderable']) {
       if (this.orderable) { this.orderable.addExtendedProperties(source._orderable!); }
-      else { this.orderable = new fhir.FhirBoolean(source._orderable as Partial<fhir.FhirBooleanArgs>); }
+      else { this.orderable = new fhir.FhirBoolean(source._orderable as Partial<fhir.FhirBooleanArgs>, options); }
     }
-    if (source['referencedItem']) { this.referencedItem = new fhir.Reference(source.referencedItem); }
+    if (source['referencedItem']) { this.referencedItem = new fhir.Reference(source.referencedItem, options); }
     else { this.referencedItem = null; }
-    if (source['additionalIdentifier']) { this.additionalIdentifier = source.additionalIdentifier.map((x) => new fhir.Identifier(x)); }
+    if (source['additionalIdentifier']) { this.additionalIdentifier = source.additionalIdentifier.map((x) => new fhir.Identifier(x, options)); }
     else { this.additionalIdentifier = []; }
-    if (source['classification']) { this.classification = source.classification.map((x) => new fhir.CodeableConcept(x)); }
+    if (source['classification']) { this.classification = source.classification.map((x) => new fhir.CodeableConcept(x, options)); }
     else { this.classification = []; }
-    if (source['status']) { this.status = new fhir.FhirCode<PublicationStatusCodeType>({value: source.status}); }
+    if (source['status'] !== undefined) { this.status = new fhir.FhirCode<PublicationStatusCodeType>({value: source.status}, options); }
     if (source['_status']) {
       if (this.status) { this.status.addExtendedProperties(source._status!); }
-      else { this.status = new fhir.FhirCode<PublicationStatusCodeType>(source._status as Partial<fhir.FhirCode>); }
+      else { this.status = new fhir.FhirCode<PublicationStatusCodeType>(source._status as Partial<fhir.FhirCode>, options); }
     }
-    if (source['validityPeriod']) { this.validityPeriod = new fhir.Period(source.validityPeriod); }
-    if (source['validTo']) { this.validTo = new fhir.FhirDateTime({value: source.validTo}); }
+    if (source['validityPeriod']) { this.validityPeriod = new fhir.Period(source.validityPeriod, options); }
+    if (source['validTo'] !== undefined) { this.validTo = new fhir.FhirDateTime({value: source.validTo}, options); }
     if (source['_validTo']) {
       if (this.validTo) { this.validTo.addExtendedProperties(source._validTo!); }
-      else { this.validTo = new fhir.FhirDateTime(source._validTo as Partial<fhir.FhirDateTimeArgs>); }
+      else { this.validTo = new fhir.FhirDateTime(source._validTo as Partial<fhir.FhirDateTimeArgs>, options); }
     }
-    if (source['lastUpdated']) { this.lastUpdated = new fhir.FhirDateTime({value: source.lastUpdated}); }
+    if (source['lastUpdated'] !== undefined) { this.lastUpdated = new fhir.FhirDateTime({value: source.lastUpdated}, options); }
     if (source['_lastUpdated']) {
       if (this.lastUpdated) { this.lastUpdated.addExtendedProperties(source._lastUpdated!); }
-      else { this.lastUpdated = new fhir.FhirDateTime(source._lastUpdated as Partial<fhir.FhirDateTimeArgs>); }
+      else { this.lastUpdated = new fhir.FhirDateTime(source._lastUpdated as Partial<fhir.FhirDateTimeArgs>, options); }
     }
-    if (source['additionalCharacteristic']) { this.additionalCharacteristic = source.additionalCharacteristic.map((x) => new fhir.CodeableConcept(x)); }
+    if (source['additionalCharacteristic']) { this.additionalCharacteristic = source.additionalCharacteristic.map((x) => new fhir.CodeableConcept(x, options)); }
     else { this.additionalCharacteristic = []; }
-    if (source['additionalClassification']) { this.additionalClassification = source.additionalClassification.map((x) => new fhir.CodeableConcept(x)); }
+    if (source['additionalClassification']) { this.additionalClassification = source.additionalClassification.map((x) => new fhir.CodeableConcept(x, options)); }
     else { this.additionalClassification = []; }
-    if (source['relatedEntry']) { this.relatedEntry = source.relatedEntry.map((x) => new fhir.CatalogEntryRelatedEntry(x)); }
+    if (source['relatedEntry']) { this.relatedEntry = source.relatedEntry.map((x) => new fhir.CatalogEntryRelatedEntry(x, options)); }
     else { this.relatedEntry = []; }
   }
   /**

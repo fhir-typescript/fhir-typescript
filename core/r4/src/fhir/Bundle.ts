@@ -62,17 +62,17 @@ export class BundleLink extends fhir.BackboneElement {
    */
   constructor(source:Partial<BundleLinkArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['relation']) { this.relation = new fhir.FhirString({value: source.relation}); }
+    if (source['relation'] !== undefined) { this.relation = new fhir.FhirString({value: source.relation}, options); }
     else { this.relation = null; }
     if (source['_relation']) {
       if (this.relation) { this.relation.addExtendedProperties(source._relation!); }
-      else { this.relation = new fhir.FhirString(source._relation as Partial<fhir.FhirStringArgs>); }
+      else { this.relation = new fhir.FhirString(source._relation as Partial<fhir.FhirStringArgs>, options); }
     }
-    if (source['url']) { this.url = new fhir.FhirUri({value: source.url}); }
+    if (source['url'] !== undefined) { this.url = new fhir.FhirUri({value: source.url}, options); }
     else { this.url = null; }
     if (source['_url']) {
       if (this.url) { this.url.addExtendedProperties(source._url!); }
-      else { this.url = new fhir.FhirUri(source._url as Partial<fhir.FhirUriArgs>); }
+      else { this.url = new fhir.FhirUri(source._url as Partial<fhir.FhirUriArgs>, options); }
     }
   }
   /**
@@ -131,15 +131,15 @@ export class BundleEntrySearch extends fhir.BackboneElement {
    */
   constructor(source:Partial<BundleEntrySearchArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['mode']) { this.mode = new fhir.FhirCode<SearchEntryModeCodeType>({value: source.mode}); }
+    if (source['mode'] !== undefined) { this.mode = new fhir.FhirCode<SearchEntryModeCodeType>({value: source.mode}, options); }
     if (source['_mode']) {
       if (this.mode) { this.mode.addExtendedProperties(source._mode!); }
-      else { this.mode = new fhir.FhirCode<SearchEntryModeCodeType>(source._mode as Partial<fhir.FhirCode>); }
+      else { this.mode = new fhir.FhirCode<SearchEntryModeCodeType>(source._mode as Partial<fhir.FhirCode>, options); }
     }
-    if (source['score']) { this.score = new fhir.FhirDecimal({value: source.score}); }
+    if (source['score'] !== undefined) { this.score = new fhir.FhirDecimal({value: source.score}, options); }
     if (source['_score']) {
       if (this.score) { this.score.addExtendedProperties(source._score!); }
-      else { this.score = new fhir.FhirDecimal(source._score as Partial<fhir.FhirDecimalArgs>); }
+      else { this.score = new fhir.FhirDecimal(source._score as Partial<fhir.FhirDecimalArgs>, options); }
     }
   }
   /**
@@ -244,37 +244,37 @@ export class BundleEntryRequest extends fhir.BackboneElement {
    */
   constructor(source:Partial<BundleEntryRequestArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['method']) { this.method = new fhir.FhirCode<HttpVerbCodeType>({value: source.method}); }
+    if (source['method'] !== undefined) { this.method = new fhir.FhirCode<HttpVerbCodeType>({value: source.method}, options); }
     else { this.method = null; }
     if (source['_method']) {
       if (this.method) { this.method.addExtendedProperties(source._method!); }
-      else { this.method = new fhir.FhirCode<HttpVerbCodeType>(source._method as Partial<fhir.FhirCode>); }
+      else { this.method = new fhir.FhirCode<HttpVerbCodeType>(source._method as Partial<fhir.FhirCode>, options); }
     }
-    if (source['url']) { this.url = new fhir.FhirUri({value: source.url}); }
+    if (source['url'] !== undefined) { this.url = new fhir.FhirUri({value: source.url}, options); }
     else { this.url = null; }
     if (source['_url']) {
       if (this.url) { this.url.addExtendedProperties(source._url!); }
-      else { this.url = new fhir.FhirUri(source._url as Partial<fhir.FhirUriArgs>); }
+      else { this.url = new fhir.FhirUri(source._url as Partial<fhir.FhirUriArgs>, options); }
     }
-    if (source['ifNoneMatch']) { this.ifNoneMatch = new fhir.FhirString({value: source.ifNoneMatch}); }
+    if (source['ifNoneMatch'] !== undefined) { this.ifNoneMatch = new fhir.FhirString({value: source.ifNoneMatch}, options); }
     if (source['_ifNoneMatch']) {
       if (this.ifNoneMatch) { this.ifNoneMatch.addExtendedProperties(source._ifNoneMatch!); }
-      else { this.ifNoneMatch = new fhir.FhirString(source._ifNoneMatch as Partial<fhir.FhirStringArgs>); }
+      else { this.ifNoneMatch = new fhir.FhirString(source._ifNoneMatch as Partial<fhir.FhirStringArgs>, options); }
     }
-    if (source['ifModifiedSince']) { this.ifModifiedSince = new fhir.FhirInstant({value: source.ifModifiedSince}); }
+    if (source['ifModifiedSince'] !== undefined) { this.ifModifiedSince = new fhir.FhirInstant({value: source.ifModifiedSince}, options); }
     if (source['_ifModifiedSince']) {
       if (this.ifModifiedSince) { this.ifModifiedSince.addExtendedProperties(source._ifModifiedSince!); }
-      else { this.ifModifiedSince = new fhir.FhirInstant(source._ifModifiedSince as Partial<fhir.FhirInstantArgs>); }
+      else { this.ifModifiedSince = new fhir.FhirInstant(source._ifModifiedSince as Partial<fhir.FhirInstantArgs>, options); }
     }
-    if (source['ifMatch']) { this.ifMatch = new fhir.FhirString({value: source.ifMatch}); }
+    if (source['ifMatch'] !== undefined) { this.ifMatch = new fhir.FhirString({value: source.ifMatch}, options); }
     if (source['_ifMatch']) {
       if (this.ifMatch) { this.ifMatch.addExtendedProperties(source._ifMatch!); }
-      else { this.ifMatch = new fhir.FhirString(source._ifMatch as Partial<fhir.FhirStringArgs>); }
+      else { this.ifMatch = new fhir.FhirString(source._ifMatch as Partial<fhir.FhirStringArgs>, options); }
     }
-    if (source['ifNoneExist']) { this.ifNoneExist = new fhir.FhirString({value: source.ifNoneExist}); }
+    if (source['ifNoneExist'] !== undefined) { this.ifNoneExist = new fhir.FhirString({value: source.ifNoneExist}, options); }
     if (source['_ifNoneExist']) {
       if (this.ifNoneExist) { this.ifNoneExist.addExtendedProperties(source._ifNoneExist!); }
-      else { this.ifNoneExist = new fhir.FhirString(source._ifNoneExist as Partial<fhir.FhirStringArgs>); }
+      else { this.ifNoneExist = new fhir.FhirString(source._ifNoneExist as Partial<fhir.FhirStringArgs>, options); }
     }
   }
   /**
@@ -369,28 +369,28 @@ export class BundleEntryResponse extends fhir.BackboneElement {
    */
   constructor(source:Partial<BundleEntryResponseArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['status']) { this.status = new fhir.FhirString({value: source.status}); }
+    if (source['status'] !== undefined) { this.status = new fhir.FhirString({value: source.status}, options); }
     else { this.status = null; }
     if (source['_status']) {
       if (this.status) { this.status.addExtendedProperties(source._status!); }
-      else { this.status = new fhir.FhirString(source._status as Partial<fhir.FhirStringArgs>); }
+      else { this.status = new fhir.FhirString(source._status as Partial<fhir.FhirStringArgs>, options); }
     }
-    if (source['location']) { this.location = new fhir.FhirUri({value: source.location}); }
+    if (source['location'] !== undefined) { this.location = new fhir.FhirUri({value: source.location}, options); }
     if (source['_location']) {
       if (this.location) { this.location.addExtendedProperties(source._location!); }
-      else { this.location = new fhir.FhirUri(source._location as Partial<fhir.FhirUriArgs>); }
+      else { this.location = new fhir.FhirUri(source._location as Partial<fhir.FhirUriArgs>, options); }
     }
-    if (source['etag']) { this.etag = new fhir.FhirString({value: source.etag}); }
+    if (source['etag'] !== undefined) { this.etag = new fhir.FhirString({value: source.etag}, options); }
     if (source['_etag']) {
       if (this.etag) { this.etag.addExtendedProperties(source._etag!); }
-      else { this.etag = new fhir.FhirString(source._etag as Partial<fhir.FhirStringArgs>); }
+      else { this.etag = new fhir.FhirString(source._etag as Partial<fhir.FhirStringArgs>, options); }
     }
-    if (source['lastModified']) { this.lastModified = new fhir.FhirInstant({value: source.lastModified}); }
+    if (source['lastModified'] !== undefined) { this.lastModified = new fhir.FhirInstant({value: source.lastModified}, options); }
     if (source['_lastModified']) {
       if (this.lastModified) { this.lastModified.addExtendedProperties(source._lastModified!); }
-      else { this.lastModified = new fhir.FhirInstant(source._lastModified as Partial<fhir.FhirInstantArgs>); }
+      else { this.lastModified = new fhir.FhirInstant(source._lastModified as Partial<fhir.FhirInstantArgs>, options); }
     }
-    if (source['outcome']) { this.outcome = (fhir.resourceFactory(source.outcome) ?? undefined); }
+    if (source['outcome']) { this.outcome = (fhir.resourceFactory(source.outcome, options) ?? undefined); }
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -479,17 +479,17 @@ export class BundleEntry extends fhir.BackboneElement {
    */
   constructor(source:Partial<BundleEntryArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['link']) { this.link = source.link.map((x) => new fhir.BundleLink(x)); }
+    if (source['link']) { this.link = source.link.map((x) => new fhir.BundleLink(x, options)); }
     else { this.link = []; }
-    if (source['fullUrl']) { this.fullUrl = new fhir.FhirUri({value: source.fullUrl}); }
+    if (source['fullUrl'] !== undefined) { this.fullUrl = new fhir.FhirUri({value: source.fullUrl}, options); }
     if (source['_fullUrl']) {
       if (this.fullUrl) { this.fullUrl.addExtendedProperties(source._fullUrl!); }
-      else { this.fullUrl = new fhir.FhirUri(source._fullUrl as Partial<fhir.FhirUriArgs>); }
+      else { this.fullUrl = new fhir.FhirUri(source._fullUrl as Partial<fhir.FhirUriArgs>, options); }
     }
-    if (source['resource']) { this.resource = (fhir.resourceFactory(source.resource) ?? undefined); }
-    if (source['search']) { this.search = new fhir.BundleEntrySearch(source.search); }
-    if (source['request']) { this.request = new fhir.BundleEntryRequest(source.request); }
-    if (source['response']) { this.response = new fhir.BundleEntryResponse(source.response); }
+    if (source['resource']) { this.resource = (fhir.resourceFactory(source.resource, options) ?? undefined); }
+    if (source['search']) { this.search = new fhir.BundleEntrySearch(source.search, options); }
+    if (source['request']) { this.request = new fhir.BundleEntryRequest(source.request, options); }
+    if (source['response']) { this.response = new fhir.BundleEntryResponse(source.response, options); }
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -627,28 +627,28 @@ export class Bundle extends fhir.Resource {
   constructor(source:Partial<BundleArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
     this.resourceType = 'Bundle';
-    if (source['identifier']) { this.identifier = new fhir.Identifier(source.identifier); }
-    if (source['type']) { this.type = new fhir.FhirCode<BundleTypeCodeType>({value: source.type}); }
+    if (source['identifier']) { this.identifier = new fhir.Identifier(source.identifier, options); }
+    if (source['type'] !== undefined) { this.type = new fhir.FhirCode<BundleTypeCodeType>({value: source.type}, options); }
     else { this.type = null; }
     if (source['_type']) {
       if (this.type) { this.type.addExtendedProperties(source._type!); }
-      else { this.type = new fhir.FhirCode<BundleTypeCodeType>(source._type as Partial<fhir.FhirCode>); }
+      else { this.type = new fhir.FhirCode<BundleTypeCodeType>(source._type as Partial<fhir.FhirCode>, options); }
     }
-    if (source['timestamp']) { this.timestamp = new fhir.FhirInstant({value: source.timestamp}); }
+    if (source['timestamp'] !== undefined) { this.timestamp = new fhir.FhirInstant({value: source.timestamp}, options); }
     if (source['_timestamp']) {
       if (this.timestamp) { this.timestamp.addExtendedProperties(source._timestamp!); }
-      else { this.timestamp = new fhir.FhirInstant(source._timestamp as Partial<fhir.FhirInstantArgs>); }
+      else { this.timestamp = new fhir.FhirInstant(source._timestamp as Partial<fhir.FhirInstantArgs>, options); }
     }
-    if (source['total']) { this.total = new fhir.FhirUnsignedInt({value: source.total}); }
+    if (source['total'] !== undefined) { this.total = new fhir.FhirUnsignedInt({value: source.total}, options); }
     if (source['_total']) {
       if (this.total) { this.total.addExtendedProperties(source._total!); }
-      else { this.total = new fhir.FhirUnsignedInt(source._total as Partial<fhir.FhirUnsignedIntArgs>); }
+      else { this.total = new fhir.FhirUnsignedInt(source._total as Partial<fhir.FhirUnsignedIntArgs>, options); }
     }
-    if (source['link']) { this.link = source.link.map((x) => new fhir.BundleLink(x)); }
+    if (source['link']) { this.link = source.link.map((x) => new fhir.BundleLink(x, options)); }
     else { this.link = []; }
-    if (source['entry']) { this.entry = source.entry.map((x) => new fhir.BundleEntry(x)); }
+    if (source['entry']) { this.entry = source.entry.map((x) => new fhir.BundleEntry(x, options)); }
     else { this.entry = []; }
-    if (source['signature']) { this.signature = new fhir.Signature(source.signature); }
+    if (source['signature']) { this.signature = new fhir.Signature(source.signature, options); }
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).

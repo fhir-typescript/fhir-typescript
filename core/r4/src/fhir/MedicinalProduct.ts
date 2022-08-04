@@ -44,13 +44,13 @@ export class MedicinalProductNameNamePart extends fhir.BackboneElement {
    */
   constructor(source:Partial<MedicinalProductNameNamePartArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['part']) { this.part = new fhir.FhirString({value: source.part}); }
+    if (source['part'] !== undefined) { this.part = new fhir.FhirString({value: source.part}, options); }
     else { this.part = null; }
     if (source['_part']) {
       if (this.part) { this.part.addExtendedProperties(source._part!); }
-      else { this.part = new fhir.FhirString(source._part as Partial<fhir.FhirStringArgs>); }
+      else { this.part = new fhir.FhirString(source._part as Partial<fhir.FhirStringArgs>, options); }
     }
-    if (source['type']) { this.type = new fhir.Coding(source.type); }
+    if (source['type']) { this.type = new fhir.Coding(source.type, options); }
     else { this.type = null; }
   }
   /**
@@ -107,10 +107,10 @@ export class MedicinalProductNameCountryLanguage extends fhir.BackboneElement {
    */
   constructor(source:Partial<MedicinalProductNameCountryLanguageArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['country']) { this.country = new fhir.CodeableConcept(source.country); }
+    if (source['country']) { this.country = new fhir.CodeableConcept(source.country, options); }
     else { this.country = null; }
-    if (source['jurisdiction']) { this.jurisdiction = new fhir.CodeableConcept(source.jurisdiction); }
-    if (source['language']) { this.language = new fhir.CodeableConcept(source.language); }
+    if (source['jurisdiction']) { this.jurisdiction = new fhir.CodeableConcept(source.jurisdiction, options); }
+    if (source['language']) { this.language = new fhir.CodeableConcept(source.language, options); }
     else { this.language = null; }
   }
   /**
@@ -172,15 +172,15 @@ export class MedicinalProductName extends fhir.BackboneElement {
    */
   constructor(source:Partial<MedicinalProductNameArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['productName']) { this.productName = new fhir.FhirString({value: source.productName}); }
+    if (source['productName'] !== undefined) { this.productName = new fhir.FhirString({value: source.productName}, options); }
     else { this.productName = null; }
     if (source['_productName']) {
       if (this.productName) { this.productName.addExtendedProperties(source._productName!); }
-      else { this.productName = new fhir.FhirString(source._productName as Partial<fhir.FhirStringArgs>); }
+      else { this.productName = new fhir.FhirString(source._productName as Partial<fhir.FhirStringArgs>, options); }
     }
-    if (source['namePart']) { this.namePart = source.namePart.map((x) => new fhir.MedicinalProductNameNamePart(x)); }
+    if (source['namePart']) { this.namePart = source.namePart.map((x) => new fhir.MedicinalProductNameNamePart(x, options)); }
     else { this.namePart = []; }
-    if (source['countryLanguage']) { this.countryLanguage = source.countryLanguage.map((x) => new fhir.MedicinalProductNameCountryLanguage(x)); }
+    if (source['countryLanguage']) { this.countryLanguage = source.countryLanguage.map((x) => new fhir.MedicinalProductNameCountryLanguage(x, options)); }
     else { this.countryLanguage = []; }
   }
   /**
@@ -266,17 +266,17 @@ export class MedicinalProductManufacturingBusinessOperation extends fhir.Backbon
    */
   constructor(source:Partial<MedicinalProductManufacturingBusinessOperationArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['operationType']) { this.operationType = new fhir.CodeableConcept(source.operationType); }
-    if (source['authorisationReferenceNumber']) { this.authorisationReferenceNumber = new fhir.Identifier(source.authorisationReferenceNumber); }
-    if (source['effectiveDate']) { this.effectiveDate = new fhir.FhirDateTime({value: source.effectiveDate}); }
+    if (source['operationType']) { this.operationType = new fhir.CodeableConcept(source.operationType, options); }
+    if (source['authorisationReferenceNumber']) { this.authorisationReferenceNumber = new fhir.Identifier(source.authorisationReferenceNumber, options); }
+    if (source['effectiveDate'] !== undefined) { this.effectiveDate = new fhir.FhirDateTime({value: source.effectiveDate}, options); }
     if (source['_effectiveDate']) {
       if (this.effectiveDate) { this.effectiveDate.addExtendedProperties(source._effectiveDate!); }
-      else { this.effectiveDate = new fhir.FhirDateTime(source._effectiveDate as Partial<fhir.FhirDateTimeArgs>); }
+      else { this.effectiveDate = new fhir.FhirDateTime(source._effectiveDate as Partial<fhir.FhirDateTimeArgs>, options); }
     }
-    if (source['confidentialityIndicator']) { this.confidentialityIndicator = new fhir.CodeableConcept(source.confidentialityIndicator); }
-    if (source['manufacturer']) { this.manufacturer = source.manufacturer.map((x) => new fhir.Reference(x)); }
+    if (source['confidentialityIndicator']) { this.confidentialityIndicator = new fhir.CodeableConcept(source.confidentialityIndicator, options); }
+    if (source['manufacturer']) { this.manufacturer = source.manufacturer.map((x) => new fhir.Reference(x, options)); }
     else { this.manufacturer = []; }
-    if (source['regulator']) { this.regulator = new fhir.Reference(source.regulator); }
+    if (source['regulator']) { this.regulator = new fhir.Reference(source.regulator, options); }
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -384,20 +384,20 @@ export class MedicinalProductSpecialDesignation extends fhir.BackboneElement {
    */
   constructor(source:Partial<MedicinalProductSpecialDesignationArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['identifier']) { this.identifier = source.identifier.map((x) => new fhir.Identifier(x)); }
+    if (source['identifier']) { this.identifier = source.identifier.map((x) => new fhir.Identifier(x, options)); }
     else { this.identifier = []; }
-    if (source['type']) { this.type = new fhir.CodeableConcept(source.type); }
-    if (source['intendedUse']) { this.intendedUse = new fhir.CodeableConcept(source.intendedUse); }
+    if (source['type']) { this.type = new fhir.CodeableConcept(source.type, options); }
+    if (source['intendedUse']) { this.intendedUse = new fhir.CodeableConcept(source.intendedUse, options); }
     if (source['indication']) { this.indication = source.indication; }
-    else if (source['indicationCodeableConcept']) { this.indication = new fhir.CodeableConcept(source.indicationCodeableConcept); }
-    else if (source['indicationReference']) { this.indication = new fhir.Reference(source.indicationReference); }
-    if (source['status']) { this.status = new fhir.CodeableConcept(source.status); }
-    if (source['date']) { this.date = new fhir.FhirDateTime({value: source.date}); }
+    else if (source['indicationCodeableConcept']) { this.indication = new fhir.CodeableConcept(source.indicationCodeableConcept, options); }
+    else if (source['indicationReference']) { this.indication = new fhir.Reference(source.indicationReference, options); }
+    if (source['status']) { this.status = new fhir.CodeableConcept(source.status, options); }
+    if (source['date'] !== undefined) { this.date = new fhir.FhirDateTime({value: source.date}, options); }
     if (source['_date']) {
       if (this.date) { this.date.addExtendedProperties(source._date!); }
-      else { this.date = new fhir.FhirDateTime(source._date as Partial<fhir.FhirDateTimeArgs>); }
+      else { this.date = new fhir.FhirDateTime(source._date as Partial<fhir.FhirDateTimeArgs>, options); }
     }
-    if (source['species']) { this.species = new fhir.CodeableConcept(source.species); }
+    if (source['species']) { this.species = new fhir.CodeableConcept(source.species, options); }
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -607,14 +607,14 @@ export class MedicinalProduct extends fhir.DomainResource {
   constructor(source:Partial<MedicinalProductArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
     this.resourceType = 'MedicinalProduct';
-    if (source['identifier']) { this.identifier = source.identifier.map((x) => new fhir.Identifier(x)); }
+    if (source['identifier']) { this.identifier = source.identifier.map((x) => new fhir.Identifier(x, options)); }
     else { this.identifier = []; }
-    if (source['type']) { this.type = new fhir.CodeableConcept(source.type); }
-    if (source['domain']) { this.domain = new fhir.Coding(source.domain); }
-    if (source['combinedPharmaceuticalDoseForm']) { this.combinedPharmaceuticalDoseForm = new fhir.CodeableConcept(source.combinedPharmaceuticalDoseForm); }
-    if (source['legalStatusOfSupply']) { this.legalStatusOfSupply = new fhir.CodeableConcept(source.legalStatusOfSupply); }
-    if (source['additionalMonitoringIndicator']) { this.additionalMonitoringIndicator = new fhir.CodeableConcept(source.additionalMonitoringIndicator); }
-    if (source['specialMeasures']) { this.specialMeasures = source.specialMeasures.map((x) => new fhir.FhirString({value: x})); }
+    if (source['type']) { this.type = new fhir.CodeableConcept(source.type, options); }
+    if (source['domain']) { this.domain = new fhir.Coding(source.domain, options); }
+    if (source['combinedPharmaceuticalDoseForm']) { this.combinedPharmaceuticalDoseForm = new fhir.CodeableConcept(source.combinedPharmaceuticalDoseForm, options); }
+    if (source['legalStatusOfSupply']) { this.legalStatusOfSupply = new fhir.CodeableConcept(source.legalStatusOfSupply, options); }
+    if (source['additionalMonitoringIndicator']) { this.additionalMonitoringIndicator = new fhir.CodeableConcept(source.additionalMonitoringIndicator, options); }
+    if (source['specialMeasures'] !== undefined) { this.specialMeasures = source.specialMeasures.map((x) => new fhir.FhirString({value: x}, options)); }
     else { this.specialMeasures = []; }
     if (source['_specialMeasures']) {
       source._specialMeasures.forEach((x,i) => {
@@ -622,30 +622,30 @@ export class MedicinalProduct extends fhir.DomainResource {
         else { if (x) { this.specialMeasures.push(new fhir.FhirString(x as Partial<fhir.FhirStringArgs>)); } }
       });
     }
-    if (source['paediatricUseIndicator']) { this.paediatricUseIndicator = new fhir.CodeableConcept(source.paediatricUseIndicator); }
-    if (source['productClassification']) { this.productClassification = source.productClassification.map((x) => new fhir.CodeableConcept(x)); }
+    if (source['paediatricUseIndicator']) { this.paediatricUseIndicator = new fhir.CodeableConcept(source.paediatricUseIndicator, options); }
+    if (source['productClassification']) { this.productClassification = source.productClassification.map((x) => new fhir.CodeableConcept(x, options)); }
     else { this.productClassification = []; }
-    if (source['marketingStatus']) { this.marketingStatus = source.marketingStatus.map((x) => new fhir.MarketingStatus(x)); }
+    if (source['marketingStatus']) { this.marketingStatus = source.marketingStatus.map((x) => new fhir.MarketingStatus(x, options)); }
     else { this.marketingStatus = []; }
-    if (source['pharmaceuticalProduct']) { this.pharmaceuticalProduct = source.pharmaceuticalProduct.map((x) => new fhir.Reference(x)); }
+    if (source['pharmaceuticalProduct']) { this.pharmaceuticalProduct = source.pharmaceuticalProduct.map((x) => new fhir.Reference(x, options)); }
     else { this.pharmaceuticalProduct = []; }
-    if (source['packagedMedicinalProduct']) { this.packagedMedicinalProduct = source.packagedMedicinalProduct.map((x) => new fhir.Reference(x)); }
+    if (source['packagedMedicinalProduct']) { this.packagedMedicinalProduct = source.packagedMedicinalProduct.map((x) => new fhir.Reference(x, options)); }
     else { this.packagedMedicinalProduct = []; }
-    if (source['attachedDocument']) { this.attachedDocument = source.attachedDocument.map((x) => new fhir.Reference(x)); }
+    if (source['attachedDocument']) { this.attachedDocument = source.attachedDocument.map((x) => new fhir.Reference(x, options)); }
     else { this.attachedDocument = []; }
-    if (source['masterFile']) { this.masterFile = source.masterFile.map((x) => new fhir.Reference(x)); }
+    if (source['masterFile']) { this.masterFile = source.masterFile.map((x) => new fhir.Reference(x, options)); }
     else { this.masterFile = []; }
-    if (source['contact']) { this.contact = source.contact.map((x) => new fhir.Reference(x)); }
+    if (source['contact']) { this.contact = source.contact.map((x) => new fhir.Reference(x, options)); }
     else { this.contact = []; }
-    if (source['clinicalTrial']) { this.clinicalTrial = source.clinicalTrial.map((x) => new fhir.Reference(x)); }
+    if (source['clinicalTrial']) { this.clinicalTrial = source.clinicalTrial.map((x) => new fhir.Reference(x, options)); }
     else { this.clinicalTrial = []; }
-    if (source['name']) { this.name = source.name.map((x) => new fhir.MedicinalProductName(x)); }
+    if (source['name']) { this.name = source.name.map((x) => new fhir.MedicinalProductName(x, options)); }
     else { this.name = []; }
-    if (source['crossReference']) { this.crossReference = source.crossReference.map((x) => new fhir.Identifier(x)); }
+    if (source['crossReference']) { this.crossReference = source.crossReference.map((x) => new fhir.Identifier(x, options)); }
     else { this.crossReference = []; }
-    if (source['manufacturingBusinessOperation']) { this.manufacturingBusinessOperation = source.manufacturingBusinessOperation.map((x) => new fhir.MedicinalProductManufacturingBusinessOperation(x)); }
+    if (source['manufacturingBusinessOperation']) { this.manufacturingBusinessOperation = source.manufacturingBusinessOperation.map((x) => new fhir.MedicinalProductManufacturingBusinessOperation(x, options)); }
     else { this.manufacturingBusinessOperation = []; }
-    if (source['specialDesignation']) { this.specialDesignation = source.specialDesignation.map((x) => new fhir.MedicinalProductSpecialDesignation(x)); }
+    if (source['specialDesignation']) { this.specialDesignation = source.specialDesignation.map((x) => new fhir.MedicinalProductSpecialDesignation(x, options)); }
     else { this.specialDesignation = []; }
   }
   /**

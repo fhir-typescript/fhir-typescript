@@ -76,11 +76,11 @@ export class BiologicallyDerivedProductCollection extends fhir.BackboneElement {
    */
   constructor(source:Partial<BiologicallyDerivedProductCollectionArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['collector']) { this.collector = new fhir.Reference(source.collector); }
-    if (source['source']) { this.source = new fhir.Reference(source.source); }
+    if (source['collector']) { this.collector = new fhir.Reference(source.collector, options); }
+    if (source['source']) { this.source = new fhir.Reference(source.source, options); }
     if (source['collected']) { this.collected = source.collected; }
-    else if (source['collectedDateTime']) { this.collected = new fhir.FhirDateTime({value: source.collectedDateTime}); }
-    else if (source['collectedPeriod']) { this.collected = new fhir.Period(source.collectedPeriod); }
+    else if (source['collectedDateTime'] !== undefined) { this.collected = new fhir.FhirDateTime({value: source.collectedDateTime}, options); }
+    else if (source['collectedPeriod']) { this.collected = new fhir.Period(source.collectedPeriod, options); }
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -161,16 +161,16 @@ export class BiologicallyDerivedProductProcessing extends fhir.BackboneElement {
    */
   constructor(source:Partial<BiologicallyDerivedProductProcessingArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['description']) { this.description = new fhir.FhirString({value: source.description}); }
+    if (source['description'] !== undefined) { this.description = new fhir.FhirString({value: source.description}, options); }
     if (source['_description']) {
       if (this.description) { this.description.addExtendedProperties(source._description!); }
-      else { this.description = new fhir.FhirString(source._description as Partial<fhir.FhirStringArgs>); }
+      else { this.description = new fhir.FhirString(source._description as Partial<fhir.FhirStringArgs>, options); }
     }
-    if (source['procedure']) { this.procedure = new fhir.CodeableConcept(source.procedure); }
-    if (source['additive']) { this.additive = new fhir.Reference(source.additive); }
+    if (source['procedure']) { this.procedure = new fhir.CodeableConcept(source.procedure, options); }
+    if (source['additive']) { this.additive = new fhir.Reference(source.additive, options); }
     if (source['time']) { this.time = source.time; }
-    else if (source['timeDateTime']) { this.time = new fhir.FhirDateTime({value: source.timeDateTime}); }
-    else if (source['timePeriod']) { this.time = new fhir.Period(source.timePeriod); }
+    else if (source['timeDateTime'] !== undefined) { this.time = new fhir.FhirDateTime({value: source.timeDateTime}, options); }
+    else if (source['timePeriod']) { this.time = new fhir.Period(source.timePeriod, options); }
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -236,14 +236,14 @@ export class BiologicallyDerivedProductManipulation extends fhir.BackboneElement
    */
   constructor(source:Partial<BiologicallyDerivedProductManipulationArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['description']) { this.description = new fhir.FhirString({value: source.description}); }
+    if (source['description'] !== undefined) { this.description = new fhir.FhirString({value: source.description}, options); }
     if (source['_description']) {
       if (this.description) { this.description.addExtendedProperties(source._description!); }
-      else { this.description = new fhir.FhirString(source._description as Partial<fhir.FhirStringArgs>); }
+      else { this.description = new fhir.FhirString(source._description as Partial<fhir.FhirStringArgs>, options); }
     }
     if (source['time']) { this.time = source.time; }
-    else if (source['timeDateTime']) { this.time = new fhir.FhirDateTime({value: source.timeDateTime}); }
-    else if (source['timePeriod']) { this.time = new fhir.Period(source.timePeriod); }
+    else if (source['timeDateTime'] !== undefined) { this.time = new fhir.FhirDateTime({value: source.timeDateTime}, options); }
+    else if (source['timePeriod']) { this.time = new fhir.Period(source.timePeriod, options); }
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -319,22 +319,22 @@ export class BiologicallyDerivedProductStorage extends fhir.BackboneElement {
    */
   constructor(source:Partial<BiologicallyDerivedProductStorageArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['description']) { this.description = new fhir.FhirString({value: source.description}); }
+    if (source['description'] !== undefined) { this.description = new fhir.FhirString({value: source.description}, options); }
     if (source['_description']) {
       if (this.description) { this.description.addExtendedProperties(source._description!); }
-      else { this.description = new fhir.FhirString(source._description as Partial<fhir.FhirStringArgs>); }
+      else { this.description = new fhir.FhirString(source._description as Partial<fhir.FhirStringArgs>, options); }
     }
-    if (source['temperature']) { this.temperature = new fhir.FhirDecimal({value: source.temperature}); }
+    if (source['temperature'] !== undefined) { this.temperature = new fhir.FhirDecimal({value: source.temperature}, options); }
     if (source['_temperature']) {
       if (this.temperature) { this.temperature.addExtendedProperties(source._temperature!); }
-      else { this.temperature = new fhir.FhirDecimal(source._temperature as Partial<fhir.FhirDecimalArgs>); }
+      else { this.temperature = new fhir.FhirDecimal(source._temperature as Partial<fhir.FhirDecimalArgs>, options); }
     }
-    if (source['scale']) { this.scale = new fhir.FhirCode<ProductStorageScaleCodeType>({value: source.scale}); }
+    if (source['scale'] !== undefined) { this.scale = new fhir.FhirCode<ProductStorageScaleCodeType>({value: source.scale}, options); }
     if (source['_scale']) {
       if (this.scale) { this.scale.addExtendedProperties(source._scale!); }
-      else { this.scale = new fhir.FhirCode<ProductStorageScaleCodeType>(source._scale as Partial<fhir.FhirCode>); }
+      else { this.scale = new fhir.FhirCode<ProductStorageScaleCodeType>(source._scale as Partial<fhir.FhirCode>, options); }
     }
-    if (source['duration']) { this.duration = new fhir.Period(source.duration); }
+    if (source['duration']) { this.duration = new fhir.Period(source.duration, options); }
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -478,33 +478,33 @@ export class BiologicallyDerivedProduct extends fhir.DomainResource {
   constructor(source:Partial<BiologicallyDerivedProductArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
     this.resourceType = 'BiologicallyDerivedProduct';
-    if (source['identifier']) { this.identifier = source.identifier.map((x) => new fhir.Identifier(x)); }
+    if (source['identifier']) { this.identifier = source.identifier.map((x) => new fhir.Identifier(x, options)); }
     else { this.identifier = []; }
-    if (source['productCategory']) { this.productCategory = new fhir.FhirCode<ProductCategoryCodeType>({value: source.productCategory}); }
+    if (source['productCategory'] !== undefined) { this.productCategory = new fhir.FhirCode<ProductCategoryCodeType>({value: source.productCategory}, options); }
     if (source['_productCategory']) {
       if (this.productCategory) { this.productCategory.addExtendedProperties(source._productCategory!); }
-      else { this.productCategory = new fhir.FhirCode<ProductCategoryCodeType>(source._productCategory as Partial<fhir.FhirCode>); }
+      else { this.productCategory = new fhir.FhirCode<ProductCategoryCodeType>(source._productCategory as Partial<fhir.FhirCode>, options); }
     }
-    if (source['productCode']) { this.productCode = new fhir.CodeableConcept(source.productCode); }
-    if (source['status']) { this.status = new fhir.FhirCode<ProductStatusCodeType>({value: source.status}); }
+    if (source['productCode']) { this.productCode = new fhir.CodeableConcept(source.productCode, options); }
+    if (source['status'] !== undefined) { this.status = new fhir.FhirCode<ProductStatusCodeType>({value: source.status}, options); }
     if (source['_status']) {
       if (this.status) { this.status.addExtendedProperties(source._status!); }
-      else { this.status = new fhir.FhirCode<ProductStatusCodeType>(source._status as Partial<fhir.FhirCode>); }
+      else { this.status = new fhir.FhirCode<ProductStatusCodeType>(source._status as Partial<fhir.FhirCode>, options); }
     }
-    if (source['request']) { this.request = source.request.map((x) => new fhir.Reference(x)); }
+    if (source['request']) { this.request = source.request.map((x) => new fhir.Reference(x, options)); }
     else { this.request = []; }
-    if (source['quantity']) { this.quantity = new fhir.FhirInteger({value: source.quantity}); }
+    if (source['quantity'] !== undefined) { this.quantity = new fhir.FhirInteger({value: source.quantity}, options); }
     if (source['_quantity']) {
       if (this.quantity) { this.quantity.addExtendedProperties(source._quantity!); }
-      else { this.quantity = new fhir.FhirInteger(source._quantity as Partial<fhir.FhirIntegerArgs>); }
+      else { this.quantity = new fhir.FhirInteger(source._quantity as Partial<fhir.FhirIntegerArgs>, options); }
     }
-    if (source['parent']) { this.parent = source.parent.map((x) => new fhir.Reference(x)); }
+    if (source['parent']) { this.parent = source.parent.map((x) => new fhir.Reference(x, options)); }
     else { this.parent = []; }
-    if (source['collection']) { this.collection = new fhir.BiologicallyDerivedProductCollection(source.collection); }
-    if (source['processing']) { this.processing = source.processing.map((x) => new fhir.BiologicallyDerivedProductProcessing(x)); }
+    if (source['collection']) { this.collection = new fhir.BiologicallyDerivedProductCollection(source.collection, options); }
+    if (source['processing']) { this.processing = source.processing.map((x) => new fhir.BiologicallyDerivedProductProcessing(x, options)); }
     else { this.processing = []; }
-    if (source['manipulation']) { this.manipulation = new fhir.BiologicallyDerivedProductManipulation(source.manipulation); }
-    if (source['storage']) { this.storage = source.storage.map((x) => new fhir.BiologicallyDerivedProductStorage(x)); }
+    if (source['manipulation']) { this.manipulation = new fhir.BiologicallyDerivedProductManipulation(source.manipulation, options); }
+    if (source['storage']) { this.storage = source.storage.map((x) => new fhir.BiologicallyDerivedProductStorage(x, options)); }
     else { this.storage = []; }
   }
   /**

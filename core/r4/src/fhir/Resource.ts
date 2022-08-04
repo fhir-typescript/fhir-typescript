@@ -85,17 +85,17 @@ export class Resource extends fhir.FhirBase {
   constructor(source:Partial<ResourceArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
     this.resourceType = 'Resource';
-    if (source['id']) { this.id = new fhir.FhirIdSimple({value: source.id}); }
-    if (source['meta']) { this.meta = new fhir.Meta(source.meta); }
-    if (source['implicitRules']) { this.implicitRules = new fhir.FhirUri({value: source.implicitRules}); }
+    if (source['id'] !== undefined) { this.id = new fhir.FhirIdSimple({value: source.id}, options); }
+    if (source['meta']) { this.meta = new fhir.Meta(source.meta, options); }
+    if (source['implicitRules'] !== undefined) { this.implicitRules = new fhir.FhirUri({value: source.implicitRules}, options); }
     if (source['_implicitRules']) {
       if (this.implicitRules) { this.implicitRules.addExtendedProperties(source._implicitRules!); }
-      else { this.implicitRules = new fhir.FhirUri(source._implicitRules as Partial<fhir.FhirUriArgs>); }
+      else { this.implicitRules = new fhir.FhirUri(source._implicitRules as Partial<fhir.FhirUriArgs>, options); }
     }
-    if (source['language']) { this.language = new fhir.FhirCode({value: source.language}); }
+    if (source['language'] !== undefined) { this.language = new fhir.FhirCode({value: source.language}, options); }
     if (source['_language']) {
       if (this.language) { this.language.addExtendedProperties(source._language!); }
-      else { this.language = new fhir.FhirCode(source._language as Partial<fhir.FhirCodeArgs>); }
+      else { this.language = new fhir.FhirCode(source._language as Partial<fhir.FhirCodeArgs>, options); }
     }
   }
   /**

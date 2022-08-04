@@ -97,14 +97,14 @@ export class DosageDoseAndRate extends fhir.FhirElement {
    */
   constructor(source:Partial<DosageDoseAndRateArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['type']) { this.type = new fhir.CodeableConcept(source.type); }
+    if (source['type']) { this.type = new fhir.CodeableConcept(source.type, options); }
     if (source['dose']) { this.dose = source.dose; }
-    else if (source['doseRange']) { this.dose = new fhir.Range(source.doseRange); }
-    else if (source['doseQuantity']) { this.dose = new fhir.Quantity(source.doseQuantity); }
+    else if (source['doseRange']) { this.dose = new fhir.Range(source.doseRange, options); }
+    else if (source['doseQuantity']) { this.dose = new fhir.Quantity(source.doseQuantity, options); }
     if (source['rate']) { this.rate = source.rate; }
-    else if (source['rateRatio']) { this.rate = new fhir.Ratio(source.rateRatio); }
-    else if (source['rateRange']) { this.rate = new fhir.Range(source.rateRange); }
-    else if (source['rateQuantity']) { this.rate = new fhir.Quantity(source.rateQuantity); }
+    else if (source['rateRatio']) { this.rate = new fhir.Ratio(source.rateRatio, options); }
+    else if (source['rateRange']) { this.rate = new fhir.Range(source.rateRange, options); }
+    else if (source['rateQuantity']) { this.rate = new fhir.Quantity(source.rateQuantity, options); }
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -265,35 +265,35 @@ export class Dosage extends fhir.BackboneElement {
    */
   constructor(source:Partial<DosageArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['sequence']) { this.sequence = new fhir.FhirInteger({value: source.sequence}); }
+    if (source['sequence'] !== undefined) { this.sequence = new fhir.FhirInteger({value: source.sequence}, options); }
     if (source['_sequence']) {
       if (this.sequence) { this.sequence.addExtendedProperties(source._sequence!); }
-      else { this.sequence = new fhir.FhirInteger(source._sequence as Partial<fhir.FhirIntegerArgs>); }
+      else { this.sequence = new fhir.FhirInteger(source._sequence as Partial<fhir.FhirIntegerArgs>, options); }
     }
-    if (source['text']) { this.text = new fhir.FhirString({value: source.text}); }
+    if (source['text'] !== undefined) { this.text = new fhir.FhirString({value: source.text}, options); }
     if (source['_text']) {
       if (this.text) { this.text.addExtendedProperties(source._text!); }
-      else { this.text = new fhir.FhirString(source._text as Partial<fhir.FhirStringArgs>); }
+      else { this.text = new fhir.FhirString(source._text as Partial<fhir.FhirStringArgs>, options); }
     }
-    if (source['additionalInstruction']) { this.additionalInstruction = source.additionalInstruction.map((x) => new fhir.CodeableConcept(x)); }
+    if (source['additionalInstruction']) { this.additionalInstruction = source.additionalInstruction.map((x) => new fhir.CodeableConcept(x, options)); }
     else { this.additionalInstruction = []; }
-    if (source['patientInstruction']) { this.patientInstruction = new fhir.FhirString({value: source.patientInstruction}); }
+    if (source['patientInstruction'] !== undefined) { this.patientInstruction = new fhir.FhirString({value: source.patientInstruction}, options); }
     if (source['_patientInstruction']) {
       if (this.patientInstruction) { this.patientInstruction.addExtendedProperties(source._patientInstruction!); }
-      else { this.patientInstruction = new fhir.FhirString(source._patientInstruction as Partial<fhir.FhirStringArgs>); }
+      else { this.patientInstruction = new fhir.FhirString(source._patientInstruction as Partial<fhir.FhirStringArgs>, options); }
     }
-    if (source['timing']) { this.timing = new fhir.Timing(source.timing); }
+    if (source['timing']) { this.timing = new fhir.Timing(source.timing, options); }
     if (source['asNeeded']) { this.asNeeded = source.asNeeded; }
-    else if (source['asNeededBoolean']) { this.asNeeded = new fhir.FhirBoolean({value: source.asNeededBoolean}); }
-    else if (source['asNeededCodeableConcept']) { this.asNeeded = new fhir.CodeableConcept(source.asNeededCodeableConcept); }
-    if (source['site']) { this.site = new fhir.CodeableConcept(source.site); }
-    if (source['route']) { this.route = new fhir.CodeableConcept(source.route); }
-    if (source['method']) { this.method = new fhir.CodeableConcept(source.method); }
-    if (source['doseAndRate']) { this.doseAndRate = source.doseAndRate.map((x) => new fhir.DosageDoseAndRate(x)); }
+    else if (source['asNeededBoolean'] !== undefined) { this.asNeeded = new fhir.FhirBoolean({value: source.asNeededBoolean}, options); }
+    else if (source['asNeededCodeableConcept']) { this.asNeeded = new fhir.CodeableConcept(source.asNeededCodeableConcept, options); }
+    if (source['site']) { this.site = new fhir.CodeableConcept(source.site, options); }
+    if (source['route']) { this.route = new fhir.CodeableConcept(source.route, options); }
+    if (source['method']) { this.method = new fhir.CodeableConcept(source.method, options); }
+    if (source['doseAndRate']) { this.doseAndRate = source.doseAndRate.map((x) => new fhir.DosageDoseAndRate(x, options)); }
     else { this.doseAndRate = []; }
-    if (source['maxDosePerPeriod']) { this.maxDosePerPeriod = new fhir.Ratio(source.maxDosePerPeriod); }
-    if (source['maxDosePerAdministration']) { this.maxDosePerAdministration = new fhir.Quantity(source.maxDosePerAdministration); }
-    if (source['maxDosePerLifetime']) { this.maxDosePerLifetime = new fhir.Quantity(source.maxDosePerLifetime); }
+    if (source['maxDosePerPeriod']) { this.maxDosePerPeriod = new fhir.Ratio(source.maxDosePerPeriod, options); }
+    if (source['maxDosePerAdministration']) { this.maxDosePerAdministration = new fhir.Quantity(source.maxDosePerAdministration, options); }
+    if (source['maxDosePerLifetime']) { this.maxDosePerLifetime = new fhir.Quantity(source.maxDosePerLifetime, options); }
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).

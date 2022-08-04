@@ -60,9 +60,9 @@ export class DetectedIssueEvidence extends fhir.BackboneElement {
    */
   constructor(source:Partial<DetectedIssueEvidenceArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['code']) { this.code = source.code.map((x) => new fhir.CodeableConcept(x)); }
+    if (source['code']) { this.code = source.code.map((x) => new fhir.CodeableConcept(x, options)); }
     else { this.code = []; }
-    if (source['detail']) { this.detail = source.detail.map((x) => new fhir.Reference(x)); }
+    if (source['detail']) { this.detail = source.detail.map((x) => new fhir.Reference(x, options)); }
     else { this.detail = []; }
   }
   /**
@@ -123,14 +123,14 @@ export class DetectedIssueMitigation extends fhir.BackboneElement {
    */
   constructor(source:Partial<DetectedIssueMitigationArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['action']) { this.action = new fhir.CodeableConcept(source.action); }
+    if (source['action']) { this.action = new fhir.CodeableConcept(source.action, options); }
     else { this.action = null; }
-    if (source['date']) { this.date = new fhir.FhirDateTime({value: source.date}); }
+    if (source['date'] !== undefined) { this.date = new fhir.FhirDateTime({value: source.date}, options); }
     if (source['_date']) {
       if (this.date) { this.date.addExtendedProperties(source._date!); }
-      else { this.date = new fhir.FhirDateTime(source._date as Partial<fhir.FhirDateTimeArgs>); }
+      else { this.date = new fhir.FhirDateTime(source._date as Partial<fhir.FhirDateTimeArgs>, options); }
     }
-    if (source['author']) { this.author = new fhir.Reference(source.author); }
+    if (source['author']) { this.author = new fhir.Reference(source.author, options); }
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -296,40 +296,40 @@ export class DetectedIssue extends fhir.DomainResource {
   constructor(source:Partial<DetectedIssueArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
     this.resourceType = 'DetectedIssue';
-    if (source['identifier']) { this.identifier = source.identifier.map((x) => new fhir.Identifier(x)); }
+    if (source['identifier']) { this.identifier = source.identifier.map((x) => new fhir.Identifier(x, options)); }
     else { this.identifier = []; }
-    if (source['status']) { this.status = new fhir.FhirCode<ObservationStatusCodeType>({value: source.status}); }
+    if (source['status'] !== undefined) { this.status = new fhir.FhirCode<ObservationStatusCodeType>({value: source.status}, options); }
     else { this.status = null; }
     if (source['_status']) {
       if (this.status) { this.status.addExtendedProperties(source._status!); }
-      else { this.status = new fhir.FhirCode<ObservationStatusCodeType>(source._status as Partial<fhir.FhirCode>); }
+      else { this.status = new fhir.FhirCode<ObservationStatusCodeType>(source._status as Partial<fhir.FhirCode>, options); }
     }
-    if (source['code']) { this.code = new fhir.CodeableConcept(source.code); }
-    if (source['severity']) { this.severity = new fhir.FhirCode<DetectedissueSeverityCodeType>({value: source.severity}); }
+    if (source['code']) { this.code = new fhir.CodeableConcept(source.code, options); }
+    if (source['severity'] !== undefined) { this.severity = new fhir.FhirCode<DetectedissueSeverityCodeType>({value: source.severity}, options); }
     if (source['_severity']) {
       if (this.severity) { this.severity.addExtendedProperties(source._severity!); }
-      else { this.severity = new fhir.FhirCode<DetectedissueSeverityCodeType>(source._severity as Partial<fhir.FhirCode>); }
+      else { this.severity = new fhir.FhirCode<DetectedissueSeverityCodeType>(source._severity as Partial<fhir.FhirCode>, options); }
     }
-    if (source['patient']) { this.patient = new fhir.Reference(source.patient); }
+    if (source['patient']) { this.patient = new fhir.Reference(source.patient, options); }
     if (source['identified']) { this.identified = source.identified; }
-    else if (source['identifiedDateTime']) { this.identified = new fhir.FhirDateTime({value: source.identifiedDateTime}); }
-    else if (source['identifiedPeriod']) { this.identified = new fhir.Period(source.identifiedPeriod); }
-    if (source['author']) { this.author = new fhir.Reference(source.author); }
-    if (source['implicated']) { this.implicated = source.implicated.map((x) => new fhir.Reference(x)); }
+    else if (source['identifiedDateTime'] !== undefined) { this.identified = new fhir.FhirDateTime({value: source.identifiedDateTime}, options); }
+    else if (source['identifiedPeriod']) { this.identified = new fhir.Period(source.identifiedPeriod, options); }
+    if (source['author']) { this.author = new fhir.Reference(source.author, options); }
+    if (source['implicated']) { this.implicated = source.implicated.map((x) => new fhir.Reference(x, options)); }
     else { this.implicated = []; }
-    if (source['evidence']) { this.evidence = source.evidence.map((x) => new fhir.DetectedIssueEvidence(x)); }
+    if (source['evidence']) { this.evidence = source.evidence.map((x) => new fhir.DetectedIssueEvidence(x, options)); }
     else { this.evidence = []; }
-    if (source['detail']) { this.detail = new fhir.FhirString({value: source.detail}); }
+    if (source['detail'] !== undefined) { this.detail = new fhir.FhirString({value: source.detail}, options); }
     if (source['_detail']) {
       if (this.detail) { this.detail.addExtendedProperties(source._detail!); }
-      else { this.detail = new fhir.FhirString(source._detail as Partial<fhir.FhirStringArgs>); }
+      else { this.detail = new fhir.FhirString(source._detail as Partial<fhir.FhirStringArgs>, options); }
     }
-    if (source['reference']) { this.reference = new fhir.FhirUri({value: source.reference}); }
+    if (source['reference'] !== undefined) { this.reference = new fhir.FhirUri({value: source.reference}, options); }
     if (source['_reference']) {
       if (this.reference) { this.reference.addExtendedProperties(source._reference!); }
-      else { this.reference = new fhir.FhirUri(source._reference as Partial<fhir.FhirUriArgs>); }
+      else { this.reference = new fhir.FhirUri(source._reference as Partial<fhir.FhirUriArgs>, options); }
     }
-    if (source['mitigation']) { this.mitigation = source.mitigation.map((x) => new fhir.DetectedIssueMitigation(x)); }
+    if (source['mitigation']) { this.mitigation = source.mitigation.map((x) => new fhir.DetectedIssueMitigation(x, options)); }
     else { this.mitigation = []; }
   }
   /**

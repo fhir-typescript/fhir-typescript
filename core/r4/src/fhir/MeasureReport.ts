@@ -68,13 +68,13 @@ export class MeasureReportGroupPopulation extends fhir.BackboneElement {
    */
   constructor(source:Partial<MeasureReportGroupPopulationArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['code']) { this.code = new fhir.CodeableConcept(source.code); }
-    if (source['count']) { this.count = new fhir.FhirInteger({value: source.count}); }
+    if (source['code']) { this.code = new fhir.CodeableConcept(source.code, options); }
+    if (source['count'] !== undefined) { this.count = new fhir.FhirInteger({value: source.count}, options); }
     if (source['_count']) {
       if (this.count) { this.count.addExtendedProperties(source._count!); }
-      else { this.count = new fhir.FhirInteger(source._count as Partial<fhir.FhirIntegerArgs>); }
+      else { this.count = new fhir.FhirInteger(source._count as Partial<fhir.FhirIntegerArgs>, options); }
     }
-    if (source['subjectResults']) { this.subjectResults = new fhir.Reference(source.subjectResults); }
+    if (source['subjectResults']) { this.subjectResults = new fhir.Reference(source.subjectResults, options); }
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -123,9 +123,9 @@ export class MeasureReportGroupStratifierStratumComponent extends fhir.BackboneE
    */
   constructor(source:Partial<MeasureReportGroupStratifierStratumComponentArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['code']) { this.code = new fhir.CodeableConcept(source.code); }
+    if (source['code']) { this.code = new fhir.CodeableConcept(source.code, options); }
     else { this.code = null; }
-    if (source['value']) { this.value = new fhir.CodeableConcept(source.value); }
+    if (source['value']) { this.value = new fhir.CodeableConcept(source.value, options); }
     else { this.value = null; }
   }
   /**
@@ -186,13 +186,13 @@ export class MeasureReportGroupStratifierStratumPopulation extends fhir.Backbone
    */
   constructor(source:Partial<MeasureReportGroupStratifierStratumPopulationArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['code']) { this.code = new fhir.CodeableConcept(source.code); }
-    if (source['count']) { this.count = new fhir.FhirInteger({value: source.count}); }
+    if (source['code']) { this.code = new fhir.CodeableConcept(source.code, options); }
+    if (source['count'] !== undefined) { this.count = new fhir.FhirInteger({value: source.count}, options); }
     if (source['_count']) {
       if (this.count) { this.count.addExtendedProperties(source._count!); }
-      else { this.count = new fhir.FhirInteger(source._count as Partial<fhir.FhirIntegerArgs>); }
+      else { this.count = new fhir.FhirInteger(source._count as Partial<fhir.FhirIntegerArgs>, options); }
     }
-    if (source['subjectResults']) { this.subjectResults = new fhir.Reference(source.subjectResults); }
+    if (source['subjectResults']) { this.subjectResults = new fhir.Reference(source.subjectResults, options); }
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -257,12 +257,12 @@ export class MeasureReportGroupStratifierStratum extends fhir.BackboneElement {
    */
   constructor(source:Partial<MeasureReportGroupStratifierStratumArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['value']) { this.value = new fhir.CodeableConcept(source.value); }
-    if (source['component']) { this.component = source.component.map((x) => new fhir.MeasureReportGroupStratifierStratumComponent(x)); }
+    if (source['value']) { this.value = new fhir.CodeableConcept(source.value, options); }
+    if (source['component']) { this.component = source.component.map((x) => new fhir.MeasureReportGroupStratifierStratumComponent(x, options)); }
     else { this.component = []; }
-    if (source['population']) { this.population = source.population.map((x) => new fhir.MeasureReportGroupStratifierStratumPopulation(x)); }
+    if (source['population']) { this.population = source.population.map((x) => new fhir.MeasureReportGroupStratifierStratumPopulation(x, options)); }
     else { this.population = []; }
-    if (source['measureScore']) { this.measureScore = new fhir.Quantity(source.measureScore); }
+    if (source['measureScore']) { this.measureScore = new fhir.Quantity(source.measureScore, options); }
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -312,9 +312,9 @@ export class MeasureReportGroupStratifier extends fhir.BackboneElement {
    */
   constructor(source:Partial<MeasureReportGroupStratifierArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['code']) { this.code = source.code.map((x) => new fhir.CodeableConcept(x)); }
+    if (source['code']) { this.code = source.code.map((x) => new fhir.CodeableConcept(x, options)); }
     else { this.code = []; }
-    if (source['stratum']) { this.stratum = source.stratum.map((x) => new fhir.MeasureReportGroupStratifierStratum(x)); }
+    if (source['stratum']) { this.stratum = source.stratum.map((x) => new fhir.MeasureReportGroupStratifierStratum(x, options)); }
     else { this.stratum = []; }
   }
   /**
@@ -379,11 +379,11 @@ export class MeasureReportGroup extends fhir.BackboneElement {
    */
   constructor(source:Partial<MeasureReportGroupArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['code']) { this.code = new fhir.CodeableConcept(source.code); }
-    if (source['population']) { this.population = source.population.map((x) => new fhir.MeasureReportGroupPopulation(x)); }
+    if (source['code']) { this.code = new fhir.CodeableConcept(source.code, options); }
+    if (source['population']) { this.population = source.population.map((x) => new fhir.MeasureReportGroupPopulation(x, options)); }
     else { this.population = []; }
-    if (source['measureScore']) { this.measureScore = new fhir.Quantity(source.measureScore); }
-    if (source['stratifier']) { this.stratifier = source.stratifier.map((x) => new fhir.MeasureReportGroupStratifier(x)); }
+    if (source['measureScore']) { this.measureScore = new fhir.Quantity(source.measureScore, options); }
+    if (source['stratifier']) { this.stratifier = source.stratifier.map((x) => new fhir.MeasureReportGroupStratifier(x, options)); }
     else { this.stratifier = []; }
   }
   /**
@@ -531,39 +531,39 @@ export class MeasureReport extends fhir.DomainResource {
   constructor(source:Partial<MeasureReportArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
     this.resourceType = 'MeasureReport';
-    if (source['identifier']) { this.identifier = source.identifier.map((x) => new fhir.Identifier(x)); }
+    if (source['identifier']) { this.identifier = source.identifier.map((x) => new fhir.Identifier(x, options)); }
     else { this.identifier = []; }
-    if (source['status']) { this.status = new fhir.FhirCode<MeasureReportStatusCodeType>({value: source.status}); }
+    if (source['status'] !== undefined) { this.status = new fhir.FhirCode<MeasureReportStatusCodeType>({value: source.status}, options); }
     else { this.status = null; }
     if (source['_status']) {
       if (this.status) { this.status.addExtendedProperties(source._status!); }
-      else { this.status = new fhir.FhirCode<MeasureReportStatusCodeType>(source._status as Partial<fhir.FhirCode>); }
+      else { this.status = new fhir.FhirCode<MeasureReportStatusCodeType>(source._status as Partial<fhir.FhirCode>, options); }
     }
-    if (source['type']) { this.type = new fhir.FhirCode<MeasureReportTypeCodeType>({value: source.type}); }
+    if (source['type'] !== undefined) { this.type = new fhir.FhirCode<MeasureReportTypeCodeType>({value: source.type}, options); }
     else { this.type = null; }
     if (source['_type']) {
       if (this.type) { this.type.addExtendedProperties(source._type!); }
-      else { this.type = new fhir.FhirCode<MeasureReportTypeCodeType>(source._type as Partial<fhir.FhirCode>); }
+      else { this.type = new fhir.FhirCode<MeasureReportTypeCodeType>(source._type as Partial<fhir.FhirCode>, options); }
     }
-    if (source['measure']) { this.measure = new fhir.FhirCanonical({value: source.measure}); }
+    if (source['measure'] !== undefined) { this.measure = new fhir.FhirCanonical({value: source.measure}, options); }
     else { this.measure = null; }
     if (source['_measure']) {
       if (this.measure) { this.measure.addExtendedProperties(source._measure!); }
-      else { this.measure = new fhir.FhirCanonical(source._measure as Partial<fhir.FhirCanonicalArgs>); }
+      else { this.measure = new fhir.FhirCanonical(source._measure as Partial<fhir.FhirCanonicalArgs>, options); }
     }
-    if (source['subject']) { this.subject = new fhir.Reference(source.subject); }
-    if (source['date']) { this.date = new fhir.FhirDateTime({value: source.date}); }
+    if (source['subject']) { this.subject = new fhir.Reference(source.subject, options); }
+    if (source['date'] !== undefined) { this.date = new fhir.FhirDateTime({value: source.date}, options); }
     if (source['_date']) {
       if (this.date) { this.date.addExtendedProperties(source._date!); }
-      else { this.date = new fhir.FhirDateTime(source._date as Partial<fhir.FhirDateTimeArgs>); }
+      else { this.date = new fhir.FhirDateTime(source._date as Partial<fhir.FhirDateTimeArgs>, options); }
     }
-    if (source['reporter']) { this.reporter = new fhir.Reference(source.reporter); }
-    if (source['period']) { this.period = new fhir.Period(source.period); }
+    if (source['reporter']) { this.reporter = new fhir.Reference(source.reporter, options); }
+    if (source['period']) { this.period = new fhir.Period(source.period, options); }
     else { this.period = null; }
-    if (source['improvementNotation']) { this.improvementNotation = new fhir.CodeableConcept(source.improvementNotation); }
-    if (source['group']) { this.group = source.group.map((x) => new fhir.MeasureReportGroup(x)); }
+    if (source['improvementNotation']) { this.improvementNotation = new fhir.CodeableConcept(source.improvementNotation, options); }
+    if (source['group']) { this.group = source.group.map((x) => new fhir.MeasureReportGroup(x, options)); }
     else { this.group = []; }
-    if (source['evaluatedResource']) { this.evaluatedResource = source.evaluatedResource.map((x) => new fhir.Reference(x)); }
+    if (source['evaluatedResource']) { this.evaluatedResource = source.evaluatedResource.map((x) => new fhir.Reference(x, options)); }
     else { this.evaluatedResource = []; }
   }
   /**

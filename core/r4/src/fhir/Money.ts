@@ -52,15 +52,15 @@ export class Money extends fhir.FhirElement {
    */
   constructor(source:Partial<MoneyArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['value']) { this.value = new fhir.FhirDecimal({value: source.value}); }
+    if (source['value'] !== undefined) { this.value = new fhir.FhirDecimal({value: source.value}, options); }
     if (source['_value']) {
       if (this.value) { this.value.addExtendedProperties(source._value!); }
-      else { this.value = new fhir.FhirDecimal(source._value as Partial<fhir.FhirDecimalArgs>); }
+      else { this.value = new fhir.FhirDecimal(source._value as Partial<fhir.FhirDecimalArgs>, options); }
     }
-    if (source['currency']) { this.currency = new fhir.FhirCode({value: source.currency}); }
+    if (source['currency'] !== undefined) { this.currency = new fhir.FhirCode({value: source.currency}, options); }
     if (source['_currency']) {
       if (this.currency) { this.currency.addExtendedProperties(source._currency!); }
-      else { this.currency = new fhir.FhirCode(source._currency as Partial<fhir.FhirCodeArgs>); }
+      else { this.currency = new fhir.FhirCode(source._currency as Partial<fhir.FhirCodeArgs>, options); }
     }
   }
   /**

@@ -76,22 +76,22 @@ export class TestReportParticipant extends fhir.BackboneElement {
    */
   constructor(source:Partial<TestReportParticipantArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['type']) { this.type = new fhir.FhirCode<ReportParticipantTypeCodeType>({value: source.type}); }
+    if (source['type'] !== undefined) { this.type = new fhir.FhirCode<ReportParticipantTypeCodeType>({value: source.type}, options); }
     else { this.type = null; }
     if (source['_type']) {
       if (this.type) { this.type.addExtendedProperties(source._type!); }
-      else { this.type = new fhir.FhirCode<ReportParticipantTypeCodeType>(source._type as Partial<fhir.FhirCode>); }
+      else { this.type = new fhir.FhirCode<ReportParticipantTypeCodeType>(source._type as Partial<fhir.FhirCode>, options); }
     }
-    if (source['uri']) { this.uri = new fhir.FhirUri({value: source.uri}); }
+    if (source['uri'] !== undefined) { this.uri = new fhir.FhirUri({value: source.uri}, options); }
     else { this.uri = null; }
     if (source['_uri']) {
       if (this.uri) { this.uri.addExtendedProperties(source._uri!); }
-      else { this.uri = new fhir.FhirUri(source._uri as Partial<fhir.FhirUriArgs>); }
+      else { this.uri = new fhir.FhirUri(source._uri as Partial<fhir.FhirUriArgs>, options); }
     }
-    if (source['display']) { this.display = new fhir.FhirString({value: source.display}); }
+    if (source['display'] !== undefined) { this.display = new fhir.FhirString({value: source.display}, options); }
     if (source['_display']) {
       if (this.display) { this.display.addExtendedProperties(source._display!); }
-      else { this.display = new fhir.FhirString(source._display as Partial<fhir.FhirStringArgs>); }
+      else { this.display = new fhir.FhirString(source._display as Partial<fhir.FhirStringArgs>, options); }
     }
   }
   /**
@@ -161,21 +161,21 @@ export class TestReportSetupActionOperation extends fhir.BackboneElement {
    */
   constructor(source:Partial<TestReportSetupActionOperationArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['result']) { this.result = new fhir.FhirCode<ReportActionResultCodeType>({value: source.result}); }
+    if (source['result'] !== undefined) { this.result = new fhir.FhirCode<ReportActionResultCodeType>({value: source.result}, options); }
     else { this.result = null; }
     if (source['_result']) {
       if (this.result) { this.result.addExtendedProperties(source._result!); }
-      else { this.result = new fhir.FhirCode<ReportActionResultCodeType>(source._result as Partial<fhir.FhirCode>); }
+      else { this.result = new fhir.FhirCode<ReportActionResultCodeType>(source._result as Partial<fhir.FhirCode>, options); }
     }
-    if (source['message']) { this.message = new fhir.FhirMarkdown({value: source.message}); }
+    if (source['message'] !== undefined) { this.message = new fhir.FhirMarkdown({value: source.message}, options); }
     if (source['_message']) {
       if (this.message) { this.message.addExtendedProperties(source._message!); }
-      else { this.message = new fhir.FhirMarkdown(source._message as Partial<fhir.FhirMarkdownArgs>); }
+      else { this.message = new fhir.FhirMarkdown(source._message as Partial<fhir.FhirMarkdownArgs>, options); }
     }
-    if (source['detail']) { this.detail = new fhir.FhirUri({value: source.detail}); }
+    if (source['detail'] !== undefined) { this.detail = new fhir.FhirUri({value: source.detail}, options); }
     if (source['_detail']) {
       if (this.detail) { this.detail.addExtendedProperties(source._detail!); }
-      else { this.detail = new fhir.FhirUri(source._detail as Partial<fhir.FhirUriArgs>); }
+      else { this.detail = new fhir.FhirUri(source._detail as Partial<fhir.FhirUriArgs>, options); }
     }
   }
   /**
@@ -245,21 +245,21 @@ export class TestReportSetupActionAssert extends fhir.BackboneElement {
    */
   constructor(source:Partial<TestReportSetupActionAssertArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['result']) { this.result = new fhir.FhirCode<ReportActionResultCodeType>({value: source.result}); }
+    if (source['result'] !== undefined) { this.result = new fhir.FhirCode<ReportActionResultCodeType>({value: source.result}, options); }
     else { this.result = null; }
     if (source['_result']) {
       if (this.result) { this.result.addExtendedProperties(source._result!); }
-      else { this.result = new fhir.FhirCode<ReportActionResultCodeType>(source._result as Partial<fhir.FhirCode>); }
+      else { this.result = new fhir.FhirCode<ReportActionResultCodeType>(source._result as Partial<fhir.FhirCode>, options); }
     }
-    if (source['message']) { this.message = new fhir.FhirMarkdown({value: source.message}); }
+    if (source['message'] !== undefined) { this.message = new fhir.FhirMarkdown({value: source.message}, options); }
     if (source['_message']) {
       if (this.message) { this.message.addExtendedProperties(source._message!); }
-      else { this.message = new fhir.FhirMarkdown(source._message as Partial<fhir.FhirMarkdownArgs>); }
+      else { this.message = new fhir.FhirMarkdown(source._message as Partial<fhir.FhirMarkdownArgs>, options); }
     }
-    if (source['detail']) { this.detail = new fhir.FhirString({value: source.detail}); }
+    if (source['detail'] !== undefined) { this.detail = new fhir.FhirString({value: source.detail}, options); }
     if (source['_detail']) {
       if (this.detail) { this.detail.addExtendedProperties(source._detail!); }
-      else { this.detail = new fhir.FhirString(source._detail as Partial<fhir.FhirStringArgs>); }
+      else { this.detail = new fhir.FhirString(source._detail as Partial<fhir.FhirStringArgs>, options); }
     }
   }
   /**
@@ -309,8 +309,8 @@ export class TestReportSetupAction extends fhir.BackboneElement {
    */
   constructor(source:Partial<TestReportSetupActionArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['operation']) { this.operation = new fhir.TestReportSetupActionOperation(source.operation); }
-    if (source['assert']) { this.assert = new fhir.TestReportSetupActionAssert(source.assert); }
+    if (source['operation']) { this.operation = new fhir.TestReportSetupActionOperation(source.operation, options); }
+    if (source['assert']) { this.assert = new fhir.TestReportSetupActionAssert(source.assert, options); }
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -350,7 +350,7 @@ export class TestReportSetup extends fhir.BackboneElement {
    */
   constructor(source:Partial<TestReportSetupArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['action']) { this.action = source.action.map((x) => new fhir.TestReportSetupAction(x)); }
+    if (source['action']) { this.action = source.action.map((x) => new fhir.TestReportSetupAction(x, options)); }
     else { this.action = []; }
   }
   /**
@@ -398,8 +398,8 @@ export class TestReportTestAction extends fhir.BackboneElement {
    */
   constructor(source:Partial<TestReportTestActionArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['operation']) { this.operation = new fhir.TestReportSetupActionOperation(source.operation); }
-    if (source['assert']) { this.assert = new fhir.TestReportSetupActionAssert(source.assert); }
+    if (source['operation']) { this.operation = new fhir.TestReportSetupActionOperation(source.operation, options); }
+    if (source['assert']) { this.assert = new fhir.TestReportSetupActionAssert(source.assert, options); }
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -463,17 +463,17 @@ export class TestReportTest extends fhir.BackboneElement {
    */
   constructor(source:Partial<TestReportTestArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['name']) { this.name = new fhir.FhirString({value: source.name}); }
+    if (source['name'] !== undefined) { this.name = new fhir.FhirString({value: source.name}, options); }
     if (source['_name']) {
       if (this.name) { this.name.addExtendedProperties(source._name!); }
-      else { this.name = new fhir.FhirString(source._name as Partial<fhir.FhirStringArgs>); }
+      else { this.name = new fhir.FhirString(source._name as Partial<fhir.FhirStringArgs>, options); }
     }
-    if (source['description']) { this.description = new fhir.FhirString({value: source.description}); }
+    if (source['description'] !== undefined) { this.description = new fhir.FhirString({value: source.description}, options); }
     if (source['_description']) {
       if (this.description) { this.description.addExtendedProperties(source._description!); }
-      else { this.description = new fhir.FhirString(source._description as Partial<fhir.FhirStringArgs>); }
+      else { this.description = new fhir.FhirString(source._description as Partial<fhir.FhirStringArgs>, options); }
     }
-    if (source['action']) { this.action = source.action.map((x) => new fhir.TestReportTestAction(x)); }
+    if (source['action']) { this.action = source.action.map((x) => new fhir.TestReportTestAction(x, options)); }
     else { this.action = []; }
   }
   /**
@@ -515,7 +515,7 @@ export class TestReportTeardownAction extends fhir.BackboneElement {
    */
   constructor(source:Partial<TestReportTeardownActionArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['operation']) { this.operation = new fhir.TestReportSetupActionOperation(source.operation); }
+    if (source['operation']) { this.operation = new fhir.TestReportSetupActionOperation(source.operation, options); }
     else { this.operation = null; }
   }
   /**
@@ -555,7 +555,7 @@ export class TestReportTeardown extends fhir.BackboneElement {
    */
   constructor(source:Partial<TestReportTeardownArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['action']) { this.action = source.action.map((x) => new fhir.TestReportTeardownAction(x)); }
+    if (source['action']) { this.action = source.action.map((x) => new fhir.TestReportTeardownAction(x, options)); }
     else { this.action = []; }
   }
   /**
@@ -718,47 +718,47 @@ export class TestReport extends fhir.DomainResource {
   constructor(source:Partial<TestReportArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
     this.resourceType = 'TestReport';
-    if (source['identifier']) { this.identifier = new fhir.Identifier(source.identifier); }
-    if (source['name']) { this.name = new fhir.FhirString({value: source.name}); }
+    if (source['identifier']) { this.identifier = new fhir.Identifier(source.identifier, options); }
+    if (source['name'] !== undefined) { this.name = new fhir.FhirString({value: source.name}, options); }
     if (source['_name']) {
       if (this.name) { this.name.addExtendedProperties(source._name!); }
-      else { this.name = new fhir.FhirString(source._name as Partial<fhir.FhirStringArgs>); }
+      else { this.name = new fhir.FhirString(source._name as Partial<fhir.FhirStringArgs>, options); }
     }
-    if (source['status']) { this.status = new fhir.FhirCode<ReportStatusCodeType>({value: source.status}); }
+    if (source['status'] !== undefined) { this.status = new fhir.FhirCode<ReportStatusCodeType>({value: source.status}, options); }
     else { this.status = null; }
     if (source['_status']) {
       if (this.status) { this.status.addExtendedProperties(source._status!); }
-      else { this.status = new fhir.FhirCode<ReportStatusCodeType>(source._status as Partial<fhir.FhirCode>); }
+      else { this.status = new fhir.FhirCode<ReportStatusCodeType>(source._status as Partial<fhir.FhirCode>, options); }
     }
-    if (source['testScript']) { this.testScript = new fhir.Reference(source.testScript); }
+    if (source['testScript']) { this.testScript = new fhir.Reference(source.testScript, options); }
     else { this.testScript = null; }
-    if (source['result']) { this.result = new fhir.FhirCode<ReportResultCodeType>({value: source.result}); }
+    if (source['result'] !== undefined) { this.result = new fhir.FhirCode<ReportResultCodeType>({value: source.result}, options); }
     else { this.result = null; }
     if (source['_result']) {
       if (this.result) { this.result.addExtendedProperties(source._result!); }
-      else { this.result = new fhir.FhirCode<ReportResultCodeType>(source._result as Partial<fhir.FhirCode>); }
+      else { this.result = new fhir.FhirCode<ReportResultCodeType>(source._result as Partial<fhir.FhirCode>, options); }
     }
-    if (source['score']) { this.score = new fhir.FhirDecimal({value: source.score}); }
+    if (source['score'] !== undefined) { this.score = new fhir.FhirDecimal({value: source.score}, options); }
     if (source['_score']) {
       if (this.score) { this.score.addExtendedProperties(source._score!); }
-      else { this.score = new fhir.FhirDecimal(source._score as Partial<fhir.FhirDecimalArgs>); }
+      else { this.score = new fhir.FhirDecimal(source._score as Partial<fhir.FhirDecimalArgs>, options); }
     }
-    if (source['tester']) { this.tester = new fhir.FhirString({value: source.tester}); }
+    if (source['tester'] !== undefined) { this.tester = new fhir.FhirString({value: source.tester}, options); }
     if (source['_tester']) {
       if (this.tester) { this.tester.addExtendedProperties(source._tester!); }
-      else { this.tester = new fhir.FhirString(source._tester as Partial<fhir.FhirStringArgs>); }
+      else { this.tester = new fhir.FhirString(source._tester as Partial<fhir.FhirStringArgs>, options); }
     }
-    if (source['issued']) { this.issued = new fhir.FhirDateTime({value: source.issued}); }
+    if (source['issued'] !== undefined) { this.issued = new fhir.FhirDateTime({value: source.issued}, options); }
     if (source['_issued']) {
       if (this.issued) { this.issued.addExtendedProperties(source._issued!); }
-      else { this.issued = new fhir.FhirDateTime(source._issued as Partial<fhir.FhirDateTimeArgs>); }
+      else { this.issued = new fhir.FhirDateTime(source._issued as Partial<fhir.FhirDateTimeArgs>, options); }
     }
-    if (source['participant']) { this.participant = source.participant.map((x) => new fhir.TestReportParticipant(x)); }
+    if (source['participant']) { this.participant = source.participant.map((x) => new fhir.TestReportParticipant(x, options)); }
     else { this.participant = []; }
-    if (source['setup']) { this.setup = new fhir.TestReportSetup(source.setup); }
-    if (source['test']) { this.test = source.test.map((x) => new fhir.TestReportTest(x)); }
+    if (source['setup']) { this.setup = new fhir.TestReportSetup(source.setup, options); }
+    if (source['test']) { this.test = source.test.map((x) => new fhir.TestReportTest(x, options)); }
     else { this.test = []; }
-    if (source['teardown']) { this.teardown = new fhir.TestReportTeardown(source.teardown); }
+    if (source['teardown']) { this.teardown = new fhir.TestReportTeardown(source.teardown, options); }
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).

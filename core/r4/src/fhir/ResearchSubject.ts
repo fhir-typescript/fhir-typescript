@@ -113,30 +113,30 @@ export class ResearchSubject extends fhir.DomainResource {
   constructor(source:Partial<ResearchSubjectArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
     this.resourceType = 'ResearchSubject';
-    if (source['identifier']) { this.identifier = source.identifier.map((x) => new fhir.Identifier(x)); }
+    if (source['identifier']) { this.identifier = source.identifier.map((x) => new fhir.Identifier(x, options)); }
     else { this.identifier = []; }
-    if (source['status']) { this.status = new fhir.FhirCode<ResearchSubjectStatusCodeType>({value: source.status}); }
+    if (source['status'] !== undefined) { this.status = new fhir.FhirCode<ResearchSubjectStatusCodeType>({value: source.status}, options); }
     else { this.status = null; }
     if (source['_status']) {
       if (this.status) { this.status.addExtendedProperties(source._status!); }
-      else { this.status = new fhir.FhirCode<ResearchSubjectStatusCodeType>(source._status as Partial<fhir.FhirCode>); }
+      else { this.status = new fhir.FhirCode<ResearchSubjectStatusCodeType>(source._status as Partial<fhir.FhirCode>, options); }
     }
-    if (source['period']) { this.period = new fhir.Period(source.period); }
-    if (source['study']) { this.study = new fhir.Reference(source.study); }
+    if (source['period']) { this.period = new fhir.Period(source.period, options); }
+    if (source['study']) { this.study = new fhir.Reference(source.study, options); }
     else { this.study = null; }
-    if (source['individual']) { this.individual = new fhir.Reference(source.individual); }
+    if (source['individual']) { this.individual = new fhir.Reference(source.individual, options); }
     else { this.individual = null; }
-    if (source['assignedArm']) { this.assignedArm = new fhir.FhirString({value: source.assignedArm}); }
+    if (source['assignedArm'] !== undefined) { this.assignedArm = new fhir.FhirString({value: source.assignedArm}, options); }
     if (source['_assignedArm']) {
       if (this.assignedArm) { this.assignedArm.addExtendedProperties(source._assignedArm!); }
-      else { this.assignedArm = new fhir.FhirString(source._assignedArm as Partial<fhir.FhirStringArgs>); }
+      else { this.assignedArm = new fhir.FhirString(source._assignedArm as Partial<fhir.FhirStringArgs>, options); }
     }
-    if (source['actualArm']) { this.actualArm = new fhir.FhirString({value: source.actualArm}); }
+    if (source['actualArm'] !== undefined) { this.actualArm = new fhir.FhirString({value: source.actualArm}, options); }
     if (source['_actualArm']) {
       if (this.actualArm) { this.actualArm.addExtendedProperties(source._actualArm!); }
-      else { this.actualArm = new fhir.FhirString(source._actualArm as Partial<fhir.FhirStringArgs>); }
+      else { this.actualArm = new fhir.FhirString(source._actualArm as Partial<fhir.FhirStringArgs>, options); }
     }
-    if (source['consent']) { this.consent = new fhir.Reference(source.consent); }
+    if (source['consent']) { this.consent = new fhir.Reference(source.consent, options); }
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).

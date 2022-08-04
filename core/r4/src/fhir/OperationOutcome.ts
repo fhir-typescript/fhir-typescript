@@ -104,25 +104,25 @@ export class OperationOutcomeIssue extends fhir.BackboneElement {
    */
   constructor(source:Partial<OperationOutcomeIssueArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['severity']) { this.severity = new fhir.FhirCode<IssueSeverityCodeType>({value: source.severity}); }
+    if (source['severity'] !== undefined) { this.severity = new fhir.FhirCode<IssueSeverityCodeType>({value: source.severity}, options); }
     else { this.severity = null; }
     if (source['_severity']) {
       if (this.severity) { this.severity.addExtendedProperties(source._severity!); }
-      else { this.severity = new fhir.FhirCode<IssueSeverityCodeType>(source._severity as Partial<fhir.FhirCode>); }
+      else { this.severity = new fhir.FhirCode<IssueSeverityCodeType>(source._severity as Partial<fhir.FhirCode>, options); }
     }
-    if (source['code']) { this.code = new fhir.FhirCode({value: source.code}); }
+    if (source['code'] !== undefined) { this.code = new fhir.FhirCode({value: source.code}, options); }
     else { this.code = null; }
     if (source['_code']) {
       if (this.code) { this.code.addExtendedProperties(source._code!); }
-      else { this.code = new fhir.FhirCode(source._code as Partial<fhir.FhirCodeArgs>); }
+      else { this.code = new fhir.FhirCode(source._code as Partial<fhir.FhirCodeArgs>, options); }
     }
-    if (source['details']) { this.details = new fhir.CodeableConcept(source.details); }
-    if (source['diagnostics']) { this.diagnostics = new fhir.FhirString({value: source.diagnostics}); }
+    if (source['details']) { this.details = new fhir.CodeableConcept(source.details, options); }
+    if (source['diagnostics'] !== undefined) { this.diagnostics = new fhir.FhirString({value: source.diagnostics}, options); }
     if (source['_diagnostics']) {
       if (this.diagnostics) { this.diagnostics.addExtendedProperties(source._diagnostics!); }
-      else { this.diagnostics = new fhir.FhirString(source._diagnostics as Partial<fhir.FhirStringArgs>); }
+      else { this.diagnostics = new fhir.FhirString(source._diagnostics as Partial<fhir.FhirStringArgs>, options); }
     }
-    if (source['location']) { this.location = source.location.map((x) => new fhir.FhirString({value: x})); }
+    if (source['location'] !== undefined) { this.location = source.location.map((x) => new fhir.FhirString({value: x}, options)); }
     else { this.location = []; }
     if (source['_location']) {
       source._location.forEach((x,i) => {
@@ -130,7 +130,7 @@ export class OperationOutcomeIssue extends fhir.BackboneElement {
         else { if (x) { this.location.push(new fhir.FhirString(x as Partial<fhir.FhirStringArgs>)); } }
       });
     }
-    if (source['expression']) { this.expression = source.expression.map((x) => new fhir.FhirString({value: x})); }
+    if (source['expression'] !== undefined) { this.expression = source.expression.map((x) => new fhir.FhirString({value: x}, options)); }
     else { this.expression = []; }
     if (source['_expression']) {
       source._expression.forEach((x,i) => {
@@ -190,7 +190,7 @@ export class OperationOutcome extends fhir.DomainResource {
   constructor(source:Partial<OperationOutcomeArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
     this.resourceType = 'OperationOutcome';
-    if (source['issue']) { this.issue = source.issue.map((x) => new fhir.OperationOutcomeIssue(x)); }
+    if (source['issue']) { this.issue = source.issue.map((x) => new fhir.OperationOutcomeIssue(x, options)); }
     else { this.issue = []; }
   }
   /**

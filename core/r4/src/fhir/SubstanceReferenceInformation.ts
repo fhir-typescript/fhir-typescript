@@ -48,9 +48,9 @@ export class SubstanceReferenceInformationGene extends fhir.BackboneElement {
    */
   constructor(source:Partial<SubstanceReferenceInformationGeneArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['geneSequenceOrigin']) { this.geneSequenceOrigin = new fhir.CodeableConcept(source.geneSequenceOrigin); }
-    if (source['gene']) { this.gene = new fhir.CodeableConcept(source.gene); }
-    if (source['source']) { this.source = source.source.map((x) => new fhir.Reference(x)); }
+    if (source['geneSequenceOrigin']) { this.geneSequenceOrigin = new fhir.CodeableConcept(source.geneSequenceOrigin, options); }
+    if (source['gene']) { this.gene = new fhir.CodeableConcept(source.gene, options); }
+    if (source['source']) { this.source = source.source.map((x) => new fhir.Reference(x, options)); }
     else { this.source = []; }
   }
   /**
@@ -108,9 +108,9 @@ export class SubstanceReferenceInformationGeneElement extends fhir.BackboneEleme
    */
   constructor(source:Partial<SubstanceReferenceInformationGeneElementArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['type']) { this.type = new fhir.CodeableConcept(source.type); }
-    if (source['element']) { this.element = new fhir.Identifier(source.element); }
-    if (source['source']) { this.source = source.source.map((x) => new fhir.Reference(x)); }
+    if (source['type']) { this.type = new fhir.CodeableConcept(source.type, options); }
+    if (source['element']) { this.element = new fhir.Identifier(source.element, options); }
+    if (source['source']) { this.source = source.source.map((x) => new fhir.Reference(x, options)); }
     else { this.source = []; }
   }
   /**
@@ -176,11 +176,11 @@ export class SubstanceReferenceInformationClassification extends fhir.BackboneEl
    */
   constructor(source:Partial<SubstanceReferenceInformationClassificationArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['domain']) { this.domain = new fhir.CodeableConcept(source.domain); }
-    if (source['classification']) { this.classification = new fhir.CodeableConcept(source.classification); }
-    if (source['subtype']) { this.subtype = source.subtype.map((x) => new fhir.CodeableConcept(x)); }
+    if (source['domain']) { this.domain = new fhir.CodeableConcept(source.domain, options); }
+    if (source['classification']) { this.classification = new fhir.CodeableConcept(source.classification, options); }
+    if (source['subtype']) { this.subtype = source.subtype.map((x) => new fhir.CodeableConcept(x, options)); }
     else { this.subtype = []; }
-    if (source['source']) { this.source = source.source.map((x) => new fhir.Reference(x)); }
+    if (source['source']) { this.source = source.source.map((x) => new fhir.Reference(x, options)); }
     else { this.source = []; }
   }
   /**
@@ -295,17 +295,17 @@ export class SubstanceReferenceInformationTarget extends fhir.BackboneElement {
    */
   constructor(source:Partial<SubstanceReferenceInformationTargetArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['target']) { this.target = new fhir.Identifier(source.target); }
-    if (source['type']) { this.type = new fhir.CodeableConcept(source.type); }
-    if (source['interaction']) { this.interaction = new fhir.CodeableConcept(source.interaction); }
-    if (source['organism']) { this.organism = new fhir.CodeableConcept(source.organism); }
-    if (source['organismType']) { this.organismType = new fhir.CodeableConcept(source.organismType); }
+    if (source['target']) { this.target = new fhir.Identifier(source.target, options); }
+    if (source['type']) { this.type = new fhir.CodeableConcept(source.type, options); }
+    if (source['interaction']) { this.interaction = new fhir.CodeableConcept(source.interaction, options); }
+    if (source['organism']) { this.organism = new fhir.CodeableConcept(source.organism, options); }
+    if (source['organismType']) { this.organismType = new fhir.CodeableConcept(source.organismType, options); }
     if (source['amount']) { this.amount = source.amount; }
-    else if (source['amountQuantity']) { this.amount = new fhir.Quantity(source.amountQuantity); }
-    else if (source['amountRange']) { this.amount = new fhir.Range(source.amountRange); }
-    else if (source['amountString']) { this.amount = new fhir.FhirString({value: source.amountString}); }
-    if (source['amountType']) { this.amountType = new fhir.CodeableConcept(source.amountType); }
-    if (source['source']) { this.source = source.source.map((x) => new fhir.Reference(x)); }
+    else if (source['amountQuantity']) { this.amount = new fhir.Quantity(source.amountQuantity, options); }
+    else if (source['amountRange']) { this.amount = new fhir.Range(source.amountRange, options); }
+    else if (source['amountString'] !== undefined) { this.amount = new fhir.FhirString({value: source.amountString}, options); }
+    if (source['amountType']) { this.amountType = new fhir.CodeableConcept(source.amountType, options); }
+    if (source['source']) { this.source = source.source.map((x) => new fhir.Reference(x, options)); }
     else { this.source = []; }
   }
   /**
@@ -397,18 +397,18 @@ export class SubstanceReferenceInformation extends fhir.DomainResource {
   constructor(source:Partial<SubstanceReferenceInformationArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
     this.resourceType = 'SubstanceReferenceInformation';
-    if (source['comment']) { this.comment = new fhir.FhirString({value: source.comment}); }
+    if (source['comment'] !== undefined) { this.comment = new fhir.FhirString({value: source.comment}, options); }
     if (source['_comment']) {
       if (this.comment) { this.comment.addExtendedProperties(source._comment!); }
-      else { this.comment = new fhir.FhirString(source._comment as Partial<fhir.FhirStringArgs>); }
+      else { this.comment = new fhir.FhirString(source._comment as Partial<fhir.FhirStringArgs>, options); }
     }
-    if (source['gene']) { this.gene = source.gene.map((x) => new fhir.SubstanceReferenceInformationGene(x)); }
+    if (source['gene']) { this.gene = source.gene.map((x) => new fhir.SubstanceReferenceInformationGene(x, options)); }
     else { this.gene = []; }
-    if (source['geneElement']) { this.geneElement = source.geneElement.map((x) => new fhir.SubstanceReferenceInformationGeneElement(x)); }
+    if (source['geneElement']) { this.geneElement = source.geneElement.map((x) => new fhir.SubstanceReferenceInformationGeneElement(x, options)); }
     else { this.geneElement = []; }
-    if (source['classification']) { this.classification = source.classification.map((x) => new fhir.SubstanceReferenceInformationClassification(x)); }
+    if (source['classification']) { this.classification = source.classification.map((x) => new fhir.SubstanceReferenceInformationClassification(x, options)); }
     else { this.classification = []; }
-    if (source['target']) { this.target = source.target.map((x) => new fhir.SubstanceReferenceInformationTarget(x)); }
+    if (source['target']) { this.target = source.target.map((x) => new fhir.SubstanceReferenceInformationTarget(x, options)); }
     else { this.target = []; }
   }
   /**

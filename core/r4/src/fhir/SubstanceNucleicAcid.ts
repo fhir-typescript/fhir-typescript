@@ -68,21 +68,21 @@ export class SubstanceNucleicAcidSubunitLinkage extends fhir.BackboneElement {
    */
   constructor(source:Partial<SubstanceNucleicAcidSubunitLinkageArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['connectivity']) { this.connectivity = new fhir.FhirString({value: source.connectivity}); }
+    if (source['connectivity'] !== undefined) { this.connectivity = new fhir.FhirString({value: source.connectivity}, options); }
     if (source['_connectivity']) {
       if (this.connectivity) { this.connectivity.addExtendedProperties(source._connectivity!); }
-      else { this.connectivity = new fhir.FhirString(source._connectivity as Partial<fhir.FhirStringArgs>); }
+      else { this.connectivity = new fhir.FhirString(source._connectivity as Partial<fhir.FhirStringArgs>, options); }
     }
-    if (source['identifier']) { this.identifier = new fhir.Identifier(source.identifier); }
-    if (source['name']) { this.name = new fhir.FhirString({value: source.name}); }
+    if (source['identifier']) { this.identifier = new fhir.Identifier(source.identifier, options); }
+    if (source['name'] !== undefined) { this.name = new fhir.FhirString({value: source.name}, options); }
     if (source['_name']) {
       if (this.name) { this.name.addExtendedProperties(source._name!); }
-      else { this.name = new fhir.FhirString(source._name as Partial<fhir.FhirStringArgs>); }
+      else { this.name = new fhir.FhirString(source._name as Partial<fhir.FhirStringArgs>, options); }
     }
-    if (source['residueSite']) { this.residueSite = new fhir.FhirString({value: source.residueSite}); }
+    if (source['residueSite'] !== undefined) { this.residueSite = new fhir.FhirString({value: source.residueSite}, options); }
     if (source['_residueSite']) {
       if (this.residueSite) { this.residueSite.addExtendedProperties(source._residueSite!); }
-      else { this.residueSite = new fhir.FhirString(source._residueSite as Partial<fhir.FhirStringArgs>); }
+      else { this.residueSite = new fhir.FhirString(source._residueSite as Partial<fhir.FhirStringArgs>, options); }
     }
   }
   /**
@@ -149,16 +149,16 @@ export class SubstanceNucleicAcidSubunitSugar extends fhir.BackboneElement {
    */
   constructor(source:Partial<SubstanceNucleicAcidSubunitSugarArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['identifier']) { this.identifier = new fhir.Identifier(source.identifier); }
-    if (source['name']) { this.name = new fhir.FhirString({value: source.name}); }
+    if (source['identifier']) { this.identifier = new fhir.Identifier(source.identifier, options); }
+    if (source['name'] !== undefined) { this.name = new fhir.FhirString({value: source.name}, options); }
     if (source['_name']) {
       if (this.name) { this.name.addExtendedProperties(source._name!); }
-      else { this.name = new fhir.FhirString(source._name as Partial<fhir.FhirStringArgs>); }
+      else { this.name = new fhir.FhirString(source._name as Partial<fhir.FhirStringArgs>, options); }
     }
-    if (source['residueSite']) { this.residueSite = new fhir.FhirString({value: source.residueSite}); }
+    if (source['residueSite'] !== undefined) { this.residueSite = new fhir.FhirString({value: source.residueSite}, options); }
     if (source['_residueSite']) {
       if (this.residueSite) { this.residueSite.addExtendedProperties(source._residueSite!); }
-      else { this.residueSite = new fhir.FhirString(source._residueSite as Partial<fhir.FhirStringArgs>); }
+      else { this.residueSite = new fhir.FhirString(source._residueSite as Partial<fhir.FhirStringArgs>, options); }
     }
   }
   /**
@@ -268,27 +268,27 @@ export class SubstanceNucleicAcidSubunit extends fhir.BackboneElement {
    */
   constructor(source:Partial<SubstanceNucleicAcidSubunitArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['subunit']) { this.subunit = new fhir.FhirInteger({value: source.subunit}); }
+    if (source['subunit'] !== undefined) { this.subunit = new fhir.FhirInteger({value: source.subunit}, options); }
     if (source['_subunit']) {
       if (this.subunit) { this.subunit.addExtendedProperties(source._subunit!); }
-      else { this.subunit = new fhir.FhirInteger(source._subunit as Partial<fhir.FhirIntegerArgs>); }
+      else { this.subunit = new fhir.FhirInteger(source._subunit as Partial<fhir.FhirIntegerArgs>, options); }
     }
-    if (source['sequence']) { this.sequence = new fhir.FhirString({value: source.sequence}); }
+    if (source['sequence'] !== undefined) { this.sequence = new fhir.FhirString({value: source.sequence}, options); }
     if (source['_sequence']) {
       if (this.sequence) { this.sequence.addExtendedProperties(source._sequence!); }
-      else { this.sequence = new fhir.FhirString(source._sequence as Partial<fhir.FhirStringArgs>); }
+      else { this.sequence = new fhir.FhirString(source._sequence as Partial<fhir.FhirStringArgs>, options); }
     }
-    if (source['length']) { this.length = new fhir.FhirInteger({value: source.length}); }
+    if (source['length'] !== undefined) { this.length = new fhir.FhirInteger({value: source.length}, options); }
     if (source['_length']) {
       if (this.length) { this.length.addExtendedProperties(source._length!); }
-      else { this.length = new fhir.FhirInteger(source._length as Partial<fhir.FhirIntegerArgs>); }
+      else { this.length = new fhir.FhirInteger(source._length as Partial<fhir.FhirIntegerArgs>, options); }
     }
-    if (source['sequenceAttachment']) { this.sequenceAttachment = new fhir.Attachment(source.sequenceAttachment); }
-    if (source['fivePrime']) { this.fivePrime = new fhir.CodeableConcept(source.fivePrime); }
-    if (source['threePrime']) { this.threePrime = new fhir.CodeableConcept(source.threePrime); }
-    if (source['linkage']) { this.linkage = source.linkage.map((x) => new fhir.SubstanceNucleicAcidSubunitLinkage(x)); }
+    if (source['sequenceAttachment']) { this.sequenceAttachment = new fhir.Attachment(source.sequenceAttachment, options); }
+    if (source['fivePrime']) { this.fivePrime = new fhir.CodeableConcept(source.fivePrime, options); }
+    if (source['threePrime']) { this.threePrime = new fhir.CodeableConcept(source.threePrime, options); }
+    if (source['linkage']) { this.linkage = source.linkage.map((x) => new fhir.SubstanceNucleicAcidSubunitLinkage(x, options)); }
     else { this.linkage = []; }
-    if (source['sugar']) { this.sugar = source.sugar.map((x) => new fhir.SubstanceNucleicAcidSubunitSugar(x)); }
+    if (source['sugar']) { this.sugar = source.sugar.map((x) => new fhir.SubstanceNucleicAcidSubunitSugar(x, options)); }
     else { this.sugar = []; }
   }
   /**
@@ -384,19 +384,19 @@ export class SubstanceNucleicAcid extends fhir.DomainResource {
   constructor(source:Partial<SubstanceNucleicAcidArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
     this.resourceType = 'SubstanceNucleicAcid';
-    if (source['sequenceType']) { this.sequenceType = new fhir.CodeableConcept(source.sequenceType); }
-    if (source['numberOfSubunits']) { this.numberOfSubunits = new fhir.FhirInteger({value: source.numberOfSubunits}); }
+    if (source['sequenceType']) { this.sequenceType = new fhir.CodeableConcept(source.sequenceType, options); }
+    if (source['numberOfSubunits'] !== undefined) { this.numberOfSubunits = new fhir.FhirInteger({value: source.numberOfSubunits}, options); }
     if (source['_numberOfSubunits']) {
       if (this.numberOfSubunits) { this.numberOfSubunits.addExtendedProperties(source._numberOfSubunits!); }
-      else { this.numberOfSubunits = new fhir.FhirInteger(source._numberOfSubunits as Partial<fhir.FhirIntegerArgs>); }
+      else { this.numberOfSubunits = new fhir.FhirInteger(source._numberOfSubunits as Partial<fhir.FhirIntegerArgs>, options); }
     }
-    if (source['areaOfHybridisation']) { this.areaOfHybridisation = new fhir.FhirString({value: source.areaOfHybridisation}); }
+    if (source['areaOfHybridisation'] !== undefined) { this.areaOfHybridisation = new fhir.FhirString({value: source.areaOfHybridisation}, options); }
     if (source['_areaOfHybridisation']) {
       if (this.areaOfHybridisation) { this.areaOfHybridisation.addExtendedProperties(source._areaOfHybridisation!); }
-      else { this.areaOfHybridisation = new fhir.FhirString(source._areaOfHybridisation as Partial<fhir.FhirStringArgs>); }
+      else { this.areaOfHybridisation = new fhir.FhirString(source._areaOfHybridisation as Partial<fhir.FhirStringArgs>, options); }
     }
-    if (source['oligoNucleotideType']) { this.oligoNucleotideType = new fhir.CodeableConcept(source.oligoNucleotideType); }
-    if (source['subunit']) { this.subunit = source.subunit.map((x) => new fhir.SubstanceNucleicAcidSubunit(x)); }
+    if (source['oligoNucleotideType']) { this.oligoNucleotideType = new fhir.CodeableConcept(source.oligoNucleotideType, options); }
+    if (source['subunit']) { this.subunit = source.subunit.map((x) => new fhir.SubstanceNucleicAcidSubunit(x, options)); }
     else { this.subunit = []; }
   }
   /**

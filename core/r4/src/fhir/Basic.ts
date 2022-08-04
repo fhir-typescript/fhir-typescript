@@ -83,17 +83,17 @@ export class Basic extends fhir.DomainResource {
   constructor(source:Partial<BasicArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
     this.resourceType = 'Basic';
-    if (source['identifier']) { this.identifier = source.identifier.map((x) => new fhir.Identifier(x)); }
+    if (source['identifier']) { this.identifier = source.identifier.map((x) => new fhir.Identifier(x, options)); }
     else { this.identifier = []; }
-    if (source['code']) { this.code = new fhir.CodeableConcept(source.code); }
+    if (source['code']) { this.code = new fhir.CodeableConcept(source.code, options); }
     else { this.code = null; }
-    if (source['subject']) { this.subject = new fhir.Reference(source.subject); }
-    if (source['created']) { this.created = new fhir.FhirDate({value: source.created}); }
+    if (source['subject']) { this.subject = new fhir.Reference(source.subject, options); }
+    if (source['created'] !== undefined) { this.created = new fhir.FhirDate({value: source.created}, options); }
     if (source['_created']) {
       if (this.created) { this.created.addExtendedProperties(source._created!); }
-      else { this.created = new fhir.FhirDate(source._created as Partial<fhir.FhirDateArgs>); }
+      else { this.created = new fhir.FhirDate(source._created as Partial<fhir.FhirDateArgs>, options); }
     }
-    if (source['author']) { this.author = new fhir.Reference(source.author); }
+    if (source['author']) { this.author = new fhir.Reference(source.author, options); }
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).

@@ -60,14 +60,14 @@ export class SubstancePolymerMonomerSetStartingMaterial extends fhir.BackboneEle
    */
   constructor(source:Partial<SubstancePolymerMonomerSetStartingMaterialArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['material']) { this.material = new fhir.CodeableConcept(source.material); }
-    if (source['type']) { this.type = new fhir.CodeableConcept(source.type); }
-    if (source['isDefining']) { this.isDefining = new fhir.FhirBoolean({value: source.isDefining}); }
+    if (source['material']) { this.material = new fhir.CodeableConcept(source.material, options); }
+    if (source['type']) { this.type = new fhir.CodeableConcept(source.type, options); }
+    if (source['isDefining'] !== undefined) { this.isDefining = new fhir.FhirBoolean({value: source.isDefining}, options); }
     if (source['_isDefining']) {
       if (this.isDefining) { this.isDefining.addExtendedProperties(source._isDefining!); }
-      else { this.isDefining = new fhir.FhirBoolean(source._isDefining as Partial<fhir.FhirBooleanArgs>); }
+      else { this.isDefining = new fhir.FhirBoolean(source._isDefining as Partial<fhir.FhirBooleanArgs>, options); }
     }
-    if (source['amount']) { this.amount = new fhir.SubstanceAmount(source.amount); }
+    if (source['amount']) { this.amount = new fhir.SubstanceAmount(source.amount, options); }
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -117,8 +117,8 @@ export class SubstancePolymerMonomerSet extends fhir.BackboneElement {
    */
   constructor(source:Partial<SubstancePolymerMonomerSetArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['ratioType']) { this.ratioType = new fhir.CodeableConcept(source.ratioType); }
-    if (source['startingMaterial']) { this.startingMaterial = source.startingMaterial.map((x) => new fhir.SubstancePolymerMonomerSetStartingMaterial(x)); }
+    if (source['ratioType']) { this.ratioType = new fhir.CodeableConcept(source.ratioType, options); }
+    if (source['startingMaterial']) { this.startingMaterial = source.startingMaterial.map((x) => new fhir.SubstancePolymerMonomerSetStartingMaterial(x, options)); }
     else { this.startingMaterial = []; }
   }
   /**
@@ -167,8 +167,8 @@ export class SubstancePolymerRepeatRepeatUnitDegreeOfPolymerisation extends fhir
    */
   constructor(source:Partial<SubstancePolymerRepeatRepeatUnitDegreeOfPolymerisationArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['degree']) { this.degree = new fhir.CodeableConcept(source.degree); }
-    if (source['amount']) { this.amount = new fhir.SubstanceAmount(source.amount); }
+    if (source['degree']) { this.degree = new fhir.CodeableConcept(source.degree, options); }
+    if (source['amount']) { this.amount = new fhir.SubstanceAmount(source.amount, options); }
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -228,13 +228,13 @@ export class SubstancePolymerRepeatRepeatUnitStructuralRepresentation extends fh
    */
   constructor(source:Partial<SubstancePolymerRepeatRepeatUnitStructuralRepresentationArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['type']) { this.type = new fhir.CodeableConcept(source.type); }
-    if (source['representation']) { this.representation = new fhir.FhirString({value: source.representation}); }
+    if (source['type']) { this.type = new fhir.CodeableConcept(source.type, options); }
+    if (source['representation'] !== undefined) { this.representation = new fhir.FhirString({value: source.representation}, options); }
     if (source['_representation']) {
       if (this.representation) { this.representation.addExtendedProperties(source._representation!); }
-      else { this.representation = new fhir.FhirString(source._representation as Partial<fhir.FhirStringArgs>); }
+      else { this.representation = new fhir.FhirString(source._representation as Partial<fhir.FhirStringArgs>, options); }
     }
-    if (source['attachment']) { this.attachment = new fhir.Attachment(source.attachment); }
+    if (source['attachment']) { this.attachment = new fhir.Attachment(source.attachment, options); }
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -311,16 +311,16 @@ export class SubstancePolymerRepeatRepeatUnit extends fhir.BackboneElement {
    */
   constructor(source:Partial<SubstancePolymerRepeatRepeatUnitArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['orientationOfPolymerisation']) { this.orientationOfPolymerisation = new fhir.CodeableConcept(source.orientationOfPolymerisation); }
-    if (source['repeatUnit']) { this.repeatUnit = new fhir.FhirString({value: source.repeatUnit}); }
+    if (source['orientationOfPolymerisation']) { this.orientationOfPolymerisation = new fhir.CodeableConcept(source.orientationOfPolymerisation, options); }
+    if (source['repeatUnit'] !== undefined) { this.repeatUnit = new fhir.FhirString({value: source.repeatUnit}, options); }
     if (source['_repeatUnit']) {
       if (this.repeatUnit) { this.repeatUnit.addExtendedProperties(source._repeatUnit!); }
-      else { this.repeatUnit = new fhir.FhirString(source._repeatUnit as Partial<fhir.FhirStringArgs>); }
+      else { this.repeatUnit = new fhir.FhirString(source._repeatUnit as Partial<fhir.FhirStringArgs>, options); }
     }
-    if (source['amount']) { this.amount = new fhir.SubstanceAmount(source.amount); }
-    if (source['degreeOfPolymerisation']) { this.degreeOfPolymerisation = source.degreeOfPolymerisation.map((x) => new fhir.SubstancePolymerRepeatRepeatUnitDegreeOfPolymerisation(x)); }
+    if (source['amount']) { this.amount = new fhir.SubstanceAmount(source.amount, options); }
+    if (source['degreeOfPolymerisation']) { this.degreeOfPolymerisation = source.degreeOfPolymerisation.map((x) => new fhir.SubstancePolymerRepeatRepeatUnitDegreeOfPolymerisation(x, options)); }
     else { this.degreeOfPolymerisation = []; }
-    if (source['structuralRepresentation']) { this.structuralRepresentation = source.structuralRepresentation.map((x) => new fhir.SubstancePolymerRepeatRepeatUnitStructuralRepresentation(x)); }
+    if (source['structuralRepresentation']) { this.structuralRepresentation = source.structuralRepresentation.map((x) => new fhir.SubstancePolymerRepeatRepeatUnitStructuralRepresentation(x, options)); }
     else { this.structuralRepresentation = []; }
   }
   /**
@@ -396,18 +396,18 @@ export class SubstancePolymerRepeat extends fhir.BackboneElement {
    */
   constructor(source:Partial<SubstancePolymerRepeatArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['numberOfUnits']) { this.numberOfUnits = new fhir.FhirInteger({value: source.numberOfUnits}); }
+    if (source['numberOfUnits'] !== undefined) { this.numberOfUnits = new fhir.FhirInteger({value: source.numberOfUnits}, options); }
     if (source['_numberOfUnits']) {
       if (this.numberOfUnits) { this.numberOfUnits.addExtendedProperties(source._numberOfUnits!); }
-      else { this.numberOfUnits = new fhir.FhirInteger(source._numberOfUnits as Partial<fhir.FhirIntegerArgs>); }
+      else { this.numberOfUnits = new fhir.FhirInteger(source._numberOfUnits as Partial<fhir.FhirIntegerArgs>, options); }
     }
-    if (source['averageMolecularFormula']) { this.averageMolecularFormula = new fhir.FhirString({value: source.averageMolecularFormula}); }
+    if (source['averageMolecularFormula'] !== undefined) { this.averageMolecularFormula = new fhir.FhirString({value: source.averageMolecularFormula}, options); }
     if (source['_averageMolecularFormula']) {
       if (this.averageMolecularFormula) { this.averageMolecularFormula.addExtendedProperties(source._averageMolecularFormula!); }
-      else { this.averageMolecularFormula = new fhir.FhirString(source._averageMolecularFormula as Partial<fhir.FhirStringArgs>); }
+      else { this.averageMolecularFormula = new fhir.FhirString(source._averageMolecularFormula as Partial<fhir.FhirStringArgs>, options); }
     }
-    if (source['repeatUnitAmountType']) { this.repeatUnitAmountType = new fhir.CodeableConcept(source.repeatUnitAmountType); }
-    if (source['repeatUnit']) { this.repeatUnit = source.repeatUnit.map((x) => new fhir.SubstancePolymerRepeatRepeatUnit(x)); }
+    if (source['repeatUnitAmountType']) { this.repeatUnitAmountType = new fhir.CodeableConcept(source.repeatUnitAmountType, options); }
+    if (source['repeatUnit']) { this.repeatUnit = source.repeatUnit.map((x) => new fhir.SubstancePolymerRepeatRepeatUnit(x, options)); }
     else { this.repeatUnit = []; }
   }
   /**
@@ -503,11 +503,11 @@ export class SubstancePolymer extends fhir.DomainResource {
   constructor(source:Partial<SubstancePolymerArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
     this.resourceType = 'SubstancePolymer';
-    if (source['class']) { this.class = new fhir.CodeableConcept(source.class); }
-    if (source['geometry']) { this.geometry = new fhir.CodeableConcept(source.geometry); }
-    if (source['copolymerConnectivity']) { this.copolymerConnectivity = source.copolymerConnectivity.map((x) => new fhir.CodeableConcept(x)); }
+    if (source['class']) { this.class = new fhir.CodeableConcept(source.class, options); }
+    if (source['geometry']) { this.geometry = new fhir.CodeableConcept(source.geometry, options); }
+    if (source['copolymerConnectivity']) { this.copolymerConnectivity = source.copolymerConnectivity.map((x) => new fhir.CodeableConcept(x, options)); }
     else { this.copolymerConnectivity = []; }
-    if (source['modification']) { this.modification = source.modification.map((x) => new fhir.FhirString({value: x})); }
+    if (source['modification'] !== undefined) { this.modification = source.modification.map((x) => new fhir.FhirString({value: x}, options)); }
     else { this.modification = []; }
     if (source['_modification']) {
       source._modification.forEach((x,i) => {
@@ -515,9 +515,9 @@ export class SubstancePolymer extends fhir.DomainResource {
         else { if (x) { this.modification.push(new fhir.FhirString(x as Partial<fhir.FhirStringArgs>)); } }
       });
     }
-    if (source['monomerSet']) { this.monomerSet = source.monomerSet.map((x) => new fhir.SubstancePolymerMonomerSet(x)); }
+    if (source['monomerSet']) { this.monomerSet = source.monomerSet.map((x) => new fhir.SubstancePolymerMonomerSet(x, options)); }
     else { this.monomerSet = []; }
-    if (source['repeat']) { this.repeat = source.repeat.map((x) => new fhir.SubstancePolymerRepeat(x)); }
+    if (source['repeat']) { this.repeat = source.repeat.map((x) => new fhir.SubstancePolymerRepeat(x, options)); }
     else { this.repeat = []; }
   }
   /**

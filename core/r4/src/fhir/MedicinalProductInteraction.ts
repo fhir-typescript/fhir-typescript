@@ -45,8 +45,8 @@ export class MedicinalProductInteractionInteractant extends fhir.BackboneElement
   constructor(source:Partial<MedicinalProductInteractionInteractantArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
     if (source['item']) { this.item = source.item; }
-    else if (source['itemReference']) { this.item = new fhir.Reference(source.itemReference); }
-    else if (source['itemCodeableConcept']) { this.item = new fhir.CodeableConcept(source.itemCodeableConcept); }
+    else if (source['itemReference']) { this.item = new fhir.Reference(source.itemReference, options); }
+    else if (source['itemCodeableConcept']) { this.item = new fhir.CodeableConcept(source.itemCodeableConcept, options); }
     else { this.item = null; }
   }
   /**
@@ -147,19 +147,19 @@ export class MedicinalProductInteraction extends fhir.DomainResource {
   constructor(source:Partial<MedicinalProductInteractionArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
     this.resourceType = 'MedicinalProductInteraction';
-    if (source['subject']) { this.subject = source.subject.map((x) => new fhir.Reference(x)); }
+    if (source['subject']) { this.subject = source.subject.map((x) => new fhir.Reference(x, options)); }
     else { this.subject = []; }
-    if (source['description']) { this.description = new fhir.FhirString({value: source.description}); }
+    if (source['description'] !== undefined) { this.description = new fhir.FhirString({value: source.description}, options); }
     if (source['_description']) {
       if (this.description) { this.description.addExtendedProperties(source._description!); }
-      else { this.description = new fhir.FhirString(source._description as Partial<fhir.FhirStringArgs>); }
+      else { this.description = new fhir.FhirString(source._description as Partial<fhir.FhirStringArgs>, options); }
     }
-    if (source['interactant']) { this.interactant = source.interactant.map((x) => new fhir.MedicinalProductInteractionInteractant(x)); }
+    if (source['interactant']) { this.interactant = source.interactant.map((x) => new fhir.MedicinalProductInteractionInteractant(x, options)); }
     else { this.interactant = []; }
-    if (source['type']) { this.type = new fhir.CodeableConcept(source.type); }
-    if (source['effect']) { this.effect = new fhir.CodeableConcept(source.effect); }
-    if (source['incidence']) { this.incidence = new fhir.CodeableConcept(source.incidence); }
-    if (source['management']) { this.management = new fhir.CodeableConcept(source.management); }
+    if (source['type']) { this.type = new fhir.CodeableConcept(source.type, options); }
+    if (source['effect']) { this.effect = new fhir.CodeableConcept(source.effect, options); }
+    if (source['incidence']) { this.incidence = new fhir.CodeableConcept(source.incidence, options); }
+    if (source['management']) { this.management = new fhir.CodeableConcept(source.management, options); }
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).

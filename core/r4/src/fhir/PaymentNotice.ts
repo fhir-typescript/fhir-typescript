@@ -149,36 +149,36 @@ export class PaymentNotice extends fhir.DomainResource {
   constructor(source:Partial<PaymentNoticeArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
     this.resourceType = 'PaymentNotice';
-    if (source['identifier']) { this.identifier = source.identifier.map((x) => new fhir.Identifier(x)); }
+    if (source['identifier']) { this.identifier = source.identifier.map((x) => new fhir.Identifier(x, options)); }
     else { this.identifier = []; }
-    if (source['status']) { this.status = new fhir.FhirCode<FmStatusCodeType>({value: source.status}); }
+    if (source['status'] !== undefined) { this.status = new fhir.FhirCode<FmStatusCodeType>({value: source.status}, options); }
     else { this.status = null; }
     if (source['_status']) {
       if (this.status) { this.status.addExtendedProperties(source._status!); }
-      else { this.status = new fhir.FhirCode<FmStatusCodeType>(source._status as Partial<fhir.FhirCode>); }
+      else { this.status = new fhir.FhirCode<FmStatusCodeType>(source._status as Partial<fhir.FhirCode>, options); }
     }
-    if (source['request']) { this.request = new fhir.Reference(source.request); }
-    if (source['response']) { this.response = new fhir.Reference(source.response); }
-    if (source['created']) { this.created = new fhir.FhirDateTime({value: source.created}); }
+    if (source['request']) { this.request = new fhir.Reference(source.request, options); }
+    if (source['response']) { this.response = new fhir.Reference(source.response, options); }
+    if (source['created'] !== undefined) { this.created = new fhir.FhirDateTime({value: source.created}, options); }
     else { this.created = null; }
     if (source['_created']) {
       if (this.created) { this.created.addExtendedProperties(source._created!); }
-      else { this.created = new fhir.FhirDateTime(source._created as Partial<fhir.FhirDateTimeArgs>); }
+      else { this.created = new fhir.FhirDateTime(source._created as Partial<fhir.FhirDateTimeArgs>, options); }
     }
-    if (source['provider']) { this.provider = new fhir.Reference(source.provider); }
-    if (source['payment']) { this.payment = new fhir.Reference(source.payment); }
+    if (source['provider']) { this.provider = new fhir.Reference(source.provider, options); }
+    if (source['payment']) { this.payment = new fhir.Reference(source.payment, options); }
     else { this.payment = null; }
-    if (source['paymentDate']) { this.paymentDate = new fhir.FhirDate({value: source.paymentDate}); }
+    if (source['paymentDate'] !== undefined) { this.paymentDate = new fhir.FhirDate({value: source.paymentDate}, options); }
     if (source['_paymentDate']) {
       if (this.paymentDate) { this.paymentDate.addExtendedProperties(source._paymentDate!); }
-      else { this.paymentDate = new fhir.FhirDate(source._paymentDate as Partial<fhir.FhirDateArgs>); }
+      else { this.paymentDate = new fhir.FhirDate(source._paymentDate as Partial<fhir.FhirDateArgs>, options); }
     }
-    if (source['payee']) { this.payee = new fhir.Reference(source.payee); }
-    if (source['recipient']) { this.recipient = new fhir.Reference(source.recipient); }
+    if (source['payee']) { this.payee = new fhir.Reference(source.payee, options); }
+    if (source['recipient']) { this.recipient = new fhir.Reference(source.recipient, options); }
     else { this.recipient = null; }
-    if (source['amount']) { this.amount = new fhir.Money(source.amount); }
+    if (source['amount']) { this.amount = new fhir.Money(source.amount, options); }
     else { this.amount = null; }
-    if (source['paymentStatus']) { this.paymentStatus = new fhir.CodeableConcept(source.paymentStatus); }
+    if (source['paymentStatus']) { this.paymentStatus = new fhir.CodeableConcept(source.paymentStatus, options); }
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).

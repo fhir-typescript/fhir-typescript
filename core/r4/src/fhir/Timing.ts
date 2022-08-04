@@ -233,60 +233,60 @@ export class TimingRepeat extends fhir.FhirElement {
   constructor(source:Partial<TimingRepeatArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
     if (source['bounds']) { this.bounds = source.bounds; }
-    else if (source['boundsDuration']) { this.bounds = new fhir.Duration(source.boundsDuration); }
-    else if (source['boundsRange']) { this.bounds = new fhir.Range(source.boundsRange); }
-    else if (source['boundsPeriod']) { this.bounds = new fhir.Period(source.boundsPeriod); }
-    if (source['count']) { this.count = new fhir.FhirPositiveInt({value: source.count}); }
+    else if (source['boundsDuration']) { this.bounds = new fhir.Duration(source.boundsDuration, options); }
+    else if (source['boundsRange']) { this.bounds = new fhir.Range(source.boundsRange, options); }
+    else if (source['boundsPeriod']) { this.bounds = new fhir.Period(source.boundsPeriod, options); }
+    if (source['count'] !== undefined) { this.count = new fhir.FhirPositiveInt({value: source.count}, options); }
     if (source['_count']) {
       if (this.count) { this.count.addExtendedProperties(source._count!); }
-      else { this.count = new fhir.FhirPositiveInt(source._count as Partial<fhir.FhirPositiveIntArgs>); }
+      else { this.count = new fhir.FhirPositiveInt(source._count as Partial<fhir.FhirPositiveIntArgs>, options); }
     }
-    if (source['countMax']) { this.countMax = new fhir.FhirPositiveInt({value: source.countMax}); }
+    if (source['countMax'] !== undefined) { this.countMax = new fhir.FhirPositiveInt({value: source.countMax}, options); }
     if (source['_countMax']) {
       if (this.countMax) { this.countMax.addExtendedProperties(source._countMax!); }
-      else { this.countMax = new fhir.FhirPositiveInt(source._countMax as Partial<fhir.FhirPositiveIntArgs>); }
+      else { this.countMax = new fhir.FhirPositiveInt(source._countMax as Partial<fhir.FhirPositiveIntArgs>, options); }
     }
-    if (source['duration']) { this.duration = new fhir.FhirDecimal({value: source.duration}); }
+    if (source['duration'] !== undefined) { this.duration = new fhir.FhirDecimal({value: source.duration}, options); }
     if (source['_duration']) {
       if (this.duration) { this.duration.addExtendedProperties(source._duration!); }
-      else { this.duration = new fhir.FhirDecimal(source._duration as Partial<fhir.FhirDecimalArgs>); }
+      else { this.duration = new fhir.FhirDecimal(source._duration as Partial<fhir.FhirDecimalArgs>, options); }
     }
-    if (source['durationMax']) { this.durationMax = new fhir.FhirDecimal({value: source.durationMax}); }
+    if (source['durationMax'] !== undefined) { this.durationMax = new fhir.FhirDecimal({value: source.durationMax}, options); }
     if (source['_durationMax']) {
       if (this.durationMax) { this.durationMax.addExtendedProperties(source._durationMax!); }
-      else { this.durationMax = new fhir.FhirDecimal(source._durationMax as Partial<fhir.FhirDecimalArgs>); }
+      else { this.durationMax = new fhir.FhirDecimal(source._durationMax as Partial<fhir.FhirDecimalArgs>, options); }
     }
-    if (source['durationUnit']) { this.durationUnit = new fhir.FhirCode<UnitsOfTimeCodeType>({value: source.durationUnit}); }
+    if (source['durationUnit'] !== undefined) { this.durationUnit = new fhir.FhirCode<UnitsOfTimeCodeType>({value: source.durationUnit}, options); }
     if (source['_durationUnit']) {
       if (this.durationUnit) { this.durationUnit.addExtendedProperties(source._durationUnit!); }
-      else { this.durationUnit = new fhir.FhirCode<UnitsOfTimeCodeType>(source._durationUnit as Partial<fhir.FhirCode>); }
+      else { this.durationUnit = new fhir.FhirCode<UnitsOfTimeCodeType>(source._durationUnit as Partial<fhir.FhirCode>, options); }
     }
-    if (source['frequency']) { this.frequency = new fhir.FhirPositiveInt({value: source.frequency}); }
+    if (source['frequency'] !== undefined) { this.frequency = new fhir.FhirPositiveInt({value: source.frequency}, options); }
     if (source['_frequency']) {
       if (this.frequency) { this.frequency.addExtendedProperties(source._frequency!); }
-      else { this.frequency = new fhir.FhirPositiveInt(source._frequency as Partial<fhir.FhirPositiveIntArgs>); }
+      else { this.frequency = new fhir.FhirPositiveInt(source._frequency as Partial<fhir.FhirPositiveIntArgs>, options); }
     }
-    if (source['frequencyMax']) { this.frequencyMax = new fhir.FhirPositiveInt({value: source.frequencyMax}); }
+    if (source['frequencyMax'] !== undefined) { this.frequencyMax = new fhir.FhirPositiveInt({value: source.frequencyMax}, options); }
     if (source['_frequencyMax']) {
       if (this.frequencyMax) { this.frequencyMax.addExtendedProperties(source._frequencyMax!); }
-      else { this.frequencyMax = new fhir.FhirPositiveInt(source._frequencyMax as Partial<fhir.FhirPositiveIntArgs>); }
+      else { this.frequencyMax = new fhir.FhirPositiveInt(source._frequencyMax as Partial<fhir.FhirPositiveIntArgs>, options); }
     }
-    if (source['period']) { this.period = new fhir.FhirDecimal({value: source.period}); }
+    if (source['period'] !== undefined) { this.period = new fhir.FhirDecimal({value: source.period}, options); }
     if (source['_period']) {
       if (this.period) { this.period.addExtendedProperties(source._period!); }
-      else { this.period = new fhir.FhirDecimal(source._period as Partial<fhir.FhirDecimalArgs>); }
+      else { this.period = new fhir.FhirDecimal(source._period as Partial<fhir.FhirDecimalArgs>, options); }
     }
-    if (source['periodMax']) { this.periodMax = new fhir.FhirDecimal({value: source.periodMax}); }
+    if (source['periodMax'] !== undefined) { this.periodMax = new fhir.FhirDecimal({value: source.periodMax}, options); }
     if (source['_periodMax']) {
       if (this.periodMax) { this.periodMax.addExtendedProperties(source._periodMax!); }
-      else { this.periodMax = new fhir.FhirDecimal(source._periodMax as Partial<fhir.FhirDecimalArgs>); }
+      else { this.periodMax = new fhir.FhirDecimal(source._periodMax as Partial<fhir.FhirDecimalArgs>, options); }
     }
-    if (source['periodUnit']) { this.periodUnit = new fhir.FhirCode<UnitsOfTimeCodeType>({value: source.periodUnit}); }
+    if (source['periodUnit'] !== undefined) { this.periodUnit = new fhir.FhirCode<UnitsOfTimeCodeType>({value: source.periodUnit}, options); }
     if (source['_periodUnit']) {
       if (this.periodUnit) { this.periodUnit.addExtendedProperties(source._periodUnit!); }
-      else { this.periodUnit = new fhir.FhirCode<UnitsOfTimeCodeType>(source._periodUnit as Partial<fhir.FhirCode>); }
+      else { this.periodUnit = new fhir.FhirCode<UnitsOfTimeCodeType>(source._periodUnit as Partial<fhir.FhirCode>, options); }
     }
-    if (source['dayOfWeek']) { this.dayOfWeek = source.dayOfWeek.map((x) => new fhir.FhirCode<DaysOfWeekCodeType>({value: x})); }
+    if (source['dayOfWeek'] !== undefined) { this.dayOfWeek = source.dayOfWeek.map((x) => new fhir.FhirCode<DaysOfWeekCodeType>({value: x}, options)); }
     else { this.dayOfWeek = []; }
     if (source['_dayOfWeek']) {
       source._dayOfWeek.forEach((x,i) => {
@@ -294,7 +294,7 @@ export class TimingRepeat extends fhir.FhirElement {
         else { if (x) { this.dayOfWeek.push(new fhir.FhirCode<DaysOfWeekCodeType>(x as Partial<fhir.FhirCode>)); } }
       });
     }
-    if (source['timeOfDay']) { this.timeOfDay = source.timeOfDay.map((x) => new fhir.FhirTime({value: x})); }
+    if (source['timeOfDay'] !== undefined) { this.timeOfDay = source.timeOfDay.map((x) => new fhir.FhirTime({value: x}, options)); }
     else { this.timeOfDay = []; }
     if (source['_timeOfDay']) {
       source._timeOfDay.forEach((x,i) => {
@@ -302,7 +302,7 @@ export class TimingRepeat extends fhir.FhirElement {
         else { if (x) { this.timeOfDay.push(new fhir.FhirTime(x as Partial<fhir.FhirTimeArgs>)); } }
       });
     }
-    if (source['when']) { this.when = source.when.map((x) => new fhir.FhirCode({value: x})); }
+    if (source['when'] !== undefined) { this.when = source.when.map((x) => new fhir.FhirCode({value: x}, options)); }
     else { this.when = []; }
     if (source['_when']) {
       source._when.forEach((x,i) => {
@@ -310,10 +310,10 @@ export class TimingRepeat extends fhir.FhirElement {
         else { if (x) { this.when.push(new fhir.FhirCode(x as Partial<fhir.FhirCodeArgs>)); } }
       });
     }
-    if (source['offset']) { this.offset = new fhir.FhirUnsignedInt({value: source.offset}); }
+    if (source['offset'] !== undefined) { this.offset = new fhir.FhirUnsignedInt({value: source.offset}, options); }
     if (source['_offset']) {
       if (this.offset) { this.offset.addExtendedProperties(source._offset!); }
-      else { this.offset = new fhir.FhirUnsignedInt(source._offset as Partial<fhir.FhirUnsignedIntArgs>); }
+      else { this.offset = new fhir.FhirUnsignedInt(source._offset as Partial<fhir.FhirUnsignedIntArgs>, options); }
     }
   }
   /**
@@ -387,7 +387,7 @@ export class Timing extends fhir.BackboneElement {
    */
   constructor(source:Partial<TimingArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['event']) { this.event = source.event.map((x) => new fhir.FhirDateTime({value: x})); }
+    if (source['event'] !== undefined) { this.event = source.event.map((x) => new fhir.FhirDateTime({value: x}, options)); }
     else { this.event = []; }
     if (source['_event']) {
       source._event.forEach((x,i) => {
@@ -395,8 +395,8 @@ export class Timing extends fhir.BackboneElement {
         else { if (x) { this.event.push(new fhir.FhirDateTime(x as Partial<fhir.FhirDateTimeArgs>)); } }
       });
     }
-    if (source['repeat']) { this.repeat = new fhir.TimingRepeat(source.repeat); }
-    if (source['code']) { this.code = new fhir.CodeableConcept(source.code); }
+    if (source['repeat']) { this.repeat = new fhir.TimingRepeat(source.repeat, options); }
+    if (source['code']) { this.code = new fhir.CodeableConcept(source.code, options); }
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).

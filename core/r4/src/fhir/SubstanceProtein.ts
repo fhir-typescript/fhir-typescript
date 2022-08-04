@@ -108,33 +108,33 @@ export class SubstanceProteinSubunit extends fhir.BackboneElement {
    */
   constructor(source:Partial<SubstanceProteinSubunitArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['subunit']) { this.subunit = new fhir.FhirInteger({value: source.subunit}); }
+    if (source['subunit'] !== undefined) { this.subunit = new fhir.FhirInteger({value: source.subunit}, options); }
     if (source['_subunit']) {
       if (this.subunit) { this.subunit.addExtendedProperties(source._subunit!); }
-      else { this.subunit = new fhir.FhirInteger(source._subunit as Partial<fhir.FhirIntegerArgs>); }
+      else { this.subunit = new fhir.FhirInteger(source._subunit as Partial<fhir.FhirIntegerArgs>, options); }
     }
-    if (source['sequence']) { this.sequence = new fhir.FhirString({value: source.sequence}); }
+    if (source['sequence'] !== undefined) { this.sequence = new fhir.FhirString({value: source.sequence}, options); }
     if (source['_sequence']) {
       if (this.sequence) { this.sequence.addExtendedProperties(source._sequence!); }
-      else { this.sequence = new fhir.FhirString(source._sequence as Partial<fhir.FhirStringArgs>); }
+      else { this.sequence = new fhir.FhirString(source._sequence as Partial<fhir.FhirStringArgs>, options); }
     }
-    if (source['length']) { this.length = new fhir.FhirInteger({value: source.length}); }
+    if (source['length'] !== undefined) { this.length = new fhir.FhirInteger({value: source.length}, options); }
     if (source['_length']) {
       if (this.length) { this.length.addExtendedProperties(source._length!); }
-      else { this.length = new fhir.FhirInteger(source._length as Partial<fhir.FhirIntegerArgs>); }
+      else { this.length = new fhir.FhirInteger(source._length as Partial<fhir.FhirIntegerArgs>, options); }
     }
-    if (source['sequenceAttachment']) { this.sequenceAttachment = new fhir.Attachment(source.sequenceAttachment); }
-    if (source['nTerminalModificationId']) { this.nTerminalModificationId = new fhir.Identifier(source.nTerminalModificationId); }
-    if (source['nTerminalModification']) { this.nTerminalModification = new fhir.FhirString({value: source.nTerminalModification}); }
+    if (source['sequenceAttachment']) { this.sequenceAttachment = new fhir.Attachment(source.sequenceAttachment, options); }
+    if (source['nTerminalModificationId']) { this.nTerminalModificationId = new fhir.Identifier(source.nTerminalModificationId, options); }
+    if (source['nTerminalModification'] !== undefined) { this.nTerminalModification = new fhir.FhirString({value: source.nTerminalModification}, options); }
     if (source['_nTerminalModification']) {
       if (this.nTerminalModification) { this.nTerminalModification.addExtendedProperties(source._nTerminalModification!); }
-      else { this.nTerminalModification = new fhir.FhirString(source._nTerminalModification as Partial<fhir.FhirStringArgs>); }
+      else { this.nTerminalModification = new fhir.FhirString(source._nTerminalModification as Partial<fhir.FhirStringArgs>, options); }
     }
-    if (source['cTerminalModificationId']) { this.cTerminalModificationId = new fhir.Identifier(source.cTerminalModificationId); }
-    if (source['cTerminalModification']) { this.cTerminalModification = new fhir.FhirString({value: source.cTerminalModification}); }
+    if (source['cTerminalModificationId']) { this.cTerminalModificationId = new fhir.Identifier(source.cTerminalModificationId, options); }
+    if (source['cTerminalModification'] !== undefined) { this.cTerminalModification = new fhir.FhirString({value: source.cTerminalModification}, options); }
     if (source['_cTerminalModification']) {
       if (this.cTerminalModification) { this.cTerminalModification.addExtendedProperties(source._cTerminalModification!); }
-      else { this.cTerminalModification = new fhir.FhirString(source._cTerminalModification as Partial<fhir.FhirStringArgs>); }
+      else { this.cTerminalModification = new fhir.FhirString(source._cTerminalModification as Partial<fhir.FhirStringArgs>, options); }
     }
   }
   /**
@@ -222,13 +222,13 @@ export class SubstanceProtein extends fhir.DomainResource {
   constructor(source:Partial<SubstanceProteinArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
     this.resourceType = 'SubstanceProtein';
-    if (source['sequenceType']) { this.sequenceType = new fhir.CodeableConcept(source.sequenceType); }
-    if (source['numberOfSubunits']) { this.numberOfSubunits = new fhir.FhirInteger({value: source.numberOfSubunits}); }
+    if (source['sequenceType']) { this.sequenceType = new fhir.CodeableConcept(source.sequenceType, options); }
+    if (source['numberOfSubunits'] !== undefined) { this.numberOfSubunits = new fhir.FhirInteger({value: source.numberOfSubunits}, options); }
     if (source['_numberOfSubunits']) {
       if (this.numberOfSubunits) { this.numberOfSubunits.addExtendedProperties(source._numberOfSubunits!); }
-      else { this.numberOfSubunits = new fhir.FhirInteger(source._numberOfSubunits as Partial<fhir.FhirIntegerArgs>); }
+      else { this.numberOfSubunits = new fhir.FhirInteger(source._numberOfSubunits as Partial<fhir.FhirIntegerArgs>, options); }
     }
-    if (source['disulfideLinkage']) { this.disulfideLinkage = source.disulfideLinkage.map((x) => new fhir.FhirString({value: x})); }
+    if (source['disulfideLinkage'] !== undefined) { this.disulfideLinkage = source.disulfideLinkage.map((x) => new fhir.FhirString({value: x}, options)); }
     else { this.disulfideLinkage = []; }
     if (source['_disulfideLinkage']) {
       source._disulfideLinkage.forEach((x,i) => {
@@ -236,7 +236,7 @@ export class SubstanceProtein extends fhir.DomainResource {
         else { if (x) { this.disulfideLinkage.push(new fhir.FhirString(x as Partial<fhir.FhirStringArgs>)); } }
       });
     }
-    if (source['subunit']) { this.subunit = source.subunit.map((x) => new fhir.SubstanceProteinSubunit(x)); }
+    if (source['subunit']) { this.subunit = source.subunit.map((x) => new fhir.SubstanceProteinSubunit(x, options)); }
     else { this.subunit = []; }
   }
   /**

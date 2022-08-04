@@ -68,16 +68,16 @@ export class MedicinalProductIngredientSpecifiedSubstanceStrengthReferenceStreng
    */
   constructor(source:Partial<MedicinalProductIngredientSpecifiedSubstanceStrengthReferenceStrengthArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['substance']) { this.substance = new fhir.CodeableConcept(source.substance); }
-    if (source['strength']) { this.strength = new fhir.Ratio(source.strength); }
+    if (source['substance']) { this.substance = new fhir.CodeableConcept(source.substance, options); }
+    if (source['strength']) { this.strength = new fhir.Ratio(source.strength, options); }
     else { this.strength = null; }
-    if (source['strengthLowLimit']) { this.strengthLowLimit = new fhir.Ratio(source.strengthLowLimit); }
-    if (source['measurementPoint']) { this.measurementPoint = new fhir.FhirString({value: source.measurementPoint}); }
+    if (source['strengthLowLimit']) { this.strengthLowLimit = new fhir.Ratio(source.strengthLowLimit, options); }
+    if (source['measurementPoint'] !== undefined) { this.measurementPoint = new fhir.FhirString({value: source.measurementPoint}, options); }
     if (source['_measurementPoint']) {
       if (this.measurementPoint) { this.measurementPoint.addExtendedProperties(source._measurementPoint!); }
-      else { this.measurementPoint = new fhir.FhirString(source._measurementPoint as Partial<fhir.FhirStringArgs>); }
+      else { this.measurementPoint = new fhir.FhirString(source._measurementPoint as Partial<fhir.FhirStringArgs>, options); }
     }
-    if (source['country']) { this.country = source.country.map((x) => new fhir.CodeableConcept(x)); }
+    if (source['country']) { this.country = source.country.map((x) => new fhir.CodeableConcept(x, options)); }
     else { this.country = []; }
   }
   /**
@@ -173,19 +173,19 @@ export class MedicinalProductIngredientSpecifiedSubstanceStrength extends fhir.B
    */
   constructor(source:Partial<MedicinalProductIngredientSpecifiedSubstanceStrengthArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['presentation']) { this.presentation = new fhir.Ratio(source.presentation); }
+    if (source['presentation']) { this.presentation = new fhir.Ratio(source.presentation, options); }
     else { this.presentation = null; }
-    if (source['presentationLowLimit']) { this.presentationLowLimit = new fhir.Ratio(source.presentationLowLimit); }
-    if (source['concentration']) { this.concentration = new fhir.Ratio(source.concentration); }
-    if (source['concentrationLowLimit']) { this.concentrationLowLimit = new fhir.Ratio(source.concentrationLowLimit); }
-    if (source['measurementPoint']) { this.measurementPoint = new fhir.FhirString({value: source.measurementPoint}); }
+    if (source['presentationLowLimit']) { this.presentationLowLimit = new fhir.Ratio(source.presentationLowLimit, options); }
+    if (source['concentration']) { this.concentration = new fhir.Ratio(source.concentration, options); }
+    if (source['concentrationLowLimit']) { this.concentrationLowLimit = new fhir.Ratio(source.concentrationLowLimit, options); }
+    if (source['measurementPoint'] !== undefined) { this.measurementPoint = new fhir.FhirString({value: source.measurementPoint}, options); }
     if (source['_measurementPoint']) {
       if (this.measurementPoint) { this.measurementPoint.addExtendedProperties(source._measurementPoint!); }
-      else { this.measurementPoint = new fhir.FhirString(source._measurementPoint as Partial<fhir.FhirStringArgs>); }
+      else { this.measurementPoint = new fhir.FhirString(source._measurementPoint as Partial<fhir.FhirStringArgs>, options); }
     }
-    if (source['country']) { this.country = source.country.map((x) => new fhir.CodeableConcept(x)); }
+    if (source['country']) { this.country = source.country.map((x) => new fhir.CodeableConcept(x, options)); }
     else { this.country = []; }
-    if (source['referenceStrength']) { this.referenceStrength = source.referenceStrength.map((x) => new fhir.MedicinalProductIngredientSpecifiedSubstanceStrengthReferenceStrength(x)); }
+    if (source['referenceStrength']) { this.referenceStrength = source.referenceStrength.map((x) => new fhir.MedicinalProductIngredientSpecifiedSubstanceStrengthReferenceStrength(x, options)); }
     else { this.referenceStrength = []; }
   }
   /**
@@ -255,12 +255,12 @@ export class MedicinalProductIngredientSpecifiedSubstance extends fhir.BackboneE
    */
   constructor(source:Partial<MedicinalProductIngredientSpecifiedSubstanceArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['code']) { this.code = new fhir.CodeableConcept(source.code); }
+    if (source['code']) { this.code = new fhir.CodeableConcept(source.code, options); }
     else { this.code = null; }
-    if (source['group']) { this.group = new fhir.CodeableConcept(source.group); }
+    if (source['group']) { this.group = new fhir.CodeableConcept(source.group, options); }
     else { this.group = null; }
-    if (source['confidentiality']) { this.confidentiality = new fhir.CodeableConcept(source.confidentiality); }
-    if (source['strength']) { this.strength = source.strength.map((x) => new fhir.MedicinalProductIngredientSpecifiedSubstanceStrength(x)); }
+    if (source['confidentiality']) { this.confidentiality = new fhir.CodeableConcept(source.confidentiality, options); }
+    if (source['strength']) { this.strength = source.strength.map((x) => new fhir.MedicinalProductIngredientSpecifiedSubstanceStrength(x, options)); }
     else { this.strength = []; }
   }
   /**
@@ -311,9 +311,9 @@ export class MedicinalProductIngredientSubstance extends fhir.BackboneElement {
    */
   constructor(source:Partial<MedicinalProductIngredientSubstanceArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['code']) { this.code = new fhir.CodeableConcept(source.code); }
+    if (source['code']) { this.code = new fhir.CodeableConcept(source.code, options); }
     else { this.code = null; }
-    if (source['strength']) { this.strength = source.strength.map((x) => new fhir.MedicinalProductIngredientSpecifiedSubstanceStrength(x)); }
+    if (source['strength']) { this.strength = source.strength.map((x) => new fhir.MedicinalProductIngredientSpecifiedSubstanceStrength(x, options)); }
     else { this.strength = []; }
   }
   /**
@@ -407,19 +407,19 @@ export class MedicinalProductIngredient extends fhir.DomainResource {
   constructor(source:Partial<MedicinalProductIngredientArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
     this.resourceType = 'MedicinalProductIngredient';
-    if (source['identifier']) { this.identifier = new fhir.Identifier(source.identifier); }
-    if (source['role']) { this.role = new fhir.CodeableConcept(source.role); }
+    if (source['identifier']) { this.identifier = new fhir.Identifier(source.identifier, options); }
+    if (source['role']) { this.role = new fhir.CodeableConcept(source.role, options); }
     else { this.role = null; }
-    if (source['allergenicIndicator']) { this.allergenicIndicator = new fhir.FhirBoolean({value: source.allergenicIndicator}); }
+    if (source['allergenicIndicator'] !== undefined) { this.allergenicIndicator = new fhir.FhirBoolean({value: source.allergenicIndicator}, options); }
     if (source['_allergenicIndicator']) {
       if (this.allergenicIndicator) { this.allergenicIndicator.addExtendedProperties(source._allergenicIndicator!); }
-      else { this.allergenicIndicator = new fhir.FhirBoolean(source._allergenicIndicator as Partial<fhir.FhirBooleanArgs>); }
+      else { this.allergenicIndicator = new fhir.FhirBoolean(source._allergenicIndicator as Partial<fhir.FhirBooleanArgs>, options); }
     }
-    if (source['manufacturer']) { this.manufacturer = source.manufacturer.map((x) => new fhir.Reference(x)); }
+    if (source['manufacturer']) { this.manufacturer = source.manufacturer.map((x) => new fhir.Reference(x, options)); }
     else { this.manufacturer = []; }
-    if (source['specifiedSubstance']) { this.specifiedSubstance = source.specifiedSubstance.map((x) => new fhir.MedicinalProductIngredientSpecifiedSubstance(x)); }
+    if (source['specifiedSubstance']) { this.specifiedSubstance = source.specifiedSubstance.map((x) => new fhir.MedicinalProductIngredientSpecifiedSubstance(x, options)); }
     else { this.specifiedSubstance = []; }
-    if (source['substance']) { this.substance = new fhir.MedicinalProductIngredientSubstance(source.substance); }
+    if (source['substance']) { this.substance = new fhir.MedicinalProductIngredientSubstance(source.substance, options); }
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).

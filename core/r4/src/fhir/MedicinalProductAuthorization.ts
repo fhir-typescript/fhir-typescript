@@ -64,13 +64,13 @@ export class MedicinalProductAuthorizationJurisdictionalAuthorization extends fh
    */
   constructor(source:Partial<MedicinalProductAuthorizationJurisdictionalAuthorizationArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['identifier']) { this.identifier = source.identifier.map((x) => new fhir.Identifier(x)); }
+    if (source['identifier']) { this.identifier = source.identifier.map((x) => new fhir.Identifier(x, options)); }
     else { this.identifier = []; }
-    if (source['country']) { this.country = new fhir.CodeableConcept(source.country); }
-    if (source['jurisdiction']) { this.jurisdiction = source.jurisdiction.map((x) => new fhir.CodeableConcept(x)); }
+    if (source['country']) { this.country = new fhir.CodeableConcept(source.country, options); }
+    if (source['jurisdiction']) { this.jurisdiction = source.jurisdiction.map((x) => new fhir.CodeableConcept(x, options)); }
     else { this.jurisdiction = []; }
-    if (source['legalStatusOfSupply']) { this.legalStatusOfSupply = new fhir.CodeableConcept(source.legalStatusOfSupply); }
-    if (source['validityPeriod']) { this.validityPeriod = new fhir.Period(source.validityPeriod); }
+    if (source['legalStatusOfSupply']) { this.legalStatusOfSupply = new fhir.CodeableConcept(source.legalStatusOfSupply, options); }
+    if (source['validityPeriod']) { this.validityPeriod = new fhir.Period(source.validityPeriod, options); }
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -149,13 +149,13 @@ export class MedicinalProductAuthorizationProcedure extends fhir.BackboneElement
    */
   constructor(source:Partial<MedicinalProductAuthorizationProcedureArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['identifier']) { this.identifier = new fhir.Identifier(source.identifier); }
-    if (source['type']) { this.type = new fhir.CodeableConcept(source.type); }
+    if (source['identifier']) { this.identifier = new fhir.Identifier(source.identifier, options); }
+    if (source['type']) { this.type = new fhir.CodeableConcept(source.type, options); }
     else { this.type = null; }
     if (source['date']) { this.date = source.date; }
-    else if (source['datePeriod']) { this.date = new fhir.Period(source.datePeriod); }
-    else if (source['dateDateTime']) { this.date = new fhir.FhirDateTime({value: source.dateDateTime}); }
-    if (source['application']) { this.application = source.application.map((x) => new fhir.MedicinalProductAuthorizationProcedure(x)); }
+    else if (source['datePeriod']) { this.date = new fhir.Period(source.datePeriod, options); }
+    else if (source['dateDateTime'] !== undefined) { this.date = new fhir.FhirDateTime({value: source.dateDateTime}, options); }
+    if (source['application']) { this.application = source.application.map((x) => new fhir.MedicinalProductAuthorizationProcedure(x, options)); }
     else { this.application = []; }
   }
   /**
@@ -343,42 +343,42 @@ export class MedicinalProductAuthorization extends fhir.DomainResource {
   constructor(source:Partial<MedicinalProductAuthorizationArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
     this.resourceType = 'MedicinalProductAuthorization';
-    if (source['identifier']) { this.identifier = source.identifier.map((x) => new fhir.Identifier(x)); }
+    if (source['identifier']) { this.identifier = source.identifier.map((x) => new fhir.Identifier(x, options)); }
     else { this.identifier = []; }
-    if (source['subject']) { this.subject = new fhir.Reference(source.subject); }
-    if (source['country']) { this.country = source.country.map((x) => new fhir.CodeableConcept(x)); }
+    if (source['subject']) { this.subject = new fhir.Reference(source.subject, options); }
+    if (source['country']) { this.country = source.country.map((x) => new fhir.CodeableConcept(x, options)); }
     else { this.country = []; }
-    if (source['jurisdiction']) { this.jurisdiction = source.jurisdiction.map((x) => new fhir.CodeableConcept(x)); }
+    if (source['jurisdiction']) { this.jurisdiction = source.jurisdiction.map((x) => new fhir.CodeableConcept(x, options)); }
     else { this.jurisdiction = []; }
-    if (source['status']) { this.status = new fhir.CodeableConcept(source.status); }
-    if (source['statusDate']) { this.statusDate = new fhir.FhirDateTime({value: source.statusDate}); }
+    if (source['status']) { this.status = new fhir.CodeableConcept(source.status, options); }
+    if (source['statusDate'] !== undefined) { this.statusDate = new fhir.FhirDateTime({value: source.statusDate}, options); }
     if (source['_statusDate']) {
       if (this.statusDate) { this.statusDate.addExtendedProperties(source._statusDate!); }
-      else { this.statusDate = new fhir.FhirDateTime(source._statusDate as Partial<fhir.FhirDateTimeArgs>); }
+      else { this.statusDate = new fhir.FhirDateTime(source._statusDate as Partial<fhir.FhirDateTimeArgs>, options); }
     }
-    if (source['restoreDate']) { this.restoreDate = new fhir.FhirDateTime({value: source.restoreDate}); }
+    if (source['restoreDate'] !== undefined) { this.restoreDate = new fhir.FhirDateTime({value: source.restoreDate}, options); }
     if (source['_restoreDate']) {
       if (this.restoreDate) { this.restoreDate.addExtendedProperties(source._restoreDate!); }
-      else { this.restoreDate = new fhir.FhirDateTime(source._restoreDate as Partial<fhir.FhirDateTimeArgs>); }
+      else { this.restoreDate = new fhir.FhirDateTime(source._restoreDate as Partial<fhir.FhirDateTimeArgs>, options); }
     }
-    if (source['validityPeriod']) { this.validityPeriod = new fhir.Period(source.validityPeriod); }
-    if (source['dataExclusivityPeriod']) { this.dataExclusivityPeriod = new fhir.Period(source.dataExclusivityPeriod); }
-    if (source['dateOfFirstAuthorization']) { this.dateOfFirstAuthorization = new fhir.FhirDateTime({value: source.dateOfFirstAuthorization}); }
+    if (source['validityPeriod']) { this.validityPeriod = new fhir.Period(source.validityPeriod, options); }
+    if (source['dataExclusivityPeriod']) { this.dataExclusivityPeriod = new fhir.Period(source.dataExclusivityPeriod, options); }
+    if (source['dateOfFirstAuthorization'] !== undefined) { this.dateOfFirstAuthorization = new fhir.FhirDateTime({value: source.dateOfFirstAuthorization}, options); }
     if (source['_dateOfFirstAuthorization']) {
       if (this.dateOfFirstAuthorization) { this.dateOfFirstAuthorization.addExtendedProperties(source._dateOfFirstAuthorization!); }
-      else { this.dateOfFirstAuthorization = new fhir.FhirDateTime(source._dateOfFirstAuthorization as Partial<fhir.FhirDateTimeArgs>); }
+      else { this.dateOfFirstAuthorization = new fhir.FhirDateTime(source._dateOfFirstAuthorization as Partial<fhir.FhirDateTimeArgs>, options); }
     }
-    if (source['internationalBirthDate']) { this.internationalBirthDate = new fhir.FhirDateTime({value: source.internationalBirthDate}); }
+    if (source['internationalBirthDate'] !== undefined) { this.internationalBirthDate = new fhir.FhirDateTime({value: source.internationalBirthDate}, options); }
     if (source['_internationalBirthDate']) {
       if (this.internationalBirthDate) { this.internationalBirthDate.addExtendedProperties(source._internationalBirthDate!); }
-      else { this.internationalBirthDate = new fhir.FhirDateTime(source._internationalBirthDate as Partial<fhir.FhirDateTimeArgs>); }
+      else { this.internationalBirthDate = new fhir.FhirDateTime(source._internationalBirthDate as Partial<fhir.FhirDateTimeArgs>, options); }
     }
-    if (source['legalBasis']) { this.legalBasis = new fhir.CodeableConcept(source.legalBasis); }
-    if (source['jurisdictionalAuthorization']) { this.jurisdictionalAuthorization = source.jurisdictionalAuthorization.map((x) => new fhir.MedicinalProductAuthorizationJurisdictionalAuthorization(x)); }
+    if (source['legalBasis']) { this.legalBasis = new fhir.CodeableConcept(source.legalBasis, options); }
+    if (source['jurisdictionalAuthorization']) { this.jurisdictionalAuthorization = source.jurisdictionalAuthorization.map((x) => new fhir.MedicinalProductAuthorizationJurisdictionalAuthorization(x, options)); }
     else { this.jurisdictionalAuthorization = []; }
-    if (source['holder']) { this.holder = new fhir.Reference(source.holder); }
-    if (source['regulator']) { this.regulator = new fhir.Reference(source.regulator); }
-    if (source['procedure']) { this.procedure = new fhir.MedicinalProductAuthorizationProcedure(source.procedure); }
+    if (source['holder']) { this.holder = new fhir.Reference(source.holder, options); }
+    if (source['regulator']) { this.regulator = new fhir.Reference(source.regulator, options); }
+    if (source['procedure']) { this.procedure = new fhir.MedicinalProductAuthorizationProcedure(source.procedure, options); }
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).

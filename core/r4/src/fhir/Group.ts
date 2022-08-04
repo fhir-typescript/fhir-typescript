@@ -88,22 +88,22 @@ export class GroupCharacteristic extends fhir.BackboneElement {
    */
   constructor(source:Partial<GroupCharacteristicArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['code']) { this.code = new fhir.CodeableConcept(source.code); }
+    if (source['code']) { this.code = new fhir.CodeableConcept(source.code, options); }
     else { this.code = null; }
     if (source['value']) { this.value = source.value; }
-    else if (source['valueCodeableConcept']) { this.value = new fhir.CodeableConcept(source.valueCodeableConcept); }
-    else if (source['valueBoolean']) { this.value = new fhir.FhirBoolean({value: source.valueBoolean}); }
-    else if (source['valueQuantity']) { this.value = new fhir.Quantity(source.valueQuantity); }
-    else if (source['valueRange']) { this.value = new fhir.Range(source.valueRange); }
-    else if (source['valueReference']) { this.value = new fhir.Reference(source.valueReference); }
+    else if (source['valueCodeableConcept']) { this.value = new fhir.CodeableConcept(source.valueCodeableConcept, options); }
+    else if (source['valueBoolean'] !== undefined) { this.value = new fhir.FhirBoolean({value: source.valueBoolean}, options); }
+    else if (source['valueQuantity']) { this.value = new fhir.Quantity(source.valueQuantity, options); }
+    else if (source['valueRange']) { this.value = new fhir.Range(source.valueRange, options); }
+    else if (source['valueReference']) { this.value = new fhir.Reference(source.valueReference, options); }
     else { this.value = null; }
-    if (source['exclude']) { this.exclude = new fhir.FhirBoolean({value: source.exclude}); }
+    if (source['exclude'] !== undefined) { this.exclude = new fhir.FhirBoolean({value: source.exclude}, options); }
     else { this.exclude = null; }
     if (source['_exclude']) {
       if (this.exclude) { this.exclude.addExtendedProperties(source._exclude!); }
-      else { this.exclude = new fhir.FhirBoolean(source._exclude as Partial<fhir.FhirBooleanArgs>); }
+      else { this.exclude = new fhir.FhirBoolean(source._exclude as Partial<fhir.FhirBooleanArgs>, options); }
     }
-    if (source['period']) { this.period = new fhir.Period(source.period); }
+    if (source['period']) { this.period = new fhir.Period(source.period, options); }
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -165,13 +165,13 @@ export class GroupMember extends fhir.BackboneElement {
    */
   constructor(source:Partial<GroupMemberArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['entity']) { this.entity = new fhir.Reference(source.entity); }
+    if (source['entity']) { this.entity = new fhir.Reference(source.entity, options); }
     else { this.entity = null; }
-    if (source['period']) { this.period = new fhir.Period(source.period); }
-    if (source['inactive']) { this.inactive = new fhir.FhirBoolean({value: source.inactive}); }
+    if (source['period']) { this.period = new fhir.Period(source.period, options); }
+    if (source['inactive'] !== undefined) { this.inactive = new fhir.FhirBoolean({value: source.inactive}, options); }
     if (source['_inactive']) {
       if (this.inactive) { this.inactive.addExtendedProperties(source._inactive!); }
-      else { this.inactive = new fhir.FhirBoolean(source._inactive as Partial<fhir.FhirBooleanArgs>); }
+      else { this.inactive = new fhir.FhirBoolean(source._inactive as Partial<fhir.FhirBooleanArgs>, options); }
     }
   }
   /**
@@ -314,40 +314,40 @@ export class Group extends fhir.DomainResource {
   constructor(source:Partial<GroupArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
     this.resourceType = 'Group';
-    if (source['identifier']) { this.identifier = source.identifier.map((x) => new fhir.Identifier(x)); }
+    if (source['identifier']) { this.identifier = source.identifier.map((x) => new fhir.Identifier(x, options)); }
     else { this.identifier = []; }
-    if (source['active']) { this.active = new fhir.FhirBoolean({value: source.active}); }
+    if (source['active'] !== undefined) { this.active = new fhir.FhirBoolean({value: source.active}, options); }
     if (source['_active']) {
       if (this.active) { this.active.addExtendedProperties(source._active!); }
-      else { this.active = new fhir.FhirBoolean(source._active as Partial<fhir.FhirBooleanArgs>); }
+      else { this.active = new fhir.FhirBoolean(source._active as Partial<fhir.FhirBooleanArgs>, options); }
     }
-    if (source['type']) { this.type = new fhir.FhirCode<GroupTypeCodeType>({value: source.type}); }
+    if (source['type'] !== undefined) { this.type = new fhir.FhirCode<GroupTypeCodeType>({value: source.type}, options); }
     else { this.type = null; }
     if (source['_type']) {
       if (this.type) { this.type.addExtendedProperties(source._type!); }
-      else { this.type = new fhir.FhirCode<GroupTypeCodeType>(source._type as Partial<fhir.FhirCode>); }
+      else { this.type = new fhir.FhirCode<GroupTypeCodeType>(source._type as Partial<fhir.FhirCode>, options); }
     }
-    if (source['actual']) { this.actual = new fhir.FhirBoolean({value: source.actual}); }
+    if (source['actual'] !== undefined) { this.actual = new fhir.FhirBoolean({value: source.actual}, options); }
     else { this.actual = null; }
     if (source['_actual']) {
       if (this.actual) { this.actual.addExtendedProperties(source._actual!); }
-      else { this.actual = new fhir.FhirBoolean(source._actual as Partial<fhir.FhirBooleanArgs>); }
+      else { this.actual = new fhir.FhirBoolean(source._actual as Partial<fhir.FhirBooleanArgs>, options); }
     }
-    if (source['code']) { this.code = new fhir.CodeableConcept(source.code); }
-    if (source['name']) { this.name = new fhir.FhirString({value: source.name}); }
+    if (source['code']) { this.code = new fhir.CodeableConcept(source.code, options); }
+    if (source['name'] !== undefined) { this.name = new fhir.FhirString({value: source.name}, options); }
     if (source['_name']) {
       if (this.name) { this.name.addExtendedProperties(source._name!); }
-      else { this.name = new fhir.FhirString(source._name as Partial<fhir.FhirStringArgs>); }
+      else { this.name = new fhir.FhirString(source._name as Partial<fhir.FhirStringArgs>, options); }
     }
-    if (source['quantity']) { this.quantity = new fhir.FhirUnsignedInt({value: source.quantity}); }
+    if (source['quantity'] !== undefined) { this.quantity = new fhir.FhirUnsignedInt({value: source.quantity}, options); }
     if (source['_quantity']) {
       if (this.quantity) { this.quantity.addExtendedProperties(source._quantity!); }
-      else { this.quantity = new fhir.FhirUnsignedInt(source._quantity as Partial<fhir.FhirUnsignedIntArgs>); }
+      else { this.quantity = new fhir.FhirUnsignedInt(source._quantity as Partial<fhir.FhirUnsignedIntArgs>, options); }
     }
-    if (source['managingEntity']) { this.managingEntity = new fhir.Reference(source.managingEntity); }
-    if (source['characteristic']) { this.characteristic = source.characteristic.map((x) => new fhir.GroupCharacteristic(x)); }
+    if (source['managingEntity']) { this.managingEntity = new fhir.Reference(source.managingEntity, options); }
+    if (source['characteristic']) { this.characteristic = source.characteristic.map((x) => new fhir.GroupCharacteristic(x, options)); }
     else { this.characteristic = []; }
-    if (source['member']) { this.member = source.member.map((x) => new fhir.GroupMember(x)); }
+    if (source['member']) { this.member = source.member.map((x) => new fhir.GroupMember(x, options)); }
     else { this.member = []; }
   }
   /**

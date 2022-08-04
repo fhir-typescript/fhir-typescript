@@ -89,17 +89,17 @@ export class MedicinalProductManufactured extends fhir.DomainResource {
   constructor(source:Partial<MedicinalProductManufacturedArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
     this.resourceType = 'MedicinalProductManufactured';
-    if (source['manufacturedDoseForm']) { this.manufacturedDoseForm = new fhir.CodeableConcept(source.manufacturedDoseForm); }
+    if (source['manufacturedDoseForm']) { this.manufacturedDoseForm = new fhir.CodeableConcept(source.manufacturedDoseForm, options); }
     else { this.manufacturedDoseForm = null; }
-    if (source['unitOfPresentation']) { this.unitOfPresentation = new fhir.CodeableConcept(source.unitOfPresentation); }
-    if (source['quantity']) { this.quantity = new fhir.Quantity(source.quantity); }
+    if (source['unitOfPresentation']) { this.unitOfPresentation = new fhir.CodeableConcept(source.unitOfPresentation, options); }
+    if (source['quantity']) { this.quantity = new fhir.Quantity(source.quantity, options); }
     else { this.quantity = null; }
-    if (source['manufacturer']) { this.manufacturer = source.manufacturer.map((x) => new fhir.Reference(x)); }
+    if (source['manufacturer']) { this.manufacturer = source.manufacturer.map((x) => new fhir.Reference(x, options)); }
     else { this.manufacturer = []; }
-    if (source['ingredient']) { this.ingredient = source.ingredient.map((x) => new fhir.Reference(x)); }
+    if (source['ingredient']) { this.ingredient = source.ingredient.map((x) => new fhir.Reference(x, options)); }
     else { this.ingredient = []; }
-    if (source['physicalCharacteristics']) { this.physicalCharacteristics = new fhir.ProdCharacteristic(source.physicalCharacteristics); }
-    if (source['otherCharacteristics']) { this.otherCharacteristics = source.otherCharacteristics.map((x) => new fhir.CodeableConcept(x)); }
+    if (source['physicalCharacteristics']) { this.physicalCharacteristics = new fhir.ProdCharacteristic(source.physicalCharacteristics, options); }
+    if (source['otherCharacteristics']) { this.otherCharacteristics = source.otherCharacteristics.map((x) => new fhir.CodeableConcept(x, options)); }
     else { this.otherCharacteristics = []; }
   }
   /**

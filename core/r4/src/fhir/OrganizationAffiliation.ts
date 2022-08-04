@@ -141,29 +141,29 @@ export class OrganizationAffiliation extends fhir.DomainResource {
   constructor(source:Partial<OrganizationAffiliationArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
     this.resourceType = 'OrganizationAffiliation';
-    if (source['identifier']) { this.identifier = source.identifier.map((x) => new fhir.Identifier(x)); }
+    if (source['identifier']) { this.identifier = source.identifier.map((x) => new fhir.Identifier(x, options)); }
     else { this.identifier = []; }
-    if (source['active']) { this.active = new fhir.FhirBoolean({value: source.active}); }
+    if (source['active'] !== undefined) { this.active = new fhir.FhirBoolean({value: source.active}, options); }
     if (source['_active']) {
       if (this.active) { this.active.addExtendedProperties(source._active!); }
-      else { this.active = new fhir.FhirBoolean(source._active as Partial<fhir.FhirBooleanArgs>); }
+      else { this.active = new fhir.FhirBoolean(source._active as Partial<fhir.FhirBooleanArgs>, options); }
     }
-    if (source['period']) { this.period = new fhir.Period(source.period); }
-    if (source['organization']) { this.organization = new fhir.Reference(source.organization); }
-    if (source['participatingOrganization']) { this.participatingOrganization = new fhir.Reference(source.participatingOrganization); }
-    if (source['network']) { this.network = source.network.map((x) => new fhir.Reference(x)); }
+    if (source['period']) { this.period = new fhir.Period(source.period, options); }
+    if (source['organization']) { this.organization = new fhir.Reference(source.organization, options); }
+    if (source['participatingOrganization']) { this.participatingOrganization = new fhir.Reference(source.participatingOrganization, options); }
+    if (source['network']) { this.network = source.network.map((x) => new fhir.Reference(x, options)); }
     else { this.network = []; }
-    if (source['code']) { this.code = source.code.map((x) => new fhir.CodeableConcept(x)); }
+    if (source['code']) { this.code = source.code.map((x) => new fhir.CodeableConcept(x, options)); }
     else { this.code = []; }
-    if (source['specialty']) { this.specialty = source.specialty.map((x) => new fhir.CodeableConcept(x)); }
+    if (source['specialty']) { this.specialty = source.specialty.map((x) => new fhir.CodeableConcept(x, options)); }
     else { this.specialty = []; }
-    if (source['location']) { this.location = source.location.map((x) => new fhir.Reference(x)); }
+    if (source['location']) { this.location = source.location.map((x) => new fhir.Reference(x, options)); }
     else { this.location = []; }
-    if (source['healthcareService']) { this.healthcareService = source.healthcareService.map((x) => new fhir.Reference(x)); }
+    if (source['healthcareService']) { this.healthcareService = source.healthcareService.map((x) => new fhir.Reference(x, options)); }
     else { this.healthcareService = []; }
-    if (source['telecom']) { this.telecom = source.telecom.map((x) => new fhir.ContactPoint(x)); }
+    if (source['telecom']) { this.telecom = source.telecom.map((x) => new fhir.ContactPoint(x, options)); }
     else { this.telecom = []; }
-    if (source['endpoint']) { this.endpoint = source.endpoint.map((x) => new fhir.Reference(x)); }
+    if (source['endpoint']) { this.endpoint = source.endpoint.map((x) => new fhir.Reference(x, options)); }
     else { this.endpoint = []; }
   }
   /**

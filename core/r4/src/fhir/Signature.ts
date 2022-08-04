@@ -100,31 +100,31 @@ export class Signature extends fhir.FhirElement {
    */
   constructor(source:Partial<SignatureArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['type']) { this.type = source.type.map((x) => new fhir.Coding(x)); }
+    if (source['type']) { this.type = source.type.map((x) => new fhir.Coding(x, options)); }
     else { this.type = []; }
-    if (source['when']) { this.when = new fhir.FhirInstant({value: source.when}); }
+    if (source['when'] !== undefined) { this.when = new fhir.FhirInstant({value: source.when}, options); }
     else { this.when = null; }
     if (source['_when']) {
       if (this.when) { this.when.addExtendedProperties(source._when!); }
-      else { this.when = new fhir.FhirInstant(source._when as Partial<fhir.FhirInstantArgs>); }
+      else { this.when = new fhir.FhirInstant(source._when as Partial<fhir.FhirInstantArgs>, options); }
     }
-    if (source['who']) { this.who = new fhir.Reference(source.who); }
+    if (source['who']) { this.who = new fhir.Reference(source.who, options); }
     else { this.who = null; }
-    if (source['onBehalfOf']) { this.onBehalfOf = new fhir.Reference(source.onBehalfOf); }
-    if (source['targetFormat']) { this.targetFormat = new fhir.FhirCode({value: source.targetFormat}); }
+    if (source['onBehalfOf']) { this.onBehalfOf = new fhir.Reference(source.onBehalfOf, options); }
+    if (source['targetFormat'] !== undefined) { this.targetFormat = new fhir.FhirCode({value: source.targetFormat}, options); }
     if (source['_targetFormat']) {
       if (this.targetFormat) { this.targetFormat.addExtendedProperties(source._targetFormat!); }
-      else { this.targetFormat = new fhir.FhirCode(source._targetFormat as Partial<fhir.FhirCodeArgs>); }
+      else { this.targetFormat = new fhir.FhirCode(source._targetFormat as Partial<fhir.FhirCodeArgs>, options); }
     }
-    if (source['sigFormat']) { this.sigFormat = new fhir.FhirCode({value: source.sigFormat}); }
+    if (source['sigFormat'] !== undefined) { this.sigFormat = new fhir.FhirCode({value: source.sigFormat}, options); }
     if (source['_sigFormat']) {
       if (this.sigFormat) { this.sigFormat.addExtendedProperties(source._sigFormat!); }
-      else { this.sigFormat = new fhir.FhirCode(source._sigFormat as Partial<fhir.FhirCodeArgs>); }
+      else { this.sigFormat = new fhir.FhirCode(source._sigFormat as Partial<fhir.FhirCodeArgs>, options); }
     }
-    if (source['data']) { this.data = new fhir.FhirBase64Binary({value: source.data}); }
+    if (source['data'] !== undefined) { this.data = new fhir.FhirBase64Binary({value: source.data}, options); }
     if (source['_data']) {
       if (this.data) { this.data.addExtendedProperties(source._data!); }
-      else { this.data = new fhir.FhirBase64Binary(source._data as Partial<fhir.FhirBase64BinaryArgs>); }
+      else { this.data = new fhir.FhirBase64Binary(source._data as Partial<fhir.FhirBase64BinaryArgs>, options); }
     }
   }
   /**

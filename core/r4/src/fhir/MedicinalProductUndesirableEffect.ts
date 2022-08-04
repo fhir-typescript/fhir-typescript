@@ -73,12 +73,12 @@ export class MedicinalProductUndesirableEffect extends fhir.DomainResource {
   constructor(source:Partial<MedicinalProductUndesirableEffectArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
     this.resourceType = 'MedicinalProductUndesirableEffect';
-    if (source['subject']) { this.subject = source.subject.map((x) => new fhir.Reference(x)); }
+    if (source['subject']) { this.subject = source.subject.map((x) => new fhir.Reference(x, options)); }
     else { this.subject = []; }
-    if (source['symptomConditionEffect']) { this.symptomConditionEffect = new fhir.CodeableConcept(source.symptomConditionEffect); }
-    if (source['classification']) { this.classification = new fhir.CodeableConcept(source.classification); }
-    if (source['frequencyOfOccurrence']) { this.frequencyOfOccurrence = new fhir.CodeableConcept(source.frequencyOfOccurrence); }
-    if (source['population']) { this.population = source.population.map((x) => new fhir.Population(x)); }
+    if (source['symptomConditionEffect']) { this.symptomConditionEffect = new fhir.CodeableConcept(source.symptomConditionEffect, options); }
+    if (source['classification']) { this.classification = new fhir.CodeableConcept(source.classification, options); }
+    if (source['frequencyOfOccurrence']) { this.frequencyOfOccurrence = new fhir.CodeableConcept(source.frequencyOfOccurrence, options); }
+    if (source['population']) { this.population = source.population.map((x) => new fhir.Population(x, options)); }
     else { this.population = []; }
   }
   /**

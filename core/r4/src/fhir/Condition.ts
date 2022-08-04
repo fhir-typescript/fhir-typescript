@@ -84,10 +84,10 @@ export class ConditionStage extends fhir.BackboneElement {
    */
   constructor(source:Partial<ConditionStageArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['summary']) { this.summary = new fhir.CodeableConcept(source.summary); }
-    if (source['assessment']) { this.assessment = source.assessment.map((x) => new fhir.Reference(x)); }
+    if (source['summary']) { this.summary = new fhir.CodeableConcept(source.summary, options); }
+    if (source['assessment']) { this.assessment = source.assessment.map((x) => new fhir.Reference(x, options)); }
     else { this.assessment = []; }
-    if (source['type']) { this.type = new fhir.CodeableConcept(source.type); }
+    if (source['type']) { this.type = new fhir.CodeableConcept(source.type, options); }
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -136,9 +136,9 @@ export class ConditionEvidence extends fhir.BackboneElement {
    */
   constructor(source:Partial<ConditionEvidenceArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['code']) { this.code = source.code.map((x) => new fhir.CodeableConcept(x)); }
+    if (source['code']) { this.code = source.code.map((x) => new fhir.CodeableConcept(x, options)); }
     else { this.code = []; }
-    if (source['detail']) { this.detail = source.detail.map((x) => new fhir.Reference(x)); }
+    if (source['detail']) { this.detail = source.detail.map((x) => new fhir.Reference(x, options)); }
     else { this.detail = []; }
   }
   /**
@@ -370,43 +370,43 @@ export class Condition extends fhir.DomainResource {
   constructor(source:Partial<ConditionArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
     this.resourceType = 'Condition';
-    if (source['identifier']) { this.identifier = source.identifier.map((x) => new fhir.Identifier(x)); }
+    if (source['identifier']) { this.identifier = source.identifier.map((x) => new fhir.Identifier(x, options)); }
     else { this.identifier = []; }
-    if (source['clinicalStatus']) { this.clinicalStatus = new fhir.CodeableConcept(source.clinicalStatus); }
-    if (source['verificationStatus']) { this.verificationStatus = new fhir.CodeableConcept(source.verificationStatus); }
-    if (source['category']) { this.category = source.category.map((x) => new fhir.CodeableConcept(x)); }
+    if (source['clinicalStatus']) { this.clinicalStatus = new fhir.CodeableConcept(source.clinicalStatus, options); }
+    if (source['verificationStatus']) { this.verificationStatus = new fhir.CodeableConcept(source.verificationStatus, options); }
+    if (source['category']) { this.category = source.category.map((x) => new fhir.CodeableConcept(x, options)); }
     else { this.category = []; }
-    if (source['severity']) { this.severity = new fhir.CodeableConcept(source.severity); }
-    if (source['code']) { this.code = new fhir.CodeableConcept(source.code); }
-    if (source['bodySite']) { this.bodySite = source.bodySite.map((x) => new fhir.CodeableConcept(x)); }
+    if (source['severity']) { this.severity = new fhir.CodeableConcept(source.severity, options); }
+    if (source['code']) { this.code = new fhir.CodeableConcept(source.code, options); }
+    if (source['bodySite']) { this.bodySite = source.bodySite.map((x) => new fhir.CodeableConcept(x, options)); }
     else { this.bodySite = []; }
-    if (source['subject']) { this.subject = new fhir.Reference(source.subject); }
+    if (source['subject']) { this.subject = new fhir.Reference(source.subject, options); }
     else { this.subject = null; }
-    if (source['encounter']) { this.encounter = new fhir.Reference(source.encounter); }
+    if (source['encounter']) { this.encounter = new fhir.Reference(source.encounter, options); }
     if (source['onset']) { this.onset = source.onset; }
-    else if (source['onsetDateTime']) { this.onset = new fhir.FhirDateTime({value: source.onsetDateTime}); }
-    else if (source['onsetAge']) { this.onset = new fhir.Age(source.onsetAge); }
-    else if (source['onsetPeriod']) { this.onset = new fhir.Period(source.onsetPeriod); }
-    else if (source['onsetRange']) { this.onset = new fhir.Range(source.onsetRange); }
-    else if (source['onsetString']) { this.onset = new fhir.FhirString({value: source.onsetString}); }
+    else if (source['onsetDateTime'] !== undefined) { this.onset = new fhir.FhirDateTime({value: source.onsetDateTime}, options); }
+    else if (source['onsetAge']) { this.onset = new fhir.Age(source.onsetAge, options); }
+    else if (source['onsetPeriod']) { this.onset = new fhir.Period(source.onsetPeriod, options); }
+    else if (source['onsetRange']) { this.onset = new fhir.Range(source.onsetRange, options); }
+    else if (source['onsetString'] !== undefined) { this.onset = new fhir.FhirString({value: source.onsetString}, options); }
     if (source['abatement']) { this.abatement = source.abatement; }
-    else if (source['abatementDateTime']) { this.abatement = new fhir.FhirDateTime({value: source.abatementDateTime}); }
-    else if (source['abatementAge']) { this.abatement = new fhir.Age(source.abatementAge); }
-    else if (source['abatementPeriod']) { this.abatement = new fhir.Period(source.abatementPeriod); }
-    else if (source['abatementRange']) { this.abatement = new fhir.Range(source.abatementRange); }
-    else if (source['abatementString']) { this.abatement = new fhir.FhirString({value: source.abatementString}); }
-    if (source['recordedDate']) { this.recordedDate = new fhir.FhirDateTime({value: source.recordedDate}); }
+    else if (source['abatementDateTime'] !== undefined) { this.abatement = new fhir.FhirDateTime({value: source.abatementDateTime}, options); }
+    else if (source['abatementAge']) { this.abatement = new fhir.Age(source.abatementAge, options); }
+    else if (source['abatementPeriod']) { this.abatement = new fhir.Period(source.abatementPeriod, options); }
+    else if (source['abatementRange']) { this.abatement = new fhir.Range(source.abatementRange, options); }
+    else if (source['abatementString'] !== undefined) { this.abatement = new fhir.FhirString({value: source.abatementString}, options); }
+    if (source['recordedDate'] !== undefined) { this.recordedDate = new fhir.FhirDateTime({value: source.recordedDate}, options); }
     if (source['_recordedDate']) {
       if (this.recordedDate) { this.recordedDate.addExtendedProperties(source._recordedDate!); }
-      else { this.recordedDate = new fhir.FhirDateTime(source._recordedDate as Partial<fhir.FhirDateTimeArgs>); }
+      else { this.recordedDate = new fhir.FhirDateTime(source._recordedDate as Partial<fhir.FhirDateTimeArgs>, options); }
     }
-    if (source['recorder']) { this.recorder = new fhir.Reference(source.recorder); }
-    if (source['asserter']) { this.asserter = new fhir.Reference(source.asserter); }
-    if (source['stage']) { this.stage = source.stage.map((x) => new fhir.ConditionStage(x)); }
+    if (source['recorder']) { this.recorder = new fhir.Reference(source.recorder, options); }
+    if (source['asserter']) { this.asserter = new fhir.Reference(source.asserter, options); }
+    if (source['stage']) { this.stage = source.stage.map((x) => new fhir.ConditionStage(x, options)); }
     else { this.stage = []; }
-    if (source['evidence']) { this.evidence = source.evidence.map((x) => new fhir.ConditionEvidence(x)); }
+    if (source['evidence']) { this.evidence = source.evidence.map((x) => new fhir.ConditionEvidence(x, options)); }
     else { this.evidence = []; }
-    if (source['note']) { this.note = source.note.map((x) => new fhir.Annotation(x)); }
+    if (source['note']) { this.note = source.note.map((x) => new fhir.Annotation(x, options)); }
     else { this.note = []; }
   }
   /**

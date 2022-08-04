@@ -40,8 +40,8 @@ export class SubstanceAmountReferenceRange extends fhir.FhirElement {
    */
   constructor(source:Partial<SubstanceAmountReferenceRangeArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['lowLimit']) { this.lowLimit = new fhir.Quantity(source.lowLimit); }
-    if (source['highLimit']) { this.highLimit = new fhir.Quantity(source.highLimit); }
+    if (source['lowLimit']) { this.lowLimit = new fhir.Quantity(source.lowLimit, options); }
+    if (source['highLimit']) { this.highLimit = new fhir.Quantity(source.highLimit, options); }
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -126,16 +126,16 @@ export class SubstanceAmount extends fhir.BackboneElement {
   constructor(source:Partial<SubstanceAmountArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
     if (source['amount']) { this.amount = source.amount; }
-    else if (source['amountQuantity']) { this.amount = new fhir.Quantity(source.amountQuantity); }
-    else if (source['amountRange']) { this.amount = new fhir.Range(source.amountRange); }
-    else if (source['amountString']) { this.amount = new fhir.FhirString({value: source.amountString}); }
-    if (source['amountType']) { this.amountType = new fhir.CodeableConcept(source.amountType); }
-    if (source['amountText']) { this.amountText = new fhir.FhirString({value: source.amountText}); }
+    else if (source['amountQuantity']) { this.amount = new fhir.Quantity(source.amountQuantity, options); }
+    else if (source['amountRange']) { this.amount = new fhir.Range(source.amountRange, options); }
+    else if (source['amountString'] !== undefined) { this.amount = new fhir.FhirString({value: source.amountString}, options); }
+    if (source['amountType']) { this.amountType = new fhir.CodeableConcept(source.amountType, options); }
+    if (source['amountText'] !== undefined) { this.amountText = new fhir.FhirString({value: source.amountText}, options); }
     if (source['_amountText']) {
       if (this.amountText) { this.amountText.addExtendedProperties(source._amountText!); }
-      else { this.amountText = new fhir.FhirString(source._amountText as Partial<fhir.FhirStringArgs>); }
+      else { this.amountText = new fhir.FhirString(source._amountText as Partial<fhir.FhirStringArgs>, options); }
     }
-    if (source['referenceRange']) { this.referenceRange = new fhir.SubstanceAmountReferenceRange(source.referenceRange); }
+    if (source['referenceRange']) { this.referenceRange = new fhir.SubstanceAmountReferenceRange(source.referenceRange, options); }
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
