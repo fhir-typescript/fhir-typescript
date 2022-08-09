@@ -1,0 +1,11 @@
+{
+  "changes": [
+    {
+      "comment": "Fixed regressions in model validation and serialization",
+      "type": "none",
+      "packageName": "@fhir-typescript/r2-core"
+    }
+  ],
+  "packageName": "@fhir-typescript/r2-core",
+  "email": "gino.canessa@microsoft.com"
+}

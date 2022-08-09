@@ -49,11 +49,17 @@ $ rush update
 # Bump the versions in package.json according to version policy
 $ rush version --bump
 
-# Do a clean rebuild of everything
-$ rush rebuild
+# Update changelog with a message
+$ rush change --bulk --message "CHANGES" --bump-type patch
+
+# Regenerate NPM changelogs
+$ rush publish --regenerate-changelogs --version-policy ftsVersionPolicy
 
 # Rebuild just core projects
 $ rush rebuild --to-version-policy ftsVersionPolicy
+
+# Take changes from current branch, compare to main, and publish
+$ rush publish --version-policy ftsVersionPolicy --publish --apply --set-access-level public -b main
 
 # Work on one project
 $ cd ./core/r4
