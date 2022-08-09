@@ -104,19 +104,19 @@ export class PatientContact extends fhir.BackboneElement {
    */
   constructor(source:Partial<PatientContactArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['relationship']) { this.relationship = source.relationship.map((x) => new fhir.CodeableConcept(x)); }
+    if (source['relationship']) { this.relationship = source.relationship.map((x) => new fhir.CodeableConcept(x, options)); }
     else { this.relationship = []; }
-    if (source['name']) { this.name = new fhir.HumanName(source.name); }
-    if (source['telecom']) { this.telecom = source.telecom.map((x) => new fhir.ContactPoint(x)); }
+    if (source['name']) { this.name = new fhir.HumanName(source.name, options); }
+    if (source['telecom']) { this.telecom = source.telecom.map((x) => new fhir.ContactPoint(x, options)); }
     else { this.telecom = []; }
-    if (source['address']) { this.address = new fhir.Address(source.address); }
-    if (source['gender']) { this.gender = new fhir.FhirCode<AdministrativeGenderCodeType>({value: source.gender}); }
+    if (source['address']) { this.address = new fhir.Address(source.address, options); }
+    if (source['gender'] !== undefined) { this.gender = new fhir.FhirCode<AdministrativeGenderCodeType>({value: source.gender}, options); }
     if (source['_gender']) {
       if (this.gender) { this.gender.addExtendedProperties(source._gender!); }
-      else { this.gender = new fhir.FhirCode<AdministrativeGenderCodeType>(source._gender as Partial<fhir.FhirCode>); }
+      else { this.gender = new fhir.FhirCode<AdministrativeGenderCodeType>(source._gender as Partial<fhir.FhirCode>, options); }
     }
-    if (source['organization']) { this.organization = new fhir.Reference(source.organization); }
-    if (source['period']) { this.period = new fhir.Period(source.period); }
+    if (source['organization']) { this.organization = new fhir.Reference(source.organization, options); }
+    if (source['period']) { this.period = new fhir.Period(source.period, options); }
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -173,12 +173,12 @@ export class PatientCommunication extends fhir.BackboneElement {
    */
   constructor(source:Partial<PatientCommunicationArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['language']) { this.language = new fhir.CodeableConcept(source.language); }
+    if (source['language']) { this.language = new fhir.CodeableConcept(source.language, options); }
     else { this.language = null; }
-    if (source['preferred']) { this.preferred = new fhir.FhirBoolean({value: source.preferred}); }
+    if (source['preferred'] !== undefined) { this.preferred = new fhir.FhirBoolean({value: source.preferred}, options); }
     if (source['_preferred']) {
       if (this.preferred) { this.preferred.addExtendedProperties(source._preferred!); }
-      else { this.preferred = new fhir.FhirBoolean(source._preferred as Partial<fhir.FhirBooleanArgs>); }
+      else { this.preferred = new fhir.FhirBoolean(source._preferred as Partial<fhir.FhirBooleanArgs>, options); }
     }
   }
   /**
@@ -231,13 +231,13 @@ export class PatientLink extends fhir.BackboneElement {
    */
   constructor(source:Partial<PatientLinkArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['other']) { this.other = new fhir.Reference(source.other); }
+    if (source['other']) { this.other = new fhir.Reference(source.other, options); }
     else { this.other = null; }
-    if (source['type']) { this.type = new fhir.FhirCode<LinkTypeCodeType>({value: source.type}); }
+    if (source['type'] !== undefined) { this.type = new fhir.FhirCode<LinkTypeCodeType>({value: source.type}, options); }
     else { this.type = null; }
     if (source['_type']) {
       if (this.type) { this.type.addExtendedProperties(source._type!); }
-      else { this.type = new fhir.FhirCode<LinkTypeCodeType>(source._type as Partial<fhir.FhirCode>); }
+      else { this.type = new fhir.FhirCode<LinkTypeCodeType>(source._type as Partial<fhir.FhirCode>, options); }
     }
   }
   /**
@@ -453,46 +453,46 @@ export class Patient extends fhir.DomainResource {
   constructor(source:Partial<PatientArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
     this.resourceType = 'Patient';
-    if (source['identifier']) { this.identifier = source.identifier.map((x) => new fhir.Identifier(x)); }
+    if (source['identifier']) { this.identifier = source.identifier.map((x) => new fhir.Identifier(x, options)); }
     else { this.identifier = []; }
-    if (source['active']) { this.active = new fhir.FhirBoolean({value: source.active}); }
+    if (source['active'] !== undefined) { this.active = new fhir.FhirBoolean({value: source.active}, options); }
     if (source['_active']) {
       if (this.active) { this.active.addExtendedProperties(source._active!); }
-      else { this.active = new fhir.FhirBoolean(source._active as Partial<fhir.FhirBooleanArgs>); }
+      else { this.active = new fhir.FhirBoolean(source._active as Partial<fhir.FhirBooleanArgs>, options); }
     }
-    if (source['name']) { this.name = source.name.map((x) => new fhir.HumanName(x)); }
+    if (source['name']) { this.name = source.name.map((x) => new fhir.HumanName(x, options)); }
     else { this.name = []; }
-    if (source['telecom']) { this.telecom = source.telecom.map((x) => new fhir.ContactPoint(x)); }
+    if (source['telecom']) { this.telecom = source.telecom.map((x) => new fhir.ContactPoint(x, options)); }
     else { this.telecom = []; }
-    if (source['gender']) { this.gender = new fhir.FhirCode<AdministrativeGenderCodeType>({value: source.gender}); }
+    if (source['gender'] !== undefined) { this.gender = new fhir.FhirCode<AdministrativeGenderCodeType>({value: source.gender}, options); }
     if (source['_gender']) {
       if (this.gender) { this.gender.addExtendedProperties(source._gender!); }
-      else { this.gender = new fhir.FhirCode<AdministrativeGenderCodeType>(source._gender as Partial<fhir.FhirCode>); }
+      else { this.gender = new fhir.FhirCode<AdministrativeGenderCodeType>(source._gender as Partial<fhir.FhirCode>, options); }
     }
-    if (source['birthDate']) { this.birthDate = new fhir.FhirDate({value: source.birthDate}); }
+    if (source['birthDate'] !== undefined) { this.birthDate = new fhir.FhirDate({value: source.birthDate}, options); }
     if (source['_birthDate']) {
       if (this.birthDate) { this.birthDate.addExtendedProperties(source._birthDate!); }
-      else { this.birthDate = new fhir.FhirDate(source._birthDate as Partial<fhir.FhirDateArgs>); }
+      else { this.birthDate = new fhir.FhirDate(source._birthDate as Partial<fhir.FhirDateArgs>, options); }
     }
     if (source['deceased']) { this.deceased = source.deceased; }
-    else if (source['deceasedBoolean']) { this.deceased = new fhir.FhirBoolean({value: source.deceasedBoolean}); }
-    else if (source['deceasedDateTime']) { this.deceased = new fhir.FhirDateTime({value: source.deceasedDateTime}); }
-    if (source['address']) { this.address = source.address.map((x) => new fhir.Address(x)); }
+    else if (source['deceasedBoolean'] !== undefined) { this.deceased = new fhir.FhirBoolean({value: source.deceasedBoolean}, options); }
+    else if (source['deceasedDateTime'] !== undefined) { this.deceased = new fhir.FhirDateTime({value: source.deceasedDateTime}, options); }
+    if (source['address']) { this.address = source.address.map((x) => new fhir.Address(x, options)); }
     else { this.address = []; }
-    if (source['maritalStatus']) { this.maritalStatus = new fhir.CodeableConcept(source.maritalStatus); }
+    if (source['maritalStatus']) { this.maritalStatus = new fhir.CodeableConcept(source.maritalStatus, options); }
     if (source['multipleBirth']) { this.multipleBirth = source.multipleBirth; }
-    else if (source['multipleBirthBoolean']) { this.multipleBirth = new fhir.FhirBoolean({value: source.multipleBirthBoolean}); }
-    else if (source['multipleBirthInteger']) { this.multipleBirth = new fhir.FhirInteger({value: source.multipleBirthInteger}); }
-    if (source['photo']) { this.photo = source.photo.map((x) => new fhir.Attachment(x)); }
+    else if (source['multipleBirthBoolean'] !== undefined) { this.multipleBirth = new fhir.FhirBoolean({value: source.multipleBirthBoolean}, options); }
+    else if (source['multipleBirthInteger'] !== undefined) { this.multipleBirth = new fhir.FhirInteger({value: source.multipleBirthInteger}, options); }
+    if (source['photo']) { this.photo = source.photo.map((x) => new fhir.Attachment(x, options)); }
     else { this.photo = []; }
-    if (source['contact']) { this.contact = source.contact.map((x) => new fhir.PatientContact(x)); }
+    if (source['contact']) { this.contact = source.contact.map((x) => new fhir.PatientContact(x, options)); }
     else { this.contact = []; }
-    if (source['communication']) { this.communication = source.communication.map((x) => new fhir.PatientCommunication(x)); }
+    if (source['communication']) { this.communication = source.communication.map((x) => new fhir.PatientCommunication(x, options)); }
     else { this.communication = []; }
-    if (source['generalPractitioner']) { this.generalPractitioner = source.generalPractitioner.map((x) => new fhir.Reference(x)); }
+    if (source['generalPractitioner']) { this.generalPractitioner = source.generalPractitioner.map((x) => new fhir.Reference(x, options)); }
     else { this.generalPractitioner = []; }
-    if (source['managingOrganization']) { this.managingOrganization = new fhir.Reference(source.managingOrganization); }
-    if (source['link']) { this.link = source.link.map((x) => new fhir.PatientLink(x)); }
+    if (source['managingOrganization']) { this.managingOrganization = new fhir.Reference(source.managingOrganization, options); }
+    if (source['link']) { this.link = source.link.map((x) => new fhir.PatientLink(x, options)); }
     else { this.link = []; }
   }
   /**

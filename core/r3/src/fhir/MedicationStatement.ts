@@ -236,52 +236,52 @@ export class MedicationStatement extends fhir.DomainResource {
   constructor(source:Partial<MedicationStatementArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
     this.resourceType = 'MedicationStatement';
-    if (source['identifier']) { this.identifier = source.identifier.map((x) => new fhir.Identifier(x)); }
+    if (source['identifier']) { this.identifier = source.identifier.map((x) => new fhir.Identifier(x, options)); }
     else { this.identifier = []; }
-    if (source['basedOn']) { this.basedOn = source.basedOn.map((x) => new fhir.Reference(x)); }
+    if (source['basedOn']) { this.basedOn = source.basedOn.map((x) => new fhir.Reference(x, options)); }
     else { this.basedOn = []; }
-    if (source['partOf']) { this.partOf = source.partOf.map((x) => new fhir.Reference(x)); }
+    if (source['partOf']) { this.partOf = source.partOf.map((x) => new fhir.Reference(x, options)); }
     else { this.partOf = []; }
-    if (source['context']) { this.context = new fhir.Reference(source.context); }
-    if (source['status']) { this.status = new fhir.FhirCode<MedicationStatementStatusCodeType>({value: source.status}); }
+    if (source['context']) { this.context = new fhir.Reference(source.context, options); }
+    if (source['status'] !== undefined) { this.status = new fhir.FhirCode<MedicationStatementStatusCodeType>({value: source.status}, options); }
     else { this.status = null; }
     if (source['_status']) {
       if (this.status) { this.status.addExtendedProperties(source._status!); }
-      else { this.status = new fhir.FhirCode<MedicationStatementStatusCodeType>(source._status as Partial<fhir.FhirCode>); }
+      else { this.status = new fhir.FhirCode<MedicationStatementStatusCodeType>(source._status as Partial<fhir.FhirCode>, options); }
     }
-    if (source['category']) { this.category = new fhir.CodeableConcept(source.category); }
+    if (source['category']) { this.category = new fhir.CodeableConcept(source.category, options); }
     if (source['medication']) { this.medication = source.medication; }
-    else if (source['medicationCodeableConcept']) { this.medication = new fhir.CodeableConcept(source.medicationCodeableConcept); }
-    else if (source['medicationReference']) { this.medication = new fhir.Reference(source.medicationReference); }
+    else if (source['medicationCodeableConcept']) { this.medication = new fhir.CodeableConcept(source.medicationCodeableConcept, options); }
+    else if (source['medicationReference']) { this.medication = new fhir.Reference(source.medicationReference, options); }
     else { this.medication = null; }
     if (source['effective']) { this.effective = source.effective; }
-    else if (source['effectiveDateTime']) { this.effective = new fhir.FhirDateTime({value: source.effectiveDateTime}); }
-    else if (source['effectivePeriod']) { this.effective = new fhir.Period(source.effectivePeriod); }
-    if (source['dateAsserted']) { this.dateAsserted = new fhir.FhirDateTime({value: source.dateAsserted}); }
+    else if (source['effectiveDateTime'] !== undefined) { this.effective = new fhir.FhirDateTime({value: source.effectiveDateTime}, options); }
+    else if (source['effectivePeriod']) { this.effective = new fhir.Period(source.effectivePeriod, options); }
+    if (source['dateAsserted'] !== undefined) { this.dateAsserted = new fhir.FhirDateTime({value: source.dateAsserted}, options); }
     if (source['_dateAsserted']) {
       if (this.dateAsserted) { this.dateAsserted.addExtendedProperties(source._dateAsserted!); }
-      else { this.dateAsserted = new fhir.FhirDateTime(source._dateAsserted as Partial<fhir.FhirDateTimeArgs>); }
+      else { this.dateAsserted = new fhir.FhirDateTime(source._dateAsserted as Partial<fhir.FhirDateTimeArgs>, options); }
     }
-    if (source['informationSource']) { this.informationSource = new fhir.Reference(source.informationSource); }
-    if (source['subject']) { this.subject = new fhir.Reference(source.subject); }
+    if (source['informationSource']) { this.informationSource = new fhir.Reference(source.informationSource, options); }
+    if (source['subject']) { this.subject = new fhir.Reference(source.subject, options); }
     else { this.subject = null; }
-    if (source['derivedFrom']) { this.derivedFrom = source.derivedFrom.map((x) => new fhir.Reference(x)); }
+    if (source['derivedFrom']) { this.derivedFrom = source.derivedFrom.map((x) => new fhir.Reference(x, options)); }
     else { this.derivedFrom = []; }
-    if (source['taken']) { this.taken = new fhir.FhirCode<MedicationStatementTakenCodeType>({value: source.taken}); }
+    if (source['taken'] !== undefined) { this.taken = new fhir.FhirCode<MedicationStatementTakenCodeType>({value: source.taken}, options); }
     else { this.taken = null; }
     if (source['_taken']) {
       if (this.taken) { this.taken.addExtendedProperties(source._taken!); }
-      else { this.taken = new fhir.FhirCode<MedicationStatementTakenCodeType>(source._taken as Partial<fhir.FhirCode>); }
+      else { this.taken = new fhir.FhirCode<MedicationStatementTakenCodeType>(source._taken as Partial<fhir.FhirCode>, options); }
     }
-    if (source['reasonNotTaken']) { this.reasonNotTaken = source.reasonNotTaken.map((x) => new fhir.CodeableConcept(x)); }
+    if (source['reasonNotTaken']) { this.reasonNotTaken = source.reasonNotTaken.map((x) => new fhir.CodeableConcept(x, options)); }
     else { this.reasonNotTaken = []; }
-    if (source['reasonCode']) { this.reasonCode = source.reasonCode.map((x) => new fhir.CodeableConcept(x)); }
+    if (source['reasonCode']) { this.reasonCode = source.reasonCode.map((x) => new fhir.CodeableConcept(x, options)); }
     else { this.reasonCode = []; }
-    if (source['reasonReference']) { this.reasonReference = source.reasonReference.map((x) => new fhir.Reference(x)); }
+    if (source['reasonReference']) { this.reasonReference = source.reasonReference.map((x) => new fhir.Reference(x, options)); }
     else { this.reasonReference = []; }
-    if (source['note']) { this.note = source.note.map((x) => new fhir.Annotation(x)); }
+    if (source['note']) { this.note = source.note.map((x) => new fhir.Annotation(x, options)); }
     else { this.note = []; }
-    if (source['dosage']) { this.dosage = source.dosage.map((x) => new fhir.Dosage(x)); }
+    if (source['dosage']) { this.dosage = source.dosage.map((x) => new fhir.Dosage(x, options)); }
     else { this.dosage = []; }
   }
   /**

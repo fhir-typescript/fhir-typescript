@@ -101,20 +101,20 @@ export class QuestionnaireResponseGroupQuestionAnswer extends fhir.BackboneEleme
   constructor(source:Partial<QuestionnaireResponseGroupQuestionAnswerArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
     if (source['value']) { this.value = source.value; }
-    else if (source['valueBoolean']) { this.value = new fhir.FhirBoolean({value: source.valueBoolean}); }
-    else if (source['valueDecimal']) { this.value = new fhir.FhirDecimal({value: source.valueDecimal}); }
-    else if (source['valueInteger']) { this.value = new fhir.FhirInteger({value: source.valueInteger}); }
-    else if (source['valueDate']) { this.value = new fhir.FhirDate({value: source.valueDate}); }
-    else if (source['valueDateTime']) { this.value = new fhir.FhirDateTime({value: source.valueDateTime}); }
-    else if (source['valueInstant']) { this.value = new fhir.FhirInstant({value: source.valueInstant}); }
-    else if (source['valueTime']) { this.value = new fhir.FhirTime({value: source.valueTime}); }
-    else if (source['valueString']) { this.value = new fhir.FhirString({value: source.valueString}); }
-    else if (source['valueUri']) { this.value = new fhir.FhirUri({value: source.valueUri}); }
-    else if (source['valueAttachment']) { this.value = new fhir.Attachment(source.valueAttachment); }
-    else if (source['valueCoding']) { this.value = new fhir.Coding(source.valueCoding); }
-    else if (source['valueQuantity']) { this.value = new fhir.Quantity(source.valueQuantity); }
-    else if (source['valueReference']) { this.value = new fhir.Reference(source.valueReference); }
-    if (source['group']) { this.group = source.group.map((x) => new fhir.QuestionnaireResponseGroup(x)); }
+    else if (source['valueBoolean'] !== undefined) { this.value = new fhir.FhirBoolean({value: source.valueBoolean}, options); }
+    else if (source['valueDecimal'] !== undefined) { this.value = new fhir.FhirDecimal({value: source.valueDecimal}, options); }
+    else if (source['valueInteger'] !== undefined) { this.value = new fhir.FhirInteger({value: source.valueInteger}, options); }
+    else if (source['valueDate'] !== undefined) { this.value = new fhir.FhirDate({value: source.valueDate}, options); }
+    else if (source['valueDateTime'] !== undefined) { this.value = new fhir.FhirDateTime({value: source.valueDateTime}, options); }
+    else if (source['valueInstant'] !== undefined) { this.value = new fhir.FhirInstant({value: source.valueInstant}, options); }
+    else if (source['valueTime'] !== undefined) { this.value = new fhir.FhirTime({value: source.valueTime}, options); }
+    else if (source['valueString'] !== undefined) { this.value = new fhir.FhirString({value: source.valueString}, options); }
+    else if (source['valueUri'] !== undefined) { this.value = new fhir.FhirUri({value: source.valueUri}, options); }
+    else if (source['valueAttachment']) { this.value = new fhir.Attachment(source.valueAttachment, options); }
+    else if (source['valueCoding']) { this.value = new fhir.Coding(source.valueCoding, options); }
+    else if (source['valueQuantity']) { this.value = new fhir.Quantity(source.valueQuantity, options); }
+    else if (source['valueReference']) { this.value = new fhir.Reference(source.valueReference, options); }
+    if (source['group']) { this.group = source.group.map((x) => new fhir.QuestionnaireResponseGroup(x, options)); }
     else { this.group = []; }
   }
   /**
@@ -179,17 +179,17 @@ export class QuestionnaireResponseGroupQuestion extends fhir.BackboneElement {
    */
   constructor(source:Partial<QuestionnaireResponseGroupQuestionArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['linkId']) { this.linkId = new fhir.FhirString({value: source.linkId}); }
+    if (source['linkId'] !== undefined) { this.linkId = new fhir.FhirString({value: source.linkId}, options); }
     if (source['_linkId']) {
       if (this.linkId) { this.linkId.addExtendedProperties(source._linkId!); }
-      else { this.linkId = new fhir.FhirString(source._linkId as Partial<fhir.FhirStringArgs>); }
+      else { this.linkId = new fhir.FhirString(source._linkId as Partial<fhir.FhirStringArgs>, options); }
     }
-    if (source['text']) { this.text = new fhir.FhirString({value: source.text}); }
+    if (source['text'] !== undefined) { this.text = new fhir.FhirString({value: source.text}, options); }
     if (source['_text']) {
       if (this.text) { this.text.addExtendedProperties(source._text!); }
-      else { this.text = new fhir.FhirString(source._text as Partial<fhir.FhirStringArgs>); }
+      else { this.text = new fhir.FhirString(source._text as Partial<fhir.FhirStringArgs>, options); }
     }
-    if (source['answer']) { this.answer = source.answer.map((x) => new fhir.QuestionnaireResponseGroupQuestionAnswer(x)); }
+    if (source['answer']) { this.answer = source.answer.map((x) => new fhir.QuestionnaireResponseGroupQuestionAnswer(x, options)); }
     else { this.answer = []; }
   }
   /**
@@ -283,25 +283,25 @@ export class QuestionnaireResponseGroup extends fhir.BackboneElement {
    */
   constructor(source:Partial<QuestionnaireResponseGroupArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['linkId']) { this.linkId = new fhir.FhirString({value: source.linkId}); }
+    if (source['linkId'] !== undefined) { this.linkId = new fhir.FhirString({value: source.linkId}, options); }
     if (source['_linkId']) {
       if (this.linkId) { this.linkId.addExtendedProperties(source._linkId!); }
-      else { this.linkId = new fhir.FhirString(source._linkId as Partial<fhir.FhirStringArgs>); }
+      else { this.linkId = new fhir.FhirString(source._linkId as Partial<fhir.FhirStringArgs>, options); }
     }
-    if (source['title']) { this.title = new fhir.FhirString({value: source.title}); }
+    if (source['title'] !== undefined) { this.title = new fhir.FhirString({value: source.title}, options); }
     if (source['_title']) {
       if (this.title) { this.title.addExtendedProperties(source._title!); }
-      else { this.title = new fhir.FhirString(source._title as Partial<fhir.FhirStringArgs>); }
+      else { this.title = new fhir.FhirString(source._title as Partial<fhir.FhirStringArgs>, options); }
     }
-    if (source['text']) { this.text = new fhir.FhirString({value: source.text}); }
+    if (source['text'] !== undefined) { this.text = new fhir.FhirString({value: source.text}, options); }
     if (source['_text']) {
       if (this.text) { this.text.addExtendedProperties(source._text!); }
-      else { this.text = new fhir.FhirString(source._text as Partial<fhir.FhirStringArgs>); }
+      else { this.text = new fhir.FhirString(source._text as Partial<fhir.FhirStringArgs>, options); }
     }
-    if (source['subject']) { this.subject = new fhir.Reference(source.subject); }
-    if (source['group']) { this.group = source.group.map((x) => new fhir.QuestionnaireResponseGroup(x)); }
+    if (source['subject']) { this.subject = new fhir.Reference(source.subject, options); }
+    if (source['group']) { this.group = source.group.map((x) => new fhir.QuestionnaireResponseGroup(x, options)); }
     else { this.group = []; }
-    if (source['question']) { this.question = source.question.map((x) => new fhir.QuestionnaireResponseGroupQuestion(x)); }
+    if (source['question']) { this.question = source.question.map((x) => new fhir.QuestionnaireResponseGroupQuestion(x, options)); }
     else { this.question = []; }
   }
   /**
@@ -427,24 +427,24 @@ export class QuestionnaireResponse extends fhir.DomainResource {
   constructor(source:Partial<QuestionnaireResponseArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
     this.resourceType = 'QuestionnaireResponse';
-    if (source['identifier']) { this.identifier = new fhir.Identifier(source.identifier); }
-    if (source['questionnaire']) { this.questionnaire = new fhir.Reference(source.questionnaire); }
-    if (source['status']) { this.status = new fhir.FhirCode<QuestionnaireAnswersStatusCodeType>({value: source.status}); }
+    if (source['identifier']) { this.identifier = new fhir.Identifier(source.identifier, options); }
+    if (source['questionnaire']) { this.questionnaire = new fhir.Reference(source.questionnaire, options); }
+    if (source['status'] !== undefined) { this.status = new fhir.FhirCode<QuestionnaireAnswersStatusCodeType>({value: source.status}, options); }
     else { this.status = null; }
     if (source['_status']) {
       if (this.status) { this.status.addExtendedProperties(source._status!); }
-      else { this.status = new fhir.FhirCode<QuestionnaireAnswersStatusCodeType>(source._status as Partial<fhir.FhirCode>); }
+      else { this.status = new fhir.FhirCode<QuestionnaireAnswersStatusCodeType>(source._status as Partial<fhir.FhirCode>, options); }
     }
-    if (source['subject']) { this.subject = new fhir.Reference(source.subject); }
-    if (source['author']) { this.author = new fhir.Reference(source.author); }
-    if (source['authored']) { this.authored = new fhir.FhirDateTime({value: source.authored}); }
+    if (source['subject']) { this.subject = new fhir.Reference(source.subject, options); }
+    if (source['author']) { this.author = new fhir.Reference(source.author, options); }
+    if (source['authored'] !== undefined) { this.authored = new fhir.FhirDateTime({value: source.authored}, options); }
     if (source['_authored']) {
       if (this.authored) { this.authored.addExtendedProperties(source._authored!); }
-      else { this.authored = new fhir.FhirDateTime(source._authored as Partial<fhir.FhirDateTimeArgs>); }
+      else { this.authored = new fhir.FhirDateTime(source._authored as Partial<fhir.FhirDateTimeArgs>, options); }
     }
-    if (source['source']) { this.source = new fhir.Reference(source.source); }
-    if (source['encounter']) { this.encounter = new fhir.Reference(source.encounter); }
-    if (source['group']) { this.group = new fhir.QuestionnaireResponseGroup(source.group); }
+    if (source['source']) { this.source = new fhir.Reference(source.source, options); }
+    if (source['encounter']) { this.encounter = new fhir.Reference(source.encounter, options); }
+    if (source['group']) { this.group = new fhir.QuestionnaireResponseGroup(source.group, options); }
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).

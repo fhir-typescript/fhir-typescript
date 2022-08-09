@@ -96,16 +96,16 @@ export class ProvenanceAgent extends fhir.BackboneElement {
    */
   constructor(source:Partial<ProvenanceAgentArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['role']) { this.role = source.role.map((x) => new fhir.CodeableConcept(x)); }
+    if (source['role']) { this.role = source.role.map((x) => new fhir.CodeableConcept(x, options)); }
     else { this.role = []; }
     if (source['who']) { this.who = source.who; }
-    else if (source['whoUri']) { this.who = new fhir.FhirUri({value: source.whoUri}); }
-    else if (source['whoReference']) { this.who = new fhir.Reference(source.whoReference); }
+    else if (source['whoUri'] !== undefined) { this.who = new fhir.FhirUri({value: source.whoUri}, options); }
+    else if (source['whoReference']) { this.who = new fhir.Reference(source.whoReference, options); }
     else { this.who = null; }
     if (source['onBehalfOf']) { this.onBehalfOf = source.onBehalfOf; }
-    else if (source['onBehalfOfUri']) { this.onBehalfOf = new fhir.FhirUri({value: source.onBehalfOfUri}); }
-    else if (source['onBehalfOfReference']) { this.onBehalfOf = new fhir.Reference(source.onBehalfOfReference); }
-    if (source['relatedAgentType']) { this.relatedAgentType = new fhir.CodeableConcept(source.relatedAgentType); }
+    else if (source['onBehalfOfUri'] !== undefined) { this.onBehalfOf = new fhir.FhirUri({value: source.onBehalfOfUri}, options); }
+    else if (source['onBehalfOfReference']) { this.onBehalfOf = new fhir.Reference(source.onBehalfOfReference, options); }
+    if (source['relatedAgentType']) { this.relatedAgentType = new fhir.CodeableConcept(source.relatedAgentType, options); }
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -183,18 +183,18 @@ export class ProvenanceEntity extends fhir.BackboneElement {
    */
   constructor(source:Partial<ProvenanceEntityArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['role']) { this.role = new fhir.FhirCode<ProvenanceEntityRoleCodeType>({value: source.role}); }
+    if (source['role'] !== undefined) { this.role = new fhir.FhirCode<ProvenanceEntityRoleCodeType>({value: source.role}, options); }
     else { this.role = null; }
     if (source['_role']) {
       if (this.role) { this.role.addExtendedProperties(source._role!); }
-      else { this.role = new fhir.FhirCode<ProvenanceEntityRoleCodeType>(source._role as Partial<fhir.FhirCode>); }
+      else { this.role = new fhir.FhirCode<ProvenanceEntityRoleCodeType>(source._role as Partial<fhir.FhirCode>, options); }
     }
     if (source['what']) { this.what = source.what; }
-    else if (source['whatUri']) { this.what = new fhir.FhirUri({value: source.whatUri}); }
-    else if (source['whatReference']) { this.what = new fhir.Reference(source.whatReference); }
-    else if (source['whatIdentifier']) { this.what = new fhir.Identifier(source.whatIdentifier); }
+    else if (source['whatUri'] !== undefined) { this.what = new fhir.FhirUri({value: source.whatUri}, options); }
+    else if (source['whatReference']) { this.what = new fhir.Reference(source.whatReference, options); }
+    else if (source['whatIdentifier']) { this.what = new fhir.Identifier(source.whatIdentifier, options); }
     else { this.what = null; }
-    if (source['agent']) { this.agent = source.agent.map((x) => new fhir.ProvenanceAgent(x)); }
+    if (source['agent']) { this.agent = source.agent.map((x) => new fhir.ProvenanceAgent(x, options)); }
     else { this.agent = []; }
   }
   /**
@@ -325,16 +325,16 @@ export class Provenance extends fhir.DomainResource {
   constructor(source:Partial<ProvenanceArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
     this.resourceType = 'Provenance';
-    if (source['target']) { this.target = source.target.map((x) => new fhir.Reference(x)); }
+    if (source['target']) { this.target = source.target.map((x) => new fhir.Reference(x, options)); }
     else { this.target = []; }
-    if (source['period']) { this.period = new fhir.Period(source.period); }
-    if (source['recorded']) { this.recorded = new fhir.FhirInstant({value: source.recorded}); }
+    if (source['period']) { this.period = new fhir.Period(source.period, options); }
+    if (source['recorded'] !== undefined) { this.recorded = new fhir.FhirInstant({value: source.recorded}, options); }
     else { this.recorded = null; }
     if (source['_recorded']) {
       if (this.recorded) { this.recorded.addExtendedProperties(source._recorded!); }
-      else { this.recorded = new fhir.FhirInstant(source._recorded as Partial<fhir.FhirInstantArgs>); }
+      else { this.recorded = new fhir.FhirInstant(source._recorded as Partial<fhir.FhirInstantArgs>, options); }
     }
-    if (source['policy']) { this.policy = source.policy.map((x) => new fhir.FhirUri({value: x})); }
+    if (source['policy'] !== undefined) { this.policy = source.policy.map((x) => new fhir.FhirUri({value: x}, options)); }
     else { this.policy = []; }
     if (source['_policy']) {
       source._policy.forEach((x,i) => {
@@ -342,15 +342,15 @@ export class Provenance extends fhir.DomainResource {
         else { if (x) { this.policy.push(new fhir.FhirUri(x as Partial<fhir.FhirUriArgs>)); } }
       });
     }
-    if (source['location']) { this.location = new fhir.Reference(source.location); }
-    if (source['reason']) { this.reason = source.reason.map((x) => new fhir.Coding(x)); }
+    if (source['location']) { this.location = new fhir.Reference(source.location, options); }
+    if (source['reason']) { this.reason = source.reason.map((x) => new fhir.Coding(x, options)); }
     else { this.reason = []; }
-    if (source['activity']) { this.activity = new fhir.Coding(source.activity); }
-    if (source['agent']) { this.agent = source.agent.map((x) => new fhir.ProvenanceAgent(x)); }
+    if (source['activity']) { this.activity = new fhir.Coding(source.activity, options); }
+    if (source['agent']) { this.agent = source.agent.map((x) => new fhir.ProvenanceAgent(x, options)); }
     else { this.agent = []; }
-    if (source['entity']) { this.entity = source.entity.map((x) => new fhir.ProvenanceEntity(x)); }
+    if (source['entity']) { this.entity = source.entity.map((x) => new fhir.ProvenanceEntity(x, options)); }
     else { this.entity = []; }
-    if (source['signature']) { this.signature = source.signature.map((x) => new fhir.Signature(x)); }
+    if (source['signature']) { this.signature = source.signature.map((x) => new fhir.Signature(x, options)); }
     else { this.signature = []; }
   }
   /**

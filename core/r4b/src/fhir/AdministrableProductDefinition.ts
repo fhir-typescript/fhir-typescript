@@ -96,15 +96,15 @@ export class AdministrableProductDefinitionProperty extends fhir.BackboneElement
    */
   constructor(source:Partial<AdministrableProductDefinitionPropertyArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['type']) { this.type = new fhir.CodeableConcept(source.type); }
+    if (source['type']) { this.type = new fhir.CodeableConcept(source.type, options); }
     else { this.type = null; }
     if (source['value']) { this.value = source.value; }
-    else if (source['valueCodeableConcept']) { this.value = new fhir.CodeableConcept(source.valueCodeableConcept); }
-    else if (source['valueQuantity']) { this.value = new fhir.Quantity(source.valueQuantity); }
-    else if (source['valueDate']) { this.value = new fhir.FhirDate({value: source.valueDate}); }
-    else if (source['valueBoolean']) { this.value = new fhir.FhirBoolean({value: source.valueBoolean}); }
-    else if (source['valueAttachment']) { this.value = new fhir.Attachment(source.valueAttachment); }
-    if (source['status']) { this.status = new fhir.CodeableConcept(source.status); }
+    else if (source['valueCodeableConcept']) { this.value = new fhir.CodeableConcept(source.valueCodeableConcept, options); }
+    else if (source['valueQuantity']) { this.value = new fhir.Quantity(source.valueQuantity, options); }
+    else if (source['valueDate'] !== undefined) { this.value = new fhir.FhirDate({value: source.valueDate}, options); }
+    else if (source['valueBoolean'] !== undefined) { this.value = new fhir.FhirBoolean({value: source.valueBoolean}, options); }
+    else if (source['valueAttachment']) { this.value = new fhir.Attachment(source.valueAttachment, options); }
+    if (source['status']) { this.status = new fhir.CodeableConcept(source.status, options); }
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -165,14 +165,14 @@ export class AdministrableProductDefinitionRouteOfAdministrationTargetSpeciesWit
    */
   constructor(source:Partial<AdministrableProductDefinitionRouteOfAdministrationTargetSpeciesWithdrawalPeriodArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['tissue']) { this.tissue = new fhir.CodeableConcept(source.tissue); }
+    if (source['tissue']) { this.tissue = new fhir.CodeableConcept(source.tissue, options); }
     else { this.tissue = null; }
-    if (source['value']) { this.value = new fhir.Quantity(source.value); }
+    if (source['value']) { this.value = new fhir.Quantity(source.value, options); }
     else { this.value = null; }
-    if (source['supportingInformation']) { this.supportingInformation = new fhir.FhirString({value: source.supportingInformation}); }
+    if (source['supportingInformation'] !== undefined) { this.supportingInformation = new fhir.FhirString({value: source.supportingInformation}, options); }
     if (source['_supportingInformation']) {
       if (this.supportingInformation) { this.supportingInformation.addExtendedProperties(source._supportingInformation!); }
-      else { this.supportingInformation = new fhir.FhirString(source._supportingInformation as Partial<fhir.FhirStringArgs>); }
+      else { this.supportingInformation = new fhir.FhirString(source._supportingInformation as Partial<fhir.FhirStringArgs>, options); }
     }
   }
   /**
@@ -222,9 +222,9 @@ export class AdministrableProductDefinitionRouteOfAdministrationTargetSpecies ex
    */
   constructor(source:Partial<AdministrableProductDefinitionRouteOfAdministrationTargetSpeciesArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['code']) { this.code = new fhir.CodeableConcept(source.code); }
+    if (source['code']) { this.code = new fhir.CodeableConcept(source.code, options); }
     else { this.code = null; }
-    if (source['withdrawalPeriod']) { this.withdrawalPeriod = source.withdrawalPeriod.map((x) => new fhir.AdministrableProductDefinitionRouteOfAdministrationTargetSpeciesWithdrawalPeriod(x)); }
+    if (source['withdrawalPeriod']) { this.withdrawalPeriod = source.withdrawalPeriod.map((x) => new fhir.AdministrableProductDefinitionRouteOfAdministrationTargetSpeciesWithdrawalPeriod(x, options)); }
     else { this.withdrawalPeriod = []; }
   }
   /**
@@ -313,14 +313,14 @@ export class AdministrableProductDefinitionRouteOfAdministration extends fhir.Ba
    */
   constructor(source:Partial<AdministrableProductDefinitionRouteOfAdministrationArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['code']) { this.code = new fhir.CodeableConcept(source.code); }
+    if (source['code']) { this.code = new fhir.CodeableConcept(source.code, options); }
     else { this.code = null; }
-    if (source['firstDose']) { this.firstDose = new fhir.Quantity(source.firstDose); }
-    if (source['maxSingleDose']) { this.maxSingleDose = new fhir.Quantity(source.maxSingleDose); }
-    if (source['maxDosePerDay']) { this.maxDosePerDay = new fhir.Quantity(source.maxDosePerDay); }
-    if (source['maxDosePerTreatmentPeriod']) { this.maxDosePerTreatmentPeriod = new fhir.Ratio(source.maxDosePerTreatmentPeriod); }
-    if (source['maxTreatmentPeriod']) { this.maxTreatmentPeriod = new fhir.Duration(source.maxTreatmentPeriod); }
-    if (source['targetSpecies']) { this.targetSpecies = source.targetSpecies.map((x) => new fhir.AdministrableProductDefinitionRouteOfAdministrationTargetSpecies(x)); }
+    if (source['firstDose']) { this.firstDose = new fhir.Quantity(source.firstDose, options); }
+    if (source['maxSingleDose']) { this.maxSingleDose = new fhir.Quantity(source.maxSingleDose, options); }
+    if (source['maxDosePerDay']) { this.maxDosePerDay = new fhir.Quantity(source.maxDosePerDay, options); }
+    if (source['maxDosePerTreatmentPeriod']) { this.maxDosePerTreatmentPeriod = new fhir.Ratio(source.maxDosePerTreatmentPeriod, options); }
+    if (source['maxTreatmentPeriod']) { this.maxTreatmentPeriod = new fhir.Duration(source.maxTreatmentPeriod, options); }
+    if (source['targetSpecies']) { this.targetSpecies = source.targetSpecies.map((x) => new fhir.AdministrableProductDefinitionRouteOfAdministrationTargetSpecies(x, options)); }
     else { this.targetSpecies = []; }
   }
   /**
@@ -451,26 +451,26 @@ export class AdministrableProductDefinition extends fhir.DomainResource {
   constructor(source:Partial<AdministrableProductDefinitionArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
     this.resourceType = 'AdministrableProductDefinition';
-    if (source['identifier']) { this.identifier = source.identifier.map((x) => new fhir.Identifier(x)); }
+    if (source['identifier']) { this.identifier = source.identifier.map((x) => new fhir.Identifier(x, options)); }
     else { this.identifier = []; }
-    if (source['status']) { this.status = new fhir.FhirCode<PublicationStatusCodeType>({value: source.status}); }
+    if (source['status'] !== undefined) { this.status = new fhir.FhirCode<PublicationStatusCodeType>({value: source.status}, options); }
     else { this.status = null; }
     if (source['_status']) {
       if (this.status) { this.status.addExtendedProperties(source._status!); }
-      else { this.status = new fhir.FhirCode<PublicationStatusCodeType>(source._status as Partial<fhir.FhirCode>); }
+      else { this.status = new fhir.FhirCode<PublicationStatusCodeType>(source._status as Partial<fhir.FhirCode>, options); }
     }
-    if (source['formOf']) { this.formOf = source.formOf.map((x) => new fhir.Reference(x)); }
+    if (source['formOf']) { this.formOf = source.formOf.map((x) => new fhir.Reference(x, options)); }
     else { this.formOf = []; }
-    if (source['administrableDoseForm']) { this.administrableDoseForm = new fhir.CodeableConcept(source.administrableDoseForm); }
-    if (source['unitOfPresentation']) { this.unitOfPresentation = new fhir.CodeableConcept(source.unitOfPresentation); }
-    if (source['producedFrom']) { this.producedFrom = source.producedFrom.map((x) => new fhir.Reference(x)); }
+    if (source['administrableDoseForm']) { this.administrableDoseForm = new fhir.CodeableConcept(source.administrableDoseForm, options); }
+    if (source['unitOfPresentation']) { this.unitOfPresentation = new fhir.CodeableConcept(source.unitOfPresentation, options); }
+    if (source['producedFrom']) { this.producedFrom = source.producedFrom.map((x) => new fhir.Reference(x, options)); }
     else { this.producedFrom = []; }
-    if (source['ingredient']) { this.ingredient = source.ingredient.map((x) => new fhir.CodeableConcept(x)); }
+    if (source['ingredient']) { this.ingredient = source.ingredient.map((x) => new fhir.CodeableConcept(x, options)); }
     else { this.ingredient = []; }
-    if (source['device']) { this.device = new fhir.Reference(source.device); }
-    if (source['property']) { this.property = source.property.map((x) => new fhir.AdministrableProductDefinitionProperty(x)); }
+    if (source['device']) { this.device = new fhir.Reference(source.device, options); }
+    if (source['property']) { this.property = source.property.map((x) => new fhir.AdministrableProductDefinitionProperty(x, options)); }
     else { this.property = []; }
-    if (source['routeOfAdministration']) { this.routeOfAdministration = source.routeOfAdministration.map((x) => new fhir.AdministrableProductDefinitionRouteOfAdministration(x)); }
+    if (source['routeOfAdministration']) { this.routeOfAdministration = source.routeOfAdministration.map((x) => new fhir.AdministrableProductDefinitionRouteOfAdministration(x, options)); }
     else { this.routeOfAdministration = []; }
   }
   /**

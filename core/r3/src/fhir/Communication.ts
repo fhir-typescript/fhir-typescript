@@ -69,9 +69,9 @@ export class CommunicationPayload extends fhir.BackboneElement {
   constructor(source:Partial<CommunicationPayloadArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
     if (source['content']) { this.content = source.content; }
-    else if (source['contentString']) { this.content = new fhir.FhirString({value: source.contentString}); }
-    else if (source['contentAttachment']) { this.content = new fhir.Attachment(source.contentAttachment); }
-    else if (source['contentReference']) { this.content = new fhir.Reference(source.contentReference); }
+    else if (source['contentString'] !== undefined) { this.content = new fhir.FhirString({value: source.contentString}, options); }
+    else if (source['contentAttachment']) { this.content = new fhir.Attachment(source.contentAttachment, options); }
+    else if (source['contentReference']) { this.content = new fhir.Reference(source.contentReference, options); }
     else { this.content = null; }
   }
   /**
@@ -288,54 +288,54 @@ export class Communication extends fhir.DomainResource {
   constructor(source:Partial<CommunicationArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
     this.resourceType = 'Communication';
-    if (source['identifier']) { this.identifier = source.identifier.map((x) => new fhir.Identifier(x)); }
+    if (source['identifier']) { this.identifier = source.identifier.map((x) => new fhir.Identifier(x, options)); }
     else { this.identifier = []; }
-    if (source['definition']) { this.definition = source.definition.map((x) => new fhir.Reference(x)); }
+    if (source['definition']) { this.definition = source.definition.map((x) => new fhir.Reference(x, options)); }
     else { this.definition = []; }
-    if (source['basedOn']) { this.basedOn = source.basedOn.map((x) => new fhir.Reference(x)); }
+    if (source['basedOn']) { this.basedOn = source.basedOn.map((x) => new fhir.Reference(x, options)); }
     else { this.basedOn = []; }
-    if (source['partOf']) { this.partOf = source.partOf.map((x) => new fhir.Reference(x)); }
+    if (source['partOf']) { this.partOf = source.partOf.map((x) => new fhir.Reference(x, options)); }
     else { this.partOf = []; }
-    if (source['status']) { this.status = new fhir.FhirCode<EventStatusCodeType>({value: source.status}); }
+    if (source['status'] !== undefined) { this.status = new fhir.FhirCode<EventStatusCodeType>({value: source.status}, options); }
     else { this.status = null; }
     if (source['_status']) {
       if (this.status) { this.status.addExtendedProperties(source._status!); }
-      else { this.status = new fhir.FhirCode<EventStatusCodeType>(source._status as Partial<fhir.FhirCode>); }
+      else { this.status = new fhir.FhirCode<EventStatusCodeType>(source._status as Partial<fhir.FhirCode>, options); }
     }
-    if (source['notDone']) { this.notDone = new fhir.FhirBoolean({value: source.notDone}); }
+    if (source['notDone'] !== undefined) { this.notDone = new fhir.FhirBoolean({value: source.notDone}, options); }
     if (source['_notDone']) {
       if (this.notDone) { this.notDone.addExtendedProperties(source._notDone!); }
-      else { this.notDone = new fhir.FhirBoolean(source._notDone as Partial<fhir.FhirBooleanArgs>); }
+      else { this.notDone = new fhir.FhirBoolean(source._notDone as Partial<fhir.FhirBooleanArgs>, options); }
     }
-    if (source['notDoneReason']) { this.notDoneReason = new fhir.CodeableConcept(source.notDoneReason); }
-    if (source['category']) { this.category = source.category.map((x) => new fhir.CodeableConcept(x)); }
+    if (source['notDoneReason']) { this.notDoneReason = new fhir.CodeableConcept(source.notDoneReason, options); }
+    if (source['category']) { this.category = source.category.map((x) => new fhir.CodeableConcept(x, options)); }
     else { this.category = []; }
-    if (source['medium']) { this.medium = source.medium.map((x) => new fhir.CodeableConcept(x)); }
+    if (source['medium']) { this.medium = source.medium.map((x) => new fhir.CodeableConcept(x, options)); }
     else { this.medium = []; }
-    if (source['subject']) { this.subject = new fhir.Reference(source.subject); }
-    if (source['recipient']) { this.recipient = source.recipient.map((x) => new fhir.Reference(x)); }
+    if (source['subject']) { this.subject = new fhir.Reference(source.subject, options); }
+    if (source['recipient']) { this.recipient = source.recipient.map((x) => new fhir.Reference(x, options)); }
     else { this.recipient = []; }
-    if (source['topic']) { this.topic = source.topic.map((x) => new fhir.Reference(x)); }
+    if (source['topic']) { this.topic = source.topic.map((x) => new fhir.Reference(x, options)); }
     else { this.topic = []; }
-    if (source['context']) { this.context = new fhir.Reference(source.context); }
-    if (source['sent']) { this.sent = new fhir.FhirDateTime({value: source.sent}); }
+    if (source['context']) { this.context = new fhir.Reference(source.context, options); }
+    if (source['sent'] !== undefined) { this.sent = new fhir.FhirDateTime({value: source.sent}, options); }
     if (source['_sent']) {
       if (this.sent) { this.sent.addExtendedProperties(source._sent!); }
-      else { this.sent = new fhir.FhirDateTime(source._sent as Partial<fhir.FhirDateTimeArgs>); }
+      else { this.sent = new fhir.FhirDateTime(source._sent as Partial<fhir.FhirDateTimeArgs>, options); }
     }
-    if (source['received']) { this.received = new fhir.FhirDateTime({value: source.received}); }
+    if (source['received'] !== undefined) { this.received = new fhir.FhirDateTime({value: source.received}, options); }
     if (source['_received']) {
       if (this.received) { this.received.addExtendedProperties(source._received!); }
-      else { this.received = new fhir.FhirDateTime(source._received as Partial<fhir.FhirDateTimeArgs>); }
+      else { this.received = new fhir.FhirDateTime(source._received as Partial<fhir.FhirDateTimeArgs>, options); }
     }
-    if (source['sender']) { this.sender = new fhir.Reference(source.sender); }
-    if (source['reasonCode']) { this.reasonCode = source.reasonCode.map((x) => new fhir.CodeableConcept(x)); }
+    if (source['sender']) { this.sender = new fhir.Reference(source.sender, options); }
+    if (source['reasonCode']) { this.reasonCode = source.reasonCode.map((x) => new fhir.CodeableConcept(x, options)); }
     else { this.reasonCode = []; }
-    if (source['reasonReference']) { this.reasonReference = source.reasonReference.map((x) => new fhir.Reference(x)); }
+    if (source['reasonReference']) { this.reasonReference = source.reasonReference.map((x) => new fhir.Reference(x, options)); }
     else { this.reasonReference = []; }
-    if (source['payload']) { this.payload = source.payload.map((x) => new fhir.CommunicationPayload(x)); }
+    if (source['payload']) { this.payload = source.payload.map((x) => new fhir.CommunicationPayload(x, options)); }
     else { this.payload = []; }
-    if (source['note']) { this.note = source.note.map((x) => new fhir.Annotation(x)); }
+    if (source['note']) { this.note = source.note.map((x) => new fhir.Annotation(x, options)); }
     else { this.note = []; }
   }
   /**

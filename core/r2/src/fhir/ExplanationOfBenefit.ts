@@ -129,29 +129,29 @@ export class ExplanationOfBenefit extends fhir.DomainResource {
   constructor(source:Partial<ExplanationOfBenefitArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
     this.resourceType = 'ExplanationOfBenefit';
-    if (source['identifier']) { this.identifier = source.identifier.map((x) => new fhir.Identifier(x)); }
+    if (source['identifier']) { this.identifier = source.identifier.map((x) => new fhir.Identifier(x, options)); }
     else { this.identifier = []; }
-    if (source['request']) { this.request = new fhir.Reference(source.request); }
-    if (source['outcome']) { this.outcome = new fhir.FhirCode<RemittanceOutcomeCodeType>({value: source.outcome}); }
+    if (source['request']) { this.request = new fhir.Reference(source.request, options); }
+    if (source['outcome'] !== undefined) { this.outcome = new fhir.FhirCode<RemittanceOutcomeCodeType>({value: source.outcome}, options); }
     if (source['_outcome']) {
       if (this.outcome) { this.outcome.addExtendedProperties(source._outcome!); }
-      else { this.outcome = new fhir.FhirCode<RemittanceOutcomeCodeType>(source._outcome as Partial<fhir.FhirCode>); }
+      else { this.outcome = new fhir.FhirCode<RemittanceOutcomeCodeType>(source._outcome as Partial<fhir.FhirCode>, options); }
     }
-    if (source['disposition']) { this.disposition = new fhir.FhirString({value: source.disposition}); }
+    if (source['disposition'] !== undefined) { this.disposition = new fhir.FhirString({value: source.disposition}, options); }
     if (source['_disposition']) {
       if (this.disposition) { this.disposition.addExtendedProperties(source._disposition!); }
-      else { this.disposition = new fhir.FhirString(source._disposition as Partial<fhir.FhirStringArgs>); }
+      else { this.disposition = new fhir.FhirString(source._disposition as Partial<fhir.FhirStringArgs>, options); }
     }
-    if (source['ruleset']) { this.ruleset = new fhir.Coding(source.ruleset); }
-    if (source['originalRuleset']) { this.originalRuleset = new fhir.Coding(source.originalRuleset); }
-    if (source['created']) { this.created = new fhir.FhirDateTime({value: source.created}); }
+    if (source['ruleset']) { this.ruleset = new fhir.Coding(source.ruleset, options); }
+    if (source['originalRuleset']) { this.originalRuleset = new fhir.Coding(source.originalRuleset, options); }
+    if (source['created'] !== undefined) { this.created = new fhir.FhirDateTime({value: source.created}, options); }
     if (source['_created']) {
       if (this.created) { this.created.addExtendedProperties(source._created!); }
-      else { this.created = new fhir.FhirDateTime(source._created as Partial<fhir.FhirDateTimeArgs>); }
+      else { this.created = new fhir.FhirDateTime(source._created as Partial<fhir.FhirDateTimeArgs>, options); }
     }
-    if (source['organization']) { this.organization = new fhir.Reference(source.organization); }
-    if (source['requestProvider']) { this.requestProvider = new fhir.Reference(source.requestProvider); }
-    if (source['requestOrganization']) { this.requestOrganization = new fhir.Reference(source.requestOrganization); }
+    if (source['organization']) { this.organization = new fhir.Reference(source.organization, options); }
+    if (source['requestProvider']) { this.requestProvider = new fhir.Reference(source.requestProvider, options); }
+    if (source['requestOrganization']) { this.requestOrganization = new fhir.Reference(source.requestOrganization, options); }
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).

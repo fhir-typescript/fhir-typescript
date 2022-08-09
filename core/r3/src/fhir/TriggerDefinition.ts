@@ -88,23 +88,23 @@ export class TriggerDefinition extends fhir.FhirElement {
    */
   constructor(source:Partial<TriggerDefinitionArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['type']) { this.type = new fhir.FhirCode<TriggerTypeCodeType>({value: source.type}); }
+    if (source['type'] !== undefined) { this.type = new fhir.FhirCode<TriggerTypeCodeType>({value: source.type}, options); }
     else { this.type = null; }
     if (source['_type']) {
       if (this.type) { this.type.addExtendedProperties(source._type!); }
-      else { this.type = new fhir.FhirCode<TriggerTypeCodeType>(source._type as Partial<fhir.FhirCode>); }
+      else { this.type = new fhir.FhirCode<TriggerTypeCodeType>(source._type as Partial<fhir.FhirCode>, options); }
     }
-    if (source['eventName']) { this.eventName = new fhir.FhirString({value: source.eventName}); }
+    if (source['eventName'] !== undefined) { this.eventName = new fhir.FhirString({value: source.eventName}, options); }
     if (source['_eventName']) {
       if (this.eventName) { this.eventName.addExtendedProperties(source._eventName!); }
-      else { this.eventName = new fhir.FhirString(source._eventName as Partial<fhir.FhirStringArgs>); }
+      else { this.eventName = new fhir.FhirString(source._eventName as Partial<fhir.FhirStringArgs>, options); }
     }
     if (source['eventTiming']) { this.eventTiming = source.eventTiming; }
-    else if (source['eventTimingTiming']) { this.eventTiming = new fhir.Timing(source.eventTimingTiming); }
-    else if (source['eventTimingReference']) { this.eventTiming = new fhir.Reference(source.eventTimingReference); }
-    else if (source['eventTimingDate']) { this.eventTiming = new fhir.FhirDate({value: source.eventTimingDate}); }
-    else if (source['eventTimingDateTime']) { this.eventTiming = new fhir.FhirDateTime({value: source.eventTimingDateTime}); }
-    if (source['eventData']) { this.eventData = new fhir.DataRequirement(source.eventData); }
+    else if (source['eventTimingTiming']) { this.eventTiming = new fhir.Timing(source.eventTimingTiming, options); }
+    else if (source['eventTimingReference']) { this.eventTiming = new fhir.Reference(source.eventTimingReference, options); }
+    else if (source['eventTimingDate'] !== undefined) { this.eventTiming = new fhir.FhirDate({value: source.eventTimingDate}, options); }
+    else if (source['eventTimingDateTime'] !== undefined) { this.eventTiming = new fhir.FhirDateTime({value: source.eventTimingDateTime}, options); }
+    if (source['eventData']) { this.eventData = new fhir.DataRequirement(source.eventData, options); }
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).

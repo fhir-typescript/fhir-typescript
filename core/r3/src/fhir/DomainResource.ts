@@ -56,18 +56,18 @@ export class DomainResource extends fhir.Resource {
    */
   constructor(source:Partial<DomainResourceArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['text']) { this.text = new fhir.Narrative(source.text); }
+    if (source['text']) { this.text = new fhir.Narrative(source.text, options); }
     if (source['contained']) {
       this.contained = [];
       source.contained.forEach((x) => {
-        var r = fhir.resourceFactory(x);
+        var r = fhir.resourceFactory(x, options);
         if (r) { this.contained!.push(r); }
       });
     }
     else { this.contained = []; }
-    if (source['extension']) { this.extension = source.extension.map((x) => new fhir.Extension(x)); }
+    if (source['extension']) { this.extension = source.extension.map((x) => new fhir.Extension(x, options)); }
     else { this.extension = []; }
-    if (source['modifierExtension']) { this.modifierExtension = source.modifierExtension.map((x) => new fhir.Extension(x)); }
+    if (source['modifierExtension']) { this.modifierExtension = source.modifierExtension.map((x) => new fhir.Extension(x, options)); }
     else { this.modifierExtension = []; }
   }
   /**

@@ -40,8 +40,8 @@ export class Ratio extends fhir.FhirElement {
    */
   constructor(source:Partial<RatioArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['numerator']) { this.numerator = new fhir.Quantity(source.numerator); }
-    if (source['denominator']) { this.denominator = new fhir.Quantity(source.denominator); }
+    if (source['numerator']) { this.numerator = new fhir.Quantity(source.numerator, options); }
+    if (source['denominator']) { this.denominator = new fhir.Quantity(source.denominator, options); }
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).

@@ -13,6 +13,15 @@ namespace GenHelperBlazor.Services;
 /// <summary>A service for accessing code generates information.</summary>
 public class TestGenService : ITestGenService, IDisposable, IHostedService
 {
+    /// <summary>A validation issue.</summary>
+    /// <param name="Severity">  The severity.</param>
+    /// <param name="Code">      The code.</param>
+    /// <param name="DetailText">The detail text.</param>
+    private record struct ValidationIssue(
+        string Severity,
+        string Code,
+        string DetailText);
+    
     /// <summary>(Immutable) Name of the language.</summary>
     private const string _languageName = "TypeScriptSdk";
 
@@ -21,6 +30,9 @@ public class TestGenService : ITestGenService, IDisposable, IHostedService
 
     /// <summary>The HTTP client.</summary>
     private HttpClient _httpClient;
+
+    /// <summary>The example issues by version.</summary> 
+    private Dictionary<string, Dictionary<string, int>> _exampleIssuesByVersion = new();
 
     /// <summary>
     /// Initializes a new instance of the <see cref="SpecExporterWebService"/> class.
@@ -34,6 +46,12 @@ public class TestGenService : ITestGenService, IDisposable, IHostedService
     /// <summary>Initializes this object.</summary>
     public void Init()
     {
+        // r4
+        _exampleIssuesByVersion.Add("r4", new());
+        _exampleIssuesByVersion["r4"].Add("bundle-questionnaire", 50);
+        _exampleIssuesByVersion["r4"].Add("bundle-with-no-type", 1);
+        _exampleIssuesByVersion["r4"].Add("diagnosticreport-example-gingival-mass", 1);
+        _exampleIssuesByVersion["r4"].Add("myconsent-resource", 2);
     }
 
     /// <summary>Builds the tests.</summary>
@@ -163,7 +181,7 @@ public class TestGenService : ITestGenService, IDisposable, IHostedService
             string shortName = Path.GetFileNameWithoutExtension(file);
             string destName = Path.Combine(outputPath, shortName + ".ts");
 
-            WriteTestFileForRootTestCase(file, destName);
+            WriteTestFileForRootTestCase(file, destName, fhirVersionKey, shortName);
         }
 
         string exampleTestCaseDir = Path.Combine(versionTestCaseDir, "examples");
@@ -177,7 +195,7 @@ public class TestGenService : ITestGenService, IDisposable, IHostedService
                 string shortName = Path.GetFileNameWithoutExtension(file);
                 string destName = Path.Combine(outputPath, shortName + ".ts");
 
-                WriteTestFileForExampleTestCase(file, destName);
+                WriteTestFileForExampleTestCase(file, destName, fhirVersionKey, shortName);
             }
         }
 
@@ -185,7 +203,7 @@ public class TestGenService : ITestGenService, IDisposable, IHostedService
         if (File.Exists(edgeCaseFilename))
         {
             string destName = Path.Combine(outputPath, "json-edge-cases.ts");
-            WriteTestFileForRootTestCase(edgeCaseFilename, destName);
+            WriteTestFileForRootTestCase(edgeCaseFilename, destName, fhirVersionKey, "json-edge-cases");
         }
     }
 
@@ -200,9 +218,12 @@ public class TestGenService : ITestGenService, IDisposable, IHostedService
     /// <summary>Writes a test file for root test case.</summary>
     /// <param name="jsonFilename">           Filename of the JSON file.</param>
     /// <param name="destinationTestFilename">Filename of the destination test file.</param>
+    /// <param name="fhirVersionKey">         The FHIR version key.</param>
     private void WriteTestFileForExampleTestCase(
         string jsonFilename,
-        string destinationTestFilename)
+        string destinationTestFilename,
+        string fhirVersionKey,
+        string shortName)
     {
         ExportStringBuilder sb = new();
 
@@ -238,8 +259,17 @@ public class TestGenService : ITestGenService, IDisposable, IHostedService
         sb.WriteLineIndented("let r:any = JSON.parse(s);");
         sb.WriteLineIndented("expect(r).toEqual(src);");
         sb.WriteLineIndented("let issues:fhir.FtsIssue[] = v.doModelValidation();");
-        sb.WriteLineIndented("if (issues && (issues.length > 0)) { issues.forEach((i) => console.log('Found issue:', i)); }");
-        sb.WriteLineIndented("expect(issues.length).toBe(0);");
+
+        //sb.WriteLineIndented("if (issues && (issues.length > 0)) { issues.forEach((i) => console.log('Found issue:', i)); }");
+        sb.OpenScope("if (issues && (issues.length > 0)) {");
+        sb.WriteLineIndented("let t:string = '';");
+        sb.WriteLineIndented("issues.forEach((i) => t += `\\n- ${i.severity}: ${i.details?.text}`);");
+        sb.WriteLineIndented($"t += `\\n_known[\"{fhirVersionKey}\"].Add(\"{shortName}\", ${{issues.length}});`;");
+        sb.WriteLineIndented("console.log(t);");
+        sb.CloseScope("}");
+
+
+        sb.WriteLineIndented($"expect(issues.length).toBe(0);");
         sb.CloseScope("});");
 
         WriteFile(sb, destinationTestFilename);
@@ -250,7 +280,9 @@ public class TestGenService : ITestGenService, IDisposable, IHostedService
     /// <param name="destinationTestFilename">Filename of the destination test file.</param>
     private void WriteTestFileForRootTestCase(
         string jsonFilename,
-        string destinationTestFilename)
+        string destinationTestFilename,
+        string fhirVersionKey,
+        string shortName)
     {
         ExportStringBuilder sb = new();
 
@@ -286,7 +318,15 @@ public class TestGenService : ITestGenService, IDisposable, IHostedService
         sb.WriteLineIndented("let r:any = JSON.parse(s);");
         sb.WriteLineIndented("expect(r).toEqual(src);");
         sb.WriteLineIndented("let issues:fhir.FtsIssue[] = v.doModelValidation();");
-        sb.WriteLineIndented("if (issues && (issues.length > 0)) { issues.forEach((i) => console.log('Found issue:', i)); }");
+
+        //sb.WriteLineIndented("if (issues && (issues.length > 0)) { issues.forEach((i) => console.log('Found issue:', i)); }");
+        sb.OpenScope("if (issues && (issues.length > 0)) {");
+        sb.WriteLineIndented("let t:string = '';");
+        sb.WriteLineIndented("issues.forEach((i) => t += `\\n- ${i.severity}: ${i.details?.text}`);");
+        sb.WriteLineIndented($"t += `\\n_known[\"{fhirVersionKey}\"].Add(\"{shortName}\", ${{issues.length}});`;");
+        sb.WriteLineIndented("console.log(t);");
+        sb.CloseScope("}");
+
         sb.CloseScope("});");
 
         WriteFile(sb, destinationTestFilename);

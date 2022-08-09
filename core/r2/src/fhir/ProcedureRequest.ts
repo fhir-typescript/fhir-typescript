@@ -205,43 +205,43 @@ export class ProcedureRequest extends fhir.DomainResource {
   constructor(source:Partial<ProcedureRequestArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
     this.resourceType = 'ProcedureRequest';
-    if (source['identifier']) { this.identifier = source.identifier.map((x) => new fhir.Identifier(x)); }
+    if (source['identifier']) { this.identifier = source.identifier.map((x) => new fhir.Identifier(x, options)); }
     else { this.identifier = []; }
-    if (source['subject']) { this.subject = new fhir.Reference(source.subject); }
+    if (source['subject']) { this.subject = new fhir.Reference(source.subject, options); }
     else { this.subject = null; }
-    if (source['code']) { this.code = new fhir.CodeableConcept(source.code); }
+    if (source['code']) { this.code = new fhir.CodeableConcept(source.code, options); }
     else { this.code = null; }
-    if (source['bodySite']) { this.bodySite = source.bodySite.map((x) => new fhir.CodeableConcept(x)); }
+    if (source['bodySite']) { this.bodySite = source.bodySite.map((x) => new fhir.CodeableConcept(x, options)); }
     else { this.bodySite = []; }
     if (source['reason']) { this.reason = source.reason; }
-    else if (source['reasonCodeableConcept']) { this.reason = new fhir.CodeableConcept(source.reasonCodeableConcept); }
-    else if (source['reasonReference']) { this.reason = new fhir.Reference(source.reasonReference); }
+    else if (source['reasonCodeableConcept']) { this.reason = new fhir.CodeableConcept(source.reasonCodeableConcept, options); }
+    else if (source['reasonReference']) { this.reason = new fhir.Reference(source.reasonReference, options); }
     if (source['scheduled']) { this.scheduled = source.scheduled; }
-    else if (source['scheduledDateTime']) { this.scheduled = new fhir.FhirDateTime({value: source.scheduledDateTime}); }
-    else if (source['scheduledPeriod']) { this.scheduled = new fhir.Period(source.scheduledPeriod); }
-    else if (source['scheduledTiming']) { this.scheduled = new fhir.Timing(source.scheduledTiming); }
-    if (source['encounter']) { this.encounter = new fhir.Reference(source.encounter); }
-    if (source['performer']) { this.performer = new fhir.Reference(source.performer); }
-    if (source['status']) { this.status = new fhir.FhirCode<ProcedureRequestStatusCodeType>({value: source.status}); }
+    else if (source['scheduledDateTime'] !== undefined) { this.scheduled = new fhir.FhirDateTime({value: source.scheduledDateTime}, options); }
+    else if (source['scheduledPeriod']) { this.scheduled = new fhir.Period(source.scheduledPeriod, options); }
+    else if (source['scheduledTiming']) { this.scheduled = new fhir.Timing(source.scheduledTiming, options); }
+    if (source['encounter']) { this.encounter = new fhir.Reference(source.encounter, options); }
+    if (source['performer']) { this.performer = new fhir.Reference(source.performer, options); }
+    if (source['status'] !== undefined) { this.status = new fhir.FhirCode<ProcedureRequestStatusCodeType>({value: source.status}, options); }
     if (source['_status']) {
       if (this.status) { this.status.addExtendedProperties(source._status!); }
-      else { this.status = new fhir.FhirCode<ProcedureRequestStatusCodeType>(source._status as Partial<fhir.FhirCode>); }
+      else { this.status = new fhir.FhirCode<ProcedureRequestStatusCodeType>(source._status as Partial<fhir.FhirCode>, options); }
     }
-    if (source['notes']) { this.notes = source.notes.map((x) => new fhir.Annotation(x)); }
+    if (source['notes']) { this.notes = source.notes.map((x) => new fhir.Annotation(x, options)); }
     else { this.notes = []; }
     if (source['asNeeded']) { this.asNeeded = source.asNeeded; }
-    else if (source['asNeededBoolean']) { this.asNeeded = new fhir.FhirBoolean({value: source.asNeededBoolean}); }
-    else if (source['asNeededCodeableConcept']) { this.asNeeded = new fhir.CodeableConcept(source.asNeededCodeableConcept); }
-    if (source['orderedOn']) { this.orderedOn = new fhir.FhirDateTime({value: source.orderedOn}); }
+    else if (source['asNeededBoolean'] !== undefined) { this.asNeeded = new fhir.FhirBoolean({value: source.asNeededBoolean}, options); }
+    else if (source['asNeededCodeableConcept']) { this.asNeeded = new fhir.CodeableConcept(source.asNeededCodeableConcept, options); }
+    if (source['orderedOn'] !== undefined) { this.orderedOn = new fhir.FhirDateTime({value: source.orderedOn}, options); }
     if (source['_orderedOn']) {
       if (this.orderedOn) { this.orderedOn.addExtendedProperties(source._orderedOn!); }
-      else { this.orderedOn = new fhir.FhirDateTime(source._orderedOn as Partial<fhir.FhirDateTimeArgs>); }
+      else { this.orderedOn = new fhir.FhirDateTime(source._orderedOn as Partial<fhir.FhirDateTimeArgs>, options); }
     }
-    if (source['orderer']) { this.orderer = new fhir.Reference(source.orderer); }
-    if (source['priority']) { this.priority = new fhir.FhirCode<ProcedureRequestPriorityCodeType>({value: source.priority}); }
+    if (source['orderer']) { this.orderer = new fhir.Reference(source.orderer, options); }
+    if (source['priority'] !== undefined) { this.priority = new fhir.FhirCode<ProcedureRequestPriorityCodeType>({value: source.priority}, options); }
     if (source['_priority']) {
       if (this.priority) { this.priority.addExtendedProperties(source._priority!); }
-      else { this.priority = new fhir.FhirCode<ProcedureRequestPriorityCodeType>(source._priority as Partial<fhir.FhirCode>); }
+      else { this.priority = new fhir.FhirCode<ProcedureRequestPriorityCodeType>(source._priority as Partial<fhir.FhirCode>, options); }
     }
   }
   /**

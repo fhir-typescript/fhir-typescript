@@ -100,13 +100,13 @@ export class RegulatedAuthorizationCase extends fhir.BackboneElement {
    */
   constructor(source:Partial<RegulatedAuthorizationCaseArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['identifier']) { this.identifier = new fhir.Identifier(source.identifier); }
-    if (source['type']) { this.type = new fhir.CodeableConcept(source.type); }
-    if (source['status']) { this.status = new fhir.CodeableConcept(source.status); }
+    if (source['identifier']) { this.identifier = new fhir.Identifier(source.identifier, options); }
+    if (source['type']) { this.type = new fhir.CodeableConcept(source.type, options); }
+    if (source['status']) { this.status = new fhir.CodeableConcept(source.status, options); }
     if (source['date']) { this.date = source.date; }
-    else if (source['datePeriod']) { this.date = new fhir.Period(source.datePeriod); }
-    else if (source['dateDateTime']) { this.date = new fhir.FhirDateTime({value: source.dateDateTime}); }
-    if (source['application']) { this.application = source.application.map((x) => new fhir.RegulatedAuthorizationCase(x)); }
+    else if (source['datePeriod']) { this.date = new fhir.Period(source.datePeriod, options); }
+    else if (source['dateDateTime'] !== undefined) { this.date = new fhir.FhirDateTime({value: source.dateDateTime}, options); }
+    if (source['application']) { this.application = source.application.map((x) => new fhir.RegulatedAuthorizationCase(x, options)); }
     else { this.application = []; }
   }
   /**
@@ -271,32 +271,32 @@ export class RegulatedAuthorization extends fhir.DomainResource {
   constructor(source:Partial<RegulatedAuthorizationArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
     this.resourceType = 'RegulatedAuthorization';
-    if (source['identifier']) { this.identifier = source.identifier.map((x) => new fhir.Identifier(x)); }
+    if (source['identifier']) { this.identifier = source.identifier.map((x) => new fhir.Identifier(x, options)); }
     else { this.identifier = []; }
-    if (source['subject']) { this.subject = source.subject.map((x) => new fhir.Reference(x)); }
+    if (source['subject']) { this.subject = source.subject.map((x) => new fhir.Reference(x, options)); }
     else { this.subject = []; }
-    if (source['type']) { this.type = new fhir.CodeableConcept(source.type); }
-    if (source['description']) { this.description = new fhir.FhirMarkdown({value: source.description}); }
+    if (source['type']) { this.type = new fhir.CodeableConcept(source.type, options); }
+    if (source['description'] !== undefined) { this.description = new fhir.FhirMarkdown({value: source.description}, options); }
     if (source['_description']) {
       if (this.description) { this.description.addExtendedProperties(source._description!); }
-      else { this.description = new fhir.FhirMarkdown(source._description as Partial<fhir.FhirMarkdownArgs>); }
+      else { this.description = new fhir.FhirMarkdown(source._description as Partial<fhir.FhirMarkdownArgs>, options); }
     }
-    if (source['region']) { this.region = source.region.map((x) => new fhir.CodeableConcept(x)); }
+    if (source['region']) { this.region = source.region.map((x) => new fhir.CodeableConcept(x, options)); }
     else { this.region = []; }
-    if (source['status']) { this.status = new fhir.CodeableConcept(source.status); }
-    if (source['statusDate']) { this.statusDate = new fhir.FhirDateTime({value: source.statusDate}); }
+    if (source['status']) { this.status = new fhir.CodeableConcept(source.status, options); }
+    if (source['statusDate'] !== undefined) { this.statusDate = new fhir.FhirDateTime({value: source.statusDate}, options); }
     if (source['_statusDate']) {
       if (this.statusDate) { this.statusDate.addExtendedProperties(source._statusDate!); }
-      else { this.statusDate = new fhir.FhirDateTime(source._statusDate as Partial<fhir.FhirDateTimeArgs>); }
+      else { this.statusDate = new fhir.FhirDateTime(source._statusDate as Partial<fhir.FhirDateTimeArgs>, options); }
     }
-    if (source['validityPeriod']) { this.validityPeriod = new fhir.Period(source.validityPeriod); }
-    if (source['indication']) { this.indication = new fhir.CodeableReference(source.indication); }
-    if (source['intendedUse']) { this.intendedUse = new fhir.CodeableConcept(source.intendedUse); }
-    if (source['basis']) { this.basis = source.basis.map((x) => new fhir.CodeableConcept(x)); }
+    if (source['validityPeriod']) { this.validityPeriod = new fhir.Period(source.validityPeriod, options); }
+    if (source['indication']) { this.indication = new fhir.CodeableReference(source.indication, options); }
+    if (source['intendedUse']) { this.intendedUse = new fhir.CodeableConcept(source.intendedUse, options); }
+    if (source['basis']) { this.basis = source.basis.map((x) => new fhir.CodeableConcept(x, options)); }
     else { this.basis = []; }
-    if (source['holder']) { this.holder = new fhir.Reference(source.holder); }
-    if (source['regulator']) { this.regulator = new fhir.Reference(source.regulator); }
-    if (source['case']) { this.case = new fhir.RegulatedAuthorizationCase(source.case); }
+    if (source['holder']) { this.holder = new fhir.Reference(source.holder, options); }
+    if (source['regulator']) { this.regulator = new fhir.Reference(source.regulator, options); }
+    if (source['case']) { this.case = new fhir.RegulatedAuthorizationCase(source.case, options); }
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).

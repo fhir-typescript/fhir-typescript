@@ -185,43 +185,43 @@ export class ReferralRequest extends fhir.DomainResource {
   constructor(source:Partial<ReferralRequestArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
     this.resourceType = 'ReferralRequest';
-    if (source['status']) { this.status = new fhir.FhirCode<ReferralstatusCodeType>({value: source.status}); }
+    if (source['status'] !== undefined) { this.status = new fhir.FhirCode<ReferralstatusCodeType>({value: source.status}, options); }
     else { this.status = null; }
     if (source['_status']) {
       if (this.status) { this.status.addExtendedProperties(source._status!); }
-      else { this.status = new fhir.FhirCode<ReferralstatusCodeType>(source._status as Partial<fhir.FhirCode>); }
+      else { this.status = new fhir.FhirCode<ReferralstatusCodeType>(source._status as Partial<fhir.FhirCode>, options); }
     }
-    if (source['identifier']) { this.identifier = source.identifier.map((x) => new fhir.Identifier(x)); }
+    if (source['identifier']) { this.identifier = source.identifier.map((x) => new fhir.Identifier(x, options)); }
     else { this.identifier = []; }
-    if (source['date']) { this.date = new fhir.FhirDateTime({value: source.date}); }
+    if (source['date'] !== undefined) { this.date = new fhir.FhirDateTime({value: source.date}, options); }
     if (source['_date']) {
       if (this.date) { this.date.addExtendedProperties(source._date!); }
-      else { this.date = new fhir.FhirDateTime(source._date as Partial<fhir.FhirDateTimeArgs>); }
+      else { this.date = new fhir.FhirDateTime(source._date as Partial<fhir.FhirDateTimeArgs>, options); }
     }
-    if (source['type']) { this.type = new fhir.CodeableConcept(source.type); }
-    if (source['specialty']) { this.specialty = new fhir.CodeableConcept(source.specialty); }
-    if (source['priority']) { this.priority = new fhir.CodeableConcept(source.priority); }
-    if (source['patient']) { this.patient = new fhir.Reference(source.patient); }
-    if (source['requester']) { this.requester = new fhir.Reference(source.requester); }
-    if (source['recipient']) { this.recipient = source.recipient.map((x) => new fhir.Reference(x)); }
+    if (source['type']) { this.type = new fhir.CodeableConcept(source.type, options); }
+    if (source['specialty']) { this.specialty = new fhir.CodeableConcept(source.specialty, options); }
+    if (source['priority']) { this.priority = new fhir.CodeableConcept(source.priority, options); }
+    if (source['patient']) { this.patient = new fhir.Reference(source.patient, options); }
+    if (source['requester']) { this.requester = new fhir.Reference(source.requester, options); }
+    if (source['recipient']) { this.recipient = source.recipient.map((x) => new fhir.Reference(x, options)); }
     else { this.recipient = []; }
-    if (source['encounter']) { this.encounter = new fhir.Reference(source.encounter); }
-    if (source['dateSent']) { this.dateSent = new fhir.FhirDateTime({value: source.dateSent}); }
+    if (source['encounter']) { this.encounter = new fhir.Reference(source.encounter, options); }
+    if (source['dateSent'] !== undefined) { this.dateSent = new fhir.FhirDateTime({value: source.dateSent}, options); }
     if (source['_dateSent']) {
       if (this.dateSent) { this.dateSent.addExtendedProperties(source._dateSent!); }
-      else { this.dateSent = new fhir.FhirDateTime(source._dateSent as Partial<fhir.FhirDateTimeArgs>); }
+      else { this.dateSent = new fhir.FhirDateTime(source._dateSent as Partial<fhir.FhirDateTimeArgs>, options); }
     }
-    if (source['reason']) { this.reason = new fhir.CodeableConcept(source.reason); }
-    if (source['description']) { this.description = new fhir.FhirString({value: source.description}); }
+    if (source['reason']) { this.reason = new fhir.CodeableConcept(source.reason, options); }
+    if (source['description'] !== undefined) { this.description = new fhir.FhirString({value: source.description}, options); }
     if (source['_description']) {
       if (this.description) { this.description.addExtendedProperties(source._description!); }
-      else { this.description = new fhir.FhirString(source._description as Partial<fhir.FhirStringArgs>); }
+      else { this.description = new fhir.FhirString(source._description as Partial<fhir.FhirStringArgs>, options); }
     }
-    if (source['serviceRequested']) { this.serviceRequested = source.serviceRequested.map((x) => new fhir.CodeableConcept(x)); }
+    if (source['serviceRequested']) { this.serviceRequested = source.serviceRequested.map((x) => new fhir.CodeableConcept(x, options)); }
     else { this.serviceRequested = []; }
-    if (source['supportingInformation']) { this.supportingInformation = source.supportingInformation.map((x) => new fhir.Reference(x)); }
+    if (source['supportingInformation']) { this.supportingInformation = source.supportingInformation.map((x) => new fhir.Reference(x, options)); }
     else { this.supportingInformation = []; }
-    if (source['fulfillmentTime']) { this.fulfillmentTime = new fhir.Period(source.fulfillmentTime); }
+    if (source['fulfillmentTime']) { this.fulfillmentTime = new fhir.Period(source.fulfillmentTime, options); }
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).

@@ -48,9 +48,9 @@ export class RatioRange extends fhir.FhirElement {
    */
   constructor(source:Partial<RatioRangeArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['lowNumerator']) { this.lowNumerator = new fhir.Quantity(source.lowNumerator); }
-    if (source['highNumerator']) { this.highNumerator = new fhir.Quantity(source.highNumerator); }
-    if (source['denominator']) { this.denominator = new fhir.Quantity(source.denominator); }
+    if (source['lowNumerator']) { this.lowNumerator = new fhir.Quantity(source.lowNumerator, options); }
+    if (source['highNumerator']) { this.highNumerator = new fhir.Quantity(source.highNumerator, options); }
+    if (source['denominator']) { this.denominator = new fhir.Quantity(source.denominator, options); }
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).

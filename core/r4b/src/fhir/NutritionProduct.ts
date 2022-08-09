@@ -44,8 +44,8 @@ export class NutritionProductNutrient extends fhir.BackboneElement {
    */
   constructor(source:Partial<NutritionProductNutrientArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['item']) { this.item = new fhir.CodeableReference(source.item); }
-    if (source['amount']) { this.amount = source.amount.map((x) => new fhir.Ratio(x)); }
+    if (source['item']) { this.item = new fhir.CodeableReference(source.item, options); }
+    if (source['amount']) { this.amount = source.amount.map((x) => new fhir.Ratio(x, options)); }
     else { this.amount = []; }
   }
   /**
@@ -94,9 +94,9 @@ export class NutritionProductIngredient extends fhir.BackboneElement {
    */
   constructor(source:Partial<NutritionProductIngredientArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['item']) { this.item = new fhir.CodeableReference(source.item); }
+    if (source['item']) { this.item = new fhir.CodeableReference(source.item, options); }
     else { this.item = null; }
-    if (source['amount']) { this.amount = source.amount.map((x) => new fhir.Ratio(x)); }
+    if (source['amount']) { this.amount = source.amount.map((x) => new fhir.Ratio(x, options)); }
     else { this.amount = []; }
   }
   /**
@@ -173,15 +173,15 @@ export class NutritionProductProductCharacteristic extends fhir.BackboneElement 
    */
   constructor(source:Partial<NutritionProductProductCharacteristicArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['type']) { this.type = new fhir.CodeableConcept(source.type); }
+    if (source['type']) { this.type = new fhir.CodeableConcept(source.type, options); }
     else { this.type = null; }
     if (source['value']) { this.value = source.value; }
-    else if (source['valueCodeableConcept']) { this.value = new fhir.CodeableConcept(source.valueCodeableConcept); }
-    else if (source['valueString']) { this.value = new fhir.FhirString({value: source.valueString}); }
-    else if (source['valueQuantity']) { this.value = new fhir.Quantity(source.valueQuantity); }
-    else if (source['valueBase64Binary']) { this.value = new fhir.FhirBase64Binary({value: source.valueBase64Binary}); }
-    else if (source['valueAttachment']) { this.value = new fhir.Attachment(source.valueAttachment); }
-    else if (source['valueBoolean']) { this.value = new fhir.FhirBoolean({value: source.valueBoolean}); }
+    else if (source['valueCodeableConcept']) { this.value = new fhir.CodeableConcept(source.valueCodeableConcept, options); }
+    else if (source['valueString'] !== undefined) { this.value = new fhir.FhirString({value: source.valueString}, options); }
+    else if (source['valueQuantity']) { this.value = new fhir.Quantity(source.valueQuantity, options); }
+    else if (source['valueBase64Binary'] !== undefined) { this.value = new fhir.FhirBase64Binary({value: source.valueBase64Binary}, options); }
+    else if (source['valueAttachment']) { this.value = new fhir.Attachment(source.valueAttachment, options); }
+    else if (source['valueBoolean'] !== undefined) { this.value = new fhir.FhirBoolean({value: source.valueBoolean}, options); }
     else { this.value = null; }
   }
   /**
@@ -266,23 +266,23 @@ export class NutritionProductInstance extends fhir.BackboneElement {
    */
   constructor(source:Partial<NutritionProductInstanceArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['quantity']) { this.quantity = new fhir.Quantity(source.quantity); }
-    if (source['identifier']) { this.identifier = source.identifier.map((x) => new fhir.Identifier(x)); }
+    if (source['quantity']) { this.quantity = new fhir.Quantity(source.quantity, options); }
+    if (source['identifier']) { this.identifier = source.identifier.map((x) => new fhir.Identifier(x, options)); }
     else { this.identifier = []; }
-    if (source['lotNumber']) { this.lotNumber = new fhir.FhirString({value: source.lotNumber}); }
+    if (source['lotNumber'] !== undefined) { this.lotNumber = new fhir.FhirString({value: source.lotNumber}, options); }
     if (source['_lotNumber']) {
       if (this.lotNumber) { this.lotNumber.addExtendedProperties(source._lotNumber!); }
-      else { this.lotNumber = new fhir.FhirString(source._lotNumber as Partial<fhir.FhirStringArgs>); }
+      else { this.lotNumber = new fhir.FhirString(source._lotNumber as Partial<fhir.FhirStringArgs>, options); }
     }
-    if (source['expiry']) { this.expiry = new fhir.FhirDateTime({value: source.expiry}); }
+    if (source['expiry'] !== undefined) { this.expiry = new fhir.FhirDateTime({value: source.expiry}, options); }
     if (source['_expiry']) {
       if (this.expiry) { this.expiry.addExtendedProperties(source._expiry!); }
-      else { this.expiry = new fhir.FhirDateTime(source._expiry as Partial<fhir.FhirDateTimeArgs>); }
+      else { this.expiry = new fhir.FhirDateTime(source._expiry as Partial<fhir.FhirDateTimeArgs>, options); }
     }
-    if (source['useBy']) { this.useBy = new fhir.FhirDateTime({value: source.useBy}); }
+    if (source['useBy'] !== undefined) { this.useBy = new fhir.FhirDateTime({value: source.useBy}, options); }
     if (source['_useBy']) {
       if (this.useBy) { this.useBy.addExtendedProperties(source._useBy!); }
-      else { this.useBy = new fhir.FhirDateTime(source._useBy as Partial<fhir.FhirDateTimeArgs>); }
+      else { this.useBy = new fhir.FhirDateTime(source._useBy as Partial<fhir.FhirDateTimeArgs>, options); }
     }
   }
   /**
@@ -411,27 +411,27 @@ export class NutritionProduct extends fhir.DomainResource {
   constructor(source:Partial<NutritionProductArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
     this.resourceType = 'NutritionProduct';
-    if (source['status']) { this.status = new fhir.FhirCode<NutritionproductStatusCodeType>({value: source.status}); }
+    if (source['status'] !== undefined) { this.status = new fhir.FhirCode<NutritionproductStatusCodeType>({value: source.status}, options); }
     else { this.status = null; }
     if (source['_status']) {
       if (this.status) { this.status.addExtendedProperties(source._status!); }
-      else { this.status = new fhir.FhirCode<NutritionproductStatusCodeType>(source._status as Partial<fhir.FhirCode>); }
+      else { this.status = new fhir.FhirCode<NutritionproductStatusCodeType>(source._status as Partial<fhir.FhirCode>, options); }
     }
-    if (source['category']) { this.category = source.category.map((x) => new fhir.CodeableConcept(x)); }
+    if (source['category']) { this.category = source.category.map((x) => new fhir.CodeableConcept(x, options)); }
     else { this.category = []; }
-    if (source['code']) { this.code = new fhir.CodeableConcept(source.code); }
-    if (source['manufacturer']) { this.manufacturer = source.manufacturer.map((x) => new fhir.Reference(x)); }
+    if (source['code']) { this.code = new fhir.CodeableConcept(source.code, options); }
+    if (source['manufacturer']) { this.manufacturer = source.manufacturer.map((x) => new fhir.Reference(x, options)); }
     else { this.manufacturer = []; }
-    if (source['nutrient']) { this.nutrient = source.nutrient.map((x) => new fhir.NutritionProductNutrient(x)); }
+    if (source['nutrient']) { this.nutrient = source.nutrient.map((x) => new fhir.NutritionProductNutrient(x, options)); }
     else { this.nutrient = []; }
-    if (source['ingredient']) { this.ingredient = source.ingredient.map((x) => new fhir.NutritionProductIngredient(x)); }
+    if (source['ingredient']) { this.ingredient = source.ingredient.map((x) => new fhir.NutritionProductIngredient(x, options)); }
     else { this.ingredient = []; }
-    if (source['knownAllergen']) { this.knownAllergen = source.knownAllergen.map((x) => new fhir.CodeableReference(x)); }
+    if (source['knownAllergen']) { this.knownAllergen = source.knownAllergen.map((x) => new fhir.CodeableReference(x, options)); }
     else { this.knownAllergen = []; }
-    if (source['productCharacteristic']) { this.productCharacteristic = source.productCharacteristic.map((x) => new fhir.NutritionProductProductCharacteristic(x)); }
+    if (source['productCharacteristic']) { this.productCharacteristic = source.productCharacteristic.map((x) => new fhir.NutritionProductProductCharacteristic(x, options)); }
     else { this.productCharacteristic = []; }
-    if (source['instance']) { this.instance = new fhir.NutritionProductInstance(source.instance); }
-    if (source['note']) { this.note = source.note.map((x) => new fhir.Annotation(x)); }
+    if (source['instance']) { this.instance = new fhir.NutritionProductInstance(source.instance, options); }
+    if (source['note']) { this.note = source.note.map((x) => new fhir.Annotation(x, options)); }
     else { this.note = []; }
   }
   /**

@@ -81,15 +81,15 @@ export class MedicationIngredient extends fhir.BackboneElement {
   constructor(source:Partial<MedicationIngredientArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
     if (source['item']) { this.item = source.item; }
-    else if (source['itemCodeableConcept']) { this.item = new fhir.CodeableConcept(source.itemCodeableConcept); }
-    else if (source['itemReference']) { this.item = new fhir.Reference(source.itemReference); }
+    else if (source['itemCodeableConcept']) { this.item = new fhir.CodeableConcept(source.itemCodeableConcept, options); }
+    else if (source['itemReference']) { this.item = new fhir.Reference(source.itemReference, options); }
     else { this.item = null; }
-    if (source['isActive']) { this.isActive = new fhir.FhirBoolean({value: source.isActive}); }
+    if (source['isActive'] !== undefined) { this.isActive = new fhir.FhirBoolean({value: source.isActive}, options); }
     if (source['_isActive']) {
       if (this.isActive) { this.isActive.addExtendedProperties(source._isActive!); }
-      else { this.isActive = new fhir.FhirBoolean(source._isActive as Partial<fhir.FhirBooleanArgs>); }
+      else { this.isActive = new fhir.FhirBoolean(source._isActive as Partial<fhir.FhirBooleanArgs>, options); }
     }
-    if (source['amount']) { this.amount = new fhir.Ratio(source.amount); }
+    if (source['amount']) { this.amount = new fhir.Ratio(source.amount, options); }
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -151,10 +151,10 @@ export class MedicationPackageContent extends fhir.BackboneElement {
   constructor(source:Partial<MedicationPackageContentArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
     if (source['item']) { this.item = source.item; }
-    else if (source['itemCodeableConcept']) { this.item = new fhir.CodeableConcept(source.itemCodeableConcept); }
-    else if (source['itemReference']) { this.item = new fhir.Reference(source.itemReference); }
+    else if (source['itemCodeableConcept']) { this.item = new fhir.CodeableConcept(source.itemCodeableConcept, options); }
+    else if (source['itemReference']) { this.item = new fhir.Reference(source.itemReference, options); }
     else { this.item = null; }
-    if (source['amount']) { this.amount = new fhir.Quantity(source.amount); }
+    if (source['amount']) { this.amount = new fhir.Quantity(source.amount, options); }
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -210,15 +210,15 @@ export class MedicationPackageBatch extends fhir.BackboneElement {
    */
   constructor(source:Partial<MedicationPackageBatchArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['lotNumber']) { this.lotNumber = new fhir.FhirString({value: source.lotNumber}); }
+    if (source['lotNumber'] !== undefined) { this.lotNumber = new fhir.FhirString({value: source.lotNumber}, options); }
     if (source['_lotNumber']) {
       if (this.lotNumber) { this.lotNumber.addExtendedProperties(source._lotNumber!); }
-      else { this.lotNumber = new fhir.FhirString(source._lotNumber as Partial<fhir.FhirStringArgs>); }
+      else { this.lotNumber = new fhir.FhirString(source._lotNumber as Partial<fhir.FhirStringArgs>, options); }
     }
-    if (source['expirationDate']) { this.expirationDate = new fhir.FhirDateTime({value: source.expirationDate}); }
+    if (source['expirationDate'] !== undefined) { this.expirationDate = new fhir.FhirDateTime({value: source.expirationDate}, options); }
     if (source['_expirationDate']) {
       if (this.expirationDate) { this.expirationDate.addExtendedProperties(source._expirationDate!); }
-      else { this.expirationDate = new fhir.FhirDateTime(source._expirationDate as Partial<fhir.FhirDateTimeArgs>); }
+      else { this.expirationDate = new fhir.FhirDateTime(source._expirationDate as Partial<fhir.FhirDateTimeArgs>, options); }
     }
   }
   /**
@@ -275,10 +275,10 @@ export class MedicationPackage extends fhir.BackboneElement {
    */
   constructor(source:Partial<MedicationPackageArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['container']) { this.container = new fhir.CodeableConcept(source.container); }
-    if (source['content']) { this.content = source.content.map((x) => new fhir.MedicationPackageContent(x)); }
+    if (source['container']) { this.container = new fhir.CodeableConcept(source.container, options); }
+    if (source['content']) { this.content = source.content.map((x) => new fhir.MedicationPackageContent(x, options)); }
     else { this.content = []; }
-    if (source['batch']) { this.batch = source.batch.map((x) => new fhir.MedicationPackageBatch(x)); }
+    if (source['batch']) { this.batch = source.batch.map((x) => new fhir.MedicationPackageBatch(x, options)); }
     else { this.batch = []; }
   }
   /**
@@ -405,28 +405,28 @@ export class Medication extends fhir.DomainResource {
   constructor(source:Partial<MedicationArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
     this.resourceType = 'Medication';
-    if (source['code']) { this.code = new fhir.CodeableConcept(source.code); }
-    if (source['status']) { this.status = new fhir.FhirCode<MedicationStatusCodeType>({value: source.status}); }
+    if (source['code']) { this.code = new fhir.CodeableConcept(source.code, options); }
+    if (source['status'] !== undefined) { this.status = new fhir.FhirCode<MedicationStatusCodeType>({value: source.status}, options); }
     if (source['_status']) {
       if (this.status) { this.status.addExtendedProperties(source._status!); }
-      else { this.status = new fhir.FhirCode<MedicationStatusCodeType>(source._status as Partial<fhir.FhirCode>); }
+      else { this.status = new fhir.FhirCode<MedicationStatusCodeType>(source._status as Partial<fhir.FhirCode>, options); }
     }
-    if (source['isBrand']) { this.isBrand = new fhir.FhirBoolean({value: source.isBrand}); }
+    if (source['isBrand'] !== undefined) { this.isBrand = new fhir.FhirBoolean({value: source.isBrand}, options); }
     if (source['_isBrand']) {
       if (this.isBrand) { this.isBrand.addExtendedProperties(source._isBrand!); }
-      else { this.isBrand = new fhir.FhirBoolean(source._isBrand as Partial<fhir.FhirBooleanArgs>); }
+      else { this.isBrand = new fhir.FhirBoolean(source._isBrand as Partial<fhir.FhirBooleanArgs>, options); }
     }
-    if (source['isOverTheCounter']) { this.isOverTheCounter = new fhir.FhirBoolean({value: source.isOverTheCounter}); }
+    if (source['isOverTheCounter'] !== undefined) { this.isOverTheCounter = new fhir.FhirBoolean({value: source.isOverTheCounter}, options); }
     if (source['_isOverTheCounter']) {
       if (this.isOverTheCounter) { this.isOverTheCounter.addExtendedProperties(source._isOverTheCounter!); }
-      else { this.isOverTheCounter = new fhir.FhirBoolean(source._isOverTheCounter as Partial<fhir.FhirBooleanArgs>); }
+      else { this.isOverTheCounter = new fhir.FhirBoolean(source._isOverTheCounter as Partial<fhir.FhirBooleanArgs>, options); }
     }
-    if (source['manufacturer']) { this.manufacturer = new fhir.Reference(source.manufacturer); }
-    if (source['form']) { this.form = new fhir.CodeableConcept(source.form); }
-    if (source['ingredient']) { this.ingredient = source.ingredient.map((x) => new fhir.MedicationIngredient(x)); }
+    if (source['manufacturer']) { this.manufacturer = new fhir.Reference(source.manufacturer, options); }
+    if (source['form']) { this.form = new fhir.CodeableConcept(source.form, options); }
+    if (source['ingredient']) { this.ingredient = source.ingredient.map((x) => new fhir.MedicationIngredient(x, options)); }
     else { this.ingredient = []; }
-    if (source['package']) { this.package = new fhir.MedicationPackage(source.package); }
-    if (source['image']) { this.image = source.image.map((x) => new fhir.Attachment(x)); }
+    if (source['package']) { this.package = new fhir.MedicationPackage(source.package, options); }
+    if (source['image']) { this.image = source.image.map((x) => new fhir.Attachment(x, options)); }
     else { this.image = []; }
   }
   /**

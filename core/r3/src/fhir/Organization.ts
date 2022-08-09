@@ -64,11 +64,11 @@ export class OrganizationContact extends fhir.BackboneElement {
    */
   constructor(source:Partial<OrganizationContactArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['purpose']) { this.purpose = new fhir.CodeableConcept(source.purpose); }
-    if (source['name']) { this.name = new fhir.HumanName(source.name); }
-    if (source['telecom']) { this.telecom = source.telecom.map((x) => new fhir.ContactPoint(x)); }
+    if (source['purpose']) { this.purpose = new fhir.CodeableConcept(source.purpose, options); }
+    if (source['name']) { this.name = new fhir.HumanName(source.name, options); }
+    if (source['telecom']) { this.telecom = source.telecom.map((x) => new fhir.ContactPoint(x, options)); }
     else { this.telecom = []; }
-    if (source['address']) { this.address = new fhir.Address(source.address); }
+    if (source['address']) { this.address = new fhir.Address(source.address, options); }
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -211,21 +211,21 @@ export class Organization extends fhir.DomainResource {
   constructor(source:Partial<OrganizationArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
     this.resourceType = 'Organization';
-    if (source['identifier']) { this.identifier = source.identifier.map((x) => new fhir.Identifier(x)); }
+    if (source['identifier']) { this.identifier = source.identifier.map((x) => new fhir.Identifier(x, options)); }
     else { this.identifier = []; }
-    if (source['active']) { this.active = new fhir.FhirBoolean({value: source.active}); }
+    if (source['active'] !== undefined) { this.active = new fhir.FhirBoolean({value: source.active}, options); }
     if (source['_active']) {
       if (this.active) { this.active.addExtendedProperties(source._active!); }
-      else { this.active = new fhir.FhirBoolean(source._active as Partial<fhir.FhirBooleanArgs>); }
+      else { this.active = new fhir.FhirBoolean(source._active as Partial<fhir.FhirBooleanArgs>, options); }
     }
-    if (source['type']) { this.type = source.type.map((x) => new fhir.CodeableConcept(x)); }
+    if (source['type']) { this.type = source.type.map((x) => new fhir.CodeableConcept(x, options)); }
     else { this.type = []; }
-    if (source['name']) { this.name = new fhir.FhirString({value: source.name}); }
+    if (source['name'] !== undefined) { this.name = new fhir.FhirString({value: source.name}, options); }
     if (source['_name']) {
       if (this.name) { this.name.addExtendedProperties(source._name!); }
-      else { this.name = new fhir.FhirString(source._name as Partial<fhir.FhirStringArgs>); }
+      else { this.name = new fhir.FhirString(source._name as Partial<fhir.FhirStringArgs>, options); }
     }
-    if (source['alias']) { this.alias = source.alias.map((x) => new fhir.FhirString({value: x})); }
+    if (source['alias'] !== undefined) { this.alias = source.alias.map((x) => new fhir.FhirString({value: x}, options)); }
     else { this.alias = []; }
     if (source['_alias']) {
       source._alias.forEach((x,i) => {
@@ -233,14 +233,14 @@ export class Organization extends fhir.DomainResource {
         else { if (x) { this.alias.push(new fhir.FhirString(x as Partial<fhir.FhirStringArgs>)); } }
       });
     }
-    if (source['telecom']) { this.telecom = source.telecom.map((x) => new fhir.ContactPoint(x)); }
+    if (source['telecom']) { this.telecom = source.telecom.map((x) => new fhir.ContactPoint(x, options)); }
     else { this.telecom = []; }
-    if (source['address']) { this.address = source.address.map((x) => new fhir.Address(x)); }
+    if (source['address']) { this.address = source.address.map((x) => new fhir.Address(x, options)); }
     else { this.address = []; }
-    if (source['partOf']) { this.partOf = new fhir.Reference(source.partOf); }
-    if (source['contact']) { this.contact = source.contact.map((x) => new fhir.OrganizationContact(x)); }
+    if (source['partOf']) { this.partOf = new fhir.Reference(source.partOf, options); }
+    if (source['contact']) { this.contact = source.contact.map((x) => new fhir.OrganizationContact(x, options)); }
     else { this.contact = []; }
-    if (source['endpoint']) { this.endpoint = source.endpoint.map((x) => new fhir.Reference(x)); }
+    if (source['endpoint']) { this.endpoint = source.endpoint.map((x) => new fhir.Reference(x, options)); }
     else { this.endpoint = []; }
   }
   /**

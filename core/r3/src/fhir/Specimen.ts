@@ -100,13 +100,13 @@ export class SpecimenCollection extends fhir.BackboneElement {
    */
   constructor(source:Partial<SpecimenCollectionArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['collector']) { this.collector = new fhir.Reference(source.collector); }
+    if (source['collector']) { this.collector = new fhir.Reference(source.collector, options); }
     if (source['collected']) { this.collected = source.collected; }
-    else if (source['collectedDateTime']) { this.collected = new fhir.FhirDateTime({value: source.collectedDateTime}); }
-    else if (source['collectedPeriod']) { this.collected = new fhir.Period(source.collectedPeriod); }
-    if (source['quantity']) { this.quantity = new fhir.Quantity(source.quantity); }
-    if (source['method']) { this.method = new fhir.CodeableConcept(source.method); }
-    if (source['bodySite']) { this.bodySite = new fhir.CodeableConcept(source.bodySite); }
+    else if (source['collectedDateTime'] !== undefined) { this.collected = new fhir.FhirDateTime({value: source.collectedDateTime}, options); }
+    else if (source['collectedPeriod']) { this.collected = new fhir.Period(source.collectedPeriod, options); }
+    if (source['quantity']) { this.quantity = new fhir.Quantity(source.quantity, options); }
+    if (source['method']) { this.method = new fhir.CodeableConcept(source.method, options); }
+    if (source['bodySite']) { this.bodySite = new fhir.CodeableConcept(source.bodySite, options); }
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -189,17 +189,17 @@ export class SpecimenProcessing extends fhir.BackboneElement {
    */
   constructor(source:Partial<SpecimenProcessingArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['description']) { this.description = new fhir.FhirString({value: source.description}); }
+    if (source['description'] !== undefined) { this.description = new fhir.FhirString({value: source.description}, options); }
     if (source['_description']) {
       if (this.description) { this.description.addExtendedProperties(source._description!); }
-      else { this.description = new fhir.FhirString(source._description as Partial<fhir.FhirStringArgs>); }
+      else { this.description = new fhir.FhirString(source._description as Partial<fhir.FhirStringArgs>, options); }
     }
-    if (source['procedure']) { this.procedure = new fhir.CodeableConcept(source.procedure); }
-    if (source['additive']) { this.additive = source.additive.map((x) => new fhir.Reference(x)); }
+    if (source['procedure']) { this.procedure = new fhir.CodeableConcept(source.procedure, options); }
+    if (source['additive']) { this.additive = source.additive.map((x) => new fhir.Reference(x, options)); }
     else { this.additive = []; }
     if (source['time']) { this.time = source.time; }
-    else if (source['timeDateTime']) { this.time = new fhir.FhirDateTime({value: source.timeDateTime}); }
-    else if (source['timePeriod']) { this.time = new fhir.Period(source.timePeriod); }
+    else if (source['timeDateTime'] !== undefined) { this.time = new fhir.FhirDateTime({value: source.timeDateTime}, options); }
+    else if (source['timePeriod']) { this.time = new fhir.Period(source.timePeriod, options); }
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -297,19 +297,19 @@ export class SpecimenContainer extends fhir.BackboneElement {
    */
   constructor(source:Partial<SpecimenContainerArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['identifier']) { this.identifier = source.identifier.map((x) => new fhir.Identifier(x)); }
+    if (source['identifier']) { this.identifier = source.identifier.map((x) => new fhir.Identifier(x, options)); }
     else { this.identifier = []; }
-    if (source['description']) { this.description = new fhir.FhirString({value: source.description}); }
+    if (source['description'] !== undefined) { this.description = new fhir.FhirString({value: source.description}, options); }
     if (source['_description']) {
       if (this.description) { this.description.addExtendedProperties(source._description!); }
-      else { this.description = new fhir.FhirString(source._description as Partial<fhir.FhirStringArgs>); }
+      else { this.description = new fhir.FhirString(source._description as Partial<fhir.FhirStringArgs>, options); }
     }
-    if (source['type']) { this.type = new fhir.CodeableConcept(source.type); }
-    if (source['capacity']) { this.capacity = new fhir.Quantity(source.capacity); }
-    if (source['specimenQuantity']) { this.specimenQuantity = new fhir.Quantity(source.specimenQuantity); }
+    if (source['type']) { this.type = new fhir.CodeableConcept(source.type, options); }
+    if (source['capacity']) { this.capacity = new fhir.Quantity(source.capacity, options); }
+    if (source['specimenQuantity']) { this.specimenQuantity = new fhir.Quantity(source.specimenQuantity, options); }
     if (source['additive']) { this.additive = source.additive; }
-    else if (source['additiveCodeableConcept']) { this.additive = new fhir.CodeableConcept(source.additiveCodeableConcept); }
-    else if (source['additiveReference']) { this.additive = new fhir.Reference(source.additiveReference); }
+    else if (source['additiveCodeableConcept']) { this.additive = new fhir.CodeableConcept(source.additiveCodeableConcept, options); }
+    else if (source['additiveReference']) { this.additive = new fhir.Reference(source.additiveReference, options); }
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -458,32 +458,32 @@ export class Specimen extends fhir.DomainResource {
   constructor(source:Partial<SpecimenArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
     this.resourceType = 'Specimen';
-    if (source['identifier']) { this.identifier = source.identifier.map((x) => new fhir.Identifier(x)); }
+    if (source['identifier']) { this.identifier = source.identifier.map((x) => new fhir.Identifier(x, options)); }
     else { this.identifier = []; }
-    if (source['accessionIdentifier']) { this.accessionIdentifier = new fhir.Identifier(source.accessionIdentifier); }
-    if (source['status']) { this.status = new fhir.FhirCode<SpecimenStatusCodeType>({value: source.status}); }
+    if (source['accessionIdentifier']) { this.accessionIdentifier = new fhir.Identifier(source.accessionIdentifier, options); }
+    if (source['status'] !== undefined) { this.status = new fhir.FhirCode<SpecimenStatusCodeType>({value: source.status}, options); }
     if (source['_status']) {
       if (this.status) { this.status.addExtendedProperties(source._status!); }
-      else { this.status = new fhir.FhirCode<SpecimenStatusCodeType>(source._status as Partial<fhir.FhirCode>); }
+      else { this.status = new fhir.FhirCode<SpecimenStatusCodeType>(source._status as Partial<fhir.FhirCode>, options); }
     }
-    if (source['type']) { this.type = new fhir.CodeableConcept(source.type); }
-    if (source['subject']) { this.subject = new fhir.Reference(source.subject); }
+    if (source['type']) { this.type = new fhir.CodeableConcept(source.type, options); }
+    if (source['subject']) { this.subject = new fhir.Reference(source.subject, options); }
     else { this.subject = null; }
-    if (source['receivedTime']) { this.receivedTime = new fhir.FhirDateTime({value: source.receivedTime}); }
+    if (source['receivedTime'] !== undefined) { this.receivedTime = new fhir.FhirDateTime({value: source.receivedTime}, options); }
     if (source['_receivedTime']) {
       if (this.receivedTime) { this.receivedTime.addExtendedProperties(source._receivedTime!); }
-      else { this.receivedTime = new fhir.FhirDateTime(source._receivedTime as Partial<fhir.FhirDateTimeArgs>); }
+      else { this.receivedTime = new fhir.FhirDateTime(source._receivedTime as Partial<fhir.FhirDateTimeArgs>, options); }
     }
-    if (source['parent']) { this.parent = source.parent.map((x) => new fhir.Reference(x)); }
+    if (source['parent']) { this.parent = source.parent.map((x) => new fhir.Reference(x, options)); }
     else { this.parent = []; }
-    if (source['request']) { this.request = source.request.map((x) => new fhir.Reference(x)); }
+    if (source['request']) { this.request = source.request.map((x) => new fhir.Reference(x, options)); }
     else { this.request = []; }
-    if (source['collection']) { this.collection = new fhir.SpecimenCollection(source.collection); }
-    if (source['processing']) { this.processing = source.processing.map((x) => new fhir.SpecimenProcessing(x)); }
+    if (source['collection']) { this.collection = new fhir.SpecimenCollection(source.collection, options); }
+    if (source['processing']) { this.processing = source.processing.map((x) => new fhir.SpecimenProcessing(x, options)); }
     else { this.processing = []; }
-    if (source['container']) { this.container = source.container.map((x) => new fhir.SpecimenContainer(x)); }
+    if (source['container']) { this.container = source.container.map((x) => new fhir.SpecimenContainer(x, options)); }
     else { this.container = []; }
-    if (source['note']) { this.note = source.note.map((x) => new fhir.Annotation(x)); }
+    if (source['note']) { this.note = source.note.map((x) => new fhir.Annotation(x, options)); }
     else { this.note = []; }
   }
   /**

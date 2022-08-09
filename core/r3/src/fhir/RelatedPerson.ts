@@ -141,35 +141,35 @@ export class RelatedPerson extends fhir.DomainResource {
   constructor(source:Partial<RelatedPersonArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
     this.resourceType = 'RelatedPerson';
-    if (source['identifier']) { this.identifier = source.identifier.map((x) => new fhir.Identifier(x)); }
+    if (source['identifier']) { this.identifier = source.identifier.map((x) => new fhir.Identifier(x, options)); }
     else { this.identifier = []; }
-    if (source['active']) { this.active = new fhir.FhirBoolean({value: source.active}); }
+    if (source['active'] !== undefined) { this.active = new fhir.FhirBoolean({value: source.active}, options); }
     if (source['_active']) {
       if (this.active) { this.active.addExtendedProperties(source._active!); }
-      else { this.active = new fhir.FhirBoolean(source._active as Partial<fhir.FhirBooleanArgs>); }
+      else { this.active = new fhir.FhirBoolean(source._active as Partial<fhir.FhirBooleanArgs>, options); }
     }
-    if (source['patient']) { this.patient = new fhir.Reference(source.patient); }
+    if (source['patient']) { this.patient = new fhir.Reference(source.patient, options); }
     else { this.patient = null; }
-    if (source['relationship']) { this.relationship = new fhir.CodeableConcept(source.relationship); }
-    if (source['name']) { this.name = source.name.map((x) => new fhir.HumanName(x)); }
+    if (source['relationship']) { this.relationship = new fhir.CodeableConcept(source.relationship, options); }
+    if (source['name']) { this.name = source.name.map((x) => new fhir.HumanName(x, options)); }
     else { this.name = []; }
-    if (source['telecom']) { this.telecom = source.telecom.map((x) => new fhir.ContactPoint(x)); }
+    if (source['telecom']) { this.telecom = source.telecom.map((x) => new fhir.ContactPoint(x, options)); }
     else { this.telecom = []; }
-    if (source['gender']) { this.gender = new fhir.FhirCode<AdministrativeGenderCodeType>({value: source.gender}); }
+    if (source['gender'] !== undefined) { this.gender = new fhir.FhirCode<AdministrativeGenderCodeType>({value: source.gender}, options); }
     if (source['_gender']) {
       if (this.gender) { this.gender.addExtendedProperties(source._gender!); }
-      else { this.gender = new fhir.FhirCode<AdministrativeGenderCodeType>(source._gender as Partial<fhir.FhirCode>); }
+      else { this.gender = new fhir.FhirCode<AdministrativeGenderCodeType>(source._gender as Partial<fhir.FhirCode>, options); }
     }
-    if (source['birthDate']) { this.birthDate = new fhir.FhirDate({value: source.birthDate}); }
+    if (source['birthDate'] !== undefined) { this.birthDate = new fhir.FhirDate({value: source.birthDate}, options); }
     if (source['_birthDate']) {
       if (this.birthDate) { this.birthDate.addExtendedProperties(source._birthDate!); }
-      else { this.birthDate = new fhir.FhirDate(source._birthDate as Partial<fhir.FhirDateArgs>); }
+      else { this.birthDate = new fhir.FhirDate(source._birthDate as Partial<fhir.FhirDateArgs>, options); }
     }
-    if (source['address']) { this.address = source.address.map((x) => new fhir.Address(x)); }
+    if (source['address']) { this.address = source.address.map((x) => new fhir.Address(x, options)); }
     else { this.address = []; }
-    if (source['photo']) { this.photo = source.photo.map((x) => new fhir.Attachment(x)); }
+    if (source['photo']) { this.photo = source.photo.map((x) => new fhir.Attachment(x, options)); }
     else { this.photo = []; }
-    if (source['period']) { this.period = new fhir.Period(source.period); }
+    if (source['period']) { this.period = new fhir.Period(source.period, options); }
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).

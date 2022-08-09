@@ -72,20 +72,20 @@ export class DiagnosticOrderEvent extends fhir.BackboneElement {
    */
   constructor(source:Partial<DiagnosticOrderEventArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['status']) { this.status = new fhir.FhirCode<DiagnosticOrderStatusCodeType>({value: source.status}); }
+    if (source['status'] !== undefined) { this.status = new fhir.FhirCode<DiagnosticOrderStatusCodeType>({value: source.status}, options); }
     else { this.status = null; }
     if (source['_status']) {
       if (this.status) { this.status.addExtendedProperties(source._status!); }
-      else { this.status = new fhir.FhirCode<DiagnosticOrderStatusCodeType>(source._status as Partial<fhir.FhirCode>); }
+      else { this.status = new fhir.FhirCode<DiagnosticOrderStatusCodeType>(source._status as Partial<fhir.FhirCode>, options); }
     }
-    if (source['description']) { this.description = new fhir.CodeableConcept(source.description); }
-    if (source['dateTime']) { this.dateTime = new fhir.FhirDateTime({value: source.dateTime}); }
+    if (source['description']) { this.description = new fhir.CodeableConcept(source.description, options); }
+    if (source['dateTime'] !== undefined) { this.dateTime = new fhir.FhirDateTime({value: source.dateTime}, options); }
     else { this.dateTime = null; }
     if (source['_dateTime']) {
       if (this.dateTime) { this.dateTime.addExtendedProperties(source._dateTime!); }
-      else { this.dateTime = new fhir.FhirDateTime(source._dateTime as Partial<fhir.FhirDateTimeArgs>); }
+      else { this.dateTime = new fhir.FhirDateTime(source._dateTime as Partial<fhir.FhirDateTimeArgs>, options); }
     }
-    if (source['actor']) { this.actor = new fhir.Reference(source.actor); }
+    if (source['actor']) { this.actor = new fhir.Reference(source.actor, options); }
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -163,17 +163,17 @@ export class DiagnosticOrderItem extends fhir.BackboneElement {
    */
   constructor(source:Partial<DiagnosticOrderItemArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['code']) { this.code = new fhir.CodeableConcept(source.code); }
+    if (source['code']) { this.code = new fhir.CodeableConcept(source.code, options); }
     else { this.code = null; }
-    if (source['specimen']) { this.specimen = source.specimen.map((x) => new fhir.Reference(x)); }
+    if (source['specimen']) { this.specimen = source.specimen.map((x) => new fhir.Reference(x, options)); }
     else { this.specimen = []; }
-    if (source['bodySite']) { this.bodySite = new fhir.CodeableConcept(source.bodySite); }
-    if (source['status']) { this.status = new fhir.FhirCode<DiagnosticOrderStatusCodeType>({value: source.status}); }
+    if (source['bodySite']) { this.bodySite = new fhir.CodeableConcept(source.bodySite, options); }
+    if (source['status'] !== undefined) { this.status = new fhir.FhirCode<DiagnosticOrderStatusCodeType>({value: source.status}, options); }
     if (source['_status']) {
       if (this.status) { this.status.addExtendedProperties(source._status!); }
-      else { this.status = new fhir.FhirCode<DiagnosticOrderStatusCodeType>(source._status as Partial<fhir.FhirCode>); }
+      else { this.status = new fhir.FhirCode<DiagnosticOrderStatusCodeType>(source._status as Partial<fhir.FhirCode>, options); }
     }
-    if (source['event']) { this.event = source.event.map((x) => new fhir.DiagnosticOrderEvent(x)); }
+    if (source['event']) { this.event = source.event.map((x) => new fhir.DiagnosticOrderEvent(x, options)); }
     else { this.event = []; }
   }
   /**
@@ -322,33 +322,33 @@ export class DiagnosticOrder extends fhir.DomainResource {
   constructor(source:Partial<DiagnosticOrderArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
     this.resourceType = 'DiagnosticOrder';
-    if (source['subject']) { this.subject = new fhir.Reference(source.subject); }
+    if (source['subject']) { this.subject = new fhir.Reference(source.subject, options); }
     else { this.subject = null; }
-    if (source['orderer']) { this.orderer = new fhir.Reference(source.orderer); }
-    if (source['identifier']) { this.identifier = source.identifier.map((x) => new fhir.Identifier(x)); }
+    if (source['orderer']) { this.orderer = new fhir.Reference(source.orderer, options); }
+    if (source['identifier']) { this.identifier = source.identifier.map((x) => new fhir.Identifier(x, options)); }
     else { this.identifier = []; }
-    if (source['encounter']) { this.encounter = new fhir.Reference(source.encounter); }
-    if (source['reason']) { this.reason = source.reason.map((x) => new fhir.CodeableConcept(x)); }
+    if (source['encounter']) { this.encounter = new fhir.Reference(source.encounter, options); }
+    if (source['reason']) { this.reason = source.reason.map((x) => new fhir.CodeableConcept(x, options)); }
     else { this.reason = []; }
-    if (source['supportingInformation']) { this.supportingInformation = source.supportingInformation.map((x) => new fhir.Reference(x)); }
+    if (source['supportingInformation']) { this.supportingInformation = source.supportingInformation.map((x) => new fhir.Reference(x, options)); }
     else { this.supportingInformation = []; }
-    if (source['specimen']) { this.specimen = source.specimen.map((x) => new fhir.Reference(x)); }
+    if (source['specimen']) { this.specimen = source.specimen.map((x) => new fhir.Reference(x, options)); }
     else { this.specimen = []; }
-    if (source['status']) { this.status = new fhir.FhirCode<DiagnosticOrderStatusCodeType>({value: source.status}); }
+    if (source['status'] !== undefined) { this.status = new fhir.FhirCode<DiagnosticOrderStatusCodeType>({value: source.status}, options); }
     if (source['_status']) {
       if (this.status) { this.status.addExtendedProperties(source._status!); }
-      else { this.status = new fhir.FhirCode<DiagnosticOrderStatusCodeType>(source._status as Partial<fhir.FhirCode>); }
+      else { this.status = new fhir.FhirCode<DiagnosticOrderStatusCodeType>(source._status as Partial<fhir.FhirCode>, options); }
     }
-    if (source['priority']) { this.priority = new fhir.FhirCode<DiagnosticOrderPriorityCodeType>({value: source.priority}); }
+    if (source['priority'] !== undefined) { this.priority = new fhir.FhirCode<DiagnosticOrderPriorityCodeType>({value: source.priority}, options); }
     if (source['_priority']) {
       if (this.priority) { this.priority.addExtendedProperties(source._priority!); }
-      else { this.priority = new fhir.FhirCode<DiagnosticOrderPriorityCodeType>(source._priority as Partial<fhir.FhirCode>); }
+      else { this.priority = new fhir.FhirCode<DiagnosticOrderPriorityCodeType>(source._priority as Partial<fhir.FhirCode>, options); }
     }
-    if (source['event']) { this.event = source.event.map((x) => new fhir.DiagnosticOrderEvent(x)); }
+    if (source['event']) { this.event = source.event.map((x) => new fhir.DiagnosticOrderEvent(x, options)); }
     else { this.event = []; }
-    if (source['item']) { this.item = source.item.map((x) => new fhir.DiagnosticOrderItem(x)); }
+    if (source['item']) { this.item = source.item.map((x) => new fhir.DiagnosticOrderItem(x, options)); }
     else { this.item = []; }
-    if (source['note']) { this.note = source.note.map((x) => new fhir.Annotation(x)); }
+    if (source['note']) { this.note = source.note.map((x) => new fhir.Annotation(x, options)); }
     else { this.note = []; }
   }
   /**

@@ -120,45 +120,45 @@ export class Attachment extends fhir.FhirElement {
    */
   constructor(source:Partial<AttachmentArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['contentType']) { this.contentType = new fhir.FhirCode({value: source.contentType}); }
+    if (source['contentType'] !== undefined) { this.contentType = new fhir.FhirCode({value: source.contentType}, options); }
     if (source['_contentType']) {
       if (this.contentType) { this.contentType.addExtendedProperties(source._contentType!); }
-      else { this.contentType = new fhir.FhirCode(source._contentType as Partial<fhir.FhirCodeArgs>); }
+      else { this.contentType = new fhir.FhirCode(source._contentType as Partial<fhir.FhirCodeArgs>, options); }
     }
-    if (source['language']) { this.language = new fhir.FhirCode({value: source.language}); }
+    if (source['language'] !== undefined) { this.language = new fhir.FhirCode({value: source.language}, options); }
     if (source['_language']) {
       if (this.language) { this.language.addExtendedProperties(source._language!); }
-      else { this.language = new fhir.FhirCode(source._language as Partial<fhir.FhirCodeArgs>); }
+      else { this.language = new fhir.FhirCode(source._language as Partial<fhir.FhirCodeArgs>, options); }
     }
-    if (source['data']) { this.data = new fhir.FhirBase64Binary({value: source.data}); }
+    if (source['data'] !== undefined) { this.data = new fhir.FhirBase64Binary({value: source.data}, options); }
     if (source['_data']) {
       if (this.data) { this.data.addExtendedProperties(source._data!); }
-      else { this.data = new fhir.FhirBase64Binary(source._data as Partial<fhir.FhirBase64BinaryArgs>); }
+      else { this.data = new fhir.FhirBase64Binary(source._data as Partial<fhir.FhirBase64BinaryArgs>, options); }
     }
-    if (source['url']) { this.url = new fhir.FhirUri({value: source.url}); }
+    if (source['url'] !== undefined) { this.url = new fhir.FhirUri({value: source.url}, options); }
     if (source['_url']) {
       if (this.url) { this.url.addExtendedProperties(source._url!); }
-      else { this.url = new fhir.FhirUri(source._url as Partial<fhir.FhirUriArgs>); }
+      else { this.url = new fhir.FhirUri(source._url as Partial<fhir.FhirUriArgs>, options); }
     }
-    if (source['size']) { this.size = new fhir.FhirUnsignedInt({value: source.size}); }
+    if (source['size'] !== undefined) { this.size = new fhir.FhirUnsignedInt({value: source.size}, options); }
     if (source['_size']) {
       if (this.size) { this.size.addExtendedProperties(source._size!); }
-      else { this.size = new fhir.FhirUnsignedInt(source._size as Partial<fhir.FhirUnsignedIntArgs>); }
+      else { this.size = new fhir.FhirUnsignedInt(source._size as Partial<fhir.FhirUnsignedIntArgs>, options); }
     }
-    if (source['hash']) { this.hash = new fhir.FhirBase64Binary({value: source.hash}); }
+    if (source['hash'] !== undefined) { this.hash = new fhir.FhirBase64Binary({value: source.hash}, options); }
     if (source['_hash']) {
       if (this.hash) { this.hash.addExtendedProperties(source._hash!); }
-      else { this.hash = new fhir.FhirBase64Binary(source._hash as Partial<fhir.FhirBase64BinaryArgs>); }
+      else { this.hash = new fhir.FhirBase64Binary(source._hash as Partial<fhir.FhirBase64BinaryArgs>, options); }
     }
-    if (source['title']) { this.title = new fhir.FhirString({value: source.title}); }
+    if (source['title'] !== undefined) { this.title = new fhir.FhirString({value: source.title}, options); }
     if (source['_title']) {
       if (this.title) { this.title.addExtendedProperties(source._title!); }
-      else { this.title = new fhir.FhirString(source._title as Partial<fhir.FhirStringArgs>); }
+      else { this.title = new fhir.FhirString(source._title as Partial<fhir.FhirStringArgs>, options); }
     }
-    if (source['creation']) { this.creation = new fhir.FhirDateTime({value: source.creation}); }
+    if (source['creation'] !== undefined) { this.creation = new fhir.FhirDateTime({value: source.creation}, options); }
     if (source['_creation']) {
       if (this.creation) { this.creation.addExtendedProperties(source._creation!); }
-      else { this.creation = new fhir.FhirDateTime(source._creation as Partial<fhir.FhirDateTimeArgs>); }
+      else { this.creation = new fhir.FhirDateTime(source._creation as Partial<fhir.FhirDateTimeArgs>, options); }
     }
   }
   /**

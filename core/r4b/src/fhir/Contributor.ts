@@ -60,19 +60,19 @@ export class Contributor extends fhir.FhirElement {
    */
   constructor(source:Partial<ContributorArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['type']) { this.type = new fhir.FhirCode<ContributorTypeCodeType>({value: source.type}); }
+    if (source['type'] !== undefined) { this.type = new fhir.FhirCode<ContributorTypeCodeType>({value: source.type}, options); }
     else { this.type = null; }
     if (source['_type']) {
       if (this.type) { this.type.addExtendedProperties(source._type!); }
-      else { this.type = new fhir.FhirCode<ContributorTypeCodeType>(source._type as Partial<fhir.FhirCode>); }
+      else { this.type = new fhir.FhirCode<ContributorTypeCodeType>(source._type as Partial<fhir.FhirCode>, options); }
     }
-    if (source['name']) { this.name = new fhir.FhirString({value: source.name}); }
+    if (source['name'] !== undefined) { this.name = new fhir.FhirString({value: source.name}, options); }
     else { this.name = null; }
     if (source['_name']) {
       if (this.name) { this.name.addExtendedProperties(source._name!); }
-      else { this.name = new fhir.FhirString(source._name as Partial<fhir.FhirStringArgs>); }
+      else { this.name = new fhir.FhirString(source._name as Partial<fhir.FhirStringArgs>, options); }
     }
-    if (source['contact']) { this.contact = source.contact.map((x) => new fhir.ContactDetail(x)); }
+    if (source['contact']) { this.contact = source.contact.map((x) => new fhir.ContactDetail(x, options)); }
     else { this.contact = []; }
   }
   /**

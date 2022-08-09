@@ -88,30 +88,30 @@ export class Quantity extends fhir.FhirElement {
    */
   constructor(source:Partial<QuantityArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['value']) { this.value = new fhir.FhirDecimal({value: source.value}); }
+    if (source['value'] !== undefined) { this.value = new fhir.FhirDecimal({value: source.value}, options); }
     if (source['_value']) {
       if (this.value) { this.value.addExtendedProperties(source._value!); }
-      else { this.value = new fhir.FhirDecimal(source._value as Partial<fhir.FhirDecimalArgs>); }
+      else { this.value = new fhir.FhirDecimal(source._value as Partial<fhir.FhirDecimalArgs>, options); }
     }
-    if (source['comparator']) { this.comparator = new fhir.FhirCode<QuantityComparatorCodeType>({value: source.comparator}); }
+    if (source['comparator'] !== undefined) { this.comparator = new fhir.FhirCode<QuantityComparatorCodeType>({value: source.comparator}, options); }
     if (source['_comparator']) {
       if (this.comparator) { this.comparator.addExtendedProperties(source._comparator!); }
-      else { this.comparator = new fhir.FhirCode<QuantityComparatorCodeType>(source._comparator as Partial<fhir.FhirCode>); }
+      else { this.comparator = new fhir.FhirCode<QuantityComparatorCodeType>(source._comparator as Partial<fhir.FhirCode>, options); }
     }
-    if (source['unit']) { this.unit = new fhir.FhirString({value: source.unit}); }
+    if (source['unit'] !== undefined) { this.unit = new fhir.FhirString({value: source.unit}, options); }
     if (source['_unit']) {
       if (this.unit) { this.unit.addExtendedProperties(source._unit!); }
-      else { this.unit = new fhir.FhirString(source._unit as Partial<fhir.FhirStringArgs>); }
+      else { this.unit = new fhir.FhirString(source._unit as Partial<fhir.FhirStringArgs>, options); }
     }
-    if (source['system']) { this.system = new fhir.FhirUri({value: source.system}); }
+    if (source['system'] !== undefined) { this.system = new fhir.FhirUri({value: source.system}, options); }
     if (source['_system']) {
       if (this.system) { this.system.addExtendedProperties(source._system!); }
-      else { this.system = new fhir.FhirUri(source._system as Partial<fhir.FhirUriArgs>); }
+      else { this.system = new fhir.FhirUri(source._system as Partial<fhir.FhirUriArgs>, options); }
     }
-    if (source['code']) { this.code = new fhir.FhirCode({value: source.code}); }
+    if (source['code'] !== undefined) { this.code = new fhir.FhirCode({value: source.code}, options); }
     if (source['_code']) {
       if (this.code) { this.code.addExtendedProperties(source._code!); }
-      else { this.code = new fhir.FhirCode(source._code as Partial<fhir.FhirCodeArgs>); }
+      else { this.code = new fhir.FhirCode(source._code as Partial<fhir.FhirCodeArgs>, options); }
     }
   }
   /**

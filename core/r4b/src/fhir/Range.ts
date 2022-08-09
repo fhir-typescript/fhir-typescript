@@ -40,8 +40,8 @@ export class Range extends fhir.FhirElement {
    */
   constructor(source:Partial<RangeArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['low']) { this.low = new fhir.Quantity(source.low); }
-    if (source['high']) { this.high = new fhir.Quantity(source.high); }
+    if (source['low']) { this.low = new fhir.Quantity(source.low, options); }
+    if (source['high']) { this.high = new fhir.Quantity(source.high, options); }
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).

@@ -76,12 +76,12 @@ export class DeviceComponentProductionSpecification extends fhir.BackboneElement
    */
   constructor(source:Partial<DeviceComponentProductionSpecificationArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['specType']) { this.specType = new fhir.CodeableConcept(source.specType); }
-    if (source['componentId']) { this.componentId = new fhir.Identifier(source.componentId); }
-    if (source['productionSpec']) { this.productionSpec = new fhir.FhirString({value: source.productionSpec}); }
+    if (source['specType']) { this.specType = new fhir.CodeableConcept(source.specType, options); }
+    if (source['componentId']) { this.componentId = new fhir.Identifier(source.componentId, options); }
+    if (source['productionSpec'] !== undefined) { this.productionSpec = new fhir.FhirString({value: source.productionSpec}, options); }
     if (source['_productionSpec']) {
       if (this.productionSpec) { this.productionSpec.addExtendedProperties(source._productionSpec!); }
-      else { this.productionSpec = new fhir.FhirString(source._productionSpec as Partial<fhir.FhirStringArgs>); }
+      else { this.productionSpec = new fhir.FhirString(source._productionSpec as Partial<fhir.FhirStringArgs>, options); }
     }
   }
   /**
@@ -212,28 +212,28 @@ export class DeviceComponent extends fhir.DomainResource {
   constructor(source:Partial<DeviceComponentArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
     this.resourceType = 'DeviceComponent';
-    if (source['identifier']) { this.identifier = new fhir.Identifier(source.identifier); }
+    if (source['identifier']) { this.identifier = new fhir.Identifier(source.identifier, options); }
     else { this.identifier = null; }
-    if (source['type']) { this.type = new fhir.CodeableConcept(source.type); }
+    if (source['type']) { this.type = new fhir.CodeableConcept(source.type, options); }
     else { this.type = null; }
-    if (source['lastSystemChange']) { this.lastSystemChange = new fhir.FhirInstant({value: source.lastSystemChange}); }
+    if (source['lastSystemChange'] !== undefined) { this.lastSystemChange = new fhir.FhirInstant({value: source.lastSystemChange}, options); }
     if (source['_lastSystemChange']) {
       if (this.lastSystemChange) { this.lastSystemChange.addExtendedProperties(source._lastSystemChange!); }
-      else { this.lastSystemChange = new fhir.FhirInstant(source._lastSystemChange as Partial<fhir.FhirInstantArgs>); }
+      else { this.lastSystemChange = new fhir.FhirInstant(source._lastSystemChange as Partial<fhir.FhirInstantArgs>, options); }
     }
-    if (source['source']) { this.source = new fhir.Reference(source.source); }
-    if (source['parent']) { this.parent = new fhir.Reference(source.parent); }
-    if (source['operationalStatus']) { this.operationalStatus = source.operationalStatus.map((x) => new fhir.CodeableConcept(x)); }
+    if (source['source']) { this.source = new fhir.Reference(source.source, options); }
+    if (source['parent']) { this.parent = new fhir.Reference(source.parent, options); }
+    if (source['operationalStatus']) { this.operationalStatus = source.operationalStatus.map((x) => new fhir.CodeableConcept(x, options)); }
     else { this.operationalStatus = []; }
-    if (source['parameterGroup']) { this.parameterGroup = new fhir.CodeableConcept(source.parameterGroup); }
-    if (source['measurementPrinciple']) { this.measurementPrinciple = new fhir.FhirCode<MeasurementPrincipleCodeType>({value: source.measurementPrinciple}); }
+    if (source['parameterGroup']) { this.parameterGroup = new fhir.CodeableConcept(source.parameterGroup, options); }
+    if (source['measurementPrinciple'] !== undefined) { this.measurementPrinciple = new fhir.FhirCode<MeasurementPrincipleCodeType>({value: source.measurementPrinciple}, options); }
     if (source['_measurementPrinciple']) {
       if (this.measurementPrinciple) { this.measurementPrinciple.addExtendedProperties(source._measurementPrinciple!); }
-      else { this.measurementPrinciple = new fhir.FhirCode<MeasurementPrincipleCodeType>(source._measurementPrinciple as Partial<fhir.FhirCode>); }
+      else { this.measurementPrinciple = new fhir.FhirCode<MeasurementPrincipleCodeType>(source._measurementPrinciple as Partial<fhir.FhirCode>, options); }
     }
-    if (source['productionSpecification']) { this.productionSpecification = source.productionSpecification.map((x) => new fhir.DeviceComponentProductionSpecification(x)); }
+    if (source['productionSpecification']) { this.productionSpecification = source.productionSpecification.map((x) => new fhir.DeviceComponentProductionSpecification(x, options)); }
     else { this.productionSpecification = []; }
-    if (source['languageCode']) { this.languageCode = new fhir.CodeableConcept(source.languageCode); }
+    if (source['languageCode']) { this.languageCode = new fhir.CodeableConcept(source.languageCode, options); }
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).

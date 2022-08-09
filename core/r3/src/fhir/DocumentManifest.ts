@@ -53,8 +53,8 @@ export class DocumentManifestContent extends fhir.BackboneElement {
   constructor(source:Partial<DocumentManifestContentArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
     if (source['p']) { this.p = source.p; }
-    else if (source['pAttachment']) { this.p = new fhir.Attachment(source.pAttachment); }
-    else if (source['pReference']) { this.p = new fhir.Reference(source.pReference); }
+    else if (source['pAttachment']) { this.p = new fhir.Attachment(source.pAttachment, options); }
+    else if (source['pReference']) { this.p = new fhir.Reference(source.pReference, options); }
     else { this.p = null; }
   }
   /**
@@ -102,8 +102,8 @@ export class DocumentManifestRelated extends fhir.BackboneElement {
    */
   constructor(source:Partial<DocumentManifestRelatedArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['identifier']) { this.identifier = new fhir.Identifier(source.identifier); }
-    if (source['ref']) { this.ref = new fhir.Reference(source.ref); }
+    if (source['identifier']) { this.identifier = new fhir.Identifier(source.identifier, options); }
+    if (source['ref']) { this.ref = new fhir.Reference(source.ref, options); }
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -256,39 +256,39 @@ export class DocumentManifest extends fhir.DomainResource {
   constructor(source:Partial<DocumentManifestArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
     this.resourceType = 'DocumentManifest';
-    if (source['masterIdentifier']) { this.masterIdentifier = new fhir.Identifier(source.masterIdentifier); }
-    if (source['identifier']) { this.identifier = source.identifier.map((x) => new fhir.Identifier(x)); }
+    if (source['masterIdentifier']) { this.masterIdentifier = new fhir.Identifier(source.masterIdentifier, options); }
+    if (source['identifier']) { this.identifier = source.identifier.map((x) => new fhir.Identifier(x, options)); }
     else { this.identifier = []; }
-    if (source['status']) { this.status = new fhir.FhirCode<DocumentReferenceStatusCodeType>({value: source.status}); }
+    if (source['status'] !== undefined) { this.status = new fhir.FhirCode<DocumentReferenceStatusCodeType>({value: source.status}, options); }
     else { this.status = null; }
     if (source['_status']) {
       if (this.status) { this.status.addExtendedProperties(source._status!); }
-      else { this.status = new fhir.FhirCode<DocumentReferenceStatusCodeType>(source._status as Partial<fhir.FhirCode>); }
+      else { this.status = new fhir.FhirCode<DocumentReferenceStatusCodeType>(source._status as Partial<fhir.FhirCode>, options); }
     }
-    if (source['type']) { this.type = new fhir.CodeableConcept(source.type); }
-    if (source['subject']) { this.subject = new fhir.Reference(source.subject); }
-    if (source['created']) { this.created = new fhir.FhirDateTime({value: source.created}); }
+    if (source['type']) { this.type = new fhir.CodeableConcept(source.type, options); }
+    if (source['subject']) { this.subject = new fhir.Reference(source.subject, options); }
+    if (source['created'] !== undefined) { this.created = new fhir.FhirDateTime({value: source.created}, options); }
     if (source['_created']) {
       if (this.created) { this.created.addExtendedProperties(source._created!); }
-      else { this.created = new fhir.FhirDateTime(source._created as Partial<fhir.FhirDateTimeArgs>); }
+      else { this.created = new fhir.FhirDateTime(source._created as Partial<fhir.FhirDateTimeArgs>, options); }
     }
-    if (source['author']) { this.author = source.author.map((x) => new fhir.Reference(x)); }
+    if (source['author']) { this.author = source.author.map((x) => new fhir.Reference(x, options)); }
     else { this.author = []; }
-    if (source['recipient']) { this.recipient = source.recipient.map((x) => new fhir.Reference(x)); }
+    if (source['recipient']) { this.recipient = source.recipient.map((x) => new fhir.Reference(x, options)); }
     else { this.recipient = []; }
-    if (source['source']) { this.source = new fhir.FhirUri({value: source.source}); }
+    if (source['source'] !== undefined) { this.source = new fhir.FhirUri({value: source.source}, options); }
     if (source['_source']) {
       if (this.source) { this.source.addExtendedProperties(source._source!); }
-      else { this.source = new fhir.FhirUri(source._source as Partial<fhir.FhirUriArgs>); }
+      else { this.source = new fhir.FhirUri(source._source as Partial<fhir.FhirUriArgs>, options); }
     }
-    if (source['description']) { this.description = new fhir.FhirString({value: source.description}); }
+    if (source['description'] !== undefined) { this.description = new fhir.FhirString({value: source.description}, options); }
     if (source['_description']) {
       if (this.description) { this.description.addExtendedProperties(source._description!); }
-      else { this.description = new fhir.FhirString(source._description as Partial<fhir.FhirStringArgs>); }
+      else { this.description = new fhir.FhirString(source._description as Partial<fhir.FhirStringArgs>, options); }
     }
-    if (source['content']) { this.content = source.content.map((x) => new fhir.DocumentManifestContent(x)); }
+    if (source['content']) { this.content = source.content.map((x) => new fhir.DocumentManifestContent(x, options)); }
     else { this.content = []; }
-    if (source['related']) { this.related = source.related.map((x) => new fhir.DocumentManifestRelated(x)); }
+    if (source['related']) { this.related = source.related.map((x) => new fhir.DocumentManifestRelated(x, options)); }
     else { this.related = []; }
   }
   /**

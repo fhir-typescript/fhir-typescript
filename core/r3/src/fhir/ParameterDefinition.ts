@@ -112,39 +112,39 @@ export class ParameterDefinition extends fhir.FhirElement {
    */
   constructor(source:Partial<ParameterDefinitionArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['name']) { this.name = new fhir.FhirCode({value: source.name}); }
+    if (source['name'] !== undefined) { this.name = new fhir.FhirCode({value: source.name}, options); }
     if (source['_name']) {
       if (this.name) { this.name.addExtendedProperties(source._name!); }
-      else { this.name = new fhir.FhirCode(source._name as Partial<fhir.FhirCodeArgs>); }
+      else { this.name = new fhir.FhirCode(source._name as Partial<fhir.FhirCodeArgs>, options); }
     }
-    if (source['use']) { this.use = new fhir.FhirCode<OperationParameterUseCodeType>({value: source.use}); }
+    if (source['use'] !== undefined) { this.use = new fhir.FhirCode<OperationParameterUseCodeType>({value: source.use}, options); }
     else { this.use = null; }
     if (source['_use']) {
       if (this.use) { this.use.addExtendedProperties(source._use!); }
-      else { this.use = new fhir.FhirCode<OperationParameterUseCodeType>(source._use as Partial<fhir.FhirCode>); }
+      else { this.use = new fhir.FhirCode<OperationParameterUseCodeType>(source._use as Partial<fhir.FhirCode>, options); }
     }
-    if (source['min']) { this.min = new fhir.FhirInteger({value: source.min}); }
+    if (source['min'] !== undefined) { this.min = new fhir.FhirInteger({value: source.min}, options); }
     if (source['_min']) {
       if (this.min) { this.min.addExtendedProperties(source._min!); }
-      else { this.min = new fhir.FhirInteger(source._min as Partial<fhir.FhirIntegerArgs>); }
+      else { this.min = new fhir.FhirInteger(source._min as Partial<fhir.FhirIntegerArgs>, options); }
     }
-    if (source['max']) { this.max = new fhir.FhirString({value: source.max}); }
+    if (source['max'] !== undefined) { this.max = new fhir.FhirString({value: source.max}, options); }
     if (source['_max']) {
       if (this.max) { this.max.addExtendedProperties(source._max!); }
-      else { this.max = new fhir.FhirString(source._max as Partial<fhir.FhirStringArgs>); }
+      else { this.max = new fhir.FhirString(source._max as Partial<fhir.FhirStringArgs>, options); }
     }
-    if (source['documentation']) { this.documentation = new fhir.FhirString({value: source.documentation}); }
+    if (source['documentation'] !== undefined) { this.documentation = new fhir.FhirString({value: source.documentation}, options); }
     if (source['_documentation']) {
       if (this.documentation) { this.documentation.addExtendedProperties(source._documentation!); }
-      else { this.documentation = new fhir.FhirString(source._documentation as Partial<fhir.FhirStringArgs>); }
+      else { this.documentation = new fhir.FhirString(source._documentation as Partial<fhir.FhirStringArgs>, options); }
     }
-    if (source['type']) { this.type = new fhir.FhirCode({value: source.type}); }
+    if (source['type'] !== undefined) { this.type = new fhir.FhirCode({value: source.type}, options); }
     else { this.type = null; }
     if (source['_type']) {
       if (this.type) { this.type.addExtendedProperties(source._type!); }
-      else { this.type = new fhir.FhirCode(source._type as Partial<fhir.FhirCodeArgs>); }
+      else { this.type = new fhir.FhirCode(source._type as Partial<fhir.FhirCodeArgs>, options); }
     }
-    if (source['profile']) { this.profile = new fhir.Reference(source.profile); }
+    if (source['profile']) { this.profile = new fhir.Reference(source.profile, options); }
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).

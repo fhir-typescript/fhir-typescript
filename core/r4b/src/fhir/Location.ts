@@ -84,22 +84,22 @@ export class LocationPosition extends fhir.BackboneElement {
    */
   constructor(source:Partial<LocationPositionArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['longitude']) { this.longitude = new fhir.FhirDecimal({value: source.longitude}); }
+    if (source['longitude'] !== undefined) { this.longitude = new fhir.FhirDecimal({value: source.longitude}, options); }
     else { this.longitude = null; }
     if (source['_longitude']) {
       if (this.longitude) { this.longitude.addExtendedProperties(source._longitude!); }
-      else { this.longitude = new fhir.FhirDecimal(source._longitude as Partial<fhir.FhirDecimalArgs>); }
+      else { this.longitude = new fhir.FhirDecimal(source._longitude as Partial<fhir.FhirDecimalArgs>, options); }
     }
-    if (source['latitude']) { this.latitude = new fhir.FhirDecimal({value: source.latitude}); }
+    if (source['latitude'] !== undefined) { this.latitude = new fhir.FhirDecimal({value: source.latitude}, options); }
     else { this.latitude = null; }
     if (source['_latitude']) {
       if (this.latitude) { this.latitude.addExtendedProperties(source._latitude!); }
-      else { this.latitude = new fhir.FhirDecimal(source._latitude as Partial<fhir.FhirDecimalArgs>); }
+      else { this.latitude = new fhir.FhirDecimal(source._latitude as Partial<fhir.FhirDecimalArgs>, options); }
     }
-    if (source['altitude']) { this.altitude = new fhir.FhirDecimal({value: source.altitude}); }
+    if (source['altitude'] !== undefined) { this.altitude = new fhir.FhirDecimal({value: source.altitude}, options); }
     if (source['_altitude']) {
       if (this.altitude) { this.altitude.addExtendedProperties(source._altitude!); }
-      else { this.altitude = new fhir.FhirDecimal(source._altitude as Partial<fhir.FhirDecimalArgs>); }
+      else { this.altitude = new fhir.FhirDecimal(source._altitude as Partial<fhir.FhirDecimalArgs>, options); }
     }
   }
   /**
@@ -182,7 +182,7 @@ export class LocationHoursOfOperation extends fhir.BackboneElement {
    */
   constructor(source:Partial<LocationHoursOfOperationArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['daysOfWeek']) { this.daysOfWeek = source.daysOfWeek.map((x) => new fhir.FhirCode<DaysOfWeekCodeType>({value: x})); }
+    if (source['daysOfWeek'] !== undefined) { this.daysOfWeek = source.daysOfWeek.map((x) => new fhir.FhirCode<DaysOfWeekCodeType>({value: x}, options)); }
     else { this.daysOfWeek = []; }
     if (source['_daysOfWeek']) {
       source._daysOfWeek.forEach((x,i) => {
@@ -190,20 +190,20 @@ export class LocationHoursOfOperation extends fhir.BackboneElement {
         else { if (x) { this.daysOfWeek.push(new fhir.FhirCode<DaysOfWeekCodeType>(x as Partial<fhir.FhirCode>)); } }
       });
     }
-    if (source['allDay']) { this.allDay = new fhir.FhirBoolean({value: source.allDay}); }
+    if (source['allDay'] !== undefined) { this.allDay = new fhir.FhirBoolean({value: source.allDay}, options); }
     if (source['_allDay']) {
       if (this.allDay) { this.allDay.addExtendedProperties(source._allDay!); }
-      else { this.allDay = new fhir.FhirBoolean(source._allDay as Partial<fhir.FhirBooleanArgs>); }
+      else { this.allDay = new fhir.FhirBoolean(source._allDay as Partial<fhir.FhirBooleanArgs>, options); }
     }
-    if (source['openingTime']) { this.openingTime = new fhir.FhirTime({value: source.openingTime}); }
+    if (source['openingTime'] !== undefined) { this.openingTime = new fhir.FhirTime({value: source.openingTime}, options); }
     if (source['_openingTime']) {
       if (this.openingTime) { this.openingTime.addExtendedProperties(source._openingTime!); }
-      else { this.openingTime = new fhir.FhirTime(source._openingTime as Partial<fhir.FhirTimeArgs>); }
+      else { this.openingTime = new fhir.FhirTime(source._openingTime as Partial<fhir.FhirTimeArgs>, options); }
     }
-    if (source['closingTime']) { this.closingTime = new fhir.FhirTime({value: source.closingTime}); }
+    if (source['closingTime'] !== undefined) { this.closingTime = new fhir.FhirTime({value: source.closingTime}, options); }
     if (source['_closingTime']) {
       if (this.closingTime) { this.closingTime.addExtendedProperties(source._closingTime!); }
-      else { this.closingTime = new fhir.FhirTime(source._closingTime as Partial<fhir.FhirTimeArgs>); }
+      else { this.closingTime = new fhir.FhirTime(source._closingTime as Partial<fhir.FhirTimeArgs>, options); }
     }
   }
   /**
@@ -409,20 +409,20 @@ export class Location extends fhir.DomainResource {
   constructor(source:Partial<LocationArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
     this.resourceType = 'Location';
-    if (source['identifier']) { this.identifier = source.identifier.map((x) => new fhir.Identifier(x)); }
+    if (source['identifier']) { this.identifier = source.identifier.map((x) => new fhir.Identifier(x, options)); }
     else { this.identifier = []; }
-    if (source['status']) { this.status = new fhir.FhirCode<LocationStatusCodeType>({value: source.status}); }
+    if (source['status'] !== undefined) { this.status = new fhir.FhirCode<LocationStatusCodeType>({value: source.status}, options); }
     if (source['_status']) {
       if (this.status) { this.status.addExtendedProperties(source._status!); }
-      else { this.status = new fhir.FhirCode<LocationStatusCodeType>(source._status as Partial<fhir.FhirCode>); }
+      else { this.status = new fhir.FhirCode<LocationStatusCodeType>(source._status as Partial<fhir.FhirCode>, options); }
     }
-    if (source['operationalStatus']) { this.operationalStatus = new fhir.Coding(source.operationalStatus); }
-    if (source['name']) { this.name = new fhir.FhirString({value: source.name}); }
+    if (source['operationalStatus']) { this.operationalStatus = new fhir.Coding(source.operationalStatus, options); }
+    if (source['name'] !== undefined) { this.name = new fhir.FhirString({value: source.name}, options); }
     if (source['_name']) {
       if (this.name) { this.name.addExtendedProperties(source._name!); }
-      else { this.name = new fhir.FhirString(source._name as Partial<fhir.FhirStringArgs>); }
+      else { this.name = new fhir.FhirString(source._name as Partial<fhir.FhirStringArgs>, options); }
     }
-    if (source['alias']) { this.alias = source.alias.map((x) => new fhir.FhirString({value: x})); }
+    if (source['alias'] !== undefined) { this.alias = source.alias.map((x) => new fhir.FhirString({value: x}, options)); }
     else { this.alias = []; }
     if (source['_alias']) {
       source._alias.forEach((x,i) => {
@@ -430,33 +430,33 @@ export class Location extends fhir.DomainResource {
         else { if (x) { this.alias.push(new fhir.FhirString(x as Partial<fhir.FhirStringArgs>)); } }
       });
     }
-    if (source['description']) { this.description = new fhir.FhirString({value: source.description}); }
+    if (source['description'] !== undefined) { this.description = new fhir.FhirString({value: source.description}, options); }
     if (source['_description']) {
       if (this.description) { this.description.addExtendedProperties(source._description!); }
-      else { this.description = new fhir.FhirString(source._description as Partial<fhir.FhirStringArgs>); }
+      else { this.description = new fhir.FhirString(source._description as Partial<fhir.FhirStringArgs>, options); }
     }
-    if (source['mode']) { this.mode = new fhir.FhirCode<LocationModeCodeType>({value: source.mode}); }
+    if (source['mode'] !== undefined) { this.mode = new fhir.FhirCode<LocationModeCodeType>({value: source.mode}, options); }
     if (source['_mode']) {
       if (this.mode) { this.mode.addExtendedProperties(source._mode!); }
-      else { this.mode = new fhir.FhirCode<LocationModeCodeType>(source._mode as Partial<fhir.FhirCode>); }
+      else { this.mode = new fhir.FhirCode<LocationModeCodeType>(source._mode as Partial<fhir.FhirCode>, options); }
     }
-    if (source['type']) { this.type = source.type.map((x) => new fhir.CodeableConcept(x)); }
+    if (source['type']) { this.type = source.type.map((x) => new fhir.CodeableConcept(x, options)); }
     else { this.type = []; }
-    if (source['telecom']) { this.telecom = source.telecom.map((x) => new fhir.ContactPoint(x)); }
+    if (source['telecom']) { this.telecom = source.telecom.map((x) => new fhir.ContactPoint(x, options)); }
     else { this.telecom = []; }
-    if (source['address']) { this.address = new fhir.Address(source.address); }
-    if (source['physicalType']) { this.physicalType = new fhir.CodeableConcept(source.physicalType); }
-    if (source['position']) { this.position = new fhir.LocationPosition(source.position); }
-    if (source['managingOrganization']) { this.managingOrganization = new fhir.Reference(source.managingOrganization); }
-    if (source['partOf']) { this.partOf = new fhir.Reference(source.partOf); }
-    if (source['hoursOfOperation']) { this.hoursOfOperation = source.hoursOfOperation.map((x) => new fhir.LocationHoursOfOperation(x)); }
+    if (source['address']) { this.address = new fhir.Address(source.address, options); }
+    if (source['physicalType']) { this.physicalType = new fhir.CodeableConcept(source.physicalType, options); }
+    if (source['position']) { this.position = new fhir.LocationPosition(source.position, options); }
+    if (source['managingOrganization']) { this.managingOrganization = new fhir.Reference(source.managingOrganization, options); }
+    if (source['partOf']) { this.partOf = new fhir.Reference(source.partOf, options); }
+    if (source['hoursOfOperation']) { this.hoursOfOperation = source.hoursOfOperation.map((x) => new fhir.LocationHoursOfOperation(x, options)); }
     else { this.hoursOfOperation = []; }
-    if (source['availabilityExceptions']) { this.availabilityExceptions = new fhir.FhirString({value: source.availabilityExceptions}); }
+    if (source['availabilityExceptions'] !== undefined) { this.availabilityExceptions = new fhir.FhirString({value: source.availabilityExceptions}, options); }
     if (source['_availabilityExceptions']) {
       if (this.availabilityExceptions) { this.availabilityExceptions.addExtendedProperties(source._availabilityExceptions!); }
-      else { this.availabilityExceptions = new fhir.FhirString(source._availabilityExceptions as Partial<fhir.FhirStringArgs>); }
+      else { this.availabilityExceptions = new fhir.FhirString(source._availabilityExceptions as Partial<fhir.FhirStringArgs>, options); }
     }
-    if (source['endpoint']) { this.endpoint = source.endpoint.map((x) => new fhir.Reference(x)); }
+    if (source['endpoint']) { this.endpoint = source.endpoint.map((x) => new fhir.Reference(x, options)); }
     else { this.endpoint = []; }
   }
   /**

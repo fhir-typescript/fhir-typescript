@@ -105,24 +105,24 @@ export class BodySite extends fhir.DomainResource {
   constructor(source:Partial<BodySiteArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
     this.resourceType = 'BodySite';
-    if (source['identifier']) { this.identifier = source.identifier.map((x) => new fhir.Identifier(x)); }
+    if (source['identifier']) { this.identifier = source.identifier.map((x) => new fhir.Identifier(x, options)); }
     else { this.identifier = []; }
-    if (source['active']) { this.active = new fhir.FhirBoolean({value: source.active}); }
+    if (source['active'] !== undefined) { this.active = new fhir.FhirBoolean({value: source.active}, options); }
     if (source['_active']) {
       if (this.active) { this.active.addExtendedProperties(source._active!); }
-      else { this.active = new fhir.FhirBoolean(source._active as Partial<fhir.FhirBooleanArgs>); }
+      else { this.active = new fhir.FhirBoolean(source._active as Partial<fhir.FhirBooleanArgs>, options); }
     }
-    if (source['code']) { this.code = new fhir.CodeableConcept(source.code); }
-    if (source['qualifier']) { this.qualifier = source.qualifier.map((x) => new fhir.CodeableConcept(x)); }
+    if (source['code']) { this.code = new fhir.CodeableConcept(source.code, options); }
+    if (source['qualifier']) { this.qualifier = source.qualifier.map((x) => new fhir.CodeableConcept(x, options)); }
     else { this.qualifier = []; }
-    if (source['description']) { this.description = new fhir.FhirString({value: source.description}); }
+    if (source['description'] !== undefined) { this.description = new fhir.FhirString({value: source.description}, options); }
     if (source['_description']) {
       if (this.description) { this.description.addExtendedProperties(source._description!); }
-      else { this.description = new fhir.FhirString(source._description as Partial<fhir.FhirStringArgs>); }
+      else { this.description = new fhir.FhirString(source._description as Partial<fhir.FhirStringArgs>, options); }
     }
-    if (source['image']) { this.image = source.image.map((x) => new fhir.Attachment(x)); }
+    if (source['image']) { this.image = source.image.map((x) => new fhir.Attachment(x, options)); }
     else { this.image = []; }
-    if (source['patient']) { this.patient = new fhir.Reference(source.patient); }
+    if (source['patient']) { this.patient = new fhir.Reference(source.patient, options); }
     else { this.patient = null; }
   }
   /**

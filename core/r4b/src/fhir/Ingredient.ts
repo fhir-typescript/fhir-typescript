@@ -64,12 +64,12 @@ export class IngredientManufacturer extends fhir.BackboneElement {
    */
   constructor(source:Partial<IngredientManufacturerArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['role']) { this.role = new fhir.FhirCode<IngredientManufacturerRoleCodeType>({value: source.role}); }
+    if (source['role'] !== undefined) { this.role = new fhir.FhirCode<IngredientManufacturerRoleCodeType>({value: source.role}, options); }
     if (source['_role']) {
       if (this.role) { this.role.addExtendedProperties(source._role!); }
-      else { this.role = new fhir.FhirCode<IngredientManufacturerRoleCodeType>(source._role as Partial<fhir.FhirCode>); }
+      else { this.role = new fhir.FhirCode<IngredientManufacturerRoleCodeType>(source._role as Partial<fhir.FhirCode>, options); }
     }
-    if (source['manufacturer']) { this.manufacturer = new fhir.Reference(source.manufacturer); }
+    if (source['manufacturer']) { this.manufacturer = new fhir.Reference(source.manufacturer, options); }
     else { this.manufacturer = null; }
   }
   /**
@@ -150,17 +150,17 @@ export class IngredientSubstanceStrengthReferenceStrength extends fhir.BackboneE
    */
   constructor(source:Partial<IngredientSubstanceStrengthReferenceStrengthArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['substance']) { this.substance = new fhir.CodeableReference(source.substance); }
+    if (source['substance']) { this.substance = new fhir.CodeableReference(source.substance, options); }
     if (source['strength']) { this.strength = source.strength; }
-    else if (source['strengthRatio']) { this.strength = new fhir.Ratio(source.strengthRatio); }
-    else if (source['strengthRatioRange']) { this.strength = new fhir.RatioRange(source.strengthRatioRange); }
+    else if (source['strengthRatio']) { this.strength = new fhir.Ratio(source.strengthRatio, options); }
+    else if (source['strengthRatioRange']) { this.strength = new fhir.RatioRange(source.strengthRatioRange, options); }
     else { this.strength = null; }
-    if (source['measurementPoint']) { this.measurementPoint = new fhir.FhirString({value: source.measurementPoint}); }
+    if (source['measurementPoint'] !== undefined) { this.measurementPoint = new fhir.FhirString({value: source.measurementPoint}, options); }
     if (source['_measurementPoint']) {
       if (this.measurementPoint) { this.measurementPoint.addExtendedProperties(source._measurementPoint!); }
-      else { this.measurementPoint = new fhir.FhirString(source._measurementPoint as Partial<fhir.FhirStringArgs>); }
+      else { this.measurementPoint = new fhir.FhirString(source._measurementPoint as Partial<fhir.FhirStringArgs>, options); }
     }
-    if (source['country']) { this.country = source.country.map((x) => new fhir.CodeableConcept(x)); }
+    if (source['country']) { this.country = source.country.map((x) => new fhir.CodeableConcept(x, options)); }
     else { this.country = []; }
   }
   /**
@@ -288,29 +288,29 @@ export class IngredientSubstanceStrength extends fhir.BackboneElement {
   constructor(source:Partial<IngredientSubstanceStrengthArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
     if (source['presentation']) { this.presentation = source.presentation; }
-    else if (source['presentationRatio']) { this.presentation = new fhir.Ratio(source.presentationRatio); }
-    else if (source['presentationRatioRange']) { this.presentation = new fhir.RatioRange(source.presentationRatioRange); }
-    if (source['textPresentation']) { this.textPresentation = new fhir.FhirString({value: source.textPresentation}); }
+    else if (source['presentationRatio']) { this.presentation = new fhir.Ratio(source.presentationRatio, options); }
+    else if (source['presentationRatioRange']) { this.presentation = new fhir.RatioRange(source.presentationRatioRange, options); }
+    if (source['textPresentation'] !== undefined) { this.textPresentation = new fhir.FhirString({value: source.textPresentation}, options); }
     if (source['_textPresentation']) {
       if (this.textPresentation) { this.textPresentation.addExtendedProperties(source._textPresentation!); }
-      else { this.textPresentation = new fhir.FhirString(source._textPresentation as Partial<fhir.FhirStringArgs>); }
+      else { this.textPresentation = new fhir.FhirString(source._textPresentation as Partial<fhir.FhirStringArgs>, options); }
     }
     if (source['concentration']) { this.concentration = source.concentration; }
-    else if (source['concentrationRatio']) { this.concentration = new fhir.Ratio(source.concentrationRatio); }
-    else if (source['concentrationRatioRange']) { this.concentration = new fhir.RatioRange(source.concentrationRatioRange); }
-    if (source['textConcentration']) { this.textConcentration = new fhir.FhirString({value: source.textConcentration}); }
+    else if (source['concentrationRatio']) { this.concentration = new fhir.Ratio(source.concentrationRatio, options); }
+    else if (source['concentrationRatioRange']) { this.concentration = new fhir.RatioRange(source.concentrationRatioRange, options); }
+    if (source['textConcentration'] !== undefined) { this.textConcentration = new fhir.FhirString({value: source.textConcentration}, options); }
     if (source['_textConcentration']) {
       if (this.textConcentration) { this.textConcentration.addExtendedProperties(source._textConcentration!); }
-      else { this.textConcentration = new fhir.FhirString(source._textConcentration as Partial<fhir.FhirStringArgs>); }
+      else { this.textConcentration = new fhir.FhirString(source._textConcentration as Partial<fhir.FhirStringArgs>, options); }
     }
-    if (source['measurementPoint']) { this.measurementPoint = new fhir.FhirString({value: source.measurementPoint}); }
+    if (source['measurementPoint'] !== undefined) { this.measurementPoint = new fhir.FhirString({value: source.measurementPoint}, options); }
     if (source['_measurementPoint']) {
       if (this.measurementPoint) { this.measurementPoint.addExtendedProperties(source._measurementPoint!); }
-      else { this.measurementPoint = new fhir.FhirString(source._measurementPoint as Partial<fhir.FhirStringArgs>); }
+      else { this.measurementPoint = new fhir.FhirString(source._measurementPoint as Partial<fhir.FhirStringArgs>, options); }
     }
-    if (source['country']) { this.country = source.country.map((x) => new fhir.CodeableConcept(x)); }
+    if (source['country']) { this.country = source.country.map((x) => new fhir.CodeableConcept(x, options)); }
     else { this.country = []; }
-    if (source['referenceStrength']) { this.referenceStrength = source.referenceStrength.map((x) => new fhir.IngredientSubstanceStrengthReferenceStrength(x)); }
+    if (source['referenceStrength']) { this.referenceStrength = source.referenceStrength.map((x) => new fhir.IngredientSubstanceStrengthReferenceStrength(x, options)); }
     else { this.referenceStrength = []; }
   }
   /**
@@ -364,9 +364,9 @@ export class IngredientSubstance extends fhir.BackboneElement {
    */
   constructor(source:Partial<IngredientSubstanceArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['code']) { this.code = new fhir.CodeableReference(source.code); }
+    if (source['code']) { this.code = new fhir.CodeableReference(source.code, options); }
     else { this.code = null; }
-    if (source['strength']) { this.strength = source.strength.map((x) => new fhir.IngredientSubstanceStrength(x)); }
+    if (source['strength']) { this.strength = source.strength.map((x) => new fhir.IngredientSubstanceStrength(x, options)); }
     else { this.strength = []; }
   }
   /**
@@ -480,27 +480,27 @@ export class Ingredient extends fhir.DomainResource {
   constructor(source:Partial<IngredientArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
     this.resourceType = 'Ingredient';
-    if (source['identifier']) { this.identifier = new fhir.Identifier(source.identifier); }
-    if (source['status']) { this.status = new fhir.FhirCode<PublicationStatusCodeType>({value: source.status}); }
+    if (source['identifier']) { this.identifier = new fhir.Identifier(source.identifier, options); }
+    if (source['status'] !== undefined) { this.status = new fhir.FhirCode<PublicationStatusCodeType>({value: source.status}, options); }
     else { this.status = null; }
     if (source['_status']) {
       if (this.status) { this.status.addExtendedProperties(source._status!); }
-      else { this.status = new fhir.FhirCode<PublicationStatusCodeType>(source._status as Partial<fhir.FhirCode>); }
+      else { this.status = new fhir.FhirCode<PublicationStatusCodeType>(source._status as Partial<fhir.FhirCode>, options); }
     }
-    if (source['for']) { this.for = source.for.map((x) => new fhir.Reference(x)); }
+    if (source['for']) { this.for = source.for.map((x) => new fhir.Reference(x, options)); }
     else { this.for = []; }
-    if (source['role']) { this.role = new fhir.CodeableConcept(source.role); }
+    if (source['role']) { this.role = new fhir.CodeableConcept(source.role, options); }
     else { this.role = null; }
-    if (source['function']) { this.function = source.function.map((x) => new fhir.CodeableConcept(x)); }
+    if (source['function']) { this.function = source.function.map((x) => new fhir.CodeableConcept(x, options)); }
     else { this.function = []; }
-    if (source['allergenicIndicator']) { this.allergenicIndicator = new fhir.FhirBoolean({value: source.allergenicIndicator}); }
+    if (source['allergenicIndicator'] !== undefined) { this.allergenicIndicator = new fhir.FhirBoolean({value: source.allergenicIndicator}, options); }
     if (source['_allergenicIndicator']) {
       if (this.allergenicIndicator) { this.allergenicIndicator.addExtendedProperties(source._allergenicIndicator!); }
-      else { this.allergenicIndicator = new fhir.FhirBoolean(source._allergenicIndicator as Partial<fhir.FhirBooleanArgs>); }
+      else { this.allergenicIndicator = new fhir.FhirBoolean(source._allergenicIndicator as Partial<fhir.FhirBooleanArgs>, options); }
     }
-    if (source['manufacturer']) { this.manufacturer = source.manufacturer.map((x) => new fhir.IngredientManufacturer(x)); }
+    if (source['manufacturer']) { this.manufacturer = source.manufacturer.map((x) => new fhir.IngredientManufacturer(x, options)); }
     else { this.manufacturer = []; }
-    if (source['substance']) { this.substance = new fhir.IngredientSubstance(source.substance); }
+    if (source['substance']) { this.substance = new fhir.IngredientSubstance(source.substance, options); }
     else { this.substance = null; }
   }
   /**

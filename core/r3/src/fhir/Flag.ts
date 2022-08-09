@@ -113,22 +113,22 @@ export class Flag extends fhir.DomainResource {
   constructor(source:Partial<FlagArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
     this.resourceType = 'Flag';
-    if (source['identifier']) { this.identifier = source.identifier.map((x) => new fhir.Identifier(x)); }
+    if (source['identifier']) { this.identifier = source.identifier.map((x) => new fhir.Identifier(x, options)); }
     else { this.identifier = []; }
-    if (source['status']) { this.status = new fhir.FhirCode<FlagStatusCodeType>({value: source.status}); }
+    if (source['status'] !== undefined) { this.status = new fhir.FhirCode<FlagStatusCodeType>({value: source.status}, options); }
     else { this.status = null; }
     if (source['_status']) {
       if (this.status) { this.status.addExtendedProperties(source._status!); }
-      else { this.status = new fhir.FhirCode<FlagStatusCodeType>(source._status as Partial<fhir.FhirCode>); }
+      else { this.status = new fhir.FhirCode<FlagStatusCodeType>(source._status as Partial<fhir.FhirCode>, options); }
     }
-    if (source['category']) { this.category = new fhir.CodeableConcept(source.category); }
-    if (source['code']) { this.code = new fhir.CodeableConcept(source.code); }
+    if (source['category']) { this.category = new fhir.CodeableConcept(source.category, options); }
+    if (source['code']) { this.code = new fhir.CodeableConcept(source.code, options); }
     else { this.code = null; }
-    if (source['subject']) { this.subject = new fhir.Reference(source.subject); }
+    if (source['subject']) { this.subject = new fhir.Reference(source.subject, options); }
     else { this.subject = null; }
-    if (source['period']) { this.period = new fhir.Period(source.period); }
-    if (source['encounter']) { this.encounter = new fhir.Reference(source.encounter); }
-    if (source['author']) { this.author = new fhir.Reference(source.author); }
+    if (source['period']) { this.period = new fhir.Period(source.period, options); }
+    if (source['encounter']) { this.encounter = new fhir.Reference(source.encounter, options); }
+    if (source['author']) { this.author = new fhir.Reference(source.author, options); }
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).

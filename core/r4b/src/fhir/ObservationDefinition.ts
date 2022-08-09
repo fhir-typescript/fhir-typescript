@@ -100,17 +100,17 @@ export class ObservationDefinitionQuantitativeDetails extends fhir.BackboneEleme
    */
   constructor(source:Partial<ObservationDefinitionQuantitativeDetailsArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['customaryUnit']) { this.customaryUnit = new fhir.CodeableConcept(source.customaryUnit); }
-    if (source['unit']) { this.unit = new fhir.CodeableConcept(source.unit); }
-    if (source['conversionFactor']) { this.conversionFactor = new fhir.FhirDecimal({value: source.conversionFactor}); }
+    if (source['customaryUnit']) { this.customaryUnit = new fhir.CodeableConcept(source.customaryUnit, options); }
+    if (source['unit']) { this.unit = new fhir.CodeableConcept(source.unit, options); }
+    if (source['conversionFactor'] !== undefined) { this.conversionFactor = new fhir.FhirDecimal({value: source.conversionFactor}, options); }
     if (source['_conversionFactor']) {
       if (this.conversionFactor) { this.conversionFactor.addExtendedProperties(source._conversionFactor!); }
-      else { this.conversionFactor = new fhir.FhirDecimal(source._conversionFactor as Partial<fhir.FhirDecimalArgs>); }
+      else { this.conversionFactor = new fhir.FhirDecimal(source._conversionFactor as Partial<fhir.FhirDecimalArgs>, options); }
     }
-    if (source['decimalPrecision']) { this.decimalPrecision = new fhir.FhirInteger({value: source.decimalPrecision}); }
+    if (source['decimalPrecision'] !== undefined) { this.decimalPrecision = new fhir.FhirInteger({value: source.decimalPrecision}, options); }
     if (source['_decimalPrecision']) {
       if (this.decimalPrecision) { this.decimalPrecision.addExtendedProperties(source._decimalPrecision!); }
-      else { this.decimalPrecision = new fhir.FhirInteger(source._decimalPrecision as Partial<fhir.FhirIntegerArgs>); }
+      else { this.decimalPrecision = new fhir.FhirInteger(source._decimalPrecision as Partial<fhir.FhirIntegerArgs>, options); }
     }
   }
   /**
@@ -221,26 +221,26 @@ export class ObservationDefinitionQualifiedInterval extends fhir.BackboneElement
    */
   constructor(source:Partial<ObservationDefinitionQualifiedIntervalArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['category']) { this.category = new fhir.FhirCode<ObservationRangeCategoryCodeType>({value: source.category}); }
+    if (source['category'] !== undefined) { this.category = new fhir.FhirCode<ObservationRangeCategoryCodeType>({value: source.category}, options); }
     if (source['_category']) {
       if (this.category) { this.category.addExtendedProperties(source._category!); }
-      else { this.category = new fhir.FhirCode<ObservationRangeCategoryCodeType>(source._category as Partial<fhir.FhirCode>); }
+      else { this.category = new fhir.FhirCode<ObservationRangeCategoryCodeType>(source._category as Partial<fhir.FhirCode>, options); }
     }
-    if (source['range']) { this.range = new fhir.Range(source.range); }
-    if (source['context']) { this.context = new fhir.CodeableConcept(source.context); }
-    if (source['appliesTo']) { this.appliesTo = source.appliesTo.map((x) => new fhir.CodeableConcept(x)); }
+    if (source['range']) { this.range = new fhir.Range(source.range, options); }
+    if (source['context']) { this.context = new fhir.CodeableConcept(source.context, options); }
+    if (source['appliesTo']) { this.appliesTo = source.appliesTo.map((x) => new fhir.CodeableConcept(x, options)); }
     else { this.appliesTo = []; }
-    if (source['gender']) { this.gender = new fhir.FhirCode<AdministrativeGenderCodeType>({value: source.gender}); }
+    if (source['gender'] !== undefined) { this.gender = new fhir.FhirCode<AdministrativeGenderCodeType>({value: source.gender}, options); }
     if (source['_gender']) {
       if (this.gender) { this.gender.addExtendedProperties(source._gender!); }
-      else { this.gender = new fhir.FhirCode<AdministrativeGenderCodeType>(source._gender as Partial<fhir.FhirCode>); }
+      else { this.gender = new fhir.FhirCode<AdministrativeGenderCodeType>(source._gender as Partial<fhir.FhirCode>, options); }
     }
-    if (source['age']) { this.age = new fhir.Range(source.age); }
-    if (source['gestationalAge']) { this.gestationalAge = new fhir.Range(source.gestationalAge); }
-    if (source['condition']) { this.condition = new fhir.FhirString({value: source.condition}); }
+    if (source['age']) { this.age = new fhir.Range(source.age, options); }
+    if (source['gestationalAge']) { this.gestationalAge = new fhir.Range(source.gestationalAge, options); }
+    if (source['condition'] !== undefined) { this.condition = new fhir.FhirString({value: source.condition}, options); }
     if (source['_condition']) {
       if (this.condition) { this.condition.addExtendedProperties(source._condition!); }
-      else { this.condition = new fhir.FhirString(source._condition as Partial<fhir.FhirStringArgs>); }
+      else { this.condition = new fhir.FhirString(source._condition as Partial<fhir.FhirStringArgs>, options); }
     }
   }
   /**
@@ -404,13 +404,13 @@ export class ObservationDefinition extends fhir.DomainResource {
   constructor(source:Partial<ObservationDefinitionArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
     this.resourceType = 'ObservationDefinition';
-    if (source['category']) { this.category = source.category.map((x) => new fhir.CodeableConcept(x)); }
+    if (source['category']) { this.category = source.category.map((x) => new fhir.CodeableConcept(x, options)); }
     else { this.category = []; }
-    if (source['code']) { this.code = new fhir.CodeableConcept(source.code); }
+    if (source['code']) { this.code = new fhir.CodeableConcept(source.code, options); }
     else { this.code = null; }
-    if (source['identifier']) { this.identifier = source.identifier.map((x) => new fhir.Identifier(x)); }
+    if (source['identifier']) { this.identifier = source.identifier.map((x) => new fhir.Identifier(x, options)); }
     else { this.identifier = []; }
-    if (source['permittedDataType']) { this.permittedDataType = source.permittedDataType.map((x) => new fhir.FhirCode<PermittedDataTypeCodeType>({value: x})); }
+    if (source['permittedDataType'] !== undefined) { this.permittedDataType = source.permittedDataType.map((x) => new fhir.FhirCode<PermittedDataTypeCodeType>({value: x}, options)); }
     else { this.permittedDataType = []; }
     if (source['_permittedDataType']) {
       source._permittedDataType.forEach((x,i) => {
@@ -418,24 +418,24 @@ export class ObservationDefinition extends fhir.DomainResource {
         else { if (x) { this.permittedDataType.push(new fhir.FhirCode<PermittedDataTypeCodeType>(x as Partial<fhir.FhirCode>)); } }
       });
     }
-    if (source['multipleResultsAllowed']) { this.multipleResultsAllowed = new fhir.FhirBoolean({value: source.multipleResultsAllowed}); }
+    if (source['multipleResultsAllowed'] !== undefined) { this.multipleResultsAllowed = new fhir.FhirBoolean({value: source.multipleResultsAllowed}, options); }
     if (source['_multipleResultsAllowed']) {
       if (this.multipleResultsAllowed) { this.multipleResultsAllowed.addExtendedProperties(source._multipleResultsAllowed!); }
-      else { this.multipleResultsAllowed = new fhir.FhirBoolean(source._multipleResultsAllowed as Partial<fhir.FhirBooleanArgs>); }
+      else { this.multipleResultsAllowed = new fhir.FhirBoolean(source._multipleResultsAllowed as Partial<fhir.FhirBooleanArgs>, options); }
     }
-    if (source['method']) { this.method = new fhir.CodeableConcept(source.method); }
-    if (source['preferredReportName']) { this.preferredReportName = new fhir.FhirString({value: source.preferredReportName}); }
+    if (source['method']) { this.method = new fhir.CodeableConcept(source.method, options); }
+    if (source['preferredReportName'] !== undefined) { this.preferredReportName = new fhir.FhirString({value: source.preferredReportName}, options); }
     if (source['_preferredReportName']) {
       if (this.preferredReportName) { this.preferredReportName.addExtendedProperties(source._preferredReportName!); }
-      else { this.preferredReportName = new fhir.FhirString(source._preferredReportName as Partial<fhir.FhirStringArgs>); }
+      else { this.preferredReportName = new fhir.FhirString(source._preferredReportName as Partial<fhir.FhirStringArgs>, options); }
     }
-    if (source['quantitativeDetails']) { this.quantitativeDetails = new fhir.ObservationDefinitionQuantitativeDetails(source.quantitativeDetails); }
-    if (source['qualifiedInterval']) { this.qualifiedInterval = source.qualifiedInterval.map((x) => new fhir.ObservationDefinitionQualifiedInterval(x)); }
+    if (source['quantitativeDetails']) { this.quantitativeDetails = new fhir.ObservationDefinitionQuantitativeDetails(source.quantitativeDetails, options); }
+    if (source['qualifiedInterval']) { this.qualifiedInterval = source.qualifiedInterval.map((x) => new fhir.ObservationDefinitionQualifiedInterval(x, options)); }
     else { this.qualifiedInterval = []; }
-    if (source['validCodedValueSet']) { this.validCodedValueSet = new fhir.Reference(source.validCodedValueSet); }
-    if (source['normalCodedValueSet']) { this.normalCodedValueSet = new fhir.Reference(source.normalCodedValueSet); }
-    if (source['abnormalCodedValueSet']) { this.abnormalCodedValueSet = new fhir.Reference(source.abnormalCodedValueSet); }
-    if (source['criticalCodedValueSet']) { this.criticalCodedValueSet = new fhir.Reference(source.criticalCodedValueSet); }
+    if (source['validCodedValueSet']) { this.validCodedValueSet = new fhir.Reference(source.validCodedValueSet, options); }
+    if (source['normalCodedValueSet']) { this.normalCodedValueSet = new fhir.Reference(source.normalCodedValueSet, options); }
+    if (source['abnormalCodedValueSet']) { this.abnormalCodedValueSet = new fhir.Reference(source.abnormalCodedValueSet, options); }
+    if (source['criticalCodedValueSet']) { this.criticalCodedValueSet = new fhir.Reference(source.criticalCodedValueSet, options); }
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).

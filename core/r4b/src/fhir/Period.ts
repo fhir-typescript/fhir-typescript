@@ -48,15 +48,15 @@ export class Period extends fhir.FhirElement {
    */
   constructor(source:Partial<PeriodArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['start']) { this.start = new fhir.FhirDateTime({value: source.start}); }
+    if (source['start'] !== undefined) { this.start = new fhir.FhirDateTime({value: source.start}, options); }
     if (source['_start']) {
       if (this.start) { this.start.addExtendedProperties(source._start!); }
-      else { this.start = new fhir.FhirDateTime(source._start as Partial<fhir.FhirDateTimeArgs>); }
+      else { this.start = new fhir.FhirDateTime(source._start as Partial<fhir.FhirDateTimeArgs>, options); }
     }
-    if (source['end']) { this.end = new fhir.FhirDateTime({value: source.end}); }
+    if (source['end'] !== undefined) { this.end = new fhir.FhirDateTime({value: source.end}, options); }
     if (source['_end']) {
       if (this.end) { this.end.addExtendedProperties(source._end!); }
-      else { this.end = new fhir.FhirDateTime(source._end as Partial<fhir.FhirDateTimeArgs>); }
+      else { this.end = new fhir.FhirDateTime(source._end as Partial<fhir.FhirDateTimeArgs>, options); }
     }
   }
   /**

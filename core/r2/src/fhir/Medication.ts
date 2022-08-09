@@ -40,9 +40,9 @@ export class MedicationProductIngredient extends fhir.BackboneElement {
    */
   constructor(source:Partial<MedicationProductIngredientArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['item']) { this.item = new fhir.Reference(source.item); }
+    if (source['item']) { this.item = new fhir.Reference(source.item, options); }
     else { this.item = null; }
-    if (source['amount']) { this.amount = new fhir.Ratio(source.amount); }
+    if (source['amount']) { this.amount = new fhir.Ratio(source.amount, options); }
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -98,15 +98,15 @@ export class MedicationProductBatch extends fhir.BackboneElement {
    */
   constructor(source:Partial<MedicationProductBatchArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['lotNumber']) { this.lotNumber = new fhir.FhirString({value: source.lotNumber}); }
+    if (source['lotNumber'] !== undefined) { this.lotNumber = new fhir.FhirString({value: source.lotNumber}, options); }
     if (source['_lotNumber']) {
       if (this.lotNumber) { this.lotNumber.addExtendedProperties(source._lotNumber!); }
-      else { this.lotNumber = new fhir.FhirString(source._lotNumber as Partial<fhir.FhirStringArgs>); }
+      else { this.lotNumber = new fhir.FhirString(source._lotNumber as Partial<fhir.FhirStringArgs>, options); }
     }
-    if (source['expirationDate']) { this.expirationDate = new fhir.FhirDateTime({value: source.expirationDate}); }
+    if (source['expirationDate'] !== undefined) { this.expirationDate = new fhir.FhirDateTime({value: source.expirationDate}, options); }
     if (source['_expirationDate']) {
       if (this.expirationDate) { this.expirationDate.addExtendedProperties(source._expirationDate!); }
-      else { this.expirationDate = new fhir.FhirDateTime(source._expirationDate as Partial<fhir.FhirDateTimeArgs>); }
+      else { this.expirationDate = new fhir.FhirDateTime(source._expirationDate as Partial<fhir.FhirDateTimeArgs>, options); }
     }
   }
   /**
@@ -163,10 +163,10 @@ export class MedicationProduct extends fhir.BackboneElement {
    */
   constructor(source:Partial<MedicationProductArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['form']) { this.form = new fhir.CodeableConcept(source.form); }
-    if (source['ingredient']) { this.ingredient = source.ingredient.map((x) => new fhir.MedicationProductIngredient(x)); }
+    if (source['form']) { this.form = new fhir.CodeableConcept(source.form, options); }
+    if (source['ingredient']) { this.ingredient = source.ingredient.map((x) => new fhir.MedicationProductIngredient(x, options)); }
     else { this.ingredient = []; }
-    if (source['batch']) { this.batch = source.batch.map((x) => new fhir.MedicationProductBatch(x)); }
+    if (source['batch']) { this.batch = source.batch.map((x) => new fhir.MedicationProductBatch(x, options)); }
     else { this.batch = []; }
   }
   /**
@@ -216,9 +216,9 @@ export class MedicationPackageContent extends fhir.BackboneElement {
    */
   constructor(source:Partial<MedicationPackageContentArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['item']) { this.item = new fhir.Reference(source.item); }
+    if (source['item']) { this.item = new fhir.Reference(source.item, options); }
     else { this.item = null; }
-    if (source['amount']) { this.amount = new fhir.Quantity(source.amount); }
+    if (source['amount']) { this.amount = new fhir.Quantity(source.amount, options); }
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -266,8 +266,8 @@ export class MedicationPackage extends fhir.BackboneElement {
    */
   constructor(source:Partial<MedicationPackageArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['container']) { this.container = new fhir.CodeableConcept(source.container); }
-    if (source['content']) { this.content = source.content.map((x) => new fhir.MedicationPackageContent(x)); }
+    if (source['container']) { this.container = new fhir.CodeableConcept(source.container, options); }
+    if (source['content']) { this.content = source.content.map((x) => new fhir.MedicationPackageContent(x, options)); }
     else { this.content = []; }
   }
   /**
@@ -353,15 +353,15 @@ export class Medication extends fhir.DomainResource {
   constructor(source:Partial<MedicationArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
     this.resourceType = 'Medication';
-    if (source['code']) { this.code = new fhir.CodeableConcept(source.code); }
-    if (source['isBrand']) { this.isBrand = new fhir.FhirBoolean({value: source.isBrand}); }
+    if (source['code']) { this.code = new fhir.CodeableConcept(source.code, options); }
+    if (source['isBrand'] !== undefined) { this.isBrand = new fhir.FhirBoolean({value: source.isBrand}, options); }
     if (source['_isBrand']) {
       if (this.isBrand) { this.isBrand.addExtendedProperties(source._isBrand!); }
-      else { this.isBrand = new fhir.FhirBoolean(source._isBrand as Partial<fhir.FhirBooleanArgs>); }
+      else { this.isBrand = new fhir.FhirBoolean(source._isBrand as Partial<fhir.FhirBooleanArgs>, options); }
     }
-    if (source['manufacturer']) { this.manufacturer = new fhir.Reference(source.manufacturer); }
-    if (source['product']) { this.product = new fhir.MedicationProduct(source.product); }
-    if (source['package']) { this.package = new fhir.MedicationPackage(source.package); }
+    if (source['manufacturer']) { this.manufacturer = new fhir.Reference(source.manufacturer, options); }
+    if (source['product']) { this.product = new fhir.MedicationProduct(source.product, options); }
+    if (source['package']) { this.package = new fhir.MedicationPackage(source.package, options); }
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).

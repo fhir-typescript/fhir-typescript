@@ -157,44 +157,44 @@ export class Media extends fhir.DomainResource {
   constructor(source:Partial<MediaArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
     this.resourceType = 'Media';
-    if (source['type']) { this.type = new fhir.FhirCode<DigitalMediaTypeCodeType>({value: source.type}); }
+    if (source['type'] !== undefined) { this.type = new fhir.FhirCode<DigitalMediaTypeCodeType>({value: source.type}, options); }
     else { this.type = null; }
     if (source['_type']) {
       if (this.type) { this.type.addExtendedProperties(source._type!); }
-      else { this.type = new fhir.FhirCode<DigitalMediaTypeCodeType>(source._type as Partial<fhir.FhirCode>); }
+      else { this.type = new fhir.FhirCode<DigitalMediaTypeCodeType>(source._type as Partial<fhir.FhirCode>, options); }
     }
-    if (source['subtype']) { this.subtype = new fhir.CodeableConcept(source.subtype); }
-    if (source['identifier']) { this.identifier = source.identifier.map((x) => new fhir.Identifier(x)); }
+    if (source['subtype']) { this.subtype = new fhir.CodeableConcept(source.subtype, options); }
+    if (source['identifier']) { this.identifier = source.identifier.map((x) => new fhir.Identifier(x, options)); }
     else { this.identifier = []; }
-    if (source['subject']) { this.subject = new fhir.Reference(source.subject); }
-    if (source['operator']) { this.operator = new fhir.Reference(source.operator); }
-    if (source['view']) { this.view = new fhir.CodeableConcept(source.view); }
-    if (source['deviceName']) { this.deviceName = new fhir.FhirString({value: source.deviceName}); }
+    if (source['subject']) { this.subject = new fhir.Reference(source.subject, options); }
+    if (source['operator']) { this.operator = new fhir.Reference(source.operator, options); }
+    if (source['view']) { this.view = new fhir.CodeableConcept(source.view, options); }
+    if (source['deviceName'] !== undefined) { this.deviceName = new fhir.FhirString({value: source.deviceName}, options); }
     if (source['_deviceName']) {
       if (this.deviceName) { this.deviceName.addExtendedProperties(source._deviceName!); }
-      else { this.deviceName = new fhir.FhirString(source._deviceName as Partial<fhir.FhirStringArgs>); }
+      else { this.deviceName = new fhir.FhirString(source._deviceName as Partial<fhir.FhirStringArgs>, options); }
     }
-    if (source['height']) { this.height = new fhir.FhirPositiveInt({value: source.height}); }
+    if (source['height'] !== undefined) { this.height = new fhir.FhirPositiveInt({value: source.height}, options); }
     if (source['_height']) {
       if (this.height) { this.height.addExtendedProperties(source._height!); }
-      else { this.height = new fhir.FhirPositiveInt(source._height as Partial<fhir.FhirPositiveIntArgs>); }
+      else { this.height = new fhir.FhirPositiveInt(source._height as Partial<fhir.FhirPositiveIntArgs>, options); }
     }
-    if (source['width']) { this.width = new fhir.FhirPositiveInt({value: source.width}); }
+    if (source['width'] !== undefined) { this.width = new fhir.FhirPositiveInt({value: source.width}, options); }
     if (source['_width']) {
       if (this.width) { this.width.addExtendedProperties(source._width!); }
-      else { this.width = new fhir.FhirPositiveInt(source._width as Partial<fhir.FhirPositiveIntArgs>); }
+      else { this.width = new fhir.FhirPositiveInt(source._width as Partial<fhir.FhirPositiveIntArgs>, options); }
     }
-    if (source['frames']) { this.frames = new fhir.FhirPositiveInt({value: source.frames}); }
+    if (source['frames'] !== undefined) { this.frames = new fhir.FhirPositiveInt({value: source.frames}, options); }
     if (source['_frames']) {
       if (this.frames) { this.frames.addExtendedProperties(source._frames!); }
-      else { this.frames = new fhir.FhirPositiveInt(source._frames as Partial<fhir.FhirPositiveIntArgs>); }
+      else { this.frames = new fhir.FhirPositiveInt(source._frames as Partial<fhir.FhirPositiveIntArgs>, options); }
     }
-    if (source['duration']) { this.duration = new fhir.FhirUnsignedInt({value: source.duration}); }
+    if (source['duration'] !== undefined) { this.duration = new fhir.FhirUnsignedInt({value: source.duration}, options); }
     if (source['_duration']) {
       if (this.duration) { this.duration.addExtendedProperties(source._duration!); }
-      else { this.duration = new fhir.FhirUnsignedInt(source._duration as Partial<fhir.FhirUnsignedIntArgs>); }
+      else { this.duration = new fhir.FhirUnsignedInt(source._duration as Partial<fhir.FhirUnsignedIntArgs>, options); }
     }
-    if (source['content']) { this.content = new fhir.Attachment(source.content); }
+    if (source['content']) { this.content = new fhir.Attachment(source.content, options); }
     else { this.content = null; }
   }
   /**

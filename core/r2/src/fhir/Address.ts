@@ -148,22 +148,22 @@ export class Address extends fhir.FhirElement {
    */
   constructor(source:Partial<AddressArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['use']) { this.use = new fhir.FhirCode<AddressUseCodeType>({value: source.use}); }
+    if (source['use'] !== undefined) { this.use = new fhir.FhirCode<AddressUseCodeType>({value: source.use}, options); }
     if (source['_use']) {
       if (this.use) { this.use.addExtendedProperties(source._use!); }
-      else { this.use = new fhir.FhirCode<AddressUseCodeType>(source._use as Partial<fhir.FhirCode>); }
+      else { this.use = new fhir.FhirCode<AddressUseCodeType>(source._use as Partial<fhir.FhirCode>, options); }
     }
-    if (source['type']) { this.type = new fhir.FhirCode<AddressTypeCodeType>({value: source.type}); }
+    if (source['type'] !== undefined) { this.type = new fhir.FhirCode<AddressTypeCodeType>({value: source.type}, options); }
     if (source['_type']) {
       if (this.type) { this.type.addExtendedProperties(source._type!); }
-      else { this.type = new fhir.FhirCode<AddressTypeCodeType>(source._type as Partial<fhir.FhirCode>); }
+      else { this.type = new fhir.FhirCode<AddressTypeCodeType>(source._type as Partial<fhir.FhirCode>, options); }
     }
-    if (source['text']) { this.text = new fhir.FhirString({value: source.text}); }
+    if (source['text'] !== undefined) { this.text = new fhir.FhirString({value: source.text}, options); }
     if (source['_text']) {
       if (this.text) { this.text.addExtendedProperties(source._text!); }
-      else { this.text = new fhir.FhirString(source._text as Partial<fhir.FhirStringArgs>); }
+      else { this.text = new fhir.FhirString(source._text as Partial<fhir.FhirStringArgs>, options); }
     }
-    if (source['line']) { this.line = source.line.map((x) => new fhir.FhirString({value: x})); }
+    if (source['line'] !== undefined) { this.line = source.line.map((x) => new fhir.FhirString({value: x}, options)); }
     else { this.line = []; }
     if (source['_line']) {
       source._line.forEach((x,i) => {
@@ -171,32 +171,32 @@ export class Address extends fhir.FhirElement {
         else { if (x) { this.line.push(new fhir.FhirString(x as Partial<fhir.FhirStringArgs>)); } }
       });
     }
-    if (source['city']) { this.city = new fhir.FhirString({value: source.city}); }
+    if (source['city'] !== undefined) { this.city = new fhir.FhirString({value: source.city}, options); }
     if (source['_city']) {
       if (this.city) { this.city.addExtendedProperties(source._city!); }
-      else { this.city = new fhir.FhirString(source._city as Partial<fhir.FhirStringArgs>); }
+      else { this.city = new fhir.FhirString(source._city as Partial<fhir.FhirStringArgs>, options); }
     }
-    if (source['district']) { this.district = new fhir.FhirString({value: source.district}); }
+    if (source['district'] !== undefined) { this.district = new fhir.FhirString({value: source.district}, options); }
     if (source['_district']) {
       if (this.district) { this.district.addExtendedProperties(source._district!); }
-      else { this.district = new fhir.FhirString(source._district as Partial<fhir.FhirStringArgs>); }
+      else { this.district = new fhir.FhirString(source._district as Partial<fhir.FhirStringArgs>, options); }
     }
-    if (source['state']) { this.state = new fhir.FhirString({value: source.state}); }
+    if (source['state'] !== undefined) { this.state = new fhir.FhirString({value: source.state}, options); }
     if (source['_state']) {
       if (this.state) { this.state.addExtendedProperties(source._state!); }
-      else { this.state = new fhir.FhirString(source._state as Partial<fhir.FhirStringArgs>); }
+      else { this.state = new fhir.FhirString(source._state as Partial<fhir.FhirStringArgs>, options); }
     }
-    if (source['postalCode']) { this.postalCode = new fhir.FhirString({value: source.postalCode}); }
+    if (source['postalCode'] !== undefined) { this.postalCode = new fhir.FhirString({value: source.postalCode}, options); }
     if (source['_postalCode']) {
       if (this.postalCode) { this.postalCode.addExtendedProperties(source._postalCode!); }
-      else { this.postalCode = new fhir.FhirString(source._postalCode as Partial<fhir.FhirStringArgs>); }
+      else { this.postalCode = new fhir.FhirString(source._postalCode as Partial<fhir.FhirStringArgs>, options); }
     }
-    if (source['country']) { this.country = new fhir.FhirString({value: source.country}); }
+    if (source['country'] !== undefined) { this.country = new fhir.FhirString({value: source.country}, options); }
     if (source['_country']) {
       if (this.country) { this.country.addExtendedProperties(source._country!); }
-      else { this.country = new fhir.FhirString(source._country as Partial<fhir.FhirStringArgs>); }
+      else { this.country = new fhir.FhirString(source._country as Partial<fhir.FhirStringArgs>, options); }
     }
-    if (source['period']) { this.period = new fhir.Period(source.period); }
+    if (source['period']) { this.period = new fhir.Period(source.period, options); }
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).

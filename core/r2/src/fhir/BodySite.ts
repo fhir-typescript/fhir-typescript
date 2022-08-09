@@ -85,19 +85,19 @@ export class BodySite extends fhir.DomainResource {
   constructor(source:Partial<BodySiteArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
     this.resourceType = 'BodySite';
-    if (source['patient']) { this.patient = new fhir.Reference(source.patient); }
+    if (source['patient']) { this.patient = new fhir.Reference(source.patient, options); }
     else { this.patient = null; }
-    if (source['identifier']) { this.identifier = source.identifier.map((x) => new fhir.Identifier(x)); }
+    if (source['identifier']) { this.identifier = source.identifier.map((x) => new fhir.Identifier(x, options)); }
     else { this.identifier = []; }
-    if (source['code']) { this.code = new fhir.CodeableConcept(source.code); }
-    if (source['modifier']) { this.modifier = source.modifier.map((x) => new fhir.CodeableConcept(x)); }
+    if (source['code']) { this.code = new fhir.CodeableConcept(source.code, options); }
+    if (source['modifier']) { this.modifier = source.modifier.map((x) => new fhir.CodeableConcept(x, options)); }
     else { this.modifier = []; }
-    if (source['description']) { this.description = new fhir.FhirString({value: source.description}); }
+    if (source['description'] !== undefined) { this.description = new fhir.FhirString({value: source.description}, options); }
     if (source['_description']) {
       if (this.description) { this.description.addExtendedProperties(source._description!); }
-      else { this.description = new fhir.FhirString(source._description as Partial<fhir.FhirStringArgs>); }
+      else { this.description = new fhir.FhirString(source._description as Partial<fhir.FhirStringArgs>, options); }
     }
-    if (source['image']) { this.image = source.image.map((x) => new fhir.Attachment(x)); }
+    if (source['image']) { this.image = source.image.map((x) => new fhir.Attachment(x, options)); }
     else { this.image = []; }
   }
   /**

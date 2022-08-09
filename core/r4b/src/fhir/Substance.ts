@@ -64,13 +64,13 @@ export class SubstanceInstance extends fhir.BackboneElement {
    */
   constructor(source:Partial<SubstanceInstanceArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['identifier']) { this.identifier = new fhir.Identifier(source.identifier); }
-    if (source['expiry']) { this.expiry = new fhir.FhirDateTime({value: source.expiry}); }
+    if (source['identifier']) { this.identifier = new fhir.Identifier(source.identifier, options); }
+    if (source['expiry'] !== undefined) { this.expiry = new fhir.FhirDateTime({value: source.expiry}, options); }
     if (source['_expiry']) {
       if (this.expiry) { this.expiry.addExtendedProperties(source._expiry!); }
-      else { this.expiry = new fhir.FhirDateTime(source._expiry as Partial<fhir.FhirDateTimeArgs>); }
+      else { this.expiry = new fhir.FhirDateTime(source._expiry as Partial<fhir.FhirDateTimeArgs>, options); }
     }
-    if (source['quantity']) { this.quantity = new fhir.Quantity(source.quantity); }
+    if (source['quantity']) { this.quantity = new fhir.Quantity(source.quantity, options); }
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -131,10 +131,10 @@ export class SubstanceIngredient extends fhir.BackboneElement {
    */
   constructor(source:Partial<SubstanceIngredientArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['quantity']) { this.quantity = new fhir.Ratio(source.quantity); }
+    if (source['quantity']) { this.quantity = new fhir.Ratio(source.quantity, options); }
     if (source['substance']) { this.substance = source.substance; }
-    else if (source['substanceCodeableConcept']) { this.substance = new fhir.CodeableConcept(source.substanceCodeableConcept); }
-    else if (source['substanceReference']) { this.substance = new fhir.Reference(source.substanceReference); }
+    else if (source['substanceCodeableConcept']) { this.substance = new fhir.CodeableConcept(source.substanceCodeableConcept, options); }
+    else if (source['substanceReference']) { this.substance = new fhir.Reference(source.substanceReference, options); }
     else { this.substance = null; }
   }
   /**
@@ -240,25 +240,25 @@ export class Substance extends fhir.DomainResource {
   constructor(source:Partial<SubstanceArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
     this.resourceType = 'Substance';
-    if (source['identifier']) { this.identifier = source.identifier.map((x) => new fhir.Identifier(x)); }
+    if (source['identifier']) { this.identifier = source.identifier.map((x) => new fhir.Identifier(x, options)); }
     else { this.identifier = []; }
-    if (source['status']) { this.status = new fhir.FhirCode<SubstanceStatusCodeType>({value: source.status}); }
+    if (source['status'] !== undefined) { this.status = new fhir.FhirCode<SubstanceStatusCodeType>({value: source.status}, options); }
     if (source['_status']) {
       if (this.status) { this.status.addExtendedProperties(source._status!); }
-      else { this.status = new fhir.FhirCode<SubstanceStatusCodeType>(source._status as Partial<fhir.FhirCode>); }
+      else { this.status = new fhir.FhirCode<SubstanceStatusCodeType>(source._status as Partial<fhir.FhirCode>, options); }
     }
-    if (source['category']) { this.category = source.category.map((x) => new fhir.CodeableConcept(x)); }
+    if (source['category']) { this.category = source.category.map((x) => new fhir.CodeableConcept(x, options)); }
     else { this.category = []; }
-    if (source['code']) { this.code = new fhir.CodeableConcept(source.code); }
+    if (source['code']) { this.code = new fhir.CodeableConcept(source.code, options); }
     else { this.code = null; }
-    if (source['description']) { this.description = new fhir.FhirString({value: source.description}); }
+    if (source['description'] !== undefined) { this.description = new fhir.FhirString({value: source.description}, options); }
     if (source['_description']) {
       if (this.description) { this.description.addExtendedProperties(source._description!); }
-      else { this.description = new fhir.FhirString(source._description as Partial<fhir.FhirStringArgs>); }
+      else { this.description = new fhir.FhirString(source._description as Partial<fhir.FhirStringArgs>, options); }
     }
-    if (source['instance']) { this.instance = source.instance.map((x) => new fhir.SubstanceInstance(x)); }
+    if (source['instance']) { this.instance = source.instance.map((x) => new fhir.SubstanceInstance(x, options)); }
     else { this.instance = []; }
-    if (source['ingredient']) { this.ingredient = source.ingredient.map((x) => new fhir.SubstanceIngredient(x)); }
+    if (source['ingredient']) { this.ingredient = source.ingredient.map((x) => new fhir.SubstanceIngredient(x, options)); }
     else { this.ingredient = []; }
   }
   /**

@@ -137,29 +137,29 @@ export class Account extends fhir.DomainResource {
   constructor(source:Partial<AccountArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
     this.resourceType = 'Account';
-    if (source['identifier']) { this.identifier = source.identifier.map((x) => new fhir.Identifier(x)); }
+    if (source['identifier']) { this.identifier = source.identifier.map((x) => new fhir.Identifier(x, options)); }
     else { this.identifier = []; }
-    if (source['name']) { this.name = new fhir.FhirString({value: source.name}); }
+    if (source['name'] !== undefined) { this.name = new fhir.FhirString({value: source.name}, options); }
     if (source['_name']) {
       if (this.name) { this.name.addExtendedProperties(source._name!); }
-      else { this.name = new fhir.FhirString(source._name as Partial<fhir.FhirStringArgs>); }
+      else { this.name = new fhir.FhirString(source._name as Partial<fhir.FhirStringArgs>, options); }
     }
-    if (source['type']) { this.type = new fhir.CodeableConcept(source.type); }
-    if (source['status']) { this.status = new fhir.FhirCode({value: source.status}); }
+    if (source['type']) { this.type = new fhir.CodeableConcept(source.type, options); }
+    if (source['status'] !== undefined) { this.status = new fhir.FhirCode({value: source.status}, options); }
     if (source['_status']) {
       if (this.status) { this.status.addExtendedProperties(source._status!); }
-      else { this.status = new fhir.FhirCode(source._status as Partial<fhir.FhirCodeArgs>); }
+      else { this.status = new fhir.FhirCode(source._status as Partial<fhir.FhirCodeArgs>, options); }
     }
-    if (source['activePeriod']) { this.activePeriod = new fhir.Period(source.activePeriod); }
-    if (source['currency']) { this.currency = new fhir.Coding(source.currency); }
-    if (source['balance']) { this.balance = new fhir.Quantity(source.balance); }
-    if (source['coveragePeriod']) { this.coveragePeriod = new fhir.Period(source.coveragePeriod); }
-    if (source['subject']) { this.subject = new fhir.Reference(source.subject); }
-    if (source['owner']) { this.owner = new fhir.Reference(source.owner); }
-    if (source['description']) { this.description = new fhir.FhirString({value: source.description}); }
+    if (source['activePeriod']) { this.activePeriod = new fhir.Period(source.activePeriod, options); }
+    if (source['currency']) { this.currency = new fhir.Coding(source.currency, options); }
+    if (source['balance']) { this.balance = new fhir.Quantity(source.balance, options); }
+    if (source['coveragePeriod']) { this.coveragePeriod = new fhir.Period(source.coveragePeriod, options); }
+    if (source['subject']) { this.subject = new fhir.Reference(source.subject, options); }
+    if (source['owner']) { this.owner = new fhir.Reference(source.owner, options); }
+    if (source['description'] !== undefined) { this.description = new fhir.FhirString({value: source.description}, options); }
     if (source['_description']) {
       if (this.description) { this.description.addExtendedProperties(source._description!); }
-      else { this.description = new fhir.FhirString(source._description as Partial<fhir.FhirStringArgs>); }
+      else { this.description = new fhir.FhirString(source._description as Partial<fhir.FhirStringArgs>, options); }
     }
   }
   /**

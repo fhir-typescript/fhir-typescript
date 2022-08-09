@@ -196,24 +196,24 @@ export class SubstanceDefinitionMoiety extends fhir.BackboneElement {
    */
   constructor(source:Partial<SubstanceDefinitionMoietyArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['role']) { this.role = new fhir.CodeableConcept(source.role); }
-    if (source['identifier']) { this.identifier = new fhir.Identifier(source.identifier); }
-    if (source['name']) { this.name = new fhir.FhirString({value: source.name}); }
+    if (source['role']) { this.role = new fhir.CodeableConcept(source.role, options); }
+    if (source['identifier']) { this.identifier = new fhir.Identifier(source.identifier, options); }
+    if (source['name'] !== undefined) { this.name = new fhir.FhirString({value: source.name}, options); }
     if (source['_name']) {
       if (this.name) { this.name.addExtendedProperties(source._name!); }
-      else { this.name = new fhir.FhirString(source._name as Partial<fhir.FhirStringArgs>); }
+      else { this.name = new fhir.FhirString(source._name as Partial<fhir.FhirStringArgs>, options); }
     }
-    if (source['stereochemistry']) { this.stereochemistry = new fhir.CodeableConcept(source.stereochemistry); }
-    if (source['opticalActivity']) { this.opticalActivity = new fhir.CodeableConcept(source.opticalActivity); }
-    if (source['molecularFormula']) { this.molecularFormula = new fhir.FhirString({value: source.molecularFormula}); }
+    if (source['stereochemistry']) { this.stereochemistry = new fhir.CodeableConcept(source.stereochemistry, options); }
+    if (source['opticalActivity']) { this.opticalActivity = new fhir.CodeableConcept(source.opticalActivity, options); }
+    if (source['molecularFormula'] !== undefined) { this.molecularFormula = new fhir.FhirString({value: source.molecularFormula}, options); }
     if (source['_molecularFormula']) {
       if (this.molecularFormula) { this.molecularFormula.addExtendedProperties(source._molecularFormula!); }
-      else { this.molecularFormula = new fhir.FhirString(source._molecularFormula as Partial<fhir.FhirStringArgs>); }
+      else { this.molecularFormula = new fhir.FhirString(source._molecularFormula as Partial<fhir.FhirStringArgs>, options); }
     }
     if (source['amount']) { this.amount = source.amount; }
-    else if (source['amountQuantity']) { this.amount = new fhir.Quantity(source.amountQuantity); }
-    else if (source['amountString']) { this.amount = new fhir.FhirString({value: source.amountString}); }
-    if (source['measurementType']) { this.measurementType = new fhir.CodeableConcept(source.measurementType); }
+    else if (source['amountQuantity']) { this.amount = new fhir.Quantity(source.amountQuantity, options); }
+    else if (source['amountString'] !== undefined) { this.amount = new fhir.FhirString({value: source.amountString}, options); }
+    if (source['measurementType']) { this.measurementType = new fhir.CodeableConcept(source.measurementType, options); }
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -291,14 +291,14 @@ export class SubstanceDefinitionProperty extends fhir.BackboneElement {
    */
   constructor(source:Partial<SubstanceDefinitionPropertyArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['type']) { this.type = new fhir.CodeableConcept(source.type); }
+    if (source['type']) { this.type = new fhir.CodeableConcept(source.type, options); }
     else { this.type = null; }
     if (source['value']) { this.value = source.value; }
-    else if (source['valueCodeableConcept']) { this.value = new fhir.CodeableConcept(source.valueCodeableConcept); }
-    else if (source['valueQuantity']) { this.value = new fhir.Quantity(source.valueQuantity); }
-    else if (source['valueDate']) { this.value = new fhir.FhirDate({value: source.valueDate}); }
-    else if (source['valueBoolean']) { this.value = new fhir.FhirBoolean({value: source.valueBoolean}); }
-    else if (source['valueAttachment']) { this.value = new fhir.Attachment(source.valueAttachment); }
+    else if (source['valueCodeableConcept']) { this.value = new fhir.CodeableConcept(source.valueCodeableConcept, options); }
+    else if (source['valueQuantity']) { this.value = new fhir.Quantity(source.valueQuantity, options); }
+    else if (source['valueDate'] !== undefined) { this.value = new fhir.FhirDate({value: source.valueDate}, options); }
+    else if (source['valueBoolean'] !== undefined) { this.value = new fhir.FhirBoolean({value: source.valueBoolean}, options); }
+    else if (source['valueAttachment']) { this.value = new fhir.Attachment(source.valueAttachment, options); }
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -354,9 +354,9 @@ export class SubstanceDefinitionMolecularWeight extends fhir.BackboneElement {
    */
   constructor(source:Partial<SubstanceDefinitionMolecularWeightArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['method']) { this.method = new fhir.CodeableConcept(source.method); }
-    if (source['type']) { this.type = new fhir.CodeableConcept(source.type); }
-    if (source['amount']) { this.amount = new fhir.Quantity(source.amount); }
+    if (source['method']) { this.method = new fhir.CodeableConcept(source.method, options); }
+    if (source['type']) { this.type = new fhir.CodeableConcept(source.type, options); }
+    if (source['amount']) { this.amount = new fhir.Quantity(source.amount, options); }
     else { this.amount = null; }
   }
   /**
@@ -426,14 +426,14 @@ export class SubstanceDefinitionStructureRepresentation extends fhir.BackboneEle
    */
   constructor(source:Partial<SubstanceDefinitionStructureRepresentationArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['type']) { this.type = new fhir.CodeableConcept(source.type); }
-    if (source['representation']) { this.representation = new fhir.FhirString({value: source.representation}); }
+    if (source['type']) { this.type = new fhir.CodeableConcept(source.type, options); }
+    if (source['representation'] !== undefined) { this.representation = new fhir.FhirString({value: source.representation}, options); }
     if (source['_representation']) {
       if (this.representation) { this.representation.addExtendedProperties(source._representation!); }
-      else { this.representation = new fhir.FhirString(source._representation as Partial<fhir.FhirStringArgs>); }
+      else { this.representation = new fhir.FhirString(source._representation as Partial<fhir.FhirStringArgs>, options); }
     }
-    if (source['format']) { this.format = new fhir.CodeableConcept(source.format); }
-    if (source['document']) { this.document = new fhir.Reference(source.document); }
+    if (source['format']) { this.format = new fhir.CodeableConcept(source.format, options); }
+    if (source['document']) { this.document = new fhir.Reference(source.document, options); }
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -539,24 +539,24 @@ export class SubstanceDefinitionStructure extends fhir.BackboneElement {
    */
   constructor(source:Partial<SubstanceDefinitionStructureArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['stereochemistry']) { this.stereochemistry = new fhir.CodeableConcept(source.stereochemistry); }
-    if (source['opticalActivity']) { this.opticalActivity = new fhir.CodeableConcept(source.opticalActivity); }
-    if (source['molecularFormula']) { this.molecularFormula = new fhir.FhirString({value: source.molecularFormula}); }
+    if (source['stereochemistry']) { this.stereochemistry = new fhir.CodeableConcept(source.stereochemistry, options); }
+    if (source['opticalActivity']) { this.opticalActivity = new fhir.CodeableConcept(source.opticalActivity, options); }
+    if (source['molecularFormula'] !== undefined) { this.molecularFormula = new fhir.FhirString({value: source.molecularFormula}, options); }
     if (source['_molecularFormula']) {
       if (this.molecularFormula) { this.molecularFormula.addExtendedProperties(source._molecularFormula!); }
-      else { this.molecularFormula = new fhir.FhirString(source._molecularFormula as Partial<fhir.FhirStringArgs>); }
+      else { this.molecularFormula = new fhir.FhirString(source._molecularFormula as Partial<fhir.FhirStringArgs>, options); }
     }
-    if (source['molecularFormulaByMoiety']) { this.molecularFormulaByMoiety = new fhir.FhirString({value: source.molecularFormulaByMoiety}); }
+    if (source['molecularFormulaByMoiety'] !== undefined) { this.molecularFormulaByMoiety = new fhir.FhirString({value: source.molecularFormulaByMoiety}, options); }
     if (source['_molecularFormulaByMoiety']) {
       if (this.molecularFormulaByMoiety) { this.molecularFormulaByMoiety.addExtendedProperties(source._molecularFormulaByMoiety!); }
-      else { this.molecularFormulaByMoiety = new fhir.FhirString(source._molecularFormulaByMoiety as Partial<fhir.FhirStringArgs>); }
+      else { this.molecularFormulaByMoiety = new fhir.FhirString(source._molecularFormulaByMoiety as Partial<fhir.FhirStringArgs>, options); }
     }
-    if (source['molecularWeight']) { this.molecularWeight = new fhir.SubstanceDefinitionMolecularWeight(source.molecularWeight); }
-    if (source['technique']) { this.technique = source.technique.map((x) => new fhir.CodeableConcept(x)); }
+    if (source['molecularWeight']) { this.molecularWeight = new fhir.SubstanceDefinitionMolecularWeight(source.molecularWeight, options); }
+    if (source['technique']) { this.technique = source.technique.map((x) => new fhir.CodeableConcept(x, options)); }
     else { this.technique = []; }
-    if (source['sourceDocument']) { this.sourceDocument = source.sourceDocument.map((x) => new fhir.Reference(x)); }
+    if (source['sourceDocument']) { this.sourceDocument = source.sourceDocument.map((x) => new fhir.Reference(x, options)); }
     else { this.sourceDocument = []; }
-    if (source['representation']) { this.representation = source.representation.map((x) => new fhir.SubstanceDefinitionStructureRepresentation(x)); }
+    if (source['representation']) { this.representation = source.representation.map((x) => new fhir.SubstanceDefinitionStructureRepresentation(x, options)); }
     else { this.representation = []; }
   }
   /**
@@ -639,16 +639,16 @@ export class SubstanceDefinitionCode extends fhir.BackboneElement {
    */
   constructor(source:Partial<SubstanceDefinitionCodeArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['code']) { this.code = new fhir.CodeableConcept(source.code); }
-    if (source['status']) { this.status = new fhir.CodeableConcept(source.status); }
-    if (source['statusDate']) { this.statusDate = new fhir.FhirDateTime({value: source.statusDate}); }
+    if (source['code']) { this.code = new fhir.CodeableConcept(source.code, options); }
+    if (source['status']) { this.status = new fhir.CodeableConcept(source.status, options); }
+    if (source['statusDate'] !== undefined) { this.statusDate = new fhir.FhirDateTime({value: source.statusDate}, options); }
     if (source['_statusDate']) {
       if (this.statusDate) { this.statusDate.addExtendedProperties(source._statusDate!); }
-      else { this.statusDate = new fhir.FhirDateTime(source._statusDate as Partial<fhir.FhirDateTimeArgs>); }
+      else { this.statusDate = new fhir.FhirDateTime(source._statusDate as Partial<fhir.FhirDateTimeArgs>, options); }
     }
-    if (source['note']) { this.note = source.note.map((x) => new fhir.Annotation(x)); }
+    if (source['note']) { this.note = source.note.map((x) => new fhir.Annotation(x, options)); }
     else { this.note = []; }
-    if (source['source']) { this.source = source.source.map((x) => new fhir.Reference(x)); }
+    if (source['source']) { this.source = source.source.map((x) => new fhir.Reference(x, options)); }
     else { this.source = []; }
   }
   /**
@@ -712,12 +712,12 @@ export class SubstanceDefinitionNameOfficial extends fhir.BackboneElement {
    */
   constructor(source:Partial<SubstanceDefinitionNameOfficialArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['authority']) { this.authority = new fhir.CodeableConcept(source.authority); }
-    if (source['status']) { this.status = new fhir.CodeableConcept(source.status); }
-    if (source['date']) { this.date = new fhir.FhirDateTime({value: source.date}); }
+    if (source['authority']) { this.authority = new fhir.CodeableConcept(source.authority, options); }
+    if (source['status']) { this.status = new fhir.CodeableConcept(source.status, options); }
+    if (source['date'] !== undefined) { this.date = new fhir.FhirDateTime({value: source.date}, options); }
     if (source['_date']) {
       if (this.date) { this.date.addExtendedProperties(source._date!); }
-      else { this.date = new fhir.FhirDateTime(source._date as Partial<fhir.FhirDateTimeArgs>); }
+      else { this.date = new fhir.FhirDateTime(source._date as Partial<fhir.FhirDateTimeArgs>, options); }
     }
   }
   /**
@@ -847,32 +847,32 @@ export class SubstanceDefinitionName extends fhir.BackboneElement {
    */
   constructor(source:Partial<SubstanceDefinitionNameArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['name']) { this.name = new fhir.FhirString({value: source.name}); }
+    if (source['name'] !== undefined) { this.name = new fhir.FhirString({value: source.name}, options); }
     else { this.name = null; }
     if (source['_name']) {
       if (this.name) { this.name.addExtendedProperties(source._name!); }
-      else { this.name = new fhir.FhirString(source._name as Partial<fhir.FhirStringArgs>); }
+      else { this.name = new fhir.FhirString(source._name as Partial<fhir.FhirStringArgs>, options); }
     }
-    if (source['type']) { this.type = new fhir.CodeableConcept(source.type); }
-    if (source['status']) { this.status = new fhir.CodeableConcept(source.status); }
-    if (source['preferred']) { this.preferred = new fhir.FhirBoolean({value: source.preferred}); }
+    if (source['type']) { this.type = new fhir.CodeableConcept(source.type, options); }
+    if (source['status']) { this.status = new fhir.CodeableConcept(source.status, options); }
+    if (source['preferred'] !== undefined) { this.preferred = new fhir.FhirBoolean({value: source.preferred}, options); }
     if (source['_preferred']) {
       if (this.preferred) { this.preferred.addExtendedProperties(source._preferred!); }
-      else { this.preferred = new fhir.FhirBoolean(source._preferred as Partial<fhir.FhirBooleanArgs>); }
+      else { this.preferred = new fhir.FhirBoolean(source._preferred as Partial<fhir.FhirBooleanArgs>, options); }
     }
-    if (source['language']) { this.language = source.language.map((x) => new fhir.CodeableConcept(x)); }
+    if (source['language']) { this.language = source.language.map((x) => new fhir.CodeableConcept(x, options)); }
     else { this.language = []; }
-    if (source['domain']) { this.domain = source.domain.map((x) => new fhir.CodeableConcept(x)); }
+    if (source['domain']) { this.domain = source.domain.map((x) => new fhir.CodeableConcept(x, options)); }
     else { this.domain = []; }
-    if (source['jurisdiction']) { this.jurisdiction = source.jurisdiction.map((x) => new fhir.CodeableConcept(x)); }
+    if (source['jurisdiction']) { this.jurisdiction = source.jurisdiction.map((x) => new fhir.CodeableConcept(x, options)); }
     else { this.jurisdiction = []; }
-    if (source['synonym']) { this.synonym = source.synonym.map((x) => new fhir.SubstanceDefinitionName(x)); }
+    if (source['synonym']) { this.synonym = source.synonym.map((x) => new fhir.SubstanceDefinitionName(x, options)); }
     else { this.synonym = []; }
-    if (source['translation']) { this.translation = source.translation.map((x) => new fhir.SubstanceDefinitionName(x)); }
+    if (source['translation']) { this.translation = source.translation.map((x) => new fhir.SubstanceDefinitionName(x, options)); }
     else { this.translation = []; }
-    if (source['official']) { this.official = source.official.map((x) => new fhir.SubstanceDefinitionNameOfficial(x)); }
+    if (source['official']) { this.official = source.official.map((x) => new fhir.SubstanceDefinitionNameOfficial(x, options)); }
     else { this.official = []; }
-    if (source['source']) { this.source = source.source.map((x) => new fhir.Reference(x)); }
+    if (source['source']) { this.source = source.source.map((x) => new fhir.Reference(x, options)); }
     else { this.source = []; }
   }
   /**
@@ -1003,22 +1003,22 @@ export class SubstanceDefinitionRelationship extends fhir.BackboneElement {
   constructor(source:Partial<SubstanceDefinitionRelationshipArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
     if (source['substanceDefinition']) { this.substanceDefinition = source.substanceDefinition; }
-    else if (source['substanceDefinitionReference']) { this.substanceDefinition = new fhir.Reference(source.substanceDefinitionReference); }
-    else if (source['substanceDefinitionCodeableConcept']) { this.substanceDefinition = new fhir.CodeableConcept(source.substanceDefinitionCodeableConcept); }
-    if (source['type']) { this.type = new fhir.CodeableConcept(source.type); }
+    else if (source['substanceDefinitionReference']) { this.substanceDefinition = new fhir.Reference(source.substanceDefinitionReference, options); }
+    else if (source['substanceDefinitionCodeableConcept']) { this.substanceDefinition = new fhir.CodeableConcept(source.substanceDefinitionCodeableConcept, options); }
+    if (source['type']) { this.type = new fhir.CodeableConcept(source.type, options); }
     else { this.type = null; }
-    if (source['isDefining']) { this.isDefining = new fhir.FhirBoolean({value: source.isDefining}); }
+    if (source['isDefining'] !== undefined) { this.isDefining = new fhir.FhirBoolean({value: source.isDefining}, options); }
     if (source['_isDefining']) {
       if (this.isDefining) { this.isDefining.addExtendedProperties(source._isDefining!); }
-      else { this.isDefining = new fhir.FhirBoolean(source._isDefining as Partial<fhir.FhirBooleanArgs>); }
+      else { this.isDefining = new fhir.FhirBoolean(source._isDefining as Partial<fhir.FhirBooleanArgs>, options); }
     }
     if (source['amount']) { this.amount = source.amount; }
-    else if (source['amountQuantity']) { this.amount = new fhir.Quantity(source.amountQuantity); }
-    else if (source['amountRatio']) { this.amount = new fhir.Ratio(source.amountRatio); }
-    else if (source['amountString']) { this.amount = new fhir.FhirString({value: source.amountString}); }
-    if (source['ratioHighLimitAmount']) { this.ratioHighLimitAmount = new fhir.Ratio(source.ratioHighLimitAmount); }
-    if (source['comparator']) { this.comparator = new fhir.CodeableConcept(source.comparator); }
-    if (source['source']) { this.source = source.source.map((x) => new fhir.Reference(x)); }
+    else if (source['amountQuantity']) { this.amount = new fhir.Quantity(source.amountQuantity, options); }
+    else if (source['amountRatio']) { this.amount = new fhir.Ratio(source.amountRatio, options); }
+    else if (source['amountString'] !== undefined) { this.amount = new fhir.FhirString({value: source.amountString}, options); }
+    if (source['ratioHighLimitAmount']) { this.ratioHighLimitAmount = new fhir.Ratio(source.ratioHighLimitAmount, options); }
+    if (source['comparator']) { this.comparator = new fhir.CodeableConcept(source.comparator, options); }
+    if (source['source']) { this.source = source.source.map((x) => new fhir.Reference(x, options)); }
     else { this.source = []; }
   }
   /**
@@ -1096,11 +1096,11 @@ export class SubstanceDefinitionSourceMaterial extends fhir.BackboneElement {
    */
   constructor(source:Partial<SubstanceDefinitionSourceMaterialArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['type']) { this.type = new fhir.CodeableConcept(source.type); }
-    if (source['genus']) { this.genus = new fhir.CodeableConcept(source.genus); }
-    if (source['species']) { this.species = new fhir.CodeableConcept(source.species); }
-    if (source['part']) { this.part = new fhir.CodeableConcept(source.part); }
-    if (source['countryOfOrigin']) { this.countryOfOrigin = source.countryOfOrigin.map((x) => new fhir.CodeableConcept(x)); }
+    if (source['type']) { this.type = new fhir.CodeableConcept(source.type, options); }
+    if (source['genus']) { this.genus = new fhir.CodeableConcept(source.genus, options); }
+    if (source['species']) { this.species = new fhir.CodeableConcept(source.species, options); }
+    if (source['part']) { this.part = new fhir.CodeableConcept(source.part, options); }
+    if (source['countryOfOrigin']) { this.countryOfOrigin = source.countryOfOrigin.map((x) => new fhir.CodeableConcept(x, options)); }
     else { this.countryOfOrigin = []; }
   }
   /**
@@ -1305,46 +1305,46 @@ export class SubstanceDefinition extends fhir.DomainResource {
   constructor(source:Partial<SubstanceDefinitionArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
     this.resourceType = 'SubstanceDefinition';
-    if (source['identifier']) { this.identifier = source.identifier.map((x) => new fhir.Identifier(x)); }
+    if (source['identifier']) { this.identifier = source.identifier.map((x) => new fhir.Identifier(x, options)); }
     else { this.identifier = []; }
-    if (source['version']) { this.version = new fhir.FhirString({value: source.version}); }
+    if (source['version'] !== undefined) { this.version = new fhir.FhirString({value: source.version}, options); }
     if (source['_version']) {
       if (this.version) { this.version.addExtendedProperties(source._version!); }
-      else { this.version = new fhir.FhirString(source._version as Partial<fhir.FhirStringArgs>); }
+      else { this.version = new fhir.FhirString(source._version as Partial<fhir.FhirStringArgs>, options); }
     }
-    if (source['status']) { this.status = new fhir.CodeableConcept(source.status); }
-    if (source['classification']) { this.classification = source.classification.map((x) => new fhir.CodeableConcept(x)); }
+    if (source['status']) { this.status = new fhir.CodeableConcept(source.status, options); }
+    if (source['classification']) { this.classification = source.classification.map((x) => new fhir.CodeableConcept(x, options)); }
     else { this.classification = []; }
-    if (source['domain']) { this.domain = new fhir.CodeableConcept(source.domain); }
-    if (source['grade']) { this.grade = source.grade.map((x) => new fhir.CodeableConcept(x)); }
+    if (source['domain']) { this.domain = new fhir.CodeableConcept(source.domain, options); }
+    if (source['grade']) { this.grade = source.grade.map((x) => new fhir.CodeableConcept(x, options)); }
     else { this.grade = []; }
-    if (source['description']) { this.description = new fhir.FhirMarkdown({value: source.description}); }
+    if (source['description'] !== undefined) { this.description = new fhir.FhirMarkdown({value: source.description}, options); }
     if (source['_description']) {
       if (this.description) { this.description.addExtendedProperties(source._description!); }
-      else { this.description = new fhir.FhirMarkdown(source._description as Partial<fhir.FhirMarkdownArgs>); }
+      else { this.description = new fhir.FhirMarkdown(source._description as Partial<fhir.FhirMarkdownArgs>, options); }
     }
-    if (source['informationSource']) { this.informationSource = source.informationSource.map((x) => new fhir.Reference(x)); }
+    if (source['informationSource']) { this.informationSource = source.informationSource.map((x) => new fhir.Reference(x, options)); }
     else { this.informationSource = []; }
-    if (source['note']) { this.note = source.note.map((x) => new fhir.Annotation(x)); }
+    if (source['note']) { this.note = source.note.map((x) => new fhir.Annotation(x, options)); }
     else { this.note = []; }
-    if (source['manufacturer']) { this.manufacturer = source.manufacturer.map((x) => new fhir.Reference(x)); }
+    if (source['manufacturer']) { this.manufacturer = source.manufacturer.map((x) => new fhir.Reference(x, options)); }
     else { this.manufacturer = []; }
-    if (source['supplier']) { this.supplier = source.supplier.map((x) => new fhir.Reference(x)); }
+    if (source['supplier']) { this.supplier = source.supplier.map((x) => new fhir.Reference(x, options)); }
     else { this.supplier = []; }
-    if (source['moiety']) { this.moiety = source.moiety.map((x) => new fhir.SubstanceDefinitionMoiety(x)); }
+    if (source['moiety']) { this.moiety = source.moiety.map((x) => new fhir.SubstanceDefinitionMoiety(x, options)); }
     else { this.moiety = []; }
-    if (source['property']) { this.property = source.property.map((x) => new fhir.SubstanceDefinitionProperty(x)); }
+    if (source['property']) { this.property = source.property.map((x) => new fhir.SubstanceDefinitionProperty(x, options)); }
     else { this.property = []; }
-    if (source['molecularWeight']) { this.molecularWeight = source.molecularWeight.map((x) => new fhir.SubstanceDefinitionMolecularWeight(x)); }
+    if (source['molecularWeight']) { this.molecularWeight = source.molecularWeight.map((x) => new fhir.SubstanceDefinitionMolecularWeight(x, options)); }
     else { this.molecularWeight = []; }
-    if (source['structure']) { this.structure = new fhir.SubstanceDefinitionStructure(source.structure); }
-    if (source['code']) { this.code = source.code.map((x) => new fhir.SubstanceDefinitionCode(x)); }
+    if (source['structure']) { this.structure = new fhir.SubstanceDefinitionStructure(source.structure, options); }
+    if (source['code']) { this.code = source.code.map((x) => new fhir.SubstanceDefinitionCode(x, options)); }
     else { this.code = []; }
-    if (source['name']) { this.name = source.name.map((x) => new fhir.SubstanceDefinitionName(x)); }
+    if (source['name']) { this.name = source.name.map((x) => new fhir.SubstanceDefinitionName(x, options)); }
     else { this.name = []; }
-    if (source['relationship']) { this.relationship = source.relationship.map((x) => new fhir.SubstanceDefinitionRelationship(x)); }
+    if (source['relationship']) { this.relationship = source.relationship.map((x) => new fhir.SubstanceDefinitionRelationship(x, options)); }
     else { this.relationship = []; }
-    if (source['sourceMaterial']) { this.sourceMaterial = new fhir.SubstanceDefinitionSourceMaterial(source.sourceMaterial); }
+    if (source['sourceMaterial']) { this.sourceMaterial = new fhir.SubstanceDefinitionSourceMaterial(source.sourceMaterial, options); }
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).

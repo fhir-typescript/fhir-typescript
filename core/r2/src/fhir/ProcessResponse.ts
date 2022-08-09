@@ -48,11 +48,11 @@ export class ProcessResponseNotes extends fhir.BackboneElement {
    */
   constructor(source:Partial<ProcessResponseNotesArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['type']) { this.type = new fhir.Coding(source.type); }
-    if (source['text']) { this.text = new fhir.FhirString({value: source.text}); }
+    if (source['type']) { this.type = new fhir.Coding(source.type, options); }
+    if (source['text'] !== undefined) { this.text = new fhir.FhirString({value: source.text}, options); }
     if (source['_text']) {
       if (this.text) { this.text.addExtendedProperties(source._text!); }
-      else { this.text = new fhir.FhirString(source._text as Partial<fhir.FhirStringArgs>); }
+      else { this.text = new fhir.FhirString(source._text as Partial<fhir.FhirStringArgs>, options); }
     }
   }
   /**
@@ -206,29 +206,29 @@ export class ProcessResponse extends fhir.DomainResource {
   constructor(source:Partial<ProcessResponseArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
     this.resourceType = 'ProcessResponse';
-    if (source['identifier']) { this.identifier = source.identifier.map((x) => new fhir.Identifier(x)); }
+    if (source['identifier']) { this.identifier = source.identifier.map((x) => new fhir.Identifier(x, options)); }
     else { this.identifier = []; }
-    if (source['request']) { this.request = new fhir.Reference(source.request); }
-    if (source['outcome']) { this.outcome = new fhir.Coding(source.outcome); }
-    if (source['disposition']) { this.disposition = new fhir.FhirString({value: source.disposition}); }
+    if (source['request']) { this.request = new fhir.Reference(source.request, options); }
+    if (source['outcome']) { this.outcome = new fhir.Coding(source.outcome, options); }
+    if (source['disposition'] !== undefined) { this.disposition = new fhir.FhirString({value: source.disposition}, options); }
     if (source['_disposition']) {
       if (this.disposition) { this.disposition.addExtendedProperties(source._disposition!); }
-      else { this.disposition = new fhir.FhirString(source._disposition as Partial<fhir.FhirStringArgs>); }
+      else { this.disposition = new fhir.FhirString(source._disposition as Partial<fhir.FhirStringArgs>, options); }
     }
-    if (source['ruleset']) { this.ruleset = new fhir.Coding(source.ruleset); }
-    if (source['originalRuleset']) { this.originalRuleset = new fhir.Coding(source.originalRuleset); }
-    if (source['created']) { this.created = new fhir.FhirDateTime({value: source.created}); }
+    if (source['ruleset']) { this.ruleset = new fhir.Coding(source.ruleset, options); }
+    if (source['originalRuleset']) { this.originalRuleset = new fhir.Coding(source.originalRuleset, options); }
+    if (source['created'] !== undefined) { this.created = new fhir.FhirDateTime({value: source.created}, options); }
     if (source['_created']) {
       if (this.created) { this.created.addExtendedProperties(source._created!); }
-      else { this.created = new fhir.FhirDateTime(source._created as Partial<fhir.FhirDateTimeArgs>); }
+      else { this.created = new fhir.FhirDateTime(source._created as Partial<fhir.FhirDateTimeArgs>, options); }
     }
-    if (source['organization']) { this.organization = new fhir.Reference(source.organization); }
-    if (source['requestProvider']) { this.requestProvider = new fhir.Reference(source.requestProvider); }
-    if (source['requestOrganization']) { this.requestOrganization = new fhir.Reference(source.requestOrganization); }
-    if (source['form']) { this.form = new fhir.Coding(source.form); }
-    if (source['notes']) { this.notes = source.notes.map((x) => new fhir.ProcessResponseNotes(x)); }
+    if (source['organization']) { this.organization = new fhir.Reference(source.organization, options); }
+    if (source['requestProvider']) { this.requestProvider = new fhir.Reference(source.requestProvider, options); }
+    if (source['requestOrganization']) { this.requestOrganization = new fhir.Reference(source.requestOrganization, options); }
+    if (source['form']) { this.form = new fhir.Coding(source.form, options); }
+    if (source['notes']) { this.notes = source.notes.map((x) => new fhir.ProcessResponseNotes(x, options)); }
     else { this.notes = []; }
-    if (source['error']) { this.error = source.error.map((x) => new fhir.Coding(x)); }
+    if (source['error']) { this.error = source.error.map((x) => new fhir.Coding(x, options)); }
     else { this.error = []; }
   }
   /**

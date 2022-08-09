@@ -48,13 +48,13 @@ export class LinkageItem extends fhir.BackboneElement {
    */
   constructor(source:Partial<LinkageItemArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['type']) { this.type = new fhir.FhirCode<LinkageTypeCodeType>({value: source.type}); }
+    if (source['type'] !== undefined) { this.type = new fhir.FhirCode<LinkageTypeCodeType>({value: source.type}, options); }
     else { this.type = null; }
     if (source['_type']) {
       if (this.type) { this.type.addExtendedProperties(source._type!); }
-      else { this.type = new fhir.FhirCode<LinkageTypeCodeType>(source._type as Partial<fhir.FhirCode>); }
+      else { this.type = new fhir.FhirCode<LinkageTypeCodeType>(source._type as Partial<fhir.FhirCode>, options); }
     }
-    if (source['resource']) { this.resource = new fhir.Reference(source.resource); }
+    if (source['resource']) { this.resource = new fhir.Reference(source.resource, options); }
     else { this.resource = null; }
   }
   /**
@@ -124,13 +124,13 @@ export class Linkage extends fhir.DomainResource {
   constructor(source:Partial<LinkageArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
     this.resourceType = 'Linkage';
-    if (source['active']) { this.active = new fhir.FhirBoolean({value: source.active}); }
+    if (source['active'] !== undefined) { this.active = new fhir.FhirBoolean({value: source.active}, options); }
     if (source['_active']) {
       if (this.active) { this.active.addExtendedProperties(source._active!); }
-      else { this.active = new fhir.FhirBoolean(source._active as Partial<fhir.FhirBooleanArgs>); }
+      else { this.active = new fhir.FhirBoolean(source._active as Partial<fhir.FhirBooleanArgs>, options); }
     }
-    if (source['author']) { this.author = new fhir.Reference(source.author); }
-    if (source['item']) { this.item = source.item.map((x) => new fhir.LinkageItem(x)); }
+    if (source['author']) { this.author = new fhir.Reference(source.author, options); }
+    if (source['item']) { this.item = source.item.map((x) => new fhir.LinkageItem(x, options)); }
     else { this.item = []; }
   }
   /**

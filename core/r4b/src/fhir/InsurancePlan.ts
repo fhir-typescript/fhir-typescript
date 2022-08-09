@@ -72,11 +72,11 @@ export class InsurancePlanContact extends fhir.BackboneElement {
    */
   constructor(source:Partial<InsurancePlanContactArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['purpose']) { this.purpose = new fhir.CodeableConcept(source.purpose); }
-    if (source['name']) { this.name = new fhir.HumanName(source.name); }
-    if (source['telecom']) { this.telecom = source.telecom.map((x) => new fhir.ContactPoint(x)); }
+    if (source['purpose']) { this.purpose = new fhir.CodeableConcept(source.purpose, options); }
+    if (source['name']) { this.name = new fhir.HumanName(source.name, options); }
+    if (source['telecom']) { this.telecom = source.telecom.map((x) => new fhir.ContactPoint(x, options)); }
     else { this.telecom = []; }
-    if (source['address']) { this.address = new fhir.Address(source.address); }
+    if (source['address']) { this.address = new fhir.Address(source.address, options); }
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -126,8 +126,8 @@ export class InsurancePlanCoverageBenefitLimit extends fhir.BackboneElement {
    */
   constructor(source:Partial<InsurancePlanCoverageBenefitLimitArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['value']) { this.value = new fhir.Quantity(source.value); }
-    if (source['code']) { this.code = new fhir.CodeableConcept(source.code); }
+    if (source['value']) { this.value = new fhir.Quantity(source.value, options); }
+    if (source['code']) { this.code = new fhir.CodeableConcept(source.code, options); }
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -187,14 +187,14 @@ export class InsurancePlanCoverageBenefit extends fhir.BackboneElement {
    */
   constructor(source:Partial<InsurancePlanCoverageBenefitArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['type']) { this.type = new fhir.CodeableConcept(source.type); }
+    if (source['type']) { this.type = new fhir.CodeableConcept(source.type, options); }
     else { this.type = null; }
-    if (source['requirement']) { this.requirement = new fhir.FhirString({value: source.requirement}); }
+    if (source['requirement'] !== undefined) { this.requirement = new fhir.FhirString({value: source.requirement}, options); }
     if (source['_requirement']) {
       if (this.requirement) { this.requirement.addExtendedProperties(source._requirement!); }
-      else { this.requirement = new fhir.FhirString(source._requirement as Partial<fhir.FhirStringArgs>); }
+      else { this.requirement = new fhir.FhirString(source._requirement as Partial<fhir.FhirStringArgs>, options); }
     }
-    if (source['limit']) { this.limit = source.limit.map((x) => new fhir.InsurancePlanCoverageBenefitLimit(x)); }
+    if (source['limit']) { this.limit = source.limit.map((x) => new fhir.InsurancePlanCoverageBenefitLimit(x, options)); }
     else { this.limit = []; }
   }
   /**
@@ -252,11 +252,11 @@ export class InsurancePlanCoverage extends fhir.BackboneElement {
    */
   constructor(source:Partial<InsurancePlanCoverageArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['type']) { this.type = new fhir.CodeableConcept(source.type); }
+    if (source['type']) { this.type = new fhir.CodeableConcept(source.type, options); }
     else { this.type = null; }
-    if (source['network']) { this.network = source.network.map((x) => new fhir.Reference(x)); }
+    if (source['network']) { this.network = source.network.map((x) => new fhir.Reference(x, options)); }
     else { this.network = []; }
-    if (source['benefit']) { this.benefit = source.benefit.map((x) => new fhir.InsurancePlanCoverageBenefit(x)); }
+    if (source['benefit']) { this.benefit = source.benefit.map((x) => new fhir.InsurancePlanCoverageBenefit(x, options)); }
     else { this.benefit = []; }
   }
   /**
@@ -330,17 +330,17 @@ export class InsurancePlanPlanGeneralCost extends fhir.BackboneElement {
    */
   constructor(source:Partial<InsurancePlanPlanGeneralCostArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['type']) { this.type = new fhir.CodeableConcept(source.type); }
-    if (source['groupSize']) { this.groupSize = new fhir.FhirPositiveInt({value: source.groupSize}); }
+    if (source['type']) { this.type = new fhir.CodeableConcept(source.type, options); }
+    if (source['groupSize'] !== undefined) { this.groupSize = new fhir.FhirPositiveInt({value: source.groupSize}, options); }
     if (source['_groupSize']) {
       if (this.groupSize) { this.groupSize.addExtendedProperties(source._groupSize!); }
-      else { this.groupSize = new fhir.FhirPositiveInt(source._groupSize as Partial<fhir.FhirPositiveIntArgs>); }
+      else { this.groupSize = new fhir.FhirPositiveInt(source._groupSize as Partial<fhir.FhirPositiveIntArgs>, options); }
     }
-    if (source['cost']) { this.cost = new fhir.Money(source.cost); }
-    if (source['comment']) { this.comment = new fhir.FhirString({value: source.comment}); }
+    if (source['cost']) { this.cost = new fhir.Money(source.cost, options); }
+    if (source['comment'] !== undefined) { this.comment = new fhir.FhirString({value: source.comment}, options); }
     if (source['_comment']) {
       if (this.comment) { this.comment.addExtendedProperties(source._comment!); }
-      else { this.comment = new fhir.FhirString(source._comment as Partial<fhir.FhirStringArgs>); }
+      else { this.comment = new fhir.FhirString(source._comment as Partial<fhir.FhirStringArgs>, options); }
     }
   }
   /**
@@ -407,12 +407,12 @@ export class InsurancePlanPlanSpecificCostBenefitCost extends fhir.BackboneEleme
    */
   constructor(source:Partial<InsurancePlanPlanSpecificCostBenefitCostArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['type']) { this.type = new fhir.CodeableConcept(source.type); }
+    if (source['type']) { this.type = new fhir.CodeableConcept(source.type, options); }
     else { this.type = null; }
-    if (source['applicability']) { this.applicability = new fhir.CodeableConcept(source.applicability); }
-    if (source['qualifiers']) { this.qualifiers = source.qualifiers.map((x) => new fhir.CodeableConcept(x)); }
+    if (source['applicability']) { this.applicability = new fhir.CodeableConcept(source.applicability, options); }
+    if (source['qualifiers']) { this.qualifiers = source.qualifiers.map((x) => new fhir.CodeableConcept(x, options)); }
     else { this.qualifiers = []; }
-    if (source['value']) { this.value = new fhir.Quantity(source.value); }
+    if (source['value']) { this.value = new fhir.Quantity(source.value, options); }
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -462,9 +462,9 @@ export class InsurancePlanPlanSpecificCostBenefit extends fhir.BackboneElement {
    */
   constructor(source:Partial<InsurancePlanPlanSpecificCostBenefitArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['type']) { this.type = new fhir.CodeableConcept(source.type); }
+    if (source['type']) { this.type = new fhir.CodeableConcept(source.type, options); }
     else { this.type = null; }
-    if (source['cost']) { this.cost = source.cost.map((x) => new fhir.InsurancePlanPlanSpecificCostBenefitCost(x)); }
+    if (source['cost']) { this.cost = source.cost.map((x) => new fhir.InsurancePlanPlanSpecificCostBenefitCost(x, options)); }
     else { this.cost = []; }
   }
   /**
@@ -513,9 +513,9 @@ export class InsurancePlanPlanSpecificCost extends fhir.BackboneElement {
    */
   constructor(source:Partial<InsurancePlanPlanSpecificCostArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['category']) { this.category = new fhir.CodeableConcept(source.category); }
+    if (source['category']) { this.category = new fhir.CodeableConcept(source.category, options); }
     else { this.category = null; }
-    if (source['benefit']) { this.benefit = source.benefit.map((x) => new fhir.InsurancePlanPlanSpecificCostBenefit(x)); }
+    if (source['benefit']) { this.benefit = source.benefit.map((x) => new fhir.InsurancePlanPlanSpecificCostBenefit(x, options)); }
     else { this.benefit = []; }
   }
   /**
@@ -596,16 +596,16 @@ export class InsurancePlanPlan extends fhir.BackboneElement {
    */
   constructor(source:Partial<InsurancePlanPlanArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['identifier']) { this.identifier = source.identifier.map((x) => new fhir.Identifier(x)); }
+    if (source['identifier']) { this.identifier = source.identifier.map((x) => new fhir.Identifier(x, options)); }
     else { this.identifier = []; }
-    if (source['type']) { this.type = new fhir.CodeableConcept(source.type); }
-    if (source['coverageArea']) { this.coverageArea = source.coverageArea.map((x) => new fhir.Reference(x)); }
+    if (source['type']) { this.type = new fhir.CodeableConcept(source.type, options); }
+    if (source['coverageArea']) { this.coverageArea = source.coverageArea.map((x) => new fhir.Reference(x, options)); }
     else { this.coverageArea = []; }
-    if (source['network']) { this.network = source.network.map((x) => new fhir.Reference(x)); }
+    if (source['network']) { this.network = source.network.map((x) => new fhir.Reference(x, options)); }
     else { this.network = []; }
-    if (source['generalCost']) { this.generalCost = source.generalCost.map((x) => new fhir.InsurancePlanPlanGeneralCost(x)); }
+    if (source['generalCost']) { this.generalCost = source.generalCost.map((x) => new fhir.InsurancePlanPlanGeneralCost(x, options)); }
     else { this.generalCost = []; }
-    if (source['specificCost']) { this.specificCost = source.specificCost.map((x) => new fhir.InsurancePlanPlanSpecificCost(x)); }
+    if (source['specificCost']) { this.specificCost = source.specificCost.map((x) => new fhir.InsurancePlanPlanSpecificCost(x, options)); }
     else { this.specificCost = []; }
   }
   /**
@@ -775,21 +775,21 @@ export class InsurancePlan extends fhir.DomainResource {
   constructor(source:Partial<InsurancePlanArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
     this.resourceType = 'InsurancePlan';
-    if (source['identifier']) { this.identifier = source.identifier.map((x) => new fhir.Identifier(x)); }
+    if (source['identifier']) { this.identifier = source.identifier.map((x) => new fhir.Identifier(x, options)); }
     else { this.identifier = []; }
-    if (source['status']) { this.status = new fhir.FhirCode<PublicationStatusCodeType>({value: source.status}); }
+    if (source['status'] !== undefined) { this.status = new fhir.FhirCode<PublicationStatusCodeType>({value: source.status}, options); }
     if (source['_status']) {
       if (this.status) { this.status.addExtendedProperties(source._status!); }
-      else { this.status = new fhir.FhirCode<PublicationStatusCodeType>(source._status as Partial<fhir.FhirCode>); }
+      else { this.status = new fhir.FhirCode<PublicationStatusCodeType>(source._status as Partial<fhir.FhirCode>, options); }
     }
-    if (source['type']) { this.type = source.type.map((x) => new fhir.CodeableConcept(x)); }
+    if (source['type']) { this.type = source.type.map((x) => new fhir.CodeableConcept(x, options)); }
     else { this.type = []; }
-    if (source['name']) { this.name = new fhir.FhirString({value: source.name}); }
+    if (source['name'] !== undefined) { this.name = new fhir.FhirString({value: source.name}, options); }
     if (source['_name']) {
       if (this.name) { this.name.addExtendedProperties(source._name!); }
-      else { this.name = new fhir.FhirString(source._name as Partial<fhir.FhirStringArgs>); }
+      else { this.name = new fhir.FhirString(source._name as Partial<fhir.FhirStringArgs>, options); }
     }
-    if (source['alias']) { this.alias = source.alias.map((x) => new fhir.FhirString({value: x})); }
+    if (source['alias'] !== undefined) { this.alias = source.alias.map((x) => new fhir.FhirString({value: x}, options)); }
     else { this.alias = []; }
     if (source['_alias']) {
       source._alias.forEach((x,i) => {
@@ -797,20 +797,20 @@ export class InsurancePlan extends fhir.DomainResource {
         else { if (x) { this.alias.push(new fhir.FhirString(x as Partial<fhir.FhirStringArgs>)); } }
       });
     }
-    if (source['period']) { this.period = new fhir.Period(source.period); }
-    if (source['ownedBy']) { this.ownedBy = new fhir.Reference(source.ownedBy); }
-    if (source['administeredBy']) { this.administeredBy = new fhir.Reference(source.administeredBy); }
-    if (source['coverageArea']) { this.coverageArea = source.coverageArea.map((x) => new fhir.Reference(x)); }
+    if (source['period']) { this.period = new fhir.Period(source.period, options); }
+    if (source['ownedBy']) { this.ownedBy = new fhir.Reference(source.ownedBy, options); }
+    if (source['administeredBy']) { this.administeredBy = new fhir.Reference(source.administeredBy, options); }
+    if (source['coverageArea']) { this.coverageArea = source.coverageArea.map((x) => new fhir.Reference(x, options)); }
     else { this.coverageArea = []; }
-    if (source['contact']) { this.contact = source.contact.map((x) => new fhir.InsurancePlanContact(x)); }
+    if (source['contact']) { this.contact = source.contact.map((x) => new fhir.InsurancePlanContact(x, options)); }
     else { this.contact = []; }
-    if (source['endpoint']) { this.endpoint = source.endpoint.map((x) => new fhir.Reference(x)); }
+    if (source['endpoint']) { this.endpoint = source.endpoint.map((x) => new fhir.Reference(x, options)); }
     else { this.endpoint = []; }
-    if (source['network']) { this.network = source.network.map((x) => new fhir.Reference(x)); }
+    if (source['network']) { this.network = source.network.map((x) => new fhir.Reference(x, options)); }
     else { this.network = []; }
-    if (source['coverage']) { this.coverage = source.coverage.map((x) => new fhir.InsurancePlanCoverage(x)); }
+    if (source['coverage']) { this.coverage = source.coverage.map((x) => new fhir.InsurancePlanCoverage(x, options)); }
     else { this.coverage = []; }
-    if (source['plan']) { this.plan = source.plan.map((x) => new fhir.InsurancePlanPlan(x)); }
+    if (source['plan']) { this.plan = source.plan.map((x) => new fhir.InsurancePlanPlan(x, options)); }
     else { this.plan = []; }
   }
   /**

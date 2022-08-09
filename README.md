@@ -46,11 +46,14 @@ $ git pull
 # Install NPM packages as needed
 $ rush update
 
+# Bump the versions in package.json according to version policy
+$ rush version --bump
+
 # Do a clean rebuild of everything
 $ rush rebuild
 
 # Rebuild just core projects
-$ rush rebuild --only tag:core
+$ rush rebuild --to-version-policy ftsVersionPolicy
 
 # Work on one project
 $ cd ./core/r4

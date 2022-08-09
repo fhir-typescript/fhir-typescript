@@ -60,13 +60,13 @@ export class ClaimResponseItemAdjudication extends fhir.BackboneElement {
    */
   constructor(source:Partial<ClaimResponseItemAdjudicationArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['code']) { this.code = new fhir.Coding(source.code); }
+    if (source['code']) { this.code = new fhir.Coding(source.code, options); }
     else { this.code = null; }
-    if (source['amount']) { this.amount = new fhir.Quantity(source.amount); }
-    if (source['value']) { this.value = new fhir.FhirDecimal({value: source.value}); }
+    if (source['amount']) { this.amount = new fhir.Quantity(source.amount, options); }
+    if (source['value'] !== undefined) { this.value = new fhir.FhirDecimal({value: source.value}, options); }
     if (source['_value']) {
       if (this.value) { this.value.addExtendedProperties(source._value!); }
-      else { this.value = new fhir.FhirDecimal(source._value as Partial<fhir.FhirDecimalArgs>); }
+      else { this.value = new fhir.FhirDecimal(source._value as Partial<fhir.FhirDecimalArgs>, options); }
     }
   }
   /**
@@ -128,13 +128,13 @@ export class ClaimResponseItemDetailAdjudication extends fhir.BackboneElement {
    */
   constructor(source:Partial<ClaimResponseItemDetailAdjudicationArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['code']) { this.code = new fhir.Coding(source.code); }
+    if (source['code']) { this.code = new fhir.Coding(source.code, options); }
     else { this.code = null; }
-    if (source['amount']) { this.amount = new fhir.Quantity(source.amount); }
-    if (source['value']) { this.value = new fhir.FhirDecimal({value: source.value}); }
+    if (source['amount']) { this.amount = new fhir.Quantity(source.amount, options); }
+    if (source['value'] !== undefined) { this.value = new fhir.FhirDecimal({value: source.value}, options); }
     if (source['_value']) {
       if (this.value) { this.value.addExtendedProperties(source._value!); }
-      else { this.value = new fhir.FhirDecimal(source._value as Partial<fhir.FhirDecimalArgs>); }
+      else { this.value = new fhir.FhirDecimal(source._value as Partial<fhir.FhirDecimalArgs>, options); }
     }
   }
   /**
@@ -196,13 +196,13 @@ export class ClaimResponseItemDetailSubDetailAdjudication extends fhir.BackboneE
    */
   constructor(source:Partial<ClaimResponseItemDetailSubDetailAdjudicationArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['code']) { this.code = new fhir.Coding(source.code); }
+    if (source['code']) { this.code = new fhir.Coding(source.code, options); }
     else { this.code = null; }
-    if (source['amount']) { this.amount = new fhir.Quantity(source.amount); }
-    if (source['value']) { this.value = new fhir.FhirDecimal({value: source.value}); }
+    if (source['amount']) { this.amount = new fhir.Quantity(source.amount, options); }
+    if (source['value'] !== undefined) { this.value = new fhir.FhirDecimal({value: source.value}, options); }
     if (source['_value']) {
       if (this.value) { this.value.addExtendedProperties(source._value!); }
-      else { this.value = new fhir.FhirDecimal(source._value as Partial<fhir.FhirDecimalArgs>); }
+      else { this.value = new fhir.FhirDecimal(source._value as Partial<fhir.FhirDecimalArgs>, options); }
     }
   }
   /**
@@ -256,13 +256,13 @@ export class ClaimResponseItemDetailSubDetail extends fhir.BackboneElement {
    */
   constructor(source:Partial<ClaimResponseItemDetailSubDetailArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['sequenceLinkId']) { this.sequenceLinkId = new fhir.FhirPositiveInt({value: source.sequenceLinkId}); }
+    if (source['sequenceLinkId'] !== undefined) { this.sequenceLinkId = new fhir.FhirPositiveInt({value: source.sequenceLinkId}, options); }
     else { this.sequenceLinkId = null; }
     if (source['_sequenceLinkId']) {
       if (this.sequenceLinkId) { this.sequenceLinkId.addExtendedProperties(source._sequenceLinkId!); }
-      else { this.sequenceLinkId = new fhir.FhirPositiveInt(source._sequenceLinkId as Partial<fhir.FhirPositiveIntArgs>); }
+      else { this.sequenceLinkId = new fhir.FhirPositiveInt(source._sequenceLinkId as Partial<fhir.FhirPositiveIntArgs>, options); }
     }
-    if (source['adjudication']) { this.adjudication = source.adjudication.map((x) => new fhir.ClaimResponseItemDetailSubDetailAdjudication(x)); }
+    if (source['adjudication']) { this.adjudication = source.adjudication.map((x) => new fhir.ClaimResponseItemDetailSubDetailAdjudication(x, options)); }
     else { this.adjudication = []; }
   }
   /**
@@ -323,15 +323,15 @@ export class ClaimResponseItemDetail extends fhir.BackboneElement {
    */
   constructor(source:Partial<ClaimResponseItemDetailArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['sequenceLinkId']) { this.sequenceLinkId = new fhir.FhirPositiveInt({value: source.sequenceLinkId}); }
+    if (source['sequenceLinkId'] !== undefined) { this.sequenceLinkId = new fhir.FhirPositiveInt({value: source.sequenceLinkId}, options); }
     else { this.sequenceLinkId = null; }
     if (source['_sequenceLinkId']) {
       if (this.sequenceLinkId) { this.sequenceLinkId.addExtendedProperties(source._sequenceLinkId!); }
-      else { this.sequenceLinkId = new fhir.FhirPositiveInt(source._sequenceLinkId as Partial<fhir.FhirPositiveIntArgs>); }
+      else { this.sequenceLinkId = new fhir.FhirPositiveInt(source._sequenceLinkId as Partial<fhir.FhirPositiveIntArgs>, options); }
     }
-    if (source['adjudication']) { this.adjudication = source.adjudication.map((x) => new fhir.ClaimResponseItemDetailAdjudication(x)); }
+    if (source['adjudication']) { this.adjudication = source.adjudication.map((x) => new fhir.ClaimResponseItemDetailAdjudication(x, options)); }
     else { this.adjudication = []; }
-    if (source['subDetail']) { this.subDetail = source.subDetail.map((x) => new fhir.ClaimResponseItemDetailSubDetail(x)); }
+    if (source['subDetail']) { this.subDetail = source.subDetail.map((x) => new fhir.ClaimResponseItemDetailSubDetail(x, options)); }
     else { this.subDetail = []; }
   }
   /**
@@ -405,13 +405,13 @@ export class ClaimResponseItem extends fhir.BackboneElement {
    */
   constructor(source:Partial<ClaimResponseItemArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['sequenceLinkId']) { this.sequenceLinkId = new fhir.FhirPositiveInt({value: source.sequenceLinkId}); }
+    if (source['sequenceLinkId'] !== undefined) { this.sequenceLinkId = new fhir.FhirPositiveInt({value: source.sequenceLinkId}, options); }
     else { this.sequenceLinkId = null; }
     if (source['_sequenceLinkId']) {
       if (this.sequenceLinkId) { this.sequenceLinkId.addExtendedProperties(source._sequenceLinkId!); }
-      else { this.sequenceLinkId = new fhir.FhirPositiveInt(source._sequenceLinkId as Partial<fhir.FhirPositiveIntArgs>); }
+      else { this.sequenceLinkId = new fhir.FhirPositiveInt(source._sequenceLinkId as Partial<fhir.FhirPositiveIntArgs>, options); }
     }
-    if (source['noteNumber']) { this.noteNumber = source.noteNumber.map((x) => new fhir.FhirPositiveInt({value: x})); }
+    if (source['noteNumber'] !== undefined) { this.noteNumber = source.noteNumber.map((x) => new fhir.FhirPositiveInt({value: x}, options)); }
     else { this.noteNumber = []; }
     if (source['_noteNumber']) {
       source._noteNumber.forEach((x,i) => {
@@ -419,9 +419,9 @@ export class ClaimResponseItem extends fhir.BackboneElement {
         else { if (x) { this.noteNumber.push(new fhir.FhirPositiveInt(x as Partial<fhir.FhirPositiveIntArgs>)); } }
       });
     }
-    if (source['adjudication']) { this.adjudication = source.adjudication.map((x) => new fhir.ClaimResponseItemAdjudication(x)); }
+    if (source['adjudication']) { this.adjudication = source.adjudication.map((x) => new fhir.ClaimResponseItemAdjudication(x, options)); }
     else { this.adjudication = []; }
-    if (source['detail']) { this.detail = source.detail.map((x) => new fhir.ClaimResponseItemDetail(x)); }
+    if (source['detail']) { this.detail = source.detail.map((x) => new fhir.ClaimResponseItemDetail(x, options)); }
     else { this.detail = []; }
   }
   /**
@@ -484,13 +484,13 @@ export class ClaimResponseAddItemAdjudication extends fhir.BackboneElement {
    */
   constructor(source:Partial<ClaimResponseAddItemAdjudicationArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['code']) { this.code = new fhir.Coding(source.code); }
+    if (source['code']) { this.code = new fhir.Coding(source.code, options); }
     else { this.code = null; }
-    if (source['amount']) { this.amount = new fhir.Quantity(source.amount); }
-    if (source['value']) { this.value = new fhir.FhirDecimal({value: source.value}); }
+    if (source['amount']) { this.amount = new fhir.Quantity(source.amount, options); }
+    if (source['value'] !== undefined) { this.value = new fhir.FhirDecimal({value: source.value}, options); }
     if (source['_value']) {
       if (this.value) { this.value.addExtendedProperties(source._value!); }
-      else { this.value = new fhir.FhirDecimal(source._value as Partial<fhir.FhirDecimalArgs>); }
+      else { this.value = new fhir.FhirDecimal(source._value as Partial<fhir.FhirDecimalArgs>, options); }
     }
   }
   /**
@@ -552,13 +552,13 @@ export class ClaimResponseAddItemDetailAdjudication extends fhir.BackboneElement
    */
   constructor(source:Partial<ClaimResponseAddItemDetailAdjudicationArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['code']) { this.code = new fhir.Coding(source.code); }
+    if (source['code']) { this.code = new fhir.Coding(source.code, options); }
     else { this.code = null; }
-    if (source['amount']) { this.amount = new fhir.Quantity(source.amount); }
-    if (source['value']) { this.value = new fhir.FhirDecimal({value: source.value}); }
+    if (source['amount']) { this.amount = new fhir.Quantity(source.amount, options); }
+    if (source['value'] !== undefined) { this.value = new fhir.FhirDecimal({value: source.value}, options); }
     if (source['_value']) {
       if (this.value) { this.value.addExtendedProperties(source._value!); }
-      else { this.value = new fhir.FhirDecimal(source._value as Partial<fhir.FhirDecimalArgs>); }
+      else { this.value = new fhir.FhirDecimal(source._value as Partial<fhir.FhirDecimalArgs>, options); }
     }
   }
   /**
@@ -616,10 +616,10 @@ export class ClaimResponseAddItemDetail extends fhir.BackboneElement {
    */
   constructor(source:Partial<ClaimResponseAddItemDetailArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['service']) { this.service = new fhir.Coding(source.service); }
+    if (source['service']) { this.service = new fhir.Coding(source.service, options); }
     else { this.service = null; }
-    if (source['fee']) { this.fee = new fhir.Quantity(source.fee); }
-    if (source['adjudication']) { this.adjudication = source.adjudication.map((x) => new fhir.ClaimResponseAddItemDetailAdjudication(x)); }
+    if (source['fee']) { this.fee = new fhir.Quantity(source.fee, options); }
+    if (source['adjudication']) { this.adjudication = source.adjudication.map((x) => new fhir.ClaimResponseAddItemDetailAdjudication(x, options)); }
     else { this.adjudication = []; }
   }
   /**
@@ -709,7 +709,7 @@ export class ClaimResponseAddItem extends fhir.BackboneElement {
    */
   constructor(source:Partial<ClaimResponseAddItemArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['sequenceLinkId']) { this.sequenceLinkId = source.sequenceLinkId.map((x) => new fhir.FhirPositiveInt({value: x})); }
+    if (source['sequenceLinkId'] !== undefined) { this.sequenceLinkId = source.sequenceLinkId.map((x) => new fhir.FhirPositiveInt({value: x}, options)); }
     else { this.sequenceLinkId = []; }
     if (source['_sequenceLinkId']) {
       source._sequenceLinkId.forEach((x,i) => {
@@ -717,10 +717,10 @@ export class ClaimResponseAddItem extends fhir.BackboneElement {
         else { if (x) { this.sequenceLinkId.push(new fhir.FhirPositiveInt(x as Partial<fhir.FhirPositiveIntArgs>)); } }
       });
     }
-    if (source['service']) { this.service = new fhir.Coding(source.service); }
+    if (source['service']) { this.service = new fhir.Coding(source.service, options); }
     else { this.service = null; }
-    if (source['fee']) { this.fee = new fhir.Quantity(source.fee); }
-    if (source['noteNumberLinkId']) { this.noteNumberLinkId = source.noteNumberLinkId.map((x) => new fhir.FhirPositiveInt({value: x})); }
+    if (source['fee']) { this.fee = new fhir.Quantity(source.fee, options); }
+    if (source['noteNumberLinkId'] !== undefined) { this.noteNumberLinkId = source.noteNumberLinkId.map((x) => new fhir.FhirPositiveInt({value: x}, options)); }
     else { this.noteNumberLinkId = []; }
     if (source['_noteNumberLinkId']) {
       source._noteNumberLinkId.forEach((x,i) => {
@@ -728,9 +728,9 @@ export class ClaimResponseAddItem extends fhir.BackboneElement {
         else { if (x) { this.noteNumberLinkId.push(new fhir.FhirPositiveInt(x as Partial<fhir.FhirPositiveIntArgs>)); } }
       });
     }
-    if (source['adjudication']) { this.adjudication = source.adjudication.map((x) => new fhir.ClaimResponseAddItemAdjudication(x)); }
+    if (source['adjudication']) { this.adjudication = source.adjudication.map((x) => new fhir.ClaimResponseAddItemAdjudication(x, options)); }
     else { this.adjudication = []; }
-    if (source['detail']) { this.detail = source.detail.map((x) => new fhir.ClaimResponseAddItemDetail(x)); }
+    if (source['detail']) { this.detail = source.detail.map((x) => new fhir.ClaimResponseAddItemDetail(x, options)); }
     else { this.detail = []; }
   }
   /**
@@ -811,22 +811,22 @@ export class ClaimResponseError extends fhir.BackboneElement {
    */
   constructor(source:Partial<ClaimResponseErrorArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['sequenceLinkId']) { this.sequenceLinkId = new fhir.FhirPositiveInt({value: source.sequenceLinkId}); }
+    if (source['sequenceLinkId'] !== undefined) { this.sequenceLinkId = new fhir.FhirPositiveInt({value: source.sequenceLinkId}, options); }
     if (source['_sequenceLinkId']) {
       if (this.sequenceLinkId) { this.sequenceLinkId.addExtendedProperties(source._sequenceLinkId!); }
-      else { this.sequenceLinkId = new fhir.FhirPositiveInt(source._sequenceLinkId as Partial<fhir.FhirPositiveIntArgs>); }
+      else { this.sequenceLinkId = new fhir.FhirPositiveInt(source._sequenceLinkId as Partial<fhir.FhirPositiveIntArgs>, options); }
     }
-    if (source['detailSequenceLinkId']) { this.detailSequenceLinkId = new fhir.FhirPositiveInt({value: source.detailSequenceLinkId}); }
+    if (source['detailSequenceLinkId'] !== undefined) { this.detailSequenceLinkId = new fhir.FhirPositiveInt({value: source.detailSequenceLinkId}, options); }
     if (source['_detailSequenceLinkId']) {
       if (this.detailSequenceLinkId) { this.detailSequenceLinkId.addExtendedProperties(source._detailSequenceLinkId!); }
-      else { this.detailSequenceLinkId = new fhir.FhirPositiveInt(source._detailSequenceLinkId as Partial<fhir.FhirPositiveIntArgs>); }
+      else { this.detailSequenceLinkId = new fhir.FhirPositiveInt(source._detailSequenceLinkId as Partial<fhir.FhirPositiveIntArgs>, options); }
     }
-    if (source['subdetailSequenceLinkId']) { this.subdetailSequenceLinkId = new fhir.FhirPositiveInt({value: source.subdetailSequenceLinkId}); }
+    if (source['subdetailSequenceLinkId'] !== undefined) { this.subdetailSequenceLinkId = new fhir.FhirPositiveInt({value: source.subdetailSequenceLinkId}, options); }
     if (source['_subdetailSequenceLinkId']) {
       if (this.subdetailSequenceLinkId) { this.subdetailSequenceLinkId.addExtendedProperties(source._subdetailSequenceLinkId!); }
-      else { this.subdetailSequenceLinkId = new fhir.FhirPositiveInt(source._subdetailSequenceLinkId as Partial<fhir.FhirPositiveIntArgs>); }
+      else { this.subdetailSequenceLinkId = new fhir.FhirPositiveInt(source._subdetailSequenceLinkId as Partial<fhir.FhirPositiveIntArgs>, options); }
     }
-    if (source['code']) { this.code = new fhir.Coding(source.code); }
+    if (source['code']) { this.code = new fhir.Coding(source.code, options); }
     else { this.code = null; }
   }
   /**
@@ -893,16 +893,16 @@ export class ClaimResponseNote extends fhir.BackboneElement {
    */
   constructor(source:Partial<ClaimResponseNoteArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['number']) { this.number = new fhir.FhirPositiveInt({value: source.number}); }
+    if (source['number'] !== undefined) { this.number = new fhir.FhirPositiveInt({value: source.number}, options); }
     if (source['_number']) {
       if (this.number) { this.number.addExtendedProperties(source._number!); }
-      else { this.number = new fhir.FhirPositiveInt(source._number as Partial<fhir.FhirPositiveIntArgs>); }
+      else { this.number = new fhir.FhirPositiveInt(source._number as Partial<fhir.FhirPositiveIntArgs>, options); }
     }
-    if (source['type']) { this.type = new fhir.Coding(source.type); }
-    if (source['text']) { this.text = new fhir.FhirString({value: source.text}); }
+    if (source['type']) { this.type = new fhir.Coding(source.type, options); }
+    if (source['text'] !== undefined) { this.text = new fhir.FhirString({value: source.text}, options); }
     if (source['_text']) {
       if (this.text) { this.text.addExtendedProperties(source._text!); }
-      else { this.text = new fhir.FhirString(source._text as Partial<fhir.FhirStringArgs>); }
+      else { this.text = new fhir.FhirString(source._text as Partial<fhir.FhirStringArgs>, options); }
     }
   }
   /**
@@ -1016,28 +1016,28 @@ export class ClaimResponseCoverage extends fhir.BackboneElement {
    */
   constructor(source:Partial<ClaimResponseCoverageArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['sequence']) { this.sequence = new fhir.FhirPositiveInt({value: source.sequence}); }
+    if (source['sequence'] !== undefined) { this.sequence = new fhir.FhirPositiveInt({value: source.sequence}, options); }
     else { this.sequence = null; }
     if (source['_sequence']) {
       if (this.sequence) { this.sequence.addExtendedProperties(source._sequence!); }
-      else { this.sequence = new fhir.FhirPositiveInt(source._sequence as Partial<fhir.FhirPositiveIntArgs>); }
+      else { this.sequence = new fhir.FhirPositiveInt(source._sequence as Partial<fhir.FhirPositiveIntArgs>, options); }
     }
-    if (source['focal']) { this.focal = new fhir.FhirBoolean({value: source.focal}); }
+    if (source['focal'] !== undefined) { this.focal = new fhir.FhirBoolean({value: source.focal}, options); }
     else { this.focal = null; }
     if (source['_focal']) {
       if (this.focal) { this.focal.addExtendedProperties(source._focal!); }
-      else { this.focal = new fhir.FhirBoolean(source._focal as Partial<fhir.FhirBooleanArgs>); }
+      else { this.focal = new fhir.FhirBoolean(source._focal as Partial<fhir.FhirBooleanArgs>, options); }
     }
-    if (source['coverage']) { this.coverage = new fhir.Reference(source.coverage); }
+    if (source['coverage']) { this.coverage = new fhir.Reference(source.coverage, options); }
     else { this.coverage = null; }
-    if (source['businessArrangement']) { this.businessArrangement = new fhir.FhirString({value: source.businessArrangement}); }
+    if (source['businessArrangement'] !== undefined) { this.businessArrangement = new fhir.FhirString({value: source.businessArrangement}, options); }
     if (source['_businessArrangement']) {
       if (this.businessArrangement) { this.businessArrangement.addExtendedProperties(source._businessArrangement!); }
-      else { this.businessArrangement = new fhir.FhirString(source._businessArrangement as Partial<fhir.FhirStringArgs>); }
+      else { this.businessArrangement = new fhir.FhirString(source._businessArrangement as Partial<fhir.FhirStringArgs>, options); }
     }
-    if (source['relationship']) { this.relationship = new fhir.Coding(source.relationship); }
+    if (source['relationship']) { this.relationship = new fhir.Coding(source.relationship, options); }
     else { this.relationship = null; }
-    if (source['preAuthRef']) { this.preAuthRef = source.preAuthRef.map((x) => new fhir.FhirString({value: x})); }
+    if (source['preAuthRef'] !== undefined) { this.preAuthRef = source.preAuthRef.map((x) => new fhir.FhirString({value: x}, options)); }
     else { this.preAuthRef = []; }
     if (source['_preAuthRef']) {
       source._preAuthRef.forEach((x,i) => {
@@ -1045,8 +1045,8 @@ export class ClaimResponseCoverage extends fhir.BackboneElement {
         else { if (x) { this.preAuthRef.push(new fhir.FhirString(x as Partial<fhir.FhirStringArgs>)); } }
       });
     }
-    if (source['claimResponse']) { this.claimResponse = new fhir.Reference(source.claimResponse); }
-    if (source['originalRuleset']) { this.originalRuleset = new fhir.Coding(source.originalRuleset); }
+    if (source['claimResponse']) { this.claimResponse = new fhir.Reference(source.claimResponse, options); }
+    if (source['originalRuleset']) { this.originalRuleset = new fhir.Coding(source.originalRuleset, options); }
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -1317,53 +1317,53 @@ export class ClaimResponse extends fhir.DomainResource {
   constructor(source:Partial<ClaimResponseArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
     this.resourceType = 'ClaimResponse';
-    if (source['identifier']) { this.identifier = source.identifier.map((x) => new fhir.Identifier(x)); }
+    if (source['identifier']) { this.identifier = source.identifier.map((x) => new fhir.Identifier(x, options)); }
     else { this.identifier = []; }
-    if (source['request']) { this.request = new fhir.Reference(source.request); }
-    if (source['ruleset']) { this.ruleset = new fhir.Coding(source.ruleset); }
-    if (source['originalRuleset']) { this.originalRuleset = new fhir.Coding(source.originalRuleset); }
-    if (source['created']) { this.created = new fhir.FhirDateTime({value: source.created}); }
+    if (source['request']) { this.request = new fhir.Reference(source.request, options); }
+    if (source['ruleset']) { this.ruleset = new fhir.Coding(source.ruleset, options); }
+    if (source['originalRuleset']) { this.originalRuleset = new fhir.Coding(source.originalRuleset, options); }
+    if (source['created'] !== undefined) { this.created = new fhir.FhirDateTime({value: source.created}, options); }
     if (source['_created']) {
       if (this.created) { this.created.addExtendedProperties(source._created!); }
-      else { this.created = new fhir.FhirDateTime(source._created as Partial<fhir.FhirDateTimeArgs>); }
+      else { this.created = new fhir.FhirDateTime(source._created as Partial<fhir.FhirDateTimeArgs>, options); }
     }
-    if (source['organization']) { this.organization = new fhir.Reference(source.organization); }
-    if (source['requestProvider']) { this.requestProvider = new fhir.Reference(source.requestProvider); }
-    if (source['requestOrganization']) { this.requestOrganization = new fhir.Reference(source.requestOrganization); }
-    if (source['outcome']) { this.outcome = new fhir.FhirCode<RemittanceOutcomeCodeType>({value: source.outcome}); }
+    if (source['organization']) { this.organization = new fhir.Reference(source.organization, options); }
+    if (source['requestProvider']) { this.requestProvider = new fhir.Reference(source.requestProvider, options); }
+    if (source['requestOrganization']) { this.requestOrganization = new fhir.Reference(source.requestOrganization, options); }
+    if (source['outcome'] !== undefined) { this.outcome = new fhir.FhirCode<RemittanceOutcomeCodeType>({value: source.outcome}, options); }
     if (source['_outcome']) {
       if (this.outcome) { this.outcome.addExtendedProperties(source._outcome!); }
-      else { this.outcome = new fhir.FhirCode<RemittanceOutcomeCodeType>(source._outcome as Partial<fhir.FhirCode>); }
+      else { this.outcome = new fhir.FhirCode<RemittanceOutcomeCodeType>(source._outcome as Partial<fhir.FhirCode>, options); }
     }
-    if (source['disposition']) { this.disposition = new fhir.FhirString({value: source.disposition}); }
+    if (source['disposition'] !== undefined) { this.disposition = new fhir.FhirString({value: source.disposition}, options); }
     if (source['_disposition']) {
       if (this.disposition) { this.disposition.addExtendedProperties(source._disposition!); }
-      else { this.disposition = new fhir.FhirString(source._disposition as Partial<fhir.FhirStringArgs>); }
+      else { this.disposition = new fhir.FhirString(source._disposition as Partial<fhir.FhirStringArgs>, options); }
     }
-    if (source['payeeType']) { this.payeeType = new fhir.Coding(source.payeeType); }
-    if (source['item']) { this.item = source.item.map((x) => new fhir.ClaimResponseItem(x)); }
+    if (source['payeeType']) { this.payeeType = new fhir.Coding(source.payeeType, options); }
+    if (source['item']) { this.item = source.item.map((x) => new fhir.ClaimResponseItem(x, options)); }
     else { this.item = []; }
-    if (source['addItem']) { this.addItem = source.addItem.map((x) => new fhir.ClaimResponseAddItem(x)); }
+    if (source['addItem']) { this.addItem = source.addItem.map((x) => new fhir.ClaimResponseAddItem(x, options)); }
     else { this.addItem = []; }
-    if (source['error']) { this.error = source.error.map((x) => new fhir.ClaimResponseError(x)); }
+    if (source['error']) { this.error = source.error.map((x) => new fhir.ClaimResponseError(x, options)); }
     else { this.error = []; }
-    if (source['totalCost']) { this.totalCost = new fhir.Quantity(source.totalCost); }
-    if (source['unallocDeductable']) { this.unallocDeductable = new fhir.Quantity(source.unallocDeductable); }
-    if (source['totalBenefit']) { this.totalBenefit = new fhir.Quantity(source.totalBenefit); }
-    if (source['paymentAdjustment']) { this.paymentAdjustment = new fhir.Quantity(source.paymentAdjustment); }
-    if (source['paymentAdjustmentReason']) { this.paymentAdjustmentReason = new fhir.Coding(source.paymentAdjustmentReason); }
-    if (source['paymentDate']) { this.paymentDate = new fhir.FhirDate({value: source.paymentDate}); }
+    if (source['totalCost']) { this.totalCost = new fhir.Quantity(source.totalCost, options); }
+    if (source['unallocDeductable']) { this.unallocDeductable = new fhir.Quantity(source.unallocDeductable, options); }
+    if (source['totalBenefit']) { this.totalBenefit = new fhir.Quantity(source.totalBenefit, options); }
+    if (source['paymentAdjustment']) { this.paymentAdjustment = new fhir.Quantity(source.paymentAdjustment, options); }
+    if (source['paymentAdjustmentReason']) { this.paymentAdjustmentReason = new fhir.Coding(source.paymentAdjustmentReason, options); }
+    if (source['paymentDate'] !== undefined) { this.paymentDate = new fhir.FhirDate({value: source.paymentDate}, options); }
     if (source['_paymentDate']) {
       if (this.paymentDate) { this.paymentDate.addExtendedProperties(source._paymentDate!); }
-      else { this.paymentDate = new fhir.FhirDate(source._paymentDate as Partial<fhir.FhirDateArgs>); }
+      else { this.paymentDate = new fhir.FhirDate(source._paymentDate as Partial<fhir.FhirDateArgs>, options); }
     }
-    if (source['paymentAmount']) { this.paymentAmount = new fhir.Quantity(source.paymentAmount); }
-    if (source['paymentRef']) { this.paymentRef = new fhir.Identifier(source.paymentRef); }
-    if (source['reserved']) { this.reserved = new fhir.Coding(source.reserved); }
-    if (source['form']) { this.form = new fhir.Coding(source.form); }
-    if (source['note']) { this.note = source.note.map((x) => new fhir.ClaimResponseNote(x)); }
+    if (source['paymentAmount']) { this.paymentAmount = new fhir.Quantity(source.paymentAmount, options); }
+    if (source['paymentRef']) { this.paymentRef = new fhir.Identifier(source.paymentRef, options); }
+    if (source['reserved']) { this.reserved = new fhir.Coding(source.reserved, options); }
+    if (source['form']) { this.form = new fhir.Coding(source.form, options); }
+    if (source['note']) { this.note = source.note.map((x) => new fhir.ClaimResponseNote(x, options)); }
     else { this.note = []; }
-    if (source['coverage']) { this.coverage = source.coverage.map((x) => new fhir.ClaimResponseCoverage(x)); }
+    if (source['coverage']) { this.coverage = source.coverage.map((x) => new fhir.ClaimResponseCoverage(x, options)); }
     else { this.coverage = []; }
   }
   /**

@@ -142,16 +142,16 @@ export class DeviceUseStatement extends fhir.DomainResource {
     super(source, options);
     this.resourceType = 'DeviceUseStatement';
     if (source['bodySite']) { this.bodySite = source.bodySite; }
-    else if (source['bodySiteCodeableConcept']) { this.bodySite = new fhir.CodeableConcept(source.bodySiteCodeableConcept); }
-    else if (source['bodySiteReference']) { this.bodySite = new fhir.Reference(source.bodySiteReference); }
-    if (source['whenUsed']) { this.whenUsed = new fhir.Period(source.whenUsed); }
-    if (source['device']) { this.device = new fhir.Reference(source.device); }
+    else if (source['bodySiteCodeableConcept']) { this.bodySite = new fhir.CodeableConcept(source.bodySiteCodeableConcept, options); }
+    else if (source['bodySiteReference']) { this.bodySite = new fhir.Reference(source.bodySiteReference, options); }
+    if (source['whenUsed']) { this.whenUsed = new fhir.Period(source.whenUsed, options); }
+    if (source['device']) { this.device = new fhir.Reference(source.device, options); }
     else { this.device = null; }
-    if (source['identifier']) { this.identifier = source.identifier.map((x) => new fhir.Identifier(x)); }
+    if (source['identifier']) { this.identifier = source.identifier.map((x) => new fhir.Identifier(x, options)); }
     else { this.identifier = []; }
-    if (source['indication']) { this.indication = source.indication.map((x) => new fhir.CodeableConcept(x)); }
+    if (source['indication']) { this.indication = source.indication.map((x) => new fhir.CodeableConcept(x, options)); }
     else { this.indication = []; }
-    if (source['notes']) { this.notes = source.notes.map((x) => new fhir.FhirString({value: x})); }
+    if (source['notes'] !== undefined) { this.notes = source.notes.map((x) => new fhir.FhirString({value: x}, options)); }
     else { this.notes = []; }
     if (source['_notes']) {
       source._notes.forEach((x,i) => {
@@ -159,17 +159,17 @@ export class DeviceUseStatement extends fhir.DomainResource {
         else { if (x) { this.notes.push(new fhir.FhirString(x as Partial<fhir.FhirStringArgs>)); } }
       });
     }
-    if (source['recordedOn']) { this.recordedOn = new fhir.FhirDateTime({value: source.recordedOn}); }
+    if (source['recordedOn'] !== undefined) { this.recordedOn = new fhir.FhirDateTime({value: source.recordedOn}, options); }
     if (source['_recordedOn']) {
       if (this.recordedOn) { this.recordedOn.addExtendedProperties(source._recordedOn!); }
-      else { this.recordedOn = new fhir.FhirDateTime(source._recordedOn as Partial<fhir.FhirDateTimeArgs>); }
+      else { this.recordedOn = new fhir.FhirDateTime(source._recordedOn as Partial<fhir.FhirDateTimeArgs>, options); }
     }
-    if (source['subject']) { this.subject = new fhir.Reference(source.subject); }
+    if (source['subject']) { this.subject = new fhir.Reference(source.subject, options); }
     else { this.subject = null; }
     if (source['timing']) { this.timing = source.timing; }
-    else if (source['timingTiming']) { this.timing = new fhir.Timing(source.timingTiming); }
-    else if (source['timingPeriod']) { this.timing = new fhir.Period(source.timingPeriod); }
-    else if (source['timingDateTime']) { this.timing = new fhir.FhirDateTime({value: source.timingDateTime}); }
+    else if (source['timingTiming']) { this.timing = new fhir.Timing(source.timingTiming, options); }
+    else if (source['timingPeriod']) { this.timing = new fhir.Period(source.timingPeriod, options); }
+    else if (source['timingDateTime'] !== undefined) { this.timing = new fhir.FhirDateTime({value: source.timingDateTime}, options); }
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).

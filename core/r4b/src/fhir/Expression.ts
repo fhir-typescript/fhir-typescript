@@ -88,31 +88,31 @@ export class Expression extends fhir.FhirElement {
    */
   constructor(source:Partial<ExpressionArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['description']) { this.description = new fhir.FhirString({value: source.description}); }
+    if (source['description'] !== undefined) { this.description = new fhir.FhirString({value: source.description}, options); }
     if (source['_description']) {
       if (this.description) { this.description.addExtendedProperties(source._description!); }
-      else { this.description = new fhir.FhirString(source._description as Partial<fhir.FhirStringArgs>); }
+      else { this.description = new fhir.FhirString(source._description as Partial<fhir.FhirStringArgs>, options); }
     }
-    if (source['name']) { this.name = new fhir.FhirId({value: source.name}); }
+    if (source['name'] !== undefined) { this.name = new fhir.FhirId({value: source.name}, options); }
     if (source['_name']) {
       if (this.name) { this.name.addExtendedProperties(source._name!); }
-      else { this.name = new fhir.FhirId(source._name as Partial<fhir.FhirIdArgs>); }
+      else { this.name = new fhir.FhirId(source._name as Partial<fhir.FhirIdArgs>, options); }
     }
-    if (source['language']) { this.language = new fhir.FhirCode({value: source.language}); }
+    if (source['language'] !== undefined) { this.language = new fhir.FhirCode({value: source.language}, options); }
     else { this.language = null; }
     if (source['_language']) {
       if (this.language) { this.language.addExtendedProperties(source._language!); }
-      else { this.language = new fhir.FhirCode(source._language as Partial<fhir.FhirCodeArgs>); }
+      else { this.language = new fhir.FhirCode(source._language as Partial<fhir.FhirCodeArgs>, options); }
     }
-    if (source['expression']) { this.expression = new fhir.FhirString({value: source.expression}); }
+    if (source['expression'] !== undefined) { this.expression = new fhir.FhirString({value: source.expression}, options); }
     if (source['_expression']) {
       if (this.expression) { this.expression.addExtendedProperties(source._expression!); }
-      else { this.expression = new fhir.FhirString(source._expression as Partial<fhir.FhirStringArgs>); }
+      else { this.expression = new fhir.FhirString(source._expression as Partial<fhir.FhirStringArgs>, options); }
     }
-    if (source['reference']) { this.reference = new fhir.FhirUri({value: source.reference}); }
+    if (source['reference'] !== undefined) { this.reference = new fhir.FhirUri({value: source.reference}, options); }
     if (source['_reference']) {
       if (this.reference) { this.reference.addExtendedProperties(source._reference!); }
-      else { this.reference = new fhir.FhirUri(source._reference as Partial<fhir.FhirUriArgs>); }
+      else { this.reference = new fhir.FhirUri(source._reference as Partial<fhir.FhirUriArgs>, options); }
     }
   }
   /**

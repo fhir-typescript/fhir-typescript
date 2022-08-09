@@ -69,11 +69,11 @@ export class Population extends fhir.BackboneElement {
   constructor(source:Partial<PopulationArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
     if (source['age']) { this.age = source.age; }
-    else if (source['ageRange']) { this.age = new fhir.Range(source.ageRange); }
-    else if (source['ageCodeableConcept']) { this.age = new fhir.CodeableConcept(source.ageCodeableConcept); }
-    if (source['gender']) { this.gender = new fhir.CodeableConcept(source.gender); }
-    if (source['race']) { this.race = new fhir.CodeableConcept(source.race); }
-    if (source['physiologicalCondition']) { this.physiologicalCondition = new fhir.CodeableConcept(source.physiologicalCondition); }
+    else if (source['ageRange']) { this.age = new fhir.Range(source.ageRange, options); }
+    else if (source['ageCodeableConcept']) { this.age = new fhir.CodeableConcept(source.ageCodeableConcept, options); }
+    if (source['gender']) { this.gender = new fhir.CodeableConcept(source.gender, options); }
+    if (source['race']) { this.race = new fhir.CodeableConcept(source.race, options); }
+    if (source['physiologicalCondition']) { this.physiologicalCondition = new fhir.CodeableConcept(source.physiologicalCondition, options); }
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).

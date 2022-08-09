@@ -88,29 +88,29 @@ export class Signature extends fhir.FhirElement {
    */
   constructor(source:Partial<SignatureArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['type']) { this.type = source.type.map((x) => new fhir.Coding(x)); }
+    if (source['type']) { this.type = source.type.map((x) => new fhir.Coding(x, options)); }
     else { this.type = []; }
-    if (source['when']) { this.when = new fhir.FhirInstant({value: source.when}); }
+    if (source['when'] !== undefined) { this.when = new fhir.FhirInstant({value: source.when}, options); }
     else { this.when = null; }
     if (source['_when']) {
       if (this.when) { this.when.addExtendedProperties(source._when!); }
-      else { this.when = new fhir.FhirInstant(source._when as Partial<fhir.FhirInstantArgs>); }
+      else { this.when = new fhir.FhirInstant(source._when as Partial<fhir.FhirInstantArgs>, options); }
     }
     if (source['who']) { this.who = source.who; }
-    else if (source['whoUri']) { this.who = new fhir.FhirUri({value: source.whoUri}); }
-    else if (source['whoReference']) { this.who = new fhir.Reference(source.whoReference); }
+    else if (source['whoUri'] !== undefined) { this.who = new fhir.FhirUri({value: source.whoUri}, options); }
+    else if (source['whoReference']) { this.who = new fhir.Reference(source.whoReference, options); }
     else { this.who = null; }
-    if (source['contentType']) { this.contentType = new fhir.FhirCode({value: source.contentType}); }
+    if (source['contentType'] !== undefined) { this.contentType = new fhir.FhirCode({value: source.contentType}, options); }
     else { this.contentType = null; }
     if (source['_contentType']) {
       if (this.contentType) { this.contentType.addExtendedProperties(source._contentType!); }
-      else { this.contentType = new fhir.FhirCode(source._contentType as Partial<fhir.FhirCodeArgs>); }
+      else { this.contentType = new fhir.FhirCode(source._contentType as Partial<fhir.FhirCodeArgs>, options); }
     }
-    if (source['blob']) { this.blob = new fhir.FhirBase64Binary({value: source.blob}); }
+    if (source['blob'] !== undefined) { this.blob = new fhir.FhirBase64Binary({value: source.blob}, options); }
     else { this.blob = null; }
     if (source['_blob']) {
       if (this.blob) { this.blob.addExtendedProperties(source._blob!); }
-      else { this.blob = new fhir.FhirBase64Binary(source._blob as Partial<fhir.FhirBase64BinaryArgs>); }
+      else { this.blob = new fhir.FhirBase64Binary(source._blob as Partial<fhir.FhirBase64BinaryArgs>, options); }
     }
   }
   /**

@@ -52,12 +52,12 @@ export class PersonLink extends fhir.BackboneElement {
    */
   constructor(source:Partial<PersonLinkArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['target']) { this.target = new fhir.Reference(source.target); }
+    if (source['target']) { this.target = new fhir.Reference(source.target, options); }
     else { this.target = null; }
-    if (source['assurance']) { this.assurance = new fhir.FhirCode<IdentityAssuranceLevelCodeType>({value: source.assurance}); }
+    if (source['assurance'] !== undefined) { this.assurance = new fhir.FhirCode<IdentityAssuranceLevelCodeType>({value: source.assurance}, options); }
     if (source['_assurance']) {
       if (this.assurance) { this.assurance.addExtendedProperties(source._assurance!); }
-      else { this.assurance = new fhir.FhirCode<IdentityAssuranceLevelCodeType>(source._assurance as Partial<fhir.FhirCode>); }
+      else { this.assurance = new fhir.FhirCode<IdentityAssuranceLevelCodeType>(source._assurance as Partial<fhir.FhirCode>, options); }
     }
   }
   /**
@@ -191,32 +191,32 @@ export class Person extends fhir.DomainResource {
   constructor(source:Partial<PersonArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
     this.resourceType = 'Person';
-    if (source['identifier']) { this.identifier = source.identifier.map((x) => new fhir.Identifier(x)); }
+    if (source['identifier']) { this.identifier = source.identifier.map((x) => new fhir.Identifier(x, options)); }
     else { this.identifier = []; }
-    if (source['name']) { this.name = source.name.map((x) => new fhir.HumanName(x)); }
+    if (source['name']) { this.name = source.name.map((x) => new fhir.HumanName(x, options)); }
     else { this.name = []; }
-    if (source['telecom']) { this.telecom = source.telecom.map((x) => new fhir.ContactPoint(x)); }
+    if (source['telecom']) { this.telecom = source.telecom.map((x) => new fhir.ContactPoint(x, options)); }
     else { this.telecom = []; }
-    if (source['gender']) { this.gender = new fhir.FhirCode<AdministrativeGenderCodeType>({value: source.gender}); }
+    if (source['gender'] !== undefined) { this.gender = new fhir.FhirCode<AdministrativeGenderCodeType>({value: source.gender}, options); }
     if (source['_gender']) {
       if (this.gender) { this.gender.addExtendedProperties(source._gender!); }
-      else { this.gender = new fhir.FhirCode<AdministrativeGenderCodeType>(source._gender as Partial<fhir.FhirCode>); }
+      else { this.gender = new fhir.FhirCode<AdministrativeGenderCodeType>(source._gender as Partial<fhir.FhirCode>, options); }
     }
-    if (source['birthDate']) { this.birthDate = new fhir.FhirDate({value: source.birthDate}); }
+    if (source['birthDate'] !== undefined) { this.birthDate = new fhir.FhirDate({value: source.birthDate}, options); }
     if (source['_birthDate']) {
       if (this.birthDate) { this.birthDate.addExtendedProperties(source._birthDate!); }
-      else { this.birthDate = new fhir.FhirDate(source._birthDate as Partial<fhir.FhirDateArgs>); }
+      else { this.birthDate = new fhir.FhirDate(source._birthDate as Partial<fhir.FhirDateArgs>, options); }
     }
-    if (source['address']) { this.address = source.address.map((x) => new fhir.Address(x)); }
+    if (source['address']) { this.address = source.address.map((x) => new fhir.Address(x, options)); }
     else { this.address = []; }
-    if (source['photo']) { this.photo = new fhir.Attachment(source.photo); }
-    if (source['managingOrganization']) { this.managingOrganization = new fhir.Reference(source.managingOrganization); }
-    if (source['active']) { this.active = new fhir.FhirBoolean({value: source.active}); }
+    if (source['photo']) { this.photo = new fhir.Attachment(source.photo, options); }
+    if (source['managingOrganization']) { this.managingOrganization = new fhir.Reference(source.managingOrganization, options); }
+    if (source['active'] !== undefined) { this.active = new fhir.FhirBoolean({value: source.active}, options); }
     if (source['_active']) {
       if (this.active) { this.active.addExtendedProperties(source._active!); }
-      else { this.active = new fhir.FhirBoolean(source._active as Partial<fhir.FhirBooleanArgs>); }
+      else { this.active = new fhir.FhirBoolean(source._active as Partial<fhir.FhirBooleanArgs>, options); }
     }
-    if (source['link']) { this.link = source.link.map((x) => new fhir.PersonLink(x)); }
+    if (source['link']) { this.link = source.link.map((x) => new fhir.PersonLink(x, options)); }
     else { this.link = []; }
   }
   /**

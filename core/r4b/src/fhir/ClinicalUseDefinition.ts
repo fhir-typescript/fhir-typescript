@@ -104,9 +104,9 @@ export class ClinicalUseDefinitionContraindicationOtherTherapy extends fhir.Back
    */
   constructor(source:Partial<ClinicalUseDefinitionContraindicationOtherTherapyArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['relationshipType']) { this.relationshipType = new fhir.CodeableConcept(source.relationshipType); }
+    if (source['relationshipType']) { this.relationshipType = new fhir.CodeableConcept(source.relationshipType, options); }
     else { this.relationshipType = null; }
-    if (source['therapy']) { this.therapy = new fhir.CodeableReference(source.therapy); }
+    if (source['therapy']) { this.therapy = new fhir.CodeableReference(source.therapy, options); }
     else { this.therapy = null; }
   }
   /**
@@ -179,13 +179,13 @@ export class ClinicalUseDefinitionContraindication extends fhir.BackboneElement 
    */
   constructor(source:Partial<ClinicalUseDefinitionContraindicationArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['diseaseSymptomProcedure']) { this.diseaseSymptomProcedure = new fhir.CodeableReference(source.diseaseSymptomProcedure); }
-    if (source['diseaseStatus']) { this.diseaseStatus = new fhir.CodeableReference(source.diseaseStatus); }
-    if (source['comorbidity']) { this.comorbidity = source.comorbidity.map((x) => new fhir.CodeableReference(x)); }
+    if (source['diseaseSymptomProcedure']) { this.diseaseSymptomProcedure = new fhir.CodeableReference(source.diseaseSymptomProcedure, options); }
+    if (source['diseaseStatus']) { this.diseaseStatus = new fhir.CodeableReference(source.diseaseStatus, options); }
+    if (source['comorbidity']) { this.comorbidity = source.comorbidity.map((x) => new fhir.CodeableReference(x, options)); }
     else { this.comorbidity = []; }
-    if (source['indication']) { this.indication = source.indication.map((x) => new fhir.Reference(x)); }
+    if (source['indication']) { this.indication = source.indication.map((x) => new fhir.Reference(x, options)); }
     else { this.indication = []; }
-    if (source['otherTherapy']) { this.otherTherapy = source.otherTherapy.map((x) => new fhir.ClinicalUseDefinitionContraindicationOtherTherapy(x)); }
+    if (source['otherTherapy']) { this.otherTherapy = source.otherTherapy.map((x) => new fhir.ClinicalUseDefinitionContraindicationOtherTherapy(x, options)); }
     else { this.otherTherapy = []; }
   }
   /**
@@ -289,17 +289,17 @@ export class ClinicalUseDefinitionIndication extends fhir.BackboneElement {
    */
   constructor(source:Partial<ClinicalUseDefinitionIndicationArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['diseaseSymptomProcedure']) { this.diseaseSymptomProcedure = new fhir.CodeableReference(source.diseaseSymptomProcedure); }
-    if (source['diseaseStatus']) { this.diseaseStatus = new fhir.CodeableReference(source.diseaseStatus); }
-    if (source['comorbidity']) { this.comorbidity = source.comorbidity.map((x) => new fhir.CodeableReference(x)); }
+    if (source['diseaseSymptomProcedure']) { this.diseaseSymptomProcedure = new fhir.CodeableReference(source.diseaseSymptomProcedure, options); }
+    if (source['diseaseStatus']) { this.diseaseStatus = new fhir.CodeableReference(source.diseaseStatus, options); }
+    if (source['comorbidity']) { this.comorbidity = source.comorbidity.map((x) => new fhir.CodeableReference(x, options)); }
     else { this.comorbidity = []; }
-    if (source['intendedEffect']) { this.intendedEffect = new fhir.CodeableReference(source.intendedEffect); }
+    if (source['intendedEffect']) { this.intendedEffect = new fhir.CodeableReference(source.intendedEffect, options); }
     if (source['duration']) { this.duration = source.duration; }
-    else if (source['durationRange']) { this.duration = new fhir.Range(source.durationRange); }
-    else if (source['durationString']) { this.duration = new fhir.FhirString({value: source.durationString}); }
-    if (source['undesirableEffect']) { this.undesirableEffect = source.undesirableEffect.map((x) => new fhir.Reference(x)); }
+    else if (source['durationRange']) { this.duration = new fhir.Range(source.durationRange, options); }
+    else if (source['durationString'] !== undefined) { this.duration = new fhir.FhirString({value: source.durationString}, options); }
+    if (source['undesirableEffect']) { this.undesirableEffect = source.undesirableEffect.map((x) => new fhir.Reference(x, options)); }
     else { this.undesirableEffect = []; }
-    if (source['otherTherapy']) { this.otherTherapy = source.otherTherapy.map((x) => new fhir.ClinicalUseDefinitionContraindicationOtherTherapy(x)); }
+    if (source['otherTherapy']) { this.otherTherapy = source.otherTherapy.map((x) => new fhir.ClinicalUseDefinitionContraindicationOtherTherapy(x, options)); }
     else { this.otherTherapy = []; }
   }
   /**
@@ -358,8 +358,8 @@ export class ClinicalUseDefinitionInteractionInteractant extends fhir.BackboneEl
   constructor(source:Partial<ClinicalUseDefinitionInteractionInteractantArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
     if (source['item']) { this.item = source.item; }
-    else if (source['itemReference']) { this.item = new fhir.Reference(source.itemReference); }
-    else if (source['itemCodeableConcept']) { this.item = new fhir.CodeableConcept(source.itemCodeableConcept); }
+    else if (source['itemReference']) { this.item = new fhir.Reference(source.itemReference, options); }
+    else if (source['itemCodeableConcept']) { this.item = new fhir.CodeableConcept(source.itemCodeableConcept, options); }
     else { this.item = null; }
   }
   /**
@@ -431,12 +431,12 @@ export class ClinicalUseDefinitionInteraction extends fhir.BackboneElement {
    */
   constructor(source:Partial<ClinicalUseDefinitionInteractionArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['interactant']) { this.interactant = source.interactant.map((x) => new fhir.ClinicalUseDefinitionInteractionInteractant(x)); }
+    if (source['interactant']) { this.interactant = source.interactant.map((x) => new fhir.ClinicalUseDefinitionInteractionInteractant(x, options)); }
     else { this.interactant = []; }
-    if (source['type']) { this.type = new fhir.CodeableConcept(source.type); }
-    if (source['effect']) { this.effect = new fhir.CodeableReference(source.effect); }
-    if (source['incidence']) { this.incidence = new fhir.CodeableConcept(source.incidence); }
-    if (source['management']) { this.management = source.management.map((x) => new fhir.CodeableConcept(x)); }
+    if (source['type']) { this.type = new fhir.CodeableConcept(source.type, options); }
+    if (source['effect']) { this.effect = new fhir.CodeableReference(source.effect, options); }
+    if (source['incidence']) { this.incidence = new fhir.CodeableConcept(source.incidence, options); }
+    if (source['management']) { this.management = source.management.map((x) => new fhir.CodeableConcept(x, options)); }
     else { this.management = []; }
   }
   /**
@@ -496,9 +496,9 @@ export class ClinicalUseDefinitionUndesirableEffect extends fhir.BackboneElement
    */
   constructor(source:Partial<ClinicalUseDefinitionUndesirableEffectArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['symptomConditionEffect']) { this.symptomConditionEffect = new fhir.CodeableReference(source.symptomConditionEffect); }
-    if (source['classification']) { this.classification = new fhir.CodeableConcept(source.classification); }
-    if (source['frequencyOfOccurrence']) { this.frequencyOfOccurrence = new fhir.CodeableConcept(source.frequencyOfOccurrence); }
+    if (source['symptomConditionEffect']) { this.symptomConditionEffect = new fhir.CodeableReference(source.symptomConditionEffect, options); }
+    if (source['classification']) { this.classification = new fhir.CodeableConcept(source.classification, options); }
+    if (source['frequencyOfOccurrence']) { this.frequencyOfOccurrence = new fhir.CodeableConcept(source.frequencyOfOccurrence, options); }
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -551,12 +551,12 @@ export class ClinicalUseDefinitionWarning extends fhir.BackboneElement {
    */
   constructor(source:Partial<ClinicalUseDefinitionWarningArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['description']) { this.description = new fhir.FhirMarkdown({value: source.description}); }
+    if (source['description'] !== undefined) { this.description = new fhir.FhirMarkdown({value: source.description}, options); }
     if (source['_description']) {
       if (this.description) { this.description.addExtendedProperties(source._description!); }
-      else { this.description = new fhir.FhirMarkdown(source._description as Partial<fhir.FhirMarkdownArgs>); }
+      else { this.description = new fhir.FhirMarkdown(source._description as Partial<fhir.FhirMarkdownArgs>, options); }
     }
-    if (source['code']) { this.code = new fhir.CodeableConcept(source.code); }
+    if (source['code']) { this.code = new fhir.CodeableConcept(source.code, options); }
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -689,26 +689,26 @@ export class ClinicalUseDefinition extends fhir.DomainResource {
   constructor(source:Partial<ClinicalUseDefinitionArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
     this.resourceType = 'ClinicalUseDefinition';
-    if (source['identifier']) { this.identifier = source.identifier.map((x) => new fhir.Identifier(x)); }
+    if (source['identifier']) { this.identifier = source.identifier.map((x) => new fhir.Identifier(x, options)); }
     else { this.identifier = []; }
-    if (source['type']) { this.type = new fhir.FhirCode<ClinicalUseDefinitionTypeCodeType>({value: source.type}); }
+    if (source['type'] !== undefined) { this.type = new fhir.FhirCode<ClinicalUseDefinitionTypeCodeType>({value: source.type}, options); }
     else { this.type = null; }
     if (source['_type']) {
       if (this.type) { this.type.addExtendedProperties(source._type!); }
-      else { this.type = new fhir.FhirCode<ClinicalUseDefinitionTypeCodeType>(source._type as Partial<fhir.FhirCode>); }
+      else { this.type = new fhir.FhirCode<ClinicalUseDefinitionTypeCodeType>(source._type as Partial<fhir.FhirCode>, options); }
     }
-    if (source['category']) { this.category = source.category.map((x) => new fhir.CodeableConcept(x)); }
+    if (source['category']) { this.category = source.category.map((x) => new fhir.CodeableConcept(x, options)); }
     else { this.category = []; }
-    if (source['subject']) { this.subject = source.subject.map((x) => new fhir.Reference(x)); }
+    if (source['subject']) { this.subject = source.subject.map((x) => new fhir.Reference(x, options)); }
     else { this.subject = []; }
-    if (source['status']) { this.status = new fhir.CodeableConcept(source.status); }
-    if (source['contraindication']) { this.contraindication = new fhir.ClinicalUseDefinitionContraindication(source.contraindication); }
-    if (source['indication']) { this.indication = new fhir.ClinicalUseDefinitionIndication(source.indication); }
-    if (source['interaction']) { this.interaction = new fhir.ClinicalUseDefinitionInteraction(source.interaction); }
-    if (source['population']) { this.population = source.population.map((x) => new fhir.Reference(x)); }
+    if (source['status']) { this.status = new fhir.CodeableConcept(source.status, options); }
+    if (source['contraindication']) { this.contraindication = new fhir.ClinicalUseDefinitionContraindication(source.contraindication, options); }
+    if (source['indication']) { this.indication = new fhir.ClinicalUseDefinitionIndication(source.indication, options); }
+    if (source['interaction']) { this.interaction = new fhir.ClinicalUseDefinitionInteraction(source.interaction, options); }
+    if (source['population']) { this.population = source.population.map((x) => new fhir.Reference(x, options)); }
     else { this.population = []; }
-    if (source['undesirableEffect']) { this.undesirableEffect = new fhir.ClinicalUseDefinitionUndesirableEffect(source.undesirableEffect); }
-    if (source['warning']) { this.warning = new fhir.ClinicalUseDefinitionWarning(source.warning); }
+    if (source['undesirableEffect']) { this.undesirableEffect = new fhir.ClinicalUseDefinitionUndesirableEffect(source.undesirableEffect, options); }
+    if (source['warning']) { this.warning = new fhir.ClinicalUseDefinitionWarning(source.warning, options); }
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).

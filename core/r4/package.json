@@ -1,6 +1,6 @@
 {
   "name": "@fhir-typescript/r4-core",
-  "version": "0.0.12-beta.16",
+  "version": "0.0.12-beta.18",
   "description": "A FHIR TypeScript SDK",
   "keywords": ["fhir", "core", "R4" ],
   "main": "./dist/index.js",
@@ -18,7 +18,8 @@
     "build": "npm run clean && tsc -p tsconfig.json",
     "test": "jest --runInBand",
     "test:coverage": "jest --coverage",
-    "test:coverage:only": "npm run clean:coverage && npm run test:coverage"
+    "test:coverage:only": "npm run clean:coverage && npm run test:coverage",
+    "update-test-manifest": ""
   },
   "homepage": "https://github.com/fhir-typescript/fhir-typescript.git",
   "repository": {

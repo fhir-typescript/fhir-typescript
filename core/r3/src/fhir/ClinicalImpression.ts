@@ -52,9 +52,9 @@ export class ClinicalImpressionInvestigation extends fhir.BackboneElement {
    */
   constructor(source:Partial<ClinicalImpressionInvestigationArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['code']) { this.code = new fhir.CodeableConcept(source.code); }
+    if (source['code']) { this.code = new fhir.CodeableConcept(source.code, options); }
     else { this.code = null; }
-    if (source['item']) { this.item = source.item.map((x) => new fhir.Reference(x)); }
+    if (source['item']) { this.item = source.item.map((x) => new fhir.Reference(x, options)); }
     else { this.item = []; }
   }
   /**
@@ -120,13 +120,13 @@ export class ClinicalImpressionFinding extends fhir.BackboneElement {
   constructor(source:Partial<ClinicalImpressionFindingArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
     if (source['item']) { this.item = source.item; }
-    else if (source['itemCodeableConcept']) { this.item = new fhir.CodeableConcept(source.itemCodeableConcept); }
-    else if (source['itemReference']) { this.item = new fhir.Reference(source.itemReference); }
+    else if (source['itemCodeableConcept']) { this.item = new fhir.CodeableConcept(source.itemCodeableConcept, options); }
+    else if (source['itemReference']) { this.item = new fhir.Reference(source.itemReference, options); }
     else { this.item = null; }
-    if (source['basis']) { this.basis = new fhir.FhirString({value: source.basis}); }
+    if (source['basis'] !== undefined) { this.basis = new fhir.FhirString({value: source.basis}, options); }
     if (source['_basis']) {
       if (this.basis) { this.basis.addExtendedProperties(source._basis!); }
-      else { this.basis = new fhir.FhirString(source._basis as Partial<fhir.FhirStringArgs>); }
+      else { this.basis = new fhir.FhirString(source._basis as Partial<fhir.FhirStringArgs>, options); }
     }
   }
   /**
@@ -352,38 +352,38 @@ export class ClinicalImpression extends fhir.DomainResource {
   constructor(source:Partial<ClinicalImpressionArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
     this.resourceType = 'ClinicalImpression';
-    if (source['identifier']) { this.identifier = source.identifier.map((x) => new fhir.Identifier(x)); }
+    if (source['identifier']) { this.identifier = source.identifier.map((x) => new fhir.Identifier(x, options)); }
     else { this.identifier = []; }
-    if (source['status']) { this.status = new fhir.FhirCode<ClinicalImpressionStatusCodeType>({value: source.status}); }
+    if (source['status'] !== undefined) { this.status = new fhir.FhirCode<ClinicalImpressionStatusCodeType>({value: source.status}, options); }
     else { this.status = null; }
     if (source['_status']) {
       if (this.status) { this.status.addExtendedProperties(source._status!); }
-      else { this.status = new fhir.FhirCode<ClinicalImpressionStatusCodeType>(source._status as Partial<fhir.FhirCode>); }
+      else { this.status = new fhir.FhirCode<ClinicalImpressionStatusCodeType>(source._status as Partial<fhir.FhirCode>, options); }
     }
-    if (source['code']) { this.code = new fhir.CodeableConcept(source.code); }
-    if (source['description']) { this.description = new fhir.FhirString({value: source.description}); }
+    if (source['code']) { this.code = new fhir.CodeableConcept(source.code, options); }
+    if (source['description'] !== undefined) { this.description = new fhir.FhirString({value: source.description}, options); }
     if (source['_description']) {
       if (this.description) { this.description.addExtendedProperties(source._description!); }
-      else { this.description = new fhir.FhirString(source._description as Partial<fhir.FhirStringArgs>); }
+      else { this.description = new fhir.FhirString(source._description as Partial<fhir.FhirStringArgs>, options); }
     }
-    if (source['subject']) { this.subject = new fhir.Reference(source.subject); }
+    if (source['subject']) { this.subject = new fhir.Reference(source.subject, options); }
     else { this.subject = null; }
-    if (source['context']) { this.context = new fhir.Reference(source.context); }
+    if (source['context']) { this.context = new fhir.Reference(source.context, options); }
     if (source['effective']) { this.effective = source.effective; }
-    else if (source['effectiveDateTime']) { this.effective = new fhir.FhirDateTime({value: source.effectiveDateTime}); }
-    else if (source['effectivePeriod']) { this.effective = new fhir.Period(source.effectivePeriod); }
-    if (source['date']) { this.date = new fhir.FhirDateTime({value: source.date}); }
+    else if (source['effectiveDateTime'] !== undefined) { this.effective = new fhir.FhirDateTime({value: source.effectiveDateTime}, options); }
+    else if (source['effectivePeriod']) { this.effective = new fhir.Period(source.effectivePeriod, options); }
+    if (source['date'] !== undefined) { this.date = new fhir.FhirDateTime({value: source.date}, options); }
     if (source['_date']) {
       if (this.date) { this.date.addExtendedProperties(source._date!); }
-      else { this.date = new fhir.FhirDateTime(source._date as Partial<fhir.FhirDateTimeArgs>); }
+      else { this.date = new fhir.FhirDateTime(source._date as Partial<fhir.FhirDateTimeArgs>, options); }
     }
-    if (source['assessor']) { this.assessor = new fhir.Reference(source.assessor); }
-    if (source['previous']) { this.previous = new fhir.Reference(source.previous); }
-    if (source['problem']) { this.problem = source.problem.map((x) => new fhir.Reference(x)); }
+    if (source['assessor']) { this.assessor = new fhir.Reference(source.assessor, options); }
+    if (source['previous']) { this.previous = new fhir.Reference(source.previous, options); }
+    if (source['problem']) { this.problem = source.problem.map((x) => new fhir.Reference(x, options)); }
     else { this.problem = []; }
-    if (source['investigation']) { this.investigation = source.investigation.map((x) => new fhir.ClinicalImpressionInvestigation(x)); }
+    if (source['investigation']) { this.investigation = source.investigation.map((x) => new fhir.ClinicalImpressionInvestigation(x, options)); }
     else { this.investigation = []; }
-    if (source['protocol']) { this.protocol = source.protocol.map((x) => new fhir.FhirUri({value: x})); }
+    if (source['protocol'] !== undefined) { this.protocol = source.protocol.map((x) => new fhir.FhirUri({value: x}, options)); }
     else { this.protocol = []; }
     if (source['_protocol']) {
       source._protocol.forEach((x,i) => {
@@ -391,20 +391,20 @@ export class ClinicalImpression extends fhir.DomainResource {
         else { if (x) { this.protocol.push(new fhir.FhirUri(x as Partial<fhir.FhirUriArgs>)); } }
       });
     }
-    if (source['summary']) { this.summary = new fhir.FhirString({value: source.summary}); }
+    if (source['summary'] !== undefined) { this.summary = new fhir.FhirString({value: source.summary}, options); }
     if (source['_summary']) {
       if (this.summary) { this.summary.addExtendedProperties(source._summary!); }
-      else { this.summary = new fhir.FhirString(source._summary as Partial<fhir.FhirStringArgs>); }
+      else { this.summary = new fhir.FhirString(source._summary as Partial<fhir.FhirStringArgs>, options); }
     }
-    if (source['finding']) { this.finding = source.finding.map((x) => new fhir.ClinicalImpressionFinding(x)); }
+    if (source['finding']) { this.finding = source.finding.map((x) => new fhir.ClinicalImpressionFinding(x, options)); }
     else { this.finding = []; }
-    if (source['prognosisCodeableConcept']) { this.prognosisCodeableConcept = source.prognosisCodeableConcept.map((x) => new fhir.CodeableConcept(x)); }
+    if (source['prognosisCodeableConcept']) { this.prognosisCodeableConcept = source.prognosisCodeableConcept.map((x) => new fhir.CodeableConcept(x, options)); }
     else { this.prognosisCodeableConcept = []; }
-    if (source['prognosisReference']) { this.prognosisReference = source.prognosisReference.map((x) => new fhir.Reference(x)); }
+    if (source['prognosisReference']) { this.prognosisReference = source.prognosisReference.map((x) => new fhir.Reference(x, options)); }
     else { this.prognosisReference = []; }
-    if (source['action']) { this.action = source.action.map((x) => new fhir.Reference(x)); }
+    if (source['action']) { this.action = source.action.map((x) => new fhir.Reference(x, options)); }
     else { this.action = []; }
-    if (source['note']) { this.note = source.note.map((x) => new fhir.Annotation(x)); }
+    if (source['note']) { this.note = source.note.map((x) => new fhir.Annotation(x, options)); }
     else { this.note = []; }
   }
   /**

@@ -64,11 +64,11 @@ export class SupplyRequestOrderedItem extends fhir.BackboneElement {
    */
   constructor(source:Partial<SupplyRequestOrderedItemArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['quantity']) { this.quantity = new fhir.Quantity(source.quantity); }
+    if (source['quantity']) { this.quantity = new fhir.Quantity(source.quantity, options); }
     else { this.quantity = null; }
     if (source['item']) { this.item = source.item; }
-    else if (source['itemCodeableConcept']) { this.item = new fhir.CodeableConcept(source.itemCodeableConcept); }
-    else if (source['itemReference']) { this.item = new fhir.Reference(source.itemReference); }
+    else if (source['itemCodeableConcept']) { this.item = new fhir.CodeableConcept(source.itemCodeableConcept, options); }
+    else if (source['itemReference']) { this.item = new fhir.Reference(source.itemReference, options); }
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -116,9 +116,9 @@ export class SupplyRequestRequester extends fhir.BackboneElement {
    */
   constructor(source:Partial<SupplyRequestRequesterArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['agent']) { this.agent = new fhir.Reference(source.agent); }
+    if (source['agent']) { this.agent = new fhir.Reference(source.agent, options); }
     else { this.agent = null; }
-    if (source['onBehalfOf']) { this.onBehalfOf = new fhir.Reference(source.onBehalfOf); }
+    if (source['onBehalfOf']) { this.onBehalfOf = new fhir.Reference(source.onBehalfOf, options); }
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -295,36 +295,36 @@ export class SupplyRequest extends fhir.DomainResource {
   constructor(source:Partial<SupplyRequestArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
     this.resourceType = 'SupplyRequest';
-    if (source['identifier']) { this.identifier = new fhir.Identifier(source.identifier); }
-    if (source['status']) { this.status = new fhir.FhirCode<SupplyrequestStatusCodeType>({value: source.status}); }
+    if (source['identifier']) { this.identifier = new fhir.Identifier(source.identifier, options); }
+    if (source['status'] !== undefined) { this.status = new fhir.FhirCode<SupplyrequestStatusCodeType>({value: source.status}, options); }
     if (source['_status']) {
       if (this.status) { this.status.addExtendedProperties(source._status!); }
-      else { this.status = new fhir.FhirCode<SupplyrequestStatusCodeType>(source._status as Partial<fhir.FhirCode>); }
+      else { this.status = new fhir.FhirCode<SupplyrequestStatusCodeType>(source._status as Partial<fhir.FhirCode>, options); }
     }
-    if (source['category']) { this.category = new fhir.CodeableConcept(source.category); }
-    if (source['priority']) { this.priority = new fhir.FhirCode<RequestPriorityCodeType>({value: source.priority}); }
+    if (source['category']) { this.category = new fhir.CodeableConcept(source.category, options); }
+    if (source['priority'] !== undefined) { this.priority = new fhir.FhirCode<RequestPriorityCodeType>({value: source.priority}, options); }
     if (source['_priority']) {
       if (this.priority) { this.priority.addExtendedProperties(source._priority!); }
-      else { this.priority = new fhir.FhirCode<RequestPriorityCodeType>(source._priority as Partial<fhir.FhirCode>); }
+      else { this.priority = new fhir.FhirCode<RequestPriorityCodeType>(source._priority as Partial<fhir.FhirCode>, options); }
     }
-    if (source['orderedItem']) { this.orderedItem = new fhir.SupplyRequestOrderedItem(source.orderedItem); }
+    if (source['orderedItem']) { this.orderedItem = new fhir.SupplyRequestOrderedItem(source.orderedItem, options); }
     if (source['occurrence']) { this.occurrence = source.occurrence; }
-    else if (source['occurrenceDateTime']) { this.occurrence = new fhir.FhirDateTime({value: source.occurrenceDateTime}); }
-    else if (source['occurrencePeriod']) { this.occurrence = new fhir.Period(source.occurrencePeriod); }
-    else if (source['occurrenceTiming']) { this.occurrence = new fhir.Timing(source.occurrenceTiming); }
-    if (source['authoredOn']) { this.authoredOn = new fhir.FhirDateTime({value: source.authoredOn}); }
+    else if (source['occurrenceDateTime'] !== undefined) { this.occurrence = new fhir.FhirDateTime({value: source.occurrenceDateTime}, options); }
+    else if (source['occurrencePeriod']) { this.occurrence = new fhir.Period(source.occurrencePeriod, options); }
+    else if (source['occurrenceTiming']) { this.occurrence = new fhir.Timing(source.occurrenceTiming, options); }
+    if (source['authoredOn'] !== undefined) { this.authoredOn = new fhir.FhirDateTime({value: source.authoredOn}, options); }
     if (source['_authoredOn']) {
       if (this.authoredOn) { this.authoredOn.addExtendedProperties(source._authoredOn!); }
-      else { this.authoredOn = new fhir.FhirDateTime(source._authoredOn as Partial<fhir.FhirDateTimeArgs>); }
+      else { this.authoredOn = new fhir.FhirDateTime(source._authoredOn as Partial<fhir.FhirDateTimeArgs>, options); }
     }
-    if (source['requester']) { this.requester = new fhir.SupplyRequestRequester(source.requester); }
-    if (source['supplier']) { this.supplier = source.supplier.map((x) => new fhir.Reference(x)); }
+    if (source['requester']) { this.requester = new fhir.SupplyRequestRequester(source.requester, options); }
+    if (source['supplier']) { this.supplier = source.supplier.map((x) => new fhir.Reference(x, options)); }
     else { this.supplier = []; }
     if (source['reason']) { this.reason = source.reason; }
-    else if (source['reasonCodeableConcept']) { this.reason = new fhir.CodeableConcept(source.reasonCodeableConcept); }
-    else if (source['reasonReference']) { this.reason = new fhir.Reference(source.reasonReference); }
-    if (source['deliverFrom']) { this.deliverFrom = new fhir.Reference(source.deliverFrom); }
-    if (source['deliverTo']) { this.deliverTo = new fhir.Reference(source.deliverTo); }
+    else if (source['reasonCodeableConcept']) { this.reason = new fhir.CodeableConcept(source.reasonCodeableConcept, options); }
+    else if (source['reasonReference']) { this.reason = new fhir.Reference(source.reasonReference, options); }
+    if (source['deliverFrom']) { this.deliverFrom = new fhir.Reference(source.deliverFrom, options); }
+    if (source['deliverTo']) { this.deliverTo = new fhir.Reference(source.deliverTo, options); }
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).

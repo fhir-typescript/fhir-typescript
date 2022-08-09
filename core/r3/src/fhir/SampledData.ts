@@ -104,40 +104,40 @@ export class SampledData extends fhir.FhirElement {
    */
   constructor(source:Partial<SampledDataArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['origin']) { this.origin = new fhir.Quantity(source.origin); }
+    if (source['origin']) { this.origin = new fhir.Quantity(source.origin, options); }
     else { this.origin = null; }
-    if (source['period']) { this.period = new fhir.FhirDecimal({value: source.period}); }
+    if (source['period'] !== undefined) { this.period = new fhir.FhirDecimal({value: source.period}, options); }
     else { this.period = null; }
     if (source['_period']) {
       if (this.period) { this.period.addExtendedProperties(source._period!); }
-      else { this.period = new fhir.FhirDecimal(source._period as Partial<fhir.FhirDecimalArgs>); }
+      else { this.period = new fhir.FhirDecimal(source._period as Partial<fhir.FhirDecimalArgs>, options); }
     }
-    if (source['factor']) { this.factor = new fhir.FhirDecimal({value: source.factor}); }
+    if (source['factor'] !== undefined) { this.factor = new fhir.FhirDecimal({value: source.factor}, options); }
     if (source['_factor']) {
       if (this.factor) { this.factor.addExtendedProperties(source._factor!); }
-      else { this.factor = new fhir.FhirDecimal(source._factor as Partial<fhir.FhirDecimalArgs>); }
+      else { this.factor = new fhir.FhirDecimal(source._factor as Partial<fhir.FhirDecimalArgs>, options); }
     }
-    if (source['lowerLimit']) { this.lowerLimit = new fhir.FhirDecimal({value: source.lowerLimit}); }
+    if (source['lowerLimit'] !== undefined) { this.lowerLimit = new fhir.FhirDecimal({value: source.lowerLimit}, options); }
     if (source['_lowerLimit']) {
       if (this.lowerLimit) { this.lowerLimit.addExtendedProperties(source._lowerLimit!); }
-      else { this.lowerLimit = new fhir.FhirDecimal(source._lowerLimit as Partial<fhir.FhirDecimalArgs>); }
+      else { this.lowerLimit = new fhir.FhirDecimal(source._lowerLimit as Partial<fhir.FhirDecimalArgs>, options); }
     }
-    if (source['upperLimit']) { this.upperLimit = new fhir.FhirDecimal({value: source.upperLimit}); }
+    if (source['upperLimit'] !== undefined) { this.upperLimit = new fhir.FhirDecimal({value: source.upperLimit}, options); }
     if (source['_upperLimit']) {
       if (this.upperLimit) { this.upperLimit.addExtendedProperties(source._upperLimit!); }
-      else { this.upperLimit = new fhir.FhirDecimal(source._upperLimit as Partial<fhir.FhirDecimalArgs>); }
+      else { this.upperLimit = new fhir.FhirDecimal(source._upperLimit as Partial<fhir.FhirDecimalArgs>, options); }
     }
-    if (source['dimensions']) { this.dimensions = new fhir.FhirPositiveInt({value: source.dimensions}); }
+    if (source['dimensions'] !== undefined) { this.dimensions = new fhir.FhirPositiveInt({value: source.dimensions}, options); }
     else { this.dimensions = null; }
     if (source['_dimensions']) {
       if (this.dimensions) { this.dimensions.addExtendedProperties(source._dimensions!); }
-      else { this.dimensions = new fhir.FhirPositiveInt(source._dimensions as Partial<fhir.FhirPositiveIntArgs>); }
+      else { this.dimensions = new fhir.FhirPositiveInt(source._dimensions as Partial<fhir.FhirPositiveIntArgs>, options); }
     }
-    if (source['data']) { this.data = new fhir.FhirString({value: source.data}); }
+    if (source['data'] !== undefined) { this.data = new fhir.FhirString({value: source.data}, options); }
     else { this.data = null; }
     if (source['_data']) {
       if (this.data) { this.data.addExtendedProperties(source._data!); }
-      else { this.data = new fhir.FhirString(source._data as Partial<fhir.FhirStringArgs>); }
+      else { this.data = new fhir.FhirString(source._data as Partial<fhir.FhirStringArgs>, options); }
     }
   }
   /**

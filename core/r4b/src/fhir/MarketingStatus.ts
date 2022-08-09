@@ -68,15 +68,15 @@ export class MarketingStatus extends fhir.BackboneElement {
    */
   constructor(source:Partial<MarketingStatusArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['country']) { this.country = new fhir.CodeableConcept(source.country); }
-    if (source['jurisdiction']) { this.jurisdiction = new fhir.CodeableConcept(source.jurisdiction); }
-    if (source['status']) { this.status = new fhir.CodeableConcept(source.status); }
+    if (source['country']) { this.country = new fhir.CodeableConcept(source.country, options); }
+    if (source['jurisdiction']) { this.jurisdiction = new fhir.CodeableConcept(source.jurisdiction, options); }
+    if (source['status']) { this.status = new fhir.CodeableConcept(source.status, options); }
     else { this.status = null; }
-    if (source['dateRange']) { this.dateRange = new fhir.Period(source.dateRange); }
-    if (source['restoreDate']) { this.restoreDate = new fhir.FhirDateTime({value: source.restoreDate}); }
+    if (source['dateRange']) { this.dateRange = new fhir.Period(source.dateRange, options); }
+    if (source['restoreDate'] !== undefined) { this.restoreDate = new fhir.FhirDateTime({value: source.restoreDate}, options); }
     if (source['_restoreDate']) {
       if (this.restoreDate) { this.restoreDate.addExtendedProperties(source._restoreDate!); }
-      else { this.restoreDate = new fhir.FhirDateTime(source._restoreDate as Partial<fhir.FhirDateTimeArgs>); }
+      else { this.restoreDate = new fhir.FhirDateTime(source._restoreDate as Partial<fhir.FhirDateTimeArgs>, options); }
     }
   }
   /**

@@ -77,17 +77,17 @@ export class Schedule extends fhir.DomainResource {
   constructor(source:Partial<ScheduleArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
     this.resourceType = 'Schedule';
-    if (source['identifier']) { this.identifier = source.identifier.map((x) => new fhir.Identifier(x)); }
+    if (source['identifier']) { this.identifier = source.identifier.map((x) => new fhir.Identifier(x, options)); }
     else { this.identifier = []; }
-    if (source['type']) { this.type = source.type.map((x) => new fhir.CodeableConcept(x)); }
+    if (source['type']) { this.type = source.type.map((x) => new fhir.CodeableConcept(x, options)); }
     else { this.type = []; }
-    if (source['actor']) { this.actor = new fhir.Reference(source.actor); }
+    if (source['actor']) { this.actor = new fhir.Reference(source.actor, options); }
     else { this.actor = null; }
-    if (source['planningHorizon']) { this.planningHorizon = new fhir.Period(source.planningHorizon); }
-    if (source['comment']) { this.comment = new fhir.FhirString({value: source.comment}); }
+    if (source['planningHorizon']) { this.planningHorizon = new fhir.Period(source.planningHorizon, options); }
+    if (source['comment'] !== undefined) { this.comment = new fhir.FhirString({value: source.comment}, options); }
     if (source['_comment']) {
       if (this.comment) { this.comment.addExtendedProperties(source._comment!); }
-      else { this.comment = new fhir.FhirString(source._comment as Partial<fhir.FhirStringArgs>); }
+      else { this.comment = new fhir.FhirString(source._comment as Partial<fhir.FhirStringArgs>, options); }
     }
   }
   /**

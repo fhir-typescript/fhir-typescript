@@ -124,19 +124,19 @@ export class VerificationResultPrimarySource extends fhir.BackboneElement {
    */
   constructor(source:Partial<VerificationResultPrimarySourceArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['who']) { this.who = new fhir.Reference(source.who); }
-    if (source['type']) { this.type = source.type.map((x) => new fhir.CodeableConcept(x)); }
+    if (source['who']) { this.who = new fhir.Reference(source.who, options); }
+    if (source['type']) { this.type = source.type.map((x) => new fhir.CodeableConcept(x, options)); }
     else { this.type = []; }
-    if (source['communicationMethod']) { this.communicationMethod = source.communicationMethod.map((x) => new fhir.CodeableConcept(x)); }
+    if (source['communicationMethod']) { this.communicationMethod = source.communicationMethod.map((x) => new fhir.CodeableConcept(x, options)); }
     else { this.communicationMethod = []; }
-    if (source['validationStatus']) { this.validationStatus = new fhir.CodeableConcept(source.validationStatus); }
-    if (source['validationDate']) { this.validationDate = new fhir.FhirDateTime({value: source.validationDate}); }
+    if (source['validationStatus']) { this.validationStatus = new fhir.CodeableConcept(source.validationStatus, options); }
+    if (source['validationDate'] !== undefined) { this.validationDate = new fhir.FhirDateTime({value: source.validationDate}, options); }
     if (source['_validationDate']) {
       if (this.validationDate) { this.validationDate.addExtendedProperties(source._validationDate!); }
-      else { this.validationDate = new fhir.FhirDateTime(source._validationDate as Partial<fhir.FhirDateTimeArgs>); }
+      else { this.validationDate = new fhir.FhirDateTime(source._validationDate as Partial<fhir.FhirDateTimeArgs>, options); }
     }
-    if (source['canPushUpdates']) { this.canPushUpdates = new fhir.CodeableConcept(source.canPushUpdates); }
-    if (source['pushTypeAvailable']) { this.pushTypeAvailable = source.pushTypeAvailable.map((x) => new fhir.CodeableConcept(x)); }
+    if (source['canPushUpdates']) { this.canPushUpdates = new fhir.CodeableConcept(source.canPushUpdates, options); }
+    if (source['pushTypeAvailable']) { this.pushTypeAvailable = source.pushTypeAvailable.map((x) => new fhir.CodeableConcept(x, options)); }
     else { this.pushTypeAvailable = []; }
   }
   /**
@@ -250,26 +250,26 @@ export class VerificationResultAttestation extends fhir.BackboneElement {
    */
   constructor(source:Partial<VerificationResultAttestationArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['who']) { this.who = new fhir.Reference(source.who); }
-    if (source['onBehalfOf']) { this.onBehalfOf = new fhir.Reference(source.onBehalfOf); }
-    if (source['communicationMethod']) { this.communicationMethod = new fhir.CodeableConcept(source.communicationMethod); }
-    if (source['date']) { this.date = new fhir.FhirDate({value: source.date}); }
+    if (source['who']) { this.who = new fhir.Reference(source.who, options); }
+    if (source['onBehalfOf']) { this.onBehalfOf = new fhir.Reference(source.onBehalfOf, options); }
+    if (source['communicationMethod']) { this.communicationMethod = new fhir.CodeableConcept(source.communicationMethod, options); }
+    if (source['date'] !== undefined) { this.date = new fhir.FhirDate({value: source.date}, options); }
     if (source['_date']) {
       if (this.date) { this.date.addExtendedProperties(source._date!); }
-      else { this.date = new fhir.FhirDate(source._date as Partial<fhir.FhirDateArgs>); }
+      else { this.date = new fhir.FhirDate(source._date as Partial<fhir.FhirDateArgs>, options); }
     }
-    if (source['sourceIdentityCertificate']) { this.sourceIdentityCertificate = new fhir.FhirString({value: source.sourceIdentityCertificate}); }
+    if (source['sourceIdentityCertificate'] !== undefined) { this.sourceIdentityCertificate = new fhir.FhirString({value: source.sourceIdentityCertificate}, options); }
     if (source['_sourceIdentityCertificate']) {
       if (this.sourceIdentityCertificate) { this.sourceIdentityCertificate.addExtendedProperties(source._sourceIdentityCertificate!); }
-      else { this.sourceIdentityCertificate = new fhir.FhirString(source._sourceIdentityCertificate as Partial<fhir.FhirStringArgs>); }
+      else { this.sourceIdentityCertificate = new fhir.FhirString(source._sourceIdentityCertificate as Partial<fhir.FhirStringArgs>, options); }
     }
-    if (source['proxyIdentityCertificate']) { this.proxyIdentityCertificate = new fhir.FhirString({value: source.proxyIdentityCertificate}); }
+    if (source['proxyIdentityCertificate'] !== undefined) { this.proxyIdentityCertificate = new fhir.FhirString({value: source.proxyIdentityCertificate}, options); }
     if (source['_proxyIdentityCertificate']) {
       if (this.proxyIdentityCertificate) { this.proxyIdentityCertificate.addExtendedProperties(source._proxyIdentityCertificate!); }
-      else { this.proxyIdentityCertificate = new fhir.FhirString(source._proxyIdentityCertificate as Partial<fhir.FhirStringArgs>); }
+      else { this.proxyIdentityCertificate = new fhir.FhirString(source._proxyIdentityCertificate as Partial<fhir.FhirStringArgs>, options); }
     }
-    if (source['proxySignature']) { this.proxySignature = new fhir.Signature(source.proxySignature); }
-    if (source['sourceSignature']) { this.sourceSignature = new fhir.Signature(source.sourceSignature); }
+    if (source['proxySignature']) { this.proxySignature = new fhir.Signature(source.proxySignature, options); }
+    if (source['sourceSignature']) { this.sourceSignature = new fhir.Signature(source.sourceSignature, options); }
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -335,14 +335,14 @@ export class VerificationResultValidator extends fhir.BackboneElement {
    */
   constructor(source:Partial<VerificationResultValidatorArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['organization']) { this.organization = new fhir.Reference(source.organization); }
+    if (source['organization']) { this.organization = new fhir.Reference(source.organization, options); }
     else { this.organization = null; }
-    if (source['identityCertificate']) { this.identityCertificate = new fhir.FhirString({value: source.identityCertificate}); }
+    if (source['identityCertificate'] !== undefined) { this.identityCertificate = new fhir.FhirString({value: source.identityCertificate}, options); }
     if (source['_identityCertificate']) {
       if (this.identityCertificate) { this.identityCertificate.addExtendedProperties(source._identityCertificate!); }
-      else { this.identityCertificate = new fhir.FhirString(source._identityCertificate as Partial<fhir.FhirStringArgs>); }
+      else { this.identityCertificate = new fhir.FhirString(source._identityCertificate as Partial<fhir.FhirStringArgs>, options); }
     }
-    if (source['attestationSignature']) { this.attestationSignature = new fhir.Signature(source.attestationSignature); }
+    if (source['attestationSignature']) { this.attestationSignature = new fhir.Signature(source.attestationSignature, options); }
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -516,9 +516,9 @@ export class VerificationResult extends fhir.DomainResource {
   constructor(source:Partial<VerificationResultArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
     this.resourceType = 'VerificationResult';
-    if (source['target']) { this.target = source.target.map((x) => new fhir.Reference(x)); }
+    if (source['target']) { this.target = source.target.map((x) => new fhir.Reference(x, options)); }
     else { this.target = []; }
-    if (source['targetLocation']) { this.targetLocation = source.targetLocation.map((x) => new fhir.FhirString({value: x})); }
+    if (source['targetLocation'] !== undefined) { this.targetLocation = source.targetLocation.map((x) => new fhir.FhirString({value: x}, options)); }
     else { this.targetLocation = []; }
     if (source['_targetLocation']) {
       source._targetLocation.forEach((x,i) => {
@@ -526,37 +526,37 @@ export class VerificationResult extends fhir.DomainResource {
         else { if (x) { this.targetLocation.push(new fhir.FhirString(x as Partial<fhir.FhirStringArgs>)); } }
       });
     }
-    if (source['need']) { this.need = new fhir.CodeableConcept(source.need); }
-    if (source['status']) { this.status = new fhir.FhirCode<VerificationresultStatusCodeType>({value: source.status}); }
+    if (source['need']) { this.need = new fhir.CodeableConcept(source.need, options); }
+    if (source['status'] !== undefined) { this.status = new fhir.FhirCode<VerificationresultStatusCodeType>({value: source.status}, options); }
     else { this.status = null; }
     if (source['_status']) {
       if (this.status) { this.status.addExtendedProperties(source._status!); }
-      else { this.status = new fhir.FhirCode<VerificationresultStatusCodeType>(source._status as Partial<fhir.FhirCode>); }
+      else { this.status = new fhir.FhirCode<VerificationresultStatusCodeType>(source._status as Partial<fhir.FhirCode>, options); }
     }
-    if (source['statusDate']) { this.statusDate = new fhir.FhirDateTime({value: source.statusDate}); }
+    if (source['statusDate'] !== undefined) { this.statusDate = new fhir.FhirDateTime({value: source.statusDate}, options); }
     if (source['_statusDate']) {
       if (this.statusDate) { this.statusDate.addExtendedProperties(source._statusDate!); }
-      else { this.statusDate = new fhir.FhirDateTime(source._statusDate as Partial<fhir.FhirDateTimeArgs>); }
+      else { this.statusDate = new fhir.FhirDateTime(source._statusDate as Partial<fhir.FhirDateTimeArgs>, options); }
     }
-    if (source['validationType']) { this.validationType = new fhir.CodeableConcept(source.validationType); }
-    if (source['validationProcess']) { this.validationProcess = source.validationProcess.map((x) => new fhir.CodeableConcept(x)); }
+    if (source['validationType']) { this.validationType = new fhir.CodeableConcept(source.validationType, options); }
+    if (source['validationProcess']) { this.validationProcess = source.validationProcess.map((x) => new fhir.CodeableConcept(x, options)); }
     else { this.validationProcess = []; }
-    if (source['frequency']) { this.frequency = new fhir.Timing(source.frequency); }
-    if (source['lastPerformed']) { this.lastPerformed = new fhir.FhirDateTime({value: source.lastPerformed}); }
+    if (source['frequency']) { this.frequency = new fhir.Timing(source.frequency, options); }
+    if (source['lastPerformed'] !== undefined) { this.lastPerformed = new fhir.FhirDateTime({value: source.lastPerformed}, options); }
     if (source['_lastPerformed']) {
       if (this.lastPerformed) { this.lastPerformed.addExtendedProperties(source._lastPerformed!); }
-      else { this.lastPerformed = new fhir.FhirDateTime(source._lastPerformed as Partial<fhir.FhirDateTimeArgs>); }
+      else { this.lastPerformed = new fhir.FhirDateTime(source._lastPerformed as Partial<fhir.FhirDateTimeArgs>, options); }
     }
-    if (source['nextScheduled']) { this.nextScheduled = new fhir.FhirDate({value: source.nextScheduled}); }
+    if (source['nextScheduled'] !== undefined) { this.nextScheduled = new fhir.FhirDate({value: source.nextScheduled}, options); }
     if (source['_nextScheduled']) {
       if (this.nextScheduled) { this.nextScheduled.addExtendedProperties(source._nextScheduled!); }
-      else { this.nextScheduled = new fhir.FhirDate(source._nextScheduled as Partial<fhir.FhirDateArgs>); }
+      else { this.nextScheduled = new fhir.FhirDate(source._nextScheduled as Partial<fhir.FhirDateArgs>, options); }
     }
-    if (source['failureAction']) { this.failureAction = new fhir.CodeableConcept(source.failureAction); }
-    if (source['primarySource']) { this.primarySource = source.primarySource.map((x) => new fhir.VerificationResultPrimarySource(x)); }
+    if (source['failureAction']) { this.failureAction = new fhir.CodeableConcept(source.failureAction, options); }
+    if (source['primarySource']) { this.primarySource = source.primarySource.map((x) => new fhir.VerificationResultPrimarySource(x, options)); }
     else { this.primarySource = []; }
-    if (source['attestation']) { this.attestation = new fhir.VerificationResultAttestation(source.attestation); }
-    if (source['validator']) { this.validator = source.validator.map((x) => new fhir.VerificationResultValidator(x)); }
+    if (source['attestation']) { this.attestation = new fhir.VerificationResultAttestation(source.attestation, options); }
+    if (source['validator']) { this.validator = source.validator.map((x) => new fhir.VerificationResultValidator(x, options)); }
     else { this.validator = []; }
   }
   /**

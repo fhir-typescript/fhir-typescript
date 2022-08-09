@@ -76,14 +76,14 @@ export class PractitionerPractitionerRole extends fhir.BackboneElement {
    */
   constructor(source:Partial<PractitionerPractitionerRoleArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['managingOrganization']) { this.managingOrganization = new fhir.Reference(source.managingOrganization); }
-    if (source['role']) { this.role = new fhir.CodeableConcept(source.role); }
-    if (source['specialty']) { this.specialty = source.specialty.map((x) => new fhir.CodeableConcept(x)); }
+    if (source['managingOrganization']) { this.managingOrganization = new fhir.Reference(source.managingOrganization, options); }
+    if (source['role']) { this.role = new fhir.CodeableConcept(source.role, options); }
+    if (source['specialty']) { this.specialty = source.specialty.map((x) => new fhir.CodeableConcept(x, options)); }
     else { this.specialty = []; }
-    if (source['period']) { this.period = new fhir.Period(source.period); }
-    if (source['location']) { this.location = source.location.map((x) => new fhir.Reference(x)); }
+    if (source['period']) { this.period = new fhir.Period(source.period, options); }
+    if (source['location']) { this.location = source.location.map((x) => new fhir.Reference(x, options)); }
     else { this.location = []; }
-    if (source['healthcareService']) { this.healthcareService = source.healthcareService.map((x) => new fhir.Reference(x)); }
+    if (source['healthcareService']) { this.healthcareService = source.healthcareService.map((x) => new fhir.Reference(x, options)); }
     else { this.healthcareService = []; }
   }
   /**
@@ -152,12 +152,12 @@ export class PractitionerQualification extends fhir.BackboneElement {
    */
   constructor(source:Partial<PractitionerQualificationArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['identifier']) { this.identifier = source.identifier.map((x) => new fhir.Identifier(x)); }
+    if (source['identifier']) { this.identifier = source.identifier.map((x) => new fhir.Identifier(x, options)); }
     else { this.identifier = []; }
-    if (source['code']) { this.code = new fhir.CodeableConcept(source.code); }
+    if (source['code']) { this.code = new fhir.CodeableConcept(source.code, options); }
     else { this.code = null; }
-    if (source['period']) { this.period = new fhir.Period(source.period); }
-    if (source['issuer']) { this.issuer = new fhir.Reference(source.issuer); }
+    if (source['period']) { this.period = new fhir.Period(source.period, options); }
+    if (source['issuer']) { this.issuer = new fhir.Reference(source.issuer, options); }
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -300,35 +300,35 @@ export class Practitioner extends fhir.DomainResource {
   constructor(source:Partial<PractitionerArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
     this.resourceType = 'Practitioner';
-    if (source['identifier']) { this.identifier = source.identifier.map((x) => new fhir.Identifier(x)); }
+    if (source['identifier']) { this.identifier = source.identifier.map((x) => new fhir.Identifier(x, options)); }
     else { this.identifier = []; }
-    if (source['active']) { this.active = new fhir.FhirBoolean({value: source.active}); }
+    if (source['active'] !== undefined) { this.active = new fhir.FhirBoolean({value: source.active}, options); }
     if (source['_active']) {
       if (this.active) { this.active.addExtendedProperties(source._active!); }
-      else { this.active = new fhir.FhirBoolean(source._active as Partial<fhir.FhirBooleanArgs>); }
+      else { this.active = new fhir.FhirBoolean(source._active as Partial<fhir.FhirBooleanArgs>, options); }
     }
-    if (source['name']) { this.name = new fhir.HumanName(source.name); }
-    if (source['telecom']) { this.telecom = source.telecom.map((x) => new fhir.ContactPoint(x)); }
+    if (source['name']) { this.name = new fhir.HumanName(source.name, options); }
+    if (source['telecom']) { this.telecom = source.telecom.map((x) => new fhir.ContactPoint(x, options)); }
     else { this.telecom = []; }
-    if (source['address']) { this.address = source.address.map((x) => new fhir.Address(x)); }
+    if (source['address']) { this.address = source.address.map((x) => new fhir.Address(x, options)); }
     else { this.address = []; }
-    if (source['gender']) { this.gender = new fhir.FhirCode<AdministrativeGenderCodeType>({value: source.gender}); }
+    if (source['gender'] !== undefined) { this.gender = new fhir.FhirCode<AdministrativeGenderCodeType>({value: source.gender}, options); }
     if (source['_gender']) {
       if (this.gender) { this.gender.addExtendedProperties(source._gender!); }
-      else { this.gender = new fhir.FhirCode<AdministrativeGenderCodeType>(source._gender as Partial<fhir.FhirCode>); }
+      else { this.gender = new fhir.FhirCode<AdministrativeGenderCodeType>(source._gender as Partial<fhir.FhirCode>, options); }
     }
-    if (source['birthDate']) { this.birthDate = new fhir.FhirDate({value: source.birthDate}); }
+    if (source['birthDate'] !== undefined) { this.birthDate = new fhir.FhirDate({value: source.birthDate}, options); }
     if (source['_birthDate']) {
       if (this.birthDate) { this.birthDate.addExtendedProperties(source._birthDate!); }
-      else { this.birthDate = new fhir.FhirDate(source._birthDate as Partial<fhir.FhirDateArgs>); }
+      else { this.birthDate = new fhir.FhirDate(source._birthDate as Partial<fhir.FhirDateArgs>, options); }
     }
-    if (source['photo']) { this.photo = source.photo.map((x) => new fhir.Attachment(x)); }
+    if (source['photo']) { this.photo = source.photo.map((x) => new fhir.Attachment(x, options)); }
     else { this.photo = []; }
-    if (source['practitionerRole']) { this.practitionerRole = source.practitionerRole.map((x) => new fhir.PractitionerPractitionerRole(x)); }
+    if (source['practitionerRole']) { this.practitionerRole = source.practitionerRole.map((x) => new fhir.PractitionerPractitionerRole(x, options)); }
     else { this.practitionerRole = []; }
-    if (source['qualification']) { this.qualification = source.qualification.map((x) => new fhir.PractitionerQualification(x)); }
+    if (source['qualification']) { this.qualification = source.qualification.map((x) => new fhir.PractitionerQualification(x, options)); }
     else { this.qualification = []; }
-    if (source['communication']) { this.communication = source.communication.map((x) => new fhir.CodeableConcept(x)); }
+    if (source['communication']) { this.communication = source.communication.map((x) => new fhir.CodeableConcept(x, options)); }
     else { this.communication = []; }
   }
   /**

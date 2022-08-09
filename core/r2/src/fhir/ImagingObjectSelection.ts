@@ -48,7 +48,7 @@ export class ImagingObjectSelectionStudySeriesInstanceFrames extends fhir.Backbo
    */
   constructor(source:Partial<ImagingObjectSelectionStudySeriesInstanceFramesArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['frameNumbers']) { this.frameNumbers = source.frameNumbers.map((x) => new fhir.FhirUnsignedInt({value: x})); }
+    if (source['frameNumbers'] !== undefined) { this.frameNumbers = source.frameNumbers.map((x) => new fhir.FhirUnsignedInt({value: x}, options)); }
     else { this.frameNumbers = []; }
     if (source['_frameNumbers']) {
       source._frameNumbers.forEach((x,i) => {
@@ -56,11 +56,11 @@ export class ImagingObjectSelectionStudySeriesInstanceFrames extends fhir.Backbo
         else { if (x) { this.frameNumbers.push(new fhir.FhirUnsignedInt(x as Partial<fhir.FhirUnsignedIntArgs>)); } }
       });
     }
-    if (source['url']) { this.url = new fhir.FhirUri({value: source.url}); }
+    if (source['url'] !== undefined) { this.url = new fhir.FhirUri({value: source.url}, options); }
     else { this.url = null; }
     if (source['_url']) {
       if (this.url) { this.url.addExtendedProperties(source._url!); }
-      else { this.url = new fhir.FhirUri(source._url as Partial<fhir.FhirUriArgs>); }
+      else { this.url = new fhir.FhirUri(source._url as Partial<fhir.FhirUriArgs>, options); }
     }
   }
   /**
@@ -137,25 +137,25 @@ export class ImagingObjectSelectionStudySeriesInstance extends fhir.BackboneElem
    */
   constructor(source:Partial<ImagingObjectSelectionStudySeriesInstanceArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['sopClass']) { this.sopClass = new fhir.FhirOid({value: source.sopClass}); }
+    if (source['sopClass'] !== undefined) { this.sopClass = new fhir.FhirOid({value: source.sopClass}, options); }
     else { this.sopClass = null; }
     if (source['_sopClass']) {
       if (this.sopClass) { this.sopClass.addExtendedProperties(source._sopClass!); }
-      else { this.sopClass = new fhir.FhirOid(source._sopClass as Partial<fhir.FhirOidArgs>); }
+      else { this.sopClass = new fhir.FhirOid(source._sopClass as Partial<fhir.FhirOidArgs>, options); }
     }
-    if (source['uid']) { this.uid = new fhir.FhirOid({value: source.uid}); }
+    if (source['uid'] !== undefined) { this.uid = new fhir.FhirOid({value: source.uid}, options); }
     else { this.uid = null; }
     if (source['_uid']) {
       if (this.uid) { this.uid.addExtendedProperties(source._uid!); }
-      else { this.uid = new fhir.FhirOid(source._uid as Partial<fhir.FhirOidArgs>); }
+      else { this.uid = new fhir.FhirOid(source._uid as Partial<fhir.FhirOidArgs>, options); }
     }
-    if (source['url']) { this.url = new fhir.FhirUri({value: source.url}); }
+    if (source['url'] !== undefined) { this.url = new fhir.FhirUri({value: source.url}, options); }
     else { this.url = null; }
     if (source['_url']) {
       if (this.url) { this.url.addExtendedProperties(source._url!); }
-      else { this.url = new fhir.FhirUri(source._url as Partial<fhir.FhirUriArgs>); }
+      else { this.url = new fhir.FhirUri(source._url as Partial<fhir.FhirUriArgs>, options); }
     }
-    if (source['frames']) { this.frames = source.frames.map((x) => new fhir.ImagingObjectSelectionStudySeriesInstanceFrames(x)); }
+    if (source['frames']) { this.frames = source.frames.map((x) => new fhir.ImagingObjectSelectionStudySeriesInstanceFrames(x, options)); }
     else { this.frames = []; }
   }
   /**
@@ -222,17 +222,17 @@ export class ImagingObjectSelectionStudySeries extends fhir.BackboneElement {
    */
   constructor(source:Partial<ImagingObjectSelectionStudySeriesArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['uid']) { this.uid = new fhir.FhirOid({value: source.uid}); }
+    if (source['uid'] !== undefined) { this.uid = new fhir.FhirOid({value: source.uid}, options); }
     if (source['_uid']) {
       if (this.uid) { this.uid.addExtendedProperties(source._uid!); }
-      else { this.uid = new fhir.FhirOid(source._uid as Partial<fhir.FhirOidArgs>); }
+      else { this.uid = new fhir.FhirOid(source._uid as Partial<fhir.FhirOidArgs>, options); }
     }
-    if (source['url']) { this.url = new fhir.FhirUri({value: source.url}); }
+    if (source['url'] !== undefined) { this.url = new fhir.FhirUri({value: source.url}, options); }
     if (source['_url']) {
       if (this.url) { this.url.addExtendedProperties(source._url!); }
-      else { this.url = new fhir.FhirUri(source._url as Partial<fhir.FhirUriArgs>); }
+      else { this.url = new fhir.FhirUri(source._url as Partial<fhir.FhirUriArgs>, options); }
     }
-    if (source['instance']) { this.instance = source.instance.map((x) => new fhir.ImagingObjectSelectionStudySeriesInstance(x)); }
+    if (source['instance']) { this.instance = source.instance.map((x) => new fhir.ImagingObjectSelectionStudySeriesInstance(x, options)); }
     else { this.instance = []; }
   }
   /**
@@ -306,19 +306,19 @@ export class ImagingObjectSelectionStudy extends fhir.BackboneElement {
    */
   constructor(source:Partial<ImagingObjectSelectionStudyArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['uid']) { this.uid = new fhir.FhirOid({value: source.uid}); }
+    if (source['uid'] !== undefined) { this.uid = new fhir.FhirOid({value: source.uid}, options); }
     else { this.uid = null; }
     if (source['_uid']) {
       if (this.uid) { this.uid.addExtendedProperties(source._uid!); }
-      else { this.uid = new fhir.FhirOid(source._uid as Partial<fhir.FhirOidArgs>); }
+      else { this.uid = new fhir.FhirOid(source._uid as Partial<fhir.FhirOidArgs>, options); }
     }
-    if (source['url']) { this.url = new fhir.FhirUri({value: source.url}); }
+    if (source['url'] !== undefined) { this.url = new fhir.FhirUri({value: source.url}, options); }
     if (source['_url']) {
       if (this.url) { this.url.addExtendedProperties(source._url!); }
-      else { this.url = new fhir.FhirUri(source._url as Partial<fhir.FhirUriArgs>); }
+      else { this.url = new fhir.FhirUri(source._url as Partial<fhir.FhirUriArgs>, options); }
     }
-    if (source['imagingStudy']) { this.imagingStudy = new fhir.Reference(source.imagingStudy); }
-    if (source['series']) { this.series = source.series.map((x) => new fhir.ImagingObjectSelectionStudySeries(x)); }
+    if (source['imagingStudy']) { this.imagingStudy = new fhir.Reference(source.imagingStudy, options); }
+    if (source['series']) { this.series = source.series.map((x) => new fhir.ImagingObjectSelectionStudySeries(x, options)); }
     else { this.series = []; }
   }
   /**
@@ -430,28 +430,28 @@ export class ImagingObjectSelection extends fhir.DomainResource {
   constructor(source:Partial<ImagingObjectSelectionArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
     this.resourceType = 'ImagingObjectSelection';
-    if (source['uid']) { this.uid = new fhir.FhirOid({value: source.uid}); }
+    if (source['uid'] !== undefined) { this.uid = new fhir.FhirOid({value: source.uid}, options); }
     else { this.uid = null; }
     if (source['_uid']) {
       if (this.uid) { this.uid.addExtendedProperties(source._uid!); }
-      else { this.uid = new fhir.FhirOid(source._uid as Partial<fhir.FhirOidArgs>); }
+      else { this.uid = new fhir.FhirOid(source._uid as Partial<fhir.FhirOidArgs>, options); }
     }
-    if (source['patient']) { this.patient = new fhir.Reference(source.patient); }
+    if (source['patient']) { this.patient = new fhir.Reference(source.patient, options); }
     else { this.patient = null; }
-    if (source['title']) { this.title = new fhir.CodeableConcept(source.title); }
+    if (source['title']) { this.title = new fhir.CodeableConcept(source.title, options); }
     else { this.title = null; }
-    if (source['description']) { this.description = new fhir.FhirString({value: source.description}); }
+    if (source['description'] !== undefined) { this.description = new fhir.FhirString({value: source.description}, options); }
     if (source['_description']) {
       if (this.description) { this.description.addExtendedProperties(source._description!); }
-      else { this.description = new fhir.FhirString(source._description as Partial<fhir.FhirStringArgs>); }
+      else { this.description = new fhir.FhirString(source._description as Partial<fhir.FhirStringArgs>, options); }
     }
-    if (source['author']) { this.author = new fhir.Reference(source.author); }
-    if (source['authoringTime']) { this.authoringTime = new fhir.FhirDateTime({value: source.authoringTime}); }
+    if (source['author']) { this.author = new fhir.Reference(source.author, options); }
+    if (source['authoringTime'] !== undefined) { this.authoringTime = new fhir.FhirDateTime({value: source.authoringTime}, options); }
     if (source['_authoringTime']) {
       if (this.authoringTime) { this.authoringTime.addExtendedProperties(source._authoringTime!); }
-      else { this.authoringTime = new fhir.FhirDateTime(source._authoringTime as Partial<fhir.FhirDateTimeArgs>); }
+      else { this.authoringTime = new fhir.FhirDateTime(source._authoringTime as Partial<fhir.FhirDateTimeArgs>, options); }
     }
-    if (source['study']) { this.study = source.study.map((x) => new fhir.ImagingObjectSelectionStudy(x)); }
+    if (source['study']) { this.study = source.study.map((x) => new fhir.ImagingObjectSelectionStudy(x, options)); }
     else { this.study = []; }
   }
   /**

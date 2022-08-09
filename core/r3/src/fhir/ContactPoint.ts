@@ -88,27 +88,27 @@ export class ContactPoint extends fhir.FhirElement {
    */
   constructor(source:Partial<ContactPointArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['system']) { this.system = new fhir.FhirCode<ContactPointSystemCodeType>({value: source.system}); }
+    if (source['system'] !== undefined) { this.system = new fhir.FhirCode<ContactPointSystemCodeType>({value: source.system}, options); }
     if (source['_system']) {
       if (this.system) { this.system.addExtendedProperties(source._system!); }
-      else { this.system = new fhir.FhirCode<ContactPointSystemCodeType>(source._system as Partial<fhir.FhirCode>); }
+      else { this.system = new fhir.FhirCode<ContactPointSystemCodeType>(source._system as Partial<fhir.FhirCode>, options); }
     }
-    if (source['value']) { this.value = new fhir.FhirString({value: source.value}); }
+    if (source['value'] !== undefined) { this.value = new fhir.FhirString({value: source.value}, options); }
     if (source['_value']) {
       if (this.value) { this.value.addExtendedProperties(source._value!); }
-      else { this.value = new fhir.FhirString(source._value as Partial<fhir.FhirStringArgs>); }
+      else { this.value = new fhir.FhirString(source._value as Partial<fhir.FhirStringArgs>, options); }
     }
-    if (source['use']) { this.use = new fhir.FhirCode<ContactPointUseCodeType>({value: source.use}); }
+    if (source['use'] !== undefined) { this.use = new fhir.FhirCode<ContactPointUseCodeType>({value: source.use}, options); }
     if (source['_use']) {
       if (this.use) { this.use.addExtendedProperties(source._use!); }
-      else { this.use = new fhir.FhirCode<ContactPointUseCodeType>(source._use as Partial<fhir.FhirCode>); }
+      else { this.use = new fhir.FhirCode<ContactPointUseCodeType>(source._use as Partial<fhir.FhirCode>, options); }
     }
-    if (source['rank']) { this.rank = new fhir.FhirPositiveInt({value: source.rank}); }
+    if (source['rank'] !== undefined) { this.rank = new fhir.FhirPositiveInt({value: source.rank}, options); }
     if (source['_rank']) {
       if (this.rank) { this.rank.addExtendedProperties(source._rank!); }
-      else { this.rank = new fhir.FhirPositiveInt(source._rank as Partial<fhir.FhirPositiveIntArgs>); }
+      else { this.rank = new fhir.FhirPositiveInt(source._rank as Partial<fhir.FhirPositiveIntArgs>, options); }
     }
-    if (source['period']) { this.period = new fhir.Period(source.period); }
+    if (source['period']) { this.period = new fhir.Period(source.period, options); }
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).

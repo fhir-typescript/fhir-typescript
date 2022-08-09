@@ -109,26 +109,26 @@ export class Schedule extends fhir.DomainResource {
   constructor(source:Partial<ScheduleArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
     this.resourceType = 'Schedule';
-    if (source['identifier']) { this.identifier = source.identifier.map((x) => new fhir.Identifier(x)); }
+    if (source['identifier']) { this.identifier = source.identifier.map((x) => new fhir.Identifier(x, options)); }
     else { this.identifier = []; }
-    if (source['active']) { this.active = new fhir.FhirBoolean({value: source.active}); }
+    if (source['active'] !== undefined) { this.active = new fhir.FhirBoolean({value: source.active}, options); }
     if (source['_active']) {
       if (this.active) { this.active.addExtendedProperties(source._active!); }
-      else { this.active = new fhir.FhirBoolean(source._active as Partial<fhir.FhirBooleanArgs>); }
+      else { this.active = new fhir.FhirBoolean(source._active as Partial<fhir.FhirBooleanArgs>, options); }
     }
-    if (source['serviceCategory']) { this.serviceCategory = source.serviceCategory.map((x) => new fhir.CodeableConcept(x)); }
+    if (source['serviceCategory']) { this.serviceCategory = source.serviceCategory.map((x) => new fhir.CodeableConcept(x, options)); }
     else { this.serviceCategory = []; }
-    if (source['serviceType']) { this.serviceType = source.serviceType.map((x) => new fhir.CodeableConcept(x)); }
+    if (source['serviceType']) { this.serviceType = source.serviceType.map((x) => new fhir.CodeableConcept(x, options)); }
     else { this.serviceType = []; }
-    if (source['specialty']) { this.specialty = source.specialty.map((x) => new fhir.CodeableConcept(x)); }
+    if (source['specialty']) { this.specialty = source.specialty.map((x) => new fhir.CodeableConcept(x, options)); }
     else { this.specialty = []; }
-    if (source['actor']) { this.actor = source.actor.map((x) => new fhir.Reference(x)); }
+    if (source['actor']) { this.actor = source.actor.map((x) => new fhir.Reference(x, options)); }
     else { this.actor = []; }
-    if (source['planningHorizon']) { this.planningHorizon = new fhir.Period(source.planningHorizon); }
-    if (source['comment']) { this.comment = new fhir.FhirString({value: source.comment}); }
+    if (source['planningHorizon']) { this.planningHorizon = new fhir.Period(source.planningHorizon, options); }
+    if (source['comment'] !== undefined) { this.comment = new fhir.FhirString({value: source.comment}, options); }
     if (source['_comment']) {
       if (this.comment) { this.comment.addExtendedProperties(source._comment!); }
-      else { this.comment = new fhir.FhirString(source._comment as Partial<fhir.FhirStringArgs>); }
+      else { this.comment = new fhir.FhirString(source._comment as Partial<fhir.FhirStringArgs>, options); }
     }
   }
   /**

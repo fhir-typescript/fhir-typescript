@@ -155,28 +155,28 @@ export class Endpoint extends fhir.DomainResource {
   constructor(source:Partial<EndpointArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
     this.resourceType = 'Endpoint';
-    if (source['identifier']) { this.identifier = source.identifier.map((x) => new fhir.Identifier(x)); }
+    if (source['identifier']) { this.identifier = source.identifier.map((x) => new fhir.Identifier(x, options)); }
     else { this.identifier = []; }
-    if (source['status']) { this.status = new fhir.FhirCode<EndpointStatusCodeType>({value: source.status}); }
+    if (source['status'] !== undefined) { this.status = new fhir.FhirCode<EndpointStatusCodeType>({value: source.status}, options); }
     else { this.status = null; }
     if (source['_status']) {
       if (this.status) { this.status.addExtendedProperties(source._status!); }
-      else { this.status = new fhir.FhirCode<EndpointStatusCodeType>(source._status as Partial<fhir.FhirCode>); }
+      else { this.status = new fhir.FhirCode<EndpointStatusCodeType>(source._status as Partial<fhir.FhirCode>, options); }
     }
-    if (source['connectionType']) { this.connectionType = new fhir.Coding(source.connectionType); }
+    if (source['connectionType']) { this.connectionType = new fhir.Coding(source.connectionType, options); }
     else { this.connectionType = null; }
-    if (source['name']) { this.name = new fhir.FhirString({value: source.name}); }
+    if (source['name'] !== undefined) { this.name = new fhir.FhirString({value: source.name}, options); }
     if (source['_name']) {
       if (this.name) { this.name.addExtendedProperties(source._name!); }
-      else { this.name = new fhir.FhirString(source._name as Partial<fhir.FhirStringArgs>); }
+      else { this.name = new fhir.FhirString(source._name as Partial<fhir.FhirStringArgs>, options); }
     }
-    if (source['managingOrganization']) { this.managingOrganization = new fhir.Reference(source.managingOrganization); }
-    if (source['contact']) { this.contact = source.contact.map((x) => new fhir.ContactPoint(x)); }
+    if (source['managingOrganization']) { this.managingOrganization = new fhir.Reference(source.managingOrganization, options); }
+    if (source['contact']) { this.contact = source.contact.map((x) => new fhir.ContactPoint(x, options)); }
     else { this.contact = []; }
-    if (source['period']) { this.period = new fhir.Period(source.period); }
-    if (source['payloadType']) { this.payloadType = source.payloadType.map((x) => new fhir.CodeableConcept(x)); }
+    if (source['period']) { this.period = new fhir.Period(source.period, options); }
+    if (source['payloadType']) { this.payloadType = source.payloadType.map((x) => new fhir.CodeableConcept(x, options)); }
     else { this.payloadType = []; }
-    if (source['payloadMimeType']) { this.payloadMimeType = source.payloadMimeType.map((x) => new fhir.FhirCode({value: x})); }
+    if (source['payloadMimeType'] !== undefined) { this.payloadMimeType = source.payloadMimeType.map((x) => new fhir.FhirCode({value: x}, options)); }
     else { this.payloadMimeType = []; }
     if (source['_payloadMimeType']) {
       source._payloadMimeType.forEach((x,i) => {
@@ -184,13 +184,13 @@ export class Endpoint extends fhir.DomainResource {
         else { if (x) { this.payloadMimeType.push(new fhir.FhirCode(x as Partial<fhir.FhirCodeArgs>)); } }
       });
     }
-    if (source['address']) { this.address = new fhir.FhirUri({value: source.address}); }
+    if (source['address'] !== undefined) { this.address = new fhir.FhirUri({value: source.address}, options); }
     else { this.address = null; }
     if (source['_address']) {
       if (this.address) { this.address.addExtendedProperties(source._address!); }
-      else { this.address = new fhir.FhirUri(source._address as Partial<fhir.FhirUriArgs>); }
+      else { this.address = new fhir.FhirUri(source._address as Partial<fhir.FhirUriArgs>, options); }
     }
-    if (source['header']) { this.header = source.header.map((x) => new fhir.FhirString({value: x})); }
+    if (source['header'] !== undefined) { this.header = source.header.map((x) => new fhir.FhirString({value: x}, options)); }
     else { this.header = []; }
     if (source['_header']) {
       source._header.forEach((x,i) => {

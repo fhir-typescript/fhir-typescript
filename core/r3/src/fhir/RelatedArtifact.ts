@@ -92,29 +92,29 @@ export class RelatedArtifact extends fhir.FhirElement {
    */
   constructor(source:Partial<RelatedArtifactArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['type']) { this.type = new fhir.FhirCode<RelatedArtifactTypeCodeType>({value: source.type}); }
+    if (source['type'] !== undefined) { this.type = new fhir.FhirCode<RelatedArtifactTypeCodeType>({value: source.type}, options); }
     else { this.type = null; }
     if (source['_type']) {
       if (this.type) { this.type.addExtendedProperties(source._type!); }
-      else { this.type = new fhir.FhirCode<RelatedArtifactTypeCodeType>(source._type as Partial<fhir.FhirCode>); }
+      else { this.type = new fhir.FhirCode<RelatedArtifactTypeCodeType>(source._type as Partial<fhir.FhirCode>, options); }
     }
-    if (source['display']) { this.display = new fhir.FhirString({value: source.display}); }
+    if (source['display'] !== undefined) { this.display = new fhir.FhirString({value: source.display}, options); }
     if (source['_display']) {
       if (this.display) { this.display.addExtendedProperties(source._display!); }
-      else { this.display = new fhir.FhirString(source._display as Partial<fhir.FhirStringArgs>); }
+      else { this.display = new fhir.FhirString(source._display as Partial<fhir.FhirStringArgs>, options); }
     }
-    if (source['citation']) { this.citation = new fhir.FhirString({value: source.citation}); }
+    if (source['citation'] !== undefined) { this.citation = new fhir.FhirString({value: source.citation}, options); }
     if (source['_citation']) {
       if (this.citation) { this.citation.addExtendedProperties(source._citation!); }
-      else { this.citation = new fhir.FhirString(source._citation as Partial<fhir.FhirStringArgs>); }
+      else { this.citation = new fhir.FhirString(source._citation as Partial<fhir.FhirStringArgs>, options); }
     }
-    if (source['url']) { this.url = new fhir.FhirUri({value: source.url}); }
+    if (source['url'] !== undefined) { this.url = new fhir.FhirUri({value: source.url}, options); }
     if (source['_url']) {
       if (this.url) { this.url.addExtendedProperties(source._url!); }
-      else { this.url = new fhir.FhirUri(source._url as Partial<fhir.FhirUriArgs>); }
+      else { this.url = new fhir.FhirUri(source._url as Partial<fhir.FhirUriArgs>, options); }
     }
-    if (source['document']) { this.document = new fhir.Attachment(source.document); }
-    if (source['resource']) { this.resource = new fhir.Reference(source.resource); }
+    if (source['document']) { this.document = new fhir.Attachment(source.document, options); }
+    if (source['resource']) { this.resource = new fhir.Reference(source.resource, options); }
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).

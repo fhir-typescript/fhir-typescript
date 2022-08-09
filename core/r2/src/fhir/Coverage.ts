@@ -165,41 +165,41 @@ export class Coverage extends fhir.DomainResource {
   constructor(source:Partial<CoverageArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
     this.resourceType = 'Coverage';
-    if (source['issuer']) { this.issuer = new fhir.Reference(source.issuer); }
-    if (source['bin']) { this.bin = new fhir.Identifier(source.bin); }
-    if (source['period']) { this.period = new fhir.Period(source.period); }
-    if (source['type']) { this.type = new fhir.Coding(source.type); }
-    if (source['subscriberId']) { this.subscriberId = new fhir.Identifier(source.subscriberId); }
-    if (source['identifier']) { this.identifier = source.identifier.map((x) => new fhir.Identifier(x)); }
+    if (source['issuer']) { this.issuer = new fhir.Reference(source.issuer, options); }
+    if (source['bin']) { this.bin = new fhir.Identifier(source.bin, options); }
+    if (source['period']) { this.period = new fhir.Period(source.period, options); }
+    if (source['type']) { this.type = new fhir.Coding(source.type, options); }
+    if (source['subscriberId']) { this.subscriberId = new fhir.Identifier(source.subscriberId, options); }
+    if (source['identifier']) { this.identifier = source.identifier.map((x) => new fhir.Identifier(x, options)); }
     else { this.identifier = []; }
-    if (source['group']) { this.group = new fhir.FhirString({value: source.group}); }
+    if (source['group'] !== undefined) { this.group = new fhir.FhirString({value: source.group}, options); }
     if (source['_group']) {
       if (this.group) { this.group.addExtendedProperties(source._group!); }
-      else { this.group = new fhir.FhirString(source._group as Partial<fhir.FhirStringArgs>); }
+      else { this.group = new fhir.FhirString(source._group as Partial<fhir.FhirStringArgs>, options); }
     }
-    if (source['plan']) { this.plan = new fhir.FhirString({value: source.plan}); }
+    if (source['plan'] !== undefined) { this.plan = new fhir.FhirString({value: source.plan}, options); }
     if (source['_plan']) {
       if (this.plan) { this.plan.addExtendedProperties(source._plan!); }
-      else { this.plan = new fhir.FhirString(source._plan as Partial<fhir.FhirStringArgs>); }
+      else { this.plan = new fhir.FhirString(source._plan as Partial<fhir.FhirStringArgs>, options); }
     }
-    if (source['subPlan']) { this.subPlan = new fhir.FhirString({value: source.subPlan}); }
+    if (source['subPlan'] !== undefined) { this.subPlan = new fhir.FhirString({value: source.subPlan}, options); }
     if (source['_subPlan']) {
       if (this.subPlan) { this.subPlan.addExtendedProperties(source._subPlan!); }
-      else { this.subPlan = new fhir.FhirString(source._subPlan as Partial<fhir.FhirStringArgs>); }
+      else { this.subPlan = new fhir.FhirString(source._subPlan as Partial<fhir.FhirStringArgs>, options); }
     }
-    if (source['dependent']) { this.dependent = new fhir.FhirPositiveInt({value: source.dependent}); }
+    if (source['dependent'] !== undefined) { this.dependent = new fhir.FhirPositiveInt({value: source.dependent}, options); }
     if (source['_dependent']) {
       if (this.dependent) { this.dependent.addExtendedProperties(source._dependent!); }
-      else { this.dependent = new fhir.FhirPositiveInt(source._dependent as Partial<fhir.FhirPositiveIntArgs>); }
+      else { this.dependent = new fhir.FhirPositiveInt(source._dependent as Partial<fhir.FhirPositiveIntArgs>, options); }
     }
-    if (source['sequence']) { this.sequence = new fhir.FhirPositiveInt({value: source.sequence}); }
+    if (source['sequence'] !== undefined) { this.sequence = new fhir.FhirPositiveInt({value: source.sequence}, options); }
     if (source['_sequence']) {
       if (this.sequence) { this.sequence.addExtendedProperties(source._sequence!); }
-      else { this.sequence = new fhir.FhirPositiveInt(source._sequence as Partial<fhir.FhirPositiveIntArgs>); }
+      else { this.sequence = new fhir.FhirPositiveInt(source._sequence as Partial<fhir.FhirPositiveIntArgs>, options); }
     }
-    if (source['subscriber']) { this.subscriber = new fhir.Reference(source.subscriber); }
-    if (source['network']) { this.network = new fhir.Identifier(source.network); }
-    if (source['contract']) { this.contract = source.contract.map((x) => new fhir.Reference(x)); }
+    if (source['subscriber']) { this.subscriber = new fhir.Reference(source.subscriber, options); }
+    if (source['network']) { this.network = new fhir.Identifier(source.network, options); }
+    if (source['contract']) { this.contract = source.contract.map((x) => new fhir.Reference(x, options)); }
     else { this.contract = []; }
   }
   /**

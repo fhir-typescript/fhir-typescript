@@ -194,21 +194,21 @@ export class DeviceUseRequest extends fhir.DomainResource {
     super(source, options);
     this.resourceType = 'DeviceUseRequest';
     if (source['bodySite']) { this.bodySite = source.bodySite; }
-    else if (source['bodySiteCodeableConcept']) { this.bodySite = new fhir.CodeableConcept(source.bodySiteCodeableConcept); }
-    else if (source['bodySiteReference']) { this.bodySite = new fhir.Reference(source.bodySiteReference); }
-    if (source['status']) { this.status = new fhir.FhirCode<DeviceUseRequestStatusCodeType>({value: source.status}); }
+    else if (source['bodySiteCodeableConcept']) { this.bodySite = new fhir.CodeableConcept(source.bodySiteCodeableConcept, options); }
+    else if (source['bodySiteReference']) { this.bodySite = new fhir.Reference(source.bodySiteReference, options); }
+    if (source['status'] !== undefined) { this.status = new fhir.FhirCode<DeviceUseRequestStatusCodeType>({value: source.status}, options); }
     if (source['_status']) {
       if (this.status) { this.status.addExtendedProperties(source._status!); }
-      else { this.status = new fhir.FhirCode<DeviceUseRequestStatusCodeType>(source._status as Partial<fhir.FhirCode>); }
+      else { this.status = new fhir.FhirCode<DeviceUseRequestStatusCodeType>(source._status as Partial<fhir.FhirCode>, options); }
     }
-    if (source['device']) { this.device = new fhir.Reference(source.device); }
+    if (source['device']) { this.device = new fhir.Reference(source.device, options); }
     else { this.device = null; }
-    if (source['encounter']) { this.encounter = new fhir.Reference(source.encounter); }
-    if (source['identifier']) { this.identifier = source.identifier.map((x) => new fhir.Identifier(x)); }
+    if (source['encounter']) { this.encounter = new fhir.Reference(source.encounter, options); }
+    if (source['identifier']) { this.identifier = source.identifier.map((x) => new fhir.Identifier(x, options)); }
     else { this.identifier = []; }
-    if (source['indication']) { this.indication = source.indication.map((x) => new fhir.CodeableConcept(x)); }
+    if (source['indication']) { this.indication = source.indication.map((x) => new fhir.CodeableConcept(x, options)); }
     else { this.indication = []; }
-    if (source['notes']) { this.notes = source.notes.map((x) => new fhir.FhirString({value: x})); }
+    if (source['notes'] !== undefined) { this.notes = source.notes.map((x) => new fhir.FhirString({value: x}, options)); }
     else { this.notes = []; }
     if (source['_notes']) {
       source._notes.forEach((x,i) => {
@@ -216,28 +216,28 @@ export class DeviceUseRequest extends fhir.DomainResource {
         else { if (x) { this.notes.push(new fhir.FhirString(x as Partial<fhir.FhirStringArgs>)); } }
       });
     }
-    if (source['prnReason']) { this.prnReason = source.prnReason.map((x) => new fhir.CodeableConcept(x)); }
+    if (source['prnReason']) { this.prnReason = source.prnReason.map((x) => new fhir.CodeableConcept(x, options)); }
     else { this.prnReason = []; }
-    if (source['orderedOn']) { this.orderedOn = new fhir.FhirDateTime({value: source.orderedOn}); }
+    if (source['orderedOn'] !== undefined) { this.orderedOn = new fhir.FhirDateTime({value: source.orderedOn}, options); }
     if (source['_orderedOn']) {
       if (this.orderedOn) { this.orderedOn.addExtendedProperties(source._orderedOn!); }
-      else { this.orderedOn = new fhir.FhirDateTime(source._orderedOn as Partial<fhir.FhirDateTimeArgs>); }
+      else { this.orderedOn = new fhir.FhirDateTime(source._orderedOn as Partial<fhir.FhirDateTimeArgs>, options); }
     }
-    if (source['recordedOn']) { this.recordedOn = new fhir.FhirDateTime({value: source.recordedOn}); }
+    if (source['recordedOn'] !== undefined) { this.recordedOn = new fhir.FhirDateTime({value: source.recordedOn}, options); }
     if (source['_recordedOn']) {
       if (this.recordedOn) { this.recordedOn.addExtendedProperties(source._recordedOn!); }
-      else { this.recordedOn = new fhir.FhirDateTime(source._recordedOn as Partial<fhir.FhirDateTimeArgs>); }
+      else { this.recordedOn = new fhir.FhirDateTime(source._recordedOn as Partial<fhir.FhirDateTimeArgs>, options); }
     }
-    if (source['subject']) { this.subject = new fhir.Reference(source.subject); }
+    if (source['subject']) { this.subject = new fhir.Reference(source.subject, options); }
     else { this.subject = null; }
     if (source['timing']) { this.timing = source.timing; }
-    else if (source['timingTiming']) { this.timing = new fhir.Timing(source.timingTiming); }
-    else if (source['timingPeriod']) { this.timing = new fhir.Period(source.timingPeriod); }
-    else if (source['timingDateTime']) { this.timing = new fhir.FhirDateTime({value: source.timingDateTime}); }
-    if (source['priority']) { this.priority = new fhir.FhirCode<DeviceUseRequestPriorityCodeType>({value: source.priority}); }
+    else if (source['timingTiming']) { this.timing = new fhir.Timing(source.timingTiming, options); }
+    else if (source['timingPeriod']) { this.timing = new fhir.Period(source.timingPeriod, options); }
+    else if (source['timingDateTime'] !== undefined) { this.timing = new fhir.FhirDateTime({value: source.timingDateTime}, options); }
+    if (source['priority'] !== undefined) { this.priority = new fhir.FhirCode<DeviceUseRequestPriorityCodeType>({value: source.priority}, options); }
     if (source['_priority']) {
       if (this.priority) { this.priority.addExtendedProperties(source._priority!); }
-      else { this.priority = new fhir.FhirCode<DeviceUseRequestPriorityCodeType>(source._priority as Partial<fhir.FhirCode>); }
+      else { this.priority = new fhir.FhirCode<DeviceUseRequestPriorityCodeType>(source._priority as Partial<fhir.FhirCode>, options); }
     }
   }
   /**

@@ -133,25 +133,25 @@ export class SupplyDelivery extends fhir.DomainResource {
   constructor(source:Partial<SupplyDeliveryArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
     this.resourceType = 'SupplyDelivery';
-    if (source['identifier']) { this.identifier = new fhir.Identifier(source.identifier); }
-    if (source['status']) { this.status = new fhir.FhirCode<SupplydeliveryStatusCodeType>({value: source.status}); }
+    if (source['identifier']) { this.identifier = new fhir.Identifier(source.identifier, options); }
+    if (source['status'] !== undefined) { this.status = new fhir.FhirCode<SupplydeliveryStatusCodeType>({value: source.status}, options); }
     if (source['_status']) {
       if (this.status) { this.status.addExtendedProperties(source._status!); }
-      else { this.status = new fhir.FhirCode<SupplydeliveryStatusCodeType>(source._status as Partial<fhir.FhirCode>); }
+      else { this.status = new fhir.FhirCode<SupplydeliveryStatusCodeType>(source._status as Partial<fhir.FhirCode>, options); }
     }
-    if (source['patient']) { this.patient = new fhir.Reference(source.patient); }
-    if (source['type']) { this.type = new fhir.CodeableConcept(source.type); }
-    if (source['quantity']) { this.quantity = new fhir.Quantity(source.quantity); }
-    if (source['suppliedItem']) { this.suppliedItem = new fhir.Reference(source.suppliedItem); }
-    if (source['supplier']) { this.supplier = new fhir.Reference(source.supplier); }
-    if (source['whenPrepared']) { this.whenPrepared = new fhir.Period(source.whenPrepared); }
-    if (source['time']) { this.time = new fhir.FhirDateTime({value: source.time}); }
+    if (source['patient']) { this.patient = new fhir.Reference(source.patient, options); }
+    if (source['type']) { this.type = new fhir.CodeableConcept(source.type, options); }
+    if (source['quantity']) { this.quantity = new fhir.Quantity(source.quantity, options); }
+    if (source['suppliedItem']) { this.suppliedItem = new fhir.Reference(source.suppliedItem, options); }
+    if (source['supplier']) { this.supplier = new fhir.Reference(source.supplier, options); }
+    if (source['whenPrepared']) { this.whenPrepared = new fhir.Period(source.whenPrepared, options); }
+    if (source['time'] !== undefined) { this.time = new fhir.FhirDateTime({value: source.time}, options); }
     if (source['_time']) {
       if (this.time) { this.time.addExtendedProperties(source._time!); }
-      else { this.time = new fhir.FhirDateTime(source._time as Partial<fhir.FhirDateTimeArgs>); }
+      else { this.time = new fhir.FhirDateTime(source._time as Partial<fhir.FhirDateTimeArgs>, options); }
     }
-    if (source['destination']) { this.destination = new fhir.Reference(source.destination); }
-    if (source['receiver']) { this.receiver = source.receiver.map((x) => new fhir.Reference(x)); }
+    if (source['destination']) { this.destination = new fhir.Reference(source.destination, options); }
+    if (source['receiver']) { this.receiver = source.receiver.map((x) => new fhir.Reference(x, options)); }
     else { this.receiver = []; }
   }
   /**

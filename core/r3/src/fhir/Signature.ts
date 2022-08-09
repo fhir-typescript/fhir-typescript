@@ -112,30 +112,30 @@ export class Signature extends fhir.FhirElement {
    */
   constructor(source:Partial<SignatureArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['type']) { this.type = source.type.map((x) => new fhir.Coding(x)); }
+    if (source['type']) { this.type = source.type.map((x) => new fhir.Coding(x, options)); }
     else { this.type = []; }
-    if (source['when']) { this.when = new fhir.FhirInstant({value: source.when}); }
+    if (source['when'] !== undefined) { this.when = new fhir.FhirInstant({value: source.when}, options); }
     else { this.when = null; }
     if (source['_when']) {
       if (this.when) { this.when.addExtendedProperties(source._when!); }
-      else { this.when = new fhir.FhirInstant(source._when as Partial<fhir.FhirInstantArgs>); }
+      else { this.when = new fhir.FhirInstant(source._when as Partial<fhir.FhirInstantArgs>, options); }
     }
     if (source['who']) { this.who = source.who; }
-    else if (source['whoUri']) { this.who = new fhir.FhirUri({value: source.whoUri}); }
-    else if (source['whoReference']) { this.who = new fhir.Reference(source.whoReference); }
+    else if (source['whoUri'] !== undefined) { this.who = new fhir.FhirUri({value: source.whoUri}, options); }
+    else if (source['whoReference']) { this.who = new fhir.Reference(source.whoReference, options); }
     else { this.who = null; }
     if (source['onBehalfOf']) { this.onBehalfOf = source.onBehalfOf; }
-    else if (source['onBehalfOfUri']) { this.onBehalfOf = new fhir.FhirUri({value: source.onBehalfOfUri}); }
-    else if (source['onBehalfOfReference']) { this.onBehalfOf = new fhir.Reference(source.onBehalfOfReference); }
-    if (source['contentType']) { this.contentType = new fhir.FhirCode({value: source.contentType}); }
+    else if (source['onBehalfOfUri'] !== undefined) { this.onBehalfOf = new fhir.FhirUri({value: source.onBehalfOfUri}, options); }
+    else if (source['onBehalfOfReference']) { this.onBehalfOf = new fhir.Reference(source.onBehalfOfReference, options); }
+    if (source['contentType'] !== undefined) { this.contentType = new fhir.FhirCode({value: source.contentType}, options); }
     if (source['_contentType']) {
       if (this.contentType) { this.contentType.addExtendedProperties(source._contentType!); }
-      else { this.contentType = new fhir.FhirCode(source._contentType as Partial<fhir.FhirCodeArgs>); }
+      else { this.contentType = new fhir.FhirCode(source._contentType as Partial<fhir.FhirCodeArgs>, options); }
     }
-    if (source['blob']) { this.blob = new fhir.FhirBase64Binary({value: source.blob}); }
+    if (source['blob'] !== undefined) { this.blob = new fhir.FhirBase64Binary({value: source.blob}, options); }
     if (source['_blob']) {
       if (this.blob) { this.blob.addExtendedProperties(source._blob!); }
-      else { this.blob = new fhir.FhirBase64Binary(source._blob as Partial<fhir.FhirBase64BinaryArgs>); }
+      else { this.blob = new fhir.FhirBase64Binary(source._blob as Partial<fhir.FhirBase64BinaryArgs>, options); }
     }
   }
   /**

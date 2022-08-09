@@ -92,18 +92,18 @@ export class PaymentReconciliationDetail extends fhir.BackboneElement {
    */
   constructor(source:Partial<PaymentReconciliationDetailArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['type']) { this.type = new fhir.Coding(source.type); }
+    if (source['type']) { this.type = new fhir.Coding(source.type, options); }
     else { this.type = null; }
-    if (source['request']) { this.request = new fhir.Reference(source.request); }
-    if (source['responce']) { this.responce = new fhir.Reference(source.responce); }
-    if (source['submitter']) { this.submitter = new fhir.Reference(source.submitter); }
-    if (source['payee']) { this.payee = new fhir.Reference(source.payee); }
-    if (source['date']) { this.date = new fhir.FhirDate({value: source.date}); }
+    if (source['request']) { this.request = new fhir.Reference(source.request, options); }
+    if (source['responce']) { this.responce = new fhir.Reference(source.responce, options); }
+    if (source['submitter']) { this.submitter = new fhir.Reference(source.submitter, options); }
+    if (source['payee']) { this.payee = new fhir.Reference(source.payee, options); }
+    if (source['date'] !== undefined) { this.date = new fhir.FhirDate({value: source.date}, options); }
     if (source['_date']) {
       if (this.date) { this.date.addExtendedProperties(source._date!); }
-      else { this.date = new fhir.FhirDate(source._date as Partial<fhir.FhirDateArgs>); }
+      else { this.date = new fhir.FhirDate(source._date as Partial<fhir.FhirDateArgs>, options); }
     }
-    if (source['amount']) { this.amount = new fhir.Quantity(source.amount); }
+    if (source['amount']) { this.amount = new fhir.Quantity(source.amount, options); }
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -160,11 +160,11 @@ export class PaymentReconciliationNote extends fhir.BackboneElement {
    */
   constructor(source:Partial<PaymentReconciliationNoteArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['type']) { this.type = new fhir.Coding(source.type); }
-    if (source['text']) { this.text = new fhir.FhirString({value: source.text}); }
+    if (source['type']) { this.type = new fhir.Coding(source.type, options); }
+    if (source['text'] !== undefined) { this.text = new fhir.FhirString({value: source.text}, options); }
     if (source['_text']) {
       if (this.text) { this.text.addExtendedProperties(source._text!); }
-      else { this.text = new fhir.FhirString(source._text as Partial<fhir.FhirStringArgs>); }
+      else { this.text = new fhir.FhirString(source._text as Partial<fhir.FhirStringArgs>, options); }
     }
   }
   /**
@@ -338,36 +338,36 @@ export class PaymentReconciliation extends fhir.DomainResource {
   constructor(source:Partial<PaymentReconciliationArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
     this.resourceType = 'PaymentReconciliation';
-    if (source['identifier']) { this.identifier = source.identifier.map((x) => new fhir.Identifier(x)); }
+    if (source['identifier']) { this.identifier = source.identifier.map((x) => new fhir.Identifier(x, options)); }
     else { this.identifier = []; }
-    if (source['request']) { this.request = new fhir.Reference(source.request); }
-    if (source['outcome']) { this.outcome = new fhir.FhirCode<RemittanceOutcomeCodeType>({value: source.outcome}); }
+    if (source['request']) { this.request = new fhir.Reference(source.request, options); }
+    if (source['outcome'] !== undefined) { this.outcome = new fhir.FhirCode<RemittanceOutcomeCodeType>({value: source.outcome}, options); }
     if (source['_outcome']) {
       if (this.outcome) { this.outcome.addExtendedProperties(source._outcome!); }
-      else { this.outcome = new fhir.FhirCode<RemittanceOutcomeCodeType>(source._outcome as Partial<fhir.FhirCode>); }
+      else { this.outcome = new fhir.FhirCode<RemittanceOutcomeCodeType>(source._outcome as Partial<fhir.FhirCode>, options); }
     }
-    if (source['disposition']) { this.disposition = new fhir.FhirString({value: source.disposition}); }
+    if (source['disposition'] !== undefined) { this.disposition = new fhir.FhirString({value: source.disposition}, options); }
     if (source['_disposition']) {
       if (this.disposition) { this.disposition.addExtendedProperties(source._disposition!); }
-      else { this.disposition = new fhir.FhirString(source._disposition as Partial<fhir.FhirStringArgs>); }
+      else { this.disposition = new fhir.FhirString(source._disposition as Partial<fhir.FhirStringArgs>, options); }
     }
-    if (source['ruleset']) { this.ruleset = new fhir.Coding(source.ruleset); }
-    if (source['originalRuleset']) { this.originalRuleset = new fhir.Coding(source.originalRuleset); }
-    if (source['created']) { this.created = new fhir.FhirDateTime({value: source.created}); }
+    if (source['ruleset']) { this.ruleset = new fhir.Coding(source.ruleset, options); }
+    if (source['originalRuleset']) { this.originalRuleset = new fhir.Coding(source.originalRuleset, options); }
+    if (source['created'] !== undefined) { this.created = new fhir.FhirDateTime({value: source.created}, options); }
     if (source['_created']) {
       if (this.created) { this.created.addExtendedProperties(source._created!); }
-      else { this.created = new fhir.FhirDateTime(source._created as Partial<fhir.FhirDateTimeArgs>); }
+      else { this.created = new fhir.FhirDateTime(source._created as Partial<fhir.FhirDateTimeArgs>, options); }
     }
-    if (source['period']) { this.period = new fhir.Period(source.period); }
-    if (source['organization']) { this.organization = new fhir.Reference(source.organization); }
-    if (source['requestProvider']) { this.requestProvider = new fhir.Reference(source.requestProvider); }
-    if (source['requestOrganization']) { this.requestOrganization = new fhir.Reference(source.requestOrganization); }
-    if (source['detail']) { this.detail = source.detail.map((x) => new fhir.PaymentReconciliationDetail(x)); }
+    if (source['period']) { this.period = new fhir.Period(source.period, options); }
+    if (source['organization']) { this.organization = new fhir.Reference(source.organization, options); }
+    if (source['requestProvider']) { this.requestProvider = new fhir.Reference(source.requestProvider, options); }
+    if (source['requestOrganization']) { this.requestOrganization = new fhir.Reference(source.requestOrganization, options); }
+    if (source['detail']) { this.detail = source.detail.map((x) => new fhir.PaymentReconciliationDetail(x, options)); }
     else { this.detail = []; }
-    if (source['form']) { this.form = new fhir.Coding(source.form); }
-    if (source['total']) { this.total = new fhir.Quantity(source.total); }
+    if (source['form']) { this.form = new fhir.Coding(source.form, options); }
+    if (source['total']) { this.total = new fhir.Quantity(source.total, options); }
     else { this.total = null; }
-    if (source['note']) { this.note = source.note.map((x) => new fhir.PaymentReconciliationNote(x)); }
+    if (source['note']) { this.note = source.note.map((x) => new fhir.PaymentReconciliationNote(x, options)); }
     else { this.note = []; }
   }
   /**

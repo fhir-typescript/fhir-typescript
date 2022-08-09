@@ -132,26 +132,26 @@ export class AllergyIntoleranceReaction extends fhir.BackboneElement {
    */
   constructor(source:Partial<AllergyIntoleranceReactionArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['substance']) { this.substance = new fhir.CodeableConcept(source.substance); }
-    if (source['manifestation']) { this.manifestation = source.manifestation.map((x) => new fhir.CodeableConcept(x)); }
+    if (source['substance']) { this.substance = new fhir.CodeableConcept(source.substance, options); }
+    if (source['manifestation']) { this.manifestation = source.manifestation.map((x) => new fhir.CodeableConcept(x, options)); }
     else { this.manifestation = []; }
-    if (source['description']) { this.description = new fhir.FhirString({value: source.description}); }
+    if (source['description'] !== undefined) { this.description = new fhir.FhirString({value: source.description}, options); }
     if (source['_description']) {
       if (this.description) { this.description.addExtendedProperties(source._description!); }
-      else { this.description = new fhir.FhirString(source._description as Partial<fhir.FhirStringArgs>); }
+      else { this.description = new fhir.FhirString(source._description as Partial<fhir.FhirStringArgs>, options); }
     }
-    if (source['onset']) { this.onset = new fhir.FhirDateTime({value: source.onset}); }
+    if (source['onset'] !== undefined) { this.onset = new fhir.FhirDateTime({value: source.onset}, options); }
     if (source['_onset']) {
       if (this.onset) { this.onset.addExtendedProperties(source._onset!); }
-      else { this.onset = new fhir.FhirDateTime(source._onset as Partial<fhir.FhirDateTimeArgs>); }
+      else { this.onset = new fhir.FhirDateTime(source._onset as Partial<fhir.FhirDateTimeArgs>, options); }
     }
-    if (source['severity']) { this.severity = new fhir.FhirCode<ReactionEventSeverityCodeType>({value: source.severity}); }
+    if (source['severity'] !== undefined) { this.severity = new fhir.FhirCode<ReactionEventSeverityCodeType>({value: source.severity}, options); }
     if (source['_severity']) {
       if (this.severity) { this.severity.addExtendedProperties(source._severity!); }
-      else { this.severity = new fhir.FhirCode<ReactionEventSeverityCodeType>(source._severity as Partial<fhir.FhirCode>); }
+      else { this.severity = new fhir.FhirCode<ReactionEventSeverityCodeType>(source._severity as Partial<fhir.FhirCode>, options); }
     }
-    if (source['exposureRoute']) { this.exposureRoute = new fhir.CodeableConcept(source.exposureRoute); }
-    if (source['note']) { this.note = source.note.map((x) => new fhir.Annotation(x)); }
+    if (source['exposureRoute']) { this.exposureRoute = new fhir.CodeableConcept(source.exposureRoute, options); }
+    if (source['note']) { this.note = source.note.map((x) => new fhir.Annotation(x, options)); }
     else { this.note = []; }
   }
   /**
@@ -376,25 +376,25 @@ export class AllergyIntolerance extends fhir.DomainResource {
   constructor(source:Partial<AllergyIntoleranceArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
     this.resourceType = 'AllergyIntolerance';
-    if (source['identifier']) { this.identifier = source.identifier.map((x) => new fhir.Identifier(x)); }
+    if (source['identifier']) { this.identifier = source.identifier.map((x) => new fhir.Identifier(x, options)); }
     else { this.identifier = []; }
-    if (source['clinicalStatus']) { this.clinicalStatus = new fhir.FhirCode<AllergyClinicalStatusCodeType>({value: source.clinicalStatus}); }
+    if (source['clinicalStatus'] !== undefined) { this.clinicalStatus = new fhir.FhirCode<AllergyClinicalStatusCodeType>({value: source.clinicalStatus}, options); }
     if (source['_clinicalStatus']) {
       if (this.clinicalStatus) { this.clinicalStatus.addExtendedProperties(source._clinicalStatus!); }
-      else { this.clinicalStatus = new fhir.FhirCode<AllergyClinicalStatusCodeType>(source._clinicalStatus as Partial<fhir.FhirCode>); }
+      else { this.clinicalStatus = new fhir.FhirCode<AllergyClinicalStatusCodeType>(source._clinicalStatus as Partial<fhir.FhirCode>, options); }
     }
-    if (source['verificationStatus']) { this.verificationStatus = new fhir.FhirCode<AllergyVerificationStatusCodeType>({value: source.verificationStatus}); }
+    if (source['verificationStatus'] !== undefined) { this.verificationStatus = new fhir.FhirCode<AllergyVerificationStatusCodeType>({value: source.verificationStatus}, options); }
     else { this.verificationStatus = null; }
     if (source['_verificationStatus']) {
       if (this.verificationStatus) { this.verificationStatus.addExtendedProperties(source._verificationStatus!); }
-      else { this.verificationStatus = new fhir.FhirCode<AllergyVerificationStatusCodeType>(source._verificationStatus as Partial<fhir.FhirCode>); }
+      else { this.verificationStatus = new fhir.FhirCode<AllergyVerificationStatusCodeType>(source._verificationStatus as Partial<fhir.FhirCode>, options); }
     }
-    if (source['type']) { this.type = new fhir.FhirCode<AllergyIntoleranceTypeCodeType>({value: source.type}); }
+    if (source['type'] !== undefined) { this.type = new fhir.FhirCode<AllergyIntoleranceTypeCodeType>({value: source.type}, options); }
     if (source['_type']) {
       if (this.type) { this.type.addExtendedProperties(source._type!); }
-      else { this.type = new fhir.FhirCode<AllergyIntoleranceTypeCodeType>(source._type as Partial<fhir.FhirCode>); }
+      else { this.type = new fhir.FhirCode<AllergyIntoleranceTypeCodeType>(source._type as Partial<fhir.FhirCode>, options); }
     }
-    if (source['category']) { this.category = source.category.map((x) => new fhir.FhirCode<AllergyIntoleranceCategoryCodeType>({value: x})); }
+    if (source['category'] !== undefined) { this.category = source.category.map((x) => new fhir.FhirCode<AllergyIntoleranceCategoryCodeType>({value: x}, options)); }
     else { this.category = []; }
     if (source['_category']) {
       source._category.forEach((x,i) => {
@@ -402,35 +402,35 @@ export class AllergyIntolerance extends fhir.DomainResource {
         else { if (x) { this.category.push(new fhir.FhirCode<AllergyIntoleranceCategoryCodeType>(x as Partial<fhir.FhirCode>)); } }
       });
     }
-    if (source['criticality']) { this.criticality = new fhir.FhirCode<AllergyIntoleranceCriticalityCodeType>({value: source.criticality}); }
+    if (source['criticality'] !== undefined) { this.criticality = new fhir.FhirCode<AllergyIntoleranceCriticalityCodeType>({value: source.criticality}, options); }
     if (source['_criticality']) {
       if (this.criticality) { this.criticality.addExtendedProperties(source._criticality!); }
-      else { this.criticality = new fhir.FhirCode<AllergyIntoleranceCriticalityCodeType>(source._criticality as Partial<fhir.FhirCode>); }
+      else { this.criticality = new fhir.FhirCode<AllergyIntoleranceCriticalityCodeType>(source._criticality as Partial<fhir.FhirCode>, options); }
     }
-    if (source['code']) { this.code = new fhir.CodeableConcept(source.code); }
-    if (source['patient']) { this.patient = new fhir.Reference(source.patient); }
+    if (source['code']) { this.code = new fhir.CodeableConcept(source.code, options); }
+    if (source['patient']) { this.patient = new fhir.Reference(source.patient, options); }
     else { this.patient = null; }
     if (source['onset']) { this.onset = source.onset; }
-    else if (source['onsetDateTime']) { this.onset = new fhir.FhirDateTime({value: source.onsetDateTime}); }
-    else if (source['onsetAge']) { this.onset = new fhir.Age(source.onsetAge); }
-    else if (source['onsetPeriod']) { this.onset = new fhir.Period(source.onsetPeriod); }
-    else if (source['onsetRange']) { this.onset = new fhir.Range(source.onsetRange); }
-    else if (source['onsetString']) { this.onset = new fhir.FhirString({value: source.onsetString}); }
-    if (source['assertedDate']) { this.assertedDate = new fhir.FhirDateTime({value: source.assertedDate}); }
+    else if (source['onsetDateTime'] !== undefined) { this.onset = new fhir.FhirDateTime({value: source.onsetDateTime}, options); }
+    else if (source['onsetAge']) { this.onset = new fhir.Age(source.onsetAge, options); }
+    else if (source['onsetPeriod']) { this.onset = new fhir.Period(source.onsetPeriod, options); }
+    else if (source['onsetRange']) { this.onset = new fhir.Range(source.onsetRange, options); }
+    else if (source['onsetString'] !== undefined) { this.onset = new fhir.FhirString({value: source.onsetString}, options); }
+    if (source['assertedDate'] !== undefined) { this.assertedDate = new fhir.FhirDateTime({value: source.assertedDate}, options); }
     if (source['_assertedDate']) {
       if (this.assertedDate) { this.assertedDate.addExtendedProperties(source._assertedDate!); }
-      else { this.assertedDate = new fhir.FhirDateTime(source._assertedDate as Partial<fhir.FhirDateTimeArgs>); }
+      else { this.assertedDate = new fhir.FhirDateTime(source._assertedDate as Partial<fhir.FhirDateTimeArgs>, options); }
     }
-    if (source['recorder']) { this.recorder = new fhir.Reference(source.recorder); }
-    if (source['asserter']) { this.asserter = new fhir.Reference(source.asserter); }
-    if (source['lastOccurrence']) { this.lastOccurrence = new fhir.FhirDateTime({value: source.lastOccurrence}); }
+    if (source['recorder']) { this.recorder = new fhir.Reference(source.recorder, options); }
+    if (source['asserter']) { this.asserter = new fhir.Reference(source.asserter, options); }
+    if (source['lastOccurrence'] !== undefined) { this.lastOccurrence = new fhir.FhirDateTime({value: source.lastOccurrence}, options); }
     if (source['_lastOccurrence']) {
       if (this.lastOccurrence) { this.lastOccurrence.addExtendedProperties(source._lastOccurrence!); }
-      else { this.lastOccurrence = new fhir.FhirDateTime(source._lastOccurrence as Partial<fhir.FhirDateTimeArgs>); }
+      else { this.lastOccurrence = new fhir.FhirDateTime(source._lastOccurrence as Partial<fhir.FhirDateTimeArgs>, options); }
     }
-    if (source['note']) { this.note = source.note.map((x) => new fhir.Annotation(x)); }
+    if (source['note']) { this.note = source.note.map((x) => new fhir.Annotation(x, options)); }
     else { this.note = []; }
-    if (source['reaction']) { this.reaction = source.reaction.map((x) => new fhir.AllergyIntoleranceReaction(x)); }
+    if (source['reaction']) { this.reaction = source.reaction.map((x) => new fhir.AllergyIntoleranceReaction(x, options)); }
     else { this.reaction = []; }
   }
   /**

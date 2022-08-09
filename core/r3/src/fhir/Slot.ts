@@ -161,43 +161,43 @@ export class Slot extends fhir.DomainResource {
   constructor(source:Partial<SlotArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
     this.resourceType = 'Slot';
-    if (source['identifier']) { this.identifier = source.identifier.map((x) => new fhir.Identifier(x)); }
+    if (source['identifier']) { this.identifier = source.identifier.map((x) => new fhir.Identifier(x, options)); }
     else { this.identifier = []; }
-    if (source['serviceCategory']) { this.serviceCategory = new fhir.CodeableConcept(source.serviceCategory); }
-    if (source['serviceType']) { this.serviceType = source.serviceType.map((x) => new fhir.CodeableConcept(x)); }
+    if (source['serviceCategory']) { this.serviceCategory = new fhir.CodeableConcept(source.serviceCategory, options); }
+    if (source['serviceType']) { this.serviceType = source.serviceType.map((x) => new fhir.CodeableConcept(x, options)); }
     else { this.serviceType = []; }
-    if (source['specialty']) { this.specialty = source.specialty.map((x) => new fhir.CodeableConcept(x)); }
+    if (source['specialty']) { this.specialty = source.specialty.map((x) => new fhir.CodeableConcept(x, options)); }
     else { this.specialty = []; }
-    if (source['appointmentType']) { this.appointmentType = new fhir.CodeableConcept(source.appointmentType); }
-    if (source['schedule']) { this.schedule = new fhir.Reference(source.schedule); }
+    if (source['appointmentType']) { this.appointmentType = new fhir.CodeableConcept(source.appointmentType, options); }
+    if (source['schedule']) { this.schedule = new fhir.Reference(source.schedule, options); }
     else { this.schedule = null; }
-    if (source['status']) { this.status = new fhir.FhirCode<SlotstatusCodeType>({value: source.status}); }
+    if (source['status'] !== undefined) { this.status = new fhir.FhirCode<SlotstatusCodeType>({value: source.status}, options); }
     else { this.status = null; }
     if (source['_status']) {
       if (this.status) { this.status.addExtendedProperties(source._status!); }
-      else { this.status = new fhir.FhirCode<SlotstatusCodeType>(source._status as Partial<fhir.FhirCode>); }
+      else { this.status = new fhir.FhirCode<SlotstatusCodeType>(source._status as Partial<fhir.FhirCode>, options); }
     }
-    if (source['start']) { this.start = new fhir.FhirInstant({value: source.start}); }
+    if (source['start'] !== undefined) { this.start = new fhir.FhirInstant({value: source.start}, options); }
     else { this.start = null; }
     if (source['_start']) {
       if (this.start) { this.start.addExtendedProperties(source._start!); }
-      else { this.start = new fhir.FhirInstant(source._start as Partial<fhir.FhirInstantArgs>); }
+      else { this.start = new fhir.FhirInstant(source._start as Partial<fhir.FhirInstantArgs>, options); }
     }
-    if (source['end']) { this.end = new fhir.FhirInstant({value: source.end}); }
+    if (source['end'] !== undefined) { this.end = new fhir.FhirInstant({value: source.end}, options); }
     else { this.end = null; }
     if (source['_end']) {
       if (this.end) { this.end.addExtendedProperties(source._end!); }
-      else { this.end = new fhir.FhirInstant(source._end as Partial<fhir.FhirInstantArgs>); }
+      else { this.end = new fhir.FhirInstant(source._end as Partial<fhir.FhirInstantArgs>, options); }
     }
-    if (source['overbooked']) { this.overbooked = new fhir.FhirBoolean({value: source.overbooked}); }
+    if (source['overbooked'] !== undefined) { this.overbooked = new fhir.FhirBoolean({value: source.overbooked}, options); }
     if (source['_overbooked']) {
       if (this.overbooked) { this.overbooked.addExtendedProperties(source._overbooked!); }
-      else { this.overbooked = new fhir.FhirBoolean(source._overbooked as Partial<fhir.FhirBooleanArgs>); }
+      else { this.overbooked = new fhir.FhirBoolean(source._overbooked as Partial<fhir.FhirBooleanArgs>, options); }
     }
-    if (source['comment']) { this.comment = new fhir.FhirString({value: source.comment}); }
+    if (source['comment'] !== undefined) { this.comment = new fhir.FhirString({value: source.comment}, options); }
     if (source['_comment']) {
       if (this.comment) { this.comment.addExtendedProperties(source._comment!); }
-      else { this.comment = new fhir.FhirString(source._comment as Partial<fhir.FhirStringArgs>); }
+      else { this.comment = new fhir.FhirString(source._comment as Partial<fhir.FhirStringArgs>, options); }
     }
   }
   /**

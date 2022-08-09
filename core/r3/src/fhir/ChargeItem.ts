@@ -56,8 +56,8 @@ export class ChargeItemParticipant extends fhir.BackboneElement {
    */
   constructor(source:Partial<ChargeItemParticipantArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['role']) { this.role = new fhir.CodeableConcept(source.role); }
-    if (source['actor']) { this.actor = new fhir.Reference(source.actor); }
+    if (source['role']) { this.role = new fhir.CodeableConcept(source.role, options); }
+    if (source['actor']) { this.actor = new fhir.Reference(source.actor, options); }
     else { this.actor = null; }
   }
   /**
@@ -321,8 +321,8 @@ export class ChargeItem extends fhir.DomainResource {
   constructor(source:Partial<ChargeItemArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
     this.resourceType = 'ChargeItem';
-    if (source['identifier']) { this.identifier = new fhir.Identifier(source.identifier); }
-    if (source['definition']) { this.definition = source.definition.map((x) => new fhir.FhirUri({value: x})); }
+    if (source['identifier']) { this.identifier = new fhir.Identifier(source.identifier, options); }
+    if (source['definition'] !== undefined) { this.definition = source.definition.map((x) => new fhir.FhirUri({value: x}, options)); }
     else { this.definition = []; }
     if (source['_definition']) {
       source._definition.forEach((x,i) => {
@@ -330,56 +330,56 @@ export class ChargeItem extends fhir.DomainResource {
         else { if (x) { this.definition.push(new fhir.FhirUri(x as Partial<fhir.FhirUriArgs>)); } }
       });
     }
-    if (source['status']) { this.status = new fhir.FhirCode<ChargeitemStatusCodeType>({value: source.status}); }
+    if (source['status'] !== undefined) { this.status = new fhir.FhirCode<ChargeitemStatusCodeType>({value: source.status}, options); }
     else { this.status = null; }
     if (source['_status']) {
       if (this.status) { this.status.addExtendedProperties(source._status!); }
-      else { this.status = new fhir.FhirCode<ChargeitemStatusCodeType>(source._status as Partial<fhir.FhirCode>); }
+      else { this.status = new fhir.FhirCode<ChargeitemStatusCodeType>(source._status as Partial<fhir.FhirCode>, options); }
     }
-    if (source['partOf']) { this.partOf = source.partOf.map((x) => new fhir.Reference(x)); }
+    if (source['partOf']) { this.partOf = source.partOf.map((x) => new fhir.Reference(x, options)); }
     else { this.partOf = []; }
-    if (source['code']) { this.code = new fhir.CodeableConcept(source.code); }
+    if (source['code']) { this.code = new fhir.CodeableConcept(source.code, options); }
     else { this.code = null; }
-    if (source['subject']) { this.subject = new fhir.Reference(source.subject); }
+    if (source['subject']) { this.subject = new fhir.Reference(source.subject, options); }
     else { this.subject = null; }
-    if (source['context']) { this.context = new fhir.Reference(source.context); }
+    if (source['context']) { this.context = new fhir.Reference(source.context, options); }
     if (source['occurrence']) { this.occurrence = source.occurrence; }
-    else if (source['occurrenceDateTime']) { this.occurrence = new fhir.FhirDateTime({value: source.occurrenceDateTime}); }
-    else if (source['occurrencePeriod']) { this.occurrence = new fhir.Period(source.occurrencePeriod); }
-    else if (source['occurrenceTiming']) { this.occurrence = new fhir.Timing(source.occurrenceTiming); }
-    if (source['participant']) { this.participant = source.participant.map((x) => new fhir.ChargeItemParticipant(x)); }
+    else if (source['occurrenceDateTime'] !== undefined) { this.occurrence = new fhir.FhirDateTime({value: source.occurrenceDateTime}, options); }
+    else if (source['occurrencePeriod']) { this.occurrence = new fhir.Period(source.occurrencePeriod, options); }
+    else if (source['occurrenceTiming']) { this.occurrence = new fhir.Timing(source.occurrenceTiming, options); }
+    if (source['participant']) { this.participant = source.participant.map((x) => new fhir.ChargeItemParticipant(x, options)); }
     else { this.participant = []; }
-    if (source['performingOrganization']) { this.performingOrganization = new fhir.Reference(source.performingOrganization); }
-    if (source['requestingOrganization']) { this.requestingOrganization = new fhir.Reference(source.requestingOrganization); }
-    if (source['quantity']) { this.quantity = new fhir.Quantity(source.quantity); }
-    if (source['bodysite']) { this.bodysite = source.bodysite.map((x) => new fhir.CodeableConcept(x)); }
+    if (source['performingOrganization']) { this.performingOrganization = new fhir.Reference(source.performingOrganization, options); }
+    if (source['requestingOrganization']) { this.requestingOrganization = new fhir.Reference(source.requestingOrganization, options); }
+    if (source['quantity']) { this.quantity = new fhir.Quantity(source.quantity, options); }
+    if (source['bodysite']) { this.bodysite = source.bodysite.map((x) => new fhir.CodeableConcept(x, options)); }
     else { this.bodysite = []; }
-    if (source['factorOverride']) { this.factorOverride = new fhir.FhirDecimal({value: source.factorOverride}); }
+    if (source['factorOverride'] !== undefined) { this.factorOverride = new fhir.FhirDecimal({value: source.factorOverride}, options); }
     if (source['_factorOverride']) {
       if (this.factorOverride) { this.factorOverride.addExtendedProperties(source._factorOverride!); }
-      else { this.factorOverride = new fhir.FhirDecimal(source._factorOverride as Partial<fhir.FhirDecimalArgs>); }
+      else { this.factorOverride = new fhir.FhirDecimal(source._factorOverride as Partial<fhir.FhirDecimalArgs>, options); }
     }
-    if (source['priceOverride']) { this.priceOverride = new fhir.Money(source.priceOverride); }
-    if (source['overrideReason']) { this.overrideReason = new fhir.FhirString({value: source.overrideReason}); }
+    if (source['priceOverride']) { this.priceOverride = new fhir.Money(source.priceOverride, options); }
+    if (source['overrideReason'] !== undefined) { this.overrideReason = new fhir.FhirString({value: source.overrideReason}, options); }
     if (source['_overrideReason']) {
       if (this.overrideReason) { this.overrideReason.addExtendedProperties(source._overrideReason!); }
-      else { this.overrideReason = new fhir.FhirString(source._overrideReason as Partial<fhir.FhirStringArgs>); }
+      else { this.overrideReason = new fhir.FhirString(source._overrideReason as Partial<fhir.FhirStringArgs>, options); }
     }
-    if (source['enterer']) { this.enterer = new fhir.Reference(source.enterer); }
-    if (source['enteredDate']) { this.enteredDate = new fhir.FhirDateTime({value: source.enteredDate}); }
+    if (source['enterer']) { this.enterer = new fhir.Reference(source.enterer, options); }
+    if (source['enteredDate'] !== undefined) { this.enteredDate = new fhir.FhirDateTime({value: source.enteredDate}, options); }
     if (source['_enteredDate']) {
       if (this.enteredDate) { this.enteredDate.addExtendedProperties(source._enteredDate!); }
-      else { this.enteredDate = new fhir.FhirDateTime(source._enteredDate as Partial<fhir.FhirDateTimeArgs>); }
+      else { this.enteredDate = new fhir.FhirDateTime(source._enteredDate as Partial<fhir.FhirDateTimeArgs>, options); }
     }
-    if (source['reason']) { this.reason = source.reason.map((x) => new fhir.CodeableConcept(x)); }
+    if (source['reason']) { this.reason = source.reason.map((x) => new fhir.CodeableConcept(x, options)); }
     else { this.reason = []; }
-    if (source['service']) { this.service = source.service.map((x) => new fhir.Reference(x)); }
+    if (source['service']) { this.service = source.service.map((x) => new fhir.Reference(x, options)); }
     else { this.service = []; }
-    if (source['account']) { this.account = source.account.map((x) => new fhir.Reference(x)); }
+    if (source['account']) { this.account = source.account.map((x) => new fhir.Reference(x, options)); }
     else { this.account = []; }
-    if (source['note']) { this.note = source.note.map((x) => new fhir.Annotation(x)); }
+    if (source['note']) { this.note = source.note.map((x) => new fhir.Annotation(x, options)); }
     else { this.note = []; }
-    if (source['supportingInformation']) { this.supportingInformation = source.supportingInformation.map((x) => new fhir.Reference(x)); }
+    if (source['supportingInformation']) { this.supportingInformation = source.supportingInformation.map((x) => new fhir.Reference(x, options)); }
     else { this.supportingInformation = []; }
   }
   /**

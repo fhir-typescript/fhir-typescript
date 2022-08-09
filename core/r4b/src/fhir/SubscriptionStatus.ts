@@ -76,19 +76,19 @@ export class SubscriptionStatusNotificationEvent extends fhir.BackboneElement {
    */
   constructor(source:Partial<SubscriptionStatusNotificationEventArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['eventNumber']) { this.eventNumber = new fhir.FhirString({value: source.eventNumber}); }
+    if (source['eventNumber'] !== undefined) { this.eventNumber = new fhir.FhirString({value: source.eventNumber}, options); }
     else { this.eventNumber = null; }
     if (source['_eventNumber']) {
       if (this.eventNumber) { this.eventNumber.addExtendedProperties(source._eventNumber!); }
-      else { this.eventNumber = new fhir.FhirString(source._eventNumber as Partial<fhir.FhirStringArgs>); }
+      else { this.eventNumber = new fhir.FhirString(source._eventNumber as Partial<fhir.FhirStringArgs>, options); }
     }
-    if (source['timestamp']) { this.timestamp = new fhir.FhirInstant({value: source.timestamp}); }
+    if (source['timestamp'] !== undefined) { this.timestamp = new fhir.FhirInstant({value: source.timestamp}, options); }
     if (source['_timestamp']) {
       if (this.timestamp) { this.timestamp.addExtendedProperties(source._timestamp!); }
-      else { this.timestamp = new fhir.FhirInstant(source._timestamp as Partial<fhir.FhirInstantArgs>); }
+      else { this.timestamp = new fhir.FhirInstant(source._timestamp as Partial<fhir.FhirInstantArgs>, options); }
     }
-    if (source['focus']) { this.focus = new fhir.Reference(source.focus); }
-    if (source['additionalContext']) { this.additionalContext = source.additionalContext.map((x) => new fhir.Reference(x)); }
+    if (source['focus']) { this.focus = new fhir.Reference(source.focus, options); }
+    if (source['additionalContext']) { this.additionalContext = source.additionalContext.map((x) => new fhir.Reference(x, options)); }
     else { this.additionalContext = []; }
   }
   /**
@@ -204,32 +204,32 @@ export class SubscriptionStatus extends fhir.DomainResource {
   constructor(source:Partial<SubscriptionStatusArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
     this.resourceType = 'SubscriptionStatus';
-    if (source['status']) { this.status = new fhir.FhirCode<SubscriptionStatusCodeType>({value: source.status}); }
+    if (source['status'] !== undefined) { this.status = new fhir.FhirCode<SubscriptionStatusCodeType>({value: source.status}, options); }
     if (source['_status']) {
       if (this.status) { this.status.addExtendedProperties(source._status!); }
-      else { this.status = new fhir.FhirCode<SubscriptionStatusCodeType>(source._status as Partial<fhir.FhirCode>); }
+      else { this.status = new fhir.FhirCode<SubscriptionStatusCodeType>(source._status as Partial<fhir.FhirCode>, options); }
     }
-    if (source['type']) { this.type = new fhir.FhirCode<SubscriptionNotificationTypeCodeType>({value: source.type}); }
+    if (source['type'] !== undefined) { this.type = new fhir.FhirCode<SubscriptionNotificationTypeCodeType>({value: source.type}, options); }
     else { this.type = null; }
     if (source['_type']) {
       if (this.type) { this.type.addExtendedProperties(source._type!); }
-      else { this.type = new fhir.FhirCode<SubscriptionNotificationTypeCodeType>(source._type as Partial<fhir.FhirCode>); }
+      else { this.type = new fhir.FhirCode<SubscriptionNotificationTypeCodeType>(source._type as Partial<fhir.FhirCode>, options); }
     }
-    if (source['eventsSinceSubscriptionStart']) { this.eventsSinceSubscriptionStart = new fhir.FhirString({value: source.eventsSinceSubscriptionStart}); }
+    if (source['eventsSinceSubscriptionStart'] !== undefined) { this.eventsSinceSubscriptionStart = new fhir.FhirString({value: source.eventsSinceSubscriptionStart}, options); }
     if (source['_eventsSinceSubscriptionStart']) {
       if (this.eventsSinceSubscriptionStart) { this.eventsSinceSubscriptionStart.addExtendedProperties(source._eventsSinceSubscriptionStart!); }
-      else { this.eventsSinceSubscriptionStart = new fhir.FhirString(source._eventsSinceSubscriptionStart as Partial<fhir.FhirStringArgs>); }
+      else { this.eventsSinceSubscriptionStart = new fhir.FhirString(source._eventsSinceSubscriptionStart as Partial<fhir.FhirStringArgs>, options); }
     }
-    if (source['notificationEvent']) { this.notificationEvent = source.notificationEvent.map((x) => new fhir.SubscriptionStatusNotificationEvent(x)); }
+    if (source['notificationEvent']) { this.notificationEvent = source.notificationEvent.map((x) => new fhir.SubscriptionStatusNotificationEvent(x, options)); }
     else { this.notificationEvent = []; }
-    if (source['subscription']) { this.subscription = new fhir.Reference(source.subscription); }
+    if (source['subscription']) { this.subscription = new fhir.Reference(source.subscription, options); }
     else { this.subscription = null; }
-    if (source['topic']) { this.topic = new fhir.FhirCanonical({value: source.topic}); }
+    if (source['topic'] !== undefined) { this.topic = new fhir.FhirCanonical({value: source.topic}, options); }
     if (source['_topic']) {
       if (this.topic) { this.topic.addExtendedProperties(source._topic!); }
-      else { this.topic = new fhir.FhirCanonical(source._topic as Partial<fhir.FhirCanonicalArgs>); }
+      else { this.topic = new fhir.FhirCanonical(source._topic as Partial<fhir.FhirCanonicalArgs>, options); }
     }
-    if (source['error']) { this.error = source.error.map((x) => new fhir.CodeableConcept(x)); }
+    if (source['error']) { this.error = source.error.map((x) => new fhir.CodeableConcept(x, options)); }
     else { this.error = []; }
   }
   /**

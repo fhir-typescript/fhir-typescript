@@ -77,3 +77,16 @@ test('generated', () => {
   }
   //expect(issues.length).toBe(0);
 });
+
+let sourceValues:string[] = [];
+sourceValues.push('a');
+sourceValues.push('b');
+sourceValues.push('c');
+
+test.each(sourceValues)('testdyn %s', (val:string) => {
+  expect(val).toBe('b');
+})
+
+// test.each([['a', 0], ['b', 1], ['c', 2], ['d', 1], ['e', 1]])('test value %s', (letter:string, val:number) => {
+//   expect(val).toBe(1);
+// });

@@ -48,8 +48,8 @@ export class ConditionStage extends fhir.BackboneElement {
    */
   constructor(source:Partial<ConditionStageArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['summary']) { this.summary = new fhir.CodeableConcept(source.summary); }
-    if (source['assessment']) { this.assessment = source.assessment.map((x) => new fhir.Reference(x)); }
+    if (source['summary']) { this.summary = new fhir.CodeableConcept(source.summary, options); }
+    if (source['assessment']) { this.assessment = source.assessment.map((x) => new fhir.Reference(x, options)); }
     else { this.assessment = []; }
   }
   /**
@@ -98,8 +98,8 @@ export class ConditionEvidence extends fhir.BackboneElement {
    */
   constructor(source:Partial<ConditionEvidenceArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['code']) { this.code = new fhir.CodeableConcept(source.code); }
-    if (source['detail']) { this.detail = source.detail.map((x) => new fhir.Reference(x)); }
+    if (source['code']) { this.code = new fhir.CodeableConcept(source.code, options); }
+    if (source['detail']) { this.detail = source.detail.map((x) => new fhir.Reference(x, options)); }
     else { this.detail = []; }
   }
   /**
@@ -337,54 +337,54 @@ export class Condition extends fhir.DomainResource {
   constructor(source:Partial<ConditionArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
     this.resourceType = 'Condition';
-    if (source['identifier']) { this.identifier = source.identifier.map((x) => new fhir.Identifier(x)); }
+    if (source['identifier']) { this.identifier = source.identifier.map((x) => new fhir.Identifier(x, options)); }
     else { this.identifier = []; }
-    if (source['patient']) { this.patient = new fhir.Reference(source.patient); }
+    if (source['patient']) { this.patient = new fhir.Reference(source.patient, options); }
     else { this.patient = null; }
-    if (source['encounter']) { this.encounter = new fhir.Reference(source.encounter); }
-    if (source['asserter']) { this.asserter = new fhir.Reference(source.asserter); }
-    if (source['dateRecorded']) { this.dateRecorded = new fhir.FhirDate({value: source.dateRecorded}); }
+    if (source['encounter']) { this.encounter = new fhir.Reference(source.encounter, options); }
+    if (source['asserter']) { this.asserter = new fhir.Reference(source.asserter, options); }
+    if (source['dateRecorded'] !== undefined) { this.dateRecorded = new fhir.FhirDate({value: source.dateRecorded}, options); }
     if (source['_dateRecorded']) {
       if (this.dateRecorded) { this.dateRecorded.addExtendedProperties(source._dateRecorded!); }
-      else { this.dateRecorded = new fhir.FhirDate(source._dateRecorded as Partial<fhir.FhirDateArgs>); }
+      else { this.dateRecorded = new fhir.FhirDate(source._dateRecorded as Partial<fhir.FhirDateArgs>, options); }
     }
-    if (source['code']) { this.code = new fhir.CodeableConcept(source.code); }
+    if (source['code']) { this.code = new fhir.CodeableConcept(source.code, options); }
     else { this.code = null; }
-    if (source['category']) { this.category = new fhir.CodeableConcept(source.category); }
-    if (source['clinicalStatus']) { this.clinicalStatus = new fhir.FhirCode({value: source.clinicalStatus}); }
+    if (source['category']) { this.category = new fhir.CodeableConcept(source.category, options); }
+    if (source['clinicalStatus'] !== undefined) { this.clinicalStatus = new fhir.FhirCode({value: source.clinicalStatus}, options); }
     if (source['_clinicalStatus']) {
       if (this.clinicalStatus) { this.clinicalStatus.addExtendedProperties(source._clinicalStatus!); }
-      else { this.clinicalStatus = new fhir.FhirCode(source._clinicalStatus as Partial<fhir.FhirCodeArgs>); }
+      else { this.clinicalStatus = new fhir.FhirCode(source._clinicalStatus as Partial<fhir.FhirCodeArgs>, options); }
     }
-    if (source['verificationStatus']) { this.verificationStatus = new fhir.FhirCode<ConditionVerStatusCodeType>({value: source.verificationStatus}); }
+    if (source['verificationStatus'] !== undefined) { this.verificationStatus = new fhir.FhirCode<ConditionVerStatusCodeType>({value: source.verificationStatus}, options); }
     else { this.verificationStatus = null; }
     if (source['_verificationStatus']) {
       if (this.verificationStatus) { this.verificationStatus.addExtendedProperties(source._verificationStatus!); }
-      else { this.verificationStatus = new fhir.FhirCode<ConditionVerStatusCodeType>(source._verificationStatus as Partial<fhir.FhirCode>); }
+      else { this.verificationStatus = new fhir.FhirCode<ConditionVerStatusCodeType>(source._verificationStatus as Partial<fhir.FhirCode>, options); }
     }
-    if (source['severity']) { this.severity = new fhir.CodeableConcept(source.severity); }
+    if (source['severity']) { this.severity = new fhir.CodeableConcept(source.severity, options); }
     if (source['onset']) { this.onset = source.onset; }
-    else if (source['onsetDateTime']) { this.onset = new fhir.FhirDateTime({value: source.onsetDateTime}); }
-    else if (source['onsetQuantity']) { this.onset = new fhir.Quantity(source.onsetQuantity); }
-    else if (source['onsetPeriod']) { this.onset = new fhir.Period(source.onsetPeriod); }
-    else if (source['onsetRange']) { this.onset = new fhir.Range(source.onsetRange); }
-    else if (source['onsetString']) { this.onset = new fhir.FhirString({value: source.onsetString}); }
+    else if (source['onsetDateTime'] !== undefined) { this.onset = new fhir.FhirDateTime({value: source.onsetDateTime}, options); }
+    else if (source['onsetQuantity']) { this.onset = new fhir.Quantity(source.onsetQuantity, options); }
+    else if (source['onsetPeriod']) { this.onset = new fhir.Period(source.onsetPeriod, options); }
+    else if (source['onsetRange']) { this.onset = new fhir.Range(source.onsetRange, options); }
+    else if (source['onsetString'] !== undefined) { this.onset = new fhir.FhirString({value: source.onsetString}, options); }
     if (source['abatement']) { this.abatement = source.abatement; }
-    else if (source['abatementDateTime']) { this.abatement = new fhir.FhirDateTime({value: source.abatementDateTime}); }
-    else if (source['abatementQuantity']) { this.abatement = new fhir.Quantity(source.abatementQuantity); }
-    else if (source['abatementBoolean']) { this.abatement = new fhir.FhirBoolean({value: source.abatementBoolean}); }
-    else if (source['abatementPeriod']) { this.abatement = new fhir.Period(source.abatementPeriod); }
-    else if (source['abatementRange']) { this.abatement = new fhir.Range(source.abatementRange); }
-    else if (source['abatementString']) { this.abatement = new fhir.FhirString({value: source.abatementString}); }
-    if (source['stage']) { this.stage = new fhir.ConditionStage(source.stage); }
-    if (source['evidence']) { this.evidence = source.evidence.map((x) => new fhir.ConditionEvidence(x)); }
+    else if (source['abatementDateTime'] !== undefined) { this.abatement = new fhir.FhirDateTime({value: source.abatementDateTime}, options); }
+    else if (source['abatementQuantity']) { this.abatement = new fhir.Quantity(source.abatementQuantity, options); }
+    else if (source['abatementBoolean'] !== undefined) { this.abatement = new fhir.FhirBoolean({value: source.abatementBoolean}, options); }
+    else if (source['abatementPeriod']) { this.abatement = new fhir.Period(source.abatementPeriod, options); }
+    else if (source['abatementRange']) { this.abatement = new fhir.Range(source.abatementRange, options); }
+    else if (source['abatementString'] !== undefined) { this.abatement = new fhir.FhirString({value: source.abatementString}, options); }
+    if (source['stage']) { this.stage = new fhir.ConditionStage(source.stage, options); }
+    if (source['evidence']) { this.evidence = source.evidence.map((x) => new fhir.ConditionEvidence(x, options)); }
     else { this.evidence = []; }
-    if (source['bodySite']) { this.bodySite = source.bodySite.map((x) => new fhir.CodeableConcept(x)); }
+    if (source['bodySite']) { this.bodySite = source.bodySite.map((x) => new fhir.CodeableConcept(x, options)); }
     else { this.bodySite = []; }
-    if (source['notes']) { this.notes = new fhir.FhirString({value: source.notes}); }
+    if (source['notes'] !== undefined) { this.notes = new fhir.FhirString({value: source.notes}, options); }
     if (source['_notes']) {
       if (this.notes) { this.notes.addExtendedProperties(source._notes!); }
-      else { this.notes = new fhir.FhirString(source._notes as Partial<fhir.FhirStringArgs>); }
+      else { this.notes = new fhir.FhirString(source._notes as Partial<fhir.FhirStringArgs>, options); }
     }
   }
   /**

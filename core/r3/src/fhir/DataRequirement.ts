@@ -88,16 +88,16 @@ export class DataRequirementCodeFilter extends fhir.FhirElement {
    */
   constructor(source:Partial<DataRequirementCodeFilterArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['path']) { this.path = new fhir.FhirString({value: source.path}); }
+    if (source['path'] !== undefined) { this.path = new fhir.FhirString({value: source.path}, options); }
     else { this.path = null; }
     if (source['_path']) {
       if (this.path) { this.path.addExtendedProperties(source._path!); }
-      else { this.path = new fhir.FhirString(source._path as Partial<fhir.FhirStringArgs>); }
+      else { this.path = new fhir.FhirString(source._path as Partial<fhir.FhirStringArgs>, options); }
     }
     if (source['valueSet']) { this.valueSet = source.valueSet; }
-    else if (source['valueSetString']) { this.valueSet = new fhir.FhirString({value: source.valueSetString}); }
-    else if (source['valueSetReference']) { this.valueSet = new fhir.Reference(source.valueSetReference); }
-    if (source['valueCode']) { this.valueCode = source.valueCode.map((x) => new fhir.FhirCode({value: x})); }
+    else if (source['valueSetString'] !== undefined) { this.valueSet = new fhir.FhirString({value: source.valueSetString}, options); }
+    else if (source['valueSetReference']) { this.valueSet = new fhir.Reference(source.valueSetReference, options); }
+    if (source['valueCode'] !== undefined) { this.valueCode = source.valueCode.map((x) => new fhir.FhirCode({value: x}, options)); }
     else { this.valueCode = []; }
     if (source['_valueCode']) {
       source._valueCode.forEach((x,i) => {
@@ -105,9 +105,9 @@ export class DataRequirementCodeFilter extends fhir.FhirElement {
         else { if (x) { this.valueCode.push(new fhir.FhirCode(x as Partial<fhir.FhirCodeArgs>)); } }
       });
     }
-    if (source['valueCoding']) { this.valueCoding = source.valueCoding.map((x) => new fhir.Coding(x)); }
+    if (source['valueCoding']) { this.valueCoding = source.valueCoding.map((x) => new fhir.Coding(x, options)); }
     else { this.valueCoding = []; }
-    if (source['valueCodeableConcept']) { this.valueCodeableConcept = source.valueCodeableConcept.map((x) => new fhir.CodeableConcept(x)); }
+    if (source['valueCodeableConcept']) { this.valueCodeableConcept = source.valueCodeableConcept.map((x) => new fhir.CodeableConcept(x, options)); }
     else { this.valueCodeableConcept = []; }
   }
   /**
@@ -179,16 +179,16 @@ export class DataRequirementDateFilter extends fhir.FhirElement {
    */
   constructor(source:Partial<DataRequirementDateFilterArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['path']) { this.path = new fhir.FhirString({value: source.path}); }
+    if (source['path'] !== undefined) { this.path = new fhir.FhirString({value: source.path}, options); }
     else { this.path = null; }
     if (source['_path']) {
       if (this.path) { this.path.addExtendedProperties(source._path!); }
-      else { this.path = new fhir.FhirString(source._path as Partial<fhir.FhirStringArgs>); }
+      else { this.path = new fhir.FhirString(source._path as Partial<fhir.FhirStringArgs>, options); }
     }
     if (source['value']) { this.value = source.value; }
-    else if (source['valueDateTime']) { this.value = new fhir.FhirDateTime({value: source.valueDateTime}); }
-    else if (source['valuePeriod']) { this.value = new fhir.Period(source.valuePeriod); }
-    else if (source['valueDuration']) { this.value = new fhir.Duration(source.valueDuration); }
+    else if (source['valueDateTime'] !== undefined) { this.value = new fhir.FhirDateTime({value: source.valueDateTime}, options); }
+    else if (source['valuePeriod']) { this.value = new fhir.Period(source.valuePeriod, options); }
+    else if (source['valueDuration']) { this.value = new fhir.Duration(source.valueDuration, options); }
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -272,13 +272,13 @@ export class DataRequirement extends fhir.FhirElement {
    */
   constructor(source:Partial<DataRequirementArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['type']) { this.type = new fhir.FhirCode({value: source.type}); }
+    if (source['type'] !== undefined) { this.type = new fhir.FhirCode({value: source.type}, options); }
     else { this.type = null; }
     if (source['_type']) {
       if (this.type) { this.type.addExtendedProperties(source._type!); }
-      else { this.type = new fhir.FhirCode(source._type as Partial<fhir.FhirCodeArgs>); }
+      else { this.type = new fhir.FhirCode(source._type as Partial<fhir.FhirCodeArgs>, options); }
     }
-    if (source['profile']) { this.profile = source.profile.map((x) => new fhir.FhirUri({value: x})); }
+    if (source['profile'] !== undefined) { this.profile = source.profile.map((x) => new fhir.FhirUri({value: x}, options)); }
     else { this.profile = []; }
     if (source['_profile']) {
       source._profile.forEach((x,i) => {
@@ -286,7 +286,7 @@ export class DataRequirement extends fhir.FhirElement {
         else { if (x) { this.profile.push(new fhir.FhirUri(x as Partial<fhir.FhirUriArgs>)); } }
       });
     }
-    if (source['mustSupport']) { this.mustSupport = source.mustSupport.map((x) => new fhir.FhirString({value: x})); }
+    if (source['mustSupport'] !== undefined) { this.mustSupport = source.mustSupport.map((x) => new fhir.FhirString({value: x}, options)); }
     else { this.mustSupport = []; }
     if (source['_mustSupport']) {
       source._mustSupport.forEach((x,i) => {
@@ -294,9 +294,9 @@ export class DataRequirement extends fhir.FhirElement {
         else { if (x) { this.mustSupport.push(new fhir.FhirString(x as Partial<fhir.FhirStringArgs>)); } }
       });
     }
-    if (source['codeFilter']) { this.codeFilter = source.codeFilter.map((x) => new fhir.DataRequirementCodeFilter(x)); }
+    if (source['codeFilter']) { this.codeFilter = source.codeFilter.map((x) => new fhir.DataRequirementCodeFilter(x, options)); }
     else { this.codeFilter = []; }
-    if (source['dateFilter']) { this.dateFilter = source.dateFilter.map((x) => new fhir.DataRequirementDateFilter(x)); }
+    if (source['dateFilter']) { this.dateFilter = source.dateFilter.map((x) => new fhir.DataRequirementDateFilter(x, options)); }
     else { this.dateFilter = []; }
   }
   /**

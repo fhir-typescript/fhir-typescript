@@ -44,8 +44,8 @@ export class ProcedurePerformer extends fhir.BackboneElement {
    */
   constructor(source:Partial<ProcedurePerformerArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['actor']) { this.actor = new fhir.Reference(source.actor); }
-    if (source['role']) { this.role = new fhir.CodeableConcept(source.role); }
+    if (source['actor']) { this.actor = new fhir.Reference(source.actor, options); }
+    if (source['role']) { this.role = new fhir.CodeableConcept(source.role, options); }
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -93,8 +93,8 @@ export class ProcedureFocalDevice extends fhir.BackboneElement {
    */
   constructor(source:Partial<ProcedureFocalDeviceArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['action']) { this.action = new fhir.CodeableConcept(source.action); }
-    if (source['manipulated']) { this.manipulated = new fhir.Reference(source.manipulated); }
+    if (source['action']) { this.action = new fhir.CodeableConcept(source.action, options); }
+    if (source['manipulated']) { this.manipulated = new fhir.Reference(source.manipulated, options); }
     else { this.manipulated = null; }
   }
   /**
@@ -336,51 +336,51 @@ export class Procedure extends fhir.DomainResource {
   constructor(source:Partial<ProcedureArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
     this.resourceType = 'Procedure';
-    if (source['identifier']) { this.identifier = source.identifier.map((x) => new fhir.Identifier(x)); }
+    if (source['identifier']) { this.identifier = source.identifier.map((x) => new fhir.Identifier(x, options)); }
     else { this.identifier = []; }
-    if (source['subject']) { this.subject = new fhir.Reference(source.subject); }
+    if (source['subject']) { this.subject = new fhir.Reference(source.subject, options); }
     else { this.subject = null; }
-    if (source['status']) { this.status = new fhir.FhirCode<ProcedureStatusCodeType>({value: source.status}); }
+    if (source['status'] !== undefined) { this.status = new fhir.FhirCode<ProcedureStatusCodeType>({value: source.status}, options); }
     else { this.status = null; }
     if (source['_status']) {
       if (this.status) { this.status.addExtendedProperties(source._status!); }
-      else { this.status = new fhir.FhirCode<ProcedureStatusCodeType>(source._status as Partial<fhir.FhirCode>); }
+      else { this.status = new fhir.FhirCode<ProcedureStatusCodeType>(source._status as Partial<fhir.FhirCode>, options); }
     }
-    if (source['category']) { this.category = new fhir.CodeableConcept(source.category); }
-    if (source['code']) { this.code = new fhir.CodeableConcept(source.code); }
+    if (source['category']) { this.category = new fhir.CodeableConcept(source.category, options); }
+    if (source['code']) { this.code = new fhir.CodeableConcept(source.code, options); }
     else { this.code = null; }
-    if (source['notPerformed']) { this.notPerformed = new fhir.FhirBoolean({value: source.notPerformed}); }
+    if (source['notPerformed'] !== undefined) { this.notPerformed = new fhir.FhirBoolean({value: source.notPerformed}, options); }
     if (source['_notPerformed']) {
       if (this.notPerformed) { this.notPerformed.addExtendedProperties(source._notPerformed!); }
-      else { this.notPerformed = new fhir.FhirBoolean(source._notPerformed as Partial<fhir.FhirBooleanArgs>); }
+      else { this.notPerformed = new fhir.FhirBoolean(source._notPerformed as Partial<fhir.FhirBooleanArgs>, options); }
     }
-    if (source['reasonNotPerformed']) { this.reasonNotPerformed = source.reasonNotPerformed.map((x) => new fhir.CodeableConcept(x)); }
+    if (source['reasonNotPerformed']) { this.reasonNotPerformed = source.reasonNotPerformed.map((x) => new fhir.CodeableConcept(x, options)); }
     else { this.reasonNotPerformed = []; }
-    if (source['bodySite']) { this.bodySite = source.bodySite.map((x) => new fhir.CodeableConcept(x)); }
+    if (source['bodySite']) { this.bodySite = source.bodySite.map((x) => new fhir.CodeableConcept(x, options)); }
     else { this.bodySite = []; }
     if (source['reason']) { this.reason = source.reason; }
-    else if (source['reasonCodeableConcept']) { this.reason = new fhir.CodeableConcept(source.reasonCodeableConcept); }
-    else if (source['reasonReference']) { this.reason = new fhir.Reference(source.reasonReference); }
-    if (source['performer']) { this.performer = source.performer.map((x) => new fhir.ProcedurePerformer(x)); }
+    else if (source['reasonCodeableConcept']) { this.reason = new fhir.CodeableConcept(source.reasonCodeableConcept, options); }
+    else if (source['reasonReference']) { this.reason = new fhir.Reference(source.reasonReference, options); }
+    if (source['performer']) { this.performer = source.performer.map((x) => new fhir.ProcedurePerformer(x, options)); }
     else { this.performer = []; }
     if (source['performed']) { this.performed = source.performed; }
-    else if (source['performedDateTime']) { this.performed = new fhir.FhirDateTime({value: source.performedDateTime}); }
-    else if (source['performedPeriod']) { this.performed = new fhir.Period(source.performedPeriod); }
-    if (source['encounter']) { this.encounter = new fhir.Reference(source.encounter); }
-    if (source['location']) { this.location = new fhir.Reference(source.location); }
-    if (source['outcome']) { this.outcome = new fhir.CodeableConcept(source.outcome); }
-    if (source['report']) { this.report = source.report.map((x) => new fhir.Reference(x)); }
+    else if (source['performedDateTime'] !== undefined) { this.performed = new fhir.FhirDateTime({value: source.performedDateTime}, options); }
+    else if (source['performedPeriod']) { this.performed = new fhir.Period(source.performedPeriod, options); }
+    if (source['encounter']) { this.encounter = new fhir.Reference(source.encounter, options); }
+    if (source['location']) { this.location = new fhir.Reference(source.location, options); }
+    if (source['outcome']) { this.outcome = new fhir.CodeableConcept(source.outcome, options); }
+    if (source['report']) { this.report = source.report.map((x) => new fhir.Reference(x, options)); }
     else { this.report = []; }
-    if (source['complication']) { this.complication = source.complication.map((x) => new fhir.CodeableConcept(x)); }
+    if (source['complication']) { this.complication = source.complication.map((x) => new fhir.CodeableConcept(x, options)); }
     else { this.complication = []; }
-    if (source['followUp']) { this.followUp = source.followUp.map((x) => new fhir.CodeableConcept(x)); }
+    if (source['followUp']) { this.followUp = source.followUp.map((x) => new fhir.CodeableConcept(x, options)); }
     else { this.followUp = []; }
-    if (source['request']) { this.request = new fhir.Reference(source.request); }
-    if (source['notes']) { this.notes = source.notes.map((x) => new fhir.Annotation(x)); }
+    if (source['request']) { this.request = new fhir.Reference(source.request, options); }
+    if (source['notes']) { this.notes = source.notes.map((x) => new fhir.Annotation(x, options)); }
     else { this.notes = []; }
-    if (source['focalDevice']) { this.focalDevice = source.focalDevice.map((x) => new fhir.ProcedureFocalDevice(x)); }
+    if (source['focalDevice']) { this.focalDevice = source.focalDevice.map((x) => new fhir.ProcedureFocalDevice(x, options)); }
     else { this.focalDevice = []; }
-    if (source['used']) { this.used = source.used.map((x) => new fhir.Reference(x)); }
+    if (source['used']) { this.used = source.used.map((x) => new fhir.Reference(x, options)); }
     else { this.used = []; }
   }
   /**

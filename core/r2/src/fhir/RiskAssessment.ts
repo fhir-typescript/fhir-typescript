@@ -100,24 +100,24 @@ export class RiskAssessmentPrediction extends fhir.BackboneElement {
    */
   constructor(source:Partial<RiskAssessmentPredictionArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['outcome']) { this.outcome = new fhir.CodeableConcept(source.outcome); }
+    if (source['outcome']) { this.outcome = new fhir.CodeableConcept(source.outcome, options); }
     else { this.outcome = null; }
     if (source['probability']) { this.probability = source.probability; }
-    else if (source['probabilityDecimal']) { this.probability = new fhir.FhirDecimal({value: source.probabilityDecimal}); }
-    else if (source['probabilityRange']) { this.probability = new fhir.Range(source.probabilityRange); }
-    else if (source['probabilityCodeableConcept']) { this.probability = new fhir.CodeableConcept(source.probabilityCodeableConcept); }
-    if (source['relativeRisk']) { this.relativeRisk = new fhir.FhirDecimal({value: source.relativeRisk}); }
+    else if (source['probabilityDecimal'] !== undefined) { this.probability = new fhir.FhirDecimal({value: source.probabilityDecimal}, options); }
+    else if (source['probabilityRange']) { this.probability = new fhir.Range(source.probabilityRange, options); }
+    else if (source['probabilityCodeableConcept']) { this.probability = new fhir.CodeableConcept(source.probabilityCodeableConcept, options); }
+    if (source['relativeRisk'] !== undefined) { this.relativeRisk = new fhir.FhirDecimal({value: source.relativeRisk}, options); }
     if (source['_relativeRisk']) {
       if (this.relativeRisk) { this.relativeRisk.addExtendedProperties(source._relativeRisk!); }
-      else { this.relativeRisk = new fhir.FhirDecimal(source._relativeRisk as Partial<fhir.FhirDecimalArgs>); }
+      else { this.relativeRisk = new fhir.FhirDecimal(source._relativeRisk as Partial<fhir.FhirDecimalArgs>, options); }
     }
     if (source['when']) { this.when = source.when; }
-    else if (source['whenPeriod']) { this.when = new fhir.Period(source.whenPeriod); }
-    else if (source['whenRange']) { this.when = new fhir.Range(source.whenRange); }
-    if (source['rationale']) { this.rationale = new fhir.FhirString({value: source.rationale}); }
+    else if (source['whenPeriod']) { this.when = new fhir.Period(source.whenPeriod, options); }
+    else if (source['whenRange']) { this.when = new fhir.Range(source.whenRange, options); }
+    if (source['rationale'] !== undefined) { this.rationale = new fhir.FhirString({value: source.rationale}, options); }
     if (source['_rationale']) {
       if (this.rationale) { this.rationale.addExtendedProperties(source._rationale!); }
-      else { this.rationale = new fhir.FhirString(source._rationale as Partial<fhir.FhirStringArgs>); }
+      else { this.rationale = new fhir.FhirString(source._rationale as Partial<fhir.FhirStringArgs>, options); }
     }
   }
   /**
@@ -250,25 +250,25 @@ export class RiskAssessment extends fhir.DomainResource {
   constructor(source:Partial<RiskAssessmentArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
     this.resourceType = 'RiskAssessment';
-    if (source['subject']) { this.subject = new fhir.Reference(source.subject); }
-    if (source['date']) { this.date = new fhir.FhirDateTime({value: source.date}); }
+    if (source['subject']) { this.subject = new fhir.Reference(source.subject, options); }
+    if (source['date'] !== undefined) { this.date = new fhir.FhirDateTime({value: source.date}, options); }
     if (source['_date']) {
       if (this.date) { this.date.addExtendedProperties(source._date!); }
-      else { this.date = new fhir.FhirDateTime(source._date as Partial<fhir.FhirDateTimeArgs>); }
+      else { this.date = new fhir.FhirDateTime(source._date as Partial<fhir.FhirDateTimeArgs>, options); }
     }
-    if (source['condition']) { this.condition = new fhir.Reference(source.condition); }
-    if (source['encounter']) { this.encounter = new fhir.Reference(source.encounter); }
-    if (source['performer']) { this.performer = new fhir.Reference(source.performer); }
-    if (source['identifier']) { this.identifier = new fhir.Identifier(source.identifier); }
-    if (source['method']) { this.method = new fhir.CodeableConcept(source.method); }
-    if (source['basis']) { this.basis = source.basis.map((x) => new fhir.Reference(x)); }
+    if (source['condition']) { this.condition = new fhir.Reference(source.condition, options); }
+    if (source['encounter']) { this.encounter = new fhir.Reference(source.encounter, options); }
+    if (source['performer']) { this.performer = new fhir.Reference(source.performer, options); }
+    if (source['identifier']) { this.identifier = new fhir.Identifier(source.identifier, options); }
+    if (source['method']) { this.method = new fhir.CodeableConcept(source.method, options); }
+    if (source['basis']) { this.basis = source.basis.map((x) => new fhir.Reference(x, options)); }
     else { this.basis = []; }
-    if (source['prediction']) { this.prediction = source.prediction.map((x) => new fhir.RiskAssessmentPrediction(x)); }
+    if (source['prediction']) { this.prediction = source.prediction.map((x) => new fhir.RiskAssessmentPrediction(x, options)); }
     else { this.prediction = []; }
-    if (source['mitigation']) { this.mitigation = new fhir.FhirString({value: source.mitigation}); }
+    if (source['mitigation'] !== undefined) { this.mitigation = new fhir.FhirString({value: source.mitigation}, options); }
     if (source['_mitigation']) {
       if (this.mitigation) { this.mitigation.addExtendedProperties(source._mitigation!); }
-      else { this.mitigation = new fhir.FhirString(source._mitigation as Partial<fhir.FhirStringArgs>); }
+      else { this.mitigation = new fhir.FhirString(source._mitigation as Partial<fhir.FhirStringArgs>, options); }
     }
   }
   /**

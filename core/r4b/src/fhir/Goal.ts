@@ -116,18 +116,18 @@ export class GoalTarget extends fhir.BackboneElement {
    */
   constructor(source:Partial<GoalTargetArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['measure']) { this.measure = new fhir.CodeableConcept(source.measure); }
+    if (source['measure']) { this.measure = new fhir.CodeableConcept(source.measure, options); }
     if (source['detail']) { this.detail = source.detail; }
-    else if (source['detailQuantity']) { this.detail = new fhir.Quantity(source.detailQuantity); }
-    else if (source['detailRange']) { this.detail = new fhir.Range(source.detailRange); }
-    else if (source['detailCodeableConcept']) { this.detail = new fhir.CodeableConcept(source.detailCodeableConcept); }
-    else if (source['detailString']) { this.detail = new fhir.FhirString({value: source.detailString}); }
-    else if (source['detailBoolean']) { this.detail = new fhir.FhirBoolean({value: source.detailBoolean}); }
-    else if (source['detailInteger']) { this.detail = new fhir.FhirInteger({value: source.detailInteger}); }
-    else if (source['detailRatio']) { this.detail = new fhir.Ratio(source.detailRatio); }
+    else if (source['detailQuantity']) { this.detail = new fhir.Quantity(source.detailQuantity, options); }
+    else if (source['detailRange']) { this.detail = new fhir.Range(source.detailRange, options); }
+    else if (source['detailCodeableConcept']) { this.detail = new fhir.CodeableConcept(source.detailCodeableConcept, options); }
+    else if (source['detailString'] !== undefined) { this.detail = new fhir.FhirString({value: source.detailString}, options); }
+    else if (source['detailBoolean'] !== undefined) { this.detail = new fhir.FhirBoolean({value: source.detailBoolean}, options); }
+    else if (source['detailInteger'] !== undefined) { this.detail = new fhir.FhirInteger({value: source.detailInteger}, options); }
+    else if (source['detailRatio']) { this.detail = new fhir.Ratio(source.detailRatio, options); }
     if (source['due']) { this.due = source.due; }
-    else if (source['dueDate']) { this.due = new fhir.FhirDate({value: source.dueDate}); }
-    else if (source['dueDuration']) { this.due = new fhir.Duration(source.dueDuration); }
+    else if (source['dueDate'] !== undefined) { this.due = new fhir.FhirDate({value: source.dueDate}, options); }
+    else if (source['dueDuration']) { this.due = new fhir.Duration(source.dueDuration, options); }
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -323,45 +323,45 @@ export class Goal extends fhir.DomainResource {
   constructor(source:Partial<GoalArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
     this.resourceType = 'Goal';
-    if (source['identifier']) { this.identifier = source.identifier.map((x) => new fhir.Identifier(x)); }
+    if (source['identifier']) { this.identifier = source.identifier.map((x) => new fhir.Identifier(x, options)); }
     else { this.identifier = []; }
-    if (source['lifecycleStatus']) { this.lifecycleStatus = new fhir.FhirCode<GoalStatusCodeType>({value: source.lifecycleStatus}); }
+    if (source['lifecycleStatus'] !== undefined) { this.lifecycleStatus = new fhir.FhirCode<GoalStatusCodeType>({value: source.lifecycleStatus}, options); }
     else { this.lifecycleStatus = null; }
     if (source['_lifecycleStatus']) {
       if (this.lifecycleStatus) { this.lifecycleStatus.addExtendedProperties(source._lifecycleStatus!); }
-      else { this.lifecycleStatus = new fhir.FhirCode<GoalStatusCodeType>(source._lifecycleStatus as Partial<fhir.FhirCode>); }
+      else { this.lifecycleStatus = new fhir.FhirCode<GoalStatusCodeType>(source._lifecycleStatus as Partial<fhir.FhirCode>, options); }
     }
-    if (source['achievementStatus']) { this.achievementStatus = new fhir.CodeableConcept(source.achievementStatus); }
-    if (source['category']) { this.category = source.category.map((x) => new fhir.CodeableConcept(x)); }
+    if (source['achievementStatus']) { this.achievementStatus = new fhir.CodeableConcept(source.achievementStatus, options); }
+    if (source['category']) { this.category = source.category.map((x) => new fhir.CodeableConcept(x, options)); }
     else { this.category = []; }
-    if (source['priority']) { this.priority = new fhir.CodeableConcept(source.priority); }
-    if (source['description']) { this.description = new fhir.CodeableConcept(source.description); }
+    if (source['priority']) { this.priority = new fhir.CodeableConcept(source.priority, options); }
+    if (source['description']) { this.description = new fhir.CodeableConcept(source.description, options); }
     else { this.description = null; }
-    if (source['subject']) { this.subject = new fhir.Reference(source.subject); }
+    if (source['subject']) { this.subject = new fhir.Reference(source.subject, options); }
     else { this.subject = null; }
     if (source['start']) { this.start = source.start; }
-    else if (source['startDate']) { this.start = new fhir.FhirDate({value: source.startDate}); }
-    else if (source['startCodeableConcept']) { this.start = new fhir.CodeableConcept(source.startCodeableConcept); }
-    if (source['target']) { this.target = source.target.map((x) => new fhir.GoalTarget(x)); }
+    else if (source['startDate'] !== undefined) { this.start = new fhir.FhirDate({value: source.startDate}, options); }
+    else if (source['startCodeableConcept']) { this.start = new fhir.CodeableConcept(source.startCodeableConcept, options); }
+    if (source['target']) { this.target = source.target.map((x) => new fhir.GoalTarget(x, options)); }
     else { this.target = []; }
-    if (source['statusDate']) { this.statusDate = new fhir.FhirDate({value: source.statusDate}); }
+    if (source['statusDate'] !== undefined) { this.statusDate = new fhir.FhirDate({value: source.statusDate}, options); }
     if (source['_statusDate']) {
       if (this.statusDate) { this.statusDate.addExtendedProperties(source._statusDate!); }
-      else { this.statusDate = new fhir.FhirDate(source._statusDate as Partial<fhir.FhirDateArgs>); }
+      else { this.statusDate = new fhir.FhirDate(source._statusDate as Partial<fhir.FhirDateArgs>, options); }
     }
-    if (source['statusReason']) { this.statusReason = new fhir.FhirString({value: source.statusReason}); }
+    if (source['statusReason'] !== undefined) { this.statusReason = new fhir.FhirString({value: source.statusReason}, options); }
     if (source['_statusReason']) {
       if (this.statusReason) { this.statusReason.addExtendedProperties(source._statusReason!); }
-      else { this.statusReason = new fhir.FhirString(source._statusReason as Partial<fhir.FhirStringArgs>); }
+      else { this.statusReason = new fhir.FhirString(source._statusReason as Partial<fhir.FhirStringArgs>, options); }
     }
-    if (source['expressedBy']) { this.expressedBy = new fhir.Reference(source.expressedBy); }
-    if (source['addresses']) { this.addresses = source.addresses.map((x) => new fhir.Reference(x)); }
+    if (source['expressedBy']) { this.expressedBy = new fhir.Reference(source.expressedBy, options); }
+    if (source['addresses']) { this.addresses = source.addresses.map((x) => new fhir.Reference(x, options)); }
     else { this.addresses = []; }
-    if (source['note']) { this.note = source.note.map((x) => new fhir.Annotation(x)); }
+    if (source['note']) { this.note = source.note.map((x) => new fhir.Annotation(x, options)); }
     else { this.note = []; }
-    if (source['outcomeCode']) { this.outcomeCode = source.outcomeCode.map((x) => new fhir.CodeableConcept(x)); }
+    if (source['outcomeCode']) { this.outcomeCode = source.outcomeCode.map((x) => new fhir.CodeableConcept(x, options)); }
     else { this.outcomeCode = []; }
-    if (source['outcomeReference']) { this.outcomeReference = source.outcomeReference.map((x) => new fhir.Reference(x)); }
+    if (source['outcomeReference']) { this.outcomeReference = source.outcomeReference.map((x) => new fhir.Reference(x, options)); }
     else { this.outcomeReference = []; }
   }
   /**

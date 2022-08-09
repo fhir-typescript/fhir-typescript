@@ -44,11 +44,11 @@ export class ProcessRequestItem extends fhir.BackboneElement {
    */
   constructor(source:Partial<ProcessRequestItemArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['sequenceLinkId']) { this.sequenceLinkId = new fhir.FhirInteger({value: source.sequenceLinkId}); }
+    if (source['sequenceLinkId'] !== undefined) { this.sequenceLinkId = new fhir.FhirInteger({value: source.sequenceLinkId}, options); }
     else { this.sequenceLinkId = null; }
     if (source['_sequenceLinkId']) {
       if (this.sequenceLinkId) { this.sequenceLinkId.addExtendedProperties(source._sequenceLinkId!); }
-      else { this.sequenceLinkId = new fhir.FhirInteger(source._sequenceLinkId as Partial<fhir.FhirIntegerArgs>); }
+      else { this.sequenceLinkId = new fhir.FhirInteger(source._sequenceLinkId as Partial<fhir.FhirIntegerArgs>, options); }
     }
   }
   /**
@@ -237,41 +237,41 @@ export class ProcessRequest extends fhir.DomainResource {
   constructor(source:Partial<ProcessRequestArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
     this.resourceType = 'ProcessRequest';
-    if (source['identifier']) { this.identifier = source.identifier.map((x) => new fhir.Identifier(x)); }
+    if (source['identifier']) { this.identifier = source.identifier.map((x) => new fhir.Identifier(x, options)); }
     else { this.identifier = []; }
-    if (source['status']) { this.status = new fhir.FhirCode<FmStatusCodeType>({value: source.status}); }
+    if (source['status'] !== undefined) { this.status = new fhir.FhirCode<FmStatusCodeType>({value: source.status}, options); }
     if (source['_status']) {
       if (this.status) { this.status.addExtendedProperties(source._status!); }
-      else { this.status = new fhir.FhirCode<FmStatusCodeType>(source._status as Partial<fhir.FhirCode>); }
+      else { this.status = new fhir.FhirCode<FmStatusCodeType>(source._status as Partial<fhir.FhirCode>, options); }
     }
-    if (source['action']) { this.action = new fhir.FhirCode<ActionlistCodeType>({value: source.action}); }
+    if (source['action'] !== undefined) { this.action = new fhir.FhirCode<ActionlistCodeType>({value: source.action}, options); }
     if (source['_action']) {
       if (this.action) { this.action.addExtendedProperties(source._action!); }
-      else { this.action = new fhir.FhirCode<ActionlistCodeType>(source._action as Partial<fhir.FhirCode>); }
+      else { this.action = new fhir.FhirCode<ActionlistCodeType>(source._action as Partial<fhir.FhirCode>, options); }
     }
-    if (source['target']) { this.target = new fhir.Reference(source.target); }
-    if (source['created']) { this.created = new fhir.FhirDateTime({value: source.created}); }
+    if (source['target']) { this.target = new fhir.Reference(source.target, options); }
+    if (source['created'] !== undefined) { this.created = new fhir.FhirDateTime({value: source.created}, options); }
     if (source['_created']) {
       if (this.created) { this.created.addExtendedProperties(source._created!); }
-      else { this.created = new fhir.FhirDateTime(source._created as Partial<fhir.FhirDateTimeArgs>); }
+      else { this.created = new fhir.FhirDateTime(source._created as Partial<fhir.FhirDateTimeArgs>, options); }
     }
-    if (source['provider']) { this.provider = new fhir.Reference(source.provider); }
-    if (source['organization']) { this.organization = new fhir.Reference(source.organization); }
-    if (source['request']) { this.request = new fhir.Reference(source.request); }
-    if (source['response']) { this.response = new fhir.Reference(source.response); }
-    if (source['nullify']) { this.nullify = new fhir.FhirBoolean({value: source.nullify}); }
+    if (source['provider']) { this.provider = new fhir.Reference(source.provider, options); }
+    if (source['organization']) { this.organization = new fhir.Reference(source.organization, options); }
+    if (source['request']) { this.request = new fhir.Reference(source.request, options); }
+    if (source['response']) { this.response = new fhir.Reference(source.response, options); }
+    if (source['nullify'] !== undefined) { this.nullify = new fhir.FhirBoolean({value: source.nullify}, options); }
     if (source['_nullify']) {
       if (this.nullify) { this.nullify.addExtendedProperties(source._nullify!); }
-      else { this.nullify = new fhir.FhirBoolean(source._nullify as Partial<fhir.FhirBooleanArgs>); }
+      else { this.nullify = new fhir.FhirBoolean(source._nullify as Partial<fhir.FhirBooleanArgs>, options); }
     }
-    if (source['reference']) { this.reference = new fhir.FhirString({value: source.reference}); }
+    if (source['reference'] !== undefined) { this.reference = new fhir.FhirString({value: source.reference}, options); }
     if (source['_reference']) {
       if (this.reference) { this.reference.addExtendedProperties(source._reference!); }
-      else { this.reference = new fhir.FhirString(source._reference as Partial<fhir.FhirStringArgs>); }
+      else { this.reference = new fhir.FhirString(source._reference as Partial<fhir.FhirStringArgs>, options); }
     }
-    if (source['item']) { this.item = source.item.map((x) => new fhir.ProcessRequestItem(x)); }
+    if (source['item']) { this.item = source.item.map((x) => new fhir.ProcessRequestItem(x, options)); }
     else { this.item = []; }
-    if (source['include']) { this.include = source.include.map((x) => new fhir.FhirString({value: x})); }
+    if (source['include'] !== undefined) { this.include = source.include.map((x) => new fhir.FhirString({value: x}, options)); }
     else { this.include = []; }
     if (source['_include']) {
       source._include.forEach((x,i) => {
@@ -279,7 +279,7 @@ export class ProcessRequest extends fhir.DomainResource {
         else { if (x) { this.include.push(new fhir.FhirString(x as Partial<fhir.FhirStringArgs>)); } }
       });
     }
-    if (source['exclude']) { this.exclude = source.exclude.map((x) => new fhir.FhirString({value: x})); }
+    if (source['exclude'] !== undefined) { this.exclude = source.exclude.map((x) => new fhir.FhirString({value: x}, options)); }
     else { this.exclude = []; }
     if (source['_exclude']) {
       source._exclude.forEach((x,i) => {
@@ -287,7 +287,7 @@ export class ProcessRequest extends fhir.DomainResource {
         else { if (x) { this.exclude.push(new fhir.FhirString(x as Partial<fhir.FhirStringArgs>)); } }
       });
     }
-    if (source['period']) { this.period = new fhir.Period(source.period); }
+    if (source['period']) { this.period = new fhir.Period(source.period, options); }
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).

@@ -72,14 +72,14 @@ export class MeasureReportGroupPopulation extends fhir.BackboneElement {
    */
   constructor(source:Partial<MeasureReportGroupPopulationArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['identifier']) { this.identifier = new fhir.Identifier(source.identifier); }
-    if (source['code']) { this.code = new fhir.CodeableConcept(source.code); }
-    if (source['count']) { this.count = new fhir.FhirInteger({value: source.count}); }
+    if (source['identifier']) { this.identifier = new fhir.Identifier(source.identifier, options); }
+    if (source['code']) { this.code = new fhir.CodeableConcept(source.code, options); }
+    if (source['count'] !== undefined) { this.count = new fhir.FhirInteger({value: source.count}, options); }
     if (source['_count']) {
       if (this.count) { this.count.addExtendedProperties(source._count!); }
-      else { this.count = new fhir.FhirInteger(source._count as Partial<fhir.FhirIntegerArgs>); }
+      else { this.count = new fhir.FhirInteger(source._count as Partial<fhir.FhirIntegerArgs>, options); }
     }
-    if (source['patients']) { this.patients = new fhir.Reference(source.patients); }
+    if (source['patients']) { this.patients = new fhir.Reference(source.patients, options); }
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -149,14 +149,14 @@ export class MeasureReportGroupStratifierStratumPopulation extends fhir.Backbone
    */
   constructor(source:Partial<MeasureReportGroupStratifierStratumPopulationArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['identifier']) { this.identifier = new fhir.Identifier(source.identifier); }
-    if (source['code']) { this.code = new fhir.CodeableConcept(source.code); }
-    if (source['count']) { this.count = new fhir.FhirInteger({value: source.count}); }
+    if (source['identifier']) { this.identifier = new fhir.Identifier(source.identifier, options); }
+    if (source['code']) { this.code = new fhir.CodeableConcept(source.code, options); }
+    if (source['count'] !== undefined) { this.count = new fhir.FhirInteger({value: source.count}, options); }
     if (source['_count']) {
       if (this.count) { this.count.addExtendedProperties(source._count!); }
-      else { this.count = new fhir.FhirInteger(source._count as Partial<fhir.FhirIntegerArgs>); }
+      else { this.count = new fhir.FhirInteger(source._count as Partial<fhir.FhirIntegerArgs>, options); }
     }
-    if (source['patients']) { this.patients = new fhir.Reference(source.patients); }
+    if (source['patients']) { this.patients = new fhir.Reference(source.patients, options); }
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -222,18 +222,18 @@ export class MeasureReportGroupStratifierStratum extends fhir.BackboneElement {
    */
   constructor(source:Partial<MeasureReportGroupStratifierStratumArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['value']) { this.value = new fhir.FhirString({value: source.value}); }
+    if (source['value'] !== undefined) { this.value = new fhir.FhirString({value: source.value}, options); }
     else { this.value = null; }
     if (source['_value']) {
       if (this.value) { this.value.addExtendedProperties(source._value!); }
-      else { this.value = new fhir.FhirString(source._value as Partial<fhir.FhirStringArgs>); }
+      else { this.value = new fhir.FhirString(source._value as Partial<fhir.FhirStringArgs>, options); }
     }
-    if (source['population']) { this.population = source.population.map((x) => new fhir.MeasureReportGroupStratifierStratumPopulation(x)); }
+    if (source['population']) { this.population = source.population.map((x) => new fhir.MeasureReportGroupStratifierStratumPopulation(x, options)); }
     else { this.population = []; }
-    if (source['measureScore']) { this.measureScore = new fhir.FhirDecimal({value: source.measureScore}); }
+    if (source['measureScore'] !== undefined) { this.measureScore = new fhir.FhirDecimal({value: source.measureScore}, options); }
     if (source['_measureScore']) {
       if (this.measureScore) { this.measureScore.addExtendedProperties(source._measureScore!); }
-      else { this.measureScore = new fhir.FhirDecimal(source._measureScore as Partial<fhir.FhirDecimalArgs>); }
+      else { this.measureScore = new fhir.FhirDecimal(source._measureScore as Partial<fhir.FhirDecimalArgs>, options); }
     }
   }
   /**
@@ -283,8 +283,8 @@ export class MeasureReportGroupStratifier extends fhir.BackboneElement {
    */
   constructor(source:Partial<MeasureReportGroupStratifierArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['identifier']) { this.identifier = new fhir.Identifier(source.identifier); }
-    if (source['stratum']) { this.stratum = source.stratum.map((x) => new fhir.MeasureReportGroupStratifierStratum(x)); }
+    if (source['identifier']) { this.identifier = new fhir.Identifier(source.identifier, options); }
+    if (source['stratum']) { this.stratum = source.stratum.map((x) => new fhir.MeasureReportGroupStratifierStratum(x, options)); }
     else { this.stratum = []; }
   }
   /**
@@ -353,16 +353,16 @@ export class MeasureReportGroup extends fhir.BackboneElement {
    */
   constructor(source:Partial<MeasureReportGroupArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['identifier']) { this.identifier = new fhir.Identifier(source.identifier); }
+    if (source['identifier']) { this.identifier = new fhir.Identifier(source.identifier, options); }
     else { this.identifier = null; }
-    if (source['population']) { this.population = source.population.map((x) => new fhir.MeasureReportGroupPopulation(x)); }
+    if (source['population']) { this.population = source.population.map((x) => new fhir.MeasureReportGroupPopulation(x, options)); }
     else { this.population = []; }
-    if (source['measureScore']) { this.measureScore = new fhir.FhirDecimal({value: source.measureScore}); }
+    if (source['measureScore'] !== undefined) { this.measureScore = new fhir.FhirDecimal({value: source.measureScore}, options); }
     if (source['_measureScore']) {
       if (this.measureScore) { this.measureScore.addExtendedProperties(source._measureScore!); }
-      else { this.measureScore = new fhir.FhirDecimal(source._measureScore as Partial<fhir.FhirDecimalArgs>); }
+      else { this.measureScore = new fhir.FhirDecimal(source._measureScore as Partial<fhir.FhirDecimalArgs>, options); }
     }
-    if (source['stratifier']) { this.stratifier = source.stratifier.map((x) => new fhir.MeasureReportGroupStratifier(x)); }
+    if (source['stratifier']) { this.stratifier = source.stratifier.map((x) => new fhir.MeasureReportGroupStratifier(x, options)); }
     else { this.stratifier = []; }
   }
   /**
@@ -498,33 +498,33 @@ export class MeasureReport extends fhir.DomainResource {
   constructor(source:Partial<MeasureReportArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
     this.resourceType = 'MeasureReport';
-    if (source['identifier']) { this.identifier = new fhir.Identifier(source.identifier); }
-    if (source['status']) { this.status = new fhir.FhirCode<MeasureReportStatusCodeType>({value: source.status}); }
+    if (source['identifier']) { this.identifier = new fhir.Identifier(source.identifier, options); }
+    if (source['status'] !== undefined) { this.status = new fhir.FhirCode<MeasureReportStatusCodeType>({value: source.status}, options); }
     else { this.status = null; }
     if (source['_status']) {
       if (this.status) { this.status.addExtendedProperties(source._status!); }
-      else { this.status = new fhir.FhirCode<MeasureReportStatusCodeType>(source._status as Partial<fhir.FhirCode>); }
+      else { this.status = new fhir.FhirCode<MeasureReportStatusCodeType>(source._status as Partial<fhir.FhirCode>, options); }
     }
-    if (source['type']) { this.type = new fhir.FhirCode<MeasureReportTypeCodeType>({value: source.type}); }
+    if (source['type'] !== undefined) { this.type = new fhir.FhirCode<MeasureReportTypeCodeType>({value: source.type}, options); }
     else { this.type = null; }
     if (source['_type']) {
       if (this.type) { this.type.addExtendedProperties(source._type!); }
-      else { this.type = new fhir.FhirCode<MeasureReportTypeCodeType>(source._type as Partial<fhir.FhirCode>); }
+      else { this.type = new fhir.FhirCode<MeasureReportTypeCodeType>(source._type as Partial<fhir.FhirCode>, options); }
     }
-    if (source['measure']) { this.measure = new fhir.Reference(source.measure); }
+    if (source['measure']) { this.measure = new fhir.Reference(source.measure, options); }
     else { this.measure = null; }
-    if (source['patient']) { this.patient = new fhir.Reference(source.patient); }
-    if (source['date']) { this.date = new fhir.FhirDateTime({value: source.date}); }
+    if (source['patient']) { this.patient = new fhir.Reference(source.patient, options); }
+    if (source['date'] !== undefined) { this.date = new fhir.FhirDateTime({value: source.date}, options); }
     if (source['_date']) {
       if (this.date) { this.date.addExtendedProperties(source._date!); }
-      else { this.date = new fhir.FhirDateTime(source._date as Partial<fhir.FhirDateTimeArgs>); }
+      else { this.date = new fhir.FhirDateTime(source._date as Partial<fhir.FhirDateTimeArgs>, options); }
     }
-    if (source['reportingOrganization']) { this.reportingOrganization = new fhir.Reference(source.reportingOrganization); }
-    if (source['period']) { this.period = new fhir.Period(source.period); }
+    if (source['reportingOrganization']) { this.reportingOrganization = new fhir.Reference(source.reportingOrganization, options); }
+    if (source['period']) { this.period = new fhir.Period(source.period, options); }
     else { this.period = null; }
-    if (source['group']) { this.group = source.group.map((x) => new fhir.MeasureReportGroup(x)); }
+    if (source['group']) { this.group = source.group.map((x) => new fhir.MeasureReportGroup(x, options)); }
     else { this.group = []; }
-    if (source['evaluatedResources']) { this.evaluatedResources = new fhir.Reference(source.evaluatedResources); }
+    if (source['evaluatedResources']) { this.evaluatedResources = new fhir.Reference(source.evaluatedResources, options); }
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).

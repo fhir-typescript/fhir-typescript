@@ -92,27 +92,27 @@ export class GraphDefinitionLinkTargetCompartment extends fhir.BackboneElement {
    */
   constructor(source:Partial<GraphDefinitionLinkTargetCompartmentArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['code']) { this.code = new fhir.FhirCode({value: source.code}); }
+    if (source['code'] !== undefined) { this.code = new fhir.FhirCode({value: source.code}, options); }
     else { this.code = null; }
     if (source['_code']) {
       if (this.code) { this.code.addExtendedProperties(source._code!); }
-      else { this.code = new fhir.FhirCode(source._code as Partial<fhir.FhirCodeArgs>); }
+      else { this.code = new fhir.FhirCode(source._code as Partial<fhir.FhirCodeArgs>, options); }
     }
-    if (source['rule']) { this.rule = new fhir.FhirCode<GraphCompartmentRuleCodeType>({value: source.rule}); }
+    if (source['rule'] !== undefined) { this.rule = new fhir.FhirCode<GraphCompartmentRuleCodeType>({value: source.rule}, options); }
     else { this.rule = null; }
     if (source['_rule']) {
       if (this.rule) { this.rule.addExtendedProperties(source._rule!); }
-      else { this.rule = new fhir.FhirCode<GraphCompartmentRuleCodeType>(source._rule as Partial<fhir.FhirCode>); }
+      else { this.rule = new fhir.FhirCode<GraphCompartmentRuleCodeType>(source._rule as Partial<fhir.FhirCode>, options); }
     }
-    if (source['expression']) { this.expression = new fhir.FhirString({value: source.expression}); }
+    if (source['expression'] !== undefined) { this.expression = new fhir.FhirString({value: source.expression}, options); }
     if (source['_expression']) {
       if (this.expression) { this.expression.addExtendedProperties(source._expression!); }
-      else { this.expression = new fhir.FhirString(source._expression as Partial<fhir.FhirStringArgs>); }
+      else { this.expression = new fhir.FhirString(source._expression as Partial<fhir.FhirStringArgs>, options); }
     }
-    if (source['description']) { this.description = new fhir.FhirString({value: source.description}); }
+    if (source['description'] !== undefined) { this.description = new fhir.FhirString({value: source.description}, options); }
     if (source['_description']) {
       if (this.description) { this.description.addExtendedProperties(source._description!); }
-      else { this.description = new fhir.FhirString(source._description as Partial<fhir.FhirStringArgs>); }
+      else { this.description = new fhir.FhirString(source._description as Partial<fhir.FhirStringArgs>, options); }
     }
   }
   /**
@@ -187,20 +187,20 @@ export class GraphDefinitionLinkTarget extends fhir.BackboneElement {
    */
   constructor(source:Partial<GraphDefinitionLinkTargetArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['type']) { this.type = new fhir.FhirCode({value: source.type}); }
+    if (source['type'] !== undefined) { this.type = new fhir.FhirCode({value: source.type}, options); }
     else { this.type = null; }
     if (source['_type']) {
       if (this.type) { this.type.addExtendedProperties(source._type!); }
-      else { this.type = new fhir.FhirCode(source._type as Partial<fhir.FhirCodeArgs>); }
+      else { this.type = new fhir.FhirCode(source._type as Partial<fhir.FhirCodeArgs>, options); }
     }
-    if (source['profile']) { this.profile = new fhir.FhirUri({value: source.profile}); }
+    if (source['profile'] !== undefined) { this.profile = new fhir.FhirUri({value: source.profile}, options); }
     if (source['_profile']) {
       if (this.profile) { this.profile.addExtendedProperties(source._profile!); }
-      else { this.profile = new fhir.FhirUri(source._profile as Partial<fhir.FhirUriArgs>); }
+      else { this.profile = new fhir.FhirUri(source._profile as Partial<fhir.FhirUriArgs>, options); }
     }
-    if (source['compartment']) { this.compartment = source.compartment.map((x) => new fhir.GraphDefinitionLinkTargetCompartment(x)); }
+    if (source['compartment']) { this.compartment = source.compartment.map((x) => new fhir.GraphDefinitionLinkTargetCompartment(x, options)); }
     else { this.compartment = []; }
-    if (source['link']) { this.link = source.link.map((x) => new fhir.GraphDefinitionLink(x)); }
+    if (source['link']) { this.link = source.link.map((x) => new fhir.GraphDefinitionLink(x, options)); }
     else { this.link = []; }
   }
   /**
@@ -303,33 +303,33 @@ export class GraphDefinitionLink extends fhir.BackboneElement {
    */
   constructor(source:Partial<GraphDefinitionLinkArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['path']) { this.path = new fhir.FhirString({value: source.path}); }
+    if (source['path'] !== undefined) { this.path = new fhir.FhirString({value: source.path}, options); }
     else { this.path = null; }
     if (source['_path']) {
       if (this.path) { this.path.addExtendedProperties(source._path!); }
-      else { this.path = new fhir.FhirString(source._path as Partial<fhir.FhirStringArgs>); }
+      else { this.path = new fhir.FhirString(source._path as Partial<fhir.FhirStringArgs>, options); }
     }
-    if (source['sliceName']) { this.sliceName = new fhir.FhirString({value: source.sliceName}); }
+    if (source['sliceName'] !== undefined) { this.sliceName = new fhir.FhirString({value: source.sliceName}, options); }
     if (source['_sliceName']) {
       if (this.sliceName) { this.sliceName.addExtendedProperties(source._sliceName!); }
-      else { this.sliceName = new fhir.FhirString(source._sliceName as Partial<fhir.FhirStringArgs>); }
+      else { this.sliceName = new fhir.FhirString(source._sliceName as Partial<fhir.FhirStringArgs>, options); }
     }
-    if (source['min']) { this.min = new fhir.FhirInteger({value: source.min}); }
+    if (source['min'] !== undefined) { this.min = new fhir.FhirInteger({value: source.min}, options); }
     if (source['_min']) {
       if (this.min) { this.min.addExtendedProperties(source._min!); }
-      else { this.min = new fhir.FhirInteger(source._min as Partial<fhir.FhirIntegerArgs>); }
+      else { this.min = new fhir.FhirInteger(source._min as Partial<fhir.FhirIntegerArgs>, options); }
     }
-    if (source['max']) { this.max = new fhir.FhirString({value: source.max}); }
+    if (source['max'] !== undefined) { this.max = new fhir.FhirString({value: source.max}, options); }
     if (source['_max']) {
       if (this.max) { this.max.addExtendedProperties(source._max!); }
-      else { this.max = new fhir.FhirString(source._max as Partial<fhir.FhirStringArgs>); }
+      else { this.max = new fhir.FhirString(source._max as Partial<fhir.FhirStringArgs>, options); }
     }
-    if (source['description']) { this.description = new fhir.FhirString({value: source.description}); }
+    if (source['description'] !== undefined) { this.description = new fhir.FhirString({value: source.description}, options); }
     if (source['_description']) {
       if (this.description) { this.description.addExtendedProperties(source._description!); }
-      else { this.description = new fhir.FhirString(source._description as Partial<fhir.FhirStringArgs>); }
+      else { this.description = new fhir.FhirString(source._description as Partial<fhir.FhirStringArgs>, options); }
     }
-    if (source['target']) { this.target = source.target.map((x) => new fhir.GraphDefinitionLinkTarget(x)); }
+    if (source['target']) { this.target = source.target.map((x) => new fhir.GraphDefinitionLinkTarget(x, options)); }
     else { this.target = []; }
   }
   /**
@@ -541,71 +541,71 @@ export class GraphDefinition extends fhir.DomainResource {
   constructor(source:Partial<GraphDefinitionArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
     this.resourceType = 'GraphDefinition';
-    if (source['url']) { this.url = new fhir.FhirUri({value: source.url}); }
+    if (source['url'] !== undefined) { this.url = new fhir.FhirUri({value: source.url}, options); }
     if (source['_url']) {
       if (this.url) { this.url.addExtendedProperties(source._url!); }
-      else { this.url = new fhir.FhirUri(source._url as Partial<fhir.FhirUriArgs>); }
+      else { this.url = new fhir.FhirUri(source._url as Partial<fhir.FhirUriArgs>, options); }
     }
-    if (source['version']) { this.version = new fhir.FhirString({value: source.version}); }
+    if (source['version'] !== undefined) { this.version = new fhir.FhirString({value: source.version}, options); }
     if (source['_version']) {
       if (this.version) { this.version.addExtendedProperties(source._version!); }
-      else { this.version = new fhir.FhirString(source._version as Partial<fhir.FhirStringArgs>); }
+      else { this.version = new fhir.FhirString(source._version as Partial<fhir.FhirStringArgs>, options); }
     }
-    if (source['name']) { this.name = new fhir.FhirString({value: source.name}); }
+    if (source['name'] !== undefined) { this.name = new fhir.FhirString({value: source.name}, options); }
     else { this.name = null; }
     if (source['_name']) {
       if (this.name) { this.name.addExtendedProperties(source._name!); }
-      else { this.name = new fhir.FhirString(source._name as Partial<fhir.FhirStringArgs>); }
+      else { this.name = new fhir.FhirString(source._name as Partial<fhir.FhirStringArgs>, options); }
     }
-    if (source['status']) { this.status = new fhir.FhirCode<PublicationStatusCodeType>({value: source.status}); }
+    if (source['status'] !== undefined) { this.status = new fhir.FhirCode<PublicationStatusCodeType>({value: source.status}, options); }
     else { this.status = null; }
     if (source['_status']) {
       if (this.status) { this.status.addExtendedProperties(source._status!); }
-      else { this.status = new fhir.FhirCode<PublicationStatusCodeType>(source._status as Partial<fhir.FhirCode>); }
+      else { this.status = new fhir.FhirCode<PublicationStatusCodeType>(source._status as Partial<fhir.FhirCode>, options); }
     }
-    if (source['experimental']) { this.experimental = new fhir.FhirBoolean({value: source.experimental}); }
+    if (source['experimental'] !== undefined) { this.experimental = new fhir.FhirBoolean({value: source.experimental}, options); }
     if (source['_experimental']) {
       if (this.experimental) { this.experimental.addExtendedProperties(source._experimental!); }
-      else { this.experimental = new fhir.FhirBoolean(source._experimental as Partial<fhir.FhirBooleanArgs>); }
+      else { this.experimental = new fhir.FhirBoolean(source._experimental as Partial<fhir.FhirBooleanArgs>, options); }
     }
-    if (source['date']) { this.date = new fhir.FhirDateTime({value: source.date}); }
+    if (source['date'] !== undefined) { this.date = new fhir.FhirDateTime({value: source.date}, options); }
     if (source['_date']) {
       if (this.date) { this.date.addExtendedProperties(source._date!); }
-      else { this.date = new fhir.FhirDateTime(source._date as Partial<fhir.FhirDateTimeArgs>); }
+      else { this.date = new fhir.FhirDateTime(source._date as Partial<fhir.FhirDateTimeArgs>, options); }
     }
-    if (source['publisher']) { this.publisher = new fhir.FhirString({value: source.publisher}); }
+    if (source['publisher'] !== undefined) { this.publisher = new fhir.FhirString({value: source.publisher}, options); }
     if (source['_publisher']) {
       if (this.publisher) { this.publisher.addExtendedProperties(source._publisher!); }
-      else { this.publisher = new fhir.FhirString(source._publisher as Partial<fhir.FhirStringArgs>); }
+      else { this.publisher = new fhir.FhirString(source._publisher as Partial<fhir.FhirStringArgs>, options); }
     }
-    if (source['contact']) { this.contact = source.contact.map((x) => new fhir.ContactDetail(x)); }
+    if (source['contact']) { this.contact = source.contact.map((x) => new fhir.ContactDetail(x, options)); }
     else { this.contact = []; }
-    if (source['description']) { this.description = new fhir.FhirMarkdown({value: source.description}); }
+    if (source['description'] !== undefined) { this.description = new fhir.FhirMarkdown({value: source.description}, options); }
     if (source['_description']) {
       if (this.description) { this.description.addExtendedProperties(source._description!); }
-      else { this.description = new fhir.FhirMarkdown(source._description as Partial<fhir.FhirMarkdownArgs>); }
+      else { this.description = new fhir.FhirMarkdown(source._description as Partial<fhir.FhirMarkdownArgs>, options); }
     }
-    if (source['useContext']) { this.useContext = source.useContext.map((x) => new fhir.UsageContext(x)); }
+    if (source['useContext']) { this.useContext = source.useContext.map((x) => new fhir.UsageContext(x, options)); }
     else { this.useContext = []; }
-    if (source['jurisdiction']) { this.jurisdiction = source.jurisdiction.map((x) => new fhir.CodeableConcept(x)); }
+    if (source['jurisdiction']) { this.jurisdiction = source.jurisdiction.map((x) => new fhir.CodeableConcept(x, options)); }
     else { this.jurisdiction = []; }
-    if (source['purpose']) { this.purpose = new fhir.FhirMarkdown({value: source.purpose}); }
+    if (source['purpose'] !== undefined) { this.purpose = new fhir.FhirMarkdown({value: source.purpose}, options); }
     if (source['_purpose']) {
       if (this.purpose) { this.purpose.addExtendedProperties(source._purpose!); }
-      else { this.purpose = new fhir.FhirMarkdown(source._purpose as Partial<fhir.FhirMarkdownArgs>); }
+      else { this.purpose = new fhir.FhirMarkdown(source._purpose as Partial<fhir.FhirMarkdownArgs>, options); }
     }
-    if (source['start']) { this.start = new fhir.FhirCode({value: source.start}); }
+    if (source['start'] !== undefined) { this.start = new fhir.FhirCode({value: source.start}, options); }
     else { this.start = null; }
     if (source['_start']) {
       if (this.start) { this.start.addExtendedProperties(source._start!); }
-      else { this.start = new fhir.FhirCode(source._start as Partial<fhir.FhirCodeArgs>); }
+      else { this.start = new fhir.FhirCode(source._start as Partial<fhir.FhirCodeArgs>, options); }
     }
-    if (source['profile']) { this.profile = new fhir.FhirUri({value: source.profile}); }
+    if (source['profile'] !== undefined) { this.profile = new fhir.FhirUri({value: source.profile}, options); }
     if (source['_profile']) {
       if (this.profile) { this.profile.addExtendedProperties(source._profile!); }
-      else { this.profile = new fhir.FhirUri(source._profile as Partial<fhir.FhirUriArgs>); }
+      else { this.profile = new fhir.FhirUri(source._profile as Partial<fhir.FhirUriArgs>, options); }
     }
-    if (source['link']) { this.link = source.link.map((x) => new fhir.GraphDefinitionLink(x)); }
+    if (source['link']) { this.link = source.link.map((x) => new fhir.GraphDefinitionLink(x, options)); }
     else { this.link = []; }
   }
   /**

@@ -68,23 +68,23 @@ export class DeviceDefinitionUdiDeviceIdentifier extends fhir.BackboneElement {
    */
   constructor(source:Partial<DeviceDefinitionUdiDeviceIdentifierArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['deviceIdentifier']) { this.deviceIdentifier = new fhir.FhirString({value: source.deviceIdentifier}); }
+    if (source['deviceIdentifier'] !== undefined) { this.deviceIdentifier = new fhir.FhirString({value: source.deviceIdentifier}, options); }
     else { this.deviceIdentifier = null; }
     if (source['_deviceIdentifier']) {
       if (this.deviceIdentifier) { this.deviceIdentifier.addExtendedProperties(source._deviceIdentifier!); }
-      else { this.deviceIdentifier = new fhir.FhirString(source._deviceIdentifier as Partial<fhir.FhirStringArgs>); }
+      else { this.deviceIdentifier = new fhir.FhirString(source._deviceIdentifier as Partial<fhir.FhirStringArgs>, options); }
     }
-    if (source['issuer']) { this.issuer = new fhir.FhirUri({value: source.issuer}); }
+    if (source['issuer'] !== undefined) { this.issuer = new fhir.FhirUri({value: source.issuer}, options); }
     else { this.issuer = null; }
     if (source['_issuer']) {
       if (this.issuer) { this.issuer.addExtendedProperties(source._issuer!); }
-      else { this.issuer = new fhir.FhirUri(source._issuer as Partial<fhir.FhirUriArgs>); }
+      else { this.issuer = new fhir.FhirUri(source._issuer as Partial<fhir.FhirUriArgs>, options); }
     }
-    if (source['jurisdiction']) { this.jurisdiction = new fhir.FhirUri({value: source.jurisdiction}); }
+    if (source['jurisdiction'] !== undefined) { this.jurisdiction = new fhir.FhirUri({value: source.jurisdiction}, options); }
     else { this.jurisdiction = null; }
     if (source['_jurisdiction']) {
       if (this.jurisdiction) { this.jurisdiction.addExtendedProperties(source._jurisdiction!); }
-      else { this.jurisdiction = new fhir.FhirUri(source._jurisdiction as Partial<fhir.FhirUriArgs>); }
+      else { this.jurisdiction = new fhir.FhirUri(source._jurisdiction as Partial<fhir.FhirUriArgs>, options); }
     }
   }
   /**
@@ -144,17 +144,17 @@ export class DeviceDefinitionDeviceName extends fhir.BackboneElement {
    */
   constructor(source:Partial<DeviceDefinitionDeviceNameArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['name']) { this.name = new fhir.FhirString({value: source.name}); }
+    if (source['name'] !== undefined) { this.name = new fhir.FhirString({value: source.name}, options); }
     else { this.name = null; }
     if (source['_name']) {
       if (this.name) { this.name.addExtendedProperties(source._name!); }
-      else { this.name = new fhir.FhirString(source._name as Partial<fhir.FhirStringArgs>); }
+      else { this.name = new fhir.FhirString(source._name as Partial<fhir.FhirStringArgs>, options); }
     }
-    if (source['type']) { this.type = new fhir.FhirCode<DeviceNametypeCodeType>({value: source.type}); }
+    if (source['type'] !== undefined) { this.type = new fhir.FhirCode<DeviceNametypeCodeType>({value: source.type}, options); }
     else { this.type = null; }
     if (source['_type']) {
       if (this.type) { this.type.addExtendedProperties(source._type!); }
-      else { this.type = new fhir.FhirCode<DeviceNametypeCodeType>(source._type as Partial<fhir.FhirCode>); }
+      else { this.type = new fhir.FhirCode<DeviceNametypeCodeType>(source._type as Partial<fhir.FhirCode>, options); }
     }
   }
   /**
@@ -211,16 +211,16 @@ export class DeviceDefinitionSpecialization extends fhir.BackboneElement {
    */
   constructor(source:Partial<DeviceDefinitionSpecializationArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['systemType']) { this.systemType = new fhir.FhirString({value: source.systemType}); }
+    if (source['systemType'] !== undefined) { this.systemType = new fhir.FhirString({value: source.systemType}, options); }
     else { this.systemType = null; }
     if (source['_systemType']) {
       if (this.systemType) { this.systemType.addExtendedProperties(source._systemType!); }
-      else { this.systemType = new fhir.FhirString(source._systemType as Partial<fhir.FhirStringArgs>); }
+      else { this.systemType = new fhir.FhirString(source._systemType as Partial<fhir.FhirStringArgs>, options); }
     }
-    if (source['version']) { this.version = new fhir.FhirString({value: source.version}); }
+    if (source['version'] !== undefined) { this.version = new fhir.FhirString({value: source.version}, options); }
     if (source['_version']) {
       if (this.version) { this.version.addExtendedProperties(source._version!); }
-      else { this.version = new fhir.FhirString(source._version as Partial<fhir.FhirStringArgs>); }
+      else { this.version = new fhir.FhirString(source._version as Partial<fhir.FhirStringArgs>, options); }
     }
   }
   /**
@@ -269,9 +269,9 @@ export class DeviceDefinitionCapability extends fhir.BackboneElement {
    */
   constructor(source:Partial<DeviceDefinitionCapabilityArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['type']) { this.type = new fhir.CodeableConcept(source.type); }
+    if (source['type']) { this.type = new fhir.CodeableConcept(source.type, options); }
     else { this.type = null; }
-    if (source['description']) { this.description = source.description.map((x) => new fhir.CodeableConcept(x)); }
+    if (source['description']) { this.description = source.description.map((x) => new fhir.CodeableConcept(x, options)); }
     else { this.description = []; }
   }
   /**
@@ -328,11 +328,11 @@ export class DeviceDefinitionProperty extends fhir.BackboneElement {
    */
   constructor(source:Partial<DeviceDefinitionPropertyArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['type']) { this.type = new fhir.CodeableConcept(source.type); }
+    if (source['type']) { this.type = new fhir.CodeableConcept(source.type, options); }
     else { this.type = null; }
-    if (source['valueQuantity']) { this.valueQuantity = source.valueQuantity.map((x) => new fhir.Quantity(x)); }
+    if (source['valueQuantity']) { this.valueQuantity = source.valueQuantity.map((x) => new fhir.Quantity(x, options)); }
     else { this.valueQuantity = []; }
-    if (source['valueCode']) { this.valueCode = source.valueCode.map((x) => new fhir.CodeableConcept(x)); }
+    if (source['valueCode']) { this.valueCode = source.valueCode.map((x) => new fhir.CodeableConcept(x, options)); }
     else { this.valueCode = []; }
   }
   /**
@@ -398,17 +398,17 @@ export class DeviceDefinitionMaterial extends fhir.BackboneElement {
    */
   constructor(source:Partial<DeviceDefinitionMaterialArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['substance']) { this.substance = new fhir.CodeableConcept(source.substance); }
+    if (source['substance']) { this.substance = new fhir.CodeableConcept(source.substance, options); }
     else { this.substance = null; }
-    if (source['alternate']) { this.alternate = new fhir.FhirBoolean({value: source.alternate}); }
+    if (source['alternate'] !== undefined) { this.alternate = new fhir.FhirBoolean({value: source.alternate}, options); }
     if (source['_alternate']) {
       if (this.alternate) { this.alternate.addExtendedProperties(source._alternate!); }
-      else { this.alternate = new fhir.FhirBoolean(source._alternate as Partial<fhir.FhirBooleanArgs>); }
+      else { this.alternate = new fhir.FhirBoolean(source._alternate as Partial<fhir.FhirBooleanArgs>, options); }
     }
-    if (source['allergenicIndicator']) { this.allergenicIndicator = new fhir.FhirBoolean({value: source.allergenicIndicator}); }
+    if (source['allergenicIndicator'] !== undefined) { this.allergenicIndicator = new fhir.FhirBoolean({value: source.allergenicIndicator}, options); }
     if (source['_allergenicIndicator']) {
       if (this.allergenicIndicator) { this.allergenicIndicator.addExtendedProperties(source._allergenicIndicator!); }
-      else { this.allergenicIndicator = new fhir.FhirBoolean(source._allergenicIndicator as Partial<fhir.FhirBooleanArgs>); }
+      else { this.allergenicIndicator = new fhir.FhirBoolean(source._allergenicIndicator as Partial<fhir.FhirBooleanArgs>, options); }
     }
   }
   /**
@@ -655,24 +655,24 @@ export class DeviceDefinition extends fhir.DomainResource {
   constructor(source:Partial<DeviceDefinitionArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
     this.resourceType = 'DeviceDefinition';
-    if (source['identifier']) { this.identifier = source.identifier.map((x) => new fhir.Identifier(x)); }
+    if (source['identifier']) { this.identifier = source.identifier.map((x) => new fhir.Identifier(x, options)); }
     else { this.identifier = []; }
-    if (source['udiDeviceIdentifier']) { this.udiDeviceIdentifier = source.udiDeviceIdentifier.map((x) => new fhir.DeviceDefinitionUdiDeviceIdentifier(x)); }
+    if (source['udiDeviceIdentifier']) { this.udiDeviceIdentifier = source.udiDeviceIdentifier.map((x) => new fhir.DeviceDefinitionUdiDeviceIdentifier(x, options)); }
     else { this.udiDeviceIdentifier = []; }
     if (source['manufacturer']) { this.manufacturer = source.manufacturer; }
-    else if (source['manufacturerString']) { this.manufacturer = new fhir.FhirString({value: source.manufacturerString}); }
-    else if (source['manufacturerReference']) { this.manufacturer = new fhir.Reference(source.manufacturerReference); }
-    if (source['deviceName']) { this.deviceName = source.deviceName.map((x) => new fhir.DeviceDefinitionDeviceName(x)); }
+    else if (source['manufacturerString'] !== undefined) { this.manufacturer = new fhir.FhirString({value: source.manufacturerString}, options); }
+    else if (source['manufacturerReference']) { this.manufacturer = new fhir.Reference(source.manufacturerReference, options); }
+    if (source['deviceName']) { this.deviceName = source.deviceName.map((x) => new fhir.DeviceDefinitionDeviceName(x, options)); }
     else { this.deviceName = []; }
-    if (source['modelNumber']) { this.modelNumber = new fhir.FhirString({value: source.modelNumber}); }
+    if (source['modelNumber'] !== undefined) { this.modelNumber = new fhir.FhirString({value: source.modelNumber}, options); }
     if (source['_modelNumber']) {
       if (this.modelNumber) { this.modelNumber.addExtendedProperties(source._modelNumber!); }
-      else { this.modelNumber = new fhir.FhirString(source._modelNumber as Partial<fhir.FhirStringArgs>); }
+      else { this.modelNumber = new fhir.FhirString(source._modelNumber as Partial<fhir.FhirStringArgs>, options); }
     }
-    if (source['type']) { this.type = new fhir.CodeableConcept(source.type); }
-    if (source['specialization']) { this.specialization = source.specialization.map((x) => new fhir.DeviceDefinitionSpecialization(x)); }
+    if (source['type']) { this.type = new fhir.CodeableConcept(source.type, options); }
+    if (source['specialization']) { this.specialization = source.specialization.map((x) => new fhir.DeviceDefinitionSpecialization(x, options)); }
     else { this.specialization = []; }
-    if (source['version']) { this.version = source.version.map((x) => new fhir.FhirString({value: x})); }
+    if (source['version'] !== undefined) { this.version = source.version.map((x) => new fhir.FhirString({value: x}, options)); }
     else { this.version = []; }
     if (source['_version']) {
       source._version.forEach((x,i) => {
@@ -680,35 +680,35 @@ export class DeviceDefinition extends fhir.DomainResource {
         else { if (x) { this.version.push(new fhir.FhirString(x as Partial<fhir.FhirStringArgs>)); } }
       });
     }
-    if (source['safety']) { this.safety = source.safety.map((x) => new fhir.CodeableConcept(x)); }
+    if (source['safety']) { this.safety = source.safety.map((x) => new fhir.CodeableConcept(x, options)); }
     else { this.safety = []; }
-    if (source['shelfLifeStorage']) { this.shelfLifeStorage = source.shelfLifeStorage.map((x) => new fhir.ProductShelfLife(x)); }
+    if (source['shelfLifeStorage']) { this.shelfLifeStorage = source.shelfLifeStorage.map((x) => new fhir.ProductShelfLife(x, options)); }
     else { this.shelfLifeStorage = []; }
-    if (source['physicalCharacteristics']) { this.physicalCharacteristics = new fhir.ProdCharacteristic(source.physicalCharacteristics); }
-    if (source['languageCode']) { this.languageCode = source.languageCode.map((x) => new fhir.CodeableConcept(x)); }
+    if (source['physicalCharacteristics']) { this.physicalCharacteristics = new fhir.ProdCharacteristic(source.physicalCharacteristics, options); }
+    if (source['languageCode']) { this.languageCode = source.languageCode.map((x) => new fhir.CodeableConcept(x, options)); }
     else { this.languageCode = []; }
-    if (source['capability']) { this.capability = source.capability.map((x) => new fhir.DeviceDefinitionCapability(x)); }
+    if (source['capability']) { this.capability = source.capability.map((x) => new fhir.DeviceDefinitionCapability(x, options)); }
     else { this.capability = []; }
-    if (source['property']) { this.property = source.property.map((x) => new fhir.DeviceDefinitionProperty(x)); }
+    if (source['property']) { this.property = source.property.map((x) => new fhir.DeviceDefinitionProperty(x, options)); }
     else { this.property = []; }
-    if (source['owner']) { this.owner = new fhir.Reference(source.owner); }
-    if (source['contact']) { this.contact = source.contact.map((x) => new fhir.ContactPoint(x)); }
+    if (source['owner']) { this.owner = new fhir.Reference(source.owner, options); }
+    if (source['contact']) { this.contact = source.contact.map((x) => new fhir.ContactPoint(x, options)); }
     else { this.contact = []; }
-    if (source['url']) { this.url = new fhir.FhirUri({value: source.url}); }
+    if (source['url'] !== undefined) { this.url = new fhir.FhirUri({value: source.url}, options); }
     if (source['_url']) {
       if (this.url) { this.url.addExtendedProperties(source._url!); }
-      else { this.url = new fhir.FhirUri(source._url as Partial<fhir.FhirUriArgs>); }
+      else { this.url = new fhir.FhirUri(source._url as Partial<fhir.FhirUriArgs>, options); }
     }
-    if (source['onlineInformation']) { this.onlineInformation = new fhir.FhirUri({value: source.onlineInformation}); }
+    if (source['onlineInformation'] !== undefined) { this.onlineInformation = new fhir.FhirUri({value: source.onlineInformation}, options); }
     if (source['_onlineInformation']) {
       if (this.onlineInformation) { this.onlineInformation.addExtendedProperties(source._onlineInformation!); }
-      else { this.onlineInformation = new fhir.FhirUri(source._onlineInformation as Partial<fhir.FhirUriArgs>); }
+      else { this.onlineInformation = new fhir.FhirUri(source._onlineInformation as Partial<fhir.FhirUriArgs>, options); }
     }
-    if (source['note']) { this.note = source.note.map((x) => new fhir.Annotation(x)); }
+    if (source['note']) { this.note = source.note.map((x) => new fhir.Annotation(x, options)); }
     else { this.note = []; }
-    if (source['quantity']) { this.quantity = new fhir.Quantity(source.quantity); }
-    if (source['parentDevice']) { this.parentDevice = new fhir.Reference(source.parentDevice); }
-    if (source['material']) { this.material = source.material.map((x) => new fhir.DeviceDefinitionMaterial(x)); }
+    if (source['quantity']) { this.quantity = new fhir.Quantity(source.quantity, options); }
+    if (source['parentDevice']) { this.parentDevice = new fhir.Reference(source.parentDevice, options); }
+    if (source['material']) { this.material = source.material.map((x) => new fhir.DeviceDefinitionMaterial(x, options)); }
     else { this.material = []; }
   }
   /**

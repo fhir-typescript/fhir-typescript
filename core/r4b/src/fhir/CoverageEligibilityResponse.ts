@@ -132,16 +132,16 @@ export class CoverageEligibilityResponseInsuranceItemBenefit extends fhir.Backbo
    */
   constructor(source:Partial<CoverageEligibilityResponseInsuranceItemBenefitArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['type']) { this.type = new fhir.CodeableConcept(source.type); }
+    if (source['type']) { this.type = new fhir.CodeableConcept(source.type, options); }
     else { this.type = null; }
     if (source['allowed']) { this.allowed = source.allowed; }
-    else if (source['allowedUnsignedInt']) { this.allowed = new fhir.FhirUnsignedInt({value: source.allowedUnsignedInt}); }
-    else if (source['allowedString']) { this.allowed = new fhir.FhirString({value: source.allowedString}); }
-    else if (source['allowedMoney']) { this.allowed = new fhir.Money(source.allowedMoney); }
+    else if (source['allowedUnsignedInt'] !== undefined) { this.allowed = new fhir.FhirUnsignedInt({value: source.allowedUnsignedInt}, options); }
+    else if (source['allowedString'] !== undefined) { this.allowed = new fhir.FhirString({value: source.allowedString}, options); }
+    else if (source['allowedMoney']) { this.allowed = new fhir.Money(source.allowedMoney, options); }
     if (source['used']) { this.used = source.used; }
-    else if (source['usedUnsignedInt']) { this.used = new fhir.FhirUnsignedInt({value: source.usedUnsignedInt}); }
-    else if (source['usedString']) { this.used = new fhir.FhirString({value: source.usedString}); }
-    else if (source['usedMoney']) { this.used = new fhir.Money(source.usedMoney); }
+    else if (source['usedUnsignedInt'] !== undefined) { this.used = new fhir.FhirUnsignedInt({value: source.usedUnsignedInt}, options); }
+    else if (source['usedString'] !== undefined) { this.used = new fhir.FhirString({value: source.usedString}, options); }
+    else if (source['usedMoney']) { this.used = new fhir.Money(source.usedMoney, options); }
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -306,42 +306,42 @@ export class CoverageEligibilityResponseInsuranceItem extends fhir.BackboneEleme
    */
   constructor(source:Partial<CoverageEligibilityResponseInsuranceItemArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['category']) { this.category = new fhir.CodeableConcept(source.category); }
-    if (source['productOrService']) { this.productOrService = new fhir.CodeableConcept(source.productOrService); }
-    if (source['modifier']) { this.modifier = source.modifier.map((x) => new fhir.CodeableConcept(x)); }
+    if (source['category']) { this.category = new fhir.CodeableConcept(source.category, options); }
+    if (source['productOrService']) { this.productOrService = new fhir.CodeableConcept(source.productOrService, options); }
+    if (source['modifier']) { this.modifier = source.modifier.map((x) => new fhir.CodeableConcept(x, options)); }
     else { this.modifier = []; }
-    if (source['provider']) { this.provider = new fhir.Reference(source.provider); }
-    if (source['excluded']) { this.excluded = new fhir.FhirBoolean({value: source.excluded}); }
+    if (source['provider']) { this.provider = new fhir.Reference(source.provider, options); }
+    if (source['excluded'] !== undefined) { this.excluded = new fhir.FhirBoolean({value: source.excluded}, options); }
     if (source['_excluded']) {
       if (this.excluded) { this.excluded.addExtendedProperties(source._excluded!); }
-      else { this.excluded = new fhir.FhirBoolean(source._excluded as Partial<fhir.FhirBooleanArgs>); }
+      else { this.excluded = new fhir.FhirBoolean(source._excluded as Partial<fhir.FhirBooleanArgs>, options); }
     }
-    if (source['name']) { this.name = new fhir.FhirString({value: source.name}); }
+    if (source['name'] !== undefined) { this.name = new fhir.FhirString({value: source.name}, options); }
     if (source['_name']) {
       if (this.name) { this.name.addExtendedProperties(source._name!); }
-      else { this.name = new fhir.FhirString(source._name as Partial<fhir.FhirStringArgs>); }
+      else { this.name = new fhir.FhirString(source._name as Partial<fhir.FhirStringArgs>, options); }
     }
-    if (source['description']) { this.description = new fhir.FhirString({value: source.description}); }
+    if (source['description'] !== undefined) { this.description = new fhir.FhirString({value: source.description}, options); }
     if (source['_description']) {
       if (this.description) { this.description.addExtendedProperties(source._description!); }
-      else { this.description = new fhir.FhirString(source._description as Partial<fhir.FhirStringArgs>); }
+      else { this.description = new fhir.FhirString(source._description as Partial<fhir.FhirStringArgs>, options); }
     }
-    if (source['network']) { this.network = new fhir.CodeableConcept(source.network); }
-    if (source['unit']) { this.unit = new fhir.CodeableConcept(source.unit); }
-    if (source['term']) { this.term = new fhir.CodeableConcept(source.term); }
-    if (source['benefit']) { this.benefit = source.benefit.map((x) => new fhir.CoverageEligibilityResponseInsuranceItemBenefit(x)); }
+    if (source['network']) { this.network = new fhir.CodeableConcept(source.network, options); }
+    if (source['unit']) { this.unit = new fhir.CodeableConcept(source.unit, options); }
+    if (source['term']) { this.term = new fhir.CodeableConcept(source.term, options); }
+    if (source['benefit']) { this.benefit = source.benefit.map((x) => new fhir.CoverageEligibilityResponseInsuranceItemBenefit(x, options)); }
     else { this.benefit = []; }
-    if (source['authorizationRequired']) { this.authorizationRequired = new fhir.FhirBoolean({value: source.authorizationRequired}); }
+    if (source['authorizationRequired'] !== undefined) { this.authorizationRequired = new fhir.FhirBoolean({value: source.authorizationRequired}, options); }
     if (source['_authorizationRequired']) {
       if (this.authorizationRequired) { this.authorizationRequired.addExtendedProperties(source._authorizationRequired!); }
-      else { this.authorizationRequired = new fhir.FhirBoolean(source._authorizationRequired as Partial<fhir.FhirBooleanArgs>); }
+      else { this.authorizationRequired = new fhir.FhirBoolean(source._authorizationRequired as Partial<fhir.FhirBooleanArgs>, options); }
     }
-    if (source['authorizationSupporting']) { this.authorizationSupporting = source.authorizationSupporting.map((x) => new fhir.CodeableConcept(x)); }
+    if (source['authorizationSupporting']) { this.authorizationSupporting = source.authorizationSupporting.map((x) => new fhir.CodeableConcept(x, options)); }
     else { this.authorizationSupporting = []; }
-    if (source['authorizationUrl']) { this.authorizationUrl = new fhir.FhirUri({value: source.authorizationUrl}); }
+    if (source['authorizationUrl'] !== undefined) { this.authorizationUrl = new fhir.FhirUri({value: source.authorizationUrl}, options); }
     if (source['_authorizationUrl']) {
       if (this.authorizationUrl) { this.authorizationUrl.addExtendedProperties(source._authorizationUrl!); }
-      else { this.authorizationUrl = new fhir.FhirUri(source._authorizationUrl as Partial<fhir.FhirUriArgs>); }
+      else { this.authorizationUrl = new fhir.FhirUri(source._authorizationUrl as Partial<fhir.FhirUriArgs>, options); }
     }
   }
   /**
@@ -422,15 +422,15 @@ export class CoverageEligibilityResponseInsurance extends fhir.BackboneElement {
    */
   constructor(source:Partial<CoverageEligibilityResponseInsuranceArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['coverage']) { this.coverage = new fhir.Reference(source.coverage); }
+    if (source['coverage']) { this.coverage = new fhir.Reference(source.coverage, options); }
     else { this.coverage = null; }
-    if (source['inforce']) { this.inforce = new fhir.FhirBoolean({value: source.inforce}); }
+    if (source['inforce'] !== undefined) { this.inforce = new fhir.FhirBoolean({value: source.inforce}, options); }
     if (source['_inforce']) {
       if (this.inforce) { this.inforce.addExtendedProperties(source._inforce!); }
-      else { this.inforce = new fhir.FhirBoolean(source._inforce as Partial<fhir.FhirBooleanArgs>); }
+      else { this.inforce = new fhir.FhirBoolean(source._inforce as Partial<fhir.FhirBooleanArgs>, options); }
     }
-    if (source['benefitPeriod']) { this.benefitPeriod = new fhir.Period(source.benefitPeriod); }
-    if (source['item']) { this.item = source.item.map((x) => new fhir.CoverageEligibilityResponseInsuranceItem(x)); }
+    if (source['benefitPeriod']) { this.benefitPeriod = new fhir.Period(source.benefitPeriod, options); }
+    if (source['item']) { this.item = source.item.map((x) => new fhir.CoverageEligibilityResponseInsuranceItem(x, options)); }
     else { this.item = []; }
   }
   /**
@@ -473,7 +473,7 @@ export class CoverageEligibilityResponseError extends fhir.BackboneElement {
    */
   constructor(source:Partial<CoverageEligibilityResponseErrorArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['code']) { this.code = new fhir.CodeableConcept(source.code); }
+    if (source['code']) { this.code = new fhir.CodeableConcept(source.code, options); }
     else { this.code = null; }
   }
   /**
@@ -670,15 +670,15 @@ export class CoverageEligibilityResponse extends fhir.DomainResource {
   constructor(source:Partial<CoverageEligibilityResponseArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
     this.resourceType = 'CoverageEligibilityResponse';
-    if (source['identifier']) { this.identifier = source.identifier.map((x) => new fhir.Identifier(x)); }
+    if (source['identifier']) { this.identifier = source.identifier.map((x) => new fhir.Identifier(x, options)); }
     else { this.identifier = []; }
-    if (source['status']) { this.status = new fhir.FhirCode<FmStatusCodeType>({value: source.status}); }
+    if (source['status'] !== undefined) { this.status = new fhir.FhirCode<FmStatusCodeType>({value: source.status}, options); }
     else { this.status = null; }
     if (source['_status']) {
       if (this.status) { this.status.addExtendedProperties(source._status!); }
-      else { this.status = new fhir.FhirCode<FmStatusCodeType>(source._status as Partial<fhir.FhirCode>); }
+      else { this.status = new fhir.FhirCode<FmStatusCodeType>(source._status as Partial<fhir.FhirCode>, options); }
     }
-    if (source['purpose']) { this.purpose = source.purpose.map((x) => new fhir.FhirCode<EligibilityresponsePurposeCodeType>({value: x})); }
+    if (source['purpose'] !== undefined) { this.purpose = source.purpose.map((x) => new fhir.FhirCode<EligibilityresponsePurposeCodeType>({value: x}, options)); }
     else { this.purpose = []; }
     if (source['_purpose']) {
       source._purpose.forEach((x,i) => {
@@ -686,42 +686,42 @@ export class CoverageEligibilityResponse extends fhir.DomainResource {
         else { if (x) { this.purpose.push(new fhir.FhirCode<EligibilityresponsePurposeCodeType>(x as Partial<fhir.FhirCode>)); } }
       });
     }
-    if (source['patient']) { this.patient = new fhir.Reference(source.patient); }
+    if (source['patient']) { this.patient = new fhir.Reference(source.patient, options); }
     else { this.patient = null; }
     if (source['serviced']) { this.serviced = source.serviced; }
-    else if (source['servicedDate']) { this.serviced = new fhir.FhirDate({value: source.servicedDate}); }
-    else if (source['servicedPeriod']) { this.serviced = new fhir.Period(source.servicedPeriod); }
-    if (source['created']) { this.created = new fhir.FhirDateTime({value: source.created}); }
+    else if (source['servicedDate'] !== undefined) { this.serviced = new fhir.FhirDate({value: source.servicedDate}, options); }
+    else if (source['servicedPeriod']) { this.serviced = new fhir.Period(source.servicedPeriod, options); }
+    if (source['created'] !== undefined) { this.created = new fhir.FhirDateTime({value: source.created}, options); }
     else { this.created = null; }
     if (source['_created']) {
       if (this.created) { this.created.addExtendedProperties(source._created!); }
-      else { this.created = new fhir.FhirDateTime(source._created as Partial<fhir.FhirDateTimeArgs>); }
+      else { this.created = new fhir.FhirDateTime(source._created as Partial<fhir.FhirDateTimeArgs>, options); }
     }
-    if (source['requestor']) { this.requestor = new fhir.Reference(source.requestor); }
-    if (source['request']) { this.request = new fhir.Reference(source.request); }
+    if (source['requestor']) { this.requestor = new fhir.Reference(source.requestor, options); }
+    if (source['request']) { this.request = new fhir.Reference(source.request, options); }
     else { this.request = null; }
-    if (source['outcome']) { this.outcome = new fhir.FhirCode<RemittanceOutcomeCodeType>({value: source.outcome}); }
+    if (source['outcome'] !== undefined) { this.outcome = new fhir.FhirCode<RemittanceOutcomeCodeType>({value: source.outcome}, options); }
     else { this.outcome = null; }
     if (source['_outcome']) {
       if (this.outcome) { this.outcome.addExtendedProperties(source._outcome!); }
-      else { this.outcome = new fhir.FhirCode<RemittanceOutcomeCodeType>(source._outcome as Partial<fhir.FhirCode>); }
+      else { this.outcome = new fhir.FhirCode<RemittanceOutcomeCodeType>(source._outcome as Partial<fhir.FhirCode>, options); }
     }
-    if (source['disposition']) { this.disposition = new fhir.FhirString({value: source.disposition}); }
+    if (source['disposition'] !== undefined) { this.disposition = new fhir.FhirString({value: source.disposition}, options); }
     if (source['_disposition']) {
       if (this.disposition) { this.disposition.addExtendedProperties(source._disposition!); }
-      else { this.disposition = new fhir.FhirString(source._disposition as Partial<fhir.FhirStringArgs>); }
+      else { this.disposition = new fhir.FhirString(source._disposition as Partial<fhir.FhirStringArgs>, options); }
     }
-    if (source['insurer']) { this.insurer = new fhir.Reference(source.insurer); }
+    if (source['insurer']) { this.insurer = new fhir.Reference(source.insurer, options); }
     else { this.insurer = null; }
-    if (source['insurance']) { this.insurance = source.insurance.map((x) => new fhir.CoverageEligibilityResponseInsurance(x)); }
+    if (source['insurance']) { this.insurance = source.insurance.map((x) => new fhir.CoverageEligibilityResponseInsurance(x, options)); }
     else { this.insurance = []; }
-    if (source['preAuthRef']) { this.preAuthRef = new fhir.FhirString({value: source.preAuthRef}); }
+    if (source['preAuthRef'] !== undefined) { this.preAuthRef = new fhir.FhirString({value: source.preAuthRef}, options); }
     if (source['_preAuthRef']) {
       if (this.preAuthRef) { this.preAuthRef.addExtendedProperties(source._preAuthRef!); }
-      else { this.preAuthRef = new fhir.FhirString(source._preAuthRef as Partial<fhir.FhirStringArgs>); }
+      else { this.preAuthRef = new fhir.FhirString(source._preAuthRef as Partial<fhir.FhirStringArgs>, options); }
     }
-    if (source['form']) { this.form = new fhir.CodeableConcept(source.form); }
-    if (source['error']) { this.error = source.error.map((x) => new fhir.CoverageEligibilityResponseError(x)); }
+    if (source['form']) { this.form = new fhir.CodeableConcept(source.form, options); }
+    if (source['error']) { this.error = source.error.map((x) => new fhir.CoverageEligibilityResponseError(x, options)); }
     else { this.error = []; }
   }
   /**

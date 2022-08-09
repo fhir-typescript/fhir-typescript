@@ -124,18 +124,18 @@ export class ProdCharacteristic extends fhir.BackboneElement {
    */
   constructor(source:Partial<ProdCharacteristicArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['height']) { this.height = new fhir.Quantity(source.height); }
-    if (source['width']) { this.width = new fhir.Quantity(source.width); }
-    if (source['depth']) { this.depth = new fhir.Quantity(source.depth); }
-    if (source['weight']) { this.weight = new fhir.Quantity(source.weight); }
-    if (source['nominalVolume']) { this.nominalVolume = new fhir.Quantity(source.nominalVolume); }
-    if (source['externalDiameter']) { this.externalDiameter = new fhir.Quantity(source.externalDiameter); }
-    if (source['shape']) { this.shape = new fhir.FhirString({value: source.shape}); }
+    if (source['height']) { this.height = new fhir.Quantity(source.height, options); }
+    if (source['width']) { this.width = new fhir.Quantity(source.width, options); }
+    if (source['depth']) { this.depth = new fhir.Quantity(source.depth, options); }
+    if (source['weight']) { this.weight = new fhir.Quantity(source.weight, options); }
+    if (source['nominalVolume']) { this.nominalVolume = new fhir.Quantity(source.nominalVolume, options); }
+    if (source['externalDiameter']) { this.externalDiameter = new fhir.Quantity(source.externalDiameter, options); }
+    if (source['shape'] !== undefined) { this.shape = new fhir.FhirString({value: source.shape}, options); }
     if (source['_shape']) {
       if (this.shape) { this.shape.addExtendedProperties(source._shape!); }
-      else { this.shape = new fhir.FhirString(source._shape as Partial<fhir.FhirStringArgs>); }
+      else { this.shape = new fhir.FhirString(source._shape as Partial<fhir.FhirStringArgs>, options); }
     }
-    if (source['color']) { this.color = source.color.map((x) => new fhir.FhirString({value: x})); }
+    if (source['color'] !== undefined) { this.color = source.color.map((x) => new fhir.FhirString({value: x}, options)); }
     else { this.color = []; }
     if (source['_color']) {
       source._color.forEach((x,i) => {
@@ -143,7 +143,7 @@ export class ProdCharacteristic extends fhir.BackboneElement {
         else { if (x) { this.color.push(new fhir.FhirString(x as Partial<fhir.FhirStringArgs>)); } }
       });
     }
-    if (source['imprint']) { this.imprint = source.imprint.map((x) => new fhir.FhirString({value: x})); }
+    if (source['imprint'] !== undefined) { this.imprint = source.imprint.map((x) => new fhir.FhirString({value: x}, options)); }
     else { this.imprint = []; }
     if (source['_imprint']) {
       source._imprint.forEach((x,i) => {
@@ -151,9 +151,9 @@ export class ProdCharacteristic extends fhir.BackboneElement {
         else { if (x) { this.imprint.push(new fhir.FhirString(x as Partial<fhir.FhirStringArgs>)); } }
       });
     }
-    if (source['image']) { this.image = source.image.map((x) => new fhir.Attachment(x)); }
+    if (source['image']) { this.image = source.image.map((x) => new fhir.Attachment(x, options)); }
     else { this.image = []; }
-    if (source['scoring']) { this.scoring = new fhir.CodeableConcept(source.scoring); }
+    if (source['scoring']) { this.scoring = new fhir.CodeableConcept(source.scoring, options); }
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).

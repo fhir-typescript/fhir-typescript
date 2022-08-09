@@ -40,8 +40,8 @@ export class CodeableReference extends fhir.FhirElement {
    */
   constructor(source:Partial<CodeableReferenceArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['concept']) { this.concept = new fhir.CodeableConcept(source.concept); }
-    if (source['reference']) { this.reference = new fhir.Reference(source.reference); }
+    if (source['concept']) { this.concept = new fhir.CodeableConcept(source.concept, options); }
+    if (source['reference']) { this.reference = new fhir.Reference(source.reference, options); }
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).

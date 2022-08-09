@@ -96,25 +96,25 @@ export class TriggerDefinition extends fhir.FhirElement {
    */
   constructor(source:Partial<TriggerDefinitionArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['type']) { this.type = new fhir.FhirCode<TriggerTypeCodeType>({value: source.type}); }
+    if (source['type'] !== undefined) { this.type = new fhir.FhirCode<TriggerTypeCodeType>({value: source.type}, options); }
     else { this.type = null; }
     if (source['_type']) {
       if (this.type) { this.type.addExtendedProperties(source._type!); }
-      else { this.type = new fhir.FhirCode<TriggerTypeCodeType>(source._type as Partial<fhir.FhirCode>); }
+      else { this.type = new fhir.FhirCode<TriggerTypeCodeType>(source._type as Partial<fhir.FhirCode>, options); }
     }
-    if (source['name']) { this.name = new fhir.FhirString({value: source.name}); }
+    if (source['name'] !== undefined) { this.name = new fhir.FhirString({value: source.name}, options); }
     if (source['_name']) {
       if (this.name) { this.name.addExtendedProperties(source._name!); }
-      else { this.name = new fhir.FhirString(source._name as Partial<fhir.FhirStringArgs>); }
+      else { this.name = new fhir.FhirString(source._name as Partial<fhir.FhirStringArgs>, options); }
     }
     if (source['timing']) { this.timing = source.timing; }
-    else if (source['timingTiming']) { this.timing = new fhir.Timing(source.timingTiming); }
-    else if (source['timingReference']) { this.timing = new fhir.Reference(source.timingReference); }
-    else if (source['timingDate']) { this.timing = new fhir.FhirDate({value: source.timingDate}); }
-    else if (source['timingDateTime']) { this.timing = new fhir.FhirDateTime({value: source.timingDateTime}); }
-    if (source['data']) { this.data = source.data.map((x) => new fhir.DataRequirement(x)); }
+    else if (source['timingTiming']) { this.timing = new fhir.Timing(source.timingTiming, options); }
+    else if (source['timingReference']) { this.timing = new fhir.Reference(source.timingReference, options); }
+    else if (source['timingDate'] !== undefined) { this.timing = new fhir.FhirDate({value: source.timingDate}, options); }
+    else if (source['timingDateTime'] !== undefined) { this.timing = new fhir.FhirDateTime({value: source.timingDateTime}, options); }
+    if (source['data']) { this.data = source.data.map((x) => new fhir.DataRequirement(x, options)); }
     else { this.data = []; }
-    if (source['condition']) { this.condition = new fhir.Expression(source.condition); }
+    if (source['condition']) { this.condition = new fhir.Expression(source.condition, options); }
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).

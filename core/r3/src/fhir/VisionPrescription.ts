@@ -208,69 +208,69 @@ export class VisionPrescriptionDispense extends fhir.BackboneElement {
    */
   constructor(source:Partial<VisionPrescriptionDispenseArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['product']) { this.product = new fhir.CodeableConcept(source.product); }
-    if (source['eye']) { this.eye = new fhir.FhirCode<VisionEyeCodeType>({value: source.eye}); }
+    if (source['product']) { this.product = new fhir.CodeableConcept(source.product, options); }
+    if (source['eye'] !== undefined) { this.eye = new fhir.FhirCode<VisionEyeCodeType>({value: source.eye}, options); }
     if (source['_eye']) {
       if (this.eye) { this.eye.addExtendedProperties(source._eye!); }
-      else { this.eye = new fhir.FhirCode<VisionEyeCodeType>(source._eye as Partial<fhir.FhirCode>); }
+      else { this.eye = new fhir.FhirCode<VisionEyeCodeType>(source._eye as Partial<fhir.FhirCode>, options); }
     }
-    if (source['sphere']) { this.sphere = new fhir.FhirDecimal({value: source.sphere}); }
+    if (source['sphere'] !== undefined) { this.sphere = new fhir.FhirDecimal({value: source.sphere}, options); }
     if (source['_sphere']) {
       if (this.sphere) { this.sphere.addExtendedProperties(source._sphere!); }
-      else { this.sphere = new fhir.FhirDecimal(source._sphere as Partial<fhir.FhirDecimalArgs>); }
+      else { this.sphere = new fhir.FhirDecimal(source._sphere as Partial<fhir.FhirDecimalArgs>, options); }
     }
-    if (source['cylinder']) { this.cylinder = new fhir.FhirDecimal({value: source.cylinder}); }
+    if (source['cylinder'] !== undefined) { this.cylinder = new fhir.FhirDecimal({value: source.cylinder}, options); }
     if (source['_cylinder']) {
       if (this.cylinder) { this.cylinder.addExtendedProperties(source._cylinder!); }
-      else { this.cylinder = new fhir.FhirDecimal(source._cylinder as Partial<fhir.FhirDecimalArgs>); }
+      else { this.cylinder = new fhir.FhirDecimal(source._cylinder as Partial<fhir.FhirDecimalArgs>, options); }
     }
-    if (source['axis']) { this.axis = new fhir.FhirInteger({value: source.axis}); }
+    if (source['axis'] !== undefined) { this.axis = new fhir.FhirInteger({value: source.axis}, options); }
     if (source['_axis']) {
       if (this.axis) { this.axis.addExtendedProperties(source._axis!); }
-      else { this.axis = new fhir.FhirInteger(source._axis as Partial<fhir.FhirIntegerArgs>); }
+      else { this.axis = new fhir.FhirInteger(source._axis as Partial<fhir.FhirIntegerArgs>, options); }
     }
-    if (source['prism']) { this.prism = new fhir.FhirDecimal({value: source.prism}); }
+    if (source['prism'] !== undefined) { this.prism = new fhir.FhirDecimal({value: source.prism}, options); }
     if (source['_prism']) {
       if (this.prism) { this.prism.addExtendedProperties(source._prism!); }
-      else { this.prism = new fhir.FhirDecimal(source._prism as Partial<fhir.FhirDecimalArgs>); }
+      else { this.prism = new fhir.FhirDecimal(source._prism as Partial<fhir.FhirDecimalArgs>, options); }
     }
-    if (source['base']) { this.base = new fhir.FhirCode<VisionBaseCodeType>({value: source.base}); }
+    if (source['base'] !== undefined) { this.base = new fhir.FhirCode<VisionBaseCodeType>({value: source.base}, options); }
     if (source['_base']) {
       if (this.base) { this.base.addExtendedProperties(source._base!); }
-      else { this.base = new fhir.FhirCode<VisionBaseCodeType>(source._base as Partial<fhir.FhirCode>); }
+      else { this.base = new fhir.FhirCode<VisionBaseCodeType>(source._base as Partial<fhir.FhirCode>, options); }
     }
-    if (source['add']) { this.add = new fhir.FhirDecimal({value: source.add}); }
+    if (source['add'] !== undefined) { this.add = new fhir.FhirDecimal({value: source.add}, options); }
     if (source['_add']) {
       if (this.add) { this.add.addExtendedProperties(source._add!); }
-      else { this.add = new fhir.FhirDecimal(source._add as Partial<fhir.FhirDecimalArgs>); }
+      else { this.add = new fhir.FhirDecimal(source._add as Partial<fhir.FhirDecimalArgs>, options); }
     }
-    if (source['power']) { this.power = new fhir.FhirDecimal({value: source.power}); }
+    if (source['power'] !== undefined) { this.power = new fhir.FhirDecimal({value: source.power}, options); }
     if (source['_power']) {
       if (this.power) { this.power.addExtendedProperties(source._power!); }
-      else { this.power = new fhir.FhirDecimal(source._power as Partial<fhir.FhirDecimalArgs>); }
+      else { this.power = new fhir.FhirDecimal(source._power as Partial<fhir.FhirDecimalArgs>, options); }
     }
-    if (source['backCurve']) { this.backCurve = new fhir.FhirDecimal({value: source.backCurve}); }
+    if (source['backCurve'] !== undefined) { this.backCurve = new fhir.FhirDecimal({value: source.backCurve}, options); }
     if (source['_backCurve']) {
       if (this.backCurve) { this.backCurve.addExtendedProperties(source._backCurve!); }
-      else { this.backCurve = new fhir.FhirDecimal(source._backCurve as Partial<fhir.FhirDecimalArgs>); }
+      else { this.backCurve = new fhir.FhirDecimal(source._backCurve as Partial<fhir.FhirDecimalArgs>, options); }
     }
-    if (source['diameter']) { this.diameter = new fhir.FhirDecimal({value: source.diameter}); }
+    if (source['diameter'] !== undefined) { this.diameter = new fhir.FhirDecimal({value: source.diameter}, options); }
     if (source['_diameter']) {
       if (this.diameter) { this.diameter.addExtendedProperties(source._diameter!); }
-      else { this.diameter = new fhir.FhirDecimal(source._diameter as Partial<fhir.FhirDecimalArgs>); }
+      else { this.diameter = new fhir.FhirDecimal(source._diameter as Partial<fhir.FhirDecimalArgs>, options); }
     }
-    if (source['duration']) { this.duration = new fhir.Quantity(source.duration); }
-    if (source['color']) { this.color = new fhir.FhirString({value: source.color}); }
+    if (source['duration']) { this.duration = new fhir.Quantity(source.duration, options); }
+    if (source['color'] !== undefined) { this.color = new fhir.FhirString({value: source.color}, options); }
     if (source['_color']) {
       if (this.color) { this.color.addExtendedProperties(source._color!); }
-      else { this.color = new fhir.FhirString(source._color as Partial<fhir.FhirStringArgs>); }
+      else { this.color = new fhir.FhirString(source._color as Partial<fhir.FhirStringArgs>, options); }
     }
-    if (source['brand']) { this.brand = new fhir.FhirString({value: source.brand}); }
+    if (source['brand'] !== undefined) { this.brand = new fhir.FhirString({value: source.brand}, options); }
     if (source['_brand']) {
       if (this.brand) { this.brand.addExtendedProperties(source._brand!); }
-      else { this.brand = new fhir.FhirString(source._brand as Partial<fhir.FhirStringArgs>); }
+      else { this.brand = new fhir.FhirString(source._brand as Partial<fhir.FhirStringArgs>, options); }
     }
-    if (source['note']) { this.note = source.note.map((x) => new fhir.Annotation(x)); }
+    if (source['note']) { this.note = source.note.map((x) => new fhir.Annotation(x, options)); }
     else { this.note = []; }
   }
   /**
@@ -409,25 +409,25 @@ export class VisionPrescription extends fhir.DomainResource {
   constructor(source:Partial<VisionPrescriptionArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
     this.resourceType = 'VisionPrescription';
-    if (source['identifier']) { this.identifier = source.identifier.map((x) => new fhir.Identifier(x)); }
+    if (source['identifier']) { this.identifier = source.identifier.map((x) => new fhir.Identifier(x, options)); }
     else { this.identifier = []; }
-    if (source['status']) { this.status = new fhir.FhirCode<FmStatusCodeType>({value: source.status}); }
+    if (source['status'] !== undefined) { this.status = new fhir.FhirCode<FmStatusCodeType>({value: source.status}, options); }
     if (source['_status']) {
       if (this.status) { this.status.addExtendedProperties(source._status!); }
-      else { this.status = new fhir.FhirCode<FmStatusCodeType>(source._status as Partial<fhir.FhirCode>); }
+      else { this.status = new fhir.FhirCode<FmStatusCodeType>(source._status as Partial<fhir.FhirCode>, options); }
     }
-    if (source['patient']) { this.patient = new fhir.Reference(source.patient); }
-    if (source['encounter']) { this.encounter = new fhir.Reference(source.encounter); }
-    if (source['dateWritten']) { this.dateWritten = new fhir.FhirDateTime({value: source.dateWritten}); }
+    if (source['patient']) { this.patient = new fhir.Reference(source.patient, options); }
+    if (source['encounter']) { this.encounter = new fhir.Reference(source.encounter, options); }
+    if (source['dateWritten'] !== undefined) { this.dateWritten = new fhir.FhirDateTime({value: source.dateWritten}, options); }
     if (source['_dateWritten']) {
       if (this.dateWritten) { this.dateWritten.addExtendedProperties(source._dateWritten!); }
-      else { this.dateWritten = new fhir.FhirDateTime(source._dateWritten as Partial<fhir.FhirDateTimeArgs>); }
+      else { this.dateWritten = new fhir.FhirDateTime(source._dateWritten as Partial<fhir.FhirDateTimeArgs>, options); }
     }
-    if (source['prescriber']) { this.prescriber = new fhir.Reference(source.prescriber); }
+    if (source['prescriber']) { this.prescriber = new fhir.Reference(source.prescriber, options); }
     if (source['reason']) { this.reason = source.reason; }
-    else if (source['reasonCodeableConcept']) { this.reason = new fhir.CodeableConcept(source.reasonCodeableConcept); }
-    else if (source['reasonReference']) { this.reason = new fhir.Reference(source.reasonReference); }
-    if (source['dispense']) { this.dispense = source.dispense.map((x) => new fhir.VisionPrescriptionDispense(x)); }
+    else if (source['reasonCodeableConcept']) { this.reason = new fhir.CodeableConcept(source.reasonCodeableConcept, options); }
+    else if (source['reasonReference']) { this.reason = new fhir.Reference(source.reasonReference, options); }
+    if (source['dispense']) { this.dispense = source.dispense.map((x) => new fhir.VisionPrescriptionDispense(x, options)); }
     else { this.dispense = []; }
   }
   /**

@@ -84,8 +84,8 @@ export class ImmunizationPractitioner extends fhir.BackboneElement {
    */
   constructor(source:Partial<ImmunizationPractitionerArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['role']) { this.role = new fhir.CodeableConcept(source.role); }
-    if (source['actor']) { this.actor = new fhir.Reference(source.actor); }
+    if (source['role']) { this.role = new fhir.CodeableConcept(source.role, options); }
+    if (source['actor']) { this.actor = new fhir.Reference(source.actor, options); }
     else { this.actor = null; }
   }
   /**
@@ -134,9 +134,9 @@ export class ImmunizationExplanation extends fhir.BackboneElement {
    */
   constructor(source:Partial<ImmunizationExplanationArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['reason']) { this.reason = source.reason.map((x) => new fhir.CodeableConcept(x)); }
+    if (source['reason']) { this.reason = source.reason.map((x) => new fhir.CodeableConcept(x, options)); }
     else { this.reason = []; }
-    if (source['reasonNotGiven']) { this.reasonNotGiven = source.reasonNotGiven.map((x) => new fhir.CodeableConcept(x)); }
+    if (source['reasonNotGiven']) { this.reasonNotGiven = source.reasonNotGiven.map((x) => new fhir.CodeableConcept(x, options)); }
     else { this.reasonNotGiven = []; }
   }
   /**
@@ -201,16 +201,16 @@ export class ImmunizationReaction extends fhir.BackboneElement {
    */
   constructor(source:Partial<ImmunizationReactionArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['date']) { this.date = new fhir.FhirDateTime({value: source.date}); }
+    if (source['date'] !== undefined) { this.date = new fhir.FhirDateTime({value: source.date}, options); }
     if (source['_date']) {
       if (this.date) { this.date.addExtendedProperties(source._date!); }
-      else { this.date = new fhir.FhirDateTime(source._date as Partial<fhir.FhirDateTimeArgs>); }
+      else { this.date = new fhir.FhirDateTime(source._date as Partial<fhir.FhirDateTimeArgs>, options); }
     }
-    if (source['detail']) { this.detail = new fhir.Reference(source.detail); }
-    if (source['reported']) { this.reported = new fhir.FhirBoolean({value: source.reported}); }
+    if (source['detail']) { this.detail = new fhir.Reference(source.detail, options); }
+    if (source['reported'] !== undefined) { this.reported = new fhir.FhirBoolean({value: source.reported}, options); }
     if (source['_reported']) {
       if (this.reported) { this.reported.addExtendedProperties(source._reported!); }
-      else { this.reported = new fhir.FhirBoolean(source._reported as Partial<fhir.FhirBooleanArgs>); }
+      else { this.reported = new fhir.FhirBoolean(source._reported as Partial<fhir.FhirBooleanArgs>, options); }
     }
   }
   /**
@@ -324,32 +324,32 @@ export class ImmunizationVaccinationProtocol extends fhir.BackboneElement {
    */
   constructor(source:Partial<ImmunizationVaccinationProtocolArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['doseSequence']) { this.doseSequence = new fhir.FhirPositiveInt({value: source.doseSequence}); }
+    if (source['doseSequence'] !== undefined) { this.doseSequence = new fhir.FhirPositiveInt({value: source.doseSequence}, options); }
     if (source['_doseSequence']) {
       if (this.doseSequence) { this.doseSequence.addExtendedProperties(source._doseSequence!); }
-      else { this.doseSequence = new fhir.FhirPositiveInt(source._doseSequence as Partial<fhir.FhirPositiveIntArgs>); }
+      else { this.doseSequence = new fhir.FhirPositiveInt(source._doseSequence as Partial<fhir.FhirPositiveIntArgs>, options); }
     }
-    if (source['description']) { this.description = new fhir.FhirString({value: source.description}); }
+    if (source['description'] !== undefined) { this.description = new fhir.FhirString({value: source.description}, options); }
     if (source['_description']) {
       if (this.description) { this.description.addExtendedProperties(source._description!); }
-      else { this.description = new fhir.FhirString(source._description as Partial<fhir.FhirStringArgs>); }
+      else { this.description = new fhir.FhirString(source._description as Partial<fhir.FhirStringArgs>, options); }
     }
-    if (source['authority']) { this.authority = new fhir.Reference(source.authority); }
-    if (source['series']) { this.series = new fhir.FhirString({value: source.series}); }
+    if (source['authority']) { this.authority = new fhir.Reference(source.authority, options); }
+    if (source['series'] !== undefined) { this.series = new fhir.FhirString({value: source.series}, options); }
     if (source['_series']) {
       if (this.series) { this.series.addExtendedProperties(source._series!); }
-      else { this.series = new fhir.FhirString(source._series as Partial<fhir.FhirStringArgs>); }
+      else { this.series = new fhir.FhirString(source._series as Partial<fhir.FhirStringArgs>, options); }
     }
-    if (source['seriesDoses']) { this.seriesDoses = new fhir.FhirPositiveInt({value: source.seriesDoses}); }
+    if (source['seriesDoses'] !== undefined) { this.seriesDoses = new fhir.FhirPositiveInt({value: source.seriesDoses}, options); }
     if (source['_seriesDoses']) {
       if (this.seriesDoses) { this.seriesDoses.addExtendedProperties(source._seriesDoses!); }
-      else { this.seriesDoses = new fhir.FhirPositiveInt(source._seriesDoses as Partial<fhir.FhirPositiveIntArgs>); }
+      else { this.seriesDoses = new fhir.FhirPositiveInt(source._seriesDoses as Partial<fhir.FhirPositiveIntArgs>, options); }
     }
-    if (source['targetDisease']) { this.targetDisease = source.targetDisease.map((x) => new fhir.CodeableConcept(x)); }
+    if (source['targetDisease']) { this.targetDisease = source.targetDisease.map((x) => new fhir.CodeableConcept(x, options)); }
     else { this.targetDisease = []; }
-    if (source['doseStatus']) { this.doseStatus = new fhir.CodeableConcept(source.doseStatus); }
+    if (source['doseStatus']) { this.doseStatus = new fhir.CodeableConcept(source.doseStatus, options); }
     else { this.doseStatus = null; }
-    if (source['doseStatusReason']) { this.doseStatusReason = new fhir.CodeableConcept(source.doseStatusReason); }
+    if (source['doseStatusReason']) { this.doseStatusReason = new fhir.CodeableConcept(source.doseStatusReason, options); }
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -590,60 +590,60 @@ export class Immunization extends fhir.DomainResource {
   constructor(source:Partial<ImmunizationArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
     this.resourceType = 'Immunization';
-    if (source['identifier']) { this.identifier = source.identifier.map((x) => new fhir.Identifier(x)); }
+    if (source['identifier']) { this.identifier = source.identifier.map((x) => new fhir.Identifier(x, options)); }
     else { this.identifier = []; }
-    if (source['status']) { this.status = new fhir.FhirCode<ImmunizationStatusCodeType>({value: source.status}); }
+    if (source['status'] !== undefined) { this.status = new fhir.FhirCode<ImmunizationStatusCodeType>({value: source.status}, options); }
     else { this.status = null; }
     if (source['_status']) {
       if (this.status) { this.status.addExtendedProperties(source._status!); }
-      else { this.status = new fhir.FhirCode<ImmunizationStatusCodeType>(source._status as Partial<fhir.FhirCode>); }
+      else { this.status = new fhir.FhirCode<ImmunizationStatusCodeType>(source._status as Partial<fhir.FhirCode>, options); }
     }
-    if (source['notGiven']) { this.notGiven = new fhir.FhirBoolean({value: source.notGiven}); }
+    if (source['notGiven'] !== undefined) { this.notGiven = new fhir.FhirBoolean({value: source.notGiven}, options); }
     else { this.notGiven = null; }
     if (source['_notGiven']) {
       if (this.notGiven) { this.notGiven.addExtendedProperties(source._notGiven!); }
-      else { this.notGiven = new fhir.FhirBoolean(source._notGiven as Partial<fhir.FhirBooleanArgs>); }
+      else { this.notGiven = new fhir.FhirBoolean(source._notGiven as Partial<fhir.FhirBooleanArgs>, options); }
     }
-    if (source['vaccineCode']) { this.vaccineCode = new fhir.CodeableConcept(source.vaccineCode); }
+    if (source['vaccineCode']) { this.vaccineCode = new fhir.CodeableConcept(source.vaccineCode, options); }
     else { this.vaccineCode = null; }
-    if (source['patient']) { this.patient = new fhir.Reference(source.patient); }
+    if (source['patient']) { this.patient = new fhir.Reference(source.patient, options); }
     else { this.patient = null; }
-    if (source['encounter']) { this.encounter = new fhir.Reference(source.encounter); }
-    if (source['date']) { this.date = new fhir.FhirDateTime({value: source.date}); }
+    if (source['encounter']) { this.encounter = new fhir.Reference(source.encounter, options); }
+    if (source['date'] !== undefined) { this.date = new fhir.FhirDateTime({value: source.date}, options); }
     if (source['_date']) {
       if (this.date) { this.date.addExtendedProperties(source._date!); }
-      else { this.date = new fhir.FhirDateTime(source._date as Partial<fhir.FhirDateTimeArgs>); }
+      else { this.date = new fhir.FhirDateTime(source._date as Partial<fhir.FhirDateTimeArgs>, options); }
     }
-    if (source['primarySource']) { this.primarySource = new fhir.FhirBoolean({value: source.primarySource}); }
+    if (source['primarySource'] !== undefined) { this.primarySource = new fhir.FhirBoolean({value: source.primarySource}, options); }
     else { this.primarySource = null; }
     if (source['_primarySource']) {
       if (this.primarySource) { this.primarySource.addExtendedProperties(source._primarySource!); }
-      else { this.primarySource = new fhir.FhirBoolean(source._primarySource as Partial<fhir.FhirBooleanArgs>); }
+      else { this.primarySource = new fhir.FhirBoolean(source._primarySource as Partial<fhir.FhirBooleanArgs>, options); }
     }
-    if (source['reportOrigin']) { this.reportOrigin = new fhir.CodeableConcept(source.reportOrigin); }
-    if (source['location']) { this.location = new fhir.Reference(source.location); }
-    if (source['manufacturer']) { this.manufacturer = new fhir.Reference(source.manufacturer); }
-    if (source['lotNumber']) { this.lotNumber = new fhir.FhirString({value: source.lotNumber}); }
+    if (source['reportOrigin']) { this.reportOrigin = new fhir.CodeableConcept(source.reportOrigin, options); }
+    if (source['location']) { this.location = new fhir.Reference(source.location, options); }
+    if (source['manufacturer']) { this.manufacturer = new fhir.Reference(source.manufacturer, options); }
+    if (source['lotNumber'] !== undefined) { this.lotNumber = new fhir.FhirString({value: source.lotNumber}, options); }
     if (source['_lotNumber']) {
       if (this.lotNumber) { this.lotNumber.addExtendedProperties(source._lotNumber!); }
-      else { this.lotNumber = new fhir.FhirString(source._lotNumber as Partial<fhir.FhirStringArgs>); }
+      else { this.lotNumber = new fhir.FhirString(source._lotNumber as Partial<fhir.FhirStringArgs>, options); }
     }
-    if (source['expirationDate']) { this.expirationDate = new fhir.FhirDate({value: source.expirationDate}); }
+    if (source['expirationDate'] !== undefined) { this.expirationDate = new fhir.FhirDate({value: source.expirationDate}, options); }
     if (source['_expirationDate']) {
       if (this.expirationDate) { this.expirationDate.addExtendedProperties(source._expirationDate!); }
-      else { this.expirationDate = new fhir.FhirDate(source._expirationDate as Partial<fhir.FhirDateArgs>); }
+      else { this.expirationDate = new fhir.FhirDate(source._expirationDate as Partial<fhir.FhirDateArgs>, options); }
     }
-    if (source['site']) { this.site = new fhir.CodeableConcept(source.site); }
-    if (source['route']) { this.route = new fhir.CodeableConcept(source.route); }
-    if (source['doseQuantity']) { this.doseQuantity = new fhir.Quantity(source.doseQuantity); }
-    if (source['practitioner']) { this.practitioner = source.practitioner.map((x) => new fhir.ImmunizationPractitioner(x)); }
+    if (source['site']) { this.site = new fhir.CodeableConcept(source.site, options); }
+    if (source['route']) { this.route = new fhir.CodeableConcept(source.route, options); }
+    if (source['doseQuantity']) { this.doseQuantity = new fhir.Quantity(source.doseQuantity, options); }
+    if (source['practitioner']) { this.practitioner = source.practitioner.map((x) => new fhir.ImmunizationPractitioner(x, options)); }
     else { this.practitioner = []; }
-    if (source['note']) { this.note = source.note.map((x) => new fhir.Annotation(x)); }
+    if (source['note']) { this.note = source.note.map((x) => new fhir.Annotation(x, options)); }
     else { this.note = []; }
-    if (source['explanation']) { this.explanation = new fhir.ImmunizationExplanation(source.explanation); }
-    if (source['reaction']) { this.reaction = source.reaction.map((x) => new fhir.ImmunizationReaction(x)); }
+    if (source['explanation']) { this.explanation = new fhir.ImmunizationExplanation(source.explanation, options); }
+    if (source['reaction']) { this.reaction = source.reaction.map((x) => new fhir.ImmunizationReaction(x, options)); }
     else { this.reaction = []; }
-    if (source['vaccinationProtocol']) { this.vaccinationProtocol = source.vaccinationProtocol.map((x) => new fhir.ImmunizationVaccinationProtocol(x)); }
+    if (source['vaccinationProtocol']) { this.vaccinationProtocol = source.vaccinationProtocol.map((x) => new fhir.ImmunizationVaccinationProtocol(x, options)); }
     else { this.vaccinationProtocol = []; }
   }
   /**

@@ -76,17 +76,17 @@ export class Meta extends fhir.FhirElement {
    */
   constructor(source:Partial<MetaArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['versionId']) { this.versionId = new fhir.FhirId({value: source.versionId}); }
+    if (source['versionId'] !== undefined) { this.versionId = new fhir.FhirId({value: source.versionId}, options); }
     if (source['_versionId']) {
       if (this.versionId) { this.versionId.addExtendedProperties(source._versionId!); }
-      else { this.versionId = new fhir.FhirId(source._versionId as Partial<fhir.FhirIdArgs>); }
+      else { this.versionId = new fhir.FhirId(source._versionId as Partial<fhir.FhirIdArgs>, options); }
     }
-    if (source['lastUpdated']) { this.lastUpdated = new fhir.FhirInstant({value: source.lastUpdated}); }
+    if (source['lastUpdated'] !== undefined) { this.lastUpdated = new fhir.FhirInstant({value: source.lastUpdated}, options); }
     if (source['_lastUpdated']) {
       if (this.lastUpdated) { this.lastUpdated.addExtendedProperties(source._lastUpdated!); }
-      else { this.lastUpdated = new fhir.FhirInstant(source._lastUpdated as Partial<fhir.FhirInstantArgs>); }
+      else { this.lastUpdated = new fhir.FhirInstant(source._lastUpdated as Partial<fhir.FhirInstantArgs>, options); }
     }
-    if (source['profile']) { this.profile = source.profile.map((x) => new fhir.FhirUri({value: x})); }
+    if (source['profile'] !== undefined) { this.profile = source.profile.map((x) => new fhir.FhirUri({value: x}, options)); }
     else { this.profile = []; }
     if (source['_profile']) {
       source._profile.forEach((x,i) => {
@@ -94,9 +94,9 @@ export class Meta extends fhir.FhirElement {
         else { if (x) { this.profile.push(new fhir.FhirUri(x as Partial<fhir.FhirUriArgs>)); } }
       });
     }
-    if (source['security']) { this.security = source.security.map((x) => new fhir.Coding(x)); }
+    if (source['security']) { this.security = source.security.map((x) => new fhir.Coding(x, options)); }
     else { this.security = []; }
-    if (source['tag']) { this.tag = source.tag.map((x) => new fhir.Coding(x)); }
+    if (source['tag']) { this.tag = source.tag.map((x) => new fhir.Coding(x, options)); }
     else { this.tag = []; }
   }
   /**

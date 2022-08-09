@@ -108,17 +108,17 @@ export class HumanName extends fhir.FhirElement {
    */
   constructor(source:Partial<HumanNameArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['use']) { this.use = new fhir.FhirCode<NameUseCodeType>({value: source.use}); }
+    if (source['use'] !== undefined) { this.use = new fhir.FhirCode<NameUseCodeType>({value: source.use}, options); }
     if (source['_use']) {
       if (this.use) { this.use.addExtendedProperties(source._use!); }
-      else { this.use = new fhir.FhirCode<NameUseCodeType>(source._use as Partial<fhir.FhirCode>); }
+      else { this.use = new fhir.FhirCode<NameUseCodeType>(source._use as Partial<fhir.FhirCode>, options); }
     }
-    if (source['text']) { this.text = new fhir.FhirString({value: source.text}); }
+    if (source['text'] !== undefined) { this.text = new fhir.FhirString({value: source.text}, options); }
     if (source['_text']) {
       if (this.text) { this.text.addExtendedProperties(source._text!); }
-      else { this.text = new fhir.FhirString(source._text as Partial<fhir.FhirStringArgs>); }
+      else { this.text = new fhir.FhirString(source._text as Partial<fhir.FhirStringArgs>, options); }
     }
-    if (source['family']) { this.family = source.family.map((x) => new fhir.FhirString({value: x})); }
+    if (source['family'] !== undefined) { this.family = source.family.map((x) => new fhir.FhirString({value: x}, options)); }
     else { this.family = []; }
     if (source['_family']) {
       source._family.forEach((x,i) => {
@@ -126,7 +126,7 @@ export class HumanName extends fhir.FhirElement {
         else { if (x) { this.family.push(new fhir.FhirString(x as Partial<fhir.FhirStringArgs>)); } }
       });
     }
-    if (source['given']) { this.given = source.given.map((x) => new fhir.FhirString({value: x})); }
+    if (source['given'] !== undefined) { this.given = source.given.map((x) => new fhir.FhirString({value: x}, options)); }
     else { this.given = []; }
     if (source['_given']) {
       source._given.forEach((x,i) => {
@@ -134,7 +134,7 @@ export class HumanName extends fhir.FhirElement {
         else { if (x) { this.given.push(new fhir.FhirString(x as Partial<fhir.FhirStringArgs>)); } }
       });
     }
-    if (source['prefix']) { this.prefix = source.prefix.map((x) => new fhir.FhirString({value: x})); }
+    if (source['prefix'] !== undefined) { this.prefix = source.prefix.map((x) => new fhir.FhirString({value: x}, options)); }
     else { this.prefix = []; }
     if (source['_prefix']) {
       source._prefix.forEach((x,i) => {
@@ -142,7 +142,7 @@ export class HumanName extends fhir.FhirElement {
         else { if (x) { this.prefix.push(new fhir.FhirString(x as Partial<fhir.FhirStringArgs>)); } }
       });
     }
-    if (source['suffix']) { this.suffix = source.suffix.map((x) => new fhir.FhirString({value: x})); }
+    if (source['suffix'] !== undefined) { this.suffix = source.suffix.map((x) => new fhir.FhirString({value: x}, options)); }
     else { this.suffix = []; }
     if (source['_suffix']) {
       source._suffix.forEach((x,i) => {
@@ -150,7 +150,7 @@ export class HumanName extends fhir.FhirElement {
         else { if (x) { this.suffix.push(new fhir.FhirString(x as Partial<fhir.FhirStringArgs>)); } }
       });
     }
-    if (source['period']) { this.period = new fhir.Period(source.period); }
+    if (source['period']) { this.period = new fhir.Period(source.period, options); }
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).

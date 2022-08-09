@@ -108,32 +108,32 @@ export class AuditEventEvent extends fhir.BackboneElement {
    */
   constructor(source:Partial<AuditEventEventArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['type']) { this.type = new fhir.Coding(source.type); }
+    if (source['type']) { this.type = new fhir.Coding(source.type, options); }
     else { this.type = null; }
-    if (source['subtype']) { this.subtype = source.subtype.map((x) => new fhir.Coding(x)); }
+    if (source['subtype']) { this.subtype = source.subtype.map((x) => new fhir.Coding(x, options)); }
     else { this.subtype = []; }
-    if (source['action']) { this.action = new fhir.FhirCode({value: source.action}); }
+    if (source['action'] !== undefined) { this.action = new fhir.FhirCode({value: source.action}, options); }
     if (source['_action']) {
       if (this.action) { this.action.addExtendedProperties(source._action!); }
-      else { this.action = new fhir.FhirCode(source._action as Partial<fhir.FhirCodeArgs>); }
+      else { this.action = new fhir.FhirCode(source._action as Partial<fhir.FhirCodeArgs>, options); }
     }
-    if (source['dateTime']) { this.dateTime = new fhir.FhirInstant({value: source.dateTime}); }
+    if (source['dateTime'] !== undefined) { this.dateTime = new fhir.FhirInstant({value: source.dateTime}, options); }
     else { this.dateTime = null; }
     if (source['_dateTime']) {
       if (this.dateTime) { this.dateTime.addExtendedProperties(source._dateTime!); }
-      else { this.dateTime = new fhir.FhirInstant(source._dateTime as Partial<fhir.FhirInstantArgs>); }
+      else { this.dateTime = new fhir.FhirInstant(source._dateTime as Partial<fhir.FhirInstantArgs>, options); }
     }
-    if (source['outcome']) { this.outcome = new fhir.FhirCode({value: source.outcome}); }
+    if (source['outcome'] !== undefined) { this.outcome = new fhir.FhirCode({value: source.outcome}, options); }
     if (source['_outcome']) {
       if (this.outcome) { this.outcome.addExtendedProperties(source._outcome!); }
-      else { this.outcome = new fhir.FhirCode(source._outcome as Partial<fhir.FhirCodeArgs>); }
+      else { this.outcome = new fhir.FhirCode(source._outcome as Partial<fhir.FhirCodeArgs>, options); }
     }
-    if (source['outcomeDesc']) { this.outcomeDesc = new fhir.FhirString({value: source.outcomeDesc}); }
+    if (source['outcomeDesc'] !== undefined) { this.outcomeDesc = new fhir.FhirString({value: source.outcomeDesc}, options); }
     if (source['_outcomeDesc']) {
       if (this.outcomeDesc) { this.outcomeDesc.addExtendedProperties(source._outcomeDesc!); }
-      else { this.outcomeDesc = new fhir.FhirString(source._outcomeDesc as Partial<fhir.FhirStringArgs>); }
+      else { this.outcomeDesc = new fhir.FhirString(source._outcomeDesc as Partial<fhir.FhirStringArgs>, options); }
     }
-    if (source['purposeOfEvent']) { this.purposeOfEvent = source.purposeOfEvent.map((x) => new fhir.Coding(x)); }
+    if (source['purposeOfEvent']) { this.purposeOfEvent = source.purposeOfEvent.map((x) => new fhir.Coding(x, options)); }
     else { this.purposeOfEvent = []; }
   }
   /**
@@ -195,15 +195,15 @@ export class AuditEventParticipantNetwork extends fhir.BackboneElement {
    */
   constructor(source:Partial<AuditEventParticipantNetworkArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['address']) { this.address = new fhir.FhirString({value: source.address}); }
+    if (source['address'] !== undefined) { this.address = new fhir.FhirString({value: source.address}, options); }
     if (source['_address']) {
       if (this.address) { this.address.addExtendedProperties(source._address!); }
-      else { this.address = new fhir.FhirString(source._address as Partial<fhir.FhirStringArgs>); }
+      else { this.address = new fhir.FhirString(source._address as Partial<fhir.FhirStringArgs>, options); }
     }
-    if (source['type']) { this.type = new fhir.FhirCode({value: source.type}); }
+    if (source['type'] !== undefined) { this.type = new fhir.FhirCode({value: source.type}, options); }
     if (source['_type']) {
       if (this.type) { this.type.addExtendedProperties(source._type!); }
-      else { this.type = new fhir.FhirCode(source._type as Partial<fhir.FhirCodeArgs>); }
+      else { this.type = new fhir.FhirCode(source._type as Partial<fhir.FhirCodeArgs>, options); }
     }
   }
   /**
@@ -340,28 +340,28 @@ export class AuditEventParticipant extends fhir.BackboneElement {
    */
   constructor(source:Partial<AuditEventParticipantArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['role']) { this.role = source.role.map((x) => new fhir.CodeableConcept(x)); }
+    if (source['role']) { this.role = source.role.map((x) => new fhir.CodeableConcept(x, options)); }
     else { this.role = []; }
-    if (source['reference']) { this.reference = new fhir.Reference(source.reference); }
-    if (source['userId']) { this.userId = new fhir.Identifier(source.userId); }
-    if (source['altId']) { this.altId = new fhir.FhirString({value: source.altId}); }
+    if (source['reference']) { this.reference = new fhir.Reference(source.reference, options); }
+    if (source['userId']) { this.userId = new fhir.Identifier(source.userId, options); }
+    if (source['altId'] !== undefined) { this.altId = new fhir.FhirString({value: source.altId}, options); }
     if (source['_altId']) {
       if (this.altId) { this.altId.addExtendedProperties(source._altId!); }
-      else { this.altId = new fhir.FhirString(source._altId as Partial<fhir.FhirStringArgs>); }
+      else { this.altId = new fhir.FhirString(source._altId as Partial<fhir.FhirStringArgs>, options); }
     }
-    if (source['name']) { this.name = new fhir.FhirString({value: source.name}); }
+    if (source['name'] !== undefined) { this.name = new fhir.FhirString({value: source.name}, options); }
     if (source['_name']) {
       if (this.name) { this.name.addExtendedProperties(source._name!); }
-      else { this.name = new fhir.FhirString(source._name as Partial<fhir.FhirStringArgs>); }
+      else { this.name = new fhir.FhirString(source._name as Partial<fhir.FhirStringArgs>, options); }
     }
-    if (source['requestor']) { this.requestor = new fhir.FhirBoolean({value: source.requestor}); }
+    if (source['requestor'] !== undefined) { this.requestor = new fhir.FhirBoolean({value: source.requestor}, options); }
     else { this.requestor = null; }
     if (source['_requestor']) {
       if (this.requestor) { this.requestor.addExtendedProperties(source._requestor!); }
-      else { this.requestor = new fhir.FhirBoolean(source._requestor as Partial<fhir.FhirBooleanArgs>); }
+      else { this.requestor = new fhir.FhirBoolean(source._requestor as Partial<fhir.FhirBooleanArgs>, options); }
     }
-    if (source['location']) { this.location = new fhir.Reference(source.location); }
-    if (source['policy']) { this.policy = source.policy.map((x) => new fhir.FhirUri({value: x})); }
+    if (source['location']) { this.location = new fhir.Reference(source.location, options); }
+    if (source['policy'] !== undefined) { this.policy = source.policy.map((x) => new fhir.FhirUri({value: x}, options)); }
     else { this.policy = []; }
     if (source['_policy']) {
       source._policy.forEach((x,i) => {
@@ -369,9 +369,9 @@ export class AuditEventParticipant extends fhir.BackboneElement {
         else { if (x) { this.policy.push(new fhir.FhirUri(x as Partial<fhir.FhirUriArgs>)); } }
       });
     }
-    if (source['media']) { this.media = new fhir.Coding(source.media); }
-    if (source['network']) { this.network = new fhir.AuditEventParticipantNetwork(source.network); }
-    if (source['purposeOfUse']) { this.purposeOfUse = source.purposeOfUse.map((x) => new fhir.Coding(x)); }
+    if (source['media']) { this.media = new fhir.Coding(source.media, options); }
+    if (source['network']) { this.network = new fhir.AuditEventParticipantNetwork(source.network, options); }
+    if (source['purposeOfUse']) { this.purposeOfUse = source.purposeOfUse.map((x) => new fhir.Coding(x, options)); }
     else { this.purposeOfUse = []; }
   }
   /**
@@ -441,14 +441,14 @@ export class AuditEventSource extends fhir.BackboneElement {
    */
   constructor(source:Partial<AuditEventSourceArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['site']) { this.site = new fhir.FhirString({value: source.site}); }
+    if (source['site'] !== undefined) { this.site = new fhir.FhirString({value: source.site}, options); }
     if (source['_site']) {
       if (this.site) { this.site.addExtendedProperties(source._site!); }
-      else { this.site = new fhir.FhirString(source._site as Partial<fhir.FhirStringArgs>); }
+      else { this.site = new fhir.FhirString(source._site as Partial<fhir.FhirStringArgs>, options); }
     }
-    if (source['identifier']) { this.identifier = new fhir.Identifier(source.identifier); }
+    if (source['identifier']) { this.identifier = new fhir.Identifier(source.identifier, options); }
     else { this.identifier = null; }
-    if (source['type']) { this.type = source.type.map((x) => new fhir.Coding(x)); }
+    if (source['type']) { this.type = source.type.map((x) => new fhir.Coding(x, options)); }
     else { this.type = []; }
   }
   /**
@@ -506,17 +506,17 @@ export class AuditEventObjectDetail extends fhir.BackboneElement {
    */
   constructor(source:Partial<AuditEventObjectDetailArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['type']) { this.type = new fhir.FhirString({value: source.type}); }
+    if (source['type'] !== undefined) { this.type = new fhir.FhirString({value: source.type}, options); }
     else { this.type = null; }
     if (source['_type']) {
       if (this.type) { this.type.addExtendedProperties(source._type!); }
-      else { this.type = new fhir.FhirString(source._type as Partial<fhir.FhirStringArgs>); }
+      else { this.type = new fhir.FhirString(source._type as Partial<fhir.FhirStringArgs>, options); }
     }
-    if (source['value']) { this.value = new fhir.FhirBase64Binary({value: source.value}); }
+    if (source['value'] !== undefined) { this.value = new fhir.FhirBase64Binary({value: source.value}, options); }
     else { this.value = null; }
     if (source['_value']) {
       if (this.value) { this.value.addExtendedProperties(source._value!); }
-      else { this.value = new fhir.FhirBase64Binary(source._value as Partial<fhir.FhirBase64BinaryArgs>); }
+      else { this.value = new fhir.FhirBase64Binary(source._value as Partial<fhir.FhirBase64BinaryArgs>, options); }
     }
   }
   /**
@@ -641,29 +641,29 @@ export class AuditEventObject extends fhir.BackboneElement {
    */
   constructor(source:Partial<AuditEventObjectArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['identifier']) { this.identifier = new fhir.Identifier(source.identifier); }
-    if (source['reference']) { this.reference = new fhir.Reference(source.reference); }
-    if (source['type']) { this.type = new fhir.Coding(source.type); }
-    if (source['role']) { this.role = new fhir.Coding(source.role); }
-    if (source['lifecycle']) { this.lifecycle = new fhir.Coding(source.lifecycle); }
-    if (source['securityLabel']) { this.securityLabel = source.securityLabel.map((x) => new fhir.Coding(x)); }
+    if (source['identifier']) { this.identifier = new fhir.Identifier(source.identifier, options); }
+    if (source['reference']) { this.reference = new fhir.Reference(source.reference, options); }
+    if (source['type']) { this.type = new fhir.Coding(source.type, options); }
+    if (source['role']) { this.role = new fhir.Coding(source.role, options); }
+    if (source['lifecycle']) { this.lifecycle = new fhir.Coding(source.lifecycle, options); }
+    if (source['securityLabel']) { this.securityLabel = source.securityLabel.map((x) => new fhir.Coding(x, options)); }
     else { this.securityLabel = []; }
-    if (source['name']) { this.name = new fhir.FhirString({value: source.name}); }
+    if (source['name'] !== undefined) { this.name = new fhir.FhirString({value: source.name}, options); }
     if (source['_name']) {
       if (this.name) { this.name.addExtendedProperties(source._name!); }
-      else { this.name = new fhir.FhirString(source._name as Partial<fhir.FhirStringArgs>); }
+      else { this.name = new fhir.FhirString(source._name as Partial<fhir.FhirStringArgs>, options); }
     }
-    if (source['description']) { this.description = new fhir.FhirString({value: source.description}); }
+    if (source['description'] !== undefined) { this.description = new fhir.FhirString({value: source.description}, options); }
     if (source['_description']) {
       if (this.description) { this.description.addExtendedProperties(source._description!); }
-      else { this.description = new fhir.FhirString(source._description as Partial<fhir.FhirStringArgs>); }
+      else { this.description = new fhir.FhirString(source._description as Partial<fhir.FhirStringArgs>, options); }
     }
-    if (source['query']) { this.query = new fhir.FhirBase64Binary({value: source.query}); }
+    if (source['query'] !== undefined) { this.query = new fhir.FhirBase64Binary({value: source.query}, options); }
     if (source['_query']) {
       if (this.query) { this.query.addExtendedProperties(source._query!); }
-      else { this.query = new fhir.FhirBase64Binary(source._query as Partial<fhir.FhirBase64BinaryArgs>); }
+      else { this.query = new fhir.FhirBase64Binary(source._query as Partial<fhir.FhirBase64BinaryArgs>, options); }
     }
-    if (source['detail']) { this.detail = source.detail.map((x) => new fhir.AuditEventObjectDetail(x)); }
+    if (source['detail']) { this.detail = source.detail.map((x) => new fhir.AuditEventObjectDetail(x, options)); }
     else { this.detail = []; }
   }
   /**
@@ -745,13 +745,13 @@ export class AuditEvent extends fhir.DomainResource {
   constructor(source:Partial<AuditEventArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
     this.resourceType = 'AuditEvent';
-    if (source['event']) { this.event = new fhir.AuditEventEvent(source.event); }
+    if (source['event']) { this.event = new fhir.AuditEventEvent(source.event, options); }
     else { this.event = null; }
-    if (source['participant']) { this.participant = source.participant.map((x) => new fhir.AuditEventParticipant(x)); }
+    if (source['participant']) { this.participant = source.participant.map((x) => new fhir.AuditEventParticipant(x, options)); }
     else { this.participant = []; }
-    if (source['source']) { this.source = new fhir.AuditEventSource(source.source); }
+    if (source['source']) { this.source = new fhir.AuditEventSource(source.source, options); }
     else { this.source = null; }
-    if (source['object']) { this.object = source.object.map((x) => new fhir.AuditEventObject(x)); }
+    if (source['object']) { this.object = source.object.map((x) => new fhir.AuditEventObject(x, options)); }
     else { this.object = []; }
   }
   /**

@@ -77,6 +77,23 @@ importers:
       tslib: 2.4.0
       typescript: 4.7.2
 
+  ../../examples/generate-tests-r4:
+    specifiers:
+      '@fhir-typescript/r4-core': workspace:*
+      '@types/node': ~17.0.35
+      shx: ~0.3.4
+      ts-node: ~10.8.0
+      tslib: ~2.4.0
+      typescript: ^4.7.2
+    dependencies:
+      '@fhir-typescript/r4-core': link:../../core/r4
+    devDependencies:
+      '@types/node': 17.0.35
+      shx: 0.3.4
+      ts-node: 10.8.0_smgpfffxrhk5i4ijhe3532b4hq
+      tslib: 2.4.0
+      typescript: 4.7.2
+
   ../../examples/node-r4-basic:
     specifiers:
       '@fhir-typescript/r4-core': workspace:*

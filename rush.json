@@ -387,7 +387,7 @@
     * list is useful in preventing typos when specifying tags for projects.
     */
   "allowedProjectTags": [ 
-    "fhir", "core", "ig", "hl7", "example",
+    "fhir", "core", "ig", "hl7", "example", "testing",
     "DSTU2", "R2",
     "STU3", "R3",
     "R4", "R4B",
@@ -438,6 +438,12 @@
       "projectFolder": "examples/react-r4-basic",
       "shouldPublish": false,
       "tags": ["example", "R4" ]
+    },
+    {
+      "packageName": "generate-tests-r4",
+      "projectFolder": "examples/generate-tests-r4",
+      "shouldPublish": false,
+      "tags": ["example", "R4", "testing" ]
     }
     // {
     //   /**

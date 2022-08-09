@@ -117,23 +117,23 @@ export class EnrollmentRequest extends fhir.DomainResource {
   constructor(source:Partial<EnrollmentRequestArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
     this.resourceType = 'EnrollmentRequest';
-    if (source['identifier']) { this.identifier = source.identifier.map((x) => new fhir.Identifier(x)); }
+    if (source['identifier']) { this.identifier = source.identifier.map((x) => new fhir.Identifier(x, options)); }
     else { this.identifier = []; }
-    if (source['ruleset']) { this.ruleset = new fhir.Coding(source.ruleset); }
-    if (source['originalRuleset']) { this.originalRuleset = new fhir.Coding(source.originalRuleset); }
-    if (source['created']) { this.created = new fhir.FhirDateTime({value: source.created}); }
+    if (source['ruleset']) { this.ruleset = new fhir.Coding(source.ruleset, options); }
+    if (source['originalRuleset']) { this.originalRuleset = new fhir.Coding(source.originalRuleset, options); }
+    if (source['created'] !== undefined) { this.created = new fhir.FhirDateTime({value: source.created}, options); }
     if (source['_created']) {
       if (this.created) { this.created.addExtendedProperties(source._created!); }
-      else { this.created = new fhir.FhirDateTime(source._created as Partial<fhir.FhirDateTimeArgs>); }
+      else { this.created = new fhir.FhirDateTime(source._created as Partial<fhir.FhirDateTimeArgs>, options); }
     }
-    if (source['target']) { this.target = new fhir.Reference(source.target); }
-    if (source['provider']) { this.provider = new fhir.Reference(source.provider); }
-    if (source['organization']) { this.organization = new fhir.Reference(source.organization); }
-    if (source['subject']) { this.subject = new fhir.Reference(source.subject); }
+    if (source['target']) { this.target = new fhir.Reference(source.target, options); }
+    if (source['provider']) { this.provider = new fhir.Reference(source.provider, options); }
+    if (source['organization']) { this.organization = new fhir.Reference(source.organization, options); }
+    if (source['subject']) { this.subject = new fhir.Reference(source.subject, options); }
     else { this.subject = null; }
-    if (source['coverage']) { this.coverage = new fhir.Reference(source.coverage); }
+    if (source['coverage']) { this.coverage = new fhir.Reference(source.coverage, options); }
     else { this.coverage = null; }
-    if (source['relationship']) { this.relationship = new fhir.Coding(source.relationship); }
+    if (source['relationship']) { this.relationship = new fhir.Coding(source.relationship, options); }
     else { this.relationship = null; }
   }
   /**

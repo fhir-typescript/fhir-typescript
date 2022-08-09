@@ -44,8 +44,8 @@ export class SupplyRequestWhen extends fhir.BackboneElement {
    */
   constructor(source:Partial<SupplyRequestWhenArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['code']) { this.code = new fhir.CodeableConcept(source.code); }
-    if (source['schedule']) { this.schedule = new fhir.Timing(source.schedule); }
+    if (source['code']) { this.code = new fhir.CodeableConcept(source.code, options); }
+    if (source['schedule']) { this.schedule = new fhir.Timing(source.schedule, options); }
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -186,27 +186,27 @@ export class SupplyRequest extends fhir.DomainResource {
   constructor(source:Partial<SupplyRequestArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
     this.resourceType = 'SupplyRequest';
-    if (source['patient']) { this.patient = new fhir.Reference(source.patient); }
-    if (source['source']) { this.source = new fhir.Reference(source.source); }
-    if (source['date']) { this.date = new fhir.FhirDateTime({value: source.date}); }
+    if (source['patient']) { this.patient = new fhir.Reference(source.patient, options); }
+    if (source['source']) { this.source = new fhir.Reference(source.source, options); }
+    if (source['date'] !== undefined) { this.date = new fhir.FhirDateTime({value: source.date}, options); }
     if (source['_date']) {
       if (this.date) { this.date.addExtendedProperties(source._date!); }
-      else { this.date = new fhir.FhirDateTime(source._date as Partial<fhir.FhirDateTimeArgs>); }
+      else { this.date = new fhir.FhirDateTime(source._date as Partial<fhir.FhirDateTimeArgs>, options); }
     }
-    if (source['identifier']) { this.identifier = new fhir.Identifier(source.identifier); }
-    if (source['status']) { this.status = new fhir.FhirCode<SupplyrequestStatusCodeType>({value: source.status}); }
+    if (source['identifier']) { this.identifier = new fhir.Identifier(source.identifier, options); }
+    if (source['status'] !== undefined) { this.status = new fhir.FhirCode<SupplyrequestStatusCodeType>({value: source.status}, options); }
     if (source['_status']) {
       if (this.status) { this.status.addExtendedProperties(source._status!); }
-      else { this.status = new fhir.FhirCode<SupplyrequestStatusCodeType>(source._status as Partial<fhir.FhirCode>); }
+      else { this.status = new fhir.FhirCode<SupplyrequestStatusCodeType>(source._status as Partial<fhir.FhirCode>, options); }
     }
-    if (source['kind']) { this.kind = new fhir.CodeableConcept(source.kind); }
-    if (source['orderedItem']) { this.orderedItem = new fhir.Reference(source.orderedItem); }
-    if (source['supplier']) { this.supplier = source.supplier.map((x) => new fhir.Reference(x)); }
+    if (source['kind']) { this.kind = new fhir.CodeableConcept(source.kind, options); }
+    if (source['orderedItem']) { this.orderedItem = new fhir.Reference(source.orderedItem, options); }
+    if (source['supplier']) { this.supplier = source.supplier.map((x) => new fhir.Reference(x, options)); }
     else { this.supplier = []; }
     if (source['reason']) { this.reason = source.reason; }
-    else if (source['reasonCodeableConcept']) { this.reason = new fhir.CodeableConcept(source.reasonCodeableConcept); }
-    else if (source['reasonReference']) { this.reason = new fhir.Reference(source.reasonReference); }
-    if (source['when']) { this.when = new fhir.SupplyRequestWhen(source.when); }
+    else if (source['reasonCodeableConcept']) { this.reason = new fhir.CodeableConcept(source.reasonCodeableConcept, options); }
+    else if (source['reasonReference']) { this.reason = new fhir.Reference(source.reasonReference, options); }
+    if (source['when']) { this.when = new fhir.SupplyRequestWhen(source.when, options); }
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).

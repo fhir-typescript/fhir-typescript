@@ -52,17 +52,17 @@ export class Narrative extends fhir.FhirElement {
    */
   constructor(source:Partial<NarrativeArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['status']) { this.status = new fhir.FhirCode<NarrativeStatusCodeType>({value: source.status}); }
+    if (source['status'] !== undefined) { this.status = new fhir.FhirCode<NarrativeStatusCodeType>({value: source.status}, options); }
     else { this.status = null; }
     if (source['_status']) {
       if (this.status) { this.status.addExtendedProperties(source._status!); }
-      else { this.status = new fhir.FhirCode<NarrativeStatusCodeType>(source._status as Partial<fhir.FhirCode>); }
+      else { this.status = new fhir.FhirCode<NarrativeStatusCodeType>(source._status as Partial<fhir.FhirCode>, options); }
     }
-    if (source['div']) { this.div = new fhir.FhirXhtml({value: source.div}); }
+    if (source['div'] !== undefined) { this.div = new fhir.FhirXhtml({value: source.div}, options); }
     else { this.div = null; }
     if (source['_div']) {
       if (this.div) { this.div.addExtendedProperties(source._div!); }
-      else { this.div = new fhir.FhirXhtml(source._div as Partial<fhir.FhirXhtmlArgs>); }
+      else { this.div = new fhir.FhirXhtml(source._div as Partial<fhir.FhirXhtmlArgs>, options); }
     }
   }
   /**

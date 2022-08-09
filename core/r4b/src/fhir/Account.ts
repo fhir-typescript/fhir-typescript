@@ -56,12 +56,12 @@ export class AccountCoverage extends fhir.BackboneElement {
    */
   constructor(source:Partial<AccountCoverageArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['coverage']) { this.coverage = new fhir.Reference(source.coverage); }
+    if (source['coverage']) { this.coverage = new fhir.Reference(source.coverage, options); }
     else { this.coverage = null; }
-    if (source['priority']) { this.priority = new fhir.FhirPositiveInt({value: source.priority}); }
+    if (source['priority'] !== undefined) { this.priority = new fhir.FhirPositiveInt({value: source.priority}, options); }
     if (source['_priority']) {
       if (this.priority) { this.priority.addExtendedProperties(source._priority!); }
-      else { this.priority = new fhir.FhirPositiveInt(source._priority as Partial<fhir.FhirPositiveIntArgs>); }
+      else { this.priority = new fhir.FhirPositiveInt(source._priority as Partial<fhir.FhirPositiveIntArgs>, options); }
     }
   }
   /**
@@ -122,14 +122,14 @@ export class AccountGuarantor extends fhir.BackboneElement {
    */
   constructor(source:Partial<AccountGuarantorArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['party']) { this.party = new fhir.Reference(source.party); }
+    if (source['party']) { this.party = new fhir.Reference(source.party, options); }
     else { this.party = null; }
-    if (source['onHold']) { this.onHold = new fhir.FhirBoolean({value: source.onHold}); }
+    if (source['onHold'] !== undefined) { this.onHold = new fhir.FhirBoolean({value: source.onHold}, options); }
     if (source['_onHold']) {
       if (this.onHold) { this.onHold.addExtendedProperties(source._onHold!); }
-      else { this.onHold = new fhir.FhirBoolean(source._onHold as Partial<fhir.FhirBooleanArgs>); }
+      else { this.onHold = new fhir.FhirBoolean(source._onHold as Partial<fhir.FhirBooleanArgs>, options); }
     }
-    if (source['period']) { this.period = new fhir.Period(source.period); }
+    if (source['period']) { this.period = new fhir.Period(source.period, options); }
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -275,34 +275,34 @@ export class Account extends fhir.DomainResource {
   constructor(source:Partial<AccountArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
     this.resourceType = 'Account';
-    if (source['identifier']) { this.identifier = source.identifier.map((x) => new fhir.Identifier(x)); }
+    if (source['identifier']) { this.identifier = source.identifier.map((x) => new fhir.Identifier(x, options)); }
     else { this.identifier = []; }
-    if (source['status']) { this.status = new fhir.FhirCode<AccountStatusCodeType>({value: source.status}); }
+    if (source['status'] !== undefined) { this.status = new fhir.FhirCode<AccountStatusCodeType>({value: source.status}, options); }
     else { this.status = null; }
     if (source['_status']) {
       if (this.status) { this.status.addExtendedProperties(source._status!); }
-      else { this.status = new fhir.FhirCode<AccountStatusCodeType>(source._status as Partial<fhir.FhirCode>); }
+      else { this.status = new fhir.FhirCode<AccountStatusCodeType>(source._status as Partial<fhir.FhirCode>, options); }
     }
-    if (source['type']) { this.type = new fhir.CodeableConcept(source.type); }
-    if (source['name']) { this.name = new fhir.FhirString({value: source.name}); }
+    if (source['type']) { this.type = new fhir.CodeableConcept(source.type, options); }
+    if (source['name'] !== undefined) { this.name = new fhir.FhirString({value: source.name}, options); }
     if (source['_name']) {
       if (this.name) { this.name.addExtendedProperties(source._name!); }
-      else { this.name = new fhir.FhirString(source._name as Partial<fhir.FhirStringArgs>); }
+      else { this.name = new fhir.FhirString(source._name as Partial<fhir.FhirStringArgs>, options); }
     }
-    if (source['subject']) { this.subject = source.subject.map((x) => new fhir.Reference(x)); }
+    if (source['subject']) { this.subject = source.subject.map((x) => new fhir.Reference(x, options)); }
     else { this.subject = []; }
-    if (source['servicePeriod']) { this.servicePeriod = new fhir.Period(source.servicePeriod); }
-    if (source['coverage']) { this.coverage = source.coverage.map((x) => new fhir.AccountCoverage(x)); }
+    if (source['servicePeriod']) { this.servicePeriod = new fhir.Period(source.servicePeriod, options); }
+    if (source['coverage']) { this.coverage = source.coverage.map((x) => new fhir.AccountCoverage(x, options)); }
     else { this.coverage = []; }
-    if (source['owner']) { this.owner = new fhir.Reference(source.owner); }
-    if (source['description']) { this.description = new fhir.FhirString({value: source.description}); }
+    if (source['owner']) { this.owner = new fhir.Reference(source.owner, options); }
+    if (source['description'] !== undefined) { this.description = new fhir.FhirString({value: source.description}, options); }
     if (source['_description']) {
       if (this.description) { this.description.addExtendedProperties(source._description!); }
-      else { this.description = new fhir.FhirString(source._description as Partial<fhir.FhirStringArgs>); }
+      else { this.description = new fhir.FhirString(source._description as Partial<fhir.FhirStringArgs>, options); }
     }
-    if (source['guarantor']) { this.guarantor = source.guarantor.map((x) => new fhir.AccountGuarantor(x)); }
+    if (source['guarantor']) { this.guarantor = source.guarantor.map((x) => new fhir.AccountGuarantor(x, options)); }
     else { this.guarantor = []; }
-    if (source['partOf']) { this.partOf = new fhir.Reference(source.partOf); }
+    if (source['partOf']) { this.partOf = new fhir.Reference(source.partOf, options); }
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).

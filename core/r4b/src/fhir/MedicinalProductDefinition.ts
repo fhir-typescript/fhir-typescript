@@ -116,8 +116,8 @@ export class MedicinalProductDefinitionContact extends fhir.BackboneElement {
    */
   constructor(source:Partial<MedicinalProductDefinitionContactArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['type']) { this.type = new fhir.CodeableConcept(source.type); }
-    if (source['contact']) { this.contact = new fhir.Reference(source.contact); }
+    if (source['type']) { this.type = new fhir.CodeableConcept(source.type, options); }
+    if (source['contact']) { this.contact = new fhir.Reference(source.contact, options); }
     else { this.contact = null; }
   }
   /**
@@ -170,13 +170,13 @@ export class MedicinalProductDefinitionNameNamePart extends fhir.BackboneElement
    */
   constructor(source:Partial<MedicinalProductDefinitionNameNamePartArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['part']) { this.part = new fhir.FhirString({value: source.part}); }
+    if (source['part'] !== undefined) { this.part = new fhir.FhirString({value: source.part}, options); }
     else { this.part = null; }
     if (source['_part']) {
       if (this.part) { this.part.addExtendedProperties(source._part!); }
-      else { this.part = new fhir.FhirString(source._part as Partial<fhir.FhirStringArgs>); }
+      else { this.part = new fhir.FhirString(source._part as Partial<fhir.FhirStringArgs>, options); }
     }
-    if (source['type']) { this.type = new fhir.CodeableConcept(source.type); }
+    if (source['type']) { this.type = new fhir.CodeableConcept(source.type, options); }
     else { this.type = null; }
   }
   /**
@@ -233,10 +233,10 @@ export class MedicinalProductDefinitionNameCountryLanguage extends fhir.Backbone
    */
   constructor(source:Partial<MedicinalProductDefinitionNameCountryLanguageArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['country']) { this.country = new fhir.CodeableConcept(source.country); }
+    if (source['country']) { this.country = new fhir.CodeableConcept(source.country, options); }
     else { this.country = null; }
-    if (source['jurisdiction']) { this.jurisdiction = new fhir.CodeableConcept(source.jurisdiction); }
-    if (source['language']) { this.language = new fhir.CodeableConcept(source.language); }
+    if (source['jurisdiction']) { this.jurisdiction = new fhir.CodeableConcept(source.jurisdiction, options); }
+    if (source['language']) { this.language = new fhir.CodeableConcept(source.language, options); }
     else { this.language = null; }
   }
   /**
@@ -306,16 +306,16 @@ export class MedicinalProductDefinitionName extends fhir.BackboneElement {
    */
   constructor(source:Partial<MedicinalProductDefinitionNameArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['productName']) { this.productName = new fhir.FhirString({value: source.productName}); }
+    if (source['productName'] !== undefined) { this.productName = new fhir.FhirString({value: source.productName}, options); }
     else { this.productName = null; }
     if (source['_productName']) {
       if (this.productName) { this.productName.addExtendedProperties(source._productName!); }
-      else { this.productName = new fhir.FhirString(source._productName as Partial<fhir.FhirStringArgs>); }
+      else { this.productName = new fhir.FhirString(source._productName as Partial<fhir.FhirStringArgs>, options); }
     }
-    if (source['type']) { this.type = new fhir.CodeableConcept(source.type); }
-    if (source['namePart']) { this.namePart = source.namePart.map((x) => new fhir.MedicinalProductDefinitionNameNamePart(x)); }
+    if (source['type']) { this.type = new fhir.CodeableConcept(source.type, options); }
+    if (source['namePart']) { this.namePart = source.namePart.map((x) => new fhir.MedicinalProductDefinitionNameNamePart(x, options)); }
     else { this.namePart = []; }
-    if (source['countryLanguage']) { this.countryLanguage = source.countryLanguage.map((x) => new fhir.MedicinalProductDefinitionNameCountryLanguage(x)); }
+    if (source['countryLanguage']) { this.countryLanguage = source.countryLanguage.map((x) => new fhir.MedicinalProductDefinitionNameCountryLanguage(x, options)); }
     else { this.countryLanguage = []; }
   }
   /**
@@ -366,9 +366,9 @@ export class MedicinalProductDefinitionCrossReference extends fhir.BackboneEleme
    */
   constructor(source:Partial<MedicinalProductDefinitionCrossReferenceArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['product']) { this.product = new fhir.CodeableReference(source.product); }
+    if (source['product']) { this.product = new fhir.CodeableReference(source.product, options); }
     else { this.product = null; }
-    if (source['type']) { this.type = new fhir.CodeableConcept(source.type); }
+    if (source['type']) { this.type = new fhir.CodeableConcept(source.type, options); }
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -432,11 +432,11 @@ export class MedicinalProductDefinitionOperation extends fhir.BackboneElement {
    */
   constructor(source:Partial<MedicinalProductDefinitionOperationArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['type']) { this.type = new fhir.CodeableReference(source.type); }
-    if (source['effectiveDate']) { this.effectiveDate = new fhir.Period(source.effectiveDate); }
-    if (source['organization']) { this.organization = source.organization.map((x) => new fhir.Reference(x)); }
+    if (source['type']) { this.type = new fhir.CodeableReference(source.type, options); }
+    if (source['effectiveDate']) { this.effectiveDate = new fhir.Period(source.effectiveDate, options); }
+    if (source['organization']) { this.organization = source.organization.map((x) => new fhir.Reference(x, options)); }
     else { this.organization = []; }
-    if (source['confidentialityIndicator']) { this.confidentialityIndicator = new fhir.CodeableConcept(source.confidentialityIndicator); }
+    if (source['confidentialityIndicator']) { this.confidentialityIndicator = new fhir.CodeableConcept(source.confidentialityIndicator, options); }
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -510,14 +510,14 @@ export class MedicinalProductDefinitionCharacteristic extends fhir.BackboneEleme
    */
   constructor(source:Partial<MedicinalProductDefinitionCharacteristicArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['type']) { this.type = new fhir.CodeableConcept(source.type); }
+    if (source['type']) { this.type = new fhir.CodeableConcept(source.type, options); }
     else { this.type = null; }
     if (source['value']) { this.value = source.value; }
-    else if (source['valueCodeableConcept']) { this.value = new fhir.CodeableConcept(source.valueCodeableConcept); }
-    else if (source['valueQuantity']) { this.value = new fhir.Quantity(source.valueQuantity); }
-    else if (source['valueDate']) { this.value = new fhir.FhirDate({value: source.valueDate}); }
-    else if (source['valueBoolean']) { this.value = new fhir.FhirBoolean({value: source.valueBoolean}); }
-    else if (source['valueAttachment']) { this.value = new fhir.Attachment(source.valueAttachment); }
+    else if (source['valueCodeableConcept']) { this.value = new fhir.CodeableConcept(source.valueCodeableConcept, options); }
+    else if (source['valueQuantity']) { this.value = new fhir.Quantity(source.valueQuantity, options); }
+    else if (source['valueDate'] !== undefined) { this.value = new fhir.FhirDate({value: source.valueDate}, options); }
+    else if (source['valueBoolean'] !== undefined) { this.value = new fhir.FhirBoolean({value: source.valueBoolean}, options); }
+    else if (source['valueAttachment']) { this.value = new fhir.Attachment(source.valueAttachment, options); }
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -798,66 +798,66 @@ export class MedicinalProductDefinition extends fhir.DomainResource {
   constructor(source:Partial<MedicinalProductDefinitionArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
     this.resourceType = 'MedicinalProductDefinition';
-    if (source['identifier']) { this.identifier = source.identifier.map((x) => new fhir.Identifier(x)); }
+    if (source['identifier']) { this.identifier = source.identifier.map((x) => new fhir.Identifier(x, options)); }
     else { this.identifier = []; }
-    if (source['type']) { this.type = new fhir.CodeableConcept(source.type); }
-    if (source['domain']) { this.domain = new fhir.CodeableConcept(source.domain); }
-    if (source['version']) { this.version = new fhir.FhirString({value: source.version}); }
+    if (source['type']) { this.type = new fhir.CodeableConcept(source.type, options); }
+    if (source['domain']) { this.domain = new fhir.CodeableConcept(source.domain, options); }
+    if (source['version'] !== undefined) { this.version = new fhir.FhirString({value: source.version}, options); }
     if (source['_version']) {
       if (this.version) { this.version.addExtendedProperties(source._version!); }
-      else { this.version = new fhir.FhirString(source._version as Partial<fhir.FhirStringArgs>); }
+      else { this.version = new fhir.FhirString(source._version as Partial<fhir.FhirStringArgs>, options); }
     }
-    if (source['status']) { this.status = new fhir.CodeableConcept(source.status); }
-    if (source['statusDate']) { this.statusDate = new fhir.FhirDateTime({value: source.statusDate}); }
+    if (source['status']) { this.status = new fhir.CodeableConcept(source.status, options); }
+    if (source['statusDate'] !== undefined) { this.statusDate = new fhir.FhirDateTime({value: source.statusDate}, options); }
     if (source['_statusDate']) {
       if (this.statusDate) { this.statusDate.addExtendedProperties(source._statusDate!); }
-      else { this.statusDate = new fhir.FhirDateTime(source._statusDate as Partial<fhir.FhirDateTimeArgs>); }
+      else { this.statusDate = new fhir.FhirDateTime(source._statusDate as Partial<fhir.FhirDateTimeArgs>, options); }
     }
-    if (source['description']) { this.description = new fhir.FhirMarkdown({value: source.description}); }
+    if (source['description'] !== undefined) { this.description = new fhir.FhirMarkdown({value: source.description}, options); }
     if (source['_description']) {
       if (this.description) { this.description.addExtendedProperties(source._description!); }
-      else { this.description = new fhir.FhirMarkdown(source._description as Partial<fhir.FhirMarkdownArgs>); }
+      else { this.description = new fhir.FhirMarkdown(source._description as Partial<fhir.FhirMarkdownArgs>, options); }
     }
-    if (source['combinedPharmaceuticalDoseForm']) { this.combinedPharmaceuticalDoseForm = new fhir.CodeableConcept(source.combinedPharmaceuticalDoseForm); }
-    if (source['route']) { this.route = source.route.map((x) => new fhir.CodeableConcept(x)); }
+    if (source['combinedPharmaceuticalDoseForm']) { this.combinedPharmaceuticalDoseForm = new fhir.CodeableConcept(source.combinedPharmaceuticalDoseForm, options); }
+    if (source['route']) { this.route = source.route.map((x) => new fhir.CodeableConcept(x, options)); }
     else { this.route = []; }
-    if (source['indication']) { this.indication = new fhir.FhirMarkdown({value: source.indication}); }
+    if (source['indication'] !== undefined) { this.indication = new fhir.FhirMarkdown({value: source.indication}, options); }
     if (source['_indication']) {
       if (this.indication) { this.indication.addExtendedProperties(source._indication!); }
-      else { this.indication = new fhir.FhirMarkdown(source._indication as Partial<fhir.FhirMarkdownArgs>); }
+      else { this.indication = new fhir.FhirMarkdown(source._indication as Partial<fhir.FhirMarkdownArgs>, options); }
     }
-    if (source['legalStatusOfSupply']) { this.legalStatusOfSupply = new fhir.CodeableConcept(source.legalStatusOfSupply); }
-    if (source['additionalMonitoringIndicator']) { this.additionalMonitoringIndicator = new fhir.CodeableConcept(source.additionalMonitoringIndicator); }
-    if (source['specialMeasures']) { this.specialMeasures = source.specialMeasures.map((x) => new fhir.CodeableConcept(x)); }
+    if (source['legalStatusOfSupply']) { this.legalStatusOfSupply = new fhir.CodeableConcept(source.legalStatusOfSupply, options); }
+    if (source['additionalMonitoringIndicator']) { this.additionalMonitoringIndicator = new fhir.CodeableConcept(source.additionalMonitoringIndicator, options); }
+    if (source['specialMeasures']) { this.specialMeasures = source.specialMeasures.map((x) => new fhir.CodeableConcept(x, options)); }
     else { this.specialMeasures = []; }
-    if (source['pediatricUseIndicator']) { this.pediatricUseIndicator = new fhir.CodeableConcept(source.pediatricUseIndicator); }
-    if (source['classification']) { this.classification = source.classification.map((x) => new fhir.CodeableConcept(x)); }
+    if (source['pediatricUseIndicator']) { this.pediatricUseIndicator = new fhir.CodeableConcept(source.pediatricUseIndicator, options); }
+    if (source['classification']) { this.classification = source.classification.map((x) => new fhir.CodeableConcept(x, options)); }
     else { this.classification = []; }
-    if (source['marketingStatus']) { this.marketingStatus = source.marketingStatus.map((x) => new fhir.MarketingStatus(x)); }
+    if (source['marketingStatus']) { this.marketingStatus = source.marketingStatus.map((x) => new fhir.MarketingStatus(x, options)); }
     else { this.marketingStatus = []; }
-    if (source['packagedMedicinalProduct']) { this.packagedMedicinalProduct = source.packagedMedicinalProduct.map((x) => new fhir.CodeableConcept(x)); }
+    if (source['packagedMedicinalProduct']) { this.packagedMedicinalProduct = source.packagedMedicinalProduct.map((x) => new fhir.CodeableConcept(x, options)); }
     else { this.packagedMedicinalProduct = []; }
-    if (source['ingredient']) { this.ingredient = source.ingredient.map((x) => new fhir.CodeableConcept(x)); }
+    if (source['ingredient']) { this.ingredient = source.ingredient.map((x) => new fhir.CodeableConcept(x, options)); }
     else { this.ingredient = []; }
-    if (source['impurity']) { this.impurity = source.impurity.map((x) => new fhir.CodeableReference(x)); }
+    if (source['impurity']) { this.impurity = source.impurity.map((x) => new fhir.CodeableReference(x, options)); }
     else { this.impurity = []; }
-    if (source['attachedDocument']) { this.attachedDocument = source.attachedDocument.map((x) => new fhir.Reference(x)); }
+    if (source['attachedDocument']) { this.attachedDocument = source.attachedDocument.map((x) => new fhir.Reference(x, options)); }
     else { this.attachedDocument = []; }
-    if (source['masterFile']) { this.masterFile = source.masterFile.map((x) => new fhir.Reference(x)); }
+    if (source['masterFile']) { this.masterFile = source.masterFile.map((x) => new fhir.Reference(x, options)); }
     else { this.masterFile = []; }
-    if (source['contact']) { this.contact = source.contact.map((x) => new fhir.MedicinalProductDefinitionContact(x)); }
+    if (source['contact']) { this.contact = source.contact.map((x) => new fhir.MedicinalProductDefinitionContact(x, options)); }
     else { this.contact = []; }
-    if (source['clinicalTrial']) { this.clinicalTrial = source.clinicalTrial.map((x) => new fhir.Reference(x)); }
+    if (source['clinicalTrial']) { this.clinicalTrial = source.clinicalTrial.map((x) => new fhir.Reference(x, options)); }
     else { this.clinicalTrial = []; }
-    if (source['code']) { this.code = source.code.map((x) => new fhir.Coding(x)); }
+    if (source['code']) { this.code = source.code.map((x) => new fhir.Coding(x, options)); }
     else { this.code = []; }
-    if (source['name']) { this.name = source.name.map((x) => new fhir.MedicinalProductDefinitionName(x)); }
+    if (source['name']) { this.name = source.name.map((x) => new fhir.MedicinalProductDefinitionName(x, options)); }
     else { this.name = []; }
-    if (source['crossReference']) { this.crossReference = source.crossReference.map((x) => new fhir.MedicinalProductDefinitionCrossReference(x)); }
+    if (source['crossReference']) { this.crossReference = source.crossReference.map((x) => new fhir.MedicinalProductDefinitionCrossReference(x, options)); }
     else { this.crossReference = []; }
-    if (source['operation']) { this.operation = source.operation.map((x) => new fhir.MedicinalProductDefinitionOperation(x)); }
+    if (source['operation']) { this.operation = source.operation.map((x) => new fhir.MedicinalProductDefinitionOperation(x, options)); }
     else { this.operation = []; }
-    if (source['characteristic']) { this.characteristic = source.characteristic.map((x) => new fhir.MedicinalProductDefinitionCharacteristic(x)); }
+    if (source['characteristic']) { this.characteristic = source.characteristic.map((x) => new fhir.MedicinalProductDefinitionCharacteristic(x, options)); }
     else { this.characteristic = []; }
   }
   /**

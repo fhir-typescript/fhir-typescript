@@ -56,14 +56,14 @@ export class DetectedIssueMitigation extends fhir.BackboneElement {
    */
   constructor(source:Partial<DetectedIssueMitigationArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['action']) { this.action = new fhir.CodeableConcept(source.action); }
+    if (source['action']) { this.action = new fhir.CodeableConcept(source.action, options); }
     else { this.action = null; }
-    if (source['date']) { this.date = new fhir.FhirDateTime({value: source.date}); }
+    if (source['date'] !== undefined) { this.date = new fhir.FhirDateTime({value: source.date}, options); }
     if (source['_date']) {
       if (this.date) { this.date.addExtendedProperties(source._date!); }
-      else { this.date = new fhir.FhirDateTime(source._date as Partial<fhir.FhirDateTimeArgs>); }
+      else { this.date = new fhir.FhirDateTime(source._date as Partial<fhir.FhirDateTimeArgs>, options); }
     }
-    if (source['author']) { this.author = new fhir.Reference(source.author); }
+    if (source['author']) { this.author = new fhir.Reference(source.author, options); }
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -201,33 +201,33 @@ export class DetectedIssue extends fhir.DomainResource {
   constructor(source:Partial<DetectedIssueArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
     this.resourceType = 'DetectedIssue';
-    if (source['patient']) { this.patient = new fhir.Reference(source.patient); }
-    if (source['category']) { this.category = new fhir.CodeableConcept(source.category); }
-    if (source['severity']) { this.severity = new fhir.FhirCode<DetectedissueSeverityCodeType>({value: source.severity}); }
+    if (source['patient']) { this.patient = new fhir.Reference(source.patient, options); }
+    if (source['category']) { this.category = new fhir.CodeableConcept(source.category, options); }
+    if (source['severity'] !== undefined) { this.severity = new fhir.FhirCode<DetectedissueSeverityCodeType>({value: source.severity}, options); }
     if (source['_severity']) {
       if (this.severity) { this.severity.addExtendedProperties(source._severity!); }
-      else { this.severity = new fhir.FhirCode<DetectedissueSeverityCodeType>(source._severity as Partial<fhir.FhirCode>); }
+      else { this.severity = new fhir.FhirCode<DetectedissueSeverityCodeType>(source._severity as Partial<fhir.FhirCode>, options); }
     }
-    if (source['implicated']) { this.implicated = source.implicated.map((x) => new fhir.Reference(x)); }
+    if (source['implicated']) { this.implicated = source.implicated.map((x) => new fhir.Reference(x, options)); }
     else { this.implicated = []; }
-    if (source['detail']) { this.detail = new fhir.FhirString({value: source.detail}); }
+    if (source['detail'] !== undefined) { this.detail = new fhir.FhirString({value: source.detail}, options); }
     if (source['_detail']) {
       if (this.detail) { this.detail.addExtendedProperties(source._detail!); }
-      else { this.detail = new fhir.FhirString(source._detail as Partial<fhir.FhirStringArgs>); }
+      else { this.detail = new fhir.FhirString(source._detail as Partial<fhir.FhirStringArgs>, options); }
     }
-    if (source['date']) { this.date = new fhir.FhirDateTime({value: source.date}); }
+    if (source['date'] !== undefined) { this.date = new fhir.FhirDateTime({value: source.date}, options); }
     if (source['_date']) {
       if (this.date) { this.date.addExtendedProperties(source._date!); }
-      else { this.date = new fhir.FhirDateTime(source._date as Partial<fhir.FhirDateTimeArgs>); }
+      else { this.date = new fhir.FhirDateTime(source._date as Partial<fhir.FhirDateTimeArgs>, options); }
     }
-    if (source['author']) { this.author = new fhir.Reference(source.author); }
-    if (source['identifier']) { this.identifier = new fhir.Identifier(source.identifier); }
-    if (source['reference']) { this.reference = new fhir.FhirUri({value: source.reference}); }
+    if (source['author']) { this.author = new fhir.Reference(source.author, options); }
+    if (source['identifier']) { this.identifier = new fhir.Identifier(source.identifier, options); }
+    if (source['reference'] !== undefined) { this.reference = new fhir.FhirUri({value: source.reference}, options); }
     if (source['_reference']) {
       if (this.reference) { this.reference.addExtendedProperties(source._reference!); }
-      else { this.reference = new fhir.FhirUri(source._reference as Partial<fhir.FhirUriArgs>); }
+      else { this.reference = new fhir.FhirUri(source._reference as Partial<fhir.FhirUriArgs>, options); }
     }
-    if (source['mitigation']) { this.mitigation = source.mitigation.map((x) => new fhir.DetectedIssueMitigation(x)); }
+    if (source['mitigation']) { this.mitigation = source.mitigation.map((x) => new fhir.DetectedIssueMitigation(x, options)); }
     else { this.mitigation = []; }
   }
   /**

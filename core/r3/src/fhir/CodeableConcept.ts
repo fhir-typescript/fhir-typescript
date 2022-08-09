@@ -44,12 +44,12 @@ export class CodeableConcept extends fhir.FhirElement {
    */
   constructor(source:Partial<CodeableConceptArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['coding']) { this.coding = source.coding.map((x) => new fhir.Coding(x)); }
+    if (source['coding']) { this.coding = source.coding.map((x) => new fhir.Coding(x, options)); }
     else { this.coding = []; }
-    if (source['text']) { this.text = new fhir.FhirString({value: source.text}); }
+    if (source['text'] !== undefined) { this.text = new fhir.FhirString({value: source.text}, options); }
     if (source['_text']) {
       if (this.text) { this.text.addExtendedProperties(source._text!); }
-      else { this.text = new fhir.FhirString(source._text as Partial<fhir.FhirStringArgs>); }
+      else { this.text = new fhir.FhirString(source._text as Partial<fhir.FhirStringArgs>, options); }
     }
   }
   /**

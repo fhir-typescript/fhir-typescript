@@ -81,8 +81,8 @@ export class SpecimenDefinitionTypeTestedContainerAdditive extends fhir.Backbone
   constructor(source:Partial<SpecimenDefinitionTypeTestedContainerAdditiveArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
     if (source['additive']) { this.additive = source.additive; }
-    else if (source['additiveCodeableConcept']) { this.additive = new fhir.CodeableConcept(source.additiveCodeableConcept); }
-    else if (source['additiveReference']) { this.additive = new fhir.Reference(source.additiveReference); }
+    else if (source['additiveCodeableConcept']) { this.additive = new fhir.CodeableConcept(source.additiveCodeableConcept, options); }
+    else if (source['additiveReference']) { this.additive = new fhir.Reference(source.additiveReference, options); }
     else { this.additive = null; }
   }
   /**
@@ -198,24 +198,24 @@ export class SpecimenDefinitionTypeTestedContainer extends fhir.BackboneElement 
    */
   constructor(source:Partial<SpecimenDefinitionTypeTestedContainerArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['material']) { this.material = new fhir.CodeableConcept(source.material); }
-    if (source['type']) { this.type = new fhir.CodeableConcept(source.type); }
-    if (source['cap']) { this.cap = new fhir.CodeableConcept(source.cap); }
-    if (source['description']) { this.description = new fhir.FhirString({value: source.description}); }
+    if (source['material']) { this.material = new fhir.CodeableConcept(source.material, options); }
+    if (source['type']) { this.type = new fhir.CodeableConcept(source.type, options); }
+    if (source['cap']) { this.cap = new fhir.CodeableConcept(source.cap, options); }
+    if (source['description'] !== undefined) { this.description = new fhir.FhirString({value: source.description}, options); }
     if (source['_description']) {
       if (this.description) { this.description.addExtendedProperties(source._description!); }
-      else { this.description = new fhir.FhirString(source._description as Partial<fhir.FhirStringArgs>); }
+      else { this.description = new fhir.FhirString(source._description as Partial<fhir.FhirStringArgs>, options); }
     }
-    if (source['capacity']) { this.capacity = new fhir.Quantity(source.capacity); }
+    if (source['capacity']) { this.capacity = new fhir.Quantity(source.capacity, options); }
     if (source['minimumVolume']) { this.minimumVolume = source.minimumVolume; }
-    else if (source['minimumVolumeQuantity']) { this.minimumVolume = new fhir.Quantity(source.minimumVolumeQuantity); }
-    else if (source['minimumVolumeString']) { this.minimumVolume = new fhir.FhirString({value: source.minimumVolumeString}); }
-    if (source['additive']) { this.additive = source.additive.map((x) => new fhir.SpecimenDefinitionTypeTestedContainerAdditive(x)); }
+    else if (source['minimumVolumeQuantity']) { this.minimumVolume = new fhir.Quantity(source.minimumVolumeQuantity, options); }
+    else if (source['minimumVolumeString'] !== undefined) { this.minimumVolume = new fhir.FhirString({value: source.minimumVolumeString}, options); }
+    if (source['additive']) { this.additive = source.additive.map((x) => new fhir.SpecimenDefinitionTypeTestedContainerAdditive(x, options)); }
     else { this.additive = []; }
-    if (source['preparation']) { this.preparation = new fhir.FhirString({value: source.preparation}); }
+    if (source['preparation'] !== undefined) { this.preparation = new fhir.FhirString({value: source.preparation}, options); }
     if (source['_preparation']) {
       if (this.preparation) { this.preparation.addExtendedProperties(source._preparation!); }
-      else { this.preparation = new fhir.FhirString(source._preparation as Partial<fhir.FhirStringArgs>); }
+      else { this.preparation = new fhir.FhirString(source._preparation as Partial<fhir.FhirStringArgs>, options); }
     }
   }
   /**
@@ -290,13 +290,13 @@ export class SpecimenDefinitionTypeTestedHandling extends fhir.BackboneElement {
    */
   constructor(source:Partial<SpecimenDefinitionTypeTestedHandlingArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['temperatureQualifier']) { this.temperatureQualifier = new fhir.CodeableConcept(source.temperatureQualifier); }
-    if (source['temperatureRange']) { this.temperatureRange = new fhir.Range(source.temperatureRange); }
-    if (source['maxDuration']) { this.maxDuration = new fhir.Duration(source.maxDuration); }
-    if (source['instruction']) { this.instruction = new fhir.FhirString({value: source.instruction}); }
+    if (source['temperatureQualifier']) { this.temperatureQualifier = new fhir.CodeableConcept(source.temperatureQualifier, options); }
+    if (source['temperatureRange']) { this.temperatureRange = new fhir.Range(source.temperatureRange, options); }
+    if (source['maxDuration']) { this.maxDuration = new fhir.Duration(source.maxDuration, options); }
+    if (source['instruction'] !== undefined) { this.instruction = new fhir.FhirString({value: source.instruction}, options); }
     if (source['_instruction']) {
       if (this.instruction) { this.instruction.addExtendedProperties(source._instruction!); }
-      else { this.instruction = new fhir.FhirString(source._instruction as Partial<fhir.FhirStringArgs>); }
+      else { this.instruction = new fhir.FhirString(source._instruction as Partial<fhir.FhirStringArgs>, options); }
     }
   }
   /**
@@ -407,28 +407,28 @@ export class SpecimenDefinitionTypeTested extends fhir.BackboneElement {
    */
   constructor(source:Partial<SpecimenDefinitionTypeTestedArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['isDerived']) { this.isDerived = new fhir.FhirBoolean({value: source.isDerived}); }
+    if (source['isDerived'] !== undefined) { this.isDerived = new fhir.FhirBoolean({value: source.isDerived}, options); }
     if (source['_isDerived']) {
       if (this.isDerived) { this.isDerived.addExtendedProperties(source._isDerived!); }
-      else { this.isDerived = new fhir.FhirBoolean(source._isDerived as Partial<fhir.FhirBooleanArgs>); }
+      else { this.isDerived = new fhir.FhirBoolean(source._isDerived as Partial<fhir.FhirBooleanArgs>, options); }
     }
-    if (source['type']) { this.type = new fhir.CodeableConcept(source.type); }
-    if (source['preference']) { this.preference = new fhir.FhirCode<SpecimenContainedPreferenceCodeType>({value: source.preference}); }
+    if (source['type']) { this.type = new fhir.CodeableConcept(source.type, options); }
+    if (source['preference'] !== undefined) { this.preference = new fhir.FhirCode<SpecimenContainedPreferenceCodeType>({value: source.preference}, options); }
     else { this.preference = null; }
     if (source['_preference']) {
       if (this.preference) { this.preference.addExtendedProperties(source._preference!); }
-      else { this.preference = new fhir.FhirCode<SpecimenContainedPreferenceCodeType>(source._preference as Partial<fhir.FhirCode>); }
+      else { this.preference = new fhir.FhirCode<SpecimenContainedPreferenceCodeType>(source._preference as Partial<fhir.FhirCode>, options); }
     }
-    if (source['container']) { this.container = new fhir.SpecimenDefinitionTypeTestedContainer(source.container); }
-    if (source['requirement']) { this.requirement = new fhir.FhirString({value: source.requirement}); }
+    if (source['container']) { this.container = new fhir.SpecimenDefinitionTypeTestedContainer(source.container, options); }
+    if (source['requirement'] !== undefined) { this.requirement = new fhir.FhirString({value: source.requirement}, options); }
     if (source['_requirement']) {
       if (this.requirement) { this.requirement.addExtendedProperties(source._requirement!); }
-      else { this.requirement = new fhir.FhirString(source._requirement as Partial<fhir.FhirStringArgs>); }
+      else { this.requirement = new fhir.FhirString(source._requirement as Partial<fhir.FhirStringArgs>, options); }
     }
-    if (source['retentionTime']) { this.retentionTime = new fhir.Duration(source.retentionTime); }
-    if (source['rejectionCriterion']) { this.rejectionCriterion = source.rejectionCriterion.map((x) => new fhir.CodeableConcept(x)); }
+    if (source['retentionTime']) { this.retentionTime = new fhir.Duration(source.retentionTime, options); }
+    if (source['rejectionCriterion']) { this.rejectionCriterion = source.rejectionCriterion.map((x) => new fhir.CodeableConcept(x, options)); }
     else { this.rejectionCriterion = []; }
-    if (source['handling']) { this.handling = source.handling.map((x) => new fhir.SpecimenDefinitionTypeTestedHandling(x)); }
+    if (source['handling']) { this.handling = source.handling.map((x) => new fhir.SpecimenDefinitionTypeTestedHandling(x, options)); }
     else { this.handling = []; }
   }
   /**
@@ -528,18 +528,18 @@ export class SpecimenDefinition extends fhir.DomainResource {
   constructor(source:Partial<SpecimenDefinitionArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
     this.resourceType = 'SpecimenDefinition';
-    if (source['identifier']) { this.identifier = new fhir.Identifier(source.identifier); }
-    if (source['typeCollected']) { this.typeCollected = new fhir.CodeableConcept(source.typeCollected); }
-    if (source['patientPreparation']) { this.patientPreparation = source.patientPreparation.map((x) => new fhir.CodeableConcept(x)); }
+    if (source['identifier']) { this.identifier = new fhir.Identifier(source.identifier, options); }
+    if (source['typeCollected']) { this.typeCollected = new fhir.CodeableConcept(source.typeCollected, options); }
+    if (source['patientPreparation']) { this.patientPreparation = source.patientPreparation.map((x) => new fhir.CodeableConcept(x, options)); }
     else { this.patientPreparation = []; }
-    if (source['timeAspect']) { this.timeAspect = new fhir.FhirString({value: source.timeAspect}); }
+    if (source['timeAspect'] !== undefined) { this.timeAspect = new fhir.FhirString({value: source.timeAspect}, options); }
     if (source['_timeAspect']) {
       if (this.timeAspect) { this.timeAspect.addExtendedProperties(source._timeAspect!); }
-      else { this.timeAspect = new fhir.FhirString(source._timeAspect as Partial<fhir.FhirStringArgs>); }
+      else { this.timeAspect = new fhir.FhirString(source._timeAspect as Partial<fhir.FhirStringArgs>, options); }
     }
-    if (source['collection']) { this.collection = source.collection.map((x) => new fhir.CodeableConcept(x)); }
+    if (source['collection']) { this.collection = source.collection.map((x) => new fhir.CodeableConcept(x, options)); }
     else { this.collection = []; }
-    if (source['typeTested']) { this.typeTested = source.typeTested.map((x) => new fhir.SpecimenDefinitionTypeTested(x)); }
+    if (source['typeTested']) { this.typeTested = source.typeTested.map((x) => new fhir.SpecimenDefinitionTypeTested(x, options)); }
     else { this.typeTested = []; }
   }
   /**

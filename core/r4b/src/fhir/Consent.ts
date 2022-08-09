@@ -96,15 +96,15 @@ export class ConsentPolicy extends fhir.BackboneElement {
    */
   constructor(source:Partial<ConsentPolicyArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['authority']) { this.authority = new fhir.FhirUri({value: source.authority}); }
+    if (source['authority'] !== undefined) { this.authority = new fhir.FhirUri({value: source.authority}, options); }
     if (source['_authority']) {
       if (this.authority) { this.authority.addExtendedProperties(source._authority!); }
-      else { this.authority = new fhir.FhirUri(source._authority as Partial<fhir.FhirUriArgs>); }
+      else { this.authority = new fhir.FhirUri(source._authority as Partial<fhir.FhirUriArgs>, options); }
     }
-    if (source['uri']) { this.uri = new fhir.FhirUri({value: source.uri}); }
+    if (source['uri'] !== undefined) { this.uri = new fhir.FhirUri({value: source.uri}, options); }
     if (source['_uri']) {
       if (this.uri) { this.uri.addExtendedProperties(source._uri!); }
-      else { this.uri = new fhir.FhirUri(source._uri as Partial<fhir.FhirUriArgs>); }
+      else { this.uri = new fhir.FhirUri(source._uri as Partial<fhir.FhirUriArgs>, options); }
     }
   }
   /**
@@ -169,17 +169,17 @@ export class ConsentVerification extends fhir.BackboneElement {
    */
   constructor(source:Partial<ConsentVerificationArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['verified']) { this.verified = new fhir.FhirBoolean({value: source.verified}); }
+    if (source['verified'] !== undefined) { this.verified = new fhir.FhirBoolean({value: source.verified}, options); }
     else { this.verified = null; }
     if (source['_verified']) {
       if (this.verified) { this.verified.addExtendedProperties(source._verified!); }
-      else { this.verified = new fhir.FhirBoolean(source._verified as Partial<fhir.FhirBooleanArgs>); }
+      else { this.verified = new fhir.FhirBoolean(source._verified as Partial<fhir.FhirBooleanArgs>, options); }
     }
-    if (source['verifiedWith']) { this.verifiedWith = new fhir.Reference(source.verifiedWith); }
-    if (source['verificationDate']) { this.verificationDate = new fhir.FhirDateTime({value: source.verificationDate}); }
+    if (source['verifiedWith']) { this.verifiedWith = new fhir.Reference(source.verifiedWith, options); }
+    if (source['verificationDate'] !== undefined) { this.verificationDate = new fhir.FhirDateTime({value: source.verificationDate}, options); }
     if (source['_verificationDate']) {
       if (this.verificationDate) { this.verificationDate.addExtendedProperties(source._verificationDate!); }
-      else { this.verificationDate = new fhir.FhirDateTime(source._verificationDate as Partial<fhir.FhirDateTimeArgs>); }
+      else { this.verificationDate = new fhir.FhirDateTime(source._verificationDate as Partial<fhir.FhirDateTimeArgs>, options); }
     }
   }
   /**
@@ -229,9 +229,9 @@ export class ConsentProvisionActor extends fhir.BackboneElement {
    */
   constructor(source:Partial<ConsentProvisionActorArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['role']) { this.role = new fhir.CodeableConcept(source.role); }
+    if (source['role']) { this.role = new fhir.CodeableConcept(source.role, options); }
     else { this.role = null; }
-    if (source['reference']) { this.reference = new fhir.Reference(source.reference); }
+    if (source['reference']) { this.reference = new fhir.Reference(source.reference, options); }
     else { this.reference = null; }
   }
   /**
@@ -284,13 +284,13 @@ export class ConsentProvisionData extends fhir.BackboneElement {
    */
   constructor(source:Partial<ConsentProvisionDataArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['meaning']) { this.meaning = new fhir.FhirCode<ConsentDataMeaningCodeType>({value: source.meaning}); }
+    if (source['meaning'] !== undefined) { this.meaning = new fhir.FhirCode<ConsentDataMeaningCodeType>({value: source.meaning}, options); }
     else { this.meaning = null; }
     if (source['_meaning']) {
       if (this.meaning) { this.meaning.addExtendedProperties(source._meaning!); }
-      else { this.meaning = new fhir.FhirCode<ConsentDataMeaningCodeType>(source._meaning as Partial<fhir.FhirCode>); }
+      else { this.meaning = new fhir.FhirCode<ConsentDataMeaningCodeType>(source._meaning as Partial<fhir.FhirCode>, options); }
     }
-    if (source['reference']) { this.reference = new fhir.Reference(source.reference); }
+    if (source['reference']) { this.reference = new fhir.Reference(source.reference, options); }
     else { this.reference = null; }
   }
   /**
@@ -415,28 +415,28 @@ export class ConsentProvision extends fhir.BackboneElement {
    */
   constructor(source:Partial<ConsentProvisionArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['type']) { this.type = new fhir.FhirCode<ConsentProvisionTypeCodeType>({value: source.type}); }
+    if (source['type'] !== undefined) { this.type = new fhir.FhirCode<ConsentProvisionTypeCodeType>({value: source.type}, options); }
     if (source['_type']) {
       if (this.type) { this.type.addExtendedProperties(source._type!); }
-      else { this.type = new fhir.FhirCode<ConsentProvisionTypeCodeType>(source._type as Partial<fhir.FhirCode>); }
+      else { this.type = new fhir.FhirCode<ConsentProvisionTypeCodeType>(source._type as Partial<fhir.FhirCode>, options); }
     }
-    if (source['period']) { this.period = new fhir.Period(source.period); }
-    if (source['actor']) { this.actor = source.actor.map((x) => new fhir.ConsentProvisionActor(x)); }
+    if (source['period']) { this.period = new fhir.Period(source.period, options); }
+    if (source['actor']) { this.actor = source.actor.map((x) => new fhir.ConsentProvisionActor(x, options)); }
     else { this.actor = []; }
-    if (source['action']) { this.action = source.action.map((x) => new fhir.CodeableConcept(x)); }
+    if (source['action']) { this.action = source.action.map((x) => new fhir.CodeableConcept(x, options)); }
     else { this.action = []; }
-    if (source['securityLabel']) { this.securityLabel = source.securityLabel.map((x) => new fhir.Coding(x)); }
+    if (source['securityLabel']) { this.securityLabel = source.securityLabel.map((x) => new fhir.Coding(x, options)); }
     else { this.securityLabel = []; }
-    if (source['purpose']) { this.purpose = source.purpose.map((x) => new fhir.Coding(x)); }
+    if (source['purpose']) { this.purpose = source.purpose.map((x) => new fhir.Coding(x, options)); }
     else { this.purpose = []; }
-    if (source['class']) { this.class = source.class.map((x) => new fhir.Coding(x)); }
+    if (source['class']) { this.class = source.class.map((x) => new fhir.Coding(x, options)); }
     else { this.class = []; }
-    if (source['code']) { this.code = source.code.map((x) => new fhir.CodeableConcept(x)); }
+    if (source['code']) { this.code = source.code.map((x) => new fhir.CodeableConcept(x, options)); }
     else { this.code = []; }
-    if (source['dataPeriod']) { this.dataPeriod = new fhir.Period(source.dataPeriod); }
-    if (source['data']) { this.data = source.data.map((x) => new fhir.ConsentProvisionData(x)); }
+    if (source['dataPeriod']) { this.dataPeriod = new fhir.Period(source.dataPeriod, options); }
+    if (source['data']) { this.data = source.data.map((x) => new fhir.ConsentProvisionData(x, options)); }
     else { this.data = []; }
-    if (source['provision']) { this.provision = source.provision.map((x) => new fhir.ConsentProvision(x)); }
+    if (source['provision']) { this.provision = source.provision.map((x) => new fhir.ConsentProvision(x, options)); }
     else { this.provision = []; }
   }
   /**
@@ -611,37 +611,37 @@ export class Consent extends fhir.DomainResource {
   constructor(source:Partial<ConsentArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
     this.resourceType = 'Consent';
-    if (source['identifier']) { this.identifier = source.identifier.map((x) => new fhir.Identifier(x)); }
+    if (source['identifier']) { this.identifier = source.identifier.map((x) => new fhir.Identifier(x, options)); }
     else { this.identifier = []; }
-    if (source['status']) { this.status = new fhir.FhirCode<ConsentStateCodeType>({value: source.status}); }
+    if (source['status'] !== undefined) { this.status = new fhir.FhirCode<ConsentStateCodeType>({value: source.status}, options); }
     else { this.status = null; }
     if (source['_status']) {
       if (this.status) { this.status.addExtendedProperties(source._status!); }
-      else { this.status = new fhir.FhirCode<ConsentStateCodeType>(source._status as Partial<fhir.FhirCode>); }
+      else { this.status = new fhir.FhirCode<ConsentStateCodeType>(source._status as Partial<fhir.FhirCode>, options); }
     }
-    if (source['scope']) { this.scope = new fhir.CodeableConcept(source.scope); }
+    if (source['scope']) { this.scope = new fhir.CodeableConcept(source.scope, options); }
     else { this.scope = null; }
-    if (source['category']) { this.category = source.category.map((x) => new fhir.CodeableConcept(x)); }
+    if (source['category']) { this.category = source.category.map((x) => new fhir.CodeableConcept(x, options)); }
     else { this.category = []; }
-    if (source['patient']) { this.patient = new fhir.Reference(source.patient); }
-    if (source['dateTime']) { this.dateTime = new fhir.FhirDateTime({value: source.dateTime}); }
+    if (source['patient']) { this.patient = new fhir.Reference(source.patient, options); }
+    if (source['dateTime'] !== undefined) { this.dateTime = new fhir.FhirDateTime({value: source.dateTime}, options); }
     if (source['_dateTime']) {
       if (this.dateTime) { this.dateTime.addExtendedProperties(source._dateTime!); }
-      else { this.dateTime = new fhir.FhirDateTime(source._dateTime as Partial<fhir.FhirDateTimeArgs>); }
+      else { this.dateTime = new fhir.FhirDateTime(source._dateTime as Partial<fhir.FhirDateTimeArgs>, options); }
     }
-    if (source['performer']) { this.performer = source.performer.map((x) => new fhir.Reference(x)); }
+    if (source['performer']) { this.performer = source.performer.map((x) => new fhir.Reference(x, options)); }
     else { this.performer = []; }
-    if (source['organization']) { this.organization = source.organization.map((x) => new fhir.Reference(x)); }
+    if (source['organization']) { this.organization = source.organization.map((x) => new fhir.Reference(x, options)); }
     else { this.organization = []; }
     if (source['source']) { this.source = source.source; }
-    else if (source['sourceAttachment']) { this.source = new fhir.Attachment(source.sourceAttachment); }
-    else if (source['sourceReference']) { this.source = new fhir.Reference(source.sourceReference); }
-    if (source['policy']) { this.policy = source.policy.map((x) => new fhir.ConsentPolicy(x)); }
+    else if (source['sourceAttachment']) { this.source = new fhir.Attachment(source.sourceAttachment, options); }
+    else if (source['sourceReference']) { this.source = new fhir.Reference(source.sourceReference, options); }
+    if (source['policy']) { this.policy = source.policy.map((x) => new fhir.ConsentPolicy(x, options)); }
     else { this.policy = []; }
-    if (source['policyRule']) { this.policyRule = new fhir.CodeableConcept(source.policyRule); }
-    if (source['verification']) { this.verification = source.verification.map((x) => new fhir.ConsentVerification(x)); }
+    if (source['policyRule']) { this.policyRule = new fhir.CodeableConcept(source.policyRule, options); }
+    if (source['verification']) { this.verification = source.verification.map((x) => new fhir.ConsentVerification(x, options)); }
     else { this.verification = []; }
-    if (source['provision']) { this.provision = new fhir.ConsentProvision(source.provision); }
+    if (source['provision']) { this.provision = new fhir.ConsentProvision(source.provision, options); }
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).

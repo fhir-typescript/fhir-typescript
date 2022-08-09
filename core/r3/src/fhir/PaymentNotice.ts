@@ -133,29 +133,29 @@ export class PaymentNotice extends fhir.DomainResource {
   constructor(source:Partial<PaymentNoticeArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
     this.resourceType = 'PaymentNotice';
-    if (source['identifier']) { this.identifier = source.identifier.map((x) => new fhir.Identifier(x)); }
+    if (source['identifier']) { this.identifier = source.identifier.map((x) => new fhir.Identifier(x, options)); }
     else { this.identifier = []; }
-    if (source['status']) { this.status = new fhir.FhirCode<FmStatusCodeType>({value: source.status}); }
+    if (source['status'] !== undefined) { this.status = new fhir.FhirCode<FmStatusCodeType>({value: source.status}, options); }
     if (source['_status']) {
       if (this.status) { this.status.addExtendedProperties(source._status!); }
-      else { this.status = new fhir.FhirCode<FmStatusCodeType>(source._status as Partial<fhir.FhirCode>); }
+      else { this.status = new fhir.FhirCode<FmStatusCodeType>(source._status as Partial<fhir.FhirCode>, options); }
     }
-    if (source['request']) { this.request = new fhir.Reference(source.request); }
-    if (source['response']) { this.response = new fhir.Reference(source.response); }
-    if (source['statusDate']) { this.statusDate = new fhir.FhirDate({value: source.statusDate}); }
+    if (source['request']) { this.request = new fhir.Reference(source.request, options); }
+    if (source['response']) { this.response = new fhir.Reference(source.response, options); }
+    if (source['statusDate'] !== undefined) { this.statusDate = new fhir.FhirDate({value: source.statusDate}, options); }
     if (source['_statusDate']) {
       if (this.statusDate) { this.statusDate.addExtendedProperties(source._statusDate!); }
-      else { this.statusDate = new fhir.FhirDate(source._statusDate as Partial<fhir.FhirDateArgs>); }
+      else { this.statusDate = new fhir.FhirDate(source._statusDate as Partial<fhir.FhirDateArgs>, options); }
     }
-    if (source['created']) { this.created = new fhir.FhirDateTime({value: source.created}); }
+    if (source['created'] !== undefined) { this.created = new fhir.FhirDateTime({value: source.created}, options); }
     if (source['_created']) {
       if (this.created) { this.created.addExtendedProperties(source._created!); }
-      else { this.created = new fhir.FhirDateTime(source._created as Partial<fhir.FhirDateTimeArgs>); }
+      else { this.created = new fhir.FhirDateTime(source._created as Partial<fhir.FhirDateTimeArgs>, options); }
     }
-    if (source['target']) { this.target = new fhir.Reference(source.target); }
-    if (source['provider']) { this.provider = new fhir.Reference(source.provider); }
-    if (source['organization']) { this.organization = new fhir.Reference(source.organization); }
-    if (source['paymentStatus']) { this.paymentStatus = new fhir.CodeableConcept(source.paymentStatus); }
+    if (source['target']) { this.target = new fhir.Reference(source.target, options); }
+    if (source['provider']) { this.provider = new fhir.Reference(source.provider, options); }
+    if (source['organization']) { this.organization = new fhir.Reference(source.organization, options); }
+    if (source['paymentStatus']) { this.paymentStatus = new fhir.CodeableConcept(source.paymentStatus, options); }
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).

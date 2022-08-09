@@ -40,8 +40,8 @@ export class OrderWhen extends fhir.BackboneElement {
    */
   constructor(source:Partial<OrderWhenArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['code']) { this.code = new fhir.CodeableConcept(source.code); }
-    if (source['schedule']) { this.schedule = new fhir.Timing(source.schedule); }
+    if (source['code']) { this.code = new fhir.CodeableConcept(source.code, options); }
+    if (source['schedule']) { this.schedule = new fhir.Timing(source.schedule, options); }
   }
   /**
    * Function to perform basic model validation (e.g., check if required elements are present).
@@ -162,21 +162,21 @@ export class Order extends fhir.DomainResource {
   constructor(source:Partial<OrderArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
     this.resourceType = 'Order';
-    if (source['identifier']) { this.identifier = source.identifier.map((x) => new fhir.Identifier(x)); }
+    if (source['identifier']) { this.identifier = source.identifier.map((x) => new fhir.Identifier(x, options)); }
     else { this.identifier = []; }
-    if (source['date']) { this.date = new fhir.FhirDateTime({value: source.date}); }
+    if (source['date'] !== undefined) { this.date = new fhir.FhirDateTime({value: source.date}, options); }
     if (source['_date']) {
       if (this.date) { this.date.addExtendedProperties(source._date!); }
-      else { this.date = new fhir.FhirDateTime(source._date as Partial<fhir.FhirDateTimeArgs>); }
+      else { this.date = new fhir.FhirDateTime(source._date as Partial<fhir.FhirDateTimeArgs>, options); }
     }
-    if (source['subject']) { this.subject = new fhir.Reference(source.subject); }
-    if (source['source']) { this.source = new fhir.Reference(source.source); }
-    if (source['target']) { this.target = new fhir.Reference(source.target); }
+    if (source['subject']) { this.subject = new fhir.Reference(source.subject, options); }
+    if (source['source']) { this.source = new fhir.Reference(source.source, options); }
+    if (source['target']) { this.target = new fhir.Reference(source.target, options); }
     if (source['reason']) { this.reason = source.reason; }
-    else if (source['reasonCodeableConcept']) { this.reason = new fhir.CodeableConcept(source.reasonCodeableConcept); }
-    else if (source['reasonReference']) { this.reason = new fhir.Reference(source.reasonReference); }
-    if (source['when']) { this.when = new fhir.OrderWhen(source.when); }
-    if (source['detail']) { this.detail = source.detail.map((x) => new fhir.Reference(x)); }
+    else if (source['reasonCodeableConcept']) { this.reason = new fhir.CodeableConcept(source.reasonCodeableConcept, options); }
+    else if (source['reasonReference']) { this.reason = new fhir.Reference(source.reasonReference, options); }
+    if (source['when']) { this.when = new fhir.OrderWhen(source.when, options); }
+    if (source['detail']) { this.detail = source.detail.map((x) => new fhir.Reference(x, options)); }
     else { this.detail = []; }
   }
   /**

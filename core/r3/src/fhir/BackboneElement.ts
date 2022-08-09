@@ -32,7 +32,7 @@ export class BackboneElement extends fhir.FhirElement {
    */
   constructor(source:Partial<BackboneElementArgs> = {}, options:fhir.FhirConstructorOptions = {}) {
     super(source, options);
-    if (source['modifierExtension']) { this.modifierExtension = source.modifierExtension.map((x) => new fhir.Extension(x)); }
+    if (source['modifierExtension']) { this.modifierExtension = source.modifierExtension.map((x) => new fhir.Extension(x, options)); }
     else { this.modifierExtension = []; }
   }
   /**
